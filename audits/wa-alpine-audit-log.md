@@ -36611,3 +36611,67 @@ an internal cross-route contradiction, not just a source-vs-DB one; a human with
 topo should settle which row's pitch grades are right before either is touched.
 
 Next batch will continue id-ascending from `wa_liberty_bell_sidewinder` (see progress file).
+
+## Batch 507 (pass 8) — 2026-11-05
+
+Checked 10 routes, continuing id-ascending past Liberty Bell onto Liberty Cap (Mount
+Rainier) and Lichtenberg Mountain: `wa_liberty_bell_thin_red_line`, `wa_liberty_cap_liberty_ridge_finish`,
+`wa_liberty_cap_ptarmigan_ridge_finish`, `wa_liberty_crack`, `wa_liberty_crack_free`,
+`wa_liberty_traverse`, `wa_lichtenberg_mountain_se_route`, `wa_lichtenberg_mountain_southeast_ridge`,
+`wa_lichtenberg_mountain_west_face`, `wa_lichtenberg_mountain_west_face_west_rib`. Took all
+ten in one batch rather than splitting at 8 so that Liberty Cap and Lichtenberg Mountain
+each stayed whole within a single pass.
+
+One confirmed error, fixed. Liberty Crack's `high_point_ft` was stored as 7746, but
+Liberty Bell Mountain's summit is 7,720 ft per Mountain Project, Wikipedia (7,720+ ft,
+NGVD 29) and SummitPost alike — and this audit already confirmed 7,720 ft as correct for
+the Beckey Route on this same peak, back in batch 506. Liberty Crack (Free) and Thin Red
+Line, both also on Liberty Bell's East Face, already store 7720 in this table; 7746 on
+the aid line alone was the outlier. SQL above fixes it.
+
+Everything else checked out clean. Thin Red Line's FA (Jim Madsen & Kim Schmitz, 1967,
+aid A3, specifically July 29 1967) and FFA (Kate Rutherford & Mikey Schaefer, September
+2008, 5.12c) are both confirmed exactly across multiple sources. Liberty Cap via Liberty
+Ridge's FA (Ome Daiber, Arnie Campbell & Jim Borrow, Sept 28-Oct 1, 1935) is confirmed
+exactly — there's an AAC-published article with that same title and date range. Liberty
+Cap via Ptarmigan Ridge's FA (Wolf Bauer & Jack Hossack, September 8, 1935) is confirmed
+by Mountain Project and a contemporaneous AAC account. Liberty Crack's own FA (Steve
+Marts, Don McPherson & Fred Stanley, July 1965) is confirmed — Wikipedia gives the exact
+dates July 16-18, 1965, consistent with the DB's month-level claim. Liberty Crack
+(Free)'s FFA history (Brooke Sandahl, 1991, for the original free line; current free
+variation by Mikey Schaefer, Shanjean Lee, Blake Herrington & Nathan Hadley) is confirmed,
+though sources disagree on the variation's year: OpenBeta's route listing says 2017, but
+a contemporaneous blog post by participant Blake Herrington, dated July 2016, describes
+the same send happening on June 28, 2016 — the primary, first-hand account backs the DB's
+stored 2016 over the secondary aggregator, so left as-is. Liberty Traverse's 26-pitch,
+five-summit composition (Liberty Bell's Beckey Route → Concord Tower North Face →
+Lexington Tower North Face → North Early Winter Spire NW Corner → South Early Winter
+Spire SW Rib) and its 5.9/Grade V rating match Mountain Project's route listing exactly.
+Lichtenberg Mountain's 5,844 ft summit elevation, stored identically on both
+`se_route` and `southeast_ridge`, is confirmed by Wikipedia. West Face's beta, crediting
+a 5.9+ new route to James Nakagami and Dan "Danimal" Capellini plus an unnamed third
+partner, lines up almost exactly with a Mountain Project forum account of a summer-2001
+II+ 5.9 new route by Nakagami, Cappellini and Ray Borbon — worth noting the DB was right
+not to guess at the unnamed third climber. This is a genuinely different, easier line on
+the same wall from the one in a 1990s AAC report by Alex Bertulis (climbing the then-
+unclimbed west face with his son Nik at II, 5.8) — two distinct routes on one face, and
+the DB's single `west_face` row correctly describes the harder 2001 line rather than
+Bertulis's.
+
+Flagged for human review, no SQL: (1) Liberty Crack's overview names the Lithuanian
+Lip/Roof for Alex Bertulis' Lithuanian heritage — an AAC-indexed article titled
+"Lithuanian-American Exchange" for the Washington Cascades turned up in search, which
+hints at a connection (Bertulis organized Lithuanian-American climbing exchanges), but
+nothing found directly confirms the naming story. (2) Southeast Ridge's claim that "Jim
+Brisbine's party climbed it as a rock scramble over 20-21 September 1975" could not be
+independently corroborated — no source found mentions Brisbine in connection with
+Lichtenberg at all. (3) West Face - West Rib (Lichtenhorn)'s approach/descent history
+(approached via Lichtenberg Pass, a "1978 party" descending the Northeast Slope) is also
+uncorroborated; this is an obscure, thinly-documented line on a minor sub-summit and no
+independent source was found either confirming or contradicting its details. None of
+these three were acted on — nothing found actually contradicts what's stored, so per the
+audit rules they're left as-is pending a human with better sources (a Beckey guide or
+AAC archive access would be the next place to check).
+
+Next batch will continue id-ascending from `wa_lichtenberg_mountain_west_face_west_rib`
+(see progress file).

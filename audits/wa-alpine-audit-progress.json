@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_liberty_bell_sidewinder",
+  "last_processed_id": "wa_lichtenberg_mountain_west_face_west_rib",
   "total_in_scope_last_count": 737,
   "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 506 complete. Continuing id-ascending scope from wa_liberty_bell_sidewinder (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 507 complete. Continuing id-ascending scope from wa_lichtenberg_mountain_west_face_west_rib (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -10065,6 +10065,28 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-11-05-batch-506.sql",
       "note": "Two confirmed errors fixed: Overexposure's pitches=4 contradicted by Mountain Project (2 pitches, 200 ft) and by the route's own stored waypoint prose describing \"two sustained 30 m pitches\"; Freedom Rider's fa misspells \"Brian Burdo\" where MP/OpenBeta give \"Bryan Burdo\" (the same spelling the DB already uses correctly on Sidewinder's 1991 variation credit). A third fix proposed mid-batch -- renaming the route Freedom or Death's overview says it shares pitches with, \"A Servant To Liberty\", to \"A Slave to Liberty\" -- was caught and discarded before commit: wa_a_servant_to_liberty is itself a real, already-correctly-named row in this DB (grade 5.13-, FA Mikey Schaefer w/ Shanjean Lee, Aug 6 2016), and its own overview already notes \"Also published as 'A Slave to Liberty'\" -- so the DB's chosen name was right all along and the web research that flagged it as nonexistent simply hadn't found this sibling row. That row's beta text does surface a real, still-open discrepancy: it states Freedom or Death's shared P1-P3 are 5.10/5.11/5.11, while Freedom or Death's own pitch_detail gives P2=5.11c and P3=5.12a (crux) -- flagged below rather than fixed, since which one is right isn't clear without a topo. Clean/confirmed with no changes: Girl Next Door (grade/pitches/approach match MP/Wikipedia; FA \"Goldie & Butler, 2011\" single-sourced via OpenBeta but not contradicted), Northwest Face (FA Kraus & Rupley 1956 and free-FA credit both confirmed via Mountain Project/SuperTopo/Mountaineers, distinct from Beckey's 1946 original route), Sidewinder (FA Doorish & Nason 1969 and the Bryan Burdo variation both confirmed via MP, settling the Burdo spelling question)."
+    },
+    {
+      "batch_number": 507,
+      "date": "2026-11-05",
+      "pass": 8,
+      "route_ids": [
+        "wa_liberty_bell_thin_red_line",
+        "wa_liberty_cap_liberty_ridge_finish",
+        "wa_liberty_cap_ptarmigan_ridge_finish",
+        "wa_liberty_crack",
+        "wa_liberty_crack_free",
+        "wa_liberty_traverse",
+        "wa_lichtenberg_mountain_se_route",
+        "wa_lichtenberg_mountain_southeast_ridge",
+        "wa_lichtenberg_mountain_west_face",
+        "wa_lichtenberg_mountain_west_face_west_rib"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 3,
+      "clean": 7,
+      "sql_file": "audits/sql/2026-11-05-batch-507.sql",
+      "note": "One confirmed error fixed: wa_liberty_crack's high_point_ft was stored as 7746, but Liberty Bell Mountain's summit is 7,720 ft per Mountain Project/Wikipedia/SummitPost, and this audit already confirmed 7,720 ft for the Beckey Route on the same peak (batch 506) -- Liberty Crack (Free) and Thin Red Line, both on the same East Face, already store 7720, so 7746 on the aid line alone was the outlier. Clean/confirmed with no changes: Thin Red Line's FA (Madsen & Schmitz, 1967, aid A3) and FFA (Kate Rutherford & Mikey Schaefer, Sept 2008, 5.12c) both confirmed exactly; Liberty Cap via Liberty Ridge's FA (Daiber, Campbell & Borrow, Sept 28-Oct 1 1935) confirmed exactly by an AAC article of that same title; Liberty Cap via Ptarmigan Ridge's FA (Bauer & Hossack, Sept 8 1935) confirmed by Mountain Project and a contemporaneous AAC account; Liberty Crack's own FA (Marts, McPherson & Stanley, July 1965) confirmed (Wikipedia gives the exact dates July 16-18, 1965, consistent with the DB's month-level claim); Liberty Crack (Free)'s FFA history (Sandahl 1991; current free variation by Schaefer/Lee/Herrington/Hadley) confirmed -- sources differ on the variation's year (OpenBeta says 2017, DB says 2016), but a contemporaneous blog post by participant Blake Herrington, dated July 2016, describes the same send from June 28, 2016, so the primary account backs the DB's 2016 over the secondary aggregator; Liberty Traverse's 26-pitch, 5-summit composition and 5.9/Grade V rating confirmed exactly via Mountain Project; Lichtenberg Mountain's 5,844 ft summit elevation (stored on both se_route and southeast_ridge) confirmed by Wikipedia; West Face's beta attributing a 5.9+ new route to James Nakagami, Dan 'Danimal' Capellini and an unnamed third partner matches a Mountain Project forum account of a summer-2001 II+ 5.9 route by Nakagami, Cappellini and Ray Borbon almost exactly (DB correctly leaves the third partner unnamed rather than guessing). Flagged for human review, no SQL: (1) Liberty Crack's overview names the Lithuanian Lip/Roof for Alex Bertulis' Lithuanian heritage -- found an AAC-indexed 1990s article titled 'Lithuanian-American Exchange' for the Washington Cascades that hints at a connection but nothing that directly confirms the naming story; (2) Southeast Ridge's claim that 'Jim Brisbine's party climbed it as a rock scramble over 20-21 September 1975' could not be independently corroborated -- no source found names Brisbine in connection with Lichtenberg; (3) West Face - West Rib (Lichtenhorn)'s approach/descent history (approached via Lichtenberg Pass, '1978 party' descending the Northeast Slope) is also uncorroborated -- this is an obscure, thinly-documented sub-summit line and no independent source was found either confirming or contradicting its details. None of the three flagged items were acted on, per audit rules, since nothing found actually contradicts what is stored."
     }
   ]
 }
