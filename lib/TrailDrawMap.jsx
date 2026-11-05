@@ -78,8 +78,10 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const dragEndAt = useRef(0);
   const noteT = useRef(null);
   const lastTap = useRef(null); // the last tap on the map or a leg, to fold a double tap into one point
-  const fails = useRef({ far: 0, none: 0, down: 0, t: null }); // legs that came back straight, said once per burst
+  const fails = useRef({ far: 0, none: 0, down: 0, detour: 0, t: null }); // legs that came back straight, said once per burst
   const builtHidden = useRef(false); // the map was built inside a hidden tab (0×0 box): refit when shown
+  // The pins by value, so a fresh-but-equal object from the host is not a change.
+  const startKey = start ? start.lat + "," + start.lng : "", endKey = end ? end.lat + "," + end.lng : "";
   const propsRef = useRef({ start, end, follow, setPts, onShape });
   propsRef.current = { start, end, follow, setPts, onShape };
 
@@ -128,17 +130,18 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // many at once), with a count per reason, not one note overwriting the last.
   const noteFailure = (why) => {
     const f = fails.current;
-    if (why === "far") f.far++; else if (why === false) f.down++; else f.none++;
+    if (why === "far") f.far++; else if (why === "detour") f.detour++; else if (why === false) f.down++; else f.none++;
     clearTimeout(f.t);
     f.t = setTimeout(() => {
       const legs = (k) => k + (k === 1 ? " leg" : " legs");
       const parts = [];
       if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
+      if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
       if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: switch Follow trails off and on to ask again)");
-      const total = f.none + f.far + f.down;
+      const total = f.none + f.far + f.down + f.detour;
       say(tx((total === 1 ? "One leg stays a straight line: " : total + " legs stay straight lines: ") + parts.join("; ") + "."));
-      fails.current = { far: 0, none: 0, down: 0, t: null };
+      fails.current = { far: 0, none: 0, down: 0, detour: 0, t: null };
     }, 700);
   };
   const abortRoute = (id) => { const c = routing.current.get(id); if (c) { c.abort(); routing.current.delete(id); } };
@@ -175,6 +178,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const want = propsRef.current.follow || keep === true || (Array.isArray(keep) && keep.includes(i));
       // The first anchor has no leg; a leg of no length (the same spot twice) is straight and silent.
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
+      // A leg going straight gives up the answer it was waiting for, so the slot goes to a live leg.
+      if (!(want && !zero)) abortRoute(next[i].id);
       next[i] = Object.assign({}, next[i], { via: [], pending: want && !zero });
       if (want && !zero) touched.push(next[i].id);
     });
@@ -202,7 +207,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const append = (lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if (cur.length && sameP(cur[cur.length - 1].a, nn.a)) return; const next = cur.concat([nn]); commit(next, withLegs(next, [next.length - 1])); };
   const insertAt = (i, lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return; const next = cur.slice(); next.splice(i, 0, nn); commit(next, withLegs(next, [i, i + 1], routed(cur[i]) ? [i, i + 1] : [])); };
   const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], [routed(cur[i]) ? i : -1, routed(cur[i + 1]) ? i + 1 : -1])); };
-  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
+  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]) ? [i] : [])); };
   const clearAll = () => { if (!nodesRef.current.length) return; setSelectedId(null); commit([], []); };
   // Switching Follow trails ON routes every leg that is still straight (the help says it bends each
   // leg, so it does), as one undoable step; OFF leaves what is drawn alone, and stops asking for
@@ -277,8 +282,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const keep = (l) => { l.addTo(map); drawn.current.push(l); return l; };
     const dot = (size, fill, border, ring) => L.divIcon({ className: "", iconSize: [HIT, HIT], iconAnchor: [HIT / 2, HIT / 2], html: '<div style="width:' + size + "px;height:" + size + "px;margin:" + (HIT - size) / 2 + "px;border-radius:50%;background:" + fill + ";border:2px solid " + border + ";box-sizing:border-box;box-shadow:" + (ring ? "0 0 0 3px " + ring + "," : "") + '0 1px 4px rgba(0,0,0,.5)"></div>' });
     const pin = (p, label, color) => keep(L.marker([p.lat, p.lng], { keyboard: false, interactive: false, icon: L.divIcon({ className: "", iconSize: [24, 24], iconAnchor: [12, 12], html: '<div style="width:24px;height:24px;border-radius:50%;background:' + color + ';border:2px solid #fff;color:#fff;font:700 12px/20px system-ui;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.5)">' + label + "</div>" }) }));
-    if (start) pin(start, mk.start, C.accent);
-    if (end) pin(end, mk.end, C.warning);
+    const { start: s0, end: e0 } = propsRef.current;
+    if (s0) pin(s0, mk.start, C.accent);
+    if (e0) pin(e0, mk.end, C.warning);
     // One polyline per leg, dashed while its trail is being looked up; a wide invisible twin takes the taps.
     for (let i = 1; i < nodes.length; i++) {
       const leg = legPts(nodes, i), n = nodes[i];
@@ -298,7 +304,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const h = keep(L.marker([m0[0] + (m1[0] - m0[0]) * f, m0[1] + (m1[1] - m0[1]) * f], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
       h.on("dragstart", () => { dragging.current = true; });
       h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); api.current.flushRedraw(); });
-      h.on("click", (e) => { L.DomEvent.stop(e); const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
+      h.on("click", (e) => { L.DomEvent.stop(e); if (!tapOk(e)) return; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
     }
     nodes.forEach((n, i) => {
       const last = i === nodes.length - 1, sel = n.id === selectedId;
@@ -307,7 +313,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
       m.on("click", (e) => { L.DomEvent.stop(e); if (Date.now() - dragEndAt.current >= 250) api.current.select(n.id); });
     });
-  }, [nodes, ready, zoomN, start, end, selectedId, C.accent, C.warning, mk.start, mk.end]);
+  // The pins are read through propsRef and keyed by VALUE (startKey/endKey): the host builds fresh
+  // {lat,lng} objects every render, and keying on the objects rebuilt every layer per tick.
+  }, [nodes, ready, zoomN, startKey, endKey, selectedId, C.accent, C.warning, mk.start, mk.end]);
 
   const flat = flatten(nodes), n = flat.length, selected = selectedId != null && nodes.some((x) => x.id === selectedId);
   const anyPending = nodes.some((x) => x.pending);

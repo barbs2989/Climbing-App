@@ -26,6 +26,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
   // A line already drawn in the desktop drawing tool (lib/DrawRoute.jsx) arrives here to be submitted.
   const [drawPts, setDrawPts] = useState(() => (canDraw && initialPts && initialPts.length ? initialPts : []))
   const drawing = tab === 'draw'
+  // A leg still being routed: what is on screen is about to change, so it is not yet a line to submit.
+  const [drawPending, setDrawPending] = useState(false)
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
   const [climbDate, setClimbDate] = useState('')
@@ -325,7 +327,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
         {/* Tab Content */}
         <div style={{...styles.tabContent}}>
           {/* Kept MOUNTED behind the other tabs: unmounting it would turn a routed line back into one anchor per point and lose Undo. */}
-          {canDraw && <div style={{display: tab === 'draw' ? 'block' : 'none'}}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} active={tab === 'draw'} initialShape={initialShape && initialShape.length ? initialShape : null} /></div>}
+          {canDraw && <div style={{display: tab === 'draw' ? 'block' : 'none'}}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={C} active={tab === 'draw'} onShape={(s) => setDrawPending(s.some((x) => x.pending))} initialShape={initialShape && initialShape.length ? initialShape : null} /></div>}
 
           {tab === 'paste' && (
             <div>
@@ -527,8 +529,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
           <button
             onClick={handleSubmit}
             style={{...styles.button, ...styles.buttonPrimary}}
-            disabled={submitting || (drawing ? drawPts.length < MIN_RECORDED_PTS : !coordinates.trim()) || !climbDate}
-            title={drawing && drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail') : undefined}
+            disabled={submitting || (drawing ? drawPts.length < MIN_RECORDED_PTS || drawPending : !coordinates.trim()) || !climbDate}
+            title={drawing && drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail') : drawing && drawPending ? 'Still following the trail for a leg' : undefined}
           >
             {submitting ? 'Submitting...' : crag ? 'Submit Trail' : 'Submit Track'}
           </button>
