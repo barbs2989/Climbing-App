@@ -50,6 +50,17 @@ let followDefault = false;
    T trailhead and S summit / B base on a route that is not a crag. */
 const CRAG_MARKS = { start: "P", end: "C", startName: "the parking pin", endName: "the crag" };
 const HIT = 32; // the whole hit box of an anchor or handle; the dot inside is smaller
+// The point ON the leg nearest a tap: the hit line is 18px wide, and a tap at its edge would otherwise bend the leg out to it.
+function onLeg(map, L, leg, latlng) {
+  const p = map.latLngToLayerPoint(latlng);
+  let best = null, bd = Infinity;
+  for (let k = 1; k < leg.length; k++) {
+    const a = map.latLngToLayerPoint(leg[k - 1]), b = map.latLngToLayerPoint(leg[k]);
+    const c = L.LineUtil.closestPointOnSegment(p, a, b), d = p.distanceTo(c);
+    if (d < bd) { bd = d; best = c; }
+  }
+  return best ? map.layerPointToLatLng(best) : latlng;
+}
 // `initialShape` / `onShape` carry the line as anchors + routed points between two drawers (the
 // desktop tool hands its line to the submission sheet): flat `pts` alone would come back as one
 // anchor per routed point.
@@ -80,7 +91,6 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const noteT = useRef(null);
   const lastTap = useRef(null); // the last tap on the map or a leg, to fold a double tap into one point
   const fails = useRef({ far: 0, none: 0, down: 0, detour: 0, t: null }); // legs that came back straight, said once per burst
-  const builtHidden = useRef(false); // the map was built inside a hidden tab (0×0 box): refit when shown
   // The pins by value, so a fresh-but-equal object from the host is not a change.
   const startKey = start ? start.lat + "," + start.lng : "", endKey = end ? end.lat + "," + end.lng : "";
   const propsRef = useRef({ start, end, follow, setPts, onShape });
@@ -108,7 +118,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   useEffect(() => {
     if (active === false || !mapRef.current) return;
     const m = mapRef.current;
-    setTimeout(() => { try { m.invalidateSize(); if (builtHidden.current) { builtHidden.current = false; fitView(m); } } catch (e) {} }, 60);
+    setTimeout(() => { try { m.invalidateSize(); } catch (e) {} }, 60);
   }, [active]);
 
   // Pins and the line, or the whole country when there is nothing yet to show.
@@ -145,9 +155,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
       if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
-      if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little to ask again, or switch Follow trails on, which asks for every straight leg)");
+      if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little, or switch Follow trails off and on, to ask again)");
       const total = f.none + f.far + f.down + f.detour;
-      say(tx((total === 1 ? "One leg stays a straight line: " : total + " legs stay straight lines: ") + parts.join("; ") + "."));
+      say(tx((total === 1 ? "One leg could not be followed: " : total + " legs could not be followed: ") + parts.join("; ") + "."));
       fails.current = { far: 0, none: 0, down: 0, detour: 0, t: null };
     }, 700);
   };
@@ -168,9 +178,11 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (j < 0) return;
       // Meanwhile it became the first anchor (the one before it was deleted): no leg to route.
       if (j === 0) { if (now[0].pending) { const next = now.slice(); next[0] = Object.assign({}, next[0], { via: [], pending: false }); setBoth(next); } return; }
-      if (!sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) return;
+      // The anchors moved on meanwhile: whoever moved them asked again, but never leave a leg dashed.
+      if (!sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) { if (now[j].pending && !routing.current.has(id)) { const nx = now.slice(); nx[j] = Object.assign({}, nx[j], { pending: false }); setBoth(nx); } return; }
       const next = now.slice();
-      next[j] = Object.assign({}, next[j], { via: Array.isArray(via) ? via : [], pending: false });
+      // No answer: the leg keeps the routed points it was split from (a nudge with Follow on), else straight.
+      next[j] = Object.assign({}, next[j], { via: Array.isArray(via) ? via : next[j].via, pending: false });
       setBoth(next);
       if (!Array.isArray(via)) noteFailure(via);
     });
@@ -226,10 +238,11 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const cur = nodesRef.current, nn = node([lat, lng]);
     if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return;
     const next = cur.slice();
-    // On a routed leg with Follow trails OFF the routed points are split beside the nearest one
-    // (every point kept, nothing asked); with it ON both halves are routed afresh through the new
-    // anchor, since a point dragged off the path means "the way goes HERE", not a spike out and back.
-    if (routed(cur[i]) && !propsRef.current.follow) {
+    // On a routed leg the routed points are split beside the nearest one (every point kept). With
+    // Follow trails ON both halves are then routed afresh through the new anchor, since a point
+    // dragged off the path means "the way goes HERE"; if the router cannot answer, the split stays,
+    // so an outage never flattens a switchback that was already right.
+    if (routed(cur[i])) {
       const via = cur[i].via;
       let best = 0, bd = Infinity;
       via.forEach((p, k) => { const d = distM(p, nn.a); if (d < bd) { bd = d; best = k; } });
@@ -242,7 +255,10 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       nn.via = via.slice(0, cut);
       next[i] = Object.assign({}, cur[i], { via: via.slice(cut) });
       next.splice(i, 0, nn);
-      commit(next, []);
+      if (!propsRef.current.follow) { commit(next, []); return; }
+      const touched = [];
+      [i, i + 1].forEach((k) => { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); });
+      commit(next, touched);
       return;
     }
     next.splice(i, 0, nn);
@@ -284,8 +300,6 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       applyBaseLayer(map, tileRef, baseLayer);
       const v = viewRef.current;
       if (v) map.setView(v.center, v.zoom); else fitView(map);
-      // Built while the host sheet showed another tab: the box is 0×0 and the fit above meant nothing.
-      builtHidden.current = !(mapDiv.current.clientWidth > 0 && mapDiv.current.clientHeight > 0);
       // Leaflet swallows the click that ends a marker drag; the guard is for the browsers where it does not.
       // A double tap is ONE point: with doubleClickZoom off Leaflet still fires click twice, and the
       // first version zoomed AND dropped two points on top of each other.
@@ -333,7 +347,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     for (let i = 1; i < nodes.length; i++) {
       const leg = legPts(nodes, i), n = nodes[i];
       keep(L.polyline(leg, { color: C.warning, weight: 4, opacity: 0.95, dashArray: n.pending ? "6 8" : null, interactive: false }));
-      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { if (tapOk(e, "leg")) api.current.insertAt(i, e.latlng.lat, e.latlng.lng); });
+      keep(L.polyline(leg, { color: "#000", weight: 18, opacity: 0, bubblingMouseEvents: false })).on("click", (e) => { if (!tapOk(e, "leg")) return; const q = onLeg(map, L, leg, e.latlng); api.current.insertAt(i, q.lat, q.lng); });
       // The hollow dot: drag it out (or tap it) to add an anchor on this leg. Not on a leg shorter
       // than its own hit box on screen, where it would sit on the anchors and steal their taps.
       // Measured along the leg as drawn (a routed leg can loop far from two close anchors), and the

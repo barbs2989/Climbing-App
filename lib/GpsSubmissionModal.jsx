@@ -144,6 +144,7 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
     // Client-side validation
     // MIN_RECORDED_PTS: the map draws no line under 10 points (lib/track.js), and review_gps_submission
     // (0397) refuses one, so a shorter trace is stopped here rather than approved into nothing.
+    if (drawing && drawPending) { setError('A leg of the trail is still being followed. Wait a moment, then submit.'); return }
     if (drawing ? drawPts.length < MIN_RECORDED_PTS : coordinates.trim().length === 0) {
       setError(drawing ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail, one at every bend and fork (you have ' + drawPts.length + ')') : 'Please paste or upload GPS coordinates')
       return
