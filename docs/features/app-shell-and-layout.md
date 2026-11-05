@@ -42,7 +42,9 @@ room for side-panel ads later. The phone app keeps its own look.
     inputs (`.cm-file-input`) are `position:fixed`, so they no longer stretch a popup's backdrop into a
     second scroller that carried Log a climb off the screen. `check:pinned-dismiss` walks every popup.
 - **Desktop (1024px and wider) — the website shell:**
-  - A full-width sticky **top bar** (64px): ☰ Menu at the far left, the ClimbMatch wordmark (→ Home), a
+  - A full-width sticky **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
+    desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
+    26px ClimbMatch wordmark, → Home), a
     search box for every climb and place **centred in the window** (owner 2026-11-04; `WideSearch` sits on
     the 50vw midline out of the row's flow, 220–680px wide so it never reaches either end; `/` jumps to
     it; arrow keys and Enter pick a hit), and at the right Saved · Alerts · Calendar · Messages and your
