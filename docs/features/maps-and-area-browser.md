@@ -9,6 +9,11 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
+  On the website (1024px+) each child's card carries a five-bar **mini grade chart** (`WallGradeBars`, competitor review item 13,
+  2026-11-05): the child's graded climbs banded on its main grading scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, WI, M, aid and
+  class scales have their own five bands), lowest band on the left, read in ONE call for the whole list by `useAreaChildrenGradeCounts`
+  (`area_children_grade_counts`, 0402: the parent's subtree in one pass, each graded route filed under the child whose path label follows
+  the parent's). Ungraded climbs are in no bar; the chart's accessible name says "N of M graded". The phone card is unchanged.
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
 - **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one; past 600 characters it opens at about nine lines with *Read more* / *Show less*, like the route page's comment clamp),
   **AREA FACTS** (rock, which way it faces, elevation, walk-in minutes, parking name, and a 12-month **Season** strip from `areas.season_months`;
