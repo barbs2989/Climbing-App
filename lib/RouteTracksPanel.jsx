@@ -33,7 +33,8 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
   // A walk-in time is not a send time, so a crag offers no Fastest.
   const sorts = crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS;
   const title = crag ? "Climbers' walk-in recordings" : "Climbers' tracks";
-  if (crag && !failed && !loading && !rows.length) return null;
+  // ...and nothing while loading either: a loading row that then collapses would shift the cards under it.
+  if (crag && !failed && (loading || !rows.length)) return null;
   return (
     <section aria-label={title} style={{ marginTop: 12 }}>
       <div style={SH}>{title}{rows.length ? " · " + rows.length : ""}</div>

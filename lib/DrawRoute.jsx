@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { C, CRAG_CATS, catOf, trailheadPoint, uElev, wpIs, wpPlaced } from "../ClimbMatchCore.jsx";
 import TrailDrawMap, { fmtTrailLen, trailLenM } from "./TrailDrawMap.jsx";
@@ -37,6 +37,8 @@ function gpxOf(name, pts, eles) {
 }
 
 export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
+  // The line as anchors + routed points, for the hand-over to the submission sheet (see TrailDrawMap).
+  const shapeRef = useRef([]);
   const crag = CRAG_CATS.includes(catOf(route));
   const th = trailheadPoint(route);
   const start = th && isFinite(Number(th.lat)) && isFinite(Number(th.lng)) ? { lat: Number(th.lat), lng: Number(th.lng) } : null;
@@ -82,14 +84,14 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
     </div>
     <div style={{ padding: "14px 16px 40px", color: C.text }}>
       <p style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, margin: "0 0 12px" }}>{crag ? "Click along the way in, from where you park to the base of the crag. Download it as GPX, or suggest it as this crag’s trail." : "Click along the way in, from the trailhead toward the climb. Download it as GPX to plan with or load on your watch."}</p>
-      <TrailDrawMap start={start} end={endPt} pts={pts} setPts={setPts} C={TOOL_C} marks={marks} title={"Draw the approach · " + route.name} />
+      <TrailDrawMap start={start} end={endPt} pts={pts} setPts={setPts} C={TOOL_C} marks={marks} title={"Draw the approach · " + route.name} onShape={function (s) { shapeRef.current = s; }} />
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
         <div style={stat}><div style={lbl}>Length</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length > 1 ? fmtTrailLen(lenM) : "—"}</div></div>
         <div style={stat}><div style={lbl}>Gain · loss</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length < 2 ? "—" : !p ? <span style={{ fontSize: 13, color: C.textMuted, fontWeight: 600 }}>Measuring…</span> : p.error ? <span style={{ fontSize: 13, color: C.amber, fontWeight: 600 }}>Couldn’t read the terrain</span> : "↑" + uElev(p.gain) + " · ↓" + uElev(p.loss)}</div></div>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
         <button onClick={download} disabled={pts.length < 2} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: pts.length < 2 ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < 2 ? "default" : "pointer" }}>⤓ Download GPX</button>
-        {crag && onSuggest ? <button onClick={function () { onSuggest(pts); }} disabled={pts.length < MIN_RECORDED_PTS} title={pts.length < MIN_RECORDED_PTS ? "Draw at least " + MIN_RECORDED_PTS + " points" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: pts.length < MIN_RECORDED_PTS ? C.card : C.blueSolid, color: pts.length < MIN_RECORDED_PTS ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < MIN_RECORDED_PTS ? "default" : "pointer" }}>Suggest this as the trail</button> : null}
+        {crag && onSuggest ? <button onClick={function () { onSuggest(pts, shapeRef.current); }} disabled={pts.length < MIN_RECORDED_PTS} title={pts.length < MIN_RECORDED_PTS ? "Draw at least " + MIN_RECORDED_PTS + " points" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: pts.length < MIN_RECORDED_PTS ? C.card : C.blueSolid, color: pts.length < MIN_RECORDED_PTS ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < MIN_RECORDED_PTS ? "default" : "pointer" }}>Suggest this as the trail</button> : null}
       </div>
       <p style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5, margin: "12px 0 0" }}>The gain and loss are read from terrain heights along your line, so they follow the ground, not the trail’s switchbacks. A drawn line is a sketch — check it against the map and the ground before you rely on it.</p>
     </div>

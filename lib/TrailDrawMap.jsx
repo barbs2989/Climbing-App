@@ -5,7 +5,7 @@ import { loadLeaflet, applyBaseLayer } from "./mapKit";
 import { loadUnits } from "./units-pref";
 import { MIN_RECORDED_PTS } from "./track";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
-import { routeLeg } from "./trailRouting.js";
+import { distM, routeLeg } from "./trailRouting.js";
 
 // TRACE THE WALK IN ON THE MAP. A crag's trail used to be addable only as a recorded GPX, so the
 // line reached a crag only after someone had walked it with a watch running AND thought to export
@@ -29,12 +29,7 @@ import { routeLeg } from "./trailRouting.js";
 // is submitted.
 function lenM(pts) {
   let m = 0;
-  for (let i = 1; i < pts.length; i++) {
-    const [a, b] = [pts[i - 1], pts[i]];
-    const r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLng = (b[1] - a[1]) * r;
-    const h = Math.sin(dLat / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLng / 2) ** 2;
-    m += 2 * 6371000 * Math.asin(Math.sqrt(h));
-  }
+  for (let i = 1; i < pts.length; i++) m += distM(pts[i - 1], pts[i]);
   return m;
 }
 // In the climber's units (check:units): feet/miles or metres/kilometres.
@@ -46,7 +41,9 @@ export function fmtTrailLen(m) {
 export function trailLenM(pts) { return lenM(pts || []); }
 
 let nextId = 1;
-const node = (a, via) => ({ id: nextId++, a: [+(+a[0]).toFixed(6), +(+a[1]).toFixed(6)], via: via || [], pending: false });
+const round = (p) => [+(+p[0]).toFixed(6), +(+p[1]).toFixed(6)];
+const node = (a, via) => ({ id: nextId++, a: round(a), via: via || [], pending: false });
+const routed = (n) => !!(n && n.via && n.via.length);
 const flatten = (nodes) => { const out = []; nodes.forEach((n, i) => { if (i > 0) out.push(...n.via); out.push(n.a); }); return out; };
 const legPts = (nodes, i) => [nodes[i - 1].a].concat(nodes[i].via, [nodes[i].a]);
 const sameP = (p, q) => !!p && !!q && p[0] === q[0] && p[1] === q[1];
@@ -58,7 +55,10 @@ let followDefault = false;
    T trailhead and S summit / B base on a route that is not a crag. */
 const CRAG_MARKS = { start: "P", end: "C", startName: "the parking pin", endName: "the crag" };
 const HIT = 32; // the whole hit box of an anchor or handle; the dot inside is smaller
-export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title, active }) {
+// `initialShape` / `onShape` carry the line as anchors + routed points between two drawers (the
+// desktop tool hands its line to the submission sheet): flat `pts` alone would come back as one
+// anchor per routed point.
+export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title, active, initialShape, onShape }) {
   const mk = marks || CRAG_MARKS;
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null), drawn = useRef([]);
   // `ready` is a GENERATION, not a flag: the full-screen rebuild sets it to 0 in the cleanup and
@@ -73,7 +73,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const [follow, setFollow] = useState(followDefault);
   const [selectedId, setSelectedId] = useState(null);
   const [note, setNote] = useState("");
-  const [nodes, setNodes] = useState(() => (pts || []).map((p) => node(p)));
+  const [nodes, setNodes] = useState(() => (initialShape && initialShape.length ? initialShape.map((s) => node(s.a, (s.via || []).map(round))) : (pts || []).map((p) => node(p))));
+  const dragging = useRef(false), redrawAfterDrag = useRef(false);
   const nodesRef = useRef(nodes);
   const undoRef = useRef([]), redoRef = useRef([]);
   const [histN, setHistN] = useState({ undo: 0, redo: 0 });
@@ -81,8 +82,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   const viewRef = useRef(null); // {center, zoom} kept across a full-screen rebuild
   const dragEndAt = useRef(0);
   const noteT = useRef(null);
-  const propsRef = useRef({ start, end, follow, setPts });
-  propsRef.current = { start, end, follow, setPts };
+  const propsRef = useRef({ start, end, follow, setPts, onShape });
+  propsRef.current = { start, end, follow, setPts, onShape };
 
   // The caller cleared the line from outside (its own Clear, a new route): follow it, history and
   // all, or Undo would hand the old line back to a caller that just wiped it.
@@ -99,7 +100,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // unmounting it, or a routed line would come back as one anchor per routed point.
   useEffect(() => { if (active !== false && mapRef.current) { const m = mapRef.current; setTimeout(() => { try { m.invalidateSize(); } catch (e) {} }, 60); } }, [active]);
 
-  const setBoth = (next) => { nodesRef.current = next; setNodes(next); propsRef.current.setPts(flatten(next)); };
+  const setBoth = (next) => { nodesRef.current = next; setNodes(next); propsRef.current.setPts(flatten(next)); if (propsRef.current.onShape) propsRef.current.onShape(next.map((x) => ({ a: x.a, via: x.via }))); };
   const say = (s) => { setNote(s); clearTimeout(noteT.current); noteT.current = setTimeout(() => setNote(""), 6000); };
   const abortRoute = (id) => { const c = routing.current.get(id); if (c) { c.abort(); routing.current.delete(id); } };
   // Ask the trails for the leg that ends at node `id`; the answer lands only if both anchors still stand.
@@ -121,12 +122,15 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const next = now.slice();
       next[j] = Object.assign({}, next[j], { via: via || [], pending: false });
       setBoth(next);
-      if (!via) say(tx("Couldn't follow a mapped trail here, so that leg is a straight line. Drag the point, or tap the hollow dot to add one between."));
+      if (via === false) say(tx("The trail router didn't answer (offline, or busy), so that leg is a straight line for now. Tap the point again later, or trace it by hand."));
+      else if (!via) say(tx("Couldn't follow a mapped trail here, so that leg is a straight line. Drag the point, or tap the hollow dot to add one between."));
     });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on.
-  const withLegs = (next, idxs) => {
-    const want = propsRef.current.follow, touched = [];
+  // `keepRouted` is set when the change cut into a leg that WAS routed: that leg stays routed even
+  // with the toggle off, or a nudge of the hollow dot on a switchbacking path would flatten it.
+  const withLegs = (next, idxs, keepRouted) => {
+    const want = propsRef.current.follow || !!keepRouted, touched = [];
     idxs.forEach((i) => {
       if (i < 0 || i >= next.length) return;
       // The first anchor has no leg; a leg of no length (the same spot twice) is straight and silent.
@@ -144,22 +148,25 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     setBoth(next);
     (touched || []).forEach(startRoute);
   };
+  // Undo/Redo. A snapshot taken while a leg was still being looked up keeps that leg pending and
+  // asks again, so Redo across an in-flight route does not quietly leave a straight line.
   const restore = (snap) => {
     routing.current.forEach((c) => c.abort()); routing.current.clear();
-    setBoth(snap.map((n) => (n.pending ? Object.assign({}, n, { pending: false }) : n)));
+    setBoth(snap);
     setSelectedId(null);
+    snap.forEach((n, i) => { if (n.pending && i > 0) startRoute(n.id); });
   };
   const undo = () => { if (!undoRef.current.length) return; redoRef.current.push(nodesRef.current); restore(undoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   const redo = () => { if (!redoRef.current.length) return; undoRef.current.push(nodesRef.current); restore(redoRef.current.pop()); setHistN({ undo: undoRef.current.length, redo: redoRef.current.length }); };
   // A tap on the spot the line already ends at (Finish at C twice, a slow double tap) adds nothing.
   const append = (lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if (cur.length && sameP(cur[cur.length - 1].a, nn.a)) return; const next = cur.concat([nn]); commit(next, withLegs(next, [next.length - 1])); };
-  const insertAt = (i, lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return; const next = cur.slice(); next.splice(i, 0, nn); commit(next, withLegs(next, [i, i + 1])); };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, node([lat, lng]), { id: id }); commit(next, withLegs(next, [i, i + 1])); };
-  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); setSelectedId(null); commit(next, withLegs(next, [i])); };
+  const insertAt = (i, lat, lng) => { const cur = nodesRef.current, nn = node([lat, lng]); if ((cur[i - 1] && sameP(cur[i - 1].a, nn.a)) || (cur[i] && sameP(cur[i].a, nn.a))) return; const next = cur.slice(); next.splice(i, 0, nn); commit(next, withLegs(next, [i, i + 1], routed(cur[i]))); };
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), via: [], pending: false }); commit(next, withLegs(next, [i, i + 1], routed(cur[i]) || routed(cur[i + 1]))); };
+  const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); setSelectedId(null); commit(next, withLegs(next, [i], routed(cur[i]) || routed(cur[i + 1]))); };
   const clearAll = () => { if (!nodesRef.current.length) return; setSelectedId(null); commit([], []); };
   const toggleFollow = () => { followDefault = !follow; setFollow(!follow); };
   const api = useRef(null);
-  api.current = { append, insertAt, moveAnchor, select: (id) => setSelectedId((s) => (s === id ? null : id)) };
+  api.current = { append, insertAt, moveAnchor, select: (id) => setSelectedId((s) => (s === id ? null : id)), flushRedraw: () => { if (redrawAfterDrag.current) { redrawAfterDrag.current = false; setZoomN((z) => z + 1); } } };
 
   // The Leaflet map is rebuilt when the drawer goes full screen or comes back (the box it lives in
   // changes), keeping its centre and zoom, as the route map does (GPXMap).
@@ -218,6 +225,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   useEffect(() => {
     const map = mapRef.current, L = window.L;
     if (!map || !L || !ready) return;
+    // Never tear the layers out from under a drag (a route answer can land mid-drag): redraw when it ends.
+    if (dragging.current) { redrawAfterDrag.current = true; return; }
     drawn.current.forEach((l) => { try { map.removeLayer(l); } catch (e) {} });
     drawn.current = [];
     const keep = (l) => { l.addTo(map); drawn.current.push(l); return l; };
@@ -236,20 +245,22 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (Math.hypot(pa.x - pb.x, pa.y - pb.y) < HIT + 12) continue;
       const mid = leg[Math.floor((leg.length - 1) / 2)], mid2 = leg[Math.ceil((leg.length - 1) / 2)];
       const h = keep(L.marker([(mid[0] + mid2[0]) / 2, (mid[1] + mid2[1]) / 2], { draggable: true, keyboard: false, bubblingMouseEvents: false, icon: dot(14, "rgba(0,0,0,0.45)", C.warning) }));
-      h.on("dragend", () => { dragEndAt.current = Date.now(); const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
+      h.on("dragstart", () => { dragging.current = true; });
+      h.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); api.current.flushRedraw(); });
       h.on("click", (e) => { L.DomEvent.stop(e); const q = h.getLatLng(); api.current.insertAt(i, q.lat, q.lng); });
     }
     nodes.forEach((n, i) => {
       const last = i === nodes.length - 1, sel = n.id === selectedId;
       const m = keep(L.marker(n.a, { draggable: true, keyboard: false, autoPan: true, bubblingMouseEvents: false, icon: dot(last ? 18 : 14, C.warning, "#fff", sel ? C.accent : null) }));
-      m.on("dragend", () => { dragEndAt.current = Date.now(); const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); });
+      m.on("dragstart", () => { dragging.current = true; });
+      m.on("dragend", () => { dragEndAt.current = Date.now(); dragging.current = false; const q = m.getLatLng(); api.current.moveAnchor(n.id, q.lat, q.lng); api.current.flushRedraw(); });
       m.on("click", (e) => { L.DomEvent.stop(e); api.current.select(n.id); });
     });
   }, [nodes, ready, zoomN, start, end, selectedId, C.accent, C.warning, mk.start, mk.end]);
 
   const flat = flatten(nodes), n = flat.length, selected = selectedId != null && nodes.some((x) => x.id === selectedId);
   const anyPending = nodes.some((x) => x.pending);
-  const atEnd = !!(end && n && sameP(flat[n - 1], node([end.lat, end.lng]).a));
+  const atEnd = !!(end && n && sameP(flat[n - 1], round([end.lat, end.lng])));
   const btn = { padding: "8px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.bg70, color: C.text, fontSize: 13, fontWeight: 600, cursor: "pointer" };
   const off = { opacity: 0.4, cursor: "default" };
   const b = (on) => (on ? btn : Object.assign({}, btn, off));
@@ -272,9 +283,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
         {end ? <button onClick={() => append(end.lat, end.lng)} disabled={!n || atEnd} style={b(n && !atEnd)}>{"Finish at " + mk.end}</button> : null}
         <button onClick={undo} disabled={!histN.undo} style={b(histN.undo)}>Undo</button>
         <button onClick={redo} disabled={!histN.redo} style={b(histN.redo)}>Redo</button>
-        {selected ? <button onClick={() => deleteAnchor(selectedId)} style={Object.assign({}, btn, { borderColor: C.error, color: C.error })}>Delete point</button> : null}
+        {selected ? <button onClick={() => deleteAnchor(selectedId)} style={Object.assign({}, btn, { border: "1px solid " + C.error, color: C.error })}>Delete point</button> : null}
         <button onClick={clearAll} disabled={!n} style={b(n)}>Clear</button>
-        <button onClick={toggleFollow} aria-pressed={follow} style={Object.assign({}, btn, follow ? { borderColor: C.accent, color: C.accent } : {})}>{"Follow trails" + (follow ? ": on" : ": off")}</button>
+        <button onClick={toggleFollow} aria-pressed={follow} style={Object.assign({}, btn, follow ? { border: "1px solid " + C.accent, color: C.accent } : {})}>{"Follow trails" + (follow ? ": on" : ": off")}</button>
       </div>
       {note ? <div role="status" style={{ fontSize: 12, color: C.warning, margin: "8px 0 0", lineHeight: 1.45 }}>{note}</div> : null}
       <p style={{ fontSize: 12, color: C.text70, margin: "8px 0 0", lineHeight: 1.45 }}>
