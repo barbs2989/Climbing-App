@@ -81,7 +81,7 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   is not a chip picker but the route's own discipline, a High · locked chip and a *Flag it* button
   (through `openFlag`, field `discipline`) — discipline has no pencil or heading chip on the page, so
   without that button a climber could not flag it at all. Only a route with NO discipline keeps the
-  chip picker (`discLocked` false), and only then does the sheet send a `discipline` / `rockStyle` edit.
+  chip picker (`discLocked` false), and only then does the sheet send a `discipline` / `rockStyle` edit. `discLocked` follows the page’s confidence level (so the owner’s hand-set level unlocks the card like any field), falls back to "a discipline is on file" when no level has loaded, and is never set for an admin — the database lets admins through the lock, and an admin is the only one who can correct a filed discipline. A climber’s pending discipline suggestion shows as *Awaiting review* with the picker hidden.
 - **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
   sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show
   the database's sentence.
@@ -216,7 +216,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
 | `supabase/migrations/0351_a_removal_waits_for_the_owner.sql` | `contributions.reason`, `route_field_page_value`, `_edit_removes`, `contribution_consensus` with the removal exit |
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
-| `supabase/migrations/0406_discipline_is_locked.sql` | `_route_field_level_for` with `discipline` / `rockStyle` always high |
+| `supabase/migrations/0406_discipline_is_locked.sql` | `_route_field_level_for` with `discipline` / `rockStyle` high once on file |
 | `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
 | `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |
 | `supabase/migrations/0382_every_route_edit_waits_for_the_owner.sql` | `contribution_consensus` reduced to the removal mark, `guard_contribution_status` without the consensus exit, the insert-time grade write-back dropped |
