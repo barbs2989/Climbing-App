@@ -31,7 +31,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     so the dialog can be thousands of characters past the state name, and on a 428,000-char
     file there is no safe window size. And **the dialog must be the region's own first
     element**: `openGroupId` renders a full-screen group view whose nested `ReactionPicker`
-    puts `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
+    (a dialog until 2026-11-05) put `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
     classify every screen large enough to contain a modal as a modal.
   - Brace-matching runs over **raw source**, deliberately *not* the comment/string blanker
     that `check:seed-history` and `check:dead-flag-gates` use. That blanker treats every
