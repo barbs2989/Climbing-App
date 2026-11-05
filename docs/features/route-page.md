@@ -185,7 +185,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/ItineraryView.tsx` | `ItineraryView` — the day-by-day trip plan on the Plan tab, and its editor (moved out of RouteDetail.jsx, PR58) |
 | `src/components/Calculator.tsx` | `Calculator` — the Planner's time estimate: fitness, pack, the legs and the start time (moved out of RouteDetail.jsx, PR58) |
 | `src/components/TechStats.tsx` | `TechStats` — TECH STATS: grade, length, pitches, commitment and the crag fact rows (moved out of RouteDetail.jsx, PR58) |
-| `src/components/WeatherPanel.tsx` | `WeatherPanel` — Forecast at key points / at the crag: one card per point, one tile per day (moved out of RouteDetail.jsx, PR58) |
+| `src/components/WeatherPanel.tsx` | `WeatherPanel` — Forecast at key points / at the crag: one card per point, one tile per day; on the website a POINT SWITCH (`aria-pressed` pills naming each key point) shows one point's week at a time (competitor review batch B, item 14, owner 2026-11-04), the phone stacks every point (moved out of RouteDetail.jsx, PR58) |
 | `lib/routeKw.js` | `routeKw`, `HAZ_KW` — the keyword scan of a route's text and reports for hazards and conditions (moved out of RouteDetail.jsx, PR58) |
 | `lib/seasonText.js` | `seasonTidy`, `seasonShort` — how a season string is tidied and shortened for the header strip (re-exported by RouteDetail.jsx) (moved out of RouteDetail.jsx, PR58) |
 | `lib/pitchAnchors.js` | `anchorKind`, `pitchAnchorSummary`, `pitchShortfall` — how pitch anchors are classed and summarised, and whether fewer pitches are described than stated (moved out of RouteDetail.jsx, PR58) |
