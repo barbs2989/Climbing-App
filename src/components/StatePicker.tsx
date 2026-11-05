@@ -19,12 +19,14 @@ export interface StatePickerProps {
 export default function StatePicker({ onPick, C }: StatePickerProps) {
   const { data: countries, isLoading: lc, error: ec } = useCountries();
   const { data: states, isLoading, error } = useStates();
-  // null = the climber has not chosen yet. On the WEBSITE that opens on the United States (owner
-  // 2026-11-04: the tab opened on two country chips over "Choose a country above" — an empty page);
-  // a phone still asks. Clicking the chosen country still clears it (""), as before.
+  // null = the climber has not chosen yet. The tab OPENS ON THE UNITED STATES (owner 2026-11-04: the
+  // website's tab opened on two country chips over "Choose a country above" — an empty page; later
+  // that day, from the competitor review, the phone too: it opened on two empty selects, and every
+  // competitor opens on a list). Canada is one tap away in the select. Clicking the chosen country
+  // still clears it (""), as before.
   const [countryId, setCountryId] = useState<string | null>(null);
   const wide = useWideScreen();
-  const usId = wide && countries ? (countries.find(c => c.name === "United States") || { id: "" }).id : "";
+  const usId = countries ? (countries.find(c => c.name === "United States") || { id: "" }).id : "";
   // One country is not a choice, it is a dead tap — so skip the step until there are two.
   // The catalog ran on a single root for its whole life and would have shown a pointless
   // "pick a country" select the entire time.
