@@ -77,9 +77,13 @@ room for side-panel ads later. The phone app keeps its own look.
     only where it would come within 24px of the sidebar or rail (`wideGeom`: 1280 → column 276–928, rail
     952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
     side ads can go later.
-  - A site **footer** under every page: ClimbMatch links, Legal links, ©. It is the ONLY home of About,
+  - A site **footer** under every page, Strava-style (owner 2026-11-04: "look how strava does it …
+    more branding"): a card with the mark, wordmark and one line on what the app is for, three link
+    columns (Explore: the tabs; ClimbMatch: How it works, About us, Feedback, Rate the app, Settings;
+    Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
-    the Climbs tab and its route and area pages only (owner 2026-11-04, `showStates`).
+    the Climbs tab's route and area pages only (owner 2026-11-04, `showStates`); not the tab's own
+    root, where the state picker above already lists every state under the country buttons.
   - **☰ Menu** fills the whole window, as on a phone, with its content centred in a 720px column.
   - **Full-screen views are pages.** Every view that covers the phone screen (Calendar, Messages, Edit
     profile, a group, an event, Settings' sub-pages, Best day, Manage areas, Terms…) is drawn in the
@@ -134,6 +138,16 @@ room for side-panel ads later. The phone app keeps its own look.
     never hits a hidden Delete; it keeps the swipe. Rows that already act in-row get no column: a Past
     crew card has its own Archive and Clear buttons, a notification its ⋯ menu, a float plan its
     two-step Delete.
+  - **Controls are website-height** (owner 2026-11-04, "are buttons and things too large on the desktop
+    view?" — "do what you recommend"): a census at 1440px put the text at a median 13.8px rendered, level
+    with Mountain Project and Strava, but the controls at a median 44–48px against their 35–43: the phone's
+    44px touch minimum times the 1.1 zoom. The zoom stays and one `wideCss` block trims the controls,
+    matched on the serialised inline style like the rules around it: the two floors index.html sets
+    (every select 44px, every box-shaped button 40px) become 38 / 34, an inline `minHeight` of 44–46 or 48
+    becomes 38 / 40 where the box rule does not reach (flex rows), a fixed 48px tile 40, and the unified
+    `BTN` / `BTN_LG` paddings lose 2–3px. Buttons and selects only; popupChrome's ✕ / Back keep their 48px
+    (told apart by their 24px radius). After: Home's median control 53 → 42px rendered, Crews 45 → 41,
+    Logbook 44 → 39; the phone measures the same as before.
   - **Chip rows wrap** instead of scrolling sideways off the column (a `wideCss` rule for every
     `display:flex` + `overflow-x:auto` row in the page column or a page); a row holding photos (at any depth) and
     the hour picker keep scrolling.
