@@ -1,5 +1,6 @@
 import { C, wpPlaced, wpIs, ROUTE_GAP, RSL as SL, wpType, wpColor, wpGlyph, uElev, DLOCALE, uTemp, uWind, uPrecip, uSnowfall, uTempDelta } from "../../ClimbMatchCore.jsx";
 import { useState, useEffect } from "react";
+import { useWideScreen } from "../../lib/wideLayout.js";
 import type { CSSProperties } from "react";
 import { fetchForecastRaw, nwsHeightShiftF } from "../../lib/forecast";
 import CardHead from "./CardHead.tsx";
@@ -183,6 +184,8 @@ function pickForecastWaypoints(waypoints: WxWaypoint[] | null | undefined){
 }
 /* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
 export default function WeatherPanel({waypoints,showPlan,fallback,crag}: WeatherPanelProps){
+  /* ONE POINT AT A TIME ON THE WEBSITE (competitor review batch B, item 14, owner 2026-11-04): with three or four key points each carrying seven day tiles, the section ran four screens long; at 1024px+ a switch names the points (trailhead, camp, summit…) and the chosen one's week shows as a row of tiles — the table — with the others a click away. The phone keeps every point stacked. */
+  const wide=useWideScreen();const [ptSel,setPtSel]=useState(0);
   const _picked=crag?[]:pickForecastWaypoints(waypoints);
   const points=_picked.length||!fallback?_picked:[fallback];
   const [data,setData]=useState<Record<string,WxEntry>>({});
@@ -334,7 +337,8 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
      Reads from the shared WP_STYLE now, like everything else. */
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL>{crag?"Forecast at the crag":"Forecast at key points"}</SL>
-    <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
+    {wide&&!crag&&points.length>1?<div role="group" aria-label="Forecast point" style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{points.map(function(w,i){const on=i===Math.min(ptSel,points.length-1);const col=wpColor(wpType(w));return <button key={w.type+"_"+w.name} onClick={function(){setPtSel(i);}} aria-pressed={on} style={{display:"inline-flex",alignItems:"center",gap:6,padding:"7px 12px",borderRadius:16,border:"1px solid "+(on?C.blueDim:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}><span aria-hidden="true" style={{color:col,fontSize:12}}>{wpGlyph(wpType(w))}</span>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</button>;})}</div>:null}
+    <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{(wide&&!crag&&points.length>1?[points[Math.min(ptSel,points.length-1)]]:points).map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
         <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>

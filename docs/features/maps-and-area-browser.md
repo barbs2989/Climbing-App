@@ -9,15 +9,26 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
+  On the website (1024px+) each child's card carries a five-bar **mini grade chart** (`WallGradeBars`, competitor review item 13,
+  2026-11-05): the child's graded climbs banded on its main grading scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, WI, M, aid and
+  class scales have their own five bands), lowest band on the left, read in ONE call for the whole list by `useAreaChildrenGradeCounts`
+  (`area_children_grade_counts`, 0402: the parent's subtree in one pass, each graded route filed under the child whose path label follows
+  the parent's). Ungraded climbs are in no bar; the chart's accessible name says "N of M graded". The phone card is unchanged.
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
 - **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one; past 600 characters it opens at about nine lines with *Read more* / *Show less*, like the route page's comment clamp),
   **AREA FACTS** (rock, which way it faces, elevation, walk-in minutes, parking name, and a 12-month **Season** strip from `areas.season_months`;
-  a fact that is not stored is not printed), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
+  a fact that is not stored is not printed; on the website a **MOST LOGGED HERE** strip beside Season — `LoggedMonthStrip`, twelve bars from
+  `useAreaLoggedMonths` / `area_logged_months` (0403): every visible log under the area by calendar month, counts only, nobody named, its label
+  naming the months at half the peak or more (`loggedTopMonths`) and the total), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
   `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
-  (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
+  (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out; on the website the two sit **side by side**,
+  the spread as its own card (`standalone`, when `hasGradeSpread`), and under them the finder's form sits **inline** (`RouteFinderInline`:
+  type, a grade range on that type's scale with its top preset to the climber's own profile grade, sort; *Find climbs* opens the Route finder
+  with exactly those filters through `onFinder`, the way a saved search opens — the phone keeps the Route finder button; competitor review
+  item 15, 2026-11-05), **GETTING THERE** (`AreaGettingThere`:
   `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; and, when the crag has an approved walk in (`areas.walkin_gpx`, 0397), *Trail to the crag* with its length and a `WalkInMap` of the line over P and C; *Add the parking pin* where none is
   on file and *Move the pin* under one open the sheet at the pin), **CLASSIC CLIMBS HERE**
-  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows, then a *Show all N classic climbs* dropdown with the rest
+  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows — one-line rows on the website (`RouteRow` `dense`) — then a *Show all N classic climbs* dropdown with the rest
   (owner, 2026-10-29). On a wall, `areaClassics` over its loaded rows: climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
   or a 3.5+ climber rating (`stars`), best first (0393 `classic_score`, a vote-weighted star average flag-classics writes, else guidebook stars, else ours — a sort key that renders nowhere); with none, **TOP RATED HERE**, up to five routes by `stars`. On every area ABOVE a
   wall — a crag of walls, a region, a state — `useAreaClassics` (0391 `area_classics`, up to 500 rows plus the full `total`; the open list
@@ -92,7 +103,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
-  *Save search* writes the account's `saved_searches` (see `docs/features/logbook-crews-home.md`); a saved one reopens the finder through `jumpToFinderReq` with its `initial` words and filters.
+  The website header's typed search opens the finder through `jumpToFinderReq` with `initial` words and filters (there is no *Save search* any more; saved searches were removed 2026-11-05).
   **Since 0369 (2026-10-24)** it also filters by **Distance away** (second in the sheet, under Discipline: *Use my location* or a town / zip through
   `searchPlaces`, then Within 10/25/50/100 mi or 15/40/80/150 km, plus a *Nearest first* sort grouped by wall), **Elevation gain**
   and **Round trip** (ranges), **Peak elevation** and **Prominence** (minimums), as AllTrails does gain, length and Distance
@@ -250,7 +261,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - Conditions score, alpine flags and fire layers use the same Leaflet kit (`FireMap`, `ShadeMap`).
 - Units: distances and elevations render through `uDistMi` / `uElev` (`check:units`).
 - Partners: By Area search picks an area from the same tree (see `docs/features/partners.md`). **Partners here** (0300): every crag-family area page and its
-  ancestors below the state (`PARTNER_CARD_TYPES` — never a peak or a state) draws `PartnersHereCard`: how many climbers are listed here or nearby, up to three rows
+  ancestors below the state (`PARTNER_CARD_TYPES` — never a peak or a state) draws `PartnersHereCard`: the **Crag regular** (competitor review item 22, 2026-11-05 — Strava's Local Legend: the climber with the most logged DAYS under the area in the last 90, two at least, from `useCragRegular` / `crag_regular` 0404, signed-in only, the same people the boards rank, counts only; the row opens their profile; nothing is drawn when nobody has two days or the read failed), how many climbers are listed here or nearby, up to three rows
   (the row component arrives from App as the `PartnerRow` prop — this file does not import core), a one-tap **List me here / Listed ✓** that writes this area's listing,
   "Add dates or climbing types" (a full-width card button, shown once listed) into the My listed areas sheet (`onListMe`), and "See all →" into the Partners tab on this area (`onFindPartnersInArea`). Signed out it asks for sign-in.
   `check:area-surfaces` rule 3 pins it. Its crews row (0302): **Start a crew here** (`onStartCrew` → `StartCrewSheet` prefilled with this area) and **Crews here · N**

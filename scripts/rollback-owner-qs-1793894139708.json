@@ -1,0 +1,589 @@
+{
+ "note": "full rows before apply-owner-qs.mjs; restore a patch with patchRow, a delete by re-inserting `before`",
+ "at": "2026-11-05T15:55:39.948Z",
+ "steps": [
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_luna_peak_southwest_ridge",
+    "area_id": "wa_luna_peak",
+    "name": "Southwest Ridge",
+    "expect": {
+     "face": "Southeast basin/shoulder"
+    },
+    "set": {
+     "face": "Southwest ridge from Luna Col, over the lower south summit to the true summit"
+    }
+   },
+   "before": {
+    "id": "wa_luna_peak_southwest_ridge",
+    "area_id": "wa_luna_peak",
+    "name": "Southwest Ridge",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "pitches": null,
+    "length_m": 335,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Bill Cox and Will F. Thompson (1938)",
+    "lat": null,
+    "lng": null,
+    "aspect": "SW",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "ice axe",
+     "helmet",
+     "microspikes or crampons — snow lingers in the Access Col/Luna Pass gullies well into July",
+     "optional 30–35m rope and a few slings/light pro for parties wanting a running belay across the false-to-true-summit traverse (most parties solo this unroped in normal summer conditions)",
+     "bear canister (free loaner available at the Wilderness Information Center in Marblemount)",
+     "insect head net — mosquitoes and ground-nesting bees are common in the forested approach"
+    ],
+    "hazards": [
+     "extreme remoteness — a multi-day, largely off-trail approach with no cell coverage; a serious injury near the summit realistically requires helicopter evacuation, not a ground carry-out",
+     "brushy, steep approach through the Access Creek basin choked with devil's club and slide alder; the first off-trail quarter-mile alone can take over an hour",
+     "cold, thigh-to-waist-deep fords of Big Beaver Creek and Access Creek",
+     "lingering snow/ice in the gullies to Access Col and on Luna Pass well into July",
+     "~4,000 ft of sustained, continuous exposure on the Class 3–4 traverse between the false and true summits",
+     "sparse cairns and genuine route-finding difficulty across the cross-country basins in poor visibility",
+     "ground-nesting bees/wasps encountered by multiple parties in the forested sections"
+    ],
+    "verif": null,
+    "overview": "Luna Peak is the highest summit of the Picket Range and a coveted viewpoint over the savage skyline of the Southern and Northern Pickets. First climbed in September 1938 by Bill Cox and Will F. Thompson, it is also one of Washington's highest-prominence peaks (required for the WA 2,000+ ft prominence list). No maintained trail reaches the mountain — the standard line is a long, remote, largely off-trail approach via Big Beaver and Access Creek, making this one of the more committing 'moderate' summits in the Cascades despite its modest Class 3 technical grade.",
+    "beta": "Access from Luna Cirque via Access Creek, ascend steep gullies to southeast ridge, traverse to southwest ridge with exposed Class 3 summit traverse on loose rock. Crux is 5 feet exposed between false and true summit.",
+    "turnaround": "Plan to summit by early afternoon for safe descent. Do not continue if more than 2 hours from summit by 2 PM. Weather deteriorates rapidly; 15-minute window can close within minutes.",
+    "auto_generated": false,
+    "alpine_grade": "II",
+    "rock_grade": "Class 2-3 (Class 3 on the exposed summit traverse)",
+    "ice_grade": null,
+    "gain_ft": 8700,
+    "loss_ft": 8700,
+    "dist_km": 38.62,
+    "max_angle": 45,
+    "rappels": "0",
+    "commitment": "II",
+    "face": "Southeast basin/shoulder",
+    "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+    "comms": "Cell/satellite communication absent in remote Picket Range. Satellite messengers (InReach, spot) strongly recommended for emergency use. Contact rangers before departure.",
+    "descent": "Reverse the route: downclimb the Class 3–4 traverse to the false summit, descend the broad ridge's Class 2 talus (~1,100 ft) back to Luna Pass, then retrace the basin traverse, Access Col gully, and Access Creek/Big Beaver Creek fords back to the Big Beaver Trail.",
+    "obj_haz": [
+     "avalanche",
+     "rockfall",
+     "exposure"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 2150,
+      "name": "Ross Dam Trailhead",
+      "note": "SR 20 MP 134 pullout (4 cars + 2 ADA spots), just past the winter closure gate; no day-use fee, but a backcountry permit from the Marblemount Wilderness Info Center is required to camp.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive SR-20 (the North Cascades Highway) to the Ross Dam Trailhead pullout at milepost 134, around 2,050 feet, just past the winter closure gate — room for about four cars plus two ADA spots, and no day-use fee. From the trailhead, an 0.8-mile trail drops to Ross Lake, where a boat shuttle covers roughly nine miles up-lake to the Big Beaver Trailhead: the seasonal Ross Lake Resort water taxi, or a paddled canoe or packraft if you don't have a shuttle reservation. The shuttle's season and hours govern when you can actually reach the trailhead, so check its schedule before planning dates — it typically runs late May through early October. Camping requires a backcountry permit from the Marblemount Wilderness Information Center."
+     },
+     {
+      "lat": 48.732728,
+      "lng": -121.068851,
+      "elev": 1600,
+      "name": "Ross Dam / Ross Lake crossing",
+      "note": "Trail drops 0.8 mi to Ross Dam; cross the dam and either hike the Ross Lake shoreline or catch the seasonal water taxi (reserve through Ross Lake Resort) north to the Big Beaver Trailhead.",
+      "type": "Junction",
+      "distMi": 0.8
+     },
+     {
+      "lat": 48.804764,
+      "lng": -121.141222,
+      "elev": 1700,
+      "name": "39 Mile Camp",
+      "note": "Small 3-site camp on Big Beaver Creek near a stand of ancient red cedars; water at the 39 Mile Creek crossing, no bear box so hang food carefully.",
+      "type": "Water",
+      "distMi": 12
+     },
+     {
+      "lat": 48.834965,
+      "lng": -121.201375,
+      "elev": 2518,
+      "name": "Luna Camp",
+      "note": "Last maintained-trail camp before leaving Big Beaver Trail; onward travel to Access Creek is off-trail bushwhacking.",
+      "type": "Campsite",
+      "distMi": 16
+     },
+     {
+      "lat": 48.836194,
+      "lng": -121.229442,
+      "elev": 3900,
+      "name": "Big Beaver Creek ford / Access Creek brush",
+      "note": "Waist-deep ford of Big Beaver Creek (a logjam crossing exists downstream) followed by dense alder-swath bushwhacking up the Access Creek drainage.",
+      "type": "Hazard",
+      "distMi": 19
+     },
+     {
+      "lat": 48.830089,
+      "lng": -121.244193,
+      "elev": 4300,
+      "name": "Access Creek Basin",
+      "note": "Boulder-strewn basin used as base camp, with a flat-top boulder as a common tent platform; last reliable water before the high traverse to Luna Pass.",
+      "type": "Campsite",
+      "distMi": 20
+     },
+     {
+      "lat": 48.824542,
+      "lng": -121.269316,
+      "elev": 7200,
+      "name": "Luna Pass",
+      "note": "Gains the Luna Cirque high country via the Access Couloir/Col; established tent sites 50 ft above the pass to the north mark the start of the southeast-slopes scramble.",
+      "type": "Junction",
+      "distMi": 22
+     },
+     {
+      "lat": 48.83056,
+      "lng": -121.27306,
+      "elev": 8311,
+      "name": "Luna Peak",
+      "note": "From the Class 2-3 false summit, downclimb the exposed Class 4 chimney then traverse narrow ledges on the east face (running belay recommended) to the true summit.",
+      "type": "Summit",
+      "distMi": 23
+     },
+     {
+      "lat": 48.8395,
+      "lng": -121.209,
+      "name": "Access Creek crossing (larger log jam)",
+      "type": "Junction",
+      "distMi": null,
+      "elevFt": null
+     }
+    ],
+    "gpx": [
+     [
+      48.775623,
+      -121.057992
+     ],
+     [
+      48.775488,
+      -121.057934
+     ],
+     [
+      48.775469,
+      -121.057945
+     ],
+     [
+      48.775469,
+      -121.057945
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": [
+     "scrambling",
+     "mountaineering"
+    ],
+    "timing": {
+     "totalHrs": 30,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": 9,
+     "approachTimeHrs": 9,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 9,
+       "note": "A long approach day: drop to Ross Lake and take the water taxi (or walk the lakeshore trail) to the Big Beaver trailhead, then follow the Big Beaver Trail roughly 10-11 miles past …",
+       "fromTo": "Ross Dam to Access Creek basin camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "Climb the steep, loose Access Col chute, cross the open basins below Luna's south face to Luna Pass, then follow Class 2 talus up the broad southeast slopes to the false summit bef…",
+       "fromTo": "Summit day via Access Col and the SE slopes",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9,
+       "note": "Reverse the approach: descend Access Creek back to the Big Beaver Trail, hike the ~10-11 miles out, and take the water taxi or lakeshore trail back to the Ross Dam trailhead.",
+       "fromTo": "Hike out to Ross Dam",
+       "section": "Descent"
+      }
+     ]
+    },
+    "detailed_rack": "Optional: 50-60m rope for belayed crux; many solo. Minimal rock gear.",
+    "what_to_bring": [
+     "ice axe",
+     "navigation and maps",
+     "multi-day overnight kit",
+     "bear canister",
+     "helmet — essential"
+    ],
+    "pro_tips": [
+     "Reserve the seasonal Ross Lake Resort water taxi to the Big Beaver trailhead — it cuts up to ~14 round-trip miles of lakeshore walking versus hiking from Ross Dam",
+     "Camp on the flat boulder/heather bench in the upper Access Creek basin (~3,900–4,500 ft) to shorten summit day and get the brush behind you early",
+     "Borrow a free bear canister at the Wilderness Information Center in Marblemount when picking up your permit",
+     "Book your Recreation.gov backcountry permit as soon as the season opens (late April) — the Access Creek/Luna Camp zone quotas fill fast for summer weekends"
+    ],
+    "watch_out": [
+     "The false-summit-to-true-summit traverse looks intimidating from a distance but is only Class 3–4 on solid rock — most parties do it unroped; needing a rope here is generally a sign to turn around, not to push on",
+     "Devil's club and slide alder in the Access Creek brush hide slick logs and holes — expect slow going and consider gaiters/long sleeves",
+     "Big Beaver and Access Creek fords are cold and can run thigh-to-waist deep even in August after a warm spell",
+     "Cairns are sparse across the cross-country basins between Access Col and Luna Pass; a whiteout here makes route-finding genuinely difficult",
+     "Mosquitoes are thick at the Luna Lake camps and in the upper basins in early July; bring a head net."
+    ],
+    "pro_needs": "Varies by experience. Single 50m rope with harness/slings for crux. Self-rescue knowledge essential.",
+    "best_season": "Late July through September gives the most reliable snow-free travel on the approach gullies and summit traverse. Strong parties with scrambling/glacier travel experience have climbed as early as late June, carrying an ice axe and microspikes/crampons for lingering snow on Access Col and Luna Pass. The Ross Lake Resort water taxi, which meaningfully shortens the approach, operates only roughly June through October.",
+    "high_point_ft": 8311,
+    "aid_grade": null,
+    "approach": "From the Ross Dam Trailhead (SR-20 milepost 134), cross Ross Dam and work around the lake to the Big Beaver Trail, or save about 7 miles by taking the lake boat shuttle to Big Beaver landing. Follow Big Beaver Trail past Luna Camp, roughly 10 miles up from the landing, and leave it about 1.5 miles beyond the camp at a big cairn on the left. Drop through forest to Big Beaver Creek, ford it since logs are not dependable, then traverse southwest through alder thickets to the head of Access Creek, crossing it near 3900 ft and camping in the meadow near 4200 ft. From there climb about 2000 ft of loose gully to the col that opens onto the southwest ridge, and make an ascending traverse to the next col at the edge of the ridge, where the climbing starts.",
+    "descent_text": "Descend the way you came. From the summit, work back along the ramps and ledges on the southeast side to the false summit, then downclimb the class 3 rock of the southwest ridge to the col. The step between the two summits is very exposed and a fall there would be fatal, so move carefully and avoid wet rock. From the col, retrace the traverse to the upper col and descend the gully to the Access Creek meadows, which becomes a loose rock pile late in the season, so stay close together or out of each other's fall line and wear helmets. Then bushwhack back to Big Beaver Creek, ford it, and walk the Big Beaver trail out to the Ross Lake landing.",
+    "bail": "Retreat means reversing the lengthy approach; commit only with stable weather and adequate supplies.",
+    "pitch_detail": [
+     {
+      "grade": null,
+      "notes": "High camp near Access Creek headwaters (~3,650-4,100 ft) up scree/talus and a dirt-filled gully to a col near 5,800-6,300 ft.",
+      "pitch": "Approach gully"
+     },
+     {
+      "grade": "Class 2",
+      "notes": "Heather, talus, and snowfield traverse across southeast-facing slopes to Luna Pass (~7,200 ft).",
+      "pitch": "Traverse"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Continue across the southeast slopes from Luna Pass to the false summit, staying off the broad south ridge.",
+      "pitch": "Southeast slopes"
+     },
+     {
+      "grade": "Class 3-4",
+      "notes": "~500 ft of loose, exposed ridge from the false summit to the true summit; one party reported a ~15 ft Class 4 chimney off the false summit followed by narrow ledges. Following east-side ledges avoids most Class 4 moves.",
+      "pitch": "Ridge traverse"
+     }
+    ],
+    "itinerary": {
+     "cal": "North Cascades NP requires a backcountry wilderness permit for the Access Creek camp; Ross Lake Resort's water taxi, which saves ~6 miles of lakeshore hiking, typically runs late May through early October.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A long approach day: drop to Ross Lake and take the water taxi (or walk the lakeshore trail) to the Big Beaver trailhead, then follow the Big Beaver Trail roughly 10-11 miles past Luna Camp before leaving maintained trail to bushwhack and boulder-hop up the brushy Access Creek drainage to a high camp near 4,300-4,500 ft.",
+       "hours": 9,
+       "miles": 19,
+       "title": "Ross Dam to Access Creek basin camp",
+       "gainFt": 3400,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave Ross Dam trailhead",
+         "detail": "Descend ~1 mile to the Ross Lake shoreline."
+        },
+        {
+         "time": "~5:30 AM",
+         "label": "Water taxi across Ross Lake",
+         "detail": "Cuts several miles versus the lakeshore trail; book ahead with Ross Lake Resort."
+        },
+        {
+         "time": "~8:00 AM",
+         "label": "Big Beaver Trail begins",
+         "detail": "Steady, well-graded trail past Big Beaver Camp."
+        },
+        {
+         "time": "~1:00 PM",
+         "label": "Leave the maintained trail near Luna Camp",
+         "detail": "~10-11 miles in; cross Big Beaver Creek toward Access Creek."
+        },
+        {
+         "time": "~2:30 PM",
+         "label": "Ascend Access Creek basin",
+         "detail": "Brushy climbers' path with cairns, alternating creek banks to dodge slide alder."
+        },
+        {
+         "time": "~6:30-7:00 PM",
+         "label": "Make camp",
+         "detail": "Flat sites near 4,300-4,500 ft at the Access Creek headwaters."
+        }
+       ],
+       "objective": "Reach high camp near 4,300 ft in the Access Creek headwaters"
+      },
+      {
+       "n": 2,
+       "note": "Climb the steep, loose Access Col chute, cross the open basins below Luna's south face to Luna Pass, then follow Class 2 talus up the broad southeast slopes to the false summit before crossing the narrow, exposed Class 3-4 ridge to the true summit. Round trip from camp typically runs 10-12 hours.",
+       "hours": 12,
+       "miles": 10,
+       "title": "Summit day via Access Col and the SE slopes",
+       "gainFt": 4600,
+       "lossFt": 4600,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave high camp",
+         "detail": "Light day packs; aim to be off the summit before any afternoon buildup."
+        },
+        {
+         "time": "+1.5-2 hr",
+         "label": "Top of Access Col",
+         "detail": "Steep, loose scree/talus chute out of the basin."
+        },
+        {
+         "time": "~4.6 hr from camp",
+         "label": "Reach Luna Pass (Luna-McMillan Col)",
+         "detail": "Cross-country across snowfields/talus below Luna's south face."
+        },
+        {
+         "time": "~10:30-11:00 AM",
+         "label": "False summit",
+         "detail": "Class 2-3 talus, ~1,100 ft above the pass."
+        },
+        {
+         "time": "~11:30 AM-12:00 PM",
+         "label": "True (east) summit",
+         "detail": "Exposed Class 3-4 ridge traverse; some parties bring a rope for a hand line here."
+        },
+        {
+         "time": "~5:00-6:00 PM",
+         "label": "Back at camp",
+         "detail": "Reverse the entire route."
+        }
+       ],
+       "objective": "Climb Luna Peak and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: descend Access Creek back to the Big Beaver Trail, hike the ~10-11 miles out, and take the water taxi or lakeshore trail back to the Ross Dam trailhead.",
+       "hours": 9,
+       "miles": 19,
+       "title": "Hike out to Ross Dam",
+       "gainFt": 700,
+       "lossFt": 3400,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A remote 3-day trip out of Ross Dam: roughly 48 mi round trip with one high camp near 4,300 ft in the Access Creek basin, and a long 10-12 hr summit day with real Class 3-4 scrambling near the top."
+    },
+    "access": {
+     "fees": "$10 per person plus a $6 non-refundable reservation fee for advance backcountry reservations (walk-up permits carry no fee). No park entrance fee. The Ross Lake Resort water taxi is a separate optional paid service (~$35 round trip per person, seasonal).",
+     "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "A bear canister or approved food storage is required where a proper hang isn't possible; free loaner canisters are available at the Wilderness Information Center. Practice Leave No Trace; off-trail cross-country travel is legal in this zone but stay on rock/snow/durable surfaces where possible to protect fragile heather meadows.",
+     "permit": "A backcountry permit is required for any overnight stay, year-round. Reserve in advance on Recreation.gov (the general on-sale window opens around 7 a.m. Pacific in late April) or apply for a walk-up permit; permits must be picked up in person at the Wilderness Information Center in Marblemount. The Access Creek/Luna Camp zones carry limited nightly quotas and fill for summer weekends.",
+     "closures": "SR 20 (North Cascades Highway) closes for winter between the Ross Dam Trailhead gate (MP 134) and the Silver Star/Early Winters gate (roughly MP 171–178), typically early December through mid-April, cutting off road access to the trailhead itself. The Ross Lake Resort water taxi runs seasonally, roughly June through October. Luna Fire closure (as of mid-September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. The closure moves - check current park fire closures before a trip.",
+     "group_limit": 6,
+     "landManager": "North Cascades National Park (Stephen Mather Wilderness)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days."
+     }
+    },
+    "road": {
+     "name": "North Cascades Highway (SR 20) to Ross Dam Trailhead, MP 134",
+     "status": "Open seasonally",
+     "driveNote": "Trailhead parking sits right at the highway; from the trailhead, descend about 0.8 mile to Ross Dam to reach the lakeshore trail or the Ross Lake Resort water taxi dock.",
+     "seasonalGate": "Closes for winter roughly early December through mid-April between the Ross Dam Trailhead gate (MP 134) and the Silver Star/Early Winters gate (MP ~171–178); exact opening date varies year to year with snowpack and road repairs"
+    },
+    "climate": {
+     "typical": "Remote maritime alpine climate with a narrow midsummer-to-early-fall window.",
+     "bySeason": {
+      "fall": "Shorter days, colder; early storms possible",
+      "spring": "Heavy snow, avalanche terrain, impractical access",
+      "summer": "Main season once brush and snow consolidate; long daylight helps",
+      "winter": "Full winter mountaineering; rarely attempted"
+     },
+     "forecastZone": "West Slopes North Cascades"
+    },
+    "emergency": {
+     "notes": "The summit is 15+ trail/off-trail miles from the nearest road; a serious injury near the summit realistically requires an NPS/county helicopter evacuation. Cell coverage is essentially nonexistent throughout the approach — carry a satellite messenger and file a wilderness trip plan.",
+     "county": "Whatcom County",
+     "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA 98267 — (360) 854-7245",
+     "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA 98284 — roughly 46 road miles / about 1 hour drive from the Ross Dam Trailhead via SR 20"
+    },
+    "lists": null,
+    "crowds": {
+     "peakTraffic": "If any at all, would be clustered in August during peak Picket Range traverse/climbing season",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Very low - likely only a handful to a few dozen parties per season; among the least-traveled named peaks in the Cascades"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - roundtrip is roughly 48 miles including on-trail travel, ~5 miles of bushwhacking, and miles of scree/talus/heather, typically spread over 3-4 days",
+      "packWeight": "Heavy multi-day overnight pack (food, camp, and travel gear) carried over brush, talus, and creek crossings"
+     },
+     "approachTime": "Multi-day approach (commonly 2+ days each way) via Ross Lake/Big Beaver and the Access Creek drainage into Luna Cirque before the summit push",
+     "requiredSkills": [
+      "off-trail and bushwhack navigation",
+      "Class 3-4 scrambling on loose/exposed rock",
+      "basic snow travel for lingering snowfields on the approach and SE shoulder",
+      "creek fording (Access Creek crossing)",
+      "wilderness backcountry camping and Leave No Trace practice",
+      "self-sufficient route-finding with no reliable trail for much of the approach"
+     ],
+     "experienceLevel": "Seasoned backcountry mountaineer/scrambler with prior multi-day wilderness expedition experience; not a route for a first alpine partner"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, once brush has leafed out and lingering snow has consolidated",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early in the window - approach brush may still be wet/thick and snow can linger in the SE-facing chutes and on the shoulder, so snow travel skill is more likely needed",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Most consolidated conditions of the year - brush cleared, snowfields mostly melted out, long daylight for the long approach",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Often stable weather before fall storms arrive, but shorter days and colder temps reduce margin on the long approach and exposed traverse",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Remote maritime alpine climate with a narrow midsummer-to-early-fall climbing window; summers are the main viable season while spring carries heavy snow and impractical access",
+      "probability": "Early fall storms can arrive by mid-September and cut the season short; multi-day forecasts are essential given the multi-day approach"
+     },
+     "exposure": "Loose Class 2-3 talus/scree exposes parties below to rockfall; the short Class 4 traverse between the false (south) summit and true summit is exposed with real fall consequences and is the technical crux of an otherwise non-technical route",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route in the North Cascades NP interior; no NWAC forecast zone provides point coverage for this remote location",
+      "byMonth": {
+       "July": "Low",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on the standard Southeast Slopes route"
+    },
+    "data_quality": {
+     "gaps": [
+      "No confirmed guidebook (Beckey Cascade Alpine Guide) page citation located for this exact route line",
+      "GPS track sourced from public CalTopo map: https://caltopo.com/m/1SLE",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM",
+     "lastVerified": "2026-07-01"
+    },
+    "difficulty": {
+     "exposure": 4,
+     "physical": 4,
+     "technical": 2,
+     "commitment": 3,
+     "routefinding": 5
+    },
+    "approach_logistics": {
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628,
+     "trailheadDirection": "From Newhalem, drive SR-20 east about 14 miles; the trailhead parking is on the right between mileposts 134 and 135."
+    },
+    "sling_rack": null,
+    "alpine_draws": 0,
+    "rope_type": "30m optional (glacier/snow travel, not typically used on rock)",
+    "rope_length_m": 30,
+    "rope_note": "Standard SE approach ascends scree/rubble climber's right to a steep snow-filled chute onto Luna's SE shoulder and Luna Col (7,200 ft); ice axe and microspikes/aluminum crampons needed year-round for the snow chute. The route itself is usually unroped, but some parties carry a short rope for the glaciated approach snowfields and the Class 3-4 summit block shared with the South Ridge route.",
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": "verified",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": [
+     "Adventurous",
+     "Committing",
+     "Exposed",
+     "Scenic"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": "outback",
+    "approach_variants": [
+     {
+      "name": "Access Creek basin, then the gap south of Point 6,730 and the 6,600 ft basin traverse to Luna Col",
+      "notes": "The trip starts at the Ross Dam Trailhead on SR-20 at about 2,050 ft, with parking right off the highway. About 0.8 mile of trail leads down to Ross Lake, then a boat shuttle roughly 9 miles up-lake to the Big Beaver Trailhead at about 1,600 ft. The lake crossing is a logistical step rather than an afterthought, since the resort's shuttle season and hours govern when you can reach the trailhead at all.\n\nFrom the Big Beaver Trailhead, about 8 miles of well-graded trail through old-growth cedar along the north bank of Big Beaver Creek reach Luna Camp. Continue roughly 1.5 miles past it and watch on the left for a small, easy-to-miss boot path leaving the maintained trail just north of where Access Creek enters Big Beaver Creek at about 2,460 ft. Ford Big Beaver Creek there.\n\nAround 3,700 ft the brush thickens; cross to the south bank of Access Creek, where intermittent cairns and a faint path use talus benches to dodge the worst of the slide alder and devil's club. This stretch is the approach crux. The path deposits you in the open basin at the Access Creek headwaters at about 4,400 ft, the common base camp.",
+      "season": "Jul-Sep",
+      "hazards": [
+       "Sustained bushwhacking, blowdown and route-finding in the Access Creek drainage, the approach crux",
+       "A ford of Big Beaver Creek that can run high with snowmelt",
+       "A narrow, very exposed 4th-class crest between the false and true summits, with cliffs on both sides",
+       "Loose talus and scree on the upper ridge with rockfall risk onto parties below",
+       "No reliable water above the Access Creek camp except lingering snowmelt",
+       "Losing the boot path in poor light on the way down, which several trip reports record"
+      ],
+      "baseFinding": "This route contours where the south ridge climbs, and the difference starts above camp rather than at the col. From the Access Creek basin, ascend broad talus gullies, snow-filled early season, southwest toward an obvious gap in the ridge above. Once on the ridge, traverse south of point 6,730 on grass and heather benches into a large basin on Luna Peak's southeast side, then cross that basin at about the 6,600 ft level to Luna Col at 7,200 ft.\n\nSo the fog test is an altimeter test: the basin crossing is held at roughly 6,600 ft. Losing height into the basin or gaining it toward the crest both cost you, and both are what happens when you navigate by feel. Hold the contour and it delivers you to the col.\n\nArrival: Luna Col at 7,200 ft is the notch between Luna Peak and a smaller tower to its left. You are there when the ground drops away on the far side.\n\nConfirm on the climb, and the count is short: above the col the route is roughly 1,100 ft of class 2-3 talus and scree to the false, southern summit, then one short connecting ridge to the true summit. Snow lingers on and just below the false summit well into the season and is often the first unavoidable snow of the ascent, so an axe is worth carrying even when the lower slopes are dry. Poles are commonly left at the false summit.\n\nThe one technical spot, and its tell: drop roughly 5 ft off the false summit onto a narrow, very exposed 4th-class crest with a snow-covered cliff falling several hundred feet down the northwest face on one side and a snow-free cliff dropping the southeast face on the other. A commonly used variation avoids the worst of it by dropping onto a ledge on the southeast side and scrambling back to the ridge behind the summit. If you are on a crest with snow on your left and bare rock on your right, you are in the right place and there is one short section of it.\n\nNo water above the access creek basin. The summit push is done on what you carry."
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "2",
+      "label": "Broad ridge to the false summit",
+      "notes": "From Luna Col at about 7,200 ft the route climbs the broad ridge above on roughly 1,100 ft of class 2 to 3 talus and scree to the false, southern summit. The rock is loose in places and parties are advised not to stack up beneath one another. Snow lingers on and just below the false summit well into the season and is often the first unavoidable snow of the ascent, so an axe is worth carrying even when the lower slopes are dry. Poles are commonly left here."
+     },
+     {
+      "n": 2,
+      "class": "4",
+      "label": "Connecting ridge to the true summit",
+      "notes": "The true summit lies beyond a short connecting ridge that is the only technical part of the peak. Drop roughly 5 ft off the false summit and scramble a narrow, very exposed 4th-class crest: a snow-covered cliff falls several hundred feet down the northwest face on one side and a snow-free cliff drops the southeast face on the other. A commonly used variation avoids the most exposed traverse by dropping onto a ledge on the southeast side, scrambling back to the ridge behind the summit and finishing with a few 4th-class moves from the back. Descent reverses the route; there is no water above the Access Creek basin, so the summit push is done on what you carry."
+     }
+    ],
+    "bivy": [
+     {
+      "name": "Access Creek headwaters basin",
+      "role": "main",
+      "type": "camp",
+      "elevM": 1341,
+      "notes": "The open basin at the top of the Access Creek approach, roughly 1,700 ft above Luna Camp and the standard base for the peak. Getting here is the hard part: valley-bottom devil's club, a crossing to the north bank, then a swap back to the south side near 3,700-3,800 ft where cairns and a faint path use talus benches to duck the worst slide alder. Reports put the bushwhack alone at around three hours on the way out. From camp the climb goes up talus gullies southwest to a gap in the ridge, south of Point 6,730 on heather benches, then across the basin at about 6,600 ft to Luna Col at 7,200 ft — some 4,000 ft of gain, all of it above the last dependable water, so tank up before leaving.",
+      "water": "Access Creek at the head of the drainage; reliable, but it is the last water until lingering snowmelt higher up",
+      "permit": "National Park Service backcountry permit required. Cross-country camping is only allowed on durable surfaces — snow, rock or bare ground — never in meadows, and never within 100 ft of water",
+      "capacity": "Open basin ground; parties describe it as pleasant camping for a small group rather than a set of established sites"
+     },
+     {
+      "elev": 2432,
+      "name": "Luna Camp (Big Beaver Trail)",
+      "role": "main",
+      "type": "camp",
+      "notes": "The signed camp about 8 miles up the Big Beaver Trail from the boat landing, in old-growth cedar and only modestly above lake level. It is a trail camp, not a mountain one, and it earns its place because the water-taxi timetable often puts you on the trail late. From here it is another 1.5 miles north to the easy-to-miss boot path that leaves the trail just above the Access Creek confluence, so sleeping here sets you up to start the bushwhack fresh rather than at dusk.",
+      "water": "Big Beaver Creek, right there and reliable",
+      "permit": "A National Park Service backcountry permit is required for every overnight in the park complex, picked up from the Wilderness Information Center at Marblemount; Luna Camp is a designated site, not cross-country ground",
+      "capacity": "A designated backcountry camp with a fixed number of sites; your permit itinerary names the camp and the night"
+     },
+     {
+      "name": "Luna Camp",
+      "role": "hidden"
+     },
+     {
+      "name": "Access Creek Basin",
+      "role": "hidden"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "southwest sw ridge rdg",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  }
+ ]
+}

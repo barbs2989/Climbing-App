@@ -153,6 +153,25 @@ the total when deciding where a new guard belongs.
     the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
     exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
     broken scan, never as safe CI.
+  - **The walk workflows SKIP a PR or merge that touches only files no walk reads**
+    (`paths-ignore` in `render-guards.yml` and `zero-state.yml`, one identical list on both
+    events: `audits/`, `research-data/`, `research/`, `catalog/`, `enrichment-wip/`,
+    `gear-research/`, `docs/`, `*.md`, `scripts/oneoff|pipeline|enrich/`, `scripts/audit-*.mjs`).
+    A skipped run is not a missing check: nothing it walks changed, and the run stays absent
+    rather than pending, so it cannot be confused with the cancellation above.
+    - **Why (2026-11-05):** the production DB was stalling, and the load was CI. In a 3.6 h
+      `pg_stat_statements` window the signed-in boot RPCs (`my_trust_counts` 157 ms,
+      `people_you_may_know` 91 ms, …) each ran ~1,760 times, all from walks; render-guards had
+      5–13 runs in flight most of 2026-11-04 (16 jobs each). About a third of that day's PRs
+      were data/audit/doc-only.
+    - **Queueing runs does NOT reduce the load**, which is why this skips rather than queues:
+      GitHub Free already caps the account at 20 concurrent jobs, so a run-level queue only
+      reorders the same ~20 browser jobs, and a shared concurrency group would CANCEL pending
+      runs (above).
+    - **Verified when added:** no walk script, nor anything under `scripts/lib/` it imports,
+      reads those paths or any `.md`; app code names them only in comments. **A walk that starts
+      reading one of them must take it off the list.** Data written to the DB by those PRs'
+      scripts was never tested by the PR's walk anyway (it lands out of band).
   - **TWO MORE WAYS A RUN GOES MISSING WITHOUT REPORTING A FAILURE, both met on #1229 and both
     the same shape as the cancellation above: `gh pr checks` can only report on runs that
     EXIST.** Neither is a flake to re-run past — each needs a different action.

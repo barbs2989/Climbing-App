@@ -358,10 +358,9 @@ export async function createFixture(log = () => {}) {
       user_id: owner.id, route_id: ROUTE_ID, date_climbed: "2026-07-04",
       discipline: "alpine", tick_type: "Lead", stars: 4, party_size: 2, notes: "Fixture log.",
     });
-    await insert("saved_searches", { user_id: owner.id, name: "Cascades alpine", query: { state: "Washington", disc: ["alpine"] } });
     await insert("user_lists", { user_id: owner.id, name: "Fixture ticklist", icon: "star", route_ids: [ROUTE_ID], shared: false });
     await insert("connections", { requester: owner.id, addressee: mate.id, status: "accepted" });
-    log("  objective, log, saved search, list, connection");
+    log("  objective, log, list, connection");
 
     const session = await signIn(owner);
 
