@@ -966,10 +966,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
     not modelled — seepage is only a risk from recent rain — and the card says so.
-  - **Menu tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, opened from Menu › Plan & log; it left Home 2026-10-14) is the SAME
-    `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
-    nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an
-    unlocated climb as "No score: …" rather than dropping it. At most 8 crags are fetched, and it says so.
+  - **Best day to climb — REMOVED (§6)**: the Home tile, Menu tile and overlay that ran `scoreForecast`
+    over the saved crag climbs and areas (with its own honesty rules: "not a rating" on a failed
+    forecast, "No score: …" for an unlocated climb, an 8-crag cap it said out loud) was removed by the
+    owner on 2026-11-05. §6 now fails if the tile file, a `<BestDayTile>`, `bestDayOpen` or the Menu
+    tile comes back; anyone restoring it must re-derive those rules there. *Compare routes* keeps its one
+    best-day cell, and the card's `areas.aspect` fallback check stayed in §6.
   - **Wall direction (0249)**: `areas.aspect` is written ONLY from an online statement about the wall
     or its crag (agents: `research-data/crag-aspects/`, `scripts/apply-crag-research.mjs`; page text:
     `scripts/extract-wall-aspects.mjs`), never from terrain. Both the card and the tile fall back to
