@@ -37341,3 +37341,60 @@ alpine/mountaineering overall), unchanged since batch 516.
 
 Next batch will continue id-ascending from `wa_mount_index_north_face` (the next in-scope id after
 it is `wa_mount_johnson_deception_chimney`).
+
+## Batch 521 (pass 8) — 2026-11-11
+
+Checked 8 routes, continuing id-ascending past Mount Index: all six Mount Johnson routes
+(`wa_mount_johnson_deception_chimney`, `wa_mount_johnson_northwest_face`,
+`wa_mount_johnson_rumble_gully`, `wa_mount_johnson_south_terrace_route`,
+`wa_mount_johnson_southwest_route`, `wa_mount_johnson_staircase_route`), then
+`wa_mount_la_crosse_scramble` and `wa_mount_lago_south_slope_south_face`.
+
+No SQL this batch — the headline finding has no verifiable replacement value to write, only a
+reason to distrust what's there. All six Mount Johnson routes are near-empty stub rows (only
+`id`/`name`/`discipline`/`fa` populated — one also carries a bare `grade`, nothing else). Five of
+the six carry a first-ascent attribution, and none of the five hold up:
+
+- `wa_mount_johnson_deception_chimney` and `wa_mount_johnson_rumble_gully` both give
+  "Lex Maxwell, Joe Gleason, and Louis Ulrich, 1933"; `wa_mount_johnson_staircase_route` gives
+  "Dick Oswin in 1920." All three are chronologically impossible: Wikipedia's Mount Johnson, The
+  Needles, and Martin Peak articles independently agree the *peak's own* first ascent was 1940, by
+  Elvin Johnson and George Martin — the climb both the peak and neighboring Martin Peak are named
+  for. No route on Mount Johnson can have a first ascent 7-20 years before the peak was first
+  climbed at all. None of the four named climbers (Lex Maxwell, Joe Gleason, Louis Ulrich, Dick
+  Oswin) turned up in any Olympic Mountains climbing-history search despite several targeted
+  queries (Mountaineers annual indexes, AAC publications, SummitPost, NPS historic resource study).
+- `wa_mount_johnson_south_terrace_route`'s FA ("Lex Maxwell, Louis Ulrich, and Rolla Goold in
+  1961") reuses two of the same unverifiable names 28 years later — at least chronologically
+  possible, but Rolla Goold is equally unfindable.
+- `wa_mount_johnson_northwest_face`'s FA ("Jim Kurtz and Tom Pinkerton, 1950") is likewise
+  chronologically fine but equally unverifiable.
+- `wa_mount_johnson_southwest_route` (Class 3, no `fa` stored) is the one honest row of the six —
+  clean.
+
+The contrast with this same batch's `wa_mount_lago_south_slope_south_face` is the tell: its FA
+("Hermann Ulrichs and Dick Alt, 1933") is confirmed by Wikipedia citing Beckey's *Cascade Alpine
+Guide* directly, and corroborated by an NPS historic resource study crediting a Herman F. Ulrichs
+with 21 ascents in the 1930s. The same search approach that confirms a real climber's record on
+Lago found nothing at all for any of the five names attached to Mount Johnson's routes. All five
+flagged for human review, not fixed — the right correction isn't a known date or party, just
+removing data that can't be supported, and that's a human call, not an automated one.
+
+Clean: Mount La Crosse's FA (1928, Paulson/Ryer/Wiseman/Woodworth) matches Wikipedia verbatim. Its
+own `data_quality` field already flags an elevation/prominence mismatch with Wikipedia (6,421 ft /
+995 ft stored vs. Wikipedia's 6,417 ft / 977 ft) as unresolved; checking further, that's a genuine
+LiDAR-vs-map-datum split, not an error — listsofjohn.com itself carries both a LiDAR pairing
+(elevation 6,421 ft / rise 544 ft) and a map pairing (6,417 ft / 997 ft) for this summit, and the
+stored figures track the LiDAR convention reasonably — no new finding, left as already flagged.
+Mount Lago: elevation (8,745 ft) and prominence (3,280 ft) both match Wikipedia and listsofjohn's
+LiDAR figures exactly; FA confirmed as above; its stored Eureka Creek/Ptarmigan Fire road-closure
+language matches the live September 2026 Okanogan-Wenatchee NF closure order (through October 31,
+2026) that closes Trail #474 (Eureka Creek) — clean, and one of the better-sourced rows in the
+catalog.
+
+All present lat/lng (Mount La Crosse and Mount Lago; the six Johnson routes store none) sanity-
+checked against each peak's expected location; none were implausible. The live catalog's
+alpine/mountaineering WA tag count held at 802 overall, unchanged since batch 516.
+
+Next batch will continue id-ascending from `wa_mount_lago_south_slope_south_face` (the next
+in-scope id after it is `wa_mount_lawson_standard`).
