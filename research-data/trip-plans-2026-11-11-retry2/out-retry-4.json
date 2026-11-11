@@ -1,0 +1,264 @@
+[
+ {
+  "id": "wa_gorillas_direct",
+  "itinerary": {
+   "cal": "July through September. A free self-issued Alpine Lakes Wilderness permit covers the night; camping is not allowed at Lake Ingalls itself, so camp in Headlight Basin or on durable ground in the meadows toward Stuart Pass.",
+   "totalNote": "Two days: walk over Ingalls Pass to a camp below Stuart Pass, then climb the West Face Wall, top out onto the West Ridge and walk back out over Ingalls Pass.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ingalls Pass to camp below Stuart Pass",
+     "objective": "Carry to a camp near Stuart Pass",
+     "note": "Switchback about 3 miles up to Ingalls Pass, then continue past Lake Ingalls, where camping is banned, and follow the boot path along the ridge toward Stuart Pass. Sleep on rock or gravel in the meadows under the West Face Wall so the morning walk to the base is short. Trailhead to Stuart Pass is roughly three hours by this side.",
+     "gainFt": 2190,
+     "lossFt": 460,
+     "hours": 3,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Gorillas Direct and hike out",
+     "objective": "Climb the 900 ft wall, descend, and return to the car",
+     "note": "Traverse from the Stuart Pass side to the splitter on the West Face Wall between Stuart Pass and Goat Pass. The line follows the first four pitches of Gorillas in the Mist, then breaks left along the big mid-wall ledge into a corner system: sustained 5.10 with a pumpy opening crack, the exposed Monkey Traverse, a sparsely protected slab pitch and loose ground on the final move right to the top of the wall. Either carry on up the West Ridge to the summit or go down the main gully of the lower West Ridge, downclimbing with one single-rope rappel from fixed slings, back to the Stuart Pass bivy sites, then retrace the approach.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/112263877/gorillas-direct",
+   "https://alpinist.com/?p=53464",
+   "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html",
+   "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+   "https://stephabegg.com/?p=59033"
+  ],
+  "confidence": "medium",
+  "figureSources": "Day 1: about 3 mi to Ingalls Pass and the no-camping rule at the lake from WTA; hours 3 is Abegg's stated estimate for trailhead to Stuart Pass via Lake Ingalls; gain 2,190 / loss 460 from the row's waypoints (4,269 ft trailhead, 6,457 ft Ingalls Pass) and its ~6,000 ft meadow camp. Day 2: route character and pitches from Mountain Project and the 2011 Alpinist note on the FA party's direct line (Holsten, Westman, Wertkin); descent and Stuart Pass bivy sites from Mountain Project; West Ridge descent also from the King Kong FA blog, which describes the shared lower pitches. Day 2 gain is the row's 6,150 ft total minus day 1 and assumes a summit. No source times the route or the hike out, so day 2 hours are null. [Lead: day 2 gain/loss removed; they came from a row total that contradicts its own waypoints, not from a source.]",
+  "rowIssues": "Row gain_ft 6,150 exceeds the 5,146 ft between its own trailhead and summit waypoints (part is the drop to camp). Row dist_km 24.1 reads as a round trip while the sibling King Kong row gives 7.2 km. Mountain Project's header says 8 pitches but its description runs P1-P10."
+ },
+ {
+  "id": "wa_king_kong_gorillas_direct_direct",
+  "itinerary": {
+   "cal": "July through September. A free self-issued Alpine Lakes Wilderness permit covers the night; camping is not allowed at Lake Ingalls itself, so camp in Headlight Basin or on durable ground in the meadows toward Stuart Pass.",
+   "totalNote": "Two days: walk over Ingalls Pass to a camp below Stuart Pass, then climb the eight-pitch 5.12a line on the West Face Wall and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ingalls Pass to camp below Stuart Pass",
+     "objective": "Carry to a camp near Stuart Pass",
+     "note": "Switchback about 3 miles up to Ingalls Pass, then continue past Lake Ingalls, where camping is banned, and follow the boot path along the ridge toward Stuart Pass. Sleep on rock or gravel in the meadows under the West Face Wall so the morning walk to the base is short. Trailhead to Stuart Pass is roughly three hours by this side.",
+     "gainFt": 2190,
+     "lossFt": 460,
+     "hours": 3,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb King Kong and hike out",
+     "objective": "Climb the West Face Wall, descend, and return to the car",
+     "note": "The lower six pitches are shared with Gorillas Direct, including the Monkey Traverse. From there Fifth Avenue (10+) climbs a corner and stem-box to a two-bolt anchor, and the eighth pitch is a 54 m overhanging headwall splitter with its hardest move at the lip. A short fifth-class scramble reaches the top of the wall. Bring extra cams from 0.5 to 4 if you do not want to run the headwall out. Most parties go down the West Ridge: the main gully of the lower ridge, downclimbing with one single-rope rappel, leads back to the Stuart Pass bivy sites, then retrace the approach.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct",
+   "https://solclimbs.blogspot.com/2016/10/first-ascent-king-kong-joe-puryear.html",
+   "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+   "https://stephabegg.com/?p=59033"
+  ],
+  "confidence": "medium",
+  "figureSources": "Day 1: as Gorillas Direct (WTA distance to Ingalls Pass and the lake camping ban; Abegg's stated ~3 h trailhead to Stuart Pass; gain/loss from the row's waypoints and ~6,000 ft camp). Day 2: pitches, grades, rack and descent from Mountain Project; the 54 m overhanging headwall and that most parties descend the West Ridge from the FA blog. Day 2 gain/loss are borrowed from the Gorillas Direct row, which shares the approach, the wall and the summit option, because this row has no gain_ft. No source times the climb, so hours are null. [Lead: day 2 gain/loss removed; they came from a row total that contradicts its own waypoints, not from a source.]",
+  "rowIssues": "Row gain_ft is null. The FA blog graded the line 5.11d (expecting 11c) at the time; Mountain Project and the row say 5.12a. Row dist_km 7.2 vs the Gorillas Direct row's 24.1 for the same approach."
+ },
+ {
+  "id": "wa_liberty_bell_sidewinder",
+  "itinerary": {
+   "cal": "June through September as a day climb from the Blue Lake trailhead; a Northwest Forest Pass or day pass is needed to park.",
+   "totalNote": "One day: up the Blue Lake trail and the Beckey gully, five pitches on the southwest corner, then the Beckey Route rappels and back down the gully.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Beckey gully and the Sidewinder",
+     "objective": "Climb the southwest corner and descend by the Beckey Route",
+     "note": "Walk about 2 miles through forest to the heather meadow, then take the climbers' trail left into the talus-choked Beckey gully, where helmets matter because loose rock funnels straight down it. Near the top, break left at the fork and scramble to the shelf below the cave or the big orange wall. Five pitches follow: hand cracks, a 5.9 flaring crack or a thinner finger-crack variation, a bulge, then fourth-class ground to the summit. Parties headed for the Beckey Route tend to follow you to this start by mistake. To get down, downclimb the summit slab to the ledge at the top of pitch 3 of the Beckey Route, rappel from the chains to the notch, and reverse the gully.",
+     "gainFt": 2520,
+     "lossFt": 2520,
+     "hours": null,
+     "miles": 5,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/121381412/sidewinder-southwest-corner",
+   "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6",
+   "https://www.countryhighpoints.com/liberty-bell-mountain-57/"
+  ],
+  "confidence": "low",
+  "figureSources": "Route (500 ft, 5 pitches, Grade II, 5.9+, the starts and pitch notes) from Mountain Project, the only opened source on Sidewinder itself. Miles 5 round trip, the ~2-mile meadow, the gully and the chained Beckey Route rappels from the Outbound Beckey Route page; rappels reaching the notch also from countryhighpoints. Gain is the row's 2,520 ft (Outbound gives about 2,000 ft car to notch). No source gives a time, so hours are null.",
+  "rowIssues": "Row elevations (5,380 to 7,720) give 2,340 ft, not the row's 2,520. Mountain Project gives the route as 500 ft, Grade II."
+ },
+ {
+  "id": "wa_phantom_peak_west_ridge",
+  "itinerary": {
+   "cal": "July to August, when the Chilliwack ford can be waded and Easy Ridge and the Challenger Glacier are in shape. A North Cascades National Park wilderness permit is required for each cross-country night. Plan about five days.",
+   "totalNote": "Five days: two days in over Hannegan Pass, Easy Ridge, Perfect Pass and the Challenger Glacier to a bivy under Ghost Peak, a ten-pitch climbing day, and two days back out the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Pass to Easy Ridge",
+     "objective": "Ford the Chilliwack and camp on Easy Ridge",
+     "note": "About ten miles of trail lead over Hannegan Pass and down to the Chilliwack, which is waded near Easy Creek. A steep path then climbs to the first camp on the crest of Easy Ridge. The only water up high is seasonal tarns, so fill up at the river.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 8.5,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Easy Ridge to the Ghost Peak bivy",
+     "objective": "Cross Perfect Pass and the Challenger Glacier",
+     "note": "Follow the ridge over Easy Peak, then solo exposed fourth class across the Imperfect Impasse, losing height to about 4,450 ft before climbing back up to Perfect Pass. Cross the Challenger Glacier, then descend and traverse steep snow, talus and more glacier to a rough bivy below Ghost Peak, with the west ridge of Phantom in view.",
+     "gainFt": 1850,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb the West Ridge of Phantom Peak",
+     "objective": "Climb the ridge and descend the southeast face",
+     "note": "Walk up to the 6,100 ft saddle and scramble a few hundred feet to a notch with a ledge to rope up. Ten pitches follow, mostly 5.7+ on corners, towers and exposed crest, with one 5.10 stemming move across a deep gap on pitch 6 and a rappel of about 100 ft into a notch after pitch 7. About 400 ft of fourth class then leads to the summit ridge and the final pinnacle. Descend the southeast face with careful downclimbing and a quick crossing of a snowfield under rockfall, then circle back to camp. Earlier in the season this descent is easier on snow.",
+     "gainFt": 1916,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Back over Perfect Pass to Easy Peak",
+     "objective": "Return to a camp on Easy Ridge",
+     "note": "Recross the Challenger Glacier to Perfect Pass, drop around the Imperfect Impasse to its low point and climb back to camp on Easy Peak.",
+     "gainFt": 2160,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Easy Ridge to the Hannegan trailhead",
+     "objective": "Walk out",
+     "note": "Descend off Easy Ridge to the Chilliwack ford, climb back over Hannegan Pass and walk the trail out to the car.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 9.3,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201216005",
+   "https://apps.yellowleaf.org/scramble/g/r/2006-07-13-16-challenger.html"
+  ],
+  "confidence": "low",
+  "figureSources": "Route, the ~10 mi of trail, the 5-mile Easy Ridge, the bivy under Ghost Peak, the 6,100 ft saddle, pitch details and the southeast-face descent from the AAJ (Wehrly and Larson, July 2021, the only documented ascent; a further search found no second account). Day 1 hours 8.5 is the sum of Yellowleaf's stated segment times on the same approach (trailhead to Hannegan Pass 2:20, to the ford 2:52, to the first Easy Ridge camp 3:16); day 5 hours 9.3 sums its stated Easy Peak to ford 4:09, ford to pass 3:28, pass to trailhead 1:38. Day 2 gain is the impasse low point (~4,450 ft) to Perfect Pass (~6,300 ft), a minimum; day 4 gain is that low point to Easy Peak (~6,613 ft); day 3 gain is the row's 1,916 ft. The AAJ gives no approach or exit times and no day split.",
+  "rowIssues": ""
+ },
+ {
+  "id": "wa_the_chopping_block_northeast_ridge",
+  "itinerary": {
+   "cal": "July into October, once the Barrier melts out. A North Cascades National Park wilderness permit is required for the cross-country camps in Terror Basin and on the Chopping Block ridge. Plan three days, or fold the climb into a longer Southern Pickets trip.",
+   "totalNote": "Three days: a long carry from Goodell Creek up the Barrier, a short day to the ridge camp and the four-pitch Northeast Ridge, then the brushy descent out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Terror Basin",
+     "objective": "Carry up the Barrier to camp",
+     "note": "Start at the Goodell Creek group campground near Newhalem, follow the old roadbed for about 4 miles, cross Terror Creek on a log and climb the steep path up the crest of the Barrier into Terror Basin.",
+     "gainFt": 5200,
+     "lossFt": null,
+     "hours": 7,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Ridge",
+     "objective": "Reach the summit and rappel back to the ridge base",
+     "note": "Move up to the Chopping Block ridge camp at about 6,400 ft, then walk and scramble southwest, with some exposed third class, to the foot of the ridge. The lower ridge is mossy scrambling; four roped pitches lead to the 6,819 ft summit. Rappel the ridge back to its base; single-rope rappels work, though a 70 m rope helps at most stations.",
+     "gainFt": 1019,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Down the Barrier to Goodell Creek",
+     "objective": "Return to the trailhead",
+     "note": "Descend the crest of the Barrier on a faint path, then a steep, brushy slope to the Terror Creek log and the old roadbed back to the Goodell Creek trailhead.",
+     "gainFt": null,
+     "lossFt": 5800,
+     "hours": 7,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8949",
+   "https://lemkeclimbs.com/full-pickets-traverse"
+  ],
+  "confidence": "low",
+  "figureSources": "Trailhead 600 ft, Terror Basin camp 5,800 ft, Chopping Block ridge camp 6,400 ft, summit 6,819 ft, the ~4 mi roadbed, 7 h up to Terror Basin, 7 h out, and single-rope rappels down the NE Ridge all from Abegg (who climbed the NW Route and descended the NE Ridge). The steep slope below the Barrier down to the Terror Creek log from Lemke. Day 1 gain is 600 to 5,800 ft; day 2 gain is Terror Basin to the summit; day 3 loss is ridge camp to trailhead. Pitch count, 5.5 grade and the rappel-the-route descent with a 70 m rope are from the row; no opened source describes climbing the NE Ridge itself.",
+  "rowIssues": "Row gain_ft and dist_km are null. Search snippets (not opened; CascadeClimbers and Mountaineers return 403) give 5 pitches where the row says 4."
+ },
+ {
+  "id": "wa_ingalls_peak_north_peak_southwest_face",
+  "skip": true,
+  "reason": "Searched for the North Peak Southwest Face and opened the Mountain Project Ingalls Peak area page and two Mazamas activity pages. Mountain Project lists no route by this name (only the East Peak Southwest Face), and the Mazamas pages cover the South and East Ridges. The only text describing this face is on SummitPost and Mountaineers.org, which return 403. No opened source describes the route, so the earlier plan cannot be confirmed."
+ },
+ {
+  "id": "wa_skeena26",
+  "skip": true,
+  "reason": "Searched twice more and opened the OpenBeta page and the Mountain Project Squire Creek Wall area page; neither carries a description, approach or descent. Washingtonclimbers.org has no route detail. The FA and 2014 trip reports are on CascadeClimbers (403). Climberkyle remains the only opened source describing the route, so the plan still rests on one source."
+ },
+ {
+  "id": "wa_western_dihedral",
+  "skip": true,
+  "reason": "OpenBeta's page for Western Dihedral has only the grade and the 2017 FA; the mirror that appears to hold the description returned 404. Mountain Project's Squire Creek Wall page does not list the route. The one opened approach source (climberkyle) covers only the shared walk to the grassy saddle. No second source describing the climb was found."
+ },
+ {
+  "id": "wa_south_face_4",
+  "skip": true,
+  "reason": "Searched for the Kangaroo Temple South Face and reopened Mountain Project (800 ft, 8 pitches, Grade III 5.8 R, 2-4 h approach, no descent or timing). Other hits were the North and Northwest Face routes, Big Kangaroo (a different peak) and SummitPost (403). Mountain Project remains the only opened source on this route, so the plan cannot be confirmed."
+ }
+]
