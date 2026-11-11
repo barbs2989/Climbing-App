@@ -46,6 +46,14 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   grades), partner rows (`lib/PartnerSearch.jsx`, `src/components/RealClimberRow.tsx`) and the crew invite list
   (`lib/CrewCard.jsx`, which prints the grade IN the crew's discipline, or none -- it used to print the sport grade as
   "Ice 5.10a").
+- **Lead and follow grades** (competitor review batch C, item 20, 2026-11-05): a roped discipline's row in the editor is
+  two pickers, *Lead* and *Follow*, written by one `put(lead, follow)` into the stored shape: lead set → `grade` is the lead
+  grade, `role` "lead", and `climb_grades[k].follow` holds the harder grade they will follow (only when given); follow
+  only → `grade` is the followed grade and `role` "follow", no `follow` key; neither → the entry is deleted. Boulder keeps one
+  picker. `profileGradeRows` returns `follow` beside `grade` and `role`, and `gradeRoleText(g)` prints the role with it
+  (*leads · follows 5.11b*) on a climber's profile, the Profile tab and the editor's *How climbers will see you* line;
+  `profileDiscGrades` (rows, résumé, share card) stays the lead-or-only grade. Match % scores the lead grade and ignores
+  `follow` (docs/codebase/algorithms.md).
 - **Add a photo from Profile**: with no photo, the Profile header's avatar carries a **+** and opens the photo picker itself
   (`avaAdding`); it uploads and saves the avatar column at once (`uploadProfilePhoto` + `saveProfileAvatar`), as the editor
   does. Not offered until the profile has been read, so a loading or failed read cannot replace a stored photo.
