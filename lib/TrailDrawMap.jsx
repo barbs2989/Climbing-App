@@ -185,7 +185,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // Said once per leg and reason (`told`): a cached answer on Undo/Redo or a Follow toggle is not news.
       const keptVia = Array.isArray(via) ? via : next[j].via;
       // The reason word: "none" for the router's own "no trail", so it is never mistaken for "nothing to tell".
-      const why = Array.isArray(via) ? undefined : (keptVia.length ? (next[j].stub ? "gone" : "kept") : (via === null ? "none" : via));
+      const why = Array.isArray(via) ? undefined : (via === "far" || via === "detour") ? via : keptVia.length ? "kept" : (via === null ? "none" : via);
       const fresh = why !== undefined && next[j].told !== why;
       next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: why, stub: undefined });
       setBoth(next);
@@ -209,7 +209,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
       // A leg going straight gives up the answer it was waiting for, so the slot goes to a live leg.
       if (!(want && !zero)) abortRoute(next[i].id);
-      next[i] = Object.assign({}, next[i], { via: [], pending: want && !zero });
+      next[i] = Object.assign({}, next[i], { via: next[i].stub && want && !zero ? next[i].via : [], pending: want && !zero, told: undefined });
       if (want && !zero) touched.push(next[i].id);
     });
     return touched;
@@ -307,8 +307,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const wasRouted = routed(cur[i]) || routed(cur[i + 1]);
     if (wasRouted && i > 0 && i < next.length) {
       abortRoute(cur[i + 1].id); // the leg out of the deleted point is merged: its own answer is no longer wanted
-      if (sameP(next[i - 1].a, next[i].a)) { next[i] = Object.assign({}, next[i], { via: [], pending: false }); commit(next, []); return; } // the two it joins are one spot: no leg
-      next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
+      if (sameP(next[i - 1].a, next[i].a)) { next[i] = Object.assign({}, next[i], { via: [], pending: false, told: undefined }); commit(next, []); return; } // the two it joins are one spot: no leg
+      next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow, told: undefined }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
     commit(next, withLegs(next, [i])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
