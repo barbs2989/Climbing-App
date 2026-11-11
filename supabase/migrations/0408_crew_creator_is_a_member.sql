@@ -30,7 +30,10 @@ security definer
 set search_path = public, pg_temp
 as $$
 begin
-  if new.created_by is not null then
+  -- On insert, and when created_by is handed to someone else (a service-role fix; the app never
+  -- does it): the new organiser gets their confirmed row, so the count cannot drift back.
+  if new.created_by is not null
+     and (tg_op = 'INSERT' or new.created_by is distinct from old.created_by) then
     insert into public.crew_members (crew_id, user_id, status, invited_by)
     values (new.id, new.created_by, 'confirmed', new.created_by)
     on conflict (crew_id, user_id) do nothing;
@@ -42,7 +45,7 @@ revoke all on function public.crew_creator_joins() from public, anon, authentica
 
 drop trigger if exists crews_creator_joins on public.crews;
 create trigger crews_creator_joins
-  after insert on public.crews
+  after insert or update of created_by on public.crews
   for each row execute function public.crew_creator_joins();
 
 insert into public.crew_members (crew_id, user_id, status, invited_by, joined_at)
