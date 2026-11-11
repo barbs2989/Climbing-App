@@ -36,6 +36,7 @@ function gradeSystem(d) { if (d === "bouldering") return "v"; if (["scrambling",
 // scripts/oneoff/verify-grade-parser-equivalence.mjs. Do not re-inline it —
 // check:grade-parser fails if a second parser appears.
 import { gradeNumFrom as gradeNum } from "../../lib/grade.js";
+import { itineraryShapeErrors } from "../../lib/itineraryShape.js";
 
 async function existingIds(table, ids) {
   const found = new Set();
@@ -119,6 +120,8 @@ async function count(table) {
 console.log(`Upserting ${safeOrdered.length} areas (of ${ordered.length} total; ${ordered.length - safeOrdered.length} skipped as id collisions)...`);
 await up("areas", safeOrdered.map(aRow), 500);
 console.log(`Upserting ${safeRoutes.length} routes (of ${R.length} total; ${R.length - safeRoutes.length} skipped as id collisions)...`);
+// The trip-plan rule (owner 2026-11-11, lib/itineraryShape.js): day by day or nothing, never prose.
+{ const bad = safeRoutes.flatMap((r) => itineraryShapeErrors(r.itinerary).map((e) => r.id + ": " + e)); if (bad.length) { console.error("ABORT: " + bad.length + " trip plan(s) are not day-by-day objects:\n  " + bad.slice(0, 40).join("\n  ")); process.exit(1); } }
 await up("routes", safeRoutes.map(rRow), 1000);
 
 const ac = await count("areas"), rc = await count("routes");
