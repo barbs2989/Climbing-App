@@ -296,7 +296,6 @@ export const MOVED = {
     "src/components/CragWalkIn.tsx",
     "src/components/SaveOfflineChip.tsx",
     "src/components/TopoCaptionBox.tsx",
-    "src/components/BetaDiff.tsx",
     "src/components/CRow.tsx",
     "src/components/EditIconButton.tsx",
     "src/components/GapNote.tsx",
