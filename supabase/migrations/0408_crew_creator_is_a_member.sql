@@ -18,7 +18,10 @@
 -- The trigger runs as definer, past crew_members' insert policy; the row it writes is the one that
 -- policy already allows (0086: invited_by = auth.uid() = the organiser), and 0227's guard passes
 -- because the creator is confirming themselves. On an empty preview database the backfill inserts
--- nothing.
+-- nothing. The backfill dates each row from the crew's own created_at, not today, so the organiser
+-- does not read as the newest joiner of an old crew.
+
+begin;
 
 create or replace function public.crew_creator_joins()
 returns trigger
@@ -42,12 +45,14 @@ create trigger crews_creator_joins
   after insert on public.crews
   for each row execute function public.crew_creator_joins();
 
-insert into public.crew_members (crew_id, user_id, status, invited_by)
-select c.id, c.created_by, 'confirmed', c.created_by
+insert into public.crew_members (crew_id, user_id, status, invited_by, joined_at)
+select c.id, c.created_by, 'confirmed', c.created_by, coalesce(c.created_at, now())
   from public.crews c
  where c.created_by is not null
    and not exists (select 1 from public.crew_members m where m.crew_id = c.id and m.user_id = c.created_by)
 on conflict (crew_id, user_id) do nothing;
+
+commit;
 
 -- VERIFY (expect 0):
 --   select count(*) from public.crews c where c.created_by is not null
