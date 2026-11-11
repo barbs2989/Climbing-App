@@ -1,0 +1,44 @@
+{
+ "ca_indian_joe_caves_bouldering": {
+  "_expect": { "name": "Indian Joe Caves bouldering", "region": "California" },
+  "blurb": "A small bouldering zone at Indian Joe Caves, in Sunol Regional Wilderness among the East Bay hills southeast of Pleasanton. Seventeen problems run from V0 up to V9, with most of the weight between V0 and V3 and a scattering of much harder lines. Some problems carry a risk warning, so expect a few awkward landings. Reaching the boulders takes a hike of more than a mile with roughly 600 feet of gain, and the creek-side trail is the cooler way up. The dark rock holds heat, so summer sessions are best saved for the shaded problems. Poison oak grows around the base.",
+  "review": { "sources": ["https://mountainproject.com/area/111778865/indian-joe-caves-bouldering", "https://www.mountainproject.com/area/105734087/indian-joe-caves?print=1"] }
+ },
+ "ca_grief_project_drytooling": {
+  "_expect": { "name": "Grief Project", "region": "California" },
+  "blurb": "A compact drytooling crag in the Bowman and Emeralds district of the I-80 corridor, above the South Yuba River. It holds 17 top-rope and mixed lines, mostly around M4 with a few M3 and M5 and a couple of steeper, harder ones reaching M7. The climbing is low-angle and rambling rather than steep, on fractured, dirty rock, so loose stone is a real hazard. Routes are heavily bolted and have anchors reachable from the clifftop, and a few low bolts suit rope-solo use. Mostly west-facing: the lower part stays shaded all day while the upper half catches afternoon sun.",
+  "approach": "A short cross-country walk from the roadside pullout, well under ten minutes, heading west through a brushy gully to the top of the cliff; the base is reached straight down from there.",
+  "review": { "sources": ["https://www.mountainproject.com/area/201216824/grief-project-drytooling", "https://mountainproject.com/area/114347347/bowmanemeralds", "https://www.mountainproject.com/forum/message/201425439"] }
+ },
+ "ca_disneyland_dome": {
+  "_expect": { "name": "Disneyland Dome", "region": "California" },
+  "blurb": "A big dome in the Wonderland of Rocks section of Joshua Tree National Park, with 17 climbs that are mostly trad and include a few top-ropes. Grades run from about 5.7 to 5.12, clustering around 5.9 to 5.10 with a smaller group of 5.11s. The monzogranite south face is plated and studded with chickenheads, giving solid holds and slung protection, though lines can be runout. It faces south and west, so it takes sun for most of the day; the north side is the pick for warmer days. The walk in is long, around 45 minutes, which keeps it quieter than the roadside crags. Rappel bolts on the south side make the descent simple.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105720989/disneyland-dome", "https://www.mountainproject.com/area/110464547/central-wonderland"] }
+ },
+ "ca_dmz_2": {
+  "_expect": { "name": "DMZ", "region": "California" },
+  "blurb": "A small face-climbing crag beside Giant Rock near Landers, in the high desert of the Spy Mountain area. Seventeen routes, mostly bolted sport lines with a few trad, span 5.6 to 5.12, with the bulk landing in the 5.10 and 5.11 range. The rock is slick, and lines tend to be face climbs. Several routes earn two or three stars, and the area sees comparatively few visitors. The crags sit at the mouth of a sandy cove, and soft sand around the approach makes for slow walking, so take care on the way in.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106107171/dmz", "https://www.mountainproject.com/area/106107165/giant-rock"] }
+ },
+ "ca_cube_terminator_area_the": {
+  "_expect": { "name": "Cube / Terminator Area, The", "region": "California" },
+  "blurb": "A bouldering pocket on the Malibu Tunnel Boulders in the Santa Monica Mountains, on water-polished sandstone blocks scattered through the creek north of the main area. Seventeen problems range from V1 to V12, but the focus is hard: nine fall at V6 or V7, with a handful of V8 to V12 lines and only a few easier ones. Many are sit starts. A prominent cube-shaped boulder is the landmark. Walk upstream along the creek from the main area or take the access road. The route to the creek is steep and loose, the trail is overgrown, and poison oak is common.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112919814/the-cube-terminator-area", "https://www.mountainproject.com/area/110778427/malibu-tunnel-boulders"] }
+ },
+ "ca_future_games_rock": {
+  "_expect": { "name": "Future Games Rock", "region": "California" },
+  "blurb": "One of the best-known formations in Split Rocks East, in the Pinto Basin of Joshua Tree National Park. All 17 climbs are trad. The grade spread tilts hard: eight are 5.11, backed by a few 5.7 to 5.10 routes and three in the 5.12 to 5.13 range, so it suits strong leaders more than beginners. The monzogranite faces roughly north, which makes it a good bet for escaping heat on a hot morning, although it picks up afternoon sun. Starting at the Split Rocks parking area, the walk is around 20 minutes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105721028/future-games-rock", "https://www.mountainproject.com/area/105720582/split-rocks"] }
+ },
+ "ca_lookout_the": {
+  "_expect": { "name": "Lookout, The", "region": "California" },
+  "blurb": "A small sport crag above Yerba Buena Road in the Santa Monica Mountains, at around 2,100 feet with views toward the Pacific. All 17 routes are bolted and run from 5.10 to 5.13: five at 5.10, eight at 5.11, then a few 5.12s and 5.13s, so it is a place for climbers already comfortable on harder sport. The volcanic rock is blocky and good quality. It makes a handy alternative when Echo Cliffs or Malibu Creek feels too busy or far, and the walk in from the road is only a few minutes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106684652/the-lookout", "https://mountainproject.com/area/105825725/santa-monica-mountains"] }
+ },
+ "_skipped": {
+  "ca_crack_crag_sw_face": "only one fetched page covers it (the Crack Crag area page); no separate SW Face page, and the Quail Springs parent page does not name the crag"
+ },
+ "_conflicts": {
+  "ca_indian_joe_caves_bouldering": "stored rock is greywacke, but https://www.mountainproject.com/area/105734087/indian-joe-caves says the rock is meta basalt"
+ }
+}

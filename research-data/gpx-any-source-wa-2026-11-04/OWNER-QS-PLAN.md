@@ -150,3 +150,38 @@ node scripts/oneoff/apply-owner-qs.mjs research-data/gpx-any-source-wa-2026-11-0
   - "Odine" and "Scabo" corrected to Ondine and Scarbo. The tower's route names come from Ravel's Gaspard de la nuit.
 - **Hagan South Slopes:** the approach now opens by saying it is the traverse approach, and points to the Blum Lakes route for the peak alone.
 - **Held:** Reynolds. Making Williams Creek the primary approach also needs the trailhead pin and paragraph moved together.
+
+## Merges and deletes applied 2026-11-05 (the owner ran `--write`)
+- **Batches 1-4:** 29 steps applied. Two were refused as expected:
+  - The Iron Cap rename had already landed.
+  - Dragontail r3 stays alpine; trigger 0366 keeps it there because of its 5.6 rock grade.
+- **Rows merged or deleted:**
+  - Luna Southeast Slopes, folded into Southwest Ridge.
+  - The empty duplicates: Summit Chief SE Face, Temple "Mount Temple Ridge", Bald Eagle x2, Bryant x2, Old Snowy x2.
+  - Price Northeast Route.
+  - Hibox East, South, SE Shoulder and NW Ridge.
+  - Iron Cap South Route 2.
+  - Castle "North Face (Left Buttress)".
+  - Tinkham East, North and West.
+- **`owner-qs-ops-10.json`:** Liberty Ridge and Ptarmigan Ridge were each filed twice. The Liberty Cap copies were folded into the Rainier rows and deleted.
+  - Liberty Ridge took the fuller text, the 8 pins and a recorded track: 3,000 points, only 4% on the zoom-16 grid, so not a drawn line.
+  - Ptarmigan took only approach-neutral text. Its season and climate stay unchanged, because the Liberty Cap versions describe the Mowich approach.
+  - `wa_liberty_cap` now holds 0 routes.
+- **`owner-qs-ops-11.json`:** Luna's face text now describes the Southwest Ridge.
+- **Area counts after the run:** Bald Eagle 1, Bryant 3, Hibox 3, Luna 1, Price 5, Old Snowy 1, Tinkham 2.
+
+## Held items resolved 2026-11-05
+- **Forbidden "Northeast Face": REAL. No change except the face label.** The research agents said no such route exists, and they were WRONG. The 1961 AAJ report "Forbidden Peak, Northeast Face" (Ed Cooper and Stuart Ferguson, 15 Sep 1961) climbs directly from the Boston Glacier:
+  - Sharkfin Col;
+  - a 15-ft ice wall out of the bergschrund;
+  - about 300 ft of rock to a 50-degree ice patch;
+  - then about 600 ft of upslab rock.
+
+  That is exactly what our row holds. The face label read "NE Ledge", which is the East Ledges; it now says the face is climbed directly from the Boston Glacier. The East Ledges text naming a distinct technical NE Face is CORRECT and stays. Lesson: before acting on a "no such route" verdict, read the row's own cited first ascent.
+- **Reynolds (`owner-qs-ops-12.json`):** Williams Lake / War Creek Ridge is now the primary approach (5 of 8 logged 2026 ascents use it).
+  - Reynolds Creek carries `longForm`, so the existing paragraph hangs under it, and it gains the blowdown hazard.
+  - A Williams Creek Trailhead pin was added (OSM node, 48.3979,-120.4689).
+  - The script reported a refusal, but the write landed: a trigger reordered keys. Comparisons are now key-order-blind.
+- **Shuksan Hanging Glacier (`owner-qs-ops-14.json`):** season stays Jul-Aug. The best_season text and the month breakdown now say mid-July to August; the May-June evidence was ski descents.
+- **Inner Constance Northwest Buttress:** grade cleared. The 5.0 had no source; the only grade documented online belongs to its 2021 variation.
+- **Price Lower Ramp (5.8) and Prominent Dihedral (5.10):** no source ties either to any "Price". Both are empty rows; DELETE prepared in `owner-qs-ops-13.json` (dry run clean, 0 references), for the owner to run.
