@@ -191,7 +191,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       setBoth(next);
       // History froze this leg as still pending: give those snapshots the answer (and what was told) too,
       // or an Undo would ask again for a leg that had settled, or flatten it with Follow off since.
-      const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: keptVia, pending: false, told: next[j].told }) : x));
+      const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: keptVia, pending: false, told: next[j].told, stub: undefined }) : x));
       undoRef.current = undoRef.current.map(settle); redoRef.current = redoRef.current.map(settle);
       if (fresh) noteFailure(why);
     });
@@ -209,7 +209,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
       // A leg going straight gives up the answer it was waiting for, so the slot goes to a live leg.
       if (!(want && !zero)) abortRoute(next[i].id);
-      next[i] = Object.assign({}, next[i], { via: next[i].stub && want && !zero ? next[i].via : [], pending: want && !zero, told: undefined });
+      next[i] = Object.assign({}, next[i], { via: next[i].stub && want && !zero ? next[i].via : [], pending: want && !zero, told: all ? next[i].told : undefined });
       if (want && !zero) touched.push(next[i].id);
     });
     return touched;
@@ -278,7 +278,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const full = [cur[i - 1].a].concat(via, [cur[i].a]);
       let offM = Infinity;
       for (let k = 1; k < full.length; k++) { const A = [full[k - 1][0] * ky, full[k - 1][1] * kx], B = [full[k][0] * ky, full[k][1] * kx]; const dx = B[0] - A[0], dy = B[1] - A[1], l2 = dx * dx + dy * dy; const t = l2 ? Math.max(0, Math.min(1, ((P[0] - A[0]) * dx + (P[1] - A[1]) * dy) / l2)) : 0; offM = Math.min(offM, Math.hypot(P[0] - (A[0] + t * dx), P[1] - (A[1] + t * dy))); }
-      if (offM < 15) { commit(next, []); return true; }
+      if (offM < 15) { abortRoute(cur[i].id); [i, i + 1].forEach((k) => { if (next[k].pending) next[k] = Object.assign({}, next[k], { pending: false }); }); commit(next, []); return true; }
       const touched = [];
       [i, i + 1].forEach((k) => { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); });
       commit(next, touched);
@@ -308,7 +308,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     if (wasRouted && i > 0 && i < next.length) {
       abortRoute(cur[i + 1].id); // the leg out of the deleted point is merged: its own answer is no longer wanted
       if (sameP(next[i - 1].a, next[i].a)) { next[i] = Object.assign({}, next[i], { via: [], pending: false, told: undefined }); commit(next, []); return; } // the two it joins are one spot: no leg
-      next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow, told: undefined }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
+      next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow, stub: true, told: undefined }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
     commit(next, withLegs(next, [i])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
