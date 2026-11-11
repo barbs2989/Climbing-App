@@ -752,9 +752,10 @@ if(onboarded||uid){if(profile.disciplines.length)ME.disciplines=profile.discipli
      the fix; without it the section below would render an empty box for ever, which is the
      populated-column-that-reaches-no-screen shape inverted.
      Same exclusion the seed instance already applies: a country or a state is too broad to discuss.
-     Area PAGE only: not under the area Map, the Route finder or Objectives (owner 2026-11-11, "Remove
-     discussion from area maps"). The seed instance already sits outside its map branch. */
-  const areaCommentTargets=(dbAreaCtx&&dbAreaCtx.id&&!["world","country","state"].includes(dbAreaCtx.areaType)&&dbAreaCtx.screen==="areas")?[dbAreaCtx.id]:[];
+     WHERE it shows is DbAreaBrowser's call: RoutesTab hands the thread in as `areaDiscussion` and the
+     browser draws it on the area page only, not under the Map (owner 2026-11-11). The seed instance
+     already sits outside its map branch. */
+  const areaCommentTargets=(dbAreaCtx&&dbAreaCtx.id&&!["world","country","state"].includes(dbAreaCtx.areaType))?[dbAreaCtx.id]:[];
   const dbComments=useComments(commentTargets.concat(gpCommentTargets).concat(areaCommentTargets));
   const cmUid=(USE_DB&&session&&session.user)?session.user.id:null;
   const cmOn=!!cmUid;const commentsUnavailable=!!(cmOn&&dbComments&&dbComments.isError);

@@ -84,10 +84,15 @@ if (!/areaCommentTargets[\s\S]{0,200}\["world","country","state"\]/.test(app)) {
   ok("world/country/state are excluded from area comments");
 }
 
-// Area PAGE only (owner 2026-11-11, "Remove discussion from area maps"): the thread mounts below the
-// whole browser, so without this it also sits under the Map, the Route finder and Objectives.
-if (!/areaCommentTargets[\s\S]{0,260}dbAreaCtx\.screen\s*===\s*"areas"/.test(app) || !/areaType:\s*current\.area_type,\s*screen\s*\}/.test(browser)) {
-  problems.push("area comments are no longer limited to the area page (dbAreaCtx.screen === \"areas\", reported by DbAreaBrowser) — the Discussion would show under the area Map again.");
+// Area PAGE only (owner 2026-11-11, "Remove discussion from area maps"). RoutesTab hands the thread to
+// DbAreaBrowser as `areaDiscussion`, and the browser draws it in exactly one place: right after
+// <AreaPage …/>, in the branch that renders when no other screen (finder / objectives / Map) is up.
+// Placed by the browser itself, so it switches in the same render as the screen (no frame under the Map).
+const slots = browser.split("{areaDiscussion}").length - 1;
+if (!/<DbAreaBrowser\s+areaDiscussion=\{/.test(app)) {
+  problems.push("RoutesTab no longer hands the area thread to DbAreaBrowser as `areaDiscussion` — the browser cannot place it on the area page.");
+} else if (slots !== 1 || !/<AreaPage key=\{current\.id\}[^\n]*\/>\{areaDiscussion\}<\/>\s*\)\}/.test(browser)) {
+  problems.push(`area comments are no longer limited to the area page — DbAreaBrowser must draw {areaDiscussion} once, right after <AreaPage …/> (found ${slots}); the Discussion would show under the area Map again.`);
 } else {
   ok("area comments render on the area page only, not under the Map");
 }
