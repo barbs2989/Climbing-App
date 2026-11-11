@@ -15,10 +15,15 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   title that STATES the search ("Climbers who climb where you do", "Climbers in Index · within 50 mi of 98201", "Climbers who want
   Liberty Crack"), then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the six modes, a native select drawn
   as a pill), **Distance ▾** (Anywhere / Near my zip / Near me now) with **Within ▾** (10 · 25 · 50 · 100 · 200 · 500 mi) beside it when an
-  origin is picked, **Discipline ▾**, **Experience ▾**, the **Free this weekend** toggle (`aria-pressed`), the **Only women / men / non-binary
+  origin is picked, **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, the **Free this weekend** toggle (`aria-pressed`), the **Only women / men / non-binary
   climbers** switch (`role="switch"`), **Sort ▾** and **More filters** (speed match, available to climb, max distance for the examples; its badge
   counts those) on the example-list modes, and **My areas · N**. The pills are 44px on a phone and 36px on the website (#3156). The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
+- **Leads ▾** (competitor review item 20, the filter half, 2026-11-11): *Leads 5.10a or harder* keeps climbers whose LEAD grade on the
+  picked discipline is at least that, on the real lists and the examples alike. The lead grade is read with `profileGradeRows` (a roped
+  grade is the lead grade unless its role is "follow"), so a follow-only climber or one with no grade on file does not match; grades
+  compare on `gradeNumFrom`, which reads aid C3 and A3 as the same grade. Changing the discipline clears it; it counts in the clear-filters
+  button. Real rows get their `climb_grades` through `usePartnerClimbGrades` (the partner RPCs carry none).
 - **Find someone by name** (DB only): a search box (min 2 chars) over real profiles, opened from the *Name* pill.
 - **Search for partners by** six modes (the Search by ▾ pill): **Near my areas** (the signed-in default — climbers whose listings overlap yours, most
   in common first; with no listing, a one-tap "List me here" banner over the nearest-by-zip list), **Saved areas** (signed in: the
