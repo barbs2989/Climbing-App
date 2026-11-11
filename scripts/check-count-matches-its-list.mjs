@@ -48,67 +48,10 @@ const ok = (m) => console.log("ok    " + m);
 const fail = (m) => { failures++; console.log("FAIL  " + m); };
 const dead = (m) => { console.error("\nBROKEN GUARD: " + m + "\n(this run proved nothing — it is not a pass)"); process.exit(1); };
 
-// ── 1. HOME'S EMPTY STATE vs THE LIST IT RENDERS.
-//
-//    The sources are read off the UNFINISHED BUSINESS builder rather than listed here, so a
-//    source added there is covered without editing this file — which is the whole point, since
-//    both live defects were a source added to the list and not to the gate.
-{
-  const i = src.indexOf("var unfinished=[];");
-  if (i < 0) dead("the UNFINISHED BUSINESS builder moved — this run would compare nothing");
-  const j = src.indexOf("unfinished.length", i);
-  if (j < 0 || j - i < 400) dead("the UNFINISHED BUSINESS builder parsed short — its sources would go uncounted");
-  const block = src.slice(i, j);
-
-  // Each entry is pushed from a `.forEach` over one source. `(x.data||[]).forEach` is the shape a
-  // react-query list takes, and matching only the bare identifier misses exactly the DB-backed
-  // source that was the defect.
-  const sources = [...block.matchAll(/(?:\((\w+)\.data\|\|\[\]\)|([A-Za-z_$][\w$]*))\.forEach\(/g)]
-    .map((m) => m[1] || m[2]);
-  const uniq = [...new Set(sources)];
-  if (uniq.length < 5) dead(`only ${uniq.length} source(s) parsed out of the list — with none, every comparison below passes vacuously`);
-
-  // The gate: Home's empty-state test, plus the definition of whatever it tests through.
-  const g = src.indexOf('{(!reqN&&');
-  if (g < 0) dead("Home's empty-state gate moved — its coverage cannot be read");
-  const gateEnd = src.indexOf(")?", g);
-  if (gateEnd < 0) dead("Home's empty-state gate does not close");
-  let gate = src.slice(g, gateEnd);
-  // FOLLOW A NAME ONLY WHERE THE GATE ACTUALLY REACHES IT. A first version appended `reqN`'s and
-  // `_pendingForMe`'s definitions unconditionally — so with `reqN` reverted to its longhand the
-  // gate no longer used `_pendingForMe`, and the guard still credited it with everything
-  // `_pendingForMe` counts. It reported full coverage of a gate that had just lost a source, and
-  // only the injection said so. Expansion is transitive from what the gate names, bounded by a
-  // short-definition cap so a gate helper is followed and a component never is.
-  {
-    const seen = new Set();
-    for (let depth = 0; depth < 4; depth++) {
-      const names = new Set([...gate.matchAll(/[A-Za-z_$][\w$]*/g)].map((m) => m[0]));
-      let grew = false;
-      for (const n of names) {
-        if (seen.has(n)) continue;
-        // The nearest definition BEFORE the gate wins: since PR61 the stitched text holds other
-        // components that declare a local of the same name (CrewListView has its own `reqN`).
-        let d = src.lastIndexOf("const " + n + "=", g);
-        if (d < 0) d = src.indexOf("const " + n + "=");
-        if (d < 0) continue;
-        const e = src.indexOf(";", d);
-        if (e < 0 || e - d > 400) continue;   // an arithmetic helper, never a component
-        seen.add(n);
-        gate += " " + src.slice(d, e);
-        grew = true;
-      }
-      if (!grew) break;
-    }
-  }
-  if (!/Nothing needs you/.test(src)) dead("the empty state's copy is gone — the gate would be guarding nothing");
-
-  for (const s of uniq) {
-    cases++;
-    if (gate.includes(s)) ok(`Home's empty state accounts for ${s}`);
-    else fail(`Home's UNFINISHED BUSINESS list renders an entry for every ${s}, and the empty-state gate does not test it — so "Nothing needs you right now" can render directly above one`);
-  }
-}
+// ── 1. RETIRED (owner, 2026-11-11). Home's "Nothing needs you right now" card is gone: it
+//    flashed on every load, before the reads that would hide it had landed, and the Alerts
+//    dropdown already says when nothing is waiting. With no empty-state card there is no gate
+//    to fall short of the UNFINISHED BUSINESS list, so this section has nothing left to guard.
 
 // ── 2. THE BELL BADGE vs THE PANEL IT OPENS.
 //
@@ -217,7 +160,7 @@ let panelProps = null;
   else fail(`"View all N alerts" prints ${printed} while its gate tests something else — the control's condition and its count describe two different lists`);
 }
 
-if (cases < 11) dead(`only ${cases} assertion(s) ran — a guard that quietly stops asking still exits 0`);
+if (cases < 5) dead(`only ${cases} assertion(s) ran — a guard that quietly stops asking still exits 0`);
 console.log();
 if (failures) { console.log(`${failures} failure(s) across ${cases} assertions`); process.exit(1); }
 console.log(`ok — every count agrees with the list under it (${cases} assertions)`);

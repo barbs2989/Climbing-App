@@ -1,6 +1,6 @@
 import { tx } from "../../lib/tapWords.js";
 import { C, catOf, ROUTE_GAP, DLOCALE, uTemp, uPrecip, uWind, RSL as SL, uTempN, uWindN, uImp } from "../../ClimbMatchCore.jsx";
-import { CRAG_SCORE_DISCIPLINES, OPEN_DAY, scoreForecast, starsLabel, FACTOR_LABEL, aqiCategory, WEIGHTS, clockAt } from "../../lib/conditionsScore";
+import { CRAG_SCORE_DISCIPLINES, scoreForecast, starsLabel, FACTOR_LABEL, aqiCategory, WEIGHTS, clockAt } from "../../lib/conditionsScore";
 import { useState, useEffect, useMemo } from "react";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "../../lib/CondPrefs.jsx";
 import { fetchCragForecastMeasured, fetchCragAir, fetchCragClimate, fetchAlpineSpread } from "../../lib/forecast";
@@ -128,14 +128,12 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     return function(){live=false;};
   },[ck,hasPt,on,lat,lng]);
   useEffect(function(){setDayI(0);setHrI(null);},[route.id]);
-  const [wantDate,setWantDate]=useState<string|null>(function(){const d=OPEN_DAY.date;OPEN_DAY.date=null;return d;});
   const rk=routeRock(route);
   const aspectText=route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null;
   const score=useMemo(function(){
     if(!wx||!wx.data)return null;
     return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:aspectText,family:rk?rk.family:null,rock:rk?rk.rock:null,discipline:disc},scorePrefs(cp),undefined,aq&&aq.data?aq.data:null);
   },[wx,aq,cp,route.id,rk&&rk.family,aspectText]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on rock family and route id; lat/lng/disc/rk follow the route and rk is rebuilt each render
-  useEffect(function(){if(!wantDate||!score)return;const i=score.days.findIndex(function(d){return d.date===wantDate;});if(i>=0){setDayI(i);setHrI(null);}setWantDate(null);},[score,wantDate]);
   if(!on)return null;
   const box={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px",marginBottom:ROUTE_GAP};
   const head=<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}><CardHead style={{marginBottom:0}}>CONDITIONS SCORE</CardHead>{hasPt?<button onClick={function(){setShowPrefs(!showPrefs);}} aria-expanded={showPrefs} aria-label="Your ideal conditions" style={{minHeight:44,background:"none",border:"1px solid "+(showPrefs?C.blue:C.border),color:showPrefs?C.blue:C.textSub,borderRadius:8,padding:"5px 9px",fontSize:11.5,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}><ActionIcon name="settings" size={12} color="currentColor"/>Your conditions</button>:null}</div>;
@@ -217,7 +215,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     </div>,true):null}
     {sec("Best time to climb",<div style={box}>{head}
     {showPrefs?<div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
-      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>They change the score on every crag route and in the Best day to climb view. Also in the Menu and Settings.</div>
+      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>They change the score on every crag route. Also in the Menu and Settings.</div>
       <CondPrefsControls disc={disc}/>
     </div>:null}
     <div role="group" aria-label="Day" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:10}}>{days.map(function(d,i){const on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")} style={{flex:"0 0 58px",width:58,boxSizing:"border-box",minHeight:58,padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:11.5,fontWeight:700}}>{dayName(d,i)}</div><div style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</div><div style={{fontSize:10.5,color:C.textMuted}}>{d.hi!=null?uTemp(d.hi)+"/"+uTemp(d.lo):""}</div></button>;})}</div>

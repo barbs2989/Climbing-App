@@ -81,7 +81,7 @@ room for side-panel ads later. The phone app keeps its own look.
     *See all alerts · N more ›*; the header still folds it. It is the **same list as
     Home's Alerts button** (`_alerts` in `ClimbMatch.jsx`, built once for both): what waits on you first (requests,
     invites, unread chats, a day or a climb to confirm, amber), then unread notifications not already one
-    of those, and the SAME count. A guest is told to sign in. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
+    of those, and the SAME count. A guest is told to sign in. Ads, when they come, take slots in this rail
     (desktop only).
   - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail.
   - **Facebook-style edges** (owner 2026-11-04; it was one 1288px block centred as a whole, so on a wide
@@ -291,7 +291,7 @@ follow; the sidebar follows only on a route page carrying an ad (`SideWrap`).
   with Groups/Profile/crews, right rail, footer, Menu drawer, centred popups, hover and page titles; the
   phone tab bar made soft.
 - **2026-10-21, owner:** the desktop Menu fills the screen (was a 440px drawer); the sidebar's site links
-  left for the footer; *Best day to climb* left the right rail.
+  left for the footer; *Best day to climb* left the right rail (and the app altogether on 2026-11-05).
 
 ## 8. Known gaps
 - **Phase 2**: shipped (pages, bell and chat drop-downs, route page, Climbs grid, two-per-row lists,

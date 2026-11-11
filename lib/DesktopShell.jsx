@@ -159,8 +159,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, inlin
 
 /* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and unread alerts
    (collapsed until clicked).
-   Best day to climb is NOT here (owner, 2026-10-21): it opens from the Menu's tile. Ads, when they
-   come, take slots in this column (desktop only). */
+   Ads, when they come, take slots in this column (desktop only). */
 /* CHATS IN THE RAIL (desktop website, owner-approved 2026-10-21): your crews' chats and your direct
    messages, in two folding sections since 2026-11-04 (owner), newest first within each, always in
    reach the way Facebook's contacts column is. The same threads

@@ -1,0 +1,895 @@
+[
+ {
+  "id": "wa_doorway_flake",
+  "name": "Doorway Flake",
+  "area_id": "wa_south_face",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 5,
+  "gain_ft": 2200,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jun-Sep",
+  "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached from the same Darrington trailhead: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, walk the old roadbed past the flagged landslide crossing to the Squire Creek Trail sign and on to two cut logs with old logging cable, turn right onto the boot track, ford Squire Creek, and climb steeply through old-growth forest up two gullies to the grassy saddle below the South Face, roughly 3 hours from the car. For Doorway Flake, go west along the base of the wall past the start of Skeena26 and scramble 4th class onto the far western wall.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 463,
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "role": "main",
+    "type": "camp",
+    "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+    "water": "Piped drinking water via spigots through the campground; reliable in season",
+    "permit": "None — this is a county park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+    "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+   },
+   {
+    "name": "Squire Creek road end / trailhead bivouac",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A moving target and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+    "water": "Squire Creek runs close by and is dependable, but needs treating",
+    "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+    "capacity": "A few parties, informal"
+   },
+   {
+    "name": "Squire Creek Wall on-route ledges",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatever you hauled. Most parties climbing here do not need it, and it should be treated as a planned option for the biggest routes or as an emergency out, rather than as a reason to carry overnight gear by default.",
+    "water": "A rock pocket at the lower ledge holds water through much of the season, but it is a puddle, not a source — assume it may be dry and carry what you need",
+    "permit": "None",
+    "capacity": "Small ledges, one party"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "type": "Campsite",
+    "elev": 463
+   },
+   {
+    "name": "Squire Creek Road washout parking (FS Rd 2040)",
+    "type": "Trailhead",
+    "elev": 1170
+   },
+   {
+    "name": "Grassy saddle (South Face routes)",
+    "type": "Base/bivy",
+    "elev": 3249
+   },
+   {
+    "name": "Top of Doorway Flake (chain anchor)",
+    "type": "Topout",
+    "elev": null
+   }
+  ],
+  "peak": "South Face",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_dragontail_peak_boving_route",
+  "name": "Boving Route",
+  "area_id": "wa_dragontail_peak",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "pitches": 5,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Dragontail Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_dragontail_peak_colchuck_col_buttress",
+  "name": "Colchuck Col Buttress",
+  "area_id": "wa_dragontail_peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": 5,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Dragontail Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_dragontail_peak_northwest_face",
+  "name": "Northwest Face",
+  "area_id": "wa_dragontail_peak",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 3,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Dragontail Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_dragontail_peak_r4",
+  "name": "Triple Couloirs",
+  "area_id": "wa_dragontail_peak",
+  "discipline": "alpine",
+  "grade": "WI3",
+  "pitches": 20,
+  "gain_ft": 5440,
+  "dist_km": 6.9,
+  "high_point_ft": 8840,
+  "season": "Feb-May",
+  "approach": "Stuart Lake Trailhead to Colchuck Lake (4.5 mi, ~2,000 ft gain), then approach the base of the north face aiming for the lowest rock protrusion near the middle of the wall to find the Hidden Couloir entrance around 6,400 ft.",
+  "descent": "Traverse right (skier's/climber's right) toward the true summit, then descend via Asgard Pass back to Colchuck Lake.",
+  "bivy": [
+   {
+    "elev": 5570,
+    "name": "Colchuck Lake designated campsites",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+    "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+    "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+    "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+   },
+   {
+    "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+    "role": "main",
+    "type": "camp",
+    "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+    "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+    "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+    "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+   },
+   {
+    "name": "Talus and boulder bivies below Dragontail's north side",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps half an hour and a clearer look at the route, at the cost of a colder, windier and rockier night. Whether that is worth it is genuinely contested: the time saved is small against a full day on either route, and the ground is poor. Because these are informal spots, camp on bare rock or gravel and leave no trace of a platform.",
+    "water": "Snowmelt runnels and pools early in the season; unreliable by late summer once the snowfields shrink, so many parties carry water up from the lake",
+    "permit": "Still inside the Colchuck Lake zone, so an overnight permit is required exactly as it is at the lake — sleeping on rock rather than in a designated site does not exempt a party. The zone boundary with the Core Enchantment zone lies up toward Aasgard Pass, and a Core permit is valid in every zone, so a party unsure which side of the line it will sleep on is safest holding Core.",
+    "capacity": "Two to four people on flat granite blocks and sand patches; nothing established, and the good spots are scattered rather than clustered"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Stuart Lake Trailhead (Trail #1599)",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Colchuck Lake designated campsites",
+    "type": "Campsite",
+    "elev": 5570
+   }
+  ],
+  "peak": "Dragontail Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_early_morning_spire_southwest_face",
+  "name": "Southwest Face",
+  "area_id": "wa_early_morning_spire",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 8,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "Two approaches are in use. One climbs from the Eldorado trailhead to the base of Eldorado's East Ridge, crosses the Inspiration and McAllister glaciers (obvious crevasses that are easy to avoid) and reaches Dorado Col. The alternative goes by Sibley Pass and Triad Col. From Dorado Col, drop into the Marble Creek cirque over bare ice and snow to roughly 6,000 ft, contour west along a bench, then climb a snow gully to the foot of the southwest face. Good bivy sites are at the base of Eldorado's East Ridge, at Dorado Col, and on the 6,000 ft bench in the cirque.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Early Morning Spire",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_east_mcmillan_spire_northeast_buttress",
+  "name": "Northeast Buttress (\"Come Over to the Dark Side\")",
+  "area_id": "wa_east_mcmillan_spire",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "pitches": 25,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7992,
+  "season": "Aug-Sep",
+  "approach": "A roughly two-day approach traveling via the remnants of the McMillan Creek glaciers to reach the base of the peak's north side/northeast buttress; on the day of the climb the party hiked about 3.5 hours from a high camp to the base of the wall.",
+  "descent": "Rappel the route (the upper north face, then the north buttress, then the northeast buttress) back to the base.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "East McMillan Spire summit",
+    "type": "Summit",
+    "elev": 7992
+   }
+  ],
+  "peak": "East McMillan Spire",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "name": "East Ridge",
+  "area_id": "wa_silver_star_mountain_okanogan",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 0,
+  "gain_ft": 4400,
+  "dist_km": null,
+  "high_point_ft": 8876,
+  "season": "Jul-Sep",
+  "approach": "Start from the Cedar Creek trailhead near Mazama -- a different trailhead than the Silver Star Creek/Highway 20 pullout used for the Glacier and NE Ridge routes -- and gain the ridge near the confluence of Cedar and Early Winters Creeks, then follow the crest north and west for roughly 3.5 miles to the summit.",
+  "descent": "Most parties finish by dropping off the summit onto the Silver Star Glacier and walking/downclimbing out via Burgundy Col back toward Highway 20 near milepost 166 — a different trailhead than the Cedar Creek approach, so a car shuttle or a return hike along the highway is typically needed.",
+  "bivy": [
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "Established Forest Service campground just off SR-20 a short walk from the Cedar Creek Trailhead, the nearest place to stage the night before an early start.",
+    "water": "Potable water available in season",
+    "permit": "No permit; nightly fee, first-come first-served, no reservations",
+    "capacity": "Several first-come, first-served sites"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Klipchuck Campground",
+    "type": "Campsite",
+    "elev": 2900
+   },
+   {
+    "name": "Cedar Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 2985
+   },
+   {
+    "name": "Silver Star Mountain - East/Main Summit",
+    "type": "Summit",
+    "elev": 8876
+   },
+   {
+    "name": "Hwy 20 pullout near MP 166 (descent finish)",
+    "type": "Trailhead",
+    "elev": 4300
+   }
+  ],
+  "peak": "Silver Star Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "name": "Thread of Ice",
+  "area_id": "wa_east_twin_needle",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jun-Jul",
+  "approach": "From a camp on the Chopping Block ridge, traverse Crescent Creek Basin and climb to the Ottohorn-Himmelhorn col, then descend its north side onto the Mustard Glacier; the couloir starts roughly 1,000 ft below the col and tops out at the Eye Col between the two Needles. The usual way down is by the gullies on the south side of the Eye Col back into Crescent Creek Basin.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 6050,
+    "name": "Crescent Creek Basin camp",
+    "role": "main",
+    "type": "camp",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between them; Frenzel Spitz sits off the main chain near the Ottohorn's north side. Parties camp at several benches at different heights.",
+    "water": "Snowmelt streams and pools fed by the basin's snowfields, reliable early and mid season and unreliable late once the snow has pulled back. Plan on melting snow in a lean year.",
+    "permit": "This is the separate Crescent Creek cross-country zone, not Terror Basin — a trip camping in both needs both zones written onto the same permit, night by night. Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance.",
+    "capacity": "A few parties on gravel, slab and snow; the zone is capped at 6 people per party"
+   },
+   {
+    "elev": 500,
+    "name": "Goodell Creek Campground, roadhead staging",
+    "role": "route",
+    "type": "camp",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it does let you hit the roadbed at first light, which matters on an approach this long.",
+    "water": "Potable water when the campground is open for the season; the Skagit and Goodell Creek are immediately adjacent as backup",
+    "permit": "Frontcountry campground fee only — no wilderness permit needed to sleep here. Reservable through recreation.gov in peak season, first-come outside it; not always open year round, so confirm before counting on it.",
+    "capacity": "19 individual drive-in sites, plus a separate group campground where the old roadbed begins"
+   },
+   {
+    "elev": 2000,
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by headlamp. The cost is that the whole climb to the basin still lies ahead, so a low night usually means a full second day of approach with no climbing in it.",
+    "water": "Reliable year round from Goodell and Terror Creeks; the last certain running water until the climbers' path regains streams high in the timber",
+    "permit": "A wilderness permit is required, and this spot is legally awkward: cross-country camping in the park is meant to be at least half a mile from a trail and a mile from designated camps, and the old roadbed is a trail. Ask the Marblemount Wilderness Information Center where they will place you before you plan on it.",
+    "capacity": "One or two small parties on flat ground beside the old grade"
+   },
+   {
+    "elev": 5800,
+    "name": "Terror Basin camp",
+    "role": "route",
+    "type": "camp",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party gets this far on day one is genuinely contested — strong parties who know the path do it, and parties who lose the path in the timber routinely do not.",
+    "water": "Meltwater off the snowfields above the basin, generally dependable while snow remains and a hunt in a dry late summer. Sources are seasonal, not spring-fed.",
+    "permit": "Terror Basin cross-country zone, from Marblemount. 6-person party maximum. It is not on the short list of zones reservable in advance, so it is walk-up only — up to 24 hours ahead, with permits released in the morning of day one. Fires prohibited; human waste in a cathole, or out in a blue bag above treeline.",
+    "capacity": "Small flat gravelly ground for a few tents; the park caps the zone at 6 people per party"
+   },
+   {
+    "elev": 6000,
+    "name": "Stump Hollow bench",
+    "role": "route",
+    "type": "camp",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeast of the Chopping Block near 6,400 ft and drops into Crescent Creek Basin from there. Camp on rock, gravel or snow rather than the heather — this is thin alpine ground that shows every night somebody spends on it.",
+    "water": "Snowmelt only. Trickles and small pools are dependable through early summer while snow lingers, and can dry up or retreat entirely by late season; late-summer parties should expect to search or carry.",
+    "permit": "Cross-country zone permit from the Wilderness Information Center. This bench sits close to the divide between the Terror Basin and Crescent Creek zones, so ask which zone the rangers are writing you into rather than assuming — the answer decides what the rest of your itinerary can say.",
+    "capacity": "Small — a couple of parties on heather benches and slabs, and it is easy to end up spread out"
+   },
+   {
+    "name": "High bivouacs at the western end of the crest",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse instead. These are improvised spots rather than established sites, and quality varies from a decent gravel bench to a night sitting on a ledge. There is no shelter and no water, so this only makes sense with a settled forecast and a party willing to move fast the next morning.",
+    "water": "No dependable source. These are snow-and-rock bivouacs: carry water up or melt snow, and expect nothing at all once the summer snow has gone.",
+    "permit": "Still inside a cross-country zone and still requires a wilderness permit with the night assigned to the correct zone. Camp only on snow, rock or bare ground, keep 100 ft from water, no fires, and carry waste out in a blue bag above treeline.",
+    "capacity": "One party, and often only a ledge or a gravel patch for two people"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Goodell Creek crossing",
+    "type": "Water",
+    "elev": 478
+   },
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "type": "Campsite",
+    "elev": 500
+   },
+   {
+    "name": "Terror Basin camp",
+    "type": "Campsite",
+    "elev": 5800
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "type": "Campsite",
+    "elev": 6050
+   }
+  ],
+  "peak": "East Twin Needle",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "name": "Flycatcher Buttress",
+  "area_id": "wa_north_early_winters_spire",
+  "discipline": "alpine",
+  "grade": "5.10b",
+  "pitches": 10,
+  "gain_ft": 2400,
+  "dist_km": null,
+  "high_point_ft": 7760,
+  "season": "Jul-Sep",
+  "approach": "Start from the hairpin turn used for other Liberty Bell Group routes; stay right of the gully dividing the two spires and scramble up to the route's start ledge.",
+  "descent": "Rappel the Chockstone Route with a 60m rope, or use the newer bolted rappel anchors with a 70m rope.",
+  "bivy": [
+   {
+    "elev": 5400,
+    "name": "Blue Lake trailhead roadside bivy",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, about a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+    "water": "None at the trailhead. Carry what you need.",
+    "permit": "Northwest Forest Pass required to park",
+    "capacity": "Informal, at the parking area — no prepared sites"
+   },
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season runs roughly from late spring into autumn and is decided by snow rather than by a date.",
+    "water": "Early Winters Creek runs through the campground",
+    "permit": "Standard national forest campground fee",
+    "capacity": "27 sites, first come first served"
+   },
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quiet and has more plumbing than anything nearer the climbing. The trade is a longer drive to the trailhead each morning. Check current status before relying on it; the highway-corridor campgrounds take periodic maintenance closures.",
+    "water": "Piped water, sinks and flush toilets",
+    "permit": "Standard national forest campground fee",
+    "capacity": "First come first served"
+   },
+   {
+    "name": "Liberty Bell basin dispersed sites",
+    "role": "route",
+    "type": "camp",
+    "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes at first light rather than walking up from the road. Note the separate restriction around Blue Lake itself, where overnight camping is not allowed within a quarter mile of the lake — the basin sites are the ones to aim for, not the lakeshore. Treat it as a basin camp below the spires rather than a fixed spot.",
+    "water": "Snowmelt and seasonal runoff in the basin — unreliable once the snow has gone",
+    "permit": "No permit for dispersed camping; this is national forest, not the national park",
+    "capacity": "Scattered dispersed sites, small parties"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Base of Flycatcher Buttress",
+    "type": "Junction",
+    "elev": null
+   },
+   {
+    "name": "North Early Winters Spire",
+    "type": "Summit",
+    "elev": 7760
+   }
+  ],
+  "peak": "North Early Winters Spire",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "name": "Northeast Face",
+  "area_id": "wa_fortress_mountain",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8679,
+  "season": "Jul-Sep",
+  "approach": "Same Trinity Trailhead approach as the East Ridge (via Buck Creek/Chiwawa River Trails); this line is normally climbed or descended as part of a link-up with the East Ridge or Southwest Slope rather than approached independently.",
+  "descent": "Usually descended toward the Chiwawa Mountain connecting ridge as part of a two-peak link-up, or reversed back over the Fortress summit.",
+  "bivy": [
+   {
+    "elev": 6300,
+    "name": "Chiwawa Basin bench",
+    "role": "main",
+    "type": "camp",
+    "notes": "A flat heather bench in the upper Chiwawa basin between Fortress and Chiwawa, reached by a short climb from the end of the Chiwawa River trail. The usual high camp for the east side of Fortress and for Chiwawa.",
+    "water": "Small streams on the bench; they can run low late in the season",
+    "permit": "Free self-issue Glacier Peak Wilderness permit",
+    "capacity": "Several tent sites, some with rock windbreaks"
+   },
+   {
+    "elev": 2800,
+    "name": "Phelps Creek Campground and the Chiwawa River road campgrounds",
+    "role": "route",
+    "type": "camp",
+    "notes": "These are staging camps, not climbing camps: the point of them is that the drive up the Chiwawa River road is around twenty-three miles from the Lake Wenatchee end, the last twelve are rough gravel and dirt genuinely unsuited to low clearance vehicles, and doing that at the end of a long drive from the west side is how parties end up starting the walk in tired and late. Phelps Creek Campground sits near the confluence of Phelps Creek and the Chiwawa a short distance below the Phelps Creek trailhead, and the Trinity trailhead at about 2,800 ft — the start of the Buck Creek trail toward Buck Creek Pass and Fortress Mountain — is a mile or so away, so one night here stages either objective. The road is the fragile part of this whole side of the zone. Storm damage has closed it above Atkinson Flat under a multi-year order, and a 2026 fire closure covered the Chiwawa River road and the Phelps Creek spur on top of that, so check whether you can drive to the trailhead at all before planning around it. When the road is shut above Atkinson Flat the lower campgrounds are still a reasonable base but the trailhead becomes a long walk or ride further on.",
+    "water": "The Chiwawa River is right there but these are primitive campgrounds — treat water and expect no potable supply or trash service",
+    "permit": "Small nightly fee at the developed sites, first come first served with no reservations, so arrive early on a summer Friday. A Northwest Forest Pass or America the Beautiful pass covers trailhead parking the next morning, and the free self-issue wilderness permit is picked up at the trailhead itself. Fire restrictions bite here in late summer and often ban all open flame including in the fire rings.",
+    "capacity": "Phelps Creek Campground has roughly seven tent sites plus half a dozen equestrian sites; Atkinson Flat, Schaefer Creek, Rock Creek and the other small forest campgrounds strung along the road below it each hold a handful more"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Trinity Trailhead (Buck Creek Trailhead)",
+    "type": "Trailhead",
+    "elev": 2772
+   },
+   {
+    "name": "Fortress Mountain Summit",
+    "type": "Summit",
+    "elev": 8679
+   }
+  ],
+  "peak": "Fortress Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_garfield_mountain_east_rib",
+  "name": "East Rib",
+  "area_id": "wa_garfield_mountain",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": 3,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Garfield Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_garfield_mountain_north_route",
+  "name": "North Route",
+  "area_id": "wa_garfield_mountain",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Garfield Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_garfield_mountain_southeast_face",
+  "name": "Southeast Face",
+  "area_id": "wa_garfield_mountain",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "pitches": 10,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Garfield Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "name": "South Tahoma Headwall",
+  "area_id": "wa_mount_rainier",
+  "discipline": "alpine",
+  "grade": "AI3",
+  "pitches": null,
+  "gain_ft": 11500,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Apr-Jun",
+  "approach": "Reached from the closed Westside Road beyond the Dry Creek gate on a long walk in of about 12 miles, then across the Tahoma Glacier or round Success Cleaver to the foot of the headwall.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Mount Rainier",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_goat_mountain_eastern_route",
+  "name": "Eastern Route",
+  "area_id": "wa_goat_mountain",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Goat Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_goat_mountain_southeast_face",
+  "name": "Southeast Face",
+  "area_id": "wa_goat_mountain",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Goat Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_goat_mountain_southeast_route",
+  "name": "Southeast Route",
+  "area_id": "wa_goat_mountain",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Goat Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_goat_mountain_southwest_route",
+  "name": "Southwest Route",
+  "area_id": "wa_goat_mountain",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Goat Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "name": "East Face",
+  "area_id": "wa_golden_horn",
+  "discipline": "alpine",
+  "grade": "5.10+",
+  "pitches": 11,
+  "gain_ft": 2700,
+  "dist_km": 18.5,
+  "high_point_ft": 8366,
+  "season": "Jun-Sep",
+  "approach": "From a camp at Snowy Lakes (reached either on the PCT from Rainy Pass or, as the first-ascent party did, off-trail up Swamp Creek), the first-ascent party scrambled the ridge and traversed a scree field on the mountain's southwest side, then descended to the base of the east face before roping up.",
+  "descent": "The east-side snow couloir (crampons and axe) is the way down from the ridge to the foot of the face, not the way off the top.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Golden Horn",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_golden_horn_north_face",
+  "name": "North Face",
+  "area_id": "wa_golden_horn",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": 3500,
+  "dist_km": null,
+  "high_point_ft": 8366,
+  "season": "Jul-Oct",
+  "approach": "The standard access to Golden Horn's north side starts from the Rainy Pass PCT North trailhead on Hwy 20, following the PCT north over Cutthroat and Granite Passes and up the small, unsigned spur to Snowy Lakes (~6,700 ft); a rougher, off-trail alternative bushwhacks up Swamp Creek from a highway pullout about 3 miles before Rainy Pass. From Snowy Lakes, travel northwest toward Golden Horn's basin to access the north aspect; this is the general basin-access line reported by parties, not pitch-by-pitch beta for the original 1958 North Face route.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 6700,
+    "name": "Snowy Lakes basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is THE climbers' camp for both Golden Horn and Tower Mountain and the whole point of walking the PCT north. From Rainy Pass it is roughly twenty miles round trip over Cutthroat and Granite Passes, with the trail contouring past Tower Mountain and dropping to about six thousand three hundred feet before a signed spur climbs half a mile of well-graded switchbacks to the lakes. Lower Snowy Lake comes first, Upper is a short way above. From camp, Golden Horn is taken by gullies on its south side, mostly loose class 3 scrambling, ending at a summit block where the last twenty feet of mantling above a big ledge is the one move that stops parties; Tower Mountain's west and south sides are a choice of class 3 gully systems on generally sound rock buried under loose surface debris, while its east face is a sheer wall and no business of a scrambling party. Both can be done from this camp in one long day. August and September are the season; snow on the traverse and the north-facing slopes governs anything earlier.",
+    "water": "Both lakes, and they are reliable all season. After the dry crest behind you this is where the water problem ends, which is why parties push through to it rather than stopping short.",
+    "permit": "None. This is national forest — no backcountry permit, no quota, nothing to book. Use the established sites rather than making new ones; the meadow here is thin, slow-growing and visibly worn where people have spread out. Campfires are a bad idea on principle at this elevation and are usually banned outright by mid summer under a forest-wide order.",
+    "capacity": "A number of established sites at and between the two lakes, mostly one or two tents each, plus more on the meadow benches along the PCT below the turn-off. Popular enough that a summer weekend will see several parties, and heavily so once the larches turn."
+   },
+   {
+    "name": "Swamp Creek highway pullout, for Mount Hardy's south face",
+    "role": "main",
+    "type": "bivy",
+    "notes": "This is the short way up Mount Hardy and the reason most parties never carry a pack up the PCT for it at all: about four and a half miles and four thousand one hundred feet, done comfortably in a day. Walk west along the highway across Swamp Creek, leave the road and climb north and north-east through timber to gain the prominent ridge on the south side of the peak, then follow the south face, which is largely a walk with occasional easy scrambling on loose talus. It is a different trip entirely from the PCT approach and needs no camp, so it is included here as the honest alternative rather than as a site anyone would choose to sleep at. Parties wanting Hardy together with Golden Horn and Tower should use the PCT and the Snowy Lakes or Methow Pass camps instead; parties wanting Hardy alone should start here.",
+    "water": "Swamp Creek itself, immediately below the road, and further water on the lower slopes. None higher on the south face.",
+    "permit": "None to stop here. The land is national forest and no camping permit applies. Whether an overnight in a highway pullout is welcome varies, so the uncontroversial answer is to sleep at one of the developed campgrounds east of Washington Pass and drive over in the morning, or to sleep in the Rainy Pass lot.",
+    "capacity": "A widened shoulder on SR 20 a couple of miles west of Rainy Pass, just east of Swamp Creek. Room for a few cars. This is a roadside start, not a camp — there are no facilities of any kind."
+   },
+   {
+    "name": "Methow Pass and the PCT meadow camps below Snowy Lakes",
+    "role": "route",
+    "type": "camp",
+    "notes": "Methow Pass is where the PCT crosses from the Granite Creek side into the head of the West Fork Methow, and the camps just beyond it are the sheltered alternative to Snowy Lakes for anyone who does not want a night in the open at six thousand seven hundred feet. They cost a little climbing back up on summit morning and are worth it in bad weather. This is also the departure point for Mount Hardy by the long approach: the PCT is left near the pass and a climbers' path leads up toward the peak, which stands directly to the west. Parties combining Hardy with Golden Horn and Tower usually base here or at the lakes and take Hardy on the way out, since the ridge rambling between the lakes and Hardy's south side connects the whole group. Camping on the established sites rather than in fresh meadow matters here more than most places, because the ground is soft and the trail is walked by a steady stream of long-distance hikers all summer.",
+    "water": "Good here — this is the drainage side of the crest and the creeks running off toward the West Fork Methow are dependable. It is the reason to choose these camps over the lakes when the wind is up.",
+    "permit": "None. National forest, dispersed camping at established sites, no permit and no reservation. Northwest Forest Pass to park at Rainy Pass.",
+    "capacity": "A string of established sites in the meadows along the trail around a mile beyond Methow Pass, near where the boot path to the lakes leaves. Enough ground for several parties spread out, and lower and more sheltered than the lake basin."
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Rainy Pass North Trailhead (PCT)",
+    "type": "Trailhead",
+    "elev": 4875
+   },
+   {
+    "name": "Snowy Lakes basin",
+    "type": "Campsite",
+    "elev": 6700
+   },
+   {
+    "name": "Golden Horn summit",
+    "type": "Summit",
+    "elev": 8366
+   }
+  ],
+  "peak": "Golden Horn",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_golden_horn_northeast_arete",
+  "name": "Northeast Arête",
+  "area_id": "wa_golden_horn",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 5,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8366,
+  "season": "Jul-Sep",
+  "approach": "Same general Snowy Lakes basecamp approach as the standard route (PCT from Rainy Pass), continuing to the base of the northeast side of the peak; expect to find your own way from there.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Golden Horn",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_gorillas_direct",
+  "name": "Gorillas Direct",
+  "area_id": "wa_mount_stuart",
+  "discipline": "alpine",
+  "grade": "5.10d",
+  "pitches": 8,
+  "gain_ft": 6150,
+  "dist_km": 24.1,
+  "high_point_ft": 9415,
+  "season": "Jul-Sep",
+  "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls. For the Cascadian Couloir and South Headwall, turn right onto the Longs Pass Trail at the junction about 1.7 miles in, climb to Longs Pass (about 6,250 ft) near mile 2.9, and descend the rocky climbers' trail on the far side to Ingalls Creek, cross on a log bridge, and follow the climbers' path up the meadow into the base of the Cascadian Couloir (South Headwall lies further up-basin via the same drainage). For West Ridge, the North Ridge routes, and the West Face Wall (Gorillas in the Mist / Gorillas Direct / King Kong), instead stay on the Ingalls Way Trail over Ingalls Pass (about 6,500 ft, roughly mile 3) and continue past Ingalls Lake toward Stuart Pass, then follow the climbers' trail onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass (7,600 ft) — the West Face Wall with the Gorillas routes sits in the amphitheater roughly midway between Stuart Pass and Goat Pass, while West Ridge and North Ridge climbers continue over or along Goat Pass toward their respective start points. Camping is common near Goat Pass or down at Ingalls Creek depending on the objective. The North Ridge routes can also be reached from the opposite (Mountaineer Creek) side.",
+  "descent": "Follow the West Ridge to the summit, or descend the main gully with scrambling/downclimbing, breaking right onto a large bench with a single-rope rappel option before reaching Stuart Pass.",
+  "bivy": [
+   {
+    "elev": 6000,
+    "name": "Upper Ingalls Creek meadows, below Stuart Pass",
+    "role": "main",
+    "type": "camp",
+    "notes": "Parties climbing the West Ridge often push past Headlight Basin to the meadows at the head of Ingalls Creek so the morning starts near the base of the ridge instead of two hours below it. The ground is a boulder-and-heather mix under the West Wall, and site quality varies a lot within a few hundred yards. From here the West Ridge start is a short climb to the saddle, and Stuart Pass gives access onward toward Goat Pass and the north side. Reports differ on how long snow lingers in these meadows; early-season parties should plan on some of it.",
+    "water": "Headwater streams and snowmelt runnels are usually flowing into late summer, but they thin markedly in a dry year and can require walking downstream to find a reliable source",
+    "permit": "Alpine Lakes Wilderness, Cle Elum Ranger District. Free self-issued wilderness permit; Northwest Forest Pass for the Esmeralda trailhead. Outside the Enchantment Permit Area, so no reservation needed — but you are camping on fragile alpine meadow, so pitch on gravel or bare rock rather than vegetation.",
+    "capacity": "A few small parties on durable ground; dispersed rather than developed, with no built sites"
+   },
+   {
+    "name": "Headlight Basin designated sites",
+    "role": "main",
+    "type": "camp",
+    "notes": "Headlight Basin sits just past Ingalls Pass and is the legal overnight option for parties staging the West Ridge or approaching the north side via Stuart Pass. It buys a comfortable night with the whole south face in view, but it is well short of any route start, so summit day from here is long. Do not be tempted by the shoreline at Lake Ingalls — that closure is enforced and the ground there is fragile. Use the marked pads and skip a fire; open flame is off the table at this elevation. No elevation is recorded for the basin itself because a confident single figure could not be sourced.",
+    "water": "Headlight Creek and snowmelt tarns feed the basin and are dependable through midsummer; by late September the smaller channels can go dry and you may need to hunt for running water",
+    "permit": "Alpine Lakes Wilderness, Cle Elum Ranger District. Free self-issued trailhead permit for day and overnight use, plus a Northwest Forest Pass to park at Esmeralda. Not part of the Enchantment Permit Area — no lottery, no quota. Camping is prohibited within half a mile of Lake Ingalls itself, which is why the designated sites here exist.",
+    "capacity": "A number of established, signed sites through the basin; the largest legal camping capacity on the Esmeralda side, though it fills on summer weekends with hikers rather than climbers"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)",
+    "type": "Trailhead",
+    "elev": 4269
+   },
+   {
+    "name": "Headlight Creek crossing",
+    "type": "Water",
+    "elev": 6312
+   },
+   {
+    "name": "Ingalls Pass",
+    "type": "Junction",
+    "elev": 6457
+   },
+   {
+    "name": "Mount Stuart summit area",
+    "type": "Summit",
+    "elev": 9415
+   }
+  ],
+  "peak": "Mount Stuart",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_granite_mountain_beargrass_rib",
+  "name": "Beargrass Rib",
+  "area_id": "wa_granite_mountain",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "pitches": 1,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Granite Mountain",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_granite_mountain_winter_route_first_south_rib",
+  "name": "Winter Route First South Rib",
+  "area_id": "wa_granite_mountain",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "pitches": 1,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": null,
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Granite Mountain",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_hagan_mountain_north_slopes_blum_lakes",
+  "name": "North Slopes via Blum Lakes",
+  "area_id": "wa_hagan_mountain",
+  "discipline": "alpine",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7080,
+  "season": "Jul-Sep",
+  "approach": "Park at the Baker River trailhead at the end of the Baker Lake road (about 800 ft). Walk the Baker River trail for a few minutes to the Blum Creek bridge, then take the faint, flagged climbers' path up the north side of Blum Creek. It is brushy at first, then steep forest to about 4,500 ft; traverse up and south to a talus field near 4,900 ft and cross to Lower Blum Lake, then follow the path to Upper Blum Lake (about 5,020 ft). Travel off the path is very difficult (devil's club, blueberry, brush). North Cascades National Park rules apply: a backcountry permit and camping limits.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Baker River Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Upper Blum Lake",
+    "type": "Campsite",
+    "elev": 5024
+   },
+   {
+    "name": "Hagan Mountain summit",
+    "type": "Summit",
+    "elev": 7067
+   }
+  ],
+  "peak": "Hagan Mountain",
+  "area_type": "peak"
+ }
+]

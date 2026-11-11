@@ -243,10 +243,13 @@ for (const d of [...CRAG, "alpine"]) {
   // also has a Conditions tab: before 2026-10-24 it was left off Safety for such routes.
   const st = text(render(located("alpine"), "safety"));
   const iF = st.search(FIRE), iB = st.indexOf("Committing objective"), iW = st.indexOf("Weather & mountain forecasts");
+  // Since 2026-11-11 (owner) the forecast is NOT repeated on Safety for a route whose Conditions tab
+  // carries it (this alpine fixture has one), and "Got beta?" is off Safety on every route.
   if (iB < 0) fail("ANCHOR LOST: the Safety tab's float-plan banner was renamed — update this guard");
-  else if (iW < 0) fail("forecast: no longer on the Safety tab of a route that has a Conditions tab");
-  else if (!(iW < iF && iF < iB)) fail("Safety order broke: forecast, then the fire panel, then the float plan");
-  else ok("Safety order: forecast first, the fire panel under it, the float plan last");
+  else if (iW >= 0) fail("forecast: duplicated onto the Safety tab of a route that has a Conditions tab");
+  else if (/Got beta\?|Know this (route|climb|problem)\?/.test(st)) fail("\"Got beta?\" is back on the Safety tab");
+  else if (!(iF < iB)) fail("Safety order broke: the fire panel, then the float plan");
+  else ok("Safety order: no repeated forecast, no Got beta, the fire panel above the float plan");
 }
 
 /* ── a SPORT route must be able to say it needs natural gear ─────────────────────────────────
