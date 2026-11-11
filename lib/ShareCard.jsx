@@ -5,7 +5,7 @@ import { C, HERO_BG, HERO_SHEEN, profileGradeRows, pubName } from "../ClimbMatch
 import Av from "../src/components/Av.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
 
-export default function ShareCard({climber,selfUid,onClose,logsUnavailable,catchesUnavailable}){
+export default function ShareCard({climber,selfUid,onClose,logsUnavailable}){
   const [copied,setCopied]=useState("");
   /* Shared OUTSIDE the app, so a signed-in climber is named the way they chose (pubName): their real name only
      if they turned it on, else their handle. */const _nm=selfUid?pubName(climber):(climber.name||"");
@@ -18,8 +18,8 @@ export default function ShareCard({climber,selfUid,onClose,logsUnavailable,catch
      to drop out of the sentence, not interpolate as the word "undefined". */
   const idLine=[climber.level?climber.level+" climber":"",climber.location||""].filter(Boolean).join(" · ");
   const expLine=[climber.years?climber.years+" yrs climbing":"",grades].filter(Boolean).join(" · ");
-  const _slLogged=climber.routesLogged||0,_slCaught=(climber.catchLedger&&climber.catchLedger.totalCatches)||0;
-  const _slParts=[];if(!logsUnavailable)_slParts.push(_slLogged+" climb"+(_slLogged===1?"":"s")+" logged");if(!catchesUnavailable)_slParts.push(_slCaught+" catch"+(_slCaught===1?"":"es")+" caught");const statLine=_slParts.filter(Boolean).join(" · ");
+  const _slLogged=climber.routesLogged||0;
+  const _slParts=[];if(!logsUnavailable)_slParts.push(_slLogged+" climb"+(_slLogged===1?"":"s")+" logged");const statLine=_slParts.filter(Boolean).join(" · ");
   const summary=[_nm+(idLine?" — "+idLine:""),expLine,statLine].filter(Boolean).join("\n")+(hl?"\n\n"+hl:"")+"\n\nMy ClimbMatch profile → https://"+link;
   const copy=async(text,what)=>{try{await navigator.clipboard.writeText(text);setCopied(what);}catch(e){setCopied("fail:"+what);}setTimeout(()=>setCopied(""),2400);};
   const mailto="mailto:?subject="+encodeURIComponent(_nm+" — ClimbMatch profile")+"&body="+encodeURIComponent(summary);
@@ -32,7 +32,7 @@ export default function ShareCard({climber,selfUid,onClose,logsUnavailable,catch
         <div style={{background:HERO_BG,boxShadow:HERO_SHEEN,borderRadius:14,padding:16,marginBottom:14,border:`1px solid ${C.border}`}}>
           <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:12}}><Av src={climber.avatar} size={56}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:17,fontWeight:700}}>{_nm}</div><div style={{fontSize:12,color:C.textSub}}>{idLine||"Add your level and home area to fill this in"}</div></div></div>
           {grades?<div style={{fontSize:13,color:C.textSub,marginBottom:10}}>{grades}</div>:null}
-          <div style={{display:"flex",gap:7}}>{[["Years",climber.years||"—"],["Logged",logsUnavailable?"—":climber.routesLogged],["Catches",catchesUnavailable?"—":climber.catchLedger.totalCatches]].map(x=><div key={x[0]} style={{flex:1,background:"rgba(255,255,255,0.06)",borderRadius:9,padding:"7px 4px",textAlign:"center"}}><div style={{fontSize:16,fontWeight:700,color:C.blue}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted}}>{x[0]}</div></div>)}</div>
+          <div style={{display:"flex",gap:7}}>{[["Years",climber.years||"—"],["Logged",logsUnavailable?"—":climber.routesLogged]].map(x=><div key={x[0]} style={{flex:1,background:"rgba(255,255,255,0.06)",borderRadius:9,padding:"7px 4px",textAlign:"center"}}><div style={{fontSize:16,fontWeight:700,color:C.blue}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted}}>{x[0]}</div></div>)}</div>
         </div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>PUBLIC LINK</div>
         <div style={{display:"flex",gap:7,marginBottom:14}}><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:9,padding:"9px 11px",fontSize:13,color:C.blue,overflowWrap:"anywhere"}}>{link}</div><button onClick={()=>copy("https://"+link,"link")} style={{padding:"9px 14px",background:C.blueChip,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,cursor:"pointer",fontWeight:700,whiteSpace:"nowrap"}}>{copied==="link"?"✓ Copied":copied==="fail:link"?"Couldn’t copy":"Copy"}</button></div>
