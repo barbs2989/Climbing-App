@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { parseTypedSearch } from "./typedSearch.js";
 import { C, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
@@ -60,7 +61,7 @@ const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT
    else to the climber's home state, else to the state with the most climbs — and the row NAMES the
    scope, so nothing is picked silently. A place that was typed but not found offers no row: the
    plain hits (and "no matches") answer that. */
-export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width }) {
+export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [hi, setHi] = useState(0);
@@ -113,7 +114,9 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width }) {
   /* Placed by `left`, not transform:translateX(-50%) — a transform can land the box on a half pixel,
      and text there renders soft on a Windows screen. */
   const w = width || "460px";
-  return <div ref={box} style={{ position: "absolute", top: 12, left: "calc(50vw - (" + w + ") / 2)", width: w }}>
+  /* LEFT (App passes the geometry's searchL, lined up with the nav strip's tabs) wins; without it the
+     box is centred on the window as before. */
+  return <div ref={box} style={{ position: "absolute", top: 12, left: left || "calc(50vw - (" + w + ") / 2)", width: w }}>
     <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, bottom: 0, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
     <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label="Search climbs and places" role="combobox" aria-expanded={showList} aria-controls="wide-search-list" aria-activedescendant={showList && hits.length ? "wide-search-" + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder="Search climbs & crags" style={{ width: "100%", height: 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 14.5, outline: "none" }}/>
     {!q ? <kbd aria-hidden="true" title="Press / to search" style={{ position: "absolute", right: 12, top: 10, fontSize: 11.5, fontFamily: "inherit", color: C.textMuted, border: "1px solid " + C.border, borderRadius: 5, padding: "1px 6px", pointerEvents: "none" }}>/</kbd> : null}
@@ -148,9 +151,10 @@ function FoldCard({ id, title, unread, unreadWord, children }) {
    click away in the top bar's Messages drop-down, which carries their unread count). One row per
    active crew (App's activeCrews, the Crews tab's own list), newest chat message first, named for its
    place, with the last message under the name (read the way the inbox reads it: "You: …", "Photo")
-   and the chat's unread count. A click opens the CREW (owner: the crew page, as the sidebar's rows
+   and the chat's unread count. While the read is in flight it says so, never "No crews yet." (the
+   empty-account claim check:outage guards against). A click opens the CREW (owner: the crew page, as the sidebar's rows
    did), where its chat is. A failed crews read says so rather than listing nothing. */
-function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, onOpenCrew, onAllCrews, onFindPartners }) {
+function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading, onOpenCrew, onAllCrews, onFindPartners }) {
   const last = arr => (arr && arr.length ? arr[arr.length - 1] : null);
   const rows = (crews || []).map(cr => {
     const p = placeOf(cr);
@@ -161,6 +165,7 @@ function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, onOpenCr
   const preview = m => (m ? (m.from === "me" ? "You: " : (m.name ? m.name + ": " : "")) + (m.image && !m.text ? "Photo" : String(m.text || "")) : "");
   return <FoldCard id="rail-crews" title={"Your crews" + (rows.length ? " · " + rows.length : "")} unread={unread} unreadWord="unread">
     {unavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "0 2px 8px" }}>Couldn’t load your crews just now.</div>
+      : !rows.length && loading ? <div style={{ fontSize: 13, color: C.textMuted, padding: "0 2px 8px" }}>Loading your crews…</div>
       : !rows.length ? <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "0 2px 8px" }}>No crews yet.<button onClick={onFindPartners} style={{ ...seeAllBtn, display: "block", padding: 0, marginTop: 8 }}>Find partners ›</button></div>
       : <>{rows.slice(0, PER).map(r => <button key={r.cr.id} onClick={() => onOpenCrew(r.cr)} aria-label={r.name + " crew" + (r.unread ? ", " + r.unread + " unread" : "")} style={{ ...ROW, alignItems: "flex-start" }}>
           <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span>
@@ -224,16 +229,20 @@ export function AvatarMenu({ avatar, name, items }) {
     else if (e.key === "Home") { e.preventDefault(); focusItem(0); }
     else if (e.key === "End") { e.preventDefault(); focusItem(-1); }
     else if (e.key === "Escape") { e.preventDefault(); close(true); }
-    else if (e.key === "Tab") setOpen(false);
+    else if (e.key === "Tab") { e.preventDefault(); close(true); }
   };
-  const pick = it => { setOpen(false); it.go(); };
+  /* Focus goes back to the avatar before the item acts: the menu unmounts, and focus left on a removed
+     item falls to <body>. A window the item opens then takes focus from the avatar as usual. */
+  const pick = it => { close(true); it.go(); };
   return <>
     <button ref={btn} onClick={() => (open ? close(false) : show(true))} onKeyDown={onBtnKey} aria-label="Your account" aria-haspopup="menu" aria-expanded={open} aria-controls={open ? "cm-avatar-menu" : undefined} title="Your account" style={{ background: "transparent", border: "none", padding: 0, marginLeft: 3, cursor: "pointer", borderRadius: "50%", display: "inline-flex" }}><Av src={avatar} size={40} /></button>
-    {open ? <div ref={menu} id="cm-avatar-menu" role="menu" aria-label="Your account" onKeyDown={onMenuKey} style={{ position: "fixed", top: 70 / ZOOM, right: "calc(var(--cm-shell-right) / " + ZOOM + ")", zoom: ZOOM, width: 230, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.6)", padding: 6, zIndex: 1450 }}>
+    {/* PORTALLED TO THE BODY: inside the fixed header (z-index 40, its own stacking context) the menu
+       drew UNDER an open page (z up to 1300) everywhere below the header. */}
+    {open ? createPortal(<div ref={menu} id="cm-avatar-menu" role="menu" aria-label="Your account" onKeyDown={onMenuKey} style={{ position: "fixed", top: 70 / ZOOM, right: "calc(var(--cm-shell-right) / " + ZOOM + ")", zoom: ZOOM, width: 230, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.6)", padding: 6, zIndex: 1450 }}>
       {name ? <div style={{ padding: "8px 10px 6px", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{name}</div> : null}
       {items.map((it, i) => it.divider ? <div key={"d" + i} role="separator" style={{ height: 1, background: C.border, margin: "6px 4px" }} />
         : <button key={it.label} role="menuitem" tabIndex={-1} onClick={() => pick(it)} style={{ ...ROW, minHeight: 38, color: it.danger ? C.red : C.text, fontSize: 14, fontWeight: 600 }}><ActionIcon name={it.icon} size={17} color={it.danger ? C.red : C.textSub} /><span>{it.label}</span></button>)}
-    </div> : null}
+    </div>, document.body) : null}
   </>;
 }
 

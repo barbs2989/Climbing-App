@@ -72,7 +72,8 @@ room for side-panel ads later. The phone app keeps its own look.
     crews, groups, logbook and ranks above the screen and sticky below what is already at the top like a
     real website would"; `wideNavStrip`): Home · Climbs · Partners · Crews · Groups · Logbook · Ranks in a
     row, each an icon and its label, starting at the page column's left edge. The active tab is underlined
-    in blue; Logbook and Crews carry their counts (`navBadge`). It keeps the name *Primary*. It replaced the
+    in blue. It carries **no count badges** (owner 2026-11-11: they overlapped the labels): crew chat unread
+    shows on the Messages icon and the rail's *Your crews*, unfinished climbs inside Logbook. It keeps the name *Primary*. It replaced the
     fixed left sidebar, which held the tabs, then *Your crews* and *Your groups* (those are rail cards now).
     Profile is the avatar, not a tab. No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
@@ -212,7 +213,7 @@ is false none is applied, so phone styles are unchanged. Inline styles cannot ta
 CLAUDE.md rules out a styling library, so the breakpoints are decided in JS. The two things inline styles
 cannot do — hover, and re-shaping every existing bottom sheet and full-screen view — are `wideCss(g)`, a stylesheet App mounts
 only while `wide`; the sheet rule matches the sheets' own serialised inline style
-(`align-items: flex-end`). `navBadge(id,right)` is the one reader of the tab counts, shared by the phone's bottom bar and the nav strip.
+(`align-items: flex-end`). `navBadge(id,right)` is the one reader of the tab counts, used by the phone's bottom bar (the desktop nav strip draws no counts).
 `index.html` repeats the numbers in `@media (min-width: 1024px)` / `(min-width: 1280px)` blocks so the
 boot shell already has the website's shape.
 
