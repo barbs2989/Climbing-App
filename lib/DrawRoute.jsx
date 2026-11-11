@@ -68,6 +68,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
   }, [key, shapePending]); // eslint-disable-line react-hooks/exhaustive-deps -- `key` is `pts` serialised; keying on it (not the array) stops a refetch on every render, and `prof` is read only to skip a repeat for the same key, never to trigger one
   const lenM = trailLenM(pts);
   const canSuggest = pts.length >= MIN_RECORDED_PTS && !shapePending; // one answer for the button's state AND its look
+  const canDownload = pts.length >= 2 && !shapePending; // the file holds the line as drawn, not a leg about to be bent
   const p = prof && prof.key === key ? prof : null;
   const download = function () {
     const gpx = gpxOf(route.name + " — drawn approach", pts, null);
@@ -93,7 +94,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
         <div style={stat}><div style={lbl}>Gain · loss</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length < 2 ? "—" : !p ? <span style={{ fontSize: 13, color: C.textMuted, fontWeight: 600 }}>{shapePending ? "Waiting for the trail…" : "Measuring…"}</span> : p.error ? <span style={{ fontSize: 13, color: C.amber, fontWeight: 600 }}>Couldn’t read the terrain</span> : "↑" + uElev(p.gain) + " · ↓" + uElev(p.loss)}</div></div>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
-        <button onClick={download} disabled={pts.length < 2} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: pts.length < 2 ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < 2 ? "default" : "pointer" }}>⤓ Download GPX</button>
+        <button onClick={download} disabled={!canDownload} title={pts.length >= 2 && shapePending ? "Still following the trail for a leg" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: canDownload ? "#fff" : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: canDownload ? "pointer" : "default" }}>⤓ Download GPX</button>
         {crag && onSuggest ? <button onClick={function () { onSuggest(pts, shapeRef.current); }} disabled={!canSuggest} title={pts.length < MIN_RECORDED_PTS ? "Draw at least " + MIN_RECORDED_PTS + " points" : shapePending ? "Still following the trail for a leg" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: canSuggest ? C.blueSolid : C.card, color: canSuggest ? "#fff" : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: canSuggest ? "pointer" : "default" }}>Suggest this as the trail</button> : null}
       </div>
       <p style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5, margin: "12px 0 0" }}>The gain and loss are read from terrain heights along your line, so they follow the ground, not the trail’s switchbacks. A drawn line is a sketch — check it against the map and the ground before you rely on it.</p>

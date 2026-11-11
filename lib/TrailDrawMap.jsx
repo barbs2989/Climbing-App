@@ -299,7 +299,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
     // leg out of it), never a bend elsewhere that merely passes within reach.
     const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM); // a trim that takes most of a leg is said ("gone")
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k), most = kept.length < cur[k].via.length / 2; next[k] = Object.assign({}, next[k], { via: kept, pending: on, stub: on && most }); if (on) touched.push(next[k].id); else { abortRoute(next[k].id); if (most) noteFailure("gone"); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); else abortRoute(next[k].id); } });
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k), most = kept.length < cur[k].via.length / 2; next[k] = Object.assign({}, next[k], { via: kept, pending: on, stub: most }); if (on) touched.push(next[k].id); else { abortRoute(next[k].id); if (most) noteFailure("gone"); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); else abortRoute(next[k].id); } });
     commit(next, touched); return true; };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
@@ -312,8 +312,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     commit(next, withLegs(next, [i])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
-  // Switching Follow trails ON routes every leg that is still straight (the help says it bends each
-  // leg, so it does), as one undoable step; OFF leaves what is drawn alone, and stops asking for
+  // Switching Follow trails ON routes every leg that is still straight, and every stub (a routed leg a
+  // move cut down to a few points, which the "straightened" note says this switch re-asks), as one
+  // undoable step (the help says it bends each leg, so it does); OFF leaves what is drawn alone, and stops asking for
   // the legs still being looked up, so the line does not reshape itself after the switch.
   const toggleFollow = () => {
     const on = !follow;
@@ -325,7 +326,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       return;
     }
     const cur = nodesRef.current, idxs = [];
-    cur.forEach((x, i) => { if (i > 0 && !routed(x) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); });
+    cur.forEach((x, i) => { if (i > 0 && (!routed(x) || x.stub) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); });
     if (!idxs.length) return;
     const next = cur.slice();
     commit(next, withLegs(next, idxs, true));
