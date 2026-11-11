@@ -162,7 +162,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
       if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
-      if (f.gone) parts.push(legs(f.gone) + " cut back: the point moved past most of the trail they followed (switch Follow trails on to ask again)");
+      if (f.gone) parts.push(legs(f.gone) + " cut back: the point moved past most of the trail they followed (to ask again, nudge the point, or switch Follow trails off and on)");
       if (f.kept) parts.push(legs(f.kept) + " keeping the earlier path, which could not be re-followed from the new point (nudge it to ask again)");
       if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little, or switch Follow trails off and on, to ask again)");
       const total = f.none + f.far + f.down + f.detour + f.kept + f.gone;
@@ -194,7 +194,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // Said once per leg and reason (`told`): a cached answer on Undo/Redo or a Follow toggle is not news.
       const keptVia = Array.isArray(via) ? via : next[j].via;
       // The reason word: "none" for the router's own "no trail", so it is never mistaken for "nothing to tell".
-      const why = Array.isArray(via) ? undefined : (via === "far" || via === "detour") ? via : keptVia.length ? "kept" : (via === null ? "none" : via);
+      const why = Array.isArray(via) ? undefined : (via === "far" || via === "detour") ? via : keptVia.length ? (next[j].stub ? "gone" : "kept") : (via === null ? "none" : via);
       const fresh = why !== undefined && next[j].told !== why;
       next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: why, stub: undefined });
       setBoth(next);
@@ -298,7 +298,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     commit(next, withLegs(next, [i, i + 1]));
     return true;
   };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), told: undefined }); if (next[i + 1]) next[i + 1] = Object.assign({}, next[i + 1], { told: undefined });
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return false; let at = round([lat, lng]); [cur[i - 1], cur[i + 1]].forEach((nb) => { if (nb && distM(nb.a, at) < 3) at = nb.a; }); /* onto a neighbour is the neighbour's spot: no sub-metre leg */ if (sameP(cur[i].a, at)) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: at, told: undefined }); if (next[i + 1]) next[i + 1] = Object.assign({}, next[i + 1], { told: undefined });
     // A routed leg beside the moved anchor keeps its points (they now end a few metres off, which
     // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
     // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
