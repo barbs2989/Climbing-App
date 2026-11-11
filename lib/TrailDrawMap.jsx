@@ -153,7 +153,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (f.none) parts.push(legs(f.none) + " with no mapped trail to follow (drag the point, or tap the hollow dot to add one between)");
       if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
-      if (f.gone) parts.push(legs(f.gone) + " straightened: the point moved further than the trail they followed (switch Follow trails on to ask again)");
+      if (f.gone) parts.push(legs(f.gone) + " cut back: the point moved past most of the trail they followed (switch Follow trails on to ask again)");
       if (f.kept) parts.push(legs(f.kept) + " keeping the earlier path, which could not be re-followed from the new point (nudge it to ask again)");
       if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little, or switch Follow trails off and on, to ask again)");
       const total = f.none + f.far + f.down + f.detour + f.kept + f.gone;

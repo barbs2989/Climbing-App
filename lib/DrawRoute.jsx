@@ -51,7 +51,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
   const key = pts.map(function (p) { return p[0] + "," + p[1]; }).join(";");
   useEffect(function () {
     if (pts.length < 2 || shapePending) return undefined; // measured once the line has settled, not per routed leg
-    if (prof && prof.key === key) return undefined; // measured (or tried) for these very points: a new leg landing is not a reason to ask again
+    if (prof && prof.key === key && !prof.error) return undefined; // measured for these very points: a new leg landing is not a reason to ask again (a failed read is)
     let live = true;
     const sp = samples(pts);
     const t = setTimeout(function () {
