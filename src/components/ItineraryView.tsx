@@ -99,7 +99,8 @@ export interface ItineraryViewProps {
 
 const cap=(s: string)=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
 const has=(v: unknown)=>v!=null&&v!==""&&!(typeof v==="number"&&isNaN(v));
-const fmtHrs=(h: number|string|null|undefined)=>{if(!has(h))return null;const s=String(h).trim();return /hr|h$/i.test(s)?s:s+" hr";};
+// " hr" only after a bare number or range ("6", "8-9"); "45 min" or "6 hr" are shown as stored.
+const fmtHrs=(h: number|string|null|undefined)=>{if(!has(h))return null;const s=String(h).trim();return /^[~≈]?\d+(\.\d+)?(\s*[-–]\s*\d+(\.\d+)?)?\+?$/.test(s)?s+" hr":s;};
 const CARD: CSSProperties={background:C.card,border:"1px solid "+C.border,borderRadius:12};
 
 /** A labelled figure: a small caps label over its value; a missing value is a muted dash. */
@@ -136,7 +137,9 @@ function DayCard({n,title,objective,figures,note,steps,schedule,onContribute}: {
   const f=figures;
   const anyFig=!!f&&[f.gainFt,f.lossFt,f.hours,f.miles,f.packLb].some(has);
   // A spare / weather day stores zeros, which is data ("no travel"), not a gap; five tiles of 0 and dashes said nothing.
-  const restDay=anyFig&&[f.gainFt,f.lossFt,f.hours,f.miles].every(v=>!has(v)||Number(v)===0);
+  // Rest day: at least one travel figure is STORED as 0 and none is above 0. A day with only a pack weight is missing data, not rest (review, 2026-11-11).
+  const travel=f?[f.gainFt,f.lossFt,f.hours,f.miles].filter(has):[];
+  const restDay=travel.length>0&&travel.every(v=>Number(v)===0);
   return <div style={{...CARD,borderLeft:"3px solid "+C.blue,padding:"11px 13px 12px",marginBottom:ROUTE_GAP}}>
     <div style={{display:"flex",alignItems:"flex-start",gap:9,marginBottom:objective?4:9}}><DayTag n={n}/>{title?<div style={{fontSize:14,fontWeight:700,lineHeight:1.3,minWidth:0}}>{title}</div>:null}</div>
     {objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.textMuted,fontWeight:700}}>Goal: </span>{objective}</div>:null}
@@ -144,7 +147,7 @@ function DayCard({n,title,objective,figures,note,steps,schedule,onContribute}: {
       <Tile label="Gain" value={has(f.gainFt)?uElev(f.gainFt as number):null} color={C.green}/>
       <Tile label="Loss" value={has(f.lossFt)?uElev(f.lossFt as number):null} color={C.amber}/>
       <Tile label="Time" value={fmtHrs(f.hours)}/>
-      <Tile label="Dist" value={has(f.miles)&&f.miles?uDistMi(f.miles as number):null}/>
+      <Tile label="Dist" value={has(f.miles)?uDistMi(f.miles as number):null}/>
       <Tile label="Pack" value={has(f.packLb)&&f.packLb?uMass(f.packLb as number):null} color={C.purple}/>
     </div>:f?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,fontSize:11.5,color:C.textMuted,background:C.surface,borderRadius:9,padding:"7px 10px",marginBottom:(note||steps)?9:0}}><span>No gain, time or distance on file for this day.</span>{onContribute?<button onClick={onContribute} style={{flexShrink:0,minHeight:32,background:"transparent",border:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",padding:"0 2px"}}>+ Add</button>:null}</div>:null}
     {steps&&steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:6}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{cap(s)}</li>)}</ul>:note?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{cap(note)}</div>:null}
@@ -172,16 +175,30 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
   const peakish=!["trad","sport"].includes(catOf(route));
   const chip=(t: string,col: string,ic?: ReactNode)=><span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:12,fontWeight:700,color:col,background:col+"22",borderRadius:7,padding:"4px 8px"}}>{ic}{t}</span>;
   const hasPlan=!!(days.length||proseIt);
+  // A plan object with a summary but no days still has something to say (review, 2026-11-11).
+  const showSummary=hasPlan||!!(it&&it.totalNote);
+  const hasMine=!!(myItin&&myItin.days&&myItin.days.length);
+  // The chips (confidence, reports, season, month by month) were drawn on EVERY route before the
+  // redesign, plan or not: they are the Plan tab's way to Reports and the season guide. They sit in the
+  // at-a-glance card when there is one, and on their own above "No trip plan yet" when there is not.
+  const chipRow=<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
+        {chip(conf+" confidence",confC)}
+        {repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}
+        {route.season&&peakish?chip("Season: "+seasonShort(route.season),C.teal,<ActionIcon name="calendar" size={12} color={C.teal}/>):null}
+        {/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). */}
+        {route.seasonalGuidance&&onSeeSeason&&peakish?<span {...clickable(onSeeSeason)} style={{cursor:"pointer"}} title="Open the month-by-month season guide">{chip(seasonOnConditions?"Month by month · Conditions tab →":"Month by month →",C.blue)}</span>:null}
+      </div>;
   const seasonLong=route.season&&peakish&&seasonShort(route.season)!==seasonTidy(route.season)?route.season:null;
   const whenToGo=route.bestSeason&&!route.seasonalGuidance&&peakish?route.bestSeason:null;
   const caveat=<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:2}}>Estimates for an average party. Adjust for your fitness and conditions, and check the latest <b style={{color:C.textSub}}>Reports</b> and <b style={{color:C.textSub}}>Safety</b> tabs.{flagged?<span style={{color:C.amber}}>{" Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info. Check Safety before you commit."}</span>:null}</div>;
   return <div>
     <SL>Trip plan</SL>
-    {hasPlan?<div style={{...CARD,padding:"12px 13px",marginBottom:ROUTE_GAP}}>
-      <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:it&&it.totalNote?4:8}}>
+    {showSummary?<div style={{...CARD,padding:"12px 13px",marginBottom:ROUTE_GAP}}>
+      <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:4}}>
         <span style={{fontSize:20,fontWeight:800,color:C.text,lineHeight:1.1}}>{dayN?dayN+(dayN===1?" day":" days"):"Suggested plan"}</span>
         <span style={{fontSize:11.5,color:C.textMuted}}>{dayN===1?"car to car":dayN>1?"suggested itinerary":"how parties usually do it"}</span>
       </div>
+      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:8}}>Based on how parties commonly climb it. Faster or slower parties, other camps or another order are all normal.</div>
       {it&&it.totalNote?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:10}}>{it.totalNote}</div>:null}
       {days.length&&(totG||totL||totMi||totH)?<div style={{display:"flex",gap:5,marginBottom:10}}>
         <Tile big label="Gain" value={totG?uElev(totG):null} color={C.green}/>
@@ -189,16 +206,10 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
         <Tile big label="Distance" value={totMi?uDistMi(Math.round(totMi*10)/10):null}/>
         <Tile big label="Moving" value={totH?"~"+(Math.round(totH*10)/10)+" hr":null}/>
       </div>:null}
-      <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-        {chip(conf+" confidence",confC)}
-        {repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}
-        {route.season&&peakish?chip("Season: "+seasonShort(route.season),C.teal,<ActionIcon name="calendar" size={12} color={C.teal}/>):null}
-        {/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). */}
-        {route.seasonalGuidance&&onSeeSeason&&peakish?<span {...clickable(onSeeSeason)} style={{cursor:"pointer"}} title="Open the month-by-month season guide">{chip(seasonOnConditions?"Month by month · Conditions tab →":"Month by month →",C.blue)}</span>:null}
-      </div>
-    </div>:null}
+      {chipRow}
+    </div>:<div style={{marginBottom:ROUTE_GAP}}>{chipRow}</div>}
     {/* "Before you go": the season sentence, When to go, and `cal` — what is left of the plan's note once its road and closure sentences moved to GETTING THERE (owner note 2026-10-28, scripts/oneoff/move-cal-road-notes.mjs). */}
-    {hasPlan&&(seasonLong||whenToGo||(it&&it.cal))?<div style={{display:"flex",gap:10,background:C.tealBg,border:"1px solid "+C.tealDim,borderRadius:12,padding:"10px 12px",marginBottom:ROUTE_GAP}}>
+    {(seasonLong||whenToGo||(it&&it.cal))?<div style={{display:"flex",gap:10,background:C.tealBg,border:"1px solid "+C.tealDim,borderRadius:12,padding:"10px 12px",marginBottom:ROUTE_GAP}}>
       <span style={{flexShrink:0,paddingTop:1}}><ActionIcon name="info" size={16} color={C.teal}/></span>
       <div style={{minWidth:0,display:"flex",flexDirection:"column",gap:5}}>
         <div style={{...SUB_LABEL,color:C.teal}}>Before you go</div>
@@ -210,7 +221,7 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
     {days.map((d: StoredDay,i: number)=><DayCard key={i} n={d.n||i+1} title={d.title} objective={d.objective} figures={d} note={d.note} schedule={d.schedule} onContribute={onContribute}/>)}
     {parsed.multi?parsed.days.map((d,i)=><DayCard key={i} n={d.n} figures={null} note={d.text} steps={splitItinerarySteps(d.text)}/>):null}
     {(!days.length&&!parsed.multi&&proseIt)?(()=>{const steps=splitItinerarySteps(parsed.days[0].text);return <div style={{...CARD,padding:"12px 14px",marginBottom:ROUTE_GAP}}>{steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:7}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{s}</li>)}</ul>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6}}>{parsed.days[0].text}</div>}</div>;})():null}
-    {hasPlan?caveat:null}
+    {(days.length||parsed.multi)?caveat:null}
     {!hasPlan?<div style={{...CARD,border:"1px dashed "+C.border,padding:"18px 14px",textAlign:"center"}}>
       <div style={{display:"flex",justifyContent:"center",marginBottom:6}}><ActionIcon name="calendar" size={22} color={C.textMuted}/></div>
       <div style={{fontSize:13.5,fontWeight:700,color:C.text,marginBottom:4}}>No trip plan yet</div>
@@ -220,14 +231,14 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
     {onSaveMyItin?<div>
       <SL>My itinerary</SL>
       {!showBuilder?<div>
-        {(myItin&&myItin.days&&myItin.days.length)?<div style={{...CARD,padding:"4px 13px",marginBottom:ROUTE_GAP}}>
-          {myItin.days.map(function(d: StoredDay,i: number){const last=i===(myItin.days as StoredDay[]).length-1;const bits=[has(d.gainFt)&&d.gainFt?"+"+uElev(d.gainFt as number):null,fmtHrs(d.hours),has(d.miles)&&d.miles?uDistMi(d.miles as number):null].filter(Boolean).join(" · ");return <div key={i} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 0",borderBottom:last?"none":"1px solid "+C.border}}><DayTag n={d.n||i+1}/><div style={{minWidth:0,flex:1}}><div style={{fontSize:13,fontWeight:700,lineHeight:1.3}}>{d.title||"Untitled day"}</div>{bits?<div style={{fontSize:11.5,color:C.textMuted,marginTop:1}}>{bits}</div>:null}</div></div>;})}
+        {hasMine?<div style={{...CARD,padding:"4px 13px",marginBottom:ROUTE_GAP}}>
+          {(myItin&&myItin.days||[]).map(function(d: StoredDay,i: number){const last=i===(myItin.days as StoredDay[]).length-1;const bits=[has(d.gainFt)&&d.gainFt?"+"+uElev(d.gainFt as number):null,fmtHrs(d.hours),has(d.miles)&&d.miles?uDistMi(d.miles as number):null].filter(Boolean).join(" · ");return <div key={i} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 0",borderBottom:last?"none":"1px solid "+C.border}}><DayTag n={d.n||i+1}/><div style={{minWidth:0,flex:1}}><div style={{fontSize:13,fontWeight:700,lineHeight:1.3}}>{d.title||"Untitled day"}</div>{bits?<div style={{fontSize:11.5,color:C.textMuted,marginTop:1}}>{bits}</div>:null}</div></div>;})}
         </div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.45,marginBottom:9}}>Build your own plan for this route: start from a suggested one or from scratch, then share it with your crew.</div>}
         <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
-          <button onClick={function(){startBuilder(myItin&&myItin.days&&myItin.days.length?myItin:null);}} style={{...BTN,background:(myItin&&myItin.days&&myItin.days.length)?C.card:C.blueBg,color:(myItin&&myItin.days&&myItin.days.length)?C.blue:C.onSolid,border:"1px solid "+((myItin&&myItin.days&&myItin.days.length)?C.border:C.blueDim)}}>{(myItin&&myItin.days&&myItin.days.length)?"Edit my plan":"+ Plan your own itinerary"}</button>
-          {(myItin&&myItin.days&&myItin.days.length)?<button onClick={function(){shareOrCopy(route.name+" — plan",itinShareText(myItin,route),notify);}} aria-label="Share my plan" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Share…"}</button>:null}
-          {(myItin&&myItin.days&&myItin.days.length)?<button onClick={function(){printSheet(route.name+" — plan",itinSheetHtml(myItin,route),notify);}} aria-label="Save my plan as a PDF" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Save as PDF"}</button>:null}
-          {(myItin&&myItin.days&&myItin.days.length&&crewsForRoute&&crewsForRoute.length)?(pickCrew?<div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center"}}>{crewsForRoute.map(function(c,ci: number){return <button key={c.id} onClick={function(){(onShareItinToCrew as NonNullable<ItineraryViewProps["onShareItinToCrew"]>)(c.id,myItin);setPickCrew(false);}} style={{...BTN,background:C.blueBg,color:C.onSolid,border:"1px solid "+C.blueDim}}>{/* Crews have no name column, so every button used to read "→ Crew". The agreed day tells two crews on one route apart. */"→ "+(c.date?"Crew · "+shortDate(c.date):crewsForRoute.length>1?"Crew "+(ci+1):"Your crew")}</button>;})}</div>:<button onClick={function(){setPickCrew(true);}} style={{...BTN,background:C.card,color:C.green,border:"1px solid "+C.green+"55"}}>Share with crew</button>):null}
+          <button onClick={function(){startBuilder(hasMine?myItin:null);}} style={{...BTN,background:hasMine?C.card:C.blueBg,color:hasMine?C.blue:C.onSolid,border:"1px solid "+(hasMine?C.border:C.blueDim)}}>{hasMine?"Edit my plan":"+ Plan your own itinerary"}</button>
+          {hasMine?<button onClick={function(){shareOrCopy(route.name+" — plan",itinShareText(myItin,route),notify);}} aria-label="Share my plan" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Share…"}</button>:null}
+          {hasMine?<button onClick={function(){printSheet(route.name+" — plan",itinSheetHtml(myItin,route),notify);}} aria-label="Save my plan as a PDF" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Save as PDF"}</button>:null}
+          {(hasMine&&crewsForRoute&&crewsForRoute.length)?(pickCrew?<div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center"}}>{crewsForRoute.map(function(c,ci: number){return <button key={c.id} onClick={function(){(onShareItinToCrew as NonNullable<ItineraryViewProps["onShareItinToCrew"]>)(c.id,myItin);setPickCrew(false);}} style={{...BTN,background:C.blueBg,color:C.onSolid,border:"1px solid "+C.blueDim}}>{/* Crews have no name column, so every button used to read "→ Crew". The agreed day tells two crews on one route apart. */"→ "+(c.date?"Crew · "+shortDate(c.date):crewsForRoute.length>1?"Crew "+(ci+1):"Your crew")}</button>;})}</div>:<button onClick={function(){setPickCrew(true);}} style={{...BTN,background:C.card,color:C.green,border:"1px solid "+C.green+"55"}}>Share with crew</button>):null}
         </div>
       </div>:<div>
         {avail.length?<div style={{marginBottom:11}}>
