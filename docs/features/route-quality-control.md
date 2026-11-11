@@ -73,8 +73,8 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
 - **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
   onFlag}) around `RouteDetail`; the shared heading components `SL` (core) and `CardHead` (`src/components/CardHead.tsx`) map their
   text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
-  Low, with a ⚑ Flag button — the only place it renders); `ConfidenceLegend` explains the three levels once under the
-  verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
+  Low, with a ⚑ Flag button — the only place it renders). No legend line explains the levels (owner removed it 2026-11-11). The
+  page carries the chips alone. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
   field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
   chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened. The sheet's
   **Discipline card** is the one exception: since 2026-11-05, on a route with a discipline on file it
@@ -200,7 +200,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `src/components/SuggestFix.tsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line, the standing notice (moved out of RouteDetail.jsx, PR59) |
 | `RouteDetail.jsx` | `openFix`, which opens the edit sheet |
 | `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
-| `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
+| `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
 | `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
 | `src/components/DbAreaPicker.tsx` | `DbAreaPicker` (Add a climb's area step) |
