@@ -114,7 +114,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   useEffect(() => {
     if (active === false || !mapRef.current) return;
     const m = mapRef.current;
-    setTimeout(() => { try { m.invalidateSize(); if (builtHidden.current) { builtHidden.current = false; fitView(m); } } catch (e) {} }, 60);
+    const t = setTimeout(() => { try { m.invalidateSize(); if (builtHidden.current) { builtHidden.current = false; fitView(m); } } catch (e) {} }, 60);
+    return () => clearTimeout(t);
   }, [active]);
 
   // Pins and the line, or the whole country when there is nothing yet to show.
@@ -181,14 +182,17 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (!sameP(now[j].a, b) || !sameP(now[j - 1].a, a)) { if (now[j].pending) { const nx = now.slice(); nx[j] = Object.assign({}, nx[j], { pending: false }); setBoth(nx); } return; }
       const next = now.slice();
       // No answer: the leg keeps the routed points it was split from (a nudge with Follow on), else straight.
-      next[j] = Object.assign({}, next[j], { via: Array.isArray(via) ? via : next[j].via, pending: false });
+      // Said once per leg and reason (`told`): a cached answer on Undo/Redo or a Follow toggle is not news.
+      const keptVia = Array.isArray(via) ? via : next[j].via;
+      const why = Array.isArray(via) ? null : (keptVia.length ? "kept" : via);
+      const fresh = why !== null && next[j].told !== why;
+      next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: why === null ? undefined : why });
       setBoth(next);
-      // History froze this leg as still pending: give those snapshots the answer too, or an Undo would
-      // ask again for a leg that had settled (or flatten it, with Follow off since).
-      const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: next[j].via, pending: false }) : x));
+      // History froze this leg as still pending: give those snapshots the answer (and what was told) too,
+      // or an Undo would ask again for a leg that had settled, or flatten it with Follow off since.
+      const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: keptVia, pending: false, told: next[j].told }) : x));
       undoRef.current = undoRef.current.map(settle); redoRef.current = redoRef.current.map(settle);
-      // Said once per leg and reason: a cached answer on Undo/Redo or a Follow toggle is not news.
-      if (!Array.isArray(via)) { const why = next[j].via.length ? "kept" : via; if (next[j].told !== why) { next[j] = Object.assign({}, next[j], { told: why }); nodesRef.current = next; setNodes(next); noteFailure(why); } }
+      if (fresh) noteFailure(why);
     });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on
@@ -263,7 +267,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const before = via[best - 1] || cur[i - 1].a, after = via[best + 1] || cur[i].a;
       const cut = segD(before, via[best]) <= segD(via[best], after) ? best : best + 1;
       nn.via = via.slice(0, cut);
-      next[i] = Object.assign({}, cur[i], { via: via.slice(cut) });
+      next[i] = Object.assign({}, cur[i], { via: via.slice(cut), told: undefined });
       next.splice(i, 0, nn);
       // A point placed ON the path (a tap on the hollow dot, a drop a few metres from a routed point)
       // is an exact split: nothing to ask, even with Follow trails on.
@@ -283,7 +287,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     commit(next, withLegs(next, [i, i + 1]));
     return true;
   };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]) });
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0 || sameP(cur[i].a, round([lat, lng]))) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: round([lat, lng]), told: undefined }); if (next[i + 1]) next[i + 1] = Object.assign({}, next[i + 1], { told: undefined });
     // A routed leg beside the moved anchor keeps its points (they now end a few metres off, which
     // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
     // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
