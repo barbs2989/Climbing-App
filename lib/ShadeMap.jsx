@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
 import { sunPosition } from "./conditionsScore.js";
 import { shadeGrid, decodeTerrarium, shadeMask, pointShaded, pinSunSpans, terrainCredits, gridPx, steepMask, STEEP_DEG, highestNear, SUMMIT_SNAP_M, TERRAIN_TILE_URL } from "./terrainShade.js";
+import { decodeBlob } from "./slopeLayer.js";
 
 const STEP = 10 * 60e3;
 const SHADE_RGBA = ((150 << 24) | (40 << 16) | (18 << 8) | 12) >>> 0; // little-endian ABGR: rgb(12,18,40) at 59%
@@ -19,23 +20,6 @@ const DIR8 = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 // One grid's heights per session, at most three grids (each is 4 MB of floats).
 const _terrain = {};
 const _order = [];
-function decodeBlob(b) {
-  const draw = function (img) {
-    const cv = document.createElement("canvas"); cv.width = 256; cv.height = 256;
-    const cx = cv.getContext("2d", { willReadFrequently: true });
-    cx.drawImage(img, 0, 0);
-    return cx.getImageData(0, 0, 256, 256).data;
-  };
-  // colorSpaceConversion "none": the PNG's bytes ARE the heights, and a colour-managed decode would
-  // shift them.
-  if (typeof window.createImageBitmap === "function") return window.createImageBitmap(b, { colorSpaceConversion: "none", premultiplyAlpha: "none" }).then(function (bm) { const d = draw(bm); if (bm.close) bm.close(); return d; });
-  return new Promise(function (res, rej) {
-    const u = URL.createObjectURL(b), im = new Image();
-    im.onload = function () { try { res(draw(im)); } catch (e) { rej(e); } URL.revokeObjectURL(u); };
-    im.onerror = function () { URL.revokeObjectURL(u); rej(new Error("decode")); };
-    im.src = u;
-  });
-}
 // Shared with the alpine card's start, so the map and the start read one download.
 export function loadTerrain(grid) {
   if (_terrain[grid.key]) return _terrain[grid.key];
