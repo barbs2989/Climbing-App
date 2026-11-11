@@ -17,7 +17,7 @@
 alter table topos add column if not exists area_photo boolean not null default false;
 
 comment on column topos.area_photo is
-  'Posted from an AREA page (route_id null): shown in that area''s photo strip and its ancestors'', never on a route page (0410).';
+  'Posted from an AREA page (route_id null): shown in that area''s photo strip and its ancestors'', never on a route page (0411).';
 
 -- A photo is a route photo or an area photo, not both.
 alter table topos drop constraint if exists topos_area_photo_has_no_route;

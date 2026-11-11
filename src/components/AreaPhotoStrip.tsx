@@ -6,7 +6,7 @@ import { POP_CLOSE_MEDIA } from "../../lib/popupChrome.js";
 import { clickable } from "../../lib/clickable";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
-/** An area_photo_feed row (0410) with its public URL. */
+/** An area_photo_feed row (0411) with its public URL. */
 export interface AreaFeedPhoto { id: string; url: string | null; alt?: string | null; route_id?: string | null; route_name?: string | null; area_id: string; area_name?: string | null; created_at: string }
 export interface AreaPhotoStripProps {
   area: { id: string; name: string };
