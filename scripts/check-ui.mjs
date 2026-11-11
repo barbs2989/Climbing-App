@@ -787,7 +787,7 @@ try {
   });
 
   // THE PROFILE SCREEN'S OWN TABS (Profile · Activity · Review for admins). The main walk captures
-  // Profile; Activity holds the logbook, the catch record and the Year in Climbing banner, so it is
+  // Profile; Activity holds the logbook and the Year in Climbing banner, so it is
   // captured here under the same rules (LANDMARKS["Profile:Activity"] asserts the banner). Profile is
   // tapped last so the screen is left where a visit starts.
   await flow("profile-tabs-switch", async () => {
