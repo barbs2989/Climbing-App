@@ -27,13 +27,13 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
   const [sort, setSort] = useState("latest");
   const [season, setSeason] = useState("all");
   // A sort picked on an earlier route that this one does not offer (Fastest, on a crag) does not apply.
-  const sortNow = (crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS).some((s) => s.id === sort) ? sort : "latest";
+  const sorts = crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS;
+  const sortNow = sorts.some((s) => s.id === sort) ? sort : "latest";
   const list = useMemo(() => sortTracks(rows.filter((r) => inSeason(r.date, season)), sortNow), [rows, season, sortNow]);
   const nameOf = (r) => { const p = profiles[r.user_id]; return (p && pubName(p)) || "A climber"; };
   const full = shown.length >= MAX_SHOWN_TRACKS;
   const chip = (on) => ({ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: on ? C.text : C.textSub });
   // A walk-in time is not a send time, so a crag offers no Fastest.
-  const sorts = crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS;
   const title = crag ? "Climbers' walk-in recordings" : "Climbers' tracks";
   // A crag WITHOUT its trail draws nothing while loading and nothing when there is nothing to list:
   // the crag map's own "No trail to the crag yet → Add the trail" is the one invitation, and a

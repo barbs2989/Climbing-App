@@ -145,7 +145,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
   // many at once), with a count per reason, not one note overwriting the last.
   const noteFailure = (why) => {
     const f = fails.current;
-    if (why === "far") f.far++; else if (why === "detour") f.detour++; else if (why === "kept") f.kept++; else if (why === "gone") f.gone++; else if (why === false) f.down++; else f.none++;
+    if (why === "far") f.far++; else if (why === "detour") f.detour++; else if (why === "kept") f.kept++; else if (why === "gone") f.gone++; else if (why === "none") f.none++; else if (why === false) f.down++; else f.none++;
     clearTimeout(f.t);
     f.t = setTimeout(() => {
       const legs = (k) => k + (k === 1 ? " leg" : " legs");
@@ -184,9 +184,10 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // No answer: the leg keeps the routed points it was split from (a nudge with Follow on), else straight.
       // Said once per leg and reason (`told`): a cached answer on Undo/Redo or a Follow toggle is not news.
       const keptVia = Array.isArray(via) ? via : next[j].via;
-      const why = Array.isArray(via) ? null : (keptVia.length ? "kept" : via);
-      const fresh = why !== null && next[j].told !== why;
-      next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: why === null ? undefined : why });
+      // The reason word: "none" for the router's own "no trail", so it is never mistaken for "nothing to tell".
+      const why = Array.isArray(via) ? undefined : (keptVia.length ? (next[j].stub ? "gone" : "kept") : (via === null ? "none" : via));
+      const fresh = why !== undefined && next[j].told !== why;
+      next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: why, stub: undefined });
       setBoth(next);
       // History froze this leg as still pending: give those snapshots the answer (and what was told) too,
       // or an Undo would ask again for a leg that had settled, or flatten it with Follow off since.
@@ -298,7 +299,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
     // leg out of it), never a bend elsewhere that merely passes within reach.
     const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM); // a trim that takes most of a leg is said ("gone")
-    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k); next[k] = Object.assign({}, next[k], { via: kept, pending: on }); if (on) touched.push(next[k].id); else { abortRoute(next[k].id); if (kept.length < cur[k].via.length / 2) noteFailure("gone"); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); } });
+    [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k), most = kept.length < cur[k].via.length / 2; next[k] = Object.assign({}, next[k], { via: kept, pending: on, stub: on && most }); if (on) touched.push(next[k].id); else { abortRoute(next[k].id); if (most) noteFailure("gone"); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); else abortRoute(next[k].id); } });
     commit(next, touched); return true; };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
     // The merged leg keeps the routed points of both legs it joins (the deleted anchor is the one
