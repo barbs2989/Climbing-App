@@ -85,7 +85,7 @@ for (const doc of docs) {
   }
 
   // 2. Every backticked repo path anywhere in the doc. A bare name (`honesty-claims.md`,
-  //    `BestDayTile.jsx`) is how prose naturally cites a sibling, so it resolves against the
+  //    `CondPrefs.jsx`) is how prose naturally cites a sibling, so it resolves against the
   //    folders that hold the app and its docs; it fails only if it is in none of them.
   for (const [, tok] of src.matchAll(/`([^`\s]+)`/g)) {
     if (!PATHLIKE.test(tok) || !tok.includes("/") && !/\.(?:jsx|md)$/.test(tok)) continue;
