@@ -26,7 +26,9 @@ const SH = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "
 export default function RouteTracksPanel({ rows, profiles, loading, failed, shown, colorOf, onToggle, onOpenReport, canOpen, onLog, crag, cragHasTrail }) {
   const [sort, setSort] = useState("latest");
   const [season, setSeason] = useState("all");
-  const list = useMemo(() => sortTracks(rows.filter((r) => inSeason(r.date, season)), sort), [rows, season, sort]);
+  // A sort picked on an earlier route that this one does not offer (Fastest, on a crag) does not apply.
+  const sortNow = (crag ? TRACK_SORTS.filter((s) => s.id === "latest") : TRACK_SORTS).some((s) => s.id === sort) ? sort : "latest";
+  const list = useMemo(() => sortTracks(rows.filter((r) => inSeason(r.date, season)), sortNow), [rows, season, sortNow]);
   const nameOf = (r) => { const p = profiles[r.user_id]; return (p && pubName(p)) || "A climber"; };
   const full = shown.length >= MAX_SHOWN_TRACKS;
   const chip = (on) => ({ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: on ? C.text : C.textSub });
