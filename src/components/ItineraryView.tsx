@@ -135,10 +135,12 @@ function ScheduleFold({schedule}: {schedule: NonNullable<StoredDay["schedule"]>}
 function DayCard({n,title,objective,figures,note,steps,schedule,onContribute}: {n: number; title?: string|null; objective?: string|null; figures: StoredDay|null; note?: string|null; steps?: string[]|null; schedule?: StoredDay["schedule"]; onContribute?: (() => void) | null}){
   const f=figures;
   const anyFig=!!f&&[f.gainFt,f.lossFt,f.hours,f.miles,f.packLb].some(has);
+  // A spare / weather day stores zeros, which is data ("no travel"), not a gap; five tiles of 0 and dashes said nothing.
+  const restDay=anyFig&&[f.gainFt,f.lossFt,f.hours,f.miles].every(v=>!has(v)||Number(v)===0);
   return <div style={{...CARD,borderLeft:"3px solid "+C.blue,padding:"11px 13px 12px",marginBottom:ROUTE_GAP}}>
     <div style={{display:"flex",alignItems:"flex-start",gap:9,marginBottom:objective?4:9}}><DayTag n={n}/>{title?<div style={{fontSize:14,fontWeight:700,lineHeight:1.3,minWidth:0}}>{title}</div>:null}</div>
     {objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.textMuted,fontWeight:700}}>Goal: </span>{objective}</div>:null}
-    {f&&anyFig?<div style={{display:"flex",gap:4,marginBottom:(note||steps)?9:0}}>
+    {restDay?<div style={{fontSize:11.5,color:C.textMuted,background:C.surface,borderRadius:9,padding:"7px 10px",marginBottom:(note||steps)?9:0}}>No travel planned this day.</div>:f&&anyFig?<div style={{display:"flex",gap:4,marginBottom:(note||steps)?9:0}}>
       <Tile label="Gain" value={has(f.gainFt)?uElev(f.gainFt as number):null} color={C.green}/>
       <Tile label="Loss" value={has(f.lossFt)?uElev(f.lossFt as number):null} color={C.amber}/>
       <Tile label="Time" value={fmtHrs(f.hours)}/>

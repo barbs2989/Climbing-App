@@ -24,15 +24,19 @@ const inputs = new Map();
 for (const f of fs.readdirSync(path.join(DIR, "inputs")).filter((f) => /^(gap-routes|wave\d+-chunk\d+)\.json$/.test(f))) {
   for (const r of read("inputs/" + f)) inputs.set(r.id, { row: r, gap: f === "gap-routes.json" });
 }
+const CAL_OVERRIDES = fs.existsSync(path.join(DIR, "cal-overrides.json")) ? read("cal-overrides.json") : {};
 const outs = fs.readdirSync(DIR).filter((f) => /^out-.*\.json$/.test(f));
 const ROAD = /\b(road|gate|closure|closed|washout|washed out|FR ?\d|forest road|highway|hwy)\b/i;
 const num = (v, lo, hi) => v == null || (typeof v === "number" && v >= lo && v <= hi);
-const hrsOk = (v) => v == null || (typeof v === "number" && v > 0 && v <= 24) || (typeof v === "string" && /^\d{1,2}(\.\d)?\s*[-–]\s*\d{1,2}(\.\d)?$/.test(v.trim()));
+// 0 is allowed: a spare / weather day that moves nowhere (East Twin Needle day 3, Olympus day 4).
+const hrsOk = (v) => v == null || (typeof v === "number" && v >= 0 && v <= 24) || (typeof v === "string" && /^\d{1,2}(\.\d)?\s*[-–]\s*\d{1,2}(\.\d)?$/.test(v.trim()));
 
 const plan = [], rejected = [], skipped = [];
 for (const f of outs) {
   for (const x of read(f)) {
     if (x.skip) { skipped.push({ id: x.id, reason: x.reason, file: f }); continue; }
+    // cal-overrides.json: hand edits that only REMOVE road/closure clauses from a researched cal line.
+    if (CAL_OVERRIDES[x.id] && x.itinerary) x.itinerary.cal = CAL_OVERRIDES[x.id];
     const why = [];
     const inp = inputs.get(x.id);
     if (!inp) why.push("not in this wave's inputs");
@@ -82,7 +86,10 @@ for (const p of plan) {
   await patchRow("routes", p.id, { itinerary: p.itinerary });
   wrote++;
 }
+// jsonb keeps object keys in its own order, so compare with keys sorted (a raw byte comparison
+// reported 0 of 43 on the first run; verify-trip-plans-wa-2026-11-11.mjs then confirmed 43 of 43).
+const canon = (v) => Array.isArray(v) ? v.map(canon) : v && typeof v === "object" ? Object.fromEntries(Object.keys(v).filter((k) => v[k] !== undefined).sort().map((k) => [k, canon(v[k])])) : v;
 let ok = 0;
-for (let i = 0; i < ids.length; i += 50) for (const [id, x] of await live(ids.slice(i, i + 50))) { const p = plan.find((q) => q.id === id); if (JSON.stringify(x.itinerary) === JSON.stringify(JSON.parse(JSON.stringify(p.itinerary)))) ok++; }
+for (let i = 0; i < ids.length; i += 50) for (const [id, x] of await live(ids.slice(i, i + 50))) { const p = plan.find((q) => q.id === id); if (JSON.stringify(canon(x.itinerary)) === JSON.stringify(canon(p.itinerary))) ok++; }
 console.log("wrote " + wrote + ", stale " + stale + ", re-read matching " + ok + " of " + wrote);
 if (ok !== wrote) { console.error("FAIL - a written row does not read back as written"); process.exit(1); }

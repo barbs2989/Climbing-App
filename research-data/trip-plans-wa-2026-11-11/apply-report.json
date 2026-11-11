@@ -1,0 +1,340 @@
+{
+ "plan": [
+  "wa_abernathy_peak_north_ridge",
+  "wa_cinderella_peak_scramble",
+  "wa_east_twin_needle_south_route",
+  "wa_glacier_peak_sitkum_glacier",
+  "wa_half_moon_southwest_slopes",
+  "wa_jack_mountain_south_face",
+  "wa_mount_adams_wilson_glacier_headwall",
+  "wa_mount_challenger_challenger_glacier",
+  "wa_mount_claywood_standard",
+  "wa_mount_fairchild_standard",
+  "wa_mount_mathias_scramble",
+  "wa_mount_seattle_south",
+  "wa_olympus_traverse",
+  "wa_rimrock_ridge_scramble",
+  "wa_earl_peak_standup_creek_route",
+  "wa_mount_ellinor_southeast_chute",
+  "wa_mount_si_trail",
+  "wa_mount_baker_squak_glacier",
+  "wa_mount_baker_coleman_ski_descent",
+  "wa_mount_adams_mazama_glacier_headwall",
+  "wa_mount_daniel_lynch_glacier",
+  "wa_mount_hinman_west_ridge",
+  "wa_mount_shuksan_white_salmon_glacier",
+  "wa_ruby_mountain_happy_creek",
+  "wa_ruby_mountain_northwest_ridge",
+  "wa_sherpa_glacier",
+  "wa_trapper_mountain_north_couloir",
+  "wa_big_chiwaukum_west_ridge",
+  "wa_cashmere_mountain_se_route",
+  "wa_chikamin_peak_glacier_lake",
+  "wa_gilbert_peak_klickton_divide",
+  "wa_granite_mountain_standard_scramble_route",
+  "wa_mount_ballard_east_face",
+  "wa_mount_si_haystack_scramble",
+  "wa_vesper_peak_standard_route",
+  "wa_mount_price_northwest_route",
+  "wa_mount_price_south_ridge",
+  "wa_north_star_mountain_cloudy_peak_traverse",
+  "wa_observation_rock_standard_scramble_route",
+  "wa_silver_peak_standard_scramble_route",
+  "wa_tinkham_peak_northwest_ridge",
+  "wa_windy_peak_iron_gate_trail",
+  "wa_bulls_tooth_south_ridge"
+ ],
+ "rejected": [
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "file": "out-gap-fill.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "file": "out-gap-fill.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "file": "out-gap-fill.json",
+   "why": [
+    "low confidence",
+    "day 3 has no hours/miles/gain",
+    "day 4 has no hours/miles/gain",
+    "day 5 has no hours/miles/gain"
+   ]
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "file": "out-gap-fill.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+   "file": "out-wave1-chunk1.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_sherman_peak_baker_squak_glacier",
+   "file": "out-wave1-chunk1.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+   "file": "out-wave1-chunk1.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_mount_steel_first_divide",
+   "file": "out-wave1-chunk1.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_east_success_couloir",
+   "file": "out-wave1-chunk1.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_spider_mountain_north_face",
+   "file": "out-wave1-chunk2.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_cannon_mountain_northwest_ridge",
+   "file": "out-wave1-chunk2.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_cashmere_mountain_northeast_ridge",
+   "file": "out-wave1-chunk2.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_emerald_peak_west_route",
+   "file": "out-wave1-chunk2.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_seattle_creek",
+   "file": "out-wave1-chunk3.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_tinkham_peak_southeast_spur",
+   "file": "out-wave1-chunk3.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_south_face_7",
+   "file": "out-wave1-chunk3.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_around_the_cave_we_go",
+   "file": "out-wave1-chunk3.json",
+   "why": [
+    "low confidence"
+   ]
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "file": "out-wave1-chunk3.json",
+   "why": [
+    "low confidence"
+   ]
+  }
+ ],
+ "skipped": [
+  {
+   "id": "wa_american_border_peak_northeast_face",
+   "reason": "No openable source describes the Northeast Face (only a 1952 Beckey first-ascent citation turned up); all trip reports found are for the Southeast Route, and SummitPost/Mountaineers/CascadeClimbers pages returned 403. Row also has no gain/dist/approach to anchor a plan.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_big_four_mountain_northwest_ridge",
+   "reason": "Sources found (sverdina.com, stevensong.com) describe the Dry Creek route from the south, not the Northwest Ridge; no NW Ridge trip report with timing could be opened (SummitPost/Mountaineers 403). Too thin for an honest route-specific plan.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_crooked_thumb_peak_east_face",
+   "reason": "No source describes the East Face itself (row descent is 'presumed'); found reports cover the NW couloir and general Northern Pickets approaches only, and CascadeClimbers/SummitPost return 403. Too thin for an honest route-specific plan.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_mount_adams_pinnacle_glacier_headwall",
+   "reason": "Only the Mountain Project route page (approach via Riley Camp trail, ~2,000 ft headwall, descend West Ridge) describes the climb; the other reports found are approach recons or day hikes that never climbed the headwall, with no camp or timing. No source shows how parties structure the trip.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_mount_rainier_north_mowich_icefall",
+   "reason": "Row is empty and the only reports found (CascadeClimbers 2012, SummitPost, 1967 AAJ, a 2026 NWAC accident report) were blocked or describe neighbouring Mowich Face/Ptarmigan Ridge lines; one notes the classic rock at the base of the icefall has disappeared. Too thin and too conditions-dependent for an honest plan.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_glacier_peak_tahoma_cleaver",
+   "reason": "No trip report for Rainier's Tahoma Cleaver could be found or opened; results were all Disappointment Cleaver/Success Cleaver. Note: id says glacier_peak but area_id and peak are Mount Rainier.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "reason": "Only first-hand Crowder beta found is a one-sentence mention in Steph Abegg's Mystery Ridge enchainment (approached from the south via Pioneer Ridge, not the Easy Ridge/Perfect Pass approach in the row); no source gives days, camps or timing for the northern approach to the Phantom-Crowder col.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_mount_persis_the_hexorcist",
+   "reason": "Only a one-line Mountain Project area mention (a hard Bryan Burdo alpine rock climb on the north face); no grade, length, approach, descent or trip report found.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "reason": "All route-specific sources (SummitPost route/trip report, CascadeClimbers 2015 TR) return 403; search snippets only (~1,800 ft couloir, loose gully, avalanche-prone), no openable source with timing or gain.",
+   "file": "out-wave1-chunk1.json"
+  },
+  {
+   "id": "wa_silver_peak_northwest_ridge",
+   "reason": "Row has no location data and several Washington peaks are named Silver Peak; cannot identify which Northwest Ridge is meant, so no honest itinerary is possible.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_switchback_mountain_west_ridge",
+   "reason": "Opened trip reports (climberkyle 2016, Yellowleaf 2017) climb Switchback by the southeast ridge from Cooney Lake; the only description of the west ridge/west face from Boiling Lake is a Mountaineers route page that could not be opened. Too thin to write an itinerary for this specific line.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_black_peak_east_buttress",
+   "reason": "Only one secondary description of the East Buttress (a SummitPost summary, not openable) was found; no trip reports with timing or route detail. The Wing Lake approach is well documented, but the route itself is too thin for an honest plan.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_cadet_peak_ne_ridge",
+   "reason": "Only one first-hand account could be opened (climberkyle.com 2023 Heineken High Route, a 20 mi / 8,700 ft one-day loop that exits via Glacier Basin and Monte Cristo with a bike shuttle). The SummitPost route page (mentions Cadet Lake as a camp) returned 403. One source is not enough for a plan.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_south_route",
+   "reason": "Opened sources do not cover the lawful Harts Pass/PCT approach the row names. The written-up line comes in from Manning Park, BC (crossing the border on foot, not lawful), and the one detailed report opened (countryhighpoints.com) used a Ross Lake boat plus Lightning/Freezeout Creek in a single 27.5-hour push (39 mi hiking, 24 mi boating). Row dist_km 21.8 (13.5 mi one way) fits the Canadian approach, not Harts Pass, which is roughly 30 mi each way by PCT to Castle Pass. Too thin and inconsistent for an honest plan.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_esmeralda_peaks_east_gully",
+   "reason": "Opened reports (kuresman 2004/2008, Yellowleaf 2007) climb the western summits from the De Roux Creek trail; none describes the East Peak's east gully from the Esmeralda/Ingalls trailhead. Row data (2,280 ft, 8.05 km) cannot be checked against any source.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_big_chiwaukum_three_musketeers_ridge",
+   "reason": "No trip report or route description of a scramble on Three Musketeers Ridge was found; sources mention it only as the source of avalanche debris near Toketie Pass and an uninvestigated Prusik-Nada-Musky-Toketie ridgeline. Row has no summit elevation, gain or distance.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_east_gully",
+   "reason": "Row has no location, approach or elevation data, and no Washington 'Agathla Tower' could be identified (Agathla is a well-known Arizona landmark). Cannot research honestly.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_gully_1",
+   "reason": "Row has no location, approach, elevation or season data, and 'The Amphitheater' could not be tied to a specific Washington feature. Cannot research honestly.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_gully_2",
+   "reason": "Row has no location, approach, elevation or season data, and 'The Amphitheater' could not be tied to a specific Washington feature. Cannot research honestly.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_hibox_mountain_southeast_ridge",
+   "reason": "Only one opened source (stevensong.com, Oct 2024: one day, ~6 h round trip from the Rachel Lake trail via the scramble route, which it calls the east ridge). Mountaineers and WTA pages (about 8 mi, 3,900 ft) returned 403, and no opened source names a southeast ridge route, so the route identity is unconfirmed.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+   "reason": "No report of a North Peak south ridge ascent was found. Opened/searched material covers the NE buttress, NE ridge, NW ridge and the southwest peak's south ridge, and access (border gate, loon closure, 2026 fire closure) is unsettled. Too thin for an honest plan.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_iron_cap_mountain_northeast_shoulder",
+   "reason": "Iron Cap appears only as a waypoint in Foss Lakes / Alpine Lakes High Route loop reports (mostly WTA, which returned 403); no opened source describes an out-and-back ascent by the north ridge/northeast shoulder from Tank Lakes with distances or timing.",
+   "file": "out-wave1-chunk2.json"
+  },
+  {
+   "id": "wa_mount_seattle_noyes_basin",
+   "reason": "No source I could open describes the Noyes Basin line itself: only route-name lists (Wikipedia) and a Klenke report that climbed Seattle by the east basin from Low Divide. I couldn't confirm whether the row's Chicago Camp/Elwha approach is how parties do this route, so I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_mount_lincoln_harniss_chute",
+   "reason": "I found no openable source that mentions the Harniss Chute or describes a Mount Lincoln (Olympics) ascent with timing. Only Flapjack Lakes approach material and Sawtooth Ridge overviews turned up, so I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_mount_triumph_west_route",
+   "reason": "The sources I found cover the Northeast Ridge via Thornton Lakes; the only West Route mention is a SummitPost photo caption. There's no approach, camp or timing beta for the Triumph Pass approach, so I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_big_four_mountain_tower_route",
+   "reason": "The only beta I found names the Tower Route in passing (approach from the Ice Caves trail, and a CascadeClimbers note about Tower 1's lower pitches). I found no source giving the full route length, timing, or whether parties go car-to-car, so I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_big_snow_mountain_southwest_ridge",
+   "reason": "The trip reports I found climb Big Snow via Myrtle Lake and Big Snow/Snowflake lakes (17 mi, 5,500 ft, 14.5 h car to car, SummitPost 2013); one report only mentions seeing a line on the southwest side above Hester Lake. With no source for the Hester Lake/SW ridge line, I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "reason": "I found no openable trip report or route page for the North Ridge; only Wikipedia-mirror first-ascent notes and a Yellowleaf index that I couldn't confirm covers this route. The ford and approach detail in the row couldn't be corroborated, so I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_cascade_peak_nw_chimney",
+   "reason": "The sources cover the C-J col approach for Johannesburg routes (bivy at the col, meadow camp near 6,200 ft); none mentions the Northwest Chimney on Cascade Peak or gives its timing, so I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_east_ridge",
+   "reason": "The row has no data. The east-side reports I found (Collins 2006, linked from SummitPost; Stevensong 2023) approach from Manning Park in Canada, which isn't a lawful border crossing. The documented lawful US approach (Ross Lake boat, Lightning and Freezeout creeks; Lemke 2023, 39 mi walking, 27.5 h push) climbs the west slopes, not the East Ridge.",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_north_ridge",
+   "reason": "The row has no data, and no source I found describes a North Ridge route or itinerary on Castle Peak (Pasayten).",
+   "file": "out-wave1-chunk3.json"
+  },
+  {
+   "id": "wa_castle_peak_pasayten_the_drawbridge",
+   "reason": "Only first-ascent material exists, and that party approached from Canada (not lawful). I found no source giving an itinerary, camps or timing for the lawful Ross Lake/Freezeout Creek approach to the north face, so I didn't write a plan.",
+   "file": "out-wave1-chunk3.json"
+  }
+ ]
+}
