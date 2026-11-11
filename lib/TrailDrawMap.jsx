@@ -465,7 +465,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       </div>
       {note ? <div role="status" style={{ fontSize: 12, color: C.warning, margin: "8px 0 0", lineHeight: 1.45 }}>{note}</div> : null}
       <p style={{ fontSize: 12, color: C.text70, margin: "8px 0 0", lineHeight: 1.45 }}>
-        <b style={{ color: C.accent }}>{mk.start}</b>{" is " + mk.startName + " and "}<b style={{ color: C.warning }}>{mk.end}</b>{" " + mk.endName + ". "}
+        {start ? <><b style={{ color: C.accent }}>{mk.start}</b>{" is " + mk.startName + (end ? " and " : ". ")}</> : null}{end ? <><b style={{ color: C.warning }}>{mk.end}</b>{(start ? " " : " is ") + mk.endName + ". "}</> : null}
         {tx("Tap along the trail the way you walk it. Drag a point to move it, drag or tap the hollow dot between two points to add one, tap a point and Delete to remove it.")} <b>Follow trails</b> {tx("bends each leg along the mapped footpaths between your points, so a switchbacking path takes two taps.")} Zoom in: Topo shows mapped paths, Satellite shows the ones that aren't.
       </p>
     </>
