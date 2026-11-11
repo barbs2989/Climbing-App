@@ -1,3 +1,7 @@
+/* The inquiry's dates are two calendar picks (owner 2026-11-05: no typed dates anywhere), stored as the one line the guide's dashboard prints, in the climber's date preference. */
+const todayIso = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+const fmtDay = d => new Date(d + "T12:00:00").toLocaleDateString(currentDateLocale(), { month: "short", day: "numeric", year: "numeric" });
+const requestedDates = (from, to) => !from ? "" : (to && to !== from) ? fmtDay(from) + " to " + fmtDay(to) : fmtDay(from);
 // Real "Hire a Guide" browse/detail/inquiry screen — backed by Supabase. Mirrors the
 // static Guides component's layout/copy but reads real listings, persists real
 // inquiries (instead of discarding the form on submit), gates on a climber disclaimer
@@ -17,6 +21,7 @@ import { POP_BACK } from "./popupChrome.js";
 import { askConfirm } from "./ConfirmSheet.jsx";
 import { photoThumb } from "./photoThumb";
 import { INPUT } from "./buttonStyles.js";
+import { currentDateLocale } from "./date-pref.js";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -64,7 +69,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const { data: myInquiries, refetch: refetchMyInquiries } = useMyInquiriesWithGuide(uid, guide.id);
   const verified = isGuideVerified(credentials || []);
 
-  const [obj, setObj] = useState(""); const [dates, setDates] = useState(""); const [party, setParty] = useState(1); const [msg, setMsg] = useState("");
+  const [obj, setObj] = useState(""); const [dateFrom, setDateFrom] = useState(""); const [dateTo, setDateTo] = useState(""); const [party, setParty] = useState(1); const [msg, setMsg] = useState("");
   const [minor, setMinor] = useState(false); const [disclaimerOk, setDisclaimerOk] = useState(false);
   const [sent, setSent] = useState(false); const [sending, setSending] = useState(false); const [sentId, setSentId] = useState(null); const [withdrawing, setWithdrawing] = useState(false);
 
@@ -95,7 +100,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
     try {
       const row = await submitInquiry({
         guide_id: guide.id, climber_id: uid,
-        objective: obj, requested_dates: dates, party_size: party, message: msg,
+        objective: obj, requested_dates: requestedDates(dateFrom, dateTo), party_size: party, message: msg,
         includes_minor: minor,
       });
       setSent(true); setSentId(row && row.id || null); refetchMyInquiries && refetchMyInquiries();
@@ -188,7 +193,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           <>
             {openInquiryId ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: "8px 10px", marginBottom: 8 }}><span style={{ flex: 1 }}>{"You have an inquiry waiting on " + guide.name.split(" ")[0] + "."}</span><button onClick={withdraw} disabled={withdrawing} style={{ flexShrink: 0, background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: withdrawing ? "default" : "pointer" }}>{withdrawing ? "Withdrawing…" : "Withdraw"}</button></div> : null}
             <textarea aria-label="What's your objective?" value={obj} onChange={e => setObj(e.target.value)} rows={2} placeholder="What's your objective?" style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
-            <input aria-label="Dates you're thinking of" value={dates} onChange={e => setDates(e.target.value)} placeholder="Dates you're thinking of" style={{ ...inp, marginTop: 8 }} />
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, marginBottom: 3, fontWeight: 700 }}>DATES YOU'RE THINKING OF</div><div style={{ display: "flex", gap: 8 }}><input type="date" aria-label="First day you're thinking of" value={dateFrom} min={todayIso()} onChange={e => { setDateFrom(e.target.value); if (dateTo && dateTo < e.target.value) setDateTo(e.target.value); }} style={inp} /><input type="date" aria-label="Last day you're thinking of" value={dateTo} min={dateFrom || todayIso()} onChange={e => setDateTo(e.target.value)} style={inp} /></div>
             <select aria-label="Party size" value={party} onChange={e => setParty(Number(e.target.value))} style={{ ...inp, marginTop: 8 }}>
               {Array.from({ length: guide.groupMax || 4 }, (_, i) => i + 1).map(n => <option key={n} value={n}>{n + (n > 1 ? " climbers" : " climber")}</option>)}
             </select>

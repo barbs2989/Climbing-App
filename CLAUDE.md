@@ -44,7 +44,7 @@ npm run measure:guard-reach -- --out before.json # ...then --out after.json --co
 # ── Static code guards — notes: docs/guards/static-code.md ──
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
-npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25) (in build)
+npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25); the one exception is the REACTIONS table (owner, 2026-11-05) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
@@ -338,7 +338,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`); the same tile also renders on Home under Jump back in. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
+- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 

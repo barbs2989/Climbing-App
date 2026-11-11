@@ -1,0 +1,259 @@
+[
+ {
+  "key": "p002",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Kashmir and its direct variant are separate lines on the wall; online listings show the plain climb at 5.12a (30 m) and the Conspiracy/Kashmir Direct at 5.12b PG13 (18 m). The stored 5.12b/same-FA match comes from copied data.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p021",
+  "verdict": "same",
+  "confidence": "high",
+  "keep": "or_critical_mass",
+  "drop": "or_red_wall_critical_mass_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "The [E] suffix is a map letter; same name, same grade, one sport pitch. Kept row has the FA.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p022",
+  "verdict": "same",
+  "confidence": "high",
+  "keep": "or_pinhead",
+  "drop": "or_red_wall_pinhead_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "The [E] suffix is a map letter; same name and grade. Kept row has the FA.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p023",
+  "verdict": "same",
+  "confidence": "high",
+  "keep": "or_red_eye_2",
+  "drop": "or_red_wall_red_eye_e",
+  "move": [],
+  "alt_names": [],
+  "why": "The [E] suffix is a map letter; same name and grade. Kept row holds the description and pitches; the dropped row only adds an 18 m length that fits the first pitch.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p024",
+  "verdict": "same",
+  "confidence": "high",
+  "keep": "or_trailer_park_sunset",
+  "drop": "or_red_wall_trailer_park_sunset_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "The [E] suffix is a map letter; same name and 5.12d. Kept row has the FA.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p098",
+  "verdict": "same",
+  "confidence": "high",
+  "keep": "or_kashmir",
+  "drop": "or_red_wall_kashmir_e",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "patch": {
+   "id": "or_kashmir",
+   "set": {
+    "grade": "5.12a"
+   }
+  },
+  "why": "Same name; [E] is a map letter. Online listings give 5.12a for Kashmir, so the kept row grade of 5.12b looks wrong and the dropped row carries the likelier value.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p099",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Kashmir is the plain line (5.12a); Conspiracy/Kashmir Direct is a different, shorter, harder (5.12b PG13) line.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p100",
+  "verdict": "same",
+  "confidence": "high",
+  "keep": "or_the_conspiracy_aka_kashmir_direct",
+  "drop": "or_red_wall_the_conspiracy_aka_kashmir_direct_l",
+  "move": [
+   "length_m",
+   "pitches"
+  ],
+  "alt_names": [],
+  "why": "Identical name apart from the [L] map letter, same 5.12b. Kept row has the FA. The PG13 tag on the dropped row may be worth keeping as a danger note.",
+  "evidence": [
+   "https://www.mountainproject.com/area/108302895/red-wall — Red Wall area lists Kashmir [E] and Conspiracy (aka Kashmir Direct) [L] as separate routes"
+  ]
+ },
+ {
+  "key": "p069",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Last Days Extension is a new 2024 upper section above the Last Days anchors; Last Days is the older 1984 route below.",
+  "evidence": []
+ },
+ {
+  "key": "p070",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Mantra Extension is a separate harder (5.10d) route by a different team in 2015.",
+  "evidence": []
+ },
+ {
+  "key": "p071",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Morning Star Extension is a separate 5.10d with a different first ascensionist.",
+  "evidence": []
+ },
+ {
+  "key": "p029",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Education (V4) and Higher Education (V7) are different problems with different grades.",
+  "evidence": []
+ },
+ {
+  "key": "p040",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "A sit start is a separate problem with a different grade (V3 versus V0-1).",
+  "evidence": []
+ },
+ {
+  "key": "p051",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "Two unnamed routes at different grades (5.10 and 5.10+) and one is an arete.",
+  "evidence": []
+ },
+ {
+  "key": "p079",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "The standing problem (V5) and its sit start (V9-10) are separate problems.",
+  "evidence": []
+ },
+ {
+  "key": "p089",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Different first ascents, dates and grades; one is a direct variation of the other.",
+  "evidence": []
+ },
+ {
+  "key": "p095",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "The Start row covers only the lower part of Darkness at Noon, traverses to the neighbouring route and ends at its anchors; a different climb at 5.12c versus 5.13a.",
+  "evidence": []
+ },
+ {
+  "key": "p096",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "The extension is a different grade (5.10d versus 5.9) continuing past the base route.",
+  "evidence": []
+ },
+ {
+  "key": "p104",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Different grades and first ascents; different names.",
+  "evidence": []
+ },
+ {
+  "key": "p107",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Stand start (V2) versus the original (V3): distinct problems.",
+  "evidence": []
+ },
+ {
+  "key": "p121",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Full Wily Coyote (5.12b) extends the shorter Wily Coyote (5.11c); separate routes.",
+  "evidence": []
+ },
+ {
+  "key": "p133",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Direct version is a different grade (5.10b vs 5.8) with a different history.",
+  "evidence": []
+ },
+ {
+  "key": "p148",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Different discipline, grade, first ascent (2022 vs 2000) and location; the Pelican one is a slab summit.",
+  "evidence": []
+ },
+ {
+  "key": "p156",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "A 5.9 variation of a 5.11a route is a separate line.",
+  "evidence": []
+ },
+ {
+  "key": "p169",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Scratch is an individual problem; the Traverse is a separate line.",
+  "evidence": []
+ },
+ {
+  "key": "p170",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Spliff is an individual problem on another face; the Traverse is a separate line.",
+  "evidence": []
+ },
+ {
+  "key": "p171",
+  "verdict": "distinct",
+  "confidence": "high",
+  "why": "Sit start is a separate problem with a different grade (V6- versus V5).",
+  "evidence": []
+ },
+ {
+  "key": "p226",
+  "verdict": "distinct",
+  "confidence": "medium",
+  "why": "The Alt is a different variation with a different grade (V3 versus V2).",
+  "evidence": []
+ }
+]
