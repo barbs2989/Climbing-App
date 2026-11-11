@@ -196,7 +196,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // The reason word: "none" for the router's own "no trail", so it is never mistaken for "nothing to tell".
       const why = Array.isArray(via) ? undefined : via === false ? false : (via === "far" || via === "detour") ? via : keptVia.length ? (next[j].stub === true ? "gone" : "kept") : "none";
       const fresh = why !== undefined && next[j].told !== why;
-      next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: why, stub: undefined });
+      next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: Array.isArray(via) ? "ok" : why, stub: undefined }); // "ok": answered, even when every point trimmed away
       setBoth(next);
       // History froze this leg as still pending: give those snapshots the answer (and what was told) too,
       // or an Undo would ask again for a leg that had settled, or flatten it with Follow off since.
@@ -218,7 +218,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
       // A leg going straight gives up the answer it was waiting for, so the slot goes to a live leg.
       if (!(want && !zero)) abortRoute(next[i].id);
-      next[i] = Object.assign({}, next[i], { via: next[i].stub && want && !zero ? next[i].via : [], pending: want && !zero, told: all && next[i].told !== false ? next[i].told : undefined });
+      next[i] = Object.assign({}, next[i], { via: (next[i].stub || next[i].told === false) && want && !zero ? next[i].via : [], pending: want && !zero, told: all && next[i].told !== false ? next[i].told : undefined });
       if (want && !zero) touched.push(next[i].id);
     });
     return touched;
@@ -298,7 +298,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     commit(next, withLegs(next, [i, i + 1]));
     return true;
   };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return false; let at = round([lat, lng]); [cur[i - 1], cur[i + 1]].forEach((nb) => { if (nb && distM(nb.a, at) < 3) at = nb.a; }); /* onto a neighbour is the neighbour's spot: no sub-metre leg */ if (sameP(cur[i].a, at)) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: at, told: undefined }); if (next[i + 1]) next[i + 1] = Object.assign({}, next[i + 1], { told: undefined });
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return false; const at = round([lat, lng]); if ([cur[i - 1], cur[i + 1]].some((nb) => nb && distM(nb.a, at) < 3)) { deleteAnchor(id); return true; } /* dropped onto a neighbour: the two are one point, so the dragged one goes (never two anchors on one spot, nor a sub-metre leg) */ if (sameP(cur[i].a, at)) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: at, told: undefined }); if (next[i + 1]) next[i + 1] = Object.assign({}, next[i + 1], { told: undefined });
     // A routed leg beside the moved anchor keeps its points (they now end a few metres off, which
     // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
     // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
@@ -336,7 +336,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       return;
     }
     const cur = nodesRef.current, idxs = [];
-    cur.forEach((x, i) => { if (i > 0 && (!routed(x) || x.stub || x.told === false) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); /* ...and a leg the router never answered for, kept points or not: the note says this switch asks again */ });
+    cur.forEach((x, i) => { if (i > 0 && ((!routed(x) && x.told !== "ok") || x.stub || x.told === false) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); /* ...and a leg the router never answered for, kept points or not: the note says this switch asks again */ });
     if (!idxs.length) return;
     const next = cur.slice();
     commit(next, withLegs(next, idxs, true));
