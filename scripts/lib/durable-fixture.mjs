@@ -49,27 +49,14 @@ const asUser = async (sess, path, init = {}) => readBody(await fetch(`${SUPABASE
     "Content-Type": "application/json", Prefer: "return=representation", ...(init.headers || {}),
   },
 }));
-
-// The crew's CREATOR, seated confirmed, as the creator. Since 0408 the crews_creator_joins trigger
-// seats the creator itself, so a plain insert is a duplicate (409, crew_members_pkey) and every walk
-// on this fixture ERRORED before checking anything (check:signed-in, check:message-delivery). ON
-// CONFLICT DO NOTHING works with the trigger and without it; the read-back keeps the guarantee the
-// plain insert gave, that the creator IS a confirmed member.
-async function seatCreator(sess, crewId, what) {
-  const uid = sess.user.id;
-  const seat = await asUser(sess, "crew_members?on_conflict=crew_id,user_id", {
-    method: "POST",
-    headers: { Prefer: "return=minimal,resolution=ignore-duplicates" },
-    body: JSON.stringify({ crew_id: crewId, user_id: uid, status: "confirmed", invited_by: uid }),
-  });
-  assertHealthy(seat, `seating the creator in ${what}`);
-  if (seat.status >= 300) throw new Error(`could not seat the creator in ${what} (HTTP ${seat.status}): ${(seat.text || "").slice(0, 200)}`);
-  const row = await asUser(sess, `crew_members?crew_id=eq.${crewId}&user_id=eq.${uid}&select=status`);
-  assertHealthy(row, `reading the creator's seat in ${what}`);
-  if (row.json?.length !== 1 || row.json[0].status !== "confirmed") {
-    throw new Error(`the creator is not a confirmed member of ${what} after seating (HTTP ${row.status}): ${(row.text || "").slice(0, 200)}`);
-  }
-}
+// 0408 (crew_creator_joins): creating a crew seats its creator CONFIRMED, by trigger, so the creator's own
+// row is already there and inserting it again is a duplicate key (23505 -> HTTP 409). A run against a
+// database without 0408 (a preview replaying older migrations) still needs the insert, so ask first.
+const alreadySeated = async (sess, crewId, uid) => {
+  const r = await asUser(sess, `crew_members?crew_id=eq.${crewId}&user_id=eq.${uid}&select=status`);
+  assertHealthy(r, "reading whether the crew's creator is already seated");
+  return Array.isArray(r.json) && r.json.some((m) => m.status === "confirmed");
+};
 
 async function signIn(email, password) {
   const res = await readBody(await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
@@ -378,14 +365,14 @@ export async function durableFixture(log) {
   // demands invited_by = auth.uid() AND (you created the crew, or you are seating yourself at a
   // status other than confirmed). Doing it as the owner would manufacture a state the app's own
   // flow cannot reach -- the trap this repo already records for the accepted connection.
-  await seatCreator(mateSession, inviteCrew.id, "this run's invite crew");
-  {
+  for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    if (uid === mateSession.user.id && await alreadySeated(mateSession, inviteCrew.id, uid)) continue;
     const seat = await asUser(mateSession, "crew_members", {
       method: "POST",
-      body: JSON.stringify({ crew_id: inviteCrew.id, user_id: session.user.id, status: "invited", invited_by: mateSession.user.id }),
+      body: JSON.stringify({ crew_id: inviteCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),
     });
-    assertHealthy(seat, "seating invited member in this run's invite crew");
-    if (seat.status >= 300) throw new Error(`could not seat the invited member (HTTP ${seat.status}): ${(seat.text || "").slice(0, 200)}`);
+    assertHealthy(seat, `seating ${status} member in this run's invite crew`);
+    if (seat.status >= 300) throw new Error(`could not seat the ${status} member (HTTP ${seat.status}): ${(seat.text || "").slice(0, 200)}`);
   }
   log(`  created this run's invite crew ${inviteCrew.id.slice(0, 8)}, owned by the mate, owner INVITED and not confirmed`);
 
@@ -418,14 +405,14 @@ export async function durableFixture(log) {
   // The creator can seat another climber only as INVITED ("Only the climber themselves can accept a
   // crew invite", 0086/0227 — the first draft seated the owner confirmed and CI answered 403), so the
   // mate invites and the OWNER accepts, which is exactly the app's own flow.
-  await seatCreator(mateSession, areaCrew.id, "this run's area crew");
-  {
+  for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    if (uid === mateSession.user.id && await alreadySeated(mateSession, areaCrew.id, uid)) continue;
     const seat = await asUser(mateSession, "crew_members", {
       method: "POST",
-      body: JSON.stringify({ crew_id: areaCrew.id, user_id: session.user.id, status: "invited", invited_by: mateSession.user.id }),
+      body: JSON.stringify({ crew_id: areaCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),
     });
-    assertHealthy(seat, "seating invited member in this run's area crew");
-    if (seat.status >= 300) throw new Error(`could not seat the invited member in the area crew (HTTP ${seat.status}): ${(seat.text || "").slice(0, 200)}`);
+    assertHealthy(seat, `seating ${status} member in this run's area crew`);
+    if (seat.status >= 300) throw new Error(`could not seat the ${status} member in the area crew (HTTP ${seat.status}): ${(seat.text || "").slice(0, 200)}`);
   }
   const accept = await asUser(session, `crew_members?crew_id=eq.${areaCrew.id}&user_id=eq.${session.user.id}`, {
     method: "PATCH", body: JSON.stringify({ status: "confirmed" }),
