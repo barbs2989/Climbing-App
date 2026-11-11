@@ -1,0 +1,2060 @@
+[
+ {
+  "id": "wa_mount_prophet_east",
+  "name": "South Ridge / Southeast Ridge",
+  "area_id": "wa_mount_prophet",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": 7200,
+  "dist_km": 14.5,
+  "high_point_ft": 7673,
+  "season": "Jul-Sep",
+  "approach": "From Ross Dam Trailhead (SR-20, MP 134) hike the Ross Lake shoreline trail ~7 mi to the Big Beaver Trail junction (or take the Ross Lake Resort water taxi to Big Beaver Landing to shorten this), then continue ~5 mi up Big Beaver Trail to Thirtynine Mile Creek/Camp. Leave the trail there and climb a brushy forested rib to gain the south ridge at a ~6,600 ft saddle. Round trip from the Big Beaver Landing water-taxi drop is roughly 18 miles with 7,000+ ft of elevation gain, typically done over 2-3 days; walking the lakeshore both ways instead adds about 14 miles. From the saddle, follow the ridge crest (Class 1-2) past points 7,361 ft and 7,547 ft to a short Class 3 step below the true summit; Luna Camp, about 5 miles farther up Big Beaver Trail, is the start of the separate Southwest Rib route, not this one.",
+  "descent": "Reverse the south ridge and the brushy rib back down to Thirtynine Mile Creek, then follow Big Beaver Trail back to Ross Lake.",
+  "bivy": [
+   {
+    "name": "Thirtynine Mile Creek Camp",
+    "role": "main",
+    "type": "camp"
+   }
+  ],
+  "itinerary": "Typically a 2-3 day trip: hike or water-taxi in to the Thirtynine Mile Creek area, high camp at the saddle on the south ridge crest, summit day via the ridge, then exit back down Big Beaver Trail.",
+  "waypoints": [
+   {
+    "name": "Ross Dam Trailhead",
+    "type": "Trailhead",
+    "elev": 2150
+   },
+   {
+    "name": "Big Beaver Trail junction (via Ross Dam)",
+    "type": "Junction",
+    "elev": 1620
+   },
+   {
+    "name": "Thirtynine Mile Creek Camp",
+    "type": "Campsite",
+    "elev": 1720
+   },
+   {
+    "name": "Off-trail departure onto Thirtynine Mile Ridge",
+    "type": "Junction",
+    "elev": 1753
+   },
+   {
+    "name": "Point 6071, Thirtynine Mile Ridge crest",
+    "type": "Junction",
+    "elev": 6071
+   },
+   {
+    "name": "Saddle camp below Point 6690, South Ridge",
+    "type": "Campsite",
+    "elev": 6600
+   },
+   {
+    "name": "Points 7361 and 7547 (false summits)",
+    "type": "Hazard",
+    "elev": 7361
+   },
+   {
+    "name": "Mount Prophet summit",
+    "type": "Summit",
+    "elev": 7673
+   }
+  ],
+  "peak": "Mount Prophet",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_prophet_southwest_rib",
+  "name": "Southwest Rib",
+  "area_id": "wa_mount_prophet",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 7200,
+  "dist_km": 14.5,
+  "high_point_ft": 7673,
+  "season": "May-Jul",
+  "approach": "As for the South/Southeast Ridge: SR-20 to the Ross Dam Trailhead (MP 134), then the Ross Dam Trail and Big Beaver Trail (or the Ross Lake Resort water taxi to Big Beaver Landing) up the Big Beaver Creek valley to Luna Camp, the base camp for this route.",
+  "descent": "Most parties descend the same Southwest Rib line, or link with the South/Southeast Ridge as a loop (documented in at least one trip report: SE ridge up, SW rib down).",
+  "bivy": [
+   {
+    "elev": 2432,
+    "name": "Luna Camp, Big Beaver Trail",
+    "role": "main",
+    "type": "camp",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather than a destination. The climbers' path leaves the maintained trail roughly a mile and a half beyond and crosses Big Beaver Creek near the Access Creek confluence; whether that crossing is a log or a wade varies year to year and with runoff.",
+    "water": "Big Beaver Creek runs beside camp — reliable all season",
+    "permit": "NPS wilderness permit from the Marblemount Wilderness Information Center; trail-corridor camp, reservable on Recreation.gov or walk-up. Closed under the Luna Fire closure as of the park's August 2026 list — confirm current status before building a trip around it.",
+    "capacity": "Two 4-person sites; party limit 4; pit toilet, food hang"
+   }
+  ],
+  "itinerary": "Typically a 2-3 day trip: hike/boat in to Luna Camp on Day 1, climb the rib to the summit and return to camp on Day 2 (or continue over the South/Southeast Ridge as a loop), hike/boat out on Day 3.",
+  "waypoints": [
+   {
+    "name": "Ross Dam Trailhead",
+    "type": "Trailhead",
+    "elev": 2150
+   },
+   {
+    "name": "Luna Camp",
+    "type": "Campsite",
+    "elev": 2432
+   },
+   {
+    "name": "Mount Prophet summit",
+    "type": "Summit",
+    "elev": 7673
+   }
+  ],
+  "peak": "Mount Prophet",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_pugh_pika_slab",
+  "name": "Pika Slab",
+  "area_id": "wa_mount_pugh",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "pitches": 1,
+  "gain_ft": 4694,
+  "dist_km": 8,
+  "high_point_ft": 6594,
+  "season": "Jul-Oct",
+  "approach": "From I-5 exit 208 head east 4 miles on Highway 530 to Arlington, then continue east on SR 530 for 28 miles to Darrington. At the four-way intersection in town turn right onto the Mountain Loop Highway and follow paved then graveled road for roughly 12.5-14 miles to a prominent Mount Pugh sign, where FR 2095 branches off on the left. FR 2095 is narrow, one-lane and unpaved; drive it about 1.5 miles to the signed trailhead on the right at the second switchback, elevation 1,900-1,920 ft. Parking is limited, there are no facilities, and the road is reportedly narrow enough that potholes are unavoidable. From the car, Mt Pugh Trail #644 climbs steadily through mature forest with a few stream crossings for about 1.5 miles to Lake Metan (Metam) at roughly 3,180-3,260 ft — this is the last reliable water on the route, so tank up here. The trail rounds the north side of the lake and then switchbacks hard up steep forested slopes, breaking out into an open boulder-strewn basin at around 4,900 ft before topping out at Stujack Pass, 5,700-5,750 ft, at about 4.5 miles. Above the pass the character changes completely: the path climbs leftward out of the notch on heather, contours the east side of the ridge, crosses the head of a small permanent snowfield and takes to the crest on chipped, blasted ledges. Continue past the class 3 rock step; the Pika Slab crag band is on the heather slopes immediately above the trail between that step and the summit, roughly 5 miles and 4,700 ft above the car.",
+  "descent": "Downclimb class 3 to the right off the ledge, regain the trail, and reverse the Northwest Ridge scramble and Trail #644 to the car.",
+  "bivy": null,
+  "itinerary": "Day trip. This is a single very long day: leave the trailhead at first light, reach Lake Metan in about 45-60 minutes, Stujack Pass in roughly 2.5-3 hours, and the Pika Slab crag band about 30-45 minutes above the pass. Climb the slab (a matter of minutes), continue to the summit for the view if weather allows, then reverse everything, allowing 2-3 hours down. Budget 7-9 hours car to car and be honest that the 5,300 ft of gain on the full peak day is among the largest of any Washington trail that reaches a true summit. If you want a shorter summit day there are a few camp spots at the base of Stujack Pass, but water above Lake Metan is unreliable, so you must carry it up.",
+  "waypoints": [
+   {
+    "name": "Mount Pugh Trailhead, FR 2095 second switchback",
+    "type": "Trailhead",
+    "elev": 1920
+   },
+   {
+    "name": "Lake Metan (Metam) — last reliable water",
+    "type": "Water",
+    "elev": 3260
+   },
+   {
+    "name": "Stujack Pass — decision point, scramble begins, Glacier Peak Wilderness boundary",
+    "type": "Junction",
+    "elev": 5700
+   }
+  ],
+  "peak": "Mount Pugh",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_rahm_custer_traverse",
+  "name": "Custer-Rahm Traverse",
+  "area_id": "wa_mount_rahm",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 400,
+  "dist_km": 1.9,
+  "high_point_ft": 8630,
+  "season": "Jul-Sep",
+  "approach": "Reached from the summit of either Mount Rahm (via the Standard Route/Glacier or South Side) or Mount Custer (via its South Ridge), not from a trailhead directly.",
+  "descent": "From Custer, descend via Custer's South Ridge; from Rahm, descend via the South Side route.",
+  "bivy": [
+   {
+    "elev": 5700,
+    "name": "Ouzel Lake basin, head of Depot Creek",
+    "role": "main",
+    "type": "camp",
+    "notes": "For Redoubt and Spickard this is the standard high camp and the reason both peaks are usually done together: the sandy, largely treeless benches near the lake sit within reach of the glacier approaches to each. Getting there involves a steep, brushy climb beside a large waterfall on ground that has at times had fixed line in place, and the condition of that section is variable and should not be counted on. Some parties push higher and bivy nearer the Depot Glacier for an earlier start, trading comfort for time. NOT reachable from the Hannegan Pass trailhead — it must never be treated as an alternative camp on that approach.",
+    "water": "The lake and its inlet streams are dependable through the season, fed from the glaciers above",
+    "permit": "This one is different. The approach starts in British Columbia — up Chilliwack Lake Road and onto the rough Depot Creek spur — and walks south across the international boundary on foot into Washington. There is no port of entry on this route, so the trip raises a genuine customs question in both directions that none of the Hannegan-side approaches do; sort out reporting obligations with the relevant border authorities before going, and carry passports. Once across, the camp is inside North Cascades National Park and a park backcountry permit applies, which is awkward given Marblemount is a long drive away on the other side of the range.",
+    "capacity": "Open flat benches with room for several tents; informal, with no built sites, toilet or bear hardware"
+   }
+  ],
+  "itinerary": "Typically day 2 or 3 of a Depot Creek (Ouzel Lake) or Silver Creek approach trip: climb one peak via its standard line, make the traverse (about an hour), then descend the other peak's own route back to camp.",
+  "waypoints": [
+   {
+    "name": "Ouzel Lake basin, head of Depot Creek",
+    "type": "Campsite",
+    "elev": 5700
+   },
+   {
+    "name": "Route reference point (Custer-Rahm ridge, near Mount Custer)",
+    "type": "landmark",
+    "elev": null
+   }
+  ],
+  "peak": "Mount Rahm",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_rahm_south_side",
+  "name": "South Side",
+  "area_id": "wa_mount_rahm",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 2800,
+  "dist_km": 5.6,
+  "high_point_ft": 8485,
+  "season": "Jul-Sep",
+  "approach": "Two camps are used: Silver Lake (6,763 ft, reached via a long Silver Creek bushwhack from Ross Lake) or Ouzel Lake (5,700 ft, reached via the Depot Creek approach from Chilliwack Lake Road, BC — the easier of the two to reach). From Ouzel Lake, climb northeast up an obvious wide gully to the 7,380-ft Custer-Spickard saddle, then traverse and ascend southwestward below the Custer-Rahm ridge to the roughly 7,400-ft upper terrace. From Silver Lake, climb above the lakeside cliffs to the northwest, or walk the north shore west until the cliffs end, then climb talus/slabs north to the same terrace.",
+  "descent": "Descend the same gully system, or make a long high traverse over to Mount Custer via the Custer-Rahm Traverse.",
+  "bivy": null,
+  "itinerary": "Day 1: hike in to Ouzel Lake (via Depot Creek, including a border crossing) or Silver Lake (via the Silver Creek bushwhack) and camp. Day 2: climb the South Side route to Rahm's summit (about 2 hrs from Silver Lake or 3-5 hrs from Ouzel Lake) and return to camp, or continue to Custer/Spickard. Day 3: hike out.",
+  "waypoints": [
+   {
+    "name": "Mount Rahm summit (west/high point)",
+    "type": "Summit",
+    "elev": 8480
+   }
+  ],
+  "peak": "Mount Rahm",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_rainier_edmunds_headwall",
+  "name": "Edmunds Headwall",
+  "area_id": "wa_mount_rainier",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": 8470,
+  "dist_km": null,
+  "high_point_ft": 14112,
+  "season": "Jun-Jul",
+  "approach": "From Mowich Lake, hike through Spray Park and up the lower Ptarmigan Ridge to camps near 9,600 ft between the North Mowich and Edmunds glaciers, then drop to the Edmunds Glacier and the base of the headwall.",
+  "descent": "Descend a standard route, typically traversing to the Emmons-Winthrop Glacier after topping out at Liberty Cap.",
+  "bivy": [
+   {
+    "name": "Lower Ptarmigan Ridge camp",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Bivy ground on lower Ptarmigan Ridge above Spray Park, from which parties drop onto the North Mowich Glacier. Mowich Lake has had no road access since the Fairfax Bridge on SR 165 closed in 2025, so check access first.",
+    "water": "Melt snow",
+    "permit": "Mount Rainier wilderness permit and climbing registration",
+    "capacity": "A few tent sites on rock and snow"
+   }
+  ],
+  "itinerary": "3-4 days: approach from Mowich to a base camp, climb the headwall in a summit day to Liberty Cap, then descend a standard route.",
+  "waypoints": [
+   {
+    "name": "Mowich Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 4930
+   },
+   {
+    "name": "Liberty Cap (route tops out here, below/at the NW rim)",
+    "type": "Summit",
+    "elev": 14112
+   }
+  ],
+  "peak": "Mount Rainier",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "name": "Fuhrer Thumb",
+  "area_id": "wa_mount_rainier",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": 9000,
+  "dist_km": 8,
+  "high_point_ft": 14406,
+  "season": "Apr-Jun",
+  "approach": "From Paradise take the Skyline Trail to Glacier Vista, descend the Nisqually Moraine west to the Nisqually Glacier, cross glacier westward, ascend Wilson Gully/Wilson Bench/Wilson Chute on west side of glacier to Lower Castle camp, then continue northwest to Fuhrer Thumb couloir",
+  "descent": "Not typically down-climbed; descend via the Kautz Glacier, Ingraham Glacier, or Disappointment Cleaver through Camp Muir instead.",
+  "bivy": [
+   {
+    "name": "Castle camps on Wapowety Cleaver",
+    "role": "main",
+    "type": "camp",
+    "notes": "Two camp areas on the ridge below Wapowety Cleaver at the edge of the Wilson Glacier. Lower Castle, about 9,250 ft, has a few closely spaced rock rings for small parties; Upper Castle, 9,400 to 9,500 ft, has large rock rings and is where most parties camp. Wind-exposed.",
+    "water": "Melt snow",
+    "permit": "Mount Rainier wilderness permit and climbing registration",
+    "capacity": "Several small tent sites behind old rock windbreaks"
+   }
+  ],
+  "itinerary": "Done in 1-2 days similar to the Finger, with an early start to climb the couloir cold.",
+  "waypoints": [
+   {
+    "name": "Paradise",
+    "type": "Trailhead",
+    "elev": 5400
+   },
+   {
+    "name": "Columbia Crest (summit)",
+    "type": "Summit",
+    "elev": 14406
+   }
+  ],
+  "peak": "Mount Rainier",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_sefrit_southeast_ridge",
+  "name": "Southeast Ridge",
+  "area_id": "wa_mount_sefrit",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": 4500,
+  "dist_km": null,
+  "high_point_ft": 7191,
+  "season": "Jun-Sep",
+  "approach": "Drive Mt. Baker Highway (SR 542) to Hannegan Pass Road (FS 32); at 1.3 miles bear left onto Ruth Creek Road and continue to a pullout near milepost 3, just past a creek flowing over a concrete weir (about 2,950 ft), well short of the road's end at Hannegan Campground. From the pullout, cross Ruth Creek (a log crossing has been used) and bushwhack roughly 45 minutes through slide alder and devil's club to the base of the Wall Street couloir.",
+  "descent": "Descend the ascent route",
+  "bivy": [
+   {
+    "elev": 3100,
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is where nearly every trip in the zone starts, and it is the answer for a party that drives out after work and wants a short night before an alpine start on Ruth. It is also the base for Mount Sefrit, which is normally done car-to-car from a pullout a few miles back down the road and has no camp of its own worth listing. Road access has been the weak link: a washout near the end of FS 32 cut vehicle access to the sites at the road end for a period, a bypass has since been built above the damaged section, and both the road and the trailhead have a history of being reachable in one season and not the next. Confirm the road is open to the end before committing to the drive out. In winter and spring the road beyond the Goat Mountain trailhead runs under avalanche terrain and the last miles are usually snowbound well into spring.",
+    "water": "Ruth Creek runs below the road and is easy to reach, and side streams cross the lower trail. Reliable all season, but it is glacial and forest runoff — filter rather than just treating.",
+    "permit": "Mt Baker-Snoqualmie National Forest. A Northwest Forest Pass or Interagency pass is required to park; a Washington state Discover Pass does NOT work at a Forest Service fee site. No overnight backcountry permit is needed to sleep here or anywhere between the road and the pass, though a free self-issue wilderness registration at the trailhead is the norm once you walk in. Fires are subject to seasonal restrictions and are worth checking against the current burn ban rather than assumed.",
+    "capacity": "A small set of rough roadside sites at the road end plus informal pullouts along the last miles; a handful of parties, and the parking area fills on summer weekends"
+   }
+  ],
+  "itinerary": "Single-push day: drive to the Ruth Creek Road pullout near milepost 3 (2,950 ft); cross Ruth Creek and bushwhack to the base of Wall Street (~45 min); climb the snow couloir to the Northwest Glacier (~5,000 ft); cross the glacier to the 6,500-ft saddle; scramble the southeast ridge to the 7,191-ft summit (about 5.6 hours car-to-summit for one party); descend the same line (about 2.8 hours back to the car).",
+  "waypoints": [
+   {
+    "name": "Hannegan trailhead, end of the Ruth Creek road",
+    "type": "Campsite",
+    "elev": 3100
+   }
+  ],
+  "peak": "Mount Sefrit",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_spickard_silver_glacier",
+  "name": "Silver Glacier",
+  "area_id": "wa_mount_spickard",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8979,
+  "season": "Jun-Sep",
+  "approach": "Two camp options are used. Via Silver Creek: arrange a Ross Lake Resort water taxi (reservation required) roughly 25 miles up Ross Lake to a drop-off at the Silver Creek mouth (1,600 ft); a trail climbs the north side of Silver Creek about 2.5 miles to an old cabin at 2,900 ft, after which the route continues cross-country (occasional blazes) across slide-alder and forest slopes to the Silver Lake basin camp (6,763 ft). Via Ouzel Lake: use the Depot Creek approach (see the Southwest Ridge route) to Ouzel Lake (5,700 ft), then climb toward and over the Custer-Spickard saddle. From Ouzel Lake, climb north-east from the lake's north side up the obvious wide gully to the 7,380-ft Custer-Spickard saddle and step onto the Silver Glacier beyond it. From Silver Lake there is no saddle to cross: walk round the north side of the lake to its south-west end, then south across moraine and snow, skirting a small buttress, to the glacier toe at about 7,400 ft.",
+  "descent": "Reverse the route: down-climb the summit step to the notch, then descend the glacier and gully back to the saddle and camp.",
+  "bivy": [
+   {
+    "name": "Silver Lake camp",
+    "role": "main",
+    "type": "camp"
+   }
+  ],
+  "itinerary": "Day 1: water-taxi and hike (or Depot Creek hike) in to camp at Silver Lake or Ouzel Lake. Day 2: from Ouzel Lake climb the gully to the Custer-Spickard saddle (from Silver Lake, cross the moraine to the glacier toe), cross the Silver Glacier, and climb the summit step (roughly 3-4 hours summit-bound from Silver Lake camp), then return to camp. Day 3: hike/water-taxi out.",
+  "waypoints": [
+   {
+    "name": "Ouzel Lake camp",
+    "type": "Campsite",
+    "elev": 5665
+   },
+   {
+    "name": "Custer-Spickard Saddle",
+    "type": "pass",
+    "elev": 7380
+   },
+   {
+    "name": "Mount Spickard Summit",
+    "type": "Summit",
+    "elev": 8979
+   }
+  ],
+  "peak": "Mount Spickard",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_teneriffe_kamikaze_trail",
+  "name": "Kamikaze Trail (SW Ridge Scramble)",
+  "area_id": "wa_mount_teneriffe",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "pitches": null,
+  "gain_ft": 3800,
+  "dist_km": 6.44,
+  "high_point_ft": 4788,
+  "season": "May-Oct",
+  "approach": "Follow the Mount Teneriffe Trail from the paved trailhead on SE Mount Si Road to the signed Teneriffe Falls junction at about 0.9 mile, turn right, and follow the Teneriffe Falls Trail to the falls viewpoint at about 2.8 miles. From just below the viewpoint, the unofficial but well-traveled Kamikaze Trail boot track climbs directly up the forested southwest ridge/flank of the mountain, gaining about 2,300 ft in roughly one mile of steep, rocky, single-track tread before reaching the Kamikaze Ridge crest (~3,900 ft) and continuing to a cedar-grove shelf (~4,200 ft) that meets the upper mountain near the summit. The trailhead gate was reported locked at about 8 pm and unlocked around 7 am in May and August, so plan a loop that finishes before then.",
+  "descent": "Downclimb the Kamikaze boot track the way you came, or descend via the standard Mount Teneriffe Trail through Rachor Pass for a ~10-mile loop.",
+  "bivy": [
+   {
+    "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+    "role": "route",
+    "type": "camp",
+    "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not from any of the Middle Fork trailheads that serve the other peaks here, so it has a different land manager, a different pass and different rules. Both the standard trail and the Kamikaze scramble up the southwest ridge are done car-to-car in a day by everyone who climbs them, and there is no camp on the mountain and nothing legal near the trailhead. A party that wants to start from a tent has to drop back to the valley, where the Middle Fork Campground is the nearest developed option, about twenty minutes' drive up the road system. The compensation is season: the lower mountain is snow-free most of the year and this is a genuine winter and shoulder-season objective, though the steep upper section of the Kamikaze line becomes icy and unpleasant once the freeze sets in and the standard trail is the safer choice then.",
+    "water": "The falls and the creeks crossed low on the trail run most of the year and are the last certain water. There is nothing on the upper mountain and nothing on the Kamikaze line at all. Carry what you need for the day.",
+    "permit": "A Washington Discover Pass is required in every vehicle at the trailhead. A Northwest Forest Pass is not valid here, which is the commonest mistake parties make arriving from the national forest roads further up the valley, and the fines are real. Camping and campfires are both prohibited, group size is capped at twelve, and the trails are hiking-only.",
+    "capacity": "None. Camping is prohibited across the entire conservation area, at any elevation, so there is no legal overnight option anywhere on this mountain."
+   }
+  ],
+  "itinerary": "Typical day trip: start early morning; ~1-1.5 hrs to the Teneriffe Falls/Kamikaze junction (2.8 mi); ~2-2.5 hrs of steep boot-track climbing to the ridge crest and summit (~4.1 mi, about +4,000 ft); short summit break; descend either back down Kamikaze (~2.5 hrs) or via the standard trail loop (~3-3.5 hrs).",
+  "waypoints": [
+   {
+    "name": "Mount Teneriffe Trailhead",
+    "type": "Trailhead",
+    "elev": 840
+   },
+   {
+    "name": "Teneriffe Falls Trail junction",
+    "type": "Junction",
+    "elev": 1174
+   },
+   {
+    "name": "Teneriffe Falls / Kamikaze Trail junction",
+    "type": "Junction",
+    "elev": 2368
+   },
+   {
+    "name": "Mount Teneriffe Summit",
+    "type": "Summit",
+    "elev": 4788
+   }
+  ],
+  "peak": "Mount Teneriffe",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_teneriffe_standard_route",
+  "name": "Mount Teneriffe Trail (Standard Route)",
+  "area_id": "wa_mount_teneriffe",
+  "discipline": "mountaineering",
+  "grade": "Class 2",
+  "pitches": null,
+  "gain_ft": 3800,
+  "dist_km": 10.46,
+  "high_point_ft": 4788,
+  "season": "Mar-Nov",
+  "approach": "From I-90 take Exit 31 into North Bend and continue on North Bend Way; turn left (north) on SE Mount Si Road. Continue about 2.9 miles, past the Little Si and Mount Si trailheads, to the paved, ~70-car Mount Teneriffe Trailhead lot (Discover Pass required). From the lot, a half-mile access path switchbacks up through second-growth forest to an old logging-road grade, which climbs gently for about 1.5 miles through young forest and meadow, passing the signed spur to Teneriffe Falls at about 0.9 mile. Beyond the road grade the trail narrows and climbs via switchbacks (with a Middle Fork Snoqualmie viewpoint) for another ~2.7 miles, then continues about 2.3 more miles, dipping briefly to Rachor Pass (~4,200 ft saddle) before the final short, rocky summit scramble. The trailhead gate was reported locked at about 8 pm and unlocked around 7 am in May and August, so budget the descent to beat it.",
+  "descent": "Retrace the standard trail back to the trailhead (13 mi round trip); alternatively descend via the Kamikaze Trail for a ~10-mile loop.",
+  "bivy": [
+   {
+    "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+    "role": "route",
+    "type": "camp",
+    "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not from any of the Middle Fork trailheads that serve the other peaks here, so it has a different land manager, a different pass and different rules. Both the standard trail and the Kamikaze scramble up the southwest ridge are done car-to-car in a day by everyone who climbs them, and there is no camp on the mountain and nothing legal near the trailhead. A party that wants to start from a tent has to drop back to the valley, where the Middle Fork Campground is the nearest developed option, about twenty minutes' drive up the road system. The compensation is season: the lower mountain is snow-free most of the year and this is a genuine winter and shoulder-season objective, though the steep upper section of the Kamikaze line becomes icy and unpleasant once the freeze sets in and the standard trail is the safer choice then.",
+    "water": "The falls and the creeks crossed low on the trail run most of the year and are the last certain water. There is nothing on the upper mountain and nothing on the Kamikaze line at all. Carry what you need for the day.",
+    "permit": "A Washington Discover Pass is required in every vehicle at the trailhead. A Northwest Forest Pass is not valid here, which is the commonest mistake parties make arriving from the national forest roads further up the valley, and the fines are real. Camping and campfires are both prohibited, group size is capped at twelve, and the trails are hiking-only.",
+    "capacity": "None. Camping is prohibited across the entire conservation area, at any elevation, so there is no legal overnight option anywhere on this mountain."
+   }
+  ],
+  "itinerary": "Typical day trip: start early morning; ~1.5-2 hrs for the first 2.8 mi; ~2.5-3 hrs more via the upper switchbacks and Rachor Pass to the summit (6.5 mi, +3,800 ft); 30-45 min on the summit; ~3 hrs back down the same trail. Budget 7-9 hours car-to-car.",
+  "waypoints": [
+   {
+    "name": "Mount Teneriffe Trailhead",
+    "type": "Trailhead",
+    "elev": 840
+   },
+   {
+    "name": "Teneriffe Falls trail junction",
+    "type": "Junction",
+    "elev": 1174
+   },
+   {
+    "name": "Mount Teneriffe Summit",
+    "type": "Summit",
+    "elev": 4788
+   }
+  ],
+  "peak": "Mount Teneriffe",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_terror_stoddard_buttress",
+  "name": "Stoddard Buttress",
+  "area_id": "wa_mount_terror",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": null,
+  "gain_ft": 6000,
+  "dist_km": null,
+  "high_point_ft": 8151,
+  "season": "Jul-Sep",
+  "approach": "Same as the North Buttress: from the Goodell Creek trailhead follow the old roadbed trail and a climbers' path to Terror Creek at about 2,000 ft, cross it, and climb the very steep path up the Barrier, the ridge beyond. Follow its crest north into Stump Hollow, make a rising traverse to the 6,400 ft saddle northeast of The Chopping Block, and downclimb about 200 ft into Crescent Creek Basin to the high camp (~6,000 ft gain, ~7-7.5 hrs), then on the climbing day cross the Ottohorn-Himmelhorn col and descend the Mustard Glacier to the base of the north face (2-3 hrs from camp). Stoddard's original approach used a two-day approach via Stettattle Ridge and the upper McMillan Creek cirque.",
+  "descent": "Descend via established descent route, using rappels and downclimbing as necessary. Multiple anchor points required.",
+  "bivy": [
+   {
+    "elev": 6050,
+    "name": "Crescent Creek Basin camp",
+    "role": "main",
+    "type": "camp",
+    "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan Spire, Inspiration, the Twin Needles, and for the Ottohorn and Himmelhorn by way of the col between them; Frenzel Spitz sits off the main chain near the Ottohorn's north side. Parties camp at several benches at different heights.",
+    "water": "Snowmelt streams and pools fed by the basin's snowfields, reliable early and mid season and unreliable late once the snow has pulled back. Plan on melting snow in a lean year.",
+    "permit": "This is the separate Crescent Creek cross-country zone, not Terror Basin — a trip camping in both needs both zones written onto the same permit, night by night. Like Terror Basin it is walk-up only at Marblemount rather than bookable in advance.",
+    "capacity": "A few parties on gravel, slab and snow; the zone is capped at 6 people per party"
+   },
+   {
+    "elev": 500,
+    "name": "Goodell Creek Campground, roadhead staging",
+    "role": "route",
+    "type": "camp",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it does let you hit the roadbed at first light, which matters on an approach this long.",
+    "water": "Potable water when the campground is open for the season; the Skagit and Goodell Creek are immediately adjacent as backup",
+    "permit": "Frontcountry campground fee only — no wilderness permit needed to sleep here. Reservable through recreation.gov in peak season, first-come outside it; not always open year round, so confirm before counting on it.",
+    "capacity": "19 individual drive-in sites, plus a separate group campground where the old roadbed begins"
+   },
+   {
+    "elev": 2000,
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by headlamp. The cost is that the whole climb to the basin still lies ahead, so a low night usually means a full second day of approach with no climbing in it.",
+    "water": "Reliable year round from Goodell and Terror Creeks; the last certain running water until the climbers' path regains streams high in the timber",
+    "permit": "A wilderness permit is required, and this spot is legally awkward: cross-country camping in the park is meant to be at least half a mile from a trail and a mile from designated camps, and the old roadbed is a trail. Ask the Marblemount Wilderness Information Center where they will place you before you plan on it.",
+    "capacity": "One or two small parties on flat ground beside the old grade"
+   },
+   {
+    "elev": 5800,
+    "name": "Terror Basin camp",
+    "role": "route",
+    "type": "camp",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party gets this far on day one is genuinely contested — strong parties who know the path do it, and parties who lose the path in the timber routinely do not.",
+    "water": "Meltwater off the snowfields above the basin, generally dependable while snow remains and a hunt in a dry late summer. Sources are seasonal, not spring-fed.",
+    "permit": "Terror Basin cross-country zone, from Marblemount. 6-person party maximum. It is not on the short list of zones reservable in advance, so it is walk-up only — up to 24 hours ahead, with permits released in the morning of day one. Fires prohibited; human waste in a cathole, or out in a blue bag above treeline.",
+    "capacity": "Small flat gravelly ground for a few tents; the park caps the zone at 6 people per party"
+   },
+   {
+    "elev": 6000,
+    "name": "Stump Hollow bench",
+    "role": "route",
+    "type": "camp",
+    "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the north side use it as the intermediate camp, because an easy rising traverse reaches the saddle northeast of the Chopping Block near 6,400 ft and drops into Crescent Creek Basin from there. Camp on rock, gravel or snow rather than the heather — this is thin alpine ground that shows every night somebody spends on it.",
+    "water": "Snowmelt only. Trickles and small pools are dependable through early summer while snow lingers, and can dry up or retreat entirely by late season; late-summer parties should expect to search or carry.",
+    "permit": "Cross-country zone permit from the Wilderness Information Center. This bench sits close to the divide between the Terror Basin and Crescent Creek zones, so ask which zone the rangers are writing you into rather than assuming — the answer decides what the rest of your itinerary can say.",
+    "capacity": "Small — a couple of parties on heather benches and slabs, and it is easy to end up spread out"
+   }
+  ],
+  "itinerary": "Day 1: hike to the high camp in Crescent Creek Basin. Day 2: alpine start, cross the Ottohorn-Himmelhorn col and Mustard Glacier to the route base, climb the buttress crest and knife-edge finish to the summit, descend via the West Ridge notch and gully rappels (a long day, ~17 hrs camp-to-camp for one party). Day 3: hike out.",
+  "waypoints": [
+   {
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Mount Terror summit",
+    "type": "Summit",
+    "elev": 8151
+   }
+  ],
+  "peak": "Mount Terror",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_terror_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_mount_terror",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": null,
+  "gain_ft": 6000,
+  "dist_km": null,
+  "high_point_ft": 8151,
+  "season": "Jun-Sep",
+  "approach": "From Goodell Creek trailhead, follow the old roadbed ~4.5 miles, cross Terror Creek, and climb a steep climber's track (pink flagging, moss-covered cliffs) to reach Crescent Creek Basin; total approach elevation gain to basecamp is nearly 6,000 ft.",
+  "descent": "Reverse the route: downclimb or make a short rappel off the summit tower, then descend the notch pitch on existing sling anchors and down the gully, rappelling its steeper steps",
+  "bivy": [
+   {
+    "elev": 6050,
+    "name": "Crescent Creek Basin camp",
+    "role": "main",
+    "type": "camp",
+    "elevM": 1890,
+    "notes": "The working camp for Terror, in the basin under the peak. Published camps sit between roughly 6,000 and 6,200 ft — there is talk among parties of a named 'Crescent Camp' that several have gone looking for and not found, so treat this as a zone of flat spots rather than a fixed site. Getting here from Terror Basin means crossing the upper Barrier or the roughly 6,400 ft saddle by the Chopping Block and downclimbing a couple of hundred feet of loose class 3 into the basin, which is a real piece of ground in fog. Rodents have been reported working the rocks at dusk, so hang or armour your food. Times from this camp are long: parties report about seven hours up and four and a half back on Terror.",
+    "water": "Streams coming off the slabs above the basin — one party found two of them beside their site; snowmelt-fed, so check rather than assume late in a dry season",
+    "permit": "National Park Service backcountry permit required for the Crescent Creek cross-country zone, capped at six parties a night and six people per party. Camp on rock, snow or bare ground only, and keep 100 ft from the streams",
+    "capacity": "Small flat pockets rather than one site; parties report hunting among rock and heather outcrops before settling, and one describes checking six or eight before finding a bench that was only marginally good enough"
+   },
+   {
+    "name": "Chopping Block saddle camp",
+    "role": "main",
+    "type": "bivy",
+    "elevM": 1951,
+    "notes": "The saddle on the Chopping Block ridge overlooking Crescent Creek Basin, and the camp parties rate most highly on this side of the range — an open grandstand on the Southern Pickets. It is a dry, exposed perch, so the trade is view and position against carrying your water. Being on the crest it also puts you above the basin, which means a downclimb of a couple of hundred feet to get onto the climbing terrain each morning.",
+    "water": "None at the saddle itself. The nearest reported source on the way in is a small stream around 5,700 ft on the granite slabs below, so carry water up",
+    "permit": "National Park Service backcountry permit required; the Crescent Creek cross-country zone is capped at six parties a night and six people per party",
+    "capacity": "Small; reports describe a single good spot on the saddle rather than a cluster of sites"
+   },
+   {
+    "elev": 5800,
+    "name": "Terror Basin camp",
+    "role": "route",
+    "type": "camp",
+    "elevM": 1768,
+    "notes": "The usual first night for parties heading to Terror, about 400 ft below the 6,200 ft saddle at the top of the Goodell Creek boot path. It is not the camp you climb Terror from — from here you still have to traverse and cross the roughly 6,400 ft saddle by the Chopping Block and drop into Crescent Creek Basin — but it is the natural place to stop after 6,000 ft of gain, and parties who lose the light on the approach routinely take it as-is.",
+    "water": "Silty streams running through the basin from the snowfields above; reliable in a normal season, filter and treat",
+    "permit": "National Park Service backcountry permit required for the Terror Basin cross-country zone; walk-up only, not reservable",
+    "capacity": "Several sites on gravel and rock plus a two-person bivy platform; the zone allows six parties a night, six people per party"
+   }
+  ],
+  "itinerary": "Day 1: approach to Crescent Creek Basin (~6,000 ft gain). Day 2: climb the gully to the West Ridge notch, complete the short technical section and summit scramble, then descend the same way. Day 3: hike out.",
+  "waypoints": [
+   {
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Terror Basin camp",
+    "type": "Campsite",
+    "elev": 5800
+   },
+   {
+    "name": "Crescent Creek Basin camp",
+    "type": "Campsite",
+    "elev": 6050
+   },
+   {
+    "name": "Chopping Block saddle camp",
+    "type": "Campsite",
+    "elev": 6401
+   },
+   {
+    "name": "Mount Terror summit",
+    "type": "Summit",
+    "elev": 8151
+   }
+  ],
+  "peak": "Mount Terror",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_triumph_northeast_ridge",
+  "name": "Northeast Ridge",
+  "area_id": "wa_mount_triumph",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": 11,
+  "gain_ft": 4900,
+  "dist_km": 11.3,
+  "high_point_ft": 7270,
+  "season": "Jul-Sep",
+  "approach": "From Marblemount, drive SR-20 east to the Thornton Lakes Road spur (near milepost 117, just west of Newhalem) and follow the rough, unpaved, high-clearance road about 5 miles to the Thornton Lakes Trailhead (~2,500 ft). Hike the Thornton Lakes Trail — an old logging-road grade for the first ~2 miles, then steeper trail up to the ridge/pass (~4,900 ft) above the lakes — then descend to the lake outlet (~4,400-4,486 ft). Traverse the brushy, sometimes-faint climbers' path around the east/south side of middle Thornton Lake, then climb a long, loose scree/talus gully (roughly 1,200 ft of gain) to a col around 5,750-5,840 ft that serves as the standard bivy site.",
+  "descent": "Reverse the route: downclimb and rappel the ridge crest back to the col, then descend the approach gully and trail to the trailhead.",
+  "bivy": [
+   {
+    "name": "The Triumph col",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The standard high camp, on the col northwest of the middle lake, gained by about 1,200 ft of steep talus and grass above the lakes — roughly seven and a half miles and 4,200 ft from the car. Flat ground, running water and a view straight into the Pickets. Published elevations disagree by about 150 ft, from roughly 5,750 to 5,900 ft, so do not plan an altitude-sensitive turnaround off a single figure. A rockier perch just below the col is also used and is well liked.",
+    "water": "Snowmelt — a small stream running off the snowpack, and pools near the sites; parties who want more drop toward the stream at the foot of the nearby snowfield. Every published description is of meltwater, and none says when it fails, so treat it as unreliable once the snow has gone.",
+    "permit": "North Cascades National Park wilderness permit, in the Triumph cross-country zone: maximum party of six, and only two permits issued per night, which makes it one of the harder zones to get. It is one of the few zones that can be reserved in advance; roughly 40% of capacity is held back for walk-ups issued the day before or the day of, from the Wilderness Information Center at Marblemount. Cross-country camping is allowed only on durable ground — snow, rock or bare earth.",
+    "capacity": "Several good bivy spots on and just north of the col — nobody has had to drop to the glacier for want of ground. The real limit is the permit: the Triumph zone takes two parties a night, six people each."
+   },
+   {
+    "name": "Thornton Lakes camp",
+    "role": "route",
+    "type": "camp",
+    "elevM": 1367,
+    "notes": "Where the maintained trail ends, about five and a half miles in, at the outlet of the lower lake. It is the easy, legal, reliable option and the one to take if you arrive late or the col is booked out — but it leaves a very long summit day, since the col is still a thousand-plus feet of steep talus and grass above you. Most parties climbing the ridge push past it.",
+    "water": "The outlet of the lower lake, immediately at the sites.",
+    "permit": "A National Park Service wilderness permit is required. This is a designated camp rather than the Triumph cross-country zone, so it is a different reservation from the col — book the one you actually intend to sleep in. Bear canisters are required and campfires are not allowed; there is a composting toilet.",
+    "capacity": "Three individual sites, each capped at a party of four."
+   },
+   {
+    "name": "On-ridge bivy above the notch",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Small sites on the crest a hundred to two hundred feet above the notch, one or two pitches up the Northeast Ridge. Parties use them to shorten the climbing day, at the cost of carrying a full day's water onto the ridge. Several trip reports pass through them at dawn rather than sleep there, so treat the ground as confirmed and the comfort as unknown.",
+    "water": "None. Everything comes up from the col with you.",
+    "capacity": "A couple of small platforms — a party of two or three, spread out."
+   }
+  ],
+  "itinerary": "Standard plan is 3 days: Day 1 — drive in and hike to the bivy col above Thornton Lakes (~5 hrs); Day 2 — climb the Northeast Ridge round-trip from the col (roughly 6 hrs up, 6 hrs down, a 12-13+ hour day) and sleep again at the col; Day 3 — hike out. Strong parties occasionally push it as a long 2-day trip with one bivy, but the extra day is usually recommended given the length and complexity.",
+  "waypoints": [
+   {
+    "name": "Thornton Lakes Trailhead",
+    "type": "Trailhead",
+    "elev": 2506
+   },
+   {
+    "name": "Thornton Lakes camp",
+    "type": "Campsite",
+    "elev": 4485
+   },
+   {
+    "name": "Ridge above Thornton Lakes",
+    "type": "Junction",
+    "elev": 4975
+   },
+   {
+    "name": "Lower Thornton Lake outlet",
+    "type": "Water",
+    "elev": 4525
+   },
+   {
+    "name": "Bivy col above middle Thornton Lake",
+    "type": "Campsite",
+    "elev": 5800
+   },
+   {
+    "name": "Mount Triumph Summit",
+    "type": "Summit",
+    "elev": 7270
+   }
+  ],
+  "peak": "Mount Triumph",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_washington_olympic_winter_direct",
+  "name": "Winter Direct",
+  "area_id": "wa_mount_washington_olympic",
+  "discipline": "alpine",
+  "grade": "Class 4",
+  "pitches": 1,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 6260,
+  "season": "Dec-Apr",
+  "approach": "Start at the Jefferson Pass trailhead at the end of FR-2419, beside the Mount Washington trailhead, and follow the drainages west/toward the mountain, mixing bushwhacking with snow travel; parties have reported getting off-route on this approach.",
+  "descent": "Long descent down snow slopes using two 60m ropes for full double-rope rappels, with some face-in downclimbing.",
+  "bivy": null,
+  "itinerary": "Single winter/spring day: approach from Jefferson Pass through drainages, the single technical pitch near the summit, then the long roped-descent down snow slopes.",
+  "waypoints": [],
+  "peak": "Mount Washington",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_narcos",
+  "name": "Narcos",
+  "area_id": "wa_cutthroat_creek_wall_or_little_liberty_bell",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 5,
+  "gain_ft": 2700,
+  "dist_km": 2.8,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "This is a distinct approach from the one used for Cutthroat Peak, which starts from an unmarked highway pullout about 1.5 miles west of Washington Pass with no maintained trail. For Cutthroat Wall, start on the maintained Cutthroat Creek Trail #483 from the Cutthroat Trailhead kiosk. After a short distance on the main trail, leave it via a cairned path that cuts into the forest, then follow cairns and a climbers' path (roughly 1.5-2 miles, 45 min-2 hrs total) through brush and talus, trending toward the buttress, to reach the base of Cutthroat Wall.",
+  "descent": "No separate descent line is documented; since Narcos's final two pitches join the Wright-Pond route, parties descend via Wright-Pond's rappel line.",
+  "bivy": [
+   {
+    "elev": 4500,
+    "name": "Cutthroat Creek trailhead",
+    "role": "main",
+    "type": "camp",
+    "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. It is the start for Cutthroat Wall and for the Cutthroat Lake trail toward Cutthroat Pass, and some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies; dispersed camping in the trees along the forest road below is the uncontroversial option. Access is entirely gated by the SR 20 winter closure, and the road has been shut for construction windows in recent seasons, so confirm before driving out.",
+    "water": "None — no potable water at the trailhead. Cutthroat Creek runs below the lot and needs filtering.",
+    "permit": "No camping permit and no quota. Northwest Forest Pass, Interagency pass or a day pass covers parking. This is Okanogan-Wenatchee National Forest, NOT the national park, so there is no backcountry permit system here at all.",
+    "capacity": "Large gravel lot, roughly 20-30 vehicles; fills on summer weekends with larch-season hikers"
+   },
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "The closest developed campground to Washington Pass, on SR 20 along Early Winters Creek six or seven miles east of the pass, just past the turn for the Cutthroat Creek road. Because nothing here can be booked, arriving Friday evening in July or August is a gamble and the fallback is dispersed camping on a spur road. The season runs roughly May or June through September or October, entirely dependent on when the highway opens and when snow returns.",
+    "water": "No drinking water at Lone Fir. Early Winters Creek runs through the campground and needs filtering; Klipchuck and Early Winters campgrounds, farther east, have drinking water in season.",
+    "permit": "No reservations and no permit — first-come, first-served with a nightly fee. A Northwest Forest Pass is not needed to camp, only to park at the trailhead.",
+    "capacity": "27 sites, tents and small RVs"
+   },
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "role": "main",
+    "type": "camp",
+    "notes": "Klipchuck sits about a quarter mile off SR 20 in fir and pine down-valley toward Mazama, low enough to be warm and dry when the passes are still wet. Early Winters Campground is further east, smaller at around a dozen tent sites, split by the highway near the Methow River, and fills quickly. Both are a longer drive to the trailhead than Lone Fir, which is the tradeoff for a better chance of finding a site on a busy weekend.",
+    "water": "Drinking water spigots in season; vault toilets. Water is turned off at the end of the season while the sites stay usable.",
+    "permit": "First-come, first-served, nightly fee, no reservation and no permit required.",
+    "capacity": "46 sites, the largest campground on this stretch of highway"
+   },
+   {
+    "elev": 5800,
+    "name": "Cutthroat Wall base terrace",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The approach leaves the old roadbed a quarter mile from the trailhead at cairns, then climbs left through trees and light brush to a flat bench beneath the west-northwest-facing granite. Most parties do these routes car-to-car in a day, so a bivy here is for a late start or a two-day plan rather than standard practice. The wall faces away from morning sun, which makes an early camp less useful than it looks on the map. The crag is sometimes catalogued under Little Liberty Bell, which is the same approach and the same ground.",
+    "water": "No water on the terrace itself. Fill in Cutthroat Creek low on the approach and carry it up.",
+    "permit": "None — dispersed national forest camping, no permit and no quota.",
+    "capacity": "A small flat area under the cliff; room for one or two parties at most"
+   }
+  ],
+  "itinerary": "Single-day car-to-car outing: early start, 1-1.5 hr unmarked approach, climb (allow several hours for 5 pitches with route-finding on an obscure line), 4 raps to descend, reverse the approach.",
+  "waypoints": [
+   {
+    "name": "Cutthroat Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 4469
+   },
+   {
+    "name": "Cutthroat Creek trailhead",
+    "type": "Campsite",
+    "elev": 4500
+   },
+   {
+    "name": "Base of Cutthroat Creek Wall (right-hand shoulder)",
+    "type": "Junction",
+    "elev": null
+   },
+   {
+    "name": "Little Liberty Bell / Cutthroat Creek Wall (formation high point)",
+    "type": "Summit",
+    "elev": 6263
+   }
+  ],
+  "peak": "Cutthroat Creek Wall or Little Liberty Bell",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_ne_couloir",
+  "name": "NE Couloir",
+  "area_id": "wa_north_face_tiffany_mountain",
+  "discipline": "ice",
+  "grade": "AI2",
+  "pitches": 3,
+  "gain_ft": 1485,
+  "dist_km": 3.7,
+  "high_point_ft": 8245,
+  "season": "Jun-Jul",
+  "approach": "From Tiffany Springs Campground (6,760 ft), hike trail #373 east past Tiffany Lake to Honeymoon Pass (7,150 ft, ~45 min). From the pass, traverse SW/south along the east slope below the ridge crest to the small cirque at the base of the North Face (7,360 ft), then continue to the base of the couloir. Driving access: via Conconully/North Fork Salmon Creek (~21 mi, ~1 hr, rough road, 4WD recommended), via the South Fork/Baldy Pass (~30.6 mi, ~2 hr, 2WD gravel), or via the Methow Valley (~26.5 mi, ~1 hr, 2WD gravel).",
+  "descent": "Walk off the northwest summit ridge to access the northeast ridge above Little Tiffany Lake. Follow the unmaintained trail down to the main trail at Honeymoon Pass.",
+  "bivy": null,
+  "itinerary": "Single day, ideally with an early (pre-dawn or early-morning) start to catch firm snow: drive to Tiffany Springs Campground, hike ~45 min to Honeymoon Pass, traverse to the cirque, climb the couloir, then walk off via the NW ridge and Little Tiffany Lake trail — roughly 5 hours round-trip.",
+  "waypoints": [
+   {
+    "name": "Tiffany Springs Campground",
+    "type": "Trailhead",
+    "elev": 6760
+   },
+   {
+    "name": "Tiffany Mountain",
+    "type": "Summit",
+    "elev": 8245
+   }
+  ],
+  "peak": "North Face Tiffany Mountain",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_ne_ridge",
+  "name": "NE Ridge",
+  "area_id": "wa_cathedral_peak_pasayten",
+  "discipline": "alpine",
+  "grade": "5.3",
+  "pitches": 7,
+  "gain_ft": 6000,
+  "dist_km": 27.4,
+  "high_point_ft": 8606,
+  "season": "Jul-Sep",
+  "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 28 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: from Cathedral Lakes camp, follow the trail toward Cathedral Pass and climb scree/talus to the base of the peak's main South Face; SE Buttress starts on the left wall just after entering the deep gully that separates Cathedral Peak from The Monk, while NE Ridge is gained by scrambling up the grassy southeast slope from the Boundary Trail to join the ridge.",
+  "descent": "Walk off to the west via the standard SW-slope descent route.",
+  "bivy": [
+   {
+    "elev": 7400,
+    "name": "Upper Cathedral Lake basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+    "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+    "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+    "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+   },
+   {
+    "elev": 6700,
+    "name": "Andrews Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+    "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+    "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+    "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+   },
+   {
+    "elev": 7600,
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+    "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+    "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+    "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+   }
+  ],
+  "itinerary": "Day 1: drive to trailhead, hike toward Cathedral Pass, camp. Day 2: continue to Upper Cathedral Lake basin. Day 3: climb the ridge, descend to camp. Days 4-5: hike out.",
+  "waypoints": [
+   {
+    "name": "Andrews Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 3050
+   },
+   {
+    "name": "Andrews Pass",
+    "type": "Campsite",
+    "elev": 6700
+   },
+   {
+    "name": "Upper Cathedral Lake basin",
+    "type": "Campsite",
+    "elev": 7400
+   },
+   {
+    "name": "Cathedral Peak summit",
+    "type": "Summit",
+    "elev": 8606
+   }
+  ],
+  "peak": "Cathedral Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_needle_peak_north_ridge",
+  "name": "Northwest Ridge (from Needle Peak)",
+  "area_id": "wa_bonanza_peak",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Aug",
+  "approach": "From Stehekin (reached only by passenger boat or floatplane up Lake Chelan — no road access), follow the Agnes Creek Trail upstream and leave the maintained trail at Swamp Creek to travel cross-country onto Needle Peak's north side and gain the North Ridge.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 2800,
+    "name": "Swamp Creek Camp — the base for Needle Peak, Mount Lyall and Lyall Ridge",
+    "role": "main",
+    "type": "camp",
+    "notes": "About nine miles south of High Bridge on the Pacific Crest Trail and roughly three beyond Fivemile, this is the working base for Needle Peak, Mount Lyall at 7,892 ft and the ridge between them. The unmaintained Swamp Creek trail leaves the corridor here and climbs toward Needle Peak's north ridge; the ground above is class 3 and 4 scrambling with real exposure and a helmet is wanted, and the northeast ridge of Dark Peak continues over to Lyall, so a party willing to spend the days can link several of these summits off one camp. Budget five days for the full set including the boat at both ends, and something close to forty miles of walking. The approach is all of the difficulty. These are not hard climbs by North Cascades standards; they are remote, brushy and slow, and the price of admission is the boat, the shuttle, the mileage and a good deal of unpleasant bushwhacking once you leave the corridor. Nothing about this is a weekend. Cedar Camp further up the valley is the alternative if this one is taken; Hemlock Camp above it is unsafe from falling insect-killed timber and should be skipped.",
+    "water": "Swamp Creek at the camp, reliable. This is also the haul point. There is no water on the ridges above and parties putting a high camp on Lyall Ridge or the north ridge of Needle carry it up from here, which is the single biggest load consideration on these summits.",
+    "permit": "Free North Cascades backcountry permit, booked through the federal recreation booking site or collected in person as a walk-up. Bear canisters not specifically required at this camp; store food properly regardless. Fires are not appropriate here and restrictions are usually in force anyway.",
+    "capacity": "A small trail camp, one or two parties. Like everything on this corridor it is shared with through-hikers in high summer."
+   },
+   {
+    "name": "Purple Point and Harlequin — the landing camps, and the boat that decides the trip",
+    "role": "route",
+    "type": "camp",
+    "notes": "Read this before any other site in the zone. Stehekin has no road to it. The only practical way in is the scheduled passenger boat up Lake Chelan from Chelan or Fields Point Landing, and the timetable, not your fitness, sets the shape of the trip. The slow boat takes roughly four hours each way and the express about two and a half; a typical summer sailing leaves Chelan mid-morning, reaches Stehekin around midday, and turns round after a layover of an hour or ninety minutes. That means a party arriving on the boat has half a day at most before the last sailing out, and a party finishing a climb has to be at the landing on the boat's schedule or spend another night. Book the boat and the permit together and treat the return sailing as a hard deadline. From the landing a valley shuttle runs eleven miles up to High Bridge, four times a day in each direction in season, and it is the second half of the same logistics problem — miss it and you are walking. Purple Point is where you sleep if the boat gets in too late to reach the upper valley, and Harlequin is where you sleep if you are heading for the Company Creek road in the morning. Neither serves a summit directly, and both are essential.",
+    "water": "Purple Point has potable water and vault toilets. Harlequin has vault toilets, tables, fire rings and animal-resistant food lockers, with the Stehekin River alongside. Neither is a water problem.",
+    "permit": "This is a two-jurisdiction valley and it matters. The landing and the lower road are in the Lake Chelan National Recreation Area; the upper valley and everything you climb from it are North Cascades National Park. A backcountry permit is required year round for every overnight in the park backcountry, and the valley campgrounds require a free permit as well. Permits are issued through the federal recreation booking site, with a lottery in early March, winners assigned booking dates through late March and April, and the general release at seven in the morning Pacific in late April. Roughly sixty percent of permits are reservable and forty percent held for walk-ups. There is no permit office in Stehekin — a walk-up permit has to be collected in person elsewhere in the park complex before you get on the boat, which is the trap that ends more trips here than weather. Bear canisters are not required at these particular camps but food must be stored in the lockers or hung; the valley has bears and they know the campgrounds. Purple Point was free for the 2026 season.",
+    "capacity": "Purple Point has six walk-in tent sites about ten minutes on foot from the boat dock. Harlequin, four and a half miles up the valley road, has seven walk-in sites with shared parking. Both are first come, first served and both are small enough that a busy summer afternoon fills them."
+   },
+   {
+    "elev": 1600,
+    "name": "High Bridge Camp — the shuttle terminus and the base for McGregor Mountain",
+    "role": "route",
+    "type": "camp",
+    "notes": "The bus stops here and the walking starts here, so almost every trip in this zone passes through it. Its own summit is McGregor Mountain, whose trail leaves the valley road near the guard station a mile or so from the bridge and is one of the biggest sustained climbs in the state: about 7.7 miles and 6,400 ft of gain to within half a mile of the top, past Coon Lake in the first mile and then switchback after switchback with almost no relief. The last 1,100 ft to the summit is exposed scrambling rather than trail, and an ice axe is wanted while snow is still lying on it. Doing that in a day from High Bridge is a very long outing and most parties camp here the night before rather than trying to fit it around the boat. Water is the specific worry: the lake and Coon Creek are early on and the upper mountain has nothing. High Bridge is also the start of the Agnes Creek trail south and the Pacific Crest corridor, so it is where the Agnes, Needle, Lyall and Dark Peak trips begin as well. Bicycles are allowed on the valley road and some parties ride the fourteen miles up rather than wait for a shuttle.",
+    "water": "The Stehekin River and Agnes Creek at the bridge, plus Coon Creek on the trail above. Reliable, and it is worth filling here because the McGregor trail is a long way between sources once it starts switchbacking.",
+    "permit": "Free backcountry permit required through the federal recreation booking site, collected in person outside the valley. No fee for the camp itself. Food storage is required; bears work the road end hard. Fires only where rings exist and only when no restriction is in force — Stage restrictions are common on the east side by midsummer.",
+    "capacity": "A small road-end camp with a handful of sites, plus Bullion and Dolly Varden further up the valley road at ten and thirteen miles with two sites each. All first come, first served, none reservable."
+   },
+   {
+    "elev": 2200,
+    "name": "Fivemile Camp, Agnes Creek",
+    "role": "route",
+    "type": "camp",
+    "notes": "Five miles south of High Bridge on the Pacific Crest Trail through Agnes Gorge, this is the junction camp and the last comfortable night before things get serious. It is the departure point for Agnes Mountain — the West Fork Agnes Creek trail leaves here heading west, and it is the start of the standard approach to the 8,115 ft summit, first climbed in 1936 from this same drainage. It is also the first night for parties heading further up Agnes Creek toward Dark Peak, which is usually described as a three-day trip built off this camp and the ground above it. The camp itself is unremarkable: deep valley forest at 2,200 ft, no views, mosquitoes early in the season, and the creek. What makes it matter is position. Anything you climb from here is thousands of feet above and mostly trackless, so the difference between sleeping at High Bridge and sleeping here is a full extra push tacked onto an already long day.",
+    "water": "Reliable — Agnes Creek runs at the camp all season. Fill completely here if you are heading up the West Fork, because there is no camp, no trail and no certainty of anything above.",
+    "permit": "Free North Cascades backcountry permit required, reserved through the federal recreation booking site or taken as a walk-up collected in person before you reach the valley. Bear canisters are not on the required list for this camp, but food must be hung or stored properly and this is a long-established camp in bear country. No fires above the valley floor rings; check what restriction is running.",
+    "capacity": "A modest forested camp on the creek, a couple of parties at most. It sees Pacific Crest Trail traffic through the summer, so it is busier in late July and August than its remoteness suggests."
+   }
+  ],
+  "itinerary": "Day 1: hike from Stehekin via the Agnes Creek Trail to Swamp Creek, climb Needle Peak's North Ridge, continue over the North and South Anonymity Towers, climb the Dark Glacier, and bivouac atop Dark Peak. Day 2: continue the connecting ridge crest to Bonanza Peak's west summit and then the main summit, descending via the Mary Greene Glacier.",
+  "waypoints": [
+   {
+    "name": "High Bridge (Stehekin Valley Road)",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Fivemile Camp, Agnes Creek",
+    "type": "Campsite",
+    "elev": 2200
+   },
+   {
+    "name": "Swamp Creek crossing",
+    "type": "Water",
+    "elev": 2775
+   },
+   {
+    "name": "Needle Peak summit (first summit of the traverse)",
+    "type": "Landmark",
+    "elev": 7896
+   },
+   {
+    "name": "Bonanza Peak summit",
+    "type": "Summit",
+    "elev": 9516
+   }
+  ],
+  "peak": "Bonanza Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_nooksack_tower_south_face",
+  "name": "South Face",
+  "area_id": "wa_nooksack_tower",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "pitches": 12,
+  "gain_ft": 6130,
+  "dist_km": null,
+  "high_point_ft": 8285,
+  "season": "Jul-Aug",
+  "approach": "Approach is similar to the Beckey route via Ruth Creek and Price Lake moraine, but instead of ascending toward Price Glacier, traverse to the East Nooksack Glacier. Climb to the base of the south face (elevation approximately 6,500-7,000 feet), which rises directly above the glacier. Multiple variations exist depending on snow/ice conditions; the climb starts on the right side of the face.",
+  "descent": "Descent routes vary; parties may reverse part of the ascent or traverse to the north face for descent via the standard Beckey-Schmidtke rappel line (10+ rappels to glacier).",
+  "bivy": [
+   {
+    "elev": 5900,
+    "name": "Shoulder camp above Price Lake, between the Price and East Nooksack glaciers",
+    "role": "main",
+    "type": "bivy",
+    "notes": "This is the camp for Nooksack Tower and the only established position on the mountain, used by both the classic line on the north side and the much harder south face. It sits on the shoulder dividing the Price Glacier from the Nooksack Cirque, reached by leaving Price Lake, following the boot path onto the moraine as it rounds the north side of the lake and lower glacier, then peeling up left through a small defile onto the ridge where a goat path runs nearly to the slabs. Do not confuse it with the bivy on Shuksan's north face rib, which is a different place approached from the opposite side of the range entirely. From here the north side route drops to the bergschrund and the south face is reached by downclimbing and a rappel to a pocket glacier and a couloir onto the East Nooksack. Nooksack Tower is one of the harder summits in the range, with loose rock throughout and a descent of ten or more rappels, so the camp is a working platform rather than a comfort. Everything about it depends on the approach below being passable, which is the real problem.",
+    "water": "Snowmelt cascades down the cliffs around 5,000 ft on the way up, which is the last dependable water and the place to fill. At camp it is melt or nothing.",
+    "permit": "North Cascades National Park backcountry permit for the cross-country zone at the head of the Nooksack. Reserved online or issued as a walk-up within 24 hours, collected in person, with per-person and transaction fees. Cross-country rules apply: durable surfaces only, no camping in meadows or within a hundred feet of water, food in an approved canister, and no fires. The lower part of the walk in crosses Mount Baker Wilderness on the forest side, so the parking pass at the road end and the park permit are two separate things you need at once.",
+    "capacity": "Flat rock slabs with room for two or three bivy sacks, snow-covered into midsummer; a small party only, and no facilities"
+   },
+   {
+    "elev": 3000,
+    "name": "Nooksack Cirque river bottom, below the tower",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Say this plainly: there is no real camping in the Nooksack Cirque, and any party heading for Nooksack Tower should expect to improvise a night on gravel or in the trees rather than arrive at a site. The way in is a genuine bushwhack. The spur road dead-ends at Ruth Creek with no bridge, so the trip begins by wading or crossing on whatever log is currently down, and a log that is crossable at dawn can be underwater by afternoon once the day's melt arrives. In early summer Ruth Creek alone can be too high to cross at all, and the North Fork above it is worse. Beyond the creek the route follows two miles of abandoned roadbed, then second growth to the wilderness boundary, then old growth to the river, after which progress depends entirely on whether the gravel bars are exposed or whether you are fighting through riverside brush. Cool weather and low water are what make it work, which is why this valley is best in the autumn — the exact opposite of the season that suits the climbing above. The first ascent party camped near this height on the river before starting up, and little about the ground has become easier since. Treat the water crossings as the crux of the trip, not the climb.",
+    "water": "The river and its tributaries are everywhere and never fail, but the North Fork is heavily glacier-fed and runs opaque with rock flour. Filter from a clear side stream rather than the main channel where you can.",
+    "permit": "Split. The lower miles are Mt Baker-Snoqualmie National Forest and then Mount Baker Wilderness, needing only the parking pass and a self-issue wilderness registration. Past the boundary further up the valley it is North Cascades National Park, and a night on that side needs a park backcountry permit for the cross-country zone, arranged in advance or as a walk-up and collected in person before you start. There is no ranger presence out here to sort it out for you, so know which side of the line you intend to sleep on before you leave the road. No fires.",
+    "capacity": "Nothing established. Parties make do on gravel bars when the river is low, or on flat ground in the old growth near the point where the route meets the North Fork. One party at a time in practice, and the ground moves year to year."
+   }
+  ],
+  "itinerary": "Typically run from a high camp: approach across the East Nooksack Glacier to the base of the face, climb the 12-pitch route to the summit, then descend via the north face route back to the glacier and camp. The first ascensionists completed the entire round trip from their high camp in about 17 hours.",
+  "waypoints": [
+   {
+    "name": "Nooksack Cirque Trailhead (Trail #750)",
+    "type": "Trailhead",
+    "elev": 2144
+   },
+   {
+    "name": "Nooksack Tower summit",
+    "type": "Summit",
+    "elev": 8285
+   }
+  ],
+  "peak": "Nooksack Tower",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_north_face_left_buttress",
+  "name": "Fight or Flight",
+  "area_id": "wa_castle_peak_pasayten",
+  "discipline": "alpine",
+  "grade": "5.10d",
+  "pitches": 14,
+  "gain_ft": 6500,
+  "dist_km": null,
+  "high_point_ft": 8343,
+  "season": "Jul-Sep",
+  "approach": "Two approaches exist, both multi-day. The first-ascent party came from Canada: from Lightning Lake in E.C. Manning Provincial Park, about seven miles of trail over the Frosty Mountain area to a pass near 8,000 ft, then cross-country south over the border, through the Princess Creek basin and into the Crow Creek drainage below Castle's north face to the toe of the north-face glacier. Walking into the US away from a port of entry is not a lawful crossing, so that line is recorded, not recommended. The lawful approach is from the US side: boat or hike up Ross Lake from the WA-20/Ross Dam trailhead (permit from the North Cascades Wilderness Information Center in Marblemount) to Lightning Creek, then follow the Lightning Creek Trail and the abandoned, increasingly brushy Freezeout Creek Trail past the Freezeout cabin (3,600 ft), a much longer multi-day trudge. Both approaches finish by crossing the mellow north-face glacier to the base of the buttress -- watch for an awkward bergschrund/moat at the start of the route.",
+  "descent": "Descend via the east ridge to a col, then down a snow finger — this route is not reversed/rappelled.",
+  "bivy": [
+   {
+    "name": "Castle Peak north-side glacier bivy",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Most parties come in from Manning Park, leave the Monument 78 trail near the border and cross a high pass near 8,000 ft to camp below the glacier under the north face.",
+    "water": "Snowmelt and glacier runoff.",
+    "permit": "Free self-issue Pasayten Wilderness permit.",
+    "capacity": "A few tent spots on rock and moraine; no established sites."
+   },
+   {
+    "elev": 6200,
+    "name": "Harts Pass and Meadows campgrounds",
+    "role": "route",
+    "type": "camp",
+    "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approaching seventeen percent on the upper ramps. Trailers are prohibited outright and motorhomes and wide vehicles are strongly discouraged. The road opens with the snowmelt, typically early to mid July and occasionally not until later, and closes with the first serious autumn storms. Above the pass it continues to the gate below Slate Peak at about 7,440 feet, the highest driveable point in the state, which puts you at a trailhead where the walking starts near 7,000 feet instead of 2,500. Four trails leave from here — the Pacific Crest Trail, the West Fork Pasayten, the Middle Fork Pasayten and Buckskin Ridge — so this one pass is the door to Osceola, Blackcap, Dot, Ptarmigan, Castle and Blizzard. Nights are cold and wind at the pass is relentless; pitch behind timber rather than in the open meadow. Note that a large lightning fire that began in mid July 2026 closed the road above the Monument Creek trailhead along with much of the northern wilderness, so confirm the road is actually open before committing to a long drive.",
+    "water": "None. Neither campground has potable water and there is no piped supply anywhere on the pass, so haul everything up from the valley or plan on filtering from creeks well below. This is the single most common mistake parties make staging here.",
+    "permit": "Northwest Forest Pass or an Interagency pass to park at the trailheads; the campgrounds themselves are free but carry no services and no trash collection, so everything you bring comes back out. The free self-issue Pasayten wilderness permit is filled out at the trailhead kiosk before you walk in, not here. Campfires are legal in the existing rings when no burn ban is in effect, but the ground is thin alpine meadow and firewood is scarce, so most parties do without.",
+    "capacity": "Two small Forest Service campgrounds a mile apart, five or six sites at the pass itself and roughly twice that at Meadows, first come first served with no reservations. They fill on summer weekends and in larch season, and there is no overflow up here."
+   },
+   {
+    "name": "Windy Pass and the crest camps north of Harts Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "This is the first day of every trip toward Castle and Blizzard and the natural stop for anyone who wants a night high on the crest without a valley grind. The trail leaves Harts Pass at about 6,200 feet, tops out just under 7,000 a little over two miles north, and never drops below 5,000 the whole way to the border, so this is sustained high open country with long views and no shelter. Snow lingers on the north-facing traverses well into the summer and those crossings are the reason most parties wait until mid August in a heavy year. Wind is the standing complaint at Windy Pass and it earns the name; camping a little below the crest costs nothing and buys a great deal. There is no mobile service anywhere along here. As pure staging these camps do nothing for the Robinson Creek or Middle Fork peaks, which go the other direction from the pass.",
+    "water": "Sparse and the defining planning problem of this stretch. There is nothing at the pass itself; the nearest campsites with water sit most of a mile further on and a couple of hundred feet higher. Carry enough for at least six miles at a time, and treat the basin between Foggy Pass and Windy Pass, the Shaw Creek crossing and the spring near Holman Peak as the fixed points to plan around rather than assuming you will find something in between.",
+    "permit": "Free self-issue wilderness permit from the kiosk at Harts Pass, no quota and nothing to reserve. Northwest Forest Pass or Interagency pass to park. Party size limits and any seasonal campfire ban are posted at the trailhead and change year to year, so read the board rather than assuming. Camping is prohibited within a hundred feet of any lake shoreline, and stock parties must carry certified weed-free feed and may not tie animals to trees overnight.",
+    "capacity": "A string of small established sites in the meadows and basins along the crest, most taking one or two tents. The Pacific Crest Trail hiking season overlaps the climbing season, so expect company at the obvious ones and be ready to walk on to the next."
+   },
+   {
+    "name": "Hopkins Lake and Castle Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "These are the camps that make Castle Peak and Blizzard Peak possible at all from the American side. Hopkins Lake sits about twenty-four trail miles north of Harts Pass, six hundred feet below the trail, and Castle Pass is roughly twenty-seven miles out at about 5,450 feet. Castle Peak rises directly north and east of the pass and is a scramble from a camp here; Blizzard Peak lies further east toward Frosty Pass and the Chuchuwanteen country and is more often reached by dropping down the West Fork Pasayten from Harts Pass instead, which is a different but comparably long line. Either way this is a three to five day trip for a fit party and there is no shortcut — the loss of the Canadian exit removed the only short approach that ever existed for these two summits. Plan food and water for the full round trip, expect snow on the north slopes into August, and understand that a weather change up here leaves you a very long way from the car.",
+    "water": "Hopkins Lake is the reliable one and is worth the descent for that reason alone — it is the best water for many miles in either direction. Castle Pass is drier and the sources near it are seasonal, so fill at the lake before continuing north.",
+    "permit": "Free self-issue wilderness permit, no quota. Northwest Forest Pass to park at Harts Pass. The international boundary matters here in a way it does not elsewhere in the zone: crossing north into Canada from the backcountry is not lawful and the long-standing arrangement that let northbound trail hikers walk out to the highway in British Columbia was ended in 2025, so there is no exit that way and no legal entry southbound either. Everything in this corner is now an out-and-back from Harts Pass. Camping is prohibited within a hundred feet of the lake shoreline; pull back into the trees.",
+    "capacity": "Hopkins Lake holds several small established sites in the trees around the shore and is the most comfortable camp in the far north of the wilderness. Castle Pass itself has room for a couple of parties in the timber. Neither is large and both see through-hiker traffic."
+   }
+  ],
+  "itinerary": "From the lawful Ross Lake side the walk in to a camp below the north face is itself a multi-day trip, so plan on more than 3 days car to car. The Manning Park line, which is not a lawful border crossing, runs 3+ days: day 1 to a high camp near the border/Crow Creek basin, day 2 climb the route and descend to camp, day 3+ hike back out. The approach length makes this a serious multi-day undertaking rather than a single push.",
+  "waypoints": [
+   {
+    "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+    "type": "Trailhead",
+    "elev": 2125
+   },
+   {
+    "name": "Castle Peak Summit (East Turret - true summit)",
+    "type": "Summit",
+    "elev": 8343
+   }
+  ],
+  "peak": "Castle Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_north_gardner_mountain_nw_couloir",
+  "name": "Northwest Couloir (Cedar Creek approach)",
+  "area_id": "wa_north_gardner_mountain",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": 6019,
+  "dist_km": 21.1,
+  "high_point_ft": 8956,
+  "season": "May-Jun",
+  "approach": "From Highway 20 about 17 miles west of Winthrop, reach the Cedar Creek Trailhead (about 2,950 ft) and follow the Cedar Creek Trail before leaving it to bushwhack cross-country toward Cedar Creek; a known ford crossing (via a log in some years, a wade in others) gives access to the Shelokum Creek drainage, which is followed trail-less uphill to open meadows/snowfields below the northwest couloir.",
+  "descent": "Reverse the north ridge talus and couloir; in soft snow the couloir has been glissaded or skied, considerably faster than the ascent.",
+  "bivy": [
+   {
+    "name": "Cedar Creek meadow camps above the falls",
+    "role": "main",
+    "type": "camp",
+    "notes": "The western approach camp, and the reason to use this side at all. Cedar Falls comes at about 1.7 miles from the trailhead and is the day-hike turnaround for most visitors; keep going and roughly two miles beyond the falls the trail opens into meadows with good camping. From here the head of the valley and the west flank of North Gardner are within reach, and this is materially shorter than coming round by Wolf Creek. Its real value is seasonal. The trailhead is low and this is one of the first trails in the area to melt out, so in a late spring when Wolf Creek is still buried and the Gardner Meadows approach is a slog, this side goes. The trade is snow higher up and a steeper, less travelled finish. Damage from the 2021 fire is visible in this drainage too, heavier away from the creek than beside it, and the lower trail to the falls is in good order. The trail continues to Abernathy Pass at about 9.2 miles and over into North Creek, which is a useful escape or through-route if weather closes the tops.",
+    "water": "Cedar Creek runs alongside for the whole approach and through the meadows, and it is the most dependable water — a snow-fed creek in a north-facing valley that holds well into autumn. Fill here, because the climb east out of the valley toward the Gardner ridge has nothing.",
+    "permit": "The Cedar Creek trail is outside the wilderness until it nears Abernathy Pass, where it enters the Lake Chelan-Sawtooth Wilderness. No permit or quota either side of that line; party limit of twelve inside. Northwest Forest Pass at the trailhead. Campfires prohibited under the forest-wide Stage 2 restrictions and the county burn ban.",
+    "capacity": "Good established sites for hikers and stock where the trail enters the meadows; several parties can spread out"
+   },
+   {
+    "name": "Upper Cedar Creek head basin",
+    "role": "main",
+    "type": "bivy",
+    "notes": "A spring and early-summer bivouac rather than a camp, used by parties taking the west side of North Gardner when snow still covers the ground. Getting into the head of the valley involves leaving the maintained trail and working up through brush, and it is not pleasant in dry conditions — the argument for it is precisely that on snow the brush is buried and the travel is fast. From the basin the west and southwest flanks of North Gardner rise directly, and a party can take both Gardner summits and be back at the car the following morning, which is appreciably shorter than the Wolf Creek round trip. Expect avalanche terrain on those slopes into June and treat the timing accordingly: an early start, firm snow, and off the slopes before the afternoon. There is no shelter, the basin is a cold sink, and there is no easy retreat except the way you came. This is a competent-party option in a narrow window, not a general-purpose camp.",
+    "water": "Snowmelt and the headwaters of Cedar Creek. Reliable in early season, which is when this camp makes sense; in late summer it thins out and the meadows below the falls become the better choice. Melting snow is the normal answer here in spring.",
+    "permit": "Lake Chelan-Sawtooth Wilderness at the head of the valley. No permit, no quota, party limit of twelve, proper food storage. No campfires — forest-wide restrictions, and there is no fuel. Leave no trace on unestablished ground and camp on rock or snow rather than fragile meadow.",
+    "capacity": "Informal ground for one or two small parties; no established sites and no flat obvious platform"
+   },
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground and the Highway 20 road-head campgrounds",
+    "role": "route",
+    "type": "camp",
+    "notes": "The obvious place to sleep before starting up either side of the Gardners, and the only one with running water and a toilet. It sits in ponderosa forest just off the highway about four miles beyond Mazama, and the Cedar Creek trailhead is roughly half a mile further along a short forest road — near enough to walk to if you wanted. Coming from the west over the pass, this is the first campground on the dry side and the change is abrupt: open pine, no undergrowth, hot afternoons and cold clear nights. Use it as staging, not as a destination. The practical value is that it lets you drive out the evening before, sleep at the trailhead, and start the long Wolf Creek or Cedar Creek walk at dawn rather than in the heat of the day, which on these approaches matters more than it sounds. Bear in mind the highway itself opened late in 2026 after repair work, and paving through this corridor has been closing individual sites for stretches of a week or so at a time; ring ahead rather than arriving on spec.",
+    "water": "Piped water at Klipchuck when the season's system is turned on, and Early Winters Creek nearby. Do not count on the tap outside the main season or in a drought year — check before you drive out, because the alternative is hauling water from town.",
+    "permit": "Nightly campground fee. Northwest Forest Pass or equivalent for the trailhead lots. No wilderness permit required. The forest-wide fire restrictions that had banned campfires, including in established rings, were lifted on September 18, 2026 (Okanogan-Wenatchee order 06-17-00-2026-16), but Okanogan County's burn ban on all outdoor burning including campfires was still in effect on September 22, 2026; check both before lighting one. Some highway-corridor sites are closed in rotation for paving work between early August and mid September.",
+    "capacity": "Around forty sites at Klipchuck; the smaller campgrounds up and down the highway corridor add a few dozen more between them"
+   }
+  ],
+  "itinerary": "Typically done as a long single day from the Cedar Creek Trailhead (one recorded ascent: 4h26m up, 2h40m down), though an overnight approach has also been used given the trail-less terrain and creek crossing.",
+  "waypoints": [
+   {
+    "name": "Cedar Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 2961
+   },
+   {
+    "name": "North Gardner Mountain Summit",
+    "type": "Summit",
+    "elev": 8956
+   }
+  ],
+  "peak": "North Gardner Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_north_gardner_mountain_southwest",
+  "name": "Southwest Slopes / South Ridge",
+  "area_id": "wa_north_gardner_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": 7300,
+  "dist_km": 16.6,
+  "high_point_ft": 8956,
+  "season": "Jul–Sep",
+  "approach": "From the Wolf Creek Trailhead (~2,950 ft, end of FS Road 5005 west of Winthrop) follow Wolf Creek Trail #527 roughly 10 miles up the Wolf Creek valley to Gardner Meadows, then continue off-trail north into Wolf Creek Basin (typical high camp ~6,200-6,400 ft) below the Gardner/North Gardner saddle. A long, multi-day approach for most parties (roughly 27 miles round trip with ~7,300 ft of gain for the full trip).",
+  "descent": "Reverse the ascent route down the southwest slopes.",
+  "bivy": [
+   {
+    "elev": 6250,
+    "name": "High basin camp above Gardner Meadows",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The higher option for a party that wants to shorten summit day rather than take both peaks in one long push from the meadows. Heading north out of Gardner Meadows the ground rises to a small meadow basin at about 6,200 ft, and an old boot path leaves the main trail a few hundred feet west of the small stream to reach it. Stay between roughly 6,200 and 6,400 ft on the way across — drop lower and you land in groves of silver snags with jack-strawed deadfall that cost far more time than the elevation saves. From a camp here the scree slope to the ridge is about 1,400 ft of gain in half a mile, which is the steepest and loosest section of the whole climb and much better done early and on firm ground. It is an exposed spot with no shelter to speak of and it is cold; the compensation is the position and the head start. Use it when the forecast is settled and when you have confirmed water. In a dry August the meadows below are the safer plan.",
+    "water": "A seep and small stream in the basin, which is what makes the site usable at all — it is boggy underfoot in early season and can be dry by late August in a poor snow year. Confirm it before carrying up on the strength of it, because there is no second option at this elevation and the retreat is all the way back to the meadows.",
+    "permit": "Lake Chelan-Sawtooth Wilderness. No permit or quota, party limit of twelve, food stored properly. No campfires — forest-wide restrictions apply and there is nothing worth burning up here in any case. Camp on durable ground and off the wet meadow.",
+    "capacity": "A small soggy basin with room for one or two tents; a party of two or three at most"
+   },
+   {
+    "name": "Gardner Meadows, Wolf Creek trail",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the basecamp for both peaks and the way the great majority of parties climb them. The Wolf Creek trail runs roughly ten miles up the valley bottom from the trailhead near Winthrop to meadows sitting directly beneath Gardner Mountain, with North Gardner a mile further northwest along the connecting ridge. From here a fit party can take both summits in a single long day and walk out the next morning. Know what the approach is now: the first eight miles or so run through forest burned in the 2021 fire, so there is very little shade, the tread is crossed by blowdown in places, and the second half is brushy. Where the trail turns uphill into the meadows it becomes genuinely hard to follow, buried in downed logs and regrowth, and one of the creek crossings is easy to miss even in daylight — this is not a route to be finding for the first time in the dark. Allow four and a half to five hours to camp with a climbing load. Season is July through September; the aspect is dry and eastern so the snow leaves early, but the same thing that clears the snow makes the walk in punishing in midsummer heat. The climbing above is a scramble on loose scree with pinnacles and short cliff bands on the connecting ridge that force you off the crest rather than along it.",
+    "water": "A small stream flows south out of Gardner Mountain through the meadows and there is water at camp through a normal summer. This is the critical fill point: the Wolf Creek trail below is notably short of water for a valley-bottom trail, and everything above the meadows is bone dry. Carry the whole day's supply for the climb, and in a heat wave carry water up the approach as well — parties have turned around on these peaks for want of it.",
+    "permit": "The upper Wolf Creek trail enters the Lake Chelan-Sawtooth Wilderness. No wilderness permit or quota to hike or camp; sign the trailhead register. Party size limited to twelve people and eighteen head of stock. Northwest Forest Pass at the Wolf Creek trailhead. No campfires under the current forest-wide restrictions, and in a burned valley with standing snags this is a rule worth taking seriously. Proper food storage required.",
+    "capacity": "Numerous comfortable sites through the meadows and in the trees at their edge; this is the one place in the zone that will absorb several parties without crowding"
+   }
+  ],
+  "itinerary": "Typically done as an overnight or multi-day trip, with a high camp at Gardner Meadows (~10 miles in) or higher in Wolf Creek Basin (~6,200-6,400 ft) below the peak.",
+  "waypoints": [
+   {
+    "name": "Wolf Creek Trailhead (FR #5005)",
+    "type": "Trailhead",
+    "elev": 2923
+   },
+   {
+    "name": "North Gardner Mountain summit",
+    "type": "Summit",
+    "elev": 8956
+   }
+  ],
+  "peak": "North Gardner Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_north_ridge_7",
+  "name": "North Ridge",
+  "area_id": "wa_aiguille_de_l_m",
+  "discipline": "alpine",
+  "grade": "5.3",
+  "pitches": 4,
+  "gain_ft": 4000,
+  "dist_km": 6,
+  "high_point_ft": 7200,
+  "season": "Jun-Sep",
+  "approach": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different stop from the Eldorado trailhead about 2.5 miles down-road, and just before the road's end at Cascade Pass). From there a steep, unmaintained climbers' path follows the old Diamond Mine roadbed briefly before climbing hard, crossing several streams, and breaking above treeline (~5,300 ft) to reach the popular Boston Basin high camp around 6,400 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain. From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest. Because Boston Basin is a high-demand cross-country camping zone in North Cascades National Park, overnight parties need a wilderness permit; a portion of peak-season (mid-May to mid-October) slots can be reserved in advance via Recreation.gov's early-access lottery, with the remainder issued as limited first-come, first-served walk-up permits. For this specific route: from Boston Basin high camp, a short approach up into the Forbidden Peak zone reaches this minor summit; North and South Ridge differ only in which side of the formation is climbed from the same camp.",
+  "descent": "One 40-foot rappel from tower top, followed by down-climbing ridge.",
+  "bivy": [
+   {
+    "elev": 6400,
+    "name": "Boston Basin upper (high) camp",
+    "role": "main",
+    "type": "camp",
+    "notes": "Several hundred vertical feet above the lower camp and also served by a composting toilet, this shortens the morning to the Forbidden West Ridge couloir and to Sharkfin Tower considerably. There is a real tension in the published guidance worth knowing before you go: park zone rules describe camping on durable surfaces such as snow, rock or bare ground, while much of the practical guidance for Boston Basin says to use only the two established camps. In practice rangers direct climbers to the hardened sites, so plan on them and ask at Marblemount if you intend otherwise.",
+    "water": "Snowmelt runnels and glacier outflow are usually running nearby, but this is the less certain of the two camps late in the season — parties arriving in September should be ready to melt snow or carry it up from below.",
+    "permit": "Same NPS wilderness permit as the lower camp, collected in person at Marblemount; reservable portion on Recreation.gov, remainder held for walk-ups.",
+    "capacity": "Shares the same 6-party, 12-person Boston Basin zone quota as the lower camp; a handful of hardened tent platforms."
+   },
+   {
+    "elev": 5300,
+    "name": "Boston Basin lower camp",
+    "role": "main",
+    "type": "camp",
+    "notes": "The first hardened camp on the climbers' trail up from the Cascade River Road pullout near mile 21.7, with a composting toilet. It is the usual base for Forbidden Peak's West Ridge and North Ridge, Sharkfin Tower and the Torment-Forbidden traverse, and it stays snow-covered well into early summer. accounts differ on the exact elevation of the two Boston Basin camps — figures between roughly 5,300 and 5,700 ft are quoted for this one — so treat the number as approximate rather than a waypoint. Bear-resistant food storage is required.",
+    "water": "Meltwater creeks braid through the basin below the Quien Sabe and Boston glaciers and are normally reliable through the climbing season, though flow drops noticeably by late August and September in a light snow year.",
+    "permit": "NPS wilderness permit required for any overnight stay, and for all Cascade River Road trailheads it must be collected in person at the Marblemount Wilderness Information Center. Roughly 60% of capacity is reservable in advance through Recreation.gov, about 40% held for walk-ups the day of or day before. These permits are no longer free — older write-ups still say they are, which is out of date; confirm current pricing when you book.",
+    "capacity": "Zone quota is 6 parties per night for the whole Boston Basin cross-country zone, shared with the upper camp; maximum party size 12. Weekend permits go early."
+   }
+  ],
+  "itinerary": "Day 1: Drive Cascade River Road to the Boston Basin trailhead (~3,200 ft); hike ~3-4 mi / ~3,000 ft gain to high camp (~6,400 ft). Day 2: Early start from camp, climb to the col and up the North Ridge to the tower and back (a half-day round trip is typical); hike out or stay a second night.",
+  "waypoints": [
+   {
+    "name": "Boston Basin Trailhead",
+    "type": "Trailhead",
+    "elev": 3200
+   },
+   {
+    "name": "Boston Basin lower camp",
+    "type": "Campsite",
+    "elev": 5300
+   },
+   {
+    "name": "Boston Basin upper (high) camp",
+    "type": "Campsite",
+    "elev": 6400
+   },
+   {
+    "name": "North Ridge tower (Aiguille de l'M)",
+    "type": "Topout",
+    "elev": 7200
+   }
+  ],
+  "peak": "Aiguille de l'M",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_north_ridge_west_side",
+  "name": "North Ridge - West Side",
+  "area_id": "wa_molar_tooth",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "pitches": 3,
+  "gain_ft": 2300,
+  "dist_km": 5.6,
+  "high_point_ft": 7547,
+  "season": "Jul-Sep",
+  "approach": "Two primary approaches: (1) From the Cutthroat Lake trailhead on Highway 20, hike 1.8 miles with 500 feet elevation gain to Cutthroat Lake (4,800 ft). Continue another 3.7 miles with 1,800 feet elevation gain to Cutthroat Pass (6,800 ft), then follow the ridge crest south approximately 1 mile to the base of the North Ridge. (2) From Rainy Pass North trailhead (4,875 ft) on the PCT, hike about 1.5 miles north to just before Porcupine Creek (around 5,250 ft elevation), then ascend the ridge northeast toward Molar Tooth—approximately 2 miles with 2,300 feet elevation gain. The second gully provides a cleaner approach to the base of the north ridge and west rib. From the Rainy Pass PCT trailhead the round trip is roughly 4.5 miles with about 2,500 ft of gain.",
+  "descent": "Descend via 3 rappels on the north ridge, or work southwest from the summit for an 80-foot rappel. Ensure solid anchor points as granite can be coarse and loose rock is prevalent. Exercise caution with rope management on descent.",
+  "bivy": [
+   {
+    "elev": 4500,
+    "name": "Cutthroat Creek trailhead",
+    "role": "main",
+    "type": "camp",
+    "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. It is the start for Cutthroat Wall and for the Cutthroat Lake trail toward Cutthroat Pass, and some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies; dispersed camping in the trees along the forest road below is the uncontroversial option. Access is entirely gated by the SR 20 winter closure, and the road has been shut for construction windows in recent seasons, so confirm before driving out.",
+    "water": "None — no potable water at the trailhead. Cutthroat Creek runs below the lot and needs filtering.",
+    "permit": "No camping permit and no quota. Northwest Forest Pass, Interagency pass or a day pass covers parking. This is Okanogan-Wenatchee National Forest, NOT the national park, so there is no backcountry permit system here at all.",
+    "capacity": "Large gravel lot, roughly 20-30 vehicles; fills on summer weekends with larch-season hikers"
+   },
+   {
+    "elev": 4945,
+    "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+    "role": "route",
+    "type": "camp",
+    "notes": "The lake sits about 1.8 miles in with roughly 500 ft of gain, in the basin under the peak's north and east sides. It is a pleasant place to stage, but the quarter-mile closure exists because the shoreline was being loved to death and it is enforced rather than advisory. It does not serve Cutthroat Peak's south-side routes or the usual North Ridge approach: those start from a different trailhead, a long pullout on SR 20 about 1.5 miles west of Washington Pass, and cross State Creek into the basin south of the peak, so for them treat this as a rest-day or bad-weather option rather than a staging camp.",
+    "water": "The lake and its inlet stream are dependable all season. Treat or filter.",
+    "permit": "No permit needed, but a hard rule applies: NO overnight camping within a quarter mile of Cutthroat Lake. Camp outside that radius and you are legal with no paperwork.",
+    "capacity": "Limited and regulated — the usable ground is set back from the water, so realistically a handful of small parties"
+   }
+  ],
+  "itinerary": "Day 1: Drive to Cutthroat Lake trailhead or Rainy Pass. Hike to approach base (3-4 hours via Cutthroat Lake route, or 2-3 hours via PCT). Scout route and camp if needed. Day 2: Climb North Ridge - West Side (6-8 hours total from base for approach, climb, and descent). Conclude descent by mid-afternoon to avoid scrambling in dark.",
+  "waypoints": [
+   {
+    "name": "Cutthroat Creek trailhead",
+    "type": "Campsite",
+    "elev": 4500
+   },
+   {
+    "name": "Rainy Pass PCT Trailhead",
+    "type": "Trailhead",
+    "elev": 4855
+   },
+   {
+    "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+    "type": "Campsite",
+    "elev": 4945
+   },
+   {
+    "name": "Molar Tooth",
+    "type": "Summit",
+    "elev": 7547
+   }
+  ],
+  "peak": "Molar Tooth",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_north_tower_ridge_route",
+  "name": "North Tower Ridge Route",
+  "area_id": "wa_north_face_tiffany_mountain",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 6,
+  "gain_ft": 1485,
+  "dist_km": 3.7,
+  "high_point_ft": 8245,
+  "season": "Jun-Sep",
+  "approach": "From Tiffany Springs Campground (6,760 ft), hike trail #373 east past Tiffany Lake to Honeymoon Pass (7,150 ft, ~45 minutes). From the pass, either traverse south on the grassy east slope to the small cirque at the base of the North Face (7,360 ft) and climb the boulder field to the base of the climb (7,600 ft), or hike the trail on the north side of the ridge toward Little Tiffany Lake and drop down to the base from above (~30 minutes). Three driving approaches reach the Tiffany Springs trailhead: via Conconully/North Fork Salmon Creek and FR 39 (~21 mi, ~1 hr, rough road, 4WD recommended); via the South Fork/Baldy Pass (~30.6 mi, ~2 hr, 2WD-passable gravel); or via the Methow Valley (~26.5 mi, ~1 hr, 2WD gravel). An alternate trailhead at Freezeout Pass (via East Chewuch Rd/FR 37/FR 39 from Winthrop) also accesses the area and does not require a Northwest Forest Pass.",
+  "descent": "Walk off the northwest ridge of Tiffany and then head northeast above Little Tiffany Lake to rejoin the main trail at Honeymoon Pass.",
+  "bivy": [
+   {
+    "elev": 6760,
+    "name": "Tiffany Springs Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the base for the north face and the trailhead in one, which is unusual and is what makes the face approachable at all: the walk to the bottom of the routes is under an hour, so a party can sleep at the car and still be climbing at first light without a bivouac. Trail 373 begins across the road from the campground and runs east past Tiffany Lake to Honeymoon Pass at around 7,150 ft, from where the face is below you. The drive is the commitment. Three ways reach it and they are not equivalent: a narrow four-wheel-drive road over Lone Frank Pass from Conconully by the North Fork Salmon Creek, about twenty miles; a longer gravel road over Baldy Pass suited to two-wheel drive, about thirty; and a good two-wheel-drive gravel line from the Methow, north out of Winthrop on the Chewuch River road and then east and north on the 37 and 39, about twenty-six miles. Road 39 itself has not been graded in some time and is not recommended for low-clearance passenger cars. At this elevation the road holds snow late into the spring and can shut with the first serious autumn storm, so the usable window is short and both ends of it are worth checking rather than assuming.",
+    "water": "No potable water and no tap — this is the single most important practical fact about the place, and its name is misleading. There is no piped supply, no water service and no rubbish service. Bring everything you need for drinking, cooking and washing, or plan to treat from Tiffany Lake, which is a short walk east on the trail and is the nearest dependable open water. In late summer this whole plateau is dry and what looks like a creek on a map may be nothing at all.",
+    "permit": "National forest, outside designated wilderness, so there is no wilderness permit, no self-issue slip, no quota and no lottery — the opposite of the permit expectation a few miles west in the Pasayten. There is a small nightly fee at the campground and sites are first come, first served. Fire restrictions on this dry high plateau run through most of the summer and are commonly total bans, which given what has burned here recently should be treated as the default rather than the exception. Party size and stay limits are the usual forest ones.",
+    "capacity": "A small primitive forest campground with a handful of sites, taking tents and modest vehicles. Trailers are not appropriate given the road. It is rarely full and it is the only organised camping anywhere near this face."
+   },
+   {
+    "name": "Tiffany Lake and Little Tiffany Lake",
+    "role": "route",
+    "type": "camp",
+    "notes": "Under a mile from the campground and directly on the approach, this is the camp for a party who would rather sleep on water than at a car, or who has arrived to find the campground full or closed. It is the last certain water before the face. The trail continues around the shore and climbs about six hundred feet to Honeymoon Pass, which is the gateway to the north side; parties leaving a second vehicle at the Freezeout Ridge roadhead can carry on over Whistler Pass at around 7,600 ft to the summit and descend the Freezeout trail, an open loop of some eleven miles that is the standard way to combine the walk-up with a look at the face. The burn is part of the landscape here. This trail travels through old fire scars that have opened the views and filled the ground with wildflower meadow, and the 2026 fire has added to that directly on this mountain — expect standing dead timber, no shade, and blowdown that changes with each windstorm. Do not pitch under dead trees in wind.",
+    "water": "The lakes, and they are the dependable supply for the whole north side of this mountain — everything above them on the pass and the face runs on snowmelt and is dry once that has gone. Access to the water is easy from the trail. Treat it; these are shallow, warm, well-used lakes rather than cold alpine tarns.",
+    "permit": "National forest, non-wilderness. No permit, no quota, no reservation, and no fee to camp at the lakes. A pass is not required to park at the campground trailhead across the road. Fire restrictions apply through the summer and are usually total bans; carry a stove. Camp back from the shoreline on existing bare ground, and note that this trail is open to horses and mountain bikes as well as walkers, so pitch clear of it.",
+    "capacity": "A handful of informal spots around the shores, with the established ground at the north-west end of Little Tiffany Lake. Room for a party or two. Nothing developed and no toilet, and it sees family day-hiking traffic rather than climbers."
+   },
+   {
+    "elev": 7150,
+    "name": "Honeymoon Pass",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The pass is where the trail crosses onto the north side and the face comes into view, and it is the tactical camp rather than the comfortable one. Its argument is a dawn start: from here the base of the routes is a short drop and a scramble rather than a walk from the road, which matters for the north-east couloir where the snow wants climbing early and matters much less for the rock, since the campground is under an hour away regardless. What you pay for the position is water and wind, in that order, and on a face this short the trade is rarely worth it — most parties are better off sleeping at the campground or the lake and walking in. Where it does earn its keep is for a party spending two days on the face, or one continuing over Whistler Pass to the summit and out by Freezeout Ridge. Nights are cold at this elevation from late August onward and there is no shelter at all if weather comes across the plateau.",
+    "water": "None dependable. Snowmelt early in the season and nothing at all once it has gone. Everything is carried up from Tiffany Lake, six hundred feet and half a mile below, and the party that forgets this ends up walking back down for it in the evening. In the ice season it is a snow camp and you melt.",
+    "permit": "National forest, non-wilderness — no permit, no quota, no reservation, no fee. Fire restrictions run through the summer and there is nothing to burn at this height in any case. The turf here is thin and holds a footprint for years, so pitch on gravel or rock and leave the meadow alone.",
+    "capacity": "Open ground at the pass for a small party on gravel and thin turf. No established sites, no facilities and nothing to shelter behind. Windswept is the word most often used about this crest and it is accurate."
+   },
+   {
+    "name": "The talus and benches below the north face",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The routes start here and, on a face six hundred and fifty feet high forty-five minutes from a campground, essentially nobody sleeps here. It is written down because a party reading a list of camps should not be left to assume there is a bivouac at the base — there is not, and the answer to a late arrival is the campground, not the wall. The face itself is broken by several couloirs, aretes and vertical granite cliffs; the north-east couloir is the longest and most direct of the snow lines, on the left, and the tower at the right-hand end carries the rock routes, with the ridge line giving a vertical crack, a wide flaring chimney and long stretches of easy fourth-class scrambling on generally excellent rock. Because the snow goes soon after the roads become passable, the ice and couloir lines are a shoulder-season or winter objective and are reached by ski or snowmobile in that season rather than by driving to the campground. Treat the rock routes as the summer proposition and the couloirs as a separate trip requiring a separate approach.",
+    "water": "Snowmelt off the couloirs early, and nothing whatsoever once that has gone. Given how early the snow leaves here after the roads open, that window is short. Carry water from the lakes; there is no source at the base of the face you should plan on.",
+    "permit": "National forest, non-wilderness — no permit, no quota, no reservation. No fires: this is bare rock and talus with nothing to burn and fragile alpine ground around it. Standard leave-no-trace applies and human waste has to be carried out from the base of a face this small and this close to a road.",
+    "capacity": "No established camping. There are boulder-field benches and scraps of flat ground at the foot of the wall where one or two people could put down a bag, and nothing more — this is a place to leave packs and gear up rather than a site, and it is recorded to say so rather than to invent one."
+   }
+  ],
+  "itinerary": "Single long day: drive to Tiffany Springs Campground, hike ~45 min to Honeymoon Pass, traverse ~30 min to the base of the climb, climb the 6-pitch route (a few hours for a competent party), then walk off via the NW ridge and Little Tiffany Lake trail back to the car.",
+  "waypoints": [
+   {
+    "name": "Tiffany Springs Campground",
+    "type": "Trailhead",
+    "elev": 6760
+   },
+   {
+    "name": "Tiffany Springs Campground",
+    "type": "Campsite",
+    "elev": 6760
+   },
+   {
+    "name": "Honeymoon Pass",
+    "type": "Campsite",
+    "elev": 7150
+   },
+   {
+    "name": "Tiffany Mountain",
+    "type": "Summit",
+    "elev": 8245
+   }
+  ],
+  "peak": "North Face Tiffany Mountain",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_north_twin_sister_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_north_twin_sister",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 5500,
+  "dist_km": 9.7,
+  "high_point_ft": 6644,
+  "season": "Jul-Sep",
+  "approach": "Via Mosquito Lake Road (off SR 542 east of Deming) to a bridge over the Middle Fork Nooksack River, then Forest Road 38; park at the gate and continue roughly 5-6 miles with about 2,000-2,500 ft of gain on private-timberland logging roads (commonly covered by mountain bike) to reach the West Ridge climbers' path, which climbs through timber onto the ridge crest.",
+  "descent": "Reverse the West Ridge (north of the crest near the false summits, south of it lower down); in early-mid season, some parties instead glissade/plunge-step the steep snow slopes on the north face.",
+  "bivy": [
+   {
+    "elev": 4900,
+    "name": "Orsino Creek Basin",
+    "role": "main",
+    "type": "bivy",
+    "notes": "This is the standard overnight camp for the west ridge of South Twin and the most useful water stop on the whole northwest approach. It is reached from the Dailey Prairie road system by crossing Orsino Creek and following a brushy old road that fades into a path through timber, then traversing up red talus past the ruins of an old cabin into the basin. From the camp a steep and thoroughly unpleasant slog up dirt, scree and talus gains an obvious notch on the west ridge at around five thousand two hundred feet. The ground is coarse and drains fast, so pitch on the flat gravel benches rather than hunting for soft ground. Fill everything here. Above this point the only water is snowmelt and glacier runoff, and in a dry August there may be none at all. Best from July through September; earlier the basin holds snow and the creek runs high and cold.",
+    "water": "Orsino Creek, the most reliable water on the west side of the range. It is the last dependable source for the summits and for the higher camps, and it shrinks noticeably by late summer",
+    "permit": "The basin sits close to the boundary between private timberland below and national forest wilderness above. Camping is legal on the forest side and not on the timber company side, and the line is not signed on the ground, so camp high in the basin rather than low. No overnight permit is currently required on the forest side; standard wilderness rules apply, including a party size limit of twelve. Campfires are a poor idea anywhere here and are banned outright on the private ground below; late summer fire restrictions are routine.",
+    "capacity": "A handful of small dispersed sites among talus and heather; two to three tents"
+   },
+   {
+    "elev": 3170,
+    "name": "Dailey Prairie road end (staging and bike stash, not a camp)",
+    "role": "route",
+    "type": "bivy",
+    "notes": "This old prairie is where the logging road system tops out and the climbers path to the west ridge of North Twin begins, roughly five miles and two thousand feet of road above the river bridge. Almost every party bikes to here and leaves the bike, which turns a brutal road walk into a fast coast on the way out. It reads like the obvious basecamp and it is not one: under the current landowner rules this ground is day use only, no camping and no fire, and vehicles must never block the road or the gate. Treat it as a staging point where you shoulder the pack for the last three thousand feet, and push on to the wilderness ground above if you want to sleep out. Snow lingers on the path above roughly four thousand feet well into early summer. The road is also subject to closure on short notice for active logging, quarry work or fire danger, and signs posting a closure have appeared with no warning.",
+    "water": "None reliable at the prairie itself; carry what you need up from the valley",
+    "permit": "Private industrial timberland. The gate at the Middle Fork river bridge is locked and keys are no longer issued for this northern entrance, so the road is foot and bicycle only. The landowner now runs a fee recreation permit covering this block of forestland, with a hard cap on the number of non-motorized permits issued, daylight-only entry of roughly an hour and a half either side of sunrise and sunset, no campfires at any time, and no camping. Ownership of these roads has changed hands more than once and the terms have changed with it, so confirm the current permit and gate situation with the landowner before you go rather than assuming older terms still apply.",
+    "capacity": "Open ground with room for several parties, but overnight use is not permitted"
+   },
+   {
+    "elev": 5800,
+    "name": "Col between the Twins and the Sisters Glacier margin",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The saddle between North and South Twin sits at about five thousand eight hundred feet, with the Sisters Glacier, the largest ice in the range, on the northeast side of South Twin below it. Parties splitting the two Twins over two days camp in this area, and it is the natural high camp if you have come up from Orsino Creek Basin and want an early start on the traverse. The attraction is water: the glacier margin and the slabs below it carry running meltwater when nothing else on the crest does, and this is the last chance to fill before committing to the ridge south. It is a genuinely exposed spot with no shelter, and weather here can be far worse than in the valley. Later in the season the ice recedes, the slab runoff dries up, and the whole plan depends on melting snow instead. Check that there is still snow or ice water before relying on this camp in August or September.",
+    "water": "Running water at the edge of the glacier and on the glacial slabs below the col in season. This is meltwater, so it flows on warm afternoons and can vanish on a cold morning or after the snow has gone",
+    "permit": "National forest wilderness. Dispersed camping is legal with no overnight permit currently required, party size limited to twelve. Camp on rock, gravel or snow rather than on the thin heather, and pack out everything including waste. Campfires are inappropriate at this elevation and are usually prohibited under late season fire restrictions. A Northwest Forest Pass or an interagency pass is needed at the forest service trailheads on the southeast side.",
+    "capacity": "Two or three small tents on gravel benches and slabs; exposed and windy"
+   },
+   {
+    "elev": 6932,
+    "name": "South Twin Sister summit bivies",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The highest summit in the range, somewhere between about six thousand nine hundred and seven thousand feet depending on which survey you believe, and the classic place to split the north to south traverse into two days. There are a number of flat gravel and rubble bivy spots scattered among the summit blocks, built up by parties over the years, and the view across to Mount Baker at dawn is the reason people do it. It is entirely waterless. The dunite the range is made of is dense and unfractured and sheds or swallows water rather than holding it, so there are no springs on the crest and no tarns near the summit; whatever you drink here you carried or melted. Exposed to everything, with no wind shelter beyond the blocks themselves. Reasonable from July into September once the snow has consolidated. Do not plan on finding snow to melt in a dry late summer.",
+    "water": "None. Melt snow if there is any, otherwise carry every litre from Orsino Creek, the glacier margin or Green Creek",
+    "permit": "National forest wilderness, dispersed camping legal, no overnight permit currently required, party size limit twelve. No fires. The whole approach to this summit crosses private timberland where the current landowner permit applies, so the camp itself is legal while the walk to it may not be without the right paperwork.",
+    "capacity": "Several small hand-built gravel platforms among the summit blocks; one or two tents plus tarps or bags"
+   }
+  ],
+  "itinerary": "A long day: reports give roughly 6-7 hours from trailhead to summit and 4-5 hours back down, on top of the logging-road approach.",
+  "waypoints": [
+   {
+    "name": "Middle Fork Nooksack River Bridge / FR 38 Gate",
+    "type": "Trailhead",
+    "elev": 1200
+   },
+   {
+    "name": "North Twin Sister summit",
+    "type": "Summit",
+    "elev": 6644
+   }
+  ],
+  "peak": "North Twin Sister",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_northeast_face_direct",
+  "name": "Northeast Face Direct",
+  "area_id": "wa_mount_formidable",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": 11,
+  "gain_ft": 6100,
+  "dist_km": null,
+  "high_point_ft": 8325,
+  "season": "Jul-Sep",
+  "approach": "Mount Formidable is a deep objective on the Ptarmigan Traverse, reached from the Cascade Pass Trailhead at the end of the Cascade River Road. Take the maintained trail to Cascade Pass, then leave it and work across the Mixup flank on boot path, talus and snow, up the Cache Glacier to Cache Col, and down the far side to camp at Kool-Aid Lake. From the lake continue south past Art's Knoll and cross the Red Ledge, then follow a rough path over meadow, snow and talus and drop several hundred feet to the bench on the Middle Cascade Glacier between its two icefalls. Cross the bench to the foot of the Formidable Glacier below the northeast face. Allow a full day or more from the car to Kool-Aid Lake and about three hours from camp to the base of the face. The descent is the South Route, back over the Spider-Formidable col and across the Middle Cascade Glacier and Red Ledge to camp. This is a multi-day glaciated objective that needs glacier travel skills.",
+  "descent": "Descend the south/southeast side: scrambling, downclimbing, and rappels down to the Spider-Formidable col/crossover saddle, then reverse the Middle Cascade Glacier-Red Ledge approach back to camp.",
+  "bivy": [
+   {
+    "elev": 7320,
+    "name": "Spider-Formidable Col",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The working base camp for both Spider Mountain and Mount Formidable, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the col divide the two mountains, and it is reached by crossing the upper Middle Cascade Glacier almost due south from the Red Ledge. Spider Mountain is climbed from here by its south gully, stepping onto the buttress to the east and finishing along a corniced east ridge, about nineteen miles round trip from the Cascade Pass trailhead. Formidable is the other direction, and its south scramble is only class 3 but is long, loose, exposed and hard to route-find, with a fatality on record; the same ground is the only practical descent. Estimates of the col's height run from roughly 6,600 to 7,400 feet. The descent off the south side toward Yang Yang can be very steep snow and parties have resorted to a hand line anchored on buried pickets.",
+    "water": "Water trickles off the slabs beside the col through most of the climbing season, which is unusual for ground this high and is the main reason the col gets used as a base rather than just crossed. It is meltwater, so it weakens through August and can stop entirely in a light snow year, and there is nothing else until the lakes well below on either side.",
+    "permit": "Glacier Peak Wilderness, free self-issue permit from the register at whichever trailhead you started from. Camp on snow, rock or bare slab rather than on the heather. Pack out human waste; there is no toilet anywhere south of Cache Col. Stoves only.",
+    "capacity": "A small number of party-sized spots split between the west notch of the col and the ground above the east pass, on glacial slabs and snow. Two parties is comfortable, three is crowded, and there is no toilet."
+   },
+   {
+    "elev": 6120,
+    "name": "Kool-Aid Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic.",
+    "water": "The lake and snowmelt",
+    "permit": "No permit required; the lake is outside the national park",
+    "capacity": "Several tent sites on rock and heather benches around the lake"
+   },
+   {
+    "elev": 6400,
+    "name": "Cache Col and the Cache Glacier shoulder",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful step through. Parties who leave the car in the afternoon and lose the light on the climb sometimes stop here rather than commit to the awkward descending traverse beyond it, and parties coming back north at the end of a trip do the same. It is a fair-weather choice only: it is a high, open saddle with no shelter and no water, and in cloud the ground on both sides is easy to lose. Treat the elevation as approximate, since published figures for the col vary by a couple of hundred feet.",
+    "water": "None at the col itself. Early in the season there are melt runnels on the shoulder below it; by August there is usually nothing, and parties either carry up from the Cascade Pass side or melt snow. This is the single most common reason people push on down to the tarn below instead of stopping here.",
+    "permit": "This is the last ground on the park side, and the distinction decides which permit you need. A night at or above the col is inside North Cascades National Park and requires an NPS wilderness permit for the relevant cross-country zone, collected in person at the Marblemount Wilderness Information Center, with part of the inventory reservable in advance and part held for walk-ups. Approved bear-resistant food storage applies. One step south of the col you are in Glacier Peak Wilderness and a free self-issue register slip is all that is needed. Do not assume the wilderness self-issue covers a night at the col.",
+    "capacity": "Snow platforms and a few rock benches on the shoulder below and at the col, room for one or two parties. Nothing built, no toilet, no windbreaks worth the name."
+   }
+  ],
+  "itinerary": "Day 1: Cascade Pass trailhead to Kool-Aid Lake via Cascade Pass, Mixup Arm, Cache Glacier and Cache Col (~5 hrs); camp. Day 2: pre-dawn start, cross the Middle Cascade Glacier basin to the face base, climb the Direct Northeast Face (roughly 8-10.5 hrs from camp to summit), then descend via the South Route back to camp. Day 3: hike out to the trailhead.",
+  "waypoints": [
+   {
+    "name": "Cascade Pass Trailhead",
+    "type": "Trailhead",
+    "elev": 3600
+   },
+   {
+    "name": "Cascade Pass",
+    "type": "Junction",
+    "elev": 5393
+   },
+   {
+    "name": "Cache Col",
+    "type": "Junction",
+    "elev": 6969
+   },
+   {
+    "name": "Kool-Aid Lake",
+    "type": "Campsite",
+    "elev": 6120
+   },
+   {
+    "name": "Mount Formidable Summit",
+    "type": "Summit",
+    "elev": 8325
+   }
+  ],
+  "peak": "Mount Formidable",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_northeast_ridge_1963_route",
+  "name": "Northeast Ridge (1963 Route)",
+  "area_id": "wa_johannesburg_mountain",
+  "discipline": "alpine",
+  "grade": "5.7+",
+  "pitches": 12,
+  "gain_ft": 6100,
+  "dist_km": 14.16,
+  "high_point_ft": 8200,
+  "season": "Late Jun-Sep",
+  "approach": "East/Northeast from Cascade Pass trailhead; descend and cross Cascade River, then approach the northeast face via C-J couloir",
+  "descent": "Not specifically documented for this route; climbers on Johannesburg's other technical lines typically descend via \"Doug's Direct\" (traversing beneath Cascade Peak/the Triplets and over Mixup Peak's north ridge to Cache Glacier) or by rappelling the East Ridge back to the Cascade-Johannesburg col.",
+  "bivy": [
+   {
+    "elev": 3400,
+    "name": "Johannesburg Camp",
+    "role": "main",
+    "type": "camp",
+    "notes": "A walk-in camp a short, steep and often slick few minutes above the Cascade Pass trailhead at the end of the road — not a drive-up campground, you carry everything in. It is the practical staging point for the Cascade-Johannesburg Couloir, Cascade Peak, and any pre-dawn start where you want to be at the road end the night before. If it is full, Marble Creek and Mineral Park down the Cascade River Road are the car campgrounds, at the cost of driving the rough section twice.",
+    "water": "A creek runs beside the sites and normally holds water through the season, being fed by drainage off the north side of Johannesburg Mountain rather than by a single small snowfield.",
+    "permit": "NPS wilderness permit required even though the camp is minutes from the car; Cascade River Road permits are issued in person at Marblemount, part reservable on Recreation.gov and part held for walk-ups. Approved bear-resistant food storage is required.",
+    "capacity": "Three small primitive sites, so it is easily filled by one or two parties."
+   }
+  ],
+  "itinerary": "Typically climbed over 2 days: Day 1 — approach from the Cascade Pass trailhead to a high bivy near the base of the Northeast Face/C-J couloir; Day 2 — climb the route to the summit, then descend via the East Ridge/C-J col and Doug's Direct back to the car (a long day; some parties add a 3rd day).",
+  "waypoints": [
+   {
+    "name": "Johannesburg Camp",
+    "type": "Campsite",
+    "elev": 3400
+   },
+   {
+    "name": "Cascade Pass Trailhead (end of Cascade River Road)",
+    "type": "Trailhead",
+    "elev": 3600
+   },
+   {
+    "name": "Cascade River Crossing / Terminal Moraine",
+    "type": "Hazard",
+    "elev": 3400
+   },
+   {
+    "name": "Base of C-J Couloir",
+    "type": "Junction",
+    "elev": 3300
+   },
+   {
+    "name": "Hanging Glacier (leave the couloir)",
+    "type": "Hazard",
+    "elev": 6800
+   },
+   {
+    "name": "Johannesburg Mountain",
+    "type": "Summit",
+    "elev": 8066
+   }
+  ],
+  "peak": "Johannesburg Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_northwest_face_4",
+  "name": "Northwest Face",
+  "area_id": "wa_little_big_chief_mountain",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 15,
+  "gain_ft": 6200,
+  "dist_km": null,
+  "high_point_ft": 7225,
+  "season": "Aug-Sep",
+  "approach": "From the Dingford Creek Trailhead, where FR 56 is gated, follow Dutch Miller Gap Trail 1030 — the first 7.7 miles on the closed road to Hardscrabble Horse Camp — up the Middle Fork Snoqualmie valley toward Dutch Miller Gap, but do not go to the gap: leave the main Middle Fork Snoqualmie trail at a small steel bridge well before Dutch Miller Gap and cut cross-country south into Summit Chief Valley; the Northwest Face is visible on the east side of that valley — a distinctly different final leg than the Northeast Face's direct ridge approach.",
+  "descent": "South along the connecting ridge to a pocket glacier, then glacier-polished slabs (trending climber's left) back to the ridge crest near 5,400'; 1-2 rappels, a goat-ledge traverse, and a forest descent return to camp.",
+  "bivy": [
+   {
+    "elev": 4650,
+    "name": "Summit Chief Valley gravel flats",
+    "role": "main",
+    "type": "camp",
+    "notes": "Leave the Middle Fork trail at the small steel bridge and go cross-country south into Summit Chief Valley to a flat gravel wash below the face. The descent returns here.",
+    "water": "Creek",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit",
+    "capacity": "A few low-impact sites on a gravel wash"
+   },
+   {
+    "elev": 2828,
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "role": "route",
+    "type": "camp",
+    "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want high clearance — and it is gated at Dingford Creek, so the last roughly seven miles to the horse camp are closed road with about 1,300 ft of gain. That stretch is legal and pleasant to bike and most parties do, then walk from here; a mountain bike is the right tool, a gravel bike is survivable. The camp itself is low, forested and buggy, but it is quiet and it sits at the foot of everything. Burnt Boot Peak is climbed from here by fording the Middle Fork — cold and thigh-deep at ordinary summer flows, and not to be attempted in high water — and then working up the northwest side to the gully system and the northeast gully at around 5,800 ft. The boot path to Hardscrabble Lakes leaves the old road about half a mile below the camp, marked by a large broken log lying across the road; it is easy to walk past. Continuing up-valley on foot the trail runs about six more miles to the old Camp Pedro area and on toward Dutch Miller Gap. Season is May into October at this elevation, but the peaks above hold snow until July.",
+    "water": "The Middle Fork Snoqualmie River and Hardscrabble Creek, both right at camp and both reliable",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the Dingford Creek gate. Northwest Forest Pass to park at the gate. Group limit twelve including stock. Fires are legal at this elevation and the camp has established rings, but wood is picked over and summer burn bans are common on this district.",
+    "capacity": "Large — an old horse camp with a broad clearing and riverside sites near Hardscrabble Creek; several parties, stock included"
+   }
+  ],
+  "itinerary": "Day 1: Hike in from the Dingford Creek Trailhead (the closed road, then the trail to the steel bridge, plus additional cross-country travel) and establish camp at the ~4,650' gravel wash in Summit Chief Valley. Day 2: Climb the Northwest Face (Falcon Route) and descend via the south ridge/pocket glacier back to camp. Day 3: Hike out to the trailhead.",
+  "waypoints": [
+   {
+    "name": "Dingford Creek / Middle Fork Snoqualmie Trailhead",
+    "type": "Trailhead",
+    "elev": 1430
+   },
+   {
+    "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+    "type": "Campsite",
+    "elev": 2828
+   },
+   {
+    "name": "Hardscrabble Creek crossing",
+    "type": "Water",
+    "elev": 2867
+   },
+   {
+    "name": "Steel bridge turnoff",
+    "type": "Junction",
+    "elev": null
+   },
+   {
+    "name": "Summit Chief Valley camp",
+    "type": "Campsite",
+    "elev": 4650
+   },
+   {
+    "name": "Little Big Chief Mountain - Summit",
+    "type": "Summit",
+    "elev": 7225
+   }
+  ],
+  "peak": "Little Big Chief Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_olympus_summit_block_west_edge",
+  "name": "Summit Block — Northwest Edge Finish (variation)",
+  "area_id": "wa_mount_olympus",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "pitches": 1,
+  "gain_ft": 7402,
+  "dist_km": 28,
+  "high_point_ft": 7980,
+  "season": "Jun-Aug",
+  "approach": "Same as Blue Glacier/East Face route approach until reaching the summit block base. Approach time is identical.",
+  "descent": "Rappel from summit anchor down the northwest edge using a single rope to a belay ledge below, then downclimb and traverse to rejoin the standard descent route.",
+  "bivy": [
+   {
+    "elev": 4300,
+    "name": "Glacier Meadows — the standard Blue Glacier base camp",
+    "role": "main",
+    "type": "camp",
+    "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the moraine, drop onto the glacier and work up past the Snow Dome to the summit rock, generally quoted as four to six miles and around 3,500 ft of gain each way, so most parties leave in the dark. accounts differ on the elevation, giving anything between about 4,200 and 4,400 ft, which matters only because published gain figures vary with it. A ranger station and pit toilets are here in season.",
+    "water": "Reliable — meltwater creeks in the meadows; treat it, and expect it to run silty in hot weather",
+    "permit": "Olympic Wilderness Permit required, quota-limited, reserved on Recreation.gov. Bear canisters mandatory. Practically every party climbing Olympus wants this camp, so treat the permit as the crux of the trip rather than an afterthought.",
+    "capacity": "A cluster of individual sites plus a group site, under a nightly quota; the single most contested permit on this approach"
+   },
+   {
+    "elev": 1000,
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "role": "route",
+    "type": "camp",
+    "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a permit for Elk Lake or Glacier Meadows, or when a late start makes the full seventeen miles unrealistic. Because it sits at around a thousand feet in dense rainforest, it does nothing to shorten the climbing day — expect to still be four to five hours below the glacier the next morning. Pit toilet provided; bear canister required.",
+    "water": "Reliable — the Hoh River runs alongside the camp all season",
+    "permit": "Olympic Wilderness Permit required, reserved on Recreation.gov; this stretch of the Hoh is not one of the tightly capped camps, so it is usually easier to obtain than the two above it.",
+    "capacity": "Several individual sites plus a designated group site; parties of seven or more must use the group site"
+   },
+   {
+    "elev": 2600,
+    "name": "Elk Lake Camp, Hoh River trail",
+    "role": "route",
+    "type": "camp",
+    "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the switchbacks to Glacier Meadows, the lateral moraine and the whole Blue Glacier ahead before any climbing starts. Some parties deliberately take Elk Lake on the walk in and Glacier Meadows on the walk out, which spreads the permit demand across two nights. Pit toilet provided; food must be in an approved canister.",
+    "water": "Reliable — Elk Lake itself, plus creeks nearby; treat everything",
+    "permit": "Olympic Wilderness Permit required and this is an explicitly quota-limited camp — reserve on Recreation.gov well ahead. Summer-season reservations open in mid-April and the popular Hoh camps can be gone the same morning.",
+    "capacity": "A small handful of individual sites; it fills every summer night in season"
+   },
+   {
+    "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day into a short one and puts you above most of the morning cloud, at the cost of a much heavier pack up the moraine and a night with no liquid water. This is glacier camping — crevasse hazard, wind, and no shelter — so it suits parties already competent on the Blue Glacier rather than as a way of making the route easier. The exact spots shift year to year as the ice and moraine change, so no single elevation is recorded.",
+    "water": "Snow and glacier melt only; you are melting or filtering meltwater, and there is no running source you can count on",
+    "permit": "Covered by an Olympic Wilderness Permit, but note that camping is NOT allowed between Glacier Meadows and the Blue Glacier — these sites are on the glacier side of that closure. Human waste must be packed out in blue bags, and bear canisters still apply.",
+    "capacity": "Informal — a scatter of tent platforms in the rock bands and on the dome itself; no designated sites and no facilities"
+   },
+   {
+    "name": "Glacier Meadows Camp",
+    "role": "hidden"
+   }
+  ],
+  "itinerary": "Same as Blue Glacier standard route; variation only on summit block.",
+  "waypoints": [
+   {
+    "name": "Hoh Rain Forest Visitor Center / Hoh River Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Lewis Meadows Camp, Hoh River trail",
+    "type": "Campsite",
+    "elev": 1000
+   },
+   {
+    "name": "Hoh River crossing",
+    "type": "Water",
+    "elev": 1346
+   },
+   {
+    "name": "Elk Lake Camp, Hoh River trail",
+    "type": "Campsite",
+    "elev": 2600
+   },
+   {
+    "name": "Glacier Meadows Camp",
+    "type": "Campsite",
+    "elev": 4175
+   },
+   {
+    "name": "Mount Olympus West Peak (true summit)",
+    "type": "Summit",
+    "elev": 7980
+   }
+  ],
+  "peak": "Mount Olympus (West Peak)",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_one_piece_at_a_time",
+  "name": "One Piece at a Time",
+  "area_id": "wa_cutthroat_wall",
+  "discipline": "alpine",
+  "grade": "5.10d",
+  "pitches": 6,
+  "gain_ft": 1620,
+  "dist_km": 2.8,
+  "high_point_ft": 6120,
+  "season": "Jul-Sep",
+  "approach": "This is a distinct approach from the one used for Cutthroat Peak, which starts from an unmarked highway pullout about 1.5 miles west of Washington Pass with no maintained trail. For Cutthroat Wall, start on the maintained Cutthroat Creek Trail #483 from the Cutthroat Trailhead kiosk. After a short distance on the main trail, leave it via a cairned path that cuts into the forest, then follow cairns and a climbers' path (roughly 1.5-2 miles, 45 min-2 hrs total) through brush and talus, trending toward the buttress, to reach the base of Cutthroat Wall.",
+  "descent": "Three 60m rappels from trees, starting slightly uphill of the P5 belay.",
+  "bivy": [
+   {
+    "elev": 4500,
+    "name": "Cutthroat Creek trailhead",
+    "role": "main",
+    "type": "camp",
+    "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. It is the start for Cutthroat Wall and for the Cutthroat Lake trail toward Cutthroat Pass, and some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies; dispersed camping in the trees along the forest road below is the uncontroversial option. Access is entirely gated by the SR 20 winter closure, and the road has been shut for construction windows in recent seasons, so confirm before driving out.",
+    "water": "None — no potable water at the trailhead. Cutthroat Creek runs below the lot and needs filtering.",
+    "permit": "No camping permit and no quota. Northwest Forest Pass, Interagency pass or a day pass covers parking. This is Okanogan-Wenatchee National Forest, NOT the national park, so there is no backcountry permit system here at all.",
+    "capacity": "Large gravel lot, roughly 20-30 vehicles; fills on summer weekends with larch-season hikers"
+   },
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "The closest developed campground to Washington Pass, on SR 20 along Early Winters Creek six or seven miles east of the pass, just past the turn for the Cutthroat Creek road. Because nothing here can be booked, arriving Friday evening in July or August is a gamble and the fallback is dispersed camping on a spur road. The season runs roughly May or June through September or October, entirely dependent on when the highway opens and when snow returns.",
+    "water": "No drinking water at Lone Fir. Early Winters Creek runs through the campground and needs filtering; Klipchuck and Early Winters campgrounds, farther east, have drinking water in season.",
+    "permit": "No reservations and no permit — first-come, first-served with a nightly fee. A Northwest Forest Pass is not needed to camp, only to park at the trailhead.",
+    "capacity": "27 sites, tents and small RVs"
+   },
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "role": "main",
+    "type": "camp",
+    "notes": "Klipchuck sits about a quarter mile off SR 20 in fir and pine down-valley toward Mazama, low enough to be warm and dry when the passes are still wet. Early Winters Campground is further east, smaller at around a dozen tent sites, split by the highway near the Methow River, and fills quickly. Both are a longer drive to the trailhead than Lone Fir, which is the tradeoff for a better chance of finding a site on a busy weekend.",
+    "water": "Drinking water spigots in season; vault toilets. Water is turned off at the end of the season while the sites stay usable.",
+    "permit": "First-come, first-served, nightly fee, no reservation and no permit required.",
+    "capacity": "46 sites, the largest campground on this stretch of highway"
+   },
+   {
+    "elev": 5800,
+    "name": "Cutthroat Wall base terrace",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The approach leaves the old roadbed a quarter mile from the trailhead at cairns, then climbs left through trees and light brush to a flat bench beneath the west-northwest-facing granite. Most parties do these routes car-to-car in a day, so a bivy here is for a late start or a two-day plan rather than standard practice. The wall faces away from morning sun, which makes an early camp less useful than it looks on the map. The crag is sometimes catalogued under Little Liberty Bell, which is the same approach and the same ground.",
+    "water": "No water on the terrace itself. Fill in Cutthroat Creek low on the approach and carry it up.",
+    "permit": "None — dispersed national forest camping, no permit and no quota.",
+    "capacity": "A small flat area under the cliff; room for one or two parties at most"
+   }
+  ],
+  "itinerary": "Full day: early start, approach to base (roughly 1-2 hrs from the trailhead), 6 pitches (4-6 hrs), then three rappels to descend (about 1-1.5 hrs).",
+  "waypoints": [
+   {
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "type": "Campsite",
+    "elev": 2900
+   },
+   {
+    "name": "Lone Fir Campground",
+    "type": "Campsite",
+    "elev": 3600
+   },
+   {
+    "name": "Cutthroat Creek/Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 4500
+   },
+   {
+    "name": "Cutthroat Creek trailhead",
+    "type": "Campsite",
+    "elev": 4500
+   },
+   {
+    "name": "Cutthroat Wall Base",
+    "type": "Base",
+    "elev": 6120
+   }
+  ],
+  "peak": "Cutthroat Wall",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_painted_traverse",
+  "name": "Painted Traverse",
+  "area_id": "wa_glacier_peak_wilderness_traverses",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": 0,
+  "gain_ft": 12000,
+  "dist_km": 35.41,
+  "high_point_ft": 7262,
+  "season": "Mid-July to September",
+  "approach": "From the North Fork Sauk trailhead, the Red Mountain (Painted Mountain Lookout) Trail branches left about 100 yards in and climbs about a mile to the old lookout site near 3,100 ft. Beyond it an unmaintained climber's path goes straight up the slope with almost no switchbacks, including a short cliff band that needs class 3 scrambling, and continues steeply to the summit of Painted Mountain. Expect close to 5,000 ft of gain in under three miles.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": "Very fit, fast parties do it in a single long day starting before dawn; most parties take two to three days, camping near Black Mountain where water is most reliable.",
+  "waypoints": [
+   {
+    "name": "North Fork Sauk Trailhead",
+    "type": "Trailhead",
+    "elev": 2090
+   },
+   {
+    "name": "Painted Mountain",
+    "type": "Summit",
+    "elev": 6917
+   },
+   {
+    "name": "Magenta Peak",
+    "type": "Summit",
+    "elev": 6742
+   },
+   {
+    "name": "Black Mountain",
+    "type": "Summit",
+    "elev": 7237
+   },
+   {
+    "name": "Skullcap Peak",
+    "type": "Summit",
+    "elev": 6603
+   },
+   {
+    "name": "Portal Peak",
+    "type": "Summit",
+    "elev": 6999
+   },
+   {
+    "name": "Red Pass",
+    "type": "Junction",
+    "elev": 6485
+   },
+   {
+    "name": "White Mountain",
+    "type": "Summit",
+    "elev": 7043
+   },
+   {
+    "name": "White Pass",
+    "type": "Junction",
+    "elev": 5904
+   }
+  ],
+  "peak": "Glacier Peak Wilderness Traverses",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_plan_9_from_outer_space",
+  "name": "Plan 9 from Outer Space",
+  "area_id": "wa_ed_wood_memorial_buttress",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 16,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7840,
+  "season": "Jul-Sep",
+  "approach": "From the Goodell Creek group-camp trailhead near Newhalem, walk the overgrown Goodell Creek roadbed for about 4 miles to the cairn near the Terror Creek crossing, then climb the Terror Creek climbers' path. The Blob stands above Crescent Creek Basin, so from the Terror Creek side you must cross the Barrier, the loose, brushy ridge dividing the Terror Creek drainage from Crescent Creek; it can be crossed low or high from Terror Basin. Descend into Crescent Creek Basin and camp within reach of the Himmelhorn and the Blob, then scramble to the base of the south buttress. This is a serious multi-day expedition approach requiring a North Cascades National Park backcountry permit, off-trail routefinding through brush and talus, and glacier/snow travel gear.",
+  "descent": "Traverse the Blob's summit ridge north to the Blob/Terror col, then make 2 rappels from webbing anchors into the notch below.",
+  "bivy": [
+   {
+    "elev": 5800,
+    "name": "Terror Basin camp",
+    "role": "main",
+    "type": "camp",
+    "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Block, Degenhardt, the Pyramid and the west side of Terror are all workable from here. Whether a party gets this far on day one is genuinely contested — strong parties who know the path do it, and parties who lose the path in the timber routinely do not.",
+    "water": "Meltwater off the snowfields above the basin, generally dependable while snow remains and a hunt in a dry late summer. Sources are seasonal, not spring-fed.",
+    "permit": "Terror Basin cross-country zone, from Marblemount. 6-person party maximum. It is not on the short list of zones reservable in advance, so it is walk-up only — up to 24 hours ahead, with permits released in the morning of day one. Fires prohibited; human waste in a cathole, or out in a blue bag above treeline.",
+    "capacity": "Small flat gravelly ground for a few tents; the park caps the zone at 6 people per party"
+   },
+   {
+    "elev": 500,
+    "name": "Goodell Creek Campground, roadhead staging",
+    "role": "route",
+    "type": "camp",
+    "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be dealt with before you leave the car. Sleeping here advances you toward the peaks not at all, but it does let you hit the roadbed at first light, which matters on an approach this long.",
+    "water": "Potable water when the campground is open for the season; the Skagit and Goodell Creek are immediately adjacent as backup",
+    "permit": "Frontcountry campground fee only — no wilderness permit needed to sleep here. Reservable through recreation.gov in peak season, first-come outside it; not always open year round, so confirm before counting on it.",
+    "capacity": "19 individual drive-in sites, plus a separate group campground where the old roadbed begins"
+   },
+   {
+    "elev": 2000,
+    "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, because the ground above is where the day gets expensive and nobody wants to be finding the path by headlamp. The cost is that the whole climb to the basin still lies ahead, so a low night usually means a full second day of approach with no climbing in it.",
+    "water": "Reliable year round from Goodell and Terror Creeks; the last certain running water until the climbers' path regains streams high in the timber",
+    "permit": "A wilderness permit is required, and this spot is legally awkward: cross-country camping in the park is meant to be at least half a mile from a trail and a mile from designated camps, and the old roadbed is a trail. Ask the Marblemount Wilderness Information Center where they will place you before you plan on it.",
+    "capacity": "One or two small parties on flat ground beside the old grade"
+   }
+  ],
+  "itinerary": "Typically done as part of a multi-day Southern Pickets trip: Day 1, backpack in via the Goodell Creek roadbed and Terror Creek climbers' path to a high camp near the Barrier or in Terror Basin; Day 2, cross the Barrier into Crescent Creek Basin and establish camp within striking distance of the Himmelhorn/Blob area; Day 3, climb Plan 9 from Outer Space and return to camp via the Blob/Terror col rappels; Day 4, hike out.",
+  "waypoints": [
+   {
+    "name": "Goodell Creek Campground, roadhead staging",
+    "type": "Campsite",
+    "elev": 500
+   },
+   {
+    "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+    "type": "Trailhead",
+    "elev": 600
+   },
+   {
+    "name": "Terror Basin camp",
+    "type": "Campsite",
+    "elev": 5800
+   },
+   {
+    "name": "Ed Wood Memorial Buttress / Plan 9 from Outer Space start",
+    "type": "Route",
+    "elev": null
+   },
+   {
+    "name": "Ed Wood Memorial Buttress",
+    "type": "Summit",
+    "elev": 7840
+   }
+  ],
+  "peak": "Ed Wood Memorial Buttress",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_playing_not_spraying",
+  "name": "Playing Not Spraying",
+  "area_id": "wa_silver_horn_the",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "pitches": 8,
+  "gain_ft": 5321,
+  "dist_km": 8,
+  "high_point_ft": 8351,
+  "season": "Jun-Sep",
+  "approach": "The Silver Horn is a sub-summit on the east ridge of Silver Star Mountain, east of the main summit, and both of its routes are on the clean white granite of its south face. That face is not reached from the Wine Spires pullout or Burgundy Col, which serve the other side of the crest. Instead, walk the Cedar Creek Trail from its trailhead at the end of FR 5310-200, off SR-20 about half a mile east of the Klipchuck Campground turnoff. After roughly five miles, turn off to the right below the old burn and follow a rough path up the right-hand side of the creek that drains the south side of the Silver Horn. Meadows at about 6,200 ft give good camping below the face.",
+  "descent": "Rappel the SE side of the peak.",
+  "bivy": [
+   {
+    "elev": 6200,
+    "name": "Meadows below the Silver Horn's south face",
+    "role": "main",
+    "type": "camp",
+    "notes": "The camp for both routes on the south face, in the meadows at about 6,200 ft where the creek draining the Silver Horn's south side opens out below the white granite. Reached from the Cedar Creek Trailhead: about five miles up the Cedar Creek Trail, then right below the old burn onto a rough path up the right-hand side of that creek. This is not the Wine Spires pullout or Burgundy Col — those serve the other side of the crest and do not reach this face. It is a rarely visited corner with no established climbers' camp and little traffic, so expect to pick your own spot on the meadow.",
+    "water": "The creek the approach path follows is the water source on the way up. How late in the season it still runs at the meadows is not recorded, so carry enough capacity for a dry camp late in a dry year.",
+    "permit": "No reservation, no quota and no overnight permit; national forest dispersed-camping rules apply. A Northwest Forest Pass, an Interagency pass or a day pass covers parking at the Cedar Creek Trailhead.",
+    "capacity": "Open meadow with room for a few tents; no established sites"
+   }
+  ],
+  "itinerary": "Day 1: Drive to the Cedar Creek Trailhead, hike ~5 miles up the Cedar Creek Trail, leave the trail below the old burn, and work up along the south-face drainage to camp in the meadows at ~6,200 ft. Day 2: Climb the 8-pitch route, rappel the SE side back to camp, and hike out via Cedar Creek Trail.",
+  "waypoints": [
+   {
+    "name": "Cedar Creek Trailhead (Trail #476, FR 5310-200)",
+    "type": "Trailhead",
+    "elev": 3030
+   },
+   {
+    "name": "The Silver Horn - Summit",
+    "type": "Summit",
+    "elev": 8351
+   }
+  ],
+  "peak": "Silver Horn, The",
+  "area_type": "crag"
+ }
+]

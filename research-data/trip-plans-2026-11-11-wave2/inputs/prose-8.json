@@ -1,0 +1,1937 @@
+[
+ {
+  "id": "wa_sw_couloir_and_face",
+  "name": "SW Couloir and Face",
+  "area_id": "wa_mount_shuksan_climbs",
+  "discipline": "ice",
+  "grade": "WI3",
+  "pitches": 7,
+  "gain_ft": 6600,
+  "dist_km": 10.46,
+  "high_point_ft": 9131,
+  "season": "Jul-Aug",
+  "approach": "Approach from Lake Ann; from below the Fisher Chimneys, traverse right (east) onto the Lower Curtis Glacier and follow it to the upper SE corner of the glacier basin below the couloir.",
+  "descent": "Follow the Fisher Chimneys route via The Hourglass and Upper Curtis Glacier to the Shuksan Arm.",
+  "bivy": null,
+  "itinerary": "Typically climbed as a long single push or with a bivy near Lake Ann/Lower Curtis Glacier.",
+  "waypoints": [
+   {
+    "name": "Lake Ann TH",
+    "type": "Trailhead",
+    "elev": 4700
+   },
+   {
+    "name": "Lake Ann",
+    "type": "Campsite",
+    "elev": 4720
+   },
+   {
+    "name": "Lower Curtis Glacier icefall base",
+    "type": "Junction",
+    "elev": 6200
+   },
+   {
+    "name": "Ice chimney",
+    "type": "Hazard",
+    "elev": null
+   },
+   {
+    "name": "Mount Shuksan",
+    "type": "Summit",
+    "elev": 9127
+   }
+  ],
+  "peak": "Mount Shuksan Routes",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_sw_ridge",
+  "name": "Southwest Ridge",
+  "area_id": "wa_middle_peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": 5,
+  "gain_ft": 5000,
+  "dist_km": 16.1,
+  "high_point_ft": 8200,
+  "season": "Jul-Sep",
+  "approach": "The east-side multi-day approach: Lady of the Lake ferry from Chelan to Stehekin, NPS shuttle to High Bridge, ~9-10 miles on the PCT/Agnes Creek Trail, then an off-trail bushwhack and glacier approach (~5,000 ft gain) to a high camp below the peaks.",
+  "descent": "Rappel south from near the summit to the notch between Middle and South Gunsight, then into the moat at its base.",
+  "bivy": [
+   {
+    "name": "High camp above the Blue Glacier",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Reached from Stehekin by the shuttle to High Bridge, about ten miles up the Agnes Creek trail, a log crossing of Agnes Creek and a long bushwhack into the upper Blue basin. Camp sits on an exposed rock ridge above the Blue Glacier, directly below the east side of the Gunsight peaks.",
+    "water": "Snowmelt and small streams in the upper Blue basin",
+    "permit": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+    "capacity": "A few small tent sites on rock and heather knolls"
+   }
+  ],
+  "itinerary": "Typically climbed as one route within a multi-day trip that also includes objectives on the neighboring South or North Gunsight towers: Day 1 - ferry/shuttle/hike to a streamside camp; Day 2 - approach to high camp below the glacier; Day 3 - climb the SW Ridge (often paired with another route the same trip); Day 4 - descend and hike out.",
+  "waypoints": [
+   {
+    "name": "High Bridge (Stehekin Valley Road)",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Middle Gunsight summit",
+    "type": "Summit",
+    "elev": 8200
+   }
+  ],
+  "peak": "Middle Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_swiss_peak_standard_route",
+  "name": "Standard Route (Southwest Face)",
+  "area_id": "wa_swiss_peak",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7988,
+  "season": "Jul-Sep",
+  "approach": "Drive WA-20 (North Cascades Highway) to the Ross Dam Trailhead (MP 134). Descend about 1 mile on the Ross Dam trail/service road to Ross Lake, then cross via the Ross Lake Resort water taxi (on-demand, ~$4-5/person) or by hiking/paddling around, and pick up the Big Beaver Trail north along the lake. Follow it roughly 10 miles to Luna Camp, then continue about 1.5 miles further to the Access Creek drainage; leave the trail and climb the brushy, moderately steep Access Creek valley (staying on its north side is recommended) to the open basin east of Luna Peak (~4,300 ft) — described as the easiest, least-brushy approach on the east side of the Pickets. From there, climb to Access Col, cross to Luna Col, and traverse cross-country and glaciated terrain over Luna Peak, East Fury and West Fury to reach the Swiss–Fury saddle. An alternate southern approach reaches Swiss via Bacon Creek Road, Porkbelly Ridge, Mystery Ridge, Jasper Pass, Pioneer Ridge and Mt. Crowder's NE ridge down to a camp at Pickell Pass, from which Swiss's south side is climbed directly.",
+  "descent": "Reverse the southwest-face line back to the West Fury col, or continue the ridge crest north toward Spectre Plateau/Phantom Peak if still traversing; parties who came from the south descend back to Pickell Pass camp.",
+  "bivy": [
+   {
+    "elev": 7200,
+    "name": "Luna Col bivy, Luna cross-country zone",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Luna Peak, with no established site — you camp on rock, heather or snow and pack everything out. The brush on the Access Creek approach, which forces a bank change around 3,700 ft, is the part parties consistently underestimate.",
+    "water": "Snowmelt and small tarns only; expect to melt snow once the basin dries out late in the season",
+    "permit": "Wilderness permit required for the Luna cross-country zone. Walk-up only — this zone cannot be reserved in advance, so it is claimed in person at Marblemount. A party that has already driven and boated in can still be turned away if the night's slots are gone; carry a fallback itinerary.",
+    "capacity": "Party limit 6; up to 6 parties per night in the Luna zone"
+   },
+   {
+    "elev": 2432,
+    "name": "Luna Camp, Big Beaver Trail",
+    "role": "main",
+    "type": "camp",
+    "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail, so it functions as a first night rather than a destination. The climbers' path leaves the maintained trail roughly a mile and a half beyond and crosses Big Beaver Creek near the Access Creek confluence; whether that crossing is a log or a wade varies year to year and with runoff.",
+    "water": "Big Beaver Creek runs beside camp — reliable all season",
+    "permit": "NPS wilderness permit from the Marblemount Wilderness Information Center; trail-corridor camp, reservable on Recreation.gov or walk-up. Closed under the Luna Fire closure as of the park's August 2026 list — confirm current status before building a trip around it.",
+    "capacity": "Two 4-person sites; party limit 4; pit toilet, food hang"
+   },
+   {
+    "name": "Luna Cirque floor",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under the eastern side of the crest that carries Spectre Peak, and parties coming off Challenger sometimes drop southeast into it rather than reversing the glacier. As a bed it is a long way below Luna Col, which remains the right camp for climbing Luna Peak itself; the value of the cirque is that it links the Access Creek and Wiley Ridge sides without going back over the top. Getting in and out is trackless in both directions and the brush low in Access Creek, which forces a bank change around 3,700 ft, is the part parties consistently underestimate.",
+    "water": "Meltwater running off the cirque walls, and a shallow seasonal lake on the floor that becomes warm sand as the summer dries it out. Early season is wet and late season is a search.",
+    "permit": "Luna cross-country zone, walk-up only — it cannot be reserved, and a party that has already driven, boated and walked in can still be turned away if the night's slots are taken. Carry a fallback itinerary. Camp on sand, rock or snow, 100 ft from water, no fires.",
+    "capacity": "One or two parties on sand, gravel and slab; party limit 6"
+   }
+  ],
+  "itinerary": "Representative Northern Pickets crest plan: Day 1 — Ross Dam TH, water taxi across Ross Lake, Big Beaver Trail to Luna Camp/Access Creek. Day 2 — climb Access Creek drainage to the Luna Cirque basin, gain Luna Col, camp near Luna Col or continue toward East/West Fury. Day 3 — traverse East Fury, West Fury, cross the glacier/snowfield to the Swiss-Fury saddle, climb Swiss Peak's southwest face, continue toward Spectre Plateau. Day 4-5 — continue over Phantom Peak, Crooked Thumb, to Mt. Challenger and Whatcom Pass, exiting via Chilliwack River or Little Beaver trails. (A southern variant instead approaches via Bacon Creek/Porkbelly/Mystery Ridge over 4-5 days to Pickell Pass, climbs Swiss's south side in a 2.5-hour round trip from camp, then continues north over Challenger toward Whatcom Pass and out via Hannegan Pass.)",
+  "waypoints": [
+   {
+    "name": "Ross Dam Trailhead (SR 20, MP 134)",
+    "type": "Trailhead",
+    "elev": null
+   }
+  ],
+  "peak": "Swiss Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_tenpeak_mountain_north_couloir",
+  "name": "North Couloir",
+  "area_id": "wa_tenpeak_mountain",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "pitches": 2,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8312,
+  "season": "Apr-Jul",
+  "approach": "From the White River Trailhead (see Southeast Route access), reach the upper Whitechuck/Suiattle Glacier basin via the PCT and cross to the Honeycomb Glacier, or descend the Honeycomb Glacier northward from a high camp on Kololo Peaks (8,220 ft) further west along the Glacier Peak massif. Traverse the glacier to the col just west of Tenpeak and the base of the north couloir.",
+  "descent": "Most parties downclimb or ski/ride the same couloir; a short downclimb off the NW Ridge rock pitch regains the couloir's top.",
+  "bivy": [
+   {
+    "elev": 6200,
+    "name": "Boulder Pass and Thunder Basin, White River",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the standard base for Clark Mountain and the reason Clark is a White River peak rather than a Little Giant one. From the trailhead at about 2,300 feet the White River trail runs flat for four miles, then the Boulder Creek trail turns east and climbs for another seven, crossing Boulder Creek at around 4,000 feet — a wade or a log, and high water there turns parties round early in the season. Good camps exist in a large open basin at about 4,900 feet and again just below the pass around 6,000 feet, with the pass itself at about 6,200 feet holding dry ground even when there is snow about. From the pass the Walrus Glacier route traverses the basin east of the ridge point, crosses the northeast ridge around 6,700 feet and gains the glacier for the east side of the mountain; the whole thing runs to about twenty-five miles round trip and six and a half thousand feet of gain. Tenpeak Mountain is served from the same trailhead by a different drainage — six miles up the White River, then an old unmaintained sheep path toward Thunder Creek and Thunder Basin, with dense slide alder between roughly 4,200 and 5,000 feet that is the hardest part of the day. Tenpeak is a technical summit with a north couloir and a milder-looking southeast face, it sees very few ascents, and most parties want a third day to climb it properly from a basin camp rather than pushing it in one.",
+    "water": "Snowmelt and streams through the basin below the pass and at the pass itself well into the season; Thunder Basin runs on creeks that are dependable in summer. The lower Boulder Creek crossing is the water hazard rather than the water supply.",
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the White River trailhead, twelve-person party limit, Northwest Forest Pass for parking. Stove only up here. The White River road was inside the 2026 fire closure that ran from mid-August to the end of October along with the Chiwawa side, so this approach and the Little Giant one were shut at the same time by the same order — do not assume that losing one leaves the other.",
+    "capacity": "Open ground at the pass with plenty of dry spots for several tents, a good basin camp about a mile below it, and separate rough ground over in Thunder Basin for one or two parties"
+   },
+   {
+    "elev": 7300,
+    "name": "Glacier Gap",
+    "role": "route",
+    "type": "camp",
+    "notes": "This is the high camp for Glacier Peak by the Cool Glacier and Gerdine Ridge, and the single most-used climbing camp on the mountain. It sits at about 7,300 feet at the head of the basin, reached by crossing what is left of the White Chuck Glacier northeast from the White Pass area — and what is left is the point, because that glacier has retreated faster than almost anything else in the range and the crossing is now largely bare rock, pumice and meltwater ponds rather than ice. From camp the route works up the ridge to about 8,400 feet, traverses onto the upper Suiattle Glacier, gains the upper Cool Glacier around 9,200 feet and climbs it westward to regain the ridge for the summit. Summit day from here runs long by any measure and thirteen hours camp to camp is normal rather than slow. Being a gap it funnels wind, so build or use the rock walls. Most parties take three days from the North Fork Sauk road and a fourth is worth having for weather.",
+    "water": "Meltwater streams off the surrounding snowfields, running through most of the climbing season but silty; late in a hot summer it can be reduced to a drip from the base of a snow patch, so scout it on arrival rather than at dinner time",
+    "permit": "Free self-issue Glacier Peak Wilderness permit. No fires — this is bare rock, pumice and alpine ground above treeline with no wood and nothing that recovers. Twelve-person party limit. Human waste needs carrying out or burying properly well away from the meltwater, which everybody camped here is drinking.",
+    "capacity": "A large basin with many bivouac sites and rock-walled platforms — it takes a lot of parties without feeling crowded, and there is always room to build another windbreak"
+   }
+  ],
+  "itinerary": "Typically climbed as a long day from a high glacier camp (e.g. Kololo Peaks) or as part of a multi-day Glacier Peak-area traverse; a start before 6am is common to catch firm snow, with the couloir climbed in a few hours and the summit reached by mid-morning.",
+  "waypoints": [
+   {
+    "name": "Glacier Gap",
+    "type": "Campsite",
+    "elev": 7300
+   }
+  ],
+  "peak": "Tenpeak Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_brothers_traverse",
+  "name": "Brothers Traverse (North Peak to South Peak)",
+  "area_id": "wa_the_brothers",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "pitches": 7,
+  "gain_ft": 6042,
+  "dist_km": 14.5,
+  "high_point_ft": 6866,
+  "season": "May-Jul",
+  "approach": "Follow the same Lena Lake / Brothers Trail approach used for the South Couloir to established climbers' camp (~6 miles from the trailhead), then cross the creek westward, cross a slide meadow and old burn scar, and climb a wide gully north to about 5,500 ft to gain the North Peak side of the mountain.",
+  "descent": "Parties typically finish the traverse at the South summit and descend via the South Couloir route.",
+  "bivy": [
+   {
+    "elev": 3000,
+    "name": "The Brothers climbers camp, Valley of the Silent Men",
+    "role": "main",
+    "type": "camp",
+    "notes": "The standard high camp for The Brothers and the reason the traverse between the north and south peaks is a two-day trip rather than a brutal one. Reached by continuing past the north end of Lena Lake, crossing the inlet and following the East Fork up the Valley of the Silent Men through mossy old growth — call it three miles and 1,200 ft beyond the lake, so about six miles and 2,300 ft total from the car. From camp the south couloir rises directly above, and the summit day is short enough to allow an early start and a return to the tents before the couloir softens. It is a forest camp, not an alpine one: no views, damp, and the mosquitoes are memorable in early summer. The couloir is the season-limiting factor rather than the camp — good neve through late spring and early summer, loose and unpleasant once it melts out, so most parties come between April and early July and bring an axe and crampons.",
+    "water": "Reliable while the creek runs. The East Fork of Lena Creek is right beside the pitches, and this is the last dependable water — carry everything you need for the climb from here, because the couloir and the upper mountain hold none",
+    "permit": "Northwest Forest Pass or Interagency Pass to park at the Lena Lake / Brothers trailhead. No camping permit or fee — this is inside The Brothers Wilderness on Forest Service land, not in the national park. Wilderness regulations bind: stoves only, no campfires at all, party limit of twelve, and gathering wood above 3,500 ft is prohibited outright. Practise strict Leave No Trace, the camp has no toilet",
+    "capacity": "A scatter of flat, obvious tent spots in old-growth forest beside the creek, generally reported at around half a dozen usable pitches, informal rather than numbered"
+   },
+   {
+    "elev": 700,
+    "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+    "role": "route",
+    "type": "camp",
+    "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so a party arriving late can sleep at the car and start walking at first light instead of driving the gravel in the dark. This is a contingency and staging site rather than the normal plan for anyone climbing here — the objectives are all hours above it — but it is the right answer for a party that arrives after dark, gets weathered off, or comes out late and does not want to drive home tired. Being at 700 ft it is usable long before the high camps melt out, which makes it the practical base for an early-season Brothers attempt.",
+    "water": "No potable water at either campground — this catches people out. The Hamma Hamma River runs alongside both and can be filtered, but bring drinking water from Hoodsport",
+    "permit": "Modest per-night Forest Service fee with an extra vehicle charge, paid at the fee machine, which is cashless. No reservation system and no wilderness permit — this is developed Forest Service camping. Fire rings and picnic tables at each site, vault toilets, no hookups. Typically open from mid-May into late October and gated the rest of the year",
+    "capacity": "Lena Creek has around thirteen well-spaced sites at the Lena Lake trailhead junction; Hamma Hamma has around fifteen a couple of miles further down the river. Both first come, first served, no reservations"
+   },
+   {
+    "elev": 1800,
+    "name": "Lena Lake designated sites",
+    "role": "route",
+    "type": "camp",
+    "notes": "The workhorse camp of the whole Hamma Hamma side and the single most useful site in this zone. Three easy miles and about 1,300 ft of gain on a wide graded trail from the road, so a party can leave the car after work and be in camp before dark, which is exactly how most Brothers and Mount Stone trips are staged. From here two entirely separate objectives open up: north into the Valley of the Silent Men for The Brothers, and west and up for Upper Lena Lake and the traverse toward Mount Stone. Being outside Olympic National Park is the point — no quota, no reservation, no fee, so it is the fallback when the park permits above it are gone. The cost is crowding and noise; this is a family backpacking destination as much as a climbers' camp, and the shoreline shows it. Snow-free and usable most of the year, which makes it a genuine early-season and late-season base when everything higher is buried.",
+    "water": "Reliable. The lake itself, and the inlet creeks at the north end. Filter or treat everything — this is a heavily used shoreline",
+    "permit": "Northwest Forest Pass or Interagency Pass required to park at the Lena Lake / Brothers trailhead. No camping permit, no reservation and no fee for the sites themselves — it is Forest Service ground, first come first served. Camping is restricted to the numbered sites. Wilderness rules apply once you leave the lake basin: stoves only, no campfires, and a party limit of twelve. Plan on cooking on a stove at the lake as well",
+    "capacity": "Large by Olympic standards — roughly 28 to 29 numbered sites strung along the west and north shores, with a couple more on the east side; two pit toilets. It is the biggest backcountry camp in this zone and it still fills on summer weekends"
+   }
+  ],
+  "itinerary": "Recommended overnight push: Day 1 - Hike from trailhead to climbers camp (6-7 hours, establish bivy). Day 2 - Traverse ridge, summit both peaks, return to camp (10-12 hours), or retreat to trailhead same day (add 4-5 hours). Alternatively, 2-day push from trailhead with overnight at higher camp.",
+  "waypoints": [
+   {
+    "name": "Lena Lake Trailhead (FR-25, Hamma Hamma)",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Lena Lake",
+    "type": "Water",
+    "elev": 1773
+   }
+  ],
+  "peak": "The Brothers",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_chalice",
+  "name": "The Chalice",
+  "area_id": "wa_silver_horn_the",
+  "discipline": "alpine",
+  "grade": "5.10-",
+  "pitches": 8,
+  "gain_ft": 5400,
+  "dist_km": null,
+  "high_point_ft": 8351,
+  "season": "Jun-Sep",
+  "approach": "The Silver Horn is a sub-summit on the east ridge of Silver Star Mountain, east of the main summit, and both of its routes are on the clean white granite of its south face. That face is not reached from the Wine Spires pullout or Burgundy Col, which serve the other side of the crest. Instead, walk the Cedar Creek Trail from its trailhead at the end of FR 5310-200, off SR-20 about half a mile east of the Klipchuck Campground turnoff. After roughly five miles, turn off to the right below the old burn and follow a rough path up the right-hand side of the creek that drains the south side of the Silver Horn. Meadows at about 6,200 ft give good camping below the face.",
+  "descent": "Rappel the SE side, ~70m rope",
+  "bivy": [
+   {
+    "elev": 6200,
+    "name": "Meadows below the Silver Horn's south face",
+    "role": "main",
+    "type": "camp",
+    "notes": "The camp for both routes on the south face, in the meadows at about 6,200 ft where the creek draining the Silver Horn's south side opens out below the white granite. Reached from the Cedar Creek Trailhead: about five miles up the Cedar Creek Trail, then right below the old burn onto a rough path up the right-hand side of that creek. This is not the Wine Spires pullout or Burgundy Col — those serve the other side of the crest and do not reach this face. It is a rarely visited corner with no established climbers' camp and little traffic, so expect to pick your own spot on the meadow.",
+    "water": "The creek the approach path follows is the water source on the way up. How late in the season it still runs at the meadows is not recorded, so carry enough capacity for a dry camp late in a dry year.",
+    "permit": "No reservation, no quota and no overnight permit; national forest dispersed-camping rules apply. A Northwest Forest Pass, an Interagency pass or a day pass covers parking at the Cedar Creek Trailhead.",
+    "capacity": "Open meadow with room for a few tents; no established sites"
+   }
+  ],
+  "itinerary": "Day 1: Drive to Cedar Creek Trailhead and hike/approach to camp in the meadows near 6,200 ft below Silver Horn's south face. Day 2: Climb the 8-pitch route to the summit and descend, then hike back out via Cedar Creek Trail.",
+  "waypoints": [
+   {
+    "name": "Cedar Creek Trailhead (Trail #476, FR 5310-200)",
+    "type": "Trailhead",
+    "elev": 3030
+   },
+   {
+    "name": "The Silver Horn - Summit",
+    "type": "Summit",
+    "elev": 8351
+   }
+  ],
+  "peak": "Silver Horn, The",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_the_monk_le_gibet",
+  "name": "The Monk - Le Gibet",
+  "area_id": "wa_the_monk_pasayten",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 5,
+  "gain_ft": 6000,
+  "dist_km": 27.4,
+  "high_point_ft": 8606,
+  "season": "Jul-Sep",
+  "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 23 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+  "descent": "Descend via the NE gully, three 75-foot rappels.",
+  "bivy": [
+   {
+    "elev": 7400,
+    "name": "Upper Cathedral Lake basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+    "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+    "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+    "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+   },
+   {
+    "elev": 6700,
+    "name": "Andrews Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+    "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+    "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+    "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+   },
+   {
+    "elev": 7600,
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+    "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+    "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+    "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+   }
+  ],
+  "itinerary": "Day 1: hike 17–20 miles to Upper Cathedral Lake. Day 2: The Monk routes as a half day, then rest. Day 3: the Southeast Buttress or South Face on Cathedral proper. Day 4: hike out.",
+  "waypoints": [
+   {
+    "name": "Andrews Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 3050
+   },
+   {
+    "name": "Andrews Pass",
+    "type": "Campsite",
+    "elev": 6700
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "type": "Campsite",
+    "elev": 7369
+   },
+   {
+    "name": "Base of The Monk",
+    "type": "Base",
+    "elev": null
+   },
+   {
+    "name": "The Monk (tower top)",
+    "type": "Topout",
+    "elev": 8300
+   }
+  ],
+  "peak": "The Monk",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_monk_odine",
+  "name": "The Monk - Ondine",
+  "area_id": "wa_the_monk_pasayten",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 3,
+  "gain_ft": 6000,
+  "dist_km": 27.4,
+  "high_point_ft": 8606,
+  "season": "Jul-Sep",
+  "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 23 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+  "descent": "Descend via the NE gully, three 75-foot rappels.",
+  "bivy": [
+   {
+    "elev": 7400,
+    "name": "Upper Cathedral Lake basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+    "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+    "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+    "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+   },
+   {
+    "elev": 6700,
+    "name": "Andrews Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+    "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+    "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+    "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+   },
+   {
+    "elev": 7600,
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+    "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+    "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+    "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+   }
+  ],
+  "itinerary": "Day 1: hike 17–20 miles to Upper Cathedral Lake. Day 2: Odine and another Monk route as a half day. Day 3: the Southeast Buttress. Day 4: hike out.",
+  "waypoints": [
+   {
+    "name": "Andrews Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 3050
+   },
+   {
+    "name": "Andrews Pass",
+    "type": "Campsite",
+    "elev": 6700
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "type": "Campsite",
+    "elev": 7369
+   },
+   {
+    "name": "Base of The Monk",
+    "type": "Base",
+    "elev": null
+   },
+   {
+    "name": "The Monk (tower top)",
+    "type": "Topout",
+    "elev": 8300
+   }
+  ],
+  "peak": "The Monk",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_monk_scabo",
+  "name": "The Monk - Scarbo",
+  "area_id": "wa_the_monk_pasayten",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 5,
+  "gain_ft": 6000,
+  "dist_km": 27.4,
+  "high_point_ft": 8606,
+  "season": "Jul-Sep",
+  "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 23 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+  "descent": "Standard descent from Scabo is via the NE gully -- three rappels of roughly 75 feet each -- rather than the main summit walk-off used by the SE Buttress and other routes.",
+  "bivy": [
+   {
+    "elev": 7400,
+    "name": "Upper Cathedral Lake basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+    "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+    "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+    "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+   },
+   {
+    "elev": 6700,
+    "name": "Andrews Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+    "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+    "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+    "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+   },
+   {
+    "elev": 7600,
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+    "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+    "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+    "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+   }
+  ],
+  "itinerary": "Day 1: hike 17–20 miles to Upper Cathedral Lake. Day 2: Scabo and a second Monk route as a half day. Day 3: the Southeast Buttress or South Face. Day 4: hike out.",
+  "waypoints": [
+   {
+    "name": "Andrews Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 3050
+   },
+   {
+    "name": "Andrews Pass",
+    "type": "Campsite",
+    "elev": 6700
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "type": "Campsite",
+    "elev": 7369
+   },
+   {
+    "name": "Base of The Monk",
+    "type": "Base",
+    "elev": null
+   },
+   {
+    "name": "The Monk (tower top)",
+    "type": "Topout",
+    "elev": 8300
+   }
+  ],
+  "peak": "The Monk",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_monk_west_cracks_left_crack",
+  "name": "The Monk - West Cracks - Left Crack",
+  "area_id": "wa_the_monk_pasayten",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 2,
+  "gain_ft": 6000,
+  "dist_km": 27.4,
+  "high_point_ft": 8606,
+  "season": "Jul-Sep",
+  "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 23 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+  "descent": "Rappel the route, or if you continue to the top of The Monk, three 75-ft rappels down the northeast gully.",
+  "bivy": [
+   {
+    "elev": 7400,
+    "name": "Upper Cathedral Lake basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+    "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+    "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+    "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+   },
+   {
+    "elev": 6700,
+    "name": "Andrews Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+    "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+    "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+    "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+   },
+   {
+    "elev": 7600,
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+    "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+    "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+    "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+   }
+  ],
+  "itinerary": "Best used as a filler: an afternoon pitch on your arrival day at Upper Cathedral Lake, or a short outing on a day when weather rules out the main wall. Otherwise it fits into a half-day on The Monk alongside Odine or Scabo.",
+  "waypoints": [
+   {
+    "name": "Andrews Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 3050
+   },
+   {
+    "name": "Andrews Pass",
+    "type": "Campsite",
+    "elev": 6700
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "type": "Campsite",
+    "elev": 7369
+   },
+   {
+    "name": "Base of The Monk",
+    "type": "Base",
+    "elev": null
+   },
+   {
+    "name": "The Monk (tower top)",
+    "type": "Topout",
+    "elev": 8300
+   }
+  ],
+  "peak": "The Monk",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_monk_west_cracks_right_crack",
+  "name": "The Monk - West Cracks - Right Crack",
+  "area_id": "wa_the_monk_pasayten",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": 2,
+  "gain_ft": 6000,
+  "dist_km": 27.4,
+  "high_point_ft": 8606,
+  "season": "Jul-Sep",
+  "approach": "The drive itself is easy — paved the whole way from Winthrop up the Chewuch River valley to the Andrews Creek Trailhead, about 23 miles total — but the climb to Cathedral Peak is one of the longest wilderness approaches in the state. From the trailhead, the Andrews Creek Trail (#504) climbs roughly 12 miles to 6,680+ ft Andrews Pass, then descends into the Spanish Creek drainage before a side trail climbs to Upper Cathedral Lakes below the peak's southwest side, putting the one-way approach at around 18 miles with significant elevation gain and loss along the way. Most parties treat this as a 2-4 day backpack (roughly 40+ miles round trip), camping at or near Cathedral Lakes before making a summit push. A free self-issue wilderness permit is required at the trailhead, along with a trailhead parking pass; the first many miles are a hot, rocky, buggy uphill slog with little shade, so this is genuinely a remote, multi-day alpine objective rather than a day-approach crag. For this specific route: The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's south/east flank, not part of the main South Face wall. From Cathedral Lakes camp, follow the same talus slope toward Cathedral Pass but hike up into the deep gully separating Cathedral Peak from The Monk, then start on The Monk's own faces (right side of the gully); most Monk routes descend via rappels down the NE gully.",
+  "descent": "Rappel the route, or three 75-ft rappels down the northeast gully if you top out on The Monk.",
+  "bivy": [
+   {
+    "elev": 7400,
+    "name": "Upper Cathedral Lake basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+    "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+    "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+    "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+   },
+   {
+    "elev": 6700,
+    "name": "Andrews Pass",
+    "role": "route",
+    "type": "camp",
+    "notes": "The natural first-night stop if you leave the trailhead in the afternoon, roughly twelve miles up the drainage and about the halfway mark to the Cathedral basin. Everything below here is burn — the lower Andrews Creek drainage has been through repeated fire and the trail was closed for years after it, so expect open, hot walking with little shade and standing dead timber that comes down in wind. Blowdown volume in the burn varies a lot year to year and is worth asking the Methow Valley district about before committing to a schedule. Breaking the walk here rather than pushing to the lakes makes a big difference to how the second day goes.",
+    "water": "Streams on both sides of the pass, and the trail below it runs genuinely boggy in places early in the season. This is the last stretch of the approach where water is easy; reliability drops off through August and September.",
+    "permit": "Free self-issue permit filled out at the trailhead kiosk. Northwest Forest Pass or Interagency pass to park at Andrews Creek.",
+    "capacity": "A pleasant site just off the trail at the pass plus dispersed spots on the bluff to the east; several parties can spread out without stacking up"
+   },
+   {
+    "elev": 7600,
+    "name": "Cathedral Pass benches and the tarn slabs",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+    "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+    "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+    "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+   }
+  ],
+  "itinerary": "A filler objective: an arrival-afternoon route, an easy day when the main wall is wet, or the warm-up half of a Monk day with Odine or Scabo.",
+  "waypoints": [
+   {
+    "name": "Andrews Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 3050
+   },
+   {
+    "name": "Andrews Pass",
+    "type": "Campsite",
+    "elev": 6700
+   },
+   {
+    "name": "Upper Cathedral Lake",
+    "type": "Campsite",
+    "elev": 7369
+   },
+   {
+    "name": "Base of The Monk",
+    "type": "Base",
+    "elev": null
+   },
+   {
+    "name": "The Monk (tower top)",
+    "type": "Topout",
+    "elev": 8300
+   }
+  ],
+  "peak": "The Monk",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_perfect_crime_with_variations",
+  "name": "The Perfect Crime (with variations...)",
+  "area_id": "wa_cutthroat_wall",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 6,
+  "gain_ft": 1620,
+  "dist_km": 2.8,
+  "high_point_ft": 6120,
+  "season": "Jul-Sep",
+  "approach": "This is a distinct approach from the one used for Cutthroat Peak, which starts from an unmarked highway pullout about 1.5 miles west of Washington Pass with no maintained trail. For Cutthroat Wall, start on the maintained Cutthroat Creek Trail #483 from the Cutthroat Trailhead kiosk. After a short distance on the main trail, leave it via a cairned path that cuts into the forest, then follow cairns and a climbers' path (roughly 1.5-2 miles, 45 min-2 hrs total) through brush and talus, trending toward the buttress, to reach the base of Cutthroat Wall.",
+  "descent": "Single-rope rappel from a slung horn/tree at a notch near the top, then ascend a gully/ledge system on skier's left back to the base.",
+  "bivy": [
+   {
+    "elev": 4500,
+    "name": "Cutthroat Creek trailhead",
+    "role": "main",
+    "type": "camp",
+    "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. It is the start for Cutthroat Wall and for the Cutthroat Lake trail toward Cutthroat Pass, and some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies; dispersed camping in the trees along the forest road below is the uncontroversial option. Access is entirely gated by the SR 20 winter closure, and the road has been shut for construction windows in recent seasons, so confirm before driving out.",
+    "water": "None — no potable water at the trailhead. Cutthroat Creek runs below the lot and needs filtering.",
+    "permit": "No camping permit and no quota. Northwest Forest Pass, Interagency pass or a day pass covers parking. This is Okanogan-Wenatchee National Forest, NOT the national park, so there is no backcountry permit system here at all.",
+    "capacity": "Large gravel lot, roughly 20-30 vehicles; fills on summer weekends with larch-season hikers"
+   },
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "The closest developed campground to Washington Pass, on SR 20 along Early Winters Creek six or seven miles east of the pass, just past the turn for the Cutthroat Creek road. Because nothing here can be booked, arriving Friday evening in July or August is a gamble and the fallback is dispersed camping on a spur road. The season runs roughly May or June through September or October, entirely dependent on when the highway opens and when snow returns.",
+    "water": "No drinking water at Lone Fir. Early Winters Creek runs through the campground and needs filtering; Klipchuck and Early Winters campgrounds, farther east, have drinking water in season.",
+    "permit": "No reservations and no permit — first-come, first-served with a nightly fee. A Northwest Forest Pass is not needed to camp, only to park at the trailhead.",
+    "capacity": "27 sites, tents and small RVs"
+   },
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "role": "main",
+    "type": "camp",
+    "notes": "Klipchuck sits about a quarter mile off SR 20 in fir and pine down-valley toward Mazama, low enough to be warm and dry when the passes are still wet. Early Winters Campground is further east, smaller at around a dozen tent sites, split by the highway near the Methow River, and fills quickly. Both are a longer drive to the trailhead than Lone Fir, which is the tradeoff for a better chance of finding a site on a busy weekend.",
+    "water": "Drinking water spigots in season; vault toilets. Water is turned off at the end of the season while the sites stay usable.",
+    "permit": "First-come, first-served, nightly fee, no reservation and no permit required.",
+    "capacity": "46 sites, the largest campground on this stretch of highway"
+   },
+   {
+    "elev": 5800,
+    "name": "Cutthroat Wall base terrace",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The approach leaves the old roadbed a quarter mile from the trailhead at cairns, then climbs left through trees and light brush to a flat bench beneath the west-northwest-facing granite. Most parties do these routes car-to-car in a day, so a bivy here is for a late start or a two-day plan rather than standard practice. The wall faces away from morning sun, which makes an early camp less useful than it looks on the map. The crag is sometimes catalogued under Little Liberty Bell, which is the same approach and the same ground.",
+    "water": "No water on the terrace itself. Fill in Cutthroat Creek low on the approach and carry it up.",
+    "permit": "None — dispersed national forest camping, no permit and no quota.",
+    "capacity": "A small flat area under the cliff; room for one or two parties at most"
+   }
+  ],
+  "itinerary": "Full day: early start, roughly 1-2 hr approach to base, 4-6 hrs for the route (more if exploring optional variations), then about 1-1.5 hrs to descend.",
+  "waypoints": [
+   {
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "type": "Campsite",
+    "elev": 2900
+   },
+   {
+    "name": "Lone Fir Campground",
+    "type": "Campsite",
+    "elev": 3600
+   },
+   {
+    "name": "Cutthroat Creek/Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 4500
+   },
+   {
+    "name": "Cutthroat Creek trailhead",
+    "type": "Campsite",
+    "elev": 4500
+   },
+   {
+    "name": "Cutthroat Wall Base",
+    "type": "Base",
+    "elev": 6120
+   },
+   {
+    "name": "The Perfect Crime start ledge",
+    "type": "Route start",
+    "elev": null
+   }
+  ],
+  "peak": "Cutthroat Wall",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_the_tiger",
+  "name": "The Tiger",
+  "area_id": "wa_m_m_wall_aka_supercave_wall",
+  "discipline": "alpine",
+  "grade": "5.12",
+  "pitches": 11,
+  "gain_ft": 1900,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass summit). From the highway, head directly uphill toward the talus at the base of the Supercave gully, following it up and briefly left before rejoining the gully; it takes roughly 1 hour to reach the lower ledge and about 1 hour 10 minutes to reach the upper ledge and base of the longer routes.",
+  "descent": "Descend via established descent route, using rappels and downclimbing as necessary. Multiple anchor points and protection required. Route-finding is critical in poor visibility.",
+  "bivy": [
+   {
+    "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "role": "main",
+    "type": "camp",
+    "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone Fir around 3,600 ft, Early Winters near 2,200 ft — so they are warmer and considerably lower than the climbing, and Lone Fir is about seven miles from the Blue Lake area. Klipchuck sits back off the highway and is the quietest of the three. All are seasonal and closed when the road is.",
+    "water": "Klipchuck and Early Winters have drinking water in season, shut off outside it. Lone Fir has none, but sits on Early Winters Creek, which needs filtering.",
+    "permit": "Fee per night, first-come first-served at all three — no reservations, no climbing or backcountry permit. A Northwest Forest Pass is not needed to occupy a site. Fourteen-day stay limit.",
+    "capacity": "Roughly 27 sites at Lone Fir, 46 at Klipchuck and about a dozen tent-only sites at Early Winters"
+   },
+   {
+    "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the honest answer for most objectives here: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangaroo, Poster Peak and the crags immediately above the highway, while the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall, the Wine Spires and Vasiliki Ridge. Elevations across these pullouts run from about 4,300 ft up to near the 5,477 ft pass, so nights are cool even in midsummer. Nothing is developed — no toilet, no table, no water — and highway noise carries.",
+    "water": "None at either pullout. Carry everything, or filter from Early Winters Creek where the Wine Spires climbers' trail crosses it.",
+    "permit": "Okanogan-Wenatchee National Forest — no quota permit and no reservation of any kind. A Northwest Forest Pass covers day-use parking at the fee trailheads; sleeping in a vehicle at a pullout needs no separate permit, and the general 14-day stay limit applies.",
+    "capacity": "Informal; a handful of vehicles at each pullout, with the hairpin lot the largest and busiest on summer weekends"
+   }
+  ],
+  "itinerary": "A full day from the car: 40–60 minute approach, 11 pitches (commonly 8–10+ hours for a competent party), then a multi-rappel descent of roughly 1.5–3 hours — plan for a long car-to-car day.",
+  "waypoints": [
+   {
+    "name": "SR-20 pullout near milepost 166 (Washington Pass)",
+    "type": "Trailhead",
+    "elev": 4360
+   },
+   {
+    "name": "Upper ledge, M&M Wall",
+    "type": "Junction",
+    "elev": 5895
+   }
+  ],
+  "peak": "M&M wall (AKA \"Supercave Wall\")",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_the_tipping_point",
+  "name": "The Tipping Point",
+  "area_id": "wa_colchuck_balanced_rock",
+  "discipline": "alpine",
+  "grade": "5.12",
+  "pitches": 8,
+  "gain_ft": 4760,
+  "dist_km": 8,
+  "high_point_ft": 8240,
+  "season": "Jul-Sep",
+  "approach": "Standard Colchuck Balanced Rock approach via Colchuck Lake and the Aasgard Pass gully; the route is to the left of Let It Burn and the West Face.",
+  "descent": "After the full route, take the standard summit descent (optional ~30 m rappel from a slung horn, then scree around the peak). To retreat from the top of P4 (the 'last rappel point'), two 40m rappels return to the base gully; if the rope doesn't reach the Sky Lounge, stop first at the Kerwin's Crack anchor (under 40m below).",
+  "bivy": null,
+  "itinerary": "Day push (the common choice, and no overnight permit is needed): leave the Stuart Lake Trailhead before first light, be at Colchuck Lake around sunrise, at the base of the wall by mid-morning after 3-4 hours of approach, climbing by late morning. The west face is in shade all morning and gets sun in the afternoon, which is a real asset on a cold day and a liability on a hot one. Allow 8 hours or more on the route — the crux pitches reward working the sequences rather than rushing — 1 hour for the descent to the base, and 3 hours to hike out. Realistic car-to-car is 14 to 17 hours. Two-day version: win or walk up an Enchantment Permit Area overnight permit for the Colchuck zone, hike in on day one to a bivy near the lake or on the boulders in the west basin, climb rested on day two, and hike out that evening. That turns the crux pitches from a stopwatch problem into a climbing problem, and it is the version most parties who send the route describe.",
+  "waypoints": [
+   {
+    "name": "Stuart Lake Trailhead (end of FR 7601)",
+    "type": "Trailhead",
+    "elev": 3400
+   },
+   {
+    "name": "Colchuck Lake (outlet / north dam crossing)",
+    "type": "Junction",
+    "elev": 5561
+   },
+   {
+    "name": "Colchuck Balanced Rock summit block",
+    "type": "Summit",
+    "elev": 8240
+   }
+  ],
+  "peak": "Colchuck Balanced Rock",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_tooth_fairy",
+  "name": "The Tooth Fairy",
+  "area_id": "wa_summer_fall_rock_2",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 7,
+  "gain_ft": 2500,
+  "dist_km": 4.8,
+  "high_point_ft": 5606,
+  "season": "Jun-Sep",
+  "approach": "Same Alpental to Snow Lake Trail to Source Lake fork to Pineapple Pass approach as the standard Tooth routes (~3,100 ft trailhead); near the top, continue left past the Southwest Face to a bolted line on the west-facing wall. Early season, a moat between snow and rock may require extra scrambling to the start.",
+  "descent": "Rappel the route (P6 down to P1) using the bolted anchors, or rappel the South Face to Pineapple Pass.",
+  "bivy": [
+   {
+    "elev": 2283,
+    "name": "Denny Creek Campground, I-90 exit 47",
+    "role": "main",
+    "type": "camp",
+    "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Tooth or Chair Peak day, since it needs no wilderness permit and no early-morning decisions. Sites go quickly on summer weekends; book ahead rather than driving up hoping. In winter this option disappears entirely and you are back to sleeping in the valley towns or driving up in the dark.",
+    "water": "Potable water provided during the operating season.",
+    "permit": "Standard campground fee, reserved through recreation.gov up to six months ahead; a small number of first-come sites. No wilderness permit needed, and no trailhead pass required to sleep here. Seasonal — closed outside the summer months, so it is not an option for a winter climb.",
+    "capacity": "About 33 sites, most reservable, including electric and double sites plus one group site"
+   },
+   {
+    "elev": 1535,
+    "name": "Tinkham Campground, I-90 exit 42",
+    "role": "main",
+    "type": "camp",
+    "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next morning, which matters little against a ten-hour climbing day. Like every developed site on this stretch of I-90 it is a summer-only option. It sits well below the pass, low in the South Fork valley.",
+    "water": "Water availability here varies by year and is not guaranteed — confirm before relying on it and carry enough for the night otherwise.",
+    "permit": "Campground fee via recreation.gov; seasonal operation only, closed outside the summer months. No wilderness permit or trailhead pass involved.",
+    "capacity": "Small forested Forest Service campground, reservable sites"
+   },
+   {
+    "elev": 3780,
+    "name": "Source Lake basin, Alpental valley",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hours, The Tooth is shorter, and Guye Peak's west face is barely an approach at all. Source Lake is where a party would sleep if it wanted a pre-dawn start without the drive, about an hour in on the Snow Lake trail. Ground here is rough and off the maintained tread, so choose rock or snow rather than making a new clearing. The slopes above the lake toward Chair are an active avalanche path, so this is a fair-weather summer bivy and not a winter one. Separately for Guye Peak: the old walking approach through the Alpental Community Club's private roads has been closed to climbers, so plan the talus approach from public ground.",
+    "water": "Reliable in summer: the lake and the South Fork Snoqualmie headwater creeks run all season. In winter the whole basin is snow-covered and you melt.",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the Snow Lake trailhead, required for day and overnight use roughly May 15 to Oct 31. Parking takes a Northwest Forest Pass or Interagency pass, or a day fee; a Washington Discover Pass is NOT valid. Ski season changes this: on weekends and holidays the Alpental lots are run by the ski area under a paid permit, free for carpools of 3+ and for season-pass holders. No Sno-Park permit applies at Alpental.",
+    "capacity": "Informal — a handful of small tent spots on durable ground; no established or designated sites"
+   }
+  ],
+  "itinerary": "Trailhead start pre-dawn to mid-morning -> ~1.5-2 hr approach to the basin below the west face -> rack up and climb 6 pitches (allow 3-5 hours depending on party size and traffic) -> short scramble to the true summit -> rappel the route or the South Face -> retrace the approach to the trailhead.",
+  "waypoints": [
+   {
+    "name": "Alpental / Snow Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3100
+   },
+   {
+    "name": "Source Lake basin, Alpental valley",
+    "type": "Campsite",
+    "elev": 3780
+   },
+   {
+    "name": "The Tooth summit",
+    "type": "Summit",
+    "elev": 5606
+   }
+  ],
+  "peak": "Summer-Fall (rock)",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_the_tooth_indentured_servant",
+  "name": "Indentured Servant",
+  "area_id": "wa_summer_fall_rock_2",
+  "discipline": "alpine",
+  "grade": "5.10b",
+  "pitches": 5,
+  "gain_ft": 2700,
+  "dist_km": 4.8,
+  "high_point_ft": 5606,
+  "season": "Jun-Sep",
+  "approach": "Follow the normal South Face/Tooth Fairy approach (Snow Lake Trail from Alpental to the Source Lake talus/climbers' path, up toward Pineapple Pass), but below the pass continue further left (west), past The Tooth Fairy, to a route starting on the left side of a large gully that splits the cliff.",
+  "descent": "Rappel the route with a 60m rope from bolted anchors, or continue to the true summit and descend via the South Face's 4 rappels to Pineapple Pass.",
+  "bivy": null,
+  "itinerary": "Single-day car-to-car climb sharing the South Face/Tooth Fairy approach; a full day given the approach, 5 pitches, summit scramble, and descent.",
+  "waypoints": [
+   {
+    "name": "Alpental / Snow Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3100
+   },
+   {
+    "name": "The Tooth summit",
+    "type": "Summit",
+    "elev": 5606
+   }
+  ],
+  "peak": "Summer-Fall (rock)",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_the_triad_traverse",
+  "name": "Triad Traverse (West-to-East Ridge Traverse)",
+  "area_id": "wa_the_triad",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7520,
+  "season": "Jul-Sep",
+  "approach": "Same trailhead and initial approach as the East Peak standard route: Hidden Lake Trailhead via Cascade River Road and FSR 1540, then Hidden Lake Trail #745 to Sibley Pass (~6,040–6,060 ft). From the pass, rather than dropping toward Hidden Lake Basin, follow the ridge crest and the faint climbers' trail east toward West Triad.",
+  "descent": "Not typically reversed. Most parties continue east off the ridge toward the Eldorado Glacier — encountering loose blocks and exposed downclimbing — to link up with Eldorado Peak or a longer Boston Basin circuit, requiring either a car shuttle or a multi-day itinerary rather than a there-and-back day trip.",
+  "bivy": null,
+  "itinerary": "Usually combined with an Eldorado Peak ascent and/or a longer Boston Basin circuit rather than climbed in isolation; budget a full day for the Triad ridge portion alone (11+ hours reported for a single-day East Ridge variant) or plan it as day one of a 2–4 day link-up with an appropriate car shuttle.",
+  "waypoints": [],
+  "peak": "The Triad",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_three_queens_middle_peak",
+  "name": "Middle Peak via South Face - South Chimney",
+  "area_id": "wa_three_queens",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 4600,
+  "dist_km": 4.3,
+  "high_point_ft": 6600,
+  "season": "Jun-Sep",
+  "approach": "Same trailhead and initial trail as the East/Main Peak standard route: Mineral Creek Trailhead (2,400 ft), across the Kachess River ford, 1.7 miles of trail to the Mineral Creek crossing, then about 1 mile through vine maple brush to the base of the south-side talus slope below Middle Peak. As of late May 2026 a gate stands near the old trailhead and the trail now starts from a small lot (4-5 cars) at the end of a narrow logging road; a short descent leads to the first log crossing. The Kachess River and Mineral Creek are both crossed on logs in June and July; the logs are bare and slick, so some parties sit and shuffle across.",
+  "descent": "Two 60-ft rappels down the South Chimney back to the ledge system, then reverse the talus and trail approach.",
+  "bivy": [
+   {
+    "elev": 4880,
+    "name": "Park Lakes Basin",
+    "role": "main",
+    "type": "camp",
+    "notes": "The base for Three Queens, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Mineral Creek trailhead at around 2,375 ft, then follow the Mineral Creek trail roughly four and a half miles and 2,300 ft up to the basin. The trail crosses Mineral Creek several times on logs and rocks, and in high water those crossings are the hardest part of the day — early season parties should expect at least one that is genuinely unpleasant. From the basin the standard scramble goes up loose slabs, talus and heather to the ridge, and the middle peak's south face and south chimney and the west peak's west ridge are reached from the same camp with a traverse. The rock is loose and the notch below the summit block is exposed with no obvious easy line, so this is a scramble that repays a rope more often than its grade suggests. Many parties skip the camp entirely and do Three Queens as a long day from the car, which is honest and reasonable in good conditions — the basin is worth a night mainly if you want two of the three summits. Best late July through September. Honest caveat for 2026: the Mineral Creek trail was closed by the summer wildfire that took its name from this very peak, along with the Spectacle Lake access and a long stretch of the Pacific Crest Trail; the closure ran into autumn and must be confirmed before any trip.",
+    "water": "The lakes and their connecting streams, plus Glacier Lake just above — reliable through the season",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit. Northwest Forest Pass at the Mineral Creek trailhead. Group limit twelve. Campfires are prohibited in Park Lakes Basin specifically, in addition to the general ban above 5,000 ft. Stay off the meadow edges.",
+    "capacity": "Several established sites among the trees, meadows and rolling knolls of the basin; three or four parties fit without being on top of each other"
+   }
+  ],
+  "itinerary": "Single long day: trailhead to summit via South Face/South Chimney (documented ascent time ~4.9 hrs), summit to trailhead (~3.6 hrs descent), for roughly 10 miles round trip and 4,600 ft of gain/loss.",
+  "waypoints": [
+   {
+    "name": "Mineral Creek Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Park Lakes Basin",
+    "type": "Campsite",
+    "elev": 4880
+   }
+  ],
+  "peak": "Three Queens",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_three_queens_west_peak",
+  "name": "West Peak via West Ridge - West Face",
+  "area_id": "wa_three_queens",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": null,
+  "gain_ft": 5300,
+  "dist_km": 12.8,
+  "high_point_ft": 6400,
+  "season": "Jul-Oct",
+  "approach": "From the Mineral Creek Trailhead (2,400 ft), follow the Kachess River/Mineral Creek approach through Park Lakes to Spectacle Point (5,800 ft) — a longer multi-day approach (16 miles round trip in the accounts report) than the Middle Peak day-route.",
+  "descent": "Reverse the West Ridge/West Face line back to Spectacle Point camp, then retrace the approach trail.",
+  "bivy": [
+   {
+    "elev": 5800,
+    "name": "Spectacle Point high camp",
+    "role": "main",
+    "type": "bivy",
+    "notes": "High camp on the ridge above Park Lakes, used as the base for the West Peak.",
+    "water": "Uncertain late in the season; carry water up from Park Lakes",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit",
+    "capacity": "Small; a few tent sites on the ridge"
+   },
+   {
+    "elev": 4880,
+    "name": "Park Lakes Basin",
+    "role": "route",
+    "type": "camp",
+    "notes": "The base for Three Queens, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Mineral Creek trailhead at around 2,375 ft, then follow the Mineral Creek trail roughly four and a half miles and 2,300 ft up to the basin. The trail crosses Mineral Creek several times on logs and rocks, and in high water those crossings are the hardest part of the day — early season parties should expect at least one that is genuinely unpleasant. From the basin the standard scramble goes up loose slabs, talus and heather to the ridge, and the middle peak's south face and south chimney and the west peak's west ridge are reached from the same camp with a traverse. The rock is loose and the notch below the summit block is exposed with no obvious easy line, so this is a scramble that repays a rope more often than its grade suggests. Many parties skip the camp entirely and do Three Queens as a long day from the car, which is honest and reasonable in good conditions — the basin is worth a night mainly if you want two of the three summits. Best late July through September. Honest caveat for 2026: the Mineral Creek trail was closed by the summer wildfire that took its name from this very peak, along with the Spectacle Lake access and a long stretch of the Pacific Crest Trail; the closure ran into autumn and must be confirmed before any trip.",
+    "water": "The lakes and their connecting streams, plus Glacier Lake just above — reliable through the season",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit. Northwest Forest Pass at the Mineral Creek trailhead. Group limit twelve. Campfires are prohibited in Park Lakes Basin specifically, in addition to the general ban above 5,000 ft. Stay off the meadow edges.",
+    "capacity": "Several established sites among the trees, meadows and rolling knolls of the basin; three or four parties fit without being on top of each other"
+   }
+  ],
+  "itinerary": "2-day trip documented: Day 1, trailhead to Spectacle Point camp via Kachess River, Mineral Creek, and Park Lakes; Day 2, West Ridge-West Face to the summit and return to the trailhead (16 miles, 5,300 ft gain/loss total in the accounts report).",
+  "waypoints": [
+   {
+    "name": "Spectacle Lake",
+    "type": "landmark",
+    "elev": 4265
+   },
+   {
+    "name": "Park Lakes Basin",
+    "type": "Campsite",
+    "elev": 4880
+   }
+  ],
+  "peak": "Three Queens",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_tooth_chair_traverse",
+  "name": "Tooth - Chair Traverse",
+  "area_id": "wa_summer_fall_rock_2",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "pitches": 0,
+  "gain_ft": null,
+  "dist_km": 4.8,
+  "high_point_ft": 6238,
+  "season": "Jul-Sep",
+  "approach": "Begin via any Tooth route (historically the South Face) from the Alpental/Source Lake approach (~3,100 ft trailhead), then follow the crest toward Chair Peak: a short forested walking section right after the Tooth, exposed 4th/low-5th-class ridge travel, and a mandatory rappel off Bryant.",
+  "descent": "From Chair Peak's summit, downclimb the standard route's descent gully back toward the basin below, then hike back out to the trailhead (total approach/exit hiking is roughly 4-5 miles beyond the ridge climbing itself).",
+  "bivy": [
+   {
+    "elev": 2283,
+    "name": "Denny Creek Campground, I-90 exit 47",
+    "role": "main",
+    "type": "camp",
+    "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Tooth or Chair Peak day, since it needs no wilderness permit and no early-morning decisions. Sites go quickly on summer weekends; book ahead rather than driving up hoping. In winter this option disappears entirely and you are back to sleeping in the valley towns or driving up in the dark.",
+    "water": "Potable water provided during the operating season.",
+    "permit": "Standard campground fee, reserved through recreation.gov up to six months ahead; a small number of first-come sites. No wilderness permit needed, and no trailhead pass required to sleep here. Seasonal — closed outside the summer months, so it is not an option for a winter climb.",
+    "capacity": "About 33 sites, most reservable, including electric and double sites plus one group site"
+   },
+   {
+    "elev": 1535,
+    "name": "Tinkham Campground, I-90 exit 42",
+    "role": "main",
+    "type": "camp",
+    "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next morning, which matters little against a ten-hour climbing day. Like every developed site on this stretch of I-90 it is a summer-only option. It sits well below the pass, low in the South Fork valley.",
+    "water": "Water availability here varies by year and is not guaranteed — confirm before relying on it and carry enough for the night otherwise.",
+    "permit": "Campground fee via recreation.gov; seasonal operation only, closed outside the summer months. No wilderness permit or trailhead pass involved.",
+    "capacity": "Small forested Forest Service campground, reservable sites"
+   },
+   {
+    "elev": 3780,
+    "name": "Source Lake basin, Alpental valley",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hours, The Tooth is shorter, and Guye Peak's west face is barely an approach at all. Source Lake is where a party would sleep if it wanted a pre-dawn start without the drive, about an hour in on the Snow Lake trail. Ground here is rough and off the maintained tread, so choose rock or snow rather than making a new clearing. The slopes above the lake toward Chair are an active avalanche path, so this is a fair-weather summer bivy and not a winter one. Separately for Guye Peak: the old walking approach through the Alpental Community Club's private roads has been closed to climbers, so plan the talus approach from public ground.",
+    "water": "Reliable in summer: the lake and the South Fork Snoqualmie headwater creeks run all season. In winter the whole basin is snow-covered and you melt.",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit at the Snow Lake trailhead, required for day and overnight use roughly May 15 to Oct 31. Parking takes a Northwest Forest Pass or Interagency pass, or a day fee; a Washington Discover Pass is NOT valid. Ski season changes this: on weekends and holidays the Alpental lots are run by the ski area under a paid permit, free for carpools of 3+ and for season-pass holders. No Sno-Park permit applies at Alpental.",
+    "capacity": "Informal — a handful of small tent spots on durable ground; no established or designated sites"
+   },
+   {
+    "elev": 4900,
+    "name": "Chair Peak basin snow camp",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a good trade is genuinely contested: it shortens the morning but puts you sleeping under loaded avalanche slopes, and most parties instead take a 5 a.m. start from the car and accept the full approach. The elevation given is approximate for the gearing-up basin and will shift with where the snowpack lets you build a platform. Treat this as a conditions-dependent choice, not a standing campsite.",
+    "water": "None running. Melt snow — this is a winter and spring option and there is no reliable liquid source in the basin.",
+    "permit": "No self-issue wilderness permit is required outside roughly May 15 to Oct 31, but wilderness rules still apply and parking is governed by the ski area's winter permit scheme on peak days. Check the Alpental parking rules for the current season before counting on a spot.",
+    "capacity": "Snow camp for one or two tents; no ground sites, entirely dependent on snowpack"
+   }
+  ],
+  "itinerary": "Early trailhead start -> approach to base of a chosen Tooth route (South Face is typical) -> climb to The Tooth's summit -> traverse the ridge crest toward Chair Peak (3-4 hours of ridge climbing, including one rappel off Bryant Peak and a short forested walking section) -> climb to Chair Peak's summit -> descend Chair Peak's standard gully -> hike out, for a full day requiring good fitness and comfort on sustained exposed terrain.",
+  "waypoints": [
+   {
+    "name": "Alpental / Snow Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3100
+   },
+   {
+    "name": "Source Lake basin, Alpental valley",
+    "type": "Campsite",
+    "elev": 3780
+   },
+   {
+    "name": "The Tooth summit (traverse start point)",
+    "type": "Summit",
+    "elev": 5606
+   },
+   {
+    "name": "Bryant Peak (rappel)",
+    "type": "Hazard",
+    "elev": 5801
+   },
+   {
+    "name": "Chair Peak",
+    "type": "Summit",
+    "elev": 6238
+   }
+  ],
+  "peak": "Summer-Fall (rock)",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_tower_arete",
+  "name": "Tower Arete",
+  "area_id": "wa_north_face_tiffany_mountain",
+  "discipline": "alpine",
+  "grade": "Class 4",
+  "pitches": 5,
+  "gain_ft": 1485,
+  "dist_km": 3.7,
+  "high_point_ft": 8245,
+  "season": "Jun-Sep",
+  "approach": "Drive to Tiffany Springs Campground (elev. ~6,760 ft) via Forest Road 39, accessed either from Conconully (south, via FR-37) or from Winthrop (southwest, via East Chewuch Road and FR-37) — both are long gravel-road drives of an hour or more. From the campground, hike the Tiffany Lake Trail #373 east past Tiffany Lake to Honeymoon Pass (7,150 ft, roughly 45 minutes of easy trail), then leave the trail and traverse south across open grassy slopes to the small cirque at the base of the North Face (about 7,360 ft). The North Face itself rises roughly 650 feet above the cirque, split by couloirs and a rock tower; the whole approach is considered short and easy relative to other Pasayten-area objectives.",
+  "descent": "Descend via Tiffany's northwest ridge to approximately 8,000 feet, then down the old northeast ridge trail to rejoin the main path at Honeymoon Pass.",
+  "bivy": [
+   {
+    "elev": 6760,
+    "name": "Tiffany Springs Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the base for the north face and the trailhead in one, which is unusual and is what makes the face approachable at all: the walk to the bottom of the routes is under an hour, so a party can sleep at the car and still be climbing at first light without a bivouac. Trail 373 begins across the road from the campground and runs east past Tiffany Lake to Honeymoon Pass at around 7,150 ft, from where the face is below you. The drive is the commitment. Three ways reach it and they are not equivalent: a narrow four-wheel-drive road over Lone Frank Pass from Conconully by the North Fork Salmon Creek, about twenty miles; a longer gravel road over Baldy Pass suited to two-wheel drive, about thirty; and a good two-wheel-drive gravel line from the Methow, north out of Winthrop on the Chewuch River road and then east and north on the 37 and 39, about twenty-six miles. Road 39 itself has not been graded in some time and is not recommended for low-clearance passenger cars. At this elevation the road holds snow late into the spring and can shut with the first serious autumn storm, so the usable window is short and both ends of it are worth checking rather than assuming.",
+    "water": "No potable water and no tap — this is the single most important practical fact about the place, and its name is misleading. There is no piped supply, no water service and no rubbish service. Bring everything you need for drinking, cooking and washing, or plan to treat from Tiffany Lake, which is a short walk east on the trail and is the nearest dependable open water. In late summer this whole plateau is dry and what looks like a creek on a map may be nothing at all.",
+    "permit": "National forest, outside designated wilderness, so there is no wilderness permit, no self-issue slip, no quota and no lottery — the opposite of the permit expectation a few miles west in the Pasayten. There is a small nightly fee at the campground and sites are first come, first served. Fire restrictions on this dry high plateau run through most of the summer and are commonly total bans, which given what has burned here recently should be treated as the default rather than the exception. Party size and stay limits are the usual forest ones.",
+    "capacity": "A small primitive forest campground with a handful of sites, taking tents and modest vehicles. Trailers are not appropriate given the road. It is rarely full and it is the only organised camping anywhere near this face."
+   },
+   {
+    "name": "Tiffany Lake and Little Tiffany Lake",
+    "role": "route",
+    "type": "camp",
+    "notes": "Under a mile from the campground and directly on the approach, this is the camp for a party who would rather sleep on water than at a car, or who has arrived to find the campground full or closed. It is the last certain water before the face. The trail continues around the shore and climbs about six hundred feet to Honeymoon Pass, which is the gateway to the north side; parties leaving a second vehicle at the Freezeout Ridge roadhead can carry on over Whistler Pass at around 7,600 ft to the summit and descend the Freezeout trail, an open loop of some eleven miles that is the standard way to combine the walk-up with a look at the face. The burn is part of the landscape here. This trail travels through old fire scars that have opened the views and filled the ground with wildflower meadow, and the 2026 fire has added to that directly on this mountain — expect standing dead timber, no shade, and blowdown that changes with each windstorm. Do not pitch under dead trees in wind.",
+    "water": "The lakes, and they are the dependable supply for the whole north side of this mountain — everything above them on the pass and the face runs on snowmelt and is dry once that has gone. Access to the water is easy from the trail. Treat it; these are shallow, warm, well-used lakes rather than cold alpine tarns.",
+    "permit": "National forest, non-wilderness. No permit, no quota, no reservation, and no fee to camp at the lakes. A pass is not required to park at the campground trailhead across the road. Fire restrictions apply through the summer and are usually total bans; carry a stove. Camp back from the shoreline on existing bare ground, and note that this trail is open to horses and mountain bikes as well as walkers, so pitch clear of it.",
+    "capacity": "A handful of informal spots around the shores, with the established ground at the north-west end of Little Tiffany Lake. Room for a party or two. Nothing developed and no toilet, and it sees family day-hiking traffic rather than climbers."
+   },
+   {
+    "elev": 7150,
+    "name": "Honeymoon Pass",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The pass is where the trail crosses onto the north side and the face comes into view, and it is the tactical camp rather than the comfortable one. Its argument is a dawn start: from here the base of the routes is a short drop and a scramble rather than a walk from the road, which matters for the north-east couloir where the snow wants climbing early and matters much less for the rock, since the campground is under an hour away regardless. What you pay for the position is water and wind, in that order, and on a face this short the trade is rarely worth it — most parties are better off sleeping at the campground or the lake and walking in. Where it does earn its keep is for a party spending two days on the face, or one continuing over Whistler Pass to the summit and out by Freezeout Ridge. Nights are cold at this elevation from late August onward and there is no shelter at all if weather comes across the plateau.",
+    "water": "None dependable. Snowmelt early in the season and nothing at all once it has gone. Everything is carried up from Tiffany Lake, six hundred feet and half a mile below, and the party that forgets this ends up walking back down for it in the evening. In the ice season it is a snow camp and you melt.",
+    "permit": "National forest, non-wilderness — no permit, no quota, no reservation, no fee. Fire restrictions run through the summer and there is nothing to burn at this height in any case. The turf here is thin and holds a footprint for years, so pitch on gravel or rock and leave the meadow alone.",
+    "capacity": "Open ground at the pass for a small party on gravel and thin turf. No established sites, no facilities and nothing to shelter behind. Windswept is the word most often used about this crest and it is accurate."
+   },
+   {
+    "name": "The talus and benches below the north face",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The routes start here and, on a face six hundred and fifty feet high forty-five minutes from a campground, essentially nobody sleeps here. It is written down because a party reading a list of camps should not be left to assume there is a bivouac at the base — there is not, and the answer to a late arrival is the campground, not the wall. The face itself is broken by several couloirs, aretes and vertical granite cliffs; the north-east couloir is the longest and most direct of the snow lines, on the left, and the tower at the right-hand end carries the rock routes, with the ridge line giving a vertical crack, a wide flaring chimney and long stretches of easy fourth-class scrambling on generally excellent rock. Because the snow goes soon after the roads become passable, the ice and couloir lines are a shoulder-season or winter objective and are reached by ski or snowmobile in that season rather than by driving to the campground. Treat the rock routes as the summer proposition and the couloirs as a separate trip requiring a separate approach.",
+    "water": "Snowmelt off the couloirs early, and nothing whatsoever once that has gone. Given how early the snow leaves here after the roads open, that window is short. Carry water from the lakes; there is no source at the base of the face you should plan on.",
+    "permit": "National forest, non-wilderness — no permit, no quota, no reservation. No fires: this is bare rock and talus with nothing to burn and fragile alpine ground around it. Standard leave-no-trace applies and human waste has to be carried out from the base of a face this small and this close to a road.",
+    "capacity": "No established camping. There are boulder-field benches and scraps of flat ground at the foot of the wall where one or two people could put down a bag, and nothing more — this is a place to leave packs and gear up rather than a site, and it is recorded to say so rather than to invent one."
+   }
+  ],
+  "itinerary": "Single day: drive to Tiffany Springs Campground, hike ~45 min to Honeymoon Pass, ~30 min traverse to the arête base, climb the 5 sections (a shorter outing than the North Tower Ridge Route given the easier grade), then walk off via the NW ridge and Little Tiffany Lake trail.",
+  "waypoints": [
+   {
+    "name": "Tiffany Springs Campground",
+    "type": "Trailhead",
+    "elev": 6760
+   },
+   {
+    "name": "Tiffany Springs Campground",
+    "type": "Campsite",
+    "elev": 6760
+   },
+   {
+    "name": "Honeymoon Pass",
+    "type": "Campsite",
+    "elev": 7150
+   },
+   {
+    "name": "Tiffany Mountain",
+    "type": "Summit",
+    "elev": 8245
+   }
+  ],
+  "peak": "North Face Tiffany Mountain",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_traverse_of_mount_index",
+  "name": "Traverse of Mount Index",
+  "area_id": "wa_main_peak_2",
+  "discipline": "alpine",
+  "grade": "5.7+",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 5991,
+  "season": "Jul-Sep",
+  "approach": "From the Lake Serene Trailhead, follow the maintained Lake Serene Trail #1068 roughly 4 miles and about 2,000 ft of gain to the lake basin. Traverse around the west side of the lake over talus and boulders to its south end, then climb steep brush and a gully system (snow-covered into early summer) toward the base of the North Peak's North Face. The standard North Face Route is a long, moderate alpine rock climb (Grade III, 5.6-5.7) on featured but sometimes rotten rock with significant brush; parties typically climb it car-to-car in a very long day (12-15+ hours) or with a bivy.",
+  "descent": "Rappel from Middle and Main peaks back to Lake Serene. Multiple short rappels along the traverse line via established anchors.",
+  "bivy": [
+   {
+    "name": "Middle Peak crest bivouac, Mount Index traverse",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a crest of loose ridges and gullies with rappels between them, and the recorded practice is a flat spot right on the crest between the two Middle Peak summits with snow nearby, which solves the water problem in early season. Parties who have done it in a push describe going light and treating the bivouac as an emergency plan that they were glad to have and glad not to need — take minimal gear rather than a full camp, because everything you carry has to come over some genuinely poor rock. Approach is the Lake Serene trail as for everything else on the mountain. The rock on Index is famously rotten and the descent options off the ridge are limited, so committing to a bivouac here means committing to finishing the traverse; do not plan it as a place to sit out bad weather.",
+    "water": "Snow on the crest into early summer, and nothing at all once it goes. On a dry traverse you carry water for the whole ridge or you drop off it.",
+    "permit": "No permit for a bivouac on the ridge. The trailhead day-use rules below still apply to the car. Fires are out of the question up here regardless of the current ban.",
+    "capacity": "One small party. A flat patch on the ridge crest between the two Middle Peak summits — a stance, not a site."
+   },
+   {
+    "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+    "role": "route",
+    "type": "bivy",
+    "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwegian Buttresses — starts from this trailhead at 600 ft and climbs about 2,000 ft in under four miles to the lake at roughly 2,520 ft, then traverses the shore over talus and car-sized boulders to reach the base of the walls in another fifteen or twenty minutes. That is a short, brutal approach rather than a long one, which is exactly why parties overwhelmingly do these routes car-to-car and why there is no camp here. Where a bivy genuinely happens is at the foot of the buttresses, on slab and talus. That spot sits close to the edge of the quarter-mile no-camping ring, probably just outside it but not by a comfortable margin, so sleep as high and as far from the shore as the ground allows and be ready to move if asked. Take a pad and expect rock, not ground. The serious caveat is rockfall: large natural releases have been observed coming off North Index and out of the cleft between the buttresses, so parties are advised to stay low along the lake until they can go straight up to the base — and by the same logic, do not sleep in the fall line of that gully. Winter changes the picture completely: Hourglass Gully is a snow-and-ice objective and the basin is under a deep avalanche-fed snowpack, so a winter bivy here is a snow camp with the walls above you loaded. The day-use hours mean an alpine start is a very early drive from town rather than a walk from a tent.",
+    "water": "The lake, and meltwater running off the slabs and the gullies above into midsummer. Later in the season the runnels dry and the lake is the only certainty.",
+    "permit": "Read this before planning anything here. Camping and campfires are prohibited within a quarter mile of Lake Serene, and the trailhead itself is signed day use only, open sunrise to sunset, with no overnight parking. Parking takes a Northwest Forest Pass, Interagency pass or the day fee; a Discover Pass is not valid. So a legal bivy has to be well beyond the lake, out toward the base of the walls, and even then the car is the problem rather than the ground.",
+    "capacity": "No established sites at all. What exists is a scatter of flat spots among the boulders and slabs on the south side of the basin, below the walls. Room for a couple of small parties at most, and none of it is comfortable."
+   }
+  ],
+  "itinerary": "Day 1: Hike to Lake Serene (2.5-3 hours). Begin climbing North Face section (6-7 hours to North Peak summit). Camp or bivy on North Peak. Day 2: Traverse to Middle Peak (1-2 hours), continue to Main Peak (1-2 hours). Descend via rappels to Lake Serene (2-3 hours). Exit to trailhead (1 hour).",
+  "waypoints": [
+   {
+    "name": "Lake Serene Trailhead (Bridal Veil Falls TH, US-2 near Index, WA)",
+    "type": "Trailhead",
+    "elev": 600
+   },
+   {
+    "name": "Lake Serene (approach basin below North Peak)",
+    "type": "Junction",
+    "elev": 2526
+   },
+   {
+    "name": "Mount Index - North Peak (first of three summits climbed on the traverse)",
+    "type": "Summit",
+    "elev": 5337
+   },
+   {
+    "name": "Mount Index - Middle Peak (second summit of the traverse)",
+    "type": "Summit",
+    "elev": 5521
+   },
+   {
+    "name": "Mount Index - Main Peak (third and highest summit)",
+    "type": "Summit",
+    "elev": 5991
+   }
+  ],
+  "peak": "Main Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_tupshin_peak_east_face",
+  "name": "East Face",
+  "area_id": "wa_tupshin_peak",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": null,
+  "gain_ft": 7148,
+  "dist_km": null,
+  "high_point_ft": 8348,
+  "season": "Jul-Sep",
+  "approach": "Ferry/floatplane to Stehekin (no road access), then the Company Creek Trail roughly 3 miles to a point below Tupshin's west side. Leave the trail and scramble up White Goat Mountain's west slopes through dense brush, traversing rightward through the 4,200-4,600 ft band, then cross a roughly 7,200 ft pass above Bird Lakes and descend into the Bird Lakes basin below Tupshin's east face (face starts ~7,600 ft). Most parties in July to September go in by the Devore Creek trail to the Bird Creek camp near 5,400-5,500 ft, then fight slide alder up to a basin camp around 5,800 ft; easy slopes lead to a ridge near 7,000 ft, then a descending traverse to the snow basin east of the summit block.",
+  "descent": "Reverse the route: downclimb/rappel the east face's ledge system back to the Bird Lakes basin.",
+  "bivy": null,
+  "itinerary": "Day 1: Ferry/floatplane to Stehekin, hike Company Creek Trail (~3 mi) to the leave-trail point. Day 2: Traverse White Goat Mountain's west slopes and cross the ~7,200 ft pass above Bird Lakes to a high bivy in the Bird Lakes basin. Day 3: Climb the East Face (class 2-4 with a 5.4-5.6 crux) to the summit and return to camp. Day 4: Hike out to Stehekin.",
+  "waypoints": [
+   {
+    "name": "Tupshin Peak Summit",
+    "type": "Summit",
+    "elev": 8348
+   }
+  ],
+  "peak": "Tupshin Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_vanishing_point",
+  "name": "Vanishing Point",
+  "area_id": "wa_dolomite_tower",
+  "discipline": "alpine",
+  "grade": "5.12b",
+  "pitches": 14,
+  "gain_ft": 3430,
+  "dist_km": 6.44,
+  "high_point_ft": 5708,
+  "season": "Jul-Sep",
+  "approach": "Start at Barclay Lake trailhead (74920 NE Stevens Pass Hwy, Skykomish, WA 98288). Follow the pleasant level main trail for about 20 minutes to a bridge crossing a large creek (~1 mile). Before the bridge, break right into forest around a large boulder, then walk through relatively open forest or along the creek bed until reaching an open boulder field. Continue through the boulder field to reach steep gullies. Climb around the right side of a chossy waterfall (exposed scrambling). Continue up the wash to a ramp with hand lines, then up a 60–70° forested rib with fixed lines and natural protection, then approximately 800 feet of mostly roped-up slab via bolted sections and natural features. Total approach time: 2.5–3.5 hours for competent parties.",
+  "descent": "Walk off via the heather descent to a base jumper trail system, then follow well-worn switchbacks through forested ridge system back to the Barclay Lake trailhead parking area. Approximately 3 hours car-to-car from summit.",
+  "bivy": [
+   {
+    "name": "Dolomite Tower bivy caves",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Shallow caves about 150 ft right of the start of the route. Spray can blow in during wind and rain.",
+    "water": "Carry it in or melt from nearby snow early season",
+    "permit": "No overnight permit required",
+    "capacity": "Three flat platforms, one person each"
+   }
+  ],
+  "itinerary": "Typically climbed as a 2-3 day trip mirroring the original ascent style: Day 1 — hike in and complete the ~3-3.5 hour technical approach (forested rib with fixed lines, roped slab) to the bivy caves below the tower; Day 2 — climb the full 14-pitch route (a very long day given sustained 5.10-5.12 climbing with few easy pitches); Day 3 (or same-day if fast) — descend via the ~3-hour descent route back to the trailhead. Strong parties also do the route car-to-car in one very long day (roughly 3 hours of approach, a full day on route, and about 3 hours of descent) with a pre-dawn start.",
+  "waypoints": [
+   {
+    "name": "Barclay Lake Trailhead (FR-6024)",
+    "type": "Trailhead",
+    "elev": 2280
+   },
+   {
+    "name": "Dolomite Tower",
+    "type": "Summit",
+    "elev": 5708
+   }
+  ],
+  "peak": "Dolomite Tower",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_washington_ellinor_traverse_ridge",
+  "name": "Washington Ellinor Traverse (Ridge)",
+  "area_id": "wa_mount_washington_olympic",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "pitches": 0,
+  "gain_ft": 4250,
+  "dist_km": 9.7,
+  "high_point_ft": 6260,
+  "season": "Jun-Sep",
+  "approach": "Climb Mount Washington first via its standard south route from the FR 2419 trailhead (see the Standard Route). The traverse itself has no separate trailhead or approach — it begins directly from Washington's summit, heading southwest along the connecting ridge toward Mt. Ellinor rather than descending Washington's standard route.",
+  "descent": "From Mt. Ellinor's summit, descend via Ellinor's standard trail back to the Ellinor trailhead (a short road walk or car shuttle back to the Washington trailhead on FR 2419).",
+  "bivy": [
+   {
+    "elev": 920,
+    "name": "Big Creek Campground, Lake Cushman",
+    "role": "main",
+    "type": "camp",
+    "notes": "The obvious roadside base for Mount Ellinor and Mount Washington, sitting at the junction where the Lake Cushman road becomes FR 24, with FR 2419 climbing from there to the Ellinor lower trailhead at about 2,600 ft, the upper trailhead at about 3,500 ft, and the Mount Washington trailhead at the road end near 3,000 ft. Both peaks are genuine day objectives — Ellinor is a maintained trail and Washington a class 3 scramble through a basin and gully — so this is explicitly a contingency rather than the normal plan: it exists for the party that arrives the night before to get an early start on a hot day, or that comes down from the Washington gully later than intended and would rather not drive. It is also the sane base for anyone linking the Washington–Ellinor ridge traverse, which takes far longer than either peak alone. A trail from the campground connects up toward the Mount Ellinor system if you want to walk the whole thing from the tent, but that turns a half-day into a very long one.",
+    "water": "Seasonal potable water is generally available in the campground, but do not count on it outside the main summer season. Big Creek runs alongside",
+    "permit": "Per-night Forest Service fee. No wilderness permit — this is a developed campground on Forest Service land, outside the national park. Vault toilets, tables and fire rings, pack it in and pack it out. Note the separate parking rule up the hill: a Northwest Forest Pass is required at the Mount Ellinor upper trailhead but not at the lower one, and the Mount Washington trailhead at the end of FR 2419 follows the Forest Service pass regime as well",
+    "capacity": "A large forested loop campground — published site counts vary between roughly two dozen and considerably more, so check current numbers rather than trusting a figure. Sites are well spaced in second growth"
+   }
+  ],
+  "itinerary": "From the Washington trailhead, climb the standard route to Washington's summit (~1.5 hrs at a moderate pace), then traverse the ridge to Ellinor's summit (one GPS-tracked report logged about 4.25 hrs total, trailhead-to-Ellinor-summit, over roughly 6 miles and 4,250 ft of cumulative gain), then descend Ellinor's trail and walk/shuttle back to a car.",
+  "waypoints": [
+   {
+    "name": "Mount Washington Trailhead (FR 2419)",
+    "type": "Trailhead",
+    "elev": 3026
+   },
+   {
+    "name": "Big Creek crossing",
+    "type": "Water",
+    "elev": 3042
+   },
+   {
+    "name": "Mount Washington - Summit",
+    "type": "Summit",
+    "elev": 6260
+   },
+   {
+    "name": "Mount Ellinor - Summit",
+    "type": "Topout",
+    "elev": 5944
+   },
+   {
+    "name": "Mount Ellinor Upper Trailhead",
+    "type": "Trailhead",
+    "elev": 3500
+   }
+  ],
+  "peak": "Mount Washington",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_waterfall_buttress",
+  "name": "Waterfall Buttress",
+  "area_id": "wa_waterfall_basin",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 6,
+  "gain_ft": 3000,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "From Seattle, drive I-5 north to the Arlington exit, then SR 530 east through Oso to Darrington, and turn onto Squire Creek Road at the west end of town, following it to the parking area where it's gated off by washout damage. From there the approach is long and rough: hike the old roadbed past a landslide crossing (~5 minutes in), reach the original road end around 30-40 minutes from the car, then follow a faint trail through a dry streambed and alder brush, ford Squire Creek, and pick through obscure forest track before finally breaking out into the open basin roughly 2 hours from the car. This is a known bushwhacky, unmaintained approach typical of Darrington-area crags, with route-finding (flagging, cairns) required in several spots.",
+  "descent": "Rappel the route with 2x60m ropes.",
+  "bivy": [
+   {
+    "name": "Squire Creek road end / trailhead bivouac",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A moving target and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+    "water": "Squire Creek runs close by and is dependable, but needs treating",
+    "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+    "capacity": "A few parties, informal"
+   },
+   {
+    "elev": 463,
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "role": "main",
+    "type": "camp",
+    "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+    "water": "Piped drinking water via spigots through the campground; reliable in season",
+    "permit": "None — this is a county park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+    "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+   }
+  ],
+  "itinerary": "Feasible as a long single day from the Squire Creek Road trailhead (~3-3.5 hr approach each way plus climbing and rappel descent), or shorten the summit day by hiking in the evening before and bivying at Martha's Place, which sits directly at the base of the buttress approach.",
+  "waypoints": [
+   {
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "type": "Campsite",
+    "elev": 463
+   },
+   {
+    "name": "Squire Creek Road Trailhead",
+    "type": "Trailhead",
+    "elev": 1174
+   },
+   {
+    "name": "Waterfall Basin (base of Waterfall Buttress)",
+    "type": "Base",
+    "elev": 2659
+   }
+  ],
+  "peak": "Waterfall Basin",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_west_craggy_peak_standard_route",
+  "name": "Standard Route (South Ridge / South Gully via Copper Glance Basin)",
+  "area_id": "wa_west_craggy_peak",
+  "discipline": "mountaineering",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": 4600,
+  "dist_km": 8.9,
+  "high_point_ft": 8372,
+  "season": "Jun-Sep",
+  "approach": "From Winthrop, drive north about 8 miles on West Chewuch Road (County Road 1213) to Eightmile Road (Forest Road 5130), then continue roughly 12-15 miles northwest along Eightmile Creek to the Copper Glance Trailhead (about 3,800-3,810 ft; no fee). Hike Copper Glance Trail #519, which begins on an old mining-claim jeep track/tramway grade (FSR 505) for about 1.5 miles to the historic Copper Glance mine, crosses Copper Glance Creek (the creek's bridge has been reported washed out or missing in some years, requiring a ford), and continues through a 2018 burn area past a small pond to Copper Glance Lake and the open upper basin below Isabella Ridge (about 3.3-3.5 miles one-way, ~6,260-6,600 ft) — a common camp/base for the peak.",
+  "descent": "Reverse the ascent line: down the south ridge/gully to the basin and out the Copper Glance Trail.",
+  "bivy": [
+   {
+    "elev": 6100,
+    "name": "Copper Glance Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the only camp that serves Big Craggy and West Craggy, and it belongs to a different drive from everything else in this zone: north from Winthrop on the West Chewuch road, then left onto the Eightmile Creek road and about twelve to thirteen miles to the trailhead at 3,800 feet. Nothing here connects to Harts Pass on foot. The trail climbs steeply for roughly two and a half miles on an old gated mining road past a washed-out bridge and the mine, then becomes a real trail through meadows on the shoulder of Big Craggy to the lake at 6,100 feet. A strong party can car-camp low on the Eightmile Creek road at one of the small Forest Service campgrounds along the creek and take both summits in one long day of about twelve miles and five thousand eight hundred feet, leaving the trail near 5,900 feet for Big Craggy's southeast ridge, then descending to the 7,600 foot saddle and picking a gully onto West Craggy's east ridge. Camping at the lake instead breaks that into something far more pleasant. The upper scree is loose and tiring on the ascent. This is an east-side approach and melts out earlier than the crest, but snow still holds above 5,500 feet well into the early summer, and the Eightmile Creek country has burned repeatedly in recent years so shade and blowdown are both unpredictable.",
+    "water": "The lake, and it is reliable. This is the only certain water high on the approach, since the trail above the old mine works is dry through the meadows.",
+    "permit": "Free self-issue Pasayten permit at the trailhead, no quota. Northwest Forest Pass or Interagency pass to park at the Copper Glance trailhead. Camp back from the shoreline rather than on it. The lower trail passes old mine workings on patented ground — leave the structures and hardware alone.",
+    "capacity": "One good area at the lake taking three or four tents. That is the whole of it, so a busy autumn weekend can fill it and there is no obvious second choice nearby."
+   },
+   {
+    "name": "Copper Glance Basin camp",
+    "role": "main",
+    "type": "camp"
+   }
+  ],
+  "itinerary": "Day 1: Drive to the Copper Glance Trailhead and hike ~3.3-3.5 miles with ~2,800 ft gain to a camp in Copper Glance Basin (~6,260-6,600 ft). Day 2: From camp, climb ~1,800 ft up talus/scree and the south gully to the south ridge and the summit (roughly 2.5-3 hours one-way), then descend to camp, break camp, and hike out. Strong parties often combine this with Big Craggy Peak and/or do the whole outing car-to-car in one long day.",
+  "waypoints": [
+   {
+    "name": "Copper Glance Trailhead",
+    "type": "Trailhead",
+    "elev": 3800
+   },
+   {
+    "name": "Upper basin creek crossing",
+    "type": "Water",
+    "elev": 6340
+   },
+   {
+    "name": "Copper Glance Basin camp",
+    "type": "Campsite",
+    "elev": 6600
+   },
+   {
+    "name": "West Craggy Peak summit",
+    "type": "Summit",
+    "elev": 8366
+   }
+  ],
+  "peak": "West Craggy Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_west_face_2",
+  "name": "West Face",
+  "area_id": "wa_north_peak",
+  "discipline": "alpine",
+  "grade": "5.11+",
+  "pitches": 6,
+  "gain_ft": 9600,
+  "dist_km": null,
+  "high_point_ft": 8160,
+  "season": "Jul-Sep",
+  "approach": "The standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of North Peak's granite West Face; this is an experienced-mountaineers-only objective, not a roadside crag.",
+  "descent": "From the summit, descend via four double-rope rappels — roughly 50 m, 50 m, 50 m and 20 m — directly from the peak, utilizing existing anchors and natural features on the granite. This brings climbers back to the base of the route. From base camp, descend the approach route in reverse. Some ascents have descended via traversal south to Middle Gunsight and South Gunsight, adding complexity and additional days to the descent.",
+  "bivy": [
+   {
+    "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+    "role": "main",
+    "type": "bivy",
+    "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 ft, and further east the Dome-Chickamin col is a genuine high camp with figures around 8,000 ft and above quoted for it. From that eastern col the Chickamin Glacier is the highway to Sinister Peak, whose North Face and Southwest Route are both reached across it, and on to the three Gunsight Range summits beyond, which are granite spires ringed by the Chickamin and Blue glaciers and among the most remote objectives in the state. Parties on the Gunsight peaks routinely cross the Chickamin twice in a day from a camp on this ground. Season is short: the glaciers are best covered from July into August, later brings open crevasses and bare ice, and there is no water, no shelter and no quick way down from any of it.",
+    "water": "None running. Every drop is melted snow, and on bare ice years even that takes hunting for. Carry what you can from Cub Lake or the Itswoot Ridge creeks and plan the fuel for melting.",
+    "permit": "Glacier Peak Wilderness self-issue permit from the Downey Creek register. Camp on snow, rock or ice. Pack out human waste, which matters more here than anywhere else in the zone because the meltwater below runs straight into the glacier-fed creeks.",
+    "capacity": "Rock rings and cleared platforms for one or two parties at a time. At the Dome-Chickamin col there is a flat, large, windy option on the west side and a smaller, harder, calmer one on the east. Nothing else, and no toilet."
+   },
+   {
+    "elev": 4500,
+    "name": "Bachelor Creek forest and meadow camps",
+    "role": "route",
+    "type": "camp",
+    "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles to Sixmile Camp; after that the abandoned Bachelor Creek trail deteriorates badly. The first two miles are tolerable, then it crosses to the south side and turns into slide alder and avalanche deadfall, with reports of sixty or more trees over the trail and long sections where following it is closer to bushwhacking than hiking. Parties routinely take nine to eleven hours from the car to Cub Lake and a slow group with heavy packs can lose the trail entirely. Splitting the approach with a night around the 4,500 ft meadows near the head of the creek is the honest answer for anyone who is not fast, and it is why some parties choose to enter from Cascade Pass and exit here rather than the other way round, so the brush is done downhill and with lighter packs. There is a north-side line through open forest paralleling the creek that some report as better than the trail itself. Everything about this approach is harder than the above suggests: the Suiattle River Road has been closed to vehicles at about milepost 4 after flood damage, under a Forest Service order in effect April 2, 2026 through January 1, 2028 unless rescinded sooner, which leaves roughly sixteen extra road miles each way to a trailhead at mile 20. On top of that, the Forest Service's Miner's Fire order (06-05-26-17) closes the Downey Creek Trailhead, the Downey Creek Trail and the Bachelor Creek Trail from August 15 through December 31, 2026, unless rescinded sooner. The road also spent about a decade closed before reopening in 2014, so a long closure here is the normal state of affairs rather than a surprise. Confirm the road before committing to this end.",
+    "water": "Bachelor Creek runs the whole way and is never the problem. The creek crossing itself can be, in high water or early season.",
+    "permit": "Glacier Peak Wilderness self-issue permit; Northwest Forest Pass or Interagency pass on the vehicle at Downey Creek. This is the one part of the zone low enough that a fire is not automatically out of the question, but the ground is wet forest and a stove is the sensible choice.",
+    "capacity": "Rough forest sites and a meadow flat near the head of the creek, party-sized only. Nothing established, no toilet."
+   },
+   {
+    "elev": 5338,
+    "name": "Cub Lake",
+    "role": "route",
+    "type": "camp",
+    "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hours to eleven getting here, which is a fair measure of how much the brush and the pack weight vary. It is the south-end hub: from the lake the trail climbs to Itswoot Ridge for Spire Point and Dome Peak, and everything on the Chickamin side including Sinister Peak and the Gunsight summits starts from the same ground. Because it is the established camp it also takes the impact, and there is a reasonable argument for camping on the ridge above instead where the ground is less worn, at the cost of carrying water. Coming out, this is where the traverse ends and the brush begins.",
+    "water": "The lake, reliable all season. This is the last certain water for anyone heading up onto the ridge and glaciers, and the first on the way out.",
+    "permit": "Glacier Peak Wilderness self-issue permit; Northwest Forest Pass or Interagency pass at the Downey Creek trailhead. Camp 100 feet back from the shore. Practically speaking no fires, and the site is heavily enough used that the surrounding wood is already gone.",
+    "capacity": "A well established camp at the lake with room for a few parties, plus meadow sites nearby. It is the most used ground in the southern half of the zone and it shows."
+   },
+   {
+    "elev": 5880,
+    "name": "Itswoot Ridge",
+    "role": "route",
+    "type": "bivy",
+    "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the number here describes the lower, wetter end of the ridge rather than a single spot. From the benches it is moderate snow of about thirty degrees, or a scree-and-heather line on the left in late season, up to Spire Col at 7,760 ft, and from the col a short descending traverse onto the upper Dana Glacier puts you under the southeast and southwest faces of Spire Point. Dome Peak is the other objective, reached over the Dana Glacier and the Dome Glacier above. Reaching this ridge from the car is a full day with a heavy pack, so plan on arriving late and going nowhere else that evening.",
+    "water": "Small running creeks below the lower benches, fed by snowfields on the north side of the ridge, and generally dependable through the normal climbing season. The higher benches toward the col dry out first, so drop back down for water rather than assuming it is there.",
+    "permit": "Glacier Peak Wilderness self-issue permit from the Downey Creek trailhead register, plus a Northwest Forest Pass or Interagency pass on the vehicle. No campfires up here.",
+    "capacity": "A string of flat heather benches along the ridge rather than one site, so several parties can spread out without crowding each other. No toilet, no built platforms."
+   },
+   {
+    "name": "Bachelor Flats (Camp 1)",
+    "role": "hidden"
+   },
+   {
+    "name": "Chikamin-Dome Col (Camp 2/High Camp)",
+    "role": "hidden"
+   }
+  ],
+  "itinerary": "Day 1: Hike the Downey Creek Trail and the brushy Bachelor Creek path to camp at Bachelor Flats (about 4,500 ft), or push on to Cub Lake (long day with significant brush and blowdown on Bachelor Creek). Day 2: Over the pass to Cub Lake, up Itswoot Ridge and across the Dome Glacier to a high camp at the Dome-Chickamin col (about 8,500 ft). Day 3: Cross the Chickamin Glacier to the base of the West Face, climb the route (5-6 pitches), rappel, and return to the col. Days 4-5: Hike out over Itswoot Ridge and Cub Lake and down the Bachelor Creek and Downey Creek trails. Carry a spare day for weather.",
+  "waypoints": [
+   {
+    "name": "Downey Creek Trailhead",
+    "type": "Trailhead",
+    "elev": 1400
+   },
+   {
+    "name": "Bachelor Creek crossing",
+    "type": "Water",
+    "elev": 4460
+   },
+   {
+    "name": "Bachelor Flats (Camp 1)",
+    "type": "Campsite",
+    "elev": 4542
+   },
+   {
+    "name": "Cub Lake",
+    "type": "Campsite",
+    "elev": 5338
+   },
+   {
+    "name": "Chikamin-Dome Col (Camp 2/High Camp)",
+    "type": "Campsite",
+    "elev": 8500
+   },
+   {
+    "name": "North Peak Summit",
+    "type": "Summit",
+    "elev": 8160
+   }
+  ],
+  "peak": "North Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_west_ridge_2",
+  "name": "West Ridge",
+  "area_id": "wa_paisano_pinnacle",
+  "discipline": "alpine",
+  "grade": "5.8+",
+  "pitches": 8,
+  "gain_ft": 3288,
+  "dist_km": 3.5,
+  "high_point_ft": 7910,
+  "season": "Jun-Sep",
+  "approach": "Follow the shared Wine Spires trail: boot path down talus to Early Winters Creek, cross on a log, then climb steeply up the timbered rib north of Burgundy Creek to the ~6,500 ft basin/camp (roughly 2 hours from the car). Paisano Pinnacle's West Ridge route starts lower than Burgundy Spire's and is commonly linked with Burgundy Spire's North Face in one long car-to-car day; fresh water is reported from a spring near the camp bench.",
+  "descent": "A few hundred feet of downclimbing followed by two rappels (30m, then 20m) into the gully beneath Burgundy Col, downclimbing between anchors, then reverse the approach trail back to the highway.",
+  "bivy": [
+   {
+    "elev": 6450,
+    "name": "Bench Camp — larch bench above the Wine Spires pullout",
+    "role": "main",
+    "type": "camp",
+    "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, for the west side of Juno Tower, and for linking two or three routes over a weekend rather than re-walking the approach each morning. Juno's east-side routes are a different problem — a 2.5 to 3.5 hour approach with a valley camp in Silver Star Creek — and this camp does not serve them. Bugs can be bad in July; water availability is what actually varies.",
+    "water": "Present early in the season from snowmelt and the creek drainage, but limited to non-existent by late summer and early autumn. Higher up, a tarn around 7,100 ft and year-round snow at Burgundy Col are the late-season backups.",
+    "permit": "None — no reservation, no quota, no backcountry permit. Northwest Forest Pass for the vehicle at the pullout below.",
+    "capacity": "Several established tent spots among the larches; the standard base for the north end of the ridge"
+   },
+   {
+    "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "role": "main",
+    "type": "camp",
+    "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone Fir around 3,600 ft, Early Winters near 2,200 ft — so they are warmer and considerably lower than the climbing, and Lone Fir is about seven miles from the Blue Lake area. Klipchuck sits back off the highway and is the quietest of the three. All are seasonal and closed when the road is.",
+    "water": "Klipchuck and Early Winters have drinking water in season, shut off outside it. Lone Fir has none, but sits on Early Winters Creek, which needs filtering.",
+    "permit": "Fee per night, first-come first-served at all three — no reservations, no climbing or backcountry permit. A Northwest Forest Pass is not needed to occupy a site. Fourteen-day stay limit.",
+    "capacity": "Roughly 27 sites at Lone Fir, 46 at Klipchuck and about a dozen tent-only sites at Early Winters"
+   }
+  ],
+  "itinerary": "Commonly climbed car-to-car in a single long day (roughly 10-13 hours total). Many parties instead camp overnight at the ~6,500 ft bench and combine the route with a climb of the Silver Star glacier and/or Burgundy Spire's North Face on the same trip.",
+  "waypoints": [
+   {
+    "name": "Wine Spires / Silver Star Trailhead (SR-20 MP 166)",
+    "type": "Trailhead",
+    "elev": 4250
+   },
+   {
+    "name": "Bench Camp — larch bench above the Wine Spires pullout",
+    "type": "Campsite",
+    "elev": 6450
+   },
+   {
+    "name": "Bench Camp spring",
+    "type": "Water",
+    "elev": 6500
+   },
+   {
+    "name": "Paisano Pinnacle - Summit",
+    "type": "Summit",
+    "elev": 7900
+   }
+  ],
+  "peak": "Paisano Pinnacle",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_windy_peak_windy_creek_trail",
+  "name": "Windy Peak via Windy Creek Trail (Cathedral Driveway Approach)",
+  "area_id": "wa_windy_peak",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "pitches": null,
+  "gain_ft": 3000,
+  "dist_km": 8.85,
+  "high_point_ft": 8335,
+  "season": "Jul-Oct",
+  "approach": "From Loomis, drive Toats Coulee Road (FR-39) roughly 22 miles to Long Swamp Campground, then continue about 3 more miles west on FR-39 to the Cathedral Driveway trailhead. The final stretch of road is gravel but reported as smooth/passenger-car friendly. In late June the road from Loomis was mostly paved and the last stretch to the trailhead was broken pavement, slow going, with a small fallen tree that drivers had to lift clear.",
+  "descent": "Reverse the Windy Creek Trail back to the Cathedral Driveway trailhead.",
+  "bivy": [],
+  "itinerary": "Doable as a single long day given the shorter mileage; can also be paired with a Cathedral Lakes/Cathedral Peak visit from the same general trailhead area for a multi-day trip.",
+  "waypoints": [
+   {
+    "name": "Windy Creek (Cathedral Driveway / Chewuch) Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Windy Peak summit",
+    "type": "Summit",
+    "elev": 8335
+   }
+  ],
+  "peak": "Windy Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_wing_peak_northwest_ridge",
+  "name": "Northwest Ridge (Standard Route)",
+  "area_id": "wa_wing_peak",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 3900,
+  "dist_km": 5.6,
+  "high_point_ft": 5761,
+  "season": "Late May-June",
+  "approach": "From the Barclay Lake Trailhead (~2,300 ft, reached via Forest Road 6024 off US Highway 2 in Baring), follow Barclay Creek Trail 1055, then leave the maintained trail to bushwhack along Barclay Creek and up Tailgunner Creek to an old, overgrown logging road. A bootpath climbs through forest to about 4,000 ft, crosses a Class 2-3 waterfall ravine, then follows the Tailgunner Couloir (grass and snow patches) to Tailgunner Pass (roughly 5,320-5,360 ft), which lies WNW of the Wing Peak summit. A brushy spur off the forest road about 1,000 ft before the Barclay Lake lot saves roughly 300 ft of walking but is overgrown; parking on the shoulder is easier.",
+  "descent": "Reverse the northwest ridge back to Tailgunner Pass, with 1-2 short rappels off the summit and upper snow face, then descend the Tailgunner Couloir and the bushwhack approach route back to the Barclay Lake Trailhead.",
+  "bivy": null,
+  "itinerary": "Commonly done as a 2-3 day trip: Day 1, hike/bushwhack from the Barclay Lake Trailhead to camp near Tailgunner Pass (~3,200-3,400 ft gain, roughly 6-7 hrs); Day 2 (optional), tag Gunn Peak and/or Tailgunner Peak from camp; final day, climb Wing Peak's northwest ridge from camp (~2.5 hrs up), then descend all the way to the trailhead (~4 hrs).",
+  "waypoints": [
+   {
+    "name": "Barclay Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 2300
+   },
+   {
+    "name": "Tailgunner Pass",
+    "type": "Junction",
+    "elev": 5320
+   },
+   {
+    "name": "Wing Peak Summit",
+    "type": "Summit",
+    "elev": 5761
+   }
+  ],
+  "peak": "Wing Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_winter_spring_ice_snow_mixed_2_east_face_variation",
+  "name": "East Face Variation",
+  "area_id": "wa_winter_spring_ice_snow_mixed_2",
+  "discipline": "ice",
+  "grade": "5.8 AI3-4 M4-5 Steep Snow PG13",
+  "pitches": 5,
+  "gain_ft": 2500,
+  "dist_km": 3.22,
+  "high_point_ft": 5606,
+  "season": "Dec-Apr",
+  "approach": "From the Alpental/Snow Lake trailhead (~3,100 ft, 1.5 mi north of I-90 Exit 52 via Alpental Rd), hike/skin up the main trail toward Source Lake, then turn south into the valley/basin below The Tooth's east face. In winter, avoid the summer approach path/gully directly below the East Face due to significant avalanche danger; approach via the broader basin instead.",
+  "descent": "Rappel the South Face route.",
+  "bivy": null,
+  "itinerary": "A single long winter/spring day: early approach from Alpental through the Source Lake basin to the base of the East Face, 5 pitches of mixed/ice/snow climbing, then rappelling the South Face and returning via the same basin approach.",
+  "waypoints": [
+   {
+    "name": "Alpental Parking Lot",
+    "type": "Trailhead",
+    "elev": 3100
+   },
+   {
+    "name": "The Tooth",
+    "type": "Summit",
+    "elev": 5606
+   },
+   {
+    "name": "Source Lake",
+    "type": "Water",
+    "elev": 4100
+   }
+  ],
+  "peak": "Winter-Spring (ice, snow",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_witches_tower_southwest_corner",
+  "name": "Southwest Corner",
+  "area_id": "wa_witches_tower",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "pitches": 1,
+  "gain_ft": 5400,
+  "dist_km": null,
+  "high_point_ft": 8566,
+  "season": "Jun-Sep",
+  "approach": "Same approach as the South Face route to Aasgard Pass (7,841 ft), then hike south toward the tower and ascend snow or Class 2 rock to the col just southwest of the peak (roughly 6-8 hours and about 4,800 ft of gain from the trailhead).",
+  "descent": "Descend the south face (Class 2-3) back toward the col.",
+  "bivy": null,
+  "itinerary": "Can be done in one day, but parties often recommend two days combined with Dragontail Peak, camping at the col or near Aasgard Pass.",
+  "waypoints": [
+   {
+    "name": "Stuart Lake/Colchuck Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3400
+   },
+   {
+    "name": "Colchuck Lake",
+    "type": "Water",
+    "elev": 5570
+   },
+   {
+    "name": "Aasgard Pass",
+    "type": "pass",
+    "elev": 7841
+   },
+   {
+    "name": "Witches Tower Summit",
+    "type": "Summit",
+    "elev": 8566
+   }
+  ],
+  "peak": "Witches Tower",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_witches_tower_west_buttress",
+  "name": "West Buttress",
+  "area_id": "wa_witches_tower",
+  "discipline": "alpine",
+  "grade": "5.4",
+  "pitches": 2,
+  "gain_ft": 5400,
+  "dist_km": 11.3,
+  "high_point_ft": 8566,
+  "season": "Jun-Sep",
+  "approach": "Same approach as the other routes: Stuart Lake/Colchuck Lake Trailhead to Colchuck Lake (5,570 ft), then the steep Aasgard Pass trail to the col behind Witches Tower; a steep snowfield crossing (ice axe recommended) leads to the route's base on the west side.",
+  "descent": "Rappel/downclimb, including an exposed ledge traverse, then descend the snowfield using an ice axe as needed.",
+  "bivy": null,
+  "itinerary": "Documented as a long single day (14 mi round trip, 5,400 ft gain, dawn-to-dark car-to-car) but could be broken into an overnight with a permit and camp near Colchuck Lake or Aasgard Pass.",
+  "waypoints": [
+   {
+    "name": "Stuart Lake/Colchuck Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3400
+   },
+   {
+    "name": "Colchuck Lake",
+    "type": "Water",
+    "elev": 5570
+   },
+   {
+    "name": "Aasgard Pass",
+    "type": "pass",
+    "elev": 7841
+   },
+   {
+    "name": "Witches Tower Summit",
+    "type": "Summit",
+    "elev": 8566
+   }
+  ],
+  "peak": "Witches Tower",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_wright_pond",
+  "name": "Wright-Pond",
+  "area_id": "wa_cutthroat_creek_wall_or_little_liberty_bell",
+  "discipline": "alpine",
+  "grade": "5.11b",
+  "pitches": 4,
+  "gain_ft": 1312,
+  "dist_km": 2.5,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "From Winthrop, drive west on SR-20 for approximately 28 miles (4.5 miles east of Washington Pass). Turn right on Forest Service Road 400 and follow for 1 mile to the trailhead parking area on the left side of the road.",
+  "descent": "Rappel the route: 4 double-rope raps on 60m ropes back down the line.",
+  "bivy": [
+   {
+    "elev": 4500,
+    "name": "Cutthroat Creek trailhead",
+    "role": "main",
+    "type": "camp",
+    "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. It is the start for Cutthroat Wall and for the Cutthroat Lake trail toward Cutthroat Pass, and some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies; dispersed camping in the trees along the forest road below is the uncontroversial option. Access is entirely gated by the SR 20 winter closure, and the road has been shut for construction windows in recent seasons, so confirm before driving out.",
+    "water": "None — no potable water at the trailhead. Cutthroat Creek runs below the lot and needs filtering.",
+    "permit": "No camping permit and no quota. Northwest Forest Pass, Interagency pass or a day pass covers parking. This is Okanogan-Wenatchee National Forest, NOT the national park, so there is no backcountry permit system here at all.",
+    "capacity": "Large gravel lot, roughly 20-30 vehicles; fills on summer weekends with larch-season hikers"
+   },
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "The closest developed campground to Washington Pass, on SR 20 along Early Winters Creek six or seven miles east of the pass, just past the turn for the Cutthroat Creek road. Because nothing here can be booked, arriving Friday evening in July or August is a gamble and the fallback is dispersed camping on a spur road. The season runs roughly May or June through September or October, entirely dependent on when the highway opens and when snow returns.",
+    "water": "No drinking water at Lone Fir. Early Winters Creek runs through the campground and needs filtering; Klipchuck and Early Winters campgrounds, farther east, have drinking water in season.",
+    "permit": "No reservations and no permit — first-come, first-served with a nightly fee. A Northwest Forest Pass is not needed to camp, only to park at the trailhead.",
+    "capacity": "27 sites, tents and small RVs"
+   },
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "role": "main",
+    "type": "camp",
+    "notes": "Klipchuck sits about a quarter mile off SR 20 in fir and pine down-valley toward Mazama, low enough to be warm and dry when the passes are still wet. Early Winters Campground is further east, smaller at around a dozen tent sites, split by the highway near the Methow River, and fills quickly. Both are a longer drive to the trailhead than Lone Fir, which is the tradeoff for a better chance of finding a site on a busy weekend.",
+    "water": "Drinking water spigots in season; vault toilets. Water is turned off at the end of the season while the sites stay usable.",
+    "permit": "First-come, first-served, nightly fee, no reservation and no permit required.",
+    "capacity": "46 sites, the largest campground on this stretch of highway"
+   },
+   {
+    "elev": 5800,
+    "name": "Cutthroat Wall base terrace",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The approach leaves the old roadbed a quarter mile from the trailhead at cairns, then climbs left through trees and light brush to a flat bench beneath the west-northwest-facing granite. Most parties do these routes car-to-car in a day, so a bivy here is for a late start or a two-day plan rather than standard practice. The wall faces away from morning sun, which makes an early camp less useful than it looks on the map. The crag is sometimes catalogued under Little Liberty Bell, which is the same approach and the same ground.",
+    "water": "No water on the terrace itself. Fill in Cutthroat Creek low on the approach and carry it up.",
+    "permit": "None — dispersed national forest camping, no permit and no quota.",
+    "capacity": "A small flat area under the cliff; room for one or two parties at most"
+   }
+  ],
+  "itinerary": "Single-day car-to-car climb: early start, 1-1.5 hr off-trail approach, 4 pitches to III 5.11 (allow several hours given sustained, technical, and runout climbing), 4 raps to descend, reverse the approach.",
+  "waypoints": [
+   {
+    "name": "Cutthroat Creek Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Early Winters Creek crossing",
+    "type": "Water",
+    "elev": 4058
+   },
+   {
+    "name": "Cutthroat Creek trailhead",
+    "type": "Campsite",
+    "elev": 4500
+   },
+   {
+    "name": "Base of the wall (shoulder at its right-hand side)",
+    "type": "Base",
+    "elev": null
+   },
+   {
+    "name": "Little Liberty Bell / Cutthroat Creek Wall (formation high point)",
+    "type": "Summit",
+    "elev": 6263
+   }
+  ],
+  "peak": "Cutthroat Creek Wall or Little Liberty Bell",
+  "area_type": "crag"
+ }
+]

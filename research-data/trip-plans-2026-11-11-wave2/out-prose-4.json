@@ -1,0 +1,1662 @@
+[
+ {
+  "id": "wa_gilbert_peak_west_route",
+  "itinerary": {
+   "cal": "Season is July through September. Gilbert is commonly done as a three-day multi-summit traverse from a camp below Snowgrass Flats.",
+   "totalNote": "Hike in to camp below Snowgrass Flats, traverse Old Snowy, Ives and Gilbert in one long day, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in below Snowgrass Flats",
+     "objective": "Camp at Lower Snowgrass or the timber sites below the flat",
+     "note": "Hike in on the Snowgrass Trail to Lower Snowgrass or the timber sites below Snowgrass Flat. The flat itself is closed to camping, so use the established sites below it.",
+     "gainFt": 1700,
+     "lossFt": 100,
+     "hours": 3.5,
+     "miles": 4,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Traverse Old Snowy, Ives and Gilbert",
+     "objective": "Climb three summits in one long day and return to camp",
+     "note": "Traverse to and climb Old Snowy Mountain, Ives Peak and Gilbert Peak in a single long day, then return to camp. Reported round-trip totals for the full multi-peak traverse are about 22 miles and 7,500 ft of cumulative gain and loss.",
+     "gainFt": 5700,
+     "lossFt": 5700,
+     "hours": null,
+     "miles": 14,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the trailhead",
+     "objective": "Return to the Snowgrass Flat Trailhead",
+     "note": "Pack up camp and hike out the Snowgrass Trail to the trailhead.",
+     "gainFt": 100,
+     "lossFt": 1700,
+     "hours": 2,
+     "miles": 4,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles from row approach (~4 mi); gain/loss derived from waypoints (TH 4,665, Goat Creek 4,565, camp 6,200); D2 miles/gain = prose 22 mi / 7,500 ft trip totals minus in/out legs; D1/D3 hours derived at ~2 mph + 1 h per 1,000 ft; D2 hours unknown; packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/snowgrass"
+  ],
+  "confidence": "medium",
+  "notes": "WTA Snowgrass (10 mi RT, 1,800 ft) is consistent with the ~4 mi/~1,700-2,000 ft approach. Row approach says ~2,000 ft gain; waypoint math gives ~1,650. Nothing dropped."
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "itinerary": {
+   "cal": "Season is July to October. Strong parties sometimes complete the whole outing car-to-car in one long day.",
+   "totalNote": "Hike the PCT from Rainy Pass to camp at Snowy Lakes, then climb Golden Horn and hike out the next day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike the PCT to Snowy Lakes",
+     "objective": "Make camp at Snowy Lakes",
+     "note": "Hike about 10-11 miles from the Rainy Pass trailhead on the PCT over Cutthroat and Granite passes to Snowy Lakes, and make camp.",
+     "gainFt": 2700,
+     "lossFt": 600,
+     "hours": 8,
+     "miles": 10.5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Golden Horn and hike out",
+     "objective": "Summit via the 5th-class block, then return to the car",
+     "note": "Make an alpine start from camp and scramble scree and talus to the summit ridge, then negotiate the short 5th-class summit block. Rappel or downclimb, return to camp, then hike out.",
+     "gainFt": 2000,
+     "lossFt": 4100,
+     "hours": null,
+     "miles": 12.5,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 miles/gain prose+row approach (10-11 mi, 2,700 ft); D1 loss derived (TH 4,880 + 2,700 vs lakes ~7,000); D1 hours derived pace; D2 gain/loss derived from summit 8,366 minus ~7,000 camp plus the return; D2 miles = WTA 23 mi RT minus D1; D2 hours unknown; packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/golden-horn"
+  ],
+  "confidence": "medium",
+  "notes": "Drive-to-trailhead clause trimmed to \"from the Rainy Pass trailhead\". Row dist_km 18.5 (~11.5 mi) is one-way and matches. WTA lists 23 mi RT."
+ },
+ {
+  "id": "wa_greenwood_mountain_west_ridge",
+  "itinerary": {
+   "cal": "Season is July to September. Most parties treat this as a 2-3 day trip. Some strong parties have done Dumbell and Greenwood car-to-car in one very long day; one recorded example covered about 18 miles round trip with about 5,800 ft of cumulative gain in roughly 10 hours 45 minutes.",
+   "totalNote": "Hike in to upper Phelps Basin, climb Greenwood (and/or Dumbell) from camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to upper Phelps Basin",
+     "objective": "Camp near 5,700-5,800 ft in upper Phelps Basin",
+     "note": "Hike roughly 5 miles from the Phelps Creek Trailhead to a camp in upper Phelps Basin at about 5,700-5,800 ft.",
+     "gainFt": 2300,
+     "lossFt": 0,
+     "hours": 5,
+     "miles": 5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Greenwood via the Dumbell col",
+     "objective": "Summit Greenwood and/or Dumbell and return to camp",
+     "note": "Climb Dumbell and/or Greenwood via the connecting col and ledge, then return to camp. Round trips from camp have taken roughly 8-11 hours.",
+     "gainFt": 3500,
+     "lossFt": 3500,
+     "hours": 9.5,
+     "miles": 8,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Phelps Creek",
+     "objective": "Return to the trailhead",
+     "note": "Pack up and hike out to the Phelps Creek Trailhead.",
+     "gainFt": 0,
+     "lossFt": 2300,
+     "hours": 2.5,
+     "miles": 5,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles prose (~5 mi); D1 gain derived (camp ~5,750 minus TH 3,500); D2 hours prose (8-11 h, midpoint); D2 gain/miles derived from prose car-to-car totals (18 mi, 5,800 ft) minus in/out legs; D1/D3 hours derived pace; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "D2 assumes both Dumbell and Greenwood; Greenwood alone would be shorter. Nothing dropped."
+ },
+ {
+  "id": "wa_gunnshy_peak_standard_route",
+  "itinerary": {
+   "cal": "Season is July to September. This is a single-day round trip from the Barclay Lake Trailhead.",
+   "totalNote": "A one-day climb from the Barclay Lake Trailhead along the Gunn-Barclay ridge to Gunnshy Peak and back the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Gunnshy Peak from Barclay Lake",
+     "objective": "Scramble the summit block and retrace the route",
+     "note": "Hike the spur road and climbers path from the Barclay Lake Trailhead via the Barclay Creek crossing and the forested headwall, then cross the waterfall gully. Work along the ridge past the Tailgunner-Wing saddle and Point 5,760+, via the Gunn Lake basin in summer and fall or the open-slope bypass in winter and spring, and scramble the summit block. Retrace the entire route back to the trailhead.",
+     "gainFt": 4295,
+     "lossFt": 4295,
+     "hours": null,
+     "miles": 8.9,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain/loss row gain_ft (4,295, matches WTA page); miles derived from row dist_km 7.2 treated as one-way (x2); hours unknown (no source); packLb estimate.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/gunnshy-peak",
+   "https://www.wta.org/go-hiking/hikes/barclay-lake"
+  ],
+  "confidence": "medium",
+  "notes": "\"Drive to trailhead\" clause dropped as road content. Mileage is uncertain: WTA gives no distance; neighbour Gunn Peak is ~6 mi RT, so 8.9 mi assumes dist_km is one-way."
+ },
+ {
+  "id": "wa_gunrunner",
+  "itinerary": {
+   "cal": "Season is July to September. The Gunrunner traverse of Middle Peak is a five-day trip via the southern Ptarmigan Traverse approach from Downey Creek.",
+   "totalNote": "Five days: hike in via Bachelor Flats to a Dome-Chickamin Col base camp, climb the four-peak Gunrunner traverse, and return the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Downey Creek to Bachelor Flats",
+     "objective": "Reach the Bachelor Flats camp",
+     "note": "Hike from the Downey Creek Trailhead to the Bachelor Flats camp, about 6 miles with 3,100 ft of gain.",
+     "gainFt": 3100,
+     "lossFt": null,
+     "hours": null,
+     "miles": 6,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Bachelor Flats to Dome-Chickamin Col",
+     "objective": "Establish base camp at the col",
+     "note": "Climb from Bachelor Flats to the Dome-Chickamin Col base camp, about 3.2 miles with 2,600 ft of gain.",
+     "gainFt": 2600,
+     "lossFt": null,
+     "hours": null,
+     "miles": 3.2,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb the Gunrunner traverse",
+     "objective": "Traverse four peaks of the Gunsight Range",
+     "note": "Climb the Gunrunner traverse of four peaks, with 6-8 hours of climbing time and about 1,500 ft of gain.",
+     "gainFt": 1500,
+     "lossFt": null,
+     "hours": 7,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Return to Bachelor Flats",
+     "objective": "Descend to base camp and continue to Bachelor Flats",
+     "note": "Descend to base camp, then return to Bachelor Flats, which takes about 5-6 hours.",
+     "gainFt": null,
+     "lossFt": 2600,
+     "hours": 5.5,
+     "miles": 3.2,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Hike out to Downey Creek",
+     "objective": "Return to the trailhead",
+     "note": "Return to the trailhead, about 6 miles with 4,500 ft of loss.",
+     "gainFt": null,
+     "lossFt": 4500,
+     "hours": null,
+     "miles": 6,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "All gain/miles/hours from prose day markers; D4 miles/loss derived as the reverse of D2; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Internal inconsistency: Day 5 states 4,500 ft loss but Day 1 states only 3,100 ft gain for the same leg. Prose total gain (~7,200 ft) exceeds row gain_ft 5,000. Day 3 distance not stated."
+ },
+ {
+  "id": "wa_guye_peak_improbable_traverse",
+  "itinerary": {
+   "cal": "Season is June to October. This is a single-day car-to-car outing from Seattle, and there is no reason to camp; for a relaxed day, camp at a Snoqualmie Pass area campground the night before rather than on the mountain.",
+   "totalNote": "A single long day from Alpental: talus approach, 4-5 hours on the face, then over the three summits and down the Cave Ridge trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Improbable Traverse",
+     "objective": "Climb the face, cross three summits and descend Cave Ridge",
+     "note": "Park at Alpental and be scrambling the talus cone by first light, aiming to start the roped climbing within an hour of leaving the car. Expect roughly 4-5 hours on the face, then 1.5-2 hours over the three summits and down the Cave Ridge trail. Published reports range from about 8 hours for a fast, competent pair to 14+ hours for a party that pitches everything out; one well-known report started at 10:30 am and exited at 1 am.",
+     "gainFt": 2100,
+     "lossFt": 2100,
+     "hours": 10,
+     "miles": 3,
+     "packLb": 18,
+     "schedule": [
+      {
+       "time": "4:30-5:00 AM",
+       "label": "Leave Seattle",
+       "detail": "Drive to Alpental."
+      },
+      {
+       "time": "First light",
+       "label": "Talus cone",
+       "detail": "Be scrambling the talus cone below the west face."
+      },
+      {
+       "time": "Within 1 hour of parking",
+       "label": "Start roped climbing",
+       "detail": "Then roughly 4-5 hours on the face."
+      }
+     ]
+    }
+   ]
+  },
+  "figureSources": "hours prose (8-14+ h range; 10 chosen as a typical party); gain row gain_ft; miles row dist_km 4.83 treated as the round trip (short approach and Cave Ridge descent); packLb estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Miles are uncertain (dist_km could be one-way, which would make ~6 mi). Nothing dropped."
+ },
+ {
+  "id": "wa_guye_peak_southeast_gully",
+  "itinerary": {
+   "cal": "Season is January to April. This is a short winter day, and nothing here justifies an overnight.",
+   "totalNote": "A short pre-dawn winter climb from the PCT North trailhead up a 1,400 ft snow gully, walking off east or west.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Southeast Gully",
+     "objective": "Climb 1,400 ft of steepening snow to the summit ridge",
+     "note": "Start before dawn so the gully is still frozen, and hike about 1.4 miles up the old Commonwealth Basin trail from the PCT North trailhead until the peak is directly west-northwest. Break uphill to the base of the gully and climb 1,400 ft of snow that steepens from 45 to about 70 degrees, topping out on the ridge between the true and false summits. Walk off east down Commonwealth or west over Cave Ridge; the sun-exposed half of the route softens quickly and the whole line becomes a wet-slide problem once it warms.",
+     "gainFt": 2100,
+     "lossFt": 2100,
+     "hours": null,
+     "miles": 4.5,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain row gain_ft; miles row dist_km 7.24 (~4.5 mi) treated as round trip (consistent with 1.4 mi trail + gully); hours unknown; packLb estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row `peak` field is malformed (\"Winter-Spring (ice, snow\") - should be Guye Peak. Nothing dropped."
+ },
+ {
+  "id": "wa_hadley_peak_cougar_divide",
+  "itinerary": {
+   "cal": "Season is August to October. This route is commonly done car-to-car in a single day thanks to the shorter, higher-starting approach.",
+   "totalNote": "A single-day round trip along Cougar Divide and Chowder Ridge to Hadley Peak, about 10.6 miles and 3,600 ft.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Hadley Peak via Cougar Divide",
+     "objective": "Summit and return to the trailhead",
+     "note": "Make an early start and allow roughly 5-6 hours to the summit and back. The round trip is about 10.6 miles with about 3,600 ft of cumulative gain.",
+     "gainFt": 3600,
+     "lossFt": 3600,
+     "hours": 5.5,
+     "miles": 10.6,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "all figures from prose (10.6 mi, 3,600 ft, 5-6 h); packLb estimate.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/cougar-divide"
+  ],
+  "confidence": "high",
+  "notes": "Row dist_km 8.5 (~5.3 mi) is one-way and matches prose. Nothing dropped."
+ },
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "itinerary": {
+   "cal": "Season is August to October. Some parties break it into an overnight with a ridge camp on Chowder Ridge given the length.",
+   "totalNote": "A long single day along Skyline Divide and Chowder Ridge to Hadley Peak, about 14-15 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Hadley Peak via Skyline Divide",
+     "objective": "Summit along the ridge and return",
+     "note": "Make an early trailhead start and allow roughly 4-5 hours to the summit along the ridge, with a similar time back down. The round trip is about 14-15 miles.",
+     "gainFt": 3300,
+     "lossFt": 3300,
+     "hours": 9,
+     "miles": 14.5,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles/hours prose (14-15 mi; 4-5 h each way); gain derived from net elevation (summit 7,515 minus TH 4,250); packLb estimate.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/skyline-divide"
+  ],
+  "confidence": "medium",
+  "notes": "Dropped \"(when the trailhead is reachable)\" - FS 37 washout/gate content. Row gain_ft 2,818 contradicts the net climb (7,515 - 4,250 = 3,265 ft) so derived ~3,300 used. Prose \"car-to-camp-free\" wording cleaned."
+ },
+ {
+  "id": "wa_helmet_butte_standard_route",
+  "itinerary": {
+   "cal": "Season is July to September. Many parties combine Helmet Butte with nearby Fortress Mountain or Liberty Cap given the shared approach.",
+   "totalNote": "Backpack to Pass No Pass or Buck Creek Pass, scramble Helmet Butte from camp, and hike out over the following one to two days.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Pass No Pass",
+     "objective": "Camp at Pass No Pass or Buck Creek Pass",
+     "note": "Backpack the roughly 8.8-mile approach from the Trinity Trailhead to a camp at Pass No Pass or Buck Creek Pass, both of which have multiple established sites.",
+     "gainFt": 3000,
+     "lossFt": 0,
+     "hours": 7.5,
+     "miles": 8.8,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Scramble Helmet Butte, start out",
+     "objective": "Summit from camp, then break camp",
+     "note": "Day-scramble Helmet Butte from camp, which takes 1-2 hours round trip from Pass No Pass. Break camp and hike partway or fully out.",
+     "gainFt": 1600,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Finish the hike out",
+     "objective": "Return to the Trinity Trailhead",
+     "note": "Finish hiking out to the trailhead if you did not complete it on Day 2.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 miles prose (8.8 mi); D1 gain derived (camp 5,800 minus TH 2,800); D1 hours derived pace; D2 gain derived (summit 7,420 minus camp ~5,800); D2 scramble time 1-2 h from prose but total day unknown; D2/D3 split of the hike out is not specified so left null; packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/buck-creek-pass"
+  ],
+  "confidence": "medium",
+  "notes": "Dropped \"(FR 6200 has been closed beyond Atkinson Flat by storm damage - verify before departure)\" and the drive clause. WTA Buck Creek Pass page also notes a fire closure (not included). Day 3 is optional per prose (\"Day 2 or 3\")."
+ },
+ {
+  "id": "wa_honeymoon_route",
+  "itinerary": {
+   "cal": "Season is April to June. Most parties camp in Royal Basin and climb the couloir as a day mission from camp; at least one recorded ascent was completed as part of a long winter day trip. A wilderness permit is required for overnight stays.",
+   "totalNote": "Hike in to Royal Basin, climb the Honeymoon couloir to Mount Deception as a day mission from camp, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Royal Basin",
+     "objective": "Camp at Royal Lake or Upper Royal Basin",
+     "note": "Hike the Upper Dungeness and Royal Basin trails to a camp at Royal Lake or in Upper Royal Basin.",
+     "gainFt": 3050,
+     "lossFt": 0,
+     "hours": 7,
+     "miles": 8.2,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Honeymoon couloir",
+     "objective": "Summit Mount Deception and return to camp",
+     "note": "Climb the couloir to the summit as a day mission from camp, then descend back to Royal Basin.",
+     "gainFt": 2200,
+     "lossFt": 2200,
+     "hours": null,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out from Royal Basin",
+     "objective": "Return to the Upper Dungeness Trailhead",
+     "note": "Pack up and hike out the Royal Basin trail to the trailhead.",
+     "gainFt": 0,
+     "lossFt": 3050,
+     "hours": 4,
+     "miles": 8.2,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles from row approach (~7 mi to Royal Lake + ~1 mi to upper basin) and WTA (7.2 mi to Royal Lake); gain derived from waypoints (TH 2,550, Upper Royal Basin 5,600, summit 7,788); D1/D3 hours derived pace; D2 miles/hours unknown (approach gives ~3 h from upper basin to top of gully only); packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/royal-basin"
+  ],
+  "confidence": "medium",
+  "notes": "Prose has no day markers; split into in / climb / out from \"camp in Royal Basin and climb the couloir as a day mission\". Row gain_ft 7,861 is well above the ~5,250 ft derived from waypoints. Nothing dropped."
+ },
+ {
+  "id": "wa_hourglass_gully_winter",
+  "itinerary": {
+   "cal": "Season is December to May. As a single-day push the climb takes 15+ hours with a typical 2:30 AM start from the trailhead; camping at Lake Serene makes the timing more manageable.",
+   "totalNote": "Hike to Lake Serene and camp, then climb Hourglass Gully and the East Ridge to Main Peak and hike all the way out the next day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Lake Serene",
+     "objective": "Camp at Lake Serene",
+     "note": "Drive 1-2 hours from the Puget Sound region to the Lake Serene trailhead, then hike the Lake Serene trail to the lake in 2-3 hours. Camp at Lake Serene if doing this as a two-day climb.",
+     "gainFt": 2000,
+     "lossFt": 0,
+     "hours": 2.5,
+     "miles": 4.1,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Hourglass Gully to Main Peak",
+     "objective": "Summit Main Peak and hike out to the car",
+     "note": "Start at about 4:30 AM from the lake camp and approach the saddle in 2-3 hours, climb Hourglass Gully in 2-3 hours, then traverse the East Ridge in 1-2 hours to the summit. Descend via rappels and the gully in 2-3 hours, return to Lake Serene in 2-3 hours, and hike out in 2-3 hours, reaching the car by dark.",
+     "gainFt": 3500,
+     "lossFt": 5500,
+     "hours": 14,
+     "miles": null,
+     "packLb": 25,
+     "schedule": [
+      {
+       "time": "4:30 AM",
+       "label": "Leave Lake Serene camp",
+       "detail": "2:30 AM is typical if starting from the trailhead instead."
+      },
+      {
+       "time": "~6:30-7:30 AM",
+       "label": "Saddle",
+       "detail": "Approach takes 2-3 hours."
+      },
+      {
+       "time": "Mid-morning to midday",
+       "label": "Summit",
+       "detail": "After 2-3 hours in the gully and 1-2 hours on the East Ridge."
+      },
+      {
+       "time": "By dark",
+       "label": "Back at the car",
+       "detail": "After rappels, the gully descent, the return to the lake and the hike out."
+      }
+     ]
+    }
+   ]
+  },
+  "figureSources": "D1 miles/gain/hours prose (2-3 h) + WTA Lake Serene (4.1 mi, 2,000 ft); D2 hours = sum of prose segment midpoints; D2 gain derived (summit 5,991 minus lake ~2,500); D2 loss = row gain_ft 5,500 total; D2 miles unknown; schedule from prose times; packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/lake-serene"
+  ],
+  "confidence": "medium",
+  "notes": "Row dist_km 5.8 (~3.6 mi) is shorter than the 4.1 mi to Lake Serene alone, so it was not used. Prose \"summit by mid-morning (8-10 hours from car)\" is internally loose (2:30 + 8-10 h is late morning to midday). Saddle/summit clock times in the schedule are derived from the prose durations."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "itinerary": {
+   "cal": "Season is June to September. Best done as a single very long day from Hozomeen.",
+   "totalNote": "A single very long day from the Hozomeen ranger station up the north ridge to the North Peak and back, about 15 miles and 6,800 ft.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the North Peak by the north ridge",
+     "objective": "Summit and return to Hozomeen in one push",
+     "note": "Leave the ranger station in the dark and allow roughly 7 hours to the summit and 6 hours back, about 13 hours of moving time plus breaks. Parties who prefer not to commit to a 15-hour day can bivy on the north ridge near the 5,900-6,800 ft benches, but there is no reliable water up there, so a camp means hauling everything you will drink.",
+     "gainFt": 6800,
+     "lossFt": 6800,
+     "hours": 15,
+     "miles": 15,
+     "packLb": 22,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "hours prose (7 h up + 6 h down, ~15 h day); miles/gain/loss row approach (~15 mi RT, 6,800 ft); packLb estimate.",
+  "sources": [],
+  "confidence": "high",
+  "notes": "Border gate closure text in the row approach is not in the prose (nothing dropped from prose)."
+ },
+ {
+  "id": "wa_hozomeen_mountain_northeast_buttress",
+  "itinerary": {
+   "cal": "Season is June to September. Most parties find this a comfortable two-and-a-half-day trip; strong parties do the second day as summit plus full walk-out.",
+   "totalNote": "Hike 10.5 miles along Hozomeen Ridge to a camp near Monument 74, then climb the North Peak and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the Monument 74 camp",
+     "objective": "Camp near 6,345 ft below Hozomeen",
+     "note": "Start hiking mid-morning and cover the 10.5 miles and roughly 4,000 ft of trail to the Monument 74 area camp near 6,345 ft, which takes about 7 hours. Top off water at the last forest creeks before the ridge.",
+     "gainFt": 4000,
+     "lossFt": null,
+     "hours": 7,
+     "miles": 10.5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Peak and hike out",
+     "objective": "Summit via the northeast ridge, then walk out",
+     "note": "Leave camp at first light and drop to the 5,800 ft saddle, then climb the cirque snowfields and northeast ridge to the summit. Return to camp, pack, and hike out.",
+     "gainFt": 2800,
+     "lossFt": 6800,
+     "hours": null,
+     "miles": null,
+     "packLb": 35,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 miles/gain/hours prose; D2 gain derived (8,071 summit minus 5,800 saddle, plus 545 ft regain to camp); D2 loss balances total climbed; D2 miles/hours unknown (summit leg distance not given); packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped \"drive Silver-Skagit Road from Hope in the morning\" (road content; row approach also notes the road and border crossing closures). Row dist_km 16.9 (~10.5 mi) matches the one-way trail distance to camp."
+ },
+ {
+  "id": "wa_hozomeen_mountain_west_face",
+  "itinerary": {
+   "cal": "Season is August to September. Plan on four days; a very fast, very experienced party might compress this to three, but nobody should plan on two.",
+   "totalNote": "Four days: haul wall loads to a camp north of the peak, traverse to the base and climb the face over two days with a bivy, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Haul loads to camp north of the peak",
+     "objective": "Camp just north of Hozomeen",
+     "note": "Hike 11-plus miles with wall loads to a camp just north of the peak.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 11,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Traverse to the base and start climbing",
+     "objective": "Reach the wall and climb as far as light allows",
+     "note": "Spend about 4.5 hours downclimbing gullies and traversing ribs to the base, then climb as far as light allows. The first ascent party reached the top of pitch 10 and bivouacked.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 25,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Finish the face and descend",
+     "objective": "Top out and return to camp via the north side",
+     "note": "Finish the last two pitches and the 100 ft summit ridge stroll, then descend the north side to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 25,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "note": "Hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 11,
+     "packLb": 45,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 miles prose (11+ mi); D4 miles mirrors D1 (row dist_km 17.7 ~ 11 mi one-way); D2 base approach 4.5 h from prose but total day unknown; gains unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped \"drive in from Hope\" (road content; the Hozomeen border crossing has been closed per row approach). Row gain_ft is null."
+ },
+ {
+  "id": "wa_huckleberry_mountain_east_ridge",
+  "itinerary": {
+   "cal": "Season is July to October. This is typically a 2-3 day trip, with a round trip of roughly 20+ miles and about 5,800+ ft of cumulative gain overall.",
+   "totalNote": "Hike the PCT to a Ridge Lake or Gravel Lake camp, climb the East Ridge from camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Ridge Lake",
+     "objective": "Camp at Ridge Lake or Gravel Lake",
+     "note": "Hike in on the PCT from Snoqualmie Pass to a camp at Ridge Lake or Gravel Lake.",
+     "gainFt": 2700,
+     "lossFt": 150,
+     "hours": 6,
+     "miles": 7,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Ridge",
+     "objective": "Summit Huckleberry and return to camp",
+     "note": "Climb to the summit via the East Ridge and descend back to camp.",
+     "gainFt": 3000,
+     "lossFt": 3000,
+     "hours": null,
+     "miles": 8,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Snoqualmie Pass",
+     "objective": "Return to the PCT North Trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": 150,
+     "lossFt": 2700,
+     "hours": 4,
+     "miles": 7,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles/gain from row approach (Ridge Lake ~7 mi, 2,700 ft) and WTA Kendall Katwalk (6 mi + 1.25 mi to the lakes, 150 ft drop); D2 gain derived from prose 5,800 ft total minus in/out; D2 miles derived from approach (Huckleberry Flats 10-11 mi vs Ridge Lake 7 mi); D1/D3 hours derived pace; packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/kendall-katwalk"
+  ],
+  "confidence": "medium",
+  "notes": "Nothing dropped. Row dist_km 17.4 (~10.8 mi) is one-way and matches the approach to Huckleberry Flats."
+ },
+ {
+  "id": "wa_huckleberry_mountain_south_face",
+  "itinerary": {
+   "cal": "Season is July to October. Most parties treat this as a 2-3 day trip, camping at Ridge Lake or Gravel Lake, given the long shared PCT approach with the peak's other routes.",
+   "totalNote": "Hike the PCT to a Ridge Lake or Gravel Lake camp, climb the South Face from camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Ridge Lake",
+     "objective": "Camp at Ridge Lake or Gravel Lake",
+     "note": "Hike in on the long shared PCT approach to a camp at Ridge Lake or Gravel Lake.",
+     "gainFt": 2700,
+     "lossFt": 150,
+     "hours": 6,
+     "miles": 7,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the South Face",
+     "objective": "Summit Huckleberry and return to camp",
+     "note": "Continue on the PCT above Joe Lake to the base of the South Face, climb it, and return to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 5,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Snoqualmie Pass",
+     "objective": "Return to the PCT North Trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": 150,
+     "lossFt": 2700,
+     "hours": 4,
+     "miles": 7,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 from the shared approach (row of sibling East Ridge route: Ridge Lake ~7 mi, 2,700 ft) and WTA Kendall Katwalk; D2 miles derived from row dist_km 15.3 (~9.5 mi one-way) minus 7 mi to camp, x2; D2 gain/hours unknown; packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/kendall-katwalk"
+  ],
+  "confidence": "low",
+  "notes": "Prose has no day markers; split into in / climb / out from \"2-3 day trip camping at Ridge Lake or Gravel Lake\". D2 note draws on the row approach (PCT above Joe Lake). Nothing dropped."
+ },
+ {
+  "id": "wa_icy_peak_ruth_icy_traverse",
+  "itinerary": {
+   "cal": "Season is June to July. Commonly done in a long single day, or as an overnight with camp near Ruth Mountain's summit or the Ruth-Icy Saddle.",
+   "totalNote": "A long day from the Hannegan Trailhead over Ruth Mountain to Icy Peak and back, about 16 miles and 8,000 ft.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Traverse Ruth Mountain to Icy Peak",
+     "objective": "Summit Icy Peak and reverse the route",
+     "note": "Hike from the Hannegan Trailhead to Hannegan Pass, about 4 miles, then go up and over Ruth Mountain and across to and up Icy Peak's Southeast summit. Reverse the entire route; a documented outing totaled about 16 miles and roughly 8,000 ft of cumulative gain and loss round trip.",
+     "gainFt": 8000,
+     "lossFt": 8000,
+     "hours": null,
+     "miles": 16,
+     "packLb": 22,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles/gain/loss prose (16 mi, 8,000 ft); hours unknown; packLb estimate.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/hannegan-pass-and-peak"
+  ],
+  "confidence": "medium",
+  "notes": "Modeled as the single-day option; the overnight variant is noted in cal. Row gain_ft 8,000 matches. Nothing dropped."
+ },
+ {
+  "id": "wa_indian_head_peak_southwest_slopes",
+  "itinerary": {
+   "cal": "Season is July to September. This is typically a 2-day backpack, or 3 days for a more relaxed pace with a second night in camp. A very strong party can do it as a single very long day trip from the trailhead, about 27 miles round trip with about 6,000 ft of gain.",
+   "totalNote": "Backpack the North Fork Sauk Trail to a camp near White Pass or Indian Pass, then climb Indian Head Peak and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to White Pass or Indian Pass",
+     "objective": "Camp near White Pass or Indian Pass",
+     "note": "Hike the North Fork Sauk Trail from the trailhead to a camp near White Pass or Indian Pass, roughly 10 miles to White Pass or 13-14 miles to Indian Pass with about 4,000+ ft of gain.",
+     "gainFt": 4000,
+     "lossFt": 900,
+     "hours": null,
+     "miles": 13.5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Indian Head Peak and hike out",
+     "objective": "Scramble the summit from camp and return",
+     "note": "Climb Indian Head Peak round trip from camp, an off-trail scramble of several hours. Then either hike out or camp again and hike out on an optional Day 3.",
+     "gainFt": 2000,
+     "lossFt": 5100,
+     "hours": null,
+     "miles": 13.5,
+     "packLb": 35,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 miles/gain prose (13-14 mi to Indian Pass, 4,000+ ft); D2 miles/gain = prose single-day totals (27 mi, 6,000 ft) minus D1; D1 loss derived (PCT crest ~5,900 down to Indian Pass ~5,000); hours unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Plan assumes the Indian Pass camp. D2 gain from totals (2,000 ft) is low versus the summit climb alone (~2,450 ft from Indian Pass) plus recrossing White Pass, so prose totals look light; row gain_ft 5,900 agrees with prose. Nothing dropped."
+ },
+ {
+  "id": "wa_inner_constance_northwest_buttress",
+  "itinerary": {
+   "cal": "Season is July to September. Three days is the sane plan given the approach mileage plus a 1,200-foot loose buttress; strong parties sometimes compress it to two days by carrying to the boulder camp on day 1.",
+   "totalNote": "Hike to Home Lake and the boulder camp below the face, climb the Northwest Buttress, and hike out on the third day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Home Lake",
+     "objective": "Camp at Home Lake or the boulders northwest of the summit",
+     "note": "Hike about 9.3 miles from the Upper Dungeness Trailhead to Home Lake. If you still have daylight, push up into the Home Creek basin and camp at the boulders northwest of the summit so you can study the face in evening light.",
+     "gainFt": 2800,
+     "lossFt": 0,
+     "hours": 7.5,
+     "miles": 9.3,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northwest Buttress",
+     "objective": "Summit Inner Constance and return to camp",
+     "note": "Climb the buttress, descend, and return to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Upper Dungeness",
+     "objective": "Return to the trailhead",
+     "note": "Hike out to the trailhead.",
+     "gainFt": 0,
+     "lossFt": 2800,
+     "hours": 5,
+     "miles": 9.3,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles prose (9.3 mi); gain derived (Home Lake 5,330 minus Upper Dungeness TH ~2,550 from the Royal Basin row); D1/D3 hours derived pace; D2 unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped \"drive to the Upper Dungeness Trailhead\" clause (road content). Row dist_km 15 (~9.3 mi) is one-way and matches. TH elevation not in this row (borrowed from the Honeymoon Route row, same trailhead)."
+ },
+ {
+  "id": "wa_inner_constance_seans_route",
+  "itinerary": {
+   "cal": "Season is July to September. The climb is a single-push day from a camp at Home Lake.",
+   "totalNote": "Hike to a Home Lake camp, climb Sean's Route and descend Avalanche Canyon in a 12.5-hour day, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Home Lake",
+     "objective": "Camp at Home Lake",
+     "note": "Hike the Upper Dungeness Trail about 9.3 miles to a camp at Home Lake.",
+     "gainFt": 2800,
+     "lossFt": 0,
+     "hours": 7.5,
+     "miles": 9.3,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Sean's Route",
+     "objective": "Climb the buttress and descend Avalanche Canyon",
+     "note": "Climb the buttress, about three technical pitches plus scrambling to the false summit, then descend via Avalanche Canyon back to Home Lake. The first-ascent party reported roughly 12.5 hours round trip.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 12.5,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Upper Dungeness",
+     "objective": "Return to the trailhead",
+     "note": "Hike out to the trailhead.",
+     "gainFt": 0,
+     "lossFt": 2800,
+     "hours": 5,
+     "miles": 9.3,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D2 hours prose (12.5 h); D1/D3 miles from row approach (9.3 mi); gain derived (Home Lake 5,330 minus TH ~2,550 from the Upper Dungeness trailhead used in other rows); D1/D3 hours derived pace; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Prose describes only the climb day; approach and exit days come from the row approach. Nothing dropped."
+ },
+ {
+  "id": "wa_inspiration_traverse",
+  "itinerary": {
+   "cal": "Season is June to September. Many parties add a fourth day or split the peaks differently, especially when snow is soft or the moats are open.",
+   "totalNote": "Three days on the Eldorado-Inspiration icecap climbing Eldorado, Austera, Primus, Klawatti and Dorado Needle from two high camps.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb to the Inspiration Glacier camp",
+     "objective": "Camp on rock at the edge of the Inspiration Glacier",
+     "note": "Hike and scramble from the Eldorado Creek trailhead up the boulder field and basins, then climb the Eldorado Glacier and camp on rock at the edge of the Inspiration Glacier. Climb Eldorado in the evening if time and conditions allow.",
+     "gainFt": 5500,
+     "lossFt": null,
+     "hours": 9.5,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Austera, Primus and Klawatti",
+     "objective": "Climb three peaks and camp at Klawatti col",
+     "note": "Cross the Inspiration Glacier east and climb Austera and Primus via the Klawatti and North Klawatti glaciers. Climb Klawatti from the col camp on its south side.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Dorado Needle and descend to the car",
+     "objective": "Climb Dorado Needle, then return to the trailhead",
+     "note": "Climb Dorado Needle from the McAllister Glacier side, then return over the Inspiration and Eldorado glaciers and descend to the car.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 gain derived (high camp 7,630 minus TH 2,175); D1 hours from the Klawatti SW Buttress row approach (5-6 h to the basin + 3-5 h to high camp, midpoint); other figures unknown (row gain_ft 14,062 is a trip total); packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row dist_km 16.65 (~10.3 mi) is ambiguous for a multi-peak traverse, so day miles left null. Nothing dropped."
+ },
+ {
+  "id": "wa_j_tnar",
+  "itinerary": {
+   "cal": "Season is July to September. Plan on about a week; multiday success requires disciplined pacing and weather monitoring.",
+   "totalNote": "A seven-day big-wall push: approach and scout on day 1, climb with portaledge camps on days 2-6, and rappel the route on day 7.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Lake Serene and scout the wall",
+     "objective": "Reach the cirque and pick a bivy",
+     "note": "Hike the Lake Serene trail, 4.1 miles with 2,000 ft of gain in 2-2.5 hours, then approach the cirque in about 30 minutes. Spend 1-2 hours scouting the wall and a bivy location.",
+     "gainFt": 3200,
+     "lossFt": 0,
+     "hours": 4.5,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb pitches 1-3",
+     "objective": "Start the wall and bivy on pitch 3",
+     "note": "Start climbing with portaledge camps. The first ascensionists climbed pitches 1-3 and bivied on pitch 3.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb on through pitch 4",
+     "objective": "Push past the A3+ crux",
+     "note": "Continue climbing from the portaledge camp. Pitch 4, the A3+ crux, is one of the route's highlights.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Wall day",
+     "objective": "Continue up the wall",
+     "note": "Continue climbing with portaledge camps.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Wall day through the Fang Roof",
+     "objective": "Continue up the wall",
+     "note": "Continue climbing with portaledge camps. Pitch 8, the Fang Roof, is another highlight.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 6,
+     "title": "Finish the upper pitches to the summit",
+     "objective": "Top out on Middle Peak",
+     "note": "Finish the upper pitches to the summit.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 7,
+     "title": "Rappel the route",
+     "objective": "Complete the full rappel descent",
+     "note": "Make the full rappel descent of the route, which takes 10-12 hours.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 11,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 hours = prose segments (2-2.5 h + 0.5 h + 1-2 h); D1 gain derived (wall base 3,765 minus TH 600; prose trail-only 2,000 ft); D7 hours prose (10-12 h); D1 miles unknown beyond the 4.1-mile trail; wall days unknown; packLb only for approach (wall days null).",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/lake-serene"
+  ],
+  "confidence": "low",
+  "notes": "Prose groups \"Day 2-5\" and \"Days 6-7\"; split into single days by placing pitch 4 on day 3 and the Fang Roof (pitch 8) on day 5 - pitch-to-day placement after day 2 is an interpretation. The hike out after the rappel is not mentioned in the prose. Row dist_km 5.8 (~3.6 mi) is shorter than the 4.1-mile trail alone."
+ },
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "itinerary": {
+   "cal": "Season is July to September. Budget three to four days, the norm on this peak, and hold a fourth day for weather; the ridge is exposed and there is nowhere quick to go if a front arrives.",
+   "totalNote": "Approach to a camp on the east side of Jack, climb the East Ridge in a full pre-dawn-to-evening day, and return.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to the east-side camp",
+     "objective": "Establish a camp on the eastern side of the mountain",
+     "note": "Approach and establish a camp on the eastern side of the mountain.",
+     "gainFt": 5300,
+     "lossFt": 800,
+     "hours": 8,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Ridge",
+     "objective": "Summit Jack Mountain and return to camp",
+     "note": "Make a pre-dawn start and plan a full day up and down. The published account records 9.5 hours from low on the glacier for the Skoogs' variation.",
+     "gainFt": 3500,
+     "lossFt": 3500,
+     "hours": 9.5,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Return to the trailhead",
+     "objective": "Recross the glacier and hike out",
+     "note": "Return to the trailhead.",
+     "gainFt": 800,
+     "lossFt": 5300,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D2 hours prose (9.5 h from low on the glacier; a minimum for the day); D1 hours from the Southeast Ridge Direct row (8+ h with overnight loads to camp, same approach); gain/loss derived from waypoints in the row approach (Canyon Creek TH ~1,900, saddle ~7,200, Jerry Lakes ~6,400, 800 ft drop to the next basin, summit 9,075); miles unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row approach says nearly everyone camps in the Jerry Lakes basin. Nothing dropped."
+ },
+ {
+  "id": "wa_jack_mountain_nohokomeen_headwall",
+  "itinerary": {
+   "cal": "Season is April to June. Three days is the normal plan and what most parties use; strong teams do it in two, and one documented two-day trip covered camp-to-summit-and-back in an 18-hour push from the low camp.",
+   "totalNote": "Hike the East Bank Trail to May Creek and bushwhack to a camp below the Nohokomeen Glacier, climb the headwall, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "East Bank Trail to the glacier camp",
+     "objective": "Camp near 5,200 ft below the glacier",
+     "note": "Hike 8 miles of easy trail from the trailhead to May Creek in roughly 3-3.5 hours, then make 3 miles of steep bushwhack to a camp at about 5,200 ft below the glacier. Alternatively, push on to a glacier camp near 7,400 ft; a 6 a.m. start has reached a 7,400 ft camp by 5 p.m.",
+     "gainFt": 3600,
+     "lossFt": 200,
+     "hours": null,
+     "miles": 11,
+     "packLb": 45,
+     "schedule": [
+      {
+       "time": "6:00 AM",
+       "label": "Leave the trailhead",
+       "detail": "For the high-camp option."
+      },
+      {
+       "time": "5:00 PM",
+       "label": "Reach the 7,400 ft glacier camp",
+       "detail": "Same day, high-camp option."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Climb the headwall to the summit",
+     "objective": "Summit Jack Mountain and return to camp",
+     "note": "Leave camp around 4-4:30 a.m., cross the glacier, and climb the headwall and the summit ridge. The summit typically comes at 7:45-8:45 a.m. from a high camp, or roughly 4-5 hours from a 5,200 ft camp; then downclimb and return.",
+     "gainFt": 3900,
+     "lossFt": 3900,
+     "hours": null,
+     "miles": 8,
+     "packLb": 16,
+     "schedule": [
+      {
+       "time": "4:00-4:30 AM",
+       "label": "Leave camp",
+       "detail": "Cross the glacier to the headwall."
+      },
+      {
+       "time": "7:45-8:45 AM",
+       "label": "Summit",
+       "detail": "Typical from the 7,400 ft high camp; ~4-5 h from the 5,200 ft camp."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Bushwhack down and hike out",
+     "objective": "Return to the East Bank Trailhead",
+     "note": "Descend the bushwhack and hike out the East Bank Trail.",
+     "gainFt": 200,
+     "lossFt": 3600,
+     "hours": null,
+     "miles": 11,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles prose (8 mi trail + 3 mi bushwhack); D1 gain derived (camp 5,200 minus May Creek ~1,643, plus TH-to-lake drop); D2 gain derived (9,075 minus 5,200); D2 miles derived from row dist_km 24.14 (~15 mi one-way) minus 11 mi to camp, x2; hours not totalled in prose; schedule from prose clock times; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row gain_ft 10,000 is higher than the ~7,700 ft derived from camp/summit elevations (cumulative ups and downs may explain it). Nothing dropped."
+ },
+ {
+  "id": "wa_jack_mountain_north_ridge",
+  "itinerary": {
+   "cal": "Season is July to September. Plan three to four days, in line with published notes that most parties on Jack take that long, and hold a fourth day for weather. Using the Ross Lake water taxi can meaningfully shorten days 1 and 3.",
+   "totalNote": "Hike the East Bank Trail and climb off-trail to a camp below the ridge, climb the North Ridge and descend the East Ridge, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "East Bank Trail to camp below the ridge",
+     "objective": "Camp below the North Ridge",
+     "note": "Hike the East Bank Trail, then make the off-trail climb to a camp below the ridge.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge",
+     "objective": "Summit and descend the East Ridge to camp",
+     "note": "Climb the ridge to the summit and descend the East Ridge back to camp, a full day.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Bushwhack down and hike out",
+     "objective": "Return to the East Bank Trailhead",
+     "note": "Descend the bushwhack and hike out the East Bank Trail.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "No figures in prose; row gain_ft and dist_km are null and the approach is exploratory (camp location unspecified), so all figures left null; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Figures could not be filled without guessing the camp site. Nothing dropped."
+ },
+ {
+  "id": "wa_jack_mountain_northeast_glacier",
+  "itinerary": {
+   "cal": "Season is May to July. Most parties on Jack Mountain take three to four days for any route, and there is no reason to think this one is faster; hold a fourth day as a weather and route-finding buffer.",
+   "totalNote": "Cross between Crater Mountain's summits and the Jerry Glacier to a camp on Jack's east side, climb the Northeast Glacier, and return.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cross the Jerry Glacier to the east camp",
+     "objective": "Camp near 6,000 ft on the east side of Jack",
+     "note": "Cross the pass between Crater Mountain's summits and the Jerry Glacier to a camp near 6,000 ft on the east side of Jack.",
+     "gainFt": 5100,
+     "lossFt": 1000,
+     "hours": null,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Glacier",
+     "objective": "Summit Jack Mountain and return to camp",
+     "note": "Spend a full summit day on the glacier and the upper mountain, then return to camp.",
+     "gainFt": 3300,
+     "lossFt": 3300,
+     "hours": null,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Return over the pass",
+     "objective": "Hike out to the Canyon Creek Trailhead",
+     "note": "Return over the pass and the Jerry Glacier and hike out.",
+     "gainFt": 1000,
+     "lossFt": 5100,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain/loss derived from row approach elevations (TH ~1,900, pass ~7,000, camp ~6,000, summit 9,075, 250 ft drop onto the glacier); miles/hours unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Prose has no day markers; split from \"a day to cross..., a full summit day..., and a day to return\". Row gain_ft 4,501 and dist_km 5.6 (~3.5 mi) contradict the route (the Canyon Creek-to-camp leg alone climbs ~5,100 ft, and Crater Lake alone is 3.7 mi), so they were not used. Nothing dropped."
+ },
+ {
+  "id": "wa_jack_mountain_southeast_ridge_direct",
+  "itinerary": {
+   "cal": "Season is July to September. Plan three to four days; a fourth day is a sensible weather buffer, and most parties on Jack take three to four days for any route.",
+   "totalNote": "Cross from Crater Lake over the Crater Mountain saddle and Jerry Glacier to camp, climb the Southeast Ridge, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Crater Lake and Jerry Glacier to camp",
+     "objective": "Camp at Jerry Lakes or Crater Creek",
+     "note": "Hike from the trailhead to Crater Lake, then go cross-country over the Crater Mountain saddle and the Jerry Glacier to a Jerry Lakes or Crater Creek camp, about 8-8.5 hours with packs.",
+     "gainFt": 5300,
+     "lossFt": 800,
+     "hours": 8.25,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southeast Ridge",
+     "objective": "Summit via the ridge and descend the South Face",
+     "note": "Make an alpine start, gain the 7,000 ft ridge step, and climb the crest to the summit, then descend the South Face and return to camp. Budget a full day, longer than the standard route's ~8 hours round trip from camp, because the ridge is roped terrain.",
+     "gainFt": 2700,
+     "lossFt": 2700,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Recross the glacier and hike out",
+     "objective": "Return to the Canyon Creek Trailhead",
+     "note": "Recross the glacier and saddle and hike out.",
+     "gainFt": 800,
+     "lossFt": 5300,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 hours prose (8-8.5 h); gain/loss derived from row approach elevations (TH ~1,900, saddle ~7,200, Jerry Lakes ~6,400, summit 9,075); D2 hours prose only says longer than ~8 h, left null; miles unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Derived total gain (~8,800 ft) is below row gain_ft 11,450. Row dist_km 17 (~10.6 mi) does not fit either one-way or round trip cleanly, so miles left null. Nothing dropped."
+ },
+ {
+  "id": "wa_jack_mountain_southwest_ridge",
+  "itinerary": {
+   "cal": "Season is August to September. Three days is realistic; most parties on Jack Mountain take three to four days by any route, and the Little Jack line is no exception despite being the shortest approach.",
+   "totalNote": "Climb the old Little Jack Trail to a high camp on the crest, climb the Southwest Ridge from camp, and return over Little Jack.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb to Little Jack and camp high",
+     "objective": "Camp high on the crest beyond Little Jack",
+     "note": "Hike from the trailhead to Little Jack, 6.0 miles with about 4,800 ft of gain from the junction, and continue along the ridge toward the notch, camping high on the crest.",
+     "gainFt": 5000,
+     "lossFt": 200,
+     "hours": null,
+     "miles": 6,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southwest Ridge",
+     "objective": "Summit Jack and return to camp",
+     "note": "Traverse to Jack's base, climb the southwest ridge to the summit, and reverse it back to camp, a full day.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Return over Little Jack",
+     "objective": "Descend to the car",
+     "note": "Reverse the ridge to Little Jack and descend to the car.",
+     "gainFt": 200,
+     "lossFt": 5000,
+     "hours": null,
+     "miles": 6,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles prose (6.0 mi to Little Jack); gain derived (Little Jack 6,745 minus TH ~1,800; prose 4,800 ft from the junction); D2 unknown; hours unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "D1 miles cover only the trail to Little Jack; the extra ridge distance toward the notch is unstated. Nothing dropped."
+ },
+ {
+  "id": "wa_klawatti_peak_north_ridge",
+  "itinerary": {
+   "cal": "Season is July to September.",
+   "totalNote": "Hike in to Eldorado Basin or the snow dome, cross the glaciers to climb Klawatti's North Ridge, and descend on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Eldorado Basin",
+     "objective": "Camp in Eldorado Basin or on the snow dome",
+     "note": "Hike from the Eldorado trailhead to a camp in Eldorado Basin or on the Eldorado snow dome.",
+     "gainFt": 4000,
+     "lossFt": 0,
+     "hours": 5.5,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge",
+     "objective": "Summit Klawatti from the Klawatti-Austera Col",
+     "note": "Cross the glaciers to Klawatti Col and the Klawatti-Austera Col, scramble the north ridge to the summit, and return to camp or continue toward Austera Peak.",
+     "gainFt": 2400,
+     "lossFt": 2400,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend to the trailhead",
+     "objective": "Return to the car",
+     "note": "Descend to the trailhead.",
+     "gainFt": 0,
+     "lossFt": 4000,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "Plan assumes the Eldorado Basin camp (~6,100 ft). D1 gain derived (6,100 minus TH ~2,150); D1 hours from the SW Buttress row approach (5-6 h to the basin); D2 gain derived (basin 6,100 to 7,500 notch, ~7,900 col, 8,485 summit); miles unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped \"Drive to the Eldorado trailhead\" clause. If camping on the snow dome (~7,500 ft) instead, D1 is ~5,350 ft / 8-11 h and D2 is ~1,000 ft net."
+ },
+ {
+  "id": "wa_klawatti_peak_sw_buttress",
+  "itinerary": {
+   "cal": "Season is July to September. The SW Buttress is typically climbed as a quick add-on from an established Klawatti or icecap camp, alongside or instead of the South Face.",
+   "totalNote": "Approach over two days to a Klawatti camp, climb the short SW Buttress, and descend by retracing the approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to the Eldorado Creek basin",
+     "objective": "Camp in the Eldorado Creek basin",
+     "note": "Approach from the Eldorado Creek trailhead to the Eldorado Creek basin, a common camp roughly 5-6 hours from the car.",
+     "gainFt": 3900,
+     "lossFt": 0,
+     "hours": 5.5,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb to the Klawatti camp",
+     "objective": "Camp at Klawatti col on the icecap",
+     "note": "Climb the Eldorado Glacier to the icecap high camp, typically another 3-5 hours, and traverse the Inspiration Glacier to camp at Klawatti col.",
+     "gainFt": 1800,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb the SW Buttress",
+     "objective": "Summit Klawatti from camp",
+     "note": "Climb the SW Buttress in 1-2 hours on a summit day.",
+     "gainFt": 600,
+     "lossFt": 600,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Descend to the trailhead",
+     "objective": "Retrace the approach to the car",
+     "note": "Descend via the standard route, retracing the ascent.",
+     "gainFt": null,
+     "lossFt": 5750,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D2 times from row approach (5-6 h to basin; 3-5 h more to high camp); D3 climb time prose (1-2 h) but whole day not stated; gain derived from waypoints (TH 2,164, basin ~6,100, Klawatti col 7,900, summit 8,485), total ~6,300 vs row gain_ft 6,400; miles unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "low",
+  "notes": "Prose defers to the Southeast Face route's 3-day itinerary (not provided) and says only \"approach and camp on Day 1-2\"; split into basin / Klawatti camp / climb / exit using the row approach and descent. Dropped nothing from prose (row approach permit and river-crossing details not included)."
+ },
+ {
+  "id": "wa_kyes_peak_northeast_ridge",
+  "itinerary": {
+   "cal": "Season is June to September. The route can be split over two days with a camp near Curry Gap or on the ridge. Mike Heath's 1968 first-ascent account describes the outing from the road's end as taking about 4-5 hours, though that reflects a fast, direct climb rather than a typical modern car-to-car day given the approach length.",
+   "totalNote": "A long single push from the trailhead via Curry Gap and the northeast ridge to Kyes Peak and back.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Kyes Peak by the Northeast Ridge",
+     "objective": "Summit and return in one long push",
+     "note": "Make a long single push from the North Fork Sauk trailhead to the summit and back.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 22,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "No usable figures: prose gives only the 1968 4-5 h first-ascent time, row gain_ft/dist_km are null; packLb estimate.",
+  "sources": [],
+  "confidence": "low",
+  "notes": "CONTRADICTION: prose says \"North Fork Sauk trailhead\" but row approach starts at the North Fork Skykomish / Quartz Creek Trailhead (FR 63) via Curry Gap; prose wording kept but likely wrong. Row approach gives Curry Gap at ~4 mi / 1,450 ft, but the ridge and glacier mileage beyond is unstated."
+ },
+ {
+  "id": "wa_le_conte_mountain_northern_aspect",
+  "itinerary": {
+   "cal": "Season is July to September. A typical plan takes 2-3 days.",
+   "totalNote": "Cross Cascade Pass, Cache Col and the Middle Cascade Glacier to Yang Yang Lakes, climb Le Conte from camp, and reverse the approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cascade Pass to Yang Yang Lakes",
+     "objective": "Camp at Yang Yang Lakes",
+     "note": "Hike from the Cascade Pass Trailhead to Cascade Pass and over Cache Col and the Cache Glacier, descend to Kool-Aid Lake, and cross the Middle Cascade Glacier to the Yang Yang Lakes camp. It is a long day of about 13 miles with 9,000+ ft of cumulative gain.",
+     "gainFt": 9000,
+     "lossFt": 6800,
+     "hours": null,
+     "miles": 13,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Le Conte Mountain",
+     "objective": "Summit via the east-slope ledge route",
+     "note": "Climb Le Conte Mountain round trip from camp via the east-slope and ledge route.",
+     "gainFt": 1900,
+     "lossFt": 1900,
+     "hours": null,
+     "miles": null,
+     "packLb": 16,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Reverse the approach to the trailhead",
+     "objective": "Return over Cache Col to Cascade Pass",
+     "note": "Reverse the approach back to the trailhead.",
+     "gainFt": 6800,
+     "lossFt": 9000,
+     "hours": null,
+     "miles": 13,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1 miles/gain prose (~13 mi, 9,000+ ft); D1 loss derived (gain minus net rise from TH 3,660 to camp 5,840); D3 mirrors D1; D2 gain derived (summit 7,762 minus camp 5,840); row dist_km 21.1 (~13.1 mi) is one-way and matches; hours unknown; packLb estimates.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped \"drive to Cascade Pass Trailhead\" clause. Prose 9,000+ ft cumulative gain for the approach day looks high versus waypoint elevations (TH 3,660, Cascade Pass 5,392, Cache Col 6,903, Kool-Aid 6,120, Spider-Formidable col 7,300, Yang Yang 5,839), which sum to roughly 5,000 ft of gain; kept prose figure but flagged."
+ },
+ {
+  "id": "wa_lemah_two_goatshead_spire",
+  "itinerary": {
+   "cal": "Season is July to September. This is realistically a three-day trip; a fit party has done the neighbouring standard route car-to-car in 11 hours 26 minutes, but that is a snow scramble with a known line, and an obscure rock tower with no known line deserves the extra day.",
+   "totalNote": "Hike to a Lemah Creek or Pete Lake camp, climb Goatshead Spire from the east-side cirque, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Lemah Creek",
+     "objective": "Camp by Lemah Creek or at Pete Lake",
+     "note": "Hike 7-8 miles of easy trail from the Pete Lake trailhead to the PCT campsite by Lemah Creek at about 3,200 ft, or camp at Pete Lake.",
+     "gainFt": 400,
+     "lossFt": 0,
+     "hours": 4,
+     "miles": 7.3,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Goatshead Spire",
+     "objective": "Climb the spire from the east-side cirque",
+     "note": "Leave camp before first light and follow the climbers' path and snow finger into the east-side cirque. Climb the spire and return to camp.",
+     "gainFt": 3800,
+     "lossFt": 3800,
+     "hours": null,
+     "miles": 5.4,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Pete Lake trailhead",
+     "objective": "Return to the trailhead",
+     "note": "Hike out to the trailhead.",
+     "gainFt": 0,
+     "lossFt": 400,
+     "hours": 4,
+     "miles": 7.3,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "D1/D3 miles prose (7-8 mi) refined by row approach leg sums (4.4+1.3+0.8+0.8 = 7.3 mi); gain derived (TH ~2,800 to camp 3,200; spire ~7,000 high point); D2 miles derived from row dist_km 16.1 (~10 mi one-way) minus 7.3 mi, x2; D1/D3 hours derived pace; D2 hours unknown; packLb estimates.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/pete-lake"
+  ],
+  "confidence": "medium",
+  "notes": "Dropped \"drive to Pete Lake trailhead\" clause (road content). Row high_point_ft 7,000 used for the spire; the spire may sit below Lemah Two's summit, so D2 gain may be high."
+ },
+ {
+  "id": "wa_lichtenberg_mountain_southeast_ridge",
+  "itinerary": {
+   "cal": "Season is December to April, though the route also makes a single easy summer day. In winter it is a full but moderate day tour of about 5.2 to 8 miles and 2,100 to 2,700 ft of gain from US 2; start early so the road walk is behind you before the snow softens and to keep your options open on stability. Brisbine's party made a September overnight of it, camping at Lichtenwasser Lake and taking in both the true summit and The Lichtenhorn the following day.",
+   "totalNote": "A single day via Lichtenwasser Lake and the southeast ridge, about 7 miles and 2,100 ft in summer and longer in winter.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Lichtenberg via Lichtenwasser Lake",
+     "objective": "Summit via the southeast ridge and return",
+     "note": "In summer this is a single easy day of about 7 miles round trip with about 2,100 ft of gain. In winter, the road approach takes a good chunk of the time.",
+     "gainFt": 2100,
+     "lossFt": 2100,
+     "hours": null,
+     "miles": 7,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles/gain prose (summer 7 mi, 2,100 ft; winter range 5.2-8 mi, 2,100-2,700 ft in cal); hours unknown; packLb estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row season (Dec-Apr) is winter, but the prose's only single figures are for summer, so those are used for the day. Kept \"the road approach takes a good chunk of the time\" (time budgeting, not closure info)."
+ },
+ {
+  "id": "wa_lichtenberg_mountain_west_face",
+  "itinerary": {
+   "cal": "Season is July to September. A single day from the Smithbrook trailhead is what the original report implies. Camping at Lake Valhalla, in dispersed sites set back from the shore where campfires are prohibited, puts you directly under the wall and suits a party wanting time to scope the line before committing.",
+   "totalNote": "A single day from the Smithbrook trailhead: about an hour in to Lake Valhalla, climb the west face, walk off, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the West Face from Lake Valhalla",
+     "objective": "Climb the face, walk off and hike out",
+     "note": "Walk in from the Smithbrook trailhead in roughly an hour, climb the face, walk off, and hike out.",
+     "gainFt": 2100,
+     "lossFt": 2100,
+     "hours": null,
+     "miles": 7,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles derived from row approach (3.5 mi each way; WTA Lake Valhalla 7 mi RT) and row dist_km 5.6 (~3.5 mi one-way); gain derived (TH 4,000 to PCT high point ~5,050, drop to lake 4,836, ~1,000 ft face to 5,844); walk-off route undocumented; hours unknown; packLb estimate.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/lake-valhalla"
+  ],
+  "confidence": "medium",
+  "notes": "Walk-off line is undocumented, so miles assume returning via Lake Valhalla and the PCT. Nothing dropped."
+ }
+]
