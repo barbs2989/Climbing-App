@@ -1,0 +1,249 @@
+[
+ {
+  "id": "rainier_north_mowich_headwall",
+  "skip": true,
+  "reason": "Searched again for a North Mowich Headwall climb. The opened sources (a 2012 blog and a 2012 turns-all-year report) and the new search results all describe the central Mowich Face, or a party that found the headwall icefall out of shape and went around it. No opened page climbs the North Mowich Headwall itself, and the only route pages (SummitPost, CascadeClimbers) return 403. The day figures in the earlier plan were derived, not stated."
+ },
+ {
+  "id": "wa_cadet_peak_ne_ridge",
+  "itinerary": {
+   "cal": "A late-summer scramble once the Heineken gullies and the ridge are snow-free; earlier in the season expect steep snow that calls for an axe and crampons. Usually done as one long loop, with a bike stashed for the road back.",
+   "totalNote": "A single long day: about 20 miles and 8,700 ft of gain from Bedal Creek over Heineken Peak, up the NE ridge, and down through Glacier Basin and Monte Cristo, in just over 12 hours.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Bedal Creek over Heineken to Cadet",
+     "objective": "Climb the NE ridge and loop out through Glacier Basin",
+     "note": "Follow the brushy Bedal Creek trail into the basin under Sloan, climb about 1,000 ft to the ridge, and refill at Cadet Lake. The crux is the descent off Heineken, down steep, wet grass gullies to a 5,600 ft low point above the Mayflower Glacier. The NE ridge itself is class 3 at most on solid rock, with a scramble bypass and meltwater at the hanging glacier. Descend the steep, loose slope into Glacier Basin, walk out past Monte Cristo, and bike down from Barlow Pass.",
+     "gainFt": 8700,
+     "lossFt": null,
+     "hours": 12,
+     "miles": 20,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2023/09/09/heineken-high-route/",
+   "https://www.wta.org/go-hiking/hikes/cadet-peak"
+  ],
+  "confidence": "low",
+  "figureSources": "20 mi, 8,700 ft gain and just over 12 h car to car come from the climberkyle Heineken High Route report, which climbs this NE ridge from Bedal Creek over Heineken. The WTA Cadet Peak page confirms the 7,186 ft summit and the class 3 rating but covers only the Glacier Basin route. Search results point to a SummitPost NE ridge route page (403), so no second opened source covers this ridge.",
+  "rowIssues": "Row gain_ft and dist_km are null. The one route source gives about 8,700 ft and 20 mi for the full loop, about 6 mi of it on a bike."
+ },
+ {
+  "id": "wa_cannon_mountain_northwest_ridge",
+  "skip": true,
+  "reason": "Searched for a second NW ridge source. The opened pages (ahelwer 2017 and 2018, lemkeclimbs, whereiskylemiller, plus the earlier hippohamster and Wenatchee Outdoors pages) describe the NE ridge, the SW ridge, a ski descent of the NW face, or a Colchuck-side scramble. None covers the NW ridge from the Stuart Lake trail. The only NW ridge reports (Mountaineers 2016 and 2025, CascadeClimbers 2013, a SummitPost log) return 403. No opened source gives hours, miles or gain for this line. Row note: high_point_ft is null while the summit waypoint is labeled as a NE Ridge point."
+ },
+ {
+  "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+  "itinerary": {
+   "cal": "Best from mid-July to early October when the high basin is reachable; water in the basin tarns becomes unreliable after mid-August. Glacier Peak Wilderness self-issue permit; most parties take 3 days and add Saska and Emerald from the same camp.",
+   "totalNote": "A 3-day trip: walk up the North Fork Entiat to a high meadow camp near 6,800 ft, climb Cardinal (often with Saska and Emerald) on day 2, and walk out on day 3.",
+   "days": [
+    {
+     "n": 1,
+     "title": "North Fork Entiat to the high basin",
+     "objective": "Camp in the basin between Emerald and Saska",
+     "note": "About 8 miles of trail up the North Fork Entiat to Fox Camp, the last certain water, then about 1.5 miles more on the Pyramid trail to the basin. Parties have camped in a meadow near 6,800 ft below Cardinal, or on the flat glacier-cut bench under its northwest face, after a long day with full packs.",
+     "gainFt": 2920,
+     "lossFt": null,
+     "hours": null,
+     "miles": 9.5,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Cardinal from the northwest basin",
+     "objective": "Reach the 8,590 ft summit and return to camp",
+     "note": "Climb the snow in Cardinal's northwest basin to the summit ridge, then scramble the exposed ridge to the top, with some slab moves in boots. Parties linking Saska and Emerald first did not reach Cardinal until evening, so climb it first if it is the priority.",
+     "gainFt": 1790,
+     "lossFt": 1790,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Walk out the North Fork Entiat",
+     "objective": "Return to the trailhead",
+     "note": "Reverse the approach. The walk out tends to go a little faster than the walk in.",
+     "gainFt": 0,
+     "lossFt": 2920,
+     "hours": null,
+     "miles": 9.5,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/",
+   "https://lemkeclimbs.com/?p=2838",
+   "https://www.whereiskylemiller.com/?p=1640"
+  ],
+  "confidence": "low",
+  "figureSources": "Day 1 and 3 miles (8 + 1.5) and the 3,880 ft trailhead come from the row's bivy notes. climberkyle (2017) gives the 3-day Entiat-side plan and the 6,800 ft meadow camp. Lemke gives the snow in the NW basin to the summit ridge and the 8,590 ft summit. whereiskylemiller (a 2-day ski trip, 6 mi of trail to alpine terrain) confirms the North Fork Entiat approach and a camp on the bench under the NW face. Day 2 gain runs from the 6,800 ft camp to the 8,590 ft summit. No source names the NW couloir or north ridge, and none gives hours.",
+  "rowIssues": "Row high_point_ft and gain_ft are null. Sources give an 8,590-8,595 ft summit."
+ },
+ {
+  "id": "wa_cashmere_mountain_northeast_ridge",
+  "itinerary": {
+   "cal": "Snow-free from about mid-July through September; earlier, steep snow on the north side calls for an axe and sometimes crampons. Overnight use needs an Enchantment permit, so most parties go car to car in one long day.",
+   "totalNote": "One long day of about 17 miles and 5,200-5,700 ft via Eightmile Lake, Lake Caroline and Windy Pass, finishing on class 3 north-side rock.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Eightmile trailhead to Cashmere summit",
+     "objective": "Traverse the north side to the summit and return",
+     "note": "Take the Eightmile Lake trail, turn off past Little Eightmile Lake toward Lake Caroline, and continue about 2 miles past the lake to Windy Pass. Follow the ridge northeast past the west-peak spires, cross to the north side, and traverse low below the summit pyramid to a class 3 gully or saddle that leads to the tiny summit. Wear helmets and keep the party close in the gullies.",
+     "gainFt": 5700,
+     "lossFt": 5700,
+     "hours": null,
+     "miles": 17,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.theoutbound.com/washington/hiking/climb-cashmere-mountain",
+   "https://wenatcheeoutdoors.org/?p=9609",
+   "https://wenatcheeoutdoors.org/?p=2514"
+  ],
+  "confidence": "low",
+  "figureSources": "17 mi round trip and 5,700 ft come from The Outbound; 8.5-9 mi one way and 5,200-5,300 ft come from the two Wenatchee Outdoors pages. These describe a north-side traverse below the summit pyramid to a class 3 finish, which matches the row's approach text, but none calls it the northeast ridge. A further search found only WTA and Mountaineers trip reports (403) and a countryhighpoints report that traversed the north face to the north ridge. No source gives a time, so hours are blank.",
+  "rowIssues": "Row gain_ft and dist_km are null. Sources give 5,200-5,700 ft and about 17 mi round trip."
+ },
+ {
+  "id": "wa_cutthroat_peak_northeast_face",
+  "skip": true,
+  "reason": "Searched again for the 1976 Bard/Chouinard/Cunningham East Face. The opened AAJ pages mention it only in passing, and Mountain Project covers neighbouring lines (South Buttress, The Swarm). The only route descriptions (SummitPost East Face pages, CascadeClimbers) return 403, and one SummitPost snippet gives 12 pitches rather than 6, so even the route length is unsettled. No source gives hours, and the earlier plan derived its gain and miles. Row issue: the row's gain_ft of 2,500 is less than its own pullout-to-summit rise (5,227 to 8,066 ft), and its dist_km of 2 is shorter than the roughly 2 mi one way given for the approach."
+ },
+ {
+  "id": "wa_early_morning_spire_southwest_face",
+  "itinerary": {
+   "cal": "A late-summer objective (August is typical) once the upper snow patch on the face has melted. It needs a North Cascades National Park wilderness permit for the Eldorado-area cross-country camps. Plan about 4 days, or 3 with a camp at Dorado Col or on the Marble Creek bench.",
+   "totalNote": "About 4 days: the Eldorado approach to a lower and then a high camp near the East Ridge, a long climb day over Dorado Col to the 8-pitch Southwest Face, and a walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Eldorado trailhead to lower camp",
+     "objective": "Reach the lower camp near 5,400 ft",
+     "note": "The standard Eldorado climbers' route is steep and is the hardest day of the trip with an overnight pack.",
+     "gainFt": 3300,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Up to the East Ridge high camp",
+     "objective": "Camp near 7,800 ft at the base of Eldorado's East Ridge",
+     "note": "Climb along the southern edge of the Inspiration Glacier to the bivy at the base of the East Ridge. Dorado Col and a bench near 6,000 ft in the Marble Creek cirque are alternative camps closer to the climb.",
+     "gainFt": 2400,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb the Southwest Face",
+     "objective": "Cross Dorado Col, climb 8 pitches and return to camp",
+     "note": "Cross the Inspiration and McAllister glaciers to Dorado Col, descend bare ice and snow to about 6,000 ft, and contour west on a bench to a snow gully below the face. The route follows the main crack system (wet 5.9 roof crux) to the ridge crest, then several low-fifth pitches on poorer rock. One descent rappels west on a single rope to the Marble Creek glacier remnant, then goes down a loose gully and across a moat before retracing the route over Dorado Col. Crampons help on the glacier remnant.",
+     "gainFt": 1400,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Walk out to the Eldorado trailhead",
+     "objective": "Descend from high camp to the car",
+     "note": "Reverse the Eldorado approach from about 7,800 ft to the trailhead near 2,100 ft.",
+     "gainFt": 0,
+     "lossFt": 5700,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.nps.gov/noca/blogs/early-morning-spire.htm",
+   "https://www.mountainproject.com/route/201494808/southwest-face",
+   "https://www.ncmountainguides.com/node/49"
+  ],
+  "confidence": "low",
+  "figureSources": "The route (8 pitches, 1,400 ft, 5.9, Grade IV, approached over Dorado Col and the Marble Creek cirque) comes from the NPS blog and Mountain Project. Day 1-2 gains and camp elevations (2,100 / 5,400 / 7,800 ft) come from the North Cascades Mountain Guides Eldorado itinerary. Day 3 gain counts only the 1,400 ft route. A further search found only CascadeClimbers trip reports (403, all August or September), and no opened source gives a time for any day.",
+  "rowIssues": "Row season, gain_ft, dist_km and high_point_ft are null."
+ },
+ {
+  "id": "wa_esmeralda_peaks_east_gully",
+  "itinerary": {
+   "cal": "A short day climb best in early summer while some snow lingers below the gully, or later once it is dry; the gully itself can run with water. Park at the Esmeralda/Ingalls trailhead with a recreation pass and self-issue a free Alpine Lakes Wilderness permit.",
+   "totalNote": "One day, about 5 miles round trip and roughly 2,300 ft of gain: up the East Peak's east gully and down south to the De Roux Creek trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the East Gully and loop out",
+     "objective": "Climb the east gully to the 6,480 ft East Peak and descend to De Roux",
+     "note": "Cross the North Fork Teanaway on a small log jam near the trailhead, bushwhack and climb talus or snow to the gully, and expect loose Class 3-4 with a wet, poorly protected section about 500 ft up that one party escaped by a short chimney and low 5th-class rock on the right. Rejoin the gully at a small horn and follow the ridge left to the top. Descend 400-500 ft south, traverse down to the ridge north of the De Roux Creek trail, and walk the trail and an old road about 2 miles back to the trailhead.",
+     "gainFt": 2280,
+     "lossFt": 2280,
+     "hours": null,
+     "miles": 5,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "http://www.ericsbasecamp.net/trips/Esmeralda/Esmeralda.htm",
+   "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead"
+  ],
+  "confidence": "low",
+  "figureSources": "Gain, the 5 mi round trip, the route and the descent come from the ericsbasecamp report, the only opened source on this line. The USFS page confirms the 4,269 ft trailhead and the permits. Further searches found the class 2 route from De Roux (yellowleaf) and a winter mixed line on the NE face (climberkyle), neither of which is this gully. No source gives hours.",
+  "rowIssues": "The one route source roped up for Class 4 and low fifth class, which is harder than the row's Class 4. Row dist_km 8.05 (5.0 mi) is the round trip."
+ },
+ {
+  "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+  "itinerary": {
+   "cal": "A June to early-July snow line, before crevasses on the White Salmon open up and the lower Avalanche Glacier goes soft. A Cascade Volcano Pass is required above 7,000 ft. Parties have done it car to car in a day from Cold Springs, and a camp in the 7,200 ft moraine bowl is the option for a shorter summit day.",
+   "totalNote": "Usually one long day from Cold Springs; parties wanting a camp can use the moraine bowl at about 7,200 ft where the Avalanche Glacier begins.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cold Springs to the summit and back",
+     "objective": "Climb the Avalanche and White Salmon glaciers to the summit",
+     "note": "Take the South Climb trail to the Round the Mountain Trail and traverse about 2 miles northwest to the Avalanche Glacier outlet stream near 6,100 ft, then follow moraines to the bowl at 7,200 ft. The Avalanche Glacier has been found uncrevassed in early summer, while the White Salmon has seracs on its north and west sides and a short 45-degree pitch to the saddle between the summit and the Pinnacle; a moraine saddle at about 10,200 ft links the two glaciers.",
+     "gainFt": 6680,
+     "lossFt": 6680,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://turns-all-year.com/trip-reports/june-20-2004-mt-adams-avalanche-white-salmon",
+   "https://turns-all-year.com/trip-reports/june-21-22-adams-white-salmon-attempt",
+   "https://turns-all-year.com/trip-reports/july-7-2012-mt-adams-white-salmon-glacier"
+  ],
+  "confidence": "low",
+  "figureSources": "Gain runs from the row's Cold Springs elevation (5,600 ft) to the 12,276 ft summit. The route features (the stream near 6,100 ft, the 7,200 ft bowl, the 10,200 ft moraine saddle, the 45-degree pitch) come from turns-all-year reports. Those parties skied this line after climbing another route, so their times are no longer used and the earlier schedule is dropped. Further searches found only guided itineraries for other routes and SummitPost pages (403). No source gives hours or miles for an ascent of this line.",
+  "rowIssues": "Row gain_ft, dist_km, high_point_ft and season are null."
+ }
+]

@@ -1,0 +1,73 @@
+{
+ "cal": "Prime window is roughly early-to-mid July, when the bergschrund crossing is straightforward and the upper scramble is mostly snow-free. Plan around the Lady of the Lake ferry and Holden shuttle schedule, and budget a 4th day if you want a more relaxed pace or want to add Martin Peak.",
+ "days": [
+  {
+   "n": 1,
+   "note": "Ferry from Chelan/Field's Point to Lucerne, bus to Holden Village, then about 6 miles and 3,800 ft up the Holden Lake trail to a camp at Holden Lake or, for a shorter summit day, higher at Holden Pass.",
+   "hours": 5,
+   "miles": 6,
+   "title": "Ferry, bus, and hike to high camp",
+   "gainFt": 3800,
+   "lossFt": 0,
+   "packLb": 38,
+   "schedule": [],
+   "objective": "Reach a camp at Holden Lake or Holden Pass"
+  },
+  {
+   "n": 2,
+   "note": "Leave camp pre-dawn, top Holden Pass within the hour, then rope up and cross the Mary Green Glacier to the upper gully/bergschrund. A short section of Class 3-4 rock and scrambling leads to the summit; the round trip runs about 8-9 hours including roughly four rappels on the way down.",
+   "hours": 9,
+   "miles": 2.5,
+   "title": "Climb the Mary Green Glacier to the summit",
+   "gainFt": 2500,
+   "lossFt": 2500,
+   "packLb": 15,
+   "schedule": [
+    {
+     "time": "4:45 AM",
+     "label": "Leave camp",
+     "detail": "Early start to catch firm snow and beat afternoon heat."
+    },
+    {
+     "time": "5:30 AM",
+     "label": "Top of Holden Pass",
+     "detail": "About 45 minutes above camp."
+    },
+    {
+     "time": "~7:00 AM",
+     "label": "Onto the Mary Green Glacier",
+     "detail": "Rope up, crampons on for the glacier crossing."
+    },
+    {
+     "time": "~9:30 AM",
+     "label": "Bergschrund / upper gully",
+     "detail": "Transition off the glacier onto Class 3-4 rock."
+    },
+    {
+     "time": "~10:00-10:30 AM",
+     "label": "Summit",
+     "detail": "Roughly 4.5-6 hours after leaving camp."
+    },
+    {
+     "time": "~1:00-2:00 PM",
+     "label": "Back at camp",
+     "detail": "About four rappels plus down-climbing on the descent."
+    }
+   ],
+   "objective": "Reach the summit via the standard glacier route and return to camp"
+  },
+  {
+   "n": 3,
+   "note": "Pack up camp, hike back down to Holden Village, and catch the shuttle/ferry back to Lucerne and Chelan (some parties overnight at Holden's Ballpark campground and take an early bus the next morning if the ferry timing doesn't line up).",
+   "hours": 5,
+   "miles": 6,
+   "title": "Hike out and catch the ferry",
+   "gainFt": 0,
+   "lossFt": 3800,
+   "packLb": 35,
+   "schedule": [],
+   "objective": "Return to Holden and connect with the bus/ferry"
+  }
+ ],
+ "totalNote": "The classic 3-day Bonanza itinerary: hike in to a Holden Lake/Holden Pass camp, spend an 8-9 hour, ~5,000 ft round-trip day climbing the glacier to the summit, and hike out the next day (add a 4th day for a more relaxed pace or to also climb Martin Peak)."
+}
