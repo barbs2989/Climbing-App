@@ -391,8 +391,12 @@ console.log("check:conditions-score");
   else fail("Your conditions no longer reaches the account");
   if (/useCondPrefs\(\)/.test(card) && !/BAND_PREF\.load\(\)/.test(card) && /updateCondPrefs\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card reads ONE prefs store that broadcasts changes");
   else fail("a prefs reader loads storage on its own again, so the card can go stale after a change in Settings");
-  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /\["snowflake","Your conditions",\(\)=>setCondsOpen\(true\)\]/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls\/>/.test(app)) ok("Your conditions is in Settings and in the Menu");
+  /* The controls may carry props (onSignIn since 2026-11-05), so match the tag, not a bare `<CondPrefsControls/>`. */
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\b[^<]{0,160}?\/>/.test(app) && /\["snowflake","Your conditions",\(\)=>setCondsOpen\(true\)\]/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls\b[^<]{0,160}?\/>/.test(app)) ok("Your conditions is in Settings and in the Menu");
   else fail("Your conditions is no longer reachable from Settings (menu and profile)");
+  /* Signed out, the save line offers sign-in where the caller can open it (owner 2026-11-05): it used to say "Sign in to keep it on your account" with nothing to tap. */
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls onSignIn=\{/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls onSignIn=\{/.test(app) && /sync === "local" && onSignIn \? <button onClick=\{onSignIn\}/.test(prefs)) ok("signed out, Your conditions offers a sign-in button in Settings and in the Menu");
+  else fail("signed out, Your conditions says to sign in but offers nothing to tap (Settings or the Menu lost onSignIn)");
 }
 
 // 8. THE WEATHER BESIDE THE SCORE (Climbit's crag page, 2026-10-07) — rain hour by hour and day by

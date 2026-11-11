@@ -34,20 +34,10 @@ const replaceViewAll = (s, withText) => {
   return s.slice(0, a) + withText + s.slice(e + ":null;})()}".length);
 };
 
+// SECTION 1'S FIVE CASES ARE GONE (owner, 2026-11-11): Home's "Nothing needs you right now" card
+// was removed, so there is no empty-state gate left to fall short of the UNFINISHED BUSINESS list.
+// What they proved (a gate covering every source the list builds from) has no subject any more.
 const CASES = [
-  {
-    name: "reqn-misses-db-crew-invites",
-    why: "REAL DEFECT 1: Home listed a DB crew invite and its gate did not count it",
-    edit: (s) => s.replace("const reqN=_pendingForMe;",
-      "const reqN=friendReqIn.length+crewReqIn.length+groupReqs.length+crewJoinIn.length;"),
-    expect: /does not test it.*|myCrewInvitesQ/,
-  },
-  {
-    name: "gate-misses-day-confirmations",
-    why: "REAL DEFECT 2: a crew waiting on YOU to confirm a day was listed and not counted",
-    edit: (s) => s.replace("&&!crewsNeedingMyDay.length", ""),
-    expect: /crewsNeedingMyDay/,
-  },
   {
     name: "bell-counts-what-the-panel-does-not-list",
     file: MAIN,
@@ -65,29 +55,6 @@ const CASES = [
     edit: (s) => s.replace("<NotifPanel requests={_notifRequests}",
       "<NotifPanel requests={friendReqIn.map(_reqClimber).filter(Boolean)}"),
     expect: /is an expression rather than a named array/,
-  },
-  {
-    name: "a-NEW-source-added-to-the-list-only",
-    file: MAIN,
-    why: "the rule must generalise past the three known instances — a source nobody has thought of yet",
-    edit: (s) => s.replace("var unfinished=[];",
-      'var unfinished=[];pendingGearLoans.forEach(function(g){unfinished.push({icon:"crews",text:"Gear loan",go:function(){}});});'),
-    expect: /pendingGearLoans/,
-  },
-  {
-    name: "SILENT-source-added-to-BOTH",
-    why: "MUST PASS — adding a source to the list and to the gate is ordinary correct work",
-    edit: (s) => s
-      .replace("var unfinished=[];",
-        'var unfinished=[];pendingGearLoans.forEach(function(g){unfinished.push({icon:"crews",text:"Gear loan",go:function(){}});});')
-      .replace("{(!reqN&&", "{(!reqN&&!pendingGearLoans.length&&"),
-    expect: null,
-  },
-  {
-    name: "SILENT-gate-covers-more-than-the-list",
-    why: "MUST PASS — the rule is one-directional; a gate may test something the list does not build from",
-    edit: (s) => s.replace("{(!reqN&&", "{(!reqN&&!somethingElseEntirely.length&&"),
-    expect: null,
   },
   {
     name: "view-all-counted-only-the-notifs",
