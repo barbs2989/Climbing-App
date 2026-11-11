@@ -1,0 +1,1361 @@
+[
+{
+ "id": "wa_lichtenberg_mountain_west_face_west_rib",
+ "itinerary": {
+  "cal": "Season is roughly July through October. The drive is roughly 2 to 2.5 hours from Seattle to the Smithbrook Trailhead via US 2, or about 45 minutes from Leavenworth. If you would rather make it an overnight, camp at Lake Valhalla (dispersed sites set well back from the shore, campfires prohibited) and climb the face the following morning with a light pack, which also catches the west face in the sun in good early light.",
+  "totalNote": "A single 6-7 hour car-to-car day: hike to the PCT saddle above Lake Valhalla, climb the west face and rib, and descend the Northeast Slope past Lichtenwasser Lake.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Climb the West Rib, descend the NE slope",
+    "objective": "Summit via the west face and rib and return car to car",
+    "note": "Start early and reach the PCT saddle above Lake Valhalla in about 2 hours, then climb the west face and rib in 1 to 1.5 hours. Descend the Northeast Slope past Lichtenwasser Lake to the road in around 2.5 hours, for roughly 6 to 7 hours total.",
+    "gainFt": 2000,
+    "lossFt": 2000,
+    "hours": 6.5,
+    "miles": 7.0,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "hours prose (6-7 h total); gain/loss row gain_ft; miles row dist_km 5.63 treated as one-way x2 (loop descent may differ slightly); pack estimate",
+ "sources": [],
+ "confidence": "high",
+ "notes": "Overnight-at-Lake-Valhalla option moved to cal. Nothing dropped."
+},
+{
+ "id": "wa_little_big_chief_mountain_northeast_face",
+ "itinerary": {
+  "cal": "Usually a 2-3 day trip, often combined with a neighbouring peak (Summit Chief or Overcoat) from a backcountry camp near Dutch Miller Gap or Summit Chief Lake. Strong parties climb it as a long day from a camp already at the gap.",
+  "totalNote": "Hike in to a camp near Dutch Miller Gap, climb the northeast ridge and face and return to camp the next day, and hike out on day three.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to camp near Dutch Miller Gap",
+    "objective": "Reach a backcountry camp near the gap",
+    "note": "Approach up the Middle Fork Snoqualmie valley on the Dutch Miller Gap Trail and set up a backcountry camp near Dutch Miller Gap or Summit Chief Lake.",
+    "gainFt": 3500,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 14.5,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the northeast ridge and face",
+    "objective": "Summit and return to camp",
+    "note": "Climb the northeast ridge and face from camp, with a short but exposed class 4 notch as the crux below the summit, and return to camp.",
+    "gainFt": 2200,
+    "lossFt": 2200,
+    "hours": null,
+    "miles": null,
+    "packLb": 15,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out to the trailhead",
+    "objective": "Return down the Middle Fork",
+    "note": "Pack up camp and hike back out down the Middle Fork Snoqualmie to the trailhead.",
+    "gainFt": 0,
+    "lossFt": 3500,
+    "hours": null,
+    "miles": 14.5,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1/day3 miles and gain web (WTA: 29 mi RT, 3,500 ft gain, gap 5,000 ft) consistent with row approach (14-15 mi); day2 gain row summit 7,225 minus gap 5,000; day2 miles and all hours unknown; packs estimated",
+ "sources": ["https://www.wta.org/go-hiking/hikes/dutch-miller-gap"],
+ "confidence": "medium",
+ "notes": "Derived total gain ~5,700 ft vs row gain_ft 6,300 (undulation). dist_km is null in row. Nothing dropped."
+},
+{
+ "id": "wa_little_sister_north_face",
+ "itinerary": {
+  "cal": "Best done from a camp in the upper Green Creek basin; strong parties go car-to-car in a long day. The most efficient use of the approach is to combine routes, North Face up and Southeast Ridge down or vice versa, or to take in Cinderella Peak across the col. The full Green Creek Circuit that includes this summit is 5.6, Grade IV, about 25 pitches over 13 miles with roughly 7,000 ft of gain, taking 10-14 hours for the traverse portion.",
+  "totalNote": "Hike in and camp below the Green Creek Glacier, then climb the four-pitch North Face, descend, and walk out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to the Green Creek basin",
+    "objective": "Camp below the Green Creek Glacier",
+    "note": "Cross the Middle Fork Nooksack on the log, hike the Elbow Lake Trail and the Green Creek climbers' path, and camp below the Green Creek Glacier.",
+    "gainFt": 4000,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the North Face and walk out",
+    "objective": "Summit via the North Face, break camp and exit",
+    "note": "Make an early start onto the glacier, climb steep snow to the base, cross the moat, and climb the four pitches of the North Face. Descend either by rappelling the lookers-right side or by downclimbing the Southeast Ridge, then break camp and walk out.",
+    "gainFt": 1000,
+    "lossFt": 5000,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/gain from sibling row approach text (Green Glacier approach 5 mi one way, 4,000 ft); day2 gain = row gain_ft 5,000 minus 4,000; total ~10 mi RT from sibling South Couloir prose; hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Dropped: 'allow extra time if FR 38 is gated or washed out at MP 7'. Row dist_km 14.4 (8.9 mi) fits a round trip better than one-way; the sibling prose says ~10 mi RT."
+},
+{
+ "id": "wa_little_sister_south_couloir",
+ "itinerary": {
+  "cal": "The line has also been skied as part of a multi-day traverse of the whole range.",
+  "totalNote": "A long single day from the Elbow Lake Trailhead, about 12 hours, 10 miles and 5,000 ft car to car.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Climb the South Couloir car to car",
+    "objective": "Summit via the South Couloir and return in a day",
+    "note": "Cross the Middle Fork Nooksack, follow the Elbow Lake Trail and the Green Creek climbers' path up the basin, and climb snow to the col southeast of Little Sister before traversing onto the south side and up the gully. A winter party left about 7 a.m., reached the summit around 1 p.m. and was back after dark, about 12 hours and roughly 10 miles and 5,000 ft car to car.",
+    "gainFt": 5000,
+    "lossFt": 5000,
+    "hours": 12,
+    "miles": 10.0,
+    "packLb": 22,
+    "schedule": [
+     {"time": "~7:00 AM", "label": "Leave the trailhead", "detail": "Start time of the reported winter party."},
+     {"time": "~1:00 PM", "label": "Summit", "detail": "About 6 hours from the car."},
+     {"time": "After dark", "label": "Back at the trailhead", "detail": "About 12 hours car to car."}
+    ]
+   }
+  ]
+ },
+ "figureSources": "hours, miles, gain and clock times all prose (12 h, ~10 mi, 5,000 ft); pack estimate (winter day)",
+ "sources": [],
+ "confidence": "high",
+ "notes": "Route detail (col, gully) taken from row approach. Row dist_km 14.4 km (8.9 mi) roughly matches the prose ~10 mi round trip, so it is likely stored as round trip. Nothing dropped from the prose."
+},
+{
+ "id": "wa_little_sister_southeast_ridge",
+ "itinerary": {
+  "cal": "Best as an overnight; fit parties do it car-to-car in a long day. Combining it with the North Face (up one, down the other) or continuing to Cinderella Peak makes far better use of the approach. The full Green Creek Circuit, which takes in this ridge, is Grade IV 5.6, roughly 25 pitches and 13 miles with about 7,000 ft of gain, and takes 10-14 hours for the traverse alone.",
+  "totalNote": "Hike in and camp in the upper Green Creek basin, then climb the three-pitch Southeast Ridge, descend, and walk out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to the upper Green Creek basin",
+    "objective": "Camp below the Green Creek Glacier",
+    "note": "Cross the Middle Fork on the log, hike the Elbow Lake Trail and the Green Creek climbers' path, and camp in the upper Green Creek basin below the glacier.",
+    "gainFt": 4000,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the Southeast Ridge and walk out",
+    "objective": "Summit via the Southeast Ridge, break camp and exit",
+    "note": "Make an early start onto the Green Creek Glacier, cross the moat at the Cinderella-Little Sister col, and climb the three pitches of the Southeast Ridge and the fourth-class finish to the summit. Either downclimb the ridge or rappel the North Face to the glacier, then break camp and walk out.",
+    "gainFt": 1000,
+    "lossFt": 5000,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/gain from sibling row approach text (Green Glacier approach 5 mi one way, 4,000 ft); day2 gain = row gain_ft 5,000 minus 4,000; ~10 mi RT from sibling South Couloir prose; hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Dropped: 'drive to the Elbow Lake Trailhead (allow extra time if FR 38 is gated or washed out at MP 7)'. Row dist_km 14.4 likely round trip."
+},
+{
+ "id": "wa_little_sister_west_face",
+ "itinerary": {
+  "cal": "Realistically a two-day trip, or one very long day for a fast, fit party willing to move together. Parties doing the full Green Creek Circuit — a 5.6, Grade IV, roughly 25-pitch, 13-mile linkup with about 7,000 ft of gain, first done by Darin Berdinka in 2013 — take 10-14 hours for the traverse portion alone and typically go car-to-car in 12+ hours.",
+  "totalNote": "Hike in to a camp below the Green Creek Glacier at about 4,500-5,000 ft, then climb the 1,000 ft west face, descend the westernmost rib, and walk out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to the upper Green Creek basin",
+    "objective": "Camp below the glacier at about 4,500-5,000 ft",
+    "note": "Cross the Middle Fork on the log and hike the Elbow Lake Trail and the Green Creek climbers' path to camp in the upper Green Creek basin below the glacier, at around 4,500-5,000 ft.",
+    "gainFt": 4000,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the west face and walk out",
+    "objective": "Summit via the west face, break camp and exit",
+    "note": "Cross the divide early and climb the 1,000 ft west face, soloing or simul-climbing the fourth and low fifth class, to tag the summit. Reverse the westernmost rib to the second lower notch, regain the glacier, then break camp and walk out.",
+    "gainFt": 1000,
+    "lossFt": 5000,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/gain from sibling row approach text (Green Glacier approach 5 mi one way, 4,000 ft); camp elevation prose; day2 gain = row gain_ft 5,000 minus 4,000; ~10 mi RT from sibling South Couloir prose; hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Dropped: 'drive in (allow extra time if FR 38 is gated or washed out)'. Row dist_km 14.4 likely round trip."
+},
+{
+ "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+ "itinerary": {
+  "cal": "The documented itinerary takes 3 days, with the summit climbed on the afternoon of day 2 from a high camp in upper Boulder Basin.",
+  "totalNote": "Three days: walk in to a Boulder Creek ford camp, move up to a Boulder Basin high camp and climb Luahna via Clark and Luahna basins that afternoon, then hike out.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike to the Boulder Creek ford camp",
+    "objective": "Camp at the Boulder Creek ford (~3,700 ft)",
+    "note": "Hike from the White River Trailhead to a camp at the Boulder Creek ford at about 3,700 ft.",
+    "gainFt": 1400,
+    "lossFt": 0,
+    "hours": null,
+    "miles": null,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Move to high camp and climb Luahna",
+    "objective": "Establish a Boulder Basin high camp, then summit",
+    "note": "In the morning, climb from the Boulder Creek camp to a high camp in upper Boulder Basin. In the afternoon, go from high camp to the Luahna summit via Clark Basin and Luahna Basin, then return to high camp.",
+    "gainFt": 8000,
+    "lossFt": 5900,
+    "hours": null,
+    "miles": null,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out to the White River Trailhead",
+    "objective": "Return from high camp to the car",
+    "note": "Hike from high camp back out to the White River Trailhead.",
+    "gainFt": 0,
+    "lossFt": 3500,
+    "hours": null,
+    "miles": null,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 gain row (TH 2,320 to ford ~3,700); day3 loss row (high camp ~5,800 to TH); day2 gain = row gain_ft 9,400 minus day1 (includes basin-traverse up/downs), loss balances; miles/hours unknown; packs estimated",
+ "sources": ["https://www.countryhighpoints.com/clark-and-luahna-mountains/"],
+ "confidence": "low",
+ "notes": "Opened source gave no usable mileage. Day 2 gain split from row total is rough. Row dist_km 24.15 (15 mi) could not be split by day. Row bivy lists Boulder Pass/Thunder Basin at 6,200 ft, while the approach text puts high camp near 5,800 ft. Nothing dropped."
+},
+{
+ "id": "wa_lundin_peak_east_ridge",
+ "itinerary": {
+  "cal": "Usually done as a single car-to-car day.",
+  "totalNote": "A single car-to-car day over Red Pass to the Lundin/East Lundin saddle, a short final pitch to the summit, and a rappel or downclimb back down.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike over Red Pass and climb the East Ridge",
+    "objective": "Summit via the East Ridge and return car to car",
+    "note": "Hike the long approach on the Pacific Crest Trail over Red Pass to the Lundin/East Lundin saddle and climb the short final pitch to the summit. Rappel or downclimb back to the saddle and hike out.",
+    "gainFt": 3000,
+    "lossFt": 3000,
+    "hours": null,
+    "miles": 9.0,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "miles row dist_km 7.24 (4.5 mi, matches approach 2 + 2.5 mi to Red Pass) x2; gain row-derived net (summit 6,057 minus PCT North TH 3,018 from sibling row; row gain_ft null); hours unknown; pack estimate",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Gain is a net minimum. Nothing dropped."
+},
+{
+ "id": "wa_lundin_peak_south_face_left",
+ "itinerary": {
+  "cal": "Usually done as a single car-to-car day.",
+  "totalNote": "A single car-to-car day: hike into Commonwealth Basin, climb the four-pitch route, and descend the West or Southeast Ridge.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Climb South Face Left car to car",
+    "objective": "Climb the four pitches and return",
+    "note": "Hike into Commonwealth Basin below the south face and climb the four-pitch route. Descend via the West Ridge or Southeast Ridge and hike out.",
+    "gainFt": 2900,
+    "lossFt": 2900,
+    "hours": null,
+    "miles": 7.6,
+    "packLb": 22,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "gain row gain_ft; miles row dist_km 6.1 treated as one-way x2; hours unknown; pack estimate",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Nothing dropped."
+},
+{
+ "id": "wa_magic_mountain_north_face",
+ "itinerary": {
+  "cal": "Two days minimum. A three-day version lets you carry over to Kool-Aid Lake and climb another Ptarmigan Traverse peak, which is a better use of the permit.",
+  "totalNote": "Hike 4.9 miles over Cascade Pass to Pelton Basin Camp, then climb the Yawning Glacier and the 600 ft north face to the summit and hike out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike over Cascade Pass to Pelton Basin",
+    "objective": "Set up camp at Pelton Basin and scout the route",
+    "note": "Hike 4.9 miles to Pelton Basin Camp (1,800 ft of gain) and set up camp. Scout the couloir and glacier entry from the basin in evening light.",
+    "gainFt": 1800,
+    "lossFt": 600,
+    "hours": null,
+    "miles": 4.9,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the North Face and hike out",
+    "objective": "Summit via the Yawning Glacier and north face",
+    "note": "Make a pre-dawn start and climb the couloir and Yawning Glacier to the Magic–Pelton Col, cross the head of the glacier, and climb the 600 ft north face to the notch and the summit. Either reverse the glacier or descend the South Ridge and loop back over Cache Col to Cascade Pass, then hike out.",
+    "gainFt": 3460,
+    "lossFt": 4630,
+    "hours": null,
+    "miles": 7.9,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/gain prose (4.9 mi, 1,800 ft), loss row waypoints (pass 5,392 to Pelton 4,770); day2 gain/loss row waypoints (Pelton 4,770 to summit 7,610, back over the pass to TH 3,600); day2 miles = row dist_km 10.3 (6.4 mi one-way) x2 minus 4.9; hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Day 2 miles assume reversing the glacier; the South Ridge/Cache Col loop would differ. Nothing dropped."
+},
+{
+ "id": "wa_magic_mountain_northeast_couloir",
+ "itinerary": {
+  "cal": "Two days. Spring ski parties commonly link it into the Magic S Loop, an 18-mile, 9,700 ft day from the Eldorado parking area, which has been done in about 12 hours.",
+  "totalNote": "Hike 4.9 miles over Cascade Pass to Pelton Basin Camp, then climb the Yawning Glacier and the northeast couloir to the summit and hike out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike over Cascade Pass to Pelton Basin",
+    "objective": "Set up camp and look at the couloir",
+    "note": "Hike 4.9 miles over Cascade Pass to Pelton Basin Camp and set up. Look at the couloir in evening light to pick your line and identify the overhead hazard.",
+    "gainFt": 1800,
+    "lossFt": 600,
+    "hours": null,
+    "miles": 4.9,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the couloir and hike out",
+    "objective": "Summit via the Yawning Glacier and couloir",
+    "note": "Make a very early start up the couloir approach and the Yawning Glacier to the Magic–Pelton Col, then climb the couloir to the summit. Descend either the couloir, early while it is frozen, or the South Ridge, then hike out.",
+    "gainFt": 3460,
+    "lossFt": 4630,
+    "hours": null,
+    "miles": 7.9,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles prose (4.9 mi), gain from row approach text (1,800 ft), loss row waypoints; day2 gain/loss row waypoints (Pelton 4,770, summit 7,610, pass 5,392, TH 3,600); day2 miles = row dist_km 10.3 (6.4 mi one-way) x2 minus 4.9; hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Dropped from the Magic S Loop sentence: 'when the road is gated'."
+},
+{
+ "id": "wa_magic_mountain_northwest_ridge",
+ "itinerary": {
+  "cal": "Two days from a Kool-Aid Lake camp is the sensible plan. Parties on the full Ptarmigan Traverse can slot this in as a half-day objective from the Kool-Aid Lake camp in place of the more common South Ridge scramble.",
+  "totalNote": "Hike over Cascade Pass and Cache Col to camp at Kool-Aid Lake, then climb the northwest ridge, descend the South Ridge, and exit over Cache Col on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike over Cache Col to Kool-Aid Lake",
+    "objective": "Camp at Kool-Aid Lake",
+    "note": "Hike 3.7 miles to Cascade Pass, continue over the Cache Glacier and Cache Col, and drop to Kool-Aid Lake to camp (5.9 miles, about 5 hours).",
+    "gainFt": 3100,
+    "lossFt": 600,
+    "hours": 5,
+    "miles": 5.9,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the Northwest Ridge and hike out",
+    "objective": "Summit, return to camp, and exit over Cache Col",
+    "note": "Cross to the base of the northwest ridge and climb it and the northwest face to the summit. Descend the South Ridge back to camp, then pack up and hike out over Cache Col.",
+    "gainFt": 2100,
+    "lossFt": 4600,
+    "hours": null,
+    "miles": 13.1,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/hours prose (5.9 mi, ~5 h); gains/losses from sibling-row waypoints (TH 3,600, Kool-Aid Lake 6,120, summit 7,610) plus the 600 ft Cache Col drop stated in sibling prose; day2 miles = ~19 mi car-to-car round trip (Southwest Cirque prose, same approach) minus 5.9; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Row dist_km 12.9 (8.0 mi one-way, ~16 mi RT) conflicts with the ~19 mi round trip given in the sibling Southwest Cirque prose; used 19. Row approach says this route does not drop to Kool-Aid Lake, but the prose camps there. Nothing dropped."
+},
+{
+ "id": "wa_magic_mountain_southwest_cirque",
+ "itinerary": {
+  "cal": "Two days. As with the South Ridge, this is most naturally done as a side objective from the first camp on the Ptarmigan Traverse; a car-to-car day is about 19 miles round trip.",
+  "totalNote": "Hike over Cascade Pass and Cache Col to camp at Kool-Aid Lake, then climb the southwest cirque, descend the South Ridge, and exit over Cache Col on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike over Cache Col to Kool-Aid Lake",
+    "objective": "Camp at Kool-Aid Lake",
+    "note": "Hike 3.7 miles to Cascade Pass, cross the Cache Glacier to Cache Col, then descend 600 ft and camp at Kool-Aid Lake (5.9 miles, about 5 hours).",
+    "gainFt": 3100,
+    "lossFt": 600,
+    "hours": 5,
+    "miles": 5.9,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the Southwest Cirque and hike out",
+    "objective": "Summit, return to camp, and exit over Cache Col",
+    "note": "Climb into the southwest cirque and take a gully to the summit ridge and the top (2-3 hours). Descend the South Ridge to camp, then pack up and exit over Cache Col.",
+    "gainFt": 2100,
+    "lossFt": 4600,
+    "hours": null,
+    "miles": 13.1,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/hours/600 ft drop prose; gains/losses row waypoints (TH 3,600, Kool-Aid Lake 6,120, summit 7,610; Cache Col ~6,720 derived); day2 miles = prose ~19 mi round trip minus 5.9; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Prose ~19 mi car-to-car round trip vs row dist_km 12.9 (8.0 mi one-way, ~16 mi RT). Day 2 total hours unknown (only the 2-3 h climb is stated). Nothing dropped."
+},
+{
+ "id": "wa_magic_mountain_west_ridge",
+ "itinerary": {
+  "cal": "Two days from a Kool-Aid Lake camp. Three days is more comfortable and lets you add the South Ridge or the Southwest Cirque as a second day's objective from the same camp.",
+  "totalNote": "Hike over Cascade Pass and Cache Col to camp at Kool-Aid Lake, then climb the four-pitch West Ridge, descend the South Ridge, and exit over Cache Col on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike over Cache Col to Kool-Aid Lake",
+    "objective": "Camp at Kool-Aid Lake",
+    "note": "Hike 3.7 miles to Cascade Pass, cross the Cache Glacier to Cache Col, then drop 600 ft and camp at Kool-Aid Lake (5.9 miles, about 5 hours).",
+    "gainFt": 3100,
+    "lossFt": 600,
+    "hours": 5,
+    "miles": 5.9,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the West Ridge and hike out",
+    "objective": "Summit, return to camp, and exit over Cache Col",
+    "note": "Cross early to the pocket glacier below the west face while the snow is firm, cross the schrund, and climb the route in four pitches or so before scrambling to the summit. Descend the South Ridge to camp, then pack out over Cache Col.",
+    "gainFt": 2100,
+    "lossFt": 4600,
+    "hours": null,
+    "miles": 13.1,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/hours/600 ft drop prose; gains/losses row waypoints (TH 3,600, Kool-Aid Lake 6,120, summit 7,610); day2 miles = ~19 mi round trip from the sibling Southwest Cirque prose (same approach) minus 5.9; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Row dist_km 12.9 (~16 mi RT if one-way) vs ~19 mi round trip in the sibling prose; used 19. Nothing dropped."
+},
+{
+ "id": "wa_mcmillan_spire_west_southwest_ridge",
+ "itinerary": {
+  "cal": "Typically a 2-3 day trip.",
+  "totalNote": "Approach over the notch to a Terror Basin camp, climb the Southwest Ridge and return to camp, and hike out via Goodell Creek on day three.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Approach to Terror Basin camp",
+    "objective": "Reach camp in Terror Basin",
+    "note": "Approach from the Goodell Creek trailhead over the 6,200 ft notch to camp in Terror Basin, which takes 6-8 hours.",
+    "gainFt": 5600,
+    "lossFt": 400,
+    "hours": 7,
+    "miles": 7.0,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the Southwest Ridge",
+    "objective": "Summit West McMillan and return to camp",
+    "note": "Cross the Terror Glacier to its east end, climb the Southwest Ridge to the summit, and return to camp.",
+    "gainFt": 2200,
+    "lossFt": 2200,
+    "hours": null,
+    "miles": 2.0,
+    "packLb": 18,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out via Goodell Creek",
+    "objective": "Return to the trailhead",
+    "note": "Pack up and hike out over the notch and down Goodell Creek.",
+    "gainFt": 400,
+    "lossFt": 5600,
+    "hours": null,
+    "miles": 7.0,
+    "packLb": 40,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 hours prose (6-8 h); gains/losses row waypoints (TH ~600, notch 6,200 from approach, camp 5,800, summit 8,004); approach ~7 mi from web search summaries (NPS climbing rangers / Mountaineers, ~7 mi and ~5,700 ft to the bivy; pages not opened), consistent with row dist_km 12.9 (8.0 mi one-way to summit); day2 miles = 2 x (8.0 - 7.0); packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Derived gain ~8,200 ft vs row gain_ft 9,800. Mountaineers pages returned 403, so the ~7 mi figure is from search-result summaries only. Nothing dropped."
+},
+{
+ "id": "wa_mount_adams_south_climb",
+ "itinerary": {
+  "cal": "Most parties do it in 2 days; strong parties climb it car-to-car in a single long day of roughly 10-14 hours total.",
+  "totalNote": "Hike in and camp near Lunch Counter on day one, then make an alpine-start summit push and descend to the car on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to camp near Lunch Counter",
+    "objective": "Camp near Lunch Counter (~9,000-9,400 ft)",
+    "note": "Hike in from the South Climb trailhead and camp near Lunch Counter at about 9,000-9,400 ft.",
+    "gainFt": 3600,
+    "lossFt": 0,
+    "hours": null,
+    "miles": null,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Summit push and descend to the car",
+    "objective": "Summit Mount Adams and return to the trailhead",
+    "note": "Make an alpine start for the summit push, then descend all the way to the car.",
+    "gainFt": 3080,
+    "lossFt": 6680,
+    "hours": null,
+    "miles": null,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "gains/losses from prose camp elevation (~9,200 ft midpoint) and row waypoints (TH 5,600, summit 12,276); miles and hours unknown (row dist_km 9.2 = 5.7 mi one-way, but camp distance not in row; a SummitPost GPS figure of ~5.1 mi to Lunch Counter appeared only in a search summary, page blocked)",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Row dist_km 9.2 km (5.7 mi one-way) is shorter than the commonly cited ~12 mi round trip. Nothing dropped."
+},
+{
+ "id": "wa_mount_baker_boulder_park_cleaver",
+ "itinerary": {
+  "cal": "Usually done as a 2-day climb with a high camp on Boulder Ridge.",
+  "totalNote": "Hike the Boulder Ridge Trail to a high camp on day one, then cross the lower Boulder Glacier, climb the cleaver to the summit, and descend all the way out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike Boulder Ridge to high camp",
+    "objective": "Reach high camp at about 5,700 ft",
+    "note": "Hike the Boulder Ridge Trail and climb to a high camp at about 5,700 ft.",
+    "gainFt": 3000,
+    "lossFt": 0,
+    "hours": null,
+    "miles": null,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the cleaver to the summit and out",
+    "objective": "Summit Mount Baker and return to the trailhead",
+    "note": "Cross the lower Boulder Glacier northwest to the cleaver, climb it, and reach the 10,781 ft summit. Descend to camp and continue out to the trailhead.",
+    "gainFt": 5080,
+    "lossFt": 8080,
+    "hours": null,
+    "miles": null,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "gains/losses from prose camp elevation (5,700 ft) and row waypoints (TH 2,700, summit 10,781), matching row gain_ft 8,081; miles/hours unknown (row dist_km 25.7 = 16 mi is probably round trip but cannot be split)",
+ "sources": ["https://turns-all-year.com/trip-reports/mt-baker-via-boulder-glacier-april-9-10-2016"],
+ "confidence": "medium",
+ "notes": "Contradiction: the prose puts high camp at ~5,700 ft, but the row descent text puts it below the cleaver at ~7,200-7,500 ft. The opened trip report gave no distances."
+},
+{
+ "id": "wa_mount_berge_east_ridge",
+ "itinerary": {
+  "cal": "Typically a long day or an overnight from a basin camp.",
+  "totalNote": "Hike about 6 miles up Buck Creek to a treeline camp, climb the East Ridge (about 6 hours of climbing) and descend, then hike out.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to a Cleator-Berge camp",
+    "objective": "Camp near treeline below Berge",
+    "note": "Hike about 6 miles up the Buck Creek Trail to treeline and camp near the Cleator-Berge area.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": 6.0,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the East Ridge",
+    "objective": "Summit Berge via the East Ridge",
+    "note": "Climb the East Ridge, roughly 6 hours of climbing with much of it simul-climbed, and descend the same way.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 20,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out to the trailhead",
+    "objective": "Return down Buck Creek",
+    "note": "If camping overnight, hike out to the trailhead.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": 6.0,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "miles prose (~6 mi in), confirmed by an opened trip report (~6 mi approach); gain/hours unknown (row gain_ft and dist_km null, no trailhead elevation); packs estimated",
+ "sources": ["https://climberkyle.com/2019/08/25/mt-berge-e-ridge-5-8/"],
+ "confidence": "low",
+ "notes": "The prose calls it a 'long day or overnight' but lays out 3 days; I kept the 3-day layout. The opened trip report did the climb on the hike-in day and hiked out the next, which is a 2-day variant."
+},
+{
+ "id": "wa_mount_bigelow_tribute_to_richard",
+ "itinerary": {
+  "cal": "Best done as an overnight from Upper Eagle Lake, which is what the first-ascent party did. A car-to-car day is possible for a strong, fast party but leaves no margin: it is about 13 trail-and-scramble miles with roughly 3,900 ft of gain plus four pitches of 5.10. You can also spend a second night at the lake and walk out fresh.",
+  "totalNote": "Hike 6.2 miles to Upper Eagle Lake and scope the East Face, then climb the four-pitch route, descend the standard scramble, and hike out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike to Upper Eagle Lake",
+    "objective": "Camp at the lake and scope the East Face",
+    "note": "Hike the 6.2 miles of Eagle Lakes Trail #431 to Upper Eagle Lake (roughly 2 h 45 min of walking at the mapped trail estimate) and make camp among the established sites. Spend the last of the light scoping the East Face from the lakeshore; the crack systems are much easier to sort out with binoculars from the water than from the base.",
+    "gainFt": 2400,
+    "lossFt": 0,
+    "hours": 2.75,
+    "miles": 6.2,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb Tribute to Richard and hike out",
+    "objective": "Climb the four pitches, summit, and return to the car",
+    "note": "Leave camp at first light, scramble the 900-1,000 ft of talus and heather to the base, and climb the four pitches; budget generously, as the first-ascent party's climbing was very slow because of the cleaning required. Walk north to the summit, descend the standard scramble back to camp, then strike the tent and hike out.",
+    "gainFt": 1500,
+    "lossFt": 3700,
+    "hours": null,
+    "miles": 6.8,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/hours prose (6.2 mi, ~2 h 45 min walking); day1 gain row waypoints (TH 4,750 to Upper Eagle Lake 7,115); day2 gain = row gain_ft 3,860 minus day1, loss row waypoints (summit 8,449 to TH); day2 miles = prose ~13 mi total minus 6.2; packs estimated",
+ "sources": [],
+ "confidence": "high",
+ "notes": "Day 1 hours are walking time only. Nothing dropped."
+},
+{
+ "id": "wa_mount_blum_north_ridge",
+ "itinerary": {
+  "cal": "Typically a 2-day trip; one recent ascent logged about 20 hours car-to-car across 2 days.",
+  "totalNote": "Approach to a Blum Lakes camp, then cross the glacier, climb the North Ridge (about 6 hours of climbing), and descend and hike out on day two.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Approach to a Blum Lakes camp",
+    "objective": "Camp in the Blum Lakes basin",
+    "note": "Approach from the Baker River Trailhead up Blum Creek to a camp in the Blum Lakes area.",
+    "gainFt": 4200,
+    "lossFt": 0,
+    "hours": null,
+    "miles": null,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the North Ridge and hike out",
+    "objective": "Summit via the North Ridge and return to the car",
+    "note": "Cross the glacier to the base and climb the ridge itself, about 6 hours of climbing time. Descend via the south side of a false summit and the standard South Ridge line toward Blum Lakes, then hike out.",
+    "gainFt": 2700,
+    "lossFt": 6900,
+    "hours": null,
+    "miles": null,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "gains/losses row waypoints (Baker River TH 800, Blum Lakes ~5,000, summit 7,685), net minimums; miles/hours unknown (row gain_ft/dist_km null; only a 20 h two-day total in prose)",
+ "sources": [],
+ "confidence": "low",
+ "notes": "Descent line taken from the row descent field. Nothing dropped."
+},
+{
+ "id": "wa_mount_constance_north_chute",
+ "itinerary": {
+  "cal": "Usually done as a 3-day trip based at Lake Constance.",
+  "totalNote": "Hike up to Lake Constance, make a pre-dawn climb of Avalanche Canyon, the North Chute and the Finger Traverse to the summit on day two, and hike out on day three.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Approach to Lake Constance",
+    "objective": "Camp at Lake Constance",
+    "note": "Approach up the steep Lake Constance Trail to camp at Lake Constance.",
+    "gainFt": 4100,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 6.0,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the North Chute to the summit",
+    "objective": "Summit via the North Chute and Finger Traverse",
+    "note": "Make a pre-dawn ascent of Avalanche Canyon and the North Chute, cross the Finger Traverse to the summit, and descend.",
+    "gainFt": 3100,
+    "lossFt": 3100,
+    "hours": null,
+    "miles": null,
+    "packLb": 18,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out from Lake Constance",
+    "objective": "Return to the car",
+    "note": "Hike out from Lake Constance.",
+    "gainFt": 0,
+    "lossFt": 4100,
+    "hours": null,
+    "miles": 6.0,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "gains/losses row waypoints (parking 550, Lake Constance 4,667, summit 7,756), total ~7,200 matches row gain_ft 7,100; day1/day3 miles row dist_km 9.7 (6.0 mi) treated as one-way to the lake; day2 miles and all hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "dist_km 9.7 may run to the summit rather than the lake, in which case day 1/3 miles are slightly high. Nothing dropped from the prose."
+},
+{
+ "id": "wa_mount_despair_northeast_buttress",
+ "itinerary": {
+  "cal": "A three-day outing.",
+  "totalNote": "One long brush approach day up Goodell Creek to the base, one full day climbing the buttress to the north summit, and an exit day via Triumph Pass and the Thornton Lakes Trail.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Brush approach up Goodell Creek",
+    "objective": "Reach the base of the buttress",
+    "note": "Spend one long, arduous day on the brush approach into the Goodell Creek valley and up to the base of the buttress.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the Northeast Buttress",
+    "objective": "Reach the north summit",
+    "note": "Spend one full day climbing the buttress to the north summit.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 35,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Exit via Triumph Pass and Thornton Lakes",
+    "objective": "Hike out to the Thornton Lakes trailhead",
+    "note": "Exit via Triumph Pass and the Thornton Lakes Trail.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 35,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "no figures in prose or row (gain_ft/dist_km null, no camp or trailhead elevations); packs estimated, heavier on day 2 since the route is a carry-over to a different exit",
+ "sources": [],
+ "confidence": "low",
+ "notes": "Carry-over route (in via Goodell Creek, out via Thornton Lakes) implies a car shuttle; not stated in prose. Nothing dropped."
+},
+{
+ "id": "wa_mount_fury_east_direct_east_ridge",
+ "itinerary": {
+  "cal": "Strong parties compress this to three days; most take four. Book the water taxi to Big Beaver Landing in advance, including the evening pickup on the last day.",
+  "totalNote": "Four days: water taxi and Big Beaver trail to Access Creek Basin, over Access Col to a Luna Col high camp, a 12-15 hour summit day on the Direct East Ridge, and a long exit to an evening water taxi.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Water taxi and hike to Access Creek Basin",
+    "objective": "Camp in Access Creek Basin at 4,300 ft",
+    "note": "Take the water taxi from the Ross Dam trailhead to Big Beaver Landing, then hike 11-12 miles past Luna Camp, the Big Beaver log crossing and the Access Creek bushwhack to camp in Access Creek Basin at 4,300 ft. Nine or more hours from the landing is typical.",
+    "gainFt": 2700,
+    "lossFt": 0,
+    "hours": 9,
+    "miles": 11.5,
+    "packLb": 45,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Over Access Col to Luna Col",
+    "objective": "Set up high camp at Luna Col",
+    "note": "Climb the scree chute to Access Col at 6,100 ft and make the steep heather traverse to Luna Col at about 7,200 ft (4-5 hours), then set up high camp. Luna Peak, the finest viewpoint in Washington, is an easy Class 2-3 bonus summit that afternoon.",
+    "gainFt": 2900,
+    "lossFt": null,
+    "hours": 4.5,
+    "miles": null,
+    "packLb": 45,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Climb the Direct East Ridge",
+    "objective": "Summit East Fury and return to Luna Col",
+    "note": "Make an alpine start, traverse to the 6,300 ft basin, and climb the Direct East Ridge to the summit before returning to Luna Col. It is a full 12-15 hour day.",
+    "gainFt": 2950,
+    "lossFt": 2950,
+    "hours": 13.5,
+    "miles": null,
+    "packLb": 18,
+    "schedule": []
+   },
+   {
+    "n": 4,
+    "title": "Hike out to the water taxi",
+    "objective": "Reach the pre-booked evening boat",
+    "note": "Break camp, traverse back over Access Col, drop into Access Basin, reverse the bushwhack, and hike the Big Beaver trail to a pre-booked evening water taxi. Expect 10-17 hours.",
+    "gainFt": null,
+    "lossFt": 5600,
+    "hours": 13.5,
+    "miles": null,
+    "packLb": 40,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/hours prose (11-12 mi, 9+ h), day1 gain row (landing ~1,600 to basin 4,300); day2 gain prose elevations (4,300 to 6,100 to 7,200), hours prose 4-5 h; day3 hours prose 12-15 h, gain/loss prose elevations (Luna Col 7,200, basin 6,300) and row summit 8,356; day4 hours prose 10-17 h (midpoint), loss 7,200 to ~1,600; days 2-4 miles unknown (row dist_km 28 = 17.4 mi one-way cannot be split); packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Advance water-taxi booking moved to cal from row approach and the day 4 'pre-booked' mention. Derived gain ~8,550 ft plus day 4 regain vs row gain_ft 9,500. Nothing dropped."
+},
+{
+ "id": "wa_mount_fury_east_north_buttress",
+ "itinerary": {
+  "cal": "Five days is realistic; six gives you a weather day, which on a north-facing 4,000-ft line in the Pickets you will probably want. Kearney's September attempt stretched from a planned 7 days to 10 when a storm dumped heavy snow.",
+  "totalNote": "Five days: Big Beaver trail to Access Creek Basin, over to Luna Col, down into Luna Cirque, a pre-dawn climb of the North Buttress with a descent back to Luna Col, and the exit to a booked water taxi.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Water taxi and hike to Access Creek Basin",
+    "objective": "Camp in Access Creek Basin at 4,300 ft",
+    "note": "From the Ross Dam trailhead, take the water taxi and hike the Big Beaver Trail and the Access Creek bushwhack to Access Creek Basin at 4,300 ft.",
+    "gainFt": 2700,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 11.5,
+    "packLb": 45,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Over Access Col to Luna Col",
+    "objective": "Camp at Luna Col",
+    "note": "Climb to Access Col at 6,100 ft and make the heather traverse to Luna Col at about 7,200 ft.",
+    "gainFt": 2900,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 45,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Descend into Luna Cirque",
+    "objective": "Camp at the foot of the North Buttress",
+    "note": "Descend about 2,400 ft into Luna Cirque, past Luna Lake at 4,800 ft, and establish a cirque camp at the foot of the buttress.",
+    "gainFt": 0,
+    "lossFt": 2400,
+    "hours": null,
+    "miles": null,
+    "packLb": 45,
+    "schedule": []
+   },
+   {
+    "n": 4,
+    "title": "Climb the North Buttress",
+    "objective": "Summit East Fury and descend to Luna Col",
+    "note": "Make a pre-dawn start and climb the North Buttress; about 4.5 hours of climbing gets you to the ridge crest, with the 5.9 crux and the summit snow arete above. Descend the Southeast Glacier and the northeast ridge to Luna Col, or bivouac high.",
+    "gainFt": 3520,
+    "lossFt": 1120,
+    "hours": null,
+    "miles": null,
+    "packLb": 30,
+    "schedule": []
+   },
+   {
+    "n": 5,
+    "title": "Exit to the water taxi",
+    "objective": "Hike out to a booked boat",
+    "note": "Exit from Luna Col to Access Basin, reverse the bushwhack, and hike the Big Beaver Trail to a booked water taxi.",
+    "gainFt": null,
+    "lossFt": 5600,
+    "hours": null,
+    "miles": null,
+    "packLb": 40,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles row approach (10-11.5 mi trail plus ~1 mi to the cut-off); gains/losses from prose elevations (4,300, 6,100, 7,200, 4,800) plus row summit 8,322 and landing ~1,600; hours/miles otherwise unknown; packs estimated (day 4 heavier because the descent ends at Luna Col, so camp is apparently carried over the route)",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Contradiction: derived ascent ~9,100 ft (2,700 + 2,900 + 3,520) vs row gain_ft 7,000. Prose does not say whether the cirque camp is carried up the buttress; pack weight on day 4 assumes it is. Nothing dropped."
+},
+{
+ "id": "wa_mount_howard_south_slope",
+ "itinerary": {
+  "cal": "Commonly done car-to-car in a single long day. A 2-day version is also used, especially for spring snow climbs or when combining multiple Nason Ridge summits: trailhead to a bivy near Crescent Lake or the summit on day 1 (about 12 miles, 6,000-6,400 ft of gain), then the summit if not reached on day 1 and the return to the trailhead on day 2.",
+  "totalNote": "A single long day of about 7.5-8.75 hours from the Merritt Lake Trailhead via Crescent Lake and the south slope.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Climb the south slope car to car",
+    "objective": "Summit Mount Howard and return",
+    "note": "Hike from the Merritt Lake Trailhead up the Merritt Lake and Nason Ridge trails to Crescent Lake, climb the south slope to the summit, and return the same way. Round trips of about 7.5-8.75 hours are reported for Howard alone or Howard and Mastiff combined.",
+    "gainFt": 4600,
+    "lossFt": 4600,
+    "hours": 8.1,
+    "miles": 12.7,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "hours prose (7.5-8.75 h, midpoint); gain row gain_ft; miles row dist_km 10.2 (6.3 mi) treated as one-way x2; pack estimate",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Contradiction: the prose 2-day version gives about 12 miles and 6,000-6,400 ft of gain just to reach a bivy, versus row gain_ft 4,600 and dist_km 10.2 (6.3 mi one-way). The 2-day version went into cal. Nothing dropped."
+},
+{
+ "id": "wa_mount_index_north_face",
+ "itinerary": {
+  "cal": "Strong parties occasionally do it car-to-car in one very long day.",
+  "totalNote": "Hike in to Lake Serene, then make a pre-dawn start on the North Face, descend and rappel back to the lake, and hike out that evening.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to Lake Serene",
+    "objective": "Bivy at Lake Serene or the talus basin",
+    "note": "Hike the Lake Serene Trail 3.6 miles and roughly 1,920 ft to Lake Serene (about 1.5-2 hours). Bivy at the lake or in the talus basin below the route.",
+    "gainFt": 1920,
+    "lossFt": 0,
+    "hours": 1.75,
+    "miles": 3.6,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the North Face and hike out",
+    "objective": "Summit North Peak and return to the car",
+    "note": "Make a pre-dawn start and climb the North Face, roughly a full day with the approach. Descend and rappel back to the lake, then hike out that evening.",
+    "gainFt": 2830,
+    "lossFt": 4790,
+    "hours": null,
+    "miles": null,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 miles/gain/hours from row approach text (3.6 mi, ~1,920 ft, 1.5-2 h); day2 gain/loss row waypoints (Lake Serene 2,525, summit 5,357, TH 566); day2 miles/hours unknown (row dist_km 5.8 = 3.6 mi covers only the trail); packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Nothing dropped."
+},
+{
+ "id": "wa_mount_lago_south_slope_south_face",
+ "itinerary": {
+  "cal": "A common plan takes 3 days. Many parties extend to 4-5 days to add Osceola Peak, Mount Rolo, or a full Pasayten ridge traverse (e.g. via Ptarmigan Peak and Dot Mountain).",
+  "totalNote": "Hike in to Fred's Lake or Shellrock Basin, climb Lago (often with Carru) in about a half day from camp, and hike out on day three.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to Fred's Lake or Shellrock Basin",
+    "objective": "Reach a camp below Lago",
+    "note": "Hike in from the Robinson Creek or Slate Pass trailhead to Fred's Lake or Shellrock Basin.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb Mount Lago from Shellrock Basin",
+    "objective": "Summit Lago, optionally adding Carru",
+    "note": "Climb Mount Lago from a Shellrock Basin camp, often combined with Mount Carru via the connecting saddle. It is roughly a half-day round trip.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 15,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out to the trailhead",
+    "objective": "Return to the car",
+    "note": "Pack up and hike out.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "no per-day figures: prose gives none, camp elevation for Shellrock Basin is not in the row, and row gain_ft 2,800 / dist_km 25.7 cannot be split by day; packs estimated",
+ "sources": [],
+ "confidence": "low",
+ "notes": "Contradiction: row gain_ft 2,800 cannot be car-to-car (Robinson Creek TH 2,500 ft to summit 8,745 ft is 6,200+ ft net, before Robinson Pass); it probably covers only the climb from camp. dist_km 25.7 (16 mi) may be one-way to the summit."
+},
+{
+ "id": "wa_mount_maude_r2",
+ "itinerary": {
+  "cal": "Usually done as a 3-day trip with a bivy above Ice Lakes.",
+  "totalNote": "Hike in to a bivy above Ice Lakes, cross the Entiat Glacier and climb the icefall and upper rock to the summit before descending the South Ridge, then hike out on day three.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Approach to a bivy above Ice Lakes",
+    "objective": "Reach the Ice Lakes bivy",
+    "note": "Gain about 4,000 ft over several hours from the trailhead to a bivy site above Ice Lakes.",
+    "gainFt": 4000,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the Entiat Icefall to the summit",
+    "objective": "Summit via the icefall and descend the South Ridge",
+    "note": "Descend to and cross the Entiat Glacier, then climb the icefall with a running belay through the ice steps and about 900 ft of 4th to low-5th class rock to the summit. Descend the South Ridge back toward camp.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 20,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out to the trailhead",
+    "objective": "Return to Phelps Creek Trailhead",
+    "note": "Pack up and hike out.",
+    "gainFt": null,
+    "lossFt": null,
+    "hours": null,
+    "miles": null,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1 gain prose (~4,000 ft); everything else unknown because the route drops to the Entiat Glacier and must regain the col, so the row waypoints (TH 3,500, Ice Lakes bivy 7,182, summit 9,082) cannot be turned into per-day gain/loss; row dist_km 17.7 not split; packs estimated",
+ "sources": [],
+ "confidence": "low",
+ "notes": "Row gain_ft 5,580 total is low given ~4,000 ft on day 1 plus the glacier drop and a 1,900+ ft summit push. Nothing dropped."
+},
+{
+ "id": "wa_mount_maude_r3",
+ "itinerary": {
+  "cal": "Usually done as a 3-day trip from a Leroy Creek Basin camp.",
+  "totalNote": "Hike 5 miles to Leroy Creek Basin, climb the Nothing Couloir and loop back down the South Shoulder on day two, and hike out on day three.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike in to Leroy Creek Basin",
+    "objective": "Camp in Leroy Creek Basin",
+    "note": "Hike about 5 miles and 2,700 ft from the Phelps Creek Trailhead to a camp in Leroy Creek Basin.",
+    "gainFt": 2700,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 40,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Climb the Nothing Couloir",
+    "objective": "Summit and loop back to camp",
+    "note": "Approach the west side of the peak and climb the Nothing Couloir (class 3-4 slabs, about 1,500 ft) to the summit ridge and summit. Descend via the South Shoulder in a loop back to camp.",
+    "gainFt": 2960,
+    "lossFt": 2960,
+    "hours": null,
+    "miles": null,
+    "packLb": 15,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out to Phelps Creek Trailhead",
+    "objective": "Return to the car",
+    "note": "Pack up and hike out to the trailhead.",
+    "gainFt": 0,
+    "lossFt": 2700,
+    "hours": null,
+    "miles": 5.0,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "day1/day3 miles and gain prose (~5 mi, ~2,700 ft); day2 gain/loss row waypoints (Leroy Basin 6,121, summit 9,082); total ~5,660 matches row gain_ft 5,580; day2 miles and all hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Contradiction: row dist_km 41.84 (26 mi) is far above the prose (~5 mi each way plus a summit day)."
+},
+{
+ "id": "wa_mount_noyes_standard",
+ "itinerary": {
+  "cal": "A multi-day backpack with a high camp near Low Divide. The much longer alternative approach is the Elwha River Trail from Whiskey Bend (~28 mi).",
+  "totalNote": "Backpack about 16 miles up the North Fork Quinault to a high camp near Low Divide, scramble Noyes from camp, and hike back out.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike to a high camp near Low Divide",
+    "objective": "Reach camp near Low Divide",
+    "note": "Hike about 16 miles up the North Fork Quinault River Trail to a high camp near Low Divide.",
+    "gainFt": 3100,
+    "lossFt": 0,
+    "hours": null,
+    "miles": 16.0,
+    "packLb": 42,
+    "schedule": []
+   },
+   {
+    "n": 2,
+    "title": "Scramble Mount Noyes from Low Divide",
+    "objective": "Summit and return to camp",
+    "note": "Travel off-trail over talus and heather toward the Noyes-Meany col and up the standard slopes to the summit, then reverse the route back to camp.",
+    "gainFt": 2540,
+    "lossFt": 2540,
+    "hours": null,
+    "miles": null,
+    "packLb": 15,
+    "schedule": []
+   },
+   {
+    "n": 3,
+    "title": "Hike out the North Fork Quinault",
+    "objective": "Return to the trailhead",
+    "note": "Hike back out the North Fork Quinault River Trail to the trailhead.",
+    "gainFt": 0,
+    "lossFt": 3100,
+    "hours": null,
+    "miles": 16.0,
+    "packLb": 38,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "miles prose (~16 mi one way); gains/losses row waypoints (TH 525, Low Divide 3,631, summit 6,173), total ~5,650 matches row gain_ft 5,800; day2 miles and all hours unknown; packs estimated",
+ "sources": [],
+ "confidence": "low",
+ "notes": "The prose gives no day count; I used a 3-day minimum (16 mi in, summit day, 16 mi out). Many parties would split the 16 mi approach over two days. Dropped: 'lengthened by the Olympic Hot Springs Road washout, which has closed the road to vehicles beyond Madison Falls since November 2017'. Row dist_km 46.03 (28.6 mi) matches the Elwha option, not the Quinault approach used here."
+},
+{
+ "id": "wa_mount_pershing_standard",
+ "itinerary": {
+  "cal": "Usually a long day trip; a basin camp is an option for a more relaxed overnight pace.",
+  "totalNote": "A long day trip of about 8 miles round trip and 10-11 hours from the Jefferson Creek trailhead in the Hamma Hamma drainage.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Scramble Pershing from Jefferson Creek",
+    "objective": "Summit Mount Pershing and return",
+    "note": "From the Jefferson Creek trailhead in the Hamma Hamma drainage, follow the faint boot path into the basins below Pershing's east side and up gullies to the summit ridge, then return the same way. Expect about 8 miles round trip and 10-11 hours.",
+    "gainFt": 3700,
+    "lossFt": 3700,
+    "hours": 10.5,
+    "miles": 8.0,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "miles/hours prose (~8 mi RT, 10-11 h); gain row gain_ft; pack estimate",
+ "sources": [],
+ "confidence": "high",
+ "notes": "Route detail from the row approach. Row dist_km 6.4 (4 mi one-way) agrees with the prose. Nothing dropped (the FR 2401 mention is only a trailhead location)."
+},
+{
+ "id": "wa_mount_persis_west_ridge",
+ "itinerary": {
+  "cal": "Usually done as a single car-to-car day.",
+  "totalNote": "A single 4.5+ hour car-to-car day up and down the West Ridge boot path from the FR-62 road-end trailhead.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Climb the West Ridge car to car",
+    "objective": "Summit Mount Persis and return",
+    "note": "Climb the West Ridge boot path from the road-end trailhead to the summit (roughly 2-3 hours of climbing), enjoy the views, then descend the same way. Car-to-car time is commonly reported as 4.5+ hours given the steepness and route-finding, and longer in winter conditions.",
+    "gainFt": 2660,
+    "lossFt": 2660,
+    "hours": 4.5,
+    "miles": 4.0,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "hours prose (4.5+ h); gain row gain_ft; miles row dist_km 3.2 treated as one-way x2; pack estimate",
+ "sources": [],
+ "confidence": "high",
+ "notes": "Dropped: 'allow extra time/mileage if the highway gate is locked' and 'or if the road gate forces an extended approach'."
+},
+{
+ "id": "wa_mount_pilchuck_east_ridge",
+ "itinerary": {
+  "cal": "A longer, more committing full-day outing than the standard trail; Bathtub Lakes makes an optional turnaround point.",
+  "totalNote": "A single full day from the Pinnacle Lake Trailhead via Pinnacle Lake, Iodine Gulch and the Bathtub Lakes to the summit and back the same way.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Scramble via Iodine Gulch to the summit",
+    "objective": "Summit Pilchuck via the East Ridge and return",
+    "note": "Hike to Pinnacle Lake and scramble via Iodine Gulch to the Bathtub Lakes, which make an optional turnaround point. Continue to the summit and return the same way.",
+    "gainFt": 2800,
+    "lossFt": 2800,
+    "hours": null,
+    "miles": 10.0,
+    "packLb": 18,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "gain row gain_ft; miles row dist_km 8 treated as one-way x2 (a Mountaineers listing seen in search results gives the same 10 mi RT / 2,800 ft, page not opened); hours unknown; pack estimate",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Nothing dropped."
+},
+{
+ "id": "wa_mount_pilchuck_standard_route",
+ "itinerary": {
+  "cal": "Including drive time from the Seattle/Everett area, it makes a full day out.",
+  "totalNote": "A single-day round trip up Trail #700 to the summit lookout and back down the same trail.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Hike to the Pilchuck lookout",
+    "objective": "Reach the summit lookout and return",
+    "note": "Hike up the Mount Pilchuck Trail (#700) from the FR 42 trailhead, spend time at the lookout, and descend the same trail.",
+    "gainFt": 2300,
+    "lossFt": 2300,
+    "hours": null,
+    "miles": 5.3,
+    "packLb": 15,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "gain row gain_ft; miles row dist_km 4.3 treated as one-way x2; hours unknown; pack estimate",
+ "sources": [],
+ "confidence": "medium",
+ "notes": "Nothing dropped from the prose (the FR 42 gate note is only in the row approach)."
+},
+{
+ "id": "wa_mount_price_hester_lake_route",
+ "itinerary": {
+  "cal": "Usually done as a full, often long day; start early and carry a headlamp.",
+  "totalNote": "A long single day from the Dingford Creek Trailhead: 5-6 miles of trail to the Hester Lake basin, an off-trail scramble to the summit, and the same way back, about 10.5 hours car to car.",
+  "days": [
+   {
+    "n": 1,
+    "title": "Scramble Mount Price via Hester Lake",
+    "objective": "Summit Mount Price and return",
+    "note": "Hike roughly 5-6 miles of trail from the Dingford Creek Trailhead to the Hester Lake basin, then scramble off-trail through the gully, boulder field and ridge to the summit and reverse the route. At least one trip report logged roughly 10.5 hours car to car, so start early and carry a headlamp.",
+    "gainFt": 4100,
+    "lossFt": 4100,
+    "hours": 10.5,
+    "miles": 11.0,
+    "packLb": 20,
+    "schedule": []
+   }
+  ]
+ },
+ "figureSources": "hours prose (~10.5 h, confirmed by the opened yellowleaf log: 10 h 33 min); gain row gain_ft; miles from prose trail distance (5-6 mi each way, midpoint x2) as a minimum, since the scramble adds more; pack estimate",
+ "sources": ["https://yellowleaf.org/scramble/g/r/2013-10-24-mt-price.html"],
+ "confidence": "medium",
+ "notes": "Row dist_km 8 (5 mi one-way, 10 mi RT) is at the low end of the prose (5-6 mi of trail before the scramble). Search summaries cited a Mountaineers Hester Lake route of ~13 mi RT, but that page was blocked (403), so I did not use it. Nothing dropped."
+}
+]

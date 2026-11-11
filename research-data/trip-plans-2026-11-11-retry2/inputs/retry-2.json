@@ -1,0 +1,291 @@
+[
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "name": "North Ridge",
+  "area_id": "wa_mount_chaval",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "pitches": 2,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7127,
+  "season": "Jul-Sep",
+  "approach": "Shares the same general approach drainage as the West Route (Jug Creek/Bluff Lake/Cliff Lake benches) to gain the west side of the mountain, then continues around/up to the base of the north ridge rather than the west-ridge saddle system.",
+  "descent": "Typically descended via the West Route rather than reversing the North Ridge.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Mount Chaval",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "name": "Northeast Ridge",
+  "area_id": "wa_mount_crowder",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7082,
+  "season": "Jul-Sep",
+  "approach": "Reached only by first climbing Mount Crowder by its Southwest Route, from the col between Phantom Peak and Crowder, and continuing down the far side; there is no separate trailhead approach to this ridge on its own.",
+  "descent": "This IS the descent line; it drops from Crowder's summit to Pickell Pass.",
+  "bivy": [
+   {
+    "name": "Pickell Pass",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Open camp at the pass at the foot of the ridge, used by traverse parties who climb Crowder by its Southwest Route and descend this ridge to the pass.",
+    "water": "Snowmelt",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Mount Crowder Summit",
+    "type": "Summit",
+    "elev": 7082
+   }
+  ],
+  "peak": "Mount Crowder",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_hinman_west_route",
+  "name": "West Route",
+  "area_id": "wa_mount_hinman",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "From the Necklace Valley Trailhead, follow the Necklace Valley Trail up the East Fork Foss River, over the river crossing and the steep climb beyond it, to the hanging valley holding La Bohn Lakes, where parties camp. From the lakes, climb the snow chute or talus to La Bohn Gap; the climb proper heads due north from the gap toward the summit.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Mount Hinman",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "name": "Northeast Ridge",
+  "area_id": "wa_mount_shuksan_climbs",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 9131,
+  "season": "Jul-Aug",
+  "approach": "Typically reached after climbing the North Face or Hanging Glacier route to the upper mountain, or via the NW Rib between the White Salmon and Hanging Glaciers.",
+  "descent": "Standard descent is via the Fisher Chimneys line — down across the Upper Curtis Glacier, then Winnie's Slide and the chimneys themselves to the Lake Ann basin — or reverse the White Salmon Glacier.",
+  "bivy": [
+   {
+    "elev": 5500,
+    "name": "North Face bivy, where the rib meets the face",
+    "role": "main",
+    "type": "bivy",
+    "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is a working bivy chosen for position on a serious route rather than for comfort, and the point of it is an early start onto sustained steep snow and ice. Objective hazard governs everything here: the face is avalanche-prone, particularly early in the season and further left, so timing and a cold night matter more than the site itself. This is a spring-into-early-summer route in most years.",
+    "water": "Seasonal melt only. Late in the year expect nothing and carry or melt.",
+    "permit": "North Cascades National Park backcountry permit required — the approach leaves Forest Service ground shortly past Lake Ann and the bivy is inside the park. Through Recreation.gov or as a walk-up at the Marblemount Wilderness Information Center; fees apply and the zone quota is small. Do not assume the Lake Ann trailhead pass covers this.",
+    "capacity": "One party; rough ground with a couple of usable spots, not a camp"
+   },
+   {
+    "elev": 6800,
+    "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower site near the top of the White Salmon is the more common choice and the more scenic; the higher one above Winnie's Slide costs you a steep snow or ice pitch with a full pack. Which is preferable depends on the party and on conditions in the chimneys, and reasonable people disagree. Both are small and exposed, so a party arriving to find them occupied needs a plan.",
+    "water": "Snowmelt only in practice. Runoff sometimes appears on the rock below the glaciers in warm conditions, but neither site should be planned around finding liquid water.",
+    "permit": "North Cascades National Park backcountry permit required — these camps are inside the park, past the signed boundary above Lake Ann. Reserve through Recreation.gov or take a walk-up at the Marblemount Wilderness Information Center within 24 hours; fees apply and the zone carries a small daily party quota. A Northwest Forest Pass covers only the parking at the Lake Ann trailhead.",
+    "capacity": "Small platforms for one or two parties at each of two levels — around 6,800 ft where the chimneys top out near the White Salmon, and higher near 7,300 ft above Winnie's Slide"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Mount Shuksan summit",
+    "type": "Summit",
+    "elev": 9131
+   }
+  ],
+  "peak": "Mount Shuksan Routes",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "name": "Northeast Ridge",
+  "area_id": "wa_silver_star_mountain_okanogan",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8840,
+  "season": "Jul-Sep",
+  "approach": "Same as the Silver Star Glacier route to Burgundy Col and onto the glacier (see that route for full trailhead-to-glacier detail), then trend toward the northeast side of the west summit.",
+  "descent": "Reverse via the glacier and Burgundy Col.",
+  "bivy": [
+   {
+    "elev": 6400,
+    "name": "Burgundy Creek bench camp — west side",
+    "role": "main",
+    "type": "camp",
+    "notes": "The flat, sheltered alternative to sleeping at the col, in trees before the timbered rib gives way to open scree. Reports consistently call it the more pleasant camp of the two, at the cost of extra vertical on summit morning. Elevation is quoted anywhere from about 6,400 to 6,500 ft depending on which flat spot a party used. Its value is almost entirely the spring: if that has failed, the bench loses most of its advantage over the col.",
+    "water": "The most dependable water on this approach, but NOT from the obvious place. The creek shown on maps immediately east of the bench is frequently dry, while a spring roughly ten minutes north of camp keeps running well into September in most years. Confirm it before committing, and expect insects around it.",
+    "permit": "None required. Okanogan-Wenatchee National Forest, non-wilderness, so no permit or reservation applies.",
+    "capacity": "Several established tent spots on a wooded bench, with a large boulder and an old fire ring as the usual landmark; comfortably three or four tents"
+   },
+   {
+    "elev": 7800,
+    "name": "Burgundy Col high camp — west side, the Wine Spires",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The narrow saddle between Burgundy Spire and the ridge, and the standard high camp for the Wine Spires and for the Silver Star Glacier approached from the highway side. Published elevations disagree by a couple of hundred feet, with figures from roughly 7,720 to 7,950 in circulation, so treat any single number as approximate. It is exposed to wind from both sides and several parties have dropped back down the west slope to sleep after a rough night. Camping here removes about 1,500 ft of the scree from summit day, which is most of the argument for carrying overnight gear up it.",
+    "water": "No spring or stream. Parties melt snow from the lingering patches on the glacier side of the col, which normally hold into late summer but can be rock-hard in the morning or gone entirely in a dry, late season. Many simply haul all their water up the scree, which is the single heaviest decision on this approach.",
+    "permit": "None. Okanogan-Wenatchee National Forest, outside any designated wilderness — no quota, no reservation and no self-issue permit, unlike the North Cascades park zones a few miles west.",
+    "capacity": "Two to four rock-ringed bivy platforms; roughly one is level enough for a two-person tent, so a large party should expect to sleep scattered or send some members back down"
+   },
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground, SR 20",
+    "role": "route",
+    "type": "camp",
+    "notes": "A roadside vehicle campground rather than a site on any approach — it is for sleeping the night before, not for the climb. It opens around May and closes with the first serious snow, tracking the same window as everything else here. The whole area is gated by the SR 20 winter closure, which shuts in late November or early December and reopens in spring, with the date driven by avalanche work and storm damage rather than the calendar. In closed months the pullout is inside the gated section and the approach becomes a long ski or snowmobile trip.",
+    "water": "No drinking water at the campground. Early Winters Creek runs alongside and needs filtering; Klipchuck and Early Winters campgrounds, farther east, have drinking water in season.",
+    "permit": "Per-night campground fee; no wilderness permit involved. The unmarked Silver Star Creek pullout that starts the west approach is not itself a signed fee site — check current signage rather than assuming either way.",
+    "capacity": "27 developed first-come, first-served sites for tents and small vehicles"
+   },
+   {
+    "elev": 7200,
+    "name": "Upper scree benches below Burgundy Col — west side",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Not an established campsite so much as a fallback for a party that has run out of daylight or water partway up the talus. The main reason to know about them is that the water situation on this hillside is patchy rather than uniform, so a dry creek at the wooded bench does not necessarily mean a dry mountainside above it. Anyone counting on this should carry a stove and be prepared to find nothing.",
+    "water": "Genuinely unreliable and conditions-dependent. At least one party found a trickle running here in a season when the bench camp creek below was dry, which makes it worth checking on the way up, but nothing about it is dependable enough to plan a camp around.",
+    "permit": "None. Non-wilderness National Forest land; no permit, quota or registration.",
+    "capacity": "Improvised, one or two small parties at most; flat ground has to be found or built rather than chosen"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Lone Fir Campground, SR 20",
+    "type": "Campsite",
+    "elev": 3600
+   },
+   {
+    "name": "Burgundy Creek bench camp — west side",
+    "type": "Campsite",
+    "elev": 6400
+   }
+  ],
+  "peak": "Silver Star Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_snoqualmie_mountain_boogie_wonderland",
+  "name": "Boogie Wonderland",
+  "area_id": "wa_winter_spring_ice_snow_mixed_2",
+  "discipline": "alpine",
+  "grade": "5.7 M5-",
+  "pitches": 1,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "Same NW-face approach as New York Gully; the route sits just right of the end of the Snot Couloir, around the end of the ridge that divides the right side of the NW Face.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Boogie Wonderland (NW Face)",
+    "type": "route",
+    "elev": null
+   }
+  ],
+  "peak": "Winter-Spring (ice, snow",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_spectre_peak_haunted_wall",
+  "name": "Haunted Wall",
+  "area_id": "wa_spectre_peak",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7952,
+  "season": "Jul-Sep",
+  "approach": "As with the south ridge route, access is via the Hannegan Pass Trailhead and Easy Ridge, crossing a col to the right of Mount Challenger's summit before descending several miles to a camp below Phantom Peak's south face, from which the south face of Spectre is reached.",
+  "descent": "Downclimb steep snow on the mountain's opposite (north) side to ledges, then traverse around the peak back toward the south face and the approach line.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Spectre Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_thunder_mountain_north_face",
+  "name": "Thunder Mountain North Face",
+  "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+  "discipline": "alpine",
+  "grade": "5.0",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 6556,
+  "season": null,
+  "approach": "Reached via the same Trap Pass approach used for Slippery Slab Tower (Tunnel Creek or Surprise Creek trailheads to the PCT at Trap Pass), continuing past Slippery Slab Meadows toward Thunder Mountain Pass and the Thunder Mountain Lakes basin, then approaching the peak's north side. The standard SE-slope scramble route is reached via Upper Thunder Mountain Lake.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 5143,
+    "name": "Trap Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "The closest camp to Slippery Slab Tower and the best base for Thunder Mountain. Two trailheads reach it: Tunnel Creek, which climbs about a mile and a half to Hope Lake on the Pacific Crest Trail and then runs south a couple of miles over meadowy ground before the switchbacks up to Trap Pass; or Surprise Creek at Scenic, which climbs to Surprise Lake and joins the Pacific Crest Trail heading north. Trap Lake sits a little below Trap Pass on the east side. From the pass a faint but obvious climbers' track branches south along the ridge crest, follows it to a boulder field, and works up that to the base of the tower — the whole point of camping here rather than at the Scenic lakes is that it puts a party at the pass within half an hour of leaving the tent. Slippery Slab Tower is a single pitch of pleasant lower fifth class on an arete whose flakes are not to be trusted for protection, so it is a short climb with a long walk attached, and an overnight makes the arithmetic work. Thunder Mountain itself is a scramble from the same ground. The Thunder Mountain Lakes further south are a delicate basin where camping is discouraged; use this lake instead. Season is roughly July to October, with snow on the Trap Pass switchbacks well into summer.",
+    "water": "The lake, and the inlet above it. Treat it.",
+    "permit": "Alpine Lakes Wilderness. A free self-issue permit is required for day and overnight use, taken at the trailhead register from mid-May to the end of October. A Northwest Forest Pass is required at the Surprise Creek trailhead. Campfires are prohibited above 4,000 feet west of the crest, and a stove is the right answer here in any case.",
+    "capacity": "Several small informal sites in the trees at the lake, below the pass on the east side of the crest. Quiet, and rarely more than a party or two."
+   },
+   {
+    "name": "Thunder Mountain Lakes",
+    "role": "main",
+    "type": "camp",
+    "notes": "Lake basin under the granite of Slippery Slab Tower and Thunder Mountain, reached by the unofficial trail south from Trap Pass. The closest camp to the north face. Fragile ground; camp only on rock or bare sites.",
+    "water": "The lakes",
+    "permit": "Free self-issue Alpine Lakes Wilderness permit",
+    "capacity": "A few small sites on durable ground"
+   },
+   {
+    "elev": 4500,
+    "name": "Surprise Lake and Glacier Lake",
+    "role": "route",
+    "type": "camp",
+    "notes": "The other half of the Thunder Mountain approach, and the one most parties use because the trailhead is simple to find and the walk is pleasant. From US 2 turn south into Scenic, ten miles east of Skykomish, cross the railway tracks and follow gravel a third of a mile to the trailhead at about 2,200 feet. It is four and a half miles to Surprise Lake and a further mile to Glacier Lake, climbing steadily through forest with the creek alongside. From either lake the Pacific Crest Trail runs north to Trap Pass, from where the climbers' track along the ridge reaches Thunder Mountain and Slippery Slab Tower. Camping here rather than at Trap Lake adds an hour or more to the summit morning but gives a better camp and a shorter, easier walk in with heavy loads, so it suits a party carrying a rope and rack. Both lakes are subalpine and hold snow into July in a normal year. The lower trail is steep enough in places to be slow with overnight packs, and the railway line at the trailhead is active and noisy at night, which is worth knowing before you pitch near the car.",
+    "water": "Both lakes and the creek between them. Treat it.",
+    "permit": "Alpine Lakes Wilderness self-issue permit at the trailhead, free, required for day and overnight use from mid-May to the end of October. Northwest Forest Pass or the daily fee at the Surprise Creek trailhead. No campfires above 4,000 feet west of the crest, which includes both of these lakes. Camp only at the established sites on the west shores.",
+    "capacity": "Established sites along the west shores of both lakes. Surprise is the larger and busier; Glacier, about a mile further and three hundred feet higher, is quieter and holds fewer parties."
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Trap Lake",
+    "type": "Campsite",
+    "elev": 5143
+   }
+  ],
+  "peak": "Thunder Mountain and Slippery Slab Tower",
+  "area_type": "crag"
+ }
+]
