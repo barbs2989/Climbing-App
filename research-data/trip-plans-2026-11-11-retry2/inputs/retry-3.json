@@ -1,0 +1,303 @@
+[
+ {
+  "id": "rainier_north_mowich_headwall",
+  "name": "North Mowich Headwall",
+  "area_id": "wa_mount_rainier",
+  "discipline": "mountaineering",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": 9200,
+  "dist_km": 27.36,
+  "high_point_ft": 14112,
+  "season": "Jun-Aug",
+  "approach": "Northwest corner of Mount Rainier National Park, from Mowich Lake; the SR 165 road to the lake has had no public access since the Fairfax Bridge closed permanently in April 2025",
+  "descent": "Via the Emmons-Winthrop Glacier route from Liberty Cap to Camp Schurman.",
+  "bivy": [
+   {
+    "name": "Lower Ptarmigan Ridge camp",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Bivy ground on lower Ptarmigan Ridge above Spray Park, from which parties drop onto the North Mowich Glacier. Mowich Lake has had no road access since the Fairfax Bridge on SR 165 closed in 2025, so check access first.",
+    "water": "Melt snow",
+    "permit": "Mount Rainier wilderness permit and climbing registration",
+    "capacity": "A few tent sites on rock and snow"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Mowich Lake",
+    "type": "Trailhead",
+    "elev": 4955
+   }
+  ],
+  "peak": "Mount Rainier",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_cadet_peak_ne_ridge",
+  "name": "Northeast Ridge (Sloan-Cadet Traverse)",
+  "area_id": "wa_cadet_peak",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 7186,
+  "season": "Jul-Sep",
+  "approach": "Start from the end of Forest Service road 4096 and follow the Bedal Creek trail, which is rough and blown down in places. Where the tread is lost in a rocky creek bed, keep going up the creek through one short wet step until the path reappears on the right. The trail fades in the heather beneath the southwest face of Sloan; from the basin there, climb about a thousand feet south to the ridge crest. Drop on grassy, rocky ground to the small tarn often called Cadet Lake, cross over Heineken Peak, and go down its steep grassy gullies to a low point near 5,600 ft above the remnant Mayflower Glacier. The route starts there, on the ridge rising on the northeast side of Cadet Peak toward a small hanging glacier.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Cadet Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_cannon_mountain_northwest_ridge",
+  "name": "Northwest Ridge",
+  "area_id": "wa_cannon_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "From the Stuart Lake trailhead (about 3,400 ft; Northwest Forest Pass) take the Stuart Lake trail about 1.25 miles to just before the Mountaineer Creek bridge, then leave the trail and go up west and south through open forest.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Stuart Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3404
+   },
+   {
+    "name": "Cannon Mountain summit (NE Ridge route point)",
+    "type": "Summit",
+    "elev": 8638
+   }
+  ],
+  "peak": "Cannon Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+  "name": "Northwest Couloir–North Ridge",
+  "area_id": "wa_cardinal_peak",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jul-Sep",
+  "approach": "Reached via the North Fork Entiat Trail to Saska Basin and Saska Pass, commonly combined with ascents of Saska Peak, Emerald Peak, and Pinnacle Mountain on the same trip rather than as a dedicated single-peak approach. In late June the first three or four miles of the North Fork valley run through burnt forest with many fallen trees, and snow covers the trail between about 6,600 and 6,900 ft.",
+  "descent": "Reverse the ridge/couloir, or descend the east/southeast slopes if that side was used to finish the climb.",
+  "bivy": [
+   {
+    "name": "The basin between Emerald and Saska, and Milham Pass",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The high camp for the crest traverse, about a mile and a half beyond Fox Camp on the Pyramid trail, in the basin that separates Emerald Peak from Saska Peak. This is where a party stages to link Cardinal, Emerald, Saska and Pinnacle Mountain in a single push over Milham Pass at about 6,663 ft, which is the classic way to do these four and much the most efficient. From the basin you climb to the upper shelf just below the ridge between Emerald and Saska and pick up the broad gully to the summit. Cardinal is the highest of the group and the furthest, and it is the one that turns a two-day plan into three. The setting is superb and the ground is loose — expect scree and blocky scrambling rather than clean rock, and expect the descents to take longer than the ascents. Season is short at this height in a heavy year, realistically mid-July to early October, and the reason to come late is the larch and the reason not to is the water. Weigh that honestly: an August party that finds the tarns dry has a long, hot walk back down to fix it. Weather moves in from the west with little warning here and the basin is fully exposed.",
+    "water": "Snowmelt tarns and rivulets in the basin, and these are the crux of the whole plan. They are dependable in early and mid summer, unreliable by mid-August, and in a dry year they are gone entirely by late August, at which point the nearest certain water is back down at Fox Camp. Do not commit to a high camp here in late season without either confirming water or carrying it up. Milham Pass itself has none.",
+    "permit": "Glacier Peak Wilderness, free self-issue, party limit of twelve. Camp on durable ground and well back from the tarns. No campfires — forest-wide restrictions aside, there is no fuel at this elevation and the ground is fragile. Reached only through trails inside the Little Giant Fire closure area (Okanogan-Wenatchee order 06-17-07-2026-40), in effect September 3 through October 31, 2026 unless lifted sooner.",
+    "capacity": "A small number of tent-sized spots on benches and moraine in the upper basin; two or three parties at most, and less if you want flat ground"
+   },
+   {
+    "elev": 3140,
+    "name": "Cottonwood Camp and the Entiat River road campgrounds",
+    "role": "route",
+    "type": "camp",
+    "notes": "This is the road head for the whole eastern side of the Chelan Mountains crest and the standard place to sleep the night before a long walk in. The drive is the thing people underestimate — it is roughly 38 miles of valley road from the Columbia, most of it paved, and getting here from the west side of the state is the better part of four hours. Cottonwood sits at the end, just short of where the Entiat River trail begins. Camp here and you can be walking at first light with the entire day for the eleven miles to Entiat Meadows or the eight to Fox Camp. Recognise what has happened to this valley: successive fires have run through it and the lower trail corridor is open, burned, dusty and hot, with young growth and standing snags rather than shade. That makes the river the only dependable water for the first several miles and it makes an early start a safety measure rather than a preference. A landslide near the river trailhead currently blocks the normal approach; a temporary high-clearance route has been pushed through the slide, trailers are turned back, and the campground short of it is being used as the turnaround. Confirm before committing to the drive, because there is nothing at the end of this road.",
+    "water": "The Entiat River runs beside every one of these campgrounds and is the most reliable water anywhere in the zone. Treat it. Some of the smaller road campgrounds have a hand pump but several have none at all and nothing should be assumed potable.",
+    "permit": "Northwest Forest Pass or equivalent recreation pass for the trailhead lot. No permit to camp. Forest-wide Stage 2 fire restrictions have prohibited campfires on all national forest land since early July 2026, including in established rings, and the county has a total outdoor burn ban. All of these campgrounds are inside the current fire closure order through 31 October 2026, and Cottonwood is written off for the remainder of the season.",
+    "capacity": "Cottonwood has around two dozen sites; the string of small campgrounds down-valley adds a similar number again"
+   },
+   {
+    "name": "Fox Camp, North Fork Entiat trail",
+    "role": "route",
+    "type": "camp",
+    "notes": "The workhorse camp for the Chelan Mountains crest peaks. From the North Fork Entiat trailhead at roughly 3,880 ft the trail runs about eight miles to the Pyramid trail junction, with Fox Camp a quarter mile north of it. Every one of Cardinal, Emerald, Saska and Pinnacle Mountain is reachable from here, which is what makes this the single most useful site here — a party that carries in once can pick off several summits over consecutive days rather than repeating the approach. Saska is the shortest of them, essentially a scramble off the trail near where it crosses the south ridge at Saska Pass; Emerald and Cardinal need the higher basin above. Note this is a different spur road and a different trailhead from the Entiat River trail at the end of the valley, and the two are easy to confuse when planning — turn off roughly 35 miles up rather than driving to the road's end. Season is July through early October, though the larch in late September is the standout. The valley is dry and hot low down and the camp is a genuine relief after it.",
+    "water": "The North Fork Entiat River is beside the trail for most of the approach and there is water at the camp. It holds through the season in a normal year. Above Fox Camp the Pyramid trail climbs onto drier ground where water becomes intermittent snowmelt only, so this is the last certain fill for parties going high.",
+    "permit": "Glacier Peak Wilderness, free self-issue at the trailhead register, party limit of twelve. Northwest Forest Pass at the North Fork Entiat trailhead. No campfires under the current forest-wide Stage 2 restrictions. The North Fork Entiat River and Pyramid trails are both named in the current fire closure order through 31 October 2026.",
+    "capacity": "An established backcountry camp with room for a couple of parties; the sites along this trail are described as roomy"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "North Fork Entiat Trailhead",
+    "type": "Trailhead",
+    "elev": null
+   },
+   {
+    "name": "Cardinal Peak summit",
+    "type": "Summit",
+    "elev": null
+   }
+  ],
+  "peak": "Cardinal Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_cashmere_mountain_northeast_ridge",
+  "name": "Northeast Ridge",
+  "area_id": "wa_cashmere_mountain",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 8514,
+  "season": "Jul-Sep",
+  "approach": "Approached from the mountain's north side; traverse in below the summit pyramid to reach the low point on the northeast ridge before climbing the ridge itself.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Eightmile Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 3303
+   },
+   {
+    "name": "Northeast Ridge route (low point on ridge)",
+    "type": "waypoint",
+    "elev": null
+   },
+   {
+    "name": "Cashmere Mountain Summit",
+    "type": "Summit",
+    "elev": 8514
+   }
+  ],
+  "peak": "Cashmere Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_cutthroat_peak_northeast_face",
+  "name": "East Face",
+  "area_id": "wa_cutthroat_peak",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "pitches": 6,
+  "gain_ft": 2500,
+  "dist_km": 2,
+  "high_point_ft": 8066,
+  "season": "Jul-Sep",
+  "approach": "From the long pullout on the north side of SR-20 about a mile and a half west of Washington Pass, follow the cairned climbers' track from its east end down through timber, cross State Creek, and climb toward the basin below the south side of the peak. Then traverse over the rib that extends south from the South Buttress into the basin east of Cutthroat Peak, where the East Face routes begin.\n\nAvoid the steep, loose scree chimneys directly below the wall on the way in.",
+  "descent": "Typically descend via the South Buttress or the West Ridge, as with the other East Face lines.",
+  "bivy": [
+   {
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "role": "main",
+    "type": "camp",
+    "notes": "The closest developed campground to Washington Pass, on SR 20 along Early Winters Creek six or seven miles east of the pass, just past the turn for the Cutthroat Creek road. Because nothing here can be booked, arriving Friday evening in July or August is a gamble and the fallback is dispersed camping on a spur road. The season runs roughly May or June through September or October, entirely dependent on when the highway opens and when snow returns.",
+    "water": "No drinking water at Lone Fir. Early Winters Creek runs through the campground and needs filtering; Klipchuck and Early Winters campgrounds, farther east, have drinking water in season.",
+    "permit": "No reservations and no permit — first-come, first-served with a nightly fee. A Northwest Forest Pass is not needed to camp, only to park at the trailhead.",
+    "capacity": "27 sites, tents and small RVs"
+   },
+   {
+    "elev": 2900,
+    "name": "Klipchuck Campground, with Early Winters nearby",
+    "role": "main",
+    "type": "camp",
+    "notes": "Klipchuck sits about a quarter mile off SR 20 in fir and pine down-valley toward Mazama, low enough to be warm and dry when the passes are still wet. Early Winters Campground is further east, smaller at around a dozen tent sites, split by the highway near the Methow River, and fills quickly. Both are a longer drive to the trailhead than Lone Fir, which is the tradeoff for a better chance of finding a site on a busy weekend.",
+    "water": "Drinking water spigots in season; vault toilets. Water is turned off at the end of the season while the sites stay usable.",
+    "permit": "First-come, first-served, nightly fee, no reservation and no permit required.",
+    "capacity": "46 sites, the largest campground on this stretch of highway"
+   },
+   {
+    "name": "Cutthroat basin climbers' bivy, south side",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Serves every route reached through the basin south of the peak: the South and Complete South Buttress, the Southeast Buttress, the East Face lines over the rib, and the North Ridge by its usual approach, which bears right out of the same basin toward the North Ridge Notch. The way in starts from the long pullout on the north side of SR 20 about 1.5 miles west of Washington Pass, not from the Cutthroat Lake trail on the east side of the pass: a cairned track leaves the pullout's east end, drops through timber to cross State Creek, and climbs meadows into the bowl, roughly two hours with a pack. Parties camp here to take a long route in a single push rather than commit to a headlamp descent. Ground is a mix of heather bench and talus and the pads are small, so a large party will be split up. The meadows are thin and the basin sees enough traffic to show it.",
+    "water": "A snow-fed stream runs through the basin and usually carries water through the climbing season, but it thins as the snow patches under the peak melt out, which is why State Creek, low on the approach, is the last water to count on. Fill there, and carry enough for a dry night late in a hot summer.",
+    "permit": "None. Dispersed camping on national forest land needs no permit, no reservation and no quota — the opposite of the North Cascades park zones a few miles west.",
+    "capacity": "Several scattered one- and two-tent pads in the meadows and among the boulders; no established camp, so parties spread out"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Cutthroat Peak Climbers Trail Pullout (Hwy 20, ~1.5 mi W of Washington Pass, north side)",
+    "type": "Trailhead",
+    "elev": 5227
+   },
+   {
+    "name": "Cutthroat Peak",
+    "type": "Summit",
+    "elev": 8066
+   }
+  ],
+  "peak": "Cutthroat Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_early_morning_spire_southwest_face",
+  "name": "Southwest Face",
+  "area_id": "wa_early_morning_spire",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 8,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "Two approaches are in use. One climbs from the Eldorado trailhead to the base of Eldorado's East Ridge, crosses the Inspiration and McAllister glaciers (obvious crevasses that are easy to avoid) and reaches Dorado Col. The alternative goes by Sibley Pass and Triad Col. From Dorado Col, drop into the Marble Creek cirque over bare ice and snow to roughly 6,000 ft, contour west along a bench, then climb a snow gully to the foot of the southwest face. Good bivy sites are at the base of Eldorado's East Ridge, at Dorado Col, and on the 6,000 ft bench in the cirque.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Early Morning Spire",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_esmeralda_peaks_east_gully",
+  "name": "East Gully Route (East Peak)",
+  "area_id": "wa_esmeralda_peaks",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "pitches": null,
+  "gain_ft": 2280,
+  "dist_km": 8.05,
+  "high_point_ft": 6480,
+  "season": "Jun",
+  "approach": "From the Esmeralda/Ingalls trailhead, cross the North Fork Teanaway River near a jam of small trees, then follow a backcountry route up talus and (early-season) snow slopes to reach the base of the east-facing gully on the East Peak.",
+  "descent": "Descend south down talus/scree for 400-500 ft, then traverse gradually south to pick up the De Roux Creek Trail and return to the trailhead.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Esmeralda/Ingalls Trailhead (end of FR 9737)",
+    "type": "Trailhead",
+    "elev": 4269
+   }
+  ],
+  "peak": "Esmeralda Peaks",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+  "name": "Avalanche-White Salmon Glaciers",
+  "area_id": "wa_mount_adams",
+  "discipline": "mountaineering",
+  "grade": "Mod. Snow",
+  "pitches": 0,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "Start at the Cold Springs trailhead (about 5,600 ft) at the end of FR 8040 and walk the South Climb Trail up the old roadbed to its junction with the Round the Mountain Trail near 6,200 ft. Turn right (northwest) onto the Round the Mountain Trail and follow its up-and-down traverse for roughly two miles, much of it under snow in early season, to the stream draining the Avalanche Glacier basin near 6,100 ft. Follow the stream and the moraines above it to the moraine-filled bowl at about 7,200 ft, where the Avalanche Glacier route and the Southwest Chutes meet. The glacier begins above this bowl, and a camp here shortens the summit day.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Mount Adams",
+  "area_type": "peak"
+ }
+]

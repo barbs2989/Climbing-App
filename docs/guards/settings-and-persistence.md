@@ -505,6 +505,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the fourth time this file records that.
 - **`check:count-matches-its-list`** asserts that **a count agrees with the list under it**, on one
   screen. Static (one source read), so it sits in `npm run build`.
+  - **SECTION 1 RETIRED (owner, 2026-11-11).** Home's *"Nothing needs you right now"* card was
+    removed: it flashed on every load before its reads landed, and the Alerts dropdown already
+    carries the empty state. With no empty-state gate left, section 1 (and its *UNFINISHED
+    BUSINESS* fail-closed checks) is gone; sections 2 and 3 (the bell and *View all N alerts*)
+    still run, and the assertion floor dropped from 11 to 5. The history below is kept as record.
   - **`check:ui` ALREADY ASSERTS THIS ACROSS TWO SCREENS** — #1203, where the Profile said *"3
     active"* and the Logbook *"4 climbs to go"* about one list. **Home does it to ITSELF, twice**,
     and no browser walk can see either: both surfaces are correct in isolation, and only their

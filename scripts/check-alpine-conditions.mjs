@@ -276,10 +276,11 @@ const alpPinned = A.render(Object.assign({}, BASE, { discipline: "alpine", grade
 eq("...while an alpine route keeps 'Forecast at key points'", /Forecast at key points/.test(alpPinned), true);
 const safetyAlp = A.render(Object.assign({}, BASE, { discipline: "mountaineering" }), "safety");
 const safetyHike = A.render(Object.assign({}, BASE, { discipline: "hiking" }), "safety");
-/* 2026-10-24 the owner put the forecast BACK on Safety, at the top, for every route ("Forecast should be
-   at the top of safety tab"), superseding 2026-10-07's move of it to Conditions only. So both are asserted
-   present: on Conditions (above) and on Safety, with or without a Conditions tab. */
-eq("the weather panel opens Safety on an alpine route too (and stays on its Conditions tab)", /Weather &amp; mountain forecasts/.test(safetyAlp), true);
+/* 2026-11-11 the owner took the forecast back OFF Safety where the Conditions tab already carries it
+   ("Forecast at key points should be removed from safety tab since it's already on the conditions tab.
+   Same with WEATHER & MOUNTAIN FORECASTS"), superseding 2026-10-24's "at the top of safety tab". A route
+   with NO Conditions tab keeps it on Safety, or it would render nowhere. */
+eq("the weather panel stays off Safety on an alpine route (its Conditions tab carries it)", [/Weather &amp; mountain forecasts/.test(safetyAlp), /Forecast at key points/.test(safetyAlp)], [false, false]);
 eq("...and on Safety for a discipline with no Conditions tab", /Weather &amp; mountain forecasts/.test(safetyHike), true);
 const fcHtml = A.render(Object.assign({}, BASE, { discipline: "mountaineering", waypoints: [] }), "forecast");
 eq("a route with NO waypoints still gets a weather panel (its area's point), not 'No forecast yet'", /No forecast yet/.test(fcHtml), false);
