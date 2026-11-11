@@ -1,4 +1,4 @@
-// check:area-surfaces — the two things a climber can do with an AREA must stay wired.
+// check:area-surfaces — the things a climber can do with an AREA must stay wired.
 //
 // WHY THIS EXISTS, and it is the same argument check:correction-readers records. Both surfaces
 // shipped guarded only by a `scripts/oneoff/` probe, and NOTHING RUNS THOSE — that is precisely how
@@ -19,73 +19,23 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:area-surfaces";
 appSources(ROOT, GUARD);
 
-const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 const browser = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx"));
 const problems = [];
 const ok = (m) => console.log(`  ok    ${m}`);
 
 // Fail closed before any rule: a file that stopped parsing to something recognisable would make
 // every check below vacuous, and "no findings" is what this prints when it is working.
-if (app.length < 200000 || browser.length < 20000) {
-  console.error(`\n${GUARD} FAILED — sources look truncated (ClimbMatch ${app.length}, DbAreaBrowser ${browser.length}).`);
+if (browser.length < 20000) {
+  console.error(`\n${GUARD} FAILED — sources look truncated (DbAreaBrowser ${browser.length}).`);
   console.error("Nothing below was actually checked.\n");
   process.exit(1);
 }
 
-// ---------------------------------------------------------------------------------------
-// 1. AREA COMMENTS — the FETCH half, which is the half that hides.
-//
-// `commentTargets` returns [] when no route is selected, and browsing areas selects no route. So
-// declaring `areaCommentTargets` is not enough: unless it is concatenated into the ids
-// `useComments` actually fetches, the section renders an empty box for ever. With `comments` at 0
-// rows that is indistinguishable from a feature nobody has used yet.
-// ---------------------------------------------------------------------------------------
-const DECL = /areaCommentTargets\s*=/;
-if (!DECL.test(app)) {
-  problems.push("`areaCommentTargets` is gone from ClimbMatch.jsx — area comments cannot be fetched, and the section below would render an empty box for ever.");
-} else {
-  ok("area comment targets are declared");
-  // BALANCE the parens; `[^)]*` stops at the first `)`, which here is inside
-  // `.concat(gpCommentTargets)` — so the first version of this rule read a truncated argument list
-  // and reported a working fetch as broken. A regex cannot read nested structure
-  // ([[check-token-boxes]] records the same lesson for nested HTML).
-  const at = app.indexOf("useComments(");
-  if (at < 0) {
-    problems.push("no `useComments(` call found — ANCHOR LOST, so nothing here was verified.");
-  } else {
-    let d = 0, end = -1;
-    for (let i = at + "useComments".length; i < app.length; i++) {
-      if (app[i] === "(") d++;
-      else if (app[i] === ")") { d--; if (d === 0) { end = i; break; } }
-    }
-    const args = end > 0 ? app.slice(at + "useComments(".length, end) : "";
-    if (end < 0) {
-      problems.push("could not balance the `useComments(...)` argument list — refusing to judge it.");
-    } else if (!/areaCommentTargets/.test(args)) {
-      problems.push(`useComments(${args.slice(0, 80)}) no longer includes areaCommentTargets — the area id is never requested, so the comments section can only ever be empty.`);
-    } else {
-      ok(`the area id reaches the useComments fetch (${args.slice(0, 60)}…)`);
-    }
-  }
-}
-
-// The RENDER half, gated on the same value so the two cannot disagree about when it applies.
-if (!/areaCommentTargets\.length\s*\?/.test(app)) {
-  problems.push("the area comments section is no longer gated on `areaCommentTargets.length` — it would render for areas whose id was never fetched, or not at all.");
-} else {
-  ok("the comments section is gated on the same value that is fetched");
-}
-
-// The exclusion, copied from the seed instance rather than invented: a country or a state is too
-// broad to discuss. Asserted so a later edit cannot quietly widen it to the whole world.
-if (!/areaCommentTargets[\s\S]{0,200}\["world","country","state"\]/.test(app)) {
-  problems.push("area comments no longer exclude world/country/state — a continent is not a conversation.");
-} else {
-  ok("world/country/state are excluded from area comments");
-}
+// (Area comments were section 1 here until 2026-11-11, when the owner removed the area Discussion:
+// area pages carry no comment thread, so there is nothing left to keep wired.)
 
 // ---------------------------------------------------------------------------------------
-// 2. DIRECTIONS TO AN AREA — present, and gated to somewhere you can actually park.
+// 1. DIRECTIONS TO AN AREA — present, and gated to somewhere you can actually park.
 //
 // Every area carries a coordinate, so an ungated link offers directions to a STATE CENTROID. That
 // is not hypothetical: the first passing run of the probe printed "Directions to Colorado".
@@ -112,7 +62,7 @@ if (!/maps\/dir/.test(browser)) {
 }
 
 // ---------------------------------------------------------------------------------------
-// 3. PARTNERS HERE (0300) — the card that lets a climber LIST THEMSELVES at an area and see who is
+// 2. PARTNERS HERE (0300) — the card that lets a climber LIST THEMSELVES at an area and see who is
 // listed there, rendered from AreaPage, fed by the signed-in count read, and gated to the crag family's
 // areas and their ancestors below the state: never a peak (matched by route), never a state.
 // ---------------------------------------------------------------------------------------
@@ -146,4 +96,4 @@ if (problems.length) {
   console.error("again precisely because losing them breaks nothing that any other guard can see.\n");
   process.exit(1);
 }
-console.log(`\n${GUARD}: ok — a climber can discuss an area, navigate to a crag, and list themselves there.`);
+console.log(`\n${GUARD}: ok — a climber can navigate to a crag and list themselves there.`);

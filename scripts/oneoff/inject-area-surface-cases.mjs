@@ -32,18 +32,7 @@ const BROWSER = path.join(ROOT, "lib/DbAreaBrowser.jsx");
 const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("hex").slice(0, 12);
 
 const CASES = [
-  { name: "fetch: drop areaCommentTargets from useComments", file: APP, expect: "fail",
-    find: ".concat(areaCommentTargets)", repl: "",
-    says: /no longer includes areaCommentTargets/,
-    why: "the section would render an empty box for ever — with `comments` at 0 rows that is indistinguishable from a feature nobody has used" },
-  { name: "render: ungate the comments section", file: path.join(ROOT, "src/components/RoutesTab.tsx"), expect: "fail",
-    find: "areaCommentTargets.length?<div style={{marginTop:4}}><Comments", repl: "false?<div style={{marginTop:4}}><Comments",
-    says: /no longer gated on `areaCommentTargets\.length`/,
-    why: "the section disappears while the fetch keeps running" },
-  { name: "scope: let world/country/state be discussed", file: APP, expect: "fail",
-    find: '!["world","country","state"].includes(dbAreaCtx.areaType)', repl: "true",
-    says: /no longer exclude world\/country\/state/,
-    why: "a continent is not a conversation" },
+  // The area-comment cases went with the area Discussion (owner, 2026-11-11).
   { name: "directions: remove the link", file: path.join(ROOT, "src/components/AreaGettingThere.tsx") /* its component since PR65 */, expect: "fail",
     find: "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=", repl: "about:blank#",
     says: /Directions link is gone from lib\/DbAreaBrowser\.jsx/,
@@ -56,12 +45,6 @@ const CASES = [
     find: ", any distance shown, and the Directions link are rough", repl: " and any distance shown are rough",
     says: /coords_approx caveat no longer mentions the Directions link/,
     why: "an approximate coordinate offered as a navigable destination with no warning" },
-  // MUST PASS: reordering the concat is not a regression. A guard that demanded one spelling would
-  // tell an author to rewrite working code, which is how a guard earns being ignored.
-  { name: "reorder the concat (must PASS)", file: APP, expect: "pass",
-    find: "commentTargets.concat(gpCommentTargets).concat(areaCommentTargets)",
-    repl: "areaCommentTargets.concat(commentTargets).concat(gpCommentTargets)",
-    why: "order does not change which ids are fetched" },
 ];
 
 let bad = 0;

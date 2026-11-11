@@ -385,8 +385,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {!loading && isLeaf && routes && routes.length > 1 ? (() => { const cl = areaClassics(routes); if (cl.length) return <ClassicsList rows={cl} onOpen={onOpenRoute} C={C} />; const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <><SL C={C}>Top rated here</SL>{top.map(r => <RouteRow key={"top-" + r.id} r={r} onOpen={onOpenRoute} C={C} />)}</> : null; })() : null}
 
       {/* Tail order is the owner's (2026-10-15): suggested climbs right under "Don't see a climb",
-          then nearby peaks, then Top contributors LAST — App mounts the area Discussion directly
-          after this component, so Top contributors sits right above it and Discussion ends the page. */}
+          then nearby peaks, then Top contributors LAST, which ends the page (the area Discussion that
+          App mounted after it was removed by the owner on 2026-11-11). */}
       <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
 
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
