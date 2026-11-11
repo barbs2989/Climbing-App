@@ -39,6 +39,10 @@ let nextId = 1;
 const round = (p) => [+(+p[0]).toFixed(6), +(+p[1]).toFixed(6)];
 const node = (a, via) => ({ id: nextId++, a: round(a), via: via || [], pending: false, born: Date.now() });
 const routed = (n) => !!(n && n.via && n.via.length);
+// What a leg whose anchors changed keeps of what it was told: a reason the climber is shaping it by
+// hand for (no trail, a detour, too long, kept) stays, so the router's same answer again is not news;
+// "answered" (ok) and "did not answer" (false) go, since the new anchors are a new question.
+const carry = (t) => (t === false || t === "ok" ? undefined : t);
 const flatten = (nodes) => { const out = []; nodes.forEach((n, i) => { if (i > 0) out.push(...n.via); out.push(n.a); }); return out; };
 const legPts = (nodes, i) => [nodes[i - 1].a].concat(nodes[i].via, [nodes[i].a]);
 const sameP = (p, q) => !!p && !!q && p[0] === q[0] && p[1] === q[1];
@@ -179,8 +183,9 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     abortRoute(id);
     const ctl = new AbortController();
     routing.current.set(id, ctl);
-    // routeLeg never rejects; the catch is so that no future change can leave a leg pending for good.
-    routeLeg(a, b, ctl.signal).catch(() => false).then((via) => {
+    // routeLeg never rejects; the catch at the END of the chain is so that no future change to the
+    // landing below can leave a leg pending for good: it settles straight, and the error still surfaces.
+    routeLeg(a, b, ctl.signal).then((via) => {
       if (ctl.signal.aborted) return;
       routing.current.delete(id);
       const now = nodesRef.current, j = now.findIndex((n) => n.id === id);
@@ -203,7 +208,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: keptVia, pending: false, told: next[j].told, stub: undefined }) : x));
       undoRef.current = undoRef.current.map(settle); redoRef.current = redoRef.current.map(settle);
       if (fresh) noteFailure(why);
-    });
+    }).catch((e) => { routing.current.delete(id); const now = nodesRef.current, j = now.findIndex((n) => n.id === id); if (j >= 0 && now[j].pending) { const nx = now.slice(); nx[j] = Object.assign({}, nx[j], { pending: false }); setBoth(nx); } throw e; });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on
   // (`all` routes them whatever the switch says: Follow trails being switched on). A leg that was
@@ -277,7 +282,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const before = via[best - 1] || cur[i - 1].a, after = via[best + 1] || cur[i].a;
       const cut = segD(before, via[best]) <= segD(via[best], after) ? best : best + 1;
       nn.via = via.slice(0, cut); nn.stub = cur[i].stub;
-      next[i] = Object.assign({}, cur[i], { via: via.slice(cut), told: cur[i].told === false ? undefined : cur[i].told }); nn.told = next[i].told; // both halves keep what the leg was told (a router that did not answer is told again): the same answer again is not news
+      next[i] = Object.assign({}, cur[i], { via: via.slice(cut), told: carry(cur[i].told) }); nn.told = next[i].told; // both halves carry what the leg was told: the same answer again is not news
       next.splice(i, 0, nn);
       // A point placed ON the path (a tap on the hollow dot, a drop a few metres from a routed point)
       // is an exact split: nothing to ask, even with Follow trails on.
@@ -298,12 +303,12 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const touched = withLegs(next, [i, i + 1]);
     // Both halves keep what the leg was told (withLegs forgets it for a changed leg): the note says to
     // shape a leg with no trail by hand, and the router's same answer for each half is not news.
-    const told = cur[i] ? cur[i].told : undefined;
-    if (told !== undefined && told !== false) [i, i + 1].forEach((k) => { if (next[k]) next[k] = Object.assign({}, next[k], { told }); });
+    const told = carry(cur[i] ? cur[i].told : undefined);
+    if (told !== undefined) [i, i + 1].forEach((k) => { if (next[k]) next[k] = Object.assign({}, next[k], { told }); });
     commit(next, touched);
     return true;
   };
-  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return false; const at = round([lat, lng]); if ([cur[i - 1], cur[i + 1]].some((nb) => nb && distM(nb.a, at) < 3)) { deleteAnchor(id); return true; } /* dropped onto a neighbour: the two are one point, so the dragged one goes (never two anchors on one spot, nor a sub-metre leg) */ if (sameP(cur[i].a, at)) return false; /* a press and release is not a move */ const next = cur.slice(); const keep = (t) => (t === false ? undefined : t); /* what the leg was told stays, so the same "no trail" again for a leg being shaped by hand is not news (a different reason is); a router that did not answer is told again, as the note's "ask again" promises */ next[i] = Object.assign({}, cur[i], { a: at, told: keep(cur[i].told) }); if (next[i + 1]) next[i + 1] = Object.assign({}, next[i + 1], { told: keep(next[i + 1].told) });
+  const moveAnchor = (id, lat, lng) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return false; const at = round([lat, lng]); if ([cur[i - 1], cur[i + 1]].some((nb) => nb && distM(nb.a, at) < 3)) { deleteAnchor(id); return true; } /* dropped onto a neighbour: the two are one point, so the dragged one goes (never two anchors on one spot, nor a sub-metre leg) */ if (sameP(cur[i].a, at)) return false; /* a press and release is not a move */ const next = cur.slice(); next[i] = Object.assign({}, cur[i], { a: at, told: carry(cur[i].told) }); if (next[i + 1]) next[i + 1] = Object.assign({}, next[i + 1], { told: carry(next[i + 1].told) });
     // A routed leg beside the moved anchor keeps its points (they now end a few metres off, which
     // is honest). With Follow trails ON it is asked again and keeps them if the router cannot
     // answer; OFF asks nothing, as the switch promises. Other legs go straight, or route when ON.
