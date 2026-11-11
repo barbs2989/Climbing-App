@@ -30,7 +30,10 @@ export const HEAD_KEYS = {
   "CLIMATE & SEASON": "climate", "ASPECT & SUN": "aspect",
   "SEASONAL GUIDANCE": "seasonalGuidance", "CROWDS": "crowds", "CROWDS & SOLITUDE": "crowds",
   "PARTNER REQUIREMENTS": "partnerRequirements", "EMERGENCY & RESCUE": "emergency",
-  "TECHNICAL STATS": "grade", "ROUTE FACTS": "grade",
+  /* TECHNICAL STATS / ROUTE FACTS are NOT here (owner, 2026-11-11): those cards hold a dozen fields, and
+     the heading wore the GRADE's level, so a card of "Not on file yet" rows read "High · locked" on
+     every crag route. The grade's chip sits on the grade itself (TechStats), and the card's pencil
+     opens the editor at a field that is still open (firstEditable). */
   "CAMPING & BIVY": "bivy", "WAYPOINTS": "waypoints", "KEY WAYPOINTS": "waypoints",
   "CELL / SAT COVERAGE": "comms", "CELL COVERAGE": "comms",
   "ROUTE DESCRIPTION": "overview", "MY ITINERARY": "itinerary", "TRIP PLAN": "itinerary",
@@ -42,6 +45,8 @@ export function headKey(text) {
   const t = text.replace(/\s*[·—-]\s*\d.*$/, "").trim().toUpperCase().replace(/&AMP;/g, "&");
   return HEAD_KEYS[t] || null;
 }
+// firstEditable: which field a pencil covering several fields opens at (lib/firstEditable.js).
+export { firstEditable } from "./firstEditable.js";
 export const LEVEL_LABEL = { high: "High", medium: "Medium", low: "Low" };
 const LEVEL_HELP = {
   high: "High confidence — checked and locked. If it has changed, flag it.",
