@@ -254,6 +254,11 @@
     "vite": "^6.4.5",
     "ws": "^8.21.1"
   },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.1"
+    }
+  },
   "engines": {
     "node": ">=22"
   }
