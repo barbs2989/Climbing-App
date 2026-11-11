@@ -231,9 +231,9 @@ export function GradeSpreadDisclosure({ stats, loading, error, C, discOptions, o
     {spread ? <GradeSpread stats={stats} C={C} bare onGrade={onGrade} /> : null}
     {loading && !stats ? <div style={{ fontSize: 12, color: C.textMuted }}>Counting…</div> : null}
     {error && !stats ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>Couldn't count the climbs here just now — check your connection and try again.</div> : null}
-    {rows.length ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ marginTop: spread ? 8 : 0, width: "100%", minHeight: 44, display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", borderTop: spread ? "1px dashed " + C.border : "none", padding: "8px 0 0", cursor: "pointer", color: C.text }}>
+    {rows.length ? <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ marginTop: spread ? 8 : 0, width: "100%", textAlign: "left", minHeight: 44, display: "flex", alignItems: "center", gap: 8, background: "none", border: "none", borderTop: spread ? "1px dashed " + C.border : "none", padding: "8px 0 0", cursor: "pointer", color: C.text }}>
       <span style={{ flex: 1, textAlign: "left", fontSize: 12.5, fontWeight: 700 }}>{"Climbs here by type"}</span>
-      <span style={{ fontSize: 12.5, color: C.textSub, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{typed.toLocaleString() + " climb" + (typed !== 1 ? "s" : "")}</span>
+      {open ? null : <span style={{ fontSize: 12.5, color: C.textSub, fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{typed.toLocaleString() + " climb" + (typed !== 1 ? "s" : "")}</span>}
       <span aria-hidden="true" style={{ display: "inline-block", color: C.blue, fontSize: 12, transform: open ? "rotate(180deg)" : "none" }}>{"▾"}</span>
     </button> : stats && !spread ? <div style={{ fontSize: 12.5, color: C.textMuted }}>No climbs filed here yet.</div> : null}
     {open && rows.length ? <ClimbsChart stats={stats} loading={loading} error={error} C={C} discOptions={discOptions} onDisc={onDisc} bare>{null}</ClimbsChart> : null}
