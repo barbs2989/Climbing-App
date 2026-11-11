@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_mount_degenhardt_southwest_route",
+  "last_processed_id": "wa_mount_fricaba_standard",
   "total_in_scope_last_count": 710,
   "total_wa_alpine_or_mountaineering_tagged": 802,
-  "pass_note": "Pass 8 in progress, batch 517 complete. Continuing id-ascending scope from wa_mount_degenhardt_southwest_route (next batch starts after it). total_in_scope_last_count and total_wa_alpine_or_mountaineering_tagged both dropped since batch 516 (737->710, 837->802) -- catalog changed elsewhere between runs; not investigated here per the audits-only guardrail.",
+  "pass_note": "Pass 8 in progress, batch 518 complete. Continuing id-ascending scope from wa_mount_fricaba_standard (next batch starts after it).",
   "batches": [
     {
       "batch_number": 1,
@@ -10285,6 +10285,26 @@
       "clean": 6,
       "sql_file": null,
       "note": "Six clean: Crowder's coordinates and 7,082 ft elevation match TopoZone/Wikipedia/TopoQuest (which spread 7,044-7,099 ft) and its FA (Magnusson/Ardussi/Mech/Schmechel, 1962, as 'Old Brownie') is corroborated by a Wikipedia mirror. Custer's FA (Dawe/Mason/Teichman, 1958) matches SummitPost's 'first recorded ascent.' Deception's 7,788 ft and its rank as the Olympics' second-highest peak after Olympus are confirmed by Wikipedia/Mountaineers/FastestKnownTime. Both Mount Daniel routes correctly treat the West Summit (not East or Middle) as the true 7,960 ft high point -- this route's own pro_tips field already states that distinction, matching Wikipedia and a Mazamas summit breakdown (East Peak 7,899 ft, Middle 7,959 ft, West/true summit 7,960+ ft). South Corner's grade ambiguity (5.0 Mountaineers/Wikipedia vs 5.3 Mountain Project) was already an acknowledged gap in its own data_quality field -- not newly found, not fixed. Flagged for human review, no SQL: wa_mount_cruiser_nw_face_corner's fa ('Wayne Wallace and David Parker, 2004') could not be corroborated by any source -- no Mountain Project, SummitPost or AAJ record of a Northwest Face/Corner route on Cruiser at all, and Wallace's own documented WA first ascents run 2008-2010, all in the Cascades, none in the Olympics or on Sawtooth Ridge; not contradicted outright, but weak enough to flag. wa_mount_degenhardt_southwest_route's grade is stored as 'Class 4' while its own gear/beta/watch_out fields describe roped 5.6-5.7 technical climbing -- an internal inconsistency, but no published description of a 'South'/'Southwest Route' on Degenhardt was found to resolve it, and the row's own corrections/gear_confidence fields already flag the match as inferred, not confirmed; left as-is per the no-fabricated-fix rule."
+    },
+    {
+      "batch_number": 518,
+      "date": "2026-11-11",
+      "pass": 8,
+      "route_ids": [
+        "wa_mount_despair_east_route",
+        "wa_mount_despair_northeast_buttress",
+        "wa_mount_ellinor_southeast_chute",
+        "wa_mount_fairchild_standard",
+        "wa_mount_fernow_southeast_face",
+        "wa_mount_ferry_standard",
+        "wa_mount_formidable_south_face",
+        "wa_mount_fricaba_standard"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 3,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-11-11-batch-518.sql",
+      "note": "Fixed wa_mount_ellinor_southeast_chute (high_point_ft was NULL, filled to 5944 ft per its own waypoint/WTA/SummitPost; upper-trailhead waypoint mislabeled \"(NFR 24)\" fixed to \"(FR 2419-014)\" per USFS/WTA), wa_mount_fairchild_standard (overview + summit waypoint said 6,899 ft with no corroborating source; fixed prose/waypoint to 6,900 ft to match the row's own high_point_ft column and Wikipedia), and wa_mount_fricaba_standard (overview falsely claimed Fricaba is the highest point of Olympic National Park -- Mount Olympus, 7,980 ft, holds that distinction; fixed to say highest point of the Buckhorn Wilderness and Olympic National Forest instead, per Wikipedia). Flagged for human review, not fixed: wa_mount_despair_east_route's fa (Beckey/Anderson/Kelley per popular sources vs. Anderson/Kelly/Crooks with no Beckey per the NPS Historic Resource Study citing Thompson 1970 -- primary vs. secondary conflict); both Despair routes sharing one high_point_ft (7296) despite the NE Buttress topping out on a distinct, slightly lower north summit with no precise elevation found; and wa_mount_formidable_south_face's 1935 Ulrichs naming claim, uncorroborated either way. Clean: Fernow (elevation + WA-rank superlatives + a specific, verified USFS closure order number/dates), Ferry (elevation, Bailey Range rank, Seattle Press Expedition naming), Formidable (elevation, coordinates, 1938 Ptarmigan Club FA, corroborated Aug 2006 fatality), Fricaba (elevation, coordinates, split 1957 FA), Despair East Route (elevation, coordinates) and NE Buttress (2014 FA, length)."
     }
   ],
   "outage_runs": [

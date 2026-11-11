@@ -37163,3 +37163,62 @@ WA alpine/mountaineering catalog between runs — not investigated here, since t
 and only touches files under `audits/`.
 
 Next batch will continue id-ascending from `wa_mount_degenhardt_southwest_route` (see progress file).
+
+## Batch 518 (pass 8) — 2026-11-11
+
+Checked 8 routes, continuing id-ascending past Mount Degenhardt: `wa_mount_despair_east_route`,
+`wa_mount_despair_northeast_buttress`, `wa_mount_ellinor_southeast_chute`,
+`wa_mount_fairchild_standard`, `wa_mount_fernow_southeast_face`, `wa_mount_ferry_standard`,
+`wa_mount_formidable_south_face`, `wa_mount_fricaba_standard`.
+
+Three confirmed errors fixed, SQL in `audits/sql/2026-11-11-batch-518.sql`:
+
+- `wa_mount_ellinor_southeast_chute` had `high_point_ft` stored as NULL even though its own
+  summit waypoint, WTA, and SummitPost all agree on 5,944 ft — filled in. Its upper-trailhead
+  waypoint was also mislabeled `(NFR 24)` (that's only the shared first 1.6 mi leg common to both
+  trailheads); USFS's own trailhead page and this row's own approach text put the upper trailhead
+  at the end of spur FR 2419-014 off FR 2419 — relabeled to match.
+- `wa_mount_fairchild_standard` — its `overview` text and summit waypoint both state "6,899 ft,"
+  a figure no source corroborates (TopoZone ~6,913, TopoQuest/MyTopo ~6,916, Peakbagger/ListsOfJohn
+  6,925). Wikipedia's documented 6,900 ft is what the row's own `high_point_ft` column already
+  stores, so the prose/waypoint were the inconsistent fields — fixed to match the column, not the
+  other way around.
+- `wa_mount_fricaba_standard`'s `overview` claimed Fricaba is "the highest point in both" Olympic
+  National Park and the Buckhorn Wilderness. The wilderness half is right, but the Park half is
+  false on its face: Mount Olympus (7,980 ft), inside Olympic NP, is far higher than Fricaba
+  (7,139 ft) and is the park's actual high point. Wikipedia's claim is the high point of the
+  Buckhorn Wilderness and the surrounding Olympic National Forest — fixed to say that instead.
+
+Clean: Fernow's elevation (9,249 ft) and its two WA-ranking superlatives ("8th-highest peak,"
+"3rd-highest non-volcanic summit") both match Wikipedia word for word; its FA (Pennington/Ulrichs,
+1932) is corroborated there too; and a very specific, checkable claim — a named USFS closure order
+(06-17-07-2026-11) and exact dates on the Chiwawa River Road past Atkinson Flat — matches the
+Okanogan-Wenatchee NF's own alert page and is independently corroborated by local press. Ferry's
+elevation (6,195 ft), its Bailey Range ranking (8th-highest), and its naming for Governor Elisha P.
+Ferry by the 1889-90 Seattle Press Expedition all check out against Wikipedia and Mountaineers
+sources. Formidable's elevation (8,325 ft), coordinates, and 1938 Ptarmigan Club FA party (Bressler,
+Clough, Cox, Myers) are corroborated by Mountain Project and Cascade Climbers' own club history; its
+stored August 2006 fatal fall is corroborated by a SummitPost memorial for climber Ed Miller, though
+the specific "rib/chasm crossing" detail couldn't be independently confirmed. Fricaba's elevation
+(7,139 ft), coordinates, and its unusual split FA (Bechlem on the NE peak, Newman on the SW peak,
+1957) are confirmed by a real guidebook citation on SummitPost. Despair East Route's elevation
+(7,296 ft) and coordinates check out against Wikipedia; its NE Buttress's 2014 FA (Wehrly/Larson)
+and ~3,700 ft length are corroborated by the first-ascent party's own trip report.
+
+Flagged for human review, no SQL: `wa_mount_despair_east_route`'s `fa` ("Fred Beckey, Lloyd
+Anderson, and Clint Kelley, July 2, 1939") is the popular, widely-repeated attribution (Beckey
+himself called it "my first first ascent," per Mountaineers.org/AAC/HistoryLink), but the NPS North
+Cascades Historic Resource Study — citing Erwin Thompson's 1970 primary history — names the 1939
+Despair FA party as Lloyd Anderson, Clinton Kelly, and Jim Crooks, with no Beckey. A genuine
+conflict between a primary agency history and the popular/secondary record, not resolved here.
+Also: both Despair routes store the same `high_point_ft` (7,296 ft) even though the Northeast
+Buttress's own fields say it tops out on the peak's distinct, slightly-lower north summit (Peakware
+and Mountain Project both confirm Despair has two summits of different heights) — no source with a
+precise north-summit elevation was found, so this is noted as a gap rather than fixed. Formidable's
+overview also credits Herman Ulrichs with naming the peak in 1935 — plausible but uncorroborated by
+any source checked.
+
+All eight routes' coordinates sanity-checked against their named peak's expected location; none
+were implausible.
+
+Next batch will continue id-ascending from `wa_mount_fricaba_standard`.
