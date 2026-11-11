@@ -1,0 +1,337 @@
+[
+ {
+  "id": "wa_house_buttress",
+  "skip": true,
+  "reason": "Opened the AAI route profile for House Buttress and the Mountain Project Poster Peak and Blue's Buttress pages. They describe the line and the walk-off, but none states a time, distance or gain for the day; the only approach time given belongs to the neighbouring Blue's Buttress, and the one car-to-car figure found sits on a CascadeClimbers report that returns 403. With no stated figure for the day, a plan could not meet the rules. Row note: the AAI profile grades the route 5.7 (III), while the row says 5.9; Mountain Project lists the Poster Peak area at 7,840 ft against the row's 7,565 ft high point."
+ },
+ {
+  "id": "wa_prusik_peak_stanley_burgner",
+  "itinerary": {
+   "cal": "A long single push is common. Parties who camp need an Enchantments overnight permit (required May 15 to Oct 15), and both trailheads need a parking pass.",
+   "totalNote": "A car-to-car day of roughly 14.5 hours and about 23 miles from the Snow Lakes side: a long walk past Nada and Snow Lakes to Lake Viviane, six pitches up the south face, four rappels off the north side, and the same trail back out. Splitting it with a permitted camp near the upper lakes is the gentler option.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Snow Lakes approach, Stanley-Burgner, and hike out",
+     "objective": "Climb the south face of Prusik Peak and return to the car",
+     "note": "Walk the Snow Lakes trail past Nada Lake and the Snow Lakes, climb about 4,000 ft to the lakes and keep going to Lake Viviane, then cross a low-angle boulder field to the foot of the south face. The six pitches go chimney or wide crack, a knobby thin crack, a gully to a chockstone ledge, a squeeze behind the chockstone, and a final left-facing corner; pitches can be linked in pairs. From the top, walk east and make about four rappels down the north side, then scramble around the west ridge to the base and retrace the trail.",
+     "gainFt": 7500,
+     "lossFt": 7500,
+     "hours": 14.5,
+     "miles": 23,
+     "packLb": null,
+     "schedule": [
+      {"time": "Start", "label": "Leave the Snow Lakes trailhead", "detail": "Under five hours to the base of the face."},
+      {"time": "~5 hr", "label": "Base of the south face", "detail": "Reached by a boulder field above Lake Viviane."},
+      {"time": "~9 hr", "label": "Summit", "detail": "About four hours of climbing, close to an hour per pitch."},
+      {"time": "~10 hr", "label": "Back at the base", "detail": "Four rappels down the north side, then around the west ridge."},
+      {"time": "~14.5 hr", "label": "Car", "detail": "About four hours of walking out."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2021/08/28/prusik-peak-stanley-burgner-5-10/",
+   "https://mountainproject.com/route/105808515/stanley-burgner?print=1",
+   "https://www.mountainproject.com/area/105808510/prusik-peak"
+  ],
+  "confidence": "high",
+  "figureSources": "Day hours (about 14.5 car to car), 23 miles, 7,500 ft gain and the leg times in the schedule: climberkyle Stanley-Burgner report. Pitch sequence and four north-side rappels: Mountain Project route page (and the climberkyle report). Camping permit dates and parking pass: Mountain Project Prusik Peak area page. lossFt mirrors the stated gain for a loop back to the same trailhead.",
+  "rowIssues": "The row has no high point, season, approach or descent; Mountain Project gives the summit as 7,916 ft."
+ },
+ {
+  "id": "wa_sharkfin_tower_flakes_and_chimneys_south_face",
+  "itinerary": {
+   "cal": "Boston Basin camping is limited by a North Cascades backcountry permit. Early in the season the approach gully holds snow, so an axe and crampons help.",
+   "totalNote": "A long day or an easy overnight from the Boston Basin trailhead: about 3.2 miles each way to the lower camp, then up past the Quien Sabe Glacier's west edge and a gully through the cliff band to the tower. The south face is short; the descent is by rappel, then back down the gully and out the same trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Boston Basin approach, South Face, and hike out",
+     "objective": "Climb the south side of Sharkfin Tower and return to the trailhead",
+     "note": "Hike about 3.2 miles and roughly 2,500 ft to the lower Boston Basin camp near treeline. Continue to the western edge of the Quien Sabe Glacier and climb the gully through the rock band beneath the tower, which is snow early and scree later; pick the gully carefully, as a similar one has been the scene of a fatal accident. Cross the snow patch at the tower's foot to reach the south face. Rappel stations exist on the south side and in the approach gully, though the gully is loose and often wet. Return across the glacier edge and down the trail.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 6.4,
+     "packLb": null,
+     "schedule": [
+      {"time": "Early", "label": "Leave the Boston Basin trailhead", "detail": "The lot can fill before dawn on weekends."},
+      {"time": "", "label": "Lower camp (~5,700 ft)", "detail": "Just above treeline; a higher camp sits on a knoll near 6,300 ft."},
+      {"time": "", "label": "Approach gully", "detail": "Third-class rock once snow-free; rappel anchors in place."},
+      {"time": "", "label": "South face and summit (8,160 ft)", "detail": "Descend by rappel."},
+      {"time": "", "label": "Trailhead", "detail": "Same way out."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=58447",
+   "https://www.nps.gov/noca/blogs/sharkfin-tower-8-2-17.htm"
+  ],
+  "confidence": "low",
+  "figureSources": "3.2 miles each way (6.4 total), about 2,500 ft to the lower camp, camp elevations and the 8,160 ft summit: Steph Abegg Sharkfin Tower page. Third-class approach gully, its rappel anchors and the rappel line on the south face: NPS climbing ranger conditions post. No source gave a time for this route, so hours are null.",
+  "rowIssues": "The row grades the route 5.7 with moderate snow; the only source naming the South Face calls it 5.6. Neither source uses the name Flakes and Chimneys, so the match is by face only. The row has no high point; the summit is given as 8,160 ft."
+ },
+ {
+  "id": "wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge",
+  "itinerary": {
+   "cal": "From mid-summer the rock is usually snow-free; carry an axe and crampons for the glacier edges early on. Camping in the Green Creek cirque is an option for a gentler pace.",
+   "totalNote": "Usually climbed as part of the Green Creek Circuit, a single long day of about 11 to 13 miles and 8,000 ft over South Twin, Jaw's Tooth, Skookum, Little Sister and Cinderella. The figures here are for that whole loop; a party doing only Jaw's Tooth and Skookum will have a shorter day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Green Creek Circuit over Jaw's Tooth and Skookum",
+     "objective": "Climb Jaw's Tooth and Skookum's north ridge within the Twin Sisters loop",
+     "note": "From the Elbow Lake trailhead, cross the Middle Fork Nooksack on a log downstream of the old bridge site, then take the Green Creek climbers' trail into the cirque, about two hours to the base of the Green Creek Arete. After South Twin, drop its southwest side to Jaw's Tooth: clean slabs and corners with a 5.6 layback crux, then a short rappel of about 15 m from the spire. Rope up again for Skookum's north ridge on the crest, solid and very exposed. Leave Skookum by its loose southwest face, which is a rockfall hazard, and either continue the circuit or descend into the valley and walk out to the trailhead.",
+     "gainFt": 8000,
+     "lossFt": 8000,
+     "hours": 12,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {"time": "5:00 AM", "label": "Elbow Lake trailhead", "detail": "River crossing on a log downstream of the old bridge."},
+      {"time": "~7:00 AM", "label": "Base of the Green Creek Arete", "detail": "About two hours from the car."},
+      {"time": "", "label": "Jaw's Tooth", "detail": "5.6 slab and dihedral; one short rappel off the top."},
+      {"time": "", "label": "Skookum Peak via the north ridge", "detail": "Easy fifth class on the crest."},
+      {"time": "", "label": "Back at the trailhead", "detail": "A little over 12 hours for the full circuit."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+   "https://www.mountainproject.com/area/120237761/skookum-peak"
+  ],
+  "confidence": "low",
+  "figureSources": "Hours (a little over 12), 8,000 ft gain, the 11-13 mile range in the notes, the two-hour approach and the Jaw's Tooth rappel: climberkyle Green Creek Circuit report; all describe the full circuit, not Skookum alone. Route name, 5.6 grade and the alternative Dailey Prairie approach: Mountain Project Skookum Peak page. lossFt mirrors the gain for a loop.",
+  "rowIssues": "The row calls it the Northwest Ridge, but the ridge climbed from the Jaw's Tooth notch runs north on the crest; the source describes it as the north ridge. Mountain Project gives Skookum's summit as 5,962 ft; the row has no high point."
+ },
+ {
+  "id": "wa_south_early_winters_spire_backseat_driver",
+  "itinerary": {
+   "cal": "A Washington Pass summer route. The south side melts out earliest, but the approach from the hairpin is easier with snow cover and turns to loose sandy talus later in the season.",
+   "totalNote": "A single long day: approach from the Highway 20 hairpin (or the Blue Lake trail) to the col at the south side of the spire, seven hard pitches on the south face, then either rappel the route with a 70 m rope or scramble down the South Arete, and walk back to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach, Backseat Driver, and walk out",
+     "objective": "Climb Backseat Driver on the south face and return to the car",
+     "note": "From the hairpin, follow easy gullies, climbers' paths and open alpine ground to the col at the base of the South Arete; Backseat Driver starts a couple of minutes below the col, reached on easy ledges, well left of The Passenger. Seven steep pitches of cracks, corners and laybacks follow, all with bolted anchors. Rappel with a 70 m rope, using the intermediate anchor on the long last pitch, or go down the South Arete instead. The gain figure is for the trip from the hairpin to the summit, so a party that rappels without topping out climbs a little less.",
+     "gainFt": 2510,
+     "lossFt": 2510,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {"time": "Start", "label": "Leave the hairpin on Highway 20", "detail": "Roughly 2.75 hours to the south col for one recorded party."},
+      {"time": "", "label": "Base of the route", "detail": "A single bolt marks the start just below the col."},
+      {"time": "", "label": "Top of pitch 7", "detail": "Rappel the route or descend the South Arete."},
+      {"time": "", "label": "Back at the col", "detail": "Under an hour from the base of the arete to the car for that same party."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/121143268/backseat-driver",
+   "https://www.mountainproject.com/v/106257377",
+   "https://yellowleaf.org/scramble/g/r/2006-05-30-s-early-winters.html"
+  ],
+  "confidence": "low",
+  "figureSources": "Route location, pitch list, 70 m rappel and South Arete option: Mountain Project Backseat Driver page. Hairpin and Blue Lake approaches: Mountain Project South Early Winters Spire page. 2,510 ft gain, the 2:44 approach and the 44-minute walk out: yellowleaf South Arete trip, which used the same hairpin approach to the same col; no source gives a day length for this route, so hours are null.",
+  "rowIssues": "The row has no high point; Mountain Project gives the summit as 7,807 ft."
+ },
+ {
+  "id": "wa_south_early_winters_spire_south_east_mank",
+  "skip": true,
+  "reason": "Mountain Project lists South East Mank (5.7) on South Early Winters Spire but gives no description, location on the face, or descent, and the searches turned up no other source naming it. The shared hairpin approach is documented, but nothing covers this route itself."
+ },
+ {
+  "id": "wa_south_early_winters_spire_the_rubbernecker",
+  "skip": true,
+  "reason": "Searched for The Rubbernecker; the climbing.com news article redirects to a login, the Rab story URL returns 404, and Mountain Project shows only a grade line for it on the spire page. No opened source places the route on the spire or describes its descent, so the shared approach sources cannot be tied to it."
+ },
+ {
+  "id": "wa_primal_scream",
+  "skip": true,
+  "reason": "Opened the Mountain Project pages for Primal Scream, Miracle Ramps and the Squire Creek Wall south face: they give the 12-pitch line, a three-hour approach from Squire Creek Road to the grassy-saddle bivy, and a rappel descent on anchors added in 2023, but no time, distance or gain for the climbing day and walk out. All three are one site, and the only trip reports found are on CascadeClimbers (403). Too thin for a day-by-day plan. Row note: the row's peak is 'South Face', which is the south face of Squire Creek Wall near Darrington; the route is 2,000 ft long, grade III."
+ },
+ {
+  "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+  "itinerary": {
+   "cal": "A remote Chilliwack peak climbed from a high camp at the head of Depot Creek. The gully to the Ridge of the Gendarmes holds snow early, and the slope to the Col of the Wild turns to loose scree later in summer.",
+   "totalNote": "Four days from the Depot Creek trailhead: walk in to Lake Ouzel, move up to a high camp near 7,200 ft at the head of the Redoubt Glacier, spend a full day on the loose three-pitch Beckey route, and walk out. Parties often fold in Redoubt, Spickard or the other Chilliwack peaks along the way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Depot Creek trailhead to Lake Ouzel",
+     "objective": "Reach a camp at Lake Ouzel (5,700 ft)",
+     "note": "Walk and scramble up the Depot Creek valley from about 2,300 ft to Lake Ouzel at about 5,700 ft and camp there.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 6.25,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Move camp to the head of the Redoubt Glacier",
+     "objective": "Set up a high camp near 7,200 ft",
+     "note": "Climb from Lake Ouzel to the divide at the head of the Redoubt Glacier and Depot Creek. The move is short, which leaves time for Redoubt or a rest.",
+     "gainFt": 1500,
+     "lossFt": null,
+     "hours": 2,
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb Southeast Mox by the Beckey route",
+     "objective": "Summit Southeast (Hard) Mox and return to high camp",
+     "note": "Traverse easily to the Col of the Wild, angle south on ledges onto the Ridge of the Gendarmes, pass a short vertical step and follow third-class ground to the biggest notch. Drop east to the snow gully, take the right-hand of two gullies against the spire's western walls (missing it is the usual error), and scramble to the notch under the west face. Three short pitches on very loose rock, never harder than 5.5, reach the top. Make three single-rope rappels back to the notch, downclimb the gully, and return to camp. Test every hold.",
+     "gainFt": 4000,
+     "lossFt": 4000,
+     "hours": 8.5,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {"time": "Start", "label": "Leave high camp", "detail": "About 1.5 hours to the Col of the Wild."},
+      {"time": "~5.5 hr", "label": "Summit (8,509 ft)", "detail": "About four hours from the col."},
+      {"time": "~8.5 hr", "label": "Back at camp", "detail": "Three rappels, then downclimb the gully."}
+     ]
+    },
+    {
+     "n": 4,
+     "title": "Hike out to Depot Creek trailhead",
+     "objective": "Return to the car",
+     "note": "Break camp and descend past Lake Ouzel and down the Depot Creek valley to the trailhead.",
+     "gainFt": null,
+     "lossFt": 5720,
+     "hours": 5.8,
+     "miles": 9.1,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8926",
+   "https://www.mountainproject.com/route/124368565/beckey-route-west-ridge"
+  ],
+  "confidence": "medium",
+  "figureSources": "All hours, gains, losses and the 9.1-mile hike out come from the Steph Abegg Chilliwack Slam report (6:15 to Lake Ouzel, 2:00 camp move with 1,500 ft, 5:30 up and 3:00 down on Hard Mox with 4,000+ ft, 5:50 and 5,720+ ft loss on the way out). The 7,200 ft high camp at the head of Depot Creek, the Ridge of the Gendarmes traverse, three pitches and 8,509 ft summit: Mountain Project route page, which matches the report. Lake Ouzel to camp day times and the 'Col of the Wild to summit 4 hours' split are from the report.",
+  "rowIssues": "The row has no high point; Mountain Project gives 8,509 ft."
+ },
+ {
+  "id": "wa_the_temple_west_face",
+  "itinerary": {
+   "cal": "Climbed as a long day from the Snow Lakes side. Overnight stays in the Enchantments zones need a permit from May 15 to Oct 15. Early season brings a steep snow gully to the notch.",
+   "totalNote": "One long day of about 16 miles and 8,000 ft: leave the Snow Lakes trail above Nada Lake, climb into the basin north of Black Pyramid, gain the notch between The Temple and point 8292, then two pitches with a bolt-protected slab crux to the summit and rappels back down.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Snow Lakes trail, The Temple, and back",
+     "objective": "Summit The Temple from the notch and return to the car",
+     "note": "Follow the Snow Lakes trail past Nada Lake and across Nada Creek, then leave it to the right: talus and scrambling beside a large waterfall, a third-class ledge, and the creek into the basin north of Black Pyramid. From about 6,400 ft climb the lower northeast ridge, then a steep snow gully to the notch beside point 8292. From the notch the first pitch is easy until a delicate slab crux beside an old bolt with no other gear (rock shoes help); a second pitch of mostly third and fourth class has one fifth-class move to the summit block. Rappel the summit tower with two 30 m ropes, then rappel or plunge-step the gully and retrace the approach. The true summit lies slightly southeast of the mapped point 8292.",
+     "gainFt": 8000,
+     "lossFt": 8000,
+     "hours": null,
+     "miles": 16,
+     "packLb": null,
+     "schedule": [
+      {"time": "5:00 AM", "label": "Leave the Snow Lakes trailhead", "detail": "Snow began near 4,100 ft in mid-May."},
+      {"time": "~12:30 PM", "label": "Summit", "detail": "After the snow gully, the notch and two pitches."},
+      {"time": "~7:15 PM", "label": "Back at the car", "detail": "Rappels off the tower and down the gully, then the same way out."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://countryhighpoints.com/the-temple",
+   "https://www.mountainproject.com/area/105808510/prusik-peak"
+  ],
+  "confidence": "low",
+  "figureSources": "16 miles, 8,000 ft, the clock times in the schedule, the route from the notch and the rappels: countryhighpoints The Temple report (a mid-May ascent). Enchantments camping permit dates and the Snow Lakes trailhead: Mountain Project Prusik Peak area page. No source states a day length, so hours are null. lossFt mirrors the stated gain for an out-and-back.",
+  "rowIssues": "The only route-level source calls the climb from the notch a two-pitch line with a bolt-protected slab, which fits the row's 5.6 and two pitches, but it does not name it the West Face. The mapped point 8292 is not the true summit, which sits a little to the southeast; the row has no high point."
+ },
+ {
+  "id": "wa_northwest_face",
+  "itinerary": {
+   "cal": "Usually snow-free from mid-summer. Bring at least two liters of water; the col has little.",
+   "totalNote": "Two days from the Highway 20 pullout: under 5 miles and about 3,500 ft up the climbers' trail to a camp at Burgundy Col, then the short climb of Vasiliki Tower from the col and the walk out. Strong parties do it in one day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to a camp at Burgundy Col",
+     "objective": "Reach Burgundy Col (about 7,720 ft) and camp",
+     "note": "Start at the Highway 20 pullout near 4,250 ft, cross Early Winters Creek and climb the steep, tiring climbers' trail on the ridge west of Burgundy Creek, with flat camp benches part way up, to Burgundy Col. Spare afternoon time can go toward a look at the face or a scramble of a nearby summit.",
+     "gainFt": 3500,
+     "lossFt": null,
+     "hours": "3-4",
+     "miles": null,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Vasiliki Tower and hike out",
+     "objective": "Climb the northwest side of Vasiliki Tower and return to the car",
+     "note": "From the col, descend a little and work around to the west side of the tower; the fifth-class northwest line is short, and the summit sits only about 200 ft above the col. Downclimb or rappel back to the col, pack up camp and descend the climbers' trail, about 2 hours to the car.",
+     "gainFt": 200,
+     "lossFt": 3700,
+     "hours": null,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {"time": "Morning", "label": "Leave Burgundy Col", "detail": "Light packs for the tower."},
+      {"time": "", "label": "Summit of Vasiliki Tower", "detail": "About 200 ft above the col."},
+      {"time": "", "label": "Back at the col", "detail": "Break camp."},
+      {"time": "", "label": "Car", "detail": "About 2.1 hours down from the col."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8704",
+   "https://chossclimbers.com/?p=6719"
+  ],
+  "confidence": "low",
+  "figureSources": "3,500 ft and 3-4 hours to Burgundy Col, the 4,250 ft start, the 7,720 ft col, the 200 ft from col to summit and the 2.1-hour hike out: Steph Abegg Chianti/Silver Star/Vasiliki report, which camped at the col and climbed Vasiliki by its third-class north ridge but names a fifth-class NW dihedral. Camp benches part way up the approach: chossclimbers Burgundy Spire report. lossFt on day 2 is the stated 200 ft off the tower plus the stated 3,500 ft from col to car. No source gives a time for the northwest face itself, so day 2 hours are null.",
+  "rowIssues": "The row puts Burgundy Col near 7,800 ft; the source gives 7,720 ft. The row's high point is 7,663 ft, below the col, while the source gives Vasiliki's summit as 7,920 ft. dist_km 4.8 (about 3 miles) is shorter than the source's 'under 5 miles' to the col."
+ },
+ {
+  "id": "wa_vesper_peak_north_face",
+  "itinerary": {
+   "cal": "Best from mid-summer into September. Carry an axe and crampons for the Vesper Glacier traverse; the flakes on the face can be loose, so test holds.",
+   "totalNote": "A single day of about 10 miles and 4,100 ft from the Sunrise Mine trailhead: over Headlee Pass, across the Vesper Glacier to the north face, a few pitches of mid-fifth to 5.7 rock, and a walk down the south and east heather benches to rejoin the trail. Plan on 10 to 12 hours car to car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Headlee Pass, North Face, and walk off",
+     "objective": "Climb the north face of Vesper Peak and return to the car",
+     "note": "From the Sunrise Mine trailhead, switchback steeply to Headlee Pass at about 4,650 ft, then take a climbers' path northwest to a 5,500 ft notch and drop onto the Vesper Glacier; traverse it to the base of the face near 5,200 ft. Climb roughly three pitches in a chimney and gully system, scramble a heather bench, then about four pitches up a clean slab, and scramble east to the 6,214 ft summit. Descend by the climbers' path down the heather benches on the south and east sides back to the trail.",
+     "gainFt": 4100,
+     "lossFt": 4100,
+     "hours": "10-12",
+     "miles": 10,
+     "packLb": null,
+     "schedule": [
+      {"time": "7:00 AM", "label": "Sunrise Mine trailhead", "detail": "About 3 miles to Headlee Pass."},
+      {"time": "~9:20 AM", "label": "Notch above the Vesper Glacier", "detail": "Views of the face; traverse the glacier to its base."},
+      {"time": "", "label": "Summit (6,214 ft)", "detail": "After the chimney pitches and the upper slab."},
+      {"time": "", "label": "Car", "detail": "Down the south and east heather benches to the trail."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8733",
+   "https://sverdina.com/Vesper1.asp"
+  ],
+  "confidence": "medium",
+  "figureSources": "10 miles, 4,100 ft, the 10-12 hour car-to-car estimate, Headlee Pass and notch elevations, the pitch outline, the 6,214 ft summit and the heather-bench descent: Steph Abegg Vesper North Face page (that party was injured on route, so the hours are the stated estimate, not a measured total). The approach via Headlee Pass and the low-fifth ledge and dihedral line on the face: sverdina North Face report. lossFt mirrors the gain for a return to the same trailhead.",
+  "rowIssues": "The row has no high point; the source gives 6,214 ft. The row's 4 pitches is fewer than the roughly seven in one source; the other describes about three plus scrambling, so the count depends on the line taken."
+ }
+]
