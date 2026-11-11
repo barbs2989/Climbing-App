@@ -1007,6 +1007,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       are public domain and add nothing. Checked live: an Alberta crag shows the OGL – Canada line,
       Smith Rock shows only the imagery credit.
     - **It loads only near the screen** (IntersectionObserver): sixteen height tiles are ~1.5 MB.
+    - **Your conditions reachability matches the TAG, not `<CondPrefsControls/>`** (2026-11-05, #3213): it pinned
+      the bare self-closing tag, so passing `onSignIn` failed CI as "no longer reachable from Settings" while
+      both entry points still worked. It matches `<CondPrefsControls` plus up to 160 non-`<` characters to `/>`
+      (`[^>]*` would stop at the arrow in `()=>`). A sibling assertion pins the sign-in button: Settings and the
+      Menu overlay pass `onSignIn`, and `CondPrefsControls` renders it only while signed out.
 
 - **`check:alpine-conditions`** asserts that the **alpine Conditions tab** (sub-tab `forecast` on
   alpine, mountaineering, scrambling, ice and mixed routes — `lib/AlpineConditionsCard.jsx`, logic in
