@@ -23,7 +23,8 @@ import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supab
 import { itineraryShapeErrors } from "../../lib/itineraryShape.js";
 
 const APPLY = process.argv.includes("--apply");
-const DIR = "research-data/trip-plans-2026-11-11-wave2";
+// --dir=<folder> runs the same checks on a later batch (e.g. research-data/trip-plans-2026-11-11-retry, whose retry-*.json inputs are research).
+const DIR = (process.argv.find((a) => a.startsWith("--dir=")) || "--dir=research-data/trip-plans-2026-11-11-wave2").slice(6);
 const key = requireServiceKey();
 const read = (f) => JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8"));
 const ROAD = /\b(road|gate|closure|closed|washout|washed out|FR ?\d|forest road|highway|hwy)\b/i;
@@ -34,8 +35,8 @@ const canon = (v) => Array.isArray(v) ? v.map(canon) : v && typeof v === "object
 
 // Inputs: what each row held when it was dumped.
 const inputs = new Map();
-for (const f of fs.readdirSync(path.join(DIR, "inputs")).filter((f) => /^(research|prose)-\d+\.json$|^crag-prose\.json$/.test(f))) {
-  for (const r of read("inputs/" + f)) inputs.set(r.id, { row: r, kind: f.startsWith("research") ? "research" : "convert" });
+for (const f of fs.readdirSync(path.join(DIR, "inputs")).filter((f) => /^(research|prose|retry)-\d+\.json$|^crag-prose\.json$/.test(f))) {
+  for (const r of read("inputs/" + f)) inputs.set(r.id, { row: r, kind: /^(research|retry)/.test(f) ? "research" : "convert" });
 }
 
 /** The same day split the page used to draw prose with (ItineraryView's splitItineraryDays). */
@@ -54,7 +55,7 @@ function clean(it) {
 }
 
 const outs = new Map();
-for (const f of fs.readdirSync(DIR).filter((f) => /^out-(research|prose)-\d+\.json$/.test(f))) for (const x of read(f)) outs.set(x.id, { ...x, file: f });
+for (const f of fs.readdirSync(DIR).filter((f) => /^out-(research|prose|retry)-\d+\.json$/.test(f))) for (const x of read(f)) outs.set(x.id, { ...x, file: f });
 
 const plan = [], held = [], fellBack = [];
 for (const [id, { row, kind }] of inputs) {

@@ -1,0 +1,523 @@
+[
+ {
+  "id": "wa_spider_mountain_north_face",
+  "itinerary": {
+   "cal": "A winter and spring ski-mountaineering line (Dec-Apr) that parties usually do in two days. A night at or above Cache Col needs an NPS wilderness permit from the Marblemount Wilderness Information Center; south of the col a free self-issue wilderness permit is enough.",
+   "totalNote": "Two days: skin over Cascade Pass to a camp below Cache Col, then cross the col and Art's Knoll at dawn, climb the north face and ski all the way out the same evening.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cascade Pass to camp below Cache Col",
+     "objective": "Reach a camp on the Cache Glacier shoulder",
+     "note": "Climb about 3.5 miles and 1,800 ft to Cascade Pass, then head south up the arm onto the gentle Cache Glacier. The December 2011 party reached a hollow about 500 ft below Cache Col at dark; a 2013 party pushed on to camp on Art's Knoll itself, and Kool-Aid Lake beyond the col is the summer option.",
+     "gainFt": 2750,
+     "lossFt": 0,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "North face of Spider and ski out",
+     "objective": "Climb the north-face snow line and return to the car",
+     "note": "Cross Cache Col in the dark to reach the saddle by Art's Knoll at first light, then drop to the Middle Cascade Glacier and climb the leftmost, slightly traversing snow line over the bergschrund. The last 100 m below the summit ridge is steep and can be icy enough to turn parties back. Retrace over Cache Col, break camp, and ski out over Cascade Pass.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 15,
+     "miles": null,
+     "packLb": 30,
+     "schedule": [
+      {"time": "4:45 AM", "label": "Leave camp", "detail": "On skis, heading over Cache Col."},
+      {"time": "First light", "label": "Art's Knoll saddle", "detail": "View of the face and bergschrund before dropping to its base."},
+      {"time": "Sunset", "label": "Back at camp", "detail": "Break camp and continue out over Cascade Pass by headlamp."},
+      {"time": "~8:00 PM", "label": "At the car", "detail": "This party parked about 4 miles below the trailhead."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.turns-all-year.com/trip-reports/dec-3-4-spider-mtn-north-face-tag",
+   "https://turns-all-year.com/trip-reports/march-31-2013-spider-mountain-north-face-chute",
+   "https://www.wta.org/go-hiking/hikes/cascade-pass"
+  ],
+  "confidence": "medium",
+  "notes": "Two opened turns-all-year reports climb this face, both in two days. The camp follows the Dec 2011 report (about 500 ft below Cache Col), which matches the row's 'Cache Col and the Cache Glacier shoulder' bivy. Day 1 gain is from the row's elevations (3,650 ft trailhead to about 6,400 ft camp). Day 2 hours span 4:45 am to about 8 pm and include skiing roughly 4 extra miles below a closed trailhead. No source gives day mileage or day 2 gain, so those are null. Day 1's 3.5 mi to Cascade Pass is half of WTA's 7.0 mi round trip, but the distance on to the camp is not sourced."
+ },
+ {
+  "id": "wa_switchback_mountain_west_ridge",
+  "skip": true,
+  "reason": "Still no opened source for the west ridge/west face from Boiling Lake. Ross James' Sawtooth Slam report climbed Switchback from the Cooney Lake side via the saddle north of the peak, and Lemke's page does not describe Switchback. The Mountaineers route page (class 2-3 west ridge from Boiling Lake) appears only as a search snippet. The web search budget ran out after one search for this route."
+ },
+ {
+  "id": "wa_tinkham_peak_southeast_spur",
+  "itinerary": {
+   "cal": "Snow-free roughly June through October; a short half-day scramble with no overnight permit needed.",
+   "totalNote": "A half-day trip: an easy mile to Mirror Lake, then a steep boot path of a little over a mile to the east summit, returning the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Mirror Lake and the east summit boot path",
+     "objective": "Scramble East Tinkham from Mirror Lake and return",
+     "note": "Walk about 1.2 miles to Mirror Lake, then follow the PCT along the shore toward the south end and pick up the boot path. That path gains about 1,200 ft in a bit over a mile; it is steep and loose in places and hard to follow under patchy snow. One party took about an hour from the lake to the summit.",
+     "gainFt": 1850,
+     "lossFt": 1850,
+     "hours": null,
+     "miles": 4.6,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/mirror-lake-1",
+   "https://peakery.com/tinkham-peak-washington"
+  ],
+  "confidence": "medium",
+  "notes": "WTA covers the Mirror Lake approach (2.4 mi round trip, 650 ft, high point 4,200 ft). Peakery user logs cover the boot path from about halfway around the lake (about 1,200 ft in a bit over a mile; about 1 h lake to summit). Gain is 650 + 1,200 ft. Miles are 2.4 + 2 x about 1.1, so treat as approximate. Peakery lists Tinkham at 5,398 ft; the row has no high point. A search snippet gives a Mountaineers loop figure of 7.3 mi and 1,900 ft, which was not opened."
+ },
+ {
+  "id": "wa_west_twin_needle_west_slope",
+  "skip": true,
+  "reason": "No opened source describes the West Slope - East Arete line from the Himmelhorn notch. Abegg's 2009 Twin Needles report reached West Twin from Eye Col (class 3-4, about 5.6 near the top), and Jens Holsten's Pickets traverse blog only mentions bagging the west summit. Search snippets mention a 1969 AAJ note of an easy walk from the Mustard Glacier side; not opened."
+ },
+ {
+  "id": "wa_golden_horn_north_face",
+  "skip": true,
+  "reason": "Only one route-specific source: the 1958 AAJ note (Beckey and Watson approached via Horse Heaven, camped at a double lakelet below the northwest amphitheater, climbed a gully-flanked line mostly unroped with one chockstone crux, and descended the same way). It gives no times or figures. Climber Kyle and Yellowleaf cover only the standard south-side scramble from Snowy Lakes."
+ },
+ {
+  "id": "wa_golden_horn_northeast_arete",
+  "skip": true,
+  "reason": "No route source could be opened: the skisickness 2011 NE Arete report returns 404 at both URLs, and the OpenBeta mirror also returned 404. Search snippets confirm the 1979 Skoog-Walseth FA (5.8, loose, per Beckey) and a roughly 3.5 h Swamp Creek approach to Snowy Lakes, but no opened page covers the arete."
+ },
+ {
+  "id": "wa_gorillas_direct",
+  "itinerary": {
+   "cal": "July through September; a free self-issue Alpine Lakes Wilderness permit covers the camp below Stuart Pass, with no camping within half a mile of Lake Ingalls. Parties usually spend two days with a camp near Stuart Pass.",
+   "totalNote": "Two days: hike over Ingalls Pass to a camp under Stuart Pass, then climb the 8-10 pitch West Face Wall to the West Ridge and walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ingalls Pass to camp below Stuart Pass",
+     "objective": "Reach the upper Ingalls Creek meadows",
+     "note": "About 3 miles of switchbacks lead to Ingalls Pass, and Lake Ingalls is about a mile beyond. Camping is not allowed at the lake, so continue toward Stuart Pass and camp on durable ground in the meadows under the West Wall.",
+     "gainFt": 2190,
+     "lossFt": 460,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Gorillas Direct and hike out",
+     "objective": "Climb the West Face Wall and return to the car",
+     "note": "The route climbs a splitter on the wall between Stuart Pass and Goat Pass in 8-10 pitches. Expect sustained 5.10 with 5.10+ on the first and sixth pitches, a 'Monkey Traverse' on pitch 3, and loose rock on the final traverse. From the top, continue up the West Ridge to the summit or descend the main gully with one single-rope rappel to the Stuart Pass bivy sites.",
+     "gainFt": 3960,
+     "lossFt": 5690,
+     "hours": null,
+     "miles": null,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/112263877/gorillas-direct",
+   "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+   "https://stephabegg.com/trip-reports/washington/ingalls-peak/",
+   "http://blakeclimbs.blogspot.com/2009/07/gorillas-in-mist.html"
+  ],
+  "confidence": "low",
+  "notes": "Mountain Project gives the route, pitches and descent but no approach or timing. WTA and Abegg cover only the shared approach as far as Lake Ingalls (about 3 mi to the pass, lake about 1 mi beyond); nothing opened covers lake to Stuart Pass. Day 1 gain/loss come from the row (4,269 ft trailhead, 6,457 ft Ingalls Pass, about 6,000 ft meadows camp). Day 2 is the row's 6,150 ft total minus day 1, and assumes a summit. Blake's Gorillas in the Mist party took about 30 h car-to-car from the north side with an unplanned West Ridge bivy, so it is not a template for this approach. The row's 24.1 km (15 mi) looks like a round trip, whereas the sibling King Kong row lists 7.2 km one-way."
+ },
+ {
+  "id": "wa_hagan_mountain_north_slopes_blum_lakes",
+  "itinerary": {
+   "cal": "July through September. This is inside North Cascades National Park, so a backcountry permit is needed for a Blum Lakes camp. Parties usually plan three days and often add Mount Blum.",
+   "totalNote": "Three days: a steep, brushy climbers' path to Upper Blum Lake, a day crossing the Hagan Glacier side to the summit, and the long descent back to the Baker River trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Blum Creek path to Upper Blum Lake",
+     "objective": "Climb from the Baker River trail to the lakes",
+     "note": "Leave the Baker River trail at Blum Creek and follow the faint, flagged climbers' path. It is brushy, then steep forest to about 4,500 ft, then a talus traverse near 4,900 ft to Lower Blum Lake and on to Upper Blum Lake. Stay on the path: the brush off it is very hard going. A winter party camped higher, at about 5,600 ft above the lakes.",
+     "gainFt": 4220,
+     "lossFt": 0,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Hagan Glacier side to the summit",
+     "objective": "Climb Hagan and return to camp",
+     "note": "Traverse from the lakes onto the Hagan Glacier side and work up to the high ground. One party dropped packs at a high pass and scrambled the last few hundred feet; a winter party reached the highest point by a bowl and a short, roughly 50-degree chute to the ridge. Published summit heights range from 6,960 to about 7,100 ft.",
+     "gainFt": 2040,
+     "lossFt": 2040,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend to the Baker River trail",
+     "objective": "Hike out from Blum Lakes",
+     "note": "Reverse the steep climbers' path down Blum Creek. One party took about 2.5 hours down the path from the lakes; another lost the path below about 4,000 ft and found it again near Blum Creek.",
+     "gainFt": 0,
+     "lossFt": 4220,
+     "hours": 2.5,
+     "miles": null,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.turns-all-year.com/trip-reports/february-19-21-2005-hagan-peaks-and-mt-blum",
+   "https://climberkyle.com/2020/09/05/watson-blum-high-route/",
+   "https://sverdina.com/Blum1.asp"
+  ],
+  "confidence": "medium",
+  "notes": "Turns-all-year (Feb 2005, 3 days) and Climber Kyle (2020 high route) both climb Hagan from the Blum Lakes/Hagan Glacier side. Sverdina covers the Blum Lakes path and gives the about 2.5 h descent; that party never summited Hagan. Day gains come from the row (about 800 ft trailhead, 5,024 ft Upper Blum Lake, 7,067 ft summit waypoint). No source gives mileage, and the summer north-slopes line is not described step by step. The row's high_point_ft is 7,080, its summit waypoint is 7,067, and turns-all-year gives about 7,100 (a commenter says 6,960)."
+ },
+ {
+  "id": "wa_himmelhorn_stonehenge",
+  "itinerary": {
+   "cal": "July through September; a walk-up North Cascades National Park cross-country permit from Marblemount is required. The first-ascent party took four days, including a rest day before the climb.",
+   "totalNote": "Three days minimum: a long approach over the Barrier to a camp below the Chopping Block, a 4 am start for the 8-pitch south face, and a 7-hour walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Chopping Block camp",
+     "objective": "Reach a camp below the Chopping Block",
+     "note": "Follow the old Goodell Creek roadbed about 4 miles to the Terror Creek turnoff near 1,700 ft, then take the steep climbers' path up the Barrier to timberline around 5,000-5,600 ft. Continue through Stump Hollow to the crest near 6,400 ft and camp below the Chopping Block above Crescent Creek. Many parties split this into two days with a night in Terror Basin.",
+     "gainFt": 5800,
+     "lossFt": 0,
+     "hours": null,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Stonehenge on the Himmelhorn",
+     "objective": "Climb the south face to the summit and return to camp",
+     "note": "Cross to the snow below the wall, then scramble about 600 ft of easy ramps and ledges to a grassy col and rope up. Eight pitches include two 5.10- leads: a dihedral-to-hand-crack on pitch 2 and a run-out face on the summit tower. An unprotected traverse to a notch ends the difficulties before an easy, loose pitch to the top. Descend by walking off and downclimbing from a notch.",
+     "gainFt": 1480,
+     "lossFt": 1480,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": [
+      {"time": "4:00 AM", "label": "Leave camp", "detail": "First-ascent party, July 2015."},
+      {"time": "5:00 AM", "label": "Snow slope below the wall", "detail": "Then about 600 ft of easy rock to the grassy col where you rack up."}
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Barrier and Goodell Creek to the car",
+     "objective": "Walk out to the trailhead",
+     "note": "Retrace through Stump Hollow and down the Barrier, crossing Terror Creek on a log near 2,000 ft before rejoining the roadbed. Abegg's party took about 7 hours from the Chopping Block camp to the car.",
+     "gainFt": 0,
+     "lossFt": 5800,
+     "hours": 7,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/13201213408/Himmelhorn-South-Face-Stonehenge",
+   "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/"
+  ],
+  "confidence": "medium",
+  "notes": "The AAJ first-ascent account gives the camp (below the Chopping Block above Crescent Creek), the 4 am/5 am times, and the pitch beta. Abegg's 2008 Southern Pickets report gives the shared approach elevations (600 ft trailhead, about 6,400 ft Chopping Block camp) and the 7 h exit. Day 2 gain is the net 7,880 minus 6,400 ft; dropping into Crescent Creek Basin adds more, and that is not sourced. No source gives mileage beyond the roughly 4 mi roadbed. The FA party did the approach in one day; Abegg took two."
+ },
+ {
+  "id": "wa_himmelhorn_wild_hair_crack",
+  "itinerary": {
+   "cal": "July through October; a walk-up North Cascades National Park cross-country permit from Marblemount is required. Snow conditions in the col gully change the character of the route through the season.",
+   "totalNote": "Three days: approach over the Barrier into the Crescent Creek side, climb the gully to the Himmel-Otto col and four pitches to the summit, then walk out in about 7 hours.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek over the Barrier",
+     "objective": "Reach a camp above Crescent Creek Basin",
+     "note": "Take the Goodell Creek roadbed about 4 miles to the Terror Creek turnoff, climb the steep Barrier path to timberline, and traverse Stump Hollow to the saddle near 6,400 ft. Good bivies sit below Terror in Crescent Creek Basin, with a decent one just below the Himmel-Otto col. Many parties take two days for this approach.",
+     "gainFt": 5800,
+     "lossFt": 0,
+     "hours": null,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Gully to the col and Wild Hair Crack",
+     "objective": "Climb to the Himmelhorn summit and return to camp",
+     "note": "Climb the narrow gully to the Himmel-Otto col. Early in the season it is all snow with a little scrambling near the top; late in the season expect icy snow, chossy moats, and a loose class 3-4 bypass of an overhanging boulder. Four pitches of 5.7 PG13 lead to the summit. Descend by scrambling early season, or rappel through the moats late season.",
+     "gainFt": 1480,
+     "lossFt": 1480,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Walk out to Goodell Creek",
+     "objective": "Return to the trailhead",
+     "note": "Reverse Stump Hollow and the Barrier, cross Terror Creek near 2,000 ft, and follow the roadbed back. Abegg's party took about 7 hours from the Chopping Block camp.",
+     "gainFt": 0,
+     "lossFt": 5800,
+     "hours": 7,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/area/122904990/himmelhorn",
+   "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/"
+  ],
+  "confidence": "medium",
+  "notes": "Mountain Project gives the route, the col gully, the bivies and the descent options. Abegg gives the shared Goodell Creek/Barrier approach elevations and the 7 h exit. The Crescent Creek camp elevation is not sourced, so days 1-2 use Abegg's about 6,400 ft Chopping Block camp; day 2 is the net to the 7,880 ft summit. No source gives mileage or summit-day hours."
+ },
+ {
+  "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+  "skip": true,
+  "reason": "Only the 1988 AAJ first-ascent account (Johnson) describes this route: about 6 h from the trailhead past Willow Lake to a 6,200 ft saddle bivy, then III 5.6 loose rock. It says nothing about the descent or exit. WTA's Willow Lake Trail page covers only the trail (23.5 mi one-way from East Bank) and does not mention the climb, so there is no second source for the climb, descent or exit."
+ },
+ {
+  "id": "wa_ingalls_peak_east_ne_ridge_route",
+  "itinerary": {
+   "cal": "July through September; done as a day trip on a free self-issue Alpine Lakes Wilderness permit, with no camping at Lake Ingalls itself (Headlight Basin has sites).",
+   "totalNote": "A long day: about 4 miles over Ingalls Pass to Lake Ingalls, ledges to the northeast ridge, a bold 5.6 face pitch, then rappels down the Southwest Face.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Lake Ingalls and the northeast ridge",
+     "objective": "Climb East Peak and rappel the Southwest Face",
+     "note": "Hike about 3 miles to Ingalls Pass and about another mile to the lake. Head for the east side of the peak, staying right of the big couloir, and take easy ledges to the ridge. The ridge is 4th to 5.4 on good slabs and cracks, but the final 65 m face pitch is 5.6 X with almost no gear, so it is not a route for an average 5.6 leader. Bring a light rack and a 70 m rope for the rappels.",
+     "gainFt": 3210,
+     "lossFt": 3210,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://mountainproject.com/route/125269525/east-peak-northeast-ridge-to-east-face",
+   "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+   "https://stephabegg.com/trip-reports/washington/ingalls-peak/"
+  ],
+  "confidence": "medium",
+  "notes": "Mountain Project covers the route, approach from the lake, and descent. WTA (9 mi round trip to the lake, 2,500 ft, Ingalls Pass at about 3 mi) and Abegg (lake about 1 mi past the pass; a fast solo reached it in about 2 h) cover the shared approach. Gain is net, from the 4,269 ft Esmeralda trailhead (sibling rows) to the 7,480 ft summit; the dip from the pass to the lake adds a few hundred feet. No source gives total miles or hours for this route. Mountain Project lists 400 ft and does not give a pitch count; the row says 2 pitches."
+ },
+ {
+  "id": "wa_ingalls_peak_north_peak_southwest_face",
+  "itinerary": {
+   "cal": "Usually July through September as a long day on a free self-issue Alpine Lakes Wilderness permit; no camping at Lake Ingalls itself.",
+   "totalNote": "A long day: over Ingalls Pass to the lake, up slabs and talus to the North-South notch, then the short Southwest Face to the North Peak.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Lake Ingalls to the North Peak",
+     "objective": "Climb the Southwest Face and return to the car",
+     "note": "From Lake Ingalls, climb slabs, talus and boulders to the notch between the North and South peaks. Drop about 100 ft west to a friction slab, which is the start of the face. Plan for rappels on the way down. Parties starting before sunrise have reached the lake around 9 am and finished by headlamp.",
+     "gainFt": 4200,
+     "lossFt": 4200,
+     "hours": null,
+     "miles": 11.0,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+   "https://stephabegg.com/trip-reports/washington/ingalls-peak/",
+   "https://lemkeclimbs.com/ingalls-peaks.html"
+  ],
+  "confidence": "low",
+  "notes": "No opened source describes the Southwest Face itself. The route text (friction slab about 100 ft below the notch, a class 3 gully, a couple of low-5th moves) appears only in search snippets from the Mountaineers and SummitPost, which return 403. Miles and gain are from Abegg's South Peak trip, which shares the approach to the same notch (about 11 mi, 4,200 ft); her 5.6 h solo is not a fair guide for a roped party, so hours are left null. Lemke climbed the North Peak by its south ridge, not this face."
+ },
+ {
+  "id": "wa_king_kong_gorillas_direct_direct",
+  "itinerary": {
+   "cal": "July through September; a free self-issue Alpine Lakes Wilderness permit covers the camp below Stuart Pass, with no camping near Lake Ingalls. Plan two days with a camp near Stuart Pass.",
+   "totalNote": "Two days: hike over Ingalls Pass to camp below Stuart Pass, then climb the 8-pitch 5.12a wall and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ingalls Pass to camp below Stuart Pass",
+     "objective": "Reach the upper Ingalls Creek meadows",
+     "note": "Climb about 3 miles to Ingalls Pass, pass Lake Ingalls about a mile beyond (no camping there), and continue to the meadows under the West Wall below Stuart Pass.",
+     "gainFt": 2190,
+     "lossFt": 460,
+     "hours": null,
+     "miles": 4.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb King Kong and hike out",
+     "objective": "Climb the West Face Wall and return to the car",
+     "note": "The route shares its lower half with Gorillas Direct, then takes 'Fifth Avenue' (10+) to a two-bolt anchor and 'The Empire State Building', a steep 12- headwall splitter. A short 5th-class scramble gains the top of the wall. Bring extra 0.5-4 cams for the runout headwall. Descend the main West Ridge gully with one single-rope rappel to the Stuart Pass bivy sites, then retrace the approach.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 4.5,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/112249646/king-kong-gorillas-direct-direct",
+   "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+   "https://stephabegg.com/trip-reports/washington/ingalls-peak/"
+  ],
+  "confidence": "low",
+  "notes": "Mountain Project covers the route and descent (900 ft, 8 pitches) but gives no approach or timing. WTA and Abegg cover the shared approach only as far as Lake Ingalls. Day 1 gain/loss come from the row's waypoints and camp (4,269 ft trailhead, 6,457 ft Ingalls Pass, about 6,000 ft camp). Miles split the row's 7.2 km (4.5 mi) one-way, which matches WTA's trailhead-to-lake distance more than the distance to Stuart Pass. Day 2 gain is unknown because no source gives the wall-base elevation. The row's Gorillas Direct sibling gives 24.1 km and 6,150 ft for the same approach."
+ },
+ {
+  "id": "wa_labor_pains",
+  "itinerary": {
+   "cal": "June through September, done car-to-car in a day from the Blue Lake trailhead; a Northwest Forest Pass is needed to park.",
+   "totalNote": "A one-day Grade III outing: a short approach to the west side of North Early Winters Spire, four or five hard pitches, then the bolted Chockstone rappels.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Labor Pains on North Early Winters Spire",
+     "objective": "Climb Labor Pains and rappel to the base",
+     "note": "The approach to the west-side routes takes about an hour and a half; cache extra gear at the base. Start about 60 ft up the Chockstone gully and break left onto the face. A 5.11a small-gear corner leads to a 5.9 traverse, then a roof with a bolt and a 5.11a mantle crux before the route joins the West Face. Descend the Chockstone Route's bolted rappels.",
+     "gainFt": 2400,
+     "lossFt": 2400,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://iannicholsonslife.blogspot.com/2011/09/north-early-winter-spire-labor-pains.html",
+   "https://ncmountainguides.com/node/1337"
+  ],
+  "confidence": "medium",
+  "notes": "Nicholson's post gives the route itself (4 pitches: 5.0, 5.11a, 5.11a/5.10d, 5.11a) with no times. The NCMG West Face page shares the approach (about 1.5 h) and the single-day format. Gain uses the row's gain_ft 2,400; the row's waypoints (5,200 ft trailhead, 7,760 ft summit) imply about 2,560. The row says 5 pitches; Nicholson describes 4. No source gives mileage or total hours."
+ },
+ {
+  "id": "wa_lane_peak_r3",
+  "itinerary": {
+   "cal": "A winter and spring couloir (roughly Dec-May) that needs enough snow to fill and stabilize it; parties do it car-to-car from Narada Falls. Overnight trips need a winter wilderness permit from Longmire.",
+   "totalNote": "A single winter day: snowshoe or ski under Denman Peak to the north-face couloir, climb about 1,000 ft of snow with a rappel into the Zipper, and descend via the Lane-Denman saddle.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Lover's Lane couloir on Lane Peak",
+     "objective": "Climb the couloir to the summit and return to Narada Falls",
+     "note": "Climb the steep bank above the Narada Falls lot and follow the snow-covered road to the first hairpin. Drop into the forest, then traverse steep slopes under Denman Peak and turn uphill at the first big avalanche funnel. Rope up below the first constriction for about 1,000 ft of AI1 snow. Rappel over 100 ft (double ropes advised) into the Zipper and finish to the summit. Descend to the Lane-Denman saddle and down the steep gully on its far left side.",
+     "gainFt": 2000,
+     "lossFt": 2000,
+     "hours": null,
+     "miles": 4.0,
+     "packLb": 22,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/114089121/lovers-lane",
+   "https://www.mountainproject.com/area/110175004/lane-peak",
+   "https://www.jeffreyjhebert.com/adventures/the-zipper-on-lane-peak"
+  ],
+  "confidence": "medium",
+  "notes": "The Mountain Project route page gives the full approach, ascent and descent (Grade II, 1,000 ft) but no times. Hebert's 2016 Zipper trip shares the couloir system: about 1 h from parking to the base, 1.25 h up, about 4 h car-to-car without the summit. He started lower at Longmire, so his times are not used as the schedule here. Gain and miles come from the row (gain_ft 2,000; dist_km 3.2 read as one-way, so about 4 mi round trip). Hours are left null because no source times this route."
+ },
+ {
+  "id": "wa_liberty_bell_freedom_or_death",
+  "skip": true,
+  "reason": "Mountain Project gives the 4 pitches and the 60 m rappel from the top of P3, and Abegg gives the shared east-face approach time (37 min-1 h). Neither source, nor the row, gives a base or high-point elevation, distance or day length, so no day figure (hours/miles/gain) can be sourced. The route also usually ends without reaching the summit."
+ },
+ {
+  "id": "wa_liberty_bell_freedom_rider",
+  "itinerary": {
+   "cal": "June through September; a long Grade IV day on the east face of Liberty Bell from the pullout near the Washington Pass hairpin, with no permit needed.",
+   "totalNote": "One long day: a short approach to the east face, 14 adventurous pitches (shared in the middle with Liberty Crack), then rappels to the Liberty Bell-Concord notch and the walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Freedom Rider on the east face",
+     "objective": "Climb the east face to the summit and descend to the car",
+     "note": "From the pond trail, the approach to the east face base takes 40 minutes to an hour. The route starts in a loose 5.8 R corner about 100 ft left of Liberty Crack and has a 5.10d thin-crack crux (5.11b if you take the offwidth). It follows Liberty Crack for pitches 7-9, then finishes right through Medusa's Roof. Belays are not bolted except where it meets Liberty Crack. From the top, rappel to the Liberty Bell-Concord notch and walk out via the Blue Lake trail.",
+     "gainFt": 2560,
+     "lossFt": 2560,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/109496572/freedom-rider",
+   "https://stephabegg.com/?p=8765",
+   "https://www.mountainproject.com/route/106512297/liberty-crack"
+  ],
+  "confidence": "medium",
+  "notes": "Mountain Project covers the route (Grade IV, 1,200 ft, 14 pitches, 5.10d R with an optional 5.11b) and says to use the regular east-face approach and descent. Abegg's Liberty Crack page gives that approach (37 min to 1 h) and descent (about 1 h 46 min). Her car-to-car times on Liberty Crack (10-18.5 h) are not this route, so hours are null. Gain is derived from the 7,720 ft summit minus the about 5,160 ft hairpin turnout used in the Kangaroo Temple row; this row has no trailhead elevation. The row grade of 5.10d leaves out the 5.11b offwidth option."
+ },
+ {
+  "id": "wa_liberty_bell_sidewinder",
+  "itinerary": {
+   "cal": "June through September as a day climb from the Blue Lake trailhead; a Northwest Forest Pass or day pass is needed to park.",
+   "totalNote": "A one-day climb: up the Blue Lake trail and the Beckey gully, five pitches on the southwest corner, then the Beckey Route rappels.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Beckey gully and the Sidewinder",
+     "objective": "Climb the southwest corner and rappel the Beckey Route",
+     "note": "Hike about 2 miles to the heather meadow, take the climbers' trail left into the talus-filled Beckey gully, and break left at the fork to the shelf below the cave feature. Wear helmets in the gully. Descend from the summit by downclimbing the slab to the end of pitch 3 of the Beckey Route, then make the chained rappels to the notch and reverse the gully.",
+     "gainFt": 2520,
+     "lossFt": 2520,
+     "hours": null,
+     "miles": 5.0,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6",
+   "https://www.countryhighpoints.com/liberty-bell-mountain-57/"
+  ],
+  "confidence": "low",
+  "notes": "Neither opened source covers Sidewinder; both describe the shared Beckey gully approach and the Beckey Route descent. Outbound gives about 5 mi round trip and about 2,000 ft to the notch, which agrees with the row's dist_km 4 (one-way). Gain uses the row's gain_ft 2,520; the row's elevations (5,380 to 7,720) give 2,340. No source times the route, so hours are null."
+ },
+ {
+  "id": "wa_little_annapurna_south_face",
+  "skip": true,
+  "reason": "Not retried with new sources: the session's web-search budget ran out before this row, and the only detailed beta is on SummitPost, which returns 403. Lemke's page has no approach or timing figures, so there is still no second usable source."
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "skip": true,
+  "reason": "The session's web-search budget ran out before this row. The known Chaval beta is on SummitPost and CascadeClimbers (both 403), and no reachable page describing the North Ridge is known."
+ },
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "skip": true,
+  "reason": "This ridge is only done as the descent leg of multi-day Pickets traverses (from Crowder's summit down to Pickell Pass). A stand-alone itinerary would have to invent its approach and timing. No new sources were fetched because the session's search budget ran out."
+ }
+]

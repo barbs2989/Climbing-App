@@ -1,0 +1,512 @@
+[
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "itinerary": {
+   "cal": "A late spring to early summer snow and ice line (the first ascent was late June) that needs a firm, filled-in couloir. Both documented parties took three days and two nights with a walk-up North Cascades backcountry permit for the Terror Basin / Crescent Creek cross-country zones.",
+   "totalNote": "Three days: bushwhack up the Barrier to a Chopping Block ridge camp, a very long day over the Otto-Himmel col to climb the couloir and return, then descend to Goodell Creek.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Chopping Block ridge camp",
+     "objective": "Climb the Barrier to camp on Chopping Block ridge",
+     "note": "Walk the old Goodell Creek road and trail, cross Terror Creek on a high log, then grind up roughly 1,700 ft of steep, cliff-broken bushwhacking on a faint boot path to the ridge crest. Continue up snow below the Chopping Block to a flattened camp spot on the ridge.",
+     "gainFt": 5300,
+     "lossFt": 0,
+     "packLb": 42,
+     "schedule": [
+      {
+       "time": "7:15 AM",
+       "label": "Leave the trailhead",
+       "detail": "Ski party's start from the Goodell Creek roadhead."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Climb Thread of Ice and return to camp",
+     "objective": "Climb the couloir to Eye Col and the East Twin Needle",
+     "note": "Cross Crescent Creek Basin to the Ottohorn-Himmelhorn col, then drop about 1,000 ft down its north side and the glacier to the foot of the Thread. The couloir is about 1,200 ft of hard snow and near-ice to Eye Col; the East Needle is a short Class 3-4 scramble from there, and the south-side gullies take downclimbing and rappels back to the basin.",
+     "hours": 16,
+     "packLb": 18,
+     "schedule": [
+      {
+       "time": "5:00 AM",
+       "label": "Wake up",
+       "detail": "Melt snow and leave for Crescent Creek Basin."
+      },
+      {
+       "time": "~11:00 PM",
+       "label": "Back at camp",
+       "detail": "The ski party's 16-hour day, finishing in the dark."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Descend the Barrier to Goodell Creek",
+     "objective": "Return to the car",
+     "note": "Reverse the ridge, the Barrier bushwhack and the Terror Creek log; the boot path is easy to lose on the ridge. The first-ascent party called it a five-hour descent.",
+     "hours": 5,
+     "gainFt": 0,
+     "lossFt": 5300,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8734",
+   "https://wildsnow.com/5477/cascades-pickets-thread-ice-ski/"
+  ],
+  "confidence": "medium",
+  "notes": "Both opened sources are three-day trips with a camp on Chopping Block ridge rather than the row's Crescent Creek Basin camp. Day 1 and 3 gain/loss (about 5,300 ft) is derived from row elevations (Goodell roadhead 500 ft, Terror Basin camp 5,800 ft) since no source gives the ridge camp elevation. Day 2 hours and times come from the WildSnow ski party, which also skied the line, so a pure climbing party may be faster; day 3 hours are Abegg's. Abegg gives East Twin Needle as 7,840 ft (row high_point_ft is null)."
+ },
+ {
+  "id": "wa_emerald_peak_west_route",
+  "itinerary": {
+   "cal": "Best from July into early October once the North Fork Entiat trail melts out; free self-issue Glacier Peak Wilderness permit at the trailhead. Most parties make it a 3-day trip and add Saska and Cardinal from a high camp, though very fit parties have done Emerald (with Pinnacle) in one long day.",
+   "totalNote": "Three days from the North Fork Entiat trailhead: hike to a high camp in the Emerald-Saska basin, scramble Emerald's west ridge and gully (optionally adding Saska and Cardinal), and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the Emerald-Saska basin",
+     "objective": "Reach a high camp below Emerald and Cardinal",
+     "note": "Follow the North Fork Entiat trail through old burn (hot, with blowdown) toward Saska Pass and Fox Camp, then continue into the basin below Emerald, Saska and Cardinal. climberkyle's party camped in a meadow at about 6,800 ft below Cardinal, arriving in the late afternoon.",
+     "gainFt": 2860,
+     "lossFt": 0,
+     "miles": 9.5,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Scramble Emerald's west side",
+     "objective": "Summit Emerald Peak and return to camp",
+     "note": "Cross the meadow below the peak and climb a gully to a small shoulder, then a right-trending scree gully; turn left at the cliffs onto the west ridge and follow occasional cairns up ridge and gully to the top. The rock is loose but not hard; parties often link Saska and Cardinal the same day.",
+     "gainFt": 1620,
+     "lossFt": 1620,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out the North Fork Entiat",
+     "objective": "Return to the trailhead",
+     "note": "Reverse the approach trail; climberkyle found the walk out a little faster than the walk in.",
+     "gainFt": 0,
+     "lossFt": 2860,
+     "miles": 9.5,
+     "packLb": 34,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.countryhighpoints.com/pinnacle-mountain-and-emerald-peak/",
+   "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/"
+  ],
+  "confidence": "medium",
+  "notes": "Route line on Emerald (gully to shoulder, scree gully, west ridge) is from countryhighpoints (2018 single-day Pinnacle+Emerald, about 30 mi, 8:30 AM start, back on trail by 4 PM). The 3-day structure and the ~6,800 ft camp are climberkyle's (2017, Saska/Emerald/Cardinal). Approach miles (about 8 mi to Fox Camp plus 1.5 mi to the basin) come from the row's bivy notes; gains are from row trailhead elevation 3,940 ft, climberkyle's camp elevation and row high point 8,422 ft. No source gives hours. Row gain_ft 5,272 exceeds the straight trailhead-to-summit difference (4,482 ft), presumably counting ups and downs."
+ },
+ {
+  "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+  "itinerary": {
+   "cal": "A June to early-July snow line, before crevasses on the White Salmon open up and the lower Avalanche Glacier goes mushy. A Cascade Volcano Pass is required above 7,000 ft from April through October; documented parties did it car-to-car in a day from Cold Springs, with a camp in the 7,200 ft moraine bowl as the option for a shorter summit day.",
+   "totalNote": "Usually one long day from Cold Springs; parties wanting a camp can use the moraine bowl at about 7,200 ft where the Avalanche Glacier begins.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cold Springs to the summit and back",
+     "objective": "Climb the Avalanche and White Salmon glaciers to the summit",
+     "note": "Take the South Climb trail to the Round the Mountain Trail and traverse about 2 miles northwest to the Avalanche Glacier outlet stream near 6,100 ft, then follow moraines to the bowl at 7,200 ft. The Avalanche Glacier was uncrevassed in 2004, while the White Salmon has seracs on its north and west sides and a short 45-degree pitch to the saddle between the summit and the Pinnacle; a moraine saddle at about 10,200 ft links the two glaciers.",
+     "hours": 10.8,
+     "gainFt": 6680,
+     "lossFt": 6680,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "6:15 AM",
+       "label": "Leave Cold Springs",
+       "detail": "2004 party's start (they climbed the South Spur and descended this line)."
+      },
+      {
+       "time": "12:45 PM",
+       "label": "Summit dome",
+       "detail": "About 6.5 hours up."
+      },
+      {
+       "time": "3:15 PM",
+       "label": "Round the Mountain Trail",
+       "detail": "Back at 6,100 ft after descending the White Salmon and Avalanche glaciers."
+      },
+      {
+       "time": "~5:00 PM",
+       "label": "Back at the car",
+       "detail": "About 10.75 hours car to car."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://turns-all-year.com/trip-reports/june-20-2004-mt-adams-avalanche-white-salmon",
+   "https://turns-all-year.com/trip-reports/june-21-22-adams-white-salmon-attempt",
+   "https://turns-all-year.com/trip-reports/july-7-2012-mt-adams-white-salmon-glacier"
+  ],
+  "confidence": "low",
+  "notes": "All three opened sources are ski trips: the 2004 and 2012 parties climbed another way from Cold Springs and skied this line in a day (times above are the 2004 party's, so an ascent of the glaciers will differ), and the 2014 party camped at about 6,800 ft from Williams Mine and turned back at 9,200 ft. Gain is derived from the row's Cold Springs elevation (5,600 ft) and Adams' 12,276 ft summit; row gain, distance and high point are null. No source gives mileage."
+ },
+ {
+  "id": "wa_mount_steel_first_divide",
+  "itinerary": {
+   "cal": "July through October once the First Divide area melts out; overnight camping needs an Olympic National Park wilderness permit plus the park entry fee, and dogs are not allowed. Most parties take two or three days, camping at Nine Stream, Home Sweet Home or high on the peak itself.",
+   "totalNote": "Three days up the North Fork Skokomish: hike to Nine Stream, climb to the First Divide area and up Steel's face and back, then walk out to Staircase.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Staircase to Nine Stream",
+     "objective": "Walk the North Fork Skokomish to the last low camp",
+     "note": "Mostly gentle old-growth valley walking past Camp Pleasant (6.8 mi) to Nine Stream at about 9.7 mi, where the trail starts to climb in earnest.",
+     "miles": 9.7,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Mount Steel from Nine Stream",
+     "objective": "Summit Mount Steel and return to camp",
+     "note": "Climb steeply toward First Divide; just before the trail swings east to the divide, leave it on a brushy but defined path into the basin under Steel (Camp Lookabout). Go up the face on a decent game trail, with water about a third of the way up, to a steep but straightforward top.",
+     "gainFt": 4190,
+     "lossFt": 4190,
+     "miles": 8,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Walk out to Staircase",
+     "objective": "Return to the trailhead",
+     "note": "Reverse the valley trail from Nine Stream.",
+     "gainFt": 0,
+     "miles": 9.7,
+     "packLb": 32,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.hikeoftheweek.com/2022/10/06/home-sweet-home/",
+   "https://www.oregonhikers.org/forum/viewtopic.php?t=13380"
+  ],
+  "confidence": "medium",
+  "notes": "Approach mileages (Camp Pleasant 6.8 mi, Nine Stream 9.7 mi, First Divide 4,700 ft) are from hikeoftheweek; the off-trail line up Steel is from the oregonhikers 2012 report (who did it as an overnight with a summit bivy). Day 2 gain uses row elevations (Nine Stream 2,040 ft, summit 6,225 ft); day 2 miles are an estimate from the row's 12.7 mi to First Divide plus about a mile to the summit, each way. No source gives hours, and Staircase elevation is not in the row so day 1 gain is omitted. Row dist_km 20.4 (12.7 mi) is one-way to First Divide only."
+ },
+ {
+  "id": "wa_sherman_peak_baker_squak_glacier",
+  "itinerary": {
+   "cal": "Climbed mostly from late spring into summer while the Squak Glacier is well covered; crevasses open up above about 8,700 ft as the season goes on. A free self-issued wilderness permit covers the Mount Baker Wilderness, and most parties take two days with a camp near Crag View, though it can be done in one long day.",
+   "totalNote": "Two days from Schriebers Meadow: hike the Scott Paul trail to a camp near Crag View, then climb the Squak Glacier to the saddle below the Roman Wall and up to Sherman Peak before descending to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Schriebers Meadow to Crag View camp",
+     "objective": "Reach camp at the edge of the Squak Glacier",
+     "note": "Follow the Scott Paul trail to treeline and leave it for the moraine and ridge leading to the Crag View prow (about 6,500 ft); The Outbound puts this leg at about 2-4 hours. Parties camp just above or below the prow or at the glacier edge up to about 6,800 ft.",
+     "gainFt": 3160,
+     "lossFt": 0,
+     "miles": 3.5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Squak Glacier to Sherman Peak",
+     "objective": "Summit Sherman Peak and descend to the trailhead",
+     "note": "Climb the Squak Glacier north, mostly crevasse-free to about 8,700 ft, then weave through a more crevassed and icier section to the saddle below the Roman Wall. Sherman's final slope can be very icy; descend the same way, pack up camp and walk out.",
+     "gainFt": 3630,
+     "lossFt": 6800,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "4:00 AM",
+       "label": "Leave camp",
+       "detail": "2018 party's start from the Squak Glacier camp at about 6,800 ft."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://turns-all-year.com/trip-reports/november-11-12-2018-mt-baker-and-sherman-peak",
+   "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier"
+  ],
+  "confidence": "medium",
+  "notes": "The 2018 turns-all-year party (ski) camped at about 6,800 ft at the Squak Glacier edge and climbed Sherman from the saddle below the Roman Wall on day 2; The Outbound covers the shared Squak approach (Crag View 6,513 ft, 2-4 hr trailhead to Crag View, about 10 mi RT to Baker's summit, doable in 1-2 days). Day 1 miles (3.5) are from the row's bivy notes; gains use row elevations (trailhead 3,337 ft, Crag View 6,500 ft, summit 10,133 ft). No source gives summit-day hours or miles for Sherman. The previously used whereiskylemiller source was not re-opened."
+ },
+ {
+  "id": "wa_south_face_7",
+  "itinerary": {
+   "cal": "A summer-to-fall day trip once the south ramp is dry and snow-free; wet rock on the face is slick. No climbing permit is needed beyond the Alpine Lakes Wilderness self-issue permit at the PCT trailhead.",
+   "totalNote": "A single day from the Snoqualmie Pass PCT trailhead: about 8 miles round trip and 2,900 ft of gain, up the red south ramp and down the west side.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Scramble Red Mountain's south face",
+     "objective": "Climb the south ramp to the summit and descend the west side",
+     "note": "Take the PCT north to the Commonwealth Creek trail and follow it about 2 miles until the peak comes into view, then traverse heather to the bright red rock gully (two short Class 3 pitches) and the main gully above. Most parties stay unroped and move left onto the west-side finish; the steep summit block itself is Class 4 to low 5th and wants a rope. If you reach Red Pond you have overshot the start; descend the Class 2 west side.",
+     "gainFt": 2900,
+     "lossFt": 2900,
+     "miles": 8,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/119517789/south-face",
+   "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+  ],
+  "confidence": "medium",
+  "notes": "Route line, grade and descent are from the Mountain Project South Face page (1,500 ft, Class 3-4); the 8.0 mi round trip, 2,900 ft gain and 5,890 ft high point are WTA's figures for the standard Commonwealth Basin ascent, which shares the approach and summit. No opened source gives hours. The previous attempt's three sources (Mountaineers, CascadeClimbers, SummitPost) are blocked sites and were not used."
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "itinerary": {
+   "cal": "A summer-to-early-fall Washington Pass rock route, climbed car to car in one long day; no permit is needed. Many parties sleep at the hairpin or the Blue Lake trailhead for an early start.",
+   "totalNote": "One long day from the SR-20 hairpin: a short scramble to the base, ten pitches (1,100 ft, Grade IV, 5.10b), and rappels down the Chockstone Route.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Flycatcher Buttress car to car",
+     "objective": "Climb the ten-pitch buttress and rappel to the base",
+     "note": "From the hairpin, follow the start of the approach toward South Early Winters Spire, staying right of the gully between the two spires, and scramble to the flat ledge at the base; the spires take most parties 1-2 hours to reach. The ten pitches are not sustained but wander, with a long rightward traverse on P2 and a left traverse to an exposed wide crack on P8; descend by the Chockstone rappels (60 m rope) or the bolted anchors (70 m rope).",
+     "gainFt": 2400,
+     "lossFt": 2400,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/118228852/flycatcher-buttress",
+   "https://www.mountainproject.com/area/105792196/north-early-winter-spire"
+  ],
+  "confidence": "medium",
+  "notes": "Pitch beta, length and descent are from the MP route page; the 1-2 hour approach time is from the MP North Early Winter Spire area page (stated for the Blue Lake side). Gain equals the row's gain_ft. No opened source gives car-to-car hours or mileage, so both are omitted. The SuperTopo topo page refused the connection."
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "itinerary": {
+   "cal": "A summer route (the first ascent was in late June, with snow still in the access couloir); free self-issue wilderness permit, no quotas. Plan three days: hike to Snowy Lakes, a full climbing day, and the walk out.",
+   "totalNote": "Three days from Rainy Pass: hike the PCT to a Snowy Lakes camp, drop to the base of the 1,000 ft, 11-pitch east face and climb it, then walk out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Rainy Pass to Snowy Lakes",
+     "objective": "Hike the PCT to camp at Snowy Lakes",
+     "note": "Follow the PCT north over Cutthroat and Granite passes to the meadows below Tower Mountain, then take the steep climbers' trail up to the Snowy Lakes; the saddle above Upper Snowy Lake (about 6,900 ft) makes a good camp. The first-ascent party came up Swamp Creek instead.",
+     "hours": 6,
+     "miles": 11,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the East Face of Golden Horn",
+     "objective": "Reach the base of the east face and climb to the summit",
+     "note": "Scramble up the ridge and scree on Golden Horn's southwest side, then drop down the east-side snow couloir (crampons and axe) to the foot of the face. The 11 pitches (5.8-5.10+, with a poorly protected 5.10 R expanding crack and some rotten rock) took the first-ascent team 11 hours; come down the standard southwest-side scramble, with a short rappel off the summit block.",
+     "gainFt": 1470,
+     "lossFt": 1470,
+     "packLb": 18,
+     "schedule": [
+      {
+       "time": "4:30 AM",
+       "label": "Leave Snowy Lakes camp",
+       "detail": "Over the southwest scree and down the east couloir."
+      },
+      {
+       "time": "6:30 AM",
+       "label": "Start climbing",
+       "detail": "Base of the east face."
+      },
+      {
+       "time": "~5:30 PM",
+       "label": "Summit",
+       "detail": "About 11 hours on the route."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Rainy Pass",
+     "objective": "Return to the trailhead",
+     "note": "Reverse the PCT to Rainy Pass; trailcatjim took about 5.5 hours.",
+     "hours": 5.5,
+     "miles": 11,
+     "packLb": 36,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/13201213719/Golden-Horn-East-Face",
+   "https://alpinist.com/doc/web15x/newswire-new-route-on-golden-horn",
+   "https://trailcatjim.com/tower-mtn-golden-horn-snowy-lakes/",
+   "https://climberkyle.com/2016/08/27/golden-horn/"
+  ],
+  "confidence": "medium",
+  "notes": "Route, couloir access and summit-day times are from the AAJ and Alpinist reports of the 2015 first ascent (Fuck the Pain Away, IV 5.10+ R). Approach and walk-out miles and hours, and the 6,900 ft camp, are from trailcatjim (Rainy Pass, 11 mi, 6.0 h in, 5.5 h out); climberkyle confirms about 10 mi on the PCT and the standard scree/short-rappel descent. Day 2 gain is camp-to-summit only (6,900 to 8,366 ft) and ignores the drop to the base of the face, which no source quantifies. Row dist_km 18.5 (11.5 mi) is consistent with the one-way distance to Snowy Lakes, not a round trip."
+ },
+ {
+  "id": "wa_mount_triumph_west_route",
+  "itinerary": {
+   "cal": "A mid-to-late summer climb once the Thornton Ridge snow patches have shrunk (they are the only water on the crest). An overnight North Cascades National Park backcountry permit is needed for the high camp; plan three days.",
+   "totalNote": "Three days and about 17 miles round trip with roughly 6,300 ft of gain: camp on Thornton Ridge, an 11-hour round trip up the west face benches and the Class 5 southeast slot, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Thornton Lakes to the Thornton Ridge camp",
+     "objective": "Hike to a high camp on Thornton Ridge",
+     "note": "Take the Thornton Lakes trail (the first two miles are old road) to the overlook, drop about 500 ft to Lower Thornton Lake, cross the outlet and follow a scratch path up to the ridge. trailcatjim's party camped on a rocky knob at 6,100 ft just south of Thornton Pass and dropped about 100 ft to melt snow patches for water.",
+     "hours": 6.9,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the west face route and return",
+     "objective": "Summit Mount Triumph and rappel back to camp",
+     "note": "Traverse past Thornton Pass under Thornton Peak's west rampart and the Great Prow, cross two stream channels to the southwest ridge, and climb heather to a talus shoulder. Angle up dicey Class 4 rock and heather benches by the Great White Slabs to a big southeast-slanting ramp, then rope up for a poorly protected Class 5 slot to the crest. Four rappels (two off the summit pyramid, three double-rope down the ramp) get you back to the slabs.",
+     "hours": 11,
+     "gainFt": 1170,
+     "lossFt": 1170,
+     "packLb": 18,
+     "schedule": [
+      {
+       "time": "before 8:00 AM",
+       "label": "Leave camp",
+       "detail": "About 5.4 hours camp to summit."
+      },
+      {
+       "time": "dusk",
+       "label": "Back at camp",
+       "detail": "About 5.6 hours summit to camp, arriving just before dark."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the Thornton Lakes trailhead",
+     "objective": "Return to the trailhead",
+     "note": "Descend to Lower Thornton Lake, regain the 500 ft to the overlook, and follow the trail out.",
+     "hours": 6,
+     "packLb": 35,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://trailcatjim.com/mt-triumph-via-west-face-southeast-face/",
+   "https://sverdina.com/Triumph1.asp"
+  ],
+  "confidence": "medium",
+  "notes": "Route, camp, hours and the 17 mi / 6,300 ft trip totals are from trailcatjim's west face / southeast face ascent; sverdina (Northeast Ridge, 2003) confirms the shared Thornton Lakes approach (about 4 mi of trail, 500 ft drop to the lake, camp at the col, 3 days). Day 2 gain is net camp-to-summit from trailcatjim's 6,100 ft camp and the 7,270 ft summit. No per-day mileage is given. Contradiction: the row says this route uses the Triumph Pass approach rather than Thornton Lakes, but the only opened ascent of this line came from Thornton Lakes via Thornton Pass."
+ },
+ {
+  "id": "wa_esmeralda_peaks_east_gully",
+  "itinerary": {
+   "cal": "A short day climb best in early summer while some snow lingers below the gully, or later once it is dry; the gully itself can run with water. Park at the Esmeralda/Ingalls trailhead with a recreation pass and self-issue a free Alpine Lakes Wilderness permit.",
+   "totalNote": "One day, about 5 miles round trip and roughly 2,300 ft of gain: up the East Peak's east gully and down south to the De Roux Creek trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the East Gully and loop out",
+     "objective": "Climb the east gully to the 6,480 ft East Peak and descend to De Roux",
+     "note": "Cross the North Fork Teanaway on a small log jam near the trailhead, bushwhack and climb talus or snow to the gully, and expect loose Class 3-4 with a wet, poorly protected section about 500 ft up that the reference party escaped by a short chimney and low 5th-class rock on the right. Rejoin the gully at a small horn and follow the ridge left to the top. Descend 400-500 ft south, traverse down to the ridge north of the De Roux Creek trail, and walk the trail and an old road about 2 miles back to the trailhead.",
+     "gainFt": 2280,
+     "lossFt": 2280,
+     "miles": 5,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "~9:00 AM",
+       "label": "Arrive at the trailhead",
+       "detail": "Reference party's start."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "http://www.ericsbasecamp.net/trips/Esmeralda/Esmeralda.htm",
+   "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/esmeralda-trailhead"
+  ],
+  "confidence": "low",
+  "notes": "Only one opened source (ericsbasecamp) describes this route: East Gully of the 6,480 ft east summit from the Ingalls Lake trailhead, about 5 mi round trip, roped up for Class 4 and low 5th; the USFS page only confirms the 4,269 ft trailhead and permits. Gain equals row gain_ft 2,280, consistent with ericsbasecamp's ~4,200 ft start and 6,480 ft summit. Row dist_km 8.05 (5.0 mi) matches the round trip, not one way. No hours given. The source rates parts of the line low 5th class, harder than the row's Class 4."
+ },
+ {
+  "id": "wa_east_mcmillan_spire_northeast_buttress",
+  "skip": true,
+  "reason": "Two opened FA reports (AAJ 2009 and Alpinist 2008) describe this route: two days of bushwhacking via the McMillan Creek glacier remnants to a Sourdough Ridge camp, about 3.5 h to the base, then 7 + 7 + 11 pitches over three days with two bivies and a same-day rappel. But neither gives mileage, gain, camp elevations or approach/walk-out hours, so the approach and exit days would have no sourced figure. The reports also disagree on length (AAJ says 29 pitches, Alpinist 25 pitches / ~2,400 ft). Sources: http://publications.americanalpineclub.org/articles/12200911000/North-America-United-States-Washington-East-McMillan-Spire-Come-Over-to-the-Dark-Side, https://alpinist.com/doc/web08f/newswire-kearney-east-mcmillan"
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "skip": true,
+  "reason": "No openable source describes Silver Star's East Ridge from Cedar Creek. The AAJ 'Environs of Silver Star' article covers the Wine Spires from Silver Star Creek, and the alpenglow NWMJ page failed its certificate check. The web search budget ran out before a route-specific report could be found."
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "skip": true,
+  "reason": "Opened sources (wenatcheeoutdoors 2016, hike2hike 2023) describe the Trinity / Chiwawa River approach to the 6,300 ft bench and the Fortress East Ridge and gully routes (about 20 mi and 7,900 ft with Chiwawa), but neither mentions the Northeast Face, so the summit day can't be described."
+ },
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "skip": true,
+  "reason": "No route-specific source could be opened. Search budget was exhausted, and the local research only links to Tahoma Glacier and Sickle reports (CascadeClimbers inquiry is 403). Note: the id says glacier_peak but the peak is Mount Rainier."
+ },
+ {
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "skip": true,
+  "reason": "No trip report of Rainier's Tahoma Cleaver could be found or opened. Search budget was exhausted, and local research has no Tahoma Cleaver source. Note: the id says glacier_peak but the peak is Mount Rainier."
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+  "skip": true,
+  "reason": "Opened North Peak reports use other lines: drdirtbag (2017) did a one-day, ~12 h ascent from Hozomeen Lake via the SW peak and the connecting ridge to the Class 3 southeast face, and mountainflamingo (2018) climbed the north ridge from Canada over two days. stevensong's page truncated before the report. None describes the North Peak's south ridge."
+ },
+ {
+  "id": "wa_iron_cap_mountain_northeast_shoulder",
+  "skip": true,
+  "reason": "The only opened source touching the northeast shoulder (climberkyle 2021) is a 22-mile, 13.5 h single-day Big Snow-Iron Cap traverse that descended the northeast side. No opened source describes an ascent from Tank Lakes / Foss River with camps or per-day figures; earlier local research cites only a peakbagger snippet (403) for the NE shoulder."
+ },
+ {
+  "id": "wa_mount_adams_pinnacle_glacier_headwall",
+  "skip": true,
+  "reason": "No opened source describes the Pinnacle Glacier headwall beyond the Mountain Project page the previous attempt used. sverdina's Adams report is the Adams Glacier from Killen Creek. The search budget was exhausted before a second source or any timing could be found."
+ },
+ {
+  "id": "wa_mount_crowder_southwest_route",
+  "skip": true,
+  "reason": "No opened source climbs Crowder. trailcatjim's Picket traverse from Perfect Pass skips it, and the only earlier mention (Abegg) came from the south. There is no camp, day or timing beta for the Easy Ridge / Perfect Pass approach to the Phantom-Crowder col."
+ },
+ {
+  "id": "wa_mount_lincoln_harniss_chute",
+  "skip": true,
+  "reason": "Two opened Mount Lincoln reports (explorerron 2024, one attempt and one ascent) climb from Upper Staircase directly up the southern Sawtooth ridge in a day, about 10 mi and 12+ h, via an unnamed chockstone chute. Neither names or describes the Harniss Chute or the Flapjack Lakes approach in the row."
+ },
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "skip": true,
+  "reason": "No source with the route's length, grade, approach or descent exists beyond a one-line Mountain Project mention of a Burdo north-face climb. Local research only links Persis-Index traverse and snowshoe reports, which are a different side of the peak."
+ },
+ {
+  "id": "wa_mount_seattle_noyes_basin",
+  "skip": true,
+  "reason": "The only opened Mount Seattle ascent (trailcatjim 2015) is from Seattle Meadows camp at 4,550 ft on the Skyline loop via the west slope and south ridge (2.3 h up, 1.9 h down), not the Noyes Basin route or the row's Elwha / Low Divide approach. No second source."
+ },
+ {
+  "id": "wa_mount_sefrit_bloody_head_couloir",
+  "skip": true,
+  "reason": "Opened Sefrit reports (onehikeaweek 2025 SE ridge, 10.5 mi; turns-all-year S/SW face ski, ~6 h up) both approach from the Nooksack Cirque side and don't mention the Bloody Head Couloir. Route-specific sources (SummitPost, CascadeClimbers) return 403."
+ }
+]
