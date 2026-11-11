@@ -178,6 +178,8 @@ npm run check:rappel-single-rope # the headline rappel count is the single-rope 
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
 npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris to the minute — longitude, equation of time and DST included (in build)
+npm run check:itinerary-shape # a trip plan is day by day or NOTHING, never prose (lib/itineraryShape.js), and every pipeline loader and trip-plan apply script still refuses prose (in build)
+npm run audit:itinerary-shape # does every LIVE trip plan follow that rule? fails on prose; reports gap days (service key)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
@@ -425,3 +427,9 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   OUR OWN — facts may come from a source, sentences may not; enrich:apply refuses a string that
   shares 8+ words with a page in the batch's `review.sources`. `rappels` is prose
   and must never be parsed for a count. → [enrichment-prose.md](docs/codebase/enrichment-prose.md)
+- **A trip plan (`routes.itinerary`) is DAY BY DAY or null, never prose** (owner, 2026-11-11, for
+  every route and state): `{ days: [{ title, objective, note, gainFt, lossFt, hours, miles, packLb,
+  schedule }], cal, totalNote }`. A new or converted plan clears `itineraryShapeErrors(it, { complete:
+  true })` in `lib/itineraryShape.js` (every day titled, with hours, miles or gain); every loader and
+  apply script calls it (`check:itinerary-shape`), the live table is `audit:itinerary-shape`, and
+  migration 0409 makes the database refuse a non-object plan. No trip data for a route? Leave it null.
