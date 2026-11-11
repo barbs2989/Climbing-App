@@ -37290,3 +37290,54 @@ no further drift since the batch-516 count change.
 
 Next batch will continue id-ascending from `wa_mount_herman_standard_scramble` (the next in-scope
 id after it is `wa_mount_hinman_east_route`).
+
+## Batch 520 (pass 8) — 2026-11-11
+
+Checked 8 routes, continuing id-ascending past Mount Herman: `wa_mount_hinman_east_route`,
+`wa_mount_hinman_hinman_glacier`, `wa_mount_hinman_southeast_route`, `wa_mount_hinman_west_ridge`,
+`wa_mount_hinman_west_route`, `wa_mount_hopper_standard`, `wa_mount_howard_south_slope`,
+`wa_mount_index_north_face`. `wa_mount_index_bluebell` was skipped again mid-range — its area,
+North Norwegian Buttress, is a crag, not a peak, out of scope (already noted in batch 519).
+
+One confirmed error fixed, SQL in `audits/sql/2026-11-11-batch-520.sql`:
+
+- `wa_mount_index_north_face`'s `approach_logistics.peakLat`/`peakLng` stored 47.7745/-121.5809 —
+  that is Mount Index's *main* summit coordinate, identical to the `wa_mount_index` area row's own
+  lat/lng. But this route climbs North Peak, a distinct sub-summit of the Index massif with its own
+  area row (`wa_north_peak_2`, 47.78255/-121.58273) — and the route's own `high_point_ft` (5,357 ft)
+  already correctly reflects North Peak's lower elevation rather than the main peak's 5,991 ft, so
+  the row disagreed with itself. ListsOfJohn's independent "Mount Index-North Peak" entry
+  (47.78269/-121.58248) confirms the area row is right and `approach_logistics` was the stale field,
+  most likely copied from the parent Mount Index area before this route was filed under its own
+  sub-peak. Fixed to North Peak's own coordinate.
+
+Clean: Mount Hinman's other four routes (East Route, Southeast Route, West Ridge, West Route) are
+thin stub rows with no stored elevation or FA to conflict; their approach/descent/itinerary text is
+internally consistent with each other and with the already-verified Hinman Glacier route — same
+Necklace Valley / East Fork Foss / La Bohn Gap geography, same trailhead coordinates. Hinman
+Glacier's own 7,492 ft elevation checks out against Wikipedia, and its description of the Hinman
+and Foss Glaciers as functionally dead since 2022 is accurate: glaciologist Mauri Pelto's August
+2022 survey found Hinman Glacier reduced to 4% of its 1958 extent, publicly reported as "dead" in
+January 2023 — the row's "by 2022" phrasing matches the survey date rather than the later public
+announcement, and isn't contradicted by it. Mount Hopper's 6,120 ft `high_point_ft` falls within
+the normal spread across sources (WTA/SummitPost 6,114 ft, TopoQuest 6,102 ft, Mountaineers.org
+6,233 ft) and its `approach_logistics` coordinates match its own area row; the Bear Gulch Fire
+closure of the North Fork Skokomish/Home Sweet Home trails it describes is corroborated by NPS and
+USFS release pages. Mount Howard's 7,063 ft matches Wikipedia/Peakbagger/ListsOfJohn's current map
+figure (superseding an older 6,942 ft USGS-quad reading), its `approach_logistics` coordinates
+match its own area row, and its own `corrections` field already documents a GNIS coordinate
+cross-check from an earlier research pass.
+
+Flagged for human review, no SQL: Mount Hopper's `road` field states Staircase/FS-24 "reopened 8
+July 2026" after the 2025 Bear Gulch Fire closure. The live USFS Olympic fire-info page this
+appears to quote verbatim itself reads as carrying that same typo — every other date on it is 2025
+— so the row may simply be citing the primary source's own error rather than inventing one; left
+as-is since there's no way to correct a primary source's apparent typo without guessing which year
+it meant.
+
+All eight routes' coordinates sanity-checked against their named peak's expected location; none
+were implausible. The live catalog's in-scope count held steady at 710 (802 tagged
+alpine/mountaineering overall), unchanged since batch 516.
+
+Next batch will continue id-ascending from `wa_mount_index_north_face` (the next in-scope id after
+it is `wa_mount_johnson_deception_chimney`).
