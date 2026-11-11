@@ -15,6 +15,12 @@ project documentation as a whole — `CLAUDE.md`, `docs/codebase/` and `docs/gua
     `compatUnknown` treats objectives-or-areas as ONE "where you climb" signal, so a crag climber with
     listed areas and no alpine objective is not "unknown". `check:match-percent` demands the new term
     moves the number and names it in the copy ("shared objectives and listed areas").
+  - **LEAD vs FOLLOW GRADES (2026-11-05, competitor review item 20).** A roped discipline's profile grade
+    is the grade the climber LEADS (or, for a follow-only climber, follows); a leader may add the harder
+    grade they will follow (`climb_grades[k].follow`, see `PROFILE_GRADES` in core). The grade term here
+    still reads `sportGrade` / `tradGrade` / `boulderGrade` — the lead (or only) grade — and does not look
+    at `follow`: two leaders are matched on what each leads, which is the number that decides who
+    takes the sharp end. The follow grade is shown beside the role on profiles for the partner to read.
   - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
     Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
     overlap and whether they are verified"* — and the demo walk shows three climbers at **5.10a, 5.11a and

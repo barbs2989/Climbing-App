@@ -1,0 +1,1431 @@
+[
+ {
+  "id": "wa_bonanza_peak_cascadian_route",
+  "itinerary": {
+   "cal": "A multi-day trip in the Aug-Sep window that depends on the Lady of the Lake ferry to Lucerne and the bus to Holden Village. The documented ascent took three days: approach, climb, and hike out.",
+   "totalNote": "Spend a full day reaching a 7,000 ft camp near the North Star-Bonanza col, climb the 16-pitch Cascadian Route and descend the Isella Glacier back to camp the next day, then hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ferry, bus, and hike to the col camp",
+     "objective": "Reach camp near the North Star-Bonanza col",
+     "note": "The documented ascent used a full day for travel and the approach. Drive to Chelan, take the ferry to Lucerne and the bus to Holden Village, then hike more than 11 miles to a camp at about 7,000 ft near the North Star-Bonanza col.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 11,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Cascadian Route",
+     "objective": "Climb to the southwest summit and return to camp",
+     "note": "Finish the approach over talus and climb the route's 16 pitches, which gain over 2,000 ft. Descend the Isella Glacier on a mostly continuous walkway of steep rock and mellow moraine about two-thirds of the way down, then cross a notch in the south ridge back to base camp.",
+     "gainFt": 2300,
+     "lossFt": 2300,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Holden Village",
+     "objective": "Return to Holden for the bus and ferry",
+     "note": "Pack up camp and hike back out to Holden Village for the bus and ferry home.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 11,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles day1/day3: web (AAC report: \"more than 11 miles of hiking\" from Holden to the col camp); gain/loss day2: row (high_point 9,320 minus ~7,000 ft camp; row gain_ft 2,000); pack: estimate; hours and day1/day3 gain null (Holden elevation not in row).",
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201216753"
+  ],
+  "confidence": "medium",
+  "notes": "Prose names only an approach day, the climb, and a hike-out; the AAC report confirms the 3-day structure and the return to camp. Row approach phrase \"~11+ miles\" is the hiking distance from Holden per AAC. Nothing dropped."
+ },
+ {
+  "id": "wa_bonanza_peak_oregonian_route",
+  "itinerary": {
+   "cal": "Aug-Sep. Standard access is the Lucerne ferry, the bus to Holden Village, and the hike to the North Star-Bonanza col camp used for the Soviet Route. The first-ascent party's push from high camp took about 30 hours, including one overnight bivouac on the route.",
+   "totalNote": "Approach to the North Star-Bonanza col camp, make a roughly 30-hour push on the route with one bivouac, return to camp, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ferry, bus, and hike to the col camp",
+     "objective": "Reach camp near the North Star-Bonanza col",
+     "note": "Take the ferry to Lucerne and the bus to Holden Village, then hike to the camp near the North Star-Bonanza col used for the Soviet Route.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 11,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Start the push and bivy on route",
+     "objective": "Climb the lower route and bivouac",
+     "note": "Leave high camp and start the climb. The first-ascent party's push took about 30 hours in total, including one overnight bivouac on the route.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 22,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Summit and descend to camp",
+     "objective": "Finish the route and return to camp",
+     "note": "Finish the climb to the summit and descend to camp. No dedicated descent beta exists; it is presumed to match the Soviet Route's two-rappel descent, since the routes share their upper 600 ft and summit.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 22,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Hike out to Holden Village",
+     "objective": "Return to Holden for the bus and ferry",
+     "note": "Hike back out to Holden Village for the bus and ferry home.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 11,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles day1/day4: web (AAC Cascadian report: >11 miles from Holden to the same col camp); pack: estimate; everything else null (prose gives only the ~30 h total).",
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201216753"
+  ],
+  "confidence": "low",
+  "notes": "Prose only gives the FA push (~30 h incl. one bivy). The 4-day split is inferred from the approach note (same camp as the Soviet Route). Dropped: the 2013 FA bike-and-hike approach forced by ferry/road closures (closure)."
+ },
+ {
+  "id": "wa_booker_mountain_northeast_face",
+  "itinerary": {
+   "cal": "Jul-Sep. A multi-day trip that needs an NPS wilderness permit; camping is prohibited at Park Creek Pass itself, and snow lingers in the basin and on the pass well into summer.",
+   "totalNote": "Backpack in to a camp near Park Creek and the base of the face, climb the face in one long push and descend the Booker-Buckner col to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack in toward Park Creek",
+     "objective": "Set up camp near the base of the face",
+     "note": "Backpack in toward Park Creek Pass and the head of Park Creek, on the Thunder Creek Trail from Colonial Creek or as part of a Buckner-area traverse. Camp near the base of the face for an alpine start.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Face",
+     "objective": "Climb the face and return to camp",
+     "note": "Climb the face in one long push. Descend via the Booker-Buckner col back to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "note": "Pack up and hike out.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "pack: estimate; all other figures null because the prose does not fix the camp location (Thunder Creek vs Park Creek side of the pass).",
+  "sources": [],
+  "confidence": "low",
+  "notes": "Thunder Basin hiker camp is ~17.7 mi from Colonial Creek (NPS), so the hike-in is often split over 2 days; not added because the prose does not say so. Nothing dropped."
+ },
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "itinerary": {
+   "cal": "Jul-Sep. An NPS wilderness permit is required, and Thunder Basin Hiker Camp is the last legal designated camp on the west approach because Park Creek Pass is closed to camping. Booker is often combined with Buckner, and parties may continue a traverse instead of hiking out.",
+   "totalNote": "Backpack up Thunder Creek to a Park Creek Pass-area camp, day-climb Booker via the Booker-Buckner col, then hike out or continue a traverse.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack up Thunder Creek",
+     "objective": "Reach a camp near Park Creek Pass",
+     "note": "Backpack in from Colonial Creek Campground on the Thunder Creek Trail to a Park Creek Pass-area camp, such as Thunder Basin Hiker Camp about 17.7 miles in. The day includes the bonus climb around Junction Camp.",
+     "gainFt": 4900,
+     "lossFt": 1000,
+     "hours": null,
+     "miles": 17.7,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Scramble Booker via the col",
+     "objective": "Summit Booker and return to camp",
+     "note": "From camp it is a short day-trip scramble up to the Booker-Buckner col and on to the summit; Booker is often combined with Buckner. Reverse the route over the col and down to Park Creek Pass and camp.",
+     "gainFt": 3200,
+     "lossFt": 3200,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out or continue the traverse",
+     "objective": "Return to Colonial Creek",
+     "note": "Hike back out down Thunder Creek, or continue a traverse instead.",
+     "gainFt": 1000,
+     "lossFt": 4900,
+     "hours": null,
+     "miles": 17.7,
+     "packLb": 36,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles and gain/loss: web (NPS: Thunder Basin hiker camp ~17.7 mi; 4,900 ft gain to the pass plus ~1,000 ft loss/regain past Junction) cross-checked with row (Thunder Basin 5,108 ft; ~40 mi RT, ~7,000 ft cumulative); day2 gain: row (8,284 summit minus 5,108 camp); pack: estimate.",
+  "sources": [
+   "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"
+  ],
+  "confidence": "medium",
+  "notes": "Assumed Thunder Basin Hiker Camp (the row's main bivy) as the \"Park Creek Pass-area camp\". Day 2 miles/hours unknown. Nothing dropped."
+ },
+ {
+  "id": "wa_booker_mountain_south_ridge",
+  "itinerary": {
+   "cal": "Jul-Sep. Most parties do it as one very long day from the Cascade Pass Trailhead; a 2-day trip with a permitted overnight at Pelton Basin or Sahale Glacier Camp shortens the summit day.",
+   "totalNote": "One very long day from the Cascade Pass Trailhead over Cascade Pass and Sahale Arm, cross-country through Horseshoe Basin to the south ridge, and back the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cascade Pass to Booker and back",
+     "objective": "Summit Booker via Horseshoe Basin and return",
+     "note": "Hike to Cascade Pass and up the Sahale Arm Trail, then leave the trail near Sahale Camp and descend cross-country into Horseshoe Basin to reach the south ridge and scramble to the summit. Reverse the route to the trailhead; parties combining Booker with Buckner report starting around 2-3 am and finishing around 7:30 pm.",
+     "gainFt": 4806,
+     "lossFt": 4806,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "~2:00-3:00 AM",
+       "label": "Leave the Cascade Pass Trailhead",
+       "detail": "Start time reported by parties combining Booker with Buckner."
+      },
+      {
+       "time": "~7:30 PM",
+       "label": "Back at the trailhead",
+       "detail": "Finish time reported for the Booker-plus-Buckner day."
+      }
+     ]
+    }
+   ]
+  },
+  "figureSources": "gain/loss: row gain_ft (close to net; true cumulative gain is higher because of the drop into Horseshoe Basin); schedule: prose; miles null (row dist_km 17.7 ambiguous one-way vs round trip); hours null (prose times are for Booker plus Buckner); pack: estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row gain_ft 4,806 is roughly trailhead-to-summit net and understates cumulative gain. Dropped: Cascade River Road drive description (road)."
+ },
+ {
+  "id": "wa_cannon_mountain_northeast_ridge",
+  "itinerary": {
+   "cal": "Jul-Sep. Best attempted only by strong, experienced parties; a Northwest Forest Pass is required, and no car shuttle is needed because the loop returns to the same lot.",
+   "totalNote": "A very long single-day loop of about 15 miles: up the Northeast Ridge from the Stuart Lake Trailhead, then out via Prusik Pass, the Upper Enchantments, Aasgard Pass and Colchuck Lake.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Northeast Ridge loop",
+     "objective": "Summit Cannon and loop back to the trailhead",
+     "note": "Ascend the Northeast Ridge from the Stuart Lake Trailhead parking area, with sustained class 3 scrambling and heavy bushwhacking. Do not reverse the ridge: descend via Prusik Pass, the Upper Enchantments, Aasgard Pass and Colchuck Lake back to the same trailhead, about 15 miles in all.",
+     "gainFt": 5200,
+     "lossFt": 5200,
+     "hours": null,
+     "miles": 15,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles: prose (about 15 miles); gain/loss: row (summit 8,638 minus trailhead 3,404, a lower bound); pack: estimate; hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped: Icicle Road / Eightmile Road drive directions (road). Gain is net only."
+ },
+ {
+  "id": "wa_castle_in_the_sky",
+  "itinerary": {
+   "cal": "Jul-Sep. Three days is recommended because of the long approach; add a weather or rest day as needed.",
+   "totalNote": "Hike from Hannegan Trailhead to a bivy on Easy Peak, cross the Imperfect Impasse to Perfect Pass and climb the 12-pitch route on day two, then descend and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Trailhead to Easy Peak bivy",
+     "objective": "Reach the Easy Peak bivy",
+     "note": "Hike up the Hannegan Pass Trail, drop to the Chilliwack River, and climb Easy Ridge to a bivy on Easy Peak.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 10.5,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Cross the Impasse and climb the route",
+     "objective": "Reach Perfect Pass and climb Castle in the Sky",
+     "note": "Follow Easy Ridge across the Imperfect Impasse to the Perfect Pass area, then cross or skirt the Challenger Glacier to the base of the south buttress, about 45 minutes from a high camp. It is a long day of 12 pitches plus about 1,000 ft of scrambling, and the descent is by snow and 3rd-class scrambling on the south side rather than rappelling the route.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend and hike out",
+     "objective": "Return to Hannegan Trailhead",
+     "note": "Descend and hike all the way back out to Hannegan Trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 15.5,
+     "miles": null,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "hours day1/day3: web (Yellowleaf 2006 trip on the same approach: ~10.5 h moving trailhead to Easy Peak; ~15.5 h Perfect Pass camp to trailhead); pack: estimate; miles/gain null (row gain_ft null; dist_km 13.7 not split by day).",
+  "sources": [
+   "https://yellowleaf.org/scramble/g/r/2006-07-13-16-challenger.html"
+  ],
+  "confidence": "medium",
+  "notes": "Web times are from a heavy-pack Challenger party, so they are a slow-end reference. Nothing dropped."
+ },
+ {
+  "id": "wa_castle_peak_tatoosh_la_villa",
+  "itinerary": {
+   "cal": "Jul-Sep. Usually a single-day car-to-car outing, often paired with a lap on the neighbouring Southeast Face or a visit to Pinnacle and Plummer Peaks, which share the approach.",
+   "totalNote": "A short day trip from Reflection Lakes via the Pinnacle-Plummer saddle to one pitch of 5.7 on The Castle, with one short rappel to descend.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb La Villa from Reflection Lakes",
+     "objective": "Climb La Villa and return to the car",
+     "note": "Take the Pinnacle Peak Trail 1.3 miles from Reflection Lakes to the Pinnacle-Plummer saddle, contour across Pinnacle's south-face talus, and scramble up to the base of the summit block. From the La Villa belay ledge, traverse right to the shared top-out of the 5.0 line and make the single short rappel from the fixed anchor.",
+     "gainFt": 1600,
+     "lossFt": 1600,
+     "hours": 5,
+     "miles": 4,
+     "packLb": 15,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; miles: row (dist_km 3.2 one-way doubled; fits 1.3 mi trail + ~0.5 mi traverse); hours: sibling Southeast Face row (4-6 h car-to-car on the same approach); pack: estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped: Plummer Peak Fire / Butter Creek Research Natural Area closure sentences from the approach (closure)."
+ },
+ {
+  "id": "wa_castle_peak_tatoosh_southeast_face",
+  "itinerary": {
+   "cal": "Jul-Sep. A single long day from the Puget Sound area, about a 2.5-3 hour drive from Seattle, and often combined with Pinnacle Peak and/or Plummer Peak because the approach trail is shared.",
+   "totalNote": "A 4-6 hour car-to-car day from Reflection Lakes: trail to the Pinnacle-Plummer saddle, a talus traverse, one easy technical pitch, and a short rappel down.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb The Castle from Reflection Lakes",
+     "objective": "Summit The Castle and return to the car",
+     "note": "Allow about 2-3 hours from Reflection Lakes to the summit, including the trail to the Pinnacle-Plummer saddle, the traverse, and the technical pitch. Spend 30-60 minutes on top, then descend in 1.5-2.5 hours by downclimbing or making one short rappel, for roughly 4-6 hours car-to-car.",
+     "gainFt": 1600,
+     "lossFt": 1600,
+     "hours": 5,
+     "miles": 4,
+     "packLb": 15,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "hours: prose (4-6 h car-to-car); gain: row gain_ft; miles: row dist_km 3.2 one-way doubled, consistent with approach (1.3 mi + ~0.5 mi); pack: estimate.",
+  "sources": [],
+  "confidence": "high",
+  "notes": "Dropped: Butter Creek RNA fire closure and the Stevens Canyon Road / Narada Falls snowed-in parking note (road/closure)."
+ },
+ {
+  "id": "wa_cathedral_peak_last_rites",
+  "itinerary": {
+   "cal": "Jul-Sep. Four days is the realistic minimum for this peak; five is comfortable and leaves a weather day. The drive from the Puget Sound area is about 4.5 hours to Winthrop plus the Chewuch River Road.",
+   "totalNote": "Hike 17-20 miles to Upper Cathedral Lake, spend a day resting and scouting the face, climb Last Rites and descend the Southwest Route on day three, and hike out on day four.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Cathedral Lake",
+     "objective": "Reach camp at Upper Cathedral Lake",
+     "note": "Strong parties do the full 17-20 miles to Upper Cathedral Lake in one long day with heavy packs; others split it with a camp partway up Andrews Creek or the Chewuch. The Andrews Creek line runs about 17 miles with about 4,800 ft of gain, over Andrews Pass and down into the Spanish Creek drainage before the Cathedral Lakes trail.",
+     "gainFt": 4800,
+     "lossFt": 500,
+     "hours": null,
+     "miles": 17,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Rest and scout the face",
+     "objective": "Scout the South Face and fix the start",
+     "note": "Rest, scout the face from the lake and from the slopes toward Amphitheater Mountain, and fix the start.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 12,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb Last Rites",
+     "objective": "Climb the route and return to camp",
+     "note": "Approach toward the Cathedral-Monk gully and along the base to its left to reach the open South Face, then climb Last Rites. Descend the Southwest Route walk-off back to camp.",
+     "gainFt": 1200,
+     "lossFt": 1200,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "note": "Pack up and hike back out to the trailhead.",
+     "gainFt": 500,
+     "lossFt": 4800,
+     "hours": null,
+     "miles": 17,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day4 miles and gain: row (sibling Southwest Route approach: Andrews Creek ~17 mi, ~4,800 ft gain to the 7,380 ft lake; dist_km 27.4 = 17 mi one-way); losses derived (net 3,050 to 7,380 ft); day3 gain: row (8,606 summit minus 7,380 camp); pack: estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row gain_ft 6,000 is consistent with ~4,800 approach + ~1,200 summit. Day 3 miles/hours unknown. Nothing dropped (the drive-time sentence moved to cal)."
+ },
+ {
+  "id": "wa_cathedral_peak_southwest_route",
+  "itinerary": {
+   "cal": "Jul-Sep. Four days round trip from home is the realistic minimum, and parties commonly build a 40-50 mile Cathedral Lakes loop out of it over 5 days.",
+   "totalNote": "Hike 17-20 miles to Upper Cathedral Lake, climb the Southwest Route in a half day from camp, then hike out or add Remmel Mountain.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Upper Cathedral Lake",
+     "objective": "Reach camp at Upper Cathedral Lake",
+     "note": "Hike 17-20 miles to Upper Cathedral Lake at 7,380 ft. The shortest way is the Andrews Creek Trail, about 17 miles and 4,800 ft of gain over Andrews Pass and down into the Spanish Creek drainage; the Chewuch River Trail is about 19.9 miles and 4,900 ft on gentle valley trail.",
+     "gainFt": 4800,
+     "lossFt": 500,
+     "hours": null,
+     "miles": 17,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Southwest Route",
+     "objective": "Summit Cathedral Peak and return to camp",
+     "note": "The climb starts 0.6 trail miles from camp at Cathedral Pass and is a half-day round trip; the descent from the summit back to camp takes about 45 minutes. If you have the legs, add Amphitheater Mountain's West Ridge across the basin.",
+     "gainFt": 1200,
+     "lossFt": 1200,
+     "hours": 4,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out or add Remmel Mountain",
+     "objective": "Return to the trailhead",
+     "note": "Hike back out to the trailhead, or stay and add Remmel Mountain.",
+     "gainFt": 500,
+     "lossFt": 4800,
+     "hours": null,
+     "miles": 17,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles and gain: row approach (Andrews Creek ~17 mi, ~4,800 ft); losses derived (net 3,050 to 7,380 ft); day2 gain: row (8,606 minus 7,380); day2 hours: prose (\"half-day\"); pack: estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Prose day list gives 3 days in the field while saying 4 days from home is the minimum (drive days); kept 3 field days and put the 4-day note in cal. Dropped: FS 51/5160 road mileage to trailheads (road)."
+ },
+ {
+  "id": "wa_cathedral_rock_northeast_buttress",
+  "itinerary": {
+   "cal": "Jul-Sep. A two-day version camps at Nosh Nosh Wahtum or near Cathedral Pass and climbs early on day two with a light pack, walking out that afternoon. A fast team starting around 6 am can beat the afternoon heat with time to spare.",
+   "totalNote": "A long 12-14 hour car-to-car day: hike to Cathedral Pass, climb seven pitches on the Northeast Buttress, descend the Southwest Face route, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Northeast Buttress",
+     "objective": "Summit Cathedral Rock and hike out",
+     "note": "Leave the trailhead around 5-6 am and hike to Cathedral Pass, reaching the base of the snowfield by mid-morning. Climb seven pitches through the middle of the day to an early-to-mid afternoon summit, then descend the south side by the ordinary Southwest Face route, with a few short fourth-class sections, and hike out; expect 12-14 hours car to car.",
+     "gainFt": 3400,
+     "lossFt": 3400,
+     "hours": 13,
+     "miles": 8,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "5:00-6:00 AM",
+       "label": "Leave the trailhead",
+       "detail": "Cathedral Rock Trailhead (Trail #1345)."
+      },
+      {
+       "time": "Mid-morning",
+       "label": "Base of the snowfield",
+       "detail": "Start of the technical climbing."
+      },
+      {
+       "time": "Early-to-mid afternoon",
+       "label": "Summit",
+       "detail": "After seven pitches."
+      },
+      {
+       "time": "Evening",
+       "label": "Back at the car",
+       "detail": "12-14 hours car to car."
+      }
+     ]
+    }
+   ]
+  },
+  "figureSources": "hours: prose (12-14 h); gain: row gain_ft 3,400; miles: row (dist_km 6.4 one-way doubled; approach says pass is 4 mi in); schedule: prose; pack: estimate.",
+  "sources": [],
+  "confidence": "high",
+  "notes": "Dropped: Salmon la Sac / Forest Road 4330 drive (road)."
+ },
+ {
+  "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+  "itinerary": {
+   "cal": "Jul-Sep. A free self-issue wilderness permit is signed at the trailhead register. Camping at Nosh Nosh Wahtum or Cathedral Pass the night before turns this into a comfortable two-day trip and is the more common approach for a 5.9 alpine route this far from the road.",
+   "totalNote": "A long 12-14 hour car-to-car day: hike 4 miles to Cathedral Pass, climb six pitches on the 2003 variation of the Northeast Ridge, descend the south side, and hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Northeast Ridge variation",
+     "objective": "Summit Cathedral Rock and hike out",
+     "note": "Be at the trailhead by 5 am and at Cathedral Pass and the gear cache by 8:30 am, then traverse under the east face to the northeast side and be on the route by mid-morning. The route begins from the top of the original Northeast Ridge's first pitch; climb six pitches through the middle of the day to an early-to-mid afternoon summit. Descend the south side by the ordinary Southwest Face route to Cathedral Pass and hike out, 12-14 hours car to car.",
+     "gainFt": 3400,
+     "lossFt": 3400,
+     "hours": 13,
+     "miles": 8,
+     "packLb": 20,
+     "schedule": [
+      {
+       "time": "5:00 AM",
+       "label": "Leave the trailhead",
+       "detail": "Cathedral Rock Trailhead (Trail #1345)."
+      },
+      {
+       "time": "8:30 AM",
+       "label": "Cathedral Pass and gear cache",
+       "detail": "Leave the trail at the pass and cut across the meadow to the stand of trees."
+      },
+      {
+       "time": "Mid-morning",
+       "label": "On the route",
+       "detail": "Start of the six pitches."
+      },
+      {
+       "time": "Early-to-mid afternoon",
+       "label": "Summit",
+       "detail": "Descend the south side."
+      }
+     ]
+    }
+   ]
+  },
+  "figureSources": "hours: prose (12-14 h); gain: row gain_ft 3,400; miles: row (dist_km 6.4 one-way doubled; approach: pass is 4 mi in); schedule: prose; pack: estimate.",
+  "sources": [],
+  "confidence": "high",
+  "notes": "Dropped: I-90 Exit 80 / SR-903 / FR 4330 drive directions (road)."
+ },
+ {
+  "id": "wa_cathedral_rock_northwest_couloir",
+  "itinerary": {
+   "cal": "Jul-Sep. Best done as an overnight from Peggy's Pond, though fit parties can do it as a long single day from the car. It pairs naturally with Mount Daniel from the same Peggy's Pond camp.",
+   "totalNote": "Hike about 5 miles to camp at Peggy's Pond, then climb the Northwest Couloir in a half day and walk out the same day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Peggy's Pond",
+     "objective": "Set up base camp at Peggy's Pond",
+     "note": "Hike about 5 miles to Peggy's Pond, gaining about 2,300 ft, and camp. Going counter-clockwise around the pond reaches the rock field by a path.",
+     "gainFt": 2300,
+     "lossFt": null,
+     "hours": null,
+     "miles": 5,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the couloir and walk out",
+     "objective": "Summit via the couloir and hike out",
+     "note": "Climb the Northwest Couloir in a half day from camp; a party leaving camp with two hours of light left can summit before dusk and be back at the pond before dark. Downclimb or rappel the couloir past the chockstone, then pack up and walk out the same day.",
+     "gainFt": 1100,
+     "lossFt": 3400,
+     "hours": null,
+     "miles": null,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 miles and gain: prose (about 5 mi, 2,300 ft); day2 gain/loss: row (summit 6,724 minus Peggy's Pond 5,600; loss adds the 2,300 ft hike out); pack: estimate (day2 includes carrying camp out); hours and day2 miles null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row dist_km 7.2 (4.5 mi) is a little shorter than the prose's ~5 mi to Peggy's Pond. Dropped: Salmon la Sac / FR 4330 drive (road)."
+ },
+ {
+  "id": "wa_cathedral_rock_southeast_face_chimney",
+  "itinerary": {
+   "cal": "Jul-Sep. The two-day version is the more pleasant and common choice; as a long day trip, leave the trailhead by 5-6 am, reach Cathedral Pass by 8:30-9 am, summit by late morning, and be back at the car mid-to-late afternoon. Camping is not permitted within 100 feet of lakes and streams, and the Peggy's Pond basin is heavily used, so camp on durable ground and pack out everything.",
+   "totalNote": "Hike in and camp near Cathedral Pass, climb the four-pitch chimney early on day two, and hike out the same afternoon.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Cathedral Pass",
+     "objective": "Camp at Nosh Nosh Wahtum or Cathedral Pass",
+     "note": "Sign the free self-issue wilderness permit at the register and hike Trail #1345 through old-growth forest past Nosh Nosh Wahtum at 2.5 miles to Cathedral Pass and the PCT junction at about 4 miles. Camp at Nosh Nosh Wahtum, Cathedral Pass, or Peggy's Pond; trailhead to the pass takes roughly 2.5-3 hours.",
+     "gainFt": 2200,
+     "lossFt": 0,
+     "hours": 3,
+     "miles": 4,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the chimney and hike out",
+     "objective": "Summit Cathedral Rock and hike out",
+     "note": "Climb early: work up the broken south and southeast slopes to the base of the tower, then climb the chimney system on the face above, left of the ordinary Southwest Face route. Downclimb and rappel the Southwest Face route back to Cathedral Pass, then hike out the same afternoon.",
+     "gainFt": 1200,
+     "lossFt": 3400,
+     "hours": null,
+     "miles": null,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 miles/gain/hours: row approach (4 mi to the 5,550 ft pass from 3,350 ft; 2.5-3 h); day2 gain/loss: row (6,724 summit minus 5,550 pass; loss includes the hike out); pack: estimate; day2 hours/miles null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Chose the two-day version because the prose calls it the common choice; the day-trip timeline is in cal. Dropped: I-90/SR-903/FR 4330/NF-153 drive directions (road)."
+ },
+ {
+  "id": "wa_chair_peak_east_face",
+  "itinerary": {
+   "cal": "Jun-Sep. A free self-issue Alpine Lakes Wilderness permit is required at the Snow Lake trailhead, and parking needs a Northwest Forest Pass or Interagency pass.",
+   "totalNote": "A single long day from Alpental: about 2 hours to the Chair Peak basin, a short alpine rock climb on the East Face, rappels back to the basin, and a hike out past Source Lake.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the East Face from Alpental",
+     "objective": "Summit Chair Peak and return to Alpental",
+     "note": "Make an alpine start from Alpental and take about 2 hours to reach the Chair Peak basin via the Snow Lake Trail, Source Lake, and a 3rd-class gully. The climb takes several hours depending on party speed and conditions. Descend over the false summit and make three or more rappels down the east-facing chockstone gully to the basin, then hike out via Source Lake and the Snow Lake Trail.",
+     "gainFt": 3138,
+     "lossFt": 3138,
+     "hours": null,
+     "miles": 6,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft (summit minus trailhead); miles: row (dist_km 4.8 one-way doubled); pack: estimate; hours null (only the 2 h approach is stated).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Prose says \"3-pitch climb\" but the row has pitches=4; minor. Nothing dropped."
+ },
+ {
+  "id": "wa_chair_peak_northwest_ridge",
+  "itinerary": {
+   "cal": "Jul-Oct. A free self-issue Alpine Lakes Wilderness permit is required at the Snow Lake trailhead, and parking needs a Northwest Forest Pass or Interagency pass.",
+   "totalNote": "A single long day from Alpental: about 2 hours to Thumbtack Rock, a wandering six-pitch ridge climb, the south-side rappel gully back to the basin, and a hike out past Source Lake.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Northwest Ridge from Alpental",
+     "objective": "Summit Chair Peak and return to Alpental",
+     "note": "Take about 2 hours to reach Thumbtack Rock in the Chair basin, then head right up a grassy gully over the ridge to the route. The six-pitch ridge takes several hours because it is runout and wandering. Descend south over the false summits to the slung rappel tree, rappel or downclimb the gully to the East Face and scree back to Thumbtack Rock, then hike out via Source Lake.",
+     "gainFt": 3138,
+     "lossFt": 3138,
+     "hours": null,
+     "miles": 6,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; miles: row (dist_km 4.8 one-way doubled); pack: estimate; hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Nothing dropped."
+ },
+ {
+  "id": "wa_chair_peak_voie_de_chaise",
+  "itinerary": {
+   "cal": "Jul-Oct. A free self-issue Alpine Lakes Wilderness permit is required at the Snow Lake trailhead.",
+   "totalNote": "A day from Alpental: a 2-3 hour approach to the East Face, eight pitches on Voie de Chaise, and a rappel or East Gully descent back to the basin.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Voie de Chaise from Alpental",
+     "objective": "Climb the route and return to Alpental",
+     "note": "Leave Alpental in the morning and follow the summer trail toward Source Lake and the East Face, crossing talus, a snow patch, and loose scree to the base; the approach takes 2-3 hours. Climb the eight-pitch route, then rappel it or descend the East Gully back to the basin and hike out.",
+     "gainFt": 3138,
+     "lossFt": 3138,
+     "hours": null,
+     "miles": 6,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; miles: sibling East Face row (same approach, dist_km 4.8 one-way doubled) since this row's dist_km is null; pack: estimate; hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "CONTRADICTION: prose says the route can be rappelled with a single 60 m rope; the row descent says two joined 60 m ropes. The note avoids stating rope length. Nothing dropped."
+ },
+ {
+  "id": "wa_chair_peak_west_ridge",
+  "itinerary": {
+   "cal": "Jun-Sep. The traverse under the north face can be snowy and glide-cracked early in the season.",
+   "totalNote": "A long day from Alpental: a 2-2.5 hour approach under the north face, 3-4 hours of climbing to the summit, and a 1-2 hour descent by the south-side couloir.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the West Ridge from Alpental",
+     "objective": "Summit Chair Peak and return to Alpental",
+     "note": "Leave Alpental and follow the Northeast Buttress approach, then traverse west beneath the north face to the base of the 220 ft entrance couloir in 2-2.5 hours. Climb for 3-4 hours to the summit. Descend the south-side couloir into the narrow rappel gully and back to the Chair Peak basin in 1-2 hours, then hike out.",
+     "gainFt": 3138,
+     "lossFt": 3138,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; pack: estimate; hours null (prose segments sum to 6-8.5 h but omit the hike out from the basin); miles null (row dist_km null).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Nothing dropped."
+ },
+ {
+  "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+  "itinerary": {
+   "cal": "Jul-Oct. The Chiwawa River ford at the start has no functional bridge and runs knee- to thigh-deep, colder and higher earlier in the season. Chalangin is often combined with Luahna Peak and/or Clark Mountain on the summit day.",
+   "totalNote": "Cross Little Giant Pass into the Napeequa Valley to camp near Butterfly Butte, climb Chalangin via the north ridge and gully the next day, then hike out over the pass.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Over Little Giant Pass to Butterfly Butte",
+     "objective": "Reach camp near Butterfly Butte",
+     "note": "From the Little Giant Trailhead at 2,600 ft, ford the Chiwawa River and climb the Little Giant Pass Trail through steep forest and meadows to the 6,409 ft pass. Descend roughly 2,200 ft into the Napeequa Valley and follow the river, off-trail in its upper reaches, to camp near Butterfly Butte at about 6,200 ft.",
+     "gainFt": 5800,
+     "lossFt": 2200,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Scramble Chalangin from camp",
+     "objective": "Summit Chalangin and return to camp",
+     "note": "Traverse past the Pilz Glacier, gain the north ridge and gully, and scramble to the summit, often adding Luahna Peak and/or Clark Mountain in the same push. Reverse the route back to camp.",
+     "gainFt": 2200,
+     "lossFt": 2200,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out over Little Giant Pass",
+     "objective": "Return to the Little Giant Trailhead",
+     "note": "Retrace the Napeequa Valley, re-climb Little Giant Pass, and drop to the trailhead.",
+     "gainFt": 2200,
+     "lossFt": 5800,
+     "hours": null,
+     "miles": null,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain/loss: prose elevations (2,600 TH, 6,409 pass, ~2,200 ft drop, ~6,200 camp) and row summit 8,371; the three days sum to ~10,200 ft vs row gain_ft 11,000; pack: estimate; miles/hours null (row dist_km 21.7 not split by day).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped: Chiwawa River Road/FR 62 mention (road). The ford is a trail hazard, kept in cal."
+ },
+ {
+  "id": "wa_chalangin_peak_southwest_face",
+  "itinerary": {
+   "cal": "May-Jun. A thigh-deep creek crossing is typical in late spring, and the Thunder Creek drainage holds slide alder and blowdowns from the 2023 Airplane Lake Fire burn. Strong parties have done the route car-to-car in a single very long day with a pre-dawn or midnight start.",
+   "totalNote": "Bushwhack up Thunder Creek to a high camp in Chalangin Basin, climb the snowy southwest face with a short 4th-class band the next day, and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "White River to Chalangin Basin",
+     "objective": "Reach high camp in Chalangin Basin",
+     "note": "From the White River Trailhead at 2,300 ft, hike the White River Trail to the Thunder Creek drainage. Leave the trail and bushwhack up Thunder Creek through slide alder and burned blowdown to a high camp in Chalangin Basin at about 5,100 ft.",
+     "gainFt": 2800,
+     "lossFt": 0,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the southwest face",
+     "objective": "Summit Chalangin and return to camp",
+     "note": "Climb the south slope and southwest face on snow with crampons, plus a short 4th-class cliff band, to the summit. Reverse the line back down into Chalangin Basin and camp.",
+     "gainFt": 3300,
+     "lossFt": 3300,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out via White River",
+     "objective": "Return to the White River Trailhead",
+     "note": "Hike back out down Thunder Creek and the White River Trail.",
+     "gainFt": 0,
+     "lossFt": 2800,
+     "hours": null,
+     "miles": null,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain/loss: prose/row elevations (2,300 TH, ~5,100 camp, 8,371 summit; sums to row gain_ft 6,071); pack: estimate; miles/hours null (row dist_km 17.7 not split by day).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped: White River Road/FR 6400 mention and the \"drive to trailhead\" clause (road)."
+ },
+ {
+  "id": "wa_chelan_butte_chelan_butte_trail",
+  "itinerary": {
+   "cal": "Apr-Oct. A half-day hike that fits in a morning or an afternoon.",
+   "totalNote": "A half-day round trip of about 7.5 miles and 2,500 ft of gain on the Chelan Butte Trail.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike Chelan Butte",
+     "objective": "Reach the summit and return",
+     "note": "Most parties cover the roughly 7.5-mile round trip with 2,500 ft of gain in a morning or afternoon outing. Climb the Chelan Butte Trail from the WDFW trailhead directly toward the summit, then reverse it; the descent is notably easier and faster.",
+     "gainFt": 2500,
+     "lossFt": 2500,
+     "hours": 4,
+     "miles": 7.5,
+     "packLb": 12,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles and gain: prose (7.5 mi RT, 2,500 ft; row dist_km 6 one-way agrees); hours: prose (\"half-day\", set to 4); pack: estimate.",
+  "sources": [],
+  "confidence": "high",
+  "notes": "Dropped: the sentence that the summit can be reached by vehicle in under an hour when the road is dry, plus the town street directions (road)."
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "itinerary": {
+   "cal": "Jul-Sep. Fit parties can climb Chianti car-to-car in a long day, as parties routinely do on the neighbouring Rebel Yell. A second Wine Spires objective, such as Burgundy Spire's North Face (5.8) or Paisano Pinnacle's West Ridge (5.8+), fits from the same camp. Little is known about this line, which argues for taking two days.",
+   "totalNote": "Hike from SR 20 to the bench or Burgundy Col on day one, then traverse to Chianti's east face, climb Lichen Bouquet, and hike out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Burgundy Col",
+     "objective": "Camp on the bench or at Burgundy Col",
+     "note": "From the SR 20 pullout, drop about 300 ft to cross Early Winters Creek, then climb the climbers' trail to the 6,400-6,600 ft bench (standard low camp, with a spring) or on up loose gullies and a snow finger to Burgundy Col. The col is roughly 3.5 miles and 3,700 ft of gain away, 3-4 hours. Optionally climb a second Wine Spires objective.",
+     "gainFt": 3700,
+     "lossFt": 300,
+     "hours": 3.5,
+     "miles": 3.5,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Lichen Bouquet and hike out",
+     "objective": "Climb the route, regain the col and hike out",
+     "note": "From the col, descend 200-300 ft and traverse beneath Burgundy Spire's east face to Chianti's east face, under an hour. Lichen Bouquet's ramp starts directly below the summit and leans left. Descend toward the Burgundy-Chianti notch or rappel Rebel Yell with two 60 m ropes, regain the col, and hike out.",
+     "gainFt": 1100,
+     "lossFt": 4500,
+     "hours": null,
+     "miles": null,
+     "packLb": 25,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 miles/gain/hours: row approach (3.5 mi, 3,700 ft, 3-4 h to the col; 300 ft drop to the creek); day2 gain/loss: row-derived (summit ~8,459 vs col ~7,850, the 200-300 ft drop below the col, and 300 ft back to the road), totals ~4,800 ft vs row gain_ft 4,450; pack: estimate; day2 hours/miles null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Nothing dropped (no closures; \"no NW Forest Pass needed on the highway shoulder\" omitted as parking detail)."
+ },
+ {
+  "id": "wa_chianti_spire_north_face",
+  "itinerary": {
+   "cal": "Jul-Sep. Fit parties can climb Chianti car-to-car in a long day, as parties routinely do on the neighbouring Rebel Yell. A second Wine Spires objective, such as Burgundy Spire's North Face (5.8) or Paisano Pinnacle's West Ridge (5.8+), fits from the same camp. Most parties treat it as a two-day trip.",
+   "totalNote": "Hike from SR 20 to the bench or Burgundy Col on day one, then reach the Burgundy-Chianti notch, climb the North Face, and hike out on day two.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the bench or Burgundy Col",
+     "objective": "Camp on the bench or at Burgundy Col",
+     "note": "Hike from the SR 20 pullout to the 6,400-6,600 ft bench, which has good camping and water, or push on to one of the two or three austere, exposed bivy sites at Burgundy Col, where year-round snow supplies water. It is 3-4 hours to the col.",
+     "gainFt": 3700,
+     "lossFt": 300,
+     "hours": 3.5,
+     "miles": 3.5,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Face and hike out",
+     "objective": "Climb the route, regain the col and hike out",
+     "note": "Traverse from the col to the Burgundy-Chianti notch and climb the North Face directly to the summit. Reverse the route to the notch and the snow traverse back to the col, then descend the gully and trail to the highway.",
+     "gainFt": 1100,
+     "lossFt": 4500,
+     "hours": null,
+     "miles": null,
+     "packLb": 25,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1: prose (3-4 h to the col) plus sibling Lichen Bouquet row approach (3.5 mi, 3,700 ft, same trail); day2 gain/loss: row-derived as for Lichen Bouquet; pack: estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Nothing dropped."
+ },
+ {
+  "id": "wa_chimney_peak_the_chimney",
+  "itinerary": {
+   "cal": "Jun-Sep. Plan on three days minimum. The East Fork Quinault River is a quota zone, so your camp is fixed by whatever the permit gives you, though strong parties sometimes split the approach differently.",
+   "totalNote": "Hike 13.9 miles up the East Fork Quinault to Enchanted Valley, make a long off-trail day to the Southwest Ridge and The Chimney, and hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike up the East Fork Quinault",
+     "objective": "Reach camp in or near Enchanted Valley",
+     "note": "Hike 13.9 miles up the East Fork Quinault River Trail from the Graves Creek Trailhead to a permitted camp in or near Enchanted Valley at about 2,000 ft.",
+     "gainFt": 1850,
+     "lossFt": 350,
+     "hours": null,
+     "miles": 13.9,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb The Chimney",
+     "objective": "Climb the tower and return to camp",
+     "note": "Leave camp very early and work off-trail around to the southwest side, since the 4,800 ft south wall above the valley is not the way up. Scramble the Southwest Ridge to the upper peak, traverse to the base of The Chimney on the west aspect and climb it, then downclimb or rappel the tower and return to camp.",
+     "gainFt": 4900,
+     "lossFt": 4900,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Graves Creek",
+     "objective": "Return to the trailhead",
+     "note": "Hike the 13.9 miles back down the valley to the Graves Creek Trailhead.",
+     "gainFt": 350,
+     "lossFt": 1850,
+     "hours": null,
+     "miles": 13.9,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles: prose (13.9 mi one-way; row dist_km 22.4 agrees); day1/day3 gain: row approach (27.8 mi RT, ~3,700 ft gain, split evenly); day2 gain: row (6,917 top minus ~2,000 camp; row gain_ft 8,600 = 3,700 + 4,900); pack: estimate; hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped: drive timing and the North Shore detour while South Shore Road stays closed at mile 8, plus the RV/road hotline note (road/washout)."
+ },
+ {
+  "id": "wa_clean_break",
+  "itinerary": {
+   "cal": "Jun-Sep. Some parties backpack in the evening before and camp in the Silver Star Creek valley to shorten the climbing day.",
+   "totalNote": "A single 12-13 hour car-to-car push: approach up Silver Star Creek, climb the long east prow of Juno Tower, and walk off via Burgundy Col to the Wine Spires pullout.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Clean Break",
+     "objective": "Climb Juno Tower and walk off",
+     "note": "Make a pre-dawn approach of 2.5-3.5 hours up the climbers' trail along Silver Star Creek, threading the slide alder at about 5,000 ft to the foot of the east prow. Climb the route, then traverse south to Bench Camp below Burgundy Col and descend the Burgundy Col trail to Highway 20, about 2 hours; total car-to-car times of roughly 12-13 hours are reported.",
+     "gainFt": 4500,
+     "lossFt": 4500,
+     "hours": 12.5,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "hours: prose (12-13 h car-to-car); gain: row gain_ft; pack: estimate; miles null (row dist_km null).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "CONTRADICTION: prose calls it \"the 15-pitch climb\"; row pitches = 13 (note avoids a pitch count). The walk-off ends at the Wine Spires pullout near milepost 166, about 5 miles west of the Silver Star Creek start (milepost 171). Prose oddly says \"car-to-car from a bivy or camp near Silver Star Creek\". Nothing dropped."
+ },
+ {
+  "id": "wa_colchuck_peak_holsten_hilden",
+  "itinerary": {
+   "cal": "Dec-Mar. A winter route usually climbed car-to-car in one long day; skis or snowshoes are likely needed for the approach.",
+   "totalNote": "One long winter day: approach via Colchuck Lake and the glacier basin, climb the AI3/M6 line to the north ridge, and descend the Colchuck Glacier.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Holsten-Hilden",
+     "objective": "Summit Colchuck and descend the glacier",
+     "note": "Approach via the Stuart Lake Trail, Colchuck Lake, and the glacier basin below the northeast face. Climb two 60 m pitches of AI3, several hundred feet of 50-60 degree snow, unconsolidated snow over rock, an M6 chimney, and a final steep band to the north ridge notch and the summit ridge. Descend the standard East Route down the Colchuck Glacier.",
+     "gainFt": 5300,
+     "lossFt": 5300,
+     "hours": null,
+     "miles": 10,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft (matches summit 8,705 minus trailhead 3,400); miles: row (dist_km 8 one-way doubled, summer trailhead); pack: estimate; hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped: the \"given the seasonal road closure\" clause (road); in winter the extra road walk makes the real distance longer than 10 mi."
+ },
+ {
+  "id": "wa_colchuck_peak_north_buttress_couloir",
+  "itinerary": {
+   "cal": "Mar-Jun. Usually climbed from a car camp near the trailhead or from a permitted backcountry camp at Colchuck Lake. Start early so you climb the couloir on firm snow, before it softens and before any summit cornice becomes more hazardous to breach.",
+   "totalNote": "An alpine-start day from the Stuart Lake Trailhead: hike to Colchuck Lake, climb the North Buttress Couloir on firm snow, and descend the Colchuck Glacier.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the North Buttress Couloir",
+     "objective": "Summit Colchuck and descend the glacier",
+     "note": "Make an early alpine start and hike the Stuart Lake and Colchuck Lake trails about 4-4.5 miles and 2,200 ft to Colchuck Lake. From the far side, gain the moraine, follow it right, and drop into the couloir, the first major gully rising from the toe of the Colchuck Glacier moraine. Climb it before the snow softens, then descend the Colchuck Glacier route.",
+     "gainFt": 5300,
+     "lossFt": 5300,
+     "hours": null,
+     "miles": 10,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row-derived (summit 8,705 minus trailhead 3,400); miles: row (dist_km 8 one-way doubled; approach 4-4.5 mi to the lake); pack: estimate; hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "CONTRADICTION: row gain_ft = 6,600 but summit 8,705 minus the 3,400 ft trailhead is ~5,300 (sibling Holsten-Hilden row says 5,300); used 5,300. Chose the 1-day car-camp version; the Colchuck Lake camp option is in cal. Dropped: Icicle Road / FR 7601 drive (road)."
+ },
+ {
+  "id": "wa_crater_mountain_standard_route",
+  "itinerary": {
+   "cal": "Jul-Oct. Commonly done as one very long day; alternatively, backpack in and camp at Crater Lake (permit required) to split the ~15-mile round trip and ~6,300 ft of gain over two days.",
+   "totalNote": "One very long day from the Canyon Creek Trailhead: up Jackita Ridge Trail to Crater Lake basin, scramble the southeast ridge and crux gully to the summit, and reverse the whole route.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Crater Mountain",
+     "objective": "Summit Crater Mountain and return",
+     "note": "Make a pre-dawn start from the Canyon Creek Trailhead and take about 4-5 hours up the switchbacking Jackita Ridge Trail and the brushy Crater Lake Trail to the Crater Lake basin. Scramble the southeast ridge and the marked crux gully to the summit, then reverse the entire route to the trailhead; the round trip is about 15 miles and 6,300 ft of gain.",
+     "gainFt": 6300,
+     "lossFt": 6300,
+     "hours": null,
+     "miles": 15,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles and gain: prose (~15 mi RT, ~6,300 ft; row gain_ft 6,400 and dist_km 11.3 one-way roughly agree); pack: estimate; hours null (only the 4-5 h approach is given).",
+  "sources": [],
+  "confidence": "high",
+  "notes": "Dropped: SR 20 milepost/distance directions to the trailhead (road)."
+ },
+ {
+  "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+  "itinerary": {
+   "cal": "Apr-May. Usually climbed soon after SR-20 reopens in spring, as a shoulder-season alpine ice day.",
+   "totalNote": "A single shoulder-season ice day: early approach to the basin east of Cutthroat, about seven pitches up the East Face couloir, and a rappel descent down the ridgeline.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Cauthorn-Wilson Couloir",
+     "objective": "Climb the couloir and descend",
+     "note": "Start early to catch the couloir before solar warming raises avalanche and rockfall risk. Approach from the SR-20 pullout across State Creek toward the south basin, then cross the rib into the basin east of the peak to the large couloir splitting the East Face. Climb roughly 7 pitches, then rappel the ridgeline on rock anchors or V-threads, or continue to the true summit and descend the West Ridge.",
+     "gainFt": 2500,
+     "lossFt": 2500,
+     "hours": null,
+     "miles": 2.5,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; miles: row (dist_km 2 one-way doubled); pack: estimate; hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row gain_ft 2,500 is lower than summit 8,066 minus the listed 5,227 ft trailhead (~2,840). The \"after SR-20 reopens\" timing is kept as season info rather than a road-status sentence."
+ },
+ {
+  "id": "wa_dark_peak_dark_glacier_route",
+  "itinerary": {
+   "cal": "Jun-Jul. Commonly done as a 3-day trip that depends on the Lady of the Lake ferry or a floatplane to Stehekin and the valley shuttle to High Bridge. An alternate approach via Hemlock Camp, about 12.5 miles south on the PCT, is reported as substantially easier because it avoids most of the Swamp Creek brush.",
+   "totalNote": "Ferry and shuttle to High Bridge and hike up Agnes Creek to camp, make a long summit day over Dark Fin Col and the Dark Glacier, then hike out to catch the shuttle and ferry.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Ferry, shuttle, and hike up Agnes Creek",
+     "objective": "Reach Swamp Creek or Fivemile Camp",
+     "note": "Take the ferry or a floatplane to Stehekin and the shuttle to High Bridge. Hike the Agnes Creek Trail (PCT) about 5-5.5 miles to Fivemile Camp or 8-9 miles to Swamp Creek Camp, or continue toward Hemlock Camp on the alternate approach.",
+     "gainFt": 1100,
+     "lossFt": 0,
+     "hours": null,
+     "miles": 8.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Summit Dark Peak",
+     "objective": "Cross the Dark Glacier to the summit and return",
+     "note": "This is a long, strenuous summit day: bushwhack up Swamp Creek and travel cross-country to Dark Fin Col, then rope up across the Dark Glacier and belay the moat crossing before a short scramble to the summit. Reverse the entire route back to camp.",
+     "gainFt": 5700,
+     "lossFt": 5700,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to High Bridge",
+     "objective": "Catch the shuttle and ferry back to Chelan",
+     "note": "Hike out to High Bridge and catch the return shuttle and ferry to Chelan.",
+     "gainFt": 0,
+     "lossFt": 1100,
+     "hours": null,
+     "miles": 8.5,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles: prose/row approach (8-9 mi High Bridge to Swamp Creek Camp); gain: row elevations (High Bridge 1,700, Swamp Creek Camp 2,800, summit 8,507; total ~6,800 vs row gain_ft 7,100); pack: estimate; hours and day2 miles null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Assumed Swamp Creek Camp as the day-1 camp for figures. Nothing dropped (the early-May PCT blowdown note is in the approach field, not the itinerary)."
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "itinerary": {
+   "cal": "Feb-Apr. Two days with one bivouac. Camping is not allowed at the Diablo townsite, so sleep the night before at a permitted backcountry site or in the Newhalem campground, and leave a car at the Gorge Creek bridge because the descent goes down the far side.",
+   "totalNote": "Day one bushwhacks from Diablo up the Stetattle Creek side to a bivy at the toe of the glacier; day two climbs the north face couloir and descends 6,000 ft down the south side to the Gorge Creek bridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Stetattle Creek to the glacier toe bivy",
+     "objective": "Bivouac at the toe of the glacier",
+     "note": "Leave at first light, hike the Stetattle Creek trail about 2 miles, and drop 200 ft to ford the creek opposite Davis. Bushwhack and scramble the 3rd/4th-class rib, roping up for the slabby sections, through slide alder to a bivouac on flat snow at the toe of the glacier at 4,000 ft, which has running water. Expect to arrive by late afternoon, roughly eight or nine hours from the road, and spend the evening judging whether the couloir will go.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 8.5,
+     "miles": null,
+     "packLb": 35,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the face and descend the south side",
+     "objective": "Climb the north face and descend to SR 20",
+     "note": "Go up the glacier at first light, gear up at the bergschrund, and climb the lower band, the snowfield, the crux pitches and the upper couloir to the summit ridge near 6,700 ft; tag the summit if there is time. Rappel from the top of the couloir onto the southeast ridge and commit to the full 6,000 ft south-side descent, aiming to be below the cliff bands before dark. Walk or shuttle the four road miles back to Diablo.",
+     "gainFt": 3050,
+     "lossFt": 5950,
+     "hours": null,
+     "miles": null,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 hours: prose (8-9 h); day2 gain/loss: row (summit 7,054 minus 4,000 ft bivy; down to the 1,096 ft Gorge Creek bridge, matching the prose 6,000 ft descent); pack: estimate (bivy gear carried over the top); day1 gain and miles null (trailhead elevation null in row).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped: the Stetattle Creek Trail post-fire closure \"until further notice\" (closure). The app should probably flag that the approach trail is currently closed."
+ },
+ {
+  "id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "itinerary": {
+   "cal": "May-Jun. Late spring is the usual recommendation because snowmelt supplies water and suppresses the brush. An overnight version is more comfortable: one party camped at the 5,720+ ft saddle on a snow ledge with room for two tents, and an overnight requires a wilderness permit.",
+   "totalNote": "One very long day straight up 6,000 ft of south slope from the Gorge Creek bridge to the summit and back, about 13.5 hours car to car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Davis Peak from Gorge Creek",
+     "objective": "Summit Davis Peak and return to SR 20",
+     "note": "Leave the Gorge Creek bridge before dawn and climb the dry, south-facing slope with all your water. One party reached the South Davis saddle at 5,700 ft about 4.4 hours from the car and the summit at about 8.3 hours, then took 4.1 hours down, for roughly 13.5 hours car to car. The direct line is about 6.2 miles round trip with roughly 6,000 ft of gain; that party's Gorge Creek/South Buttress line with detours ran 10 miles and about 7,400 ft.",
+     "gainFt": 6000,
+     "lossFt": 6000,
+     "hours": 13.5,
+     "miles": 6.2,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "hours: prose (13.5 h reported); miles and gain: prose/row approach (direct line 6.2 mi RT, ~6,000 ft; row gain_ft 5,955); pack: estimate.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "The 13.5 h time is from a party on a longer 10 mi / 7,400 ft variant, so it is a slow-end figure for the 6.2 mi direct line. Dropped: SR 20 bridge parking directions (road)."
+ },
+ {
+  "id": "wa_direct_north_buttress",
+  "itinerary": {
+   "cal": "Jul-Sep. Round trips typically run 5-6 days, about 45 miles and roughly 12,000 ft of gain. The camp at the Bear Creek confluence has been closed since the 2021 fire, so the first night is near Brush Creek.",
+   "totalNote": "Two days over Hannegan Pass and down the Chilliwack to a saddle camp near 6,480 ft, two days on the 21-pitch buttress with a bivy, and two days back out over Hannegan Pass.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Pass to Brush Creek",
+     "objective": "Camp on the Chilliwack River Trail",
+     "note": "Hike over Hannegan Pass and down the Chilliwack River Trail to camp near Brush Creek, since the Bear Creek camp is closed.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Ford Bear Creek to the saddle camp",
+     "objective": "Reach high camp near 6,480 ft",
+     "note": "Ford Bear Creek and climb steep, brushy timber to the meadows above Ruta Lake, then traverse the divide to the high camp on the broad saddle near 6,480 ft. The two approach days cover roughly 21 miles and 6,500 ft of gain.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Start the Direct North Buttress",
+     "objective": "Climb the lower buttress and bivy",
+     "note": "Drop to the glacier remnant below the wall and tie in where the toe of the buttress meets the snow. Climb the 21-pitch buttress, which has historically taken about 2.5 days with a bivy on route.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Summit and descend to camp",
+     "objective": "Finish the route and return to camp",
+     "note": "Finish the buttress, leave the rack and rope near the top, and solo easy terrain to the summit. Descend snow slopes through cliff bands back to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Hike back toward the Chilliwack",
+     "objective": "Start the hike out",
+     "note": "Break camp and start the roughly 21-mile hike back out over Hannegan Pass.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 6,
+     "title": "Hike out over Hannegan Pass",
+     "objective": "Return to Hannegan Trailhead",
+     "note": "Finish the hike out over Hannegan Pass to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "pack: estimate; per-day figures null. Prose/row give only totals: ~21 mi and 6,500 ft gain trailhead to camp over two days, ~45 mi and ~12,000 ft round trip (row gain_ft 11,950).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Prose groups days in pairs (Days 1-2, 3-4, 5-6); split into six days. Historical 2.5-day climb time may need a seventh day. Nothing dropped (the Bear Creek camp closure is a campsite closure, kept because it changes where you sleep)."
+ },
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "itinerary": {
+   "cal": "Plan on roughly a 4-day round trip via the western approach; the eastern approach via Chelan stretches it to about 5-6 days.",
+   "totalNote": "Two days on the brutal western approach toward Spire Point to a high camp, one day on the seven-pitch route, and one day out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Start the western approach",
+     "objective": "Begin the approach toward Spire Point",
+     "note": "Start the western approach on the Ptarmigan Traverse trail toward Spire Point, a brutal approach with significant bushwhacking.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Finish the approach to high camp",
+     "objective": "Reach a high camp below Dome Peak",
+     "note": "Finish the approach to a high camp. The western approach totals roughly 10 miles with about 7,800 ft of gain.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb Indian Summer",
+     "objective": "Climb the route and return to camp",
+     "note": "Climb the route from high camp and return to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "note": "Pack up and hike the roughly 10 miles back out.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 10,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day4 miles: row approach (~10 mi one-way); per-day figures otherwise null; the approach totals (~10 mi, ~7,800 ft) are in the day 2 note; pack: estimate.",
+  "sources": [],
+  "confidence": "low",
+  "notes": "Row season and descent are null, so no descent detail is given. Row dist_km 41.84 (26 mi) is more than 2 x 10 mi; maybe it includes the climb or a different line."
+ },
+ {
+  "id": "wa_dorado_needle_east_ridge",
+  "itinerary": {
+   "cal": "Jul-Sep. A three-day trip from a high camp on the East Ridge of Eldorado Peak.",
+   "totalNote": "Climb steeply from the Eldorado trailhead to a ~7,400 ft camp, cross the Inspiration and McAllister Glaciers to climb the East Ridge and descend the Northwest Ridge, then hike out on day three.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to the Eldorado high camp",
+     "objective": "Set up high camp near 7,400 ft",
+     "note": "Hike from the Cascade River Road trailhead, cross the creek, and climb steeply via the Eldorado Glacier to the East Ridge of Eldorado Peak, roughly 4 miles and 6,000 ft of gain. Set up camp around 7,400 ft and review gear and technique.",
+     "gainFt": 6000,
+     "lossFt": null,
+     "hours": null,
+     "miles": 4,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Dorado Needle",
+     "objective": "Climb the East Ridge and return to camp",
+     "note": "Rope up and traverse the Inspiration Glacier onto the McAllister Glacier, then descend to the col at the base of Dorado Needle's East Ridge and climb it to the summit. Downclimb and rappel the Northwest Ridge back to the col, then retrace the glacier traverse to high camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend to the trailhead",
+     "objective": "Return to the Eldorado trailhead",
+     "note": "Descend to the trailhead, including the final creek crossing, typically finishing by early evening.",
+     "gainFt": null,
+     "lossFt": 6000,
+     "hours": null,
+     "miles": 4,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles and gain/loss: row approach (~4 mi, ~6,000 ft to the ~7,400 ft camp; dist_km 6.4 one-way agrees); pack: estimate; day2 figures and hours null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "The row approach says ~6,000 ft of gain to camp, but trailhead 2,164 to camp ~7,400-7,500 is ~5,300 net; used 6,000 (cumulative). Dropped: Cascade River Road mileage/gravel/high-clearance sentence (road)."
+ }
+]
