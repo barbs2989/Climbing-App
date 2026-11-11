@@ -1,34 +1,34 @@
 import { routeKw } from "../../lib/routeKw.js";
 import { useState } from "react";
-import { getAvailableItineraries, itinDaysToDraft, blankItinDay, itinDraftToStructured, C, RSL as SL, catOf, ROUTE_GAP, uElev, uDistMi, uMass, SUB_LABEL, shareOrCopy, itinShareText, printSheet, itinSheetHtml, shortDate } from "../../ClimbMatchCore.jsx";
+import type { CSSProperties, ReactNode } from "react";
+import { getAvailableItineraries, itinDaysToDraft, blankItinDay, itinDraftToStructured, C, RSL as SL, catOf, ROUTE_GAP, uElev, uDistMi, uMass, SUB_LABEL, shareOrCopy, itinShareText, printSheet, itinSheetHtml, shortDate, hoursNum } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
 import { seasonShort, seasonTidy } from "../../lib/seasonText.js";
 import { BTN } from "../../lib/buttonStyles.js";
 import ItineraryEditor from "./ItineraryEditor.tsx";
 import type { Itinerary } from "./ItineraryEditor.tsx";
+import Chevron from "./Chevron.tsx";
+import ActionIcon from "./ActionIcon.tsx";
 
-/* The topo editor. What it could not do, each of them the difference between a line a climber
-   trusts and one they redraw:
+/* TRIP PLAN, the day-by-day plan on the Plan tab (owner note 2026-11-11: "make the whole trip plan
+   better ui"). The layout, top to bottom:
 
-     · A mis-placed point could not be fixed. The only tools were "undo last" and "clear all",
-       so one bad point four points back cost you the four after it. Every point and pin is a
-       draggable handle now, and the selected one can be deleted on its own.
-     · No zoom, on a phone-sized image. A belay pin has to land on a specific ledge; at 390px
-       wide, 1% of the frame is under 4px. The photo zooms (pinch, the wheel, or − / +) and a
-       loupe follows a dragged handle at 3x.
-     · A finger moving across the photo DREW. The editor sampled a point every 1.5% of a drag,
-       so a climber pushing the photo around to see another part of the wall laid a line across
-       it (owner, 2026-10-21). Now only a TAP marks: a press that wanders more than TAP_SLOP
-       pixels pans the photo instead, and two fingers pinch-zoom — how every map app separates
-       "move the view" from "drop a pin", and how photo viewers zoom.
-     · Upload/save errors used alert() — a blocking dialog, in an app that has toasts and
-       inline notices everywhere else. Now an inline error inside the section.
+     · AT A GLANCE: the day count, the trip totals (gain, loss, distance, moving time) as labelled
+       tiles, and the plan's own one-sentence summary. The totals used to sit at the BOTTOM, under
+       every day, and the summary was one of four grey paragraphs above the first day.
+     · The trust chips (confidence, trip reports, season) and the planning note (`cal`) as one
+       "Before you go" row with its icon, not loose text.
+     · One card per day with a DAY N tag in its header. The 30px number rail beside each card was
+       dropped: it cost 40px of a ~330px phone column and is what forced the stat pills to shrink.
+       The stats are now a labelled grid (GAIN / LOSS / TIME / DISTANCE / PACK) — the pills were
+       bare numbers, so "38 lb" or "6" read as nothing in particular. A figure the plan does not
+       have is a dash in its tile, and a day with no figures at all says so with an Add link, so
+       missing data is visible instead of silently leaving the row empty.
+     · The hour-by-hour schedule folds behind a 44px toggle that names its first and last stop; a
+       summit day's schedule was up to nine rows, always open, between one day and the next.
+     · A prose plan ("Day 1: …; Day 2: …") is drawn with the SAME day cards.
+     · My itinerary: each saved day is a row with its tag and title and the same figures. */
 
-   The route line is red and its variations yellow, both drawn on the Draw line tab (a variation
-   is a line, not a pin); a pitch's grade is a Grade marker on the Add pins tab, printed beside
-   the pitch as on Steph Abegg's overlays. Coordinates stay percentages of the photo: `at` reads
-   the ZOOMED layer's on-screen box, so a tap at 3x stores the same 0..100 point it would at 1x,
-   and a handle pulled off the edge is clamped onto the rock. */
 function splitItineraryDays(text: string | null | undefined): {days: {n: number; text: string}[]; multi: boolean}{
   if(!text)return {days:[],multi:false};
   const re=/\bDay\s+(\d+)\s*(?:of\s*\d+)?\s*[:—\-)]\s*/gi;
@@ -97,7 +97,64 @@ export interface ItineraryViewProps {
   notify?: ((msg: string) => void) | null;
 }
 
-/* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
+const cap=(s: string)=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
+const has=(v: unknown)=>v!=null&&v!==""&&!(typeof v==="number"&&isNaN(v));
+// " hr" only after a bare number or range ("6", "8-9"); "45 min" or "6 hr" are shown as stored.
+const fmtHrs=(h: number|string|null|undefined)=>{if(!has(h))return null;const s=String(h).trim();return /^[~≈]?\d+(\.\d+)?(\s*[-–]\s*\d+(\.\d+)?)?\+?$/.test(s)?s+" hr":s;};
+const CARD: CSSProperties={background:C.card,border:"1px solid "+C.border,borderRadius:12};
+
+/** A labelled figure: a small caps label over its value; a missing value is a muted dash. */
+function Tile({label,value,color,big}: {label: string; value: string|null; color?: string; big?: boolean}){
+  return <div style={{flex:"1 1 0",minWidth:0,background:C.surface,borderRadius:9,padding:big?"8px 6px 9px":"6px 4px 7px",textAlign:"center"}}>
+    <div style={{...SUB_LABEL,fontSize:9.5,letterSpacing:0.5,marginBottom:2,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{label}</div>
+    <div style={{fontSize:big?14.5:12.5,fontWeight:700,color:value==null?C.textMuted:(color||C.text),whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{value==null?"—":value}</div>
+  </div>;
+}
+
+/** The DAY N tag at the head of a day card. */
+function DayTag({n}: {n: number}){return <span style={{flexShrink:0,fontSize:10.5,fontWeight:800,letterSpacing:0.6,color:C.blue,background:C.blueChip,border:"1px solid "+C.blueDim,borderRadius:6,padding:"3px 7px",lineHeight:1.2}}>{"DAY "+n}</span>;}
+
+/** A day's hour-by-hour schedule, folded behind a toggle that names its first and last stop. */
+function ScheduleFold({schedule}: {schedule: NonNullable<StoredDay["schedule"]>}){
+  const [open,setOpen]=useState(false);
+  const first=schedule[0],last=schedule[schedule.length-1];
+  const span=first&&first.time&&last&&last.time&&schedule.length>1?first.time+" to "+last.time:null;
+  return <div style={{marginTop:10,borderTop:"1px solid "+C.border,paddingTop:2}}>
+    <button onClick={()=>setOpen(!open)} aria-expanded={open} style={{minHeight:44,width:"100%",display:"flex",alignItems:"center",gap:8,padding:0,background:"transparent",border:"none",color:C.text,cursor:"pointer",textAlign:"left"}}>
+      <span style={{flex:1,minWidth:0}}><span style={{fontSize:12.5,fontWeight:700,color:C.blue}}>Hour by hour</span><span style={{fontSize:11.5,color:C.textMuted}}>{" · "+schedule.length+(schedule.length===1?" stop":" stops")+(span?" · "+span:"")}</span></span>
+      <Chevron open={open} size={16} color={C.blue}/>
+    </button>
+    <div hidden={!open} style={{paddingTop:4,paddingBottom:2}}>{schedule.map((st,si: number)=><div key={si} style={{display:"flex",gap:10,alignItems:"stretch"}}>
+      <span style={{flexShrink:0,width:66,fontSize:11.5,fontWeight:700,color:st.time?C.text:C.textMuted,lineHeight:1.35,paddingTop:1,textAlign:"right",wordBreak:"break-word"}}>{st.time||""}</span>
+      <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0,width:10}}><span style={{width:8,height:8,borderRadius:4,marginTop:4,background:si===schedule.length-1?C.green:C.blue}}/>{si<schedule.length-1?<span style={{flex:1,width:2,background:C.border,marginTop:2}}/>:null}</div>
+      <div style={{flex:1,minWidth:0,paddingBottom:si<schedule.length-1?10:0}}><div style={{fontSize:12.5,color:C.text,lineHeight:1.4,fontWeight:600}}>{st.label}</div>{st.detail?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45,marginTop:2}}>{st.detail}</div>:null}</div>
+    </div>)}</div>
+  </div>;
+}
+
+/** One day of the plan. `steps` is a prose day split at its semicolons. */
+function DayCard({n,title,objective,figures,note,steps,schedule,onContribute}: {n: number; title?: string|null; objective?: string|null; figures: StoredDay|null; note?: string|null; steps?: string[]|null; schedule?: StoredDay["schedule"]; onContribute?: (() => void) | null}){
+  const f=figures;
+  const anyFig=!!f&&[f.gainFt,f.lossFt,f.hours,f.miles,f.packLb].some(has);
+  // A spare / weather day stores zeros, which is data ("no travel"), not a gap; five tiles of 0 and dashes said nothing.
+  // Rest day: at least one travel figure is STORED as 0 and none is above 0. A day with only a pack weight is missing data, not rest (review, 2026-11-11).
+  const travel=f?[f.gainFt,f.lossFt,f.hours,f.miles].filter(has):[];
+  const restDay=travel.length>0&&travel.every(v=>Number(v)===0);
+  return <div style={{...CARD,borderLeft:"3px solid "+C.blue,padding:"11px 13px 12px",marginBottom:ROUTE_GAP}}>
+    <div style={{display:"flex",alignItems:"flex-start",gap:9,marginBottom:objective?4:9}}><DayTag n={n}/>{title?<div style={{fontSize:14,fontWeight:700,lineHeight:1.3,minWidth:0}}>{title}</div>:null}</div>
+    {objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.textMuted,fontWeight:700}}>Goal: </span>{objective}</div>:null}
+    {restDay?<div style={{fontSize:11.5,color:C.textMuted,background:C.surface,borderRadius:9,padding:"7px 10px",marginBottom:(note||steps)?9:0}}>No travel planned this day.</div>:f&&anyFig?<div style={{display:"flex",gap:4,marginBottom:(note||steps)?9:0}}>
+      <Tile label="Gain" value={has(f.gainFt)?uElev(f.gainFt as number):null} color={C.green}/>
+      <Tile label="Loss" value={has(f.lossFt)?uElev(f.lossFt as number):null} color={C.amber}/>
+      <Tile label="Time" value={fmtHrs(f.hours)}/>
+      <Tile label="Dist" value={has(f.miles)?uDistMi(f.miles as number):null}/>
+      <Tile label="Pack" value={has(f.packLb)&&f.packLb?uMass(f.packLb as number):null} color={C.purple}/>
+    </div>:f?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,fontSize:11.5,color:C.textMuted,background:C.surface,borderRadius:9,padding:"7px 10px",marginBottom:(note||steps)?9:0}}><span>No gain, time or distance on file for this day.</span>{onContribute?<button onClick={onContribute} style={{flexShrink:0,minHeight:32,background:"transparent",border:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",padding:"0 2px"}}>+ Add</button>:null}</div>:null}
+    {steps&&steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:6}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{cap(s)}</li>)}</ul>:note?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{cap(note)}</div>:null}
+    {schedule&&schedule.length?<ScheduleFold schedule={schedule}/>:null}
+  </div>;
+}
+
 export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,seasonOnConditions,onContribute,myItin,onSaveMyItin,crewsForRoute,onShareItinToCrew,notify}: ItineraryViewProps){
   const it=route.itinerary as StoredItin|null;const _acts=activity||route.activity||[];const k=routeKw(Object.assign({},route,{activity:_acts}));const repN=_acts.length;
   const [showBuilder,setShowBuilder]=useState(false);const [draft,setDraft]=useState<Itinerary|null>(null);const [pickCrew,setPickCrew]=useState(false);const [pickedKey,setPickedKey]=useState<string|null>(null);
@@ -108,55 +165,80 @@ export default function ItineraryView({route,activity,onSeeReports,onSeeSeason,s
   // days. Saving that used to toast "Saved your plan — added to My Objectives", bump
   // the objectives count and store nothing. Refuse instead of reporting success.
   const saveDraft=function(){if(!draftContentDays())return;if(onSaveMyItin)onSaveMyItin(itinDraftToStructured(draft));setShowBuilder(false);setDraft(null);setPickedKey(null);};
-  const days=(it&&it.days&&it.days.length)?it.days:[];const proseIt=(typeof it==="string"&&(it as string).trim())?(it as string).trim():null;
+  const days: StoredDay[]=(it&&it.days&&it.days.length)?it.days:[];const proseIt=(typeof it==="string"&&(it as string).trim())?(it as string).trim():null;
   const parsed=(!days.length&&proseIt)?splitItineraryDays(proseIt):{days:[],multi:false};
-  const totG=days.reduce((a: number,d: StoredDay)=>a+(d.gainFt||0),0),totL=days.reduce((a: number,d: StoredDay)=>a+(d.lossFt||0),0),totMi=days.reduce((a: number,d: StoredDay)=>a+(d.miles||0),0);
+  const sum=(f: keyof StoredDay)=>days.reduce((a: number,d: StoredDay)=>a+(Number(d[f])||0),0);
+  const totG=sum("gainFt"),totL=sum("lossFt"),totMi=sum("miles"),totH=days.reduce((a: number,d: StoredDay)=>a+hoursNum(d.hours),0);
+  const dayN=days.length||(parsed.multi?parsed.days.length:0);
   const conf=k.confidence;const confC=conf==="High"?C.green:conf==="Medium"?C.amber:C.red;
   const flagged=k.hazards.filter(h=>!h.official&&h.count>=2).length;
-  const chip=(t: string,col: string)=><span style={{fontSize:12,fontWeight:700,color:col,background:col+"22",borderRadius:7,padding:"3px 8px"}}>{t}</span>;
-  // `fill`: a day card's row. Five pills at the TOTAL row's padding need ~320px and a day card on a 390px phone has ~294, so the
-  // fifth (pack weight) wrapped onto a row of its own; tighter pills that share the row's width keep all five on one line down to
-  // a 360px phone (measured on Goode NE Buttress), and below that a wrapped pill stretches to fill its row rather than sit alone.
-  const stat=(k: string,ic: string,val: string|null|undefined,col?: string,fill?: number)=>val==null||val===""?null:<div key={k} style={{display:"flex",alignItems:"center",justifyContent:"center",gap:4,background:C.surface,borderRadius:8,padding:fill?"5px 5px":"5px 9px",...(fill?{flex:"1 1 auto",whiteSpace:"nowrap"}:null)}}>{ic?<span style={{fontSize:12}}>{ic}</span>:null}<span style={{fontSize:12,fontWeight:700,color:col||C.text}}>{val}</span></div>;
+  const peakish=!["trad","sport"].includes(catOf(route));
+  const chip=(t: string,col: string,ic?: ReactNode)=><span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:12,fontWeight:700,color:col,background:col+"22",borderRadius:7,padding:"4px 8px"}}>{ic}{t}</span>;
+  const hasPlan=!!(days.length||proseIt);
+  // A plan object with a summary but no days still has something to say (review, 2026-11-11).
+  const showSummary=hasPlan||!!(it&&it.totalNote);
+  const hasMine=!!(myItin&&myItin.days&&myItin.days.length);
+  // The chips (confidence, reports, season, month by month) were drawn on EVERY route before the
+  // redesign, plan or not: they are the Plan tab's way to Reports and the season guide. They sit in the
+  // at-a-glance card when there is one, and on their own above "No trip plan yet" when there is not.
+  const chipRow=<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
+        {chip(conf+" confidence",confC)}
+        {repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}
+        {route.season&&peakish?chip("Season: "+seasonShort(route.season),C.teal,<ActionIcon name="calendar" size={12} color={C.teal}/>):null}
+        {/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). */}
+        {route.seasonalGuidance&&onSeeSeason&&peakish?<span {...clickable(onSeeSeason)} style={{cursor:"pointer"}} title="Open the month-by-month season guide">{chip(seasonOnConditions?"Month by month · Conditions tab →":"Month by month →",C.blue)}</span>:null}
+      </div>;
+  const seasonLong=route.season&&peakish&&seasonShort(route.season)!==seasonTidy(route.season)?route.season:null;
+  const whenToGo=route.bestSeason&&!route.seasonalGuidance&&peakish?route.bestSeason:null;
+  const caveat=<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:2}}>Estimates for an average party. Adjust for your fitness and conditions, and check the latest <b style={{color:C.textSub}}>Reports</b> and <b style={{color:C.textSub}}>Safety</b> tabs.{flagged?<span style={{color:C.amber}}>{" Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info. Check Safety before you commit."}</span>:null}</div>;
   return <div>
     <SL>Trip plan</SL>
-    {(days.length||parsed.multi||proseIt)?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:9}}>A <b style={{color:C.textSub}}>recommended</b> itinerary based on how parties commonly climb this route — not the only way to do it. Faster/slower parties, different camps, or a different order are all normal.</div>:null}
-    <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:8}}>{chip(conf+" confidence",confC)}{repN?<span {...clickable(()=>onSeeReports&&onSeeReports())} style={{cursor:"pointer"}} title="Jump to trip reports">{chip(repN+(repN===1?" trip report":" trip reports")+" →",C.blue)}</span>:chip("0 trip reports",C.textMuted)}{(route.season&&!["trad","sport"].includes(catOf(route)))?chip("Typical season: "+seasonShort(route.season),C.teal):null}{/* The month-by-month guide, as a chip that GOES there (owner note 2026-10-28). It was an italic
-      "Full month-by-month seasonal guidance is further down this tab." under the chips, which was false on every route with a
-      Conditions tab: SEASONAL GUIDANCE moved there (#2701) and the sentence stayed. */(route.seasonalGuidance&&onSeeSeason&&!["trad","sport"].includes(catOf(route)))?<span {...clickable(onSeeSeason)} style={{cursor:"pointer"}} title="Open the month-by-month season guide">{chip(seasonOnConditions?"Month by month · Conditions tab →":"Month by month →",C.blue)}</span>:null}</div>{(route.season&&!["trad","sport"].includes(catOf(route))&&seasonShort(route.season)!==seasonTidy(route.season))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}>{route.season}</div>:null}{(route.bestSeason&&!route.seasonalGuidance&&!["trad","sport"].includes(catOf(route)))?<div style={{fontSize:12,color:C.textSub,margin:"6px 0 0",lineHeight:1.5}}><b style={{color:C.teal}}>When to go: </b>{route.bestSeason}</div>:null}
-    {/* `cal` holds what is left of the plan's note once its road and closure sentences moved to the road block GETTING THERE reads (owner note 2026-10-28, scripts/oneoff/move-cal-road-notes.mjs). */}{it&&it.cal?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:4}}>{it.cal}</div>:null}
-    {it&&it.totalNote?<div style={{fontSize:12,color:C.textMuted,marginBottom:12}}>{it.totalNote}</div>:<div style={{marginBottom:12}}/>}
-    {/* Where the hours actually came from. Populated on 544 routes and read by nothing until
-        now, which mattered more than most unread fields: the day-by-day times above look
-        equally authoritative whether they came from a trip report, from Beckey, or from
-        "no route-specific trip report was found ... timing estimated from its relationship to
-        Let it Burn/West Face". Sits beside the confidence chip because it is the sentence that
-        chip is summarising. */}
-    
-    {days.map((d: StoredDay,i: number)=><div key={i} style={{display:"flex",gap:10,marginBottom:ROUTE_GAP}}>
-      <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}><div style={{width:30,height:30,borderRadius:15,background:C.blueBg,color:C.onSolid,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700}}>{d.n||i+1}</div>{i<days.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:18}}/>:null}</div>
-      <div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px"}}>
-        <div style={{fontSize:13.5,fontWeight:700,marginBottom:d.objective?5:8,lineHeight:1.35}}>{d.title}</div>{d.objective?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:9}}><span style={{color:C.blue,fontWeight:700}}>Objective · </span>{d.objective}</div>:null}
-        <div style={{display:"flex",gap:4,flexWrap:"wrap",justifyContent:"center",marginBottom:d.note?8:0}}>{[stat("gain","↑",d.gainFt!=null?uElev(d.gainFt):null,C.green,1),stat("loss","↓",d.lossFt!=null?uElev(d.lossFt):null,C.amber,1),stat("hours","",d.hours?d.hours+" hr":null,C.text,1),stat("miles","",d.miles?uDistMi(d.miles):null,C.text,1),stat("pack","",d.packLb?uMass(d.packLb):null,C.purple,1)]}</div>
-        {d.note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{d.note}</div>:null}{d.schedule&&d.schedule.length?<div style={{marginTop:d.note?10:9,borderTop:"1px solid "+C.borderLight,paddingTop:10,display:"flex",flexDirection:"column",gap:9}}>{d.schedule.map((st,si: number)=><div key={si} style={{display:"flex",gap:10,alignItems:"flex-start"}}><span style={{flexShrink:0,width:68,fontSize:12,fontWeight:700,color:st.time?C.blue:C.textMuted,lineHeight:1.35,paddingTop:1,textAlign:"right",wordBreak:"break-word"}}>{st.time||""}</span><div style={{flex:1,minWidth:0,borderLeft:"2px solid "+C.borderLight,paddingLeft:11}}><div style={{fontSize:12.5,color:C.text,lineHeight:1.4,fontWeight:600}}>{st.label}</div>{st.detail?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.45,marginTop:2}}>{st.detail}</div>:null}</div></div>)}</div>:null}
-      </div></div>)}
-    {(!days.length&&!parsed.multi)?<div style={{fontSize:12.5,color:C.textSub,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px",marginBottom:ROUTE_GAP}}>No day-by-day plan on file yet for this route.</div>:null}
-    {days.length?<div style={{display:"flex",gap:6,flexWrap:"wrap",justifyContent:"center",background:C.surface,borderRadius:10,padding:"9px 11px",marginBottom:ROUTE_GAP}}><span style={{...SUB_LABEL,alignSelf:"center",marginRight:2}}>TOTAL</span>{stat("days","",days.length+(days.length===1?" day":" days"),C.text)}{stat("gain","↑",uElev(totG),C.green)}{totL?stat("loss","↓",uElev(totL),C.amber):null}{totMi?stat("miles","",uDistMi(Math.round(totMi*10)/10),C.text):null}</div>:null}
-    {days.length?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5}}>Times and pack weights are estimates for an average party — adjust for your fitness, conditions, and the latest <b style={{color:C.textSub}}>Reports</b> and <b style={{color:C.textSub}}>Safety</b> tabs.{flagged?" Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info — check Safety before you commit.":""}</div>:null}{(!days.length&&parsed.multi)?<div>{parsed.days.map((d,i)=>{const steps=splitItinerarySteps(d.text);return <div key={i} style={{display:"flex",gap:10,marginBottom:ROUTE_GAP}}><div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}><div style={{width:30,height:30,borderRadius:15,background:C.blueBg,color:C.onSolid,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:700}}>{d.n}</div>{i<parsed.days.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:18}}/>:null}</div><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:12,padding:"11px 13px"}}><div style={{fontSize:13.5,fontWeight:700,marginBottom:8}}>{"Day "+d.n}</div>{steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:6}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{s}</li>)}</ul>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{d.text}</div>}</div></div>;})}<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>Day-by-day timing is a general guide — adjust for your fitness, conditions, and the latest <b style={{color:C.textSub}}>Reports</b> and <b style={{color:C.textSub}}>Safety</b> tabs.{flagged?" Climbers have flagged "+flagged+" hazard"+(flagged!==1?"s":"")+" not in the official info — check Safety before you commit.":""}</div></div>:null}
-    {(!days.length&&!parsed.multi&&proseIt)?(()=>{const steps=splitItinerarySteps(parsed.days[0].text);return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px"}}>{steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:7}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{s}</li>)}</ul>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6}}>{parsed.days[0].text}</div>}</div>;})():null}
-    {(!days.length&&!proseIt)?<div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:12,padding:"18px 14px",textAlign:"center"}}><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:4}}>No trip plan yet</div><div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>Climbed this? Add the day-by-day timing — approach, camps, car-to-car — to help the next party.</div><button onClick={()=>onContribute&&onContribute()} style={{...BTN,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid}}>Add a trip plan</button></div>:null}
+    {showSummary?<div style={{...CARD,padding:"12px 13px",marginBottom:ROUTE_GAP}}>
+      <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:4}}>
+        <span style={{fontSize:20,fontWeight:800,color:C.text,lineHeight:1.1}}>{dayN?dayN+(dayN===1?" day":" days"):"Suggested plan"}</span>
+        <span style={{fontSize:11.5,color:C.textMuted}}>{dayN===1?"car to car":dayN>1?"suggested itinerary":"how parties usually do it"}</span>
+      </div>
+      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:8}}>Based on how parties commonly climb it. Faster or slower parties, other camps or another order are all normal.</div>
+      {it&&it.totalNote?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:10}}>{it.totalNote}</div>:null}
+      {days.length&&(totG||totL||totMi||totH)?<div style={{display:"flex",gap:5,marginBottom:10}}>
+        <Tile big label="Gain" value={totG?uElev(totG):null} color={C.green}/>
+        <Tile big label="Loss" value={totL?uElev(totL):null} color={C.amber}/>
+        <Tile big label="Distance" value={totMi?uDistMi(Math.round(totMi*10)/10):null}/>
+        <Tile big label="Moving" value={totH?"~"+(Math.round(totH*10)/10)+" hr":null}/>
+      </div>:null}
+      {chipRow}
+    </div>:<div style={{marginBottom:ROUTE_GAP}}>{chipRow}</div>}
+    {/* "Before you go": the season sentence, When to go, and `cal` — what is left of the plan's note once its road and closure sentences moved to GETTING THERE (owner note 2026-10-28, scripts/oneoff/move-cal-road-notes.mjs). */}
+    {(seasonLong||whenToGo||(it&&it.cal))?<div style={{display:"flex",gap:10,background:C.tealBg,border:"1px solid "+C.tealDim,borderRadius:12,padding:"10px 12px",marginBottom:ROUTE_GAP}}>
+      <span style={{flexShrink:0,paddingTop:1}}><ActionIcon name="info" size={16} color={C.teal}/></span>
+      <div style={{minWidth:0,display:"flex",flexDirection:"column",gap:5}}>
+        <div style={{...SUB_LABEL,color:C.teal}}>Before you go</div>
+        {seasonLong?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{seasonLong}</div>:null}
+        {whenToGo?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}><b style={{color:C.text}}>When to go: </b>{whenToGo}</div>:null}
+        {it&&it.cal?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{it.cal}</div>:null}
+      </div>
+    </div>:null}
+    {days.map((d: StoredDay,i: number)=><DayCard key={i} n={d.n||i+1} title={d.title} objective={d.objective} figures={d} note={d.note} schedule={d.schedule} onContribute={onContribute}/>)}
+    {parsed.multi?parsed.days.map((d,i)=><DayCard key={i} n={d.n} figures={null} note={d.text} steps={splitItinerarySteps(d.text)}/>):null}
+    {(!days.length&&!parsed.multi&&proseIt)?(()=>{const steps=splitItinerarySteps(parsed.days[0].text);return <div style={{...CARD,padding:"12px 14px",marginBottom:ROUTE_GAP}}>{steps.length>1?<ul style={{margin:0,paddingLeft:18,display:"flex",flexDirection:"column",gap:7}}>{steps.map((s: string,si: number)=><li key={si} style={{fontSize:12.5,color:C.textSub,lineHeight:1.55}}>{s}</li>)}</ul>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6}}>{parsed.days[0].text}</div>}</div>;})():null}
+    {(days.length||parsed.multi)?caveat:null}
+    {!hasPlan?<div style={{...CARD,border:"1px dashed "+C.border,padding:"18px 14px",textAlign:"center"}}>
+      <div style={{display:"flex",justifyContent:"center",marginBottom:6}}><ActionIcon name="calendar" size={22} color={C.textMuted}/></div>
+      <div style={{fontSize:13.5,fontWeight:700,color:C.text,marginBottom:4}}>No trip plan yet</div>
+      <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:11}}>Climbed this? Add the day-by-day timing (approach, camps, car to car) to help the next party.</div>
+      <button onClick={()=>onContribute&&onContribute()} style={{...BTN,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid}}>Add a trip plan</button>
+    </div>:null}
     {onSaveMyItin?<div>
       <SL>My itinerary</SL>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4,marginBottom:9}}>Build your own plan for this route — start from a suggested one or from scratch.</div>
       {!showBuilder?<div>
-        {(myItin&&myItin.days&&myItin.days.length)?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:ROUTE_GAP}}>
-          {myItin.days.map(function(d: StoredDay,i: number){return <div key={i} style={{marginBottom:i<(myItin.days as StoredDay[]).length-1?7:0,paddingBottom:i<(myItin.days as StoredDay[]).length-1?7:0,borderBottom:i<(myItin.days as StoredDay[]).length-1?"1px solid "+C.border:"none"}}><span style={{fontSize:13,fontWeight:700}}>{"Day "+(d.n||i+1)+(d.title?": "+d.title:"")}</span></div>;})}
-        </div>:null}
+        {hasMine?<div style={{...CARD,padding:"4px 13px",marginBottom:ROUTE_GAP}}>
+          {(myItin&&myItin.days||[]).map(function(d: StoredDay,i: number){const last=i===(myItin.days as StoredDay[]).length-1;const bits=[has(d.gainFt)&&d.gainFt?"+"+uElev(d.gainFt as number):null,fmtHrs(d.hours),has(d.miles)&&d.miles?uDistMi(d.miles as number):null].filter(Boolean).join(" · ");return <div key={i} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 0",borderBottom:last?"none":"1px solid "+C.border}}><DayTag n={d.n||i+1}/><div style={{minWidth:0,flex:1}}><div style={{fontSize:13,fontWeight:700,lineHeight:1.3}}>{d.title||"Untitled day"}</div>{bits?<div style={{fontSize:11.5,color:C.textMuted,marginTop:1}}>{bits}</div>:null}</div></div>;})}
+        </div>:<div style={{fontSize:12,color:C.textMuted,lineHeight:1.45,marginBottom:9}}>Build your own plan for this route: start from a suggested one or from scratch, then share it with your crew.</div>}
         <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
-          <button onClick={function(){startBuilder(myItin&&myItin.days&&myItin.days.length?myItin:null);}} style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{(myItin&&myItin.days&&myItin.days.length)?"Edit my plan":"+ Plan your own itinerary"}</button>
-          {(myItin&&myItin.days&&myItin.days.length)?<button onClick={function(){shareOrCopy(route.name+" — plan",itinShareText(myItin,route),notify);}} aria-label="Share my plan" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Share…"}</button>:null}
-          {(myItin&&myItin.days&&myItin.days.length)?<button onClick={function(){printSheet(route.name+" — plan",itinSheetHtml(myItin,route),notify);}} aria-label="Save my plan as a PDF" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Save as PDF"}</button>:null}
-          {(myItin&&myItin.days&&myItin.days.length&&crewsForRoute&&crewsForRoute.length)?(pickCrew?<div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center"}}>{crewsForRoute.map(function(c,ci: number){return <button key={c.id} onClick={function(){(onShareItinToCrew as NonNullable<ItineraryViewProps["onShareItinToCrew"]>)(c.id,myItin);setPickCrew(false);}} style={{...BTN,background:C.blueBg,color:C.onSolid,border:"1px solid "+C.blueDim}}>{/* Crews have no name column, so every button used to read "→ Crew". The agreed day tells two crews on one route apart. */"→ "+(c.date?"Crew · "+shortDate(c.date):crewsForRoute.length>1?"Crew "+(ci+1):"Your crew")}</button>;})}</div>:<button onClick={function(){setPickCrew(true);}} style={{...BTN,background:C.card,color:C.green,border:"1px solid "+C.green+"55"}}>Share with crew</button>):null}
+          <button onClick={function(){startBuilder(hasMine?myItin:null);}} style={{...BTN,background:hasMine?C.card:C.blueBg,color:hasMine?C.blue:C.onSolid,border:"1px solid "+(hasMine?C.border:C.blueDim)}}>{hasMine?"Edit my plan":"+ Plan your own itinerary"}</button>
+          {hasMine?<button onClick={function(){shareOrCopy(route.name+" — plan",itinShareText(myItin,route),notify);}} aria-label="Share my plan" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Share…"}</button>:null}
+          {hasMine?<button onClick={function(){printSheet(route.name+" — plan",itinSheetHtml(myItin,route),notify);}} aria-label="Save my plan as a PDF" style={{...BTN,background:C.card,color:C.blue,border:"1px solid "+C.border}}>{"Save as PDF"}</button>:null}
+          {(hasMine&&crewsForRoute&&crewsForRoute.length)?(pickCrew?<div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center"}}>{crewsForRoute.map(function(c,ci: number){return <button key={c.id} onClick={function(){(onShareItinToCrew as NonNullable<ItineraryViewProps["onShareItinToCrew"]>)(c.id,myItin);setPickCrew(false);}} style={{...BTN,background:C.blueBg,color:C.onSolid,border:"1px solid "+C.blueDim}}>{/* Crews have no name column, so every button used to read "→ Crew". The agreed day tells two crews on one route apart. */"→ "+(c.date?"Crew · "+shortDate(c.date):crewsForRoute.length>1?"Crew "+(ci+1):"Your crew")}</button>;})}</div>:<button onClick={function(){setPickCrew(true);}} style={{...BTN,background:C.card,color:C.green,border:"1px solid "+C.green+"55"}}>Share with crew</button>):null}
         </div>
       </div>:<div>
         {avail.length?<div style={{marginBottom:11}}>

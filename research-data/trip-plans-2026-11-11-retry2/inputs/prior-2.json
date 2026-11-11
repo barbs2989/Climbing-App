@@ -1,0 +1,66 @@
+[
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "prior": {
+   "id": "wa_mount_chaval_north_ridge",
+   "skip": true,
+   "reason": "The session's web-search budget ran out before this row. The known Chaval beta is on SummitPost and CascadeClimbers (both 403), and no reachable page describing the North Ridge is known."
+  }
+ },
+ {
+  "id": "wa_mount_crowder_northeast_ridge",
+  "prior": {
+   "id": "wa_mount_crowder_northeast_ridge",
+   "skip": true,
+   "reason": "This ridge is only done as the descent leg of multi-day Pickets traverses (from Crowder's summit down to Pickell Pass). A stand-alone itinerary would have to invent its approach and timing. No new sources were fetched because the session's search budget ran out."
+  }
+ },
+ {
+  "id": "wa_mount_hinman_west_route",
+  "prior": {
+   "id": "wa_mount_hinman_west_route",
+   "skip": true,
+   "reason": "No new source could be found or opened to tell a West Route apart from the climbers' track north from La Bohn Gap, which the file already uses for the Southeast Route. The web-search budget ran out before more could be tried. If the two rows are the same line, reuse the Southeast Route plan."
+  }
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "prior": {
+   "id": "wa_mount_shuksan_northeast_ridge",
+   "skip": true,
+   "reason": "The NE Ridge of the summit pyramid is only a finish to the North Face or NW Rib, not a separate trip. No opened source gives days or timing for it, and the search budget ran out before a second source could be found."
+  }
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "prior": {
+   "id": "wa_silver_star_ne_ridge",
+   "skip": true,
+   "reason": "Search snippets confirm only the grade (III 5.9) and the 1952 Beckey ascent of the west peak's NE side from the Silver Star Glacier. No opened source describes the ridge's pitches, time on route or descent, and the search budget ran out."
+  }
+ },
+ {
+  "id": "wa_snoqualmie_mountain_boogie_wonderland",
+  "prior": {
+   "id": "wa_snoqualmie_mountain_boogie_wonderland",
+   "skip": true,
+   "reason": "Nothing new to add to the previous attempt: one 60 ft pitch with no approach time, descent or car-to-car figure in any source. The search budget ran out before a second source could be found."
+  }
+ },
+ {
+  "id": "wa_spectre_peak_haunted_wall",
+  "prior": {
+   "id": "wa_spectre_peak_haunted_wall",
+   "skip": true,
+   "reason": "No source describing the Haunted Wall could be found or opened. The row has no waypoints or elevations, and the search budget ran out."
+  }
+ },
+ {
+  "id": "wa_thunder_mountain_north_face",
+  "prior": {
+   "id": "wa_thunder_mountain_north_face",
+   "skip": true,
+   "reason": "Sources cover only Slippery Slab Tower and Thunder Mountain's SE-slope scramble from Upper Thunder Lake. No source describing the North Face was found, and the search budget ran out."
+  }
+ }
+]
