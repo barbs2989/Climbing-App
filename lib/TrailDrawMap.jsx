@@ -187,7 +187,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // ask again for a leg that had settled (or flatten it, with Follow off since).
       const settle = (snap) => snap.map((x, k) => (x.id === id && x.pending && k > 0 && sameP(x.a, b) && sameP(snap[k - 1].a, a) ? Object.assign({}, x, { via: next[j].via, pending: false }) : x));
       undoRef.current = undoRef.current.map(settle); redoRef.current = redoRef.current.map(settle);
-      if (!Array.isArray(via)) noteFailure(next[j].via.length ? "kept" : via); // a leg that kept its earlier points is said as that, not as straight
+      // Said once per leg and reason: a cached answer on Undo/Redo or a Follow toggle is not news.
+      if (!Array.isArray(via)) { const why = next[j].via.length ? "kept" : via; if (next[j].told !== why) { next[j] = Object.assign({}, next[j], { told: why }); nodesRef.current = next; setNodes(next); noteFailure(why); } }
     });
   };
   // `idxs` are the legs this change touched: straight again, or routed when Follow trails is on
@@ -441,7 +442,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.text70, fontSize: 13, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "The map couldn't load. Upload or paste a recorded track instead." : "Loading map…"}</div> : null}
       {layerBtns}
       {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, as the area map has it. */}
-      <button ref={expandBtn} onClick={() => (fullscreen ? exitFullscreen() : setFullscreen(true))} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 7, right: 7, zIndex: 1000, background: C.bg, boxShadow: "0 2px 8px rgba(0,0,0,0.5)" })}>{fullscreen ? "✕" : "⤢"}</button>
+      {fullscreen ? null : <button ref={expandBtn} onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 7, right: 7, zIndex: 1000, background: C.bg, boxShadow: "0 2px 8px rgba(0,0,0,0.5)" })}>⤢</button>}
       {ready ? <div style={{ position: "absolute", bottom: 7, left: 7, right: 7, zIndex: 1000, background: "rgba(13,17,23,0.85)", borderRadius: 7, padding: "4px 8px", fontSize: 12, color: "#fff", textAlign: "center", pointerEvents: "none" }}>{status}</div> : null}
     </div>
   );

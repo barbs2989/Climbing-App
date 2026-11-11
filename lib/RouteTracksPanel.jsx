@@ -52,7 +52,7 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
         : !rows.length ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>No climber has shared a GPS track of this route yet. Attach your GPX when you log it, and it shows here for anyone who can read your report.{onLog ? <> <button onClick={onLog} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Log this climb</button></> : null}</div>
         : <>
           {sorts.length > 1 ? <div role="group" aria-label="Sort tracks" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 6 }}>
-            {sorts.map((s) => <button key={s.id} onClick={() => setSort(s.id)} aria-pressed={sort === s.id} style={chip(sort === s.id)}>{s.label}</button>)}
+            {sorts.map((s) => <button key={s.id} onClick={() => setSort(s.id)} aria-pressed={sortNow === s.id} style={chip(sortNow === s.id)}>{s.label}</button>)}
           </div> : null}
           <div role="group" aria-label="Season" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
             {SEASONS.map((s) => <button key={s.id} onClick={() => setSeason(s.id)} aria-pressed={season === s.id} style={chip(season === s.id)}>{s.label}</button>)}
