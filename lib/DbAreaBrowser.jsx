@@ -94,7 +94,8 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
     // cannot build its own breadcrumb and every panel keyed on path renders empty.
     // Hydrate the full row before navigating.
     let full = a;
-    if (!a.path) {
+    // `_narrow`: a map pin's row carries only the columns the map draws (useNearbyAreas).
+    if (!a.path || a._narrow) {
       const row = await fetchArea(a.id).catch(() => null);
       if (jumpSeq.current !== seq) return false;
       if (row) { full = row; setStateNode(row); }
