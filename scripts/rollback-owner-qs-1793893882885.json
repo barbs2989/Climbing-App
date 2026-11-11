@@ -1,0 +1,2155 @@
+{
+ "note": "full rows before apply-owner-qs.mjs; restore a patch with patchRow, a delete by re-inserting `before`",
+ "at": "2026-11-05T15:51:33.561Z",
+ "steps": [
+  {
+   "op": {
+    "op": "merge",
+    "id": "wa_castle_peak_pasayten_north_face_left_buttress",
+    "into": "wa_north_face_left_buttress",
+    "area_id": "wa_castle_peak_pasayten",
+    "name": "North Face (Left Buttress)",
+    "move": "*",
+    "set": {
+     "grade": "5.10d",
+     "disciplines": [
+      "alpine"
+     ]
+    }
+   },
+   "before": {
+    "id": "wa_castle_peak_pasayten_north_face_left_buttress",
+    "area_id": "wa_castle_peak_pasayten",
+    "name": "North Face (Left Buttress)",
+    "discipline": "trad",
+    "grade": "5.10d Easy Snow",
+    "grade_system": "yds",
+    "grade_num": 11,
+    "pitches": 12,
+    "length_m": 427,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": null,
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": [
+     "trad",
+     "alpine"
+    ],
+    "timing": null,
+    "detailed_rack": "Gear to 3 inches, mostly small, with small TCUs useful on P7. Pitons maybe.",
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": null,
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "north face left lt buttress",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": 1,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": {
+    "id": "wa_north_face_left_buttress",
+    "area_id": "wa_castle_peak_pasayten",
+    "name": "Fight or Flight",
+    "discipline": "alpine",
+    "grade": "5.10+",
+    "grade_system": "yds",
+    "grade_num": 10,
+    "pitches": 14,
+    "length_m": 427,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Blake Herrington and Peter Hirst, August 3, 2008 (attempting a repeat of the 1993 Colorado Route; forced left by a detached hanging snow patch into new terrain)",
+    "lat": null,
+    "lng": null,
+    "aspect": "N",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "Trad rack to 3 inches, doubled in small-to-medium sizes",
+     "A few pitons for older fixed placements",
+     "Ice axe and crampons for the glacier approach/descent",
+     "Rope"
+    ],
+    "hazards": [
+     "remote, glacier-crossing approach",
+     "proximity to the US/Canada border on the Canada-side approach — legal/permit considerations",
+     "long multi-pitch commitment with descent only via the east ridge, not a reversal of the route"
+    ],
+    "verif": null,
+    "overview": "The North Face (Left Buttress) climbs a direct line up the left margin of Castle Peak's central north buttress, roughly 1,400 ft of granite with about half the pitches rated 5.10; the route follows clean cracks and corners low on the wall, then a distinctive yellow quartz dyke higher up to avoid dirtier rock, with generally solid, clean granite throughout.",
+    "beta": "Established in 2008 during an attempt to repeat the nearby 1993 Colorado Route, this line instead follows independent ground up the left side of the main north-face buttress system. It is one of at least four distinct technical lines on this face -- do not confuse it with the original 1979 Beckey-Nolting-Tindall north-face route or the 2017 'Drawbridge' (Zentler/Schilling), which climbs the central buttress directly below the summit. Rated 5.10d/6b+/E3 5b, Grade IV, with 3 stars.",
+    "turnaround": "Given the multi-day, cross-border approach and full-value alpine rock climbing above a glacier, set a firm turnaround time that leaves enough daylight to redescend the east-ridge snow slopes and re-cross the glacier/moat before dark, with a weather margin appropriate to the remoteness of any rescue.",
+    "auto_generated": false,
+    "alpine_grade": "IV",
+    "rock_grade": "5.10+",
+    "ice_grade": null,
+    "gain_ft": 6500,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": "Not a rappel descent - down-climb the East Ridge and north-facing snow slopes instead",
+    "commitment": "IV",
+    "face": "North Face, left margin of the central buttress",
+    "permit": "Free self-issue Pasayten Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at some trailheads.",
+    "comms": "No cell coverage should be expected this close to the Canadian border in the Pasayten backcountry; a satellite communicator/PLB is strongly advised given the remoteness and slow potential rescue response.",
+    "descent": "Descend via the east ridge to a col, then down a snow finger — this route is not reversed/rappelled.",
+    "obj_haz": [
+     "Rockfall (worse once sun hits the face)",
+     "Loose/dirty rock off the described line",
+     "Glacier travel hazards and a moat at the base of the face",
+     "Very remote — multi-day approach, no quick rescue"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.7278,
+      "lng": -121.0628,
+      "elev": 2125,
+      "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+      "note": "Park at the pullout on SR-20 between mileposts 134 and 135. A spur trail drops about a mile and 700 ft to Ross Lake near the dam, for the water taxi or a carried-in boat up the lake to Lightning Creek; from there the Lightning Creek and Freezeout Creek trails lead on toward the north face, several days in all.",
+      "type": "Trailhead",
+      "elevFt": 2125,
+      "directions": "Drive SR 20 east from Marblemount about 28 miles, past Diablo, to the Ross Dam Trailhead pullout between mileposts 134 and 135, at about 2,100 ft. From here a spur trail drops about a mile and 700 ft to Ross Lake near the dam for the water taxi or a carried-in boat. Camping along the Ross Lake corridor needs a park backcountry permit from the Wilderness Information Center in Marblemount."
+     },
+     {
+      "lat": 48.9821,
+      "lng": -120.8622,
+      "elev": 8343,
+      "name": "Castle Peak Summit (East Turret - true summit)",
+      "type": "Summit",
+      "elevFt": 8343
+     }
+    ],
+    "gpx": [
+     [
+      49.0608,
+      -120.8244
+     ],
+     [
+      48.9821,
+      -120.8622
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": null,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": null
+    },
+    "detailed_rack": "Standard trad rack to 3 inches, emphasizing small-to-medium cams and stoppers for the finger and thin-hand crack/seam systems on pitches 3, 4, and 6; a few pitons can back up older or marginal placements. Doubling the smaller sizes is worthwhile given the sustained 5.10 corner and seam pitches.",
+    "what_to_bring": [
+     "Glacier travel gear (axe, crampons, rope for the approach glacier)",
+     "Full alpine rock rack plus a few pitons",
+     "Multi-day bivy/camping gear for the approach",
+     "Water-taxi reservation or a carried-in boat for the Ross Lake crossing",
+     "Ice axe, crampons for the glacier approach/descent"
+    ],
+    "pro_tips": [
+     "The glacier approach is described as mellow, but check the moat/bergschrund at the base of the buttress before committing to the first pitch",
+     "This route shares its start with attempts on the 1993 Colorado Route -- confirm you are on the left-side (west) line, not the central buttress ('The Drawbridge', 2017)"
+    ],
+    "watch_out": [
+     "Rockfall and moss/dirt in cracks lower on the face, as reported on neighboring north-face lines",
+     "Variable snow conditions on both the glacier approach and the east-ridge descent slopes",
+     "Extremely remote: any rescue would be a long, multi-day operation"
+    ],
+    "pro_needs": "Mostly small gear (finger to hand size); the route protects well on natural gear in its crack/corner systems, with a couple of fixed pieces reported on the 5.10+ third pitch.",
+    "best_season": "Summer (the documented ascent was climbed in early August).",
+    "high_point_ft": 8343,
+    "aid_grade": null,
+    "approach": "Two approaches exist, both multi-day. The first-ascent party came from Canada: from Lightning Lake in E.C. Manning Provincial Park, about seven miles of trail over the Frosty Mountain area to a pass near 8,000 ft, then cross-country south over the border, through the Princess Creek basin and into the Crow Creek drainage below Castle's north face to the toe of the north-face glacier. Walking into the US away from a port of entry is not a lawful crossing, so that line is recorded, not recommended. The lawful approach is from the US side: boat or hike up Ross Lake from the WA-20/Ross Dam trailhead (permit from the North Cascades Wilderness Information Center in Marblemount) to Lightning Creek, then follow the Lightning Creek Trail and the abandoned, increasingly brushy Freezeout Creek Trail past the Freezeout cabin (3,600 ft), a much longer multi-day trudge. Both approaches finish by crossing the mellow north-face glacier to the base of the buttress -- watch for an awkward bergschrund/moat at the start of the route.",
+    "descent_text": "From the top of the route, descend via Castle Peak's east ridge to an obvious col, then down a snow finger back toward the approach glacier/basin, rather than reversing the climbing line.",
+    "bail": "Retreat by rappelling the route on gear anchors; the corner/crack systems on pitches 3-7 protect well for rappel anchors. Below pitch 3 the angle eases enough to downclimb in many conditions.",
+    "pitch_detail": [
+     {
+      "grade": "5.8",
+      "notes": "Cross the moat and start in the blocky line of face holds just left of the gully/chimney that bounds the left edge of the buttress. Most of the pitch is low fifth class on clean granite; a wide crack near the top holds the harder moves. The moat at the start can be awkward and changes through the season.",
+      "pitch": "1",
+      "lengthM": 70
+     },
+     {
+      "grade": "Low 5th",
+      "notes": "Trend up and right to the top of the lingering snow patch, aiming for the clean wall beneath a shallow left-facing corner. How much snow sits here varies a lot year to year, and in a big year it can bury this ground; belay at the base of the clean wall.",
+      "pitch": "2",
+      "lengthM": 20
+     },
+     {
+      "belay": "The belay is on a ledge reached by hard face moves above the top of the crack in the corner.",
+      "grade": "5.10+",
+      "notes": "Unprotected but balancy face climbing leads to the corner, which takes good gear and has had a fixed piton in it. Above the top of the crack, hard face climbing on good gear finishes at a belay ledge. The runout off the belay comes before the first solid piece, so move carefully.",
+      "pitch": "3",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.10-",
+      "notes": "Face climb left off the belay on positive holds with little protection, then pull into a steep dihedral split by twin cracks and follow clean flakes and cracks to a pedestal. Among the best pitches on the route; gear is mostly small.",
+      "pitch": "4",
+      "lengthM": 40
+     },
+     {
+      "grade": "5.7",
+      "notes": "Step down and left from the belay into a hidden corner, climb it, and work back up and right to belay at a spot directly above the previous stance. The corner is not visible from the pedestal, so traverse down to find it rather than forcing straight up.",
+      "pitch": "5",
+      "lengthM": 30
+     },
+     {
+      "grade": "5.10",
+      "notes": "Move left and up to the base of a long seam and finger crack, which protects well as the moves get harder. From its base work left and up around a series of left-facing corners and small roofs toward the left edge of the wall, belaying low beside the chimney/gully.",
+      "pitch": "6",
+      "lengthM": 45
+     },
+     {
+      "grade": "5.10",
+      "notes": "Climb the featured arête right of the chimney/gully, then a clean white shallow dihedral, and undercling right to the belay. Protection on the arête is sparse and relies on small cams (TCU sizes); expect a long, committing stretch that some find runout.",
+      "pitch": "7",
+      "lengthM": 30
+     },
+     {
+      "notes": "A strenuous left-facing corner with sustained finger locks leads on up the left side of the buttress. Above this pitch the rock turns noticeably mossier, especially in the obvious dihedrals, so avoid the corners and look for cleaner flakes and cracks.",
+      "pitch": "8"
+     },
+     {
+      "notes": "Follow flakes and cracks left onto a bright quartz dike, which gives about two pitches of continuous positive holds with only occasional gear. From a small ledge below the summit, a hidden snow patch and a steep final rock wall with an overhanging pull-up move lead to the top; an ice tool helps if that snow is still there.",
+      "pitch": "9-12"
+     }
+    ],
+    "itinerary": "From the lawful Ross Lake side the walk in to a camp below the north face is itself a multi-day trip, so plan on more than 3 days car to car. The Manning Park line, which is not a lawful border crossing, runs 3+ days: day 1 to a high camp near the border/Crow Creek basin, day 2 climb the route and descend to camp, day 3+ hike back out. The approach length makes this a serious multi-day undertaking rather than a single push.",
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 people / 18 head of stock.",
+     "permit": "North Cascades NPS wilderness permit for camps in the Ross Lake NRA corridor; free self-issue Pasayten Wilderness permit beyond the wilderness boundary.",
+     "closures": "Ptarmigan Fire Closure Order 06-17-04-26-39, effective 9 Sep - 31 Oct 2026, closes Boundary Trail #533 west of Bunker Hill and Castle Pass Trail #749 in the Pasayten Wilderness; the Pacific Crest Trail #2000 is open to the border. The fire was 24,516 acres at 13% containment on 14 Aug 2026 and is burning 20 miles NW of Mazama.",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest (Pasayten Wilderness); Ross Lake National Recreation Area (NPS) on the Lightning Creek approach",
+     "land_manager": "Okanogan-Wenatchee National Forest — Pasayten Wilderness",
+     "parking_pass": "None needed at the Ross Dam trailhead.",
+     "passRequired": "N/A",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/pasayten-wilderness-okanogan-wenatchee",
+      "what": "Free self-issue Pasayten Wilderness permit",
+      "where": "Fill one out at a US trailhead such as Harts Pass. Parties starting in Manning Park have no US kiosk on their way in, so contact the Methow Valley Ranger District before the trip."
+     }
+    },
+    "road": {
+     "name": "North Cascades Highway (SR-20) — Ross Dam Trailhead, milepost 134",
+     "status": "Paved highway to the trailhead; SR-20 has a seasonal winter closure",
+     "driveNote": "Park at the Ross Dam Trailhead on SR-20 and take the short spur trail down to Ross Lake for the water taxi or a carried-in boat, then a long multi-day approach up Lightning and Freezeout creeks."
+    },
+    "climate": {
+     "fall": "Cooler, drier air but shorter days; snow can begin accumulating on the peak by mid-to-late October.",
+     "spring": null,
+     "summer": "Warmest, driest window, but the north-face glacier and moat persist; expect biting insects in the lower valleys.",
+     "winter": "Not climbed in winter; WA-20 access closes seasonally and approach terrain is avalanche-prone.",
+     "typical": "A remote, dry-side North Cascades alpine climate. Trip reports from nearby standard-route ascents document warm, buggy conditions in early July, rain and cloud cover in late September, and snow starting to accumulate by late October.",
+     "forecastZone": null
+    },
+    "emergency": {
+     "notes": "Remote, seldom-visited terrain; cell coverage is unreliable to absent for most of the approach and any rescue would be a multi-day operation. A satellite communicator is strongly advised.",
+     "county": "Whatcom County, WA (Ross Lake NRA side) / Okanogan County, WA (Pasayten Wilderness side) -- the peak sits on the Whatcom-Okanogan county line",
+     "rangerStation": "North Cascades Wilderness Information Center, Marblemount, WA: (360) 854-7245; Methow Valley Ranger District, Winthrop, WA: (509) 996-4000",
+     "nearestHospital": "Three Rivers Hospital, Brewster, WA (critical access hospital)",
+     "sheriffDispatch": "Whatcom County Sheriff non-emergency: (360) 676-6911; Okanogan County Sheriff non-emergency: (509) 422-7232"
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through August, after the snow patch at the base shrinks and while the moat onto the buttress is still crossable",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Approach snow clears through July, but a snow patch at the base can still cover the lower pitches; the moat is narrow.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Freezeout and Lightning Creek approaches are still snowbound and the north-face glacier buries the first pitches.",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "The route was first climbed in early August; the rock is driest and the glacier approach still gives a reasonable moat crossing.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Snow on a north-facing 1,400 ft wall and short days on a multi-day, remote approach leave little margin.",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "The moat widens and the north face stays cold; early-season snow on the buttress can end a multi-day approach at the base.",
+       "status": "marginal"
+      }
+     }
+    },
+    "seasonal_hazards": null,
+    "data_quality": {
+     "gaps": [
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM"
+    },
+    "difficulty": {
+     "exposure": 4,
+     "physical": 2,
+     "technical": 4,
+     "commitment": 2,
+     "routefinding": 4
+    },
+    "approach_logistics": {
+     "peakLat": 48.981991,
+     "peakLng": -120.862054,
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628,
+     "trailheadDirection": "From Newhalem, drive SR-20 east about 14 miles; the trailhead parking is on the right between mileposts 134 and 135."
+    },
+    "sling_rack": {
+     "cams": "double set 0.3-3in (finger-to-hand cracks), single set to #4",
+     "nuts": "full set",
+     "notes": "granite alpine rack; carry a few pitons/extra nuts for old fixed gear/thin seams"
+    },
+    "alpine_draws": 14,
+    "rope_type": "double ropes, which also allow a rappel retreat",
+    "rope_length_m": 60,
+    "rope_note": "Remote alpine rock wall; the first-ascent party climbed on double ropes. The descent is a walk-off down the east ridge, not a rappel, so a second rope matters only for a retreat by rappel.",
+    "ascender": null,
+    "corrections": "Mountain Project confirms grade (5.10d trad, 3 stars) and route name but publishes no official pitch count or gear list; rack/rope sizing inferred from the comparably-scaled 'Drawbridge' (IV 5.10+ A1, 10 pitches) on the same north face.",
+    "gear_confidence": "inferred",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": [
+     "Trad rack to 3in, doubled in finger-to-hand sizes",
+     "Single set to #4 cam",
+     "Full nut set",
+     "A few pitons for old fixed placements/thin seams",
+     "14 alpine draws",
+     "60m double ropes (walk-off descent; the pair allows a rappel retreat)"
+    ],
+    "features": [
+     "Crack",
+     "Dihedral",
+     "Sustained",
+     "Technical",
+     "Committing"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Ross Lake boat crossing, Lightning Creek and the abandoned Freezeout Creek trail to the north-face glacier",
+      "camps": [
+       "Castle Peak north-side glacier bivy"
+      ],
+      "notes": "The approach that stays inside the United States, and much the longer of the two.\n\nFrom the highway pullout above the dam, a spur trail drops to the lake shore; cross by water taxi or by a boat portaged down it, and land near the head of the lake. Follow the Lightning Creek trail, then the abandoned and increasingly brushy Freezeout Creek trail. The steep rock-and-alder diagonal immediately above the trail junction is the hardest navigation on the whole walk; look for intermittent orange flagging. The cabin at about 3,600 ft is a waypoint and an emergency shelter, and tread mostly disappears around 4,200 ft.\n\nCamping in the lower corridor needs a park backcountry permit; the upper part is wilderness with a free self-issue permit.\n\nFrom the upper basin, work round to the north side and onto the glacier at the foot of the wall, which is mellow enough for easy travel.",
+      "objHaz": [
+       "rockfall",
+       "bergschrund",
+       "glacier travel",
+       "route-finding",
+       "remote"
+      ],
+      "season": "Summer; the documented ascent was made in early August",
+      "hazards": [
+       "Boat crossing of Ross Lake needed; a long multi-day approach with a retreat measured in days",
+       "Abandoned, brushy Freezeout Creek trail; tread mostly disappears around 4,200 ft",
+       "Steep rock-and-alder diagonal above the trail junction is the hardest navigation of the walk",
+       "Awkward bergschrund or moat where the glacier meets the rock",
+       "Rockfall, worse once sun hits the face",
+       "Several unmarked lines on one wall; descent by the east ridge and snow finger, not the route reversed"
+      ],
+      "primary": true,
+      "baseFinding": "The face is about fourteen hundred feet of granite ribs, gullies and couloirs above a glacier and it carries several routes with nothing marked. Do not identify by name; identify by feature.\n\nFirst, place the central buttress. Stand back on the glacier and find the summit, then look at the buttress directly beneath it — that is the neighbouring route, and this line is not on it. This route takes the left margin of that buttress system, so you want to be off to the left of the plumb line from the summit.\n\nSecond, find the gully or chimney at the buttress's left edge. The start is in the blocky line of face holds just left of it. Blocky face holds, immediately left of a gully or chimney, at the left edge of the buttress: that is the whole identification at the ground. The first pitch is long, mostly low fifth class, with a wide crack near its end.\n\nThird, and this is the confirmation higher up that nothing else on the face gives you: this route follows a distinctive yellow quartz dyke up the wall to avoid the dirtier rock either side of it. A yellow band running up the granite is not a subtle feature. If you never meet one, you are on a different climb.\n\nWatch for an awkward bergschrund or moat where the glacier meets the rock.\n\nNegative markers, and they matter because two of the neighbours are hard: if the summit is directly overhead from your belay and your second pitch is desperate face climbing wanting an aid move, you are on the central buttress line. And the face's original route and at least two others also exist here, so the honest rule is that anything without the yellow dyke above it is not this.\n\nDescent is not the route reversed and not a rappel: take the east ridge from the top to an obvious col, then a snow finger back down toward the approach glacier and basin."
+     },
+     {
+      "name": "Provincial park approach from the north over Frosty Mountain to Crow Creek",
+      "trip": {
+       "bivy": [
+        {
+         "name": "Castle Peak north-side glacier bivy",
+         "role": "main",
+         "type": "bivy",
+         "notes": "Camp below the glacier under the north face, at the end of the approach and at the foot of the glacier crossing to the route.",
+         "water": "Snowmelt and glacier runoff.",
+         "permit": "Free self-issue Pasayten Wilderness permit.",
+         "capacity": "A few tent spots on rock and moraine; no established sites."
+        }
+       ],
+       "approachLogistics": {
+        "trailhead": "Lightning Lake, E.C. Manning Provincial Park (British Columbia)"
+       }
+      },
+      "notes": "Read the legal point first. This approach walks in from the provincial park on the northern side and crosses the international boundary cross-country. That is not a lawful crossing. Away from a port of entry it needs prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over. It is recorded because it is the commonly published line and the shorter of the two, not as a recommendation.\n\nAs described, it follows the marked trail from Lightning Lake up the Frosty Mountain area to a pass near 8,000 ft, then leaves the trail and travels cross-country south over the boundary, descending through the next creek basin and over the divide into the drainage below the peak's north face, finishing at the toe of the glacier.\n\nThe lawful alternatives are the boat crossing and abandoned creek trail from the east, or the crest trail from the west, both of which are considerably longer.",
+      "objHaz": [
+       "rockfall",
+       "bergschrund",
+       "glacier travel",
+       "route-finding",
+       "remote"
+      ],
+      "season": "Summer, once the divide traverse is clear enough to travel",
+      "hazards": [
+       "The described approach crosses the international boundary cross-country, which is not a lawful crossing",
+       "Cross-country over a mountain and a drainage divide to reach the glacier",
+       "Awkward bergschrund or moat at the base of the wall",
+       "Rockfall, worse once sun hits the face",
+       "Several unmarked lines on one wall; descent by the east ridge and snow finger, not the route reversed",
+       "Very remote, multi-day approach with no quick rescue"
+      ],
+      "whyThisWay": "Walks in from the Canadian provincial park over Frosty Mountain, but it crosses into the United States on foot away from a port of entry, which is not permitted.",
+      "baseFinding": "Whichever way you arrive, the glacier is the same and so is the identification, and this side has one advantage worth using: you come down toward the wall, which gives you the whole face in one view before you are under it. Take that view rather than sorting the routes out from the bergschrund.\n\nFrom back on the glacier, find the summit and note the buttress directly under it — that is the neighbouring line and it is not this one. This route is on the left margin of the same buttress system.\n\nThe ground marker is a gully or chimney at the buttress's left edge, with the route starting in the blocky line of face holds just left of it. The confirmation above is a yellow quartz dyke, which the line follows deliberately to stay on clean rock and away from the dirtier granite either side. Yellow band, left margin, blocky start beside a chimney: those three together are the route.\n\nExpect an awkward bergschrund or moat at the transition from ice to rock.\n\nNegative markers. Directly under the summit with a very hard second pitch means the central buttress line. No yellow dyke anywhere above you means one of the other lines on this face, of which there are several and none is marked.\n\nSecond negative marker and it is not about climbing: the boundary clearing is a visible cut line across this ground. It is not a route and it is not a shortcut.\n\nDescent is the east ridge to an obvious col and then a snow finger back to the glacier and basin."
+     },
+     {
+      "name": "Pacific Crest Trail north from Harts Pass",
+      "trip": {
+       "bivy": [
+        {
+         "name": "Castle Peak north-side glacier bivy",
+         "role": "main",
+         "type": "bivy",
+         "notes": "Camp below the glacier under the north face, at the end of the approach and at the foot of the glacier crossing to the route.",
+         "water": "Snowmelt and glacier runoff.",
+         "permit": "Free self-issue Pasayten Wilderness permit.",
+         "capacity": "A few tent spots on rock and moraine; no established sites."
+        },
+        {
+         "elev": 6200,
+         "name": "Harts Pass and Meadows campgrounds",
+         "role": "route",
+         "type": "camp",
+         "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approaching seventeen percent on the upper ramps. Trailers are prohibited outright and motorhomes and wide vehicles are strongly discouraged. The road opens with the snowmelt, typically early to mid July and occasionally not until later, and closes with the first serious autumn storms. Above the pass it continues to the gate below Slate Peak at about 7,440 feet, the highest driveable point in the state, which puts you at a trailhead where the walking starts near 7,000 feet instead of 2,500. Four trails leave from here — the Pacific Crest Trail, the West Fork Pasayten, the Middle Fork Pasayten and Buckskin Ridge — so this one pass is the door to Osceola, Blackcap, Dot, Ptarmigan, Castle and Blizzard. Nights are cold and wind at the pass is relentless; pitch behind timber rather than in the open meadow. Wildfires close this road and parts of the northern wilderness in some summers, so confirm the road is actually open before committing to a long drive.",
+         "water": "None. Neither campground has potable water and there is no piped supply anywhere on the pass, so haul everything up from the valley or plan on filtering from creeks well below. This is the single most common mistake parties make staging here.",
+         "permit": "Northwest Forest Pass or an Interagency pass to park at the trailheads; the campgrounds themselves are free but carry no services and no trash collection, so everything you bring comes back out. The free self-issue Pasayten wilderness permit is filled out at the trailhead kiosk before you walk in, not here. Campfires are legal in the existing rings when no burn ban is in effect, but the ground is thin alpine meadow and firewood is scarce, so most parties do without.",
+         "capacity": "Two small Forest Service campgrounds a mile apart, five or six sites at the pass itself and roughly twice that at Meadows, first come first served with no reservations. They fill on summer weekends and in larch season, and there is no overflow up here."
+        },
+        {
+         "name": "Windy Pass and the crest camps north of Harts Pass",
+         "role": "route",
+         "type": "camp",
+         "notes": "This is the first day of every trip toward Castle and Blizzard and the natural stop for anyone who wants a night high on the crest without a valley grind. The trail leaves Harts Pass at about 6,200 feet, tops out just under 7,000 a little over two miles north, and never drops below 5,000 the whole way to the border, so this is sustained high open country with long views and no shelter. Snow lingers on the north-facing traverses well into the summer and those crossings are the reason most parties wait until mid August in a heavy year. Wind is the standing complaint at Windy Pass and it earns the name; camping a little below the crest costs nothing and buys a great deal. There is no mobile service anywhere along here. As pure staging these camps do nothing for the Robinson Creek or Middle Fork peaks, which go the other direction from the pass.",
+         "water": "Sparse and the defining planning problem of this stretch. There is nothing at the pass itself; the nearest campsites with water sit most of a mile further on and a couple of hundred feet higher. Carry enough for at least six miles at a time, and treat the basin between Foggy Pass and Windy Pass, the Shaw Creek crossing and the spring near Holman Peak as the fixed points to plan around rather than assuming you will find something in between.",
+         "permit": "Free self-issue wilderness permit from the kiosk at Harts Pass, no quota and nothing to reserve. Northwest Forest Pass or Interagency pass to park. Party size limits and any seasonal campfire ban are posted at the trailhead and change year to year, so read the board rather than assuming. Camping is prohibited within a hundred feet of any lake shoreline, and stock parties must carry certified weed-free feed and may not tie animals to trees overnight.",
+         "capacity": "A string of small established sites in the meadows and basins along the crest, most taking one or two tents. The Pacific Crest Trail hiking season overlaps the climbing season, so expect company at the obvious ones and be ready to walk on to the next."
+        },
+        {
+         "name": "Hopkins Lake and Castle Pass",
+         "role": "route",
+         "type": "camp",
+         "notes": "These are the camps that make Castle Peak and Blizzard Peak possible at all from the American side. Hopkins Lake sits about twenty-four trail miles north of Harts Pass, six hundred feet below the trail, and Castle Pass is roughly twenty-seven miles out at about 5,450 feet. Castle Peak rises directly north and east of the pass and is a scramble from a camp here; Blizzard Peak lies further east toward Frosty Pass and the Chuchuwanteen country and is more often reached by dropping down the West Fork Pasayten from Harts Pass instead, which is a different but comparably long line. Either way this is a three to five day trip for a fit party and there is no shortcut — the loss of the Canadian exit removed the only short approach that ever existed for these two summits. Plan food and water for the full round trip, expect snow on the north slopes into August, and understand that a weather change up here leaves you a very long way from the car.",
+         "water": "Hopkins Lake is the reliable one and is worth the descent for that reason alone — it is the best water for many miles in either direction. Castle Pass is drier and the sources near it are seasonal, so fill at the lake before continuing north.",
+         "permit": "Free self-issue wilderness permit, no quota. Northwest Forest Pass to park at Harts Pass. The international boundary matters here in a way it does not elsewhere in the zone: crossing north into Canada from the backcountry is not lawful and the long-standing arrangement that let northbound trail hikers walk out to the highway in British Columbia was ended in 2025, so there is no exit that way and no legal entry southbound either. Everything in this corner is now an out-and-back from Harts Pass. Camping is prohibited within a hundred feet of the lake shoreline; pull back into the trees.",
+         "capacity": "Hopkins Lake holds several small established sites in the trees around the shore and is the most comfortable camp in the far north of the wilderness. Castle Pass itself has room for a couple of parties in the timber. Neither is large and both see through-hiker traffic."
+        }
+       ],
+       "approachLogistics": {
+        "trailhead": "Harts Pass (end of FR 5400)"
+       }
+      },
+      "notes": "Follow the Pacific Crest Trail north from Harts Pass along the crest, about 27 miles to Castle Pass, then go cross-country onto the peak and around to the north side. It needs no boat and stays in the United States, but it is a very long high walk and the Harts Pass road usually opens only in July.",
+      "objHaz": [
+       "rockfall",
+       "bergschrund",
+       "weather",
+       "remote"
+      ],
+      "hazards": [
+       "Very long high walk of about 27 miles, a 3-5 day trip with no shortcut",
+       "Harts Pass road is single lane, steep and exposed; usually opens only in July; wildfire can close it",
+       "Snow lingering on north-facing traverses into August; sparse water along the crest",
+       "Wind and cold on the open crest, far from the car if weather turns",
+       "Awkward bergschrund or moat at the base of the wall",
+       "Rockfall, worse once sun hits the face; descent by the east ridge and snow finger"
+      ],
+      "whyThisWay": "When no boat is available and you want to stay in the United States; it is about 27 miles each way along the crest from Harts Pass, which usually opens only in July."
+     }
+    ],
+    "climbing_route": null,
+    "bivy": [
+     {
+      "name": "Castle Peak north-side glacier bivy",
+      "role": "main",
+      "type": "bivy",
+      "notes": "Most parties come in from Manning Park, leave the Monument 78 trail near the border and cross a high pass near 8,000 ft to camp below the glacier under the north face.",
+      "water": "Snowmelt and glacier runoff.",
+      "permit": "Free self-issue Pasayten Wilderness permit.",
+      "capacity": "A few tent spots on rock and moraine; no established sites."
+     },
+     {
+      "elev": 6200,
+      "name": "Harts Pass and Meadows campgrounds",
+      "role": "route",
+      "type": "camp",
+      "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approaching seventeen percent on the upper ramps. Trailers are prohibited outright and motorhomes and wide vehicles are strongly discouraged. The road opens with the snowmelt, typically early to mid July and occasionally not until later, and closes with the first serious autumn storms. Above the pass it continues to the gate below Slate Peak at about 7,440 feet, the highest driveable point in the state, which puts you at a trailhead where the walking starts near 7,000 feet instead of 2,500. Four trails leave from here — the Pacific Crest Trail, the West Fork Pasayten, the Middle Fork Pasayten and Buckskin Ridge — so this one pass is the door to Osceola, Blackcap, Dot, Ptarmigan, Castle and Blizzard. Nights are cold and wind at the pass is relentless; pitch behind timber rather than in the open meadow. Note that a large lightning fire that began in mid July 2026 closed the road above the Monument Creek trailhead along with much of the northern wilderness, so confirm the road is actually open before committing to a long drive.",
+      "water": "None. Neither campground has potable water and there is no piped supply anywhere on the pass, so haul everything up from the valley or plan on filtering from creeks well below. This is the single most common mistake parties make staging here.",
+      "permit": "Northwest Forest Pass or an Interagency pass to park at the trailheads; the campgrounds themselves are free but carry no services and no trash collection, so everything you bring comes back out. The free self-issue Pasayten wilderness permit is filled out at the trailhead kiosk before you walk in, not here. Campfires are legal in the existing rings when no burn ban is in effect, but the ground is thin alpine meadow and firewood is scarce, so most parties do without.",
+      "capacity": "Two small Forest Service campgrounds a mile apart, five or six sites at the pass itself and roughly twice that at Meadows, first come first served with no reservations. They fill on summer weekends and in larch season, and there is no overflow up here."
+     },
+     {
+      "name": "Windy Pass and the crest camps north of Harts Pass",
+      "role": "route",
+      "type": "camp",
+      "notes": "This is the first day of every trip toward Castle and Blizzard and the natural stop for anyone who wants a night high on the crest without a valley grind. The trail leaves Harts Pass at about 6,200 feet, tops out just under 7,000 a little over two miles north, and never drops below 5,000 the whole way to the border, so this is sustained high open country with long views and no shelter. Snow lingers on the north-facing traverses well into the summer and those crossings are the reason most parties wait until mid August in a heavy year. Wind is the standing complaint at Windy Pass and it earns the name; camping a little below the crest costs nothing and buys a great deal. There is no mobile service anywhere along here. As pure staging these camps do nothing for the Robinson Creek or Middle Fork peaks, which go the other direction from the pass.",
+      "water": "Sparse and the defining planning problem of this stretch. There is nothing at the pass itself; the nearest campsites with water sit most of a mile further on and a couple of hundred feet higher. Carry enough for at least six miles at a time, and treat the basin between Foggy Pass and Windy Pass, the Shaw Creek crossing and the spring near Holman Peak as the fixed points to plan around rather than assuming you will find something in between.",
+      "permit": "Free self-issue wilderness permit from the kiosk at Harts Pass, no quota and nothing to reserve. Northwest Forest Pass or Interagency pass to park. Party size limits and any seasonal campfire ban are posted at the trailhead and change year to year, so read the board rather than assuming. Camping is prohibited within a hundred feet of any lake shoreline, and stock parties must carry certified weed-free feed and may not tie animals to trees overnight.",
+      "capacity": "A string of small established sites in the meadows and basins along the crest, most taking one or two tents. The Pacific Crest Trail hiking season overlaps the climbing season, so expect company at the obvious ones and be ready to walk on to the next."
+     },
+     {
+      "name": "Hopkins Lake and Castle Pass",
+      "role": "route",
+      "type": "camp",
+      "notes": "These are the camps that make Castle Peak and Blizzard Peak possible at all from the American side. Hopkins Lake sits about twenty-four trail miles north of Harts Pass, six hundred feet below the trail, and Castle Pass is roughly twenty-seven miles out at about 5,450 feet. Castle Peak rises directly north and east of the pass and is a scramble from a camp here; Blizzard Peak lies further east toward Frosty Pass and the Chuchuwanteen country and is more often reached by dropping down the West Fork Pasayten from Harts Pass instead, which is a different but comparably long line. Either way this is a three to five day trip for a fit party and there is no shortcut — the loss of the Canadian exit removed the only short approach that ever existed for these two summits. Plan food and water for the full round trip, expect snow on the north slopes into August, and understand that a weather change up here leaves you a very long way from the car.",
+      "water": "Hopkins Lake is the reliable one and is worth the descent for that reason alone — it is the best water for many miles in either direction. Castle Pass is drier and the sources near it are seasonal, so fill at the lake before continuing north.",
+      "permit": "Free self-issue wilderness permit, no quota. Northwest Forest Pass to park at Harts Pass. The international boundary matters here in a way it does not elsewhere in the zone: crossing north into Canada from the backcountry is not lawful and the long-standing arrangement that let northbound trail hikers walk out to the highway in British Columbia was ended in 2025, so there is no exit that way and no legal entry southbound either. Everything in this corner is now an out-and-back from Harts Pass. Camping is prohibited within a hundred feet of the lake shoreline; pull back into the trees.",
+      "capacity": "Hopkins Lake holds several small established sites in the trees around the shore and is the most comfortable camp in the far north of the wilderness. Castle Pass itself has room for a couple of parties in the timber. Neither is large and both see through-hiker traffic."
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "fight or flight",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   }
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_jack_mountain_east_ridge",
+    "area_id": "wa_jack_mountain",
+    "name": "East Ridge",
+    "set": {
+     "discipline": "alpine",
+     "grade": "5.0",
+     "overview": "A long, exposed rock ridge on the east side of Jack Mountain, mostly class 3 and 4 on loose greenstone with up to three short roped steps of low fifth class (the hardest about 5.0). Parties carry a rope and a few pieces for those steps and for protecting the downclimb."
+    },
+    "add": {
+     "hazards": [
+      "Three short low-fifth-class steps interrupt the class 3-4 ridge; a party with no rope has no safe way to reverse the hardest one."
+     ]
+    }
+   },
+   "before": {
+    "id": "wa_jack_mountain_east_ridge",
+    "area_id": "wa_jack_mountain",
+    "name": "East Ridge",
+    "discipline": "alpine",
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Carl Skoog and Gordon Skoog, July 16, 1984 (the same pair climbed a variation of the east-ridge route on September 23, 1984)",
+    "lat": null,
+    "lng": null,
+    "aspect": "E",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "60 m rope",
+     "Harness",
+     "Set of nuts",
+     "A few small-to-medium cams",
+     "Long slings and alpine draws",
+     "Helmet",
+     "Ice axe",
+     "Crampons",
+     "2 snow pickets",
+     "Crevasse rescue kit",
+     "Tat for anchors"
+    ],
+    "hazards": [
+     "Loose rock typical of the Hozameen Group bedrock",
+     "Remote location with a long, difficult retreat",
+     "Three short low-fifth-class steps interrupt the class 3-4 ridge; a party with no rope has no safe way to reverse the hardest one."
+    ],
+    "verif": null,
+    "overview": "A long, exposed rock ridge on the east side of Jack Mountain, mostly class 3 and 4 on loose greenstone with up to three short roped steps of low fifth class (the hardest about 5.0). Parties carry a rope and a few pieces for those steps and for protecting the downclimb.",
+    "beta": "One of Jack Mountain's established routes.",
+    "turnaround": "Use position and pace rather than a fixed hour. The one published timing datum — 9.5 hours from low on the glacier to the summit — tells you this is a full day, so if you are materially behind that pace at the halfway point, reversing the ridge in daylight is the better outcome. Turn around for weather building on an exposed crest, for snow or rain on the loose greenstone, and any time route-finding stalls the party repeatedly.",
+    "auto_generated": false,
+    "alpine_grade": "II",
+    "rock_grade": "Class 4",
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": "No fixed rappels. Parties reversing the ridge build anchors on slung blocks as needed; bring tat and a few nuts.",
+    "commitment": "II",
+    "face": "East Ridge",
+    "permit": null,
+    "comms": "No cell coverage on any approach to Jack Mountain or on the peak itself. Carry a satellite messenger or PLB. Nearest staffed contact is the North Cascades Wilderness Information Center in Marblemount (360-854-7245); emergencies go through 911 / Whatcom County Sheriff dispatch.",
+    "descent": "Commonly used as a descent itself. Parties climbing the East Ridge typically reverse it, downclimbing the Class 4 ground with occasional rappels off slung blocks.",
+    "obj_haz": [
+     "loose rock",
+     "rockfall",
+     "exposure",
+     "crevasses on the approach glacier",
+     "route-finding",
+     "afternoon thunderstorms",
+     "cornices in shoulder season"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.77284,
+      "lng": -120.95637,
+      "elev": 9075,
+      "name": "Jack Mountain summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 9075
+     }
+    ],
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": [
+     "alpine"
+    ],
+    "timing": {
+     "totalHrs": null,
+     "summitTimeHrs": 9.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "Pre-dawn. The one published figure for this route - 9.5 hours from low on the glacier to the summit - means a full day even before the descent, so start in the dark and plan to finish in daylight."
+    },
+    "detailed_rack": "No published rack exists. For Class 4 on loose greenstone with a glacier approach, carry a 60 m rope, harnesses, a light rock rack (a set of nuts, a couple of small-to-medium cams, and a generous set of slings and long runners for blocks and horns), plus tat and spare nuts for rappel anchors on the way down. Two snow pickets for the glacier approach.",
+    "what_to_bring": [
+     "Shell and insulating layers",
+     "Headlamp and spare batteries - this is a long day",
+     "Map, compass and GPS with your intended approach line loaded",
+     "2-3 L water capacity plus a filter",
+     "First aid kit",
+     "Tent, bag and stove for 3-4 nights",
+     "Satellite messenger or PLB",
+     "Ample food",
+     "ice axe and crampons — glacier approach",
+     "crevasse-rescue kit — glacier approach",
+     "Rope, a few cams and slings for the ridge's fifth-class steps (July)",
+     "Sandals or camp shoes for the Canyon Creek ford (July)"
+    ],
+    "pro_tips": [
+     "Read both published trip reports (2006, up the North Ridge and down this ridge; and July 2025) before you go - they are the fullest public accounts of the line.",
+     "The only published timing for this route is 9.5 hours from low on the glacier; treat it as your planning baseline and start accordingly.",
+     "This ridge is a legitimate descent option from the north side of the mountain, which is worth knowing if you are climbing the North Ridge or a north-side glacier.",
+     "The route is long and very exposed - the difficulty is endurance and exposure management, not hard moves.",
+     "As everywhere on Jack, the rock is loose metavolcanic greenstone; a helmet and disciplined party spacing matter more than a big rack."
+    ],
+    "watch_out": [
+     "Sustained exposure over a long distance on Class 4 loose rock - a slip is unlikely to be arrested.",
+     "Public beta is thin; there is no topo and no fixed gear on the ridge.",
+     "The approach involves glacier travel on the east side of the mountain, so crevasse hazard applies before you reach the rock.",
+     "Reversing the ridge takes as long as climbing it; underestimating the day is the classic error here.",
+     "Weather on an exposed crest with no quick descent is the main strategic hazard."
+    ],
+    "pro_needs": "Sparse. Class 4 on Jack's rock is mostly unprotectable, and slings over blocks will be your main protection. Carry enough to build anchors for a retreat rather than expecting to protect the climbing continuously.",
+    "best_season": "Mid-July through September. The Skoog first ascent was 16 July 1984 and their variation went on 23 September 1984, bracketing the practical window. Earlier and the ridge holds snow and the glacier approach is a bigger undertaking; later and fresh snow on the loose rock makes reversal dangerous. SR 20 gates the season, typically opening mid-April to early May and closing late November or early December.",
+    "high_point_ft": 9075,
+    "aid_grade": null,
+    "approach": "Access is from the south, through the Jerry Lakes basin. From the Canyon Creek Trailhead (~1,900 ft, SR 20 near MP 141), ford Canyon Creek and take the McMillan Park-Jackita Ridge Trail #738 to the Crater Mountain trail, continue past Crater Lake, then leave the trail between about 6,400 and 6,700 ft for a saddle at about 7,200 ft. From the saddle, cross the Jerry Glacier and drop into the Jerry Lakes basin, where nearly everyone camps; the route starts low on the glacier on the east side of the mountain, several hundred feet down into the next basin north. Most parties on Jack take three to four days for any route. No turn-by-turn approach exists for the East Ridge itself, so study satellite imagery before committing to a line. In July, from the Jerry Lakes camp a goat path leads to the col; lose about 800 ft into the next basin, climb the southeast arm, cross a snowfield and scramble to the ridge near 7,200 ft.",
+    "descent_text": "The East Ridge is one of the mountain's more reasonable descents — at least one documented party climbed the North Ridge specifically so they could descend this ridge. Reversing it means downclimbing sustained Class 4 on loose rock with big exposure, so carry enough slings and cord to leave rappel anchors on blocks where downclimbing is unattractive. There are no fixed anchors. If you approached from the east glacier, the descent puts you back on the glacier and you should be roped for the crossing. The alternative — descending the South Face and exiting over Jerry Lakes — is a viable escape but leaves you a long way from an eastern or northern camp. Plan and scout the descent before you climb, and leave real daylight margin: the published figure of 9.5 hours from low on the glacier is for the ascent alone. In July the crux was downclimbed on a protected system and only one rappel off an existing tat anchor was needed lower on the ridge; the glacier basin below was best crossed on snow.",
+    "bail": "Retreat off a long Class 4 ridge means downclimbing with occasional improvised rappels — carry tat and a few nuts. The escape options either side of the crest are poor on loose ground, so the honest bail is back down the ridge to the glacier. Once on the glacier, retreat is a roped descent to camp. Bail early rather than late: the ridge is described as long and very exposed, and it gets harder to reverse the further you commit.",
+    "pitch_detail": null,
+    "itinerary": "Budget three to four days, the norm on this peak. Day 1: approach and establish a camp on the eastern side of the mountain. Day 2: the climb — the published account records 9.5 hours from low on the glacier for the Skoogs' variation, so plan a pre-dawn start and a full day up and down. Day 3: return. Hold a fourth day for weather; the ridge is exposed and there is nowhere quick to go if a front arrives.",
+    "access": {
+     "fees": "No permit fee. Parking at the Canyon Creek Trailhead requires a recreation pass; the East Bank Trailhead does not.",
+     "permit": "Free, non-quota, self-issued Pasayten Wilderness permit at the trailhead register. If you camp at a designated site along the East Bank Trail, a separate limited NPS backcountry permit is required.",
+     "closures": "SR 20 winter closure MP 134 to MP 171. The Canyon Creek bridge on Jackita Ridge Trail #738 was destroyed by a falling tree and must be forded; the creek runs high and hazardous into midsummer.",
+     "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District - Jack Mountain is in the Pasayten Wilderness. If your approach uses the East Bank Trail, that portion is Ross Lake National Recreation Area under the National Park Service.",
+     "passRequired": "Northwest Forest Pass, Digital Day Pass or Interagency pass at Canyon Creek Trailhead; none at the East Bank Trailhead.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Complex backcountry permit (covers Ross Lake NRA) - quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit at the Wilderness Information Center in Marblemount. Cross-country climbing camps need a permit for the zone you camp in."
+     }
+    },
+    "road": {
+     "name": "SR 20 (North Cascades Highway)",
+     "status": "Paved. Depending on the approach chosen, park at the Canyon Creek Trailhead (gravel lot and restroom, near MP 141) or the East Bank Trailhead (roadside, MP 138).",
+     "driveNote": "SR 20 east from Marblemount and Newhalem. The East Bank Trailhead is at MP 138; the Canyon Creek Trailhead is 3.4 miles further east near MP 141, on the left coming from the west.",
+     "seasonalGate": "SR 20 closes each winter between the Ross Dam gate (MP 134) and the Silver Star gate (MP 171), typically late November/early December to mid-April or early May; the 2026 opening slipped to June 14 after flood damage."
+    },
+    "climate": {
+     "fall": "September is good - the Skoogs' variation went on 23 September. Dry rock and stable air, but shortening days on a long route.",
+     "spring": "Snow-covered and best left alone; the glacier approach is avalanche terrain and the highway is often still gated.",
+     "summer": "The season opens in mid-July, matching the first-ascent date. Expect residual snow in the ridge's gullies early in the month.",
+     "winter": "Not a documented winter objective; the highway is closed and the route would be a serious expedition.",
+     "typical": "East-of-crest North Cascades weather: drier and more continental than the Skagit valley, but Pacific fronts wrap around Ross Lake with little warning. The east aspect gets early sun, which helps dry the rock but also warms any residual snow.",
+     "forecastZone": "NWAC West Slopes North is the nearest named avalanche zone, though Jack lies east of NWAC's observation network."
+    },
+    "emergency": {
+     "notes": "No cell coverage. Carry a satellite messenger or PLB. Any rescue from this ridge would be a multi-day operation, so carry enough to survive an unplanned night out.",
+     "county": "Whatcom County, Washington.",
+     "rangerStation": "North Cascades Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA 98267 - 360-854-7245; Methow Valley Ranger District, Winthrop, for the Pasayten Wilderness.",
+     "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA 98284 - (360) 856-6021, 24-hour ER.",
+     "sheriffDispatch": "911; Whatcom County Sheriff non-emergency dispatch 360-676-6911. Whatcom County Search & Rescue is dispatched through the Sheriff's Office."
+    },
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through August, once the Canyon Creek crossing drops and the glaciated east flank is still snow-covered",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Creek levels fall and the high country melts out through the month; the first ascent was made in mid-July, with snow still on the ridge.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Canyon Creek runs high and dangerous with snowmelt, and deep snow on the approach ridges and the east-side glacier makes a multi-day trip much bigger.",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Stable mid-summer weather, fewer bugs and manageable snow on the east-side glacier make this the best window for a 3-4 day trip.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Autumn snow on the loose Hozameen rock and short days make retreat from this remote ridge hazardous; SR 20 closes for winter later in autumn.",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Low creeks ease the approach, but the glacier turns icier with open crevasses, and fresh snow on the loose rock makes reversing the ridge dangerous.",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Jerry Lakes and the bench below the east glacier",
+      "notes": "The East Ridge is most often met as a descent, because parties who climb the North Ridge come over the summit and go down this way, but it is the better of the two to climb and it is reached from the opposite side of the mountain. Access is from the south: the Canyon Creek Trailhead on SR 20 at about 1,900 ft, a ford of Canyon Creek, then the McMillan Park and Jackita Ridge trail gaining some 3,400 ft in four miles to the Crater Mountain trail, up past Crater Lake, and off-trail somewhere between 6,400 and 6,700 ft to a saddle at about 7,200 ft. From the saddle, drop across the Jerry Glacier and down into the Jerry Lakes basin, where nearly everyone camps. Reckon on three days minimum, and note that the summit day begins by losing several hundred feet into the next basin north before any climbing starts. The ridge itself runs about 1,400 to 1,600 ft from its base up to roughly 8,600 ft, where it dies into the Southeast Ridge and a single common crest carries on to the top. Parties disagree sharply about the rock: the lower third is good blocky class three and four, the upper third is fractured and loose, and the published class four understates the ground — a recent party found three short pitches of fifth class, including a wildly exposed 5.0 step in the middle of the crest, and made one rappel lower down off existing tat. There is no other fixed gear, so carry slings and cord.",
+      "season": "Mid-July to mid-September",
+      "hazards": [
+       "Fractured, loose rock on the upper third with almost nothing dependable to protect it",
+       "Sustained exposure along the whole crest, with a thousand feet of air below the middle section",
+       "The line strays off the crest to the north in the middle third, which is where parties lose it in descent",
+       "Only one existing anchor on the route, so every other rappel is one you build and leave",
+       "Collapsing snow fingers where the snowfield meets the toe of the east glacier",
+       "Long cross-country approach with no trail for the final miles, and 800 ft to regain on the way home",
+       "Very remote, with a difficult retreat from anywhere on the ridge"
+      ],
+      "baseFinding": "Jack's east and southeast ridges hold a small pocket glacier between them like a bay, and finding this route is entirely a matter of working out which side of that bay you are on. The Southeast Ridge is the bay's right-hand edge, the East Ridge its left, and the two merge at about 8,600 ft. From the Jerry Lakes camp the day starts by dropping several hundred feet into the basin to the north, then climbing the southeast arm to a level bench at roughly 7,000 to 7,200 ft. That bench is where the mountain's two commonly climbed routes part company, and the decision there is a single either-or. Traverse left and west on scree under the south face and you are on the standard South Face route, whose landmarks are unmistakable once you start seeing them: a small snowfield, then a larger one likened to a fish or a lobster claw, a refrigerator-sized boulder with rope slung round its middle, a stream that only runs in the afternoon, and a short class four step into a hidden chimney. If you are hunting for a slung boulder, you are on the wrong route. Traverse right and north instead, onto the snowfield beneath the pocket glacier, and a few hundred feet of scrambling gains the crest proper. The confirmation is the view over the back. There is a notch at about 7,000 ft on this ridge, and from it the ground falls away onto a big broken glacier dropping north toward Devils Creek; if you can see that, you are on the East Ridge and not the Southeast. The second check is the rock, which low down is good blocky class three and four, where the South Face is loose almost from the start. One trap worth knowing: there are two cols at about 7,200 ft on this trip, the Crater Mountain saddle on the approach and this bench, and they lie four miles apart, so an altimeter alone will not tell you which one you are standing on."
+     }
+    ],
+    "climbing_route": null,
+    "bivy": [],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "east ridge rdg",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_mutchler_peak_scramble",
+    "area_id": "wa_mutchler_peak",
+    "name": "Mutchler Peak Scramble",
+    "set": {
+     "discipline": "alpine",
+     "grade": "Class 3"
+    },
+    "add": {
+     "hazards": [
+      "Crevasses and glide cracks on the Mutchler Glacier",
+      "A cornice on the ridge above Cyclone Lake in early summer"
+     ],
+     "gear": [
+      "Rope and glacier kit for the cirque crossing in June and early July",
+      "Ice axe"
+     ]
+    }
+   },
+   "before": {
+    "id": "wa_mutchler_peak_scramble",
+    "area_id": "wa_mutchler_peak",
+    "name": "Mutchler Peak Scramble",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": "N",
+    "season": "Jul-Sep",
+    "description": null,
+    "gear": [
+     "Ice axe (recommended into early summer for north-facing snow)",
+     "Sturdy boots with good tread for steep heather and slab",
+     "Trekking poles for the brushy approach",
+     "Map/compass or GPS — travel is cross-country with no maintained trail",
+     "Satellite communicator (InReach/Zoleo) given unreliable cell coverage",
+     "Rope and glacier kit for the cirque crossing in June and early July",
+     "Ice axe"
+    ],
+    "hazards": [
+     "Loose, blocky rock typical of North Cascades scrambling terrain",
+     "Steep heather and slab that become slick and hazardous when wet or dewy",
+     "Lingering snow and ice on north-facing gullies and slopes into July",
+     "Difficult route-finding through cliff bands below Point 5791 on the Kindy Ridge approach",
+     "Dense brush, slide alder, and devil's club on the lower approach where the old road bed is overgrown",
+     "Swollen creek crossings (Cascade River, Kindy/Mutchler Creek) during peak snowmelt",
+     "Crevasses and glide cracks on the Mutchler Glacier",
+     "A cornice on the ridge above Cyclone Lake in early summer"
+    ],
+    "verif": null,
+    "overview": "Mutchler Peak (7,150 ft; referenced in some older trip reports as 'Snowqueen') is a remote summit in the Buckindy Group of the Cascade River backcountry, part of the rugged, semi-glaciated ridge system southeast of Marblemount that also includes Snowking Mountain (7,433'), Mount Buckindy (7,320'), Mount Misch (7,435'), Bruseth Mountain (7,220'), and Mount Chaval to the east. There is no maintained trail to Mutchler; it sits in roadless country between the Cascade River and Suiattle River drainages and is almost always climbed cross-country as part of a longer Buckindy Range traverse rather than as a standalone day trip.",
+    "beta": "Mutchler Peak sits at the east end of the long southeast ridge that runs off Snowking Mountain, above the Kindy Creek/Mutchler Creek drainage. Parties reach it either by continuing the Kindy Ridge approach used for Snowking's East Ridge (3rd class, Grade II) past the summit and along the connecting ridge/snowfields toward the Buckindy group, or from the south on the longer Green Mountain–Mount Misch–Mount Buckindy traverse, camping at the pass between Kindy and Buck Creeks before crossing to Mutchler. Terrain is a mix of steep heather, talus, snow/glacier remnants, and low-class rock; one documented traverse rappelled over a cornice to reach the peak.",
+    "turnaround": "Given the long, remote approach and the North Cascades' typical afternoon thunderstorm/whiteout risk in summer, set a firm turnaround time to be off exposed ridge and heather terrain by early-to-mid afternoon.",
+    "auto_generated": true,
+    "alpine_grade": "Mountaineers Scramble S4 / Terrain T5 (rated for the Snowking Mtn NE Shoulder portion that this route climbs first)",
+    "rock_grade": "3rd class (one short step, on Kindy Ridge below Snowking's summit)",
+    "ice_grade": null,
+    "gain_ft": 6500,
+    "loss_ft": 6500,
+    "dist_km": null,
+    "max_angle": 40,
+    "rappels": "0",
+    "commitment": null,
+    "face": "Mutchler Glacier cirque, on Snowking Mountain's southeast ridge",
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota or reservation. This peak is on Mt. Baker-Snoqualmie National Forest land, not in the North Cascades National Park complex.",
+    "comms": "Deep wilderness terrain far from any road; no reliable cell coverage should be expected in the Kindy Creek/Buckindy interior. Carry a satellite communicator or PLB.",
+    "descent": "Descend via the standard descent route, retracing the ascent when possible. Be aware of loose rock and snow bridge hazards. Maintain group cohesion on exposed sections.",
+    "obj_haz": [
+     "glacier/crevasse",
+     "moat and wet-slab snow",
+     "cold creek ford",
+     "landslide-prone access road",
+     "remote terrain with no cell coverage"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.466746,
+      "lng": -121.216722,
+      "elev": 1250,
+      "name": "FR-1570 Washout Parking (Cascade River crossing)",
+      "note": "Small pullout for 4-5 cars just past a washed-out culvert, 0.4 mi beyond the Cascade River bridge and 1.9 mi off Cascade River Road (FR-15) at mile 14.2 from Marblemount; FR-1570 is impassable to vehicles beyond here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Cascade River Road roughly 14.2 miles from Marblemount and turn onto FR-1570, signed for Kindy Ridge and Found Lake, crossing the Cascade River. Park at the washout just past the washed-out culvert — a small pullout with room for four or five cars at about 1,250 ft. FR-1570 is impassable to vehicles beyond this point and the old spur is permanently closed, so the hike starts on the abandoned roadbed near Vee Creek. Cascade River Road access is seasonal and typically gated in winter, and mid-July through September is when the lower slopes are clear enough to be worth the drive."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 2300,
+      "name": "Overgrown Roadbed / Way-Trail Start",
+      "note": "The abandoned FR-1570 roadbed (brushy, several windfalls to step over) ends in an old clearing with a firepit, where a steep, unmarked way-trail breaks off uphill toward Kindy Ridge.",
+      "type": "Junction",
+      "distMi": 3,
+      "directions": "Walk the abandoned FR-1570 roadbed past the washed-out culvert, stepping over several windfalls including a large log about 0.8 mile in, to its end at an old clearing with a firepit beside a reliable creek, the last easy water before the ridge."
+     },
+     {
+      "lat": 48.44016,
+      "lng": -121.24178,
+      "elev": 4809,
+      "name": "4,800 ft Saddle / Kindy Ridge Gain",
+      "note": "The steep boot path tops out at a broad saddle near 4,800 ft, north of Found Peak, where the route gains the ridge crest and a side path drops to Found Lake; footing is loose and the path is easy to lose here in fog or low visibility.",
+      "type": "Junction",
+      "distMi": 4.2,
+      "directions": "From the firepit the unmarked climbers' path climbs steeply at once through old-growth forest on exposed roots, with spur tracks around blowdown and stretches where the tread fades, roughly 2,500 ft up to a broad saddle near 4,800 ft north of Found Peak. The path is easy to lose here in fog."
+     },
+     {
+      "lat": 48.415587,
+      "lng": -121.252155,
+      "elev": 5850,
+      "name": "Kindy Ridge Climbers' Boot Path",
+      "note": "Point on the shared Kindy Ridge climbers' route used by Snowking/Buckindy parties; the path crosses Point 5695 here, past Found Peak, then drops to a saddle before Mutchler parties head down into the Cyclone Lake basin.",
+      "type": "Junction",
+      "distMi": null,
+      "directions": "Relocate the boot path at the saddle and follow it up through grass and boulders about 600 ft into a meadow with Found Lake below, then continue south past Found Peak, descending the steep path through the cliffs, and climb over Point 5695 on Kindy Ridge."
+     },
+     {
+      "lat": 48.4154578,
+      "lng": -121.2587309,
+      "elev": 5354,
+      "name": "Cyclone Lake Basin",
+      "note": "Largest and highest of the alpine lakes on Snowking's flanks; established rough campsites on the benches above the lake serve as the usual base camp for Mutchler's summit push, with reliable water from the lake and inlet tarns.",
+      "type": "Campsite",
+      "distMi": 6.3,
+      "directions": "Drop south to the next saddle, then leave the ridge and descend west into the Cyclone Lake basin. Rough campsites sit on the benches above the lake, with water from the lake and the tarns above it."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 6800,
+      "name": "Heather/Rock Flank Below Summit Block",
+      "note": "Loose, exposed heather-and-rock slope gaining Mutchler's upper flanks — the Class 3 crux referenced in the route grade; can be slick when wet and is the same terrain used on descent.",
+      "type": "Hazard",
+      "distMi": 7.2,
+      "directions": "From camp, head south across the basin and ridge terrain toward Mutchler Peak, then climb the heather and blocky rock slopes onto its upper flank. The heather is loose and slick when wet."
+     },
+     {
+      "lat": 48.38931,
+      "lng": -121.24848,
+      "elev": 7150,
+      "name": "Mutchler Peak",
+      "note": "True summit at 7,150 ft; open views west to Snowking Mountain's glaciers and south/east across the Buckindy group peaks (Sonny Boy, Bruseth, Misch, Buckindy).",
+      "type": "Summit",
+      "distMi": null,
+      "directions": "Scramble Class 2-3 blocky rock to the summit, with some loose rock near the top."
+     }
+    ],
+    "gpx": [
+     [
+      48.466746,
+      -121.216722
+     ],
+     [
+      48.44016,
+      -121.24178
+     ],
+     [
+      48.415587,
+      -121.252155
+     ],
+     [
+      48.4154578,
+      -121.2587309
+     ],
+     [
+      48.389316,
+      -121.248515
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": [
+     "alpine"
+    ],
+    "timing": {
+     "totalHrs": 19,
+     "summitTimeHrs": 6.5,
+     "descentTimeHrs": 5.5,
+     "approachTimeHrs": 7,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "From the Kindy Ridge trailhead at the end of the South Fork Cascade River Road (#1570), follow the blocked/overgrown road then a steep, unmaintained way-trail up Kindy Ridge, stayi…",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6.5,
+       "note": "From camp, traverse south along the connecting ridge/basin terrain toward Mutchler Peak, the alpine high point of Snowking's long southeast ridge. Expect class 2-3 scrambling on th…",
+       "fromTo": "Summit push to Mutchler Peak",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Break camp and reverse the day 1 route back down Kindy-Found Ridge and the way-trail to the road end. Mostly downhill but still slow, brushy off-trail travel with a full pack.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "detailed_rack": "No rock rack is needed. The standard line is a Class 2-3 scramble up heather and blocky rock, and parties reach the summit unroped; no rack is carried.",
+    "what_to_bring": [
+     "helmet",
+     "ice axe (early season)",
+     "map/compass/GPS",
+     "extra food/water for a long day"
+    ],
+    "pro_tips": [
+     "Most parties climb Mutchler as part of a longer Buckindy Range traverse rather than a standalone objective, given the length of the approach",
+     "Cyclone Lake (reached via Kindy Ridge) is the standard base camp for Mutchler, Snowking, Buckindy, and Misch — plan a 2-3 day trip rather than a single push",
+     "Check current Mount Baker-Snoqualmie NF road status before driving; the Cascade River Road washout point near the Kindy Creek/FR 1570 area has persisted for years and can add miles of extra walking or biking"
+    ],
+    "watch_out": [
+     "Route-finding through the cliff bands below Pt. 5791 is the crux of the standard approach, not the summit scrambling itself",
+     "Heather and slab slopes are far more hazardous wet than dry — check weather before committing",
+     "The old road/way-trail approach is brushy and easy to lose in places; expect real bushwhacking, not a maintained trail"
+    ],
+    "pro_needs": "No protection is needed on the standard line: it is a Class 2-3 scramble with no roped glacier travel, and there are no fixed anchors or bolts on the scrambling sections.",
+    "best_season": "Late July through September, once snow has receded from the approach gullies, cliff bands, and heather slopes. Earlier attempts (June) face lingering snow/ice on north-facing terrain and dangerous, swollen creek crossings on the approach. Because of the long cross-country approach, this is usually planned as a 2-3 day trip combined with neighboring Buckindy Group summits rather than a single-day outing.",
+    "high_point_ft": 7150,
+    "aid_grade": null,
+    "approach": "Park at the Cascade River Road washout roughly 14.2 miles from Marblemount, about 100 yards past the Cascade River crossing near the FR 1570 junction (signed for Kindy Ridge/Found Lake). The old FR 1570 spur is now permanently closed to vehicles, so the hike starts on the abandoned roadbed near Vee Creek at roughly 1,150-1,400 ft — parties note the washed-out culvert and downed timber (one log up to 4 ft across) blocking the road about 0.8 mile in. Follow the old road/boot path, crossing several windfalls, to an old firepit near a reliable creek (last easy water before the ridge). From the firepit the unmaintained climbers' path turns steep immediately, threading old-growth forest on exposed roots with occasional spur tracks around blowdown; expect the tread to fade into debris in places — this stretch to the Found Peak area (roughly 2.5 miles, gaining ~2,500-3,000 ft) is the main route-finding crux of the approach. The path dips to a broad saddle near 4,800 ft where the boot path is easy to lose; parties often end up scrambling 300-400 ft above the pass before relocating the trail, then follow it up through grass and boulders (~600 ft) into a meadow with Found Lake below (pools here are not reliably potable). From there the route climbs over Point 5695 and drops to a second saddle before joining Kindy Ridge proper: a broad, mostly open granite ridge combining faint tread and easy slab-hopping, steep but non-technical, with constant views toward Snowking Mountain, Mutchler Peak, and the Cyclone Lake basin. Camps are commonly made near 6,200 ft on the ridge or down at Cyclone Lake (a strikingly turquoise tarn-fed lake); a small stream south of the ridge camp and a tarn just above Cyclone Lake are the best water sources up high. From the ridge/Cyclone Lake basin, Mutchler Peak's summit block is reached by heather and blocky rock slopes rising out of the basin — moderate Class 2-3 scrambling with some loose rock near the top; no published figure gives the car-to-summit distance for Mutchler itself, but Snowking, reached by the same approach over Kindy Ridge, is roughly 16-18 miles round trip. Because the approach is entirely unmaintained (no official trail, no numbered Forest Service trail), competent off-trail navigation is required, and this is a long, full-day-plus approach — most parties treat it as an overnight rather than a single push.",
+    "descent_text": "Descend by reversing the ascent line: down Mutchler's heather and blocky rock flanks into the Cyclone Lake basin, then back up and over the Found Peak/Kindy Ridge saddle system to the 4,800 ft saddle and down through the old-growth/windfall section to the firepit and abandoned FR 1570 roadbed, then out to the Cascade River Road washout. This is a walk-off/downclimb the entire way — no rappelling is involved on the scramble route or its descent. The main descent hazards are route-finding (the boot path through the meadow/saddle area above Found Peak is easy to lose in both directions and there are cliff bands nearby to avoid), loose rock and heather on the steep upper slopes off Mutchler's summit, and fatigue-driven navigation errors on the long unmaintained stretch back to the road, especially if daylight runs short — at least one trip report specifically mentions avoiding a creek-bed shortcut on the way out after dark in favor of staying on the known road/trail line.",
+    "bail": "Descend to the approach drainage and follow it back toward the road.",
+    "pitch_detail": null,
+    "itinerary": {
+     "cal": "Off-trail approach is brushy and best done once most snow has melted off the lower slopes, roughly mid-July through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Kindy Ridge trailhead on FR 1570 off the Cascade River Road, follow the blocked/overgrown road then a steep, unmaintained way-trail up Kindy Ridge, staying east of the 5,116' knoll and continuing along Kindy-Found Ridge to a basin camp near Cyclone Pond (~5,450') or the Found Lakes. This is entirely off-trail route-finding through brush and steep timber for the upper portion.",
+       "hours": 7,
+       "miles": 7,
+       "title": "Approach to high camp",
+       "gainFt": 4300,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a basecamp in the Found Lake / Cyclone Pond basin below the Snowking–Mutchler ridge"
+      },
+      {
+       "n": 2,
+       "note": "From camp, traverse south along the connecting ridge/basin terrain toward Mutchler Peak, the alpine high point of Snowking's long southeast ridge. Expect class 2-3 scrambling on the final summit block with route-finding over talus and possible snow patches through early summer; return to the same camp by the same line.",
+       "hours": 6.5,
+       "miles": 3.5,
+       "title": "Summit push to Mutchler Peak",
+       "gainFt": 2000,
+       "lossFt": 2000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave high camp",
+         "detail": "Alpine start to have good snow/rock conditions and margin for route-finding."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Gain the connecting ridge",
+         "detail": "Traverse basin and ridge terrain toward Mutchler's summit block."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Summit Mutchler Peak (7,150')",
+         "detail": "Final scramble is class 2-3; watch for loose rock."
+        },
+        {
+         "time": "+6.5 hr",
+         "label": "Back at high camp",
+         "detail": "Reverse the ridge traverse and descent to camp."
+        }
+       ],
+       "objective": "Climb Mutchler Peak (7,150') and return to high camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the day 1 route back down Kindy-Found Ridge and the way-trail to the road end. Mostly downhill but still slow, brushy off-trail travel with a full pack.",
+       "hours": 5.5,
+       "miles": 7,
+       "title": "Hike out",
+       "gainFt": 200,
+       "lossFt": 4300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to the Kindy Ridge trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip for most parties (in / summit / out): roughly 15-18 miles round trip with about 6,500 ft of cumulative gain, nearly all of it off-trail; strong, experienced parties familiar with the terrain sometimes compress this to 2 days."
+    },
+    "access": {
+     "fees": "Northwest Forest Pass: $5 day-use or $30 annual",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "No maintained trail exists to Mutchler Peak — travel is off-trail/cross-country; practice Leave No Trace on the fragile heather and cross into NPS land only with the required permit if camping",
+     "permit": "No permit needed for day travel on Forest Service land; a wilderness camping permit is required if the route or camp falls within North Cascades National Park Complex backcountry",
+     "closures": "The Cascade River Road / FR 1570 spur has a long-standing washout near the river crossing about 14.2 miles from Marblemount; the drivable endpoint shifts year to year, so check current Mt. Baker-Snoqualmie NF road status before driving",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "group_limit": 6,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District; adjacent to the North Cascades National Park Complex boundary",
+     "land_manager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District",
+     "passRequired": "Northwest Forest Pass required at the Cascade River Road trailhead/parking area",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Sign the wilderness register at the trailhead where one exists."
+     }
+    },
+    "road": {
+     "name": "Cascade River Road (FR 15) to FR 1570 spur",
+     "status": "Gravel forest road; historically washed out roughly 100 yards past the Cascade River crossing about 14.2 miles from Marblemount, forcing parties to park and walk",
+     "driveNote": "High-clearance recommended for the final stretch to the FR 1570 spur; the washout has persisted for years, so call the Mt. Baker Ranger District or check current alerts before driving out",
+     "seasonalGate": "Typically closed/inaccessible in winter and early spring; check current-year opening dates with the Forest Service"
+    },
+    "climate": {
+     "fall": "Shortening days and early snow can return quickly at this latitude and elevation.",
+     "spring": "Deep snowpack; approach road and lower trail often still snow-covered or brushed-in.",
+     "summer": "The realistic climbing window; still expect lingering snow and possible cornices on the ridge in early summer.",
+     "winter": "Not a winter objective; heavy snow and avalanche terrain with no maintained access.",
+     "typical": "Wet, snowy North Cascades maritime climate; heavy winter snowpack lingers on north-facing slopes into July, giving a short July-September climbing window",
+     "forecastZone": "No NWAC zone covers this area directly — use a NOAA point forecast for the Marblemount/Cascade River area and check recent Snowking/Buckindy trip reports for current snow line"
+    },
+    "emergency": {
+     "notes": "Cell coverage is unreliable to nonexistent in the Cascade River / Kindy Creek drainage; carry a satellite communicator and leave a detailed itinerary, as this is a low-traffic, seldom-patrolled area",
+     "county": "Skagit County, WA",
+     "rangerStation": "Mt. Baker Ranger District office, Sedro-Woolley, WA",
+     "nearestHospital": "Skagit Valley Hospital, Mount Vernon, WA (Level III Emergency Department) — roughly 1.5-2 hours' drive from the Cascade River Road trailhead",
+     "sheriffDispatch": "Skagit County Sheriff's Office (911); backcountry rescues in this area are typically coordinated through Skagit County SAR with NPS/USFS support"
+    },
+    "lists": null,
+    "crowds": {
+     "peakTraffic": "rarely climbed - occasional weekend trips July-September, often combined with nearby Buckindy/Chaval/Snowking traverses",
+     "solitudeRating": 5,
+     "estimatePerSeason": "unknown - low-traffic; likely single-digit to low-teens parties per season based on sparse trip-report record"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long, sustained approach day(s) through the Cascade River backcountry with significant elevation gain and brush/bushwhacking before any technical terrain is reached",
+      "packWeight": "Overnight-capable pack likely needed (25-40+ lbs) given the remote, committing approach; some parties may attempt a very long single push"
+     },
+     "approachTime": "Long and committing - likely a full day or more of approach through Cascade River drainages before reaching the peak itself; many parties treat this as an overnight or multi-day objective",
+     "requiredSkills": [
+      "Class 3 scrambling",
+      "off-trail route-finding/navigation",
+      "map & compass or GPS navigation in low-trail terrain",
+      "loose rock (talus/scree) management",
+      "snow travel / ability to assess and cross lingering snowfields",
+      "self-arrest or comparable snow-slope competence in early season"
+     ],
+     "experienceLevel": "Experienced scrambler comfortable with unmaintained trail/off-trail travel and route-finding on a seldom-visited peak; prior Class 3 scrambling and North Cascades bushwhack/approach experience strongly preferred"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "July-September; peak conditions likely mid-July through August once lingering snow has receded",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Within the July-September window, but early July can still hold lingering snow; expect some snow travel",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Lingering snowfields and elevated stream crossings in the Cascade River approach likely persist into early summer; not part of the best-season window",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Mid-season conditions - most consistent snow-free scrambling and driest approach conditions within the best-season window",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still within the best-season window; stable weather but shortening daylight for the long, committing approach",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cascade River backcountry weather for a North Cascades approach; expect variable alpine weather with cool nights",
+      "probability": "Afternoon thunderstorms and sudden weather changes are common in the North Cascades during summer scramble season"
+     },
+     "exposure": "Class 3 terrain with loose rock; falls on loose talus/scree or on lingering snow slopes carry real injury consequence given the remote, committing approach and limited rescue access",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route (broadly within NWAC's West Slopes North Cascades forecast area, but no route-specific avalanche forecast exists and the route is not climbed in avalanche season)",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel on the standard scramble route"
+    },
+    "data_quality": {
+     "gaps": [
+      "No dedicated guidebook or route topo found specifically for Mutchler's summit block; approach detail is drawn from broader Kindy Ridge/Buckindy Group trip reports rather than a Mutchler-specific source",
+      "Exact one-way distance and elevation gain to Mutchler's summit specifically (versus neighboring Snowking) not confirmed in available sources",
+      "Precise coordinates and official USGS/GNIS elevation could not be independently verified (Peakbagger and several forum sources were inaccessible for direct confirmation)",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "MEDIUM",
+     "lastVerified": "2026-07-02"
+    },
+    "difficulty": {
+     "exposure": 4,
+     "physical": 4,
+     "technical": 2,
+     "commitment": 1,
+     "routefinding": 5
+    },
+    "approach_logistics": {
+     "peakLat": 48.389316,
+     "peakLng": -121.248515,
+     "trailhead": "Cascade River Road",
+     "trailheadDirection": "Park at the Cascade River Road washout roughly 14.2 miles from Marblemount, about 100 yards past the Cascade River crossing near the FR 1570 junction (signed for Kindy Ridge/Found Lake)."
+    },
+    "sling_rack": null,
+    "alpine_draws": 0,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": "No route-specific beta found online. Class 3 scrambles of this type typically require no rope.",
+    "ascender": null,
+    "corrections": "Unable to locate any guidebook, Mountain Project, SummitPost, or trip-report coverage for 'Mutchler Peak' despite multiple targeted searches.",
+    "gear_confidence": "inferred",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": [],
+    "features": [
+     "Slab",
+     "Exposed",
+     "Adventurous",
+     "Scenic"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "Class 2-3",
+      "label": "Summit block from the basin",
+      "notes": "From the Kindy Ridge / Cyclone Lake basin, reach Mutchler's summit block by heather and blocky rock slopes rising out of the basin — moderate class 2-3 scrambling, with some loose rock near the top."
+     }
+    ],
+    "bivy": [
+     {
+      "elev": 5442,
+      "name": "Cyclone Lake and the lakes just north of it",
+      "role": "main",
+      "type": "camp",
+      "notes": "The base camp for Snowking Mountain and Mutchler Peak, and the standard end of the Kindy Ridge approach. From the lakes the route follows the Kindy and Found ridge crest south-southwest above Cyclone Lake, keeping south of a cornice that overhangs the ridge, then turns west up moderately steep snow to the summit block; the alternative from the east side of the lake is heather and easy slabs up Snowking's east ridge, finishing on the south. Mutchler is the high point of the long curving ridge running southeast off Snowking and is reached along that crest, and the cirque between the two once held a substantial mid-elevation glacier of which only the highest north-facing ice remains. Getting here from the car is around thirty kilometres and two and a half thousand metres of cumulative gain by the time the undulating ridge is done, which is why nobody does this peak in a day. Snow lingers in the basin well into summer, which is when the camping is flattest and the water is easiest.",
+      "water": "The lakes, reliable through the normal climbing season. This is the last certain water before the glacier and the ridge crest, and there is nothing running once you are up on the ice.",
+      "permit": "Glacier Peak Wilderness, free self-issue permit. Camp back from the shoreline, use a stove rather than a fire at this elevation, and pack out what you bring in. No agency permit is reserved or quota'd anywhere in this zone, which is the practical difference from the park country up the road.",
+      "capacity": "Unimproved sites around the small lakes north of Cyclone Lake, room for two or three parties. No toilet, nothing built."
+     },
+     {
+      "elev": 4000,
+      "name": "Found Lake and the Kindy Ridge saddle",
+      "role": "route",
+      "type": "camp",
+      "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several creeks and two large washouts that are genuinely awkward when snowmelt is high, then take a steep climbers' path off it at about 2,300 feet. That path leads up toward this lake, and the junction where the Found Lake line and the Snowking line split is in the saddle above at about 4,800 feet. Stopping here splits an approach that otherwise routinely takes two days and sometimes three. It is low, forested and buggy in early summer, and it is a long way still from any summit, so treat it as a staging camp rather than a base.",
+      "water": "The lake, dependable through the season, and the first certain water after the long walk up the old logging road. The saddle above it is dry.",
+      "permit": "Glacier Peak Wilderness, free self-issue wilderness permit from the register. Forest Service road 1570 has no developed trailhead, so a vehicle pass is not normally required there, unlike the Slide Lake trail on the other side of the massif; confirm with the district before relying on that. Practical bear precautions are a hang or a canister rather than a requirement here, since this is not park ground.",
+      "capacity": "A few rough spots by the lake, party-sized. Nothing established, no toilet, no platforms."
+     },
+     {
+      "name": "Kindy Ridge crest camps",
+      "role": "route",
+      "type": "bivy",
+      "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few workable spots and no established ones. This matters most for anyone linking the peaks rather than climbing one: the high route around the headwaters of Kindy Creek runs along this ground and Mutchler is often called the best vantage point on the whole traverse. Weather is the risk that makes a crest camp expensive here, since the ridge is exposed for miles with no shelter and the retreat is back down the same slow ground. Season is roughly July into September, earlier if you want continuous snow to travel on and later if you want the cornices gone.",
+      "water": "Conditions-dependent and the thing to plan around. Early in the season there are snow patches and runnels most of the way along; by late summer whole sections of the crest are dry and the reliable water is back down at the lakes. Carry from the last certain source rather than expecting to find one.",
+      "permit": "Glacier Peak Wilderness, free self-issue permit. Camp on snow, rock or bare ground, keep off the heather where you can, and pack out human waste — there is no toilet anywhere in this zone. Stoves only up here.",
+      "capacity": "Scattered heather benches and gravel flats along the crest rather than any one site, party-sized, spread over several miles of ridge. No facilities of any kind."
+     },
+     {
+      "name": "Cyclone Lake Basin",
+      "role": "hidden"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "mutchler peak pk scramble",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_mount_rainier_mowich_face",
+    "area_id": "wa_mount_rainier",
+    "name": "Mowich Face",
+    "set": {
+     "discipline": "alpine",
+     "season": "May-Jul"
+    },
+    "fill": {
+     "best_season": "May to June"
+    }
+   },
+   "before": {
+    "id": "wa_mount_rainier_mowich_face",
+    "area_id": "wa_mount_rainier",
+    "name": "Mowich Face",
+    "discipline": "alpine",
+    "grade": "AI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "pitches": null,
+    "length_m": 1219,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Dee Molenaar, Gene Prater, Jim Wickwire, and Dick Pargeter (Central Mowich Face); the South Mowich Face was first climbed in 1957 and the North Mowich Face was completed later by a party including Mike Heath, Mead Hargiss, and Bill Cockerham.",
+    "lat": null,
+    "lng": null,
+    "aspect": "NW",
+    "season": "May-Jul",
+    "description": null,
+    "gear": [
+     "Two ice tools",
+     "Ice screws and a picket or two for the face",
+     "Crampons and helmet — the face is exposed to rockfall, so start early and be off it before the sun reaches it",
+     "Glacier rope and crevasse rescue kit for the Mowich Glacier approach"
+    ],
+    "hazards": [
+     "Sustained steep ice/snow with multiple line options",
+     "Serac and rockfall hazard on the face",
+     "Remote NW commitment with complex descent",
+     "Roped glacier travel on the approach — the route drops off Ptarmigan Ridge onto the North Mowich Glacier and ascends it to camp, with crevasses that thin snow bridges can hide. The bergschrund below the face is frequently not passable direct and has to be turned, so budget time for finding a way through."
+    ],
+    "verif": null,
+    "overview": "A broad, steep northwest-facing route above Mowich Lake with two named variations. The original (easier) line cuts left around 12,500 ft into an hourglass of snow, ice, and rock, gaining a ledge and then a 40-50° snow ramp to the top (Grade III). A harder variation cuts right instead, crossing a couple of AI2-3 ice steps and 4-6 pitches of 50-60° snow before topping out on the Liberty Cap glacier (Grade IV). Slope angles average about 42° on the lower two-thirds and 47° on the upper third; high on the face there's a windlip/choke requiring a short traverse on firmer snow, and the bergschrund beneath the face can usually be bypassed via a rock band on climber's left.",
+    "beta": "Grade III-IV ice climbing on the northwest aspect; specific documented lines in this area include the separately-catalogued North Mowich Headwall and Central Mowich Face routes.",
+    "turnaround": "Commit only with good conditions; set a firm turnaround",
+    "auto_generated": true,
+    "alpine_grade": "IV",
+    "rock_grade": "5th class (sections)",
+    "ice_grade": "AI2-3",
+    "gain_ft": 10000,
+    "loss_ft": 9500,
+    "dist_km": 28.97,
+    "max_angle": 60,
+    "rappels": "0",
+    "commitment": "IV",
+    "face": "Northwest side, above the Mowich Glaciers",
+    "permit": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's climbing registration; overnight high camps also need a wilderness permit.",
+    "comms": "No reliable cell coverage on the remote northwest side; carry a satellite communicator or PLB.",
+    "descent": "see prose fix",
+    "obj_haz": [
+     "Crevasse crossings on the Mowich Glacier approaches",
+     "Steep, sustained ice climbing exposure",
+     "Rockfall on the mixed sections"
+    ],
+    "waypoints": [
+     {
+      "lat": 46.9336,
+      "lng": -121.8654,
+      "elev": 4930,
+      "name": "Mowich Lake Trailhead (no road access)",
+      "note": "No public road reaches Mowich Lake: the SR 165 bridge on the only road to it is closed to cars, bikes and walkers. The nearest open start is the Westside Road trailhead near the Nisqually Entrance, about 27 miles of Wonderland Trail one way.",
+      "type": "Trailhead",
+      "elevFt": 4930,
+      "directions": "There is no public road to Mowich Lake: the SR 165 Fairfax Bridge south of Carbonado is permanently closed to vehicles, bicycles and walkers, with no detour. The lake can only be reached on foot along the Wonderland Trail, about 27 miles from Westside Road; camping on the way needs a park wilderness permit."
+     },
+     {
+      "lat": 46.86298,
+      "lng": -121.77486,
+      "elev": 14112,
+      "name": "Liberty Cap",
+      "type": "Summit",
+      "elevFt": 14112,
+      "directions": "Follow the Wonderland Trail about 0.3 mile to the Spray Park Trail and climb it through Spray Park past Spray Falls. Where it tops out, go cross-country southeast between Echo Rock and Observation Rock onto Ptarmigan Ridge, leave the ridge near 8,300 ft and drop about 1,000 ft to the North Mowich Glacier, and rope up to the camps at 9,600 to 10,200 ft. Turn the bergschrund, climb the face to the bench near 13,300 ft, and continue to Liberty Cap."
+     }
+    ],
+    "gpx": [
+     [
+      46.9387,
+      -121.8615
+     ],
+     [
+      46.8658,
+      -121.7817
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": [
+     "alpine",
+     "ice"
+    ],
+    "timing": {
+     "totalHrs": 21,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 9,
+     "recommendedStart": "Alpine start from high camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6,
+       "note": "From Mowich Lake (no road access since the April 2025 bridge closure), hike via the Spray Park area to a base camp near the Mowich Glacier (~9,000-9,600 ft), caching snowshoes/extra fuel if planning to return to camp.",
+       "fromTo": "Approach to base camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 3,
+       "note": "Shift to a higher bivy below the face; parties bring a rock rack (small cams, offsets, tricams) for the mid-face rock band above.",
+       "fromTo": "Move to high camp / rest and rack up",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "Climb roughly 4,000 ft of sustained 40-55° ice through the Hourglass, staying right of an exposed, detached rock band, then cross the mid-face rock band to Sunset Ridge and the sum…",
+       "fromTo": "Summit day",
+       "section": "Climb"
+      }
+     ]
+    },
+    "detailed_rack": "Technical alpine rack: two tools, a set of ice screws, pickets, a light rock rack for the mixed sections, a single rope for belays/simul, full crevasse-rescue kit.",
+    "what_to_bring": [
+     "helmet",
+     "two tools",
+     "ice screws",
+     "pickets",
+     "Full crevasse-rescue kit"
+    ],
+    "pro_tips": [
+     "Choose the line based on current ice/serac conditions",
+     "Demands fitness and efficiency on sustained ground",
+     "Standard-route descent is strongly preferred"
+    ],
+    "watch_out": [
+     "Serac/rockfall on the face",
+     "Sustained steep ice",
+     "Remote, complex descent"
+    ],
+    "pro_needs": "Ice screws, pickets; full steep-ice alpine kit",
+    "best_season": "May to June",
+    "high_point_ft": 14112,
+    "aid_grade": null,
+    "approach": "From the Mowich Lake trailhead (no public road access since the SR 165 Fairfax Bridge closed permanently in April 2025, so the lake is now a long walk in from another park entrance), follow the Wonderland Trail about 0.3 mile to the Spray Park Trail, then take that trail roughly 3-4 miles up through Spray Park, passing Spray Falls. Where the Spray Park Trail tops out and begins to descend toward Seattle Park and the Carbon River, leave it and head cross-country southeast between Echo Rock and Observation Rock, picking up a climbers' path onto the lower slopes of Ptarmigan Ridge. Continue up the ridge's lower apron to roughly 8,300 ft, above Observation Rock, then leave the ridge and descend about 1,000 ft of loose rock and old snow to the edge of the North Mowich Glacier. Rope up there and climb the North Mowich (watch for recent rockfall debris crossing the ice) to camps at roughly 9,600-10,200 ft near the Edmunds divide, just below the Mowich Face proper. This is a genuinely long, remote approach with no maintained trail for the upper two-thirds — self-sufficiency and solid navigation are required, and there's no water above Spray Park except melted snow.",
+    "descent_text": "There's no walk-off back down the Mowich Face itself — after topping out, the standard descent is a long carryover, either down the Emmons-Winthrop Glacier to Camp Schurman/White River, or down the Disappointment Cleaver to Paradise, both ending on the far side of the mountain, so arrange transport from there before you start. This is a walk-off/glacier descent, not a rappel descent; no fixed rappels are used on either standard exit. If a party needs to retreat rather than continue over the top, they reverse the approach: back down across the North Mowich Glacier, up and over the ~1,000 ft scree/talus slope near Observation Rock, and out through Spray Park to Mowich Lake, which is a long day/night hike out.",
+    "bail": "Retreat low; the face is hard to reverse once committed",
+    "pitch_detail": [
+     {
+      "grade": "Glacier",
+      "notes": "From the glacier camps below the face (about 9,600-10,200 ft, near the divide with the Edmunds Glacier), stay roped and climb the last of the North Mowich Glacier to the foot of the face. Watch for fresh rockfall debris on the ice: it marks the fall lines coming off the face. Start in the dark so the face is climbed before sun hits it.",
+      "pitch": "Approach to base"
+     },
+     {
+      "grade": "Crevassed, snow bridge",
+      "notes": "The bergschrund under the central face is large and can be impassable late season. It is usually bypassed through a rock band on the climber's left; earlier in the year a snow bridge may go after weaving around the biggest crevasses. Belay the crossing if the bridge is thin.",
+      "pitch": "Bergschrund"
+     },
+     {
+      "grade": "35–45° snow",
+      "notes": "The lower two-thirds of the face runs at roughly 35–42° on solid snow in good conditions, climbed with running protection on pickets. Near 12,000 ft the surface turns to harder ice and demands more careful technique. The whole face is exposed to rockfall and ice shards; climbing before the sun arrives reduces but does not remove the hazard.",
+      "pitch": "Mowich Face"
+     },
+     {
+      "crux": true,
+      "grade": "40–60° snow/ice",
+      "notes": "Around 12,500 ft the line splits. The original (Grade III) cuts left into an hourglass of snow, ice and rock, gains a snow ledge around the rock, then a 40–50° ramp. The harder (Grade IV) variation cuts right over one or two AI2–3 ice steps and 4–6 pitches of 50–60° snow. Wrong gullies here dead-end in cliffs; carry screws.",
+      "pitch": "Upper face variations"
+     },
+     {
+      "grade": "Steep snow, windlip",
+      "notes": "The face tops out on a bench near 13,300 ft; high up a windlip or choke often needs a short traverse on firmer snow. From the bench, slushy sun cups or penitentes lead to Liberty Cap (14,112 ft). The descent is a carryover down the Emmons-Winthrop or Disappointment Cleaver, not the face.",
+      "pitch": "Exit to Liberty Cap"
+     }
+    ],
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "From Mowich Lake (no road access since the April 2025 bridge closure), hike via the Spray Park area to a base camp near the Mowich Glacier (~9,000-9,600 ft), caching snowshoes/extra fuel if planning to return to camp.",
+       "hours": 6,
+       "miles": 6,
+       "title": "Approach to base camp",
+       "gainFt": 4200,
+       "packLb": 55,
+       "objective": "Reach a base camp near the Mowich Glacier"
+      },
+      {
+       "n": 2,
+       "note": "Shift to a higher bivy below the face; parties bring a rock rack (small cams, offsets, tricams) for the mid-face rock band above.",
+       "hours": 3,
+       "miles": 1,
+       "title": "Move to high camp / rest and rack up",
+       "gainFt": 1300,
+       "packLb": 45,
+       "objective": "Stage below the face"
+      },
+      {
+       "n": 3,
+       "note": "Climb roughly 4,000 ft of sustained 40-55° ice through the Hourglass, staying right of an exposed, detached rock band, then cross the mid-face rock band to Sunset Ridge and the summit.",
+       "hours": 12,
+       "miles": 6,
+       "title": "Summit day",
+       "gainFt": 4000,
+       "lossFt": 4900,
+       "packLb": 30,
+       "schedule": [
+        {
+         "label": "Alpine start from high camp"
+        },
+        {
+         "label": "Climb the Hourglass",
+         "detail": "Stay right of the exposed rock band; the ice on it is detached"
+        },
+        {
+         "label": "Cross the mid-face rock band",
+         "detail": "Small cams/offsets/tricams protect this section"
+        },
+        {
+         "label": "Reach Sunset Ridge, summit"
+        },
+        {
+         "label": "Descend standard route"
+        }
+       ],
+       "objective": "Climb the face/Hourglass to the summit"
+      }
+     ],
+     "totalNote": "A committing 3-day trip (~9,500 ft gain) up sustained 40-55° ice with a technical rock band — one of the harder lines on the mountain."
+    },
+    "access": {
+     "fees": "$82 per person, per climb — Climbing Cost Recovery Fee (2026 rate). Each climb needs its own fee; it no longer covers a whole calendar year. Separate from the park entrance fee.",
+     "notes": "How to get it: pay online in advance (pay.gov / recreation.gov), then register in person. Winter (Sept 16–May 21): self-issue at the Paradise Old Station kiosk after paying online. Summer (May 22–Sept 30): no self-issue — register at a Wilderness Information Center (Longmire, Paradise, or White River); roughly half of summer registration slots are held for walk-up, up to 24 hrs ahead. No timed-entry vehicle reservation is in effect for the 2026 season, so park entry itself is first-come, first-served.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Mount Rainier Climbing Permit",
+     "closures": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice",
+     "seasonal": null,
+     "group_limit": 12,
+     "landManager": "Mount Rainier National Park (NPS)",
+     "land_manager": "National Park Service",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    },
+    "road": {
+     "name": "Mowich Lake Road",
+     "status": "No public vehicle, bike, or foot access via SR-165 — the Fairfax/Carbon River Bridge was permanently closed by WSDOT in April 2025 due to structural failure, with no detour and no funded reopening timeline",
+     "driveNote": "No vehicle access to Mowich Lake via SR 165 until/unless WSDOT rebuilds the bridge; the only current approach is a long hike-in via the Wonderland Trail from another park entrance.",
+     "seasonalGate": "Formerly open to vehicles mid-July–mid-October; as of the 2025 bridge closure, Mowich Lake itself is about 27 miles one way on the Wonderland Trail from Westside Road"
+    },
+    "climate": {
+     "fall": "Increasing bergschrund/rock-band exposure as snow recedes",
+     "spring": "Heavy snowpack, avalanche concern on the North Mowich approach",
+     "summer": "Primary season, Jun-Aug",
+     "winter": "Effectively inaccessible, especially with the Fairfax Bridge closure",
+     "typical": "Volcanic stratovolcano; rapidly changing weather, high winds, whiteouts common",
+     "bySeason": {
+      "fall": "Shorter days, early storms, dry glaciers",
+      "spring": "Prime alpine ice/snow season; cold, firm conditions",
+      "summer": "Warmer, more crevasse opening, higher rockfall/icefall on faces",
+      "winter": "Severe; full winter mountaineering, very few ascents"
+     },
+     "forecastZone": "NWS Seattle - Mount Rainier"
+    },
+    "emergency": {
+     "notes": "Rainier rescues are coordinated by NPS climbing rangers via 911.",
+     "county": "Pierce",
+     "rangerStation": "Mount Rainier National Park - Climbing Information Center (Paradise)",
+     "nearestHospital": "MultiCare Tacoma General Hospital (Level II trauma) for initial care; Harborview Medical Center in Seattle (WA's only Level I trauma center) is the usual destination for serious injuries evacuated by helicopter.",
+     "sheriffDispatch": "911"
+    },
+    "lists": null,
+    "crowds": {
+     "peakTraffic": "May-June, rarely",
+     "solitudeRating": 5,
+     "estimatePerSeason": "Very low - a specialist objective climbed only a few times per season at most across its several line options; no published count found"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "High multi-day fitness for approach plus a sustained multi-pitch ice face",
+      "packWeight": "40-50 lb for a multi-day remote ascent with a full technical ice rack"
+     },
+     "approachTime": "6-10 hrs from Mowich Lake to the base of the face via Ptarmigan Ridge and the North Mowich Glacier",
+     "requiredSkills": [
+      "Sustained steep ice climbing (multiple pitches, various lines)",
+      "Serac and rockfall hazard judgment across a broad face",
+      "Remote, complex descent route-finding",
+      "Advanced crevasse rescue on approach glaciers"
+     ],
+     "experienceLevel": "Expert alpinist - partner needs strong steep-ice credentials and comfort choosing among multiple committing line options on a broad, complex face"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "May to June",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Best ice conditions per route beta",
+       "status": "optimal"
+      },
+      "July": {
+       "reason": "Typically deteriorated; not recommended",
+       "status": "risky"
+      },
+      "June": {
+       "reason": "Still climbable; face begins to bare out and rockfall/serac hazard rises",
+       "status": "good"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Volcanic stratovolcano; rapidly changing weather, high winds, whiteouts common",
+      "probability": "Broad NW exposure means the whole face is loaded/scoured together after storms"
+     },
+     "exposure": "High - sustained steep ice/snow with multiple serac and rockfall zones, plus a remote and complex descent",
+     "avalanche": {
+      "zone": "West Slopes South (NWAC) - no route-specific bulletin for this remote NW-side face",
+      "byMonth": {
+       "May": "Considerable",
+       "July": "Low",
+       "June": "Moderate"
+      }
+     },
+     "crevasses": "Crevasse navigation on the North Mowich approach glacier, secondary to the face's own serac/rockfall hazard"
+    },
+    "data_quality": {
+     "gaps": [
+      "No crowd/frequency data found; inferred purely from the route's reputation as a rarely repeated technical face",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "confidence": "LOW",
+     "lastVerified": "2026 research pass"
+    },
+    "difficulty": {
+     "exposure": 4,
+     "physical": 4,
+     "technical": 4,
+     "commitment": 4,
+     "routefinding": 4
+    },
+    "approach_logistics": {
+     "peakLat": 46.8528,
+     "peakLng": -121.7603,
+     "trailhead": "Mowich Lake Trailhead",
+     "trailheadLat": 46.9387,
+     "trailheadLng": -121.8615,
+     "trailheadDirection": "The road to Mowich Lake is closed to vehicles at the Fairfax Bridge on SR-165, which is closed to cars, bicycles and pedestrians; there is no alternate route and the park lists no other way in."
+    },
+    "sling_rack": {
+     "cams": "small set",
+     "note": "highly broken volcanic rock — pitons/Tricams/cams hold better than nuts",
+     "pitons": 2,
+     "tricams": 2
+    },
+    "alpine_draws": 3,
+    "rope_type": "single",
+    "rope_length_m": 60,
+    "rope_note": "Single 60m rope for glacier approach and ice-step pitches; the Grade IV right-hand variation adds 4-6 mixed pitches to AI2-3 on the way to the Liberty Cap Glacier.",
+    "ascender": "recommended for crevasse self-rescue on the approach glacier",
+    "corrections": "Rock gear composition differs meaningfully from granite Cascades routes — nuts flagged as unreliable in this rock type. Rockfall hazard is significant; sun-exposure timing matters more than gear here.",
+    "gear_confidence": "verified",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": [
+     "Small cam set",
+     "2 pitons",
+     "2 tricams",
+     "3 alpine quickdraws",
+     "Two ice tools, ice screws, pickets",
+     "Single rope for belays/simul"
+    ],
+    "features": [
+     "Sustained",
+     "Technical",
+     "Exposed",
+     "Committing"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": [
+     {
+      "name": "Mowich Lake, Spray Park and Ptarmigan Ridge, then up the North Mowich Glacier",
+      "notes": "Mowich Lake Road is unpaved and seasonal. In a normal year it opens well after the roads on the east and south sides of the park — commonly not until July — and closes with the first significant snow. Since April 2025, though, the SR 165 Fairfax Bridge that carried the only public road to it has been closed permanently to cars, bikes and walkers, so Mowich Lake itself is now a long wilderness walk from another park entrance.\n\nFrom Mowich Lake, follow the Wonderland Trail about 0.3 mile to the Spray Park Trail, then take that trail roughly 3-4 miles up through Spray Park, passing Spray Falls. Where the Spray Park Trail tops out and begins to descend toward Seattle Park and the Carbon River, leave it and head cross-country southeast between Echo Rock and Observation Rock, picking up a climbers' path onto the lower slopes of Ptarmigan Ridge.\n\nNear 8,300 ft you leave the ridge and drop about 1,000 ft of loose rock and snow to the North Mowich Glacier. Rope up there and climb the glacier, watching for fresh rockfall debris on the ice, to camps at roughly 9,600-10,200 ft below the face.\n\nThere is no water above Spray Park and no maintained trail for the upper two-thirds of this approach.",
+      "season": "Roughly May-Jun for ice; the face bares out and starts shedding rock as it warms",
+      "hazards": [
+       "Sustained steep ice and snow with multiple line options and no obvious separation between them",
+       "Serac and rockfall hazard on the face; the North Mowich crossing collects the debris",
+       "A bergschrund that is frequently impassable direct and must be turned",
+       "Roped glacier travel with crevasses under thin snow bridges on both the drop from camp and the return",
+       "No walk-off: topping out commits the party to a carryover and a car shuttle",
+       "Road access on this side has been closed since the April 2025 Fairfax Bridge closure"
+      ],
+      "baseFinding": "Two named rocks are the only hard markers on the whole cross-country section, and they work in cloud because they are big and they are a pair. You leave the Wonderland Trail and go between Echo Rock and Observation Rock. Not past one of them — between the two. If you can only see one rock, you do not yet know which one it is.\n\nThe second thing is counter-intuitive and it is where parties go wrong: at about 8,300 ft you leave the ridge and go down. The face is across the North Mowich Glacier from Ptarmigan Ridge. If you keep climbing the ridge past that point, you are on Ptarmigan Ridge, which is a different route to a different top-out. Losing height off the ridge is correct and is the single clearest signal that you are on this climb and not its neighbour.\n\nThe bergschrund is the arrival and it is frequently not passable direct. It has to be turned, so budget time for looking rather than treating the schrund as a formality. Reaching a schrund you cannot cross straight over means you are probably in the right place.\n\nThis is the umbrella face, not a single line, and that is the most important thing to carry in. Four separate climbs share this wall and this camp — the North Mowich Headwall, the Central Mowich Face, the Edmunds Headwall, and Ptarmigan Ridge above and to the side of them. They are told apart by which glacier you cross from camp and by what the first ground above the schrund is, not by the walk in, which is identical for all of them. Decide which one you are doing before you leave camp in the dark; there is roughly 4,000 ft of 40 to 55 degree ice and mixed ground above, and being one line out is not a thing you discover early.\n\nWhat retreat looks like, because it is not the way you came: there is no walk-off from the top of this face. Topping out commits you to a carryover down the far side of the mountain to Paradise or White River and a shuttle back. Backing off means reversing the North Mowich Glacier, climbing about 1,000 ft of scree and talus near Observation Rock, and walking out through Spray Park."
+     }
+    ],
+    "climbing_route": null,
+    "bivy": [
+     {
+      "elev": 8600,
+      "name": "Ptarmigan Ridge bivy above Observation Rock",
+      "role": "main",
+      "notes": "Planned camp and the most sheltered ground on this side of the mountain: old stacked rock windbreaks sit here and parties describe it as the best bivy shelter in the area. The catch is position, not comfort — from here you still have to descend loose scree onto the North Mowich Glacier, and parties who camped here have called that descent the inefficient part of their trip. Cross-country zone; permit required.",
+      "water": "none reliable — melt snow",
+      "capacity": "a couple of tents on hand-built platforms"
+     },
+     {
+      "elev": 8100,
+      "name": "Edmunds/North Mowich glacier divide camp",
+      "role": "main",
+      "notes": "Planned alternative used by parties who cross the North Mowich above Needle Rock rather than staying high on Ptarmigan Ridge. Puts you on the correct side of the glacier for the face, at the cost of more elevation to regain in the morning.",
+      "water": "none — melt snow",
+      "capacity": "one to two tents"
+     },
+     {
+      "elev": 10000,
+      "name": "High camp below the North Mowich headwall",
+      "role": "route",
+      "notes": "Planned camp closest to the base of the face, and the most exposed of the three. Parties who have used it wore helmets in camp because of rockfall and icefall shedding off the deteriorating headwall above; there is no fully sheltered ground up here. Worth it only when conditions are cold and you intend to start on the face within a few hours. Search around 9,200 ft first if the higher ground looks loaded — flat sites there are limited but out from under the wall.",
+      "water": "none — melt snow",
+      "permit": "climbing permit required above 10,000 ft in addition to the camping permit",
+      "capacity": "one to two tents; flat ground is scarce and has to be dug"
+     },
+     {
+      "name": "Liberty Cap saddle",
+      "role": "route",
+      "notes": "Emergency bivy only, on the broad saddle between Liberty Cap and the summit, used by at least one party benighted after topping out. It is more sheltered than the true summit and less wind-hammered than climbers expect, but it is an unplanned option to know about, not a camp to aim for — going there means you are spending a night above 13,000 ft with whatever you carried up the face.",
+      "water": "none — melt snow",
+      "capacity": "improvised, no prepared ground"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "mowich face",
+    "ice_grade_num": 3,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_glacier_peak_south_tahoma_headwall",
+    "area_id": "wa_mount_rainier",
+    "name": "South Tahoma Headwall",
+    "set": {
+     "discipline": "alpine",
+     "grade": "AI3"
+    },
+    "fill": {
+     "season": "Apr-Jun",
+     "aspect": "SW",
+     "overview": "A steep, rimed headwall of snow and ice with short rock and ice steps at the head of the South Tahoma Glacier, dropping from Point Success. Slopes reach about 55 degrees, and an icy step high on the face has been rappelled by skiers. Rockfall and icefall are the main hazards.",
+     "approach": "Reached from the closed Westside Road beyond the Dry Creek gate on a long walk in of about 12 miles, then across the Tahoma Glacier or round Success Cleaver to the foot of the headwall.",
+     "gain_ft": 11500
+    }
+   },
+   "before": {
+    "id": "wa_glacier_peak_south_tahoma_headwall",
+    "area_id": "wa_mount_rainier",
+    "name": "South Tahoma Headwall",
+    "discipline": "alpine",
+    "grade": "AI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": "Steve Marts and Fred Beckey on July 12, 1963",
+    "lat": null,
+    "lng": null,
+    "aspect": "SW",
+    "season": "Apr-Jun",
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": "A steep, rimed headwall of snow and ice with short rock and ice steps at the head of the South Tahoma Glacier, dropping from Point Success. Slopes reach about 55 degrees, and an icy step high on the face has been rappelled by skiers. Rockfall and icefall are the main hazards.",
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": 11500,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": [
+     "alpine"
+    ],
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": "Reached from the closed Westside Road beyond the Dry Creek gate on a long walk in of about 12 miles, then across the Tahoma Glacier or round Success Cleaver to the foot of the headwall.",
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "south tahoma headwall",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_glacier_peak_tahoma_cleaver",
+    "area_id": "wa_mount_rainier",
+    "name": "Tahoma Cleaver",
+    "fill": {
+     "overview": "A rocky cleaver between the Tahoma Glacier and the South Tahoma Glacier on Rainier's southwest side, near 9,400 ft. Parties camp on it and use it as a climbing and ski line from the west side."
+    }
+   },
+   "before": {
+    "id": "wa_glacier_peak_tahoma_cleaver",
+    "area_id": "wa_mount_rainier",
+    "name": "Tahoma Cleaver",
+    "discipline": "mountaineering",
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": "A rocky cleaver between the Tahoma Glacier and the South Tahoma Glacier on Rainier's southwest side, near 9,400 ft. Parties camp on it and use it as a climbing and ski line from the west side.",
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": "From Westside Road — Dry Creek Trailhead, walk the closed road past the barricade to the Tahoma Creek Trail and climb it about 2 miles to the Wonderland Trail junction near 4300 ft. Go south over the Tahoma Creek suspension bridge, follow the Wonderland Trail to Indian Henry's Hunting Ground, then take the Mirror Lakes Trail until it fades in the basin between Copper and Pyramid Peaks. Continue cross-country past Pyramid Peak to Success Cleaver and climb it to about 8000 ft, where glacier travel begins. A roped traverse across the South Tahoma Glacier at roughly 8100 ft reaches the base of Tahoma Cleaver.",
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": {
+     "trailhead": "Westside Road — Dry Creek Trailhead",
+     "trailheadDirection": "Enter Mount Rainier National Park at the Nisqually entrance and, after 1 mile, turn left (north) onto Westside Road. Drive it to the Dry Creek barricade and park in the small lot just south of it; past the barricade the road is closed to vehicles."
+    },
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "tahoma cleaver",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  }
+ ]
+}

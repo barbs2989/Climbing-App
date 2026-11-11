@@ -1,0 +1,36 @@
+{
+ "wy_mount_hooker": {
+  "_expect": { "name": "Mount Hooker", "region": "Wyoming" },
+  "blurb": "Mount Hooker is a remote granite peak in the Wind River Range, reached from the Baptiste Lake side. Its steep north face is a roughly 1,800 foot wall, and the twelve routes here are mostly long alpine-style lines done with traditional gear. Grades run from 5.9 up to 5.14, but the bulk of them sit around 5.12, so this is a place for experienced parties. The rock is featured and often clean, though thin seams make protection sparse in places. Getting here is a serious commitment: a multi-day trek over Hailey Pass, often with horses carrying the load. Expect solitude and big days rather than a quick cragging outing.",
+  "review": { "sources": ["https://bigwalls.net/climb/Hooker.html", "https://publications.americanalpineclub.org/articles/13201212970/Mt-Hooker-northeast-face-Hook-Line-and-Sinker", "https://www.mysteryranch.com/blog/post/mt-hooker-unforgettable-ascent"] }
+ },
+ "wy_ministry_wall": {
+  "_expect": { "name": "Ministry Wall", "region": "Wyoming" },
+  "blurb": "Ministry Wall is a steep sport face in the Valhalla sector of Ten Sleep Canyon, in the Bighorn Mountains of Wyoming. All twelve routes are bolted single pitches, graded from 5.11 to 5.13, with most of them at 5.12, so it suits strong climbers who want hard, well-protected lines. The face is smooth and sheer with gentle bulges, and the moves involve stemming and pocket pulling on technical ground rather than pure power. Stars are plentiful on the best lines. It is not a beginner or warm-up wall, so bring a lower-grade sector for the first routes of the day.",
+  "review": { "sources": ["https://rakkup.com/guidebook/ten-sleep-rock-climbing/ministry-wall/s19354", "https://www.mountainproject.com/route/113053173/burning-inside?print=1"] }
+ },
+ "wy_omega_buttress": {
+  "_expect": { "name": "Omega Buttress", "region": "Wyoming" },
+  "blurb": "Omega Buttress is a cluster of cliffs and towers on the side of Death Canyon in Grand Teton National Park. Most of the twelve entries are multi-pitch trad and alpine routes, with grades mainly from 5.8 to 5.11 and one standout in the 5.12 range, plus a lone boulder problem and an ice line. The hike in is a bit over an hour, so it works well for a half day. Expect typical Teton conditions: some loose rock, changeable weather, and a descent that combines rappels with gully scrambling, so route-finding and an early start matter.",
+  "review": { "sources": ["https://www.mountainproject.com/v/105809476", "https://mountainproject.com/area/105833814/death-canyon"] }
+ },
+ "wy_snaggletooth": {
+  "_expect": { "name": "Snaggletooth", "region": "Wyoming" },
+  "blurb": "Snaggletooth is a long, narrow fin of rock above the north bay of a cove in the Lucerne Valley, on the Wyoming and Utah line near Flaming Gorge. Its twelve routes are mostly short, slightly overhanging sport lines of about 20 to 40 feet, with a couple of trad options, and grades stretch from 5.7 to 5.12 with the heart of it in the 5.10s and low 5.11s. Holds mix pockets, cracks and crimps. The stone is soft and routes were developed recently, so expect some loose flakes and a helmet is wise. Because the fin top can be walked, everything can also be top-roped. The valley's walls catch plenty of sun, making it a decent cool-weather outing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/115438444/snaggletooth", "https://www.mountainproject.com/area/106542833"] }
+ },
+ "wy_the_pit": {
+  "_expect": { "name": "The Pit", "region": "Wyoming" },
+  "blurb": "The Pit is a small cave in Rogers Canyon north of Laramie, set up as a dry-tooling venue. It holds twelve bolted mixed routes with fixed anchors, rated from M3 to M9, with a good number clustered at the hard end, so there are only a few easy options for beginners. The rock inside is burnt and blackened, so the walls are crumbly and meant to be tooled. It is a convenient local training spot rather than a destination, in a canyon better known for short, intense summer sport climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123216451/the-pit", "https://www.mountainproject.com/area/105840228/rogers-canyon"] }
+ },
+ "_skipped": {
+  "wy_north_aspect": "no fetched page is about this crag itself; only the North Table Mountain parent page lists it",
+  "wy_sweat_lodge_the": "only one fetched page about the crag; a second page (Lander overview) returned empty",
+  "wy_the_silver_dollar_a_wol": "no page about the crag itself; only the Spires parent listing and one route page mention it"
+ },
+ "_conflicts": {
+  "wy_snaggletooth": "stored rock is mudstone but https://www.mountainproject.com/area/115438444/snaggletooth and https://www.mountainproject.com/area/106542833 both say sandstone (conglomerate in the valley)",
+  "wy_the_pit": "stored rock is sandstone but https://www.mountainproject.com/area/105840228/rogers-canyon calls Rogers Canyon limestone and https://www.mountainproject.com/area/123216451/the-pit says burnt choss in a cave"
+ }
+}
