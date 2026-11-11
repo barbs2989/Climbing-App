@@ -223,7 +223,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
       // A leg going straight gives up the answer it was waiting for, so the slot goes to a live leg.
       if (!(want && !zero)) abortRoute(next[i].id);
-      next[i] = Object.assign({}, next[i], { via: (next[i].stub || next[i].told === false) && want && !zero ? next[i].via : [], pending: want && !zero, told: all && next[i].told !== false ? next[i].told : undefined });
+      next[i] = Object.assign({}, next[i], { via: (next[i].stub || next[i].told === false || next[i].told === "gone") && want && !zero ? next[i].via : [], pending: want && !zero, told: all && next[i].told !== false ? next[i].told : undefined });
       if (want && !zero) touched.push(next[i].id);
     });
     return touched;
@@ -346,7 +346,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       return;
     }
     const cur = nodesRef.current, idxs = [];
-    cur.forEach((x, i) => { if (i > 0 && ((!routed(x) && x.told !== "ok") || x.stub || x.told === false) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); /* ...and a leg the router never answered for, kept points or not: the note says this switch asks again */ });
+    cur.forEach((x, i) => { if (i > 0 && ((!routed(x) && x.told !== "ok") || x.stub || x.told === false || x.told === "gone") && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); /* ...and a leg the router never answered for, kept points or not: the note says this switch asks again */ });
     if (!idxs.length) return;
     const next = cur.slice();
     commit(next, withLegs(next, idxs, true));
