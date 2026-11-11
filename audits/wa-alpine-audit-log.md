@@ -37398,3 +37398,64 @@ alpine/mountaineering WA tag count held at 802 overall, unchanged since batch 51
 
 Next batch will continue id-ascending from `wa_mount_lago_south_slope_south_face` (the next
 in-scope id after it is `wa_mount_lawson_standard`).
+
+## Batch 522 (pass 8) — 2026-11-11
+
+Checked 10 routes across nine peaks: `wa_mount_lawson_standard`, all three Mount Logan routes
+(`wa_mount_logan_fremont_glacier`, `wa_mount_logan_r1`/Banded Glacier, `wa_mount_logan_r2`/Douglas
+Glacier), `wa_mount_mathias_scramble`, both Mount Maude routes (`wa_mount_maude_r1`/North Face,
+`wa_mount_maude_r2`/Entiat Ice Fall), `wa_mount_mccausland_n_route`, `wa_mount_meany_standard`, and
+`wa_mount_mystery_standard`.
+
+Two confirmed errors, fixed: `wa_mount_maude_r1` and `wa_mount_maude_r2` both cite the Little
+Giant Fire closure as "order 06-17-07-2026-40, in effect September 3 through October 31, 2026" in
+their `access.closures` and `road.status` fields. The live Okanogan-Wenatchee NF closure-order
+page shows that order was superseded twice since — order -46 (signed 10/14/2026, same end date),
+then order -48 (effective 11/1/2026 through 4/30/2027) — so as of this audit date the closure
+was extended into winter, not lifted on schedule, and both rows understated how long FR 6200,
+FR 6211, and the Phelps Creek/Leroy Creek trails stay closed. Fixed both fields on both rows to
+the current order number and date range, in `audits/sql/2026-11-11-batch-522.sql`
+(`check:sql` passes; it warns the file is above the 4000-byte paste-safe size, so split it into
+~1.5KB chunks when pasting into the SQL Editor). The separate, unrelated FR 6200 storm-damage
+closure (order 06-17-07-2026-11, through 12/31/2027, no reopening estimate) both rows also cite
+was independently confirmed current and left alone.
+
+One near-miss that turned out clean: `wa_mount_mccausland_n_route`'s `road` field cites the *same*
+order number (06-17-07-2026-11) for an FR 6700 (Smithbrook Road) closure as the Mount Maude rows
+cite for FR 6200 (Chiwawa River Road) — two closures, same order, geographically distant roads,
+which first looked like a copy-paste error. The official alert instead confirms this is one
+omnibus Wenatchee River Ranger District storm-damage order that lists FSR 6700 and 6701 alongside
+FSR 6200 and 7905; no finding.
+
+Elevations checked: Mount Logan 9,087 ft, Mount Mathias 7,156 ft, Mount Maude 9,082 ft, Mount
+Meany 6,695 ft, and Mount Lawson 5,401 ft all confirmed against Wikipedia/SummitPost/Mountaineers
+within the normal few-foot cross-source spread. Mount McCausland's stored 5,747 ft matches
+SummitPost/Mountaineers/Cascadia Magazine (Wikipedia/TopoQuest instead give 5,741 ft) — within the
+same normal spread, no finding.
+
+First ascents checked: Mount Meany's peak FA (August 8, 1907, Asahel Curtis/Lorenz Nelson/Peter
+McGregor) and Mount Mathias West Face's route FA (1957, Yves Eriksson/Jim Hawkins) both confirmed
+verbatim against independent sources. Mount Maude North Face's route-level FA
+(Beckey/Gordon/Rupley/Staley) correctly describes the 1957 first ascent *of that face*, confirmed
+via a first-person 1958 AAC Journal account by one of the climbers — distinct from, and not in
+conflict with, the peak's own 1932 FA (Ulrichs/Burnett) stored elsewhere; the row is doing its job
+correctly, not contradicting the peak.
+
+Flagged for human review, no SQL: `wa_mount_logan_fremont_glacier`'s FA ("Lage Wernstedt, 1926")
+matches Wikipedia, but a specialist WA-100-highest first-ascent chronology (citing Harry Majors'
+1973 research, confirmed by Roger Jung in 2005) places the same climb in 1925 instead, treating
+1926 as only a surmise from Beckey's *Cascade Alpine Guide* vol. 3, and calls Wernstedt's partner
+on the climb itself uncertain ("and one other?"). Two plausible years from two reputable lineages
+with no way to pick one confidently — left as-is.
+
+Mount Mystery's `hazards` field states a solo climber died in a fall near the peak's south
+end/Del Monte ridgeline in July 2022; this matches NPS and news coverage exactly (Sean Allen, 38,
+of Port Angeles, recovered July 20, 2022) — clean.
+
+All waypoint coordinates on these ten rows (none of the ten store a top-level `lat`/`lng`) were
+spot-checked against each peak's actual location; none were implausible. The live catalog's
+in-scope count is now 751 (853 tagged alpine/mountaineering overall), up from 710/802 at batch
+516 — growth from other in-flight catalog work, not from this audit.
+
+Next batch will continue id-ascending from `wa_mount_mystery_standard` (the next in-scope id
+after it is `wa_mount_norton_scramble`).

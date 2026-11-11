@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_mount_lago_south_slope_south_face",
-  "total_in_scope_last_count": 710,
-  "total_wa_alpine_or_mountaineering_tagged": 802,
-  "pass_note": "Pass 8 in progress, batch 521 complete. Continuing id-ascending scope from wa_mount_lago_south_slope_south_face (next batch starts at wa_mount_lawson_standard).",
+  "last_processed_id": "wa_mount_mystery_standard",
+  "total_in_scope_last_count": 751,
+  "total_wa_alpine_or_mountaineering_tagged": 853,
+  "pass_note": "Pass 8 in progress, batch 522 complete. Continuing id-ascending scope from wa_mount_mystery_standard (next batch starts at wa_mount_norton_scramble).",
   "batches": [
     {
       "batch_number": 1,
@@ -10364,6 +10364,25 @@
       "flagged_for_human_review": 5,
       "clean": 3,
       "note": "No SQL this batch -- the headline finding has no verifiable replacement value to write. All six Mount Johnson routes are near-empty stub rows (only id/name/discipline/fa populated, one also has a bare grade); five of six carry a first-ascent attribution, and none of the five hold up. Three (wa_mount_johnson_deception_chimney, wa_mount_johnson_rumble_gully: both 'Lex Maxwell, Joe Gleason, and Louis Ulrich, 1933'; wa_mount_johnson_staircase_route: 'Dick Oswin in 1920') are chronologically impossible -- Wikipedia's Mount Johnson, The Needles, and Martin Peak articles independently agree the peak's own first ascent was 1940 (Elvin Johnson and George Martin, the source of both the peak's and neighboring Martin Peak's names), so no named route on it can have an earlier FA. None of the four climbers in those three rows (Lex Maxwell, Joe Gleason, Louis Ulrich, Dick Oswin) turned up in any Olympic Mountains climbing-history search despite several targeted queries. wa_mount_johnson_south_terrace_route's FA ('Lex Maxwell, Louis Ulrich, and Rolla Goold in 1961') reuses two of the same unverifiable names 28 years later and is at least chronologically possible, but Rolla Goold is likewise unfindable. wa_mount_johnson_northwest_face's FA ('Jim Kurtz and Tom Pinkerton, 1950') is also chronologically fine but equally unverifiable. The contrast with this same batch's wa_mount_lago_south_slope_south_face -- whose FA (Hermann Ulrichs and Dick Alt, 1933) is confirmed by Wikipedia citing Beckey's Cascade Alpine Guide and corroborated by an NPS historic resource study crediting Herman Ulrichs with 21 ascents in the 1930s -- shows the search methodology surfaces a real climber's record when there is one; it found nothing for any of the five Johnson names. All five flagged for human review, not fixed: the right correction isn't a known date/party, just removal of unsupportable data, and that's a human call. wa_mount_johnson_southwest_route (Class 3, no fa claim) is the one honest row of the six -- clean. Mount La Crosse: FA (1928, Paulson/Ryer/Wiseman/Woodworth) confirmed verbatim against Wikipedia; the row's own data_quality field already flags an elevation/prominence conflict with Wikipedia (6421/995 vs 6417/977) as unresolved, and that turns out to be a genuine LiDAR-vs-map-datum split, not an error -- listsofjohn.com itself carries both a LiDAR elevation/rise (6421/544) and a map elevation/rise (6417/997) for this summit, and the DB's own figures track the LiDAR pairing reasonably; left alone, no new finding. Mount Lago: elevation (8745) and prominence (3280) both match Wikipedia and listsofjohn's LiDAR figures exactly; FA confirmed as above; its stored Eureka Creek/Ptarmigan Fire road-closure language matches the live Sept 2026 Okanogan-Wenatchee NF closure order (through Oct 31, 2026) that closes Trail #474 (Eureka Creek) -- clean, and one of the better-sourced rows in the catalog. All lat/lng present (Mount La Crosse and Mount Lago; the six Johnson routes store none) sanity-checked against each peak's expected location; none implausible. In-scope alpine/mountaineering WA tag count held at 802 overall, unchanged since batch 516."
+    },
+    {
+      "batch": 522,
+      "pass": 8,
+      "date": "2026-11-11",
+      "route_ids": [
+        "wa_mount_lawson_standard",
+        "wa_mount_logan_fremont_glacier",
+        "wa_mount_logan_r1",
+        "wa_mount_logan_r2",
+        "wa_mount_mathias_scramble",
+        "wa_mount_maude_r1",
+        "wa_mount_maude_r2",
+        "wa_mount_mccausland_n_route",
+        "wa_mount_meany_standard",
+        "wa_mount_mystery_standard"
+      ],
+      "sql_file": "audits/sql/2026-11-11-batch-522.sql",
+      "summary": "Ten routes across nine peaks (Lawson, Logan x3, Mathias, Maude x2, McCausland, Meany, Mystery). Two confirmed errors, fixed: wa_mount_maude_r1 and wa_mount_maude_r2 both cited the Little Giant Fire closure as order 06-17-07-2026-40, in effect through October 31, 2026 -- the live Okanogan-Wenatchee NF alert shows that order was superseded twice since (order -46 on 10/14, then order -48 effective 11/1/2026 through 4/30/2027), so the closure was extended for winter, not lifted, and both rows understated how long FR 6200/ 6211 and the Phelps Creek/Leroy Creek trails stay closed. Fixed both access.closures and road.status on both rows to the current order number and dates. The separate, unrelated FR 6200 storm-damage closure (order 06-17-07-2026-11, through 12/31/2027, no reopening estimate) these rows also cite was independently confirmed accurate and left alone. Also confirmed FR 6700 (Smithbrook Road, cited on wa_mount_mccausland_n_route) is a real co-closure under the SAME order -11 as the Chiwawa closure -- initially looked like a copy-paste error (one order number covering two geographically distant roads) but the official alert explicitly lists FSR 6700 and 6701 alongside FSR 6200 and 7905 under that same order, covering the whole Wenatchee River Ranger District storm-damage area; no finding. Elevations checked: Mount Logan 9,087 ft, Mount Mathias 7,156 ft, Mount Maude 9,082 ft, Mount Meany 6,695 ft, Mount Lawson 5,401 ft all confirmed against Wikipedia/SummitPost/ Mountaineers within normal cross-source spread; Mount McCausland 5,747 ft matches SummitPost/Mountaineers/Cascadia Magazine (Wikipedia/TopoQuest give 5,741 ft instead -- both within the typical few-foot spread, no finding). FAs checked: Mount Meany (Aug 8, 1907, Curtis/Nelson/McGregor) and Mount Mathias West Face (1957, Eriksson/Hawkins) both confirmed verbatim. Mount Maude North Face route FA (Beckey/Gordon/Rupley/Staley) correctly describes the 1957 FIRST ASCENT OF THE NORTH FACE specifically (confirmed via a first-person 1958 AAC Journal account) rather than the peak itself (Ulrichs/Burnett, 1932) -- the route-level field is doing its job correctly, no finding. Flagged, not fixed: wa_mount_logan_fremont_glacier's FA (\"Lage Wernstedt, 1926\") matches Wikipedia, but a specialist WA-100-highest FA chronology (citing Majors 1973 / Jung 2005) places the same climb in 1925, with 1926 only a surmise from Beckey's guide, and calls the partner name itself uncertain -- two plausible sourced years, no confident pick. Mount Mystery's stored hazard note about a July 2022 fatal fall (Sean Allen, 38, near the south end/Del Monte ridgeline) matches NPS/news coverage exactly -- clean. All present lat/lng (none on any of these ten rows except via waypoints, which were spot-checked against each peak's actual location; none implausible). The live catalog's in-scope count is now 751 (853 tagged alpine/mountaineering overall), up from 710/802 at batch 516 -- growth from other in-flight catalog work, not from this audit."
     }
   ],
   "outage_runs": [
