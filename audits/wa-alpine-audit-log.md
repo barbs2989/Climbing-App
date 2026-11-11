@@ -37128,4 +37128,38 @@ Bailey is independently documented as the author of that outing's account in *Th
 no source found names Philip Rogers as a participant or confirms the specific August 3 summit date.
 Not contradicted either, just short of confirmable.
 
-Next batch will continue id-ascending from `wa_mount_crowder_northeast_ridge` (see progress file).
+## Batch 517 (pass 8) — 2026-11-11
+
+Checked 8 routes, continuing id-ascending past Mount Crowder's Northeast Ridge: `wa_mount_crowder_southwest_route`, `wa_mount_cruiser_nw_face_corner`, `wa_mount_cruiser_south_corner`, `wa_mount_custer_standard`, `wa_mount_daniel_daniel_glacier`, `wa_mount_daniel_lynch_glacier`, `wa_mount_deception_standard`, `wa_mount_degenhardt_southwest_route`.
+
+No confirmed errors, no SQL file. Six clean: Crowder's coordinates (48.7976266, -121.3526314) and
+7,082 ft elevation match TopoZone/Wikipedia/TopoQuest, whose own figures spread 7,044-7,099 ft, and
+its FA (Magnusson, Ardussi, Mech, Schmechel, 1962, when the peak was still called "Old Brownie") is
+corroborated by a Wikipedia mirror. Custer's FA (Dawe, Mason, Teichman, 1958) matches SummitPost's
+"first recorded ascent." Deception's 7,788 ft and its rank as the Olympics' second-highest peak
+after Olympus are confirmed by Wikipedia, Mountaineers trip listings and FastestKnownTime. Both
+Mount Daniel routes correctly treat the West Summit — not the East or Middle — as the true 7,960 ft
+high point; this row's own `pro_tips` field already states that distinction, matching Wikipedia and
+a Mazamas summit breakdown (East Peak 7,899 ft, Middle Summit 7,959 ft, West/true summit 7,960+ ft).
+South Corner's grade ambiguity (5.0 per Mountaineers/Wikipedia vs 5.3 per Mountain Project) was
+already an acknowledged gap in its own `data_quality` field from an earlier pass — not newly found,
+not fixed here.
+
+Flagged for human review, no SQL: `wa_mount_cruiser_nw_face_corner`'s `fa` ("Wayne Wallace and David
+Parker, 2004") could not be corroborated by any source — no Mountain Project, SummitPost or American
+Alpine Journal record of a Northwest Face/Corner route on Mount Cruiser at all, and Wayne Wallace's
+own documented Washington first ascents run 2008-2010, all in the Cascades, none on the Olympics'
+Sawtooth Ridge. Not contradicted outright (absence of evidence isn't proof of absence), but weak
+enough that it shouldn't stand as settled. `wa_mount_degenhardt_southwest_route`'s `grade` is stored
+as "Class 4" while its own `gear`/`beta`/`watch_out` fields describe roped 5.6-5.7 technical
+climbing — an internal inconsistency — but no published description of a "South"/"Southwest Route"
+on Degenhardt was found to resolve which value is right, and the row's own `corrections` and
+`gear_confidence: inferred` fields already disclose the match as unconfirmed, so it was left as-is
+rather than guessed at.
+
+Also noted: the live catalog's in-scope count dropped since batch 516 (737 → 710 routes matching the
+audit's scope query; 837 → 802 tagged alpine/mountaineering routes overall). Something changed the
+WA alpine/mountaineering catalog between runs — not investigated here, since this audit only reads
+and only touches files under `audits/`.
+
+Next batch will continue id-ascending from `wa_mount_degenhardt_southwest_route` (see progress file).

@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_mount_crowder_northeast_ridge",
-  "total_in_scope_last_count": 737,
-  "total_wa_alpine_or_mountaineering_tagged": 837,
-  "pass_note": "Pass 8 in progress, batch 516 complete. Continuing id-ascending scope from wa_mount_crowder_northeast_ridge (next batch starts after it).",
+  "last_processed_id": "wa_mount_degenhardt_southwest_route",
+  "total_in_scope_last_count": 710,
+  "total_wa_alpine_or_mountaineering_tagged": 802,
+  "pass_note": "Pass 8 in progress, batch 517 complete. Continuing id-ascending scope from wa_mount_degenhardt_southwest_route (next batch starts after it). total_in_scope_last_count and total_wa_alpine_or_mountaineering_tagged both dropped since batch 516 (737->710, 837->802) -- catalog changed elsewhere between runs; not investigated here per the audits-only guardrail.",
   "batches": [
     {
       "batch_number": 1,
@@ -10265,6 +10265,26 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-11-05-batch-516.sql",
       "note": "wa_mount_chaval_north_ridge's approach field claimed to share the West Route's approach drainage, naming it '(Jug Creek/Bluff Lake/Cliff Lake benches)' -- but the actual West Route row (wa_mount_chaval_scramble) stores a completely different approach (Arrow Creek off Illabot Creek Road/FR-16), with no mention of those place names at all. Fixed the parenthetical to name the drainage the sibling row itself documents. wa_mount_claywood_standard's fa (Mountaineers Club outing party incl. Philip Rogers and Winona Bailey, Aug 3 1920) is partially corroborated -- the Mountaineers' 1920 summer outing did camp in Dosewallips Basin in early August 1920 and Winona Bailey wrote the Mountaineer account of that outing -- but no source found confirms Philip Rogers' presence or the specific Aug 3 summit date; flagged for human review, not changed."
+    },
+    {
+      "batch_number": 517,
+      "date": "2026-11-11",
+      "pass": 8,
+      "route_ids": [
+        "wa_mount_crowder_southwest_route",
+        "wa_mount_cruiser_nw_face_corner",
+        "wa_mount_cruiser_south_corner",
+        "wa_mount_custer_standard",
+        "wa_mount_daniel_daniel_glacier",
+        "wa_mount_daniel_lynch_glacier",
+        "wa_mount_deception_standard",
+        "wa_mount_degenhardt_southwest_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "note": "Six clean: Crowder's coordinates and 7,082 ft elevation match TopoZone/Wikipedia/TopoQuest (which spread 7,044-7,099 ft) and its FA (Magnusson/Ardussi/Mech/Schmechel, 1962, as 'Old Brownie') is corroborated by a Wikipedia mirror. Custer's FA (Dawe/Mason/Teichman, 1958) matches SummitPost's 'first recorded ascent.' Deception's 7,788 ft and its rank as the Olympics' second-highest peak after Olympus are confirmed by Wikipedia/Mountaineers/FastestKnownTime. Both Mount Daniel routes correctly treat the West Summit (not East or Middle) as the true 7,960 ft high point -- this route's own pro_tips field already states that distinction, matching Wikipedia and a Mazamas summit breakdown (East Peak 7,899 ft, Middle 7,959 ft, West/true summit 7,960+ ft). South Corner's grade ambiguity (5.0 Mountaineers/Wikipedia vs 5.3 Mountain Project) was already an acknowledged gap in its own data_quality field -- not newly found, not fixed. Flagged for human review, no SQL: wa_mount_cruiser_nw_face_corner's fa ('Wayne Wallace and David Parker, 2004') could not be corroborated by any source -- no Mountain Project, SummitPost or AAJ record of a Northwest Face/Corner route on Cruiser at all, and Wallace's own documented WA first ascents run 2008-2010, all in the Cascades, none in the Olympics or on Sawtooth Ridge; not contradicted outright, but weak enough to flag. wa_mount_degenhardt_southwest_route's grade is stored as 'Class 4' while its own gear/beta/watch_out fields describe roped 5.6-5.7 technical climbing -- an internal inconsistency, but no published description of a 'South'/'Southwest Route' on Degenhardt was found to resolve it, and the row's own corrections/gear_confidence fields already flag the match as inferred, not confirmed; left as-is per the no-fabricated-fix rule."
     }
   ],
   "outage_runs": [
