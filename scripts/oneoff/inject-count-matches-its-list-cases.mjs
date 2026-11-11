@@ -25,7 +25,7 @@ const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest
 // so case 4 reproduces the shipped defect rather than something that resembles it.
 const VIEW_ALL_STYLE = 'style={{width:"100%",background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",padding:"6px 0",textAlign:"left"}}';
 const PRE_FIX_VIEW_ALL = '{mergedNotifs.length>8?<button onClick={()=>{setAlertsOpen(false);setNotifOpen(true);}} '
-  + VIEW_ALL_STYLE + '>{"View all "+mergedNotifs.length+" alerts"}</button>:null}';
+  + VIEW_ALL_STYLE + '>{"View all "+mergedNotifs.length+" notifications"}</button>:null}';   // the label's noun is today's (renamed from "alerts" 2026-11-11), so the guard's anchor still finds it
 const replaceViewAll = (s, withText) => {
   const a = s.indexOf("{(function(){/* This button LEAVES");
   if (a < 0) return s;
