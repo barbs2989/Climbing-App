@@ -45,10 +45,19 @@ const sameP = (p, q) => !!p && !!q && p[0] === q[0] && p[1] === q[1];
 const HISTORY_CAP = 50;
 // The run of routed points at one end of a leg that sit within `m` metres of `at` (the anchor being
 // removed): dropped, so the joined leg no longer visits that spot, while a bend elsewhere that
-// merely passes near it is kept.
-function dropNear(via, at, end, m = 40) {
-  if (end === "end") { let e = via.length; while (e > 0 && distM(via[e - 1], at) <= m) e--; return via.slice(0, e); }
-  let s = 0; while (s < via.length && distM(via[s], at) <= m) s++; return via.slice(s);
+// merely passes near it is kept. With `toward` (where a moved anchor went) the run is cut back only
+// to its point nearest the new spot, when that is nearer than the trail outside the run: an anchor
+// dragged back along its own routed trail keeps the trail up to where it now sits, instead of a
+// chord over the old spot that skips trail that was right.
+function dropNear(via, at, end, m = 40, toward) {
+  if (end === "end") {
+    let e = via.length; while (e > 0 && distM(via[e - 1], at) <= m) e--;
+    if (toward && e < via.length) { let best = -1, bd = e > 0 ? distM(via[e - 1], toward) : Infinity; for (let k = e; k < via.length; k++) { const d = distM(via[k], toward); if (d < bd) { bd = d; best = k; } } if (best >= 0) e = best + 1; }
+    return via.slice(0, e);
+  }
+  let s = 0; while (s < via.length && distM(via[s], at) <= m) s++;
+  if (toward && s > 0) { let best = -1, bd = s < via.length ? distM(via[s], toward) : Infinity; for (let k = 0; k < s; k++) { const d = distM(via[k], toward); if (d < bd) { bd = d; best = k; } } if (best >= 0) s = best; }
+  return via.slice(s);
 }
 // Remembered for the session, not across them: a climber tracing two crags in one sitting keeps the mode.
 let followDefault = false;
@@ -209,7 +218,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const zero = i === 0 || sameP(next[i - 1].a, next[i].a);
       // A leg going straight gives up the answer it was waiting for, so the slot goes to a live leg.
       if (!(want && !zero)) abortRoute(next[i].id);
-      next[i] = Object.assign({}, next[i], { via: next[i].stub && want && !zero ? next[i].via : [], pending: want && !zero, told: all ? next[i].told : undefined });
+      next[i] = Object.assign({}, next[i], { via: next[i].stub && want && !zero ? next[i].via : [], pending: want && !zero, told: all && next[i].told !== false ? next[i].told : undefined });
       if (want && !zero) touched.push(next[i].id);
     });
     return touched;
@@ -267,7 +276,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const segD = (p, q) => { if (!p || !q) return Infinity; const m = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2]; return Math.min(distM(nn.a, m), distM(nn.a, p), distM(nn.a, q)); };
       const before = via[best - 1] || cur[i - 1].a, after = via[best + 1] || cur[i].a;
       const cut = segD(before, via[best]) <= segD(via[best], after) ? best : best + 1;
-      nn.via = via.slice(0, cut);
+      nn.via = via.slice(0, cut); nn.stub = cur[i].stub;
       next[i] = Object.assign({}, cur[i], { via: via.slice(cut), told: undefined });
       next.splice(i, 0, nn);
       // A point placed ON the path (a tap on the hollow dot, a drop a few metres from a routed point)
@@ -278,7 +287,8 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       const full = [cur[i - 1].a].concat(via, [cur[i].a]);
       let offM = Infinity;
       for (let k = 1; k < full.length; k++) { const A = [full[k - 1][0] * ky, full[k - 1][1] * kx], B = [full[k][0] * ky, full[k][1] * kx]; const dx = B[0] - A[0], dy = B[1] - A[1], l2 = dx * dx + dy * dy; const t = l2 ? Math.max(0, Math.min(1, ((P[0] - A[0]) * dx + (P[1] - A[1]) * dy) / l2)) : 0; offM = Math.min(offM, Math.hypot(P[0] - (A[0] + t * dx), P[1] - (A[1] + t * dy))); }
-      if (offM < 15) { abortRoute(cur[i].id); [i, i + 1].forEach((k) => { if (next[k].pending) next[k] = Object.assign({}, next[k], { pending: false }); }); commit(next, []); return true; }
+      // ...unless the leg was being re-asked (a moved anchor): then both halves are, in its place.
+      if (offM < 15) { abortRoute(cur[i].id); if (!cur[i].pending) { commit(next, []); return true; } }
       const touched = [];
       [i, i + 1].forEach((k) => { next[k] = Object.assign({}, next[k], { pending: true }); touched.push(next[k].id); });
       commit(next, touched);
@@ -298,7 +308,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     const oldA = cur[i].a, movedM = distM(oldA, next[i].a);
     // Only the RUN of routed points next to the old spot (the end of the leg into it, the start of the
     // leg out of it), never a bend elsewhere that merely passes within reach.
-    const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM); // a trim that takes most of a leg is said ("gone")
+    const trim = (via, k) => dropNear(via, oldA, k === i ? "end" : "start", movedM, next[i].a); // a trim that takes most of a leg is said ("gone")
     [i, i + 1].forEach((k) => { if (k < 1 || k >= next.length) return; const zero = sameP(next[k - 1].a, next[k].a); if (routed(cur[k]) && !zero) { const kept = trim(next[k].via, k), most = kept.length < cur[k].via.length / 2; next[k] = Object.assign({}, next[k], { via: kept, pending: on, stub: most }); if (on) touched.push(next[k].id); else { abortRoute(next[k].id); if (most) noteFailure("gone"); } } else { next[k] = Object.assign({}, next[k], { via: [], pending: on && !zero }); if (on && !zero) touched.push(next[k].id); else abortRoute(next[k].id); } });
     commit(next, touched); return true; };
   const deleteAnchor = (id) => { const cur = nodesRef.current, i = cur.findIndex((n) => n.id === id); if (i < 0) return; const next = cur.slice(); next.splice(i, 1); abortRoute(id); setSelectedId(null);
