@@ -8,7 +8,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
-  "More climbs in this area", `NearbyPeaks`, Top contributors, which ends the page). Areas have no Discussion thread: the owner removed it on 2026-11-11.
+  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
   On the website (1024px+) each child's card carries a five-bar **mini grade chart** (`WallGradeBars`, competitor review item 13,
   2026-11-05): the child's graded climbs banded on its main grading scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, WI, M, aid and
   class scales have their own five bands), lowest band on the left, read in ONE call for the whole list by `useAreaChildrenGradeCounts`
@@ -257,7 +257,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 5. Connections
 - `openRoute(x)` / `onOpenRoute` hand a route to the route page; `wishlist`, `bookmarks`, `completedIds` flow in from `App` (objectives, saved, done).
 - `jumpToState` and `onAreaContext` let other screens deep-link to or read the current area. `onAreaContext` reports every area, with
-  `lat`/`lng` null when the row has none (it used to go silent without a coordinate).
+  `lat`/`lng` null when the row has none — it used to go silent without a coordinate, which hid the Discussion on such areas.
 - Conditions score, alpine flags and fire layers use the same Leaflet kit (`FireMap`, `ShadeMap`).
 - Units: distances and elevations render through `uDistMi` / `uElev` (`check:units`).
 - Partners: By Area search picks an area from the same tree (see `docs/features/partners.md`). **Partners here** (0300): every crag-family area page and its

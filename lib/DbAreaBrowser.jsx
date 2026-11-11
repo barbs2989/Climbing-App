@@ -54,7 +54,7 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
   useEffect(() => {
     if (!onAreaContext) return;
     // Reported WHETHER OR NOT the area has a coordinate. It used to be null without one, and
-    // the consumer at the time (the area Discussion, removed 2026-11-11) then never rendered on an area such as Florida's
+    // the only consumer left (area Discussion) then never rendered on an area such as Florida's
     // "Artificial Boulders" (fl_artificial_boulders: 30 climbs, lat/lng null). A consumer that
     // needs a position checks lat/lng itself.
     onAreaContext(current
