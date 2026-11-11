@@ -391,7 +391,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
-      {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
+      {/* 14px above, the same gap Suggested climbs keeps above itself: with no Nearby peaks (a crag) the board
+          sat flush under the Suggested climbs box (owner, 2026-11-11). Block margins collapse, so with
+          Nearby peaks shown the gap is 14, not 14 + its own 10. */}
+      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={8}/></div> : null}
     </div>
   );
 }
