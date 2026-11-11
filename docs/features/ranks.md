@@ -31,6 +31,11 @@
   still count; the sheet sums them into one "N more climbs they keep private" line. Modelled on 8a.nu's
   scorecard (the ascents a score is summed from) and theCrag's CPR timeline (the ascent list under a column).
 - **Top climbs**: routes, not climbers, from `leaderboard_top_climbs`.
+- **Crag regular, under By area** (competitor review batch C, item 22, 2026-11-05 — Strava's Local Legend): below the area's
+  breadcrumb and its sub-area chips, one row names the climber with the most logged DAYS under that area in the last 90
+  (two at least, visible logs, no conditions reports, the same people the boards rank, ties by logs then last day) with the
+  count; the row opens their profile. `useCragRegular` → `crag_regular` (0404), signed-in only; nothing is drawn when nobody
+  has two days there, and a failed read draws nothing rather than a wrong name. The same row sits on the area page's PARTNERS HERE card.
 - Signed out (or `USE_DB` off) the board is the seed example set plus you, never mixed with real climbers.
 
 ## 2. How it works — the scoring (audited 2026-10-15, 0323)

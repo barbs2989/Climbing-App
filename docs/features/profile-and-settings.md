@@ -97,7 +97,9 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   `settingsLegalOpen`). Privacy & safety: every visibility and who-can-reach-you control, the inbox filter, the résumé switch,
   restricted and blocked climbers. Notifications: the three switches. Your data & account: sign in/out, Edit profile, the guide
   entries, Edit areas/disciplines/grades, Your conditions, Readiness defaults, units and date format (*Display*), then export,
-  opt out and delete. Legal & help: the four documents and How ClimbMatch works.
+  opt out and delete. Legal & help: the four documents and How ClimbMatch works. Choosing a document closes the
+  Settings sheets (`closeSettings`) and the document opens at its title: `LegalView` is drawn inline, not as a fixed
+  popup, so `App` scrolls to the top when `legal` is set (2026-11-05).
   Your conditions' temperature and wind are two-handle sliders (`lib/RangeSlider.jsx`) that take a SIDEWAYS drag
   only: an up-down swipe that starts on one scrolls the page and leaves the range alone (`touch-action:pan-y`; the
   track jumps a handle on a tap, never on a swipe), so the page scrolls from anywhere on it.
