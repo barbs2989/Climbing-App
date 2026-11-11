@@ -1536,7 +1536,7 @@ function crewAskedToJoin(c,id){return ((c&&c.members)||[]).some(function(m){retu
    checked yours too.
 
    THAT IS REACHABLE, AND IT IS THE INVITE YOU HAVE NOT ANSWERED. The creator's own row is
-   written as `confirmed` (by the 0408 trigger with the crew itself, and by formCrew after it), and
+   written as `confirmed` (by the 0408 trigger, in the same insert as the crew; formCrew no longer writes it), and
    the hydration PREPENDS `{climberId:0,"confirmed"}` whenever you have no row of your own --
    which means the only way your row is something else is
    that somebody put it there, i.e. you were invited. `isReady` then called that crew READY on the

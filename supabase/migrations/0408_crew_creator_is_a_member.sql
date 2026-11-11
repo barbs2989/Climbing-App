@@ -10,7 +10,8 @@
 --
 -- Two parts:
 --   * a trigger writes the creator's confirmed row in the same statement as the crew, so the two can
---     no longer come apart. formCrew's own insert stays harmless: addCrewMember ignores 23505.
+--     no longer come apart. (formCrew stopped writing the row itself once this was live; a stray
+--     duplicate from an old client is harmless: addCrewMember ignores 23505.)
 --   * a backfill for crews that exist without one. A creator cannot leave without disbanding the crew
 --     (CrewCard: "you're the organizer, so this disbands it"), so a missing row is never a departure.
 --     A creator row that exists at some OTHER status is left alone (on conflict do nothing).
