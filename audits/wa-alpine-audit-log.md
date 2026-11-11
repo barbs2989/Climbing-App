@@ -37222,3 +37222,71 @@ All eight routes' coordinates sanity-checked against their named peak's expected
 were implausible.
 
 Next batch will continue id-ascending from `wa_mount_fricaba_standard`.
+
+## Batch 519 (pass 8) — 2026-11-11
+
+Checked 8 routes, continuing id-ascending past Mount Fricaba: `wa_mount_fury_east_direct_east_ridge`,
+`wa_mount_fury_east_mongo_ridge`, `wa_mount_fury_east_north_buttress`,
+`wa_mount_fury_east_southeast_glaciers`, `wa_mount_fury_west_west_ridge`,
+`wa_mount_goode_northeast_buttress`, `wa_mount_hardy_snow_scramble`, `wa_mount_herman_standard_scramble`.
+(`wa_mount_index_bluebell`, next in id order, was skipped — its area, North Norwegian Buttress, is a
+crag, not a peak, so it is out of this audit's scope.)
+
+Two confirmed errors fixed, SQL in `audits/sql/2026-11-11-batch-519.sql`:
+
+- `wa_mount_fury_east_direct_east_ridge`'s `high_point_ft` (8356) is East Fury's Oct-2022
+  theodolite-survey figure, which the same surveyor (Eric Gilbertson) retracted in an Oct 2024
+  re-survey after finding the 2022 benchmark reference was wrong — corrected value 8,321.5 ft.
+  This catalog's own `wa_mount_fury_east_north_buttress` row already stores the corrected figure
+  (8322) for the same summit, so fixed to match.
+- `wa_mount_fury_west_west_ridge`'s `high_point_ft` (8322) turns out to be East Fury's elevation,
+  not West Fury's — West Fury's own 2022 survey gives 8,305 ft ±10, which this catalog's sibling
+  `wa_mount_fury_east_mongo_ridge` row (also West Peak) already stores as 8303, within that
+  tolerance. 8322 looks like a copy-paste from the East Peak row; the row's own `corrections`
+  field had already concluded this but it was never applied. Fixed `high_point_ft` to 8305 and
+  brought the itinerary's embedded "West Fury summit (8,303 ft)" label into line with it.
+
+Clean: Mount Goode's coordinates, 1966 Beckey/Stewart FA, and III-IV/5.5 grade all corroborate
+across SummitPost, Mountain Project and Wikipedia; its stored `classic: false` is correct despite
+sounding like a Fifty-Classics pick — Goode's Northeast Buttress is on Beckey's separate "100
+Favorite North American Climbs" list, not Roper & Steck's Fifty Classics (whose Northeast Buttress
+entry is Slesse, in BC). Mount Hardy's elevation (8,099 ft, the current LiDAR figure superseding
+older 8,035-8,080 ft quad readings), coordinates, and both Rainy Pass/Swamp Creek trailhead options
+check out against Wikipedia, TopoZone and independent trip reports; its gain_ft/loss_ft (5950) is
+internally consistent with its own itinerary's day-by-day sums. Mount Herman's coordinates, Chain
+Lakes/Bagley Lakes trail routing, and unroped Class 2-3 scramble character all corroborate against
+WTA and SummitPost. Mongo Ridge's 2006 Wayne Wallace solo FA, 25-pitch/5.10a/VI stats, and
+high_point_ft (8303, within the West Fury survey's tolerance) all check out against Mountain
+Project, Wallace's own Alpinist account, and the 2022 survey; its internal stats (gain/loss vs.
+itinerary sums, pitch_detail count vs. pitches, rappel_detail count vs. rappel_count_note) all
+agree with each other. The June 2025 Southeast Glaciers fall-and-rescue in `hazards`/`watch_out`
+is corroborated by a Mountaineers.org accident report matching date, route and outcome; its
+permit-fee figures match the current NPS fee schedule.
+
+Flagged for human review, no SQL: East Fury's elevation is a genuine three-way conflict the
+`wa_mount_fury_east_southeast_glaciers` row's own `overview` text narrates but doesn't resolve
+(2022 survey 8356, 2024 resurvey 8321.5, ListsOfJohn LiDAR 8325) — fixed on the two sibling rows
+above where the column stood alone, but left as-is here since the overview text would need a
+coordinated rewrite, not a column flip. That same row's `gain_ft`/`loss_ft` (6200/13000) don't sum
+to its own itinerary's day-by-day figures (~6900/~7200); 13000 looks like it absorbed the
+itinerary's combined "~13,000 ft gain+loss" prose figure as loss alone. North Buttress's `fa`
+("Fred Beckey and Dan Davis, July 1962") could not be matched to any AAJ-indexed Beckey/Davis
+first ascent on Fury; the only similar record found pairs them on Gannett Peak, Wyoming, a
+different mountain. Several routes' documented first ascents (Direct East Ridge's 1976 date vs. a
+possible 1975 account; Goode's 1984 vs. a conflicting 1985 first-winter-ascent record; Hardy's thin
+single-source 1933 FA) carry genuine source conflicts or weak corroboration a human with AAJ/Beckey
+guidebook access should adjudicate. Direct East Ridge's own fields disagree on the unnamed
+sub-summit's elevation ("Point 7,860" in two fields vs. "Point 7,850" in six others) with no
+outside source to arbitrate. Herman's and Mongo Ridge's `dist_km` columns each look like one
+convention (one-way or a round-trip subtotal) while their own `itinerary`/prose state a different
+total mileage — the known dual-convention issue CLAUDE.md already flags for this column, not acted
+on here.
+
+All eight routes' coordinates sanity-checked against their named peak's expected location (two
+rows — `wa_mount_fury_east_north_buttress` and `wa_mount_fury_east_direct_east_ridge` — carry no
+lat/lng at all and so had nothing to check); none present were implausible. The live catalog's
+in-scope count held steady at 710 (802 tagged alpine/mountaineering overall), matching batch 518 —
+no further drift since the batch-516 count change.
+
+Next batch will continue id-ascending from `wa_mount_herman_standard_scramble` (the next in-scope
+id after it is `wa_mount_hinman_east_route`).

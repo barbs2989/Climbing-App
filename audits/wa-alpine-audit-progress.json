@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_mount_fricaba_standard",
+  "last_processed_id": "wa_mount_herman_standard_scramble",
   "total_in_scope_last_count": 710,
   "total_wa_alpine_or_mountaineering_tagged": 802,
-  "pass_note": "Pass 8 in progress, batch 518 complete. Continuing id-ascending scope from wa_mount_fricaba_standard (next batch starts after it).",
+  "pass_note": "Pass 8 in progress, batch 519 complete. Continuing id-ascending scope from wa_mount_herman_standard_scramble (next batch starts after it, at wa_mount_hinman_east_route).",
   "batches": [
     {
       "batch_number": 1,
@@ -10305,6 +10305,26 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-11-11-batch-518.sql",
       "note": "Fixed wa_mount_ellinor_southeast_chute (high_point_ft was NULL, filled to 5944 ft per its own waypoint/WTA/SummitPost; upper-trailhead waypoint mislabeled \"(NFR 24)\" fixed to \"(FR 2419-014)\" per USFS/WTA), wa_mount_fairchild_standard (overview + summit waypoint said 6,899 ft with no corroborating source; fixed prose/waypoint to 6,900 ft to match the row's own high_point_ft column and Wikipedia), and wa_mount_fricaba_standard (overview falsely claimed Fricaba is the highest point of Olympic National Park -- Mount Olympus, 7,980 ft, holds that distinction; fixed to say highest point of the Buckhorn Wilderness and Olympic National Forest instead, per Wikipedia). Flagged for human review, not fixed: wa_mount_despair_east_route's fa (Beckey/Anderson/Kelley per popular sources vs. Anderson/Kelly/Crooks with no Beckey per the NPS Historic Resource Study citing Thompson 1970 -- primary vs. secondary conflict); both Despair routes sharing one high_point_ft (7296) despite the NE Buttress topping out on a distinct, slightly lower north summit with no precise elevation found; and wa_mount_formidable_south_face's 1935 Ulrichs naming claim, uncorroborated either way. Clean: Fernow (elevation + WA-rank superlatives + a specific, verified USFS closure order number/dates), Ferry (elevation, Bailey Range rank, Seattle Press Expedition naming), Formidable (elevation, coordinates, 1938 Ptarmigan Club FA, corroborated Aug 2006 fatality), Fricaba (elevation, coordinates, split 1957 FA), Despair East Route (elevation, coordinates) and NE Buttress (2014 FA, length)."
+    },
+    {
+      "batch_number": 519,
+      "date": "2026-11-11",
+      "pass": 8,
+      "route_ids": [
+        "wa_mount_fury_east_direct_east_ridge",
+        "wa_mount_fury_east_mongo_ridge",
+        "wa_mount_fury_east_north_buttress",
+        "wa_mount_fury_east_southeast_glaciers",
+        "wa_mount_fury_west_west_ridge",
+        "wa_mount_goode_northeast_buttress",
+        "wa_mount_hardy_snow_scramble",
+        "wa_mount_herman_standard_scramble"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 10,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-11-11-batch-519.sql",
+      "note": "Fixed wa_mount_fury_east_direct_east_ridge (high_point_ft stored the retracted 2022 East Fury survey figure 8356; corrected to 8322, the 2024 re-survey value this catalog's own sibling row wa_mount_fury_east_north_buttress already stores) and wa_mount_fury_west_west_ridge (high_point_ft stored 8322 -- East Fury's elevation, not West Fury's; corrected to 8305 per West Fury's own 2022 survey and the sibling wa_mount_fury_east_mongo_ridge row's 8303, and brought the itinerary's embedded '(8,303 ft)' label into line). wa_mount_index_bluebell was skipped mid-range: its area (North Norwegian Buttress) is a crag, not a peak, so it is out of this audit's scope. Flagged for human review, not fixed: wa_mount_fury_east_southeast_glaciers's high_point_ft (8356) sits in a genuine three-way survey conflict its own overview text narrates but doesn't resolve (2022: 8356, 2024 resurvey: 8321.5, ListsOfJohn LiDAR: 8325) -- left alone since fixing it needs a coordinated prose rewrite, not a column flip, unlike the two bare-column fixes above; that same row's gain_ft/loss_ft (6200/13000) don't sum to its own itinerary's per-day figures. wa_mount_fury_east_north_buttress's fa (Beckey & Dan Davis, July 1962) could not be matched to any AAJ-indexed Fury ascent -- the closest record pairs them on Gannett Peak, Wyoming instead. Several other FAs (Direct East Ridge 1976, Goode's 1984 vs. a conflicting 1985 first-winter-ascent record, Hardy's single-sourced 1933) carry real conflicts or thin corroboration needing AAJ/Beckey guidebook access. Direct East Ridge's own fields disagree on an unnamed sub-summit's elevation ('Point 7,860' in two fields vs. 'Point 7,850' in six others). Herman's and Mongo Ridge's dist_km columns each look like a different convention than their own itinerary/prose state -- the known dual-convention issue CLAUDE.md already flags for this column. Clean: Goode (coordinates, 1966 FA, grade, and its classic=false flag, which is correct -- it's a Beckey-100 pick, not a Fifty Classics route), Hardy (elevation, coordinates, trailheads, internally-consistent gain/loss), Herman (coordinates, trail routing, scramble character), Mongo Ridge (2006 solo FA, pitch/grade stats, elevation, internal stat consistency), Southeast Glaciers' June 2025 accident report and permit fees."
     }
   ],
   "outage_runs": [
