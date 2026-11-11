@@ -163,7 +163,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       if (f.detour) parts.push(legs(f.detour) + " where the mapped trail goes a long way round (tap a point where you cross)");
       if (f.far) parts.push(legs(f.far) + " too long for one leg (tap a point between)");
       if (f.gone) parts.push(legs(f.gone) + " cut back: the point moved past most of the trail they followed (to ask again, nudge the point, or switch Follow trails off and on)");
-      if (f.kept) parts.push(legs(f.kept) + " keeping the earlier path, which could not be re-followed from the new point (nudge it to ask again)");
+      if (f.kept) parts.push(legs(f.kept) + " keeping the earlier path, which could not be re-followed between its points (nudge one to ask again)");
       if (f.down) parts.push(legs(f.down) + " the trail router didn't answer for (offline, or busy: move the point a little, or switch Follow trails off and on, to ask again)");
       const total = f.none + f.far + f.down + f.detour + f.kept + f.gone;
       say(tx((total === 1 ? "One leg could not be followed: " : total + " legs could not be followed: ") + parts.join("; ") + "."));
@@ -194,7 +194,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       // Said once per leg and reason (`told`): a cached answer on Undo/Redo or a Follow toggle is not news.
       const keptVia = Array.isArray(via) ? via : next[j].via;
       // The reason word: "none" for the router's own "no trail", so it is never mistaken for "nothing to tell".
-      const why = Array.isArray(via) ? undefined : (via === "far" || via === "detour") ? via : keptVia.length ? (next[j].stub ? "gone" : "kept") : (via === null ? "none" : via);
+      const why = Array.isArray(via) ? undefined : via === false ? false : (via === "far" || via === "detour") ? via : keptVia.length ? (next[j].stub === true ? "gone" : "kept") : "none";
       const fresh = why !== undefined && next[j].told !== why;
       next[j] = Object.assign({}, next[j], { via: keptVia, pending: false, told: why, stub: undefined });
       setBoth(next);
@@ -318,7 +318,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
     if (wasRouted && i > 0 && i < next.length) {
       abortRoute(cur[i + 1].id); // the leg out of the deleted point is merged: its own answer is no longer wanted
       if (sameP(next[i - 1].a, next[i].a)) { next[i] = Object.assign({}, next[i], { via: [], pending: false, told: undefined }); commit(next, []); return; } // the two it joins are one spot: no leg
-      next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow, stub: true, told: undefined }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
+      next[i] = Object.assign({}, next[i], { via: dropNear(cur[i].via || [], cur[i].a, "end").concat(dropNear(cur[i + 1].via || [], cur[i].a, "start")), pending: !!propsRef.current.follow, stub: "joined", told: undefined }); commit(next, propsRef.current.follow ? [next[i].id] : []); return; }
     commit(next, withLegs(next, [i])); };
   // Clear gives up every answer still on its way, so a new line's legs do not queue behind dead ones.
   const clearAll = () => { if (!nodesRef.current.length) return; routing.current.forEach((c) => c.abort()); routing.current.clear(); setSelectedId(null); commit([], []); };
@@ -336,7 +336,7 @@ export default function TrailDrawMap({ start, end, pts, setPts, C, marks, title,
       return;
     }
     const cur = nodesRef.current, idxs = [];
-    cur.forEach((x, i) => { if (i > 0 && (!routed(x) || x.stub) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); });
+    cur.forEach((x, i) => { if (i > 0 && (!routed(x) || x.stub || x.told === false) && !x.pending && !sameP(cur[i - 1].a, x.a)) idxs.push(i); /* ...and a leg the router never answered for, kept points or not: the note says this switch asks again */ });
     if (!idxs.length) return;
     const next = cur.slice();
     commit(next, withLegs(next, idxs, true));
