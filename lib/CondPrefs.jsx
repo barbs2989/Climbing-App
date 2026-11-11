@@ -192,8 +192,11 @@ const SYNC_TEXT = {
 /* The controls. `disc` is the route's discipline when shown on a route (so it opens on that
    discipline's range); in Settings and the Menu there is none, so it opens on All climbing.
    `only="temp"` shows the temperature range alone (the alpine Conditions tab). */
-/** @param {{disc?: string, only?: string}} props */
-export function CondPrefsControls({ disc, only }) {
+/* `onSignIn`, where the caller can open sign-in (the Menu's Your conditions, Settings), turns the signed-out line into an action:
+   it used to say "Sign in to keep it on your account" with nothing to tap (owner 2026-11-05). The route page's temperature box has
+   no sign-in path, so it passes none and keeps the plain line. */
+/** @param {{disc?: string, only?: string, onSignIn?: () => void}} props */
+export function CondPrefsControls({ disc, only, onSignIn }) {
   const p = useCondPrefs();
   const sync = useCondSync();
   const [scope, setScope] = useState(scopeForDiscipline(disc));
@@ -272,6 +275,9 @@ export function CondPrefsControls({ disc, only }) {
     </div> : null}
     <div><div style={LBL}>After rain</div><div role="group" aria-label="After rain" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>{chip(p.rain === "normal", "Usual drying time", function () { updateCondPrefs(function (x) { x.rain = "normal"; return x; }); }, "n")}{chip(p.rain === "cautious", "Give it longer", function () { updateCondPrefs(function (x) { x.rain = "cautious"; return x; }); }, "c")}</div></div>
     </> : null}
-    <div role="status" style={{ fontSize: 11.5, color: sync === "failed" ? C.amber : C.textMuted, lineHeight: 1.5 }}>{SYNC_TEXT[sync] || SYNC_TEXT.local}</div>
+    <div>
+      <div role="status" style={{ fontSize: 11.5, color: sync === "failed" ? C.amber : C.textMuted, lineHeight: 1.5 }}>{sync === "local" && onSignIn ? "Saved on this device." : (SYNC_TEXT[sync] || SYNC_TEXT.local)}</div>
+      {sync === "local" && onSignIn ? <button onClick={onSignIn} style={{ minHeight: 44, background: "none", border: "none", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", ...TEXT_TAP }}>Sign in to keep it on your account</button> : null}
+    </div>
   </div>;
 }
