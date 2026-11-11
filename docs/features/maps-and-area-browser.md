@@ -261,7 +261,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - Conditions score, alpine flags and fire layers use the same Leaflet kit (`FireMap`, `ShadeMap`).
 - Units: distances and elevations render through `uDistMi` / `uElev` (`check:units`).
 - Partners: By Area search picks an area from the same tree (see `docs/features/partners.md`). **Partners here** (0300): every crag-family area page and its
-  ancestors below the state (`PARTNER_CARD_TYPES` — never a peak or a state) draws `PartnersHereCard`: how many climbers are listed here or nearby, up to three rows
+  ancestors below the state (`PARTNER_CARD_TYPES` — never a peak or a state) draws `PartnersHereCard`: the **Crag regular** (competitor review item 22, 2026-11-05 — Strava's Local Legend: the climber with the most logged DAYS under the area in the last 90, two at least, from `useCragRegular` / `crag_regular` 0404, signed-in only, the same people the boards rank, counts only; the row opens their profile; nothing is drawn when nobody has two days or the read failed), how many climbers are listed here or nearby, up to three rows
   (the row component arrives from App as the `PartnerRow` prop — this file does not import core), a one-tap **List me here / Listed ✓** that writes this area's listing,
   "Add dates or climbing types" (a full-width card button, shown once listed) into the My listed areas sheet (`onListMe`), and "See all →" into the Partners tab on this area (`onFindPartnersInArea`). Signed out it asks for sign-in.
   `check:area-surfaces` rule 3 pins it. Its crews row (0302): **Start a crew here** (`onStartCrew` → `StartCrewSheet` prefilled with this area) and **Crews here · N**

@@ -79,7 +79,7 @@ interface ScoreFactor {
   want: string;
 }
 
-const _cragWx: Record<string,unknown>={},_cragAir: Record<string,unknown>={},_cragClim: Record<string,ScoreClimate>={},_cragSp: Record<string,unknown>={};
+const _cragWx: Record<string,unknown>={},_cragWxAt: Record<string,number>={},_cragAir: Record<string,unknown>={},_cragClim: Record<string,ScoreClimate>={},_cragSp: Record<string,unknown>={};
 const DIR8=["N","NE","E","SE","S","SW","W","NW"];
 const agoH=function(h: number){return h<48?h+" h ago":Math.round(h/24)+" days ago";};
 const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
@@ -100,7 +100,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     if(!hasPt||!on)return;
     if(_cragWx[ck]){setWx({data:_cragWx[ck]});return;}
     let live=true;setWx(null);
-    fetchCragForecastMeasured(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
+    fetchCragForecastMeasured(lat,lng).then(function(j){_cragWx[ck]=j;_cragWxAt[ck]=Date.now();if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
     return function(){live=false;};
   },[ck,tries]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on the crag coordinate key (ck encodes lat/lng) and retry count; on/hasPt follow the route
   useEffect(function(){
@@ -203,7 +203,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
   return <div data-conditions-score="1">
     {cur?sec("Right now",<div style={condBox}>
       {wetSand?sandWarn:dryChip}
-      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+clockHr(cur.hr)}</div></div></div>
+      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+clockHr(cur.hr)}</div></div></div>{/* IN WORDS (competitor review batch A, item 4, owner 2026-11-04): one or two sentences a climber can read without the chart — the score's own label, what holds it down (its caps), the best day of the week by the same stars — and when the forecast behind it was fetched (the forecast call's own clock, through the climber's date preference). Nothing here that the tiles below do not also say. */}{(function(){const parts: string[]=[];parts.push(starsLabel(cur.stars)+" right now"+(cur.caps.length?", held down by "+cur.caps.map(function(c: {why: string}){return c.why.charAt(0).toLowerCase()+c.why.slice(1);}).join(" and "):"")+".");let bi=-1;days.forEach(function(d,i){if(d.stars!=null&&(bi<0||(d.stars as number)>(days[bi].stars as number)))bi=i;});if(bi>=0&&days[bi].stars!=null)parts.push("Best of the week: "+dayName(days[bi],bi)+" ("+fmt(days[bi].stars)+").");const at=_cragWxAt[ck];const upd=at?new Date(at).toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"}):"";return <p style={{margin:"0 0 10px",fontSize:12.5,lineHeight:1.5,color:C.textSub}}>{parts.join(" ")}{upd?<span style={{color:C.textMuted}}>{" Updated "+upd+"."}</span>:null}</p>;})()}
       {cur.caps.length?condRow("Held down by",cur.caps.map(function(c: {why: string}){return c.why;}).join(" · "),C.amber):null}
       {condRow("Temperature",cur.temp!=null?uTemp(cur.temp)+(cur.feels!=null&&uTempN(cur.feels)!==uTempN(cur.temp)?" · feels like "+uTemp(cur.feels):""):"Not measured")}
       {condRow("Friction",cur.friction?cur.friction.label:"Not measured",cur.friction?(cur.friction.key==="crisp"?C.green:cur.friction.key==="ok"?C.text:C.amber):C.textMuted)}

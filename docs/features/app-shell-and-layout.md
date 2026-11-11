@@ -84,6 +84,7 @@ room for side-panel ads later. The phone app keeps its own look.
     only where it would come within 24px of the sidebar or rail (`wideGeom`: 1280 → column 276–928, rail
     952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
     side ads can go later.
+  - **Help & FAQ is a page on the website** (competitor review batch B, item 19, owner 2026-11-04): the footer's *Help & FAQ* link (and the Menu's *How ClimbMatch works* on a phone) opens the same `Help` (`lib/Help.jsx`) — the tour, the FAQ, and a CONTACT line — drawn in the column with ← Back (`page` prop, `_vHelp` in `_pageView`) at 1024px+ and as the dialog on a phone. The contact address is `CONTACT_EMAIL` in `lib/contact.js`, a placeholder on the reserved `.example` domain until the owner replaces it ("put a placeholder email for now i will do that later").
   - **The column has edges** (owner 2026-11-05, "a border around all the middle … audit how Strava does
     it"): a 1px `C.border` line down each side of the page column, from the top bar's border to the
     footer's, square, no shadow (`wideColumn`'s `boxShadow`, `COL_EDGES`, and the same rule in the boot
@@ -100,7 +101,7 @@ room for side-panel ads later. The phone app keeps its own look.
     client area (measured, not 100vw, so the Windows scrollbar never pushes it off the edge) that pulls
     itself out of the page column by `--cm-col-left` and paints above the fixed sidebar and rail at the
     page's end; its content is centred and capped at 1320px. In it: the mark, wordmark and one line on what the app is for, three link
-    columns (Explore: the tabs; ClimbMatch: How it works, About us, Feedback, Rate the app, Settings;
+    columns (Explore: the tabs; ClimbMatch: Help & FAQ, About us, Feedback, Rate the app, Settings;
     Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
     the Climbs tab's route and area pages only (owner 2026-11-04, `showStates`); not the tab's own
