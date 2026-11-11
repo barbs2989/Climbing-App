@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
+import { useWideScreen } from "../../lib/wideLayout.js";
 
 export interface SectionJumpsProps {
   /** The tab's content element; the jump row scans its headings and re-scans as they change. */
@@ -45,16 +46,29 @@ export default function SectionJumps({ rootRef, tabKey }: SectionJumpsProps) {
     mo.observe(root, { childList: true, subtree: true });
     return function () { mo.disconnect(); if (t) clearTimeout(t); };
   }, [tabKey]); // eslint-disable-line react-hooks/exhaustive-deps -- rootRef is a ref object: its identity never changes, and the scan reads .current when it runs
+  /* ONE ROW ON THE WEBSITE (competitor review batch A, item 4, owner 2026-11-04): the pills wrap at 1024px+
+     (wideCss), and a Conditions tab's fourteen made four rows of links before the page began. The first six
+     show, the rest fold behind "More ▾" until clicked; the phone's row still scrolls sideways. */
+  const wide = useWideScreen();
+  const [showAll, setShowAll] = useState(false);
   if (items.length < 4) return null;
+  const SHOW = 6;
+  const folded = wide && !showAll && items.length > SHOW;
   function go(i: number) {
     const h = els.current[i];
     if (!h || !h.isConnected) return;
     /* Land BELOW whatever is pinned at the top of the screen (the app bar is sticky, 59px), not under it: a fixed 12px margin hid the heading it jumped to (owner, 2026-10-21). Measured at tap time, so a taller bar (a notch inset, a banner) is cleared too. */
     let bar = 0;
     try {
-      for (let el: Element | null = document.elementFromPoint((window.innerWidth || 0) / 2, 1); el && el !== document.body; el = el.parentElement) {
-        const pos = getComputedStyle(el).position;
-        if ((pos === "sticky" || pos === "fixed") && !el.contains(h)) { const b = el.getBoundingClientRect().bottom; if (b > 0 && b < (window.innerHeight || 0) / 2) bar = b; break; }
+      /* Probed twice: the app bar, then whatever is pinned right under it (the route page's sub-tab bar, since 2026-11-04). */
+      for (let pass = 0; pass < 2; pass++) {
+        let found = 0;
+        for (let el: Element | null = document.elementFromPoint((window.innerWidth || 0) / 2, bar + 1); el && el !== document.body; el = el.parentElement) {
+          const pos = getComputedStyle(el).position;
+          if ((pos === "sticky" || pos === "fixed") && !el.contains(h)) { const b = el.getBoundingClientRect().bottom; if (b > bar && b < (window.innerHeight || 0) / 2) found = b; break; }
+        }
+        if (!found) break;
+        bar = found;
       }
     } catch { /* elementFromPoint before layout: fall back to the plain 12px margin */ }
     h.style.scrollMarginTop = (Math.round(bar) + 12) + "px";
@@ -63,5 +77,6 @@ export default function SectionJumps({ rootRef, tabKey }: SectionJumpsProps) {
     if (!h.hasAttribute("tabindex")) h.setAttribute("tabindex", "-1");
     try { h.focus({ preventScroll: true }); } catch { /* an element that cannot take focus: the jump still happened */ }
   }
-  return <nav data-jumps="" aria-label="Jump to a section" style={{display:"flex",gap:6,overflowX:"auto",scrollPaddingInline:2,WebkitOverflowScrolling:"touch",margin:"0 0 4px",padding:"0 0 6px"}}>{items.map(function(l,i){return <button key={l} onClick={function(){go(i);}} style={{flex:"0 0 auto",padding:"6px 11px",borderRadius:999,border:"1px solid "+C.border,background:C.surface,color:C.textSub,fontSize:12,fontWeight:700,whiteSpace:"nowrap",cursor:"pointer"}}>{l}</button>;})}</nav>;
+  const pill = { flex: "0 0 auto", padding: "6px 11px", borderRadius: 999, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12, fontWeight: 700, whiteSpace: "nowrap", cursor: "pointer" } as const;
+  return <nav data-jumps="" aria-label="Jump to a section" style={{display:"flex",gap:6,overflowX:"auto",scrollPaddingInline:2,WebkitOverflowScrolling:"touch",margin:"0 0 4px",padding:"0 0 6px"}}>{(folded ? items.slice(0, SHOW) : items).map(function(l,i){return <button key={l} onClick={function(){go(i);}} style={pill}>{l}</button>;})}{folded ? <button onClick={function(){setShowAll(true);}} aria-label={"Show " + (items.length - SHOW) + " more sections"} style={{...pill, color: C.blue, borderColor: C.blueDim}}>{"More ▾ " + (items.length - SHOW)}</button> : null}</nav>;
 }
