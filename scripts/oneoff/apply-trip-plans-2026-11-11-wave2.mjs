@@ -27,6 +27,9 @@ const DIR = "research-data/trip-plans-2026-11-11-wave2";
 const key = requireServiceKey();
 const read = (f) => JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8"));
 const ROAD = /\b(road|gate|closure|closed|washout|washed out|FR ?\d|forest road|highway|hwy)\b/i;
+// Drops only the SENTENCES of a cal line that talk about roads, gates or closures (owner 2026-10-28:
+// road text lives in GETTING THERE); the rest of the line, and the plan, are kept.
+const dropRoad = (s) => String(s).split(/(?<=[.!?])\s+/).filter((x) => !ROAD.test(x)).join(" ").trim() || undefined;
 const canon = (v) => Array.isArray(v) ? v.map(canon) : v && typeof v === "object" ? Object.fromEntries(Object.keys(v).filter((k) => v[k] !== undefined).sort().map((k) => [k, canon(v[k])])) : v;
 
 // Inputs: what each row held when it was dumped.
@@ -62,12 +65,19 @@ for (const [id, { row, kind }] of inputs) {
     const why = [...itineraryShapeErrors(x.itinerary, { complete: true })];
     if (!Array.isArray(x.sources) || new Set(x.sources).size < 2) why.push("fewer than two sources");
     if (String(x.confidence).toLowerCase() === "low") why.push("low confidence");
-    if (x.itinerary && x.itinerary.cal && ROAD.test(x.itinerary.cal)) why.push("cal mentions road/gate/closure");
+    if (x.itinerary && x.itinerary.cal) x.itinerary.cal = dropRoad(x.itinerary.cal); // road text lives in GETTING THERE, not Trip plan
     if (why.length) { held.push({ id, why: why.join("; ") }); continue; }
     plan.push({ id, kind, itinerary: clean(x.itinerary), expect: row.itinerary ?? null, area: row.area_id });
     continue;
   }
   // convert: prose → day by day
+  // Hours a converter COMPUTED from a pace rule ("D1/D3 hours derived at ~2 mph + 1 h per 1,000 ft",
+  // "D1 hours derived pace": prose-4) are an estimate, not a stated time, and the planner already
+  // computes times from the same miles and gain. Those days' hours go back to null.
+  if (x && !x.skip && x.itinerary && Array.isArray(x.itinerary.days)) {
+    const re = /\b(D\d+(?:\s*[/&,]\s*D?\d+)*)\s+hours?\s+derived/gi; let m;
+    while ((m = re.exec(String(x.figureSources || "")))) for (const n of m[1].match(/\d+/g)) { const d = x.itinerary.days[Number(n) - 1]; if (d) d.hours = null; }
+  }
   let it = null, reason = null;
   if (!x) reason = "no conversion output";
   else if (x.skip) reason = "converter skipped: " + x.reason;
@@ -77,7 +87,7 @@ for (const [id, { row, kind }] of inputs) {
     // the whole plan back to the bare mechanical split and losing its titles and cleaned notes.
     const why = itineraryShapeErrors(x.itinerary, { complete: true }).filter((e) => !/has no hours, miles or gain$/.test(e));
     if (String(x.confidence).toLowerCase() === "low") why.push("low confidence");
-    if (x.itinerary && x.itinerary.cal && ROAD.test(x.itinerary.cal)) why.push("cal mentions road/gate/closure");
+    if (x.itinerary && x.itinerary.cal) x.itinerary.cal = dropRoad(x.itinerary.cal); // road text lives in GETTING THERE, not Trip plan
     if (why.length) reason = why.join("; ");
     else it = clean(x.itinerary);
   }

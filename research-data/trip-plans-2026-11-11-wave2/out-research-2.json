@@ -1,0 +1,319 @@
+[
+ {
+  "id": "wa_dragontail_peak_r4",
+  "itinerary": {
+   "cal": "A late-winter and spring route (roughly February-May) when the couloirs hold firm snow and the runnels carry ice; strong parties go car-to-car in a 14-17 hour push, while others break it into two days with a night at Colchuck Lake (an Enchantment-area overnight permit is needed for the lake in the permit season).",
+   "totalNote": "Two-day plan: hike to Colchuck Lake, then a pre-dawn start for roughly 2,500 ft of couloirs and runnels to the 8,840 ft summit, down Aasgard Pass, and out to the car the same day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Colchuck Lake",
+     "objective": "Reach camp at Colchuck Lake",
+     "note": "From the Stuart Lake trailhead (about 3,400 ft) follow the trail about 4.5 miles, taking the left fork toward Colchuck Lake, and camp on the lake's west shore at about 5,570 ft. Gain is derived from those two elevations.",
+     "gainFt": 2170,
+     "lossFt": 0,
+     "hours": 3.5,
+     "miles": 4.5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Triple Couloirs, Aasgard Pass, and out",
+     "objective": "Climb the north face to the summit and return to the car",
+     "note": "Go counter-clockwise around the lake and up to the lowest point of the north face to enter the Hidden Couloir; the cruxes are the transitions, especially the 2-3 pitch runnels (70-80 degrees, bring pitons) into the second couloir. Guidebook time is 5-9 hours from the lake; descend east to Aasgard Pass, back to camp, and hike out. Mileage off the trail is an estimate.",
+     "gainFt": 3270,
+     "lossFt": 5440,
+     "hours": 14,
+     "miles": 7.5,
+     "packLb": 18,
+     "schedule": [
+      {
+       "time": "5:00 AM",
+       "label": "Leave Colchuck Lake camp",
+       "detail": "Pre-dawn start to cross the lake basin to the Hidden Couloir."
+      },
+      {
+       "time": "~7:00 PM",
+       "label": "Back at the car",
+       "detail": "About 14 hours of near-continuous movement camp-to-car in one reported party, including the Aasgard descent and the hike out."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.alpineinstitute.com/route-profile-triple-couloirs-dragontail-peak-ai3-5-8-grade-iii-iv/",
+   "https://dime-reaction.squarespace.com/blog-posts/2015/03/winter-mountaineering-triple-couloirs-on-dragontail-peak",
+   "https://alpinedave.com/enchantments/dragontail/triplecouloirs/triple_couloirs.htm",
+   "https://www.mountainproject.com/area/106015951/dragontail-peak"
+  ],
+  "confidence": "medium",
+  "notes": "Row dist_km 6.9 is one-way (~4.3 mi; sources say ~4.5-5 mi to the lake). Day gains derived from trailhead 3,400 ft (Alpine Institute), lake 5,570 ft (row) and summit 8,840 ft (row); 3,270 + 2,170 = 5,440 matches row gain_ft. Alpinedave reports a one-day push of ~17 hours with ~7 hours on route; schedule times come from the Dime Reaction blog (5 AM start, ~14 hours). Day 2 miles is an estimate."
+ },
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "itinerary": {
+   "cal": "An early-summer line (June-July) while the north-side couloir is still snow- and ice-filled; plan three days and get a North Cascades National Park backcountry permit for the cross-country camp.",
+   "totalNote": "Three days: climb the Barrier to a Chopping Block ridge camp, a 16-hour-class day over the Otto-Himmel col and up the ~1,200 ft couloir to Eye Col and East Twin Needle, then about 5 hours back to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to the Chopping Block ridge",
+     "objective": "Reach a high camp near Stump Hollow / the Chopping Block",
+     "note": "Walk the old Goodell Creek roadbed, cross Terror Creek on a high log, then climb the steep, brushy Barrier bootpath (about 1,700 ft of it is very steep) to camp on the Chopping Block ridge. Gain is derived from row elevations (~500 ft roadhead to ~6,000 ft Stump Hollow); mileage is an estimate.",
+     "gainFt": 5500,
+     "lossFt": 0,
+     "hours": 8,
+     "miles": 6,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Thread of Ice to East Twin Needle",
+     "objective": "Climb the couloir to Eye Col and the summit, return to camp",
+     "note": "Drop into Crescent Creek Basin, climb to the Otto-Himmel col (a moat and rock band can block the col couloir), descend about 1,000 ft of its north side onto the glacier, then climb the ~1,200 ft snow/ice couloir to Eye Col; a 5.7 handcrack near the top may be iced. Descend the gullies south of Eye Col with downclimbing and rappels back to Crescent Creek Basin. Gain/loss are rough estimates from those reported vertical intervals.",
+     "gainFt": 3500,
+     "lossFt": 3500,
+     "hours": 16,
+     "miles": 4,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend the Barrier to the car",
+     "objective": "Return to Goodell Creek",
+     "note": "Reverse the Barrier and the bushwhack down the ridge; watch for marker arrows, and a short rappel may be needed before recrossing Terror Creek. Abegg's party took about 5 hours camp to car.",
+     "gainFt": 0,
+     "lossFt": 5500,
+     "hours": 5,
+     "miles": 6,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8734",
+   "https://wildsnow.com/5477/cascades-pickets-thread-ice-ski/"
+  ],
+  "confidence": "low",
+  "notes": "Both sources are 3-day / 2-night trips camping on the Chopping Block ridge (not in Crescent Creek Basin, the row's main camp). Abegg's FA party summited both Twin Needles on day 2; the WildSnow ski party's day 2 ran 5 AM to ~11 PM (about 16-18 hours). No source gives mileage or gain; day figures are derived from row elevations and the ~1,000 ft / ~1,200 ft intervals in Abegg's report. East Twin Needle summit is 7,840 ft per Abegg."
+ },
+ {
+  "id": "wa_east_mcmillan_spire_northeast_buttress",
+  "skip": true,
+  "reason": "Only one route-specific source (Alpinist report of the 2008 FA by Kearney/Johnson: two days of bushwhacking to a Sourdough Ridge camp, 3.5 hr to the base, 25 pitches over three days with two bivies, rappelled the same day). The AAJ North Buttress reports describe a different (Terror Basin) approach. No source gives camp elevations, mileage or gain, so per-day figures would be invented. Note the Alpinist report suggests the route climbs left of the North Buttress and only the descent used the Northeast Buttress."
+ },
+ {
+  "id": "wa_flycatcher_buttress",
+  "itinerary": {
+   "cal": "A July-September rock day at Washington Pass, normally done car-to-car from the highway hairpin; many parties sleep at the Blue Lake trailhead or a nearby Methow-side campground to get an early start.",
+   "totalNote": "One long day: scramble up from the hairpin to the route ledge, climb ten pitches (5.10b, 1,100 ft) to the summit of North Early Winters Spire, and rappel the Chockstone Route back down.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Flycatcher Buttress car-to-car",
+     "objective": "Climb the buttress to the summit and rappel back to the car",
+     "note": "From the hairpin, head up as for the Direct East Buttress of SEWS but stay right of the gully dividing the spires and scramble to a flat ledge at the base. The ten pitches are not sustained (crux is the left of two cracks on P6, with a wide/squeeze option on P9; cams to #3 plus a #4), so both climbers should be solid at 5.8. Descend by rappelling the Chockstone Route (60 m rope) or the newer bolted line (70 m). Hours are an estimate; no source gives a car-to-car time.",
+     "gainFt": 2400,
+     "lossFt": 2400,
+     "hours": 12,
+     "miles": 3,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/118228852/flycatcher-buttress",
+   "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+   "https://www.mountainproject.com/route/111959715/chockstone-route"
+  ],
+  "confidence": "low",
+  "notes": "Gain equals row gain_ft (2,400). The MP area page gives a 1-2 hour approach to the spires (from Blue Lake for west-side routes); the route itself is 10 pitches / 1,100 ft, Grade IV. No opened source gives car-to-car timing or mileage, so hours (12) and miles (3) are estimates. All three sources are Mountain Project pages; the CascadeClimbers 2008 TR (topic 62767) returned 403."
+ },
+ {
+  "id": "wa_doorway_flake",
+  "itinerary": {
+   "cal": "Climbable June-September once the final approach gully and the grassy saddle melt out (snow can linger there into June); most parties do it as a long day from Darrington, with an optional bivy at the grassy saddle.",
+   "totalNote": "One day: about 2-3 hours from the Squire Creek road end to the grassy saddle under the South Face, five pitches up Doorway Flake, rappel the route, and walk back out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Doorway Flake car-to-car",
+     "objective": "Approach the South Face, climb the route, and return to the car",
+     "note": "Walk the old roadbed to the Squire Creek Trail sign, take the cairned boot track down to cross Squire Creek on logs or by fording, then climb steeply through forest and two gullies to the grassy saddle (about 3,250 ft, derived from row waypoints). Traverse west past Skeena26 and scramble 4th class to the far western wall; descend by rappelling the route. Hours are an estimate.",
+     "gainFt": 2200,
+     "lossFt": 2200,
+     "hours": 10,
+     "miles": 6,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2021/06/19/the-darrington-rodeo/",
+   "https://www.mountainproject.com/forum/message/123039487",
+   "https://www.mountainproject.com/forum/message/124148651",
+   "https://www.mountainproject.com/area/108546487/squire-creek-wall"
+  ],
+  "confidence": "low",
+  "notes": "Approach time disagrees: climberkyle reached the grassy saddle 'exactly two hours from the car', while the row says roughly 3 hours. Gain uses row gain_ft (2,200; row waypoints give ~2,080 ft from the 1,170 ft washout parking to the 3,249 ft saddle). Route-specific beta (5 pitches, rappel the route, FA Enger/Lewis 2019) is only from an OpenBeta listing that now 404s, so pitch details are not independently confirmed. Miles and hours are estimates; the drivable road end changes with washouts."
+ },
+ {
+  "id": "wa_early_morning_spire_southwest_face",
+  "itinerary": {
+   "cal": "Best in July-August when the Inspiration/McAllister glaciers and the Marble Creek cirque snow are in good shape; plan three days and pick up a North Cascades National Park overnight permit for the Eldorado zone.",
+   "totalNote": "Three days: haul to a camp at the base of Eldorado's East Ridge, a long day over Dorado Col and down into the Marble Creek cirque to climb the 1,400 ft, 8-pitch face and return, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Eldorado approach to East Ridge camp",
+     "objective": "Reach a camp at the base of Eldorado's East Ridge",
+     "note": "The standard Eldorado climbers' route: cross the river, climb steep forest and long talus up the Eldorado Creek drainage, then onto the Eldorado/Inspiration Glacier to bivy sites near the base of the East Ridge (~7,800 ft, from 2,100 ft). Many parties split this at a lower camp (~5,400 ft). Mileage is estimated from WTA's ~10 mi round trip to Eldorado's summit.",
+     "gainFt": 5700,
+     "lossFt": 0,
+     "hours": 8,
+     "miles": 4.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Dorado Col and the Southwest Face",
+     "objective": "Climb the face to the summit and return to camp",
+     "note": "Cross the Inspiration and McAllister glaciers to Dorado Col, drop over snow/ice into the Marble Creek cirque to about 6,000 ft, contour west on a bench and climb a snow gully to the face (1,400 ft, 8 pitches, 5.9). Descend by downclimbing north, a single-rope rappel west to the Marble Creek glacier, a rappel down a loose gully and across the moat, then retrace through Dorado Col. Gain/loss are rough estimates from ~6,000 ft cirque and ~8,200 ft summit.",
+     "gainFt": 4200,
+     "lossFt": 4200,
+     "hours": 14,
+     "miles": 5,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out to the Eldorado trailhead",
+     "objective": "Descend the glacier, talus, and forest to the car",
+     "note": "Reverse the approach down the glacier, the long talus field, and the steep forest trail to the Cascade River crossing.",
+     "gainFt": 0,
+     "lossFt": 5700,
+     "hours": 5,
+     "miles": 4.5,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.nps.gov/noca/blogs/early-morning-spire.htm",
+   "https://www.mountainproject.com/route/201494808/southwest-face",
+   "https://www.ncmountainguides.com/node/49"
+  ],
+  "confidence": "low",
+  "notes": "NPS lists alternative camps at Dorado Col and the ~6,000 ft Marble Creek cirque bench (camping there makes the climb day far shorter). Day 1 elevations (2,100 ft trailhead, ~5,400 ft lower camp, ~7,800 ft East Ridge camp) are from North Cascades Mountain Guides' Eldorado page; summit ~8,200 ft per peak listings. Day 2 gain, hours and all mileages are estimates; no opened source gives timing for this climb (CascadeClimbers reports, including a 24-hour round trip from the East Ridge base, returned 403). Row has no gain/distance to compare."
+ },
+ {
+  "id": "wa_dragontail_peak_boving_route",
+  "skip": true,
+  "reason": "Row has no approach/descent/gain data, and the only route-specific sources found (CascadeClimbers 2006 info thread and 2014 Boving-Christensen TR) returned 403; Mountain Project does not list the route. Generic Colchuck Lake access is known but route length, timing and descent could not be sourced."
+ },
+ {
+  "id": "wa_dragontail_peak_colchuck_col_buttress",
+  "skip": true,
+  "reason": "No source found that describes a 'Colchuck Col Buttress' route on Dragontail (not on Mountain Project's Dragontail list; searches returned only Colchuck Col standard-route reports, most on 403-blocked Mountaineers pages). Row has no data. Route identity unconfirmed."
+ },
+ {
+  "id": "wa_dragontail_peak_northwest_face",
+  "skip": true,
+  "reason": "Row has no data and no opened source describes a Dragontail 'Northwest Face' (5.9, 3 pitches) route; not on Mountain Project's Dragontail list. Web search budget ran out before further lookup."
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "skip": true,
+  "reason": "No opened source covers Silver Star's East Ridge from Cedar Creek; countryhighpoints and all search hits describe only the Burgundy Col/Silver Star Glacier route (useful for the descent only). Route length, timing and camps could not be sourced; web search budget exhausted."
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "skip": true,
+  "reason": "No route-specific source could be opened (web search budget exhausted before research; guessed countryhighpoints URL 404). Row itself says the line is normally done as part of a Fortress/Chiwawa link-up rather than on its own."
+ },
+ {
+  "id": "wa_garfield_mountain_east_rib",
+  "skip": true,
+  "reason": "Row has no data and no source was researched (web search budget exhausted); 'Garfield Mountain' plus route name could not be confirmed to a specific peak/route."
+ },
+ {
+  "id": "wa_garfield_mountain_north_route",
+  "skip": true,
+  "reason": "Row has no data and no source was researched (web search budget exhausted); route could not be identified."
+ },
+ {
+  "id": "wa_garfield_mountain_southeast_face",
+  "skip": true,
+  "reason": "Row has no data beyond grade/pitches and no source was researched (web search budget exhausted)."
+ },
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "skip": true,
+  "reason": "Only the NPS Mount Rainier climbing page was opened (permits/fees, no South Tahoma Headwall beta); no second source with camps or timing could be found before the web search budget ran out. Note the id says glacier_peak but the peak is Mount Rainier."
+ },
+ {
+  "id": "wa_goat_mountain_eastern_route",
+  "skip": true,
+  "reason": "Row has no data; several Washington peaks are named Goat Mountain and no source was researched to identify which (web search budget exhausted)."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_face",
+  "skip": true,
+  "reason": "Row has no data; ambiguous Goat Mountain and no source researched (web search budget exhausted)."
+ },
+ {
+  "id": "wa_goat_mountain_southeast_route",
+  "skip": true,
+  "reason": "Row has no data; ambiguous Goat Mountain and no source researched (web search budget exhausted)."
+ },
+ {
+  "id": "wa_goat_mountain_southwest_route",
+  "skip": true,
+  "reason": "Row has no data; ambiguous Goat Mountain and no source researched (web search budget exhausted)."
+ },
+ {
+  "id": "wa_golden_horn_east_face",
+  "skip": true,
+  "reason": "Only one opened source (countryhighpoints) and it covers a winter ski ascent of the standard route from Mazama, not the East Face; no route-specific timing found before the web search budget ran out. Row dist_km 18.5 (11.5 mi) is longer than the usual ~10 mi one-way PCT approach to Snowy Lakes, so it may be a mixed one-way/round-trip figure."
+ },
+ {
+  "id": "wa_golden_horn_north_face",
+  "skip": true,
+  "reason": "Row itself says there is no pitch-level beta for the 1958 North Face; no route-specific source found (web search budget exhausted)."
+ },
+ {
+  "id": "wa_golden_horn_northeast_arete",
+  "skip": true,
+  "reason": "No route-specific source found (web search budget exhausted); row only gives the generic Snowy Lakes approach."
+ },
+ {
+  "id": "wa_gorillas_direct",
+  "skip": true,
+  "reason": "No Gorillas Direct source could be opened (web search budget exhausted; guessed URLs 404). Only a Steph Abegg West Ridge page was found, which is a different route. Row dist_km 24.1 / gain 6,150 ft could not be checked."
+ },
+ {
+  "id": "wa_granite_mountain_beargrass_rib",
+  "skip": true,
+  "reason": "Row has no data and the Granite Mountain/route could not be researched (web search budget exhausted)."
+ },
+ {
+  "id": "wa_granite_mountain_winter_route_first_south_rib",
+  "skip": true,
+  "reason": "Row has no data and the Granite Mountain/route could not be researched (web search budget exhausted)."
+ },
+ {
+  "id": "wa_hagan_mountain_north_slopes_blum_lakes",
+  "skip": true,
+  "reason": "No source could be opened (WTA Blum Lakes page did not return content, guessed countryhighpoints URL 404, and the web search budget was exhausted). Row approach text is detailed but has no gain/distance/timing to build days from."
+ }
+]

@@ -1,0 +1,1376 @@
+[
+ {
+  "id": "adams_avalanche_glacier",
+  "itinerary": {
+   "cal": "The climbing season is roughly May to July.",
+   "totalNote": "A 3-day trip: approach from Cold Springs to a high camp near Mad Cat Meadow or Salt Creek, climb the Avalanche/White Salmon Glaciers to the summit and descend the South Spur, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach to high camp",
+     "objective": "Reach a high camp near Mad Cat Meadow or Salt Creek",
+     "note": "Approach from the Cold Springs trailhead along the Round the Mountain trail to a high camp near Mad Cat Meadow or Salt Creek on the southwest side of the mountain.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 5.6,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Avalanche Glacier to the summit",
+     "objective": "Summit via the Avalanche/White Salmon Glaciers",
+     "note": "Make an alpine start and climb the Avalanche and White Salmon Glaciers to the summit. Descend via the South Spur and return to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "note": "Pack up camp and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 5.6,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles day1/day3: row dist_km 9 treated as one-way (5.6 mi); packLb estimates; camp elevation unknown so gain/loss/hours left null.",
+  "sources": [],
+  "confidence": "low",
+  "notes": "Camp elevation for Mad Cat Meadow/Salt Creek is not in the row (the 'Avalanche Glacier high bivy' bivy note says parties usually camp above 9,000 ft, a different spot), so per-day gain is unknown. Row gain_ft 5000 is less than the net 6,676 ft from Cold Springs (5,600 ft) to the summit (12,276 ft). The prose's descent via the South Spur lands on the south side, not obviously back at a southwest camp; kept as written. No road text dropped."
+ },
+ {
+  "id": "adams_northwest_ridge",
+  "itinerary": {
+   "cal": "Expect a 3-day trip from the Killen Creek trailhead.",
+   "totalNote": "A 3-day north-side trip: hike to High Camp near Trail Divide or the Adams Glacier basin, climb the North Face of the Northwest Ridge to the summit and descend the North Ridge, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to High Camp",
+     "objective": "Reach High Camp near Trail Divide or the Adams Glacier basin",
+     "note": "Hike the Killen Creek Trail to the Pacific Crest Trail and continue on the High Camp Trail to a high camp near Trail Divide or the Adams Glacier basin, about four miles and 2,300 ft of gain.",
+     "gainFt": 2300,
+     "lossFt": 0,
+     "hours": null,
+     "miles": 4.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the face to the summit",
+     "objective": "Summit via the North Face of the Northwest Ridge",
+     "note": "Make an alpine start and climb the face to the ridge crest and on to the summit. Descend via the North Ridge back to camp.",
+     "gainFt": 5376,
+     "lossFt": 5376,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Killen Creek trailhead",
+     "note": "Pack up camp and hike out to the trailhead.",
+     "gainFt": 0,
+     "lossFt": 2300,
+     "hours": null,
+     "miles": 4.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles+gain: row bivy note for High Camp (roughly four miles, 2,300 ft; WTA lists 10 mi RT/2,300 ft); day2 gain: row elevations 6,900 -> 12,276; summit-day miles/hours not found.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/killen-creek"],
+  "confidence": "medium",
+  "notes": "Day figures sum to 7,676 ft, matching row gain_ft 7680. WTA gives 10 mi RT to High Camp vs row bivy note 'roughly four miles' each way; used 4.0. No road text dropped."
+ },
+ {
+  "id": "ca_mt_shasta_avalanche_gulch",
+  "itinerary": {
+   "cal": "Single-day parties leave Bunny Flat in the very early hours and climb the whole route in one push.",
+   "totalNote": "A 2-day climb: hike from Bunny Flat to a high camp at Helen Lake, then summit via the Red Banks and Misery Hill and walk all the way out the next day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Bunny Flat to Helen Lake",
+     "objective": "Set up high camp at Helen Lake",
+     "note": "Hike from Bunny Flat to Horse Camp and up Olberman's Causeway into Avalanche Gulch, then continue on snow to Helen Lake at about 10,400 ft and set up high camp.",
+     "gainFt": 3474,
+     "lossFt": 0,
+     "hours": 5,
+     "miles": 3.5,
+     "packLb": 42,
+     "schedule": [
+      {"time": "7:00 AM", "label": "Leave Bunny Flat", "detail": "Start time from one trip report."},
+      {"time": "~12:00 PM", "label": "Arrive at Helen Lake", "detail": "The same party reached camp around lunchtime."}
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Summit and walk out",
+     "objective": "Summit via the Red Banks and Misery Hill, then return to Bunny Flat",
+     "note": "Make an alpine start from Helen Lake and climb through the Red Banks and over Misery Hill to the summit. Descend to camp, pack up, and walk out to Bunny Flat.",
+     "gainFt": 3779,
+     "lossFt": 7253,
+     "hours": null,
+     "miles": 8.5,
+     "packLb": 20,
+     "schedule": [
+      {"time": "3:00 AM", "label": "Leave Helen Lake", "detail": "Alpine start reported in one trip report."}
+     ]
+    }
+   ]
+  },
+  "figureSources": "gain/loss: row waypoint elevations (6,926 / 10,400 / 14,179); day1 miles 3.5: Mt. Shasta Chamber figure via web search snippet; day2 miles: ~2.5 mi each way camp-summit (web search snippets) + 3.5 out; day1 hours/clock times: socalhiker trip report.",
+  "sources": ["https://socalhiker.net/climbing-mount-shasta-via-avalanche-gulch/"],
+  "confidence": "high",
+  "notes": "Totals ~7,250 ft and ~12 mi, consistent with row gain_ft 7200 and dist_km 8.5 (one-way). Clock times are from a single party's report. No road text dropped."
+ },
+ {
+  "id": "or_hurwal_divide_traverse",
+  "itinerary": {
+   "cal": "It can also be done as a two- or three-night trip with camps at Thorp Creek Meadows and high on the Hurwal Divide.",
+   "totalNote": "Usually a very long single day for fast, experienced scramblers, starting before first light, over Sacajawea, the Matterhorn and the Hurwal Divide from Hurricane Creek.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Traverse the Hurwal Divide",
+     "objective": "Complete the traverse car-to-car",
+     "note": "This is usually done as a very long single day by fast, experienced scramblers. Start before first light.",
+     "gainFt": 8000,
+     "lossFt": 8000,
+     "hours": null,
+     "miles": 18.7,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; miles: row dist_km 30.1 (=18.7 mi, here the full loop; matches the FKT route length seen in search); hours not found.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Planned as the 'usual' single day; the multi-night variant is in cal. No road text dropped."
+ },
+ {
+  "id": "or_three_sisters_traverse",
+  "itinerary": {
+   "cal": "Leave a car at the Pole Creek Trailhead and start from the Devils Lake Trailhead. Strong parties do it in a single day with a pre-dawn start; the overnight version requires a permit.",
+   "totalNote": "A south-to-north traverse of South, Middle and North Sister from Devils Lake to Pole Creek, done in one long day or split with a camp between the peaks so North Sister is climbed on firm morning snow.",
+   "days": [
+    {
+     "n": 1,
+     "title": "South and Middle Sister to camp",
+     "objective": "Climb South Sister and Middle Sister and camp between the peaks",
+     "note": "Climb South Sister from the Devils Lake Trailhead, descend its Northwest Ridge, and go over Middle Sister from south to north. Camp near Camp Lake or at the timberline below the Hayden Glacier; an overnight permit is required.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 35,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "North Sister and out to Pole Creek",
+     "objective": "Climb North Sister while the snow is firm and exit to Pole Creek",
+     "note": "Climb North Sister in the morning while the snow is firm, then descend and hike out to the Pole Creek Trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "No per-day split possible (camp is either Camp Lake or Hayden timberline); route totals from row: gain 9,400 ft, dist_km 30 (~18.6 mi, total traverse, consistent with an 18.7 mi listing seen in search).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Chose the 2-day option as the day plan since the prose gives it structure; single-day option moved to cal. Car shuttle sentence kept in cal (logistics, not a road condition). Per-day figures left null because the camp location (Camp Lake ~6,980 ft vs Hayden timberline ~6,880 ft) changes the split."
+ },
+ {
+  "id": "wa_abernathy_peak_south_ridge",
+  "itinerary": {
+   "cal": "An easier overnight option is to camp at Scatter Lake before a lighter summit push.",
+   "totalNote": "A long day trip of roughly 9-11 miles round trip and about 5,100-5,400 ft of gain via Scatter Lake and the south ridge.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Scatter Lake and Abernathy Peak",
+     "objective": "Summit via Scatter Lake and the south ridge",
+     "note": "Hike the Scatter Creek Trail to Scatter Lake and climb the south ridge to the summit as a long day trip, roughly 9-11 miles round trip with about 5,100-5,400 ft of gain. Descend the ridge and talus back to the lake; scree-skiing the talus is a fast way down when dry.",
+     "gainFt": 5200,
+     "lossFt": 5200,
+     "hours": null,
+     "miles": 10.0,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles/gain: prose (9-11 mi, 5,100-5,400 ft) and row gain_ft 5200; WTA Scatter Lake page (9.2 mi RT, 3,850 ft to the lake) supports it; hours not found.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/scatter-lake"],
+  "confidence": "high",
+  "notes": "Descent detail added from row descent field. No road text dropped."
+ },
+ {
+  "id": "wa_accidental_discharge_east_face",
+  "itinerary": {
+   "cal": "Plan on five days for this remote objective; it is for experienced mountaineers only.",
+   "totalNote": "A 5-day expedition from Downey Creek over Itswoot Ridge to a high camp near the Dome-Chickamin col, a climbing day on the East Face from the Blue Glacier, and two days to reverse the approach.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Downey Creek to Itswoot Ridge",
+     "objective": "Reach a camp on Itswoot Ridge",
+     "note": "Hike from the Downey Creek trailhead via Bachelor Creek to a camp on Itswoot Ridge, about 12-13 miles and 5,700 ft of gain.",
+     "gainFt": 5700,
+     "lossFt": null,
+     "hours": null,
+     "miles": 12.5,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Move to the Dome-Chickamin col camp",
+     "objective": "Reach a high camp near the Dome-Chickamin col",
+     "note": "Continue about 3 miles and 2,500 ft to a high camp near the Dome-Chickamin col at about 8,500 ft.",
+     "gainFt": 2500,
+     "lossFt": null,
+     "hours": null,
+     "miles": 3.0,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb the East Face",
+     "objective": "Climb Accidental Discharge and return to high camp",
+     "note": "Reach the base of the East Face on the Blue Glacier and climb the route. Return to high camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Reverse the approach to Itswoot Ridge",
+     "objective": "Return toward Itswoot Ridge",
+     "note": "Break high camp and begin reversing the approach.",
+     "gainFt": null,
+     "lossFt": 2500,
+     "hours": null,
+     "miles": 3.0,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Hike out to Downey Creek",
+     "objective": "Return to the Downey Creek trailhead",
+     "note": "Finish reversing the approach via Bachelor Creek to the Downey Creek trailhead.",
+     "gainFt": null,
+     "lossFt": 5700,
+     "hours": null,
+     "miles": 12.5,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "days 1-2: prose (~12-13 mi/~5,700 ft; ~3 mi/~2,500 ft); days 4-5: mirrored from days 1-2 (prose says 'reverse the approach'); climbing day not quantifiable.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Prose 'Days 4-5: reverse the approach' was split as high camp -> Itswoot Ridge, then Itswoot Ridge -> trailhead (the split is an assumption). Contradictions: prose gains to high camp total ~8,200 ft vs row gain_ft 7000; prose high camp (~8,500 ft) is above the row summit high_point_ft 8100, and row bivy notes quote the Dome-Chickamin col at 'around 8,000 ft and above'. 'Drive to Downey Creek TH' reduced to the trailhead start. Cal sentence on experience level comes from the row approach text."
+ },
+ {
+  "id": "wa_agnes_mountain_south_ridge",
+  "itinerary": {
+   "cal": "Plan on five days from High Bridge.",
+   "totalNote": "A 5-day trip from High Bridge: PCT to a Swamp Creek camp, off-trail to Upper Blue Basin and a high camp near Icy-Spruce Pass, a very long summit day via the south ridge and chimney crux, and a long hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "High Bridge to Swamp Creek camp",
+     "objective": "Reach a camp in the Swamp Creek area",
+     "note": "Hike the PCT from High Bridge about 8.5 miles to a camp in the Swamp Creek area, roughly 5.2 hours.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 5.2,
+     "miles": 8.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb to Upper Blue Basin",
+     "objective": "Reach camp in Upper Blue Basin",
+     "note": "Cross Agnes Creek and Spruce Creek on logs, then climb steeply off-trail through brush, talus and slabs to a camp in Upper Blue Basin at about 5,000 ft.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Move to Icy-Spruce Pass high camp",
+     "objective": "Reach a high camp near Icy-Spruce Pass",
+     "note": "Move camp up to a high camp near Icy-Spruce Pass at about 6,760 ft.",
+     "gainFt": 1760,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Summit via the south ridge",
+     "objective": "Summit via the south ridge and chimney crux",
+     "note": "Make the summit push via the south ridge and its chimney crux, reported at about 10.6 hours up and 8.8 hours down. Return to high camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 19.4,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Hike out to High Bridge",
+     "objective": "Return to High Bridge",
+     "note": "Break camp and hike out to High Bridge.",
+     "gainFt": null,
+     "lossFt": 5184,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 miles: prose; day1 hours: row approach (about 5.2 hours); day3 gain: prose camp elevations (5,000 -> 6,760); day4 hours: prose (10.6 up + 8.8 down); day5 loss: camp 6,760 to row trailhead 1,576.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Day 2 creek-crossing detail added from row approach. Row dist_km is null so day 2/3/5 miles left null. No road text dropped."
+ },
+ {
+  "id": "wa_alpine_lookout_round_mountain_trail",
+  "itinerary": {
+   "cal": "Some parties camp along Nason Ridge, for example near Rock Lake or Crescent Lake via side trails, to split it into an overnight. The lookout itself is day use only.",
+   "totalNote": "A single long day to the Alpine Lookout and back, about 9.6-10.2 miles round trip and 4-7 hours of hiking.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Alpine Lookout",
+     "objective": "Reach the Alpine Lookout and return",
+     "note": "Hike the Round Mountain Trail to Nason Ridge and on to the lookout, then return the same way. The round trip is about 9.6-10.2 miles and 4-7 hours of hiking depending on pace and side trips.",
+     "gainFt": 2600,
+     "lossFt": 2600,
+     "hours": 5.5,
+     "miles": 9.9,
+     "packLb": 15,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles/hours: prose ranges (midpoints); gain: row gain_ft.",
+  "sources": [],
+  "confidence": "high",
+  "notes": "'Lookout is day use only' is from row bivy entry. No road text dropped (road directions are only in the row approach)."
+ },
+ {
+  "id": "wa_amphitheater_mountain_finger_of_fatwa",
+  "itinerary": {
+   "cal": "The season is roughly July to September.",
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, climb Finger of Fatwa on the Middle Finger Buttress and return to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "note": "Backpack from the Andrews Creek trailhead over Andrews Pass and along the Boundary Trail to Upper Cathedral Lake, roughly 17 miles with about 4,800 ft of gain.",
+     "gainFt": 4800,
+     "lossFt": null,
+     "hours": 7,
+     "miles": 17.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Finger of Fatwa",
+     "objective": "Climb the route and descend to camp",
+     "note": "Walk around the lake and scramble about 15 minutes to the base of the Middle Finger Buttress, then climb the route. Descend to camp via the ridge crest and the 3rd-class gully on the north slope.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": 4350,
+     "hours": null,
+     "miles": 17.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles+gain: row approach (~17 mi, ~4,800 ft) and dist_km 27.4 (=17 mi one-way); day1 hours: row West Route approach (~7 hours loaded); day3 loss: row elevations 7,400 -> 3,050.",
+  "sources": ["https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"],
+  "confidence": "medium",
+  "notes": "Countryhighpoints gives ~18 mi and ~6 hours for the same approach. Climbing-day figures unknown. Day 2 approach/descent details from row. No road text dropped."
+ },
+ {
+  "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+  "itinerary": {
+   "cal": "The season is roughly July to September.",
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, climb the left side of the Middle Finger Buttress and return to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "note": "Backpack from the Andrews Creek trailhead over Andrews Pass and along the Boundary Trail to Upper Cathedral Lake, roughly 17 miles with about 4,800 ft of gain.",
+     "gainFt": 4800,
+     "lossFt": null,
+     "hours": 7,
+     "miles": 17.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Middle Finger Buttress, left side",
+     "objective": "Climb the route and descend to camp",
+     "note": "Walk around to the south side of the lake and scramble about 15 minutes to the base of the buttress, then climb the route. Descend to camp via the crest and the 3rd-class gully on the north slope.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": 4350,
+     "hours": null,
+     "miles": 17.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles+gain: Amphitheater approach figures in sibling rows' approach text (~17 mi, ~4,800 ft) and this row's dist_km 27.4; day1 hours: row West Route approach (~7 hours); day3 loss: row elevations 7,400 -> 3,050.",
+  "sources": ["https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"],
+  "confidence": "medium",
+  "notes": "Climbing-day figures unknown. No road text dropped."
+ },
+ {
+  "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+  "itinerary": {
+   "cal": "The season is roughly July to September.",
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, spend a full day on the 7-pitch right side of the Middle Finger Buttress, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "note": "Backpack from the Andrews Creek trailhead over Andrews Pass and along the Boundary Trail to Upper Cathedral Lake, roughly 17 miles with about 4,800 ft of gain.",
+     "gainFt": 4800,
+     "lossFt": null,
+     "hours": 7,
+     "miles": 17.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Middle Finger Buttress, right side",
+     "objective": "Climb the 7-pitch route and descend to camp",
+     "note": "Climb the route, which takes a full day given its 7 pitches. Descend via the ridge crest and the 3rd-class gully on the north slope back to camp.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": 4350,
+     "hours": null,
+     "miles": 17.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles+gain: row approach (~17 mi, ~4,800 ft) and dist_km 27.4; day1 hours: row West Route approach (~7 hours); day3 loss: row elevations 7,400 -> 3,050.",
+  "sources": ["https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"],
+  "confidence": "medium",
+  "notes": "'Full day' not converted to a number. No road text dropped."
+ },
+ {
+  "id": "wa_amphitheater_mountain_north_ridge",
+  "itinerary": {
+   "cal": "The season is roughly July to September.",
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake or Cathedral Pass, climb the North Ridge and return to camp, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake or near Cathedral Pass",
+     "note": "Backpack from the Andrews Creek trailhead to camp at Upper Cathedral Lake or near Cathedral Pass, roughly 17 miles with about 4,800 ft of gain.",
+     "gainFt": 4800,
+     "lossFt": null,
+     "hours": 7,
+     "miles": 17.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the North Ridge",
+     "objective": "Summit via the North Ridge and return to camp",
+     "note": "Scramble from Cathedral Pass to the base of the North Ridge and climb it to the summit. Descend by walking southwest around the mountain or down the 3rd-class gully on the north slope, and return to camp.",
+     "gainFt": 960,
+     "lossFt": 960,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": 4350,
+     "hours": null,
+     "miles": 17.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3: Amphitheater approach figures (~17 mi, ~4,800 ft, ~7 h) from sibling row approach text and this row's dist_km 27.4; day2 gain: row elevations 7,400 -> 8,358 (minimum, from the lake); day3 loss: 7,400 -> 3,050.",
+  "sources": ["https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"],
+  "confidence": "medium",
+  "notes": "Route/descent details from row approach/descent. No road text dropped."
+ },
+ {
+  "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+  "itinerary": {
+   "cal": "The season is roughly July to September.",
+   "totalNote": "A 3-day trip: backpack to Upper Cathedral Lake, climb the half-day Pilgrimage to Mecca (optionally adding the summit or Cathedral Peak), then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "note": "Backpack in via the Andrews Creek or Chewuch River trailheads to camp at Upper Cathedral Lake; the Andrews Creek approach is roughly 17 miles with about 4,800 ft of gain.",
+     "gainFt": 4800,
+     "lossFt": null,
+     "hours": 7,
+     "miles": 17.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Pilgrimage to Mecca",
+     "objective": "Climb the half-day route and return to camp",
+     "note": "Walk about 15 minutes around the west side of the lake and scramble to the Ka'aba Buttress, then climb Pilgrimage to Mecca, a half-day route. Descend to camp, optionally tagging the summit or Cathedral Peak.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": 4350,
+     "hours": null,
+     "miles": 17.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3: Andrews Creek approach figures (~17 mi, ~4,800 ft, ~7 h) from sibling row approach text and dist_km 27.4; day3 loss: 7,400 -> 3,050.",
+  "sources": ["https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"],
+  "confidence": "medium",
+  "notes": "Day 1/3 figures assume the Andrews Creek trailhead (prose allows Chewuch too, which is longer). 'Half-day' not converted to hours. No road text dropped."
+ },
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "itinerary": {
+   "cal": "The season is roughly July to September. The longer Chewuch River approach is about 20 miles and 4,900 ft of gain to Upper Cathedral Lake.",
+   "totalNote": "A 3-day trip: backpack 7+ hours to Upper Cathedral Lake, an alpine-start summit day on Amphitheater (optionally adding Cathedral Peak), then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to Upper Cathedral Lake",
+     "objective": "Camp at Upper Cathedral Lake",
+     "note": "Drive to the Andrews Creek trailhead and backpack in over Andrews Pass and the Boundary Trail, 7+ hours, to camp at Upper Cathedral Lake.",
+     "gainFt": 4800,
+     "lossFt": null,
+     "hours": 7,
+     "miles": 17.0,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Summit Amphitheater Mountain",
+     "objective": "Summit via the West Route and return to camp",
+     "note": "Make an alpine start and climb Amphitheater Mountain through the west basin, optionally adding Cathedral Peak. Reverse the line back to Cathedral Pass and camp.",
+     "gainFt": 960,
+     "lossFt": 960,
+     "hours": null,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Andrews Creek trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": 4350,
+     "hours": null,
+     "miles": 17.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 hours: prose (7+ hours); day1/day3 miles+gain: sibling row approach (~17 mi, ~4,800 ft), countryhighpoints (~18 mi), row dist_km 29 (=18 mi); day2 gain: row elevations 7,400 -> 8,358; day3 loss: 7,400 -> 3,050.",
+  "sources": ["https://www.countryhighpoints.com/cathedral-peak-and-amphitheater-mountain/"],
+  "confidence": "medium",
+  "notes": "Contradiction: row gain_ft 3000 is far below the ~4,800 ft approach alone (and ~5,300 ft to the summit from the 3,050 ft trailhead). Chewuch alternative from row approach put in cal. No road text dropped."
+ },
+ {
+  "id": "wa_argonaut_peak_northeast_couloir",
+  "itinerary": {
+   "cal": "The season is roughly May to June. Some parties bivy on the approach instead of going car-to-car.",
+   "totalNote": "Often climbed as one long car-to-car day (one report logged 15 hours), up the north-side couloir and down the Colchuck Glacier.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Northeast Couloir",
+     "objective": "Summit via the Northeast Couloir and descend the Colchuck Glacier",
+     "note": "Climb Argonaut as one long day; one trip report logged 15 hours car-to-car. Approach off the Stuart Lake Trail and across Mountaineer Creek to the couloir, then descend by rappels and the Colchuck Glacier to Colchuck Lake and out.",
+     "gainFt": 5057,
+     "lossFt": 5057,
+     "hours": 15,
+     "miles": 12.0,
+     "packLb": 22,
+     "schedule": [
+      {"time": "~4:30 AM", "label": "Leave the trailhead", "detail": "Start time from one 15-hour car-to-car trip report."}
+     ]
+    }
+   ]
+  },
+  "figureSources": "hours: prose (15 h); gain: row gain_ft; miles: row dist_km 9.66 (6 mi one-way) and Lemke trip report (12 mi RT, 5,900 ft, 4:30 AM start).",
+  "sources": ["https://lemkeclimbs.com/?p=2878"],
+  "confidence": "high",
+  "notes": "Lemke reports 5,900 ft gain vs row 5,057 ft; kept row. Approach/descent details from row. No road text dropped."
+ },
+ {
+  "id": "wa_austera_peak",
+  "itinerary": {
+   "cal": "The season is roughly May to October. Any overnight requires a North Cascades National Park backcountry permit.",
+   "totalNote": "A 3-day glacier trip: hike to the Eldorado East Ridge high camp, traverse the Inspiration and Klawatti Glaciers to Austera Peak and back, then descend to the trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Eldorado East Ridge camp",
+     "objective": "Reach the high camp at about 7,600 ft",
+     "note": "Hike the Eldorado Creek climbers' path and the Eldorado Glacier to the East Ridge high camp at about 7,600 ft, which takes 5-6 hours.",
+     "gainFt": 5436,
+     "lossFt": 0,
+     "hours": 5.5,
+     "miles": null,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Traverse to Austera Peak",
+     "objective": "Summit Austera Peak and return to camp",
+     "note": "Traverse the glacier system to Austera Peak and back, about 4 hours each way plus the summit climbing. Strong parties can continue on to Klawatti or Primus as part of the broader Isolation/Inspiration Traverse.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend to the trailhead",
+     "objective": "Return to the Cascade River Road trailhead",
+     "note": "Break camp and descend to the trailhead.",
+     "gainFt": 0,
+     "lossFt": 5436,
+     "hours": null,
+     "miles": null,
+     "packLb": 40,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 hours: prose (5-6 h); day1/day3 gain/loss: row waypoint elevations 2,164 -> 7,600; distances not found reliably.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped 'Cascade River Road' from day 1 (road). Day 2 is at least ~8 hours plus climbing per prose but left null. Permit sentence from row approach. Row gain_ft/dist_km null."
+ },
+ {
+  "id": "wa_baring_mountain_east_face",
+  "itinerary": {
+   "cal": "The season is roughly July to October. There is a strong case for splitting the effort across two trips: one to find the face and the base of the line, and a second to climb it. There is no established bivy on the east side; Barclay Lake on Trail 1055 is the nearest practical camp.",
+   "totalNote": "A single long day from the Barclay Lake trailhead, ideally after a separate reconnaissance trip to locate the face.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the East Face",
+     "objective": "Climb the East Face from the Barclay Lake trailhead",
+     "note": "Climb the East Face in a single long day from the Barclay Lake trailhead. Expect to rappel the route or top out and descend the standard northwest-ridge trail to the west.",
+     "gainFt": 3847,
+     "lossFt": 3847,
+     "hours": null,
+     "miles": null,
+     "packLb": 22,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row elevations (trailhead 2,280 -> summit 6,127); no approach is documented, so miles/hours unknown.",
+  "sources": [],
+  "confidence": "low",
+  "notes": "Approach is undocumented in the row. Descent sentence from row descent field. No road text dropped."
+ },
+ {
+  "id": "wa_baring_mountain_northwest_ridge",
+  "itinerary": {
+   "cal": "There is no practical high camp on the route. To break it up, camp at Barclay Lake (2.2 easy miles on Trail 1055) the night before, though it is on a different approach and adds mileage; camping at the trailhead is simpler.",
+   "totalNote": "A long car-to-car day trip up the climbers' path and northwest ridge from the Barclay Lake trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Northwest Ridge",
+     "objective": "Summit via the climbers' path and northwest ridge",
+     "note": "Most parties do it car to car in a long day, leaving Seattle early. Follow the climbers' path up the forested north side to the ridge, traverse into the talus basin, and reverse the route to descend.",
+     "gainFt": 3847,
+     "lossFt": 3847,
+     "hours": 8.7,
+     "miles": 6.0,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; miles/hours: yellowleaf trip report (6 mi, 3,830 ft, 8h44 car-to-car); row dist_km 5.6 (3.5 mi one-way) is roughly consistent.",
+  "sources": ["https://apps.yellowleaf.org/scramble/g/r/2005-10-29-baring.html"],
+  "confidence": "high",
+  "notes": "Hours from one party; other reports range 8-12 hours. No road text dropped."
+ },
+ {
+  "id": "wa_baring_mountain_oatmeal_man",
+  "itinerary": {
+   "cal": "The season is roughly July to September. It can also be done as a full car-to-car day with a very early start. Wild Sky Wilderness rules apply at the lake camp.",
+   "totalNote": "A 2-day outing: walk in to bivy at Barclay Lake, then brush-bash to the north face, climb fourteen pitches and descend the northwest-ridge trail to the trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Walk in to Barclay Lake",
+     "objective": "Bivy near Barclay Lake",
+     "note": "Drive to the Barclay Lake trailhead the night before, hike the 2.2 miles to Barclay Lake in the evening, and bivy near the lake at established sites.",
+     "gainFt": 140,
+     "lossFt": 0,
+     "hours": null,
+     "miles": 2.2,
+     "packLb": 35,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Oatmeal Man and descend",
+     "objective": "Climb the north face and descend to the trailhead",
+     "note": "Leave camp before first light, brush-bash to the base of the north face, climb the fourteen pitches and top out. Descend the northwest-ridge trail all the way to the trailhead; you will not return to the lake, so carry everything over the top or accept a walk back in to retrieve it.",
+     "gainFt": 3707,
+     "lossFt": 3847,
+     "hours": null,
+     "miles": null,
+     "packLb": 25,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1 miles/gain: prose (2.2 mi) and row approach elevations (2,280 -> 2,420); day2 gain: row approach (3,703 ft lake to summit) and loss summit 6,127 -> trailhead 2,280.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row gain_ft 3850 matches. Day-2 hours/miles not stated. Ford/footlog status in row approach not used. No road text dropped from the prose."
+ },
+ {
+  "id": "wa_bears_breast_mountain_infinite_beauty",
+  "itinerary": {
+   "cal": "The season is roughly July to September.",
+   "totalNote": "A 3-day trip: backpack about 12 miles to the Waptus River bridge, climb the Mega Slab and 5.6+ summit block, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to the Waptus River bridge",
+     "objective": "Camp near the Waptus River PCT bridge",
+     "note": "Backpack in on the Waptus River Trail and the PCT to a camp near the Waptus River bridge, about 12 miles.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 12.0,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Infinite Beauty",
+     "objective": "Climb the Mega Slab and summit block",
+     "note": "Hike to the lowest point of the Mega Slab, climb the shallow-rib start and merge with Timeless Treasure's line, then finish with 3 pitches of 5.6+ on the summit block. Descend via Shovel Lake or the ascent line.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Salmon La Sac trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 12.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles: prose (~12 mi), row approach (11-12 flat miles) and dist_km 19.3 (12 mi one-way); camp elevation unknown so gains null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row gain_ft 4697 equals summit minus trailhead; not split because camp elevation is unknown. No road text dropped."
+ },
+ {
+  "id": "wa_bears_breast_mountain_southwest_face",
+  "itinerary": {
+   "cal": "The season is roughly July to September. The total round-trip trail distance is about 30 miles plus the scramble from camp.",
+   "totalNote": "A 3-day trip: hike about 15 miles up the Middle Fork Snoqualmie to Dutch Miller Gap and a camp below the face, climb the SW Face, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike to Dutch Miller Gap",
+     "objective": "Camp below the SW Face",
+     "note": "Hike about 15 miles up the Middle Fork Snoqualmie on the Dutch Miller Gap Trail to Dutch Miller Gap, then continue to a camp below the SW Face.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 15.0,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the SW Face",
+     "objective": "Summit via the SW Face and return to camp",
+     "note": "Climb about 1,000 ft of gully scrambling and then the 3-pitch summit block, roughly 6 hours from camp to summit. Descend by rappels and downclimbing back to camp, about 4.7 hours.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 10.7,
+     "miles": null,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the trailhead",
+     "note": "Hike back out to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 15.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "miles: prose (~15 mi) and row approach (~30 mi RT); day2 hours: prose (6 h up + 4.7 h down); dist_km 23.3 (14.5 mi) consistent.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped 'Drive to the Dutch Miller Gap Trailhead' wording; row approach names it the Dingford Creek Trailhead where the road is gated (prose vs row trailhead naming differs). Row gain_ft 5400 is below the 5,707 ft net from the 1,490 ft trailhead to the 7,197 ft summit."
+ },
+ {
+  "id": "wa_bears_breast_mountain_timeless_treasure",
+  "itinerary": {
+   "cal": "The season is roughly July to September.",
+   "totalNote": "A 3-day trip: backpack about 12 miles to the Waptus River bridge, climb ~3,000 ft of 4th-class slab and the 5.6+ summit block, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Backpack to the Waptus River bridge",
+     "objective": "Camp near the Waptus River PCT bridge",
+     "note": "Backpack in on the Waptus River Trail and the PCT to a camp near the Waptus River bridge, about 12 miles.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 12.0,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Timeless Treasure",
+     "objective": "Climb the Mega Slab and summit block",
+     "note": "Hike the old track along Shovel Creek to the slab base, roughly 4-4.5 hours from the trailhead, and climb about 3,000 ft of 4th-class slab to the summit block. Finish with 3 pitches of 5.6+ and descend via Shovel Lake or the ascent line.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to the Salmon La Sac trailhead",
+     "note": "Pack up and hike out to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 12.0,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 miles: prose (~12 mi), row approach and dist_km 19.3 (12 mi one-way); camp elevation unknown so gains null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Internal inconsistency: prose says the slab base is 4-4.5 hours 'from the trailhead' but places it on day 2 after a 12-mile walk-in to camp; kept as written. Row approach puts the slab base at ~3,700 ft, so the climb from base to the 7,197 ft summit is ~3,500 ft."
+ },
+ {
+  "id": "wa_big_four_mountain_dry_creek_route",
+  "itinerary": {
+   "cal": "",
+   "totalNote": "A single long day from the Ice Caves trailhead up the Dry Creek basin, main couloir and red-slab traverse to the summit, returning via the south-ridge rappel.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Dry Creek Route",
+     "objective": "Summit via the Dry Creek basin and return",
+     "note": "Hike the approach to the Dry Creek basin, ascend the ledges, the main couloir and the red-slab traverse to the summit ridge, and follow it to the true summit. Reverse via the south-ridge rappel and downclimb back to the basin and trailhead.",
+     "gainFt": 4410,
+     "lossFt": 4410,
+     "hours": 10,
+     "miles": 6.3,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; miles: row dist_km 5.1 doubled (assumed one-way); hours: a cascadeclimbers trip report via web search snippet (10 h round trip; page itself blocked, not opened).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Row season is null so cal left empty. Hours rest on a search snippet only. No road text dropped."
+ },
+ {
+  "id": "wa_big_four_mountain_spindrift_couloir",
+  "itinerary": {
+   "cal": "The season is roughly December to March.",
+   "totalNote": "Typically one long car-to-car push: approach the north-face basin, climb the couloir (about 9 hours at first-ascent pace) and descend via the Big Four-Hall Peak col and tree-anchored rappels.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the Spindrift Couloir",
+     "objective": "Climb the couloir to the summit ridge and descend",
+     "note": "Approach the basin below the North Face and climb the couloir to the summit ridge, roughly 9 hours at first-ascent pace. Descend northwest via rappels and downclimbing to the Big Four-Hall Peak col, then make tree-anchored rappels through the bowl.",
+     "gainFt": 4450,
+     "lossFt": 4450,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row gain_ft; climb time stated in prose (9 h) but full-day hours unknown; row dist_km 1.6 covers only the approach so miles left null.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "No road text dropped."
+ },
+ {
+  "id": "wa_big_kangaroo_going_down_under",
+  "itinerary": {
+   "cal": "The season is roughly June to September.",
+   "totalNote": "A full alpine day: a multi-hour approach, five sustained pitches of 5.9-5.11c, and about a two-hour descent.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Going Down Under",
+     "objective": "Climb the south-face route and descend to the Hairpin",
+     "note": "Make the multi-hour approach from the Hairpin up the south-face gully, then climb five pitches of sustained 5.9-5.11c. The descent via the Beckey-Tate notch and gully takes about two hours.",
+     "gainFt": 3170,
+     "lossFt": 3170,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: Hairpin pullout 5,160 ft (from sibling row waypoint) to summit 8,326 ft; consistent with a 3,180 ft cars-to-summit figure for Big Kangaroo seen in search; approach 2.5-5 h (row) + descent ~2 h (prose) but climb time unknown so hours null.",
+  "sources": ["https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/"],
+  "confidence": "medium",
+  "notes": "Row gain_ft/dist_km null. No road text dropped."
+ },
+ {
+  "id": "wa_big_kangaroo_kearney_thomas",
+  "itinerary": {
+   "cal": "The season is roughly June to September. Strong parties may do it car-to-car, while others bivy to split the effort.",
+   "totalNote": "A long alpine day: a multi-hour approach, 7-8 pitches of sustained 5.9-5.11, and about a two-hour descent.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Kearney-Thomas",
+     "objective": "Climb the south-face route and descend to the Hairpin",
+     "note": "Make the 2.5-5 hour approach from the Hairpin up the south-face gully, then climb 7-8 pitches of sustained 5.9-5.11. Descend via the notch and gully in about two hours.",
+     "gainFt": 3170,
+     "lossFt": 3170,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: Hairpin 5,160 ft -> summit 8,326 ft; approach 2.5-5 h from row approach, descent ~2 h from prose; climbing time unknown so hours null.",
+  "sources": ["https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/"],
+  "confidence": "medium",
+  "notes": "No road text dropped."
+ },
+ {
+  "id": "wa_big_kangaroo_skinny_start",
+  "itinerary": {
+   "cal": "The season is roughly June to September.",
+   "totalNote": "A long, sustained day: a multi-hour approach, three hard pitches joining the Kearney-Thomas finish, and a descent that can run long.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Skinny Start",
+     "objective": "Climb Skinny Start to the Kearney-Thomas finish and descend",
+     "note": "Make the multi-hour approach to the south face and climb three hard pitches that join the Kearney-Thomas finish. The descent can run long if you go looking for rappel anchors.",
+     "gainFt": 3170,
+     "lossFt": 3170,
+     "hours": null,
+     "miles": null,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: Hairpin 5,160 ft -> summit 8,326 ft; no times beyond 'multi-hour'.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "No road text dropped."
+ },
+ {
+  "id": "wa_big_kangaroo_walkabout",
+  "itinerary": {
+   "cal": "The season is roughly June to September. This is a serious multi-day undertaking; the plan follows the first ascent.",
+   "totalNote": "A multi-day ground-up climb as first done: three days on the wall including a summit bivy, then a morning descent via Beckey-Tate.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Approach and start the climb",
+     "objective": "Begin climbing ground-up",
+     "note": "Approach the south face from the Hairpin and begin climbing ground-up, as the first-ascent team did.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 35,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Continue up the route",
+     "objective": "Continue climbing ground-up",
+     "note": "Continue climbing ground-up.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 35,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Top out and bivy on the summit",
+     "objective": "Reach the summit and bivy",
+     "note": "Finish the climb and bivy on the summit.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": null,
+     "packLb": 30,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Descend via Beckey-Tate",
+     "objective": "Return to the Hairpin",
+     "note": "Descend the next morning via the Beckey-Tate line: scramble to the notch, then down the loose gully back to the Hairpin pullout.",
+     "gainFt": null,
+     "lossFt": 3170,
+     "hours": null,
+     "miles": null,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day4 loss: summit 8,326 ft -> Hairpin 5,160 ft; nothing else quantifiable.",
+  "sources": [],
+  "confidence": "low",
+  "notes": "Prose is first-ascent history, not a recommended plan. Read 'three days ground-up, including a summit bivy, before descending the next morning' as three climbing days plus a fourth-morning descent; it could also mean three days total. Days 1-2 split is an assumption. No road text dropped."
+ },
+ {
+  "id": "wa_big_snagtooth_west_ridge",
+  "itinerary": {
+   "cal": "A 2-day option with a basin bivy is sometimes used, especially when combined with an adjacent objective such as a Silver Star-Big Snagtooth traverse, reported at 12-18 hours.",
+   "totalNote": "Typically a single long car-to-car day up Willow Creek and the west ridge, often finishing close to sunset.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the West Ridge",
+     "objective": "Summit via the West Ridge and return to the highway",
+     "note": "Climb car-to-car in a single long day up the Willow Creek valley to the west-ridge saddle and the summit block. Parties often return close to sunset given the brushy approach, loose scree and slow travel.",
+     "gainFt": 4054,
+     "lossFt": 4054,
+     "hours": null,
+     "miles": 7.5,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row elevations (4,320 -> 8,374; row gain_ft 4000); miles: row dist_km 6 doubled (assumed one-way).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "The 12-18 hour figure applies to the traverse, not this route, so hours left null. No road text dropped."
+ },
+ {
+  "id": "wa_big_snow_mountain_east_buttress",
+  "itinerary": {
+   "cal": "The season is roughly July to September. Plan for an early start.",
+   "totalNote": "A full climbing day: a long approach via Hardscrabble Lakes, 10 pitches on the East Buttress, and a long descent and approach reversal.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the East Buttress",
+     "objective": "Climb the 10-pitch buttress and return",
+     "note": "Make the long approach via Hardscrabble Lakes to the south side of the buttress at about 5,400 ft, then climb 10 pitches. Be prepared for a long descent and reversal of the approach.",
+     "gainFt": 5280,
+     "lossFt": 5280,
+     "hours": null,
+     "miles": null,
+     "packLb": 22,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row waypoints (Dingford Creek trailhead 1,400 -> summit 6,680); no distance for this variant (East Ridge route via the same approach is ~16-25 mi RT).",
+  "sources": [],
+  "confidence": "low",
+  "notes": "Row descent is null; the long round trip implied by the sibling Hardscrabble row suggests this may be hard as a single day, but kept the prose's one-day plan. No road text in the prose."
+ },
+ {
+  "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+  "itinerary": {
+   "cal": "The season is roughly July to September. A single-day car-to-car push is possible only for very fit, fast parties, some of whom bike the road-walk sections.",
+   "totalNote": "Typically an overnight: walk the long approach to camp at Hardscrabble Lakes, then summit by the east ridge and return, about 25 miles round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Hardscrabble Lakes",
+     "objective": "Camp at upper Hardscrabble Lake",
+     "note": "Walk or bike about 7 miles up the old road to the Hardscrabble Lakes boot path and follow it through forest and talus to camp at upper Hardscrabble Lake.",
+     "gainFt": 3200,
+     "lossFt": 0,
+     "hours": null,
+     "miles": 8.6,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Summit and hike out",
+     "objective": "Summit via the East Ridge and return to the trailhead",
+     "note": "Climb from the lakes via the talus gully and east ridge to the summit. Return to camp and make the long walk back out to the trailhead.",
+     "gainFt": 2080,
+     "lossFt": 5280,
+     "hours": null,
+     "miles": 16.4,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "gain: row elevations (1,400 -> 4,598 -> 6,680), total matches row gain_ft 5300; miles: prose ~25 mi RT and row dist_km 20.1 (12.5 mi one-way), day1 = row approach ~7 mi road + ~1.6 mi path (WTA report via search snippet).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Dropped 'created by the Dingford Creek gate closure' (gate). A Mountaineers listing seen in search gives 16 mi RT, which conflicts with the prose's ~25 mi; kept prose. Day 2 route detail from row approach/descent."
+ },
+ {
+  "id": "wa_big_snow_mountain_north_slope_dingford_route",
+  "itinerary": {
+   "cal": "The season is roughly July to September. Many parties backpack in and camp at Myrtle Lake or Big Snow Lake to split the trip over two days.",
+   "totalNote": "A long car-to-car day for fit, route-finding-savvy parties, about 11.5 hours, via Myrtle Lake and the northwest-flank gullies.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the North Slope",
+     "objective": "Summit via Myrtle Lake and the NW flank",
+     "note": "Climb car-to-car via the Dingford Creek Trail, Myrtle Lake, Big Snow Lake and the northwest-flank gullies to the summit. A similar trip report logged about 6.7 hours up and 4.8 hours down, roughly 11.5 hours in total.",
+     "gainFt": 5280,
+     "lossFt": 5280,
+     "hours": 11.5,
+     "miles": 12.0,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "hours: prose (11.5 h); gain: row gain_ft; miles: row dist_km 9.7 doubled (assumed one-way), consistent with ~5.2 trail miles to Myrtle Lake in the row approach plus off-trail.",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "No road text in the prose."
+ },
+ {
+  "id": "wa_black_peak_northeast_ridge",
+  "itinerary": {
+   "cal": "The season is roughly May to October. Strong parties do it in one push from the trailhead, often 12-17 hours car-to-camp-to-car.",
+   "totalNote": "Commonly a 2-3 day trip: hike in to Wing Lake, climb the Northeast Ridge and descend the South Ridge to camp, and hike out the next day if camping two nights.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Wing Lake",
+     "objective": "Camp at Wing Lake",
+     "note": "Hike from Rainy Pass via Heather Pass and Lewis Lake to camp at Wing Lake at about 6,900 ft.",
+     "gainFt": 2460,
+     "lossFt": 390,
+     "hours": 5,
+     "miles": 4.6,
+     "packLb": 38,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Ridge",
+     "objective": "Summit via the Northeast Ridge and return to camp",
+     "note": "Climb the Northeast Ridge to the summit and descend via the South Ridge back to camp. This is a long day.",
+     "gainFt": 2050,
+     "lossFt": 2050,
+     "hours": 5.5,
+     "miles": 2.2,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out",
+     "objective": "Return to Rainy Pass",
+     "note": "Hike out to the trailhead if camping two nights.",
+     "gainFt": 390,
+     "lossFt": 2460,
+     "hours": null,
+     "miles": 4.6,
+     "packLb": 35,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "day1/day3 gain/loss: row waypoint elevations (4,855 / 6,094 / 5,705 / 6,923); miles: Outbound Wing Lake page (9.2 mi RT); day1 hours: row Wing Lake bivy note (4-6 h with a pack); day2 hours: same note (4-7 h camp-summit-camp); day2 miles/gain: SummitPost South Ridge figures via search snippet (2.2 mi RT, 2,050 ft; page blocked) and row elevations 6,923 -> 8,970.",
+  "sources": ["https://www.theoutbound.com/washington/backpacking/backpack-at-wing-lake-north-cascades"],
+  "confidence": "high",
+  "notes": "Row gain_ft 4130 is below the ~4,900 ft summed here (net trailhead-to-summit is 4,115 ft, ignoring the Heather Pass/Lewis Lake dip). Row dist_km 16.1 (10 mi) looks closer to round trip than one-way (RT ~11-13 mi). The 12-17 h one-push figure moved to cal."
+ },
+ {
+  "id": "wa_blue_s_buttress",
+  "itinerary": {
+   "cal": "The season is roughly June to September.",
+   "totalNote": "A single-day car-to-car outing of about 5-6 hours: a short approach, simul-climbing Blue's Buttress, and a scree-gully descent.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb Blue's Buttress",
+     "objective": "Climb the buttress and return to the car",
+     "note": "Hike and scramble from the hairpin turnout to the base of the buttress in about 1-1.5 hours, then climb Blue's Buttress by simul-climbing with roped pitches through the cruxes in about 2-3 hours. Descend via the southeast col and scree gully back to the car in about 2 hours, typically 5-6 hours round trip.",
+     "gainFt": 2400,
+     "lossFt": 2400,
+     "hours": 5.5,
+     "miles": 4.0,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "figureSources": "hours: prose (5-6 h); gain: row elevations (hairpin 5,160 -> summit 7,565); miles: row dist_km 3.2 doubled (assumed one-way).",
+  "sources": [],
+  "confidence": "medium",
+  "notes": "Contradiction: row gain_ft 1365 is far below the 2,405 ft between the hairpin (5,160) and the summit (7,565); used the elevation difference. Dropped 'drive to the hairpin turnout' wording beyond naming the start point."
+ }
+]
