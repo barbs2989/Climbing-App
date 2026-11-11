@@ -28,7 +28,7 @@ export default function ObjectivesPanel({ area, onOpen, C }: ObjectivesPanelProp
       {!isLoading && !error && (!data || !data.length) && (
         <EmptyState C={C} icon="target">{tx("No objectives here yet — open a climb and tap to add it to your objectives.")}</EmptyState>
       )}
-      {(data || []).map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} />)}
+      {(data || []).map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} savedMark={false} />)}
     </div>
   );
 }
