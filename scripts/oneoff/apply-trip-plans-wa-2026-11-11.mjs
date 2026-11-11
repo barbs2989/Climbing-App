@@ -15,6 +15,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
+import { itineraryShapeErrors } from "../../lib/itineraryShape.js";
 
 const APPLY = process.argv.includes("--apply");
 const DIR = "research-data/trip-plans-wa-2026-11-11";
@@ -43,6 +44,7 @@ for (const f of outs) {
     if (!Array.isArray(x.sources) || new Set(x.sources).size < 2) why.push("fewer than two sources");
     if (String(x.confidence).toLowerCase() === "low") why.push("low confidence");
     const it = x.itinerary;
+    why.push(...itineraryShapeErrors(it)); // the app-wide trip-plan rule (lib/itineraryShape.js)
     if (!it || !Array.isArray(it.days) || !it.days.length) why.push("no days");
     else {
       it.days.forEach((d, i) => {
