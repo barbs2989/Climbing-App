@@ -84,6 +84,14 @@ if (!/areaCommentTargets[\s\S]{0,200}\["world","country","state"\]/.test(app)) {
   ok("world/country/state are excluded from area comments");
 }
 
+// Area PAGE only (owner 2026-11-11, "Remove discussion from area maps"): the thread mounts below the
+// whole browser, so without this it also sits under the Map, the Route finder and Objectives.
+if (!/areaCommentTargets[\s\S]{0,260}dbAreaCtx\.screen\s*===\s*"areas"/.test(app) || !/areaType:\s*current\.area_type,\s*screen\s*\}/.test(browser)) {
+  problems.push("area comments are no longer limited to the area page (dbAreaCtx.screen === \"areas\", reported by DbAreaBrowser) — the Discussion would show under the area Map again.");
+} else {
+  ok("area comments render on the area page only, not under the Map");
+}
+
 // ---------------------------------------------------------------------------------------
 // 2. DIRECTIONS TO AN AREA — present, and gated to somewhere you can actually park.
 //

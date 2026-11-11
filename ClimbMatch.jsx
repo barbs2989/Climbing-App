@@ -751,8 +751,10 @@ if(onboarded||uid){if(profile.disciplines.length)ME.disciplines=profile.discipli
      VITE_USE_DB=true) area comments have never been fetched OR rendered. Adding the id here is half
      the fix; without it the section below would render an empty box for ever, which is the
      populated-column-that-reaches-no-screen shape inverted.
-     Same exclusion the seed instance already applies: a country or a state is too broad to discuss. */
-  const areaCommentTargets=(dbAreaCtx&&dbAreaCtx.id&&!["world","country","state"].includes(dbAreaCtx.areaType))?[dbAreaCtx.id]:[];
+     Same exclusion the seed instance already applies: a country or a state is too broad to discuss.
+     Area PAGE only: not under the area Map, the Route finder or Objectives (owner 2026-11-11, "Remove
+     discussion from area maps"). The seed instance already sits outside its map branch. */
+  const areaCommentTargets=(dbAreaCtx&&dbAreaCtx.id&&!["world","country","state"].includes(dbAreaCtx.areaType)&&dbAreaCtx.screen==="areas")?[dbAreaCtx.id]:[];
   const dbComments=useComments(commentTargets.concat(gpCommentTargets).concat(areaCommentTargets));
   const cmUid=(USE_DB&&session&&session.user)?session.user.id:null;
   const cmOn=!!cmUid;const commentsUnavailable=!!(cmOn&&dbComments&&dbComments.isError);

@@ -57,10 +57,13 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
     // the only consumer left (area Discussion) then never rendered on an area such as Florida's
     // "Artificial Boulders" (fl_artificial_boulders: 30 climbs, lat/lng null). A consumer that
     // needs a position checks lat/lng itself.
+    // `screen` says which sub-screen is up ("areas" | "finder" | "near" | "objectives"): the area
+    // Discussion belongs on the area page only, never under the Map (owner, 2026-11-11: "Remove
+    // discussion from area maps" — and keep it on the area pages).
     onAreaContext(current
-      ? { id: current.id, name: current.name, lat: current.lat != null ? current.lat : null, lng: current.lng != null ? current.lng : null, areaType: current.area_type }
+      ? { id: current.id, name: current.name, lat: current.lat != null ? current.lat : null, lng: current.lng != null ? current.lng : null, areaType: current.area_type, screen }
       : null);
-  }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]); // eslint-disable-line react-hooks/exhaustive-deps -- report the area context only when the area identity or position changes; current is a fresh object each render and onAreaContext is listed
+  }, [onAreaContext, current && current.id, current && current.lat, current && current.lng, screen]); // eslint-disable-line react-hooks/exhaustive-deps -- report the area context only when the area identity or position changes; current is a fresh object each render and onAreaContext is listed
 
   const jump = i => {
     setScreen("areas");
