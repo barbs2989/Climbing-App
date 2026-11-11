@@ -172,7 +172,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const wide = useWideScreen();
   // The desktop "add / edit / wrong place" row's cells (see the row under the climb list).
   const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
-  const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8 };
+  const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
   const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
   const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && chartable && isLeaf === false ? area.id : null);
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
@@ -362,7 +362,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
         </div> : null}
         <div style={cellBox}>
           <div style={cellQ}>{"Wrong place?"}</div>
-          <button onClick={() => setWrongOpen(true)} aria-label={"Wrong place? Tell us where " + area.name + " belongs"} style={{ ...cellBtn, border: "1px solid " + C.border, color: C.textSub }}>{"Tell us where"}</button>
+          <button onClick={() => setWrongOpen(true)} aria-label={"Tell us where " + area.name + " belongs"} style={{ ...cellBtn, border: "1px solid " + C.border, color: C.textSub }}>{"Tell us where"}</button>
         </div>
       </div> : <>
         <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
