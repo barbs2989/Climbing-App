@@ -75,7 +75,7 @@ const EXEMPT = [
     // for the whole screen to do it in. Same class as the route map; it sits at 10000 because the
     // GPS submission sheet it opens from is a 9999 overlay, so the route map's 9700 would be under it.
     why: "the trail drawer is a MAP -- spatial content, full-bleed like the route map, and a line drawn by eye needs the whole screen",
-    match: (style, file) => /TrailDrawMap\.jsx$/.test(file) && /zIndex:\s*10000/.test(style),
+    match: (style, file) => /TrailDrawMap\.jsx$/.test(file) && /zIndex:\s*10000(?!\d)/.test(style),
   },
   {
     key: "menu-wide",
