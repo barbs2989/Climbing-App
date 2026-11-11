@@ -51,16 +51,38 @@ export function MonthStrip({ months, C, compact }) {
   </div>;
 }
 
+// ── MOST LOGGED HERE — twelve bars, the month's share of the busiest month ──
+// Counts from area_logged_months (0403): what climbers actually logged under this area, by calendar
+// month. Drawn only when something was logged; the label names the months at half the peak or more.
+export function LoggedMonthStrip({ counts, C }) {
+  const max = Math.max(...counts);
+  const desc = MONTH_ABBR.map((m, i) => m + " " + counts[i]).join(", ");
+  return <div role="img" aria-label={"Logged climbs by month: " + desc} style={{ display: "flex", gap: 2, alignItems: "flex-end" }}>
+    {MONTH_ABBR.map((m, i) => <div key={m} style={{ flex: 1, textAlign: "center" }}>
+      <div style={{ height: 22, display: "flex", alignItems: "flex-end" }}><div style={{ width: "100%", height: counts[i] ? Math.max(2, Math.round(counts[i] / max * 22)) : 2, borderRadius: 2, background: counts[i] ? C.blue : "rgba(255,255,255,0.08)" }} /></div>
+      <div style={{ fontSize: 9.5, color: counts[i] === max ? C.text : C.textMuted, marginTop: 3, fontWeight: counts[i] === max ? 700 : 500 }}>{m[0]}</div>
+    </div>)}
+  </div>;
+}
+export function loggedTopMonths(counts) {
+  const max = Math.max(...counts);
+  return max > 0 ? counts.map((n, i) => (n >= max / 2 ? i + 1 : 0)).filter(Boolean) : [];
+}
+
 // ── AREA FACTS ──
-export function AreaFactsCard({ area, C, uElev, onEdit }) {
+// `loggedMonths`: the twelve counts from useAreaLoggedMonths, or null to draw no MOST LOGGED strip.
+export function AreaFactsCard({ area, C, uElev, onEdit, loggedMonths }) {
   const facts = [];
+  const logged = Array.isArray(loggedMonths) && loggedMonths.length === 12 && loggedMonths.some(n => Number(n) > 0) ? loggedMonths.map(Number) : null;
+  const loggedTotal = logged ? logged.reduce((a, n) => a + n, 0) : 0;
   if (area.rock) facts.push(["Rock", String(area.rock).replace(/^./, s => s.toUpperCase()), "rock"]);
   if (area.aspect) facts.push(["Faces", area.aspect === "varies" ? "Varies" : area.aspect, "aspect"]);
   if (area.elevation_ft) facts.push(["Elevation", uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft", null]);
   if (area.approach_min != null && area.approach_min > 0) facts.push(["Walk-in", "about " + area.approach_min + " min", "approach_min"]);
   if (area.parking_name && area.parking_name !== "Trailhead") facts.push(["Parking", area.parking_name, null]);
   const season = Array.isArray(area.season_months) && area.season_months.length ? area.season_months : null;
-  if (!facts.length && !season) {
+  // Nothing stored and nothing logged: the invitation, never an empty grid (check:area-page-honest reads this gate).
+  if (!facts.length && !season) if (!logged) {
     return <div style={card(C)}>
       <div style={headRow}><Head C={C}>Area facts</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit("rock")} title={"Add facts about " + area.name} /> : null}</div>
       <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>{"Nothing on file yet — rock, which way it faces, the walk-in, the season. Know it? Add it."}</div>
@@ -72,6 +94,7 @@ export function AreaFactsCard({ area, C, uElev, onEdit }) {
       {facts.map(([l, v]) => <div key={l} style={{ minWidth: 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase" }}>{l}</div><div style={{ fontSize: 13.5, fontWeight: 600, color: C.text, lineHeight: 1.35, overflowWrap: "anywhere" }}>{v}</div></div>)}
     </div> : null}
     {season ? <div style={{ marginTop: facts.length ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Season · " + monthsLabel(season)}</div><MonthStrip months={season} C={C} /></div> : null}
+    {logged ? <div style={{ marginTop: facts.length || season ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Most logged here · " + monthsLabel(loggedTopMonths(logged)) + " · " + loggedTotal.toLocaleString() + " log" + (loggedTotal !== 1 ? "s" : "")}</div><LoggedMonthStrip counts={logged} C={C} /></div> : null}
   </div>;
 }
 
@@ -120,7 +143,14 @@ export function bucketLabel(sys, b) {
   if (sys === "class") return "Class " + b;
   return String(b);
 }
-export function GradeSpread({ stats, C }) {
+// Whether GradeSpread would draw anything: the area page lays the two charts side by side on the
+// website only when both exist.
+export function hasGradeSpread(stats) {
+  return !!(stats && Array.isArray(stats.by_grade) && stats.by_grade.some(g => g && g.n > 0 && g.sys));
+}
+// `standalone` draws it as its own card (beside CLIMBS HERE on the website) instead of a ruled
+// section under the discipline bars.
+export function GradeSpread({ stats, C, standalone }) {
   const rows = stats && Array.isArray(stats.by_grade) ? stats.by_grade.filter(g => g && g.n > 0 && g.sys) : [];
   if (!rows.length) return null;
   const bySys = {};
@@ -137,7 +167,7 @@ export function GradeSpread({ stats, C }) {
   const W = 100, H = 56, gap = 2, bw = (W - gap * (full.length - 1)) / full.length, every = full.length > 9 ? 2 : 1;
   const label = c => bucketLabel(sys, c.b);
   const desc = full.filter(c => c.n).map(c => label(c) + ": " + c.n).join(", ");
-  return <div style={{ marginTop: 12, paddingTop: 10, borderTop: "1px solid " + C.border }}>
+  return <div style={standalone ? card(C) : { marginTop: 12, paddingTop: 10, borderTop: "1px solid " + C.border }}>
     <div style={{ ...headRow, marginBottom: 6 }}><Head C={C}>Grade spread</Head><span style={{ fontSize: 11.5, color: C.textMuted }}>{SYS_NAME[sys] || sys}</span></div>
     <svg role="img" aria-label={"Climbs by grade (" + (SYS_NAME[sys] || sys) + "): " + desc} viewBox={"0 0 " + W + " " + H} preserveAspectRatio="none" style={{ width: "100%", height: 56, display: "block" }}>
       {full.map((c, i) => { const h = max ? Math.max(c.n ? 1.5 : 0, c.n / max * (H - 2)) : 0; return <rect key={c.b} x={i * (bw + gap)} y={H - h} width={bw} height={h} rx={0} fill={C.blueSolid} />; })}
