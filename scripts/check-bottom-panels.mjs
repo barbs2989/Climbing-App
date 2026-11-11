@@ -51,7 +51,7 @@ const DECLARED = [
     reserves: true,
   },
   {
-    style: 'position:"fixed",top:64/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM',
+    style: 'position:"fixed",top:HEAD_H/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM',
     file: "lib/Inbox.jsx",
     why: "the desktop Messages LEFT PANE (Inbox pane=\"side\", 1024px+ only) — it runs to the bottom of the window by design, beside the conversation, not over it",
     // Drawn at the website's ZOOM since 2026-11-04 (it zooms itself, so its geometry is written
