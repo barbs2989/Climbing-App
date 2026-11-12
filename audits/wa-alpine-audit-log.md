@@ -37942,3 +37942,51 @@ and rappel/descent narrative detail were not independently re-derived beyond the
 
 Next batch will continue id-ascending from `wa_northeast_buttress_4` (the next in-scope id after
 it is `wa_northeast_face_direct`, on Mount Formidable).
+
+## Batch 531 (pass 8) — 2026-11-12
+
+Checked 9 WA alpine/mountaineering peak routes, id-ascending from `wa_northeast_face_direct`
+through `wa_northwest_mox_peak_standard`: Mount Formidable's Northeast Face Direct, Johannesburg
+Mountain's Northeast Ridge (1963 Route), Argonaut Peak's Northwest Arête, Sloan Peak's Northwest
+Buttress, Kangaroo Temple's Northwest Face, Little Big Chief Mountain's Northwest Face (Falcon
+Route), South Early Winters Spire's Northwest Face (Boving-Pollock), and both of Northwest Mox
+Peak's routes (Northeast Ridge; Standard Route / Northwest Spire). One route in this id range,
+`wa_northwest_face` (Vasiliki Tower), was skipped as out-of-scope — its area is a crag, not a peak.
+
+**Clean (7):** Mount Formidable's 8,325 ft matches Wikipedia/SummitPost (a 2023 GPS survey gives
+8,352.9 ft ± 1.1, normal cross-source variance, not a contradiction). Johannesburg Mountain's
+8,200 ft matches Wikipedia/SummitPost/the NPS map. Argonaut Peak's 8,457 ft matches Wikipedia's
+own infobox figure (NAVD88) exactly — the lower 8,369 ft seen on TopoQuest/the Stuart Range
+article is the outlier, not ours. Sloan Peak's 7,835 ft is the figure essentially every source
+gives; its Northwest Buttress FA ("M. Preiss & M. Bunker, 2000") is corroborated by a Cascade
+Climbers trip report literally URL-dated FA-09232000. Kangaroo Temple's 7,572 ft found no
+independent corroboration (no Peakbagger/ListsOfJohn page for it turned up) but also no
+contradicting figure, and it sits plausibly between two neighboring ridge points (Wallaby 7,995
+ft, Big Kangaroo 8,326 ft); left as stored. Little Big Chief's Northwest Face ("Falcon Route") FA
+date (Sept 10, 2001, Volken & Hansell) is indirectly corroborated by Martin Volken himself
+replying in a 2025 Cascade Climbers thread about the route's name, timed ~24 years after the
+climb. South Early Winters Spire's 7,807 ft matches Wikipedia/SummitPost (ListsOfJohn's 7,823 ft
+LiDAR figure is normal variance); its Northwest Face (Boving-Pollock) FA ("Boving and Kerns,
+1977") is independently confirmed by both Mountain Project and OpenBeta.
+
+**Flagged for human review (2 rows, 1 finding):** `wa_northwest_mox_peak_northeast_ridge`
+("Northeast Ridge") and `wa_northwest_mox_peak_standard` ("Standard Route / Northwest Spire")
+read as the same physical route told twice. Both put the FA at Fred & Helmy Beckey, June 1941;
+both describe the identical line (snowy finger → two pitches of 4th-to-low-5th-class rock to a
+saddle/col → NE ridge scramble → final pitch to the summit) at essentially the same grade (5.6
+Mod. Snow vs. 5.5); SummitPost's own description of the NW Mox standard route ("class 4-5 rock
+onto the NE ridge, then class 3-4 ridge to the summit, finish low 5th") matches both. This looks
+like a duplicate catalog entry (possibly one row imported from Mountain Project under MP's route
+name, the other from a guidebook/other source under "Standard Route"), not a factual error in
+either row's own content — no single-column SQL fix applies, and resolving it would mean merging
+or deleting a row, which is out of this audit's scope (and against its no-delete guardrail). Left
+as-is; flagging for a human to check with `check:catalog-duplicates`/`audit:waypoint-order` or by
+hand before deciding whether to merge them.
+
+**Confirmed errors fixed:** 0. No SQL file this batch.
+
+Not independently checked this batch: permit/access text, hazard/watch_out prose, waypoint-level
+coordinates beyond each peak's own area coordinate (except Northwest Mox Peak's, reviewed above),
+and rappel/descent narrative detail beyond what's quoted above.
+
+Next batch will continue id-ascending from `wa_northwest_mox_peak_standard`.
