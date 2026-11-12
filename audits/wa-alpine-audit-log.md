@@ -37530,3 +37530,74 @@ run).
 
 Next batch will continue id-ascending from `wa_mount_pugh_pika_slab` (the next in-scope id after
 it is `wa_mount_rainier_curtis_ridge`).
+
+---
+
+## 2026-11-12 — Pass 8, Batch 524
+
+Ten routes, all on Mount Rainier (one peak, id-ascending from `wa_mount_rainier_curtis_ridge`
+through `wa_mount_rainier_kautz_glacier`): Curtis Ridge, Disappointment Cleaver, East Success
+Couloir, Edmunds Headwall, Emmons–Winthrop Glacier, Fuhrer Finger, Fuhrer Thumb, Gibraltar
+Ledges, Ingraham Direct, Kautz Glacier.
+
+No confirmed errors this batch — unusually well-sourced routes (NPS route briefs, AAC Cascade
+Section reports, NPS history/Nature Notes bulletins all exist for Rainier) and everything checked
+out or only turned up pre-existing source disagreement, not a catalog error.
+
+Confirmed clean, worth recording: the `access.fees` "$82 per person, per climb — Climbing Cost
+Recovery Fee (2026 rate)" stored on every one of these ten rows matches the NPS Climbing Fee FAQ
+page exactly (2025 was $70; CPI-indexed each year). The identical "No timed-entry vehicle
+reservation is in effect for the 2026 season" line also checks out — Mount Rainier NP officially
+ended its timed-entry pilot (Sunrise/Paradise, 2024–2025) for the 2026 season, confirmed by
+National Parks Traveler and other reporting from Feb 2026. `high_point_ft: 14406` is used
+consistently across every one of these ten rows for the true summit (Columbia Crest): this is
+*not* the NPS's own still-official 1956-survey figure (14,410 ft, which USGS has stated remains
+unchanged), but it does match the current-datum-adjusted figure from a 2024–2025 independent
+ground/LiDAR resurvey (14,406 ft once converted to the modern vertical datum, per KUOW's coverage
+of that study) — a real, live elevation controversy, not a catalog slip; left as-is since 14,406
+ft is the more defensible modern number, not contradicted, and applying consistently across all
+routes on the peak. FAs independently confirmed against NPS history documents or Mountain
+Project/OpenBeta: Gibraltar Ledges (Stevens/Van Trump, Aug 17 1870 — the mountain's first ascent);
+Emmons-Winthrop (Fobes/James/Wells, Aug 20 1884 — NPS history explicitly credits this party, not
+Van Trump, for the Emmons-Winthrop specifically); Fuhrer Finger (Hans Fuhrer/Heinie
+Fuhrer/Hazard/Farrer/Hermans, July 2 1920 — matches verbatim, name order only differs); Fuhrer
+Thumb (Wickwire/Raymond/Stewart, May 27 1972 — matches SummitPost exactly, single-sourced but
+unanimous); East Success Couloir (Senner/Walstrom, 1960 — Mountain Project adds the specific date
+July 17, not contradicted, just less precise in our row). Disappointment Cleaver's `fa: "Unknown"`
+matches the NPS's own route brief position that the route's early climbing history is unclear
+(sources disagree between a 1942 military ascent and a credited 1950 Molenaar/Wickwire party) —
+"Unknown" is the honest answer here, not a gap. Curtis Ridge's `fa` (Prater/Schuster, no year)
+matches Mountain Project/OpenBeta on the names; no source found gives a confident year, so the
+row's silence on a date is correct rather than missing.
+
+Flagged for human review, no SQL (source conflicts, not catalog errors):
+- `wa_mount_rainier_kautz_glacier`'s `fa` dates the first ascent "June 26-28, 1920." A 1934 NPS
+  Nature Notes bulletin supports this (same four climbers, "late June," via Van Trump Park and the
+  Kautz Glacier). But a separate NPS-published ascents summary gives "July 28, 1920" for the exact
+  same party and route. Two NPS-sourced documents disagree by a month; no way to tell from what's
+  reachable which one the compiler actually meant or which is right.
+- `wa_mount_rainier_edmunds_headwall`'s `fa` lists "John Rupley, Don **Gordon**, Fred Beckey, Tom
+  Hornbein and Herb Staley, June 23, 1957." Search turned up an AAC Cascade Section report
+  describing a June 1957 party — Fred Beckey, Don **Claunch**, John Rupley, Tom Hornbein, Herb
+  Staley — climbing a line "directly above the head of Edmunds Glacier to Liberty Cap," which
+  matches this route's own geography exactly (this row's `descent_text` starts "From Liberty
+  Cap..."). A different 1967 AAC excerpt names a party with "Gordon" instead, but climbing a route
+  described as "directly above the North Mowich Glacier" — a neighboring but distinct line, not
+  Edmunds Headwall. The primary AAC Publications and NPS History sites are outside this session's
+  network allowlist, so the exact original wording couldn't be pulled to settle "Gordon" vs
+  "Claunch" with certainty; flagging rather than guessing which of two real climbers' names belongs
+  here.
+
+Not independently checked this batch: the parenthetical ski-descent credits on two rows (Kautz's
+Fuhrer-brothers context note and Emmons-Winthrop's "first ski descent: Roberts, Bengtson, Welsh,
+Schmidtke, 1947") and the detailed technical descent prose on Kautz Glacier (rappel counts,
+"Zero-Thread" ice-anchor terminology) — plausible and internally consistent with known Kautz
+route literature, but not cross-checked against a primary source this run.
+
+No coordinates stored at the route level on any of these ten rows (all `lat`/`lng` null, as is
+typical for the catalog's bare/unenriched shape); the shared `wa_mount_rainier` area row's own
+coordinate (46.851731, -121.760395) and elevation (14,406 ft) and prominence (13,210 ft, matching
+Peakbagger) were both independently confirmed.
+
+Next batch will continue id-ascending from `wa_mount_rainier_kautz_glacier` (the next in-scope id
+after it is `wa_mount_redoubt_south_face`).
