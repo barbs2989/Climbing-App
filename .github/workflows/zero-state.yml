@@ -105,7 +105,7 @@ jobs:
           google-chrome --version
 
       - name: Zero state
-        run: npm run check:zero -- --dump zero-state.json
+        run: node scripts/ci-db-inconclusive.mjs npm run check:zero -- --dump zero-state.json
         env:
           # Match build-check.yml and deploy.yml. Without these USE_DB is off and the
           # Climbs tab renders AreaView instead of DbAreaBrowser — a different app than

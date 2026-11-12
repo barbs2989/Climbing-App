@@ -10,7 +10,7 @@ import SwipeRow from "../src/components/SwipeRow.tsx";
 import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_BACK } from "./popupChrome.js";
-import { ZOOM } from "./wideLayout.js";
+import { HEAD_H, ZOOM } from "./wideLayout.js";
 
 /* `pane` is the desktop website's placement (lib/wideLayout.js): "side" is the LEFT PANE of the
    two-pane Messages page — a 280px column at the page column's left edge, the open conversation
@@ -19,7 +19,7 @@ import { ZOOM } from "./wideLayout.js";
    Both are drawn at the website's ZOOM (owner 2026-11-04) like the page beside them; being fixed,
    each zooms ITSELF, so its own top/left/width are written divided by ZOOM. */
 const PANE_STYLE={
-  side:{zoom:ZOOM,position:"fixed",top:64/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM,background:C.bg,zIndex:35,overflowY:"auto",overscrollBehavior:"contain",borderRight:"1px solid "+C.border,borderLeft:"1px solid "+C.border,boxSizing:"border-box"},
+  side:{zoom:ZOOM,position:"fixed",top:HEAD_H/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM,background:C.bg,zIndex:35,overflowY:"auto",overscrollBehavior:"contain",borderRight:"1px solid "+C.border,borderLeft:"1px solid "+C.border,boxSizing:"border-box"},
   drop:{zoom:ZOOM,position:"fixed",top:70/ZOOM,right:"calc(var(--cm-shell-right) / "+ZOOM+")",width:400/ZOOM,maxHeight:"calc((100vh - 90px) / "+ZOOM+")",background:C.surface,zIndex:1450,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:14,boxShadow:"0 18px 50px rgba(0,0,0,0.6)",boxSizing:"border-box"},
 };
 export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,placeOf,routeById,pane,onExpand,onDismiss}){
@@ -30,6 +30,14 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
   const [itab,setItab]=useState("friends");const [msgQ,setMsgQ]=useState("");const mqOk=str=>!msgQ.trim()||(str||"").toLowerCase().includes(msgQ.trim().toLowerCase());
   const dmIds=Object.keys(msgs||{}).filter(id=>(msgs[id]||[]).length>0);
   const _realDmIds=dmIds.filter(id=>!/^\d+$/.test(id));const dmProfilesQ=useProfilesByIds(_realDmIds);
+  /* A THREAD IS DROPPED BELOW UNTIL ITS SENDER'S PROFILE ARRIVES (dmThreads filters on `c`), and the
+     profile read starts only once the messages have landed -- a second round trip. In that window the
+     messages are loaded, `dmLoading` is false, and the list used to say "No friend chats yet" to a
+     climber with a message waiting: check:message-delivery read exactly that on CI when the profile
+     read ran past its settle window (runs 43108689522, 43110748702). The names still loading is
+     loading, and a failed names read is a failed read, not an empty inbox. */
+  const _dmUnnamed=_realDmIds.some(id=>!(dmProfilesQ.data||[]).some(p=>p.id===id));
+  const dmNamesLoading=_dmUnnamed&&dmProfilesQ.isLoading;const dmNamesUnavailable=_dmUnnamed&&dmProfilesQ.isError;
   const dmThreads=dmIds.map(id=>{const c=/^\d+$/.test(id)?(+id===0?ME:CLIMBERS.find(x=>x.id===+id)):((dmProfilesQ.data||[]).find(p=>p.id===id));const arr=msgs[id]||[];return c?{c:c,last:arr[arr.length-1]}:null;}).filter(Boolean).sort((a,b)=>((b.last&&b.last.ts)||0)-((a.last&&a.last.ts)||0));  const crewThreads=(crews||[]).map(cr=>{/* ONE place, a route or an area (0302): the thread is named for either. */const r=(placeOf?placeOf(cr):crewPlace(cr,{}))||{};const arr=(crewMsgs&&crewMsgs[cr.id])||[];return {cr:cr,r:r,last:arr.length?arr[arr.length-1]:null,count:arr.length,un:(crewUnread&&crewUnread[cr.id])||0};}).filter(t=>t.count||t.un).sort((a,b)=>(b.un-a.un)||(((b.last&&b.last.ts)||0)-((a.last&&a.last.ts)||0)));
   
   const friendsNoDM=(connections||[]).filter(f=>dmIds.indexOf(String(f.id))<0);
@@ -50,7 +58,7 @@ export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoa
         {mainT.length?<div style={{fontSize:11.5,color:C.textMuted,margin:"0 2px 8px"}}>{tx("Swipe left to delete a conversation")}</div>:null}
         <div className="cm-stagger">{mainT.map(function(t){var nu=(dmUnread||{})[t.c.id]||0;return <SwipeRow hover key={t.c.id} onDelete={()=>onDeleteDM(t.c.id)}><div style={row}><div {...clickable(()=>onOpenDM(t.c))} style={SZ5}><Av src={t.c.avatar} size={42} online={t.c.online}/><div style={{flex:1,minWidth:0}}><div style={{display:"flex",alignItems:"center",gap:5,minWidth:0}}><span style={{fontSize:14,fontWeight:700,overflowWrap:"anywhere"}}>{pubName(t.c)}</span></div>{(()=>{var sh=(t.c.objectiveIds||[]).filter(function(id){return (ME.objectiveIds||[]).indexOf(id)>=0;});var sr=sh.length?((routeById&&routeById(sh[0]))||ROUTES.find(function(r){return r.id===sh[0];})||null):null;return sr?<div style={{fontSize:11,color:C.blue,fontWeight:600,marginTop:1,overflowWrap:"anywhere"}}>{"↳ both want "+sr.name}</div>:null;})()}<div style={nu>0?Object.assign({},prev,{color:C.text,fontWeight:600}):prev}>{lastTxt(t.last)||tx("Tap to open")}</div></div></div>{nu>0?<span style={{flexShrink:0,minWidth:18,height:18,borderRadius:9,background:C.blueSolid,color:C.onSolid,fontSize:11,fontWeight:800,display:"flex",alignItems:"center",justifyContent:"center",padding:"0 5px"}}>{nu}</span>:null}</div></SwipeRow>;})}</div>
         {friendsNoDM.length?<div style={{marginTop:dmThreads.length?10:0}}><div style={lbl}>Start a chat</div><div style={{display:"flex",gap:12,flexWrap:"wrap"}}>{friendsNoDM.map(f=><button key={f.id} onClick={()=>onOpenDM(f)} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:5,background:"transparent",border:"none",cursor:"pointer",width:64}}><Av src={f.avatar} size={46} online={f.online}/><span style={{fontSize:12,color:C.textSub,maxWidth:64,overflowWrap:"anywhere"}}>{pubFirst(f)}</span></button>)}</div></div>:null}
-        {(!mainT.length&&!reqT.length&&!friendsNoDM.length)?<div style={{textAlign:"center",padding:"48px 20px",color:C.textMuted}}><div style={{display:"flex",justifyContent:"center",marginBottom:10}}><ActionIcon name="chat" size={34} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted,fontWeight:600,marginBottom:5}}>{dmUnavailable?"Couldn't load your chats":dmLoading?"Loading your chats…":"No friend chats yet"}</div>{dmLoading&&!dmUnavailable?null:<div style={{fontSize:13,lineHeight:1.6}}>{dmUnavailable?"Your conversations are still here — this list just couldn't be loaded. Try again in a moment.":"Message a partner from their profile and your chats will live here."}</div>}</div>:null}
+        {(!mainT.length&&!reqT.length&&!friendsNoDM.length)?<div style={{textAlign:"center",padding:"48px 20px",color:C.textMuted}}><div style={{display:"flex",justifyContent:"center",marginBottom:10}}><ActionIcon name="chat" size={34} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted,fontWeight:600,marginBottom:5}}>{(dmUnavailable||dmNamesUnavailable)?"Couldn't load your chats":(dmLoading||dmNamesLoading)?"Loading your chats…":"No friend chats yet"}</div>{(dmLoading||dmNamesLoading)&&!(dmUnavailable||dmNamesUnavailable)?null:<div style={{fontSize:13,lineHeight:1.6}}>{(dmUnavailable||dmNamesUnavailable)?"Your conversations are still here — this list just couldn't be loaded. Try again in a moment.":"Message a partner from their profile and your chats will live here."}</div>}</div>:null}
       </div>;})():null}
       {itab==="crews"?<div>
         {crewUnavailable?<div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.6,padding:"6px 0 10px"}}>Couldn’t check your crew chats for new messages — the counts here may be behind until the connection returns.</div>:null}

@@ -1,15 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { parseTypedSearch } from "./typedSearch.js";
-import { C, CAT, CLIMBERS, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil, pubName } from "../ClimbMatchCore.jsx";
+import { C, CAT, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { discLabel } from "./discLabels";
-import { useMyHomeStatePaths, usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
+import { useMyHomeStatePaths, usePlaceSearch, useRouteSearch, useStates } from "./db.js";
 import { USE_DB } from "./supabase";
 import Chevron from "../src/components/Chevron.tsx";
-import { useRailFollow } from "./Ads.jsx";
+import { RailAd, useRailFollow } from "./Ads.jsx";
+import { ZOOM } from "./wideLayout.js";
 import BrandMark from "../src/components/BrandMark.tsx";
+import { LogTagRow } from "./LogTagConfirmations.jsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
    phone app never mounts it — except WideSearch, which the phone's Climbs tab also mounts INLINE
@@ -70,7 +73,7 @@ const readRecent = () => { try { const v = JSON.parse(localStorage.getItem(RECEN
    else to the climber's home state, else to the state with the most climbs — and the row NAMES the
    scope, so nothing is picked silently. A place that was typed but not found offers no row: the
    plain hits (and "no matches") answer that. */
-export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, inline, onNearMe }) {
+export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left, inline, onNearMe }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [hi, setHi] = useState(0);
@@ -135,7 +138,9 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, inlin
   /* Placed by `left`, not transform:translateX(-50%) — a transform can land the box on a half pixel,
      and text there renders soft on a Windows screen. Inline, it is a block in the page's flow. */
   const w = width || "460px";
-  const wrap = inline ? { position: "relative", width: "100%" } : { position: "absolute", top: 12, left: "calc(50vw - (" + w + ") / 2)", width: w };
+  /* LEFT (App passes the geometry's searchL, lined up with the nav strip's tabs) wins; without it the
+     box is centred on the window as before. */
+  const wrap = inline ? { position: "relative", width: "100%" } : { position: "absolute", top: 12, left: left || "calc(50vw - (" + w + ") / 2)", width: w };
   // Inline, the list runs DOWN THE PAGE (as DbSearchSplit's does): no inner scroll, no drop-down.
   const panel = inline ? { marginTop: 6, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: 6 }
     : { position: "absolute", top: 46, left: 0, right: 0, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };
@@ -157,64 +162,126 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, inlin
   </div>;
 }
 
-/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and unread alerts
-   (collapsed until clicked).
-   Ads, when they come, take slots in this column (desktop only). */
-/* CHATS IN THE RAIL (desktop website, owner-approved 2026-10-21): your crews' chats and your direct
-   messages, in two folding sections since 2026-11-04 (owner), newest first within each, always in
-   reach the way Facebook's contacts column is. The same threads
-   the inbox shows — `shows(id)` is App's own test for a direct thread (blocked and restricted
-   people stay out) — and a real account is named the way it chose (pubName), read the way the
-   inbox reads it. */
-function RailChats({ chats, onOpenDm, onOpenCrew }) {
-  const { msgs, crews, crewMsgs, crewUnread, dmUnread, shows, placeOf } = chats;
-  const dmIds = Object.keys(msgs || {}).filter(id => (msgs[id] || []).length > 0 && shows(id));
-  const realIds = dmIds.filter(id => !/^\d+$/.test(id));
-  const profQ = useProfilesByIds(realIds);
-  const last = arr => (arr && arr.length ? arr[arr.length - 1] : null);
-  const rows = [];
-  dmIds.forEach(id => {
-    const c = /^\d+$/.test(id) ? CLIMBERS.find(x => x.id === +id) : (profQ.data || []).find(p => p.id === id);
-    const m = last(msgs[id]);
-    if (c) rows.push({ key: "dm" + id, name: pubName(c), avatar: c.avatar, unread: Number((dmUnread || {})[id]) || 0, ts: (m && m.ts) || 0, open: () => onOpenDm(c) });
-  });
-  (crews || []).forEach(cr => {
-    const p = placeOf(cr);
-    const m = last((crewMsgs || {})[cr.id]);
-    rows.push({ key: "cr" + cr.id, name: (p && p.kind !== "missing" && p.name) || "Crew", crew: true, unread: Number((crewUnread || {})[cr.id]) || 0, ts: (m && m.ts) || 0, open: () => onOpenCrew(cr) });
-  });
-  rows.sort((a, b) => b.ts - a.ts);
-  /* TWO SECTIONS, EACH A DROPDOWN (owner 2026-11-04: "separate it by crew and individual chats with
-     dropdowns"): Crews, then Direct, each under a header that folds it — the Alerts card's header shape
-     (44px, chevron, aria-expanded) — carrying the section's unread count so a folded section still says
-     what waits. Newest first within each, five apiece; both start open. */
-  const [crewsOpen, setCrewsOpen] = useState(true);
-  const [dmOpen, setDmOpen] = useState(true);
-  const PER = 5;
-  const badge = n => n ? <span aria-hidden="true" style={{ minWidth: 18, height: 18, borderRadius: 9, background: C.redSolid, color: C.onSolid, fontSize: 11, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "0 5px", boxSizing: "border-box" }}>{n}</span> : null;
-  const row = r => <button key={r.key} onClick={r.open} aria-label={(r.crew ? r.name + " crew chat" : "Chat with " + r.name) + (r.unread ? ", " + r.unread + " unread" : "")} style={ROW}>
-    {r.crew ? <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 12, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span> : <Av src={r.avatar} size={28} />}
-    <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: r.unread ? 800 : 600, overflowWrap: "anywhere" }}>{r.name}</span>
-    {badge(r.unread)}
-  </button>;
-  const group = (id, title, list, open, toggle, empty, onSeeAll) => {
-    const unread = list.reduce((n, r) => n + r.unread, 0);
-    return <div>
-      <button id={id} onClick={toggle} aria-expanded={open} aria-label={title + (unread ? ", " + unread + " unread" : "")} style={{ minHeight: 44, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: "0 2px", border: "none", background: "transparent", cursor: "pointer", textAlign: "left", color: C.text, fontSize: 13, fontWeight: 800 }}><span style={{ flex: 1 }}>{title}</span>{badge(unread)}<span aria-hidden="true" style={{ display: "flex" }}><Chevron open={open} size={14} color={C.blue} /></span></button>
-      {!open ? null : list.length ? <div style={{ marginBottom: 4 }}>{list.slice(0, PER).map(row)}{list.length > PER ? <button onClick={onSeeAll} style={{ padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"See all " + list.length + " ›"}</button> : null}</div> : <div style={{ fontSize: 13, color: C.textMuted, padding: "0 2px 8px" }}>{empty}</div>}
-    </div>;
-  };
-  const crewRows = rows.filter(r => r.crew), dmRows = rows.filter(r => !r.crew);
-  return <section aria-labelledby="rail-chats" style={{ ...CARD, paddingBottom: 6 }}>
-    <div id="rail-chats" style={{ ...SECTION, marginBottom: 2 }}>Chats</div>
-    {group("rail-chats-crews", "Crews", crewRows, crewsOpen, () => setCrewsOpen(o => !o), "No crew chats yet.", crewRows[0] && crewRows[0].open)}
-    <div aria-hidden="true" style={{ height: 1, background: C.border, margin: "2px 0" }} />
-    {group("rail-chats-direct", "Direct", dmRows, dmOpen, () => setDmOpen(o => !o), "No direct chats yet.", dmRows[0] && dmRows[0].open)}
+/* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days, alerts, your
+   crews and your groups. Ads take the last slot in this column (desktop only; `ad`). */
+
+const badgeN = n => n ? <span aria-hidden="true" style={{ minWidth: 18, height: 18, borderRadius: 9, background: C.redSolid, color: C.onSolid, fontSize: 11, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: "0 5px", boxSizing: "border-box" }}>{n}</span> : null;
+const PER = 5;
+const seeAllBtn = { padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" };
+
+/* A rail card whose header folds it — the Alerts card's header shape (44px, chevron, aria-expanded),
+   carrying the card's unread count so a folded card still says what waits. Starts open. */
+function FoldCard({ id, title, unread, unreadWord, children }) {
+  const [open, setOpen] = useState(true);
+  return <section aria-labelledby={id} style={{ ...CARD, paddingBottom: 6 }}>
+    <button id={id} onClick={() => setOpen(o => !o)} aria-expanded={open} aria-label={title + (unread ? ", " + unread + " " + unreadWord : "")} style={{ minHeight: 44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}><span style={{ flex: 1 }}>{title}</span>{badgeN(unread)}<span aria-hidden="true" style={{ display: "flex" }}><Chevron open={open} size={14} color={C.blue} /></span></button>
+    {open ? <div style={{ marginBottom: 4 }}>{children}</div> : null}
   </section>;
 }
 
-import { LogTagRow } from "./LogTagConfirmations.jsx";
-export function WideRail({ upcoming, alerts, waiting, newN: newCount, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, chats, onOpenDm, onOpenCrewChat, showToast }) {
+/* YOUR CREWS, WITH THEIR CHATS (owner 2026-11-11: "move your crews to the right… combine your crews
+   with crew chats", and "remove the direct chats from the right panel" — direct messages stay one
+   click away in the top bar's Messages drop-down, which carries their unread count). One row per
+   active crew (App's activeCrews, the Crews tab's own list), newest chat message first, named for its
+   place, with the last message under the name (read the way the inbox reads it: "You: …", "Photo")
+   and the chat's unread count. While the read is in flight it says so, never "No crews yet." (the
+   empty-account claim check:outage guards against). A click opens the CREW (owner: the crew page, as the sidebar's rows
+   did), where its chat is. A failed crews read says so rather than listing nothing. */
+function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading, onOpenCrew, onAllCrews, onFindPartners }) {
+  const last = arr => (arr && arr.length ? arr[arr.length - 1] : null);
+  const rows = (crews || []).map(cr => {
+    const p = placeOf(cr);
+    const m = last((crewMsgs || {})[cr.id]);
+    return { cr, name: (p && p.kind !== "missing" && p.name) || "Crew", m, ts: (m && m.ts) || 0, unread: Number((crewUnread || {})[cr.id]) || 0 };
+  }).sort((a, b) => b.ts - a.ts);
+  const unread = rows.reduce((n, r) => n + r.unread, 0);
+  const preview = m => (m ? (m.from === "me" ? "You: " : (m.name ? m.name + ": " : "")) + (m.image && !m.text ? "Photo" : String(m.text || "")) : "");
+  return <FoldCard id="rail-crews" title={"Your crews" + (rows.length ? " · " + rows.length : "")} unread={unread} unreadWord="unread">
+    {unavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "0 2px 8px" }}>Couldn’t load your crews just now.</div>
+      : !rows.length && loading ? <div style={{ fontSize: 13, color: C.textMuted, padding: "0 2px 8px" }}>Loading your crews…</div>
+      : !rows.length ? <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "0 2px 8px" }}>No crews yet.<button onClick={onFindPartners} style={{ ...seeAllBtn, display: "block", padding: 0, marginTop: 8 }}>Find partners ›</button></div>
+      : <>{rows.slice(0, PER).map(r => <button key={r.cr.id} onClick={() => onOpenCrew(r.cr)} aria-label={r.name + " crew" + (r.unread ? ", " + r.unread + " unread" : "")} style={{ ...ROW, alignItems: "flex-start" }}>
+          <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ display: "block", fontSize: 13.5, fontWeight: r.unread ? 800 : 700, overflowWrap: "anywhere" }}>{r.name}</span>
+            {r.m ? <span style={{ display: "block", fontSize: 12.5, color: r.unread ? C.textSub : C.textMuted, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{preview(r.m)}</span> : null}
+          </span>
+          {badgeN(r.unread)}
+        </button>)}
+        {rows.length > PER ? <button onClick={onAllCrews} style={seeAllBtn}>{"See all " + rows.length + " crews ›"}</button> : null}</>}
+  </FoldCard>;
+}
+
+/* YOUR GROUPS (owner 2026-11-04 put them in the sidebar, from the competitor review — Facebook lists
+   your groups; owner 2026-11-11 moved them here): up to five, a red dot when a group has posts you have
+   not seen (App's groupUnreadN, the Groups tab's own count). Drawn only when you are in a group. */
+function RailGroups({ groups, groupUnreadN, onOpenGroup, onAllGroups }) {
+  const list = groups || [];
+  if (!list.length) return null;
+  const newN = list.filter(g => groupUnreadN(g) > 0).length;
+  return <FoldCard id="rail-groups" title={"Your groups · " + list.length} unread={newN} unreadWord={newN === 1 ? "group with new posts" : "groups with new posts"}>
+    {list.slice(0, PER).map(g => {
+      const nn = groupUnreadN(g);
+      return <button key={g.id} onClick={() => onOpenGroup(g)} aria-label={g.name + (nn ? ", " + nn + " new post" + (nn === 1 ? "" : "s") : "")} style={ROW}>
+        <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="partners" size={15} color={C.textSub} /></span>
+        <span style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: nn ? 800 : 700, overflowWrap: "anywhere" }}>{g.name}</span>
+        {nn ? <span aria-hidden="true" style={{ width: 8, height: 8, borderRadius: 4, background: C.red, flexShrink: 0 }} /> : null}
+      </button>;
+    })}
+    {list.length > PER ? <button onClick={onAllGroups} style={seeAllBtn}>{"See all " + list.length + " groups ›"}</button> : null}
+  </FoldCard>;
+}
+
+/* THE AVATAR'S MENU (owner 2026-11-11: "add it, keep ☰"): on the website the avatar opens a small
+   drop-down under it, as Strava's, GitHub's and Facebook's do, instead of going straight to the
+   profile. The ☰ Menu stays for everything else. A guest's avatar still says Sign in (App does not
+   mount this for a guest). A WAI-ARIA menu button: Enter / Space / ↓ open it on the first item, ↑ on
+   the last; ↑ ↓ Home End move; Esc, Tab or a click outside close it, and Esc returns focus to the
+   avatar. Drawn under the top bar's right corner at the website's ZOOM, above the header. */
+export function AvatarMenu({ avatar, name, items }) {
+  const [open, setOpen] = useState(false);
+  const btn = useRef(null), menu = useRef(null);
+  const focusItem = i => { const els = menu.current ? menu.current.querySelectorAll('[role="menuitem"]') : []; if (els.length) els[(i + els.length) % els.length].focus(); };
+  const show = first => { setOpen(true); setTimeout(() => focusItem(first ? 0 : -1), 0); };
+  const close = back => { setOpen(false); if (back && btn.current) btn.current.focus(); };
+  useEffect(() => {
+    if (!open) return undefined;
+    const away = e => { if (menu.current && !menu.current.contains(e.target) && btn.current && !btn.current.contains(e.target)) setOpen(false); };
+    document.addEventListener("mousedown", away);
+    return () => document.removeEventListener("mousedown", away);
+  }, [open]);
+  const onBtnKey = e => {
+    if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") { e.preventDefault(); show(true); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); show(false); }
+  };
+  const onMenuKey = e => {
+    const els = Array.from(menu.current ? menu.current.querySelectorAll('[role="menuitem"]') : []);
+    const i = els.indexOf(document.activeElement);
+    if (e.key === "ArrowDown") { e.preventDefault(); focusItem(i + 1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); focusItem(i - 1); }
+    else if (e.key === "Home") { e.preventDefault(); focusItem(0); }
+    else if (e.key === "End") { e.preventDefault(); focusItem(-1); }
+    else if (e.key === "Escape") { e.preventDefault(); close(true); }
+    else if (e.key === "Tab") { e.preventDefault(); close(true); }
+  };
+  /* Focus goes back to the avatar before the item acts: the menu unmounts, and focus left on a removed
+     item falls to <body>. A window the item opens then takes focus from the avatar as usual. */
+  const pick = it => { close(true); it.go(); };
+  return <>
+    <button ref={btn} onClick={() => (open ? close(false) : show(true))} onKeyDown={onBtnKey} aria-label="Your account" aria-haspopup="menu" aria-expanded={open} aria-controls={open ? "cm-avatar-menu" : undefined} title="Your account" style={{ background: "transparent", border: "none", padding: 0, marginLeft: 3, cursor: "pointer", borderRadius: "50%", display: "inline-flex", alignItems: "center", minHeight: 44 }}><Av src={avatar} size={40} /></button>
+    {/* PORTALLED TO THE BODY: inside the fixed header (z-index 40, its own stacking context) the menu
+       drew UNDER an open page (z up to 1300) everywhere below the header. */}
+    {open ? createPortal(<div ref={menu} id="cm-avatar-menu" role="menu" aria-label="Your account" onKeyDown={onMenuKey} style={{ position: "fixed", top: 70 / ZOOM, right: "calc(var(--cm-shell-right) / " + ZOOM + ")", zoom: ZOOM, width: 230, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.6)", padding: 6, zIndex: 1450 }}>
+      {name ? <div style={{ padding: "8px 10px 6px", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{name}</div> : null}
+      {items.map((it, i) => it.divider ? <div key={"d" + i} role="separator" style={{ height: 1, background: C.border, margin: "6px 4px" }} />
+        : <button key={it.label} role="menuitem" tabIndex={-1} onClick={() => pick(it)} style={{ ...ROW, minHeight: 38, color: it.danger ? C.red : C.text, fontSize: 14, fontWeight: 600 }}><ActionIcon name={it.icon} size={17} color={it.danger ? C.red : C.textSub} /><span>{it.label}</span></button>)}
+    </div>, document.body) : null}
+  </>;
+}
+
+/* UPCOMING-UNAVAILABLE: the crews read failed, so the agreed days are unknown, not none (check:overlay-absence:
+   "No crew days agreed yet" over a failed read told a climber with crew days that they had none). */
+export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN: newCount, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, crews, groups, ad, showToast }) {
   const unread = alerts.filter(n => !n.read);
   /* ONE ALERTS LIST (owner, 2026-10-23, #2734): this card shows what Home's Alerts button shows —
      `waiting` (requests, invites, unread chats, a day or a climb to confirm; amber, first) and then
@@ -238,7 +305,7 @@ export function WideRail({ upcoming, alerts, waiting, newN: newCount, guest, onS
       {upcoming.length ? upcoming.slice(0, 3).map(x => {
         const n = daysUntil(x.date);
         return <button key={x.crew.id} onClick={onOpenCal} style={ROW}><span style={{ minWidth: 44, flexShrink: 0, whiteSpace: "nowrap", fontSize: 12, fontWeight: 800, color: n <= 3 ? C.teal : C.textSub }}>{n === 0 ? "Today" : n === 1 ? "Tmrw" : shortDate(x.date)}</span><span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 700, overflowWrap: "anywhere" }}>{x.route.name}</span></button>;
-      }) : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
+      }) : upcomingUnavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "2px 2px 4px" }}>Couldn’t load your crew days just now.</div> : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
     </section>
     <section aria-labelledby="rail-alerts" style={CARD}>
       <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{minHeight:44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{newN ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: waiting.length ? C.amber : C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{newN ? "Notifications · " + newN + " new" : "Notifications"}</span><span aria-hidden="true" style={{ display: "flex" }}><Chevron open={alertsOpen} size={14} color={C.blue} /></span></button>
@@ -247,7 +314,9 @@ export function WideRail({ upcoming, alerts, waiting, newN: newCount, guest, onS
       {guest ? null : unreadShown.length ? unreadShown.map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, overflowWrap: "anywhere" }}>{n.text}</span></button>) : waiting.length ? null : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
       {alerts.length || moreN > 0 ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{moreN > 0 ? "See all notifications · " + moreN + " more ›" : "See all notifications ›"}</button> : null}</div>}
     </section>
-    {chats ? <RailChats chats={chats} onOpenDm={onOpenDm} onOpenCrew={onOpenCrewChat} /> : null}
+    {crews ? <RailCrews {...crews} onFindPartners={onFindPartners} /> : null}
+    {groups ? <RailGroups {...groups} /> : null}
+    {ad ? <RailAd /> : null}
   </aside>;
 }
 

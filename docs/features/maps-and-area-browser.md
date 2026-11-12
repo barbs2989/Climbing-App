@@ -8,7 +8,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry (opening on the United States' regions on every width since 2026-11-04), headed on a phone by the catalog search box (`WideSearch` inline, `lib/DesktopShell.jsx`: climbs and places, *Near me* → the map at your position via `jumpToNearReq`, recent words on this device); `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
-  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
+  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
+  the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
+  `areaDiscussion` prop, and the browser draws it right after `<AreaPage>`.
   On the website (1024px+) each child's card carries a five-bar **mini grade chart** (`WallGradeBars`, competitor review item 13,
   2026-11-05): the child's graded climbs banded on its main grading scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, WI, M, aid and
   class scales have their own five bands), lowest band on the left, read in ONE call for the whole list by `useAreaChildrenGradeCounts`
@@ -179,6 +181,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
+   **Climbs reopens where you left it** (owner 2026-11-11): picking another tab unmounts the browser, so its position (state, drill
+   path, Map / Route finder / Objectives screen, and the jump-request ids it already handled, so a stale search jump cannot re-fire)
+   lives at module scope in `lib/climbsReturn.js` for the session. App's `lastClimbsRef` remembers the open climb page (route,
+   back-stack, sub-tab, where its Back goes); `goTab("routes")` from another tab puts it back and restores the scroll
+   (`restoreAppScroll`: retries per frame for ≤2 s, stops on any wheel/touch/key). Tapping Climbs while on Climbs still clears to
+   the area browser. A reload starts fresh.
 2. Areas: `useCountries`, `useStates`, `useAreaChildren(parentId)`, `useArea(id)` / `fetchArea`, `useAreaPath(s)` (breadcrumb) in `lib/db.js`.
    Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
 3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),
@@ -214,6 +222,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | File | Key symbols |
 |---|---|
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, the browser shell (its components moved to `src/components/` in PR65 and PR66, below) |
+| `lib/climbsReturn.js` | `getClimbsAreaPos` / `setClimbsAreaPos` (the browser's position across tab switches), `readAppScroll`, `restoreAppScroll` |
 | `src/components/AreaPage.tsx` | `AreaPage`, an area's page; `PARTNER_CARD_TYPES` |
 | `src/components/RouteFinderPanel.tsx` | `RouteFinderPanel`, the route finder and its filters |
 | `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
