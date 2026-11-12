@@ -12,6 +12,7 @@ import ActionIcon from "./ActionIcon.tsx";
 import Stars from "./Stars.tsx";
 import Bar from "./Bar.tsx";
 import { photoThumb } from "../../lib/photoThumb";
+import { clickable } from "../../lib/clickable";
 
 /** One trip report as this panel reads it. */
 interface ConsensusReport {
@@ -51,6 +52,8 @@ export interface ConsensusPanelProps {
   reportsUnavailable?: boolean;
   /** The shared star rating (one vote per climber); when anyone has cast one it replaces the report average. */
   starSum?: { raters: number; stars: number | null } | null;
+  /** Opens a RECENT PHOTOS tile in the route's photo viewer; without it the tiles are pictures, not controls. */
+  onOpenPhoto?: ((url: string) => void) | null;
 }
 
 const VOLATILE_DISC=["alpine","mountaineering","ice","mixed"];
@@ -58,7 +61,7 @@ const VOLATILE_DISC=["alpine","mountaineering","ice","mixed"];
    the one surface here that takes the outage flag as a PROP, so it can be driven without a live
    query. Same reason seasonShort and campingGate are exported.
    Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function ConsensusPanel({route,activity,hzVotes,onVote,reportsUnavailable,starSum}: ConsensusPanelProps){
+export default function ConsensusPanel({route,activity,hzVotes,onVote,reportsUnavailable,starSum,onOpenPhoto}: ConsensusPanelProps){
   /* Road tags are left out of THIS panel's tallies: ROAD CONDITIONS sits on the same tab (at its foot) and
      says the same thing as sentences, so on a route with few reports TOP CONDITIONS REPORTED filled
      up with "Road/trailhead closed · Road: washout" and pushed the route's own conditions off it.
@@ -91,6 +94,6 @@ export default function ConsensusPanel({route,activity,hzVotes,onVote,reportsUna
     {c.bestMonths.length>0?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginTop:10,alignItems:"center"}}><span style={{fontSize:12,color:C.textMuted}}>Best months (avg 4★+):</span>{c.bestMonths.map(mo=>{const _bm=(c.byMonth as Record<number,Partial<MonthTally>>)[MONTHS.indexOf(mo)]||{};return <span key={mo} style={{background:C.greenBg,color:C.green,padding:"2px 9px",borderRadius:7,fontSize:12,fontWeight:700}}>{mo}<span style={{fontWeight:500,opacity:0.8}}>{" · "+_bm.rated+" rated"}</span></span>;})}</div>:null}
     {c.faCredits&&c.faCredits.length?<div style={{marginTop:14,background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"10px 12px"}}><CardHead tone={C.amber} style={{marginBottom:6}}>First Ascent Credit</CardHead><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{c.faCredits.map((name: string)=><span key={name} style={{fontSize:12,color:C.amber,background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:6,padding:"4px 9px",fontWeight:600}}>{name}</span>)}</div></div>:null}
     {c.isDeveloped?<div style={{marginTop:12,background:C.greenBg,border:`1px solid ${C.green}55`,borderRadius:10,padding:"10px 12px"}}><div style={{...SUB_LABEL,color:C.green}}>{ClimbNoun(route)+" Development"}</div><div style={{fontSize:12.5,color:C.textSub,marginTop:4}}>{"This "+climbNoun(route)+" has been bolted or developed by climbers in the community."}</div></div>:null}
-    {c.photos&&c.photos.length?<div style={{marginTop:14}}><CardHead style={{marginBottom:8}}>Recent Photos</CardHead><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6}}>{c.photos.map((p: {url: string; user?: string | null},i: number)=><div key={i} style={{position:"relative",paddingBottom:"100%",borderRadius:8,overflow:"hidden",background:C.card,border:`1px solid ${C.border}`}}><img loading="lazy" decoding="async" src={photoThumb(p.url,180)} alt={"Recent condition photo"+(p.user?" by "+p.user:"")} style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover"}} onError={()=>{}} />{p.user?<div style={{position:"absolute",left:0,right:0,bottom:0,padding:"8px 6px 4px",background:"linear-gradient(transparent,rgba(0,0,0,0.72))",fontSize:11,color:C.onSolid,fontWeight:600,overflowWrap:"anywhere"}}>{p.user.split(" ")[0]}</div>:null}</div>)}</div></div>:null}
+    {c.photos&&c.photos.length?<div style={{marginTop:14}}><CardHead style={{marginBottom:8}}>Recent Photos</CardHead><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6}}>{c.photos.map((p: {url: string; user?: string | null},i: number)=><div key={i} {...(onOpenPhoto?Object.assign(clickable(function(){onOpenPhoto(p.url);}),{"aria-label":"Open photo"+(p.user?" by "+p.user:"")}):{})} style={{position:"relative",paddingBottom:"100%",borderRadius:8,overflow:"hidden",background:C.card,border:`1px solid ${C.border}`,cursor:onOpenPhoto?"pointer":undefined}}><img loading="lazy" decoding="async" src={photoThumb(p.url,180)} alt={"Recent condition photo"+(p.user?" by "+p.user:"")} style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover"}} onError={()=>{}} />{p.user?<div style={{position:"absolute",left:0,right:0,bottom:0,padding:"8px 6px 4px",background:"linear-gradient(transparent,rgba(0,0,0,0.72))",fontSize:11,color:C.onSolid,fontWeight:600,overflowWrap:"anywhere"}}>{p.user.split(" ")[0]}</div>:null}</div>)}</div></div>:null}
   </div>;
 }
