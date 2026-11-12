@@ -6,9 +6,11 @@ the seed path (in-memory `MOUNTAINS`/`ROUTES`) is the fallback and uses `Overvie
 Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/features/route-page.md`.
 
 ## 1. What it does today
-- **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
+- **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry (opening on the United States' regions on every width since 2026-11-04), headed on a phone by the catalog search box (`WideSearch` inline, `lib/DesktopShell.jsx`: climbs and places, *Near me* → the map at your position via `jumpToNearReq`, recent words on this device); `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
-  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
+  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
+  the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
+  `areaDiscussion` prop, and the browser draws it right after `<AreaPage>`.
   On the website (1024px+) each child's card carries a five-bar **mini grade chart** (`WallGradeBars`, competitor review item 13,
   2026-11-05): the child's graded climbs banded on its main grading scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, WI, M, aid and
   class scales have their own five bands), lowest band on the left, read in ONE call for the whole list by `useAreaChildrenGradeCounts`
@@ -173,6 +175,16 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
+   **Climbs reopens where you left it** (owner 2026-11-11): picking another tab unmounts the browser, so its position (state, drill
+   path, Map / Route finder / Objectives screen, and the jump-request ids it already handled, so a stale search jump cannot re-fire)
+   lives at module scope in `lib/climbsReturn.js` for the session. A jump still loading when you leave (`jumpToArea` awaits the
+   full row, then the breadcrumb; a header search then opens the Route finder) is kept as the *pending jump* and resumed on
+   return, unless a newer jump request is waiting, which wins; picking, drilling, the breadcrumb and *Near me* cancel it.
+   App's `lastClimbsRef` remembers the open climb page (route, back-stack, sub-tab, where its Back goes); `goTab("routes")` from
+   another tab puts it back and restores the scroll once (`restoreAppScroll`: retries per frame for ≤2 s; stops on
+   wheel/touch/pointer/key, on a scroll it did not make, while a dialog pins `<body>`, or on the next tab change). The offset is
+   not read while a website page view covers Climbs. A climb's Back to another tab forgets that climb. Tapping Climbs while on
+   Climbs still clears to the area browser. A reload starts fresh.
 2. Areas: `useCountries`, `useStates`, `useAreaChildren(parentId)`, `useArea(id)` / `fetchArea`, `useAreaPath(s)` (breadcrumb) in `lib/db.js`.
    Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
 3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),
@@ -186,8 +198,17 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    (0190/0200/0201): every word is replaced by all its forms ("Mt Baker" -> "mount mt baker"). `check:search-norm` fails if the two diverge.
    Fuzzy fallback: RPC `search_names_fuzzy`.
 6. Map kit (`lib/mapKit.jsx`): `loadLeaflet` (lazy, with `warmLeafletOffline`), `baseTileLayer` (street/sat/topo from `MAP_TILE_URLS`, or a NASA GIBS snow layer via `isSnowLayer`),
-   `applyBaseLayer` (swaps the layer and drops Leaflet's zoom control 56px below the layer row so "+" is not hidden - #2411),
+   `applyBaseLayer` (swaps the layer and drops Leaflet's zoom control 56px below the layer row so "+" is not hidden - #2411), `addTileCredit`
+   (the credit control, once per map; `applyBaseLayer` calls it, and so does `GPXMap` when it builds its first layer itself -- until
+   2026-11-11 the route map showed no tile credit at all until a layer button was pressed),
    `fitZoomToLayer`/`layerSharpZoom` (zoom limits per layer), `pinHtml` (bubble markup).
+   **Slope angle** (competitor review item 23, 2026-11-11): `slopeLayer(L)` is an overlay, not a base layer, drawn in the browser from the
+   public AWS Terrain Tiles (terrarium PNGs, no tile set of our own to build or host). Each pixel's slope comes from its neighbours and
+   is shaded in `SLOPE_BANDS` (27 / 30 / 35 / 45 / 60 degrees; under 27 stays clear) at 55% over whichever base layer is showing. It
+   draws from `SLOPE_MIN_ZOOM` (11; coarser pixels read every slope gentler than it is) and magnifies the zoom-15 picture beyond 15.
+   It carries `SLOPE_CREDIT` while it is on: Canada's and Mexico's elevation licences make a credit a condition of use (the
+   credit-only-where-required rule). `BaseLayerToggle` takes `slope`/`slopeOn`/`setSlopeOn`: a *Slope* button (`aria-pressed`) under
+   Full screen, with a colour key under it when on, stacked in one column with the Snow stepper. Only the route map (`GPXMap`) opts in.
 7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation, `acceptFix` discards stale/worse fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
    `fmtFixAcc`/`locateLabel` word the status. The dot is an HTML marker lifted above all other markers; the accuracy ring stays under them (#2411).
    `NearMePanel` re-centres only on the first fix.
@@ -199,6 +220,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | File | Key symbols |
 |---|---|
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, the browser shell (its components moved to `src/components/` in PR65 and PR66, below) |
+| `lib/climbsReturn.js` | `getClimbsAreaPos` / `setClimbsAreaPos` (the browser's position across tab switches), `readAppScroll`, `restoreAppScroll` |
 | `src/components/AreaPage.tsx` | `AreaPage`, an area's page; `PARTNER_CARD_TYPES` |
 | `src/components/RouteFinderPanel.tsx` | `RouteFinderPanel`, the route finder and its filters |
 | `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
