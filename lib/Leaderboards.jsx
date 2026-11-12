@@ -20,7 +20,7 @@ import EmptyState from "../src/components/EmptyState.tsx";
 // (0194), which counts on the server under anti-padding rules the ranked climber cannot edit.
 // Otherwise (the signed-out demo, or no DB) the board is the seed example set plus you, and
 // says so. The two never mix: a real climber is never ranked against an invented one.
-export default function Leaderboards({meLive,onView,onClimb,logs,connections,catchCredits,showOnRanks,blocked,rankDisc,setRankDisc,rankBoard,setRankBoard,routeById,logsUnavailable,connectionsUnavailable,uid,useDb,onReport}){const wide=useWideScreen();/* Ranks rows: ~42px on the website, 56 on a phone (competitor review batch A, item 8) */
+export default function Leaderboards({meLive,onView,onClimb,logs,connections,showOnRanks,blocked,rankDisc,setRankDisc,rankBoard,setRankBoard,routeById,logsUnavailable,connectionsUnavailable,uid,useDb,onReport}){const wide=useWideScreen();/* Ranks rows: ~42px on the website, 56 on a phone (competitor review batch A, item 8) */
   const real=!!(useDb&&uid);
   const [backedOnly,setBackedOnly]=useState(false);
   const [breakFor,setBreakFor]=useState(null);
@@ -80,7 +80,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
     Object.keys(pts).forEach(k=>{pts[k]=Math.round(pts[k]);});Object.keys(osPts).forEach(k=>{osPts[k]=Math.round(osPts[k]);});
     return {logged:climbs.length,vertYr,daysYr,onsights:{rock:onsightRock,bouldering:onsightBoulder,sport:onsightSplit.sport,trad:onsightSplit.trad},peaks,sends,classicIds,pts,osPts};
   })();
-  /* Spread the SELF OBJECT, not a bare ME. ME's catchLedger is zeroed by the sign-in reset, so this row used to score a climber's belay catches at 0 while the Profile counted them in full -- one climber, two answers, on the metric this board is ABOUT. */const me={...(meLive||ME),routesLogged:meStats.logged,vertYr:meStats.vertYr,daysYr:meStats.daysYr,classics:(()=>{const had=new Set(seedHistoryFor(meLive||ME).filter(t=>t.route.classic).map(t=>t.route.id));return [...meStats.classicIds].filter(id=>!had.has(id)).length;})(),stats:{...ME.stats,onsights:meStats.onsights,peaks:meStats.peaks,sends:meStats.sends},_pts:meStats.pts,_osPts:meStats.osPts};
+  /* Spread the SELF OBJECT, not a bare ME. ME's counts are zeroed by the sign-in reset, so a bare ME scores a climber at 0 while the Profile counts them in full -- one climber, two answers. */const me={...(meLive||ME),routesLogged:meStats.logged,vertYr:meStats.vertYr,daysYr:meStats.daysYr,classics:(()=>{const had=new Set(seedHistoryFor(meLive||ME).filter(t=>t.route.classic).map(t=>t.route.id));return [...meStats.classicIds].filter(id=>!had.has(id)).length;})(),stats:{...ME.stats,onsights:meStats.onsights,peaks:meStats.peaks,sends:meStats.sends},_pts:meStats.pts,_osPts:meStats.osPts};
   // ── the real population (signed in) ──
   const version=(logs||[]).map(l=>(l._dbId||l.id||"")+(l.tickType||"")+(l.date||"")+((l.partnerIds||[]).length)).join("|");
   const radiusQ=radiusMi>=9000?500:radiusMi;
@@ -98,7 +98,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
   /* The ✓ for real rows (0232/0306): the RPC returns no verified column, so it read as seed-only. Unknown reads as no ✓. */const lbVerQ=useVerifiedUsers(lbRows.filter(r=>!r.is_me).map(r=>r.user_id));
   const noOrigin=real&&scope==="near"&&lbRows.some(x=>x.no_origin);
   const rowToPP=row=>{const all=(row.stats&&row.stats.all)||{};const s=(row.stats&&row.stats[backedOnly?"backed":"all"])||{};const base=row.is_me?{...(meLive||ME),id:0}:{id:row.user_id,name:row.name||"",username:row.username||"",showName:!!row.show_name,avatar:row.avatar||"",disciplines:Array.isArray(row.disciplines)?row.disciplines:[]};
-    return {...base,_real:!row.is_me,...(row.is_me?{}:{verified:!!(lbVerQ.data&&lbVerQ.data.has(row.user_id))}),_uid:row.user_id,location:row.dist_mi!=null?(uDistMi(row.dist_mi)+" away"):(row.is_me?(base.location||row.location||""):(row.location||"")),_home:row.location||"",routesLogged:s.logged||0,vertYr:s.vertYr||0,daysYr:s.daysYr||0,classics:s.classics||0,stats:{sends:s.sends||{},peaks:s.peaks||{life:0,yr:0},onsights:s.onsights||{}},_by:s.by||{},_pts:s.points||{},_osPts:s.onsightPts||{},_catches:row.catches||0,_vouches:row.vouches||0,_contribs:row.contribs||0,_backed:all.backed||0,_logged:all.logged||0};};
+    return {...base,_real:!row.is_me,...(row.is_me?{}:{verified:!!(lbVerQ.data&&lbVerQ.data.has(row.user_id))}),_uid:row.user_id,location:row.dist_mi!=null?(uDistMi(row.dist_mi)+" away"):(row.is_me?(base.location||row.location||""):(row.location||"")),_home:row.location||"",routesLogged:s.logged||0,vertYr:s.vertYr||0,daysYr:s.daysYr||0,classics:s.classics||0,stats:{sends:s.sends||{},peaks:s.peaks||{life:0,yr:0},onsights:s.onsights||{}},_by:s.by||{},_pts:s.points||{},_osPts:s.onsightPts||{},_vouches:row.vouches||0,_contribs:row.contribs||0,_backed:all.backed||0,_logged:all.logged||0};};
   const ALL=real?lbRows.map(rowToPP).filter(pp=>(pp.id!==0||showOnRanks)&&!(blocked&&blocked.some(b=>b.id===pp._uid))):[...CLIMBERS,...(showOnRanks?[me]:[]),...(DEMO_FILLERS?FILLER_CLIMBERS:[])].filter(pp=>!(blocked&&blocked.some(b=>b.id===pp.id)));
   const acount=id=>ROUTES.filter(r=>inArea(r.mountainId,id)).length;const aCur=real?(atAllCountries?{id:"",name:"All countries"}:((areaPathQ.data||[]).slice(-1)[0]||{})):(MOUNTAINS.find(m=>m.id===areaId)||{});const aChain=real?[{id:"",name:"All countries"}].concat(atAllCountries?[]:(areaPathQ.data||[])):(()=>{const out=[];let cur=MOUNTAINS.find(m=>m.id===areaId);let g=0;while(cur&&g++<10){out.unshift(cur);if(cur.id==="usa"||!cur.parentId||cur.parentId==="world")break;cur=MOUNTAINS.find(m=>m.id===cur.parentId);}return out;})();const aKids=real?(areaKidsQ.data||[]).filter(a=>(a.route_count||0)>0).map(a=>({id:a.id,name:a.name,n:a.route_count})):MOUNTAINS.filter(m=>m.parentId===areaId&&acount(m.id)>0).map(m=>({id:m.id,name:m.name,n:acount(m.id)}));
   const personInArea=(pp,aid)=>!!(pp.objectiveIds&&pp.objectiveIds.some(id=>{const r=ROUTES.find(x=>x.id===id);return r&&inArea(r.mountainId,aid);}));
@@ -139,7 +139,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
   };
   const perfPts=pp=>{if(pp._pts)return pp._pts[disc]||0;const gi=gradeFor(pp);let vol;if(disc==="all"){const sends=pp.stats&&pp.stats.sends||{};vol=(sends.rock&&sends.rock.life||0)+(sends.bouldering&&sends.bouldering.life||0)+(sends.alpine&&sends.alpine.life||0)+(sends.ice&&sends.ice.life||0)+(sends.scrambling&&sends.scrambling.life||0)+(sends.mountaineering&&sends.mountaineering.life||0);}else{vol=sendsOf(pp,dn,"life");}return Math.round(vol*(8+Math.max(0,gi)*Math.max(0,gi)*0.35));};
   const B={
-    catches:{id:"catches",label:"Belay",val:pp=>real?(pp._catches||0):(pp.catchLedger.totalCatches+(catchCredits&&catchCredits[pp.id]||0)),suffix:"catches",note:real?"Falls safely caught, as recorded by the climber who was caught — a belayer can’t credit themselves.":"Falls safely caught. A track record of dependable belaying."},vouched:{id:"vouched",label:"Vouched",val:pp=>real?(pp._vouches||0):(pp.vouches?pp.vouches.length:0),suffix:"vouches",note:"Peer references from partners they’ve climbed with — reputation in their partners’ own words."},
+    vouched:{id:"vouched",label:"Vouched",val:pp=>real?(pp._vouches||0):(pp.vouches?pp.vouches.length:0),suffix:"vouches",note:"Peer references from partners they’ve climbed with — reputation in their partners’ own words."},
     active:{id:"active",label:"Logged",val:pp=>loggedOf(pp),suffix:"logged",note:"Climbs logged, attempts included. Rewards getting out."},points:{id:"points",label:"Send points",val:pp=>perfPts(pp),disp:pp=>perfPts(pp).toLocaleString(),suffix:"pts"},
     peaksYr:{id:"peaksYr",label:"Peaks 1yr",val:pp=>peaksOf(pp,"yr"),suffix:"peaks · 12mo",note:"Different summits logged as Summit in the last 12 months."},
     peaksLife:{id:"peaksLife",label:"Peaks all-time",val:pp=>peaksOf(pp,"life"),suffix:"summits",note:"Different summits logged as Summit, all time."},
@@ -152,12 +152,11 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
     contribs:{id:"contribs",label:"Contributions",val:pp=>pp._contribs||0,suffix:"pts",note:"Points for what a climber has added to the catalog once it went live: an approved new climb 10, a route photo or a topo 5, an approved new area, correction or area detail 2, a line drawn on a topo 2, a sun vote, start location or pairing 1; a trip report 2, once per climb per month; a logged climb 1. Each kind counts once per climb, so refining one fact or adding a second photo adds nothing. Only logs and reports shared with Everyone count. By area counts only what was added in that area and the places inside it."},classics_b:{id:"classics_b",label:"Classic climbs",val:pp=>real?(byOf(pp)?(byOf(pp).classics||0):(pp.classics||0)):new Set(seedHistoryFor(pp).filter(t=>t.route.classic).map(t=>t.route.id)).size+(pp.classics||0),suffix:"classics",note:"Distinct regional classic climbs logged — the must-do lines. Repeating one does not count twice."}
   };
   let ids;
-  const ROPED=disc!=="bouldering"&&disc!=="scrambling"&&disc!=="hiking";
-  const base=ROPED?["catches","vouched"]:["vouched"];
-  if(disc==="all")ids=["catches","vouched","active","points","onsight","vert","days","peaksLife","climbs"];
+    const base=["vouched"];
+  if(disc==="all")ids=["vouched","active","points","onsight","vert","days","peaksLife","climbs"];
   else if(PEAK.includes(disc))ids=[...base,...(disc==="alpine"?["points"]:[]),"peaksYr","peaksLife","sendsYr","vert","days","active","climbs"];
   else ids=[...base,...((disc==="rock"||disc==="bouldering"||disc==="ice"||disc==="sport"||disc==="trad"||disc==="toprope"||disc==="mixed"||disc==="aid")?["points"]:[]),...((disc==="rock"||disc==="bouldering"||disc==="sport"||disc==="trad")?["onsight"]:[]),"sendsYr","sendsLife","vert","days","active","climbs"];
-  ids=ids.concat(["classics_b"]);if(real)ids=ids.concat(["contribs"]);const BOARDS=ids.map(k=>B[k]);const REL=["catches","vouched","active"];const LISTS=["classics_b"];const COMM=["contribs"];const relBoards=BOARDS.filter(b=>REL.includes(b.id)),listBoards=BOARDS.filter(b=>LISTS.includes(b.id)),commBoards=BOARDS.filter(b=>COMM.includes(b.id)),perfBoards=BOARDS.filter(b=>!REL.includes(b.id)&&!LISTS.includes(b.id)&&!COMM.includes(b.id));
+  ids=ids.concat(["classics_b"]);if(real)ids=ids.concat(["contribs"]);const BOARDS=ids.map(k=>B[k]);const REL=["vouched","active"];const LISTS=["classics_b"];const COMM=["contribs"];const relBoards=BOARDS.filter(b=>REL.includes(b.id)),listBoards=BOARDS.filter(b=>LISTS.includes(b.id)),commBoards=BOARDS.filter(b=>COMM.includes(b.id)),perfBoards=BOARDS.filter(b=>!REL.includes(b.id)&&!LISTS.includes(b.id)&&!COMM.includes(b.id));
   const cur=BOARDS.find(b=>b.id===board)||perfBoards[0]||BOARDS[0];
   const medal=i=>String(i+1);
   const disp=pp=>cur.disp?cur.disp(pp):cur.val(pp);
@@ -183,7 +182,7 @@ export default function Leaderboards({meLive,onView,onClimb,logs,connections,cat
   // A ranking row carries every board's numbers; the profile it opens gets only a profile.
   const viewOf=pp=>pp._real?{id:pp._uid,name:pp.name,username:pp.username,showName:pp.showName,avatar:pp.avatar,location:pp._home||"",disciplines:pp.disciplines||[],objectiveIds:[],_real:true}:pp;
   // Boards counted from logs -- the ones the backed switch and the "N of M backed" line apply to.
-  const logBoard=!cur.routes&&!["catches","vouched","contribs"].includes(cur.id);
+  const logBoard=!cur.routes&&!["vouched","contribs"].includes(cur.id);
   // A real row's number opens the climbs behind it (0357), on every board counted from logs.
   const canBreak=pp=>real&&logBoard&&!!pp._uid;
   const openBreak=pp=>setBreakFor({userId:pp._uid,areaId:scope==="area"?areaId:null,version,board:cur.id,disc,backedOnly,name:pubName(pp),isMe:pp.id===0,label:cur.label,total:disp(pp),fmt:disp(pp)+" "+cur.suffix});
