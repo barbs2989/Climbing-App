@@ -91,7 +91,7 @@ changes nothing.
 An anon `count=exact` on an RLS-protected table returns **0 with a 200** whatever the table
 holds, indistinguishable from a genuinely empty table. Measured 2026-08-20: `climb_logs` reads
 **0 to anon and 2 to the service key**, while `guide_documents`, `guide_profiles`,
-`user_reports`, `contributions`, `vouches` and `belay_catches` are genuinely empty on both.
+`user_reports`, `contributions` and `vouches` are genuinely empty on both (`belay_catches` was too, and was dropped in 0417).
 
 That distinction is load-bearing here, because several decisions rest on a table being empty —
 the guide application review queue was deliberately **not built** because `guide_documents` had
@@ -145,7 +145,10 @@ read-only, from a worktree with `supabase/.temp` symlinked (`--read-only` needs 
    `application_name like 'PostgREST%'` by `state`. Many `idle in transaction` rows (17 on the day)
    mean requests queue for a connection that never frees. `pg_terminate_backend(pid)` on those
    rows frees them at once (a write on production: ask the owner). Migration 0416 now makes
-   Postgres end any such session after 60 s by itself.
+   Postgres end any such session after 60 s by itself, but only on connections opened AFTER it was
+   applied: a role setting is read at login. Check that every PostgREST row's `backend_start` is
+   later than the apply. A second episode (2026-11-12, 00:16–06:45 UTC: the database ~11% busy,
+   the API timing out) ended the moment the whole pool reconnected at 06:59, on 0416's setting.
 3. **Is the disk I/O budget spent?** Reads that come back `500 57014 canceling statement due to
    statement timeout` (anon's limit is ~3 s) or `503 PGRST002 Could not query the database for the
    schema cache` while nothing is blocked (`pg_blocking_pids` empty) and no query is long-running

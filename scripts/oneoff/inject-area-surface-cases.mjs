@@ -45,7 +45,7 @@ const CASES = [
     says: /no longer exclude world\/country\/state/,
     why: "a continent is not a conversation" },
   { name: "scope: show the Discussion under the Map again", file: BROWSER, expect: "fail",
-    find: "onOpenArea={jumpToArea} C={C} /></>", repl: "onOpenArea={jumpToArea} C={C} />{areaDiscussion}</>",
+    find: "onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>", repl: "onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} />{areaDiscussion}</>",
     says: /no longer limited to the area page/,
     why: "the owner removed the Discussion from area maps (2026-11-11)" },
   { name: "scope: draw the Discussion outside the area-page branch", file: BROWSER, expect: "fail",
