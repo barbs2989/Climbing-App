@@ -181,6 +181,12 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
+   **Climbs reopens where you left it** (owner 2026-11-11): picking another tab unmounts the browser, so its position (state, drill
+   path, Map / Route finder / Objectives screen, and the jump-request ids it already handled, so a stale search jump cannot re-fire)
+   lives at module scope in `lib/climbsReturn.js` for the session. App's `lastClimbsRef` remembers the open climb page (route,
+   back-stack, sub-tab, where its Back goes); `goTab("routes")` from another tab puts it back and restores the scroll
+   (`restoreAppScroll`: retries per frame for ≤2 s, stops on any wheel/touch/key). Tapping Climbs while on Climbs still clears to
+   the area browser. A reload starts fresh.
 2. Areas: `useCountries`, `useStates`, `useAreaChildren(parentId)`, `useArea(id)` / `fetchArea`, `useAreaPath(s)` (breadcrumb) in `lib/db.js`.
    Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
 3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),
@@ -216,6 +222,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | File | Key symbols |
 |---|---|
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, the browser shell (its components moved to `src/components/` in PR65 and PR66, below) |
+| `lib/climbsReturn.js` | `getClimbsAreaPos` / `setClimbsAreaPos` (the browser's position across tab switches), `readAppScroll`, `restoreAppScroll` |
 | `src/components/AreaPage.tsx` | `AreaPage`, an area's page; `PARTNER_CARD_TYPES` |
 | `src/components/RouteFinderPanel.tsx` | `RouteFinderPanel`, the route finder and its filters |
 | `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
