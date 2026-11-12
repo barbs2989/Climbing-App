@@ -1,13 +1,15 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
-import { useState, useRef } from "react";
-import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaNamesByIds, submitAreaPlacementClaim } from "../../lib/db";
-import { useWideScreen } from "../../lib/wideLayout.js";
+import { useState, useRef, useContext } from "react";
+import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, submitAreaPlacementClaim } from "../../lib/db";
 import WallGradeBars from "./WallGradeBars.tsx";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { ScreenHero } from "../../lib/ScreenHero";
 import { Pill, SL } from "../../lib/areaBrowserParts.jsx";
-import { PendingAreaEdits, AboutCard, AreaFactsCard, ClimbsChart, GradeSpread } from "../../lib/AreaPageSections";
+import { PendingAreaEdits, AboutCard, AreaFactsCard, ClimbsChart, GradeSpread, hasGradeSpread } from "../../lib/AreaPageSections";
+import { useWideScreen } from "../../lib/wideLayout.js";
+import { ClimberCtx } from "../../lib/climberCtx.js";
+import RouteFinderInline from "./RouteFinderInline.tsx";
 import ClassicsList from "./ClassicsList.tsx";
 import { BTN_LG, CHIP, BTN } from "../../lib/buttonStyles.js";
 import Chevron from "./Chevron.tsx";
@@ -167,9 +169,18 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const { data: children, isLoading: lc, error: ec }: AreaPageQuery<AreaPageArea[]> = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er }: AreaPageQuery<AreaPageRoute[]> = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
+  // The website's arrangement (competitor review item 15, 2026-11-04): CLIMBS HERE and GRADE SPREAD side by
+  // side, the finder's form inline under them preset to the climber's grade, classics as one-line rows,
+  // and MOST LOGGED HERE beside Season. The phone keeps its stacked page and its Route finder button.
+  const wide = useWideScreen();
+  const logged: AreaPageQuery<number[]> = useAreaLoggedMonths(wide && formation ? area.id : null);
+  const { profile } = useContext(ClimberCtx);
+  const prof = (profile || null) as { sportGrade?: string | null; tradGrade?: string | null; boulderGrade?: string | null } | null;
+  const myGrades = prof ? { sport: prof.sportGrade || null, trad: prof.tradGrade || null, boulder: prof.boulderGrade || null } : null;
+  const discOptions = DISCIPLINES.map(d => d[0]).filter(Boolean);
+  const inlineDiscs: string[] = stats.data && Array.isArray(stats.data.by_disc) ? stats.data.by_disc.filter((d: { disc: string; n: number }) => d && Number(d.n) > 0 && discOptions.includes(d.disc)).map((d: { disc: string }) => d.disc) : [];
   // The mini grade chart on each child's card (item 13, 2026-11-04) is a website thing: one call for
   // the whole list, only where there is a list to draw it on. The phone card is unchanged.
-  const wide = useWideScreen();
   const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && chartable && isLeaf === false ? area.id : null);
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
   const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
@@ -232,14 +243,18 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           Every section prints only what is stored; an empty one invites the edit instead. */}
       {formation && areaEdits.data && areaEdits.data.length ? <PendingAreaEdits rows={areaEdits.data} C={C} myId={myId} /> : null}
       {formation || (area.blurb && String(area.blurb).trim()) ? <AboutCard area={area} C={C} onEdit={editOn} /> : null}
-      {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} /> : null}
-      {chartable ? <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={DISCIPLINES.map(d => d[0]).filter(Boolean)} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} /></ClimbsChart> : null}
+      {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null}
+      {chartable ? (wide && hasGradeSpread(stats.data)
+        ? <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, alignItems: "stretch" }}><ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder}>{null}</ClimbsChart><GradeSpread stats={stats.data} C={C} standalone /></div>
+        : <ClimbsChart stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder}><GradeSpread stats={stats.data} C={C} standalone={false} /></ClimbsChart>) : null}
       {/* CLASSIC CLIMBS HERE above a wall: all of them (ClassicsList: five, then a dropdown), each row naming the wall it
           is on. A failed read says so; an area with no classics shows nothing rather than "none". */}
       {isLeaf === false && chartable ? (classicsUp.error ? <div role="status" style={{ fontSize: 12, color: C.textMuted, margin: "4px 2px 12px" }}>Couldn't load the classic climbs here.</div>
-        : classicsUp.data && classicsUp.data.length ? <ClassicsList rows={classicsUp.data} total={classicsUp.data[0].total} withWall onOpen={onOpenRoute} C={C} /> : null) : null}
+        : classicsUp.data && classicsUp.data.length ? <ClassicsList rows={classicsUp.data} total={classicsUp.data[0].total} withWall dense={wide} onOpen={onOpenRoute} C={C} /> : null) : null}
 
-      {area.route_count > 0 ? (
+      {area.route_count > 0 && wide && chartable && inlineDiscs.length ? (
+        <RouteFinderInline discs={inlineDiscs} myGrades={myGrades} onFind={f => onFinder(f)} C={C} />
+      ) : area.route_count > 0 ? (
         <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color:C.onSolid, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Route finder"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span>
         </button>
@@ -311,7 +326,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                 const wallChip = (on: boolean) => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
                   {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
-                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...wallChip(filtersOn > 0), minHeight: 44 }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}</button>
+                    {/* Drawn as the Route finder draws its own Filters button (BTN_LG, the text colour, a
+                        turning chevron), not as one more chip: as a chip in the muted colour it was the same
+                        size and shade as the sort chips under it, and the owner could not find it (2026-11-05). */}
+                    <button onClick={() => setWallFilterOpen(o => !o)} aria-expanded={wallFilterOpen} style={{ ...BTN_LG, width: "100%", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, border: "1px solid " + (filtersOn ? C.blue : C.border), background: filtersOn ? C.blueBg : C.surface, color: filtersOn ? C.onSolid : C.text }}>{"Filters" + (filtersOn ? " (" + filtersOn + ")" : "")}<span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron open={wallFilterOpen} size={16} color={"currentColor"} /></span></button>
                     {wallFilterOpen ? <div style={{ marginTop: 8, padding: "10px 11px", background: C.card, borderRadius: 10, border: "1px solid " + C.border }}>
                       <div id="wall-filter-disc" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Discipline</div>
                       <div role="group" aria-labelledby="wall-filter-disc" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
@@ -373,7 +391,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
-      {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
+      {/* 14px above, the same gap Suggested climbs keeps above itself: with no Nearby peaks (a crag) the board
+          sat flush under the Suggested climbs box (owner, 2026-11-11). Block margins collapse, so with
+          Nearby peaks shown the gap is 14, not 14 + its own 10. */}
+      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={8}/></div> : null}
     </div>
   );
 }

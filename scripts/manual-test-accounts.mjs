@@ -255,23 +255,16 @@ async function create() {
     await insert("kudos", { giver: B.id, receiver: A.id, climb_log_id: L.stuart.id, route_name: "North Ridge (Complete)" });
     await insert("kudos", { giver: A.id, receiver: B.id, climb_log_id: L.bPtarmigan.id, route_name: "Ptarmigan Traverse" });
 
-    // ── Belay catches, both directions, filed by the climber who was caught ──
-    const c1 = await insert("belay_catches", { belayer_id: A.id, climber_id: B.id, date_occurred: "2026-08-30", description: R.stuart });
-    await patch("belay_catches", `id=eq.${c1.id}`, { filed_by: B.id });
-    const c2 = await insert("belay_catches", { belayer_id: B.id, climber_id: A.id, date_occurred: "2026-09-14", description: R.coleman });
-    await patch("belay_catches", `id=eq.${c2.id}`, { filed_by: A.id });
-
     // ── Vouches: received (new style + an OLD-style one) and one EMPTY one-tap vouch given, to edit ──
     await insert("vouches", { from_id: B.id, to_id: A.id, reason: JSON.stringify({ route: "Coleman–Deming Glacier", ratings: { safety: 5, communication: 4, reliability: 5, preparation: 4, fitness: 4, teamwork: 5 }, skills: ["glacier", "crevasse", "anchors"], text: "Solid on the glacier and calm when it got windy. (TEST)", wouldClimbAgain: true }) });
     await insert("vouches", { from_id: C.id, to_id: A.id, created_at: "2026-06-01T12:00:00Z", reason: JSON.stringify({ route: "Outer Space", ratings: { safety: 5, punctuality: 3, gear: 4, belay: 5 }, skills: ["leadbelay"], text: "Older-style vouch, from before the categories changed. (TEST)", wouldClimbAgain: true }) });
     await insert("vouches", { from_id: A.id, to_id: B.id, reason: JSON.stringify({ route: "Coleman–Deming Glacier", ratings: {}, skills: [], text: "" }) });
 
-    // ── Logbook: objectives (one shared with Blake), lists, saved search ──
+    // ── Logbook: objectives (one shared with Blake), lists ──
     for (const r of [R.bakerNR, R.ptarmigan, R.dc]) await insert("objectives", { user_id: A.id, route_id: r }, ["user_id", "route_id"]);
     await insert("objectives", { user_id: B.id, route_id: R.ptarmigan }, ["user_id", "route_id"]);
     await insert("user_lists", { user_id: A.id, name: "Cascade glaciers to do", icon: "star", description: "Public test list.", route_ids: [R.bakerNR, R.dc, R.colchuck], shared: true });
     await insert("user_lists", { user_id: A.id, name: "Rock days (private)", icon: "star", description: "Private test list.", route_ids: [R.stuart], shared: false });
-    await insert("saved_searches", { user_id: A.id, name: "Moderate alpine", query: { filters: { gradeMin: "5.6", gradeMax: "5.10", minStars: 3 }, discSel: ["alpine"] } });
 
     // ── Route page: a comment thread and difficulty ratings on Coleman–Deming ──
     const cm = await insert("comments", { target_id: R.coleman, user_id: B.id, text: "Anyone been up since the September storm? (TEST comment)" });

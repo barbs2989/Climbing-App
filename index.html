@@ -296,7 +296,7 @@
          the window; the sidebar 12px from the window's left (72px of icons at 1024-1279px, 240px from 1280px); the 700px page column
          centred in the window but never closer than 24px to the sidebar or (from 1280px) to the 300px rail held 28px from the right. */
       @media (min-width: 1024px) {
-        #cm-boot { max-width: none; width: min(700px, calc(100vw - 136px)); margin-left: max(108px, min(calc(50vw - 350px), calc(100vw - 28px - min(700px, calc(100vw - 136px))))); margin-right: 0; padding-top: 64px; box-sizing: border-box; }
+        #cm-boot { max-width: none; width: min(700px, calc(100vw - 136px)); margin-left: max(108px, min(calc(50vw - 350px), calc(100vw - 28px - min(700px, calc(100vw - 136px))))); margin-right: 0; padding-top: 64px; box-sizing: border-box; box-shadow: -1px 0 0 #30363d, 1px 0 0 #30363d; }
         #cm-boot .b-bar { position: fixed; top: 0; left: 0; right: 0; height: 64px; box-sizing: border-box; padding: 0 16px; flex-direction: row; align-items: center; z-index: 2; }
         #cm-boot .b-nav { position: fixed; top: 64px; bottom: 0; left: 12px; width: 72px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 16px 8px; background: #0d1117; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-right: 1px solid #30363d; font-size: 0; }
         #cm-boot .b-nav div { flex: none; flex-direction: row; justify-content: center; padding: 10px 0; font-size: 0; border-radius: 12px; }

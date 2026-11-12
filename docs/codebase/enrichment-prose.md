@@ -64,6 +64,17 @@ value, put the reasoning somewhere else.**
   the GRADES panel on the route page — so the words are not lost, but the split is done by
   a list of cut tokens and a new phrasing can defeat it. Put the qualifier in
   `pitch_detail[].notes` or `beta`.
+- **`itinerary` (the Trip plan) is a STRUCTURE, never prose** (owner, 2026-11-11: "text only plans
+  convert day by day, make that a rule in the app when we do other routes and states"). 310 rows held
+  a prose string on 2026-11-11 (283 shown on a peak route's Plan tab, 27 on trad/sport rows that show
+  no plan); the page could only guess days from "Day 1:" markers and show no figures. All were
+  converted (`scripts/oneoff/apply-trip-plans-2026-11-11-wave2.mjs`): researched day cards where the
+  conversion cleared the bar, otherwise the prose split at its own Day markers with each day's text
+  kept whole. The rule is `lib/itineraryShape.js`: stored plans must be `{ days: [ … ] }` with typed
+  figures; a NEW or converted plan must also clear `{ complete: true }` (every day titled, <= 60
+  characters, with hours, miles or gain). Road, gate and closure sentences never go in `cal` — they
+  belong to GETTING THERE. Enforced by `check:itinerary-shape` (build), `audit:itinerary-shape`
+  (live) and migration 0409 (the database).
 - **`rappels` is prose today and reads like a count.** Every WA value is a sentence
   (`"~5 single-rope rappels, approximately 400 ft total, down the NE Face"`,
   `"Variable — downclimb/short rappels on West Ridge itself, or ~5 single-rope raps via

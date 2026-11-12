@@ -495,10 +495,10 @@ async function walk(browser, base, session, fail) {
   // clean result rather than as a miss. Say which it was.
   out[SUBTAB] = /My [Aa]scents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
     ? compText : "SUBTAB CLICK DID NOT LAND -- this is the default Logbook view, not Completed\n" + compText;
-  // The FOURTH Logbook sub-tab, and the one a flag has been sitting on unwalked. `saved_searches`
-  // feeds a card here that says "No saved searches yet -- save a filter set from the Climbs page."
-  // to an account that has some; #1238 flagged it and could not demonstrate it, because
-  // `logbookTab` defaults to "objectives" and this walk stopped at that view and Completed.
+  // The FOURTH Logbook sub-tab, and the one a flag has been sitting on unwalked. `user_itineraries`
+  // and `saved_areas` feed cards here that can read as empty to an account that has some; #1238
+  // flagged the first such card and could not demonstrate it, because `logbookTab` defaults to
+  // "objectives" and this walk stopped at that view and Completed.
   //
   // Clicked by TEXT, because these four buttons carry their own text and `aria-current`, and no
   // aria-label -- tapByName queries [aria-label] and nothing else, so it would return false on a
@@ -524,19 +524,20 @@ async function walk(browser, base, session, fail) {
   // followed named two empty states that are on screen in BOTH runs. "offline library" appears
   // ZERO times anywhere in the app, so a third of the alternation had never matched once.
   //
-  // "saved searches" is unique app-wide — 0 occurrences outside this region, in either app file.
-  // (There is no per-route trip pack any more, so "saved searches" is the only landmark.)
+  // "my itineraries" is unique app-wide — 0 occurrences outside this region, in either app file.
+  // (It replaced "saved searches" when saved searches were removed, 2026-11-05; there is no
+  // per-route trip pack any more either, so it is the only landmark.)
   //
   // The `/i` is NOT what made the old landmark vacuous, and it would be the tempting thing to
   // remove instead: the HEADINGS are uppercased in CSS but the header PROSE is not, so a
   // case-sensitive `/saved areas/` matched it too. Dropping the flag would have fixed nothing and
   // broken the replacement, because:
   // CASE-INSENSITIVE, and that is not defensive tidying: these headings are uppercased in CSS and
-  // `innerText` returns the TRANSFORMED text, so the screen says "SAVED SEARCHES" where the source
-  // says "Saved searches". A case-sensitive match reported this stop as never landing while the
+  // `innerText` returns the TRANSFORMED text, so the screen says "MY ITINERARIES" where the source
+  // says "My itineraries". A case-sensitive match reported this stop as never landing while the
   // dump showed it landing perfectly — the same trap check:ui records for `PEOPLE YOU’VE CLIMBED
   // WITH`. Matching either case also survives someone dropping the text-transform later.
-  out[SUBTAB2] = /saved searches/i.test(areasText)
+  out[SUBTAB2] = /my itineraries/i.test(areasText)
     ? areasText : "SUBTAB CLICK DID NOT LAND -- this is not the Logbook's Saved view\n" + areasText;
   // The three Crew sub-views. Reached by ACCESSIBLE NAME, never by text: the badge count renders
   // inside the button, so textContent is "Friends2". The count is in the aria-label too, and an

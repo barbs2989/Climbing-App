@@ -111,7 +111,8 @@ export const OVERLAY_PAYLOADS = {
   // what becomes the `posts` local. None of this is DB-backed — group posts are client state —
   // so no fixture could seed them, and this is the only way to reach these two in any walk.
   postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
-  reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
+  // reactPickerFor left this list on 2026-11-05: the reaction picker is Facebook's floating emoji bar now (role="group",
+  // anchored to the button that opened it, no scrim), not a dialog, so there is nothing for a walk to open.
   // 4b's Share sheet: the same group view, the same post.
   sharePostFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
 
@@ -133,7 +134,7 @@ export const OVERLAY_PAYLOADS = {
   // `ev.date.split("-")`, `ev.hostId`, `ev.going` and `ev.capacity` — so an unresolvable payload
   // does not render an empty view, it throws. `events` is client state seeded from DEMO_FILLERS
   // (permanently false), so no fixture can seed it and a `prep` is the only way in — the same
-  // situation as postMenuFor/reactPickerFor above.
+  // situation as postMenuFor above.
   openEvent: {
     prep: 'setEvents({__ov_group:[{id:"__ov_event",title:"Overlay probe event",date:"2026-01-01",hostId:0,going:[0],capacity:0}]});',
     expr: '{groupId:"__ov_group",id:"__ov_event"}',
@@ -173,7 +174,6 @@ export const OVERLAY_PAYLOADS = {
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
   connectModal: { expr: "CLIMBERS[0]" },
   giveVouchWith: { expr: "CLIMBERS[0]" },
-  logCatchWith: { expr: "CLIMBERS[0]" },
   mutualModal: { expr: "CLIMBERS[0]" },
   profileModal: { expr: "CLIMBERS[0]" },
   // The `?list=<uuid>` link viewer (0199). Its one setter passes the uuid read from the address bar.
@@ -678,7 +678,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
       // `?mt=<profile|activity>` picks the Profile screen's tab, so a walk can reach the sections
-      // that left its default view (the catch record, the logbook and the Year in Climbing banner live on Activity).
+      // that left its default view (the logbook and the Year in Climbing banner live on Activity).
       "var mt=p.get('mt');if(mt)setMeTab(mt);" +
       // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
       // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did

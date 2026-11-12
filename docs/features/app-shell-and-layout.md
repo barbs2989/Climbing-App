@@ -53,7 +53,13 @@ room for side-panel ads later. The phone app keeps its own look.
     `parseTypedSearch` in `lib/typedSearch.js`, grades read by the one parser in `lib/grade.js`), the
     first row offers the Route finder with those filters, scoped to the place typed (top place hit),
     else the home state, else the state with the most climbs; the row names the scope. Picking it
-    goes through App's saved-search opener (`openSavedSearch`, kind `finder`).
+    goes through App's finder opener (`openFinderAt`), which sets `finderJump` for `DbAreaBrowser`. Each climb hit carries its discipline's glyph (`DiscIcon`) with the grade in that
+    discipline's colour, so a boulder, a trad route and an ice route read apart before the name does; the
+    EMPTY box, focused, offers *Near me* (the Climbs map at your position, `nearJump` → `jumpToNearReq`)
+    and the last five things typed (*Recent*, on this device only — `localStorage` `cm_recent_search`,
+    never the database; a tap refills the box). The same component mounts INLINE under the phone Climbs
+    tab's title (owner 2026-11-04, from the competitor review: KAYA, Gaia, Komoot and Mountain Project
+    lead with search); there its hits run down the page.
   - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
     (`#appscroll`), the pages that open in it, the rail's cards, centred windows, the bell drop-down and
     both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
@@ -67,7 +73,7 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Every tab shows its title** (owner 2026-11-04): the `quiet` `ScreenHero` title, hidden on a phone,
     is drawn as a 24px heading (`h1[data-cm-quiet-title]` in `wideCss`).
   - A fixed **left sidebar** under it: Home · Climbs · Partners · Crews · Groups · Logbook · Ranks
-    (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread). No site links: those are the footer's.
+    (Profile is the avatar at the top right, not a sidebar row), then *Your crews* (up to five, a red dot for unread), then *Your groups* (up to five, a red dot when a group has posts you have not seen — `groupUnreadN`, the Groups tab's own count; owner 2026-11-04, from the competitor review). No site links: those are the footer's.
   - The **page column**, and at **1280px and wider** a 300px **right rail** (`WideRail`): *Coming up*
     (agreed crew days) and *Alerts*, which starts **open on the newest three** (owner 2026-11-04; it started
     collapsed from 2026-10-23, and a bare *ALERTS ›* header on every page read as empty) under its header
@@ -75,7 +81,7 @@ room for side-panel ads later. The phone app keeps its own look.
     *See all alerts · N more ›*; the header still folds it. It is the **same list as
     Home's Alerts button** (`_alerts` in `ClimbMatch.jsx`, built once for both): what waits on you first (requests,
     invites, unread chats, a day or a climb to confirm, amber), then unread notifications not already one
-    of those, and the SAME count. A guest is told to sign in. *Best day to climb* is not here; it opens from the Menu. Ads, when they come, take slots in this rail
+    of those, and the SAME count. A guest is told to sign in. Ads, when they come, take slots in this rail
     (desktop only).
   - Between 1024 and 1279px the sidebar shows **icons only** and there is no rail.
   - **Facebook-style edges** (owner 2026-11-04; it was one 1288px block centred as a whole, so on a wide
@@ -84,16 +90,32 @@ room for side-panel ads later. The phone app keeps its own look.
     only where it would come within 24px of the sidebar or rail (`wideGeom`: 1280 → column 276–928, rail
     952; 1920 → 610–1310, rail 1592). The empty space either side of the column on a big monitor is where
     side ads can go later.
+  - **Help & FAQ is a page on the website** (competitor review batch B, item 19, owner 2026-11-04): the footer's *Help & FAQ* link (and the Menu's *How ClimbMatch works* on a phone) opens the same `Help` (`lib/Help.jsx`) — the tour, the FAQ, and a CONTACT line — drawn in the column with ← Back (`page` prop, `_vHelp` in `_pageView`) at 1024px+ and as the dialog on a phone. The contact address is `CONTACT_EMAIL` in `lib/contact.js`, a placeholder on the reserved `.example` domain until the owner replaces it ("put a placeholder email for now i will do that later").
+  - **The column has edges** (owner 2026-11-05, "a border around all the middle … audit how Strava does
+    it"): a 1px `C.border` line down each side of the page column, from the top bar's border to the
+    footer's, square, no shadow (`wideColumn`'s `boxShadow`, `COL_EDGES`, and the same rule in the boot
+    placeholder). It is the frame X's feed and Strava's *activity* page draw; Strava's dashboard,
+    Mountain Project, AllTrails and The Topo frame nothing and let cards carry the edges, and theCrag
+    frames sidebar + content + rail as one sheet, which the edge-pinned layout above has no block for.
+    A full-screen page placed in the column draws no edge of its own (it used to draw the same two
+    lines; inside its 1.1 zoom a second stroke could land a device pixel beside the column's), the
+    column's lines lie just outside it. The boot placeholder's copy of the column style in `index.html`
+    is a hand copy with no guard (`check:boot` compares nav labels only): change `COL_W`, `GAP`,
+    `EDGE_R` or `COL_EDGES` and change that `@media` block in step.
   - A site **footer** under every page, Strava-style (owner 2026-11-04: "look how strava does it …
     more branding"), **spanning the whole window** (owner 2026-11-05): a band the width of the window's
     client area (measured, not 100vw, so the Windows scrollbar never pushes it off the edge) that pulls
     itself out of the page column by `--cm-col-left` and paints above the fixed sidebar and rail at the
     page's end; its content is centred and capped at 1320px. In it: the mark, wordmark and one line on what the app is for, three link
-    columns (Explore: the tabs; ClimbMatch: How it works, About us, Feedback, Rate the app, Settings;
+    columns (Explore: the tabs; ClimbMatch: Help & FAQ, About us, Feedback, Rate the app, Settings;
     Legal: Terms, Privacy, Guidelines, Accessibility), then a thin © row with Back to top. It is the ONLY home of About,
     Help, Feedback, Privacy and Terms on desktop. The **directory of every state with climbs** heads it on
     the Climbs tab's route and area pages only (owner 2026-11-04, `showStates`); not the tab's own
-    root, where the state picker above already lists every state under the country buttons.
+    root, where the state picker above already lists every state under the country buttons. An **Install
+    ClimbMatch** link ends the ClimbMatch column while the browser has offered an install
+    (`beforeinstallprompt`, kept by `useInstallPrompt` in `lib/installPrompt.js`); Chrome and Edge offer
+    one on the built site, Safari and Firefox never do, and an installed app is not offered again, so the
+    link shows only when a click can really install (competitor review batch A, item 10).
   - **☰ Menu** fills the whole window, as on a phone, with its content centred in a 720px column.
   - **Full-screen views are pages.** Every view that covers the phone screen (Calendar, Messages, Edit
     profile, a group, an event, Settings' sub-pages, Best day, Manage areas, Terms…) is drawn in the
@@ -165,12 +187,13 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Maps:** the layer buttons stop short of the ⤢ Full screen button, and in a narrow map (the rail's)
     *Satellite* reads *Sat* (an `@container` rule in index.html), so none is hidden under it.
   - **The Climbs tab opens on the United States' regions** (`StatePicker`: an untouched country pick
-    means the US on desktop); a phone still asks for the country.
+    means the US), on desktop and — since the competitor review, owner 2026-11-04 — on a phone too, where
+    it used to open on two empty selects; Canada is one tap away in the country select.
 
 - **Loading screen and the sign-in screen.** While the bundle downloads, `index.html` paints a branded splash (`#cm-splash`: the app mark, wordmark and a moving bar; still under reduced motion) over the boot shell; while App restores the session it draws the same splash (`BootSplash`, `lib/BootSplash.jsx`) instead of a blank page. As the app's first screen (the real gate, or `LOGIN_FIRST`), the sign-in screen (`lib/AuthModal.jsx`) fills the screen under a branded header (the mark, the wordmark and what the app is for) instead of drawing a modal over a black page; opened from inside the app it is still the modal.
 - **The sign-in look carries into the app.** Every screen header (`ScreenHero`, `lib/ScreenHero.jsx`) wears the sign-in screen's blue top glow (`HERO_BG`, `HERO_SHEEN`), as do the Me card, a climber's profile header and an area without a cover photo. Home's banner has the sign-in background itself (`HOME_GLOW`) and the mark (`BrandMark`, `src/components/BrandMark.tsx`) beside the wordmark; the Menu's header is the mark and wordmark too. The four icon squares at the top right are one plain dark style; their count badges carry the colour. Disclosure rows end in one chevron (`Chevron`, `src/components/Chevron.tsx`) instead of ▸/▾ text glyphs. Each header's line under the title is one short line. **The five top tabs have no boxed header** (owner, 2026-10-25): Climbs, Partners, Crew, Logbook and Ranks render `ScreenHero` with `quiet`, which drops the box and the big title (the title stays as a visually hidden `<h1>` for screen readers) and keeps the one-line caption as plain muted text, with Ranks' "?" beside it. The sub-tab bar names the view; the Logbook's unreadable-count warning stays in the caption.
 - **One Edit button, one chevron.** Every section's Edit control — route, area, Profile, a pitch row — is the outlined `editBtnStyle` with a blue pencil (`EditPencil`, `lib/areaChrome.jsx`), never a filled blue pill. Open/close markers and the arrow at the end of a tappable row are `Chevron` (an `inline` mode sits in a line of text), grey at a row's end; blue only on an active control. Screen titles are sentence case.
-- **No emoji, one button shape (polish round 3, 2026-10-25).** The app draws no emoji anywhere — an icon is an `ActionIcon` (`aria-hidden`, beside the words) or there is none; `Lbl` swaps a leading emoji it knows for its icon and drops one it does not; reactions are icon + word chips (`REACTIONS[].i`); route-tag chips, risk levels and challenge lists carry ActionIcon names. `check:no-emoji` holds the line. No typed › / → / ▸ / ▾ at a row end or on a toggle — `Chevron` everywhere (breadcrumb separators, month arrows and "→" inside a sentence stay text). A solid primary button takes its geometry from `lib/buttonStyles.js`: `BTN_SM` in a row, `BTN_LG` full width.
+- **No emoji, one button shape (polish round 3, 2026-10-25).** The app draws no emoji anywhere — an icon is an `ActionIcon` (`aria-hidden`, beside the words) or there is none; `Lbl` swaps a leading emoji it knows for its icon and drops one it does not; the one exception, since 2026-11-05, is reactions: emoji (`REACTIONS[].e`) in Facebook's floating bar (`ReactionPicker`) and stacked on the count line; route-tag chips, risk levels and challenge lists carry ActionIcon names. `check:no-emoji` holds the line. No typed › / → / ▸ / ▾ at a row end or on a toggle — `Chevron` everywhere (breadcrumb separators, month arrows and "→" inside a sentence stay text). A solid primary button takes its geometry from `lib/buttonStyles.js`: `BTN_SM` in a row, `BTN_LG` full width.
 - **Loading rows, empty states, one card corner, palette tokens (polish round 4, 2026-10-25).** A section whose read is in flight shows `LoadingRows` (`src/components/LoadingRows.tsx`): its "Loading …" line (kept as real text — `render-settle.mjs` and `check:zero` read it) over pulsing grey placeholder rows, still under reduced motion. A list with nothing in it shows `EmptyState` (`src/components/EmptyState.tsx`): a muted `ActionIcon` in a circle over the unchanged sentence, with an optional next step. Cards (`background:C.card` + a border) round at 12; smaller inner boxes keep 8–10. White text on a solid fill is `C.onSolid`, and a pop-up's backdrop is `C.scrim` (0.6) or `C.scrimStrong` (0.88, photo viewers) — `lib/GpsSubmissionModal.jsx` keeps its own local palette.
 - **A touch just off a small control still reaches it (2026-10-28).** Most controls are drawn under 44px (a route-page section toggle is 29px), so `installTapSlop` (`lib/tapSlop.js`, called once in `main.jsx`) sends a touch whose click landed on nothing tappable to the nearest control whose 44px box, centred on it, holds the touch. Every control competes on distance whatever its size, so a nearer big button keeps its tap; a tie, a mouse, a keyboard click, a hit on a control, and a tap inside a map, chart or field are left alone. The browser snaps a tap to a control under the finger first (Chrome and Safari both do), so this only reaches the taps that snap misses.
 - **Every box-shaped button is at least 40px tall (2026-10-29).** Owner note: "the overall near me friends and by area boxes should be bigger. Find other places where the box is too small." One rule in `index.html`, beside the 44px `select` rule, gives any `<button>` that draws a border-radius and a 3-8px padding a 40px `min-height` (Material 3's button height): skill and belay chips, discipline and country pickers, Accept / Decline / Vouch / Remove, the route page's Fill in the missing chips, Report the road. Left alone: switches, buttons with their own height, map overlays (`position: absolute`), text links styled as buttons (no radius), and flex buttons that do not centre their content. An inline `minHeight` still wins. Measured by `scripts/oneoff/measure-target-size.mjs` (every tab, the route page, 70 popups).
@@ -215,6 +238,7 @@ taken focus from it by the time the hook looks.
 | `lib/wideLayout.js` | `useWideScreen`, `useFullWidth`, `wideGeom`, `wideColumn`, `wideSidebar`, `wideRail`, `wideTopBar`, `wideTopRow`, `wideCss`, `WIDE_MIN`, `FULL_MIN` |
 | `lib/MonthGrid.jsx` | `MonthGrid` |
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail`, `WideFooter`, `DocTitle` |
+| `lib/installPrompt.js` | `useInstallPrompt` |
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SidebarAd`, `RailAd`, `useRailFollow`, `FollowColumn`, `SideWrap` |
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
@@ -267,7 +291,7 @@ follow; the sidebar follows only on a route page carrying an ad (`SideWrap`).
   with Groups/Profile/crews, right rail, footer, Menu drawer, centred popups, hover and page titles; the
   phone tab bar made soft.
 - **2026-10-21, owner:** the desktop Menu fills the screen (was a 440px drawer); the sidebar's site links
-  left for the footer; *Best day to climb* left the right rail.
+  left for the footer; *Best day to climb* left the right rail (and the app altogether on 2026-11-05).
 
 ## 8. Known gaps
 - **Phase 2**: shipped (pages, bell and chat drop-downs, route page, Climbs grid, two-per-row lists,

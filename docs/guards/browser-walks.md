@@ -31,7 +31,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     so the dialog can be thousands of characters past the state name, and on a 428,000-char
     file there is no safe window size. And **the dialog must be the region's own first
     element**: `openGroupId` renders a full-screen group view whose nested `ReactionPicker`
-    puts `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
+    (a dialog until 2026-11-05) put `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
     classify every screen large enough to contain a modal as a modal.
   - Brace-matching runs over **raw source**, deliberately *not* the comment/string blanker
     that `check:seed-history` and `check:dead-flag-gates` use. That blanker treats every
@@ -399,7 +399,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
     - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
-      screen. FIXED — the landmark is `/saved searches/i` now.** It led with `saved
+      screen. FIXED — the landmark became `/saved searches/i`, and is `/my itineraries/i` since
+      2026-11-05, when saved searches were removed from the app (the `My itineraries` heading is
+      the other `<MeH>` rendered unconditionally in the All view, and is unique app-wide).** It led with `saved
       areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
       on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
       — all in one place."* One alternative matching is enough, so a capture that never left the
@@ -1479,6 +1481,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **A screen it cannot open FAILS** (NOT REACHED), or coverage erodes silently. The first run
     could not open Crews or Logbook: it matched nav buttons by EXACT text, and those carry a badge
     count ("Crews2"). Matched by name prefix now.
+  - **The route tabs wait for the route page's OWN tab bar** (2026-11-11). RouteDetail is a lazy
+    chunk, so `window.__routeOpen` only means `openRoute` ran: the screen is still the "Loading
+    climb…" fallback. The walk looked for each tab at once and reported Plan, Conditions, Reports,
+    Safety and Photos NOT REACHED on every run, every branch — while Overview "passed" by scanning
+    the fallback and Partners "passed" by clicking the app's own *Partners* NAV button. It now
+    waits for `[data-cm-route-tabs]`, looks for a tab only inside it, and matches a crag route's
+    *Send Reports* by the end of the label. All 14 route screens are reached.
+  - **On Windows a run can leave its vite dev servers running** (npx-shim on ports 546x) after it
+    exits. Find the node processes whose command line names your worktree and end them.
   - **Gated best-practice rules** (`GATED_PRACTICE`): page-has-heading-one, landmark-one-main,
     region, aria-dialog-name, presentation-role-conflict, landmark-no-duplicate-main,
     landmark-unique. Wrapping LegalView's body in `<main>` passed on a phone and made a SECOND main

@@ -11,8 +11,21 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   reaching down only from below the state since 0311). Under Near my areas and By Area a listed climber's row carries
   *Plan a session at <area>*, which opens the Start-a-crew sheet at that area with them invited. Alpine, mountaineering,
   scrambling, ice and mixed stay route-based through saved objectives. A crag-route objective is a tick list, not a match signal.
-- **Find someone by name** (DB only): a search box (min 2 chars) over real profiles.
-- **Search for partners by** six modes: **Near my areas** (the signed-in default — climbers whose listings overlap yours, most
+- **Results first** (competitor review item 16, owner 2026-11-04, built 2026-11-05 — Meetup's layout, phone and website): the screen opens with a
+  title that STATES the search ("Climbers who climb where you do", "Climbers in Index · within 50 mi of 98201", "Climbers who want
+  Liberty Crack"), then ONE wrapping row of pills (`role="group"` *Narrow the list*): **Search by ▾** (the six modes, a native select drawn
+  as a pill), **Distance ▾** (Anywhere / Near my zip / Near me now) with **Within ▾** (10 · 25 · 50 · 100 · 200 · 500 mi) beside it when an
+  origin is picked, **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, the **Free this weekend** toggle (`aria-pressed`), the **Only women / men / non-binary
+  climbers** switch (`role="switch"`), **Sort ▾** and **More filters** (speed match, available to climb, max distance for the examples; its badge
+  counts those) on the example-list modes, and **My areas · N**. The pills are 44px on a phone and 36px on the website (#3156). The name
+  search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
+- **Leads ▾** (competitor review item 20, the filter half, 2026-11-11): *Leads 5.10a or harder* keeps climbers whose LEAD grade on the
+  picked discipline is at least that, on the real lists and the examples alike. The lead grade is read with `profileGradeRows` (a roped
+  grade is the lead grade unless its role is "follow"), so a follow-only climber or one with no grade on file does not match; grades
+  compare on `gradeNumFrom`, which reads aid C3 and A3 as the same grade. Changing the discipline clears it; it counts in the clear-filters
+  button. Real rows get their `climb_grades` through `usePartnerClimbGrades` (the partner RPCs carry none).
+- **Find someone by name** (DB only): a search box (min 2 chars) over real profiles, opened from the *Name* pill.
+- **Search for partners by** six modes (the Search by ▾ pill): **Near my areas** (the signed-in default — climbers whose listings overlap yours, most
   in common first; with no listing, a one-tap "List me here" banner over the nearest-by-zip list), **Saved areas** (signed in: the
   areas you saved with Save area as the search — a chip row *All saved · N* plus one chip per saved crag, canyon, range or state;
   climbers listed at, inside, or across a wider area containing any of them, listed in the most of them first; saved peaks are left
@@ -33,9 +46,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   read of `profiles.gender` for the rows on screen); someone who has not stated one is not shown. A loading or failed read
   shows nobody and says so, never everyone. Name search is not narrowed. Remembered on this device
   (`lib/partner-gender-pref.js`). The same filter RockBase and GoWith offer; there is no filter by any OTHER gender.
-- **Filters** (all narrow the real lists as well as the example profiles): Discipline, Experience (level)
-  (slider max 80), Speed match, Available to climb (Weekend AM / Weekend PM / Weekday AM / Weekday PM / Flexible), Max distance (examples).
-  The panel starts CLOSED behind the Filters button (its badge counts the active filters), on Find partners and on Join a crew alike, so the results come first.
+- **Filters** (all narrow the real lists as well as the example profiles): Discipline and Experience (level) as pills; Speed match,
+  Available to climb (Weekend AM / Weekend PM / Weekday AM / Weekday PM / Flexible) and Max distance (examples) behind *More filters*.
+  The panel starts CLOSED (its badge counts the active panel filters), on Find partners and on Join a crew alike, so the results come first.
   A filter that empties a list says so; a failed signals read says the list is not narrowed by experience.
 - **Rows**: real climbers render as `RealClimberRow` (match %, verified tick, shared objectives, and a "Listed at Hellgate · Sport · free Oct 18–19"
   line — "Listed across Utah" for an ancestor match); example climbers render as full cards

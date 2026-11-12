@@ -2,12 +2,12 @@ import { useContext, useState, useEffect, useMemo, Fragment } from "react";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import { usePinnedBar } from "../../lib/usePinnedBar.js";
 import { searchPlaces } from "../../lib/mapKit";
-import { useMySavedSearches, useSubtreeRoutes, useSubtreeRouteCount, useAreaChildren, deleteSavedSearchRow, useAreaNamesByIds, useAreaSearch, createSavedSearchRow, areaSearchTotal } from "../../lib/db";
+import { useSubtreeRoutes, useSubtreeRouteCount, useAreaChildren, useAreaNamesByIds, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import { discLabel } from "../../lib/areaDiscLabel.js";
 import { BTN_LG, CHIP, BTN_LINK } from "../../lib/buttonStyles.js";
 import { SL } from "../../lib/areaBrowserParts.jsx";
 import { ScreenHero } from "../../lib/ScreenHero";
-import { POP_CHIP_X, POP_REMOVE, POP_CLOSE } from "../../lib/popupChrome.js";
+import { POP_CHIP_X, POP_CLOSE } from "../../lib/popupChrome.js";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
 import { clickable } from "../../lib/clickable";
@@ -34,7 +34,6 @@ type RouteFinderPanelNearSt = { busy: boolean; err: string; hits: RouteFinderPan
 type RouteFinderPanelAreaHit = { id: string; name: string; area_type: keyof typeof ATYPE; parent_name?: string | null; route_count: number };
 type RouteFinderPanelChip = { k: string; label: string; clear: () => void };
 type RouteFinderPanelSortKey = "name" | "name_desc" | "area" | "lr" | "rl" | "grade_asc" | "grade_desc" | "stars_desc" | "near";
-type RouteFinderPanelSaved = { id: string; _dbId: string; name: string; kind?: string; q?: string; filters: Partial<RouteFinderPanelFilters>; loc?: AddHereFooterArea };
 type RouteFinderPanelList = { id: string; name: string; routeIds?: Array<string | number> };
 type RouteFinderPanelJump = { id: string; name: string };
 export interface RouteFinderPanelProps {
@@ -55,11 +54,8 @@ export interface RouteFinderPanelProps {
   onToggleListRoute?: ((listId: string, routeId: string | number) => void) | null;
   onAddClimb?: AddHereFooterProps["onAddClimb"];
   onAddArea?: AddHereFooterProps["onAddArea"];
-  /** A saved search being reopened. */
+  /** Words and filters to open with (the website header's typed search). */
   initial?: { id?: string; q?: string; filters?: Partial<RouteFinderPanelFilters> } | null;
-  uid?: string | null;
-  notify?: ((msg: string) => void) | null;
-  onSignIn?: (() => void) | null;
 }
 
 // ── Route finder: search + Filters sheet (discipline, grade, sort, stars, pitches,
@@ -136,7 +132,7 @@ const findB = <T extends [string, ...unknown[]]>(list: T[], k: string | undefine
    convention). A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route
    written without a letter falls out of the 5.10 band it belongs to. The one collision is in the
    DATA, not here: 5.10d and a bare 5.11 are both stored as 11, so they travel together there. */
-const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
+export const GRADE_SCALES: Record<string, RouteFinderPanelGrade[]> = (() => {
   const yds: RouteFinderPanelGrade[] = [];
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
   for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
@@ -159,7 +155,7 @@ const SCALE_NAMES: Record<string, string> = { yds: "5.x rock", v: "V", class: "C
 //     (an ice final also fills ice_grade_num, which the WI range reads). Both also offer Snow:
 //     Mountain Project's Easy / Mod. / Steep Snow, read from snow_grade_num (0246), which a route
 //     carries BESIDE its Class or 5.x grade — the owner wanted both (2026-10-04).
-const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+export const DISC_GRADE_SCALES: Record<string, string[]> = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
 // The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
 // as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
 // were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
@@ -208,10 +204,7 @@ const finderArgs = (q: string, f: RouteFinderPanelFilters, metric: boolean) => {
 // so they lift FINDER_NEEDS_AREA. Gain and round trip are read climb by climb and do not: alone
 // over California they took 3.6 s cold, past the 3 s statement timeout (2026-10-24).
 const narrowsAreas = (f: RouteFinderPanelFilters) => !!(f.near || (f.elev && f.elev !== "any") || (f.prom && f.prom !== "any"));
-// A saved search's identity: the words, the filters and where it looks. Keys are sorted because the
-// filters come back from a jsonb column, which does not keep the order they were written in.
-const searchKey = (q: string | undefined, f: Record<string, unknown>, locId: string | undefined) => JSON.stringify([(q || "").trim(), Object.keys(f || {}).sort().map(k => [k, f[k]]), locId]);
-export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial, uid, notify, onSignIn }: RouteFinderPanelProps) {
+export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit, presetDisc, bookmarks, onToggleBookmark, onToggleWish, userLists, onToggleListRoute, onAddClimb, onAddArea, initial }: RouteFinderPanelProps) {
   const { wishlist } = useContext(ClimberCtx);
   const DEF: RouteFinderPanelFilters = { discs: [], sortBy: "lr", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "", gain: "any", trip: "any", elev: "any", prom: "any", near: null, within: "w2" };
   const metric = isMetric(uElevUnit);
@@ -221,8 +214,8 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // must be narrowed to an area inside it first (FINDER_NEEDS_AREA). The panel is keyed by the
   // scope's id, so a new scope starts a new Location.
   const [loc, setLoc] = useState<AddHereFooterArea>(scope);
-  // A saved search opened from Logbook › Saved or the Menu arrives as `initial`: its words and
-  // filters, on the area it was saved in (which is this panel's scope).
+  // A search handed in from outside (the website header's typed search) arrives as `initial`: its
+  // words and filters, on the area it was scoped to (which is this panel's scope).
   const [q, setQ] = useState(initial ? initial.q || "" : "");
   // The query follows the box a beat behind, so typing "castle" is one search, not six.
   const [qD, setQD] = useState(initial ? initial.q || "" : "");
@@ -258,14 +251,6 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       else setNearSt({ busy: false, err: "", hits: rows });
     }, () => setNearSt({ busy: false, err: "Couldn’t look that place up — check your connection and try again.", hits: [] }));
   };
-  // SAVED SEARCHES ARE THE ACCOUNT'S (saved_searches, 0091), the same rows Logbook › Saved and the
-  // Menu's "Saved searches · N" read. This list used to be this panel's own React state: a search
-  // saved here was gone the moment the finder closed, never reached the Logbook, and the table held
-  // no row at all (0 on 2026-10-24). Only finder searches are listed here; their `kind` says so.
-  const mySearchesQ = useMySavedSearches(uid);
-  const savedSearches: RouteFinderPanelSaved[] = (mySearchesQ.data || []).filter(s => s.kind === "finder");
-  const [showSaved, setShowSaved] = useState(false);
-  const [savingSearch, setSavingSearch] = useState(false);
   const [page, setPage] = useState(0);
   const [all, setAll] = useState<RouteFinderPanelRow[]>([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
@@ -294,18 +279,6 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
     return () => { el.style.overflow = prev; };
   }, [sheet]);
 
-  const loadSearch = (search: RouteFinderPanelSaved) => {
-    setQ(search.q || "");
-    setAf({ ...DEF, ...(search.filters || {}) });
-    setLoc(search.loc && search.loc.id ? search.loc : scope);
-    setShowSaved(false);
-    setPage(0);
-    setAll([]);
-  };
-  const deleteSearch = (s: RouteFinderPanelSaved) => {
-    deleteSavedSearchRow(s._dbId).then(() => { if (notify) notify("Saved search removed"); },
-      () => { if (notify) notify("Couldn’t delete that search — try again."); });
-  };
   useEffect(() => { setPage(0); setAll([]); }, [qD, af, loc.id]);
   useEffect(() => {
     if (!batch) return;
@@ -333,21 +306,6 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   if (af.prom && af.prom !== "any") afChips.push({ k: "prom", label: minLabel(findB(PROM_MINS, af.prom), metric, eU) + " prominence", clear: () => setAf(a => ({ ...a, prom: "any" })) });
   if (af.near) afChips.push({ k: "near", label: "Within " + withinLabel(findB(WITHIN, af.within) || WITHIN[1], metric, dU) + " of " + af.near.label, clear: () => setAf(a => ({ ...a, near: null, sortBy: a.sortBy === "near" ? DEF.sortBy : a.sortBy })) });
   if (sortFor(af.discs, af.sortBy) !== sortFor(af.discs, DEF.sortBy)) afChips.push({ k: "sort", label: { name: "A→Z", name_desc: "Z→A", area: boulderOnly(af.discs) ? "By boulder" : "By area", lr: "Left → right", rl: "Right → left", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred", near: "Nearest first" }[af.sortBy as RouteFinderPanelSortKey], clear: () => setAf(a => ({ ...a, sortBy: DEF.sortBy })) });
-  const curKey = searchKey(q, af, loc.id);
-  const isSavedSearch = savedSearches.some(s => searchKey(s.q, s.filters, s.loc && s.loc.id) === curKey);
-  const saveSearch = () => {
-    if (!uid) { if (onSignIn) onSignIn(); else if (notify) notify("Sign in to save searches."); return; }
-    if (isSavedSearch) { if (notify) notify("Already saved — it’s in Logbook › Saved."); return; }
-    if (savingSearch) return;
-    // Named for what it IS, as the applied chips read: words, filters, place. "Untitled search"
-    // told a climber nothing when they came back to it from the Logbook.
-    const name = [q.trim() ? "“" + q.trim() + "”" : null, ...afChips.filter(c => c.k !== "sort").map(c => c.label), loc.name].filter(Boolean).join(" · ");
-    setSavingSearch(true);
-    createSavedSearchRow(uid, name, { kind: "finder", q: q.trim(), filters: af, loc: { id: loc.id, name: loc.name, area_type: loc.area_type } })
-      .then(() => { if (notify) notify("Search saved — find it in Logbook › Saved."); },
-        () => { if (notify) notify("Couldn’t save that search — check your connection and try again."); })
-      .finally(() => setSavingSearch(false));
-  };
   const inList = (l: RouteFinderPanelList, id: string | number) => (l.routeIds || []).includes(id);
   const customLists = (userLists || []).filter(l => l.id !== "ul_obj");
   const isSaved = (id: string | number) => (wishlist || []).includes(id) || customLists.some(l => inList(l, id));
@@ -372,12 +330,8 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       </div>
       <input aria-label={mode === "areas" ? "Search areas, crags, peaks" : "Search routes"} value={q} onChange={e => setQ(e.target.value)} placeholder={mode === "areas" ? "Search areas, crags, peaks…" : "Search routes in " + loc.name + "…"} style={{ width: "100%", padding: "11px 13px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 14, boxSizing: "border-box", outline: "none", marginBottom: 8 }} />
       {mode === "routes" ? <>
-      {/* ONE style for the three buttons in this row. Filters was drawn in the text colour and
-          Save search in blue, which read as two different sizes of type side by side. */}
       <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
         <button onClick={() => { setDf(af); setSheet(true); }} style={rowBtn(nF)}>{"Filters" + (nF ? " (" + nF + ")" : "")}</button>
-        <button onClick={saveSearch} disabled={savingSearch} aria-pressed={isSavedSearch} style={rowBtn(isSavedSearch)}>{savingSearch ? "Saving…" : isSavedSearch ? "✓ Saved" : "Save search"}</button>
-        {savedSearches.length > 0 && <button onClick={() => setShowSaved(!showSaved)} style={rowBtn(true)}>{savedSearches.length} saved</button>}
       </div>
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 8 }}>
@@ -414,16 +368,6 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
           {areaSearchTotal(areaHits) > areaHits.length ? <div style={{ fontSize: 11.5, color: C.textMuted, padding: "10px 4px", textAlign: "center" }}>{"Closest " + areaHits.length + " of " + areaSearchTotal(areaHits).toLocaleString() + " — keep typing to narrow."}</div> : null}
         </>
       ) : <>
-      {showSaved && savedSearches.length > 0 && (
-        <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: 10, margin: "10px 0" }}>
-          {savedSearches.map(s => (
-            <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} {...clickable(() => loadSearch(s))}>
-              <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
-              <button aria-label={"Remove saved search " + s.name} onClick={e => { e.stopPropagation(); deleteSearch(s); }} style={POP_REMOVE}>✕</button>
-            </div>
-          ))}
-        </div>
-      )}
       {/* PICK AN AREA FIRST on a state (FINDER_NEEDS_AREA). The filters still apply once one is
           picked; typing a climb's name searches the whole state straight away. */}
       {needsArea ? <>

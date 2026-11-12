@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { parseTypedSearch } from "./typedSearch.js";
-import { C, CLIMBERS, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil, pubName } from "../ClimbMatchCore.jsx";
+import { C, CAT, CLIMBERS, ROUTES, catOf, gradeLabel, routeLocText, shortDate, daysUntil, pubName } from "../ClimbMatchCore.jsx";
 import Av from "../src/components/Av.tsx";
+import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 import { discLabel } from "./discLabels";
 import { useMyHomeStatePaths, usePlaceSearch, useProfilesByIds, useRouteSearch, useStates } from "./db.js";
@@ -11,7 +12,8 @@ import { useRailFollow } from "./Ads.jsx";
 import BrandMark from "../src/components/BrandMark.tsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
-   phone app never mounts it. The top bar's search, the right rail's widgets and the site footer. */
+   phone app never mounts it — except WideSearch, which the phone's Climbs tab also mounts INLINE
+   (owner 2026-11-04). The top bar's search, the right rail's widgets and the site footer. */
 
 const SECTION = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted };
 const CARD = { background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: "14px 14px 12px" };
@@ -52,6 +54,15 @@ const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT
    midline the shell is centred on, out of the row's flow, so Menu + logo on the left and the icons on
    the right do not push it off centre. `width` is App's: it shrinks the box before it could reach
    either side (the row's ends need ~270px each). */
+/* `inline` (owner 2026-11-04, from the competitor review: KAYA, Gaia and Komoot all open on a search
+   box): the same search drawn in the page's flow — the phone Climbs tab puts it under its title, the
+   way those apps lead with search — with its results running down the page instead of a drop-down.
+   `onNearMe` opens the Climbs map at the climber's position. */
+/* RECENT SEARCHES (Gaia, AllTrails): the last five things typed here, on THIS DEVICE only (localStorage,
+   never the database), offered when the box is focused and empty. A tap refills the box with the words,
+   so there is nothing to refetch and nothing to go stale. */
+const RECENT_KEY = "cm_recent_search";
+const readRecent = () => { try { const v = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]"); return Array.isArray(v) ? v.filter(s => typeof s === "string").slice(0, 5) : []; } catch (_e) { return []; } };
 /* TYPED SEARCH (item 12 of the competitor review, owner 2026-11-04): "5.9 trad near Leavenworth",
    "WI4", "V4 in Squamish" describe a FILTER, and the name search finds nothing for them. When
    lib/typedSearch.js reads a grade or a discipline out of the words, the FIRST row offers the Route
@@ -59,12 +70,15 @@ const editable = el => !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT
    else to the climber's home state, else to the state with the most climbs — and the row NAMES the
    scope, so nothing is picked silently. A place that was typed but not found offers no row: the
    plain hits (and "no matches") answer that. */
-export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width }) {
+export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, inline, onNearMe }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [hi, setHi] = useState(0);
+  const [recent, setRecent] = useState(readRecent);
   const box = useRef(null), input = useRef(null);
   const qq = q.trim();
+  const remember = term => { const next = [term].concat(recent.filter(s => s.toLowerCase() !== term.toLowerCase())).slice(0, 5); setRecent(next); try { localStorage.setItem(RECENT_KEY, JSON.stringify(next)); } catch (_e) { /* private mode: the list is for this visit only */ } };
+  const forget = () => { setRecent([]); try { localStorage.removeItem(RECENT_KEY); } catch (_e) { /* nothing stored */ } };
   const routesQ = useRouteSearch(USE_DB ? qq : "", 6);
   const placesQ = usePlaceSearch(USE_DB ? qq : "", 4);
   const typed = useMemo(() => (USE_DB && onOpenFinder ? parseTypedSearch(qq) : null), [qq, onOpenFinder]);
@@ -92,6 +106,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width }) {
   const failed = USE_DB && (routesQ.isError || placesQ.isError) && !hits.length;
   const busy = USE_DB && (routesQ.isLoading || placesQ.isLoading) && !hits.length;
   const pick = h => {
+    if (qq) remember(qq);
     setOpen(false); setQ(""); if (input.current) input.current.blur();
     if (h.kind === "finder") onOpenFinder({ loc: { id: h.scope.id, name: h.scope.name, area_type: h.scope.area_type }, filters: { discs: h.t.discs, gSys: h.t.gSys, gLo: h.t.gLo, gHi: h.t.gHi } });
     else if (h.kind === "place") onOpenArea(h.a); else onOpenRoute(h.r);
@@ -105,30 +120,46 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width }) {
   const row = (h, i) => {
     const on = i === hi;
     const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
-    const sub = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : [h.r.grade, h.r._dbArea && h.r._dbArea.name].filter(Boolean).join(" · ");
-    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}><ActionIcon name={h.kind === "finder" ? "explore" : h.kind === "place" ? "pin" : "mountain"} size={17} color={C.textMuted}/><span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{sub ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{sub}</span> : null}</span></button>;
+    /* A climb row carries ITS discipline's glyph and colours its grade the same way (the competitor
+       review, 2026-11-04: every climb drew one mountain glyph, so a V7 boulder, a 5.4 trad route and
+       an AI3 ice route looked alike before anyone read them). Places keep the pin; the finder row the compass. */
+    const disc = h.kind === "route" ? (h.r.discipline || catOf(h.r) || "") : "";
+    const discColor = (CAT[disc] || {}).color || C.textMuted;
+    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : (h.r._dbArea && h.r._dbArea.name) || "";
+    const grade = h.kind === "route" ? h.r.grade : "";
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
   };
   const showList = open && !!qq;
+  // The EMPTY box, focused: recent words and Near me (nothing when there is neither).
+  const showEmpty = open && !qq && (recent.length > 0 || !!onNearMe);
   /* Placed by `left`, not transform:translateX(-50%) — a transform can land the box on a half pixel,
-     and text there renders soft on a Windows screen. */
+     and text there renders soft on a Windows screen. Inline, it is a block in the page's flow. */
   const w = width || "460px";
-  return <div ref={box} style={{ position: "absolute", top: 12, left: "calc(50vw - (" + w + ") / 2)", width: w }}>
-    <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, bottom: 0, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
-    <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label="Search climbs and places" role="combobox" aria-expanded={showList} aria-controls="wide-search-list" aria-activedescendant={showList && hits.length ? "wide-search-" + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder="Search climbs & crags" style={{ width: "100%", height: 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 14.5, outline: "none" }}/>
-    {!q ? <kbd aria-hidden="true" title="Press / to search" style={{ position: "absolute", right: 12, top: 10, fontSize: 11.5, fontFamily: "inherit", color: C.textMuted, border: "1px solid " + C.border, borderRadius: 5, padding: "1px 6px", pointerEvents: "none" }}>/</kbd> : null}
-    {showList ? <div id="wide-search-list" role="listbox" aria-label="Search results" style={{ position: "absolute", top: 46, left: 0, right: 0, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 }}>
+  const wrap = inline ? { position: "relative", width: "100%" } : { position: "absolute", top: 12, left: "calc(50vw - (" + w + ") / 2)", width: w };
+  // Inline, the list runs DOWN THE PAGE (as DbSearchSplit's does): no inner scroll, no drop-down.
+  const panel = inline ? { marginTop: 6, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: 6 }
+    : { position: "absolute", top: 46, left: 0, right: 0, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };
+  const plain = { ...ROW, minHeight: 44 };
+  return <div ref={box} style={wrap}>
+    <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: inline ? 44 : 40, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
+    <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label="Search climbs and places" role="combobox" aria-expanded={showList || showEmpty} aria-controls="wide-search-list" aria-activedescendant={showList && hits.length ? "wide-search-" + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder="Search climbs & crags" style={{ width: "100%", height: inline ? 44 : 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: inline ? 12 : 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: inline ? 15 : 14.5, outline: "none" }}/>
+    {!q && !inline ? <kbd aria-hidden="true" title="Press / to search" style={{ position: "absolute", right: 12, top: 10, fontSize: 11.5, fontFamily: "inherit", color: C.textMuted, border: "1px solid " + C.border, borderRadius: 5, padding: "1px 6px", pointerEvents: "none" }}>/</kbd> : null}
+    {showList ? <div id="wide-search-list" role="listbox" aria-label="Search results" style={panel}>
       {failed ? <div role="alert" style={{ padding: "12px 10px", fontSize: 13, color: C.amber }}>Search isn’t reachable right now — check your connection and try again.</div>
         : busy ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>Searching…</div>
         : !hits.length ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>{"No climbs or places match “" + qq + "”."}</div>
-        : <>{places.length ? <div style={{ ...SECTION, padding: "6px 10px 4px" }}>Places</div> : null}{hits.slice(0, places.length).map((h, i) => row(h, i))}{routes.length ? <div style={{ ...SECTION, padding: "8px 10px 4px" }}>Climbs</div> : null}{hits.slice(places.length).map((h, i) => row(h, i + places.length))}</>}
+        : <>{finderHit ? row(finderHit, 0) : null}{places.length ? <div style={{ ...SECTION, padding: "6px 10px 4px" }}>Places</div> : null}{hits.slice(finderHit ? 1 : 0, (finderHit ? 1 : 0) + places.length).map((h, i) => row(h, i + (finderHit ? 1 : 0)))}{routes.length ? <div style={{ ...SECTION, padding: "8px 10px 4px" }}>Climbs</div> : null}{hits.slice((finderHit ? 1 : 0) + places.length).map((h, i) => row(h, i + (finderHit ? 1 : 0) + places.length))}</>}
+    </div> : showEmpty ? <div id="wide-search-list" role="listbox" aria-label="Search shortcuts" style={panel}>
+      {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/><span style={{ fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ fontSize: 12, color: C.textMuted }}>climbs around your position, on the map</span></button> : null}
+      {recent.length ? <><div style={{ ...SECTION, padding: "8px 10px 4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}><span>Recent</span><button onMouseDown={e => e.preventDefault()} onClick={forget} style={{ border: "none", background: "transparent", color: C.textMuted, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: "4px 0", textTransform: "none", letterSpacing: 0 }}>Clear</button></div>
+        {recent.map(s => <button key={s} role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setQ(s); setOpen(true); if (input.current) input.current.focus(); }} style={plain}><ActionIcon name="search" size={16} color={C.textMuted}/><span style={{ fontSize: 14, fontWeight: 600, overflowWrap: "anywhere" }}>{s}</span></button>)}</> : null}
     </div> : null}
   </div>;
 }
 
 /* RIGHT RAIL. Widgets drawn from what App already holds — the next agreed crew days and unread alerts
    (collapsed until clicked).
-   Best day to climb is NOT here (owner, 2026-10-21): it opens from the Menu's tile. Ads, when they
-   come, take slots in this column (desktop only). */
+   Ads, when they come, take slots in this column (desktop only). */
 /* CHATS IN THE RAIL (desktop website, owner-approved 2026-10-21): your crews' chats and your direct
    messages, in two folding sections since 2026-11-04 (owner), newest first within each, always in
    reach the way Facebook's contacts column is. The same threads

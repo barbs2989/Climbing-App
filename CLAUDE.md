@@ -44,7 +44,7 @@ npm run measure:guard-reach -- --out before.json # ...then --out after.json --co
 # ── Static code guards — notes: docs/guards/static-code.md ──
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
-npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25) (in build)
+npm run check:no-emoji # the app draws NO emoji — an ActionIcon or the words alone (owner, 2026-10-25); the one exception is the REACTIONS table (owner, 2026-11-05) (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
 npm run check:no-secrets # no Supabase service key, service_role JWT, or literal anon key / project URL in source (in build)
 npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
@@ -178,6 +178,8 @@ npm run check:rappel-single-rope # the headline rappel count is the single-rope 
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
 npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris to the minute — longitude, equation of time and DST included (in build)
+npm run check:itinerary-shape # a trip plan is day by day or NOTHING, never prose (lib/itineraryShape.js), and every pipeline loader and trip-plan apply script still refuses prose (in build)
+npm run audit:itinerary-shape # does every LIVE trip plan follow that rule? fails on prose; reports gap days (service key)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
@@ -338,7 +340,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`); the same tile also renders on Home under Jump back in. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
+- `me` — profile, verification, trust score. The bottom bar's **right-most tab** (back since 2026-10-24; it left the bar in #2074), and the **Menu** (the avatar button at the top left, `menuOpen`) still leads here too, from its "You" card. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 
@@ -347,13 +349,13 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`, `Questionnaire`, `RichEditor`, `AreaTree`, `LogRoutePicker`, `ReportModal`, `FriendsFeed`, `Contributions`, `CatchLedger`, `DbAreaPicker`, `AscentPyramid`, `DbClimbPicker`, `LoginScreen`, `FloatPlan`, `LogCatch`, `Comments`, `Challenges`, `Resume`, `FullProfile`, `PolicyUpdateNotice`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `src/components/RouteGearCheck.tsx`).
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — `OverviewMap` and the other larger panels. The small ones (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `SwipeRow`, `ChatComposer`, the two loading skeletons, the chat bubble and typing indicator, `Hr`, `Stars`, `Bar`, `CardHead`, the photo alt-text field and describe box, `ShareExportRow`, `ReactionPicker`, `PullToRefresh`, `TopContribBadge`, `RetryReminder`, `PlaceMatches`, `SectionJumps`, `MiniCalendar`, `SunCorrect`, `StartLocationForm`, `AreaRegionSelect`, `TopContributors`, `PhotoStrip`, `ReportStats`, `ItineraryEditor`, `RealClimberRow`, `CommentMenu`, `DbAreaLevel`, `DbCountryAreaHits`, `BadgeGrid`, `VouchCard`, `SpeedCompat`, `TrackedLists`, `SpeedProfile`, `QuickLog`, `TickList`, `CrewInviteModal`, `SearchSplit`, `WaypointMapPicker`, `SharedListView`, `ConnectModal`, `AspectSunPanel`, `Questionnaire`, `RichEditor`, `AreaTree`, `LogRoutePicker`, `ReportModal`, `FriendsFeed`, `Contributions`, `DbAreaPicker`, `AscentPyramid`, `DbClimbPicker`, `LoginScreen`, `FloatPlan`, `Comments`, `Challenges`, `Resume`, `FullProfile`, `PolicyUpdateNotice`) and the route map (`GPXMap`) have moved to band 4; `VerifyBadge`, `ProvenancePanel` and `RouteGearCheck`, once listed here, no longer live in core (`RouteGearCheck` is in `src/components/RouteGearCheck.tsx`).
 3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic (state, data reads, handlers) and the render switch, gated by `tab===...` and `selRoute`. Since PR61–63 each screen and overlay body is its own component in `src/components/` (`TodayTab`, `CrewListView`, `SettingsPrivacySheet`…), handed App's values as props of the same name.
 4. **`src/components/<Name>.tsx`: single-job components being extracted from the three files above** (since 2026-10; first: `RiskBadge`). Strict TypeScript, one `export default function` each, props declared as an `interface`. The guards still see each one as its parent file's code — every move is registered in `MOVED` in `scripts/lib/guard-sources.mjs`, or the text-reading guards go blind to it. Conventions and the per-PR procedure: [docs/refactor-progress.md](docs/refactor-progress.md). A JS function's destructured params are inferred as REQUIRED props; type the seam with a JSDoc `@param` on the JS side (as `Pill` has), not with casts in the component.
 
 ### Domain concepts to know
 
-- **Trust & safety** is a first-class theme: `trustScore`/`safetyScore`, vouches, belay catch ledgers, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
+- **Trust & safety** is a first-class theme: `trustScore`/`safetyScore`, vouches, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
 - **Crews** are trip parties around a `routeId` with members, proposed `dates`/`dayAcks`, and a "Ready" state computed by `datesAgreed`/`agreedDate` (everyone confirmed + a day everyone acked).
 - **Conditions consensus** is derived, not stored: `buildConsensus(route.activity)` weights reports by reporter trust and recency (`RECENT_DAYS`, `isRecent`) and extracts top condition tags, hazards (`HAZARD_TAGS`), and best months.
 
@@ -424,3 +426,9 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   OUR OWN — facts may come from a source, sentences may not; enrich:apply refuses a string that
   shares 8+ words with a page in the batch's `review.sources`. `rappels` is prose
   and must never be parsed for a count. → [enrichment-prose.md](docs/codebase/enrichment-prose.md)
+- **A trip plan (`routes.itinerary`) is DAY BY DAY or null, never prose** (owner, 2026-11-11, for
+  every route and state): `{ days: [{ title, objective, note, gainFt, lossFt, hours, miles, packLb,
+  schedule }], cal, totalNote }`. A new or converted plan clears `itineraryShapeErrors(it, { complete:
+  true })` in `lib/itineraryShape.js` (every day titled, with hours, miles or gain); every loader and
+  apply script calls it (`check:itinerary-shape`), the live table is `audit:itinerary-shape`, and
+  migration 0409 makes the database refuse a non-object plan. No trip data for a route? Leave it null.
