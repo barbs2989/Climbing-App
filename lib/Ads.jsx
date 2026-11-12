@@ -1,9 +1,9 @@
 // ADS ON ROUTE PAGES, DESKTOP ONLY (owner 2026-11-04: "i would also like to have ads on route pages.
 // So as you scroll down, ads will be on the left panel and right panels" — then "go" to ship it).
 //
-// Two slots, one each side of the page column: a 160×600 skyscraper in the LEFT MARGIN beside the
-// centred block (SideAd; the left sidebar it used to sit in is gone since 2026-11-11, so it is a
-// fixed box under the header, at AD_SIDE_MIN px and up where the margin holds it), and a 300×600
+// Two slots, one each side of the page column: a 160×600 skyscraper in the LEFT PANEL beside the
+// centred column (SideAd; the left panel is as wide as the rail since 2026-11-11, "equal space"; it is a
+// fixed box under the header, at AD_SIDE_MIN px and up), and a 300×600
 // half-page in the RAIL, last in its column. The rail follows the page's scroll (useRailFollow — the
 // owner's "one consistent scroll bar"): the widgets or the map slide away, the ad reaches the panel's
 // top and stays in view. The phone never draws an ad.
