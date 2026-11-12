@@ -812,6 +812,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - The example (seed) list stands down under Near my areas: seed climbers list no areas, and a
     "0 climbers found" header under a real list would be the seed path showing through.
 
+- **THE AREA DISCUSSION IS ON THE AREA PAGE ONLY (owner 2026-11-11, "Remove discussion from area maps").**
+  RoutesTab passes the thread to `DbAreaBrowser` as `areaDiscussion`; the browser draws `{areaDiscussion}` once,
+  right after `<AreaPage …/>`, so it never shows under the Map, the Route finder or Objectives, and it
+  switches in the same render as the screen. `check:area-surfaces` asserts the handoff (gated on
+  `areaCommentTargets.length`) and the single placement; the injection harness covers drawing it under
+  the Map, outside the area-page branch, and dropping the handoff. **Blind spot:** it reads the JSX
+  text, so a slot reached through some other variable name would not be seen.
+
 - **THE AREA PAGE, THE CRAG ROUTE PAGE AND THE LOGBOOK ALL REACH THE LISTING (0300, Step 5).**
   `PartnersHereCard` on every crag-family area page and its ancestors below the state ("12 climbers
   listed here or nearby", up to three rows, a one-tap **List me here / Listed ✓** that writes THIS

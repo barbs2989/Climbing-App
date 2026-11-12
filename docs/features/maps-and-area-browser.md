@@ -8,7 +8,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 1. What it does today
 - **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry (opening on the United States' regions on every width since 2026-11-04), headed on a phone by the catalog search box (`WideSearch` inline, `lib/DesktopShell.jsx`: climbs and places, *Near me* → the map at your position via `jumpToNearReq`, recent words on this device); `AreaPage` shows one area
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb or area here?* (`AddHereFooter`: Add a climb · Add an area), `DbSuggestedClimbs`
-  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
+  "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
+  the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
+  `areaDiscussion` prop, and the browser draws it right after `<AreaPage>`.
   On the website (1024px+) *Don’t see a climb here?*, *Know <area>? Suggest an edit* and *Wrong place? Tell us where* are ONE row of
   question + button cells (`AddHereFooter`'s `cell` mode), not a stack (owner 2026-11-05); the phone keeps the stack. A wall's climb
   list opens its filters from a full-size *Filters* button (BTN_LG), not a chip.
