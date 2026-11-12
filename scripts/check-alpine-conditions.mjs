@@ -151,6 +151,26 @@ eq("'bridges are weak' only where there may be a glacier: yes on a glacier, no o
 eq("...and the card says why, instead of a start beside a warning that the snow starts soft", /day\.noFreeze && floor\)[\s\S]{0,200}didn’t freeze overnight at[\s\S]{0,80}no frozen window to be back down in/.test(readAppFile(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))), true);
 const hot = run(forecast(() => ({ fl: 12000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("the freezing level above the SUMMIT all night is its own warning", has(hot, "fl-above-night"), true);
+/* Owner, 2026-11-12: the freezing-level and refreeze flags only matter where a normal summit day crosses snow or
+   a glacier. A rock route whose text mentions only early-season snow (reviewed: snowInSeason "no") gets none. */
+const dryRock = { snow: "yes", glacier: "no", snowInSeason: "no" };
+const hotDry = run(forecast(() => ({ fl: 12000 })), { kind: "alpinerock", terrain: dryRock, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("an alpine rock route dry in peak season gets NO freezing-level or refreeze flags", ["fl-above-night", "fl-above", "no-refreeze"].filter((x) => has(hotDry, x)), []);
+const warmDayDry = run(forecast((d, h) => ({ fl: h >= 6 ? 13000 : 5000 })), { kind: "scramble", terrain: dryRock, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("...nor a dry-in-season scramble on a warm afternoon", has(warmDayDry, "fl-above"), false);
+const hotSnowRock = run(forecast(() => ({ fl: 12000 })), { kind: "alpinerock", terrain: { snow: "yes", glacier: "no", snowInSeason: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
+eq("...while one that crosses snow in season keeps them", [has(hotSnowRock, "fl-above-night"), has(hotSnowRock, "no-refreeze")], [true, true]);
+eq("'unsure' (no snowInSeason mark) keeps the snow legs; a dry mark never touches glacier or alpine ice", [A.hasSnowLegs("alpinerock", { snow: "yes" }), A.hasSnowLegs("alpinerock", dryRock), A.hasSnowLegs("glacier", dryRock), A.hasSnowLegs("alpineice", dryRock)], [true, false, true, true]);
+{
+  const { routeTerrain } = await import(pathToFileURL(path.join(ROOT, "lib", "terrain.js")).href);
+  const { SNOW_DRY_IN_SEASON } = await import(pathToFileURL(path.join(ROOT, "lib", "snowInSeasonDry.js")).href);
+  const anyDry = [...SNOW_DRY_IN_SEASON][0];
+  const lingering = { discipline: "alpine", grade: "5.9", beta: "The approach gully holds snow into July; carry an ice axe early season." };
+  eq("routeTerrain: a reviewed-dry route reads snowInSeason 'no'; an unreviewed one follows snow", [anyDry ? routeTerrain(Object.assign({ id: anyDry }, lingering)).snowInSeason : "no", routeTerrain(Object.assign({ id: "zz_not_reviewed" }, lingering)).snowInSeason], ["no", "yes"]);
+  const snowOf = (beta) => routeTerrain({ discipline: "alpine", grade: "5.9", beta }).snow;
+  eq("'névé' is a word, not a substring: 'never', 'whenever', 'Nineveh' are not snow; 'névé' and 'neve' are", ["You never need a rack.", "Whenever it rains.", "Nineveh", "Firm névé to the col.", "Hard neve."].map((s) => snowOf(s) === "yes"), [false, false, false, true, true]);
+  eq("...and a route whose own text shows a glacier is never read dry, even if listed", anyDry ? routeTerrain({ id: anyDry, discipline: "alpine", beta: "Cross the glacier to the col." }).snowInSeason : "yes", "yes");
+}
 const frozen = run(forecast(() => ({ fl: 4000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("snow that never thaws has no softening hour, so the forecast sets no start...", [frozen.softAt, frozen.start && frozen.start.forecast], [null, null]);
 /* PRACTICE (owner, 2026-10-16: Easton read "leave camp by 7:30 AM" on a cold Saturday, "no one leaves camp at
