@@ -244,6 +244,7 @@ npm run enrich:apply       # write approach_variants / climbing_route / bivy (--
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:facts-pencil-open # a facts card/section pencil opens at an open field; a locked grade never locks empty facts (in build)
 npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
