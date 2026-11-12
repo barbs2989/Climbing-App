@@ -37710,3 +37710,73 @@ bad value above is accounted for. The live catalog's in-scope count is unchanged
 
 Next batch will continue id-ascending from `wa_mount_stuart_west_ridge` (the next in-scope id
 after it is `wa_mount_teneriffe_kamikaze_trail`).
+
+## 2026-11-12 — Pass 8, Batch 527
+
+Ten routes across five peaks, continuing id-ascending from `wa_mount_stuart_west_ridge`: Mount
+Teneriffe (Kamikaze Trail, Standard Route), Mount Terror (North Face/North Buttress, East
+Ridge/Southeast Face, Stoddard Buttress, West Ridge), Mount Thomson (West Ridge), Mount Tom
+(Glacier/Scramble Route), Mount Torment (South Ridge, Torment-Forbidden Traverse).
+
+**One confirmed error, fixed in `audits/sql/2026-11-12-batch-527.sql`, pre-flighted clean with
+`check:sql`:** `wa_mount_terror_west_ridge`'s `grade`/`rock_grade` stored "5.6" (`grade_num` 6),
+but this is the standard, easiest way up the peak and four independent sources describe it as
+much easier: SummitPost's Mount Terror page rates it "Class 5.0," FastestKnownTime calls it "low
+fifth class," Steph Abegg's Southern Pickets trip report describes the ridge crest as mostly
+Class 3 with one 5th-class variation to reach it, and a 2006 Sverdina trip report likewise
+describes mostly 3rd/4th-class scrambling. No source supports 5.6. Corrected to "5.0"
+(`grade_num` 0). mountainproject.com and summitpost.org again could not be fetched directly this
+run (same network constraint as prior batches), so this rests on WebSearch's synthesized
+snippets of those pages/reports rather than the primary text — but four independently-written
+accounts agree, which is the same bar prior batches have used under this constraint.
+
+**Flagged for human review (not SQL'd — sources conflict):** `wa_mount_terror_west_ridge`'s own
+`fa` ("William Degenhardt, James Martin, Herb Strandberg, 1932") matches a Northwest Mountain
+Journal account almost exactly (Degenhardt and Strandberg climbed the neighboring peak later
+named Degenhardt in 1931, then returned the next year *with James Martin* to climb Terror
+itself) — but Wikipedia's Mount Terror article and an NPS North Cascades historic resource study
+both credit the 1932 first ascent to only Degenhardt and Strandberg, with no third climber. The
+area's own `blurb` for `wa_mount_terror` already matches the two-climber version, so the route
+row and its parent area now state different FA parties for the same climb and neither can be
+confirmed over the other from what's available online.
+
+**Independently reconfirmed clean:** Mount Teneriffe's area elevation (4,788 ft) and coordinate
+(47.5087156, -121.6959398) match Wikipedia; the Standard Route's own distance/gain (10.46
+km/6.5 mi one-way, 3,800 ft) is internally consistent with its own approach and descent prose
+(which independently add to ~6.5-7 mi and state "3,800 ft of loss over 6.5 miles") and with a
+Mountaineers club route description citing the same 3,800 ft gain to the 4,788 ft summit; the
+Kamikaze Trail's shorter one-way distance (6.44 km/4.0 mi) likewise matches its own prose. Mount
+Terror's area elevation (8,151 ft) and coordinate (48.7748, -121.2993) match Wikipedia/Peakbagger;
+the North Face/North Buttress's FA ("Charles Bell, Ed Cooper, David Hiser, and Mike Swayne,
+1961") matches the AAC's own first-ascent listing and the area's blurb exactly; Stoddard
+Buttress's solo FA (John Stoddard, July 16, 1984) was not independently found but is not
+contradicted by any source checked. Mount Thomson's area elevation (6,554 ft) and coordinate
+(47.4723007, -121.360643) match Wikipedia; the West Ridge's FA (Fred Beckey, Helmy Beckey, Robert
+Craig & William Ford, 1940) matches a SummitPost comment, with no conflicting account found (the
+grade field was not flagged here — a Mountaineers route description's "Class 4/low Class 5" for
+the whole outing is consistent with a stored technical pitch grade higher than the walk-up
+sections). Mount Tom's area elevation (7,076 ft) matches Wikipedia, TopoQuest (7,053 ft) and
+ListsOfJohn's LiDAR figure (7,085 ft) closely enough to be the same measurement within normal
+survey variance; its FA credit (Edmond S. Meany's party, 1914, first-to-summit Thomas Martin)
+matches the area's own blurb exactly. Mount Torment's area elevation (8,120+ ft) and coordinate
+(48.5126, -121.0768) match Wikipedia/SummitPost; the South Ridge's FA (Ed Cooper and Walter
+Sellers, July 1958) and the Torment-Forbidden Traverse's identical FA credit both match Wikipedia,
+SummitPost and a 1959 AAJ account (which gives the precise date July 26, 1958 and the alternate
+spelling "Buck Seller") — these are route-specific first ascents distinct from, and not in
+conflict with, the peak's own 1946 first ascent (Jack Schwabland and Herb Staley) recorded in the
+area's blurb. The South Ridge's grade (5.4) matches Mountain Project's listing exactly per
+WebSearch. Torment-Forbidden Traverse's `high_point_ft` (8,815 ft) correctly reflects that the
+traverse finishes over Forbidden Peak's summit, not Torment's (8,120 ft) — Forbidden's elevation
+matches the commonly cited 8,815 ft figure.
+
+Not independently checked this batch: individual hazard/watch_out lists, permit fee figures
+beyond Mount Thomson's and Mount Tom's standard wilderness-permit framing, and the detailed
+pitch-by-pitch descent prose on the four Terror routes (which share near-identical wording for
+the common West Ridge descent — expected, since all four routes descend the same way, not a
+sign of copy-paste error). No route-level coordinates on any of the ten rows (typical bare
+shape); each peak's own area-level coordinate was the one checked. `total_wa_alpine_or_mountaineering_tagged`
+grew from 853 to 857 (4 new alpine/mountaineering tags), but all 4 landed on crag-type areas, not
+peaks, so the in-scope count is unchanged at 751.
+
+Next batch will continue id-ascending from `wa_mount_torment_torment_forbidden_traverse` (the
+next in-scope id after it is `wa_mount_townsend_standard`).
