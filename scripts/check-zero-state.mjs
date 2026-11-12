@@ -82,7 +82,7 @@ const ZERO_LANDMARKS = {
   // count -- a RegExp landmark, still matched against the WHOLE line. For the same reason the
   // empty copy ("No requests, invites, unread messages, climbs to confirm or alerts.") is
   // unreachable at zero and is not asserted here; the near-duplicate below is still forbidden.
-  "tab:today": ["Explore climbs", "Find partners", "Find crews", /^Alerts( · \d+ new)?$/],
+  "tab:today": ["Explore climbs", "Find partners", "Find crews", /^Notifications( · \d+ new)?$/],
 };
 
 // Controls that must NOT be offered at zero, because acting on them produces or shares

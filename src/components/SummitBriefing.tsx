@@ -126,14 +126,14 @@ export default function SummitBriefing({ area, routes, uElev, uDistMi, C }: Summ
   }, [routes, area.elevation_ft, uElev, uDistMi]);
 
   if (!rows || !rows.length) return null;
-  const lbl = { fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5 };
+  const lbl = { fontSize: 11, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.5 };
   return (
     <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 15px", marginBottom: 14 }}>
       <CardHead C={C} style={{ marginBottom: 10 }}>ACROSS EVERY ROUTE HERE</CardHead>
       {rows.map(([label, value, note]) => (
         <div key={label} style={{ marginBottom: 10 }}>
           <div style={lbl}>{label}</div>
-          <div style={{ fontSize: 13.5, color: C.text, fontWeight: 600, marginTop: 3, lineHeight: 1.45 }}>{value}</div>
+          <div style={{ fontSize: 15, color: C.text, fontWeight: 700, marginTop: 3, lineHeight: 1.4 }}>{value}</div>
           {note ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>{note}</div> : null}
         </div>
       ))}

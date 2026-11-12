@@ -15,7 +15,7 @@ import { ROUTE_TRACKS_CAP } from "./db";
 import { MAX_SHOWN_TRACKS, SEASONS, TRACK_SORTS, fmtDuration, inSeason, sortTracks } from "./routeTracks.js";
 import LoadingRows from "../src/components/LoadingRows.tsx";
 
-const SH = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted, marginBottom: 8 };
+const SH = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 8 };
 
 /**
  * @param {{ rows: Array<{id:string,user_id:string,date:string,stats:{km:number,gainFt:number|null,secs:number|null,timed:boolean}}>,

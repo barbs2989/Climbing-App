@@ -18,7 +18,7 @@
 //
 // The service key bypasses RLS, so seeding proves nothing about policies -- it only puts each
 // screen in a state worth looking at. Triggers still fire: columns that default to auth.uid() are
-// set explicitly, and belay_catches.filed_by is patched after insert (its trigger stamps NULL).
+// set explicitly.
 
 import { writeFileSync, readFileSync, existsSync, unlinkSync } from "node:fs";
 import { dirname, join } from "node:path";

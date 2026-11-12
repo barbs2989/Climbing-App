@@ -7,6 +7,7 @@ import { useCondPrefs, scorePrefs } from "./CondPrefs.jsx";
 import { routeRock } from "./rockType.js";
 import { POP_BACK, POP_CHIP_X } from "./popupChrome.js";
 import { discLabel } from "./discLabels";
+import { seasonShort, routeSeasonShort } from "./seasonText.js";
 
 /* COMPARE ROUTES (desktop website, owner 2026-10-22): "+ Compare" on a route page adds it to a tray
    pinned at the bottom of the window (up to four); the tray opens a side-by-side table. Every cell
@@ -59,7 +60,9 @@ const ROWS = [
   ["Approach", r => { const d = effDistKm(r); return d != null ? uDist(d) + (effDistIsWholeTrip(r) ? " whole outing" : " one way") : null; }],
   ["Gain", r => { const g = routeAscentFt(r); return g != null ? "↑" + uElev(g) : null; }],
   ["Aspect", r => r.aspect || r.face || (r._dbArea && r._dbArea.aspect) || null],
-  ["Season", r => r.season],
+  // The header strap's own reading (routeSeasonShort: the route's window, else its area's), after the
+  // route's researched best_season. Reading raw `season` left DB rows blank: 314k of 315k carry none.
+  ["Season", r => seasonShort(r.season) || seasonShort(r.bestSeason) || routeSeasonShort(r) || null],
   ["Rating", r => r.stars != null && Number(r.stars) > 0 ? Number(r.stars).toFixed(1) + " ★" : null],
   ["Hazards", r => Array.isArray(r.hazards) && r.hazards.length ? r.hazards.join(" · ") : null],
 ];
@@ -85,8 +88,8 @@ export function CompareView({ routes, onClose, onRemove, onOpenRoute }) {
       <table style={{ width: "100%", borderCollapse: "collapse", tableLayout: "fixed", color: C.text }}>
         <thead><tr><th style={{ ...cell, width: 96 }} />{routes.map(r => <th key={r.id} scope="col" style={{ ...cell, fontSize: 14 }}><button onClick={() => onOpenRoute(r)} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 14, fontWeight: 800, cursor: "pointer", textAlign: "left" }}>{r.name}</button><div><button onClick={() => onRemove(r.id)} style={{ background: "none", border: "none", padding: "4px 0 0", color: C.textMuted, fontSize: 12, cursor: "pointer" }}>Remove</button></div></th>)}</tr></thead>
         <tbody>
-          {ROWS.map(([label, get]) => <tr key={label}><th scope="row" style={{ ...cell, color: C.textMuted, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</th>{routes.map(r => { const v = get(r); return <td key={r.id} style={cell}>{v == null || v === "" ? <span style={{ color: C.textMuted }}>—</span> : v}</td>; })}</tr>)}
-          <tr><th scope="row" style={{ ...cell, color: C.textMuted, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>Best day</th>{routes.map(r => <td key={r.id} style={cell}><BestDayCell route={r} /></td>)}</tr>
+          {ROWS.map(([label, get]) => <tr key={label}><th scope="row" style={{ ...cell, color: C.label, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</th>{routes.map(r => { const v = get(r); return <td key={r.id} style={cell}>{v == null || v === "" ? <span style={{ color: C.textMuted }}>—</span> : v}</td>; })}</tr>)}
+          <tr><th scope="row" style={{ ...cell, color: C.label, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>Best day</th>{routes.map(r => <td key={r.id} style={cell}><BestDayCell route={r} /></td>)}</tr>
         </tbody>
       </table>
     </div>
