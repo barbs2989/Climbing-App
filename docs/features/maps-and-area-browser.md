@@ -11,6 +11,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
   the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
   `areaDiscussion` prop, and the browser draws it right after `<AreaPage>`.
+  On the website (1024px+) *Don’t see a climb here?*, *Know <area>? Suggest an edit* and *Wrong place? Tell us where* are ONE row of
+  question + button cells (`AddHereFooter`'s `cell` mode), not a stack (owner 2026-11-05); the phone keeps the stack. A wall's climb
+  list opens its filters from a full-size *Filters* button (BTN_LG), not a chip.
   On the website (1024px+) each child's card carries a five-bar **mini grade chart** (`WallGradeBars`, competitor review item 13,
   2026-11-05): the child's graded climbs banded on its main grading scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, WI, M, aid and
   class scales have their own five bands), lowest band on the left, read in ONE call for the whole list by `useAreaChildrenGradeCounts`

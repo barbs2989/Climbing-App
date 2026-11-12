@@ -79,7 +79,7 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
     setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
   };
   const stat = { flex: 1, minWidth: 110, background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 12px" };
-  const lbl = { fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.4 };
+  const lbl = { fontSize: 11, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.4 };
   // Portalled to <body>: the route page renders inside #appscroll, whose stacking would put this under the app header (check:overlays).
   return createPortal(<div role="dialog" aria-modal="true" aria-label="Draw the approach" style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain", maxWidth: 520, margin: "0 auto", boxSizing: "border-box" }}>
     <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 1100 }}>

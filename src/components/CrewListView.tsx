@@ -66,7 +66,7 @@ function QuickOpenCrew({ avail, activeCrews, formCrew }: { avail: CrewListViewRo
   const ok = !!rid && !!day && day >= min;
   const sel = { minHeight: 40, boxSizing: "border-box" as const, padding: "0 10px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontFamily: "inherit", minWidth: 0 };
   return <form onSubmit={e => { e.preventDefault(); if (!ok) return; formCrew(rid, [], { date: day }); setRid(""); setDay(""); }} aria-label="Post an open crew" style={{ display: "grid", gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr) auto", gap: 8, alignItems: "center", marginTop: 12, padding: "10px 12px", background: C.card, border: "1px solid " + C.border, borderRadius: 12 }}>
-    <div style={{ gridColumn: "1 / -1", fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted }}>Post an open crew</div>
+    <div style={{ gridColumn: "1 / -1", fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label }}>Post an open crew</div>
     <select aria-label="Which climb" value={rid} onChange={e => setRid(e.target.value)} style={sel}><option value="">Which climb?</option>{free.map(r => <option key={r.id} value={r.id}>{r.name}</option>)}</select>
     <input type="date" aria-label="Which day" value={day} min={min} onChange={e => setDay(e.target.value)} style={sel} />
     <button type="submit" disabled={!ok} style={{ minHeight: 40, padding: "0 14px", borderRadius: 10, border: "1px solid " + (ok ? C.blueDim : C.border), background: ok ? C.blueBg : C.surface, color: ok ? C.onSolid : C.textMuted, fontSize: 13, fontWeight: 700, cursor: ok ? "pointer" : "default", whiteSpace: "nowrap" }}>Post</button>

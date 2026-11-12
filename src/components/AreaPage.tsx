@@ -1,5 +1,5 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, type CSSProperties } from "react";
 import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, useScopedWishlistRoutes, submitAreaPlacementClaim } from "../../lib/db";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
 import AreaActionRow from "./AreaActionRow.tsx";
@@ -202,6 +202,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const inlineDiscs: string[] = stats.data && Array.isArray(stats.data.by_disc) ? stats.data.by_disc.filter((d: { disc: string; n: number }) => d && Number(d.n) > 0 && discOptions.includes(d.disc)).map((d: { disc: string }) => d.disc) : [];
   // The mini grade chart on each child's card (item 13, 2026-11-04) is a website thing: one call for
   // the whole list, only where there is a list to draw it on. The phone card is unchanged.
+  // The desktop "add / edit / wrong place" row's cells (see the row under the climb list).
+  // A state, country or the world has its place fixed by the map: no "Wrong place?" (owner, 2026-11-11).
+  const fixedPlace = ["world", "country", "state"].includes(area.area_type);
+  const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
+  const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
+  const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
   const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && chartable && isLeaf === false ? area.id : null);
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
   const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
@@ -381,20 +387,35 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           2026-10-23): a climber who has just read to the end of the list and not found their climb is the one
           who adds it. It is NOT gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
       <div ref={listEndRef} />
-      <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
+      {/* DESKTOP: ONE ROW, NOT A STACK (owner 2026-11-05). On a monitor the three prompts sat one under another
+          as label-wide buttons down the left of the column; side by side, each is its question with its button
+          under it. The phone keeps the stack: a 360px screen has no room for three. */}
+      {wide ? <div style={{ display: "flex", flexWrap: "wrap", alignItems: "stretch", gap: "12px 14px", marginTop: 10, marginBottom: 16 }}>
+        <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} cell C={C} />
+        {editOn ? <div style={cellBox}>
+          <div style={cellQ}>{"Know " + area.name + "?"}</div>
+          <button onClick={() => editOn(null)} aria-label={"Suggest an edit to " + area.name} style={{ ...cellBtn, border: "1px dashed " + C.border, color: C.blue }}>{"Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span></button>
+        </div> : null}
+        {!fixedPlace ? <div style={cellBox}>
+          <div style={cellQ}>{"Wrong place?"}</div>
+          <button onClick={() => setWrongOpen(true)} aria-label={"Tell us where " + area.name + " belongs"} style={{ ...cellBtn, border: "1px solid " + C.border, color: C.textSub }}>{"Tell us where"}</button>
+        </div> : null}
+      </div> : <>
+        <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
 
-      {editOn ? (
-        <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
-          {"Know " + area.name + "? Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span>
-        </button>
-      ) : null}
+        {editOn ? (
+          <button onClick={() => editOn(null)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+            {"Know " + area.name + "? Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span>
+          </button>
+        ) : null}
 
-      {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it.
-          Not on a state/province, country or the world (owner, 2026-11-11): their place is fixed by the map,
-          so "Tell us where Alabama belongs" made no sense. */}
-      {!["world", "country", "state"].includes(area.area_type) ? <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
-        {"Wrong place? Tell us where " + area.name + " belongs"}
-      </button> : null}
+        {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it.
+            Not on a state/province, country or the world (owner, 2026-11-11): their place is fixed by the map,
+            so "Tell us where Alabama belongs" made no sense. */}
+        {!fixedPlace ? <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
+          {"Wrong place? Tell us where " + area.name + " belongs"}
+        </button> : null}
+      </>}
       {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note: string, place: string) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
       {/* Tail order is the owner's (2026-10-15): suggested climbs, then nearby peaks, then Top contributors LAST —
