@@ -174,7 +174,6 @@ export const OVERLAY_PAYLOADS = {
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
   connectModal: { expr: "CLIMBERS[0]" },
   giveVouchWith: { expr: "CLIMBERS[0]" },
-  logCatchWith: { expr: "CLIMBERS[0]" },
   mutualModal: { expr: "CLIMBERS[0]" },
   profileModal: { expr: "CLIMBERS[0]" },
   // The `?list=<uuid>` link viewer (0199). Its one setter passes the uuid read from the address bar.
@@ -679,7 +678,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
       // `?mt=<profile|activity>` picks the Profile screen's tab, so a walk can reach the sections
-      // that left its default view (the catch record, the logbook and the Year in Climbing banner live on Activity).
+      // that left its default view (the logbook and the Year in Climbing banner live on Activity).
       "var mt=p.get('mt');if(mt)setMeTab(mt);" +
       // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
       // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did

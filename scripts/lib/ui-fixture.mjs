@@ -111,6 +111,23 @@ async function insert(table, row, select = "*") {
   return body[0];
 }
 
+// A crew's CREATOR, seated confirmed. Since 0408 the crews_creator_joins trigger seats the creator
+// itself, so a plain insert here is a duplicate (409, crew_members_pkey) and the whole walk errored
+// before checking anything. ON CONFLICT DO NOTHING works with the trigger and without it, and the
+// read-back keeps the guarantee the plain insert gave: the creator IS a confirmed member.
+async function seatCreator(crewId, userId) {
+  const seat = await rest("crew_members?on_conflict=crew_id,user_id", {
+    method: "POST",
+    headers: { Prefer: "return=minimal,resolution=ignore-duplicates" },
+    body: JSON.stringify({ crew_id: crewId, user_id: userId, status: "confirmed", invited_by: userId }),
+  });
+  if (seat.status >= 300) throw new Error(`seed crew_members (creator) failed (${seat.status}): ${JSON.stringify(seat.body)}`);
+  const row = await rest(`crew_members?crew_id=eq.${crewId}&user_id=eq.${userId}&select=status`);
+  if (row.status !== 200 || !Array.isArray(row.body) || row.body.length !== 1 || row.body[0].status !== "confirmed") {
+    throw new Error(`the crew's creator is not a confirmed member after seating (${row.status}): ${JSON.stringify(row.body)}`);
+  }
+}
+
 async function createUser(tag, name) {
   // A per-run suffix keeps two concurrent runs (this repo routinely has parallel
   // sessions) from colliding on the unique email index.
@@ -236,9 +253,8 @@ export async function createFixture(log = () => {}) {
       cap: 4,
     });
     track("crews", `id=eq.${crew.id}`);
-    for (const u of [owner, mate]) {
-      await insert("crew_members", { crew_id: crew.id, user_id: u.id, status: "confirmed", invited_by: owner.id });
-    }
+    await seatCreator(crew.id, owner.id);
+    await insert("crew_members", { crew_id: crew.id, user_id: mate.id, status: "confirmed", invited_by: owner.id });
     log(`  crew ${crew.id.slice(0, 8)} with 2 confirmed members`);
 
     // A SECOND crew, owned by the MATE, with the owner left INVITED rather than confirmed.
@@ -267,7 +283,7 @@ export async function createFixture(log = () => {}) {
       cap: 3,
     });
     track("crews", `id=eq.${inviteCrew.id}`);
-    await insert("crew_members", { crew_id: inviteCrew.id, user_id: mate.id, status: "confirmed", invited_by: mate.id });
+    await seatCreator(inviteCrew.id, mate.id);
     await insert("crew_members", { crew_id: inviteCrew.id, user_id: owner.id, status: "invited", invited_by: mate.id });
     log(`  crew ${inviteCrew.id.slice(0, 8)} owned by the mate, with the owner INVITED and not confirmed`);
 
@@ -287,7 +303,7 @@ export async function createFixture(log = () => {}) {
     track("crews", `id=eq.${areaCrew.id}`);
     // Both CONFIRMED, so the session renders as a crew CARD on the Crews view — the surface that
     // prints the place name, the Session steps and the roster — rather than as an invite under Requests.
-    await insert("crew_members", { crew_id: areaCrew.id, user_id: mate.id, status: "confirmed", invited_by: mate.id });
+    await seatCreator(areaCrew.id, mate.id);
     await insert("crew_members", { crew_id: areaCrew.id, user_id: owner.id, status: "confirmed", invited_by: mate.id });
     log(`  AREA crew ${areaCrew.id.slice(0, 8)} at ${AREA_CREW_AREA_ID} (sport) owned by the mate, both CONFIRMED`);
 
