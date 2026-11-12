@@ -86,8 +86,19 @@ async function livePublishedSha() {
 async function staleness(baseSha, headSha) {
   try {
     const cmp = await api(`repos/${REPO}/compare/${baseSha}...${headSha}`);
-    const oldest = (cmp.commits || [])[0];
-    if (!oldest || !cmp.ahead_by) return null;
+    const commits = cmp.commits || [];
+    if (!commits.length || !cmp.ahead_by) return null;
+    // The clock must be WHEN A COMMIT LANDED ON MAIN, not when it was written. commits[0] is
+    // the oldest by topology, which after a merge commit is usually a PR-branch commit with
+    // its own (older) committer date. Measured 2026-11-11: 7931d8e was written at 22:38 but
+    // only reached main through a merge at 23:55; this read it as "waited 83 min" while
+    // production was 2 minutes old and a deploy was running, and emailed a false alarm.
+    // Walk main's FIRST-PARENT chain back from the tip instead: each of those commits was
+    // created on main (a merge or a squash), so its committer date is its landing time.
+    const bySha = new Map(commits.map((c) => [c.sha, c]));
+    let oldest = null;
+    for (let c = bySha.get(headSha) || commits[commits.length - 1]; c; c = bySha.get(c.parents?.[0]?.sha)) oldest = c;
+    oldest = oldest || commits[0];
     return {
       behind: cmp.ahead_by,
       sha: oldest.sha,
