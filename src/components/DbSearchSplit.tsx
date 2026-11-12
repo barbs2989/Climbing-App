@@ -5,8 +5,11 @@ import { SL } from "../../lib/areaBrowserParts.jsx";
 import { clickable } from "../../lib/clickable";
 import LoadingRows from "./LoadingRows.tsx";
 import EmptyState from "./EmptyState.tsx";
-import { ATYPE, rowGrade } from "../../lib/areaBrowserShared.js";
+import { ATYPE } from "../../lib/areaBrowserShared.js";
 import type { CSSProperties, RefObject } from "react";
+import { hlMatch } from "../../ClimbMatchCore.jsx";
+import RouteRow from "./RouteRow.tsx";
+import type { RouteRowRoute } from "./RouteRow.tsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 export interface DbSearchSplitRoute { id: string; name: string; area_id: string; [column: string]: unknown }
@@ -71,7 +74,7 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
               {areaHits.map((a: DbSearchSplitArea) => (
                 <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{a.name}</div>
+                    <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{hlMatch(a.name, qq)}</div>
                     <div style={{ fontSize: 11, color: C.textMuted, overflowWrap: "anywhere" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "")}</div>
                   </div>
                   {a.route_count > 0 ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count}</span> : null}
@@ -83,14 +86,10 @@ export default function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onM
             lr ? <LoadingRows C={C} label="Loading…" style={{padding: "14px 4px"}}/>
             : er ? <div style={{ fontSize: 13, color: C.red, padding: "14px 4px", textAlign: "center" }}>Couldn't search routes.</div>
             : !routeHits || !routeHits.length ? <EmptyState C={C} icon="search">No routes match.</EmptyState>
+            // The same row every other route list draws (discipline glyph, Classic, your Done/Saved, grade),
+            // with the hit's crag as its place and the typed text in bold, as the seed search showed it.
             : routeHits.map((r: DbSearchSplitRoute) => (
-              <div key={r.id} {...clickable(() => onOpenRoute(r))} style={row}>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 13.5, color: C.text, overflowWrap: "anywhere" }}>{r.name}</div>
-                  {hitAreaNames && hitAreaNames[r.area_id] ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 1, overflowWrap: "anywhere" }}>{hitAreaNames[r.area_id]}</div> : null}
-                </div>
-                <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, maxWidth: "38%", overflowWrap: "anywhere" }}>{rowGrade(r)}</span>
-              </div>
+              <RouteRow key={r.id} r={r as DbSearchSplitRoute & RouteRowRoute} onOpen={() => onOpenRoute(r)} C={C} highlight={qq} areaName={hitAreaNames ? hitAreaNames[r.area_id] || null : null} />
             ))
           )}
         </div>
