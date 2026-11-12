@@ -20,10 +20,12 @@ import SummitBriefing from "./SummitBriefing.tsx";
 import LoadingRows from "./LoadingRows.tsx";
 import { clickable } from "../../lib/clickable";
 import { discLabel } from "../../lib/areaDiscLabel.js";
+import { gradeNumFor, gradeSystemForDiscipline } from "../../lib/grade.js";
 import RouteRow from "./RouteRow.tsx";
 import AddHereFooter from "./AddHereFooter.tsx";
 import AreaWrongSpot from "../../lib/AreaWrongSpot";
 import DbSuggestedClimbs from "./DbSuggestedClimbs.tsx";
+import AreaLatestReports from "./AreaLatestReports.tsx";
 import NearbyPeaks from "./NearbyPeaks.tsx";
 import type { ComponentType, ReactNode } from "react";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
@@ -93,9 +95,23 @@ const PARTNER_CARD_TYPES = ["region", "range", "canyon", "crag", "wall"];
 // on the wall, the default, or by name). `sort_order` is the left-to-right position; a climb with no
 // position stays LAST in both wall orders, by name, rather than being guessed into the line.
 // "By discipline" groups the list under one heading per discipline (in DISCIPLINES order), each A → Z.
-const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["az", "A → Z"], ["za", "Z → A"], ["disc", "By discipline"]];
+// Easiest / Hardest and Best first are the seed wall list's Grade and Stars sorts (seed-vs-real audit,
+// 2026-11-11). A grade is only comparable inside its own system, so a mixed list groups by system
+// (in DISCIPLINES order) before grade; an ungraded climb sorts last. "Best" is the classics ranking
+// the page already uses (the classic flag, then classic_score / guide stars) — not the raw star
+// average, which only 6 of 205k routes carry.
+const AREA_LIST_SORTS = [["lr", "Left → right"], ["rl", "Right → left"], ["easy", "Easiest"], ["hard", "Hardest"], ["best", "Best first"], ["az", "A → Z"], ["za", "Z → A"], ["disc", "By discipline"]];
 function sortAreaRoutes(routes: AreaPageRoute[], key: string) {
   const byName = (a: AreaPageRoute, b: AreaPageRoute) => String(a.name || "").localeCompare(String(b.name || ""));
+  if (key === "easy" || key === "hard") {
+    // Grouped by GRADE SYSTEM, not discipline: trad and sport both read YDS and interleave by grade.
+    const SYS_ORDER = ["yds", "v", "wi", "m", "aid", "class"];
+    const sysRank = (r: AreaPageRoute) => { const i = SYS_ORDER.indexOf(String(gradeSystemForDiscipline(r.discipline) || "")); return i < 0 ? 99 : i; };
+    const num = (r: AreaPageRoute) => gradeNumFor(r.grade || r.rock_grade || r.ice_grade || r.alpine_grade, r.discipline);
+    const dir = key === "hard" ? -1 : 1;
+    return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => { const na = num(a), nb = num(b); return Number(na == null) - Number(nb == null) || sysRank(a) - sysRank(b) || (na != null && nb != null ? dir * (na - nb) : 0) || byName(a, b); });
+  }
+  if (key === "best") return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => (b.classic ? 1 : 0) - (a.classic ? 1 : 0) || classicQuality(b) - classicQuality(a) || byName(a, b));
   if (key === "az") return [...routes].sort(byName);
   if (key === "za") return [...routes].sort((a: AreaPageRoute, b: AreaPageRoute) => byName(b, a));
   if (key === "disc") {
@@ -154,6 +170,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const [wallFilterOpen, setWallFilterOpen] = useState(false);
   const [wallDisc, setWallDisc] = useState("");
   const [wallStars, setWallStars] = useState(0);
+  // Single pitch / multi-pitch: the seed wall list's Multipitch filter. Read off the stored pitch count.
+  const [wallPitch, setWallPitch] = useState("");
   // The row in the drill stack is a snapshot of a CHILD row read when its parent was opened. An
   // agreed edit rewrites the areas row on the server (0304) and refreshes ["area", id] — so the
   // page reads the live row over the snapshot, or a climber's own fill would never show.
@@ -317,12 +335,16 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                 // right or right to left order ... with bouldering"), so a list of problems is never
                 // offered one, and a problem never counts as a climb missing its place on the wall.
                 const placed = routes.filter(r => r.sort_order != null && r.discipline !== "bouldering").length;
-                const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] === "az" || o[0] === "za" || o[0] === "disc");
+                const opts = placed ? AREA_LIST_SORTS : AREA_LIST_SORTS.filter(o => o[0] !== "lr" && o[0] !== "rl");
                 const key = opts.some(o => o[0] === listSort) ? listSort : opts[0][0];
                 const discsHere = [...new Set(routes.map(r => r.discipline).filter(Boolean))];
-                const shownAll = routes.filter(r => (!wallDisc || r.discipline === wallDisc) && (!wallStars || !(r.stars > 0) || r.stars >= wallStars));
+                // A climb with no stored pitch count is never guessed into either side of the pitch filter.
+                const pitchOk = (r: AreaPageRoute) => !wallPitch || (wallPitch === "multi" ? r.pitches > 1 : r.pitches === 1);
+                const roped = routes.filter(r => r.discipline !== "bouldering" && r.discipline !== "scrambling");
+                const pitchChoice = roped.some(r => r.pitches > 1) && roped.some(r => r.pitches === 1);
+                const shownAll = routes.filter(r => (!wallDisc || r.discipline === wallDisc) && (!wallStars || !(r.stars > 0) || r.stars >= wallStars) && pitchOk(r));
                 const unplaced = (key === "lr" || key === "rl") ? shownAll.filter(r => r.sort_order == null && r.discipline !== "bouldering").length : 0;
-                const filtersOn = (wallDisc ? 1 : 0) + (wallStars ? 1 : 0);
+                const filtersOn = (wallDisc ? 1 : 0) + (wallStars ? 1 : 0) + (wallPitch ? 1 : 0);
                 const wallChip = (on: boolean) => ({ ...CHIP, flexShrink: 0, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" });
                 return <>
                   {routes.length > 1 ? <div style={{ marginBottom: 8 }}>
@@ -335,6 +357,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
                       <div role="group" aria-labelledby="wall-filter-disc" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3, marginBottom: 10 }}>{[["", "All"], ...discsHere.map(d => [d, discLabel(d)])].map(o => <button key={o[0] || "all"} onClick={() => setWallDisc(o[0])} aria-pressed={wallDisc === o[0]} style={wallChip(wallDisc === o[0])}>{o[1]}</button>)}</div>
                       <div id="wall-filter-stars" style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6 }}>Stars</div>
                       <div role="group" aria-labelledby="wall-filter-stars" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[[0, "Any"] as [number, string], [2, "2+ stars"] as [number, string], [3, "3+ stars"] as [number, string]].map(o => <button key={o[0]} onClick={() => setWallStars(o[0])} aria-pressed={wallStars === o[0]} style={wallChip(wallStars === o[0])}>{o[1]}</button>)}</div>
+                      {pitchChoice || wallPitch ? <>
+                        <div id="wall-filter-pitch" style={{ fontSize: 11.5, color: C.textMuted, margin: "10px 0 6px" }}>Pitches</div>
+                        <div role="group" aria-labelledby="wall-filter-pitch" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 3 }}>{[["", "Any"], ["single", "Single pitch"], ["multi", "Multi-pitch"]].map(o => <button key={o[0] || "any"} onClick={() => setWallPitch(o[0])} aria-pressed={wallPitch === o[0]} style={wallChip(wallPitch === o[0])}>{o[1]}</button>)}</div>
+                      </> : null}
                       <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>{"Climbs nobody has rated yet stay in the list when a star minimum is set."}</div>
                     </div> : null}
                   </div> : null}
@@ -387,6 +413,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {/* Tail order is the owner's (2026-10-15): suggested climbs right under "Don't see a climb",
           then nearby peaks, then Top contributors LAST — App mounts the area Discussion directly
           after this component, so Top contributors sits right above it and Discussion ends the page. */}
+      <AreaLatestReports area={area} onOpenRoute={onOpenRoute} C={C} />
       <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
 
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
