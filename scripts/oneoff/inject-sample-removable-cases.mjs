@@ -47,9 +47,9 @@ const CASES = [
     name: "inline-reworded",
     why: "an inline sample seed is reworded, so the marker matches nothing and its surface goes unchecked",
     file: APP,
-    find: 'id:"cat_ex1"',
-    repl: 'id:"cat_sample1"',
-    expect: /sample belay catch could not be found/s,
+    find: 'groupId:"group_alpine_start"',
+    repl: 'groupId:"group_alpine_begin"',
+    expect: /sample group join-request could not be found/s,
   },
 ];
 
