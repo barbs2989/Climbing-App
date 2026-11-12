@@ -37990,3 +37990,50 @@ coordinates beyond each peak's own area coordinate (except Northwest Mox Peak's,
 and rappel/descent narrative detail beyond what's quoted above.
 
 Next batch will continue id-ascending from `wa_northwest_mox_peak_standard`.
+
+## Batch 532 (pass 8) — 2026-11-12
+
+Checked 10 WA alpine/mountaineering peak routes, id-ascending from `wa_northwest_ridge` through
+`wa_olympus_traverse`: Dorado Needle's Northwest Ridge, Boston Peak's Northwest Ridge, Liberty
+Bell Mountain's NW Face Var. (Remsberg Variation), Colchuck Balanced Rock's NW Ridge, both of Old
+Guard Peak's routes (East Side Route; West Side/LeConte Glacier), Old Snowy Mountain's Northwest
+Ridge/PCT approach, both Mount Olympus summit-block finish variations (North Face Direct;
+Northwest Edge), and the Mount Olympus (West-Middle-East) Traverse.
+
+**Clean (10):** Dorado Needle's stored 8,440 ft and its Northwest Ridge FA (Lloyd Anderson, Karl
+Boyer, Tom Gorton, July 1940) are both confirmed by Wikipedia, PeakVisor, WTA, the Mountaineers,
+and Mountain Project (SummitPost's "Gordon" spelling is the lone outlier against four agreeing
+sources). Boston Peak's 8,894 ft matches Wikipedia/DBpedia exactly (AAC's 8,883 ft is normal
+cross-source variance); its Northwest Ridge route FA (Boyce-Willis, July 2018) is independently
+confirmed by the AAJ account ("Boston Basin, Boston Marathon") and OpenBeta, so the route's own
+LOW-confidence `data_quality` flag is appropriately cautious rather than wrong. Liberty Bell's
+7,720 ft and its peak FA (Beckey, O'Neil, Welsh, Sept 27 1946) are both confirmed by
+Wikipedia/Mountain Project; the Remsberg Variation's own FA party (Dale Remsberg, Scott Stimpson)
+didn't turn up in this search either, but the route's stored `data_quality.gaps` already discloses
+that exact gap ("FA names are corroborated by Mountain Project but the date remains unverified"),
+so there's nothing new to flag. Colchuck Balanced Rock's 8,240 ft matches listsofjohn's LiDAR
+figure exactly, and its 1958 Gene Prater/Thomas Quin FA is confirmed by multiple sources. Old Guard
+Peak's 8,260 ft found no independent corroboration either way (no contradicting figure found), so
+left as stored per the "don't guess" rule; its two routes' access/closure text (Cascade River Road,
+Suiattle River Road/FR 26) matches current USFS alert pages and 2026 news coverage — FR 26 is
+confirmed still closed past milepost 4 with no reopening date as of the most recent (July 2026)
+reporting found, consistent with the stored "through January 1, 2028" closure-order text. Old Snowy
+Mountain's 7,880 ft matches Wikipedia exactly, and its stored waypoint coordinate sits a plausible
+~150 m from the peak's own area coordinate. Both Mount Olympus summit-block variations and the
+three-peak traverse carry the shared 7,980 ft West Peak figure, within normal cross-source variance
+of the 7,965–7,974 ft LiDAR figures found elsewhere; the Upper Hoh Road closure text (Dec
+2024-May 2026) matches news reporting of that washout and its May 2026 reopening, and no further
+damage to that road was found in reporting on a Nov 8, 2026 wind storm that briefly closed other
+park roads.
+
+**Flagged for human review:** 0.
+
+**Confirmed errors fixed:** 0. No SQL file this batch.
+
+Not independently checked this batch: permit fee figures, hazard/watch_out prose, gear lists,
+waypoint-level coordinates beyond each peak's own area coordinate (except Old Snowy Mountain's,
+reviewed above), and rappel/descent narrative detail beyond what's quoted in route `descent` text.
+
+Next batch will continue id-ascending from `wa_olympus_traverse` (the next in-scope id after it is
+`wa_open_book_2`, on Unicorn Peak; `wa_one_piece_at_a_time`, on the out-of-scope Cutthroat Wall
+crag, is skipped).
