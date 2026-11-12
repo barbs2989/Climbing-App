@@ -256,7 +256,7 @@ taken focus from it by the time the hook looks.
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SideAd`, `RailAd`, `useRailFollow`, `FollowColumn` |
 | `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
-| `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView`, `_isAdPage`, `_avatarItems` |
+| `ClimbMatch.jsx` | `NAV`, `goTab`, `navTab`, `climbsLast`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView`, `_isAdPage`, `_avatarItems` |
 | `index.html` | `#cm-boot`, `.b-nav`, `#cm-splash` |
 | `lib/BootSplash.jsx` | `BootSplash` |
 | `lib/ScreenHero.jsx` | `ScreenHero`, `HERO_BG`, `HERO_SHEEN`, `HOME_GLOW` |
@@ -295,6 +295,7 @@ left ad is fixed and always in view.
 `check:zindex`, `check:tap-slop` (the touch widening stays installed), `check:overlay-fullscreen` (a popup covers the phone screen and holds the app behind still). The browser walks drive a phone-width window, except `check:overflow -- --width 1280`, which walks every tab, the route page and every openable overlay on the desktop website (`render-guards.yml` runs it beside the 390px walk).
 
 ## 7. Last significant change
+- **Climbs remembers the page you left** (owner 2026-11-11): every NAV button (phone bar, `_wideGo` for the website nav strip, footer and logo) goes through `navTab`. Pressing Climbs from another tab restores `climbsLast`, a ref written only while `tab==="routes"`: the open climb, `routeStack`, `routeFrom`, the sub-tab (through `pendingSubTab`, since RouteDetail owns its tab) and, on the DB path, the area browser's area (re-jumped with `dbAreaJump`; cleared when you were at the root, so a stale jump cannot fire on remount). `goTab` itself is unchanged, so flows that send you to Climbs on purpose keep their landing, and pressing Climbs while on Climbs still closes the climb. The browser's Route finder / Near me screens and scroll position are not restored.
 - **A website header, a centred block** (owner 2026-11-11): the left sidebar's tabs became a nav strip under the top bar; the column and rail are centred together; *Your crews* (with their chats) and *Your groups* moved to the rail and its Direct chats left it; the avatar opens an account menu (☰ kept); the left ad moved to the margin beside the block and the rail ad is drawn at its true 300px. Decided for later: URLs for route pages (then profile URLs, after a security review); not now: nav drop-downs, hover cards, full-width data pages.
 - **The desktop website is walked** (2026-10-28): `check:overflow` takes `--width`, and CI runs it at 1280px as well as 390px, so a desktop screen that scrolls sideways fails a check.
 - **Small controls are easier to hit** (owner note 2026-10-28, "Some clicks links are small"): a touch that lands on nothing goes to the nearest small control within 44px (`lib/tapSlop.js`, installed in `main.jsx`); dropdowns are 44px tall, the waypoint map picker's layer buttons 34px, the fire map's layer chips and the Reports condition rows 36px, and sign-in's text links have a bigger touch box (`TEXT_TAP`). Measured with `scripts/oneoff/probe-tap-targets.mjs`.
