@@ -18,7 +18,7 @@ import { LogTagRow } from "./LogTagConfirmations.jsx";
    phone app never mounts it — except WideSearch, which the phone's Climbs tab also mounts INLINE
    (owner 2026-11-04). The top bar's search, the right rail's widgets and the site footer. */
 
-const SECTION = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted };
+const SECTION = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label };
 const CARD = { background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: "14px 14px 12px" };
 const ROW = { width: "100%", display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", border: "none", borderRadius: 10, background: "transparent", color: C.text, cursor: "pointer", textAlign: "left" };
 

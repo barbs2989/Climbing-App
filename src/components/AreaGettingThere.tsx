@@ -45,7 +45,7 @@ export default function AreaGettingThere({ area, C, onEdit, flat }: AreaGettingT
   // The same recorded-track-or-nothing floor the climbs' maps apply (MIN_RECORDED_PTS).
   const trailPts = walkInPts(area.walkin_gpx);
   const trail = trailPts.length >= MIN_RECORDED_PTS ? trailPts : null;
-  const lbl: CSSProperties = { fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const lbl: CSSProperties = { fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
   const linkSt: CSSProperties = { flex: "1 1 0", display: "flex", alignItems: "center", justifyContent: "center", boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.greenDim, background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" };
   const ll = dest ? dest.lat + "," + dest.lng : "";
   const to = park ? "parking" : "crag";

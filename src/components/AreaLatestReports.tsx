@@ -53,7 +53,7 @@ export default function AreaLatestReports({ area, onOpenRoute, C }: AreaLatestRe
   return (
     <section aria-label={"Latest from " + (area.name || "this area")} style={{ marginTop: 14, background: C.card, borderRadius: 12, border: "1px solid " + (hazardCount ? C.red + "55" : C.border), padding: "12px 13px" }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, flexWrap: "wrap", marginBottom: rows.length ? 8 : 0 }}>
-        <div style={{ fontSize: 12, fontWeight: 800, color: C.textSub, textTransform: "uppercase", letterSpacing: 0.4 }}>Latest from this area</div>
+        <div style={{ fontSize: 12, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.4 }}>Latest from this area</div>
         {hazardCount ? <span style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 11.5, fontWeight: 700, color: C.red, background: C.redBg, borderRadius: 999, padding: "2px 9px" }}><span aria-hidden="true" style={{ display: "inline-flex" }}><ActionIcon name="alert" size={12} color="currentColor" /></span>{hazardCount + " hazard report" + (hazardCount !== 1 ? "s" : "") + " · last " + RECENT_DAYS + " days"}</span> : null}
       </div>
       {rows.map(r => {

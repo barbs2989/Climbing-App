@@ -99,10 +99,10 @@ export function AreaFactsCard({ area, C, uElev, onEdit, loggedMonths }) {
   return <div style={card(C)}>
     <div style={headRow}><Head C={C}>Area facts</Head>{onEdit ? <EditIconButton C={C} onClick={() => onEdit(facts.find(f => f[2]) ? facts.find(f => f[2])[2] : "rock")} title={"Edit the facts about " + area.name} /> : null}</div>
     {facts.length ? <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 12px" }}>
-      {facts.map(([l, v]) => <div key={l} style={{ minWidth: 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase" }}>{l}</div><div style={{ fontSize: 13.5, fontWeight: 600, color: C.text, lineHeight: 1.35, overflowWrap: "anywhere" }}>{v}</div></div>)}
+      {facts.map(([l, v]) => <div key={l} style={{ minWidth: 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase" }}>{l}</div><div style={{ fontSize: 13.5, fontWeight: 600, color: C.text, lineHeight: 1.35, overflowWrap: "anywhere" }}>{v}</div></div>)}
     </div> : null}
-    {season ? <div style={{ marginTop: facts.length ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Season · " + monthsLabel(season)}</div><MonthStrip months={season} C={C} /></div> : null}
-    {logged ? <div style={{ marginTop: facts.length || season ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Most logged here · " + monthsLabel(loggedTopMonths(logged)) + " · " + loggedTotal.toLocaleString() + " log" + (loggedTotal !== 1 ? "s" : "")}</div><LoggedMonthStrip counts={logged} C={C} /></div> : null}
+    {season ? <div style={{ marginTop: facts.length ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Season · " + monthsLabel(season)}</div><MonthStrip months={season} C={C} /></div> : null}
+    {logged ? <div style={{ marginTop: facts.length || season ? 10 : 0 }}><div style={{ fontSize: 10.5, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 5 }}>{"Most logged here · " + monthsLabel(loggedTopMonths(logged)) + " · " + loggedTotal.toLocaleString() + " log" + (loggedTotal !== 1 ? "s" : "")}</div><LoggedMonthStrip counts={logged} C={C} /></div> : null}
   </div>;
 }
 

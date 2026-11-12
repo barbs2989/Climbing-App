@@ -96,7 +96,7 @@ const enrichRoute = (route) => {
 // GREY chip with coloured text beside properly tinted siblings - 178 routes reach one of
 // those two. The tints follow the family: same hue, S ~60-65%, L ~11%, and darker than the
 // matching *Dim, which is a border colour rather than a fill.
-const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#b8c0c8",textMuted:"#a7b0ba",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",tealBg:"#0b2d29",orange:"#f0883e",orangeBg:"#2e190a",pink:"#ff77c8",yellow:"#f2d669",lime:"#8fd14f",cyan:"#22c1e0",indigo:"#7d7cf5",magenta:"#e05fd8",brown:"#b5794a",onSolid:"#fff",onBright:"#04110a",scrim:"rgba(0,0,0,0.6)",scrimStrong:"rgba(0,0,0,0.88)"};
+const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#b8c0c8",textMuted:"#a7b0ba",label:"#86b4ec",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",tealBg:"#0b2d29",orange:"#f0883e",orangeBg:"#2e190a",pink:"#ff77c8",yellow:"#f2d669",lime:"#8fd14f",cyan:"#22c1e0",indigo:"#7d7cf5",magenta:"#e05fd8",brown:"#b5794a",onSolid:"#fff",onBright:"#04110a",scrim:"rgba(0,0,0,0.6)",scrimStrong:"rgba(0,0,0,0.88)"};
 const SZ1={display:"flex",gap:6,overflowX:"auto",marginBottom:8,paddingBottom:2};
 /** @type {import("react").CSSProperties} */
 const SZ2={fontSize:14,fontWeight:700,overflowWrap:"anywhere"};
@@ -1636,7 +1636,7 @@ const SL=({children,action,first,divider,wp})=>{const _cx=useContext(ConfidenceC
    title is now SL's look one size down (white, tracked, uppercase, a coloured bar), and the colour a card
    used to carry in its text survives as `tone` on the bar, so KNOWN HAZARDS still reads red at a glance. */
 const RSL=(p)=><SL divider {...p}/>;
-export const SUB_LABEL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6};
+export const SUB_LABEL={fontSize:10,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.6};
 const MeH=SL;
 
 /* ── Text boxes grow while you type. ─────────────────────────────────────────────────────
@@ -2327,7 +2327,7 @@ function SuggestedClimbs({area,profile,completedIds,wishlist,onOpen}){
   if(!total)return null;
   const discLabel=d=>(CAT[d]||{}).label||d;
   const bandTitle=s=>s.src==="viewed"?("Because you've been looking at "+discLabel(s.disc)):("Because you've been climbing "+discLabel(s.disc));
-  const lbl={fontSize:11.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3,margin:"2px 0 7px"};
+  const lbl={fontSize:11.5,fontWeight:700,color:C.label,textTransform:"uppercase",letterSpacing:0.3,margin:"2px 0 7px"};
   const row=r=>{const m=MOUNTAINS.find(x=>x.id===r.mountainId);return <div key={r.id} {...clickable(()=>onOpen(r))} style={{display:"flex",alignItems:"center",gap:10,padding:"11px 12px",marginBottom:8,background:C.card,border:"1px solid "+C.border,borderRadius:12,cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflowWrap:"anywhere"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,overflowWrap:"anywhere"}}>{[m?m.name:null,r.pitches>1?r.pitches+"p":null].filter(Boolean).join(" · ")}</div></div><span style={{fontSize:12,color:C.textMuted,flexShrink:0,fontWeight:700,overflowWrap:"anywhere"}}>{gradeLabel(r)}</span></div>;};
   return <div style={{marginTop:14}}>
     <button onClick={()=>setOpen(o=>!o)} aria-expanded={open} style={{minHeight:44,width:"100%",display:"flex",alignItems:"center",gap:9,background:C.surface,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",cursor:"pointer"}}>

@@ -88,7 +88,7 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
   const failed = !total && !loading && !!poolQ.isError && (!!classicsQ.isError || !classics);
   if (!total && !loading && !failed) return null;
   const retry = () => { poolQ.refetch(); classicsQ.refetch(); };
-  const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
+  const lbl = { fontSize: 11.5, fontWeight: 700, color: C.label, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
   // eslint-disable-next-line no-sparse-arrays -- the hole is the fallback pair [, d]: label is d itself
   const discLabel = (d: string) => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
   /* Two headings, because they are two different claims and only one of them can be true of a

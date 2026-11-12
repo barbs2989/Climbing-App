@@ -166,7 +166,6 @@ crew_members(crew_id, user_id, status)
 messages(id, thread_type, thread_id, sender_id, body, image_url, created_at)   -- realtime
 clubs(...) / club_members(...) / club_posts(...) / events(...)
 vouches(from_id, target_id, route, ratings jsonb, text)   -- trust inputs
-belay_catches(user_id, partner_id, date, high_factor bool) -- trust ledger
 ```
 
 Reference tables: `condition_tags`, `hazard_tags` (today's `HAZARD_TAGS`, `COND_KW`).
@@ -174,7 +173,7 @@ Reference tables: `condition_tags`, `hazard_tags` (today's `HAZARD_TAGS`, `COND_
 Auth/profile tables landed via `0009_auth_profiles.sql`. **The social tables above are LIVE —
 this section described them as simulated until 2026-09-02, more than a month after they were
 migrated.** `crews` / `crew_members` / `crews_messages`, `messages` (direct), `connections`,
-`vouches`, `belay_catches`, `objectives`, `climb_logs`, `user_reports`, `groups` /
+`vouches`, `objectives`, `climb_logs`, `user_reports`, `groups` /
 `group_members` all exist in the live schema **and** are read or written by `lib/db.js`.
 Re-derive rather than trust this paragraph: `grep -o 'from("[a-z_]*")' lib/db.js | sort -u`
 returns **37** tables against 41 live.

@@ -66,3 +66,15 @@ foot from the car (roughly 2-3 miles), coming back to the base.
 
 Each decision carries a one-line reason. `decisions.json` holds the first pass; `final` is the call after this
 sourced rule was applied to the low-confidence and unsure rows.
+
+## Pass 2 (0418)
+All 78,452 trad routes were read (not just the 476 with a peak, III+ or summit-descent signal). 144 more carried an
+approach/descent signal: a camp or bivy, glacier or snow travel, a multi-hour or 3+ mile walk, or a large distance or
+gain. Judged against the same rule in three batches (`pass2-in-*.json` / `pass2-out-*.json`, merged in
+`pass2-decisions.json`): 84 alpine (high/medium), 52 trad, 3 low-confidence alpine and 5 unsure left trad.
+Limit: only 993 trad routes have any approach text, so a backcountry route with none is not caught by this pass.
+
+Open questions for the owner: The Comb (Darrington) routes have no location text; one source puts Desire on the nearer
+Comb Buttress (20 min to 1 hr), the earlier research a 2 hr approach to Green Giant Buttress. They stay alpine
+until a source settles it. The 3 rows unsure in pass 1 (North Fortress, Brokeback Mountain, Eocene) still have no
+approach time (out-pass2-research.json) and stay trad.

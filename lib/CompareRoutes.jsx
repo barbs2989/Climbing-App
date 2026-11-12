@@ -88,8 +88,8 @@ export function CompareView({ routes, onClose, onRemove, onOpenRoute }) {
       <table style={{ width: "100%", borderCollapse: "collapse", tableLayout: "fixed", color: C.text }}>
         <thead><tr><th style={{ ...cell, width: 96 }} />{routes.map(r => <th key={r.id} scope="col" style={{ ...cell, fontSize: 14 }}><button onClick={() => onOpenRoute(r)} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 14, fontWeight: 800, cursor: "pointer", textAlign: "left" }}>{r.name}</button><div><button onClick={() => onRemove(r.id)} style={{ background: "none", border: "none", padding: "4px 0 0", color: C.textMuted, fontSize: 12, cursor: "pointer" }}>Remove</button></div></th>)}</tr></thead>
         <tbody>
-          {ROWS.map(([label, get]) => <tr key={label}><th scope="row" style={{ ...cell, color: C.textMuted, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</th>{routes.map(r => { const v = get(r); return <td key={r.id} style={cell}>{v == null || v === "" ? <span style={{ color: C.textMuted }}>—</span> : v}</td>; })}</tr>)}
-          <tr><th scope="row" style={{ ...cell, color: C.textMuted, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>Best day</th>{routes.map(r => <td key={r.id} style={cell}><BestDayCell route={r} /></td>)}</tr>
+          {ROWS.map(([label, get]) => <tr key={label}><th scope="row" style={{ ...cell, color: C.label, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</th>{routes.map(r => { const v = get(r); return <td key={r.id} style={cell}>{v == null || v === "" ? <span style={{ color: C.textMuted }}>—</span> : v}</td>; })}</tr>)}
+          <tr><th scope="row" style={{ ...cell, color: C.label, fontSize: 11.5, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.4 }}>Best day</th>{routes.map(r => <td key={r.id} style={cell}><BestDayCell route={r} /></td>)}</tr>
         </tbody>
       </table>
     </div>

@@ -31,7 +31,7 @@ export default function MapAreaClimbs({ area, onOpenRoute, onOpenArea, C }: MapA
   const loading = !rows.length && (classicsQ.isLoading || poolQ.isLoading);
   const failed = !rows.length && !loading && !!classicsQ.isError && !!poolQ.isError;
   const retry = () => { classicsQ.refetch(); poolQ.refetch(); };
-  const lbl = { fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase" as const, letterSpacing: 0.3, margin: "4px 2px 6px" };
+  const lbl = { fontSize: 11, fontWeight: 800, color: C.label, textTransform: "uppercase" as const, letterSpacing: 0.3, margin: "4px 2px 6px" };
   return (
     <div style={{ padding: "2px 2px 8px" }}>
       {loading ? <LoadingRows C={C} label={"Loading climbs at " + area.name + "…"} rows={3} style={{ padding: "6px 0" }} /> : null}
