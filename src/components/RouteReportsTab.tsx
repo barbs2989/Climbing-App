@@ -44,6 +44,8 @@ export interface RouteReportsTabProps {
   logged?: boolean;
   onLog: (route: RouteReportsTabProps["route"]) => void;
   onOpenReport?: (report: object) => void;
+  /** Opens a consensus RECENT PHOTOS tile in the route's photo viewer. */
+  onOpenPhoto?: ConsensusPanelProps["onOpenPhoto"];
   onVoteHazard?: ConsensusPanelProps["onVote"];
   recentN: number;
   /** When the reports shown are the copy saved with a pack (no signal), the time it was saved. */
@@ -61,7 +63,7 @@ export interface RouteReportsTabProps {
 
 /* tab==="conditions"? — the body of that branch of RouteDetail, lifted verbatim by extract-from-parent.mjs (branch mode);
    every binding it read from RouteDetail is a prop of the same name. Lifted verbatim from RouteDetail.jsx (PR60); only the types were added. */
-export default function RouteReportsTab({activity,climberN,condActivity,cragOnly,hzVotes,logged,onLog,onOpenReport,onVoteHazard,recentN,reportsPackedAt,reportsSavedWith,reportsUnavailable,roadEl,route,showScore,starSum,tripQ}: RouteReportsTabProps){
+export default function RouteReportsTab({activity,climberN,condActivity,cragOnly,hzVotes,logged,onLog,onOpenPhoto,onOpenReport,onVoteHazard,recentN,reportsPackedAt,reportsSavedWith,reportsUnavailable,roadEl,route,showScore,starSum,tripQ}: RouteReportsTabProps){
   /* The list shows the newest TRIP_FIRST and folds the rest behind "Show all", as ROAD CONDITIONS does: every report drew its whole text, so a popular route was one long scroll with the reports — what the tab is for — under a tall consensus card. */
   const TRIP_FIRST=5;const [allTrips,setAllTrips]=useState(false);const trips=activity||[];const shownTrips=allTrips?trips:trips.slice(0,TRIP_FIRST);
   /* The conditions count reports kept to friends or crews (condActivity); the list shows only shared ones. Say so, or the consensus's "7 reports" over a list of 5 reads as a bug. */
@@ -70,7 +72,7 @@ export default function RouteReportsTab({activity,climberN,condActivity,cragOnly
   /* ONE log button at a time. The full-width one leads the tab until you've logged the climb; the list header's own button is for logging it again. Both used to show, a screen apart, doing the same thing. */
   return <div>{!logged?<div style={{marginBottom:ROUTE_GAP}}><button onClick={()=>onLog(route)} style={{...BTN,width:"100%",background:C.greenBg,color:C.green,border:"1px solid "+C.greenDim}}>✓ Log your ascent</button></div>:null}
         {trips.length?<div style={{marginTop:-4,marginBottom:ROUTE_GAP-4}}><button onClick={jumpToTrips} style={{minHeight:44,...BTN_LINK(C),background:"transparent",border:"none",color:C.blue,padding:0}}>{"Jump to the "+trips.length+" "+(cragOnly?"send":"trip")+" report"+(trips.length!==1?"s":"")+" ↓"}</button></div>:null}
-        <Capped><ConsensusPanel route={route} activity={condActivity} hzVotes={hzVotes} onVote={onVoteHazard} reportsUnavailable={reportsUnavailable} starSum={starSum}/></Capped>{showScore?null:roadEl()}
+        <Capped><ConsensusPanel route={route} activity={condActivity} hzVotes={hzVotes} onVote={onVoteHazard} reportsUnavailable={reportsUnavailable} starSum={starSum} onOpenPhoto={onOpenPhoto}/></Capped>{showScore?null:roadEl()}
         {/* scrollMarginTop: both jumps here (this tab's link and the social row's Reports chip) land the heading at the very top, under the pinned site header + sub-tab bar (128px on desktop), so it scrolled out of sight. */}<div id="trip-reports-section" style={{scrollMarginTop:140}}><SL action={logged?<button onClick={()=>onLog(route)} style={{...BTN_SM,flexShrink:0,color:C.green,background:C.greenBg,border:"1px solid "+C.greenDim}}>{cragOnly?"Log / send":<Lbl s={"Log / report"}/>}</button>:undefined}>{cragOnly?"Send Reports":"Trip Reports"}</SL></div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:11,lineHeight:1.5}}>{(activity.length?activity.length+" report"+(activity.length!==1?"s":"")+" from "+climberN+" climber"+(climberN!==1?"s":"")+(recentN?" · "+recentN+" in the last "+RECENT_DAYS+" days":"")+". ":"")+"These come straight from climbers logging their ascents — log yours and your conditions, beta & rating appear here automatically."+(privateN?" The conditions above also count "+privateN+" report"+(privateN!==1?"s":"")+" kept private to friends or crews.":"")}</div>{reportsPackedAt?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,marginBottom:10}}>{tripQ.data.length?"No signal — these are the "+(tripQ.data.length)+" trip report"+(tripQ.data.length!==1?"s":"")+" "+reportsSavedWith+" "+savedAgo(reportsPackedAt)+". Newer ones need a connection.":"No signal, and no trip reports were "+reportsSavedWith+" "+savedAgo(reportsPackedAt)+". Newer ones need a connection."}</div>:null}
         {/* No second empty state here: with no reports at all, the consensus card above already says "No reports yet — be the first to log this climb", and the tab said it twice. */}
         {shownTrips.map((a,i)=><div key={a._dbId!=null?"d"+a._dbId:a.id!=null?"s"+a.id:"i"+i} /* Hand TripReport the WHOLE row. This used to copy thirteen keys by hand, and TripReport
