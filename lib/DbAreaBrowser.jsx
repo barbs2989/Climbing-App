@@ -31,7 +31,7 @@ export { nearbyPeaksLive, nearbyPeaksBounds, nearbyPeaksRows };
 // the cycle static.
 
 
-export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
+export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignIn, onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, jumpToNearReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -134,6 +134,15 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
       setScreen("finder");
     });
   }, [jumpToFinderReq, finderLocQ.data, finderLocQ.isError, notify]);
+  // "NEAR ME" from the search box (owner 2026-11-04): open the map at the climber's position, from
+  // wherever the browser stands — before a state is picked too, so the map is drawn ahead of the picker.
+  const handledNearJump = useRef(null);
+  useEffect(() => {
+    if (!jumpToNearReq || handledNearJump.current === jumpToNearReq.id) return;
+    handledNearJump.current = jumpToNearReq.id;
+    setTreeOpen(false);
+    setScreen("near");
+  }, [jumpToNearReq]);
 
   return (
     <ClimberCtx.Provider value={climber}>
@@ -179,16 +188,19 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
           </div>
         </div>
       ) : null}
-      {!stateNode ? (
+      {screen === "near" ? (
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
+      ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
         <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
-      ) : screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
       ) : (
-        <AreaPage key={current.id} onSignIn={onSignIn} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { /* A chart bar hands a discipline; the inline form on the website hands a whole filter set, opened the way a saved search is (item 15). */ if (d && typeof d === "object") { setFinderInit({ id: "inline-" + Date.now(), q: "", filters: d }); setFinderDisc(""); } else { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); } setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        // `areaDiscussion` (App's area comment thread) is drawn HERE, in the area-page branch only:
+        // never under the Map, the Route finder or Objectives (owner 2026-11-11, "Remove discussion
+        // from area maps"). Placed by this component, so it switches in the same render as the screen.
+        <><AreaPage key={current.id} onSignIn={onSignIn} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { /* A chart bar hands a discipline; the inline form on the website hands a whole filter set, opened the way a saved search is (item 15). */ if (d && typeof d === "object") { setFinderInit({ id: "inline-" + Date.now(), q: "", filters: d }); setFinderDisc(""); } else { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); } setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />{areaDiscussion}</>
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />

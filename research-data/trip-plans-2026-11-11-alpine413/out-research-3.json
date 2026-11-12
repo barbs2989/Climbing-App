@@ -1,0 +1,364 @@
+[
+ {
+  "id": "wa_mixup_peak_pbs_late_night_special",
+  "skip": true,
+  "reason": "Searched for 'PBS Late Night Special' on Mix-up Peak twice (general and Mountain Project); found no page describing this route, only general Mix-up Peak East Face pages (Mountaineers, 403). No source covers the route itself."
+ },
+ {
+  "id": "wa_monte_cristo_peak_standard_route_variation_1",
+  "itinerary": {
+   "cal": "Usually climbed in early summer, while snow still fills the slope up to the North Col and the moat below the east face is easier to cross; later in the season the moat can stop parties short of the rock. Bring an ice axe and crampons for the col.",
+   "totalNote": "A long single day: about 4 miles to the old Monte Cristo townsite (many parties bike it) and a rough trail to Glacier Basin, steep snow to the North Col, one short 5th-class pitch on the east face, then broken scrambling to the 7,136 ft summit. One rappel returns you to the base of the pitch. Expect 10 to 12 hours round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Barlow Pass to the summit and back",
+     "objective": "Climb from Glacier Basin to the North Col and up the east face to the summit, then return to Barlow Pass",
+     "note": "Start early from Barlow Pass (about 2,300 ft) and walk or bike roughly 4 miles to the old townsite, then take the rocky trail past the waterfalls to Glacier Basin at about 4,500 ft. Climb the snow slope, or the spur beside it once it melts out, to the North Col; the steepest snow runs around 45 to 50 degrees and may need front-pointing. A short traverse from the col leads across the moat onto the east face, where one roped pitch graded about 5.6 (it feels stiffer) is followed by a ramp, a loose corner and heather to the top. Reverse the upper ground, rappel the pitch (a single 50 to 60 m rope reaches), traverse back to the col and down-climb facing in before glissading the lower snow.",
+     "gainFt": 4800,
+     "lossFt": 4800,
+     "hours": "10-12",
+     "miles": 18.6,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": "Early",
+       "label": "Leave Barlow Pass",
+       "detail": "About an hour to the townsite on foot or bike."
+      },
+      {
+       "time": "~2 h in",
+       "label": "Glacier Basin",
+       "detail": "Roughly an hour above the townsite; snow begins here early in the season."
+      },
+      {
+       "time": "Mid-morning",
+       "label": "North Col",
+       "detail": "Steep, often hard snow just below the col."
+      },
+      {
+       "time": "Late morning",
+       "label": "East face pitch",
+       "detail": "Cross the moat, climb one roped pitch, then scramble to the summit."
+      },
+      {
+       "time": "Midday",
+       "label": "Summit, then rappel",
+       "detail": "One rappel to the base of the pitch, then back across to the col."
+      },
+      {
+       "time": "Evening",
+       "label": "Back at Barlow Pass",
+       "detail": "About an hour from the col down to Glacier Basin, then the trail and the townsite road out."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://sverdina.com/monte_cristo3.asp",
+   "https://stevensong.com/usa/washington/monte-cristo-peak/"
+  ],
+  "confidence": "low",
+  "figureSources": "Barlow Pass 2,300 ft, townsite 2,700 ft, Glacier Basin 4,500 ft, summit 7,136 ft, ~4 mi to townsite, ~1 h basin from town, 50 m rope for the rappel, ~1 h col to basin, 8 AM to 6 PM day: sverdina (2004 North Col report). ~30 km (18.6 mi) round trip, ~12 h total, 45-50 degree snow, 60 m rope rappel: stevensong (2023). gainFt 4,800 is the difference between sverdina's stated trailhead and summit elevations. hours 10-12 spans the two reports' day lengths.",
+  "rowIssues": "Neither source tells a 'Variation 1' from a 'Variation 2' of the standard route; the plan covers the shared North Col / east face outing only, so both variation rows carry the same plan (confidence low for that reason). high_point_ft is null; sources give 7,136 ft."
+ },
+ {
+  "id": "wa_monte_cristo_peak_standard_route_variation_2",
+  "itinerary": {
+   "cal": "Usually climbed in early summer, while snow still fills the slope up to the North Col and the moat below the east face is easier to cross; later in the season the moat can stop parties short of the rock. Bring an ice axe and crampons for the col.",
+   "totalNote": "A long single day: about 4 miles to the old Monte Cristo townsite (many parties bike it) and a rough trail to Glacier Basin, steep snow to the North Col, one short 5th-class pitch on the east face, then broken scrambling to the 7,136 ft summit. One rappel returns you to the base of the pitch. Expect 10 to 12 hours round trip.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Barlow Pass to the summit and back",
+     "objective": "Climb from Glacier Basin to the North Col and up the east face to the summit, then return to Barlow Pass",
+     "note": "Start early from Barlow Pass (about 2,300 ft) and walk or bike roughly 4 miles to the old townsite, then take the rocky trail past the waterfalls to Glacier Basin at about 4,500 ft. Climb the snow slope, or the spur beside it once it melts out, to the North Col; the steepest snow runs around 45 to 50 degrees and may need front-pointing. A short traverse from the col leads across the moat onto the east face, where one roped pitch graded about 5.6 (it feels stiffer) is followed by a ramp, a loose corner and heather to the top. Reverse the upper ground, rappel the pitch (a single 50 to 60 m rope reaches), traverse back to the col and down-climb facing in before glissading the lower snow.",
+     "gainFt": 4800,
+     "lossFt": 4800,
+     "hours": "10-12",
+     "miles": 18.6,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": "Early",
+       "label": "Leave Barlow Pass",
+       "detail": "About an hour to the townsite on foot or bike."
+      },
+      {
+       "time": "~2 h in",
+       "label": "Glacier Basin",
+       "detail": "Roughly an hour above the townsite; snow begins here early in the season."
+      },
+      {
+       "time": "Mid-morning",
+       "label": "North Col",
+       "detail": "Steep, often hard snow just below the col."
+      },
+      {
+       "time": "Late morning",
+       "label": "East face pitch",
+       "detail": "Cross the moat, climb one roped pitch, then scramble to the summit."
+      },
+      {
+       "time": "Midday",
+       "label": "Summit, then rappel",
+       "detail": "One rappel to the base of the pitch, then back across to the col."
+      },
+      {
+       "time": "Evening",
+       "label": "Back at Barlow Pass",
+       "detail": "About an hour from the col down to Glacier Basin, then the trail and the townsite road out."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://sverdina.com/monte_cristo3.asp",
+   "https://stevensong.com/usa/washington/monte-cristo-peak/"
+  ],
+  "confidence": "low",
+  "figureSources": "Barlow Pass 2,300 ft, townsite 2,700 ft, Glacier Basin 4,500 ft, summit 7,136 ft, ~4 mi to townsite, ~1 h basin from town, 50 m rope for the rappel, ~1 h col to basin, 8 AM to 6 PM day: sverdina (2004 North Col report). ~30 km (18.6 mi) round trip, ~12 h total, 45-50 degree snow, 60 m rope rappel: stevensong (2023). gainFt 4,800 is the difference between sverdina's stated trailhead and summit elevations. hours 10-12 spans the two reports' day lengths.",
+  "rowIssues": "Neither source tells a 'Variation 1' from a 'Variation 2' of the standard route; the plan covers the shared North Col / east face outing only, so both variation rows carry the same plan (confidence low for that reason). high_point_ft is null; sources give 7,136 ft."
+ },
+ {
+  "id": "wa_mount_olympus_2_north_ridge_via_blue_glacier",
+  "itinerary": {
+   "cal": "Best from late June through mid-August. A wilderness permit is required and camps at Elk Lake and Glacier Meadows are limited, so reserve early. Bear canisters are required for all food and scented items, blue bags are required on the mountain, and there are no fires above Martin Creek. Early in the season steep snow lies on the trail between Elk Lake and Glacier Meadows, so an ice axe and crampons may be needed before the glacier.",
+   "totalNote": "Three days is the common minimum: a long, mostly flat walk up the Hoh valley to Elk Lake, a big summit day across the Blue Glacier, over the Snow Dome and up the West Peak's short rock summit block, then the walk out. Many parties add a day by camping higher at Glacier Meadows or on the Snow Dome.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hoh trailhead to Elk Lake",
+     "objective": "Walk the Hoh River Trail to a camp at Elk Lake",
+     "note": "The first 13 miles follow the valley floor with little climbing; past the footbridge the trail starts to climb into the hanging valley that holds Elk Lake. Glacier Meadows, where the trail ends about 17.4 miles in, is the higher option and shortens the summit day. No camping is allowed between Glacier Meadows and the glacier.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 5,
+     "miles": 15,
+     "packLb": null,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Blue Glacier and the West Peak",
+     "objective": "Cross the Blue Glacier and Snow Dome to the West Peak summit and return to camp",
+     "note": "Above Glacier Meadows the climbers' path reaches the lateral moraine, where crampons go on for the lower glacier. Cross to the Snow Dome, climb loose scree and then snow to the upper ice, and rope up there for the crevassed ground below the summit. Skirt the bergschrund to reach the West Peak's summit block, where one short pitch of easy 5th-class rock leads to the top. Rappel the block and retrace the route to camp. From Glacier Meadows the summit is 4 to 6 miles one way.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 14,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": "~7:00 AM",
+       "label": "Leave camp",
+       "detail": "An earlier start gives firmer snow."
+      },
+      {
+       "time": "~9:00 AM",
+       "label": "Blue Glacier moraine",
+       "detail": "Crampons on for the lower glacier."
+      },
+      {
+       "time": "Late morning",
+       "label": "Snow Dome and upper ice",
+       "detail": "Rope up around 6,600 ft for the crevassed slopes."
+      },
+      {
+       "time": "Mid-afternoon",
+       "label": "West Peak summit",
+       "detail": "About 8 hours from Elk Lake; one rappel off the block."
+      },
+      {
+       "time": "~8-9 PM",
+       "label": "Back at camp",
+       "detail": "About 14 hours round trip from Elk Lake."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Walk out the Hoh",
+     "objective": "Return from Elk Lake to the Hoh trailhead",
+     "note": "Descend out of the Elk Lake valley and follow the long, flat valley trail back to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 6.5,
+     "miles": 15,
+     "packLb": null,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.nps.gov/olym/planyourvisit/climbing-mount-olympus.htm",
+   "https://www.nps.gov/olym/planyourvisit/hoh-river-trail.htm",
+   "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_olympus.html",
+   "https://turns-all-year.com/trip-reports/july-2-4-2016-mount-olympus"
+  ],
+  "confidence": "medium",
+  "figureSources": "Season, permits, bear canisters, blue bags, fire rule, early-season snow, no camping below the glacier, Glacier Meadows to summit 4-6 mi, summit 7,980 ft: NPS climbing page. Glacier Meadows at 17.4 mi, first 13 mi flat: NPS Hoh River Trail page. Day 1 ~5 h, summit-day times (moraine just after 9, roping up ~6,600 ft, 8 h to summit, ~14 h round trip), 5.4 summit block, day 3 6.5 h: uoregon 2005 report. Elk Lake ~15 mi from the trailhead: reader comment on the turns-all-year 2016 report (the uoregon report says 13 mi out from Martin Creek; 15 used for both legs). No source gave gain or pack weight.",
+  "rowIssues": "Grade 5.3 on the row; one report rates the summit block crux about 5.4. The 'North Ridge' name does not appear in these sources, which describe the standard Blue Glacier route to the West Peak. high_point_ft is null; NPS gives 7,980 ft."
+ },
+ {
+  "id": "wa_mount_stuart_direct_north_ridge",
+  "itinerary": {
+   "cal": "Midsummer, once the south-side approach is mostly snow-free. The Gendarme pitches stay shaded and can be cold or icy. Carry plenty of water: the Cascadian Couloir descent is usually dry.",
+   "totalNote": "Two days from the Esmeralda (Ingalls) side: walk to a camp at Goat Pass, then climb the full ridge from its toe, descend the Cascadian Couloir and walk out over Longs Pass. Fast parties do it car to car in about 17 hours; parties who pitch out most of the ridge often bivy at the notch around 8,200 ft instead and take longer.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Esmeralda trailhead to Goat Pass",
+     "objective": "Hike past Ingalls Lake and over Stuart Pass to a bivy at Goat Pass",
+     "note": "Follow the Ingalls Way trail to Ingalls Lake, pass the lake on its west side and pick up the faint path to Stuart Pass. Cross talus below the West Ridge and, around 7,000 ft, drop into the north-side gully (not too early) before climbing out to Goat Pass at about 7,600 ft, which has many bivy sites.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 3.6,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": "Start",
+       "label": "Esmeralda trailhead",
+       "detail": "Ingalls Way trail."
+      },
+      {
+       "time": "~1.75 h",
+       "label": "Ingalls Lake",
+       "detail": "Keep to the west shore."
+      },
+      {
+       "time": "~3.5 h",
+       "label": "Goat Pass",
+       "detail": "Camp; snowmelt is the water source."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Direct North Ridge, Cascadian descent",
+     "objective": "Climb the Direct North Ridge to the summit and descend the Cascadian Couloir to the car",
+     "note": "Traverse east under the Stuart Glacier to the toe of the ridge. The first three pitches are the hardest of the lower ridge (a 5.8 slot and a sustained 5.9+ crack); above them mostly easy 5th class leads to the notch. The upper ridge brings a knife-edge and slabs to the Gendarme, climbed in two pitches (5.8 lieback, 5.9+ offwidth), then a 5.7 hand crack and broken ground to the 9,415 ft summit. Head east over the south ridge to find the top of the Cascadian Couloir, descend its long scree, and walk back over Longs Pass to the trailhead.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": 13,
+     "miles": null,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": "~7:40 AM",
+       "label": "Leave Goat Pass",
+       "detail": "About an hour to the base of the ridge."
+      },
+      {
+       "time": "~9:00 AM",
+       "label": "Start climbing",
+       "detail": "Three harder pitches, then simul-climbing on easier ground."
+      },
+      {
+       "time": "~1:40 PM",
+       "label": "Gendarme",
+       "detail": "Two pitches, often cold."
+      },
+      {
+       "time": "~3:15 PM",
+       "label": "Summit",
+       "detail": "About 6 hours of climbing for a fast party."
+      },
+      {
+       "time": "~8:50 PM",
+       "label": "Trailhead",
+       "detail": "About 5.5 hours down the Cascadian and over Longs Pass."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+   "https://stephabegg.com/?p=8737",
+   "https://www.mountainproject.com/area/105996601/mt-stuart"
+  ],
+  "confidence": "medium",
+  "figureSources": "Pitch grades, notch ~8,200 ft, Goat Pass 7,600 ft with bivy sites, drop at ~7,000 ft, Cascadian and Longs Pass return, notch bivy common: Mountain Project route page. Ingalls Way / Stuart Pass approach: Mountain Project Mt Stuart area page. All times (4:05 start, Ingalls Lake 5:54, Goat Pass 7:41, base 8:47, Gendarme 1:40, summit 3:15, trailhead 8:52; 6 h 05 climb, 5 h 37 descent, 16 h 47 car to car), summit 9,415 ft, dry Cascadian: Steph Abegg page (2026 car-to-car log). Day hours are elapsed time between those stated clock times, for a fast party; no source gave miles, gain or pack weight.",
+  "rowIssues": "high_point_ft is null; sources give 9,415 ft. Mountain Project's Mt Stuart area list grades the route 5.10d while its route page says 5.9+ (the row matches the route page)."
+ },
+ {
+  "id": "wa_mount_stuart_gorillas_in_the_mist",
+  "skip": true,
+  "reason": "Opened the Mountain Project route page (pitch-by-pitch beta, West Face between Stuart Pass and Goat Pass, descent by the West Ridge or rappel) and searched once for trip reports; the only reports with timing are on CascadeClimbers (403). No opened source states hours, miles or gain for the approach, the climb or the descent, so no day could carry a sourced figure."
+ },
+ {
+  "id": "wa_mount_stuart_stuart_range_traverse",
+  "skip": true,
+  "reason": "Opened the Mountain Project page (40 pitches, Grade V, links Stuart, Sherpa, Argonaut, Colchuck, Dragontail; no times or logistics) and a 2011 Wenatchee Outdoors report that only reached Argonaut before bailing at Colchuck Col. Reports of the complete traverse are on CascadeClimbers (403) or are ski traverses. No opened source gives figures for a complete summer traverse."
+ },
+ {
+  "id": "wa_north_early_winter_spire_christianson_roskelley",
+  "skip": true,
+  "reason": "Searched Mountain Project and the web for this route name; the Mountain Project North Early Winter Spire page does not list it and no other opened source describes it. Approach and descent sources exist for the spire, but nothing covers the route itself (length, pitches, where it starts)."
+ },
+ {
+  "id": "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+  "skip": true,
+  "reason": "Searched twice for this route name (with and without Mountain Project); no page describing it turned up, and the Mountain Project spire page does not list it. Nothing covers the route itself."
+ },
+ {
+  "id": "wa_north_early_winter_spire_vulcan_death_grip",
+  "skip": true,
+  "reason": "Searched twice for this route name (with and without Mountain Project); no page describing it turned up, and the Mountain Project spire page does not list it. Nothing covers the route itself."
+ },
+ {
+  "id": "wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route",
+  "itinerary": {
+   "cal": "Summer to early fall, once the west-side gullies at Washington Pass are melted out.",
+   "totalNote": "A single day from the Blue Lake trailhead: a short climbers' trail to the west face, five pitches of 5.8 to 5.9+ cracks (including an offwidth), then rappels down the west face and the walk back.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Blue Lake trailhead to the summit and back",
+     "objective": "Climb the Northwest Corner to the summit of North Early Winter Spire and rappel the west face",
+     "note": "Hike the Blue Lake Trail through its switchbacks for about two miles, then take the marked climbers' trail left to the foot of the Early Winter Spires and traverse north along the base of the north spire to the corner. Climb five pitches: a 5.8 corner with a short chimney, a 5.9 corner through trees, a 5.9 flake, the 5.9 offwidth that protects better than it looks, and a 4th-class traverse around the roof to the 7,760 ft top. Descend from the chains at the south end of the west face, making about six rappels on a single 70 m rope, including one free hang off a chockstone, then reverse the approach.",
+     "gainFt": null,
+     "lossFt": null,
+     "hours": null,
+     "miles": 5,
+     "packLb": null,
+     "schedule": [
+      {
+       "time": "Start",
+       "label": "Blue Lake trailhead",
+       "detail": "The climbers' trail branches left after about two miles."
+      },
+      {
+       "time": "1-2 h",
+       "label": "Base of the route",
+       "detail": "About 2.5 miles and 1,900 ft from the car."
+      },
+      {
+       "time": "+3.5 h",
+       "label": "Back at the base",
+       "detail": "Climb and rappels, base to base, for a competent party."
+      }
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/105792199/northwest-corner-aka-boving-pollack-route",
+   "https://www.mountainproject.com/area/105792196/north-early-winter-spire",
+   "https://www.mountainproject.com/approach-trail/119406478/approach-to-north-early-winter-spire",
+   "https://team-harro.blogspot.com/2008/09/north-early-winters-spire.html"
+  ],
+  "confidence": "medium",
+  "figureSources": "Pitch grades, 5 pitches, 6 rappels on a 70 m rope from the west face chains: Mountain Project route page. 1-2 h approach, summit 7,760 ft: Mountain Project spire area page. 2.5 mi and 1,913 ft one way to the base (miles 5 = there and back): Mountain Project approach-trail page. 1 h 15 approach and 3.5 h base to base, chockstone free rappel: team-harro 2008 report. No source gave a total day length or the day's full gain, so hours and gainFt are null.",
+  "rowIssues": "high_point_ft is null; Mountain Project gives 7,760 ft. Pitch count 5 matches Mountain Project (one report climbed it in six by soloing the final scramble)."
+ },
+ {
+  "id": "wa_northwest_mox_peak_northeast_ridge",
+  "skip": true,
+  "reason": "Opened two Depot Creek trip reports (countryhighpoints 2018, stevensong 2018) and the WTA peak page. They describe the NE Ridge route, the moat, slabs and rappels, but none states hours, miles or gain for any leg (only a 3 AM start, 'mid-afternoon' at camp and the 8,407 ft summit), and the Mountaineers and CascadeClimbers reports with itineraries return 403. No day could carry a sourced figure."
+ }
+]
