@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import { useRecentRouteIds } from "../../lib/recent";
-import { useScopedWishlistRoutes, useSubtreeRoutes, useRoutesByIds } from "../../lib/db";
+import { useScopedWishlistRoutes, useSubtreeRoutes, useRoutesByIds, useAreaClassics } from "../../lib/db";
+import { BTN } from "../../lib/buttonStyles.js";
+import LoadingRows from "./LoadingRows.tsx";
 import { DISCIPLINES, placeOf } from "../../lib/areaBrowserShared.js";
 import Chevron from "./Chevron.tsx";
 import RouteRow from "./RouteRow.tsx";
@@ -11,7 +13,7 @@ import type { C as Palette } from "../../ClimbMatchCore.jsx";
 interface DbSuggestedClimbsRow extends RouteRowRoute { id: string | number }
 export interface DbSuggestedClimbsProps {
   /** The area page the suggestions sit on. */
-  area: { id: string; name?: string };
+  area: { id: string; name?: string; area_type?: string };
   onOpen: (r: RouteRowRoute) => void;
   C: typeof Palette;
 }
@@ -34,7 +36,16 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
      it. Now one mixed pool comes back and `rankSuggested` (which already filters on catOf)
      picks per slot. Same one round trip, so the multi-discipline rows cost nothing extra.
      pageSize is up from 30 because the 30 now have to cover every discipline, not one. */
-  const { data: pool } = useSubtreeRoutes(area.id, { sortBy: "name", pageSize: 120 });
+  const poolQ = useSubtreeRoutes(area.id, { sortBy: "name", pageSize: 120 });
+  const pool = poolQ.data;
+  /* THE AREA'S CLASSICS ARE THE POPULARITY SIGNAL. Only 6 of 205k routes carry a star rating, so a
+     name-sorted pool of 120 made every band and the fallback the area's first names alphabetically
+     (seed-vs-real audit, 2026-11-11). area_classics is the ranked list the area page's Classics
+     section already reads — same key, so on a page that shows it this is the cached answer, not a
+     second read — and it goes FIRST in the candidates, ahead of the alphabetical pool. Same gate as
+     the area page: never over a whole country or the world. */
+  const classicsQ = useAreaClassics(area.id, !["world", "country"].includes(area.area_type || ""));
+  const classics = classicsQ.data;
   /* Recently-opened climbs, twice over, because the two answers are different questions.
      Scoped: which of them are in THIS area — that is the "pick up where you left off" row.
      Unscoped: what has this climber been looking at ANYWHERE — that is the taste that earns a
@@ -53,7 +64,10 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
     .sort((a, b) => (recentPos[a.id] ?? 99) - (recentPos[b.id] ?? 99))
     .slice(0, 5);
   const recentSet = new Set(recent.map(r => r.id));
-  const candidates = (pool || []).filter((r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id));
+  const fresh = (r: DbSuggestedClimbsRow) => !completedIds.has(r.id) && !(wishlist || []).includes(r.id) && !recentSet.has(r.id);
+  const classicPicks = ((classics || []) as DbSuggestedClimbsRow[]).filter(fresh);
+  const classicIds = new Set(classicPicks.map(r => r.id));
+  const candidates = classicPicks.concat(((pool || []) as DbSuggestedClimbsRow[]).filter(r => fresh(r) && !classicIds.has(r.id)));
   /* One climb, one row — two slots can rank the same route and a repeated name reads as a bug. */
   const slots = discSlots ? discSlots(profile, recentAll || []) : [];
   const claimed: Record<string | number, number> = {};
@@ -62,9 +76,18 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
     rows.forEach(r => { claimed[r.id] = 1; });
     return { slot: s, rows };
   }).filter(b => b.rows.length);
-  const popular = (!objectives.length && !recent.length && !bands.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
+  const noneYet = !objectives.length && !recent.length && !bands.length;
+  /* The fallback row: the area's classics in their ranked order when it has any, else the pool. */
+  const popularFromClassics = noneYet && classicPicks.length > 0;
+  const popular = noneYet ? (popularFromClassics ? classicPicks : [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0))).slice(0, 5) : [];
   const total = objectives.length + recent.length + bands.reduce((n, b) => n + b.rows.length, 0) + popular.length;
-  if (!total) return null;
+  /* NEVER VANISH ON A FAILED READ. It used to return null whenever nothing ranked, so a pool that
+     failed to load hid the whole section with nothing said. Loading and failure now show behind the
+     same header; only a loaded, genuinely empty answer renders nothing. */
+  const loading = !total && (poolQ.isLoading || classicsQ.isLoading);
+  const failed = !total && !loading && !!poolQ.isError && (!!classicsQ.isError || !classics);
+  if (!total && !loading && !failed) return null;
+  const retry = () => { poolQ.refetch(); classicsQ.refetch(); };
   const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
   // eslint-disable-next-line no-sparse-arrays -- the hole is the fallback pair [, d]: label is d itself
   const discLabel = (d: string) => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
@@ -74,10 +97,15 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
   return (
     <div style={{ marginTop: 14 }}>
       <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{minHeight:44, width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
-        <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs · " + total}</span>
+        <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs" + (total ? " · " + total : "")}</span>
         <Chevron open={open} color={C.blue} />
       </button>
-      {open ? (
+      {open && loading ? <LoadingRows C={C} label="Finding climbs for you…" rows={3} style={{ padding: "12px 0" }} /> : null}
+      {open && failed ? <div role="alert" style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginTop: 9, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.card, fontSize: 12.5, color: C.text }}>
+        <span style={{ flex: "1 1 200px", minWidth: 0 }}>Couldn’t load suggestions for this area.</span>
+        <button onClick={retry} style={{ ...BTN, border: "1px solid " + C.border, background: C.surface, color: C.blue }}>Retry</button>
+      </div> : null}
+      {open && total ? (
         <div style={{ marginTop: 9 }}>
           {objectives.length ? <div><div style={lbl}>From your objectives</div>{objectives.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} />)}</div> : null}
           {recent.length ? <div><div style={lbl}>Pick up where you left off</div>{recent.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
@@ -87,7 +115,7 @@ export default function DbSuggestedClimbs({ area, onOpen, C }: DbSuggestedClimbs
               is a no-op, and a stable sort hands back the pool's own order, which is sortBy:"name".
               Calling five alphabetically-first routes "Popular in this area" invents a signal we
               do not have. Claim popularity only when the rows actually carry it. */}
-          {popular.length ? <div><div style={lbl}>{popular.some(r => r.stars) ? "Popular in this area" : "More climbs in this area"}</div>{popular.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} />)}</div> : null}
+          {popular.length ? <div><div style={lbl}>{popularFromClassics ? "Classics in this area" : popular.some(r => r.stars) ? "Popular in this area" : "More climbs in this area"}</div>{popular.map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} classicMark={!popularFromClassics} />)}</div> : null}
         </div>
       ) : null}
     </div>
