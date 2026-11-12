@@ -183,10 +183,14 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
    **Climbs reopens where you left it** (owner 2026-11-11): picking another tab unmounts the browser, so its position (state, drill
    path, Map / Route finder / Objectives screen, and the jump-request ids it already handled, so a stale search jump cannot re-fire)
-   lives at module scope in `lib/climbsReturn.js` for the session. App's `lastClimbsRef` remembers the open climb page (route,
-   back-stack, sub-tab, where its Back goes); `goTab("routes")` from another tab puts it back and restores the scroll
-   (`restoreAppScroll`: retries per frame for ≤2 s, stops on any wheel/touch/key). Tapping Climbs while on Climbs still clears to
-   the area browser. A reload starts fresh.
+   lives at module scope in `lib/climbsReturn.js` for the session. A jump still loading when you leave (`jumpToArea` awaits the
+   full row, then the breadcrumb; a header search then opens the Route finder) is kept as the *pending jump* and resumed on
+   return, unless a newer jump request is waiting, which wins; picking, drilling, the breadcrumb and *Near me* cancel it.
+   App's `lastClimbsRef` remembers the open climb page (route, back-stack, sub-tab, where its Back goes); `goTab("routes")` from
+   another tab puts it back and restores the scroll once (`restoreAppScroll`: retries per frame for ≤2 s; stops on
+   wheel/touch/pointer/key, on a scroll it did not make, while a dialog pins `<body>`, or on the next tab change). The offset is
+   not read while a website page view covers Climbs. A climb's Back to another tab forgets that climb. Tapping Climbs while on
+   Climbs still clears to the area browser. A reload starts fresh.
 2. Areas: `useCountries`, `useStates`, `useAreaChildren(parentId)`, `useArea(id)` / `fetchArea`, `useAreaPath(s)` (breadcrumb) in `lib/db.js`.
    Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
 3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),

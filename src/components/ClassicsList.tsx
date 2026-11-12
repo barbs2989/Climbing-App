@@ -27,7 +27,7 @@ export default function ClassicsList({ rows, total, withWall, dense, onOpen, C }
   return (
     <>
       <SL C={C}>{"Classic climbs here · " + all.toLocaleString()}</SL>
-      {shown.map(r => <RouteRow key={"classic-" + r.id} r={r} areaName={withWall ? r.area_name : undefined} dense={dense} onOpen={onOpen} C={C} />)}
+      {shown.map(r => <RouteRow key={"classic-" + r.id} r={r} areaName={withWall ? r.area_name : undefined} dense={dense} onOpen={onOpen} C={C} classicMark={false} />)}
       {open && all > rows.length ? <div style={{ fontSize: 12, color: C.textMuted, margin: "2px 2px 8px" }}>{"The first " + rows.length.toLocaleString() + " of " + all.toLocaleString() + " classic climbs here, best first."}</div> : null}
       {rest > 0 ? (
         <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ minHeight: 44, width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer", marginBottom: 8 }}>
