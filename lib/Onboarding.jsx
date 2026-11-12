@@ -24,7 +24,7 @@ import ActionIcon from "../src/components/ActionIcon.tsx";
 import Av from "../src/components/Av.tsx";
 
 // The Settings > Notifications switches, in the words that screen uses.
-const NOTIF_COPY = { crew: ["Crew updates", "Day proposals, members joining, ready to climb"], conditions: ["Condition reports", "Your condition reports and logged climbs"], objectives: ["Your objectives", "Another climber logs a climb you saved"], requests: ["Requests & vouches", "Friend / crew requests, vouches and belay catches"] };
+const NOTIF_COPY = { crew: ["Crew updates", "Day proposals, members joining, ready to climb"], conditions: ["Condition reports", "Your condition reports and logged climbs"], objectives: ["Your objectives", "Another climber logs a climb you saved"], requests: ["Requests & vouches", "Friend / crew requests and vouches"] };
 
 // A Google account's photo, at a size worth keeping: its URL ends in a size suffix (=s96-c).
 const bigGooglePhoto = (u) => String(u || "").replace(/=s\d+(-c)?$/, "=s400-c");
@@ -78,7 +78,7 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
             <div style={{fontSize:27,fontWeight:800,letterSpacing:-0.5,color:C.text}}>Welcome to Climb<span style={{color:C.blue}}>Match</span></div>
             <div style={{fontSize:14,color:C.textSub,lineHeight:1.5,marginTop:8}}>A few quick questions so we can match you with the right partners and climbs.</div>
           </div>
-          <div style={{padding:"20px 22px 8px"}}>{[["shield","Trusted conditions","Beta, live conditions, and trip reports from climbers who were just there."],["partners","Partners & crews","Find climbers near you, check their vouches and belay record, and form a crew."],["calendar","Plan every climb","Day-by-day itineraries, a what-to-bring gear list, float plans, and live forecasts."],["award","Log, list & rank","Track ascents, build and share tick-lists, and see where you land on the leaderboard."]].map(f=><div key={f[1]} style={{display:"flex",gap:13,alignItems:"flex-start",marginBottom:15}}><div style={{width:38,height:38,borderRadius:11,background:C.blueBg,border:"1px solid "+C.blueDim,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><ActionIcon name={f[0]} size={18} color={C.blue}/></div><div><div style={{fontSize:14,fontWeight:700,color:C.text}}>{f[1]}</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.45,marginTop:1}}>{f[2]}</div></div></div>)}</div>
+          <div style={{padding:"20px 22px 8px"}}>{[["shield","Trusted conditions","Beta, live conditions, and trip reports from climbers who were just there."],["partners","Partners & crews","Find climbers near you, check their vouches, and form a crew."],["calendar","Plan every climb","Day-by-day itineraries, a what-to-bring gear list, float plans, and live forecasts."],["award","Log, list & rank","Track ascents, build and share tick-lists, and see where you land on the leaderboard."]].map(f=><div key={f[1]} style={{display:"flex",gap:13,alignItems:"flex-start",marginBottom:15}}><div style={{width:38,height:38,borderRadius:11,background:C.blueBg,border:"1px solid "+C.blueDim,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><ActionIcon name={f[0]} size={18} color={C.blue}/></div><div><div style={{fontSize:14,fontWeight:700,color:C.text}}>{f[1]}</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.45,marginTop:1}}>{f[2]}</div></div></div>)}</div>
         </div>:null}
 
         {step==="photo"?<div>

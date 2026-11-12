@@ -255,12 +255,6 @@ async function create() {
     await insert("kudos", { giver: B.id, receiver: A.id, climb_log_id: L.stuart.id, route_name: "North Ridge (Complete)" });
     await insert("kudos", { giver: A.id, receiver: B.id, climb_log_id: L.bPtarmigan.id, route_name: "Ptarmigan Traverse" });
 
-    // ── Belay catches, both directions, filed by the climber who was caught ──
-    const c1 = await insert("belay_catches", { belayer_id: A.id, climber_id: B.id, date_occurred: "2026-08-30", description: R.stuart });
-    await patch("belay_catches", `id=eq.${c1.id}`, { filed_by: B.id });
-    const c2 = await insert("belay_catches", { belayer_id: B.id, climber_id: A.id, date_occurred: "2026-09-14", description: R.coleman });
-    await patch("belay_catches", `id=eq.${c2.id}`, { filed_by: A.id });
-
     // ── Vouches: received (new style + an OLD-style one) and one EMPTY one-tap vouch given, to edit ──
     await insert("vouches", { from_id: B.id, to_id: A.id, reason: JSON.stringify({ route: "Coleman–Deming Glacier", ratings: { safety: 5, communication: 4, reliability: 5, preparation: 4, fitness: 4, teamwork: 5 }, skills: ["glacier", "crevasse", "anchors"], text: "Solid on the glacier and calm when it got windy. (TEST)", wouldClimbAgain: true }) });
     await insert("vouches", { from_id: C.id, to_id: A.id, created_at: "2026-06-01T12:00:00Z", reason: JSON.stringify({ route: "Outer Space", ratings: { safety: 5, punctuality: 3, gear: 4, belay: 5 }, skills: ["leadbelay"], text: "Older-style vouch, from before the categories changed. (TEST)", wouldClimbAgain: true }) });

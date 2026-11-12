@@ -56,7 +56,13 @@ room for side-panel ads later. The phone app keeps its own look.
     `parseTypedSearch` in `lib/typedSearch.js`, grades read by the one parser in `lib/grade.js`), the
     first row offers the Route finder with those filters, scoped to the place typed (top place hit),
     else the home state, else the state with the most climbs; the row names the scope. Picking it
-    goes through App's finder opener (`openFinderAt`), which sets `finderJump` for `DbAreaBrowser`.
+    goes through App's finder opener (`openFinderAt`), which sets `finderJump` for `DbAreaBrowser`. Each climb hit carries its discipline's glyph (`DiscIcon`) with the grade in that
+    discipline's colour, so a boulder, a trad route and an ice route read apart before the name does; the
+    EMPTY box, focused, offers *Near me* (the Climbs map at your position, `nearJump` → `jumpToNearReq`)
+    and the last five things typed (*Recent*, on this device only — `localStorage` `cm_recent_search`,
+    never the database; a tap refills the box). The same component mounts INLINE under the phone Climbs
+    tab's title (owner 2026-11-04, from the competitor review: KAYA, Gaia, Komoot and Mountain Project
+    lead with search); there its hits run down the page.
   - **Drawn ~10% larger** (owner 2026-11-04, `ZOOM` = 1.1 in `lib/wideLayout.js`): the page column
     (`#appscroll`), the pages that open in it, the rail's cards, centred windows, the bell drop-down and
     both Messages panes are CSS-`zoom`ed, so the phone's 13px type reads as ~14.3px beside Mountain
@@ -195,7 +201,8 @@ room for side-panel ads later. The phone app keeps its own look.
   - **Maps:** the layer buttons stop short of the ⤢ Full screen button, and in a narrow map (the rail's)
     *Satellite* reads *Sat* (an `@container` rule in index.html), so none is hidden under it.
   - **The Climbs tab opens on the United States' regions** (`StatePicker`: an untouched country pick
-    means the US on desktop); a phone still asks for the country.
+    means the US), on desktop and — since the competitor review, owner 2026-11-04 — on a phone too, where
+    it used to open on two empty selects; Canada is one tap away in the country select.
 
 - **Loading screen and the sign-in screen.** While the bundle downloads, `index.html` paints a branded splash (`#cm-splash`: the app mark, wordmark and a moving bar; still under reduced motion) over the boot shell; while App restores the session it draws the same splash (`BootSplash`, `lib/BootSplash.jsx`) instead of a blank page. As the app's first screen (the real gate, or `LOGIN_FIRST`), the sign-in screen (`lib/AuthModal.jsx`) fills the screen under a branded header (the mark, the wordmark and what the app is for) instead of drawing a modal over a black page; opened from inside the app it is still the modal.
 - **The sign-in look carries into the app.** Every screen header (`ScreenHero`, `lib/ScreenHero.jsx`) wears the sign-in screen's blue top glow (`HERO_BG`, `HERO_SHEEN`), as do the Me card, a climber's profile header and an area without a cover photo. Home's banner has the sign-in background itself (`HOME_GLOW`) and the mark (`BrandMark`, `src/components/BrandMark.tsx`) beside the wordmark; the Menu's header is the mark and wordmark too. The four icon squares at the top right are one plain dark style; their count badges carry the colour. Disclosure rows end in one chevron (`Chevron`, `src/components/Chevron.tsx`) instead of ▸/▾ text glyphs. Each header's line under the title is one short line. **The five top tabs have no boxed header** (owner, 2026-10-25): Climbs, Partners, Crew, Logbook and Ranks render `ScreenHero` with `quiet`, which drops the box and the big title (the title stays as a visually hidden `<h1>` for screen readers) and keeps the one-line caption as plain muted text, with Ranks' "?" beside it. The sub-tab bar names the view; the Logbook's unreadable-count warning stays in the caption.
