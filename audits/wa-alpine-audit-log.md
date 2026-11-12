@@ -37459,3 +37459,74 @@ in-scope count is now 751 (853 tagged alpine/mountaineering overall), up from 71
 
 Next batch will continue id-ascending from `wa_mount_mystery_standard` (the next in-scope id
 after it is `wa_mount_norton_scramble`).
+
+---
+
+## 2026-11-12 — Pass 8, Batch 523
+
+Ten routes across six peaks, continuing id-ascending from `wa_mount_norton_scramble`: Mount
+Norton (Scramble), Mount Olympus (North Ridge via Blue Glacier; Blue Glacier Standard Route; West
+Ridge), Mount Persis (The Hexorcist; West Ridge), Mount Pilchuck (East Ridge; Standard Route),
+Mount Price (Hester Lake Route), Mount Pugh (Pika Slab).
+
+One confirmed error, fixed: `wa_mount_olympus_blue_glacier`'s `road.status` says the Upper Hoh
+Road "storm damage shut it from December 2024 until repairs reopened it in May 2026" — the year
+is wrong. Multiple news reports (Washington State Standard, The Herald, The Spokesman-Review,
+Forks Forum, FOX Weather) agree the Dec 2024 washout closure ended with a reopening on May 8,
+2025, not 2026, and the NPS road-conditions page currently shows the road open. This catalog's
+own sibling row for the same peak, `wa_mount_olympus_west_ridge`, already states the correct "May
+8, 2025" for the identical closure — this row just carried the wrong year. SQL in
+`audits/sql/2026-11-12-batch-523.sql`.
+
+Flagged for human review, no SQL (no confidently verifiable replacement value):
+- `wa_mount_norton_scramble`'s `road.status` dates the Elwha/Olympic Hot Springs Road vehicle
+  washout closure to "late October 2026." Sources disagree sharply on when this closure actually
+  started — one guide says September 2024, a photo caption elsewhere implies February 2022, and a
+  local reopen-the-road advocate describes "more than a decade" of washouts and stalled repairs —
+  and none mentions a new event specifically in October 2026. The *current* state the row
+  describes (closed to vehicles at Madison Falls, open to pedestrians/bikes) does match NPS's
+  live alert; only the specific dating looks suspect, and there's no single source precise enough
+  to replace it with confidence.
+- `wa_mount_pugh_pika_slab`'s `road.status` describes a Mountain Loop Highway closure from a
+  December 2025 Shoofly Curve landslide (~$3.65M damage, closed Granite Falls–Darrington). Could
+  not confirm current (Nov 2026) reopening status either way — no 2026 reporting on Shoofly Curve
+  specifically turned up.
+- `wa_mount_persis_the_hexorcist`'s fa ("Likely Bryan Burdo & Bill Enger, 1985") and
+  `wa_mount_persis_west_ridge`'s fa ("Harry B. Hinman's party, 1917") — neither climber/date
+  combination could be corroborated against any source found (Wikipedia, SummitPost, Mountaineers
+  pages for Persis all omit first-ascent history entirely). Not contradicted either; just
+  unverifiable with what's reachable.
+- `wa_mount_pugh_pika_slab`'s fa ("Leland Windham, July 2023") — Mountain Project's own Pika Slab
+  route page was found but its first-ascent credit didn't surface in results; Mount Pugh's own
+  1916 Bruseth first ascent is well documented, but that's the peak, not this 20-ft slab feature.
+
+Elevations checked, all clean (within normal cross-source spread or an exact match): Mount Norton
+6,319 ft (matches listsofjohn's LiDAR/map figures, SummitPost's Olympic list, and MyTopo; the
+oft-repeated 6,397 ft Wikipedia figure traces back to an older measurement and Wikipedia's own
+citation for the lower number is this same listsofjohn page); Mount Olympus/West Peak 7,980 ft
+(NPS and Wikipedia's standard figure; LiDAR-based listings run a few feet lower, normal spread);
+Mount Persis 5,464 ft (Wikipedia/Peakbagger/listsofjohn agree; TopoQuest and Mountaineers differ
+by a few feet, normal spread); Mount Pilchuck 5,324 ft (firelookout.com, Washington State Parks,
+trip-report sources agree); Mount Price 5,587 ft (WTA and Peakery agree exactly). Mount Pugh's
+own summit is 7,201 ft — not stored on this row, since Pika Slab's 6,594 ft `high_point_ft`
+describes the slab feature itself, which this catalog's own text places above Stujack Pass
+(~5,700–5,750 ft per the Forest Service and WTA) on the way to that summit; 6,594 ft sits
+geometrically between the two, so no conflict.
+
+First ascents checked and confirmed: Mount Norton (Pat Cummins, 1947 — peak FA, matches
+Wikipedia); Mount Olympus Blue Glacier (Lorenz Nelson/Mountaineers party, Aug 13, 1907 — SummitPost
+independently confirms 1907 as the true/West summit's first successful ascent, after an 1899
+party topped only the lower East Peak).  Mount Olympus West Ridge's route-level FA (1964, Gary
+Maykut/Len Miller/Joe Witte) could not be independently corroborated but was not contradicted
+either — left as-is, not flagged, since nothing in the row conflicts with anything found.
+
+`wa_mount_olympus_2_north_ridge_via_blue_glacier` is a near-stub row (only `grade` populated) —
+consistent with the catalog's normal "bare" shape for the ~99.5% of routes with no enrichment
+pass yet, not an error.
+
+No coordinates on any of these ten rows looked implausible for their stated peak/area. The live
+catalog's in-scope count is unchanged at 751 since batch 522 (no new in-flight catalog growth this
+run).
+
+Next batch will continue id-ascending from `wa_mount_pugh_pika_slab` (the next in-scope id after
+it is `wa_mount_rainier_curtis_ridge`).
