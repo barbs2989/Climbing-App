@@ -63,12 +63,12 @@ const CASES = [
     // Since PR63 the switch list is SettingsNotifsSheet.tsx and the tagged notification stays in App,
     // so the second edit is `also` an edit of App (applied, checked and restored the same way).
     edit: (s) => s
-      .replace('["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"]]',
-               '["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"],["photos","Photo tags","Someone tagged you in a route photo"]]'),
+      .replace('["requests","Requests & vouches","Friend / crew requests and vouches"]]',
+               '["requests","Requests & vouches","Friend / crew requests and vouches"],["photos","Photo tags","Someone tagged you in a route photo"]]'),
     alsoFile: APP,
     alsoEdit: (s) => s.replace('{id:"nk",icon:"",climberId:1,', '{id:"nk",icon:"",cat:"photos",climberId:1,'),
     expect: /does not store it/,
-    skipIf: (s) => !s.includes('["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"]]'),
+    skipIf: (s) => !s.includes('["requests","Requests & vouches","Friend / crew requests and vouches"]]'),
   },
   {
     name: "default-muted",
