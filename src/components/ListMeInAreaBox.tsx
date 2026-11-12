@@ -9,6 +9,8 @@ export interface ListMeInAreaBoxProps {
   /** The place chosen in Partners › By Area: a crag, canyon, range, or a whole state/country. */
   areaId: string;
   areaName: string;
+  /** The area's type when the pick knew it (crag search, deep link); null for the region dropdown's regions and states. */
+  areaType?: string | null;
   C: typeof Palette;
   /** The signed-in climber's id. */
   uid: string;
@@ -24,13 +26,17 @@ export interface ListMeInAreaBoxProps {
    neither on the screen where a climber has just picked the place they want partners at. This box sits
    right under the picker, so the climber who is looking can be found by the next one with one tap.
    Same write as the area page's card (savePartnerArea / removePartnerArea), optimistic the same way. */
-export default function ListMeInAreaBox({ areaId, areaName, C, uid, myListings, onListMe, notify }: ListMeInAreaBoxProps) {
+/* The DB refuses a listing at these (0300 `partner_areas` trigger; My areas' NO_LISTING): climbing on a peak is matched
+   by route. The crag search can hand a peak, so the box steps aside rather than offer a tap that fails. */
+const NO_LISTING = new Set(["peak", "world", "country"]);
+export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, myListings, onListMe, notify }: ListMeInAreaBoxProps) {
   const [busy, setBusy] = useState(false);
   const [optListed, setOptListed] = useState<boolean | null>(null);
   const serverListed = !!(myListings || []).find((l) => l && l.areaId === areaId);
   useEffect(() => { setOptListed(null); }, [serverListed, areaId]);
   const listed = optListed == null ? serverListed : optListed;
   const name = areaName || "this area";
+  if (areaType && NO_LISTING.has(areaType)) return null;
   const toggle = async () => {
     if (busy) return;
     setBusy(true);
@@ -50,7 +56,7 @@ export default function ListMeInAreaBox({ areaId, areaName, C, uid, myListings, 
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + name + tx(" — tap to remove") : "List me at " + name} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.blueSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1, overflowWrap: "anywhere" }}>{listed ? "Remove listing" : "List me at " + name}</button>
         {listed && onListMe ? (
-          <button type="button" onClick={() => onListMe({ areaId, name: areaName, areaType: null, disciplines: [] })} aria-label={"Add the dates and climbing types for your listing at " + name} style={{ flex: "1 1 auto", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, padding: "0 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>
+          <button type="button" onClick={() => onListMe({ areaId, name: areaName, areaType: areaType || null, disciplines: [] })} aria-label={"Add the dates and climbing types for your listing at " + name} style={{ flex: "1 1 auto", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, padding: "0 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>
             <span>Add dates or climbing types</span>
             <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron size={14} color={C.textMuted} /></span>
           </button>
