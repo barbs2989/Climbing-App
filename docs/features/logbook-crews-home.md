@@ -222,6 +222,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Migrations**: 0031 objectives, 0036 crews, 0037/00400/00540/00730/0121 climb logs, 0038/0238 vouches, 00420 messaging, 0075 crew locked day, 0086/0227 invite rules,
   0187 pinned states, 0199 itineraries, 0209 crew gear, 0286/0287/0289/0291 `assign_crew_gear` and gear claims, 0092 `user_lists`,
   0302 `crews.area_id` + `crews.discipline` (exactly one of route/area; `crew_listings` appends both; an area fold must repoint `crews.area_id`).
+  0408 the creator is always a confirmed `crew_members` row (trigger `crews_creator_joins` on insert, plus a backfill), so `crew_listings.confirmed_count` counts the organiser and matches the crew card. Every crew-size count counts you once (`crewSize`: 1 + the members other than you who are not pending); a pending request to join is not counted in, including in the crew finder's "N of M · K spots left".
+  0410 an unanswered invite HOLDS a spot everywhere: `crew_listings.held_count` (confirmed + invited) drives the finder's spots, and accepting a request or sending an invite (`persistInvite`, every invite path) refuses past `cap`. A crew with no `cap` shows "N climbers" on a profile, never "N of M". Handing `created_by` to someone confirms their row (the 0227 guard lets the organiser's own row through).
 - **Device-only**: offline downloads (browser storage via `lib/offline.js`).
 - **Seed**: `ROUTES`/`CLIMBERS` fallbacks and `DEMO_FILLERS` sample crews/logs exist for the non-DB path; with `USE_DB` on, the lists above come from Supabase.
 
