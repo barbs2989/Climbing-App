@@ -33,6 +33,19 @@ export { nearbyPeaksLive, nearbyPeaksBounds, nearbyPeaksRows };
 // the cycle static.
 
 
+// The browser tab names the area you are on ("Index Town Wall – ClimbMatch"). App's own DocTitle names the tab
+// ("Climbs – ClimbMatch") and, as the parent, its effect runs after this one on the same commit, so this one sets
+// the title on the next frame.
+function AreaDocTitle({ name }) {
+  useEffect(() => {
+    if (typeof document === "undefined") return undefined;
+    const t = name + " – ClimbMatch";
+    const id = requestAnimationFrame(() => { document.title = t; });
+    return () => cancelAnimationFrame(id);
+  }, [name]);
+  return null;
+}
+
 export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignIn, onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, jumpToNearReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
   // Start where the Climbs tab stood when you last left it (lib/climbsReturn.js): picking another tab
   // unmounts this component, and the owner wants Climbs to reopen on the page you were looking at.
@@ -202,6 +215,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
           where it goes (drawn with POP_BACK since 2026-09-25, like every other Back in the app:
           44px tall with a bright edge, so it is still easy to find without its own colour), and under it the full path, WRAPPING rather than scrolling,
           so every level above you is visible and tappable. */}
+      {screen === "areas" && current && current.name ? <AreaDocTitle name={current.name} /> : null}
       {crumbs.length ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: 10, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
@@ -209,13 +223,13 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
               <span aria-hidden="true">{"←"}</span>
               <span style={{ minWidth: 0, overflowWrap: "anywhere" }}>{"Back to " + (screen !== "areas" ? current.name : crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span>
             </button>
-            {/* On an area page the path stops at the PARENT: the area you are in is the header box
-                right below, so naming it here in bold too said it twice. On a sub-screen (Route
-                finder, Map…) the area stays in the path as the way back to its page. A path that
-                would only repeat the Back button above it (just "All areas") is not drawn. */}
+            {/* The path ends on the area you are IN (owner, 2026-11-11: "The area name needs to be on the top header
+                too"): its header box scrolls away on a long page, and this bar does not. It is the last item, in bold,
+                not a link (aria-current). On a sub-screen (Route finder, Map…) the area is a link, the way back to its page. */}
             {(() => {
               const path = screen === "areas" ? [null, ...crumbs.slice(0, -1)] : [null, ...crumbs];
-              return path.length < 2 ? null : (
+              const here = screen === "areas" && current ? current : null;
+              return path.length < 2 && !here ? null : (
                 <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 6, columnGap: 6, minWidth: 0 }}>
                   {path.map((c, i) => (
                     <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
@@ -223,6 +237,10 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
                       <button onClick={() => { setScreen("areas"); jump(c ? i - 1 : -1); }} style={{ background: "transparent", border: "none", color: C.blue, fontSize: 14.5, cursor: "pointer", fontWeight: 700, padding: "2px 0", textAlign: "left", lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : "All areas"}</button>
                     </span>
                   ))}
+                  {here ? <span style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
+                    <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 16, fontWeight: 700 }}>{"›"}</span>
+                    <span aria-current="page" style={{ color: C.text, fontSize: 14.5, fontWeight: 800, lineHeight: 1.3, overflowWrap: "anywhere" }}>{here.name}</span>
+                  </span> : null}
                 </nav>
               );
             })()}
