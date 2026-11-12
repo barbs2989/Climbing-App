@@ -69,6 +69,15 @@ const EXEMPT = [
     match: (style) => /zIndex:\s*9700/.test(style) && /flexDirection:\s*"column"/.test(style),
   },
   {
+    key: "trail-draw",
+    // TrailDrawMap's full-screen branch (lib/TrailDrawMap.jsx, 2026-11-05): the Add-the-trail drawer
+    // and the desktop Draw approach tool. A line is drawn BY EYE, point by point, and the owner asked
+    // for the whole screen to do it in. Same class as the route map; it sits at 10000 because the
+    // GPS submission sheet it opens from is a 9999 overlay, so the route map's 9700 would be under it.
+    why: "the trail drawer is a MAP -- spatial content, full-bleed like the route map, and a line drawn by eye needs the whole screen",
+    match: (style, file) => /TrailDrawMap\.jsx$/.test(file) && /zIndex:\s*10000(?!\d)/.test(style),
+  },
+  {
     key: "menu-wide",
     // The Menu's WIDE branch only (≥1024px, where the desktop shell is no longer a 520px column).
     // The owner asked for the Menu to fill the screen (2026-10-21); it had been a 440px drawer.

@@ -3,17 +3,21 @@ import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityS
 import { POP_CLOSE } from "./popupChrome.js";
 import TrailDrawMap from './TrailDrawMap'
 import { MIN_RECORDED_PTS } from './track'
+import { tx } from './tapWords.js'
 import ActionIcon from '../src/components/ActionIcon.tsx'
 import { C } from '../ClimbMatchCore.jsx'
 
-export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, cragAt, onClose, onSuccess, initialPts }) {
+export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, cragAt, onClose, onSuccess, initialPts, initialShape }) {
   // A crag's trail can be TRACED on the map ('draw') as well as recorded. It opens first on a crag
   // whenever the map has somewhere to open: the parking pin or the crag's own coordinate.
-  const canDraw = !!(crag && (parkAt || cragAt))
+  // ...or when a line drawn in the desktop tool is handed over: it drew without a pin, so this can show it.
+  const canDraw = !!(crag && (parkAt || cragAt || (initialPts && initialPts.length)))
   const [tab, setTab] = useState(canDraw ? 'draw' : 'paste') // 'draw', 'paste', 'upload', 'devices'
   // A line already drawn in the desktop drawing tool (lib/DrawRoute.jsx) arrives here to be submitted.
   const [drawPts, setDrawPts] = useState(() => (canDraw && initialPts && initialPts.length ? initialPts : []))
   const drawing = tab === 'draw'
+  // A leg still being routed: what is on screen is about to change, so it is not yet a line to submit.
+  const [drawPending, setDrawPending] = useState(false) // a handed-over line never carries a pending leg: the desktop tool waits for routing before it hands over
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
   const [climbDate, setClimbDate] = useState('')
@@ -126,8 +130,9 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
     // Client-side validation
     // MIN_RECORDED_PTS: the map draws no line under 10 points (lib/track.js), and review_gps_submission
     // (0397) refuses one, so a shorter trace is stopped here rather than approved into nothing.
+    if (drawing && drawPending) { setError('A leg of the trail is still being followed. Wait a moment, then submit.'); return }
     if (drawing ? drawPts.length < MIN_RECORDED_PTS : coordinates.trim().length === 0) {
-      setError(drawing ? 'Tap at least ' + MIN_RECORDED_PTS + ' points along the trail, one at every bend and fork (you have ' + drawPts.length + ')' : 'Please paste or upload GPS coordinates')
+      setError(drawing ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail, one at every bend and fork (you have ' + drawPts.length + ')') : 'Please paste or upload GPS coordinates')
       return
     }
 
@@ -319,7 +324,8 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
           ))}
         </div>
 
-        {tab === 'draw' && <TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={mapC} />}
+        {/* Kept MOUNTED behind the other tabs: unmounting it would turn a routed line back into one anchor per point and lose Undo. */}
+        {canDraw && <div style={{ display: tab === 'draw' ? 'block' : 'none' }}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={mapC} active={tab === 'draw'} onShape={(s) => setDrawPending(s.some((x) => x.pending))} initialShape={initialShape && initialShape.length ? initialShape : null} /></div>}
 
         {tab === 'paste' && (
           <div>
@@ -437,9 +443,11 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
           of it, where the climber's eye already is, rather than at the head of a long form. */}
       <div style={{ padding: '12px 16px', borderTop: '1px solid ' + C.border }}>
         {error && <div role="alert" style={S.error}>{error}</div>}
+        {/* WHY Submit is off, in words on the sheet: a tooltip on a disabled button is shown by no phone and read by no screen reader. */}
+        {drawing && !submitting && (drawPts.length < MIN_RECORDED_PTS || drawPending) ? <div style={{ fontSize: 12.5, color: C.textMuted, marginBottom: 8, textAlign: 'right' }}>{drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail to submit it (you have ' + drawPts.length + ').') : 'Still following the trail for a leg.'}</div> : null}
         <div style={{ display: 'flex', gap: 10 }}>
           <button onClick={onClose} disabled={submitting} style={S.secondary}>Cancel</button>
-          <button onClick={handleSubmit} disabled={submitting} style={{ ...S.primary, flex: 2, ...(submitting ? { background: C.border, color: C.textMuted, cursor: 'default' } : {}) }}>
+          <button onClick={handleSubmit} disabled={submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending))} title={drawing && drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail') : drawing && drawPending ? 'Still following the trail for a leg' : undefined} style={{ ...S.primary, flex: 2, ...(submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending)) ? { background: C.border, color: C.textMuted, cursor: 'default' } : {}) }}>
             {submitting ? 'Submitting…' : crag ? 'Submit trail' : 'Submit track'}
           </button>
         </div>
