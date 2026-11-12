@@ -102,7 +102,8 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
     // cannot build its own breadcrumb and every panel keyed on path renders empty.
     // Hydrate the full row before navigating.
     let full = a;
-    if (!a.path) {
+    // `_narrow`: a map pin's row carries only the columns the map draws (useNearbyAreas).
+    if (!a.path || a._narrow) {
       const row = await fetchArea(a.id).catch(() => null);
       if (jumpSeq.current !== seq) return false;
       if (row) { full = row; setStateNode(row); }
@@ -208,7 +209,7 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
         </div>
       ) : null}
       {screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
       ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
