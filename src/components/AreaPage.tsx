@@ -182,6 +182,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // The mini grade chart on each child's card (item 13, 2026-11-04) is a website thing: one call for
   // the whole list, only where there is a list to draw it on. The phone card is unchanged.
   // The desktop "add / edit / wrong place" row's cells (see the row under the climb list).
+  // A state, country or the world has its place fixed by the map: no "Wrong place?" (owner, 2026-11-11).
+  const fixedPlace = ["world", "country", "state"].includes(area.area_type);
   const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
   const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
   const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
@@ -378,10 +380,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           <div style={cellQ}>{"Know " + area.name + "?"}</div>
           <button onClick={() => editOn(null)} aria-label={"Suggest an edit to " + area.name} style={{ ...cellBtn, border: "1px dashed " + C.border, color: C.blue }}>{"Suggest an edit"}<span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={14} color={"currentColor"}/></span></button>
         </div> : null}
-        <div style={cellBox}>
+        {!fixedPlace ? <div style={cellBox}>
           <div style={cellQ}>{"Wrong place?"}</div>
           <button onClick={() => setWrongOpen(true)} aria-label={"Tell us where " + area.name + " belongs"} style={{ ...cellBtn, border: "1px solid " + C.border, color: C.textSub }}>{"Tell us where"}</button>
-        </div>
+        </div> : null}
       </div> : <>
         <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} C={C} />
 
@@ -391,10 +393,12 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
           </button>
         ) : null}
 
-        {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it. */}
-        <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
+        {/* WRONG PLACE (0372): a claim only. The page does not change; the owner moves the area and resolves it.
+            Not on a state/province, country or the world (owner, 2026-11-11): their place is fixed by the map,
+            so "Tell us where Alabama belongs" made no sense. */}
+        {!fixedPlace ? <button onClick={() => setWrongOpen(true)} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.border, background: C.surface, color: C.textSub, marginBottom: 14 }}>
           {"Wrong place? Tell us where " + area.name + " belongs"}
-        </button>
+        </button> : null}
       </>}
       {wrongOpen ? <AreaWrongSpot area={area} C={C} onClose={() => setWrongOpen(false)} onSubmit={(note: string, place: string) => submitAreaPlacementClaim(area.id, note, place)} onSignIn={onSignIn} /> : null}
 
