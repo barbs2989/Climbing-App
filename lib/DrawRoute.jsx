@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { C, CRAG_CATS, catOf, trailheadPoint, uElev, wpIs, wpPlaced } from "../ClimbMatchCore.jsx";
 import TrailDrawMap, { fmtTrailLen, trailLenM } from "./TrailDrawMap.jsx";
 import { POP_BACK } from "./popupChrome.js";
+import { MIN_RECORDED_PTS } from "./track";
 
 /* DRAW AN APPROACH (desktop website, owner 2026-10-22): click points on the map from the trailhead
    (or a crag's parking) toward the climb, see the line's length and the height it gains and loses,
@@ -36,6 +37,9 @@ function gpxOf(name, pts, eles) {
 }
 
 export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
+  // The line as anchors + routed points, for the hand-over to the submission sheet (see TrailDrawMap).
+  const shapeRef = useRef([]);
+  const [shapePending, setShapePending] = useState(false); // a leg still being routed: not yet a line to suggest
   const crag = CRAG_CATS.includes(catOf(route));
   const th = trailheadPoint(route);
   const start = th && isFinite(Number(th.lat)) && isFinite(Number(th.lng)) ? { lat: Number(th.lat), lng: Number(th.lng) } : null;
@@ -46,7 +50,8 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
   const [prof, setProf] = useState(null); // {key, gain, loss, eles} | {key, error}
   const key = pts.map(function (p) { return p[0] + "," + p[1]; }).join(";");
   useEffect(function () {
-    if (pts.length < 2) return undefined;
+    if (pts.length < 2 || shapePending) return undefined; // measured once the line has settled, not per routed leg
+    if (prof && prof.key === key && !prof.error) return undefined; // measured for these very points: a new leg landing is not a reason to ask again (a failed read is)
     let live = true;
     const sp = samples(pts);
     const t = setTimeout(function () {
@@ -60,8 +65,10 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
       }).catch(function () { if (live) setProf({ key: key, error: true }); });
     }, 600);
     return function () { live = false; clearTimeout(t); };
-  }, [key]); // eslint-disable-line react-hooks/exhaustive-deps -- `key` is `pts` serialised; keying on it (not the array) stops a refetch on every render
+  }, [key, shapePending]); // eslint-disable-line react-hooks/exhaustive-deps -- `key` is `pts` serialised; keying on it (not the array) stops a refetch on every render, and `prof` is read only to skip a repeat for the same key, never to trigger one
   const lenM = trailLenM(pts);
+  const canSuggest = pts.length >= MIN_RECORDED_PTS && !shapePending; // one answer for the button's state AND its look
+  const canDownload = pts.length >= 2 && !shapePending; // the file holds the line as drawn, not a leg about to be bent
   const p = prof && prof.key === key ? prof : null;
   const download = function () {
     const gpx = gpxOf(route.name + " — drawn approach", pts, null);
@@ -81,14 +88,14 @@ export default function DrawRouteView({ route, mtn, onClose, onSuggest }) {
     </div>
     <div style={{ padding: "14px 16px 40px", color: C.text }}>
       <p style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, margin: "0 0 12px" }}>{crag ? "Click along the way in, from where you park to the base of the crag. Download it as GPX, or suggest it as this crag’s trail." : "Click along the way in, from the trailhead toward the climb. Download it as GPX to plan with or load on your watch."}</p>
-      <TrailDrawMap start={start} end={endPt} pts={pts} setPts={setPts} C={TOOL_C} marks={marks} />
+      <TrailDrawMap start={start} end={endPt} pts={pts} setPts={setPts} C={TOOL_C} marks={marks} title={"Draw the approach · " + route.name} minPts={crag ? MIN_RECORDED_PTS : 2} onShape={function (s) { shapeRef.current = s; setShapePending(s.some(function (x) { return x.pending; })); }} />
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
         <div style={stat}><div style={lbl}>Length</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length > 1 ? fmtTrailLen(lenM) : "—"}</div></div>
-        <div style={stat}><div style={lbl}>Gain · loss</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length < 2 ? "—" : !p ? <span style={{ fontSize: 13, color: C.textMuted, fontWeight: 600 }}>Measuring…</span> : p.error ? <span style={{ fontSize: 13, color: C.amber, fontWeight: 600 }}>Couldn’t read the terrain</span> : "↑" + uElev(p.gain) + " · ↓" + uElev(p.loss)}</div></div>
+        <div style={stat}><div style={lbl}>Gain · loss</div><div style={{ fontSize: 16, fontWeight: 800, marginTop: 2 }}>{pts.length < 2 ? "—" : !p ? <span style={{ fontSize: 13, color: C.textMuted, fontWeight: 600 }}>{shapePending ? "Waiting for the trail…" : "Measuring…"}</span> : p.error ? <span style={{ fontSize: 13, color: C.amber, fontWeight: 600 }}>Couldn’t read the terrain</span> : "↑" + uElev(p.gain) + " · ↓" + uElev(p.loss)}</div></div>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12 }}>
-        <button onClick={download} disabled={pts.length < 2} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: pts.length < 2 ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < 2 ? "default" : "pointer" }}>⤓ Download GPX</button>
-        {crag && onSuggest ? <button onClick={function () { onSuggest(pts); }} disabled={pts.length < 3} title={pts.length < 3 ? "Draw at least three points" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: pts.length < 3 ? C.card : C.blueSolid, color: pts.length < 3 ? C.textMuted : "#fff", fontSize: 13.5, fontWeight: 700, cursor: pts.length < 3 ? "default" : "pointer" }}>Suggest this as the trail</button> : null}
+        <button onClick={download} disabled={!canDownload} title={pts.length >= 2 && shapePending ? "Still following the trail for a leg" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "1px solid " + C.blueDim, background: C.blueBg, color: canDownload ? "#fff" : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: canDownload ? "pointer" : "default" }}>⤓ Download GPX</button>
+        {crag && onSuggest ? <button onClick={function () { onSuggest(pts, shapeRef.current); }} disabled={!canSuggest} title={pts.length < MIN_RECORDED_PTS ? "Draw at least " + MIN_RECORDED_PTS + " points" : shapePending ? "Still following the trail for a leg" : undefined} style={{ padding: "10px 14px", borderRadius: 10, border: "none", background: canSuggest ? C.blueSolid : C.card, color: canSuggest ? "#fff" : C.textMuted, fontSize: 13.5, fontWeight: 700, cursor: canSuggest ? "pointer" : "default" }}>Suggest this as the trail</button> : null}
       </div>
       <p style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.5, margin: "12px 0 0" }}>The gain and loss are read from terrain heights along your line, so they follow the ground, not the trail’s switchbacks. A drawn line is a sketch — check it against the map and the ground before you rely on it.</p>
     </div>

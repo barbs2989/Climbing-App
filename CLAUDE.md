@@ -244,6 +244,7 @@ npm run enrich:apply       # write approach_variants / climbing_route / bivy (--
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:facts-pencil-open # a facts card/section pencil opens at an open field; a locked grade never locks empty facts (in build)
 npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (in build)
@@ -327,7 +328,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (~line 214 of `ClimbMatch.jsx`) holds **~250 `useState` hooks** and every screen — where each kind of state lives, and why there is no global store, is in [ARCHITECTURE.md](ARCHITECTURE.md). Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, a setup checklist, *Alerts* (one dropdown: what waits on you, then notifications), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `today` — home dashboard (greeting, a setup checklist, *Notifications* (one dropdown, the bell's list: what waits on you, then the rest; called *Alerts* until 2026-11-11), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
   - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
     labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.

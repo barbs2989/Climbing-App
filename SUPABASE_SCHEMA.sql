@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 870 columns, 456 keyed/checked constraints (157 foreign keys), 266 RLS policies.
+-- Counts: 87 tables, 871 columns, 457 keyed/checked constraints (157 foreign keys), 266 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -155,6 +155,7 @@
 -- routes (routes_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id)
 -- saved_areas (saved_areas_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
 -- saved_areas (saved_areas_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
+-- saved_searches (saved_searches_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- topo_lines (topo_lines_created_by_fkey): FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE
 -- topo_lines (topo_lines_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- topo_lines (topo_lines_topo_id_fkey): FOREIGN KEY (topo_id) REFERENCES topos(id) ON DELETE CASCADE
@@ -1955,7 +1956,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_classic_score_check CHECK (((classic_score IS NULL) OR ((classic_score >= (0)::numeric) AND (classic_score <= (4)::numeric)))),
   CONSTRAINT routes_fixed_gear_len CHECK (((fixed_gear IS NULL) OR ((char_length(fixed_gear) >= 1) AND (char_length(fixed_gear) <= 160)))),
   CONSTRAINT routes_guide_stars_range CHECK (((guide_stars IS NULL) OR ((guide_stars >= 0) AND (guide_stars <= 4)))),
-  CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 160)))),
+  CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 1000)))),
   CONSTRAINT routes_outing_shape_check CHECK (((outing_shape IS NULL) OR (outing_shape = ANY (ARRAY['outback'::text, 'loop'::text, 'point'::text])))),
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
   CONSTRAINT routes_rock_quality_len CHECK (((rock_quality IS NULL) OR ((char_length(rock_quality) >= 1) AND (char_length(rock_quality) <= 160)))),
@@ -1979,6 +1980,22 @@ ALTER TABLE public.saved_areas ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "saved_areas delete own" ON public.saved_areas AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 CREATE POLICY "saved_areas insert own" ON public.saved_areas AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 CREATE POLICY "saved_areas read own" ON public.saved_areas AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+
+CREATE TABLE public.saved_searches (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  name text NOT NULL,
+  query jsonb NOT NULL DEFAULT '{}'::jsonb,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT saved_searches_pkey PRIMARY KEY (id),
+  CONSTRAINT saved_searches_name_check CHECK ((length(btrim(name)) > 0)),
+  CONSTRAINT saved_searches_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
+);
+ALTER TABLE public.saved_searches ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "saved_searches delete own" ON public.saved_searches AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_searches insert own" ON public.saved_searches AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_searches read own" ON public.saved_searches AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
+CREATE POLICY "saved_searches update own" ON public.saved_searches AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.screening_terms (
   term text NOT NULL,
@@ -2024,8 +2041,10 @@ CREATE TABLE public.topos (
   moderation text NOT NULL DEFAULT 'visible'::text,
   caption text,
   route_id text,
+  area_photo boolean NOT NULL DEFAULT false,
   CONSTRAINT topos_pkey PRIMARY KEY (id),
   CONSTRAINT topos_alt_len CHECK (((alt IS NULL) OR (char_length(alt) <= 300))),
+  CONSTRAINT topos_area_photo_has_no_route CHECK (((NOT area_photo) OR (route_id IS NULL))),
   CONSTRAINT topos_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT topos_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE,
   CONSTRAINT topos_created_by_fkey FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE,
@@ -2034,7 +2053,7 @@ CREATE TABLE public.topos (
 ALTER TABLE public.topos ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "moderation hides taken-down content" ON public.topos AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.topos AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
-CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND (route_id IS NOT NULL)));
+CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND ((route_id IS NOT NULL) OR area_photo)));
 CREATE POLICY "topos own delete" ON public.topos AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos own update" ON public.topos AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by)) WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos public read" ON public.topos AS PERMISSIVE FOR SELECT TO public USING (true);

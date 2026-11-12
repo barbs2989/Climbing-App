@@ -74,7 +74,7 @@ const CASES = [
    * differently, no name moves, and the pack empties the moment there is no signal. */
   { name: "read-gone", file: DB, must: "fail", expect: "fallback is not offlineRoutesByIds",
     why: "§2 — the row is written and never read back; the defect no render assertion can see",
-    find: "}, () => offlineRoutesByIds(ids)),", repl: "}, () => []),"  },
+    find: "}, () => offlineRoutesByIds(ids)) : async () => {", repl: "}, () => []) : async () => {"  },
 
   { name: "reader-gone", file: OFF, must: "fail", expect: "no longer defines offlineRoutesByIds",
     why: "§2 — the reader itself is renamed out from under lib/db.js",

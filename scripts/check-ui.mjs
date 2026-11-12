@@ -148,8 +148,8 @@ const LANDMARKS = {
 // so clicking a control and capturing is what turns that silence into a failure.
 const DISCLOSURE = [
   /^\d+ updates?\s*[▾▸]?$/,     // "11 updates ▾"  (activity feed)
-  /^Alerts( · \d+ new)?\s*[▾▸]?$/,
-  /^View all \d+ \w+$/,                   // "View all 14 alerts"
+  /^Notifications( · \d+ new)?\s*[▾▸]?$/,   // Home's list, called Alerts until 2026-11-11
+  /^View all \d+ \w+$/,                   // "View all 14 notifications"
   /^View \d+ more suggestions?$/,
   /^Suggested climbs( · \d+)?\s*[▾▸]?$/,
   /^\d+ (updates|reports|climbs)\s*[▾▸]$/,

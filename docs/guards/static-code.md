@@ -906,6 +906,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (it was a 440px drawer). Its content is centred in a 720px column by the panel's padding. It is
     keyed on the WHOLE style string, so the Menu's phone branch, with the same zIndex and capped, is
     still checked.
+    A **fifth**, `trail-draw` (2026-11-05): `TrailDrawMap`'s full-screen branch, the Add-the-trail
+    drawer and the desktop Draw approach tool. Same class as the route map — a line is drawn by
+    eye, point by point, and the owner asked for the whole screen to do it in. It sits at
+    `zIndex: 10000`, not the route map's 9700, because the GPS submission sheet it opens from is a
+    9999 overlay; matched by file AND that literal, so a change to either fails as stale.
   - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
     That matches a **literal** style object, and `GPXMap` writes
     `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the

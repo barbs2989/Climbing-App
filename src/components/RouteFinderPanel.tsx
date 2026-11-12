@@ -407,7 +407,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </div>
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
-            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} dense={wide && compact} />
+            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} savedMark={!onToggleWish} dense={wide && compact} />
             {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.onSolid : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
