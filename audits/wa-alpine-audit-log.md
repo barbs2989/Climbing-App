@@ -37900,3 +37900,45 @@ were sanity-checked against the parent peak's coordinate and found plausible.
 
 Next batch will continue id-ascending from `wa_north_face_left_buttress` (the next in-scope id
 after it is `wa_north_face_var_right_directisimo`, on Concord Tower).
+
+## Batch 530 — 2026-11-12
+
+Checked 8 WA alpine/mountaineering peak routes, id-ascending from `wa_north_face_var_right_directisimo`
+through `wa_northeast_buttress_4`: Concord Tower's North Face Var. Right (Directisimo), North Gardner
+Mountain's Northwest Couloir, North Peak's (Gunsight Range) North Ridge and Southeast Buttress,
+Cutthroat Peak's North Ridge, Primus Peak's North Ridge, North Star Mountain's East Route, and
+Colchuck Peak's Northeast Buttress.
+
+**Clean (6):** Concord Tower's stored summit elevation (7,560 ft) matches Mountain Project; the
+Directisimo variant's own `data_quality.gaps` already correctly flags its first ascent as
+unfound rather than guessing one, so nothing to fix there. North Gardner Mountain's 8,956 ft
+matches the USGS GNIS figure Wikipedia cites. Cutthroat Peak's North Ridge first ascent (Fred
+Beckey, Jim Crooks, Ed Kenney, August 19, 1940) is confirmed by Mountain Project and the
+Mountaineers; the peak's stored 8,065 ft sits between two published figures (8,050 ft older
+Peakbagger-sourced vs. 8,066 ft newer LiDAR-sourced) — normal cross-source variance, not a
+contradiction. Primus Peak's 8,508 ft and its North Ridge's 1986 Mark Bebie first ascent are both
+confirmed (SummitPost, AAC/Bebie's own 1987 account); the stored `fa` field just says "1986" with
+no name, which matches what sources actually support — AAC's account doesn't give an exact date
+either, so no stronger fix is available. North Star Mountain's 8,096 ft matches Wikipedia/GNIS
+(a LiDAR remeasurement gives 8,068 ft, same scale of variance tolerated elsewhere). Colchuck
+Peak's 8,705 ft matches ListsOfJohn/Yellowleaf.
+
+**Flagged for human review (2):** North Peak's (Gunsight Range) North Ridge first ascent (stored
+as Steve Risse and Donna McBain, August 14, 1989) and Southeast Buttress first ascent (stored as
+Garrett Gardner and Bill Lingley, August 1971) — neither turned up in American Alpine Journal,
+Mountain Project, SummitPost, or Cascade Alpine Guide-adjacent search results. This "North Peak"
+is obscure enough (not to be confused with the better-documented "North Gunsight") that an absence
+of hits isn't itself evidence of error, so left as stored per the "don't guess" rule rather than
+flagged as wrong. Mountain Project's own area page for this peak (mountainproject.com/area/106324862)
+could resolve this but was unreachable from this session's network allowlist.
+
+**Confirmed errors fixed:** 0. No SQL file this batch.
+
+Not independently checked this batch: Colchuck Peak's Northeast Buttress first ascent (Mark
+Weigelt, Julie Brugger, 1970) rests on a single source (OpenBeta) with no Mountain Project or AAC
+corroboration found, but nothing contradicts it either, so left as-is. Permit/access text, gear
+lists, hazard/watch_out prose, waypoint-level coordinates beyond each peak's own area coordinate,
+and rappel/descent narrative detail were not independently re-derived beyond the facts above.
+
+Next batch will continue id-ascending from `wa_northeast_buttress_4` (the next in-scope id after
+it is `wa_northeast_face_direct`, on Mount Formidable).

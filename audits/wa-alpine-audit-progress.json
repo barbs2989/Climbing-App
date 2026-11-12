@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_north_face_left_buttress",
+  "last_processed_id": "wa_northeast_buttress_4",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 529 complete. Continuing id-ascending scope from wa_north_face_left_buttress (next in-scope id after it is wa_north_face_var_right_directisimo, on Concord Tower). Skipped one in-range id this batch as out of scope (crag-type area, not peak): wa_north_face_of_the_mole (on Hook Creek Drainage, area_type=crag). total_wa_alpine_or_mountaineering_tagged unchanged at 857 since the last run (same day), so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
+  "pass_note": "Pass 8 in progress, batch 530 complete. Continuing id-ascending scope from wa_northeast_buttress_4 (next in-scope id after it is wa_northeast_face_direct, on Mount Formidable). Skipped three out-of-range/out-of-scope ids this batch window (crag-type areas, not peaks): wa_north_ridge_7 (Aiguille de l'M), wa_north_ridge_west_side (Molar Tooth), wa_north_tower_ridge_route (North Face Tiffany Mountain). total_wa_alpine_or_mountaineering_tagged unchanged at 857 since the last run (same day), so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
   "batches": [
     {
       "batch_number": 1,
@@ -10523,6 +10523,24 @@
       "flagged_for_human_review": 2,
       "clean": 7,
       "sql_file": "audits/sql/2026-11-12-batch-529.sql"
+    },
+    {
+      "batch_number": 530,
+      "date": "2026-11-12",
+      "route_ids": [
+        "wa_north_face_var_right_directisimo",
+        "wa_north_gardner_mountain_nw_couloir",
+        "wa_north_peak_north_ridge",
+        "wa_north_peak_southeast_buttress",
+        "wa_north_ridge_3",
+        "wa_north_ridge_4",
+        "wa_north_star_mountain_east_route",
+        "wa_northeast_buttress_4"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null
     }
   ],
   "outage_runs": [
