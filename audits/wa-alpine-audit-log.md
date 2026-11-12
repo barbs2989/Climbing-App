@@ -38037,3 +38037,74 @@ reviewed above), and rappel/descent narrative detail beyond what's quoted in rou
 Next batch will continue id-ascending from `wa_olympus_traverse` (the next in-scope id after it is
 `wa_open_book_2`, on Unicorn Peak; `wa_one_piece_at_a_time`, on the out-of-scope Cutthroat Wall
 crag, is skipped).
+
+## Batch 533 (pass 8) — 2026-11-12
+
+Checked 10 WA alpine/mountaineering peak routes, id-ascending from `wa_open_book_2` through
+`wa_philadelphia_mountain_scramble`: Unicorn Peak's Open Book, Osceola Peak's Southwest Slopes
+Scramble, Ottohorn's Southeast Route, Oval Peak's Standard Scramble, both of Overcoat Peak's
+routes in scope (North Face; East Face, stored under the id `wa_overcoat_peak_southeast_route`),
+Pernod Spire's Standard Rock Route, both of Phantom Peak's routes covered this batch (South
+Route; West Ridge), and Philadelphia Mountain's Standard Scramble.
+
+**Clean (9):** Unicorn Peak's stored 6,971 ft summit elevation matches a published Tatoosh-range
+route log ("94. Unicorn Peak, 6971'"), and the Open Book's low-5th-class grade (5.0) and shared
+summit-block anchors are corroborated by a Mazamas trip plan describing the block's "Open Books"
+line and a Mountaineers trip report confirming the 5.0 rating. Osceola Peak's 8,587 ft and its
+1933 Hermann Ulrichs/Richard Alt first ascent are both confirmed by Wikipedia. Oval Peak's stored
+8,795 ft (the route's `high_point_ft`) matches SummitPost/Yellowleaf exactly, and its 2,730 ft
+prominence matches the 2,731 ft figure both of those sources and Wikipedia agree on; Wikipedia's
+own rounder 8,800 ft (also what this catalog's area row carries) is the same normal cross-source
+rounding tolerated elsewhere, not a contradiction. Overcoat Peak's North Face (a near-bare-shape
+row) has nothing in it that any source contradicts. Overcoat Peak's East Face (stored under the
+id `wa_overcoat_peak_southeast_route` — the id reflects an older working name, not a factual
+error, the same harmless pattern noted for Castle Peak's "Fight or Flight" in batch 529) carries a
+first-ascent credit (John Charlton and Albert H. Sylvester, July 1897) confirmed verbatim by
+Beckey's Cascade Alpine Guide as cited on multiple mirrors, including the naming story (Sylvester
+left an overcoat on the summit); the peak's 7,432 ft elevation matches those same sources exactly.
+Pernod Spire's first-ascent party (Fred Beckey, Dick McGowan, Don Wilde) is confirmed by an AAC
+account placing the climb in September during the party's third visit to the area, consistent
+with our stored "September 1952." Phantom Peak's South Route FA ("1940") matches the area's own
+Fred-and-Helmy-Beckey/1940 blurb, and its 8,016 ft elevation sits within the normal scatter around
+the 8,000-8,004 ft figures Wikipedia and a Picket Range peak table give for this obscure summit.
+Phantom Peak's West Ridge is the best-corroborated route in this batch: its FA party (Eric Wehrly
+and Rolf Larson), date (July 30, 2021), and shape (ten pitches, mostly sustained 5.7+, one 5.10
+sequence, plus roughly 400 ft of 4th-class soloing to the summit) all match Wehrly's own 2022
+American Alpine Journal report almost word for word. Philadelphia Mountain's 4,258 ft is the
+figure used by trip reports describing arrival "at the summit (4258' elevation)"; the
+Mountaineers' own 4,262 ft is a 4-ft rounding difference, not a contradiction.
+
+**Flagged for human review (1):** Ottohorn's stored elevation (7,840 ft, repeated on
+`wa_ottohorn_southeast_route`'s `high_point_ft`) sits at the high end of three disagreeing
+published figures for this obscure Southern Pickets spire — Wikipedia's own Picket Range table
+gives 7,640 ft, ListsOfJohn's LiDAR-based page gives 7,703 ft, while the Mountaineers Club and a
+SummitPost schematic agree with our 7,840 ft. More telling than the elevation spread itself: our
+stored prominence (310 ft) matches ListsOfJohn's LiDAR-derived rise (310 ft, from a 7,703 ft
+summit and a 7,393 ft LiDAR saddle) exactly — not the 7,840 ft elevation stored alongside it,
+suggesting this row blends a newer LiDAR-sourced prominence with an older, pre-LiDAR elevation
+rather than one internally consistent source. No single source here is authoritative enough to
+justify picking a number and writing a SQL fix, so flagging the elevation/prominence pair for a
+human to reconcile against USGS/LiDAR data directly rather than guessing. The route's own
+first-ascent credit (Ed Cooper, Glen Denny, Joan Firey, Joe Firey, George Whitmore, September 10,
+1961) is well corroborated and not part of this flag — an AAJ citation for this exact standard
+route ("Cooper-Denny-Firey-Firey-Whitmore") names the same five climbers, published in the AAJ's
+1962 annual as expected for a climb made in the second half of the 1961 season.
+
+**Confirmed errors fixed:** 0. No SQL file this batch.
+
+Not independently checked this batch: Overcoat Peak North Face's first-ascent credit (Roger
+Jackson and Ernest White, 1957) turned up no corroborating or contradicting source in this
+batch's searches — this is a near-bare-shape row with very little else populated to check against,
+so it's left as stored per the "don't guess" rule. Pernod Spire's exact 8,507 ft figure wasn't
+independently found either (the Mountaineers' own Wine Spires page cites a nearby but
+non-specific ~8,500 ft elevation-gain figure), though nothing contradicts it. Permit/access fee
+figures, detailed gear/rack lists, bivy-site prose, and most day-by-day itinerary content were not
+independently re-derived beyond checking they don't conflict with each route's own overview text.
+No route-level coordinates beyond each peak's own area-level coordinate were checked (the typical
+bare-shape pattern), but every route's `approach_logistics` trailhead — Snow Lake Trailhead,
+Goodell Creek Road, the Eagle Creek/Oval Trailhead, Slate Pass, the SR-20 Wine Spires pullout,
+Dingford Creek Trailhead, Hannegan Pass Trailhead, and Lake Serene Trailhead — names a real,
+correctly located trailhead for its route, and each `approach_logistics.peakLat/peakLng` matches
+its own area row's coordinate exactly.
+
+Next batch will continue id-ascending from `wa_philadelphia_mountain_scramble`.

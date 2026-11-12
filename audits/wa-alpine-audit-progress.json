@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_olympus_traverse",
+  "last_processed_id": "wa_philadelphia_mountain_scramble",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 532 complete. Continuing id-ascending scope from wa_olympus_traverse (next in-scope id after it is wa_open_book_2, on Unicorn Peak -- wa_one_piece_at_a_time on wa_cutthroat_wall, a crag, is out of scope and skipped). All 10 routes checked clean this batch: 3 peak elevations (Boston Peak 8894ft, Liberty Bell 7720ft, Colchuck Balanced Rock 8240ft) and 3 route/peak first-ascent parties independently confirmed via Wikipedia/Mountain Project/AAJ/OpenBeta; 3 time-sensitive road-closure claims (Suiattle River Road, Cascade River Road, Upper Hoh Road) cross-checked against current (Nov 2026) news/NPS/USFS reporting and found accurate. total_wa_alpine_or_mountaineering_tagged unchanged at 857 since the last run (same day), so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
+  "pass_note": "Pass 8 in progress, batch 533 complete. Continuing id-ascending scope from wa_philadelphia_mountain_scramble. 9 of 10 routes checked clean this batch: Unicorn Peak (6,971ft), Osceola Peak (8,587ft + 1933 Ulrichs/Alt FA), Oval Peak (8,795ft + matching 2,730ft prominence), Overcoat Peak's North Face and East Face (East Face's 1897 Charlton/Sylvester FA and 7,432ft elevation both confirmed via Beckey's guide), Pernod Spire (1952 Beckey/McGowan/Wilde FA confirmed via AAC), Phantom Peak's South Route and West Ridge (West Ridge's 2021 Wehrly/Larson FA matched almost word-for-word against Wehrly's own 2022 AAJ report), and Philadelphia Mountain (4,258ft). 1 route flagged for human review: Ottohorn's stored elevation (7,840ft) disagrees with two other published figures (7,640ft Wikipedia, 7,703ft ListsOfJohn LiDAR), and its stored prominence (310ft) matches only the LiDAR figure's rise, not the 7,840ft elevation stored alongside it -- flagged rather than guessed at, no SQL fix written. total_wa_alpine_or_mountaineering_tagged unchanged at 857, so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
   "batches": [
     {
       "batch_number": 1,
@@ -10579,6 +10579,26 @@
       "confirmed_errors_fixed": 0,
       "flagged_for_human_review": 0,
       "clean": 10,
+      "sql_file": null
+    },
+    {
+      "batch_number": 533,
+      "date": "2026-11-12",
+      "route_ids": [
+        "wa_open_book_2",
+        "wa_osceola_peak_scramble",
+        "wa_ottohorn_southeast_route",
+        "wa_oval_peak_scramble",
+        "wa_overcoat_peak_north_face",
+        "wa_overcoat_peak_southeast_route",
+        "wa_pernod_spire_standard",
+        "wa_phantom_peak_south_route",
+        "wa_phantom_peak_west_ridge",
+        "wa_philadelphia_mountain_scramble"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 9,
       "sql_file": null
     }
   ],
