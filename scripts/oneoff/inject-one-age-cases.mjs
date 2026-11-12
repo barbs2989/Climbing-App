@@ -33,15 +33,9 @@ const CASES = [
     expect: /is reported as ".+" and as ".+" on one screen/,
     section: "screen",
   },
-  {
-    name: "badge-verified-routedetail",
-    why: "the What's changed badge calling a plain report count verified",
-    file: "src/components/BetaDiff.tsx",
-    find: '{"✓ "+acts.length+" report"+(acts.length!==1?"s":"")}',
-    repl: '{"✓ "+acts.length+" verified report"+(acts.length!==1?"s":"")}',
-    expect: /BetaDiff\.tsx @\d+: ".* verified report/,
-    section: "static+screen",
-  },
+  /* badge-verified-routedetail went with its target: the What's changed card (BetaDiff.tsx) was folded
+     into the Community Consensus freshness row on the Reports tab, so there is no "✓ N reports" badge
+     there to mislabel. badge-verified-core below still covers the same rule. */
   {
     name: "badge-verified-core",
     why: "the climb-matches list doing the same thing on a screen the browser half never opens",
