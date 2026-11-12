@@ -151,6 +151,12 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
     setScreen("near");
   }, [jumpToNearReq]);
 
+  // A jump interrupted by leaving the tab (jumpToArea awaits the full row and breadcrumb) is saved
+  // half-done: a thin search row with no `path`, no drill stack, and its request already marked
+  // handled. Finish it on remount, or the area's path-keyed panels would draw empty.
+  useEffect(() => {
+    if (saved && saved.stateNode && !saved.stateNode.path && !(saved.stack && saved.stack.length)) jumpToArea(saved.stateNode);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount, for the position restored above
   // Remember the position after every render: the handled-jump ids are refs, so no dependency list
   // would see them change. A plain module write — cheap, and nothing re-renders from it.
   useEffect(() => {
