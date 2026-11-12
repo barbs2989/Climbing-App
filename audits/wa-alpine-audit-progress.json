@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_philadelphia_mountain_scramble",
+  "last_processed_id": "wa_preacher_mountain_west_face",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 533 complete. Continuing id-ascending scope from wa_philadelphia_mountain_scramble. 9 of 10 routes checked clean this batch: Unicorn Peak (6,971ft), Osceola Peak (8,587ft + 1933 Ulrichs/Alt FA), Oval Peak (8,795ft + matching 2,730ft prominence), Overcoat Peak's North Face and East Face (East Face's 1897 Charlton/Sylvester FA and 7,432ft elevation both confirmed via Beckey's guide), Pernod Spire (1952 Beckey/McGowan/Wilde FA confirmed via AAC), Phantom Peak's South Route and West Ridge (West Ridge's 2021 Wehrly/Larson FA matched almost word-for-word against Wehrly's own 2022 AAJ report), and Philadelphia Mountain (4,258ft). 1 route flagged for human review: Ottohorn's stored elevation (7,840ft) disagrees with two other published figures (7,640ft Wikipedia, 7,703ft ListsOfJohn LiDAR), and its stored prominence (310ft) matches only the LiDAR figure's rise, not the 7,840ft elevation stored alongside it -- flagged rather than guessed at, no SQL fix written. total_wa_alpine_or_mountaineering_tagged unchanged at 857, so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
+  "pass_note": "Pass 8 in progress, batch 534 complete. Continuing id-ascending scope from wa_preacher_mountain_west_face. All 9 routes checked clean this batch: Point Success via Success Cleaver (14,158ft second-highest point on Rainier, within normal scatter of NPS's own 14,153ft sign; $82/person 2026 climbing-registration fee and $12/person/night peak-season wilderness fee both confirmed current against NPS's own fee page), Poltergeist Pinnacle (both the area-level row and the duplicate wa_poltergeist_pinnacle_north_route route row: FA party Dan Aylward and Forrest Murphy, July 2004, confirmed by Murphy's own CascadeClimbers trip report and Aylward's NWMJ account; 8,198-8,200ft elevation and 40ft prominence both match Wikipedia's '8,200+ft'/40ft figures), Preacher Mountain's Standard Scramble (5,924ft elevation and 844ft prominence both exact matches to Wikipedia/Peakbagger; its parent_peak field 'Kaleetan Peak' confirmed ~3mi southeast of Preacher, matching the stored overview's 'northwest of Kaleetan Peak'), and Preacher Mountain's other five routes (East Gully, North Route, South Gully-South Spur, South Rib, West Face), which are bare-shape rows (id/name/discipline only) with nothing in them to check. total_wa_alpine_or_mountaineering_tagged unchanged at 857, so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
   "batches": [
     {
       "batch_number": 1,
@@ -10598,6 +10598,25 @@
       ],
       "confirmed_errors_fixed": 0,
       "flagged_for_human_review": 1,
+      "clean": 9,
+      "sql_file": null
+    },
+    {
+      "batch_number": 534,
+      "date": "2026-11-12",
+      "route_ids": [
+        "wa_point_success_south_side",
+        "wa_poltergeist_pinnacle",
+        "wa_poltergeist_pinnacle_north_route",
+        "wa_preacher_mountain_east_gully",
+        "wa_preacher_mountain_north_route",
+        "wa_preacher_mountain_scramble",
+        "wa_preacher_mountain_south_gully_south_spur",
+        "wa_preacher_mountain_south_rib",
+        "wa_preacher_mountain_west_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 0,
       "clean": 9,
       "sql_file": null
     }

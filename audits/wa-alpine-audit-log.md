@@ -38108,3 +38108,47 @@ correctly located trailhead for its route, and each `approach_logistics.peakLat/
 its own area row's coordinate exactly.
 
 Next batch will continue id-ascending from `wa_philadelphia_mountain_scramble`.
+
+## Batch 534 (pass 8) — 2026-11-12
+
+Checked 9 WA alpine/mountaineering peak routes, id-ascending from `wa_point_success_south_side`
+through `wa_preacher_mountain_west_face`: Point Success via Success Cleaver (Mount Rainier),
+both rows for Poltergeist Pinnacle's East Face (the area-level `wa_poltergeist_pinnacle` route and
+the duplicate `wa_poltergeist_pinnacle_north_route`), and all six routes in scope on Preacher
+Mountain (East Gully, North Route, Standard Scramble, South Gully-South Spur, South Rib, West
+Face).
+
+**Clean (9):** Point Success's stored 14,158 ft elevation sits within normal scatter of the NPS's
+own trailside sign figure (14,153 ft) and matches the commonly cited "second-highest point on
+Rainier" claim; its $82/person climbing-registration fee and $12/person/night peak-season
+wilderness fee both match the NPS's current 2026 fee page exactly. Poltergeist Pinnacle's
+first-ascent party (Dan Aylward and Forrest Murphy, July 2004) is confirmed by Murphy's own
+CascadeClimbers trip report and a companion NWMJ account by Aylward ("A Poltergeist in the
+Pickets"); its 8,198-8,200 ft elevation (split across the two rows) and 40 ft prominence both
+match Wikipedia's "8,200+ ft" / 40 ft figures for the pinnacle exactly. Preacher Mountain's
+Standard Scramble carries a 5,924 ft elevation and 844 ft prominence that are both exact matches
+to Wikipedia/Peakbagger, and its `parent_peak` field ("Kaleetan Peak") is geographically correct —
+Kaleetan sits about 3 miles southeast of Preacher, consistent with the route's own overview text
+placing Preacher "northwest of Kaleetan Peak." Preacher Mountain's other five in-scope routes
+(East Gully, North Route, South Gully-South Spur, South Rib, West Face) are bare-shape rows
+carrying only id/name/discipline, with nothing in them to check against a source.
+
+**Flagged for human review (0):** None.
+
+**Confirmed errors fixed:** 0. No SQL file this batch.
+
+Not independently checked this batch: Poltergeist Pinnacle's exact climb dates are reported
+slightly differently across secondary sources (this catalog's "July 3-4, 2004" vs. a search
+summary citing "July 3-5, 2004" for the same NWMJ account) — within the kind of day-count
+ambiguity common when a trip report mixes approach and climbing days, not a clear contradiction,
+so left as stored rather than guessed at. Point Success's AD alpine grade, detailed rack/gear
+lists, and most day-by-day itinerary content were not independently re-derived beyond checking
+they don't conflict with the route's own overview text. No route-level coordinates beyond each
+peak's own area-level coordinate were checked (the typical bare-shape pattern), but Point
+Success's, Mount Challenger's (parent of Poltergeist Pinnacle), and Preacher Mountain's own area
+coordinates were all sanity-checked against independently reported figures and found consistent
+(Mount Challenger's 48.8365/-121.3419 matches Wikipedia's 48°50'10"N 121°20'30"W almost exactly;
+Poltergeist Pinnacle's area coordinate sits about 0.09 mi south of Challenger's, matching
+Wikipedia's stated separation).
+
+Next batch will continue id-ascending from `wa_preacher_mountain_west_face`.
