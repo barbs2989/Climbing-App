@@ -16,7 +16,7 @@ export interface SeasonalGuidancePanelProps {
 }
 
 export default function SeasonalGuidancePanel({route, C, ActionIcon, onAdd}: SeasonalGuidancePanelProps) {
-  const LBL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
+  const LBL={fontSize:10,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.6}; /* = core's SUB_LABEL, from this panel's own C prop */
   const {optimalWindow, monthBreakdown} = route.seasonalGuidance || {};
   const sortedMonths = monthBreakdown ? Object.entries(monthBreakdown).sort((a,b)=>monthRank(a[0])-monthRank(b[0])) : [];
   // With no researched breakdown the calendar comes from the route's own season window, and says so.
