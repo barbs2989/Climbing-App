@@ -73,9 +73,18 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
 - **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
   onFlag}) around `RouteDetail`; the shared heading components `SL` (core) and `CardHead` (`src/components/CardHead.tsx`) map their
   text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
-  Low, with a ⚑ Flag button — the only place it renders). No legend line explains the levels (owner removed it 2026-11-11). The
+  Low, with a ⚑ Flag button — headings, plus the grade's own chip beside *Composite Grade* in
+  `TechStats`). No legend line explains the levels (owner removed it 2026-11-11). The
   page carries the chips alone. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
-  field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
+  field's pencil opens the flag sheet instead of the editor. **A pencil that covers several fields is
+  not one field's pencil** (owner, 2026-11-11): the ROUTE FACTS / TECHNICAL STATS card pencil
+  (`factsPencilKey`) and each crag facts section's pencil (`CragFactSection`) open at the field
+  `firstEditable` (`lib/firstEditable.js`) picks — an empty (low) field first, then a medium one — and
+  reach the flag sheet only when every field they cover is locked. Before this the card pencil was
+  `openFix("grade")`, and a crag route's grade is always HIGH (0406), so the card opened the flag sheet
+  on every crag route while its Location and Pitches read "Not on file yet". For the same reason
+  "ROUTE FACTS" and "TECHNICAL STATS" are not in `HEAD_KEYS`: the card heading wore the grade's
+  "High · locked". `check:facts-pencil-open` holds both. In `SuggestFix` each field row shows its
   chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened. The sheet's
   **Discipline card** is the one exception: since 2026-11-05, on a route with a discipline on file it
   is not a chip picker but the route's own discipline, a High · locked chip and a *Flag it* button
