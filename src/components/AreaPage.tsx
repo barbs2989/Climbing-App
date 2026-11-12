@@ -1,5 +1,6 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, useScopedWishlistRoutes, submitAreaPlacementClaim } from "../../lib/db";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
 import AreaActionRow from "./AreaActionRow.tsx";
@@ -9,7 +10,7 @@ import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { ScreenHero } from "../../lib/ScreenHero";
 import { Pill, SL } from "../../lib/areaBrowserParts.jsx";
 import { PendingAreaEdits, AboutCard, AreaFactsCard, GradeSpreadDisclosure, gradeFinderFilters, areaSheet } from "../../lib/AreaPageSections";
-import { useWideScreen } from "../../lib/wideLayout.js";
+import { useWideScreen, useFullWidth } from "../../lib/wideLayout.js";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import ClassicsList from "./ClassicsList.tsx";
 import { BTN_LG, CHIP, BTN } from "../../lib/buttonStyles.js";
@@ -194,6 +195,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // side, the finder's form inline under them preset to the climber's grade, classics as one-line rows,
   // and MOST LOGGED HERE beside Season. The phone keeps its stacked page and its Route finder button.
   const wide = useWideScreen();
+  // The website's LEFT PANEL (App's #cm-left-panel, lib/wideLayout.js wideLeft), from FULL_MIN up: the map and the
+  // sub-areas are drawn there, beside the page, and the page column keeps its whole width (owner, 2026-11-11: "this
+  // needs to be in the left panel on desktop… then everything else isn't squished in the middle section"). They
+  // used to be a 196px column INSIDE the page column. Narrower than that there is no panel: the phone's section.
+  const full = useFullWidth();
+  const [leftEl, setLeftEl] = useState<HTMLElement | null>(null);
+  useEffect(() => { setLeftEl(wide && full ? document.getElementById("cm-left-panel") : null); }, [wide, full]);
   const logged: AreaPageQuery<number[]> = useAreaLoggedMonths(wide && formation ? area.id : null);
   const { profile } = useContext(ClimberCtx);
   const prof = (profile || null) as { sportGrade?: string | null; tradGrade?: string | null; boulderGrade?: string | null } | null;
@@ -296,7 +304,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
         {chartable ? <GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} /> : null}
         {showAbout ? <AboutCard area={area} C={C} onEdit={editOn} flat first={!chartable} /> : null}
         <AreaActionRow C={C} first={!chartable && !showAbout} routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />
-        {!wide && childRows ? <div style={{ padding: "12px 14px 4px", borderTop: "1px solid " + C.border }}>{childList("section")}</div> : null}
+        {!leftEl && childRows ? <div style={{ padding: "12px 14px 4px", borderTop: "1px solid " + C.border }}>{childList("section")}</div> : null}
         {classicsEl}
         {area.area_type !== "world" && area.area_type !== "country" ? <AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} /> : null}
         {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
@@ -410,12 +418,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={8}/></div> : null}
     </div>
   );
-  // The website: the sub-areas as a column beside the page (owner chose "Sidebar on web, early on phone").
-  if (wide && childRows) return (
-    <div style={{ display: "grid", gridTemplateColumns: "196px minmax(0, 1fr)", gap: 14, alignItems: "start" }}>
-      <aside aria-label={childNoun(children) + " in " + area.name} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px" }}>{childList("sidebar")}</aside>
+  // The website: the map and the sub-areas in the left panel beside the page (owner chose "Sidebar on web, early on
+  // phone"; in the left panel since 2026-11-11), and the page column all the page's own.
+  if (leftEl && childRows) return (
+    <>
+      {createPortal(<aside aria-label={childNoun(children) + " in " + area.name} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px" }}>{childList("sidebar")}</aside>, leftEl)}
       {main}
-    </div>
+    </>
   );
   return main;
 }
