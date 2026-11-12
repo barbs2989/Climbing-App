@@ -121,13 +121,15 @@ let panelProps = null;
   if (b0 < 0) dead("Home's alerts block moved — the control that opens the panel cannot be read");
   // Anchored on the NOUN, not on "View all " — that phrase is shared with the Past crews
   // control, and an anchor matching two controls reads one while claiming the other.
-  const t = src.indexOf('" alerts"', b0);
+  /* The noun is "notifications" since the Alerts/Notifications merge (2026-11-11). */
+  const t = src.indexOf('" notifications"', b0);
   if (t < 0) dead('Home\'s "View all N alerts" control moved — its count cannot be read');
-  if (src.indexOf('" alerts"', t + 1) >= 0) dead('the " alerts" label occurs more than once — the control this section reads is ambiguous');
+  if (src.indexOf('" notifications"', t + 1) >= 0) dead('the " notifications" label occurs more than once — the control this section reads is ambiguous');
   const close = src.indexOf("</button>", t);
   if (close < 0) dead('the "View all N alerts" control does not close');
   const raw = src.slice(b0, close);
-  if (!raw.includes("setNotifOpen(true)")) dead('the control read for section 3 does not open NotifPanel — the wrong region was scoped');
+  /* `_alerts.openAll()` is openAllNotifs: the same NotifPanel, as a page on the website. */
+  if (!raw.includes("setNotifOpen(true)") && !raw.includes("_alerts.openAll()")) dead('the control read for section 3 does not open NotifPanel — the wrong region was scoped');
 
   // Comments are stripped: this control now EXPLAINS the defect in prose naming both arrays, so a
   // guard reading them would pass on the strength of the explanation.
@@ -135,7 +137,7 @@ let panelProps = null;
 
   // The number the label prints, and — where that is a name — the definition behind it. Both
   // shapes have to resolve, or the guard cannot speak about the defect's own form.
-  const lab = ctl.match(/\+([^+]+)\+" alerts"/);
+  const lab = ctl.match(/\+([^+]+)\+" notifications"/);
   if (!lab) dead('the "View all N alerts" label does not build its number by concatenation — it cannot be read');
   const printed = lab[1].trim();
   let expr = printed, via = "inline";

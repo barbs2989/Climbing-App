@@ -24,16 +24,10 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   **AREA FACTS** (rock, which way it faces, elevation, walk-in minutes, parking name, and a 12-month **Season** strip from `areas.season_months`;
   a fact that is not stored is not printed; on the website a **MOST LOGGED HERE** strip beside Season — `LoggedMonthStrip`, twelve bars from
   `useAreaLoggedMonths` / `area_logged_months` (0403): every visible log under the area by calendar month, counts only, nobody named, its label
-  naming the months at half the peak or more (`loggedTopMonths`) and the total), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
-  `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
-  (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out; on the website the two sit **side by side**,
-  the spread as its own card (`standalone`, when `hasGradeSpread`), and under them the finder's form sits **inline** (`RouteFinderInline`:
-  type, a grade range on that type's scale with its top preset to the climber's own profile grade, sort; *Find climbs* opens the Route finder
-  with exactly those filters through `onFinder`, the way a saved search opens — the phone keeps the Route finder button; competitor review
-  item 15, 2026-11-05), **GETTING THERE** (`AreaGettingThere`:
+  naming the months at half the peak or more (`loggedTopMonths`) and the total), **GRADE SPREAD** first, with **CLIMBS HERE** behind a dropdown (`GradeSpreadDisclosure`, owner 2026-11-11): `GradeSpread`'s columns over the area's main grading scale, saying how many climbs it left out, each column a button that opens the Route finder on that grade (`gradeFinderFilters`); under it *Climbs here by type* opens `ClimbsChart` (one bar per discipline over the whole subtree via the `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline), the open/closed choice remembered on the device; then one aligned row, **Route finder · ★ Objectives · Map** (`AreaActionRow`: the objectives badge counts the climber's wishlist rows under the area, `useScopedWishlistRoutes`; on the website the finder chip opens the inline form, `RouteFinderInline`: type, a grade range with its top preset to the climber's own grade, sort; *Find climbs* opens the Route finder with exactly those filters through `onFinder`), **GETTING THERE** (`AreaGettingThere`:
   `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control; and, when the crag has an approved walk in (`areas.walkin_gpx`, 0397), *Trail to the crag* with its length and a `WalkInMap` of the line over P and C; *Add the parking pin* where none is
   on file and *Move the pin* under one open the sheet at the pin), **CLASSIC CLIMBS HERE**
-  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five rows — one-line rows on the website (`RouteRow` `dense`) — then a *Show all N classic climbs* dropdown with the rest
+  (EVERY classic, drawn by `ClassicsList`: the count in the heading, five striped rows — one line on the website — each marked ✓ when the climber logged it and ★ when it is an objective (`ClimberCtx`), then a *Show all N classic climbs* dropdown with the rest
   (owner, 2026-10-29). On a wall, `areaClassics` over its loaded rows: climbs that carry the `classic` flag, 3+ guidebook stars (`guide_stars`)
   or a 3.5+ climber rating (`stars`), best first (0393 `classic_score`, a vote-weighted star average flag-classics writes, else guidebook stars, else ours — a sort key that renders nowhere); with none, **TOP RATED HERE**, up to five routes by `stars`. On every area ABOVE a
   wall — a crag of walls, a region, a state — `useAreaClassics` (0391 `area_classics`, up to 500 rows plus the full `total`; the open list
@@ -184,6 +178,16 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 
 ## 2. How it works
 1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
+   **Climbs reopens where you left it** (owner 2026-11-11): picking another tab unmounts the browser, so its position (state, drill
+   path, Map / Route finder / Objectives screen, and the jump-request ids it already handled, so a stale search jump cannot re-fire)
+   lives at module scope in `lib/climbsReturn.js` for the session. A jump still loading when you leave (`jumpToArea` awaits the
+   full row, then the breadcrumb; a header search then opens the Route finder) is kept as the *pending jump* and resumed on
+   return, unless a newer jump request is waiting, which wins; picking, drilling, the breadcrumb and *Near me* cancel it.
+   App's `lastClimbsRef` remembers the open climb page (route, back-stack, sub-tab, where its Back goes); `goTab("routes")` from
+   another tab puts it back and restores the scroll once (`restoreAppScroll`: retries per frame for ≤2 s; stops on
+   wheel/touch/pointer/key, on a scroll it did not make, while a dialog pins `<body>`, or on the next tab change). The offset is
+   not read while a website page view covers Climbs. A climb's Back to another tab forgets that climb. Tapping Climbs while on
+   Climbs still clears to the area browser. A reload starts fresh.
 2. Areas: `useCountries`, `useStates`, `useAreaChildren(parentId)`, `useArea(id)` / `fetchArea`, `useAreaPath(s)` (breadcrumb) in `lib/db.js`.
    Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
 3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),
@@ -219,6 +223,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | File | Key symbols |
 |---|---|
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, the browser shell (its components moved to `src/components/` in PR65 and PR66, below) |
+| `lib/climbsReturn.js` | `getClimbsAreaPos` / `setClimbsAreaPos` (the browser's position across tab switches), `readAppScroll`, `restoreAppScroll` |
 | `src/components/AreaPage.tsx` | `AreaPage`, an area's page; `PARTNER_CARD_TYPES` |
 | `src/components/RouteFinderPanel.tsx` | `RouteFinderPanel`, the route finder and its filters |
 | `src/components/PartnersHereCard.tsx` | `PartnersHereCard`, the area page's partners card |
@@ -232,12 +237,15 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
 | `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |
 | `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
-| `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card |
+| `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card (`flat` in the area sheet: words, then the map) |
+| `src/components/AreaActionRow.tsx` | `AreaActionRow`, the Route finder · Objectives · Map row |
+| `src/components/AreaChildrenList.tsx` | `AreaChildrenList`, every sub-area: the website's left column (map thumbnail, grade bars, ★ objectives) or the phone section |
+| `src/components/AreaPhotoStrip.tsx` | `AreaPhotoStrip`, the thin photo strip: area photos and every route photo under the area (0411) |
 | `src/components/AddHereFooter.tsx` | `AddHereFooter`, the add-a-climb footer |
 | `lib/nearbyPeaks.js` | `nearbyPeaksBounds`, `nearbyPeaksRows`, `nearbyPeaksLive` |
 | `lib/areaBrowserShared.js` | `rowGrade`, `placeOf`, `haversineMi`, `ATYPE`, `DISCIPLINES` (shared by the area browser's components) |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
-| `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
+| `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `GradeSpreadDisclosure`, `gradeFinderFilters`, `areaSheet`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
 | `src/components/ManageAreasSheet.tsx` | `ManageAreasSheet`, Manage areas (pin and download a state; lifted from App, PR62) |
 | `src/components/RoutesTab.tsx` | `RoutesTab`, the Climbs tab body (the live `DbAreaBrowser` and the seed-path browser), lifted from App in PR61 |
 | `lib/AddArea.jsx` | default export `AddArea` (mounted by App from its addAreaParent state in `ClimbMatch.jsx`) |
@@ -290,7 +298,9 @@ A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, 
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change
-Area pages (0304): ABOUT, AREA FACTS, CLIMBS HERE + GRADE SPREAD, GETTING THERE, TOP RATED and Suggest an edit, after an audit of Mountain Project's and theCrag's area pages (Castleton Tower was the model).
+Compact area page (owner 2026-11-11, PR #3239; Mountain Project used as a reference, not copied): the header line folds in rock and walk-in minutes with an *In season / Off season* pill; the sticky path ends on the area's own name and the tab title names it; one bordered sheet (`areaSheet`) holds grade spread (Climbs here by type behind a dropdown), the description (four lines, fading, *Show more*), the Route finder · ★ Objectives · Map row, the sub-areas on a phone, classic climbs, the photo strip and Getting there; on the website every sub-area sits in a left column with a map thumbnail. Area photos (0411) are `topos` rows with `area_photo` set and no route, read by `area_photo_feed` over the subtree; route pages never show them.
+
+Before it — Area pages (0304): ABOUT, AREA FACTS, CLIMBS HERE + GRADE SPREAD, GETTING THERE, TOP RATED and Suggest an edit, after an audit of Mountain Project's and theCrag's area pages (Castleton Tower was the model).
 #2416 before it - area map place search covers Canada (provinces, towns, postal codes); #2411 just before it fixed hidden zoom buttons and the buried location dot.
 
 ## 8. Known gaps

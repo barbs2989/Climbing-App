@@ -12,6 +12,7 @@ import Chevron from "../src/components/Chevron.tsx";
 import { RailAd, useRailFollow } from "./Ads.jsx";
 import { ZOOM } from "./wideLayout.js";
 import BrandMark from "../src/components/BrandMark.tsx";
+import { LogTagRow } from "./LogTagConfirmations.jsx";
 
 /* THE WEBSITE'S OWN PIECES (lib/wideLayout.js). Everything here renders only at 1024px and up — the
    phone app never mounts it — except WideSearch, which the phone's Climbs tab also mounts INLINE
@@ -280,13 +281,14 @@ export function AvatarMenu({ avatar, name, items }) {
 
 /* UPCOMING-UNAVAILABLE: the crews read failed, so the agreed days are unknown, not none (check:overlay-absence:
    "No crew days agreed yet" over a failed read told a climber with crew days that they had none). */
-export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, crews, groups, ad }) {
+export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN: newCount, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, crews, groups, ad, showToast }) {
   const unread = alerts.filter(n => !n.read);
   /* ONE ALERTS LIST (owner, 2026-10-23, #2734): this card shows what Home's Alerts button shows —
      `waiting` (requests, invites, unread chats, a day or a climb to confirm; amber, first) and then
      the notifications not already one of those — and counts both. It counted unread notifications
      alone, so on a desktop Home the button said "Alerts · 3 new" beside a card saying "Alerts". */
-  const newN = waiting.length + unread.length;
+  /* The count is the one the bell and Home show (ClimbMatch `_alerts.newN`), when given. */
+  const newN = newCount != null ? newCount : waiting.length + unread.length;
   /* Alerts start OPEN, showing the newest THREE (owner, 2026-11-04 — replaces 2026-10-23's "start
      closed"): closed, the card was a bare "ALERTS ›" header on every page, which read as empty. The
      header still folds it away. */
@@ -306,11 +308,11 @@ export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, guest
       }) : upcomingUnavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "2px 2px 4px" }}>Couldn’t load your crew days just now.</div> : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
     </section>
     <section aria-labelledby="rail-alerts" style={CARD}>
-      <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{minHeight:44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{newN ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: waiting.length ? C.amber : C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{newN ? "Alerts · " + newN + " new" : "Alerts"}</span><span aria-hidden="true" style={{ display: "flex" }}><Chevron open={alertsOpen} size={14} color={C.blue} /></span></button>
-      {!alertsOpen ? null : <div style={{ marginTop: 6 }}>{guest ? <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>Sign in to get alerts.<button onClick={onSignIn} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Sign in ›</button></div> : null}
-      {waitShown.map((u, i) => <button key={"w" + i} onClick={u.go} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ display: "flex", marginTop: 1, flexShrink: 0 }}><ActionIcon name={u.icon} size={15} color={C.amber} /></span><span style={{ fontSize: 13, lineHeight: 1.4, fontWeight: 700, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{u.text}</span></button>)}
+      <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{minHeight:44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{newN ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: waiting.length ? C.amber : C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{newN ? "Notifications · " + newN + " new" : "Notifications"}</span><span aria-hidden="true" style={{ display: "flex" }}><Chevron open={alertsOpen} size={14} color={C.blue} /></span></button>
+      {!alertsOpen ? null : <div style={{ marginTop: 6 }}>{guest ? <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>Sign in to get notifications.<button onClick={onSignIn} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Sign in ›</button></div> : null}
+      {waitShown.map((u, i) => u.tag ? <LogTagRow key={"w" + i} compact tag={u.tag} showToast={showToast} /> : <button key={"w" + i} onClick={u.go} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ display: "flex", marginTop: 1, flexShrink: 0 }}><ActionIcon name={u.icon} size={15} color={C.amber} /></span><span style={{ fontSize: 13, lineHeight: 1.4, fontWeight: 700, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{u.text}</span></button>)}
       {guest ? null : unreadShown.length ? unreadShown.map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, overflowWrap: "anywhere" }}>{n.text}</span></button>) : waiting.length ? null : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
-      {alerts.length || moreN > 0 ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{moreN > 0 ? "See all alerts · " + moreN + " more ›" : "See all alerts ›"}</button> : null}</div>}
+      {alerts.length || moreN > 0 ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{moreN > 0 ? "See all notifications · " + moreN + " more ›" : "See all notifications ›"}</button> : null}</div>}
     </section>
     {crews ? <RailCrews {...crews} onFindPartners={onFindPartners} /> : null}
     {groups ? <RailGroups {...groups} /> : null}
@@ -339,7 +341,17 @@ const FOOT_MAX = 1320;
 function useClientWidth() {
   const read = () => (typeof document !== "undefined" ? document.documentElement.clientWidth : 0);
   const [w, setW] = useState(read);
-  useEffect(() => { const sync = () => setW(read()); sync(); window.addEventListener("resize", sync); return () => window.removeEventListener("resize", sync); }, []);
+  // A window resize is not the only change: a page that loads short has no scrollbar, and when its
+  // content then grows the classic scrollbar appears and clientWidth drops ~15px with NO resize event,
+  // leaving the band that much wider than the window (a horizontal scrollbar on every long desktop page,
+  // 2026-11-12). The root element's box changes size then, so a ResizeObserver on it catches it.
+  useEffect(() => {
+    const sync = () => setW(read()); sync();
+    window.addEventListener("resize", sync);
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(sync) : null;
+    if (ro) ro.observe(document.documentElement);
+    return () => { window.removeEventListener("resize", sync); if (ro) ro.disconnect(); };
+  }, []);
   return w;
 }
 export function WideFooter({ onOpenState, explore, links, legal, showStates }) {

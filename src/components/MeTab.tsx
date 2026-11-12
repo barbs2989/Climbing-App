@@ -15,6 +15,7 @@ import Chevron from "./Chevron.tsx";
 import { clickable } from "../../lib/clickable";
 import { MyFiledReports } from "../../lib/UserReports";
 import AscentPyramid from "./AscentPyramid.tsx";
+import { UnresolvedClimbsNote } from "../../lib/RouteLookupStatus.jsx";
 import SpeedProfile from "./SpeedProfile.tsx";
 import { saveProfile } from "../../lib/auth";
 import VouchCard from "./VouchCard.tsx";
@@ -127,7 +128,7 @@ prints further down (logs, communityVouches), so the header and the card never d
             pyramid IS empty, AscentPyramid already says "Log your ascents and they'll stack up
             here by grade.", so the line was duplicate copy in the only state where it was true.
             Invisible until the check:signed-in fixture started producing a logged ascent. */}
-          <MeH>Sends by grade</MeH><AscentPyramid routeById={routeById} logs={logs}/></div></>:null}
+          <MeH>Sends by grade</MeH><AscentPyramid routeById={routeById} logs={logs}/><UnresolvedClimbsNote missing={logs.filter(l=>!routeById(l.routeId)).length}/></div></>:null}
         
         
         
