@@ -37780,3 +37780,56 @@ peaks, so the in-scope count is unchanged at 751.
 
 Next batch will continue id-ascending from `wa_mount_torment_torment_forbidden_traverse` (the
 next in-scope id after it is `wa_mount_townsend_standard`).
+
+## Batch 528 (pass 8, 2026-11-12)
+
+Checked: Mount Townsend (standard trail), Mount Triumph (Northeast Ridge), Mount Washington/Olympic
+(Winter Direct), Mount Wilder (Scramble), Mushroom Tower (Standard Route/South Side), Mutchler Peak
+(Scramble), Navaho Peak (South Slopes), Cathedral Peak/Pasayten (NE Ridge). Three in-range ids were
+skipped as out of scope (crag-type areas, not peaks): `wa_narcos`, `wa_ne_arete`, `wa_ne_chimney`.
+
+**Confirmed error, fixed (SQL in `audits/sql/2026-11-12-batch-528.sql`):** Mount Triumph's own
+`areas.elevation_ft` (7,260 ft) contradicted the 7,270 ft `high_point_ft` already stored on its
+own Northeast Ridge route row. No source found gives exactly 7,260 ft — SummitPost and the
+Mountaineers' route page both give 7,270 ft (matching our route row), Wikipedia's infobox gives an
+imprecise "7240+ ft", and Skyward Mountaineering gives 7,257 ft. Corrected the area row to 7,270 ft
+to resolve the internal contradiction using the figure already corroborated twice externally and
+already live elsewhere in our own data.
+
+**Flagged for human review (not SQL'd — sources genuinely conflict):** Mount Triumph's Northeast
+Ridge `grade`/`grade_num` stores "5.6", but the area's own `blurb` calls the same route "5.7" —
+and external sources split three ways (Mountaineers 5.5; Alpine Institute 5.6; Skyward 5.7 on one
+page, 5.6 on another). No single value is well enough supported to pick a winner. Separately,
+Mushroom Tower's own `overview` text states neighboring Big Kangaroo's elevation as "8,280 ft"
+while the Mushroom Tower area's own `blurb` states it as "8,326 ft" — both figures are real
+(8,280 ft is the older Mountain Project/SummitPost figure; 8,326 ft is Wikipedia's figure from a
+2023 theodolite survey, itself flagged by the surveyor as possibly ~8 ft high), so this is a
+stale-vs-updated-source mismatch between two of our own prose fields about a third peak, not a
+confidently fixable error.
+
+**Reconfirmed clean:** Mount Townsend's stored elevation (6,282 ft, area and route `high_point_ft`
+agree) matches the commonly cited "6,280 ft south summit" figure closely enough to be the same
+measurement (the app's own `data_quality.gaps` already notes the wider 6,243–6,282 ft spread
+across sources). Mount Triumph's Northeast Ridge FA ("Joan and Joe Firey, 1965") is independently
+confirmed by summitborn.com's route history, despite an initial search hit that looked like a
+mismatch (the Fireys' *other* well-documented 1965 trip was to the Citadel in Alaska — a different
+climb, not a conflict with this one). Mount Washington/Olympic's elevation (6,260 ft) sits within
+the normal 6,255–6,272 ft spread across sources. Mount Wilder's elevation/coordinate were not
+re-flagged — the app's own `data_quality.gaps` already states the 5,933 vs 5,939 ft spread.
+Mutchler Peak's elevation (7,150 ft) is consistent with a trip report's "7,160+ ft"; no dedicated
+guidebook/peak-database entry for Mutchler specifically was found (matching the app's own
+`corrections` note that it already flags this absence). Navaho Peak's elevation (7,223 ft) matches
+Wikipedia exactly, as does its stated position relative to Earl Peak and Three Brothers. Cathedral
+Peak's elevation (8,606 ft) matches Wikipedia's NAVD88 figure exactly (SummitPost/Mountaineers use
+the older 8,601 ft datum); its coordinate matches Wikipedia to five decimal places.
+
+Not independently checked this batch: individual hazard/watch_out lists, permit fee figures,
+detailed pitch-by-pitch descent prose, and gear racks (all eight routes already carry a
+`gear_confidence` of "inferred" or "verified" with their own `corrections`/`data_quality` notes
+explaining what is and isn't sourced). No route-level coordinates beyond each peak's own
+area-level coordinate (typical bare shape for seven of the eight; Triumph's NE Ridge and
+Cathedral's NE Ridge carry their own waypoints, which were sanity-checked against the parent
+peak's coordinate and found plausible).
+
+Next batch will continue id-ascending from `wa_ne_ridge` (the next in-scope id after it is
+`wa_needle_peak_north_ridge`, on Bonanza Peak).
