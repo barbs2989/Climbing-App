@@ -267,7 +267,7 @@ export function AvatarMenu({ avatar, name, items }) {
      item falls to <body>. A window the item opens then takes focus from the avatar as usual. */
   const pick = it => { close(true); it.go(); };
   return <>
-    <button ref={btn} onClick={() => (open ? close(false) : show(true))} onKeyDown={onBtnKey} aria-label="Your account" aria-haspopup="menu" aria-expanded={open} aria-controls={open ? "cm-avatar-menu" : undefined} title="Your account" style={{ background: "transparent", border: "none", padding: 0, marginLeft: 3, cursor: "pointer", borderRadius: "50%", display: "inline-flex" }}><Av src={avatar} size={40} /></button>
+    <button ref={btn} onClick={() => (open ? close(false) : show(true))} onKeyDown={onBtnKey} aria-label="Your account" aria-haspopup="menu" aria-expanded={open} aria-controls={open ? "cm-avatar-menu" : undefined} title="Your account" style={{ background: "transparent", border: "none", padding: 0, marginLeft: 3, cursor: "pointer", borderRadius: "50%", display: "inline-flex", alignItems: "center", minHeight: 44 }}><Av src={avatar} size={40} /></button>
     {/* PORTALLED TO THE BODY: inside the fixed header (z-index 40, its own stacking context) the menu
        drew UNDER an open page (z up to 1300) everywhere below the header. */}
     {open ? createPortal(<div ref={menu} id="cm-avatar-menu" role="menu" aria-label="Your account" onKeyDown={onMenuKey} style={{ position: "fixed", top: 70 / ZOOM, right: "calc(var(--cm-shell-right) / " + ZOOM + ")", zoom: ZOOM, width: 230, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.6)", padding: 6, zIndex: 1450 }}>
@@ -278,7 +278,9 @@ export function AvatarMenu({ avatar, name, items }) {
   </>;
 }
 
-export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, crews, groups, ad }) {
+/* UPCOMING-UNAVAILABLE: the crews read failed, so the agreed days are unknown, not none (check:overlay-absence:
+   "No crew days agreed yet" over a failed read told a climber with crew days that they had none). */
+export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, guest, onSignIn, onOpenCal, onOpenAlerts, onFindPartners, crews, groups, ad }) {
   const unread = alerts.filter(n => !n.read);
   /* ONE ALERTS LIST (owner, 2026-10-23, #2734): this card shows what Home's Alerts button shows —
      `waiting` (requests, invites, unread chats, a day or a climb to confirm; amber, first) and then
@@ -301,7 +303,7 @@ export function WideRail({ upcoming, alerts, waiting, guest, onSignIn, onOpenCal
       {upcoming.length ? upcoming.slice(0, 3).map(x => {
         const n = daysUntil(x.date);
         return <button key={x.crew.id} onClick={onOpenCal} style={ROW}><span style={{ minWidth: 44, flexShrink: 0, whiteSpace: "nowrap", fontSize: 12, fontWeight: 800, color: n <= 3 ? C.teal : C.textSub }}>{n === 0 ? "Today" : n === 1 ? "Tmrw" : shortDate(x.date)}</span><span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 700, overflowWrap: "anywhere" }}>{x.route.name}</span></button>;
-      }) : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
+      }) : upcomingUnavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "2px 2px 4px" }}>Couldn’t load your crew days just now.</div> : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
     </section>
     <section aria-labelledby="rail-alerts" style={CARD}>
       <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{minHeight:44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{newN ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: waiting.length ? C.amber : C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{newN ? "Alerts · " + newN + " new" : "Alerts"}</span><span aria-hidden="true" style={{ display: "flex" }}><Chevron open={alertsOpen} size={14} color={C.blue} /></span></button>
