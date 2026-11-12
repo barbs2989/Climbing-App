@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_mount_rainier_kautz_glacier",
+  "last_processed_id": "wa_mount_st_helens_worm_flows",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 853,
-  "pass_note": "Pass 8 in progress, batch 524 complete. Continuing id-ascending scope from wa_mount_rainier_kautz_glacier (next batch starts at wa_mount_redoubt_south_face).",
+  "pass_note": "Pass 8 in progress, batch 525 complete. Continuing id-ascending scope from wa_mount_st_helens_worm_flows (next batch starts at wa_mount_steel_first_divide).",
   "batches": [
     {
       "batch_number": 1,
@@ -10427,6 +10427,24 @@
       "clean": 8,
       "sql_file": null,
       "note": "Ten routes, all on Mount Rainier (Curtis Ridge, Disappointment Cleaver, East Success Couloir, Edmunds Headwall, Emmons-Winthrop Glacier, Fuhrer Finger, Fuhrer Thumb, Gibraltar Ledges, Ingraham Direct, Kautz Glacier). No confirmed errors -- unusually well-documented routes. Confirmed clean: the $82-per-person-per-climb 2026 Climbing Cost Recovery Fee stored on every row matches the NPS Climbing Fee FAQ exactly; the \"no timed-entry reservation for 2026\" line matches NPS's official Feb 2026 cancellation of the Sunrise/Paradise pilot; high_point_ft 14406 (used consistently across all ten rows for the true summit) is not the NPS's still-official 1956 figure (14,410 ft) but does match a 2024-2025 independent resurvey's current-datum-adjusted figure per KUOW -- a live elevation controversy, left as-is since 14,406 is the more defensible modern number and is applied consistently. FAs confirmed against NPS history/Mountain Project/OpenBeta: Gibraltar Ledges (Stevens/Van Trump 1870), Emmons-Winthrop (Fobes/James/Wells 1884 -- NPS credits this party, not Van Trump, for this specific route), Fuhrer Finger (Fuhrer brothers party, July 2 1920), Fuhrer Thumb (Wickwire/Raymond/Stewart, May 27 1972), East Success Couloir (Senner/Walstrom 1960). Disappointment Cleaver's fa:\"Unknown\" matches NPS's own position that the route's early history is unclear. Curtis Ridge's fa (Prater/Schuster, no year) matches sources that likewise give no confident year. Flagged for human review, no SQL: Kautz Glacier's fa date (\"June 26-28, 1920\") conflicts with a separate NPS ascents summary giving \"July 28, 1920\" for the same party/route -- two NPS-sourced documents disagree. Edmunds Headwall's fa names \"Don Gordon\" but an AAC Cascade Section report describing a climb directly above Edmunds Glacier to Liberty Cap (this route's exact geography) names \"Don Claunch\" instead, with a 'Gordon' party found climbing a different, neighboring line (North Mowich Glacier direct) -- AAC Publications and NPS History sites were outside this session's network allowlist, so the primary text couldn't be pulled to settle it. No route-level coordinates on any of these ten rows (typical bare shape); the shared wa_mount_rainier area row's own lat/lng, elevation, and prominence (13,210 ft, matches Peakbagger) were independently confirmed."
+    },
+    {
+      "batch_number": 525,
+      "date": "2026-11-12",
+      "route_ids": [
+        "wa_mount_redoubt_south_face",
+        "wa_mount_sefrit_bloody_head_couloir",
+        "wa_mount_sefrit_southeast_ridge",
+        "wa_mount_si_trail",
+        "wa_mount_spickard_silver_glacier",
+        "wa_mount_spickard_southwest",
+        "wa_mount_st_helens_monitor_ridge",
+        "wa_mount_st_helens_worm_flows"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 0,
+      "clean": 7,
+      "sql_file": "audits/sql/2026-11-12-batch-525.sql"
     }
   ],
   "outage_runs": [

@@ -37601,3 +37601,55 @@ Peakbagger) were both independently confirmed.
 
 Next batch will continue id-ascending from `wa_mount_rainier_kautz_glacier` (the next in-scope id
 after it is `wa_mount_redoubt_south_face`).
+
+---
+
+## 2026-11-12 — Pass 8, Batch 525
+
+Eight routes across 5 peaks, id-ascending from `wa_mount_redoubt_south_face` through
+`wa_mount_st_helens_worm_flows`: South Face/Redoubt Glacier (Redoubt); Bloody Head Couloir +
+Southeast Ridge (Sefrit); Mount Si Trail; Silver Glacier + Southwest Route/Silver Lake
+(Spickard); Monitor Ridge + Worm Flows (St. Helens). (Mount Shuksan's 8 routes in this id range
+were skipped — `wa_mount_shuksan_climbs` is `area_type = 'crag'`, out of scope, consistent with
+batch 436's precedent.)
+
+**One confirmed error, SQL'd:** `wa_mount_st_helens_monitor_ridge`'s `access.fees` field reads
+"A Washington Sno-Park permit (or Forest Service equivalent) is required to park at Marble
+Mountain Sno-Park during the winter Sno-Park season" — verbatim identical to its sibling row
+`wa_mount_st_helens_worm_flows`'s `access.fees`, where that statement is correct (Marble Mountain
+Sno-Park *is* the Worm Flows winter trailhead). But Monitor Ridge's actual trailhead is Climbers
+Bivouac, confirmed by this same row's own `road` field ("FR 81 / FR 830 to Climbers Bivouac") and
+its own `access.parking_pass` field, which already correctly states the Climbers Bivouac fee
+($5/vehicle/day, waived with a valid climbing permit). The Forest Service's Monitor Ridge/Climbers
+Bivouac pages and Recreation.gov's trailhead listing confirm that fee; Climbers Bivouac has no
+Washington Sno-Park requirement at all. This is a copy-paste duplication off the Worm Flows row,
+not a sourcing dispute — the row contradicts its own `parking_pass` field. Fixed in
+`audits/sql/2026-11-12-batch-525.sql`.
+
+Independently reconfirmed clean: Mount Redoubt's FA (Jimmy Cherry and Bob Ross, 1930 — matches
+Wikipedia, Peakvisor, SummitPost, Mountain Project exactly). Mount Sefrit's `high_point_ft` 7191
+(the most-cited figure across Wikipedia/Peakbagger/listsofjohn.com; TopoQuest's 7165 and
+TopoZone's outlier 6877 are both less-cited than this catalog's figure). Mount Spickard's overall
+first-ascent attribution (Walter B. Reaburn, 1904 — the row's own `corrections` field already
+discloses this is the *mountain's* FA, not the southwest route's, and leaves route `fa` null
+rather than guess at the Beckeys' 1941 claim — correct restraint) and its 1963 renaming story for
+Warren Spickard, who died in 1961 climbing the nearby Northwest Mox/Twin Spires (confirmed by an
+AAC accident account) — matches the row's "died climbing a nearby peak in 1961" without
+over-claiming which peak. Mount St. Helens' two-tier climbing quota (350/day Apr 1–May 14, 110/day
+May 15–Oct 31) stated in both rows' `access.notes` matches the Gifford Pinchot NF page exactly —
+initially suspected as a possible error since several current summaries only state a flat "Apr
+1–Oct 31" season, but the Forest Service's own page confirms the two-tier split is real and
+current. The North Cascades NP wilderness permit fee ($10/person + $6 reservation fee) quoted on
+both Redoubt and Spickard rows matches NPS's current (2024+) per-person fee structure exactly.
+Mount Si Trail's `high_point_ft` 4167 for the true summit matches the commonly cited figure.
+
+Not independently checked this batch: Mount St. Helens' per-climber quota-season fee amount
+($20/climber/day per Recreation.gov) isn't stated as a dollar figure anywhere on either St.
+Helens row (both just say "fee per climber" or similar) — not wrong, just vague; not SQL'd since
+there's no incorrect claim to correct, only an omission.
+
+No coordinates stored at the route level looked implausible for their stated peak/area on any of
+these eight rows. The live catalog's in-scope count is unchanged at 751.
+
+Next batch will continue id-ascending from `wa_mount_st_helens_worm_flows` (the next in-scope id
+after it is `wa_mount_steel_first_divide`).
