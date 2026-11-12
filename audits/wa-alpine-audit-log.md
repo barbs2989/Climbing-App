@@ -37833,3 +37833,70 @@ peak's coordinate and found plausible).
 
 Next batch will continue id-ascending from `wa_ne_ridge` (the next in-scope id after it is
 `wa_needle_peak_north_ridge`, on Bonanza Peak).
+
+## Batch 529 (pass 8, 2026-11-12)
+
+Checked: Needle Peak's North Ridge (the opening leg of Bonanza Peak's Northwest Ridge link-up),
+North Early Winters Spire's Northwest Corner/Boving-Pollack Route (stored as two separate route
+rows — see below) plus three bare-shape NEWS routes (Christianson-Roskelley, Twitch of the Death
+Nerve, Vulcan Death Grip), Nooksack Tower's Beckey-Schmidtke North Face and South Face, Lexington
+Tower's North Face, and Castle Peak's "Fight or Flight" (stored under the id
+`wa_north_face_left_buttress`). One in-range id was skipped as out of scope (crag-type area, not
+a peak): `wa_north_face_of_the_mole` (on Hook Creek Drainage).
+
+**Confirmed error, fixed (SQL in `audits/sql/2026-11-12-batch-529.sql`):** `wa_news_nw_corner`'s
+`length_m` stored 180 (~590 ft). Mountain Project's route page gives this climb as "500 ft (152
+m)", and this database's own sibling row for the identical route,
+`wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route`, already stores the
+correct 152 — so 180 matched no source and contradicted our own second copy of the same climb.
+Corrected to 152.
+
+**Flagged for human review (not SQL'd):** The sibling-row discovery above points at a bigger
+issue than the length field — `wa_news_nw_corner` and
+`wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route` look like a genuine
+catalog duplicate, not two distinct climbs: same peak (North Early Winters Spire), same route
+name ("Northwest Corner"/"Boving-Pollack Route"), same FA party (Paul Boving and Steve Pollock/
+Pollack, Sept 25, 1976 per SummitPost and Mountain Project), same grade (5.9+), and overlapping
+pitch-by-pitch beta. This audit's guardrails forbid deleting or merging rows, so flagging for a
+human to decide which record is canonical rather than writing a DELETE. Separately, Nooksack
+Tower's South Face FA credit (Jens Klubberud and Ben Manfredi, July 2001) could not be
+independently verified — searches of the American Alpine Journal's online archive, SummitPost,
+Cascade Climbers trip reports, and general web search turned up no source naming either climber
+or that year for this route (only the well-documented 1946 Beckey-Schmidtke first ascent of the
+tower's North Face surfaces). Not contradicted, just unverifiable with the sources available this
+batch — left as stored per the "don't guess" rule.
+
+**Reconfirmed clean:** Needle Peak's North Ridge FA/beta (Blake Herrington and Tim Haider left
+the Agnes Creek Trail at Swamp Creek on August 19, 2006, climbed Needle Peak's North Ridge, then
+continued over the Anonymity Towers to Dark Peak and on to Bonanza) matches the American Alpine
+Journal's 2007 account; our stored commitment grade (V) matches the AAJ account too, even though
+a 2006 Cascade Climbers trip-report thread gives IV instead and spells the partner "Halder" — AAJ
+is the more authoritative published source. Nooksack Tower's Beckey-Schmidtke North Face FA (Fred
+Beckey and Clifford Schmidtke, July 5, 1946) matches the AAJ's own 1947 first-ascent report
+exactly; our stored elevation (8,285 ft) matches modern Wikipedia-derived figures, while the 1947
+AAJ account's rougher estimate of 8,500 ft is the outlier, not a contradiction worth chasing.
+Lexington Tower's North Face FA (Tim Kelley and Dick McGowan, July 5, 1954) and its pitch
+count/length (3 pitches, 91 m) both match Mountain Project's "300 ft (91 m), 3 pitches" exactly.
+Castle Peak's "Fight or Flight" FA (Blake Herrington and Peter Hirst, August 3, 2008 — established
+by accident while attempting a repeat of the neighboring 1993 Colorado Route) and its pitch
+count/length (14 pitches, 427 m) match Alpinist's and Mountain Project's "1,400 ft" figure; the
+stored `name` ("Fight or Flight") and the overview's informal label ("The North Face, Left
+Buttress") are not in tension — Mountain Project itself lists a "North Face (Left Buttress)" entry
+for this same 2008 route under its older working name. Castle Peak's own elevation is genuinely
+disputed across sources (8,306 ft per Wikipedia/WTA/SummitPost vs. 8,343 ft, our stored
+`high_point_ft`, per one Wikipedia mirror that also misattributes the peak's parent) — a ~37 ft
+spread consistent with the normal cross-source variance already tolerated elsewhere in this
+catalog, so left unflagged rather than picked at random.
+
+Not independently checked this batch: the three bare-shape North Early Winters Spire routes
+(Christianson-Roskelley, Twitch of the Death Nerve, Vulcan Death Grip) carry almost nothing beyond
+name/grade/FA to check against a source, and none of the three turned up independent corroboration
+in this batch's searches — nothing found contradicts them either, so they're left as-is. Hazard/
+watch_out lists, permit fee figures, and detailed pitch-by-pitch descent prose were not
+independently re-derived beyond what's noted above. No route-level coordinates beyond each peak's
+own area-level coordinate were checked (typical bare shape), except
+`wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route`'s own `lat`/`lng`, which
+were sanity-checked against the parent peak's coordinate and found plausible.
+
+Next batch will continue id-ascending from `wa_north_face_left_buttress` (the next in-scope id
+after it is `wa_north_face_var_right_directisimo`, on Concord Tower).

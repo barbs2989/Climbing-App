@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_ne_ridge",
+  "last_processed_id": "wa_north_face_left_buttress",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 528 complete. Continuing id-ascending scope from wa_ne_ridge (next batch starts at wa_needle_peak_north_ridge, on Bonanza Peak). Skipped three in-range but out-of-scope ids this batch -- wa_narcos, wa_ne_arete, wa_ne_chimney -- all on crag-type areas (Cutthroat Creek Wall/Little Liberty Bell, Molar Tooth), not peaks. total_wa_alpine_or_mountaineering_tagged unchanged at 857 since the last run (same day), so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
+  "pass_note": "Pass 8 in progress, batch 529 complete. Continuing id-ascending scope from wa_north_face_left_buttress (next in-scope id after it is wa_north_face_var_right_directisimo, on Concord Tower). Skipped one in-range id this batch as out of scope (crag-type area, not peak): wa_north_face_of_the_mole (on Hook Creek Drainage, area_type=crag). total_wa_alpine_or_mountaineering_tagged unchanged at 857 since the last run (same day), so total_in_scope_last_count is carried over unchanged at 751 rather than re-derived.",
   "batches": [
     {
       "batch_number": 1,
@@ -10503,6 +10503,26 @@
       "flagged_for_human_review": 2,
       "clean": 5,
       "sql_file": "audits/sql/2026-11-12-batch-528.sql"
+    },
+    {
+      "batch_number": 529,
+      "date": "2026-11-12",
+      "route_ids": [
+        "wa_needle_peak_north_ridge",
+        "wa_news_nw_corner",
+        "wa_nooksack_tower_beckey_route",
+        "wa_nooksack_tower_south_face",
+        "wa_north_early_winter_spire_christianson_roskelley",
+        "wa_north_early_winter_spire_twitch_of_the_death_nerve",
+        "wa_north_early_winter_spire_vulcan_death_grip",
+        "wa_north_early_winters_spire_northwest_corner_a_k_a_boving_pollack_route",
+        "wa_north_face_3",
+        "wa_north_face_left_buttress"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 7,
+      "sql_file": "audits/sql/2026-11-12-batch-529.sql"
     }
   ],
   "outage_runs": [
