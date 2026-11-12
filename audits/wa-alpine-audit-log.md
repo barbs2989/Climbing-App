@@ -37653,3 +37653,60 @@ these eight rows. The live catalog's in-scope count is unchanged at 751.
 
 Next batch will continue id-ascending from `wa_mount_st_helens_worm_flows` (the next in-scope id
 after it is `wa_mount_steel_first_divide`).
+
+## 2026-11-12 — Pass 8, Batch 526
+
+Ten routes across 2 peaks, id-ascending from `wa_mount_steel_first_divide` through
+`wa_mount_stuart_west_ridge`: First Divide + Standard Scramble (Mount Steel); Direct North
+Ridge, Girth Pillar, Gorillas in the Mist, Ice Cliff Glacier, North Ridge (Complete), Stuart
+Glacier Couloir, Stuart Range Traverse, West Ridge (Mount Stuart).
+
+**One confirmed error, SQL'd:** `wa_mount_stuart_direct_north_ridge`'s top-level `lat`/`lng`
+(47.81595, -122.37455) places the route roughly 25-30 miles from Mount Stuart's actual summit —
+that coordinate falls in the lowlands near North Bend/Snoqualmie, nowhere near the Stuart Range.
+This row's own parent area (`wa_mount_stuart`) already carries the correct summit coordinate
+(47.475118, -120.903144), matching Wikipedia (47°28'30"N 120°54'11"W) and TopoQuest exactly — and
+this same route row's own `itinerary` text independently states "the 9,415 ft summit," consistent
+with the area's elevation and coordinate, not with the row's own stored lat/lng. Two different
+coordinate sources look to have been mixed into this one row, the same pattern seen on earlier
+batches (e.g. Mount Crowder, batch 80/144). Fixed in `audits/sql/2026-11-12-batch-526.sql`,
+pre-flighted clean with `check:sql`.
+
+Independently reconfirmed clean: Mount Steel's `high_point_ft` 6225 and summit coordinate
+(47.639705, -123.335965) match Wikipedia/listsofjohn.com/TopoZone almost exactly. Mount Stuart's
+area-level elevation (9,415 ft) and coordinate (47.475118, -120.903144) match Wikipedia/TopoQuest
+exactly. West Ridge's FA (Lex Maxwell, Fred Llewellyn & John Vertrees, August 1935) matches
+Mazamas and SummitPost. Stuart Glacier Couloir's FA (Helmy Beckey & Larry Strathdee, June 1944)
+matches SummitPost and Mountain Project with no conflicting attribution. Ice Cliff Glacier's FA
+(Bill & Gene Prater with Dave Mahre, August 5 1957) matches SummitPost and Mountain Project with
+no conflicting attribution. The Enchantment Permit Area's current overnight-quota season (May
+15–Oct 31) stated on the Girth Pillar/Ice Cliff Glacier/North Ridge/Stuart Glacier Couloir rows
+matches the Forest Service's current page exactly. Mount Steel's First Divide route `gain_ft`
+(5,440) checks out against its own `approach` text's two-stage elevation math (785→4,688 ft trail,
+plus ~1,540 ft cross-country to the 6,225 ft summit).
+
+**Needs human verification, not SQL'd — sources themselves conflict:**
+- `wa_mount_stuart_north_ridge`'s FA note (Hargis & Ossiander, 1970, "toe-to-summit over the Great
+  Gendarme," crediting Claunch/Rupley 1956 and Beckey/Marts 1963 for partial ascents) vs.
+  `wa_mount_stuart_direct_north_ridge`'s FA (Hargis & Ossiander, 1963). Mountain Project's own
+  listing for this history is internally inconsistent — its prose says the direct line came "seven
+  years later" (~1970) while its own route-listing field gives 1963 — so this catalog's more
+  detailed synthesis can't be confirmed or refuted from what's available online.
+- `wa_mount_stuart_girth_pillar`'s FA year (1983): Mountain Project says 1983, an Alpine Institute
+  trip report says 1984. The catalog's 1983 matches the source closer to a primary AAC report, but
+  neither search surfaced the actual dated AAC Stuart Range entry to settle it.
+- The First Divide/Standard Scramble rows' Bear Gulch Fire closure text (dated "as of August 23,
+  2026") — the most recent independent evidence found is from fall 2025 and shows no reopening,
+  so current (November 2026) status couldn't be confirmed either way. The row's own dated caveat is
+  reasonable practice here, not treated as an error.
+
+Not independently checked this batch: individual `gain_ft`/`dist_km` figures on the six Mount
+Stuart technical routes that share area-level approach distances (24.14/24.94/12.07 km via Ingalls
+Creek or Stuart Lake) — plausible for those trailheads but not checked against GPS tracks.
+`wa_mount_stuart_girth_pillar`'s and siblings' detailed pitch-by-pitch descriptions were not
+cross-checked line by line. No coordinates on the remaining eight rows (all null at the route
+level, consistent with the catalog's typical unenriched shape) looked implausible once the one
+bad value above is accounted for. The live catalog's in-scope count is unchanged at 751.
+
+Next batch will continue id-ascending from `wa_mount_stuart_west_ridge` (the next in-scope id
+after it is `wa_mount_teneriffe_kamikaze_trail`).
