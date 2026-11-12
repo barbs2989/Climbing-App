@@ -195,8 +195,17 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    (0190/0200/0201): every word is replaced by all its forms ("Mt Baker" -> "mount mt baker"). `check:search-norm` fails if the two diverge.
    Fuzzy fallback: RPC `search_names_fuzzy`.
 6. Map kit (`lib/mapKit.jsx`): `loadLeaflet` (lazy, with `warmLeafletOffline`), `baseTileLayer` (street/sat/topo from `MAP_TILE_URLS`, or a NASA GIBS snow layer via `isSnowLayer`),
-   `applyBaseLayer` (swaps the layer and drops Leaflet's zoom control 56px below the layer row so "+" is not hidden - #2411),
+   `applyBaseLayer` (swaps the layer and drops Leaflet's zoom control 56px below the layer row so "+" is not hidden - #2411), `addTileCredit`
+   (the credit control, once per map; `applyBaseLayer` calls it, and so does `GPXMap` when it builds its first layer itself -- until
+   2026-11-11 the route map showed no tile credit at all until a layer button was pressed),
    `fitZoomToLayer`/`layerSharpZoom` (zoom limits per layer), `pinHtml` (bubble markup).
+   **Slope angle** (competitor review item 23, 2026-11-11): `slopeLayer(L)` is an overlay, not a base layer, drawn in the browser from the
+   public AWS Terrain Tiles (terrarium PNGs, no tile set of our own to build or host). Each pixel's slope comes from its neighbours and
+   is shaded in `SLOPE_BANDS` (27 / 30 / 35 / 45 / 60 degrees; under 27 stays clear) at 55% over whichever base layer is showing. It
+   draws from `SLOPE_MIN_ZOOM` (11; coarser pixels read every slope gentler than it is) and magnifies the zoom-15 picture beyond 15.
+   It carries `SLOPE_CREDIT` while it is on: Canada's and Mexico's elevation licences make a credit a condition of use (the
+   credit-only-where-required rule). `BaseLayerToggle` takes `slope`/`slopeOn`/`setSlopeOn`: a *Slope* button (`aria-pressed`) under
+   Full screen, with a colour key under it when on, stacked in one column with the Snow stepper. Only the route map (`GPXMap`) opts in.
 7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation, `acceptFix` discards stale/worse fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
    `fmtFixAcc`/`locateLabel` word the status. The dot is an HTML marker lifted above all other markers; the accuracy ring stays under them (#2411).
    `NearMePanel` re-centres only on the first fix.
