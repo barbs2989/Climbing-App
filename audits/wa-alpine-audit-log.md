@@ -38247,3 +38247,48 @@ Ptarmigan Peak's and Raven Ridge's detailed gear/rack lists; Red Mountain's Sout
 grade (Class 4).
 
 Next batch will continue id-ascending from `wa_red_mountain_snoqualmie_west_ridge`.
+
+## Batch 537 (pass 8) — 2026-11-13
+
+Checked 10 WA alpine/mountaineering peak routes, id-ascending from `wa_remmel_mountain_nw_ridge`
+through `wa_ruth_icy_traverse`: Remmel Mountain's NW Ridge and Southeast Slope, Mount Fury (West
+Peak)'s Ridge Traverse from East Fury, Colchuck Balanced Rock's Rikki Tikki Tavi, Rock Mountain's
+Northeast Ridge (Nason Ridge Traverse) and West Route, Ruby Mountain's Happy Creek Route,
+Northwest Ridge Route and South Ridge Route, and Ruth Mountain's Ruth-Icy Traverse.
+
+**Clean (5):** Ridge Traverse from East Fury's stored elevations (East Fury 8,322 ft / West
+Fury 8,305 ft) are within normal source variance of the Mount Fury (West Peak) area row (8,303
+ft). Rikki Tikki Tavi is a real, documented 5.11 route on Colchuck Balanced Rock's west face
+(confirmed via Mountain Project's area listing); its FA (Tom Ramier and Abe Traven) could not be
+directly confirmed, but a 2010 CascadeClimbers forum post crediting "Tom, Abe, and Craig" with
+recent lines on the same crag around that period is consistent with it, so left as stored.
+Rock Mountain's Northeast Ridge was already corrected in a prior pass (2026-07-31) and still
+agrees with its own area row. Ruby Mountain's Happy Creek Route and South Ridge Route both carry
+high_point_ft = 7408, matching the fix applied below.
+
+**Confirmed errors fixed (4):** `wa_rock_mountain_west_route` stored `high_point_ft: 6852`,
+contradicting its own sibling route (`wa_rock_mountain_northeast_ridge`, 6841) and the
+`wa_rock_mountain` area row (`elevation_ft: 6841`) — both already corrected on 2026-07-31
+against Wikipedia (6,840+ ft) and GNIS/Wikidata (2,085.5 m = 6,841 ft). That earlier fix was
+never propagated to this route; corrected to 6841. The `wa_remmel_mountain` area row stored
+`elevation_ft: 8688`, disagreeing with Wikipedia's infobox (8,685 ft) and with both of this
+peak's own route rows, which already independently store `high_point_ft: 8685` — corrected to
+8685. The `wa_ruby_mountain` area row stored `elevation_ft: 7426`, a figure no source found
+supports (SummitPost/WTA: 7,408 ft; Wikipedia/PeakVisor: 7,412 ft); all three of this peak's own
+route rows already independently store `high_point_ft: 7408` — corrected to 7408.
+`wa_ruby_mountain_northwest_ridge`'s own `waypoints` entry for "Ruby Mountain summit" carried
+`elev`/`elevFt: 7426`, contradicting that same row's own `high_point_ft: 7408` — corrected to
+7408.
+
+**Flagged for human review (1):** `wa_remmel_mountain_southeast_slope`'s FA — "Sledge Tatum and
+George E. Louden Jr. (US-Canada Boundary Survey), July 26, 1904" — could not be confirmed in
+this batch's searches (no source tying either name or a 1904 boundary-survey ascent to Remmel
+Mountain turned up), but nothing contradicts it either. Boundary-survey parties did make many
+early Cascades first ascents in this era, so the claim is plausible; left as stored per the
+don't-guess rule rather than fixed or removed.
+
+Not independently checked this batch: most `access`/`road`/`climate`/`itinerary` prose fields
+across all ten rows beyond checking they don't conflict with each row's own overview/stats;
+detailed rack/gear lists; Ruth-Icy Traverse's claimed rappel/gully details for Icy Peak.
+
+Next batch will continue id-ascending from `wa_ruth_icy_traverse`.
