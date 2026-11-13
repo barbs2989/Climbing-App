@@ -38200,3 +38200,50 @@ were not found in this batch's searches (only the paired surname is corroborated
 stored per the "don't guess" rule.
 
 Next batch will continue id-ascending from `wa_prusik_peak_stanley_burgner`.
+
+## Batch 536 (pass 8) — 2026-11-13
+
+Checked 10 WA alpine/mountaineering peak routes, id-ascending from `wa_prusik_peak_taylor_wood_route`
+through `wa_red_mountain_snoqualmie_west_ridge`: Prusik Peak's Taylor-Wood Route and West Ridge,
+Ptarmigan Peak's Standard Scramble, Ragged Edge (Vesper Peak), Rapple Grapple (Liberty Bell),
+Raven Ridge's Southeast Ridge (Crater Lake Approach), and Red Mountain (Snoqualmie)'s East Face,
+East Ridge, Southeast Face, and West Ridge.
+
+**Clean (8):** Ptarmigan Peak's 8,614 ft matches WTA exactly (PeakVisor's 8,615 ft and
+ListsOfJohn-style LiDAR figures are within normal survey variance). Raven Ridge's Southeast
+Ridge route high point (8,572 ft) sits within the ~20-30 ft spread that independent sources
+(ListsOfJohn, PeakVisor, TopoZone) already give for this ridge's named summits, so not treated
+as a contradiction. Ragged Edge and Rapple Grapple were already corrected in an earlier pass
+(2026-07-31 land-manager and length/elevation fixes) and nothing new contradicts them this
+round. Red Mountain (Snoqualmie)'s Southeast Face FA (Don Blair and Art Winder, August 11,
+1934) couldn't be directly confirmed for this specific face, but both men are independently
+documented as active Mountaineers climbers/authors in the Snoqualmie Pass area right around
+1931-1934, so nothing contradicts it. Prusik Peak's West Ridge (FA stored as Fred Beckey, John
+Rupley, Don Gordon & Fred Ayres, May 1957) also couldn't be independently pinned down this
+batch -- the peak's overall first ascent is well documented as 1948 (Beckey and Art Holben, a
+different line) -- but a later, separate technical-route FA by a different Beckey party is
+plausible and not contradicted by anything found, so left as stored. Red Mountain's East Face
+and East Ridge are bare rows (id/area/name/discipline only) with nothing to check.
+
+**Confirmed errors fixed (1):** `wa_prusik_peak_taylor_wood_route`'s `overview` called it a
+"ten-section route," contradicting its own `pitches` column (8) and Mountain Project's route
+header, which gives this exact route as 8 pitches, 670 ft (204 m) -- matching our stored
+`length_m` of 204 precisely. (MP's route *text* separately mentions Wood adding two more
+pitches to reach the true summit a year later, which is likely where "ten-section" originated,
+but that describes a variation, not this row's own stats.) Corrected the overview's wording to
+"eight-section" to match the row's own pitch count and the verified source.
+
+**Flagged for human review (1):** `wa_red_mountain_snoqualmie_west_ridge`'s `fa` field is
+truncated mid-name: `"Fred Beckey, Helmy Beckey, Rob-"`. Beyond the truncation itself, no
+source found ties any Beckey-led party to a first ascent of this route at all -- the peak's own
+overall first ascent is documented (Wikipedia) as 1898 by W.C. Mendenhall, a different,
+non-technical line, and general searches for Beckey/Helmy Beckey Cascades partners in that era
+didn't surface a "Rob-" name paired with them nearby. Left for a human to track down and
+complete rather than guessing the missing name.
+
+Not independently checked this batch: most `access`/`road`/`climate`/`itinerary` prose fields
+across all ten rows beyond checking they don't conflict with each row's own overview/stats;
+Ptarmigan Peak's and Raven Ridge's detailed gear/rack lists; Red Mountain's Southeast Face
+grade (Class 4).
+
+Next batch will continue id-ascending from `wa_red_mountain_snoqualmie_west_ridge`.
