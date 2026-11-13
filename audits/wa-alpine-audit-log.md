@@ -38558,3 +38558,69 @@ consensus already sound from a prior pass), and Guye Peak's `wa_south_gully_sout
 clean this batch including the five independently re-verified above: 8 of 10.
 
 Next batch will continue id-ascending from `wa_south_twin_sister_north_ridge`.
+
+## 2026-11-13 — Pass 8, Batch 543
+
+Ten routes, id-ascending from `wa_south_twin_sister_north_ridge`: Sharkfin Tower's Southeast
+Face, Southeast Mox Peak's West Ridge/Beckey Route (under both its ids), South Early Winters
+Spire's Southern Man, Dorado Needle's Southwest Buttress, Bonanza Peak's Soviet Route, Spectre
+Peak's Haunted Wall and South Ridge ("Spirited Away"), and Sperry Peak's East Face and Upper
+South Ridge.
+
+**One confirmed error fixed (1 SQL statement):** `wa_soviet_route`'s `pitches` was stored as
+14, but the row's own `rope_note` field already says "22-pitch route" — a self-contradiction
+on the same row. Two independent external sources back the 22 figure: Steph Abegg's route
+page (already cited elsewhere on this row for `gain_ft`) and the 1976 American Alpine Journal
+first-ascent account (already named in this row's own `data_quality` as the source for its FA
+facts) both describe it as a 22-pitch route. The stored `pitch_detail` (14 entries, summing to
+700 m, matching `length_m` 701) looks like a later reconstruction from a modern trip report
+using doubled 60 m ropes to link pitches — self-consistent, but not what `pitches` tracks for
+every other route this batch (the commonly cited guidebook/Mountain Project count). Corrected
+`pitches` to 22; left `pitch_detail` alone rather than inventing 8 more entries with no topo to
+source them, and recorded that gap explicitly instead.
+
+**Flagged for human review (2 issues, 3 rows):**
+- **A real duplicate, not just the id/name mismatch batch 167 flagged.** Back in batch 167
+  (2026-09-02), `wa_southeast_mox_peak_se_rib` was flagged because its id implies a "Southeast
+  Rib" route while every stored field actually describes Hard Mox's real West Ridge/Beckey
+  Route — a rename candidate, not a content error. That row is still there, now fuller and
+  still under the same mismatched id (name "West Ridge (Beckey Route)", `fa` "Fred Beckey and
+  Helmy Beckey, June 21, 1941", rich enrichment incl. a `corrections` field noting its own
+  2026-08-05 rename). But a **second** row now exists for the same physical route:
+  `wa_southeast_mox_peak_beckey_route_west_ridge` — same area (`wa_southeast_mox_peak`), same
+  FA ("Fred Beckey, Helmy Beckey, 1941"), same grade/pitch count (5.5, 3 pitches), name
+  "Beckey Route (West Ridge)" (the same two words transposed), but almost no other data
+  (no `overview`, `hazards`, `waypoints`, `access`, etc. — just the seed-level fields plus an
+  `itinerary`). This looks like an attempt to fix batch 167's id mismatch that added a new,
+  correctly-shaped id instead of renaming the existing row, leaving a stale near-empty
+  duplicate behind. Needs a human merge/dedupe decision (which id survives, and what every
+  other table/UI reference to the old id needs to become) — not a field patch, and not a
+  DELETE this audit will propose.
+- **Spectre Peak's elevation.** Both `wa_spectre_peak_haunted_wall` and
+  `wa_spectre_peak_south_route` store `high_point_ft` 7952 (with a `data_quality` note already
+  flagging an alternate LIDAR figure of 7953). This pass found two more, further-diverging
+  figures: listsofjohn.com gives 7,940 ft, and a Picket Range peaks table (sourced from an
+  older Wikipedia revision) gives 7,880 ft. No USGS quad or Peakbagger page was reachable this
+  pass to arbitrate between four disagreeing figures spanning 72 ft, so left unfixed rather
+  than guessing.
+
+**Not independently re-verified this batch:** `wa_sperry_peak_east_face`'s FA (Mike Preiss and
+M. Bunker, Sept 2002) — no corroborating source turned up this pass, but nothing contradicts it
+either, so it's carried forward rather than flagged.
+
+**Clean (6):** `wa_southeast_face` (Sharkfin Tower) — grade (5.10-), pitch count (2), length
+(46 m vs Mountain Project's 45 m/150 ft) and FA all match Mountain Project's dedicated route
+page exactly. `wa_southeast_mox_peak_se_rib` — Mountain Project's Beckey Route page confirms 3
+pitches, Grade II, and the exact FA date (June 21, 1941); its already-resolved 8,504 ft vs
+Mountain Project's own 8,509 ft is unchanged from batch 167's finding, not a new discrepancy.
+`wa_southern_man` — the free-ascent year/grade ambiguity (2009 5.12a per one blog vs this row's
+2010 5.11d by Blake Matthews/Bryan Burdo) is already hedged in this row's own `overview` and
+`data_quality`; nothing new found. `wa_southwest_buttress` (Dorado Needle) — Mountain Project
+matches exactly (5.8, 9 pitches, Grade III); the Mountaineers' differing 13-pitch/5.7 figure is
+already noted in `data_quality`. `wa_spectre_peak_south_route` — FA (Sam Boyce and Joe Manning,
+July 2022) and grade not contradicted by any source found (elevation flagged above instead).
+`wa_sperry_peak_upper_south_ridge` — SummitPost's description (more technical than the standard
+route, best simul-climbed, approached via Headlee Pass/Vesper Lake, descended via the standard
+Class 3 route) matches this row's stored approach/descent_text closely.
+
+Next batch will continue id-ascending from `wa_sperry_peak_upper_south_ridge`.
