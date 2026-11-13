@@ -38404,3 +38404,58 @@ beyond checking they don't conflict with each row's own overview/stats; detailed
 (genuine gaps, not contradictions, so not filled in).
 
 Next batch will continue id-ascending from `wa_silver_star_ne_ridge`.
+
+## Batch 540 (pass 8) — 2026-11-13
+
+Checked 10 WA alpine/mountaineering peak routes, id-ascending from `wa_sinister_peak_north_face`
+through `wa_south_early_winter_spire_direct_east_buttress`: Sinister Peak's North Face and Southwest
+Route, Skookum Peak (Twin Sisters)'s Jaw's Tooth and Northwest Ridge and North Ridge via Jaws' Tooth,
+Sky Mountain's South Slopes Scramble, Sloan Peak's Corkscrew Route, Snowfield Peak's Neve
+Glacier/Standard Route, Snowking Mountain's Standard Route/Snowking Glacier, and South Early Winters
+Spire's South Arete and Direct East Buttress.
+
+**Clean (6):** `wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge` — a deliberately sparse,
+hand-curated (`auto_generated: false`) companion entry (grade, pitches, overview, rack only); nothing
+on file contradicts anything else. `wa_sky_mountain_s_route` — gain/loss (2600/2600) match its own
+single-day itinerary exactly. `wa_sloan_peak_corkscrew` — its FA (Harry Bedal & Nels Skaar, July 30,
+1921) is independently confirmed via SummitPost, and gain/loss (5935/5935, fixed in an earlier batch)
+already match. `wa_snowking_mountain_standard` — the gain/loss symmetry (6800/6800) was already
+corrected in a 2026-08-01 pass with its own reasoning on file; the remaining small residual against
+the itinerary's day-level loss sum (6500) is a pre-existing, already-documented gap, not a new finding.
+`wa_south_arete` and `wa_south_early_winter_spire_direct_east_buttress` — both FAs (Beckey & Beckey,
+1942; Beckey & Doug Leen, 1968) independently confirmed via SummitPost, the second corroborated by a
+comment from Doug Leen himself; high_point_ft (7807) matches between the two sibling routes and the
+area row.
+
+**Confirmed errors fixed (2 issues, 2 SQL statements):** `wa_sinister_peak_southwest_route`'s
+top-level `gain_ft`/`loss_ft` (7000/5500) disagreed with its own 4-day `itinerary.days` sum
+(8200 gain / 8400 loss) and its own `itinerary.totalNote` ("~8,000-9,000 ft cumulative gain round
+trip") — corrected to 8200/8400 to match. `wa_sinister_peak_north_face` had `gain_ft`/`loss_ft` both
+null; its own 4-day itinerary already sums to a symmetric 9250/9250, consistent with its own
+`descent` field describing a round trip back to camp — filled in to match.
+
+**Flagged for human review (3 issues):** `wa_skookum_peak_twinsisters_scramble`'s stored `gpx` track
+is suspect — the first ~34 of its 45 points sit roughly 4 miles north of this route's own trailhead
+waypoint (`Elbow Lake Trail - North Trailhead (FR 38)`, 48.6797/-121.897), which WTA independently
+confirms as the real trailhead location; only the last ~10 gpx points land near the actual summit.
+The route's own beta explicitly contrasts its Elbow Lake Trail access with the "Dailey Prairie/west-
+side roads used for North and South Twin" — raising the possibility this track was pulled from that
+different, nearby approach. Not fixed: reconstructing the correct track needs a real GPS source, not
+a guess. `wa_snowfield_peak_neve_glacier`'s `fa` ("William Degenhardt and Herbert Strandberg, August
+1931") could not be confirmed specifically for this peak; the one corroborating source found (an NPS
+historic-resource study) credits that pair's 1931 first ascents to Picket Range/Colonial Ridge peaks
+(e.g. Mount Terror), not explicitly to Snowfield — plausible given the areas are adjacent, but
+unconfirmed either way, so left as-is pending a guidebook check (e.g. Beckey's Cascade Alpine Guide).
+`wa_sinister_peak_southwest_route`'s own `itinerary.days` mileage (25+5.5+6+31=67.5 mi) contradicts
+its own `itinerary.totalNote` ("~33-35 mi") — day 1 and day 4 both appear to have been expanded to
+include the ~16-mile Suiattle River Road (FR26) closure walk in a later edit that never updated
+totalNote to match; its sibling `wa_sinister_peak_north_face`, sharing the identical closed-road
+approach and the same `road` closure note, was never given a matching mileage addition to its own
+itinerary days. Needs a human to reconcile both routes' mileage and totalNote consistently rather
+than a one-line guess.
+
+Not independently checked this batch: most `access`/`road`/`climate`/`emergency`/`crowds` prose
+fields beyond checking they don't conflict with each row's own stats; detailed rack/gear lists;
+`dist_km` was not used for any cross-check per this project's known dual-convention caveat.
+
+Next batch will continue id-ascending from `wa_south_early_winter_spire_direct_east_buttress`.
