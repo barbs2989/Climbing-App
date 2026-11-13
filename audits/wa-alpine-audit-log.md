@@ -38152,3 +38152,51 @@ Poltergeist Pinnacle's area coordinate sits about 0.09 mi south of Challenger's,
 Wikipedia's stated separation).
 
 Next batch will continue id-ascending from `wa_preacher_mountain_west_face`.
+
+## Batch 535 (pass 8) — 2026-11-13
+
+Checked 9 WA alpine/mountaineering peak routes, id-ascending from `wa_primus_peak_south_ridge`
+through `wa_prusik_peak_stanley_burgner`: Primus Peak's South Ridge/McAllister Glacier, and
+eight routes on Prusik Peak's south face (Alpine Cragger's Delight, Der Sportsman, East Face,
+Prayer for a Friend, Sail Away, Solid Gold, South Face/Burgner-Stanley, and Stanley-Burgner).
+
+**Clean (6):** Primus Peak's stored 8,508 ft elevation matches Wikipedia, the Mountaineers,
+and WTA exactly. Alpine Cragger's Delight (80 ft/24 m single pitch, 5.10+, FA unknown, first
+reported by Justin Sackett in Sept 2022) matches its Mountain Project page in every detail.
+Der Sportsman's FA (Brooke Sandahl and partners, developed over roughly three years in the
+'90s — undated) and its 600 ft/6-pitch length both match Mountain Project, which carries the
+same "'90s, (?)" uncertainty about the exact year. Sail Away's FA (Fletch Taylor and David
+Wood, August 9, 2025) matches Mountain Project's listing exactly, including the specific date.
+Solid Gold's FA (Wayne Wallace and Tim Olson, 1989) and its 450 ft/5-pitch length both match
+Mountain Project exactly, despite a forum thread arguing parts of the line may predate 1989 —
+not solid enough to override the sourced FA. South Face (Burgner-Stanley)'s 1968 date is
+confirmed by Mountain Project, SummitPost and the Mountaineers' own route page (full first
+names not independently re-confirmed this batch).
+
+**Confirmed errors fixed (2):** `wa_prusik_peak_east_face` was stored with name "East Face"
+but FA "Fred Beckey and Dan Davis" — no source describes an East Face route on Prusik Peak by
+anyone. Beckey and Davis's well-documented 1962 first ascent on Prusik is the **South** face
+(Mountain Project's "Beckey-Davis," corroborated by SummitPost, stephabegg.com and the AAJ
+1963 annual); the Mountaineers' own Prusik Peak page groups it under South Face routes beside
+Stanley-Burgner and Solid Gold. Renamed to "South Face (Beckey-Davis)" to match its own FA; the
+id was left alone (renaming ids is a separate, riskier operation). `wa_prusik_peak_prayer_for_
+a_friend` stored `pitches: 6`, contradicting its own 7-entry `pitch_detail` array (6 climbing
+pitches plus a West Ridge scramble finish) and Mountain Project/the AAC's "7 pitches, 600 ft" —
+corrected to 7.
+
+**Flagged for human review (1):** `wa_prusik_peak_south_face_burgner_stanley` and
+`wa_prusik_peak_stanley_burgner` look like a duplicate pair for the same classic route: same
+1968 FA (Ron Burgner and Fred Stanley), same grade 5.10a, same pitch count (6), same length
+(152 m), and near-identical overview prose. This isn't a simple UPDATE, so it's left for the
+project's duplicate-merge tooling rather than attempted here — note this is unrelated to the
+already-resolved `wa_stanley_burgner` → `wa_prusik_peak_south_face_burgner_stanley` merge
+recorded in `audits/stanley-burgner-fold/`, which involved a different, now-deleted id.
+
+Not independently checked this batch: Prayer for a Friend's and Der Sportsman's detailed rack
+lists, Primus Peak's full itinerary/timing breakdown, and most `access`/`road`/`climate` prose
+fields across all nine rows were not independently re-derived beyond checking they don't
+conflict with each route's own overview text. Full first names for Burgner-Stanley's 1968 FA
+were not found in this batch's searches (only the paired surname is corroborated), so left as
+stored per the "don't guess" rule.
+
+Next batch will continue id-ascending from `wa_prusik_peak_stanley_burgner`.
