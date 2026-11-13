@@ -38700,3 +38700,51 @@ this row's own `data_quality` and is left as-is. `wa_the_cave_route`'s FA (Ron B
 McPherson, 1968) is independently confirmed by both Mountain Project and OpenBeta.
 
 Next batch will continue id-ascending from `wa_the_chopping_block_south_route`.
+
+## Batch 546 (pass 8) — 2026-11-13
+
+Checked `wa_the_devils_club` (Southeast Mox Peak, "Hard Mox"), `wa_the_fin_northeast_face`,
+`wa_the_hitchhiker` (South Early Winters Spire), `wa_the_horn_scramble`, `wa_the_incisor_scramble`,
+and all three routes on The Monk (Pasayten) — `wa_the_monk_le_gibet`, `wa_the_monk_odine`,
+`wa_the_monk_scabo`. Skipped two in-scope-by-id-range routes whose area is a crag, not a peak
+(`wa_the_exorcism_of_mark_hanna`, `wa_the_l_h_route_free_variation`, both at M&M Wall/Supercave
+Wall) — out of scope per this audit's own `scope_note`.
+
+One confirmed error, fixed in `audits/sql/2026-11-13-batch-546.sql`: all three Monk routes stored
+`high_point_ft` = 8,606 ft — Cathedral Peak's own summit elevation (Wikipedia 8,606 ft NAVD88;
+Mountain Project/SummitPost/Mazamas ~8,601 ft), not The Monk's. ListsOfJohn lists The Monk itself
+as a named sub-summit 0.10 mi from, and subsidiary to, Cathedral Peak, with its own elevation of
+8,009 ft (LiDAR) / 8,020 ft (map) and a connecting saddle at 7,898 ft — about 580-600 ft lower than
+the stored figure. All three routes sharing the exact same wrong value, and that value exactly
+matching the taller neighboring peak rather than disagreeing with it randomly, points to a mix-up
+during import rather than three independent typos. Corrected `high_point_ft` to 8,009 ft (the LiDAR
+figure, which ListsOfJohn's own entry flags as more reliable than the map's for this peak) on all
+three rows.
+
+One flagged for human review: `wa_the_fin_northeast_face`'s elevation is a three-way disagreement —
+`areas.elevation_ft` for `wa_the_fin` stores 5,599 ft, the route's own `high_point_ft` stores 5,500 ft,
+and ListsOfJohn's dedicated "The Fin" entry (Mason County, Mount Skokomish quad — the right location)
+gives a third figure, 5,540 ft, agreeing with neither. With no two sources agreeing, there's no basis
+to pick a winner; flagged rather than guessed, ideally against a USGS quad or Olympic Mountains: A
+Climbing Guide (Olympic Mountain Rescue).
+
+The rest checked clean: `wa_the_hitchhiker`'s grade (5.11-), length (274 m vs Mountain Project's
+273 m), pitch count (9) and FA (Bryan Burdo and Scott Johnston, 2007) all match Mountain Project's
+dedicated route page almost exactly; a Cascade Climbers thread's alternate grade (5.10+ C1/5.11 H)
+doesn't contradict it, just reflects an earlier aid ascent before it saw more free attempts.
+`wa_the_incisor_scramble`'s 7,440 ft high point matches Wikipedia's Needles article figure exactly
+(40 ft of prominence, 1958 FA). `wa_the_devils_club`'s 25-pitch count matches an Alpinist.com piece
+by FA climber Erik Wolfe describing the route ("ca. 25 pitches") with his partner Mike Layton; its
+stored grade (5.11) vs. the FA's original technical rating (V+ 5.9+ A2-) isn't a contradiction —
+this row's own `data_quality` already flags that whether the route has since gone fully free is
+undocumented, so the ambiguity is already surfaced rather than silently asserted. `wa_the_monk_le_gibet`
+and `wa_the_monk_scabo`'s grades/pitch counts/racks/descents were already confirmed against Mountain
+Project in earlier research passes (their own `corrections` fields record this) and nothing new
+contradicts them. `wa_the_horn_scramble`'s 1939 FA party (Ruth Carlow, Don Dooley, Robert Henderson,
+Elvis "Swede" Johnson) and 5,536 ft elevation, and The Fin's 1966 FA (Harold Pinsch, Garry Tate) and
+The Incisor's 1958 FA (Kent Heathershaw, Bob McKee), could not be independently confirmed online —
+these are obscure historic ascents on small Olympic pinnacles that predate the internet and likely
+trace to the print-only *Olympic Mountains: A Climbing Guide* — but nothing contradicts them either,
+so they're carried forward rather than flagged, consistent with this row's own `data_quality` gaps.
+
+Next batch will continue id-ascending from `wa_the_monk_scabo`.

@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_the_chopping_block_south_route",
+  "last_processed_id": "wa_the_monk_scabo",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 545 complete. Continuing id-ascending scope from wa_the_devils_club. Checked Switchback Mountain (West Ridge), Table Mountain, Tenpeak Mountain (both routes), The Brothers (South Couloir + Traverse), Concord Tower (The Cave Route), and The Chopping Block (all three routes). One confirmed error fixed (1 SQL statement): areas.elevation_ft for wa_concord_tower corrected 7611->7560 ft, matching two independent outside sources (Mountain Project, Mountain-Forecast) that agree with each other and with this area's own route row (wa_the_cave_route.high_point_ft=7569) far better than the stored 7611 did. One flagged for human review: The Chopping Block's NE Ridge and NW Route rows may have a single well-documented 1961 first ascent (Cooper/Denny/both Fireys/Whitmore) split and mis-credited across the two routes -- sources don't pin down which named line the party climbed, so no fix proposed. Skipped three in-range ids whose area_id resolves to a crag, not a peak (wa_the_chalice at Silver Horn; wa_the_exorcism_of_mark_hanna, wa_the_l_h_route_free_variation at M&M Wall/Supercave Wall), per this file's scope_note. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
+  "pass_note": "Pass 8 in progress, batch 546 complete. Continuing id-ascending scope from wa_the_monk_scabo. Checked The Devils Club (Southeast Mox / Hard Mox), The Fin NE Face, The Hitchhiker (South Early Winters Spire), The Horn, The Incisor, and all three Monk (Pasayten) routes. One confirmed error fixed (3 SQL statements, one table): Monk routes' high_point_ft corrected 8606->8009 ft -- see batch note. One flagged for human review: The Fin's elevation (three disagreeing figures, no two sources agreeing). Skipped two in-range ids whose area_id resolves to a crag, not a peak (wa_the_exorcism_of_mark_hanna, wa_the_l_h_route_free_variation at M&M Wall/Supercave Wall), per this file's scope_note. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -10840,6 +10840,25 @@
       "clean": 8,
       "sql_file": "audits/sql/2026-11-13-batch-545.sql",
       "note": "wa_concord_tower's areas.elevation_ft corrected 7611->7560 ft: Mountain Project ('The summit is at 7560\\'') and Mountain-Forecast (2304m \u2248 7559ft) independently agree with each other within 1ft, ~50ft below the stored value, and this area's own wa_the_cave_route.high_point_ft (7569ft) already sat much closer to those outside sources than areas.elevation_ft did. Flagged: The Chopping Block's Northeast Ridge (credited 'Firey party, 1970') and Northwest Route (credited 'Ed Cooper and Glen Denny, September 9, 1961') may both be mis-crediting a single, better-documented September 1961 first ascent by Ed Cooper, Glen Denny, Joan Firey, Joe Firey and George Whitmore -- an Alpinist.com piece and a Cascade Climbers trip report describe that 5-person party climbing 'the standard route', and the Mountaineers' club guide separately lists the Northeast Ridge (5 pitches, 5.5, Grade II) as the peak's standard route, a near-exact match for our stored NE Ridge grade/pitches -- but no source ties the 1961 party to one specific stored route name over the other, and no source was found for the NW Route's specific day 'September 9', so no fix proposed; needs human verification, ideally against Beckey's Cascade Alpine Guide. (The Chopping Block's third route, Southeast Face/wa_the_chopping_block_south_route, already carries an earlier 2026-10-02 corrections note settling its FA against the published guide and was left untouched.) Eight routes/facts cross-checked clean: wa_switchback_mountain_west_ridge's Boiling Lake approach and Class 2-3 west ridge/west face description match the Mountaineers' club guide; wa_table_mountain_standard_scramble's 5742ft/725ft gain is within normal source variance of WTA (5700ft/725ft) and onX (5741ft/862ft); Tenpeak Mountain's 8312ft elevation (both routes, corrected in an earlier pass) still matches Wikipedia/Peakbagger/ListsOfJohn; The Brothers' Mount Edward/Mount Arthur twin-summit naming and 1908/1912 FA history (wa_the_brothers_south_couloir) matches what's findable online, its already-flagged elevation conflict (6842ft vs 6866-6868ft) left as-is; wa_the_cave_route's FA (Burgner & McPherson, 1968) is independently confirmed by both Mountain Project and OpenBeta."
+    },
+    {
+      "batch_number": 546,
+      "date": "2026-11-13",
+      "route_ids": [
+        "wa_the_devils_club",
+        "wa_the_fin_northeast_face",
+        "wa_the_hitchhiker",
+        "wa_the_horn_scramble",
+        "wa_the_incisor_scramble",
+        "wa_the_monk_le_gibet",
+        "wa_the_monk_odine",
+        "wa_the_monk_scabo"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-11-13-batch-546.sql",
+      "note": "All three Monk (Pasayten) routes' routes.high_point_ft corrected 8606->8009 ft: the stored value exactly matched neighboring Cathedral Peak's own elevation (Wikipedia 8606ft; MP/SummitPost/Mazamas ~8601ft) rather than The Monk's own, distinct summit -- ListsOfJohn lists The Monk as a named sub-peak 0.10mi from Cathedral with its own elevation of 8009ft (LiDAR)/8020ft (map) and a 7898ft saddle between them. All three routes sharing the identical wrong figure points to an import mix-up rather than three independent typos. Flagged: wa_the_fin_northeast_face's elevation is a three-way split with no two sources agreeing -- areas.elevation_ft (wa_the_fin) says 5599ft, the route's own high_point_ft says 5500ft, and ListsOfJohn's dedicated entry for The Fin (correct county/quad) gives a third figure, 5540ft; no fix proposed, needs a USGS quad or the Olympic Mountains climbing guide to arbitrate."
     }
   ],
   "outage_runs": [
