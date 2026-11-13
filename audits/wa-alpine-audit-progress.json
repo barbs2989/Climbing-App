@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_switchback_mountain_scramble",
+  "last_processed_id": "wa_the_chopping_block_south_route",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 544 complete. Continuing id-ascending scope from wa_table_mountain_standard_scramble. Checked Spider Mountain (both routes), Spinnaker Peak, Spire Mountain, Spire Point, Star Peak (NW Ridge), Storm King (North Face), Middle Peak/Gunsight Range SW Ridge, Swiss Peak, and Switchback/Cooney Peak. One confirmed error fixed (1 SQL statement): wa_spire_point_southwest_face grade corrected 5.4->5.6, self-contradicted by its own pitch_detail/rope_note and confirmed externally. One flagged for human review: possible conflation of the 1972 Kloke-Tindall FA with a separately-named 1976 ski line (Arachnophobia) on wa_spider_mountain_north_face -- ambiguous online sources, no fix proposed. Skipped two in-range ids whose area_id resolves to a crag, not a peak (wa_spontaneity_arete, wa_spontaneous_distraction at Le Petit Cheval; wa_summertime at Summertime Crag), per this file's scope_note. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
+  "pass_note": "Pass 8 in progress, batch 545 complete. Continuing id-ascending scope from wa_the_devils_club. Checked Switchback Mountain (West Ridge), Table Mountain, Tenpeak Mountain (both routes), The Brothers (South Couloir + Traverse), Concord Tower (The Cave Route), and The Chopping Block (all three routes). One confirmed error fixed (1 SQL statement): areas.elevation_ft for wa_concord_tower corrected 7611->7560 ft, matching two independent outside sources (Mountain Project, Mountain-Forecast) that agree with each other and with this area's own route row (wa_the_cave_route.high_point_ft=7569) far better than the stored 7611 did. One flagged for human review: The Chopping Block's NE Ridge and NW Route rows may have a single well-documented 1961 first ascent (Cooper/Denny/both Fireys/Whitmore) split and mis-credited across the two routes -- sources don't pin down which named line the party climbed, so no fix proposed. Skipped three in-range ids whose area_id resolves to a crag, not a peak (wa_the_chalice at Silver Horn; wa_the_exorcism_of_mark_hanna, wa_the_l_h_route_free_variation at M&M Wall/Supercave Wall), per this file's scope_note. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -10819,6 +10819,27 @@
       "clean": 8,
       "sql_file": "audits/sql/2026-11-13-batch-544.sql",
       "note": "wa_spire_point_southwest_face's grade/rock_grade corrected 5.4->5.6: self-contradicted its own pitch_detail (pitch 5 explicitly '(Crux)' at 5.6) and rope_note ('5-pitch 5.6'), and confirmed by SummitPost ('5 Full-Pitch 5.6') and an independent trip report ('5.6, five pitches'). Flagged: wa_spider_mountain_north_face's overview/fa may conflate the 1972 Kloke-Tindall climbing first ascent with a separately-named 1976 line ('Arachnophobia') on the same face that was first SKIED in 2003 by Volken/Avolio -- two online trip-report snippets describe these inconsistently (one implying the same line, a route-name map tagging 'North Face (Arachnophobia)' as the general objective) and neither a guidebook nor AAJ entry was reachable to resolve whether the 1972 FA and the skied 1976 line are the same route or two named variants on one face -- needs human verification, no fix proposed. Nine routes' elevations, FA credits and grades cross-checked clean against Wikipedia/SummitPost/ListsOfJohn/WTA (Spider Mountain 8317ft, Spinnaker Peak 5645ft, Spire Mountain 6213ft, Star Peak NW Ridge FA/grade, Storm King 8565ft vs LiDAR 8564ft, Swiss Peak 7988ft, Switchback/Cooney Peak 8321ft all matched); Middle Peak (Gunsight Range) 8200ft elevation could not be independently corroborated online but was not contradicted either, so left unflagged."
+    },
+    {
+      "batch_number": 545,
+      "date": "2026-11-13",
+      "route_ids": [
+        "wa_switchback_mountain_west_ridge",
+        "wa_table_mountain_standard_scramble",
+        "wa_tenpeak_mountain_north_couloir",
+        "wa_tenpeak_mountain_southeast",
+        "wa_the_brothers_south_couloir",
+        "wa_the_brothers_traverse",
+        "wa_the_cave_route",
+        "wa_the_chopping_block_northeast_ridge",
+        "wa_the_chopping_block_northwest_route",
+        "wa_the_chopping_block_south_route"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 8,
+      "sql_file": "audits/sql/2026-11-13-batch-545.sql",
+      "note": "wa_concord_tower's areas.elevation_ft corrected 7611->7560 ft: Mountain Project ('The summit is at 7560\\'') and Mountain-Forecast (2304m \u2248 7559ft) independently agree with each other within 1ft, ~50ft below the stored value, and this area's own wa_the_cave_route.high_point_ft (7569ft) already sat much closer to those outside sources than areas.elevation_ft did. Flagged: The Chopping Block's Northeast Ridge (credited 'Firey party, 1970') and Northwest Route (credited 'Ed Cooper and Glen Denny, September 9, 1961') may both be mis-crediting a single, better-documented September 1961 first ascent by Ed Cooper, Glen Denny, Joan Firey, Joe Firey and George Whitmore -- an Alpinist.com piece and a Cascade Climbers trip report describe that 5-person party climbing 'the standard route', and the Mountaineers' club guide separately lists the Northeast Ridge (5 pitches, 5.5, Grade II) as the peak's standard route, a near-exact match for our stored NE Ridge grade/pitches -- but no source ties the 1961 party to one specific stored route name over the other, and no source was found for the NW Route's specific day 'September 9', so no fix proposed; needs human verification, ideally against Beckey's Cascade Alpine Guide. (The Chopping Block's third route, Southeast Face/wa_the_chopping_block_south_route, already carries an earlier 2026-10-02 corrections note settling its FA against the published guide and was left untouched.) Eight routes/facts cross-checked clean: wa_switchback_mountain_west_ridge's Boiling Lake approach and Class 2-3 west ridge/west face description match the Mountaineers' club guide; wa_table_mountain_standard_scramble's 5742ft/725ft gain is within normal source variance of WTA (5700ft/725ft) and onX (5741ft/862ft); Tenpeak Mountain's 8312ft elevation (both routes, corrected in an earlier pass) still matches Wikipedia/Peakbagger/ListsOfJohn; The Brothers' Mount Edward/Mount Arthur twin-summit naming and 1908/1912 FA history (wa_the_brothers_south_couloir) matches what's findable online, its already-flagged elevation conflict (6842ft vs 6866-6868ft) left as-is; wa_the_cave_route's FA (Burgner & McPherson, 1968) is independently confirmed by both Mountain Project and OpenBeta."
     }
   ],
   "outage_runs": [

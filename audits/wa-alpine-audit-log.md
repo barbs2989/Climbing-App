@@ -38654,3 +38654,49 @@ Peak's (Gunsight Range) 8,200 ft elevation couldn't be independently corroborate
 contradicted either, so it's left unflagged.
 
 Next batch will continue id-ascending from `wa_switchback_mountain_scramble`.
+
+## Batch 545 (pass 8) — 2026-11-13
+
+Checked `wa_switchback_mountain_west_ridge`, `wa_table_mountain_standard_scramble`,
+`wa_tenpeak_mountain_north_couloir`, `wa_tenpeak_mountain_southeast`, `wa_the_brothers_south_couloir`,
+`wa_the_brothers_traverse`, `wa_the_cave_route` (Concord Tower), `wa_the_chopping_block_northeast_ridge`,
+`wa_the_chopping_block_northwest_route`, and `wa_the_chopping_block_south_route`. Skipped three
+in-scope-by-id-range routes whose area is a crag, not a peak (`wa_the_chalice` at Silver Horn,
+`wa_the_exorcism_of_mark_hanna`/`wa_the_l_h_route_free_variation` at M&M Wall / Supercave Wall) —
+out of scope per this audit's own `scope_note`.
+
+One confirmed error, fixed in `audits/sql/2026-11-13-batch-545.sql`: `wa_concord_tower`'s
+`areas.elevation_ft` is stored as 7,611 ft, but Mountain Project's Concord Tower page ("The summit
+is at 7560'") and Mountain-Forecast's listing (2,304 m ≈ 7,559 ft) independently agree with each
+other at ~7,560 ft, ~50 ft below our stored figure — more than datum/rounding noise. The route row
+itself (`wa_the_cave_route.high_point_ft` = 7,569 ft) already sits much closer to the outside
+sources than the area row did, so the area row was the one carrying the error. Corrected
+`areas.elevation_ft` to 7,560 ft.
+
+One flagged for human review: The Chopping Block's three routes split a single, well-documented
+1961 first ascent across two different stored credits. Multiple independent sources (an Alpinist.com
+piece and a Cascade Climbers trip report) describe "the standard route" on the Chopping Block as
+first climbed in September 1961 by a five-person party — Ed Cooper, Glen Denny, Joan Firey, Joe
+Firey, and George Whitmore — and the Mountaineers' club guide separately lists the Northeast Ridge
+(5 pitches, 5.5, Grade II) as the peak's standard route, a near-exact match for our stored NE Ridge
+row's grade/pitches. But our NE Ridge row credits only "Firey party, 1970" (wrong-looking date, and
+missing three of the five climbers), while our NW Route row credits "Ed Cooper and Glen Denny,
+September 9, 1961" (right year, but missing both Fireys and Whitmore, and no source found for the
+specific day "September 9"). No source found ties the 1961 party to the Northwest line specifically
+rather than the Northeast Ridge, so which stored row (if either) the 1961 ascent actually belongs to
+could not be pinned down with confidence — no fix proposed. (The third route, Southeast Face/
+`wa_the_chopping_block_south_route`, already carries a 2026-10-02 `corrections` note settling its FA
+against the published guide and was left untouched.)
+
+The rest checked clean: `wa_switchback_mountain_west_ridge`'s Boiling Lake approach and Class 2-3
+west ridge/west face description match the Mountaineers' club guide for Switchback Peak closely.
+`wa_table_mountain_standard_scramble`'s 5,742 ft high point and 725 ft gain over ~2.6 mi roundtrip
+are within normal source variance of WTA (5,700 ft / 725 ft) and onX (5,741 ft / 862 ft). Tenpeak
+Mountain's 8,312 ft elevation (both routes) was already corrected in an earlier pass and still
+matches Wikipedia/Peakbagger/ListsOfJohn. The Brothers' Mount Edward/Mount Arthur twin-summit
+naming and 1908/1912 first-ascent history (`wa_the_brothers_south_couloir`) matches what's findable
+online; its elevation conflict (6,842 ft older USGS vs. 6,866-6,868 ft newer) was already flagged in
+this row's own `data_quality` and is left as-is. `wa_the_cave_route`'s FA (Ron Burgner & Don
+McPherson, 1968) is independently confirmed by both Mountain Project and OpenBeta.
+
+Next batch will continue id-ascending from `wa_the_chopping_block_south_route`.
