@@ -38624,3 +38624,33 @@ route, best simul-climbed, approached via Headlee Pass/Vesper Lake, descended vi
 Class 3 route) matches this row's stored approach/descent_text closely.
 
 Next batch will continue id-ascending from `wa_sperry_peak_upper_south_ridge`.
+
+## Batch 544 (pass 8) — 2026-11-13
+
+Checked `wa_spider_mountain_north_face`, `wa_spider_mountain_north_ridge`, `wa_spinnaker_peak_s_route`,
+`wa_spire_mountain_scramble`, `wa_spire_point_southwest_face`, `wa_star_peak_sawtooth_nw_ridge`,
+`wa_storm_king_north_face`, `wa_sw_ridge` (Middle Peak, Gunsight Range), `wa_swiss_peak_standard_route`,
+`wa_switchback_mountain_scramble`. Skipped two in-scope-by-id-range routes whose area is a crag,
+not a peak (`wa_spontaneity_arete`/`wa_spontaneous_distraction` at Le Petit Cheval, `wa_summertime`
+at Summertime Crag) — out of scope per this audit's own `scope_note`.
+
+One confirmed error, fixed in `audits/sql/2026-11-13-batch-544.sql`: `wa_spire_point_southwest_face`'s
+`grade`/`rock_grade` were stored as 5.4, but the row's own `pitch_detail` labels pitch 5 "(Crux)" at
+5.6 and its `rope_note` already says "5-pitch 5.6" — the same self-contradiction pattern as batch
+543's Soviet Route fix. SummitPost ("5 Full-Pitch 5.6") and an independent trip report ("5.6, five
+pitches") both back 5.6, not 5.4.
+
+One flagged for human review: `wa_spider_mountain_north_face`'s overview/`fa` may conflate the 1972
+Kloke-Tindall climbing FA with a separately-named 1976 line ("Arachnophobia") on the same face that
+was first *skied* in 2003 (Volken/Avolio) — the two trip-report sources found describe this
+inconsistently and no guidebook/AAJ entry was reachable to settle whether these are the same line or
+two named variants. No fix proposed.
+
+The rest checked clean: elevations, FA credits and grades for Spider Mountain (8,317 ft), Spinnaker
+Peak (5,645 ft), Spire Mountain (6,213 ft), Star Peak NW Ridge (FA/grade both match SummitPost),
+Storm King (8,565 ft vs. a LiDAR figure of 8,564 ft), Swiss Peak (7,988 ft), and Switchback/Cooney
+Peak (8,321 ft) all matched independent sources (Wikipedia, SummitPost, ListsOfJohn, WTA). Middle
+Peak's (Gunsight Range) 8,200 ft elevation couldn't be independently corroborated online, but wasn't
+contradicted either, so it's left unflagged.
+
+Next batch will continue id-ascending from `wa_switchback_mountain_scramble`.
