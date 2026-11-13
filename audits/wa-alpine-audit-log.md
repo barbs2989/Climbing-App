@@ -38292,3 +38292,62 @@ across all ten rows beyond checking they don't conflict with each row's own over
 detailed rack/gear lists; Ruth-Icy Traverse's claimed rappel/gully details for Icy Peak.
 
 Next batch will continue id-ascending from `wa_ruth_icy_traverse`.
+
+## Batch 538 (pass 8) — 2026-11-13
+
+Checked 10 WA alpine/mountaineering peak routes, id-ascending from `wa_ruth_mountain_south_slopes`
+through `wa_sherman_peak_baker_route`: Ruth Mountain's North Face / Ruth Glacier, Sahale
+Mountain's Quien Sabe Glacier and Sahale Arm / Sahale Glacier, Colchuck Balanced Rock's Scarface,
+Mount Washington (Olympics)'s SE Ridge AKA Shield Wall, Sentinel Peak's Standard Route, South
+Early Winters Spire's Southwest Rib, Sharkfin Tower's Flakes and Chimneys (South Face) and
+Southeast Ridge, and Sherman Peak (Mount Baker)'s Crater Rim Scramble.
+
+**Clean (5):** Ruth Mountain's North Face / Ruth Glacier — elevation, coordinates and FA year all
+match Wikipedia exactly. Mount Washington's SE Ridge AKA Shield Wall — confirmed as the Olympic
+Mountains peak (not the Cascades or NH peaks of the same name); route name, grade and 13-pitch
+count match Mountain Project and two independent trip reports almost exactly. South Early
+Winters Spire's Southwest Rib — elevation, coordinates, FA (Donald Anderson and Larry Scott,
+1964) and grade/pitch count all confirmed via Mountain Project/OpenBeta. Sharkfin Tower's
+Southeast Ridge — elevation, coordinates, FA (Wesley Grande, Jay Todd, and Joseph Vance, August
+1947) and the route's fatal-accident hazard note all confirmed via Wikipedia and Mountain
+Project. Sherman Peak's Crater Rim Scramble — `high_point_ft: 10133` already correctly privileges
+a 2023 differential-GPS survey (10,133.0 ± 0.1 ft) over several older, mutually-disagreeing
+sources (~10,160/10,165/10,128 ft), as this row's own `corrections` field documents; no change
+needed.
+
+**Confirmed errors fixed (3 statements, 2 issues):** `wa_sahale_mountain_sahale_glacier`'s own
+`waypoints` entry for "Sahale Glacier Camp" self-contradicted within one object — `elev: 7686`
+vs. `elevFt: 7600` — and `bivy[0]` (the same camp) separately stored `elev: 7500`. This row's own
+`access._raw.altitude_restrictions` and `pitch_detail[1]` notes already say 7,600 ft, matching
+Mountaineers.org's Sahale Peak/South Slope route page; a 2026-07-31 correction fixed this same
+number elsewhere in the row (7,400 → 7,600) but missed these two fields — both corrected to 7600.
+`wa_sharkfin_tower_flakes_and_chimneys_south_face` stored `high_point_ft: null`; its sibling
+route on the same peak (`wa_sharkfin_tower_southeast_ridge`) already independently stores
+`high_point_ft: 8120`, matching the `wa_sharkfin_tower` area row and confirmed externally via
+Wikipedia's infobox and SummitPost — filled in to 8120.
+
+**Flagged for human review (3):** `wa_sahale_mountain_r1`'s (Quien Sabe Glacier) `gain_ft`/
+`loss_ft` (5480/5500) don't match the sum of its own `itinerary.days[].gainFt/lossFt` (5080/5080)
+— a ~400 ft internal gap with no outside source precise enough to adjudicate which number is
+right. `wa_scarface_3`'s (Scarface, Colchuck Balanced Rock) `fa` field — "Colin B. and Nate F.,
+August 15, 2010" — could not be confirmed: the only "Scarface" found on Mountain Project is an
+unrelated 5.12 route on Liberty Cap in Yosemite. A cascadeclimbers.com forum snippet weakly
+suggests a CBR route by a climber named Colin existed around 2010, but the page itself wasn't
+reachable this session to confirm the date, "Nate F.", or the stored grade/pitch count (5.10+,
+III, 6 pitches) — needs a human with Mountain Project/cascadeclimbers.com access.
+`wa_sentinel_peak_standard`'s `gain_ft`/`loss_ft` (8500/9200) is internally inconsistent: the
+route's own approach/descent/itinerary describe a true round trip to the same Cascade Pass
+trailhead (not a one-way Ptarmigan Traverse), so gain and loss should be roughly equal, not
+differ by 700 ft. Using the row's own waypoint elevations, Day 1's stored `lossFt: 100` looks
+understated by roughly 680 ft (Cache Col 6,900 ft → Kool-Aid Lake 6,120 ft is a 780 ft drop), but
+Days 2–4 couldn't be reconstructed with confidence from the row's own (self-described as
+approximate) intermediate elevations — needs a human to redo the full day-by-day elevation
+profile rather than a blind SQL swap.
+
+Not independently checked this batch: most `access`/`road`/`climate` prose fields across all ten
+rows beyond checking they don't conflict with each row's own overview/stats; detailed rack/gear
+lists; the exact pitch/grade details of Sharkfin Tower's "Flakes and Chimneys (South Face)"
+itself (plausible as an older Beckey-guide-era route not carried into Mountain Project's listing,
+but unconfirmed).
+
+Next batch will continue id-ascending from `wa_sherman_peak_baker_route`.
