@@ -38510,3 +38510,51 @@ don't conflict with each row's own stats; detailed rack/gear and pitch-by-pitch 
 like normal estimation noise rather than errors, unlike Cathedral Peak's 2000 ft gap.
 
 Next batch will continue id-ascending from `wa_south_face_2`.
+
+## 2026-11-13 — Pass 8, Batch 542
+
+Ten routes, continuing id-ascending from `wa_south_face_2`: Concord Tower's `South Face` and
+`South Face Center`, Kangaroo Temple's `South Face`, Inspiration Peak's `South Face`, Lundin
+Peak's `South Face`, Guye Peak's `South Gully/South Spur` and `South Rib`, Mount Stuart's `South
+Headwall`, Eldorado Peak/Main Peak's `South Ridge`, and South Twin Sister's `North Ridge`.
+
+**Confirmed errors fixed (1 issue, 1 SQL statement):** `wa_south_face_4` (Kangaroo Temple, South
+Face) had `pitches` stored as 7. Mountain Project's dedicated route page for this exact line —
+independently matching this row's first-ascent party (Bill Marts, Steve Marts, Don McPherson,
+1965), length (800 ft/242 m, close to the stored 244 m) and grade (5.8) — states "8 pitches,
+Grade III." A 2026-08-05 correction on this row had reconciled `overview`/`rope_note` text *down*
+to match the stored `pitches=7` rather than checking that count against a source; this reverses
+that direction, correcting `pitches` to 8 and the two description fields back to
+"eight-pitch"/"8-pitch." `pitch_detail`'s own 7-entry breakdown is left alone (not fabricating an
+8th entry) and flagged instead as a new `data_quality.gaps` item.
+
+**Independently verified clean, no fix needed:** `wa_south_face_3` (Concord Tower South Face)'s
+FA — "Donald Cramer, Donald Anderson, Bruce Schuler & Fred Stanley, 1965" — matches SuperTopo's
+dedicated South Face route page word for word (SummitPost's general route list shows the same
+three names *minus* Schuler but doesn't tie that credit to a specific route, so SuperTopo is the
+more specific source here). `wa_south_face_8` (Lundin Peak)'s FA (Jim Crooks & Ed Kennedy, 1941)
+and elevation (6,057 ft) both confirmed via Mountain Project/OpenBeta and multiple peak-elevation
+sources. `wa_south_headwall` (Mount Stuart)'s FA (Myhre & Sorenson, 1966) confirmed via OpenBeta.
+`wa_south_twin_sister_north_ridge`'s high point (7,004 ft) sits within Peakbagger's NAVD88 range
+(7,004–7,044 ft). `wa_south_ridge_4`'s area placement under `wa_main_peak` (not directly under
+`wa_eldorado_peak`) double-checked and confirmed correct: Main Peak is Eldorado's own true summit
+(area elevation 8,872 ft, matching this route's `high_point_ft` 8,873), not a misfile.
+
+**Flagged for human review (1 issue):** `wa_south_face_center` (Concord Tower)'s `fa` is null.
+SummitPost credits a "South Face, Center" line to Mark Fielding and Frank Tarver, May 1966, but
+rates it 5.7/A3 — conflicting with both this row's stored grade (5.8+) and Mountain Project's
+grade for a same-named "South Face Center" (5.8+, matching this row). Left unfilled rather than
+guessing which of two differently-graded same-named routes this row actually is.
+
+**Not independently re-verified this batch (carried forward, already flagged):**
+`wa_south_face_4`'s self-contradictory approach text on whether it crosses Kangaroo Pass (still
+needs a fresh approach-beta pass); missing `loss_ft` on `wa_south_face_4`, `wa_south_face_8` and
+`wa_south_headwall` (all round-trip-ish routes where loss plausibly tracks gain, but no sourced
+figure found to fill it in rather than guess).
+
+**Clean, no new findings (3):** `wa_south_face_5` (Inspiration Peak — FA hedge, rappel count and
+consensus already sound from a prior pass), and Guye Peak's `wa_south_gully_south_spur` and
+`wa_south_rib` (both already corrected in an earlier pass and re-checked with nothing new). Total
+clean this batch including the five independently re-verified above: 8 of 10.
+
+Next batch will continue id-ascending from `wa_south_twin_sister_north_ridge`.

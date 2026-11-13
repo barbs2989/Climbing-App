@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_south_face_2",
+  "last_processed_id": "wa_south_twin_sister_north_ridge",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 541 complete. Continuing id-ascending scope from wa_south_face_2. Checked South Early Winters Spire's Passenger and Southwest Couloir, plus its Backseat Driver, South East Mank and The Rubbernecker (bare rows), Cathedral Peak's South Face, Argonaut Peak's South Face, and Pernod Spire's South Face. One confirmed error fixed (1 SQL statement): wa_south_early_winter_spire_southwest_couloir's null gain_ft/loss_ft filled in to 2430/2430, matching its own single-day itinerary sum and totalNote. Three items flagged for human review: wa_south_face_10 (Cathedral Peak)'s gain_ft/loss_ft (4700/6700) cannot both be right for a round trip back to the same trailhead -- its own stored waypoints already imply more gain than 4700, but the true value needs the unstored Spanish Creek drainage low point to fix properly; the same route's fa team beyond 'Fred Beckey and party, 1968' (Wagner/Brottem/Leen) is unconfirmed; and wa_south_face_12 (Argonaut Peak)'s fa (Niccoli/Cooper, 1958) is unconfirmed -- only the peak's 1955 south-route FA (Maxwell/McCall/Prater) was found, which may be a different, easier line. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
+  "pass_note": "Pass 8 in progress, batch 542 complete. Continuing id-ascending scope from wa_south_face_2. Checked Concord Tower's South Face and South Face Center, Kangaroo Temple's South Face, Inspiration Peak's South Face, Lundin Peak's South Face, Guye Peak's South Gully/South Spur and South Rib, Mount Stuart's South Headwall, Eldorado Peak/Main Peak's South Ridge, and South Twin Sister's North Ridge. One confirmed error fixed (1 SQL statement): wa_south_face_4's pitches field corrected from 7 to 8 to match Mountain Project's primary route page (which independently matches this row's FA, length and grade), reversing a 2026-08-05 correction that had instead reconciled the overview/rope_note text down to the wrong stored pitches count. One item flagged for human review: wa_south_face_center's fa is null -- a candidate 1966 Fielding/Tarver FA exists on SummitPost but that source's grade (5.7/A3) conflicts with the grade this row and Mountain Project both give (5.8+), so it was not applied. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -10756,6 +10756,27 @@
       "flagged_for_human_review": 3,
       "clean": 5,
       "sql_file": "audits/sql/2026-11-13-batch-541.sql"
+    },
+    {
+      "batch_number": 542,
+      "date": "2026-11-13",
+      "route_ids": [
+        "wa_south_face_3",
+        "wa_south_face_4",
+        "wa_south_face_5",
+        "wa_south_face_8",
+        "wa_south_face_center",
+        "wa_south_gully_south_spur",
+        "wa_south_headwall",
+        "wa_south_rib",
+        "wa_south_ridge_4",
+        "wa_south_twin_sister_north_ridge"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 8,
+      "sql_file": "audits/sql/2026-11-13-batch-542.sql",
+      "note": "wa_south_face_4 (Kangaroo Temple South Face) pitches corrected 7->8 to match Mountain Project's primary route page, reversing a prior pass's overview/rope_note-down reconciliation. wa_south_face_center's fa left null -- a candidate 1966 Fielding/Tarver FA was found but its source's grade (5.7/A3) conflicts with this row's stored grade (5.8+, which matches a different source), so not applied."
     }
   ],
   "outage_runs": [
