@@ -38351,3 +38351,56 @@ itself (plausible as an older Beckey-guide-era route not carried into Mountain P
 but unconfirmed).
 
 Next batch will continue id-ascending from `wa_sherman_peak_baker_route`.
+
+## Batch 539 (pass 8) — 2026-11-13
+
+Checked 10 WA alpine/mountaineering peak routes, id-ascending from `wa_sherman_peak_baker_squak_glacier`
+through `wa_silver_star_ne_ridge`: Sherman Peak (Mount Baker)'s Squak Glacier Route, Sherpa Balanced
+Rock's Northeast Couloir and Standard Route, Sherpa Glacier (Mount Stuart), Sherpa Peak's East Ridge,
+North Ridge, Northeast Face and West Ridge, and Silver Star Mountain's Silver Star Glacier and
+Northeast Ridge.
+
+**Clean (2):** Sherpa Balanced Rock's Northeast Couloir — `high_point_ft: 8630` already matches the
+standardized Sherpa Peak cluster value; no gain/loss or coordinate contradictions found. Sherpa Glacier
+(Mount Stuart) — elevation (9415, matching the Mount Stuart area row), gain/loss (6000/6000, matching
+its own itinerary), and FA credit (Bill & Gene Prater, Don & Nelson Torrey, 1956) all check out.
+
+**Confirmed errors fixed (6 issues, 7 SQL statements):** `wa_silver_star_glacier`'s `fa` field still
+held the 1952 Beckey/Hieb/Staley/Wilde party, even though this row's own 2026-07-31 `corrections` note
+already says that credit belongs to Silver Star's *west* summit (reached via the glacier's NE side),
+not this east/true-summit route, and claims it was "already credited" on the sibling
+`wa_silver_star_ne_ridge` route — which was still null. Confirmed independently via SummitPost and the
+AAC Journal: the 1952 party topped the west peak via the NE side from Silver Star Glacier; the
+east/true summit's FA is credited to Lage Wernstedt (1926, from the south). Cleared `fa` on the glacier
+route and set it on `wa_silver_star_ne_ridge`, which already stated the same fact in its own `beta`
+text. `wa_silver_star_glacier` also had `gain_ft: 4000` disagreeing with its own itinerary's day-by-day
+total (3500+900=4400) and with its own `loss_ft` (4400) on a route whose `descent` field says it's a
+direct reversal of the ascent — corrected to 4400. `wa_sherpa_balanced_rock_standard` stored
+`high_point_ft: 8605`, disagreeing with its own area row (`wa_sherpa_balanced_rock`, 8630) and all
+three other Sherpa Peak routes already standardized to 8630 on 2026-07-31 — corrected to 8630 for
+internal consistency (the underlying Wikipedia-vs-SummitPost/PeakVisor dispute over 8630 vs 8605 is not
+re-adjudicated here). The same row's `loss_ft` was null while `gain_ft: 7500`, but its own
+itinerary.days[0].lossFt and totalNote both already say loss should equal gain on this car-to-car
+day — filled in to 7500. `wa_sherman_peak_baker_squak_glacier`'s `loss_ft` was similarly null against
+`gain_ft: 6800`, while its own 2-day itinerary already gives day 2's `lossFt: 6800` for the descent to
+the car — filled in to match. `wa_sherpa_peak_north_ridge`'s `data_quality.gaps` claimed a duplicate
+row `wa_north_ridge_9`; no such id exists in the live catalog (checked directly) — the stale claim was
+removed.
+
+**Flagged for human review (3 routes, 2 issues):** `wa_sherpa_peak_northeast_face` is a near-empty stub
+— only `id`/`area_id`/`name`/`discipline`/`classic` are populated — despite "Northeast Face" being a
+real, documented line on Sherpa Peak's north side per SummitPost and Mountaineers.org trip-report
+coverage; this needs full research-backed enrichment, not a single-fact fix, so it was left alone.
+`wa_sherpa_peak_east_ridge` and `wa_sherpa_peak_west_ridge` both have top-level `gain_ft`/`loss_ft`
+that disagree with the sum of their own `itinerary.days` (East: stored 4325/4330 vs. itinerary sum
+4600/5500; West: stored 4330/4330 vs. 4500/5500) — plausibly because the real round trip on either
+ridge combines ascending one and descending the other through Longs Pass/Ingalls Creek twice, but
+reconstructing the correct day-by-day profile needs more care than a blind swap, so these are left for
+a human to recompute rather than guessed at here.
+
+Not independently checked this batch: most `access`/`road`/`climate` prose fields across all ten rows
+beyond checking they don't conflict with each row's own overview/stats; detailed rack/gear lists;
+`wa_sherpa_balanced_rock_ne_couloir`'s and `wa_sherpa_peak_northeast_face`'s missing gain/loss data
+(genuine gaps, not contradictions, so not filled in).
+
+Next batch will continue id-ascending from `wa_silver_star_ne_ridge`.
