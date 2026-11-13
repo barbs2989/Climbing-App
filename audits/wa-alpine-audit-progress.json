@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_south_early_winter_spire_direct_east_buttress",
+  "last_processed_id": "wa_south_face_2",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 540 complete. Continuing id-ascending scope from wa_south_early_winter_spire_direct_east_buttress. Checked Sinister Peak's North Face and Southwest Route, Skookum Peak (Twin Sisters)'s Jaw's Tooth and Northwest Ridge and North Ridge via Jaws' Tooth, Sky Mountain's South Slopes Scramble, Sloan Peak's Corkscrew Route, Snowfield Peak's Neve Glacier/Standard Route, Snowking Mountain's Standard Route/Snowking Glacier, and South Early Winters Spire's South Arete and Direct East Buttress. Two confirmed errors fixed (2 SQL statements): wa_sinister_peak_southwest_route's gain_ft/loss_ft corrected from 7000/5500 to 8200/8400 to match its own itinerary day sum and totalNote; wa_sinister_peak_north_face's null gain_ft/loss_ft filled in to 9250/9250 matching its own itinerary. Three items flagged for human review: wa_skookum_peak_twinsisters_scramble's gpx track start sits ~4mi from its own confirmed trailhead (likely swapped with a nearby approach); wa_snowfield_peak_neve_glacier's fa (Degenhardt/Strandberg, 1931) is unconfirmed for this specific peak; wa_sinister_peak_southwest_route's itinerary day-mileage sum (67.5mi) contradicts its own totalNote (~33-35mi), and its sibling north_face route was never given the same FR26-closure mileage addition. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
+  "pass_note": "Pass 8 in progress, batch 541 complete. Continuing id-ascending scope from wa_south_face_2. Checked South Early Winters Spire's Passenger and Southwest Couloir, plus its Backseat Driver, South East Mank and The Rubbernecker (bare rows), Cathedral Peak's South Face, Argonaut Peak's South Face, and Pernod Spire's South Face. One confirmed error fixed (1 SQL statement): wa_south_early_winter_spire_southwest_couloir's null gain_ft/loss_ft filled in to 2430/2430, matching its own single-day itinerary sum and totalNote. Three items flagged for human review: wa_south_face_10 (Cathedral Peak)'s gain_ft/loss_ft (4700/6700) cannot both be right for a round trip back to the same trailhead -- its own stored waypoints already imply more gain than 4700, but the true value needs the unstored Spanish Creek drainage low point to fix properly; the same route's fa team beyond 'Fred Beckey and party, 1968' (Wagner/Brottem/Leen) is unconfirmed; and wa_south_face_12 (Argonaut Peak)'s fa (Niccoli/Cooper, 1958) is unconfirmed -- only the peak's 1955 south-route FA (Maxwell/McCall/Prater) was found, which may be a different, easier line. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -10738,6 +10738,24 @@
       "flagged_for_human_review": 3,
       "clean": 6,
       "sql_file": "audits/sql/2026-11-13-batch-540.sql"
+    },
+    {
+      "batch_number": 541,
+      "date": "2026-11-13",
+      "route_ids": [
+        "wa_south_early_winter_spire_passenger",
+        "wa_south_early_winter_spire_southwest_couloir",
+        "wa_south_early_winters_spire_backseat_driver",
+        "wa_south_early_winters_spire_south_east_mank",
+        "wa_south_early_winters_spire_the_rubbernecker",
+        "wa_south_face_10",
+        "wa_south_face_12",
+        "wa_south_face_2"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 3,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-11-13-batch-541.sql"
     }
   ],
   "outage_runs": [

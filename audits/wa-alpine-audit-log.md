@@ -38459,3 +38459,54 @@ fields beyond checking they don't conflict with each row's own stats; detailed r
 `dist_km` was not used for any cross-check per this project's known dual-convention caveat.
 
 Next batch will continue id-ascending from `wa_south_early_winter_spire_direct_east_buttress`.
+
+## Batch 541 (2026-11-13, pass 8)
+
+Checked 8 WA alpine routes, id-ascending from `wa_south_early_winter_spire_direct_east_buttress`:
+`wa_south_early_winter_spire_passenger`, `wa_south_early_winter_spire_southwest_couloir`,
+`wa_south_early_winters_spire_backseat_driver`, `wa_south_early_winters_spire_south_east_mank`,
+`wa_south_early_winters_spire_the_rubbernecker` (all South Early Winters Spire), `wa_south_face_10`
+(Cathedral Peak, Pasayten Wilderness), `wa_south_face_12` (Argonaut Peak), and `wa_south_face_2`
+(Pernod Spire). FAs independently confirmed via Mountain Project/OpenBeta: `..._passenger`'s
+(Burdo/Doorish/White, 10/1991), `..._southwest_couloir`'s (Adam/Bedayn/Davis, 7/20/1937 — the
+peak's historic FA), `..._backseat_driver`'s (Hadley/Wyatt/Carroll), and `wa_south_face_2`'s
+(Jewitt/Leight/Waters, 7/10/1988) all matched exactly. Elevations cross-checked where sourceable:
+Argonaut Peak's `high_point_ft` (8457) matches Wikipedia; Pernod Spire's (8507) is consistent with
+being "the tallest of the Wine Spires" against the Mountaineers' figures for its neighbors
+(Burgundy/Chianti 8400, Chablis 8350) though no dedicated source gives Pernod's figure directly.
+
+**Confirmed errors fixed (1 issue, 1 SQL statement):** `wa_south_early_winter_spire_southwest_couloir`
+had null `gain_ft`/`loss_ft`; its own single-day itinerary already sums to a symmetric 2430/2430 and
+its own `itinerary.totalNote` states "2,400-2,600 ft of gain" — filled in to match (2430/2430 also
+matches the ~2,400 ft difference between its own Blue Lake Trailhead waypoint and the shared 7807 ft
+summit elevation).
+
+**Flagged for human review (3 issues):** `wa_south_face_10` (Cathedral Peak)'s `gain_ft`/`loss_ft`
+(4700/6700) cannot both be right — the route is a round trip back to the same Andrews Creek
+Trailhead (per its own `descent_text` and itinerary day 4), so cumulative gain must equal cumulative
+loss for any closed loop; its own stored waypoints (TH 3050, Andrews Pass 6700, Upper Cathedral Lake
+basin 7400) already imply more one-way gain than the stored 4700 once the approach's own described
+dip into the Spanish Creek drainage between the pass and the lake basin is accounted for. Left
+unfixed because the real drainage low point isn't in the stored waypoints or itinerary and a
+corrected number would be a guess rather than sourced. Same route's `fa` ("Fred Beckey, Dave Wagner,
+John Brottem, Doug Leen - September 1968") — only "Fred Beckey and party, 1968" could be confirmed
+(Wikipedia); the rest of the party list is plausible but unconfirmed by any source found this pass.
+`wa_south_face_12` (Argonaut Peak)'s `fa` ("Ron Niccoli and Ed Cooper, 1958") could not be confirmed
+for the South Face specifically — the only first-ascent party found for Argonaut Peak itself is Lex
+Maxwell/Bob McCall/Bill Prater via the south route in September 1955, which may be a different,
+easier line than this 5.6-5.8 South Face; not necessarily a conflict (a peak's easy route and a
+harder technical face route on the same aspect commonly have separate FAs years apart) but
+unconfirmed either way.
+
+**Clean (5):** `wa_south_early_winter_spire_passenger`, `wa_south_early_winters_spire_backseat_driver`,
+`wa_south_early_winters_spire_south_east_mank`, `wa_south_early_winters_spire_the_rubbernecker` (all
+bare/minimal rows beyond name, grade and FA — nothing else stored to cross-check), and
+`wa_south_face_2` (Pernod Spire) — gain/loss, FA, rappel count and descent all internally consistent
+and the FA independently corroborated.
+
+Not independently checked this batch: `access`/`permit`/`road`/`hazards` prose beyond checking they
+don't conflict with each row's own stats; detailed rack/gear and pitch-by-pitch breakdowns;
+`wa_south_face_2`'s and `wa_south_face_12`'s small (~100-200 ft) gain/loss asymmetries, which look
+like normal estimation noise rather than errors, unlike Cathedral Peak's 2000 ft gap.
+
+Next batch will continue id-ascending from `wa_south_face_2`.
