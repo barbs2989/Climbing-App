@@ -234,7 +234,7 @@ function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading,
   const rows = (crews || []).map(cr => {
     const p = placeOf(cr);
     const m = last((crewMsgs || {})[cr.id]);
-    return { cr, name: (p && p.kind !== "missing" && p.name) || "Crew", sub: (p && p.kind !== "missing" && p.area && p.area.name && p.area.name !== p.name) ? p.area.name : null, m, ts: (m && m.ts) || 0, unread: Number((crewUnread || {})[cr.id]) || 0 };
+    return { cr, name: (p && p.kind !== "missing" && p.name) || "Crew", sub: (p && p.kind !== "missing" && p.parentName && p.parentName !== p.name) ? p.parentName : null, m, ts: (m && m.ts) || 0, unread: Number((crewUnread || {})[cr.id]) || 0 };
   }).sort((a, b) => b.ts - a.ts);
   const unread = rows.reduce((n, r) => n + r.unread, 0);
   const preview = m => (m ? (m.from === "me" ? "You: " : (m.name ? m.name + ": " : "")) + (m.image && !m.text ? "Photo" : String(m.text || "")) : "");
