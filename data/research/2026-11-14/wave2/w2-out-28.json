@@ -1,0 +1,1444 @@
+{
+ "ca_kearsarge_peak_standard_route": {
+  "area": "ca_kearsarge_peak",
+  "facts": [
+   {
+    "field": "car_to_car_hours",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1997/223.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Kearsarge Peak climbed from Onion Valley; up and back down took about 7 hours in total."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Onion Valley",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1997/223.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "The party started walking up the peak from Onion Valley."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost 403 (wall). mattsbeta.com page rendered blank. climber.org 2008/1716 is a 27-hour epic, no usable figures. Only one source for time; not locked-2."
+ },
+ "ca_kennedy_mountain_standard_route": {
+  "area": "ca_kennedy_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kennedy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reached the summit after about 11 miles and 7,000 ft of gain from the Lewis Creek trailhead (one-way)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kennedy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Around 11 miles trailhead to summit via Lewis Creek Trail and Kennedy Pass (one-way; page says 11ish)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lewis Creek Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kennedy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts on the Lewis Creek Trail and passes Frypan Meadow toward Kennedy Pass."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Frypan Meadow about 6 miles in, then over Kennedy Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kennedy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First 6 miles to Frypan Meadow, then trail and cross-country up to Kennedy Pass."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Lewis Creek Trail burned in the 2015 Rough Fire; little shade early",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/kennedy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lower trail badly burned by the 2015 Rough Fire, almost no shade for the first 6 miles."
+     }
+    ]
+   }
+  ],
+  "note": "themtsarecalling states 11ish miles / 7,000 ft one-way and elsewhere over 20 miles and 7,000+ ft for the day. nh48.app opened: generated representative figures (12 mi, 3,500 ft via Courtright) with caveats, not used. Not confirmed the blog line is the catalog Standard route."
+ },
+ "ca_kern_peak_kern_peak_trail_east_face": {
+  "area": "ca_kern_peak",
+  "skip_reason": "SummitPost Kern Peak pages 403 (wall). DDG results were aggregators (theoutdoorsapp, snoflo, hikearizona) and USFS Blackrock trailhead pages; no page stating Kern Peak Trail figures was read this pass. Fewer than 2 pages opened - needs rerun."
+ },
+ "ca_kern_point_standard_route": {
+  "area": "ca_kern_point",
+  "skip_reason": "Opened nogosierra.com/locations/eastern-sierra/kern-point (generated conditions text, no route facts) and climber.org/reports/1996/143.html (Upper Kern multi-peak ramble, no Kern Point route figures). SummitPost 403."
+ },
+ "ca_koip_peak_via_parker_pass_and_koip_peak_pass": {
+  "area": "ca_koip_peak",
+  "skip_reason": "Opened themtsarecalling.com/koip/ (multi-peak day from Mono Pass TH with Parker Peak and Kuna Crest - figures not per route) and hikingproject.com/trail/7116932/koip-peak (short segment, metric stats unusable). SummitPost 403."
+ },
+ "ca_lamont_peak_lamont_peak_trail": {
+  "area": "ca_lamont_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Lamont Peak Trail (via Canebrake Road from Kernville / Lake Isabella)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/lamont-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead and route listed as Lamont Peak Trail; reached by driving Canebrake road out of Kernville/Lake Isabella."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/lamont-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author describes the Lamont route as a benign class 2 route in the Domeland Wilderness."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Domeland Wilderness; easy hike/run to a 7,429 ft summit with good rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/lamont-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed 7429 ft; difficulty easy hiking/running; Domeland Wilderness."
+     }
+    ]
+   }
+  ],
+  "note": "Only sierrainaday.com read; no distance or gain stated on it. SummitPost 403."
+ },
+ "ca_lassen_peak_trail": {
+  "area": "ca_lassen_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1957,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: Lassen Peak Trail elevation start 8,500 ft, gain 1,957 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS lists distance 5 miles (8 km) for the hike."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "4-5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS lists time as 4-5 hours."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lassen Peak Trailhead, 8,500 ft, on Lassen Volcanic NP Highway (SR 89)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start: Lassen Peak Trailhead, elevation 8,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No water at the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/lassen-peak-trail-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn notes there is no water available at the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Park highway closes in winter; trailhead section is last to open",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/lassen-peak-trail-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The highway closes for winter and the stretch by the trailhead opens last in late spring/summer."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn also says 2.5 mi each way, about 2,000 ft, but its route table cites NPS (same source), so gain/distance kept single-source. NPS says pets not allowed on trail."
+ },
+ "ca_leavitt_peak_pacific_crest_trail_and_east_shoulder": {
+  "area": "ca_leavitt_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2993,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://thehuntindaddy.com/index.php/peak-bagging/leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leavitt Peak from Sonora Pass: Elevation Gain 2,993 ft."
+     },
+     {
+      "url": "https://evanquarnstrom.com/2020/07/31/sierra-nevada-summits-leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip summary from Sonora Pass: total elevation gain 2,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12.1,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://thehuntindaddy.com/index.php/peak-bagging/leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leavitt Peak outing listed at 12.1 miles."
+     },
+     {
+      "url": "https://evanquarnstrom.com/2020/07/31/sierra-nevada-summits-leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip summary: 11 miles round trip from Sonora Pass."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sonora Pass (PCT)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://thehuntindaddy.com/index.php/peak-bagging/leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route follows the PCT south from Sonora Pass."
+     },
+     {
+      "url": "https://evanquarnstrom.com/2020/07/31/sierra-nevada-summits-leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Sonora Pass."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 5.75,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://evanquarnstrom.com/2020/07/31/sierra-nevada-summits-leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Time 5h 45m including lunch and photo breaks."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11572,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://evanquarnstrom.com/2020/07/31/sierra-nevada-summits-leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Max elevation 11,572 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Enter Emigrant Wilderness about 2.6 miles in",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thehuntindaddy.com/index.php/peak-bagging/leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The PCT enters the Emigrant Wilderness about 2.6 miles in."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thehuntindaddy.com/index.php/peak-bagging/leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gaining the summit is easy on a class 1 trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_note",
+    "value": "Trail dips and climbs over minor ridge passes on the east side (no figure)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://evanquarnstrom.com/2020/07/31/sierra-nevada-summits-leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail skirts the east side of Leavitt with small descents and re-ascents over ridge passes near Latopie Lake."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "No bear boxes at the Sonora Pass trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://evanquarnstrom.com/2020/07/31/sierra-nevada-summits-leavitt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead has no bear boxes, so all food had to be carried."
+     }
+    ]
+   }
+  ],
+  "note": "Distance agreement is at the 10% edge (12.1 vs 11). explore.pcta.org trip covers only the shoulder of Leavitt, not used."
+ },
+ "ca_leconte_gully": {
+  "area": "ca_g_grizzly_peak",
+  "skip_reason": "Opened climber.org/TripReports/1999/453.html and climber.org/reports/2007/1609.html - both are about Mount LeConte (Sierra crest), not LeConte Gully on Grizzly Peak (Yosemite Valley); no usable facts. SummitPost 403."
+ },
+ "ca_left_scramble": {
+  "area": "ca_6_franosch",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117388315/left-scramble",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Left Scramble 4th class."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117388315/left-scramble",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Trad, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 180,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117388315/left-scramble",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed length 180 ft (55 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117388315/left-scramble",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent listed as unknown."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Finishes by joining the top of Right Scramble",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117388315/left-scramble",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route turns left to join the finish of Right Scramble and up the west side or north ridge."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project read; thecrag route page found by search but not opened."
+ },
+ "ca_liberty_route": {
+  "area": "ca_mt_tom",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794429/liberty-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Liberty Route 4th class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 4500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794429/liberty-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type Trad, Snow, Alpine; length 4500 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794429/liberty-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent listed as unknown."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Horton Lakes Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794429/liberty-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from Horton Lakes Trailhead, following the trail to the Horton Creek crossing."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Up the col to the snow; slope steepens from 30 to 50+ degrees to a rock band below the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794429/liberty-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow slope steepens from about 30 to over 50 degrees before a rock band just under the summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the back side to the Horton Lakes trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794429/liberty-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent off the backside using the Horton Lakes trail."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Snow pickets and a rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794429/liberty-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bring snow pickets and a rope unless comfortable soloing steep snow and loose mixed ground."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project read for this route."
+ },
+ "ca_lion_rock_standard_route": {
+  "area": "ca_lion_rock",
+  "skip_reason": "Opened backcountrysights.com/triple-divide-peak-lion-rock/ (36.5 mi multi-peak loop, figures not per route) and SummitPost (403). No route figures usable.",
+  "note": "CONFLICT: backcountrysights rates Lion Rock class 3-4 via the northeast chute from Lion Lake and the southeast face class 4/easy 5th; catalog says Class 2. Needs review."
+ },
+ "ca_lippincott_mountain_standard_route": {
+  "area": "ca_lippincott_mountain",
+  "skip_reason": "Opened climber.org/reports/2008/1655.html (spring photo essay, peak not reached, no figures) and nogosierra.com lippincott-mountain (generated conditions text). SummitPost 403."
+ },
+ "ca_lyell_glacier": {
+  "area": "ca_mt_lyell",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 24,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard Lyell Glacier route is about 24 miles round trip from Tuolumne Meadows."
+     },
+     {
+      "url": "https://www.sierrainaday.com/post/mount-lyell",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the JMT trailhead in Tuolumne Meadows, distance about 26 miles."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lyell Canyon / JMT trailhead, Tuolumne Meadows (about 8,600 ft)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lyell Canyon trailhead near the Tuolumne Meadows Wilderness Center at about 8,600 ft."
+     },
+     {
+      "url": "https://www.sierrainaday.com/post/mount-lyell",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: JMT trailhead in Tuolumne Meadows."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit block given as Class 2-3 in sources; guide says treat it as Class 3."
+     },
+     {
+      "url": "https://www.sierrainaday.com/post/mount-lyell",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty listed as difficult class 3."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 4,500 ft of net gain on the standard glacier route."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lyell Canyon: about 8-9 miles of nearly flat trail before the climbing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most effort is the 8-9 mile near-flat walk up Lyell Canyon."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Upper Lyell Fork basin, about 10,200-10,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most parties camp in the upper Lyell Fork basin around 10,200-10,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Day climb no permit; overnight needs Yosemite wilderness permit (quota, lottery)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day climbs need no permit; any overnight in Yosemite Wilderness needs a permit year-round."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons in early season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Early season the glacier route is a snow climb needing ice axe and crampons."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Late season: loose stacked blocks above the glacier; bergschrund",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/mount-lyell",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 50 ft above the glacier late in the season the rock turns to loose stacked blocks; bergschrund below."
+     }
+    ]
+   }
+  ],
+  "note": "Distances 24 vs 26 mi agree within 10%; gain 4,500 is described as net. Mountaineers Lyell page slug not found."
+ },
+ "ca_manker_canyon": {
+  "area": "ca_mount_harwood",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262258/manker-canyon",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Manker Canyon 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262258/manker-canyon",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type Snow, Alpine; length 2500 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Skeletor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262258/manker-canyon",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Skeletor."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike about 1.5 miles to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262258/manker-canyon",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike roughly 1.5 miles to reach the base of the route."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Gully crosses the Devils Backbone trail at its sketchy narrow section",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262258/manker-canyon",
+      "retrieved_at": "2026-11-14",
+      "fact": "The gully is the steep narrow part where the Devils Backbone trail crosses about 100 ft of steep ground."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project read."
+ },
+ "ca_marion_peak_northeast_ridge": {
+  "area": "ca_marion_peak",
+  "skip_reason": "Opened sierrapeaks.org/archives/sps00159.htm (Goat/Marion/State multi-peak trip from Roads End, figures not per route) and SummitPost (403). MP route 203559136 turned out to be on Merriam Peak."
+ },
+ "ca_matterhorn_peak_ski_dreams": {
+  "area": "ca_matterhorn_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade Mod. Snow."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Snow, Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 314,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed 314 ft, which the page says is only the couloir itself."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Twin Lakes - Horse Creek trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from the Twin Lakes Horse Creek trailhead."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain about 5,000 ft to the top of Matterhorn Peak."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 11 miles round trip to the top."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach about 5 miles and 4,000 ft to the couloir; add about 800 ft of class 2-3 to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach is ~4,000 ft gain about 5 miles in; summit adds ~800 ft of 2nd/3rd class."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Couloir about 40-50 degrees depending on snow; French AD-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow angle around 40-50 degrees; French alpine grade AD-."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122573218/ski-dreams",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe and crampons; same approach as the East Couloir."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project read; snowbrains/powderproject pages found but they cover other lines on the peak."
+ },
+ "ca_mendenhall_couloir_2": {
+  "area": "ca_laurel_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106072747",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grade Easy 5th."
+     },
+     {
+      "url": "https://climberkyle.com/2018/07/04/laurel-mountain-mendenhall-couloir-low-5th/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report titles the route low 5th class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106072747",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed Trad, Alpine, 3000 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106072747",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "John Mendenhall, James Van Patten, 7 Sep 1930",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106072747",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: John Mendenhall and James Van Patten, September 7th 1930."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Convict Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2018/07/04/laurel-mountain-mendenhall-couloir-low-5th/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb started and ended at Convict Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Normal approach is a short 1-mile trail from the north side of Convict Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2018/07/04/laurel-mountain-mendenhall-couloir-low-5th/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Normal approach is a short 1 mile trail from the north side of the lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Maze of gullies; about 50 ft of 5.3 finger crack; upper ~1000 ft is loose",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2018/07/04/laurel-mountain-mendenhall-couloir-low-5th/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gully maze with tricky routefinding, a 50 ft 5.3 crack, and poor rock in the last ~1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend north, then snow and scree slopes east to a faint trail leading south",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106072747",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend to the north, then down snow/scree to the east, picking up a faint trail heading south."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Lower gully may hold snow/ice depending on season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106072747",
+      "retrieved_at": "2026-11-14",
+      "fact": "Depending on season the bottom of the gully may be full of snow."
+     }
+    ]
+   }
+  ],
+  "note": "Length conflict: MP 3000 ft vs climberkyle 3500 ft long (not within 10%), kept MP single-source. climberkyle quotes a guidebook 4-6 h for the route."
+ },
+ "ca_merced_peak_standard_route": {
+  "area": "ca_merced_peak",
+  "skip_reason": "Opened climber.org/reports/2002/998.html (70-mile multi-peak trip; only says the ridge south side Merced-Triple Divide is class 2, no route figures) and themtsarecalling.com/merced/ (fetched, multi-peak, not used). SummitPost 403."
+ },
+ "ca_merriam_peak_standard_route": {
+  "area": "ca_merriam_peak",
+  "facts": [
+   {
+    "field": "descent",
+    "value": "Class 2 northwest slopes down to the Royce-Merriam saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203559136/northeast-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Northeast Ridge page: descend the class 2 northwest slopes to the saddle with Royce."
+     }
+    ]
+   }
+  ],
+  "note": "Only fact found is on the MP Northeast Ridge (5.7) page describing the class 2 descent; SummitPost 403. No distance/gain page read."
+ },
+ "ca_midway_mountain_west_slope": {
+  "area": "ca_midway_mountain",
+  "skip_reason": "Opened climber.org/reports/1996/143.html (Upper Kern multi-peak trip; Midway 13,666 ft high point of Great Western Divide, high camp 11,500 ft in Milestone Basin - no route figures). doingmiles/listsofjohn found but not opened. SummitPost 403."
+ },
+ "ca_milestone_mountain_standard_route": {
+  "area": "ca_milestone_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/milestone-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "East face and north ridge involve Class 3 scrambling, possibly short Class 4 depending on line."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the Milestone Basin tarn, ascend the east face on Class 3 ground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/milestone-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the Milestone Basin tarn parties climb the east face on Class 3 terrain."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Sequoia National Park wilderness permit for overnight trips",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/milestone-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "All overnight travel requires a Sequoia NP wilderness permit."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "High camp in Milestone Basin around 11,500 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1996/143.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party used a high camp at 11,500 ft in Milestone Basin with Milestone in view."
+     }
+    ]
+   }
+  ],
+  "note": "No distance/gain stated on pages read."
+ },
+ "ca_mokelumne_peak_standard_route": {
+  "area": "ca_mokelumne_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3950,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://greglamy.net/Hiking/MokelumnePeak.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mokelumne Peak hike: vertical gain 3950 ft."
+     },
+     {
+      "url": "https://thehuntindaddy.com/index.php/peak-bagging/mokelumne-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mokelumne Peak from Tanglefoot: elevation gain 3,980 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 16.1,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://thehuntindaddy.com/index.php/peak-bagging/mokelumne-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Miles: 16.1 for the Mokelumne Peak outing."
+     },
+     {
+      "url": "https://greglamy.net/Hiking/MokelumnePeak.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 17.0 miles for the hike."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Tanglefoot (Shriner) Trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01601.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive to the Tanglefoot (Shriner) trailhead."
+     },
+     {
+      "url": "https://greglamy.net/Hiking/MokelumnePeak.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow signs to Tanglefoot Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From Hwy 88: paved Forest roads (8N14) then about 3.7-3.8 miles of good-to-fair dirt road",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01601.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Highway 88: 9.7 miles paved then 3.7 miles good-to-fair dirt road."
+     },
+     {
+      "url": "https://greglamy.net/Hiking/MokelumnePeak.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "After the paved FS road 8N14, a dirt road continues 3.8 miles to the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1+ (last 300 ft hard class 1 / easy class 2 boulders)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01601.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 1+: trail and easy cross-country; last 300 ft is hard class 1 or easy class 2 boulders."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Moraine Lake at 3.5 mi; trail about 1.5 mi beyond; from the saddle east about 1 mi to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01601.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Moraine Lake is 3.5 miles from the trailhead; continue 1.5 miles; from the saddle hike east about a mile."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No water at the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01601.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "No water at the trailhead; bring some."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Free car camping along the dirt road; camping at trailhead possible",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01601.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Free car camping along the dirt road; author camped at the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Do not climb the 8,628 ft subsidiary summit - brush gets thicker",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01601.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Avoid the subsidiary 8,628 ft summit west of the peak because brush increases."
+     }
+    ]
+   }
+  ],
+  "note": "SPS archive gives approx 13-14 mi RT with 3,700+ ft; the two blogs give 16.1 and 17.0 mi. Distance conflict with SPS noted. thehuntindaddy also says TH to summit around 8 miles."
+ },
+ "ca_moses_mountain_standard_route": {
+  "area": "ca_moses_mountain",
+  "skip_reason": "Opened sierrapeaks.org/archives/sps01838.htm (trip aborted in snow at 9,600 ft, no route figures). sierraclub.org Angeles blog found but not opened. SummitPost 403. Fewer than 2 useful pages - needs rerun."
+ },
+ "ca_mount_bago_north_ridge": {
+  "area": "ca_mount_bago",
+  "skip_reason": "Opened nogosierra.com mount-bago (generated conditions text) and mountainproject.com/route/106445849/north-ridge (this is a Washington Bago north ridge, wrong peak). SummitPost 403."
+ },
+ "ca_mount_baldwin_via_convict_canyon_and_bright_dot_lake": {
+  "area": "ca_mount_baldwin",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5380,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Convict Lake via Bright Dot Lake and west slopes: 17.5 mi, 5380 ft vertical."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 17.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip total 17.5 miles from Convict Lake."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 10.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "5h30 to the summit plus 4h45 down, 10h15 total."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Convict Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Convict Lake."
+     },
+     {
+      "url": "https://web.thebackcountry.com/mt-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Baldwin sits close to the paved Convict Lake trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Up Convict Canyon to Bright Dot Lake on the south side, then the west slopes",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route Convict Lake to Bright Dot Lake, then Baldwin via the west slopes."
+     },
+     {
+      "url": "https://web.thebackcountry.com/mt-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Find the short steep slope up to Bright Dot Lake on the south side."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route: west slope, class 2."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descending south out of Bright Dot Lake is better than the north-slope approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descending south from Bright Dot Lake was slightly longer but much better."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Convict Creek (filter)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://daiyi.co/blog/mount-baldwin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Water taken from Convict Creek; filter it."
+     }
+    ]
+   }
+  ],
+  "note": "The BackCountry (ski page) gives elevation change 4972 ft from Convict Lake - a net change, not trip gain, so gain left single-source. 3200 ft of the daiyi figure is cross-country."
+ },
+ "ca_mount_barnard_standard_route": {
+  "area": "ca_mount_barnard",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Easy climb from Wallace Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2009/1874.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Barnard is an easy climb from Wallace Lake."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org 2006/1475 opened too (multi-peak, no route figures); same publisher. SummitPost 403."
+ },
+ "ca_mount_baxter_standard_route": {
+  "area": "ca_mount_baxter",
+  "skip_reason": "kathywing.com Mount-Baxter page returns 404 now (the earlier thin file's 22 mi / 9,900 ft could not be re-verified and was dropped). Other results (scoutboottracks, millerliving, USFS Baxter Pass trail) not opened. SummitPost 403. Needs rerun."
+ },
+ "ca_mount_bolton_brown_standard_route": {
+  "area": "ca_mount_bolton_brown",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2 (possibly a little class 3 near the summit)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2007/1718.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report says Bolton Brown was class 2, with perhaps a little class 3 just below the summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Long glissade (about 800 ft) down the face in snow conditions",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2006/1487.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Return to camp began with an 800 ft glissade down the face of Bolton Brown."
+     }
+    ]
+   }
+  ],
+  "note": "CONFLICT: catalog grade Class 3; climber.org report says class 2 with maybe a bit of class 3. Both pages are climber.org (one publisher). SummitPost 403."
+ },
+ "ca_mount_bradley_standard_route": {
+  "area": "ca_mount_bradley",
+  "skip_reason": "Opened nogosierra.com mount-bradley (generated conditions text). sierrapeaks sps01818 and letsgoplayoutside found but not opened. SummitPost 403. Needs rerun."
+ }
+}

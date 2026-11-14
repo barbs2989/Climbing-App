@@ -1,0 +1,1134 @@
+{
+ "co_el_camino_de_oveja": {
+  "area": "co_tijeras_peak",
+  "skip_reason": "DuckDuckGo found no page naming this route; 14ers.com and climb13ers Tijeras pages list no route by this name."
+ },
+ "co_ellingwood_ridge": {
+  "area": "co_la_plata",
+  "facts": [
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as Trad, Alpine, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Albert Ellingwood",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits the first ascent to Albert Ellingwood; no year given."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Long, committing ridge traverse of about 2 miles, mostly near 13,000 ft, 3rd class to 5.4 depending on line",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "About a 2 mile traverse mostly at 13,000 ft; sustained 3rd class up to 5.4 with some rappels depending on line."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ridge ends with a steep ~1300 ft push to a false summit, then about a third of a mile to the true summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge finishes with a 1300 ft climb to a rocky false summit, then roughly a third of a mile to the summit."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Thunderstorms on the exposed ridge; abundant loose rock; escapes possible but difficult",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns to finish before storms, test every hold for loose rock; escapes exist but lead to an epic."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Off CO Highway 82 toward Independence Pass, 14.6 miles from the CO 24 / CO 82 junction past Twin Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead on CO 82 is 14.6 miles from the CO 24 and CO 82 junction, past Twin Lakes."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Two National Forest campgrounds a few miles before the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two National Forest campgrounds lie a few miles before the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10005/la-plata-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists La Plata Peak Ellingwood Ridge total elevation gain as 5,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10005/la-plata-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists Ellingwood Ridge round-trip distance as 9.5 miles."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105757222/ellingwood-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project says total hiking is around 10 miles."
+     }
+    ]
+   }
+  ],
+  "note": "14ers.com rates the route Class 3 (our grade says 4th; MP says 4th YDS). MP gives approximate figures, gain \"close to 5,200 ft\" and hiking \"around 10 miles\": its gain differs from 14ers by >10%, so gain stays single-source (14ers)."
+ },
+ "co_emancipation_arete": {
+  "area": "co_lincoln_lake_slabs",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 130,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108043652",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as Sport, Alpine, 130 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Kirk Miller, Ken Trout, Marsha Trout",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108043652",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Kirk Miller, Ken Trout, Marsha Trout; no year given."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Clean, exposed alpine granite arete from a bolted belay to a face finishing on a ledge system",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108043652",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs clean exposed alpine granite: onto the arete from a bolted belay, then a face to a ledge system."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reach it by climbing the 5.7 Lincoln Lake Apron, then traverse left to a bolted belay at the arete base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108043652",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach via the 5.7 Lincoln Lake Apron; from its last belay traverse left to a bolted belay."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "30 m rappel from the summit anchors to a ledge with a separate anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108043652",
+      "retrieved_at": "2026-11-14",
+      "fact": "Possible to rappel 30 meters from the route summit anchors to a ledge with its own anchor."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bolts to fixed anchors",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108043652",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: bolts to fixed anchors."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_emerald_peak_south_southwest_ridge": {
+  "area": "co_emerald_peak",
+  "skip_reason": "14ers.com Emerald Peak lists only the Emerald/Iowa combo (a different route); no other source checked."
+ },
+ "co_emma_gilpin_sneffels_ski_tour": {
+  "area": "co_northern_san_juan_traverses",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes a south-to-north ski traverse with roughly 8,000 ft of ascent."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Trad, Snow, Alpine, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Joe Stiles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA field lists Joe Stiles; no year given."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Starts in Telluride (8,750 ft) and finishes toward Ouray",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Telluride to Ouray; start up Mt Emma south face from Telluride at 8,750 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb Mt Emma south face to the summit, ski its north face through cliffbands to a shelf near 12,250 ft below Gilpin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Up Emma south face, ski the north face through cliffbands to a shelf about 12,250 ft below Gilpin."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Crampon a narrow snow corridor on Gilpin southwest face to the summit (13,694 ft), then descend to the Gilpin-Sneffels saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "A slender steep snow hallway splits Gilpin SW face; crampon to the 13,694 ft summit, then down to the Sneffels saddle."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ski to the base of Sneffels south face (~12,750 ft) and climb the normal route to the 14,150 ft summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ski north to the Sneffels south face base about 12,750 ft, then climb the normal route to 14,150 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From Sneffels ski north (rope or ~100 ft exposed downclimb) or ski the south face, e.g. the Birthday Chutes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Off Sneffels either ski north, needing a rope or 100 ft exposed downclimb, or ski the south face (Birthday Chutes)."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep snow, cliffbands and vertical wind cornices on the Emma north face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110312876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Emma north face descent weaves through cliffs and over vertical wind cornices."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_emma_to_t_zero": {
+  "area": "co_northern_san_juan_traverses",
+  "facts": [
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108457569/emma-to-tzero",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the traverse as Trad, Alpine, Grade IV, 5.8."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Chris Dickson",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108457569/emma-to-tzero",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA field lists Chris Dickson; no year given."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Middle section of the Telluride skyline traverse, from Mount Emma west to T0 over Gilpin, Block Top, Dallas and West Dallas",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108457569/emma-to-tzero",
+      "retrieved_at": "2026-11-14",
+      "fact": "Section B of the Telluride Traverse runs from Mount Emma west to T0 Peak along the skyline north of Telluride."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Emma north to Gilpin on 4th and low 5th class around towers; cliffbands bypassed west on exposed 4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108457569/emma-to-tzero",
+      "retrieved_at": "2026-11-14",
+      "fact": "Emma to Gilpin is 4th and low 5th class around towers; pass cliffbands west on exposed unprotectable 4th class."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel anchors on the first tower toward Block Top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108457569/emma-to-tzero",
+      "retrieved_at": "2026-11-14",
+      "fact": "There are rappel anchors on the first tower met on the way to Block Top."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "A large notch between Dallas and West Dallas is a crux; notch to T0 is 3rd class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108457569/emma-to-tzero",
+      "retrieved_at": "2026-11-14",
+      "fact": "Huge notch between Dallas and West Dallas is another crux; notch to T0 is third class."
+     }
+    ]
+   }
+  ],
+  "note": "MP page at this URL (slug emma-to-tzero) is now titled \"Campbell to Emma 7x13\" but its text describes Emma to T0; flagged for review. Its listed length (22000 ft) is not used."
+ },
+ "co_end_of_the_spear": {
+  "area": "co_sakkety_point",
+  "skip_reason": "DuckDuckGo found only an unrelated film; MP not reachable (429)."
+ },
+ "co_ex_ranger_s_revenge": {
+  "area": "co_north_face_ridge",
+  "skip_reason": "DuckDuckGo found no page; MP not reachable (429)."
+ },
+ "co_exposure_arete": {
+  "area": "co_easter_island_pinnacle",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 45,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106439769/exposure-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as TR, Alpine, 45 ft."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Top-rope from a two-ring anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106439769/exposure-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed as a 2 ring anchor; climbed as a top-rope."
+     }
+    ]
+   }
+  ],
+  "note": "MP FA field gives only initials \"BH\"; not recorded."
+ },
+ "co_fingercicles": {
+  "area": "co_easter_island",
+  "skip_reason": "MP Easter Island Pinnacle area lists no route by this name; a theCrag hit was not opened; MP rate-limited."
+ },
+ "co_fist_or_hippo_head_the_east_ridge": {
+  "area": "co_fist_or_hippo_head_the",
+  "skip_reason": "MP area lists only East Face/Hippo Head (5.6, 2 pitches), a different route from this Class 3 East Ridge."
+ },
+ "co_five_o_clock_jesse": {
+  "area": "co_dog_s_crag",
+  "skip_reason": "DuckDuckGo found only theslope.co (not opened); MP not reachable (429)."
+ },
+ "co_fletcher_mountain_southeast_ridge": {
+  "area": "co_fletcher_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10837/13er-fletcher-mountain?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists Fletcher Mountain Southeast Ridge total elevation gain as 2,250 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 4.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10837/13er-fletcher-mountain?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists the Southeast Ridge round-trip distance as 4.25 miles."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10837/13er-fletcher-mountain?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the Southeast Ridge Class 2."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Exposure considerable, rockfall moderate, route-finding moderate, commitment moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10837/13er-fletcher-mountain?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk ratings: exposure considerable; rockfall, route-finding and commitment moderate."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_fletcher_peak_to_atlantic_peak_traverse": {
+  "area": "co_tenmile_range_traverses",
+  "facts": [
+   {
+    "field": "overview",
+    "value": "Classic Colorado alpine traverse; low 5th class on the crest, with 4th class bypasses off the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117280254/fletcher-peak-to-atlantic-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whole traverse is low 5th class on the crest; 4th class options exist by dropping off the ridge."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Start from Mayflower Gulch off the Copper-Leadville highway, head northeast and gain the north ridge of Fletcher",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117280254/fletcher-peak-to-atlantic-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Logical start is Mayflower off the Copper to Leadville road; head northeast to gain Fletcher north ridge."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_flight_of_the_kiwi": {
+  "area": "co_chiefshead_northwest_face",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106892947/flight-of-the-kiwi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 1200 ft long."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106892947/flight-of-the-kiwi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 11 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106892947/flight-of-the-kiwi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Blake Herrington, Graham Zimmerman, summer 2010",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106892947/flight-of-the-kiwi",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent by Blake Herrington and Graham Zimmerman, summer 2010."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Follows the big right-facing corner about 500 ft left of Birds of Fire; six pitches reach the arching ledge, five more to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106892947/flight-of-the-kiwi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Major right-facing corner roughly 500 ft left of Birds of Fire; 6 pitches to arching ledge, 5 more to summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From the arching ledge, walk right to the Birds of Fire rappels or the walk-off farther right",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106892947/flight-of-the-kiwi",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the ledge one can walk right to the Birds of Fire rappels or a walkoff farther right."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "The first two pitches are often wet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106892947/flight-of-the-kiwi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Both of the first two pitches are probably frequently wet."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_flying_nun": {
+  "area": "co_cathedral_wall",
+  "skip_reason": "The only MP \"Flying Nun\" (route 115788499) is a 40 ft sport route at Pumpkin Patch, not this Cathedral Wall route."
+ },
+ "co_french_mountain_southeast_ridge": {
+  "area": "co_french_mountain",
+  "skip_reason": "14ers.com French Mountain lists only the French/Frasco/Casco combo, a different route."
+ },
+ "co_geronimo": {
+  "area": "co_chiefshead_northeast_face",
+  "skip_reason": "MP Chiefshead Northeast Face area (105744911) found but its route list was not reached (MP 429); DuckDuckGo gave no hit."
+ },
+ "co_get_your_trabzon": {
+  "area": "co_gothic_windows",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121010991/get-your-trabzon",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the sport route as 80 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Matthias Holladay",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121010991/get-your-trabzon",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Matthias Holladay; no year given."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bolts (sport route)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121010991/get-your-trabzon",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed as bolts; route type Sport, Alpine."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_gladstone_peak_north_ridge": {
+  "area": "co_gladstone_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10278/13er-gladstone-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists Gladstone Peak North Ridge total elevation gain as 4,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10278/13er-gladstone-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists the North Ridge round-trip distance as 11.25 miles."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10278/13er-gladstone-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the North Ridge Class 4."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_goat_yoga": {
+  "area": "co_lincoln_lake_slabs",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 105,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115172741/goat-yoga",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the sport route as 105 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ken and Marsha Trout, 2016",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115172741/goat-yoga",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Ken and Marsha Trout, 2016."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "15 bolts plus anchors; bring 19 quickdraws",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115172741/goat-yoga",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page reports 15 bolts and anchors and suggests 19 draws to be safe."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From the lake path leave the trail at an orange boulder, traverse tundra to the Jabba crag, cross the loose talus fan, then descend past Sick Puppy and Double Exposure to a clean bolted tooth",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115172741/goat-yoga",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leave lake path at orange boulder, traverse tundra to Jabba, cross talus fan, walk down past Sick Puppy and Double Exposure."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_golden_slab": {
+  "area": "co_lincoln_lake_slabs",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 110,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108039821/golden-slab",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 110 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jeroen Vanwolferen, Andrew and Ken, 2013",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108039821/golden-slab",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Jeroen Vanwolferen, Andrew, and Ken, 2013."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Three bolts plus a mixed rack and long slings; keep a #3 Camalot for the last moves to the anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108039821/golden-slab",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three bolts plus gear in seams; bring a mixed rack, long slings, save a #3 Camalot for the finish."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts just below Loose Bolt Slab, about 20 ft right of Easy Flakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108039821/golden-slab",
+      "retrieved_at": "2026-11-14",
+      "fact": "Located just down from Loose Bolt Slab and 20 feet right of Easy Flakes."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_gore_thumb_traverse": {
+  "area": "co_peak_l",
+  "skip_reason": "14ers.com Gore Thumb page shows no route stats; merelyafleshwound page not opened."
+ },
+ "co_gorrell_s_traverse": {
+  "area": "co_palisades",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-beaver/",
+      "retrieved_at": "2026-11-14",
+      "fact": "StephAbegg trip report title rates Gorrell's Traverse 5.4."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Links the lower southeast ridge of Longs Peak with the summit, passing the Notch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/longs-peak/longs-beaver/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report says Gorrell's Traverse connects the lower southeast ridge with the Longs summit; the Notch is negotiated via it."
+     }
+    ]
+   }
+  ],
+  "note": "StephAbegg page lists \"FA: Warren Gorrell, Watson, 1935\" but it is unclear whether that is for The Beaver or the traverse (MP gives the same FA for The Beaver), so not recorded. Our grade says Easy 5th."
+ },
+ "co_gotta_have_balls_gotta_have_nuts": {
+  "area": "co_bionut_wall",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576456/gotta-have-balls-gotta-have-nuts",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as Trad, Alpine, 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jordan Houde, Ellie Paulauskaite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576456/gotta-have-balls-gotta-have-nuts",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Jordan Houde and Ellie Paulauskaite; no year given."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "A bolt to start, then small gear; a BD 0.3 fits a vertical pod",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576456/gotta-have-balls-gotta-have-nuts",
+      "retrieved_at": "2026-11-14",
+      "fact": "Clip a first bolt then place gear; a 0.3 BD cam fits a small vertical pod."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_grays_peak_north_slopes": {
+  "area": "co_grays_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10009/grays-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists Grays Peak North Slopes standard route: Class 1, total gain 3,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10009/grays-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists the North Slopes route round-trip distance as 7.5 miles."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10009/grays-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the North Slopes standard route Class 1."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Grays Peak Trailhead: I-70 Bakerville exit, then about four miles south on Stevens Gulch Road (County Road 321)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r02/arp/recreation/trails/grays-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: take I-70 Bakerville exit, drive about four miles south on Stevens Gulch Road, County Road 321."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Stevens Gulch Road is rough, at times 4WD; usually unplowed and impassable in winter, so early/late season start from the I-70 parking area",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r02/arp/recreation/trails/grays-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: road is rough, sometimes 4WD, impassable in winter; early and late season may require hiking from I-70 parking."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Usually not snow-free until late June or July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r02/arp/recreation/trails/grays-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: high elevation means the area is generally not snow-free until late June or even July."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 11241,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r02/arp/recreation/trails/grays-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS lists trail elevation as 11,241 feet to 14,272 feet."
+     }
+    ]
+   },
+   {
+    "field": "emergency",
+    "value": "Land manager: Clear Creek Ranger District, Arapaho and Roosevelt National Forests",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r02/arp/recreation/trails/grays-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS page places the Grays Peak Trail in the Clear Creek Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "Gain and distance are 14ers.com round-trip totals. USFS trail page gives elevations 11,241-14,272 ft but no distance."
+ },
+ "co_grey_pillar": {
+  "area": "co_lower_east_face",
+  "skip_reason": "No route page found (DuckDuckGo gave only a MP forum thread); MP rate-limited."
+ },
+ "co_grizzly_peak_south_ridge_from_garfield_peak": {
+  "area": "co_grizzly_peak",
+  "skip_reason": "14ers.com Grizzly Peak E was the wrong peak; SummitPost \"Grizzly Peak and South Ridge\" not opened (SummitPost 403 for other agents)."
+ },
+ "co_guide_s_ridge": {
+  "area": "co_mt_crested_butte",
+  "skip_reason": "Only hikingproject.com and theslope.co hits found; not opened before the tab closed."
+ },
+ "co_hagerman_peak_southface": {
+  "area": "co_hagerman_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4358,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10086/13er-hagerman-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists Hagerman Peak Southface total elevation gain as 4,358 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10086/13er-hagerman-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com lists the Southface round-trip distance as 10 miles."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Difficult Class 2, moderate snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/peaks/10086/13er-hagerman-peak?t=routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the Southface Difficult Class 2 with moderate snow."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ }
+}

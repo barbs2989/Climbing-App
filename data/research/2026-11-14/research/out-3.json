@@ -1,0 +1,237 @@
+{
+ "wa_concerto_in_c_for_drill_and_hammer": {
+  "area": "wa_south_face",
+  "skip_reason": "not researched in depth (search budget); peak not identified on an open page with a gain"
+ },
+ "wa_mount_hopper_standard": {
+  "area": "wa_mount_hopper",
+  "skip_reason": "WTA mount-hopper lists gain 6,114 ft = summit elevation (data quirk, unusable); Mountaineers Steel+Hopper 4,400 ft (combined route, 403). Stored 4400 appears to be that combined figure"
+ },
+ "wa_west_ridge_2": {
+  "area": "wa_paisano_pinnacle",
+  "skip_reason": "no open page states a gain for the Paisano Pinnacle approach (not searched separately)"
+ },
+ "wa_burnt_boot_peak_north_route": {
+  "area": "wa_burnt_boot_peak",
+  "skip_reason": "searched; Wikipedia/yellowleaf give only summit height; yellowleaf trips are multi-day/multi-peak"
+ },
+ "wa_south_spur": {
+  "area": "wa_whatcom_peak",
+  "skip_reason": "searched; lemkeclimbs Whatcom trip gives no gain; NPS blog not quantitative"
+ },
+ "wa_eldorado_peak_eldorado_glacier_nw": {
+  "area": "wa_main_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6712,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "6,716 ft elevation gain, 10 mi roundtrip, Eldorado Creek trailhead to 8,876 ft summit"
+     }
+    ]
+   }
+  ],
+  "note": "WTA 6,716 ft (standard line from the same trailhead) agrees with stored 6712 within 1%; ledger-only lock of stored value. Outdoor Project page now dead; Mountaineers (6,768) 403."
+ },
+ "wa_mount_fury_east_north_buttress": {
+  "area": "wa_mount_fury_east",
+  "skip_reason": "searched; only multi-day Pickets traverse/survey totals (stephabegg, countryhighpoints), no trailhead-to-summit figure. Stored 7000 looks low for this approach"
+ },
+ "wy_beyer_east_face_i": {
+  "area": "wy_grand_teton",
+  "skip_reason": "no stored values or pins; not searched"
+ },
+ "wa_east_ridge_3": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "skip_reason": "searched; Mountaineers Silver Star Glacier route lists 5,200 ft (403, different route). Stored 4400 looks low vs pins"
+ },
+ "wa_mount_rainier_edmunds_headwall": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "searched; no open page gives Mowich Lake-to-summit gain for Edmunds Headwall. Stored 8470 is below the pin difference"
+ },
+ "wa_mcmillan_spire_west_west_ridge": {
+  "area": "wa_mcmillan_spire_west",
+  "skip_reason": "climberkyle West McMillan: 10,000 ft is car-to-car round-trip total (not usable); partial segments only"
+ },
+ "wa_hozomeen_mountain_northeast_buttress": {
+  "area": "wa_hozomeen_mountain",
+  "skip_reason": "searched; Mountaineers route 9,080 ft (403, unopened); stevensong ~700 m from camp only"
+ },
+ "wa_the_monk_west_cracks_left_crack": {
+  "area": "wa_the_monk_pasayten",
+  "skip_reason": "no open page found (not searched separately)"
+ },
+ "wa_goode_mountain_southwest_couloir": {
+  "area": "wa_mount_goode",
+  "skip_reason": "searched; trip reports give approach-to-camp and camp-to-summit splits only; Mountaineers NE Buttress 8,400 ft is a different route and 403"
+ },
+ "wa_mutchler_peak_scramble": {
+  "area": "wa_mutchler_peak",
+  "skip_reason": "searched; no gain figure on any open page"
+ },
+ "wa_goode_mountain_northeast_face": {
+  "area": "wa_mount_goode",
+  "skip_reason": "no trailhead-to-summit figure; stored 4799 equals summit minus trailhead and ignores the Bridge Creek drop"
+ },
+ "wa_forbidden_peak_northwest_face": {
+  "area": "wa_forbidden_peak",
+  "skip_reason": "searched; West Ridge figures (~5,600 ft, Mountaineers/FKT/yellowleaf per search) are a different route and not opened; stored 4800 looks low"
+ },
+ "wa_north_ridge_west_side": {
+  "area": "wa_molar_tooth",
+  "skip_reason": "no open page found (not searched separately)"
+ },
+ "wa_kololo_peaks_standard": {
+  "area": "wa_kololo_peaks",
+  "skip_reason": "stephabegg ?p=8925: 7,222 ft gain / 1,333 ft loss but from White River TH (2,300 ft) to a camp below summit, not our route/endpoint; Mountaineers 6,150 ft (403)"
+ },
+ "wa_magic_mountain_northwest_ridge": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "searched; Mountaineers South Ridge 4,000 ft (403, different route); sverdina report has no numbers"
+ },
+ "rainier_central_mowich_face": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "searched with Edmunds; no open page states a gain"
+ },
+ "wa_jack_mountain_south_face": {
+  "area": "wa_jack_mountain",
+  "skip_reason": "FKT route page: 21 mi, 11,450 ft vertical gain, car-to-car, start not named, round trip vs one-way not stated; not usable as trailhead-to-summit (stored 11500 likely a round-trip total)"
+ },
+ "wa_snowfield_peak_neve_glacier": {
+  "area": "wa_snowfield_peak",
+  "skip_reason": "Mountaineers 7,500 ft (403, unopened); stephabegg Snowfield Slam gives only per-day multi-summit totals"
+ },
+ "wa_amphitheater_mountain_north_ridge": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "searched; SummitPost 4,800 ft is trailhead-to-Upper-Cathedral-Lake approach only (403 anyway); stored 4800 appears to be that approach figure, not summit"
+ },
+ "wa_liberty_bell_thin_red_line": {
+  "area": "wa_liberty_bell",
+  "skip_reason": "searched; no open page states approach gain"
+ },
+ "wa_skookum_peak_twinsisters_scramble": {
+  "area": "wa_skookum_peak_twinsisters",
+  "skip_reason": "searched; only Twin Sisters traverse figures (Mountaineers 403) and ambiguous FATMAP"
+ },
+ "wa_mount_teneriffe_kamikaze_trail": {
+  "area": "wa_mount_teneriffe",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingwithmybrother.com/mt-teneriffe-kamikaze-trail.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kamikaze trail to Mt Teneriffe: 6.5 mi total, 3800 ft total ascent"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 3800 matches. WTA mount-teneriffe also says 3,800 ft but that is the 13-mile road route, not Kamikaze, so not used as a second source. 10adventures Kamikaze figure is 1,265 m round-trip metric only."
+ },
+ "wa_mount_pilchuck_standard_route": {
+  "area": "wa_mount_pilchuck",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pilchuck",
+      "retrieved_at": "2026-11-14",
+      "fact": "2,300 ft elevation gain, 5.4 mi roundtrip, high point 5,327 ft"
+     },
+     {
+      "url": "https://www.heraldnet.com/news/to-get-to-iconic-pilchuck-lookout-hikers-must-brave-hell-on-wheels",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,300 feet in trail details box; no source credited"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 2300 matches WTA and The Herald exactly; ledger-only lock. Neither page states an approach loss."
+ },
+ "wa_chikamin_peak_southeast_slopes": {
+  "area": "wa_chikamin_peak",
+  "skip_reason": "searched; theoutbound 5,771 ft is Mineral Creek out-and-back (different trailhead), Mountaineers 5,400 (403), SummitPost (403); lemkeclimbs no numbers"
+ },
+ "wa_mojo_rising": {
+  "area": "wa_south_early_winters_spire",
+  "skip_reason": "not researched"
+ },
+ "wa_table_mountain_standard_scramble": {
+  "area": "wa_table_mountain",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 725,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/table-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "725 ft elevation gain, 2.6 mi roundtrip, high point 5,700 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 725 matches WTA. 10adventures gives 183 m only (metres-only, not usable). USFS Trail 681 page states no gain."
+ },
+ "wa_flora_mountain_southwest_slope": {
+  "area": "wa_flora_mountain",
+  "skip_reason": "searched; only SummitPost (403), Mountaineers trip report (403), winter ascent totals. Stored 3150 is far below pin difference"
+ },
+ "wa_mount_terror_north_face": {
+  "area": "wa_mount_terror",
+  "skip_reason": "searched; only approach/round-trip figures on blocked or unopened pages"
+ },
+ "wa_mount_thomson_west_ridge": {
+  "area": "wa_mount_thomson",
+  "skip_reason": "theoutbound: 4,500 ft gain, 16 mi out-and-back from PCT trailhead; differs from stored 5200 by >10% with one source, so not set"
+ },
+ "wa_liberty_bell_overexposure": {
+  "area": "wa_liberty_bell",
+  "skip_reason": "searched with Thin Red Line; Mountaineers 2,500 ft for Beckey Route (403, different route)"
+ },
+ "wa_treen_peak_scramble": {
+  "area": "wa_treen_peak",
+  "set": {
+   "approach_loss_ft": 800
+  },
+  "ledger": [
+   {
+    "field": "approach_loss_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://yellowleaf.org/scramble/g/r/2007-06-02-treen.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "800' elevation loss dropping to Upper Garfield Mountain Lake on the way to Treen, via Green Ridge from Middle Fork Road"
+     }
+    ]
+   }
+  ],
+  "note": "Same page gives 6,115 ft car-to-car total gain (includes regaining the 800 ft), so not used as trailhead-to-summit gain; stored 6100 likely equals that round-trip total and may overstate. Regain not stated as a number. Mountaineers 4,400 ft (403, unopened)."
+ },
+ "wa_ingalls_peak_north_peak_southwest_face": {
+  "area": "wa_ingalls_peak",
+  "skip_reason": "no stored values or pins; not searched"
+ },
+ "wa_ragged_edge": {
+  "area": "wa_vesper_peak",
+  "skip_reason": "WTA vesper-peak 4,000 ft is the hiking route to the summit; Ragged Edge climbs the north face after a descent, so trailhead-to-summit gain differs; not used"
+ }
+}

@@ -1,0 +1,167 @@
+{
+ "wa_mount_rainier_disappointment_cleaver": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.78669,
+     "lng": -121.73454,
+     "elev": 5400,
+     "name": "Paradise Parking Area",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Paradise sits on the mountain's south side at about 5,400 ft, at the end of the Paradise road. The climb starts from the upper lot on the Skyline Trail."
+    },
+    {
+     "lat": 46.789,
+     "lng": -121.736,
+     "elev": 5550,
+     "name": "Skyline Trail / Muir Steps",
+     "type": "Junction",
+     "distMi": 0.3,
+     "directions": "Leave the upper lot on the paved Skyline Trail, which climbs immediately in stone steps behind the lodge — the bottom of the long grind to Camp Muir."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6800,
+     "name": "Panorama Point",
+     "type": "Junction",
+     "distMi": 1.8,
+     "directions": "Skyline switchbacks up open slopes to Panorama Point, the standard first rest stop, with the view south over the Tatoosh Range to Mount Adams."
+    },
+    {
+     "lat": 46.808881,
+     "lng": -121.726496,
+     "elev": 7300,
+     "name": "Pebble Creek Crossing",
+     "type": "Water",
+     "distMi": 2.3,
+     "directions": "Past Panorama Point the trail drops slightly to Pebble Creek at roughly 2.3 miles. This is the last reliable water on the way up, so fill here. McClure Rock (~7,385 ft) sits just above, and that is where the maintained trail ends."
+    },
+    {
+     "lat": 46.83556,
+     "lng": -121.73139,
+     "elev": 10080,
+     "name": "Camp Muir",
+     "type": "Campsite",
+     "distMi": 4.5,
+     "directions": "Above McClure Rock the route becomes the Muir Snowfield — permanent snow, unmarked, and not maintained by the Park Service. Guide services boot-pack and wand it through the season, but wind and new snow erase the track fast, and whiteout navigation here has killed people. Carry map and compass or GPS and be able to use them before you rely on a boot-pack. Camp Muir at 10,080 ft has an NPS ranger station with weather briefings and current route conditions."
+    },
+    {
+     "lat": 46.84455,
+     "lng": -121.73565,
+     "elev": 11200,
+     "name": "Ingraham Flats High Camp",
+     "type": "Campsite",
+     "distMi": 5.5,
+     "directions": "Rope up at Muir. Traverse the upper Cowlitz Glacier, then scramble the Cathedral Rocks ridge through Cathedral Gap — shorten the rope between partners here, because the switchbacks are awkward on a long one. Over the gap you drop onto the Ingraham Glacier and reach Ingraham Flats, the standard high camp at the foot of the Cleaver."
+    },
+    {
+     "lat": 46.8528267,
+     "lng": -121.7604408,
+     "elev": 14410,
+     "name": "Columbia Crest",
+     "type": "Summit",
+     "distMi": 7.25,
+     "directions": "Gain the Cleaver and climb the rock rib to its top around 12,300 ft. Rockfall is a genuine hazard here once the season warms, particularly after June, so helmets stay on and parties keep moving. Above the Cleaver the glacier is the most dynamic part of the route — climb as directly toward the east crater rim as the crevasses allow. From the rim, drop into the crater and cross it to the west side for Columbia Crest, the true summit. Most parties leave Camp Muir between about 10pm and 2am to reach the top early and be off the upper mountain before it softens; summit day is roughly 4,500-5,500 ft of gain."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/thingstodo/climbing-mount-rainier.htm",
+    "https://www.nps.gov/mora/planyourvisit/climbing-fee-faqs.htm",
+    "https://www.theoutbound.com/washington/backpacking/climb-mt-rainier-via-disappointment-cleaver"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Columbia Crest",
+    "value": {
+     "name": "Columbia Crest",
+     "lat": 46.8528267,
+     "lng": -121.7604408
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1533614 'Mount Rainier' summit point (DomesticNames_WA, edited 2026-08-17)",
+      "fact": "46.8528267,-121.7604408",
+      "retrieved_at": "2026-11-14"
+     },
+     {
+      "measurement": "the route's stored recorded track passes 9 m from this point",
+      "fact": "9 m",
+      "retrieved_at": "2026-11-14"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 9000,
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "NPS summit 14,410 ft minus USGS 3DEP 5,410 ft at the Paradise Upper Lot",
+      "fact": "9000 ft",
+      "retrieved_at": "2026-11-14"
+     },
+     {
+      "url": "https://www.theoutbound.com/washington/backpacking/climb-mt-rainier-via-disappointment-cleaver",
+      "fact": "8993 ft gain",
+      "retrieved_at": "2026-11-14"
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 11.3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.theoutbound.com/washington/backpacking/climb-mt-rainier-via-disappointment-cleaver",
+      "fact": "14.9 mi out-and-back",
+      "retrieved_at": "2026-11-14"
+     },
+     {
+      "measurement": "stored recorded track, 23.3 km round trip = 11.65 km one way",
+      "fact": "11.65 km",
+      "retrieved_at": "2026-11-14"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Mount Rainier: climbing on glaciers or above 10,000 ft requires the park's climbing registration; overnight high camps also need a wilderness permit.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-14T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/thingstodo/climbing-mount-rainier.htm",
+      "official": true,
+      "fact": "permit required on glaciers or above high camps (~10,000 ft); wilderness permit for overnight",
+      "retrieved_at": "2026-11-14"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Unknown",
+    "method": "agree-2",
+    "level": "disputed",
+    "evidence": [
+     {
+      "url": "https://explorersweb.com/the-climbing-history-of-mount-rainier/",
+      "fact": "Molenaar, Wickwire + 4, 1950 (implausible: Wickwire born c. 1940)",
+      "retrieved_at": "2026-11-14"
+     }
+    ]
+   }
+  ]
+ }
+}

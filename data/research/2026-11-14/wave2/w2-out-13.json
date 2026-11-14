@@ -1,0 +1,420 @@
+{
+ "ak_route_1": {
+  "area": "ak_developer_n_a",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_route_2": {
+  "area": "ak_moai_wall",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_route_2_2": {
+  "area": "ak_developer_n_a",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_route_3": {
+  "area": "ak_developer_n_a",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_route_4": {
+  "area": "ak_developer_n_a",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_s_k_k": {
+  "area": "ak_blueberry_block",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_sail_cat": {
+  "area": "ak_valdez_glacier_campground",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 40,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111217941/sail-cat",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Sail Cat as sport, 40 ft, Valdez Glacier Campground."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nick Weicht",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111217941/sail-cat",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Nick Weicht; no year given."
+     }
+    ]
+   }
+  ],
+  "note": "Type/length/FA read from the MP search listing for this route; MP then answered 429 before the route page (approach, descent) could be read."
+ },
+ "ak_salami_heist": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 90,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353252/salami-heist",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as trad, 90 ft."
+     },
+     {
+      "url": "https://alaska.guide/Route/Salami-Heist",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 90 ft, The Sunny Side, Thompson Pass, near Valdez."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nick Weicht",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353252/salami-heist",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Nick Weicht; no year given."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "2 bolts plus a full rack; 2-bolt chain anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353252/salami-heist",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed as two bolts, a full rack, and a two-bolt chain anchor."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts 12 ft left of the gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353252/salami-heist",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: the line begins 12 feet left of the gully."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112353252/salami-heist",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades it 5.7."
+     },
+     {
+      "url": "https://alaska.guide/Route/Salami-Heist",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide gives an average technical rating of 5.7."
+     }
+    ]
+   }
+  ],
+  "note": "MP route page + Alaska Guide. Alaska Guide and theCrag may draw on the same community database as Mountain Project; treat agree-2 with that caveat. Gain/approach/descent/timing not stated for this crag route."
+ },
+ "ak_saturday_night_fever": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 85,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Saturday-Night-Fever",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 85 ft, The Sunny Side, Thompson Pass, near Valdez."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Saturday-Night-Fever",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide gives an average technical rating of 5.8."
+     }
+    ]
+   }
+  ],
+  "note": "Alaska Guide quick-facts page states only region, parent crag, length and grade; no approach, descent or timing. MP (second source) answered 429."
+ },
+ "ak_scale_it": {
+  "area": "ak_valdez_glacier_campground",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_science_is_sorcery": {
+  "area": "ak_renaissance_wall",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326197/science-is-sorcery",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists it as trad, 80 ft, Renaissance Wall, Independence Mine, Hatcher Pass."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ben Chriswell, Chris Williams",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326197/science-is-sorcery",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Ben Chriswell and Chris Williams; no year given."
+     }
+    ]
+   }
+  ],
+  "note": "Type/length/FA read from the MP search listing for this route; MP then answered 429 before the route page (approach, descent) could be read."
+ },
+ "ak_scouts_honor": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 85,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Scouts-Honor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 85 ft, The Sunny Side, Thompson Pass, near Valdez."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Scouts-Honor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide gives an average technical rating of 5.6."
+     }
+    ]
+   }
+  ],
+  "note": "Alaska Guide quick-facts page states only region, parent crag, length and grade; no approach, descent or timing. MP (second source) answered 429."
+ },
+ "ak_se_ridge": {
+  "area": "ak_split_thumb",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 70,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112157259/se-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists SE Ridge of Split Thumb (Juneau, off road system) as trad, 70 ft; FA unknown."
+     }
+    ]
+   }
+  ],
+  "note": "Type/length/FA read from the MP search listing for this route; MP then answered 429 before the route page (approach, descent) could be read."
+ },
+ "ak_seams_to_me": {
+  "area": "ak_tsaina_river_gorge_wall",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 45,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108923782/seams-to-me",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists it as trad, 45 ft, Tsaina River Gorge Wall, Valdez; FA unknown."
+     }
+    ]
+   }
+  ],
+  "note": "Type/length/FA read from the MP search listing for this route; MP then answered 429 before the route page (approach, descent) could be read."
+ },
+ "ak_second_breakfast": {
+  "area": "ak_dragon_s_spine",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_sendsation": {
+  "area": "ak_101_wall_worthington",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_sendsational": {
+  "area": "ak_101_wall_worthington",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_serendipity": {
+  "area": "ak_lower_wall",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_shady_lady": {
+  "area": "ak_mcalpine_sector",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_sharp_end": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Sharp-End",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 80 ft, The Sunny Side, Thompson Pass, near Valdez."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Sharp-End",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide gives an average technical rating of 5.8."
+     }
+    ]
+   }
+  ],
+  "note": "Alaska Guide quick-facts page states only region, parent crag, length and grade; no approach, descent or timing. MP (second source) answered 429."
+ },
+ "ak_shelter_from_the_sun": {
+  "area": "ak_mcalpine_sector",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_shelter_in_place": {
+  "area": "ak_ramparts_wall",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_shits_and_giggles": {
+  "area": "ak_valdez_glacier_campground",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_shoop_dog": {
+  "area": "ak_19_mile_wall_2",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_shoot_em_up": {
+  "area": "ak_tunnel_wall_the",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_short_and_sweet": {
+  "area": "ak_valdez_glacier_campground",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_silk": {
+  "area": "ak_glacier_view",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_six_figure_bums": {
+  "area": "ak_republic_of_boulder",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 110,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/valdez-area-rock/route/1436412174",
+      "retrieved_at": "2026-11-14",
+      "fact": "theCrag lists Six Figure Bums, Republic of Boulder, as a 110 ft sport route."
+     },
+     {
+      "url": "https://alaska.guide/Route/Six-Figure-Bums",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 110 ft, Republic of Boulder, Thompson Pass."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.12b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/valdez-area-rock/route/1436412174",
+      "retrieved_at": "2026-11-14",
+      "fact": "theCrag grade 5.12b."
+     },
+     {
+      "url": "https://alaska.guide/Route/Six-Figure-Bums",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide average technical rating 5.12b."
+     }
+    ]
+   },
+   {
+    "field": "bolts",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/valdez-area-rock/route/1436412174",
+      "retrieved_at": "2026-11-14",
+      "fact": "theCrag lists 17 bolts; sport route; no recorded route history."
+     }
+    ]
+   }
+  ],
+  "note": "theCrag + Alaska Guide. Alaska Guide and theCrag may draw on the same community database as Mountain Project; treat agree-2 with that caveat. theCrag afterwards redirected to a processing/bot-check page (swamp.processing.thecrag.com), so other theCrag pages were not read."
+ },
+ "ak_slab_route": {
+  "area": "ak_27_mile",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ },
+ "ak_slabawooke": {
+  "area": "ak_panorama_point",
+  "skip_reason": "Mountain Project answered 429 Too Many Requests before this route could be found or read; MP is the only publisher of these small Alaska crag routes found."
+ }
+}

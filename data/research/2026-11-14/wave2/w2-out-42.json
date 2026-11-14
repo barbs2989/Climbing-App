@@ -1,0 +1,2723 @@
+{
+ "co_red_gully": {
+  "area": "co_the_crestones",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cpea2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crestone Peak South Face (Red Gully) standard route rated Class 3"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-crestone-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Face route climbs the Red Gully, rated Class 3"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Colony Lakes",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cpea2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as South Colony Lakes"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-crestone-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: South Colony Lakes, 4WD trailhead or lower 2WD lot"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cpea2",
+      "retrieved_at": "2026-11-14",
+      "fact": "13.5 miles round trip from the South Colony 4WD trailhead"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-crestone-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "13.5 to 14 miles round trip from the 4WD trailhead"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cpea2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 6,200 ft from the South Colony 4WD trailhead (4,200 from lower lake, 7,400 from 2WD)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14299,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cpea2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,299 feet"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Join the Red Gully near 13,100 ft; red pitch at 13,800 ft leads to the notch at 14,150 ft between the two summits",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cpea2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bench trail meets Red Gully near 13,100 ft; red pitch base 13,800 ft; notch at 14,150 ft"
+     }
+    ]
+   },
+   {
+    "field": "rating_14ers",
+    "value": "Extreme, D13 / R3 / IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=cpea2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Overall rating Extreme, D13 / R3 / IV"
+     }
+    ]
+   }
+  ],
+  "note": "Route identified as Crestone Peak South Face (Red Gully). Gain/distance are from the South Colony 4WD trailhead; 14ers also gives 2WD figures (7,400 ft, 19 mi RT). thenextsummit figures may derive from 14ers.com."
+ },
+ "co_san_luis_peak_northeast_ridge": {
+  "area": "co_san_luis_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sanl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 1"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-san-luis-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Class 1"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Stewart Creek",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sanl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Stewart Creek, 10,500 ft"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-san-luis-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Stewart Creek"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 10500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sanl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stewart Creek trailhead at 10,500 feet"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3600,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sanl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,600 ft"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-san-luis-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation Gain: 3,600 feet"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sanl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 13.5 mi round trip"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-san-luis-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 13.5 miles"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14023,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sanl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,023 feet"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-san-luis-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation 14,023 feet (LiDAR)"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Trailhead at the end of roughly 27 miles of dirt road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-san-luis-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead sits at the end of roughly 27 miles of dirt road"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No individual hiking permit or fee found; groups limited to 15; Gunnison Ranger District 970-641-0471",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/san-luis-peak-northeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "No permit or fee for individuals; group limit 15; Gunnison RD 970-641-0471"
+     }
+    ]
+   }
+  ],
+  "note": "summitborn.com distance/gain copied from 14ers.com so not counted. thenextsummit may also derive from 14ers."
+ },
+ "co_south_ramp": {
+  "area": "co_arrowhead",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757978/south-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Ramp rated Easy 5th"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757978/south-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, Grade II"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the route itself; it is the usual descent for southwest-face routes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757978/south-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the route; handy descent for routes on the southwest face"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb to a prominent left-facing break in the slabs, then traverse left on grassy ledges toward the McHenrys-Arrowhead valley",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757978/south-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "Up to left-facing break in slabs, traverse left on grassy ledges to valley between McHenrys and Arrowhead"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glacier Gorge Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier Gorge Trailhead to base of route 3 hours"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Glacier Gorge Trail to Black Lake, then talus and grassy ramps around beneath the south face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike Glacier Gorge Trail to Black Lake, then talus and grassy slopes to beneath the south face"
+     }
+    ]
+   }
+  ],
+  "note": "stephabegg.com lists an Arrowhead \"Summit Ramp (4th)\"; MP rates the South Ramp Easy 5th - unclear if same line, grade kept single-source."
+ },
+ "co_south_ridge": {
+  "area": "co_music_mountain",
+  "facts": [
+   {
+    "field": "grade_mp",
+    "value": "5.0 (MP), keeping to 4th class by stepping off the crest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114504005/south-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.0; follow the crest, stepping left or right to keep it 4th class"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114504005/south-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, Grade II"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Music Pass Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/music-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Music Mountain reached from the Music Pass trailhead"
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: app says 4th; MP lists 5.0 while describing 4th-class travel. climb13ers covers only the East Ridge route (10.2 mi / 2,995 ft from Music Pass), so its figures were not used."
+ },
+ "co_south_spur": {
+  "area": "co_chiefshead_south_face",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Spur rated 5.7"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 1000 ft, Grade III"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 1000 ft"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "August 17, 2013 (no record of an earlier ascent)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA August 17, 2013; author notes no record of prior ascent"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Wild Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike the Wild Basin Trail"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Wild Basin Trail to junction at 4.8 mi, right to Lion Lake #1 and on to Snowbank Lake (~7.5 mi from trailhead), then moraine to the spur",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Junction at 4.8 miles, right to Lion Lake #1 and Snowbank Lake about 7.5 miles from trailhead"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Hike down the Southeast Ridge, then descend a scree gully to easy ground above Lion Lake #1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: down the Southeast Ridge then an unpleasant scree gully above Lion Lake #1"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Rack to 2.5 inches (author guess; soloed)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rack up to 2.5 inches, a guess as the author soloed"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Take the Lion Lake Trail fork off the Thunder Lake Trail to Lion Lake #1",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108295110/south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "At the 4.8 mile junction go right to Lion Lake #1"
+     },
+     {
+      "url": "https://wildwildbasin.com/chief.php",
+      "retrieved_at": "2026-11-14",
+      "fact": "Thunder Lake Trail to its fork with the Lion Lake Trail, out to Lion Lake #1"
+     }
+    ]
+   }
+  ],
+  "note": "App gain_ft 6700 and high_point 12281 not re-checked against a source."
+ },
+ "co_southeast_ridge_2": {
+  "area": "co_teakettle_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th (only the final summit block; rest Class 2+ to 3)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111998535/southeast-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Southeast Ridge rated Easy 5th"
+     },
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/teakettle-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5th class only for the final ~20 ft; remainder mostly Class 2+ with some Class 3"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 40,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111998535/southeast-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 40 ft"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Yankee Boy Basin - Mt. Sneffels Trailhead (11,380 ft, 4x4 only)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/teakettle-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Yankee Boy Basin - Mt. Sneffels, elevation 11,380 ft, 4x4 only"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Bring webbing to sling for the descent of the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111998535/southeast-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some webbing could be useful for the descent"
+     }
+    ]
+   }
+  ],
+  "note": "climb13ers gives 3.6 mi / 3,200 ft RT from Yankee Boy Basin, but the page says it was climbed together with Potosi Peak, so the figure was not used."
+ },
+ "co_southwest_ridge_2": {
+  "area": "co_mount_sneffels",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=snef2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Sneffels Southwest Ridge difficulty Class 3"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Yankee Boy Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=snef2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Yankee Boy Basin 11,350 ft"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2950,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=snef2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gain 2,950 ft from outhouse parking; 3,450 from 2WD; 1,750 from upper trailhead"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=snef2",
+      "retrieved_at": "2026-11-14",
+      "fact": "6.5 mi RT from outhouse parking; 8.25 from 2WD; 3 from upper trailhead"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14155,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=snef2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,155 feet"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From Ouray take CR 361 (2WD dirt) toward Yankee Boy Basin; stay right on CR 26 at 4.6 mi",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=snef2",
+      "retrieved_at": "2026-11-14",
+      "fact": "US 550 to Ouray, west on CR 361 toward Yankee Boy Basin; 4.6 mi stay right on CR 26"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Exposure, rockfall, route-finding and commitment all rated considerable",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=snef2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors exposure, rockfall, route-finding, commitment: considerable"
+     }
+    ]
+   },
+   {
+    "field": "hazard_descent",
+    "value": "A climber fell roughly 1,000 ft descending the harder Southwest Ridge route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-sneffels/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mentions a fall of roughly 1,000 feet while descending the Southwest Ridge"
+     }
+    ]
+   }
+  ],
+  "note": "thenextsummit page covers the South Slopes route; its figures were not used for this route. Gain depends on parking spot; outhouse-lot figure chosen."
+ },
+ "co_summit_lake_couloirs_summit_lake_bowl": {
+  "area": "co_summit_lake_couloirs",
+  "skip_reason": "Opened Mountain Project Mt Blue Sky mixed/couloirs area page (no Summit Lake Bowl entry found) and dismalwilderness.com Mount Evans via Summit Lake (a hiking route; no bowl facts). No page stated a fact for this snow bowl."
+ },
+ "co_sunlight_peak_south_face": {
+  "area": "co_sunlight_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sunl2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sunlight Peak South Face difficulty Class 4"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-sunlight-peak-colorado/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 3 to base of summit block, then a Class 4 move"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Needleton (Durango & Silverton train stop)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sunl2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Needleton"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-sunlight-peak-colorado/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Needleton, Durango-Silverton train stop"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sunl2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 6,000 ft from Needleton TH; 3,000 ft from Chicago Basin"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-sunlight-peak-colorado/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 6,000 feet; 3,000 from a Chicago Basin camp"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 17,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sunl2",
+      "retrieved_at": "2026-11-14",
+      "fact": "17 miles round trip from Needleton TH; 6 from Chicago Basin"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-sunlight-peak-colorado/",
+      "retrieved_at": "2026-11-14",
+      "fact": "18 miles round trip; 6 from a Chicago Basin camp"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Chicago Basin",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sunl2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Figures given from Chicago Basin as a base: 3,000 ft, 6 miles RT"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-sunlight-peak-colorado/",
+      "retrieved_at": "2026-11-14",
+      "fact": "3,000 ft and 6 miles from a Chicago Basin camp"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14061,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=sunl2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,061 feet"
+     }
+    ]
+   }
+  ],
+  "note": "Distance: 14ers 17 mi vs thenextsummit 18 mi RT (within 10%); value is 14ers figure."
+ },
+ "co_sunshine_peak_via_redcloud_peak": {
+  "area": "co_sunshine_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=suns2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sunshine Peak via Redcloud difficulty Class 2"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-redcloud-and-sunshine-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Class 2"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Silver Creek/Grizzly Gulch",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=suns2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Silver Crk/Grizzly Gulch, 10,400 ft"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-redcloud-and-sunshine-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Silver Creek/Grizzly Gulch"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 10400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=suns2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Silver Creek/Grizzly Gulch trailhead 10,400 feet"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=suns2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,800 ft"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-redcloud-and-sunshine-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,800 ft for both peaks (3,700 Redcloud alone)"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12.25,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=suns2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 12.25 mi round trip"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-redcloud-and-sunshine-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 12.25 miles"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14037,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=redc1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Redcloud summit 14,037 ft, crossed on the way to Sunshine"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-redcloud-and-sunshine-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Redcloud summit elevation 14,037 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Route goes over Redcloud (14,037) to Sunshine (14,004 per 14ers); figures are round trip returning over Redcloud."
+ },
+ "co_the_knife": {
+  "area": "co_babcock_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3/4 (low 5th moves if you skip the rappel)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/la-plata-mountains/babcock/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Knife traverse is consistent class 3/4; a couple of low 5th moves if you do not rappel"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Boren Creek Trailhead (4x4 optional)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/la-plata-mountains/babcock/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Boren Creek TH, 4x4 if you want it"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/la-plata-mountains/babcock/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 6.8 miles for the Babcock to Spiller traverse"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/la-plata-mountains/babcock/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3900 ft"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/la-plata-mountains/babcock/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Duration 8 hrs, solo"
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Optional rappel from Babcock summit to the notch before West Babcock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/la-plata-mountains/babcock/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Babcock summit you can rappel to the notch separating Babcock and West Babcock"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Significant exposure; descent off Spiller to the road is unpleasant",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/san-juan-range/la-plata-mountains/babcock/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Significant exposure; author disliked the descent off Spiller to the road"
+     }
+    ]
+   }
+  ],
+  "note": "Single blogger trip (merelyafleshwound, 2024-08-16, solo). climb13ers Babcock page covers South Couloir only. SummitPost the-knife/1043619 not opened (403 site)."
+ },
+ "co_uncompahgre_peak_south_ridge": {
+  "area": "co_uncompahgre_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=unco1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 2"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-uncompahgre-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Class 2"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Nellie Creek (4WD); 2WD parking on Henson Creek Road",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=unco1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Nellie Creek 11,400 ft; 2WD figures also given"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-uncompahgre-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Nellie Creek (4WD) or 2WD parking on Henson Creek Road"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 11400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=unco1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Nellie Creek trailhead 11,400 feet"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=unco1",
+      "retrieved_at": "2026-11-14",
+      "fact": "3,000 ft from 4WD TH; 5,500 ft from 2WD TH"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-uncompahgre-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,000 ft (5,500 from 2WD parking)"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=unco1",
+      "retrieved_at": "2026-11-14",
+      "fact": "7.5 miles RT from 4WD TH; 15.5 from 2WD"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-uncompahgre-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 7.5 miles (15.5 from 2WD)"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Reach south ridge near 12,900 ft, gain crest near 13,800 ft; crux is ~150 ft of steep loose rock on the west face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=unco1",
+      "retrieved_at": "2026-11-14",
+      "fact": "South ridge near 12,900; crest near 13,800; crux 150 ft steep loose rock below upper slopes"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall rated considerable; exposure moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=unco1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: rockfall considerable, exposure moderate"
+     }
+    ]
+   }
+  ],
+  "note": "Summit: app has 14,302; 14ers and thenextsummit state 14,318 (LiDAR) - peak figure, not recorded as a route fact."
+ },
+ "co_wetterhorn_peak_southeast_ridge": {
+  "area": "co_wetterhorn_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wett1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 3"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wetterhorn-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Class 3"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Matterhorn Creek",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wett1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Matterhorn Creek 10,800 ft"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wetterhorn-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Matterhorn Creek (4WD), 10,800 feet"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wett1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,300 ft"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wetterhorn-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 3,300 feet of gain from the 4WD trailhead"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wett1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 7 mi round trip"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wetterhorn-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 7 miles round trip from the 4WD trailhead"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14021,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wett1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,021 feet"
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wetterhorn-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation 14,021 feet (LiDAR)"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike north about 3/4 mile to a junction near 11,200 ft; exit trees at 11,600 ft; take Wetterhorn trail near 12,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wett1",
+      "retrieved_at": "2026-11-14",
+      "fact": "0.75 mile to junction near 11,200; exit trees 11,600; left on Wetterhorn trail near 12,000"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July to mid-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/wetterhorn-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season July to mid-September for mostly dry rock"
+     }
+    ]
+   }
+  ],
+  "note": "App trailhead_elev 10872 vs 14ers 10,800 (within tolerance). summitborn distance/gain copied from 14ers, not counted."
+ },
+ "co_wham_ridge": {
+  "area": "co_vestal_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757885/wham-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wham Ridge rated 5.4"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757885/wham-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, Grade III"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757885/wham-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 2000 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757885/wham-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "10 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Rit Burrows, Werner Schnackenberg and Jim Patterson, July 18, 1941",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757885/wham-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Rit Burrows, Werner Schnackenberg, Jim Patterson, 7/18/1941"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Set of stoppers, a few larger hexes, finger-to-hand cams (#0.5-2 Camalots used most); two old pitons seen",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757885/wham-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stoppers, larger hexes, finger to hand cams; only fixed gear two old pitons"
+     }
+    ]
+   }
+  ],
+  "note": "Second source not yet confirmed (see later entries if added)."
+ },
+ "nh_tuckerman_ravine_duchess_the": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123689800/the-duchess",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Steep Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123689800/the-duchess",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123689800/the-duchess",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 1000 ft"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Pinkham Notch to Hermit Lake Shelters is 2.4 miles up the Tuckerman Ravine Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shelters sit 2.4 miles up the Tuckerman Ravine Trail, half a mile below the ravine; park at AMC Pinkham Notch"
+     },
+     {
+      "url": "https://newenglandoutside.com/2013/01/25/a-tuckermans-ravine-ascent-via-left-gully/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes the 2.4 mile hike from Pinkham Notch to Hermit Lake"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (camping permit bought at AMC Pinkham Notch Visitor Center; no reservations, no overnight pets)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping permit purchased at AMC Pinkham Notch; reservations not accepted; no overnight pets"
+     }
+    ]
+   }
+  ],
+  "note": "Hermit Lake approach facts are about the shared Tuckerman Ravine Trail approach, not the gully itself."
+ },
+ "nh_tuckerman_ravine_left_gully": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296425/left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Mod. Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296425/left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296425/left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 1000 ft"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Final 55-degree headwall can be steep snow or a huge cornice; skirt it left through rocks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296425/left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Final stretch is a 55 degree headwall, steep snow or a large cornice; skirt to climber's left"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Right Gully or Lobster Claw give easy snow descents back into the ravine",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117296425/left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Right Gully and Lobster Claw offer easy snow descents back into the ravine"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pinkham Notch",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking for Hermit Lake is at AMC Pinkham Notch"
+     },
+     {
+      "url": "https://newenglandoutside.com/2013/01/25/a-tuckermans-ravine-ascent-via-left-gully/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party parked at Pinkham Notch and hiked the Tuckerman Ravine Trail"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Pinkham Notch to Hermit Lake Shelters is 2.4 miles up the Tuckerman Ravine Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shelters sit 2.4 miles up the Tuckerman Ravine Trail, half a mile below the ravine; park at AMC Pinkham Notch"
+     },
+     {
+      "url": "https://newenglandoutside.com/2013/01/25/a-tuckermans-ravine-ascent-via-left-gully/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes the 2.4 mile hike from Pinkham Notch to Hermit Lake"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (camping permit bought at AMC Pinkham Notch Visitor Center; no reservations, no overnight pets)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping permit purchased at AMC Pinkham Notch; reservations not accepted; no overnight pets"
+     }
+    ]
+   },
+   {
+    "field": "descent_alt",
+    "value": "One party descended via Boott Spur after climbing Left Gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://newenglandoutside.com/2013/01/25/a-tuckermans-ravine-ascent-via-left-gully/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Plan was to climb Left Gully and descend via Boot Spur"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "nh_tuckerman_ravine_side_chute": {
+  "area": "nh_tuckerman_ravine",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125750947/side-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Steep Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125750947/side-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 230,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125750947/side-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 230 ft"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Pinkham Notch to Hermit Lake Shelters is 2.4 miles up the Tuckerman Ravine Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shelters sit 2.4 miles up the Tuckerman Ravine Trail, half a mile below the ravine; park at AMC Pinkham Notch"
+     },
+     {
+      "url": "https://newenglandoutside.com/2013/01/25/a-tuckermans-ravine-ascent-via-left-gully/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes the 2.4 mile hike from Pinkham Notch to Hermit Lake"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hermit Lake Shelters (camping permit bought at AMC Pinkham Notch Visitor Center; no reservations, no overnight pets)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r09/whitemountain/recreation/hermit-lake-shelters",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping permit purchased at AMC Pinkham Notch; reservations not accepted; no overnight pets"
+     }
+    ]
+   }
+  ],
+  "note": "Hermit Lake approach facts are about the shared Tuckerman Ravine Trail approach."
+ },
+ "or_aneroid_lake_peaks_pete_s_point": {
+  "area": "or_aneroid_lake_peaks",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106008112/petes-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Easy Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106008112/petes-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 750 ft, Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 750,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106008112/petes-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir about 45 degrees for 750 feet"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Wallowa Lake trailhead hike about 6 miles to Aneroid Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106008112/petes-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the Wallowa Lake trailhead hike 6 miles up to Aneroid Lake"
+     }
+    ]
+   },
+   {
+    "field": "route_note",
+    "value": "Peak sits west of Tenderfoot Pass above the West Fork Wallowa valley; easily ascended along its northern horn from Tenderfoot Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Petes_Point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pete's Point lies west of Tenderfoot Pass; easily climbed along its northern horn from the pass"
+     }
+    ]
+   }
+  ],
+  "note": "Summit elevation conflicts: MP says 9695 ft, oregonhikers says 9,675 ft - not recorded."
+ },
+ "or_broken_top_nine_o_clock_gully": {
+  "area": "or_broken_top",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756413/nine-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Steep Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756413/nine-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756413/nine-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 300 ft"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_diamond_peak_southwest_ridge": {
+  "area": "or_diamond_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200328362/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Southwest Ridge rated Easy Snow"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pioneer Gulch Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200328362/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start from Pioneer Gulch Trailhead"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200328362/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Pioneer Gulch Trailhead it is 7.5 miles car to car"
+     }
+    ]
+   },
+   {
+    "field": "gain_note",
+    "value": "A little over 4,000 ft car to car",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200328362/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "A little over 4000 feet of elevation gain"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons may be needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200328362/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe/crampons may be necessary"
+     }
+    ]
+   },
+   {
+    "field": "season_note",
+    "value": "Most accessible route in winter when the Summit Lake road is closed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200328362/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most accessible route in winter when the road to Summit Lake is closed"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project could be read; SummitPost pages for this route (summitpost.org/pioneer-gulch-southwest-ridge/168184) not opened (SummitPost returns 403 in this session). Gain given as \"a little over 4000\" so kept as text, not an integer."
+ },
+ "or_east_side_2_black_spider_fric_amos": {
+  "area": "or_east_side_2",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "WI4 M4+ PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120227368/black-spider-fric-amos",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated WI4 M4+ PG13"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120227368/black-spider-fric-amos",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120227368/black-spider-fric-amos",
+      "retrieved_at": "2026-11-14",
+      "fact": "1200 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120227368/black-spider-fric-amos",
+      "retrieved_at": "2026-11-14",
+      "fact": "3 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bill Amos and Dustin Fric, March 2010",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120227368/black-spider-fric-amos",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Bill Amos & Dustin Fric, March 2010"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Crux pitch is a full 60 m of sustained ice (can be split)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103847-tr-wyeast-mt-hood-fric-amos-01232021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The crux pitch is a full 60m or could be broken up; tricky, sustained, good ice"
+     }
+    ]
+   },
+   {
+    "field": "approach_note",
+    "value": "An easy ice slot right of the original first pitch is an alternative start",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103847-tr-wyeast-mt-hood-fric-amos-01232021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Used an approach pitch right of the original following an easy ice slot"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_east_side_2_black_spider_three_little_monkeys_burkhardt_getlin": {
+  "area": "or_east_side_2",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "WI4+ M5- Steep Snow X",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114313254/black-spider-three-little-monkeys-burkhardt-getlin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated WI4+ M5- Steep Snow X"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114313254/black-spider-three-little-monkeys-burkhardt-getlin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade IV"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114313254/black-spider-three-little-monkeys-burkhardt-getlin",
+      "retrieved_at": "2026-11-14",
+      "fact": "1200 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114313254/black-spider-three-little-monkeys-burkhardt-getlin",
+      "retrieved_at": "2026-11-14",
+      "fact": "6 pitches"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_east_side_2_newton_clark_headwall": {
+  "area": "or_east_side_2",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203229319/newton-clark-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Steep Snow"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203229319/newton-clark-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 1450 ft"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mount Hood Meadows",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://wildsnow.com/26393/trip-report-mount-hoods-newton-clark-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party skinned up from Mount Hood Meadows"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5715,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://wildsnow.com/26393/trip-report-mount-hoods-newton-clark-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route beta: total ascent 5715 ft"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "5-8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://wildsnow.com/26393/trip-report-mount-hoods-newton-clark-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route beta: round trip 5-8 hours"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Chutes from the summit can exceed 50 degrees over cliffs; rockfall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://wildsnow.com/26393/trip-report-mount-hoods-newton-clark-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit chutes can exceed 50 degrees over cliffs; a rock came off a nearby cliff"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_mt_mcloughlin_east_ridge": {
+  "area": "or_mt_mcloughlin",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125237177/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "East Ridge rated Easy Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125237177/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, Grade II"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3920,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Mount_McLoughlin_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3920 ft, out and back from Mount McLoughlin Trailhead"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/fremont-winema/recreation/trails/mt-mcloughlin-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead to the top involves an elevation gain of about 4,000 feet"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Mount_McLoughlin_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 9.6 mi round trip"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/fremont-winema/recreation/trails/mt-mcloughlin-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "The trail to the summit is 5 miles long"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9495,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Mount_McLoughlin_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 9,495 ft"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mount McLoughlin Trailhead (alt: PCT from Summit Sno-Park on Hwy 140 adds a couple of miles each way)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Mount_McLoughlin_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start point Mount McLoughlin Trailhead"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/fremont-winema/recreation/trails/mt-mcloughlin-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. McLoughlin Trailhead; PCT from Summit Sno Park on Hwy 140 adds a couple miles each way"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Good trail 1.1 mi to the first PCT junction, then about 3 mi of smooth trail before the rocky, technical ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125237177/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "1.1 miles to first PCT intersection, then around 3 miles of good trail before it gets technical"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Final ~600 ft is scree or snow to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125237177/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Final 600 ft of scree or snow leads to the summit"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late spring to mid-fall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Mount_McLoughlin_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "Season: late spring to mid-fall"
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No water along the summit trail; carry enough",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/fremont-winema/recreation/trails/mt-mcloughlin-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "No water along the summit trail; carry enough liquids"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Within the Sky Lakes Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/fremont-winema/recreation/trails/mt-mcloughlin-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. McLoughlin lies within the Sky Lakes Wilderness"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Hikers get lost each year on the descent by leaving the ascent route (e.g. the southern cinder slope); if lost head east or southeast to the PCT or Hwy 140",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/fremont-winema/recreation/trails/mt-mcloughlin-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "People get lost descending a different route; if lost travel east or southeast to PCT or Highway 140"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the same way as the ascent",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Mount_McLoughlin_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pick your way down the same way you came up"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/fremont-winema/recreation/trails/mt-mcloughlin-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns against descending a different route than used to climb"
+     }
+    ]
+   }
+  ],
+  "note": "Distance stated two ways: USFS 5 mi trail (one way) and oregonhikers 9.6 mi RT; both kept as stated. Neither page names the East Ridge, but both describe the standard trail route that MP calls the East Ridge."
+ },
+ "or_north_ridge_2": {
+  "area": "or_mt_washington",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106204660/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Ridge rated 5.3"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106204660/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Snow, Alpine, 2 pitches"
+     },
+     {
+      "url": "https://timberlinemtguides.com/trip/north-ridge-washington/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A couple of short pitches of low 5th class rock"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "1923, E. McNeal and party",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106204660/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: 1923 by E. McNeal and party"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106204660/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach is the crux, about 12 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "PCT trailhead off the Hoodoo/Big Lake turnoff, one mile west of Santiam Pass on US 20/126",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106204660/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "US 20-126 to Hoodoo Ski Bowl/Big Lake turnoff one mile west of Santiam Pass, then PCT trailhead"
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Descent by rappel; route passes two rappel stations",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106204660/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "First and second rap stations visible on the route"
+     },
+     {
+      "url": "https://timberlinemtguides.com/trip/north-ridge-washington/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route has a steep rappel"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Small cams most useful",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106204660/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Small cams most useful on this route"
+     }
+    ]
+   }
+  ],
+  "note": "Grade: MP 5.3 vs Timberline Mountain Guides \"up to 5.4\" - kept single-source. App overview says ~11 mi RT; MP says 12. TMG lists summit 7,795 ft vs app 7,751."
+ },
+ "or_north_side_cathedral_ramp": {
+  "area": "or_north_side",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "WI3 M3 Steep Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120567268/cathedral-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated WI3 M3 Steep Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120567268/cathedral-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120567268/cathedral-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "600 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120567268/cathedral-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "4 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nelson, Sweeney, Tarry and Zavortink, April 2021 (first known ascent)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120567268/cathedral-ramp",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Nelson, Sweeney, Tarry, Zavortink, April 2021 (first known/recorded)"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_north_side_ravine": {
+  "area": "or_north_side",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "WI3 M4 Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618470/ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated WI3 M4 Mod. Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618470/ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618470/ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "400 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618470/ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "2 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "May 12, 2012, Anastasia Blagoveshchenskaya and Vitaliy Musiyenko",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618470/ravine",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA May 12, 2012 (Anastasia Blagoveshchenskaya and Vitaliy Musiyenko)"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_north_side_sunshine_route": {
+  "area": "or_north_side",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107694618/sunshine-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Mod. Snow"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107694618/sunshine-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 5300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107694618/sunshine-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 5300 ft"
+     }
+    ]
+   },
+   {
+    "field": "approach_note",
+    "value": "If the Cloud Cap road is open it saves nearly 4 miles and a bit over 2,000 ft versus the Tilly Jane trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107694618/sunshine-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road to Cloud Cap open cuts nearly 4 miles and a bit over 2,000 ft on the Tilly Jane trail"
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Cloud Cap trailhead is about 10 miles of dirt road off the Cooper Spur road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thegorgeismygym.com/eliot-glacier-from-cloud-cap/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow the dirt road approximately 10 miles to the Cloud Cap trailhead"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "A large stone cairn marks the end of the ridgetop trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thegorgeismygym.com/eliot-glacier-from-cloud-cap/",
+      "retrieved_at": "2026-11-14",
+      "fact": "After roughly 1.5 miles a large stone cairn marks the end of the ridgetop trail"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_north_sister_2_kids": {
+  "area": "or_north_sister",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "AI4-5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125051366/kids",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated AI4-5"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125051366/kids",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice, Alpine, 200 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125051366/kids",
+      "retrieved_at": "2026-11-14",
+      "fact": "2 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "First recorded ascent 2023, Art Vee and Nick Nasca",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125051366/kids",
+      "retrieved_at": "2026-11-14",
+      "fact": "FRA: 2023 Art Vee, Nick Nasca"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Heavy spindrift in the chute even on clear days",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/125051366/kids",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber was blasted with spindrift the entire time on a clear, moderately windy day"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_north_sister_2_thayer_glacier_headwall": {
+  "area": "or_north_sister",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "WI1 M3 PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111939240/thayer-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated WI1 M3 PG13"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111939240/thayer-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mixed, Ice, Alpine, 3500 ft"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pole Creek Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111939240/thayer-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at the Pole Creek Trailhead"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About two miles in, leave the trail and head for the east side of North Sister",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111939240/thayer-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "About two miles in go off trail toward the east side of North Sister"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Axe and helmet (a must)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/24947-tr-north-sister-thayer-glacier-headwall-5312004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear: walking axe, helmet a must, skis for descent"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ }
+}
