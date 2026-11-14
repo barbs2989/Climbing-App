@@ -8,7 +8,7 @@
 //      sits in (another climber's profile) still swipe.
 // And that every page wired to it still is: removing a call silently drops the gesture.
 import { readFileSync } from "node:fs";
-import { swipeTarget, ownsGesture, SWIPE_COMMIT, SWIPE_FLICK_PX } from "../lib/pageSwipe.js";
+import { swipeTarget, ownsGesture, swipeOwner, SWIPE_COMMIT, SWIPE_FLICK_PX } from "../lib/pageSwipe.js";
 
 let bad = 0;
 const ok = (cond, what) => { if (!cond) { bad++; console.error("✗ " + what); } };
@@ -67,7 +67,21 @@ for (const f of WIRED) {
 const dab = readFileSync(new URL("../lib/DbAreaBrowser.jsx", import.meta.url), "utf8");
 ok(/data-swipe=\{screen !== "areas" \? "off" : undefined\}/.test(dab), "Climbs' Route finder / Near me / Objectives screens opt out of the section swipe");
 const app = readFileSync(new URL("../ClimbMatch.jsx", import.meta.url), "utf8");
-ok(/const _secOn=\(tab==="today"\|\|\(tab==="routes"&&!selRoute&&!dbAreaCtx\)\|\|\(tab==="crew"&&crewView==="crews"/.test(app), "the section swipe is on only for Home, the Climbs list and the Crews list");
+ok(/const _secOn=\(tab==="today"\|\|\(tab==="routes"&&!selRoute&&!dbAreaCtx\)\|\|\(tab==="crew"&&crewView==="crews"/.test(app), "the section swipe is on for Home, the Climbs list (no climb/area) and the Crews list (no chat/view)");
+// The four sections with their own tab row (Partners, Logbook, Ranks, Profile) chain on to the next section.
+ok(/!safetyCrew\)\|\|tab==="discover"\|\|tab==="logbook"\|\|tab==="ranks"\|\|tab==="me"\);/.test(app), "the sections with their own tab row are on too (their row goes first, then the section beside it)");
+
+// ---- 4. nested swipes: who moves (swipeOwner) ------------------------------------------------
+// [inner page tabs, outer sections]. dx < 0 = finger moving left = next.
+const inMid = { canPrev: true, canNext: true }, inFirst = { canPrev: false, canNext: true }, inLast = { canPrev: true, canNext: false };
+const secMid = { canPrev: true, canNext: true }, secLast = { canPrev: true, canNext: false };
+ok(swipeOwner([inMid, secMid], -50) === inMid, "a page's tab row goes first while it has a tab that way");
+ok(swipeOwner([inLast, secMid], -50) === secMid, "past a page's LAST tab, a left swipe goes on to the next section");
+ok(swipeOwner([inLast, secMid], 50) === inLast, "...but a right swipe there is the page's previous tab");
+ok(swipeOwner([inFirst, secMid], 50) === secMid, "before a page's FIRST tab, a right swipe goes to the section before");
+ok(swipeOwner([inLast, secLast], -50) === inLast, "nowhere to go (Profile's last tab, last section): the page stretches and stays");
+ok(swipeOwner([secMid], -50) === secMid, "a section with no tab row of its own takes it");
+ok(swipeOwner([], -50) === null, "no swipe under the finger: nobody");
 
 if (bad) { console.error(bad + " page-swipe check(s) failed."); process.exit(1); }
 console.log("page swipe: tab choice, gesture ownership and " + WIRED.length + " wired pages OK.");
