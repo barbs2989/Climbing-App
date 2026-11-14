@@ -75,6 +75,9 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
         </div>
         {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + tx(" — tap to remove") : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
       </div>
+      {/* SAVE vs LIST ME (owner 2026-11-14: "whats the difference between saved areas and my areas?"). The page's
+          Save area button is a private bookmark; this listing is what other climbers can see. One line says so. */}
+      {on ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 2 }}>{listed ? "Climbers searching for partners here can find you. Saving the area is separate — only you see your saved areas." : "Listing makes you findable by climbers searching here. Saving the area just bookmarks it — only you see it."}</div> : null}
       {/* Once listed, the follow-up — when you can climb here and what — is a real, full-width
           control, not a bare word. It and "See all" used to spread `BTN_LINK` as an object; it is a
           FUNCTION of C, so both rendered as the browser's default grey button: tiny, hard to see,
