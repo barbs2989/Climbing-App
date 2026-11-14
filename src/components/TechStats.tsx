@@ -256,6 +256,9 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
     /* A missing crag-wide fact (AREA_FACT_FIELD) is marked with the area's noun, so its Add edits the area once
        for every route on it; the rest stay the route's. All of them render on ONE "Not on file yet" line. */
     _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,onEditArea&&(AREA_FACT_FIELD as Record<string,string>)[k]?_arNoun:true]);});
+    /* No SEASON or WET in a sport, trad, bouldering or top-rope Overview's CONDITIONS (owner, 2026-11-14), neither
+       a value nor a "+ Season"/"+ Wet" Add. The header strap still states the season. Aid keeps both. */
+    if(["sport","trad","bouldering","toprope"].includes(disc))facts.splice(0,facts.length,...facts.filter(function(f){return f[0]!=="Season"&&f[0]!=="Wet";}));
     const _secL=new Set(CRAG_FACT_SECTIONS.flatMap(function(s){return s[2];}));
     for(let i=stats.length-1;i>=0;i--){if(_secL.has(stats[i][0])){facts.push([stats[i][0],<span style={{color:stats[i][2],fontWeight:700}}>{stats[i][1]}</span>]);stats.splice(i,1);}}
     if(part){const sec=CRAG_FACT_SECTIONS.find(function(s){return s[0]===part;});const rows=sec?sec[2].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[]:[];return !rows.length?null:part==="rack"?<div style={{marginTop:-6,marginBottom:6,borderBottom:"1px solid "+C.border}}><CragFactRows rows={rows} onEdit={onEdit} onEditArea={onEditArea}/></div>:<CragFactSection title={(sec as [string,string,string[]])[1]} rows={rows} onEdit={onEdit} onEditArea={onEditArea}/>;}

@@ -340,10 +340,11 @@ for (const d of [...CRAG, "alpine"]) {
     const factsHead = d === "bouldering" ? "PROBLEM FACTS" : "ROUTE FACTS";
     if (!t.includes(factsHead)) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ${factsHead} — this section checked nothing`);
     if (d === "bouldering" && t.includes("ROUTE FACTS")) fail("bare bouldering problem: its facts card is titled ROUTE FACTS — a boulder line is a PROBLEM");
-    const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspect", "Season", "Rock quality", "Wet"],
-      sport: ["Location", "Bolts", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
-      trad: ["Location", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"],
-      toprope: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
+    // No Season or Wet on a sport, trad, top-rope or bouldering Overview (owner, 2026-11-14); aid keeps both.
+    const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspect", "Rock quality"],
+      sport: ["Location", "Bolts", "Protection", "Anchor", "Aspect", "Rock quality"],
+      trad: ["Location", "Protection", "Anchor", "Aspect", "Rock quality", "Fixed gear"],
+      toprope: ["Location", "Anchor", "Aspect", "Rock quality"],
       aid: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"] }[d];
     if (!WANT) fail(`ANCHOR LOST: no expected fact list for crag discipline ${d} — add one`);
     // ONE LINE PER SECTION (owner, 2026-11-13): a crag route lacked 8-11 facts on 95% of 303,571 routes, so
@@ -367,32 +368,43 @@ for (const d of [...CRAG, "alpine"]) {
   // CRAG-WIDE FACTS (owner, 2026-11-13: consolidate to the crag, sub-area or peak). A route with no season of its
   // own shows its area's (or an ancestor's); and where the page can open the area's editor, the missing
   // Season and Aspect are added to the AREA ("+ Season · crag"), while a route fact (Location) stays the route's.
+  // Read on AID: sport, trad, top-rope and bouldering Overviews carry no Season (owner, 2026-11-14), checked below.
   {
-    const withSeason = { ...bare("sport", "5.10a"), _dbArea: { ...bare("sport", "5.10a")._dbArea, seasonMonths: [4, 5, 6, 7, 8, 9, 10] } };
+    const withSeason = { ...bare("aid", "5.10a"), _dbArea: { ...bare("aid", "5.10a")._dbArea, seasonMonths: [4, 5, 6, 7, 8, 9, 10] } };
     const sg1 = segs(render(withSeason, "overview"));
     const si = sg1.indexOf("Season");
     if (si < 0 || !/\(the crag(?:'|&#x27;)s season\)/.test(sg1[si + 1] || "")) fail(`crag season: a route on a crag with season_months Apr-Oct shows Season as ${JSON.stringify(si < 0 ? null : sg1[si + 1])} — expected the crag's season`);
     else if (sg1.includes("+ Season")) fail("crag season: Season is still offered as missing although the crag states one");
     else ok("crag season: a route with no season of its own shows its crag's, marked as the crag's");
-    const ancestor = { ...bare("trad", "5.9"), _dbArea: { ...bare("trad", "5.9")._dbArea, areaType: "wall", seasonMonths: null, ancestorSeasonMonths: [5, 6, 7, 8, 9] } };
+    const ancestor = { ...bare("aid", "5.9"), _dbArea: { ...bare("aid", "5.9")._dbArea, areaType: "wall", seasonMonths: null, ancestorSeasonMonths: [5, 6, 7, 8, 9] } };
     const sg2 = segs(render(ancestor, "overview"));
     const ai = sg2.indexOf("Season");
     if (ai < 0 || !/\(the area(?:'|&#x27;)s season\)/.test(sg2[ai + 1] || "")) fail(`crag season: a wall with no season under a crag that has one shows ${JSON.stringify(ai < 0 ? null : sg2[ai + 1])} — expected the ancestor's season`);
     else ok("crag season: a wall with none inherits its parent area's season");
-    const sg3 = segs(render(bare("sport", "5.10a"), "overview", { onSuggestAreaEdit: () => {} }));
+    const sg3 = segs(render(bare("aid", "5.10a"), "overview", { onSuggestAreaEdit: () => {} }));
     if (!sg3.includes("+ Season · crag") || !sg3.includes("+ Aspect · crag")) fail(`crag-wide Add: with the area editor wired, Season/Aspect are not offered for the whole crag (${sg3.filter((x) => /^\+ (Season|Aspect)/.test(x)).join(", ") || "neither found"})`);
     else if (!sg3.includes("+ Location") || sg3.includes("+ Location · crag")) fail("crag-wide Add: Location is a fact of the ROUTE (where it starts) and must stay the route's own Add");
     else ok("crag-wide Add: Season and Aspect go to the crag's editor; Location stays the route's");
-    const sg4 = segs(render({ ...bare("sport", "5.10a"), _dbArea: { ...bare("sport", "5.10a")._dbArea, areaType: "area" } }, "overview", { onSuggestAreaEdit: () => {} }));
+    const sg4 = segs(render({ ...bare("aid", "5.10a"), _dbArea: { ...bare("aid", "5.10a")._dbArea, areaType: "area" } }, "overview", { onSuggestAreaEdit: () => {} }));
     if (sg4.some((x) => / · (crag|area)$/.test(x))) fail("crag-wide Add: an area the area page does not let climbers edit (area_type 'area') still sends Season/Aspect to its editor");
     else ok("crag-wide Add: on a non-editable area type, Season/Aspect fall back to the route's own Add");
+  }
+  // NO SEASON OR WET on a sport, trad, top-rope or bouldering Overview (owner, 2026-11-14): not the route's own,
+  // not the crag's, and no "+ Season" / "+ Wet" Add. Aid keeps both (asserted above and in WANT).
+  for (const d of ["sport", "trad", "toprope", "bouldering"]) {
+    const r = { ...bare(d, "V3"), season: "ZZSEASONZZ", wet: "ZZWETZZ", _dbArea: { ...bare(d, "V3")._dbArea, seasonMonths: [4, 5, 6, 7, 8, 9, 10] } };
+    const sg = segs(render(r, "overview", { onSuggestAreaEdit: () => {} }));
+    const bad = ["Season", "Wet", "ZZWETZZ"].filter((l) => sg.includes(l)).concat(sg.filter((x) => /^\+ (Season|Wet)\b/.test(x)));
+    if (!sg.includes("CONDITIONS")) fail(`ANCHOR LOST: ${d} overview lacks its CONDITIONS section — this check read nothing`);
+    else if (bad.length) fail(`${d} overview: CONDITIONS still shows Season or Wet (${bad.join(", ")})`);
+    else ok(`${d} overview: no Season or Wet in CONDITIONS, even with both on file`);
   }
   for (const d of ["sport", "trad", "toprope", "aid"]) {
     const r = { ...bare(d, "5.10a"), pitches: 2, bolts: 9, guideStars: 3, aspect: "SW", season: "Apr-Oct", descent: "Lower from chains.",
       altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
     const html = render(r, "overview");
     const t = text(html), sg = segs(html);
-    const want = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    const want = ["Reputation", "Bolts", "Descent", "Aspect"].concat(d === "aid" ? ["Season"] : []).concat(["Also called", "Variations", "First Free Ascent", "First Winter Ascent"]).filter((l) => !sg.includes(l));
     if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
     else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
       fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);
