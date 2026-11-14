@@ -39,7 +39,8 @@ function useSavedMap(routeId) {
 
 const btn = { padding: "7px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 12.5, fontWeight: 700, cursor: "pointer", minHeight: 36 };
 
-export function SaveMapOffline({ routeId, notify }) {
+/* `lead` is the route's Download GPX button: it shares this row so the two ways to take the map away sit side by side. */
+export function SaveMapOffline({ routeId, notify, lead }) {
   const [info, reload] = useSavedMap(routeId);
   const [busy, setBusy] = useState(false), [prog, setProg] = useState(null);
   const qc = useQueryClient();
@@ -59,9 +60,10 @@ export function SaveMapOffline({ routeId, notify }) {
     unpackRouteOffline(routeId).then(function () { say("Map removed from this device"); }, function () { say("Couldn’t remove the map — it’s still on this device."); })
       .finally(function () { reload(); qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };
-  if (info === undefined) return null;
+  if (info === undefined) return lead ? <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 8 }}>{lead}</div> : null;
   const pct = mapPct(info), partial = info && info.missing > 0;
   return <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
+    {lead}
     {busy ? <span role="status" style={{ fontSize: 12.5, color: C.textSub, fontWeight: 600 }}>{"Saving map… " + (prog && prog.total ? Math.round(100 * prog.done / prog.total) + "%" : "")}</span>
       : info ? <>
         <span style={{ fontSize: 12.5, color: partial ? C.amber : C.green, fontWeight: 700, flex: 1, minWidth: 0 }}>{partial ? pct + "% of the map saved offline" : "✓ Map saved offline · " + savedAgo(info.at)}</span>
