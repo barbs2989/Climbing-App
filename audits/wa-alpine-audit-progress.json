@@ -1,11 +1,11 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
-  "pass": 8,
-  "last_processed_id": "wa_witches_tower_west_buttress",
+  "pass": 9,
+  "last_processed_id": "wa_alpine_lookout_round_mountain_trail",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 552 complete. Continuing id-ascending scope from wa_witches_tower_west_buttress. One confirmed error fixed this batch, the same self-consistency pattern as recent batches: wa_whistler_mountain_north_ridge high_point_ft (7792) disagreed with its own summit waypoint and its parent area row (both 7790, matching Wikipedia); fixed to 7790. One item flagged for human review with no fix proposed: wa_winchester_mountain_south_trail says the lookout was 'restored in 1982', but the structure's own NRHP nomination lists the restoration as 1985, and 1982 may instead be when the restoration deal was struck -- genuine cross-source date ambiguity, not a clear error. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
+  "pass_note": "Pass 8 completed with this batch (wa_wolframite_mountain_scramble was the last in-scope route alphabetically; wa_wright_pond and wa_zool_patch were the only other candidates after it and both are filed under area_type='crag', not 'peak', so out of scope). Pass 9 then opened from the beginning of id-ascending scope and picked up the first 6 routes. Two confirmed self-consistency errors fixed: wa_action_potential's high_point_ft (8492) disagreed with its own 'Burgundy Spire Summit' waypoint and the areas row for wa_burgundy_spire (both 8483, matching Lemke Climbs); fixed to 8483. areas.wa_agnes_mountain's elevation_ft (8131) disagreed with its own route wa_agnes_mountain_south_ridge's 'Agnes Mountain summit' waypoint at the identical coordinates (8119, matching Wikipedia's NAVD88 figure); fixed to 8119. One item flagged for human review, no fix proposed: wa_a_servant_to_liberty -- published climbing literature (AAC, Cascade Climbers) calls this Liberty Bell East Face route 'A Slave to Liberty', not 'A Servant to Liberty' as stored; this may be a deliberate editorial rename rather than a data error, and renaming a route is outside what this audit should decide unilaterally. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -10973,6 +10973,24 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-11-14-batch-552.sql",
       "note": "wa_whistler_mountain_north_ridge's high_point_ft (7792) didn't match its own summit waypoint (7790) or the parent area row's elevation_ft (7790), which agrees with Wikipedia; fixed to 7790. wa_winchester_mountain_south_trail's overview says the 1935 lookout was 'restored in 1982' by the Mount Baker Club, but the structure's own NRHP nomination lists restoration as 1985, with 1982 apparently the year the restoration deal was struck rather than completed -- flagged, no fix proposed, genuine date ambiguity across sources. Three candidates in between (wa_western_dihedral, wa_wright_pond, wa_zool_patch) were skipped as out of scope: all three areas are area_type='crag', not 'peak'. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged."
+    },
+    {
+      "batch_number": 553,
+      "date": "2026-11-14",
+      "route_ids": [
+        "wa_wolframite_mountain_scramble",
+        "wa_a_servant_to_liberty",
+        "wa_abernathy_peak_south_ridge",
+        "wa_accendo_lunae_lib_west_face_var",
+        "wa_action_potential",
+        "wa_agnes_mountain_south_ridge",
+        "wa_alpine_lookout_round_mountain_trail"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-11-14-batch-553.sql",
+      "note": "Closes pass 8 / opens pass 9. wa_action_potential's high_point_ft (8492) contradicted its own summit waypoint and the areas.wa_burgundy_spire row (both 8483, confirmed by Lemke Climbs); fixed to 8483. areas.wa_agnes_mountain's elevation_ft (8131) contradicted its own route's summit waypoint at the same coordinates (8119, confirmed by Wikipedia NAVD88); fixed to 8119. wa_a_servant_to_liberty flagged, no fix: AAC and Cascade Climbers trip reports name this route 'A Slave to Liberty', not the stored 'A Servant to Liberty' -- plausibly an intentional editorial rename rather than an error, so left for a human to decide. wa_abernathy_peak_south_ridge, wa_accendo_lunae_lib_west_face_var (FA party/date confirmed via AAC/Cascade Climbers), wa_alpine_lookout_round_mountain_trail, and wa_wolframite_mountain_scramble (8136 ft matches PeakVisor; WTA/SummitPost's 8137 is a 1-ft rounding difference, not a contradiction) all checked clean."
     }
   ],
   "outage_runs": [

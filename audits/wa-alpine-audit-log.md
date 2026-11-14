@@ -38987,3 +38987,45 @@ rather than anything web-indexed; left alone per the audit rule against fixing, 
 on, a claim with no actual source conflict).
 
 Next batch will continue id-ascending from `wa_witches_tower_west_buttress`.
+
+## 2026-11-14 — batch 553 (closes pass 8, opens pass 9)
+
+Checked `wa_wolframite_mountain_scramble`, the last in-scope route alphabetically — the only two
+candidates after it, `wa_wright_pond` and `wa_zool_patch`, both sit on crag areas
+(`wa_cutthroat_creek_wall_or_little_liberty_bell`, `wa_juno_tower`), not peaks, so pass 8 is
+complete. Pass 9 then opened from the start of id-ascending scope and picked up the next 6
+routes: `wa_a_servant_to_liberty`, `wa_abernathy_peak_south_ridge`,
+`wa_accendo_lunae_lib_west_face_var`, `wa_action_potential`, `wa_agnes_mountain_south_ridge`, and
+`wa_alpine_lookout_round_mountain_trail`.
+
+Two confirmed errors fixed this batch, both the same self-consistency pattern as recent batches:
+
+- `wa_action_potential`'s `high_point_ft` was stored as 8,492 ft, but the route's own "Burgundy
+  Spire Summit" waypoint already carries 8,483 ft, and so does the parent area row
+  (`wa_burgundy_spire`, `elevation_ft` 8,483) — matching Lemke Climbs' figure for the peak (8,483
+  ft / 2,586 m; SummitPost's 8,400 ft is a coarser rounding, not a contradiction). Fixed to 8,483
+  ft.
+- `areas.wa_agnes_mountain`'s `elevation_ft` was stored as 8,131 ft, but its own route
+  `wa_agnes_mountain_south_ridge` carries an "Agnes Mountain summit" waypoint at the identical
+  coordinates (48.3176, -120.9685) reading 8,119 ft — matching Wikipedia's NAVD88 figure for the
+  peak. This time the area row was the one field disagreeing with the route's own waypoint, not
+  the other way around. Fixed to 8,119 ft.
+
+One item flagged for human review, no fix proposed — not a clear data error:
+
+- `wa_a_servant_to_liberty` is stored under that name, but both the American Alpine Club's
+  publication of the first ascent and the first-ascent party's own Cascade Climbers trip report
+  call this Liberty Bell East Face route "A Slave to Liberty." This may be a deliberate editorial
+  rename (the word choice is sensitive enough that avoiding it looks intentional) rather than a
+  data error, and renaming a route based on a word-choice judgment is outside what this audit
+  should decide unilaterally — left for a human.
+
+**Clean:** `wa_wolframite_mountain_scramble` (8,136 ft matches PeakVisor exactly; WTA/SummitPost's
+8,137 ft is a 1-ft rounding difference, not a contradiction); `wa_abernathy_peak_south_ridge`
+(8,321 ft matches Lists of John's mapped figure and the area row); `wa_accendo_lunae_lib_west_face_var`
+(the 2012 Herrington/Bennett/Zimmerman FA is confirmed by the AAC's own publication and the FA
+party's blog/trip report — "earlier this summer" in the September trip-report post places the
+actual climb in the stored late-July window, not a conflict); `wa_alpine_lookout_round_mountain_trail`
+(6,237 ft matches the area row, no contradicting source found).
+
+Next batch will continue id-ascending from `wa_alpine_lookout_round_mountain_trail` (pass 9).
