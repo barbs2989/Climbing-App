@@ -1,5 +1,7 @@
--- 0431 — profiles: the API itself honours a climber's privacy choices, and signed-out visitors get only
--- the public card.
+-- 0432 — profiles: the API itself honours a climber's privacy choices, and signed-out visitors get only
+-- the public card. STEP 1 of 2: everything additive (the public_* columns, my_profile(), the trigger, the
+-- definer readers). The column grants described below are STEP 2 (supabase/profile-grants-step2.sql),
+-- applied in a later migration once this PR's client is live; see section 4.
 --
 -- Until now `profiles` was readable in full by `anon` and `authenticated` (table-level SELECT, policy
 -- "profiles public read" from 0095: every row except one whose owner blocked the reader). The privacy
@@ -68,15 +70,15 @@ alter table public.profiles
     generated always as (case when photos_public then photo_alts end) stored;
 
 comment on column public.profiles.public_name is
-  'name when show_name, else null. What other climbers and signed-out visitors can read (0431); the raw name is owner-only.';
+  'name when show_name, else null. What other climbers and signed-out visitors can read (0432); the raw name is owner-only.';
 comment on column public.profiles.public_photos is
-  'photos when photos_public, else empty. What other climbers can read (0431); the raw photos column is owner-only.';
+  'photos when photos_public, else empty. What other climbers can read (0432); the raw photos column is owner-only.';
 comment on column public.profiles.public_photo_alts is
-  'photo_alts when photos_public, else null (0431).';
+  'photo_alts when photos_public, else null (0432).';
 comment on column public.profiles.show_name is
-  'Show my real name publicly. Enforced by the API since 0431: other readers get public_name, which is null when this is false.';
+  'Show my real name publicly. Enforced by the API since 0432: other readers get public_name, which is null when this is false.';
 comment on column public.profiles.photos_public is
-  'Show my profile photos to other climbers. Enforced by the API since 0431: other readers get public_photos, which is empty when this is false.';
+  'Show my profile photos to other climbers. Enforced by the API since 0432: other readers get public_photos, which is empty when this is false.';
 
 -- ── 2. the owner's own full row ──────────────────────────────────────────────────────────────────────
 create or replace function public.my_profile()
@@ -106,19 +108,12 @@ begin
 end;
 $$;
 
--- ── 4. column privileges ─────────────────────────────────────────────────────────────────────────────
-revoke select on public.profiles from anon, authenticated;
-
-grant select (
-  id, username, public_name, avatar, bio, sport_grade, trad_grade, boulder_grade, disciplines, level,
-  climbing_since, created_at, show_name, photos_public, public_photos, public_photo_alts, resume_public,
-  show_on_ranks, is_admin
-) on public.profiles to anon, authenticated;
-
-grant select (
-  location, availability, avail_week, free_until, gender, climb_grades, hiking_speed_ft_hr, discoverable,
-  certifications, cert_expiry, skills, belay_devices
-) on public.profiles to authenticated;
+-- ── 4. column privileges: STEP 2, NOT IN THIS MIGRATION ───────────────────────────────────────────
+-- The revoke/grant that makes the columns above private lives in supabase/profile-grants-step2.sql and
+-- ships as its own migration only once the client from this PR has reached users. Applied together, every
+-- open tab still running the previous build (Pages deploys queue behind CI; the service worker serves the
+-- old bundle until it updates) would fail its select("*") profile reads, own profile at sign-in included.
+-- Until step 2 the table-level grant stands, so the new client and the old one both work.
 
 -- ── 5. the definer readers that handed out a hidden name ─────────────────────────────────────────────
 -- These run as the owner, so the grants above do not reach them, and each returned another climber's

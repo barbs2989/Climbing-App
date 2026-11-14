@@ -295,7 +295,7 @@ for (const [flag, spec] of Object.entries(SWITCHES)) {
 
 /* ── rule 2: an outward-facing column rides every climber-object SELECT ──────────────────── */
 const CLIMBER_SELECTS = [
-  // PARTNER_COLS lives in lib/profileCols.js since 0431, beside the column-grant aliases it goes through.
+  // PARTNER_COLS lives in lib/profileCols.js since 0432, beside the column-grant aliases it goes through.
   ["PARTNER_COLS", /export const PARTNER_COLS = "([^"]+)"/, read("lib/profileCols.js")],
   ["the connections select", /\.from\("profiles"\)\.select\(profileCols\("id,name,username,avatar,location,([^"]+)"/],
 ];

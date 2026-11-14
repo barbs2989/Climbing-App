@@ -42,7 +42,7 @@ const db = fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
 
 // ---- 1. THE SELECT MUST STILL FETCH IT. Without this the mapping has nothing to carry and the
 // assertions below would be about a field that never arrives.
-// PARTNER_COLS moved to lib/profileCols.js with 0431's column grants.
+// PARTNER_COLS moved to lib/profileCols.js with 0432's column grants.
 const colsSrc = fs.readFileSync(path.join(ROOT, "lib", "profileCols.js"), "utf8");
 const cols = (colsSrc.match(/const PARTNER_COLS = "([^"]*)"/) || [])[1];
 if (!cols) fail("ANCHOR LOST: PARTNER_COLS could not be read");
