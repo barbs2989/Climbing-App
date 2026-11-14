@@ -25,7 +25,7 @@ import { fileURLToPath } from "node:url";
 // question is asked. Without that, coverage would be a function of how much seed data exists.
 //
 // The popups no flag alone opens (NEEDS_EXTRA_STATE) are built by EXTRA_STATE_OPENERS via `?zx=`
-// and walked after the rest; Compare at 1280px, the only width it renders at.
+// and walked after the rest (an entry with a `viewport` is walked at that width).
 //
 // WHAT IT CANNOT SEE: popups no opener can build (listed as skipped, with why), a popup whose
 // only way out is a Cancel/Done (Edit profile's sticky Cancel·Save bar is that shape and is fine),
