@@ -24,8 +24,9 @@ const CASES = [
   {
     name: "1. getProfile discards the error again (the original defect)",
     file: AUTH, expect: "fail", needs: /throws on a read error/,
-    find: "  const { data, error } = await supabase.from(\"profiles\").select(\"*\").eq(\"id\", id).single();\n  if (error && error.code !== \"PGRST116\") throw error;\n  return data;",
-    repl: "  return (await supabase.from(\"profiles\").select(\"*\").eq(\"id\", id).single()).data;",
+    // Through my_profile() since 0434 (owner-only columns).
+    find: "  const { data, error } = await supabase.rpc(\"my_profile\").single();\n  if (error && error.code !== \"PGRST116\") throw error;\n  return data && data.id === id ? data : null;",
+    repl: "  return (await supabase.rpc(\"my_profile\").single()).data;",
   },
   {
     name: "2. the latch is set before awaiting and never released",

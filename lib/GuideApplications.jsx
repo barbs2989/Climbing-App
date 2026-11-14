@@ -170,7 +170,7 @@ export function GuideApplicationQueue({ notify, onViewProfile }) {
         const creds = g.guide_credentials || [];
         const docs = (g.guide_documents || []).filter((d) => !d.deleted_at);
         const unreviewed = creds.filter((c) => c.status === "pending").length;
-        const who = (g.profiles && g.profiles.name) || "A climber";
+        const who = (g.profiles && (g.profiles.name || (g.profiles.username ? "@" + g.profiles.username : null))) || "A climber";
         return (
           <div key={g.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 12px" }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>

@@ -40,6 +40,22 @@ supabase db push
 psql "$DATABASE_URL" -f supabase/seed.sql
 ```
 
+## Deploy edge functions
+CI does **not** deploy `functions/` — merging only changes the repo. Deploy by hand:
+```bash
+npm run deploy:functions          # all 8, to production
+```
+Use the script, not a bare `supabase functions deploy`. There is no `config.toml`, so each
+function's `verify_jwt` lives only on the server, and a bare deploy resets it to `true`.
+`screen-content` and `notify-accessibility-report` run with `verify_jwt=false`
+(`deploy:functions:public`); the other six keep `true` (`deploy:functions:jwt`). A new
+function goes into one of those two scripts. Check what is live with
+`supabase functions list --remote=ofuofhojhbcrcahuotya`.
+
+(Why not a `config.toml`? The Supabase GitHub integration reads it, and a partial one
+could reset production auth/API settings to defaults. Keep these flags in the scripts
+until someone writes a complete config pulled from the live project.)
+
 ## Verify it worked
 This originally verified the tiny demo seed (world => 14 total routes, utah => 11). Against
 the current DB (WA catalog loaded), use these to sanity-check the tree instead:

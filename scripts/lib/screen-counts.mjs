@@ -44,7 +44,8 @@ export const COUNT_GROUPS = [
     name: "objectives",
     // The label a climber reads, so a rename of the copy fails here rather than drifting.
     reads: [
-      { screen: "Home",    label: "N routes",       re: /My objectives\s*\n\s*(\d+)\s+routes?\b/i },
+      // No Home read: the Jump back in tiles stopped showing counts (owner 2026-11-14), so Home
+      // no longer states this number and the Home >= Profile pair went with it.
       // SCOPED TO THE MY OBJECTIVES SECTION, not the screen. The Logbook also renders a badge per
       // CUSTOM LIST ("Summer Wasatch Tick · 1 climb to go"), so an unanchored read takes whichever
       // comes first and would compare a different list. Found by mutating a snapshot: renaming the
@@ -63,7 +64,6 @@ export const COUNT_GROUPS = [
     ],
     // Only the pair that answers the SAME question is required equal.
     equal: ["Logbook", "Profile:Activity"],
-    atLeast: [["Home", "Profile:Activity"]],
   },
   {
     name: "friends",

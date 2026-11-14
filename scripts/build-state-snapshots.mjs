@@ -101,7 +101,7 @@ async function buildState(st) {
   const people = [];
   const ids = [...reporters];
   for (let i = 0; i < ids.length; i += 100) {
-    people.push(...await get(rest(`profiles?select=id,name,avatar,show_name,username&id=in.(${ids.slice(i, i + 100).join(",")})`)));
+    people.push(...await get(rest(`profiles?select=id,name:public_name,avatar,show_name,username&id=in.(${ids.slice(i, i + 100).join(",")})`)));
   }
   return { areas, parts, people };
 }

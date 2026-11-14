@@ -1,4 +1,4 @@
-import { campSites, campReportsOf, campOrderNote, campWalkHrs } from "../../lib/camps.js";
+import { campSites, campReportsOf } from "../../lib/camps.js";
 import { C, ROUTE_GAP, shortDate, RSL as SL } from "../../ClimbMatchCore.jsx";
 import EditIconButton from "./EditIconButton.tsx";
 import GapNote from "./GapNote.tsx";
@@ -47,19 +47,10 @@ export default function CampingPanel({route,onEdit,calc,activity}: CampingPanelP
      is its own card, so the section is not wrapped in one: a card of cards just nests borders. */
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit camping and bivy sites"/>:null} wp="Campsite">{"CAMPING & BIVY · "+sites.length}</SL>
-    {/* The "also a pin on the route track" sentence is CONDITIONAL, because it is only true of
-        waypoint-derived sites. Most researched bivy rows carry no coordinate at all — measured:
-        4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
-        that are not there. Claim it only when at least one site actually is on the track. */}
-    <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:12}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some((s: CampRow)=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")+campOrderNote(sites)}</div>
     <OvernightPermit route={route}/>
-    {/* Capped HERE, around the sites only. It used to wrap the whole panel, and the intro plus the
-        permit panel alone fill the 400px a capped block shows — so the first thing under "Show more"
+    {/* Capped HERE, around the sites only. It used to wrap the whole panel, and the intro (since
+        removed) plus the permit panel filled the 400px a capped block shows — so the first thing under "Show more"
         was every actual camp, and the section read as a permit and nothing else. */}
-    {(function(){
-      /* What the night chips and walk-in times are, said once, only when at least one site carries one. */
-      return (sites.some(function(s: CampRow){return s.nights&&s.nights.length;})||sites.some(function(s: CampRow){return campWalkHrs(s,calc)!=null;}))?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:10}}>{"Choosing a camp: "+[sites.some(function(s: CampRow){return s.nights&&s.nights.length;})?"a green tag marks where the trip plan above spends each night":"",sites.some(function(s: CampRow){return campWalkHrs(s,calc)!=null;})?"walk-in times use the fitness and pack set in the planner, so change those to see your own":""].filter(Boolean).join("; ")+". A higher camp shortens the summit day and lengthens the carry."}</div>:null;
-    })()}
     {(function(){
       /* The FIRST site sits outside the cap entirely, so one camp is always shown whole — a cap
          that slices through it (its Notes cut off, the next camp hidden) leaves the same doubt the

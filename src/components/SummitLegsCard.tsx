@@ -1,7 +1,7 @@
 import { C, SUB_LABEL, climbsAPeak, uElev } from "../../ClimbMatchCore.jsx";
 import { itinDayCount } from "../../lib/outing.js";
 import { planTimes } from "../../lib/planTimes.js";
-import { tripLegGeometry, fmtLegKm, fmtLegHrs } from "../../lib/tripLegs.js";
+import { tripLegGeometry, fmtLegKm, fmtLegHrs, measuredLegClimb, LEG_SHOW_FT } from "../../lib/tripLegs.js";
 
 /** A stat on a leg card: its label, then its value. */
 type LegStat = [string, string];
@@ -30,15 +30,26 @@ export default function SummitLegsCard({route,calc}: SummitLegsCardProps){
   const pt=planTimes(route,calc);const g=tripLegGeometry(route);
   const {disc,gainFt,dropFt,km,hasKm,whole,outBack,legKm}=g;
   const top=climbsAPeak(route)||disc==="alpine"||disc==="mountaineering"||disc==="hiking"||disc==="scrambling"?"summit":"top of the climb";
+  /* The downhill on the way up and the uphill on the way home, from the recorded track (measuredLegClimb). */
+  const mc=measuredLegClimb(route);
+  const upLoss: LegStat|null=mc&&mc.up.loss>=LEG_SHOW_FT?["Loss","↓ "+uElev(mc.up.loss)]:null;
+  const downGain: LegStat|null=mc&&mc.down&&mc.down.gain>=LEG_SHOW_FT?["Regain","↑ "+uElev(mc.down.gain)]:null;
+  /* On a loop or point-to-point the stored gain is the WHOLE outing (effDistIsWholeTrip), so printing it under
+     TRAILHEAD TO SUMMIT overstated the leg: Goode NE Buttress read 10,700 ft to a summit 4,720 ft above its
+     trailhead. Where the track measures the leg, the leg gets its own measured gain and drop. */
+  const legGainFt=whole&&mc?mc.up.gain:gainFt;
+  const legDrop: LegStat|null=whole&&mc&&mc.down&&mc.down.loss>0?["Drop","↓ "+uElev(mc.down.loss)]:null;
   const upFloor=!pt.walkInKnown||!pt.climbKnown;const downFloor=!pt.walkOutKnown;
   const legs: Leg[]=pt.publishedIsWholeDay
-    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]]]]
-    :[["TRAILHEAD TO "+top.toUpperCase(),[gainFt?["Gain","↑ "+uElev(gainFt)]:null,legKm?["Distance","~"+fmtLegKm(legKm)]:null,["Time",fmtLegHrs(pt.totalH,upFloor)]]],
-      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:null,["Time",fmtLegHrs(pt.downH,downFloor)]]]];
+    ?[["CAR TO CAR",[gainFt?["Gain","↑ "+uElev(gainFt)]:null,upLoss?["Loss on the way in",upLoss[1]]:null,downGain?["Regain on the way out",downGain[1]]:null,hasKm?["Distance",fmtLegKm(outBack&&!whole?km*2:km)]:null,["Time",fmtLegHrs(pt.tripH,upFloor||downFloor)]]]]
+    :[["TRAILHEAD TO "+top.toUpperCase(),[legGainFt?["Gain","↑ "+uElev(legGainFt)]:null,upLoss,legKm?["Distance","~"+fmtLegKm(legKm)]:null,["Time",fmtLegHrs(pt.totalH,upFloor)]]],
+      [top.toUpperCase()+" TO TRAILHEAD",[legKm?["Distance","~"+fmtLegKm(legKm)]:null,legKm&&dropFt?["Drop","↓ "+uElev(dropFt)]:legDrop,downGain,["Time",fmtLegHrs(pt.downH,downFloor)]]]];
   const shown=legs.map(function(l): [string, LegStat[]] {return [l[0],l[1].filter(function(s): s is LegStat {return s!==null;})];}).filter(function(l){return l[1].length;});
   if(!shown.length)return null;
   const days=itinDayCount(route);
   const note="Times use the pace, pack and party set in Full trip time below."
+    +(whole&&mc&&gainFt&&gainFt!==mc.up.gain&&!pt.publishedIsWholeDay?" The whole outing gains "+uElev(gainFt)+".":"")
+    +(upLoss||downGain?" "+(upLoss&&downGain?"Loss and regain are":upLoss?"Loss is":"Regain is")+" measured on the route’s recorded track: the downhill on the way "+(upLoss&&downGain?"up and the uphill on the way back":upLoss?"up":"back")+".":"")
     +(!pt.publishedIsWholeDay&&hasKm&&!legKm?" This route does not come back the way it goes: "+fmtLegKm(km)+" for the whole outing.":"")
     +(days>1?" Usually done over "+days+" days — the Trip plan below splits it by day.":"");
   return <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>

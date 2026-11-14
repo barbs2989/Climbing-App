@@ -53,11 +53,16 @@ export default function PolicyUpdateNotice({previous,busy,onRead,onAccept,z,onHe
     <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginBottom:11}}>
       {previous?"You accepted the "+policyVersionLabel(previous)+" version. ":"Your account predates the version we now publish. "}
       {"The current one is dated "+policyVersionLabel(POLICY_VERSION)+". Carrying on using ClimbMatch means accepting it."}
+      {/* THE 18+ GATE FOR ACCOUNTS THE SIGN-UP FORM NEVER SAW. The email form asks "18 or older" before it creates
+          an account, but Google/Apple sign-in creates one from either tab and sends no acceptance (0145's column
+          comment: "null ... through a path that sends no metadata (OAuth)"), so the Terms' 18+ was asserted by
+          nothing. An account with no acceptance on file lands here, and accepting now attests the age too. */}
+      {previous?null:" ClimbMatch is for climbers 18 and older."}
     </div>
     <div style={{display:"flex",gap:7,flexWrap:"wrap"}}>
       <button onClick={()=>onRead("terms")} style={{flex:"1 1 auto",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Read Terms</button>
       <button onClick={()=>onRead("privacy")} style={{flex:"1 1 auto",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>Read Privacy</button>
-      <button disabled={busy} onClick={onAccept} style={{flex:"1 1 100%",padding:"11px 12px",borderRadius:11,border:"1px solid rgba(0,0,0,0.22)",background:C.blueSolid,color:C.onSolid,fontSize:14,fontWeight:700,cursor:busy?"default":"pointer",opacity:busy?0.6:1}}>{busy?"Recording…":"I accept"}</button>
+      <button disabled={busy} onClick={onAccept} style={{flex:"1 1 100%",padding:"11px 12px",borderRadius:11,border:"1px solid rgba(0,0,0,0.22)",background:C.blueSolid,color:C.onSolid,fontSize:14,fontWeight:700,cursor:busy?"default":"pointer",opacity:busy?0.6:1}}>{busy?"Recording…":previous?"I accept":"I’m 18 or older — I accept"}</button>
     </div>
   </div>;
 }
