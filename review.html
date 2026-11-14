@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- The owner's Review desk (2026-11-14): every climber flag and held route edit as one table,
+         each with the nightly AI checker's verdict (review_ai_verdicts, 0436). Deliberately its own
+         page — not linked from the app's Menu — and useless to anyone but an admin: the table reads
+         admin-only rows and every action is an is_admin()-checked RPC (0309). -->
+    <meta name="robots" content="noindex, nofollow" />
+    <title>ClimbMatch Review desk</title>
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#161b22" />
+    <meta name="color-scheme" content="dark" />
+    <style>
+      html, body { margin: 0; background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/review/main.jsx"></script>
+  </body>
+</html>

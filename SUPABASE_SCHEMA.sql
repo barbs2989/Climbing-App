@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 872 columns, 454 keyed/checked constraints (154 foreign keys), 265 RLS policies.
+-- Counts: 88 tables, 880 columns, 455 keyed/checked constraints (154 foreign keys), 264 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -262,6 +262,13 @@ END),
 ALTER TABLE public.app_feedback ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "admin manages feedback" ON public.app_feedback AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
 CREATE POLICY "read own feedback" ON public.app_feedback AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
+
+CREATE TABLE public.app_secrets (
+  key text NOT NULL,
+  value text NOT NULL,
+  CONSTRAINT app_secrets_pkey PRIMARY KEY (key)
+);
+ALTER TABLE public.app_secrets ENABLE ROW LEVEL SECURITY;
 
 CREATE TABLE public.app_settings (
   key text NOT NULL,
@@ -982,7 +989,6 @@ CREATE TABLE public.gps_submissions (
 );
 ALTER TABLE public.gps_submissions ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "admin reads gps submissions" ON public.gps_submissions AS PERMISSIVE FOR SELECT TO public USING (is_admin(( SELECT auth.uid() AS uid)));
-CREATE POLICY anyone_can_read_approved_gps ON public.gps_submissions AS PERMISSIVE FOR SELECT TO public USING ((status = 'approved'::text));
 CREATE POLICY users_can_read_own_gps ON public.gps_submissions AS PERMISSIVE FOR SELECT TO public USING ((climber_email = (( SELECT auth.jwt() AS jwt) ->> 'email'::text)));
 
 CREATE TABLE public.group_bans (
@@ -1637,6 +1643,24 @@ CREATE TABLE public.profiles (
   trip_reports_default text NOT NULL DEFAULT 'public'::text,
   climbing_since smallint,
   gender text,
+  username_set_at timestamp with time zone,
+  username_changes smallint NOT NULL DEFAULT 0,
+  public_name text GENERATED ALWAYS AS (
+CASE
+    WHEN show_name THEN name
+    ELSE NULL::text
+END) STORED,
+  public_photos text[] GENERATED ALWAYS AS (
+CASE
+    WHEN photos_public THEN photos
+    ELSE '{}'::text[]
+END) STORED,
+  public_photo_alts jsonb GENERATED ALWAYS AS (
+CASE
+    WHEN photos_public THEN photo_alts
+    ELSE NULL::jsonb
+END) STORED,
+  skill_practiced jsonb,
   CONSTRAINT profiles_pkey PRIMARY KEY (id),
   CONSTRAINT profiles_username_key UNIQUE (username),
   CONSTRAINT profiles_account_type_check CHECK ((account_type = ANY (ARRAY['primary'::text, 'secondary'::text]))),
