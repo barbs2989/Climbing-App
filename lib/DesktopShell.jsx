@@ -234,7 +234,7 @@ function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading,
   const rows = (crews || []).map(cr => {
     const p = placeOf(cr);
     const m = last((crewMsgs || {})[cr.id]);
-    return { cr, name: (p && p.kind !== "missing" && p.name) || "Crew", m, ts: (m && m.ts) || 0, unread: Number((crewUnread || {})[cr.id]) || 0 };
+    return { cr, name: (p && p.kind !== "missing" && p.name) || "Crew", sub: (p && p.kind !== "missing" && p.area && p.area.name && p.area.name !== p.name) ? p.area.name : null, m, ts: (m && m.ts) || 0, unread: Number((crewUnread || {})[cr.id]) || 0 };
   }).sort((a, b) => b.ts - a.ts);
   const unread = rows.reduce((n, r) => n + r.unread, 0);
   const preview = m => (m ? (m.from === "me" ? "You: " : (m.name ? m.name + ": " : "")) + (m.image && !m.text ? "Photo" : String(m.text || "")) : "");
@@ -245,7 +245,7 @@ function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading,
       : <>{rows.slice(0, PER).map(r => <button key={r.cr.id} onClick={() => onOpenCrew(r.cr)} aria-label={r.name + " crew" + (r.unread ? ", " + r.unread + " unread" : "")} style={{ ...ROW, alignItems: "flex-start" }}>
           <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span>
           <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ display: "block", fontSize: 13.5, fontWeight: r.unread ? 800 : 700, overflowWrap: "anywhere" }}>{r.name}</span>
+            <span style={{ display: "block", fontSize: 13.5, fontWeight: r.unread ? 800 : 700, overflowWrap: "anywhere" }}>{r.name}{r.sub ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 600, color: C.textMuted }}>{r.sub}</span> : null}</span>
             {r.m ? <span style={{ display: "block", fontSize: 12.5, lineHeight: 1.4, color: r.unread ? C.textSub : C.textMuted, overflowWrap: "anywhere" }}>{preview(r.m)}</span> : null}
           </span>
           {badgeN(r.unread)}

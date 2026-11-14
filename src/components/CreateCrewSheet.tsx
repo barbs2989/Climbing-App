@@ -58,7 +58,10 @@ export interface CreateCrewSheetProps {
   picks: ReadonlyArray<CreateCrewSheetPick>;
   formedIds: ReadonlyArray<string>;
   onClose: () => void;
-  onRoute: (routeId: string) => void;
+  /** `opts.private` is the Who can join? answer (true = just people you invite). */
+  onRoute: (routeId: string, opts?: { private: boolean }) => void;
+  /** Ask Who can join? at the top (the main + Create a crew). Left out, the sheet asks nothing. */
+  askWhoCanJoin?: boolean;
   /** A crag session through StartCrewSheet; the section is left out without it. */
   onArea?: () => void;
   /** Off to Climbs to save one; the section is left out without it. */
@@ -71,8 +74,13 @@ export interface CreateCrewSheetProps {
    labels are faint, so a crag session, every saved list and "find it in Climbs" read as one run of options. Three headed sections
    now: a crag session, your saved climbs (SavedClimbList), and a climb you have not saved yet. Climb again with a past crew opens
    it too, titled for those climbers. */
-export default function CreateCrewSheet({ picks, formedIds, onClose, onRoute, onArea, onFindClimb, title = "Create a crew", subtitle = "Pick where. You invite people once the crew exists." }: CreateCrewSheetProps) {
+export default function CreateCrewSheet({ picks, formedIds, onClose, onRoute, onArea, onFindClimb, askWhoCanJoin = false, title = "Create a crew", subtitle = "Pick where. You invite people once the crew exists." }: CreateCrewSheetProps) {
   const total = picks.reduce((n, g) => n + g.rs.length, 0);
+  /* WHO CAN JOIN, ASKED ONCE HERE (owner 2026-11-14). A new crew used to be listed for anyone to ask to join
+     ("Open crew — 1 spot left") without the organiser ever being asked. Default: just the people you invite.
+     It stays changeable under the crew's ⋯ More. */
+  const [invitesOnly, setInvitesOnly] = useState(true);
+  const pickRoute = (id: string) => onRoute(id, askWhoCanJoin ? { private: invitesOnly } : undefined);
   return createPortal(<div onClick={onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape") onClose(); }} role="dialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, zIndex: 1150, background: C.scrimStrong, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
     <div onClick={e => e.stopPropagation()} style={{ background: C.surface, borderRadius: "18px 18px 0 0", border: "1px solid " + C.border, width: "100%", maxWidth: 520, padding: 16, boxSizing: "border-box", maxHeight: "90%", overflowY: "auto", overscrollBehavior: "contain" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
@@ -83,12 +91,22 @@ export default function CreateCrewSheet({ picks, formedIds, onClose, onRoute, on
         <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>
       </div>
 
+      {askWhoCanJoin ? <div role="radiogroup" aria-label="Who can join this crew?" style={{ marginBottom: 16 }}>
+        <SL>Who can join?</SL>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+          {([[true, "Just people I invite", "Not listed. Only climbers you invite see it."], [false, "Let others ask to join", "Listed under Join a crew. You approve each request."]] as const).map(([v, label, sub]) => {
+            const on = invitesOnly === v;
+            return <button key={label} type="button" role="radio" aria-checked={on} onClick={() => setInvitesOnly(v)} style={{ ...ROW, display: "block", textAlign: "left", minHeight: 64, background: on ? C.blueBg : C.card, border: "1px solid " + (on ? C.blue : C.border), cursor: "pointer", color: C.text }}><span style={{ display: "block", fontSize: 13.5, fontWeight: 800 }}>{(on ? "● " : "○ ") + label}</span><span style={SUB}>{sub}</span></button>;
+          })}
+        </div>
+      </div> : null}
+
       {onArea ? <div style={{ marginBottom: 16 }}>
         <SL>At a crag</SL>
         <button type="button" onClick={onArea} style={ROW}><span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 13.5, fontWeight: 700 }}>Crag session at an area…</span><span style={SUB}>Several climbs at one area — you pick the area, discipline and group size.</span></span></button>
       </div> : null}
 
-      <div style={{ marginBottom: onFindClimb ? 16 : 0 }}><SavedClimbList picks={picks} formedIds={formedIds} onRoute={onRoute} /></div>
+      <div style={{ marginBottom: onFindClimb ? 16 : 0 }}><SavedClimbList picks={picks} formedIds={formedIds} onRoute={pickRoute} /></div>
 
       {onFindClimb ? <div>
         <SL>Somewhere else</SL>
