@@ -190,7 +190,7 @@ export function vouchRowsFrom(rows,authors){
        another climber's vouch rows with this — so a bare `.name` published every voucher's real
        name on somebody else's profile, whatever their own "Show my real name publicly" setting
        said. The friends list and crew roster were unified on this gate when 0175 made the
-       setting real; this surface was missed. The missing-author fallback is unchanged. */return {from:a?pubNameRow(a):"A ClimbMatch member",avatar:a&&a.avatar,route:parsed.route||"",date:row.created_at?row.created_at.slice(0,10):"",ratings:parsed.ratings||{},skills:liveSkills(parsed.skills),text:parsed.text||"",wouldClimbAgain:parsed.wouldClimbAgain===true/* only an explicit YES: a one-tap vouch never asks, and `!==false` printed "Would climb again" under every one of them */};
+       setting real; this surface was missed. The missing-author fallback is unchanged. */return {from:a?pubNameRow(a):"A ClimbMatch member",avatar:a&&a.avatar,route:parsed.route||"",date:row.created_at?row.created_at.slice(0,10):"",ratings:parsed.ratings||{},skills:liveSkills(parsed.skills),text:parsed.text||"",practicedOn:typeof parsed.practicedOn==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(parsed.practicedOn)?parsed.practicedOn:undefined,wouldClimbAgain:parsed.wouldClimbAgain===true/* only an explicit YES: a one-tap vouch never asks, and `!==false` printed "Would climb again" under every one of them */};
   });
 }
 const uImp=()=>UNITS!=="metric";
