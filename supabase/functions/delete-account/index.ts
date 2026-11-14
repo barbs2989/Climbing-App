@@ -9,7 +9,7 @@
 // every report unanswered; hand that over first).
 // Order matters, because each step makes the next one possible:
 //   1. their uploaded FILES (topo-photos/<uid>/…) — a row delete leaves a file reachable at its
-//      public URL (the guide-documents bucket went with the guide feature, 0441);
+//      public URL (the guide-documents bucket went with the guide feature, 0445);
 //   2. their contributions — `contributor` is text, not a foreign key, so nothing would cascade;
 //   3. the auth user — everything else is keyed to it and cascades (0266 made the last nine
 //      blocking foreign keys cascade or set null).

@@ -178,10 +178,10 @@ migrated.** `crews` / `crew_members` / `crews_messages`, `messages` (direct), `c
 Re-derive rather than trust this paragraph: `grep -o 'from("[a-z_]*")' lib/db.js | sort -u`
 returns **37** tables against 41 live.
 
-### Hire-a-Guide — removed (0441)
+### Hire-a-Guide — removed (0445)
 
 The guide directory, applications, inquiries and guide reviews (migrations 0021-0024, 0082,
-0226) were removed on 2026-11-14 at the owner's request: 0441 drops their tables and functions,
+0226) were removed on 2026-11-14 at the owner's request: 0445 drops their tables and functions,
 and the private `guide-documents` bucket was deleted through the Storage API. `profiles.is_admin`
 (0020) stays — every admin queue uses it. A climber's own guiding certifications stay on their
 résumé (`profiles.certifications`, 0181).

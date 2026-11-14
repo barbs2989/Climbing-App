@@ -1,4 +1,4 @@
--- 0441: THE GUIDE FEATURE IS GONE, AND SO ARE ITS TABLES (owner, 2026-11-14: "remove all guide
+-- 0445: THE GUIDE FEATURE IS GONE, AND SO ARE ITS TABLES (owner, 2026-11-14: "remove all guide
 -- tables and anything related to guiding" — after PR #3366 removed every screen, hook and write).
 --
 -- What this drops, all of it created by 0021-0024, 0082, 0085 and 0226 and read by nothing else
