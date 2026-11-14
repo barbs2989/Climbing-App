@@ -189,7 +189,8 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
   const _picked=crag?[]:pickForecastWaypoints(waypoints);
   const points=_picked.length||!fallback?_picked:[fallback];
   const [data,setData]=useState<Record<string,WxEntry>>({});
-  const [expandedDay,setExpandedDay]=useState<Record<string,string|null>>({});
+  /* HOURLY OPENS FOR EVERY DAY AT ONCE (owner, 2026-11-14: "When you click on hourly forecast, it should open up for all days at once"): one open/closed flag per point, so any day's button opens (or hides) the hour-by-hour list on all of that point's days together. */
+  const [hourlyOpen,setHourlyOpen]=useState<Record<string,boolean>>({});
   const key=points.map(function(w){return w.type+"_"+w.name;}).join("|");
   useEffect(function(){
     if(!points.length)return;
@@ -338,7 +339,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL>{crag?"Forecast at the crag":"Forecast at key points"}</SL>
     {wide&&!crag&&points.length>1?<div role="group" aria-label="Forecast point" style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{points.map(function(w,i){const on=i===Math.min(ptSel,points.length-1);const col=wpColor(wpType(w));return <button key={w.type+"_"+w.name} onClick={function(){setPtSel(i);}} aria-pressed={on} style={{display:"inline-flex",alignItems:"center",gap:6,padding:"7px 12px",borderRadius:16,border:"1px solid "+(on?C.blueDim:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}><span aria-hidden="true" style={{color:col,fontSize:12}}>{wpGlyph(wpType(w))}</span>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</button>;})}</div>:null}
-    <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{(wide&&!crag&&points.length>1?[points[Math.min(ptSel,points.length-1)]]:points).map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
+    <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{(wide&&!crag&&points.length>1?[points[Math.min(ptSel,points.length-1)]]:points).map(function(w){const k=w.type+"_"+w.name;const d=data[k];const allHourly=!!hourlyOpen[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
         <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
@@ -355,7 +356,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
         const diverges=nwsMid!=null&&Math.abs(nwsMid-omMid)>=6;
         const metMid=dy.met?(dy.met.hi+dy.met.lo)/2:null;
         const metDiverges=metMid!=null&&Math.abs(metMid-omMid)>=6;
-        const isExpanded=expDate===dy.date;
+        const isExpanded=allHourly;
         const condColor=wxCondColor(dy.wxCode);
         return <div key={dy.date} style={{flexShrink:0,width:272,display:"flex",flexDirection:"column",background:C.surface,borderRadius:12,padding:"12px 13px",border:"1px solid "+C.border,borderTop:"3px solid "+wxTempColor(dy.tempLo)}}>
           <div>
@@ -388,7 +389,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
           </div>:null}
           </div>
           {dy.hours&&dy.hours.length?<div style={{marginTop:"auto",paddingTop:10}}>
-          <button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} aria-expanded={isExpanded} style={{minHeight:44,width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:isExpanded?"#fff":C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ":"Hourly forecast "}<Chevron inline open={isExpanded} size={12} color={C.blue}/></button>
+          <button onClick={function(){setHourlyOpen(function(p){const o=Object.assign({},p);o[k]=!isExpanded;return o;});}} aria-expanded={isExpanded} style={{minHeight:44,width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:isExpanded?"#fff":C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ":"Hourly forecast "}<Chevron inline open={isExpanded} size={12} color={C.blue}/></button>
           {isExpanded?<div>
             <div style={{marginTop:8,maxHeight:380,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=typeof hh.tempF==="number"?Math.round(hh.tempF):null,wm=typeof hh.windMph==="number"?Math.round(hh.windMph):null,gm=typeof hh.gustMph==="number"?Math.round(hh.gustMph):null;return <div key={hi} style={{padding:"8px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none"}}>
               <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:62,flexShrink:0,fontSize:15,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflowWrap:"anywhere"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span></div>

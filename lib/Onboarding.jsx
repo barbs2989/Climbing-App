@@ -7,7 +7,7 @@
 // WHAT IS REQUIRED (owner, 2026-11-14). A signed-in account must choose a USERNAME, a HOME AREA and
 // its CLIMBING (disciplines, plus one grade when a picked discipline has a grade ladder); there is
 // no Skip setup for it, only Sign out. The username is saved the moment Continue is pressed, because
-// it is locked once chosen (0420: one change in the first 7 days) and must not wait on the last step.
+// it is locked once chosen (0432: one change in the first 7 days) and must not wait on the last step.
 // Photo, gender and alerts stay optional ("Not now"). A guest, with no account to keep anything in,
 // can still skip the lot. Zip and photo are asked for where they matter instead: Partners asks for a
 // zip before it lists real climbers, and sending a request asks for a photo.
@@ -83,7 +83,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,in
   const gradeOk=!gradeNeeded||[sg,tg,bg].some(g=>g&&g!=="N/A")||Object.keys(cg).some(k=>cg[k]&&cg[k].grade);
   const climbOk=disc.length>0&&gradeOk;
   const homeOk=!required||!!((homeQ||"").trim()||home);
-  /* Save the username NOW: Continue is the commitment, and the 0420 lock starts here. */
+  /* Save the username NOW: Continue is the commitment, and the 0432 lock starts here. */
   const saveUsername=()=>{const u=cleanUsername(un);const p=usernameProblem(u);if(p){setUnErr(p);return;}setUnErr("");setUnBusy(true);saveProfile(uid,{username:u}).then(function(r){if(r&&r.error)throw r.error;setUnBusy(false);setUnSaved(true);if(onUsernameSaved)onUsernameSaved(u);next();}).catch(function(e){setUnBusy(false);setUnErr(usernameSaveError(e,u));});};
   /* No way out of a required setup but finishing it or signing out. Once the username is saved, an EDITING open may still be cancelled. */
   const canLeave=!required||(editing&&unSaved);

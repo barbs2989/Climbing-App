@@ -52,6 +52,11 @@
       html { -webkit-text-size-adjust: 100%; }
       * { -webkit-tap-highlight-color: transparent; }
       body { overscroll-behavior-y: none; }
+      /* A sideways swipe on a page changes its tab (lib/pageSwipe.js, 2026-11-14). Chrome also reads a sideways
+         drag on a page with nothing to scroll that way as "go back a page in history" and left the app mid-swipe
+         (measured: a right swipe on a route's Send Reports tab landed on about:blank). This turns off only the
+         browser's in-page history swipe; the phone's own edge-back gesture and every sideways scroller are untouched. */
+      html, body, #appscroll { overscroll-behavior-x: none; }
       /* WCAG 2.4.11 Focus Not Obscured. Below the desktop breakpoint (lib/wideLayout.js WIDE_MIN) the
          nav is a sticky bar at the bottom of the window, and a control scrolled into view by Tab
          could land underneath it. The padding makes the browser stop short of the bar. */
@@ -147,6 +152,12 @@
       /* ...and in the desktop rail's 276px map even "Street · Sat · Topo · Snow" ran under ⤢ Full screen
          (owner's desktop audit 2026-11-04, "Snow" half hidden): the buttons lose 4px of side padding there. */
       @container (max-width: 240px) { .cm-lyr-btn { padding-left: 7px !important; padding-right: 7px !important; } }
+      /* With the 3D button the route map's row is five buttons (Street · Sat · Topo · Snow · 3D): in the rail's
+         192px row they lose 3px more a side and half a point of text so 3D stays clear of ⤢ (2026-11-14). */
+      /* ...and a five-button row says "Sat" sooner: on a 360px phone the area map's row is ~260px wide. */
+      @container (max-width: 285px) { div:has(> .cm-lyr-3d) .cm-lyr-long { display: none; } div:has(> .cm-lyr-3d) .cm-lyr-short { display: inline; } }
+      @container (min-width: 241px) and (max-width: 285px) { div:has(> .cm-lyr-3d) .cm-lyr-btn { padding-left: 8px !important; padding-right: 8px !important; } }
+      @container (max-width: 215px) { .cm-lyr-btn { padding-left: 4px !important; padding-right: 4px !important; font-size: 10.5px !important; } }
       /* Scrollbars you can SEE, everywhere. Nothing styled them, so the browser drew its default
          dark thumb on the app's #0d1117 background: a black bar on a near-black page, invisible
          in the feed and in every popup (Add a climb was the report). One rule on :root reaches

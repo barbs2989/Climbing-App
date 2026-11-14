@@ -78,7 +78,7 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
   const [uTouched,setUTouched]=useState(false);
   /* NO USERNAME YET: signup asks only for a name, so every new account opens this editor with the field empty -- and Save stays disabled until it is filled, so a new climber's first edit could not be saved at all. Prefill a suggestion, as Instagram does at signup: the name's letters plus four digits, so two climbers called Alex rarely collide on the unique column. Signed-in only; the climber can change it before Save. */
   useEffect(()=>{if(uid&&!(draft.username||"").trim())setDraft(d=>(d.username||"").trim()?d:{...d,username:suggestUsername(d.name)});},[uid]);// eslint-disable-line react-hooks/exhaustive-deps -- once, when the editor opens: re-suggesting after the climber clears the field would fight them
-  /* THE 0420 LOCK, read from the STORED username (ME), not the draft: one change in the first 7 days, then
+  /* THE 0432 LOCK, read from the STORED username (ME), not the draft: one change in the first 7 days, then
      locked. The database enforces it; this only says so before a Save is refused. Signed-in only -- the
      demo has no database to lock anything in. An UNCHANGED username is never an error, so a handle saved
      before the stricter character rule still lets the rest of the profile save. */

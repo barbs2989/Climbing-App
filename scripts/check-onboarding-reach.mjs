@@ -123,7 +123,7 @@ const expect = (label, o, want) => {
 expect("a new account with the read resolved and no disciplines NEEDS onboarding", REAL, true);
 expect("...and an established account with disciplines and a username does NOT",
        { ...REAL, profile: { disciplines: ["sport"], username: "alexclimbs" } }, false);
-// THE USERNAME IS REQUIRED (owner, 2026-11-14; 0420 locks it once chosen). An account that finished
+// THE USERNAME IS REQUIRED (owner, 2026-11-14; 0432 locks it once chosen). An account that finished
 // setup before that rule, or skipped it when it could still be skipped, is asked again -- and the
 // session's `onboarded` flag must not excuse it, since finishing no longer means it was chosen.
 expect("...but an account with disciplines and NO username still NEEDS it",

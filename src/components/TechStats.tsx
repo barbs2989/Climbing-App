@@ -79,7 +79,7 @@ const COMMITMENT_EXPLAINERS={I:"A few hours — backing off is quick and low-con
    "Pitches link" and "Simul-climbing" are ropework prose, often a paragraph long, so they sit in GEAR & SAFETY beside
    the rope, not in the top card, which keeps to grade, pitches, length and rock (owner, 2026-11-11: the top card was
    too long; the description goes right under grade and rock type). */
-const CRAG_FACT_SECTIONS: [string,string,string[]][]=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Pitches link","Simul-climbing","Fixed gear","Landing","Crash pads","Descent"]],["cond","CONDITIONS",["Aspect","Sun","Season","Wet","Rock quality"]]];
+const CRAG_FACT_SECTIONS: [string,string,string[]][]=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Pitches link","Simul-climbing","Fixed gear","Landing","Crash pads","Descent"]],["cond","ROCK & SEASON",["Aspect","Sun","Season","Wet","Rock quality"]]];
 /* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
 export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps){
   const _cx=useContext(ConfidenceCtx);const _gradeLv=_cx&&_cx.levels?_cx.levels.grade||null:null;

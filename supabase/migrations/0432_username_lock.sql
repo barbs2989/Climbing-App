@@ -1,4 +1,4 @@
--- 0420: a username is chosen once. One change is allowed in the first 7 days (typos), then it is locked.
+-- 0432: a username is chosen once. One change is allowed in the first 7 days (typos), then it is locked.
 --
 -- WHY (owner, 2026-11-14): "You shouldn't be able to switch your username once you've chosen it."
 -- Until now `profiles.username` carried only 0009's UNIQUE, and Edit profile rewrote it on every
@@ -29,9 +29,9 @@ alter table public.profiles add column if not exists username_set_at timestamptz
 alter table public.profiles add column if not exists username_changes smallint not null default 0;
 
 comment on column public.profiles.username_set_at is
-  'When this account first chose its username (0420). Starts the 7-day window for its one allowed change. Written by profiles_username_lock(), never by the client.';
+  'When this account first chose its username (0432). Starts the 7-day window for its one allowed change. Written by profiles_username_lock(), never by the client.';
 comment on column public.profiles.username_changes is
-  'How many times the username has been changed after it was first set (0420). At 1, or 7 days after username_set_at, it is locked.';
+  'How many times the username has been changed after it was first set (0432). At 1, or 7 days after username_set_at, it is locked.';
 
 update public.profiles
    set username_set_at = now()
