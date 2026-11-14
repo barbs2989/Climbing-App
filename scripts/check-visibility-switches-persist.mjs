@@ -295,14 +295,15 @@ for (const [flag, spec] of Object.entries(SWITCHES)) {
 
 /* ── rule 2: an outward-facing column rides every climber-object SELECT ──────────────────── */
 const CLIMBER_SELECTS = [
-  ["PARTNER_COLS", /const PARTNER_COLS = "([^"]+)"/],
-  ["the connections select", /\.from\("profiles"\)\.select\("id, name, username, avatar, location, ([^"]+)"\)/],
+  // PARTNER_COLS lives in lib/profileCols.js since 0431, beside the column-grant aliases it goes through.
+  ["PARTNER_COLS", /export const PARTNER_COLS = "([^"]+)"/, read("lib/profileCols.js")],
+  ["the connections select", /\.from\("profiles"\)\.select\(profileCols\("id,name,username,avatar,location,([^"]+)"/],
 ];
 // Columns whose value governs what OTHERS see, and which therefore have to travel with a climber.
 const OUTWARD = ["show_name", "resume_public"];
-for (const [name, re] of CLIMBER_SELECTS) {
-  const m = re.exec(db);
-  if (!m) dead("could not find " + name + " in lib/db.js — ANCHOR LOST, so rule 2 checked nothing");
+for (const [name, re, src] of CLIMBER_SELECTS) {
+  const m = re.exec(src || db);
+  if (!m) dead("could not find " + name + " in lib/db.js or lib/profileCols.js — ANCHOR LOST, so rule 2 checked nothing");
   for (const col of OUTWARD) {
     if (!m[1].includes(col)) {
       problems.push("`" + name + "` omits " + col + ". An omitted column arrives undefined, and for "

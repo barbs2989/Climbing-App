@@ -17,6 +17,7 @@
     "check:migrations": "node scripts/check-migration-numbers.mjs",
     "check:migration-replay": "node scripts/check-migration-replay.mjs",
     "check:rls": "node scripts/check-rls.mjs",
+    "check:profile-privacy": "node scripts/check-profile-privacy.mjs",
     "check:migration-claims": "node scripts/check-migration-claims.mjs",
     "check:merge-survival": "node scripts/check-merge-survival.mjs",
     "audit:silent-reverts": "node scripts/audit-silent-reverts.mjs",

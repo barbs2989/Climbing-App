@@ -151,7 +151,8 @@ try {
     const unique = `${fixture.mate.name} ${fixture.mate.id.slice(0, 6)}`;
     const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.mate.id}`, {
       method: "PATCH", headers: { ...H, Prefer: "return=representation" },
-      body: JSON.stringify({ name: unique }),
+      // show_name on: the share search matches a name only where the climber shows it (0431).
+      body: JSON.stringify({ name: unique, show_name: true }),
     });
     const rows = r.ok ? await r.json() : [];
     if (!r.ok || rows.length !== 1) dead(`could not give the mate a per-run name: ${r.status} ${JSON.stringify(rows).slice(0, 200)}`);
