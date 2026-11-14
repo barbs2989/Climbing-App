@@ -38779,3 +38779,34 @@ trip-report figure exactly; the Grade III/5.6 vs. logged Class 3 ambiguity is a 
 Wikipedia exactly).
 
 Next batch will continue id-ascending from `wa_the_roof`.
+
+## 2026-11-14 — batch 548 (pass 8)
+
+Checked the next 8 in-scope routes id-ascending from `wa_the_roof`: The Scoop and The Tipping
+Point on Colchuck Balanced Rock, both of The Temple's routes, both Triad lines, North Early
+Winters Spire's West Face, and This, My Friend on Dragontail.
+
+**Confirmed error (fixed, 1 SQL statement):** `wa_the_scoop_2`'s `fa` field dated the first ascent
+"August 9, 2010," but the only contemporaneous primary source — a Cascade Climbers trip report
+posted 2009-08-11, titled with FA date 8/9/2009 — puts the climb itself a year earlier. The 2010
+figure looks like Mountain Project's page-share date (2010-08-27, posted by FA climber Matt
+Clifton) mistaken for the ascent date. Corrected to 2009; day and month were already right.
+
+**Flagged for human review:** `wa_the_temple_west_face`'s `fa` ("Keith Rankin, Ken Prestrud,
+William Herston, 1946") has no corroborating source. The only similarly-named party findable is a
+1947 first ascent of the unrelated Slippery Slab Tower NE Face (Dave Harrah, William Herston,
+Keith and Ruth Rankin) — close enough in names and era to suggest a possible mixed-up record, but
+not proof either way. Needs a guidebook (Beckey's *Cascade Alpine Guide*) or AAJ check; no fix
+proposed.
+
+**Clean:** `wa_the_temple_south_ridge` (The Temple's 8,295 ft elevation and this route's matching
+`high_point_ft` both agree with Wikipedia/ListsOfJohn LiDAR data); `wa_the_tipping_point` (FA party
+and year confirmed via Mountain Project; shares Colchuck Balanced Rock's 8,240 ft high point with
+`wa_the_scoop_2`, itself confirmed against Wikipedia/ListsOfJohn/PeakVisor); `wa_the_triad_east_peak`
+and `wa_the_triad_traverse` (shared 7,520 ft high point sits within Wikipedia's cited range for the
+East/Middle summits, and the FSR 1540 washout-closure claim still matches the live, unresolved USFS
+alert); `wa_the_west_face` (North Early Winters Spire's 1965 FA and 1985 FFA party both confirmed
+via SummitPost/Mountain Project); `wa_this_my_friend` (FA party, month and year confirmed via
+Mountain Project and a 2024 trip report).
+
+Next batch will continue id-ascending from `wa_this_my_friend`.

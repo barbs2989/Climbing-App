@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_the_roof",
+  "last_processed_id": "wa_this_my_friend",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 547 complete. Continuing id-ascending scope from wa_the_roof. Checked both remaining West Cracks lines on The Monk, The Needle Neve Glacier, The Pleiades Glacier/Scramble Route, both Pyramid (Southern Pickets) lines, The Rake Ridge Traverse Route, and Unicorn Peak The Roof. One confirmed error fixed (2 SQL statements, one file): the two remaining Monk routes share the same wrong high_point_ft (8606) that batch 546 fixed for the other three -- same import mix-up, corrected to 8009 ft, all five Monk routes now covered by proposed fixes (not yet applied live). One flagged for human review: The Rake elevation (7869 stored vs a single secondary source giving 7840, no corroboration either way). total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
+  "pass_note": "Pass 8 in progress, batch 548 complete. Continuing id-ascending scope from wa_this_my_friend. Checked The Scoop and The Tipping Point on Colchuck Balanced Rock, both Temple routes, both Triad lines, North Early Winters Spire's West Face, and This My Friend on Dragontail. One confirmed error fixed (1 SQL statement): The Scoop's fa year corrected 2010->2009 against a contemporaneous trip report. One flagged for human review: The Temple West Face's 1946 FA party has no corroborating source. total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -10878,6 +10878,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-11-14-batch-547.sql",
       "note": "wa_the_monk_west_cracks_left_crack and wa_the_monk_west_cracks_right_crack carry the same wrong high_point_ft=8606 (Cathedral Peak elevation) that batch 546 fixed for this peaks other three routes -- corrected to 8009 ft, same ListsOfJohn corroboration as batch 546. Flagged: wa_the_rake_traverse_route high_point_ft (7869 stored) vs Steph Abeggs Southern Pickets trip-report page giving 7840 ft for The Rake/The Blob -- single secondary source, no second source to arbitrate, no fix proposed. wa_the_needle_neve_glacier (8079 vs ListsOfJohn 8081 LiDAR, within noise) and wa_the_pyramid_picket_south_route (7920, matches a trip-report figure exactly) confirmed clean. wa_the_pleiades_scramble and wa_the_pyramid_picket_east_ridge left as already-flagged in their own data_quality/hazards fields, nothing new resolved."
+    },
+    {
+      "batch_number": 548,
+      "date": "2026-11-14",
+      "route_ids": [
+        "wa_the_scoop_2",
+        "wa_the_temple_south_ridge",
+        "wa_the_temple_west_face",
+        "wa_the_tipping_point",
+        "wa_the_triad_east_peak",
+        "wa_the_triad_traverse",
+        "wa_the_west_face",
+        "wa_this_my_friend"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-11-14-batch-548.sql",
+      "note": "wa_the_scoop_2's fa field dated the first ascent \"August 9, 2010\", but the only contemporaneous primary source (a Cascade Climbers trip report posted 2009-08-11, titled with FA date 8/9/2009) dates the climb itself a year earlier -- the 2010 figure looks like Mountain Project's page-share date (2010-08-27, posted by FA climber Matt Clifton) mistaken for the ascent date; corrected to 2009, day/month unchanged. Flagged: wa_the_temple_west_face's fa (\"Keith Rankin, Ken Prestrud, William Herston, 1946\") has no corroborating source -- the only similarly-named party found is a 1947 FA of the unrelated Slippery Slab Tower NE Face (Harrah, Herston, Keith and Ruth Rankin), which could point to a mixed-up record but isn't proof either way; needs a guidebook/AAJ check, no fix proposed. Confirmed clean: wa_the_temple_south_ridge (The Temple's 8295ft peak elevation and the route's matching high_point_ft both agree with Wikipedia/ListsOfJohn LiDAR), wa_the_tipping_point (FA party and year confirmed via Mountain Project; shares CBR's 8240ft high point with wa_the_scoop_2, itself confirmed against Wikipedia/ListsOfJohn/PeakVisor), wa_the_triad_east_peak and wa_the_triad_traverse (shared 7520ft high point sits within Wikipedia's cited range for the East/Middle summits and the area's own FSR 1540 closure claim still matches the live, unresolved USFS alert), wa_the_west_face (NEWS FA/FFA party and years both confirmed via SummitPost/Mountain Project), and wa_this_my_friend (FA party, month and year confirmed via Mountain Project and a 2024 trip report)."
     }
   ],
   "outage_runs": [
