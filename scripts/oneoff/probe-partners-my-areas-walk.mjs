@@ -66,6 +66,13 @@ try {
   const me = fixture.owner, robin = fixture.mate;
   const meSess = fixture.session, robinSess = await signIn(robin);
   sessions.push([me.id, meSess.access_token], [robin.id, robinSess.access_token]);
+  // A username is required since 0432, and the fixture sets none, so the app opens on "Edit your profile".
+  // Fill it the way onboarding would (each climber's own token), so the walk starts where a set-up climber does.
+  for (const [uid, tok] of sessions) {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${uid}`, { method: "PATCH", headers: { apikey: anonKey(), Authorization: "Bearer " + tok, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ username: "walk" + uid.replace(/-/g, "").slice(0, 10), avatar: "https://barbs2989.github.io/Climbing-App/icon-192.png" }) });
+    // ...and a photo: real climbers without one are not listed (0420, owner 2026-11-14).
+    if (!r.ok) throw new Error("username patch failed " + r.status + " " + (await r.text()).slice(0, 200));
+  }
   browser = await chromium.launch({ channel: "chrome", headless: true });
 
   // 1. Robin lists at Smith Rock.
@@ -81,7 +88,7 @@ try {
   await rdlg.locator("button", { hasText: /^Sport$/ }).click();
   await rdlg.locator("button", { hasText: /^This weekend/ }).click();
   await rdlg.locator("button", { hasText: /^List me at / }).click(); await rp.waitForTimeout(3500);
-  ok(/Listed at 1 area/.test(await rdlg.innerText()), "Robin is listed at 1 area");
+  ok(/Listed at 1 area/i.test(await rdlg.innerText()), "Robin is listed at 1 area");
   await rdlg.locator('button[aria-label="Close"]').click(); await rp.waitForTimeout(2500);
   ok((await rbox.locator("button").allInnerTexts()).some((t) => /Smith Rock/.test(t)), "Robin's box now names Smith Rock");
   await shot(rp, "2-robin-listed");
@@ -103,6 +110,10 @@ try {
   ok((await mbox.locator("button").allInnerTexts()).some((t) => /Smith Rock/.test(t)), "my box names Smith Rock");
   const by = mp.locator('select[aria-label="Search by"]');
   note("mode: " + await by.inputValue());
+  // Partners lists real climbers once a zip is on file (owner, 0420): type it into the card, as a climber would.
+  const zipCard = mp.locator('[role="region"][aria-label="Add your zip code"]');
+  ok(await zipCard.count() === 1, "no zip yet: Partners asks for one in a card");
+  if (await zipCard.count()) { await zipCard.locator('input[aria-label="Zip code"]').fill("98225"); await zipCard.locator("button", { hasText: /^Save$/ }).click(); await mp.waitForTimeout(7000); }
   const robinRow = mp.locator(`text=${robin.name}`).first();
   ok(await robinRow.count() > 0, "Robin shows up under My areas (both listed at Smith Rock)");
   await shot(mp, "3-me-finds-robin");

@@ -23,6 +23,12 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   area as a chip (tap = edit that listing) over one **+ Add an area** button that opens `MyPartnerAreas`. It replaced the *My areas · N* pill,
   which read as one more filter, and the two *Edit my areas* links and the *List me here* card under Near my areas. Near my areas with nobody
   listed shows one-tap next steps (Search anywhere, Pick a wider area, See everyone) instead of grey text.
+- **Distance defaults to Anywhere in the place modes** (My areas, Saved areas, By area; walkthrough 2026-11-14): with a zip on file it
+  defaulted to *within 50 mi of <zip>* everywhere, so a Bellingham climber who listed Smith Rock saw nobody there. Near my zip stays the
+  default for Everyone and My objectives, and is one pick away in every mode.
+- **Area search finds every state** (both *+ Add an area* and By area): partial names, mt/mount, apostrophes, climber nicknames
+  (`PLACE_NICKNAMES` in lib/search.js: rrg, jtree, nrg, hcr, lcc, bcc, shawangunks) and, when nothing matched, typos via
+  `search_names_fuzzy` ("closest names"). Audit 2026-11-14: 67/67 corpus places found, against 22/67 for the old one-state box.
 - **Leads ▾** (competitor review item 20, the filter half, 2026-11-11): *Leads 5.10a or harder* keeps climbers whose LEAD grade on the
   picked discipline is at least that, on the real lists and the examples alike. The lead grade is read with `profileGradeRows` (a roped
   grade is the lead grade unless its role is "follow"), so a follow-only climber or one with no grade on file does not match; grades
