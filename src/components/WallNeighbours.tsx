@@ -29,7 +29,8 @@ export interface WallNeighboursProps {
  * Reads `C` at render time.
  */
 export default function WallNeighbours({rows,routeId,onOpen}: WallNeighboursProps){const placed=(rows||EMPTY_ARR).filter(function(r){return r.sort_order!=null&&r.discipline!=="bouldering";}).sort(function(a,b){return a.sort_order-b.sort_order;});const i=placed.findIndex(function(r){return r.id===routeId;});if(i<0||placed.length<2)return null;const left=placed[i-1],right=placed[i+1];
-  const one={overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"} as const;
+  /* A long neighbour's name wraps onto a second line rather than ending in "…" (owner, 2026-11-13: never cut text off). */
+  const one={overflowWrap:"anywhere",lineHeight:1.25} as const;
   /* A row with no name still opens; it says so instead of "null" (the screen reader read "Open null"). */
   const nameOf=function(r: NeighbourRow){return (r.name||"").trim()||"Unnamed climb";};
   const btn=function(r: NeighbourRow,side: "left" | "right"){const L=side==="left";return <button key={side} onClick={function(){if(onOpen)onOpen(r);}} aria-label={"Open "+nameOf(r)+(r.grade?", "+r.grade:"")+", the climb to the "+side} style={{minWidth:0,minHeight:40,display:"flex",alignItems:"center",justifyContent:L?"flex-start":"flex-end",gap:6,background:"transparent",border:"none",padding:L?"4px 6px 4px 10px":"4px 10px 4px 6px",cursor:"pointer",textAlign:L?"left":"right",color:C.text}}>{L?<span aria-hidden="true" style={{fontSize:16,fontWeight:700,color:C.blue,flexShrink:0}}>‹</span>:null}<span style={{minWidth:0,display:"flex",flexDirection:"column",alignItems:L?"flex-start":"flex-end"}}><span style={{...one,maxWidth:"100%",fontSize:13,fontWeight:700,color:C.text}}>{nameOf(r)}</span>{r.grade?<span style={{...one,maxWidth:"100%",fontSize:11.5,color:C.textSub}}>{r.grade}</span>:null}</span>{L?null:<span aria-hidden="true" style={{fontSize:16,fontWeight:700,color:C.blue,flexShrink:0}}>›</span>}</button>;};
