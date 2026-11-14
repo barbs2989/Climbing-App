@@ -68,6 +68,7 @@ import { SideAd, RailAd, FollowColumn, adsActive } from "./lib/Ads.jsx";
 import { WideSearch, WideRail, WideFooter, DocTitle, AvatarMenu } from "./lib/DesktopShell.jsx";
 import Chevron from "./src/components/Chevron.tsx";
 import SectionErrorBoundary from "./lib/SectionErrorBoundary.jsx";
+import { installRoutePrefetch } from "./lib/routePrefetch.js";
 import LoadingRows from "./src/components/LoadingRows.tsx";
 import { mergeObjEdit } from "./lib/objKeys.js";
 // The screens App loads on demand, declared once in lib/lazyScreens.js so the components lifted out
@@ -135,7 +136,7 @@ export default function App(){
      note on the implementation in ClimbMatchCore.jsx for why per-call-site would rot. */
   useRichTextareas();
   // Fetch the non-Today tab chunks once the first screen is up (lib/lazyScreens.js).
-  useEffect(function(){preloadTabScreens();},[]);
+  useEffect(function(){preloadTabScreens();installRoutePrefetch();},[]);
   const [tab,setTab]=useState(tabAfterChunkReload),[selRoute,setSelRoute]=useState(null),[routeFrom,setRouteFrom]=useState("routes"),[routeStack,setRouteStack]=useState([]),[msgBack,setMsgBack]=useState("crew"),[msgBackOverlay,setMsgBackOverlay]=useState(null),[chatFromInbox,setChatFromInbox]=useState(false),[homeDismiss,setHomeDismiss]=useState([]),[condExpand,setCondExpand]=useState(false),[cragSort,setCragSort]=useState("grade"),[cragFilter,setCragFilter]=useState("all"),[dateFmt,setDateFmt]=useState(loadDateFmt),[selArea,setSelArea]=useState(null),[routeView,setRouteView]=useState("areas");const [areaTreeOpen,setAreaTreeOpen]=useState(false);const [localComments,setLocalComments]=useState(COMMENTS);const notifyMentions=(txt,candidates,_extra)=>{const ids=extractMentionIds(txt,candidates||[]).filter(function(mid){return mid!==0;});if(!ids.length)return;const names=ids.map(function(mid){const c=(candidates||[]).find(function(x){return x.id===mid;});return c?pubFirst(c):null;}).filter(Boolean);/* "Notified X" claimed a push that does not exist — there is no per-user notification table (0061 is GPS-only), so nothing reaches the mentioned climber. The mention itself is real and visible in the posted text, so say only that. */if(names.length)showToast("Mentioned "+names.join(", "));};
   useEffect(function(){try{window.sessionStorage.setItem(TAB_KEY,tab);}catch(e){}},[tab]);
   useEnrichmentDb();
