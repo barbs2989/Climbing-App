@@ -21,8 +21,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   counts the panel filters). The pills are 44px on a phone and 36px on the website (#3156). The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
-  everything about YOUR visibility, so the pill row is only "who am I looking for": *Listed at <first two areas> +N more* with **Edit ›**
-  (or *Choose my areas* when unlisted; opens My listed areas), the **I'm free this weekend** switch (`role="switch"`; it writes your own
+  everything about YOUR visibility, so the pill row is only "who am I looking for": *Your listed areas: <first two> +N more* with **Edit ›**
+  (not "Listed at": the list can mix a state and a crag), or, unlisted, *You're not listed anywhere yet* with *Choose my areas* — except
+  under My areas › Where I'm listed, where the empty card below already carries that button, so the screen offers it once, the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
   and at most one hint: listing turned off (*Turn listing on*), no zip, or no gender. Ended date windows are NOT flagged here (owner):
   an ended listing still matches (0311 only drops the dates), and the listing screen already marks it.
