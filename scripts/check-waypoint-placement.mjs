@@ -258,12 +258,14 @@ process.exit(0);
     const HONEST = /No coordinate on file/;
     if (!HONEST.test(mix)) fail("an unplaced waypoint renders NO honesty line — it is indistinguishable from a placed pin.");
     if (!HONEST.test(none)) fail("with every waypoint unplaced, still no honesty line.");
-    /* The control test is what stops a dead tap target. A placed row carries the aria-label; an
-       unplaced one must not. Count, do not merely test presence — one of each is the point. */
-    const labels = (mix.match(/aria-label="Show [^"]*on the map"/g) || []);
-    if (labels.length !== 1) fail(`expected exactly ONE "Show … on the map" control for one placed pin, found ${labels.length}: ${labels.join(" | ")}`);
+    /* The control test is what stops a dead tap target. A placed row is marked data-map-pin; an
+       unplaced one must not be. Count, do not merely test presence — one of each is the point.
+       (It was aria-label="Show … on the map" until axe-core 4.14 gated WCAG 2.5.3: that label
+       replaced every word the row shows, so the row now takes its name from its content.) */
+    const labels = (mix.match(/data-map-pin="[^"]*"/g) || []);
+    if (labels.length !== 1) fail(`expected exactly ONE map-pin control (data-map-pin) for one placed pin, found ${labels.length}: ${labels.join(" | ")}`);
     if (labels.length === 1 && /Ghost Junction/.test(labels[0])) fail("the UNPLACED waypoint is announced as a control — it would pan the map to nothing.");
-    const noneLabels = (none.match(/aria-label="Show [^"]*on the map"/g) || []);
+    const noneLabels = (none.match(/data-map-pin="[^"]*"/g) || []);
     if (noneLabels.length) fail(`with no placed waypoints, ${noneLabels.length} row(s) still announce a map control.`);
     /* And the hint that teaches the affordance must not appear when nothing can be tapped. */
     const HINT = /Tap a waypoint to find it on the map/;
