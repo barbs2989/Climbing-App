@@ -1,4 +1,4 @@
--- 0420: the area page's charts (CLIMBS HERE, GRADE SPREAD, the wall cards' mini grade bars) read a
+-- 0421: the area page's charts (CLIMBS HERE, GRADE SPREAD, the wall cards' mini grade bars) read a
 -- small pre-counted table instead of every route under the area.
 --
 -- WHY (owner, 2026-11-14: "Can we make the climbs here charts load faster? Same with grades spread."):
@@ -38,7 +38,7 @@ create table if not exists public.area_route_rollup (
 );
 comment on table public.area_route_rollup is
   'Per area, its OWN routes counted by (discipline, grade_system, floor(grade_num)) — '''' / -32768 mean none. '
-  'Maintained by trg_routes_area_rollup (0420). Read by area_climb_stats and area_children_grade_counts.';
+  'Maintained by trg_routes_area_rollup (0421). Read by area_climb_stats and area_children_grade_counts.';
 
 alter table public.area_route_rollup enable row level security;
 drop policy if exists "area_route_rollup public read" on public.area_route_rollup;
