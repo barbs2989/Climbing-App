@@ -159,7 +159,7 @@ export interface CrewListViewProps {
   setCrewInvite: (invite: { crewId: CrewListViewId; climber: CrewListViewPerson }) => void;
   /** Invite several friends at once from the Crew sheet's friends picker, with one shared note. */
   crewInviteMany: (crewId: CrewListViewId, climbers: ReadonlyArray<CrewListViewPerson>, note: string) => void;
-  /** Any member puts a day forward / its proposer or the organiser takes it back (0442). */
+  /** Any member puts a day forward / its proposer or the organiser takes it back (0448). */
   crewProposeDay: (crewId: CrewListViewId, day: string) => void;
   crewUnproposeDay: (crewId: CrewListViewId, day: string) => void;
   setCrewListOpen: Dispatch<SetStateAction<boolean>>;

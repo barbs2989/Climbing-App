@@ -132,7 +132,7 @@ export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onL
   const rankedFullDays=fullDays.slice().sort((a,b)=>need.reduce((s,id)=>s+rankOf(a,id),0)-need.reduce((s,id)=>s+rankOf(b,id),0));
   const forcedDay=(crew.date&&crew.dateForced&&fullDays.indexOf(crew.date)<0)?crew.date:null;
   const goodDay=(crew.date&&fullDays.indexOf(crew.date)>=0)?crew.date:(rankedFullDays[0]||forcedDay);const allAgreed=!!goodDay;
-  /* A day everyone else can make and you have not answered (core dayWaitingOnMe). */const waitDay=dayWaitingOnMe(crew);/* WHO CAN CHANGE THE DAYS (0442, owner 2026-11-14): any confirmed member proposes; a day is taken back by
+  /* A day everyone else can make and you have not answered (core dayWaitingOnMe). */const waitDay=dayWaitingOnMe(crew);/* WHO CAN CHANGE THE DAYS (0448, owner 2026-11-14): any confirmed member proposes; a day is taken back by
      whoever proposed it or by the organiser. A demo / device-only crew (no onProposeDay) keeps the old rule. */const canPropose=meOrganizer||(!!onProposeDay&&(crew._myStatus||"confirmed")==="confirmed");const canRemove=d=>meOrganizer||(!!onUnproposeDay&&(crew.dateProposers||{})[d]===0);const myAck=d=>(dayAcks[d]||[]).indexOf(0)>=0;const myRankOf=d=>((crew.dayRanks||{})[d]||{})[0]||null;
   /* ONE "I can make it" per day. onMeRank both ranks the day and acks it (crew_day_acks, which a member
      CAN write); tapping your current rank again un-acks. The rank is the secondary detail below. */

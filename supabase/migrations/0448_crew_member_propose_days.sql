@@ -1,4 +1,4 @@
--- 0442 — ANY CREW MEMBER CAN PUT A DAY FORWARD (owner 2026-11-14: "I think anyone should be able to
+-- 0448 — ANY CREW MEMBER CAN PUT A DAY FORWARD (owner 2026-11-14: "I think anyone should be able to
 -- propose days to climb in the calendar right?"). Until now only the organiser could: crews has one
 -- UPDATE policy, "organizer can update own crew" (0036), so a member's proposal matched zero rows and the
 -- card hid the calendar from them ("The organizer puts days forward; you pick the ones you can make").
@@ -22,7 +22,7 @@ begin;
 
 alter table public.crews add column if not exists date_proposers jsonb not null default '{}'::jsonb;
 comment on column public.crews.date_proposers is
-  'Who proposed each candidate day in crews.dates: { "YYYY-MM-DD": user uuid }. Written only by crew_propose_day / crew_unpropose_day (0442).';
+  'Who proposed each candidate day in crews.dates: { "YYYY-MM-DD": user uuid }. Written only by crew_propose_day / crew_unpropose_day (0448).';
 
 create or replace function public.crew_propose_day(p_crew uuid, p_date date)
 returns void

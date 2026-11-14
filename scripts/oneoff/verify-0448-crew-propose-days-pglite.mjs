@@ -1,8 +1,8 @@
-// verify-0442-crew-propose-days-pglite.mjs — replays every migration into PGlite (as check:migration-replay
+// verify-0448-crew-propose-days-pglite.mjs — replays every migration into PGlite (as check:migration-replay
 // does) and acts as five callers against one crew: the organiser, two confirmed members (Blake, Casey),
-// an invitee who has not accepted, and an outsider. Checks the owner's rule for 0442: anyone in the crew
+// an invitee who has not accepted, and an outsider. Checks the owner's rule for 0448: anyone in the crew
 // can propose a day; the day's proposer or the organiser can take it back; nobody else can do either.
-// No production database, no service key: `node scripts/oneoff/verify-0442-crew-propose-days-pglite.mjs`.
+// No production database, no service key: `node scripts/oneoff/verify-0448-crew-propose-days-pglite.mjs`.
 // Exits 1 on the first broken expectation.
 import fs from "node:fs";
 import path from "node:path";
@@ -133,5 +133,5 @@ ok(!direct.e && direct.r.rows.length === 0, "a member still cannot rewrite the c
 const pub = (await db.query("select tablename from pg_publication_tables where pubname = 'supabase_realtime' and tablename in ('crews','crew_members','crew_day_acks') order by 1")).rows.map((x) => x.tablename);
 ok(pub.join() === "crew_day_acks,crew_members,crews", "crews, crew_members and crew_day_acks are on Realtime");
 
-console.log(fails ? `\nverify-0442: ${fails} expectation(s) FAILED` : "\nverify-0442: ok — any member proposes; proposer or organiser takes back; nobody else");
+console.log(fails ? `\nverify-0448: ${fails} expectation(s) FAILED` : "\nverify-0448: ok — any member proposes; proposer or organiser takes back; nobody else");
 process.exit(fails ? 1 : 0);
