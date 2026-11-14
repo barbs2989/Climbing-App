@@ -25,8 +25,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   issuers: NOLS/SOLO/WMA, AIARE/A3/Avalanche Canada, AMGA, PCGI, PCIA, ACMG, UK Mountain Training, IFMGA,
   USA Climbing, The Mountaineers, Leave No Trace) as you type, and *Browse certifications* lists them all. A pick
   only fills the box, so the expiry date still applies (the date box is captioned *Expires (optional)*, so it says what it is before you pick one); anything not listed is added as typed. **Skills** are the
-  `SKILLS` chips in `SKILL_GROUPS` (seven groups, 42 skills incl. technique and rescue) plus free-text ones;
-  the vouch form offers the same groups, and `rappel` stays retired.
+  `SKILLS` chips in `SKILL_GROUPS` (eight groups, 50 skills incl. technique, retreat and rescue) plus free-text ones;
+  the vouch form offers the same groups, and `rappel` stays retired. A profile stores skill LABELS, so every profile
+  reader runs `profileSkills()` (core): a key, the current label, or an old spelling listed in `SKILL_ALIASES` all
+  resolve (`skillKeyOf()`) to the current label. Rename a label only by adding its old spelling to `SKILL_ALIASES`.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
     (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.

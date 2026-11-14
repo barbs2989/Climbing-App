@@ -231,7 +231,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/PeakMetadataPanel.tsx` | `PeakMetadataPanel` |
 | `src/components/SeasonalGuidancePanel.tsx` | `SeasonalGuidancePanel` |
 | `src/components/CrowdsPanel.tsx` | `CrowdsPanel` |
-| `src/components/PartnerRequirementsPanel.tsx` | `PartnerRequirementsPanel` |
+| `src/components/PartnerRequirementsPanel.tsx` | `PartnerRequirementsPanel` — Experience, fitness, *Required skills* chips (the prose as stored) and, under them, **Your skills**: which profile skills those phrases ask for are *On your profile* / *Not on your profile yet* (`mySkills` = `meLive.skills`) |
+| `lib/requiredSkills.js` | `requiredSkillKeys`, `skillKeysInPhrase` — read required-skills prose into `SKILLS` keys (rules written against the 1,392 distinct phrases in the repo data; a phrase naming no profile skill maps to nothing) |
 | `src/components/EmptyPanel.tsx` | `EmptyPanel`, the empty state the seasonal and crowds panels share |
 | `src/components/Head.tsx` | `Head`, those panels' card heading |
 | `lib/seasonWindow.js` | `monthRank`, `seasonWindowMonths`, `MONTH_ABBR` (a route's season WINDOW read strictly into months) |
