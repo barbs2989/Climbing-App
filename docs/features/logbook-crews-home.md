@@ -56,7 +56,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   (`useMyHomeStatePaths`), `useStateClassics` (0390 `state_classics`) returns the routes tagged `state_classics` under it — at most
   100 a state, every discipline — and the card counts your sends of them; no home state, or none tagged, and the card is not shown.
   The route page shows a *State classic* chip (`LIST_TAGS.state_classics`). `useRoutesWithLists` leaves out rows whose only list is
-  `state_classics`, so they cannot crowd its 2,000-row cap. Guests on the seed path keep the seed's Regional Classics.
+  `state_classics`, so they cannot crowd its 2,000-row cap; it reads them through the 0419 RPC `routes_with_named_lists`, whose partial index makes it read ~64 rows instead of ~2,300 table pages. Guests on the seed path keep the seed's Regional Classics.
   The **Fifty Classics** rows come from the book's roster (`FIFTY_CLASSICS`, each entry naming its catalog `id`): numbered 1–50, the book's route name
   over "peak · region", a missing grade left out. All fifty are in the catalog (2026-10-21).
   Peak lists (2026-10-22): **Colorado Centennials** (`co_cent`, 99 = the 52 fourteeners + 47 thirteeners, Mount Bross excluded as on the
