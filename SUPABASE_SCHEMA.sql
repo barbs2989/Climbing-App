@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 88 tables, 880 columns, 455 keyed/checked constraints (154 foreign keys), 264 RLS policies.
+-- Counts: 85 tables, 835 columns, 446 keyed/checked constraints (148 foreign keys), 249 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -19,6 +19,7 @@
 -- app_errors (app_errors_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- app_feedback (app_feedback_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- area_route_rollup (area_route_rollup_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
+-- area_subtree_rollup (area_subtree_rollup_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
 -- areas (areas_parent_id_fkey): FOREIGN KEY (parent_id) REFERENCES areas(id)
 -- areas (areas_walkin_submission_id_fkey): FOREIGN KEY (walkin_submission_id) REFERENCES gps_submissions(id) ON DELETE SET NULL
 -- blocked_users (blocked_users_blocked_fkey): FOREIGN KEY (blocked) REFERENCES auth.users(id) ON DELETE CASCADE
@@ -103,14 +104,7 @@
 -- group_reports (group_reports_resolved_by_fkey): FOREIGN KEY (resolved_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- groups (groups_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE SET NULL
 -- groups (groups_created_by_fkey): FOREIGN KEY (created_by) REFERENCES auth.users(id) ON DELETE CASCADE
--- guide_credentials (guide_credentials_guide_id_fkey): FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
--- guide_credentials (guide_credentials_reviewed_by_fkey): FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL
--- guide_documents (guide_documents_credential_id_fkey): FOREIGN KEY (credential_id) REFERENCES guide_credentials(id) ON DELETE SET NULL
--- guide_documents (guide_documents_guide_id_fkey): FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
--- guide_profiles (guide_profiles_id_fkey): FOREIGN KEY (id) REFERENCES profiles(id) ON DELETE CASCADE
 -- hazard_votes (hazard_votes_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
--- inquiries (inquiries_climber_id_fkey): FOREIGN KEY (climber_id) REFERENCES profiles(id) ON DELETE CASCADE
--- inquiries (inquiries_guide_id_fkey): FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
 -- kudos (kudos_climb_log_id_fkey): FOREIGN KEY (climb_log_id) REFERENCES climb_logs(id) ON DELETE CASCADE
 -- kudos (kudos_giver_fkey): FOREIGN KEY (giver) REFERENCES auth.users(id) ON DELETE CASCADE
 -- kudos (kudos_receiver_fkey): FOREIGN KEY (receiver) REFERENCES auth.users(id) ON DELETE CASCADE
@@ -133,9 +127,8 @@
 -- profiles (profiles_primary_account_id_fkey): FOREIGN KEY (primary_account_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- restricted_users (restricted_users_restricted_fkey): FOREIGN KEY (restricted) REFERENCES auth.users(id) ON DELETE CASCADE
 -- restricted_users (restricted_users_restrictor_fkey): FOREIGN KEY (restrictor) REFERENCES auth.users(id) ON DELETE CASCADE
--- reviews (reviews_climber_id_fkey): FOREIGN KEY (climber_id) REFERENCES profiles(id) ON DELETE CASCADE
--- reviews (reviews_guide_id_fkey): FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
--- reviews (reviews_inquiry_id_fkey): FOREIGN KEY (inquiry_id) REFERENCES inquiries(id) ON DELETE CASCADE
+-- review_ai_verdicts (review_ai_verdicts_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
+-- review_ai_verdicts (review_ai_verdicts_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_base_checkins (route_base_checkins_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_base_checkins (route_base_checkins_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- route_base_pin_changes (route_base_pin_changes_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
@@ -143,6 +136,7 @@
 -- route_field_confidence (route_field_confidence_field_fkey): FOREIGN KEY (field) REFERENCES contribution_fields(form_key)
 -- route_field_confidence (route_field_confidence_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_field_confidence (route_field_confidence_set_by_fkey): FOREIGN KEY (set_by) REFERENCES auth.users(id) ON DELETE SET NULL
+-- route_field_evidence (route_field_evidence_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- route_flags (route_flags_field_fkey): FOREIGN KEY (field) REFERENCES contribution_fields(form_key)
 -- route_flags (route_flags_reporter_fkey): FOREIGN KEY (reporter) REFERENCES auth.users(id) ON DELETE CASCADE
 -- route_flags (route_flags_resolved_by_fkey): FOREIGN KEY (resolved_by) REFERENCES auth.users(id) ON DELETE SET NULL
@@ -290,6 +284,18 @@ CREATE TABLE public.area_route_rollup (
 ALTER TABLE public.area_route_rollup ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "area_route_rollup public read" ON public.area_route_rollup AS PERMISSIVE FOR SELECT TO public USING (true);
 
+CREATE TABLE public.area_subtree_rollup (
+  area_id text NOT NULL,
+  disc text NOT NULL,
+  sys text NOT NULL,
+  b integer NOT NULL,
+  n integer NOT NULL,
+  CONSTRAINT area_subtree_rollup_pkey PRIMARY KEY (area_id, disc, sys, b),
+  CONSTRAINT area_subtree_rollup_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
+);
+ALTER TABLE public.area_subtree_rollup ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "area_subtree_rollup public read" ON public.area_subtree_rollup AS PERMISSIVE FOR SELECT TO public USING (true);
+
 CREATE TABLE public.areas (
   id text NOT NULL,
   name text NOT NULL,
@@ -355,14 +361,6 @@ ALTER TABLE public.blocked_users ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "blocked delete own" ON public.blocked_users AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = blocker));
 CREATE POLICY "blocked insert own" ON public.blocked_users AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = blocker));
 CREATE POLICY "blocked read own" ON public.blocked_users AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = blocker));
-
-CREATE TABLE public.cert_track_disciplines (
-  cert_track text NOT NULL,
-  discipline text NOT NULL,
-  CONSTRAINT cert_track_disciplines_pkey PRIMARY KEY (cert_track, discipline)
-);
-ALTER TABLE public.cert_track_disciplines ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "cert_track_disciplines public read" ON public.cert_track_disciplines AS PERMISSIVE FOR SELECT TO public USING (true);
 
 CREATE TABLE public.climb_log_confirmations (
   log_id uuid NOT NULL,
@@ -1133,7 +1131,7 @@ CREATE TABLE public.group_members (
 ALTER TABLE public.group_members ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "group_members accept own invite" ON public.group_members AS PERMISSIVE FOR UPDATE TO public USING (((( SELECT auth.uid() AS uid) = user_id) AND (status = 'invited'::text))) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (status = 'active'::text) AND (role = 'member'::text) AND ((rules_agreed_at IS NOT NULL) OR (NOT group_has_rules(group_id)))));
 CREATE POLICY "group_members approve request" ON public.group_members AS PERMISSIVE FOR UPDATE TO public USING ((is_group_manager(group_id) AND (status = 'pending'::text))) WITH CHECK ((is_group_manager(group_id) AND (status = 'active'::text) AND (role = 'member'::text)));
-CREATE POLICY "group_members invite" ON public.group_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) <> user_id) AND (status = 'invited'::text) AND (role = 'member'::text) AND (invited_by = ( SELECT auth.uid() AS uid)) AND (is_group_manager(group_id) OR (is_group_member(group_id) AND (group_invite_policy(group_id) = 'members'::text))) AND (NOT group_user_banned(group_id, user_id)) AND (NOT profile_owner_blocked_me(user_id))));
+CREATE POLICY "group_members invite" ON public.group_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) <> user_id) AND (status = 'invited'::text) AND (role = 'member'::text) AND (invited_by = ( SELECT auth.uid() AS uid)) AND (is_group_manager(group_id) OR (is_group_member(group_id) AND (group_invite_policy(group_id) = 'members'::text))) AND (NOT private.group_user_banned(group_id, user_id)) AND (NOT profile_owner_blocked_me(user_id))));
 CREATE POLICY "group_members join self" ON public.group_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (role = 'member'::text) AND (NOT group_user_banned(group_id, ( SELECT auth.uid() AS uid))) AND (((status = 'active'::text) AND (EXISTS ( SELECT 1
    FROM groups g
   WHERE ((g.id = group_members.group_id) AND (g.visibility = 'public'::text) AND (g.policy = 'open'::text) AND (jsonb_array_length(g.rules) = 0))))) OR ((status = 'pending'::text) AND (EXISTS ( SELECT 1
@@ -1278,99 +1276,6 @@ CREATE POLICY "groups update by manager" ON public.groups AS PERMISSIVE FOR UPDA
 CREATE POLICY "moderation hides taken-down content" ON public.groups AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.groups AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
-CREATE TABLE public.guide_credentials (
-  id uuid NOT NULL DEFAULT gen_random_uuid(),
-  guide_id uuid NOT NULL,
-  kind text NOT NULL,
-  cert_track text,
-  cross_cutting_type text,
-  label text,
-  cert_number text,
-  issuing_org text,
-  status text NOT NULL DEFAULT 'pending'::text,
-  submitted_at timestamp with time zone NOT NULL DEFAULT now(),
-  verified_at timestamp with time zone,
-  verified_expires_at timestamp with time zone,
-  reviewed_by uuid,
-  rejected_reason text,
-  created_at timestamp with time zone NOT NULL DEFAULT now(),
-  CONSTRAINT guide_credentials_pkey PRIMARY KEY (id),
-  CONSTRAINT guide_credentials_cert_track_check CHECK ((cert_track = ANY (ARRAY['SPI'::text, 'MPI'::text, 'RockGuide'::text, 'AlpineGuide'::text, 'SkiGuide'::text, 'IFMGA'::text]))),
-  CONSTRAINT guide_credentials_cross_cutting_type_check CHECK ((cross_cutting_type = ANY (ARRAY['AIARE'::text, 'WFR'::text, 'other'::text]))),
-  CONSTRAINT guide_credentials_kind_check CHECK ((kind = ANY (ARRAY['primary_track'::text, 'cross_cutting'::text]))),
-  CONSTRAINT guide_credentials_status_check CHECK ((status = ANY (ARRAY['pending'::text, 'verified'::text, 'rejected'::text, 'lapsed'::text]))),
-  CONSTRAINT guide_credentials_track_pairing CHECK ((((kind = 'primary_track'::text) AND (cert_track IS NOT NULL) AND (cross_cutting_type IS NULL)) OR ((kind = 'cross_cutting'::text) AND (cross_cutting_type IS NOT NULL) AND (cert_track IS NULL)))),
-  CONSTRAINT guide_credentials_guide_id_fkey FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE,
-  CONSTRAINT guide_credentials_reviewed_by_fkey FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL
-);
-ALTER TABLE public.guide_credentials ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "guide_credentials admin update" ON public.guide_credentials AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
-CREATE POLICY "guide_credentials read own or admin" ON public.guide_credentials AS PERMISSIVE FOR SELECT TO public USING (((guide_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid)) OR (EXISTS ( SELECT 1
-   FROM guide_profiles gp
-  WHERE ((gp.id = guide_credentials.guide_id) AND (gp.status = 'active'::text))))));
-CREATE POLICY "guide_credentials self insert pending" ON public.guide_credentials AS PERMISSIVE FOR INSERT TO public WITH CHECK (((guide_id = ( SELECT auth.uid() AS uid)) AND (status = 'pending'::text) AND (verified_at IS NULL) AND (verified_expires_at IS NULL) AND (reviewed_by IS NULL)));
-CREATE POLICY "guide_credentials self resubmit" ON public.guide_credentials AS PERMISSIVE FOR UPDATE TO public USING (((guide_id = ( SELECT auth.uid() AS uid)) AND (status = ANY (ARRAY['rejected'::text, 'lapsed'::text])))) WITH CHECK (((guide_id = ( SELECT auth.uid() AS uid)) AND (status = 'pending'::text) AND (verified_at IS NULL) AND (verified_expires_at IS NULL)));
-
-CREATE TABLE public.guide_documents (
-  id uuid NOT NULL DEFAULT gen_random_uuid(),
-  guide_id uuid NOT NULL,
-  credential_id uuid,
-  doc_type text NOT NULL,
-  storage_path text NOT NULL,
-  uploaded_at timestamp with time zone NOT NULL DEFAULT now(),
-  deleted_at timestamp with time zone,
-  CONSTRAINT guide_documents_pkey PRIMARY KEY (id),
-  CONSTRAINT guide_documents_doc_type_check CHECK ((doc_type = ANY (ARRAY['insurance_coi'::text, 'cert_card'::text]))),
-  CONSTRAINT guide_documents_credential_id_fkey FOREIGN KEY (credential_id) REFERENCES guide_credentials(id) ON DELETE SET NULL,
-  CONSTRAINT guide_documents_guide_id_fkey FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
-);
-ALTER TABLE public.guide_documents ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "guide_documents admin update" ON public.guide_documents AS PERMISSIVE FOR UPDATE TO public USING (is_admin(( SELECT auth.uid() AS uid))) WITH CHECK (is_admin(( SELECT auth.uid() AS uid)));
-CREATE POLICY "guide_documents read own or admin" ON public.guide_documents AS PERMISSIVE FOR SELECT TO public USING (((guide_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
-CREATE POLICY "guide_documents self insert" ON public.guide_documents AS PERMISSIVE FOR INSERT TO public WITH CHECK ((guide_id = ( SELECT auth.uid() AS uid)));
-
-CREATE TABLE public.guide_profiles (
-  id uuid NOT NULL,
-  status text NOT NULL DEFAULT 'draft'::text,
-  title text,
-  base_location text,
-  specialty text,
-  bio text,
-  cancellation_policy text,
-  lat double precision,
-  lng double precision,
-  day_rate integer,
-  group_max integer,
-  response_hrs integer,
-  regions text[] NOT NULL DEFAULT '{}'::text[],
-  languages text[] NOT NULL DEFAULT '{}'::text[],
-  active_disciplines text[] NOT NULL DEFAULT '{}'::text[],
-  insurance_carrier_name text,
-  insurance_attested boolean NOT NULL DEFAULT false,
-  permit_attested boolean NOT NULL DEFAULT false,
-  waiver_process_attested boolean NOT NULL DEFAULT false,
-  independent_contractor_attested boolean NOT NULL DEFAULT false,
-  insurance_attested_at timestamp with time zone,
-  permit_attested_at timestamp with time zone,
-  waiver_process_attested_at timestamp with time zone,
-  independent_contractor_attested_at timestamp with time zone,
-  agreement_signed_name text,
-  agreement_signed_at timestamp with time zone,
-  submitted_at timestamp with time zone,
-  listed_at timestamp with time zone,
-  rejected_reason text,
-  created_at timestamp with time zone NOT NULL DEFAULT now(),
-  updated_at timestamp with time zone NOT NULL DEFAULT now(),
-  CONSTRAINT guide_profiles_pkey PRIMARY KEY (id),
-  CONSTRAINT guide_profiles_active_requires_attestations CHECK (((status <> 'active'::text) OR (insurance_attested AND permit_attested AND waiver_process_attested AND independent_contractor_attested))),
-  CONSTRAINT guide_profiles_status_check CHECK ((status = ANY (ARRAY['draft'::text, 'submitted'::text, 'active'::text, 'rejected'::text, 'delisted'::text]))),
-  CONSTRAINT guide_profiles_id_fkey FOREIGN KEY (id) REFERENCES profiles(id) ON DELETE CASCADE
-);
-ALTER TABLE public.guide_profiles ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "guide_profiles public read active" ON public.guide_profiles AS PERMISSIVE FOR SELECT TO public USING (((status = 'active'::text) OR (id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
-CREATE POLICY "guide_profiles self insert unlisted" ON public.guide_profiles AS PERMISSIVE FOR INSERT TO public WITH CHECK (((id = ( SELECT auth.uid() AS uid)) AND (status = ANY (ARRAY['draft'::text, 'submitted'::text]))));
-CREATE POLICY "guide_profiles self or admin update" ON public.guide_profiles AS PERMISSIVE FOR UPDATE TO public USING (((id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid)))) WITH CHECK (((id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
-
 CREATE TABLE public.hazard_votes (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
   route_id text NOT NULL,
@@ -1388,29 +1293,6 @@ CREATE POLICY "hazard votes delete own" ON public.hazard_votes AS PERMISSIVE FOR
 CREATE POLICY "hazard votes insert own" ON public.hazard_votes AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (vote = ANY (ARRAY['still'::text, 'gone'::text]))));
 CREATE POLICY "hazard votes public read" ON public.hazard_votes AS PERMISSIVE FOR SELECT TO public USING (true);
 CREATE POLICY "hazard votes update own" ON public.hazard_votes AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND (vote = ANY (ARRAY['still'::text, 'gone'::text]))));
-
-CREATE TABLE public.inquiries (
-  id uuid NOT NULL DEFAULT gen_random_uuid(),
-  guide_id uuid NOT NULL,
-  climber_id uuid NOT NULL DEFAULT auth.uid(),
-  objective text,
-  requested_dates text,
-  message text,
-  party_size integer NOT NULL DEFAULT 1,
-  includes_minor boolean NOT NULL DEFAULT false,
-  climber_disclaimer_accepted_at timestamp with time zone NOT NULL DEFAULT now(),
-  status text NOT NULL DEFAULT 'new'::text,
-  guide_responded_at timestamp with time zone,
-  created_at timestamp with time zone NOT NULL DEFAULT now(),
-  CONSTRAINT inquiries_pkey PRIMARY KEY (id),
-  CONSTRAINT inquiries_status_check CHECK ((status = ANY (ARRAY['new'::text, 'accepted'::text, 'declined'::text, 'withdrawn'::text]))),
-  CONSTRAINT inquiries_climber_id_fkey FOREIGN KEY (climber_id) REFERENCES profiles(id) ON DELETE CASCADE,
-  CONSTRAINT inquiries_guide_id_fkey FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE
-);
-ALTER TABLE public.inquiries ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "inquiries climber insert new" ON public.inquiries AS PERMISSIVE FOR INSERT TO public WITH CHECK (((climber_id = ( SELECT auth.uid() AS uid)) AND (status = 'new'::text) AND (guide_responded_at IS NULL)));
-CREATE POLICY "inquiries guide update status" ON public.inquiries AS PERMISSIVE FOR UPDATE TO public USING ((guide_id = ( SELECT auth.uid() AS uid))) WITH CHECK ((guide_id = ( SELECT auth.uid() AS uid)));
-CREATE POLICY "inquiries read own side or admin" ON public.inquiries AS PERMISSIVE FOR SELECT TO public USING (((climber_id = ( SELECT auth.uid() AS uid)) OR (guide_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
 CREATE TABLE public.kudos (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1696,29 +1578,35 @@ CREATE POLICY "restricted delete own" ON public.restricted_users AS PERMISSIVE F
 CREATE POLICY "restricted insert own" ON public.restricted_users AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = restrictor));
 CREATE POLICY "restricted read own" ON public.restricted_users AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = restrictor));
 
-CREATE TABLE public.reviews (
+CREATE TABLE public.review_ai_verdicts (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
-  inquiry_id uuid NOT NULL,
-  guide_id uuid NOT NULL,
-  climber_id uuid NOT NULL DEFAULT auth.uid(),
-  rating integer NOT NULL,
-  text text,
-  guide_reply text,
-  guide_reply_at timestamp with time zone,
-  created_at timestamp with time zone NOT NULL DEFAULT now(),
-  CONSTRAINT reviews_pkey PRIMARY KEY (id),
-  CONSTRAINT reviews_inquiry_id_key UNIQUE (inquiry_id),
-  CONSTRAINT reviews_rating_check CHECK (((rating >= 1) AND (rating <= 5))),
-  CONSTRAINT reviews_climber_id_fkey FOREIGN KEY (climber_id) REFERENCES profiles(id) ON DELETE CASCADE,
-  CONSTRAINT reviews_guide_id_fkey FOREIGN KEY (guide_id) REFERENCES guide_profiles(id) ON DELETE CASCADE,
-  CONSTRAINT reviews_inquiry_id_fkey FOREIGN KEY (inquiry_id) REFERENCES inquiries(id) ON DELETE CASCADE
+  item_kind text NOT NULL,
+  item_id uuid NOT NULL,
+  route_id text,
+  area_id text,
+  field text,
+  item_hash text NOT NULL,
+  current_value jsonb,
+  suggested_value jsonb,
+  ai_value jsonb,
+  verdict text NOT NULL,
+  confidence text NOT NULL,
+  sources jsonb NOT NULL DEFAULT '[]'::jsonb,
+  reasoning text NOT NULL,
+  model text,
+  checked_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT review_ai_verdicts_pkey PRIMARY KEY (id),
+  CONSTRAINT review_ai_verdicts_item_kind_item_id_key UNIQUE (item_kind, item_id),
+  CONSTRAINT review_ai_verdicts_confidence_check CHECK ((confidence = ANY (ARRAY['2-source'::text, '1-source'::text, 'none'::text]))),
+  CONSTRAINT review_ai_verdicts_item_kind_check CHECK ((item_kind = ANY (ARRAY['contribution'::text, 'flag'::text]))),
+  CONSTRAINT review_ai_verdicts_reasoning_check CHECK (((char_length(reasoning) >= 1) AND (char_length(reasoning) <= 1200))),
+  CONSTRAINT review_ai_verdicts_sources_check CHECK ((jsonb_typeof(sources) = 'array'::text)),
+  CONSTRAINT review_ai_verdicts_verdict_check CHECK ((verdict = ANY (ARRAY['agree'::text, 'disagree'::text, 'partly'::text, 'unsure'::text]))),
+  CONSTRAINT review_ai_verdicts_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE,
+  CONSTRAINT review_ai_verdicts_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 );
-ALTER TABLE public.reviews ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "reviews climber insert with real inquiry" ON public.reviews AS PERMISSIVE FOR INSERT TO public WITH CHECK (((climber_id = ( SELECT auth.uid() AS uid)) AND (EXISTS ( SELECT 1
-   FROM inquiries i
-  WHERE ((i.id = reviews.inquiry_id) AND (i.climber_id = ( SELECT auth.uid() AS uid)) AND (i.guide_id = reviews.guide_id) AND (i.status <> 'withdrawn'::text))))));
-CREATE POLICY "reviews guide reply" ON public.reviews AS PERMISSIVE FOR UPDATE TO public USING ((guide_id = ( SELECT auth.uid() AS uid))) WITH CHECK ((guide_id = ( SELECT auth.uid() AS uid)));
-CREATE POLICY "reviews public read" ON public.reviews AS PERMISSIVE FOR SELECT TO public USING (true);
+ALTER TABLE public.review_ai_verdicts ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "ai verdicts read by admin" ON public.review_ai_verdicts AS PERMISSIVE FOR SELECT TO public USING (is_admin(auth.uid()));
 
 CREATE TABLE public.route_base_checkins (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1795,6 +1683,27 @@ CREATE TABLE public.route_field_confidence (
 );
 ALTER TABLE public.route_field_confidence ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "field confidence public read" ON public.route_field_confidence AS PERMISSIVE FOR SELECT TO public USING (true);
+
+CREATE TABLE public.route_field_evidence (
+  route_id text NOT NULL,
+  field text NOT NULL,
+  value jsonb,
+  method text NOT NULL,
+  level text NOT NULL,
+  evidence jsonb NOT NULL DEFAULT '[]'::jsonb,
+  expires_at timestamp with time zone,
+  history jsonb NOT NULL DEFAULT '[]'::jsonb,
+  batch text,
+  set_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT route_field_evidence_pkey PRIMARY KEY (route_id, field),
+  CONSTRAINT route_field_evidence_evidence_check CHECK ((jsonb_typeof(evidence) = 'array'::text)),
+  CONSTRAINT route_field_evidence_field_check CHECK (((length(field) >= 1) AND (length(field) <= 200))),
+  CONSTRAINT route_field_evidence_history_check CHECK ((jsonb_typeof(history) = 'array'::text)),
+  CONSTRAINT route_field_evidence_level_check CHECK ((level = ANY (ARRAY['locked'::text, 'locked-1src'::text, 'unconfirmed'::text, 'disputed'::text]))),
+  CONSTRAINT route_field_evidence_method_check CHECK ((method = ANY (ARRAY['agree-2'::text, 'official-1'::text, 'measured'::text, 'single-source'::text, 'owner'::text]))),
+  CONSTRAINT route_field_evidence_route_id_fkey FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+);
+ALTER TABLE public.route_field_evidence ENABLE ROW LEVEL SECURITY;
 
 CREATE TABLE public.route_flags (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
