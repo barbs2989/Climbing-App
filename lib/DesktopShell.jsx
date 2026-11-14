@@ -78,7 +78,7 @@ const readRecent = () => { try { const v = JSON.parse(localStorage.getItem(RECEN
    every place the search matched (usePlaceSearch already finds them all and counts them), and "Show
    more climbs" asks for 30 more, up to 200. It is the same ranked search, only longer, so the rows a
    climber already saw keep their order. The limits reset whenever the words change. */
-const PLACES_FIRST = 8, ROUTES_FIRST = 10, ROUTES_STEP = 30, MORE_MAX = 200;
+const PLACES_FIRST = 8, ROUTES_FIRST = 10, ROUTES_STEP = 30, MORE_MAX = 200, CLICK_SETTLE_MS = 350;
 export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left, inline, onNearMe }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
@@ -122,6 +122,22 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     : lim.routes > ROUTES_FIRST && routesQ.isPlaceholderData ? "loading"
     : routes.length >= lim.routes && lim.routes < MORE_MAX ? "more" : null;
   const hits = (finderHit ? [finderHit] : []).concat(places.map(a => ({ kind: "place", a })), placesMore ? [{ kind: "more", what: "places", state: placesMore }] : [], routes.map(r => ({ kind: "route", r })), routesMore ? [{ kind: "more", what: "routes", state: routesMore }] : []);
+  /* HELD ROWS SAY SO (climber walkthrough 2026-11-14). holdWhileTyping keeps the last words' rows on
+     screen while the new words' query runs, and nothing said they were old: a slow climb search sat
+     its stale list under the new words for minutes after the places had settled, and a climb search
+     that FAILED said nothing while places had rows. Each section now dims held rows under its own
+     "Searching…" line, and says when its own search failed. Placeholder data with the limit at its
+     first size means the words changed (the limits reset with them); above it, the same words asked
+     for more, which the "Loading more" row already says. */
+  const sectionState = (sq, fresh) => !USE_DB || !qq ? null : sq.isLoading || (sq.isPlaceholderData && fresh) ? "busy" : sq.isError ? "error" : null;
+  const placesState = sectionState(placesQ, lim.places === PLACES_FIRST);
+  const routesState = sectionState(routesQ, lim.routes === ROUTES_FIRST);
+  /* A LATE ANSWER MOVES THE ROWS (walkthrough 2026-11-14: a click on the place "Liberty Bell Mountain"
+     opened the climb "Liberty Crack" — the climb list re-rendered and slid a climb under the pointer).
+     A pointer click within CLICK_SETTLE_MS of the row list changing is dropped; Enter is unaffected. */
+  const rowsKey = hits.map(h => h.kind + ":" + (h.kind === "place" ? h.a.id : h.kind === "route" ? h.r.id : h.kind === "more" ? h.what : "")).join("|");
+  const rowsChangedAt = useRef(0);
+  useEffect(() => { rowsChangedAt.current = Date.now(); }, [rowsKey]);
   const failed = USE_DB && (routesQ.isError || placesQ.isError) && !hits.length;
   const busy = USE_DB && (routesQ.isLoading || placesQ.isLoading) && !hits.length;
   const pick = h => {
@@ -136,6 +152,8 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     if (h.kind === "finder") onOpenFinder({ loc: { id: h.scope.id, name: h.scope.name, area_type: h.scope.area_type }, filters: { discs: h.t.discs, gSys: h.t.gSys, gLo: h.t.gLo, gHi: h.t.gHi } });
     else if (h.kind === "place") onOpenArea(h.a); else onOpenRoute(h.r);
   };
+  // e.detail is 0 for a click the keyboard made: only a pointer can land on a row that just moved.
+  const click = h => e => { if (e.detail === 0 || Date.now() - rowsChangedAt.current >= CLICK_SETTLE_MS) pick(h); };
   const onKey = e => {
     if (e.key === "Escape") { setOpen(false); e.currentTarget.blur(); }
     else if (hits.length && e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setHi(i => (i + 1) % hits.length); }
@@ -162,7 +180,11 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     if (h.kind === "more") {
       const label = h.state === "loading" ? (h.what === "places" ? "Loading places…" : "Loading more climbs…")
         : h.what === "places" ? (placesTotal > MORE_MAX ? "Show " + MORE_MAX + " of " + placesTotal + " places" : "Show all " + placesTotal + " places") : "Show more climbs";
-      return <button key={"more-" + h.what} id={"wide-search-" + i} role="option" aria-selected={on} aria-disabled={h.state !== "more" || undefined} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, minHeight: 44, background: on ? C.card : "transparent", cursor: h.state === "more" ? "pointer" : "default" }}><ActionIcon name={h.state === "more" ? "more" : "search"} size={16} color={h.state === "more" ? C.blue : C.textMuted}/><span style={{ fontSize: 13.5, fontWeight: 700, color: h.state === "more" ? C.blue : C.textMuted }}>{label}</span></button>;
+      /* PINNED TO THE DROP-DOWN'S FOOT (walkthrough 2026-11-14): last under ten climbs in a list that
+         scrolls on its own, "Show more climbs" sat out of sight while namesakes in other states filled
+         the view. Inline, the list runs down the page and has no foot to pin to. */
+      const sticky = !inline && h.what === "routes";
+      return <button key={"more-" + h.what} id={"wide-search-" + i} role="option" aria-selected={on} aria-disabled={h.state !== "more" || undefined} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} style={{ ...ROW, minHeight: 44, background: on ? C.card : sticky ? C.surface : "transparent", cursor: h.state === "more" ? "pointer" : "default", ...(sticky ? { position: "sticky", bottom: 0, zIndex: 1, boxShadow: "0 -6px 10px " + C.surface } : null) }}><ActionIcon name={h.state === "more" ? "more" : "search"} size={16} color={h.state === "more" ? C.blue : C.textMuted}/><span style={{ fontSize: 13.5, fontWeight: 700, color: h.state === "more" ? C.blue : C.textMuted }}>{label}</span></button>;
     }
     const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
     /* A climb row carries ITS discipline's glyph and colours its grade the same way (the competitor
@@ -172,7 +194,8 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     const discColor = (CAT[disc] || {}).color || C.textMuted;
     const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
-    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
+    const held = (h.kind === "place" && placesState === "busy") || (h.kind === "route" && routesState === "busy");
+    return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={click(h)} aria-busy={held || undefined} style={{ ...ROW, background: on ? C.card : "transparent", opacity: held ? 0.5 : 1 }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
   };
   const showList = open && !!qq;
   // The EMPTY box, focused: recent words and Near me (nothing when there is neither).
@@ -187,6 +210,11 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const panel = inline ? { marginTop: 6, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: 6 }
     : { position: "absolute", top: 46, left: 0, right: 0, background: C.surface, border: "1px solid " + C.border, borderRadius: 14, boxShadow: "0 18px 50px rgba(0,0,0,0.55)", padding: 6, maxHeight: "min(70vh, 520px)", overflowY: "auto", overscrollBehavior: "contain", zIndex: 2 };
   const plain = { ...ROW, minHeight: 44 };
+  // A section's own state line, under its heading; a section with no rows to head gets a heading of its own.
+  const note = (kind, st) => st === "error" ? <div key={"note-" + kind} role="alert" style={{ padding: "2px 10px 6px", fontSize: 12.5, color: C.amber }}>{kind === "place" ? "Couldn’t search places — try again." : "Couldn’t search climbs — try again."}</div>
+    : st === "busy" ? <div key={"note-" + kind} style={{ padding: "0 10px 4px", fontSize: 12.5, color: C.textMuted }}>Searching…</div> : null;
+  const section = (kind, st) => [<div key={"head-" + kind} style={{ ...SECTION, padding: "8px 10px 4px" }}>{kind === "place" ? "Places" : "Climbs"}</div>, note(kind, st)];
+  const placesOrphan = !!placesState && !places.length, routesOrphan = !!routesState && !routes.length;
   return <div ref={box} style={wrap}>
     <span aria-hidden="true" style={{ position: "absolute", left: 12, top: 0, height: inline ? 44 : 40, display: "flex", alignItems: "center", pointerEvents: "none" }}><ActionIcon name="search" size={18} color={C.textMuted}/></span>
     <input ref={input} value={q} onChange={e => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} aria-label="Search climbs and places" role="combobox" aria-expanded={showList || showEmpty} aria-controls="wide-search-list" aria-activedescendant={showList && hits.length ? "wide-search-" + Math.min(hi, hits.length - 1) : undefined} aria-autocomplete="list" placeholder="Search climbs & crags" style={{ width: "100%", height: inline ? 44 : 40, boxSizing: "border-box", padding: "0 38px 0 38px", borderRadius: inline ? 12 : 20, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: inline ? 15 : 14.5, outline: "none" }}/>
@@ -195,7 +223,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
       {failed ? <div role="alert" style={{ padding: "12px 10px", fontSize: 13, color: C.amber }}>Search isn’t reachable right now — check your connection and try again.</div>
         : busy ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>Searching…</div>
         : !hits.length ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>{"No climbs or places match “" + qq + "”."}</div>
-        : hits.map((h, i) => { const head = (h.kind === "place" || h.kind === "route") && (i === 0 || hits[i - 1].kind !== h.kind) ? (h.kind === "place" ? "Places" : "Climbs") : ""; return head ? [<div key={"head-" + h.kind} style={{ ...SECTION, padding: head === "Places" ? "6px 10px 4px" : "8px 10px 4px" }}>{head}</div>, row(h, i)] : row(h, i); })}
+        : hits.map((h, i) => { const head = (h.kind === "place" || h.kind === "route") && (i === 0 || hits[i - 1].kind !== h.kind) ? (h.kind === "place" ? "Places" : "Climbs") : ""; return head ? [h.kind === "route" && placesOrphan ? section("place", placesState) : null, <div key={"head-" + h.kind} style={{ ...SECTION, padding: head === "Places" ? "6px 10px 4px" : "8px 10px 4px" }}>{head}</div>, note(h.kind, h.kind === "place" ? placesState : routesState), row(h, i)] : row(h, i); }).concat(placesOrphan && !routes.length ? [section("place", placesState)] : [], routesOrphan ? [section("route", routesState)] : [])}
     </div> : showEmpty ? <div id="wide-search-list" role="listbox" aria-label="Search shortcuts" style={panel}>
       {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/><span style={{ fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ fontSize: 12, color: C.textMuted }}>climbs around your position, on the map</span></button> : null}
       {recent.length ? <><div style={{ ...SECTION, padding: "8px 10px 4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}><span>Recent</span><button onMouseDown={e => e.preventDefault()} onClick={forget} style={{ border: "none", background: "transparent", color: C.textMuted, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: "4px 0", textTransform: "none", letterSpacing: 0 }}>Clear</button></div>
