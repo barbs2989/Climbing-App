@@ -44,9 +44,20 @@
       "status",
       "user_id"
     ],
+    "app_secrets": [
+      "key",
+      "value"
+    ],
     "app_settings": [
       "key",
       "value"
+    ],
+    "area_route_rollup": [
+      "area_id",
+      "b",
+      "disc",
+      "n",
+      "sys"
     ],
     "areas": [
       "approach",
@@ -372,6 +383,7 @@
       "itinerary_by",
       "meet_place",
       "meet_time",
+      "private",
       "route_id",
       "share_on",
       "share_token"
@@ -763,13 +775,16 @@
       "resume_public",
       "show_name",
       "show_on_ranks",
+      "skill_practiced",
       "skills",
       "sport_grade",
       "terms_accepted_at",
       "terms_accepted_version",
       "trad_grade",
       "trip_reports_default",
-      "username"
+      "username",
+      "username_changes",
+      "username_set_at"
     ],
     "restricted_users": [
       "created_at",

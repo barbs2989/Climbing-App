@@ -14,6 +14,15 @@ import { useQueryClient } from "@tanstack/react-query";
 import { respondToLogTag } from "./db";
 import { C, DLOCALE, pubName } from "../ClimbMatchCore.jsx";
 
+/* WHAT FOLLOWS "I WAS THERE": App registers one handler (it offers "Vouch for <name>" in the toast).
+   It returns true when it showed its own toast; otherwise the row's plain thanks shows. */
+let confirmedHandler = null;
+/** @param {(tag: any) => boolean} fn @returns {() => void} */
+export function onLogTagConfirmed(fn) {
+  confirmedHandler = fn;
+  return () => { if (confirmedHandler === fn) confirmedHandler = null; };
+}
+
 const dayOf = (d) => {
   if (!d) return "";
   const t = new Date(d + "T12:00:00");
@@ -33,7 +42,8 @@ export function LogTagRow({ tag: t, showToast, compact = false }) {
     setBusy(true);
     respondToLogTag(t.log_id, verdict)
       .then(() => {
-        if (showToast) showToast(verdict === "confirmed" ? "Confirmed — thanks for backing up " + who + "’s climb." : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
+        const followed = verdict === "confirmed" && confirmedHandler ? confirmedHandler(t) : false;
+        if (showToast && !followed) showToast(verdict === "confirmed" ? "Confirmed — thanks for backing up " + who + "’s climb." : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
         return qc.invalidateQueries({ queryKey: ["log-tags-for-me"] });
       })
       .catch(() => { if (showToast) showToast("Couldn’t save your answer — nothing changed. Try again."); })
