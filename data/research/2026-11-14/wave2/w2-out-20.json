@@ -1,0 +1,620 @@
+{
+ "bc_slesse_mountain_northeast_buttress": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 24 pitches, Grade V; with a 70 m rope the bypass ledges take 2 pitches and the route 24."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade V."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route rated V, 5.9-10a, 2500 feet."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page title gives the route as 2500 feet long."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey et al., 1963",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Fred Beckey and party in 1963."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Slesse Memorial trailhead (Nesakwatch Creek FSR)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the Slesse Memorial trailhead where the road widens; a thin signpost marks the trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Slesse Memorial trail to the propeller cairn (~3 hrs), then slabs, a 3rd/4th-class gully and notch into the bypass glacier cirque; ~4 hrs to the bypass ledge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to the propeller cairn about 3 hours; then slabs, a 3rd/4th class gully and notch into the cirque; about 4 hours to the bypass ledge."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Icefall from a hidden ledge above the bypass-glacier cirque; cross quickly",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice and snow on a ledge above the cirque entrance can fall with little warning; move fast to the middle of the slabs."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Pocket glacier: many parties wait until it slides off (July to September depending on year)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbers often wait for the pocket glacier to slide off; some years by July, other years it lingers into September."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Glacial ice melt near the bypass ledge; seasonal snow on the mid-height bivy ledge until late July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Melting glacial ice near the bypass ledge gives water; the bivy ledge snow patch lasts only until late July."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bivy ledge at half height (sleeps up to 6); other bivies at pitches 6, 10, 17, 20, the summit and the descent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Half-height bivy ledge sleeps up to six; more bivy spots at pitches 6, 10, 17 and 20, the summit and the descent."
+     }
+    ]
+   },
+   {
+    "field": "itinerary",
+    "value": "Most parties take 2 long days: day 1 hike and climb to the mid-height bivy; day 2 finish, descend, hike out",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most parties take two long days: day one to the half-height bivy, day two summit, descend and walk back to the car."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Via Crossover Pass, rappelling the Crack of Noon Club route, back to the Slesse Memorial trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Preferred descent goes over Crossover Pass and rappels the Crack Of Noon Club route, returning to the Slesse Memorial trailhead."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Slesse Creek FSR on the west side is gated and locked by the Canadian military",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "The west-side Slesse Creek FSR is now gated and locked by the Canadian military."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Logging road condition varies by year; low-clearance cars may not reach the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road condition varies yearly; author reached the trailhead in a Subaru Forester, others could not, especially low-clearance cars."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Bypass ledge skips the first 6 pitches of the NE Buttress Direct (5.10c); 5.9 cruxes include pitches 17 and 19; last 7 pitches on the headwall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "The bypass ledge skips the first six pitches of the Direct (5.10c); 5.9 cruxes at pitches 17 and 19; seven headwall pitches finish."
+     }
+    ]
+   },
+   {
+    "field": "bail",
+    "value": "Near the top a ledge leads left into 4th-class terrain to the summit ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Near the top, tired parties can escape left on a ledge into 4th class ground reaching the summit ridge."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8002,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation given as 2,440 m / 8,002 ft."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost NE Buttress Bypass page answered 403. No page stated a one-way distance or gain for this route."
+ },
+ "bc_slesse_mountain_north_pillar": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 500 ft, 6 pitches, Grade III; six pitches from the northern notch to the summit."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 500 ft (152 m)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jeff Lowe, Rob Kiesel, July 1972 (as the top of the North Rib)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Jeff Lowe and Rob Kiesel, July 1972; likely first climbed as the final pitches of the North Rib."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reach the northern notch via the west-side trail, then 6 pitches to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "A 1974 party reached the northern notch from the west side trail and climbed six pitches to the top."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep climbing on mostly solid holds; rock quality not the best",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock is not the best quality but the climbing is steep with mostly solid holds."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project describes the North Pillar as its own route; the North Rib pages below count it as the last 6 pitches of the North Rib. No distance/gain stated."
+ },
+ "bc_slesse_mountain_north_rib_kiesel_lowe": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 27,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 2800 ft, 27 pitches, Grade V."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent report: NCCS V, F8, 27 pitches, no aid."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade V."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent report rates it NCCS V."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 2800 ft (848 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Rob Kiesel, Jeff Lowe, July 1972",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Rob Kiesel and Jeff Lowe, July 1972."
+     }
+    ]
+   },
+   {
+    "field": "fa_party",
+    "value": "Rob Kiesel and Jeff Lowe, in July",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Rob Kiesel and Jeff Lowe, July 1972."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Jeff Lowe reports climbing the rib with Rob Kiesel in July; 13 hours of climbing with a bivouac atop the rib."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the vague rib between Heart of Darkness and the North Face couloir to the notch, then 6 more pitches up the NW arete of the summit tower",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the rib between Heart of Darkness and the North Face Couloir to the notch, then six pitches up the summit tower's NW arete."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party climbed the rib on the right of the north face, then the northwest corner to the summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross the North Slesse Glacier to the base; crampons and axe needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cross the North Slesse Glacier, which never melts out, so crampons and an axe are always needed to start."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "North Slesse Glacier icefall; the glacier reportedly slid in 2024",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier crossing to the base has icefall problems and is called dangerous."
+     },
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author believes the whole North Slesse Glacier slid in 2024; treat it with caution, less volatile than the pocket glacier."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Full rack plus crampons and ice axe for the approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: full rack; crampons and ice axe for the approach."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Doubles 0.2-1, singles 2-3, set of nuts; one 70 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party carried doubles 0.2 to 1, singles 2 to 3, nuts, and a single 70 m rope with no tag line."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 18.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party climbed the North Rib in a single push, 18.5 hours car to car (August 2025)."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Crossover Pass descent, finishing with the Crack of Doom rappels",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent by the Crossover Pass route, ending with the Crack of Doom rappels, tricky to find in the dark."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Water in the open talus field on the way to the base, even late summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Plenty of water in the open talus on the approach to the North Rib, even late in summer."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Second most popular technical route after the NE Buttress; better rock than the NE Buttress, some long runouts; first third is low-angle runout 5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Probably second most popular technical route after NE Buttress; better rock but some long runouts."
+     },
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guidebooks describe runout 5.8 slab for the first third; author found it secure low-angle cracks and flakes."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Mid-route snow patch; FA party bivouacked at the top of the rib",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "13 hours of climbing broken by a bivouac at the top of the rib."
+     }
+    ]
+   }
+  ],
+  "note": "Car-to-car 18.5 h is one party's single-day time (North Shore Alpinism). No stated approach distance or gain."
+ },
+ "bc_slesse_mountain_russian_roulette": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Will Kovacic and Jeremy Roulette, early June",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Will Kovacic and Jeremy Roulette climbed the new route on the east side of Mt. Parkes in early June."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "They climbed a broken buttress in about nine pitches to the summit of Parkes."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route named Russian Roulette, graded 5.9."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Broken buttress on the east side of Mt. Parkes (ca 2,100 m) on Crossover Ridge north of Slesse; continues along the ridge and upper North Rib to Slesse's summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Parkes (ca 2,100 m) sits on Crossover Ridge north of Slesse; party continued along the ridge and upper North Rib to Slesse's top."
+     }
+    ]
+   },
+   {
+    "field": "parkes_elev_m_approx",
+    "value": 2100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Parkes given as about 2,100 m."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project page (cited by AAJ) not reached; AAJ is the only source read."
+ }
+}

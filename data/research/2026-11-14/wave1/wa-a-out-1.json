@@ -1276,5 +1276,911 @@
  "wa_lizard_mountain_south_route": {
   "area": "wa_lizard_mountain",
   "skip_reason": "Searched DDG (Lizard Mountain + White Rock Lakes/Ptarmigan), trailcatjim site search, Mountaineers route search: only Ptarmigan Traverse pages mentioning Lizard Pass/Lizard Mountain in passing; no page describes a climb of Lizard Mountain's south route with numbers."
+ },
+ "wa_rampage": {
+  "area": "wa_paisano_pinnacle",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/paisano-burgundy-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route header: Paisano Pinnacle, Rampage (5.10d, 4p, 500')."
+     },
+     {
+      "url": "https://www.mountainproject.com/search?q=Rampage+Paisano",
+      "retrieved_at": "2026-11-14",
+      "fact": "Search listing: Rampage 5.10d Trad, Alpine, 4 pitches, 500 ft, FA Bryan Burdo."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/paisano-burgundy-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rampage listed as 4 pitches."
+     },
+     {
+      "url": "https://www.mountainproject.com/search?q=Rampage+Paisano",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rampage listed as 4 pitches."
+     },
+     {
+      "url": "https://jameswolff95.wixsite.com/mysite/post/paisano-pinnacle-rampage-5-10d",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four pitches of crack and dihedral climbing to the top of Paisano Pinnacle."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/paisano-burgundy-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rampage length 500 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/search?q=Rampage+Paisano",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rampage length 500 ft (152 m)."
+     }
+    ]
+   },
+   {
+    "field": "pitch_grades",
+    "value": "5.7, 5.10d, 5.10c, 5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://jameswolff95.wixsite.com/mysite/post/paisano-pinnacle-rampage-5-10d",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch grades in order: 5.7, 5.10d, 5.10c, 5.9+."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo (first ascensionist named on Mountain Project)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Rampage+Paisano",
+      "retrieved_at": "2026-11-14",
+      "fact": "Search listing gives FA: Bryan Burdo."
+     }
+    ]
+   },
+   {
+    "field": "start",
+    "value": "A few hundred yards downhill from Burgundy Col",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://jameswolff95.wixsite.com/mysite/post/paisano-pinnacle-rampage-5-10d",
+      "retrieved_at": "2026-11-14",
+      "fact": "Line begins a few hundred yards below Burgundy Col."
+     }
+    ]
+   },
+   {
+    "field": "rock_type",
+    "value": "Granite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/paisano-burgundy-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report header lists rock as granite."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep crack and dihedral line with clean, high-quality 5.10 climbing.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/paisano-burgundy-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rampage has clean, excellent 5.10 climbing, among the best 5.10 the author did in the Cascades."
+     }
+    ]
+   }
+  ],
+  "note": "Supertopo page (FA Burdo and Greg White, summer 1984 per search snippet) rendered empty in the browser, so the partner/year is not recorded. Mountain Project route page itself returned 429 (rate limit); figures taken from MP's own search listing."
+ },
+ "wa_skookum_peak_twinsisters_scramble": {
+  "area": "wa_skookum_peak_twinsisters",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Jaws' Tooth 5.6, Skookum north ridge 5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Circuit section rated Jaw's Tooth (5.6) and Skookum Peak (5.4)."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Slabs and dihedrals just left of Jaws' Tooth steepen to a 5.6 layback dihedral onto the spire; rappel off, then follow the north ridge crest of Skookum on ledges and edges to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Slabs and dihedrals left of Jaw's Tooth to a 5.6 layback dihedral; rappel; then the north ridge of Skookum, staying on the crest."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "One 15 m rappel off Jaws' Tooth; a 30 m rope barely reaches",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The 15m rappel off Jaw's Tooth; a 30m rope just barely gets you down."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Non-technical south face (circuit pattern: up north ridges, down south faces)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The circuit climbs steep north ridges and descends non-technical south faces."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Solid rock and big exposure on the ridge; the Jaws' Tooth plus Skookum combination is rated among the best moderate trad climbs in Washington by the author.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock was bomber, exposure immense; Jaw's Tooth plus Skookum called the best easier (<=5.6) trad climb the author did in WA."
+     }
+    ]
+   }
+  ],
+  "note": "CascadeClimbers Green Creek Circuit TR (14.5 h car-to-car, 7,800 ft, 13.4 mi) covers the whole five-summit circuit, not this route alone; not used."
+ },
+ "wa_spectre_peak_south_route": {
+  "area": "wa_spectre_peak",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Sam Boyce and Joe Manning, July 2022",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104491-tr-spectre-peak-%E2%80%9Cspirited-away%E2%80%9D-fa-of-the-s-ridge-of-spectre-peak-2000%E2%80%99-58-07262022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA trip report of the S Ridge dated 07/26/2022, climbed with Joe Manning."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025/",
+      "retrieved_at": "2026-11-14",
+      "fact": "2025 second-ascent report credits the line to Sam and Joe."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104491-tr-spectre-peak-%E2%80%9Cspirited-away%E2%80%9D-fa-of-the-s-ridge-of-spectre-peak-2000%E2%80%99-58-07262022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA report title gives the S Ridge as 2000'."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Second-ascent report title: about 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "IV 5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Second-ascent report rates Spirited Away IV, 5.9."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ten pitches, including a ~600 ft simul of 3rd to low 5th to the summit block; pitches 4-6 varied from the FA line."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the notch, 4th-class ramps to a chimney and a 5.7 face; a clean gully or a chossy 5.9 overhang finishes the first tower; long 3rd-4th class ridge; final ~600 ft simul of 3rd to low 5th to the summit block.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025/",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1 4th class ramps, chimney, 5.7 face; P2 gully vs 5.9 chossy overhang; P3 3rd-4th ridge; ~600 ft simul to summit block."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104491-tr-spectre-peak-%E2%80%9Cspirited-away%E2%80%9D-fa-of-the-s-ridge-of-spectre-peak-2000%E2%80%99-58-07262022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party was out for 4 days with excellent weather."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Easy Peak, Improbable Impasse, Perfect Pass, Challenger col, Phantom, Pickle Pass (FA party's approach)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104491-tr-spectre-peak-%E2%80%9Cspirited-away%E2%80%9D-fa-of-the-s-ridge-of-spectre-peak-2000%E2%80%99-58-07262022/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach notes: Easy Peak to Improbable Impasse to Perfect Pass to Challenger col to Phantom to Pickle Pass."
+     }
+    ]
+   }
+  ],
+  "note": "FA report title grades the route 5.8; second ascent rates it IV 5.9, so grade kept single-source. AAJ page (articles/13201216382) blocked by the browser's safety check at the time; not read. FA and length agree across two independent CascadeClimbers reports (FA party and 2025 second ascent) but both are on one publisher, so kept single-source."
+ },
+ "wa_mount_terror_north_face": {
+  "area": "wa_mount_terror",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "First ascent of the north face led by Ed Cooper",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Peak first climbed 1932 by Degenhardt and Strandberg; Ed Cooper later led the first ascent of the harder north face."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Mount Terror is the highest peak of the southern Picket Range; the north face is its more difficult side.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Terror_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest peak of the southern Pickets; north face described as the more challenging line."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia gives the north-face FA only as thirty years after 1932, so no year is recorded (would require arithmetic). Summitpost Mount Terror page (summitpost.org/mount-terror/155359) answered 403 in this session; its search snippet says the north-side FA party climbed the right (west) of two ribs. Mazamas activity page blocked by the browser's safety check."
+ },
+ "wa_mount_fernow_southeast_face": {
+  "area": "wa_mount_fernow",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Phelps Creek Trailhead, end of FR 6211 off the Chiwawa River Road (FR 62)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts at Phelps Creek trailhead; Chiwawa River Road 22 miles, then FR 6211 2.3 very rough miles to road end."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Chiwawa River Road (FR 62) 22 miles, pavement ends at 10.8 miles; then FR 6211 for 2.3 very rough miles to the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Chiwawa River Rd 22 mi (paved first 10.8), bear right on FR 6211 for 2.3 very rough miles to the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route to Mount Fernow is Class 4 with exposed climbing; gear and experience recommended."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail to the Leroy Basin camping area, up to a 7,800-ft col on the shoulder of Seven Fingered Jack, then descend to about 6,600 ft before the climb.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "2 hours to Leroy Basin camp, about an hour to the 7,800-ft col on Seven Fingered Jack, then down to about 6,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_leg_hours",
+    "value": "2 hours trailhead to Leroy Basin camp; about 1 more hour to the 7,800-ft col",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exactly 2 hours to the Leroy Basin camping area, another hour or so to the 7,800-foot col."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Back at the car before 5pm for about a 12-hour day; summit reached just under 6 hours after starting."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Leroy Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach reaches the camping area in Leroy Basin."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Retrace the ascent route back over the col",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "After lunch the party retraced their steps back to the col."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Large amounts of loose rock on the cross-country approach and the upper route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Huge amount of loose rock; route as loose as the approach near the top; many slips and near misses."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No parking pass or fee listed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking Pass/Entry Fee: None."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/mount-fernow",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped in the trailhead parking lot at 3,500 feet."
+     }
+    ]
+   }
+  ],
+  "note": "WTA lists 22.0 miles 'one-way' and 5,900 ft gain for its Fernow hike; the one-way label looks inconsistent with a Leroy Basin day trip, so not used. Hebert's 'nearly 8,000 feet of up and down' is ambiguous (up or up+down), not used as gain."
+ },
+ "wa_mount_ann_scramble": {
+  "area": "wa_mount_ann",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-ann",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Ann scramble: 10.5 miles roundtrip, 4,000 feet elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-ann",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length listed as 10.5 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass or America the Beautiful Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-ann",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking: America the Beautiful Pass or Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the saddle NW of Lake Ann, a path heads SW then S along the ridge toward Peak 5681; near 5,300 ft it contours the east side; stay high and follow cairns, then traverse an up-and-down ridge to Ann.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-ann",
+      "retrieved_at": "2026-11-14",
+      "fact": "Path from saddle NW of Lake Ann along ridge to Peak 5681, contours east near 5300 ft; cairns; ridge to Ann undulates."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Terrain south of Peak 5681 is rougher than the map suggests; snow patches linger into August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-ann",
+      "retrieved_at": "2026-11-14",
+      "fact": "Area south of Peak 5681 looks gentle on the USGS map but is not; snow patches remained in late August."
+     }
+    ]
+   },
+   {
+    "field": "winter_route",
+    "value": "In winter, leave the trail near the Lake Ann junction and climb the ridge just west of Annette Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-ann",
+      "retrieved_at": "2026-11-14",
+      "fact": "Usual winter route leaves the trail around the Lake Ann junction and ascends the ridge west of Annette Peak."
+     }
+    ]
+   }
+  ],
+  "note": "Gain matches the app's 4,000 ft but only WTA states it; no second publisher found."
+ },
+ "wa_tye_peak_e_route": {
+  "area": "wa_tye_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 5476,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/06/05/tye-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party climbed toward the 5,476-foot summit of Tye Peak."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Stevens Pass follow the (snow-covered) road to the radio tower near Skyline Lake, go northwest past the lake to a nearby pass, drop into a Nason Creek tributary, then climb to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/06/05/tye-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Up the snowed-over road to the radio tower by Skyline Lake, northwest to a pass, into a Nason Creek tributary, then up to the summit."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Stevens Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/06/05/tye-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Tour starts at Stevens Pass on the road toward Skyline Lake."
+     }
+    ]
+   }
+  ],
+  "note": "Wenatchee Outdoors describes a winter ski tour (six-hour day); its time is not used as a summer scramble time. Summitpost Tye Peak pages not opened (summitpost returned 403 elsewhere this session)."
+ },
+ "wa_mount_claywood_standard": {
+  "area": "wa_mount_claywood",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 6836,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Claywood",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Claywood summit elevation 6,836 ft (2,084 m)."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Summit inside Olympic National Park, named by O'Neil's 1885 expedition for Col. Henry Clay Wood; parent peak is Mount Cameron.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Claywood",
+      "retrieved_at": "2026-11-14",
+      "fact": "Named for Col. Henry Clay Wood by O'Neil's 1885 expedition; parent peak Mount Cameron."
+     }
+    ]
+   }
+  ],
+  "note": "No page found describing the climbing route, its distance, gain or time; peakvisor and other directory pages repeat Wikipedia and were not counted. App's Obstruction Point approach not confirmed."
+ },
+ "wa_north_ridge_west_side": {
+  "area": "wa_molar_tooth",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2815,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route page: Elevation Gain 2,815 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_mi",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route page: Length 5.0 mi (not stated whether one-way or round trip)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7547,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route page: High Point 7,547 ft."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Molar_Tooth_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Molar Tooth is a 7,547-foot granite summit on the Okanogan-Skagit county line."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May to September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: May, June, July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Several short low-5th-class pitches up the west rib, then more pitches to the summit; peak sits between Cutthroat Peak and Cutthroat Pass.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+      "retrieved_at": "2026-11-14",
+      "fact": "Between Cutthroat Peak and Cutthroat Pass; several short low 5th class pitches up the west rib and several more to the summit."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Basic rock climb (low 5th class)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Basic Rock Climb; climbing is short low 5th class pitches."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; land manager Okanogan-Wenatchee National Forest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/incomplete-no-resposnse-works-in-progress/molar-tooth-north-ridge-westside",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass; land manager Okanogan-Wenatchee National Forests."
+     }
+    ]
+   },
+   {
+    "field": "rock_type",
+    "value": "Granite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Molar_Tooth_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as a granite summit."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 2,815 ft vs app 2,300 ft: differs by more than 10%, single source, not locked against the app value."
+ },
+ "wa_south_face_2": {
+  "area": "wa_pernod_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "II 5.9 (short aid section to the summit block)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.9, Grade II; type trad, aid, alpine; aid bolts on the summit block."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as 150 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 150 ft (45 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Peter Jewitt, Cliff Leight and Dan Waters, July 10, 1988",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Peter Jewitt, Cliff Leight, and Dan Waters; July 10, 1988."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the Chablis-Pernod notch climb the obvious weakness to the bunny-ear notch below the summit's west side, then cracks up and left into a right-facing corner; upper half is splitter thin hands to fingers; belay below the 12-ft A0 summit block.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Chablis-Pernod notch to bunny-ear notch, cracks up-left into right-facing corner, splitter thin hands/fingers, belay below 12-ft A0 summit block."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Chablis' East Face route is a worthwhile way to approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Chablis' East Face is a very worthwhile approach with moderate, clean granite."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Summit anchor of two pitons; two ropes to rappel (a 70 m may work, a 60 m ends several meters above the notch)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two-piton summit anchor; 2 ropes to rap; single 70m may work, 60m leaves you meters above the notch."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rope-eating cracks just below the slung horn at the base of the aid section; one summit aid bolt is an old quarter-inch bolt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394671/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Beware rope-eating cracks below the horn; second aid bolt is the original quarter-incher with an old hanger."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_ottohorn_southeast_route": {
+  "area": "wa_ottohorn",
+  "skip_reason": "DDG (Ottohorn Southern Pickets 5.7), stephabegg.com site search, Mountain Project search: no page found describing the Ottohorn Southeast Route with stated figures; hits were other Ottohorn lines (West Ridge FA TR on CascadeClimbers) and Southern Pickets enchainments."
+ },
+ "wa_garfield_mountain_east_rib": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "DDG searches for Garfield Mountain East Rib / North Route; Summitpost Garfield page returned 403 (wall); Wikipedia Garfield Mountain has no route data. Only the Infinite Bliss and West Peak South Face pages turned up, which are other routes."
+ },
+ "wa_garfield_mountain_north_route": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "Same searches as East Rib: Summitpost 403, Wikipedia and Mountaineers have no North Route description; nothing route-specific found."
+ },
+ "wa_goat_mountain_eastern_route": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "Input gives no location or coordinates and Washington has several Goat Mountains; could not tie any page to this route name without guessing which peak. Not researched further."
+ },
+ "wa_goat_mountain_southeast_face": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "Ambiguous peak (several Goat Mountains in WA, no coordinates in input); no page could be matched to this route safely."
+ },
+ "wa_goat_mountain_southeast_route": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "Ambiguous peak (several Goat Mountains in WA, no coordinates in input); no page could be matched to this route safely."
+ },
+ "wa_goat_mountain_southwest_route": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "Ambiguous peak (several Goat Mountains in WA, no coordinates in input); no page could be matched to this route safely."
+ },
+ "wa_huckleberry_mountain_north_route": {
+  "area": "wa_huckleberry_mountain",
+  "skip_reason": "Ambiguous peak: The Mountaineers' Huckleberry Mountain page is the Suiattle lookout hike (4,900 ft in 7 mi from a 1,000-ft trailhead), but the input has no coordinates to confirm it is this area, and no page describes a 'North Route'. Not recorded to avoid attaching another peak's figures."
  }
 }

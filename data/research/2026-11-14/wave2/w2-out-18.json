@@ -1,0 +1,24 @@
+{
+ "az_mt_humphreys_humphrey_s_peak_trail": {"area":"az_mt_humphreys","facts":[
+  {"field":"gain_ft","value":3420,"method":"agree-2","level":"locked","evidence":[
+   {"url":"https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151","retrieved_at":"2026-11-14","fact":"Forest Service lists elevation gain/loss of 3,420 ft for Humphreys Trail No. 151."},
+   {"url":"https://hikearizona.com/decoder.php?ZTN=64","retrieved_at":"2026-11-14","fact":"HikeArizona gives elevation gain of 3,313 ft for Humphreys Summit Trail #151."}]},
+  {"field":"dist_mi_oneway","value":"5 to 5.5","method":"single-source","level":"locked-1src","evidence":[
+   {"url":"https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151","retrieved_at":"2026-11-14","fact":"Trail runs roughly 5 to 5.5 miles one way."}]},
+  {"field":"time_oneway_hours","value":"3 to 4","method":"single-source","level":"locked-1src","evidence":[
+   {"url":"https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151","retrieved_at":"2026-11-14","fact":"Hiking time about 3 to 4 hours one way."}]},
+  {"field":"car_to_car_hours","value":"5 to 6","method":"single-source","level":"locked-1src","evidence":[
+   {"url":"https://hikearizona.com/decoder.php?ZTN=64","retrieved_at":"2026-11-14","fact":"Average round-trip time 5 to 6 hours."}]},
+  {"field":"trailhead_elev_ft","value":9340,"method":"agree-2","level":"locked","evidence":[
+   {"url":"https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151","retrieved_at":"2026-11-14","fact":"Trailhead elevation 9,340 ft."},
+   {"url":"https://hikearizona.com/decoder.php?ZTN=64","retrieved_at":"2026-11-14","fact":"Trailhead elevation 9,320 feet."}]},
+  {"field":"season","value":"Early summer to early autumn","method":"single-source","level":"locked-1src","evidence":[
+   {"url":"https://hikearizona.com/decoder.php?ZTN=64","retrieved_at":"2026-11-14","fact":"Seasons listed as early summer to early autumn."}]},
+  {"field":"hazard","value":"July-September monsoon storms bring sudden heavy rain, wind and lightning; colder, windier above treeline","method":"single-source","level":"locked-1src","evidence":[
+   {"url":"https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151","retrieved_at":"2026-11-14","fact":"Monsoon storms with rain, wind and lightning can build fast July through September; colder and windier above treeline."}]},
+  {"field":"trailhead","value":"Arizona Snowbowl lot: Highway 180 for 7 miles to Forest Road 516 (Snowbowl Road)","method":"single-source","level":"locked-1src","evidence":[
+   {"url":"https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151","retrieved_at":"2026-11-14","fact":"Directions: Highway 180 for 7 miles to Forest Road 516, the Snowbowl Road."}]},
+  {"field":"permit","value":"Inside Kachina Peaks Wilderness (designated 1984); check Kachina Peaks Avalanche Center before snow-season travel","method":"single-source","level":"locked-1src","evidence":[
+   {"url":"https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151","retrieved_at":"2026-11-14","fact":"Trail lies in the 18,960-acre Kachina Peaks Wilderness, designated 1984; check the avalanche center report first."}]}
+ ],"note":"FS prose says trail begins ~9,200 ft but its stats say 9,340 ft; used the stats. HikeArizona distance (10.25 mi) and time are round trip; distance not used."}
+}

@@ -369,7 +369,204 @@
  },
  "co_a_prayer_to_earl_and_valerie_the_john_joline_memorial_r": {
   "area": "co_guardian_the",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 1400 ft, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives commitment Grade III."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP route header rates it 5.9+; pitches described as 5.8-5.9."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ben Chapman, Jeff Woodward, 2015",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent by Ben Chapman and Jeff Woodward on 7/4/2015."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Five pitches of 5.8-5.9, then about 500 ft of low fifth-class simul-climbing."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Right side of the steepest part of the Guardian NE face, right of Serpentine Son Rise, left of the face-splitting couloir; key feature a V-groove (pitch 4).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs right side of the Guardian NE face; the V-groove a few hundred feet up is pitch four."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.9: step over the bergschrund into a small corner, trend right through ledges to a grassy ledge under a roofed dihedral.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 1 (5.9) starts by stepping across the bergschrund and ends on a grassy ledge below a roof-capped dihedral."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P2 5.9: from the dihedral walk left on a hidden ledge to a big crack (#4 helpful), belay atop a large flake.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 2 (5.9) moves left on a hidden ledge to a large crack; a #4 helps."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P3 5.8 \"Ledge of Glory\": traverse right on a horizontal crack around the arete into corners to the V-slot.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 3 (5.8) traverses right on a horizontal crack around an arete to the base of the V-slot."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P4 5.9: up the V-slot, then corners to a grassy ledge with loose rock.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 4 (5.9) climbs the V and continues to a grassy ledge with loose rocks."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P5 5.9: corner past a small overlap into a left-facing dihedral to the ridge; long simul-climb to the NE-face summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 5 (5.9) reaches the ridge; then a long simul-climb leads to the top of the NE face."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "East Ridge; complex route-finding, 2.5-3 hours; when unsure stay east.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party descended the East Ridge in 2.5-3 hours with complicated route-finding."
+     }
+    ]
+   },
+   {
+    "field": "camp_to_camp_hours",
+    "value": "about 11",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route took the first-ascent party about 11 hours camp-to-camp."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Double rack to #3 plus one #4.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party carried doubles to #3 plus one #4; #1-#4 most useful."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Bergschrund at the base; loose rock on the pitch-4 ledge; big exposed face.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110756611",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts across a bergschrund; loose rocks on a grassy ledge; described as a big exposed face."
+     }
+    ]
+   }
+  ],
+  "note": "MP grade 5.9+ vs our 5.9. Area: San Juans, Grenadiers (Guardian)."
  },
  "co_a_slightly_massive_overhang": {
   "area": "co_a_massive_pain_in_the_ass",
@@ -431,23 +628,683 @@
  },
  "co_a_walk_in_the_park": {
   "area": "co_a_walk_in_the_park",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade IV, 5.5."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Renan Ozturk and Sam Piper (early 2000s?); Richard Rossiter, 2009",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Renan Ozturk and Sam Piper, early 2000s?, and Richard Rossiter, 11 August 2009."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Counter-clockwise traverse of the whole Glacier Gorge rim over 8 summits; Keyboard of the Winds towers not climbed.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ultra traverse of the Glacier Gorge rim, 8 summits, skipping the Keyboard of the Winds towers."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glacier Gorge Bus Stop",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts and ends at the Glacier Gorge Bus Stop."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Thatchtop Regular Route, Powell Peak NE Ridge to the Divide, down into McHenrys Notch, climb out east (5.5, 300 ft).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Thatchtop, Powell Peak NE Ridge, McHenrys Notch, then a 5.5 300-foot climb out of the notch."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Traverse McHenrys, Chiefs Head, Pagoda, Longs (SW Ridge/Keyhole Ridge), Storm Peak and Half Mountain.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Continues over McHenrys, Chiefs Head, Pagoda, Longs, Storm Peak and Half Mountain."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Talus gully on the NW side of Half Mountain back to the Glacier Gorge Trail, then 2.5 miles to the bus stop.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend a talus gully NW of Half Mountain, then the final 2.5 miles back to the bus stop."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best time listed: 13 hours, R. Rossiter, 11 August 2009."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": "perhaps 15",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Circuit traverses 8 summits in perhaps 15 miles (page hedges the figure)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Free solo; no rope.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed as free solo."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Powell NE Ridge, McHenrys Notch, Pagoda NW Face, Dark Tower south ridge and the Keyhole Ridge descent are the hard parts.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106563905/a-walk-in-the-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Named challenges include Powell NE Ridge, McHenrys Notch, Pagoda NW face, Dark Tower south ridge and Keyhole Ridge descent."
+     }
+    ]
+   }
+  ],
+  "note": "MP area \"A Walk in The Park\" under RMNP Glacier Gorge matches our area id. Our overview text (knife-edge ridge) does not match MP description. MP length field (15 ft) is clearly a placeholder, not used. 15 mi is hedged (\"perhaps\")."
  },
  "co_aku_aku_2": {
   "area": "co_easter_island_pinnacle",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 40,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106439755",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 40 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bob Horan",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106439755",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Bob Horan."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Pins and stoppers.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106439755",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: pins and stoppers."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "East face of Easter Island Pinnacle, which sits on a ramp shelf between the Halidome lower and upper west face.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106439755",
+      "retrieved_at": "2026-11-14",
+      "fact": "On the east face of Easter Island Pinnacle, on a ramped shelf splitting the Halidome west face."
+     }
+    ]
+   }
+  ],
+  "note": "Empire > The Halidome."
  },
  "co_alexander_s_chimney": {
   "area": "co_lower_east_face",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft, 5 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "J. Alexander (1922)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as J. Alexander; text refers to the first ascent in 1922."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Longs Peak Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from the Longs Peak Trailhead to Chasm Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike to Chasm Lake, pass it on the north side, head up-left to the base of Lambs Slide; climb ~300 ft of it, traverse right to the rock band.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Chasm Lake go to the Lambs Slide base, ascend about 300 ft, traverse right to the broken rock band."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Approach snow band ~100 ft at 30 degrees can be hard ice; bring crampons and an axe.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow band about 100 ft high and 30 degrees was bulletproof ice; bring crampons and ice axe."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 40 ft 5.0 wet chimney (or 5.6 crack to its right).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 1: 40 feet, 5.0 chimney or a 5.6 crack to the right."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P2 120 ft 5.5 wet chimney to ~20 ft below a huge chockstone.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 2: 120 feet of wet 5.5 chimney to below a huge chockstone."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P3 150 ft 4th class \"Alexander's Traverse\" on a ledge to below the Dog Ear Flakes.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 3: 150 feet ascending 4th-class traverse to beneath the Dog Ear Flakes."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P4 200 ft 5.5: dihedral then traverse left into the Yellow Bowl.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 4: 200 feet, 5.5 dihedral then left into the Yellow Bowl; used a full 60 m rope."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P5 80 ft 5.4: left side of the Yellow Bowl to Broadway; joins Kieners Route.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 5: 80 feet, 5.4 to Broadway Ledge where it joins Kiener's Route."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Cable Route rappels (old eyebolts) to the Boulderfield, then Keyhole Route trail out; or Lambs Slide / rap Crack of Delight or North Chimney.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the Cable Route raps from eyebolts, hike from the Boulderfield on the Keyhole trail; other options listed."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "The party took 18 hours car to car (combined with Upper Kieners)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard RMNP alpine rack; cams .1-#3, nuts, a dozen slings; long pitches.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard RMNP alpine rack; party brought 12 cams .1-#3, nuts, a dozen slings, 6 draws."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Very committing; rock often wet, making 5.5 feel like 5.8.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105757282",
+      "retrieved_at": "2026-11-14",
+      "fact": "Extremely committing; much rock is wet so 5.5 can feel like 5.8."
+     }
+    ]
+   }
+  ],
+  "note": "MP 105757282 (rock). Also an ice/mixed version (WI4 M4, MP 105747561) not used. Times include Upper Kieners."
  },
  "co_alt_left": {
   "area": "co_stolen_lands_buttress",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 550,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113530876",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 550 ft, 4 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113530876",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113530876",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10a/b PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113530876",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP search listing rates it 5.10a/b PG13."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Eric Johnson \"EDJ\", Hayden Robinson",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113530876",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Eric Johnson (EDJ) and Hayden Robinson."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Downclimb a south-face slot to a loose ledge with a rap bolt, rappel to the saddle, scree, then cairned ledges around the buttress toe to the packs.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113530876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: downclimb a south slot to a rap bolt, rap to the saddle, scree, ledges at a cairn around the buttress toe."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Wires and double cams to 4 inches.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113530876",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: wires and doubles of cams up to 4 inches."
+     }
+    ]
+   }
+  ],
+  "note": "Ouray vicinity > Stolen Lands Buttress. Rap count not stated as a number, so no rappels figure."
  },
  "co_altar_boy": {
   "area": "co_cathedral_wall",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1100 ft, 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 8 pitches; pitch-by-pitch beta runs P1 to P8."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9 R",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP search listing rates the route 5.9 R."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Billy Westbay & Douglas Snively",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Billy Westbay and Douglas Snively."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Between the Dalke and Kor routes on Cathedral Wall; hard route-finding, steadily runout around 5.7; P1/P2 hand traverse left above a big right-leaning roof.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lies between Dalke and Kor routes; constant runouts near 5.7; wild hand traverse above a large roof."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.8 R 100 ft: start 20 ft left of the Kor Route, grassy ledges left to a vegetated crack, slab to a bulge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1a 5.8 R 100 ft starts 20 ft left of Kor Route, angles left to a vegetated crack."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P2 5.8 R 120 ft: end of the roof system, 25-30 ft hand traverse left, 5.6 R face to a ledge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "P2 5.8/5.6 R 120 ft: hand traverse left for 25-30 ft then 5.6 R face to a ledge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P3-P4 5.8 R ~130-140 ft: runout face (50 ft without gear) toward an open-book crack in orange rock.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "P3 about 130 ft with 50 ft of no gear; P4 about 140 ft toward an open-book crack in orange rock."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P5-P7 5.9 R: dihedral to the main corner, join the Dalke traverse with long unprotected moves.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "P5 150 ft 5.9, P6 90 ft joins Dalke traverse, P7 130 ft 5.9/5.6 R/X traverse."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P8 5.5 160 ft: ledges and blocks to a right-facing V-slot in the final headwall.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "P8 5.5, 160 ft, ledges and blocks to a right-facing V-slot in the last headwall."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Gear to #3 with doubles to 1.5 in, one set of nuts.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: gear to #3, doubles to 1.5 inches, one set of nuts."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Sustained runouts (R and R/X); difficult route-finding.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106831860",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route described as constantly runout with difficult route finding; pitches rated R and R/X."
+     }
+    ]
+   }
+  ],
+  "note": "RMNP Cathedral Wall. MP rates 5.9 R."
  },
  "co_amphitheater_the_west_ridge_first_pinnacle": {
   "area": "co_amphitheater_the",
@@ -455,27 +1312,816 @@
  },
  "co_analemma_aka_northeast_ridge": {
   "area": "co_crestolita",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jason Halladay, 2006",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Jason Halladay, 2006."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Start ~100 ft NE of Cottonwood Lake at a big roof above grassy slopes; bypass the roof left on grassy ledges.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start about 100 ft east and north of Cottonwood Lake; bypass a large roof on grassy ledges to its left."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Hardest moves just above the roof; ridge narrows and eases; about 2/3 up a notch is bypassed on the left.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "Section above the roof is hardest; about two-thirds up a notch is passed by traversing left."
+     }
+    ]
+   },
+   {
+    "field": "start_elev_ft",
+    "value": 12400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route begins at 12400 feet just north and east of Cottonwood Lake."
+     }
+    ]
+   },
+   {
+    "field": "rock",
+    "value": "Crestone conglomerate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sustained 4th-class climbing on featured Crestone conglomerate."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South slopes (Class 2); north gully and SW ridge are other options.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party descended the Class 2 south slopes; north gully and SW ridge descents also exist."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Natural pro.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: natural pro."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Deep gully right of the start can hold snow late in summer.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117791745",
+      "retrieved_at": "2026-11-14",
+      "fact": "The inset gully beside the start can still hold snow late in summer."
+     }
+    ]
+   }
+  ],
+  "note": "Sangre de Cristo > Crestolita. MP cites SummitPost 200795 (FA party write-up) — not read (SummitPost often 403)."
  },
  "co_arete_variation": {
   "area": "co_chiefshead_south_face",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209888",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 150 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Ronca, Carlie Ronca, 1999",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209888",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Mark Ronca and Carlie Ronca, 8/99."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "A set of stoppers and cams to #2.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209888",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: one set of stoppers and cams up to #2."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Just left of Hot Brownie: crack left of the arete to a big detached flake, then finish on Hot Brownie.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209888",
+      "retrieved_at": "2026-11-14",
+      "fact": "Located just left of Hot Brownie; crack to a detached flake, then joins Hot Brownie."
+     }
+    ]
+   }
+  ],
+  "note": "RMNP Glacier Gorge > Chiefshead South Face."
  },
  "co_arrow_peak_east_ramp": {
   "area": "co_arrow_peak",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Molas Pass - Elk Park Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route statistics are given from the Molas Pass - Elk Park trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Molas Pass - Elk Park trailhead: 24 mi round trip."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Molas Pass - Elk Park trailhead: 6700 ft gain round trip."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Vestal Creek campsite, 11,760 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shorter stats are given from the Vestal Creek campsite at 11,760 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Vestal Creek campsite: 3 mi one-way, 3800 ft."
+     }
+    ]
+   },
+   {
+    "field": "summit_day_gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Vestal Creek campsite: 3800 ft gain (6 mi round trip)."
+     }
+    ]
+   },
+   {
+    "field": "summit_day_dist_mi_rt",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Vestal Creek campsite: 6 mi round trip, 3800 ft."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "Backpack trip required to reach the Vestal Creek basin; summit day is a medium day from camp.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Class 3 + backpack + medium day; peak likely needs a backpack trip."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Arrow East Ramp Route rated Class 3; an alternate finish goes at Class 4."
+     }
+    ]
+   },
+   {
+    "field": "gear",
+    "value": "Ice axe recommended.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe recommended: yes."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Ramp across the east face of Arrow Peak in the Grenadiers, ending with serious Class 3 scrambling.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Straightforward ramp route on the east face, finishing with serious Class 3 scrambling."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Weminuche Wilderness, San Juan National Forest.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/arrow-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Maps list San Juan NF and Trails Illustrated #140 Weminuche Wilderness."
+     }
+    ]
+   }
+  ],
+  "note": "climb13ers.com only; Vestal Creek stats show both 6 mi RT and 3.00 mi one-way at 3,800 ft (the 3,800 ft appears as both RT and one-way on the page — used only as summit-day gain)."
  },
  "co_arrowplane": {
   "area": "co_arrowhead",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Arrowplane 5.11a."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report titles the route Arrowplane 5.11a, 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 6 pitches, 800 ft, Grade III."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists Arrowplane as 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bernard Gillett and Bill Briggs, 1998",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Bernard Gillett and Bill Briggs, 1998."
+     }
+    ]
+   },
+   {
+    "field": "rock",
+    "value": "Granite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock listed as granite; summit elevation 12,660 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Left side of Arrowhead left of the Summit Ramp; cracks for five pitches to the 100-ft Lightning Bolt crack (5.11 crux) on the final headwall.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Clean left side of Arrowhead; wanders up cracks before the Lightning Bolt crack, 5.11, on the last headwall."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glacier Gorge Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Time stats start at the Glacier Gorge Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Glacier Gorge Trail to Black Lake; cross the outlet, brush path to talus west of the lake, grassy ramps south to below Arrowhead south face.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike to Black Lake, cross its outlet, follow talus west of the lake, then grassy ramps to under the south face."
+     }
+    ]
+   },
+   {
+    "field": "approach_hours",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier Gorge Trailhead to base of route took 3 hours."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arrowhead-arrowplane/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total car-to-car including breaks: 12 hours."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Walk left a few hundred feet, rappel from a boulder at the saddle low point; two or three fixed raps reach 3rd-class ground left of the start.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Walk left, rappel from a boulder at the saddle; two or three fixed rappels lead to third-class terrain."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Rack to #4 Friend with extra finger sizes; two 60 m ropes for the raps.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759468/arrowplane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rack up to a #4 Friend with extra finger size; two 60 m ropes required for rappels."
+     }
+    ]
+   }
+  ],
+  "note": "MP + stephabegg agree on 5.11a and 6 pitches. Rap count \"two or three\" left as prose."
  },
  "co_atlantic_peak_north_ridge": {
   "area": "co_atlantic_peak",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "McCullough Gulch Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "McCullough Gulch Trailhead is the proposed access, reachable by most passenger cars."
+     }
+    ]
+   },
+   {
+    "field": "loop_dist_mi_rt",
+    "value": 8.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Ridge route climbed with Pacific and Crystal: 8.5 mi round trip from McCullough Gulch."
+     }
+    ]
+   },
+   {
+    "field": "loop_gain_ft",
+    "value": 2800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Ridge route climbed with Pacific and Crystal: 2800 ft round trip from McCullough Gulch."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Atlantic Peak North Ridge Route rated Class 2."
+     }
+    ]
+   },
+   {
+    "field": "gear",
+    "value": "Ice axe recommended.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe recommended: yes."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Tundra, talus and scree; climbed as a loop with Pacific and Crystal peaks through two lake basins.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Terrain is tundra, talus, rubble and scree; loop links Pacific and Crystal through two drainages with alpine lakes."
+     }
+    ]
+   },
+   {
+    "field": "access",
+    "value": "County road access shared with Quandary Peak; heavy weekend use.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/un13841--atlantic-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Same county road as Quandary Peak access, so weekend use can be heavy."
+     }
+    ]
+   }
+  ],
+  "note": "climb13ers gives distance/gain only for the 3-peak loop (Atlantic+Pacific+Crystal), so stored under loop_* fields, not gain_ft. 14ers.com lists a West Ridge route (4 mi, 2,450 ft) — a different route, not used."
  },
  "co_audubon_arapaho_traverse": {
   "area": "co_indian_peaks_traverses",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "dist_mi_total",
+    "value": "about 17",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse is about 17 miles with 8,500 ft of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse totals about 17 miles and 8500 ft elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the traverse Easy 5th: much Class 3, some Class 4, one or two short 5.0-5.4 sections."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Audubon plus every named Divide peak from Paiute to South Arapaho; second half of the LA Freeway; one-way, needs a shuttle.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverses Audubon and all named Divide peaks between Paiute and South Arapaho; second half of LA Freeway; shuttle needed."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Start Mitchell Lake Trailhead (Brainard Lake); finish 4th of July Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at Mitchell Lake trailhead near Brainard Lake; finish at the 4th of July trailhead below South Arapaho."
+     }
+    ]
+   },
+   {
+    "field": "fastest_hours",
+    "value": "under 7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "It has been done in under 7 hours; most parties take much longer."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Audubon by trail or SE ridge; Paiute east ridge; Mt Toll north \"ridge\" (NW face) Class 4 with a 20-ft 5.4 corner, or west-side loose Class 3 gully.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Toll north ridge is Class 4 with a 20-foot 5.4 corner; a loose 3rd-class west gully is an alternative."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Pawnee Peak, Pawnee Pass, Shoshoni, then bypass the Chessmen towers on exposed Class 3-4 ledges to a ~12,900-ft notch; King and Apache.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Chessmen towers bypassed on exposed Class 3-4 ledges to a notch near 12,900 ft, then the King and Apache."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Navajo: bypass Dickers Peck north, SW-side ramp, Class 4 west gully to the SW ridge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Navajo is reached via a ramp on its SW side and a Class 4 west-facing gully."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Arikaree north ridge (exposed Class 3), Point 12,887, past a 1963 plane wreck, 5.0 corner on \"Deshawa\".",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Arikaree north ridge exposed Class 3; past a 1963 plane wreck; a short 5.0 corner on Deshawa."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "North Arapaho NE ridge Class 4 slabs with a very exposed step; then the Class 3 traverse to South Arapaho and trail down.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Arapaho NE ridge has Class 4 slabs and a very exposed step; finish on the Class 3 Arapaho traverse."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Perennial tarn below a snowfield NE of the Navajo-Arikaree col; seasonal meltwater pools near Mt Toll and the Toll-Pawnee saddle.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Perennial tarn at a snowfield NE of the Navajo-Arikaree col; meltwater pools seen near Toll and the Toll-Pawnee saddle."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Do not follow the crest from Navajo to the Navajo-Arikaree col: much harder, and a climber died attempting it in August 2024.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge crest from Navajo to the col is far harder; a fatality occurred there in August 2024."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Traversing too low below the King notch leads into an ugly loose gully; a late-season bypass is often snow-covered early.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114960566/audubon-arapaho-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Going too low before the King notch ends in a loose gully; a bypass variation is often snowy earlier in season."
+     }
+    ]
+   }
+  ],
+  "note": "MP only (114960566). No second publisher found for the full traverse; Arapaho-only pages (14ers TR 10.7 mi/4,200 ft) cover a different, shorter route."
  },
  "co_avenging_angel_of_choss": {
   "area": "co_devil_s_thumb",
@@ -483,7 +2129,74 @@
  },
  "co_barber_shop_traverse_west_face_spiral_route": {
   "area": "co_mount_toll",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Mitchell Lake Trailhead (Brainard Lake Recreation Area)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach follows the Mitchell Lake Trail from the Mitchell Lake Trailhead past Mitchell Lake to Blue Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Mitchell Lake Trail past Mitchell Lake to Blue Lake at about 2.5 miles.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Blue Lake is reached at about 2.5 miles along the Mitchell Lake Trail."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Timed-entry reservation needed to drive into Brainard Lake Recreation Area (2026: June 12 to October 1).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "In 2026 a timed entry reservation was required to drive in from June 12 to October 1."
+     }
+    ]
+   },
+   {
+    "field": "access",
+    "value": "Gateway Trailhead below the entrance station needs no reservation but adds about 3 miles each way; only start late fall through spring.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gateway Trailhead needs no reservation, adds about 3 miles each way, and is the only start late fall to spring."
+     }
+    ]
+   },
+   {
+    "field": "access",
+    "value": "Upper trailheads including Mitchell Lake opened around July 1 (2026).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-toll-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Upper trailheads, Mitchell Lake included, opened around July 1 in 2026."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn Mount Toll guide (peak-level access facts); the page text read did not include the Barber Shop route itself though a search snippet said it starts 50-75 yards west of the north-ridge base. MP search for the route returned nothing. Route-specific facts not found."
  },
  "co_batshit_crazy": {
   "area": "co_little_possibility_wall",
@@ -495,7 +2208,139 @@
  },
  "co_bells_traverse_submitted_as_maroon_ridge": {
   "area": "co_maroon_bells",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Maroon Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Maroon Lake, 9,590 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9590,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Maroon Lake trailhead sits at 9590 ft."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bells Traverse combination route: 4850 ft elevation gain (traverse done south to north on this page)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 9.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 9.5 miles for the Bells Traverse combination."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the Bells Traverse Class 5."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Extreme exposure, route-finding and commitment; high rockfall; helmet mandatory.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure extreme, rockfall high, route-finding extreme, commitment extreme; helmet is mandatory."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "The real difficulties begin at the top of the Bell Cord Couloir, the low point between the peaks.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Top of the Bell Cord couloir, low point between the summits, marks where the real difficulties start."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Can be done either direction; south-to-north is the more popular way.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "The traverse can go either direction; south to north is more popular."
+     }
+    ]
+   },
+   {
+    "field": "access",
+    "value": "Summer: road past the entrance station closed to cars 8am-5pm; parking permit or drop-off outside those hours.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "In summer the road beyond the entrance station is closed to cars 8am to 5pm."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enters Maroon Bells-Snowmass Wilderness; party size, camping and campfire rules apply.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=nmar4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route enters the Maroon Bells-Snowmass Wilderness with party size, camping and fire regulations."
+     }
+    ]
+   }
+  ],
+  "note": "14ers.com figures (4,850 ft, 9.5 mi RT) are for the whole Bells Traverse combination (both summits, Maroon Lake TH), described south-to-north; our route is described north-to-south ending down Maroon South Ridge. MP page (105758712) not read: MP rate-limited (429)."
  },
  "co_bengal_spice": {
   "area": "co_main_wall_10",

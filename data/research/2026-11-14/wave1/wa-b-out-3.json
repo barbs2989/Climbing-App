@@ -125,7 +125,7 @@
      {
       "url": "https://www.mountainproject.com/route/114089121/lovers-lane",
       "retrieved_at": "2026-11-14",
-      "fact": "MP descent: downclimb to a tree with slings, rappel into the Zipper, plunge step to the Denman-Lane saddle and take a steep gully down on its far left."
+      "fact": "MP descent: slung-tree downclimb, rappel into the Zipper, plunge-step to the Denman-Lane saddle, then a steep gully at its far left."
      }
     ],
     "method": "single-source",
@@ -284,35 +284,342 @@
  },
  "wa_lichtenberg_mountain_southeast_ridge": {
   "area": "wa_lichtenberg_mountain",
-  "facts": []
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists length 7.0 mi for Lichtenberg Mountain via the Lichtenwasser Lake fishing trail and SE ridge."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "gain_ft",
+    "value": 2100,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists elevation gain 2,100 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5844,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists high point 5,844 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "grade",
+    "value": "Strenuous 1, Technical 2 (Mountaineers scramble rating)",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers difficulty: Strenuous 1, Technical 2."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; Henry M. Jackson Wilderness",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Northwest Forest Pass required; land is Henry M Jackson Wilderness, Okanogan-Wenatchee NF."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "From the first switchback on Smithbrook Road (FR 6700), take the Lake Lichtenwasser fishing trail to a saddle on the southeast ridge",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/smithbrook-road-area-review/lichtenberg-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: start at Smithbrook Road's first switchback, Lichtenwasser fishing trail to a SE ridge saddle."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mountaineers 'Length' is the round-trip figure (its Logan page states the same number as 'round trip'). WTA's Lichtenberg page describes a different line (PCT from Stevens Pass via Lake Valhalla) and gives no stats."
  },
  "wa_lichtenberg_mountain_west_face_west_rib": {
   "area": "wa_lichtenberg_mountain",
-  "facts": []
+  "skip_reason": "Mountaineers lists Lichtenberg Mountain only via the SE ridge (and a winter variant); WTA's page covers the PCT/Lake Valhalla scramble. No published approach for the West Face West Rib found."
  },
  "wa_little_big_chief_mountain_northeast_face": {
   "area": "wa_little_big_chief_mountain",
-  "facts": []
+  "skip_reason": "Not researched in depth: Mountaineers search had no Little Big Chief page; AAC result found was for the Falcon Route, a different line. Distance still missing."
  },
  "wa_little_sister_west_face": {
   "area": "wa_little_sister",
-  "facts": []
+  "skip_reason": "climberkyle Green Creek Circuit report covers Little Sister only as part of a circuit (north ridges up, south faces down), not the West Face; no route-specific source found."
  },
  "wa_luahna_peak_east_slopes": {
   "area": "wa_luahna_peak",
-  "facts": []
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "White River Road (FR 6400) to its end, then the mostly level White River Trail 4 mi to the Boulder Creek Trail junction; Boulder Creek trail crosses the creek at 4,000 ft on the way to Boulder Pass",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: White River Road to its end, White River Trail 4 mi to Boulder Creek Trail, creek crossing at 4,000 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Shares Clark Mountain's approach but has a more remote feel and a more complicated summit route",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Luahna has the same approach as Clark but feels more remote with a trickier summit route."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Glacier Peak Wilderness, Wenatchee River Ranger District",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers land manager: Okanogan-Wenatchee NF, Glacier Peak Wilderness, Wenatchee River Ranger District."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mountaineers Clark & Luahna page gives 22.0 mi / 6,300 ft / 8,602 ft high point, which is Clark's summit, so its numbers are not this route's. Distance still missing."
  },
  "wa_martin_peak_west_ridge": {
   "area": "wa_martin_peak",
-  "facts": []
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: Martin Peak/West Ridge, 14 miles round trip."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: Martin Peak/West Ridge has 5,300 feet of elevation gain."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8511,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers gives Martin Peak's summit as 8,511 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: scramble Class 4 rock on the west ridge, finishing with an exposed Class 4 gully."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Holden Ballpark Campground (3,300 ft); Holden Lake (5,278 ft, buggy); Holden Pass (6,400 ft)",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: camp at Holden Ballpark (3,300 ft), Holden Lake (5,278 ft, buggy) or Holden Pass (6,400 ft)."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Railroad Creek Trail about 1 mile to the Holden Lake Trail (3,600 ft), then 4 miles to Holden Lake, then NNW from the lake head to Holden Pass",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Railroad Creek Trail ~1 mile to Holden Lake Trail at 3,600 ft, 4 miles to Holden Lake, NNW to Holden Pass."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "From Holden Pass go east to the west ridge, follow the crest (easier ground on the south side) on class 4 rock; about 100 ft below the top climb a steep, exposed class 4 gully to the summit",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: east from Holden Pass onto the west ridge, Class 4 with easier terrain south; final ~100 ft steep exposed Class 4 gully."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Descend the climbing route",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Martin Peak, descend the climbing route."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "leg_hours",
+    "value": "Trailhead to camp 3 hr (3,100 ft gain); camp to Martin 3 hr (2,200 ft); Martin to camp 2-3 hr",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers trip profile: TH to camp 3 h / 3,100 ft, camp to Martin 3 h / 2,200 ft, back to camp 2-3 h."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Bulger Top 100 peak immediately east of Bonanza Peak, reached from Holden Village",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/bonanza-martin-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Martin sits just east of Bonanza; both near Holden Village and on the Bulger Top 100 list."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mountaineers' trailhead is Holden Village (13-mile bus from Lucerne); its 14 mi round trip is measured from there."
  },
  "wa_mount_appleton_standard": {
   "area": "wa_mount_appleton",
-  "facts": []
+  "facts": [
+   {
+    "field": "closure",
+    "value": "Olympic Hot Springs Road closed by a washout: park at Madison Falls and bike or hike 8 miles one way to the old road-end trailhead",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/olympic-hot-springs-boulder-lake-appleton-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Olympic Hot Springs Road closed by washout; park at Madison Falls, bike or hike 8 miles one-way to the trailhead."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail from the old road end (1,800 ft) forks at about 2 miles: Boulder Lake one way, Appleton Pass and Oyster Lake the other",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/olympic-hot-springs-boulder-lake-appleton-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: trailhead at 1,800 ft; trail forks around 2 miles toward Boulder Lake or Appleton Pass and Oyster Lake."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Olympic National Park entrance fee",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/olympic-hot-springs-boulder-lake-appleton-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking permit is the National Park entrance fee; land manager Olympic National Park."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Boulder Creek Campground (former car camp, now backpacker camp since the road closure)",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/olympic-hot-springs-boulder-lake-appleton-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Boulder Creek Campground served car campers before the washout and now serves backpackers."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Descent still missing; Mountaineers page covers the trail to Boulder Lake/Appleton Pass, not the summit scramble or its descent."
  },
  "wa_mount_arriva_scramble": {
   "area": "wa_mount_arriva",
-  "facts": []
+  "skip_reason": "Mountaineers lists only an Easy Pass/Fisher Creek Basin trail page, no Arriva summit or descent; descent still missing."
  },
  "wa_mount_baker_cockscomb_ridge": {
   "area": "wa_mount_baker",
@@ -425,11 +732,80 @@
  },
  "wa_mount_ballard_south": {
   "area": "wa_mount_ballard",
-  "facts": []
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Canyon Creek Trailhead (1,880 ft)",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report access: Canyon Creek Trailhead; elevation range 1880 to 8340 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "About six miles of easy trail to the Mill Creek Trail junction, then Mill Creek toward Azurite Pass (brushy)",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report: the six-mile hike to Mill Creek Trail was smooth; brush continued up toward Azurite Pass."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Azurite Mine camp",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2012/08/19/mount-ballard/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report section names the Azurite Mine Camp."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Descent still missing. onehikeaweek gives round trip as 'TBD'. CascadeClimbers TR (topic 103624) is for the West Face, a different route."
  },
  "wa_mount_berge_southwest_route": {
   "area": "wa_mount_berge",
-  "facts": []
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Berge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: easiest route is class 3 scrambling."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Named for Richard Waldo Berge, who died at 23 climbing Baring Mountain in July 1952 with Fred Beckey",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Berge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: named for Richard Waldo Berge, 23, killed on Baring Mountain July 16, 1952, while climbing with Beckey."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Descent still missing; SummitPost Mount Berge page not tried (SummitPost 403s seen this session)."
  },
  "wa_mount_bigelow_tribute_to_richard": {
   "area": "wa_mount_bigelow",
@@ -530,15 +906,149 @@
  },
  "wa_mount_blum_south_ridge": {
   "area": "wa_mount_blum",
-  "facts": []
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Baker River Trailhead (774 ft) at the end of Baker Lake Road (FR 11), 26 miles from SR-20",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: follow Baker Lake Road 26 miles to its end at the Baker River Trailhead, 774 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "About 10 minutes up the Baker River Trail, cross the river bridge, leave the trail ~175 yd downstream of the bridge before Blum Creek, climb old timber to the spur ridge north of Blum Creek",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: cross the Baker River bridge, leave trail 175 yards downstream before Blum Creek, climb timber to the spur ridge north of the creek."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Ascending traverse on the ridge's south side to just north of Blum Lakes (4,900 ft), then across to the two main lakes",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: traverse up the south side of the ridge to just north of Blum Lakes at 4,900 ft, then to the two main lakes."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Blum Lakes (good camping at the two main lakes)",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: the two main Blum Lakes have good camping."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "From upper Blum Lakes camp, gully to the 5,720 ft cirque lake, class 3 gully north from left of its headwall, heather to a snow couloir, non-technical final south ridge",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers South Ridge: gully to 5,720 ft cirque lake, Class 3 gully, heather, snow couloir, easy final south ridge."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Descend the climbing route to Blum Lakes, then reverse the approach to the Baker River trailhead",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers descent: down the climbing route to Blum Lakes, then out by the approach to Baker River trailhead."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; North Cascades National Park / Noisy-Diobsud Wilderness",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Northwest Forest Pass; NCNP, Noisy-Diobsud Wilderness, Mount Baker Ranger District."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mountaineers 13.0 mi / 6,900 ft are for the combined Blum + Hagan outing, so not used as this route's numbers."
  },
  "wa_mount_buckindy_scramble": {
   "area": "wa_mount_buckindy",
-  "facts": []
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/1031/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas: the standard summit route is a Class 4 scramble via the north slopes."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "At the head of Kindy Creek; glaciers on the north and east flanks; the jagged Buckindy Crags on the SW ridge give class 5 routes",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/1031/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas: Buckindy heads Kindy Creek, glaciers on N and E flanks, SW ridge pinnacles (Buckindy Crags) offer Class 5."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "trip_days",
+    "value": "Car to car in two or more days",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/1031/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas expected duration: car to car in two or more days."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Descent still missing: no source found describing it."
  },
  "wa_mount_cruiser_nw_face_corner": {
   "area": "wa_mount_cruiser",
-  "facts": []
+  "skip_reason": "Mountaineers has only the Southwest Corner of Mount Cruiser; no NW Face/Corner descent source found."
  },
  "wa_mount_goode_northeast_buttress": {
   "area": "wa_mount_goode",
@@ -1326,15 +1836,216 @@
  },
  "wa_mount_redoubt_south_face": {
   "area": "wa_mount_redoubt",
-  "facts": []
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Depot Creek Road washout (2,600 ft), reached through British Columbia via Chilliwack Lake Road",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report starts at the Depot Creek Road washout, elevation 2600 feet, after crossing into BC to Chilliwack Lake Road."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "road",
+    "value": "Depot Creek Road is unmarked, very rough and heavily overgrown; it forks left about 100 yards before the Depot Creek bridge",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report: unmarked Depot Creek Road forks left about 100 yards before the bridge; very rough and overgrown."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Monument 65, lower Depot Creek, Depot Creek Falls, Depot Creek Meadow, upper Depot Creek, Ouzel Lake",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report waypoints: Monument 65, Lower Depot Creek, Depot Creek Falls, Depot Creek Meadow, Upper Depot Creek, Ouzel Lake."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Ouzel Lake; Depot Creek Meadow",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report campsites: Ouzel Lake and Depot Creek Meadow."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "Redoubt Glacier, South Couloir, Southwest Shoulder, Southwest Chimneys, the Cannonhole, upper East Face",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-redoubt-via-redoubt-glacier-mt-spickard-via-southwest-glacier/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report route: Redoubt Glacier, South Couloir, SW Shoulder, SW Chimneys, Cannonhole, Upper East Face."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "trailcatjim's 25 mi / 11,300 ft covers Redoubt plus Spickard over 4 days, so not used for this route."
  },
  "wa_mount_sefrit_southeast_ridge": {
   "area": "wa_mount_sefrit",
-  "facts": []
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Nooksack Cirque Trailhead (2,140 ft)",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report access: Nooksack Cirque Trailhead; elevation range 2140 to 7212 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10.5,
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists round trip 10.5 miles via the Southeast Ridge scramble."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross Ruth Creek right at the start (a thin fallen log upstream of the trailhead sign served as a bridge), mostly flat trail to a railed footbridge near mile 2, then off-trail up steep forest and snowfields",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report: Ruth Creek crossed at the start on a thin log, flat trail to a railed bridge near mile 2, then off-trail."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, microspikes, snowshoes, ice axe, crampons (late-May conditions)",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report essential gear: helmet, microspikes, snowshoes, ice ax, crampons."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "Old avalanche debris on the approach slopes",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/05/23/mount-sefrit/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report mentions old avalanche debris along the route."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "This report uses the Nooksack Cirque Trailhead, while the app's current approach starts from a Ruth Creek Road pullout near milepost 3; the 10.5 mi is for the Nooksack Cirque start. Wikipedia and SummitPost Sefrit pages exist; SummitPost returned 403 to other agents this session, not tried."
  },
  "wa_mount_shuksan_white_salmon_glacier": {
   "area": "wa_mount_shuksan_climbs",
-  "facts": []
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5400,
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/306/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas lists elevation gain of 5,400 ft for Shuksan via the White Salmon Glacier."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Shorter, more direct alternative to the Fisher Chimneys route, but the approach can be choked with brush",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/306/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas: an alternative to Fisher Chimneys, shorter and more direct but guarded by punishing brush."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Series of small glaciers descending north from the Shuksan Arm; climbers follow it to Fisher Chimney as a faster approach",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/White_Salmon_Glacier_(Mount_Shuksan)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: small glaciers flowing north from Shuksan Arm; a climbers' route follows it to Fisher Chimney, faster than others."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "season",
+    "value": "Early season, about mid-June in normal snow years, for the easiest passage; graded for spring and summer",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/306/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas: go early (mid June in most normal years) for easiest passage; rated C in spring and summer."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "trip_days",
+    "value": "Car to car in two or more days",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/306/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas expected duration: car to car in two or more days."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mazamas gain 5,400 ft vs app 7,500 ft; single source, not reconciled."
  },
  "wa_mount_si_haystack_scramble": {
   "area": "wa_mount_si",
@@ -1527,7 +2238,7 @@
      {
       "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
       "retrieved_at": "2026-11-14",
-      "fact": "Mountaineers ascent: middle gully with big boulder, chimney by Long John Tower, ledges south of the tower, benches to West Ridge Notch, class 4 blocks above."
+      "fact": "Mountaineers ascent: middle boulder gully, chimney by Long John Tower, ledges south of the tower, benches to West Ridge Notch, class 4 blocks."
      }
     ],
     "method": "single-source",

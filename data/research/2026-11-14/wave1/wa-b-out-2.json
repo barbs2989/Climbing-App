@@ -1,11 +1,11 @@
 {
  "wa_cathedral_rock_northwest_couloir": {
   "area": "wa_cathedral_rock",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "SummitPost Cathedral Rock page only points to the Cascade Alpine Guide for the NW Couloir; MP Northwest Couloir result was on Symmetry Spire (wrong peak). SummitPost later 403."
  },
  "wa_cathedral_rock_southeast_face_chimney": {
   "area": "wa_cathedral_rock",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "No source describing the Southeast Face Chimney reached; SummitPost 403, DuckDuckGo navigation blocked late in the run."
  },
  "wa_chair_peak_east_face": {
   "area": "wa_chair_peak",
@@ -50,7 +50,7 @@
     ]
    }
   ],
-  "note": "App grade 5.2; SummitPost summer East Face says 5.5."
+  "note": "App grade 5.2; SummitPost summer East Face says 5.5. No second source reached (SummitPost then returned 403)."
  },
  "wa_chair_peak_voie_de_chaise": {
   "area": "wa_summer_fall_rock_2",
@@ -221,11 +221,65 @@
  },
  "wa_chair_peak_west_ridge": {
   "area": "wa_chair_peak",
-  "skip_reason": "no stated facts found in sources checked"
+  "facts": [
+   {
+    "field": "car_to_car_hours",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/95069-tr-chair-peak-west-ridge-5242014/",
+      "retrieved_at": "2026-11-14",
+      "fact": "One party took 14 hours car to car, slowed by route finding."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Pitch 1 starts in the gully (snow-covered early season) with fixed nuts and a pin; pitch 2 exits the gully across the notch at 5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/95069-tr-chair-peak-west-ridge-5242014/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch one in the gully with fixed nuts and a pin; pitch two crosses the notch at 5.8."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Then a simul-climb traverse left, cracks and flakes at 5.7, a short slab and a poorly protected 10 ft headwall with two fixed pins",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/95069-tr-chair-peak-west-ridge-5242014/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Middle pitches: traverse left, 5.7 cracks and flakes, slab, then a thinly protected headwall with two fixed pins."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock with little protection in the class 4 gully toward the false summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/95069-tr-chair-peak-west-ridge-5242014/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 4 gully toward the false summit had lots of loose rock and minimal protection."
+     }
+    ]
+   }
+  ],
+  "note": "Trip report rates pitch 2 at 5.8; app grade is 5.7. 14 h car-to-car is one party time with route-finding trouble."
  },
  "wa_chianti_spire_north_face": {
   "area": "wa_chianti_spire",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "MP Chianti area lists only Rebel Yell; Mountaineers wine-spires page is a generic area page. Nothing for the 1952 North Face."
  },
  "wa_chockstone_route": {
   "area": "wa_north_early_winters_spire",
@@ -292,19 +346,6 @@
       "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
       "retrieved_at": "2026-11-14",
       "fact": "Four bolted rap stations work with a 60 m rope, plus a tree rap down the 5.0 slab."
-     }
-    ]
-   },
-   {
-    "field": "rappels_count",
-    "value": 5,
-    "method": "single-source",
-    "level": "locked-1src",
-    "evidence": [
-     {
-      "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
-      "retrieved_at": "2026-11-14",
-      "fact": "Four bolted rap stations with 60 m rope and one tree rap down the starting slab."
      }
     ]
    }
@@ -426,7 +467,7 @@
  },
  "wa_colchuck_balanced_rock_col_east_lake_side_approch": {
   "area": "wa_colchuck_balanced_rock",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "MP and stephabegg pages cover climbing routes on the rock, not the col approach; not read (browser blocked)."
  },
  "wa_cutthroat_west_ridge": {
   "area": "wa_cutthroat_peak",
@@ -536,7 +577,7 @@
     ]
    }
   ],
-  "note": "Mountain Project lists length 3200 ft, which looks like elevation gain rather than climbing length; not used."
+  "note": "Mountain Project lists length 3200 ft, which matches elevation gain rather than climbing length; not used as length_ft."
  },
  "wa_direct_north_buttress": {
   "area": "wa_bear_mountain_chilliwack",
@@ -610,7 +651,100 @@
  },
  "wa_dome_peak_indian_summer": {
   "area": "wa_dome_peak",
-  "skip_reason": "no stated facts found in sources checked"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists Indian Summer on Dome Peak south face as III 5.10."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists the route as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists the route as 1000 feet."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Nate Farr and partner, first ascent climbed around 2 September 2011",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent trip report dated 9/2/2011; party included Nate Farr."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "West-side approach: bike about ten miles up the Suiattle River Road to the Downey Creek trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party chose the west-side approach, biking ten miles on the Suiattle River Road to Downey Creek trail."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "High camp at the Dome/Chickamin col",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82679-tr-dome-peak-s-face-indian-summer-iii-510-fa-lily-of-the-west-fa-922011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party set high camp at the Dome/Chickamin col after crossing the Dome Glacier."
+     }
+    ]
+   }
+  ],
+  "note": "Only one member of the FA party (Nate Farr) is named in the text extracted; the poster name was not captured. No timing figures stated."
  },
  "wa_dragontail_peak_r4": {
   "area": "wa_dragontail_peak",
@@ -630,19 +764,14 @@
    },
    {
     "field": "commitment_grade",
-    "value": "III (SummitPost); IV (Mountain Project)",
-    "method": "agree-2",
-    "level": "locked",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
     "evidence": [
      {
       "url": "https://www.summitpost.org/triple-couloirs/282360",
       "retrieved_at": "2026-11-14",
       "fact": "SummitPost lists Grade III."
-     },
-     {
-      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
-      "retrieved_at": "2026-11-14",
-      "fact": "Mountain Project lists Grade IV."
      }
     ]
    },
@@ -712,7 +841,7 @@
     ]
    }
   ],
-  "note": "Commitment grade conflicts: SummitPost III vs Mountain Project IV. MP rock grade 5.8 vs SummitPost 5.7, so grade kept single-source from SummitPost. App grade WI3 matches SummitPost WI3."
+  "note": "Commitment grade conflicts: SummitPost III vs Mountain Project IV (MP not used for that field). MP rock grade 5.8 vs SummitPost 5.7; grade kept single-source from SummitPost. App WI3 agrees with SummitPost WI3."
  },
  "wa_east_face_3": {
   "area": "wa_minuteman_spire",
@@ -980,7 +1109,8 @@
      }
     ]
    }
-  ]
+  ],
+  "note": "MP lists Easy 5th; app has AI2/AD. Not reconciled."
  },
  "wa_ellen_pea": {
   "area": "wa_m_m_wall_aka_supercave_wall",
@@ -1067,15 +1197,15 @@
  },
  "wa_emerald_peak_west_route": {
   "area": "wa_emerald_peak_entiat",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "Mountaineers emerald-saska-peaks is a combined trip (23 mi, 5,200 ft) so not this route. wenatcheeoutdoors.org Emerald West Route page redirected off-domain."
  },
  "wa_ez_way": {
   "area": "wa_shark_rock",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "No search hits for EZ Way on Shark Rock outside MP (MP area found but route not read)."
  },
  "wa_fortune_peak_standard_route": {
   "area": "wa_fortune_peak",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "Mountaineers Fortune pages are for Teanaway huts and Fortune Creek routes, not the Esmeralda Basin approach. Blog pages not reached (browser blocked)."
  },
  "wa_gato_negro": {
   "area": "wa_whine_spire",
@@ -1123,7 +1253,7 @@
  },
  "wa_gilbert_peak_west_route": {
   "area": "wa_gilbert_peak",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "Mountaineers Gilbert pages are Conrad Glacier and Klickton Divide (other routes). hippohamster.com West Route page blocked by browser safety check."
  },
  "wa_gorillas_direct": {
   "area": "wa_mount_stuart",
@@ -1197,22 +1327,443 @@
  },
  "wa_gunn_peak_southeast_route": {
   "area": "wa_gunn_peak_climbs",
-  "skip_reason": "no stated facts found in sources checked"
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/gunn-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gunn Peak page: parking permit required, Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Mount Baker-Snoqualmie NF, Wild Sky Wilderness, Skykomish Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/gunn-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: Mount Baker-Snoqualmie NF, Wild Sky Wilderness, Skykomish Ranger District."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Road end of Forest Road 6024 out of Baring (2,300 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/gunn-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "From US-2 at Baring take FR 6024 to its end at 2,300 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Gunn Peak scramble page (same FR 6024 road-end start) lists 8.0 mi, 4,000 ft gain, high point 6,218 ft, but does not name the Southeast Route; numbers not used. App gain is 4,700."
  },
  "wa_guye_peak_southeast_gully": {
   "area": "wa_winter_spring_ice_snow_mixed_2",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "CascadeClimbers SE Gully TR (topic 100341) has no text; alpinedave page is the South Gully (different route)."
  },
  "wa_hourglass_gully_winter": {
   "area": "wa_main_peak_2",
-  "skip_reason": "no stated facts found in sources checked"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4 (winter)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hiking.andrewleader.net/routes/hourglass-gully-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes Hourglass Gully as the standard Index route, class 4 in winter."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike the Lake Serene trail, then follow the west side of the lake to the 3,080 ft saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hiking.andrewleader.net/routes/hourglass-gully-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike to Lake Serene, then go along the west side of the lake to the 3,080 ft saddle."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Saddle at 3,080 ft, a quarter mile from Lake Serene, where camping is allowed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hiking.andrewleader.net/routes/hourglass-gully-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The 3,080 ft saddle is the required quarter mile from the lake, so camping is permitted there."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the saddle go up the ridge south-southwest; it opens near 3,800 ft (a brush thrash in summer, snow in winter)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hiking.andrewleader.net/routes/hourglass-gully-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Head south-southwest up the ridge from the saddle; it opens near 3,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "The gully is the crux: it narrows near 4,800 ft at a summer waterfall and runs about 30-40 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hiking.andrewleader.net/routes/hourglass-gully-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steepest section narrows near 4,800 ft where a summer waterfall sits; roughly 30 to 40 degrees."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "In the lower gully keep left of the small rock island that splits it",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hike2hike.com/mountaineering/mount-index-hourglass-gulley-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lower gully is wide; stay on the left of the small island dividing it."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Many parties rappel the steep gully snowfield on descent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hiking.andrewleader.net/routes/hourglass-gully-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some parties rappel back down the steep gully section."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Crampons, ice axe, picket, rope, belay device and slings for anchors",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hiking.andrewleader.net/routes/hourglass-gully-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear listed: crampons, boots, ice axe, picket and rope for rappel, belay device, slings."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Ridge above the rock step held 40-50 degree snow and ice",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hike2hike.com/mountaineering/mount-index-hourglass-gulley-winter/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Above the rock step the ridge stayed 40-50 degree snow and ice."
+     }
+    ]
+   }
+  ]
  },
  "wa_hurry_up_peak_south_ridge": {
   "area": "wa_hurry_up_peak",
-  "skip_reason": "no stated facts found in sources checked"
+  "skip_reason": "Only peakvisor/mountainzone hits; no route source reached before the browser blocked navigation."
  },
  "wa_icy_peak_ruth_icy_traverse": {
   "area": "wa_icy_peak",
-  "skip_reason": "no stated facts found in sources checked"
+  "facts": [
+   {
+    "field": "mountaineers_length_mi",
+    "value": 16,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list route Length 16.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list elevation gain of 6,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7073,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list the high point as 7,073 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list seasons June through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "mountaineers_difficulty",
+    "value": "Basic Glacier Climb (Technical 2, Strenuous 3)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty listed as Technical 2, Strenuous 3, Basic Glacier Climb."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Hannegan Campground at the end of Ruth Creek Road (FR 32), 3,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive Ruth Creek Rd (FR 32) 4.5 mi to road end at Hannegan Campground, 3,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike the trail 4 mi to Hannegan Pass (5,056 ft), then a climbers trail east and south to the base of the Ruth Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike trail 4 mi to Hannegan Pass (5,056 ft), then climbers trail east and south past a pond."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Snow camp just past the first notch northwest of Ruth Mountain summit, about 6,600 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp on snow beyond the notch northwest of Ruth summit, about 6,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Descend a left-slanting slope (not the loose gully) to the Ruth-Icy saddle at about 5,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Avoid the loose scree gully; descend a leftward slope to the saddle, about 5,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb Icy northwest glacier southeast, at about 6,500 ft traverse the upper glacier under the west face, then up the south side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb Icy northwest slope; near 6,500 ft traverse upper glacier below west face, then talus and snow on south side."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the first prominent gully to rap slings around a horn; summit a few steps above and left",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the first prominent gully to a horn with rap slings; summit just above and left."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard rock and glacier gear; a fixed line is recommended for the summit gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard rock and glacier gear for the traverse; a fixed line is recommended."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock in the summit gully; helmets advised",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns of loose rock and advises helmets."
+     }
+    ]
+   },
+   {
+    "field": "leg_trailhead_to_camp",
+    "value": "5-6 hours, 3,600 ft gain",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: trailhead to camp 5-6 hours, 3,600 ft gain."
+     }
+    ]
+   },
+   {
+    "field": "leg_camp_to_summit",
+    "value": "3-5 hours, 1,270 ft gain, 800 ft loss",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to summit 3-5 hours, 1,270 ft gain, 800 ft loss."
+     }
+    ]
+   },
+   {
+    "field": "leg_summit_to_camp",
+    "value": "2-3 hours, 800 ft gain, 1,270 ft loss",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: summit to camp 2-3 hours, 800 ft gain, 1,270 ft loss."
+     }
+    ]
+   },
+   {
+    "field": "leg_camp_to_trailhead",
+    "value": "3-4 hours, 3,660 ft loss",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile: camp to trailhead 3-4 hours, 3,660 ft loss."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile lists 800 ft of loss between camp and the Icy summit."
+     }
+    ]
+   },
+   {
+    "field": "return_gain_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/ruth-mountain-icy-peak-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip profile lists 800 ft of gain from Icy summit back to camp."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers leg table also gives camp-to-trailhead loss 3,660 vs trailhead-to-camp gain 3,600, as published."
  }
 }

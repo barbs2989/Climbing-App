@@ -186,7 +186,7 @@
      {
       "url": "https://www.mountainproject.com/route/126835237/dragons-jaw",
       "retrieved_at": "2026-11-14",
-      "fact": "Six pitches."
+      "fact": "Lists 6 pitches."
      }
     ]
    },
@@ -238,12 +238,12 @@
      {
       "url": "https://www.mountainproject.com/route/126835237/dragons-jaw",
       "retrieved_at": "2026-11-14",
-      "fact": "From Colchuck Lake toward Asgard Pass, cross stream ~100 ft below first cliffs, scree hill right of mossy streams; start between NE Buttress and Dragons of Eden."
+      "fact": "From Colchuck Lake head toward Asgard Pass, cross the stream below the first cliffs, climb scree; base lies between NE Buttress and Dragons of Eden."
      }
     ]
    },
    {
-    "field": "approach_hours",
+    "field": "approach_time",
     "value": "3-4 hours from Stuart Lake Trailhead to the base",
     "method": "single-source",
     "level": "locked-1src",
@@ -335,7 +335,7 @@
      {
       "url": "https://www.mountainproject.com/route/201417432/new-dark-ages",
       "retrieved_at": "2026-11-14",
-      "fact": "Five pitches."
+      "fact": "Lists 5 pitches."
      }
     ]
    },
@@ -471,7 +471,7 @@
      {
       "url": "https://www.mountainproject.com/route/203728066/dragonfruit",
       "retrieved_at": "2026-11-14",
-      "fact": "Five pitches."
+      "fact": "Lists 5 pitches."
      }
     ]
    },
@@ -1219,7 +1219,7 @@
      {
       "url": "https://www.mountainproject.com/route/126883520/ingalls-error",
       "retrieved_at": "2026-11-14",
-      "fact": "Two pitches."
+      "fact": "Lists 2 pitches."
      }
     ]
    },
@@ -1355,7 +1355,7 @@
      {
       "url": "https://www.mountainproject.com/route/120932106/east-peak-southwest-face",
       "retrieved_at": "2026-11-14",
-      "fact": "Two pitches."
+      "fact": "Lists 2 pitches."
      }
     ]
    },
@@ -1626,5 +1626,304 @@
    }
   ],
   "note": "App grade is 5.10a; Wikipedia states a 5.7-5.10a range."
+ },
+ "wa_hibox_mountain_southeast_ridge": {
+  "area": "wa_hibox_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3900,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/alpine-scramble-hibox-mountain-84",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hibox scramble: 6.7-mile out-and-back with 3,900 ft of gain, class 3 on the southeast ridge."
+     },
+     {
+      "url": "https://trailcatjim.com/hibox-peak-via-box-canyon-creek-southwest-slope-2018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Southwest Slope to Southeast Ridge trip: 6.7 miles, 3800 ft gained and lost."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6.7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/alpine-scramble-hibox-mountain-84",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as a 6.7-mile out-and-back scramble."
+     },
+     {
+      "url": "https://trailcatjim.com/hibox-peak-via-box-canyon-creek-southwest-slope-2018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 6.7 miles traveled."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/activities/alpine-scramble-hibox-mountain-84",
+      "retrieved_at": "2026-11-14",
+      "fact": "Final push is steep Class 3 up a rocky boot path and narrow chimney on the southeast ridge."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6547,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 6,547 ft."
+     },
+     {
+      "url": "https://trailcatjim.com/hibox-peak-via-box-canyon-creek-southwest-slope-2018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hibox Peak elevation given as 6547 ft."
+     }
+    ]
+   },
+   {
+    "field": "time_up_hours",
+    "value": 4.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/hibox-peak-via-box-canyon-creek-southwest-slope-2018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Took about 4.2 hours up."
+     }
+    ]
+   },
+   {
+    "field": "time_down_hours",
+    "value": 2.9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/hibox-peak-via-box-canyon-creek-southwest-slope-2018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Took about 2.9 hours down."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Rachel Lake Trailhead (2,800 ft), end of Box Canyon Road FR 4930",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "From I-90 Exit 62 to Kachess Lake Campground, then Box Canyon Road FR 4930 4.2 miles to Rachel Lake Trailhead, 2,800 ft."
+     },
+     {
+      "url": "https://trailcatjim.com/hibox-peak-via-box-canyon-creek-southwest-slope-2018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start and end at Rachel Lake Trailhead at the end of Kachess Lake Road."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "I-90 Exit 62 (Kachess Lake), 5 mi to Kachess Lake Campground, left on Box Canyon Road (FR 4930) 4.2 mi.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exit 62, 5 miles to Kachess Lake Campground, then FR 4930 for 4.2 miles."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Follow the Rachel Lake trail to about 3,300 ft, then a boot path northeast up the slope; skirt a rock band near 5,300 ft on the right to a big meadow, then loose talus to the south side of the summit block.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rachel Lake trail to 3,300 ft, boot path NE, rock band ~5,300 ft passed right, meadow, loose talus to summit block's south side."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Keep right, avoid the southwest-side gully; a short exposed notch on good rock leads to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stay right avoiding SW gully; short notch with exposure on good rock to summit."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Very loose talus/scree below the summit block; watch for rockfall.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Very loose talus/scree field; watch for falling rocks."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed May through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass required for parking; Alpine Lakes Wilderness, Cle Elum Ranger District.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hibox-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit: Northwest Forest Pass; land manager Okanogan-Wenatchee NF, Cle Elum RD."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers route page states 8.0 mi round trip, its activity page and Trailcatjim state 6.7 mi; 6.7 used. Gain 3,900 (Mountaineers) vs 3,800 (Trailcatjim) within 10%. SummitPost 'Hibox Southeast Ridge' photo page returned 403."
+ },
+ "wa_little_annapurna_northeast_face": {
+  "area": "wa_little_annapurna",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Stuart/Colchuck Lake trailhead (3,500 ft), 4 mi up FR 7601 Eightmile Creek Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna",
+      "retrieved_at": "2026-11-14",
+      "fact": "Icicle Creek Road 8.6 mi to Bridge Creek Campground, FR 7601 4 miles to trailhead at 3,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lake Stuart Trail 2.5 mi, left to Colchuck Lake (5,570 ft) in 1.8 mi more, around the lake's south end and up Aasgard Pass (7,800 ft), then east to the peak.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stuart Lake Trail 2.5 mi, Colchuck Lake 5,570 ft after 1.8 mi, Aasgard Pass 7,800 ft, east to Little Annapurna."
+     }
+    ]
+   }
+  ],
+  "note": "No page found describing the Northeast Face climbing route itself (not on Mountain Project lists reachable, theCrag, or Mountaineers; SummitPost 403). Only the shared Colchuck/Aasgard approach from the Mountaineers scramble page is recorded; its 15 mi / 5,400 ft totals are for the scramble route and were not used."
+ },
+ "wa_little_annapurna_northwest_buttress": {
+  "area": "wa_little_annapurna",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Stuart/Colchuck Lake trailhead (3,500 ft), 4 mi up FR 7601 Eightmile Creek Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna",
+      "retrieved_at": "2026-11-14",
+      "fact": "Icicle Creek Road 8.6 mi to Bridge Creek Campground, FR 7601 4 miles to trailhead at 3,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lake Stuart Trail 2.5 mi, left to Colchuck Lake (5,570 ft) in 1.8 mi more, around the lake's south end and up Aasgard Pass (7,800 ft), then east to the peak.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stuart Lake Trail 2.5 mi, Colchuck Lake 5,570 ft after 1.8 mi, Aasgard Pass 7,800 ft, east to Little Annapurna."
+     }
+    ]
+   }
+  ],
+  "note": "No page found describing the Northwest Buttress climbing route itself. Only the shared Colchuck/Aasgard approach recorded; scramble-route totals not used."
+ },
+ "wa_south_peak_northeast_face": {
+  "area": "wa_south_peak",
+  "skip_reason": "Area 'South Peak' is ambiguous (no coordinates or parent in input) and no grade in the app; no page for a South Peak 'Northeast Face' could be tied to it. SummitPost returned 403; Mountain Project rate-limited (429)."
+ },
+ "wa_south_peak_southeast_face": {
+  "area": "wa_south_peak",
+  "skip_reason": "Same as Northeast Face: ambiguous 'South Peak', no identifying data; SummitPost 403, Mountain Project 429."
+ },
+ "wa_elephant_head_lower_west_face": {
+  "area": "wa_elephant_head",
+  "skip_reason": "WA Elephant Head is in the Dome Peak / Ptarmigan Crest area (theCrag listing). AAJ 1982 covers only its Northwest Ridge (NCCS III F8), a different route. theCrag area page redirected to a bot-check page; DuckDuckGo returned no results; Mountain Project 429; SummitPost 403."
+ },
+ "wa_elephant_head_variation_p1_west_face": {
+  "area": "wa_elephant_head",
+  "skip_reason": "Same checks as Lower West Face; no page describes this variation."
+ },
+ "wa_garfield_mountain_southeast_face": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "Mountain Project 'Southeast Face (aka Waterfall Route)' 106790885 is on Mount Emerson, CA (not used). DuckDuckGo searches for a WA Garfield Southeast Face 5.10 returned nothing; SummitPost Garfield pages 403; Mountain Project 429."
+ },
+ "wa_east_gully": {
+  "area": "wa_agathla_tower",
+  "skip_reason": "Could not find a page for 'Agathla Tower' East Gully in Washington; SummitPost (which has an 'East Gully' page, 830667) returned 403. Not enough identifying data to search further."
+ },
+ "wa_gully_1": {
+  "area": "wa_amphitheater_the",
+  "skip_reason": "'The Amphitheater' Gully 1 (Class 3) could not be located on any reachable site; Mountain Project 429, SummitPost 403, DuckDuckGo returned no results."
+ },
+ "wa_gully_2": {
+  "area": "wa_amphitheater_the",
+  "skip_reason": "Same as Gully 1."
+ },
+ "wa_huckleberry_mountain_southwest_slope": {
+  "area": "wa_huckleberry_mountain",
+  "skip_reason": "Washington has several Huckleberry Mountains; the input has no coordinates or parent area to pick one. The Mountaineers' Huckleberry Mountain (Suiattle River, 4,900 ft in 7 mi) is a trail hike and cannot be confirmed as this Southwest Slope route, so it was not used."
+ },
+ "wa_lichen_rock_northeast_rib": {
+  "area": "wa_lichen_rock",
+  "skip_reason": "CascadeClimbers' 'Lichen Rock' is a Spokane-area boulder (Minnehaha), not a 5.9 rib route; no other page found. Mountain Project 429, DuckDuckGo returned nothing."
  }
 }

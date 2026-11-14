@@ -1,0 +1,174 @@
+{
+ "ny_mount_emmons_seward_range_herd_path": {
+  "area": "ny_mount_emmons",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_mount_haystack_phelps_trail_from_the_garden": {
+  "area": "ny_mount_haystack",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found",
+  "note": "listhiker says 9.3 mi one way for Haystack but route/trailhead not confirmed; not used"
+ },
+ "ny_mount_marcy_van_hoevenberg_trail": {
+  "area": "ny_mount_marcy",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 7.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://lovepinesandpeaks.com/hiking-to-the-summit-of-mount-marcy-new-yorks-highest-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail length 7.4 miles one way from Adirondack Loj to summit"
+     },
+     {
+      "url": "https://prominenceregistry.com/mount-marcy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Van Hoevenberg standard route runs 7.4 miles one way from the Adirondak Loj"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondak Loj (Heart Lake)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.alltrails.com/trail/us/new-york/mount-marcy-via-van-hoevenberg-trail--5",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts on Van Hoevenberg Trail from Adirondack Loj near Heart Lake"
+     },
+     {
+      "url": "https://arraysafari.com/climb-mt-marcy-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Van Hoevenberg Trail from Adirondak Loj/Heart Lake is the most direct route"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountain-hiking.com/mount-marcy-hike-via-van-hoevenberg-trail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 15 miles round trip with about 3,600 feet of elevation gain (round trip hike)"
+     }
+    ]
+   }
+  ],
+  "note": "AllTrails 4,307 ft is Marcy plus Tabletop, not used."
+ },
+ "ny_mount_marshall_herbert_brook_herd_path": {
+  "area": "ny_mount_marshall",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_mount_redfield_uphill_brook_herd_path": {
+  "area": "ny_mount_redfield",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_mount_skylight_via_mount_marcy": {
+  "area": "ny_mount_skylight",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_mt_colden_lake_arnold_trail": {
+  "area": "ny_mt_colden",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_nipple_top_elk_pass_trail": {
+  "area": "ny_nipple_top",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_northern_grand_traverse_ledge_access": {
+  "area": "ny_millbrook",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_nye_mountain_via_indian_pass_brook": {
+  "area": "ny_nye_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_panther_peak_panther_brook_herd_path": {
+  "area": "ny_panther_peak",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_phelps_mountain_phelps_trail": {
+  "area": "ny_phelps_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_porter_mountain_cascade_mountain_trail_to_porter_spur": {
+  "area": "ny_porter_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_radcliffe_descent": {
+  "area": "ny_b_jackie_and_friends",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_rocky_peak_ridge_via_giant_mountain": {
+  "area": "ny_rocky_peak_ridge",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_saddleback_mountain_ore_bed_trail": {
+  "area": "ny_saddleback_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_santanoni_peak_santanoni_express": {
+  "area": "ny_santanoni_peak",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_sawteeth_weld_trail": {
+  "area": "ny_sawteeth",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_seward_mountain_seward_herd_path": {
+  "area": "ny_seward_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_seymour_mountain_ward_brook_herd_path": {
+  "area": "ny_seymour_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_south_dix_dix_range_herd_path": {
+  "area": "ny_south_dix",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_street_mountain_via_indian_pass_brook": {
+  "area": "ny_street_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_table_top_mountain_herd_path_from_the_van_hoevenberg_trail": {
+  "area": "ny_table_top_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_the_descent_route_2": {
+  "area": "ny_fresh_wall_spier_falls_area_the",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_upper_wolfjaw_mountain_wedge_brook_trail": {
+  "area": "ny_upper_wolfjaw_mountain",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_whiteface_wilmington_trail": {
+  "area": "ny_whiteface",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "ny_wright_peak_wright_peak_spur_trail_from_algonquin_trail": {
+  "area": "ny_wright_peak",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "or_approach_gully": {
+  "area": "or_zz_upper_gorge",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "or_eleven_o_clock_gully": {
+  "area": "or_broken_top",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ },
+ "or_goat_peak_scramble_route": {
+  "area": "or_goat_peak",
+  "skip_reason": "DDG snippet pass only (extension/token limits); no page stating a figure outright for this route and trailhead found"
+ }
+}

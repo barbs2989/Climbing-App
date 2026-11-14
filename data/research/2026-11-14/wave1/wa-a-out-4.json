@@ -1374,5 +1374,192 @@
    }
   ],
   "note": "Mountaineers figures (8.0 mi, 3,900 ft gain, May-Oct) describe the scramble route that the South Face climb is an alternative to; not used as facts for this route. Approach to the loose south gully is shared."
+ },
+ "wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge": {
+  "area": "wa_skookum_peak_twinsisters",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Climb slabs and dihedrals just left of Jaw's Tooth, steepening to a 5.6 layback dihedral (the crux) to the top of the spire; Skookum Peak beyond is rated 5.4.",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "fact": "Slabs and dihedrals left of Jaw's Tooth lead to a real 5.6 layback dihedral; Jaw's Tooth 5.6, Skookum 5.4.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rappels",
+    "value": "One 15 m rappel off Jaw's Tooth",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "fact": "Photo caption notes the 15m rappel off Jaw's Tooth.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Approached up Green Creek (river crossing on a log bridge) onto the Sisters Glacier as part of the Green Creek Circuit.",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "fact": "Party crossed the river on tied logs, reached the arete base two hours from car, then the flat Sisters Glacier.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "On the Green Creek Circuit the peaks are climbed by their north ridges and descended by non-technical south faces.",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+      "fact": "Circuit climbs steep north ridges and descends non-technical south faces.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "CascadeClimbers TR 102909 (2019, with the same partner Dylan) gives 14.5 h car-to-car, 7,800 ft, 13.4 mi, but for the whole five-peak Green Creek Circuit, not this route alone; not used."
+ },
+ "wa_mount_rainier_east_success_couloir": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Comet Falls trailhead (register at Longmire)",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/east-success-couloir-on-mount-rainier",
+      "fact": "Party registered at Longmire then drove to Comet Falls to start.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Summer trail to Van Trump meadows, then roughly straight up, bending west near 8,000 ft to camp on the east edge of the Kautz Glacier; cross the Kautz and go up the Kautz Cleaver.",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/east-success-couloir-on-mount-rainier",
+      "fact": "Via Van Trump meadows, bend west around 8,000 ft, camp on east margin of Kautz Glacier, cross Kautz to Kautz Cleaver.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Nearly flat site on the east margin of the Kautz Glacier, about 5.5 hours from the car",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/east-success-couloir-on-mount-rainier",
+      "fact": "5.5 hours from car to a nearly flat camp on the east margin of the Kautz Glacier.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "Near 13,300 ft a normally rocky band can be a 60+ degree snow step early in the season.",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/east-success-couloir-on-mount-rainier",
+      "fact": "At about 13,300 ft the rock band was a snow step of 60-plus degrees.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Single trip report (April 2021 ski trip). No route gain/distance stated."
+ },
+ "wa_silver_peak_northwest_ridge": {
+  "area": "wa_silver_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 5605,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/silver-peak",
+      "fact": "Silver Peak high point listed as 5,605 ft.",
+      "retrieved_at": "2026-11-14"
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mountaineers Silver Peak page is a summer day hike (8.5 mi, 1,900 ft, Jul-Oct) by another route; those figures not used. No NW Ridge (winter, Annette Lake/Hyak) page with stated numbers found."
+ },
+ "wa_mount_johnson_southwest_route": {
+  "area": "wa_mount_johnson",
+  "skip_reason": "DDG and Mountain Project searched; MP 'Mount Johnson' area is in California (High Sierra); no Washington Mount Johnson Southwest Route page with stated facts found."
+ },
+ "wa_north_early_winter_spire_christianson_roskelley": {
+  "area": "wa_north_early_winters_spire",
+  "skip_reason": "Not listed on MP North Early Winter Spire area; DDG searches returned no route page; SuperTopo (formerly had Washington Pass topos) refused connection."
+ },
+ "wa_north_early_winter_spire_twitch_of_the_death_nerve": {
+  "area": "wa_north_early_winters_spire",
+  "skip_reason": "Not listed on MP North Early Winter Spire area; DDG searches returned only film/music results; SuperTopo refused connection."
+ },
+ "wa_north_early_winter_spire_vulcan_death_grip": {
+  "area": "wa_north_early_winters_spire",
+  "skip_reason": "Only an unrelated MP 'The Vulcan Death Grip' (sport, Dines Cliff) found; not listed on MP North Early Winter Spire area."
+ },
+ "wa_north_peak_north_ridge": {
+  "area": "wa_north_peak",
+  "skip_reason": "Peak identity ambiguous (several WA 'North Peak's); MP 'North Ridge' 5.7 hit is Eldorado Main Peak, not this area. No matching source found."
+ },
+ "wa_north_peak_southeast_buttress": {
+  "area": "wa_north_peak",
+  "skip_reason": "Peak identity ambiguous; MP 'Southeast Buttress' 5.7 hit is Cathedral Peak (Sierra), not this area."
+ },
+ "wa_red_mountain_snoqualmie_southeast_face": {
+  "area": "wa_red_mountain_snoqualmie",
+  "skip_reason": "MP Red Mountain (Snoqualmie) area lists East Ridge, South Face, Southwest Ridge only; Mountaineers Red Pass & Mountain page is a different route. No Southeast Face source found."
+ },
+ "wa_south_peak_south_arete": {
+  "area": "wa_south_peak",
+  "skip_reason": "Peak identity ambiguous; MP 'South Arete' hit is South Early Winters Spire (5.5), not this South Peak."
+ },
+ "wa_south_peak_southwest_face": {
+  "area": "wa_south_peak",
+  "skip_reason": "Peak identity ambiguous; no matching Southwest Face source found (MP hit was Ingalls South Ridge)."
+ },
+ "wa_safe_sex": {
+  "area": "wa_green_giant_buttress",
+  "skip_reason": "Only a SummitPost Green Giant Buttress page and a theCrag listing surfaced in search; not read before budget ran out. No facts recorded."
+ },
+ "wa_mount_seattle_noyes_basin": {
+  "area": "wa_mount_seattle",
+  "skip_reason": "Only found trailcatjim Mt Seattle trip via the Southwest Couloir/Seattle Basin (different route) and NPS Skyline trail page; no Noyes Basin route figures."
+ },
+ "wa_mount_seattle_seattle_creek": {
+  "area": "wa_mount_seattle",
+  "skip_reason": "trailcatjim trip uses Seattle Basin + Southwest Couloir; could not confirm it is the same as the 'Seattle Creek Basin Route', so not used."
+ },
+ "wa_glacier_peak_south_tahoma_headwall": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "AAJ 1989 note (publications.americanalpineclub.org/articles/12198914202/) covers 'South Tahoma Headwall, Left' (Risse/Anderson; rockfall, two short rock bands near 12,600 ft) - a distinct line, so not attributed. CascadeClimbers inquiry thread had no figures."
  }
 }

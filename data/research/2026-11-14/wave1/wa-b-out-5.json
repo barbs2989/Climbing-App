@@ -1,0 +1,1405 @@
+{
+ "wa_the_roof": {
+  "area": "wa_unicorn_peak",
+  "skip_reason": "not yet researched"
+ },
+ "wa_the_tiger": {
+  "area": "wa_m_m_wall_aka_supercave_wall",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists The Tiger as 1000 ft long."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212965",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ report gives The Tiger as 1,000 feet, IV 5.12b."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 11,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 11 pitches."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212965",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ report says the route has 11 pitches, all but one 5.10 or harder."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives commitment Grade IV."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212965",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ report grades it IV 5.12b."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.12b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212965",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ report by the first ascensionists grades the free route 5.12b."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Blake Herrington, Colin Moorhead, Max Tepfer, 2014",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to Blake Herrington, Colin Moorhead and Max Tepfer, summer 2014."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212965",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ: Herrington writes that he, Moorhead and Tepfer freed it in July; climb year 2014."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Park at SR-20 milepost 166, a few miles east of Washington Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project says to park at milepost 166, a few miles east of Washington Pass."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike the obvious gully to a ledge system traversing the wall; a fixed line goes left where the gully steepens after 15-20 minutes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: hike gully to a ledge system on the right; after about 15-20 minutes a fixed line goes left around the steep part."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route with double ropes, including a double-rope rappel into the cave",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project says to rappel the route with double ropes; one rappel drops into the cave."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Climbs the center of M&M (Supercave) Wall, slabby technical corners low, steeper and more physical higher",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109429099/the-tiger",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: climbs the center of M&M Wall; slabby corners early, steeper and more strenuous higher."
+     }
+    ]
+   }
+  ],
+  "note": "Grade: MP shows 5.12, AAJ 5.12b (not identical, so grade kept single-source on the AAJ figure). No published approach distance found (missingOrThin: distance)."
+ },
+ "wa_the_tipping_point": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.12",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114550803/the-tipping-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades The Tipping Point 5.12."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114550803/the-tipping-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114550803/the-tipping-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114550803/the-tipping-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Kerwin Loukusa, Luke Stefurak, 2017",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114550803/the-tipping-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to Kerwin Loukusa and Luke Stefurak, 2017."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "RPs; single purple C3; 3-4 green C3/blue Alien; doubles green Alien to #2 Camalot; single #3; 8-10 alpine draws",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114550803/the-tipping-point",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rack: RPs, C3s, doubles from green Alien to #2 Camalot, one #3, 8-10 alpine draws."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_the_tooth_indentured_servant": {
+  "area": "wa_summer_fall_rock_2",
+  "skip_reason": "not yet researched"
+ },
+ "wa_the_west_face": {
+  "area": "wa_north_early_winters_spire",
+  "skip_reason": "not yet researched"
+ },
+ "wa_this_my_friend": {
+  "area": "wa_dragontail_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119518502/this-my-friend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades This, My Friend 5.10a."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119518502/this-my-friend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119518502/this-my-friend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119518502/this-my-friend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Andy Wyatt, Chris Potts, 2020",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119518502/this-my-friend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to Andy Wyatt and Chris Potts, August 2020."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Leave the Aasgard Pass trail at about 7300-7400 ft, 5-10 min past the main stream crossing near 7250 ft, and cross scree to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119518502/this-my-friend",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: trail crosses Aasgard stream near 7250 ft; leave it around 7300-7400 ft and cross scree up right to the base."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_three_fingers_south_peak_lookout": {
+  "area": "wa_three_fingers",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 16,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list Three Fingers South at 16.0 mi."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Three Fingers at 15.0 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4400,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give elevation gain of 4,400 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives elevation gain of 4,200 feet."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6857,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give a high point of 6,857 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives the highest point as 6,854 feet."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list seasons June, July, August, September, October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers say a Northwest Forest Pass is required for parking."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Mt. Baker-Snoqualmie NF, Darrington Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: Mount Baker-Snoqualmie National Forest, Darrington Ranger District."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About 2.5 miles to Saddle Lake, then about 2 more miles to the Goat Flats meadow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: a 2.5-mile trek to Saddle Lake, then the next two miles to Goat Flats."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Goat Flats (campsites; bears frequent the area)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA notes very nice campsites at Goat Flats and warns bears frequent the area."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Final scramble to the lookout uses ladders fixed into the rock; exposed",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: the final push goes up ladders rebarred into rock and is exposed."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers note ladders for the last bit of scrambling to the lookout."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep snowfield beyond Goat Flats / after Tin Can Gap; ice axe and crampons recommended",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: ice axe a must past Goat Flats; a small, steep snowfield must be crossed or skirted."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-fingers-south",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: snow may linger after Tin Can Gap; crampons and ice axe recommended."
+     }
+    ]
+   }
+  ],
+  "note": "WTA and Mountaineers distance/gain may predate the FR 41 closure at Canyon Creek; neither page states the added road walk, so no road-walk figure recorded. Gain agrees within 10% (4,400 vs 4,200)."
+ },
+ "wa_three_queens_standard": {
+  "area": "wa_three_queens",
+  "facts": [
+   {
+    "field": "trip_length_mi",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-queens",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list Three Queens at a length of 8.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-queens",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list June through October (and year-round) as seasons."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-queens",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers say a Northwest Forest Pass is required for parking."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Okanogan-Wenatchee National Forest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/three-queens",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list Okanogan-Wenatchee National Forests as land manager."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 8.0 mi is not labelled one-way or round trip on the page; recorded as trip_length_mi exactly as stated. SummitPost page returned 403."
+ },
+ "wa_three_queens_west_peak": {
+  "area": "wa_three_queens",
+  "skip_reason": "not yet researched"
+ },
+ "wa_trapper_mountain_south_slopes": {
+  "area": "wa_trapper_mountain",
+  "skip_reason": "not yet researched"
+ },
+ "wa_tupshin_peak_east_face": {
+  "area": "wa_tupshin_peak",
+  "skip_reason": "not yet researched"
+ },
+ "wa_west_face_2": {
+  "area": "wa_north_peak",
+  "skip_reason": "not yet researched"
+ },
+ "wa_witches_tower_west_buttress": {
+  "area": "wa_witches_tower",
+  "skip_reason": "not yet researched"
+ },
+ "wa_wright_pond": {
+  "area": "wa_cutthroat_creek_wall_or_little_liberty_bell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11a/b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113868664/wright-pond",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Wright-Pond 5.11a/b."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113868664/wright-pond",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 600 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113868664/wright-pond",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113868664/wright-pond",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Chris Wright, Mike Pond, 2009",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113868664/wright-pond",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to Chris Wright and Mike Pond, 2009."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_a_servant_to_liberty": {
+  "area": "wa_liberty_bell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades A Servant To Liberty 5.13."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 1400 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 11 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives Grade V."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mikey Schaefer, 2016",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to Mikey Schaefer, 8/16."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "8 quickdraws, 6 shoulder slings, two ropes if rappelling the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gear list includes 8 quickdraws, 6 shoulder-length slings and 2 ropes for rappelling the route."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_accendo_lunae_lib_west_face_var": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.12-",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157297/accendo-lunae-libwest-face-var",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Accendo Lunae 5.12-."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212210/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ report gives Accendo Lunae as 5.12-."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157297/accendo-lunae-libwest-face-var",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 10 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157297/accendo-lunae-libwest-face-var",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Blake Herrington, Scott Bennett, Graham Zimmerman, 2012",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108157297/accendo-lunae-libwest-face-var",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP credits FA to Blake Harrington, Scott Bennet and Graham Zimmerman, 2012."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212210/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ: Blake Herrington with Scott Bennett and Graham Zimmerman climbed the variation; climb year 2012."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts on Let It Burn to a ledge atop its fifth pitch, moves right up an off-size splitter and thin crack past a roof to join the West Face below its crux roof",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201212210/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ: from Let it Burn pitch 5 ledge, new pitches go right via splitter and thin crack to the West Face crux roof."
+     }
+    ]
+   }
+  ],
+  "note": "Length conflicts: MP 1200 ft vs AAJ 1,000 ft (>10% apart), so length_ft not recorded."
+ },
+ "wa_action_potential": {
+  "area": "wa_burgundy_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394880/action-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Action Potential 5.10c."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394880/action-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394880/action-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394880/action-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Allen, Mike Layton, 2004",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394880/action-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to Mark Allen and Mike Layton, July 18-20, 2004."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Burgundy Col, scramble loose rock or steep snow down around the north face to below a clean splitter flake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119394880/action-potential",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: from Burgundy Col, descend loose rock or snow around the north face to the base below a splitter flake."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_alpine_lookout_round_mountain_trail": {
+  "area": "wa_alpine_lookout",
+  "skip_reason": "not yet researched"
+ },
+ "wa_alta_mountain_scramble": {
+  "area": "wa_alta_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alta-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Alta Mountain at 12.0 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alta-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives elevation gain of 3,300 feet."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6151,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alta-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives the highest point as 6,151 feet."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Follow the Rachel Lake trail (3.5 miles) before climbing toward Rampart Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alta-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: start on the trail to Rachel Lake, a 3.5 mile trail."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lila Lake, Rampart Lakes or Rachel Lake (overnight options)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alta-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA suggests it as a side trip from an overnight at Lila Lake, Rampart Lakes or Rachel Lake."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_american_border_peak_southeast_face": {
+  "area": "wa_american_border_peak",
+  "facts": [
+   {
+    "field": "trip_length_mi",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list American Border Peak Southeast Route at 9.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give elevation gain of 2,800 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7994,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give a high point of 7,994 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list seasons June, July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Basic Rock Climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers rate it a Basic Rock Climb, Basic Alpine category."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers say a Northwest Forest Pass is required for parking."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Tomyhoi Lake trailhead parking; high-clearance vehicles continue to Twin Lakes trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: drive to small parking at Tomyhoi Lake trailhead; high clearance can continue to Twin Lakes trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Twin Lakes trailhead hike north to Low Pass, then High Pass, then up to the summit ridge and north to the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: from Twin Lakes trailhead hike to Low Pass then High Pass, ascend to summit ridge, follow north."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_andersons_thumb_standard": {
+  "area": "wa_andersons_thumb",
+  "skip_reason": "not yet researched"
+ },
+ "wa_arrowhead_mountain_south_route": {
+  "area": "wa_arrowhead_mountain",
+  "facts": [
+   {
+    "field": "trip_length_mi",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/arrowhead-6030",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list Arrowhead (6030) at 7.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/arrowhead-6030",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give elevation gain of 3,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6030,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/arrowhead-6030",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give a high point of 6,030 ft."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Okanogan-Wenatchee NF, Alpine Lakes Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/arrowhead-6030",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: Okanogan-Wenatchee National Forests, Alpine Lakes Wilderness."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page is mainly a winter scramble/ski listing; WTA arrowhead-mountain gives highest point 6,027 ft but its identity with this peak was not confirmed, so not used."
+ },
+ "wa_austera_peak_southwest_ridge": {
+  "area": "wa_austera_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8334,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/austera-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives the highest point of Austera Peak as 8,334 feet."
+     }
+    ]
+   }
+  ],
+  "note": "WTA page has no distance/gain; SummitPost 403."
+ },
+ "wa_azurite_peak_southeast": {
+  "area": "wa_azurite_peak",
+  "facts": [
+   {
+    "field": "trip_length_mi",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list Azurite Peak at 25.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give elevation gain of 6,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give a high point of 8,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list seasons June through October."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Basic Alpine Climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers rate Azurite Peak a Basic Alpine Climb."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers say a Northwest Forest Pass is required for parking."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Okanogan-Wenatchee NF, Methow Valley Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: Okanogan-Wenatchee National Forests, Methow Valley Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "App has 6,700 ft gain; Mountaineers states 6,000 ft."
+ },
+ "wa_bacon_peak_diobsud": {
+  "area": "wa_bacon_peak",
+  "skip_reason": "not yet researched"
+ },
+ "wa_bald_eagle_peak_scramble": {
+  "area": "wa_bald_eagle_peak",
+  "skip_reason": "not yet researched"
+ },
+ "wa_baldy_standard": {
+  "area": "wa_baldy",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/baldy",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Baldy at 7.2 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/baldy",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives elevation gain of 3,800 feet."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6827,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/baldy",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives the highest point as 6,827 feet."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Walk around the barrier ending Forest Road 270, pass the Tyler Peak side trail, follow the old roadbed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/baldy",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: walk around the barrier that ends FR 270, pass the Tyler Peak side trail, continue on old road bed."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Campsite along Mueller Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/baldy",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA mentions a camp site along Mueller Creek on the way up."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_baring_mountain_northwest_ridge": {
+  "area": "wa_main_peak_3",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-baring",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Mount Baring at 7.0 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-baring",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives elevation gain of 3,500 feet."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6129,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-baring",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives the highest point as 6,129 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Shares the Barclay Lake trailhead parking lot",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-baring",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: the unofficial Mount Baring trail shares the parking lot with the Barclay Lake trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Climbers trail goes straight up, roughly 2000 ft in a little over a mile to the ridgeline, then a gully and cairned trail to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-baring",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: about 2000 feet of gain in a little over a mile to the ridgeline; then gully and cairned trail to summit."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_baring_mountain_r1": {
+  "area": "wa_main_peak_3",
+  "skip_reason": "not yet researched"
+ },
+ "wa_bearpaw_mountain_scramble": {
+  "area": "wa_bearpaw_mountain",
+  "skip_reason": "not yet researched"
+ }
+}
