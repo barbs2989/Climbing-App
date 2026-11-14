@@ -65,6 +65,7 @@ import { tripRowToActivity } from "./lib/tripReportRow.js";
 import { CondPrefsControls, useCondPrefsAccount, useCondPrefs, useCondSync } from "./lib/CondPrefs.jsx";
 import { photoThumb, thumbFallback } from "./lib/photoThumb";
 import { useSwipeTabs } from "./lib/pageSwipe.js";
+import { useBackButton } from "./lib/backButton.js";
 import { useWideScreen, useFullWidth, useAdSideWidth, wideGeom, wideColumn, wideRail, wideLeft, wideTopBar, wideTopRow, wideNavStrip, wideCss, ZOOM } from "./lib/wideLayout.js";
 import { useInstallPrompt } from "./lib/installPrompt.js";
 import { SideAd, RailAd, FollowColumn, adsActive } from "./lib/Ads.jsx";
@@ -1544,6 +1545,8 @@ property is named exactly as its field key, so none needs an M entry; outingShap
      MOUNTED at the moment the toast fires. check:toast-reachable does. */
   const _toastEl=toast&&createPortal(<div role="status" aria-live="polite" style={{position:"fixed",top:12,left:"50%",transform:"translateX(-50%)",background:C.surface,color:C.text,border:`1px solid ${C.border}`,padding:"10px 20px",borderRadius:20,fontSize:14,fontWeight:500,zIndex:Z_TOAST,maxWidth:"calc(100vw - 24px)",boxSizing:"border-box",textAlign:"center",lineHeight:1.4,boxShadow:"0 8px 32px rgba(0,0,0,0.5)"}}>{toast}</div>,document.body);
   const _vLegal=legal?<><Suspense fallback={<ScreenSkeleton C={C} label="Loading…"/>}><LegalView kind={legal} uid={uid} onBack={()=>setLegal(null)}/></Suspense></>:null;/* Each full-screen view returned early here is wrapped in <main>: returning early skips the main return and the role="main" region every other screen sits in (axe landmark-one-main, region). On a wide screen they arrive through _pageView, already wrapped. */
+  /* THE PHONE'S BACK BUTTON steps back inside the app (owner, 2026-11-14): the top layer's own ✕ / ← Back, else Home from another section's main screen, else out of the app. lib/backButton.js. */
+  useBackButton({enabled:!wide,isHome:tab==="today",goHome:function(){goTab("today");}});
   /* SWIPE BETWEEN SECTIONS on a phone (owner, 2026-11-14: "like Facebook"): left = the next section on the bottom bar, right = the one before, in the bar's order.
      Only on a section's MAIN screen: never with a climb, an area, a chat, a crew view or a Climbs sub-screen open (those are a level down, and a sideways
      drag there jumping to Partners would lose your place). Partners, Logbook, Ranks and Profile have their own tab rows: a swipe there changes

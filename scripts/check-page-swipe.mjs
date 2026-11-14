@@ -83,5 +83,12 @@ ok(swipeOwner([inLast, secLast], -50) === inLast, "nowhere to go (Profile's last
 ok(swipeOwner([secMid], -50) === secMid, "a section with no tab row of its own takes it");
 ok(swipeOwner([], -50) === null, "no swipe under the finger: nobody");
 
+// ---- 5. the phone's Back button (lib/backButton.js, step 3 of the same plan) ------------------------
+ok(/useBackButton\(\{enabled:!wide,isHome:tab==="today",goHome:function\(\)\{goTab\("today"\);\}\}\);/.test(app), "App wires the phone's Back button (phone only; Home from another section)");
+const dlgSrc = readFileSync(new URL("../lib/dialogA11y.js", import.meta.url), "utf8");
+ok(/export function findBackControl\(\)/.test(dlgSrc), "lib/dialogA11y.js exports findBackControl, which Back taps through");
+const bbSrc = readFileSync(new URL("../lib/backButton.js", import.meta.url), "utf8");
+ok(/pushState\(\{ \[MARK\]: 1 \}, "", window\.location\.href\)/.test(bbSrc), "Back's history entry keeps the same URL (no new navigation for a reload or the service worker)");
+
 if (bad) { console.error(bad + " page-swipe check(s) failed."); process.exit(1); }
 console.log("page swipe: tab choice, gesture ownership and " + WIRED.length + " wired pages OK.");
