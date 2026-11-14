@@ -100,7 +100,6 @@ export default function TripReport({blockedIds,onBlock,ascent,onClose,onViewClim
   ascent.stars?<div key="stars" style={{marginBottom:8}}><div style={SUB}>Rating</div><Stars n={ascent.stars}/></div>:null,
   (ascent.outcomeReasons&&ascent.outcomeReasons.length)?<div key="why" style={{marginBottom:8}}><div style={SUB}>What turned them back</div><div style={{display:"flex",gap:5,flexWrap:"wrap"}}>{ascent.outcomeReasons.map(function(t){return <span key={t} style={{fontSize:12.5,fontWeight:600,color:C.amber,background:C.amberBg,padding:"4px 9px",borderRadius:7}}>{t}</span>;})}</div></div>:null,
   prose("whyNote",null,ascent.outcomeNote),
-  (ascent.fa||ascent.developed)?<div key="fa" style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:4}}>{ascent.fa?<span style={{fontSize:12,fontWeight:700,color:C.amber,background:C.amberBg,borderRadius:8,padding:"5px 10px"}}>First ascent</span>:null}{ascent.developed?<span style={{fontSize:12,fontWeight:700,color:C.teal,background:C.tealDim,borderRadius:8,padding:"5px 10px"}}>{"Route developed by "+(ascent.user?ascent.user.split(" ")[0]:"this climber")}</span>:null}</div>:null
 ])}
 {section("Getting there",[
   rr?factRows([rr.status?["road","Road to the trailhead",rr.status]:null,rr.vehicle?["veh","Vehicle",rr.vehicle]:null,rr.issues.length?["iss","Road issues",rr.issues.join(", ")]:null].filter(Boolean),"road"):null,
