@@ -46,9 +46,10 @@ already `owner` + locked.
   (USGS), miles/gain along a track that passed the track checks in
   `route-waypoints-and-tracks`. A measurement only counts if its input passed its own checks.
   Two measurements from the same data are one.
-- **`single-blocked`** (`locked-1src`) — the route's beta exists only on sites that block
-  agents (SummitPost, Peakbagger, The Mountaineers, CascadeClimbers, WTA trip reports): ONE
-  solid open source locks it at the lower tier. Two agreeing sources found later replace it.
+- **`single-blocked`** (`locked-1src`) — only ONE source states the fact, after the blocked sites
+  (SummitPost, Peakbagger, The Mountaineers, CascadeClimbers, WTA trip reports) were read through
+  the owner's Chrome (see the note under the source table): it locks at the lower tier. Two agreeing
+  sources found later replace it.
 - **`owner`** — the owner approved it.
 
 **Independent** = different publishers that do not cite each other. Count as ONE source:
@@ -113,7 +114,35 @@ for the owner. With fewer sources: do not touch the field; list it under **Dispu
 | avalanche, climate | NWAC, NWS | — |
 | emergency | county sheriff, land manager | — |
 
-\* blocks agents (403). **Never use the owner's browser or any trick to get past a block.**
+\* blocks automated fetchers (403). **READ IT THROUGH THE OWNER'S CHROME** (owner, 2026-11-14: "use all
+sites for research for everything, all sessions, etc"; and "i have permission and liscense from these
+sites to access with claude" — this is licensed access, not a workaround): the claude-in-chrome tools, one tab per agent,
+navigate + extract the figures with `javascript_tool` (don't read whole pages into context). Take facts
+and the URL only, never copied text. **Use as many agents as possible, and agents that have subagents** (owner, 2026-11-14: "use as many
+agents as you can make that a rule", "use agents which have subagents", "make that a rule too"):
+coordinator agents (one per state or region) each spawn their own subagents. While a route is open, **collect
+every field this skill covers, not only the one the batch was started for** (owner: "find as much
+information about each route that you can"). **One pass per page: on every page an agent opens, it
+takes EVERY route fact the page states before leaving it** — grade, pitches, length, FA, season,
+trailhead and road, distance, gain, loss/regain, high point, times, camps, water, approach and route
+steps, descent, rappels, rack, glacier notes, hazards, permits, emergency — never a gain-only (or any
+single-field) read that moves on (owner, 2026-11-14: "while you are on a page, look for all data and
+information that would fill a route, dont just look at elevation gain and move on" → "make that a
+rule"). **Be efficient with agents:** dispatch chunks on a rolling basis (start the next when one
+finishes) up to the concurrent-subagent cap, rather than a burst that hits it. **One tab per agent,
+reused:** an agent opens ONE tab and navigates that same tab from page to page and route to route, never
+a second tab, and closes it when its whole chunk is done (owner, 2026-11-14: "feel free to use the same
+tabs to move onto other pages if that's more efficient" → "make that a rule"). A site answering 403 or
+429 is skipped for the rest of the run, not retried. **Save every 20 minutes** during a research run:
+copy all outputs to `~/dev/research-archive/<date>/` and commit them to `data/research/<date>/` on a
+research-data branch whose PR auto-merges (owner: "every 20 minutes, merge and deploy so we don't lose
+progress" → "make that rule") — a job's tmp folder is deleted with the job. **Run as many Chrome research agents in parallel as practical**,
+each in its own tab, the route list split across them (owner: "open as many tabs for research as you
+can" → "make that a rule"; ~10 at once worked on 2026-11-14) — find pages through each site's own search
+in Chrome so the session's shared WebSearch budget lasts. **Close each tab (`tabs_close_mcp`) as soon as its research is
+done** (owner: "after you are done with the research from a site, automatically close it for me").
+**A CAPTCHA, human check or login wall: stop and ask the owner to click it — never solve one.** Subagents without the Chrome tools still get 403; give that pass to an
+agent that has them. This applies to every site in this skill and in `route-waypoints-and-tracks`.
 The owner has no guidebooks to hand-check, so a guidebook counts only through a page that
 quotes its FACT (and that page then = the guidebook as one source).
 
