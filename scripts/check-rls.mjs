@@ -377,11 +377,12 @@ const PUBLIC_DEFINER = {
   route_field_level: "confidence level of one public route field; reads routes + contribution metadata only",
   route_field_confidence_map: "per-field confidence for a public route plus the moderator's public reason text",
   route_field_is_empty: "whether a public route field is blank; boolean over routes/contributions",
-  // CAVEAT: counts and last_climbed include private logs (no identities). On a route with ONE climber
-  // last_climbed is that climber's private log date — a known, accepted aggregate leak.
-  route_stats: "route counts (climbs, senders, views, stars by month) — aggregates only, no user ids returned",
+  // Counts include private logs (unattributed). last_climbed reads public logs only since 0424 — it
+  // was a single climber's private log date on a one-climber route.
+  route_stats: "route counts (climbs, senders, views, stars by month) — aggregates only; last_climbed public-only",
   area_logged_months: "12 monthly log counts under an area — aggregates only",
-  // CAVEAT: recent_tags aggregates cond_tags from private logs too, unattributed and undated.
+  // recent_tags pools cond_tags from private logs too, unattributed and undated across the whole
+  // subtree — kept deliberately: conditions are a safety signal and public-only would gut them.
   area_latest_reports: "returns ids of PUBLIC trip reports only (rows then read under RLS) + unattributed cond tags",
   crew_share_preview: "gated by the crew's unguessable share_token AND share_on; returns first names only where show_name",
   // ── policy helpers: a policy calls these AS the caller, so the caller needs EXECUTE ──
