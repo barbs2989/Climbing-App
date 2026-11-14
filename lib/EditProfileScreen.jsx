@@ -26,7 +26,7 @@ const SETUP={
   location:{t:"Add your home city",why:"It is how other climbers see roughly where you climb from, on your profile and in partner search.",how:tx("Start typing your city in the highlighted box and pick your state or province. Then tap Save.")},
   zip:{t:"Add your home zip code",why:"Partner search measures distance from it. Only you can see it; others see roughly how far away you are.",how:tx("Type your five-digit zip in the highlighted box. Then tap Save.")},
   emergency:{t:"Add an emergency contact",why:"It fills in the contact on every float plan you send. Only you can see it, and ClimbMatch never contacts anyone.",how:tx("Type a name and a phone number in the highlighted box. Then tap Save.")},
-  photo:{t:"Add a profile photo",why:"Partners pick who to message by face.",how:tx("Tap Add photo in the highlighted box and choose a clear photo of yourself. It saves as soon as it uploads.")},
+  photo:{t:"Add a profile photo",why:"Optional — it helps partners recognise you at the crag.",how:tx("Tap Add photo in the highlighted box and choose a clear photo of yourself. It saves as soon as it uploads.")},
 };
 
 export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvatarChange,uid,zipNow,zipReady,ecNow,ecReady,focus}){
