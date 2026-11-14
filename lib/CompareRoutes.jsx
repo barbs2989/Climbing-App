@@ -7,7 +7,7 @@ import { useCondPrefs, scorePrefs } from "./CondPrefs.jsx";
 import { routeRock } from "./rockType.js";
 import { POP_BACK, POP_CHIP_X } from "./popupChrome.js";
 import { discLabel } from "./discLabels";
-import { seasonShort, routeSeasonShort } from "./seasonText.js";
+import { seasonTidy, routeSeasonShort } from "./seasonText.js";
 
 /* COMPARE ROUTES (desktop website, owner 2026-10-22): "+ Compare" on a route page adds it to a tray
    pinned at the bottom of the window (up to four); the tray opens a side-by-side table. Every cell
@@ -62,7 +62,7 @@ const ROWS = [
   ["Aspect", r => r.aspect || r.face || (r._dbArea && r._dbArea.aspect) || null],
   // The header strap's own reading (routeSeasonShort: the route's window, else its area's), after the
   // route's researched best_season. Reading raw `season` left DB rows blank: 314k of 315k carry none.
-  ["Season", r => seasonShort(r.season) || seasonShort(r.bestSeason) || routeSeasonShort(r) || null],
+  ["Season", r => seasonTidy(r.season) || seasonTidy(r.bestSeason) || routeSeasonShort(r) || null],
   ["Rating", r => r.stars != null && Number(r.stars) > 0 ? Number(r.stars).toFixed(1) + " ★" : null],
   ["Hazards", r => Array.isArray(r.hazards) && r.hazards.length ? r.hazards.join(" · ") : null],
 ];

@@ -59,10 +59,10 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   if (dense) return (
     <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", marginBottom: 4, background: C.card, border: "1px solid " + C.border, borderRadius: 10, cursor: "pointer", minWidth: 0 }}>
       {icon}
-      <span style={{ fontSize: 13, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", flex: "0 1 auto", minWidth: 0 }}>{name}</span>
+      <span style={{ fontSize: 13, fontWeight: 700, color: C.text, overflowWrap: "anywhere", flex: "0 1 auto", minWidth: 0 }}>{name}</span>
       {stars ? <span style={{ color: C.amber, fontWeight: 700, flexShrink: 0, fontSize: 11 }}>{"★".repeat(stars)}</span> : null}
       {marks}
-      <span style={{ fontSize: 11, color: C.textMuted, flex: 1, minWidth: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{sub}</span>
+      <span style={{ fontSize: 11, color: C.textMuted, flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{sub}</span>
       <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{rowGrade(r)}</span>
     </div>
   );
