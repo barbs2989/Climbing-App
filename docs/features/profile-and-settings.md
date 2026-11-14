@@ -30,6 +30,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   reader runs `profileSkills()` (core): a key, the current label, or an old spelling listed in `SKILL_ALIASES` all
   resolve (`skillKeyOf()`) to the current label. Rename a label only by adding its old spelling to `SKILL_ALIASES`.
   On a profile, a skill with a guide (`lib/skillGuides.js`, 30 of 50) is tappable and opens its card (`SkillGuideLink`).
+  **Last practiced** (0430, `profiles.skill_practiced`, `{skillKey: "YYYY-MM"}`): Edit profile offers an optional month per
+  ticked skill; the profile prints *practiced Mar 2026* beside the skill, and on your OWN profile *time for a refresher*
+  after `REFRESH_MONTHS` (12, `lib/skillPractice.js`). Nothing is sent or pushed. A vouch with skills ticked can also say
+  *We practiced these together* on a date (`practicedOn` in the vouch's JSON, no column): a practice record, never a rating.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
     (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.

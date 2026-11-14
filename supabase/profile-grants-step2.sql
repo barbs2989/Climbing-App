@@ -13,6 +13,6 @@ grant select (
 
 grant select (
   location, availability, avail_week, free_until, gender, climb_grades, hiking_speed_ft_hr, discoverable,
-  certifications, cert_expiry, skills, belay_devices
+  certifications, cert_expiry, skills, belay_devices, skill_practiced
 ) on public.profiles to authenticated;
 
