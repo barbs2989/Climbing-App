@@ -91,7 +91,7 @@ changes nothing.
 An anon `count=exact` on an RLS-protected table returns **0 with a 200** whatever the table
 holds, indistinguishable from a genuinely empty table. Measured 2026-08-20: `climb_logs` reads
 **0 to anon and 2 to the service key**, while `guide_documents`, `guide_profiles`,
-`user_reports`, `contributions`, `vouches` and `belay_catches` are genuinely empty on both.
+`user_reports`, `contributions` and `vouches` are genuinely empty on both (`belay_catches` was too, and was dropped in 0417).
 
 That distinction is load-bearing here, because several decisions rest on a table being empty —
 the guide application review queue was deliberately **not built** because `guide_documents` had
@@ -131,3 +131,34 @@ the SQL Editor, a policy edit) and commit the result in the same PR. It needs th
 (`supabase/.temp`) and so, like the function guards, cannot run in a fresh worktree until that is
 symlinked. It is deliberately not part of `npm run build`: the build must never reach the live
 database. Views, functions, triggers and standalone indexes are not in it; the migrations are.
+
+## When EVERY read times out: three causes, told apart in minutes
+
+Learned in the 2026-11-11 outage (three hours of timeouts on every app and CI read). Run these
+read-only, from a worktree with `supabase/.temp` symlinked (`--read-only` needs no confirmation):
+
+1. **Is the project up at all?** `GET <url>/auth/v1/health` answers without touching Postgres. If
+   it answers and a one-row REST read (`/rest/v1/areas?select=id&limit=1`) hangs, the API layer or
+   the database is the problem, not the project. Supabase's status page being green rules out a
+   platform incident.
+2. **Is PostgREST's pool full of stuck transactions?** Count `pg_stat_activity` rows for
+   `application_name like 'PostgREST%'` by `state`. Many `idle in transaction` rows (17 on the day)
+   mean requests queue for a connection that never frees. `pg_terminate_backend(pid)` on those
+   rows frees them at once (a write on production: ask the owner). Migration 0416 now makes
+   Postgres end any such session after 60 s by itself, but only on connections opened AFTER it was
+   applied: a role setting is read at login. Check that every PostgREST row's `backend_start` is
+   later than the apply. A second episode (2026-11-12, 00:16–06:45 UTC: the database ~11% busy,
+   the API timing out) ended the moment the whole pool reconnected at 06:59, on 0416's setting.
+3. **Is the disk I/O budget spent?** Reads that come back `500 57014 canceling statement due to
+   statement timeout` (anon's limit is ~3 s) or `503 PGRST002 Could not query the database for the
+   schema cache` while nothing is blocked (`pg_blocking_pids` empty) and no query is long-running
+   point here. Smaller compute sizes get a daily disk I/O burst budget; once it is spent the disk
+   runs at baseline and everything crawls. Only the dashboard shows it (Observability → Database
+   Health). The fixes are the owner's: wait for the daily refill, or raise the compute size. What
+   spends it here: bulk writes (route throttled writes through `~/dev/db-throttle/dbslot.mjs`, one
+   session at a time) and the browser walks every PR and merge runs against production.
+
+`pg_stat_user_tables` showing `n_live_tup = 0` and no `last_analyze` on a 100+ MB table means its
+statistics were reset (typically by a restart). The planner then picks poor plans until autovacuum
+re-analyzes it; `analyze public.areas; analyze public.routes;` does it at once, but cannot run while
+the database is too saturated to accept a connection.

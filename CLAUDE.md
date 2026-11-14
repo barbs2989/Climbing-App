@@ -147,6 +147,7 @@ npm run check:crew-place # a crew has ONE place, a route or an area, and every s
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
+npm run check:no-rack-class-1-3 # RULE: a Class 1-3 route (headline grade, any discipline) or a hike has NO RACK card; its own rack items go to GEAR & ESSENTIALS (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:trailhead-direction-shape # ...and those directions END AT THE TRAILHEAD, not a hike narrative (in build; --live daily)
 npm run check:approach-section # ONE approach section; the most-used way in is first, marked, and carries the paragraph (in build)
@@ -328,7 +329,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (~line 214 of `ClimbMatch.jsx`) holds **~250 `useState` hooks** and every screen — where each kind of state lives, and why there is no global store, is in [ARCHITECTURE.md](ARCHITECTURE.md). Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, a setup checklist, *Alerts* (one dropdown: what waits on you, then notifications), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `today` — home dashboard (greeting, a setup checklist, *Notifications* (one dropdown, the bell's list: what waits on you, then the rest; called *Alerts* until 2026-11-11), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
   - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
     labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.

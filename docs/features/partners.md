@@ -32,7 +32,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   out, since alpine partners are found by route; at most the first 12 saved areas; with none saved it says how to save one; an
   *Edit saved areas* link opens Logbook › Saved › Areas), My Objectives (mountain
   objectives only), By Area (listing-based; the region dropdown plus a search box for any crag, canyon or range inside the chosen
-  state), By Route (a crag route redirects to its area), Anyone. By Route can pick from a search, your saved objectives,
+  state; once a place is chosen, signed in, a prominent *Climb at <place>?* box (`ListMeInAreaBox`) sits right under the picker with a
+  one-tap *List me at <place>* — the same `savePartnerArea` write as the area page's Partners here card — and, once listed,
+  *Remove listing* and *Add dates or climbing types*, which opens My listed areas preset to that place), By Route (a crag route redirects to its area), Anyone. By Route can pick from a search, your saved objectives,
   recently opened routes (the 3 newest; up to 2 more behind a "Show N more" toggle), crew routes, or a country > state > crag drill-down.
 - **Free this weekend, in Find partners** (owner, Gora audit 2026-10-28): the section opens with your own *Free this weekend* switch (`freeWknd` / `onToggleFreeWknd` from App; the same `profiles.free_until` the Menu sets), and climbers who switched it on lead the real list in their existing order, under a line saying how many (`data-free-weekend-count`). Chosen instead of an expiring "climbing today" post.
 - **Join-a-crew cards say size and openings** (owner, Gora audit 2026-10-28): the chip reads "3 of 4 · 1 spot left", or "Full" (`lib/CrewFinder.jsx`).
@@ -83,6 +85,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | File | What lives there |
 |---|---|
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
+| `src/components/ListMeInAreaBox.tsx` | `ListMeInAreaBox` — By Area's *List me at <place>* box under the picker (optimistic `savePartnerArea` / `removePartnerArea`, then `onListMe` for dates and types) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
 | `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides` |

@@ -407,7 +407,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     </button>
   );
 
-  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub };
+  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label };
 
   return createPortal(
     <div role="dialog" aria-label="Fire map" onClick={e => { if (e.target === e.currentTarget) onClose(); }}
@@ -711,7 +711,7 @@ function FireAlertSheet({ zone, onClose, C, locale }) {
                 {d.headline ? <div style={{ fontSize: 13, fontWeight: 700, color: C.text, lineHeight: 1.45 }}>{d.headline}</div> : null}
                 {d.areaDesc ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>{d.areaDesc}</div> : null}
                 {d.description ? <div style={para}>{d.description}</div> : null}
-                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
+                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
               </>
             )}
           <a href={nwsPointPage(zone.pt)} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, fontWeight: 700, color: C.blue, textDecoration: "none", marginTop: 4 }}>Forecast and alerts for this area on weather.gov →</a>

@@ -1,9 +1,9 @@
 // ADS ON ROUTE PAGES, DESKTOP ONLY (owner 2026-11-04: "i would also like to have ads on route pages.
 // So as you scroll down, ads will be on the left panel and right panels" — then "go" to ship it).
 //
-// Two slots, one each side of the page column: a 160×600 skyscraper in the LEFT MARGIN beside the
-// centred block (SideAd; the left sidebar it used to sit in is gone since 2026-11-11, so it is a
-// fixed box under the header, at AD_SIDE_MIN px and up where the margin holds it), and a 300×600
+// Two slots, one each side of the page column: a 160×600 skyscraper in the LEFT PANEL beside the
+// centred column (SideAd; the left panel is as wide as the rail since 2026-11-11, "equal space"; it is a
+// fixed box under the header, at AD_SIDE_MIN px and up), and a 300×600
 // half-page in the RAIL, last in its column. The rail follows the page's scroll (useRailFollow — the
 // owner's "one consistent scroll bar"): the widgets or the map slide away, the ad reaches the panel's
 // top and stays in view. The phone never draws an ad.
@@ -57,11 +57,11 @@ function AdSlot({ w, h, slot, note }) {
   return <ins ref={ref} className="adsbygoogle" style={{ display: "inline-block", width: w, height: h }} data-ad-client={ADS_CLIENT} data-ad-slot={slot} />;
 }
 
-/** The left margin's slot: fixed under the header, GAP px left of the page column (`top` is the
- *  header's height, `colLeft` the column's left edge as a CSS length — lib/wideLayout.js). Opaque,
- *  for the same ClearType reason as the rail. */
-export function SideAd({ top, colLeft }) {
-  return <div data-cm-ad="" style={{ position: "fixed", top: top + 16, left: "calc(" + colLeft + " - 184px)", width: 160, zIndex: 20, background: "#0d1117" }}><Label /><AdSlot w={160} h={600} slot={SLOT_SIDE} note="stays in view" /></div>;
+/** The left panel's slot (lib/wideLayout.js wideLeft): last in the panel's column, under whatever a page
+ *  put there (the area page's sub-area list), against the column's side as it was when it was a fixed box
+ *  of its own. Zoomed back to 1, as RailAd is, so the unit is drawn at the 160×600 the network sells. */
+export function SideAd() {
+  return <div data-cm-ad="" style={{ marginTop: 2, alignSelf: "flex-end", width: 160, zoom: 1 / ZOOM }}><Label /><AdSlot w={160} h={600} slot={SLOT_SIDE} note="stays in view" /></div>;
 }
 
 /** The rail's slot: last in the rail's column (under the route map, or under the widgets). The rail's

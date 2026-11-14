@@ -593,7 +593,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
       <textarea aria-label={"Approach "+(idx+1)+" notes"} value={av.notes} onChange={function(e){setAvar(idx,"notes",e.target.value);}} rows={3} placeholder="What the walk in is actually like" style={Object.assign({},fld,{marginBottom:0,resize:"vertical"})}/>
       {avars.length>1&&!av.primary?<textarea aria-label={"Approach "+(idx+1)+": why a party would go this way"} value={av.whyThisWay||""} onChange={function(e){setAvar(idx,"whyThisWay",e.target.value);}} rows={2} placeholder="Why go this way instead of the most used one, e.g. early season while the gully holds snow" style={Object.assign({},fld,{marginTop:7,marginBottom:0,resize:"vertical"})}/>:null}
       <div style={{marginTop:9,paddingTop:9,borderTop:"1px solid "+C.border}}>
-        <div style={{fontSize:11,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:6}}>Where this way in starts</div>
+        <div style={{fontSize:11,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:6}}>Where this way in starts</div>
         <select aria-label={"Approach "+(idx+1)+": where it starts"} value={av.mode==="via"&&av.viaRouteId?"via:"+av.viaRouteId:av.mode==="own"?"own":""} onChange={function(e){const x=e.target.value;if(x.indexOf("via:")===0){setAvar(idx,"mode","via");setAvar(idx,"viaRouteId",x.slice(4));}else{setAvar(idx,"mode",x);}}} style={Object.assign({},fld,{marginBottom:7})}>
           <option value="">Not set — show it as a description only</option>
           <option value="own">From its own trailhead</option>
@@ -620,7 +620,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
         </>:null}
         {av.mode==="via"?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5}}>That route's trailhead, track, camps and numbers are used for this way in; this route keeps its own climbing.</div>:null}
         {av.mode!=="via"&&varCampPool(av).length?<div style={{marginTop:8}}>
-          <div style={{fontSize:11,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:4}}>Camps on this way in</div>
+          <div style={{fontSize:11,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:4}}>Camps on this way in</div>
           <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:6}}>Tick the camps a party uses on this way in. A camp both ways share can be ticked on both.</div>
           {varCampPool(av).map(function(c){const on=Array.isArray(av.campSel)?av.campSel.some(function(n){return String(n).toLowerCase()===String(c.name).toLowerCase();}):av.mode!=="own";return <label key={c.name} style={{display:"flex",alignItems:"center",gap:8,padding:"4px 0",fontSize:12.5,color:C.text,cursor:"pointer"}}><input type="checkbox" checked={on} onChange={function(){const cur=Array.isArray(av.campSel)?av.campSel.slice():(av.mode!=="own"?varCampPool(av).map(function(p){return p.name;}):[]);const i=cur.findIndex(function(n){return String(n).toLowerCase()===String(c.name).toLowerCase();});if(i>=0)cur.splice(i,1);else cur.push(c.name);setAvar(idx,"campSel",cur);}} aria-label={"Approach "+(idx+1)+" uses camp "+c.name}/>{c.name}{c.elev!=null?<span style={{color:C.textMuted}}>{" · "+uElev(c.elev)}</span>:null}</label>;})}
         </div>:null}

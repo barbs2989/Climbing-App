@@ -174,7 +174,7 @@ const HOUR_TICKS = [0, 3, 6, 9, 12, 15, 18, 21, 24];
 const hourTick = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? "a" : "p"); };
 const rangeText = function (r) { return uTemp(r[0]) + "–" + uTemp(r[1]); };
 const same = function (a, b) { return !!a && !!b && a[0] === b[0] && a[1] === b[1]; };
-const LBL = { fontSize: 10.5, fontWeight: 800, color: C.textMuted, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 5 };
+const LBL = { fontSize: 10.5, fontWeight: 800, color: C.label, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 5 };
 const NOTE = { fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 6 };
 // A step the climber can SEE: a whole degree C when metric, a whole degree F otherwise, and a whole km/h or mph.
 const snapTemp = function (f) { return uTempIn(uTempN(f)); };
