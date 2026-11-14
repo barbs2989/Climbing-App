@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/run-build-guards.mjs && vite build",
+    "build": "node scripts/run-build-guards.mjs && vite build && vite build --config vite.review.config.js",
     "preview": "vite preview",
     "deploy:functions": "npm run deploy:functions:jwt && npm run deploy:functions:public",
     "deploy:functions:jwt": "supabase functions deploy validate-gps approve-gps-submission notify-gps-admin notify-gps-climber notify-safety-report delete-account --remote=ofuofhojhbcrcahuotya",
