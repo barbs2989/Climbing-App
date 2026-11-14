@@ -118,8 +118,9 @@ for the owner. With fewer sources: do not touch the field; list it under **Dispu
 sites for research for everything, all sessions, etc"; and "i have permission and liscense from these
 sites to access with claude" — this is licensed access, not a workaround): the claude-in-chrome tools, one tab per agent,
 navigate + extract the figures with `javascript_tool` (don't read whole pages into context). Take facts
-and the URL only, never copied text. **A CAPTCHA, human check or login wall: stop and ask the owner to
-click it — never solve one.** Subagents without the Chrome tools still get 403; give that pass to an
+and the URL only, never copied text. **Close each tab (`tabs_close_mcp`) as soon as its research is
+done** (owner: "after you are done with the research from a site, automatically close it for me").
+**A CAPTCHA, human check or login wall: stop and ask the owner to click it — never solve one.** Subagents without the Chrome tools still get 403; give that pass to an
 agent that has them. This applies to every site in this skill and in `route-waypoints-and-tracks`.
 The owner has no guidebooks to hand-check, so a guidebook counts only through a page that
 quotes its FACT (and that page then = the guidebook as one source).
