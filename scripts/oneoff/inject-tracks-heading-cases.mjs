@@ -77,10 +77,10 @@ const cases = [
     expect: "covers less than the heading",
   },
   {
-    // The guard anchors on the CAPTION, so this is what a genuinely restructured section looks
-    // like — and it must refuse rather than report the heading clean.
-    name: "the section's caption is gone — the guard must refuse, not report clean",
-    edits: [[RD, "Recorded lines other parties walked", "Lines and reports"]],
+    // The guard anchors on the data-section MARKER, so this is what a genuinely restructured
+    // section looks like — and it must refuse rather than report the heading clean.
+    name: "the section's marker is gone — the guard must refuse, not report clean",
+    edits: [[RD, 'data-section="tracks"', 'data-x="tracks"']],
     expect: "ANCHOR LOST",
   },
   {

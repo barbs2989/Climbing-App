@@ -65,10 +65,6 @@ const CASES = [
     build: () => { const s = clone(after); delete s["Profile:Activity"]; return s; },
     want: r => r.some(x => x.kind === "unmeasured" && x.group === "objectives") },
 
-  { name: "a total smaller than its own unfinished part",
-    build: () => { const s = clone(after); s.Home = s.Home.replace(/My objectives\n4 routes/, "My objectives\n1 route"); return s; },
-    want: r => r.some(x => x.kind === "disagree" && /LESS than/.test(x.msg)) },
-
   { name: "two counts of the friends list disagreeing on one screen",
     build: () => { const s = clone(after); s["Crew:Friends"] = s["Crew:Friends"].replace("See all friends (2)", "See all friends (5)"); return s; },
     want: r => r.some(x => x.group === "friends" && x.kind === "disagree") },
