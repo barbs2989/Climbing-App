@@ -4,7 +4,10 @@ import { usePinnedBar } from "../../lib/usePinnedBar.js";
 import { searchPlaces } from "../../lib/mapKit";
 import { useSubtreeRoutes, useSubtreeRouteCount, useAreaChildren, useAreaNamesByIds, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import { discLabel } from "../../lib/areaDiscLabel.js";
-import { BTN_LG, CHIP, BTN_LINK } from "../../lib/buttonStyles.js";
+import { BTN_LG, CHIP, BTN_LINK, btnChip, BTN_SECONDARY } from "../../lib/buttonStyles.js";
+import { useWideScreen } from "../../lib/wideLayout.js";
+import { downloadCsv } from "../../lib/csv.js";
+import { rowGrade } from "../../lib/areaBrowserShared.js";
 import { SL } from "../../lib/areaBrowserParts.jsx";
 import { ScreenHero } from "../../lib/ScreenHero";
 import { POP_CHIP_X, POP_CLOSE } from "../../lib/popupChrome.js";
@@ -252,6 +255,10 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
     }, () => setNearSt({ busy: false, err: "Couldn’t look that place up — check your connection and try again.", hits: [] }));
   };
   const [page, setPage] = useState(0);
+  /* THE WEBSITE'S LIST (competitor review batch B, item 11, owner 2026-11-04): a Compact rows toggle (remembered on the device) and Export CSV of the loaded results; the phone keeps its cards. */
+  const wide = useWideScreen();
+  const [compact, setCompact] = useState(() => { try { return localStorage.getItem("cm_finder_compact") === "1"; } catch { return false; } });
+  const toggleCompact = () => setCompact(c => { try { localStorage.setItem("cm_finder_compact", c ? "0" : "1"); } catch { /* private mode: the toggle still works for this visit */ } return !c; });
   const [all, setAll] = useState<RouteFinderPanelRow[]>([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
   // Resolved against the APPLIED discipline's scale, so a label saved under one discipline can
@@ -340,7 +347,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         </div>
       ) : null}
       {/* No count after a failed read: "0 routes" above "Couldn't search routes" reads as an empty area. */}
-      {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px" }}>{nRes.toLocaleString() + finderNoun(af.discs, nRes) + " · sorted by " + (boulderOnly(af.discs) && sortFor(af.discs, af.sortBy) === "area" ? "boulder" : SORT_PHRASE[sortFor(af.discs, af.sortBy)])}</div> : null}
+      {!needsArea && !(error && total == null && !all.length) ? <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 6, padding: "0 2px" }}>{/* ONE SENTENCE OF WHAT IS FILTERED (batch B, item 11): the active filters' own chip labels, between the count and the sort, so the header reads "42 climbs · Sport · 5.8–5.10 · 2+ pitches · sorted by …". */nRes.toLocaleString() + finderNoun(af.discs, nRes) + (afChips.length ? " · " + afChips.map(c => c.label).join(" · ") : "") + " · sorted by " + (boulderOnly(af.discs) && sortFor(af.discs, af.sortBy) === "area" ? "boulder" : SORT_PHRASE[sortFor(af.discs, af.sortBy)])}</div> : null}{wide && all.length ? <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 10 }}><button onClick={toggleCompact} aria-pressed={compact} style={btnChip(C, compact)}>Compact rows</button><button onClick={() => downloadCsv("climbmatch-route-finder-" + new Date().toISOString().slice(0, 10), ["Climb", "Grade", "Discipline", "Pitches", "Stars", "Wall or area"], all.map(r => [r.name, rowGrade(r) === "—" ? "" : rowGrade(r), r.discipline ? discLabel(r.discipline) : "", r.pitches > 0 ? r.pitches : "", r.stars != null ? Math.round(r.stars * 10) / 10 : "", (areaNames && areaNames[r.area_id]) || ""]))} title="The loaded results as a spreadsheet" style={{ ...BTN_SECONDARY(C), padding: "6px 11px", fontSize: 12.5 }}>{"Export CSV (" + all.length + ")"}</button></div> : null}
       </> : null}
       </div>
       </div>
@@ -400,7 +407,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             </div>
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
-            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} savedMark={!onToggleWish} />
+            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : wall} savedMark={!onToggleWish} dense={wide && compact} />
             {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.onSolid : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
