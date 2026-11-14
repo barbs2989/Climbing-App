@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { loadUnits } from "./units-pref";
 import { currentDateLocale } from "./date-pref";
 import { offlineTileUrl, offlineLayerFor } from "./offlineTiles";
+import { FIX_STALE_MS, FIX_LOST_MS, FIX_GOOD_M, acceptFix, smoothFix } from "./fixFilter.js";
 
 export const MAP_TILE_URLS = {
   street: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -533,29 +534,11 @@ export function pinHtml(nm, n, d, color, brd, iconMarkup) {
 // map is open. GPS needs no network: once the page is loaded the dot keeps tracking with no signal
 // and no wifi (the TILES do need one -- the service worker does not cache them).
 //
-// Which readings move the dot (acceptFix): a better or equal one always; a coarser one only if
-// the current one is stale or the two cannot both be true (you really moved). Without that a
-// stray tower fix arriving between GPS fixes yanked the dot hundreds of metres and back.
+// Which readings count, where the dot sits between them (a running estimate, not the latest raw
+// reading), and why a coarse first fix is framed rather than zoomed in on: lib/fixFilter.js.
 //
 // The map follows you until you drag it; the button then re-centres and resumes following.
-export const FIX_STALE_MS = 15000;
-export const FIX_LOST_MS = 45000;
-function fixDistM(a, b) {
-  const R = 6371000, rad = Math.PI / 180;
-  const dLat = (b.lat - a.lat) * rad, dLng = (b.lng - a.lng) * rad;
-  const s = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(s));
-}
-export function acceptFix(cur, next) {
-  if (!next || !Number.isFinite(next.lat) || !Number.isFinite(next.lng)) return false;
-  if (!cur) return true;
-  const acc = Number.isFinite(next.acc) ? next.acc : Infinity;
-  // GPS-grade readings always move the dot, even a little worse than the last: holding out for
-  // the best one ever seen left a walking climber's dot 20-30 m behind them.
-  if (acc <= Math.max(cur.acc * 2, 30)) return true;
-  if (next.t - cur.t > FIX_STALE_MS) return true;
-  return fixDistM(cur, next) > acc + cur.acc;
-}
+export { FIX_STALE_MS, FIX_LOST_MS, acceptFix };
 
 /**
  * @param {import("react").MutableRefObject<any>} mapRef the Leaflet map, once built
@@ -567,7 +550,7 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   const [acc, setAcc] = useState(null);
   const [lost, setLost] = useState(false);
   const [err, setErr] = useState("");
-  const watchRef = useRef(null), curRef = useRef(null), autoRef = useRef(false), quietRef = useRef(false);
+  const watchRef = useRef(null), curRef = useRef(null), estRef = useRef(null), zoomPendingRef = useRef(false), autoRef = useRef(false), quietRef = useRef(false);
   const dotRef = useRef(null), ringRef = useRef(null), hookedRef = useRef(null), onFixRef = useRef(onFix), centredRef = useRef(false);
   onFixRef.current = onFix;
   const stop = () => { if (watchRef.current != null) { try { navigator.geolocation.clearWatch(watchRef.current); } catch (e) {} watchRef.current = null; } };
@@ -590,8 +573,19 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
     else dotRef.current = L.marker(ll, { icon: L.divIcon({ html: "<div style='width:14px;height:14px;border-radius:50%;background:" + C.green + ";border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.6);'></div>", className: "", iconSize: [20, 20], iconAnchor: [10, 10] }), zIndexOffset: 5000, keyboard: false }).addTo(map).bindTooltip("You are here", { direction: "top" });
     if (ringRef.current) ringRef.current.setLatLng(ll).setRadius(r);
     else ringRef.current = L.circle(ll, { radius: r, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12, interactive: false }).addTo(map);
-    if (first) map.setView(ll, Math.max(map.getZoom(), zoom));
+    if (first) frame(map, ll, fix.acc);
+    else if (zoomPendingRef.current && autoRef.current && fix.acc <= FIX_GOOD_M) { zoomPendingRef.current = false; map.setView(ll, Math.max(map.getZoom(), zoom)); }
     else if (autoRef.current) map.panTo(ll, { animate: true });
+  };
+  // Centre on a fix. A GPS-grade one zooms in; a coarse one (wifi / tower) frames its whole ring, and
+  // the map zooms in when the first GPS-grade reading lands -- not street level on a 1 km guess.
+  const frame = (map, ll, acc) => {
+    if (Number.isFinite(acc) && acc > FIX_GOOD_M && ringRef.current) {
+      zoomPendingRef.current = true;
+      try { map.fitBounds(ringRef.current.getBounds(), { maxZoom: zoom }); return; } catch (e) {}
+    }
+    zoomPendingRef.current = false;
+    map.setView(ll, Math.max(map.getZoom(), zoom));
   };
   // `quiet` (from showDot) draws the dot and nothing else: no re-centre, no follow, no message,
   // no button state. A climber who opened the map on Utah keeps Utah, and sees where they are on it.
@@ -603,10 +597,10 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
     if (watchRef.current != null) {
       if (quiet) return;
       // Already watching: the button re-centres on the latest fix and resumes following.
-      const c = curRef.current;
-      if (c && map) {
-        map.setView([c.lat, c.lng], Math.max(map.getZoom(), zoom));
-        if (!centredRef.current) { centredRef.current = true; setFollowing(true); if (onFixRef.current) onFixRef.current(c, true); }
+      const c = curRef.current, e = estRef.current;
+      if (c && e && map) {
+        frame(map, [e.lat, e.lng], c.acc);
+        if (!centredRef.current) { centredRef.current = true; setFollowing(true); if (onFixRef.current) onFixRef.current({ ...c, lat: e.lat, lng: e.lng }, true); }
       } else setLocating(true);
       return;
     }
@@ -620,13 +614,15 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
         setLost(false);
         if (!acceptFix(curRef.current, fix)) return;
         curRef.current = fix;
+        estRef.current = smoothFix(estRef.current, fix);
+        const shown = { ...fix, lat: estRef.current.lat, lng: estRef.current.lng };
         const q = quietRef.current;
         // The first fix after the button is pressed re-centres, even when a quiet watch started it.
         const centre = !q && !centredRef.current;
         if (!q) { setLocating(false); setFollowing(true); setErr(""); centredRef.current = true; }
         setAcc(Number.isFinite(fix.acc) ? fix.acc : null);
-        draw(fix, centre);
-        if (onFixRef.current && !q) onFixRef.current(fix, centre);
+        draw(shown, centre);
+        if (onFixRef.current && !q) onFixRef.current(shown, centre);
       },
       (e) => {
         if (quietRef.current) { if (e && e.code === 1) stop(); return; }
