@@ -11,7 +11,7 @@ import { saveMyZip, ROUTE_PICK_LIM, dbRouteToCamel, useRouteReportCounts, useAre
 import { partnersMyGenderPref, savePartnersMyGender } from "./partner-gender-pref.js";
 import { useRecentRouteIds } from "./recent";
 import { Fragment, useEffect, useMemo, useState } from "react";
-import { FALLBACK_AV, PROFILE_GRADES, profileGradeRows, profileDiscGrades, resumeClimbCount, localYmd, ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, C, DB_UID, DLOCALE, ME, MOUNTAINS, ROUTES, SZ6, areaPathNames, availFits, availLabel, availMatch, availOf, catOf, compat, crewPlace, condRep, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, appLink, uApproxDist, uDistMi, uDistMiUnitLong, uRate } from "../ClimbMatchCore.jsx";
+import { PROFILE_GRADES, profileGradeRows, profileDiscGrades, resumeClimbCount, localYmd, ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, C, DB_UID, DLOCALE, ME, MOUNTAINS, ROUTES, SZ6, areaPathNames, availFits, availLabel, availMatch, availOf, catOf, compat, crewPlace, condRep, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, appLink, uApproxDist, uDistMi, uDistMiUnitLong, uRate } from "../ClimbMatchCore.jsx";
 import RealClimberRow from "../src/components/RealClimberRow.tsx";
 import AreaRegionSelect from "../src/components/AreaRegionSelect.tsx";
 import ListMeInAreaBox from "../src/components/ListMeInAreaBox.tsx";
@@ -69,7 +69,7 @@ const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_b
      and excludes me; blocked climbers are filtered here on the same both-id-spaces rule as
      search, since a block that holds in one surface and not another means nothing. */
   const browseRes=useDiscoverableProfiles(USE_DB?DB_UID:null,24);
-  const browsePeople=((browseRes&&browseRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID)&&!!p.avatar;});
+  const browsePeople=((browseRes&&browseRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
   /* NEAR: search the real list by distance (0189), the Mountain Project shape -- an origin and a
      radius -- with the distance SHOWN coming from the same record the radius filtered on. The
      origin is either the climber's own zip (owner-only table) or where their phone is right now,
@@ -81,12 +81,11 @@ const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_b
      - A ZIP before the REAL climber lists show. Distance is what makes a partner list useful, and the zip is
        also how climbers near you find you. Only a zip known to be ABSENT gates: loading or a failed read
        does not, since that would hide everyone over a network blip. The example profiles are not gated.
-     - A PHOTO to be LISTED. Every browse list below drops real climbers with no photo (name search still
-       finds a named person), and a viewer without one is told they are not shown. */
+     A photo is NOT required to be listed (owner, 2026-11-14): a climber without one shows with the
+       silhouette avatar in every list below. */
   const _zipNeeded=!!(USE_DB&&DB_UID&&myZipQ.isSuccess&&!_myZip);
   const [zipDraft,setZipDraft]=useState(""),[zipBusy,setZipBusy]=useState(false),[zipErr,setZipErr]=useState("");
   const saveZip=function(){var z=zipDraft.trim();if(!/^[0-9]{5}$/.test(z)){setZipErr("A zip code is five digits.");return;}setZipErr("");setZipBusy(true);saveMyZip(DB_UID,z).then(function(){setZipBusy(false);myZipQ.refetch();}).catch(function(e){setZipBusy(false);setZipErr((e&&e.message)||"Couldn’t save your zip code — try again.");});};
-  const _meNoFace=!!(USE_DB&&DB_UID)&&!(ME.avatar&&ME.avatar!==FALLBACK_AV);
   const [nearBy,setNearBy]=useState(null),[nearMi,setNearMi]=useState(50),[nearMiDraft,setNearMiDraft]=useState(50),[hereLoc,setHereLoc]=useState(null),[locating,setLocating]=useState(false),[locErr,setLocErr]=useState("");
   const _nearBy=nearBy||(_myZip?"zip":"any");
   const _origin=_nearBy==="zip"?_myZip:_nearBy==="here"?hereLoc:null;
@@ -95,7 +94,7 @@ const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_b
      query waits until it rests, so one drag is one search rather than one per step. */
   useEffect(()=>{if(nearMiDraft===nearMi)return;var t=setTimeout(function(){setNearMi(nearMiDraft);},400);return function(){clearTimeout(t);};},[nearMiDraft]); // eslint-disable-line react-hooks/exhaustive-deps -- debounce keyed on the draft only; adding nearMi would re-apply a stale draft over an outside change
   const nearRes=usePartnersNear(_origin,nearMi,USE_DB&&!!DB_UID&&_nearBy!=="any");
-  const nearPeople=((nearRes&&nearRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID)&&!!p.avatar;});
+  const nearPeople=((nearRes&&nearRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
   /* My Objectives / By Route / By Area reach REAL climbers too (0211). They filtered the example
      profiles only, so a real climber who saved the route you picked could not be found through it.
      The distance chips above still apply: with Near my zip / Near me now on, it is also a radius search. */
@@ -105,14 +104,14 @@ const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_b
   const _objArea=null;
   const _objOn=!!(_objIds&&_objIds.length);
   const objRes=usePartnersByObjective(_objIds,_objArea,_nearBy!=="any"?_origin:null,nearMi,USE_DB&&!!DB_UID&&_objOn&&(_nearBy==="any"||!!_origin));
-  const objPeople=((objRes&&objRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID)&&!!p.avatar;});
+  const objPeople=((objRes&&objRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
   /* LISTED AREAS (0300). Near my areas: climbers whose listings overlap mine. By Area: climbers listed at the picked area, inside it, or across a wider area that contains it. Both take the same optional origin + radius as the other searches. */
   const _myAreasN=Array.isArray(myAreas)?myAreas.length:0;
   const myAreaRes=usePartnersForMyAreas(_nearBy!=="any"?_origin:null,nearMi,USE_DB&&!!DB_UID&&mode==="myareas"&&_myAreasN>0&&(_nearBy==="any"||!!_origin));
-  const myAreaPeople=((myAreaRes&&myAreaRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID)&&!!p.avatar;});
+  const myAreaPeople=((myAreaRes&&myAreaRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
   const _searchAreaId=mode==="area"?(areaId||areaState||null):null;
   const inAreaRes=usePartnersInArea(_searchAreaId,_nearBy!=="any"?_origin:null,nearMi,USE_DB&&!!DB_UID&&!!_searchAreaId&&(_nearBy==="any"||!!_origin));
-  const inAreaPeople=((inAreaRes&&inAreaRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID)&&!!p.avatar;});
+  const inAreaPeople=((inAreaRes&&inAreaRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
   /* SAVED AREAS: the places the climber saved (Save area, 0322) as the search — every listed climber at any of them, or at one picked from the chips. The saved list stays owner-only; only climbers who LISTED themselves come back. A saved PEAK is left out: alpine partners are found by route (My Objectives), and a peak search would only return listings across its whole range. */
   const _savedCardsQ=useAreaCardsByIds(USE_DB&&DB_UID&&mode==="saved"?(savedAreaIds||[]).slice(0,60):[]);
   const savedAreas=(savedAreaIds||[]).map(function(id){var a=(_savedCardsQ.data||{})[id];return a&&a.type!=="peak"&&a.type!=="world"&&a.type!=="country"?{id:id,name:a.name||id}:null;}).filter(Boolean).slice(0,SAVED_SEARCH_LIM);
@@ -120,7 +119,7 @@ const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_b
   const [savedPick,setSavedPick]=useState("");const _savedPicked=savedPick&&savedAreas.some(function(a){return a.id===savedPick;})?savedPick:"";
   const _savedSearchIds=mode==="saved"?(_savedPicked?[_savedPicked]:savedAreas.map(function(a){return a.id;})):[];
   const savedRes=usePartnersInAreas(_savedSearchIds,_nearBy!=="any"?_origin:null,nearMi,USE_DB&&!!DB_UID&&_savedSearchIds.length>0&&(_nearBy==="any"||!!_origin));
-  const savedPeople=(savedRes.data||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID)&&!!p.avatar;});
+  const savedPeople=(savedRes.data||[]).filter(function(p){return !_blockedIds.has(String(p.id))&&String(p.id)!==String(DB_UID);});
   /* The match % on a real row needs their objectives (the ones that still COUNT) and their listed areas: one read each for every row on screen, not one per row. */
   const _rowIds=realPeople.concat(browsePeople,nearPeople,objPeople,myAreaPeople,inAreaPeople,savedPeople).map(function(p){return p.id;});
   const rowObjQ=useMatchObjectivesOfUsers(_rowIds);const rowObj=function(id){return rowObjQ.data?rowObjQ.data[id]:undefined;};const rowObjUnavailable=rowObjQ.isError;
@@ -214,7 +213,7 @@ const filtered=ALL_CLIMBERS.filter(c=>{
     var _names=Array.isArray(myAreas)?myAreas.map(function(a){return a&&a.name;}).filter(Boolean):[];
     /* Unlisted under Where I’m listed, the empty card below explains listing and carries Choose my areas -- say it once. */var _dupList=mode==="myareas"&&Array.isArray(myAreas)&&!_names.length;
     var _line=myAreasError?<span style={{color:C.amber}}>Couldn’t load your listed areas — try again in a moment.</span>:!Array.isArray(myAreas)?null:_names.length?<span>{/* Not "Listed at": a list can mix a state ("in Utah") and a crag ("at Bad Bananas"). */"Your listed areas: "}<b style={{color:C.text}}>{_names.slice(0,2).join(", ")}</b>{_names.length>2?" +"+(_names.length-2)+" more":""}</span>:_dupList?<span>You’re not listed anywhere yet.</span>:<span>You’re not listed anywhere yet — list the places you climb so partners there can find you.</span>;
-    var _hint=meListed===false?["You’re hidden from partner search.",onOpenPrivacy?_lk("Turn listing on",onOpenPrivacy):null]:zipUnavailable?["Couldn’t load your zip code — you can still search near where you are now.",null]:_meNoFace&&!_zipNeeded?["You aren’t shown to other climbers here until you add a profile photo.",null]:!myGender?["Add your gender in Edit profile to look for partners of your own gender.",null]:null;
+    var _hint=meListed===false?["You’re hidden from partner search.",onOpenPrivacy?_lk("Turn listing on",onOpenPrivacy):null]:zipUnavailable?["Couldn’t load your zip code — you can still search near where you are now.",null]:!myGender?["Add your gender in Edit profile to look for partners of your own gender.",null]:null;
     return <section aria-label="How climbers find you" style={{...CARD(C),marginBottom:12}}><div style={EYEBROW(C.blue)}>Your listing</div>
       <div style={{display:"flex",alignItems:"center",gap:10}}><div style={{flex:1,minWidth:0,fontSize:12.5,color:C.textSub,lineHeight:1.45,overflowWrap:"anywhere"}}>{_line}</div>{onListMe&&!myAreasError&&!_dupList&&Array.isArray(myAreas)?_lk(_names.length?"Edit ›":"Choose my areas",function(){onListMe(null);}):null}</div>
       {onToggleFreeWknd?<button type="button" role="switch" aria-checked={!!freeWknd} onClick={onToggleFreeWknd} style={{display:"flex",alignItems:"center",gap:9,width:"100%",minHeight:40,padding:0,background:"none",border:"none",cursor:"pointer",color:freeWknd?C.green:C.textSub,fontSize:12.5,fontWeight:700,textAlign:"left"}}><span aria-hidden="true" style={{position:"relative",width:34,height:20,borderRadius:10,flexShrink:0,boxSizing:"border-box",background:freeWknd?C.green:C.surface,border:"1px solid "+(freeWknd?C.green:C.border)}}><span style={{position:"absolute",top:2,left:freeWknd?16:2,width:14,height:14,borderRadius:7,background:freeWknd?C.onBright:C.textMuted}}/></span>{freeWknd?"I’m free this weekend — climbers can see it":"I’m free this weekend"}</button>:null}
