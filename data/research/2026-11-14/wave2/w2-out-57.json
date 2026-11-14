@@ -1,0 +1,1427 @@
+{
+ "wa_mount_teneriffe_standard_route": {
+  "area": "wa_mount_teneriffe",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-teneriffe",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Mount Teneriffe hike: elevation gain 3,800 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-teneriffe",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists the hike as 13.0 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_parking_hours",
+    "value": "7:00am-5:00pm",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-teneriffe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: the Mount Si Road paved lot (820 ft) is open only 7:00am to 5:00pm."
+     }
+    ]
+   }
+  ],
+  "note": "WTA lists highest point 4,585 ft, below the 4,788 ft summit; not used. Mountaineers 14 mi RT / 3,800 ft figure is for the Kamikaze Falls climbers-trail variant, not the standard trail, so not counted as a second source."
+ },
+ "wa_mount_tom_scramble": {
+  "area": "wa_mount_tom",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "1914, Edmond S. Meany party with Boy Scouts",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Tom_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent 1914 by an Edmond S. Meany party of Boy Scouts."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "glacier travel plus Class 3 scrambling",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Tom_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia easiest route: glacier plus class 3 scrambling."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost (mount-tom-and-the-white-glacier) returned 403."
+ },
+ "wa_mount_torment_south_ridge": {
+  "area": "wa_mount_torment",
+  "skip_reason": "Opened: mountaineers.org routes-places/mount-torment-south-ridge (404; only activity listings), stephabegg.com torment-south-ridge (404), Mountain Project search (client-rendered, no hit), Wikipedia Mount_Torment (no route data). SummitPost south-ridge/223951 blocked (403)."
+ },
+ "wa_mount_torment_torment_forbidden_traverse": {
+  "area": "wa_mount_torment",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108312467",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Torment-Forbidden Traverse 5.6."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108312467",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade IV, trad/snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 6000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108312467",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project route length: 6000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ed Cooper and Walt Sellers, July 1958",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108312467",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Ed Cooper and Walt Sellers, July 1958."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "ridge bivy",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/torment-forbidden/",
+      "retrieved_at": "2026-11-14",
+      "fact": "StephAbegg trip: Torment South Ridge (4th/5th) then Forbidden West Ridge (5.7), with a ridge bivy."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_townsend_standard": {
+  "area": "wa_mount_townsend",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3010,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-townsend",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Mount Townsend: elevation gain 3,010 feet."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-townsend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Elevation Gain: 2,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-townsend",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: 8.0 miles roundtrip."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-townsend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route Length: 8.2 mi."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6280,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-townsend",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers High Point: 6,280 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-townsend",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA highest point 6,260 feet."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_triumph_northeast_ridge": {
+  "area": "wa_mount_triumph",
+  "facts": [
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers rates the Northeast Ridge Grade III, 5.5."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "one double-rope rappel to the crack-pitch base, then six to eight more with downclimbing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: double-rope rappel to base of crack pitch, then six to eight more rappels plus downclimbing down the crest."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Thornton Lakes Trail gains 2,200 ft in 5.3 mi to Thornton Lakes (4,400 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/triumph-ne-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail gains 2,200 ft over 5.3 miles to Thornton Lakes at 4,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/triumph-ne-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach drops 500 ft on a trail to the Lower Thornton Lake outlet before climbing to the col camp."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "NPS backcountry permit from Marblemount ranger station",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-triumph-northeast-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb registration and trip permits at the Marblemount park ranger station."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: Mountaineers 5.5, StephAbegg title 5.7, app has 5.6; no grade recorded. Mountaineers gain table is split by legs (3,450 / 1,420) and was not used."
+ },
+ "wa_mount_walkinshaw_scramble": {
+  "area": "wa_mount_walkinshaw",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "Joe Munson and Jim Parolini, 1961",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Walkinshaw",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent of the peak in 1961 by Joe Munson and Jim Parolini."
+     }
+    ]
+   }
+  ],
+  "note": "Peak first ascent, not necessarily this line. Mountaineers royal-basin page not read (fetch skipped); SummitPost 403."
+ },
+ "wa_mount_watson_scramble": {
+  "area": "wa_mount_watson",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Anderson-Watson Lakes Trail about 1.4 mi to the saddle above Watson Lakes (~4,800 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/anderson-lakes-watson-lakes-mount-watson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach: Anderson-Watson Lakes Trail ~1.4 miles to saddle above Watson Lakes (~4,800 ft)."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 6 mi RT / 1,500 ft figure is for Watson Lakes, not the summit; its Mount Watson route is a glacier Basic Alpine Climb, not this scramble."
+ },
+ "wa_mount_wilder_scramble": {
+  "area": "wa_mount_wilder",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2 via South Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Wilder",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia easiest route: class 2 via the South Ridge."
+     }
+    ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Wilder",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the first ascent as unknown."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_worthington_standard": {
+  "area": "wa_mount_worthington",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Tubal Cain Mine Trailhead (3,200 ft), FR 2880 then FR 28650",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-worthington",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive FR 2880 to the Dungeness River trailhead, then FR 28650 3.7 miles to Tubal Cain Mine Trailhead (3,200 ft)."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Worthington_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia easiest route: class 3 scramble."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost mount-worthington 403."
+ },
+ "wa_mushroom_tower_standard": {
+  "area": "wa_mushroom_tower",
+  "skip_reason": "Opened: cascadeclimbers.com TR 42919 (Mushroom Tower + Big Kangaroo; pitch grades not clearly tied to this route), Mountain Project area 120293785 (no route table). SummitPost kangaroo-ridge 403."
+ },
+ "wa_narcos": {
+  "area": "wa_cutthroat_creek_wall_or_little_liberty_bell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119269320",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Narcos 5.9 PG, trad/alpine."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119269320",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119269320",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 600 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Michael Telstad, solo, July 2020",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119269320",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Michael Telstad solo, July 2020."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cutthroat Lake Trailhead (4,500 ft), FR 400 off SR-20 ~4 mi east of Washington Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive SR-20 4 miles east of Washington Pass, FR 400 one mile to Cutthroat Lake Trailhead (4,500 ft)."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.7+ clean cracks up a big left-trending feature; P2 5.9 traverses right",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103532-tr-little-liberty-bellcutthroat-cre/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report (July 11, 2020): Narcos 5.9, 600 ft; P1 5.7+ cracks, P2 5.9 moves right."
+     }
+    ]
+   }
+  ],
+  "note": "CascadeClimbers report (5.9, 600 ft, 2020) agrees with Mountain Project but appears to be by the first-ascent party, so not counted as independent. Mountaineers Cutthroat Wall page used only for the trailhead."
+ },
+ "wa_navaho_peak_south_slopes": {
+  "area": "wa_navaho_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4223,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/navaho-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Navaho Peak: elevation gain 4,223 feet."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/navaho-pass-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Navaho Peak ascent: 14.0 miles, 4,123 (printed 4.123) feet of gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/navaho-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: 13.7 miles roundtrip."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/navaho-pass-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Navaho Peak 14.0 miles."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7223,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/navaho-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA highest point 7,223 feet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass or America the Beautiful pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/navaho-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA parking pass: Northwest Forest Pass or America the Beautiful Pass."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Stafford Creek Trail to Navaho Pass (6,000 ft): 11 mi RT, 3,000 ft gain",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/navaho-pass-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Navaho Pass (6,000 ft) 11 miles round trip, 3,000 ft gain via Stafford Creek Trail."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers prints the gain as \"4.123 feet\" (typo); read as 4,123, within 3% of WTA."
+ },
+ "wa_needle_peak_south_route": {
+  "area": "wa_needle_peak",
+  "skip_reason": "Opened: trailcatjim.com needle-peak-via-northwest-arm-west-ridge-2023 and Mountain Project area 123411826 — both are Needle Peak in the Coquihalla Range, BC, a different peak. No Stehekin Needle Peak source found."
+ },
+ "wa_news_nw_corner": {
+  "area": "wa_north_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792199",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Northwest Corner 5.9+."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: six pitches of mostly sustained 5.9-5.9+ climbing."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792199",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade III."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: a Grade III climb near Washington Pass."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792199",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Paul Boving, Steve Pollack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792199",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Paul Boving, Steve Pollack."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_total",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route Length field: 5.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2372,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Elevation Gain: 2,372 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7753,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers High Point: 7,753 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "crux is a 3-4 inch crack on pitch 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-early-winter-spire-northwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route known for a burly 3-4 inch crack on pitch 4."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count conflict: Mountain Project 5, Mountaineers 6; none recorded."
+ },
+ "wa_north_face_3": {
+  "area": "wa_lexington_tower",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/lexington-tower-north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: a fun 3-pitch 5.7 rock climb."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/lexington-tower-north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: 3-pitch 5.7, well protected."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_total",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/lexington-tower-north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route Length field: 4.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2360,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/lexington-tower-north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Elevation Gain: 2,360 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/lexington-tower-north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers High Point: 7,560 ft."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_north_face_var_right_directisimo": {
+  "area": "wa_concord_tower",
+  "skip_reason": "Opened: mountaineers.org concord-tower-n-face (describes the standard North Face 5.7 II, not the Directisimo variation), trailcatjim.com concord SE face + Lexington N face report (other routes). No source for the variation found."
+ },
+ "wa_north_gardner_mountain_nw_couloir": {
+  "area": "wa_north_gardner_mountain",
+  "skip_reason": "Opened: cascadeclimbers.com TR 66599 (NW Couloir 5/17/2009, no stated distance/gain/grade), wta.org north-gardner-mountain (no stats). SummitPost 403."
+ },
+ "wa_north_gardner_mountain_southwest": {
+  "area": "wa_north_gardner_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/north-gardner-mountain-mazama-mountains/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Jim Brisbine via Wolf Creek to South Ridge: about 27 miles traveled, 7,300 feet gained and lost."
+     }
+    ]
+   }
+  ],
+  "note": "A second Brisbine report (Wolf Creek Basin variant, 24.5 mi, 7,300 ft) is the same publisher, so one source. Mileage differs between his two trips; not recorded. WTA north-gardner-mountain page has no stats."
+ },
+ "wa_north_ridge_2": {
+  "area": "wa_whatcom_peak",
+  "skip_reason": "Opened: trailcatjim.com whatcom-peak-loop (37 mi multi-peak circuit; Whatcom climbed by South Slope-West Ridge, not North Ridge). SummitPost north-ridge/328118 and whatcom-peak 403."
+ },
+ "wa_north_ridge_3": {
+  "area": "wa_cutthroat_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114788795",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Cutthroat Peak North Ridge 5.7."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114788795",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114788795",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 600 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114788795",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Jim Crooks, Ed Kenney, August 19, 1940",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114788795",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Fred Beckey, Jim Crooks, Ed Kenney, August 19, 1940."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "several short rappels and one longer rappel to the notch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: downclimb easy terrain with several short rappels and one longer rappel to the notch, or descend the West Ridge."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers rates the route Grade II 5.6, conflicting with Mountain Project (III 5.7); grades kept single-source."
+ },
+ "wa_north_ridge_4": {
+  "area": "wa_primus_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106583414",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Primus Peak North Ridge 5.6."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106583414",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106583414",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106583414",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "1986",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106583414",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: 1986."
+     }
+    ]
+   }
+  ],
+  "note": "WTA Primus Peak page (19 mi RT, 7,300 ft gain, high point 8,508 ft) describes the peak hike, not this ridge; not used."
+ },
+ "wa_north_twin_sister_west_ridge": {
+  "area": "wa_north_twin_sister",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "bike 5+ mi and 2,500+ ft of logging road from the gated bridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/north-twin/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most efficient approach is biking in: 5+ miles and 2,500+ vertical feet of uphill riding."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mosquito Lake Road 9 mi from SR-9 at Acme to the steel bridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-twin-sister-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn onto Mosquito Lake Road 0.3 mi from the Acme store and drive 9 miles to the steel bridge."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "steep glissade off the summit in snow season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-twin-sister-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: 3rd class ridge scramble followed by a very steep glissade off the summit."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: StephAbegg titles the West Ridge 4th class, Mountaineers calls it 3rd class; not recorded."
+ },
+ "wa_northeast_buttress_4": {
+  "area": "wa_colchuck_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Northeast Buttress 5.8+."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 14 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 1200 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Weigelt and Julie Brugger, 1970",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Mark Weigelt and Julie Brugger, 1970."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_northwest_arete": {
+  "area": "wa_argonaut_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119339605",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Northwest Arete 5.6."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: a Grade II, Class 5.6 rock climb."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119339605",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade II."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Grade II."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119339605",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 7 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119339605",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 700 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_total",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route Length field: 20.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4853,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Elevation Gain: 4,853 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8453,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers High Point: 8,453 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project FA listed as unknown."
+ },
+ "wa_northwest_buttress": {
+  "area": "wa_sloan_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Sloan Northwest Buttress 5.9+."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 9 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 1800 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mike Preiss and Mark Bunker, 2000",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119519445",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: M. Preiss and M. Bunker (2000)."
+     }
+    ]
+   }
+  ],
+  "note": "WTA Sloan Peak page describes the Corkscrew hike route, not used."
+ },
+ "wa_northwest_face_boving_pollock": {
+  "area": "wa_south_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107288315",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Northwest Face (Boving-Pollock) 5.11b."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107288315",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107288315",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Boving and Kerns, 1977 (free)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107288315",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Boving and Kerns 1977."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_northwest_mox_peak_standard": {
+  "area": "wa_northwest_mox_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mox-peaks-northwest-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: the route to Northwest Mox Peak is Class 5 or above with exposed climbing."
+     }
+    ]
+   }
+  ],
+  "note": "Trailcatjim Hard Mox + Easy Mox trip (24 mi, 11,200 ft) covers two peaks, not used."
+ },
+ "wa_northwest_ridge": {
+  "area": "wa_dorado_needle",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113288297",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Northwest Ridge, 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113288297",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Lloyd Anderson, Karl Boyer, Tom Gorton, July 1940",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113288297",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project FA: Lloyd Anderson, Karl Boyer, Tom Gorton, July 1940."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_total",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-nw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route Length field: 12.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-nw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Elevation Gain: 7,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8440,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-nw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers High Point: 8,440 ft."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Eldorado climbers route to the Inspiration Glacier, over a col onto the McAllister Glacier",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/blogs/dorado-needle-nw-ridge.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS rangers: approach as for Eldorado, cross the Inspiration Glacier and a col onto the McAllister Glacier."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-nw-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: a moderate glacier approach then a short rock finish."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "large moat in the snow gully at the base of the NW Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/blogs/dorado-needle-nw-ridge.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: a snow gully used to reach the NW Ridge has a large moat; one rappel option descends it."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: Mountain Project 5.4, Mountaineers 5.3 rock finish; app 5.4, not recorded."
+ },
+ "wa_northwest_ridge_2": {
+  "area": "wa_boston_peak",
+  "skip_reason": "Opened: nps.gov/noca/blogs/sharkfin-tower-8-2-17.htm and stephabegg.com sharkfin-tower (Sharkfin SE Ridge only, nothing on Boston Peak NW Ridge). SummitPost sharkfin-tower 403."
+ }
+}

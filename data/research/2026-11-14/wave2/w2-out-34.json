@@ -167,13 +167,18 @@
    {
     "field": "approach_step",
     "value": "Bishop Pass trailhead at South Lake, over Bishop Pass, to Thunderbolt Pass",
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountainproject.com/route/106983026",
       "retrieved_at": "2026-11-14",
       "fact": "Approach from Bishop Pass TH at South Lake to Bishop Pass to Thunderbolt Pass."
+     },
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00089.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS party lined up for southwest chute #1 after crossing Thunderbolt Pass."
      }
     ]
    },
@@ -202,9 +207,22 @@
       "fact": "1/4 inch bolts on top of summit block; party lassoed and aided."
      }
     ]
+   },
+   {
+    "field": "route_step",
+    "value": "Near the top, a 50-ft class 4-5 section was belayed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00089.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS party climbed southwest chute #1 from Thunderbolt Pass; belayed a 50 ft class 4-5 step near the top."
+     }
+    ]
    }
   ],
-  "note": "Route-finding called the crux on MP. No gain/distance stated."
+  "note": "Route-finding called the crux on MP. No gain/distance stated. SPS report: day hike in was 8 mi with 2000 ft gain, endpoint not stated; not used."
  },
  "ca_southwest_chute_2": {
   "area": "ca_north_palisade",
@@ -391,13 +409,18 @@
    {
     "field": "trailhead",
     "value": "Mineral King",
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountainproject.com/route/118736684",
       "retrieved_at": "2026-11-14",
       "fact": "Doable in a very long day from Mineral King."
+     },
+     {
+      "url": "https://www.snwburd.com/reports/2006-09-10/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bob Burd: shorter route to Black Kaweah starts at the Mineral King trailhead."
      }
     ]
    },
@@ -453,7 +476,8 @@
      }
     ]
    }
-  ]
+  ],
+  "note": "Bob Burd's Mineral King route is about 26 mi RT with about 11,000 ft gain, but his page does not say he climbed the SW Chute, so not recorded as a fact."
  },
  "ca_southwest_face_2": {
   "area": "ca_isosceles_peak",
@@ -752,11 +776,141 @@
  },
  "ca_spanish_mountain_north_ridge": {
   "area": "ca_spanish_mountain",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Spanish OHV route from the Statham/Spanish trailhead climbs a ridge to about 9,000 ft overlooking Spanish Mountain and Garlic Meadow",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/sierra/recreation/trails/j51-statham-spanish-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Spanish OHV route winds up a ridge to about 9,000 ft overlooking Rough Spur, Spanish Mountain and Garlic Meadow."
+     },
+     {
+      "url": "https://www.climber.org/reports/1995/68.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author's intended route to Spanish Mountain was the Spanish OHV Trail (closed that year)."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October (snow dependent)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/sierra/recreation/trails/j51-statham-spanish-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS seasons of use June - October, subject to snow."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Statham/Spanish area has a daily quota",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/sierra/recreation/trails/j51-statham-spanish-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS lists a daily quota for the Statham/Spanish area."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cow trails cross the system trail; stay on the Statham Meadow trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/sierra/recreation/trails/j51-statham-spanish-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Many cow trails cross the system trail; stay on the Statham Meadow trail."
+     }
+    ]
+   }
+  ],
+  "note": "Neither page names the North Ridge; facts are for the peak's OHV approach. climber.org notes the OHV trail was closed one year for winter damage."
  },
  "ca_spanish_needle_north_ridge": {
   "area": "ca_spanish_needle",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/spanishneedle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author describes the north ridge as having a class 3 friction crux."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Class 3 friction crux on the north ridge is very sketchy when iced (verglas)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/spanishneedle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turned back once after seeing the north ridge iced; class 3 friction crux sketchy with verglas."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Shortest approach: old 4WD road up the valley between Lamont Peak and Lamont Benchmark, then a short cross-country leg to the PCT",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/spanishneedle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shortest approach via valley between Lamont Peak and Lamont Benchmark; old 4WD road then cross-country to the PCT."
+     },
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00521.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS report: the 'trail' is a 4WD road for about 2 miles, then closed to vehicles, meeting the PCT."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Unmarked turn onto a rutted 4WD road that runs in Chimney Creek for about 50 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/spanishneedle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Unmarked 4WD turnoff, deeply rutted; road crosses Chimney Creek, running in water about 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Inside the Chimney Peak Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/spanishneedle/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drove through Lake Isabella and entered the Chimney Peak Wilderness."
+     }
+    ]
+   }
+  ]
  },
  "ca_ssw_ridge_low": {
   "area": "ca_mt_starr",
@@ -1002,7 +1156,7 @@
  },
  "ca_state_peak_standard_route": {
   "area": "ca_state_peak",
-  "skip_reason": "not yet researched"
+  "skip_reason": "Opened sierrapeaks.org/archives/sps00159.htm (State/Marion/Goat trip via State Lakes drainage; no standard-route facts) and climber.org/TripReports/1999/477.html (Middle Fork Kings gorge, not State Peak's standard route). SummitPost state-peak/859987 returns 403. No fact usable."
  },
  "ca_stego_spine": {
   "area": "ca_black_pyramid",
@@ -1301,11 +1455,41 @@
  },
  "ca_sw_gully": {
   "area": "ca_picture_peak",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Sabrina Lake (Sabrina Basin trail)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2000/652.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party approached Picture Peak on the trail from Sabrina Lake past Blue and Dingleberry Lakes."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org party climbed a chute over 40 degrees in spring snow but does not name it the SW gully, so no route/grade facts taken. SummitPost route page (sp/sw-gully/979683) is 403."
  },
  "ca_table_mountain_sierra_southeast_face_ramp": {
   "area": "ca_table_mountain_sierra",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "camp",
+    "value": "High camp at about 11,500 ft in Milestone Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1996/143.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "High camp at 11,500 ft in Milestone Basin, with Milestone, Midway and Table Mountains behind."
+     }
+    ]
+   }
+  ],
+  "note": "Same report: maze of sandy ledges and chutes, crux a ten-foot boulder, then class 3 to the south summit; the face climbed is not named, so not recorded as route facts. vulgarianramblers Table Mountain page opened, no route text."
  },
  "ca_taylor_dome_west_ridge": {
   "area": "ca_taylor_dome",
@@ -1481,7 +1665,7 @@
  },
  "ca_the_ramp_6": {
   "area": "ca_left_of_the_regular_route",
-  "skip_reason": "not yet researched"
+  "skip_reason": "Could not identify the formation: two DuckDuckGo searches for MP 'The Ramp(?)' / 'Left of the Regular Route' returned no results, and the parent area name gives no peak. No page opened that names this route."
  },
  "ca_the_thumb_southeast_slope_from_birch_lake": {
   "area": "ca_the_thumb",
@@ -1586,15 +1770,97 @@
  },
  "ca_three_sisters_standard_route": {
   "area": "ca_three_sisters",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Dinkey Lakes Trailhead at Willow Meadow (Road 9S62)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/sierra/recreation/trails/dinkey-lakes-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dinkey Lakes Trail starts at Dinkey Lakes Trailhead at Willow Meadow, Road 9S62; area includes The Three Sisters."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Wilderness permit required for overnight camping in the Dinkey Lakes Wilderness (recreation.gov)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/sierra/recreation/trails/dinkey-lakes-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilderness permit required for overnight camping in Dinkey Lakes Wilderness; reserve at recreation.gov."
+     }
+    ]
+   }
+  ],
+  "note": "Assumes our Three Sisters is the Dinkey Lakes Wilderness peak (USFS page names The Three Sisters near the trail). USFS gives lake distances, not a summit distance."
  },
  "ca_thunder_mountain_sierra_thunder_col_and_east_ridge": {
   "area": "ca_thunder_mountain_sierra",
-  "skip_reason": "not yet researched"
+  "skip_reason": "Opened vulgarianramblers.org peak_detail Thunder Mountain (no route text in the page) ; DuckDuckGo found SummitPost east-ridge/155810 and thunder-mountain/150591 only (SummitPost 403). Other hits were Colorado/Amador Thunder Mountains, not this peak. No fact usable."
  },
  "ca_tinker_knob_via_the_pacific_crest_trail": {
   "area": "ca_tinker_knob",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "PCT trailhead at Donner Summit (park at Sugar Bowl Academy lot off Old Lincoln Highway)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://greglamy.net/Hiking/TinkerKnob.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lincoln Highway 3.7 miles, park at Sugar Bowl Academy; find the PCT signpost down the road."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 16.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://greglamy.net/Hiking/TinkerKnob.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Donner Summit to Tinker Knob trip distance 16.6 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://greglamy.net/Hiking/TinkerKnob.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Vertical gain 3100 ft for the Donner Summit to Tinker Knob round trip."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "PCT heads south, then west past a stream into the first rocky section; two early junctions allow a loop around Mt Lincoln",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://greglamy.net/Hiking/TinkerKnob.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail heads south, bends west after a stream; two junctions in first miles allow loop around Mt Lincoln."
+     }
+    ]
+   }
+  ],
+  "note": "Only one publisher's figures read (tahoefabulous page dead; AllTrails not used). Our route may instead start from Coldstream/Palisades; check before applying."
  },
  "ca_traverse_from_mt_sill": {
   "area": "ca_polemonium_peak",

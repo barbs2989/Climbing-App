@@ -1,0 +1,1605 @@
+{
+ "wa_davis_peak_nc_south_slope_and_ridge": {
+  "area": "wa_davis_peak_nc",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7051,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2016/06/04/davis-peak-north-cascades/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Davis Peak elevation range 1096 to 7051 ft"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/davis-peak-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 7,051 feet"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Davis Peak Climbers Trailhead (low point 1,096 ft) off SR 20 at Gorge Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2016/06/04/davis-peak-north-cascades/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access via Davis Peak Climbers Trailhead; elevation range starts at 1096 ft; route leaves from Gorge Creek Falls"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2016/06/04/davis-peak-north-cascades/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 6.2 miles via the south route"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Slope rises about 6,000 ft in three miles from Gorge Creek Falls",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2016/06/04/davis-peak-north-cascades/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Incline rises 6000 ft in three miles from Gorge Creek Falls"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2016/06/04/davis-peak-north-cascades/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear listed: helmet"
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim.com (South Buttress-South Ridge, 2009) gives approx 10 mi / 7,400 ft / 13.5 h but for a summit attempt on a variant line, so not used. mountaineers.org/davis-peak is a different Davis Peak (Cle Elum, 6,426 ft)."
+ },
+ "wa_del_campo_peak_standard": {
+  "area": "wa_del_campo_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/del-campo-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,200 feet for the scramble from Gothic Basin"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/del-campo-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 11.0 miles, roundtrip"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6610,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/del-campo-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 6,610 feet"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass or America the Beautiful Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/del-campo-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pass/entry fee: America the Beautiful Pass or Northwest Forest Pass"
+     }
+    ]
+   }
+  ],
+  "note": "mountaineers.org/activities/routes-places/del-campo-peak opened but rendered no route data. Only WTA states figures."
+ },
+ "wa_denny_mountain_north_slopes": {
+  "area": "wa_denny_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/denny-5520",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,500 ft"
+     }
+    ]
+   },
+   {
+    "field": "length_mi_page",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/denny-5520",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 6.0 mi (page does not say one-way or round trip)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5520,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/denny-5520",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 5,520 ft"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/denny-5520",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass"
+     }
+    ]
+   },
+   {
+    "field": "difficulty_rating",
+    "value": "Mountaineers scramble rating Technical 3, Strenuous 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/denny-5520",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Technical 3, Strenuous 2"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers high point 5,520 ft disagrees with our 5,614 ft summit; flag for review. WTA denny-mountain page opened but showed no stats."
+ },
+ "wa_der_dihedral": {
+  "area": "wa_dragontail_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114288397/der-dihedral",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.9"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114288397/der-dihedral",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, 700 ft"
+     }
+    ]
+   }
+  ],
+  "note": "FA conflict: MP lists Layton Wolfe 2006; cascadeclimbers.com/forum/topic/25766 is titled an FA on 6/27/2004 and calls it 14 pitches IV 5.10b (likely counting the NE Arete finish). FA and pitch count not recorded. Our 5.9+ vs MP 5.9."
+ },
+ "wa_devore_peak_west_ridge": {
+  "area": "wa_devore_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8380,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/devore-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 8,380 feet"
+     }
+    ]
+   }
+  ],
+  "note": "mountaineers.org tupshin-devore-peaks is a 3-peak trip (37 mi, 15,000 ft), not usable for this route. SummitPost 403."
+ },
+ "wa_diamond_in_the_rough": {
+  "area": "wa_sloan_peak",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1100,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117637828/diamond-in-the-rough",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 1100 ft"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/83612-tr-sloan-peak-southwest-face-diamond-in-the-rough-fa-9112011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA report: 1100 feet of climbing"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117637828/diamond-in-the-rough",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/83612-tr-sloan-peak-southwest-face-diamond-in-the-rough-fa-9112011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Rad Roberts and Brandon Workman, 2011",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117637828/diamond-in-the-rough",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Rad Roberts and Brandon Workman (2011)"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/83612-tr-sloan-peak-southwest-face-diamond-in-the-rough-fa-9112011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA trip report 9/11/2011 by Brandon Workman and Rad Roberts"
+     }
+    ]
+   }
+  ],
+  "note": "Conflicts: pitches MP 8 vs CC nine; grade MP 5.11- vs CC 5.10. Neither recorded."
+ },
+ "wa_direct_southwest_buttress": {
+  "area": "wa_dorado_needle",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119520213/direct-southwest-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.10a"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119520213/direct-southwest-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "1100 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119520213/direct-southwest-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "8 pitches"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119520213/direct-southwest-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mike Preiss and Mark Bunker, September 2006",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119520213/direct-southwest-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Mike Preiss & Mark Bunker, September 2006"
+     }
+    ]
+   }
+  ],
+  "note": "cascadeclimbers.com/forum/topic/73329 (9/4/2005) describes a two-pitch direct variation to the 1985 SW Buttress climbed a year earlier; FA attribution may be disputed."
+ },
+ "wa_dolphin_chimney": {
+  "area": "wa_south_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117509825/dolphin-chimney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.9"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 75,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117509825/dolphin-chimney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 75 ft"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey and Jim Madsen, 1967",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117509825/dolphin-chimney",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Fred Beckey and Jim Madsen, 1967"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project (area page + route page) found; SummitPost 403. Our grade 5.9+ vs MP 5.9."
+ },
+ "wa_dome_peak_dome_glacier": {
+  "area": "wa_dome_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8132,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 8,132 ft"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8920,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,920 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: July, August, September"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Downey Creek Campground trailhead (1,450 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive to Downey Creek Campground and the trailhead (1,450 ft)"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Meadows SE of Cub Lake, or ridge camp about an hour higher at 6,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp in meadows southeast of Cub Lake or on the ridge another hour up at 6,200 ft"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116652285/dome-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Snow, Alpine, 450 ft, Grade II"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116652285/dome-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   }
+  ],
+  "note": "WTA dome-peak shows the identical 8,132 ft / 8,920 ft, so treated as the same source. MP rates the route 4th class vs our Class 3 - not recorded."
+ },
+ "wa_dorado_needle_east_ridge": {
+  "area": "wa_dorado_needle",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112156952/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dorado Needle East Ridge rated 5.7"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112156952/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 800 ft"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112156952/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III"
+     }
+    ]
+   }
+  ],
+  "note": "WTA dorado-needle gives gain 6,280 / HP 8,440 without naming the route; not used. SummitPost 403."
+ },
+ "wa_dot_mountain_scramble": {
+  "area": "wa_dot_mountain",
+  "skip_reason": "Opened listsofjohn.com/peak/48795 (Cloudflare wall); SummitPost (mount-lago, ptarmigan-peak) 403 site-wide; DuckDuckGo found no page describing a Dot Mountain route itself. Browser tab group was lost before onehikeaweek.com/2015/08/16/ptarmigan-peak/ could be read."
+ },
+ "wa_dragontail_peak_backbone_ridge": {
+  "area": "wa_dragontail_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073405/backbone-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.9"
+     },
+     {
+      "url": "https://spokalpine.com/2021/09/03/dragontail-peak-backbone-ridge-iv-5-9/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backbone Ridge IV 5.9"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "IV",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073405/backbone-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade IV"
+     },
+     {
+      "url": "https://spokalpine.com/2021/09/03/dragontail-peak-backbone-ridge-iv-5-9/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backbone Ridge IV 5.9"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073405/backbone-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, 2000 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073405/backbone-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "12 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "John Bonneville and Mark Weigelt, 1970 (Fin finish: Cruver, Lewis, 1975)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073405/backbone-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA John Bonneville, Mark Weigelt 1970; with fin Cruver, Lewis 1975"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://spokalpine.com/2021/09/03/dragontail-peak-backbone-ridge-iv-5-9/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Took about 18 hours car to car"
+     }
+    ]
+   }
+  ],
+  "note": "Spokalpine: start is about 200 ft from Serpentine Arete; Colchuck Lake reached in under two hours."
+ },
+ "wa_dragontail_peak_east_ridge_aasgard_pass": {
+  "area": "wa_dragontail_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201576939/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dragontail East Ridge rated 3rd class"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Stuart Lake / Colchuck Lake trailhead (3,400 ft) via Eightmile Road FR 7601",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/colchuck-dragontail-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eightmile Road (FR 7601) to the trailhead at 3,400 ft"
+     }
+    ]
+   }
+  ],
+  "note": "MP lists the East Ridge as 6000 ft long, which reads as total vertical; not used."
+ },
+ "wa_dragontail_peak_r2": {
+  "area": "wa_dragontail_peak",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110245564/gerber-sink",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Mixed, Ice, Snow, 2000 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110245564/gerber-sink",
+      "retrieved_at": "2026-11-14",
+      "fact": "10 pitches"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110245564/gerber-sink",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade IV"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Glissade much of the way from summit to the col and down Aasgard Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/99097-tr-dragontail-peak-gerber-sink-4102016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent under an hour to camp, glissading from summit to col and down Aasgard"
+     }
+    ]
+   }
+  ],
+  "note": "MP rock grade 5.7; CC TR fragment shows a WI3+/M4 rating; our WI3+ not contradicted. Not locked."
+ },
+ "wa_dragontail_peak_r3": {
+  "area": "wa_dragontail_peak",
+  "skip_reason": "Opened MP 107144495/west-route (Mod. snow, 600 ft, Grade II) and mountaineers enchantments-area-review/colchuck-dragontail-peaks; neither names Pandora's Box, so no figure could be tied to this route."
+ },
+ "wa_dragontail_peak_serpentine_arete": {
+  "area": "wa_dragontail_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.8"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Serpentine Arete 5.8, 2000 ft"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, 2000 ft"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Serpentine Arete 5.8, 2000 ft"
+     },
+     {
+      "url": "https://climberkyle.com/2019/06/15/dragontail-peak-serpentine-arete-5-8/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A long 2000 ft moderate route"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "13 pitches"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade IV"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Tom Hargis and Jay Ossiander, 1973",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106015955/serpentine-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Tom Hargis and Jay Ossiander, 1973"
+     }
+    ]
+   },
+   {
+    "field": "approach_time",
+    "value": "About 2 hours trailhead to Colchuck Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left Stuart Lake trailhead 4:30am, at Colchuck Lake 6:30am"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_dumbell_mountain_west": {
+  "area": "wa_dumbell_mountain",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8416,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/dumbell-and-greenwood-mountains",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dumbell elevation 8,416 ft"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dumbell-8-421-greenwood-8-415",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,421 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Phelps Creek Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dumbell-8-421-greenwood-8-415",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the Phelps Creek trailhead hike to Phelps Creek Basin and camp"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Phelps Creek trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/dumbell-8-421-greenwood-8-415",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from the Phelps Creek trailhead"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page is a two-peak trip (14 mi, 5,500 ft) so its distance/gain not used. Lemke climbed the SW Face at Class 3, not named as our West Route. SummitPost 403."
+ },
+ "wa_e_se_face": {
+  "area": "wa_witches_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111724575/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Witches Tower East Face rated 4th class"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111724575/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 300 ft"
+     }
+    ]
+   }
+  ],
+  "note": "wenatcheeoutdoors.org/2016/05/02/witches-tower/ behind Cloudflare; SummitPost 403. Only MP readable."
+ },
+ "wa_eagle_rock_scramble": {
+  "area": "wa_eagle_rock",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/eagle-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 1,400 ft"
+     }
+    ]
+   },
+   {
+    "field": "length_mi_page",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/eagle-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 4.0 mi (page does not say one-way or round trip)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5615,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/eagle-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 5,615 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/eagle-rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: May through September"
+     }
+    ]
+   }
+  ],
+  "note": "WTA eagle-rock is Burch Mountain-Eagle Rock, a different peak. Our gain 1,464 vs Mountaineers 1,400 (within 10%)."
+ },
+ "wa_earl_peak_southwest_ridge": {
+  "area": "wa_earl_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7036,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/earl-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 7,036 feet"
+     }
+    ]
+   }
+  ],
+  "note": "WTA Earl Peak lists 7.5 mi RT / 3,600 ft and Northwest Forest Pass but the fetched page does not name the trailhead, so distance/gain not attributed (they match our 3,600)."
+ },
+ "wa_earl_peak_standup_creek_route": {
+  "area": "wa_earl_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7036,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/earl-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 7,036 feet"
+     }
+    ]
+   }
+  ],
+  "note": "No Standup Creek specific figures found; WTA page only lists trip reports mentioning Standup Creek."
+ },
+ "wa_east_face_6": {
+  "area": "wa_chimney_rock",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "From Pete Lake continue to the PCT and follow it north about a mile to an avalanche path near the Chimney Glacier creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pete Lake to PCT, north about a mile to avalanche path near creek from Chimney Glacier"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers and MP (201573258) pages are for East Face Direct (MP 5.6, 7 pitches, 1,120 ft, FA Molenaar & Johnson 1954; MT 16 mi, 4,900 ft), a different line from our 5.3 East Face, so not recorded. CC TR 108602 read, no figures."
+ },
+ "wa_east_mcmillan_spire_west_ridge": {
+  "area": "wa_east_mcmillan_spire",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Upper Goodell Creek Group Campground trailhead (room for a few cars)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead at Upper Goodell Creek Group Campground, room for a few cars"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About 4 miles along Goodell Creek, then a 4,000 ft climb in 2 miles to Terror Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four miles to the hill climb, then 4,000 ft in 2 miles"
+     }
+    ]
+   }
+  ],
+  "note": "Climber Kyle report is for West McMillan Spire; the Terror Basin approach is shared. No East McMillan route figures found (CC 108271 is the North Buttress)."
+ },
+ "wa_east_ridge_2": {
+  "area": "wa_snowking_mountain",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7433,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/snowking-mtn-via-northeast-ridge-east-spur-1998/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snowking Mountain 7433 ft"
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim (NE Ridge-East Spur) and onehikeaweek.com/2023/10/20/snowking-mountain/ (via Razorback) describe other routes; Cyclone Pond camp 5,450 ft and Kindy Ridge TH 2,400 ft there not recorded."
+ },
+ "wa_east_ridge_4": {
+  "area": "wa_inspiration_peak",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Overnight permit for the Terror Basin zone (North Cascades NP)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grabbed permits for the Terror Basin before starting"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Long creek walk, then a steep ~4,000 ft climb to Terror Basin",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep and unrelenting for nearly 4,000 feet"
+     },
+     {
+      "url": "https://climberkyle.com/2019/08/29/west-mcmillan-spire/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hill climb into Terror Basin is about 4,000 ft in 2 miles"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Terror Basin, beyond the 6,200 ft saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.jeffreyjhebert.com/adventures/east-ridge-on-inspiration-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse to the saddle at 6,200 ft and descend to camp"
+     }
+    ]
+   }
+  ],
+  "note": "Approach agreement uses the Climber Kyle West McMillan report for the shared Terror Basin leg. SummitPost 403."
+ },
+ "wa_east_ridge_6": {
+  "area": "wa_mount_thomson",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 6554,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-thompson-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 6,554 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-thompson-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons May through October"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Ridge Lake (camping and water)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-thompson-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge Lake has camping and water"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "PCT from Snoqualmie Pass to Bumblebee Pass (5,400 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-thompson-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike PCT from Snoqualmie Pass to Bumblebee Pass at 5,400 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gives elevation gain 3,600 ft and length 18 mi vs our 4,900 ft gain; conflict, not recorded. WTA mount-thomson page showed no stats. SummitPost 403."
+ },
+ "wa_east_ridge_9": {
+  "area": "wa_ingalls_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108202801/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.7"
+     },
+     {
+      "url": "https://cascadeclimber.com/east_ridge.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ingalls Peak East Ridge crux is a short 5.7 section"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108202801/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, 900 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108202801/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "6 pitches"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108202801/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Don Jones and Barry Prayer, 1957",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108202801/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Don Jones & Barry Prayer (1957)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7662,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 7,662 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons June through October"
+     }
+    ]
+   }
+  ],
+  "note": "cascadeclimber.com: crux poorly protected. CC 108574 (2026) mentions a 6th pitch, not stated as a count."
+ },
+ "wa_east_slope": {
+  "area": "wa_primus_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/primus-peak-borealis-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 7,300 ft"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/primus-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 7,300 feet"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 19,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/primus-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 19.0 miles, roundtrip"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8508,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/primus-peak-borealis-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,508 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/primus-peak-borealis-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons July, August"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Thunder Creek Trailhead at Colonial Creek (1,200 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/primus-peak-borealis-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at Thunder Creek Trailhead (1,200 ft) at Colonial Creek"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "NPS backcountry permit for the Klawatti zone from the Marblemount ranger station",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/primus-peak-borealis-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Get trip permits for Klawatti Zone at Marblemount ranger station"
+     }
+    ]
+   }
+  ],
+  "note": "WTA and Mountaineers give identical 19 mi / 7,300 ft / 8,508 ft, so treated as one source (single-source) despite two URLs."
+ },
+ "wa_east_wilmans_spire": {
+  "area": "wa_wilmans_spires",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120288544/east-wilmans-spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.6"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 140,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120288544/east-wilmans-spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, Alpine, 140 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120288544/east-wilmans-spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "3 pitches"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120288544/east-wilmans-spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey and Herb Staley, 1945",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120288544/east-wilmans-spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Fred Beckey & Herb Staley, 1945"
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost east-wilmans-spire pages not readable (403 site-wide). Only one publisher found."
+ },
+ "wa_eldorado_peak_east_ridge": {
+  "area": "wa_main_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6716,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 6,716 feet"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 6,768 ft"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8876,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 8,876 feet"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,868 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 10.0 miles, roundtrip"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons July, August, September"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Parking area about 20 miles up Cascade River Road (2,100 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive about 20 miles to a large parking area at 2,100 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Roush Creek Basin, 6,100-6,400 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/eldorado-peak-inspiration-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsites in Roush Creek Basin between 6,100 and 6,400 ft"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "D. Blair, N. Grigg, A. Wilson, A. Winder, August 1933",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131635/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA D. Blair, N. Grigg, A. Wilson, A. Winder, August 1933"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108131635/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy snow, Grade II"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page is titled Eldorado Peak/Inspiration Glacier (same standard route)."
+ }
+}
