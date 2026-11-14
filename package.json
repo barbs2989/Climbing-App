@@ -232,29 +232,29 @@
     "check:new-climber-journey": "node scripts/check-new-climber-journey.mjs"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.109.0",
-    "@tanstack/react-query": "^5.101.0",
+    "@supabase/supabase-js": "^2.119.0",
+    "@tanstack/react-query": "^5.107.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/parser": "^7.26.0",
     "@babel/traverse": "^7.26.0",
-    "@electric-sql/pglite": "^0.5.8",
+    "@electric-sql/pglite": "^0.5.16",
     "@eslint/js": "^9.39.5",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.3.4",
-    "axe-core": "^4.10.3",
+    "axe-core": "^4.14.0",
     "eslint": "^9.39.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "globals": "^17.13.0",
-    "playwright-core": "^1.61.1",
+    "globals": "^17.14.0",
+    "playwright-core": "^1.65.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.71.2",
+    "typescript-eslint": "^8.72.2",
     "vite": "^6.4.5",
-    "ws": "^8.21.1"
+    "ws": "^8.22.2"
   },
   "overrides": {
     "@typescript-eslint/typescript-estree": {
