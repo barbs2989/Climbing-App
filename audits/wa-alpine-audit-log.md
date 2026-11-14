@@ -39029,3 +39029,45 @@ actual climb in the stored late-July window, not a conflict); `wa_alpine_lookout
 (6,237 ft matches the area row, no contradicting source found).
 
 Next batch will continue id-ascending from `wa_alpine_lookout_round_mountain_trail` (pass 9).
+
+## 2026-11-14 — batch 554 (pass 9)
+
+Eight routes continuing id-ascending from `wa_alpine_lookout_round_mountain_trail`: American
+Border Peak (Northeast Face, Southeast Face/South Ridge) and six routes on Amphitheater Mountain
+(Finger of Fatwa, Middle Finger Buttress - Left Side, Middle Finger Buttress - Right Side, North
+Ridge, Pilgrimage to Mecca, West Route).
+
+One confirmed error fixed:
+
+- `wa_amphitheater_mountain_finger_of_fatwa`'s `fa` was stored as "Scott Bennett and Blake
+  Herrington, 2012." Herrington's own contemporaneous blog post (August 2011, describing an
+  Aug 10-17 trip that produced this line plus two others on Cathedral Peak and "The Deacon") and
+  a 2018 Cascade Climbers trip report describing a repeat both date the first ascent to 2011, not
+  2012 — 2012 looks like the American Alpine Journal's write-up year (new routes are typically
+  published the year after) getting conflated with the climb year. Fixed to 2011.
+
+No items flagged for human review this batch — no unresolved factual conflicts, only fields
+with no independently verifiable source either way (see clean notes).
+
+**Clean:** `wa_american_border_peak_northeast_face` (7,998 ft summit matches the area row and
+Wikipedia exactly; `fa` is blank in our data but SummitPost credits Dwight Baker, Fred Beckey and
+John Dudra, Sept 21 1952 — a gap, not a contradiction, so left for enrichment rather than this
+audit; the stored "~45-degree snow gully" hazard matches SummitPost's own description of the
+route's key feature almost verbatim); `wa_american_border_peak_southeast_face` (FA confirmed
+exactly against Wikipedia and SummitPost: Alec Dalgleish, Tom Fyles, Stan Henderson, R.A. Fraser,
+Sept 14, 1930; 7,998 ft summit and 2,794 ft prominence both match Wikipedia; gain_ft 2,800 is
+self-consistent with the 5,200 ft trailhead and 7,998 ft summit); `wa_amphitheater_mountain_middle_finger_buttress_left_side`
+(August 1971 FA — no corroborating or contradicting source found online, likely print-guidebook
+only; 8,358 ft summit matches); `wa_amphitheater_mountain_middle_finger_buttress_right_side`
+(July 15, 1973 FA — same as above, no source either way; elevation matches);
+`wa_amphitheater_mountain_north_ridge` (August 29, 1973 FA — no source either way; elevation
+matches); `wa_amphitheater_mountain_pilgrimage_to_mecca` (2004, Darin Berdinka and Owen Lunz,
+confirmed exactly by Mountain Project and OpenBeta; elevation matches); `wa_amphitheater_mountain_west_route`
+(Class 3, no stored FA; area blurb's 1901 Calkins/Smith first ascent of the peak confirmed by
+Wikipedia; 8,358 ft summit matches).
+
+8,358 ft for Amphitheater Mountain and 7,998 ft for American Border Peak were both confirmed
+exactly against Wikipedia for this batch — no elevation drift found on either peak, unlike
+several recent batches' self-consistency fixes.
+
+Next batch will continue id-ascending from `wa_amphitheater_mountain_west_route` (pass 9).
