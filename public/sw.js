@@ -178,6 +178,10 @@ self.addEventListener("fetch", (event) => {
   // The offline state files (dist/states/, ~10 MB per large state) are written into IndexedDB by
   // lib/offline.js. Caching them here as well would store every downloaded state twice.
   if (url.pathname.includes("/states/")) return;
+  // The owner's Review desk (review.html + its own review-assets/ build) is network-only. Its HTML
+  // names different bundles than the app's, so reading it below would look like a new deploy and
+  // prune the app's offline shell every time the owner opened it.
+  if (url.pathname.endsWith("/review.html") || url.pathname.includes("/review-assets/")) return;
 
   event.respondWith(
     fetch(req)

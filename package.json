@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/run-build-guards.mjs && vite build",
+    "build": "node scripts/run-build-guards.mjs && vite build && vite build --config vite.review.config.js",
     "preview": "vite preview",
     "clean:worktrees": "node scripts/clean-worktrees.mjs",
     "check:jsx-comments": "node scripts/check-jsx-comments.mjs",
