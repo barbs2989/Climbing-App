@@ -393,7 +393,6 @@ const PUBLIC_DEFINER = {
   group_invite_policy: "group_members invite policy helper; returns the group's invite_policy text",
   crew_is_private: "crew_members 'join or invite' policy helper; yes/no whether a crew is private (anon revoked in 0431)",
   verified_user_ids: "the public verified tick: which of the given ids have a verified email; authenticated only",
-  reconcile_guide_verification: "lib/db.js calls it on read; only flips EXPIRED verified credentials to lapsed (idempotent)",
 };
 const clientCallable = (n) => {
   const s = execGrants.get(n);

@@ -223,7 +223,7 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
 {
   const res = await as("anon", null, `select count(*) from climber_resumes`);
   if (res.error) fail(`the climber_resumes policy fails signed out: ${res.error}`); else ok("climber_resumes policy (reads resume_public) works signed out");
-  const adm = await as("anon", null, `select count(*) from guide_credentials`);
+  const adm = await as("anon", null, `select count(*) from app_feedback`);
   if (adm.error) fail(`an is_admin()-gated read fails signed out: ${adm.error}`); else ok("is_admin()-gated policies still evaluate signed out");
   // climb_logs_default_visibility reads trip_reports_default, which no client may read any more.
   await db.exec(`update profiles set trip_reports_default = 'friends' where id = '${A}'`);

@@ -87,7 +87,9 @@ appFn.traverse({
 // parses, every identifier is still bound, and the screen simply ceases to exist. Nothing else
 // in the suite can see it — that is why the Inbox defect masqueraded as a CI flake for days
 // (see the note in check:signed-in). A floor cannot catch a drop from 10 to 9; only a pin can.
-const EXPECTED_RETURNS = 10;
+// 8, not 10 (2026-11-14): the guide dashboard and guide application screens were removed with
+// the guide feature, and their two early returns with them.
+const EXPECTED_RETURNS = 8;
 if (returns.length !== EXPECTED_RETURNS) {
   const dropped = returns.length < EXPECTED_RETURNS;
   console.error(`check:toast-reachable FAILED — App has ${returns.length} top-level return(s), expected ${EXPECTED_RETURNS}.`);

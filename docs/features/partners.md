@@ -1,8 +1,8 @@
 # Partners — the Discover tab
 
-`tab==="discover"` in `ClimbMatch.jsx`. A three-way switch on `partnersMode` (`useState("partners")`):
-`"partners"` (Find partners), `"crews"` (Join a crew), anything else = guides (Hire a guide, `DbGuides`/`Guides`).
-This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides are only noted under Connections.
+`tab==="discover"` in `ClimbMatch.jsx`. A two-way switch on `partnersMode` (`useState("partners")`):
+`"partners"` (Find partners), anything else = crews (Join a crew). The third mode, Hire a guide, was removed with the
+whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews are only noted under Connections.
 
 ## 1. What it does today
 - **Crag partners are found by AREA** (owner decision 2026-10-15; 0300): a climber lists themselves at the crags, canyons or
@@ -94,7 +94,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | `src/components/ListMeInAreaBox.tsx` | `ListMeInAreaBox` — By Area's *List me at <place>* box under the picker (optimistic `savePartnerArea` / `removePartnerArea`, then `onListMe` for dates and types) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
-| `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides` |
+| `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `src/components/RealClimberRow.tsx` | `RealClimberRow` — the browse and name-search row for a REAL profile: match % or its refusal, ✓ Verified, the listed-areas line, pace and discipline chips |
 | `lib/partner-gender-pref.js` | `partnersMyGenderPref`, `savePartnersMyGender` |
@@ -123,7 +123,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   open By Area on an area (from the area page's "See all", a crag route's Partners sub-tab, a Logbook crag row — all through App's `onFindPartnersInArea`).
 - **Menu**: the *Yours* group has a **Listed areas · N** tile (`openMyAreas`; signed out it asks to sign in).
 - **Area page / crews pane**: `PartnersHereCard` (`docs/features/maps-and-area-browser.md`) and the crews pane both open the My listed areas sheet (`openMyAreas`).
-- **Siblings in the tab**: `CrewFinder` (crews), `DbGuides`/`Guides` (guides).
+- **Siblings in the tab**: `CrewFinder` (crews).
 
 ## 6. Guards
 `check:partner-areas` (two-way reach in every listing reader, the match rule in both search functions, one crag list, owner-only table + definer readers, no raw objectives hook),
