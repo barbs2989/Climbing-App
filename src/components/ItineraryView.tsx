@@ -106,8 +106,8 @@ const CARD: CSSProperties={background:C.card,border:"1px solid "+C.border,border
 /** A labelled figure: a small caps label over its value; a missing value is a muted dash. */
 function Tile({label,value,color,big}: {label: string; value: string|null; color?: string; big?: boolean}){
   return <div style={{flex:"1 1 0",minWidth:0,background:C.surface,borderRadius:9,padding:big?"8px 6px 9px":"6px 4px 7px",textAlign:"center"}}>
-    <div style={{...SUB_LABEL,fontSize:9.5,letterSpacing:0.5,marginBottom:2,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{label}</div>
-    <div style={{fontSize:big?14.5:12.5,fontWeight:700,color:value==null?C.textMuted:(color||C.text),whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{value==null?"—":value}</div>
+    <div style={{...SUB_LABEL,fontSize:9.5,letterSpacing:0.3,lineHeight:1.25,marginBottom:2,overflowWrap:"anywhere"}}>{label}</div>
+    <div style={{fontSize:big?14.5:12.5,fontWeight:700,lineHeight:1.25,color:value==null?C.textMuted:(color||C.text),overflowWrap:"anywhere"}}>{value==null?"—":value}</div>
   </div>;
 }
 

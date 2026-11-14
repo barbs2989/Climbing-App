@@ -29,21 +29,21 @@ export interface AreaActionRowProps {
 export default function AreaActionRow({ C, routeCount, onFinder, inlineDiscs, myGrades, onFindInline, objectivesHere, onObjectives, onNear, first }: AreaActionRowProps) {
   const [inlineOpen, setInlineOpen] = useState(false);
   const inline = !!(inlineDiscs && inlineDiscs.length && onFindInline);
-  const chip = (on: boolean) => ({ flex: "1 1 0", minWidth: 0, minHeight: 44, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, padding: "0 6px", borderRadius: 10, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" as const, overflow: "hidden" });
+  const chip = (on: boolean) => ({ flex: "1 1 0", minWidth: 0, minHeight: 44, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, padding: "0 6px", borderRadius: 10, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.text, fontSize: 13, fontWeight: 700, lineHeight: 1.2, textAlign: "center" as const, cursor: "pointer" });
   const objLabel = objectivesHere == null ? "Objectives" : objectivesHere + " objective" + (objectivesHere !== 1 ? "s" : "") + " here";
   // Three chips share a ~330px column on the website, so the word stays short and the count is a badge.
   return <div style={{ padding: "12px 14px", borderTop: first ? "none" : "1px solid " + C.border }}>
     <div role="group" aria-label="Find climbs here" style={{ display: "flex", gap: 8 }}>
       {routeCount > 0 ? <button onClick={() => (inline ? setInlineOpen(o => !o) : onFinder())} aria-expanded={inline ? inlineOpen : undefined} style={{ ...chip(true), minHeight: 44 }}>
-        <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{"Route finder"}</span>
+        <span>{"Route finder"}</span>
         {inline ? <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron open={inlineOpen} size={13} color={"currentColor"} /></span> : null}
       </button> : null}
       <button onClick={onObjectives} aria-label={objectivesHere == null ? "My objectives in this area" : objLabel + " — open them"} style={chip(false)}>
         <span aria-hidden="true" style={{ color: C.amber, flexShrink: 0 }}>{"★"}</span>
-        <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>{"Objectives"}</span>
+        <span>{"Objectives"}</span>
         {objectivesHere ? <span aria-hidden="true" style={{ flexShrink: 0, minWidth: 18, padding: "1px 6px", borderRadius: 9, background: C.amber, color: "#1a1200", fontSize: 11, fontWeight: 800, lineHeight: "16px", textAlign: "center" }}>{objectivesHere}</span> : null}
       </button>
-      <button onClick={onNear} style={{ ...chip(false), flex: "0.7 1 0" }}>{"Map"}</button>
+      <button onClick={onNear} style={{ ...chip(false), flex: "0 0 auto", padding: "0 14px" }}>{"Map"}</button>
     </div>
     {inline && inlineOpen && inlineDiscs && onFindInline ? <div style={{ marginTop: 10 }}><RouteFinderInline discs={inlineDiscs} myGrades={myGrades ?? null} onFind={onFindInline} C={C} /></div> : null}
   </div>;
