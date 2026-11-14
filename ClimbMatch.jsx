@@ -61,7 +61,7 @@ import { askConfirm } from "./lib/ConfirmSheet.jsx";
 import { tripRowToActivity } from "./lib/tripReportRow.js";
 import { CondPrefsControls, useCondPrefsAccount, useCondPrefs, useCondSync } from "./lib/CondPrefs.jsx";
 import { photoThumb, thumbFallback } from "./lib/photoThumb";
-import { useWideScreen, useFullWidth, useAdSideWidth, wideGeom, wideColumn, wideRail, wideLeft, wideTopBar, wideTopRow, wideNavStrip, wideCss, HEAD_H, ZOOM } from "./lib/wideLayout.js";
+import { useWideScreen, useFullWidth, useAdSideWidth, wideGeom, wideColumn, wideRail, wideLeft, wideTopBar, wideTopRow, wideNavStrip, wideCss, ZOOM } from "./lib/wideLayout.js";
 import { useInstallPrompt } from "./lib/installPrompt.js";
 import { SideAd, RailAd, FollowColumn, adsActive } from "./lib/Ads.jsx";
 import { WideSearch, WideRail, WideFooter, DocTitle, AvatarMenu } from "./lib/DesktopShell.jsx";
