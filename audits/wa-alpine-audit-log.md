@@ -38748,3 +38748,34 @@ trace to the print-only *Olympic Mountains: A Climbing Guide* — but nothing co
 so they're carried forward rather than flagged, consistent with this row's own `data_quality` gaps.
 
 Next batch will continue id-ascending from `wa_the_monk_scabo`.
+
+## 2026-11-14 — batch 547 (pass 8)
+
+Checked the next 8 in-scope routes id-ascending from `wa_the_monk_scabo`: both remaining West
+Cracks lines on The Monk (Pasayten), The Needle's Neve Glacier route, The Pleiades' Glacier/Scramble
+Route, both Pyramid (Southern Pickets) lines, The Rake's Ridge Traverse Route, and Unicorn Peak's
+The Roof.
+
+**Confirmed error (fixed, 2 SQL statements, one file):** `wa_the_monk_west_cracks_left_crack` and
+`wa_the_monk_west_cracks_right_crack` carry the exact same wrong `high_point_ft` (8606, Cathedral
+Peak's elevation, not The Monk's own) that batch 546 just fixed for this peak's other three
+routes — same import mix-up, now caught on all five. Live DB still shows 8606 across the board, so
+batch 546's proposed fix hasn't been applied yet either; both files together cover the peak.
+
+**Flagged for human review:** `wa_the_rake_traverse_route`'s `high_point_ft` (7869) vs. Steph
+Abegg's Southern Pickets trip-report page, which lists The Rake (aka "The Blob") at 7840 ft — a
+29 ft gap from a single secondary source with nothing else to corroborate either figure. No fix
+proposed; needs a USGS quad, ListsOfJohn (no dedicated page found for this peak), or Beckey's guide
+to arbitrate.
+
+**Clean:** `wa_the_needle_neve_glacier` (8079 ft stored vs. ListsOfJohn's 8,081 ft LiDAR figure —
+within survey noise; 1931 Degenhardt/Strandberg FA confirmed via SummitPost); `wa_the_pleiades_scramble`
+(elevation ambiguity already disclosed in the row's own `data_quality`; this run's search turned up
+yet more disagreeing secondary figures but nothing that resolves it, so left as already-flagged);
+`wa_the_pyramid_picket_east_ridge` (thin standalone beta already disclosed, nothing to verify
+against); `wa_the_pyramid_picket_south_route` (7,920 ft stored matches a Southern Pickets
+trip-report figure exactly; the Grade III/5.6 vs. logged Class 3 ambiguity is a pre-existing
+`data_quality` gap, not new); `wa_the_roof` (Unicorn Peak's 6,971 ft summit elevation matches
+Wikipedia exactly).
+
+Next batch will continue id-ascending from `wa_the_roof`.
