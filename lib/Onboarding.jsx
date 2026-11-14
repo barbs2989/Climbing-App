@@ -147,7 +147,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
     const where=(homeQ||"").trim()||home;
     const rows=[].concat(
       [["partners","Find climbing partners",required?"Add your zip and see climbers near you":"Browse climbers and crews near you","partners"]],
-      required&&!ava?[["camera","Add a profile photo","Partners choose who to climb with by face","photo"]]:[],
+      required&&!ava?[["camera","Add a profile photo","Optional — helps partners recognise you at the crag","photo"]]:[],
       required?[["pin","List the areas you climb","So climbers there can find you","areas"]]:[],
       [["mountain","Explore climbs","Conditions, beta and plans for your next objective","climbs"]]);
     body=<div style={{textAlign:wide?"left":"center"}}>
@@ -198,7 +198,7 @@ export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,on
     const shown=ava||(googlePhoto?bigGooglePhoto(googlePhoto):"");
     const pick=(e)=>{const f=e.target.files&&e.target.files[0];e.target.value="";if(f)keepPhoto(f,null);};
     body=<div>
-      {H("camera","Add a profile photo","Partners like to know who they’re meeting at the crag. A clear photo of your face works best.",true)}
+      {H("camera","Add a profile photo","Not needed to find partners — it just helps them recognise you at the crag. A clear photo of your face works best.",true)}
       <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:12,margin:"6px 0 4px"}}>
         <label aria-label={ava?"Choose a different photo":"Choose a photo"} style={{position:"relative",cursor:avaBusy?"default":"pointer",borderRadius:"50%"}}><Av src={shown} size={132}/><span aria-hidden="true" style={{position:"absolute",right:4,bottom:4,width:38,height:38,borderRadius:19,background:C.blueSolid,border:"3px solid "+C.bg,display:"flex",alignItems:"center",justifyContent:"center"}}><ActionIcon name="camera" size={17} color={C.onSolid}/></span><input type="file" accept="image/*" disabled={avaBusy} onChange={pick} style={{display:"none"}}/></label>
         {!ava&&googlePhoto?<div style={{fontSize:13,color:C.textSub,textAlign:"center"}}>Your Google photo — use it, or tap to choose another.</div>:null}
