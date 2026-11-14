@@ -97,6 +97,9 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   setting plus a summit or ridge-crest finish, a long backcountry approach, or snow or glacier travel. A commitment grade
   or a long route alone is not alpine. Migration 0413 (#3242) moved 306 trad routes to alpine under this rule; the
   sourced rule is in `research-data/trad-alpine-2026-11-11/RULE.md`, each call with its reason in `decisions.json` beside it.
+  A second pass (0418) read all 78,452 trad routes for approach and descent signals (camp, bivy, glacier, a
+  multi-hour or multi-mile walk) and moved 84 more (`pass2-decisions.json` beside it); only ~1% of trad routes
+  carry approach text, so a backcountry route with none is still not caught.
   Discipline is locked against climber edits (0406), so a re-filing is an owner migration.
 - **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
   sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show

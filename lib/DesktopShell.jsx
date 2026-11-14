@@ -18,7 +18,7 @@ import { LogTagRow } from "./LogTagConfirmations.jsx";
    phone app never mounts it — except WideSearch, which the phone's Climbs tab also mounts INLINE
    (owner 2026-11-04). The top bar's search, the right rail's widgets and the site footer. */
 
-const SECTION = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted };
+const SECTION = { fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label };
 const CARD = { background: C.surface, border: "1px solid " + C.border, borderRadius: 14, padding: "14px 14px 12px" };
 const ROW = { width: "100%", display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", border: "none", borderRadius: 10, background: "transparent", color: C.text, cursor: "pointer", textAlign: "left" };
 
@@ -341,7 +341,17 @@ const FOOT_MAX = 1320;
 function useClientWidth() {
   const read = () => (typeof document !== "undefined" ? document.documentElement.clientWidth : 0);
   const [w, setW] = useState(read);
-  useEffect(() => { const sync = () => setW(read()); sync(); window.addEventListener("resize", sync); return () => window.removeEventListener("resize", sync); }, []);
+  // A window resize is not the only change: a page that loads short has no scrollbar, and when its
+  // content then grows the classic scrollbar appears and clientWidth drops ~15px with NO resize event,
+  // leaving the band that much wider than the window (a horizontal scrollbar on every long desktop page,
+  // 2026-11-12). The root element's box changes size then, so a ResizeObserver on it catches it.
+  useEffect(() => {
+    const sync = () => setW(read()); sync();
+    window.addEventListener("resize", sync);
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(sync) : null;
+    if (ro) ro.observe(document.documentElement);
+    return () => { window.removeEventListener("resize", sync); if (ro) ro.disconnect(); };
+  }, []);
   return w;
 }
 export function WideFooter({ onOpenState, explore, links, legal, showStates }) {

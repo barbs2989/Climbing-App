@@ -11,6 +11,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page). The Discussion is on the area page only: not under
   the area **Map** (`screen` "near"), the Route finder or Objectives (owner, 2026-11-11). RoutesTab hands it to `DbAreaBrowser` as the
   `areaDiscussion` prop, and the browser draws it right after `<AreaPage>`.
+  On the website (1024px+) *Don’t see a climb here?*, *Know <area>? Suggest an edit* and *Wrong place? Tell us where* are ONE row of
+  question + button cells (`AddHereFooter`'s `cell` mode), not a stack (owner 2026-11-05); the phone keeps the stack. A wall's climb
+  list opens its filters from a full-size *Filters* button (BTN_LG), not a chip.
   On the website (1024px+) each child's card carries a five-bar **mini grade chart** (`WallGradeBars`, competitor review item 13,
   2026-11-05): the child's graded climbs banded on its main grading scale (rock ≤5.7 · 5.8–9 · 5.10 · 5.11 · 5.12+; V, WI, M, aid and
   class scales have their own five bands), lowest band on the left, read in ONE call for the whole list by `useAreaChildrenGradeCounts`
@@ -97,6 +100,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   before it sends. It files a `contributions` row of kind `new_area` (area_id = the parent); nothing shows until the owner approves it
   in Menu › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
+- **Route finder on the website** (competitor review batch B, item 11, owner 2026-11-04): the results header reads the active filters as one line (*42 climbs · Sport · 5.8–5.10 · 2+ pitches · sorted by …*, the chips' own labels); at 1024px+ a **Compact rows** toggle (remembered on the device, `cm_finder_compact`; it draws `RouteRow`'s `dense` one-line row, the same one the website's classics list uses) and **Export CSV** of the loaded results (`lib/csv.js` `downloadCsv`: climb, grade, discipline, pitches, stars, wall or area). The phone keeps its cards.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   The website header's typed search opens the finder through `jumpToFinderReq` with `initial` words and filters (there is no *Save search* any more; saved searches were removed 2026-11-05).
@@ -236,7 +240,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
 | `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card (`flat` in the area sheet: words, then the map) |
 | `src/components/AreaActionRow.tsx` | `AreaActionRow`, the Route finder · Objectives · Map row |
-| `src/components/AreaChildrenList.tsx` | `AreaChildrenList`, every sub-area: on the website (1280px+) portalled by `AreaPage` into App's left panel (`#cm-left-panel`; map thumbnail, grade bars, ★ objectives), otherwise the phone section |
+| `src/components/AreaChildrenList.tsx` | `AreaChildrenList`, every sub-area: on the website (1280px+) portalled by the area page into App's left panel (`#cm-left-panel`; map thumbnail, grade bars, ★ objectives), otherwise the phone section |
 | `src/components/AreaPhotoStrip.tsx` | `AreaPhotoStrip`, the thin photo strip: area photos and every route photo under the area (0411) |
 | `src/components/AddHereFooter.tsx` | `AddHereFooter`, the add-a-climb footer |
 | `lib/nearbyPeaks.js` | `nearbyPeaksBounds`, `nearbyPeaksRows`, `nearbyPeaksLive` |

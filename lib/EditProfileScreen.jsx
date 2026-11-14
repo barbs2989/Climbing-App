@@ -82,7 +82,7 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
   const ok=!uErr&&!nErr;
   /* An EMPTY username shows its reason at once: every new account has none, and a greyed Save with nothing saying why read as a broken editor. */
   const uShow=(uTouched||!draft.username.trim())&&uErr;
-  const lbl={fontSize:12,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:5,marginTop:14};
+  const lbl={fontSize:12,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:5,marginTop:14};
   const inp=INPUT(C);
   return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",justifyContent:"space-between",zIndex:2}}>

@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 87 tables, 871 columns, 457 keyed/checked constraints (157 foreign keys), 266 RLS policies.
+-- Counts: 86 tables, 863 columns, 451 keyed/checked constraints (153 foreign keys), 264 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -20,10 +20,6 @@
 -- app_feedback (app_feedback_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- areas (areas_parent_id_fkey): FOREIGN KEY (parent_id) REFERENCES areas(id)
 -- areas (areas_walkin_submission_id_fkey): FOREIGN KEY (walkin_submission_id) REFERENCES gps_submissions(id) ON DELETE SET NULL
--- belay_catches (belay_catches_belayer_id_fkey): FOREIGN KEY (belayer_id) REFERENCES auth.users(id) ON DELETE CASCADE
--- belay_catches (belay_catches_climb_log_id_fkey): FOREIGN KEY (climb_log_id) REFERENCES climb_logs(id) ON DELETE SET NULL
--- belay_catches (belay_catches_climber_id_fkey): FOREIGN KEY (climber_id) REFERENCES auth.users(id) ON DELETE CASCADE
--- belay_catches (belay_catches_filed_by_fkey): FOREIGN KEY (filed_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- blocked_users (blocked_users_blocked_fkey): FOREIGN KEY (blocked) REFERENCES auth.users(id) ON DELETE CASCADE
 -- blocked_users (blocked_users_blocker_fkey): FOREIGN KEY (blocker) REFERENCES auth.users(id) ON DELETE CASCADE
 -- climb_log_confirmations (climb_log_confirmations_log_id_fkey): FOREIGN KEY (log_id) REFERENCES climb_logs(id) ON DELETE CASCADE
@@ -324,26 +320,6 @@ CREATE TABLE public.areas (
 );
 ALTER TABLE public.areas ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "areas public read" ON public.areas AS PERMISSIVE FOR SELECT TO public USING (true);
-
-CREATE TABLE public.belay_catches (
-  id uuid NOT NULL DEFAULT gen_random_uuid(),
-  belayer_id uuid NOT NULL,
-  climber_id uuid NOT NULL,
-  climb_log_id uuid,
-  date_occurred date NOT NULL,
-  description text,
-  created_at timestamp with time zone DEFAULT now(),
-  filed_by uuid,
-  CONSTRAINT belay_catches_pkey PRIMARY KEY (id),
-  CONSTRAINT belay_catches_not_self CHECK ((belayer_id <> climber_id)),
-  CONSTRAINT belay_catches_belayer_id_fkey FOREIGN KEY (belayer_id) REFERENCES auth.users(id) ON DELETE CASCADE,
-  CONSTRAINT belay_catches_climb_log_id_fkey FOREIGN KEY (climb_log_id) REFERENCES climb_logs(id) ON DELETE SET NULL,
-  CONSTRAINT belay_catches_climber_id_fkey FOREIGN KEY (climber_id) REFERENCES auth.users(id) ON DELETE CASCADE,
-  CONSTRAINT belay_catches_filed_by_fkey FOREIGN KEY (filed_by) REFERENCES auth.users(id) ON DELETE SET NULL
-);
-ALTER TABLE public.belay_catches ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "log belay catches" ON public.belay_catches AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = belayer_id) OR (( SELECT auth.uid() AS uid) = climber_id)));
-CREATE POLICY "view own belay catches" ON public.belay_catches AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = belayer_id) OR (( SELECT auth.uid() AS uid) = climber_id)));
 
 CREATE TABLE public.blocked_users (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
