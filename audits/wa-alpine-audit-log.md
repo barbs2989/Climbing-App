@@ -38900,3 +38900,48 @@ confirms the June 4, 2023 FA with Michael Telstad, 6 pitches, 5.11, ~700 ft — 
 stored 213 m).
 
 Next batch will continue id-ascending from `wa_upper_north_ridge_w_great_gendarme`.
+
+## 2026-11-14 — batch 551 (pass 8)
+
+Checked the next 8 in-scope routes id-ascending from `wa_upper_north_ridge_w_great_gendarme`:
+Vasiliki Ridge's Standard Route (Ares Tower), Vesper Peak's North Face, Wallaby Peak's Standard
+Route, Warrior Peak's Southeast Peak Standard, the Washington-Ellinor Traverse, West Craggy
+Peak's Standard Route, North Peak's West Face, and West Twin Needle's South Route. (Five
+candidates in between — `wa_vanishing_point`, `wa_west_face` on area `wa_south_peak`,
+`wa_west_ridge_2`, `wa_western_dihedral`, and `wa_waterfall_buttress` — were skipped as out of
+scope: all five areas are `area_type = 'crag'`, not `peak`.)
+
+Three confirmed errors fixed this batch, and all three were a new pattern for this audit: not a
+source dispute, but a row contradicting its *own* stated conclusion.
+
+- `wa_vasiliki_ridge_standard`'s `high_point_ft` was 8,190 ft, but the row's own `corrections`
+  field explicitly says "the more precise 8,203 ft figure is used here as highPointFt" — and the
+  route's own Ares Tower summit waypoint already carries 8,203 ft. `high_point_ft` alone was left
+  on the superseded figure. Fixed to 8,203 ft.
+- `wa_west_craggy_peak_standard_route` is the mirror case: `high_point_ft` correctly holds 8,372
+  ft, matching the row's own `corrections` field ("8,372 ft is used here as the most commonly
+  cited figure"), but the West Craggy Peak summit *waypoint* was still at the superseded 8,366 ft
+  in both its `elev` and `elevFt` keys. Fixed the waypoint to 8,372 ft to match.
+- `wa_washington_ellinor_traverse_ridge` stores Mount Washington's summit as 6,260 ft in both
+  `high_point_ft` and its own summit waypoint — a figure Wikipedia and Mountain Project
+  independently agree on. But the row's `approach_variants` prose instead cited "the 6,255 ft
+  summit" (SummitPost's figure, a single outvoted source). Corrected the prose to 6,260 ft to
+  match the row's own better-supported number.
+
+No fixes needed a human judgment call this batch — unusual for a recent batch, but these three
+were plain copy-paste-style internal mismatches rather than genuine source disagreements.
+
+**Clean:** `wa_vesper_peak_north_face` (sparse, unenriched row — Vesper's 6,214 ft summit,
+Headlee Pass/Sunrise Mine trailhead and Vesper Glacier approach all match known beta, nothing
+else to check); `wa_wallaby_peak_standard` (7,995 ft summit and the June 17, 1942 Beckey/Beckey/
+Varney FA both check out, internally consistent throughout); `wa_warrior_peak_standard` (7,314-
+7,320 ft southeast summit, 1945 Beckey solo FA of both summits, Home Lake/Constance Pass approach
+all consistent and well-corroborated); `wa_west_face_2` (North [Gunsight] Peak's West Face —
+confirmed the 1986 Nelson/Dietrich aid FA and the July 25, 2007 Hasson/Holsten onsight free
+ascent at 5.11+/5.11c via Alpinist and StephAbegg; one secondary source cites a 2006 second-ascent
+trip report that would predate the 2007 FFA, a minor conflict not resolvable from available
+sources but not worth a flag since it doesn't touch any stored field); `wa_west_twin_needle_south_route`
+(7,936 ft summit and the August 17, 1932 Degenhardt/Martin/Strandberg FA of the Twin Needles both
+confirmed, approach and route description internally consistent throughout).
+
+Next batch will continue id-ascending from `wa_west_twin_needle_south_route`.

@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 8,
-  "last_processed_id": "wa_upper_north_ridge_w_great_gendarme",
+  "last_processed_id": "wa_west_twin_needle_south_route",
   "total_in_scope_last_count": 751,
   "total_wa_alpine_or_mountaineering_tagged": 857,
-  "pass_note": "Pass 8 in progress, batch 550 complete. Continuing id-ascending scope from wa_upper_north_ridge_w_great_gendarme. No confirmed errors fixed this batch (all three discrepancies found need a structural fix or a judgment call, not a column patch -- see batch note). Three flagged for human review: Ultramega OK's pitch count vs. its own pitch_detail split, Union Peak's gain_ft start-point convention vs. WTA, and Mount Stuart's North Ridge FA attribution (conflicting secondary sources on both the 1956 and 1964 ascents). total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
+  "pass_note": "Pass 8 in progress, batch 551 complete. Continuing id-ascending scope from wa_west_twin_needle_south_route. Three confirmed errors fixed this batch, all internal self-consistency bugs rather than source disputes: wa_vasiliki_ridge_standard's high_point_ft (8190) didn't match the value its own corrections field said it adopted (8203); wa_west_craggy_peak_standard_route's summit waypoint (8366) didn't match the value its own corrections field said it adopted (8372); wa_washington_ellinor_traverse_ridge's approach_variants prose cited a different Mount Washington summit elevation (6,255 ft) than the row's own high_point_ft/waypoint (6,260 ft, the figure Wikipedia and Mountain Project agree on). total_wa_alpine_or_mountaineering_tagged unchanged, so total_in_scope_last_count carried over unchanged.",
   "batches": [
     {
       "batch_number": 1,
@@ -10935,6 +10935,25 @@
       "clean": 5,
       "sql_file": null,
       "note": "Three discrepancies needed a structural fix or a judgment call, so none was auto-fixed: wa_ultramega_ok's pitches=8 disagrees with three sources describing a 7-pitch route, but the stored pitch_detail (8 entries) doesn't align pitch-for-pitch with the sourced grade sequence, so bumping the count alone would trade one inconsistency for another; wa_union_peak_se_route's gain_ft (1,696, from the Smithbrook Trailhead) disagrees with WTA's published 1,096 ft, likely a different start-point convention rather than an error; wa_upper_north_ridge_w_great_gendarme's two-stage FA attribution (1956 bypass, 1964 direct) has conflicting secondary sources on both halves with no clean authoritative answer. Two routes between the prior batch and this one (wa_vanishing_point, wa_waterfall_buttress) were skipped as out of scope -- both areas are area_type='crag', not 'peak'."
+    },
+    {
+      "batch_number": 551,
+      "date": "2026-11-14",
+      "route_ids": [
+        "wa_vasiliki_ridge_standard",
+        "wa_vesper_peak_north_face",
+        "wa_wallaby_peak_standard",
+        "wa_warrior_peak_standard",
+        "wa_washington_ellinor_traverse_ridge",
+        "wa_west_craggy_peak_standard_route",
+        "wa_west_face_2",
+        "wa_west_twin_needle_south_route"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 0,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-11-14-batch-551.sql",
+      "note": "Three internal self-consistency bugs fixed, none a source dispute: wa_vasiliki_ridge_standard's high_point_ft (8190) contradicted its own corrections field, which said 8203 was adopted (matching its own summit waypoint); wa_west_craggy_peak_standard_route's summit waypoint (8366 ft) contradicted its own corrections field, which said 8372 ft was adopted (matching its own high_point_ft); wa_washington_ellinor_traverse_ridge's approach_variants prose named a different Mount Washington elevation (6,255 ft, SummitPost) than its own stored high_point_ft/waypoint (6,260 ft, which Wikipedia and Mountain Project both independently confirm). Five candidates between the prior batch and this one (wa_vanishing_point, wa_west_face [area wa_south_peak], wa_west_ridge_2, wa_western_dihedral, wa_waterfall_buttress) were skipped as out of scope -- all five areas are area_type='crag', not 'peak'."
     }
   ],
   "outage_runs": [
