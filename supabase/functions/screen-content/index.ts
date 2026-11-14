@@ -10,12 +10,15 @@
 //          policy, so it cannot be the image filter.
 // Each is inert until its key is set; the floor (0265's term list) runs regardless.
 //
-// The caller is the database, so there is no user JWT: deploy with --no-verify-jwt. That is safe
-// because the only thing a caller can cause is a SCREENING of a row that already exists — at most once
-// per row (a per-row rate bucket), under an hourly cap — and screening can only hold, never publish.
+// The caller is the database, so there is no user JWT: deploy with --no-verify-jwt. The database
+// SIGNS each call instead (0429: HMAC over timestamp, kind and id, 10-minute freshness), so a forged
+// or replayed call is refused before anything is read. Behind that, a caller can only cause a
+// SCREENING of a row that already exists — at most once per row (a per-row rate bucket), under an
+// hourly cap — and screening can only hold, never publish.
 //
 // Deploy:  npx supabase functions deploy screen-content --no-verify-jwt
-// Secrets: ANTHROPIC_API_KEY (text); AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION (images)
+// Secrets: SCREEN_HOOK_SECRET (same value as app_secrets.screen_hook_secret, see 0429);
+//          ANTHROPIC_API_KEY (text); AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION (images)
 // Wire:    insert into app_settings (key, value) values ('screen_hook_url', '<project>/functions/v1/screen-content');
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -24,10 +27,26 @@ import { zodOutputFormat } from "npm:@anthropic-ai/sdk@0.132.1/helpers/zod";
 import { z } from "npm:zod@4.6.5";
 import { RekognitionClient, DetectModerationLabelsCommand } from "npm:@aws-sdk/client-rekognition@3.1147.0";
 import { allow, DAY, HOUR } from "../_shared/ratelimit.ts";
+import { checkHook } from "../_shared/hooksig.ts";
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+// Every accepted call answers the same {ok:true}, whatever happened: the result (held or not, why,
+// the classifier's category) is never told to the caller. The trigger posts through pg_net and
+// reads nothing back; outcomes live in screening_hold / moderation_actions.
+const DONE = () => json({ ok: true });
+// This project's public Storage objects, e.g. <SUPABASE_URL>/storage/v1/object/public/...
+const STORAGE_PREFIX = (() => {
+  try { return new URL(Deno.env.get("SUPABASE_URL") || "").origin + "/storage/v1/object/public/"; } catch (_e) { return null; }
+})();
+function isOwnStorageUrl(u: string): boolean {
+  if (!STORAGE_PREFIX) return false;
+  try {
+    const p = new URL(u);
+    return p.protocol === "https:" && !p.username && !p.password && (p.origin + p.pathname).startsWith(STORAGE_PREFIX);
+  } catch (_e) { return false; }
+}
 
 // kind -> where it lives and which columns are words / pictures.
 const KINDS: Record<string, { table: string; text: string[]; images?: (r: any) => string[] }> = {
@@ -79,28 +98,32 @@ serve(async (req) => {
     const kind = body && body.kind, id = body && body.id;
     const spec = typeof kind === "string" ? KINDS[kind] : undefined;
     if (!spec || typeof id !== "string" || !UUID_RE.test(id)) return json({ error: "Missing or invalid kind/id" }, 400);
+    const sig = await verifyHook(req, kind, id);
+    if (sig !== "ok") return json({ error: "Unauthorized", reason: sig }, 401);
 
     const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
     // Once per row (an edit re-screens through a new bucket key: the row's updated text hash), under
     // an hourly cap. Fails CLOSED like every other limiter here: if the limiter cannot be read,
     // nothing is screened -- the floor still ran inside the insert.
     const { data: row } = await supabase.from(spec.table).select("*").eq("id", id).maybeSingle();
-    if (!row) return json({ screened: false, reason: "not_found" });
-    if (row.moderation !== "visible") return json({ screened: false, reason: "not_visible" });
-    if (kind === "trip_report" && row.trip_report_visibility === "private") return json({ screened: false, reason: "private" });
+    if (!row) return DONE();
+    if (row.moderation !== "visible") return DONE();
+    if (kind === "trip_report" && row.trip_report_visibility === "private") return DONE();
     const text = spec.text.map((c) => (typeof row[c] === "string" ? row[c] : "")).filter(Boolean).join("\n").slice(0, 12000);
-    const images = spec.images ? spec.images(row) : [];
+    // Only images in this project's own Storage are fetched; any other URL is skipped (never a
+    // request to an arbitrary host on a row author's say-so).
+    const images = (spec.images ? spec.images(row) : []).filter(isOwnStorageUrl);
     // Nothing to screen WITH: say so before touching the limiter, so a hook wired ahead of the keys
     // costs one read and no writes.
     const haveText = !!Deno.env.get("ANTHROPIC_API_KEY"), haveImages = !!(Deno.env.get("AWS_ACCESS_KEY_ID") && Deno.env.get("AWS_SECRET_ACCESS_KEY"));
-    if (!((haveText && text.trim()) || (haveImages && images.length))) return json({ screened: false, reason: "not_configured" });
+    if (!((haveText && text.trim()) || (haveImages && images.length))) return DONE();
     const fingerprint = id + ":" + (await sha(text + "|" + images.join(",")));
     if (!(await allow(supabase, [
-      { bucket: "screen:row", key: fingerprint, limit: 1, windowSec: 30 * DAY },
+      // 7 days, not 30: the ledger keeps rows for RETENTION_SEC (8 days), so a longer window was a
+      // promise the cleanup broke. Past 7 days a replay is refused by the signed timestamp instead.
+      { bucket: "screen:row", key: fingerprint, limit: 1, windowSec: 7 * DAY },
       { bucket: "screen:all", key: "all", limit: 2000, windowSec: HOUR },
-    ]))) return json({ screened: false, reason: "rate_limited_or_seen" });
-
-    const outcome: Record<string, unknown> = { screened: true };
+    ]))) return DONE(); // already screened (same content) or over the cap: costs nothing more
 
     // ---- TEXT
     const anthropicKey = Deno.env.get("ANTHROPIC_API_KEY");
@@ -115,17 +138,15 @@ serve(async (req) => {
       });
       if (res.stop_reason === "refusal") {
         // The classifier declining to read it is itself a signal; a person looks.
-        const held = await hold(supabase, kind, id, "classifier_declined", "The screening model declined to process this content.");
-        return json({ ...outcome, text: "declined", held });
+        await hold(supabase, kind, id, "classifier_declined", "The screening model declined to process this content.");
+        return DONE();
       }
       const v = res.parsed_output;
-      outcome.text = v ? { verdict: v.verdict, category: v.category, confidence: v.confidence } : "unparsed";
+      if (!v) console.warn("screen-content: unparsed classifier output for", kind, id);
       if (v && v.verdict === "hold" && v.category !== "none" && v.confidence >= 0.7) {
-        const held = await hold(supabase, kind, id, v.category, v.reason);
-        return json({ ...outcome, held });
+        await hold(supabase, kind, id, v.category, v.reason);
+        return DONE();
       }
-    } else if (text.trim()) {
-      outcome.text = "not_configured";
     }
 
     // ---- IMAGES
@@ -133,23 +154,20 @@ serve(async (req) => {
     if (images.length && awsKey && awsSecret) {
       const rk = new RekognitionClient({ region: Deno.env.get("AWS_REGION") || "us-west-2", credentials: { accessKeyId: awsKey, secretAccessKey: awsSecret } });
       for (const url of images) {
-        const r = await fetch(url);
-        if (!r.ok) continue;
+        const r = await fetch(url, { redirect: "error" }).catch(() => null);
+        if (!r || !r.ok) continue;
         const bytes = new Uint8Array(await r.arrayBuffer());
         if (bytes.length > 5 * 1024 * 1024) continue; // Rekognition's inline limit
         const out = await rk.send(new DetectModerationLabelsCommand({ Image: { Bytes: bytes }, MinConfidence: 80 }));
         const labels = (out.ModerationLabels || []).map((l) => l.ParentName || l.Name || "").filter(Boolean);
         const bad = labels.find((l) => /Explicit|Nudity|Sexual|Violence|Visually Disturbing|Hate Symbols/i.test(l));
         if (bad) {
-          const held = await hold(supabase, kind, id, "image: " + bad, "Image flagged by automatic screening: " + labels.slice(0, 4).join(", "));
-          return json({ ...outcome, images: labels, held });
+          await hold(supabase, kind, id, "image: " + bad, "Image flagged by automatic screening: " + labels.slice(0, 4).join(", "));
+          return DONE();
         }
       }
-      outcome.images = "clear";
-    } else if (images.length) {
-      outcome.images = "not_configured";
     }
-    return json(outcome);
+    return DONE();
   } catch (err) {
     console.error("screen-content failed:", err && (err as Error).message);
     return json({ error: "internal" }, 500);
@@ -160,6 +178,14 @@ async function hold(supabase: any, kind: string, id: string, category: string, r
   const { data, error } = await supabase.rpc("screening_hold", { p_kind: kind, p_id: id, p_category: category, p_reason: (reason || "").slice(0, 500) });
   if (error) { console.error("screening_hold failed:", error.message); return false; }
   return !!data;
+}
+// The database signs each hook call (0429, _shared/hooksig.ts). With SCREEN_HOOK_SECRET unset this
+// accepts unsigned calls, as before 0429, so the code can ship before the secret does; the rollout
+// steps are in 0429_sign_screen_hook.sql.
+async function verifyHook(req: Request, kind: string, id: string): Promise<string> {
+  const secret = Deno.env.get("SCREEN_HOOK_SECRET");
+  if (!secret) return "ok";
+  return await checkHook(secret, req.headers.get("x-screen-timestamp"), req.headers.get("x-screen-signature"), kind, id);
 }
 async function sha(s: string) {
   const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));

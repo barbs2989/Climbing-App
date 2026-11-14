@@ -4,6 +4,7 @@ import { rowGrade } from "../../lib/areaBrowserShared.js";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import type { RouteRowRoute } from "./RouteRow.tsx";
+import { prefetchAttr } from "./RouteRow.tsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import Chevron from "./Chevron.tsx";
 
@@ -52,7 +53,7 @@ export default function ClassicsList({ rows, total, withWall, dense, onOpen, C, 
           const name = <span style={{ fontSize: 13, fontWeight: 700, color: C.text, overflowWrap: "anywhere", minWidth: 0, flex: dense ? "0 1 auto" : 1 }}>{r.name}</span>;
           const starEl = stars ? <span aria-label={stars + " stars"} style={{ color: C.amber, fontWeight: 700, flexShrink: 0, fontSize: 11 }}>{"★".repeat(stars)}</span> : null;
           const grade = <span style={{ fontSize: 12, color: C.text, flexShrink: 0, fontWeight: 700, minWidth: 40, textAlign: "right" }}>{rowGrade(r)}</span>;
-          return <div key={"classic-" + r.id} {...clickable(() => onOpen(r))} style={{ cursor: "pointer", padding: "6px 10px", minHeight: 36, boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", background: i % 2 ? "transparent" : "rgba(255,255,255,0.035)", borderTop: i ? "1px solid " + C.border : "none" }}>
+          return <div key={"classic-" + r.id} {...clickable(() => onOpen(r))} {...prefetchAttr(r)} style={{ cursor: "pointer", padding: "6px 10px", minHeight: 36, boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", background: i % 2 ? "transparent" : "rgba(255,255,255,0.035)", borderTop: i ? "1px solid " + C.border : "none" }}>
             {dense
               ? <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>{marks}<div style={{ flex: 1, minWidth: 0, lineHeight: 1.35, overflowWrap: "anywhere" }}>{name}{sub ? <span style={{ fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{sub}</span> : null}</div>{starEl}{grade}</div>
               : <>

@@ -66,7 +66,7 @@ export default function TripProfileCard({route,calc}: TripProfileCardProps){
     <SL>{"TRIP PROFILE"}</SL>
     <div style={{background:C.surface,borderRadius:10,padding:"4px 12px 11px",border:"1px solid "+C.border,marginBottom:12}}>
       {upLegs}{dnLegs}
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:6}}>{"Each leg is measured along the recorded track between its own waypoints, and the whole approach and descent are the figures GETTING THERE and DESCENT print. "+(tp.climbBy==="track"?"Distance and climb are split by the track":tp.climbBy==="pins"?"Distance is split by the track, and climb by the height change between the waypoints":"Distance is split by the track; no climb is measured for the legs")+"; time is split by the walk model at the pace, pack and party in Full trip time."+(tp.offTrack?" "+tp.offTrack+(tp.offTrack===1?" waypoint sits":" waypoints sit")+" off the recorded track, so "+(tp.offTrack===1?"it has":"they have")+" no leg of "+(tp.offTrack===1?"its":"their")+" own.":"")}</div>
+      {tp.offTrack?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:6}}>{tp.offTrack+(tp.offTrack===1?" waypoint sits":" waypoints sit")+" off the recorded track, so "+(tp.offTrack===1?"it has":"they have")+" no leg of "+(tp.offTrack===1?"its":"their")+" own."}</div>:null}
     </div>
   </div>;
 }

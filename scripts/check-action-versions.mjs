@@ -67,12 +67,21 @@ if (!files.length) dead("no workflow files found — the scan is broken, not the
 // carries a past-tense account of the 2026-08-06 outage that NAMES `deploy-pages@v4`. That
 // prose is history and must not read as a pin. Same rule as check:ci-cancel, which had to
 // strip comments for exactly the same reason one file over.
+//
+// SHA PINS. Every action is pinned to a full commit SHA, because a tag is a pointer its owner can
+// move and a SHA cannot. The version then lives ONLY in the trailing `# vX.Y.Z` label Dependabot
+// keeps in step with the SHA -- so for a SHA pin, and only for one, that one comment is read.
+// It is anchored to the SHA on the same `uses:` line, so free-standing prose still cannot match.
 const uses = [];
+const refs = []; // every non-local `uses:` ref, including ones the floor regex skips (actions/cache/*)
 for (const f of files) {
   const src = fs.readFileSync(path.join(WF, f), "utf8");
   src.split("\n").forEach((line, i) => {
     const code = line.replace(/#.*$/, "");
-    const m = /uses:\s*([\w.-]+\/[\w.-]+)@v(\d+)/.exec(code);
+    const r = /uses:\s*["']?([^\s"']+)/.exec(code);
+    if (r && !r[1].startsWith("./") && !r[1].startsWith("docker://")) refs.push({ file: f, line: i + 1, ref: r[1] });
+    const s = /uses:\s*([\w.-]+\/[\w.-]+)@[0-9a-f]{40}\s+#\s*v(\d+)\b/.exec(line);
+    const m = s || /uses:\s*([\w.-]+\/[\w.-]+)@v(\d+)/.exec(code);
     if (m) uses.push({ file: f, line: i + 1, action: m[1], major: Number(m[2]) });
   });
 }
@@ -108,6 +117,24 @@ for (const a of Object.keys(FLOORS))
   if (!inUse.has(a)) fail(`FLOORS declares ${a}, which no workflow uses. Stale bookkeeping — remove it.`);
 if ([...Object.keys(FLOORS)].every((a) => inUse.has(a))) ok(`no stale FLOORS entry`);
 
+// 5. Every action ref is a full commit SHA carrying a `# vX.Y.Z` label. A tag (`@v7`) can be
+// re-pointed upstream and change what runs with this repo's GITHUB_TOKEN and deploy secrets
+// without a commit here; an unlabelled SHA is invisible to check 1 above, which reads the label.
+let unpinned = 0;
+for (const r of refs) {
+  if (!/@[0-9a-f]{40}$/.test(r.ref)) {
+    unpinned++;
+    fail(`${r.file}:${r.line} uses ${r.ref}, which is not a commit SHA. Pin it as ` +
+         `\`owner/repo@<40-char sha> # vX.Y.Z\`; the SHA a tag points at is the first column of ` +
+         `\`git ls-remote https://github.com/<owner>/<repo> 'refs/tags/<tag>^{}' 'refs/tags/<tag>'\`.`);
+  } else if (/^[\w.-]+\/[\w.-]+@/.test(r.ref) && !uses.some((u) => u.file === r.file && u.line === r.line)) {
+    unpinned++;
+    fail(`${r.file}:${r.line} pins ${r.ref} with no \`# vX.Y.Z\` label after it. The label is ` +
+         `where the version lives once the ref is a SHA -- without it the floor cannot be checked.`);
+  }
+}
+if (!unpinned) ok(`all ${refs.length} action refs are commit SHAs`);
+
 // 4. The Node the guards run on. Same regression shape as an action pin and the same cause:
 // a new job copied from an older block. Comments are stripped above, so prose recording the
 // old value cannot read as a pin.
@@ -140,3 +167,6 @@ console.log("check:action-versions ok — no workflow pins an action below the v
 //   5. break the `uses:` regex             -> DIED "found NO action pins", never ok
 //   6. pin node-version back to 20          -> FAIL naming file, line and NODE_FLOOR
 //   7. break the node-version regex         -> DIED "found NO node-version pins", never ok
+//   8. checkout pinned by tag, not SHA      -> FAIL "not a commit SHA"
+//   9. SHA pin with its `# v7.0.1` removed  -> FAIL "no `# vX.Y.Z` label"
+//  10. actions/cache/restore by tag         -> FAIL "not a commit SHA" (outside FLOORS, still checked)

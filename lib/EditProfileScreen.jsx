@@ -6,8 +6,9 @@ import { USE_DB } from "./supabase";
 import { POP_REMOVE } from "./popupChrome.js";
 import { removeProfileAvatar, saveProfileAvatar, uploadProfilePhoto, useZipCentroid, zipState } from "./db";
 import { useEffect, useState } from "react";
-import { C, GENDERS, FALLBACK_AV, DOW, AVAIL_SLOT_OPTS, availSlotOn, availSlotToggle, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, skillKeyOf, CERT_GROUPS, certMatches, PROFILE_GRADES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, suggestUsername, profileGradeRows, gradeRoleText } from "../ClimbMatchCore.jsx";
+import { C, GENDERS, FALLBACK_AV, DOW, AVAIL_SLOT_OPTS, availSlotOn, availSlotToggle, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, skillKeyOf, CERT_GROUPS, certMatches, PROFILE_GRADES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, suggestUsername, profileGradeRows, gradeRoleText, ME, DLOCALE } from "../ClimbMatchCore.jsx";
 import { isPracticedMonth, thisMonth } from "./skillPractice.js";
+import { cleanUsername, usernameLock, usernameProblem } from "./username";
 import Av from "../src/components/Av.tsx";
 import DiscIcon from "../src/components/DiscIcon.tsx";
 import Lbl from "../src/components/Lbl.tsx";
@@ -78,7 +79,15 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
   const [uTouched,setUTouched]=useState(false);
   /* NO USERNAME YET: signup asks only for a name, so every new account opens this editor with the field empty -- and Save stays disabled until it is filled, so a new climber's first edit could not be saved at all. Prefill a suggestion, as Instagram does at signup: the name's letters plus four digits, so two climbers called Alex rarely collide on the unique column. Signed-in only; the climber can change it before Save. */
   useEffect(()=>{if(uid&&!(draft.username||"").trim())setDraft(d=>(d.username||"").trim()?d:{...d,username:suggestUsername(d.name)});},[uid]);// eslint-disable-line react-hooks/exhaustive-deps -- once, when the editor opens: re-suggesting after the climber clears the field would fight them
-  const uErr=draft.username.trim().length<3?"Username must be at least 3 characters.":hasVulgarity(draft.username)?"Please choose a different username.":"";
+  /* THE 0432 LOCK, read from the STORED username (ME), not the draft: one change in the first 7 days, then
+     locked. The database enforces it; this only says so before a Save is refused. Signed-in only -- the
+     demo has no database to lock anything in. An UNCHANGED username is never an error, so a handle saved
+     before the stricter character rule still lets the rest of the profile save. */
+  const uLock=uid&&USE_DB?usernameLock(ME.username,ME.usernameSetAt,ME.usernameChanges):{state:"unset"};
+  const uLocked=uLock.state==="locked";
+  const uSame=!!ME.username&&draft.username.trim()===ME.username;
+  const uErr=uSame?"":(uid&&USE_DB)?usernameProblem(draft.username.trim()):draft.username.trim().length<3?"Username must be at least 3 characters.":hasVulgarity(draft.username)?"Please choose a different username.":"";
+  const uNote=uLocked?"Your username is locked. Contact support if it needs to change.":uLock.state==="grace"?("You can change it once, until "+uLock.until.toLocaleDateString(DLOCALE,{month:"short",day:"numeric"})+". After that it’s locked."):"";
   const nErr=draft.name.trim().length<1;
   const ok=!uErr&&!nErr;
   /* An EMPTY username shows its reason at once: every new account has none, and a greyed Save with nothing saying why read as a broken editor. */
@@ -96,8 +105,9 @@ export default function EditProfileScreen({draft,setDraft,onSave,onCancel,onAvat
       <input aria-label="Your name" autoComplete="name" value={draft.name} onChange={e=>set("name",e.target.value)} placeholder="Your name" style={inp}/>
       {nErr?<div style={{fontSize:12,color:C.red,marginTop:4}}>Name cannot be empty.</div>:null}
       <div style={lbl}>Username</div>
-      <input aria-label="username" autoComplete="username" value={draft.username} onChange={e=>set("username",e.target.value.replace(/\s/g,""))} placeholder="username" onBlur={()=>setUTouched(true)} style={{...inp,border:"1px solid "+(uShow?C.red:C.border)}}/>
+      <input aria-label="username" autoComplete="username" value={draft.username} readOnly={uLocked} aria-readonly={uLocked||undefined} onChange={e=>{if(uLocked)return;set("username",uid&&USE_DB?cleanUsername(e.target.value):e.target.value.replace(/\s/g,""));}} placeholder="username" onBlur={()=>setUTouched(true)} style={{...inp,border:"1px solid "+(uShow?C.red:C.border),...(uLocked?{color:C.textSub,background:C.surface,cursor:"not-allowed"}:{})}}/>
       <div style={{fontSize:12,color:uShow?C.red:C.textMuted,marginTop:4}}>{uShow||("Shown publicly as @"+(draft.username.trim()||"username")+". Hide your real name with the toggle below.")}</div>
+      {uNote?<div style={{fontSize:12,color:uLocked?C.textMuted:C.amber,marginTop:4,lineHeight:1.45}}>{uNote}</div>:null}
       <div id="ep-bio" style={hl("bio")}><div style={lbl}>Bio</div>
       <textarea aria-label="Tell partners about your climbing" value={draft.bio} onChange={e=>set("bio",e.target.value)} rows={3} placeholder="Tell partners about your climbing…" style={{...inp,resize:"vertical",fontFamily:"inherit"}}/></div>
       {(()=>{var parts=(draft.location||"").split(",");var curCity=(parts[0]||"");var curAbbr=(parts[1]||"").trim().toUpperCase();var _regions=US_ST.concat(CA_PROV);var curFull=(_regions.find(function(p){return p[1]===curAbbr;})||["",""])[0];var setLoc=function(city,abbr){set("location",abbr?(city+", "+abbr):city);};return <div id="ep-location" style={hl("location")}><div style={lbl}>Home city</div><input aria-label="Start typing your city" autoComplete="address-level2" list="cm-cities" value={curCity} onChange={function(ev){setLoc(ev.target.value.replace(/,.*$/,""),curAbbr);}} placeholder="Start typing your city…" style={inp}/><datalist id="cm-cities">{US_CITIES.map(function(c){return <option key={c} value={c}/>;})}</datalist><div style={{...lbl,marginTop:11}}>State or province</div><select aria-label="Select your state or province" value={curFull} onChange={function(ev){var ab=(_regions.find(function(p){return p[0]===ev.target.value;})||["",""])[1];setLoc(curCity,ab);}} style={{...inp,color:C.text}}><option value="">Select your state or province…</option><optgroup label="United States">{US_ST.map(function(p){return <option key={p[1]} value={p[0]}>{p[0]}</option>;})}</optgroup><optgroup label="Canada">{CA_PROV.map(function(p){return <option key={p[1]} value={p[0]}>{p[0]}</option>;})}</optgroup></select><div style={{fontSize:11.5,color:C.textMuted,marginTop:5,lineHeight:1.45}}>Shown on your profile, and your state’s climbs come first when you search. The city isn’t put on a map: distance to partners and crews is measured from your zip code.</div></div>;})()}
