@@ -2452,7 +2452,7 @@ function OverviewMap({onOpenClimb,onOpenArea,disc,filters,wishlist,scope}){useEf
    two is ever on screen, so a guard can only ever see whichever rendered. Built from the values
    the row itself displays rather than a restatement of them, and the medal is deliberately NOT
    announced -- it is decoration for the top three, and the rank is the fact underneath it. */
-const lbRowName=(rank,name,isMe,verified,location,value,suffix)=>[rank,name,isMe?"you":(verified?"verified":""),location||"",(value==null?"":value+" "+suffix)].filter(Boolean).join(", ");
+const lbRowName=(rank,name,isMe,verified,location,value,suffix)=>[rank,name,isMe?"you":"",location||"",(value==null?"":value+" "+suffix),(!isMe&&verified)?"verified":""].filter(Boolean).join(", ");/* In the order the row SHOWS it (WCAG 2.5.3): the ✓ is a glyph, not a word, so "verified" goes last -- between the name and the town it split the words a voice-control user reads off the row. */
 
 const GUIDE_REVIEWS={
 g1:[
