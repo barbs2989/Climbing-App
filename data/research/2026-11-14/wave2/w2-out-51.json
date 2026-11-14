@@ -1,0 +1,1324 @@
+{
+ "wa_elephant_butte_standard_route": {
+  "area": "wa_elephant_butte",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "NPS backcountry permit required for all overnight stays; permits limited",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/sourdough-mountain-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry permit required for all overnight stays in the Sourdough area; permits are limited"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep snow and routefinding hazards early season; take care crossing Sourdough Creek on snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/sourdough-mountain-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Early season steep snow and routefinding hazards; caution crossing Sourdough Creek on snow"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Sourdough Mountain Trail from Diablo is steep, forest then meadow; 5.2 mi one way to the Sourdough lookout",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/sourdough-mountain-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sourdough lookout 5.2 miles one way; trail steep through forest then meadow, approached from Diablo"
+     }
+    ]
+   },
+   {
+    "field": "camp_rules",
+    "value": "No fires at backcountry camps; pets only within Ross Lake NRA, not at the camps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/noca/planyourvisit/sourdough-mountain-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fires not allowed at backcountry camps; leashed pets only in Ross Lake NRA, not at camps"
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost Elephant Butte page 403 (wall). Steph Abegg Sourdough/Stetattle report has no Elephant Butte figures."
+ },
+ "wa_enchantment_peak_southwest_scramble": {
+  "area": "wa_enchantment_peak",
+  "skip_reason": "Opened mountaineers.org/activities/routes-places/enchantments-area-review/enchantment-peak (approach via Prusik Pass, not the Aasgard/South Gully line; 16 mi/6,100 ft not attributable) and willhiteweb.com/alpine_lakes_wilderness/enchantment_peak/prusik_pass_032.htm (gain from Perfection Lake only). No figure stated for this route from the Stuart Lake TH. SummitPost 403."
+ },
+ "wa_energizer_bunny": {
+  "area": "wa_prusik_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10+ A0",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213722/Prusik-Peak-South-Face-Energizer-Bunny",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 2016 report names the route Energizer Bunny (450 ft, 5.10+ A0)"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Abegg report: Energizer Bunny FA(?) 5.10+ C1, 5 pitches, 450 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Abegg report lists the route as 5 pitches"
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213722/Prusik-Peak-South-Face-Energizer-Bunny",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ text calls it a new five-pitch route"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213722/Prusik-Peak-South-Face-Energizer-Bunny",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ lists the route as 450 ft"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Abegg title lists 450 ft"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Steph Abegg, Jon Pobst, June 2015 (probable FA)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213722/Prusik-Peak-South-Face-Energizer-Bunny",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb year 2015; Jon Pobst and author Abegg; prior ascent possible but unknown"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+      "retrieved_at": "2026-11-14",
+      "fact": "June 14 climb with partner Jon Pobst, FA marked with a question mark"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Crack link-up on left side of Prusik south face just left of Solid Gold; joins Solid Gold after pitch 4; free at 5.8-5.10+ except ~15 ft of 5.11+/5.12- aided",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213722/Prusik-Peak-South-Face-Energizer-Bunny",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cracks left of Solid Gold, joins Solid Gold at end of pitch 4; one 15 ft section pulled on gear"
+     }
+    ]
+   }
+  ],
+  "note": "AAJ article and stephabegg.com are both by Steph Abegg, so counted as one source. Aid noted as A0 (AAJ) vs C1 (Abegg)."
+ },
+ "wa_esmeralda_peaks_scramble": {
+  "area": "wa_esmeralda_peaks",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/teanawayriver/esmeralda/deroux_trail_018.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Willhite lists High Esmeralda: elevation 6,765, 3,000 gain, 4 miles from DeRoux trailhead"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/teanawayriver/esmeralda/deroux_trail_018.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed 4 miles for High Esmeralda from the DeRoux trailhead (page implies one way)"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6765,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/teanawayriver/esmeralda/deroux_trail_018.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "High Esmeralda elevation 6,765"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "DeRoux Campground, Teanaway River Road 9 mi past end of pavement (off SR 970)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/teanawayriver/esmeralda/deroux_trail_018.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "From SR 970 take Teanaway River Rd 9 mi past pavement end to DeRoux Campground"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Boulder-DeRoux Trail to about 5,500 ft at last switchback before the Gallagher Head Lake traverse, then scramble to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/teanawayriver/esmeralda/deroux_trail_018.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike trail to ~5500 ft last switchback before traverse to Gallagher Head Lake, leave trail and scramble"
+     }
+    ]
+   }
+  ],
+  "note": "Willhite 3,000 ft vs app 3,100 ft (within 10%) but only one independent page found; WTA hike page states only highest point 6,362 ft (different summit figure)."
+ },
+ "wa_fifth_of_july_mountain_scramble": {
+  "area": "wa_fifth_of_july_mountain",
+  "skip_reason": "Opened mountaineers.org/activities/routes-places/entiat-river-meadows-high-country (multi-day 56 mi area trip, not this route) and onehikeaweek.com/2023/09/02/fifth-of-july-mountain/ (approach via Basalt Ridge, not Entiat River/Cow Creek). Trailcatjim has only a multi-peak loop."
+ },
+ "wa_fire_on_the_mountain": {
+  "area": "wa_sloan_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122891276/fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Fire on the Mountain 5.10d"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sloan-fire-on-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steph Abegg report titles the route 5.10d"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122891276/fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 8 pitches"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1100,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122891276/fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed length 1100 ft (333 m)"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sloan-fire-on-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report states 1000 ft of technical rock plus 500 ft of scrambling"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Blake Herrington, Rad Roberts, 2009",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122891276/fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Blake Herrington and Rad Roberts, 2009"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route page lists elevation gain 5,900 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route page lists length 12.0 mi (their lengths are round trip)"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: July, August, September"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass"
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Mount Baker-Snoqualmie NF, Henry M. Jackson Wilderness, Skykomish Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/sloan-peak-fire-on-the-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager Mt Baker-Snoqualmie NF; Henry M Jackson Wilderness, Skykomish RD"
+     }
+    ]
+   },
+   {
+    "field": "length_scramble_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/sloan-fire-on-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report: 500 ft of scrambling above the technical rock"
+     }
+    ]
+   }
+  ],
+  "note": "MP lists 1100 ft, Abegg 1000 ft technical (within 10%); value kept at MP figure."
+ },
+ "wa_foggy_peak_scramble": {
+  "area": "wa_foggy_peak",
+  "facts": [
+   {
+    "field": "gain_from_monte_cristo_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/foggy-peak-via-south-face-west-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats 8 miles, 4000 ft gained and lost, start Glacier Basin TH at Monte Cristo townsite"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip_from_monte_cristo",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/foggy-peak-via-south-face-west-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 8 miles traveled from Glacier Basin TH at Monte Cristo townsite"
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "5.2 hr up, 3.8 hr down from Monte Cristo",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/foggy-peak-via-south-face-west-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 5.2 hours up, 3.8 hours down; summit 5.2 h from TH"
+     }
+    ]
+   }
+  ],
+  "note": "Trailcatjim figures start at Monte Cristo townsite (Glacier Basin TH), not Barlow Pass; app gain 4,400 counts from Barlow. Not comparable, stored under separate field names."
+ },
+ "wa_forbidden_peak_east_ridge": {
+  "area": "wa_forbidden_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades East Ridge Direct 5.8-"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed Grade III"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 6 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Joe Hieb, Ed Cooper, Don Claunch, 1958",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA 1958 by Fred Beckey, Joe Hieb, Ed Cooper and Don Claunch"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_forbidden_peak_west_ridge": {
+  "area": "wa_forbidden_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106450596/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades West Ridge 5.6"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106450596/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed Grade III, trad/snow/alpine"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106450596/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed length 1500 ft (455 m)"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Lloyd Anderson, Fred Beckey, Helmy Beckey, Jim Crooks, Dave Lind, June 1940",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106450596/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA June 1940: Anderson, F. Beckey, H. Beckey, Crooks, Lind"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5600,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route page lists elevation gain 5,600 ft"
+     },
+     {
+      "url": "https://trailcatjim.com/forbidden-peak-via-west-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip stats: 10 miles traveled, 5700 ft gained and lost, from Boston Basin TH"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: May, June, July"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Boston Basin Trailhead (3,200 ft), Cascade River Road (FR 15) at 21.7 mi, pullout just before Cascade Pass TH",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cascade River Rd 21.7 mi to Boston Basin TH 3,200 ft, a pullout before Cascade Pass TH"
+     },
+     {
+      "url": "https://trailcatjim.com/forbidden-peak-via-west-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start/end: Boston Basin Trailhead on Cascade River Road, elev 3200 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Boston Basin high camp on flats below glacier, ~6,500 ft; alternate bivies at top of couloir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "High camp on flats below glacier near 6,500 ft; other bivies at couloir top"
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "3 hr to camp; 6-9 hr camp to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 3 hours to camp, 6-9 hours climb to summit"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From camp cross glacier to a ~500 ft couloir at left edge of South Face, climb steep snow/ice to the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cross glacier to 500 ft couloir at left edge of south face; ascend steep snow and ice"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/forbidden-peak-via-west-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 10 miles traveled round trip from Boston Basin TH"
+     }
+    ]
+   },
+   {
+    "field": "loss_ft",
+    "value": 5700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/forbidden-peak-via-west-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 5700 ft gained and lost"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_fortress_mountain_southwest_face": {
+  "area": "wa_fortress_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Chiwawa River Trailhead near Trinity, end of Chiwawa River Road, elev 2,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/fortress-mtn-buck-creek-spider-gap-loop-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start/end Chiwawa River Trailhead near Trinity on Chiwawa River Road, elev 2800 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Trailcatjim trip was a 6-day Buck Creek-Spider Gap loop with Fortress as a side climb; no summit-specific stats usable. WTA has no Fortress hike page."
+ },
+ "wa_four_brothers_southwest_route": {
+  "area": "wa_four_brothers",
+  "skip_reason": "Opened wta.org/go-hiking/hikes/four-brothers (404) and mountaineers.org/activities/routes-places/four-brothers (404); DuckDuckGo found only Mountaineers activity listings and WTA trip reports without route figures. SummitPost 403."
+ },
+ "wa_frenzel_spitz_south_route": {
+  "area": "wa_frenzel_spitz",
+  "skip_reason": "DuckDuckGo (frenzel spitz / aaj frenzel spitz / mountainproject frenzel spitz) returned no route page. Opened mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/southern-picket-range (zone page, no Frenzel Spitz content beyond a permit note) and stephabegg.com/trip-reports/washington/ (index; no Frenzel report). No source states figures for this route; a follow-up on stephabegg.com/trip-reports/washington/pickets/ was cut off when the tab group was closed by another agent."
+ },
+ "wa_full_tilt_tempest_wall_free_version": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.12",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108156528/full-tilt-tempest-wall-free-version",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Full Tilt 5.12"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108156528/full-tilt-tempest-wall-free-version",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed 5 pitches"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108156528/full-tilt-tempest-wall-free-version",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed length 1200 ft (364 m)"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108156528/full-tilt-tempest-wall-free-version",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed Grade III, trad"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_garfield_mountain_south_route": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "Opened mountaineers.org/activities/routes-places/garfield-mountain (404) and trailcatjim.com sitemap entry mt-garfield-main-peak-via-northwest-couloir-west-ridge (different route); WTA garfield-ledges is a hike to the ledges only. SummitPost 403."
+ },
+ "wa_ghost_peak_south_route": {
+  "area": "wa_ghost_peak",
+  "skip_reason": "Opened publications.americanalpineclub.org/articles/13201216005 (Phantom Peak west ridge, not Ghost), trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/ (does not climb Ghost) and wta.org/go-hiking/hikes/crooked-thumb-peak (peak height only)."
+ },
+ "wa_gilbert_peak_meade_glacier": {
+  "area": "wa_gilbert_peak",
+  "skip_reason": "Opened wta.org/go-hiking/hikes/gilbert-peak (20 mi/4,600 ft but described via Klickton Divide, not Meade Glacier) and mountaineers.org/activities/routes-places/gilbert-peak-conrad-glacier (Conrad Glacier route; Meade only as alternate descent). No figure for the Meade Glacier route itself."
+ },
+ "wa_glacier_peak_cool_glacier_gerdine": {
+  "area": "wa_glacier_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Disappointment Peak Cleaver page lists elevation gain 8,200 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 33,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed length 33.0 mi (round trip)"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "North Fork Sauk River Trailhead (2,050 ft) via Sloan Creek Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sloan Creek Rd 6.6 mi, left fork to North Fork Sauk River TH at 2,050 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Mackinaw Shelter (good camping) ~5 mi in",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "3.5 mi to Red Creek, 1.5 more to Mackinaw Shelter with good camping"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail climbs steeply ~3 mi past Mackinaw Shelter to PCT (6,000 ft); right 0.25 mi to White Pass (5,900 ft); boot path ENE under White Mtn",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep ~3 mi to PCT at 6,000 ft, 0.25 mi to White Pass 5,900 ft, boot path ENE"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 8,200 ft vs app 9,400 ft; their 33 mi is round trip."
+ },
+ "wa_glacier_peak_frostbite_ridge": {
+  "area": "wa_glacier_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Frostbite Ridge page lists elevation gain 8,900 ft"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 44,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed length 44.0 mi (round trip) from the Suiattle River road end"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Suiattle River Road (FR 26) end at Sulphur Creek Campground (~1,800 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive Suiattle River Rd FR 26 from Darrington to its end near Sulfur Creek CG ~1,800 ft"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Suiattle Pass Trail #784 ~7 mi to new Suiattle River bridge, then PCT south ~9 mi to East Fork Milk Creek basin camp (5,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail 784 ~7 mi to new bridge, PCT south ~9 mi to PCT camp at 5,600 ft"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "PCT camp in East Fork Milk Creek basin (5,600 ft); last bivy at 8,800 ft saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "PCT camp 5,600 ft; 8,800 ft saddle is last bivy before summit crater"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 44 mi round trip from Suiattle vs app 51.5 km."
+ },
+ "wa_glacier_peak_kennedy_glacier": {
+  "area": "wa_glacier_peak",
+  "skip_reason": "Opened trailcatjim.com/glacier-peak-via-lower-kennedy-glacier-frostbite-ridge-rabbit-ears/ (combined Kennedy/Frostbite line from closed White Chuck TH, 27 mi/12,100 ft) and mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge (Frostbite route). Neither states figures for the Kennedy Glacier route as described."
+ },
+ "wa_golden_horn_east_face": {
+  "area": "wa_golden_horn",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10+ R",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 2016: route rated IV 5.10+ R"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 2016: commitment grade IV"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent party free climbed 11 pitches"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes the peak 1,000 ft east face"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Joe Sambataro, Jason Schilling, June 2015",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb year 2015, June; Sambataro and Jason Schilling, onsight, no bolts"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Up Swamp Creek to Snowy Lakes camp off the PCT; scramble ridge, descend east via snow couloir (crampons, axe) to the face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approached via Swamp Creek to Snowy Lakes, then ridge and snow couloir east"
+     }
+    ]
+   },
+   {
+    "field": "climb_time_hours",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbed the 11 pitches in 11 hours"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock bands; pitch 4 expanding crack with poor protection (5.10 R); loose section pitch 7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 4 expanding crack poor pro 5.10 R; loose on pitch 7; good rock and kitty litter"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8366,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213719",
+      "retrieved_at": "2026-11-14",
+      "fact": "Golden Horn given as 8,366 ft"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_gothic_peak_standard": {
+  "area": "wa_gothic_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/gothic-del-campo/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Abegg report titled Gothic Peak & Del Campo, Scramble from Foggy Lake (3rd)"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_gray_wolf_ridge_se_slopes": {
+  "area": "wa_gray_wolf_ridge",
+  "facts": [
+   {
+    "field": "approach_loss_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/olympic_mountains/gray_wolf_ridge/baldy_201.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the summit of Baldy the route to Gray Wolf Ridge drops steeply about 600 ft, then follows a long open ridge"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Over Baldy summit, drop ~600 ft steeply to the saddle, follow the long open ridge up to the Gray Wolf Ridge high point",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/olympic_mountains/gray_wolf_ridge/baldy_201.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drop 600 ft from Baldy, long open ridge, up to Gray Wolf Ridge high point; scenic easy walk"
+     }
+    ]
+   },
+   {
+    "field": "trailhead_road",
+    "value": "US 101 east of Sequim (just east of Sequim Bay SP): south on Louella Rd 1 mi to T, left on Palo Alto Rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/olympic_mountains/gray_wolf_ridge/baldy_201.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn south on Louella Road east of Sequim Bay SP, 1 mile to T intersection, left on Palo Alto Rd"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Gray Wolf Ridge high point is the Clallam County high point",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.willhiteweb.com/olympic_mountains/gray_wolf_ridge/baldy_201.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highpoint of Gray Wolf Ridge is the highpoint of Clallam County"
+     }
+    ]
+   }
+  ],
+  "note": "Willhite gives 4 mi one-way / 3,400 ft gain for Baldy only (a leg), not recorded as the Gray Wolf total."
+ },
+ "wa_grotto_mountain_e_route": {
+  "area": "wa_grotto_mountain",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "From Beckler River Rd, FS road 5 mi to a fork, continue on spur 410 past the Eagle Lake TH to the rough road end",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drove five miles to the fork and continued on 410 past Eagle Lake Trailhead to road end"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Brushy streambed start; from the north ridge at 5,400 ft a steep bouldery scramble to the east summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Brushy streambed beginning; from north ridge at 5400 ft steep scramble up bouldered east summit"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_gunnshy_peak_standard_route": {
+  "area": "wa_gunnshy_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4295,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/gunnshy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA hike page lists elevation gain 4,295 feet"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6218,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/gunnshy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists highest point 6,218 feet"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Climbers path from a spur road near Barclay Lake TH; FR-6024 3.9 mi to TH, privy, ~20 cars",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/gunnshy-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "No official route; climbers path from spur road near Barclay Lake TH; FR-6024 3.9 mi; privy, ~20 cars"
+     }
+    ]
+   }
+  ]
+ },
+ "wa_guye_peak_improbable_traverse": {
+  "area": "wa_guye_peak",
+  "skip_reason": "Opened mountaineers.org/activities/routes-places/guye-peak-improbable-traverse (404) and mountainproject.com/area/107316329/guye-peak (route not listed); cascadeclimbers TR 15861 fetch failed when the browser tab group was closed by another agent. SummitPost 403."
+ },
+ "wa_guye_peak_r1": {
+  "area": "wa_guye_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Guye Peak/West Face lists elevation gain 1,700 ft"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5168,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed high point 5,168 ft"
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: May through September"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "New non-established approach that avoids private land; rising traverse up talus to far left (north) side of the west face, ending at a rocky (sometimes dry) stream bed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access talus by new approach not crossing private land; rising traverse to north side; rocky stream bed"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Exit right onto a very large tree-covered ramp that rises across the whole west face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exit right onto very large ramp with full grown trees, rising traverse across the face"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 1,700 ft vs app 2,000 ft (outside 10%); single source."
+ },
+ "wa_guye_peak_r2": {
+  "area": "wa_guye_peak",
+  "skip_reason": "Opened cascadeclimbers.com/forum/topic/94485-tr-guye-peak-north-ridge-route-4122014/ (winter TR, no figures) and mountaineers.org/activities/routes-places/guye-peak-snoqualmie-mountain-cave-ridge-pct (multi-peak, 5.0 mi/2,200 ft not attributable to the North Route)."
+ },
+ "wa_hadley_peak_cougar_divide": {
+  "area": "wa_hadley_peak",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Summit section: traverse loose scree to the right-hand ridge, then up the SW slopes on Class 2-3 very loose rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/hadley-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route traverses horribly loose scree to right side ridge then SW slopes Class 2-3; rock very loose"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Very loose rock and scree on the summit slopes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/hadley-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock very loose, everything weighted seemed to move"
+     }
+    ]
+   }
+  ],
+  "note": "Stevensong approached via Skyline Divide (not Cougar Divide); its ~8 h round trip not used. Mountaineers Hadley page lists 13.0 mi / 4,700 ft / HP 7,515 but names no trailhead, so not used."
+ },
+ "wa_hagan_mountain_south": {
+  "area": "wa_hagan_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Baker River Trailhead (774 ft) at the end of Baker Lake Road, 26 mi",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mount-blum-mount-hagan",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow Baker Lake Road 26 miles to its end and the Baker River Trailhead (774 ft)"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Blum & Hagan page (13.0 mi, 6,900 ft, Jun-Aug) covers a two-peak trip via Blum Lakes, not the South Slopes; not used. Trailcatjim has only multi-peak traverses."
+ },
+ "wa_helmet_butte_standard_route": {
+  "area": "wa_helmet_butte",
+  "skip_reason": "Opened wta.org/go-hiking/hikes/helmet-butte (no hike page; redirects) and wta.org/go-hiking/hikes/buck-creek-pass (19.2 mi/3,770 ft to the pass only, approach not summit). WTA trip report 2024-08-28 is a multi-peak trip."
+ }
+}

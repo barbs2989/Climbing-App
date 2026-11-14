@@ -1,0 +1,22 @@
+{
+ "wa_big_craggy_peak_scramble": {"note": "SummitPost The Craggies (https://www.summitpost.org/the-craggies/153369) states gain 4,500 ft car to Big Craggy summit via the SE shoulder from the Copper Glance trail. One source and >10% from stored 5600, so not set. The Mountaineers page covers both Craggies."},
+ "wa_mount_larrabee_south_ridge": {"note": "Mountaineers mount-larrabee (https://www.mountaineers.org/activities/routes-places/mount-larrabee) states 2,600 ft from Twin Lakes (stored trailhead ~5,200 ft matches Twin Lakes) and 4,400 ft from the Tomyhoi Lake trailhead. One source and >10% from stored 3900, so not set. SummitPost mount-larrabee/151373 states no gain."},
+ "wa_silver_star_glacier": {"note": "Mountaineers silver-star-mountain-silver-star-glacier (https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier) lists elevation gain 5,200 ft; Abegg states 4,626 ft car to summit. They differ by >10%, so no lock; both say stored 4000 is low. SummitPost Burgundy Col route page (158024) states no gain."},
+ "wa_cutthroat_south_buttress": {"note": "Mountaineers cutthroat-peak-se-buttress (https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress), Grade III 5.8 (appears to be this route), lists elevation gain 3,050 ft. One source and >10% from stored 2500, so not set. SummitPost south-buttress/156884 and francisbaileyh.com (958 m, metres only) give no usable second figure."},
+ "wa_cathedral_peak_pasayten_se_buttress": {"skip_reason": "Mountaineers cathedral-peak-amphitheater-mountain states 9,000 ft for a combined Cathedral + Amphitheater trip; not this single route. No SummitPost route figure found."},
+ "wa_mount_hardy_snow_scramble": {"skip_reason": "Mountaineers mount-hardy-south-face states 4,100 ft from SR 20 west of Rainy Pass, a different route (not via Methow Pass)."},
+ "wa_lake_mountain_pasayten_scramble": {"skip_reason": "SummitPost Lake Mountain page (https://www.summitpost.org/lake-mountain/151507) gives trailhead/pass elevations only, no gain."},
+ "wa_mount_cameron_standard": {"skip_reason": "DuckDuckGo found no SummitPost/Mountaineers page for Olympic Mount Cameron with a gain figure (SP mount-cameron/152770 is the Colorado peak); Mountaineers search lists only loop trips."},
+ "wa_forbidden_peak_northeast_face": {"skip_reason": "SummitPost forbidden-peak/150314 lists no NE Face route page (West/East/North Ridge, NW Face only); no figure."},
+ "wa_liberty_bell_independence_route": {"skip_reason": "Mountaineers search shows only Liberty Crack; SummitPost search failed; CascadeClimbers TR and blakeclimbs found by search but not opened (pass stopped)."},
+ "wa_south_early_winter_spire_direct_east_buttress": {"skip_reason": "SummitPost RPC photo album (648346) states no gain; SuperTopo/MP found by search but no gain in snippets."},
+ "wa_mount_magic_mountain_placeholder": null,
+ "wa_magic_mountain_southwest_cirque": {"skip_reason": "Mountaineers search finds only Ptarmigan Traverse (multi-peak); SummitPost search found no page."},
+ "wa_mount_hopper_standard": {"skip_reason": "Mountaineers search finds only mt-steel-and-mt-hopper (combined trip), not this route alone."},
+ "wa_jack_mountain_south_face": {"skip_reason": "Mountaineers search finds only jack-mountain-nohokomeen-headwall (different route)."},
+ "wa_mount_rainier_edmunds_headwall": {"skip_reason": "cascadeclimber.com/edmunds_headwall.htm states no gain; other search hits give headwall-only vertical (~3,500 ft), not trailhead-to-summit."},
+ "wa_star_peak_sawtooth_scramble": {"skip_reason": "SummitPost star-peak/151520 states no gain. wenatcheeoutdoors.org page hit a Cloudflare challenge (not bypassed). yellowleaf 8,400 ft is a Star + Oval multi-day trip."},
+ "wa_mount_hinman_hinman_glacier": {"skip_reason": "Search hits give only round-trip totals (e.g. 6,500 ft RT in a video description) or multi-peak high-route stats; no trailhead-to-summit figure."},
+ "wa_storm_king_southwest_scramble": {"skip_reason": "Search returned only Olympic Mount Storm King (a different peak)."},
+ "wa_tenpeak_mountain_north_couloir": {"skip_reason": "Search finds only multi-peak circuits (Abegg Glacier Peak circuit, turns-all-year Dakobed traverse) including Tenpeak North Couloir; not a single-route figure. Not opened (pass stopped)."}
+}

@@ -1,0 +1,2163 @@
+{
+ "ca_mount_mendel_standard_route": {
+  "area": "ca_mount_mendel",
+  "facts": [
+   {
+    "field": "overview",
+    "value": "Walk-up side is the west, via the Mendel-Darwin chutes; other sides need rock or ice gear",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/mendel.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mendel can be hiked only from its western side; other sides need rock or ice climbing equipment."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the bottom of the Mendel-Darwin chutes take the correct chute and turn left at junctions to the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/mendel.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "At the base of the Mendel-Darwin chutes pick the right chute and keep left at the junctions to reach the ridge."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Western approach as for Mount Darwin west face (Evolution side)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/mendel.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "For the western approach the page points to its Mount Darwin western-face description."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Mendel class 3 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_newcomb_southwest_slope": {
+  "area": "ca_mount_newcomb",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Newcomb class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "Only the SPS peak list class found. Checked SPS archive index sps0310 (multi-peak), hikespeak Pickering page (mentions the Pickering-Newcomb saddle only). SummitPost 403."
+ },
+ "ca_mount_perkins_west_slope": {
+  "area": "ca_mount_perkins",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "From Armstrong Canyon to the Sierra crest, then along the crest toward Perkins; staying 15-30 ft west of the crest gives easy class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1580.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the crest look south to Perkins; keeping 15-30 ft on the west side of the crest avoids ups and downs, easy class 2."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Perkins class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "TMAC /perkins/ is the Arizona Mount Perkins, not this peak. climber.org 2007/1580 is a multi-peak trip from Armstrong Canyon; route-name match to West Slope not confirmed."
+ },
+ "ca_mount_pickering_standard_route": {
+  "area": "ca_mount_pickering",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Pickering class 2 (class column of the official peak list)."
+     },
+     {
+      "url": "https://www.hikespeak.com/trails/mount-pickering-sequoia-hike/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pickering described as a two-mile class two climb from Sky Blue Lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Sky Blue Lake follow its inlet creek up to the basin between Pickering and Newcomb, round a last lake, climb loose gravel about 1000 ft to the saddle left of the summit, then the final 500 vertical ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikespeak.com/trails/mount-pickering-sequoia-hike/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Creek above Sky Blue Lake to the Pickering-Newcomb basin; about 1000 ft to the saddle left of the summit, then a final 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Horseshoe Meadow to Sky Blue Lake (11,550 ft) at the top of Miter Basin; partial path to the lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikespeak.com/trails/mount-pickering-sequoia-hike/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sky Blue Lake at 11,550 ft is reached from Horseshoe Meadow; a partial path leads up to it."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_lake_roundtrip",
+    "value": "26 mi round trip Horseshoe Meadow to Sky Blue Lake (not to summit)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikespeak.com/trails/mount-pickering-sequoia-hike/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The hike to Sky Blue Lake is a 26-mile round trip from Horseshoe Meadow."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13485,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikespeak.com/trails/mount-pickering-sequoia-hike/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Pickering rises to 13,485 feet."
+     },
+     {
+      "url": "https://www.mtnmouse.com/california/sn00t0120mount_pickering1976.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Pickering given as 13,485 ft; a 1976 backpack to it was 28 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose gravel and lingering snow patches on the slope to the saddle",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikespeak.com/trails/mount-pickering-sequoia-hike/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take care crossing loose gravel and lingering slips of snow below the saddle."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_pinchot_east_ridge_from_armstrong_canyon": {
+  "area": "ca_mount_pinchot",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "End of the Armstrong Canyon road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2008/1680.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as Armstrong Canyon; done as a one-day round trip from the end of the road in Armstrong Canyon."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Armstrong Canyon road is narrow and rough; a passenger car with reasonable clearance can make it but high-clearance 4WD is less stressful",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2008/1680.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road narrow and rough with large rocks; car with reasonable clearance possible, high clearance 4WD less stressful."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Division Creek water at the fenced Power House outlet pond on the drive in",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2008/1680.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Filled water containers from Division Creek at the fenced Power House outlet pond."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Use trail leaves the dirt road and climbs the south side of Armstrong Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1580.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow a use trail off the dirt road up the south side of Armstrong Canyon."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Pinchot class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org 2008/1680 cites a 23 mi RT / ~9,000 ft Taboose Pass alternative - different route, not used. 2007/1580 is a multi-peak trip (Perkins, Wynne, Pinchot, Colosseum) - no figures used."
+ },
+ "ca_mount_powell_standard_route": {
+  "area": "ca_mount_powell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Point Powell (Mount Powell high point) class 2 (class column of the official peak list)."
+     },
+     {
+      "url": "https://www.mountainproject.com/area/117620762/point-powell",
+      "retrieved_at": "2026-11-14",
+      "fact": "Point Powell area page lists class-2 south slopes among its routes."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Granite peak above Sunset Lake and the Thompson Glacier; routes include east-face rock climbs, a NE couloir, a class-3 NE ridge and class-2 south slopes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/117620762/point-powell",
+      "retrieved_at": "2026-11-14",
+      "fact": "Point Powell rises above Sunset Lake and the Thompson Glacier; east face rock routes, NE couloir, class-3 NE ridge, class-2 south slopes."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "East-side approach: Sabrina trailhead to Blue Lake, Baboon Lakes, then cross-country to Sunset Lake (~6 miles); camps at the lake outlet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/117620762/point-powell",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Sabrina trailhead to Blue Lake and Baboon Lakes, then cross-country to Sunset Lake (~6 miles); a few campsites at the lake mouth."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Crampons and axe may be needed on the final approach depending on season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/117620762/point-powell",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crampons and axe may be useful or necessary on the final approach depending on conditions."
+     }
+    ]
+   }
+  ],
+  "note": "SPS list names the summit Point Powell (13360 ft), class 2. No other page with route detail found; SummitPost 403. MP approach text is for the east-side (Sunset Lake / Thompson Glacier) routes, not necessarily the class-2 south slopes; recorded as approach option only."
+ },
+ "ca_mount_prater_standard_route": {
+  "area": "ca_mount_prater",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Prater class 1 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "Only the SPS peak list class found. Checked SPS archive index sps1203 (multi-peak), DuckDuckGo leads (anthonyottati, hikingwithtj multi-peak) not read. SummitPost 403."
+ },
+ "ca_mount_reinstein_standard_route": {
+  "area": "ca_mount_reinstein",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Florence Lake (via Goddard Canyon)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2011/1789.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Goddard Canyon trip with Reinstein; trailhead listed as Florence Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Martha Lake up to Reinstein Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2011/1789.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Went from Martha Lake, snow-covered to Reinstein Pass."
+     }
+    ]
+   },
+   {
+    "field": "route_variant",
+    "value": "Northeast ridge from just below Reinstein Pass, 3rd class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2011/1789.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Followed the 3rd class northeast ridge to the summit, starting about 50 ft below the pass on the north side."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Reinstein class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "Trip report climbed a 3rd-class NE ridge; this route is listed Class 2, so grade not recorded."
+ },
+ "ca_mount_rixford_south_slope": {
+  "area": "ca_mount_rixford",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Rixford class 2 (class column of the official peak list)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Onion Valley trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thequeermountaineer.com/2022/05/mount-rixford-12887/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Quick stats give Onion Valley Trailhead as the start, via the SE face."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Big Pothole Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thequeermountaineer.com/2022/05/mount-rixford-12887/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author camped at Big Pothole Lake below Kearsarge Pass before the climb."
+     }
+    ]
+   },
+   {
+    "field": "tripreport_stats_se_face",
+    "value": "16.6 mi and 5,403 ft gain via SE Face from Onion Valley (overnight trip)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thequeermountaineer.com/2022/05/mount-rixford-12887/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Quick Stats: 16.6 miles and 5,403 ft gain via the SE Face from Onion Valley Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Long loose talus and sand on the south side; author would not repeat a south-facing route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thequeermountaineer.com/2022/05/mount-rixford-12887/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author says he will never climb Rixford by a south-facing route again; long talus slog toward the top."
+     }
+    ]
+   }
+  ],
+  "note": "Queer Mountaineer stats are for the SE Face, not confirmed identical to South Slope; kept in a separate field."
+ },
+ "ca_mount_ruskin_east_ridge": {
+  "area": "ca_mount_ruskin",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Ruskin class 3 (class column of the official peak list)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approached from the Taboose Pass side; creek on the east side of Ruskin drains the lake just south of the east ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00082.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbed from the area west of Taboose Pass; a creek on Ruskin east side drains the lake almost due south of the east ridge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ledges on the ridge are third class bordering on fourth with good exposure; about 100 m below the summit a rock overhangs the ridge and needs a fourth-class move",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00082.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Third class ledges, near fourth, exposed; about 100 m below the top a projecting rock needs a fourth class move."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Exposure on the upper east ridge; steep sides near the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00082.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Good exposure on the ledges and steep ridge sides near the summit."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_senger_via_sallie_keyes_lakes": {
+  "area": "ca_mount_senger",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Florence Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/senger/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Florence Lake, full services seasonally; a lake ferry can shorten the walk."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/senger/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux listed as class 2."
+     },
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Senger class 2 (class column of the official peak list)."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Summit sits directly above Selden Pass on the John Muir Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/senger/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Senger, a little over 12,000 ft, sits directly above Selden Pass on the JMT."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Old cutoff trail toward Selden Pass before Muir Trail Ranch; Sallie Keyes Creek lies past the cairned turnoff",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/senger/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Uses an old cutoff trail toward Selden Pass before Muir Trail Ranch; the cairned turnoff comes before Sallie Keyes Creek."
+     }
+    ]
+   }
+  ],
+  "note": "TMAC states 20.1 mi / 6000 ft / 10:20 but ferry use changes the distance (page says 24+ mi roundtrip without ferry); figures not recorded."
+ },
+ "ca_mount_silliman_south_slope_from_silliman_lake": {
+  "area": "ca_mount_silliman",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Lodgepole",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/mount-silliman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as Lodgepole; route South Slope; difficulty Class 2."
+     }
+    ]
+   },
+   {
+    "field": "grade_tripreport",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/mount-silliman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty given as Class 2 for the South Slope route."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Twin Lakes trail from Lodgepole to Silliman Creek, then a cairned use trail on the south side of the creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/mount-silliman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start on the Twin Lakes trail from Lodgepole; at Silliman Creek turn up a well-cairned use trail on the creek south side."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Granite amphitheater of stacked hanging valleys and tarns below the south slopes; summit ridge marked by foxtail pines",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/mount-silliman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Above the creek a granite amphitheater of stacked hanging valleys and tarns leads to the south slopes; foxtail pines mark the summit."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "One of the easier peaks to reach in Sequoia-Kings Canyon; mostly trail and easy slabs and sand",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/mount-silliman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as one of the few easy peaks to access in SEKI; mostly trail or mellow granite slabs and sand."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Silliman class 1 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_stanford_north_standard_route": {
+  "area": "ca_mount_stanford_north",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Stanford (N) class 2 (class column of the official peak list)."
+     },
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01410.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the saddle south of Stanford Lake a second class route with a lot of sand leads to the top."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Davis Lake (Hilton Lakes) trailhead, 9,860 ft, on Rock Creek Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01410.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Group met at the Davis Lake trailhead at 9,860 ft; the Hilton Lakes roadhead is also called Davis Lake TH."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hilton Lake #3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01410.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "The party camped at Hilton Lake #3 before the climb."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Beyond Hilton Lake #4 the trail becomes a use trail; stay right of the inlet through grassy hanging valleys toward the saddle south of Stanford Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01410.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Past Hilton Lake #4 a use trail; keep right of the inlet through hanging valleys; head for the saddle south of Stanford Lake."
+     }
+    ]
+   }
+  ],
+  "note": "TMAC /stanfordmorgan/ is a Stanford+Morgan two-peak day from Hilton Lakes (18.9 mi, 6400 ft, class 3) - multi-peak, not used."
+ },
+ "ca_mount_stanford_south_standard_route": {
+  "area": "ca_mount_stanford_south",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "East approach from Onion Valley via Robinson Lake and University Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/stanford.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eastern route: from Onion Valley up to Robinson Lake, follow the drainage southwest to University Pass."
+     }
+    ]
+   },
+   {
+    "field": "grade_tripreport",
+    "value": "Class 3 ledges with some exposure near the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/stanford.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Near the top class-3 ledges with some exposure lead to the summit."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "University Pass is a class-3 chute that holds snow year-round",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/stanford.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "University Pass is described as a class-3 chute on both sides with snow all year."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Stanford (S) class 3 (class column of the official peak list)."
+     },
+     {
+      "url": "https://www.scaruffi.com/travel/stanford.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class-3 ledges with some exposure lead to the summit of Mt Stanford."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_stewart_standard_route_standard_route": {
+  "area": "ca_mount_stewart_standard_route",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Stewart class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "TMAC /stewart/ is Stewart Point (Resting Springs Range), not this peak. Only the SPS peak list class found. Checked SPS archive index sps0606; TMAC /stewart/ is a different peak (Stewart Point). SummitPost 403."
+ },
+ "ca_mount_tallac_trail_mount_tallac_trail": {
+  "area": "ca_mount_tallac_trail",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/laketahoebasin/recreation/mt-tallac-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Tallac trail one-way mileage given as 5 miles; difficulty level difficult."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sierradayhikes.com/tahoe/mount_tallac.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Tallac day hike listed as 10 miles, strenuous."
+     },
+     {
+      "url": "https://tahoetrailguide.com/hiking-mount-tallac-via-mount-tallac-trailhead/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail data: total mileage 10."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://tahoetrailguide.com/hiking-mount-tallac-via-mount-tallac-trailhead/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 3,500 feet."
+     },
+     {
+      "url": "https://sierradayhikes.com/tahoe/mount_tallac.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike listed with 3,380 feet of gain."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9735,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/laketahoebasin/recreation/mt-tallac-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation listed as 9735 feet."
+     },
+     {
+      "url": "https://tahoetrailguide.com/hiking-mount-tallac-via-mount-tallac-trailhead/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 9,735 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mount Tallac Trailhead, end of Mount Tallac Road off Highway 89, across from Baldwin Beach",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/laketahoebasin/recreation/mt-tallac-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead about 3.5 miles northwest of South Lake Tahoe on Hwy 89, opposite the Baldwin Beach entrance, down a dirt road."
+     },
+     {
+      "url": "https://sierradayhikes.com/tahoe/mount_tallac.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead at the end of Mount Tallac Road off Highway 89 between Camp Richardson and Emerald Bay."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 6480,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierradayhikes.com/tahoe/mount_tallac.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead elevation given as 6,480 feet."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Floating Island Lake 1.7 miles one-way, Cathedral Lake 2.5 miles one-way, then steep up the front face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/laketahoebasin/recreation/mt-tallac-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Floating Island Lake 1.7 mi and Cathedral Lake 2.5 mi one-way are easy to moderate; beyond Cathedral Lake the trail turns steep."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ridge above Fallen Leaf Lake, Floating Island Lake, Cathedral Lake, steepest mile to the south shoulder, then about a mile to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierradayhikes.com/tahoe/mount_tallac.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge over Fallen Leaf Lake, two lakes, a steep mile of about 1000 ft to the south shoulder, then about a mile more."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Cathedral Lake is the last reliable water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierradayhikes.com/tahoe/mount_tallac.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Little Cathedral Lake is the last reliable water source on the hike."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Free Desolation Wilderness permit required, including for day hikes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sierradayhikes.com/tahoe/mount_tallac.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "A free wilderness permit is required even for day hikes in the Desolation Wilderness."
+     }
+    ]
+   },
+   {
+    "field": "time",
+    "value": "About 3 hours up and 2.5 hours back to the car",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://tahoetrailguide.com/hiking-mount-tallac-via-mount-tallac-trailhead/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiking to the top takes about 3 hours; the return takes about 2.5 hours."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_rules",
+    "value": "Seasonal parking; no camping or overnighting at the trailhead; no campfires",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/laketahoebasin/recreation/mt-tallac-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasonal parking, no restrooms/trash in winter, no campfires, no camping or overnighting at the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Weather changes fast; limited shade; carry plenty of water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/laketahoebasin/recreation/mt-tallac-trailhead",
+      "retrieved_at": "2026-11-14",
+      "fact": "Weather can change rapidly; bring a jacket, lots of water and allow plenty of time."
+     }
+    ]
+   },
+   {
+    "field": "trail_surface",
+    "value": "Hard-packed soil with sections of talus and scree",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://tahoetrailguide.com/hiking-mount-tallac-via-mount-tallac-trailhead/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail conditions: hard-packed soil with sections of talus and scree."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Tallac class 1 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_tinemaha_south_slope_from_red_lake": {
+  "area": "ca_mount_tinemaha",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Tinemaha class 2 (class column of the official peak list)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Red Lake trailhead, via McMurry Meadows Road from Big Pine",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/red-lake-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Big Pine take Glacier Lodge Rd 2.5 mi, McMurry Meadows Rd 7.6 mi, then 33E301 to the trailhead; 4WD high clearance recommended."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Rough, rocky high-clearance 4x4 road beyond McMurry Meadow; no access through Tinemaha County Campground (private, locked gate)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/red-lake-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road beyond McMurry Meadow is rough high-clearance 4x4; Tinemaha campground route is private with a locked gate."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Primitive, steep, rugged unmaintained trail to Red Lake, at times hard to follow; carry a topo map; pre-dawn start advised in summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/red-lake-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Primitive trail to Red Lake is steep, rugged and unmaintained, sometimes hard to find; pre-dawn summer start recommended."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_wallace_standard_route": {
+  "area": "ca_mount_wallace",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Lake Sabrina (end of Highway 168 west of Bishop)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/wallace.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reached from Lake Sabrina at the end of Hwy 168; overnight parking not allowed at the dam lot, free roadside parking near the campground."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lake Sabrina trail to Blue Lake, toward Dingleberry Lake, Hungry Packer fork, cross-country to Moonlight Lake, then above Echo Lake into the Wallace-Haeckel canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/wallace.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to Blue Lake, Dingleberry, Hungry Packer fork, cross-country via Moonlight Lake and Echo Lake into the canyon between Wallace and Haeckel."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Donkey Lake fork is easy to miss; cairns mark the route where the trail fades",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/wallace.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy to go wrong at the Donkey Lake fork where the trail disappears and only cairns mark the way."
+     }
+    ]
+   },
+   {
+    "field": "grade_sps_list",
+    "value": "Class 2s3 (class 2, short class 3)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Wallace class 2s3 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "scaruffi lists times (Echo Lake 4h30, summit 7h30) on a combined Wallace/Haeckel page; not recorded as the summit time is ambiguous. App lists Class 4 / mountaineering; SPS peak list gives class 2s3 for the peak. Grade conflict - not overwritten."
+ },
+ "ca_mount_warren_warren_canyon": {
+  "area": "ca_mount_warren",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Warren Fork trailhead on Highway 120, about 2 km east of Ellery dam (9000 Feet sign)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/warren.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warren Fork trailhead on Hwy 120 about 2 km east of Ellery dam, marked by a 9000 Feet sign; parking south side."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail about 45 min to a meadow, leave it before the meadow, northeast through forest, then north/northeast up steep talus moraines",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/warren.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 45 minutes to a meadow; leave trail, go northeast through forest to another meadow, then up steep talus moraines."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Highest peak east of Yosemite between Tioga Pass and Mono Lake, north of Hwy 120, in the Hoover Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/warren.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt Warren is the highest mountain between Tioga Pass and Mono Lake, north of Hwy 120, in the Hoover Wilderness."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Warren class 1 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mount_wynne_standard_route": {
+  "area": "ca_mount_wynne",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "East ridge of Mt Wynne is class 2 staying on the ridge; near the top move slightly to the north side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1580.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "East ridge of Wynne is class 2 if you stay on the ridge; near the summit go slightly north and up."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach from Armstrong Canyon on the use trail along the south side of the canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1580.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip starts up Armstrong Canyon on a use trail off the dirt road, south side of the canyon."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Wynne class 2 (class column of the official peak list)."
+     },
+     {
+      "url": "https://www.climber.org/reports/2007/1580.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "East ridge of Mt Wynne is class 2 if you stay on the ridge."
+     }
+    ]
+   }
+  ],
+  "note": "climber.org 2007/1580 is a multi-peak trip; whether its east ridge equals this route's standard line is not confirmed by the page."
+ },
+ "ca_mount_young_standard_route": {
+  "area": "ca_mount_young",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Young class 1 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "Only the SPS peak list class found. Checked: sierrapeaks.org SPS list + archive index sps0501 (multi-peak reports), DuckDuckGo results led to Whitney pages only. SummitPost 403."
+ },
+ "ca_mt_agassiz_standard_route": {
+  "area": "ca_mt_agassiz",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "South Lake trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/agassiz/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as South Lake trailhead, with trash and pit toilets."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 6.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/agassiz/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance stated as 6.2 miles one way from the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/agassiz/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain stated as 4100 ft for the one-way ascent from South Lake."
+     }
+    ]
+   },
+   {
+    "field": "time_to_summit",
+    "value": "5:30 trailhead to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/agassiz/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 5:30 from trailhead to summit, done as part of an overnight trip."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "South Lake trail past Saddlerock and Bishop lakes to Bishop Pass, below the peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/agassiz/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route follows the trail past Saddlerock and Bishop lakes up switchbacks to Bishop Pass, which the peak sits above."
+     }
+    ]
+   },
+   {
+    "field": "grade_mp",
+    "value": "3rd class, Grade II (page notes probably no more than class 2)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123021448/west-slope-summer",
+      "retrieved_at": "2026-11-14",
+      "fact": "West Slope (Summer) rated 3rd YDS, Grade II; text says probably no harder than class 2."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Norman Clyde, August 1925",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123021448/west-slope-summer",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Norman Clyde, August 1925."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123021448/west-slope-summer",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the rightmost west-face gully toward a flat point on the skyline ridge, passing a small tarn",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123021448/west-slope-summer",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascend the rightmost west-face gully aiming for a flat skyline point, passing a small tarn; rough trail and cairns."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the ascent route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123021448/west-slope-summer",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is the same way as the ascent."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Lower half of the gully often holds snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123021448/west-slope-summer",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lower half of the gully is often snow-filled."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Agassiz class 2 (class column of the official peak list)."
+     },
+     {
+      "url": "https://themtsarecalling.com/agassiz/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux listed as class 2 from South Lake via Bishop Pass."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mt_brewer_standard_route": {
+  "area": "ca_mt_brewer",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Two usual approaches: west via the Sphinx trail from Roads End and Sphinx Pass, or east via the East Lake trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/brewer.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two main routes: west via Sphinx Lakes and Sphinx Pass from Roads End (Hwy 180), or east via the East Lake trail."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "East side: from East Lake follow Ouzel Creek, which drains the south side of Brewer, upstream",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/brewer.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "From East Lake follow Ouzel Creek, draining the south side of Brewer, upstream."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "West side: northwest face top is a false summit; downclimb a little south and traverse east to the true summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/brewer.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Top of the northwest face is not the real summit; drop slightly on the south and traverse east to it."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Brewer class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mt_chamberlin_standard_route": {
+  "area": "ca_mt_chamberlin",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Chamberlin class 1 (class column of the official peak list)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Whitney Portal on the Whitney Trail to Trail Crest, then cross-country down scree into the Crabtree Lakes basin (~12 miles)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120296216/mount-chamberlin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shortest approach: Whitney Trail from Whitney Portal to Trail Crest, then cross-country down scree into the Crabtree basin, about 12 miles."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Whitney Trail permit required for the Whitney Portal approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120296216/mount-chamberlin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Both approaches need a permit for the Whitney Trail, called possibly the crux."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Crabtree Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/120296216/mount-chamberlin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping beneath the peak at Crabtree Lakes."
+     }
+    ]
+   }
+  ],
+  "note": "MP Chamberlin area describes the climbers' approach to the wall; the class-1 standard route itself is not described on any page opened."
+ },
+ "ca_mt_clarence_king_standard_route": {
+  "area": "ca_mt_clarence_king",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/clarenceking/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux listed as class 5.4 with 2 pitches."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/203069681/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Face rated 5.4 YDS."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/clarenceking/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitches listed as 2."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Small rack and a 30 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/clarenceking/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: small rack and a 30 meter rope."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Kearsarge Pass trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/clarenceking/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as Kearsarge Pass TH, with pit toilets."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 28.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/clarenceking/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 28.6 miles for the whole outing, total time 18:30."
+     }
+    ]
+   },
+   {
+    "field": "total_gain_ft_roundtrip",
+    "value": 9600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/clarenceking/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 9600 ft for the whole outing."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bolton Brown, August 1896",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069681/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Bolton Brown, August 1896."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069681/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 1000 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the saddle up the broad south slope, class 3 higher, a jam crack and squeeze chimney, then a crack on the east side to step onto the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069681/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Talus slope from the saddle, steeper class 3, jam crack and chimney, then a bold step onto the summit block from a lower block."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Route starts in Sixty Lake Basin, east of the south ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069681/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts in the basin east of the South Ridge, in Sixty Lake Basin."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069681/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: descend the route."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Summit block is the crux; called the hardest US climb of the 19th century",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069681/south-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page calls it the hardest US climb of the 19th century; the summit block is the crux."
+     }
+    ]
+   },
+   {
+    "field": "grade_sps_list",
+    "value": "4s5 (class 4 with a short class 5 summit block)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Clarence King class 4s5 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_mt_hitchcock_standard_route": {
+  "area": "ca_mt_hitchcock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Hitchcock class 1 (class column of the official peak list)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Easiest approach is from Whitney Portal on the Mt. Whitney trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/112042161/mount-hitchcock",
+      "retrieved_at": "2026-11-14",
+      "fact": "The easiest approach is from Whitney Portal via the Mt. Whitney trail."
+     }
+    ]
+   }
+  ],
+  "note": "MP Hitchcock area covers technical NE-face routes; no description of the class-1 standard route found."
+ },
+ "ca_mt_morgan_south_standard_route": {
+  "area": "ca_mt_morgan_south",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Tamarack Lakes trailhead at Rock Creek Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/morgan.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Usually climbed from the Tamarack Lakes trailhead at Rock Creek Lake, before Mosquito Flat."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Past Kenneth Lake to Francis Lake, up the ridge on the right, across a small glacier, steep scramble to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/morgan.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to Francis Lake fork, skirt the lake, climb the right-hand ridge, cross the glacier, then a steep scramble to the top."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Optional descent down a west chute into a larger northwest chute to the lakes between Morgan Pass and Mosquito Flat",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/morgan.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent option: narrow west chute near the summit joins a bigger northwest chute down to lakes near Morgan Pass."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Route crosses a small glacier on the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/morgan.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Following the ridge you enter the glacier before the summit comes into view."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Morgan (S) class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": "TMAC /stanfordmorgan/ is a two-peak day; MP Mount Morgan South lists only SW Ridge direct (4th), a different route."
+ },
+ "ca_mt_morrison_standard_route_standard_route": {
+  "area": "ca_mt_morrison_standard_route",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Convict Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/morrison/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Convict Lake, with trash, water, toilets and a general store."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/morrison/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Roundtrip mileage 7.8 miles."
+     }
+    ]
+   },
+   {
+    "field": "total_gain_ft_roundtrip",
+    "value": 4600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/morrison/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4600 ft."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/morrison/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total time 7 hours."
+     }
+    ]
+   },
+   {
+    "field": "grade_tripreport",
+    "value": "Class 2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/morrison/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux listed as class 2-3."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Mount Morrison class 2 (class column of the official peak list)."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_muah_mountain_via_mulkey_pass": {
+  "area": "ca_muah_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Horseshoe Meadows",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Horseshoe Meadows, pit toilets."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12.1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 12.1 miles for the outing, total time 4:40."
+     }
+    ]
+   },
+   {
+    "field": "total_gain_ft_roundtrip",
+    "value": 2850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,850 ft."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "4:40",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total time 4:40."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux listed as class 2."
+     },
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra Peaks Section list gives Muah Mountain class 2 (class column of the official peak list)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Horseshoe Meadows trail to Mulkey Pass: 1.8 miles and 550 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb from Horseshoe Meadows to Mulkey Pass stated as 550 ft over 1.8 miles."
+     }
+    ]
+   },
+   {
+    "field": "return_regain",
+    "value": "Mulkey Pass must be regained on the way out (no figure stated)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/muah/",
+      "retrieved_at": "2026-11-14",
+      "fact": "On the return the author climbed back up the trail to regain Mulkey Pass."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ca_ne_couloir_to_east_ridge": {
+  "area": "ca_mt_humphreys",
+  "facts": [
+   {
+    "field": "grade_mp",
+    "value": "Easy 5th, steep snow, Grade II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated Easy 5th with steep snow, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 1400 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as unknown."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Same approach as the North Couloir; from under the north face this couloir goes up and left",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach as for the North Couloir; below the north face the NE couloir branches up and left."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Couloir tops out on the east ridge where the rock climbing starts; follow the East Arete to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The couloir puts you on the east ridge route at the start of the rock climbing; follow the East Arete to the top."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Over the summit, one rappel off slings, then down the North Couloir indirect route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party descended over the summit with one rappel off slings and hiked down the North Couloir indirect route."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Single set of cams to 2.5 in if roping up for the easy fifth rock; couloir protection depends on conditions",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bring a single set of cams to 2.5 in for the easy 5th rock; couloir pro depends on conditions."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "1 (off slings, on the descent described)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118720192/ne-couloir-to-east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent included one rappel off slings."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ }
+}

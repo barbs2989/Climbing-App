@@ -1,0 +1,2474 @@
+{
+ "or_north_side_north_face_left_gully": {
+  "area": "or_north_side",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200416450/north-face-left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 1500 ft of ice, snow and alpine terrain."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200416450/north-face-left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives the first ascent as unknown."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice screws, pickets, possibly a little rock gear",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/200416450/north-face-left-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed: screws, pickets, maybe some rock gear."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "or_north_side_north_face_right_gully": {
+  "area": "or_north_side",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 5300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792945/north-face-right-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 5300 ft, 3 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792945/north-face-right-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792945/north-face-right-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Weygant, Arthur Emmons, Orville Emmons, Aug 26 1928",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792945/north-face-right-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Weygant and the two Emmons brothers, 26 Aug 1928."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "6-8 short ice screws, pickets, 60 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792945/north-face-right-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear list: six to eight short screws, pickets and a 60 m rope."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Seracs and crevasses on the Eliot Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105792945/north-face-right-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Keep to the glacier's left side and watch for seracs and crevasses."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Large bergschrund guards the foot of the face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://gethighonaltitude.com/2019/05/03/mt-hood-the-north-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A massive bergschrund at the base was the make-or-break crossing."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://gethighonaltitude.com/2019/05/03/mt-hood-the-north-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Hood elevation given as 11,250 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Get High on Altitude rates the Right Gully III, WI4 with length 7,835 ft; MP says Grade IV, WI3 (to WI4 in good conditions), 5300 ft. Grades and length conflict, not locked."
+ },
+ "or_north_sister_2_east_buttress": {
+  "area": "or_north_sister",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118190203/east-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 2500 ft, Grade III, mixed/ice/alpine."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118190203/east-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade III."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118190203/east-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Line runs from 7400 ft to the north summit shoulder near 9800 ft."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "One rappel from fixed tat into the notch (about 25 m, free-hanging); a 60 m rope works",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118190203/east-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel into the notch; 60 m should work."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103789-tr-north-sister-complete-east-buttress-12232020/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel off fixed tat, about 25 m free-hanging."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice screws, single rack of cams, nuts, pitons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118190203/east-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear: screws, single cam rack, nuts and pitons."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Winter, in cold freeze-thaw conditions",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118190203/east-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best in proper winter conditions when freeze-thaw builds water ice."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 climbs the short vertical ice pillar in the middle of the lower buttress",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103789-tr-north-sister-complete-east-buttress-12232020/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 1: short vertical ice pillar mid lower buttress, then easier ice."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "or_north_sister_southeast_ridge": {
+  "area": "or_north_sister",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Pole Creek trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.traditionalmountaineering.org/Trip_NoSister_SE_Ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Solo trip started from the Pole Creek trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail 4070 to Soap Creek, then trail 4074 south",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.traditionalmountaineering.org/Trip_NoSister_SE_Ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take trail 4070 to Soap Creek, then 4074 south."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "About 2,000 vertical ft of loose ground below the Prouty and Glisan Pinnacles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.traditionalmountaineering.org/Trip_NoSister_SE_Ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "2,000 vertical ft of loose terrain capped by Prouty and Glisan Pinnacles."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10085,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/15253/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mazamas lists North Sister at 10,085 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mazamas page (15253) is the South Ridge climb; only the peak elevation is used. Its 5,000 ft gain is for that route, not taken."
+ },
+ "or_south_side_men_of_steel": {
+  "area": "or_south_side",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120346129/men-of-steel",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 800 ft, 3 pitches, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120346129/men-of-steel",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120346129/men-of-steel",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "W. Wallace and J. Lane",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120346129/men-of-steel",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: W. Wallace & J. Lane (no year given)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice screws, pickets",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120346129/men-of-steel",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear listed: ice screws and pickets."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "or_south_sister_2_north_face_couloir": {
+  "area": "or_south_sister",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321156/north-face-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft, 3 pitches, Grade II; face ~1000 ft at about 45 degrees."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321156/north-face-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321156/north-face-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "First recorded ascent: Jim Blanchard and two others",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321156/north-face-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FRA: Jim Blanchard and two others."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Two tools; pickets and screws if roped",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321156/north-face-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two tools, with pickets and screws for roped climbing."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "or_south_sister_2_north_face_of_the_northwest_ridge": {
+  "area": "or_south_sister",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321222/north-face-of-the-northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft, Grade II; face about 1000 ft high, averaging 45 degrees."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321222/north-face-of-the-northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "David Byrne, Tim Scott, Derek Castonguay, June 26 2011",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321222/north-face-of-the-northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Byrne, Scott and Castonguay, 26 June 2011."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/101726-tr-south-sister-north-face-of-northwest-ridge-nfnwr-06262011",
+      "retrieved_at": "2026-11-14",
+      "fact": "Castonguay reports climbing it with Byrne and Scott on 26 June 2011."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Two tools; pickets and screws if roped",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321222/north-face-of-the-northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two tools, plus pickets and screws for a roped party."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "or_south_sister_2_silver_couloir": {
+  "area": "or_south_sister",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321126/silver-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft, Grade II, WI2 moderate snow."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321126/silver-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Gerald Calbaum, Nick Doge, Gary Kirk, 1973",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321126/silver-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Calbaum, Doge and Kirk, 1973."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Two tools; pickets and screws if roped",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115321126/silver-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two tools, plus pickets and screws if roped."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Pole Creek trailhead via the Camp Lake trail past Camp Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/103433-tr-south-sister-silver-couloir-05252020/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from Pole Creek on the Camp Lake trail, climbing out above Camp Lake."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "or_west_side_3_reid_glacier_headwall": {
+  "area": "or_west_side_3",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107987770/reid-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 2500 ft, Grade III, ice/snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107987770/reid-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Gordon Facer, Marshall Cronyn, R.J. Corruccini, June 12 1938",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107987770/reid-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Facer, Cronyn and Corruccini, 6/12/38."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "A few ice screws, two or three pickets, alpine draws",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107987770/reid-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Basic alpine ice rack: some screws, 2-3 pickets, single and double draws."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rime feathers break off and send ice avalanches down the face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107987770/reid-glacier-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Disturbed rime breaks loose and avalanches down the west face."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "1 day (guided trip length)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://timberlinemtguides.com/trip/reid-headwall-mt-hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Timberline Mountain Guides runs it as a 1-day, early-season climb."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "ut_dromedary_peak_tanner_s_gulch": {
+  "area": "ut_dromedary_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://snowbrains.com/trip-report-little-cottonwood-canyon-ut-3500-vertical-foot-tanners-gultch/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report calls it a 3,500-vertical-foot boot pack from the road."
+     }
+    ]
+   }
+  ],
+  "note": "Two SnowBrains reports (2020, 2021) are one publisher. cys-hiking-adventures blogspot page had no route figures. MP search only returned a different route (The Offering). SummitPost Tanners Gulch pages not opened (SummitPost 403 seen this wave)."
+ },
+ "wy_cirque_of_the_towers_traverse": {
+  "area": "wy_pingora",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 20 pitches, Grade V, trad alpine."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade V."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives the first ascent as unknown."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Big Sandy trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the Big Sandy trailhead; long graveled roads lead there."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail 99 to Big Sandy Lake, about 5 miles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow signed trail 99 to Big Sandy Lake, about 5 miles."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Single 60 m rope plus a tagline for raps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "A single 60 m rope with a tagline is called mandatory for the raps."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Plentiful in the cirque and along the approach; none on the ridge except snowmelt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Water in lakes and streams; none on the ridge unless snow can be melted."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Established primitive sites in the Cirque",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Many established primitive campsites in the Cirque."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Traverses the 11 major summits of the Cirque of the Towers",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111399193/cirque-of-the-towers-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "A traverse of the 11 major peaks."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/wyoming/cirque-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lists 11 summits from Pingora to Warbonnet."
+     }
+    ]
+   },
+   {
+    "field": "length_ridge_mi",
+    "value": "about 4 miles on the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/wyoming/cirque-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "IV, 5.9, about 4 miles on ridge."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12406,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/wyoming/cirque-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest summit listed: Warrior II 12,406 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Order: Pingora, Wolf's Head, Overhanging Tower, Shark's Nose, Block Tower, Watchtower, South Watchtower, Pylon, Warrior II, Warrior I, Warbonnet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/wyoming/cirque-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summits listed in order from Pingora to Warbonnet."
+     }
+    ]
+   },
+   {
+    "field": "time",
+    "value": "17 hours on the ridge (one party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/wyoming/cirque-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seventeen hours for the traverse."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: MP 5.8 Grade V; StephAbegg 5.9 Grade IV. Not locked."
+ },
+ "wy_east_ridge_2": {
+  "area": "wy_symmetry_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517029/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades the East Ridge 4th class."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517029/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade III."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 3,800 ft gain with the Jenny Lake boat."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 8 mi round trip using the shuttle boat; add ~3 mi walking around the lake."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8-10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "8-10 hours round trip including the boat."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July to September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best July-September once Hanging Canyon snow melts."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Grand Teton NP entrance pass; seasonal Jenny Lake boat fee; backcountry permit only if camping",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Entrance pass, boat fee, permit only for camping."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 10,560 ft, Symmetry Spire summit."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Jenny Lake west boat dock / String Lake (~6,800 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead about 6,800 ft at the Jenny Lake west dock or String Lake."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Reverse the East Ridge, or loop via the NW Ledges and SW Couloir (class 4, axe if snowy)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the ridge, or loop down NW Ledges + SW Couloir."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn gain/distance are approximate (prefixed with ≈) and assume the boat."
+ },
+ "wy_medicine_bow_peak_area_marie_couloir": {
+  "area": "wy_medicine_bow_peak_area",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109382286/marie-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the couloir at 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "under 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109382286/marie-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "One party reports car to car under 2 hours."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "About 40 degrees at the start, headwall finish near 56 degrees (July 2014)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109382286/marie-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Measured 40 degrees low, 56 degrees at the headwall exit in July 2014."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe; second tool recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109382286/marie-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe; a second tool advised but optional."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lake Marie parking lot on Hwy 130",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109382286/marie-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the Lake Marie lot beside Highway 130."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "wy_owen_spalding": {
+  "area": "wy_grand_teton",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814121/owen-spalding",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1560 ft, 3 pitches, Grade II, 5.4."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814121/owen-spalding",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814121/owen-spalding",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades the route 5.4."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Owen-Spalding_route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives a technical grade of 5.4."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Aug 11 1898: William Owen, Franklin Spalding, Frank Peterson, John Shive",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814121/owen-spalding",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Owen, Spalding, Peterson, 11 Aug 1898."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Owen-Spalding_route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: Owen, Spalding, Peterson and Shive on 11 Aug 1898."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13775,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Owen-Spalding_route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grand Teton summit 13,775 ft."
+     },
+     {
+      "url": "https://summitborn.com/grand-teton-owen-spalding-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 13,775 ft per NGS datasheet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7100,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.runbikehike.us/hiking/grand-teton-summit-wyoming/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back from Lupine Meadows gaining 7100 ft."
+     },
+     {
+      "url": "https://summitborn.com/grand-teton-owen-spalding-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 7,200 ft cumulative gain (page calls it its estimate)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14.8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.runbikehike.us/hiking/grand-teton-summit-wyoming/",
+      "retrieved_at": "2026-11-14",
+      "fact": "14.8-mile out-and-back from Lupine Meadows."
+     },
+     {
+      "url": "https://summitborn.com/grand-teton-owen-spalding-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 14 mi round trip from Lupine Meadows (page estimate)."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "12-16 single push",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.runbikehike.us/hiking/grand-teton-summit-wyoming/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Typical completion time 12 hours."
+     },
+     {
+      "url": "https://summitborn.com/grand-teton-owen-spalding-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 12-16 hours as a single push, or 2 days."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "2 days with a camp at the Lower Saddle or the Moraines",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/grand-teton-owen-spalding-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Usually 2 days, camping at the Lower Saddle or Moraines."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Park entrance pass; backcountry permit for any Garnet Canyon overnight, max 6 per permit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/grand-teton-owen-spalding-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Entrance pass; no climbing permit; backcountry permit for overnights, up to six people."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Mid-July to early September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/grand-teton-owen-spalding-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best mid-July to early September; snow often lingers to mid-July."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts at the Lower Saddle (~11,600 ft); scramble to the Upper Saddle, then traverse the exposed west side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Owen-Spalding_route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Begins at Lower Saddle ~11,600 ft, scrambles to Upper Saddle, then west-flank traverse."
+     }
+    ]
+   },
+   {
+    "field": "climb_vertical_ft",
+    "value": 2175,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Owen-Spalding_route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists vertical gain of the route itself as 2,175 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the Upper Saddle (13,160 ft) scramble about 70 m NNE to the usual rope-up point below the Wittich Crack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105814121/owen-spalding",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the 13,160 ft Upper Saddle, 70 m NNE to the rope-up spot."
+     }
+    ]
+   }
+  ],
+  "note": "MP alpine grade II vs Wikipedia NCCS III (not locked). Summitborn gain/distance are labelled as its own estimates; runbikehike also prints a conflicting ~8011 ft gain figure. Wikipedia 2,175 ft is the climb from the Lower Saddle, not the trailhead."
+ },
+ "wy_southwest_couloir_3": {
+  "area": "wy_middle_teton",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105933255/southwest-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 4000 ft, Grade II, class 3 snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105933255/southwest-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "H. Morris and I. Christensen, 1927",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105933255/southwest-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: H. Morris and I. Christensen, 1927."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105933255/southwest-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades it 3rd class."
+     },
+     {
+      "url": "https://www.nomadswithapurpose.com/middle-teton-hike-via-southwest-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: strenuous, Class 3 scrambling."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nomadswithapurpose.com/middle-teton-hike-via-southwest-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 6000 ft."
+     },
+     {
+      "url": "https://summitborn.com/middle-teton-southwest-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 6,100 ft gain (page labels it an estimate)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 6.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nomadswithapurpose.com/middle-teton-hike-via-southwest-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "6.5 miles each way, 13 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12809,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nomadswithapurpose.com/middle-teton-hike-via-southwest-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation 12,809 ft."
+     },
+     {
+      "url": "https://summitborn.com/middle-teton-southwest-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 12,807 ft (LiDAR), Middle Teton summit."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "10-13",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-teton-southwest-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "10-13 hours car to car."
+     },
+     {
+      "url": "https://www.nomadswithapurpose.com/middle-teton-hike-via-southwest-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Their trip took 11 hours."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lupine Meadows Trailhead (~6,732 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nomadswithapurpose.com/middle-teton-hike-via-southwest-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starting elevation 6,732 ft at Lupine Meadows."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Park entrance pass; no permit for a day climb; backcountry permit to camp in Garnet Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-teton-southwest-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Entrance pass; day climb needs no permit; camping needs backcountry permit."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Garnet Creek at the Meadows; treat all water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-teton-southwest-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Water from Garnet Creek at the Meadows, treated."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Reverse the couloir; no separate standard descent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/middle-teton-southwest-couloir-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent reverses the couloir; there is no separate standard way down."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn distance (12-13 mi RT) and gain are its own estimates; nomadswithapurpose states 6.5 mi each way and 6000 ft."
+ },
+ "wy_symmetry_spire_north_west_couloir_and_ledges": {
+  "area": "wy_symmetry_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107771803/symmetry-spire-north-west-couloir-and-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grades the route 4th class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107771803/symmetry-spire-north-west-couloir-and-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1500 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107771803/symmetry-spire-north-west-couloir-and-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fritiof Fryxell, William Cederberg, Leland Horberg, Rudolph Edmund, Neuman Kerndt, Elof Petersen, July 13 1931",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107771803/symmetry-spire-north-west-couloir-and-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Fryxell party of six, 13 July 1931."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Not advised on the upper section: loose, low-angle rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107771803/symmetry-spire-north-west-couloir-and-ledges",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappelling the upper section is problematic and not advised."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10560,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/symmetry-spire-east-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Symmetry Spire summit 10,560 ft (Summitborn East Ridge guide)."
+     }
+    ]
+   }
+  ],
+  "note": "MP 203608268 Northwest Couloir (Easy 5th, 250 ft) is a separate entry, not used."
+ },
+ "bc_mount_garibaldi_brohm_ridge_ne_face": {
+  "area": "bc_mount_garibaldi",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8827,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-garibaldi-brohm-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers route page: high point 8,827 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June to August (also listed year-round)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-garibaldi-brohm-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: year-round, June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Basic glacier climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-garibaldi-brohm-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers difficulty: Basic Glacier Climb."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Garibaldi Provincial Park is the land manager; check its parking/permit rules",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-garibaldi-brohm-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager Garibaldi Provincial Park; parking permit per land manager."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Rough forest road: high-clearance 4x4/AWD advised",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://shashishanbhag.com/climb/climbing-garibaldi-north-east-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road condition terrible; a high clearance 4x4 is required."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108523-trip-report-mount-garibaldi-brohm-ridge-04262026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AWD/4x4 with clearance advised on Cheekye FSR Branch 01."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "2 days with a bivy on Brohm Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://shashishanbhag.com/climb/climbing-garibaldi-north-east-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked in to a bivy on Brohm Ridge, summited next day via the Warren Glacier."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camps on Brohm Ridge: saddle ~6,200 ft (windy), tree-sheltered ~5,800 ft, higher ~6,700 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108523-trip-report-mount-garibaldi-brohm-ridge-04262026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reported camps at 6,200 ft saddle, 5,800 ft trees and 6,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Crevasses on the glacier crossing and a bergschrund below the NE face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://shashishanbhag.com/climb/climbing-garibaldi-north-east-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Met a major crevasse early, then a bergschrund below the face."
+     }
+    ]
+   }
+  ],
+  "note": "Distance/gain conflict and depend on how far a car gets: Mountaineers lists 18.0 mi and 4,200 ft; a 2026 CascadeClimbers TR from ~3,700 ft parking gives ~12 mi and 5,261 ft. Not used."
+ },
+ "ca_matterhorn_peak_east_couloir": {
+  "area": "ca_matterhorn_peak",
+  "facts": [
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120376684/east-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Mod. Snow, Grade II, FA unknown."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12279,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/SPSPkXlsht.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS list: Matterhorn Peak 12,279 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "End of Twin Lakes, then up Horse Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mikerecords.com/2023/03/matterhorn-peak-east-couloir-ski-3182023.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parked at the end of Twin Lakes and entered Horse Creek."
+     }
+    ]
+   }
+  ],
+  "note": "No page found stating miles/gain for this route; SPS sheet opened lacks mileage columns."
+ },
+ "ca_mount_san_antonio_mt_baldy_northeast_face": {
+  "area": "ca_mount_san_antonio_mt_baldy",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262195/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 2000 ft of easy snow to the summit, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262195/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Gate on road 3N06 where it turns south toward Baldy Notch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108262195/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "A gate on road 3N06 where the road turns south."
+     }
+    ]
+   }
+  ],
+  "note": "Second sources opened but off-route: noahhowell.com page is a Utah Baldy; sierradescents Stockton Flats page covers Harwood ski lines."
+ },
+ "ca_mt_shasta_hotlum_wintun_ridge": {
+  "area": "ca_mt_shasta",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Summit Pass from the Mt. Shasta ranger station",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/shasta/hotlum-wintun-ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pick up the required Summit Pass at the ranger station in Mt. Shasta."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Reachable once Military Pass Road opens, usually mid-April",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/shasta/hotlum-wintun-ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access opens with Military Pass Road, typically mid-April."
+     }
+    ]
+   }
+  ],
+  "note": "MP 112001385 is the Hotlum Glacier route, not this one. SierraDescents gives 7000+ ft of ski vertical, not a trailhead gain. shastaavalanche.org route page URLs tried returned 404."
+ },
+ "ca_ne_ridge_full": {
+  "area": "ca_lone_pine_peak",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 7000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106802632/ne-ridge-full",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 7000 ft, Grade IV, 5.6."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106802632/ne-ridge-full",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Phil Warrender, Gary Valle, July 10-11 1982",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106802632/ne-ridge-full",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Warrender and Valle over 10-11 July 1982."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "None on the ridge; maybe some on the descent by season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106802632/ne-ridge-full",
+      "retrieved_at": "2026-11-14",
+      "fact": "No water on the ridge; the descent may have some."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106802632/ne-ridge-full",
+      "retrieved_at": "2026-11-14",
+      "fact": "The full ridge traverse is 3 miles long and rises 6900 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_ridge",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106802632/ne-ridge-full",
+      "retrieved_at": "2026-11-14",
+      "fact": "Full ridge traverse is 3 miles long."
+     }
+    ]
+   }
+  ],
+  "note": "Single source. climber.org reports (1997/231, 1998/357, 2000/630, 2006/1473) are North Ridge or other routes. MP notes Secor upgraded it to 5.7 in later editions."
+ },
+ "ca_north_ridge_4": {
+  "area": "ca_lone_pine_peak",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106169851/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 2000 ft, Grade III, 5.6."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106169851/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ray Van Aken and Art Lembeck, 1952",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106169851/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Van Aken & Lembeck, 1952."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "The Dormitory, at the base of the 2nd tower near 12,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106169851/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best bivy is The Dormitory at the second tower base, about 12,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Leave the Meysan trail near 9,850 ft and head for the notch near 11,700 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106169851/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leave trail ~9850 ft, cross slabs, climb NE toward a notch ~11,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "leg_times",
+    "value": "TH to leaving trail at 10,000 ft 1h30; ridge 3h; descent to trail 1h30; trail to car 2h",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/lone-pine-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "One solo day: 1:30 approach, 3 h ridge, 1:30 descent, 2 h out."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Meysan Creek trailhead by Whitney Portal campground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/lone-pine-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts at the Meysan Creek trailhead parking."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Mostly class 4 with short easy fifth-class sections",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/lone-pine-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mostly 4th class with a few easy 5th sections."
+     },
+     {
+      "url": "https://www.climber.org/reports/2000/630.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route is largely class 4."
+     }
+    ]
+   }
+  ],
+  "note": "StephAbegg grades the ridge 5.5 (mostly 4th class); MP says 5.6. Not locked."
+ },
+ "co_andrews_creek_the_gash_chiropractic_couloir": {
+  "area": "co_andrews_creek_the_gash",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881179/chiropractic-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the couloir as 8 pitches of snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881179/chiropractic-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives the first ascent as unknown."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Big summit cornice; a collapse could sweep a climber over the 50 ft cliff band at the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881179/chiropractic-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cornice fall mid-climb risks a sweep over a 50 ft cliff below."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Short season: cornice holds until about early May",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881179/chiropractic-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Huge cornice does not break off until early May, limiting the season."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Can be soloed; pickets if protecting",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881179/chiropractic-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "A good solo, or protect with pickets."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "co_flattop_mountain_n_side_flattop_gully": {
+  "area": "co_flattop_mountain_n_side",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105917735/flattop-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft of steep snow."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Topher Donahue, 1999",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105917735/flattop-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Topher Donahue 1999."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Mostly about 45 degrees, possibly near 60 degrees for the last ~50 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105917735/flattop-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mostly 45 degrees, maybe approaching 60 degrees at the top for about 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "A couple of pickets and a rope if unsure on steep snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105917735/flattop-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pickets and a rope suggested for those uneasy on steep snow."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "co_flattop_mountain_n_side_northeast_gully": {
+  "area": "co_flattop_mountain_n_side",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122012538/northeast-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 2000 ft, easy snow, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122012538/northeast-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122012538/northeast-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives the first ascent as unknown."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Pickets or flukes, slings for horns, light rock rack if roping up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122012538/northeast-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pickets or flukes, slings and a light rock rack suffice if roped."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "co_gilpin_peak_south_couloir": {
+  "area": "co_gilpin_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 13699,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/gilpin-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gilpin Peak 13,699 ft (LiDAR; 13,694 before)."
+     }
+    ]
+   }
+  ],
+  "note": "climb13ers and mtnguide.net cover other Gilpin routes (North Ridge/Couloir, North Face Couloir); MP 203562326 South Couloir is in Idaho. No source for this route beyond the peak height."
+ },
+ "co_glen_cove_snow_and_mixed_big_blue": {
+  "area": "co_glen_cove_snow_and_mixed",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069667/big-blue",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1250 ft, easy snow."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069667/big-blue",
+      "retrieved_at": "2026-11-14",
+      "fact": "North-facing slope from 11,700 ft to 13,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Cove Creek pullouts at mile 13.5 of the Pikes Peak Highway, 0.5 mi past the gift shop and brake check",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069667/big-blue",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the Cove Creek pullouts, mile 13.5, just past the gift shop."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "co_glen_cove_snow_and_mixed_chimney_the": {
+  "area": "co_glen_cove_snow_and_mixed",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069519/the-chimney",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft, Mod. Snow, FA unknown."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Snow pickets optional",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203069519/the-chimney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow pickets if desired."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "co_glen_cove_snow_and_mixed_little_italy": {
+  "area": "co_glen_cove_snow_and_mixed",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203064767/little-italy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft, moderate snow."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203064767/little-italy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Base at 11,700 ft, tops out at 12,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/203064767/little-italy",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives the first ascent as unknown."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project gave route-specific figures; no second publisher page found for this route in this pass (DuckDuckGo results were MP, SummitPost (403 this wave) or off-route pages)."
+ },
+ "co_grizzly_peak_grizzly_couloir": {
+  "area": "co_grizzly_peak",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105762594/grizzly-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1200 ft."
+     },
+     {
+      "url": "https://summitborn.com/grizzly-peak-a-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 1,200 ft of couloir above Grizzly Lake."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105762594/grizzly-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP commitment grade II."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Grizzly (Lake) trailhead near the reservoir, about 10,560 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105762594/grizzly-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grizzly trailhead at 10,560 ft."
+     },
+     {
+      "url": "https://summitborn.com/grizzly-peak-a-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail starts near the reservoir at about 10,560 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About 3.5 miles on the Grizzly Lake trail to Grizzly Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105762594/grizzly-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "3.5 miles of easy trail to Grizzly Lake."
+     },
+     {
+      "url": "https://summitborn.com/grizzly-peak-a-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail climbs about 3.5 mi to Grizzly Lake."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13988,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105762594/grizzly-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir tops out at 13,800 ft, a few minutes below the 13,988 ft summit."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep snow, about 45-50 degrees near the top",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105762594/grizzly-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Near the top it is 45-50 degrees."
+     },
+     {
+      "url": "https://summitborn.com/grizzly-peak-a-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep snow, 45-50 degrees."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall from the cliffs on either side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105762594/grizzly-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some rockfall from the flanking cliffs."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Highway 82 over Independence Pass reopens around Memorial Day; before that the approach starts at the winter gate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/grizzly-peak-a-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Before Hwy 82 reopens near Memorial Day, start at the winter closure gate."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/grizzly-peak-a-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Needs an ice axe, crampons and the skills to use them."
+     }
+    ]
+   }
+  ],
+  "note": "Grizzly Lake given as 12,400 ft (MP) vs about 12,500 ft (Summitborn)."
+ }
+}

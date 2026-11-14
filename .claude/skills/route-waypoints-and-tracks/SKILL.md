@@ -17,8 +17,10 @@ description: Place ClimbMatch route waypoints on the exact map spot (summit, tra
 2. **USFS / NPS trail lines** — public domain; end where the maintained trail ends.
 3. **OpenStreetMap** trails and climbers' paths — credit "© OpenStreetMap contributors".
 
-**Not usable — and agents do not even open them to compare:** AllTrails, Gaia GPS, CalTopo,
-Strava, Wikiloc, Peakbagger tracks, Mountain Project / Hiking Project.
+**Not usable as a stored track:** AllTrails, Gaia GPS, CalTopo, Strava, Wikiloc, Peakbagger
+tracks, Mountain Project / Hiking Project. Their PAGES may be read for facts like any site (owner,
+2026-11-14: "use all sites for research for everything, all sessions, etc"; blocked ones through
+the owner's Chrome, per `route-research`), but their GPX/line data is never stored or drawn.
 **Tracks already stored from these sources are KEPT** (owner, 2026-11-14); the rule applies
 to new tracks only — **unless the stored line fails the checks below**: a line that is only the
 route's pins joined up (Dragontail Backbone Ridge, 6 points) or has gaps over 500 m (Chair Peak
