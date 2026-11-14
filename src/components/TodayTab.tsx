@@ -48,7 +48,6 @@ interface TodayTabAlerts { waiting: TodayTabWaiting[]; guest: boolean; notifs: T
 /** A live read, as the hooks hand it back; only the flags and rows Home reads. */
 interface TodayTabQuery<T> { data?: T | null; isError?: boolean; isSuccess?: boolean; isPending?: boolean; refetch: () => Promise<unknown> }
 /** A crew as Home counts them. */
-interface TodayTabCrew { id: string | number; [k: string]: unknown }
 /** What Home reads of the profile. */
 interface TodayTabProfile { name: string; avatar?: string | null; [k: string]: unknown }
 /** The signed-in session; only the sign-up metadata is read. */
@@ -62,10 +61,8 @@ export interface TodayTabProps {
   _isUid: (v: unknown) => boolean;
   _notifRequests: ReadonlyArray<unknown>;
   accountNeedsOnboarding: boolean;
-  activeCrews: ReadonlyArray<TodayTabCrew>;
   alertsOpen: boolean;
   archiveNotif: (id: string) => void;
-  bookmarks: string[];
   connections: ReadonlyArray<TodayTabPerson>;
   crewsUnavailable: boolean;
   dbContribs: TodayTabQuery<unknown>;
