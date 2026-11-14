@@ -102,6 +102,13 @@ for (const [a, b] of [["mt baker", "Mount Baker"], ["Mt. St. Helens", "mount sai
   if (S.searchCanon(a) !== S.searchCanon(b)) fails.push(`searchCanon("${a}") != searchCanon("${b}")`);
 }
 if (S.searchNorm("Mt Baker") !== S.searchNorm("mount baker")) fails.push("searchNorm is not spelling-independent for Mt/Mount — the exact-area leg's `eq` would miss");
+// The route search's place+route split names an area by its words, after Mount/The, or with the
+// landform word a climber drops: "liberty bell beckey" must reach Liberty Bell Mountain's Beckey Route.
+const SPLIT_PLACE = [[["liberty", "bell"], "Liberty Bell Mountain"], [["liberty", "bell"], "Liberty Bell Mtn"],
+  [["stuart"], "Mount Stuart"], [["mt", "stuart"], "Mount Stuart"], [["prusik"], "Prusik Peak"],
+  [["early", "winters"], "Early Winters Spire"], [["main", "wall"], "The Main Wall"], [["liberty", "bell"], "Liberty Bell"]];
+for (const [w, name] of SPLIT_PLACE) if (!S.splitPlaceSpellings(w).includes(S.searchNorm(name))) fails.push(`splitPlaceSpellings(${JSON.stringify(w)}) misses "${name}" — "${w.join(" ")} <route>" would not narrow climbs to it`);
+for (const [w, name] of [[["liberty"], "Liberty Bell Mountain"], [["west"], "West Ridge"]]) if (S.splitPlaceSpellings(w).includes(S.searchNorm(name))) fails.push(`splitPlaceSpellings(${JSON.stringify(w)}) matches "${name}" — the place half must name the area outright`);
 // Tokens go into ilike patterns unescaped: they must never carry a LIKE metacharacter.
 for (const q of ["100% pure", "a_b", "50% off \\ back"]) {
   if (S.searchTokens(q).some((t) => /[%_\\]/.test(t))) fails.push(`searchTokens("${q}") leaks a LIKE metacharacter`);

@@ -68,7 +68,10 @@ import { refreshProfileReadsOnSignIn } from "./lib/auth.js";
 // or an RLS error still gets the full three, because those genuinely can differ on a second
 // attempt. Matched on the message because the value reaching here is the plain object
 // supabase-js returns, not a DOMException, so `err.name` is unreliable.
-const isTimeout = (err) => /TimeoutError|AbortError|aborted due to timeout|signal is aborted/i.test(String((err && err.message) || err || ""));
+// A Postgres STATEMENT timeout (57014) is the same verdict from the server side: the header search
+// retried one three times with backoff and held the previous term's rows on screen for minutes
+// (walkthrough 2026-11-14).
+const isTimeout = (err) => (err && err.code === "57014") || /TimeoutError|AbortError|aborted due to timeout|signal is aborted|canceling statement due to statement timeout/i.test(String((err && err.message) || err || ""));
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

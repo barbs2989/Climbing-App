@@ -232,10 +232,16 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
       {crumbs.length ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: 10, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
-            <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ ...POP_BACK, alignSelf: "flex-start", maxWidth: "100%" }}>
+            {/* THE AREA TREE has its own labelled button here, beside Back (owner, 2026-11-14: the tree was "difficult to
+                find on the top left with a small button, make that more clear that is a button"). It used to be a 12px
+                "All areas" text link in the website's sub-area column only; this bar is on every Climbs screen, phone too. */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+            <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ ...POP_BACK, maxWidth: "100%" }}>
               <span aria-hidden="true">{"←"}</span>
               <span style={{ minWidth: 0, overflowWrap: "anywhere" }}>{"Back to " + (screen !== "areas" ? current.name : crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span>
             </button>
+            {stateNode ? <button onClick={() => setTreeOpen(true)} aria-haspopup="dialog" aria-label={"Area tree of " + stateNode.name} style={{ ...POP_BACK, padding: "0 13px" }}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="6" height="5" rx="1" /><rect x="15" y="10" width="6" height="5" rx="1" /><rect x="15" y="17" width="6" height="5" rx="1" /><path d="M6 8v11h9M6 12.5h9" /></svg><span>Area tree</span></button> : null}
+            </div>
             {/* The path ends on the area you are IN (owner, 2026-11-11: "The area name needs to be on the top header
                 too"): its header box scrolls away on a long page, and this bar does not. It is the last item, in bold,
                 not a link (aria-current). On a sub-screen (Route finder, Map…) the area is a link, the way back to its page. */}
