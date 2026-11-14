@@ -1,0 +1,21 @@
+-- 0416: a PostgREST connection may not sit inside an open transaction for more than 60 seconds.
+--
+-- WHY (2026-11-11 outage, owner present): for about three hours every app and CI read timed out
+-- while the database itself was idle (no long query, nothing blocked, Supabase status green).
+-- pg_stat_activity showed PostgREST holding 17 connections in state "idle in transaction" (one
+-- "aborted") — a transaction opened and never committed or rolled back. That is PostgREST's
+-- whole pool, so every new request queued for a connection until it timed out. Ending those
+-- backends by hand (pg_terminate_backend) brought simple reads back at once.
+--
+-- A PostgREST request runs its transaction for milliseconds; nothing legitimate leaves one open
+-- and idle for a minute. With this setting Postgres ends such a session itself, PostgREST
+-- reconnects, and one stuck request can no longer take the whole API down.
+--
+-- The setting is on the LOGIN role PostgREST connects as (authenticator), so it holds through
+-- the per-request SET ROLE to anon / authenticated. It applies to NEW connections: PostgREST's
+-- existing pool picks it up as connections recycle (or on a restart of the API).
+--
+-- Idempotent: ALTER ROLE ... SET simply overwrites the value. Replays on an empty preview
+-- database too (the authenticator role exists in every Supabase database).
+
+alter role authenticator set idle_in_transaction_session_timeout = '60s';
