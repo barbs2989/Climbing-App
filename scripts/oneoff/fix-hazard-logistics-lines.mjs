@@ -14,7 +14,7 @@
 //     (road.driveNote/status/seasonalGate, permit, access.closures/rules/permit/notes, approach,
 //     descent_text);
 //   - the box (knownHazards, what RouteDetail renders) loses exactly the dropped lines, in order;
-//   - routeTerrain and routeTags are byte-identical before and after (raptorClosure reads closure
+//   - routeTerrain and routeTags are byte-identical before and after (routeTags then drew a Raptor closure chip read from closure
 //     clauses out of these columns);
 //   - no column is emptied, and no string-shaped watch_out is edited.
 //
