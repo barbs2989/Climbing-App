@@ -965,7 +965,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     §5 now fails if "(mapped)" comes back. `basis` still distinguishes the two in `routeRock()`.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
-    not modelled — seepage is only a risk from recent rain — and the card says so.
+    not modelled — seepage is only a risk from recent rain, shown as "Seepage risk" (the card's
+    standing footnote saying so was dropped on the owner's request, 2026-11-14).
   - **Best day to climb — REMOVED (§6)**: the Home tile, Menu tile and overlay that ran `scoreForecast`
     over the saved crag climbs and areas (with its own honesty rules: "not a rating" on a failed
     forecast, "No score: …" for an unlocated climb, an 8-crag cap it said out loud) was removed by the

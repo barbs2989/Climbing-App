@@ -144,7 +144,7 @@ jobs:
       # The offline state files (state-snapshots.yml builds them nightly into the Actions cache).
       # Restored by key PREFIX, so the newest set wins. Missing is not an error: the app falls back
       # to paging the database, exactly as it did before these files existed.
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v6
         if: steps.tip_early.outputs.current == 'true'
         with:
           path: state-snapshots
