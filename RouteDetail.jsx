@@ -337,8 +337,8 @@ function gapSeason(r){return !!r&&!r.season&&!r.climate&&!["trad","sport"].inclu
    full here can never trip that guard.
    The last resort now breaks on a WORD boundary: "Roughly January through the…" reads as a
    sentence that stops, where "Roughly January through the e…" reads as a bug. */
-/* Route tags — list membership ("Fifty Classic Climbs", "Bulger"), what the climbing is
-   like (from routes.features), and the derived warnings. Rendered from the SAME slugs
+/* Route tags — list membership ("Fifty Classic Climbs", "Bulger", "Regional classic") and
+   nothing else (owner, 2026-11-05 — no feature or derived chips). Rendered from the SAME slugs
    Challenges and Lists match on, so a chip a climber can see is a chip a challenge can
    count — the two cannot drift into disagreeing about whether this route is a classic.
    `detail` ("#19", "tied #51") is the rank the slug cannot carry; it rides beside the
@@ -406,7 +406,7 @@ function RouteDetail({route:routeRow,onBlockClimber,cragPanels,condPanels,safety
   const approachOpt=approachOpts.find(function(o){return o.key===approachKey;})||null;
   const approachVia=useMemo(function(){return viaRouteOf(approachOpt&&approachOpt.variant,_apSibs,dbRouteToCamel);},[approachOpt,_apSibs]);
   /* withRecordedTrackOnly: the route line is a recorded track or nothing (owner, 2026-10-25), so a stored line that is only the pins joined up leaves here, AFTER the approach overlay, which can swap in another row's line. *//* ONE WALK-IN PER CRAG (0397): an approved trail to the crag is saved on the crag's AREA (areas.walkin_gpx), as theCrag attaches an approach path to the crag, so every climb there draws it. A crag climb with a recorded line of its own keeps that line (it may run on to this climb's start); the area's line fills only an empty map, under the same recorded-track-or-nothing test. */const _walkQ=useArea(USE_DB&&CRAG_CATS.includes(catOf(routeRow))?routeRow.mountainId:null);const _walkGpx=_walkQ.data&&_walkQ.data.walkin_gpx,_walkKind=_walkQ.data&&_walkQ.data.walkin_kind;const route=useMemo(function(){return withCragWalkIn(withRecordedTrackOnly(applyApproach(routeRow,approachOpt,approachVia)),_walkGpx,_walkKind);},[routeRow,approachOpt,approachVia,_walkGpx,_walkKind]);
-  /* "N lists saved" counted the example CLIMBERS' objectives only, so real climbers saving this climb never moved it.
+  /* "N climbers saved it" (once "N lists saved") counted the example CLIMBERS' objectives only, so real climbers saving this climb never moved it.
      objectives is public-read (0031): one grouped count for this route. */
   const savedCountQ=useObjectiveCounts(routeRow&&routeRow.id?[routeRow.id]:[]);
   /* ROUTE STATS' page views (0353): one per visitor, route and day, counted on whichever sub-tab the page opens on. The server dedupes, so a re-render or a reload adds nothing. */
