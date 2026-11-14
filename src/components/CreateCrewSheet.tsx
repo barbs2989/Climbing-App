@@ -67,7 +67,7 @@ export interface CreateCrewSheetProps {
   subtitle?: string;
 }
 
-/* + CREATE A CREW, SECTIONED (owner 2026-11-14: "it needs to be sectioned out better"). It was a native <select> whose optgroup
+/* + CREATE A CREW, SECTIONED (owner 2026-11-14: "it needs to be sectioned out better"). It was a native select element whose optgroup
    labels are faint, so a crag session, every saved list and "find it in Climbs" read as one run of options. Three headed sections
    now: a crag session, your saved climbs (SavedClimbList), and a climb you have not saved yet. Climb again with a past crew opens
    it too, titled for those climbers. */
