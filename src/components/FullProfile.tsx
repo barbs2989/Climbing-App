@@ -2,7 +2,7 @@ import { tx } from "../../lib/tapWords.js";
 import { useMemo, useState } from "react";
 import { useSwipeTabs } from "../../lib/pageSwipe.js";
 import { createPortal } from "react-dom";
-import { AVAIL_SLOT_OPTS, C, CAT, LEVEL_DESC, LVL, ME, MOUNTAINS, ROUTES, SKILLS, SL, profileSkills, SZ6, VOUCH_RATING_LABEL, VOUCH_RATING_ORDER, availSlotOn, belayLabel, catOf, certExpiryInfo, compat, compatUnknown, compatWhy, crewPlace, distMiles, genderLabel, mutualCount, mutualFirstNames, mutualLabel, profileGradeRows, pubFirst, pubName, realProfileId, gradeRoleText, seedHistoryFor, trophies, uApproxDist, uDistMi, useBadges, vouchAvg, vouchRowsFrom, weekOf, yearsSince } from "../../ClimbMatchCore.jsx";
+import { AVAIL_SLOT_OPTS, C, CAT, LEVEL_DESC, LVL, ME, MOUNTAINS, ROUTES, SKILLS, SL, profileSkills, skillKeyOf, SZ6, VOUCH_RATING_LABEL, VOUCH_RATING_ORDER, availSlotOn, belayLabel, catOf, certExpiryInfo, compat, compatUnknown, compatWhy, crewPlace, distMiles, genderLabel, mutualCount, mutualFirstNames, mutualLabel, profileGradeRows, pubFirst, pubName, realProfileId, gradeRoleText, seedHistoryFor, trophies, uApproxDist, uDistMi, useBadges, vouchAvg, vouchRowsFrom, weekOf, yearsSince } from "../../ClimbMatchCore.jsx";
 import { HERO_BG, HERO_SHEEN } from "../../lib/ScreenHero";
 import { POP_CLOSE_MEDIA } from "../../lib/popupChrome.js";
 import { askConfirm } from "../../lib/ConfirmSheet.jsx";
@@ -10,6 +10,7 @@ import { clickable } from "../../lib/clickable";
 import { dbRouteToCamel, useClimberVouches, useFullProfile, useMyObjectives, useProfilesByIds, usePublicLists, useRoutesByIds, useVerifiedUsers } from "../../lib/db";
 import { displayGrade, gradeNumFor } from "../../lib/grade.js";
 import ActionIcon from "./ActionIcon.tsx";
+import SkillGuideLink from "./SkillGuideLink.tsx";
 import AscentPyramid, { type StoredPyramid } from "./AscentPyramid.tsx";
 import Av from "./Av.tsx";
 import BadgeGrid from "./BadgeGrid.tsx";
@@ -258,7 +259,7 @@ export default function FullProfile({restricted,onRestrict,notify,climber,onClos
         {pt==="safety"?<div>
           {climber.safetyScore!=null?<div style={{background:C.greenBg,borderRadius:11,padding:"11px 13px",marginBottom:12,border:`1px solid ${C.greenDim}`}}><div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:3}}>OVERALL SAFETY SCORE — {climber.safetyScore}/100</div><Bar val={climber.safetyScore} color={C.green}/></div>:null}
           {(climber.belayDevices&&Object.keys(climber.belayDevices).length)?<div style={{marginTop:12}}><SL>BELAY DEVICE PROFICIENCY</SL><div style={{display:"flex",gap:5,flexWrap:"wrap"}}>{Object.entries(climber.belayDevices).map(([dev,lvl])=><span key={dev} style={{fontSize:12,padding:"2px 8px",borderRadius:6,background:lvl==="Expert"?C.greenBg:lvl==="Proficient"?C.blueBg:C.amberBg,color:lvl==="Expert"?C.green:lvl==="Proficient"?"#fff":C.amber,fontWeight:600}}>{belayLabel(dev)} · {lvl}</span>)}</div></div>:null}
-          <Hr/><SL>Certifications</SL><div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:12}}>{climber.certifications.length?climber.certifications.map(c=>{const ex=certExpiryInfo(climber.certExpiry?climber.certExpiry[c]:undefined);return <span key={c} style={{fontSize:12,color:ex&&ex.expired?C.amber:C.text,background:ex&&ex.expired?C.amberBg:C.surface,border:"1px solid "+(ex&&ex.expired?C.amberBg:C.border),padding:"3px 9px",borderRadius:7}}>{c}{ex?" · "+ex.label:""}</span>;}):<span style={{fontSize:12,color:C.textMuted}}>None listed.</span>}</div>{(climber.skills||[]).length?<><SL>Skills</SL><div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:12}}>{(climber.skills||[]).map(sk=><span key={sk} style={{fontSize:12,color:C.text,background:C.surface,border:"1px solid "+C.border,padding:"3px 9px",borderRadius:7}}>{sk}</span>)}</div></>:null}
+          <Hr/><SL>Certifications</SL><div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:12}}>{climber.certifications.length?climber.certifications.map(c=>{const ex=certExpiryInfo(climber.certExpiry?climber.certExpiry[c]:undefined);return <span key={c} style={{fontSize:12,color:ex&&ex.expired?C.amber:C.text,background:ex&&ex.expired?C.amberBg:C.surface,border:"1px solid "+(ex&&ex.expired?C.amberBg:C.border),padding:"3px 9px",borderRadius:7}}>{c}{ex?" · "+ex.label:""}</span>;}):<span style={{fontSize:12,color:C.textMuted}}>None listed.</span>}</div>{(climber.skills||[]).length?<><SL>Skills</SL><div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:12}}>{(climber.skills||[]).map(sk=><span key={sk} style={{fontSize:12,color:C.text,background:C.surface,border:"1px solid "+C.border,padding:"3px 9px",borderRadius:7}}><SkillGuideLink skillKey={skillKeyOf(sk)||undefined} label={"Guide: "+sk}>{sk}</SkillGuideLink></span>)}</div></>:null}
           
         </div>:null}
         {pt==="vouches"?<div>
