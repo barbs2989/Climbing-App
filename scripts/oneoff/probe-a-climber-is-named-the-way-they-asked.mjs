@@ -40,6 +40,8 @@ const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 const core = readCoreSource(ROOT);
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
+// PARTNER_COLS and the column-grant aliases live here since 0434.
+const cols = fs.readFileSync(path.join(ROOT, "lib/profileCols.js"), "utf8");
 
 // Balance braces from the declaration rather than anchoring on a LINE: a comment written beside
 // the helper must not read as ANCHOR LOST, which is a probe refusing to run because somebody
@@ -117,8 +119,8 @@ const SITES = [
   ["app", "D — the open-crew organiser chip carries showName",
     "username:p.username||\"\",showName:!!p.showName"],
   ["db", "the hook still SELECTS the columns all four depend on",
-    'select("id, name, avatar, show_name, username, availability, avail_week")'],
-  ["db", "...and PARTNER_COLS still carries show_name for the search pool",
+    'profileCols("id,name,avatar,show_name,username,availability,avail_week"'],
+  ["cols", "...and PARTNER_COLS still carries show_name for the search pool",
     "show_name,resume_public"],
   // THE TWO HOOKS HAVE DIFFERENT SHAPES AND WHICH FIX READS WHICH DEPENDS ON IT:
   // useProfilesByIds MAPS camelCase (so crewMemberById reads `pr.showName`), while
@@ -130,7 +132,7 @@ const SITES = [
     "showName: !!p.show_name"],
 ];
 for (const [which, what, needle, mustBeAbsent] of SITES) {
-  const src = which === "core" ? core : which === "app" ? app : db;
+  const src = which === "core" ? core : which === "app" ? app : which === "cols" ? cols : db;
   const n = src.split(needle).length - 1;
   if (mustBeAbsent) {
     if (n === 0) ok(what);
