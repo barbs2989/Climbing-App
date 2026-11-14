@@ -39141,3 +39141,42 @@ across seven attempts over several minutes. The agent proxy's own status endpoin
 relay failures, ruling out a proxy-side cause. No batch processed, no SQL written, progress
 unchanged. Next batch will still continue id-ascending from `wa_austera_peak_southwest_ridge`
 (pass 9) once the database is reachable again.
+
+## 2026-11-14 — Batch 556 (pass 9), continuing after the earlier outage
+
+Outage from earlier today had cleared; Supabase answered normally. Checked Bacon Peak (Diobsud
+Creek Glacier), Baldy (Standard Route), Baring Mountain (East Face, Oatmeal Man, North Face/R1),
+Bear Mountain-Chilliwack (North Buttress), and Bears Breast Mountain (Infinite Beauty, Southwest
+Face, Timeless Treasure) — 9 routes across 5 peaks, id-ascending from
+`wa_austera_peak_southwest_ridge`.
+
+**Clean (8):** every peak's stored `high_point_ft` matched an outside source exactly or within a
+few feet — Bacon Peak 7,070 ft (Wikipedia), Baldy 6,827 ft (WTA, PeakVisor), Baring Mountain 6,127
+ft on all three routes (Wikipedia, SummitPost), Bear Mountain-Chilliwack 7,931 ft (an independent
+trip report), Bears Breast Mountain 7,197 ft (Wikipedia, PeakVisor). Bear Mountain's North
+Buttress also had its FA (Beckey & Fielding, July 1967), `pitches: 7` and `length_m` 671 (~2,200
+ft) corroborated together by an AAJ 1968 account surfaced in search. Bears Breast's Southwest Face
+FA (Beckey/Barto/Swift, Aug 8 1939) is confirmed as also the peak's own first ascent. Both
+trailheads checked by coordinate — Bears Breast's shared Salmon La Sac trailhead (independently
+corroborated as the real approach to this peak by a 2014 trip report) and the Southwest Face's
+Dingford Creek trailhead — landed within a few hundred meters of each place's own published
+location.
+
+**Flagged for human review (1, new):** `wa_baring_mountain_r1` (North Face) — the stored FA ("Don
+Gordon (Claunch) and Ed Cooper, July 9-13, 1960") conflicts with a SummitPost claim (via search
+snippet) of "Don Gordon and Ed Cooper, July 13, 1961" for the first successful ascent; other
+snippets describe a multi-year siege (1951/1956/1959/1960 attempts) that doesn't cleanly settle
+which year topped the face out. The primary AAC article and summitpost.org are both unreachable
+from this environment (DNS/network-policy blocked), so the conflict can't be resolved from here.
+No SQL written.
+
+**Noted, not flagged:** the same route's hazard text claims a "1951 fatality during an early
+attempt" — a search snippet of the AAC account mentions "an accident" on early attempts without
+confirming a death or year; unconfirmed but not contradicted, left alone. FAs for East Face and
+Oatmeal Man (both credited to Peter Doorish, 1992) returned no hits in either direction and so
+were not flagged. Baldy's own `data_quality.gaps` text still cites a stale "6,808 ft" figure even
+though the stored `high_point_ft` (6,827) is the one that actually matches outside sources — a
+stale note, not a wrong number, not worth a SQL fix.
+
+0 confirmed errors fixed, 1 newly flagged for human review, 8 clean.
+Next batch will continue id-ascending from `wa_bears_breast_mountain_timeless_treasure` (pass 9).
