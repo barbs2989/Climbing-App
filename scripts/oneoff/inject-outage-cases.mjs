@@ -70,8 +70,8 @@ const CASES = {
   },
   home: {
     file: "src/components/TodayTab.tsx",
-    from: 'My objectives",objectivesUnavailable?"couldn’t load":wishlist.length',
-    to: 'My objectives",wishlist.length',
+    from: 'My objectives",objectivesUnavailable?"couldn’t load":""',
+    to: 'My objectives",""',
     expect: "fail",
     names: /Home:revisited/,
   },

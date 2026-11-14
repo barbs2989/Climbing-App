@@ -5,9 +5,10 @@ description: Research and VERIFY route-page fields (grade, length, pitches, FA, 
 
 # Route research: verify once, lock, never redo
 
-> **DRAFT (2026-11-14), decided with the owner step by step. Not built yet:** the ledger
-> table, the lock refusal in `enrich:apply`, and the open-data scripts. Until they exist, a
-> batch must still write `review.fields[]` evidence (below) so it can be loaded later.
+> **Decided with the owner step by step (2026-11-14).** Built: the ledger table
+> `route_field_evidence` (0437) and the lock refusal in `enrich:apply` — a batch carries its
+> evidence as `ledger` entries (format: `docs/codebase/research-ledger.md`). Not built yet: the
+> open-data scripts and the nightly batch.
 > Pilot state: **Washington**. Companion skills: `route-waypoints-and-tracks`, `route-prose`.
 
 ## The one rule that makes data converge
@@ -83,6 +84,14 @@ another; two pages crediting the same guidebook. When unsure, they are not indep
   place-names bulk file (`DomesticNames_<ST>_Text.zip`) has coordinates but no elevations.
 - **Gain may be measured:** official summit figure − USGS elevation model at the trailhead
   parking point (Rainier: 14,410 − 5,410 = 9,000 ft), and agrees with a published figure.
+
+### Per-discipline rules
+Before researching a route, read **[disciplines.md](disciplines.md)** for its discipline: what
+the key facts are and where the general rules bend (sport, trad, toprope, bouldering, aid, ice,
+mixed, alpine, scrambling, mountaineering). Two rules from it apply everywhere: **Mountain
+Project / OpenBeta coordinates are never evidence**, and **MP alone locks grade / length /
+pitches / bolts / anchor / rack at the 1-source tier** when the other sources are blocked or
+paywalled (never coordinates or a first ascent). No derived values.
 
 ## 3. Contradicting a locked field
 

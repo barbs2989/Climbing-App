@@ -64,7 +64,7 @@ export const NEEDS_EXTRA_STATE = {
 // crewListOpen has no entry: it is an inline disclosure in the crew finder's results, not a popup.
 export const EXTRA_STATE_OPENERS = {
   areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
-  reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("fieldEdits");' },
+  reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("standing");' },
 };
 export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
 

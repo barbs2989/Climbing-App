@@ -151,7 +151,8 @@ try {
     const unique = `${fixture.mate.name} ${fixture.mate.id.slice(0, 6)}`;
     const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.mate.id}`, {
       method: "PATCH", headers: { ...H, Prefer: "return=representation" },
-      body: JSON.stringify({ name: unique }),
+      // show_name on: the share search matches a name only where the climber shows it (0434).
+      body: JSON.stringify({ name: unique, show_name: true }),
     });
     const rows = r.ok ? await r.json() : [];
     if (!r.ok || rows.length !== 1) dead(`could not give the mate a per-run name: ${r.status} ${JSON.stringify(rows).slice(0, 200)}`);
@@ -763,16 +764,32 @@ try {
     await settledText(page);
     if (!(await tapByName(page, "Crews"))) dead(`no Crews sub-view on the Crew tab (${why})`);
     await settledText(page);
-    // OPEN EVERY CREW CARD FIRST. Since #2531 (2026-10-21) each card starts COLLAPSED to a summary,
-    // and the roster -- the "Crew · N members" box this reads -- renders only behind "View plan" (its chevron is an SVG now, so the label no longer ends in a ▾ glyph and an exact match found no button).
-    // The walk scanned collapsed cards and reported "found 0" two runs running (2026-10-24), which
-    // reads exactly like a missing roster. Clicked once each; a card already open has no such button.
-    const opened = await page.evaluate(() => {
-      const bs = [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim().startsWith("View plan"));
-      bs.forEach((b) => b.click());
-      return bs.length;
-    });
-    if (opened) await settledText(page);
+    // THE ROSTER IS IN EACH CARD'S CREW SHEET (2026-11-14, "guided, not gated"). The card is compact
+    // and every step opens in its own sheet; the "Crew · N members" box this reads lives in the Crew
+    // step's sheet (the row carrying data-crew-step="crew"). Before that it sat behind "View plan", and
+    // before THAT the walk scanned collapsed cards and reported "found 0" two runs running -- which
+    // reads exactly like a missing roster. So: open each card's Crew sheet in turn, read its roster,
+    // close it, and only then decide; the chosen card's sheet is reopened for the click.
+    const cardCount = await page.evaluate(() => document.querySelectorAll('[id^="crewcard-"]').length);
+    const openCrewSheet = async (i) => {
+      const ok = await page.evaluate((k) => {
+        const card = document.querySelectorAll('[id^="crewcard-"]')[k];
+        const b = card && card.querySelector('button[data-crew-step="crew"]');
+        if (b) b.click();
+        return !!b;
+      }, i);
+      if (ok) await settledText(page);
+      return ok;
+    };
+    const closeSheet = async () => {
+      await page.evaluate(() => {
+        const dlgs = [...document.querySelectorAll('[role="dialog"]')];
+        const d = dlgs[dlgs.length - 1];
+        const x = d && d.querySelector('button[aria-label="Close"]');
+        if (x) x.click();
+      });
+      await settledText(page);
+    };
     // FOUND STRUCTURALLY -- the one roster member who is not YOU -- never by a name derived here.
     // THE ROSTER DOES NOT RENDER `pubName`: it renders `p.name.split(" ")[0]`, the member's first
     // name, so the handle phase 4 read off the friends row (`@robinbelay`) matches nothing here.
@@ -782,7 +799,8 @@ try {
     // rendered, which is exactly what reading the name off the screen exists to avoid.
     // The crew has two members and one of them is the account driving the walk, so "not You" is
     // both unambiguous and independent of how either name is spelled.
-    const pick = await page.evaluate(() => {
+    // Reads the OPEN sheet's roster. `click` names the label to click; without it this only reports.
+    const scanRoster = (click) => page.evaluate((clickName) => {
       // EVERY CREW CARD, NOT THE FIRST ONE. The fixture seats this account in TWO crews -- the one
       // it shares with the mate, and a second the mate owns where it is only INVITED -- so the Crews
       // view renders two cards and `find` on the first heading can land on a roster that holds no
@@ -809,21 +827,40 @@ try {
           if (first && first !== "You") cand.push({ el, first });
         }
       }
-      const labels = [...new Set(cand.map((c) => c.first))];
-      if (labels.length !== 1) {
-        // A MISS ARRIVES AS EVIDENCE RATHER THAN AS ANOTHER GUESS. Three runs were spent on
-        // confident wrong readings of this screen -- the four-attempts shape CLAUDE.md records for
-        // AreaLatest -- so the failure carries the cards it saw and what was on the page.
-        return {
-          err: `expected exactly 1 crew member who is not You, found ${labels.length} distinct`,
-          saw: labels, cards: heads.length,
-          seen: (document.body.innerText || "").slice(0, 400).replace(/\s+/g, " "),
-        };
+      if (clickName) {
+        const chosen = cand.find((c) => c.first === clickName);
+        if (chosen) chosen.el.click();
+        return { clicked: !!chosen };
       }
-      const chosen = cand.find((c) => c.first === labels[0]);
-      chosen.el.click();
-      return { name: chosen.first, cards: heads.length };
-    });
+      return { labels: [...new Set(cand.map((c) => c.first))], heads: heads.length };
+    }, click || null);
+    const seenBy = [];
+    const allLabels = new Set();
+    let headsSeen = 0;
+    for (let i = 0; i < cardCount; i++) {
+      if (!(await openCrewSheet(i))) continue;
+      const r = await scanRoster();
+      headsSeen += r.heads;
+      seenBy.push(r.labels);
+      r.labels.forEach((l) => allLabels.add(l));
+      await closeSheet();
+    }
+    const labels = [...allLabels];
+    let pick;
+    if (labels.length !== 1) {
+      // A MISS ARRIVES AS EVIDENCE RATHER THAN AS ANOTHER GUESS. Three runs were spent on
+      // confident wrong readings of this screen -- the four-attempts shape CLAUDE.md records for
+      // AreaLatest -- so the failure carries the cards it saw and what was on the page.
+      pick = {
+        err: `expected exactly 1 crew member who is not You, found ${labels.length} distinct across ${cardCount} card(s) / ${headsSeen} roster(s)`,
+        saw: labels,
+        seen: await page.evaluate(() => (document.body.innerText || "").slice(0, 400).replace(/\s+/g, " ")),
+      };
+    } else {
+      const at = seenBy.findIndex((ls) => ls.includes(labels[0]));
+      const clicked = (await openCrewSheet(at)) && (await scanRoster(labels[0])).clicked;
+      pick = clicked ? { name: labels[0], cards: cardCount } : { err: `the roster row for ${labels[0]} could not be clicked on reopening card ${at}` };
+    }
     if (pick.err) {
       dead(`could not open the mate from the crew roster (${why}): ${pick.err}` +
         (pick.saw ? " — rows: " + JSON.stringify(pick.saw) : "") +

@@ -17,7 +17,7 @@ export default function ShareExportRow({ onShare, onPdf, label }: ShareExportRow
   return (
     <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
       <button onClick={function (e: MouseEvent) { e.stopPropagation(); onShare(); }} aria-label={"Share " + label} style={bs}>{"Share…"}</button>
-      <button onClick={function (e: MouseEvent) { e.stopPropagation(); onPdf(); }} aria-label={"Save " + label + " as a PDF"} style={bs}>{"Save as PDF"}</button>
+      <button onClick={function (e: MouseEvent) { e.stopPropagation(); onPdf(); }} aria-label={"Save as PDF: " + label} style={bs}>{"Save as PDF"}</button>
     </div>
   );
 }

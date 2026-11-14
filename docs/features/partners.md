@@ -42,6 +42,12 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 - **Climbers on ClimbMatch** (signed-in + DB): real, listed climbers (`profiles.discoverable`, on by default since 0195;
   opt out in Settings). Distance chips: Near my zip / Near me now (browser geolocation, rounded to 2 decimals) / Anywhere,
   with a 10-500 mi radius slider (steps of 5, debounced 400 ms). Others see a **distance only**, never a zip.
+- **What Partners requires** (owner, 2026-11-14 — asked here, not at sign-up): the real-climber lists render only once a
+  **zip** is on file (`_zipNeeded` in `lib/PartnerSearch.jsx`: an inline zip card saves through `saveMyZip`; a zip read
+  still loading or failed does not gate; the example profiles are never gated). Real climbers with **no photo** are left
+  out of every browse list (name search still finds them), and a viewer without one is told they are not shown.
+  **Sending a request** to a real climber without your own photo is refused (`sendReq` in `ClimbMatch.jsx`: *Didn't send
+  it — add a profile photo first*) and opens Edit profile on the photo.
 - **Only climbers of my gender** (0359, 2026-10-24): a switch under *Climbers on ClimbMatch*'s distance chips, worded by
   your own gender (*Only women* / *Only men* / *Only non-binary climbers*), offered once you have set one (otherwise a line
   points to Edit profile). On, every real browse list shows only climbers who stated the same gender (`usePartnerGenders`, one

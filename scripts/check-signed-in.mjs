@@ -344,15 +344,11 @@ try {
      after this capture: "North Ridge" was listed but "CI" was not named and the chat would not open,
      which read as the #569 regression. Same shape as the Group wait below. Waiting cannot mask a real
      defect: the assertions are unchanged, so a roster that never renders still fails, just 15s later. */
-  /* Every crew card starts COLLAPSED (2026-10-21: the tab used to open the first crew's whole plan
-     inline, and the owner found it overwhelming), so the roster and the chat button sit behind the
-     North Ridge card's "View plan". Open that card first; the assertions below are unchanged. */
+  /* THE COMPACT CARD NAMES ITS CREW (2026-11-14, "guided, not gated"): there is no "View plan" any
+     more -- each card shows who is in ("You, Robin") under the cover and carries the Crew chat button
+     itself, while the full roster lives in the Crew step's sheet. So nothing is opened here: opening a
+     sheet would put a dialog over the card the chat click below reads. The assertions are unchanged. */
   await page.waitForFunction(() => [...document.querySelectorAll('[id^="crewcard-"]')].some((c) => (c.innerText || "").includes("North Ridge")), null, { timeout: 15000 }).catch(() => {});
-  await page.evaluate(() => {
-    const card = [...document.querySelectorAll('[id^="crewcard-"]')].find((c) => (c.innerText || "").includes("North Ridge"));
-    const b = card && [...card.querySelectorAll("button")].find((e) => (e.textContent || "").trim().startsWith("View plan"));
-    if (b) b.click();
-  });
   const mateWait = fixture.mate.name.split(" ")[0].toLowerCase();
   await page.waitForFunction(
     (m) => document.body.innerText.toLowerCase().includes(m),

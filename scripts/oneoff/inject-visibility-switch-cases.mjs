@@ -42,12 +42,12 @@ const CASES = [
   { name: "name-hydrate", file: CM, must: "fail", why: "0175's own read-back, removed",
     find: "setShowRealName(!!p.show_name);", repl: "" },
 
-  { name: "partner-cols", file: DB, must: "fail", why: "rule 2 — partner search stops carrying resume_public",
+  { name: "partner-cols", file: "lib/profileCols.js", must: "fail", why: "rule 2 — partner search stops carrying resume_public",
     find: "boulder_grade,show_name,resume_public", repl: "boulder_grade,show_name" },
 
   { name: "conn-select", file: DB, must: "fail", why: "rule 2 — the connections select forgets it",
-    find: '"id, name, username, avatar, location, show_name, resume_public"',
-    repl: '"id, name, username, avatar, location, show_name"' },
+    find: 'profileCols("id,name,username,avatar,location,show_name,resume_public"',
+    repl: 'profileCols("id,name,username,avatar,location,show_name"' },
 
   /* Rule 3 — the second way into a résumé. The stat tile really did call onResume()
    * unconditionally, so gating the profile BUTTON alone left a private résumé reachable by

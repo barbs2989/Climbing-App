@@ -109,7 +109,20 @@ async function scan(page, where) {
     const res = await window.axe.run(document, { runOnly: { type: "tag", values: tags }, resultTypes: ["violations"] });
     // The nearest readable text names a node far better than its CSS path does, so a finding can be grepped for.
     const near = (sel) => { try { let n = document.querySelector(sel); for (let i = 0; n && i < 4; i++, n = n.parentElement) { const t = (n.getAttribute("aria-label") || n.innerText || "").replace(/\s+/g, " ").trim(); if (t) return t.slice(0, 80); } } catch { /* shadow or iframe selector */ } return ""; };
-    return res.violations.map((v) => ({ id: v.id, tags: v.tags, help: v.help, nodes: v.nodes.map((n) => ({ sel: n.target.join(" "), text: near(n.target[0]), why: (n.failureSummary || "").split("\n").slice(1).join(" ").replace(/\s+/g, " ").trim() })) }));
+    // label-content-name-mismatch (WCAG 2.5.3) says only "text inside is not in the name", which
+    // does not say WHICH text. Print the two strings axe compared -- the fix is always visible there:
+    // a badge count missing from the name, or a summary label that drops words the row shows.
+    const pair = (sel) => {
+      try {
+        const el = document.querySelector(sel); if (!el) return "";
+        window.axe.setup(document);
+        const vis = window.axe.commons.text.visibleVirtual(window.axe.utils.getNodeFromTree(el), false, false, { ignoreIconLigature: true });
+        const name = window.axe.commons.text.accessibleText(el);
+        window.axe.teardown();
+        return `name "${name.slice(0, 110)}" | visible "${vis.replace(/\s+/g, " ").trim().slice(0, 110)}"`;
+      } catch { try { window.axe.teardown(); } catch { /* not set up */ } return ""; }
+    };
+    return res.violations.map((v) => ({ id: v.id, tags: v.tags, help: v.help, nodes: v.nodes.map((n) => ({ sel: n.target.join(" "), text: near(n.target[0]), why: (v.id === "label-content-name-mismatch" && pair(n.target[0])) || (n.failureSummary || "").split("\n").slice(1).join(" ").replace(/\s+/g, " ").trim() })) }));
   }, [...WCAG, "best-practice"]);
   scanned++;
   const gatedHere = {};
