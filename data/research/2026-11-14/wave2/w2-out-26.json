@@ -1,0 +1,13 @@
+{
+ "ca_d_half_dome_cables_route_cables_route": {
+  "area": "ca_d_half_dome_cables_route",
+  "facts": [
+   {"field": "gain_ft", "value": 4800, "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm", "retrieved_at": "2026-11-14", "fact": "NPS states total elevation gain of 4,800 feet on the 14-16 mile round-trip hike (round trip, valley trailhead)."}]},
+   {"field": "permit", "value": "Permit required while cables are up; day hikers by March lottery plus limited permits two days ahead", "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm", "retrieved_at": "2026-11-14", "fact": "Permit needed while cables are up; day-hike lottery in March, a few available two days in advance."}]},
+   {"field": "dist_mi_oneway", "value": 8.5, "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://en.wikipedia.org/wiki/Half_Dome", "retrieved_at": "2026-11-14", "fact": "Wikipedia gives an 8.5 mi trail from the valley floor to the summit (one-way); NPS gives 14-16 mi round trip."}]},
+   {"field": "overview", "value": "Summit about 8,800 ft above sea level, nearly 5,000 ft above Yosemite Valley", "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm", "retrieved_at": "2026-11-14", "fact": "Half Dome rises nearly 5,000 ft above the valley and 8,800 ft above sea level."}]}
+  ],
+  "note": "NPS 14-16 mi round trip not recorded as a value (range). Wikipedia also mentions a 2 mi approach with rock stairs before the cable section (read truncated)."
+ },
+ "_skipped_all_others": "29 routes not researched: Chrome safety check blocked DuckDuckGo/most navigations in my tab, and the shared Chrome session was heavily loaded; budget spent on Half Dome only."
+}
