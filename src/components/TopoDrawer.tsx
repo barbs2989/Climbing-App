@@ -11,6 +11,7 @@ import PinIcon from "./PinIcon.tsx";
 import PinNum from "./PinNum.tsx";
 import TopoSwatch from "./TopoSwatch.tsx";
 import TopoLineOverlay from "./TopoLineOverlay.tsx";
+import TopoStroke from "./TopoStroke.tsx";
 import type { TopoPoint } from "./TopoLineOverlay.tsx";
 
 /** A marker as the editor holds it: its note is always a string (empty until typed). */
@@ -48,7 +49,15 @@ export interface TopoDrawerProps {
 /** The handle under edit, or being dragged. */
 type Handle = {kind: "point"; l: number; i: number} | {kind: "pin"; i: number};
 type View = {z: number; tx: number; ty: number};
-type DrawGesture = Handle | {kind: "pinch"; d0: number; m0: TopoPoint; base: View} | {kind: "tap"; sx: number; sy: number; base: View; moved: boolean};
+type DrawGesture = Handle | {kind: "pinch"; d0: number; m0: TopoPoint; base: View} | {kind: "tap"; sx: number; sy: number; base: View; moved: boolean} | {kind: "aim"};
+/** The magnifier: the photo point under the finger, the magnified photo's size in px, which corner it sits in,
+    and whether it is aiming a new point (vs. a dot being dragged) and whether the finger has left the photo. */
+type Loupe = {p: TopoPoint; W: number; H: number; left: boolean; aim: boolean; off: boolean};
+/* HOLD TO AIM (owner, 2026-11-14: "when you hold to see the zoom in, it adds dots. It should only put a
+   dot when you release the screen or click"). A press that stays still this long opens the magnifier
+   instead of waiting to be a tap; the finger then slides to aim and the point lands where it LIFTS. */
+const HOLD_MS = 280;
+const LOUPE_PX = 112;
 
 /* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
    log form does not pull this file into its chunk until the control is tapped).
@@ -63,7 +72,10 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
   const [mode,setMode]=useState("line");const [pinCat,setPinCat]=useState(PIN_CATEGORIES[0][0]);
   const [label,setLabel]=useState((initial&&initial.label)||"");  // optional: which line this is, when a wall holds several
   const [sel,setSel]=useState<Handle|null>(null);      // {kind:"point", l, i} | {kind:"pin", i} — the handle under edit
-  const [loupe,setLoupe]=useState<TopoPoint|null>(null);  // {x,y} while a handle is being dragged
+  const [loupe,setLoupe]=useState<Loupe|null>(null);  // while a press is aiming a point or a handle is being dragged
+  const holdT=useRef<ReturnType<typeof setTimeout>|null>(null);
+  const stopHold=function(){if(holdT.current){clearTimeout(holdT.current);holdT.current=null;}};
+  useEffect(function(){return stopHold;},[]);
   const [kb,setKb]=useState<TopoPoint|null>(null);        // the keyboard cross {x,y}, shown while the photo has keyboard focus
   const [kbMsg,setKbMsg]=useState("");    // what the last key did, read out (aria-live) and shown
   const [view,setViewState]=useState<View>({z:1,tx:0,ty:0});
@@ -84,18 +96,27 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
   useEffect(function(){if(dirtyRef)dirtyRef.current=dirty;},[dirty,dirtyRef]);
   const cancel=function(){if(!dirty&&!discardAsk)return onCancel();askConfirm(discardAsk||{title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)onCancel();});};
 
-  // A wheel zooms about the cursor on a desktop. Registered by hand: React's onWheel is passive,
-  // and without preventDefault the sheet behind scrolls as well.
+  /* SCROLLING PAST THE PHOTO (owner, 2026-11-14: "difficult to navigate the page and scroll without dots
+     or lines being drawn"). The photo fills most of a phone's sheet, and it used to swallow every touch
+     and every wheel turn, so a climber could not scroll down to Save or the marker notes without
+     drawing on it. Now, as in the topo viewer: at 1x the frame is touch-action pan-y, so a vertical
+     swipe scrolls the sheet (the browser cancels the pointer and nothing is placed), and a plain wheel
+     scrolls the page; ctrl/trackpad-pinch wheel zooms, and once zoomed the wheel zooms as before.
+     While a press is aiming, dragging a dot or pinching, touchmove is cancelled so the sheet holds still.
+     Both registered by hand: React's wheel and touch listeners are passive. */
   useEffect(function(){
     const el=vpRef.current;if(!el)return undefined;
     const onWheel=function(e: WheelEvent){
+      if(!e.ctrlKey&&!e.metaKey&&viewRef.current.z<=1)return;
       e.preventDefault();
       const r=el.getBoundingClientRect();const b=viewRef.current;const q=boxZoom(el);
       const v=zoomTopoView(b,b.z*Math.exp(-e.deltaY*0.0015),(e.clientX-r.left)/q-el.clientLeft,(e.clientY-r.top)/q-el.clientTop,el.clientWidth,el.clientHeight);
       viewRef.current=v;setViewState(v);
     };
+    const onTouchMove=function(e: TouchEvent){const g=gest.current;if(g&&g.kind!=="tap"&&e.cancelable)e.preventDefault();};
     el.addEventListener("wheel",onWheel,{passive:false});
-    return function(){el.removeEventListener("wheel",onWheel);};
+    el.addEventListener("touchmove",onTouchMove,{passive:false});
+    return function(){el.removeEventListener("wheel",onWheel);el.removeEventListener("touchmove",onTouchMove);};
   },[]);
 
   // Clamped so a drag that leaves the frame parks the handle on the edge rather than storing
@@ -124,10 +145,25 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
       setPins(function(a){return a.concat([{x:p.x,y:p.y,category:pinCat,note:""}]);});
     }
   };
+  /* THE MAGNIFIER SHOWS THE TRUTH. It used to size the photo against its own 104px circle
+     (background-size 300%), so on a phone it showed the photo at about 0.9x, not 3x, and its centre
+     ring sat on the point only when that point was mid-photo: at 10% across, the ring was ~20px off
+     the spot the dot landed on. It now lays the photo (and the line drawn so far) out at LOUPE_Z
+     times its size on screen, placed so the point under the finger is exactly under the crosshair.
+     It moves to the left corner when the finger is under it. */
+  const showLoupe=function(cx: number,cy: number,aim: boolean){
+    const vp=vpRef.current,fr=frameRef.current;if(!vp||!fr)return;
+    const r=vp.getBoundingClientRect(),f=fr.getBoundingClientRect(),q=boxZoom(vp);
+    const off=cx<r.left||cx>r.right||cy<r.top||cy>r.bottom;
+    const mag=viewRef.current.z>=3?2:LOUPE_Z;
+    const lx=(cx-r.left)/q,ly=(cy-r.top)/q;
+    setLoupe({p:at(cx,cy),W:f.width/q*mag,H:f.height/q*mag,left:lx>r.width/q-LOUPE_PX-28&&ly<LOUPE_PX+28,aim:aim,off:off});
+  };
   const onDown=function(e: PointerEvent<HTMLDivElement>){
     if(!frameRef.current||!vpRef.current)return;
     ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
     try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_e){/* capture is a nicety; a pointer already gone is fine */}
+    stopHold();
     if(ptrs.current.size>=2){                // a second finger: pinch, and nothing gets marked
       const t=two();gest.current={kind:"pinch",d0:t.d,m0:t.m,base:viewRef.current};setLoupe(null);
       return;
@@ -137,10 +173,16 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
       const parts=h.split(":");
       if(parts[0]==="point"){gest.current={kind:"point",l:+parts[1],i:+parts[2]};setSel({kind:"point",l:+parts[1],i:+parts[2]});setAct(+parts[1]);}
       else{gest.current={kind:"pin",i:+parts[1]};setSel({kind:"pin",i:+parts[1]});}
-      setLoupe(at(e.clientX,e.clientY));
+      showLoupe(e.clientX,e.clientY,false);
       return;
     }
     gest.current={kind:"tap",sx:e.clientX,sy:e.clientY,base:viewRef.current,moved:false};
+    const id=e.pointerId;
+    holdT.current=setTimeout(function(){
+      holdT.current=null;const g=gest.current;const p=ptrs.current.get(id);
+      if(!g||g.kind!=="tap"||g.moved||!p||ptrs.current.size!==1)return;
+      gest.current={kind:"aim"};showLoupe(p.x,p.y,true);
+    },HOLD_MS);
   };
   const onMove=function(e: PointerEvent<HTMLDivElement>){
     if(!ptrs.current.has(e.pointerId))return;
@@ -155,15 +197,17 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
     if(g.kind==="tap"){
       const dx=e.clientX-g.sx,dy=e.clientY-g.sy;
       if(!g.moved&&Math.hypot(dx,dy)<TAP_SLOP)return;
-      g.moved=true;
+      g.moved=true;stopHold();
       const q=boxZoom(el);setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx/q,ty:g.base.ty+dy/q},el.clientWidth,el.clientHeight));
       return;
     }
-    const p=at(e.clientX,e.clientY);setLoupe(p);moveTo(g,p);
+    if(g.kind==="aim"){showLoupe(e.clientX,e.clientY,true);return;}
+    showLoupe(e.clientX,e.clientY,false);moveTo(g,at(e.clientX,e.clientY));
   };
   const onUp=function(e: PointerEvent<HTMLDivElement>){
     if(!ptrs.current.has(e.pointerId))return;
     ptrs.current.delete(e.pointerId);
+    stopHold();
     const g=gest.current;
     if(g&&g.kind==="pinch"){
       // Lifting one finger of a pinch leaves a pan, never a tap: that finger never "tapped".
@@ -173,7 +217,10 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
     }
     if(ptrs.current.size)return;
     gest.current=null;setLoupe(null);
-    if(e.type==="pointerup"&&g&&g.kind==="tap"&&!g.moved&&frameRef.current)place(at(e.clientX,e.clientY));
+    if(e.type!=="pointerup"||!g||!frameRef.current||!vpRef.current)return;
+    // A quick tap places where it lands; an aimed press places where it lifts, unless it lifted off the photo (that cancels).
+    if(g.kind==="tap"&&!g.moved)place(at(e.clientX,e.clientY));
+    else if(g.kind==="aim"){const r=vpRef.current.getBoundingClientRect();if(e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom)place(at(e.clientX,e.clientY));}
   };
 
   const delSel=function(){
@@ -273,7 +320,13 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
     {/* The caption that tells a reader what this yellow line IS. No cap: a variation's reason can take a sentence ("goes left at the roof to avoid the wet chimney — 5.10a, runout"). */}
     {(mode==="line"&&act>0)?<input aria-label={"What is "+lineName(act).toLowerCase()+"? (optional)"} value={varLabels[act-1]||""} onChange={function(e: ChangeEvent<HTMLInputElement>){const v=e.target.value;setVarLabels(function(a){const n=a.slice();while(n.length<act)n.push("");n[act-1]=v;return n;});}} placeholder="What is this variation? e.g. 5.10a direct start (optional)" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+TOPO_VAR+"88",background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:8}}/>:null}
     {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{...CHIP,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?(c[0]==="grade"?C.text:c[2]):C.textSub,display:"inline-flex",alignItems:"center",gap:6}}><PinIcon cat={c[0]} size={16}/>{c[1]}</button>;})}</div>:null}
-    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?(tx("Tap the photo to add a point to the ")+(act===0?"route line (red)":"variation (yellow, dashed)")+". Drag to move around the photo; pinch or use + to zoom in for a precise point. Drag a dot to move it."):(pinCat==="grade"?tx("Tap beside a pitch, then type its grade — e.g. 5.10-. Drag to move around the photo; pinch or use + to zoom."):tx("Pick a marker — belay station, rappel station… — then tap where it is on the rock. Drag to move around the photo; drag a marker to move it."))}</div>
+    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?(tx("Tap the photo to add a point to the ")+(act===0?"route line (red)":"variation (yellow, dashed)")+". Drag a dot to move it."):(pinCat==="grade"?tx("Tap beside a pitch, then type its grade — e.g. 5.10-. Drag a marker to move it."):tx("Pick a marker — belay station, rappel station… — then tap where it is on the rock. Drag a marker to move it."))}</div>
+    {/* The hold-to-aim gesture said out loud (owner, 2026-11-14: "make it clear they can zoom in to an exact
+        point by clicking and holding"): a gesture nobody is told about is one nobody uses. */}
+    <div style={{display:"flex",gap:8,alignItems:"flex-start",fontSize:12,color:C.text,background:C.blueBg+"55",border:"1px solid "+C.blueDim,borderRadius:9,padding:"7px 10px",marginBottom:8,lineHeight:1.4}}>
+      <svg aria-hidden="true" viewBox="0 0 16 16" width={16} height={16} style={{flexShrink:0,marginTop:1}}><circle cx="6.5" cy="6.5" r="4.6" fill="none" stroke={C.blue} strokeWidth="1.8"/><path d="M10 10 L14.5 14.5" stroke={C.blue} strokeWidth="2" strokeLinecap="round"/><path d="M6.5 4.4 V8.6 M4.4 6.5 H8.6" stroke={C.blue} strokeWidth="1.4" strokeLinecap="round"/></svg>
+      <span><b>{tx("Press and hold")}</b>{tx(" to zoom in on an exact spot — slide to aim, then lift to place it. Lift off the photo to cancel. Swipe up or down to scroll; pinch or + to zoom the photo.")}</span>
+    </div>
     <div style={{display:"flex",gap:6,justifyContent:"flex-end",alignItems:"center",marginBottom:6}}>
       {view.z>1?<span style={{fontSize:11.5,color:C.textMuted,marginRight:"auto"}}>{(Math.round(view.z*10)/10)+"×"}</span>:null}
       <button onClick={function(){zoomBy(1/1.6);}} disabled={view.z<=1} aria-label="Zoom out" style={Object.assign(sm(false),{minWidth:34,opacity:view.z<=1?0.45:1})}>−</button>
@@ -295,18 +348,38 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
     <div ref={vpRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
       tabIndex={0} role="application" aria-label={"Topo photo. "+(mode==="line"?"Drawing the "+lineName(act).toLowerCase():"Placing "+((pinText(pinCat)||"markers").toLowerCase()))} aria-describedby="topo-kb-help"
       onKeyDown={onKey} data-keeps-escape={sel?"true":undefined} onFocus={function(){if(!kb&&!sel)setKb({x:50,y:50});}} onBlur={function(){setKb(null);}}
-      style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:view.z>1?"grab":"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
+      style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:view.z>1?"grab":"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:view.z>1?"none":"pan-y",userSelect:"none",WebkitUserSelect:"none",WebkitTouchCallout:"none"}}>
       <div ref={frameRef} style={{position:"absolute",inset:0,transformOrigin:"0 0",transform:"translate("+view.tx+"px,"+view.ty+"px) scale("+view.z+")"}}>
         {photo?<img loading="lazy" decoding="async" src={photo} alt="Photo to draw the topo line on" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>{tx("Tap to place points")}</div>}
         {/* The zoom is a CSS scale on this layer, which non-scaling-stroke does not undo: divide it out so the line stays a thin line at 6x. */}<TopoLineOverlay points={points} variants={lines.slice(1)} lineW={2/view.z}/>
-        {lines.map(function(ln,l){return ln.map(function(p,i){return handle("point",l,i,p.x,p.y,l===0?TOPO_RED:TOPO_VAR);});})}
+        {/* The line's dots are handles only on the Draw line tab: on Add pins they hid the rock a marker
+            goes on and a tap meant for a marker grabbed a dot instead. The line itself stays drawn. */}
+        {mode==="line"?lines.map(function(ln,l){return ln.map(function(p,i){return handle("point",l,i,p.x,p.y,l===0?TOPO_RED:TOPO_VAR);});}):null}
+        {(loupe&&loupe.aim&&!loupe.off)?<span aria-hidden="true" style={{position:"absolute",left:loupe.p.x+"%",top:loupe.p.y+"%",width:22,height:22,transform:inv,pointerEvents:"none",boxSizing:"border-box",border:"2px solid #fff",borderRadius:"50%",boxShadow:"0 0 0 1.5px rgba(0,0,0,0.8)"}}/>:null}
         {kb&&!sel?<span aria-hidden="true" style={{position:"absolute",left:kb.x+"%",top:kb.y+"%",width:26,height:26,transform:inv,pointerEvents:"none",boxSizing:"border-box",border:"2px solid #fff",borderRadius:"50%",boxShadow:"0 0 0 2px rgba(0,0,0,0.75)"}}><span style={{position:"absolute",left:"50%",top:-6,bottom:-6,width:2,marginLeft:-1,background:C.onSolid}}/><span style={{position:"absolute",top:"50%",left:-6,right:-6,height:2,marginTop:-1,background:C.onSolid}}/></span>:null}
         {pins.map(function(p,i){return handle("pin",0,i,p.x,p.y,pinColor(p.category),p.category);})}
       </div>
-      {(loupe&&photo)?<div style={{position:"absolute",top:8,right:8,width:104,height:104,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.blue,boxShadow:"0 6px 18px rgba(0,0,0,0.55)",pointerEvents:"none",
-        backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*view.z*100)+"% "+(LOUPE_Z*view.z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
-        <span style={{position:"absolute",left:"50%",top:"50%",width:11,height:11,marginLeft:-5.5,marginTop:-5.5,borderRadius:"50%",border:"1.5px solid "+C.blue,background:"rgba(255,255,255,0.25)"}}/>
-      </div>:null}
+      {(loupe&&photo)?(function(){
+        const L=LOUPE_PX;const p=loupe.p;
+        // The segment the lift would add: from the active line's last point to the aim.
+        const al=act<lines.length?lines[act]:lines[0];const last=al[al.length-1];
+        const nextSeg=(loupe.aim&&mode==="line"&&last)?[last,p]:null;
+        return <div aria-hidden="true" style={{position:"absolute",top:8,[loupe.left?"left":"right"]:8,width:L,pointerEvents:"none",display:"flex",flexDirection:"column",alignItems:"center",gap:4}}>
+          <div style={{position:"relative",width:L,height:L,borderRadius:"50%",overflow:"hidden",border:"2px solid "+(loupe.off?C.textMuted:C.blue),boxShadow:"0 6px 18px rgba(0,0,0,0.55)",background:"#000",opacity:loupe.off?0.55:1}}>
+            <div style={{position:"absolute",left:L/2-p.x/100*loupe.W,top:L/2-p.y/100*loupe.H,width:loupe.W,height:loupe.H}}>
+              <img src={photo} alt="" draggable={false} style={TOPO_IMG}/>
+              <TopoLineOverlay points={points} variants={lines.slice(1)} pins={mode==="pin"?pins:null} pinSize={12} lineW={2}/>
+              {nextSeg?<svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%"}}><TopoStroke points={nextSeg} color={act===0?TOPO_RED:TOPO_VAR} w={1.6} dashed/></svg>:null}
+            </div>
+            {/* A crosshair with an open centre: the exact spot stays visible, which a filled ring hid. */}
+            <span style={{position:"absolute",left:L/2-1,top:L/2-15,width:2,height:9,background:"#fff",boxShadow:"0 0 0 1px rgba(0,0,0,0.7)"}}/>
+            <span style={{position:"absolute",left:L/2-1,top:L/2+6,width:2,height:9,background:"#fff",boxShadow:"0 0 0 1px rgba(0,0,0,0.7)"}}/>
+            <span style={{position:"absolute",top:L/2-1,left:L/2-15,height:2,width:9,background:"#fff",boxShadow:"0 0 0 1px rgba(0,0,0,0.7)"}}/>
+            <span style={{position:"absolute",top:L/2-1,left:L/2+6,height:2,width:9,background:"#fff",boxShadow:"0 0 0 1px rgba(0,0,0,0.7)"}}/>
+          </div>
+          {loupe.aim?<span style={{fontSize:11,fontWeight:700,color:"#fff",background:"rgba(0,0,0,0.72)",borderRadius:7,padding:"2px 7px",whiteSpace:"nowrap"}}>{loupe.off?"Lift to cancel":(mode==="line"?"Lift to place point":"Lift to place marker")}</span>:null}
+        </div>;
+      })():null}
     </div>
     <div id="topo-kb-help" style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginBottom:4}}>Keyboard: Tab to the photo, then arrow keys move the cross (Shift for bigger steps) and Enter places a point. [ and ] select a point, the arrow keys move it, Delete removes it, Esc lets go.</div>
     <div role="status" aria-live="polite" style={{fontSize:12,color:C.textSub,minHeight:kbMsg?17:0,marginBottom:kbMsg?6:0}}>{kbMsg}</div>
@@ -317,7 +390,9 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAs
     </div>
     {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){const g=pn.category==="grade";const ph=g?"Grade — e.g. 5.10-":pinText(pn.category)+" — note (optional)";return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}>{nums[i]!=null?<PinNum n={nums[i]}/>:null}<PinIcon cat={pn.category} size={18}/><input ref={function(el: HTMLInputElement|null){if(el&&focusPin.current===i){focusPin.current=null;el.focus({preventScroll:true});}}} aria-label={ph} value={pn.note} maxLength={g?14:undefined} onChange={function(e: ChangeEvent<HTMLInputElement>){const v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={ph} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
     {/* Two topos of one wall used to be "Latest" and "Alt 1": nothing said which drew the direct start and which the ramp. Optional, 60 characters, stored in topo_lines.label, shown on the thumbnail and as the line's chip in the viewer. */}
-    <input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e: ChangeEvent<HTMLInputElement>){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>
+    {/* On the Draw line tab only (owner, 2026-11-14: "Variant line shouldn't be on pins. It should be on the
+        draw line tab"): its "left-hand variation" example sat under the marker notes on Add pins. */}
+    {mode==="line"?<input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e: ChangeEvent<HTMLInputElement>){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>:null}
     <div style={{display:"flex",gap:12}}>
       <button onClick={cancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
       <button disabled={!canSave} onClick={function(){onSubmit({points:points,variants:variants,variantLabels:keptVar.map(function(o){return o.t;}),pins:cleanPins(),label:label.trim()||null});}} style={{flex:2,padding:9,background:canSave?C.blueSolid:C.border,color:C.onSolid,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>

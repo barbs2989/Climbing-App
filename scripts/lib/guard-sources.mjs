@@ -446,7 +446,16 @@ export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx",
     // DiscBadges). Stitched verbatim, that import plus the moved body is a duplicate declaration
     // and Babel refuses the whole file — so the parent's own import of each moved file is dropped.
     out = out.replace(new RegExp(`^import [^\\n]* from "[^"\\n]*/${path.basename(f).replace(/\./g, "\\.")}";?\\n`, "m"), "");
-    out += "\n" + movedAsParentText(fs.readFileSync(p, "utf8"), f);
+    const movedText = fs.readFileSync(p, "utf8");
+    // A parent that loads the component LAZILY (lib/lazyScreens.js, 2026-11-14) imports it by name
+    // from there instead — `import { SuggestFix, … } from "./lib/lazyScreens.js"`. Drop that one
+    // name from the braces too, or the stitched function is a duplicate declaration to Babel.
+    const fn = (movedText.match(/^export default function (\w+)/m) || [])[1];
+    if (fn) out = out.replace(/^import \{([^}\n]*)\} from ("[^"\n]*\/lazyScreens\.js");?$/gm, (line, names, from) => {
+      const kept = names.split(",").map((s) => s.trim()).filter((s) => s && s !== fn);
+      return kept.length ? `import { ${kept.join(", ")} } from ${from};` : "";
+    });
+    out += "\n" + movedAsParentText(movedText, f);
   }
   return out;
 }

@@ -9,7 +9,7 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 863 columns, 451 keyed/checked constraints (153 foreign keys), 264 RLS policies.
+-- Counts: 87 tables, 872 columns, 454 keyed/checked constraints (154 foreign keys), 265 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
@@ -18,6 +18,7 @@
 -- account_standing (account_standing_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- app_errors (app_errors_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- app_feedback (app_feedback_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+-- area_route_rollup (area_route_rollup_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
 -- areas (areas_parent_id_fkey): FOREIGN KEY (parent_id) REFERENCES areas(id)
 -- areas (areas_walkin_submission_id_fkey): FOREIGN KEY (walkin_submission_id) REFERENCES gps_submissions(id) ON DELETE SET NULL
 -- blocked_users (blocked_users_blocked_fkey): FOREIGN KEY (blocked) REFERENCES auth.users(id) ON DELETE CASCADE
@@ -46,6 +47,7 @@
 -- contributions (contributions_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
 -- contributions (contributions_reviewed_by_fkey): FOREIGN KEY (reviewed_by) REFERENCES profiles(id) ON DELETE SET NULL
 -- contributions (contributions_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
+-- conversation_state (conversation_state_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_day_acks (crew_day_acks_crew_id_fkey): FOREIGN KEY (crew_id) REFERENCES crews(id) ON DELETE CASCADE
 -- crew_day_acks (crew_day_acks_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- crew_email_invites (crew_email_invites_claimed_by_fkey): FOREIGN KEY (claimed_by) REFERENCES auth.users(id) ON DELETE SET NULL
@@ -151,7 +153,6 @@
 -- routes (routes_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id)
 -- saved_areas (saved_areas_area_id_fkey): FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
 -- saved_areas (saved_areas_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
--- saved_searches (saved_searches_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 -- topo_lines (topo_lines_created_by_fkey): FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE
 -- topo_lines (topo_lines_route_id_fkey): FOREIGN KEY (route_id) REFERENCES routes(id) ON DELETE CASCADE
 -- topo_lines (topo_lines_topo_id_fkey): FOREIGN KEY (topo_id) REFERENCES topos(id) ON DELETE CASCADE
@@ -269,6 +270,18 @@ CREATE TABLE public.app_settings (
 );
 ALTER TABLE public.app_settings ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "admins read app settings" ON public.app_settings AS PERMISSIVE FOR SELECT TO public USING (is_admin(( SELECT auth.uid() AS uid)));
+
+CREATE TABLE public.area_route_rollup (
+  area_id text NOT NULL,
+  disc text NOT NULL,
+  sys text NOT NULL,
+  b integer NOT NULL,
+  n integer NOT NULL,
+  CONSTRAINT area_route_rollup_pkey PRIMARY KEY (area_id, disc, sys, b),
+  CONSTRAINT area_route_rollup_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE
+);
+ALTER TABLE public.area_route_rollup ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "area_route_rollup public read" ON public.area_route_rollup AS PERMISSIVE FOR SELECT TO public USING (true);
 
 CREATE TABLE public.areas (
   id text NOT NULL,
@@ -649,6 +662,25 @@ CREATE POLICY "contributions public read" ON public.contributions AS PERMISSIVE 
 CREATE POLICY "own photo or pairing, or an admin" ON public.contributions AS PERMISSIVE FOR DELETE TO public USING ((((kind = ANY (ARRAY['photo'::text, 'pair'::text])) AND (contributor IS NOT NULL) AND (contributor = (( SELECT auth.uid() AS uid))::text)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.contributions AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
 
+CREATE TABLE public.conversation_state (
+  user_id uuid NOT NULL DEFAULT auth.uid(),
+  kind text NOT NULL,
+  target_id uuid NOT NULL,
+  archived_at timestamp with time zone,
+  cleared_before timestamp with time zone,
+  muted_until timestamp with time zone,
+  marked_unread boolean NOT NULL DEFAULT false,
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT conversation_state_pkey PRIMARY KEY (user_id, kind, target_id),
+  CONSTRAINT conversation_state_kind_check CHECK ((kind = ANY (ARRAY['dm'::text, 'crew'::text]))),
+  CONSTRAINT conversation_state_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.conversation_state ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "own conversation state delete" ON public.conversation_state AS PERMISSIVE FOR DELETE TO public USING ((auth.uid() = user_id));
+CREATE POLICY "own conversation state insert" ON public.conversation_state AS PERMISSIVE FOR INSERT TO public WITH CHECK ((auth.uid() = user_id));
+CREATE POLICY "own conversation state read" ON public.conversation_state AS PERMISSIVE FOR SELECT TO public USING ((auth.uid() = user_id));
+CREATE POLICY "own conversation state update" ON public.conversation_state AS PERMISSIVE FOR UPDATE TO public USING ((auth.uid() = user_id)) WITH CHECK ((auth.uid() = user_id));
+
 CREATE TABLE public.crew_day_acks (
   crew_id uuid NOT NULL,
   user_id uuid NOT NULL,
@@ -711,10 +743,10 @@ CREATE TABLE public.crew_members (
   CONSTRAINT crew_members_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 );
 ALTER TABLE public.crew_members ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "crew membership is public read" ON public.crew_members AS PERMISSIVE FOR SELECT TO public USING (true);
-CREATE POLICY "join or invite" ON public.crew_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((invited_by = ( SELECT auth.uid() AS uid)) AND ((( SELECT auth.uid() AS uid) = ( SELECT crews.created_by
+CREATE POLICY "crew membership readable unless the crew is private" ON public.crew_members AS PERMISSIVE FOR SELECT TO public USING (crew_visible_to_me(crew_id));
+CREATE POLICY "join or invite" ON public.crew_members AS PERMISSIVE FOR INSERT TO public WITH CHECK (((invited_by = auth.uid()) AND ((auth.uid() = ( SELECT crews.created_by
    FROM crews
-  WHERE (crews.id = crew_members.crew_id))) OR ((( SELECT auth.uid() AS uid) = user_id) AND (status = 'pending'::text)))));
+  WHERE (crews.id = crew_members.crew_id))) OR ((auth.uid() = user_id) AND (status = 'pending'::text) AND (NOT crew_is_private(crew_id))))));
 CREATE POLICY "member updates own membership" ON public.crew_members AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK (((( SELECT auth.uid() AS uid) = user_id) AND ((status <> 'confirmed'::text) OR (invited_by = ( SELECT crews.created_by
    FROM crews
   WHERE (crews.id = crew_members.crew_id))))));
@@ -824,6 +856,7 @@ CREATE TABLE public.crews (
   discipline text,
   share_token uuid NOT NULL DEFAULT gen_random_uuid(),
   share_on boolean NOT NULL DEFAULT true,
+  private boolean NOT NULL DEFAULT false,
   CONSTRAINT crews_pkey PRIMARY KEY (id),
   CONSTRAINT crews_area_needs_discipline CHECK (((area_id IS NULL) OR (discipline IS NOT NULL))),
   CONSTRAINT crews_discipline_values CHECK (((discipline IS NULL) OR (discipline = ANY (ARRAY['sport'::text, 'trad'::text, 'toprope'::text, 'aid'::text, 'bouldering'::text, 'scrambling'::text, 'hiking'::text, 'alpine'::text, 'mountaineering'::text, 'ice'::text, 'mixed'::text])))),
@@ -1932,6 +1965,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_classic_score_check CHECK (((classic_score IS NULL) OR ((classic_score >= (0)::numeric) AND (classic_score <= (4)::numeric)))),
   CONSTRAINT routes_fixed_gear_len CHECK (((fixed_gear IS NULL) OR ((char_length(fixed_gear) >= 1) AND (char_length(fixed_gear) <= 160)))),
   CONSTRAINT routes_guide_stars_range CHECK (((guide_stars IS NULL) OR ((guide_stars >= 0) AND (guide_stars <= 4)))),
+  CONSTRAINT routes_itinerary_is_day_by_day CHECK (((itinerary IS NULL) OR ((jsonb_typeof(itinerary) = 'object'::text) AND (jsonb_typeof((itinerary -> 'days'::text)) = 'array'::text) AND (jsonb_array_length((itinerary -> 'days'::text)) > 0)))),
   CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 1000)))),
   CONSTRAINT routes_outing_shape_check CHECK (((outing_shape IS NULL) OR (outing_shape = ANY (ARRAY['outback'::text, 'loop'::text, 'point'::text])))),
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
@@ -1956,22 +1990,6 @@ ALTER TABLE public.saved_areas ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "saved_areas delete own" ON public.saved_areas AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
 CREATE POLICY "saved_areas insert own" ON public.saved_areas AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 CREATE POLICY "saved_areas read own" ON public.saved_areas AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
-
-CREATE TABLE public.saved_searches (
-  id uuid NOT NULL DEFAULT gen_random_uuid(),
-  user_id uuid NOT NULL,
-  name text NOT NULL,
-  query jsonb NOT NULL DEFAULT '{}'::jsonb,
-  created_at timestamp with time zone NOT NULL DEFAULT now(),
-  CONSTRAINT saved_searches_pkey PRIMARY KEY (id),
-  CONSTRAINT saved_searches_name_check CHECK ((length(btrim(name)) > 0)),
-  CONSTRAINT saved_searches_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
-);
-ALTER TABLE public.saved_searches ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "saved_searches delete own" ON public.saved_searches AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = user_id));
-CREATE POLICY "saved_searches insert own" ON public.saved_searches AS PERMISSIVE FOR INSERT TO public WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
-CREATE POLICY "saved_searches read own" ON public.saved_searches AS PERMISSIVE FOR SELECT TO public USING ((( SELECT auth.uid() AS uid) = user_id));
-CREATE POLICY "saved_searches update own" ON public.saved_searches AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = user_id)) WITH CHECK ((( SELECT auth.uid() AS uid) = user_id));
 
 CREATE TABLE public.screening_terms (
   term text NOT NULL,

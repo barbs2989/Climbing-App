@@ -44,7 +44,7 @@ export default function TopoLineOverlay({points,pins,variants,pinSize,numbered,l
   const sz=pinSize||18;const nums=pinNums(pins);const lw=lineW||(sz<16?1.6:2.5);
   return <>
     <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
-      {vs.map(function(v,i){return <TopoStroke key={"v"+i} points={v} color={TOPO_VAR} w={lw} dashed/>;})}
+      {/* A variation is drawn a size down from the route (owner, 2026-11-14: "variant line is larger than the original line"): at the same width its bright yellow dashes over a solid dark edge read as the heavier line. */}{vs.map(function(v,i){return <TopoStroke key={"v"+i} points={v} color={TOPO_VAR} w={lw*0.7} dashed/>;})}
       <TopoStroke points={points} color={TOPO_RED} w={lw}/>
     </svg>
     {numbered?vs.map(function(v,i){const m=varMid(v);return <span key={"vt"+i} style={{position:"absolute",left:m.x+"%",top:m.y+"%",transform:"translate(-50%,-50%)",pointerEvents:"none",lineHeight:0}}><VarTag text={varTag(i,vs.length)}/></span>;}):null}
