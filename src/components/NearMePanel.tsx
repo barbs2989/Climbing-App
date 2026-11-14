@@ -1,5 +1,5 @@
 import { tx } from "../../lib/tapWords.js";
-import { useRef, useState, useLayoutEffect, useEffect, useMemo, useContext } from "react";
+import { useRef, useState, useLayoutEffect, useEffect, useMemo, useContext, lazy, Suspense } from "react";
 import type { FormEvent } from "react";
 import { useNearbyAreas, useRoutesByIds } from "../../lib/db";
 import { ClimberCtx } from "../../lib/climberCtx.js";
@@ -16,6 +16,8 @@ import { createPortal } from "react-dom";
 import LoadingRows from "./LoadingRows.tsx";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
+// The 3D view is MapLibre GL from a CDN: loaded only when the climber presses 3D.
+const Route3DView = lazy(() => import("../../lib/Route3DView.jsx"));
 
 // ── Near me: real Leaflet map (same CDN as the static OverviewMap), geolocated,
 // pins from useNearbyAreas driven by the LIVE map viewport — panning/zooming
@@ -70,6 +72,8 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   const [placeQ, setPlaceQ] = useState("");
   const [place, setPlace] = useState<{ busy: boolean; err: string; alts: NearMePanelPlace[] }>({ busy: false, err: "", alts: [] });
   const [fullscreen, setFullscreen] = useState(false);
+  // 3D (owner, 2026-11-14): the box the flat map shows, tilted over the terrain, with the areas in it.
+  const [view3d, setView3d] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
   // alpine; top rope is its own type since 0202), so a mostly-sport crag with trad lines shows under both.
@@ -102,10 +106,11 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   useEffect(() => () => { if (hostRef.current) hostRef.current.remove(); }, []);
   useEffect(() => {
     if (!fullscreen) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setFullscreen(false); };
+    // Escape over the 3D view closes only the 3D view (it listens for itself).
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape" && !view3d) setFullscreen(false); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [fullscreen]);
+  }, [fullscreen, view3d]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll: NearMePanelArea[] | undefined = data && data.rows;
   const typesOf = (a: NearMePanelArea) => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline ? [a.dominant_discipline] : []);
@@ -303,7 +308,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: 0 }}>
       <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface }} />
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
-      <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
+      <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} on3d={ready && bounds ? () => setView3d(true) : undefined} />
       {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, so the way out is where the
           way in was (owner, 2026-10-24: "Exit full screen is a little hidden on the map"). Drawn OPAQUE, with a
           shadow: the translucent fill let the circles beneath show through it. Full screen also has
@@ -348,9 +353,22 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   ) : null;
   const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
   const title = "Map" + (name ? " · " + name : "");
+  // The areas in view (type filter applied), busiest first, as 3D pins: each opens its area.
+  const view3dEl = view3d && bounds ? (
+    <Suspense fallback={null}>
+      <Route3DView view={bounds} title={name || undefined} onClose={() => setView3d(false)}
+        waypoints={(nearby || []).filter(a => a.lat != null && a.lng != null).slice(0, 200).map(a => ({
+          lat: a.lat, lng: a.lng, name: a.name,
+          color: DISC_COLORS[a.dominant_discipline] || C.blue, iconHtml: discIconMarkup(a.dominant_discipline, 14),
+          sub: a.route_count + (a.route_count === 1 ? " climb" : " climbs") + (wlByArea[a.id] ? " · " + onList(wlByArea[a.id]) : ""),
+          openLabel: "Open area", onOpen: () => { setView3d(false); setFullscreen(false); onOpenArea(a); },
+        }))} />
+    </Suspense>
+  ) : null;
   return (
     <div>
       <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />
+      {view3dEl}
       {fullscreen ? null : searchUI}
       {/* The inline slot the map's host div sits in when it is not full screen. React renders it
           empty and never touches its children; only the effect above moves the host in and out. */}
