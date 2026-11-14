@@ -1,10 +1,19 @@
--- route_stats(): last_climbed now reads PUBLIC logs only.
+-- 0431: two SECURITY DEFINER functions that answered more than they should, both found by
+-- check:rls rule 6 (PR #3324).
+--
+-- 1. crew_is_private(uuid) (0426) meant to be signed-in only: it revoked from PUBLIC and granted to
+--    authenticated. But Supabase's default privileges grant EXECUTE on every new function to anon
+--    DIRECTLY, so `revoke ... from public` never removed anon. Its only caller is the "join or
+--    invite" insert policy, which already requires auth.uid() = user_id, so anon never needed it.
+revoke all on function public.crew_is_private(uuid) from anon;
+
+-- 2. route_stats(): last_climbed now reads PUBLIC logs only.
 --
 -- route_stats is SECURITY DEFINER and callable by anon (it backs the public route page), so it
 -- reads climb_logs past RLS. Its counts are unattributed aggregates and stay as they were. But
 -- last_climbed returned max(date_climbed) over EVERY visible log, private/crew/friends included:
 -- on a route only one person has climbed, that is their private log's date, readable by anyone
--- holding the anon key. Found by check:rls rule 6's review (PR #3324). A date is now shown only
+-- holding the anon key. A date is now shown only
 -- when a climb behind it is one RLS would let any visitor read (trip_report_visibility = 'public').
 --
 -- Body is 0371's, unchanged except the `public` column in `logs` and the last_climbed filter.

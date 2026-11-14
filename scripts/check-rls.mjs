@@ -392,6 +392,7 @@ const PUBLIC_DEFINER = {
   group_has_rules: "group_members policy helper; yes/no whether a group has rules",
   group_invite_policy: "group_members invite policy helper; returns the group's invite_policy text",
   group_user_banned: "group_members join/invite policies; yes/no whether a user is banned from a group",
+  crew_is_private: "crew_members 'join or invite' policy helper; yes/no whether a crew is private (anon revoked in 0431)",
   verified_user_ids: "the public verified tick: which of the given ids have a verified email; authenticated only",
   reconcile_guide_verification: "lib/db.js calls it on read; only flips EXPIRED verified credentials to lapsed (idempotent)",
 };
@@ -416,7 +417,7 @@ for (const [name, f] of functions) {
   if (name in PUBLIC_DEFINER) continue;
   openDefiner++;
   fail(`${f.file}: ${name}() is SECURITY DEFINER, callable by ${who.join(" + ")}, and never asks who is calling.`);
-  fail(`        It reads past RLS for anyone with the anon key. Revoke execute from the client roles,`);
+  fail(`        It reads past RLS for ${who.includes("anon") ? "anyone with the anon key" : "every signed-in user"}. Revoke execute from the client roles,`);
   fail(`        check auth.uid() in the body, or list it in PUBLIC_DEFINER with the reason it is safe.`);
 }
 for (const [n, why] of Object.entries(PUBLIC_DEFINER)) {
