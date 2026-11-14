@@ -1,0 +1,2387 @@
+{
+ "co_pyramid_peak_northeast_ridge": {
+  "area": "co_pyramid_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=pyra1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,500 ft from Maroon Lake trailhead, round-trip length 8.25 mi."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-pyramid-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Maroon Lake Trailhead about 9,600 ft: 8.25 mi round trip and 4,500 ft of gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8.25,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=pyra1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 8.25 mi (round trip)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-pyramid-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 8.25 mi round trip."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=pyra1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 4."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-pyramid-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard Northeast Ridge route is Class 4 with loose rock and serious exposure."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Maroon Lake Trailhead, 9,600 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=pyra1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Maroon Lake, 9,600 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-pyramid-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Maroon Lake Trailhead about 9,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "High rockfall, exposure, route-finding and commitment; last 1,000 ft has no consistent trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=pyra1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors exposure, rockfall, route-finding, commitment all rated High; last 1,000 ft Class 3-4 with no consistent trail."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-pyramid-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Final 1,000 ft has no consistent trail; route-finding is up to the climber; loose rock."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet mandatory (rockfall above 13,300 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=pyra1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Helmet mandatory due to high rockfall risk above 13,300 ft."
+     }
+    ]
+   }
+  ],
+  "note": "summitborn.com Pyramid page restates 14ers.com figures (cites it) so not counted as a separate source."
+ },
+ "co_wilson_peak_southwest_ridge": {
+  "area": "co_wilson_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wils1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain from Rock of Ages TH 3,900 ft; round trip 10 mi."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wils1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length from Rock of Ages TH 10 miles."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wils1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 3."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wilson-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Final scramble to the summit is Class 3; harder moves mean you are off route."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Rock of Ages Trailhead, about 10,350 ft (via FR 645)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wils1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock of Ages trailhead near 10,350 ft, reached on FR 645."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wilson-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Southwest Ridge starts at the Rock of Ages Trailhead, about 10,350 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "High exposure; considerable rockfall, route-finding and commitment",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=wils1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exposure High; rockfall, route-finding, commitment Considerable."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ridge passes a false summit near 13,900 ft before the summit pitch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-wilson-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "False summit at about 13,900 ft; summit pitch beyond it is where people go wrong."
+     }
+    ]
+   }
+  ],
+  "note": "thenextsummit gives 16 mi / 5,000 ft for the Navajo Basin start only; summitborn restates 14ers.com."
+ },
+ "co_arapaho_peaks_traverse": {
+  "area": "co_indian_peaks_traverses",
+  "facts": [
+   {
+    "field": "car_to_car_hours",
+    "value": "8-11",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/arapaho-peaks-traverse-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Estimated time 8-11 hours car to car."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late July to mid-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/arapaho-peaks-traverse-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season late July through mid-September when the ridge is dry."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No permit for day groups of 1-7; no parking fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/arapaho-peaks-traverse-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "No permit for day groups of 1-7 and no parking fee."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet recommended; some carry a short rope for the crux downclimb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/arapaho-peaks-traverse-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Helmet recommended; some parties carry a short rope for the crux downclimb."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Fourth of July Road not plowed in winter; last 5 miles from Eldora become ski approach; usually reopened before Memorial Day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/arapaho-peaks-traverse-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fourth of July Road unmaintained in winter; last five miles ski approach; Boulder County usually reopens before Memorial Day."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3650,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arapaho-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Arapaho Peaks trail plus scramble: about 9.5 mi round trip, 3650 ft gain/loss, 3rd/4th class."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arapaho-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 9.5 miles round trip from Fourth of July Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Fourth of July Trailhead, 10,121 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arapaho-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fourth of July Trailhead elevation 10,121 ft; S Arapaho 13,397 ft, N Arapaho 13,502 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Exposed 3rd-class ridge about 0.75 mi long links South and North Arapaho",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/colorado/arapaho-peaks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse is an exposed 3rd class ridge of about 0.75 mile connecting the two peaks."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/arapaho-peaks-traverse-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Arapaho Peaks Traverse described as the Class 4 ridge to North Arapaho."
+     }
+    ]
+   }
+  ],
+  "note": "summitborn's distance (9.5-10 mi) and gain (3,500-3,700 ft) are its own estimates - not used. stephabegg rates it 3rd/4th; summitborn Class 4."
+ },
+ "co_jasper_peak_snow_leopard": {
+  "area": "co_jasper_peak",
+  "facts": [
+   {
+    "field": "aspect",
+    "value": "E-NE",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-jasper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow Leopard is a steep E-NE facing couloir off Mount Jasper."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Threatened by a huge cornice",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-jasper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow Leopard couloir is threatened by a huge cornice."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Fourth of July Trailhead (summer only, typically opens in July)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-jasper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "4th of July Trailhead, summer only, typically opens in July."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_jasper_peak_snow_lion": {
+  "area": "co_jasper_peak",
+  "facts": [
+   {
+    "field": "aspect",
+    "value": "SE",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-jasper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow Lion is the main SE facing line off Mount Jasper."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "High avalanche danger",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-jasper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow Lion: avalanche danger is high but it fills in well."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Fourth of July Trailhead (summer only, typically opens in July)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/mt-jasper/",
+      "retrieved_at": "2026-11-14",
+      "fact": "4th of July Trailhead, summer only, typically opens in July."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "or_south_sister_south_side_route": {
+  "area": "or_south_sister",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4900,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/9616/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "South route from Devils Lake trailhead reaches the summit in 5.5 miles gaining 4900 ft."
+     },
+     {
+      "url": "https://themtsarecalling.com/southsister/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4875 ft; distance 12.3 miles; Devils Lake Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 5.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/9616/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reaches the summit in 5.5 miles (one way) from Devils Lake trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12.3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/southsister/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 12.3 miles for the trip from Devils Lake Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/southsister/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux: Class 1."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Central Cascades Wilderness Permit required; NW Forest Pass or America the Beautiful pass to park",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/9616/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Central Cascades Wilderness Permit required to climb; NW Forest Pass or America the Beautiful pass required to park."
+     },
+     {
+      "url": "https://www.hikingproject.com/trail/7052799/south-sister-climber-trail-36",
+      "retrieved_at": "2026-11-14",
+      "fact": "Permit quota on this trail June 15 to October 15; a pass is needed for parking."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Crampons and ice axe not needed in late season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mazamas.org/activity/instance/9616/detail/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crampons and ice axe not needed in late season."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Forest switchbacks ~2 mi to plateau above Moraine Lake; then ~2,000 ft in under 1.5 mi to a notch west of Lewis Glacier Peak; crater rim ~200 ft below summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/southsister/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two miles of forest to plateau above Moraine Lake, then nearly 2,000 ft in under 1.5 mi to notch west of Lewis Glacier Peak."
+     }
+    ]
+   }
+  ],
+  "note": "App overview says 12.5 mi RT; sources give 12.3 RT and 5.5 one-way. Hiking Project's free self-issue permit text predates the quota system. stephabegg lists South Sister South Side ~13 mi, 5350 ft gain/loss RT (seen on stephabegg.com/trip-reports/oregon/hood/ sidebar; not used)."
+ },
+ "ca_mt_whitney_mount_whitney_trail_the": {
+  "area": "ca_mt_whitney",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whitney Trail starts at Whitney Portal, 8,300 ft, and gains over 6,200 ft to the summit."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 10.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/seki/planyourvisit/whitney.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most popular route is a 10.7 mile (17.1 km) trail from Whitney Portal."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Whitney Portal, 13 mi west of Lone Pine; 8,360 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/seki/planyourvisit/whitney.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whitney Portal, 13 miles west of Lone Pine; trailhead elevation 8,360 ft."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whitney Trail starts at Whitney Portal at 8,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14505,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/seki/planyourvisit/whitney.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation 14,505 ft (NAVD88)."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Whitney Zone permit by lottery; quota May 1-Nov 1 (100 day, 60 overnight per day); $15 per person",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Quota May 1-Nov 1: 100 day use, 60 overnight per day; lottery winners pay $15 per person."
+     },
+     {
+      "url": "https://www.nps.gov/seki/planyourvisit/whitney.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Everyone entering the Whitney zone, including day hikers, needs a permit from Inyo National Forest."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons needed in spring and early summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/seki/planyourvisit/whitney.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axes and crampons are needed in spring and early summer; technical gear usually not."
+     }
+    ]
+   }
+  ],
+  "note": "USFS gives TH 8,300 ft, NPS 8,360 ft. Gain stated only as 'over 6,200 ft'."
+ },
+ "ca_mt_langley_standard_route_south_slopes": {
+  "area": "ca_mt_langley",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Horseshoe Meadows trailhead, Cottonwood Lakes Trail over New Army Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingproject.com/trail/7116520/mount-langley-via-new-army-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts from Horseshoe Meadows trailhead, follows Cottonwood Lakes Trail and crosses New Army Pass."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Wilderness permit required for overnight trips (Inyo NF)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingproject.com/trail/7116520/mount-langley-via-new-army-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Overnight use needs a wilderness permit for Inyo National Forest."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "No special gear or climbing skills needed (non-technical)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikingproject.com/trail/7116520/mount-langley-via-new-army-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Non-technical ascent requiring no special gear or climbing skills."
+     }
+    ]
+   }
+  ],
+  "note": "Hiking Project shows 5,108 ft up but it is unclear whether that is one-way; summitborn gives only its own estimates (22-24 mi, 5,200-5,650 ft) - neither used."
+ },
+ "bc_brunswick_mountain_lions_bay_trail": {
+  "area": "bc_brunswick_mountain",
+  "facts": [
+   {
+    "field": "gain_m",
+    "value": 1560,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/brunswick-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 1560 meters; round trip 14 km; 8 hours."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-brunswick-mountain-near-lions-bay/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 1,555 m; distance 15.1 km; highest elevation 1,788 m."
+     }
+    ]
+   },
+   {
+    "field": "dist_km_roundtrip",
+    "value": 14,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/brunswick-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip 14 km."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-brunswick-mountain-near-lions-bay/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 15.1 km."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July to October",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/brunswick-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Season July - October."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-brunswick-mountain-near-lions-bay/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Season about July - October."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/brunswick-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Time 8 hours."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sunset Drive parking lot, top of Lions Bay; overflow at elementary school adds ~1 km each way",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/brunswick-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail begins from the Sunset Drive parking lot; overflow parking at the elementary school adds 1 km each way."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep scramble at the end with a brief exposed no-fall zone",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-brunswick-mountain-near-lions-bay/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep scramble at the end with one brief, exposed no-fall zone."
+     }
+    ]
+   }
+  ],
+  "note": "Distances 14 vs 15.1 km within 10%."
+ },
+ "bc_black_tusk_standard_route": {
+  "area": "bc_black_tusk",
+  "facts": [
+   {
+    "field": "gain_m",
+    "value": 1740,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/black-tusk/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 1740 meters; round trip 29 km; 11 hours; season July-October."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-the-black-tusk-in-whistler/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 1,750 m; distance 28.5 km; highest elevation 2,319 m."
+     }
+    ]
+   },
+   {
+    "field": "dist_km_roundtrip",
+    "value": 29,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/black-tusk/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip 29 km."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-the-black-tusk-in-whistler/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 28.5 km."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July to October",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/black-tusk/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Season July - October."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-the-black-tusk-in-whistler/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Season about July to mid-October."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "9-10 (moderate pace); 11 per Vancouver Trails",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.vancouvertrails.com/trails/black-tusk/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Time 11 hours."
+     },
+     {
+      "url": "https://besthikesbc.ca/hiking-the-black-tusk-in-whistler/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Time needed: moderate 9-10 hours, slow 10-12, fast 7-9."
+     }
+    ]
+   },
+   {
+    "field": "high_point_m",
+    "value": 2319,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-the-black-tusk-in-whistler/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest elevation 2,319 m."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep loose-scree scramble to the ridge below the Tusk; true summit needs an exposed chimney climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://besthikesbc.ca/hiking-the-black-tusk-in-whistler/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep scramble on loose scree to the ridgeline; summiting the Tusk requires an exposed chimney climb."
+     }
+    ]
+   }
+  ],
+  "note": "Two publishers agree on gain (1740 vs 1750 m) and distance (29 vs 28.5 km)."
+ },
+ "bc_golden_hinde_phillips_ridge_route": {
+  "area": "bc_golden_hinde",
+  "facts": [
+   {
+    "field": "gain_ft_roundtrip",
+    "value": 14500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-08-12.212714168664",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard route via Phillips Ridge is a 36-mile out-and-back with over 14,500 ft of gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 36,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-08-12.212714168664",
+      "retrieved_at": "2026-11-14",
+      "fact": "36-mile out-and-back via Phillips Ridge."
+     }
+    ]
+   },
+   {
+    "field": "gain_m_roundtrip",
+    "value": 3340,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nicspeakbook.blogspot.com/2024/09/golden-hinde-phillips-ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "3340 m elevation gain and descent, 59 km total, 50 h 38 m car to car."
+     }
+    ]
+   },
+   {
+    "field": "dist_km_roundtrip",
+    "value": 59,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nicspeakbook.blogspot.com/2024/09/golden-hinde-phillips-ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "59 km total for the Phillips Ridge trip."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "50.6 (50 h 38 m, one party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nicspeakbook.blogspot.com/2024/09/golden-hinde-phillips-ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "50 h 38 m car to car."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "3 nights / 4 days (one party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-08-12.212714168664",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party planned 3 nights and 4 days for the trip."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Arnica Lake; Carter Lake (past Carter Col)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nicspeakbook.blogspot.com/2024/09/golden-hinde-phillips-ridge.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 2 hours of switchbacks to Arnica Lake; from Carter Col a big descent to Carter Creek then up to Carter Lake."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7208,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-08-12.212714168664",
+      "retrieved_at": "2026-11-14",
+      "fact": "Golden Hinde is Vancouver Island's high point at 7208 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Two parties' round-trip figures (36 mi / 14,500+ ft and 59 km / 3,340 m) are in different units; not converted, so each is single-source. Ridge route repeatedly loses and regains height."
+ },
+ "bc_mount_begbie_north_ridge": {
+  "area": "bc_mount_begbie",
+  "facts": [
+   {
+    "field": "gain_m",
+    "value": 2090,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://goldenscrambles.ca/summits/begbie/begbie.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Begbie elevation 2,733 m; height gain 2,090 m."
+     }
+    ]
+   },
+   {
+    "field": "approach_gain_m",
+    "value": 1300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://goldenscrambles.ca/summits/begbie/begbie.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "1,300 m elevation gain to the campsite."
+     }
+    ]
+   },
+   {
+    "field": "summit_day_hours",
+    "value": "6.5 round trip from camp, 4 up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://goldenscrambles.ca/summits/begbie/begbie.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alpine climb: round trip 6.5 h, 4.0 up from campsite."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Glacier leads to the Begbie Ledge; initial narrow section bolted, rope used to the second anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://goldenscrambles.ca/summits/begbie/begbie.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier leads to Begbie Ledge; narrow first section bolted and a rope was needed to the second anchor."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Party rappelled from the ledge anchor to the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://goldenscrambles.ca/summits/begbie/begbie.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party rappelled from the anchor down to the glacier."
+     }
+    ]
+   }
+  ],
+  "note": "App gain 5757 ft; goldenscrambles states 2,090 m (not converted)."
+ },
+ "bc_mount_vaux_southwest_face": {
+  "area": "bc_mount_vaux",
+  "facts": [
+   {
+    "field": "gain_m",
+    "value": 2200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://explor8ion.com/trips/vaux-mount/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Vaux 3319 m; gain 2200 m (7260 ft); distance 10 km."
+     },
+     {
+      "url": "https://steepsheep.ca/mount-vaux/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2200 m; round trip 13.5 hours."
+     }
+    ]
+   },
+   {
+    "field": "dist_km",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://explor8ion.com/trips/vaux-mount/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 10 km (not stated one-way or round trip)."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://explor8ion.com/trips/vaux-mount/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 4 scramble - a fall would break something or worse."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "13.5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://steepsheep.ca/mount-vaux/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 13.5 hours; just over 7 hours car to summit."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_m",
+    "value": 1119,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://steepsheep.ca/mount-vaux/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts at 1119 m above sea level."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "About 2.5 h of steep scree to ~1940 m; crux is a 15 m wall below the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://steepsheep.ca/mount-vaux/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First 2.5 hours steep scree to about 1940 m; crux is a 15 m wall."
+     }
+    ]
+   },
+   {
+    "field": "high_point_m",
+    "value": 3319,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://explor8ion.com/trips/vaux-mount/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 3319 m."
+     },
+     {
+      "url": "https://steepsheep.ca/mount-vaux/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Vaux 3319 m."
+     }
+    ]
+   }
+  ],
+  "note": "explor8ion states 7260 ft alongside 2200 m; app has 7218 ft."
+ },
+ "or_diamond_peak_south_ridge": {
+  "area": "or_diamond_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3190,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikeoregon.net/diamond-peak-via-summit-lake.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "11.25 miles out and back with 3,190 ft elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikeoregon.net/diamond-peak-via-summit-lake.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mileage 11.25 miles out and back."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "5.6 (5 h 37 min at 2 mph)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikeoregon.net/diamond-peak-via-summit-lake.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate hike time 5 hours 37 minutes at an average 2 mph."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late summer, early fall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikeoregon.net/diamond-peak-via-summit-lake.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Suggested seasons late summer, early fall."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "PCT north 4.45 mi, gaining only about 1,010 ft; junction with Rockpile and Crater Butte trails after a little over 3.5 mi, then 1.25 mi more on PCT",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://hikeoregon.net/diamond-peak-via-summit-lake.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Take the PCT northbound 4.45 miles; this section gains only about 1,010 ft."
+     },
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Diamond_Peak_from_Summit_Lake_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "After a little over 3.5 miles reach the Rockpile/Crater Butte junction; continue another 1.25 miles on the PCT."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Summit Lake: Hwy 58 past Oakridge, Kitson Springs Rd, FR 21 for 31.5 mi, then FR 2154 toward Summit Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Diamond_Peak_from_Summit_Lake_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Oakridge: Hwy 58, Kitson Springs Road 0.5 mi, FR 21 for 31.5 mi, left on FR 2154 for Summit Lake."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Fill out a free wilderness permit at the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Diamond_Peak_from_Summit_Lake_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "You need to fill out a wilderness permit at the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Walk the volcanic crest from the false summit to the high point",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.oregonhikers.org/field_guide/Diamond_Peak_from_Summit_Lake_Hike",
+      "retrieved_at": "2026-11-14",
+      "fact": "Walk along the colorful volcanic crest from the false summit to Diamond Peak's high point."
+     }
+    ]
+   }
+  ],
+  "note": "hikeoregon lists 'Permits required: N/A' while Oregon Hikers says to fill out a wilderness permit."
+ },
+ "id_thompson_peak_south_couloir": {
+  "area": "id_thompson_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thesmartroute.com/hike-guide-thompson-peak-sawtooth-wilderness-idaho/",
+      "retrieved_at": "2026-11-14",
+      "fact": "13 miles (21 km) with 4,200 ft total elevation gain from Redfish Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thesmartroute.com/hike-guide-thompson-peak-sawtooth-wilderness-idaho/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 13 miles (21 km) total."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10750,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thesmartroute.com/hike-guide-thompson-peak-sawtooth-wilderness-idaho/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 10,750 ft at Thompson Peak."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thesmartroute.com/hike-guide-thompson-peak-sawtooth-wilderness-idaho/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 3 scramble, no equipment needed."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Free self-issued wilderness permit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thesmartroute.com/hike-guide-thompson-peak-sawtooth-wilderness-idaho/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Free self-issued permit when entering the wilderness area."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June to September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thesmartroute.com/hike-guide-thompson-peak-sawtooth-wilderness-idaho/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best time of year June-September."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Redfish Trailhead at Redfish Lake, 10 min south of Stanley",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.thesmartroute.com/hike-guide-thompson-peak-sawtooth-wilderness-idaho/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Redfish Trailhead at Redfish Lake, 10 minutes south of Stanley, Idaho."
+     }
+    ]
+   }
+  ],
+  "note": "Second publishers tried: climbingidaho.com/peaks/thompson.html (404), idahotwelvers.com (no Thompson page; not a 12er). SummitPost 403."
+ },
+ "id_diamond_peak_east_ridge": {
+  "area": "id_diamond_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "East Ridge Class 3; elevation gain 4,150 ft; round trip 5.8 miles; 8 hours."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip distance 5.8 miles."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip time 8 hours."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "East Ridge rated Class 3."
+     },
+     {
+      "url": "https://climbingidaho.com/peaks/diamond.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "The east ridge is a class 3 route."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "T.M. Bannon, 1912",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent T.M. Bannon, 1912."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No water on route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "No water on route."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Pass Creek Road (FS-181) off ID-28; rough two-track, 4WD / high clearance recommended",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://climbingidaho.com/peaks/diamond.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access via Pass Creek Road FS-181 from ID-28; 4WD recommended on the two-track."
+     },
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive to the trailhead requires a high-clearance vehicle."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12197,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://climbingidaho.com/peaks/diamond.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Diamond Peak is 12,197 feet."
+     },
+     {
+      "url": "https://idahotwelvers.com/pages/diamond-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Diamond Peak rises to 12,197 feet."
+     }
+    ]
+   }
+  ],
+  "note": "App gain 4200 ft; idahotwelvers 4,150 ft."
+ },
+ "mt_sacagawea_direct": {
+  "area": "mt_sacagawea_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Fairy Lake Campground trailhead at the end of the Fairy Lake road (about 7 mi)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://montanatrailbriefs.com/hikes/fairy-lake-to-sacagawea-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead is in Fairy Lake Campground with parking."
+     },
+     {
+      "url": "https://outsidebozeman.com/trails-tours/hiking-trails/sacagawea-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "After about 7 miles reach the campground and trailhead at the end of the road."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Fairy Lake road gate open July 1 - September 15 only; road rough",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://montanatrailbriefs.com/hikes/fairy-lake-to-sacagawea-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access road gate open July 1 through September 15 only; road rough, high clearance strongly recommended."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9665,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://montanatrailbriefs.com/hikes/fairy-lake-to-sacagawea-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sacagawea Peak is the Bridger Range high point at 9,665 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Basin holds snow into July",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://montanatrailbriefs.com/hikes/fairy-lake-to-sacagawea-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The basin holds snow into July."
+     },
+     {
+      "url": "https://outsidebozeman.com/trails-tours/hiking-trails/sacagawea-peak-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow fields can linger into mid-July."
+     }
+    ]
+   }
+  ],
+  "note": "Both pages describe the standard Sacagawea Pass trail (about 4-4.5 mi RT, ~2,000 ft); their gain/distance are for that route, not the Direct line, so not used. Outside Bozeman says 2WD sedans manage the road unless muddy - conflicts with high-clearance advice."
+ },
+ "wa_beckey_davis": {
+  "area": "wa_prusik_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-beckey-davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Prusik Peak, Beckey-Davis rated 5.9, 700 ft, 6 pitches."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Beckey-Davis 5.9 YDS, trad/alpine, 650 ft, 7 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-beckey-davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 700 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 650 ft (197 m)."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": "6-7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-beckey-davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "6 pitches."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "retrieved_at": "2026-11-14",
+      "fact": "7 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Dan Davis, 1962",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Fred Beckey, Dan Davis (1962)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-beckey-davis/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Prusik Peak elevation 8,000 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count differs (6 vs 7); lengths 650 vs 700 ft within 10%."
+ },
+ "wa_beckey_tate": {
+  "area": "wa_big_kangaroo",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Big Kangaroo, Beckey-Tate: 5.9, 900 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/114423730/beckey-tate",
+      "retrieved_at": "2026-11-14",
+      "fact": "Beckey-Tate 5.9+, trad/alpine, 900 ft, 6 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114423730/beckey-tate",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated 5.9+ YDS."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114423730/beckey-tate",
+      "retrieved_at": "2026-11-14",
+      "fact": "6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114423730/beckey-tate",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Dan Tate, 29 May 1967",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114423730/beckey-tate",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Fred Beckey, Dan Tate (5/29/1967)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8280,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/big-kangaroo-beckey-tate/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Big Kangaroo elevation 8,280 ft."
+     }
+    ]
+   }
+  ],
+  "note": "stephabegg rates it 5.9, Mountain Project 5.9+ (app has 5.9+). App summit 8326 ft vs stephabegg 8,280."
+ },
+ "rainier_north_mowich_headwall": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "WI3 Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Mowich Headwall rated WI3 Mod. Snow; ice/snow/alpine, 8000 ft, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 8000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 8000 ft (2424 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mike Heath, Dan Davis, Mead Hargis, Bill Cockerham, July 1968",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Mike Heath, Dan Davis, Mead Hargis and Bill Cockerham, July 1968."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bivy at about 10,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb starts from the bivy at 10k."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "40-50 ft hourglass of rock and ice; ~45 degree snow for a couple thousand feet to the rock band; traverse left then right to the ice cap; rock band may need 5th class",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111999837/north-mowich-headwall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hourglass of rock and ice 40-50 ft, then ~45 degree snow a couple thousand feet; clearing the rock band can need 5th class."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project opened for grade; summitpost 403."
+ },
+ "adams_avalanche_glacier": {
+  "area": "wa_mount_adams",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120612416/avalanche-white-salmon-glaciers",
+      "retrieved_at": "2026-11-14",
+      "fact": "Avalanche-White Salmon Glaciers rated Mod. Snow; snow/alpine, 5000 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120612416/avalanche-white-salmon-glaciers",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length 5000 ft (1515 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Angus and Moreau, September 1957",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120612416/avalanche-white-salmon-glaciers",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Angus and Moreau, Sept 1957."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach via the Pacific Crest Trail or the Shorthorn trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120612416/avalanche-white-salmon-glaciers",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach via the Pacific Crest Trail or Shorthorn trail."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late spring",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120612416/avalanche-white-salmon-glaciers",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route is climbed in late spring."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Sometimes a headwall with alpine ice",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120612416/avalanche-white-salmon-glaciers",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mostly moderate and steep snow; sometimes has a headwall with alpine ice."
+     }
+    ]
+   }
+  ],
+  "note": "MP page covers the Avalanche-White Salmon Glaciers line, which matches this route's description."
+ },
+ "or_mt_hood_south_side_hogsback": {
+  "area": "or_south_side",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/oregon/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Hood South Side Route: easy snow, 7.1 miles, 5300 ft gain/loss round trip."
+     },
+     {
+      "url": "https://themtsarecalling.com/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Hood from Timberline Lodge: distance 8.7 miles, elevation gain 5450 ft, crux PD, total time 7:30."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/oregon/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "7.1 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Easy snow (PD)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/oregon/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rated easy snow."
+     },
+     {
+      "url": "https://themtsarecalling.com/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux rated PD."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Timberline Lodge, about 5,900 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/oregon/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb begins at Timberline Lodge (~5,900 ft), about 5,300 vertical feet below the summit."
+     },
+     {
+      "url": "https://themtsarecalling.com/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Timberline Lodge, full services."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Ski area asks climbers to use the trail on skier's right of the resort",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/oregon/hood/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The ski area prefers climbers use a trail along skier's right side of the resort."
+     }
+    ]
+   }
+  ],
+  "note": "Distances differ (7.1 vs 8.7 mi) by more than 10% - each single-source; mtsarecalling 8.7 mi not recorded as a fact."
+ },
+ "wa_bedal_peak_standard": {
+  "area": "wa_bedal_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/bedal-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "7.3 miles roundtrip, elevation gain 4,500 ft, highest point 6,554 ft."
+     },
+     {
+      "url": "https://musthikemusteat.com/mountain-loop-hwy/bedal-peak-scramble/",
+      "retrieved_at": "2026-11-14",
+      "fact": "7.8 miles RT; elevation gain/highest 4394 ft / 6560 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/bedal-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "7.3 miles, roundtrip."
+     },
+     {
+      "url": "https://musthikemusteat.com/mountain-loop-hwy/bedal-peak-scramble/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mileage 7.8 miles RT."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6554,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/bedal-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 6,554 ft."
+     },
+     {
+      "url": "https://musthikemusteat.com/mountain-loop-hwy/bedal-peak-scramble/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest 6560 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass or America the Beautiful Pass to park",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/bedal-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking pass: America the Beautiful Pass or Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "FR 4096, about a mile past Bedal campground, 2 mi up to the trailhead (~2,166 ft)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/bedal-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn left on FR 4096 about a mile past Bedal campground; continue two miles to the trailhead."
+     },
+     {
+      "url": "https://musthikemusteat.com/mountain-loop-hwy/bedal-peak-scramble/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Started up the climbers path at 2166 ft off FR 4096."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Avalanche chute at 0.7 mi after entering the wilderness; the path peters out about 1.7 mi from the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/bedal-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Look for an avalanche chute at 0.7 miles; the way peters out about 1.7 miles from the trailhead."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_bears_breast_mountain_infinite_beauty": {
+  "area": "wa_bears_breast_mountain",
+  "facts": [
+   {
+    "field": "hazard",
+    "value": "Ford of the Waptus River about a mile before Waptus Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108610-trip-report-bears-breast-mountain-se-mega-slab-07112026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy ford of the Waptus River a mile before the lake; bring appropriate shoes."
+     },
+     {
+      "url": "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party crossed the Waptus River on the way in from Salmon La Sac."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Waptus River trail from Salmon La Sac, about 12 mostly flat miles one way to the base of the mountain",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab",
+      "retrieved_at": "2026-11-14",
+      "fact": "Came in along the Waptus River from Salmon La Sac: 12 flat miles one way to the base of the mountain."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camps near Waptus Lake shore; quieter camp with close water higher up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108610-trip-report-bears-breast-mountain-se-mega-slab-07112026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Busy camping at the lake; a quieter camp spot with close water access and a view of the peak higher up."
+     }
+    ]
+   }
+  ],
+  "note": "Both trip reports cover the SE Mega Slab generally, not specifically Infinite Beauty, so no grade/length taken. App says ~9 mi to Waptus; galenweld says 12 mi to the mountain's base."
+ },
+ "adams_northwest_ridge": {
+  "area": "wa_mount_adams",
+  "facts": [
+   {
+    "field": "alpine_grade",
+    "value": "Grade II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Face of Northwest Ridge is one of three intermediate, Grade II ice routes on Mount Adams."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Killen Creek Trail meets the PCT just after 3 mi; High Camp at 6,900 ft is 10.0 mi round trip with 2,300 ft gain",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Killen Creek to High Camp: 10.0 miles roundtrip, 2,300 ft gain, highest point 6,900 ft; PCT junction just after 3 miles."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "High Camp, 6,900 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "retrieved_at": "2026-11-14",
+      "fact": "High Camp highest point 6,900 feet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass or America the Beautiful Pass to park at Killen Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking pass: America the Beautiful Pass or Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost north-face-of-northwest-ridge page is 403. Killen Creek figures are for the approach to High Camp only, not the climb."
+ },
+ "or_three_sisters_traverse": {
+  "area": "or_three_sisters_traverses",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 9400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/three-sisters-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three Sisters (OR) FKT route: distance 18.7 mi, vertical gain 9,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi",
+    "value": 18.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/three-sisters-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 18.7 mi, Devils Lake to Pole Creek point to point."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Devils Lake (start) to Pole Creek Trailhead (finish); avoid the closure out of the Cascade Hwy trailhead (detour adds ~0.5 mi)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/three-sisters-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route from Devils Lake to Pole Creek; avoid the closure out of the Cascade Hwy trailhead, going around adds about 0.5 mi."
+     },
+     {
+      "url": "https://climberkyle.com/2021/04/06/three-sisters-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party ran the traverse from the Pole Creek Trailhead side."
+     }
+    ]
+   }
+  ],
+  "note": "climberkyle's ski traverse ran north-to-south from Pole Creek and gives no total stats. SummitPost 403."
+ },
+ "or_hurwal_divide_traverse": {
+  "area": "or_wallowa_mountains_traverses",
+  "facts": [
+   {
+    "field": "dist_mi",
+    "value": 18.7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/hurwal-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hurwal Traverse (OR): distance 18.7 mi."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Hurricane Creek TH to Thorp Creek, up Sacajawea, over to the Matterhorn, back along the Hurwal Divide over Chief Joseph Mtn, bushwhack back to Hurricane Creek",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/hurwal-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "One way: Hurricane Creek TH to Thorp Creek, up Sacajawea, to Matterhorn, back across Hurwal Divide over Chief Joseph, bushwhack to Hurricane Creek TH."
+     },
+     {
+      "url": "https://jessb.org/sacajawea-matterhorn-hurwal-divide-point-joseph/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Loop started and ended at Hurricane Creek Trailhead via Thorp Creek meadows over the range highpoints."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No water along the ridge once on the highpoints - carry it",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://jessb.org/sacajawea-matterhorn-hurwal-divide-point-joseph/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Carried all needed water; no water access until all the highpoints were done."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": "Done as a 3-day loop by one party; FKT about 9 h",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://jessb.org/sacajawea-matterhorn-hurwal-divide-point-joseph/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three-day loop starting and ending at Hurricane Creek Trailhead."
+     },
+     {
+      "url": "https://fastestknowntime.com/route/hurwal-traverse-or",
+      "retrieved_at": "2026-11-14",
+      "fact": "Supported FKT 8h 56m (2024); Hauter/Pitt 10h 20m (2019)."
+     }
+    ]
+   }
+  ],
+  "note": "Distance 18.7 mi is the FKT route's figure. jessb notes Sacajawea is ~2300 ft above Thorp Creek meadows in about 1 mile."
+ },
+ "wa_mount_fury_west_west_ridge": {
+  "area": "wa_mount_fury_west",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8320,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpinist.com/climbing-notes/mt-fury/",
+      "retrieved_at": "2026-11-14",
+      "fact": "West Peak of Mt. Fury is 8,320 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Opened alpinist.com Mt. Fury note (it covers Mongo Ridge VI 5.10, a different line); DuckDuckGo found only CascadeClimbers Mongo Ridge TRs. No grade for the West Ridge / Northwest Route found on an opened page."
+ },
+ "or_krag_peak_traverse": {
+  "area": "or_wallowa_mountains_traverses",
+  "skip_reason": "Opened oregonhikers.org/field_guide/Krag_Peak (says the usual summit route is the northeast ridge via the east ridge - not this west-rib loop), glassmountains.net/wp/t/krag-peak/ (archive; only mentions camping above Crater Lake) and oregonhikers.org/forum/viewtopic.php?t=30966 (East Eagle basecamp, not Krag). No stated figure for this loop. SummitPost 403."
+ },
+ "co_hallett_south_side_chaos_couloir": {
+  "area": "co_hallett_south_side",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Bear Lake Trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/front-range/rocky-mountain-national-park/elevator-shaft/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed for the Elevator Shaft (aka Chaos Couloir) is Bear Lake Trailhead."
+     }
+    ]
+   }
+  ],
+  "note": "backcountryrecon calls the Elevator Shaft 'aka the Chaos Couloir' and describes it as sustained, steep, narrow and E-SE facing, which does not match our easier Chaos Couloir (curving to the east ridge); aspect/steepness not recorded. andyintherockies.com Chaos page loaded empty; SummitPost chaos-couloir pages 403."
+ }
+}

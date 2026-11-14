@@ -85,7 +85,10 @@ function anniversaryScaffold() {
       // hydration -- which runs once, on the first data it sees -- receives the probe AND
       // whatever the account holds, exactly as it would receive a real climber's rows. Keyed
       // on the data, not the query object, so effects keyed on myLogsQ.data see a stable array.
-      out = out.replace(LOGS_Q_ANCHOR, "const _myLogsQ=useUserLogs(uid);const _annivData=useMemo(()=>(_myLogsQ.data||_myLogsQ.isError)?[" + JSON.stringify(row) + "].concat(_myLogsQ.data||[]):undefined,[_myLogsQ.data,_myLogsQ.isError]);const myLogsQ=Object.assign({},_myLogsQ,{data:_annivData});");
+      // window.__annivLogsQ says whether that read has answered: the probe is prepended only once it
+      // has, so "no anniversary" with the read still pending is a database that did not answer, not a
+      // severed feed. check-anniversary.mjs waits on it and names it when it fails.
+      out = out.replace(LOGS_Q_ANCHOR, "const _myLogsQ=useUserLogs(uid);if(typeof window!==\"undefined\")window.__annivLogsQ=_myLogsQ.isError?\"error\":(_myLogsQ.data?\"data\":\"pending\");const _annivData=useMemo(()=>(_myLogsQ.data||_myLogsQ.isError)?[" + JSON.stringify(row) + "].concat(_myLogsQ.data||[]):undefined,[_myLogsQ.data,_myLogsQ.isError]);const myLogsQ=Object.assign({},_myLogsQ,{data:_annivData});");
       return out;
     },
   };

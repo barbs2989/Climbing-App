@@ -37,7 +37,7 @@ const CASES = [
   },
   {
     name: "nobordersizing",
-    file: "lib/DbGuideDashboard.jsx",
+    file: "lib/Calendar.jsx", // was lib/DbGuideDashboard.jsx, removed with the guide feature 2026-11-14
     why: "keeps maxWidth+margin but drops box-sizing — measured at 552px in Chrome, and a scan " +
          "checking only the first two reported it as capped",
     edit: (s) => s.replace(',boxSizing:"border-box"', ""),
@@ -56,7 +56,7 @@ const CASES = [
   {
     name: "brokenscan",
     // ClimbMatch.jsx, not core: the full-screen views moved out into src/components, so core now
-    // holds 2 of 38 and ClimbMatch.jsx's 4 are the largest single-file loss a reformat can cause.
+    // holds none of 28 and ClimbMatch.jsx's 4 are the largest single-file loss a reformat can cause.
     file: "ClimbMatch.jsx",
     why: "ONE file's `style={{` is reformatted to `style = {{` — whitespace around a JSX attribute's " +
          "`=` is legal, React renders it IDENTICALLY and check:refs cannot see it, so this is the " +
@@ -99,7 +99,7 @@ const CASES = [
   },
   {
     name: "cappedwithextra",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/Inbox.jsx", // core's capped views went with the guide screens (2026-11-14)
     why: "MUST STAY SILENT — a capped view that gains an unrelated property is still capped",
     edit: (s) => s.replace(',maxWidth:520,margin:"0 auto",boxSizing:"border-box"',
                            ',maxWidth:520,margin:"0 auto",boxSizing:"border-box",cursor:"default"'),

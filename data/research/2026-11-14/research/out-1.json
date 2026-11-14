@@ -1,0 +1,227 @@
+{
+ "wa_amphitheater_mountain_finger_of_fatwa": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "no open page states a gain",
+  "note": "Searched with Cathedral/Amphitheater Pasayten trip reports; none states a gain."
+ },
+ "wa_hadley_peak_skyline_divide": {
+  "area": "wa_hadley_peak",
+  "skip_reason": "no open page states a Skyline Divide trailhead-to-summit gain for Hadley",
+  "note": "WTA skyline-divide: 2,500 ft, 9 mi rt, to 6,563 ft - ridge hike only, not Hadley. besthikesbc.ca: 1,100 m (3,600 ft) via Cougar Divide, a different route. Mountaineers (4,700 ft per snippet) blocked. Stored 2818 may be low but unproven."
+ },
+ "wa_rampage": {
+  "area": "wa_paisano_pinnacle",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_mount_lincoln_standard": {
+  "area": "wa_mount_lincoln",
+  "skip_reason": "no open page states a gain to Mount Lincoln (Olympics)",
+  "note": "WTA flapjack-lakes: 3,050 ft to the lakes (3,850 ft) only, not the summit."
+ },
+ "wa_mount_angeles_standard": {
+  "area": "wa_mount_angeles",
+  "skip_reason": "only one open figure, and it disagrees with stored by >10%",
+  "note": "WTA mount-angeles: 2,100 ft gain, 6.25 mi rt, highest 6,454, from Hurricane Ridge Visitor Center (Switchback TH alternate gains 700 ft in 0.6 mi to join). Stored gain 2550 differs 21%; single source so not set. Stored loss_ft 2100 equals the WTA gain figure - possibly misfiled. WTA klahhane-ridge (1,700 ft to 6,050) covers only the ridge, not the summit."
+ },
+ "wa_burnt_boot_peak_north_ridge": {
+  "area": "wa_burnt_boot_peak",
+  "skip_reason": "no open page states a gain for the north ridge",
+  "note": "yellowleaf trip report: ~9,000 ft for a 3-day Burnt Boot/Iapia/Four Brothers loop (whole trip, NE ridge) - not usable."
+ },
+ "wa_lake_mountain_pasayten_scramble": {
+  "area": "wa_lake_mountain_pasayten",
+  "skip_reason": "no open page states trailhead-to-summit gain for Lake Mountain alone",
+  "note": "Search found only combined Monument+Lake figures (Mountaineers, blocked) and a winter round trip (countryhighpoints, ~7,700 ft / 27 mi) - not usable."
+ },
+ "wa_spire_point_southwest_face": {
+  "area": "wa_spire_point",
+  "skip_reason": "no open page states trailhead-to-summit gain",
+  "note": "Only a multi-day Dome+Spire blog total (~9,900 ft) and WTA Downey Creek (trail only) found."
+ },
+ "wa_bears_breast_mountain_southwest_face": {
+  "area": "wa_bears_breast_mountain",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_mount_adams_adams_glacier": {
+  "area": "wa_mount_adams",
+  "skip_reason": "no open page I could read states a trailhead-to-summit gain for the Adams Glacier route",
+  "note": "STORED GAIN LOOKS WRONG: stored 5150 vs pins TH 4600 / summit 12276; stored loss 7680. globalsummitguide.com gives ~7,700 ft (2,345 m) for the NORTH RIDGE from Killen Creek TH (different route, unlabeled one-way/rt). gethighonaltitude.com Adams Glacier post lists \"Length: 5,000 ft\" (route length, not gain) - plausible origin of stored 5150. Mountaineers page (7,700 ft per search snippet) is blocked."
+ },
+ "wa_south_face_2": {
+  "area": "wa_pernod_spire",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_old_guard_peak_southwest_route": {
+  "area": "wa_old_guard_peak",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_overcoat_peak_southeast_route": {
+  "area": "wa_overcoat_peak",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_cosho_peak_scramble": {
+  "area": "wa_cosho_peak",
+  "skip_reason": "no open page states a gain for this route",
+  "note": "Only a Mountaineers 3-day trip listing (8,420 ft whole trip, blocked) found."
+ },
+ "wa_mount_claywood_standard": {
+  "area": "wa_mount_claywood",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_the_needle_neve_glacier": {
+  "area": "wa_the_needle",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_cutthroat_peak_northeast_face": {
+  "area": "wa_cutthroat_peak",
+  "skip_reason": "no open page states an approach/summit gain",
+  "note": "Mountain Project / AAC pages for east-face routes give route length only."
+ },
+ "wa_mount_lyall_south_route": {
+  "area": "wa_mount_lyall",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_big_craggy_peak_scramble": {
+  "area": "wa_big_craggy_peak",
+  "skip_reason": "no open page I opened states gain for Big Craggy alone",
+  "note": "Search snippets only: SummitPost 4,400 ft from car (blocked), Mountaineers 5,800 ft both Craggies (blocked), yellowleaf 6,290 ft both peaks. Stored 5600 unconfirmed; may be high if 4,400 is right."
+ },
+ "wa_direct_west_face": {
+  "area": "wa_pernod_spire",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_the_hitchhiker": {
+  "area": "wa_south_early_winters_spire",
+  "skip_reason": "no open page states gain for this route",
+  "note": "Figures found were for the South Arete approach (Blue Lake TH ~2,000 ft per snippet) - not this route."
+ },
+ "wa_emerald_peak_se_ridge": {
+  "area": "wa_emerald_peak_entiat",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5272,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/emerald-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 5,272 feet, highest point 8,422 ft; most direct route from North Fork Entiat trailhead"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 5272. WTA does not name the ridge used (Class 3, several approaches, most direct from N Fork Entiat TH) and gives no length or loss. No second source found."
+ },
+ "wa_mount_larrabee_south_ridge": {
+  "area": "wa_mount_larrabee",
+  "skip_reason": "no open page I could read states a gain",
+  "note": "umanitoba 2005 south ridge report gives only elevations in metres (TH 1097 m, summit 2396 m) - subtraction not allowed. stevensong page body unreadable. Mountaineers (2,600 ft from Twin Lakes per snippet) blocked."
+ },
+ "wy_red_spot_alternate_start": {
+  "area": "wy_medicine_bow_peak_area",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_flight_of_the_falcon": {
+  "area": "wa_waterfall_basin",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_mount_si_trail": {
+  "area": "wa_mount_si",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3150,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,150 feet, 8.0 miles roundtrip, highest point 3,900 ft"
+     },
+     {
+      "url": "https://nrtapplication.org/trails/mount-si-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "3,150 feet of elevation gain on the ascent (DNR-managed National Recreation Trail application)"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 3150 (shape outback, so one-way gain). Both pages give 3,150 ft; WTA highest point is 3,900 ft (trail-end viewpoint below the 4,167 Haystack). WTA prose also says \"gaining 3,100 feet\". No loss/regain stated anywhere."
+ },
+ "wa_mount_terror_west_ridge": {
+  "area": "wa_mount_terror",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_liberty_bell_independence_route": {
+  "area": "wa_liberty_bell",
+  "skip_reason": "no open page states gain for this route to the summit",
+  "note": "theoutbound.com Beckey Route page: 2,000 ft parking lot to the notch (different route, notch only). Mountaineers (2,500 ft total for Beckey Route per search snippet) blocked. Stored 2500 not confirmed by an open page."
+ },
+ "wa_the_temple_south_ridge": {
+  "area": "wa_the_temple",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_horseshoe_peak_scramble": {
+  "area": "wa_horseshoe_peak",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_primus_peak_south_ridge": {
+  "area": "wa_primus_peak",
+  "skip_reason": "no open page states a gain for this route",
+  "note": "Only Thunder Creek / Borealis / east ridge reports found (turns-all-year ~6,600 ft from McAllister Camp, not the trailhead). Pin TH 2160 does not match Thunder Creek TH (~1,200 ft)."
+ },
+ "wa_cathedral_peak_pasayten_se_buttress": {
+  "area": "wa_cathedral_peak_pasayten",
+  "skip_reason": "opened pages state no gain figures",
+  "note": "stephabegg pasayten-2016 and countryhighpoints cathedral-peak-and-amphitheater-mountain give summit elevations and miles only."
+ },
+ "wa_mount_ellinor_standard": {
+  "area": "wa_mount_ellinor",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2444,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-ellinor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Upper trailhead (3,500 ft): 2,444 feet gained in 1.6 miles to the summit"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 2444 (upper trailhead). WTA stats block (3,300 ft, 6.2 mi rt) is the LOWER trailhead. theoutbound.com summit-mount-ellinor lists 2467 ft over 3.08 mi but does not name the trailhead, so not counted as a second source."
+ },
+ "wa_upper_north_ridge_w_great_gendarme": {
+  "area": "wa_mount_stuart",
+  "skip_reason": "no open page states a trailhead-to-summit gain",
+  "note": "STORED GAIN LOOKS WRONG: stored 2998 matches the ridge climb length (\"3000 ft\", stephabegg ?p=8737), not trailhead-to-summit (pins 4243 -> 9415). climberkyle 2021 complete north ridge: ~9.5k gain for the whole round-trip day (unusable). desktodirtbag: 5,000 ft descent via Cascadian Couloir, no gain. Mountaineers listing (5,525 ft per snippet) blocked."
+ },
+ "wa_argonaut_peak_east_ridge": {
+  "area": "wa_argonaut_peak",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_sinister_peak_southwest_route": {
+  "area": "wa_sinister_peak",
+  "skip_reason": "no open page states a gain",
+  "note": "SummitPost (blocked) says \"massive elevation gain\" without a number."
+ },
+ "wa_east_twin_needle_thread_of_ice": {
+  "area": "wa_east_twin_needle",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_mount_fury_east_direct_east_ridge": {
+  "area": "wa_mount_fury_east",
+  "skip_reason": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ "wa_three_fingers_r2": {
+  "area": "wa_three_fingers",
+  "skip_reason": "no open page states gain for Middle Peak",
+  "note": "WTA three-fingers: 4,200 ft gain, 15.0 mi rt, highest 6,854 ft - South Peak lookout from Goat Flats TH, not Middle Peak; FR 41 also closed at mile 8. Not used."
+ }
+}

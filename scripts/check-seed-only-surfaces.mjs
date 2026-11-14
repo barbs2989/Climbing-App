@@ -79,23 +79,6 @@ const SEED_ONLY = {
   GettingThere:    "no DB counterpart, and does not need one: its only unique capability — a " +
                    "directions link to the crag — was ported into DbAreaBrowser. The rest showed " +
                    "an arbitrary representative route's `access` as the AREA's fact.",
-  // ── found only once the TERNARY spelling of the seed branch was pruned. All three are the
-  //    seed half of `USE_DB ? <Db…/> : <…/>` in ClimbMatch.jsx, so they were counted live for
-  //    this guard's whole life while rendering for nobody.
-  Guides:          "seed guide directory, the seed half of `USE_DB ? <DbGuides/> : <Guides/>`. " +
-                   "Superseded by DbGuides in lib/DbGuides.jsx.",
-  GuideDashboard:  "seed guide dashboard, the seed half of a USE_DB ternary. Superseded by " +
-                   "DbGuideDashboard in lib/DbGuideDashboard.jsx.",
-  GuideApply:      "seed guide application, the seed half of a USE_DB ternary. Superseded by " +
-                   "DbGuideApply in lib/DbGuideApply.jsx.",
-  // TRANSITIVELY dead: its only render site is inside Guides. Worth its own entry because the
-  // reason differs — there is nothing to supersede it WITH.
-  AvailCal:        "no DB counterpart, and could not have one. The live inquiry flow in " +
-                   "lib/DbGuides.jsx takes dates as a FREE-TEXT field (placeholder \"Dates you're " +
-                   "thinking of\") rather than from a guide's published availability, and no " +
-                   "availability/calendar/slot/booking column exists anywhere in " +
-                   "scripts/schema-snapshot.json — so a revived calendar would have nothing to " +
-                   "draw and would render empty for every guide. Reached only from Guides.",
 };
 
 // Files that can render a component. lib/*.jsx matters: DbAreaBrowser is where the live

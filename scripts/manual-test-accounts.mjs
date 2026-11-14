@@ -318,13 +318,6 @@ async function create() {
       await insert("group_event_rsvps", { event_id: e.id, user_id: A.id }, ["event_id", "user_id"]);
     }
 
-    // ── Guides: Casey is a verified, listed guide; Avery has an open inquiry; Blake reviewed a trip ──
-    await insert("guide_profiles", { id: C.id, status: "active", title: "Alpine Guide (TEST)", base_location: "Bellingham, WA", specialty: "Glacier & alpine", bio: "TEST guide profile — not a real guide.", cancellation_policy: "Full refund 7+ days out.", lat: 48.7519, lng: -122.4787, day_rate: 450, group_max: 3, response_hrs: 24, regions: ["North Cascades", "Mount Baker"], languages: ["English"], insurance_carrier_name: "Test Mutual", insurance_attested: true, insurance_attested_at: now, permit_attested: true, permit_attested_at: now, waiver_process_attested: true, waiver_process_attested_at: now, independent_contractor_attested: true, independent_contractor_attested_at: now, agreement_signed_name: "Casey Tester", agreement_signed_at: now, submitted_at: now, listed_at: now });
-    await insert("guide_credentials", { guide_id: C.id, kind: "primary_track", cert_track: "AlpineGuide", label: "Alpine Guide (TEST)", issuing_org: "AMGA", cert_number: "TEST-001", status: "verified", verified_at: now, verified_expires_at: new Date(Date.now() + 365 * 86400000).toISOString() });
-    await insert("inquiries", { guide_id: C.id, climber_id: A.id, objective: "Coleman–Deming, first glacier climb (TEST)", requested_dates: "Late June 2027", party_size: 2, message: "Looking for a guided first glacier trip. TEST.", status: "new" });
-    const bq = await insert("inquiries", { guide_id: C.id, climber_id: B.id, objective: "Crevasse rescue refresher (TEST)", requested_dates: "Aug 2026", party_size: 1, message: "TEST.", status: "accepted", guide_responded_at: now });
-    await insert("reviews", { inquiry_id: bq.id, guide_id: C.id, climber_id: B.id, rating: 5, text: "Patient and thorough — the rescue drills finally clicked. (TEST review)", guide_reply: "Thanks Blake! (TEST)", guide_reply_at: now });
-
     // ── Blocked: Avery has blocked Drew (never connected, so the block has nothing to remove) ──
     await insert("blocked_users", { blocker: A.id, blocked: D.id });
 

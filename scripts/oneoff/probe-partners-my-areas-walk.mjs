@@ -46,7 +46,7 @@ const noSideScroll = async (page, where) => ok(await page.evaluate(() => documen
 async function searchIn(dlg, page, q, ms = 6000) { await dlg.locator('input[aria-label="Search for an area to add"]').fill(q); await page.waitForTimeout(ms); }
 async function hitRows(dlg) { return (await dlg.locator("button:has-text('+ Add'), button:has-text('Listed ✓'), button:has-text('matched by route')").allInnerTexts()).map((t) => t.replace(/\n/g, " · ")); }
 async function listAt(page, q, want, extra) {
-  await page.locator('section[aria-label="My areas"] button', { hasText: /^\+ Add an area$/ }).click(); await page.waitForTimeout(1500);
+  await page.locator('section[aria-label="How climbers find you"] button', { hasText: /^\+ Add an area$/ }).click(); await page.waitForTimeout(1500);
   const dlg = page.locator('[role="dialog"][aria-label="My listed areas"]');
   ok(await dlg.count() === 1, "+ Add an area opens the My listed areas screen");
   ok(await dlg.locator("select").count() === 0, "no state dropdown to fill in first");
@@ -77,8 +77,8 @@ try {
 
   // 1. Robin lists at Smith Rock.
   const rp = await open(robinSess, 390, 844, "Robin");
-  const rbox = rp.locator('section[aria-label="My areas"]');
-  ok(await rbox.count() === 1, "Robin: the My areas box is on the Partners tab");
+  const rbox = rp.locator('section[aria-label="How climbers find you"]');
+  ok(await rbox.count() === 1, "Robin: the You card (My areas) is on the Partners tab");
   note("box (unlisted): " + (await rbox.innerText()).replace(/\n/g, " / "));
   const bh = await rbox.boundingBox(); note("box size: " + Math.round(bh.width) + "x" + Math.round(bh.height));
   ok(bh.height >= 110, "the box is a box, not a pill (>=110px tall)");
@@ -96,7 +96,7 @@ try {
 
   // 2. Me: the search the way people type, then list at Smith Rock and find Robin.
   const mp = await open(meSess, 390, 844, "me");
-  const mbox = mp.locator('section[aria-label="My areas"]');
+  const mbox = mp.locator('section[aria-label="How climbers find you"]');
   const mdlg = await listAt(mp, "smith rock", "smith rock", async (dlg) => {
     await searchIn(dlg, mp, "s", 1500); ok(/at least two letters/.test(await dlg.innerText()), "one letter: Keep typing");
     await searchIn(dlg, mp, "zzqxv"); ok(/Nothing in the catalog is named/.test(await dlg.innerText()), "nonsense: says nothing is named that, with what to try");
@@ -121,7 +121,7 @@ try {
   if (await robinRow.count()) { await robinRow.click(); await mp.waitForTimeout(3000); const t = await mp.locator("body").innerText(); note("profile actions: " + ["Connect", "Message", "Add friend", "Plan a session"].filter((w) => t.includes(w)).join(", ")); await shot(mp, "4-robin-profile"); await mp.keyboard.press("Escape"); await mp.waitForTimeout(1500); }
 
   // 3. The chip edits that listing; By area finds a crag in another state with no state picked.
-  await mp.locator('section[aria-label="My areas"] button', { hasText: /^Smith Rock$/ }).click(); await mp.waitForTimeout(1500);
+  await mp.locator('section[aria-label="How climbers find you"] button', { hasText: /^Smith Rock$/ }).click(); await mp.waitForTimeout(1500);
   ok(/Edit listing/.test(await mp.locator('[role="dialog"][aria-label="My listed areas"]').innerText()), "tapping the Smith Rock chip opens that listing");
   await mp.locator('[role="dialog"] button', { hasText: /Back/ }).click(); await mp.waitForTimeout(500);
   await mp.locator('[role="dialog"] button[aria-label="Close"]').click(); await mp.waitForTimeout(1000);

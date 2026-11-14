@@ -94,8 +94,9 @@ for (const k of jsKeys) {
   const col = MULTI[k] ? MULTI[k][0] : k;
   if (!new RegExp("area\\." + col + "\\b").test(page)) fail(`no screen reads area.${k} — the field would be editable and shown nowhere (lib/DbAreaBrowser.jsx, lib/AreaPageSections.jsx)`);
 }
-const queue = read("lib/RouteQualityQueues.jsx");
-if (!/import \{[^}]*\bAREA_EDIT_FIELDS\b[^}]*\} from "\.\/areaFields"/.test(queue)) fail("lib/RouteQualityQueues.jsx does not label area rows from AREA_EDIT_FIELDS — the owner would see raw column names");
+// The owner reviews area edits on the standalone Review desk (review.html, 2026-11-14), not the old Menu queue.
+const queue = read("review/ReviewDesk.jsx");
+if (!/import \{[^}]*\bAREA_EDIT_FIELDS\b[^}]*\} from "\.\.\/lib\/areaFields"/.test(queue)) fail("review/ReviewDesk.jsx does not label area rows from AREA_EDIT_FIELDS — the owner would see raw column names");
 if (!fails) ok("every editable field reaches the area page, and the owner's queue labels it from the same table");
 
 // ── 4. summary rule, by running the module ──

@@ -1,0 +1,272 @@
+{
+ "wa_mount_lincoln_standard": {
+  "area": "wa_mount_lincoln",
+  "skip_reason": "Mountaineers mount-lincoln gives 4,100 ft but from Mildred Lakes TH, not Flapjack Lakes; explorerron TR (Staircase) gives no gain. Not used."
+ },
+ "wa_spire_point_southwest_face": {
+  "area": "wa_spire_point",
+  "skip_reason": "Mountaineers and web search: no page for Spire Point found."
+ },
+ "wa_old_guard_peak_southwest_route": {
+  "area": "wa_old_guard_peak",
+  "skip_reason": "SummitPost old-guard-peak/303084 gives only ~1,000 ft from the LeConte Glacier crossing (partial); no TH->summit figure."
+ },
+ "wa_the_needle_neve_glacier": {
+  "area": "wa_the_needle",
+  "skip_reason": "Mountaineers search for needle returned only Dorado Needle etc.; no page for The Needle."
+ },
+ "wa_direct_west_face": {
+  "area": "wa_pernod_spire",
+  "skip_reason": "Not reached in this Chrome pass (time budget); no page checked beyond the priorNote."
+ },
+ "wy_red_spot_alternate_start": {
+  "area": "wy_medicine_bow_peak_area",
+  "skip_reason": "Not reached in this Chrome pass (time budget); no page checked beyond the priorNote."
+ },
+ "wa_the_temple_south_ridge": {
+  "area": "wa_the_temple",
+  "set": {
+   "gain_ft": 6892
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6892,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Temple West Side: elevation gain 6,892 ft, high point 8,292 ft; trailhead to camp 5,600, camp to summit 1,292"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/tripreport-2002102606",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt Temple via Snow Lake trail and Nada Lake: about 7,300 ft gain over about 17 miles round trip"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 8,000 replaced: Mountaineers 6,892 and WTA trip report 7,300 agree within 6%. Stored loss_ft 6,995 untouched."
+ },
+ "wa_upper_north_ridge_w_great_gendarme": {
+  "area": "wa_mount_stuart",
+  "skip_reason": "Mountaineers ingalls-stuart-area/mt-stuart-n-ridge (Esmeralda TH 4,243 -> Ingalls Lake -> Goat Pass -> upper N Ridge): Elevation Gain 5,525 ft (TH->camp 3,660 gain/250 loss, camp->summit 1,865/100). Single source; stored 2,998 looks WRONG but needs a second source. SummitPost north-ridge/155700 and francisbaileyh (metres only) give no usable total."
+ },
+ "wa_mount_fury_east_direct_east_ridge": {
+  "area": "wa_mount_fury_east",
+  "skip_reason": "SummitPost mount-fury/152299 describes the Direct East Ridge but states no gain; Mountaineers has only Southeast Glacier / Southern Pickets pages."
+ },
+ "wa_northwest_face_2": {
+  "area": "wa_kangaroo_temple",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2425,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-northwest-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kangaroo Temple NW Face: elevation gain 2,500 ft, high point 7,572 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 2,425 agrees within 10% with Mountaineers 2,500; stored value locked (Yellowleaf figure in priorNote had no URL)."
+ },
+ "wa_the_cave_route": {
+  "area": "wa_concord_tower",
+  "skip_reason": "Mountaineers has Concord Tower South Face and N Face pages only (login-walled area folder); nothing for the Cave Route."
+ },
+ "wa_cashmere_mountain_west_ridge": {
+  "area": "wa_cashmere_mountain",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cashmere-8501",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cashmere Mountain scramble: 17 miles, 5,500 ft of gain"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 5,500 equals Mountaineers figure; page does not name the ridge explicitly."
+ },
+ "wy_grand_teton_the_rainbow_bridge": {
+  "area": "wy_grand_teton",
+  "skip_reason": "Not reached in this Chrome pass (time budget); no page checked beyond the priorNote."
+ },
+ "wa_johannesburg_mountain_cj_couloir": {
+  "area": "wa_johannesburg_mountain",
+  "skip_reason": "SummitPost johannesburg-mountain/154446 and search results give no TH->summit gain for the CJ Couloir (thealpineguide ~3,000 ft is the couloir itself)."
+ },
+ "wa_golden_horn_southwest_route": {
+  "area": "wa_golden_horn",
+  "skip_reason": "Mazamas activity 903 gives 25 mi RT but no gain; WTA TR 2,700 ft is a Snowy Lakes hike, not the summit; Mountaineers tower-mountain-golden-horn gives no gain."
+ },
+ "wa_around_the_cave_we_go": {
+  "area": "wa_concord_tower",
+  "skip_reason": "As The Cave Route: no page for this Concord Tower route."
+ },
+ "wa_mount_norton_scramble": {
+  "area": "wa_mount_norton",
+  "skip_reason": "Search found only encyclopedic pages for Mount Norton; no route gain."
+ },
+ "wa_free_mojo": {
+  "area": "wa_south_early_winters_spire",
+  "skip_reason": "Mountaineers SEWS pages cover other routes (South Arete etc.); a different route on the same peak does not count."
+ },
+ "wa_west_ridge_2": {
+  "area": "wa_paisano_pinnacle",
+  "skip_reason": "Mountaineers wine-spires gives 4,000 ft for the whole Wine Spires area, not Paisano West Ridge; MP approach page gives no total; not used."
+ },
+ "wa_mount_fury_east_north_buttress": {
+  "area": "wa_mount_fury_east",
+  "skip_reason": "SummitPost mount-fury/152299 and Mountaineers search: no gain for the North Buttress."
+ },
+ "wa_mcmillan_spire_west_west_ridge": {
+  "area": "wa_mcmillan_spire_west",
+  "skip_reason": "Mountaineers mcmilan-spire-west-ridge is self-inconsistent: Elevation Gain 9,800 ft vs summary 8,000 ft (table TH->camp 6,000, camp->summit 2,000). climberkyle 10,000 is car-to-car. Not set."
+ },
+ "wa_mutchler_peak_scramble": {
+  "area": "wa_mutchler_peak",
+  "skip_reason": "Mountaineers mutchler-peak: Elevation Gain 8,500 ft but via Snowking (different route/outing); not used."
+ },
+ "wa_kololo_peaks_standard": {
+  "area": "wa_kololo_peaks",
+  "skip_reason": "Mountaineers activity basic-glacier-climb-kololo-peaks-white-chuck-glacier: 33 mi, 8,200 ft (round-trip trip total); no route page with a TH->summit figure found; not set."
+ },
+ "wa_snowfield_peak_neve_glacier": {
+  "area": "wa_snowfield_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 7400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/snowfield-peak-neve-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Neve Glacier route from Pyramid Lake trailhead (1,150 ft): elevation gain 7,500 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 7,400 agrees within 10% with Mountaineers 7,500; stored value locked (one source)."
+ },
+ "wa_chikamin_peak_southeast_slopes": {
+  "area": "wa_chikamin_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chikamin-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Chikamin Peak scramble: 24 miles, 5,400 ft elevation gain"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 5,400 equals Mountaineers. Caveat: that page names a FR 46 trailhead at 2,375 ft; our trailhead pin is 3,021 ft."
+ },
+ "wa_mount_thomson_west_ridge": {
+  "area": "wa_mount_thomson",
+  "skip_reason": "Mountaineers mount-thompson-west-ridgpe: Elevation Gain 3,500 ft; theoutbound 4,500 ft; the two disagree and both are >10% below stored 5,200; not set."
+ },
+ "wa_east_face_2": {
+  "area": "wa_chablis_spire",
+  "skip_reason": "Mountaineers wine-spires gives 4,000 ft to an 8,500 ft high point for the whole Wine Spires area, not Chablis East Face; not used."
+ },
+ "wa_goat_mountain_south_ridge": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "Mountaineers goat-mountain-mount-baker: 11 mi RT, 4,400 ft gain (same page also says 4,300 ft and a 6,650 ft high point); single source >10% below stored 5,000; not set."
+ },
+ "wa_nooksack_tower_beckey_route": {
+  "area": "wa_nooksack_tower",
+  "skip_reason": "SummitPost nooksack-tower/153641 and TR 527261 give only segment heights; no TH->summit gain."
+ },
+ "wa_jack_mountain_east_ridge": {
+  "area": "wa_jack_mountain",
+  "skip_reason": "Mountaineers has jack-mtn-s-face and nohokomeen-headwall only; nothing for the East Ridge."
+ },
+ "wa_mount_steel_standard": {
+  "area": "wa_mount_steel",
+  "skip_reason": "SummitPost mount-steel/152969 states no gain; Mountaineers only has combined Steel & Hopper outing; hiiker figure is metres for Marmot Lake trail only."
+ },
+ "wa_storm_king_north_face": {
+  "area": "wa_storm_king",
+  "skip_reason": "Mountaineers storm-king pages are the Olympic Mount Storm King or the Southwest Route; nothing for the North Face."
+ },
+ "wa_the_triad_east_peak": {
+  "area": "wa_the_triad",
+  "skip_reason": "Search found only encyclopedic pages; Mountaineers has no Triad page."
+ },
+ "wa_three_fingers_r1": {
+  "area": "wa_three_fingers",
+  "skip_reason": "Mountaineers three-fingers-south and SummitPost three-fingers are the South Peak lookout hike; nothing for the North Peak."
+ },
+ "wa_magic_mountain_west_ridge": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "Mountaineers has only magic-mountain-south-ridge (different route)."
+ },
+ "wa_forbidden_peak_north_ridge": {
+  "area": "wa_forbidden_peak",
+  "skip_reason": "Mountaineers forbidden-peak-north-ridge lists Elevation Gain 7,000 ft (whole outing from Boston Basin TH); single source, >10% from stored 4,500, so not set. Stored looks low."
+ },
+ "wa_ingalls_peak_south_scramble": {
+  "area": "wa_ingalls_peak_south",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-peak-south-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ingalls Peak South Peak scramble: 11 miles, 3,600 ft of gain"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 3,600 equals Mountaineers listing (stephabegg 4,200 ft is a round-trip figure, not used)."
+ },
+ "wa_remmel_mountain_nw_ridge": {
+  "area": "wa_remmel_mountain",
+  "skip_reason": "SummitPost remmel-mountain/153242 gives lake heights only; Mountaineers has no Remmel page."
+ },
+ "wa_blue_s_buttress": {
+  "area": "wa_poster_peak",
+  "skip_reason": "Mountaineers poster-peak-blue-buttress: Elevation Gain 2,425 ft, high point 7,565 ft (TH->climb 1,400, climb->summit 1,000). Single source; stored 1,365 looks WRONG but needs a second source (SummitPost pica-poster-peak has none)."
+ },
+ "wa_early_morning_spire_southwest_face": {
+  "area": "wa_early_morning_spire",
+  "skip_reason": "Not reached in this Chrome pass (time budget); no page checked beyond the priorNote."
+ },
+ "wa_mount_meany_standard": {
+  "area": "wa_mount_meany",
+  "skip_reason": "trailcatjim Meany TR and Wikipedia give no total gain; Mountaineers has no Meany climb page."
+ },
+ "wa_mount_queets_south": {
+  "area": "wa_mount_queets",
+  "skip_reason": "Search found only Wikipedia/mountainplanet and Mountaineers river-trail pages (North Fork Quinault, Queets River); no summit route gain."
+ },
+ "wa_mount_shuksan_fisher_chimneys": {
+  "area": "wa_mount_shuksan_climbs",
+  "skip_reason": "Mountaineers mt-shuksan-fisher-chimneys: 6,750 ft total (round trip); segment table TH->camp 1,500 gain / 800 loss, camp->summit 4,450, camp->TH 800 gain. No TH->summit total stated (summing would be our math); not set."
+ }
+}

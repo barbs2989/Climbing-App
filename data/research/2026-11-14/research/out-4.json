@@ -1,0 +1,200 @@
+{
+ "wa_east_face_2": {
+  "area": "wa_chablis_spire",
+  "skip_reason": "No open page found stating a gain for Chablis Spire East Face (Abegg Burgundy Col page gives route lengths and col approach only)."
+ },
+ "wa_mount_rainier_curtis_ridge": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "No page states a trailhead-to-summit total for Curtis Ridge; Mountaineers Liberty Ridge profile gives segments only (403, and summing is our math); Mountain Project gives ridge elevations only."
+ },
+ "wa_johannesburg_mountain_northeast_rib_1951_route": {
+  "area": "wa_johannesburg_mountain",
+  "set": {
+   "return_gain_ft": 1500
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "4,600' of climbing from parking lot to summit"
+     }
+    ]
+   },
+   {
+    "field": "return_gain_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "C-J Col to trailhead via Doug's Direct: 4500' loss, 1500' gain"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 5000 against Abegg's 4,600 ft parking-to-summit (8% off). return_gain 1500 is the gain on her descent via C-J Col and Doug's Direct; valid only if our descent is that standard one. Page gives approach as 3500' gain with no loss stated, so approach_loss not set."
+ },
+ "wa_garfield_mountain_southwest_ledges": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "No page states a gain for this route. A blog for Infinite Bliss (different route) gives 2,600 ft climbing plus ~1,000 ft approach; stored 3630 looks like such a sum. yellowleaf Garfield log (2,540 ft) is a different approach, not opened."
+ },
+ "wa_the_monk_scabo": {
+  "area": "wa_the_monk_pasayten",
+  "skip_reason": "No open page states a gain for The Monk; Abegg Pasayten 2016 page gives no gain figures."
+ },
+ "wa_goat_mountain_south_ridge": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "WTA Goat Mountain (Mt Baker) page states 3,100 ft to a 5,600 ft high point, not the 6,891 ft summit. SummitPost (5,000 ft, matches stored) and WTA trip reports (~4,200 ft GPS) are 403. Stored 5000 may be high but unproven."
+ },
+ "wa_mount_terror_stoddard_buttress": {
+  "area": "wa_mount_terror",
+  "skip_reason": "No page states approach gain; Mountain Project gives 2,500 ft route length only; Abegg Southern Pickets 2 gives elevations only."
+ },
+ "wa_goode_mountain_megalodon_ridge": {
+  "area": "wa_mount_goode",
+  "skip_reason": "No open page found for Megalodon Ridge gain (searched stephabegg/climberkyle)."
+ },
+ "wa_forbidden_peak_northeast_face": {
+  "area": "wa_forbidden_peak",
+  "skip_reason": "No page found for Forbidden NE Face gain (searched stephabegg/climberkyle/Mountain Project)."
+ },
+ "wa_nooksack_tower_beckey_route": {
+  "area": "wa_nooksack_tower",
+  "skip_reason": "Mountain Project gives 1,000 ft route length only; no page states trailhead-to-summit gain."
+ },
+ "wa_fortress_mountain_east_ridge": {
+  "area": "wa_fortress_mountain",
+  "skip_reason": "Not reached within search budget; no figure found."
+ },
+ "wa_magic_mountain_northeast_couloir": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "No page found for a Magic Mountain climb gain; NPS Cascade Pass page covers trail to pass only (1,700 ft); Climber Kyle Magic S Loop (8,000 ft) is a ski loop."
+ },
+ "co_north_face_of_pike_s_peak_bottomless_dogleg": {
+  "area": "co_north_face_of_pike_s_peak",
+  "skip_reason": "Ice route on Pikes Peak north face with no trailhead/summit context; not searched (budget), no figure."
+ },
+ "wa_jack_mountain_east_ridge": {
+  "area": "wa_jack_mountain",
+  "skip_reason": "Only figures seen are a CascadeClimbers TR (403): ~4,660 ft summit day from a high camp and 12,500 ft for the 3-day trip; neither is trailhead-to-summit."
+ },
+ "wa_snoqualmie_mountain_standard_route": {
+  "area": "wa_snoqualmie_mountain_climbs",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3105,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2007-10-27-28-snoq.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "3,200 ft gain, Alpental to Snoqualmie Mountain summit via the pass"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 3105: yellowleaf trip log states 3,200 ft (within 10%). Mountaineers listings (~3,200 ft) are 403; WTA has no hike page. No page states approach loss/return gain."
+ },
+ "wa_amphitheater_mountain_middle_finger_buttress_right_side": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "Pages state gain to Upper Cathedral Lake only (SummitPost 4,500-4,800 ft, 403) or round trips (Mountaineers 9,000 ft, 403); none trailhead-to-summit."
+ },
+ "wa_jack_mountain_northeast_glacier": {
+  "area": "wa_jack_mountain",
+  "skip_reason": "No page states a gain for the Northeast Glacier route; Mountaineers Nohokomeen Headwall 10,000 ft is a round trip of another route (403)."
+ },
+ "wa_silver_star_glacier": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "skip_reason": "Abegg (https://stephabegg.com/?p=8704) states 4,626 ft car to summit via Burgundy Col; stored 4000 differs by 16% and this is one source, so not set. A Mountaineers TR (403) reportedly says 4,636 ft. Stored 4000 likely low."
+ },
+ "wa_mount_steel_standard": {
+  "area": "wa_mount_steel",
+  "skip_reason": "No open page states a Duckabush-to-summit gain; Mountaineers Steel & Hopper 4,400 ft (403, combined outing); Wikipedia 3,400 ft is relief above the river."
+ },
+ "wa_mount_olympus_west_ridge": {
+  "area": "wa_mount_olympus",
+  "skip_reason": "NPS climbing page gives only an elevation range (4,400 to 7,980 ft from Glacier Meadows). Willhiteweb states 7,500 ft gain (matches stored) but not whether one-way, and describes the Blue Glacier/West Peak standard route, not a West Ridge. Climber Kyle states 4,000 ft trailhead to Glacier Meadows only."
+ },
+ "wa_chianti_spire_lichen_bouquet": {
+  "area": "wa_chianti_spire",
+  "skip_reason": "Abegg Chianti/Silver Star page gives ~600 ft route length and 3,500 ft to Burgundy Col; no stated car-to-summit total for Chianti."
+ },
+ "wa_lizard_mountain_south_route": {
+  "area": "wa_lizard_mountain",
+  "skip_reason": "No page found for Lizard Mountain (Chelan Co.). Stored 11200 is implausible for a 7,420 ft summit from a 3,600 ft trailhead but unproven."
+ },
+ "wa_storm_king_north_face": {
+  "area": "wa_storm_king",
+  "skip_reason": "No page found stating a gain for Storm King North Face."
+ },
+ "wa_castle_peak_pasayten_scramble": {
+  "area": "wa_castle_peak_pasayten",
+  "skip_reason": "Pages give whole-trip figures only: lemkeclimbs ~8,500 ft over 39 mi walking plus boat; countryhighpoints 4,700 ft from Manning Park (another approach). None trailhead-to-summit for this route."
+ },
+ "wa_mount_barnes_scramble": {
+  "area": "wa_mount_barnes",
+  "skip_reason": "No page states a gain for the Elwha Basin outing. Stored 3200 equals Wikipedia relief (summit 3,200 ft above Elwha Basin in two miles), not a route gain. Stored value likely wrong."
+ },
+ "wa_storm_king_southwest_scramble": {
+  "area": "wa_storm_king",
+  "skip_reason": "Only Abegg Thunder Slam (multi-peak traverse) mentions this route; no single-route gain found."
+ },
+ "wa_the_triad_east_peak": {
+  "area": "wa_the_triad",
+  "skip_reason": "Not reached within search budget."
+ },
+ "wa_pinnacle_peak_tatoosh_r1": {
+  "area": "wa_pinnacle_peak_tatoosh",
+  "skip_reason": "Guide to 100 Peaks (https://sites.google.com/site/guideto100peaks/home/3-route-descriptions/66-pinnacle-peak-6562-s) states 2,000 ft gain, 5 mi RT, Reflection Lakes to summit; stored 1700 differs by 18%, one source, so not set. NPS states 1,050 ft to the saddle only (stored loss 1050 matches that saddle figure)."
+ },
+ "wa_east_twin_needle_south_route": {
+  "area": "wa_east_twin_needle",
+  "skip_reason": "Not reached within search budget."
+ },
+ "wa_mount_fernow_southeast_face": {
+  "area": "wa_mount_fernow",
+  "skip_reason": "WTA Mount Fernow states 5,900 ft gain for a 22 mi one-way route ending away from the car; stored 8100 differs by >10%, one source, and a through-trip, so not set. Outdoor Project (7,900 ft) redirects to onX; Mountaineers 403."
+ },
+ "wa_three_fingers_r1": {
+  "area": "wa_three_fingers",
+  "skip_reason": "WTA Three Fingers (15 mi RT, 4,200 ft) and Abegg go to the South Peak lookout, not North Peak; no page states a North Peak gain. Stored 7000 looks high but unproven."
+ },
+ "wa_gunrunner": {
+  "area": "wa_middle_peak",
+  "skip_reason": "Not reached within search budget."
+ },
+ "wa_phantom_peak_south_route": {
+  "area": "wa_phantom_peak",
+  "skip_reason": "No page found. Stored 1916 is below the pin difference (3,120 ft TH, 8,000 ft summit) so it is likely wrong, but unproven."
+ },
+ "wa_mount_hinman_hinman_glacier": {
+  "area": "wa_mount_hinman",
+  "skip_reason": "Climber Kyle states ~7,000 ft for the round trip (\"something like\"), not trailhead-to-summit; Abegg states 3,100 ft trailhead to head of Necklace Valley only."
+ },
+ "wa_magic_mountain_west_ridge": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "Same as NE Couloir: no page found for a Magic Mountain climb gain."
+ },
+ "wa_blizzard_peak_standard": {
+  "area": "wa_blizzard_peak",
+  "skip_reason": "Not reached within search budget."
+ },
+ "wa_kimtah_peak_scramble": {
+  "area": "wa_kimtah_peak",
+  "skip_reason": "No page found; listsofjohn gives prominence only."
+ },
+ "wa_spectre_peak_south_route": {
+  "area": "wa_spectre_peak",
+  "skip_reason": "No page found for Spectre Peak gain (searched Abegg/Kyle Pickets reports)."
+ }
+}
