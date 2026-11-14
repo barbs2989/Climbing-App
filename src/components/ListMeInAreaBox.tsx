@@ -29,6 +29,9 @@ export interface ListMeInAreaBoxProps {
 /* The DB refuses a listing at these (0300 `partner_areas` trigger; My areas' NO_LISTING): climbing on a peak is matched
    by route. The crag search can hand a peak, so the box steps aside rather than offer a tap that fails. */
 const NO_LISTING = new Set(["peak", "world", "country"]);
+/* "List me AT Bad Bananas" but "IN Utah": a spot you stand at takes "at"; a state, region, canyon or range takes "in".
+   The region dropdown passes no type, and what it offers is always a region or a state. */
+const AT_SPOT = new Set(["crag", "wall", "boulder", "sector"]);
 export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, myListings, onListMe, notify }: ListMeInAreaBoxProps) {
   const [busy, setBusy] = useState(false);
   const [optListed, setOptListed] = useState<boolean | null>(null);
@@ -36,6 +39,7 @@ export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, my
   useEffect(() => { setOptListed(null); }, [serverListed, areaId]);
   const listed = optListed == null ? serverListed : optListed;
   const name = areaName || "this area";
+  const prep = areaType && AT_SPOT.has(areaType) ? "at" : "in";
   if (areaType && NO_LISTING.has(areaType)) return null;
   const toggle = async () => {
     if (busy) return;
@@ -50,13 +54,13 @@ export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, my
     } finally { setBusy(false); }
   };
   return (
-    <div role="region" aria-label={"List yourself at " + name} style={{ marginTop: 12, padding: "13px 14px", borderRadius: 12, background: listed ? C.greenBg : C.blueBg, border: "2px solid " + (listed ? C.green : C.blueDim) }}>
-      <div style={{ fontSize: 14.5, fontWeight: 800, color: C.text, marginBottom: 4, overflowWrap: "anywhere" }}>{listed ? "You’re listed at " + name + " ✓" : "Climb at " + name + "?"}</div>
+    <div role="region" aria-label={"List yourself " + prep + " " + name} style={{ marginTop: 12, padding: "13px 14px", borderRadius: 12, background: listed ? C.greenBg : C.blueBg, border: "2px solid " + (listed ? C.green : C.blueDim) }}>
+      <div style={{ fontSize: 14.5, fontWeight: 800, color: C.text, marginBottom: 4, overflowWrap: "anywhere" }}>{listed ? "You’re listed " + prep + " " + name + " ✓" : "Climb " + prep + " " + name + "?"}</div>
       <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10 }}>{listed ? "Climbers who search " + name + " can find you and reach out." : "List yourself here so climbers searching " + name + " can find you — just like you’re finding them."}</div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + name + tx(" — tap to remove") : "List me at " + name} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.blueSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1, overflowWrap: "anywhere" }}>{listed ? "Remove listing" : "List me at " + name}</button>
+        <button type="button" onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed " + prep + " " + name + tx(" — tap to remove") : "List me " + prep + " " + name} style={{ flex: listed ? "0 0 auto" : "1 1 auto", minHeight: 44, padding: "0 16px", borderRadius: 10, border: listed ? "1px solid " + C.border : "none", background: listed ? C.surface : C.blueSolid, color: listed ? C.textSub : C.onSolid, fontSize: 13.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1, overflowWrap: "anywhere" }}>{listed ? "Remove listing" : "List me " + prep + " " + name}</button>
         {listed && onListMe ? (
-          <button type="button" onClick={() => onListMe({ areaId, name: areaName, areaType: areaType || null, disciplines: [] })} aria-label={"Add the dates and climbing types for your listing at " + name} style={{ flex: "1 1 auto", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, padding: "0 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>
+          <button type="button" onClick={() => onListMe({ areaId, name: areaName, areaType: areaType || null, disciplines: [] })} aria-label={"Add the dates and climbing types for your listing " + prep + " " + name} style={{ flex: "1 1 auto", minHeight: 44, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, padding: "0 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontWeight: 700, cursor: "pointer", textAlign: "left" }}>
             <span>Add dates or climbing types</span>
             <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron size={14} color={C.textMuted} /></span>
           </button>
