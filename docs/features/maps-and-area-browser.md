@@ -100,6 +100,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   before it sends. It files a `contributions` row of kind `new_area` (area_id = the parent); nothing shows until the owner approves it
   in Menu › Review › Area proposals (`AreaProposalQueue`), where `approve_new_area` inserts the `areas` row. Offered only where the
   area holds no climbs itself (areas hold sub-areas OR climbs — Mountain Project's rule, and `trg_areas_leaf_xor`), and never on a country.
+- **Route finder on the website** (competitor review batch B, item 11, owner 2026-11-04): the results header reads the active filters as one line (*42 climbs · Sport · 5.8–5.10 · 2+ pitches · sorted by …*, the chips' own labels); at 1024px+ a **Compact rows** toggle (remembered on the device, `cm_finder_compact`; it draws `RouteRow`'s `dense` one-line row, the same one the website's classics list uses) and **Export CSV** of the loaded results (`lib/csv.js` `downloadCsv`: climb, grade, discipline, pitches, stars, wall or area). The phone keeps its cards.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - disciplines, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { discs, sortBy, minStars, minPitches, len, gSys, gLo, gHi, gain, trip, elev, prom, near, within }`). Active filters show as chips.
   The website header's typed search opens the finder through `jumpToFinderReq` with `initial` words and filters (there is no *Save search* any more; saved searches were removed 2026-11-05).
