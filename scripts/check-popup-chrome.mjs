@@ -24,7 +24,7 @@
 //      a clickable <span>/<div> whose whole label is "←" fails (chat's header did this).
 //   4. A <button> whose OWN label is a lone ✕/× and whose aria-label or title starts with Remove,
 //      Delete, Withdraw or Clear removes ONE item, and must be styled POP_REMOVE /
-//      POP_REMOVE_MEDIA (32px). Added 2026-09-25: 21 of them were drawn 21 ways, 18px to 36px, most
+//      POP_REMOVE_MEDIA (24px since 2026-11-14). Added 2026-09-25: 21 of them were drawn 21 ways, 18px to 36px, most
 //      a bare muted glyph. A clickable <span>/<div> whose whole label is ✕/× fails too — two photo
 //      removers were spans with no name at all. A ✕ INSIDE a chip that is itself the button (the
 //      filter chips) is decoration, not a control, and is not matched: its <span> has no handler.
@@ -122,7 +122,7 @@ for (const rel of files) {
   // Rule 6: a destructive confirm is askConfirm (lib/ConfirmSheet.jsx), never the browser's own.
   const nativeConfirm = /\bwindow\.confirm\s*\(/g;
   while ((m = nativeConfirm.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  window.confirm — its Cancel/OK sit side by side where a thumb hits the wrong one; use askConfirm from lib/ConfirmSheet.jsx`);
-  // ...and a remove ✕ keeps its own footprint: a negative margin drags its 32px hit area onto a neighbour.
+  // ...and a remove ✕ keeps its own footprint: a negative margin drags its hit area onto a neighbour.
   const pulledRemove = /Object\.assign\(\s*\{\s*\}\s*,\s*POP_REMOVE(?:_MEDIA)?\s*,\s*\{[^}]*\bmargin\s*:\s*"[^"]*-\d/g;
   while ((m = pulledRemove.exec(src))) bad.push(`${rel}:${lineOf(m.index)}  a POP_REMOVE ✕ with a NEGATIVE margin — its hit area overlaps the control beside it`);
 }

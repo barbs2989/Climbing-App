@@ -57,12 +57,17 @@ ok(!ownsGesture(inDlgCard, inDlgRoot), "a page that itself sits in a dialog (ano
 ok(ownsGesture(node(node(document.body)), root), "a portalled sheet (outside the page's DOM) is left alone");
 
 // ---- 3. every page wired to it --------------------------------------------------------------
-const WIRED = ["RouteDetail.jsx", "src/components/LogbookTab.tsx", "src/components/DiscoverTab.tsx", "src/components/GroupsTab.tsx", "src/components/MeTab.tsx", "src/components/FullProfile.tsx", "lib/Leaderboards.jsx"];
+const WIRED = ["ClimbMatch.jsx", "RouteDetail.jsx", "src/components/LogbookTab.tsx", "src/components/DiscoverTab.tsx", "src/components/GroupsTab.tsx", "src/components/MeTab.tsx", "src/components/FullProfile.tsx", "lib/Leaderboards.jsx"];
 for (const f of WIRED) {
   const s = readFileSync(new URL("../" + f, import.meta.url), "utf8");
   ok(/useSwipeTabs\(\{ids:/.test(s), f + " calls useSwipeTabs");
-  ok(/\{\.\.\.(sw|tabSwipe)\.bind\}/.test(s), f + " puts the swipe handlers on its content");
+  ok(/\{\.\.\.(sw|tabSwipe|secSwipe)\.bind\}/.test(s), f + " puts the swipe handlers on its content");
 }
+// The section swipe (bottom-bar order) is only for a section's main screen: Climbs' sub-screens opt out.
+const dab = readFileSync(new URL("../lib/DbAreaBrowser.jsx", import.meta.url), "utf8");
+ok(/data-swipe=\{screen !== "areas" \? "off" : undefined\}/.test(dab), "Climbs' Route finder / Near me / Objectives screens opt out of the section swipe");
+const app = readFileSync(new URL("../ClimbMatch.jsx", import.meta.url), "utf8");
+ok(/const _secOn=\(tab==="today"\|\|\(tab==="routes"&&!selRoute&&!dbAreaCtx\)\|\|\(tab==="crew"&&crewView==="crews"/.test(app), "the section swipe is on only for Home, the Climbs list and the Crews list");
 
 if (bad) { console.error(bad + " page-swipe check(s) failed."); process.exit(1); }
 console.log("page swipe: tab choice, gesture ownership and " + WIRED.length + " wired pages OK.");
