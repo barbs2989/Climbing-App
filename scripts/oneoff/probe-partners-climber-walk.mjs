@@ -10,6 +10,7 @@ import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
+import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
 import { assertQuietBox } from "../lib/quiet-box.mjs";
 
 assertQuietBox("probe-partners-climber-walk.mjs");
@@ -31,6 +32,10 @@ const cardLook = async (loc, label) => {
 try {
   for (let i = 0; i < 60; i++) { try { if ((await fetch(base)).ok) break; } catch {} await new Promise((r) => setTimeout(r, 1000)); }
   fixture = await createFixture(() => {});
+  // A username is required since 0432 and the fixture sets none, so the app would open on "Edit your profile" and
+  // block every tap. Set it with the climber's own token, as finishing setup would.
+  { const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.owner.id}`, { method: "PATCH", headers: { apikey: anonKey(), Authorization: "Bearer " + fixture.session.access_token, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ username: "walk" + fixture.owner.id.replace(/-/g, "").slice(0, 10) }) });
+    if (!r.ok) throw new Error("username patch failed " + r.status); }
   browser = await chromium.launch({ channel: "chrome", headless: true });
   // Salt Lake City, so "Near me now" has somewhere to measure from.
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, geolocation: { latitude: 40.67, longitude: -111.85 }, permissions: ["geolocation"] });

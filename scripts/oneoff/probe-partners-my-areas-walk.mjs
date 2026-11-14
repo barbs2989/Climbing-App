@@ -66,10 +66,11 @@ try {
   const me = fixture.owner, robin = fixture.mate;
   const meSess = fixture.session, robinSess = await signIn(robin);
   sessions.push([me.id, meSess.access_token], [robin.id, robinSess.access_token]);
+  const userOf = (uid) => "walk" + uid.replace(/-/g, "").slice(0, 10), robinUser = userOf(robin.id);
   // A username is required since 0432, and the fixture sets none, so the app opens on "Edit your profile".
   // Fill it the way onboarding would (each climber's own token), so the walk starts where a set-up climber does.
   for (const [uid, tok] of sessions) {
-    const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${uid}`, { method: "PATCH", headers: { apikey: anonKey(), Authorization: "Bearer " + tok, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ username: "walk" + uid.replace(/-/g, "").slice(0, 10), avatar: "https://barbs2989.github.io/Climbing-App/icon-192.png" }) });
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${uid}`, { method: "PATCH", headers: { apikey: anonKey(), Authorization: "Bearer " + tok, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ username: userOf(uid), avatar: "https://barbs2989.github.io/Climbing-App/icon-192.png" }) });
     // ...and a photo: real climbers without one are not listed (0420, owner 2026-11-14).
     if (!r.ok) throw new Error("username patch failed " + r.status + " " + (await r.text()).slice(0, 200));
   }
@@ -114,7 +115,8 @@ try {
   const zipCard = mp.locator('[role="region"][aria-label="Add your zip code"]');
   ok(await zipCard.count() === 1, "no zip yet: Partners asks for one in a card");
   if (await zipCard.count()) { await zipCard.locator('input[aria-label="Zip code"]').fill("98225"); await zipCard.locator("button", { hasText: /^Save$/ }).click(); await mp.waitForTimeout(7000); }
-  const robinRow = mp.locator(`text=${robin.name}`).first();
+  // Real climbers are listed by @username unless they show their name.
+  const robinRow = mp.locator(`text=/${robin.name}|@${robinUser}/`).first();
   ok(await robinRow.count() > 0, "Robin shows up under My areas (both listed at Smith Rock)");
   await shot(mp, "3-me-finds-robin");
   await noSideScroll(mp, "me, Partners");
@@ -128,7 +130,7 @@ try {
   await by.selectOption("area"); await mp.waitForTimeout(2500);
   const ab = mp.locator('input[aria-label="Search for a crag, canyon or range"]');
   ok(await ab.count() === 1, "By area: the search box is there");
-  ok((await ab.boundingBox()).y < (await mp.locator("select").filter({ hasText: /State|Washington|Pick/ }).first().boundingBox().then((b) => b ? b.y : 1e9, () => 1e9)), "By area: search comes before the state dropdowns");
+  ok((await ab.boundingBox()).y < (await mp.locator('select[aria-label="Filter by country"]').first().boundingBox().then((b) => b ? b.y : 1e9, () => 1e9)), "By area: search comes before the state dropdowns");
   await ab.fill("red river"); await mp.waitForTimeout(6000);
   const aRows = await mp.locator("button").filter({ hasText: /Red River/ }).allInnerTexts();
   note('By area "red river" -> ' + aRows.slice(0, 3).map((t) => t.replace(/\n/g, " ")).join("  |  "));
