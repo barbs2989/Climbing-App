@@ -1,7 +1,118 @@
 {
  "wa_the_roof": {
   "area": "wa_unicorn_peak",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119135747/the-roof",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades The Roof on Unicorn Peak 5.6."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119135747/the-roof",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists The Roof as 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Start in a wide gully/chimney under a roof, step right beneath it, then up to a ledge and the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119135747/the-roof",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: start in a wide gully/chimney below a roof, step right under it, move up to a ledge and the summit."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Starts about 20 ft left of the Classic Route where the ridgeline meets the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119135747/the-roof",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: twenty feet left of the Classic Route, starting where the ridge meets the summit block."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "A set of nuts and single cams 0.3 to 1",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119135747/the-roof",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: a set of nuts and single cams from 0.3 to 1 will suffice."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/97278-tr-unicorn-peak-tatoosh-standard-the-roof-522015/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CC report: a very light rack, 0.3 to 1 inch plus a set of nuts, was plenty."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel from the bleached snag or a slung block; a 40 m rope is plenty",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119135747/the-roof",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: anchors are a bleached snag or a slung block; a 40m rope is plenty for the rappel."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "In snow season, after the saddle climb the steep snow on the left; the loose gully on the right is icy and no-fall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/97278-tr-unicorn-peak-tatoosh-standard-the-roof-522015/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CC report: descending right at the saddle led to a loose icy no-fall gully; climb the steep snow on the left instead."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6971,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Unicorn_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Unicorn Peak an elevation of 6,971 ft."
+     }
+    ]
+   }
+  ],
+  "note": "MP lists FA as unknown."
  },
  "wa_the_tiger": {
   "area": "wa_m_m_wall_aka_supercave_wall",
@@ -232,11 +343,223 @@
  },
  "wa_the_tooth_indentured_servant": {
   "area": "wa_summer_fall_rock_2",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Indentured Servant 5.10a/b."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Indentured Servant as 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "David Whitelaw, Bill Enger, 2021",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to David Whitelaw and Bill Enger, 2021."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.9/5.10a (5.8 alternative start on the right); P2 5.8; P3 about 5.8 crossing the gully on a big chockstone; P4 5.10b V-slot; P5 5.9 face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP pitch list: P1 5.9/10a (5.8 alt start), P2 5.8, P3 5.8ish over a chockstone, P4 5.10b V-slot, P5 5.9 face."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Bolted sport line about 500 ft climbers left of The Tooth Fairy, starting on the left side of a large gully splitting the cliff",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: about 500 feet climbers left of the Tooth Fairy, starting left of a huge gully that splits the cliff."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel with a 60 m rope, or join the North Ridge (about 100 m of scrambling) to the summit and descend the South Face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: rap setup for a 60m rope, or scramble roughly 100m up the north ridge to the top and descend the south face."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Quickdraws (all-bolt route)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124697175/indentured-servant",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route type as Sport and the gear as quickdraws."
+     }
+    ]
+   }
+  ],
+  "note": ""
  },
  "wa_the_west_face": {
   "area": "wa_north_early_winters_spire",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105847147/the-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades the West Face of North Early Winter Spire 5.11-."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105847147/the-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105847147/the-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105847147/the-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Dave Beckstad, 1965",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105847147/the-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits FA to Fred Beckey and Dave Beckstad, 1965."
+     }
+    ]
+   },
+   {
+    "field": "ffa",
+    "value": "Steve Risse, Dave Tower, 1985",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105847147/the-west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project credits the first free ascent to Steve Risse and Dave Tower, 1985."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Doubles blue Master Cam to #2 Camalot, one #3, nuts with extra small sizes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/87392-tr-north-early-winter-spire-west-face-7112012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CC report rack: doubles from blue Master Cam to #2 Camalot, one #3, nuts with extra small sizes."
+     }
+    ]
+   },
+   {
+    "field": "rappel_note",
+    "value": "A single 60 m rope is enough for the rappels",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/87392-tr-north-early-winter-spire-west-face-7112012/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CascadeClimbers report: a single 60m rope gets you down fine; rap anchors had good slings."
+     }
+    ]
+   }
+  ],
+  "note": "missingOrThin distance: no page stated an approach distance."
  },
  "wa_this_my_friend": {
   "area": "wa_dragontail_peak",
@@ -376,6 +699,11 @@
       "url": "https://www.wta.org/go-hiking/hikes/three-fingers",
       "retrieved_at": "2026-11-14",
       "fact": "WTA gives the highest point as 6,854 feet."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Three_Fingers_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Three Fingers an elevation of 6,858 ft."
      }
     ]
    },
@@ -537,29 +865,230 @@
       "fact": "The Mountaineers list Okanogan-Wenatchee National Forests as land manager."
      }
     ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6693,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Three_Queens",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Three Queens an elevation of 6,693 ft."
+     }
+    ]
+   },
+   {
+    "field": "peak_easiest_route",
+    "value": "Class 3+ scrambling",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Three_Queens",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as class 3+ scrambling."
+     }
+    ]
    }
   ],
-  "note": "Mountaineers 8.0 mi is not labelled one-way or round trip on the page; recorded as trip_length_mi exactly as stated. SummitPost page returned 403."
+  "note": "Mountaineers 8.0 mi is not labelled one-way or round trip on the page; recorded as trip_length_mi exactly as stated. SummitPost page returned 403. App grade is Class 4; Wikipedia says the easiest route is class 3+."
  },
  "wa_three_queens_west_peak": {
   "area": "wa_three_queens",
-  "skip_reason": "not yet researched"
+  "skip_reason": "Searched DDG, Mountain Project (site search), Mountaineers (three-queens page covers the main summit only), Wikipedia; SummitPost 403. No page describing the West Peak West Ridge/West Face line found."
  },
  "wa_trapper_mountain_south_slopes": {
   "area": "wa_trapper_mountain",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7530,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Trapper_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Trapper Mountain an elevation of 7,530 ft."
+     }
+    ]
+   },
+   {
+    "field": "peak_easiest_route",
+    "value": "Class 3 scrambling",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Trapper_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as class 3 scrambling."
+     }
+    ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "George Bell, Andrew Griscom, Harry King, W. V. Graham Matthews, 1949",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Trapper_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent 1949 by George Bell, Andrew Griscom, Harry King and W V Graham Matthews."
+     }
+    ]
+   }
+  ],
+  "note": "Peak FA recorded as peak_fa: the source does not say which route was used. No route-level distance found."
  },
  "wa_tupshin_peak_east_face": {
   "area": "wa_tupshin_peak",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8347,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tupshin_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Tupshin Peak an elevation of 8,347 ft."
+     }
+    ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "Everett and Ida Darr, 1940",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tupshin_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent 1940 by Everett and Ida Darr."
+     }
+    ]
+   },
+   {
+    "field": "peak_easiest_route",
+    "value": "Class 4-5 climbing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Tupshin_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as class 4-5 climbing."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/tupshin-and-devore-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lemke Climbs lists Tupshin Peak East Face as class 5.6."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Company Creek trailhead (reached from Stehekin)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/tupshin-and-devore-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lemke Climbs: returned to Stehekin and walked to the Company Creek trailhead to start the climb."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Steep good trail to about 2,800 ft, then easier trail with some brush to a log crossing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lemkeclimbs.com/tupshin-and-devore-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lemke: steep hike to 2800 feet on good trail, then flatter and easy with some brush until the log crossing."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Tupshin-Devore page (37 mi, 15,000 ft) covers both peaks, not this route alone; not used. SummitPost East Face route page returned 403."
  },
  "wa_west_face_2": {
   "area": "wa_north_peak",
-  "skip_reason": "not yet researched"
+  "skip_reason": "Searched DDG and Mountain Project site search; the only \"North Peak West Face\" MP page (105910040) returns 404 and belongs to Mount Index. No page matching a North Peak west face reached from Downey Creek / Ptarmigan Traverse found. SummitPost returns 403."
  },
  "wa_witches_tower_west_buttress": {
   "area": "wa_witches_tower",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://skookumtraveler.blogspot.com/2013/08/witches-tower-wa.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Skookum Traveler: a 14-mile roundtrip day hike to Witches Tower."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://skookumtraveler.blogspot.com/2013/08/witches-tower-wa.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Skookum Traveler: the day gained and lost 5,400 feet."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About 4 miles and 2,000 ft of gain to Colchuck Lake, then the steep 2,200 ft climb to Aasgard Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://skookumtraveler.blogspot.com/2013/08/witches-tower-wa.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Skookum Traveler: first four miles and 2,000 feet of gain, then the steep 2,200-foot trudge to Aasgard Pass."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep, firm snowfield beyond a small high lake needs an ice axe",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://skookumtraveler.blogspot.com/2013/08/witches-tower-wa.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Skookum Traveler: beyond a tiny high lake a steep, firm snowfield required ice axes."
+     }
+    ]
+   }
+  ],
+  "note": "Trip report does not name the route climbed on the tower; only route-agnostic approach facts used. No source for the West Buttress line itself found (Mountaineers page is the Southwest Corner; MP lists only the East Face)."
  },
  "wa_wright_pond": {
   "area": "wa_cutthroat_creek_wall_or_little_liberty_bell",
@@ -842,26 +1371,36 @@
    {
     "field": "alpine_grade",
     "value": "III",
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountainproject.com/route/119394880/action-potential",
       "retrieved_at": "2026-11-14",
       "fact": "Mountain Project gives Grade III."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/26481-tr-burgundy-spire-fa-action-potential-east-face-burgundy-spire/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent trip report on CascadeClimbers grades the route Grade III, 5.10a-5.10c."
      }
     ]
    },
    {
     "field": "fa",
     "value": "Mark Allen, Mike Layton, 2004",
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountainproject.com/route/119394880/action-potential",
       "retrieved_at": "2026-11-14",
       "fact": "Mountain Project credits FA to Mark Allen and Mike Layton, July 18-20, 2004."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/26481-tr-burgundy-spire-fa-action-potential-east-face-burgundy-spire/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CascadeClimbers FA report: Mark Allen and Mike Layton climbed it July 18-20, 2004."
      }
     ]
    },
@@ -883,7 +1422,74 @@
  },
  "wa_alpine_lookout_round_mountain_trail": {
   "area": "wa_alpine_lookout",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists Alpine Lookout at 10.0 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives elevation gain of 2,600 feet."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6235,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives the highest point as 6,235 feet."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Ridge walk to an occasionally staffed fire lookout; about two-thirds of the climbing is in the first two miles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: two-thirds of the climb is done in the first two miles; the lookout is still occasionally staffed."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No water beyond a point on the route; carry enough",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA notes that beyond a point along the route there is no water."
+     }
+    ]
+   }
+  ],
+  "note": "WTA hike page may describe the Round Mountain approach; route identity per WTA title Alpine Lookout. Wenatchee Outdoors page redirected off-domain during read; skipped."
  },
  "wa_alta_mountain_scramble": {
   "area": "wa_alta_mountain",
@@ -952,9 +1558,22 @@
       "fact": "WTA suggests it as a side trip from an overnight at Lila Lake, Rampart Lakes or Rachel Lake."
      }
     ]
+   },
+   {
+    "field": "peak_easiest_route",
+    "value": "Class 2 scrambling, South Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Alta_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as class 2 scrambling on the South Ridge."
+     }
+    ]
    }
   ],
-  "note": ""
+  "note": "Summit elevation conflict: Wikipedia 6,275 ft vs WTA highest point 6,151 ft; high_point_ft kept single-source on WTA as the hike figure."
  },
  "wa_american_border_peak_southeast_face": {
   "area": "wa_american_border_peak",
@@ -988,13 +1607,18 @@
    {
     "field": "high_point_ft",
     "value": 7994,
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountaineers.org/activities/routes-places/american-border-peak-southeast-route",
       "retrieved_at": "2026-11-14",
       "fact": "The Mountaineers give a high point of 7,994 ft."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/American_Border_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives American Border Peak an elevation of 7,998 ft (NAVD 88)."
      }
     ]
    },
@@ -1062,13 +1686,26 @@
       "fact": "Mountaineers: from Twin Lakes trailhead hike to Low Pass then High Pass, ascend to summit ridge, follow north."
      }
     ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "Alec Dalgleish, Tom Fyles, Stan Henderson, R. A. Fraser, September 14, 1930",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/American_Border_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent September 14, 1930 by Dalgleish, Fyles, Henderson and Fraser."
+     }
+    ]
    }
   ],
   "note": ""
  },
  "wa_andersons_thumb_standard": {
   "area": "wa_andersons_thumb",
-  "skip_reason": "not yet researched"
+  "skip_reason": "Searched DDG, Mountain Project (Anderson Massif area lists only Quartz Direct), Wikipedia (Mount Anderson page has no Thumb route data). Only a CascadeClimbers N Ridge trip report found, not confirmed as this route; SummitPost 403."
  },
  "wa_arrowhead_mountain_south_route": {
   "area": "wa_arrowhead_mountain",
@@ -1102,13 +1739,18 @@
    {
     "field": "high_point_ft",
     "value": 6030,
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountaineers.org/activities/routes-places/arrowhead-6030",
       "retrieved_at": "2026-11-14",
       "fact": "The Mountaineers give a high point of 6,030 ft."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Arrowhead_Mountain_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Arrowhead Mountain (Chiwaukum Mountains) an elevation of 6,030 ft."
      }
     ]
    },
@@ -1134,13 +1776,18 @@
    {
     "field": "high_point_ft",
     "value": 8334,
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.wta.org/go-hiking/hikes/austera-peak",
       "retrieved_at": "2026-11-14",
       "fact": "WTA gives the highest point of Austera Peak as 8,334 feet."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Austera_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Austera Peak an elevation of 8,339 ft (NAVD 88)."
      }
     ]
    }
@@ -1179,13 +1826,18 @@
    {
     "field": "high_point_ft",
     "value": 8400,
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.mountaineers.org/activities/routes-places/azurite-peak",
       "retrieved_at": "2026-11-14",
       "fact": "The Mountaineers give a high point of 8,400 ft."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Azurite_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Azurite Peak an elevation of 8,434 ft."
      }
     ]
    },
@@ -1240,17 +1892,234 @@
       "fact": "Land manager: Okanogan-Wenatchee National Forests, Methow Valley Ranger District."
      }
     ]
+   },
+   {
+    "field": "peak_easiest_route",
+    "value": "Scrambling, class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Azurite_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as class 4 scrambling."
+     }
+    ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "Hermann Ulrichs, Sidney Shmerling, 1933",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Azurite_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent 1933 by Hermann Ulrichs and Sidney Shmerling."
+     }
+    ]
    }
   ],
   "note": "App has 6,700 ft gain; Mountaineers states 6,000 ft."
  },
  "wa_bacon_peak_diobsud": {
   "area": "wa_bacon_peak",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7070,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Bacon_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Bacon Peak an elevation of 7,070 ft (NAVD 88)."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give a high point of 7,061 ft for Bacon Peak."
+     }
+    ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "R. B. Robertson, Eugene Logan, possibly 1905",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Bacon_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent R.B. Robertson and Eugene Logan, possibly 1905."
+     }
+    ]
+   },
+   {
+    "field": "trip_length_mi",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list Bacon & Canadian Bacon Peaks at a length of 15.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers give elevation gain of 4,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list seasons June through October."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Basic Alpine Climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers rate it a Basic Alpine Climb."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Anderson & Watson Lakes Trailhead (4,360 ft) at the end of FR 1107",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: follow Forest Road 1107 to its end at the Anderson & Watson Lakes Trailhead, 4,360 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers say a Northwest Forest Pass is required for parking."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Watson Lakes Trail to meadows by Upper Anderson Lake; traverse below the Watson Peaks, dropping to about 5,000 ft to round a buttress east of them",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: trail to meadows near Upper Anderson Lake, traverse under Watson peaks, descend to 5,000 ft around a buttress."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp at about 5,900 ft, 0.5 mile northeast of Bacon Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: a good camp is at 5,900 ft, 0.5 miles northeast of Bacon Peak."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "North Cascades National Park / Noisy-Diobsud Wilderness, Mt. Baker Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: North Cascades National Park, Noisy-Diobsud Wilderness, Mount Baker Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page covers Bacon via the Watson Lakes approach generally, not the Diobsud Creek Glacier line specifically; app gain 6,261 ft vs Mountaineers 4,400 ft."
  },
  "wa_bald_eagle_peak_scramble": {
   "area": "wa_bald_eagle_peak",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 6259,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Bald Eagle Peak an elevation of 6,259 ft."
+     }
+    ]
+   },
+   {
+    "field": "peak_easiest_route",
+    "value": "Class 3 scrambling, North Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as class 3 scrambling via the North Ridge."
+     }
+    ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "Hermann Ulrichs, Ben Falkenburg, 1933",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Bald_Eagle_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent 1933 by Hermann Ulrichs and Ben Falkenburg."
+     }
+    ]
+   }
+  ],
+  "note": "Whether the app route (Standard Scramble) is the North Ridge is not stated by the source. SummitPost 403."
  },
  "wa_baldy_standard": {
   "area": "wa_baldy",
@@ -1355,13 +2224,18 @@
    {
     "field": "high_point_ft",
     "value": 6129,
-    "method": "single-source",
-    "level": "locked-1src",
+    "method": "agree-2",
+    "level": "locked",
     "evidence": [
      {
       "url": "https://www.wta.org/go-hiking/hikes/mount-baring",
       "retrieved_at": "2026-11-14",
       "fact": "WTA gives the highest point as 6,129 feet."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Baring",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Mount Baring an elevation of 6,127 ft (NAVD 88)."
      }
     ]
    },
@@ -1390,16 +2264,155 @@
       "fact": "WTA: about 2000 feet of gain in a little over a mile to the ridgeline; then gully and cairned trail to summit."
      }
     ]
+   },
+   {
+    "field": "peak_fa",
+    "value": "John Charlton, Albert H. Sylvester, July 28, 1897 (first recorded)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Baring",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first recorded ascent July 28, 1897 by John Charlton and Albert H. Sylvester."
+     }
+    ]
    }
   ],
   "note": ""
  },
  "wa_baring_mountain_r1": {
   "area": "wa_main_peak_3",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Ed Cooper, Don Gordon, 1960",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196130200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 1961 article by Beckey and Cooper: face first climbed 1960 after route prep by Gordon, Beckey and Cooper."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196130200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ describes the north face as 3500-foot high."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Above the old high point, four steep steps of about 300, 400, 220 and 250 ft, split by large ledges, lead to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196130200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ: four vertical steps of 300, 400, 220 and 250 feet with spacious ledges lead to the summit."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Couloir Camp, about 1000 ft above Barclay Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196130200/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ mentions Couloir Camp 1000 feet above the lake."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Dolomite Camp, atop the first step",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3943-mt-baring-north-face-trip-report/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CascadeClimbers report: reached Dolomite Camp at the top of the first step."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "No trail to the access gully; the brushy ridge above involves several hundred feet of heavy bushwhacking",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3943-mt-baring-north-face-trip-report/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CC report: no trail to the gully; the brushy ridge has no trail and several hundred feet of bushwhacking."
+     }
+    ]
+   }
+  ],
+  "note": ""
  },
  "wa_bearpaw_mountain_scramble": {
   "area": "wa_bearpaw_mountain",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/107534-tr-bearpaw-mountain-and-church-mountain-uh-whatever-08192023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CascadeClimbers report: the final scramble is a couple of easy class 3 moves along the ridge."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Bearpaw_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as a class 3 scramble from the southwest."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Church Mountain trail to the meadow, then cross-country over several ridges; a path runs from the saddle above Church Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/107534-tr-bearpaw-mountain-and-church-mountain-uh-whatever-08192023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "CC report: hiked Church Mountain trail, left it at the meadow, crossed ridges; trail from the saddle above Church Lake."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6091,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Bearpaw_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives Bearpaw Mountain an elevation of 6,091 ft."
+     }
+    ]
+   }
+  ],
+  "note": ""
  }
 }

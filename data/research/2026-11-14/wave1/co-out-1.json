@@ -1308,7 +1308,61 @@
  },
  "co_amphitheater_the_west_ridge_first_pinnacle": {
   "area": "co_amphitheater_the",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.danieljoderphotography.com/14ers-staying-safe-and-training-the-mind-and-body-for-exposed-class-3-and-class-4-part-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lists Gregory Canyon Amphitheater area: West Ridge, First Pinnacle, Class 4."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Low-angle slab with big holds, then an exposed step across a gap right of a block above the amphitheater; bulbous summit ridge above.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.danieljoderphotography.com/14ers-staying-safe-and-training-the-mind-and-body-for-exposed-class-3-and-class-4-part-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts on low-angle slab with big holds; crossing the gap right of a block is exposed; summit ridge above is bulbous."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Reverse the route; the gap moves are slightly harder going back down.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.danieljoderphotography.com/14ers-staying-safe-and-training-the-mind-and-body-for-exposed-class-3-and-class-4-part-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns the gap moves are slightly harder to reverse on the way down."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Notable exposure into the amphitheater at the gap crossing.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.danieljoderphotography.com/14ers-staying-safe-and-training-the-mind-and-body-for-exposed-class-3-and-class-4-part-2/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crossing the gap gives good exposure down into the amphitheater."
+     }
+    ]
+   }
+  ],
+  "note": "Gregory Canyon Amphitheater (Boulder). Blog only; MP search for the route returned nothing."
  },
  "co_analemma_aka_northeast_ridge": {
   "area": "co_crestolita",
@@ -2125,7 +2179,87 @@
  },
  "co_avenging_angel_of_choss": {
   "area": "co_devil_s_thumb",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107789883/avenging-angel-of-choss",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 700 ft, 6 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107789883/avenging-angel-of-choss",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107789883/avenging-angel-of-choss",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "possibly D. Light and J. Ball, 2012",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107789883/avenging-angel-of-choss",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as possibly D. Light and J. Ball, 09/09/2012."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard rack to 3 inches.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107789883/avenging-angel-of-choss",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: standard rack up to 3 inches."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Poor rock quality throughout.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107789883/avenging-angel-of-choss",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock quality is described as poor."
+     }
+    ]
+   }
+  ],
+  "note": "Indian Peaks > Devil's Thumb. DDG found no second publisher."
  },
  "co_barber_shop_traverse_west_face_spiral_route": {
   "area": "co_mount_toll",
@@ -2200,11 +2334,158 @@
  },
  "co_batshit_crazy": {
   "area": "co_little_possibility_wall",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 275,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://app.advcollective.com/climbing/batshit-crazy-little-possibility-wall-trad-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed length 275 ft, trad/alpine, 2 pitches, on Little Possibility Wall, Mt. Evans."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://app.advcollective.com/climbing/batshit-crazy-little-possibility-wall-trad-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "aspect",
+    "value": "South",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://app.advcollective.com/climbing/batshit-crazy-little-possibility-wall-trad-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Aspect listed as south facing."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Crux ledge littered with marmot droppings.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://app.advcollective.com/climbing/batshit-crazy-little-possibility-wall-trad-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Notes a crux spot covered in marmot droppings."
+     }
+    ]
+   }
+  ],
+  "note": "Only source: app.advcollective.com (aggregator, likely MP-derived). MP name search found no Colorado match; theCrag route 5434228578 returned Forbidden (wall)."
  },
  "co_beardsley_route": {
   "area": "co_quandary_peak_routes",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107320477/beardsley-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 150 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107320477/beardsley-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives Grade II."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10 PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107320477/beardsley-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP search listing rates the route 5.10 PG13."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Beardsley",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107320477/beardsley-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Mark Beardsley."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Right of the Inwood Arete on Quandary: left-hand 5.8 hand crack fading into 5.10 slab with a few sparse bolts; 2-bolt anchor.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107320477/beardsley-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber's right of Inwood Arete; 5.8 hand crack into 5.10 slab protected by sparse bolts; two-bolt anchor."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Easy to continue up the Inwood Arete from the anchor.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107320477/beardsley-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the two-bolt anchor it is easy to carry on up the Inwood Arete."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Single alpine rack.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107320477/beardsley-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: a single alpine rack."
+     }
+    ]
+   }
+  ],
+  "note": "Tenmile Range > Quandary Peak. No second publisher found (DDG search returned nothing relevant)."
  },
  "co_bells_traverse_submitted_as_maroon_ridge": {
   "area": "co_maroon_bells",
@@ -2338,32 +2619,434 @@
       "fact": "Route enters the Maroon Bells-Snowmass Wilderness with party size, camping and fire regulations."
      }
     ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758712/bells-traverse-submitted-as-maroon-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the Bells Traverse as 5.2, trad, alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the Bell Cord notch climb a 4th-class wall, then ~40 ft of about 5.2, then a 30-ft steep 5.4-5.5 step past a blunt prow.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758712/bells-traverse-submitted-as-maroon-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the notch: 4th class wall, about 40 feet of 5.2, later a 30-foot 5.4-5.5 section at a blunt prow."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "After North Maroon, descend its northeast ridge on cairns and faint trail (4th class).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758712/bells-traverse-submitted-as-maroon-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend North Maroon by the northeast ridge following cairns and a faint trail, 4th class."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Two short 5th-class sections, protectable with nuts and cams to 1.5 in (often soloed).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758712/bells-traverse-submitted-as-maroon-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Both fifth-class sections could be protected with nuts and cams to 1.5 inches; the author soloed them."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Often combined with an ascent of the Bell Cord Couloir to South Maroon first.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758712/bells-traverse-submitted-as-maroon-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing the Bell Cord Couloir first is suggested as the most enjoyable and fastest option."
+     }
+    ]
    }
   ],
-  "note": "14ers.com figures (4,850 ft, 9.5 mi RT) are for the whole Bells Traverse combination (both summits, Maroon Lake TH), described south-to-north; our route is described north-to-south ending down Maroon South Ridge. MP page (105758712) not read: MP rate-limited (429)."
+  "note": "14ers.com figures (4,850 ft, 9.5 mi RT) are for the whole Bells Traverse combination (both summits, Maroon Lake TH), described south-to-north. MP page also describes south-to-north (descending North Maroon NE ridge), while our stored descent says Maroon South Ridge (north-to-south). Grade: MP 5.2 vs 14ers Class 5 vs guidebooks 4th class per MP — not agreed."
  },
  "co_bengal_spice": {
   "area": "co_main_wall_10",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109514775/bengal-spice",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 100 ft."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11b PG13",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Bengal+Spice",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP listing rates Bengal Spice 5.11b PG13."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Justin Talbot and Rob Dillon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109514775/bengal-spice",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Justin Talbot and Rob Dillon."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts 20 ft left of Gold Card on Tiger Cliff Main Wall.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109514775/bengal-spice",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: start 20 feet left of Gold Card."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "#1 Camalot at the start, red C3 for the crux, a 3-inch piece in the pod, a pin, plus a standard rack.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109514775/bengal-spice",
+      "retrieved_at": "2026-11-14",
+      "fact": "#1 Camalot protects the start, red C3 the crux, 3-inch piece in a pod; a pin and standard rack for the rest."
+     }
+    ]
+   }
+  ],
+  "note": "Leadville > Timberline Lake Basin > Tiger Cliff > Main Wall. MP only."
  },
  "co_big_blocky": {
   "area": "co_bionut_wall",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576433/big-blocky",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Big Blocky as 5.9, 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jordan Houde, Ellie Paulauskaite, 2017",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576433/big-blocky",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Jordan Houde and Ellie Paulauskaite, July 2017."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts from a grassy bench right of the big spruce that splits the wall; two bolts of the face variation sit below the chains.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576433/big-blocky",
+      "retrieved_at": "2026-11-14",
+      "fact": "Begins on a grassy bench right of the large spruce dividing the wall; two bolts below the chains belong to the variation."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Fists to thin hands; a #5 or #6 may fit low.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576433/big-blocky",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: fist to thin-hand sizes; a #5 or even #6 may fit down low."
+     }
+    ]
+   }
+  ],
+  "note": "Grand Mesa > Flowing Park > Bionut Wall. MP only."
  },
  "co_big_blocky_face_variation": {
   "area": "co_bionut_wall",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Big+Blocky",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP listing: Big Blocky Face variation 5.10, trad, alpine, 50 ft, Bionut Wall."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Big+Blocky",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP listing gives first ascent as unknown."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Gear for Big Blocky plus two bolts on the face finish to chains.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114576433/big-blocky",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two bolts on the face below the chains belong to the sporty variation."
+     }
+    ]
+   }
+  ],
+  "note": "MP route 114576439 page had only a description section (matches our overview)."
  },
  "co_big_horns": {
   "area": "co_lincoln_lake_slabs",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115187186/big-horns",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Big Horns as sport, alpine, 200 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ken & Marsha Trout, 2016",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115187186/big-horns",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Ken and Marsha Trout, 2016."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Left-hand bolt line on the 100-ft detached block of clean, featured coarse granite.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115187186/big-horns",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left bolt line on a 100-foot detached block of clean, featured coarse granite."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "About 12 bolts to the left of two close anchors; anchor hardware is easy to thread.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115187186/big-horns",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 12 bolts to the left-hand of two closely spaced anchors; hardware easy to thread."
+     }
+    ]
+   },
+   {
+    "field": "rock",
+    "value": "Coarse granite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115187186/big-horns",
+      "retrieved_at": "2026-11-14",
+      "fact": "Block is described as clean, featured coarse granite."
+     }
+    ]
+   }
+  ],
+  "note": "MP lists it as Sport (we have alpine). Note MP length 200 ft vs a 100-ft block in the text; both as stated."
  },
  "co_big_jim_slade": {
   "area": "co_innuendo_spire",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107696416/big-jim-slade",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 80 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Chris Sheridan and Andy Grauch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107696416/big-jim-slade",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP first ascent: Chris Sheridan and Andy Grauch."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Southwest face of Innuendo Spire; overhanging offwidth.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107696416/big-jim-slade",
+      "retrieved_at": "2026-11-14",
+      "fact": "Located on the southwest face of Innuendo Spire; an overhanging offwidth."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Single set of cams to a #5 C4; save the #5 for the upper crack and walk it.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107696416/big-jim-slade",
+      "retrieved_at": "2026-11-14",
+      "fact": "A single set of cams to #5 C4 works if the #5 is saved for the upper crack and walked."
+     }
+    ]
+   }
+  ],
+  "note": "MP breadcrumb: Mt Blue Sky > Alpine Lite Cliffs > Innuendo Spire. MP search by name failed; found via DDG."
  },
  "co_bilge_pump": {
   "area": "co_ship_s_prow",
-  "skip_reason": "not researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Bilge+Pump",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP listing: Bilge Pump 5.8, trad, alpine, 100 ft, Ship's Prow, Longs Peak."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Sam Sala & Ben Ellison, 2019",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Bilge+Pump",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP listing first ascent: Sam Sala and Ben Ellison, 7/13/19."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://app.advcollective.com/climbing/bilge-pump-a-classic-crack-on-ships-prow-in-rocky-mountain-national-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as a single-pitch 5.8 route of about 100 feet."
+     }
+    ]
+   },
+   {
+    "field": "rock",
+    "value": "Granite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://app.advcollective.com/climbing/bilge-pump-a-classic-crack-on-ships-prow-in-rocky-mountain-national-park",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as a clean granite hand crack on Ship's Prow."
+     }
+    ]
+   }
+  ],
+  "note": "MP route 117405246 (Ship's Prow, Longs Peak). advcollective.com page looks derived from MP, so not counted as an independent second source."
  }
 }

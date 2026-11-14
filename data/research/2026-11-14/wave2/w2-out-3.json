@@ -530,7 +530,191 @@
  },
  "ak_mountaineers_route_2": {
   "area": "ak_4th_fin_mountaineers_buttress",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 260,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists trad, 260 ft, 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.12 (MP); pitches 3-4 involve C1+ aid where seeping",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP grade 5.12; P3 5.11 C1+ (seeps), P4 5.10 C1, freed following at 5.11-."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Svenson and party (pitches 1-2), 1970s",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA of P1 and P2: Svenson and crew in the '70s."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From the trail, a meadow where the trail forks: left for the slab start, right to scramble the traditional gully start",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "At the meadow fork, go left for the slab start or right for the gully."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Recommended start: climb Jaw-way, about 30 m of bolted slab below the 3rd Fin (easy 5th); the old gully to Jaw Ledge is now dirt and alders",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Optional but recommended approach via ~30 m bolted Jaw-way slab; historic gully overgrown."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 (5.9): bolts in a shallow crack/corner, a pumpy bulge to a ledge, then 5.10 off-width or the 5.9 hand crack left, and a 5.7 layback to bolts on Jurassic Ledge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1 5.9 corner and bulge; off-width or hand-crack option; 5.7 layback to Jurassic Ledge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P2 (5.10+/5.11-): strenuous corners to a crux flare, then to the first alder ledge and a 3-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "P2 strenuous corner, crux in a large flare, alder ledge, 3-bolt anchor."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P3 (5.11 C1+): corner climbing past an old bolt, traverse to the arete, gear belay in a cave below a roof",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "P3 corners and 3D climbing to a bolt, arete traverse, gear belay in a cave under a roof."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P4 (5.10 C1, freed at 5.11-): traverse right around a bulge to the right-most crack; belay on a slung tree atop the 4th buttress",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "P4 traverses right to the right-most crack; tree belay at the top of the buttress."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Two 30 m rappels from the tree",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: 2 x 30 m raps from the tree."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two 30 m rappels."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Mostly small gear to 0.75, single #2 and #3, draws and slings; a #5 if leading the P1 off-width",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mostly small to .75, singles of 2 and 3, draws/slings; a 5 for the off-width."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock on pitch 3 (a large block has already fallen); seeps can force aid",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123039872/mountaineers-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Watch for loose rock on P3; a refrigerator block fell; seeps prevented a free ascent."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Juneau > Jaw Point > The Fins > 4th Fin). MP grade 5.12 differs from our stored 5.11. A separate MP page \"Mountaineer's Route\" (route 111623385) exists in SE Alaska and was not used."
  },
  "ak_mt_huntington_west_face": {
   "area": "ak_mt_huntington",
@@ -631,7 +815,87 @@
  },
  "ak_necessary_evil": {
   "area": "ak_ramparts_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 70,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119067519/necessary-evil",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists trad/alpine, 70 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Pat Rinehart and Jason Moncrieff",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119067519/necessary-evil",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Pat Rinehart and Jason Moncrieff (no year)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Starts at a crack between Dead Marmot and Ramparts Rampage on Ramparts Wall (Independence Mine, Hatcher Pass)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119067519/necessary-evil",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start is the crack between Dead Marmot and Ramparts Rampage."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Trad rack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119067519/necessary-evil",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: trad."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Still cleaning up: expect some loose or dirty rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119067519/necessary-evil",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stiff and steep; will continue to clean up over time."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Crack climbing on small finger jams with lots of sidepulling, beside an arete",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/necessary-evil/c78336",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rakkup Hatcher Pass guide (Kelsey Gray): fun crack with small finger jams and plenty of sidepulls."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: Mountain Project 5.10b vs Rakkup Hatcher Pass guide (Kelsey Gray) 5.10c - not locked. Rakkup confirms location Hatcher Pass > Independence Mine Area > Ramparts Wall; its full text is paywalled."
  },
  "ak_northurn_lights_dleight": {
   "area": "ak_sunny_side_the",
@@ -745,7 +1009,61 @@
  },
  "ak_not_of_this_state": {
   "area": "ak_wedge_the",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Grant Walker and Wes Schaffer, 1996",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110787253/not-of-this-state",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Grant Walker and Wes Schaffer, '96."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Slightly overhanging bolted face climb on The Wedge (Chugach State Park)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110787253/not-of-this-state",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as slightly overhanging face climbing."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Just around the corner/arete to the right of Ghost of a Smile",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110787253/not-of-this-state",
+      "retrieved_at": "2026-11-14",
+      "fact": "Located right of Ghost of a Smile, around the arete."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "9 bolts, 2-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110787253/not-of-this-state",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: 9 bolts and a 2-bolt anchor."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only. MP gives no length. Wikipedia gives The Wedge summit as 4,660 ft (13 mi SE of Anchorage) - a peak figure, not this crag route's high point, so not recorded as a fact."
  },
  "ak_perpetual_motion": {
   "area": "ak_deep_water_bay",
@@ -1037,55 +1355,980 @@
  },
  "ak_rain_heavy_at_times": {
   "area": "ak_3rd_tower_main",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "grade",
+    "value": "V 5.10d, snow and ice to 60 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party rated it V 5.10d with snow and ice to 60 degrees."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/117525487/rain-heavy-at-times",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 5.10d, Grade V (its description points to the AAJ report)."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route involved 24 pitches and 14 rappels."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/117525487/rain-heavy-at-times",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 24 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follows the north-side arete of the highest tower for 2,500 vertical feet."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/117525487/rain-heavy-at-times",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 2500 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jacek Maselko, Ryszard Pawlowski, Dave Sorric, June 18-27, 2002",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pawlowski, Sorric and Maselko established the route over June 18 to 27."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/117525487/rain-heavy-at-times",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: June 2002, Jacek Maselko, Ryszard Pawlowski, Dave Sorric."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route involved 14 rappels."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route (14 rappels) on anchors set for a 70 m rope, then down to the glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "Used a 70 m rope; future teams following their rap anchors should note that."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Alpine rack; 70 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117525487/rain-heavy-at-times",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP protection: alpine rack."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6980,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ gives the Mendenhall Towers as 6,980 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Helicopter from Juneau (Northstar Trekking) to the glacier on the north side of the Mendenhall Towers",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "Helicopters flew the team from Juneau to the north side of the towers."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Prominent arete on the north side of the highest (Main) tower; a saddle about one-third of the way up makes a bivy site",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "Arete on the highest tower's north side; bivy at a saddle a third of the way up."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bivy at a prominent saddle about one-third of the way up the arete",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "Team bivied on the saddle about one-third up the arete."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Bad weather is the usual crux in southeast Alaska; two earlier attempts were stopped by weather",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200225300/North-America-United-States-Alaska-Alaska-Coast-Mountains-Mendenhall-Towers-Rain-Heavy-at-Times-Rabbit-Ears-Who-Needs-Cable",
+      "retrieved_at": "2026-11-14",
+      "fact": "Previous two attempts failed to weather, the usual crux of southeast Alaska climbs."
+     }
+    ]
+   }
+  ],
+  "note": "MP route page defers to the AAJ report, so MP + AAJ are treated as one source (single-source) even though both state the same grade, length, pitches and FA. Summit day was 6 a.m. to 9:30 p.m. and back to the bivy 24 hours after leaving (one party, not a typical time; not recorded as a field)."
  },
  "ak_renaissance_man": {
   "area": "ak_renaissance_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 90,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326296/renaissance-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists trad/alpine, 90 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ben Chriswell, Aaron Thrasher, Chris Williams, Brady Deal, Zach Shlosar",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326296/renaissance-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Chriswell, Thrasher, Williams, Deal and Shlosar (no year)."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Center of Renaissance Wall (Independence Mine area); start from the Retroed Art anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326296/renaissance-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at the Retroed Art anchor in the middle of the wall."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Clip bolts onto a slab with gear between bolts, then out a slightly loose overhang with big moves past bolts, gear to the anchor past a fist crack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326296/renaissance-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bolts to a slab, gear between, a loose-ish overhang, big moves, fist crack before the anchor."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Mixed: bolts plus cams to BD #3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326296/renaissance-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed as cams to BD 3 and bolts."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Seldom climbed: loose rock on the overhang and webbing on the anchor needs replacing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326296/renaissance-man",
+      "retrieved_at": "2026-11-14",
+      "fact": "Few ascents; overhang a little loose; replace the anchor webbing."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Hatcher Pass > Independence Mine > Renaissance Wall). No second publisher found; theCrag answers 403."
  },
  "ak_route_1_lower_wall": {
   "area": "ak_lower_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 60,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950628/route-1-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/alpine, 60 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Start at a large leaning block; follow the crack/edge feature on bolts to a 2-bolt ring anchor under a big roof",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950628/route-1-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "From a leaning block, crack/edge on bolts to rings under a roof."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "First route on the left of the Lower Wall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950628/route-1-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: first route on the looker's left."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "5-6 bolts to ring anchors",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950628/route-1-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: 5-6 bolts to ring anchors."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Still new: some small loose rocks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950628/route-1-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some smaller loose rocks remain; no large loose blocks."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Valdez Area Rock > 43 Mile). FA unknown."
  },
  "ak_route_1_upper_wall": {
   "area": "ak_upper_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 60,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950841/route-1-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/alpine, 60 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Easy ground on bolts to a short crux sequence near the anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950841/route-1-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy climbing along bolts, short crux near the anchor."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "First route seen coming up the trail, on a short wall separate from the Upper Crag; farthest left line on the Upper Wall (43 Mile, Valdez area)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950841/route-1-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "First route from the trail; leftmost on the Upper Wall."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bolts to a 2-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950841/route-1-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: bolts to a two-bolt anchor."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Valdez Area Rock > 43 Mile). FA unknown."
  },
  "ak_route_2_lower_wall": {
   "area": "ak_lower_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 65,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950682/route-2-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/alpine, 65 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Bolts up edge features to a 2-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950682/route-2-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "A line of bolts up edges to a two-bolt anchor."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Farthest right line on the Lower Wall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950682/route-2-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: farthest looker's right line."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bolts to a 2-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950682/route-2-lower-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: bolts to a two-bolt anchor."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Valdez Area Rock > 43 Mile). MP page author had not climbed it to confirm the 5.10a grade. FA unknown."
  },
  "ak_route_2_upper_wall": {
   "area": "ak_upper_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950795/route-2-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/alpine, 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "M. Weber and Todd Keech",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950795/route-2-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to M. Weber and Todd Keech."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Stemming up an inside corner to a short layback past a small roof on good holds; formerly a runout trad route, now fully retro-bolted",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950795/route-2-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Originally a runout trad corner; now retro-bolted; corner stemming, layback past a roof."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Second full bolt line on the way up the trail to the Upper Wall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950795/route-2-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Second bolt line heading up the trail to the Upper Wall."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bolts (fully retro-bolted)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950795/route-2-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Now fully bolted."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Valdez Area Rock > 43 Mile)."
  },
  "ak_route_3_upper_wall": {
   "area": "ak_upper_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 60,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950785/route-3-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/alpine, 60 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep start on good holds, a short crux just past the lower roof, then easy climbing to the anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950785/route-3-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep low section on good holds, crux past the lower roof, easy finish."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Third obvious bolted line heading up the trail on the Upper Wall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950785/route-3-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Third bolted line from the trail on the Upper Wall."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bolts to a 2-bolt anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950785/route-3-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: bolts to a two-bolt anchor."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Valdez Area Rock > 43 Mile). FA unknown."
  },
  "ak_route_4_upper_wall": {
   "area": "ak_upper_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 55,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950762/route-4-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists trad/alpine, 55 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "M. Weber and J. Weber",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950762/route-4-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to M. Weber and J. Weber."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Share the start of the right-most route, up a crack past retro bolts; where the bolts head right go left across a runout slab to a large crack and the crux",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950762/route-4-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crack past bolts, then left across a runout slab to a big crack for the crux."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Small stoppers and cams to #4 Camalot; tree for the top anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950762/route-4-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Small nuts and cams to #4; a tree serves as the anchor."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Runout slab section before the top crack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950762/route-4-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Moves across a runout section of slab."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Valdez Area Rock > 43 Mile)."
  },
  "ak_route_5_upper_wall": {
   "area": "ak_upper_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950717/route-5-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/alpine, 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "M. Weber and Todd Keetch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950717/route-5-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to M. Weber and Todd Keetch."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Starts at a broken crack with a sawed-off tree, then bolts up a face of easy holds to a short crux near the top; now all bolts after retro-bolting",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950717/route-5-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Broken crack start, easy face on bolts, short crux; retro-bolted from mixed."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Farthest right-hand line on the Upper Wall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950717/route-5-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: farthest right line on the Upper Wall."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Bolts to a chain anchor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111950717/route-5-upper-wall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: bolts to a chain anchor."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Valdez Area Rock > 43 Mile)."
  },
  "ak_schmear_campaign": {
   "area": "ak_peanut_gullery",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 60,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108259977/schmear-campaign",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/TR/alpine, 60 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Eivin Kilcher and Traveller Terpening",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108259977/schmear-campaign",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Eivin Kilcher and Traveller Terpening (no year)."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "A smearing test piece for the area",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108259977/schmear-campaign",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as the local smearing testpiece."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Far left side of the Peanut Gullery wall (Woznesensky Glacier area, Kenai Peninsula)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108259977/schmear-campaign",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: far left of the Peanut Gullery wall."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "About 6 bolts (bolt count uncertain on the page)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108259977/schmear-campaign",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection listed as \"6? bolts\"."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Kenai Peninsula > Woznesensky Glacier > Peanut Gullery). theCrag has a Peanut Gullery area page but answers 403."
  },
  "ak_sloppy_joe": {
   "area": "ak_slab_salad",
-  "skip_reason": "not yet researched"
+  "skip_reason": "No page found. DuckDuckGo finds no Sloppy Joe climbing route; Mountain Project's 'Slab salad' area (Fairbanks, /area/119682012) now returns Page Not Found; theCrag is 403."
  },
  "ak_socal_dj": {
   "area": "ak_renaissance_wall",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 70,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326161/socal-dj",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists sport/alpine, 70 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ben Chriswell, Chris Williams",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326161/socal-dj",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Ben Chriswell and Chris Williams (no year)."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Bolted line up chicken-head features; quickdraws only",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326161/socal-dj",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs cool chicken heads; all you need are quickdraws."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326161/socal-dj",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades SoCal DJ 5.10d."
+     },
+     {
+      "url": "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/socal-dj/c78396",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rakkup Hatcher Pass guide (Kelsey Gray) lists SoCal DJ at 5.10d, five stars."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Climb the first (approach) pitch of Tavern Time to its belay, then move out to the route",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326161/socal-dj",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts from the same belay as Tavern Time after traversing out right."
+     },
+     {
+      "url": "https://rakkup.com/guidebook/hatcher-pass-rock-climbing/socal-dj/c78396",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the first approach pitch for Tavern Time, then move from that belay anchor."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Quickdraws (bolted)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117326161/socal-dj",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: bolts."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project only (Hatcher Pass > Independence Mine > Renaissance Wall)."
  },
  "ak_south_gully": {
   "area": "ak_east_twin_peak",
-  "skip_reason": "not yet researched"
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Eklutna Lake trailhead, via the Twin Peaks Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://blog.chillychugach.com/2017/08/east-twin-peak-8302017.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at Eklutna, go up the Twin Peaks Trail past two benches, then over to the Twins."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Twin Peaks Trail past the first and second benches (the right-hand trail at bench two goes to Pepper Peak), then a stream crossing toward East Twin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://blog.chillychugach.com/2017/08/east-twin-peak-8302017.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pass bench one and bench two (right fork to Pepper Peak), cross a stream toward East Twin."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "The south gully is the standard route on East Twin; a short, loose scramble",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://blog.chillychugach.com/2017/08/east-twin-peak-8302017.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard route follows the south gully; scrambly with lots of loose rock."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Scramble the loose south gully, keeping to its sides for better footing; a few steeper steps",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://blog.chillychugach.com/2017/08/east-twin-peak-8302017.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lots of loose rock; hugging the gully sides helps; a few steeper sections."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Cairns partway up lead left or right out of the gully to more solid but more exposed lines",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://blog.chillychugach.com/2017/08/east-twin-peak-8302017.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cairns branch left and right toward more solid, exposed routes."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock in the gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://blog.chillychugach.com/2017/08/east-twin-peak-8302017.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gully has lots of loose rock."
+     }
+    ]
+   }
+  ],
+  "note": "One blog only. Its 8.3 mi / 4544 ft figures are a personal round-trip track, not recorded. SummitPost East Twin page is 403; Mountain Project 429."
  },
  "ak_south_ridge_3": {
   "area": "ak_west_twin_peak",

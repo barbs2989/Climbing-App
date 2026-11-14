@@ -1,13 +1,2175 @@
 {
+ "wy_northeast_snowfield_and_couloir": {
+  "area": "wy_mount_fryxell_peak_11270_at_head_of_paintbrush_canyon",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112020357/northeast-snowfield-and-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the Northeast Snowfield and Couloir 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112020357/northeast-snowfield-and-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line gives 1400 ft, Grade II, trad/alpine."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112020357/northeast-snowfield-and-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the snow slope and couloir northeast of the summit; crux is the narrow 5-10 ft wide upper couloir; then gain the northwest ridge and scramble to the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112020357/northeast-snowfield-and-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow slope and couloir NE of summit; narrow upper couloir is crux; then NW ridge scramble to summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Down the northeast ridge past the top of the NE couloir to a small notch, then moderate snow slopes into Paintbrush Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112020357/northeast-snowfield-and-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent via NE ridge to a notch, then moderate snow into Paintbrush Canyon."
+     }
+    ]
+   }
+  ],
+  "note": "FA unknown on MP. No second publisher found: SummitPost Mount Fryxell page (403 wall), Wikipedia Mount_Fryxell 404, summitborn mount-fryxell guide 404."
+ },
+ "wy_northwest_ridge_4": {
+  "area": "wy_sphinx_the",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-sphinx-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn lists the Northwest Ridge from the Sphinx Glacier as Class 4+ with crevassed glacier travel."
+     },
+     {
+      "url": "https://sunlitsummit.com/wyoming13ers/the-sphinx/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sunlit Summit: Route 1 Northwest Ridge, Class 4+, moderate snow."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From upper Titcomb Basin climb the low-angled, crevassed Sphinx Glacier to the Sphinx-Woodrow Wilson col, then the short steep ridge, sidestepping north onto slabby ledges",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-sphinx-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From upper Titcomb Basin, up the crevassed Sphinx Glacier to the col with Mount Woodrow Wilson, then a short steep ridge."
+     },
+     {
+      "url": "https://sunlitsummit.com/wyoming13ers/the-sphinx/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reach the Sphinx-Woodrow Wilson col via the low-angle crevassed Sphinx Glacier; climb the well-featured ridge, moving north onto slabby ledges."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Crevassed glacier travel required on the Sphinx Glacier",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-sphinx-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reaching the ridge requires genuine crevassed glacier travel."
+     },
+     {
+      "url": "https://sunlitsummit.com/wyoming13ers/the-sphinx/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crevasses on both the Dinwoody and Sphinx glaciers; glacier skills are a prerequisite."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Titcomb Basin is roughly fifteen miles in from the Elkhart Park trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/the-sphinx-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Titcomb Basin lies some fifteen miles in from Elkhart Park."
+     }
+    ]
+   }
+  ],
+  "note": "Both sources rate the ridge Class 4+ while the catalog has 4th - owner review. Mountain Project area for The Sphinx (Wind River) lists no routes."
+ },
+ "wy_northwest_ridge_west_face": {
+  "area": "wy_overhanging_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107265331",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Northwest Ridge/West Face Easy 5th; mostly 4th class with roped steps in the last 100 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107265331",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: 450 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107265331",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the col move up and west onto ramps across the west face, following cairns; the last 100 ft has steps that warrant a rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107265331",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the col go up and west on ramps across the west face with cairns; final 100 ft has steps needing a rope."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the route of ascent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107265331",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the way you came up."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Very dangerous when the rock is wet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107265331",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP warns the route is exceedingly dangerous when wet."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Light rack and a short rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107265331",
+      "retrieved_at": "2026-11-14",
+      "fact": "Light rack and short rope recommended."
+     }
+    ]
+   }
+  ],
+  "note": "MP locates Overhanging Tower as the first tower southwest of the Wolf's Head (Wind River Range). No second publisher: Wikipedia Overhanging_Tower opened, no route text; SummitPost 403."
+ },
+ "wy_south_couloir_to_east_ridge": {
+  "area": "wy_mount_st_john",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117262499",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates South Couloir to East Ridge 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 4600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117262499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line lists 4600 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike up Hanging Canyon past Arrowhead Pool and Ramshead Lake to the north side of Lake of the Crags; an early Jenny Lake boat shortens the day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117262499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Up Hanging Canyon past Arrowhead Pool and Ramshead Lake to Lake of the Crags; early Jenny Lake boat helps."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Where Lake of the Crags widens, climb talus on climbers left to the col, then scramble the exposed upper east ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117262499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Head up talus keeping climbers left to the col, then scramble the partly exposed east ridge."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Reverse the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117262499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reverse route for the descent."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Usually none; crampons and ice axe early season; some carry a rope and small rack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117262499",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear usually not needed; crampons/axe early season; some carry rope and small rack."
+     }
+    ]
+   }
+  ],
+  "note": "FA unknown on MP. No second publisher: Wikipedia Mount_St._John 404, summitborn mount-st-john guide 404, SummitPost 403."
+ },
+ "wy_south_ridge": {
+  "area": "wy_south_teton",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118128114",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the South Ridge of the South Teton 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118128114",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: 2000 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118128114",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "W.V. Graham and Mary Ann Mathews, 1955",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118128114",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: W.V. Graham and Mary Ann Mathews, 02 July 1955."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the low-angle area east of Snowdrift Lake take the western of two ridges; they join about 800 ft below the summit; stay west at difficulties",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118128114",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start east of Snowdrift Lake on the western ridge; the two ridges merge about 800 ft below the summit; keep west at difficulties."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Reverse the route, or descend the Northwest Couloir into the South Fork of Garnet Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118128114",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reverse route, or the NW Couloir into South Fork Garnet Canyon is likely easiest."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach from the west via the Teton Crest Trail, Cascade Canyon or Avalanche Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118128114",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approaches: Teton Crest trail, Cascade Canyon, or Avalanche Canyon."
+     }
+    ]
+   }
+  ],
+  "note": "No second publisher: summitborn South Teton guide opened, no South Ridge text; Wikipedia South_Teton has no route text; SummitPost 403."
+ },
+ "wy_southeast_ridge": {
+  "area": "wy_disappointment_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the Southeast Ridge 4th class."
+     },
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn: the crux is a Class 4 chimney with chockstones."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: 2000 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Perry Gilbert, 1935",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Perry Gilbert 8-12-1935."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lupine Meadows",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start from Lupine Meadows, hike to Amphitheater Lake."
+     },
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back from the Lupine Meadows Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Amphitheater Lake cross the outlet stream to Surprise Lake side, climb a steep grassy hill to a saddle, then a gully with two chockstones: tunnel and mantle the first, pass the second on its left, then a faint trail to the summit ridge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cross stream, steep grassy hill to saddle; gully with two chockstones, tunnel under first, go left around second (4th class)."
+     },
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Class 4 chimney: tunnel and mantle at first chockstone, overhanging second stone passed on its left."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Retrace the route",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "Retrace the route to descend."
+     },
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the saddle retrace the grass and ledges back to the lake."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Optional short rope of about 30 m with a few slings or a light rack",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110778677",
+      "retrieved_at": "2026-11-14",
+      "fact": "Light Teton rack and a short 30m rope sufficient."
+     },
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Optional rope of about 30 m, harness and a few slings to belay or lower at the second chockstone."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11619,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 11,619 ft, Disappointment Peak (LiDAR)."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "10-12",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Estimated time 10-12 hours as a day climb."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Park entrance pass; no permit for a day climb; backcountry permit to camp at Surprise Lake, no camping at Amphitheater Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Entrance pass; no permit for day climb; backcountry permit for Surprise Lake camp; no camping at Amphitheater Lake."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Mid-July to early September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/disappointment-peak-southeast-ridge-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season mid-July to early September on dry rock (stated as their estimate)."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn distance (11-12 mi RT) and gain (~4,900 ft) are labelled as its own estimate, not recorded. Summitborn also advises ice axe and crampons before late July."
+ },
+ "wy_southwest_couloir": {
+  "area": "wy_teewinot",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3-4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/teewinot-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summitborn lists the Southwest Couloir at Class 3-4."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approached from the west via the Owen-Teewinot saddle, used for the Owen-Teewinot traverse and by parties coming from Cascade Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/teewinot-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Southwest Couloir is approached from the west via the Owen-Teewinot saddle and from Cascade Canyon."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "The couloir drops from the high plateau west of the summit and faces southeast",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.tetonat.com/2006/12/22/southwest-couloir-teewinot/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Southwest Couloir comes off the high plateau west of the summit and faces southeast."
+     }
+    ]
+   }
+  ],
+  "note": "TetonAT (ski descent report) approached via Glacier Gulch and skied 1500-2000 ft of linked couloirs to the Teton Glacier - a ski line, so not used as the climbing approach. Catalog grade is 4th; summitborn says Class 3-4. Mountain Project \"Southwest Couloir\" 105933255 is the Middle Teton route, NOT Teewinot - unused. Tetonat 2006 Teewinot SW couloir report found by search but not opened; SummitPost 403."
+ },
+ "wy_southwest_ridge_3": {
+  "area": "wy_pyramid_peak",
+  "skip_reason": "Opened DuckDuckGo results: SummitPost pyramid-peak pages (403 wall), 14ers.com peaks/10047 (a Colorado peak) and peakery listing only; no page describing a Pyramid Peak (WY) Southwest Ridge was readable. Mountain Project area not located."
+ },
+ "wy_southwest_slope": {
+  "area": "wy_fremont_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105892085",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the Southwest Slope 3rd class with some scrambling from the saddle."
+     },
+     {
+      "url": "https://sunlitsummit.com/wyoming13ers/fremont-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sunlit Summit: Route 1 Southwest Ramp, Class 3."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "John C. Fremont",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105892085",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as John C. Fremont."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Elkhart Park (Pole Creek Trail)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sunlitsummit.com/wyoming13ers/fremont-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach via the Pole Creek Trail from the Elkhart Park Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Take the Indian Pass Trail toward Indian Basin, then leave it northwest up a gentle slope to the southwest ridge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105892085",
+      "retrieved_at": "2026-11-14",
+      "fact": "From near the Indian Pass/Titcomb trail junction, hike up Indian Pass Trail about 2 mi, then up the slope to a saddle NW of the trail."
+     },
+     {
+      "url": "https://sunlitsummit.com/wyoming13ers/fremont-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Indian Pass Trail; where it crosses the inlet to Lake 11008 leave it northwest up the valley to the SW ridge near 12,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the same route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105892085",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the same route back to camp."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Along the Indian Basin trail or near Island Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sunlitsummit.com/wyoming13ers/fremont-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A camp along the Indian Basin trail or near Island Lake is convenient."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock and small rockfall (helmet); snow or ice on the slabs may need a rope and can be avalanche prone",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105892085",
+      "retrieved_at": "2026-11-14",
+      "fact": "Helmet for small rockfall; snow/ice may require rope and pickets; can become avalanche prone."
+     }
+    ]
+   }
+  ],
+  "note": "Vertical of the slabs differs: MP about 2000 ft, Sunlit Summit 2,500 ft - not recorded. Sunlit gives summit 13,754 ft vs catalog 13,745."
+ },
+ "wy_symmetry_coulior_to_upper_west_face": {
+  "area": "wy_storm_point",
+  "skip_reason": "DuckDuckGo results opened/inspected: Mountain Project Symmetry Spire / Full Symmetry Traverse pages and a tenthousandtoofar ski report; none describes the Storm Point Symmetry Couloir to Upper West Face route. Wikipedia Storm_Point 404; summitborn storm-point guide 404; SummitPost 403."
+ },
+ "wy_wells_creek_approach": {
+  "area": "wy_gannett_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the Wells Creek Approach 4th class (snow/alpine)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Green River Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at the Green River Lakes trailhead; campground and water there."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Begin at Green River Lakes Trailhead for both Tourist and Wells Creek approaches."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From Pinedale go west on US-191 6 miles, turn north on WY-352 and follow it 44 miles to Green River Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pinedale west on US-191 6 mi, right on WY-352 for 44 mi to Green River Lakes trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Highline Trail about 10 miles to the Green River bridge, about 2 more miles to Three Forks Park, then up the south side of Wells Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highline Trail SSE ~10 mi to bridge, ~2 mi more into Three Forks Park, then Wells Creek drainage on its south side."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Near 10,200 ft pass the Cleft (about 100 ft of 5.6 rock unless the creek is low), Many Bug Lake, Scott Lake (10,515 ft), a skinny lake (10,795 ft), then Minor Glacier and a couloir up to about 40 degrees to the north ridge and class 4 rock to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cleft ~10,200 ft is ~100 ft of 5.6; Scott Lake 10,515; skinny lake 10,795; Minor Glacier couloir ~40 degrees; class 4 on north ridge."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "A couple of rappel stations rigged on the north ridge for the descent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "A couple of rappel stations have been rigged for the descent."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Above the short 4th class step on the north ridge there are rappel slings."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Return the way you came",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "Return the way you came."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Water at the Green River Lakes trailhead campground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campground and water at the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Wells Creek in the Cleft is usually uncrossable in mid-summer without major effort and gear",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mid-summer the creek crossing at the Cleft is typically out of the question without major effort and danger."
+     }
+    ]
+   }
+  ],
+  "note": "Distance figures differ between MP pages (10 mi + 2 mi vs 10.5 mi to Three Forks) - not recorded as one-way distance."
+ },
+ "wy_west_face_2": {
+  "area": "wy_gannett_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the West Face 4th class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: trad, snow, alpine, 3100 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Green River Lakes Trailhead hike 10.5 miles south (about 3 hours) to Three Forks Park, then up the Wells Creek or Tourist Creek drainage to Skinny Lake (10,700 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Green River Lakes TH 10.5 mi south (3 hours) to Three Forks Park; Wells or Tourist Creek to Skinny Lake 10,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Skinny Lake climb talus right of the southern waterfalls to Minor Glacier (about 1 mi, 1,100 ft), cross it to the left-leaning couloir (about 1,400 ft, loose) to the north ridge, then a short 4th class step to the summit snowfield",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Talus right of waterfalls to Minor Glacier ~1 mi/1,100 ft; couloir to north ridge ~1,400 ft; ~100 ft 4th class step."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel slings above the short 4th class step",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Above the short scramble one can find rappel slings."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106944207/wells-creek-approach",
+      "retrieved_at": "2026-11-14",
+      "fact": "A couple of rappel stations have been rigged for the descent."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock and talus in the couloir; hard snow patches near 40 degrees; Green River ford about 3 ft deep and very cold on the Tourist Creek option",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Loose rock in couloir; ~40 degree bulletproof snow patch; ford of the Green ~3 ft deep and cold."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Minor Glacier is rapidly receding",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119378001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Stroll across the rapidly receding Minor Glacier."
+     }
+    ]
+   }
+  ],
+  "note": "Wells Creek variant contains a 5th class section (the Cleft). Second publisher not found: summitborn Gannett guide has no west-face text; SummitPost 403."
+ },
+ "yt_mount_logan_king_trench": {
+  "area": "yt_mount_logan",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110571732",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the King Trench Mod. Snow."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "A. H. MacCarthy party, 1925",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110571732",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: A. McCarthy et al, 1925; the original ascent route."
+     },
+     {
+      "url": "https://summitborn.com/mount-logan-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First recorded ascent June 23, 1925 by A. H. MacCarthy, H. F. Lambart, Allen Carpe, William Foster, Norman Read and Andy Taylor via King's Trench."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Fly-in to the Quintino Sella Glacier",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110571732",
+      "retrieved_at": "2026-11-14",
+      "fact": "If flying from Kluane Lake the start is at 9,000 ft on the Quintino Sella Glacier."
+     },
+     {
+      "url": "https://summitborn.com/mount-logan-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parties now fly to the Quintino Sella Glacier at about 2,700 m."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp 1 10,800 ft in the King Trench; Camp 2 King Col 13,400 ft; Camp 3 Football Field 15,800 ft; plateau camp 16,500 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110571732",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp 1 at 10,800 ft, Camp 2 King Col 13,400 ft, Camp 3 Football Field 15,800 ft, camp at 16,500 ft past Prospector Col."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Between King Col and the Football Field is the usual technical crux, often heavily crevassed with slopes approaching 45 degrees; above, cross Prospector Col (18,100 ft) to the summit plateau",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110571732",
+      "retrieved_at": "2026-11-14",
+      "fact": "C2-C3 is the crux, crevassed, up to ~45 degrees; route crosses Prospector Col at 18,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Increasingly crevassed between King Col and the Football Field; summit plateau is exposed in bad weather and retreat requires reclimbing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110571732",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crevassing between King Col and Football Field; summit plateau nasty in bad weather, retreat difficult."
+     }
+    ]
+   },
+   {
+    "field": "days",
+    "value": "Two to three weeks on the mountain",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-logan-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parties still spend two to three weeks on the mountain."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Mid-April to late June",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-logan-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing season generally runs mid-April to late June."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Kluane National Park permit; each member must carry CAD 100,000 extraction insurance; starts from the US side no longer permitted (MP, as of 2015)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-logan-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Permit requires each member to carry CAD $100,000 extraction insurance."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/110571732",
+      "retrieved_at": "2026-11-14",
+      "fact": "As of 2015 Canadian authorities no longer gave permission for trips starting from the US side."
+     }
+    ]
+   }
+  ],
+  "note": "Permit fact merges two separate statements (insurance from summitborn, US-side start from MP) so it is not an agreement; treat as single-source each."
+ },
+ "yt_vulcan_mountain_vulcan_mountain": {
+  "area": "yt_vulcan_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Mod. Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119169300",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Vulcan Mountain Mod. Snow."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Driveway at Slims River East (Ä’äy Chù)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119169300",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the driveway at Ä'äy Chù (Slim's River) East and walk down the cutline."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cutline to a dry riverbed, through Choss Canyon below Choss Peak to the Y Creek basecamp (about 12 km, 800 m up)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119169300",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach to Y Creek about 12 km, 800 m gain, 88 m loss; Choss Canyon; basecamp on a grassy knoll."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Y Creek basecamp (grassy knoll)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119169300",
+      "retrieved_at": "2026-11-14",
+      "fact": "Basecamp at Y Creek, a grassy knoll with Mount Vulcan in view."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Y Creek follow the ridge to the Vulcan Glacier (about 4 km, 1,157 m up), avoiding a class 4 scramble by a gully on the right; slopes about 45 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119169300",
+      "retrieved_at": "2026-11-14",
+      "fact": "Y Creek to Vulcan Glacier ~4 km, 1157 m gain; skip the class 4 scramble via gully on right; ~45 degrees."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Icefall at the glacier base, avalanche activity above the bergschrund, fresh landslide in Choss Canyon (July 2026)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119169300",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hazards: icefall at base of glacier, avalanche above bergschrund; fresh landslide seen in Choss Canyon."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Avalanche kit, crampons, ice axes, helmets and glacier travel gear",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119169300",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bring beacon, probe, shovel, crampons, ice axes, helmets and glacier gear."
+     }
+    ]
+   }
+  ],
+  "note": "Figures are metric on the page and recorded as stated (no conversion). No second publisher: bivouac.com and AAJ 1964 PDF found by search but not opened; Wikipedia none."
+ },
  "ca_d_half_dome_cables_route_cables_route": {
   "area": "ca_d_half_dome_cables_route",
   "facts": [
-   {"field": "gain_ft", "value": 4800, "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm", "retrieved_at": "2026-11-14", "fact": "NPS states total elevation gain of 4,800 feet on the 14-16 mile round-trip hike (round trip, valley trailhead)."}]},
-   {"field": "permit", "value": "Permit required while cables are up; day hikers by March lottery plus limited permits two days ahead", "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm", "retrieved_at": "2026-11-14", "fact": "Permit needed while cables are up; day-hike lottery in March, a few available two days in advance."}]},
-   {"field": "dist_mi_oneway", "value": 8.5, "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://en.wikipedia.org/wiki/Half_Dome", "retrieved_at": "2026-11-14", "fact": "Wikipedia gives an 8.5 mi trail from the valley floor to the summit (one-way); NPS gives 14-16 mi round trip."}]},
-   {"field": "overview", "value": "Summit about 8,800 ft above sea level, nearly 5,000 ft above Yosemite Valley", "method": "single-source", "level": "locked-1src", "evidence": [{"url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm", "retrieved_at": "2026-11-14", "fact": "Half Dome rises nearly 5,000 ft above the valley and 8,800 ft above sea level."}]}
+   {
+    "field": "gain_ft",
+    "value": 4800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS states about 4,800 ft of elevation gain for the round-trip hike from the valley."
+     },
+     {
+      "url": "https://www.yosemitehikes.com/yosemite-valley/half-dome/half-dome.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 4,800 feet from Yosemite Valley."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Cables up generally late May or early June through Columbus Day weekend in October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yosemitehikes.com/yosemite-valley/half-dome/half-dome.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "You cannot climb Half Dome unless the cables are up, generally late May/early June to Columbus Day weekend."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Last potable water just across the bridge below Vernal Fall, 0.8 mi up the trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yosemitehikes.com/yosemite-valley/half-dome/half-dome.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Last potable water is across the bridge below Vernal Fall, 0.8 miles up the trail."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "10-14",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yosemitehikes.com/yosemite-valley/half-dome/half-dome.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiking time 10-14 hours; distance 14.2 mi round trip via Mist Trail."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Half Dome permit required while the cables are up (preseason lottery plus daily lottery); entrance pass; wilderness permit if camping",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/yose/planyourvisit/halfdome.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Permit needed while cables are up; lottery in March plus limited permits two days ahead."
+     },
+     {
+      "url": "https://summitborn.com/half-dome-cables-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Half Dome lottery permit when the cables are up; entrance pass; wilderness permit if camping."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Happy Isles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/half-dome-cables-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Happy Isles (shuttle stop 16), east end of Yosemite Valley."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Mist Trail past Vernal and Nevada Falls, across Little Yosemite Valley, then the subdome and the cables",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/half-dome-cables-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Happy Isles via the Mist Trail past Vernal and Nevada Falls and across Little Yosemite Valley."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8842,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/half-dome-cables-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,842 ft, Half Dome summit (NPS figure)."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "10-12",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/half-dome-cables-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "10 to 12 hours round trip (NPS figure)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_oneway",
+    "value": 8.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Half_Dome",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia gives an 8.5 mi trail from the valley floor to the summit (one-way)."
+     }
+    ]
+   }
   ],
-  "note": "NPS 14-16 mi round trip not recorded as a value (range). Wikipedia also mentions a 2 mi approach with rock stairs before the cable section (read truncated)."
+  "note": "Wikipedia infobox: peak first ascent 1875 by George Anderson, easiest route the Cable route (not recorded as route FA). Summitborn figures are quoted from NPS, so they do not count as a second source for numbers. NPS round trip 14-16 mi not recorded (range, round trip)."
  },
- "_skipped_all_others": "29 routes not researched: Chrome safety check blocked DuckDuckGo/most navigations in my tab, and the shared Chrome session was heavily loaded; budget spent on Half Dome only."
+ "ca_deerhorn_mountain_northeast_buttress": {
+  "area": "ca_deerhorn_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126721457",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP Northeast Ridge page: descent by down-climbing the Northeast Buttress route back to the talus, easy class 3."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "The right-hand of two buttresses on the northeast face; the Northeast Ridge is the left one",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126721457",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two options on the NE aspect: Northeast Ridge (left) and Northeast Buttress."
+     }
+    ]
+   }
+  ],
+  "note": "Only source is the MP Northeast Ridge page describing the Buttress as its easy class 3 descent. MP 203155770 \"Northeast Buttress\" (5.6, Thousand Island Lakes approach) is a different peak - unused. Wikipedia Deerhorn_Mountain opened: no route text (FA Norman Clyde only)."
+ },
+ "ca_devils_crag_1_standard_route": {
+  "area": "ca_devils_crag_1",
+  "skip_reason": "Opened Wikipedia Devils_Crags (Crag 1 FA July 21 1913 Charles W. Michael; easiest route class 4+, which conflicts with catalog Class 4; route itself not described). SummitPost devil-s-crag-1 page is a 403 wall. sierramountaineering.com and drdirtbag found by search, not opened. No route fact stated for the standard route itself."
+ },
+ "ca_diamond_peak_standard_route": {
+  "area": "ca_diamond_peak",
+  "skip_reason": "Opened climber.org reports 2006/1477 (Northeast Couloir, Baxter Pass TH, class 2) and 2011/1779 (multi-peak trip, Baxter Pass TH); neither describes the Standard route as such. SummitPost diamond-peak 403. Wikipedia Diamond_Peak_(California) has no route text."
+ },
+ "ca_dicks_peak_standard_route": {
+  "area": "ca_dicks_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Dicks_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Infobox: easiest route class 2 via Dicks Pass."
+     },
+     {
+      "url": "https://www.climber.org/reports/2009/1713.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Dicks Pass a use trail leads up Dicks Peak; a 2nd class hike and scramble."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reach Dicks Pass (PCT and Tahoe Rim Trail, half a mile east of the peak), then follow a use trail up the peak",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Dicks_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dicks Pass, half a mile east, on the PCT and Tahoe Rim Trail, provides an approach."
+     },
+     {
+      "url": "https://www.climber.org/reports/2009/1713.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the pass a use trail goes up to Dicks Peak."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glen Alpine Springs",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2009/1713.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report trailhead: Glen Alpine Springs."
+     }
+    ]
+   }
+  ],
+  "note": "Climber.org trip was a Dicks-Jacks traverse; its distances not used."
+ },
+ "ca_disappointment_peak_standard_route": {
+  "area": "ca_disappointment_peak",
+  "skip_reason": "Opened climber.org 2008/1665 (Balcony-Disappointment-Middle Palisade traverse, class 4, Glacier Lodge South Fork TH: multi-peak, unusable) and 2006/1487 (Palisades west-of-crest multi-peak); Wikipedia Disappointment_Peak_(California) gives peak FA July 20 1919 and easiest route class 4+ (conflicts with catalog Class 4) but no route description. SummitPost 403."
+ },
+ "ca_disaster_peak_southwest_ridge": {
+  "area": "ca_disaster_peak",
+  "skip_reason": "Opened climber.org TripReports/1998/322 (Clark Fork Road approach 18 mi east of Strawberry on Hwy 108; route not named as southwest ridge) and Wikipedia Disaster_Peak (a different 7,690 ft peak). SummitPost 403. Could not confirm any fact for the Southwest Ridge itself."
+ },
+ "ca_dunderberg_peak_southeast_slopes_from_virginia_lakes": {
+  "area": "ca_dunderberg_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/dunderberg/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux class 2 from the Virginia Lakes trailhead."
+     },
+     {
+      "url": "https://www.climber.org/TripReports/2009/1689.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Virginia Lakes Road; difficulty class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Virginia Lakes",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/dunderberg/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Virginia Lakes (pit toilets)."
+     },
+     {
+      "url": "https://www.climber.org/TripReports/2009/1689.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Dunderberg Peak from the Virginia Lakes Road."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/dunderberg/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip header: elevation gain 2700 ft from Virginia Lakes trailhead."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "3:40",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/dunderberg/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip header: total time 3:40."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Summit about 2 miles from the nearest trailhead, with over 2,000 ft of trail-less talus",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/dunderberg/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit sits about 2 miles from the nearest trailhead and needs over 2,000 ft of trail-less talus."
+     }
+    ]
+   }
+  ],
+  "note": "TMAC header distance 3.8 mi is not labelled one-way or round trip - not recorded. TMAC went up the south slopes directly from Virginia Lakes; gain/time are that party's trip figures. Wikipedia: easiest route class 1-2."
+ },
+ "ca_eagle_buttress_traverse": {
+  "area": "ca_eagle_lake_buttress",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113273735",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Eagle Buttress Traverse Easy 5th."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Tim Ball and Tammy Graham, 1999",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113273735",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Tim Ball and Tammy Graham, 1999 (stated in description)."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the top of Eagle Buttress follow the ridge northeast about 1 mile; midway a pillar starts as a hand crack and finishes past 2 bolts and a pin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113273735",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge NE ~1 mile; pillar hand crack (#3), second half 2 bolts and a pin."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Two bolts on top of the pillar for rappel",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113273735",
+      "retrieved_at": "2026-11-14",
+      "fact": "On top of the pillar are 2 bolts for rappels."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Drop 50-100 ft left of the ridge and walk back to the start; easy walk-off bail at most points",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113273735",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drop 50-100 ft left of ridge and walk back; bailing left is an easy walk off at most points."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Small alpine rack and a 30 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113273735",
+      "retrieved_at": "2026-11-14",
+      "fact": "Small alpine rack and 30m rope sufficient."
+     }
+    ]
+   }
+  ],
+  "note": "No second publisher: SummitPost eagle-lake-buttress 403; AllTrails Eagle Falls is a hiking trail page."
+ },
+ "ca_east_arete_7": {
+  "area": "ca_mt_winchell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806936",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the East Arete 3rd class."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Winchell",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent route, a class 3 scramble up the east arete, is the least technical."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mansfield, Newell and Putnam, June 10 1923",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806936",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: B. Putnam, J.N. Newell, H.C. Mansfield, June 10, 1923."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Winchell",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent June 10, 1923 by Harvey C. Mansfield, John M. Newell and Putnam via the east arete."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reach Sam Mack Lake from Sam Mack Meadow or from Third Lake, pass the lake on the left and take a gully onto the shoulder below the arete",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806936",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach Sam Mack Lake from Sam Mack Meadow or Third Lake; gully to the shoulder."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Boulders in the right-hand chute on the southeast side to the arete shoulder, a near-horizontal knife edge, then a chute on the left to the tiny summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806936",
+      "retrieved_at": "2026-11-14",
+      "fact": "Righthand chute on SE side, knife-edged ridge to summit pyramid, left chute to summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Retrace the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105806936",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: retrace your steps."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia also notes the first winter ascent by Clyde, Harris and Brower in January 1938 on this route."
+ },
+ "ca_east_arete_mt_carl_heller": {
+  "area": "ca_mt_carl_heller_and_tulainyo_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109336689",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the East Arete 4th class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109336689",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: 1000 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109336689",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Carl Heller and Al Green, August 1966",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109336689",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed (misspelt on page) as Carl Heller and Al Green, August 1966."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Carl_Heller",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent August 1966 by Carl Heller and Al Green via the East Arete."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Southwest slopes, or down-climb the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109336689",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the southwest slopes or down-climb the route."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Scramble it, or a light alpine rack and a very short rope (15 m)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109336689",
+      "retrieved_at": "2026-11-14",
+      "fact": "Scramble, or light alpine rack and 15M rope for short steep steps."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the east ridge on good rock to the summit, staying left of the gully at the very top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109336689",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the East Ridge to the summit, staying left of the gully at the top."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia infobox gives easiest route class 3 for the peak; MP rates this route 4th - grade left single-source."
+ },
+ "ca_east_arete_via_south_east_ridge": {
+  "area": "ca_mt_lyell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106510488",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates East Arete via South East Ridge 4th class, snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Rush Creek trailhead at Silver Lake (June Lake Loop, Hwy 158)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106510488",
+      "retrieved_at": "2026-11-14",
+      "fact": "Use Rush Creek trail; start from Lower Marie Lake."
+     },
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eastern approach starts at the Rush Creek trailhead at Silver Lake on the June Lake Loop."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Rush Creek trail past Agnew, Gem and Waugh lakes to the John Muir Trail, then a side trail to the Marie Lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail climbs past Agnew, Gem and Waugh lakes to the JMT; side trail to Marie Lakes."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Wade the Lower Marie Lake outlet, go up the creek below Middle Marie Lake, cross the Upper Marie outlet and a permanent snowfield, traverse the class 3 southeast ridge to the East Col, cross onto the glacier, then the 4th class arete and class 3 rock to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106510488",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wade Lower Marie outlet; snowfield; class 3 SE ridge to East Col; glacier; East Arete 4th class; class 3 to summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Carefully descend the route back to Lower Marie Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106510488",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the route - the least risky way back to Lower Marie Lake."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Marie Lakes side uses Inyo National Forest permits and rules",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-lyell-mountain-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Marie Lakes side uses Inyo National Forest permits and rules."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Solo; an ice axe is extremely useful",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106510488",
+      "retrieved_at": "2026-11-14",
+      "fact": "Solo, ice-axe extremely useful."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn grade line cites Mountain Project, so it is not an independent grade source. MP FA (Ulyashin/Yeo, Aug 2002?) is marked uncertain on the page - not recorded."
+ },
+ "ca_east_couloir": {
+  "area": "ca_basin_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794369",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the East Couloir 4th class (4th/low 5th above the saddle)."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794369",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir rises about 2,000 ft to a saddle; route type line 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dick Beach and Dave King, 1974",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794369",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Dick Beach and Dave King, 1974."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the prominent east couloir about 2,000 ft to a saddle, then a 4th class to low 5th class scramble northwest to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794369",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir ~2,000 ft to saddle, then 4th/low 5th scramble NW to summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Old jeep trail toward the col, which is visible from the Buttermilks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794369",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach the col using an old jeep trail; col visible from the Buttermilks main area."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Optional rope for inexperienced snow climbers; light rock rack if not soloing low 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111794369",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rope with a leader optional; light rock rack for low 5th."
+     }
+    ]
+   }
+  ],
+  "note": "No second publisher: SummitPost east-couloir/160808 is a 403 wall; summitborn and themtsarecalling Basin pages 404."
+ },
+ "ca_east_couloir_variation": {
+  "area": "ca_basin_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113022999",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the East Couloir Variation 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113022999",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: 2000 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Horton Lake trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113022999",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at Horton Lake trail head."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Up the East Couloir to the saddle, traverse west over class 3 rock, climb a steep south-facing snow face to just below the summit, then class 2-3 rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113022999",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir to saddle, traverse west on class 3, snow face on south slope, last 100 ft class 2-3."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "North slope toward Horton Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113022999",
+      "retrieved_at": "2026-11-14",
+      "fact": "The north slope toward Horton Lake is a relatively safe descent."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113022999",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear: ice axe, crampons."
+     }
+    ]
+   }
+  ],
+  "note": "Bypasses the 4th class rock at the top of the East Couloir. No second publisher found (see ca_east_couloir)."
+ },
+ "ca_east_face_20": {
+  "area": "ca_eagle_scout_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118736004",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates the East Face 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118736004",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route type line: 1800 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Kaweah Gap go cross-country south toward the east/northeast face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118736004",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Kaweah Gap scramble cross-country south to the E/NE face."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "The east face is the easiest way up and down the peak (grassy ramp or broad bowl)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118736004",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grassy ramp or broad East Face bowl; easiest way up and down the peak."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Eagle_Scout_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The east face is relatively gentle and offers the easiest routes to the summit."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia calls the main route a Class 2 scramble; MP says 3rd - grade left single-source. Peak FA July 15 1926 (Farquhar and Eagle Scouts) not tied to this route on the page."
+ },
+ "ca_east_face_left_side": {
+  "area": "ca_whaleback",
+  "skip_reason": "Opened Wikipedia Whaleback_(California) (FA Aug 5 1936 Pridham and van Loben Sels; easiest route class 3; no route description). Mountain Project East Face Left pages 123693109 and 105827735 are Wind River Range routes, not this peak. SummitPost whaleback 403. No page describes the East Face, Left Side."
+ }
 }
