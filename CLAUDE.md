@@ -288,6 +288,7 @@ npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
 npm run check:profile-privacy # PGlite replay, then profiles read as anon/authenticated: hidden name/photos and private columns refused, every app select list still allowed (hand-run, 0434)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS; every write policy asks WHO is calling; every view is read-only to the app's keys (in build)
+npm run check:hook-signature # does the screen-content hook signature (0429) agree between pgcrypto in the trigger and the edge function, and refuse stale/forged calls? (in build)
 ```
 
 There is no unit test suite; `check:types` type-checks `src/` (strict TypeScript), `lint` runs
