@@ -1,0 +1,435 @@
+[
+ {
+  "id": "wa_gorillas_direct",
+  "name": "Gorillas Direct",
+  "area_id": "wa_mount_stuart",
+  "discipline": "alpine",
+  "grade": "5.10d",
+  "pitches": 8,
+  "gain_ft": 6150,
+  "dist_km": 24.1,
+  "high_point_ft": 9415,
+  "season": "Jul-Sep",
+  "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls. For the Cascadian Couloir and South Headwall, turn right onto the Longs Pass Trail at the junction about 1.7 miles in, climb to Longs Pass (about 6,250 ft) near mile 2.9, and descend the rocky climbers' trail on the far side to Ingalls Creek, cross on a log bridge, and follow the climbers' path up the meadow into the base of the Cascadian Couloir (South Headwall lies further up-basin via the same drainage). For West Ridge, the North Ridge routes, and the West Face Wall (Gorillas in the Mist / Gorillas Direct / King Kong), instead stay on the Ingalls Way Trail over Ingalls Pass (about 6,500 ft, roughly mile 3) and continue past Ingalls Lake toward Stuart Pass, then follow the climbers' trail onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass (7,600 ft) — the West Face Wall with the Gorillas routes sits in the amphitheater roughly midway between Stuart Pass and Goat Pass, while West Ridge and North Ridge climbers continue over or along Goat Pass toward their respective start points. Camping is common near Goat Pass or down at Ingalls Creek depending on the objective. The North Ridge routes can also be reached from the opposite (Mountaineer Creek) side.",
+  "descent": "Follow the West Ridge to the summit, or descend the main gully with scrambling/downclimbing, breaking right onto a large bench with a single-rope rappel option before reaching Stuart Pass.",
+  "bivy": [
+   {
+    "elev": 6000,
+    "name": "Upper Ingalls Creek meadows, below Stuart Pass",
+    "role": "main",
+    "type": "camp",
+    "notes": "Parties climbing the West Ridge often push past Headlight Basin to the meadows at the head of Ingalls Creek so the morning starts near the base of the ridge instead of two hours below it. The ground is a boulder-and-heather mix under the West Wall, and site quality varies a lot within a few hundred yards. From here the West Ridge start is a short climb to the saddle, and Stuart Pass gives access onward toward Goat Pass and the north side. Reports differ on how long snow lingers in these meadows; early-season parties should plan on some of it.",
+    "water": "Headwater streams and snowmelt runnels are usually flowing into late summer, but they thin markedly in a dry year and can require walking downstream to find a reliable source",
+    "permit": "Alpine Lakes Wilderness, Cle Elum Ranger District. Free self-issued wilderness permit; Northwest Forest Pass for the Esmeralda trailhead. Outside the Enchantment Permit Area, so no reservation needed — but you are camping on fragile alpine meadow, so pitch on gravel or bare rock rather than vegetation.",
+    "capacity": "A few small parties on durable ground; dispersed rather than developed, with no built sites"
+   },
+   {
+    "name": "Headlight Basin designated sites",
+    "role": "main",
+    "type": "camp",
+    "notes": "Headlight Basin sits just past Ingalls Pass and is the legal overnight option for parties staging the West Ridge or approaching the north side via Stuart Pass. It buys a comfortable night with the whole south face in view, but it is well short of any route start, so summit day from here is long. Do not be tempted by the shoreline at Lake Ingalls — that closure is enforced and the ground there is fragile. Use the marked pads and skip a fire; open flame is off the table at this elevation. No elevation is recorded for the basin itself because a confident single figure could not be sourced.",
+    "water": "Headlight Creek and snowmelt tarns feed the basin and are dependable through midsummer; by late September the smaller channels can go dry and you may need to hunt for running water",
+    "permit": "Alpine Lakes Wilderness, Cle Elum Ranger District. Free self-issued trailhead permit for day and overnight use, plus a Northwest Forest Pass to park at Esmeralda. Not part of the Enchantment Permit Area — no lottery, no quota. Camping is prohibited within half a mile of Lake Ingalls itself, which is why the designated sites here exist.",
+    "capacity": "A number of established, signed sites through the basin; the largest legal camping capacity on the Esmeralda side, though it fills on summer weekends with hikers rather than climbers"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)",
+    "type": "Trailhead",
+    "elev": 4269
+   },
+   {
+    "name": "Headlight Creek crossing",
+    "type": "Water",
+    "elev": 6312
+   },
+   {
+    "name": "Ingalls Pass",
+    "type": "Junction",
+    "elev": 6457
+   },
+   {
+    "name": "Mount Stuart summit area",
+    "type": "Summit",
+    "elev": 9415
+   }
+  ],
+  "peak": "Mount Stuart",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_ingalls_peak_north_peak_southwest_face",
+  "name": "North Peak Southwest Face",
+  "area_id": "wa_ingalls_peak",
+  "discipline": "alpine",
+  "grade": null,
+  "pitches": null,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": null,
+  "approach": "From the Esmeralda Basin Trailhead (FR-9737), follow the old mine road about 0.25 mile to a fork and turn right onto the Ingalls Way trail. Hike roughly 3 miles to Ingalls Pass and on to Ingalls Lake, about 4 miles from the car. Scramble to the notch between the north and south summits, then drop west about 100 feet to a friction slab, where the Southwest Face begins.",
+  "descent": null,
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Ingalls Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_king_kong_gorillas_direct_direct",
+  "name": "King Kong - Gorillas Direct Direct",
+  "area_id": "wa_mount_stuart",
+  "discipline": "alpine",
+  "grade": "5.12a",
+  "pitches": 8,
+  "gain_ft": null,
+  "dist_km": 7.2,
+  "high_point_ft": 9415,
+  "season": "Jul-Sep",
+  "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls over Ingalls Pass (about 6,500 ft, roughly mile 3), then continue past Ingalls Lake toward Stuart Pass, follow the climbers' trail onto the talus shoulder below Stuart's West Ridge, and contour northwest to Goat Pass (7,600 ft). The West Face Wall, home to the Gorillas routes (Gorillas in the Mist / Gorillas Direct / King Kong), sits in the amphitheater roughly midway between Stuart Pass and Goat Pass. Camping is common near Goat Pass or down at Ingalls Creek.",
+  "descent": "Follow the West Ridge to the summit, or descend the main W Ridge gully via scrambling/downclimbing, breaking skier's right onto a large bench, single-rope rappel from a fixed anchor, then downclimb to Stuart Pass bivy sites.",
+  "bivy": [
+   {
+    "elev": 6000,
+    "name": "Upper Ingalls Creek meadows, below Stuart Pass",
+    "role": "main",
+    "type": "camp",
+    "notes": "Parties climbing the West Ridge often push past Headlight Basin to the meadows at the head of Ingalls Creek so the morning starts near the base of the ridge instead of two hours below it. The ground is a boulder-and-heather mix under the West Wall, and site quality varies a lot within a few hundred yards. From here the West Ridge start is a short climb to the saddle, and Stuart Pass gives access onward toward Goat Pass and the north side. Reports differ on how long snow lingers in these meadows; early-season parties should plan on some of it.",
+    "water": "Headwater streams and snowmelt runnels are usually flowing into late summer, but they thin markedly in a dry year and can require walking downstream to find a reliable source",
+    "permit": "Alpine Lakes Wilderness, Cle Elum Ranger District. Free self-issued wilderness permit; Northwest Forest Pass for the Esmeralda trailhead. Outside the Enchantment Permit Area, so no reservation needed — but you are camping on fragile alpine meadow, so pitch on gravel or bare rock rather than vegetation.",
+    "capacity": "A few small parties on durable ground; dispersed rather than developed, with no built sites"
+   },
+   {
+    "name": "Headlight Basin designated sites",
+    "role": "main",
+    "type": "camp",
+    "notes": "Headlight Basin sits just past Ingalls Pass and is the legal overnight option for parties staging the West Ridge or approaching the north side via Stuart Pass. It buys a comfortable night with the whole south face in view, but it is well short of any route start, so summit day from here is long. Do not be tempted by the shoreline at Lake Ingalls — that closure is enforced and the ground there is fragile. Use the marked pads and skip a fire; open flame is off the table at this elevation. No elevation is recorded for the basin itself because a confident single figure could not be sourced.",
+    "water": "Headlight Creek and snowmelt tarns feed the basin and are dependable through midsummer; by late September the smaller channels can go dry and you may need to hunt for running water",
+    "permit": "Alpine Lakes Wilderness, Cle Elum Ranger District. Free self-issued trailhead permit for day and overnight use, plus a Northwest Forest Pass to park at Esmeralda. Not part of the Enchantment Permit Area — no lottery, no quota. Camping is prohibited within half a mile of Lake Ingalls itself, which is why the designated sites here exist.",
+    "capacity": "A number of established, signed sites through the basin; the largest legal camping capacity on the Esmeralda side, though it fills on summer weekends with hikers rather than climbers"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)",
+    "type": "Trailhead",
+    "elev": 4269
+   },
+   {
+    "name": "Headlight Creek crossing",
+    "type": "Water",
+    "elev": 6312
+   },
+   {
+    "name": "Ingalls Pass",
+    "type": "Junction",
+    "elev": 6457
+   },
+   {
+    "name": "Mount Stuart summit area",
+    "type": "Summit",
+    "elev": 9415
+   }
+  ],
+  "peak": "Mount Stuart",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_liberty_bell_sidewinder",
+  "name": "Sidewinder (Southwest Corner)",
+  "area_id": "wa_liberty_bell",
+  "discipline": "alpine",
+  "grade": "5.9+",
+  "pitches": 5,
+  "gain_ft": 2520,
+  "dist_km": 4,
+  "high_point_ft": 7720,
+  "season": "Jun-Sep",
+  "approach": "Follow the Beckey Gully approach, breaking left at the fork; multiple start options exist depending on the chosen variation, scrambling to a major shelf or ramp below a cave feature.",
+  "descent": "Standard Liberty Bell descent via the Beckey Route (two rappels)",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Blue Lake Trailhead",
+    "type": "Trailhead",
+    "elev": 5380
+   },
+   {
+    "name": "Liberty Bell summit",
+    "type": "Summit",
+    "elev": 7720
+   }
+  ],
+  "peak": "Liberty Bell Mountain",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_phantom_peak_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_phantom_peak",
+  "discipline": "alpine",
+  "grade": "5.10",
+  "pitches": 10,
+  "gain_ft": 1916,
+  "dist_km": null,
+  "high_point_ft": 8016,
+  "season": "Jul-Aug",
+  "approach": "An involved two-day approach: ~10 miles on trail up and over Hannegan Pass, wading the Chilliwack River, traversing the scenic 5-mile Easy Ridge, soloing exposed 4th-class terrain across the 'Imperfect Impasse,' climbing through Perfect Pass and over the Challenger Glacier, then descending and traversing steep snow, talus, and more glacier to a bivy site under Ghost Peak (Phantom Peak's neighbor immediately to the north), from which the full west ridge comes into view.",
+  "descent": "Descend via the peak's southeast face route back toward the Ghost Peak bivy.",
+  "bivy": [
+   {
+    "name": "Easy Ridge bivouac ground below Easy Peak",
+    "role": "main",
+    "type": "bivy",
+    "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climbed through to the western slope of the range. From the trailhead you go over Hannegan Pass and down past Boundary and Copper Creek camps, then ford the Chilliwack River just above where Easy Creek comes in, and climb about five miles of ridge to open ground above 6,000 ft, with Easy Peak at 6,615 ft carrying the anchors of an old lookout. The sting is what comes after: reaching Perfect Pass from here means descending roughly 1,000 ft to get around the Imperfect Impasse gap and climbing back up, which is why parties who intend to camp at Perfect Pass often prefer the Whatcom Pass side instead. Two days in before any climbing starts.",
+    "water": "Seasonal tarns scattered along the crest. Some hold water and some are dry in the same summer, which makes this the least predictable water on the route. Fill at the Chilliwack River before starting up.",
+    "permit": "Park wilderness permit required. This side is served by the wilderness information centres on both the Mount Baker Highway and at Marblemount, and the ranger will decide whether your night goes onto a designated camp or a cross-country zone — ask rather than assume, because the answer changes what the rest of the itinerary can say. Walk-up. Fires prohibited. Approved food storage required, and above treeline there is nothing to hang from, so a canister is the practical answer.",
+    "capacity": "Small — one or two parties on the ridge crest; party limit 6"
+   },
+   {
+    "name": "Crooked Thumb Glacier moraine camp",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Moraine camp at the southern edge of the Crooked Thumb Glacier, below Ghost Peak, reached from Perfect Pass across the Challenger Glacier. The bivy for the west ridge, which starts from a 6,100 ft saddle below. Fully exposed to weather.",
+    "water": "Snowmelt and glacier melt only",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents on a narrow moraine"
+   },
+   {
+    "elev": 6300,
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevations vary between roughly 6,000 and 6,300 ft depending on the account, and there are no facilities of any kind.",
+    "water": "Snowmelt streams and tarns; dependable while snow lingers, marginal to absent late season",
+    "permit": "Wilderness permit for the Perfect Pass cross-country zone. Walk-up only and capped at a single party per night. It cannot be booked ahead, so the permit is won or lost at the counter — this quota is usually the binding constraint on a Challenger trip, not the terrain.",
+    "capacity": "Party limit 6, and only ONE party per night in the whole zone — the tightest quota in this part of the park"
+   },
+   {
+    "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "role": "route",
+    "type": "bivy",
+    "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather than commit to a very long day from Perfect Pass or Challenger Arm. These are made rather than found — a platform stamped into snow, or a gravel patch on a rib — and quality is entirely a matter of what the party can dig. There is no shelter and no water, crevasse hazard is present wherever you put the tent, and it only makes sense with a settled forecast. Anyone unwilling to melt snow for every drop should sleep at Challenger Arm or Perfect Pass instead and accept the longer day.",
+    "water": "None. These are snow-and-rock bivouacs — carry water up or melt snow, and assume there is nothing to find.",
+    "permit": "Still inside the Challenger cross-country zone and still needs a wilderness permit with that night assigned to it. On the glacier the surface rule takes care of itself, but human waste must be carried out in a blue bag; there is no burying it here. No fires. Party limit 6.",
+    "capacity": "One party, often on a levelled snow platform or a single gravel ledge"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [],
+  "peak": "Phantom Peak",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_skeena26",
+  "name": "Skeena26",
+  "area_id": "wa_south_face",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "pitches": 12,
+  "gain_ft": 2200,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jun-Sep",
+  "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the rough, unmaintained climbers' approach — the old roadbed past a landslide crossing to a boot track that drops to a ford of Squire Creek, then a climbers' track across a tributary and up through old-growth forest into two steep, dirty gullies that top out on the grassy saddle below the South Face, roughly 3 hours from the car, with route-finding (flagging, cairns) required in several spots.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 463,
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "role": "main",
+    "type": "camp",
+    "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+    "water": "Piped drinking water via spigots through the campground; reliable in season",
+    "permit": "None — this is a county park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+    "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+   },
+   {
+    "name": "Squire Creek road end / trailhead bivouac",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A moving target and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+    "water": "Squire Creek runs close by and is dependable, but needs treating",
+    "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+    "capacity": "A few parties, informal"
+   },
+   {
+    "name": "Squire Creek Wall on-route ledges",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatever you hauled. Most parties climbing here do not need it, and it should be treated as a planned option for the biggest routes or as an emergency out, rather than as a reason to carry overnight gear by default.",
+    "water": "A rock pocket at the lower ledge holds water through much of the season, but it is a puddle, not a source — assume it may be dry and carry what you need",
+    "permit": "None",
+    "capacity": "Small ledges, one party"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "type": "Campsite",
+    "elev": 463
+   },
+   {
+    "name": "Squire Creek Road washout parking (FS Rd 2040)",
+    "type": "Trailhead",
+    "elev": 1170
+   },
+   {
+    "name": "Grassy saddle (South Face routes)",
+    "type": "Base/bivy",
+    "elev": 3249
+   }
+  ],
+  "peak": "South Face",
+  "area_type": "crag"
+ },
+ {
+  "id": "wa_south_face_4",
+  "name": "South Face",
+  "area_id": "wa_kangaroo_temple",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 7,
+  "gain_ft": 2400,
+  "dist_km": null,
+  "high_point_ft": 7572,
+  "season": "Jun-Sep",
+  "approach": "The Temple (Kangaroo Temple, on Kangaroo Ridge) is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass — the same parking area used for the neighboring Hairpin Crags/Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, through forest and more talus (faint, intermittently cairned) up to Kangaroo Pass, about 1 hour. From the pass, an intermittent trail traverses to a gully between Kangaroo Temple and Little Finger; ascending or descending that gully reaches the base of the North Face, Northwest Face, or Southwest Face routes, roughly another hour. Important — this route shares the approach to Kangaroo Pass with Temple's North/Northwest Face routes but finishes differently: rather than climbing toward the notch, drop some elevation below the pass and traverse across to the base of the South Face, roughly 2-4 hours from the car in all. The face isn't visible from the highway.",
+  "descent": "Most parties descend via Kangaroo Temple's standard fixed rappel line on the north side rather than reversing the South Face.",
+  "bivy": [
+   {
+    "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "role": "main",
+    "type": "camp",
+    "notes": "This is the honest answer for most objectives here: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangaroo, Poster Peak and the crags immediately above the highway, while the broad pullout further east sits at roughly 4,300 ft and serves the M&M Wall, the Wine Spires and Vasiliki Ridge. Elevations across these pullouts run from about 4,300 ft up to near the 5,477 ft pass, so nights are cool even in midsummer. Nothing is developed — no toilet, no table, no water — and highway noise carries.",
+    "water": "None at either pullout. Carry everything, or filter from Early Winters Creek where the Wine Spires climbers' trail crosses it.",
+    "permit": "Okanogan-Wenatchee National Forest — no quota permit and no reservation of any kind. A Northwest Forest Pass covers day-use parking at the fee trailheads; sleeping in a vehicle at a pullout needs no separate permit, and the general 14-day stay limit applies.",
+    "capacity": "Informal; a handful of vehicles at each pullout, with the hairpin lot the largest and busiest on summer weekends"
+   },
+   {
+    "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "role": "main",
+    "type": "camp",
+    "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone Fir around 3,600 ft, Early Winters near 2,200 ft — so they are warmer and considerably lower than the climbing, and Lone Fir is about seven miles from the Blue Lake area. Klipchuck sits back off the highway and is the quietest of the three. All are seasonal and closed when the road is.",
+    "water": "Klipchuck and Early Winters have drinking water in season, shut off outside it. Lone Fir has none, but sits on Early Winters Creek, which needs filtering.",
+    "permit": "Fee per night, first-come first-served at all three — no reservations, no climbing or backcountry permit. A Northwest Forest Pass is not needed to occupy a site. Fourteen-day stay limit.",
+    "capacity": "Roughly 27 sites at Lone Fir, 46 at Klipchuck and about a dozen tent-only sites at Early Winters"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Washington Pass Hairpin Turnout",
+    "type": "Trailhead",
+    "elev": 5160
+   },
+   {
+    "name": "Kangaroo Temple",
+    "type": "Summit",
+    "elev": 7572
+   }
+  ],
+  "peak": "Kangaroo Temple",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_the_chopping_block_northeast_ridge",
+  "name": "Northeast Ridge",
+  "area_id": "wa_the_chopping_block",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "pitches": 4,
+  "gain_ft": null,
+  "dist_km": null,
+  "high_point_ft": 6819,
+  "season": "Jul-Oct",
+  "approach": "Via the multi-day Goodell Creek approach to a camp on the Chopping Block ridge (~6,400 ft) or the col separating the peak from the main Picket Range; from there, walk and scramble (some exposed 3rd class) southwest to the base of the ridge.",
+  "descent": "Rappel the route (1-2 ropes; 70m recommended for most stations) back to the base of the ridge.",
+  "bivy": null,
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "The Chopping Block summit",
+    "type": "Summit",
+    "elev": 6819
+   }
+  ],
+  "peak": "The Chopping Block",
+  "area_type": "peak"
+ },
+ {
+  "id": "wa_western_dihedral",
+  "name": "Western Dihedral",
+  "area_id": "wa_south_face",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "pitches": 5,
+  "gain_ft": 2200,
+  "dist_km": null,
+  "high_point_ft": null,
+  "season": "Jun-Sep",
+  "approach": "South Face is the southwest-facing slab wall around the corner west of the Illusion Wall, with its own approach separate from Waterfall Basin. Take I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. Walk the old roadbed past the flagged landslide crossing to the brown Squire Creek Trail #654 sign and 8-10 minutes beyond it, to two cut logs either side of the road with old logging cable visible. Turn right a few steps past them on a well-beaten boot track, drop to Squire Creek and ford it where it is shallowest (hard in early season or after storms), then follow the climbers' track briefly downstream before it turns uphill, crosses a tributary and climbs old-growth forest and two gullies, steep and dirty near the top, to the grassy saddle, about 3 hours from the car. For this route go left (west) from the saddle to the base of Skeena26, scramble about 100 m of class 4 ramps and small dihedrals to a large shelf, follow it left to a deep gully (two-bolt anchor for a hand line or a short rappel), cross it and follow a cairned boot track west across talus and cedar ribs to the large talus field below the far western wall, about an hour from Skeena26.",
+  "descent": null,
+  "bivy": [
+   {
+    "elev": 463,
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "role": "main",
+    "type": "camp",
+    "notes": "Sits in old-growth timber near where Squire Creek meets the North Fork Stillaguamish, a few miles west of Darrington on SR 530 — not on the Mountain Loop Highway, and not up the Squire Creek road itself. It is the most comfortable base for a weekend on the Darrington granite, with flush toilets and a swimmable creek, at the cost of a drive back into town each morning. Because it is county-run rather than Forest Service, the fee schedule, season and reservation window are set separately from the national forest campgrounds and should be checked on their own.",
+    "water": "Piped drinking water via spigots through the campground; reliable in season",
+    "permit": "None — this is a county park, not Forest Service. Nightly fee, reservations through the Snohomish County Parks system. A Northwest Forest Pass does nothing here.",
+    "capacity": "Roughly 30 non-hookup sites, tents and RVs, reservable"
+   },
+   {
+    "name": "Squire Creek road end / trailhead bivouac",
+    "role": "main",
+    "type": "bivy",
+    "notes": "The Squire Creek road out of the west end of old Darrington has been cut by a washout well short of its historic end for many years, so the drivable road end is A moving target and the walk in to Squire Creek Wall is longer than older descriptions suggest. Parties sleeping in the car or under a tarp at the closure are doing so to get an early start on that extra walking, not because there is anything established there. Confirm the current closure point before committing — how far you can drive has changed repeatedly between seasons, and it is the single biggest variable in a Squire Creek Wall day.",
+    "water": "Squire Creek runs close by and is dependable, but needs treating",
+    "permit": "None for dispersed camping on forest land; the usual 14-day and setback rules apply.",
+    "capacity": "A few parties, informal"
+   },
+   {
+    "name": "Squire Creek Wall on-route ledges",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The long routes on Squire Creek Wall have a couple of usable ledges high on the face, the better-known ones roughly a third and two-thirds of the way up, and parties moving slowly on the full-length lines have used them to split the climb. This is genuine bivouac ground rather than camping — a ledge, a rope, and whatever you hauled. Most parties climbing here do not need it, and it should be treated as a planned option for the biggest routes or as an emergency out, rather than as a reason to carry overnight gear by default.",
+    "water": "A rock pocket at the lower ledge holds water through much of the season, but it is a puddle, not a source — assume it may be dry and carry what you need",
+    "permit": "None",
+    "capacity": "Small ledges, one party"
+   }
+  ],
+  "itinerary": null,
+  "waypoints": [
+   {
+    "name": "Squire Creek Park & Campground, Snohomish County",
+    "type": "Campsite",
+    "elev": 463
+   },
+   {
+    "name": "Squire Creek Road washout parking (Trail #654)",
+    "type": "Trailhead",
+    "elev": 1376
+   },
+   {
+    "name": "Grassy saddle (South Face routes)",
+    "type": "Base/bivy",
+    "elev": 3249
+   },
+   {
+    "name": "Top of Western Dihedral (far western wall)",
+    "type": "Topout",
+    "elev": null
+   }
+  ],
+  "peak": "South Face",
+  "area_type": "crag"
+ }
+]

@@ -235,7 +235,7 @@ export function renderProfile(climber) {
     return renderToStaticMarkup(
       React.createElement(QueryClientProvider, { client: qc },
         React.createElement(FullProfile, {
-          climber, onClose: noop, onResume: noop, catchCredits: [], myCrews: [],
+          climber, onClose: noop, onResume: noop, myCrews: [],
           myFriendIds: [], vouched: false, mySpeedFtHr: 0, routeById: () => null,
         })));
   } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }

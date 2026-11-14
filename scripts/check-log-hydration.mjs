@@ -93,7 +93,7 @@ const written = depth1Keys(payloadLit);
 // hydration of the same rows DID read the column, so it stayed on screen for every other
 // climber. An exemption is a claim about the code, and this one had quietly stopped being
 // true; it is now a real round-trip and the exemption is gone so it cannot lapse again.
-const DERIVED = new Set(["discipline", "caught_fall"]);
+const DERIVED = new Set(["discipline"]);
 
 // ---- what the read path maps back -------------------------------------------
 const hi = SRC.indexOf("var item={_dbId:row.id");
@@ -127,8 +127,8 @@ console.log(`  ok    every persisted column is mapped back`);
 // code and is silent data loss in practice: the field is mapped, so it looks
 // handled, and it is always empty because nothing ever put a value there.
 //
-// Four columns are in that state today. They are NOT oversights and adding them
-// to the payload would not work: partners is uuid[] and belayed_by/crew_id are
+// Three columns are in that state today. They are NOT oversights and adding them
+// to the payload would not work: partners is uuid[] and crew_id is
 // uuid, while the app holds partner NAMES ("Maya Chen") and has no profile ids
 // to resolve them against. They are blocked on partner tagging resolving real
 // profiles, so they are recorded here rather than silently tolerated. Remove an
@@ -136,7 +136,6 @@ console.log(`  ok    every persisted column is mapped back`);
 // go away.
 const UNWRITTEN_OK = new Map([
   ["partners",   "uuid[]; app holds partner names, needs profile-id resolution"],
-  ["belayed_by", "uuid; same — catch credit has no profile id to point at"],
   ["crew_id",    "uuid; log<->crew link is never set on save"],
   ["gpx_track",  "written only via contribute, never by the log save path"],
 ]);

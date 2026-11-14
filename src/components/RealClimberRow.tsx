@@ -57,7 +57,7 @@ export interface RealClimberCand {
   sportGrade?: string | null;
   tradGrade?: string | null;
   boulderGrade?: string | null;
-  climbGrades?: Record<string, { grade?: string; role?: string }>;
+  climbGrades?: Record<string, { grade?: string; role?: string; follow?: string }>;
   gender?: string;
   availability: string[];
   availWeek: string[];

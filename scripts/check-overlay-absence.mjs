@@ -232,9 +232,6 @@ const CHECKED = {
   eventForm: '"No climbs on this list yet." (SharedListView) sits after its `(!given&&q.isError)` branch ("Couldn’t load this list…") and the missing-list branch, so a failed read cannot reach it; ListsManager\'s empty copy sits after its error branch ("Couldn’t load your objectives…")',
   areaTreeOpen: "AreaTree is gated on `selArea`, which is written only on the SEED catalog path — dead in production (VITE_USE_DB=true renders DbAreaBrowser)",
   logPickOpen: "LogRoutePicker filters the seed ROUTES/MOUNTAINS module constants; no DB read to fail",
-  logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',
-  giveVouchWith: 'same "No climbs match." filter copy',
-  quickLogFor: 'same "No climbs match." filter copy',
   eventInvite: "renders FullProfile; its vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
   /* The Help FAQ answers "Can I see other people's recorded GPX tracks?" and has to say that
      almost none exist -- `communityTracks` is a SEED-ONLY field and `routes` has no track column

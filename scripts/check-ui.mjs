@@ -148,8 +148,8 @@ const LANDMARKS = {
 // so clicking a control and capturing is what turns that silence into a failure.
 const DISCLOSURE = [
   /^\d+ updates?\s*[▾▸]?$/,     // "11 updates ▾"  (activity feed)
-  /^Alerts( · \d+ new)?\s*[▾▸]?$/,
-  /^View all \d+ \w+$/,                   // "View all 14 alerts"
+  /^Notifications( · \d+ new)?\s*[▾▸]?$/,   // Home's list, called Alerts until 2026-11-11
+  /^View all \d+ \w+$/,                   // "View all 14 notifications"
   /^View \d+ more suggestions?$/,
   /^Suggested climbs( · \d+)?\s*[▾▸]?$/,
   /^\d+ (updates|reports|climbs)\s*[▾▸]$/,
@@ -787,7 +787,7 @@ try {
   });
 
   // THE PROFILE SCREEN'S OWN TABS (Profile · Activity · Review for admins). The main walk captures
-  // Profile; Activity holds the logbook, the catch record and the Year in Climbing banner, so it is
+  // Profile; Activity holds the logbook and the Year in Climbing banner, so it is
   // captured here under the same rules (LANDMARKS["Profile:Activity"] asserts the banner). Profile is
   // tapped last so the screen is left where a visit starts.
   await flow("profile-tabs-switch", async () => {
