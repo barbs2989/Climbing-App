@@ -1526,7 +1526,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   see it:** `check:ui` reads text, and a screen whose right-hand edge is off-viewport
   reports the same characters as a correct one. Two bugs of this shape are already on record
   and both were found by eye. It walks the 6 tabs and every openable overlay at 390×844.
-  Runs on every PR and every push to main via `render-guards.yml`; not a build gate
+  Runs on every PR, and on main every 4 hours, via `render-guards.yml`; not a build gate
   (browser automation).
   - **The precision rule is what makes it usable.** A chip row with `overflowX:auto` is a
     *correct* pattern that is supposed to scroll sideways, so an element is reported only if
