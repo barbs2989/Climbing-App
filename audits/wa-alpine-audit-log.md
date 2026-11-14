@@ -38810,3 +38810,46 @@ via SummitPost/Mountain Project); `wa_this_my_friend` (FA party, month and year 
 Mountain Project and a 2024 trip report).
 
 Next batch will continue id-ascending from `wa_this_my_friend`.
+
+## 2026-11-14 — batch 549 (pass 8)
+
+Checked the next 8 in-scope routes id-ascending from `wa_this_my_friend`: all three Three Fingers
+summit lines (North Peak, Middle Peak South Face, South Peak via the historic lookout ladders),
+both Three Queens lines (Middle Peak South Chimney, West Peak), Lexington Tower's Tooth and Claw,
+Tower Mountain's Southwest Route, and Trapper Mountain's North Couloir.
+
+**No auto-fixed errors this batch** — the two discrepancies found both need a human structural
+decision rather than a column patch (same reasoning as the `wa_cascade_peak_east_ridge` call in
+batch 4: a half-corrected row is worse than a flagged one).
+
+**Flagged for human review:**
+- `wa_tooth_and_claw`'s `pitches` is stored as 7, but Mountain Project, SummitPost, and the 1990
+  AAC Publications note ("Lexington Spire, East Face, Right Side, 'Tooth and Claw'") independently
+  agree the route is 8 pitches — three corroborating sources against one. The stored `length_m`
+  (244 m / ~800 ft) already matches those sources, and the row's own `pitch_detail` is internally
+  consistent at 7 entries summing to ~230 m. Bumping `pitches` to 8 without a matching 8th
+  `pitch_detail` row would just trade one inconsistency for another, and no source found gives a
+  full pitch-by-pitch topo to split from — needs a guidebook/topo check, not a one-column fix.
+- `wa_three_queens_middle_peak`'s `fa` ("Pete Schoening, Don Wilde and Phil Sharpe, August 1950")
+  has no corroborating source. The only "Schoening + August 1950" first ascent found in the
+  published record is an unrelated, well-documented one: Pete Schoening and Fred Beckey's traverse
+  of Mt. Index's three peaks, same month and year, different mountain, different partners. Close
+  enough to suggest a possible conflation between two 1950 Schoening climbs, but not proof either
+  way. Needs a guidebook (Beckey's *Cascade Alpine Guide*) or AAJ check; no fix proposed.
+
+**Clean:** `wa_three_fingers_r1` (North Peak's "disputed true high point" framing in its own
+`overview` already matches the genuine elevation-survey disagreement found between Wikipedia,
+ListsOfJohn and TopoQuest — nothing to correct); `wa_three_fingers_r2` (Middle Peak South Face —
+published detail is as sparse as the row itself says, nothing to verify against); `wa_three_fingers_south_peak_lookout`
+(FA party Bedal/Engles/Benesh, the 1929 reconnaissance, the 1930-32/33 build, and the three fixed
+ladders over the Queest-Alb Glacier all confirmed via the NPS gallery/Forest Service record and
+multiple trip reports); `wa_three_queens_west_peak` (6,400 ft high point matches PeakVisor; the
+Three Queens Fire closure note names its own end date — Oct 31, 2026 — so it's self-limiting per
+`audit:expiring-closures`' own precision rule, not a defect); `wa_tower_mountain_southwest_route`
+(8,444 ft high point and 1913 first ascent both confirmed via Wikipedia/SummitPost);
+`wa_trapper_mountain_north_couloir` (7,530 ft high point matches Wikipedia/Peakbagger exactly; the
+1970s foot FA and 2012 first ski descent by Rowan Stewart/Alex Spoonde are both corroborated by a
+trip report citing Skoog Alpenglow History; the 23.1-mile Cascade River Road distance matches NPS
+exactly).
+
+Next batch will continue id-ascending from `wa_trapper_mountain_north_couloir`.
