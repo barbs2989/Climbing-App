@@ -17,8 +17,10 @@ export const meta = {
 //   * 'agree'/'disagree' at '2-source' only when TWO INDEPENDENT sources say so. Sites that copy one
 //     guidebook, or two pages of the same site, count ONCE. An official land-manager page (.gov,
 //     .us, .gc.ca) alone is enough for official-only facts (permits, fees, closures, road status).
-//   * Never use or open AllTrails, Gaia, CalTopo, Strava, Wikiloc, Peakbagger or Mountain Project
-//     for track/geometry questions. Sites that answer 403 are skipped, not guessed at.
+//   * Any site may be READ for facts (owner, 2026-11-14: "use all sites for research for everything,
+//     all sessions, etc"); a site that answers 403 is read through the owner's Chrome when the agent
+//     has the claude-in-chrome tools, else skipped, never guessed at. A CAPTCHA is never solved.
+//     Track/line DATA from AllTrails, Gaia, CalTopo, Strava, Wikiloc, Peakbagger or MP is never used.
 //   * The owner owns no guidebooks — never claim a guidebook says something you did not read online.
 //   * Quote the exact words that support the verdict; no quote, no source.
 let _a = args;
@@ -43,7 +45,7 @@ const VERDICT = {
 const RULES = `Rules:
 - "agree"/"disagree" at confidence "2-source" ONLY when two INDEPENDENT sources (different sites, not copying the same guidebook) support it. One official land-manager page (.gov/.us/.gc.ca) is enough for permits, fees, closures, road status.
 - One good open source → "1-source". Nothing usable → verdict "unsure", confidence "none".
-- Never open AllTrails, Gaia, CalTopo, Strava, Wikiloc, Peakbagger or Mountain Project. Skip any site that refuses access (403); do not guess what it says.
+- Any site may be read for facts. If a site refuses access (403) and you have the claude-in-chrome tools, read it in your own Chrome tab (extract the figures with javascript_tool); without them, skip it and do not guess what it says. Never solve a CAPTCHA or login wall: stop and report it. Never use track/line data from AllTrails, Gaia, CalTopo, Strava, Wikiloc, Peakbagger or Mountain Project.
 - Every source needs its exact supporting words in "quote" (under 300 characters). No quote → not a source.
 - "ai_value" = the value you believe belongs in the field, in the SAME JSON shape as the current/suggested value (number stays number, array of rows stays array of rows). Omit it (null) when unsure, or when the climber's value is already right and verdict is "agree" — then use the climber's value.
 - "reasoning": 1–4 plain sentences the owner reads before deciding. Mention if the edit removes something.`;

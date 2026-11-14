@@ -46,9 +46,10 @@ already `owner` + locked.
   (USGS), miles/gain along a track that passed the track checks in
   `route-waypoints-and-tracks`. A measurement only counts if its input passed its own checks.
   Two measurements from the same data are one.
-- **`single-blocked`** (`locked-1src`) — the route's beta exists only on sites that block
-  agents (SummitPost, Peakbagger, The Mountaineers, CascadeClimbers, WTA trip reports): ONE
-  solid open source locks it at the lower tier. Two agreeing sources found later replace it.
+- **`single-blocked`** (`locked-1src`) — only ONE source states the fact, after the blocked sites
+  (SummitPost, Peakbagger, The Mountaineers, CascadeClimbers, WTA trip reports) were read through
+  the owner's Chrome (see the note under the source table): it locks at the lower tier. Two agreeing
+  sources found later replace it.
 - **`owner`** — the owner approved it.
 
 **Independent** = different publishers that do not cite each other. Count as ONE source:
@@ -113,7 +114,12 @@ for the owner. With fewer sources: do not touch the field; list it under **Dispu
 | avalanche, climate | NWAC, NWS | — |
 | emergency | county sheriff, land manager | — |
 
-\* blocks agents (403). **Never use the owner's browser or any trick to get past a block.**
+\* blocks automated fetchers (403). **READ IT THROUGH THE OWNER'S CHROME** (owner, 2026-11-14: "use all
+sites for research for everything, all sessions, etc"): the claude-in-chrome tools, one tab per agent,
+navigate + extract the figures with `javascript_tool` (don't read whole pages into context). Take facts
+and the URL only, never copied text. **A CAPTCHA, human check or login wall: stop and ask the owner to
+click it — never solve one.** Subagents without the Chrome tools still get 403; give that pass to an
+agent that has them. This applies to every site in this skill and in `route-waypoints-and-tracks`.
 The owner has no guidebooks to hand-check, so a guidebook counts only through a page that
 quotes its FACT (and that page then = the guidebook as one source).
 
