@@ -42,6 +42,8 @@ export interface TopoDrawerProps {
   onSubmit: (result: TopoDrawerResult) => void;
   /** Written with whether the drawing has unsaved work, so the sheet around the editor can ask before closing. */
   dirtyRef?: { current: boolean } | null;
+  /** Ask with this copy on Cancel even when nothing is drawn: the photo itself was just posted, so cancelling takes it down. */
+  discardAsk?: {title: string; body: string; confirmLabel: string} | null;
 }
 /** The handle under edit, or being dragged. */
 type Handle = {kind: "point"; l: number; i: number} | {kind: "pin"; i: number};
@@ -51,7 +53,7 @@ type DrawGesture = Handle | {kind: "pinch"; d0: number; m0: TopoPoint; base: Vie
 /* Exported for lib/LogAscent.jsx, which lets a climber draw a topo while logging the climb (lazy import, so the
    log form does not pull this file into its chunk until the control is tapped).
    Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}: TopoDrawerProps){
+export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef,discardAsk}: TopoDrawerProps){
   // lines[0] is the route line; lines[1..] are its variations.
   const [lines,setLines]=useState<TopoPoint[][]>(function(){return [((initial&&initial.points)||[]).slice()].concat(((initial&&initial.variants)||[]).map(function(v){return v.slice();}));});
   const [act,setAct]=useState(0);         // which line a tap extends
@@ -80,7 +82,7 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}: TopoDra
      different is unsaved, and dirtyRef lets the sheet around the editor ask before closing too. */
   const snapNow=JSON.stringify([lines,varLabels,pins,label]);const [snap0]=useState(snapNow);const dirty=snapNow!==snap0;
   useEffect(function(){if(dirtyRef)dirtyRef.current=dirty;},[dirty,dirtyRef]);
-  const cancel=function(){if(!dirty)return onCancel();askConfirm({title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)onCancel();});};
+  const cancel=function(){if(!dirty&&!discardAsk)return onCancel();askConfirm(discardAsk||{title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)onCancel();});};
 
   // A wheel zooms about the cursor on a desktop. Registered by hand: React's onWheel is passive,
   // and without preventDefault the sheet behind scrolls as well.
@@ -233,9 +235,13 @@ export default function TopoDrawer({initial,onCancel,onSubmit,dirtyRef}: TopoDra
     const on=!!sel&&sel.kind===kind&&sel.i===i&&(kind!=="point"||(sel as Extract<Handle,{kind:"point"}>).l===l);
     if(kind==="pin"){
       if(cat==="grade")return <span key={"pin"+i} data-h={"pin:"+i} title="Grade — drag to move"
-        style={{position:"absolute",left:x+"%",top:y+"%",transform:inv,lineHeight:0,cursor:"grab",touchAction:"none",padding:4}}><GradeTag text={pins[i].note||"Grade?"} size={13} on={on}/></span>;
-      const sz=on?26:20;return <span key={"pin"+i} data-h={"pin:"+i} title={pinLabel(cat)+" — drag to move"}
-      style={{position:"absolute",left:x+"%",top:y+"%",width:sz,height:sz,transform:inv,lineHeight:0,cursor:"grab",touchAction:"none"}}><PinIcon cat={cat as string} size={sz} on={on}/><PinNum n={nums[i]} style={{position:"absolute",right:-8,bottom:-6}}/></span>;}
+        style={{position:"absolute",left:x+"%",top:y+"%",transform:inv,lineHeight:0,cursor:"grab",touchAction:"none",padding:6}}><GradeTag text={pins[i].note||"Grade?"} size={11} on={on}/></span>;
+      /* SMALL MARKER, BIG TARGET (owner, 2026-11-14: "pins are a little too large when adding topo
+         photos"). Same rule as the line dots below: the icon a climber sees is 14px (18 selected) so it
+         covers the bolt or ledge it marks, and the 28px transparent box around it is what a finger grabs.
+         The inner icon ignores the pointer, so the handle's data-h is what onDown reads. */
+      const sz=on?18:14;return <span key={"pin"+i} data-h={"pin:"+i} title={pinLabel(cat)+" — drag to move"}
+      style={{position:"absolute",left:x+"%",top:y+"%",width:28,height:28,transform:inv,lineHeight:0,cursor:"grab",touchAction:"none"}}><span style={{position:"absolute",left:"50%",top:"50%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,pointerEvents:"none"}}><PinIcon cat={cat as string} size={sz} on={on}/><PinNum n={nums[i]} style={{position:"absolute",right:-9,bottom:-7,transform:"scale(0.85)"}}/></span></span>;}
     /* SMALL DOT, BIG TARGET (owner, 2026-10-23: "make the dots smaller and more precise"). The dot a
        climber sees is 7px (11 when selected, with a white ring) so it covers the hold it marks rather
        than the ledge around it; the 28px transparent box around it is what a finger grabs, so it is

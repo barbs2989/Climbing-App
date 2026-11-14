@@ -60,6 +60,9 @@ export default function TopoSection({route}: TopoSectionProps){
   const [localPhotos,setLocalPhotos]=useState<{id: string; url: string}[]>([]);
   const [localLines,setLocalLines]=useState<Record<string,LocalLine[]>>({});
   const [busy,setBusy]=useState(false);
+  /* An upload can be cancelled while it is in flight: the request is not abortable, so the row it
+     makes is taken down the moment it lands instead of opening the drawer. */
+  const uploadCancelled=useRef(false);
   /* alert() blocked the whole page for a failed upload, in an app that reports every other
      write inline. It also hid WHICH photo failed, since the dialog outlives the row. This
      renders in the section, next to the thing that failed, and clears on the next attempt.
@@ -86,11 +89,13 @@ export default function TopoSection({route}: TopoSectionProps){
   const addPhoto=function(file: File){
     setErr(null);
     if(USE_DB){
-      setBusy(true);
+      setBusy(true);uploadCancelled.current=false;
       uploadTopoPhoto(areaId,route.id,file).then(function(t){
-        setBusy(false);dbTopos.refetch();
-        setDrawFor({id:t.id,url:topoPhotoUrl(t.storage_path) as string,db:true,lines:[],fresh:true});
-      }).catch(function(e){setBusy(false);setErr((e&&e.message)||"Couldn't upload that photo.");});
+        setBusy(false);
+        if(uploadCancelled.current){uploadCancelled.current=false;deleteTopoPhoto(t.id,t.storage_path).catch(function(e){setErr((e&&e.message)||"Couldn't take down the cancelled photo — delete it from the photo viewer.");}).then(function(){dbTopos.refetch();});return;}
+        dbTopos.refetch();
+        setDrawFor({id:t.id,url:topoPhotoUrl(t.storage_path) as string,db:true,storagePath:t.storage_path,lines:[],fresh:true});
+      }).catch(function(e){setBusy(false);uploadCancelled.current=false;setErr((e&&e.message)||"Couldn't upload that photo.");});
     } else {
       const rd=new FileReader();
       rd.onload=function(){
@@ -129,7 +134,19 @@ export default function TopoSection({route}: TopoSectionProps){
      delete their own; like theirs, a photo other climbers have drawn on stays (it is theirs too) —
      so its uploader cannot take it down. */
   const drawDirty=useRef(false);
-  const closeDraw=function(){if(!drawDirty.current)return setDrawFor(null);askConfirm({title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok){drawDirty.current=false;setDrawFor(null);}});};
+  /* CANCEL MEANS THE PHOTO TOO (owner, 2026-11-14: "I clicked discard but it still showed on the route
+     page"). The photo is posted the moment it is picked, so the drawer opens on a stored row; closing
+     the drawer used to keep that photo, lineless, on the route for everyone. A photo posted in THIS
+     drawer now comes down with the drawing: the confirm says so, and it is asked even with nothing
+     drawn, since a stray backdrop tap would otherwise delete an upload without a word. Drawing on a
+     photo that was already there (or editing a line) still only drops the drawing. */
+  const freshAsk={title:"Cancel this topo?",body:"The photo you just added is removed from this route, along with anything you drew on it.",confirmLabel:"Remove photo"};
+  const dropDraw=function(){
+    const d=drawFor;drawDirty.current=false;setDrawFor(null);
+    if(!(d&&d.fresh&&d.db))return;
+    setErr(null);deleteTopoPhoto(d.id,d.storagePath).then(function(){return dbTopos.refetch();}).catch(function(e){setErr((e&&e.message)||"Couldn't remove that photo.");});
+  };
+  const closeDraw=function(){const fresh=!!(drawFor&&drawFor.fresh&&drawFor.db);if(!drawDirty.current&&!fresh)return dropDraw();askConfirm(fresh?freshAsk:{title:"Discard this drawing?",body:"The points and markers you placed are not saved.",confirmLabel:"Discard"}).then(function(ok){if(ok)dropDraw();});};
   const editLine=function(p: TopoModalPhoto,l: TopoModalLine){setViewerIdx(null);setDrawFor(Object.assign({},p,{editLine:l}) as TopoSectionPhoto);};
   const removeLine=function(_p: TopoModalPhoto,l: TopoModalLine){
     return askConfirm({title:"Delete your line?",body:"Your line and its markers come off this photo for everyone. The photo stays.",confirmLabel:"Delete line"}).then(function(ok){
@@ -147,7 +164,7 @@ export default function TopoSection({route}: TopoSectionProps){
   if(USE_DB&&dbTopos.isLoading)return <div style={{marginBottom:ROUTE_GAP}}><SL>TOPO</SL><LoadingRows C={C} label="Loading topo photos…" style={{padding:20}}/></div>;
 
   return <div style={{marginBottom:ROUTE_GAP}}>
-    <SL action={<button onClick={pickFile} disabled={busy} style={{padding:"8px 12px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid,fontSize:11.5,fontWeight:700,cursor:busy?"default":"pointer"}}>{busy?"Uploading…":"+ Add photo"}</button>}>TOPO</SL>
+    <SL action={busy?<span style={{display:"inline-flex",alignItems:"center",gap:6}}><span role="status" style={{fontSize:11.5,color:C.textMuted}}>Uploading…</span><button onClick={function(){uploadCancelled.current=true;setBusy(false);}} style={{padding:"8px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.textSub,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>Cancel upload</button></span>:<button onClick={pickFile} style={{padding:"8px 12px",borderRadius:9,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.onSolid,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>+ Add photo</button>}>TOPO</SL>
     {err?<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red+"66",borderRadius:10,padding:"9px 12px",marginBottom:9,display:"flex",alignItems:"center",gap:9}}><span style={{flex:1,fontSize:12.5,color:C.red,lineHeight:1.45}}>{err}</span><button onClick={function(){setErr(null);}} aria-label="Dismiss error" style={POP_CLOSE}>✕</button></div>:null}
     {!photos.length?
       <div style={{background:C.card,border:"1px dashed "+C.border,borderRadius:12,padding:"22px 16px",textAlign:"center"}}>
@@ -174,9 +191,9 @@ export default function TopoSection({route}: TopoSectionProps){
           <div style={{fontSize:14,fontWeight:800}}>{drawFor.editLine?"Edit your line":"Draw this "+climbNoun(route)+"'s line"}</div>
           <button onClick={closeDraw} style={POP_CLOSE} aria-label="Close">✕</button>
         </div>
-        {/* The photo was just posted: ask for its caption here, while the climber still remembers why they took it. Saved on its own, so cancelling the drawing keeps it. */}
+        {/* The photo was just posted: ask for its caption here, while the climber still remembers why they took it. Cancelling the drawer takes the photo (and its caption) down — see closeDraw. */}
         {(drawFor.fresh&&drawFor.db)?<TopoCaptionBox key={drawFor.id} initial={null} onSave={function(t){return saveCaption(drawFor,t);}} style={{marginBottom:12}}/>:null}
-        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:(drawFor.editLine.variants||[]) as TopoPoint[][],variantLabels:drawFor.editLine.variant_labels||[],pins:(drawFor.editLine.pins||[]) as TopoDrawerPin[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} onCancel={function(){drawDirty.current=false;setDrawFor(null);}} onSubmit={function(data: TopoDrawerResult){drawDirty.current=false;submitLine(drawFor,data);}}/>
+        <TopoDrawer key={drawFor.id+":"+(drawFor.editLine?drawFor.editLine.id:"new")} dirtyRef={drawDirty} initial={drawFor.editLine?{photoUrl:drawFor.url,points:drawFor.editLine.points,variants:(drawFor.editLine.variants||[]) as TopoPoint[][],variantLabels:drawFor.editLine.variant_labels||[],pins:(drawFor.editLine.pins||[]) as TopoDrawerPin[],label:drawFor.editLine.label||""}:{photoUrl:drawFor.url}} discardAsk={(drawFor.fresh&&drawFor.db)?freshAsk:null} onCancel={dropDraw} onSubmit={function(data: TopoDrawerResult){drawDirty.current=false;submitLine(drawFor,data);}}/>
       </div>
     </div>,document.body):null}
   </div>;
