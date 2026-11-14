@@ -101,6 +101,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | File | What lives there |
 |---|---|
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
+| `lib/cardStyles.js` | `CARD(C, edge?)` / `EYEBROW(color)` — the crew card's look (radius 16, padding 14, a 1px edge in the state colour, its shadow; the uppercase label over a title), read by the crew card and every Partners box: the You card, the empty card, the More filters panel, the real and example climber cards, and the list-me box (owner 2026-11-14: "make it consistent" with crew cards) |
 | `src/components/ListMeInAreaBox.tsx` | `ListMeInAreaBox` — By Area's *List me at <place>* box under the picker (optimistic `savePartnerArea` / `removePartnerArea`, then `onListMe` for dates and types) |
 | `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |

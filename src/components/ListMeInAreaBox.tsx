@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { removePartnerArea, savePartnerArea } from "../../lib/db";
 import { tx } from "../../lib/tapWords.js";
 import Chevron from "./Chevron.tsx";
+import { CARD, EYEBROW } from "../../lib/cardStyles.js";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 
 export interface ListMeInAreaBoxListing { areaId?: string; [column: string]: unknown }
@@ -54,7 +55,8 @@ export default function ListMeInAreaBox({ areaId, areaName, areaType, C, uid, my
     } finally { setBusy(false); }
   };
   return (
-    <div role="region" aria-label={"List yourself " + prep + " " + name} style={{ marginTop: 12, padding: "13px 14px", borderRadius: 12, background: listed ? C.greenBg : C.blueBg, border: "2px solid " + (listed ? C.green : C.blueDim) }}>
+    <div role="region" aria-label={"List yourself " + prep + " " + name} style={{ ...CARD(C, listed ? C.green : C.blueDim), marginTop: 12 }}>
+      <div style={EYEBROW(listed ? C.green : C.blue)}>Your listing</div>
       <div style={{ fontSize: 14.5, fontWeight: 800, color: C.text, marginBottom: 4, overflowWrap: "anywhere" }}>{listed ? "You’re listed " + prep + " " + name + " ✓" : "Climb " + prep + " " + name + "?"}</div>
       <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 10 }}>{listed ? "Climbers who search " + name + " can find you and reach out." : "List yourself here so climbers searching " + name + " can find you — just like you’re finding them."}</div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>

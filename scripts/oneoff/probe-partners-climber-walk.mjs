@@ -22,6 +22,12 @@ const fails = [], ok = (c, m) => { console.log((c ? "ok   " : "FAIL ") + m); if 
 const note = (m) => console.log("     " + m);
 let fixture, browser;
 const shot = (page, n) => page.screenshot({ path: path.join(OUT, n + ".png") });
+// THE CREW CARD'S LOOK (lib/cardStyles.js, owner 2026-11-14): radius 16, a 1px edge, a shadow. Walks up from the
+// located element to the first box that draws a shadow, so it can start from a button inside a card.
+const cardLook = async (loc, label) => {
+  const s = await loc.first().evaluate((e) => { let x = e; while (x && getComputedStyle(x).boxShadow === "none") x = x.parentElement; if (!x) return null; const c = getComputedStyle(x); return { r: c.borderTopLeftRadius, b: c.borderTopWidth, l: c.borderLeftWidth, pad: c.paddingTop }; }).catch(() => null);
+  ok(!!s && s.r === "16px" && s.b === "1px" && s.l === "1px" && s.pad === "14px", label + " looks like a crew card" + (s ? " (radius " + s.r + ", edge " + s.b + "/" + s.l + ", padding " + s.pad + ")" : " (no card found)"));
+};
 try {
   for (let i = 0; i < 60; i++) { try { if ((await fetch(base)).ok) break; } catch {} await new Promise((r) => setTimeout(r, 1000)); }
   fixture = await createFixture(() => {});
@@ -48,6 +54,7 @@ try {
   ok(await page.locator("button", { hasText: /^Choose my areas$/ }).count() === 1, "Choose my areas is offered ONCE on the screen (the empty card), not twice");
   ok(/I’m free this weekend/.test(youTxt), "the free-this-weekend switch is in the You card");
   ok(!/ended/i.test(youTxt), "no ended-dates warning");
+  await cardLook(you, "the You card");
   const row = page.locator('[role="group"][aria-label="Narrow the list"]');
   const rowTxt = await row.innerText();
   ok(!/Free this weekend|My areas ·|Sort ·/.test(rowTxt), "the pill row holds no status toggle, editor pill or Sort");
@@ -60,6 +67,7 @@ try {
   const empty = page.locator("[data-partner-empty]");
   ok(await empty.count() === 1, "unlisted My areas shows the friendly empty card");
   const emptyTxt = await empty.innerText().catch(() => "");
+  await cardLook(empty, "the empty card");
   note("empty card: " + emptyTxt.replace(/\n/g, " / "));
   ok(/Choose my areas/.test(emptyTxt) && /Invite a climbing friend/.test(emptyTxt), "it offers Choose my areas and Invite");
   const meanwhile = await page.locator("text=/^Meanwhile, climbers/i").count();
@@ -75,6 +83,9 @@ try {
   if (await seeAll.count()) { await seeAll.click(); await page.waitForTimeout(5000); ok(await by.inputValue() === "anyone", "See everyone switches to Everyone"); }
   else note("no See everyone button (no browse climbers) -- switching by the pill");
   if (await by.inputValue() !== "anyone") { await by.selectOption("anyone"); await page.waitForTimeout(5000); }
+  await cardLook(page.locator('div[role="button"]', { hasText: /@/ }), "a real climber row");
+  const ex = page.locator("button", { hasText: /^Full profile & vouches$/ });
+  if (await ex.count()) await cardLook(ex, "an example climber card"); else note("no example climber cards on screen");
   await shot(page, "2-everyone");
 
   // 3. Distance -> Near me now, 10 mi, then the empty card's next radius.
@@ -117,6 +128,7 @@ try {
   const box = page.locator('[role="region"][aria-label^="List yourself"]');
   ok(await box.count() === 1, "the list-me box shows for Utah");
   const boxTxt = await box.innerText().catch(() => ""); note("box: " + boxTxt.replace(/\n/g, " / "));
+  await cardLook(box, "the Climb in Utah box");
   ok(/Climb in Utah\?/.test(boxTxt) && /List me in Utah/.test(boxTxt), "it reads \"in Utah\", not \"at Utah\"");
   const yOf = (l) => l.first().boundingBox().then((b) => b && b.y).catch(() => null);
   const firstResultY = (await yOf(page.locator("[data-partner-empty]"))) ?? (await yOf(page.locator("text=/^Listed here or inside first/"))) ?? (await yOf(page.locator("text=/^No one is listed in Utah/")));
