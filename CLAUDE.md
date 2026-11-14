@@ -12,6 +12,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/hand-written-sql.md](docs/codebase/hand-written-sql.md) | hand the user SQL to paste into the Supabase SQL Editor |
 | [docs/codebase/route-identity.md](docs/codebase/route-identity.md) | resolve, dedupe, import or write to route rows by id |
 | [docs/codebase/enrichment-prose.md](docs/codebase/enrichment-prose.md) | write researched text into any existing `routes` column |
+| [docs/codebase/research-ledger.md](docs/codebase/research-ledger.md) | research or verify route facts, or touch `route_field_evidence` / the lock rules (skills: `.claude/skills/route-research/`) |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
 | [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
@@ -244,6 +245,7 @@ npm run check:enrichment-traceable # does a climbing_route batch invent anything
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
 npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
+npm run check:research-locks # can a research batch overwrite a field the evidence ledger has locked? (in build)
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
