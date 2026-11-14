@@ -1151,3 +1151,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     shows iOS's own accuracy when it exceeds 25°, and stops pointing inside GPS error. The model is
     valid 2025.0–2030.0; replace the `COF` table with WMM2030 when NOAA publishes it (the test file
     in the new zip replaces `NOAA` here).
+
+- **`check:bare` section 6, rewritten 2026-11-13 (crag facts on one line, crag-wide facts on the crag).**
+  The old assertion — every missing fact a "Not on file yet" ROW with "+ Add" as the next segment —
+  is replaced: each discipline fact must appear as a `+ <Fact>` button, none may still render as
+  its own "Not on file yet" row, and there are at most five "Not on file yet" lines (the card,
+  WHERE IT STARTS, RACK, GEAR & SAFETY, CONDITIONS). New cases: a crag with `seasonMonths` shows
+  Season "(the crag's season)" and offers no `+ Season`; a wall with only an ancestor season shows
+  "(the area's season)"; with `onSuggestAreaEdit` wired, Season and Aspect read `+ … · crag` while
+  Location stays the route's; on an `areaType: "area"` (not editable on the area page) nothing goes
+  to the area editor. `render()` now takes a third `extra` props argument for such cases.
+  - Trap met: react-dom/server escapes the apostrophe, so a regex on "crag's" must also accept
+    `&#x27;`. And a value read from a `const` declared later in `RouteDetail`'s body throws "Cannot
+    access … before initialization" when the JSX reading it is built earlier — `check:bare` caught
+    `areaFactEdit` doing exactly that on every tab; declare it before the first TechStats mount.
