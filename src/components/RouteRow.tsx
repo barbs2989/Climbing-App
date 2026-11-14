@@ -59,10 +59,14 @@ export default function RouteRow({ r, onOpen, C, areaName, dense, savedMark = tr
   if (dense) return (
     <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 12px", marginBottom: 4, background: C.card, border: "1px solid " + C.border, borderRadius: 10, cursor: "pointer", minWidth: 0 }}>
       {icon}
-      <span style={{ fontSize: 13, fontWeight: 700, color: C.text, overflowWrap: "anywhere", flex: "0 1 auto", minWidth: 0 }}>{name}</span>
-      {stars ? <span style={{ color: C.amber, fontWeight: 700, flexShrink: 0, fontSize: 11 }}>{"★".repeat(stars)}</span> : null}
-      {marks}
-      <span style={{ fontSize: 11, color: C.textMuted, flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{sub}</span>
+      {/* One line when it fits; when it does not, the name and its subline flow on as a paragraph and wrap, so nothing is
+          cut off with "…" and the grade keeps its place at the right (owner, 2026-11-13: never cut text off). */}
+      <div style={{ flex: 1, minWidth: 0, lineHeight: 1.35, overflowWrap: "anywhere" }}>
+        <span style={{ fontSize: 13, fontWeight: 700, color: C.text, marginRight: 6 }}>{name}</span>
+        {stars ? <span style={{ color: C.amber, fontWeight: 700, fontSize: 11, marginRight: 6 }}>{"★".repeat(stars)}</span> : null}
+        {classicMark && r.classic || done || saved ? <span style={{ display: "inline-flex", gap: 4, marginRight: 6, verticalAlign: "1px" }}>{marks}</span> : null}
+        <span style={{ fontSize: 11, color: C.textMuted }}>{sub}</span>
+      </div>
       <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0, fontWeight: 700 }}>{rowGrade(r)}</span>
     </div>
   );

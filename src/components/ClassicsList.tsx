@@ -54,7 +54,7 @@ export default function ClassicsList({ rows, total, withWall, dense, onOpen, C, 
           const grade = <span style={{ fontSize: 12, color: C.text, flexShrink: 0, fontWeight: 700, minWidth: 40, textAlign: "right" }}>{rowGrade(r)}</span>;
           return <div key={"classic-" + r.id} {...clickable(() => onOpen(r))} style={{ cursor: "pointer", padding: "6px 10px", minHeight: 36, boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", background: i % 2 ? "transparent" : "rgba(255,255,255,0.035)", borderTop: i ? "1px solid " + C.border : "none" }}>
             {dense
-              ? <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>{marks}{name}<span style={{ fontSize: 11, color: C.textMuted, flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{sub}</span>{starEl}{grade}</div>
+              ? <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>{marks}<div style={{ flex: 1, minWidth: 0, lineHeight: 1.35, overflowWrap: "anywhere" }}>{name}{sub ? <span style={{ fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{sub}</span> : null}</div>{starEl}{grade}</div>
               : <>
                 <div style={{ display: "flex", alignItems: "center", gap: 7, minWidth: 0 }}>{marks}{name}{starEl}{grade}</div>
                 {sub ? <div style={{ fontSize: 11, color: C.textMuted, overflowWrap: "anywhere" }}>{sub}</div> : null}
