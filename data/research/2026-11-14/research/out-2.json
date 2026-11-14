@@ -1,0 +1,227 @@
+{
+ "wa_amphitheater_mountain_west_route": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_mcgregor_mountain_scramble": {
+  "area": "wa_mcgregor_mountain",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: 6,600 ft gain, 7.7 mi one way High Bridge to summit"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 6,200 is within 10% of NPS 6,600 ft (High Bridge to summit), so the stored value is locked on one source. The NPS places page says 5,700 ft to the end of the trail plus a 1,000 ft scramble; not used, because it would need adding. If a second source confirms 6,600, consider replacing the stored value."
+ },
+ "wa_south_face_10": {
+  "area": "wa_cathedral_peak_pasayten",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_northwest_face_2": {
+  "area": "wa_kangaroo_temple",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2425,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://yellowleaf.org/scramble/g/r/2006-09-23-kangaroo.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Yellowleaf NW face Kangaroo Temple trip: elevation gain 2,425 feet, from Hwy 20 hairpin"
+     }
+    ]
+   }
+  ],
+  "note": "Stored equals the Yellowleaf trip figure. The page does not say outright that it runs to the summit, but the trip starts at the Hwy 20 hairpin and reaches the summit. No second open source."
+ },
+ "wa_ne_ridge": {
+  "area": "wa_cathedral_peak_pasayten",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_corteo_peak_southwest_ridge": {
+  "area": "wa_corteo_peak",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "lemkeclimbs.com/corteo-peak gives no gain. The stevensong.com Corteo page gives a 50 m drop from Maple Pass (metres only) and no total. Mountaineers (4,910) blocked."
+ },
+ "wa_mount_ann_scramble": {
+  "area": "wa_mount_ann",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "WTA Mount Ann: 4,000 ft gain, 10.5 mi RT, but from the Bagley Lakes / upper ski area lot (a winter route that leaves the trail near the Lake Ann junction). Stored equals 4,000, but the start differs from this route, so not locked. Mountaineers (3,500-4,000) blocked."
+ },
+ "wa_the_cave_route": {
+  "area": "wa_concord_tower",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_cutthroat_peak_cauthorn_wilson_couloir": {
+  "area": "wa_cutthroat_peak",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "The Mountain Project route page gives only an 800 ft route length and \"approach as for South Buttress\". Mountaineers figures (~3,000-3,200) blocked. Nothing usable."
+ },
+ "wa_mount_lago_south_slope_south_face": {
+  "area": "wa_mount_lago",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "ab_mount_smuts_south_ridge": {
+  "area": "ab_mount_smuts",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "STORED LIKELY WRONG: stored 4,918 ft equals giantsgate.com \"Accumulated Elev. Gain 1,499 m / 4,918 ft\", which covers the whole round trip (18.9 km, 8.5 h). The same page lists \"Elevation Gain 1,083 m / 3,553 ft\" from a base of 6,056 ft to the summit (the base is not explicitly called the trailhead). One source, and >10% from stored, so not set. https://giantsgate.com/destinations/mount-smuts/"
+ },
+ "wa_cashmere_mountain_west_ridge": {
+  "area": "wa_cashmere_mountain",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_the_chopping_block_south_route": {
+  "area": "wa_the_chopping_block",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_eldorado_peak_west_arete": {
+  "area": "wa_main_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Eldorado Peak: 6,716 ft gain, 10.0 mi roundtrip, highest point 8,876 ft"
+     }
+    ]
+   }
+  ],
+  "note": "The WTA figure is for the Eldorado Creek trailhead to the summit by the standard way up: same trailhead and summit as the West Arete. Stored 6,800 is within 2%. Mountaineers (6,768) was blocked (403); the 10adventures and Outdoor Project pages gave no usable figure."
+ },
+ "wa_mount_hardy_snow_scramble": {
+  "area": "wa_mount_hardy",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "WTA Mount Hardy page: 4,299 ft gain, 4.68 mi RT, a direct route just off Hwy 20 (not via Methow Pass). A different route from this one. No open source for the Methow Pass route."
+ },
+ "wy_grand_teton_the_rainbow_bridge": {
+  "area": "wy_grand_teton",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "The Mountain Project route (on the Grandstand, approached from Valhalla Canyon) gives a 700 ft route length and no approach gain."
+ },
+ "wa_ellation": {
+  "area": "wa_mamie_peak",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "stephabegg.com/?p=8690 gives only the top of the route (5,000 ft) and the route length (700 ft); no gain."
+ },
+ "wa_mount_shuksan_price_glacier": {
+  "area": "wa_mount_shuksan_climbs",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_mount_cameron_standard": {
+  "area": "wa_mount_cameron",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_johannesburg_mountain_cj_couloir": {
+  "area": "wa_johannesburg_mountain",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "stephabegg.com/?p=8692 states 4,600 ft from the parking lot to the summit, but for the NE Rib route (its approach climbs ~800 ft of the C-J Couloir). A different route, so not used for the CJ Couloir. No open page states a gain for the CJ Couloir itself."
+ },
+ "wa_the_monk_west_cracks_right_crack": {
+  "area": "wa_the_monk_pasayten",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_gunsight_peak_standard": {
+  "area": "wa_middle_peak",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "STORED LOOKS WRONG: 14,000 ft is implausible from trailhead to summit (pins 1,400 to 8,198). stephabegg.com north-gunsight-wf gives only per-day segments from Downey Creek (e.g. +5,700/-800 on day 1) and no total, so nothing can be set."
+ },
+ "wa_ottohorn_southeast_route": {
+  "area": "wa_ottohorn",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_mount_goode_northeast_buttress": {
+  "area": "wa_mount_goode",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 10700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FKT: loop from Bridge Creek TH, 38.3 mi, 10,700 ft vertical gain"
+     }
+    ]
+   }
+  ],
+  "note": "Loop shape: the FKT figure covers the whole loop (Bridge Creek, NE Buttress, Park Creek, then the PCT back). FKT calls the approach ~13 mi of flat or gradual downhill but gives no loss figure. Mountaineers (8,400) and the CascadeClimbers TR (9,700) were blocked."
+ },
+ "wa_golden_horn_southwest_route": {
+  "area": "wa_golden_horn",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_north_star_mountain_east_route": {
+  "area": "wa_north_star_mountain",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "WTA North Star Mountain: 4,500 ft gain, 25 mi RT via the Lyman Lakes/Cloudy Pass trail. Stored equals 4,500, but the input pins (TH 3,228 ft, summit 8,096 ft) put the summit more than 4,500 ft above that trailhead, so the WTA figure may not cover this route from this trailhead. Not locked; flag for review."
+ },
+ "wa_lost_peak_pasayten_scramble": {
+  "area": "wa_lost_peak_pasayten",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "STORED LOOKS WRONG: 14,000 ft gain for one peak from a 2,538 ft trailhead. No open page states a gain for Lost Peak alone (only multi-peak totals; SummitPost/Mountaineers blocked)."
+ },
+ "wa_magic_mountain_southwest_cirque": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_around_the_cave_we_go": {
+  "area": "wa_concord_tower",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_kangaroo_temple_north_face": {
+  "area": "wa_kangaroo_temple",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_southwest_buttress": {
+  "area": "wa_dorado_needle",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "The WTA Dorado Needle page states 6,280 ft gain, highest point 8,440 ft (https://www.wta.org/go-hiking/hikes/dorado-needle). Stored 7,000 differs by ~10.3%. Mountaineers 7,000 ft is blocked (403), so neither can be confirmed; not set."
+ },
+ "wa_east_face": {
+  "area": "wa_middle_peak",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_mount_norton_scramble": {
+  "area": "wa_mount_norton",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_huckleberry_mountain_east_ridge": {
+  "area": "wa_huckleberry_mountain",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_garfield_mountain_preiss_route": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_the_monk_odine": {
+  "area": "wa_the_monk_pasayten",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ "wa_free_mojo": {
+  "area": "wa_south_early_winters_spire",
+  "skip_reason": "no open page states a usable trailhead-to-summit gain for this route",
+  "note": "Yellowleaf SEWS SW buttress trip: 2,345 ft gain, but its coverage is not stated and it is a different route. Mountaineers 2,600 ft for the South Arete is blocked. Not used."
+ },
+ "wa_mount_spickard_silver_glacier": {
+  "area": "wa_mount_spickard",
+  "skip_reason": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ }
+}

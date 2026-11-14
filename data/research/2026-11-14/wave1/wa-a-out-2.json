@@ -1,0 +1,627 @@
+{
+ "wa_huckleberry_mountain_north_spur": {
+  "area": "wa_huckleberry_mountain",
+  "skip_reason": "Which Huckleberry Mountain is unclear: there is one at Suiattle/Glacier Peak Wilderness (Mountaineers hike page: 14 mi, 4,900 ft) and a SummitPost 'Huckleberry Mountain (Snoqualmie)' page (blocked 403). Neither names a North Spur. No facts recorded."
+ },
+ "wa_lichen_rock_east_face": {
+  "area": "wa_lichen_rock",
+  "skip_reason": "The only 'Lichen Rock' found is a Spokane bouldering area (CascadeClimbers wiki), not an alpine peak. No source."
+ },
+ "wa_lichen_rock_south_face": {
+  "area": "wa_lichen_rock",
+  "skip_reason": "Same as wa_lichen_rock_east_face: no alpine Lichen Rock found online."
+ },
+ "wa_lichen_rock_southeast_rib": {
+  "area": "wa_lichen_rock",
+  "skip_reason": "Same as wa_lichen_rock_east_face: no alpine Lichen Rock found online."
+ },
+ "wa_little_annapurna_boola_boola_buttress": {
+  "area": "wa_little_annapurna",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Jim Yoder, 1984",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200713601/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 2007 refers to the 1984 Jim Yoder route on Boola Boola Buttress, hard to locate from its description."
+     }
+    ]
+   },
+   {
+    "field": "rock_type",
+    "value": "granite, heavily featured",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200713601/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Boola Boola Buttress is described as very featured granite."
+     }
+    ]
+   }
+  ],
+  "note": "Boola Boola Buttress holds several lines (Yoder 1984, Layton's Thank You Baby Jesus, Black Velvet 2006). FA assumes our route is the original 1984 Yoder line; check before applying."
+ },
+ "wa_little_big_chief_mountain_southwest_face": {
+  "area": "wa_little_big_chief_mountain",
+  "facts": [
+   {
+    "field": "land_manager",
+    "value": "Alpine Lakes Wilderness, King/Kittitas County line",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Little Big Chief sits in the Alpine Lakes Wilderness on the King-Kittitas county border."
+     }
+    ]
+   },
+   {
+    "field": "location",
+    "value": "Immediately southwest of Dutch Miller Gap; Summit Chief Mountain 0.7 mi southwest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Little_Big_Chief_Mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Peak lies just southwest of Dutch Miller Gap; Summit Chief is 0.7 miles southwest."
+     }
+    ]
+   }
+  ],
+  "note": "Only peak-level facts. Wikipedia's peak FA (1939, Beckey party) and easiest route (NE Face) are not this route, so not used."
+ },
+ "wa_lundin_peak_northwest_face": {
+  "area": "wa_lundin_peak",
+  "skip_reason": "No page names a Northwest Face route on Lundin. SummitPost lists East Ridge and West Ridge; The Mountaineers has West Ridge."
+ },
+ "wa_lundin_peak_southeast_ridge": {
+  "area": "wa_lundin_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Snoqualmie Pass trailhead (Pacific Crest Trail north)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party began at the Snoqualmie Pass trailhead heading north on the PCT."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Leave the PCT at 2.5 miles into Commonwealth Basin, then climb the old Cascade Crest Trail to 5400-ft Red Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left the PCT at two and a half miles, dropped into Commonwealth Basin, climbed old Cascade Crest Trail to 5400-foot Red Pass."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit reached 3250 feet of gain from the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "ascent_hours",
+    "value": 5.9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit reached 5.9 hours after leaving the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climber's path up the ridge to the first horn; downclimb a ~40-ft Class 3+ dihedral west, ledges to the notch, around the second horn's northeast side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Path ends atop the first horn; an exposed Class 3+ dihedral of about 40 feet descends west to ledges and a notch."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the second horn, descend a ~150-ft Class 2-3 face into the deep notch, then ramps toward the summit horn",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A broken Class 2-3 face about 150 feet tall drops from the second horn into the deep notch."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4 / 5.0",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit horn: one full pitch, or two short ones, of Class 4 or 5.0 on the southeast ridge crest."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Final summit horn is one full pitch, or two short pitches, of roped climbing."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Three bolts with large aluminum hangers on the summit pitch",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three bolts with oversized aluminum hangers protect the summit-horn pitch."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent began with one 25-meter rappel from an established station down the upper ridge."
+     }
+    ]
+   },
+   {
+    "field": "rappel_length_m",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The single rappel down the upper ridge was 25 meters."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the upper ridge, then reverse the route back through the notches",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "After the rappel the party returned to Class 2 ledges and retraced the route from the deep notch."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Highly exposed in places; two memorial plaques mark fatal falls",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/lundin-peak-via-red-pass-southeast-ridge-2023/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route is very exposed at several spots; plaques on ridge and summit honor climbers killed in falls."
+     }
+    ]
+   }
+  ],
+  "note": "Trailcatjim is one trip report (2023). The summit pitch is 'one full pitch or two short pitches'; pitches=1 takes the first reading. gain 3250 and 5.9 h are trailhead-to-summit, one-way. SummitPost lists an 'East Ridge' route on Lundin, not used (different name)."
+ },
+ "wa_middle_peak_north_face": {
+  "area": "wa_middle_peak",
+  "skip_reason": "Wikipedia's Middle Peak (Washington) is a 7,464-ft Chilliwack peak in Whatcom County near the border, with no routes listed. A Mountain Project 'North Face' (121085057) is on Chair Peak, not this peak. Peak identity is unconfirmed, so nothing recorded."
+ },
+ "wa_middle_peak_traverse_route": {
+  "area": "wa_middle_peak",
+  "skip_reason": "Same as wa_middle_peak_north_face. The Mount Index North-Middle-Main traverse exists, but 'Middle Peak' here may be the Chilliwack peak, so not used."
+ },
+ "wa_mount_hinman_east_route": {
+  "area": "wa_mount_hinman",
+  "skip_reason": "SummitPost, The Mountaineers and trailcatjim describe the West Ridge/Southeast Ridge from La Bohn Gap. Climberkyle's trip report gives approximate totals ('something like 25 miles and 7000 ft') with no route name. Neither used."
+ },
+ "wa_mount_johnson_deception_chimney": {
+  "area": "wa_mount_johnson",
+  "facts": [
+   {
+    "field": "land_manager",
+    "value": "Olympic National Park (Daniel J. Evans Wilderness), Jefferson County",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Johnson sits in Olympic National Park's Daniel J. Evans Wilderness, Jefferson County, Olympic Mountains."
+     }
+    ]
+   }
+  ],
+  "note": "Mount Johnson is in the Olympics (Wikipedia). No online page names this route. The peak FA (c.1935/1940) is not route-specific. Only land_manager recorded."
+ },
+ "wa_mount_johnson_northwest_face": {
+  "area": "wa_mount_johnson",
+  "facts": [
+   {
+    "field": "land_manager",
+    "value": "Olympic National Park (Daniel J. Evans Wilderness), Jefferson County",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Johnson sits in Olympic National Park's Daniel J. Evans Wilderness, Jefferson County, Olympic Mountains."
+     }
+    ]
+   }
+  ],
+  "note": "Same as other Mount Johnson routes: only the peak location was found."
+ },
+ "wa_mount_johnson_rumble_gully": {
+  "area": "wa_mount_johnson",
+  "facts": [
+   {
+    "field": "land_manager",
+    "value": "Olympic National Park (Daniel J. Evans Wilderness), Jefferson County",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Johnson sits in Olympic National Park's Daniel J. Evans Wilderness, Jefferson County, Olympic Mountains."
+     }
+    ]
+   }
+  ],
+  "note": "Same as other Mount Johnson routes: only the peak location was found. A SummitPost image named 'Looking down the Rumble Gully' exists, but SummitPost was blocked (403)."
+ },
+ "wa_mount_johnson_south_terrace_route": {
+  "area": "wa_mount_johnson",
+  "facts": [
+   {
+    "field": "land_manager",
+    "value": "Olympic National Park (Daniel J. Evans Wilderness), Jefferson County",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Johnson sits in Olympic National Park's Daniel J. Evans Wilderness, Jefferson County, Olympic Mountains."
+     }
+    ]
+   }
+  ],
+  "note": "Same as other Mount Johnson routes: only the peak location was found."
+ },
+ "wa_mount_johnson_staircase_route": {
+  "area": "wa_mount_johnson",
+  "facts": [
+   {
+    "field": "land_manager",
+    "value": "Olympic National Park (Daniel J. Evans Wilderness), Jefferson County",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Johnson sits in Olympic National Park's Daniel J. Evans Wilderness, Jefferson County, Olympic Mountains."
+     }
+    ]
+   }
+  ],
+  "note": "Same as other Mount Johnson routes: only the peak location was found."
+ },
+ "wa_mount_rainier_north_mowich_icefall": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Climbing registration required on any glacier or above ~10,000 ft; $82 per person",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS requires a climbing permit on glaciers or above high camps near 10,000 ft; each climber pays $82."
+     }
+    ]
+   },
+   {
+    "field": "gain_note",
+    "value": "Any summit route gains more than 9,000 ft and covers over ten miles",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS says every Rainier summit route needs over 9,000 feet of gain and more than ten miles of travel."
+     }
+    ]
+   },
+   {
+    "field": "glacier",
+    "value": "Technical glacier travel and rope skills required",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS states technical glacier-travel rope skills are needed to climb and descend safely."
+     }
+    ]
+   },
+   {
+    "field": "location",
+    "value": "On the northwest side between Ptarmigan Ridge and the North Mowich Headwall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountrainierclimbing.blogspot.com/2019/06/west-north-side-conditions-photos.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ranger conditions photo labels, left to right: Ptarmigan Ridge, North Mowich Icefall, North Mowich Headwall, Central Mowich Face."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Frequent icefall from the North Mowich icefall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://gorobets.com/TRs/Rainier_Central_Mowich_Face_2023_06_04.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped nearby in June 2023 heard ice falling from the North Mowich icefall constantly."
+     }
+    ]
+   }
+  ],
+  "note": "No route page found for the Icefall itself. MP and SP have the North Mowich Headwall, a different route, so not used. Gain from NPS is a general 'more than 9,000 ft' for any route, so it goes in gain_note, not gain_ft."
+ },
+ "wa_preacher_mountain_east_gully": {
+  "area": "wa_preacher_mountain",
+  "skip_reason": "Mountaineers 'Preacher Mountain' winter scramble (11 mi, 5,000 ft, Middle Fork Snoqualmie) names no route, so it is not tied to any of the five routes. The SummitPost Preacher page was blocked (403)."
+ },
+ "wa_preacher_mountain_north_route": {
+  "area": "wa_preacher_mountain",
+  "skip_reason": "Same as wa_preacher_mountain_east_gully."
+ },
+ "wa_preacher_mountain_south_gully_south_spur": {
+  "area": "wa_preacher_mountain",
+  "skip_reason": "Same as wa_preacher_mountain_east_gully."
+ },
+ "wa_preacher_mountain_south_rib": {
+  "area": "wa_preacher_mountain",
+  "skip_reason": "Same as wa_preacher_mountain_east_gully."
+ },
+ "wa_preacher_mountain_west_face": {
+  "area": "wa_preacher_mountain",
+  "skip_reason": "Same as wa_preacher_mountain_east_gully."
+ },
+ "wa_prusik_peak_east_face": {
+  "area": "wa_prusik_peak",
+  "skip_reason": "Mountain Project's Prusik list has no 'East Face'. Wikipedia lists an 'East Route' (FA 1948), which is not the same name, so not used."
+ },
+ "wa_red_mountain_snoqualmie_east_face": {
+  "area": "wa_red_mountain_snoqualmie",
+  "skip_reason": "No page names this route. SummitPost Red Mountain lists only the East Ridge and South Ridge routes."
+ },
+ "wa_red_mountain_snoqualmie_east_ridge": {
+  "area": "wa_red_mountain_snoqualmie",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/329836",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost's Red Mountain East Ridge page lists rock difficulty 5.4 YDS, route type mountaineering."
+     }
+    ]
+   },
+   {
+    "field": "time_required",
+    "value": "half a day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/329836",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route page gives time required as half a day."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the standard route, a bootpath down the southwest face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/329836",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author descended the standard bootpath on the southwest face instead of reversing the ridge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "A deep notch in the ridge about half a mile along; a low fifth-class line below the saddle passes it",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/329836",
+      "retrieved_at": "2026-11-14",
+      "fact": "About half a mile up the ridge is a notch; a low fifth-class, exposed line of weakness lies below the saddle."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose, steep hillside to reach the notch; exposed climbing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-ridge/329836",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reaching the notch means scrambling down a loose, steep slope; the bypass pitch is exposed."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost's East Ridge page; the notch depth is the author's guess ('perhaps 150-200 feet'), so not recorded."
+ },
+ "wa_red_mountain_snoqualmie_west_ridge": {
+  "area": "wa_red_mountain_snoqualmie",
+  "skip_reason": "SummitPost's main page describes the 'Southwest Ridge and West Slope' standard route from Commonwealth Basin (2900 ft gain). Not the same name, so not used. SummitPost later returned 403."
+ },
+ "wa_sherpa_peak_northeast_face": {
+  "area": "wa_sherpa_peak",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "North-side routes are approached via the Stuart Lake Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/sherpa-peak/152244",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sherpa's north-side routes, including the Northeast Face, start from the Stuart Lake Trail."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "One of two standard climbs on Sherpa Peak's north side, with the North Ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/sherpa-peak/152244",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost names the North Ridge and Northeast Face as the two standard north-side climbs."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountaineers has a 'Sherpa Peak/Northeast Couloir' page, but a couloir is not the face, so not used."
+ },
+ "wa_silver_peak_northeast_route": {
+  "area": "wa_silver_peak",
+  "skip_reason": "Which Silver Peak is unclear. The Mountaineers' Silver Peak hike (8.5 mi, 1,900 ft, Okanogan-Wenatchee NF) names no route. Not used."
+ },
+ "wa_silver_peak_south_spur": {
+  "area": "wa_silver_peak",
+  "skip_reason": "Same as wa_silver_peak_northeast_route."
+ },
+ "wa_south_peak_dike_chimney_and_east_ridge": {
+  "area": "wa_south_peak",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Don Anderson, Barry Prather, Gene Prater, Dee Molenaar (October 11; reported AAJ 1961)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196136501/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 1961 note: Anderson, Prather, Prater and Molenaar first climbed the dike-chimney east ridge route on October 11."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Climbs a prominent dike chimney in the ridge's south face, with short near-overhanging pitches, then scrambling along the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196136501/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route ascends the dike chimney on the ridge's south face; short steep pitches, then ridge scrambling."
+     }
+    ]
+   },
+   {
+    "field": "rock_type",
+    "value": "serpentine (loose on the ridge)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196136501/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge above the chimney is fairly loose serpentine rock."
+     }
+    ]
+   }
+  ],
+  "note": "Only source is the 1961 AAJ note titled 'Ingalls Peak, East Ridge of the East Peak', which describes the dike chimney; confirm wa_south_peak is that Ingalls summit before applying. The climb year is not stated in the text (only the 1961 publication year)."
+ }
+}

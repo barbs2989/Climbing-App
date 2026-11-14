@@ -1,0 +1,318 @@
+{
+ "co_south_slabs_to_summit": {
+  "area": "co_leviathan_peak",
+  "facts": [
+   {"field":"length_ft","value":600,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113543599/south-slabs-to-summit","retrieved_at":"2026-11-14","fact":"Mountain Project lists South Slabs to Summit as Trad, Alpine, 600 ft."}]},
+   {"field":"commitment","value":"Grade IV","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113543599/south-slabs-to-summit","retrieved_at":"2026-11-14","fact":"Route type line gives Grade IV."}]},
+   {"field":"approach_step","value":"From Leviathan Lake hike south up the valley west of Leviathan Peak's north face to the saddle, contour around, then climb the slabs.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113543599/south-slabs-to-summit","retrieved_at":"2026-11-14","fact":"Approach starts at Leviathan Lake, goes south up valley west of north face to saddle, then contours to slabs."}]},
+   {"field":"rack","value":"none","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113543599/south-slabs-to-summit","retrieved_at":"2026-11-14","fact":"Page says no protection is needed for a competent scrambler."}]},
+   {"field":"overview","value":"Scramble up slabs to Leviathan Peak's summit, facing the normal route on Jagged Mountain.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113543599/south-slabs-to-summit","retrieved_at":"2026-11-14","fact":"Describes a romp up slabs to Leviathan summit; it faces Jagged Mountain's normal route."}]}
+  ],
+  "note": "climb13ers.com/colorado-13ers/leviathan-peak opened: it describes the SW Ridge route only (no figures for South Slabs), so no second source."
+ },
+ "co_southeast_ridge": {
+  "area": "co_la_plata",
+  "facts": [
+   {"field":"approach_step","value":"Gain Mt. Blaurock first, most quickly from Chaffee County Rd 390 via a subsidiary ridge near Winfield, then follow the ridge to La Plata.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/121201251/southeast-ridge","retrieved_at":"2026-11-14","fact":"Reach Mt. Blaurock from CR 390 by a ridge near Winfield, then take the ridge to La Plata."}]},
+   {"field":"descent","value":"Descend La Plata's southwest ridge back to the start.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/121201251/southeast-ridge","retrieved_at":"2026-11-14","fact":"Descent is via La Plata's southwest ridge back to the starting point."}]},
+   {"field":"hazard","value":"Poor rock quality among the gendarmes; no rappel anchors on the towers.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/121201251/southeast-ridge","retrieved_at":"2026-11-14","fact":"Rock quality is poor; do not expect rappel anchors atop the towers."}]},
+   {"field":"rack","value":"solo (no rope)","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/121201251/southeast-ridge","retrieved_at":"2026-11-14","fact":"Protection section: a solo."}]},
+   {"field":"overview","value":"A string of gendarmes on the ridge from Mt. Blaurock to La Plata, scrambled up, down and around.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/121201251/southeast-ridge","retrieved_at":"2026-11-14","fact":"Route scrambles over and around towers on the ridge linking Blaurock to La Plata."}]}
+  ],
+  "note": "14ers.com La Plata route list opened (lapl1-lapl4: NW Ridge, SW Ridge, Ellingwood Ridge, North Face) - no Southeast Ridge route there, so no second source."
+ },
+ "co_stewart_peak_east_ridge": {
+  "area": "co_stewart_peak",
+  "facts": [
+   {"field":"grade","value":"Class 2","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=201708080742073","retrieved_at":"2026-11-14","fact":"Stewart Peak East Ridge difficulty: Class 2."}]},
+   {"field":"trailhead","value":"Nutras Creek (11,000 ft)","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=201708080742073","retrieved_at":"2026-11-14","fact":"Trailhead: Nutras Creek, 11,000 feet."}]},
+   {"field":"gain_ft","value":3000,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=201708080742073","retrieved_at":"2026-11-14","fact":"Elevation gain 3,000 ft for the route (total, round trip)."}]},
+   {"field":"dist_mi_roundtrip","value":8.25,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=201708080742073","retrieved_at":"2026-11-14","fact":"Length round-trip 8.25 mi."}]},
+   {"field":"road","value":"From Dome Lakes take 15GG (FR 794), bear right on 14DD (FR 794); road crosses Pauline Creek, then 2.3 mi to trailhead before Nutras Creek.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=201708080742073","retrieved_at":"2026-11-14","fact":"Driving: 15GG/FR 794 from Dome Lakes, right on 14DD, cross Pauline Creek, 2.3 mi to trailhead."}]}
+  ],
+  "note": "climb13ers.com/colorado-13ers/stewart-peak opened: it covers the SW Ridge route only, so no second source for East Ridge."
+ },
+ "co_tabeguache_peak_via_mount_shavano": {
+  "area": "co_tabeguache_peak",
+  "facts": [
+   {"field":"grade","value":"Class 2","method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=tabe2","retrieved_at":"2026-11-14","fact":"Tabeguache via Mt. Shavano difficulty Class 2."},{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"Difficulty listed as Class 2 (off-trail / scree)."}]},
+   {"field":"gain_ft","value":5600,"method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=tabe2","retrieved_at":"2026-11-14","fact":"Elevation gain 5,600 ft (total round trip)."},{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"About 5,600 feet cumulative gain round trip, re-climbing Shavano on return."}]},
+   {"field":"dist_mi_roundtrip","value":12,"method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=tabe2","retrieved_at":"2026-11-14","fact":"Length round-trip 12 mi."},{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"About 11 miles round trip (within 10% of 12)."}]},
+   {"field":"trailhead","value":"Shavano/Tabeguache (Blank Cabin) trailhead, 9,750 ft","method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=tabe2","retrieved_at":"2026-11-14","fact":"Trailhead Shavano/Tabeguache at 9,750 feet."},{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"Blank Cabin trailhead at 9,750 feet west of Poncha Springs."}]},
+   {"field":"road","value":"From US 285 near Poncha Springs take CR 140, then CR 250; dirt road; stay left onto FR 252.","method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=tabe2","retrieved_at":"2026-11-14","fact":"Turn west on CR 140, after 1.7 mi right on CR 250, dirt at 2.6 mi, left onto FR 252 at 5.9 mi."},{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"CR 140 then CR 250 to Blank Cabin trailhead, ~9 miles gravel passable by cars when dry."}]},
+   {"field":"route_step","value":"Summit Mt. Shavano, follow the Class 2 connecting ridge to the saddle, climb about 450 ft of talus on Tabeguache's east ridge, return the same way over Shavano.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"From Shavano traverse ridge, climb ~450 ft talus of east ridge; return same way re-climbing Shavano."}]},
+   {"field":"hazard","value":"Loose rock on both sides of the Shavano-Tabeguache saddle; old Jennings Creek descent closed and eroded - do not use.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"Loose rock both sides of saddle; Forest Service closed eroded Jennings Creek route."}]},
+   {"field":"closure","value":"Jennings Creek route closed by the Forest Service.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.coloradounited.com/colorado-14ers/tabeguache-peak","retrieved_at":"2026-11-14","fact":"Forest Service closed the eroded Jennings Creek route."}]}
+  ],
+  "note": "Distance: 14ers.com 12 mi RT vs Colorado United about 11 mi RT; value 12 kept (within 10%)."
+ },
+ "co_tenmile_traverse": {
+  "area": "co_tenmile_range_traverses",
+  "facts": [
+   {"field":"commitment","value":"Grade IV","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/108333104/tenmile-traverse","retrieved_at":"2026-11-14","fact":"Type line: Trad, Alpine, Grade IV."}]},
+   {"field":"dist_mi_roundtrip","value":19,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/108333104/tenmile-traverse","retrieved_at":"2026-11-14","fact":"Roundtrip mileage about 19 using the free Summit County bus instead of a car shuttle."}]},
+   {"field":"high_point_ft","value":13633,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/108333104/tenmile-traverse","retrieved_at":"2026-11-14","fact":"Maximum elevation 13,633 ft (Peak 10); minimum 9,095 ft."}]},
+   {"field":"overview","value":"Traverses 12 Tenmile Range summits from Mt. Royal (Frisco) to Peak 10 (Breckenridge); mostly hiking with many bail-out points.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/108333104/tenmile-traverse","retrieved_at":"2026-11-14","fact":"12 peaks Mt. Royal to Peak 10; mostly a hike with many bailout points."}]},
+   {"field":"route_step","value":"The only scrambling is between Tenmile Peak (Peak 2) and Peak 4, Class 3-4; rock somewhat chossy.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/108333104/tenmile-traverse","retrieved_at":"2026-11-14","fact":"Only scrambling section is Peak 2 to Peak 4, Class 3-4, a little chossy."}]},
+   {"field":"approach_step","value":"Can be done either way; most recommend south to north so the technical part comes early.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/108333104/tenmile-traverse","retrieved_at":"2026-11-14","fact":"Either direction; most recommend south to north for technical bits earlier."}]},
+   {"field":"water","value":"Snowmelt runoff near Peak 10 even in a dry September.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/108333104/tenmile-traverse","retrieved_at":"2026-11-14","fact":"Author found September snowmelt runoff around Peak 10 in a dry year."}]}
+  ],
+  "note": "Only Mountain Project found for this traverse; total gain not stated."
+ },
+ "co_the_mcr_route": {
+  "area": "co_little_bear_peak",
+  "facts": [
+   {"field":"length_ft","value":1500,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115330901/the-mcr-route-aka-the-mrc-route","retrieved_at":"2026-11-14","fact":"Trad, Alpine, 1500 ft, Grade II."}]},
+   {"field":"commitment","value":"Grade II","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115330901/the-mcr-route-aka-the-mrc-route","retrieved_at":"2026-11-14","fact":"Type line gives Grade II."}]},
+   {"field":"overview","value":"Climbs a prominent rib left of the northwest face route, staying out of the main gully system on Little Bear's NW face.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115330901/the-mcr-route-aka-the-mrc-route","retrieved_at":"2026-11-14","fact":"Ascends a rib left of the NW face route, avoiding the big gully system."}]},
+   {"field":"route_step","value":"Climb the rib left of the black water mark (Class 3/4 to 5.4), then a smaller diagonal rib with Class 4-5 terrain to the ridge left of the third bump from the summit.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115330901/the-mcr-route-aka-the-mrc-route","retrieved_at":"2026-11-14","fact":"Rib goes Class 3/4 to 5.4; then smaller rib Class 4-5 to ridge left of third bump."}]},
+   {"field":"approach_step","value":"From Lake Como follow the jeep road until a line to the rib base, left of a large water mark and the black hand, is visible.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115330901/the-mcr-route-aka-the-mrc-route","retrieved_at":"2026-11-14","fact":"From Lake Como follow jeep road to view of the rib left of water mark and black hand."}]},
+   {"field":"rack","value":"Best unroped; a light alpine rack suffices if wanted.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115330901/the-mcr-route-aka-the-mrc-route","retrieved_at":"2026-11-14","fact":"Best done without rope; light alpine rack enough if desired."}]}
+  ],
+  "note": "Only Mountain Project describes this line; 14ers.com Little Bear list has no MCR route."
+ },
+ "co_the_ramp_to_clark_s_arrow_to_skyscraper": {
+  "area": "co_palisades",
+  "facts": [
+   {"field":"pitches","value":5,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/105999728/the-ramp-to-clarks-arrow-to-skyscraper","retrieved_at":"2026-11-14","fact":"Type line: Trad, Snow, Alpine, 5 pitches."}]},
+   {"field":"approach_step","value":"Go to the Chasm Lake patrol cabin (4+ miles), left around Ship's Prow, up talus toward the Loft, then onto the exposed ledge system called the Ramp.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/105999728/the-ramp-to-clarks-arrow-to-skyscraper","retrieved_at":"2026-11-14","fact":"Chasm Lake patrol cabin 4+ miles, around Ship's Prow, talus toward Loft, onto the Ramp ledges."}]},
+   {"field":"route_step","value":"The Ramp (3rd class) climbs 300-400 ft around a buttress to talus below the Loft; Clark's Arrow (4th class) links the Loft to the Homestretch under the Palisades.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/105999728/the-ramp-to-clarks-arrow-to-skyscraper","retrieved_at":"2026-11-14","fact":"Ramp 3rd class, 300-400 ft; Clark's Arrow 4th class joins Loft to Homestretch beneath Palisades."}]},
+   {"field":"descent","value":"Rappel the Cables Route on the North Face, or downclimb Clark's Arrow, or scramble off the Keyhole route.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/105999728/the-ramp-to-clarks-arrow-to-skyscraper","retrieved_at":"2026-11-14","fact":"Rap the Cables Route, or downclimb Clark's Arrow, or descend the Keyhole route."}]},
+   {"field":"season","value":"Snow-free mid-to-late summer; a different undertaking in winter.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/105999728/the-ramp-to-clarks-arrow-to-skyscraper","retrieved_at":"2026-11-14","fact":"Snow-free in mid-to-late summer; winter is very different."}]},
+   {"field":"fa","value":"a very long time ago (no party named)","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/105999728/the-ramp-to-clarks-arrow-to-skyscraper","retrieved_at":"2026-11-14","fact":"FA field reads only 'a very long time ago'."}]}
+  ],
+  "note": "Longs Peak (RMNP). No second publisher describing this combination found in the time spent."
+ },
+ "co_thunder_pyramid_west_face_white_couloir": {
+  "area": "co_thunder_pyramid",
+  "facts": [
+   {"field":"approach_step","value":"From Maroon Lake pass Crater Lake on the West Maroon trail, cross West Maroon Creek, then off-trail bushwhack to the base of the White Couloir.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/php14ers/tripreport.php?trip=3214","retrieved_at":"2026-11-14","fact":"Start at Maroon Bells lot, past Maroon and Crater Lake (1.5 mi), cross West Maroon Creek toward the White Couloir."},{"url":"https://www.14ers.com/php14ers/tripreport.php?trip=4920","retrieved_at":"2026-11-14","fact":"No trail once you leave West Maroon Creek; easy bushwhack then rock to the White Couloir."}]},
+   {"field":"hazard","value":"Loose rubble in the couloir when it is not snow-filled.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/php14ers/tripreport.php?trip=3214","retrieved_at":"2026-11-14","fact":"Party hoped for snow in the White Couloir to avoid lots of loose rubble."}]},
+   {"field":"water","value":"Must cross West Maroon Creek (a snow bridge was used in June).","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/php14ers/tripreport.php?trip=3214","retrieved_at":"2026-11-14","fact":"Crossed West Maroon Creek on a snow bridge a few hundred yards up."}]}
+  ],
+  "note": "Both trip reports are on 14ers.com (one publisher). SummitPost route page (summitpost.org/west-face-via-white-couloir/166054) returned 403. climb13ers.com Thunder Pyramid page covers only the South Ridge combo with Lightning Pyramid (not usable)."
+ },
+ "co_torreys_peak_south_slopes": {
+  "area": "co_torrey_s_peak",
+  "facts": [
+   {"field":"gain_ft","value":3000,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=torr2","retrieved_at":"2026-11-14","fact":"Torreys South Slopes elevation gain 3,000 ft (total)."}]},
+   {"field":"dist_mi_roundtrip","value":7.75,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=torr2","retrieved_at":"2026-11-14","fact":"Length round-trip 7.75 mi."}]},
+   {"field":"trailhead","value":"Grays Peak (Stevens Gulch) trailhead, 11,280 ft","method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=torr2","retrieved_at":"2026-11-14","fact":"Trailhead Grays Peak at 11,280 feet."},{"url":"https://www.coloradounited.com/colorado-14ers/torreys-peak","retrieved_at":"2026-11-14","fact":"Start at Stevens Gulch trailhead at 11,280 feet."}]},
+   {"field":"road","value":"Leave the highway to the dirt lot at Forest Road 189; nearly 3 miles to the summer trailhead, straight at a junction after 1 mile.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=torr2","retrieved_at":"2026-11-14","fact":"FR 189 almost 3 miles to summer trailhead; straight at junction after 1 mile."}]},
+   {"field":"camp","value":"A few dispersed campsites and restrooms near the trailhead parking.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=torr2","retrieved_at":"2026-11-14","fact":"Restrooms and a few dispersed camping spots near parking."}]},
+   {"field":"approach_step","value":"Cross the large bridge over the Stevens Gulch stream and follow the Grays Peak trail; fork near 13,000 ft toward the Grays-Torreys saddle.","method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=torr2","retrieved_at":"2026-11-14","fact":"From trailhead cross the large bridge over Stevens Gulch stream."},{"url":"https://www.coloradounited.com/colorado-14ers/torreys-peak","retrieved_at":"2026-11-14","fact":"Cross bridge, follow Grays trail; near 13,000 ft fork right toward Grays-Torreys saddle."}]}
+  ],
+  "note": "Grade conflict: 14ers.com rates South Slopes Class 1; Colorado United lists Torreys Class 2. Colorado United's 8.5 mi / 3,500 ft appears to describe Grays+Torreys together, so not used for gain/distance."
+ },
+ "co_trinity_peak_west_ridge": {
+  "area": "co_trinity_peak",
+  "facts": [
+   {"field":"grade","value":"Class 4","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/trinity-peak","retrieved_at":"2026-11-14","fact":"Trinity Peak West Ridge Route rated Class 4, backpack, medium day."}]},
+   {"field":"trailhead","value":"Molas Pass - Elk Park trailhead","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/trinity-peak","retrieved_at":"2026-11-14","fact":"Round trip given from Molas Pass - Elk Park Trailhead."}]},
+   {"field":"camp","value":"Vestal Creek campsite at 11,760 ft","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/trinity-peak","retrieved_at":"2026-11-14","fact":"Figures also given from Vestal Creek Campsite at 11,760."}]}
+  ],
+  "note": "climb13ers distance/gain figures (22.75 mi / 7,150 ft) are for Trinity climbed with West and East Trinity - multi-peak, not recorded. 14ers.com Trinity peak page (peaks/10294) opened: no free route page."
+ },
+ "co_turret_peak_northwest_slope": {
+  "area": "co_turret_peak",
+  "facts": [
+   {"field":"grade","value":"Class 2","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/turret-peak","retrieved_at":"2026-11-14","fact":"Turret Peak NW Slope Route rated Class 2, backpack, medium day."}]},
+   {"field":"trailhead","value":"Needleton (bridge)","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/turret-peak","retrieved_at":"2026-11-14","fact":"Round trip given from Needleton Bridge."}]},
+   {"field":"camp","value":"Ruby Creek campsite at 11,625 ft","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/turret-peak","retrieved_at":"2026-11-14","fact":"Figures also given from Ruby Creek Campsite at 11,625."}]}
+  ],
+  "note": "climb13ers figures (11.5 mi / 7,140 ft) are for Turret climbed with Pigeon Peak - not recorded. 14ers.com Turret page (peaks/10284) opened: no free route."
+ },
+ "co_un_13_820_southwest_ridge": {
+  "area": "co_un_13_820",
+  "facts": [
+   {"field":"grade","value":"Class 2","method":"agree-2","level":"locked","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/un13811","retrieved_at":"2026-11-14","fact":"UN 13,820 (formerly 13,811) SW Ridge Route rated Class 2."},{"url":"https://www.14ers.com/route.php?route=201610100802153","retrieved_at":"2026-11-14","fact":"Combination route for 13,832 + 13,811 rated Class 2."}]},
+   {"field":"trailhead","value":"Silver Creek / Grizzly Gulch trailhead","method":"agree-2","level":"locked","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/un13811","retrieved_at":"2026-11-14","fact":"Round trip given from Grizzly Gulch - Silver Ck TH."},{"url":"https://www.14ers.com/route.php?route=201610100802153","retrieved_at":"2026-11-14","fact":"Trailhead Silver Crk/Grizzly Gulch at 10,400 feet."}]},
+   {"field":"approach_step","value":"From Silver Creek trailhead follow the trail up Silver Creek into the basin, ascend to the 13,000-ft saddle between Redcloud and Point 13,561.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=201610100802153","retrieved_at":"2026-11-14","fact":"Trail along Silver Creek to basin, slope to 13,000-ft saddle between Redcloud and Point 13,561."}]}
+  ],
+  "note": "climb13ers 12.4 mi / 4,465 ft is with UN 13838; 14ers.com 12 mi / 4,700 ft is the two-peak combo - neither recorded as this route's gain. Peak identity: climb13ers names it formerly UN 13,811, matching 14ers.com combo."
+ },
+ "co_un_13_838_west_ridge": {
+  "area": "co_un_13_838",
+  "facts": [
+   {"field":"grade","value":"Class 2","method":"agree-2","level":"locked","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/un13832","retrieved_at":"2026-11-14","fact":"UN 13,838 (formerly 13,832) West Ridge Route rated Class 2."},{"url":"https://www.14ers.com/route.php?route=201610100802153","retrieved_at":"2026-11-14","fact":"Combination route for 13,832 + 13,811 rated Class 2."}]},
+   {"field":"trailhead","value":"Silver Creek / Grizzly Gulch trailhead (about 10,400-10,440 ft, high clearance)","method":"agree-2","level":"locked","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/un13832","retrieved_at":"2026-11-14","fact":"Trailhead Grizzly Gulch - Silver Ck at 10,440', vehicle access high clearance."},{"url":"https://www.14ers.com/route.php?route=201610100802153","retrieved_at":"2026-11-14","fact":"Trailhead Silver Crk/Grizzly Gulch at 10,400 feet."}]},
+   {"field":"gain_ft","value":3535,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/un13832","retrieved_at":"2026-11-14","fact":"RT from Grizzly Gulch - Silver Ck TH: 9.4 mi / 3,535 ft (round trip)."}]},
+   {"field":"dist_mi_roundtrip","value":9.4,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/un13832","retrieved_at":"2026-11-14","fact":"RT from Grizzly Gulch - Silver Ck TH: 9.4 mi."}]}
+  ],
+  "note": "climb13ers header also says 'climbed with UN 13820'; its 9.4 mi / 3,535 ft is smaller than the two-peak 12.4 mi / 4,465 ft on the UN 13820 page, so read as this peak alone - verify."
+ },
+ "co_uncle_andy": {
+  "area": "co_quandary_peak_routes",
+  "facts": [
+   {"field":"length_ft","value":2500,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/112872510/uncle-andy","retrieved_at":"2026-11-14","fact":"Trad, Alpine, 2500 ft."}]},
+   {"field":"route_step","value":"Start in a 15-ft-wide constriction west of the Cristo Couloir entrance; about 400 ft of 60-65 degree snow, ~600 ft more up snow slopes, then traverse right on rock to join the Cristo for the final third.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/112872510/uncle-andy","retrieved_at":"2026-11-14","fact":"Constriction west of Cristo; ~400 ft 60-65 degree snow, ~600 ft more, traverse right to Cristo's last third."}]},
+   {"field":"approach_step","value":"Follow the Cristo Couloir approach, but keep walking past its start until this line to its left is visible.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/112872510/uncle-andy","retrieved_at":"2026-11-14","fact":"Use the Cristo approach, continue past it until the line on its left is visible."}]},
+   {"field":"overview","value":"Steeper alternative to the Cristo Couloir on Quandary; named for Brig. Gen. Andrew Armacost.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/112872510/uncle-andy","retrieved_at":"2026-11-14","fact":"Steeper alternative to the Cristo; named after Brig. Gen. Andrew Armacost."}]}
+  ],
+  "note": "14ers.com Quandary list opened (quan1-quan4): no Uncle Andy route; its Cristo (South Gully) figures are a different route and were not used."
+ },
+ "co_vermilion_peak_southeast_ridge": {
+  "area": "co_vermilion_peak",
+  "facts": [
+   {"field":"trailhead","value":"Lake Hope (Hope Lake) trailhead","method":"agree-2","level":"locked","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/vermillion-peak","retrieved_at":"2026-11-14","fact":"SE Ridge round trip given from Lake Hope."},{"url":"https://highclimbsandmisdemeanors.com/san-juan-mountains-2017-2020/sneffels-range/vermilion-peak/","retrieved_at":"2026-11-14","fact":"Southeast Ridge via Hope Lake Trail."}]},
+   {"field":"gain_ft","value":3809,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://highclimbsandmisdemeanors.com/san-juan-mountains-2017-2020/sneffels-range/vermilion-peak/","retrieved_at":"2026-11-14","fact":"SE Ridge via Hope Lake Trail: 9.5 miles, total gain 3,809 ft (round trip)."}]},
+   {"field":"dist_mi_roundtrip","value":9.5,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://highclimbsandmisdemeanors.com/san-juan-mountains-2017-2020/sneffels-range/vermilion-peak/","retrieved_at":"2026-11-14","fact":"9.5 miles for the Hope Lake Trail SE Ridge climb."}]},
+   {"field":"car_to_car_time","value":"7h18m (one party's time)","method":"single-source","level":"locked-1src","evidence":[{"url":"https://highclimbsandmisdemeanors.com/san-juan-mountains-2017-2020/sneffels-range/vermilion-peak/","retrieved_at":"2026-11-14","fact":"Time recorded 7h18m for the outing (one party's time)."}]},
+   {"field":"road","value":"Crossover vehicles with better clearance or most 4WD can reach the trailhead.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/vermillion-peak","retrieved_at":"2026-11-14","fact":"Crossover vehicles with better clearance and most 4WD can make the trailhead."}]}
+  ],
+  "note": "Grade conflict: climb13ers rates SE Ridge Class 2+ (matches ours); highclimbsandmisdemeanors calls it Class 3. Time kept as the page's own 7h18m (not converted). climb13ers 9.15 mi / 4,450 ft is a five-peak combo, not used."
+ },
+ "co_vestal_peak_south_face": {
+  "area": "co_vestal_peak",
+  "facts": [
+   {"field":"grade","value":"Class 2+","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/vestal-peak","retrieved_at":"2026-11-14","fact":"Vestal Peak South Face Route rated Class 2+, backpack, medium day."}]},
+   {"field":"gain_ft","value":6800,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/vestal-peak","retrieved_at":"2026-11-14","fact":"RT from Molas Pass - Elk Park trailhead: 25 mi / 6,800 ft (round trip)."}]},
+   {"field":"dist_mi_roundtrip","value":25,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/vestal-peak","retrieved_at":"2026-11-14","fact":"RT from Molas Pass - Elk Park trailhead: 25 mi."}]},
+   {"field":"trailhead","value":"Molas Pass - Elk Park trailhead","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/vestal-peak","retrieved_at":"2026-11-14","fact":"Route figures from Molas Pass - Elk Park Trailhead."}]},
+   {"field":"camp","value":"Beaver ponds on the Elk Creek trail, or upper Vestal Creek campsites (11,760 ft) - known for aggressive marmots.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.climb13ers.com/colorado-13ers/vestal-peak","retrieved_at":"2026-11-14","fact":"Base camp at Elk Creek beaver ponds or upper Vestal Creek campsites with camp-raiding marmots."}]}
+  ],
+  "note": "climb13ers also gives 7 mi / 3,900 ft RT from the Vestal Creek campsite (not trailhead). 14ers.com Vestal page (peaks/10281) opened: no free route page; MP lists Wham Ridge only."
+ },
+ "co_west_buttress": {
+  "area": "co_snowdon_peak_2",
+  "facts": [
+   {"field":"grade","value":"4th","method":"agree-2","level":"locked","evidence":[{"url":"https://www.mountainproject.com/route/106867787/west-buttress","retrieved_at":"2026-11-14","fact":"West Buttress of Snowdon graded 4th."},{"url":"https://www.14ers.com/route.php?route=2023072619305214851","retrieved_at":"2026-11-14","fact":"Text says the consensus grade on this route is class 4 (headline lists Class 3)."}]},
+   {"field":"length_ft","value":800,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/106867787/west-buttress","retrieved_at":"2026-11-14","fact":"Trad, Alpine, 800 ft, Grade III."}]},
+   {"field":"commitment","value":"Grade III","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/106867787/west-buttress","retrieved_at":"2026-11-14","fact":"Type line gives Grade III."}]},
+   {"field":"trailhead","value":"Andrews Lake, 10,750 ft","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=2023072619305214851","retrieved_at":"2026-11-14","fact":"Trailhead Andrews Lake at 10,750 feet."}]},
+   {"field":"gain_ft","value":2400,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=2023072619305214851","retrieved_at":"2026-11-14","fact":"Elevation gain 2,400 ft (total)."}]},
+   {"field":"dist_mi_roundtrip","value":5.5,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=2023072619305214851","retrieved_at":"2026-11-14","fact":"5.5 miles round trip if descending the West Buttress; 6.0 if descending the North ridge."}]},
+   {"field":"approach_step","value":"From Andrews Lake take the Crater Lake trail; after about 1 mile leave it at a register for a smaller trail across a marsh (keep left on bare rock) into forest.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=2023072619305214851","retrieved_at":"2026-11-14","fact":"Crater Lake trail ~1 mile, leave at register, cross marsh via left rock strip, trail climbs into forest."}]},
+   {"field":"route_step","value":"Some climbers move into the gully to the right in the upper part to avoid 4th-class climbing.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=2023072619305214851","retrieved_at":"2026-11-14","fact":"Some stray into the gully right in the upper portion to avoid class 4."}]}
+  ],
+  "note": "14ers.com headline difficulty is Class 3 while its text gives consensus class 4; MP says 4th."
+ },
+ "co_west_ridge_5": {
+  "area": "co_sawtooth_range_the",
+  "facts": [
+   {"field":"approach_step","value":"From Mica Basin head northeast up easy snow slopes to the Big Agnes saddle, then go west along the ridge.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113326449/west-ridge","retrieved_at":"2026-11-14","fact":"From Mica Basin go NE up easy snow to Big Agnes saddle, then west along ridge."}]},
+   {"field":"route_step","value":"Easy to difficult 5th class on the summit spires.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113326449/west-ridge","retrieved_at":"2026-11-14","fact":"Easy to difficult fifth class can be found on summit spires."}]},
+   {"field":"rack","value":"Just a rope for easy fifth class.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/113326449/west-ridge","retrieved_at":"2026-11-14","fact":"Protection: just a rope for easy 5th class."}]}
+  ],
+  "note": "The Sawtooth Range, Mt. Zirkel Wilderness (Steamboat Springs). Only Mountain Project found."
+ },
+ "co_west_ridge_and_hourglass_couloir": {
+  "area": "co_little_bear_peak",
+  "facts": [
+   {"field":"grade","value":"Class 4","method":"agree-2","level":"locked","evidence":[{"url":"https://www.14ers.com/route.php?route=litt6","retrieved_at":"2026-11-14","fact":"Little Bear West Ridge and Hourglass: Difficulty Class 4."},{"url":"https://www.mountainproject.com/route/106016603/west-ridge-and-hourglass-couloir","retrieved_at":"2026-11-14","fact":"West Ridge and Hourglass Couloir graded 4th."}]},
+   {"field":"gain_ft","value":6200,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=litt6","retrieved_at":"2026-11-14","fact":"Elevation gain 6,200 ft starting at 8,000 ft (5,400 from 8,800; 2,300 from Lake Como)."}]},
+   {"field":"dist_mi_roundtrip","value":14,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=litt6","retrieved_at":"2026-11-14","fact":"Round trip 14 miles from 8,000 ft (11.25 from 8,800; 3.5 from Lake Como)."}]},
+   {"field":"trailhead","value":"Lake Como (Blanca Peak) road, 8,000 ft","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=litt6","retrieved_at":"2026-11-14","fact":"Trailhead Lake Como (Blanca Pk) at 8,000 feet."}]},
+   {"field":"road","value":"4WD SUVs reach pull-offs at 8,800 ft after 3.25 mi on Lake Como road; small high-clearance 4WD may reach 10,000 ft with little parking.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=litt6","retrieved_at":"2026-11-14","fact":"4WD SUVs 3.25 mi to pull-offs at 8,800'; small 4WD maybe 10,000' with few parking spots."}]},
+   {"field":"length_ft","value":5000,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/106016603/west-ridge-and-hourglass-couloir","retrieved_at":"2026-11-14","fact":"Trad, Alpine, 5000 ft."}]},
+   {"field":"route_step","value":"A quarter mile past Lake Como take a cairned path up a loose couloir to a 12,580-ft saddle, follow the ridge or cairned traverse east to the Hourglass base near 13,300 ft, then climb the Hourglass.","method":"agree-2","level":"locked","evidence":[{"url":"https://www.mountainproject.com/route/106016603/west-ridge-and-hourglass-couloir","retrieved_at":"2026-11-14","fact":"Cairn 1/4 mi past Lake Como marks loose couloir to 12,580' saddle; then ridge or cairned traverse east."},{"url":"https://www.14ers.com/route.php?route=litt6","retrieved_at":"2026-11-14","fact":"Continue with cliffs on left to 13,300 ft and the base of the Hourglass gully."}]},
+   {"field":"hazard","value":"High rockfall risk in the Hourglass from parties above; fixed rope may be present but should not be trusted unchecked.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.14ers.com/route.php?route=litt6","retrieved_at":"2026-11-14","fact":"Main risk is rockfall in the Hourglass; existing rope may help but inspect it and its anchor."}]}
+  ],
+  "note": "gain/distance depend on start point; the 8,000-ft (2WD) figures chosen, others recorded in the evidence text."
+ },
+ "co_west_ridge_bypass": {
+  "area": "co_pagoda_mountain",
+  "facts": [
+   {"field":"overview","value":"Easy alternative to Pagoda's 5.7 West Ridge between the Chiefs Head/Pagoda col and the summit, used on the Glacier Gorge Traverse; on the sunny south side.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/111080915/west-ridge-bypass","retrieved_at":"2026-11-14","fact":"Easy way from Chiefs Head/Pagoda col to summit avoiding 5.7 West Ridge; on the south side."}]},
+   {"field":"route_step","value":"From the col cross 3rd/4th class slabs to a 2-ft grassy ledge, follow it about 0.25 mile across the south face, then a rubble ramp left about 500 ft to a short corner in a shallow bowl.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/111080915/west-ridge-bypass","retrieved_at":"2026-11-14","fact":"Slabs to grassy ledge ~0.25 mi across south face, rubble ramp ~500 ft, up a short corner."}]}
+  ],
+  "note": "climb13ers.com/colorado-13ers/pagoda-mountain (Black Lake access) and 14ers.com 'Pagoda From Glacier Gorge' route opened - different routes, not used."
+ },
+ "co_west_ridge_powell_traverse": {
+  "area": "co_mchenry_s_peak",
+  "facts": [
+   {"field":"rappels","value":"Two short rappels on a 60 m rope (a 70 m may reach the ledge) going McHenrys to Powell; webbing was weathered.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115165734/west-ridgepowell-traverse","retrieved_at":"2026-11-14","fact":"Two short raps with a 60m rope; 70m should reach the ledge; webbing looked worn."}]},
+   {"field":"route_step","value":"Class 4 with a rappel from McHenrys to Powell; Powell to McHenrys needs one pitch of easy fifth class.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/115165734/west-ridgepowell-traverse","retrieved_at":"2026-11-14","fact":"Class 4 McHenrys to Powell with rappel; reverse needs a 5.easy trad pitch."}]}
+  ],
+  "note": "Grade conflict: Mountain Project lists 5.2 (our grade 4th). climb13ers McHenrys page (via Stone Man Pass) opened - different route."
+ },
+ "co_x_y_z_traverse": {
+  "area": "co_traverses_at_x_y_z_area",
+  "facts": [
+   {"field":"commitment","value":"Grade IV","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120681312/xx-y-z-bloodshow-traverse","retrieved_at":"2026-11-14","fact":"Trad, Alpine, Grade IV (route listed as X',X, Y, Z, Bloodshow Traverse)."}]},
+   {"field":"route_step","value":"Traverse the whole ridge from X Prime (Pt. 12,710 on the main Gore crest) to Bloodshow Mountain (~12,980).","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120681312/xx-y-z-bloodshow-traverse","retrieved_at":"2026-11-14","fact":"Start at X Prime Pt. 12,710' on Gore crest; finish at Bloodshow Mt. ~12,980'."}]},
+   {"field":"approach_step","value":"5-6 miles via Pitkin Lake to the start at X Prime.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120681312/xx-y-z-bloodshow-traverse","retrieved_at":"2026-11-14","fact":"After 5-6 miles of Pitkin Lake, approach the start at X Prime."}]},
+   {"field":"rack","value":"Solo, or a very short rope and small rack.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120681312/xx-y-z-bloodshow-traverse","retrieved_at":"2026-11-14","fact":"Protection: solo or very short rope and small rack."}]},
+   {"field":"fa","value":"prior to Jacek Czyz, Sept. 1, 2019","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120681312/xx-y-z-bloodshow-traverse","retrieved_at":"2026-11-14","fact":"FA field: prior to Jacek Czyz, Sept. 1, 2019."}]}
+  ],
+  "note": "MP area 'Traverses at X, Y, Z Area' holds one route, named X',X, Y, Z, Bloodshow Traverse - matched to ours by area; grade Easy 5th agrees. MP's 25000 ft length not recorded (implausible as climbing length)."
+ },
+ "nh_3_king_ravine_mt_adams_ice_east_gully": {
+  "area": "nh_3_king_ravine_mt_adams_ice",
+  "facts": [
+   {"field":"commitment","value":"Grade II","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/124214307/east-gully","retrieved_at":"2026-11-14","fact":"Snow, Alpine, Grade II."}]},
+   {"field":"approach_step","value":"The next gully to the left of Iced Out Gully in King Ravine.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/124214307/east-gully","retrieved_at":"2026-11-14","fact":"Location: next gully looker's left of Iced Out Gully."}]},
+   {"field":"rack","value":"Solo or pickets.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/124214307/east-gully","retrieved_at":"2026-11-14","fact":"Protection: solo or pickets."}]}
+  ],
+  "note": "Only Mountain Project found."
+ },
+ "nh_3_king_ravine_mt_adams_ice_up_the_creek_without_a_paddle": {
+  "area": "nh_3_king_ravine_mt_adams_ice",
+  "facts": [
+   {"field":"length_ft","value":500,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/118093535/up-the-creek-without-a-paddle","retrieved_at":"2026-11-14","fact":"Snow, Alpine, 500 ft, Grade IV."}]},
+   {"field":"commitment","value":"Grade IV","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/118093535/up-the-creek-without-a-paddle","retrieved_at":"2026-11-14","fact":"Type line gives Grade IV."}]},
+   {"field":"fa","value":"11/23/19, Joel Sibley (?)","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/118093535/up-the-creek-without-a-paddle","retrieved_at":"2026-11-14","fact":"FA: 11/23/19, Joel Sibley (?)."}]},
+   {"field":"approach_step","value":"Aim for the long, thin debris field just left of center in the ravine; mostly a bushwhack.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/118093535/up-the-creek-without-a-paddle","retrieved_at":"2026-11-14","fact":"Aim for thin debris field left of center; bushwhack most of the way."}]}
+  ],
+  "note": "Only Mountain Project found."
+ },
+ "nh_4_castle_ravine_middle_sister": {
+  "area": "nh_4_castle_ravine",
+  "facts": [
+   {"field":"length_ft","value":1200,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/200655485/middle-sister","retrieved_at":"2026-11-14","fact":"Snow, Alpine, 1200 ft."}]},
+   {"field":"approach_step","value":"The middle of the Three Sisters gullies on the right side of Castle Ravine.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/200655485/middle-sister","retrieved_at":"2026-11-14","fact":"Location: middle of the Three Sisters gullies on right side of Castle Ravine."}]},
+   {"field":"rack","value":"Solo; pickets or rock gear optional.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/200655485/middle-sister","retrieved_at":"2026-11-14","fact":"Protection: solo; could bring pickets or rock gear."}]}
+  ],
+  "note": "Only Mountain Project found."
+ },
+ "nh_4_castle_ravine_south_sister": {
+  "area": "nh_4_castle_ravine",
+  "facts": [
+   {"field":"length_ft","value":1200,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/200655633/south-sister","retrieved_at":"2026-11-14","fact":"Snow, Alpine, 1200 ft."}]},
+   {"field":"approach_step","value":"The leftmost of the Three Sisters gullies on the right side of Castle Ravine.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/200655633/south-sister","retrieved_at":"2026-11-14","fact":"Location: leftmost of the Three Sisters gullies, right side of Castle Ravine."}]},
+   {"field":"rack","value":"Solo.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/200655633/south-sister","retrieved_at":"2026-11-14","fact":"Protection: solo."}]},
+   {"field":"descent","value":"Ski down, or walk off; the Castle Trail is the non-technical option for climbers.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/200655633/south-sister","retrieved_at":"2026-11-14","fact":"Descent: Castle Trail is a non-technical option, though unlikely to be broken out."}]}
+  ],
+  "note": "Only Mountain Project found."
+ },
+ "nh_ammonoosuc_ravine_west_side_south_branch": {
+  "area": "nh_ammonoosuc_ravine_west_side",
+  "facts": [
+   {"field":"length_ft","value":2000,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/117527275/south-branch","retrieved_at":"2026-11-14","fact":"Snow, Alpine, 2000 ft."}]},
+   {"field":"approach_step","value":"Take the Ammonoosuc Link to the Ammonoosuc Ravine Trail to the last clearing along the river; past the waterfall is too far.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/117527275/south-branch","retrieved_at":"2026-11-14","fact":"Ammonoosuc Link to Ammonoosuc Ravine Trail, last clearing by river; past waterfall is too far."}]},
+   {"field":"rack","value":"None needed; something on a very firm day.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/117527275/south-branch","retrieved_at":"2026-11-14","fact":"Can get by with no protection; on a really firm day may want some."}]}
+  ],
+  "note": "Only Mountain Project found."
+ },
+ "nm_unnamed_17": {
+  "area": "nm_central_slabs",
+  "facts": [
+   {"field":"pitches","value":2,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120260385/unnamed","retrieved_at":"2026-11-14","fact":"Trad, Alpine, 200 ft, 2 pitches."}]},
+   {"field":"length_ft","value":200,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120260385/unnamed","retrieved_at":"2026-11-14","fact":"Length 200 ft."}]},
+   {"field":"fa","value":"Mark Dalen & Bruce Doeren, summer 1978","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120260385/unnamed","retrieved_at":"2026-11-14","fact":"FA Mark Dalen and Bruce Doeren; climbed in summer 1978."}]},
+   {"field":"approach_step","value":"Between The Legs and Questa Dome.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120260385/unnamed","retrieved_at":"2026-11-14","fact":"Location: look between The Legs and Questa Dome."}]},
+   {"field":"rack","value":"A rope and a few pieces.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/120260385/unnamed","retrieved_at":"2026-11-14","fact":"With a rope, a few pieces of pro should suffice."}]}
+  ],
+  "note": "Grade conflict: Mountain Project lists 5.6; ours says Easy 5th. Questa Dome area, Taos."
+ },
+ "nv_terminal_cancer_vicinity_ice_terminal_cancer": {
+  "area": "nv_terminal_cancer_vicinity_ice",
+  "facts": [
+   {"field":"length_ft","value":1800,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/122349311/terminal-cancer","retrieved_at":"2026-11-14","fact":"Snow, Alpine, 1800 ft."}]},
+   {"field":"fa","value":"First descent (ski): Bard Royer, Moe Barker, 1979","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/122349311/terminal-cancer","retrieved_at":"2026-11-14","fact":"First Descent: Bard Royer, Moe Barker in 1979."}]},
+   {"field":"rack","value":"Crampons and axe optional, useful for icy conditions at the steepest top section.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/122349311/terminal-cancer","retrieved_at":"2026-11-14","fact":"Crampons and axe optional but nice for icy top where it is steepest."}]},
+   {"field":"route_step","value":"Narrow hallway with 30+ ft walls, only a few ski lengths wide at its narrowest; steepest in the high 30s at the top.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/122349311/terminal-cancer","retrieved_at":"2026-11-14","fact":"Sustained hallway with 30+ ft walls, a few ski lengths wide; max high 30s degrees."}]}
+  ],
+  "note": "Ruby Mountains, NV. Only Mountain Project found."
+ },
+ "or_h_mt_thielsen_western_gulch": {
+  "area": "or_mt_thielsen",
+  "facts": [
+   {"field":"pitches","value":4,"method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/125238267/western-gulch","retrieved_at":"2026-11-14","fact":"Search listing: Ice, Snow, Alpine, 4 pitches; text says 3-6 40 m pitches when ice is in."}]},
+   {"field":"route_step","value":"About 500 m of climbing at 30-60 degrees; can be steep snow, alpine ice or water ice; a drifted snow bridge can form a tunnel in the main chute.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/125238267/western-gulch","retrieved_at":"2026-11-14","fact":"About 500 m of climbing, 30 to 60 degrees; snow, alpine ice or water ice; snow bridge tunnel possible."}]},
+   {"field":"route_step","value":"From the gulch top climb right to join the West Ridge to the summit, or left toward the Northwest Arete.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/125238267/western-gulch","retrieved_at":"2026-11-14","fact":"At top go right to join West Ridge to summit, or left for the Northwest Arete."}]},
+   {"field":"hazard","value":"The apron below the gully is avalanche terrain that slides regularly; sun on the summit quickly affects the gulch.","method":"single-source","level":"locked-1src","evidence":[{"url":"https://www.mountainproject.com/route/125238267/western-gulch","retrieved_at":"2026-11-14","fact":"Apron is avalanche terrain that slides regularly; once sun reaches the top the gulch changes fast."}]}
+  ],
+  "note": "Only Mountain Project found. pitches value 4 is MP's listed count; the text gives 3-6 depending on how pitches are broken."
+ }
+}

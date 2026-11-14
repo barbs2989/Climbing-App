@@ -453,7 +453,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     ones are the entire difference.
   - **THE FOUR ARE DECLARED, NOT REVIVED, and `AvailCal` is the one worth reading.** The other
     three are superseded (`DbGuides`, `DbGuideDashboard`, `DbGuideApply`, all in `lib/`). `AvailCal`
-    has no counterpart and **could not have one**: the live inquiry flow in `lib/DbGuides.jsx`
+    has no counterpart and **could not have one**: the live inquiry flow in `DbGuides` (all four were deleted with the guide feature, 2026-11-14)
     takes dates as a **free-text field** (`placeholder="Dates you're thinking of"`) rather than from
     a guide's published availability, and **no availability, calendar, slot or booking column exists
     anywhere in `scripts/schema-snapshot.json`** — so a revived calendar would have nothing to draw
