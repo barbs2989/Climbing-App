@@ -5,6 +5,7 @@
 import { tx } from "./lib/tapWords.js";
 import { useState, useEffect, useRef, useMemo, useContext, lazy } from "react";
 import { BTN_SM } from "./lib/buttonStyles.js";
+import { stateFromPath } from "./lib/stateSections.js";
 import { ConfidenceCtx, headKey, ConfChip } from "./lib/confidence.jsx";
 import { createPortal } from "react-dom";
 import { HERO_BG, HERO_SHEEN } from "./lib/ScreenHero";
@@ -2020,7 +2021,7 @@ function mtnOf(r){const m=MOUNTAINS.find(x=>x.id===r.mountainId);return m?m.name
    answers only the first, and ListsManager used to answer all three from the SEED tree alone, so
    every DB-backed objective rendered an empty 📍 and filed under "Other". A DB route carries the
    same three facts on `_dbArea` (name, parentName, region = the state), so both trees are read. */
-function routeLoc(r){if(!r)return {area:"",parent:"",state:""};let m=MOUNTAINS.find(x=>x.id===r.mountainId);if(m){let area=m.name,parent="",state="",cur=m.parentId?MOUNTAINS.find(x=>x.id===m.parentId):null,g=0;if(m.areaType==="state"||m.areaType==="country")return {area:area,parent:"",state:area};while(cur&&g++<12){if(cur.areaType==="state"||cur.areaType==="country"){state=cur.name;break;}if(!parent)parent=cur.name;cur=cur.parentId?MOUNTAINS.find(x=>x.id===cur.parentId):null;}return {area:area,parent:parent,state:state};}const a=r._dbArea;if(!a)return {area:"",parent:"",state:""};const st=a.region||"";return {area:a.name||"",parent:(a.parentName&&a.parentName!==a.name&&a.parentName!==st)?a.parentName:"",state:st};}
+function routeLoc(r){if(!r)return {area:"",parent:"",state:""};let m=MOUNTAINS.find(x=>x.id===r.mountainId);if(m){let area=m.name,parent="",state="",cur=m.parentId?MOUNTAINS.find(x=>x.id===m.parentId):null,g=0;if(m.areaType==="state"||m.areaType==="country")return {area:area,parent:"",state:area};while(cur&&g++<12){if(cur.areaType==="state"||cur.areaType==="country"){state=cur.name;break;}if(!parent)parent=cur.name;cur=cur.parentId?MOUNTAINS.find(x=>x.id===cur.parentId):null;}return {area:area,parent:parent,state:state};}const a=r._dbArea;if(!a)return {area:"",parent:"",state:""};/* the STATE comes from the area's path, not `region`: some areas keep a sub-region there ("Chilliwack / Picket"), which then headed an Objectives section as if it were a state. That sub-region still shows, as the parent line, when there is no parent name. */const st=stateFromPath(a.path)||a.region||"";const sub=(a.region&&a.region!==st&&a.region!==a.name)?a.region:"";const par=(a.parentName&&a.parentName!==a.name&&a.parentName!==st)?a.parentName:"";return {area:a.name||"",parent:par||sub,state:st};}
 function routeLocText(r){const l=routeLoc(r);return [l.area,l.parent,l.state].filter(function(x,i,xs){return x&&xs.indexOf(x)===i;}).join(" · ");}
 function condRep(r){return (r.activity||[]).length;}
 
