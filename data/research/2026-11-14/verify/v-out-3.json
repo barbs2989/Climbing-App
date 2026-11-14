@@ -1,0 +1,888 @@
+[
+ {
+  "route_id": "co_mt_belford_northwest_ridge",
+  "area_id": "co_mt_belford",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=belf1",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-belford-and-oxford/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mt_bierstadt_standard_route_west_slopes",
+  "area_id": "co_mt_bierstadt_standard_route",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2850,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=bier1",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-bierstadt/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_sawtooth_traverse",
+  "area_id": "co_sawtooth_ridge_mt_bierstadt_evans_combo",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "3,900 is the whole Bierstadt-Sawtooth-Blue Sky loop total, not a single trailhead-to-summit gain"
+ },
+ {
+  "route_id": "co_mount_buckskin_northeast_slope",
+  "area_id": "co_mount_buckskin",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 1950,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=buck1"
+  ],
+  "problems": "14ers 1,950 confirmed. climb13ers says \"RT From Kite Lake: 3.2mi / 1,850'\" (a round-trip figure, so not counted; it would be within 10%)"
+ },
+ {
+  "route_id": "co_northeast_ridge_knife_edge",
+  "area_id": "co_capitol_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5300,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=capi1"
+  ],
+  "problems": "14ers: From the TH 5,300 (2,900 from Capitol Lake); single source"
+ },
+ {
+  "route_id": "co_castle_peak_northeast_ridge",
+  "area_id": "co_castle_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4600,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=cast1"
+  ],
+  "problems": "14ers: 4,600 from the main trailhead (3,100 from 11,200); single source"
+ },
+ {
+  "route_id": "co_challenger_point_north_slope",
+  "area_id": "co_challenger_point",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5400,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=chal1"
+  ],
+  "problems": "14ers: 5,400 from TH (2,600 from Willow Lake); single source"
+ },
+ {
+  "route_id": "co_clinton_peak_south_slope",
+  "area_id": "co_clinton_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2950,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=clin1"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_crestone_needle_south_face",
+  "area_id": "co_crestone_needle",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4700,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=cnee1"
+  ],
+  "problems": "14ers: 4,700 from SC 4WD TH (5,900 from 2WD, 2,700 from the lake); single source"
+ },
+ {
+  "route_id": "co_crestone_traverse",
+  "area_id": "co_the_crestones",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "7,000 is the Crestones Traverse combination total for a two-peak outing, not one trailhead-to-summit gain"
+ },
+ {
+  "route_id": "co_mount_columbia_west_slopes",
+  "area_id": "co_mount_columbia",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4250,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=colu2",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-columbia/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_red_gully",
+  "area_id": "co_the_crestones",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=cpea2"
+  ],
+  "problems": "14ers cpea2 (Crestone Peak South Face = Red Gully): 6,200 from 4WD TH; single source. Same URL as co_crestone_peak_south_face, so the two rows may be duplicates"
+ },
+ {
+  "route_id": "co_crestone_peak_south_face",
+  "area_id": "co_crestone_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=cpea2"
+  ],
+  "problems": "14ers: 6,200 from SC 4WD TH (7,400 from 2WD, 4,200 from the lake); single source"
+ },
+ {
+  "route_id": "co_crystal_peak_northeast_ridge",
+  "area_id": "co_crystal_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=crys1"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_culebra_peak_northwest_ridge",
+  "area_id": "co_culebra_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2700,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=cule1",
+   "https://thenextsummit.org/colorado-14ers/hiking-culebra-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mount_democrat_east_slope",
+  "area_id": "co_mount_democrat",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 2150,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=demo1",
+   "https://elementalquests.com/hikes/colorado/mount-democrat-east-slope/"
+  ],
+  "problems": "Both state 2,150. ElementalQuests is not a known 14ers copier, but its figure is identical"
+ },
+ {
+  "route_id": "co_mount_elbert_northeast_ridge",
+  "area_id": "co_mount_elbert",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=elbe1",
+   "https://www.fs.usda.gov/r02/psicc/recreation/mount-elbert-fourteener"
+  ],
+  "problems": "14ers says 4,500; USFS says 4,400 for the North Mt Elbert Trail (the app value). Within 10%"
+ },
+ {
+  "route_id": "co_north_buttress_el_diente_peak",
+  "area_id": "co_el_diente_peak_mount_wilson",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=eldi8"
+  ],
+  "problems": "14ers: 5,000 from Navajo Basin TH (3,200 from Navajo Lake); single source"
+ },
+ {
+  "route_id": "co_mount_eolus_northeast_ridge",
+  "area_id": "co_mount_eolus",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6100,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=eolu3",
+   "https://thenextsummit.org/colorado-14ers/climbing-mount-eolus/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mt_evans_standard_route_west_ridge",
+  "area_id": "co_mt_evans_standard_route",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=evan2",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-blue-sky/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_handies_peak_standard_route_southwest_slopes",
+  "area_id": "co_handies_peak_standard_route",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 2500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=hand1",
+   "https://www.runbikehike.us/hiking/american-basin-handies-peak/"
+  ],
+  "problems": "14ers says 2,500 from the American Basin TH; RunBikeHike says 2,700, which is 8% apart. RunBikeHike looks auto-generated, so this is weak"
+ },
+ {
+  "route_id": "co_mount_harvard_south_slopes",
+  "area_id": "co_mount_harvard",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4600,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=harv1",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-harvard/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_harvard_and_columbia_traverse_bypass",
+  "area_id": "co_rabbit_ridge",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "6,100 is the total for the two-peak Harvard-Columbia traverse outing, not one trailhead-to-summit gain"
+ },
+ {
+  "route_id": "co_humboldt_peak_west_ridge",
+  "area_id": "co_humboldt_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4300,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=humb1",
+   "https://thenextsummit.org/colorado-14ers/hiking-humboldt-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_huron_peak_northwest_slopes",
+  "area_id": "co_huron_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=huro1",
+   "https://thenextsummit.org/colorado-14ers/hiking-huron-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_kit_carson_peak_via_challenger",
+  "area_id": "co_kit_carson_peak",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "6,250 includes the climb back over Challenger on the return. 14ers: \"you must then return to Challenger\". Not one-way"
+ },
+ {
+  "route_id": "co_north_ridge_of_kit_carson",
+  "area_id": "co_kit_carson_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5315,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=kitc4"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_la_plata_peak_northwest_ridge",
+  "area_id": "co_la_plata",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4400,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=lapl1",
+   "https://thenextsummit.org/colorado-14ers/hiking-la-plata-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mount_lincoln_west_ridge",
+  "area_id": "co_mount_lincoln",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2600,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=linc1",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-lincoln/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mount_lindsey_northwest_gully",
+  "area_id": "co_mount_lindsey_climbs",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=lind1",
+   "https://thenextsummit.org/colorado-14ers/climbing-mount-lindsey/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_west_ridge_and_hourglass_couloir",
+  "area_id": "co_little_bear_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=litt6"
+  ],
+  "problems": "14ers: 6,200 if you start at 8,000 ft (5,400 from 8,800; 2,300 from Lake Como); single source"
+ },
+ {
+  "route_id": "co_longs_peak_keyhole_route",
+  "area_id": "co_longs_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5100,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=long1"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_maroon_peak_south_ridge",
+  "area_id": "co_maroon_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4800,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=maro1"
+  ],
+  "problems": "14ers says 4,800; the app has 4,600; single source"
+ },
+ {
+  "route_id": "co_bell_cord_couloir",
+  "area_id": "co_maroon_bells",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4556,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=maro3"
+  ],
+  "problems": "14ers says 4,556; the app has 4,600; single source"
+ },
+ {
+  "route_id": "co_mount_massive_east_slopes",
+  "area_id": "co_mount_massive",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=mass1",
+   "https://www.fs.usda.gov/r02/psicc/recreation/trails/mount-massive-trail-1487"
+  ],
+  "problems": "14ers says 4,500; USFS says the one-way hike gains 4,300 (4.4% apart); the app has 4,450"
+ },
+ {
+  "route_id": "co_missouri_mountain_northwest_ridge",
+  "area_id": "co_missouri_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=miss1"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_mount_wilson_southwest_slopes",
+  "area_id": "co_mount_wilson",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4400,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=mwil6",
+   "https://thenextsummit.org/colorado-14ers/climbing-mount-wilson/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_bells_traverse_submitted_as_maroon_ridge",
+  "area_id": "co_maroon_bells",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "4,850 is the Bells Traverse combination total for a two-peak outing, not one trailhead-to-summit gain"
+ },
+ {
+  "route_id": "co_mount_oxford_via_mount_belford",
+  "area_id": "co_mount_oxford",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "5,900 includes re-climbing Belford on the return. 14ers: \"retrace your route by climbing back to Mt Belford\". Not one-way"
+ },
+ {
+  "route_id": "co_pacific_peak_east_slopes",
+  "area_id": "co_pacific_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3650,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=paci1"
+  ],
+  "problems": "14ers: 3,650 from the lower trailhead (2,925 from the end of the road); single source"
+ },
+ {
+  "route_id": "co_pikes_peak_east_slopes",
+  "area_id": "co_pike_s_peak_2",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 7600,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=pikeeast"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_mount_princeton_east_slopes",
+  "area_id": "co_mount_princeton",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5400,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=prin1",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-princeton/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_pyramid_peak_northeast_ridge",
+  "area_id": "co_pyramid_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=pyra1",
+   "https://thenextsummit.org/colorado-14ers/climbing-pyramid-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_quandary_peak_standard_route_east_ridge",
+  "area_id": "co_quandary_peak_standard_route",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3450,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=quan1"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_redcloud_peak_northeast_ridge",
+  "area_id": "co_redcloud_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3700,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=redc1"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_san_luis_peak_northeast_ridge",
+  "area_id": "co_san_luis_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3600,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=sanl1",
+   "https://thenextsummit.org/colorado-14ers/hiking-san-luis-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mount_shavano_east_slopes",
+  "area_id": "co_mount_shavano",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=shav1",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-shavano-and-tabeguache-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mount_sherman_southwest_ridge",
+  "area_id": "co_mount_sherman",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2100,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=sher1"
+  ],
+  "problems": "14ers: 2,100 from the 12,000-ft gate (3,100 from the 11,100-ft winter closure); single source"
+ },
+ {
+  "route_id": "co_southwest_ridge_2",
+  "area_id": "co_mount_sneffels",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2950,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=snef2"
+  ],
+  "problems": "14ers: 2,950 from the outhouse parking (3,450 from 2WD, 1,750 from upper TH). Which start counts as the trailhead is a judgement call"
+ },
+ {
+  "route_id": "co_snowmass_mountain_east_slopes",
+  "area_id": "co_snowmass_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5800,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=snow1"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_sunlight_peak_south_face",
+  "area_id": "co_sunlight_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=sunl2",
+   "https://thenextsummit.org/colorado-14ers/climbing-sunlight-peak-colorado/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_sunshine_peak_via_redcloud_peak",
+  "area_id": "co_sunshine_peak",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "4,800 covers both peaks and the return over Redcloud. 14ers: \"return over Redcloud\", \"Some re-gain is required\". Not one-way"
+ },
+ {
+  "route_id": "co_tabeguache_peak_via_mount_shavano",
+  "area_id": "co_tabeguache_peak",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "5,600 is the round-trip cumulative gain, re-climbing Shavano on the return (Colorado United says so explicitly)"
+ },
+ {
+  "route_id": "co_torreys_peak_south_slopes",
+  "area_id": "co_torrey_s_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=torr2"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_kelso_ridge",
+  "area_id": "co_torrey_s_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3100,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=torr4"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_torrey_s_peak_dead_dog_couloir",
+  "area_id": "co_torrey_s_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=torr7"
+  ],
+  "problems": "14ers.com stats block states it; single source"
+ },
+ {
+  "route_id": "co_torrey_s_peak_north_face_aka_tuning_fork",
+  "area_id": "co_torrey_s_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4500,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=torr9"
+  ],
+  "problems": "14ers: 4,500 starting at I-70 (3,000 from ~11,200 on the Grizzly Gulch road); single source"
+ },
+ {
+  "route_id": "co_uncompahgre_peak_south_ridge",
+  "area_id": "co_uncompahgre_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=unco1",
+   "https://thenextsummit.org/colorado-14ers/hiking-uncompahgre-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_wetterhorn_peak_southeast_ridge",
+  "area_id": "co_wetterhorn_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3300,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=wett1",
+   "https://thenextsummit.org/colorado-14ers/climbing-wetterhorn-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_wilson_peak_southwest_ridge",
+  "area_id": "co_wilson_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 3900,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=wils1"
+  ],
+  "problems": "14ers: 3,900 from the Rock of Ages TH; matches the app; single source"
+ },
+ {
+  "route_id": "co_windom_peak_west_ridge",
+  "area_id": "co_windom_peak",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6000,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=wind1",
+   "https://thenextsummit.org/colorado-14ers/hiking-windom-peak/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "co_mount_yale_southwest_slopes",
+  "area_id": "co_mount_yale",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4300,
+  "confirmed_urls": [
+   "https://www.14ers.com/route.php?route=yale1",
+   "https://thenextsummit.org/colorado-14ers/hiking-mount-yale/"
+  ],
+  "problems": "Both pages state it, but thenextsummit copies 14ers.com: one independent source"
+ },
+ {
+  "route_id": "ny_big_slide_mtn_the_brothers_trail",
+  "area_id": "ny_big_slide_mtn",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 2800,
+  "confirmed_urls": [
+   "https://www.adirondackhikers.com/adirondack-high-peaks/big-slide-mountain/",
+   "https://www.hikeadk.com/hikes/big-slide-mountain"
+  ],
+  "problems": "Adirondack Hikers: \"Ascent 2,800 feet\" (Garden via the Brothers); Hike ADK: 2,800 from The Garden"
+ },
+ {
+  "route_id": "ak_mount_foraker_sultana_ridge",
+  "area_id": "ak_mount_foraker",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 10500,
+  "confirmed_urls": [
+   "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/",
+   "https://www.mountaineers.org/activities/routes-places/mount-foraker-sultana-ridge"
+  ],
+  "problems": "Both say 10,500 ft. The figures may share an origin; the Mountaineers lists length 20 mi"
+ },
+ {
+  "route_id": "ak_mount_foraker_sultana_ridge",
+  "area_id": "ak_mount_foraker",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 1100,
+  "confirmed_urls": [
+   "https://www.alpineinstitute.com/route-profile-sultana-ridge-mt-foraker/"
+  ],
+  "problems": "AAI: summit Crosson then \"descend 1100 ft\" to the col on the way in; single source"
+ },
+ {
+  "route_id": "ab_mount_louis_the_gmoser_route",
+  "area_id": "ab_mount_louis",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 5100,
+  "confirmed_urls": [
+   "https://www.alpinejournals.com/2017/07/17/the-gmoser-on-mt-louis-another-bucket-list-alpine-climb/"
+  ],
+  "problems": "The page says the summit takes \"over 5,100'\" from the parking lot, a lower bound stated for the peak in general; single source"
+ },
+ {
+  "route_id": "wa_mount_rainier_edmunds_headwall",
+  "area_id": "wa_mount_rainier",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 1000,
+  "confirmed_urls": [
+   "https://www.cascadeclimber.com/edmunds_headwall.htm"
+  ],
+  "problems": "Trip report: a \"1000 foot descent\" through scree to the North Mowich Glacier on approach day 2. Approximate, and it may not be the only downhill on the way in"
+ },
+ {
+  "route_id": "co_arrow_peak_east_ramp",
+  "area_id": "co_arrow_peak",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT From Molas Pass - Elk Park: 24mi / 6,700'\", a round trip that includes the Animas descent and its regain"
+ },
+ {
+  "route_id": "co_casco_peak_north_ridge",
+  "area_id": "co_casco_peak",
+  "field": "approach_loss_ft",
+  "verdict": "confirmed_1src",
+  "value": 615,
+  "confirmed_urls": [
+   "https://www.climb13ers.com/colorado-13ers/casco-peak"
+  ],
+  "problems": "climb13ers: \"You will lose 615 feet\" from Frasco BM to the Frasco-Casco saddle on the way in. The route runs over Frasco BM first"
+ },
+ {
+  "route_id": "co_cathedral_peak_south_ridge_and_couloir",
+  "area_id": "co_cathedral_peak",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT From Cathedral Lake TH: 8.6mi / 4,025'\", a round-trip figure"
+ },
+ {
+  "route_id": "co_ice_mountain_northeast_ridge",
+  "area_id": "co_ice_mountain",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT ... 8.4mi / 3,820'\", a round-trip figure"
+ },
+ {
+  "route_id": "co_jupiter_mountain_southwest_slopes",
+  "area_id": "co_jupiter_mountain",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT From Needleton Bridge: 17mi / 5,630'\", a round-trip figure"
+ },
+ {
+  "route_id": "co_mt_meeker_the_loft_route",
+  "area_id": "co_mt_meeker",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT From Longs Peak: 11mi / 4,510'\", a round-trip figure"
+ },
+ {
+  "route_id": "co_north_apostle_southwest_ridge",
+  "area_id": "co_north_apostle",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT ... 8mi / 3,320'\", a round-trip figure"
+ },
+ {
+  "route_id": "co_un_13_838_west_ridge",
+  "area_id": "co_un_13_838",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT From Grizzly Gulch - Silver Ck TH: 9.4mi / 3,535'\", a round-trip figure"
+ },
+ {
+  "route_id": "co_vestal_peak_south_face",
+  "area_id": "co_vestal_peak",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "Labelled \"RT From Molas Pass - Elk Park: 25mi / 6,800'\", a round trip that includes the Animas descent and its regain"
+ },
+ {
+  "route_id": "ca_san_joaquin_mountain_san_joaquin_ridge",
+  "area_id": "ca_san_joaquin_mountain",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 2600,
+  "confirmed_urls": [
+   "https://www.climber.org/reports/1999/515.html"
+  ],
+  "problems": "1999 trip report: \"2600' elevation gain from trailhead\" (Mammoth Mountain Inn); single source"
+ },
+ {
+  "route_id": "ny_mount_haystack_phelps_trail_from_the_garden",
+  "area_id": "ny_mount_haystack",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 4000,
+  "confirmed_urls": [
+   "https://www.cnyhiking.com/MountHaystack.htm"
+  ],
+  "problems": "\"7.8 mile one way hike with an elevation gain of just over 4000 feet\" from the Garden; single source"
+ },
+ {
+  "route_id": "az_mt_humphreys_humphrey_s_peak_trail",
+  "area_id": "az_mt_humphreys",
+  "field": "gain_ft",
+  "verdict": "confirmed_agree2",
+  "value": 3420,
+  "confirmed_urls": [
+   "https://www.fs.usda.gov/r03/coconino/recreation/trails/humphreys-trail-no-151",
+   "https://hikearizona.com/decoder.php?ZTN=64"
+  ],
+  "problems": "USFS says \"Elevation Gain/Loss: 3,420\" (one way, 3-4 hr one way); HikeArizona says 3,313 gain (3,330 accumulated). 3% apart. HikeArizona sat behind Cloudflare and passed on its own after waiting"
+ },
+ {
+  "route_id": "ca_mt_whitney_mount_whitney_trail_the",
+  "area_id": "ca_mt_whitney",
+  "field": "gain_ft",
+  "verdict": "confirmed_1src",
+  "value": 6200,
+  "confirmed_urls": [
+   "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney"
+  ],
+  "problems": "USFS: the trail \"gains over 6,200 feet\" from Whitney Portal to the summit, a lower bound; single source"
+ },
+ {
+  "route_id": "ny_donaldson_mountain_seward_range_herd_path",
+  "area_id": "ny_donaldson_mountain",
+  "field": "gain_ft",
+  "verdict": "wrong_scope",
+  "value": null,
+  "confirmed_urls": [],
+  "problems": "4,000 is the 16-mi round-trip figure, and Hike ADK says the return \"includes climbing Seward again\". Not one-way"
+ }
+]

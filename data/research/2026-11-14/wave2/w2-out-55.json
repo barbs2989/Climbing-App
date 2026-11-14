@@ -11,7 +11,7 @@
      {
       "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route",
       "retrieved_at": "2026-11-14",
-      "fact": "Route stats list elevation gain 6,100 ft for the South Route (WTA summit entry repeats the same 20 mi / 6,100 ft / 8,325 ft figures)."
+      "fact": "Route stats list elevation gain 6,100 ft for the South Route; the WTA summit entry repeats the same figures."
      }
     ]
    },
@@ -1883,6 +1883,429 @@
    }
   ],
   "note": "Our grade is 5.4; Mountain Project says 5.3. Trip-report figures (47 mi / 8,000 ft) are within 10% of the Mountaineers figures."
+ },
+ "wa_mount_fricaba_standard": {
+  "area": "wa_mount_fricaba",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "Don Bechlem and Jack Newman, 1957 (first ascent of the peak; route not stated)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Fricaba",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent of the mountain was made in 1957 by Don Bechlem and Jack Newman."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountaineers page (routes-places/deception-mystery-fricaba-hal-foss: 18 mi, 8,500 ft) covers a four-peak traverse, so its figures are not for this route. WTA mount-fricaba page carried no stats. SummitPost not tried (403 for other agents)."
+ },
+ "wa_mount_johnson_standard": {
+  "area": "wa_mount_johnson",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "Scott Osborn, Joe Halwax, John King, about 1935 (earlier credit: Elvin Johnson and George Martin, 1940)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: named for a believed 1940 ascent by Johnson and Martin; evidence shows Osborn, Halwax and King climbed it about 1935."
+     }
+    ]
+   }
+  ],
+  "note": "No Mountaineers route page for Mount Johnson (only activity listings); WTA mount-johnson 404; stevensong 404. No published gain or distance for the Royal Basin line was reached."
+ },
+ "wa_mount_la_crosse_scramble": {
+  "area": "wa_mount_la_crosse",
+  "facts": [
+   {
+    "field": "peak_fa",
+    "value": "Richard Paulson, William Ryer, Paul Wiseman, Frank Woodworth, 1928 (peak FA; route not stated)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_LaCrosse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent of the mountain in 1928 by Paulson, Ryer, Wiseman and Woodworth."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountaineers mt-elk-lick-lacrosse page (18 mi, 6,500-7,500 ft) combines Elk Lick and LaCrosse from Duckabush or Dosewallips, so not used. jonnewmark and cascadeclimbers LaCrosse reports were found but not opened."
+ },
+ "wa_mount_lawson_standard": {
+  "area": "wa_mount_lawson",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "North Fork Quinault Trailhead (519 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: North Fork Quinault trail runs 16 miles to Low Divide, elevation change 519 ft to 3,602 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "North Fork Trailhead to Wolf Bar ~2.5 mi, Wolf Bar to Elip Creek ~4 mi",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS trail guide: trailhead to Wolf Bar about 2.5 miles, then about 4 miles to Elip Creek."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "River crossings can be hazardous in high water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS warns the trail crossings can be hazardous during high water."
+     }
+    ]
+   }
+  ],
+  "note": "WTA trip report trip_report.2022-08-26.1005557646 mentions a 16-hour summit day but gives no route figures. explor8ion.com lawson-mount is a different (Kananaskis) peak. Wikipedia Mount Lawson (WA) gives no route facts."
+ },
+ "wa_mount_noyes_standard": {
+  "area": "wa_mount_noyes",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "North Fork Quinault Trail 16 mi to Low Divide (519 ft to 3,602 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: 16 miles to Low Divide; trailhead 519 ft rising to 3,602 ft; legs via Wolf Bar, Elip Creek and Sixteen Mile."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Sixteen Mile river crossing can be impassable in heavy rain or snowmelt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: the crossing at 16-Mile can be difficult or impossible in heavy rain or snowmelt."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Best season May (trail)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS lists best season for the North Fork Quinault trail starting May."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia Mount_Noyes_(Washington) only says USGS mappers may have climbed it 1898-1900 (not recorded, uncertain). No published summit-route gain found."
+ },
+ "wa_mount_olson_standard": {
+  "area": "wa_mount_olson",
+  "facts": [
+   {
+    "field": "camp",
+    "value": "Camp Riley (~6 mi from Upper South Fork Skokomish TH, just inside the park) and Sundown Lake (~3 mi beyond)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-28.3740270681",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Camp Riley lies roughly 6 miles in, just inside the park boundary; Sundown Lake about 3 miles further; no official sites there."
+     }
+    ]
+   }
+  ],
+  "note": "Second page: Wikipedia Mount_Olson returned 404. Trip report figures are approximate (\"roughly\"); no summit-route gain stated."
+ },
+ "wa_mount_mastiff_south_route": {
+  "area": "wa_mount_mastiff",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3330,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Mastiff from the Merritt Lake trailhead: 10 miles round trip with 3,330 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Mastiff from the Merritt Lake trailhead is 10 miles round trip."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Merritt Lake Trailhead (3,050 ft), ~1.5 mi up FR 657 off SR 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Merritt Lake trailhead at 3,050 ft at the end of FR 657, about 1.5 miles off SR 2."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Unpaved road to Merritt Lake trailhead is rough",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-mastiff/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song reports the unpaved road to the Merritt Lake trailhead was rough."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2 on the easiest line",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-mastiff/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: the scrambling was class 2 at most if you keep to the easiest path."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-howard-mount-mastiff",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August, September."
+     }
+    ]
+   }
+  ],
+  "note": "CONFLICT: our gain is 4,900 ft; The Mountaineers states 3,330 ft for Mastiff alone from Merritt Lake. Our grade is Class 3; Steven Song says class 2 at most."
+ },
+ "wa_mount_mystery_standard": {
+  "area": "wa_mount_mystery",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 7639,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-mystery",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 7,639 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-mystery",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: May through September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-mystery",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   }
+  ],
+  "note": "The Mountaineers approach goes up the Dosewallips to Deception Creek, not Royal Basin as our route does, so its distances are not used. trailcatjim mt-mystery report is the Mystery Glacier east face (other route). WTA mount-mystery had no stats; Wikipedia Mount_Mystery gives no route facts."
+ },
+ "wa_mount_pershing_standard": {
+  "area": "wa_mount_pershing",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 6154,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pershing",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: south peak at 6,154 ft is the highest of three; gain listed 3,600 ft (approach not stated)."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep snow to 45 degrees and moderately exposed class 3+ scrambling on the regular route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-pershing/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: the regular route has steep snow to 45 degrees and moderately exposed scrambling around class 3+."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pershing",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers lists 3,600 ft gain but does not name the approach, so not recorded as gain (ours 3,700). Steven Song calls the regular route class 3+; ours says Class 4."
+ },
+ "wa_mount_pugh_pika_slab": {
+  "area": "wa_mount_pugh",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Mount Pugh Trailhead (1,900 ft), FR 2095",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers: Mount Pugh Trailhead at 1,900 ft, 2 miles up FR 2095."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Lake Metan (3,260 ft) at 1.5 mi is the last water on the trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pugh",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA: Lake Metan at 3,260 ft, 1.5 miles in, is the final water source."
+     }
+    ]
+   }
+  ],
+  "note": "No page found that describes the Pika Slab pitch itself; facts here are for the shared Mount Pugh trail approach."
+ },
+ "wa_mount_pulitzer_standard": {
+  "area": "wa_mount_pulitzer",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Doug Waali, Bob Wood, Kent Heathershaw, 1961 (east ridge)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Pulitzer_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent in 1961 by Waali, Wood and Heathershaw via the east ridge."
+     }
+    ]
+   }
+  ],
+  "note": "climberkyle Bailey Range traverse and WTA Bailey Range trip reports were found but not opened; no route-specific figures reached."
+ },
+ "wa_mount_rahm_south_side": {
+  "area": "wa_mount_rahm",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Standard route from Depot Creek and Lake Ouzel; the approach to Lake Ouzel takes most parties a full day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-rahm/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: standard route goes from Depot Creek and Lake Ouzel; the modern approach to Lake Ouzel takes a full day."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Alternative standard route from Silver Lake involves a long side-hill on the bench above the lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-rahm/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steven Song: the Silver Lake standard route involves an arduous side-hill trudge on the bench above Silver Lake."
+     }
+    ]
+   }
+  ],
+  "note": "WTA mount-rahm page describes the route as Class 5 (ours Class 4) without detail; not recorded as a grade. The Mountaineers Chilliwacks page only gives Depot Creek Road driving."
  },
  "wa_mount_price_hester_lake_route": {
   "area": "wa_mount_price",
