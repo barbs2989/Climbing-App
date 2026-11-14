@@ -118,7 +118,10 @@ for the owner. With fewer sources: do not touch the field; list it under **Dispu
 sites for research for everything, all sessions, etc"; and "i have permission and liscense from these
 sites to access with claude" — this is licensed access, not a workaround): the claude-in-chrome tools, one tab per agent,
 navigate + extract the figures with `javascript_tool` (don't read whole pages into context). Take facts
-and the URL only, never copied text. **Close each tab (`tabs_close_mcp`) as soon as its research is
+and the URL only, never copied text. **Run as many Chrome research agents in parallel as practical**,
+each in its own tab, the route list split across them (owner: "open as many tabs for research as you
+can" → "make that a rule"; ~10 at once worked on 2026-11-14) — find pages through each site's own search
+in Chrome so the session's shared WebSearch budget lasts. **Close each tab (`tabs_close_mcp`) as soon as its research is
 done** (owner: "after you are done with the research from a site, automatically close it for me").
 **A CAPTCHA, human check or login wall: stop and ask the owner to click it — never solve one.** Subagents without the Chrome tools still get 403; give that pass to an
 agent that has them. This applies to every site in this skill and in `route-waypoints-and-tracks`.
