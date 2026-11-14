@@ -17,7 +17,8 @@ import CrewGearList from "./CrewGearList.jsx";
 import CrewStepSheet from "./CrewStepSheet.jsx";
 import CrewRides from "../src/components/CrewRides.tsx";
 import { useCrewEmailInvites, useProfileSearch, useProfilesByIds } from "./db";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { RouteLookupCtx } from "./RouteLookupStatus.jsx";
 import { downloadIcs } from "./ics.js";
 import { useWideScreen } from "./wideLayout.js";
 import { C, CLIMBERS, profileDiscGrades, DLOCALE, DOW, FALLBACK_AV, FALLBACK_COVER, ME, agreedDate, blankItinDay, crewPlace, crewStage, crewTimeLabel, itinDaysToDraft, fuzzyMatchAny, getAvailableItineraries, haptic, hasSlot, hoursNum, itinDraftToStructured, onImgErr, placeLabel, placeSub, placeTrip, pubFirst, pubName, realProfileId, weekOf } from "../ClimbMatchCore.jsx";
@@ -56,8 +57,12 @@ export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onL
      stays the route object for the route-only modules below (itineraries, "Log the climb"); an area
      crew has none, and each of those modules says what it does instead. */
   const place=crewPlace(crew,{routeById:routeById,areaById:areaById});
+  /* App's batched route read (dbOnlyRouteIds holds every crew's routeId): in flight, failed, or answered. */const routeLookup=useContext(RouteLookupCtx);
   const wide=useWideScreen();/* JOIN REQUESTS AS ROWS on the website (competitor review batch A, item 6, owner 2026-11-04): a 700px column of three-part cards (header, quote, two full-width buttons) is tall for what is one decision; a row holds the same — avatar, name (opens the profile), the note on one line, Accept, Decline. The phone keeps its card. */
   if(place===null)return <div aria-busy="true" style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"16px 15px",marginBottom:14,textAlign:"center"}}><LoadingRows C={C} label="Loading this crew…"/></div>;
+  /* NOT RESOLVED IS NOT GONE (owner 2026-11-14: both crews read "no longer available" while the database was down -- "its because the database is down"). crewPlace calls a route crew `missing` the moment routeById has nothing, but the route may still be loading, or its read may have FAILED. Loading reads as loading; a failed read says so and offers a retry; only an answered read says the climb is gone. */
+  if(place.kind==="missing"&&!crew.areaId&&USE_DB&&routeLookup.fetching)return <div aria-busy="true" style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"16px 15px",marginBottom:14,textAlign:"center"}}><LoadingRows C={C} label="Loading this crew…"/></div>;
+  if(place.kind==="missing"&&!crew.areaId&&USE_DB&&routeLookup.failed)return <div role="status" style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"16px 15px",marginBottom:14,textAlign:"center"}}><div style={{fontSize:14,fontWeight:700,color:C.amber,marginBottom:4}}>Couldn’t load this crew’s climb</div><div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>The climb didn’t load just now — check your connection and try again.</div>{routeLookup.retry?<button type="button" onClick={routeLookup.retry} style={BTN_SECONDARY(C)}>Try again</button>:null}</div>;
   if(place.kind==="missing")return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"16px 15px",marginBottom:14,textAlign:"center"}}><div style={{fontSize:14,fontWeight:700,color:C.textSub,marginBottom:4}}>{crew.areaId?"This crew’s area is no longer available":"This crew’s climb is no longer available"}</div><div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{crew.areaId?"The area this crew was planned around couldn’t be found.":"The route this crew was planned around couldn’t be found."}</div>{onDismiss?<button onClick={()=>onDismiss(crew.id)} style={{padding:"8px 16px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Remove this crew</button>:null}</div>;
   const route=place.route;
   /* THE CREW'S ITINERARY (owner note 2026-10-21). Import offers YOUR OWN plan for this climb first -- the one saved
