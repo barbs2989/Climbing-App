@@ -129,7 +129,14 @@ steps, descent, rappels, rack, glacier notes, hazards, permits, emergency — ne
 single-field) read that moves on (owner, 2026-11-14: "while you are on a page, look for all data and
 information that would fill a route, dont just look at elevation gain and move on" → "make that a
 rule"). **Be efficient with agents:** dispatch chunks on a rolling basis (start the next when one
-finishes) up to the concurrent-subagent cap, rather than a burst that hits it. **Run as many Chrome research agents in parallel as practical**,
+finishes) up to the concurrent-subagent cap, rather than a burst that hits it. **One tab per agent,
+reused:** an agent opens ONE tab and navigates that same tab from page to page and route to route, never
+a second tab, and closes it when its whole chunk is done (owner, 2026-11-14: "feel free to use the same
+tabs to move onto other pages if that's more efficient" → "make that a rule"). A site answering 403 or
+429 is skipped for the rest of the run, not retried. **Save every 20 minutes** during a research run:
+copy all outputs to `~/dev/research-archive/<date>/` and commit them to `data/research/<date>/` on a
+research-data branch whose PR auto-merges (owner: "every 20 minutes, merge and deploy so we don't lose
+progress" → "make that rule") — a job's tmp folder is deleted with the job. **Run as many Chrome research agents in parallel as practical**,
 each in its own tab, the route list split across them (owner: "open as many tabs for research as you
 can" → "make that a rule"; ~10 at once worked on 2026-11-14) — find pages through each site's own search
 in Chrome so the session's shared WebSearch budget lasts. **Close each tab (`tabs_close_mcp`) as soon as its research is
