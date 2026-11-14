@@ -337,8 +337,8 @@ function gapSeason(r){return !!r&&!r.season&&!r.climate&&!["trad","sport"].inclu
    full here can never trip that guard.
    The last resort now breaks on a WORD boundary: "Roughly January through the…" reads as a
    sentence that stops, where "Roughly January through the e…" reads as a bug. */
-/* Route tags — list membership ("Fifty Classic Climbs", "Bulger"), what the climbing is
-   like (from routes.features), and the derived warnings. Rendered from the SAME slugs
+/* Route tags — list membership ("Fifty Classic Climbs", "Bulger", "Regional classic") and
+   nothing else (owner, 2026-11-05 — no feature or derived chips). Rendered from the SAME slugs
    Challenges and Lists match on, so a chip a climber can see is a chip a challenge can
    count — the two cannot drift into disagreeing about whether this route is a classic.
    `detail` ("#19", "tied #51") is the rank the slug cannot carry; it rides beside the

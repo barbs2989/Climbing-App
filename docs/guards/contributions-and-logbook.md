@@ -422,8 +422,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:route-tags`** pins the route page's chip row (`RouteTagRow`, the one consumer of
   `lib/routeTags.js`): every real `routes.lists` string reaches its list chip, every chip agrees
-  with `routeInList`, and — since the 2026-09-25 tag audit — the two DERIVED chips claim only what
-  the route's own text supports. Static, in `npm run build`.
+  with `routeInList`, and — since 2026-11-05 — **only lists are drawn**. Static, in `npm run build`.
+  - **Lists only (owner, 2026-11-05: "keep list membership tag and remove all the rest").** The
+    character chips from `routes.features` (Exposed, Sustained, Slab… and any unknown value such
+    as "Talus", which the fallback drew grey) and the two derived warnings (Glacier travel, Raptor
+    closure) are gone from `routeTags()`; `FEATURE_TAGS`, `crossesGlacier`, `raptorClosure` and
+    `derivedTags` were deleted with their guard cases. The guard's composition case now carries
+    all three kinds of input and asserts the two list chips come back and nothing else. The
+    `features` column and SuggestFix's *Style / character* editor stay (data intact, reversible).
+    The paragraphs below record the derived chips' audit as it stood when they were drawn.
   - **Both derived chips fired on a bare word, and both were mostly wrong.** Measured over all
     211,716 routes: *Glaciated* sat on 659 and **328 crossed no glacier** — 170 on a place name
     alone (Glacier Peak Wilderness, the town of Glacier on SR 542, Glacier Basin), 109 on one

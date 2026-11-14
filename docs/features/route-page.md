@@ -105,7 +105,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/EditIconButton.tsx` | `EditIconButton` — the route page's edit pencil (binds `C` to lib/areaChrome.jsx's shared button) (moved out of RouteDetail.jsx, PR53) |
 | `src/components/GapNote.tsx` | `GapNote` — the muted line a section draws for a field the route lacks, with a button to add it (moved out of RouteDetail.jsx, PR53) |
 | `src/components/VerifNote.tsx` | `VerifNote` — the Community-reported / Unverified line on Overview (moved out of RouteDetail.jsx, PR53) |
-| `src/components/TagChip.tsx` | `TagChip` — one route tag chip (a list or a style), toggling its blurb (moved out of RouteDetail.jsx, PR53) |
+| `src/components/TagChip.tsx` | `TagChip` — one route tag chip (a list the route is on), toggling its blurb (moved out of RouteDetail.jsx, PR53) |
 | `src/components/RouteTagRow.tsx` | `RouteTagRow` — the route's tag chips and the open one's blurb (moved out of RouteDetail.jsx, PR53) |
 | `src/components/CragSafetyNotes.tsx` | `CragSafetyNotes` — Spot a bolt or anchor problem? on sport routes (moved out of RouteDetail.jsx, PR53) |
 | `src/components/RackBetaList.tsx` | `RackBetaList` — RACK BETA: what climbers said about the rack (moved out of RouteDetail.jsx, PR53) |
