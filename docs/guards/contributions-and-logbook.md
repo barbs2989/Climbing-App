@@ -256,6 +256,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   Proved by re-pointing one id at a dead row: co14 and co_cent each dropped to "1 missing" naming it.
   `also` is the fix for containers: list ONLY the peak's own faces, never a neighbouring formation
   filed under it (Eldorado's Dorado Needle, McClellan's Nightmare Needles must not tick the peak).
+- **`check:list-summit-audit`** (2026-11-14): a peak list ticks only from a route that REACHES THE
+  SUMMIT. The 2026-11-14 census found 1,496 routes able to tick a list peak, including a V1 boulder
+  filed under Castleton Tower, crags on Pikes Peak and Mt Evans attached through `also`, and gulch ice
+  on Quandary and Lindsey. Every one got a reviewed verdict with a reason
+  (`research-data/list-summit-audit/audit.json`); `lib/listSummit.js` is GENERATED from it.
+  The guard fails when a roster peak or `also` area was never audited (so **a new list or peak cannot
+  ship unreviewed**), when an area the audit detached is attached again, when the generated deny map
+  drifts from the audit, and when the rule stops working on the Castleton boulder.
+  **Adding a list or peaks:** add the roster to `lib/lists.js`, run `npm run audit:list-summit-routes`
+  (needs a DB slot), write a `verdicts-<name>.json` for the new routes beside the others (a later
+  file wins per id), then `node scripts/build-list-summit-audit.mjs`. **New routes** on an audited
+  peak are invisible to a static guard: `npm run audit:list-summit-routes -- --check` lists them.
+  Until reviewed they count, except bouldering/top-rope, which `reachesSummit` refuses by discipline.
+  An `also` area is detached only when the reviewer said so AND none of its routes summit.
 - **`check:correction-readers`** (was `check:rappel-readers`) enforces one sentence, now for
   **every** contributable column rather than rappels alone: **where a contribute-form field
   competes with an enrichment column, the reader must prefer the CLIMBERS' value once
