@@ -214,7 +214,9 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    It carries `SLOPE_CREDIT` while it is on: Canada's and Mexico's elevation licences make a credit a condition of use (the
    credit-only-where-required rule). `BaseLayerToggle` takes `slope`/`slopeOn`/`setSlopeOn`: a *Slope* button (`aria-pressed`) under
    Full screen, with a colour key under it when on, stacked in one column with the Snow stepper. Only the route map (`GPXMap`) opts in. `on3d` ends the row with a **3D** button (route map and area map); a five-button row says "Sat" below a 285px row and tightens its padding below 215px (`index.html`, `.cm-lyr-3d`).
-7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation, `acceptFix` discards stale/worse fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
+7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation; `lib/fixFilter.js` decides what it shows: `acceptFix` discards stale/worse/older fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
+   `smoothFix` places the dot on a running estimate (Kalman-style, drifts at `FIX_MOVE_MPS`, resets on a jump no walk explains) so it stops hopping while you stand still,
+   and a first fix looser than `FIX_GOOD_M` (100 m) frames its ring instead of zooming in; the map zooms in when a GPS-grade fix lands. The ring and "±" stay the phone's own figure (`check:fix-filter`).
    `fmtFixAcc`/`locateLabel` word the status. The dot is an HTML marker lifted above all other markers; the accuracy ring stays under them (#2411).
    `NearMePanel` re-centres only on the first fix.
 8. Place search: `searchPlaces(q, bounds)` calls Nominatim with `countrycodes=us,ca&limit=5&dedupe=1`, `postalcode=` for a 5-digit zip else `q=`, and a `viewbox` from the map bounds.
