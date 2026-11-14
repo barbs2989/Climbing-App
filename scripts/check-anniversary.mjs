@@ -190,8 +190,17 @@ for (const s of SURFACES) {
   let text = "";
   // Some overlays are scoped to one screen, so opening them from the wrong tab renders
   // nothing and the check would read a bare tab. Take the first tab where the text appears.
-  for (const t of s.tabs) {
+  for (const [i, t] of s.tabs.entries()) {
     text = await load(s.qs.replace(/zt=[a-z]+/, "zt=" + t));
+    // The signed-in climb_logs fetch can land after the page "settles" on a slow CI runner,
+    // so a fixed pause read the panel before `_anniv` had a log to map (red on #3264/#3265/
+    // #3267 while the dropdown, read second, passed). Wait for the line itself; a severed
+    // path still fails, only later. The first tab gets the long wait -- by then the fetch has
+    // either landed or is not coming, so the remaining tabs need only a short one.
+    if (!text.includes(HEAD)) {
+      await page.waitForFunction((h) => document.body.innerText.includes(h), HEAD, { timeout: i === 0 ? 20000 : 3000 }).catch(() => {});
+      text = await page.innerText("body").catch(() => text);
+    }
     if (text.includes(HEAD)) break;
   }
   dump[s.label] = text;
