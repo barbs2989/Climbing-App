@@ -10,6 +10,7 @@
 // `spanEnding(T)` and never share a time.
 import { useRef, useEffect } from "react";
 import { C } from "../ClimbMatchCore.jsx";
+import { boxZoom } from "./wideLayout.js";
 
 const COMPASS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
 // The direction the wind blows FROM, as 16-point compass text; null when there is no direction.
@@ -36,7 +37,7 @@ export function whenText(when) {
 /** @param {{label: string, when?: string|null, value?: import("react").ReactNode, sub?: import("react").ReactNode, tone?: string|null, wide?: boolean}} props */
 export function Tile({ label, when, value, sub, tone, wide }) {
   return <div style={{ background: C.surface, border: "1px solid " + (tone ? tone + "77" : C.border), borderLeft: "4px solid " + (tone || C.borderHi), borderRadius: 10, padding: "9px 11px", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
-    <div style={{ fontSize: 12, fontWeight: 800, color: C.textSub, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>
+    <div style={{ fontSize: 12, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>
     {when ? <div style={{ display: "inline-block", fontSize: 11.5, fontWeight: 600, color: C.textMuted, background: C.card, border: "1px solid " + C.borderLight, borderRadius: 20, padding: "1px 8px", marginTop: 3 }}>{whenText(when)}</div> : null}
     <div style={{ fontSize: 21, fontWeight: 800, color: tone || C.text, marginTop: 5, lineHeight: 1.15, overflowWrap: "anywhere" }}>{value}</div>
     {sub ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 3, lineHeight: 1.4 }}>{sub}</div> : null}
@@ -75,7 +76,7 @@ export function HourStepper({ index, count, onPick, label, children }) {
     const first = seen.current !== count; seen.current = count;
     const rr = row.getBoundingClientRect(), br = b.getBoundingClientRect(), pad = b.offsetWidth + 5;
     if (!first && br.left - pad >= rr.left && br.right + pad <= rr.right) return;
-    const left = row.scrollLeft + br.left - rr.left - (row.clientWidth - b.offsetWidth) / 2;
+    const left = row.scrollLeft + (br.left - rr.left) / boxZoom(row) - (row.clientWidth - b.offsetWidth) / 2;
     if (first || !row.scrollTo) row.scrollLeft = left; else row.scrollTo({ left: left, behavior: "smooth" });
   }, [index, count]);
   const step = function (d) { const j = index + d; if (j >= 0 && j < count) onPick(j); };

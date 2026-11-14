@@ -49,6 +49,14 @@ const asUser = async (sess, path, init = {}) => readBody(await fetch(`${SUPABASE
     "Content-Type": "application/json", Prefer: "return=representation", ...(init.headers || {}),
   },
 }));
+// 0408 (crew_creator_joins): creating a crew seats its creator CONFIRMED, by trigger, so the creator's own
+// row is already there and inserting it again is a duplicate key (23505 -> HTTP 409). A run against a
+// database without 0408 (a preview replaying older migrations) still needs the insert, so ask first.
+const alreadySeated = async (sess, crewId, uid) => {
+  const r = await asUser(sess, `crew_members?crew_id=eq.${crewId}&user_id=eq.${uid}&select=status`);
+  assertHealthy(r, "reading whether the crew's creator is already seated");
+  return Array.isArray(r.json) && r.json.some((m) => m.status === "confirmed");
+};
 
 async function signIn(email, password) {
   const res = await readBody(await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
@@ -358,6 +366,7 @@ export async function durableFixture(log) {
   // status other than confirmed). Doing it as the owner would manufacture a state the app's own
   // flow cannot reach -- the trap this repo already records for the accepted connection.
   for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    if (uid === mateSession.user.id && await alreadySeated(mateSession, inviteCrew.id, uid)) continue;
     const seat = await asUser(mateSession, "crew_members", {
       method: "POST",
       body: JSON.stringify({ crew_id: inviteCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),
@@ -397,6 +406,7 @@ export async function durableFixture(log) {
   // crew invite", 0086/0227 — the first draft seated the owner confirmed and CI answered 403), so the
   // mate invites and the OWNER accepts, which is exactly the app's own flow.
   for (const [uid, status] of [[mateSession.user.id, "confirmed"], [session.user.id, "invited"]]) {
+    if (uid === mateSession.user.id && await alreadySeated(mateSession, areaCrew.id, uid)) continue;
     const seat = await asUser(mateSession, "crew_members", {
       method: "POST",
       body: JSON.stringify({ crew_id: areaCrew.id, user_id: uid, status, invited_by: mateSession.user.id }),

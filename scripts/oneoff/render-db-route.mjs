@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 // Render a REAL DB route through the real RouteDetail, and report which sub-tabs the
 // tab strip offers + which discipline catOf() lands on.
 import { build } from "esbuild";
@@ -10,7 +11,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
-const { SUPABASE_URL, anonKey, headers } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { SUPABASE_URL, anonKey, headers } = await import(fileHref(path.join(ROOT, "scripts/lib/supabase-env.mjs")));
 
 const ENTRY = `
 import React from "react";

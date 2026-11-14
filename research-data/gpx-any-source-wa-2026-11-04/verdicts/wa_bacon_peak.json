@@ -1,0 +1,33 @@
+{
+  "area_id": "wa_bacon_peak",
+  "routes": [
+    {
+      "route_id": "wa_bacon_peak_diobsud",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored best season is mid-July through September; histogram peaks Jul-Aug (23/18) with Sep 11. Spring ascents (Mar-May, 21) are the Bacon Creek east approach, a different route. Mid-June accepted as within a month of the window." },
+      "track": { "aid": "2545184", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged West standard on 2024-06-20, starting and ending at the Watson-Anderson Lakes trailhead (5 m from our pin). The report describes the Watson sidehill, two passes, the big gully below the peak and the snow finish to the summit, matching our route text and pins; summited, tops out at Peakbagger's coordinate." },
+      "otherTracksConsidered": [
+        { "aid": "3178915", "verdict": "different", "why": "2026-04-25, starts on the Bacon Creek road side (14 km from our trailhead): the east approach, and April." },
+        { "aid": "3178571", "verdict": "different", "why": "2026-04-25 combo with Canadian Bacon from the ridge side; April." },
+        { "aid": "3148311", "verdict": "different", "why": "2026-03-23 from Bacon Creek road; March, off-season." },
+        { "aid": "1164982", "verdict": "different", "why": "2019-05-29 East Approach from NF 1064; different approach and snow-season." },
+        { "aid": "2266430", "verdict": "different", "why": "2017-07-26 starts at Watson Lakes but climbs the west slopes from Noisy Creek; no track shape." },
+        { "aid": "2211369", "verdict": "different", "why": "2023-06-04 two-day climb from Bacon Creek; no track." },
+        { "aid": "2565069", "verdict": "unsure", "why": "2024-07-07 no route name or track; text (pass, traverse above Diobsud Lake) fits our route. Used for facts only." }
+      ],
+      "pins": [
+        { "type": "Summit", "action": "move", "lat": 48.662665, "lng": -121.520525, "name": "Bacon Peak",
+          "evidence": "Peakbagger's lidar coordinate (48.662665,-121.520525, 7067 ft) and the highest points of all five summit tracks agree within 2-20 m; our pin (48.66406,-121.51919) is 183 m from it.",
+          "confirmedBy": "Peakbagger peak 1644 surveyed coordinate in the packet plus five tracks' highest points (aids 3178915, 3178571, 3148311, 2545184, 1164982)" }
+      ],
+      "facts": [
+        { "field": "approach_note", "month": 6, "text": "In late June the tread fades above the lakes, and the two passes beyond the Watson sidehill forced a line well below the usual downloaded tracks; expect a rough brush stretch before the big gully under the peak.", "aids": ["2545184"] },
+        { "field": "monthBreakdown", "month": 6, "text": "In late June the big snow slope and the final slopes under the icecap carried stable snow with shallow boot penetration at midday, but the last steep pitch turned to deep slush in afternoon heat; the summit finishes on a narrow snow crest about 20 m long.", "aids": ["2545184"] },
+        { "field": "monthBreakdown", "month": 7, "text": "In early July, snow is consolidated above about 6,000 ft and allows a shortcut up to 6,500 ft, while the lower brush is slow and mosquitoes arrive; water is plentiful on the way out.", "aids": ["2565069"] },
+        { "field": "pro_tips", "month": 7, "text": "Campsites above 6,000 ft are hard to spot in early July; settle on the Diobsud Lakes or the saddle before climbing higher, or you may bivy on sloping rocks.", "aids": ["2565069"] },
+        { "field": "watch_out", "month": 7, "text": "In late July, cliff bands and a waterfall west of the Diobsud basin dead-ended a party searching for the way up; confirm the gully before committing.", "aids": ["2266430"] }
+      ]
+    }
+  ],
+  "notes": "Our summit pin was flagged suspect and is 183 m off; the move is supported. Most recent tracks in the packet come from the Bacon Creek road east approach, a different route not in our catalog for this peak (typically a spring snow climb, Mar-May); consider adding it. The Watson Lakes trailhead pin is already within 5 m of the good track."
+}

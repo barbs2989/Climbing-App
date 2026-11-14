@@ -1,0 +1,49 @@
+{
+ "area_id": "wa_mount_tom",
+ "routes": [
+  {
+   "route_id": "wa_mount_tom_scramble",
+   "season": {
+    "months": [
+     7,
+     8
+    ],
+    "window": "Jul-Aug",
+    "evidence": "Only 12 logged successful ascents (Jun 1, Jul 8, Aug 3); a NPS Olympus page names late June to mid-August for the same Blue Glacier approach; stored Jul-Sep, optimal Jul-Aug; keep Jul-Aug"
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2948024",
+     "verdict": "unsure",
+     "why": "12 Jul 2025 summit, but part of a Bailey Range traverse that starts at Sol Duc, about 13 km from our Hoh trailhead pin; not a round trip on our approach"
+    },
+    {
+     "aid": "258293",
+     "verdict": "unsure",
+     "why": "Logged White Glacier, 4 Aug 2012, summited, but the packet holds no GPS track (start/end null)"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 8,
+     "text": "After crossing the Blue Glacier in early August, a camp on the rocks about 200 ft below Panic Peak's summit puts you close to the climb, and it can be windy there.",
+     "aids": [
+      "258293"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "On the ridge west of Olympus there are three bumps; in early August the correct notch was the one between the two right-hand bumps, and the other notch cost a party a backtrack.",
+     "aids": [
+      "258293"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Only one ascent with a GPS track exists and it is a through-traverse, so no track assigned. The 2012 report's descent scramble into the White Glacier basin took a party of seven about three hours, consistent with our stored crux warning."
+}

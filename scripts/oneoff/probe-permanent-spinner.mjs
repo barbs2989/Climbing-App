@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // A failed read must not read as an EMPTY one — that class is guarded (check:read-failures,
 // check:outage). This asks the SIBLING question nothing has: must a read that never STARTED not
 // read as one still in flight?
@@ -15,7 +16,7 @@
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const FILES = execFileSync("git", ["ls-files"], { cwd: ROOT, encoding: "utf8" })
   .split("\n").filter((f) => /\.(jsx|js)$/.test(f) && !f.startsWith("scripts/") && !f.startsWith("node_modules"));
 

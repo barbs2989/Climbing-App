@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Apply confirmed decision ops: field patches (compare-and-set), rename, refile (+create_area), merge (backup then
 // delete), split (insert new row). Full-row backups of every row touched are written BEFORE any write.
 // usage: node apply-structural.mjs confirm/out/cN.json [--dry]
@@ -5,7 +6,7 @@ import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../../lib/supabase-env.mjs";
 import { gradeNumFor } from "../../../lib/grade.js";
 const key = requireServiceKey();
-const T = new URL("../../../audits/route-tab-contradictions/decisions", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/route-tab-contradictions/decisions", import.meta.url));
 const file = process.argv[2], DRY = process.argv.includes("--dry");
 const { results } = JSON.parse(fs.readFileSync(`${T}/${file}`));
 const CITE = /https?:|www\.|\.com\b|\.org\b|mountain ?project|summitpost|peakbagger|cascadeclimbers|nwhikers|alltrails|caltopo|wta\b|washington trails association|according to|per the |guidebook|beckey'?s? (?:guide|cascade alpine)|\bCAG\b|sources? (?:say|state|list|give|describe)|trip reports? (?:say|state|describe|put|give)|wikipedia/i;

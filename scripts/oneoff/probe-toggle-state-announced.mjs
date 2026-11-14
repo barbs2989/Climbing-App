@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // A toggle chip that turns blue when you pick it -- does it say so, or only look it?
 //
 // Sibling question to probe-selected-state-announced, which covered TAB bars (mutually
@@ -27,7 +29,7 @@ assertQuietBox("probe-toggle-state-announced.mjs");
 
 const ONLY = (process.argv.find((a) => a.startsWith("--overlays=")) || "--overlays=onboardOpen").slice(11).split(",").filter(Boolean);
 const TABS = (process.argv.find((a) => a.startsWith("--tabs=")) || "--tabs=").slice(7).split(",").filter(Boolean);
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 
 async function claimPort(start) {
   for (let p = start; p < start + 40; p++) {
@@ -38,7 +40,7 @@ async function claimPort(start) {
 }
 const port = await claimPort(5410);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 const stop = () => { try { process.kill(-server.pid, "SIGTERM"); } catch {} };

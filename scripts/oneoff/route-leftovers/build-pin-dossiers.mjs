@@ -1,8 +1,9 @@
+import { fileURLToPath } from "node:url";
 // Build the pin-research inputs: audits/route-leftovers/pins/in/pNN.json, each {id, name, area_id, findings, row, gpx_summary}.
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const A = new URL("../../../audits/route-leftovers", import.meta.url).pathname;
+const A = fileURLToPath(new URL("../../../audits/route-leftovers", import.meta.url));
 const findings = JSON.parse(fs.readFileSync(`${A}/pin-cands-half1.json`));
 const extra = {
   wa_poltergeist_pinnacle: "Trailhead pin is named Hannegan Pass Trailhead but sits near Ross Dam.",

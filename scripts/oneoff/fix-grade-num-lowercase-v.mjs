@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Fill `routes.grade_num` for the rows a case-SENSITIVE V branch could not read.
  *
  * WHY A DATA PASS HAS TO FOLLOW THE PARSER CHANGE. `grade_num` is the sortable grade and both
@@ -45,7 +46,7 @@ const tmp = path.join(ROOT, "scripts", `_grade-vfix-${process.pid}.mjs`);
 let OLD_FOR, OLD_FROM;
 try {
   fs.writeFileSync(tmp, execFileSync("git", ["show", `${REF}:lib/grade.js`], { cwd: ROOT, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 }));
-  ({ gradeNumFor: OLD_FOR, gradeNumFrom: OLD_FROM } = await import(`file://${tmp}`));
+  ({ gradeNumFor: OLD_FOR, gradeNumFrom: OLD_FROM } = await import(fileHref(`file://${tmp}`)));
 } finally { try { fs.unlinkSync(tmp); } catch {} }
 if (typeof OLD_FOR !== "function" || typeof OLD_FROM !== "function") {
   console.error(`FAIL - could not load the reference parser from ${REF}. Nothing was compared and nothing written.`);
@@ -106,7 +107,7 @@ if (!APPLY) { console.log(`\n  DRY RUN - pass --apply to write.\n`); process.exi
 const svc = requireServiceKey();
 const rbPath = path.join(ROOT, "scripts", `rollback-grade-num-lowercase-v-${Date.now()}.json`);
 fs.writeFileSync(rbPath, JSON.stringify(writes.map((w) => ({ id: w.id, grade_num: w.from })), null, 2));
-console.log(`  rollback written: ${path.relative(ROOT, rbPath)}\n`);
+console.log(`  rollback written: ${path.relative(ROOT, rbPath).replace(/\\/g, "/")}\n`);
 
 let ok = 0;
 for (const w of writes) {

@@ -50,7 +50,7 @@ let n = 0;
 for (const f of results) {
   for (const m of f.messages) {
     n++;
-    console.log(`${path.relative(ROOT, f.filePath)}:${m.line}:${m.column}  ${m.severity === 2 ? "error" : "warning"}  ${m.message}  ${m.ruleId || ""}`);
+    console.log(`${path.relative(ROOT, f.filePath).replace(/\\/g, "/")}:${m.line}:${m.column}  ${m.severity === 2 ? "error" : "warning"}  ${m.message}  ${m.ruleId || ""}`);
   }
 }
 // Every disable directive names its rule(s) and gives a reason after ` -- `.
@@ -61,7 +61,7 @@ for (const f of results) {
       const rest = m[1].replace(/\*\/.*$/, "").trim();
       if (/^[@\w/-]+(?:\s*,\s*[@\w/-]+)*\s+--\s+\S/.test(rest)) continue;
       n++;
-      console.log(`${path.relative(ROOT, f.filePath)}:${i + 1}  error  an eslint-disable directive must name its rule(s) and give a reason: \`eslint-disable-line <rule> -- <why>\``);
+      console.log(`${path.relative(ROOT, f.filePath).replace(/\\/g, "/")}:${i + 1}  error  an eslint-disable directive must name its rule(s) and give a reason: \`eslint-disable-line <rule> -- <why>\``);
     }
   });
 }

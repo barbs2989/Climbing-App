@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // WHAT DOES THE ROUTE PAGE SAY TWICE?
 //
 // Three defects of one class were found by hand on 2026-09-02/03, each by somebody happening to
@@ -70,11 +72,11 @@ fs.writeFileSync(entry, [
   `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};`,
   `export { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};`,
 ].join("\n"));
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
   "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
-const { RouteDetail, dbRouteToCamel } = await import(out);
+const { RouteDetail, dbRouteToCamel } = await import(fileHref(out));
 if (typeof dbRouteToCamel !== "function") { console.log("BROKEN PROBE: lib/db.js no longer exports dbRouteToCamel — ANCHOR LOST"); process.exit(1); }
 
 // The most-enriched rows are where columns can collide at all; a thin route has nothing to repeat.

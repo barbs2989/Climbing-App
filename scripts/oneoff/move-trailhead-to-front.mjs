@@ -122,7 +122,7 @@ requireServiceKey();
 const stamp = new Date().toISOString().replace(/[:.]/g, "-");
 const backup = path.join(ROOT, "scripts", "oneoff", `trailhead-move-backup-${stamp}.json`);
 fs.writeFileSync(backup, JSON.stringify(Object.fromEntries(fix.map((f) => [f.r.id, f.r.waypoints])), null, 2));
-console.log(`\nbackup: ${path.relative(ROOT, backup)}`);
+console.log(`\nbackup: ${path.relative(ROOT, backup).replace(/\\/g, "/")}`);
 
 for (const f of fix) await patchRow("routes", f.r.id, { waypoints: f.next });
 console.log(`patched ${fix.length}; reconciling…`);

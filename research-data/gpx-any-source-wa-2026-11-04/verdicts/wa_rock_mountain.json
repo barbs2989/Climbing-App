@@ -1,0 +1,21 @@
+{
+  "area_id": "wa_rock_mountain",
+  "routes": [
+    {
+      "route_id": "wa_rock_mountain_northeast_ridge",
+      "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Searched Mountaineers Howard/Mastiff scramble pages and Nason Ridge trail reports: traverse done late spring to early fall, snow persists on the ridge into June. Stored Jun-Sep kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1742694", "verdict": "different", "why": "24 Aug 2021 out-and-back along the Nason Ridge trail from its west end; never crosses Mastiff/Howard or the Howard-Rock col, so not our northeast ridge line." },
+        { "aid": "3177446", "verdict": "offseason", "why": "25 Apr, snow climb by the West trail, then Howard; wrong route and out of season." },
+        { "aid": "3176883", "verdict": "offseason", "why": "25 Apr, West trail." },
+        { "aid": "3176720", "verdict": "offseason", "why": "25 Apr, West trail." },
+        { "aid": "3107793", "verdict": "not-summited", "why": "January turn-back." },
+        { "aid": "369262", "verdict": "offseason", "why": "November SE ridge." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "The West Route already has a track. No recording climbs Rock Mountain from the Mastiff/Howard side."
+}

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "./lib/file-href.mjs";
 // A CLIMBER WHO HAS NOT ONBOARDED IS OFFERED ONBOARDING, AND ONE WHO HAS IS LEFT ALONE.
 //
 // Both halves matter and they fail in opposite directions. Before this, the effect written to
@@ -146,7 +147,7 @@ globalThis.localStorage = {
   getItem: (k) => (store.has(k) ? store.get(k) : null),
   setItem: (k, v) => { store.set(k, String(v)); },
 };
-const pref = await import(path.join(ROOT, "lib/onboard-pref.js"));
+const pref = await import(fileHref(path.join(ROOT, "lib/onboard-pref.js")));
 if (typeof pref.onboardPrompted !== "function" || typeof pref.markOnboardPrompted !== "function")
   dead("lib/onboard-pref.js does not export the pair this guard exists to check.");
 

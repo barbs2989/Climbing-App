@@ -19,8 +19,14 @@ export interface StatePickerProps {
 export default function StatePicker({ onPick, C }: StatePickerProps) {
   const { data: countries, isLoading: lc, error: ec } = useCountries();
   const { data: states, isLoading, error } = useStates();
-  const [countryId, setCountryId] = useState("");
+  // null = the climber has not chosen yet. The tab OPENS ON THE UNITED STATES (owner 2026-11-04: the
+  // website's tab opened on two country chips over "Choose a country above" — an empty page; later
+  // that day, from the competitor review, the phone too: it opened on two empty selects, and every
+  // competitor opens on a list). Canada is one tap away in the select. Clicking the chosen country
+  // still clears it (""), as before.
+  const [countryId, setCountryId] = useState<string | null>(null);
   const wide = useWideScreen();
+  const usId = countries ? (countries.find(c => c.name === "United States") || { id: "" }).id : "";
   // One country is not a choice, it is a dead tap — so skip the step until there are two.
   // The catalog ran on a single root for its whole life and would have shown a pointless
   // "pick a country" select the entire time.
@@ -34,7 +40,7 @@ export default function StatePicker({ onPick, C }: StatePickerProps) {
   // step cannot be offered it must not be required. `inCountry` already falls through to every
   // state when `country` is "", so the list below is correct as it stands.
   const noCountryStep = !!only || !!ec;
-  const country = countryId || only || "";
+  const country = (countryId ?? usId) || only || "";
   const noun = subdivisionNoun(country);
   const inCountry = (states || []).filter((x: StatePickerState) => !country || countryOfArea(x) === country);
   // THE WEBSITE (lib/wideLayout.js): a desktop has the room to SHOW the regions instead of hiding

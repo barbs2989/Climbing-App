@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // A guide application reaches a reviewer, and reaches nobody else.
 //
 // Two real accounts: the mate APPLIES (creating its own profile, credential and document
@@ -12,8 +14,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 const { chromium } = pwPkg;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const { createFixture, sessionForStorage, STORAGE_KEY } = await import(ROOT + "/scripts/lib/ui-fixture.mjs");
-const { loadEnv } = await import(ROOT + "/scripts/lib/supabase-env.mjs");
+const { createFixture, sessionForStorage, STORAGE_KEY } = await import(fileHref(ROOT + "/scripts/lib/ui-fixture.mjs"));
+const { loadEnv } = await import(fileHref(ROOT + "/scripts/lib/supabase-env.mjs"));
 const env = loadEnv();
 const SB = env.VITE_SUPABASE_URL, ANON = env.VITE_SUPABASE_ANON_KEY, SVC = env.SUPABASE_SERVICE_KEY;
 const svcH = { apikey: SVC, Authorization: "Bearer " + SVC, "Content-Type": "application/json" };
@@ -22,7 +24,7 @@ let bad = 0;
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { console.log("  FAIL  " + m); bad++; process.exitCode = 1; };
 const signIn = async (u) => (await (await fetch(`${SB}/auth/v1/token?grant_type=password`, { method: "POST", headers: { apikey: ANON, "Content-Type": "application/json" }, body: JSON.stringify({ email: u.email, password: u.password }) })).json());
-const sql = (q) => execFileSync("npx", ["supabase", "db", "query", "--linked", q], { cwd: ROOT, encoding: "utf8" });
+const sql = (q) => execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", q], { cwd: ROOT, encoding: "utf8" });
 
 let f = null, browser = null, server = null, restoreEnv = null, madeAdmin = false, docPath = null;
 try {
@@ -81,7 +83,7 @@ try {
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   const envLocal = ROOT + "/.env.local", hidden = envLocal + ".probe-hidden";
   if (fs.existsSync(envLocal)) { fs.renameSync(envLocal, hidden); restoreEnv = () => fs.existsSync(hidden) && fs.renameSync(hidden, envLocal); }
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore",
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore",
     env: { ...process.env, VITE_SUPABASE_URL: SB, VITE_SUPABASE_ANON_KEY: ANON, VITE_USE_DB: "true", VITE_DEMO_AUTOLOGIN: "" } });
   let up2 = false;
   for (let i = 0; i < 150; i++) { try { const x = await fetch(base); if (x.ok) { up2 = true; break; } } catch {} await new Promise((r) => setTimeout(r, 2000)); }

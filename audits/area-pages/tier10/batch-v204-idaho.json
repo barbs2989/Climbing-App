@@ -1,0 +1,28 @@
+{
+ "id_mattersville": {"_expect": {"name": "Mattersville", "region": "Idaho"},
+  "blurb": "Mattersville is a tucked-away limestone cliff in the Fins, in the southern Lost River Range of central Idaho. It holds 17 bolted sport lines, and the grading skews hard: most are 5.12, with a couple each in the 5.10 and 5.11 range. The wall leans back a little short of vertical, so the climbing is slabby and technical, on crimps, pinches and shallow runnels with the odd pocket. Because of that angle the face drops into shade earlier than the main Fins walls. Belays are from a narrow ledge just off the ground, and a few lines want a 70 m rope. It suits strong sport climbers more than newcomers, and the drive in needs a high-clearance four-wheel-drive vehicle.",
+  "review": {"sources": ["https://www.mountainproject.com/area/202949737/mattersville", "https://www.mountainproject.com/area/108134051/the-fins"]}},
+ "id_north_shore": {"_expect": {"name": "North Shore", "region": "Idaho"},
+  "blurb": "North Shore is a small cliff at the east end of Dierkes Lake near Twin Falls, reached by walking the lake's northern edge past Little Italy and Short Subject. Sixteen routes mix sport, a few trad lines and one top-rope, with grades running from 5.8 up to 5.13. The middle of the range is the draw: a handful of 5.10 and easier lines make it a popular stop for newer leaders, while a few 5.11 and 5.12 climbs give stronger climbers something to try. The wall faces due south and is in the sun all day, which makes it pleasant on cool days and a poor pick for a summer afternoon.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111981081/north-shore", "https://www.mountainproject.com/area/111981017/dierkes-lake"]}},
+ "id_terrapin_east": {"_expect": {"name": "Terrapin East", "region": "Idaho"},
+  "blurb": "Terrapin East is the east side of the Terrapin, one of the granite spires in the Northern Pins near McCall. Sixteen routes are mostly bolted sport lines, with two trad routes added. Grades start around 5.7 and run to 5.12, with the bulk between 5.7 and 5.10, so it works for a range of leaders from newer to experienced. The spire sits in forest high in the mountains, a walk of roughly a mile from the end of the forest road, first on an informal trail up to a ridge and then along a trail and a drainage. Expect a quiet, mountain-style day rather than a roadside crag.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112152911/terrapin", "https://www.mountainproject.com/area/124702016/northern-pins"]}},
+ "id_tram_trail_boulders": {"_expect": {"name": "Tram Trail Boulders", "region": "Idaho"},
+  "blurb": "Tram Trail Boulders is a cluster of boulder problems on the outcrops beneath Table Rock, a few minutes above Boise. The 16 problems are mostly V1 to V2 with a spread up through V4 and a handful of hard ones into the V6 to V9 range, so there is something for both warm-up and project days. Access is on foot along the Tram Trail and its neighbouring trails from the Warm Springs side, with the first boulders about five minutes in. Trails are shared with hikers and bikers, the rock is a little sharp and flaky, and there is little shade, so early or cooler hours are the better time to go.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110066350/tram-trail-boulders", "https://www.mountainproject.com/area/107207153/table-rock"]}},
+ "id_little_quarry_the": {"_expect": {"name": "Little Quarry, The", "region": "Idaho"},
+  "blurb": "The Little Quarry is a small bouldering pocket on Table Rock above Boise. It has 16 problems, and the grades stay low: roughly half are VB or V0, a few reach V2, and the hardest is V4. Landings are mostly flat, which makes it a comfortable pick for beginners and anyone cautious about falling. To get there, follow the trail around the mesa past the Big Times area for a few hundred yards. Table Rock gets hot with little shade in summer, so plan for the early part of the day, and expect trails shared with hikers.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107244617/the-little-quarry", "https://www.mountainproject.com/area/107207153/table-rock"]}},
+ "id_tiny_town": {"_expect": {"name": "Tiny Town", "region": "Idaho"},
+  "blurb": "Tiny Town is a small, scattered climbing spot in the Castle Rocks area near Almo in southern Idaho. Its 16 routes are a blend of trad and bolted lines plus a top-rope, with grades from about 5.5 to 5.10 and most of them in the 5.10 range, so it suits intermediate climbers. Fixed anchors are in place and a few lines can be walked off. The terrain is a mix of alcoves, pillars and corners, with some boulder problems nearby. It is the quickest climbing to reach from the main trailhead, a short walk of around ten minutes at most.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105839689/tiny-town", "https://www.mountainproject.com/area/105739331/castle-rocks"]}},
+ "_skipped": {
+  "id_owl_wall": "Mountain Project lists Owl Wall as closed to climbing",
+  "id_west_pull_out": "only a parent-area (Laclede) page fetched; no second page about the crag itself"
+ },
+ "_conflicts": {
+  "id_tram_trail_boulders": "Stored rock basalt, but https://www.mountainproject.com/area/110066350/tram-trail-boulders and https://www.mountainproject.com/area/107207153/table-rock both describe sandstone",
+  "id_little_quarry_the": "Stored rock basalt, but https://www.mountainproject.com/area/107207153/table-rock describes Table Rock as sandstone"
+ }
+}

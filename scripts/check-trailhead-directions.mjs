@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // ONE way to drive to the trailhead per screen, the coordinates beside it, and a label that
 // describes the value under it.
 //
@@ -57,7 +59,7 @@ try {
   fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle in
   // the OS temp dir throws ERR_MODULE_NOT_FOUND.
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -73,7 +75,7 @@ if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 }
 
-const { RouteDetail } = await import(out + "?t=" + Date.now());
+const { RouteDetail } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof RouteDetail !== "function") dead("RouteDetail.jsx has no default export — ANCHOR LOST");
 
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false, refetchOnMount: false } } });

@@ -1,5 +1,6 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
+import { tx } from "./tapWords.js";
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useRouteSearch } from "./db";
@@ -65,12 +66,12 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial,routeBy
   })()}</>}
 
     {H("How were they?","22px 0 4px")}
-    <div style={sub}>Tap a star to rate — tap it again to clear. Leave blank anything you didn’t see.</div>
+    <div style={sub}>{tx("Tap a star to rate — tap it again to clear. Leave blank anything you didn’t see.")}</div>
     {rows.map(({k,label,hint})=>{const v=ratings[k]||0;return <div key={k} role="radiogroup" aria-label={label} style={{display:"flex",alignItems:"center",gap:8,marginBottom:9}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text}}>{label}</div><div style={{fontSize:11,color:v?C.amber:C.textMuted,marginTop:1,lineHeight:1.35}}>{v?(["","Poor","Fair","Good","Great","Excellent"][v]):hint}</div></div><div style={{display:"flex",gap:1,flexShrink:0}}>{[1,2,3,4,5].map(n=><button key={n} role="radio" aria-checked={v===n} aria-label={label+": "+n+" of 5"} onClick={()=>rate(k,n)} style={{background:"transparent",border:"none",padding:"2px 3px",cursor:"pointer",fontSize:24,lineHeight:1,color:n<=v?C.amber:C.textMuted}}>{n<=v?"★":"☆"}</button>)}</div></div>;})}
 
     {H("Skills they’re solid on","22px 0 4px")}
     <div style={sub}>Only what you’ve watched {fn} do.</div>
-    {SKILL_GROUPS.map(g=><div key={g.label} style={{marginBottom:10}}><div style={{fontSize:11.5,fontWeight:700,color:C.textMuted,letterSpacing:0.4,marginBottom:6,textTransform:"uppercase"}}>{g.label}</div><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{g.keys.map(k=>{const on=skills.indexOf(k)>=0;return <button key={k} onClick={()=>toggle(k)} aria-pressed={on} style={{padding:"7px 12px",borderRadius:20,border:`1.5px solid ${on?C.blue:C.border}`,background:on?C.blueBg:C.surface,color:on?"#fff":C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>{(on?"✓ ":"+ ")+SKILLS[k].label}</button>;})}</div></div>)}
+    {SKILL_GROUPS.map(g=><div key={g.label} style={{marginBottom:10}}><div style={{fontSize:11.5,fontWeight:700,color:C.label,letterSpacing:0.4,marginBottom:6,textTransform:"uppercase"}}>{g.label}</div><div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{g.keys.map(k=>{const on=skills.indexOf(k)>=0;return <button key={k} onClick={()=>toggle(k)} aria-pressed={on} style={{padding:"7px 12px",borderRadius:20,border:`1.5px solid ${on?C.blue:C.border}`,background:on?C.blueBg:C.surface,color:on?"#fff":C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"}}>{(on?"✓ ":"+ ")+SKILLS[k].label}</button>;})}</div></div>)}
 
     {H("A few words","18px 0 8px")}
     <textarea aria-label="A few words (optional)" value={text} onChange={e=>setText(e.target.value)} placeholder={"What was it like climbing with "+fn+"?"} style={{width:"100%",minHeight:62,padding:"10px 11px",borderRadius:10,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,marginBottom:13,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit"}}/>

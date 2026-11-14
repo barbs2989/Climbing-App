@@ -1,0 +1,103 @@
+{
+ "area_id": "wa_tower_mountain",
+ "routes": [
+  {
+   "route_id": "wa_tower_mountain_southwest_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "Mountaineers lists the route Jul-Oct; Peakbagger ascents Jul 54, Aug 62, Sep 122, Oct 56; stored text says mid-July to early/mid October. June possible in low-snow years; snow on the PCT approach past Granite Pass is the main constraint."
+   },
+   "track": {
+    "aid": "3379516",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Only one route stored on the peak; Oct 15 2026 summited round trip from Rainy Pass, one peak, climbers path to talus, cave ledges and the west gully to the summit cairn, matching our described line. Start is 386 m from our pin (track begins at the north end of the lot; our pin matches the official Rainy Pass trailhead position), so it fails the 300 m rule mechanically only."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3383942",
+     "verdict": "same",
+     "why": "Oct 18 2026 round trip, single peak, same line; equal quality, slightly later in October. Alternate if 3379516 is rejected."
+    },
+    {
+     "aid": "2338984",
+     "verdict": "unsure",
+     "why": "Oct 8 2023: track also visits Golden Horn (point at 48.601,-120.732), so a link-up."
+    },
+    {
+     "aid": "2339590",
+     "verdict": "unsure",
+     "why": "Oct 8 2023: same Golden Horn link-up."
+    },
+    {
+     "aid": "3371910",
+     "verdict": "unsure",
+     "why": "Starts from Snowy Lakes camp, one-way pieces with Golden Horn."
+    },
+    {
+     "aid": "3343574",
+     "verdict": "unsure",
+     "why": "Cutthroat trailhead up, Rainy down; not a round trip."
+    },
+    {
+     "aid": "3282512",
+     "verdict": "unsure",
+     "why": "Golden Horn/Tower/Hardy trifecta, exits Swamp Creek."
+    },
+    {
+     "aid": "2125927",
+     "verdict": "offseason",
+     "why": "February ski ascent."
+    },
+    {
+     "aid": "2667558",
+     "verdict": "unsure",
+     "why": "Starts at Cutthroat Lake trailhead, different approach."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "monthBreakdown",
+     "month": 10,
+     "text": "By mid-October frost coats the ground at dawn, and leftover snow and ice can make the ledge traverse under the headwall slower; the larches are golden and the trail sees fewer people late in the month.",
+     "aids": [
+      "3383942"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 9,
+     "text": "In mid-September the only dependable water between Cutthroat Pass and the lakes is a small stream near the Snowy Lakes turnoff, so fill bottles there.",
+     "aids": [
+      "3343574"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 7,
+     "text": "By late July only a couple of steps of snow remained above Granite Pass, and biting insects were heavy around the lakes.",
+     "aids": [
+      "3282512"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": null,
+     "text": "A car-to-car day from Rainy Pass is roughly 22 miles with about 5,300 ft of cumulative gain, most of it on the PCT.",
+     "aids": [
+      "3379516"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Two 2023 tracks look like clean round trips but pass Golden Horn, so they were not assigned. Rainy Pass pin matches the position printed by the hiking-trail association; the 2026 tracks start about 380 m north."
+}

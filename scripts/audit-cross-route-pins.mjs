@@ -44,7 +44,7 @@
  *   npm run audit:cross-route-pins -- --state all
  *   npm run audit:cross-route-pins -- --min-km 5
  */
-import { selectAll } from "./lib/supabase-env.mjs";
+import { selectAll, stateIdFilter } from "./lib/supabase-env.mjs";
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 && argv[i + 1] ? argv[i + 1] : d; };
@@ -65,7 +65,7 @@ const km = (a, b) => {
   return 2 * R * Math.asin(Math.sqrt(q));
 };
 
-const filter = STATE === "all" ? undefined : `id=like.${STATE}_*`;
+const filter = STATE === "all" ? undefined : stateIdFilter(STATE);
 const rows = await selectAll("routes", "id,waypoints", filter, { pageSize: 300 });
 /* FAIL CLOSED. A failed or empty read makes every name look consistent, which is the false-pass
    direction and the one this kind of audit must never produce. */

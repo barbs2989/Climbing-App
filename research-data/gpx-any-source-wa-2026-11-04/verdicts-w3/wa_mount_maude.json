@@ -1,0 +1,51 @@
+{
+  "area_id": "wa_mount_maude",
+  "routes": [
+    {
+      "route_id": "wa_mount_maude_r1",
+      "season": { "months": [6, 7], "window": "Jun-Jul", "evidence": "Logged North Face ascents fall in May, June and August only (6 total); web guides and trip reports describe continuous firm snow to the summit before mid-July, and a mid-August party still found snow base to top but heavy rockfall. Stored Jun-Jul window kept; August is a shoulder month." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "445521", "verdict": "unsure", "why": "Logged North Face, summited 17 Aug (inside the one-month shoulder) and the line matches, but the track starts at the Ice Lakes camp, 5.7 km from our Trailhead pin, and ends elsewhere: camp-based, not a round trip from a trailhead or a trailhead-to-summit one-way." },
+        { "aid": "3238211", "verdict": "different", "why": "Report describes the west/south slopes via Freezer Pass, not the north face; starts at a Leroy Basin camp." },
+        { "aid": "3275136", "verdict": "unsure", "why": "No route named, starts about 9 km from our Trailhead pin at an unrelated trailhead, report mentions a bike and a wildfire; cannot tie to the north face." },
+        { "aid": "2674525", "verdict": "different", "why": "October ascent by the south-side walk-up from Phelps Creek; off-season for this route." },
+        { "aid": "2047038", "verdict": "different", "why": "South Shoulder walk-up (Class 1-2), October." },
+        { "aid": "1753529", "verdict": "different", "why": "Leroy Basin walk-up, September; off-season for this route." },
+        { "aid": "1451945", "verdict": "different", "why": "South Ridge walk-up, August." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 6, "text": "From roughly mid-May to mid-June the Chiwawa River Road is shut at a gate for mud season, which can add many miles of road walking or biking before the Phelps Creek trailhead; in early June expect blowdowns, deep creek fords on the Phelps Creek approach and firm snow a few miles up the trail.", "aids": ["3238211", "2861768"] },
+        { "field": "approach_note", "month": 8, "text": "By mid-August the glacier traverse toward the face crosses several wide-open crevasses, so rope up; a rappel station sits where the north ridge of Marmot Pyramid meets the ice, sparing a long descent onto the glacier.", "aids": ["445521"] },
+        { "field": "monthBreakdown", "month": 8, "text": "In mid-August a party found continuous snow from the base to the summit apart from one rocky patch near halfway; steep snow took pickets, a few ice patches took screws, and the snow improved near the top.", "aids": ["445521"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_maude_r2",
+      "season": { "months": [7, 8], "window": "Jul-Aug", "evidence": "Web: forum and climber accounts call August the best time for true ice in the icefall, with early September already bare ice and rockfall-prone; no logged ascent in the packet names this route. Stored Jul-Aug kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "445521", "verdict": "different", "why": "Logged as North Face, not the icefall; camp-based start at Ice Lakes." },
+        { "aid": "2047038", "verdict": "different", "why": "South walk-up, not the icefall." },
+        { "aid": "1753529", "verdict": "different", "why": "South walk-up, not the icefall." },
+        { "aid": "1451945", "verdict": "different", "why": "South Ridge walk-up." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_maude_r3",
+      "season": { "months": [8, 9], "window": "Aug-Sep", "evidence": "Web search found no page naming this couloir; Maude's dry-rock walk-ups are logged Jul-Oct (peak Aug-Sep) in the all-routes histogram, consistent with the stored late-season window." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1451945", "verdict": "unsure", "why": "South Ridge walk-up; not the WNW couloir." },
+        { "aid": "1753529", "verdict": "unsure", "why": "Leroy Basin walk-up; no mention of a couloir." },
+        { "aid": "2047038", "verdict": "different", "why": "South Shoulder walk-up." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No harvested track follows the North Face, Entiat Ice Fall or Nothing Couloir as a complete round trip: every summited track is the south-side walk-up (Leroy Basin/South Shoulder/Freezer Pass) or a camp-based ascent. Nothing Couloir could not be found on any web page. Our Trailhead pin (48.0832,-120.835) agrees with the round-trip tracks' start (about 100-290 m)."
+}

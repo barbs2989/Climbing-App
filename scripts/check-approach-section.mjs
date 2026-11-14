@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:approach-section — the Plan tab has ONE approach section, and it says which way in is
 // the one most parties take.
 //
@@ -51,7 +53,7 @@ const entry = path.join(dir, "entry.js");
 const out = path.join(dir, "bundle.mjs");
 try {
   fs.writeFileSync(entry, `export { default as RouteDetail, approachHasCrossing } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -62,7 +64,7 @@ try {
 if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 }
-const { RouteDetail, approachHasCrossing } = await import(out + "?t=" + Date.now());
+const { RouteDetail, approachHasCrossing } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof RouteDetail !== "function") dead("RouteDetail.jsx has no default export — ANCHOR LOST");
 if (typeof approachHasCrossing !== "function") dead("RouteDetail.jsx no longer exports approachHasCrossing — ANCHOR LOST");
 

@@ -1,0 +1,73 @@
+{
+ "nl_tiger_wall": {
+  "_expect": {
+   "name": "Tiger Wall",
+   "region": "Newfoundland and Labrador"
+  },
+  "blurb": "Tiger Wall is a granite bluff above the community of Swift Current on the Burin Peninsula, along Newfoundland's south coast. Of its 21 routes, nearly all are bolted sport lines and just two are placed on gear. The grades lean hard: most land between 5.11 and 5.13, with one easy 5.6 and a single 5.10, so it suits climbers who already lead at a high level more than beginners. The face is steep and often overhung, with a mid-height ledge dividing it into a shorter lower section and a longer, roofed upper stretch. The trail in is taped through woods before opening onto bare rock at the base. Cell coverage in town is poor, so arrive self-sufficient.",
+  "review": {
+   "sources": [
+    "https://app.advcollective.com/climbing/tiger-wall-climbing-guide-in-newfoundland-and-labrador",
+    "https://www.mountainproject.com/area/108197386/swift-current"
+   ]
+  }
+ },
+ "nc_hanging_garden": {
+  "_expect": {
+   "name": "Hanging Garden",
+   "region": "North Carolina"
+  },
+  "blurb": "Hanging Garden is a high, airy ledge system near the top of Moore's Wall in Hanging Rock State Park, in North Carolina's Piedmont. The quartzite here holds 28 routes, leaning toward gear over bolts: about seventeen trad lines and eleven sport. It is the home of the hardest climbing on the wall. Most routes fall between 5.11 and 5.14, with only a handful of easier lines from 5.6 to 5.10, so it is a place for experienced leaders. Many of the harder lines are protected by gear, which is unusual at these grades. The terrace sits well above the base of the main cliff, giving exposure and views, and the angle of the wall keeps it shaded and cool.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107357675/hanging-garden",
+    "https://www.mountainproject.com/area/118318664/moores-wall-routes"
+   ]
+  }
+ },
+ "nc_corner_rock": {
+  "_expect": {
+   "name": "Corner Rock",
+   "region": "North Carolina"
+  },
+  "blurb": "Corner Rock is a single large boulder above Corner Rock Creek in Pisgah National Forest's Big Ivy section, roughly half an hour's drive north of Asheville. It is known for steep, overhanging, powerful problems and is often called one of the best single boulders in the state. Twenty-seven problems are recorded, running from about V4 up to V13, with the bulk between V6 and V9 and a few high-end testpieces. There is little here for beginners. The rock's texture allows confident movement without relying on friction, so it stays usable through much of the year, though autumn and late spring draw the most visitors, and the higher elevation runs cooler than town.",
+  "parking_note": "Follow Dillingham Road up to the tight curve where it meets Corner Rock Creek; two small pull-offs sit next to the road there.",
+  "approach": "A short walk of about 200 yards up the trail leads from the road to the boulder.",
+  "season_months": [
+   4,
+   5,
+   6,
+   9,
+   10,
+   11
+  ],
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112379642/corner-rock",
+    "https://www.madboulder.org/corner-rock"
+   ]
+  }
+ },
+ "nc_lower_hawksbill": {
+  "_expect": {
+   "name": "Lower Hawksbill",
+   "region": "North Carolina"
+  },
+  "blurb": "Lower Hawksbill is the lowest of three cliff areas on Hawksbill Mountain in Linville Gorge, North Carolina. It holds 28 routes, nearly all trad, with only a couple of bolted lines. The difficulty sits in the harder range: most climbs are 5.11 or 5.12, with several 5.13 and a lone 5.10, so it is not a spot for beginners. Some of the lines run two pitches, and a full rack is the norm. It is part of a mountain that offers some of the strongest climbing in the gorge, mixing demanding trad with a smaller number of sport routes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/classics/107444497/lower-hawksbill",
+    "https://mountainproject.com/area/106075570/hawksbill-mtn"
+   ]
+  }
+ },
+ "_skipped": {
+  "nc_moon_rocks": "only one fetched page about this crag (Watauga schools guide); Mountain Project hits were a Washington crag and Tennessee rock",
+  "nc_hanging_chain": "no fetched page about the Hanging Chain crag itself (only a neighbouring area page and the parent)",
+  "nc_terraces_the": "no page found about this sector itself",
+  "nc_sun_wall": "no fetched page about the Sun Wall itself, only parent Looking Glass Rock pages"
+ },
+ "_conflicts": {
+  "nc_corner_rock": "stored rock greywacke; one page says a single granite boulder (https://www.madboulder.org/corner-rock), the other gives no rock type (https://www.mountainproject.com/area/112379642/corner-rock)"
+ }
+}

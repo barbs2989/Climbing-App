@@ -1,10 +1,11 @@
+import { fileURLToPath } from "node:url";
 // Build owner-decision inputs for the other half's leftover items (wa-contradictions-rest/handoffs.md and
 // wa-contradictions-pass2/notes.md, minus the routes the "wa routes data validation" session holds and minus pins,
 // which go through apply-pins). Each: {id, name, area_id, prior_findings, earlier_research, row, siblings}.
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const A = new URL("../../../audits", import.meta.url).pathname;
+const A = fileURLToPath(new URL("../../../audits", import.meta.url));
 const I = {
   // camp cards (bivy)
   wa_mount_angeles_standard: "bivy note says 'close to 1,000 ft in under a mile' on the Switchback Trail; sourced figure is 700 ft in 0.6 mi.",

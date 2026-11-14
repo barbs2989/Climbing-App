@@ -1,0 +1,69 @@
+{
+ "co_hoh_overhang": {
+  "_expect": {
+   "name": "HOH Overhang",
+   "region": "Colorado"
+  },
+  "blurb": "A small steep bouldering spot on Flagstaff Mountain above the town of Boulder, tucked into the Dark Side, a tree-shaded hillside of boulders where nearly everything faces north. This one is less a freestanding boulder than a slot in the talus, with a strongly overhanging face and colourful streaks. About ten problems are on offer, and none are easy: expect a handful around V5 and V6, a couple of V7s, and the rest running from V8 up to V10. Most are sit starts on powerful, sparse holds. Because of the shade it can be a decent choice when the rest of the mountain is baking. It is best for strong boulderers who already know the neighbouring Dark Side problems.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119425835/hoh-overhang",
+    "https://flagstaffmountainbouldering.blogspot.com/2008/06/dark-side-south-miniguide.html"
+   ]
+  }
+ },
+ "co_main_smile_wall": {
+  "_expect": {
+   "name": "Main Smile Wall",
+   "region": "Colorado"
+  },
+  "blurb": "The main wall of Smile Wall, a sport crag high above Tenmile Canyon near Copper Mountain in Summit County, at close to 10,000 feet. Ten single-pitch bolted lines of roughly 50 to 70 feet are spread over a steep, compact face with subtle holds, so the climbing tends to be technical and puzzle-like rather than powerful. Grades are mostly 5.11, with one route in each of the 5.8, 5.9 and 5.10 ranges and a few 5.12s and a single 5.13 above. It is a place for strong intermediates and up, not beginners. Water can seep through early in the season or after rain, leaving holds greasy. Bring a wind layer and water for the hike in.",
+  "parking_note": "Leave the car at the trailhead just beyond the Copper gas station; an alternative is the Officer's Gulch trailhead, walking or biking the path west from there.",
+  "approach": "Take the paved bike path roughly a mile east past the large lake under the cliff, then double back west uphill through the slide path. The last quarter mile has almost no visible tread.",
+  "approach_min": 25,
+  "review": {
+   "sources": [
+    "https://app.advcollective.com/climbing/main-smile-wall-technical-quartzite-sport-climbing-in-summit-county",
+    "https://www.mountainproject.com/area/122949193/smile-wall"
+   ]
+  }
+ },
+ "co_happy_hour_crag_2": {
+  "_expect": {
+   "name": "Happy Hour Crag",
+   "region": "Colorado"
+  },
+  "blurb": "One of the small crags in the lower Poudre Canyon, a short drive northwest of Fort Collins, and not to be confused with the similarly named wall in Boulder Canyon. It holds around ten routes, almost all bolted sport lines, plus a single trad route, and sits in the friendly middle of the grade range: a few easier lines in the 5.7 to 5.8 range, then a cluster of 5.10s and a couple of 5.11s. The upper section is also used for top-roping. The wall is fairly young and has loose rock in places, and a large block has fallen after freeze-thaw cycles, so inspect holds, wear a helmet and be cautious in winter and early spring.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/classics/119235362/happy-hour-crag",
+    "https://www.mountainproject.com/forum/message/125677801",
+    "https://cmc.org/education-adventure/trips/routes-places/poudre-canyon-low-hanging-fruit"
+   ]
+  }
+ },
+ "co_middle_wall": {
+  "_expect": {
+   "name": "Middle Wall",
+   "region": "Colorado"
+  },
+  "blurb": "A popular wall on the Second Tier at Avalon in Boulder Canyon, reached by a steep scramble up talus. Of about ten routes, most are bolted sport lines with a couple of trad options. The left side is a steep, scooped face and an arete with 5.11 and low 5.12 climbing, while around the corner to the right a low-angle slab offers a handful of easier routes between 5.6 and 5.8, handy for a mixed group. Heights run from about 50 to 100 feet. It gets busy on good days, and the ground below is loose, so keep dogs at home and watch for falling rock when others are above.",
+  "approach": "Climb the talus above the Tyrolean Traverse to a dirt path, follow it uphill to a fork, and take the right branch; the steep face is the first thing you meet, with the slab just uphill to its right.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105810458/middle-wall",
+    "https://www.mountainproject.com/area/105810440/second-tier"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_kingfin_crag": "no fetched page about the crag itself (only a route page and the parent area page)",
+  "co_colors_crag": "no fetched page about the crag itself (only parent Narrows page; searches found only route listings)",
+  "co_putnam_basin_boulders": "only one fetched page about the crag; no second page found",
+  "co_f_pumphouse_left": "no page found about Pumphouse Left itself; only neighbouring Pumphouse Right listings"
+ },
+ "_conflicts": {
+  "co_main_smile_wall": "stored rock is gneiss but both fetched pages say quartzite: https://app.advcollective.com/climbing/main-smile-wall-technical-quartzite-sport-climbing-in-summit-county and https://www.mountainproject.com/area/122949193/smile-wall",
+  "co_putnam_basin_boulders": "stored rock is arkose but https://www.mountainproject.com/area/111496878/putnam-basin-boulders says conglomerate"
+ }
+}

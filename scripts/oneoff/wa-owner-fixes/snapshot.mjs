@@ -1,8 +1,9 @@
+import { fileURLToPath } from "node:url";
 // Snapshot every route filed on a WA area (subtree via areas.region), all columns, to JSON.
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey, selectAll } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const OUT = new URL("../../../audits/wa-owner-fixes", import.meta.url).pathname;
+const OUT = fileURLToPath(new URL("../../../audits/wa-owner-fixes", import.meta.url));
 const areas = (await selectAll("areas", "id,name,parent_id,path,area_type,elevation_ft,lat,lng,avy_zone,region", "", { key, pageSize: 1000 })).filter(a => a.path && (a.path === "usa.washington" || a.path.startsWith("usa.washington.")));
 console.log("WA areas", areas.length);
 fs.writeFileSync(`${OUT}/wa-areas.json`, JSON.stringify(areas));

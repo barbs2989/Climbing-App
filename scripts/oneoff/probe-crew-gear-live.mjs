@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // LIVE TWO-BROWSER PROBE OF THE CREW GEAR LIST (#2376, #2381, #2387). Hand-run, local, real database.
 //
 // The database half is proven by verify-crew-gear-assign.mjs (two real accounts, 33 assertions). What
@@ -78,7 +79,7 @@ try {
   else {
     const port = await claimPort(5330);
     base = `http://127.0.0.1:${port}/Climbing-App/`;
-    server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
+    server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
     let up = false;
     for (let i = 0; i < 120 && !up; i++) { try { up = (await fetch(base)).ok; } catch {} if (!up) await sleep(1000); }
     if (!up) throw new Error("dev server never came up");

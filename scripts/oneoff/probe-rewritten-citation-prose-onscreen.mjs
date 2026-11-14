@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Does the rewritten prose actually reach a climber, and did the removal land ON SCREEN?
 //
 // The applier verifies the COLUMN by re-reading it. That is not the same question: this repo's
@@ -97,7 +98,7 @@ try {
 const React = (await import("react")).default;
 const { renderToStaticMarkup } = await import("react-dom/server");
 const { QueryClient, QueryClientProvider } = await import("@tanstack/react-query");
-const { RouteDetail, dbRouteToCamel } = await import(bundle);
+const { RouteDetail, dbRouteToCamel } = await import(fileHref(bundle));
 
 const noop = () => {};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });

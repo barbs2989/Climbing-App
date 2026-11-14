@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Proves an extraction moved code and changed nothing but types (docs/refactor-progress.md, PR57 on).
 //
 //   node scripts/oneoff/verify-extraction.mjs [--base origin/main] [--parent RouteDetail.jsx] file1.tsx lib/x.js ...
@@ -16,7 +17,7 @@ import traverseM from "@babel/traverse";
 import generateM from "@babel/generator";
 const traverse = traverseM.default || traverseM;
 const generate = generateM.default || generateM;
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); if (i < 0) return d; const v = argv[i + 1]; argv.splice(i, 2); return v; };
 const base = opt("--base", "origin/main"), parent = opt("--parent", "RouteDetail.jsx");

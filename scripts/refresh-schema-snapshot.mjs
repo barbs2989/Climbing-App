@@ -39,4 +39,4 @@ const snapshot = {
 };
 
 fs.writeFileSync(OUT, JSON.stringify(snapshot, null, 2) + "\n");
-console.log(`wrote ${path.relative(process.cwd(), OUT)} — ${names.length} tables, ${Object.values(tables).reduce((n, c) => n + c.length, 0)} columns`);
+console.log(`wrote ${path.relative(process.cwd(), OUT).replace(/\\/g, "/")} — ${names.length} tables, ${Object.values(tables).reduce((n, c) => n + c.length, 0)} columns`);

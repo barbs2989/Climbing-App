@@ -1,0 +1,318 @@
+{
+ "key": "volcano-ice-rows",
+ "question": "For each ice/mixed row on the Oregon volcano, Hood and Wallowa mountains, keep ice or change to alpine/mountaineering?",
+ "answer": "None of the 32 rows is an ice-climbing crag route. Mountain Project files them as Ice/Snow/Alpine, and their AI/WI grades describe a steep-snow or rime-ice pitch on a volcano. Under the owner rule (technical snow-ice or mixed on a peak is alpine), 31 should be alpine. Only the South Side Route (AI1, Easy Snow, the standard walk-up) is non-technical: mountaineering.",
+ "recommendation": "Change 31 rows to alpine and South Side Route to mountaineering (and make each row's disciplines list include its primary). If the owner wants one true-ice row kept, Full Richardson (WI4+ pitch) is the only candidate. KIDS (North Sister) and Exegesis (Ice Lake Peaks) had no page found: apply the same rule but treat their existence and grade as unconfirmed.",
+ "confidence": "medium",
+ "proposed": [
+  {
+   "id": "or_broken_top_2_full_richardson",
+   "name": "Full Richardson",
+   "area_id": "or_broken_top",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "North-face couloir, 1,000 ft: WI2/3 steps, a 30 m WI4+ crux, then snow and an M3 exit, rappel descent. The most ice-like row, but still a mountain route; alpine. Owner call if one true ice row is wanted.",
+   "evidenceURL": "https://mountainproject.com/route/120539893/full-richardson"
+  },
+  {
+   "id": "or_high_noon_3",
+   "name": "High Noon",
+   "area_id": "or_broken_top",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "700 ft south-face line: 40-50 degree snow then rime ice and loose mixed ground, Easy 5th AI3; any 5.x on a peak is alpine.",
+   "evidenceURL": "https://mountainproject.com/route/109756432/high-noon?print=1"
+  },
+  {
+   "id": "or_east_side_2_black_spider_fric_amos",
+   "name": "Black Spider - Fric-Amos",
+   "area_id": "or_east_side_2",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Three pitches on a 1,000 ft face of rotten rock plus ephemeral ice flows, WI4 M4+ PG13: a mixed alpine face with overhead hazard, not a stable ice crag.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594604/east-side"
+  },
+  {
+   "id": "or_east_side_2_black_spider_three_little_monkeys_burkhardt_getlin",
+   "name": "Black Spider - Three Little Monkeys (Burkhardt-Getlin)",
+   "area_id": "or_east_side_2",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Same Black Spider face, WI4+ M5- steep snow, X rating; roped mixed alpine climb.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594604/east-side"
+  },
+  {
+   "id": "or_east_side_2_wy_east",
+   "name": "Wy'East",
+   "area_id": "or_east_side_2",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Listed ice/snow/alpine, Easy 5th with AI1-2 on moderate snow; any 5.x on a peak is alpine and the ice is a minor part.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594604/east-side"
+  },
+  {
+   "id": "or_h_mt_thielsen_east_face_aka_brainless_child_tyler_adams_memorial_rout",
+   "name": "East Face aka \"Brainless Child\" (Tyler Adams Memorial Route)",
+   "area_id": "or_mt_thielsen",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Listed 5.9 WI5+ steep snow, the hardest unrepeated alpine route in Oregon per the area page; roped rock plus ice on a peak is alpine.",
+   "evidenceURL": "https://www.mountainproject.com/area/109205346/mt-thielsen"
+  },
+  {
+   "id": "or_h_mt_thielsen_western_gulch",
+   "name": "Western Gulch",
+   "area_id": "or_mt_thielsen",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "AI2-3 steep snow gulch on Thielsen; technical snow-ice on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/109205346/mt-thielsen"
+  },
+  {
+   "id": "or_ice_lake_peaks_exegesis",
+   "name": "Exegesis",
+   "area_id": "or_ice_lake_peaks",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "AI2 M2-3 steep snow, but no page for it was found for the Wallowas (a granite crag area); unverified. If real it is a roped snow/mixed climb, so alpine.",
+   "evidenceURL": "none found"
+  },
+  {
+   "id": "or_south_side_devil_s_kitchen_headwall_dkh_left_variation",
+   "name": "Devil's Kitchen Headwall (DKH) - Left Variation",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Four pitches of steep snow and ice steps (AI2-3, PG13) protected with screws and pickets: technical snow-ice on a volcano, not a waterfall-ice crag.",
+   "evidenceURL": "https://mountainproject.com/route/107565601/devils-kitchen-headwall-dkh-left-variation"
+  },
+  {
+   "id": "or_south_side_devil_s_kitchen_headwall_dkh_right_variation",
+   "name": "Devil's Kitchen Headwall (DKH) - Right Variation",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Two-pitch ice and snow variation on the crater wall (AI2-3); a roped snow-ice climb on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594589/south-side"
+  },
+  {
+   "id": "or_south_side_east_crater_wall_dkh_v4",
+   "name": "East Crater Wall (DKH V4)",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Crater-wall variation, AI2 steep snow, two pitches; technical snow-ice on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594589/south-side"
+  },
+  {
+   "id": "or_south_side_flying_buttress_dkh_v3",
+   "name": "Flying Buttress (DKH V3)",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Crater-wall variation, AI2 moderate snow, two pitches; technical snow-ice on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594589/south-side"
+  },
+  {
+   "id": "or_south_side_icefall_chute_boy_scouts_chute",
+   "name": "Icefall Chute (Boy Scouts Chute)",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Two-pitch rime and ice chute (AI2, PG13) on the crater wall; a mountain route, not an ice crag.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594589/south-side"
+  },
+  {
+   "id": "or_south_side_men_of_steel",
+   "name": "Men of Steel",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Three pitches (800 ft) up gullies on Steel Cliff, AI3 PG13, wants thick rime ice, screws and pickets; alpine snow-ice on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/route/120346129/men-of-steel"
+  },
+  {
+   "id": "or_south_side_south_side_route",
+   "name": "South Side Route",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "mountaineering",
+   "why": "Classic walk-up on Hood: Easy Snow, ice rating only AI1. An axe-and-crampon snow climb with no roped technical terrain, so mountaineering fits the owner rule (non-technical walk-up).",
+   "evidenceURL": "https://www.mountainproject.com/area/125594589/south-side"
+  },
+  {
+   "id": "or_south_side_steel_cliff_south_face",
+   "name": "Steel Cliff South Face",
+   "area_id": "or_south_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Rimed gully route on Steel Cliff, AI2 steep snow; technical snow-ice on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594589/south-side"
+  },
+  {
+   "id": "or_south_sister_2_north_face_couloir",
+   "name": "North Face Couloir",
+   "area_id": "or_south_sister",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "WI2-3 couloir; a forum commenter says it needs two tools and probably a rope and gear for two near-vertical icy steps. Technical snow-ice on a peak.",
+   "evidenceURL": "https://mountainproject.com/area/108310702/south-sister"
+  },
+  {
+   "id": "or_south_sister_2_north_face_of_the_northwest_ridge",
+   "name": "North Face of the Northwest Ridge",
+   "area_id": "or_south_sister",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "WI2+ moderate snow, two tools wanted even to solo; steep snow-ice on a peak. Borderline mountaineering if only steep snow, but ice tools are needed.",
+   "evidenceURL": "https://mountainproject.com/area/108310702/south-sister"
+  },
+  {
+   "id": "or_south_sister_2_silver_couloir",
+   "name": "Silver Couloir",
+   "area_id": "or_south_sister",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "WI2 moderate snow, described in a 2020 trip report as straightforward steep snow; needs axe and tools but little ice. Alpine, though mountaineering is defensible if the owner counts steep-snow routes as walk-ups.",
+   "evidenceURL": "https://cascadeclimbers.com/forum/topic/103433-tr-south-sister-silver-couloir-05252020"
+  },
+  {
+   "id": "or_north_side_cathedral_ramp",
+   "name": "Cathedral Ramp",
+   "area_id": "or_north_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Four pitches of mixed, ice and snow (WI3 M3) near Eliot Glacier; roped mixed on a peak is alpine.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594607/north-side?print=1"
+  },
+  {
+   "id": "or_north_side_eliot_glacier_headwall",
+   "name": "Eliot Glacier Headwall",
+   "area_id": "or_north_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Five pitches, glacier approach, 4th class plus AI2-3 steep snow; a glacier headwall route, alpine.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594607/north-side?print=1"
+  },
+  {
+   "id": "or_north_side_north_face_left_gully",
+   "name": "North Face Left Gully",
+   "area_id": "or_north_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Steep snow and ice gully on the north face (WI3-4); technical, alpine not an ice crag.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594607/north-side?print=1"
+  },
+  {
+   "id": "or_north_side_north_face_right_gully",
+   "name": "North Face Right Gully",
+   "area_id": "or_north_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Three pitches, WI3 moderate snow, listed trad/ice/snow/alpine; a volcano face route, alpine.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594607/north-side?print=1"
+  },
+  {
+   "id": "or_north_side_ravine",
+   "name": "Ravine",
+   "area_id": "or_north_side",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Two pitches, WI3 M4, listed trad/mixed/ice/snow/alpine; roped mixed on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594607/north-side?print=1"
+  },
+  {
+   "id": "or_north_sister_2_east_buttress",
+   "name": "East Buttress",
+   "area_id": "or_north_sister",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "A long rock-and-ice buttress listed WI3-4 M3-4; mixed ground on a peak is alpine. Little published detail found (a 2020 trip report exists; fetch blocked).",
+   "evidenceURL": "https://cascadeclimbers.com/forum/topic/103789-tr-north-sister-complete-east-buttress-12232020"
+  },
+  {
+   "id": "or_north_sister_2_kids",
+   "name": "KIDS",
+   "area_id": "or_north_sister",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Listed AI4-5 on North Sister; no page found, so existence and grade unconfirmed, but any steep snow-ice or mixed route on a peak is alpine.",
+   "evidenceURL": "none found"
+  },
+  {
+   "id": "or_north_sister_2_thayer_glacier_headwall",
+   "name": "Thayer Glacier Headwall",
+   "area_id": "or_north_sister",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "3,500 ft mixed/ice/alpine, WI1 M3 PG13, climbed with pickets, nuts, cams and screws, very poor rock near the top; alpine.",
+   "evidenceURL": "https://www.mountainproject.com/route/111939240/thayer-glacier-headwall"
+  },
+  {
+   "id": "or_west_side_3_cathedral_ridge",
+   "name": "Cathedral Ridge",
+   "area_id": "or_west_side_3",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "Grade shows 5.0 plus AI2-3 steep snow; a ridge route mixing rock and snow-ice, alpine.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594592/west-side"
+  },
+  {
+   "id": "or_west_side_3_leuthold_couloir",
+   "name": "Leuthold Couloir",
+   "area_id": "or_west_side_3",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "AI1-2 moderate snow couloir, about 2,000 ft; a step up from the South Side that is couloir climbing with tools and rope, so alpine rather than a walk-up.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594592/west-side"
+  },
+  {
+   "id": "or_west_side_3_reid_glacier_headwall",
+   "name": "Reid Glacier Headwall",
+   "area_id": "or_west_side_3",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "AI3 steep snow glacier headwall; technical snow-ice on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594592/west-side"
+  },
+  {
+   "id": "or_west_side_3_sandy_glacier_headwall",
+   "name": "Sandy Glacier Headwall",
+   "area_id": "or_west_side_3",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "AI2 moderate snow, trad/ice/snow/alpine glacier headwall; technical snow-ice on a peak.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594592/west-side"
+  },
+  {
+   "id": "or_west_side_3_yocum_ridge",
+   "name": "Yocum Ridge",
+   "area_id": "or_west_side_3",
+   "current_discipline": "ice",
+   "recommended_discipline": "alpine",
+   "why": "AI3 steep snow, R: a long alpine ridge with glacier and rime ice.",
+   "evidenceURL": "https://www.mountainproject.com/area/125594592/west-side"
+  }
+ ],
+ "evidence": [
+  "https://www.mountainproject.com/area/125594589/south-side - Hood South Side routes all Ice/Snow/Alpine; South Side Route AI1 Easy Snow",
+  "https://www.mountainproject.com/area/125594607/north-side?print=1 - Hood north routes, pitches, grades",
+  "https://www.mountainproject.com/area/125594592/west-side - Hood west routes",
+  "https://www.mountainproject.com/area/125594604/east-side - Black Spider rotten rock, ephemeral ice; Wy'East",
+  "https://mountainproject.com/route/120539893/full-richardson - Full Richardson",
+  "https://mountainproject.com/route/109756432/high-noon?print=1 - High Noon",
+  "https://www.mountainproject.com/route/111939240/thayer-glacier-headwall - Thayer",
+  "https://www.mountainproject.com/route/120346129/men-of-steel - Men of Steel",
+  "https://mountainproject.com/area/108310702/south-sister - Sister couloir grades",
+  "https://www.mountainproject.com/area/109205346/mt-thielsen - Thielsen routes"
+ ],
+ "searched": [
+  "WebSearch Hood Leuthold/Sandy/Reid/Yocum - grades AI1-3",
+  "WebSearch Hood DKH/Men of Steel/Black Spider/Ravine/Cathedral Ramp - found MP pages",
+  "WebSearch North Sister East Buttress/KIDS/Thayer - KIDS not found; East Buttress trip report 403 on fetch",
+  "WebSearch South Sister couloirs - forum comments only",
+  "WebSearch Broken Top Full Richardson/High Noon - found MP pages",
+  "WebSearch Exegesis Wallowas (two queries) - nothing found",
+  "Wikipedia Mount Hood - no route detail"
+ ]
+}

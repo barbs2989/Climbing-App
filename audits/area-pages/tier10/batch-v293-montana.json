@@ -1,0 +1,35 @@
+{
+ "mt_excuses_walls": {
+  "_expect": { "name": "Excuses Walls", "region": "Montana" },
+  "blurb": "A small, recently developed cluster of walls in the Stryker Crags section of Point of Rocks, west of Kalispell. Ten climbs mix four sport lines, two trad lines and four boulder problems. The roped climbs sit in the easy-to-middle range, from 5.7 up to about 5.10, while the problems run from VB-level up to V8. Trails between the walls are faint, so expect to follow flagging, and the climbs are spread out to the south rather than packed together. The walk from the road is flat and short. A handy stop for a quick session at moderate grades, not a place for a long day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119207300/excuses-walls", "https://www.mountainproject.com/area/119204876/stryker-crags"] }
+ },
+ "mt_dribbles_area": {
+  "_expect": { "name": "Dribbles Area", "region": "Montana" },
+  "blurb": "One of the most visited ice zones in Hyalite Canyon, south of Bozeman, and home to the classic four-pitch Dribbles. All ten climbs here are ice or ice-and-mixed lines, spread from WI3 to WI6 with the bulk at WI5, plus one mixed slot route at a moderate rock grade. Expect a real winter outing: the walk from the Grotto Falls trailhead follows the creek trail and then switchbacks through trees, and takes roughly an hour. Popular lines get busy, so an early start helps. Some of the harder lines form only in good seasons.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107947822/dribbles-area", "https://mountainproject.com/route/107947835/the-dribbles"] }
+ },
+ "mt_winter_dance_area": {
+  "_expect": { "name": "Winter Dance Area", "region": "Montana" },
+  "blurb": "A wall of ice and mixed climbs in Hyalite Canyon near Bozeman, named for the long Winter Dance line above it. Nine of the ten climbs are ice and one is mixed. Difficulty runs from WI3 to WI6, with a good handful at WI4, plus a harder mixed line around M6 and a single easy rock grade. The area receives sun in the afternoon and sees fewer parties than the neighbouring zones. It takes a half-hour climb up the main canyon trail, then a left turn off it. The big headline route forms only a few times a decade, but the shorter ice lines beneath it are more reliable.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108473808/winter-dance-area", "https://www.mountainproject.com/route/108473812/winter-dance"] }
+ },
+ "mt_come_and_get_it_wall": {
+  "_expect": { "name": "Come and Get It Wall", "region": "Montana" },
+  "blurb": "A long wall in Hyalite Canyon near Bozeman, stretching between the Magically Delicious and Roman Candle zones and visible from the canyon parking lot. It is a hard-mixed venue: six of the ten climbs are mixed, mostly M8 to M11, with four ice lines at WI5 and WI6. Several routes are bolted for drytooling and others are trad or ice, so bring the right rack for the line. Reach it with a hike of about half an hour via the Unnamed Wall approach, passing the Jeff routes and Magically Delicious, with the wall on your left. Not for beginners.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118197454/come-and-get-it-wall", "https://www.mountainproject.com/area/106291254/hyalite-canyon"] }
+ },
+ "mt_antiquities_wall": {
+  "_expect": { "name": "Antiquities Wall", "region": "Montana" },
+  "blurb": "The longest stretch of good limestone in the Natural Bridge canyon south of Big Timber, with ten sport routes of about 85 to 100 feet. The wall is overhanging and rewards power-endurance: grades start around 5.11 and climb to 5.13, with most climbs at 5.12 and 5.13. It sits lower in the canyon and is sheltered from the wind, so it tends to feel warmer than the walls upstream. Afternoon light arrives early in summer and later in winter. Reached by walking along the cliff edge from the Porcelain Wall, or along the river bed when the water is low. Some lines are still projects, so watch for loose rock.",
+  "review": { "sources": ["https://mountainproject.com/area/108074647/antiquities-wall", "https://www.mountainproject.com/area/107524256/natural-bridge-and-falls"] }
+ },
+ "_skipped": {
+  "mt_01_the_route_37_roadcuts": "no fetched page about the crag itself; only the parent Hold Up - Roadside listing mentions it, with no description",
+  "mt_hollow_earth_boulder": "no page about the boulder itself; only the District Two listing names it",
+  "mt_mile_18": "no page describing it; only a bare listing under the parent area"
+ },
+ "_conflicts": {
+  "mt_antiquities_wall": "Stored aspect is W, but https://mountainproject.com/area/108074647/antiquities-wall says the routes mostly face northwest."
+ }
+}

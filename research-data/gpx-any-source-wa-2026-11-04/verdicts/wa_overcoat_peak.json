@@ -1,0 +1,19 @@
+{
+  "area_id": "wa_overcoat_peak",
+  "routes": [
+    { "route_id": "wa_overcoat_peak_north_face", "season": { "months": [6,7,8], "window": "Jun-Aug", "evidence": "No stored season; web (climber trip reports, Mountaineers) shows north couloir/face climbs in early June and a mid-July north face ascent." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3263975", "verdict": "unsure", "why": "12 Jul 2026; the report says the line was the north face (a diagonal gully) and it summits within 3 m of our summit, but the track is a camp-based loop from the Overcoat Lake basin, not a trailhead round trip or one-way from a trailhead, so no assignment." }, { "aid": "2242031", "verdict": "offseason", "why": "20 May 2023 ski trip, also a multi-peak Overcoat zone link-up (Finger of Fate)." } ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 7, "text": "In mid-July the north face went via a diagonal gully reached after crossing the glacier moat; one long pitch to the ridge with a single piece of protection on a 70 m rope, then an exposed scramble move to the summit.", "aids": ["3263975"] },
+        { "field": "descent_note", "month": 7, "text": "In mid-July the descent was a class 4 downclimb to a rappel anchor about 50 ft above the gully, then crossing snow at the gully bottom while roped.", "aids": ["3263975"] },
+        { "field": "watch_out", "month": 7, "text": "Route-finding on the upper mountain is hard even in clear weather; avoid it in cloud (July).", "aids": ["3263975"] }
+      ] },
+    { "route_id": "wa_overcoat_peak_southeast_route", "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep with late July-August classic; logged Snow Finger (Jul), NE Gulley (Jul); web: Mountaineers offered it Aug 24-25, 2024, though snow-finger reports exist from early June." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "2242031", "verdict": "offseason", "why": "20 May 2023, a ski trip on the NE gully and a multi-peak zone link-up, so no East Face assignment." }, { "aid": "3263975", "verdict": "different", "why": "Described by the party as a north face line from a basin camp." } ],
+      "pins": [], "facts": [] }
+  ],
+  "notes": "Dingford Creek trailhead pin is consistent with the 2023 track start (39 m), but that track is rejected. Peakbagger's summit agrees with ours to ~25 m. No ascent is logged under the name East Face."
+}

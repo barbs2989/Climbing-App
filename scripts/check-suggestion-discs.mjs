@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:suggestion-discs — a climber's suggestions must cover every discipline they climb,
 // and a climb they merely LOOKED AT must never be described as one they have climbed.
 //
@@ -21,7 +22,7 @@ import { readFileSync } from "node:fs";
 import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const CORE = readCoreSource();
-const DBB = readAppFile(new URL("../lib/DbAreaBrowser.jsx", import.meta.url).pathname);
+const DBB = readAppFile(fileURLToPath(new URL("../lib/DbAreaBrowser.jsx", import.meta.url)));
 
 // Fail closed: an empty read makes every assertion below pass vacuously.
 if (CORE.length < 100000 || DBB.length < 10000) {

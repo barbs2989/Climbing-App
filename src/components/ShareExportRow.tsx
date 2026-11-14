@@ -1,5 +1,6 @@
 import type { CSSProperties, MouseEvent } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
+import { BTN_SECONDARY } from "../../lib/buttonStyles.js";
 
 export interface ShareExportRowProps {
   /** Opens the share sheet (or copies the link). */
@@ -12,7 +13,7 @@ export interface ShareExportRowProps {
 
 /** The two-button row under a list or itinerary: Share…, and Save as PDF. Clicks stop at the row so a tappable card behind it does not open. Reads `C` at render time. */
 export default function ShareExportRow({ onShare, onPdf, label }: ShareExportRowProps) {
-  const bs: CSSProperties = { flex: 1, minWidth: 0, padding: "8px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" };
+  const bs: CSSProperties = { ...BTN_SECONDARY(C), flex: 1, minWidth: 0 };
   return (
     <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
       <button onClick={function (e: MouseEvent) { e.stopPropagation(); onShare(); }} aria-label={"Share " + label} style={bs}>{"Share…"}</button>

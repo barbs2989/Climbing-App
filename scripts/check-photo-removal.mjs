@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // CAN A CLIMBER TAKE A PROFILE PHOTO BACK DOWN, AND DOES A FAILED REMOVAL DESTROY THE FILE?
 //
 // WHY THIS IS A BUILD GATE. Both invariants it holds are invisible to every other guard:
@@ -113,7 +115,7 @@ console.log("\n2. removeProfilePhoto against a stubbed transport\n");
 
 const out = path.join(ROOT, `.photo-remove-probe-${process.pid}.mjs`);
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "lib/db.js"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "lib/db.js"),
     "--bundle", "--format=esm", "--platform=node",
     `--define:import.meta.env=${JSON.stringify({ VITE_USE_DB: "true", VITE_SUPABASE_URL: "https://probe.invalid", VITE_SUPABASE_ANON_KEY: "probe" })}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -150,7 +152,7 @@ globalThis.fetch = async (input, init) => {
   return new Response("[]", { status: 200, headers: { "Content-Type": "application/json" } });
 };
 
-const db = await import(out + "?t=" + Date.now());
+const db = await import(fileHref(out + "?t=" + Date.now()));
 fs.rmSync(out, { force: true });
 if (typeof db.removeProfilePhoto !== "function") dead("removeProfilePhoto is not exported from lib/db.js — ANCHOR LOST");
 if (typeof db.photoStorageKey !== "function") dead("photoStorageKey is not exported from lib/db.js — ANCHOR LOST");

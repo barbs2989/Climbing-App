@@ -1,0 +1,26 @@
+{
+ "ca_summit_rock_climbs": {
+  "_expect": { "name": "Summit Rock Routes", "region": "California" },
+  "blurb": "A sandstone outcrop beside Skyline Boulevard in the Santa Cruz Mountains above the South Bay, close to Castle Rock. It packs in one of the denser collections of routes on the ridge: mostly bolted sport lines, a good handful of trad cracks and chimneys, a top-rope or two and a single boulder problem. Grades start around 5.7 and the bulk sit between 5.10 and 5.12, so it suits climbers past the beginner stage. Features include prominent aretes, small caves and scooped corners on scrubby marine sandstone, and the top gives a wide outlook over the Bay. Many lines can be rigged as top ropes, and some finish with a walk-off.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105734051/summit-rock", "https://sepwww.stanford.edu/sep/morgan/adventures/california/castle_rock.html"] }
+ },
+ "ca_upper_falls": {
+  "_expect": { "name": "Upper Falls", "region": "California" },
+  "blurb": "A canyon sector of Fossil Falls, a gorge of dark volcanic basalt in the Coso Range, just off US 395 near Little Lake in Inyo County. Flowing water long ago polished the stone smooth, leaving cracks, pockets, bulges and roofs. Most of the 21 routes here are trad crack lines or top-rope laps, with only one sport route. Climbs are short, and grades run from easy 5.4 up to low 5.12, with the weight between 5.9 and 5.11. Slick holds reward careful footwork, so bring a full cam rack and sticky rubber. The setting is quiet and removed from crowds.",
+  "parking_note": "Leave the car in the Fossil Falls lot: take the Cinder Road exit from US 395, then drive roughly half a mile east to the signed turn onto the lot road.",
+  "approach": "Head east and then south from the lot to the canyon edge, roughly five or six minutes, then downclimb easy third-class slick basalt to the base of the climbs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109857674/fossil-falls", "https://app.advcollective.com/climbing/fossil-falls-climbing-guide-volcanic-basalt-adventures-in-california"] }
+ },
+ "ca_4_fraggle_rock": {
+  "_expect": { "name": "Fraggle Rock", "region": "California" },
+  "blurb": "A small bouldering area on Conejo Mountain above Thousand Oaks, one of the clusters that make up the Conejo Boulders. It holds about 21 problems and leans friendly: roughly a third are V0 warm-ups, plenty more fall between V1 and V3, and a few harder lines reach V7, including a hard project high on the hillside. Expect technical movement, tidy mantles and aretes more than raw power. Bring several crash pads and a spotter, especially for the steeper and taller problems.",
+  "review": { "sources": ["https://www.mountainproject.com/area/116534565/fraggle-rock", "https://app.advcollective.com/climbing/fraggle-rock-boulder-area-a-conejo-mountain-classic"] }
+ },
+ "_skipped": {
+  "ca_techulator_the": "could not fetch two pages that describe the crag (SummitPost 403; one MP route page only)",
+  "ca_crocodile_dome": "could not fetch two pages that describe the crag itself (MP pages only name it in a breadcrumb)",
+  "ca_tom_s_thumb": "only route-level pages found; locations disagree (Chester vs Susanville); MP area URL returned the Colorado Tom's Thumb",
+  "ca_4_west_tier": "no fetched page describes the El Cajon West Tier beyond a route listing; the MP West Tiers page is Joshua Tree",
+  "ca_poker_face": "MP area page fetched but no second page that describes the crag"
+ }
+}

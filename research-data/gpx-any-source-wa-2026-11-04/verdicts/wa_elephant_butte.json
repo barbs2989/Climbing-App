@@ -1,0 +1,15 @@
+{
+  "area_id": "wa_elephant_butte",
+  "routes": [
+    { "route_id": "wa_elephant_butte_standard_route", "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Logged ascents Jul 8, Aug 7, Sep 5 (Oct 2); stored Jul-Sep; web (SummitPost route pages, trip reports): snow on the ridge into June, a May attempt was slowed by snow, tarn water scarce by late August." },
+      "track": { "aid": "3274775", "verdict": "same", "kind": "oneway", "inSeason": true, "why": "Only one route is stored on this peak, and this 18 Jul 2026 summit track follows its line: Diablo (204 m from our trailhead pin), the Sourdough trail, off onto the open ridge, then brush and cliff terrain to the summit; the report mentions the dry creek descent, brush and a class 3 cliff section. The track ends at the summit (no return leg)." },
+      "otherTracksConsidered": [ { "aid": "2253195", "verdict": "different", "why": "Ascends the east ridge from Stetattle and descends the west ridge, starting on the ridge itself; a different line and not a trailhead round trip." } ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "In mid-July there is no real climbers' path through the gap on the ridge; marking is sparse, so carry the track.", "aids": ["3274775"] },
+        { "field": "watch_out", "month": 7, "text": "Going down, finding the dry creek bed is key; missing it means a long thrash through thick brush (mid-July).", "aids": ["3274775"] },
+        { "field": "watch_out", "month": 7, "text": "The meadow-looking terrain includes an exposed class 3 cliff band and steep drop-offs; the way up is a bushwhack through dense brush.", "aids": ["3274775"] }
+      ] }
+  ],
+  "notes": "The harvest holds just two tracks. The stored trailhead pin (Sourdough Mountain Trailhead, Diablo) matches the track start, so no pin change. Summit pins agree with Peakbagger (~20 m)."
+}

@@ -38,7 +38,12 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
   (`route_field_level`) unless the owner set it by hand (`route_field_confidence`). **High = locked**:
   the database refuses an edit to it ("This detail is locked at high confidence; flag it instead").
   Identity fields, crag-discipline grades and guidebook-verified fields start high; empty fields,
-  inferred gear and auto-written prose start low; everything else medium. Discipline stays
+  inferred gear and auto-written prose start low; everything else medium. **Discipline is high once
+  it is on file** (0406, owner 2026-11-05: "locked and not allowed to be edited; they can only flag it
+  for review") — `discipline` and `rockStyle` answer high on every route that holds one, so no climber
+  edit to them is accepted; an EMPTY discipline takes the ordinary empty → low branch and can be
+  filled in ("when there's no information they should be able to edit it"), and the owner's
+  approval of that edit locks it. The owner's hand-set level still wins. Until 0406 discipline stayed
   medium on scrambling / mountaineering / alpine / trad routes (the owner's stated ambiguity).
 - **Rejection is a strike.** The owner rejects with a reason (≥10 characters); the climber is
   told the reason. Strikes drive `contribution_standing`: 1 → warned, 3 → restricted for 90 days
@@ -68,10 +73,34 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
 - **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
   onFlag}) around `RouteDetail`; the shared heading components `SL` (core) and `CardHead` (`src/components/CardHead.tsx`) map their
   text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
-  Low, with a ⚑ Flag button — the only place it renders); `ConfidenceLegend` explains the three levels once under the
-  verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
-  field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
-  chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened.
+  Low, with a ⚑ Flag button — headings, plus the grade's own chip beside *Composite Grade* in
+  `TechStats`). No legend line explains the levels (owner removed it 2026-11-11). The
+  page carries the chips alone. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
+  field's pencil opens the flag sheet instead of the editor. **A pencil that covers several fields is
+  not one field's pencil** (owner, 2026-11-11): the ROUTE FACTS / TECHNICAL STATS card pencil
+  (`factsPencilKey`) and each crag facts section's pencil (`CragFactSection`) open at the field
+  `firstEditable` (`lib/firstEditable.js`) picks — an empty (low) field first, then a medium one — and
+  reach the flag sheet only when every field they cover is locked. Before this the card pencil was
+  `openFix("grade")`, and a crag route's grade is always HIGH (0406), so the card opened the flag sheet
+  on every crag route while its Location and Pitches read "Not on file yet". For the same reason
+  "ROUTE FACTS" and "TECHNICAL STATS" are not in `HEAD_KEYS`: the card heading wore the grade's
+  "High · locked". `check:facts-pencil-open` holds both. In `SuggestFix` each field row shows its
+  chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened. The sheet's
+  **Discipline card** is the one exception: since 2026-11-05, on a route with a discipline on file it
+  is not a chip picker but the route's own discipline, a High · locked chip and a *Flag it* button
+  (through `openFlag`, field `discipline`) — discipline has no pencil or heading chip on the page, so
+  without that button a climber could not flag it at all. Only a route with NO discipline keeps the
+  chip picker (`discLocked` false), and only then does the sheet send a `discipline` / `rockStyle` edit. `discLocked` follows the page’s confidence level (so the owner’s hand-set level unlocks the card like any field), falls back to "a discipline is on file" when no level has loaded, and is never set for an admin — the database lets admins through the lock, and an admin is the only one who can correct a filed discipline. A climber’s pending discipline suggestion shows as *Awaiting review* with the picker hidden.
+- **Trad vs alpine** (owner, 0197: "Trad only applies to climbs at a crag"; 2026-11-11: "yes crag for trad is just a short
+  approach"). Trad means a crag day: about an hour or less on foot, and the party comes back to the base, however tall
+  the wall (valley and canyon walls, desert towers, roadside formations high on a mountain). Alpine means a mountain
+  setting plus a summit or ridge-crest finish, a long backcountry approach, or snow or glacier travel. A commitment grade
+  or a long route alone is not alpine. Migration 0413 (#3242) moved 306 trad routes to alpine under this rule; the
+  sourced rule is in `research-data/trad-alpine-2026-11-11/RULE.md`, each call with its reason in `decisions.json` beside it.
+  A second pass (0418) read all 78,452 trad routes for approach and descent signals (camp, bivy, glacier, a
+  multi-hour or multi-mile walk) and moved 84 more (`pass2-decisions.json` beside it); only ~1% of trad routes
+  carry approach text, so a backcountry route with none is still not caught.
+  Discipline is locked against climber edits (0406), so a re-filing is an owner migration.
 - **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
   sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show
   the database's sentence.
@@ -190,7 +219,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `src/components/SuggestFix.tsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line, the standing notice (moved out of RouteDetail.jsx, PR59) |
 | `RouteDetail.jsx` | `openFix`, which opens the edit sheet |
 | `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
-| `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
+| `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
 | `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
 | `src/components/DbAreaPicker.tsx` | `DbAreaPicker` (Add a climb's area step) |
@@ -206,6 +235,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
 | `supabase/migrations/0351_a_removal_waits_for_the_owner.sql` | `contributions.reason`, `route_field_page_value`, `_edit_removes`, `contribution_consensus` with the removal exit |
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
+| `supabase/migrations/0406_discipline_is_locked.sql` | `_route_field_level_for` with `discipline` / `rockStyle` high once on file |
 | `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
 | `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |
 | `supabase/migrations/0382_every_route_edit_waits_for_the_owner.sql` | `contribution_consensus` reduced to the removal mark, `guard_contribution_status` without the consensus exit, the insert-time grade write-back dropped |

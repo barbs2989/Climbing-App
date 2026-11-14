@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import type { PointerEvent, KeyboardEvent, SyntheticEvent } from "react";
 import { photoAlt } from "../../ClimbMatchCore.jsx";
 import { TOPO_IMG, ZOOM_MAX, TAP_SLOP, clampTopoView, zoomTopoView } from "../../lib/topoMarks.jsx";
+import { boxZoom } from "../../lib/wideLayout.js";
 import MediaImg from "./MediaImg.tsx";
 import TopoLineOverlay, { type TopoLine } from "./TopoLineOverlay.tsx";
 
@@ -41,7 +42,7 @@ export default function TopoZoomPhoto({photo,active}: TopoZoomPhotoProps){
   // The frame's size travels with the view, so the render never reads a ref.
   const setView=function(v: ZoomTarget){const d=dims();const n={z:v.z,tx:v.tx,ty:v.ty,W:d.W,H:d.H};viewRef.current=n;setViewState(n);};
   const fit=function(){setView({z:1,tx:0,ty:0});};
-  const local=function(cx: number,cy: number){const fr=vpRef.current;if(!fr)throw new TypeError("Cannot read properties of null (reading 'getBoundingClientRect')");const r=fr.getBoundingClientRect();return {x:cx-r.left,y:cy-r.top};};
+  const local=function(cx: number,cy: number){const fr=vpRef.current;if(!fr)throw new TypeError("Cannot read properties of null (reading 'getBoundingClientRect')");const r=fr.getBoundingClientRect();const q=boxZoom(fr);return {x:(cx-r.left)/q,y:(cy-r.top)/q};};
   const zoomAt=function(z: number,px: number,py: number){const d=dims();setView(zoomTopoView(viewRef.current,z,px,py,d.W,d.H));};
   const zoomBy=function(f: number){const d=dims();zoomAt(viewRef.current.z*f,d.W/2,d.H/2);};
   const panBy=function(dx: number,dy: number){const d=dims();const b=viewRef.current;setView(clampTopoView({z:b.z,tx:b.tx+dx,ty:b.ty+dy},d.W,d.H));};
@@ -69,7 +70,7 @@ export default function TopoZoomPhoto({photo,active}: TopoZoomPhotoProps){
     ptrs.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
     const g=gest.current;if(!g)return;const d=dims();
     if(g.kind==="pinch"&&ptrs.current.size===2){const t=two();const nz=Math.min(ZOOM_MAX,Math.max(1,g.base.z*t.d/g.d0));setView(clampTopoView({z:nz,tx:t.m.x-(g.m0.x-g.base.tx)*nz/g.base.z,ty:t.m.y-(g.m0.y-g.base.ty)*nz/g.base.z},d.W,d.H));return;}
-    if(g.kind==="drag"){const dx=e.clientX-g.sx,dy=e.clientY-g.sy;if(Math.hypot(dx,dy)>TAP_SLOP)g.moved=true;if(g.moved&&g.base.z>1)setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx,ty:g.base.ty+dy},d.W,d.H));}
+    if(g.kind==="drag"){const dx=e.clientX-g.sx,dy=e.clientY-g.sy;if(Math.hypot(dx,dy)>TAP_SLOP)g.moved=true;if(g.moved&&g.base.z>1){const q=boxZoom(vpRef.current);setView(clampTopoView({z:g.base.z,tx:g.base.tx+dx/q,ty:g.base.ty+dy/q},d.W,d.H));}}
   };
   const onUp=function(e: PointerEvent<HTMLDivElement>){
     if(!ptrs.current.has(e.pointerId))return;

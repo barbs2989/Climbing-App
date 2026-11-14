@@ -1,6 +1,7 @@
+import { fileURLToPath } from "node:url";
 // Phase 2 batches: p2-routes.json grouped by area path into ~90k-char reader batches (nulls dropped).
 import fs from "node:fs";
-const T = new URL("../../../audits/oos-contradictions/p2", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/oos-contradictions/p2", import.meta.url));
 const R = JSON.parse(fs.readFileSync(`${T}/p2-routes.json`)).map(r => Object.fromEntries(Object.entries(r).filter(([, v]) => v != null && v !== "" && !(Array.isArray(v) && !v.length))));
 R.sort((a, b) => (a.area_path || "").localeCompare(b.area_path || "") || a.id.localeCompare(b.id));
 const batches = []; let cur = [], size = 0;

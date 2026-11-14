@@ -1,0 +1,62 @@
+{
+ "area_id": "wa_carne_mountain",
+ "routes": [
+  {
+   "route_id": "wa_carne_mountain_trail_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "Logged ascents 188 in Oct, 51 Sep, 40 Aug. Searches (guides, WTA, SummitPost): snow-free by July, Jul-Oct season, larches peak around Oct 1-15, snow in the basin by early Nov; trailhead snowed in by Nov/Dec. Stored Jul-Oct kept."
+   },
+   "track": {
+    "aid": "2335521",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Only route on the peak; summited 5 Oct 2023 on a round trip from the Phelps Creek trailhead: starts 137 m from our pin, ends 115 m, high point within 11 m of Peakbagger summit (70 m of ours), follows the Carne Mountain trail line."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2607127",
+     "verdict": "unsure",
+     "why": "8 Oct 2023, passes 4 m from the summit but starts 181 m and ends 358 m from the pin"
+    },
+    {
+     "aid": "2672284",
+     "verdict": "unsure",
+     "why": "Oct 2024 loop goes to a 2525 m high point 5 km away, bagging Carne on the way out"
+    },
+    {
+     "aid": "1377445",
+     "verdict": "offseason",
+     "why": "May 2020 on skis"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 6,
+     "text": "In early June the creek crossings near the trailhead can run deep with melt, and snow is continuous above about 5,000 ft in the upper basin.",
+     "aids": [
+      "2862477"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 6,
+     "text": "The road up to Phelps Creek may be newly opened in early June, with several downed trees across its last stretch.",
+     "aids": [
+      "2862477"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Peakbagger summit is 79 m from our pin (within 100 m, not clearly off) so no move proposed."
+}

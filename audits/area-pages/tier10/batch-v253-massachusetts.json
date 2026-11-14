@@ -1,0 +1,43 @@
+{
+ "ma_crag_1_aka_pinnacle_rock": {
+  "_expect": { "name": "Crag 1 aka Pinnacle Rock", "region": "Massachusetts" },
+  "blurb": "This is the first cliff you meet when walking in to the Black and White Rocks, a handful of small crags in the Middlesex Fells near Melrose. It stands about 25 feet tall and looks north, so it tends to stay cool. Most of the fifteen climbs are set up as top-ropes, with a few gear-friendly lines and one short boulder traverse off to the side. Grades stay low to moderate, from 5.3 up to 5.9, which makes it a handy spot for beginners, instructors and anyone practicing rope skills close to the city. Crowds are rarely a concern.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105908209/crag-1-aka-pinnacle-rock", "https://mountainproject.com/area/105908205/black-and-white-rocks"] }
+ },
+ "ma_graffiti_boulder_the": {
+  "_expect": { "name": "Graffiti Boulder, The", "region": "Massachusetts" },
+  "blurb": "A single shaded block in the Weetamoo section of Lynn Woods, north of Boston, painted with graffiti on one face. It holds fourteen problems, all bouldering, with the bulk between V2 and V5 and a few harder lines reaching V7. Its shade makes it a comfortable choice for hot summer days or for a quiet session on your own. It sits a short walk downhill from the Summit Boulders, so it pairs easily with a longer day in the neighborhood, where the hike in from the main lot runs well over twenty minutes and the trails are shared with mountain bikers.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106913093/the-graffiti-boulder", "https://www.mountainproject.com/area/106965921/weetamoo-area"] }
+ },
+ "ma_trillium_boulder": {
+  "_expect": { "name": "Trillium Boulder", "region": "Massachusetts" },
+  "blurb": "One of the better blocks in the State Line Boulders, a small woodland collection in West Townsend on the New Hampshire border. A lot is packed onto this one rock: an overhanging face with a rare flat landing, a crack, a slopey arete above a pit, and a low-angle slab side. The fourteen problems run from very easy to V7, with a solid middle band around V3 and a handful of harder lines near V5 to V7. There is no real trail in, so expect some bushwhacking, and watch your step around the slab, where boulders are piled on boulders with gaps hidden under leaves.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113789111/trillium-boulder", "https://mountainproject.com/area/113789077/state-line-boulders"] }
+ },
+ "ma_gully_boulders": {
+  "_expect": { "name": "Gully Boulders", "region": "Massachusetts" },
+  "blurb": "A pair of rounded granite boulders in the Stone Tower section of Lynn Woods, about 150 feet apart and reached by heading up a washed-out gully beside the trail. Fourteen bouldering problems are recorded here, running from an easy V1 slab through a good run of V3 to V6, with a couple of hard lines up to V8. Landings call for care, since the slab problems in particular want pads. It is a quiet side trip within the busiest, boulder-dense part of the woods, where the hike between boulders is generally short.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106971552/gully-boulders", "https://www.mountainproject.com/area/106965930/stone-tower-area"] }
+ },
+ "ma_tomb_raider_crag_the": {
+  "_expect": { "name": "Tomb Raider Crag, The", "region": "Massachusetts" },
+  "blurb": "A small boulder cluster on the east end of the Bow Ridge section, in the northeast corner of Lynn Woods north of Boston. It is the most-visited sub-area in Bow Ridge, with fourteen problems that start with easy V1 and V2 lines and climb through V3 and V4 to a single V7 at the top end. Most of the grades sit in the lower half, so it works well for a mixed group. The namesake problem is one of the area's classics. The surrounding ridge is a popular spot for mountain bikers, so expect some company on the trails.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112851413/the-tomb-raider-crag", "https://www.mountainproject.com/area/112510583/bow-ridge-area"] }
+ },
+ "ma_tivnan_park_boulders": {
+  "_expect": { "name": "Tivnan Park Boulders", "region": "Massachusetts" },
+  "blurb": "A small bouldering stop on the edge of Worcester, built around a split boulder roughly 15 feet tall in the woods behind Tivnan Field, plus a lower block of about 10 feet near the ball field. It suits a short, close-to-home session rather than a full day. Fourteen problems are recorded: mostly V0 to V3, with the more moderate lines on the lower block, and a few much harder ones that reach V8. Central Massachusetts locals use it as an easy introduction to the region's bouldering.",
+  "review": { "sources": ["https://mountainproject.com/area/113480748/tivnan-park-boulders", "https://tianxiongbb.github.io/climbing/"] }
+ },
+ "ma_roofs_the": {
+  "_expect": { "name": "Roofs, The", "region": "Massachusetts" },
+  "blurb": "The steepest sub-area in Quarry Land, a boulder field in the Milford town forest of eastern Massachusetts, and the largest group of problems there. The side facing away from the water-filled quarry has overhanging lines with generally poor landings, so bring several pads and a spotter. Fourteen problems range from V0 up to V7, with a spread through V1 to V3 and a few hard test pieces around V6 and V7. If you like steep climbing, this is the place to go in the Milford zone. Reach it by following the main trail past the small quarry pond.",
+  "review": { "sources": ["https://www.mountainproject.com/v/the-roofs/108856914", "https://www.mountainproject.com/area/113505562/quarry-land"] }
+ },
+ "_skipped": {
+  "ma_forgotten_boulders": "no fetched page about the crag itself; only route pages and parent-level mentions found (two searches)"
+ },
+ "_conflicts": {
+  "ma_tivnan_park_boulders": "Stored rock is schist, but https://tianxiongbb.github.io/climbing/ lists Tivnan among Central MA granite areas; the Mountain Project page https://mountainproject.com/area/113480748/tivnan-park-boulders gives no rock type. Stored value not changed and rock not named in the blurb."
+ }
+}

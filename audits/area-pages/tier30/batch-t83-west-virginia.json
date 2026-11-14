@@ -1,0 +1,19 @@
+{
+ "wv_entrance_walls": {
+  "_expect": { "name": "Entrance Walls.", "region": "West Virginia" },
+  "blurb": "Entrance Walls sits where Smoke Hole Canyon begins, beside the South Branch of the Potomac, a short drive from Upper Tract and Franklin. It is mostly a sport crag with about thirty lines, plus a handful of trad climbs. Most routes fall in the 5.8 to 5.9 range, with a smaller group of 5.11s and one 5.12, so it suits moderate leaders well. The cliffs are modest in height, and the walk from the road is very short. A north-facing arch close to the water gives some of the shadier climbing. Anchors are typically bolts with rings or open hardware, so carry your own gear if you plan to top-rope.",
+  "review": { "sources": ["https://rakkup.com/guidebook/smoke-hole-canyon-entrance-walls-rock-climbing/", "https://potomacmountainclub.org/climbing-crags-beta/smokehole/"] }
+ },
+ "_skipped": {
+  "wv_ceiling_block_area": "only one page found that describes this block specifically (a Mountain Project problem listing); no second sector-specific page",
+  "wv_1_powerline_boulders": "only one sector-specific page fetched (Mountain Project); the WVU Camp 70 page returned 403 and covers the wider Camp 70 zone",
+  "wv_north_peak_east_face": "only one sector-specific page fetched (Mountain Project); theCrag returned 403",
+  "wv_south_end": "no second fetched page specific to this sector; only wider Seneca Rocks pages found",
+  "wv_b_party_buttress": "fetched pages give only counts and a name for this sector; no detail from two independent pages",
+  "wv_i_honeymooner_s_area": "only one fetched page (Mountain Project Endless Wall) describes the sector's access; the other fetched page lists only a climb count",
+  "wv_mud_hueco_closed": "closed: South Side Crags are closed indefinitely because of private landowners"
+ },
+ "_conflicts": {
+  "wv_entrance_walls": "stored rock is sandstone, but https://potomacmountainclub.org/climbing-crags-beta/smokehole/ describes the canyon cliffs as limestone; left unchanged"
+ }
+}

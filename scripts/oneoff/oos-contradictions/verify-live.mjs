@@ -1,8 +1,9 @@
+import { fileURLToPath } from "node:url";
 // Re-read every route this audit patched and confirm each patched column still differs from its pre-patch value.
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const base = new URL("../../../audits/oos-contradictions/", import.meta.url).pathname;
+const base = fileURLToPath(new URL("../../../audits/oos-contradictions/", import.meta.url));
 let hold = 0, changed = [];
 for (const sub of ["", "p2/"]) {
   const d = `${base}${sub}applied`; if (!fs.existsSync(d)) continue;

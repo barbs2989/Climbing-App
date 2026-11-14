@@ -35,7 +35,11 @@ if (typeof globalThis.localStorage !== "undefined") delete globalThis.localStora
 for (const [file, loadName, saveName, , , dflt] of MODULES) {
   const m = await import("file://" + path.join(ROOT, "lib", file + ".js"));
   if (typeof m[loadName] !== "function" || typeof m[saveName] !== "function") { fail(`${file}: ${loadName}/${saveName} are not both exported — the fold changed the public API`); continue; }
-  if (m[loadName]() !== dflt) { fail(`${file}: ${loadName}() does not fall back to ${dflt} with no localStorage (the SSR case)`); continue; }
+  // An unguarded read throws -- a ReferenceError on older Node, a TypeError on a Node that defines
+  // a throwing/undefined `localStorage` global. Either way it is THIS failure, so catch it here
+  // rather than letting the probe die with a stack the injection suite cannot match.
+  let got; try { got = m[loadName](); } catch (e) { fail(`${file}: ${loadName}() threw with no localStorage (the SSR case): ${e.message}`); continue; }
+  if (got !== dflt) { fail(`${file}: ${loadName}() does not fall back to ${dflt} with no localStorage (the SSR case)`); continue; }
   try { m[saveName](dflt); } catch (e) { fail(`${file}: ${saveName} threw with no localStorage: ${e.message}`); continue; }
   ok(`${file}: survives having no localStorage at all`);
 }

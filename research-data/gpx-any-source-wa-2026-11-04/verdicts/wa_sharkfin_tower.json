@@ -1,0 +1,25 @@
+{
+  "area_id": "wa_sharkfin_tower",
+  "routes": [
+    {
+      "route_id": "wa_southeast_face",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; Boston Basin condition reports and Mountaineers say the approach gully is half snow in early July and loose scree late, and the basin is an excellent late-season destination; log histogram peaks Jun-Aug." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "695232", "verdict": "unsure", "why": "Complete Aug 13 round trip, summited, but no logged route and a blank report; the peak has three routes, one far easier, so I cannot say it is the 5.10- face." },
+        { "aid": "1007677", "verdict": "different", "why": "Logged SE Ridge; report describes the arete pitch and rappels." },
+        { "aid": "1204961", "verdict": "unsure", "why": "No route or report." },
+        { "aid": "1201643", "verdict": "different", "why": "Easy climbing with straightforward pitches and good protection; the standard ridge route, not the 5.10- face." },
+        { "aid": "71985", "verdict": "different", "why": "Easy climb to the summit after a snow chute approach." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 7, "text": "In July the bottom of the approach gully is guarded by a moat, and a short wall of snow must be climbed to reach the chute.", "aids": ["71985", "1201643"] },
+        { "field": "watch_out", "month": 7, "text": "In mid-July a steep snowfield above the gully runs out badly; consider a couple of pickets or a belay, and the gully exit in crampons can feel close to fifth class.", "aids": ["1201643", "71985"] },
+        { "field": "pro_tips", "month": 7, "text": "Several parties have climbed the wrong gully; compare your gully with a photo overlay before committing.", "aids": ["1201643", "1007677"] },
+        { "field": "descent_note", "month": 7, "text": "In July the last rappel down the gully wall is about 30 m and lands at a moat, so a doubled 60 m rope helps clear it.", "aids": ["1201643"] }
+      ]
+    }
+  ],
+  "notes": "No track names or describes the Southeast Face. The reports describe the ridge route and share the approach; the SE Ridge route (already has tracks) is the right owner of these tracks. The facts apply to the shared approach and descent."
+}

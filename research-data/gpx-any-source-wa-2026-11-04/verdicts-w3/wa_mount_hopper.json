@@ -1,0 +1,21 @@
+{
+  "area_id": "wa_mount_hopper",
+  "routes": [
+    {
+      "route_id": "wa_mount_hopper_standard",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. Peakbagger successful ascents: Jul 15, Aug 7, Sep 1, Jun 1, May 1, Oct 1 (winter 2). Web (WTA, Mountaineers, summit pages): late summer to early fall is the usual window, with late snow and blowdown near First Divide; approach currently closed after the 2025 fire per our stored text. Keep Jul-Sep." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2804171", "verdict": "unsure", "why": "Jul 3 2024 summit but starts at a Duckabush-side trailhead (47.655,-123.320), 15 km from our Staircase pin; a different approach from our route, and not a round trip from its trailhead." },
+        { "aid": "2804164", "verdict": "offseason", "why": "May 26 2024; also starts mid-valley (47.617,-123.338), 11 km from our trailhead pin, not trailhead-to-summit." },
+        { "aid": "2266156", "verdict": "different", "why": "Jul 27 2023 Lake of the Angels / Mount Stone ridge traverse to Hopper and out to Staircase: different approach, one-way multi-peak." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "In late July, bears were feeding in the open meadows below the summit basin, including a mother with cub; keep distance and detour around them.", "aids": ["2266156"] },
+        { "field": "pro_tips", "month": 7, "text": "In late July a meadow stream just below the summit basin gave a place to refill water before the last climb.", "aids": ["2266156"] }
+      ]
+    }
+  ],
+  "notes": "No track qualifies: the only in-season summited logs start from other trailheads. The one catalog route is the only route on the peak, but none of the three tracks follows its Staircase / First Divide approach from the trailhead. Tracks 2804171/2804164 lack trip report text."
+}

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does the derived-trailhead block actually DRAW, and does it stay silent when it should?
 //
 // The marker is created inside GPXMap's useEffect via Leaflet, so `renderToStaticMarkup` cannot see
@@ -9,7 +10,7 @@
 // What it does NOT prove: that Leaflet paints them on a real tile layer. That needs a browser.
 import fs from "fs";
 
-const SRC = new URL("../../ClimbMatchCore.jsx", import.meta.url).pathname;
+const SRC = fileURLToPath(new URL("../../ClimbMatchCore.jsx", import.meta.url));
 const src = fs.readFileSync(SRC, "utf8");
 // Anchor on the COMMENT and take the `if(` that follows it, deliberately NOT on the gate expression
 // itself. Anchoring on the gate makes any change to it report ANCHOR LOST — fail-closed and safe,

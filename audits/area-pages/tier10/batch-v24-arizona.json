@@ -1,0 +1,37 @@
+{
+ "az_mean_mistreater_wall": {
+  "_expect": {"name": "Mean Mistreater Wall", "region": "Arizona"},
+  "blurb": "A south-facing wall on the Mount Lemmon side of the Santa Catalina Mountains, just above Tucson and a short stroll from the Windy Point overlook on the Catalina Highway. Its 19 routes split between trad (about two thirds) and bolted lines, running from an easy 5.6 through a solid middle of 5.8 to 5.10 up to five climbs in the 5.11 range. Because the wall catches the sun, it is a good pick for cooler days and winter outings. Moderate and hard lines sit side by side, so a mixed-ability group can usually find something each.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105738146/mean-mistreater-wall", "https://www.mountainproject.com/area/106824256/4-windy-point-west"]}
+ },
+ "az_poseidon": {
+  "_expect": {"name": "Poseidon", "region": "Arizona"},
+  "blurb": "A trad-leaning crag high on Mount Lemmon in the Reef of Rocks group, set along a ridge above the Catalina Highway north of Tucson. Of the 19 routes, 17 are trad and two are bolted, and several are multi-pitch outings. Difficulty starts near 5.8 but most climbs fall between 5.10 and 5.12, with a couple pushing into the low 5.13s. The rock is mostly sound, though a few loose or funky stretches have to be worked around. Out on its ridge it stays quiet and has an adventurous feel.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106158001/poseidon", "https://www.mountainproject.com/area/classics/106822703/mount-lemmon-catalina-highway"]}
+ },
+ "az_north_buttress": {
+  "_expect": {"name": "North Buttress", "region": "Arizona"},
+  "blurb": "A shaded, north-facing sport wall in the Rough Rider Zone of the Homestead, a limestone canyon in central Arizona between Globe and Winkelman. All 19 routes are bolted, mostly in the 5.11 range, with a few at 5.10 and a handful at 5.12. Pitches run full length, so a 70 m rope and around twenty quickdraws are handy for the longer lines. Walk left beneath the neighbouring Rough Rider wall until the cliff swings round to face north. Best suited to climbers already comfortable at 5.10 and up.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106647965/north-buttress?print=1", "https://www.mountainproject.com/area/105801318"]}
+ },
+ "az_sky_valley": {
+  "_expect": {"name": "Sky Valley", "region": "Arizona"},
+  "blurb": "A mid-mountain sport area on Mount Lemmon near Tucson, made up of an upper and a lower crag. All 19 routes are bolted, with slab, vertical and slightly overhanging terrain concentrated around 5.10: eleven climbs sit in that band, a few easier ones start near 5.8, and a handful reach 5.11 with one 5.12. Shade covers a good share of the routes through the day, with one crag among tall pines and the other in a small grotto, which makes it a comfortable choice when the weather is warm. Bring a rope and quickdraws.",
+  "parking_note": "Leave the car at the San Pedro Vista pullout near mile marker 17.8 on the Catalina Highway; the trail starts at the uphill end of the lot.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105738197/sky-valley", "https://www.mountainproject.com/area/123019535/lower-sky-valley"]}
+ },
+ "az_super_crack_tower": {
+  "_expect": {"name": "Super Crack Tower", "region": "Arizona"},
+  "blurb": "A spire of roughly 200 feet tucked away near Midgley Bridge on the edge of Sedona, reached by a walk up Wilson Canyon. Almost all of the 19 climbs are trad, many following cracks, with one bolted line and one boulder problem. Grades run from easy fifth class up into the 5.11 range, with most routes at 5.10 and 5.11, and several go to multiple pitches, the longest around five. It is a scenic, out-of-the-way tower where some faces get sun and others stay in shade.",
+  "parking_note": "Leave the car in the Midgley Bridge parking area and start up the Wilson Canyon Trail.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105824958/super-crack-tower", "https://www.mountainproject.com/area/105808423/midgley-bridge-area"]}
+ },
+ "_skipped": {
+  "az_confluence_wall": "no fetched page about Confluence Wall itself (only the Christopher Creek Gorge parent page)",
+  "az_east_face_4": "no fetched page about the Raven C East Face itself (only Raven C and Ravens parents); similar-named East Face pages are other crags",
+  "az_the_niche": "could not find any page for The Niche / Canyon Wren Canyon"
+ },
+ "_conflicts": {
+  "az_super_crack_tower": "stored rock is limestone but the parent Midgley Bridge Area page (https://www.mountainproject.com/area/105808423/midgley-bridge-area) describes sandstone; rock not changed"
+ }
+}

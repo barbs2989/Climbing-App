@@ -1,0 +1,28 @@
+{
+  "key": "forbidden-ne-face-2",
+  "question": "Is there a documented Northeast Face route on Forbidden Peak (who, when, line, grade), and is it the same as the East Ledges?",
+  "answer": "No documented Northeast Face ice or technical route exists. Every printed use of 'northeast face' on Forbidden is the East Ledges ground: a 1959-volume American Alpine Journal report (Seattle party, July 1958 Torment-Forbidden traverse) went up the West Ridge and came DOWN 'the northeast face', a descent not a first ascent; the SummitPost page calls the NE Ledge 'also the Northeast Face' (loose, a fatal fall in 1975); and a Mountain Project descent note speaks of rappelling the NE face to ledges followed east. The upper part of the East Ledges route itself climbs the small northeast face under the summit, which is why the names overlap. I could not find a 1961 AAJ Forbidden report or a 1976 accident report naming such a route (searches returned only the 1959 pieces; the 1961 citation in the East Ledges data_quality text is probably the 1959 volume mis-dated, and the AAC accident archive pages for 1976 were not located). So the East Ledges data_quality/overview claim of a 'distinct, genuinely technical Northeast Face ice route' is unsupported by anything readable. The stored 'Northeast Face' row's content (Sharkfin Col approach, Boston Glacier traverse, ~900 ft snow and ice, ~50 degree patch, upper North Ridge rock) is the Northwest Face of the North Ridge, as the earlier answer found. Not the same climb as the East Ledges.",
+  "recommendation": "Re-identify wa_forbidden_peak_northeast_face as 'Northwest Face of the North Ridge' (not a NE Face, not folded into East Ledges), applying the corrections in owner-qs/forbidden_peak.json (aspect NW, grade III 5.6 with ice note, season Jul-Aug, drop May/June and 'rarely climbed'). Edit the East Ledges overview and data_quality to remove the technical Northeast Face ice route claim and the 1961/1976 citations; keep one plain sentence that locals sometimes call this route the northeast ledge. Do not create a separate NE Face row.",
+  "confidence": "medium",
+  "proposed": {
+    "row": "wa_forbidden_peak_northeast_face",
+    "name": "Northwest Face of the North Ridge",
+    "east_ledges_row": "wa_forbidden_peak_east_ledges",
+    "east_ledges_overview_fix": "Replace the parenthetical with: this ledge system is sometimes called the northeast ledge, and its final pitch crosses the small northeast face under the summit; it is the same route, not a separate ice climb.",
+    "east_ledges_data_quality_fix": "Delete the sentence asserting a separate technical northeast-face ice route and the 1961/1976 report citations."
+  },
+  "evidence": [
+    "https://publications.americanalpineclub.org/articles/12195930103 — 1959-volume report: Torment-Forbidden traverse, up West Ridge, down 'the northeast face' (descent only; Cooper and Seller, July 1958)",
+    "https://publications.americanalpineclub.org/articles/12195930601/North-America-United-States-Washington-Forbidden-Peak-Direct-East-Ridge — Direct East Ridge report; no northeast face mentioned",
+    "https://www.summitpost.org/forbidden-peak/150314 — NE Ledge aka Northeast Face, loose, fatal fall 1975 (snippet)",
+    "https://www.mountainproject.com/area/106450578/forbidden-peak?print=1 — no Northeast Face route listed (per earlier pass)",
+    "https://www.mountaineers.org/activities/routes-places/forbidden-peak-northwest-face-of-north-ridge — the ice variation the row actually describes (per earlier pass)"
+  ],
+  "searched": [
+    "AAJ Forbidden Peak northeast face 1961 — only the 1959-volume traverse and Direct East Ridge reports; no 1961 Forbidden item",
+    "Forbidden Peak 'northeast face' East Ledges Beckey Cascade Alpine Guide — secondary snippets only; Beckey text not readable",
+    "AAC accidents 1976 Forbidden Peak northeast ledges — no 1976 report found; SummitPost says 1975",
+    "AAJ 1961 Cascades Forbidden northeast face first ascent ice — nothing; 1962/1963 AAJ PDFs appeared but were not about Forbidden NE face (not opened)",
+    "Dead ends: Beckey guide scans not fetched; the packet's East Ledges data_quality text could not be located by grep in packets-all (only the overview carries the claim)"
+  ]
+}

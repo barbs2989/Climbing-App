@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // "N viewing now" must be a claim about OTHER PEOPLE, not about the reader.
 //
 // The route page's social strip carries four chips and three of them are unambiguously about
@@ -37,7 +38,7 @@ await esbuild.build({
     b.onLoad({ filter: /.*/, namespace: "stub" }, () => ({ contents: "export const supabase=null;" }));
   } }],
 });
-const { presenceSplit } = await import(out);
+const { presenceSplit } = await import(fileHref(out));
 if (typeof presenceSplit !== "function") { console.error("FAIL: presenceSplit did not bundle — nothing below was checked."); process.exit(1); }
 let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log("  ok    " + m); } else { fail++; console.log("  FAIL  " + m); } };

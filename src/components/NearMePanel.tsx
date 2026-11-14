@@ -1,6 +1,10 @@
-import { useRef, useState, useLayoutEffect, useEffect, useMemo } from "react";
+import { tx } from "../../lib/tapWords.js";
+import { useRef, useState, useLayoutEffect, useEffect, useMemo, useContext, lazy, Suspense } from "react";
 import type { FormEvent } from "react";
-import { useNearbyAreas } from "../../lib/db";
+import { useNearbyAreas, useRoutesByIds } from "../../lib/db";
+import { ClimberCtx } from "../../lib/climberCtx.js";
+import MapAreaClimbs from "./MapAreaClimbs.tsx";
+import type { RouteRowRoute } from "./RouteRow.tsx";
 import { applyBaseLayer, loadLeaflet, pinHtml, useFollowMe, searchPlaces, BaseLayerToggle, locateLabel, ViewToggle } from "../../lib/mapKit";
 import { DISC_COLORS, discIconMarkup } from "../../lib/disciplines";
 import { haversineMi } from "../../lib/areaBrowserShared.js";
@@ -12,6 +16,8 @@ import { createPortal } from "react-dom";
 import LoadingRows from "./LoadingRows.tsx";
 import { DISC_LABELS as DL } from "../../lib/discLabels";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
+// The 3D view is MapLibre GL from a CDN: loaded only when the climber presses 3D.
+const Route3DView = lazy(() => import("../../lib/Route3DView.jsx"));
 
 // ── Near me: real Leaflet map (same CDN as the static OverviewMap), geolocated,
 // pins from useNearbyAreas driven by the LIVE map viewport — panning/zooming
@@ -30,7 +36,7 @@ const ZOOM_BY_AREA_TYPE: Record<string, number> = { world: 2, country: 3, state:
 export type NearMePanelDisc = keyof typeof DL;
 export interface NearMePanelBounds { minLat: number; maxLat: number; minLng: number; maxLng: number }
 export interface NearMePanelPlace { name: string; sub: string; lat: number; lng: number; bbox: number[][] | null }
-export interface NearMePanelArea { id: string; name: string; lat: number; lng: number; route_count: number; dominant_discipline: NearMePanelDisc; disciplines?: NearMePanelDisc[] | null }
+export interface NearMePanelArea { id: string; name: string; lat: number; lng: number; route_count: number; dominant_discipline: NearMePanelDisc; disciplines?: NearMePanelDisc[] | null; path?: string | null }
 export interface NearMePanelPick { areas: NearMePanelArea[]; cluster: boolean }
 export interface NearMePanelProps {
   /** Where the map opens; null opens on the whole country. */
@@ -43,8 +49,10 @@ export interface NearMePanelProps {
   C: typeof Palette;
   /** Formats miles in the climber's units; absent falls back to miles. */
   uDistMi?: (mi: number) => string;
+  /** Opens a climb straight from the map (the tapped crag's climbs, listed under it); absent lists areas only. */
+  onOpenRoute?: (r: RouteRowRoute) => void;
 }
-export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi }: NearMePanelProps) {
+export default function NearMePanel({ center0, areaType, name, onBack, onOpenArea, C, uDistMi, onOpenRoute }: NearMePanelProps) {
   const mapDiv = useRef<HTMLDivElement | null>(null), mapRef = useRef<LeafletAny>(null), markRef = useRef<LeafletAny>(null), tileRef = useRef<LeafletAny>(null), placeMarkRef = useRef<LeafletAny>(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
@@ -64,6 +72,8 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   const [placeQ, setPlaceQ] = useState("");
   const [place, setPlace] = useState<{ busy: boolean; err: string; alts: NearMePanelPlace[] }>({ busy: false, err: "", alts: [] });
   const [fullscreen, setFullscreen] = useState(false);
+  // 3D (owner, 2026-11-14): the box the flat map shows, tilted over the terrain, with the areas in it.
+  const [view3d, setView3d] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
   // alpine; top rope is its own type since 0202), so a mostly-sport crag with trad lines shows under both.
@@ -96,14 +106,31 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   useEffect(() => () => { if (hostRef.current) hostRef.current.remove(); }, []);
   useEffect(() => {
     if (!fullscreen) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setFullscreen(false); };
+    // Escape over the 3D view closes only the 3D view (it listens for itself).
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape" && !view3d) setFullscreen(false); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [fullscreen]);
+  }, [fullscreen, view3d]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll: NearMePanelArea[] | undefined = data && data.rows;
   const typesOf = (a: NearMePanelArea) => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline ? [a.dominant_discipline] : []);
   const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => typesOf(a).includes(disc)) : nearbyAll), [nearbyAll, disc]);
+  // YOUR LIST ON THE MAP (the seed map ringed areas holding your objectives and said "★ N on your
+  // list"). The wishlist routes are read by id with their area's ltree path embedded — the same small
+  // read the Climbs list uses — and an area counts the ones whose path sits under its own.
+  const { wishlist } = useContext(ClimberCtx);
+  const { data: wlRoutes } = useRoutesByIds((wishlist || []).filter(id => typeof id === "string"));
+  const wlByArea = useMemo(() => {
+    const out: Record<string, number> = {};
+    const paths = ((wlRoutes || []) as { areas?: { path?: string | null } | null }[]).map(r => r.areas && r.areas.path).filter((p): p is string => !!p);
+    if (!paths.length) return out;
+    (nearbyAll || []).forEach(a => { if (!a.path) return; const n = paths.filter(p => p === a.path || p.startsWith(a.path + ".")).length; if (n) out[a.id] = n; });
+    return out;
+  }, [wlRoutes, nearbyAll]);
+  const onList = (n: number) => "★ " + n + " on your list";
+  // A single tapped pin opens with its climbs showing; in a tapped CLUSTER each area opens its own.
+  const [climbsOpen, setClimbsOpen] = useState<Record<string, boolean>>({});
+  useEffect(() => { setClimbsOpen({}); }, [pick]);
   const discsInView = useMemo(() => {
     const n: Record<string, number> = {};
     (nearbyAll || []).forEach(a => typesOf(a).forEach(d => { n[d] = (n[d] || 0) + 1; }));
@@ -187,9 +214,12 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
         // length for the curved label without blowing up short names.
         const sz = Math.max(36, Math.min(52, 28 + (a.name || "").length * 1.4));
         const color = DISC_COLORS[a.dominant_discipline] || C.blue;
-        const html = pinHtml(a.name, null, sz, color, C.onSolid, discIconMarkup(a.dominant_discipline, 18));
+        const wl = wlByArea[a.id] || 0;
+        const pin = pinHtml(a.name, null, sz, color, C.onSolid, discIconMarkup(a.dominant_discipline, 18));
+        // An amber ring, as the seed map drew it, on an area holding climbs from your list.
+        const html = wl ? "<div style='border-radius:50%;box-shadow:0 0 0 3px " + C.amber + ",0 0 10px " + C.amber + "aa;'>" + pin + "</div>" : pin;
         const mk = L.marker([a.lat, a.lng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
-        mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : ""), { direction: "top" });
+        mk.bindTooltip(a.name + " · " + a.route_count + " climb" + (a.route_count !== 1 ? "s" : "") + (wl ? " · " + onList(wl) : ""), { direction: "top" });
         mk.on("click", () => setPick({ areas: [a], cluster: false }));
         grp.addLayer(mk);
       } else {
@@ -198,9 +228,10 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
         const climbs = areas.reduce((s, a) => s + (a.route_count || 0), 0);
         const avgLat = areas.reduce((s, a) => s + a.lat, 0) / n, avgLng = areas.reduce((s, a) => s + a.lng, 0) / n;
         const sz = Math.min(22 + n, 44);
-        const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blueSolid + ";border:2px solid #fff;color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
+        const wl = areas.reduce((s, a) => s + (wlByArea[a.id] || 0), 0);
+        const html = "<div style='width:" + sz + "px;height:" + sz + "px;border-radius:50%;background:" + C.blueSolid + ";border:2px solid " + (wl ? C.amber : "#fff") + ";color:#fff;font-weight:700;font-size:" + (n > 99 ? 10 : 12) + "px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.55);'>" + n + "</div>";
         const mk = L.marker([avgLat, avgLng], { icon: L.divIcon({ html, className: "", iconSize: [sz, sz], iconAnchor: [sz / 2, sz / 2] }) });
-        mk.bindTooltip(n + " areas · " + climbs + (climbs === 1 ? " climb" : " climbs") + " — tap to zoom in", { direction: "top" });
+        mk.bindTooltip(n + " areas · " + climbs + (climbs === 1 ? " climb" : " climbs") + (wl ? " · " + onList(wl) : "") + tx(" — tap to zoom in"), { direction: "top" });
         mk.on("click", () => {
           setPick({ areas, cluster: true });
           try { map.fitBounds(L.latLngBounds(areas.map(a => [a.lat, a.lng])), { padding: [50, 50], maxZoom: 15 }); } catch (e) { /* the map is gone or not laid out yet; nothing to update */ }
@@ -208,7 +239,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
         grp.addLayer(mk);
       }
     }
-  }, [ready, nearby]); // eslint-disable-line react-hooks/exhaustive-deps -- markers are redrawn only when the map is ready or the nearby list changes; theme colours are constants
+  }, [ready, nearby, wlByArea]); // eslint-disable-line react-hooks/exhaustive-deps -- markers are redrawn when the map is ready, the nearby list changes or your list's counts arrive; theme colours are constants
 
   // Live, and refining: see useFollowMe in lib/mapKit.jsx. Only the FIRST fix re-centres the
   // nearby list -- re-querying on every step of a walk would refetch for nothing.
@@ -277,7 +308,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
     <div style={{ position: "relative", flex: fullscreen ? 1 : "none", minHeight: 0 }}>
       <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "100%" : 260, borderRadius: 12, overflow: "hidden", background: C.surface }} />
       {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
-      <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
+      <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} on3d={ready && bounds ? () => setView3d(true) : undefined} />
       {/* ⤢ to go full screen and ✕ to leave it, in the SAME spot on the map, so the way out is where the
           way in was (owner, 2026-10-24: "Exit full screen is a little hidden on the map"). Drawn OPAQUE, with a
           shadow: the translucent fill let the circles beneath show through it. Full screen also has
@@ -293,26 +324,51 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
   const pickRows = pick ? pick.areas.map(a => ({ ...a, _mi: viewCenter ? haversineMi(viewCenter, a) : null })).sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)) : [];
   const pickClimbs = pickRows.reduce((n, a) => n + (a.route_count || 0), 0);
   const pickUI = pick ? (
-    <section aria-label="Areas you tapped on the map" style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
+    <section aria-label={tx("Areas you tapped on the map")} style={{ marginTop: 8, flexShrink: 0, maxHeight: fullscreen ? "42%" : "none", display: "flex", flexDirection: "column", minHeight: 0, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 8px 8px 12px", borderBottom: "1px solid " + C.border }}>
         <div style={{ flex: 1, minWidth: 0, fontSize: 13.5, fontWeight: 700, color: C.text }}>{(pickRows.length === 1 ? "1 area" : pickRows.length + " areas") + " · " + pickClimbs + " climb" + (pickClimbs !== 1 ? "s" : "")}</div>
-        <button onClick={() => setPick(null)} title="Close" aria-label="Close the list of tapped areas" style={POP_CLOSE}>✕</button>
+        <button onClick={() => setPick(null)} title="Close" aria-label={tx("Close the list of tapped areas")} style={POP_CLOSE}>✕</button>
       </div>
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "6px 8px 0" }}>
-        {pickRows.map(a => (
-          <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginBottom: 6, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
-            <span style={{ fontWeight: 700, fontSize: 14, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{a.name}</span>
-            <span style={{ color: C.textMuted, fontSize: 12, flexShrink: 0 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
-          </div>
-        ))}
+        {pickRows.map(a => {
+          const open = !!onOpenRoute && (pickRows.length === 1 || !!climbsOpen[a.id]);
+          const openRoute = open ? onOpenRoute : undefined;
+          const wl = wlByArea[a.id] || 0;
+          return <div key={a.id} style={{ marginBottom: 6 }}>
+            <div style={{ display: "flex", alignItems: "stretch", gap: 6 }}>
+              <div {...clickable(() => onOpenArea(a))} style={{ flex: 1, minWidth: 0, background: C.card, border: "1px solid " + (wl ? C.amber : C.border), borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+                <span style={{ minWidth: 0 }}>
+                  <span style={{ display: "block", fontWeight: 700, fontSize: 14, color: C.text, overflowWrap: "anywhere" }}>{a.name}</span>
+                  {wl ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 700, color: C.amber }}>{onList(wl)}</span> : null}
+                </span>
+                <span style={{ color: C.textMuted, fontSize: 12, flexShrink: 0 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
+              </div>
+              {onOpenRoute && pickRows.length > 1 && a.route_count > 0 ? <button onClick={() => setClimbsOpen(o => ({ ...o, [a.id]: !o[a.id] }))} aria-expanded={open} aria-label={(open ? "Hide" : "Show") + " the climbs at " + a.name} style={{ ...CHIP, flexShrink: 0, minHeight: 44, border: "1px solid " + (open ? C.blue : C.border), background: open ? C.blueBg : C.surface, color: open ? C.onSolid : C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide" : "Climbs"}</button> : null}
+            </div>
+            {openRoute && a.route_count > 0 ? <MapAreaClimbs area={a} onOpenRoute={openRoute} onOpenArea={() => onOpenArea(a)} C={C} /> : null}
+          </div>;
+        })}
       </div>
     </section>
   ) : null;
   const errUI = geoErr ? <div role="status" style={{ color: C.red, fontSize: 12, marginTop: 6 }}>{geoErr}</div> : null;
   const title = "Map" + (name ? " · " + name : "");
+  // The areas in view (type filter applied), busiest first, as 3D pins: each opens its area.
+  const view3dEl = view3d && bounds ? (
+    <Suspense fallback={null}>
+      <Route3DView view={bounds} title={name || undefined} onClose={() => setView3d(false)}
+        waypoints={(nearby || []).filter(a => a.lat != null && a.lng != null).slice(0, 200).map(a => ({
+          lat: a.lat, lng: a.lng, name: a.name,
+          color: DISC_COLORS[a.dominant_discipline] || C.blue, iconHtml: discIconMarkup(a.dominant_discipline, 14),
+          sub: a.route_count + (a.route_count === 1 ? " climb" : " climbs") + (wlByArea[a.id] ? " · " + onList(wlByArea[a.id]) : ""),
+          openLabel: "Open area", onOpen: () => { setView3d(false); setFullscreen(false); onOpenArea(a); },
+        }))} />
+    </Suspense>
+  ) : null;
   return (
     <div>
       <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} />
+      {view3dEl}
       {fullscreen ? null : searchUI}
       {/* The inline slot the map's host div sits in when it is not full screen. React renders it
           empty and never touches its children; only the effect above moves the host in and out. */}
@@ -339,7 +395,7 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
       {!fullscreen ? (
         <>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>{"Pan or zoom the map, or type a town above, to see areas anywhere else." + (me.acc != null ? " The green dot is you." : "")}</div>
-          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Me" on the map to find climbs near you.'}</div> : null}
+          {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{tx('Tap "Me" on the map to find climbs near you.')}</div> : null}
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
           {isLoading && bounds ? <LoadingRows C={C} label="Loading nearby climbs…"/> : null}
@@ -355,12 +411,15 @@ export default function NearMePanel({ center0, areaType, name, onBack, onOpenAre
           {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
           {disc && ((nearby as unknown[]).length > sorted.length || (data && (data.total as number) > (nearbyAll as unknown[]).length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + (sorted.length === 1 ? " area" : " areas") + " — zoom in to see more."}</div> : null}
           {sorted.map(a => (
-            <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
+            <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + (wlByArea[a.id] ? C.amber : C.border), borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+              <span style={{ minWidth: 0 }}>
+                <span style={{ display: "block", fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
+                {wlByArea[a.id] ? <span style={{ display: "block", fontSize: 11.5, fontWeight: 700, color: C.amber }}>{onList(wlByArea[a.id])}</span> : null}
+              </span>
               <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
           ))}
-          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + " areas in view — pan, zoom out, or tap All." : "No climbs in view — pan or zoom out to see more."}</div> : null}
+          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + tx(" areas in view — pan, zoom out, or tap All.") : "No climbs in view — pan or zoom out to see more."}</div> : null}
         </>
       ) : null}
     </div>

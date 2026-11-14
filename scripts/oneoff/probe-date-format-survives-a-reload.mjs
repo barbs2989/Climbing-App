@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // THE DATE FORMAT STILL RESET ON EVERY RELOAD.
 //
 // #1589 made the UNITS toggle survive a reload and stopped there. The Settings screen offers a
@@ -116,7 +117,7 @@ else {
   if (port === null) fail("no free port — NOT MEASURED");
   else {
     const base = `http://127.0.0.1:${port}/Climbing-App/`;
-    const server = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1",
+    const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1",
       "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
     server.stdout.on("data", () => {});
     server.stderr.on("data", (d) => { const t = String(d); if (/ANCHOR LOST/.test(t)) process.stderr.write(t); });

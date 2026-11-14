@@ -1,0 +1,90 @@
+{
+ "mt_cowen_massif": {
+  "_expect": {
+   "name": "Cowen Massif",
+   "region": "Montana"
+  },
+  "blurb": "Cowen Massif is the high alpine cirque around Mount Cowen, in the Absaroka Range above Paradise Valley near Bozeman. Its seventeen climbs are almost all long, alpine-style trad lines on solid, crack-split rock with good friction. Difficulty clusters around 5.10, with one easy classic down at 5.4 and a few lines reaching 5.12. Expect exposed multipitch days far from the road: most parties hike in and camp at Elbow Lake, then climb in summer. Evening thunderstorms are a real concern here, so start early and keep a way off the wall in mind.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106881769/cowen-massif",
+    "https://outsidebozeman.com/places/mountains/saving-the-best-last"
+   ]
+  }
+ },
+ "mt_lower_replica": {
+  "_expect": {
+   "name": "Lower Replica",
+   "region": "Montana"
+  },
+  "blurb": "Lower Replica is a triangular limestone wall about 130 feet tall in Wolverine Bowl, a sub-alpine cirque in the Bridger Range within reach of Bozeman. It was the first wall at Wolverine to be developed in the modern era and sits where the climbers' trail from the meadow splits toward the neighboring walls. Most of its seventeen routes are bolted sport lines: one at 5.9, a couple at 5.10, and the bulk at 5.11 and 5.12. The climbing is sustained and pumpy, so it rewards good endurance and suits climbers already comfortable with Wolverine-style routes. Budget about an hour of hiking to reach the bowl.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/113068624/lower-replica",
+    "https://www.mountainproject.com/area/109341880/wolverine-bowl"
+   ]
+  }
+ },
+ "mt_training_wall_the": {
+  "_expect": {
+   "name": "Training Wall, The",
+   "region": "Montana"
+  },
+  "blurb": "The Training Wall is the steep upper wall of Bozeman Pass, a limestone sport area beside I-90 a few miles east of Bozeman. Its seventeen bolted routes are the hardest at the Pass: mostly 5.12 and 5.13, with a few 5.11 and a couple of 5.10 lines. The face is cleaner and steeper than the shorter walls below it, and you can see it from the interstate, so expect traffic noise. Most climbers warm up on the easier walls nearby, then come up here to work longer, more powerful lines.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107149466/the-training-wall",
+    "https://www.mountainproject.com/area/106597148/bozeman-pass",
+    "https://outsidebozeman.com/places/cliffs-boulders/bozeman-pass"
+   ]
+  }
+ },
+ "mt_the_thunderdome": {
+  "_expect": {
+   "name": "The Thunderdome",
+   "region": "Montana"
+  },
+  "blurb": "In northwest Montana's Cabinet Mountains, the Thunderdome is a buttress and bowl over Granite Lake, below A Peak. It holds sixteen ice climbs, all WI3 to WI5, with most at WI4 and WI5 and some mixed ground on the longer lines. The ice ranges from thick flows to thin, steep curtains. This is a remote winter objective: reaching the lake takes a long ski or skin of roughly ten miles from a trailhead outside Libby, so plan on an overnight trip with real avalanche and weather awareness.",
+  "review": {
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201215025",
+    "https://mountainproject.com/area/118652142/granite-lake-area-ice"
+   ]
+  }
+ },
+ "mt_scorched_earth_2": {
+  "_expect": {
+   "name": "Scorched Earth",
+   "region": "Montana"
+  },
+  "blurb": "Scorched Earth is the largest and busiest wall at Storm Castle Creek in lower Gallatin Canyon near Bozeman. It is a limestone sport crag with one trad line among sixteen routes, mostly steep and closely bolted. Grades center on 5.11, with a few 5.10s and some 5.12s. Rock quality varies from loose to solid and can feel polished on popular lines, so test holds. The wall faces south and catches sun most of the day, which makes it a good choice for cold fall and winter days and a poor one in midday heat. The walk from the road is short.",
+  "aspect": "S",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/v/scorched-earth/107772966",
+    "https://www.explorebigsky.com/top-five-climbs-in-the-gallatin-canyon/30013",
+    "https://www.outsidebozeman.com/activities/climbing/climbing-walls"
+   ]
+  }
+ },
+ "mt_mummy_area": {
+  "_expect": {
+   "name": "Mummy Area",
+   "region": "Montana"
+  },
+  "blurb": "Mummy Area is a cluster of ice and mixed routes on the east side of Hyalite Canyon near Bozeman, among the more accessible zones in the canyon and busy for it. Of its fifteen climbs, most are ice: a core of WI3 flows, a few easier ones, and a small group of steeper lines up to WI6, including the classic Scepter. Two mixed routes range from easy to quite hard, and some of the mixed ground climbs andesite. The hike up from the Grotto Falls lot is steep and involves gullies, so allow time and watch conditions below the slopes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107398249/mummy-area",
+    "https://tenthousandtoofar.com/2023/01/26/one-of-the-best-and-headiest-mummy-cooler-iii-iv-via-scepter-wi6-m6-iii-other-ice-happenings-hyalite-canyon-mt-01-22-23/"
+   ]
+  }
+ },
+ "_skipped": {
+  "mt_glen_domes": "only one fetched page about the crag (a Mountain Project area page with no description); the nearby Glen Lake Domes page is a different, bouldering area and does not mention this name",
+  "mt_bighorn_terrace_crags": "only the parent Libby Kootenai River Crags page was fetched; no second page about Bighorn Terrace itself found after several searches"
+ },
+ "_conflicts": {
+  "mt_the_thunderdome": "stored aspect E and rock limestone, but the fetched pages describe north-facing features and quartzite cliff bands (https://publications.americanalpineclub.org/articles/13201215025)"
+ }
+}

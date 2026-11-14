@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Find every keyword match run over ENRICHED PROSE that cannot see a negation.
 //
 // This bug class has now bitten three times:
@@ -34,7 +35,7 @@ const traverse = _traverse.default || _traverse;
 
 // "../.." not "..": this file lives in scripts/oneoff/, so ".." is scripts/ — which SKIP
 // excludes, so the walk found zero .jsx files and the audit reported a clean sweep.
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scripts", "audits"]);
 const walk = (d, out = []) => {
   for (const n of readdirSync(d)) {
@@ -62,7 +63,7 @@ console.log("scanning " + FILES.length + " source files");
 const hits = [];
 for (const f of FILES) {
   const src = readFileSync(f, "utf8");
-  const rel = relative(ROOT, f);
+  const rel = relative(ROOT, f).replace(/\\/g, "/");
   let ast;
   try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); } catch { continue; }
 

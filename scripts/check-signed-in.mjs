@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Walks the app as a REAL, SIGNED-IN account that already owns things.
 //
 // Why this exists. The two checks either side of it cannot reach this state:
@@ -148,7 +149,7 @@ try {
   // that is the whole difference from zero-state.config.mjs, which rewrites three anchors to
   // force a brand-new account. Here the session is real and uid comes from it, which is the
   // point: an overlay rendering real crew-mates is what nothing has ever walked.
-  server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });

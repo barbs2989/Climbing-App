@@ -1,0 +1,51 @@
+[
+ {
+  "op": "patch",
+  "id": "wa_forbidden_peak_northeast_face",
+  "area_id": "wa_forbidden_peak",
+  "name": "Northeast Face",
+  "expect": {
+   "face": "Northeast Face (NE Ledge)"
+  },
+  "set": {
+   "face": "Northeast Face, climbed directly from the Boston Glacier"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_mount_shuksan_hanging_glacier",
+  "area_id": "wa_mount_shuksan_climbs",
+  "name": "Hanging Glacier",
+  "expect": {
+   "best_season": "May to June"
+  },
+  "set": {
+   "best_season": "Mid-July through August is when parties tackle this line: the approach valley has lost most of its snow, the summit-pyramid rock has dried, and the glacier still has usable ice. Spring belongs to ski descents of the glacier rather than the roped climb, and by September the ice turns harder and the crevasses open wider.",
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through August",
+    "monthBreakdown": {
+     "July": {
+      "status": "optimal",
+      "reason": "The approach has melted out and the summit rock is drying while the glacier still holds usable ice."
+     },
+     "August": {
+      "status": "good",
+      "reason": "Still in condition, though the ice hardens and crevasses widen as the month goes on."
+     }
+    }
+   }
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_inner_constance_northwest_buttress",
+  "area_id": "wa_inner_constance",
+  "name": "Northwest Buttress",
+  "expect": {
+   "grade": "5.0"
+  },
+  "set": {
+   "grade": null
+  }
+ }
+]

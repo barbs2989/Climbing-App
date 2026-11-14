@@ -1,0 +1,19 @@
+{
+ "area_id": "wa_mount_hinman",
+ "routes": [
+  {
+   "route_id": "wa_mount_hinman_west_ridge",
+   "pins": [
+    {
+     "type": "Summit",
+     "action": "add",
+     "lat": 47.568595,
+     "lng": -121.214785,
+     "name": "Mount Hinman summit",
+     "evidence": "Peakbagger surveyed coordinate; the in-season recording's highest point is 2 m from it",
+     "confirmedBy": "Peakbagger surveyed coordinate + recorded high point"
+    }
+   ]
+  }
+ ]
+}

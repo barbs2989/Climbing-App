@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:tap-slop — a touch just off a small control still reaches it, and nothing quietly undoes that.
 //
 // Owner note (2026-10-28): "Some clicks links are small". A walk of 100 screens measured 1,051
@@ -23,7 +24,7 @@
 // measures each control's reach after the widening, in Chrome, across the same screens check:axe walks.
 import fs from "node:fs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const read = (f) => { try { return fs.readFileSync(ROOT + f, "utf8"); } catch { console.error(`check:tap-slop: cannot read ${f}`); process.exit(1); } };
 const main = read("main.jsx"), slop = read("lib/tapSlop.js");
 const fails = [];

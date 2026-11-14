@@ -1,0 +1,20 @@
+{
+  "area_id": "wa_mount_fairchild",
+  "routes": [
+    {
+      "route_id": "wa_mount_fairchild_standard",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Only 8 logged ascents: Jun 2, Jul 5, Aug 1. Wikipedia and Mountaineers-style pages give July-September as the favorable Bailey Range window, with ice axe and crampons needed except in late summer. Stored Jul-Sep kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2919580", "verdict": "unsure", "why": "26 Jul, summited, round trip from Sol Duc, but it is a two-peak overnight (Carrie then Fairchild) with a tent camp, and starts 430 m from our pin; the report skirts the glacier on rock rather than crossing it." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 7, "text": "In late July the glacier east of Mount Carrie can be skirted along its northwest edge on rock; drop to a tarn near 5,900 ft, hold that height to a gully that rises straight to the ridge, then walk the ridge to the top.", "aids": ["2919580"] },
+        { "field": "pro_tips", "month": 7, "text": "Water is plentiful between Mount Carrie and Mount Fairchild in late July.", "aids": ["2919580"] },
+        { "field": "watch_out", "month": 7, "text": "The descent from the summit ridge back to the tarn is the slowest part: loose rock with a high consequence of a fall.", "aids": ["2919580"] }
+      ]
+    }
+  ],
+  "notes": "Only one harvested track and it combines Carrie with Fairchild, so none is assigned. Its description (skirt the glacier, gully to the ridge) differs from our stored glacier re-climb text, which may be one of several options."
+}

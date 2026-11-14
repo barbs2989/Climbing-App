@@ -1,0 +1,65 @@
+{
+ "bc_the_longhouse": {
+  "_expect": {
+   "name": "The Longhouse",
+   "region": "British Columbia"
+  },
+  "blurb": "A single-pitch trad crag up a forest road off the Mamquam drainage near Squamish, with 18 routes on steep crack lines. Many of the cracks are wide, so the feel is closer to Yosemite than to the slabs Squamish is known for. Grades run from 5.9 to 5.13, but the bulk sit between 5.10 and 5.12, so it suits experienced leaders rather than beginners. The walls stay in shade most of the day and the place is quieter than the town crags. Carry a full set of cams with doubles in the larger sizes, and expect some sharp crystals and the odd loose block, so wear a helmet.",
+  "approach": "From the road, an obvious trail enters the forest and is marked with flagging; it takes roughly 10 to 15 minutes to reach the first routes.",
+  "approach_min": 15,
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/114382179/the-longhouse",
+    "https://outmap.pro/waypoint/the-longhouse-lower-canyon-t5iyiFuaNNGvj6Woh2zY3b"
+   ]
+  }
+ },
+ "bc_the_hen_house": {
+  "_expect": {
+   "name": "The Hen House",
+   "region": "British Columbia"
+  },
+  "blurb": "A forested crag roughly 40 minutes by road from central Kamloops, offering 18 single-pitch lines on slabs and cracks, with a character often compared to Squamish's Smoke Bluffs. Trad leads slightly outnumber bolted sport routes, and many are a mix of the two, so bring a rack as well as quickdraws. Grades run from 5.8 to 5.12, with most at 5.10 to 5.11, so it works best for climbers already comfortable on technical slab and crack leads. Routes are up to about 40 metres long. Expect a quieter day than at the better-known Kamloops cliffs.",
+  "review": {
+   "sources": [
+    "https://tourismkamloops.com/things-to-do/climbing",
+    "https://app.advcollective.com/climbing/thin-air-at-the-hen-house-precision-slab-climbing-in-kamloops"
+   ]
+  }
+ },
+ "bc_reilly_rock": {
+  "_expect": {
+   "name": "Reilly Rock",
+   "region": "British Columbia"
+  },
+  "blurb": "A slabby orange wall at the north end of Skaha Bluffs near Penticton, sitting beside Foreplay South. It holds 17 mainly bolted sport routes with a couple that can also be top-roped. A few routes are very easy, most sit between 5.8 and 5.10, and there is a single 5.11. Lines are up to about 25 metres and the climbing is technical and precise rather than steep, so it is a good fit for climbers working through the moderates. The wall is in shade early in the day and picks up sun later on, and there is little tree cover for belayers. Views from the top are good.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112289164/reilly-rock",
+    "https://sendage.com/area/foreplay-skaha-bc-canada"
+   ]
+  }
+ },
+ "bc_tunnel_rock": {
+  "_expect": {
+   "name": "Tunnel Rock",
+   "region": "British Columbia"
+  },
+  "blurb": "A small trad crag inside the Smoke Bluffs park on the edge of Squamish, with 17 routes of roughly 10 to 30 metres. Almost all are gear-protected, with some mixed lines. The spread is wide: a few easy 5.6 and 5.7 leads, a cluster at 5.8, and then a solid group at 5.10, topping out around 5.11. The rock is textured with good friction, and the walk in from town is short on gentle forest trails, which makes it a handy spot for a quick session or for stepping into Squamish trad. Check the rock after rain, as the approach gets muddy and grip drops.",
+  "review": {
+   "sources": [
+    "https://outmap.pro/waypoint/tunnel-rock-5XLDp6gNKkeU1je5T43LZm",
+    "https://app.advcollective.com/climbing/tunnel-vision-a-crisp-introduction-to-squamish-trad-climbing"
+   ]
+  }
+ },
+ "_skipped": {
+  "bc_hemlock_slide": "no fetched page about Hemlock/Slide itself; only the Ladybird Creek parent page",
+  "bc_k_superfly": "could not fetch a page about Superfly itself; only the Grand Wall Boulders parent pages",
+  "bc_i_lip_smack": "no fetched page about Lip-Smack itself; only the Grand Wall Boulders parent pages",
+  "bc_the_coquitlam_cliffs": "pages are about one sector and a cleanup event, not the cliffs as a whole"
+ },
+ "_conflicts": {
+  "bc_reilly_rock": "Stored parking_name is the Skaha main lot at Smythe Road, while https://sendage.com/area/foreplay-skaha-bc-canada and https://www.mountainproject.com/area/112287106/foreplay-cliff direct Reilly Rock and Foreplay climbers to the Evergreen Drive lot at the north end."
+ }
+}

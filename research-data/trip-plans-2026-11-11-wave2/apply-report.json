@@ -1,0 +1,2180 @@
+{
+ "plan": [
+  {
+   "id": "wa_artic_rose",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_astral_projection",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_astroglide",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_asymptotic",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_blood_sport",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_cobbles_101",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_deep_blue",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_ephemeral",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_ez_way",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_half_fast",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_iceman",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_lone_wolf",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_main_peak_tepeh_towers",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_particulate_matter",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_project_crack",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_roofer_madness",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_route_c",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_route_d",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "kind": "mechanical"
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "kind": "mechanical"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "ca_mt_shasta_avalanche_gulch",
+   "kind": "convert"
+  },
+  {
+   "id": "or_hurwal_divide_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "or_three_sisters_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_abernathy_peak_south_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_agnes_mountain_south_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_alpine_lookout_round_mountain_trail",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_amphitheater_mountain_finger_of_fatwa",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_amphitheater_mountain_north_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_austera_peak",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_baring_mountain_east_face",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_baring_mountain_oatmeal_man",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_four_mountain_dry_creek_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_kangaroo_going_down_under",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_kangaroo_kearney_thomas",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_kangaroo_skinny_start",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_kangaroo_walkabout",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_big_snow_mountain_north_slope_dingford_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_black_peak_northeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_bonanza_peak_cascadian_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_bonanza_peak_oregonian_route",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_booker_mountain_northwest_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_booker_mountain_south_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cannon_mountain_northeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_castle_in_the_sky",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_la_villa",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cathedral_peak_last_rites",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cathedral_peak_southwest_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cathedral_rock_southeast_face_chimney",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chair_peak_east_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chair_peak_northwest_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chair_peak_voie_de_chaise",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chair_peak_west_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chelan_butte_chelan_butte_trail",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chianti_spire_lichen_bouquet",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chianti_spire_north_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_chimney_peak_the_chimney",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_clean_break",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_colchuck_peak_north_buttress_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_crater_mountain_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_davis_peak_nc_south_slope_and_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_dome_peak_indian_summer",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_dragontail_peak_backbone_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_dragontail_peak_serpentine_arete",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_east_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_east_face_2",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_east_face_3",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_east_ridge_8",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_east_twin_needle_north_buttress",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_east_wilmans_spire",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_easy_getaway",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_ellation",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_ellen_pea",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_enchantment_enchainment",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_first_amendment",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_flight_of_the_falcon",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_fortress_mountain_southwest_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_fortune_peak_east_slope",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_fortune_peak_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_garfield_mountain_infinite_bliss",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_garfield_mountain_leaning_spire_west_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_garfield_mountain_preiss_route",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_garfield_mountain_southwest_ledges",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_gato_negro",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_gilbert_peak_meade_glacier",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_gilbert_peak_west_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_golden_horn_southwest_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_greenwood_mountain_west_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_gunnshy_peak_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_gunrunner",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_guye_peak_southeast_gully",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_helmet_butte_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_honeymoon_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_north_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_hozomeen_mountain_northeast_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_hozomeen_mountain_west_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_huckleberry_mountain_east_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_huckleberry_mountain_south_face",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_indian_head_peak_southwest_slopes",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_inner_constance_seans_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_inspiration_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_j_tnar",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_jack_mountain_east_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_jack_mountain_north_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_jack_mountain_northeast_glacier",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_jack_mountain_southeast_ridge_direct",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_jack_mountain_southwest_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_kyes_peak_northeast_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_lemah_two_goatshead_spire",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_little_big_chief_mountain_northeast_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_little_sister_north_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_little_sister_southeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_lundin_peak_east_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_lundin_peak_south_face_left",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_magic_mountain_north_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_magic_mountain_northwest_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_berge_east_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_blum_north_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_despair_northeast_buttress",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_fury_east_direct_east_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_fury_east_north_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_howard_south_slope",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_index_north_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_lago_south_slope_south_face",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_maude_r3",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_pershing_standard",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_persis_west_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_price_hester_lake_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_prophet_east",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_prophet_southwest_rib",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_pugh_pika_slab",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_rahm_custer_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_rahm_south_side",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_spickard_silver_glacier",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_teneriffe_kamikaze_trail",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_teneriffe_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_triumph_northeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_narcos",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_ne_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_ne_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_north_gardner_mountain_nw_couloir",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_north_gardner_mountain_southwest",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_north_twin_sister_west_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_northeast_face_direct",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_northwest_face_4",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_one_piece_at_a_time",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_painted_traverse",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_rampage",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_raven_ridge_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_remmel_mountain_southeast_slope",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_roan_wall_center_stage",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_roan_wall_stage_right",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_rock_mountain_northeast_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_ruby_mountain_south_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_scramble_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_se_ridge_aka_shield_wall",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_ne_couloir",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_sinister_peak_north_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_south_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_south_face_10",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_south_rib",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_south_ridge",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_sperry_peak_east_face",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_sperry_peak_upper_south_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_spontaneity_arete",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_spontaneous_distraction",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_nw_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_summertime",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_summit_chief_mountain_north_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_sw_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_tenpeak_mountain_north_couloir",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_chalice",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_monk_le_gibet",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_monk_odine",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_monk_scabo",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_left_crack",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_monk_west_cracks_right_crack",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_tiger",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_tipping_point",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_tooth_fairy",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_tooth_indentured_servant",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_the_triad_traverse",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_three_queens_middle_peak",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_three_queens_west_peak",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_tooth_chair_traverse",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_tower_arete",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_tupshin_peak_east_face",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_washington_ellinor_traverse_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_waterfall_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_west_face_2",
+   "kind": "mechanical"
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_windy_peak_windy_creek_trail",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_winter_spring_ice_snow_mixed_2_east_face_variation",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_witches_tower_southwest_corner",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_witches_tower_west_buttress",
+   "kind": "convert"
+  },
+  {
+   "id": "wa_wright_pond",
+   "kind": "convert"
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "kind": "research"
+  },
+  {
+   "id": "wa_chimney_rock_east_face_direct",
+   "kind": "research"
+  },
+  {
+   "id": "wa_chockstone_route",
+   "kind": "research"
+  },
+  {
+   "id": "wa_colfax_peak_kimchi_suicide_volcano",
+   "kind": "research"
+  },
+  {
+   "id": "wa_dragontail_peak_r4",
+   "kind": "research"
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+   "kind": "research"
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+   "kind": "research"
+  },
+  {
+   "id": "wa_ingalls_peak_friends_in_high_places",
+   "kind": "research"
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_rib_1951_route",
+   "kind": "research"
+  },
+  {
+   "id": "wa_koala_krack",
+   "kind": "research"
+  },
+  {
+   "id": "wa_liberty_bell_girl_next_door",
+   "kind": "research"
+  },
+  {
+   "id": "wa_mount_adams_northwest_ridge",
+   "kind": "research"
+  },
+  {
+   "id": "wa_mount_hinman_southeast_route",
+   "kind": "research"
+  },
+  {
+   "id": "wa_mount_index_bluebell",
+   "kind": "research"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "kind": "research"
+  },
+  {
+   "id": "wa_prusik_peak_alpine_craggers_delight",
+   "kind": "research"
+  },
+  {
+   "id": "wa_prusik_peak_sail_away",
+   "kind": "research"
+  },
+  {
+   "id": "wa_prusik_peak_taylor_wood_route",
+   "kind": "research"
+  },
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "kind": "research"
+  },
+  {
+   "id": "wa_south_headwall",
+   "kind": "research"
+  },
+  {
+   "id": "wa_southwest_face",
+   "kind": "research"
+  },
+  {
+   "id": "wa_the_fin_northeast_face",
+   "kind": "research"
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "kind": "research"
+  },
+  {
+   "id": "wa_the_west_face",
+   "kind": "research"
+  },
+  {
+   "id": "wa_up_in_arms",
+   "kind": "research"
+  },
+  {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "kind": "research"
+  }
+ ],
+ "held": [
+  {
+   "id": "rainier_north_mowich_headwall",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_chair_bryant_traverse",
+   "why": "research skipped: Only a search snippet of an OpenBeta entry describes the traverse (5.7 slab crux, rappel to Bryant Col, rappels toward Source Lake); the page 404'd and the other hits were ski circumnavigations, so there is no timing, distance or sourced day structure."
+  },
+  {
+   "id": "wa_chair_peak_south_ridge",
+   "why": "research skipped: Stub row with no approach, elevations or waypoints, and no route-specific source found for a Chair Peak 'South Ridge'."
+  },
+  {
+   "id": "wa_chair_peak_southeast_face",
+   "why": "research skipped: Stub row with no approach or elevations, and no route-specific source found."
+  },
+  {
+   "id": "wa_chimney_rock_north_ridge",
+   "why": "research skipped: Stub row with no approach or elevations, and no route-specific trip report found; the only opened Chimney Rock sources cover the East Face Direct."
+  },
+  {
+   "id": "wa_chimney_rock_northeast_ridge",
+   "why": "research skipped: Stub row with no data, and no route-specific source found. The 'Class 2' grade also looks doubtful for Chimney Rock, whose summits all need technical climbing."
+  },
+  {
+   "id": "wa_chimney_rock_northwest_ridge",
+   "why": "research skipped: Stub row with no data, and no route-specific source found."
+  },
+  {
+   "id": "wa_chimney_rock_southeast_ridge",
+   "why": "research skipped: Stub row with no data, and no route-specific source found; the 'Class 2' grade is doubtful for Chimney Rock."
+  },
+  {
+   "id": "wa_chimney_rock_southeast_shoulder",
+   "why": "research skipped: Stub row with no data, and no route-specific source found."
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_east_route",
+   "why": "research skipped: Stub row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_south_route",
+   "why": "research skipped: Stub row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_colchuck_peak_northeast_gully",
+   "why": "research skipped: Stub row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_colchuck_peak_south_face",
+   "why": "research skipped: Stub row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_colchuck_peak_south_route",
+   "why": "research skipped: Stub row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_colchuck_peak_west_ridge",
+   "why": "research skipped: Stub row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_comb_the_boot_crack",
+   "why": "research skipped: Stub crag row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_comb_the_nada_lake_wall",
+   "why": "research skipped: Stub crag row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_comb_the_toketie_wall",
+   "why": "research skipped: Stub crag row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_comb_the_west_ridge",
+   "why": "research skipped: Stub crag row with no data; not researched because the session web-search budget was exhausted."
+  },
+  {
+   "id": "wa_concerto_in_c_for_drill_and_hammer",
+   "why": "research skipped: Mountain Project (route and South Face pages) confirms a 3-hour approach to a grassy-saddle bivy, 14 pitches (1,800 ft) and a rappel descent, and a CascadeClimbers snippet mentions a one-day ascent that ended with a headlamp hike-out. But CascadeClimbers returned 403, and no opened source gives the approach distance or a day timeline, so day mileage would be invented. A rerun with access to the 2021 CC trip report (topic 104100) could fill this."
+  },
+  {
+   "id": "wa_cutthroat_peak_northeast_face",
+   "why": "research skipped: The Mountain Project Cutthroat Peak pages (South Buttress, North Ridge, The Swarm) describe the shared approach from the pullout 1.5 mi west of Washington Pass, but none gives approach time, distance or car-to-car timing, and no second independent source could be opened (search budget exhausted)."
+  },
+  {
+   "id": "wa_cutthroat_the_swarm",
+   "why": "research skipped: Mountain Project gives pitch beta (8 pitches, 5.11c/d, first ascent 2023), the approach as for the North Ridge, and the descent by the South Buttress humps or the West Ridge, but no timing or distance. No second source was found for this new route."
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face_burdo_cairns",
+   "why": "research skipped: Stub row with no trailhead, elevations or bivy; not researched because the session web-search budget was exhausted, and the remote Stetattle Creek approach has little published beta."
+  },
+  {
+   "id": "wa_doorway_flake",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_dragontail_peak_boving_route",
+   "why": "research skipped: Row has no approach/descent/gain data, and the only route-specific sources found (CascadeClimbers 2006 info thread and 2014 Boving-Christensen TR) returned 403; Mountain Project does not list the route. Generic Colchuck Lake access is known but route length, timing and descent could not be sourced."
+  },
+  {
+   "id": "wa_dragontail_peak_colchuck_col_buttress",
+   "why": "research skipped: No source found that describes a 'Colchuck Col Buttress' route on Dragontail (not on Mountain Project's Dragontail list; searches returned only Colchuck Col standard-route reports, most on 403-blocked Mountaineers pages). Row has no data. Route identity unconfirmed."
+  },
+  {
+   "id": "wa_dragontail_peak_northwest_face",
+   "why": "research skipped: Row has no data and no opened source describes a Dragontail 'Northwest Face' (5.9, 3 pitches) route; not on Mountain Project's Dragontail list. Web search budget ran out before further lookup."
+  },
+  {
+   "id": "wa_early_morning_spire_southwest_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_east_mcmillan_spire_northeast_buttress",
+   "why": "research skipped: Only one route-specific source (Alpinist report of the 2008 FA by Kearney/Johnson: two days of bushwhacking to a Sourdough Ridge camp, 3.5 hr to the base, 25 pitches over three days with two bivies, rappelled the same day). The AAJ North Buttress reports describe a different (Terror Basin) approach. No source gives camp elevations, mileage or gain, so per-day figures would be invented. Note the Alpinist report suggests the route climbs left of the North Buttress and only the descent used the Northeast Buttress."
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "why": "research skipped: No opened source covers Silver Star's East Ridge from Cedar Creek; countryhighpoints and all search hits describe only the Burgundy Col/Silver Star Glacier route (useful for the descent only). Route length, timing and camps could not be sourced; web search budget exhausted."
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_flycatcher_buttress",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_fortress_mountain_northeast_face",
+   "why": "research skipped: No route-specific source could be opened (web search budget exhausted before research; guessed countryhighpoints URL 404). Row itself says the line is normally done as part of a Fortress/Chiwawa link-up rather than on its own."
+  },
+  {
+   "id": "wa_garfield_mountain_east_rib",
+   "why": "research skipped: Row has no data and no source was researched (web search budget exhausted); 'Garfield Mountain' plus route name could not be confirmed to a specific peak/route."
+  },
+  {
+   "id": "wa_garfield_mountain_north_route",
+   "why": "research skipped: Row has no data and no source was researched (web search budget exhausted); route could not be identified."
+  },
+  {
+   "id": "wa_garfield_mountain_southeast_face",
+   "why": "research skipped: Row has no data beyond grade/pitches and no source was researched (web search budget exhausted)."
+  },
+  {
+   "id": "wa_glacier_peak_south_tahoma_headwall",
+   "why": "research skipped: Only the NPS Mount Rainier climbing page was opened (permits/fees, no South Tahoma Headwall beta); no second source with camps or timing could be found before the web search budget ran out. Note the id says glacier_peak but the peak is Mount Rainier."
+  },
+  {
+   "id": "wa_goat_mountain_eastern_route",
+   "why": "research skipped: Row has no data; several Washington peaks are named Goat Mountain and no source was researched to identify which (web search budget exhausted)."
+  },
+  {
+   "id": "wa_goat_mountain_southeast_face",
+   "why": "research skipped: Row has no data; ambiguous Goat Mountain and no source researched (web search budget exhausted)."
+  },
+  {
+   "id": "wa_goat_mountain_southeast_route",
+   "why": "research skipped: Row has no data; ambiguous Goat Mountain and no source researched (web search budget exhausted)."
+  },
+  {
+   "id": "wa_goat_mountain_southwest_route",
+   "why": "research skipped: Row has no data; ambiguous Goat Mountain and no source researched (web search budget exhausted)."
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "why": "research skipped: Only one opened source (countryhighpoints) and it covers a winter ski ascent of the standard route from Mazama, not the East Face; no route-specific timing found before the web search budget ran out. Row dist_km 18.5 (11.5 mi) is longer than the usual ~10 mi one-way PCT approach to Snowy Lakes, so it may be a mixed one-way/round-trip figure."
+  },
+  {
+   "id": "wa_golden_horn_north_face",
+   "why": "research skipped: Row itself says there is no pitch-level beta for the 1958 North Face; no route-specific source found (web search budget exhausted)."
+  },
+  {
+   "id": "wa_golden_horn_northeast_arete",
+   "why": "research skipped: No route-specific source found (web search budget exhausted); row only gives the generic Snowy Lakes approach."
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "why": "research skipped: No Gorillas Direct source could be opened (web search budget exhausted; guessed URLs 404). Only a Steph Abegg West Ridge page was found, which is a different route. Row dist_km 24.1 / gain 6,150 ft could not be checked."
+  },
+  {
+   "id": "wa_granite_mountain_beargrass_rib",
+   "why": "research skipped: Row has no data and the Granite Mountain/route could not be researched (web search budget exhausted)."
+  },
+  {
+   "id": "wa_granite_mountain_winter_route_first_south_rib",
+   "why": "research skipped: Row has no data and the Granite Mountain/route could not be researched (web search budget exhausted)."
+  },
+  {
+   "id": "wa_hagan_mountain_north_slopes_blum_lakes",
+   "why": "research skipped: No source could be opened (WTA Blum Lakes page did not return content, guessed countryhighpoints URL 404, and the web search budget was exhausted). Row approach text is detailed but has no gain/distance/timing to build days from."
+  },
+  {
+   "id": "wa_hibox_mountain_south_face",
+   "why": "research skipped: The row has no elevations, approach or descent, and no South Face (5.2) beta could be found or opened. Web search budget was exhausted, and Peakbagger and SummitPost return 403."
+  },
+  {
+   "id": "wa_himmelhorn_stonehenge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_himmelhorn_wild_hair_crack",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_north_ridge",
+   "why": "research skipped: No source describing the North Ridge of South Hozomeen (approach, camps, timing) was found; the row has no approach or descent data. Web search budget was exhausted."
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+   "why": "research skipped: No second independent source could be opened: the only beta is the first-ascent narrative in the row (Lightning Creek trailhead, bivy at about 6,200 ft) and no timed account of the climb above the bivy, descent or exit was found. Web search budget was exhausted before further sources could be found."
+  },
+  {
+   "id": "wa_hozomeen_mountain_southwest_buttress",
+   "why": "research skipped: No source describing the 5.10a Southwest Buttress of North Hozomeen was found; trailcatjim and drdirtbag cover only non-technical North Peak lines. The row has no approach or descent data."
+  },
+  {
+   "id": "wa_huckleberry_mountain_north_route",
+   "why": "research skipped: The row is empty (no grade, elevations or approach) and it is ambiguous which Washington Huckleberry Mountain is meant; no source for a 'North Route' was found."
+  },
+  {
+   "id": "wa_huckleberry_mountain_north_spur",
+   "why": "research skipped: The row is empty and the peak identity is ambiguous (several Huckleberry Mountains in Washington); no source for a 'North Spur' route was found."
+  },
+  {
+   "id": "wa_huckleberry_mountain_southwest_slope",
+   "why": "research skipped: The row is empty apart from 'Class 2' and the peak identity is ambiguous; without knowing which Huckleberry Mountain is meant, an honest trailhead, mileage or gain cannot be given."
+  },
+  {
+   "id": "wa_ingalls_peak_east_ne_ridge_route",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_ingalls_peak_north_peak_southwest_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_labor_pains",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_lane_peak_r3",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_liberty_bell_freedom_or_death",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_liberty_bell_freedom_rider",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_liberty_bell_sidewinder",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_lichen_rock_east_face",
+   "why": "research skipped: The row is a crag with no location, grade, elevations or approach, and no source for Lichen Rock's East Face was found."
+  },
+  {
+   "id": "wa_lichen_rock_northeast_rib",
+   "why": "research skipped: The row is a crag with only a 5.9 grade, no location or approach, and no source was found; a crag route also does not need a multi-day trip plan."
+  },
+  {
+   "id": "wa_lichen_rock_south_face",
+   "why": "research skipped: The row is a crag with no data, and no source was found."
+  },
+  {
+   "id": "wa_lichen_rock_southeast_rib",
+   "why": "research skipped: The row is a crag with no data, and no source was found."
+  },
+  {
+   "id": "wa_little_annapurna_boola_boola_buttress",
+   "why": "research skipped: The row has no data. Searches found no usable beta for this route, and the SummitPost Little Annapurna pages return 403."
+  },
+  {
+   "id": "wa_little_annapurna_northeast_face",
+   "why": "research skipped: The row has no data. Searches found no usable beta for this route, and the SummitPost Little Annapurna pages return 403."
+  },
+  {
+   "id": "wa_little_annapurna_northwest_buttress",
+   "why": "research skipped: The row has no data. Searches found no usable beta for this route, and the SummitPost Little Annapurna pages return 403."
+  },
+  {
+   "id": "wa_little_annapurna_south_face",
+   "why": "research skipped: The only detailed beta is on SummitPost (route page and trip report), which returns 403. Lemke's page has no approach or timing figures, so there are not two usable sources. Search snippets agree with the row: about 8 mi up Ingalls Creek, a 6-7 h approach to a tarn camp in Crystal Creek, and a descent past Crystal Lake."
+  },
+  {
+   "id": "wa_little_big_chief_mountain_southwest_face",
+   "why": "research skipped: No source describes a Southwest Face. The documented routes are the NW Face (Falcon) and a Class 3 north ridge from the Dutch Miller Gap side."
+  },
+  {
+   "id": "wa_lundin_peak_northwest_face",
+   "why": "research skipped: The row has no data, and no source I could open describes a Northwest Face route on Lundin. The sources cover only the West Ridge and the east ridge."
+  },
+  {
+   "id": "wa_lundin_peak_southeast_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_middle_peak_north_face",
+   "why": "research skipped: The row has no data and 'Middle Peak' is ambiguous. It may be Mount Index's Middle Peak, but the Index trip reports are on CascadeClimbers (403) and I could not confirm the peak."
+  },
+  {
+   "id": "wa_middle_peak_traverse_route",
+   "why": "research skipped: The row has no data and 'Middle Peak' is ambiguous. It may be the North-Middle-Main Index Traverse, usually done as an overnight with scarce bivies, but the trip reports are on CascadeClimbers (403) and I could not confirm the peak."
+  },
+  {
+   "id": "wa_mount_chaval_north_ridge",
+   "why": "research skipped: The Chaval beta is on SummitPost and CascadeClimbers, and both return 403. No source I could open describes the North Ridge."
+  },
+  {
+   "id": "wa_mount_crowder_northeast_ridge",
+   "why": "research skipped: This ridge is only done as the descent leg of multi-day Picket traverses. Steph Abegg (Mystery Ridge Enchainment, 7 days, about 55 mi) and Mount Baker Experience describe it as grassy Class 3 ledges with one or two 5th-class downclimbs or brushy rappels, ending at a heather-bench camp at Pickell Pass. Neither gives route-level timing, so a stand-alone plan would invent figures. Abegg's Day 4 (Pioneer, Crowder, Pickell Pass: +4,480 / -4,050 ft, 5.8 mi) is the best template."
+  },
+  {
+   "id": "wa_mount_hinman_east_route",
+   "why": "research skipped: The row has no data, and no source I could open describes an East Route on Hinman."
+  },
+  {
+   "id": "wa_mount_hinman_west_route",
+   "why": "research skipped: The sources I could open (WTA, climberkyle, turns-all-year, FKT) describe only one line, the climbers' track north from La Bohn Gap, which this file uses for the Southeast Route. Nothing separates a West Route, so a separate plan would just copy that one. If the two rows are the same line, reuse the Southeast Route plan."
+  },
+  {
+   "id": "wa_mount_johnson_deception_chimney",
+   "why": "research skipped: The row has no data. The route names look like Olympic Mountains Climbing Guide routes on Mt Johnson (The Needles, Royal Basin), and no source I could open describes them."
+  },
+  {
+   "id": "wa_mount_johnson_northwest_face",
+   "why": "research skipped: The row has no data. No source I could open describes a Northwest Face route on Mt Johnson (Olympics); turns-all-year covers only a ski descent of the NW Couloir."
+  },
+  {
+   "id": "wa_mount_johnson_rumble_gully",
+   "why": "research skipped: The row has no data, and no source I could open describes Rumble Gully on Mt Johnson."
+  },
+  {
+   "id": "wa_mount_johnson_south_terrace_route",
+   "why": "research skipped: The row has no data, and no source I could open describes a South Terrace Route on Mt Johnson."
+  },
+  {
+   "id": "wa_mount_johnson_southwest_route",
+   "why": "research skipped: The row has no data. A search snippet mentions OMCG route 1B up the rib above the southwest-facing gully (via a CascadeClimbers report, 403), but no source I could open gives approach, camp or timing."
+  },
+  {
+   "id": "wa_mount_johnson_staircase_route",
+   "why": "research skipped: The row has no data, and no source I could open describes a Staircase Route on Mt Johnson."
+  },
+  {
+   "id": "wa_mount_shuksan_northeast_ridge",
+   "why": "research skipped: AAI's NW Rib profile confirms the NE Ridge of the summit pyramid (5.7) is only a finish, taken after the North Face or NW Rib from White Salmon bivies. No opened source gives an itinerary or timing, and the CascadeClimbers/SummitPost reports return 403."
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "why": "research skipped: The only trip reports for the NW Arete/'Arayete' are on CascadeClimbers, which returns 403. No opened source gives days, camps or timing. AAI grades it III 5.9; the row says 5.7."
+  },
+  {
+   "id": "wa_north_peak_north_ridge",
+   "why": "research skipped: 'North Peak' is ambiguous (Index? Ingalls?) and the row has no approach or elevation data. No source matched this route name and grade."
+  },
+  {
+   "id": "wa_north_peak_southeast_buttress",
+   "why": "research skipped: 'North Peak' is ambiguous and the row has no approach or elevation data. No source matched a 5.7 Southeast Buttress on a North Peak."
+  },
+  {
+   "id": "wa_old_guard_peak_east_side_route",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_overcoat_peak_north_face",
+   "why": "research skipped: Row has no grade, approach, camps or waypoints, and no source describing the North Face of Overcoat Peak could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_preacher_mountain_east_gully",
+   "why": "research skipped: Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_preacher_mountain_north_route",
+   "why": "research skipped: Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_preacher_mountain_south_gully_south_spur",
+   "why": "research skipped: Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_preacher_mountain_south_rib",
+   "why": "research skipped: Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_preacher_mountain_west_face",
+   "why": "research skipped: Row is empty (no grade, approach or waypoints) and no source on Preacher Mountain routes could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_prusik_peak_east_face",
+   "why": "research skipped: No route called East Face on Prusik Peak appears on Mountain Project's Prusik Peak page or in any trip report found; route has no grade, pitches or description in the row."
+  },
+  {
+   "id": "wa_prusik_peak_prayer_for_a_friend",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_east_face",
+   "why": "research skipped: Row is empty and no route-specific source for Red Mountain (Snoqualmie Pass) East Face could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_east_ridge",
+   "why": "research skipped: Row is empty and no route-specific source for Red Mountain (Snoqualmie Pass) East Ridge could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_southeast_face",
+   "why": "research skipped: Row has only a grade (Class 4) and no route-specific source for Red Mountain (Snoqualmie Pass) Southeast Face could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_west_ridge",
+   "why": "research skipped: Row is empty and no route-specific source for Red Mountain (Snoqualmie Pass) West Ridge could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_sherpa_peak_northeast_face",
+   "why": "research skipped: Row is empty and no source for Sherpa Peak's Northeast Face could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_silver_peak_northeast_route",
+   "why": "research skipped: Row is empty (and typed as a crag) and no route-specific source for a Silver Peak Northeast Route could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_silver_peak_south_spur",
+   "why": "research skipped: Row is empty (and typed as a crag) and no route-specific source for a Silver Peak South Spur could be found or opened (web search budget exhausted partway through this batch)."
+  },
+  {
+   "id": "wa_silver_star_ne_ridge",
+   "why": "research skipped: No opened source describes the 5.9 Northeast Ridge of the west peak (pitches, time on route or descent); only the Burgundy Col approach and Silver Star Glacier are documented (stephabegg.com/?p=8704: <5 mi, ~3,470 ft, ~3 h to the col). A summit-day plan would require invented figures."
+  },
+  {
+   "id": "wa_skeena26",
+   "why": "research skipped: Route beta exists only in CascadeClimbers trip reports (2012 FA by Whitelaw/Enger/Lewis, III 5.9, 12 pitches; 2014 repeat), which return 403 to fetch; the route page found was a dead OpenBeta preview. No opened source gives climbing time or descent, so a day plan would need invented figures. Row peak field 'South Face' is a wall name, not a peak."
+  },
+  {
+   "id": "wa_snoqualmie_mountain_boogie_wonderland",
+   "why": "research skipped: Only source is the Mountain Project route page (60 ft, single pitch, 5.7 M5-, just right of the Snot Couloir on the NW face; FA Christian Junkar, 2022), which gives no approach time, descent or car-to-car time; the New York Gully MP page describes the shared approach but also no timing. Too thin for an honest day plan. Note the row's peak field is the MP area name 'Winter-Spring (ice, snow' rather than Snoqualmie Mountain."
+  },
+  {
+   "id": "wa_snoqualmie_mountain_south_face",
+   "why": "research skipped: Row has no grade or description and the name is ambiguous between the standard south-side scramble (WTA: 3.8 mi RT, 3,105 ft, 6,278 ft) and a technical route on the south face; no opened source describes a route by this name, so the plan cannot be tied to the row with confidence. Row peak field 'Snoqualmie Mountain Routes' is an area name."
+  },
+  {
+   "id": "wa_snoqualmie_mountain_west_ridge",
+   "why": "research skipped: No source found describing a West Ridge route on Snoqualmie Mountain (MP lists only New York Gully, Boogie Wonderland, The Snostril and crag sub-areas); row has no grade or description."
+  },
+  {
+   "id": "wa_south_face_4",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_south_peak_dike_chimney_and_east_ridge",
+   "why": "research skipped: Row has no grade, elevations, approach or waypoints, and the peak (one of several 'South Peak's) cannot be identified with confidence; no route-specific source found."
+  },
+  {
+   "id": "wa_south_peak_northeast_face",
+   "why": "research skipped: Row is empty (no grade, approach, elevations) and no route-specific source was found for this South Peak face."
+  },
+  {
+   "id": "wa_south_peak_south_arete",
+   "why": "research skipped: Row has only a Class 4 grade; no approach, elevations or waypoints, and no opened source documents this route."
+  },
+  {
+   "id": "wa_south_peak_southeast_face",
+   "why": "research skipped: Row is empty and no route-specific source was found."
+  },
+  {
+   "id": "wa_south_peak_southwest_face",
+   "why": "research skipped: Row has only a Class 4 grade and no approach or elevations; no route-specific source found."
+  },
+  {
+   "id": "wa_spectre_peak_haunted_wall",
+   "why": "research skipped: No waypoints or elevations in the row and no opened source describes the Haunted Wall or its multi-day Easy Ridge/Challenger approach timing."
+  },
+  {
+   "id": "wa_storm_king_north_face",
+   "why": "research skipped: Obscure first-ascent-style route (Park Creek approach, rappel onto glacier, bivy at rib base); no opened source gives timing or camps beyond the row, so an honest day plan is not possible."
+  },
+  {
+   "id": "wa_the_chopping_block_northeast_ridge",
+   "why": "research skipped: Only one source found (Steph Abegg Southern Pickets 1, which used the NE Ridge for rappels, not as an ascent route); no second independent source reachable (SummitPost/Mountaineers/CascadeClimbers 403)."
+  },
+  {
+   "id": "wa_the_chopping_block_northwest_route",
+   "why": "research skipped: Only one opened source (Steph Abegg Southern Pickets 1: Goodell Creek trailhead to Terror Basin about 7 hr, Barrier crossing to a Chopping Block ridge camp at 6,400 ft, single-rope rappels down the NE Ridge). A second independent source could not be reached, so the plan is held back."
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_the_incisor_scramble",
+   "why": "research skipped: Only the WTA Royal Basin hike page (16 mi round trip, 2,650 ft to Upper Royal Basin) could be opened. The CascadeClimbers and Mountaineers pages on the Incisor returned 403, so the climb portion has no source."
+  },
+  {
+   "id": "wa_the_pyramid_picket_east_ridge",
+   "why": "research skipped: Row has no approach, elevations or waypoints; the only Pyramid source found (Steph Abegg) covers the West Ridge, not the East Ridge."
+  },
+  {
+   "id": "wa_the_tooth_north_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_thunder_mountain_north_face",
+   "why": "research skipped: Only approach information was found (WTA Trap Lake: 11 mi round trip, 2,700 ft). No opened source describes the North Face climb, its timing, or the high point gain from camp."
+  },
+  {
+   "id": "wa_west_face",
+   "why": "research skipped: Remote Gunsight Range objective via the Downey/Bachelor Creek approach and glacier travel; no trip report or route page for South Peak's West Face could be opened, so day counts and timing would be invented."
+  },
+  {
+   "id": "wa_western_dihedral",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_whistler_mountain_north_ridge",
+   "why": "research skipped: Only a thin personal log (sverdina: short approach into the Whistler-Cutthroat basin, ridge from the saddle, easy SW gully descent) was readable. Mountaineers and SummitPost returned 403, and there is no distance, gain or timing to build from."
+  },
+  {
+   "id": "wa_witches_tower_northwest_buttress",
+   "why": "research skipped: Row is completely empty (no grade, approach, elevations) and no source was found."
+  }
+ ],
+ "fellBack": [
+  {
+   "id": "wa_artic_rose",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_astral_projection",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_astroglide",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_asymptotic",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_blood_sport",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_bowling_alley_aka_regular_route",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_cobbles_101",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_deep_blue",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_ephemeral",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_ez_way",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_half_fast",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_iceman",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_lone_wolf",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_main_peak_tepeh_towers",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_north_face_of_the_mole",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_particulate_matter",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_project_crack",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_roofer_madness",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_route_c",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_route_d",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_smears_jugs_and_rock_roll",
+   "why": "no conversion output"
+  },
+  {
+   "id": "wa_wild_wild_west",
+   "why": "no conversion output"
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_baring_mountain_east_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_big_kangaroo_walkabout",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_bonanza_peak_oregonian_route",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_dome_peak_indian_summer",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_east_twin_needle_north_buttress",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_enchantment_enchainment",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_enchantment_peak_east_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_flight_of_the_falcon",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "why": "converter skipped: Prose says the East Ledges are used only as the descent leg after the West Ridge, East Ridge Direct or North Ridge and are not a stand-alone objective; there is no itinerary to split into days."
+  },
+  {
+   "id": "wa_garfield_mountain_preiss_route",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_gilbert_peak_conrad_glacier",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_huckleberry_mountain_south_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_j_tnar",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_kyes_peak_northeast_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_berge_east_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_blum_north_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_despair_northeast_buttress",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_lago_south_slope_south_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_noyes_standard",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_prophet_southwest_rib",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_mount_washington_olympic_winter_direct",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_north_face_left_buttress",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "why": "converter skipped: Prose is only 'Same as Blue Glacier standard route; variation only on summit block' — no day split or trip details of its own. Reuse the Blue Glacier standard-route plan for this row."
+  },
+  {
+   "id": "wa_painted_traverse",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_ne_couloir",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_south_ridge",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_southwest_rib_2",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_sperry_peak_east_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_tenpeak_mountain_north_couloir",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_the_triad_traverse",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_tupshin_peak_east_face",
+   "why": "low confidence"
+  },
+  {
+   "id": "wa_west_face_2",
+   "why": "low confidence"
+  }
+ ]
+}

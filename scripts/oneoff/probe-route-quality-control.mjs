@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do 0307–0309 hold, lock, strike, flag and tell -- against the LIVE database, with real accounts?
 //
 //   node scripts/oneoff/probe-route-quality-control.mjs
@@ -41,7 +42,7 @@ const msg = (r) => (r && r.body && (r.body.message || r.body.msg)) || JSON.strin
 function sql(text) {
   const f = path.join(os.tmpdir(), "probe-0309-" + process.pid + "-" + Math.random().toString(36).slice(2) + ".sql");
   fs.writeFileSync(f, text);
-  try { return execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", f], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }); }
+  try { return execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-f", f], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }); }
   finally { fs.unlinkSync(f); }
 }
 const setAdmin = (id, on) => sql(

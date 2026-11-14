@@ -1,0 +1,68 @@
+{
+ "co_easter_island": {
+  "_expect": {
+   "name": "Easter Island",
+   "region": "Colorado"
+  },
+  "blurb": "Easter Island is a freestanding alpine buttress high on the Mount Blue Sky side of the Front Range, tucked just southeast of Innuendo Spire in the Alpine Lite Cliffs. It stands around 12,400 feet and rises roughly sixty metres on its taller side, with a lower-angled left end. The ten climbs here are alpine trad and top-rope lines, running from about 5.8 into the 5.10 range, and most sit at 5.9 or 5.10. Expect cold, exposed, high-elevation climbing with sparse cairns, loose gullies on the way in and only a few hours of afternoon sun. Bring a standard trad rack and start early, since storms build quickly at this altitude.",
+  "parking_note": "Use the little pullout close to mile 8 on the Summit Lake road, two curves short of the lake, parked fully off the pavement.",
+  "approach": "From the pullout, head northeast up to the low col that joins Mt. Warren with Rogers Peak, then drop west toward the cairns and traverse to the left side of the gullies. Several gullies are loose; avoid the rightmost one.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/110974950/easter-island",
+    "https://app.advcollective.com/climbing/easter-island-a-distinct-summit-climb-near-mt-blue-sky-colorado"
+   ]
+  }
+ },
+ "co_guanella_proper": {
+  "_expect": {
+   "name": "Guanella Proper",
+   "region": "Colorado"
+  },
+  "blurb": "Guanella Proper is the small bouldering stop at the very top of Guanella Pass, near the Bierstedt trailhead, at about 11,500 feet. It is basically a single boulder you can walk to from the roadside in about a minute, so it works as a quick add-on to a day at the larger Guanella Pass boulder fields further down the road toward Georgetown. Ten problems are recorded, spread from easy up to the very hard end of the scale, with a few high-standard lines that draw strong boulderers. Being alpine, it holds snow late and the air is thin and cool, so pick a settled summer or early-autumn day.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/124993205/guanella-proper",
+    "https://mountainproject.com/area/106621712/guanella-pass"
+   ]
+  }
+ },
+ "co_buddha_cave_area": {
+  "_expect": {
+   "name": "Buddha Cave area",
+   "region": "Colorado"
+  },
+  "blurb": "Buddha Cave area is a compact set of boulder problems on the east side of Castlewood Canyon State Park, south of Denver, near 5,400 feet. It sits a short way off the Lake Gulch trail, just east of the old dam site and the creek. Ten problems are recorded, running from very easy up to roughly V6, with most falling in the V2 to V5 band, so it suits climbers moving through the middle grades. The rock is arkose and the cave gives the problems a steep, featured feel. Bring pads and spotters, and expect a short, faint-trail approach.",
+  "approach": "Take the Lake Gulch trail from the canyon's east trailhead and cross the creek. Turn east for about 200 yards until a slab appears on your left, roughly 100 yards before a prominent trailside boulder, then follow the faint path up.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/108510800/buddha-cave-area",
+    "https://www.mountainproject.com/area/108511364/berthoudbuddha-area"
+   ]
+  }
+ },
+ "co_north_shelf_block": {
+  "_expect": {
+   "name": "North Shelf Block",
+   "region": "Colorado"
+  },
+  "blurb": "North Shelf Block is a friendly bouldering spot on Mount Sanitas, on the edge of Boulder, and the first big rock you meet walking up the trail, recognisable by a pine growing from its middle. Ten problems are recorded, most between very easy and V2, plus one much harder line around V7, and a couple of easy highballs. The long traverse across the face, mostly easy moves with a V2 grade overall, is the standout and works for beginners or as a warm-up lap. Landings are generally decent and the walk from the trailhead is short and steep. It continues onto the neighbouring South Shelf Block.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105746134/north-shelf-block",
+    "https://mountainproject.com/area/105744361/mount-sanitas"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_corridor_the_3": "no fetchable page about this crag (only a 403 SummitPost mention and parent pages); could not fetch two pages",
+  "co_corkscrew_boulder": "only the parent River Boulders page and one route page describe it; no page about the boulder itself",
+  "co_metamorphic_canyon": "only one fetched page (Mountain Project) describes it; second search turned up nothing",
+  "co_possibility_slab": "the two pages disagree on height, style and aspect; may be different places"
+ },
+ "_conflicts": {
+  "co_possibility_slab": "Mountain Project area page (https://www.mountainproject.com/area/117652219/possibility-area) lists the routes as trad/alpine at 11,723 ft; the other guide (https://app.advcollective.com/climbing/possibility-slab-climbing-guide-technical-slabby-routes-at-mt-blue-sky-colorado) calls it a south-facing bolted slab at 11,607 ft",
+  "co_easter_island": "stored aspect N; Mountain Project says NNW, the other guide is inconsistent (NNW in text, south in listing) - https://www.mountainproject.com/area/110974950/easter-island, https://app.advcollective.com/climbing/easter-island-a-distinct-summit-climb-near-mt-blue-sky-colorado",
+  "co_north_shelf_block": "stored rock conglomerate; parent page https://mountainproject.com/area/105744361/mount-sanitas says sandstone"
+ }
+}

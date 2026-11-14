@@ -1,0 +1,26 @@
+{
+  "area_id": "wa_liberty_cap",
+  "routes": [
+    {"route_id":"wa_liberty_cap_liberty_ridge_finish","season":{"months":[5,6,7],"window":"May-Jul","evidence":"Park route brief and guide pages: climbers go early (May-June) before warm weather exposes loose rock; logged Liberty Ridge ascents May-Jul; stored May-Jul."},
+     "track":{"aid":"823415","verdict":"same","kind":"complete","inSeason":true,"why":"Logged route 'Liberty Ridge' (descent Emmons), Jul 2 2017, summited, report says camped at Thumb Rock; line passes within about 40 m of our Thumb Rock pin; starts and ends 16/119 m from the White River pin; summit 36 m."},
+     "otherTracksConsidered":[
+      {"aid":"973146","verdict":"unsure","why":"Jun 6 2018 summited complete track passing near Thumb Rock, but no route name."},
+      {"aid":"2234902","verdict":"unsure","why":"Jul 2 2023, summited, no route name, line stays ~1.4 km from Thumb Rock so probably not Liberty Ridge (may be Ptarmigan); not assigned to either."},
+      {"aid":"2921576","verdict":"different","why":"Disappointment Cleaver."}],
+     "pins":[],
+     "facts":[
+      {"field":"monthBreakdown","month":6,"text":"In early June the Carbon Glacier crossing can be badly broken; one party reported three teams ahead turning around before finding a way through.","aids":["973146"]},
+      {"field":"approach_note","month":5,"text":"In late May the established tracks dropped low on the Winthrop Glacier below its icefall, which avoided the big crevasses on the way to the lower Curtis Ridge.","aids":["968947"]}]},
+    {"route_id":"wa_liberty_cap_ptarmigan_ridge_finish","season":{"months":[5,6,7],"window":"May-Jul","evidence":"Mountaineers route page lists May, June, July; a park ranger blog says it is usually climbed before the end of June; logged Ptarmigan Ridge ascents in May and July."},
+     "track":null,
+     "otherTracksConsidered":[
+      {"aid":"968947","verdict":"unsure","why":"Logged Ptarmigan Ridge, May 28 2018, but no track points harvested."},
+      {"aid":"2234902","verdict":"unsure","why":"Unnamed; could be Ptarmigan or another line; not assigned."}],
+     "pins":[],
+     "facts":[
+      {"field":"watch_out","month":5,"text":"Late May: the traverse between the two snow aprons can be bare, with a strip of thin verglas then frozen mud needing delicate frontpointing.","aids":["968947"]},
+      {"field":"watch_out","month":5,"text":"Late May: the ridge leading to the 10,300 ft bivy was melted out, a crumbly knife edge best bypassed on snow just east of the crest.","aids":["968947"]},
+      {"field":"pro_tips","month":5,"text":"Rockfall rises quickly once sun hits the hourglass area; a night at the 10,300 ft bivy and an early start let you climb it in shade.","aids":["968947"]}]}
+  ],
+  "notes": "2234902 fits neither route clearly. Summit pins are within 45 m of the tracks' highest points and about 36 m of the surveyed coordinate; no move."
+}

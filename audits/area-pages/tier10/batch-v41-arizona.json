@@ -1,0 +1,37 @@
+{
+ "az_wood_canyon": {
+  "_expect": { "name": "Wood Canyon", "region": "Arizona" },
+  "blurb": "Wood Canyon is a quiet, out-of-the-way crag in central Arizona, south of Superior, built around one dark volcanic wall that stands beside the canyon road and reaches about 100 feet. Most of the 14 routes are traditional lines on cracks and pockets, with a handful of bolted ones, running from easy fifth class up to a single 5.10, with the bulk in the 5.7 to 5.9 range. The perlite climbs a bit like basalt, takes nuts and cams well, and a few spots are loose. The west-facing, black rock soaks up heat and offers little shade, so plan around the temperature. Expect solitude, plus scorpions and bats.",
+  "parking_note": "Reached by dirt road; follow the main track up the canyon until the wall appears on your left, then pull off and park. A high-clearance vehicle is advised, and stretches of the road turn muddy after rain.",
+  "review": { "sources": ["https://www.mountainproject.com/v/107502265", "https://www.mountainproject.com/route/107528309/chuckwalla-fa"] }
+ },
+ "az_headwall_the": {
+  "_expect": { "name": "The Headwall", "region": "Arizona" },
+  "blurb": "The Headwall is a steep face on Camelback Mountain, in the middle of Phoenix, and it is mostly a sport crag: of its 14 routes, 11 are bolted, with a couple of trad lines and one aid route. Grades are spread widely, from easy scrambling and 5.6 through the 5.8s, then a few 5.10s and a 5.11, which makes it a decent choice for a mixed group. Several lines are multi-pitch, including a two-pitch 5.8+ and a three-pitch 5.10-. The face is reached from the Echo Canyon side of the mountain, and the small trailhead lot fills early. Bees are common on Camelback, so keep your distance from any hives.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/105805832/the-headwall", "https://www.mountainproject.com/area/105787836/camelback-mountain"] }
+ },
+ "az_booze_pig_wall": {
+  "_expect": { "name": "Booze Pig Wall", "region": "Arizona" },
+  "blurb": "Booze Pig Wall is a limestone bouldering wall beside Lower Lake Mary near Flagstaff, at about 7,000 feet on the Drysdale Trail, and it is the place on that trail for harder problems. It holds 14 problems that stretch from a VB up to a V10, with most of the weight in the V3 to V8 range, so there is a little for everyone but plenty for strong climbers. The style is technical, wave-shaped wall climbing that feels exposed without being truly high. Several local favourites sit here, including the namesake V6. Being at elevation, it stays comfortable when lower desert crags are baking.",
+  "parking_note": "Leave the car at the pull-outs on the north side of the highway, just beyond the gate near the Lake Mary picnic area. Low-clearance cars can stop before the gate. The dirt can be soft and muddy when wet.",
+  "approach": "From the parking spot, walk uphill and east along a two-track past a round limestone well house, then pick up the faint climbers' trail to the Drysdale Trail. Follow that trail east for about five minutes, past a large cave; the wall sits just beyond the cave.",
+  "review": { "sources": ["https://mountainproject.com/area/106062886/the-booze-pig-wall", "https://www.mountainproject.com/area/110316228/the-drysdale-trail"] }
+ },
+ "az_lizard_boulders": {
+  "_expect": { "name": "Lizard Boulders", "region": "Arizona" },
+  "blurb": "Lizard Boulders is a small cluster of boulders scattered around the base of Lizard Rock, high on Mount Lemmon in the Santa Catalina Mountains near Tucson, at about 6,500 feet. All 14 problems are bouldering, ranging from very easy up to V8, with a good share in the V6 to V8 range and a handful of easier V0 to V4 lines. It sits next to the better-known Matterhorn Boulder, so it works well as an add-on to a day there. Boulders sit at different angles, letting you chase sun or shade through the year, and it tends to be less busy than its neighbours.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106981907/lizard-boulders", "https://www.mountainproject.com/area/106824304/5-windy-ridge"] }
+ },
+ "az_diamond_dog": {
+  "_expect": { "name": "Diamond Dog", "region": "Arizona" },
+  "blurb": "Diamond Dog is a small sport-climbing wall in Northern Devils Canyon, a quieter annex to the Queen Creek area near Superior in central Arizona. It holds 14 routes, mostly bolted with a few trad and top-rope lines, from easy 5.4 and 5.5 up through the 5.8 to 5.9 range, then a solid block of 5.10s and 5.11s, topping out at 5.12. That mix suits a group with a range of abilities. The approach is a canyon walk marked with cairns and takes longer than some printed descriptions suggest, so budget extra time before you start climbing.",
+  "review": { "sources": ["https://www.mountainproject.com/viewer-old/107042299", "https://www.mountainproject.com/photo/121599556/the-route-is-well-bolted-with-the-last-move-to-the-top-being-the-hardest"] }
+ },
+ "_skipped": {
+  "az_hidden_world_north": "no page about the crag itself found; only mentioned in the approach text of Hidden World South",
+  "az_oven_the": "could not fetch a page about this Oven; the only Oven area page fetched was a different place (Tahoe, California), and the Flagstaff pages only mention it within the parent"
+ },
+ "_conflicts": {
+  "az_diamond_dog": "Stored rock 'basalt' but the Queen Creek Canyon page (https://www.mountainproject.com/area/105788089/queen-creek-canyon) says the area's rock is volcanic tuff; left unchanged."
+ }
+}

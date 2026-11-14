@@ -1,0 +1,138 @@
+{
+  "area_id": "wa_bulls_tooth",
+  "routes": [
+    {
+      "route_id": "wa_bulls_tooth_south_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peak ascents Jun 2, Jul 14, Aug 14, Sep 14, Oct 5; stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2555319",
+          "verdict": "different",
+          "why": "Standard Stevens Pass / Chain Lakes day trip; no sign of the Bullseye Pass south ridge line."
+        },
+        {
+          "aid": "1974203",
+          "verdict": "unsure",
+          "why": "One-way multi-peak traverse (Grindstone to Bulls Tooth), line not shown to use the south ridge."
+        },
+        {
+          "aid": "1736239",
+          "verdict": "unsure",
+          "why": "Camp-based loop for three peaks, no route named."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_bulls_tooth_standard",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peak ascents Jun 2, Jul 14, Aug 14, Sep 14, Oct 5; Jul-Sep matches stored window; late June still has snow and a 30 September ascent met fresh snow above 6,400 ft."
+      },
+      "track": {
+        "aid": "2555319",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "30 June 2024 (within a month of the window), summited, begins and ends within 111 m of our Stevens Pass PCT pin, follows the PCT, Josephine Lake and Chain Lakes and reaches within 144 m of our summit pin; it is the only standard route."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "1736239",
+          "verdict": "unsure",
+          "why": "Round trip from a Chain Lakes camp only, not from the trailhead."
+        },
+        {
+          "aid": "1974203",
+          "verdict": "different",
+          "why": "One-way traverse from Grindstone, not the standard trip."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "Boulders on the slope below the summit shift underfoot, and very loose rock sits just under the top.",
+          "aids": [
+            "3295220",
+            "2967991"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "Mapped summit marks are misplaced; the true top lies northeast of them, so aim past the mapped point.",
+          "aids": [
+            "3295220"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "In late August a traverse from the last long switchback below the Doelle pass was less sustained than the boulder field direct from the upper lake.",
+          "aids": [
+            "2967991"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "The easiest top-out is a counter-clockwise corkscrew starting from the north-northwest ridge; only the final 200 ft is semi-exposed class 3.",
+          "aids": [
+            "2967991"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "At the end of June snow still lies on the upper slopes, so expect to kick steps.",
+          "aids": [
+            "2555319"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 9,
+          "text": "By the end of September fresh snow can coat the slopes above about 6,400 ft.",
+          "aids": [
+            "2384652"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "Mill Creek Road 6960 is rough and steep; in a high-clearance rig a party parked near 3,900 ft, about 1.25 miles from the PCT, and a sedan will struggle.",
+          "aids": [
+            "3295220",
+            "1710142"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 9,
+          "text": "In the dark at the end of September the PCT crossing is easy to walk over without noticing; check the map before leaving the road.",
+          "aids": [
+            "2384652"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "The South Ridge row has no trailhead or summit pin and no qualifying track. Standard-route pins agree with Peakbagger (summit 13 m)."
+}

@@ -1,0 +1,137 @@
+{
+ "nj_main_wall_and_right_wall": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "nm_miner_s_crag": {
+  "verdict": "unsure",
+  "why": "Taos pages disagree dacite vs basalt (MP pages); not resolved."
+ },
+ "nm_potrillo_cliffs": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "nv_right_north_wall": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ny_6_the_good_book": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ny_b_jackie_and_friends": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ny_e_the_mac_wall": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ny_f_the_guides_wall": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ny_millbrook": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Millbrook",
+   "region": "New York"
+  },
+  "rock": "conglomerate",
+  "review": {
+   "sources": [
+    "https://gunkguide.com/09Nov/09031-geo.html",
+    "https://en.wikipedia.org/wiki/Shawangunk_Ridge"
+   ]
+  },
+  "why": "Millbrook Mountain cliffs are Shawangunk quartz conglomerate; shale is the softer rock beneath."
+ },
+ "ny_sky_top": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Sky Top",
+   "region": "New York"
+  },
+  "rock": "conglomerate",
+  "review": {
+   "sources": [
+    "https://en.wikipedia.org/wiki/Shawangunk_Ridge",
+    "https://gunkguide.com/09Nov/09031-geo.html"
+   ]
+  },
+  "why": "Sky Top is on the Shawangunk Ridge, cliffs are quartz conglomerate, not shale."
+ },
+ "oh_amusement_wall": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "oh_clear_creek_crag": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ok_lichen_wall": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Lichen Wall",
+   "region": "Oklahoma"
+  },
+  "rock": "granite",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105858670/wichita-mountains-wildlife-refuge",
+    "https://www.theoutbound.com/oklahoma/rock-climbing/climb-at-the-wichita-mountains-wildlife-refuge"
+   ]
+  },
+  "why": "Narrows/Wichita refuge climbing is granite; stored mudstone is wrong. Stored lat/lng (Fort Worth) also wrong; MP Lichen Wall gives 34.69598,-98.66703 but only one source fetched, so coords not changed."
+ },
+ "on_bon_echo": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "on_bottle_glass": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Bottle Glass",
+   "region": "Ontario"
+  },
+  "rock": "limestone",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112857035/bottle-glass",
+    "https://en.wikipedia.org/wiki/Rattlesnake_Point_(Canada)"
+   ]
+  },
+  "why": "Bottle Glass is at Rattlesnake Point, escarpment limestone, not sandstone."
+ },
+ "on_rattlesnake_point_east_cliff": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Rattlesnake Point East Cliff",
+   "region": "Ontario"
+  },
+  "rock": "limestone",
+  "review": {
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rattlesnake_Point_(Canada)",
+    "https://www.mountainproject.com/area/112857035/bottle-glass"
+   ]
+  },
+  "why": "Rattlesnake Point cliffs are limestone (Niagara Escarpment), not sandstone."
+ },
+ "or_2_wildfire_wall": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "or_3_catwalk_cliff": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "or_meadow_camp": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "or_u_red_wall": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ }
+}

@@ -1,3 +1,4 @@
+import { fileHref } from "../../lib/file-href.mjs";
 // New climbs from FKT summit tracks (owner 2026-10-30: "if they can be added as new climbs for the
 // catalog, then add them"): turn the researched verdicts into apply-fkt-state-climbs.mjs data files,
 // one per state (scripts/oneoff/data/<st>-fkt-climbs.json). Offline.
@@ -11,8 +12,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { haversineM } = await import("./rule.mjs");
-const { reachesTheSummit } = await import(`${REPO}/lib/track.js`);
-const { gradeNumFor } = await import(`${REPO}/lib/grade.js`);
+const { reachesTheSummit } = await import(fileHref(`${REPO}/lib/track.js`));
+const { gradeNumFor } = await import(fileHref(`${REPO}/lib/grade.js`));
 const GPX_DIR = process.env.FKT_GPX_DIR;
 // held back: no Hawaii in the area tree yet (adding a state is the owner's call)
 const HOLD = new Set(["mount-olomana-hi", "mt-landale-bc-canada"]);   // Landale: its one grade source can no longer be read

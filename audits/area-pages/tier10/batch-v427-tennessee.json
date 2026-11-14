@@ -1,0 +1,17 @@
+{
+ "tn_warrior_wall": {
+  "_expect": { "name": "Warrior Wall", "region": "Tennessee" },
+  "blurb": "Warrior Wall is a stretch of low cliff band on the east side of the Freedom Hills boulders in the Obed and Clear Creek country. Ten bouldering problems sit beneath big roofs and tall faces, with a few trad lines mixed in. Difficulty runs wide: a handful of moderate problems around V2 to V3, a solid middle of V4 and V5, and a few hard lines up to V10. It is a place for people who already boulder at a decent level, since only one problem is below V2. Expect a short descent down the cliff band before reaching the blocks.",
+  "approach": "Follow the flagged trail toward the point, then scramble down the cliff band by low-angle slick rock or a short roped downclimb marked with tree ribbons. Turn west along the cliff line to reach the boulders.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120079088/warrior-wall", "https://www.mountainproject.com/area/119971811/east-side-boulders"] }
+ },
+ "tn_predator_wall": {
+  "_expect": { "name": "Predator Wall", "region": "Tennessee" },
+  "blurb": "Predator Wall is a tall orange face at Castle Rock above Jasper, Tennessee, on the same sandstone bluff as the neighboring Point Buttress. Ten routes, nearly all sport with one trad line, are mostly in the 5.12 range plus a single 5.11 and a few 5.13s. The climbing is technical and fairly slabby down low, then steepens and gets harder higher up. It suits strong sport climbers rather than beginners. The wall sees shade by early to mid afternoon, which makes it comfortable once the sun swings round.",
+  "approach": "From the lot, walk the trail up and to the right along the hillside, then leave it to the left when the tall orange wall comes into view.",
+  "review": { "sources": ["https://mountainproject.com/area/108613959/predator-wall", "https://mountainproject.com/area/108613875/castle-rock", "https://www.mountainproject.com/area/108614106/the-point-buttress-main-wall-aka-overlook"] }
+ },
+ "_conflicts": {
+  "tn_predator_wall": "Stored aspect is S; the crag page https://mountainproject.com/area/108613959/predator-wall says the wall faces southeast (the parent page https://mountainproject.com/area/108613875/castle-rock says the bluff faces south)."
+ }
+}

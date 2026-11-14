@@ -1,0 +1,129 @@
+{
+  "area_id": "wa_bears_breast_mountain",
+  "routes": [
+    {
+      "route_id": "wa_bears_breast_mountain_infinite_beauty",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged ascents Jul 8, Aug 5, Sep 7, Jun 2; a mountain-forecast page lists Jul-Sep; gullies and Dutch Miller Gap hold snow into early summer. Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2589226",
+          "verdict": "different",
+          "why": "Starts at Dingford Creek and approaches via the Middle Fork and Dutch Miller Gap from the west; not the Salmon La Sac / Shovel Creek Mega Slab approach of this route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_bears_breast_mountain_timeless_treasure",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged ascents Jul 8, Aug 5, Sep 7, Jun 2; a mountain-forecast page lists Jul-Sep; gullies and Dutch Miller Gap hold snow into early summer. Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2589226",
+          "verdict": "different",
+          "why": "Starts at Dingford Creek and approaches via the Middle Fork and Dutch Miller Gap from the west; not the Salmon La Sac / Shovel Creek Mega Slab approach of this route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_bears_breast_mountain_southwest_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged ascents Jul 8, Aug 5, Sep 7, Jun 2; a mountain-forecast page lists Jul-Sep; gullies and Dutch Miller Gap hold snow into early summer. Stored Jul-Sep kept."
+      },
+      "track": {
+        "aid": "2589226",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Jul 27 2024, summited, 111 m from our Dingford Creek pin at both ends (42.7 mi, 5,763 ft); follows the Middle Fork valley to Dutch Miller Gap then reaches the summit from the west, matching the SW Face approach text; no logged route name but the histogram has a 'Southwest Face' July entry and the line is not the SE slab. Moderate confidence."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3300540",
+          "verdict": "unsure",
+          "why": "Aug 7 2026 report, no track; planned SE Mega Slab then climbed from Dutch Miller Gap (facts only)."
+        },
+        {
+          "aid": "3301901",
+          "verdict": "unsure",
+          "why": "Aug 7 2026 report, no track; south face from a Dutch Miller Gap camp (facts only)."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "In early August two parties rode mountain bikes up the gated Dingford road for the first 7 miles or so, then hiked on to Dutch Miller Gap; the road is rough enough that a mountain bike beats a gravel bike.",
+          "aids": [
+            "3300540",
+            "3301901"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "Getting into the pitch-2 chimney is the crux; leave your pack off to squeeze in, and shorter climbers found the opening moves hardest.",
+          "aids": [
+            "3300540",
+            "3301901"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "In early August both parties strayed left on the lower face onto class 4 and low 5th ground; going higher before traversing finds the easier line.",
+          "aids": [
+            "3300540",
+            "3301901"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 8,
+          "text": "In early August a north-facing snow patch near the summit-block notch was still giving meltwater when the face has no other water.",
+          "aids": [
+            "3300540",
+            "3301901"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 8,
+          "text": "The lowest 500 ft of the face is the slowest to downclimb; two August parties were caught by dark, one spending the night in trees about 300 ft above the base, so start down early.",
+          "aids": [
+            "3300540",
+            "3301901"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Infinite Beauty and Timeless Treasure (SE Mega Slab, Salmon La Sac approach) could not be tied to any track; the only harvested track uses the Dingford approach. SW Face summit pin (47.54,-121.2256) is 18 m from the track high point and 23 m from Peakbagger; no move. Dingford pin is 111 m from the track start; no move."
+}

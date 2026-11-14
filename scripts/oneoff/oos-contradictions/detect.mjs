@@ -1,7 +1,8 @@
+import { fileURLToPath } from "node:url";
 // Cross-field contradiction detector over the out-of-state snapshot. Reads oos-routes.json / oos-areas.json,
 // writes findings.json. Every check compares TWO records of ONE fact on the same row.
 import fs from "node:fs";
-const T = new URL("../../../audits/oos-contradictions", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/oos-contradictions", import.meta.url));
 const R = JSON.parse(fs.readFileSync(`${T}/oos-routes.json`));
 const A = Object.fromEntries(JSON.parse(fs.readFileSync(`${T}/oos-areas.json`)).map(a => [a.id, a]));
 

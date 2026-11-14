@@ -1,0 +1,86 @@
+{
+ "area_id": "wa_esmeralda_peaks",
+ "routes": [
+  {
+   "route_id": "wa_esmeralda_peaks_east_gully",
+   "season": {
+    "months": [
+     6
+    ],
+    "window": "Jun",
+    "evidence": "Stored June; searched Teanaway/De Roux pages: spring snow in June, dry from July. No track names or follows the East Gully."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2872065",
+     "verdict": "unsure",
+     "why": "June 14 loop from De Roux over several peaks, descended from the East Peak; not shown to climb the east gully"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "descent_note",
+     "month": 6,
+     "text": "In mid-June a trail marked on maps below the East Peak could not be found, so expect to descend off-trail to the De Roux path.",
+     "aids": [
+      "2872065"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "Helmets were worn along the Esmeralda summit traverse in mid-June.",
+     "aids": [
+      "2872065"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_esmeralda_peaks_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "Searched Mountaineers/summitpost pages: snow scramble possible early June, dry class 2 July-early Oct, avoid very hot days; stored mid-July to October."
+   },
+   "track": {
+    "aid": "1379794",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "No logged route name or report; but track is a round trip from De Roux (start 6 m, end 28 m from our pin), passes within 11 m of our last-switchback pin, tops the west summit within 5 m and returns the same way, matching our route text. East Gully is on the East Peak from another trailhead. Date is Nov 23, about 3 weeks after season end (borderline, owner may drop)."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2872065",
+     "verdict": "different",
+     "why": "multi-peak loop passing the East Peak"
+    },
+    {
+     "aid": "1414898",
+     "verdict": "different",
+     "why": "wanders to another peak at 47.45,-121.00 with 2,725 ft gain"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "monthBreakdown",
+     "month": 6,
+     "text": "In mid-June 2025 the De Roux route and the peaks were free of snow.",
+     "aids": [
+      "2872065"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "1379794 is the weakest assignment (no report, late-November date); treat as optional."
+}

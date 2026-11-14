@@ -1,0 +1,36 @@
+{
+ "id_redhill_trail_bouldering": {
+  "_expect": { "name": "Redhill Trail Bouldering", "region": "Idaho" },
+  "blurb": "A small cluster of low boulders strung along a walking trail on the edge of Pocatello, close to the Idaho State University campus. Nineteen problems are known, and the spread is gentle: a handful of very easy warm-ups, a solid middle of V0 to V3, and just a few hard outliers up to the V8 range. That makes it one of the friendlier bouldering stops in the Pocatello area and a reasonable place for newer climbers to get comfortable on pads. The trail can be breezy, so bring a layer. Climbs sit on both sides of the path depending on which end you start from, so expect to wander a little between blocks.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110208606/redhill-trail-bouldering", "https://www.mountainproject.com/area/108041006/pocatello-area-bouldering"] }
+ },
+ "id_west_buttress_south": {
+  "_expect": { "name": "West Buttress - South", "region": "Idaho" },
+  "blurb": "A spur on the west flank of Castle Rock in the Castle Rocks area of southern Idaho, holding nineteen routes on granite. Roughly half are sport, with a good number of trad lines and a few top ropes mixed in. Difficulty runs from easy 5.6 to around 5.12, though the bulk sits in the 5.10 range and above, so it suits climbers with some mileage. The main face looks south and takes direct sun, though Castle Rock throws early shade over it; the corner around to the northwest stays shaded much longer. One sport line here is especially popular, so expect a wait on busy days.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105817254/west-buttress-south", "https://rakkup.com/guidebook/castle-rocks-idaho-climbing/west-spur---south/s14336"] }
+ },
+ "id_ramshorn_canyon": {
+  "_expect": { "name": "Ramshorn Canyon", "region": "Idaho" },
+  "blurb": "A high-elevation limestone canyon in the Lost River Range of central Idaho, reached by dirt road well away from any town. Nearly all of the nineteen routes are bolted sport climbs, most of them on one large main wall with a few more near the campground and in a small cave. Expect technical, sustained face climbing; grades span 5.9 to 5.12 with the heaviest concentration in the 5.10s and low 5.11s. Several routes run multiple pitches, which makes for long days. The cooler mountain setting makes it a good escape from summer heat in the valleys, and the main wall picks up shade in the afternoon.",
+  "rock": "limestone",
+  "review": { "sources": ["https://www.mountainproject.com/area/124635140/ramshorn-canyon", "https://www.mountainproject.com/area/119173364/ramshorn-canyon"] }
+ },
+ "id_gawker_wall": {
+  "_expect": { "name": "Gawker Wall", "region": "Idaho" },
+  "blurb": "A short basalt wall beside the road down to Shoshone Falls, a few miles east of Twin Falls, and one of three crags on the same cliff band in the Snake River Canyon. All nineteen routes are bolted sport lines, and nearly two thirds fall in the 5.10 range, with a few easier 5.8 and 5.9 lines and several 5.11s. The walk from the car is only a few seconds along a trail under the left side of the wall. Longer and harder than its neighbours, it is not a spot for kids, dogs or big groups. Tourists gather above it in summer, so plan for quieter hours.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120240168/gawker-wall", "https://mountainproject.com/area/123316194/shoshone-falls-area"] }
+ },
+ "id_amphitheater_the": {
+  "_expect": { "name": "Amphitheater, The", "region": "Idaho" },
+  "blurb": "The steeper and harder of the two crags at Riggins Limestone in west-central Idaho: a big overhanging limestone cave high above the Salmon River with nineteen bolted sport routes. This is a place for strong climbers, since nothing here is below 5.11. Ten of the nineteen are 5.13, with the rest split between 5.11 and 5.12 and a single 5.14. Expect long, powerful, endurance-style climbing through the roof and headwall. The northwest-facing cave stays in shade until late afternoon and then catches evening sun. The walk in is a short, steep, unmarked scramble with fixed ropes, so be ready for loose footing.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109290582/the-amphitheater", "https://mountainproject.com/area/109289537/riggins-limestone"] }
+ },
+ "_skipped": {
+  "id_dam_boulders": "could not fetch two pages: only the Q'Emiln Park parent page was readable; no page about the Dam Boulders themselves (the one found was a different Dam Boulder in Maryland)",
+  "id_7_bop_and_beta_wall": "could not fetch a page about this wall; the only match was a thecrag listing that returned 403, and the Mountain Project Beta Wall page is in British Columbia",
+  "id_closed_to_climbing_7_bop_and_beta_wall": "named closed to climbing, and no readable page about the wall found"
+ },
+ "_conflicts": {
+  "id_redhill_trail_bouldering": "rock: boulder page says quartzite, parent Pocatello Area Bouldering page says mostly basalt (https://www.mountainproject.com/area/110208606/redhill-trail-bouldering, https://www.mountainproject.com/area/108041006/pocatello-area-bouldering)"
+ }
+}

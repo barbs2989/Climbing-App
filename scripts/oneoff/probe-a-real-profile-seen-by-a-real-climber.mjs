@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Sign in as the SECOND account and look at the first one. Nothing else does.
 //
 // THE HOLE THIS IS AIMED AT, and it is a property of the guards rather than a hunch. Every browser
@@ -106,7 +107,7 @@ try {
   const port = await claimPort(PORT);
   const base = `http://127.0.0.1:${port}/`;
   log(`starting dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });

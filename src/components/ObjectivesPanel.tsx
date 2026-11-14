@@ -1,3 +1,4 @@
+import { tx } from "../../lib/tapWords.js";
 import { useContext } from "react";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import { useScopedWishlistRoutes } from "../../lib/db";
@@ -25,9 +26,9 @@ export default function ObjectivesPanel({ area, onOpen, C }: ObjectivesPanelProp
       {error && !(data && data.length) ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load your objectives — check your connection and try again.</div> : null}
       {error && data && data.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the list from your last load.</div> : null}
       {!isLoading && !error && (!data || !data.length) && (
-        <EmptyState C={C} icon="target">No objectives here yet — open a climb and tap to add it to your objectives.</EmptyState>
+        <EmptyState C={C} icon="target">{tx("No objectives here yet — open a climb and tap to add it to your objectives.")}</EmptyState>
       )}
-      {(data || []).map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} />)}
+      {(data || []).map(r => <RouteRow key={r.id} r={r} onOpen={onOpen} C={C} areaName={placeOf(r)} savedMark={false} />)}
     </div>
   );
 }

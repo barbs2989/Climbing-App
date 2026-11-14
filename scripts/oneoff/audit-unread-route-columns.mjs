@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // For EVERY column on `routes`: is it populated, and does its value reach any screen?
 //
 // This is the audit that would have caught #707 (descent_text: 1,021 routes populated, 0
@@ -41,7 +42,7 @@ import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("../..", import.meta.url)).replace(/\/$/, "");
 const require_ = createRequire(import.meta.url);
 
 const ENTRY = `

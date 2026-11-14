@@ -1,0 +1,276 @@
+{
+ "area_id": "wa_guye_peak",
+ "routes": [
+  {
+   "route_id": "wa_guye_peak_r1",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Web search: SummitPost Guye page lists June-October as best summer rock window and Jan-Apr as winter window; Mountaineers North Route reports snow-free late June through early fall; stored Jun-Oct kept. West Face blog sources call it summer-only."
+   },
+   "track": {
+    "aid": "2639324",
+    "verdict": "same",
+    "kind": "oneway",
+    "inSeason": true,
+    "why": "Logged route is West Face, report describes about 50 m of low fifth class, loose rock and a dirty top-out with a rope on the west face above I-90; summit reached 4 m from stored summit; 8 Sep 2024. Starts at a roadside pullout 322 m south of our trailhead pin (just misses the 300 m rule) and ends 15 m from the pin; the pin itself is not contradicted."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "1868217",
+     "verdict": "unsure",
+     "why": "Logged West face (Aug 2021) but the track starts 2 km away at the Commonwealth/Summit West side with no report; approach disagrees with our Alpental talus approach."
+    },
+    {
+     "aid": "3235095",
+     "verdict": "different",
+     "why": "Logged South Rib."
+    },
+    {
+     "aid": "3287090",
+     "verdict": "different",
+     "why": "Cave Ridge saddle / north summit line, belongs to North Route."
+    },
+    {
+     "aid": "2800598",
+     "verdict": "offseason",
+     "why": "East couloir, April."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "In early September the face still has dirty, loose rock on the upper pitches and a grimy top-out; test holds.",
+     "aids": [
+      "2639324"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "Expect roughly 50 m of low fifth-class climbing in total; a rope is worth carrying for it.",
+     "aids": [
+      "2639324"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_guye_peak_improbable_traverse",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Web search: SummitPost Guye page lists June-October as best summer rock window and Jan-Apr as winter window; Mountaineers North Route reports snow-free late June through early fall; stored Jun-Oct kept. Dated climbs found mostly Aug-Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "849062",
+     "verdict": "unsure",
+     "why": "Logged Improbable Traverse in Aug 2017, summited, but the harvest has no track points for it."
+    },
+    {
+     "aid": "2639324",
+     "verdict": "different",
+     "why": "West Face route, not the 5.8 traverse; not assigned to two routes."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 8,
+     "text": "In early August a public roadside pullout just past the private Strasse entrance serves as parking; keep to the left side of the talus where the rock is less loose.",
+     "aids": [
+      "849062"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "The first class-4 step above the talus is near vertical and a hold that looked solid pulled out; rope it and test every hold.",
+     "aids": [
+      "849062"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 8,
+     "text": "Extra water (hot, sun-baked afternoons in August)",
+     "aids": [
+      "849062"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_guye_peak_r2",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Late Jun-Oct",
+    "evidence": "Mountaineers North Route trip reports: snow-free from late June to early fall, snow near the saddle in May-mid June, hard snow late April; stored Jul-Oct kept with June as shoulder."
+   },
+   "track": {
+    "aid": "3287090",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Round trip from the Alpental trailhead (72 m) climbing to the Cave Ridge-Guye saddle (track within 12 m of our saddle pin) and the north summit (within 4 m of our summit pin) on 29 Jul 2026; no other stored route goes through the saddle to the north summit. Logged route is blank and the report only says Guye after Cave Ridge, so identity rests on the line. WARNING: the track also detours out to Cave Ridge and back before the north summit."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "418035",
+     "verdict": "unsure",
+     "why": "Named North Route Hidden Ridge variation (1 Jun 2014, early) but no track points."
+    },
+    {
+     "aid": "1468604",
+     "verdict": "unsure",
+     "why": "Aug 2020 Alpental start to north summit, no track points."
+    },
+    {
+     "aid": "2965329",
+     "verdict": "unsure",
+     "why": "Aug 2025 loop ending on Guye North, no track points."
+    },
+    {
+     "aid": "2491366",
+     "verdict": "offseason",
+     "why": "April, snowshoe, did not summit the real peak."
+    },
+    {
+     "aid": "2151993",
+     "verdict": "offseason",
+     "why": "March N Ridge, starts at Commonwealth."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 8,
+     "text": "The turnoff to Guye is easy to miss among the mossy boulders on the Snoqualmie Mountain trail; if the trail seems to keep going toward Snoqualmie, you have passed it.",
+     "aids": [
+      "1468604"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "In late August water is scarce: only puddles at the waterfall crossing, and the tarn near the upper path is muddy.",
+     "aids": [
+      "1468604"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "The upper north-side path zigzags through dirt and rock, is easy to follow, and has a few mildly scrambly steps near the top.",
+     "aids": [
+      "1468604",
+      "2965329"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_south_rib",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "SummitPost/Mountaineers: South Rib climbed as summer rock outing (about 5.6-5.7); stored Jun-Oct kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3235095",
+     "verdict": "unsure",
+     "why": "Logged South Rib (19 Jun 2026) and summited, but it is a 14.9 km linkup with Snoqualmie and Lundin starting from the Commonwealth side, 2 km from our pin, so not a clean route track."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 6,
+     "text": "In mid-June the rib has sparse, poor protection and anchors that can be suspect, with plenty of loose rock and boulders.",
+     "aids": [
+      "3235095"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "You can bail from the rib into the class-4 gully at almost any point.",
+     "aids": [
+      "3235095"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "Leaving the rib into the gully on the left side gives one 5.7 pitch; otherwise it stays at 5.4 or easier.",
+     "aids": [
+      "3235095"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_south_gully_south_spur",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "Stored text says dry gully Jun-Oct; web (SummitPost, Mountaineers) says the gully is mainly a winter and early-spring snow/mixed climb. Kept stored season; conflict noted."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "1855722",
+     "verdict": "offseason",
+     "why": "Logged South Gully, 12 Feb 2022, winter; start 2.1 km from our pin."
+    },
+    {
+     "aid": "2007711",
+     "verdict": "unsure",
+     "why": "Aug 2022 East Route, different line."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Peak has 6 stored routes; Blood Sport is sport and not in the packet. South Gully season conflict: stored dry-scramble Jun-Oct vs web winter snow route. No pins proposed. Track 3287090 includes a Cave Ridge detour."
+}

@@ -1,0 +1,19 @@
+{
+  "area_id": "wa_agathla_tower",
+  "routes": [
+    {
+      "route_id": "wa_east_gully",
+      "season": { "months": [10,11,3,4,5], "window": "Oct-May", "evidence": "Route page: south-facing climbing at this coulee is possible nearly all year, the tower is a cool-season choice; Peakbagger summits cluster Mar-Apr and Oct-Nov. Summer is hot." },
+      "track": { "aid": "1896211", "verdict": "same", "kind": "complete", "inSeason": true,
+        "why": "16 Apr 2022, summited, logged route 'East Gully', report describes the class 3 gully to the notch and both summits; track's high point is about 15 m from the peak coordinate and start/end sit 8 m apart. Only scramble stored on the peak. No trailhead pin on our route, so none is proposed." },
+      "otherTracksConsidered": [
+        { "aid": "551979", "verdict": "offseason", "why": "25 Jul, South gulley (a different gully), outside the cool season." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 4, "text": "From the notch both summit blocks are third class; the left one is slightly easier and no rope is needed.", "aids": ["1896211"] }
+      ]
+    }
+  ],
+  "notes": "A trailhead could not be confirmed from a fetched page (Mountain Project lists the tower at 47.0247,-119.9689 and only mentions a climbers' parking lot), so no pin proposed. Mountain Project flagged an access problem with the main road in May 2026."
+}

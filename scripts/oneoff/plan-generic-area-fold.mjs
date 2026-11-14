@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // Plan the GENERIC-AREA FOLD (owner, 2026-10-07: "an area will be just called bouldering, ice climbing,
 // mixed, etc. these are too generic. The climbs need to be in specific named areas"), and write it as a
 // migration. Reads the LIVE tree and the researched decisions in audits/generic-area-names-2026-10-07/,
@@ -27,7 +29,7 @@ import path from "path";
 import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
 import { genericAreaName } from "../lib/generic-area-name.mjs";
 
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const DIR = path.join(ROOT, "audits/generic-area-names-2026-10-07");
 const MIG = path.join(ROOT, "supabase/migrations/0259_fold_generic_discipline_areas.sql");
 const WRITE = process.argv.includes("--write");
@@ -53,7 +55,7 @@ const snapshot = new Map(live.map(a => [a.id, { name: a.name, parent: a.parent_i
 // "By the Covered Bridge"; found by the second dry run). Asked of the database, not re-implemented.
 import { execFileSync } from "child_process";
 const CK = new Map();
-{ const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "select id, catalog_key(name) k from areas", "-o", "json"], { cwd: ROOT, maxBuffer: 1 << 28, stdio: ["ignore", "pipe", "ignore"] }).toString();
+{ const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "select id, catalog_key(name) k from areas", "-o", "json"], { cwd: ROOT, maxBuffer: 1 << 28, stdio: ["ignore", "pipe", "ignore"] }).toString();
   for (const r of JSON.parse(out.slice(out.indexOf("{"))).rows) CK.set(r.id, r.k);
   if (CK.size < 40000) throw new Error(`catalog_key read only ${CK.size} areas`); }
 
@@ -313,7 +315,7 @@ for (const m of merges) ops.push({ op: "merge", keep: m.keep, drop: m.drop, why:
   const named = ops.filter(o => o.op === "rename" || o.op === "create");
   const names = [...new Set(named.map(o => o.op === "rename" ? o.to : o.name))];
   const sqlq = `select t, catalog_key(t) k from unnest(array[${names.map(s => "'" + s.replace(/'/g, "''") + "'").join(",")}]::text[]) t`;
-  const out = execFileSync("npx", ["supabase", "db", "query", "--linked", sqlq, "-o", "json"], { cwd: ROOT, maxBuffer: 1 << 26, stdio: ["ignore", "pipe", "ignore"] }).toString();
+  const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", sqlq, "-o", "json"], { cwd: ROOT, maxBuffer: 1 << 26, stdio: ["ignore", "pipe", "ignore"] }).toString();
   const NK = new Map(JSON.parse(out.slice(out.indexOf("{"))).rows.map(r => [r.t, r.k]));
   for (const o of named) {
     const id = o.id, nm = o.op === "rename" ? o.to : o.name, nk = NK.get(nm), a = A.get(id) || A.get(resolve(id));
@@ -515,4 +517,4 @@ end $$;
 commit;
 `);
 fs.writeFileSync(MIG, lines.join("\n"));
-console.log(`wrote ${path.relative(ROOT, MIG)} (${ops.length} steps)`);
+console.log(`wrote ${path.relative(ROOT, MIG).replace(/\\/g, "/")} (${ops.length} steps)`);

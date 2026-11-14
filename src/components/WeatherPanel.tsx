@@ -1,5 +1,6 @@
 import { C, wpPlaced, wpIs, ROUTE_GAP, RSL as SL, wpType, wpColor, wpGlyph, uElev, DLOCALE, uTemp, uWind, uPrecip, uSnowfall, uTempDelta } from "../../ClimbMatchCore.jsx";
 import { useState, useEffect } from "react";
+import { useWideScreen } from "../../lib/wideLayout.js";
 import type { CSSProperties } from "react";
 import { fetchForecastRaw, nwsHeightShiftF } from "../../lib/forecast";
 import CardHead from "./CardHead.tsx";
@@ -183,10 +184,13 @@ function pickForecastWaypoints(waypoints: WxWaypoint[] | null | undefined){
 }
 /* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
 export default function WeatherPanel({waypoints,showPlan,fallback,crag}: WeatherPanelProps){
+  /* ONE POINT AT A TIME ON THE WEBSITE (competitor review batch B, item 14, owner 2026-11-04): with three or four key points each carrying seven day tiles, the section ran four screens long; at 1024px+ a switch names the points (trailhead, camp, summit…) and the chosen one's week shows as a row of tiles — the table — with the others a click away. The phone keeps every point stacked. */
+  const wide=useWideScreen();const [ptSel,setPtSel]=useState(0);
   const _picked=crag?[]:pickForecastWaypoints(waypoints);
   const points=_picked.length||!fallback?_picked:[fallback];
   const [data,setData]=useState<Record<string,WxEntry>>({});
-  const [expandedDay,setExpandedDay]=useState<Record<string,string|null>>({});
+  /* HOURLY OPENS FOR EVERY DAY AT ONCE (owner, 2026-11-14: "When you click on hourly forecast, it should open up for all days at once"): one open/closed flag per point, so any day's button opens (or hides) the hour-by-hour list on all of that point's days together. */
+  const [hourlyOpen,setHourlyOpen]=useState<Record<string,boolean>>({});
   const key=points.map(function(w){return w.type+"_"+w.name;}).join("|");
   useEffect(function(){
     if(!points.length)return;
@@ -334,7 +338,8 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
      Reads from the shared WP_STYLE now, like everything else. */
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL>{crag?"Forecast at the crag":"Forecast at key points"}</SL>
-    <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
+    {wide&&!crag&&points.length>1?<div role="group" aria-label="Forecast point" style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{points.map(function(w,i){const on=i===Math.min(ptSel,points.length-1);const col=wpColor(wpType(w));return <button key={w.type+"_"+w.name} onClick={function(){setPtSel(i);}} aria-pressed={on} style={{display:"inline-flex",alignItems:"center",gap:6,padding:"7px 12px",borderRadius:16,border:"1px solid "+(on?C.blueDim:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}><span aria-hidden="true" style={{color:col,fontSize:12}}>{wpGlyph(wpType(w))}</span>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</button>;})}</div>:null}
+    <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{(wide&&!crag&&points.length>1?[points[Math.min(ptSel,points.length-1)]]:points).map(function(w){const k=w.type+"_"+w.name;const d=data[k];const allHourly=!!hourlyOpen[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
         <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
@@ -351,7 +356,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
         const diverges=nwsMid!=null&&Math.abs(nwsMid-omMid)>=6;
         const metMid=dy.met?(dy.met.hi+dy.met.lo)/2:null;
         const metDiverges=metMid!=null&&Math.abs(metMid-omMid)>=6;
-        const isExpanded=expDate===dy.date;
+        const isExpanded=allHourly;
         const condColor=wxCondColor(dy.wxCode);
         return <div key={dy.date} style={{flexShrink:0,width:272,display:"flex",flexDirection:"column",background:C.surface,borderRadius:12,padding:"12px 13px",border:"1px solid "+C.border,borderTop:"3px solid "+wxTempColor(dy.tempLo)}}>
           <div>
@@ -365,18 +370,18 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
           <div style={{fontSize:17,fontWeight:800,marginBottom:3}}><span style={{color:wxTempColor(dy.tempHi)}}>{"High "+uTemp(dy.tempHi)}</span><span style={{color:C.textMuted,fontWeight:600}}>{"  ·  "}</span><span style={{color:wxTempColor(dy.tempLo)}}>{"Low "+uTemp(dy.tempLo)}</span></div>
           <div style={{fontSize:11,fontWeight:frostbite?700:400,color:frostbite?C.red:chilly?C.blue:C.textMuted,marginBottom:10}}>{"Feels like: High "+uTemp(dy.feelsHi)+" · Low "+uTemp(dy.feelsLo)+(chilly?" (wind chill)":"")+(frostbite?" — frostbite risk in 30 min":"")}</div>
           {dy.parts.length?<div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:6,marginBottom:10}}>{dy.parts.map(function(p){return <div key={p.label} style={{background:C.card,borderRadius:9,padding:"7px 6px",border:"1px solid "+C.border}}>
-            <div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>{p.label}</div>
+            <div style={{fontSize:9,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>{p.label}</div>
             <div style={{display:"flex",alignItems:"center",gap:3,fontSize:9.5,color:C.textSub,marginBottom:5,minHeight:11,overflowWrap:"anywhere"}}><WeatherIcon code={p.wxCode} color={C.textMuted} size={11}/>{p.wx||"—"}</div>
             <div style={{fontSize:13.5,fontWeight:800,color:wxTempColor(p.temp)}}>{uTemp(p.temp)}</div>
             <div style={{fontSize:9,fontWeight:600,color:wxWindColor(p.wind),marginTop:2}}>{uWind(p.wind)+(p.dir?" "+p.dir:"")}</div>
             <div style={{fontSize:9.5,fontWeight:700,color:p.rain>0?C.blue:C.textMuted,marginTop:3}}>{p.rain==null?"Rain —":p.rain>0?uPrecip(p.rain)+(p.pop!=null?" · "+p.pop+"%":""):"No rain"+(p.pop?" · "+p.pop+"%":"")}</div>
           </div>;})}</div>:null}
           <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:diverges||metDiverges?10:0}}>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWind(dy.gustMax)+", any hour"}</div>:null}</div>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.precipIn>0?C.blue:C.text}}>{dy.precipIn>0?uPrecip(dy.precipIn):"None"}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{dy.popMax+"% chance"+rainMostly(dy)}</div></div>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>UV index</div><div style={{fontSize:13,fontWeight:800,color:wxUvColor(dy.uvMax)}}>{dy.uvMax}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{wxUvLabel(dy.uvMax)}</div></div>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{uElev(dy.freezeMax)}</div></div>
-            {hasSnow?<div style={{gridColumn:"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>Snow expected</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{uSnowfall(dy.snowIn)}</div></div>:null}
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWind(dy.gustMax)+", any hour"}</div>:null}</div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.precipIn>0?C.blue:C.text}}>{dy.precipIn>0?uPrecip(dy.precipIn):"None"}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{dy.popMax+"% chance"+rainMostly(dy)}</div></div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>UV index</div><div style={{fontSize:13,fontWeight:800,color:wxUvColor(dy.uvMax)}}>{dy.uvMax}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{wxUvLabel(dy.uvMax)}</div></div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{uElev(dy.freezeMax)}</div></div>
+            {hasSnow?<div style={{gridColumn:"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:9,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.4}}>Snow expected</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{uSnowfall(dy.snowIn)}</div></div>:null}
           </div>
           {diverges||metDiverges?<div style={{display:"flex",flexDirection:"column",gap:5}}>
             {diverges?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>NWS</span><span style={{color:C.amber,lineHeight:1.4}}>{"High "+uTemp((dy.nws as NonNullable<WxDay["nws"]>).hi)+" · Low "+uTemp((dy.nws as NonNullable<WxDay["nws"]>).lo)+" — differs "+uTempDelta(Math.abs(nwsMid-omMid))+"°"+(Math.abs((dy.nws as NonNullable<WxDay["nws"]>).adj)>=1?" · adjusted "+uTempDelta(Math.abs((dy.nws as NonNullable<WxDay["nws"]>).adj))+"° "+((dy.nws as NonNullable<WxDay["nws"]>).adj<0?"colder":"warmer")+" for this height":"")}</span></div>:null}
@@ -384,7 +389,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
           </div>:null}
           </div>
           {dy.hours&&dy.hours.length?<div style={{marginTop:"auto",paddingTop:10}}>
-          <button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} aria-expanded={isExpanded} style={{minHeight:44,width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:isExpanded?"#fff":C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ":"Hourly forecast "}<Chevron inline open={isExpanded} size={12} color={C.blue}/></button>
+          <button onClick={function(){setHourlyOpen(function(p){const o=Object.assign({},p);o[k]=!isExpanded;return o;});}} aria-expanded={isExpanded} style={{minHeight:44,width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:isExpanded?"#fff":C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ":"Hourly forecast "}<Chevron inline open={isExpanded} size={12} color={C.blue}/></button>
           {isExpanded?<div>
             <div style={{marginTop:8,maxHeight:380,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=typeof hh.tempF==="number"?Math.round(hh.tempF):null,wm=typeof hh.windMph==="number"?Math.round(hh.windMph):null,gm=typeof hh.gustMph==="number"?Math.round(hh.gustMph):null;return <div key={hi} style={{padding:"8px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none"}}>
               <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:62,flexShrink:0,fontSize:15,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflowWrap:"anywhere"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span></div>

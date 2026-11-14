@@ -1,0 +1,43 @@
+{
+ "tn_transformer_boulder": {
+  "_expect": {"name": "Transformer Boulder", "region": "Tennessee"},
+  "blurb": "Transformer Boulder is one of the bigger blocks in the Lilly Boulders field of the Obed country, east of Wartburg, towards the far end of the field and facing the Basement Boulder. It holds 17 lines, nearly all of them bouldering. The grade spread is wide: a good handful of easy problems from VB through V3 make it friendly to newer boulderers, while a smaller group climbs from V5 up into the V9 range for people chasing something hard. A single trad crack also lives here. The surrounding field is sandstone and tends to be shady, so it stays workable when the heat shuts down other Tennessee crags.",
+  "review": {"sources": ["https://mountainproject.com/area/110966835/transformer-boulder", "https://www.mountainproject.com/area/108541475/lilly-boulders"]}
+ },
+ "tn_north_face": {
+  "_expect": {"name": "North Face", "region": "Tennessee"},
+  "blurb": "The North Face is the tallest section of the Devil's Race Track, a pair of rock fins beside the interstate near Caryville, and it is the first wall you meet after the gully. The 17 routes here are mostly bolted: about fourteen sport lines, a couple of trad leads and one mixed route. Grades start around 5.8 and reach the low 5.12s, but the bulk sits between 5.10 and 5.11, so it suits climbers comfortable on steady, sustained leads. Some lines run two pitches. Climbing starts at the left side of the main spire and the wall gradually shrinks as you work uphill.",
+  "review": {"sources": ["https://www.mountainproject.com/area/125751115/north-face", "https://mountainproject.com/area/106750649/devils-race-track"]}
+ },
+ "tn_north_clear_creek_sub_area": {
+  "_expect": {"name": "North Clear Creek Sub Area", "region": "Tennessee"},
+  "blurb": "This is the section of North Clear Creek, in the Obed country, that you reach by following the trail down and left from the car park. Big roofs define it, and the overhanging ground makes it a handy place for a rainy-day session. It has 17 routes, split almost evenly between trad (nine) and sport (eight). Grades run from 5.6 to the low 5.13s, with most of the climbing in the 5.11 and 5.12 range, so it leans toward strong, experienced climbers; only a few easy lines are on offer. North Clear Creek overall is the quieter neighbour of South Clear Creek.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106090469/north-clear-creek-sub-area", "https://www.mountainproject.com/area/105891989/north-clear-creek"]}
+ },
+ "tn_balcony_the": {
+  "_expect": {"name": "Balcony, The", "region": "Tennessee"},
+  "blurb": "The Balcony is a sector of South Clear Creek in the Obed, found by continuing along the trail past the Stephen King Library. It is a slab-like face looking toward the trail, with an obvious rectangular hole in the wall and views out over the Clear Creek and Obed rivers. Of its 17 routes, fifteen are sport and two are trad. Grades run from 5.8 to 5.12, with the weight at 5.11 and 5.12, though a few approachable 5.8 to 5.10 lines make it a decent stop for mid-grade climbers. South Clear Creek is a busy, popular area that gets hot in summer and is best in winter.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106065051/the-balcony", "https://mountainproject.com/area/106065022/south-clear-creek", "https://www.mountainproject.com/route/106068973/best-seat-in-the-house"]}
+ },
+ "tn_tea_and_crumpets_wall": {
+  "_expect": {"name": "Tea and Crumpets Wall", "region": "Tennessee"},
+  "blurb": "Tea and Crumpets Wall is a Deep Creek crag near Chattanooga, a short stroll past the Main Wall on the Cumberland Trail. Most of Deep Creek is steep and hard, but this wall is the place for moderates: sixteen of its 17 climbs are sport, plus one trad line, running from 5.7 up to 5.12. There are several 5.7 to 5.9 routes for warming up, a solid block of 5.10s, and harder 5.11 and 5.12 lines, especially toward the right side. It also works for volume days or for bringing newer leaders. It catches morning sun and goes into shade in the afternoon.",
+  "review": {"sources": ["https://mountainproject.com/area/118159522/tea-and-crumpets-wall", "https://www.mountainproject.com/route/107162841/within-sight"]}
+ },
+ "tn_squeeze_ledge": {
+  "_expect": {"name": "Squeeze Ledge", "region": "Tennessee"},
+  "blurb": "Squeeze Ledge is a tucked-away ledge in North Clear Creek, in the Obed, sitting between Rasputin and the Great Roof. It is not easy to find: you climb an easy ledge and wriggle through a body-width squeeze to a secluded terrace. The wall has a mix of sport and trad, nine sport and eight trad in all, from about 5.7 to 5.12. Roughly half the routes fall at 5.11, with a few easier lines in the 5.7 to 5.9 range. Expect heat in the afternoon, and take care of loose rock, since rockfall is still a concern even after cleaning.",
+  "review": {"sources": ["https://mountainproject.com/area/107586706/squeeze-ledge", "https://www.mountainproject.com/area/105891989/north-clear-creek"]}
+ },
+ "tn_monterey_crag": {
+  "_expect": {"name": "Monterey Crag", "region": "Tennessee"},
+  "blurb": "Monterey Crag is a short, shady sport crag at the edge of the town of Monterey on the Cumberland Plateau. It holds about sixteen climbs, nearly all of them bolted sport routes, plus one boulder problem. Routes are short, and the range stretches from 5.6 to 5.12, with the most weight at 5.10 and 5.11. A couple of easy lines make it fine for a quick warm up, while the harder routes need good fingers. The hike is easy, with wooden ladders at the bluff to reach the base, and the crag sees few visitors.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119952227/monterey-crag", "https://www.mountainproject.com/route/119953487/bam-bam"]}
+ },
+ "_skipped": {
+  "tn_1_cibola": "only a general Tennessee Wall page that lists Cibola with no detail; no fetched page about Cibola itself (searched twice)"
+ },
+ "_conflicts": {
+  "tn_balcony_the": "stored rock is conglomerate but the Obed's cliffs are described as Cumberland Plateau sandstone: https://www.mountainproject.com/area/105891970/obed-clear-creek ; blurb names no rock"
+ }
+}

@@ -23,6 +23,7 @@
 // Portalled to document.body: #appscroll is a permanent stacking context beneath
 // the header's zIndex 30, so a position:fixed overlay rendered inside it paints
 // under the chrome no matter what z-index it asks for (see check:overlay-portals).
+import { tx } from "./tapWords.js";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
@@ -406,7 +407,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     </button>
   );
 
-  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub };
+  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label };
 
   return createPortal(
     <div role="dialog" aria-label="Fire map" onClick={e => { if (e.target === e.currentTarget) onClose(); }}
@@ -558,7 +559,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           {!show.fires ? (
             <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>
               The Fires layer is turned off.
-              <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>Tap “Fires” on the map to list active wildfires again.</div>
+              <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>{tx("Tap “Fires” on the map to list active wildfires again.")}</div>
             </div>
           ) : null}
 
@@ -710,7 +711,7 @@ function FireAlertSheet({ zone, onClose, C, locale }) {
                 {d.headline ? <div style={{ fontSize: 13, fontWeight: 700, color: C.text, lineHeight: 1.45 }}>{d.headline}</div> : null}
                 {d.areaDesc ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>{d.areaDesc}</div> : null}
                 {d.description ? <div style={para}>{d.description}</div> : null}
-                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
+                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
               </>
             )}
           <a href={nwsPointPage(zone.pt)} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, fontWeight: 700, color: C.blue, textDecoration: "none", marginTop: 4 }}>Forecast and alerts for this area on weather.gov →</a>

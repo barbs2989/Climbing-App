@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // Does ConsensusPanel actually SAY the read failed, rather than "No reports yet"?
 //
 // `check:outage` cannot answer this: it spawns plain vite with no overlay scaffold, so `?zr=1` is
@@ -13,7 +14,7 @@
 import { build } from "esbuild";
 import path from "path"; import os from "os"; import fs from "fs";
 import { createRequire } from "module";
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "../..");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";

@@ -1,0 +1,57 @@
+{
+  "area_id": "wa_reynolds_peak",
+  "routes": [
+    {
+      "route_id": "wa_reynolds_peak_scramble",
+      "season": {
+        "months": [6, 7, 8, 9, 10],
+        "window": "Jun-Oct",
+        "evidence": "Stored Jun-Oct, best mid-Jul-Sep. Web search (Mountaineers route/trip reports, Summitpost, Wenatchee Outdoors) shows June snow-assisted ascents and summer/fall snow-free scrambles; May ascents are snow climbs. Logged-route histogram for the Reynolds Creek names peaks Jun-Jul and Sep."
+      },
+      "track": {
+        "aid": "872146",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Only one route is stored on the peak. Logged route South Fork Reynolds Creek, start/end trailhead Reynolds Creek TH (19 m / 9 m from our pin); the report describes the Reynolds Creek trail, the crossing to the South Fork drainage, the upper basin and the summit block, which is our route's described line. Summited Sep 24 (in season). Round trip; the only mechanical failure is our summit pin, which is 320 m from where every track tops out (see pins)."
+      },
+      "otherTracksConsidered": [
+        { "aid": "1180131", "verdict": "same", "why": "Also South Fork Reynolds Creek from Reynolds Creek TH, Jun 23 2019, summited, round trip; equally valid, thinner report than 872146." },
+        { "aid": "2535107", "verdict": "same", "why": "Reynolds Creek approach, Jun 8 2024; report names the confluence crossing and South Fork valley. Track has no coordinates in the packet." },
+        { "aid": "2534940", "verdict": "same", "why": "Reynolds Creek route Jun 8 2024, starts ~400 m from our pin (road walk because of a blocked road); valid but not mechanically complete." },
+        { "aid": "2520555", "verdict": "same", "why": "Reynolds Creek TH, May 26 2024: one month before the stored window opens (snow climb); kept as a backup only." },
+        { "aid": "1932172", "verdict": "same", "why": "S Reynolds Cr, Jun 1 2022, no report text; valid backup." },
+        { "aid": "3350395", "verdict": "different", "why": "Sep 18 2026: up Reynolds Creek, but exits via the Williams Lake route (not a round trip on our line)." },
+        { "aid": "3384620", "verdict": "different", "why": "Starts at the Williams Creek side (about 1.4 km east of our trailhead pin), Oct 2026; Williams Lake approach, not Reynolds Creek." },
+        { "aid": "3265036", "verdict": "different", "why": "Williams trail approach (east trailhead), Jul 2026." },
+        { "aid": "3252864", "verdict": "different", "why": "Williams Butte link-up, Jul 2026." },
+        { "aid": "3005409", "verdict": "different", "why": "Williams Lake to SE slope, Oct 2025." },
+        { "aid": "3223086", "verdict": "different", "why": "Williams Creek via War Creek ridge and Williams Butte link-up, Jun 2026." },
+        { "aid": "1484597", "verdict": "different", "why": "Williams Creek route, Jun 2020." },
+        { "aid": "1914599", "verdict": "different", "why": "East Cirque, May 8 2022: off-season by more than a month and a different line." },
+        { "aid": "1283614", "verdict": "offseason", "why": "Nov 23 2019 SE face, one-way, outside the window." },
+        { "aid": "1586807", "verdict": "offseason", "why": "Jan 30 2021 winter ski ascent." }
+      ],
+      "pins": [
+        {
+          "type": "Summit",
+          "action": "move",
+          "lat": 48.372291,
+          "lng": -120.562985,
+          "name": "Reynolds Peak (true/south summit)",
+          "evidence": "Peakbagger lidar summit coordinate 48.372291,-120.562985; 14 of 14 summited tracks top out within about 15 m of it (48.37226-48.37239, -120.56262 to -120.56321). Our pin 48.37375,-120.567037 is ~330 m northwest of that spot and every track misses it by 320-370 m.",
+          "confirmedBy": "Peakbagger peak page pid 1945 (packet peakbagger block) and the highest points of the harvested tracks"
+        }
+      ],
+      "facts": [
+        { "field": "monthBreakdown", "month": 6, "text": "In early June the creek basin still carries firm snow from roughly 5,800 ft up, the summit block itself can already be bare, and meltwater is plentiful; a glissade back to camp is possible but the thin snow punches through beside rocks.", "aids": ["2534940", "2535107"] },
+        { "field": "watch_out", "month": 6, "text": "Early-June glissade down the basin: soft snow over buried rock and small trees punches through (Jun).", "aids": ["2535107", "2534940"] },
+        { "field": "what_to_bring", "month": 6, "text": "Ice axe (early June, for the basin snow and summit-block approach)", "aids": ["2534940", "2535107"] },
+        { "field": "pro_tips", "month": 6, "text": "At the head of the South Fork valley, take the right-hand of the two gullies above ~5,800 ft and stay on its right flank among trees and rock bands to a flat basin near 6,700 ft.", "aids": ["2535107"] },
+        { "field": "pro_tips", "month": 6, "text": "A snow-free flat camp exists on a prominence near 6,700-6,800 ft in the basin by early June, and water there is abundant while snow lasts.", "aids": ["2534940", "2535107"] },
+        { "field": "watch_out", "month": 9, "text": "By September the lower valley is the worst of the route: fallen burnt timber and thick brush mean wearing long pants; leaving the basin earlier is easier than forcing the cliff bands directly above it.", "aids": ["872146"] }
+      ]
+    }
+  ],
+  "notes": "Summit pin is the finding: our Summit waypoint sits ~330 m off the peak's surveyed top, which is why no track passes the mechanical 300 m summit test. The packet lists only one route, but many reports (Jun-Jul 2020-2026, Oct 2025) use the Williams Creek / Williams Lake approach (trailhead near 48.398,-120.469, about 22-24 mile round trips) and the 2026 reports call it better than the Reynolds Creek trail; that looks like a second approach or route we do not hold. Pins at 48.4056,-120.4897 (Reynolds Creek TH) match where seven tracks start, so no trailhead change is proposed."
+}

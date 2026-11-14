@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // Apply migration 0251 to the LIVE database in pieces the SQL gateway can finish.
 //
 // Why: 0251 moves ~1,800 climbs, and three per-row triggers on routes (route counts, area disciplines,
@@ -17,7 +19,7 @@
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "../..");
 const M = path.join(ROOT, "supabase/migrations/0251_fold_sort_label_duplicate_areas.sql");
 const OUT = path.join(ROOT, ".scratch/0251");
 const s = fs.readFileSync(M, "utf8");
@@ -59,7 +61,7 @@ for (const [i, [name]] of pieces.entries()) {
   const file = path.join(OUT, `${String(i + 1).padStart(2, "0")}-${name.replace(/\W+/g, "_")}.sql`);
   let out = "";
   for (let t = 0; t < 2 && !out.includes('"rows"'); t++) {
-    try { out = execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", file], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 26, stdio: ["ignore", "pipe", "pipe"] }); }
+    try { out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-f", file], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 26, stdio: ["ignore", "pipe", "pipe"] }); }
     catch (e) { out = String(e.stdout || "") + String(e.stderr || ""); console.log(`  ${name}: attempt ${t + 1} failed — ${out.replace(/\s+/g, " ").slice(0, 240)}`); }
   }
   if (!out.includes('"rows"')) {

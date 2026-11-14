@@ -7,14 +7,14 @@
 // draws no recorded track today; anything else must be a complete round trip.
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const { assessTrack, haversineM } = await import("./rule.mjs");
-const { recordedTrackPts } = await import(`${REPO}/lib/track.js`);
+const { recordedTrackPts } = await import(pathToFileURL(path.join(REPO, "lib/track.js")).href);
 const GPX_DIR = process.env.FKT_GPX_DIR || null;
-const { SUPABASE_URL, anonKey, headers, patchRow } = await import(`${REPO}/scripts/lib/supabase-env.mjs`);
+const { SUPABASE_URL, anonKey, headers, patchRow } = await import(pathToFileURL(path.join(REPO, "scripts/lib/supabase-env.mjs")).href);
 
-const here = path.dirname(new URL(import.meta.url).pathname);
+const here = path.dirname(fileURLToPath(import.meta.url));
 const decisions = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
 const WRITE = process.argv.includes("--write");
 const PACE_MS = 1000;
@@ -104,7 +104,9 @@ for (const d of decisions) {
   // not a recording (audit-recorded.mjs) — so an athlete's recorded round trip replaces it
   if (!d.replaceDrawn && drawn && assessTrack(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already complete`); continue; }
   // owner 2026-10-30: skip ONLY a stored track that is complete or already runs trailhead -> summit
-  if (d.tier === "oneway" && drawn && oneWay(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already runs trailhead -> summit`); continue; }
+  // ...and replaceDrawn covers a one-way DRAWN line too (Old Snowy 2026-11-04: 976 points all on a zoom-16
+  // map's pixel grid, no elevations) — the route map line is a recorded track or nothing
+  if (!d.replaceDrawn && drawn && oneWay(drawn.map(p => [p[0], p[1]]), row.waypoints || []).complete) { console.log(`SKIP ${d.id}: stored track already runs trailhead -> summit`); continue; }
   const xml = fs.readFileSync(path.join(GPX_DIR || path.join(here, "gpx"), d.slug + ".gpx"), "utf8");
   const raw = parseGpx(xml);
   if (raw.length < 2) throw new Error(`${d.id}: ${d.slug} has no track points`);

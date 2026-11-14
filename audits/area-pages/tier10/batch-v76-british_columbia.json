@@ -1,0 +1,24 @@
+{
+ "bc_yak_peak": {
+  "_expect": {"name": "Yak Peak", "region": "British Columbia"},
+  "blurb": "Yak Peak is a big granite summit in the Anderson River Group, close to the Coquihalla Highway north of Hope. The climbing is mostly long, multi-pitch traditional lines with an alpine flavour, plus a couple of aid routes, on faces that give around 500 metres of vertical. Grades mostly sit between 5.8 and 5.11, with the bulk at 5.8 to 5.9 and a handful of harder lines. Rock quality varies: some stretches are clean and excellent, while others are loose and crumbly, so expect to test holds. It suits parties comfortable with long days, route-finding and self-protected climbing rather than beginners looking for short pitches.",
+  "review": {"sources": ["https://www.mountainproject.com/v/yak-peak/106516402", "https://en.wikipedia.org/wiki/Yak_Peak"]}
+ },
+ "bc_lily_pad_lane": {
+  "_expect": {"name": "Lily Pad Lane", "region": "British Columbia"},
+  "blurb": "Lily Pad Lane is a small bolted wall in the creek canyon of Cypress Falls Park in West Vancouver, a short way upstream from the Cougar Crag wall. It holds around fifteen sport routes on two separate walls, most of them short at roughly 12 to 15 metres with five or six bolts. Grades run from 5.11 into 5.13, with most in the 5.12 range, so this is a spot for strong climbers rather than beginners. The lines are steep and powerful. Seepage often dampens the first couple of bolts, so a stick-clip helps, and small pads are placed under the routes. The canyon stays cool, which suits hot days.",
+  "review": {"sources": ["https://mountainproject.com/area/125154275/lily-pad-lane", "https://sendage.com/area/lily-pad-lane-cypress-falls-park-vancouver-bc-canada"]}
+ },
+ "bc_nesakwatch_spires": {
+  "_expect": {"name": "Nesakwatch Spires", "region": "British Columbia"},
+  "blurb": "The Nesakwatch Spires are a pair of alpine rock towers on the crest of the Western Chilliwack Range, above the Chilliwack valley. The climbing is entirely traditional and alpine, from easy fifth-class ridges up through moderate cracks to hard multi-pitch lines around 5.11. Fifteen routes are recorded, with the grades spread fairly evenly from 5.6 to 5.11. The rock is solid and the routes are short but airy, with a remote, quiet feel. The classic outing links the two spires, often with neighbouring Mount Rexford. Expect a long, steep slog to the basin, where flat boulders offer bivouac spots, so most parties go in prepared to camp.",
+  "review": {"sources": ["https://mountainproject.com/area/113544586/nesakwatch-spires", "https://alpinebaking.com/?p=211"]}
+ },
+ "_skipped": {
+  "bc_commonwealth": "could not fetch a page about the crag itself (forum threads returned 503, thecrag 403); only a parent Murrin Park page",
+  "bc_main_wall_6": "could not fetch any page about Comox Lake Main Wall; Main Wall pages found were other regions",
+  "bc_the_corridor_2": "could not fetch a page about the Skaha Corridor itself (MP URL resolved to Colorado, thecrag 403); only the Fortress parent page",
+  "bc_the_hideout": "only one fetched page about the crag; MP Hideout URL was Wyoming, others did not mention it",
+  "bc_easter_island": "only one fetched page about the crag; parent Skaha page does not mention it"
+ }
+}

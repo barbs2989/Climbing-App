@@ -1,0 +1,31 @@
+{
+ "ab_ha_ling": {
+  "_expect": { "name": "Ha Ling", "region": "Alberta" },
+  "blurb": "Ha Ling is the big north and northeast wall of a peak overlooking Canmore in the Bow Valley, roughly 550 m from base to top. Nearly all of the eleven routes here are traditional lines, with a single bolted line mixed in. Difficulty runs from mellow fifth class in the 5.6 range up to a couple of 5.12 pitches, with a few 5.10 and 5.11 climbs in between. The limestone is a mix: some stretches are solid, others are loose and dirty, so this is a committing alpine-style day with a full rack rather than a quick crag visit. Expect long routes, real exposure and a scree slog to get started, and plan for rockfall and changeable mountain weather.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105928943/ha-ling", "https://gripped.com/?p=12203"] }
+ },
+ "ab_hermit_wall": {
+  "_expect": { "name": "Hermit Wall", "region": "Alberta" },
+  "blurb": "Hermit Wall is a limestone sport wall in the Grassi Lakes zone, a short drive above Canmore in the Bow Valley. All eleven routes are bolted single pitches, and the grades sit squarely in the 5.10 and 5.11 range, with the larger share at 5.11, so it suits climbers already comfortable leading around that level. The rock is smooth in places with sharp crimps and pockets. It is a short walk from the Grassi Lakes lot, and the wall is described as seeing few climbers compared with its neighbours, which can make for a quiet day.",
+  "review": { "sources": ["https://www.mountainproject.com/area/110393394/hermit-wall", "https://app.advcollective.com/climbing/cry-wolf-sport-climbing-on-hermit-walls-right-edge"] }
+ },
+ "ab_bunny_hill": {
+  "_expect": { "name": "Bunny Hill", "region": "Alberta" },
+  "blurb": "Bunny Hill is a low-angle limestone wall in Heart Creek canyon, east of Canmore in the Bow Valley. It is one of the gentler walls in a canyon better known for steeper 5.10 and 5.11 lines. Of the eleven routes, ten are bolted sport climbs and one is an aid line. Most of the sport routes fall between 5.9 and 5.10, with one easy outing near the bottom of the scale and a single 5.11 at the top end. The slabby character and the trailside position, right before the canyon narrows near a waterfall, make it a popular warm-up spot or a good choice for newer leaders. Heart Creek gets busy on summer weekends.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111007902/bunny-hill", "https://mountainproject.com/area/107142418/heart-creek"] }
+ },
+ "ab_waterfall_wall": {
+  "_expect": { "name": "Waterfall Wall", "region": "Alberta" },
+  "blurb": "Waterfall Wall is a sport crag deep in Heart Creek canyon, east of Canmore in the Bow Valley. All eleven routes are bolted single pitches in the 5.10 and 5.11 range, with the harder grade making up the majority, so it is aimed at confident leaders rather than beginners. The wall catches little direct sun, which makes it a relief on hot days, though damp rock at the base of some lines is common. It sits farther up the canyon than most of the other walls, and the canyon as a whole draws crowds on summer weekends and is rarely visited for rock climbing in winter.",
+  "review": { "sources": ["https://sendage.com/area/waterfall-wall-heart-creek-ab-canada", "https://mountainproject.com/area/107142418/heart-creek"] }
+ },
+ "_skipped": {
+  "ab_kootenay_plains": "no fetched page about the crag itself (MP Nordegg parent page only; thecrag fetch 403)",
+  "ab_made_in_the_shade_left_side_near_crowbar": "only the parent Cougar Canyon page fetched; rockclimbing.com unreachable, no page about this crag",
+  "ab_northern_shield_right_side": "no page found describing this crag",
+  "ab_bellavista": "no page about the crag itself; Echo Canyon parent page only mentions it in approach directions"
+ },
+ "_conflicts": {
+  "ab_hermit_wall": "Stored aspect N and Mountain Project's all-day shade (https://www.mountainproject.com/area/110393394/hermit-wall) disagree with one route page calling the right edge south facing with afternoon sun (https://app.advcollective.com/climbing/cry-wolf-sport-climbing-on-hermit-walls-right-edge)"
+ }
+}

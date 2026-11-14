@@ -1,0 +1,117 @@
+{
+ "ut_mile_385_area": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ut_notch_the": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ut_schoolroom_area_2": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ut_south_face": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ut_underworld": {
+  "verdict": "unsure",
+  "why": "MP says columnar basalt (https://www.mountainproject.com/area/106025053/underworld); second domain not fetchable (summitpost 403). Stored sandstone likely wrong."
+ },
+ "ut_watchtower_main": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "ut_zen_wall": {
+  "verdict": "unsure",
+  "why": "MP says sandstone (https://www.mountainproject.com/area/106697013/zen-wall); only one fetched source, snippet mentions some conglomerate at south end."
+ },
+ "va_big_shot": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Big Shot",
+   "region": "Virginia"
+  },
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://tehcc.org/wiki/Guest_River_Gorge",
+    "https://dwr.virginia.gov/vbwt/sites/guest-river-gorge-trail"
+   ]
+  },
+  "why": "Guest River Gorge cliffs are sandstone, not shale."
+ },
+ "va_hidden_roofs": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "va_lodges": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Lodges",
+   "region": "Virginia"
+  },
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://www.breakspark.com/rock-climbing",
+    "https://mountainproject.com/area/111742350/breaks-interstate-park"
+   ]
+  },
+  "why": "Breaks climbing is Appalachian sandstone, not shale."
+ },
+ "va_lower_lodges": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Lower Lodges",
+   "region": "Virginia"
+  },
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://www.breakspark.com/rock-climbing",
+    "https://mountainproject.com/area/111742350/breaks-interstate-park"
+   ]
+  },
+  "why": "Breaks climbing is Appalachian sandstone, not shale."
+ },
+ "va_tunnel_turret_wall": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Tunnel Turret Wall",
+   "region": "Virginia"
+  },
+  "rock": "sandstone",
+  "review": {
+   "sources": [
+    "https://tehcc.org/wiki/Guest_River_Gorge",
+    "https://dwr.virginia.gov/vbwt/sites/guest-river-gorge-trail"
+   ]
+  },
+  "why": "Guest River Gorge cliffs are sandstone, not shale."
+ },
+ "vt_pisgah_crag": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "wa_x_world_wall_ii": {
+  "verdict": "keep",
+  "why": "Synonym, finer classification, ambiguous aspect/parking, or sources silent; stored value stands."
+ },
+ "wv_entrance_walls": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Entrance Walls.",
+   "region": "West Virginia"
+  },
+  "rock": "limestone",
+  "review": {
+   "sources": [
+    "https://potomacmountainclub.org/climbing-crags-beta/smokehole/",
+    "https://en.wikipedia.org/wiki/Smoke_Hole_Canyon"
+   ]
+  },
+  "why": "Smoke Hole Canyon climbing is limestone, not sandstone."
+ }
+}

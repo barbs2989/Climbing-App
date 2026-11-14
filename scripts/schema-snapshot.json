@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-31",
+  "generatedAt": "2026-11-14",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -18,6 +18,18 @@
       "set_by",
       "status",
       "until",
+      "user_id"
+    ],
+    "app_errors": [
+      "build",
+      "component_stack",
+      "created_at",
+      "id",
+      "kind",
+      "message",
+      "path",
+      "stack",
+      "user_agent",
       "user_id"
     ],
     "app_feedback": [
@@ -65,17 +77,10 @@
       "rock",
       "rock_basis",
       "route_count",
-      "season_months"
-    ],
-    "belay_catches": [
-      "belayer_id",
-      "climb_log_id",
-      "climber_id",
-      "created_at",
-      "date_occurred",
-      "description",
-      "filed_by",
-      "id"
+      "season_months",
+      "walkin_gpx",
+      "walkin_kind",
+      "walkin_submission_id"
     ],
     "blocked_users": [
       "blocked",
@@ -274,6 +279,16 @@
       "status",
       "value"
     ],
+    "conversation_state": [
+      "archived_at",
+      "cleared_before",
+      "kind",
+      "marked_unread",
+      "muted_until",
+      "target_id",
+      "updated_at",
+      "user_id"
+    ],
     "crew_day_acks": [
       "crew_id",
       "date",
@@ -298,6 +313,7 @@
       "created_by",
       "dates",
       "discipline",
+      "held_count",
       "id",
       "route_id"
     ],
@@ -407,6 +423,7 @@
       "admin_notes",
       "approved_at",
       "approved_by",
+      "area_id",
       "climb_date",
       "climber_email",
       "climber_name",
@@ -417,6 +434,7 @@
       "issues",
       "notes",
       "quality_score",
+      "replaced_gpx",
       "route_id",
       "status",
       "submitted_at",
@@ -974,13 +992,6 @@
       "created_at",
       "user_id"
     ],
-    "saved_searches": [
-      "created_at",
-      "id",
-      "name",
-      "query",
-      "user_id"
-    ],
     "screening_terms": [
       "category",
       "term"
@@ -1000,6 +1011,7 @@
     "topos": [
       "alt",
       "area_id",
+      "area_photo",
       "caption",
       "created_at",
       "created_by",

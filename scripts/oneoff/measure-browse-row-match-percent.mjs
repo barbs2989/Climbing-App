@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 /* Does the partner-browse row EVER show a match percentage for a real climber?
  *
  * RealClimberRow computes `_unk = compatUnknown(ME, _cand)` and renders
@@ -47,7 +48,7 @@ fs.mkdirSync(out, { recursive: true });
 const entry = path.join(out, "entry.jsx");
 fs.writeFileSync(entry, 'export { compatUnknown, compat } from "' + path.join(ROOT, "ClimbMatchCore.jsx") + '";\n');
 const bundle = path.join(out, "core.mjs");
-execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node",
+execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node",
   "--jsx=automatic", "--loader:.jsx=jsx", "--external:react", "--external:react-dom",
   "--external:@tanstack/react-query", "--define:import.meta.env={}", "--outfile=" + bundle],
   { cwd: ROOT, stdio: ["ignore", "ignore", "pipe"] });

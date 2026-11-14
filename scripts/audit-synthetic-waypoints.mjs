@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Are a route's waypoints REAL positions, or points spaced along a straight line?
 //
 // `wa_castle_peak_pasayten_scramble` pins "Lightning Creek Trail Junction" at 1,500 ft — on a
@@ -50,7 +51,7 @@
 import { readFileSync } from "node:fs";
 import { longestArithmeticRun } from "../lib/track.js";
 
-const root = new URL("..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("..", import.meta.url));
 const env = {};
 for (const f of [".env.local", ".env"]) {
   try { for (const l of readFileSync(root + f, "utf8").split("\n")) {

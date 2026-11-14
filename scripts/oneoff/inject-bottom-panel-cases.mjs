@@ -32,7 +32,7 @@ const SPACER = 'const on=section===x[0];';
 
 const CASES = [
   ["1  THE REAL REVERT — reservation dropped, flag kept", "ClimbMatch.jsx",
-    ',paddingBottom:_needsPolicy&&policyH?policyH:undefined}}>', '}}>',
+    ',paddingBottom:_needsPolicy&&policyH?policyH:undefined,', ',',
     true, "reserves no space"],
   ["2  a second bottom-anchored fixed panel, undeclared", "ClimbMatchCore.jsx",
     SPACER, SPACER + 'const _c2=<div style={{position:"fixed",left:0,right:0,bottom:0,height:40}}/>;void _c2;',
@@ -40,7 +40,7 @@ const CASES = [
   ["3  MUST PASS — a full-screen overlay is out of scope", "ClimbMatchCore.jsx",
     SPACER, SPACER + 'const _c3=<div style={{position:"fixed",left:0,right:0,top:0,bottom:0}}/>;void _c3;',
     false, null],
-  ["4  the declared panel's style renamed -> STALE, not silent", "ClimbMatchCore.jsx",
+  ["4  the declared panel's style renamed -> STALE, not silent", "src/components/PolicyUpdateNotice.tsx",
     'position:"fixed",left:0,right:0,bottom:0,zIndex:z', 'position:"fixed",right:0,left:0,bottom:0,zIndex:z',
     true, "STALE declaration"],
   ["5  style vocabulary broken -> fails on the floor", "scripts/check-bottom-panels.mjs",

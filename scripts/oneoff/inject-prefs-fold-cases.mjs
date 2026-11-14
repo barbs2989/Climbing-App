@@ -25,7 +25,7 @@ const CASES = [
   { name: "guard-removed-from-the-shared-core", file: "lib/prefs.js", expect: "fail",
     find: "    try {\n      const v = localStorage.getItem(key);\n      return valid.indexOf(v) >= 0 ? v : dflt;\n    } catch {\n      // Includes the ReferenceError when `localStorage` does not exist at all (node, SSR).\n      return dflt;\n    }",
     repl: "    const v = localStorage.getItem(key);\n    return valid.indexOf(v) >= 0 ? v : dflt;",
-    says: /survives having no localStorage|localStorage is not defined/ },
+    says: /survives having no localStorage|localStorage is not defined|threw with no localStorage/ },
   // Validating only on write trusts whatever is already stored, and "" is the reachable junk.
   { name: "read-stops-validating", file: "lib/prefs.js", expect: "fail",
     find: "      return valid.indexOf(v) >= 0 ? v : dflt;", repl: "      return v === null ? dflt : v;",

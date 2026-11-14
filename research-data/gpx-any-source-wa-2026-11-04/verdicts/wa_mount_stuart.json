@@ -1,0 +1,108 @@
+{
+  "area_id": "wa_mount_stuart",
+  "routes": [
+    {
+      "route_id": "wa_mount_stuart_west_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Logged West Ridge ascents peak Jul-Sep (20/36/12 of 78); Mountaineers and trip pages favor dry rock mid-summer into mid-September; stored Jun-Sep, June has residual snow." },
+      "track": { "aid": "2628422", "verdict": "same", "kind": "complete", "inSeason": true,
+        "why": "Logged 'W ridge' on 2024-08-31 from the Esmeralda trailhead (start 52 m, end 46 m from our pin), summit 1 m from our pin. The report describes the West Ridge in detail (Longs Pass-side approach, the ledge traverse, the notch, the Anvil, roped pitches ending on a 5.4/5.6 finish) and the line agrees with our route text." },
+      "otherTracksConsidered": [
+        { "aid": "2580937", "verdict": "same", "why": "Also West Ridge, 2024-07-20, in season, complete from Esmeralda; sparser (1103 pts) than 2628422, so second choice." },
+        { "aid": "2597984", "verdict": "unsure", "why": "West Ridge on 2024-08-03 but the track starts at Ingalls Creek camp, 3 km from the trailhead pin; not a complete round trip." },
+        { "aid": "2004996", "verdict": "different", "why": "Logged W Ridge but starts at Stuart Lake trailhead on the north side, ~13 km from our Esmeralda pin; a mixed route, not our line." },
+        { "aid": "2058602", "verdict": "offseason", "why": "2022-10-15, more than a month after the season; also a fragment." },
+        { "aid": "3382435", "verdict": "different", "why": "Cascadian Couloir, already stored on its own route." },
+        { "aid": "3321367", "verdict": "different", "why": "Cascadian Couloir." },
+        { "aid": "3361596", "verdict": "unsure", "why": "No logged route; Esmeralda round trip, most likely the Cascadian Couloir." },
+        { "aid": "3322225", "verdict": "unsure", "why": "No logged route name; not identified as the West Ridge." },
+        { "aid": "3304385", "verdict": "unsure", "why": "No logged route name; sparse." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 8, "text": "In early August the route held no snow; small leftover patches near the notch and under the summit can be melted for water, but still carry roughly 4 to 5 litres from the creek.", "aids": ["2597984"] },
+        { "field": "pro_tips", "month": 8, "text": "In the gully beneath the Anvil, the right-hand fork is the correct one; the left leads to the wrong side of the ridge.", "aids": ["2628422"] },
+        { "field": "what_to_bring", "month": 8, "text": "60 m rope and rock shoes (July-September, for the roped upper pitches)", "aids": ["2628422"] },
+        { "field": "descent_note", "month": 8, "text": "In August the Cascadian descent is long and loose; watch for the trail turn-off near 6,000 ft that leads out to the creek and trailhead, as missing it costs a lot of effort.", "aids": ["2597984", "2628422"] },
+        { "field": "watch_out", "month": 7, "text": "In July, wandering off line below the notch can force extra roped pitches; check the topo photos before leaving camp.", "aids": ["2580937"] },
+        { "field": "pro_tips", "month": 7, "text": "Warm July nights allow a comfortable open bivouac at the notch or on the summit without a tent.", "aids": ["2580937", "2628422"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_stuart_north_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Logged Complete North Ridge ascents fall Jul-Sep; Mountaineers and climber reports describe mid-July to early September with no approach snow by late July." },
+      "track": { "aid": "2594419", "verdict": "same", "kind": "oneway", "inSeason": true,
+        "why": "Logged 'Complete North Ridge' on 2024-07-27; report says the party approached from the Colchuck/Stuart Lake trailhead, climbed the Complete North Ridge, and exited at Esmeralda by car shuttle. Track reaches our summit pin within 34 m and ends 6 m from the Esmeralda pin. CAVEAT: the track's first point is ~550 m from our Stuart Lake trailhead pin (outside the 300 m rule), likely road or parking-area recording; owner may decide." },
+      "otherTracksConsidered": [
+        { "aid": "686309", "verdict": "unsure", "why": "Logged Complete North Ridge (2016-07-31) but starts at Esmeralda and reaches the ridge via the glacier notch, which matches our Upper North Ridge variant; report has no description." },
+        { "aid": "3272099", "verdict": "unsure", "why": "Upper North Ridge only; partial track starting at high camp." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_upper_north_ridge_w_great_gendarme",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; logged Upper/Direct North Ridge ascents Jul-Sep; climber reports show no snow on the ridge by late July, glacier crossing still needing crampons in mid-July." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3272099", "verdict": "unsure", "why": "Logged Upper North Ridge on 2026-07-17 and the report matches (glacier, moat, gully, Gendarme), but the track is partial: it starts at a camp ~5.5 km from the trailhead pin and its highest point is ~100 m below the summit." },
+        { "aid": "686309", "verdict": "unsure", "why": "Logged 'Complete North Ridge', Esmeralda start, July; the report names no variant, so it cannot be tied to this route." },
+        { "aid": "2628422", "verdict": "different", "why": "West Ridge." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 7, "text": "In mid-July the glacier crossing still wants crampons and an axe, and the moat at its edge is a short drop onto a snow plug, with rock ledges just right of the gully base.", "aids": ["3272099"] },
+        { "field": "pro_tips", "month": 7, "text": "The gully above the glacier has a large chockstone about halfway; it climbs at about fourth class on good holds to the left.", "aids": ["3272099"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_stuart_ice_cliff_glacier",
+      "season": { "months": [4, 5, 6], "window": "Apr-Jun", "evidence": "Stored Apr-Jun; web pages for the couloir say later season brings steep or vertical ice and earlier season large cornices; spring ski/climb reports dated late April to June." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3214363", "verdict": "different", "why": "2026-05-30 Cascadian Couloir ascent (ski), not the Ice Cliff Glacier." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_mount_stuart_stuart_glacier_couloir",
+      "season": { "months": [3, 4, 5], "window": "Mar-May", "evidence": "Mountain Project/Summitpost-type pages: best in cold snowy conditions, March through May; June warm and wet." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "1849040", "verdict": "unsure", "why": "Logged ascent 2022-01-29 with no track data and offseason (Jan)." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_sherpa_glacier",
+      "season": { "months": [4, 5, 6], "window": "Apr-Jun", "evidence": "Pages describe it as a good early-season route and ski descent; logged ascents Apr-Jun." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3214363", "verdict": "different", "why": "Cascadian Couloir." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_south_headwall",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; south side has no glaciers; logged ascent in August; no authoritative page found giving a different season." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3382435", "verdict": "unsure", "why": "Shares the Esmeralda approach; logged Cascadian Couloir, not this route." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_mount_stuart_girth_pillar",
+      "season": { "months": [7, 8], "window": "Jul-Aug", "evidence": "Trip reports for the pillar are July; approach glacier is firm in the morning; stored Jul-Aug." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_gorillas_direct",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep for a west-facing rock wall; first ascents reported Sep and Oct; no contradicting source." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3382435", "verdict": "different", "why": "Cascadian Couloir; shares only the approach." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_king_kong_gorillas_direct_direct",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep; first free ascent reported in early September; west-facing wall." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3382435", "verdict": "different", "why": "Cascadian Couloir." } ],
+      "pins": [], "facts": []
+    }
+  ],
+  "notes": "Tracks in the packet are almost all Cascadian Couloir (already stored). West Ridge gets 2628422. North Ridge (Complete) gets 2594419 as a one-way, with a 550 m start-offset caveat. No pin changes."
+}

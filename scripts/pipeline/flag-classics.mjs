@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // flag-classics.mjs — set `routes.classic` from the classics lists, every state, every wall.
 //
 // Two inputs, both read from disk (nothing is fetched here):
@@ -25,13 +26,15 @@
 // area's routes are paced the same way. A STOPPED error is not caught: re-run once the database answers.
 import { existsSync, readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
+import os from "node:os";
+import path from "node:path";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
 import { stripRouteTopoLabel } from "../lib/route-topo-label.mjs";
 
 const arg = k => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : null; };
 const APPLY = process.argv.includes("--apply"), ALL = process.argv.includes("--all"), STATE = arg("state");
-const MP_DIR = process.env.MP_DIR || "/Users/nathanbarber/dev/mp-data/_mp";
-const CL_DIR = process.env.CLASSICS_DIR || "/Users/nathanbarber/dev/classics-run";
+const MP_DIR = process.env.MP_DIR || path.join(os.homedir(), "dev", "mp-data", "_mp");
+const CL_DIR = process.env.CLASSICS_DIR || path.join(os.homedir(), "dev", "classics-run");
 const OUT = CL_DIR + "/out";
 const MP_MIN_STARS = 3, MP_MIN_VOTES = 5;
 if (!ALL && !STATE && !process.argv.includes("--guidebook")) { console.error("usage: --state <slug> | --all  [--apply]"); process.exit(1); }
@@ -49,7 +52,7 @@ const stateSlug = name => SLUG[slugOf(name)] || slugOf(name);
 
 // The wall-order re-check (MP_FRESH, run first, state by state) knows boulder walls the 2026-10-25 run never
 // touched; its maps and wall→area lines are read after the old ones, so they win.
-const MP_FRESH = process.env.MP_FRESH || "/Users/nathanbarber/dev/mp-fresh";
+const MP_FRESH = process.env.MP_FRESH || path.join(os.homedir(), "dev", "mp-fresh");
 const mp2ours = new Map();
 for (const f of readdirSync(MP_DIR + "/_map")) for (const [m, o] of Object.entries(JSON.parse(readFileSync(MP_DIR + "/_map/" + f, "utf8")))) mp2ours.set(m, o);
 const wall2area = new Map();
@@ -62,7 +65,7 @@ for (const ord of [MP_DIR + "/_order", MP_FRESH + "/_order"].filter(existsSync))
 // from the books themselves). `guide_stars` has no index, so the one read goes over a direct connection
 // (`supabase db query`, no REST statement timeout) instead of PostgREST, once, and the writes are paced as below.
 if (process.argv.includes("--guidebook")) {
-  const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", "select id from routes where guide_stars >= 3 and not classic order by id"], { encoding: "utf8", maxBuffer: 1 << 30 });
+  const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "--output-format", "json", "select id from routes where guide_stars >= 3 and not classic order by id"], { encoding: "utf8", maxBuffer: 1 << 30 });
   const j = JSON.parse(out.slice(Math.min(...[out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0))));
   const todo = (Array.isArray(j) ? j : j.rows).map(r => r.id);
   console.log(`guidebook: ${todo.length} routes rated 3+ guidebook stars not yet classic`);

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does `?za=1` actually put AreaLatest's report rows on screen, and what does Chrome announce
 // for them? One page load, not a 63-screen walk — the full guard kept being reaped on a loaded
 // box, and this answers the only question that matters.
@@ -44,9 +45,8 @@ const port = await claimPort(PORT);
 if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); process.exit(1); }
 const base = `http://127.0.0.1:${port}`;
 
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 // A dead spawn is fatal. Without this flag the only symptom of a vite that never started is a

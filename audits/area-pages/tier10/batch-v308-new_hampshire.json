@@ -1,0 +1,39 @@
+{
+ "nh_yellowjacket_boulder": {
+  "_expect": {"name": "Yellowjacket Boulder", "region": "New Hampshire"},
+  "blurb": "A tall, standout boulder high on a wooded slope in the Waterville Valley area, on the western side of Bald Knob, found by following a stream bed upward. It holds 15 problems spread from easy to hard, with a solid cluster between V5 and V7 and a couple harder still. Unlike the plain granite blocks nearby, its faces are covered in edges, jugs and pockets, so the movement stays varied. Expect both short problems and highballs, generally with decent landings. The setting is quiet and shaded by old pines, a few minutes beyond some more ordinary boulders lower on the hillside.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108300252/yellowjacket-boulder", "https://www.mountainproject.com/area/108300240/yellowjacket-area"]}
+ },
+ "nh_outback_cliff": {
+  "_expect": {"name": "Outback Cliff", "region": "New Hampshire"},
+  "blurb": "A small, secluded cliff among the several that make up Sundown Ledge, on the Kancamagus side of the White Mountains. It sits tucked into the woods above the Main Cliff and has a name for being awkward to find, so carry a GPS track and watch for cairns along the drainage. Of its 15 climbs, 14 are trad and one is sport. A handful run from 5.8 to 5.10, but the bulk are 5.11 and 5.12, so it suits stronger leaders after quiet climbing away from the busier Sundown walls.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106520298/outback-cliff", "https://mountainproject.com/area/107756087/sundown-ledge"]}
+ },
+ "nh_heron_point_sanctuary": {
+  "_expect": {"name": "Heron Point Sanctuary", "region": "New Hampshire"},
+  "blurb": "A small bouldering park beside the Lamprey River, just across from downtown Newmarket in the Seacoast. Two big glacial erratics and a scatter of smaller boulders sit in shady pine woods. Of the 15 problems, nearly all are V0 or V1, with one V2 and a V3 traverse as the headline line. That makes it a good spot for beginners, a warm-up, or a short session rather than a hard project day. The sanctuary also has an easy wooded loop of about a mile and a quarter along the river, with a waterfall.",
+  "review": {"sources": ["https://mountainproject.com/area/106968628/heron-point-sanctuary", "https://seacoastcurrent.com/newmarket-new-hampshires-winter-gem-hike-to-try-heron-point-sanctuary/"]}
+ },
+ "nh_sawmill": {
+  "_expect": {"name": "Sawmill", "region": "New Hampshire"},
+  "blurb": "A compact bouldering spot inside the University of New Hampshire's College Woods in Durham, on the Seacoast. The problems line a single short band of ledge in secluded woods, partly shaded by trees, about five minutes on foot along woodland trails from the nearest parking. There are 15 problems, mostly V0 to V3 with one lone V6, so it suits beginners and moderate climbers best. There is room for further development nearby. It is the best of the climbing in College Woods and a handy session close to campus.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110672326/sawmill", "https://www.mountainproject.com/area/121802930/college-woods"]}
+ },
+ "nh_venus_wall": {
+  "_expect": {"name": "Venus Wall", "region": "New Hampshire"},
+  "blurb": "A small crag at the far left end of the Main Cliff at Rumney, just uphill and left of the main wall and far enough along to feel like a separate spot. It holds 14 routes, twelve sport and two trad. A few easy lines in the 5.3 to 5.4 range give beginners something to try, a few more sit around 5.7 to 5.8, and then the wall turns hard: several routes at 5.12 and 5.13 with technical, crimpy climbing. If you want moderate Rumney sport you will find only a handful here; this is mostly a stop for strong climbers.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105914878/main-cliff-left-venus-wall", "https://rakkup.com/guidebook/rumney-rock-climbing/main-cliff,-left-end-(venus-wall)/s20767"]}
+ },
+ "nh_scoop_area": {
+  "_expect": {"name": "Scoop Area", "region": "New Hampshire"},
+  "blurb": "A small group of boulders near the marsh at the back of Blair Woods in Pawtuckaway State Park, reached by a short woodland walk past the Method and Warm-up areas. It has 14 problems, leaning easy to moderate with a good spread between V0 and V4 and three around V6, plus a pair of standouts at V8 and V10. The boulders are spaced slightly apart, and a faint trail behind the Scoop Boulder leads on to the harder ones. A good add-on to a Blair Woods circuit, which is known for quality moderates.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106964305/scoop-area", "https://mountainproject.com/area/105946021/blair-woods"]}
+ },
+ "_skipped": {
+  "nh_pocket_boulder": "no fetched page is about Pocket Boulder itself (only a single route listing; Black Jack Boulders pages do not mention it)",
+  "nh_krazy_krags": "only the parent Dumplingtown Hill pages list it as a sub-area; no fetched page is about Krazy Krags itself"
+ },
+ "_conflicts": {
+  "nh_sawmill": "stored rock is phyllite but https://www.mountainproject.com/area/110672326/sawmill calls it solid granite; stored value left unchanged and no rock named in the blurb"
+ }
+}

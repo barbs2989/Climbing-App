@@ -1,0 +1,85 @@
+[
+ {
+  "id": "or_north_side_cooper_spur", "area_id": "or_north_side", "name": "Cooper Spur",
+  "discipline": "alpine", "disciplines": ["alpine"], "grade": "Mod. Snow", "grade_system": "snow",
+  "season": "May-Jul", "best_season": "May through July, while the snow above the tie-in boulder is firm and before rockfall picks up later in summer.",
+  "high_point_ft": 11229, "outing_shape": "point",
+  "overview": "Mount Hood's northeast line, following a long rock spur between the Eliot and Newton Clark glaciers. A trail gains treeline and a stone shelter, then the spur crest leads to a large boulder where parties usually rope up. Above it the slope steepens steadily to about 45 degrees and close to 50 near the top, on snow, ice or loose rock, before reaching the summit ridge. Falling rock and hard ice make it a serious climb; go early, on firm snow.",
+  "approach": "Drive the gravel Cloud Cap road to the Tilly Jane trailhead and climb through forest to the stone shelter near treeline. Carry on along the spur to the big boulder at about 8,500 ft, where the technical ground starts.",
+  "descent_text": "Avoid downclimbing the spur, which is the most dangerous part of the mountain to reverse. Most parties descend the standard south side to Timberline and arrange a car shuttle.",
+  "waypoints": [
+   {"type": "Trailhead", "name": "Tilly Jane Trailhead", "lat": 45.39939, "lng": -121.6481},
+   {"type": "Summit", "name": "Mount Hood", "lat": 45.37344, "lng": -121.69583, "elev": 11229}
+  ]
+ },
+ {
+  "id": "or_mt_jefferson_whitewater_glacier", "area_id": "or_mt_jefferson", "name": "Whitewater Glacier",
+  "discipline": "alpine", "disciplines": ["alpine"], "grade": "4th", "grade_system": "class",
+  "season": "Jun-Sep", "best_season": "June through September; early summer gives better snow on the Red Saddle traverse, while late summer opens more crevasses on the glacier.",
+  "outing_shape": "outback",
+  "overview": "Jefferson's most-climbed line. From a Jefferson Park camp it crosses the moderately crevassed Whitewater Glacier to the southeast ridge, climbs loose scree to the Red Saddle, and crosses a steep snow-and-ice traverse where pickets are usual. The summit pinnacle is a short, exposed fourth-class finish of about 30 ft. Rope and glacier gear are standard.",
+  "approach": "From the end of the gravel Whitewater road, hike the Whitewater and Jefferson Park trails to the Pacific Crest Trail and into Jefferson Park, about 4.5 miles. Leave the trail by the moraine and climb to a bench near 7,100 ft where the glacier starts. A wilderness permit is needed from mid-June to mid-October.",
+  "descent_text": "Reverse the route: downclimb or rappel the pinnacle, cross back over the Red Saddle traverse, then descend the scree and the glacier. Rockfall above the traverse increases once the afternoon sun warms the face.",
+  "waypoints": [{"type": "Trailhead", "name": "Whitewater Trailhead", "lat": 44.70682, "lng": -121.87511}],
+  "copySummit": true
+ },
+ {
+  "id": "or_mt_jefferson_southwest_ridge", "area_id": "or_mt_jefferson", "name": "Southwest Ridge",
+  "discipline": "alpine", "disciplines": ["alpine"], "grade": "Easy 5th", "grade_system": "class",
+  "season": "Jul-Sep", "outing_shape": "outback",
+  "overview": "A long, loose route usually done in one push from Pamelia Lake. A steep, brushy cross-country climb leads to a scree ridge that joins the South Ridge high on the mountain, then the Red Saddle, a steep snow traverse of about 250 ft, and the summit pinnacle, fourth class or low fifth depending on the line taken. Expect loose rock and rockfall on the traverse.",
+  "approach": "From the Pamelia Lake trailhead walk to the Pacific Crest Trail and follow it south for roughly 20 minutes. Leave it and push east-northeast up steep brush to treeline, then climb scree to the ridge crest. Carry all your water; the ridge has none. A permit is required for the Pamelia Lake area, day or overnight.",
+  "descent_text": "Return to the Red Saddle, then plunge down the scree face between the southwest and south ridges and traverse back onto the southwest ridge around 8,000 ft. The pinnacle can be rappelled; the alternative is downclimbing loose fourth class.",
+  "copyTrailhead": "Pamelia", "copySummit": true
+ },
+ {
+  "id": "or_north_sister_southeast_ridge", "area_id": "or_north_sister", "name": "Southeast Ridge",
+  "discipline": "alpine", "disciplines": ["alpine"], "grade": "4th", "grade_system": "class",
+  "season": "Jul-Sep", "outing_shape": "outback",
+  "overview": "A long ridge of loose scree and rock on North Sister's southeast side, often preferred to the northwest ridge in summer. About 2,000 ft of unstable ground leads to a cluster of pinnacles, after which the route joins the South Ridge finish up the Bowling Alley gully to the summit. Rocks knocked down by your own party are the main danger.",
+  "approach": "From the Pole Creek trailhead take the trail toward Soap Creek, then leave it and travel west through forest to the foot of the ridge near 7,800 ft. There is no path; navigate by map and terrain.",
+  "descent_text": "Reverse the climb: downclimb or rappel the Bowling Alley, where rappel slings are usually in place, pass the pinnacles on their south side, and descend the ridge. Scree continues down to about 7,000 ft.",
+  "copyTrailhead": "Pole Creek", "copySummit": true
+ },
+ {
+  "id": "or_gunsight_mountain_west_ridge", "area_id": "or_gunsight_mountain", "name": "West Ridge",
+  "discipline": "scrambling", "disciplines": ["scrambling"], "grade": "Class 3", "grade_system": "class",
+  "season": "Jul-Oct", "outing_shape": "loop",
+  "overview": "A short ridge scramble above the Hoffer Lakes. It starts as easy walking and steepens into boulders and slabs where third-class moves are optional, so you can choose easier or harder ground as you go. The ground around the lakes is often wet in summer.",
+  "approach": "From the Anthony Lake day-use area, follow the lakeshore path to the signed Hoffer Lakes trail and take it to the lakes, about 0.7 mile. An informal path heads east to a rock outcrop on the far shore, where the ridge starts.",
+  "descent_text": "Walk down the gentler south ridge (class 2), or drop the southeast side on game trails into Angell Basin and return past the Hoffer Lakes."
+ },
+ {
+  "id": "or_aneroid_lake_peaks_petes_point_north_ridge", "area_id": "or_aneroid_lake_peaks", "name": "North Ridge from Tenderfoot Pass",
+  "discipline": "scrambling", "disciplines": ["scrambling"], "grade": "Class 2", "grade_system": "class",
+  "season": "Jul-Sep", "high_point_ft": 9680, "outing_shape": "outback",
+  "overview": "The shorter, steeper of the two ridge arms that make up the horseshoe-shaped summit of Pete's Point above Aneroid Lake. A faint path climbs to a rock step near 9,500 ft that takes a few hands-on moves; the south arm is longer and easier.",
+  "approach": "Hike the East Fork Wallowa River trail from Wallowa Lake past Aneroid Lake to Tenderfoot Pass at about 8,540 ft, then follow the north arm of the ridge to the top.",
+  "descent_text": "Reverse the north arm, or make a loop by descending the gentler south arm back toward the pass.",
+  "waypoints": [{"type": "Summit", "name": "Pete's Point", "lat": 45.18934, "lng": -117.22031, "elev": 9680}]
+ },
+ {
+  "id": "or_matterhorn_wallowas_east_ridge_from_ice_lake", "area_id": "or_matterhorn_wallowas", "name": "East Ridge from Ice Lake",
+  "discipline": "scrambling", "disciplines": ["scrambling"], "grade": "Class 2", "grade_system": "class",
+  "season": "Jul-Sep", "high_point_ft": 9834, "outing_shape": "outback",
+  "overview": "The usual way up the Wallowas' marble summit. From the Ice Lake basin a climbers path crosses wet meadow and bands of shale, then climbs a rounded dome of pale marble to the top. Mountain goats are often around, and most parties camp at Ice Lake.",
+  "approach": "Take the East Fork Wallowa River and Ice Lake trails from the Wallowa Lake trailhead to Ice Lake. From the lake the climbers path to the summit is about 3.6 miles round trip with roughly 2,000 ft of gain.",
+  "descent_text": "Return the same way to Ice Lake; the marble dome and shale bands are straightforward to reverse in daylight.",
+  "waypoints": [
+   {"type": "Trailhead", "name": "Wallowa Lake Trailhead", "lat": 45.26704, "lng": -117.212834},
+   {"type": "Summit", "name": "Matterhorn", "lat": 45.22781, "lng": -117.29932, "elev": 9834}
+  ]
+ },
+ {
+  "id": "or_krag_peak_southeast_ridge_from_crater_lake", "area_id": "or_krag_peak", "name": "Southeast Ridge from Crater Lake",
+  "discipline": "scrambling", "disciplines": ["scrambling"], "grade": "Class 3", "grade_system": "class",
+  "season": "Aug-Sep", "high_point_ft": 9092, "outing_shape": "outback",
+  "overview": "The short standard climb of this two-topped peak, started from the Crater Lake basin. Easy talus gains the ridge, which rolls over several humps and fades near the top into a loose headwall scramble. Early autumn snow on the scree makes it much harder.",
+  "approach": "From the East Eagle equestrian trailhead, climb the Little Kettle Creek trail through many switchbacks to Crater Lake, about 3,500 ft of gain. Leave the basin and head up to the ridge.",
+  "descent_text": "Come down the same ridge, keeping just below the crest where the going is easier.",
+  "waypoints": [
+   {"type": "Trailhead", "name": "East Eagle Equestrian Trailhead", "lat": 45.04774, "lng": -117.32771},
+   {"type": "Summit", "name": "Krag Peak", "lat": 45.06523, "lng": -117.28951, "elev": 9092}
+  ]
+ }
+]

@@ -1,0 +1,86 @@
+{
+ "ar_whitcombs_the": {
+  "verdict": "unsure",
+  "why": "Only MP (34.88075,-93.09024) gives the Whitcombs point; searches found no second domain with coordinates."
+ },
+ "az_hobo_jungle": {
+  "verdict": "keep",
+  "why": "Macrostrat at the stored point maps rhyolite-to-andesite volcanics, so rhyolite is not contradicted; aspect rests on MP alone (mountainproject.com/area/107651160/hobo-jungle), no second source."
+ },
+ "ca_summit_area": {
+  "verdict": "keep",
+  "why": "Macrostrat at the stored point maps Peninsular Ranges tonalite, matching stored tonalite; coordinate difference is only MP vs stored, no second source for a move."
+ },
+ "co_main_elk_crag": {
+  "verdict": "unsure",
+  "why": "Only MP Main Elk Creek page (southern exposure for the crags as a group) fetched; the crag page gives no direction and no second domain found."
+ },
+ "me_04_barrett_s_cove_cliff": {
+  "verdict": "keep",
+  "why": "Macrostrat at the stored point maps the Megunticook Formation (schist/granulite), supporting stored schist; SE aspect is MP-only."
+ },
+ "mn_canidae_cliff_hammond": {
+  "verdict": "keep",
+  "why": "Macrostrat at the stored point maps Upper Cambrian Jordan Sandstone/St Lawrence, supporting stored sandstone against the lone MP limestone claim."
+ },
+ "nc_stone_mountain_south_face": {
+  "verdict": "keep",
+  "why": "Macrostrat maps quartz diorite to granodiorite (Stone Mountain pluton) matching stored granodiorite; MP (area/105887506) says SW aspect, but no second source for it."
+ },
+ "nc_table_rock": {
+  "verdict": "unsure",
+  "why": "Macrostrat maps biotite granitic gneiss at the point vs stored quartzite; MP and Wikipedia name no rock, only an ad site says granite+quartzite for the gorge."
+ },
+ "wy_green_mile_the": {
+  "verdict": "keep",
+  "why": "Macrostrat maps Archean granitic gneiss at the stored point, consistent with stored gneiss vs MP 'granite' wording (finer classification)."
+ },
+ "az_south_fin": {
+  "verdict": "keep",
+  "why": "Macrostrat maps Wilderness Suite leucogranite at the point, supporting stored granite."
+ },
+ "az_wall_of_the_marching_munchkins": {
+  "verdict": "unsure",
+  "why": "MP wall page says faces generally north with late west sun; MP Munchkinland area page (search snippet) says first walls face about WNW; no independent second domain."
+ },
+ "bc_foreplay_left": {
+  "verdict": "unsure",
+  "why": "MP and gripped.com place Foreplay near the Evergreen lot (gripped map centre ~49.4606,-119.5651 'Skaha North Parking' is not a verified lot point); no two-source lot coordinate."
+ },
+ "bc_rimrocks": {
+  "verdict": "unsure",
+  "why": "sendage.com says basalt (one domain, https://sendage.com/area/rimrocks-vernon-bc-canada); Macrostrat at stored point maps orthogneiss at medium scale and mafic volcanics at small scale, so sources disagree."
+ },
+ "co_redgarden_below_lower_ramp": {
+  "verdict": "keep",
+  "why": "Macrostrat maps Fountain Formation arkosic conglomerate and pebbly sandstone, so stored conglomerate is a valid finer description."
+ },
+ "wy_aspen_grade_wall": {
+  "verdict": "keep",
+  "why": "Macrostrat at the stored point maps the Bighorn Dolomite, matching stored dolomite; the MP granite remark concerns a different section."
+ },
+ "ak_left_side_walls": {
+  "verdict": "unsure",
+  "why": "MP Weiner Lake page says only 'peculiar igneous formation' of stacked pillars; Macrostrat maps sedimentary rock; no second source for rhyolite."
+ },
+ "al_roadside_crag": {
+  "verdict": "unsure",
+  "why": "MP (area/125525068) says conglomerate base turning to sandstone; Macrostrat maps Pennington Fm shale/sandstone; seclimbers.org names no rock; no two agreeing sources."
+ },
+ "az_main_wall_4": {
+  "verdict": "unsure",
+  "why": "MP says north-facing (area/105738155); theCrag snippet only says shade until early afternoon; no second explicit aspect fetched."
+ },
+ "bc_doctors_wall": {
+  "verdict": "unsure",
+  "why": "Only MP Doctors' Group (area/111625792) says approach starts at the lower lot, and gives no compass aspect; no second source."
+ },
+ "bc_lake_of_the_woods_bouldering": {
+  "verdict": "unsure",
+  "why": "advcollective.com says granite boulders (coords match 49.4087,-121.4507); Macrostrat maps Princeton Group sandstone/conglomerate at medium scale; tourismhcc.ca silent; sources disagree."
+ },
+ "ca_1_west_wall": {
+  "verdict": "keep",
+  "why": "Macrostrat maps Quaternary volcanic flows (andesite, basalt) at the point, so stored andesite is not contradicted; MP columnar basalt is a near-synonym."
+ }
+}

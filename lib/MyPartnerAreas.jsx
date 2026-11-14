@@ -13,6 +13,7 @@
 //
 // Writes reflect by the list updating (the hooks invalidate every reader), so there is no success
 // toast; a refused write toasts the server's reason.
+import { tx } from "./tapWords.js";
 import { createPortal } from "react-dom";
 import { BTN_LG } from "./buttonStyles.js";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -145,11 +146,11 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           {listingsN ? (listings || []).map((l) => { const past = l.freeTo && l.freeTo < today; return <div key={l.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px", marginBottom: 8 }}>
             <button onClick={() => startEdit(l)} aria-label={"Edit " + l.name} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", padding: "8px 10px", cursor: "pointer", color: C.text }}>
               <span style={{ display: "block", fontSize: 14.5, fontWeight: 700 }}>{l.name}<span style={{ fontSize: 11.5, fontWeight: 700, color: C.textMuted, marginLeft: 7 }}>{TYPE_LABEL[l.areaType] || ""}</span></span>
-              <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + " — tap to update" : windowText(l)}</span></span>
+              <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + tx(" — tap to update") : windowText(l)}</span></span>
               {l.note ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2, fontStyle: "italic" }}>{l.note}</span> : null}
             </button>
             <button onClick={() => remove(l)} aria-label={"Remove " + l.name} style={POP_REMOVE}>✕</button>
-          </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above{suggestions.length ? ", or tap one of the areas from your climbs" : ""}, or use “List me here” on any area page.</div> : null}
+          </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
         </div>}
       </div>
     </div>

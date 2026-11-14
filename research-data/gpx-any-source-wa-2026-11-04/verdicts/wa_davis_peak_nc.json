@@ -1,0 +1,134 @@
+{
+  "area_id": "wa_davis_peak_nc",
+  "routes": [
+    {
+      "route_id": "wa_davis_peak_nc_north_face",
+      "season": {
+        "months": [
+          2,
+          3,
+          4
+        ],
+        "window": "Feb-Apr",
+        "evidence": "Web search: the only recorded winter ascent was 12 March 2005 (frozen couloir); first ascent was in July. Stored Feb-Apr kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3182422",
+          "verdict": "different",
+          "why": "South-side ascent from Gorge Creek; this route starts from Stetattle Creek."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_davis_peak_nc_north_face_burdo_cairns",
+      "season": {
+        "months": [],
+        "window": "unknown",
+        "evidence": "Web search found no page giving a window for this north-wall rock route; no stored season. Left undetermined."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3182422",
+          "verdict": "different",
+          "why": "South-side route; all recorded tracks start at Gorge Creek on SR 20."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_davis_peak_nc_south_slope_and_ridge",
+      "season": {
+        "months": [
+          4,
+          5,
+          6
+        ],
+        "window": "Apr-Jun",
+        "evidence": "Web search: April trip reports and route pages favour snow-covered spring, with summer an oven. Histogram all routes: Jan 4, Mar 5, Apr 10, May 11, Jun 4, Jul 3. Stored May-Jun; April allowed (within a month)."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2487652",
+          "verdict": "unsure",
+          "why": "2024-04-13, blank route name, but the line follows the east-side ridge route from Gorge Creek to the summit and back (complete, ~140 m from our trailhead pin). The peak holds several routes, so blank = unsure; strong candidate if the owner accepts line-only evidence."
+        },
+        {
+          "aid": "3182422",
+          "verdict": "different",
+          "why": "Logged \"New standard (south basin)\", a newer west-side line to the south basin, not the ridge route; 2026-05-02."
+        },
+        {
+          "aid": "2947977",
+          "verdict": "different",
+          "why": "Report calls it a sneak route through the cliffs, as opposed to the standard ridge route; west-side line."
+        },
+        {
+          "aid": "2800013",
+          "verdict": "different",
+          "why": "Report: climbed the WSW shoulder, \"better than the standard\"; west-side line."
+        },
+        {
+          "aid": "2815338",
+          "verdict": "different",
+          "why": "Logged Ski Route; west-side line, and not a complete trip."
+        },
+        {
+          "aid": "1582750",
+          "verdict": "offseason",
+          "why": "Logged S Slopes & Ridge but a January ascent, about four months from the window."
+        },
+        {
+          "aid": "333834",
+          "verdict": "unsure",
+          "why": "2013-07-13 South face; description matches the old ridge route but the record has no track line."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 4,
+          "text": "In mid-April the lower slope is a burn scar full of charred fallen logs that tear and blacken clothing; expect long scrambling over deadfall.",
+          "aids": [
+            "2815338",
+            "3182422"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 4,
+          "text": "Ticks are numerous on the lower slope in mid-April; check clothing and neck after the descent.",
+          "aids": [
+            "2487652"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 4,
+          "text": "In early April the snow line sits near 4,000 ft, so the first 3,000 ft is bare brush; by early May the boulder field above the burn is clear and snow starts near 4,800 ft.",
+          "aids": [
+            "2947977",
+            "2800013",
+            "3182422"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 5,
+          "text": "On a warm early-May day, start in the dark around 3 am: the brush stretch is cool and the basin snow is still firm at sunrise.",
+          "aids": [
+            "3182422"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "The south-side tracks split into two lines: the east-side ridge line (2487652, and 1582750 in January) and a west-side basin variant (the others). Our route text describes the ridge line (saddle then ridge), so four of the six tracks follow the variant, which may deserve its own route. The party on 2487652 left the line on the way down and had to rappel a cliff to SR 20."
+}

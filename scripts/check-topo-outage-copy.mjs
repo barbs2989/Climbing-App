@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Does the TOPO section's outage copy reach a screen, and does it stop inviting the first topo?
 //
 // CLAUDE.md records `toposUnavailable` as the one outage flag nothing has proven, and says why:
@@ -100,7 +102,7 @@ try {
   ].join("\n"));
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle in
   // the OS temp dir throws ERR_MODULE_NOT_FOUND.
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     `--define:import.meta.env=${env}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -117,7 +119,7 @@ if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 }
 
-const mod = await import(out + "?t=" + Date.now());
+const mod = await import(fileHref(out + "?t=" + Date.now()));
 const { TopoSection, topoEmptyCopy, PitchComments, USE_DB } = mod;
 if (typeof PitchComments !== "function") dead("RouteDetail.jsx does not export PitchComments — ANCHOR LOST");
 if (typeof TopoSection !== "function") dead("RouteDetail.jsx does not export TopoSection — ANCHOR LOST");

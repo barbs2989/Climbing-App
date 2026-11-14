@@ -1,0 +1,19 @@
+{
+  "key": "temple-ridge-misfiled",
+  "question": "Is wa_big_chiwaukum_mount_temple_ridge a duplicate of wa_the_temple_south_ridge, or a Chiwaukum route that is misfiled?",
+  "answer": "Neither cleanly. No 'Mount Temple Ridge' peak or route exists in the Chiwaukums; Big Chiwaukum routes found are West/East routes and a Deadhorse Pass option. 'Temple Ridge' is the name of the Enchantments ridge crest (Prusik, Flake Tower, Monument, Boxtop, High Priest, Mount Temple), whose highest point is The Temple, so the id/name came from 'Mount Temple' + 'Ridge' and was mis-keyed under big_chiwaukum. The only documented route to the Temple summit is the West Side (II, 5.6), already held as wa_the_temple_south_ridge; the other held row there is West Face.",
+  "recommendation": "Delete wa_big_chiwaukum_mount_temple_ridge (empty shell, no distinct line, wrong id prefix). Do not merge data into it; wa_the_temple_south_ridge already carries the climb. Optional: rename that row's id is NOT needed.",
+  "confidence": "medium",
+  "proposed": {},
+  "evidence": [
+    "https://mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side — Mount Temple is highest point of Temple Ridge; single documented route, West Side 5.6",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002102606 — Temple described as highpoint of Temple Ridge",
+    "https://historylink.org/File/9375 — 'Temple Ridge' in Stuart Range context, not Chiwaukums",
+    "https://wenatcheeoutdoors.org/2016/05/19/big-chiwaukum/ — Big Chiwaukum routes (Deadhorse Pass), no Temple Ridge"
+  ],
+  "searched": [
+    "'Temple Ridge' Chiwaukum Big Chiwaukum Beckey — no Chiwaukum link; only Enchantments Temple Ridge",
+    "'Temple Ridge' Enchantments Mount Temple Prusik High Priest — ridge crest naming confirmed",
+    "SummitPost/Mountaineers fetches returned 403; used search excerpts"
+  ]
+}

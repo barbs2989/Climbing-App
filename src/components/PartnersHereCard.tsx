@@ -1,6 +1,9 @@
-import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, savePartnerArea } from "../../lib/db";
+import { tx } from "../../lib/tapWords.js";
+import { usePartnerAreaCount, usePartnersInArea, removePartnerArea, savePartnerArea, useCragRegular } from "../../lib/db";
 import { useState, useEffect } from "react";
 import Chevron from "./Chevron.tsx";
+import Av from "./Av.tsx";
+import { clickable } from "../../lib/clickable";
 import { BTN_LINK, BTN } from "../../lib/buttonStyles.js";
 import type { ComponentType } from "react";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
@@ -56,6 +59,13 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
     finally { setBusy(false); }
   };
   const openAll = () => onFindPartnersInArea && onFindPartnersInArea({ id: area.id, name: area.name, areaType: area.area_type });
+  // CRAG REGULAR (competitor review item 22, 2026-11-05 — Strava's Local Legend): the climber with the most logged
+  // days under this area in the last 90, two at least. Signed-in only, the same people the boards rank; a failed
+  // read shows nothing rather than a wrong name. Opens their profile like a partner row does.
+  const regularQ = useCragRegular(area.id, on);
+  const reg = regularQ.data || null;
+  const regName = reg ? (reg.show_name && reg.name ? reg.name : "@" + (reg.username || String(reg.name || "climber").toLowerCase().replace(/[^a-z0-9]/g, ""))) : "";
+  const openRegular = () => { if (reg && onViewProfile) onViewProfile({ id: reg.user_id, name: reg.name || "Climber", username: reg.username, showName: !!reg.show_name, resumePublic: false, avatar: reg.avatar, disciplines: [], availability: [] } as unknown as Parameters<NonNullable<typeof onViewProfile>>[0]); };
   return (
     <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 14 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
@@ -63,7 +73,7 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
           <div style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Partners here</div>
           <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{!on ? "Sign in to see who climbs here." : countQ.isError ? "Couldn’t load who’s listed." : count == null ? "Counting…" : count === 0 ? "Nobody listed here yet — be the first." : count + " climber" + (count === 1 ? "" : "s") + " listed here or nearby"}</div>
         </div>
-        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + " — tap to remove" : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
+        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + tx(" — tap to remove") : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : "#fff", fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
       </div>
       {/* Once listed, the follow-up — when you can climb here and what — is a real, full-width
           control, not a bare word. It and "See all" used to spread `BTN_LINK` as an object; it is a
@@ -80,6 +90,17 @@ export default function PartnersHereCard({ area, C, uid, myListings, onListMe, o
           </span>
           <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
         </button>
+      ) : null}
+      {on && reg ? (
+        <div {...(onViewProfile ? clickable(openRegular) : {})} aria-label={"Crag regular: " + regName + ", " + reg.days + " days here in the last 90" + (onViewProfile ? " — open their profile" : "")} style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 8, padding: "8px 10px", borderRadius: 11, background: C.surface, border: "1px solid " + C.border, cursor: onViewProfile ? "pointer" : "default" }}>
+          <Av src={reg.avatar} size={32} />
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 10.5, fontWeight: 800, color: C.amber, letterSpacing: 0.4, textTransform: "uppercase" }}>Crag regular</div>
+            <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{regName}{reg.is_me ? <span style={{ fontWeight: 500, color: C.textMuted }}>{" — you"}</span> : null}</div>
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 1 }}>{reg.days + " days here in the last 90"}</div>
+          </div>
+          {onViewProfile ? <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron size={16} color={C.textMuted} /></span> : null}
+        </div>
       ) : null}
       {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p: PartnerRow) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
       {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}

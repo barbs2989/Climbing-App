@@ -9,20 +9,17 @@
 -- and commit the result in the same PR. `npm run gen:schema -- --check` exits 1 when this
 -- file has drifted from the live database.
 --
--- Counts: 86 tables, 860 columns, 447 keyed/checked constraints (156 foreign keys), 264 RLS policies.
+-- Counts: 86 tables, 863 columns, 451 keyed/checked constraints (153 foreign keys), 264 RLS policies.
 -- Not covered here: views, functions, triggers, standalone indexes (see supabase/migrations/).
 
 -- ── Foreign keys ───────────────────────────────────────────────────────────────
 -- accessibility_reports (accessibility_reports_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- account_standing (account_standing_set_by_fkey): FOREIGN KEY (set_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- account_standing (account_standing_user_id_fkey): FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
+-- app_errors (app_errors_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- app_feedback (app_feedback_user_id_fkey): FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
 -- areas (areas_parent_id_fkey): FOREIGN KEY (parent_id) REFERENCES areas(id)
 -- areas (areas_walkin_submission_id_fkey): FOREIGN KEY (walkin_submission_id) REFERENCES gps_submissions(id) ON DELETE SET NULL
--- belay_catches (belay_catches_belayer_id_fkey): FOREIGN KEY (belayer_id) REFERENCES auth.users(id) ON DELETE CASCADE
--- belay_catches (belay_catches_climb_log_id_fkey): FOREIGN KEY (climb_log_id) REFERENCES climb_logs(id) ON DELETE SET NULL
--- belay_catches (belay_catches_climber_id_fkey): FOREIGN KEY (climber_id) REFERENCES auth.users(id) ON DELETE CASCADE
--- belay_catches (belay_catches_filed_by_fkey): FOREIGN KEY (filed_by) REFERENCES auth.users(id) ON DELETE SET NULL
 -- blocked_users (blocked_users_blocked_fkey): FOREIGN KEY (blocked) REFERENCES auth.users(id) ON DELETE CASCADE
 -- blocked_users (blocked_users_blocker_fkey): FOREIGN KEY (blocker) REFERENCES auth.users(id) ON DELETE CASCADE
 -- climb_log_confirmations (climb_log_confirmations_log_id_fkey): FOREIGN KEY (log_id) REFERENCES climb_logs(id) ON DELETE CASCADE
@@ -210,6 +207,31 @@ CREATE TABLE public.account_standing (
 ALTER TABLE public.account_standing ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "standing read own or admin" ON public.account_standing AS PERMISSIVE FOR SELECT TO public USING (((user_id = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 
+CREATE TABLE public.app_errors (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid,
+  kind text NOT NULL,
+  message text NOT NULL,
+  stack text,
+  component_stack text,
+  path text,
+  build text,
+  user_agent text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT app_errors_pkey PRIMARY KEY (id),
+  CONSTRAINT app_errors_build_check CHECK (((build IS NULL) OR (char_length(build) <= 80))),
+  CONSTRAINT app_errors_component_stack_check CHECK (((component_stack IS NULL) OR (char_length(component_stack) <= 4000))),
+  CONSTRAINT app_errors_kind_check CHECK ((kind = ANY (ARRAY['render'::text, 'error'::text, 'rejection'::text]))),
+  CONSTRAINT app_errors_message_check CHECK (((char_length(message) >= 1) AND (char_length(message) <= 1000))),
+  CONSTRAINT app_errors_path_check CHECK (((path IS NULL) OR (char_length(path) <= 300))),
+  CONSTRAINT app_errors_stack_check CHECK (((stack IS NULL) OR (char_length(stack) <= 4000))),
+  CONSTRAINT app_errors_user_agent_check CHECK (((user_agent IS NULL) OR (char_length(user_agent) <= 300))),
+  CONSTRAINT app_errors_user_id_fkey FOREIGN KEY (user_id) REFERENCES profiles(id) ON DELETE CASCADE
+);
+ALTER TABLE public.app_errors ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "admin deletes errors" ON public.app_errors AS PERMISSIVE FOR DELETE TO public USING (is_admin(auth.uid()));
+CREATE POLICY "admin reads errors" ON public.app_errors AS PERMISSIVE FOR SELECT TO public USING (is_admin(auth.uid()));
+
 CREATE TABLE public.app_feedback (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
   user_id uuid,
@@ -298,26 +320,6 @@ CREATE TABLE public.areas (
 );
 ALTER TABLE public.areas ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "areas public read" ON public.areas AS PERMISSIVE FOR SELECT TO public USING (true);
-
-CREATE TABLE public.belay_catches (
-  id uuid NOT NULL DEFAULT gen_random_uuid(),
-  belayer_id uuid NOT NULL,
-  climber_id uuid NOT NULL,
-  climb_log_id uuid,
-  date_occurred date NOT NULL,
-  description text,
-  created_at timestamp with time zone DEFAULT now(),
-  filed_by uuid,
-  CONSTRAINT belay_catches_pkey PRIMARY KEY (id),
-  CONSTRAINT belay_catches_not_self CHECK ((belayer_id <> climber_id)),
-  CONSTRAINT belay_catches_belayer_id_fkey FOREIGN KEY (belayer_id) REFERENCES auth.users(id) ON DELETE CASCADE,
-  CONSTRAINT belay_catches_climb_log_id_fkey FOREIGN KEY (climb_log_id) REFERENCES climb_logs(id) ON DELETE SET NULL,
-  CONSTRAINT belay_catches_climber_id_fkey FOREIGN KEY (climber_id) REFERENCES auth.users(id) ON DELETE CASCADE,
-  CONSTRAINT belay_catches_filed_by_fkey FOREIGN KEY (filed_by) REFERENCES auth.users(id) ON DELETE SET NULL
-);
-ALTER TABLE public.belay_catches ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "log belay catches" ON public.belay_catches AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) = belayer_id) OR (( SELECT auth.uid() AS uid) = climber_id)));
-CREATE POLICY "view own belay catches" ON public.belay_catches AS PERMISSIVE FOR SELECT TO public USING (((( SELECT auth.uid() AS uid) = belayer_id) OR (( SELECT auth.uid() AS uid) = climber_id)));
 
 CREATE TABLE public.blocked_users (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -1930,7 +1932,7 @@ CREATE TABLE public.routes (
   CONSTRAINT routes_classic_score_check CHECK (((classic_score IS NULL) OR ((classic_score >= (0)::numeric) AND (classic_score <= (4)::numeric)))),
   CONSTRAINT routes_fixed_gear_len CHECK (((fixed_gear IS NULL) OR ((char_length(fixed_gear) >= 1) AND (char_length(fixed_gear) <= 160)))),
   CONSTRAINT routes_guide_stars_range CHECK (((guide_stars IS NULL) OR ((guide_stars >= 0) AND (guide_stars <= 4)))),
-  CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 160)))),
+  CONSTRAINT routes_location_len CHECK (((location IS NULL) OR ((char_length(location) >= 1) AND (char_length(location) <= 1000)))),
   CONSTRAINT routes_outing_shape_check CHECK (((outing_shape IS NULL) OR (outing_shape = ANY (ARRAY['outback'::text, 'loop'::text, 'point'::text])))),
   CONSTRAINT routes_rack_items_array CHECK (((rack_items IS NULL) OR (jsonb_typeof(rack_items) = 'array'::text))),
   CONSTRAINT routes_rock_quality_len CHECK (((rock_quality IS NULL) OR ((char_length(rock_quality) >= 1) AND (char_length(rock_quality) <= 160)))),
@@ -2015,8 +2017,10 @@ CREATE TABLE public.topos (
   moderation text NOT NULL DEFAULT 'visible'::text,
   caption text,
   route_id text,
+  area_photo boolean NOT NULL DEFAULT false,
   CONSTRAINT topos_pkey PRIMARY KEY (id),
   CONSTRAINT topos_alt_len CHECK (((alt IS NULL) OR (char_length(alt) <= 300))),
+  CONSTRAINT topos_area_photo_has_no_route CHECK (((NOT area_photo) OR (route_id IS NULL))),
   CONSTRAINT topos_moderation_chk CHECK ((moderation = ANY (ARRAY['visible'::text, 'held'::text, 'removed'::text]))),
   CONSTRAINT topos_area_id_fkey FOREIGN KEY (area_id) REFERENCES areas(id) ON DELETE CASCADE,
   CONSTRAINT topos_created_by_fkey FOREIGN KEY (created_by) REFERENCES profiles(id) ON DELETE CASCADE,
@@ -2025,7 +2029,7 @@ CREATE TABLE public.topos (
 ALTER TABLE public.topos ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "moderation hides taken-down content" ON public.topos AS RESTRICTIVE FOR SELECT TO public USING (((moderation = 'visible'::text) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_admin(( SELECT auth.uid() AS uid))));
 CREATE POLICY "restricted accounts cannot post" ON public.topos AS RESTRICTIVE FOR INSERT TO public WITH CHECK (is_active_user(( SELECT auth.uid() AS uid)));
-CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND (route_id IS NOT NULL)));
+CREATE POLICY "topos authed insert" ON public.topos AS PERMISSIVE FOR INSERT TO public WITH CHECK (((( SELECT auth.uid() AS uid) IS NOT NULL) AND (( SELECT auth.uid() AS uid) = created_by) AND ((route_id IS NOT NULL) OR area_photo)));
 CREATE POLICY "topos own delete" ON public.topos AS PERMISSIVE FOR DELETE TO public USING ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos own update" ON public.topos AS PERMISSIVE FOR UPDATE TO public USING ((( SELECT auth.uid() AS uid) = created_by)) WITH CHECK ((( SELECT auth.uid() AS uid) = created_by));
 CREATE POLICY "topos public read" ON public.topos AS PERMISSIVE FOR SELECT TO public USING (true);

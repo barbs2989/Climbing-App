@@ -1,0 +1,24 @@
+{
+  "key": "dragontail_peak",
+  "question": "Does 'West Route' on Dragontail duplicate 'Pandora's Box'?",
+  "answer": "Yes, the same climb, and it is already handled: same-climb-read.json records wa_dragontail_peak_west_route merged into wa_dragontail_peak_r3 (migration 0400), and allRoutesOnPeak now holds only r3 'Pandora's Box (W Couloir)'. Research agrees with that merge. The West Route is the standard Colchuck Col route: up the Colchuck Glacier to Colchuck Col, then the couloir just east of the col to a notch in the ridge (the notch is Pandora's Box, and the couloir below it often takes the name too), a downclimb or bypass, and a snow-and-rock traverse to the summit. Mountaineers pages and a 2020 write-up put the two names together ('West Route, Pandora's Box'). A ski report treats the box as a false summit and the couloir as a separate feature, but that is a naming quirk, not a second line. Not to be confused with Colchuck Col Buttress (5.6 rock buttress, its own row) or the Aasgard Pass East Route.",
+  "recommendation": "No change to the merge. Optionally show 'West Route' as the alias of r3 (guidebook name; Pandora's Box is the popular one). Two data flags on the surviving row r3: (1) it is stored discipline 'alpine' with grade 'Class 3', but the climb is a non-technical snow couloir with a Class 4 bypass and no 5.x, which is 'mountaineering' under the owner's rule; (2) its stored name carries '(W Couloir)'; consider 'West Route (Pandora's Box)'.",
+  "confidence": "high",
+  "proposed": {
+    "keep": "wa_dragontail_peak_r3",
+    "display_name_option": "West Route (Pandora's Box)",
+    "discipline_fix": "mountaineering (disciplines ['mountaineering'])"
+  },
+  "evidence": [
+    "research-data/gpx-any-source-wa-2026-11-04/same-climb-read.json - merged pair already recorded",
+    "https://gethighonaltitude.com/2020/06/25/dragontail-peak-west-route/ - page title 'West Route', technical line 'West Route, Pandora's Box', Colchuck Col, couloir, short downclimb to the upper plateau (June)",
+    "Search snippets: Mountaineers 'Basic Alpine Climb - Dragontail Peak/Colchuck Col' (the notch is Pandora's Box; couloir just east of the col); Mountaineers 'Colchuck & Dragontail Peaks' (Class 4 scramble bypass about 30 ft below the notch); SummitPost 'West Route' (starts at the col, gully to a notch in the south summit ridge)",
+    "https://www.turns-all-year.com/trip-reports/may-18-19-2012-dragontail-via-pandoras-box-couloir - couloir to about 45 degrees ending at the col (ski, May)"
+  ],
+  "searched": [
+    "Dragontail Peak Pandora's Box west couloir route - gethighonaltitude, SummitPost x3, Mountaineers x5, turns-all-year, Alpine Institute, CascadeClimbers",
+    "Dragontail Peak \"west route\" \"Pandora's Box\" same route Colchuck Col couloir notch Beckey - snippets agree West Route = Colchuck Col route to the notch",
+    "Fetch refused with HTTP 403 (not worked around): summitpost dragontail-west-route/754370 (snippets only)",
+    "No source found treating West Route and Pandora's Box as two different lines."
+  ]
+}

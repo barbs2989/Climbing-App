@@ -1,3 +1,4 @@
+import { tx } from "../../lib/tapWords.js";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { C, hlMatch } from "../../ClimbMatchCore.jsx";
 import { useAreaPath, useCatalogAreaSearch, useCountries, useStates } from "../../lib/db.js";
@@ -139,7 +140,7 @@ export default function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,se
     {onNewArea?<div style={{marginTop:8}}>
       <input aria-label="Crag not listed? Type a new one to add it" value={newArea||""} onChange={e=>onNewArea(e.target.value)} placeholder="Not in the catalog? Type the new crag’s name…" style={fld}/>
       {dupHits.length?<div style={{marginTop:6,border:"1px solid "+C.amber+"55",borderRadius:10,overflow:"hidden",background:C.amberBg}}>
-        <div style={{padding:"8px 12px",fontSize:12,fontWeight:700,color:C.amber,lineHeight:1.45}}>{"Already in the catalog? Tap it to file your climb there instead:"}</div>
+        <div style={{padding:"8px 12px",fontSize:12,fontWeight:700,color:C.amber,lineHeight:1.45}}>{tx("Already in the catalog? Tap it to file your climb there instead:")}</div>
         <div style={{background:C.surface}}>{dupHits.map(function(m){return hitRow(m,newArea||"");})}</div>
       </div>:null}
     </div>:null}

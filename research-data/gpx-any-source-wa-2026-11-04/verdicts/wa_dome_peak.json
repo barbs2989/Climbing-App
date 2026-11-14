@@ -1,0 +1,41 @@
+{
+  "area_id": "wa_dome_peak",
+  "routes": [
+    {
+      "route_id": "wa_dome_peak_dome_glacier",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Route pages and trip reports (Mountaineers, SummitPost, WTA): climbed late May to August; no stated season. Peakbagger summits: Jul 139, Aug 51, Sep 15. Stored Jul-Sep kept." },
+      "track": { "aid": "2895149", "verdict": "same", "kind": "complete", "inSeason": true,
+        "why": "5 Jul 2025, summited (summit 12 m), start and end within 120 m of the Downey Creek pin. The line goes Downey Creek, Bachelor Creek, Cub Lake, Itswoot ridge, the Dome Glacier and the summit block, which is our route. No report on this track, but the same-day, same-line recording 2895201 (party reached the glacier and the final exposed scramble) describes the route; Indian Summer's south face is not on this line." },
+      "otherTracksConsidered": [
+        { "aid": "2895201", "verdict": "same", "why": "Same day and line, summited, but truncated 3 km before the trailhead (one-way). Its report supplies the facts." },
+        { "aid": "2947943", "verdict": "different", "why": "Ptarmigan Traverse one-way, starts at Cascade Pass." },
+        { "aid": "2238568", "verdict": "different", "why": "Ptarmigan Traverse via White Rocks and Dana glacier." },
+        { "aid": "837488", "verdict": "different", "why": "Ptarmigan Traverse from White Rocks." },
+        { "aid": "3029009", "verdict": "not-summited", "why": "Missed the summit." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "monthBreakdown", "month": 7, "text": "In early July the glacier is usually still well covered, with only a few small cracks opening, so rope travel is straightforward.", "aids": ["2895201","2238568"] },
+        { "field": "what_to_bring", "month": 7, "text": "Small cams (0.3 to 0.75) and slings for the summit block (July)", "aids": ["2895201","2947943","831599"] },
+        { "field": "descent_note", "month": 7, "text": "A 20 m rope was long enough for the rappel off the summit crack in early July; a 35 m rope gave spare length for the knife-edge traverse.", "aids": ["2238568","2895201"] },
+        { "field": "approach_note", "month": 7, "text": "In early July of recent seasons the Downey Creek trail was mostly clear of deadfall for its first six miles; the worst blowdown sat near the Bachelor Creek junction.", "aids": ["2895201"] },
+        { "field": "pro_tips", "month": 7, "text": "Itswoot Ridge camps are buggy in early July, so pack head nets or repellent.", "aids": ["542060"] }
+      ]
+    },
+    {
+      "route_id": "wa_dome_peak_indian_summer",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Only a 2011 first-ascent report (early September) found by search; consistent with Jul-Sep for the peak. No recorded repeats." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2895149", "verdict": "different", "why": "Goes up the glacier and summit block, not the south face." },
+        { "aid": "2895201", "verdict": "different", "why": "Glacier route." },
+        { "aid": "2947943", "verdict": "different", "why": "Glacier route." },
+        { "aid": "837488", "verdict": "different", "why": "Glacier / NE ridge." },
+        { "aid": "2238568", "verdict": "different", "why": "Glacier route." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Dome Glacier stored approach covers the Downey Creek / Bachelor Creek line; Peakbagger tracks agree with it."
+}

@@ -1,0 +1,35 @@
+{
+ "mt_the_unnamed_wall": {
+  "_expect": {"name": "The Unnamed Wall", "region": "Montana"},
+  "blurb": "A mile-long band of steep andesite on the sunny west side of Hyalite Canyon near Bozeman, and one of the canyon's main winter destinations. Of 25 listed lines, about half are ice, from easy WI2 and WI3 up to a single WI6, with most falling between WI3 and WI5. The rest are mixed, starting around M4 and climbing into the double digits, many of them bolted dry-tooling lines, plus one rock line in the 5.11 range. There is no easy walk-off, so expect to lead everything. The hike in climbs through trees and talus and takes roughly half an hour or more, depending on snow. Conditions change quickly, so recent reports are worth a look.",
+  "review": {"sources": ["https://outsidebozeman.com/activities/climbing/ice-climbing/the-wall-no-name", "https://mtavalanche.com/node/34181"]}
+ },
+ "mt_winter_wall_2": {
+  "_expect": {"name": "Winter Wall", "region": "Montana"},
+  "blurb": "A quiet limestone sport crag in Hellgate Gulch, in the Big Belt Mountains near Helena. The wall is steep, somewhat sharp and pocketed, and stays sunny through the cold months, which makes it a handy winter or shoulder-season choice. Of 24 routes, nearly all are bolted and two are trad. Grades start at 5.8 and reach 5.13, but the bulk sit between 5.10 and 5.12, with 5.11 the most common, so it suits climbers with some experience rather than beginners. Routes begin just above the gulch road, beneath a roof crossed by an arch, and you will likely have the place nearly to yourself.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108098649/winter-wall", "https://mountainproject.com/area/107984928/hellgate-gulch"]}
+ },
+ "mt_hay_stack_rock": {
+  "_expect": {"name": "Hay Stack Rock", "region": "Montana"},
+  "blurb": "A small slabby outcrop beside Sheep Mountain Road, on Sheep Mountain just south of Helena. About two dozen routes are packed onto the formation, most of them bolted with a handful of trad lines, and many bolted lines can be set up as top-ropes from anchors reached on the north side. Grades run from 5.6 to 5.11, with the weight in the easy-to-moderate range (5.7 is the most common grade) and a half dozen at 5.10 plus two at 5.11 for stronger climbers. The walk from the two-track is very short, which makes it one of the better spots near Helena for newer leaders and for short sessions.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111589742/hay-stack-rock?print=1", "https://www.mountainproject.com/area/111589639/sheep-mountain"]}
+ },
+ "mt_upper_nunnery": {
+  "_expect": {"name": "Upper Nunnery", "region": "Montana"},
+  "blurb": "A bouldering zone on the west side of Gallatin Canyon, on the road from Bozeman toward Big Sky, sitting at roughly 5,900 feet. Problems are scattered through a talus field on good gneiss, with 23 listed lines running from V0 to V9. Most fall between V3 and V5, with a few harder ones above V6, so it is best for climbers who already boulder in the middle grades. The walk in is long for a boulder area, around a mile and mostly uphill on a faint trail, finishing up the right side of the talus. Bring a pad you are happy to carry.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110790459/upper-nunnery", "https://www.mountainproject.com/area/110790452/the-nunnery"]}
+ },
+ "mt_three_tiers": {
+  "_expect": {"name": "Three Tiers", "region": "Montana"},
+  "blurb": "A winter ice area in the Cabinet Mountains Wilderness near Libby, set at Granite Lake across a gully from the Thunderdome cliffs. Nearly all of the 21 listed climbs are frozen flows, running from WI3 to WI5 with most at WI3 and WI4, plus one mixed line at M6. Most routes are single pitch, with a few longer ones toward the far right. The cliffs step up in tiers: the middle tier holds the best single-pitch ice, while the top tier offers shorter moderate lines with views. Reaching it means a winter trip across the lake, so plan for a full day of travel as well as climbing.",
+  "review": {"sources": ["https://mountainproject.com/area/118652184/three-tiers?print=1", "https://publications.americanalpineclub.org/articles/13201215025"]}
+ },
+ "_skipped": {
+  "mt_enchanted_neighborhood": "no fetched page is about the crag itself (only a news article mentioning it in passing)",
+  "mt_lakeside_walls_2": "could not fetch two pages that mention it; only the one area page was readable",
+  "mt_prospector_main_crag": "no fetched page about the Main Crag itself; only the parent Prospector Crag page was readable (other source returned 403)"
+ },
+ "_conflicts": {
+  "mt_three_tiers": "stored rock is limestone, but https://publications.americanalpineclub.org/articles/13201215025 describes the cliff bands above Granite Lake as quartzite; https://mountainproject.com/area/118652184/three-tiers does not state rock"
+ }
+}

@@ -1,0 +1,40 @@
+{
+  "area_id": "wa_spinnaker_peak",
+  "routes": [
+    {
+      "route_id": "wa_spinnaker_peak_s_route",
+      "season": {
+        "months": [
+          12,
+          1,
+          2,
+          3,
+          4
+        ],
+        "window": "Dec-Apr",
+        "evidence": "Web: guidebook-derived pages describe a snow route from the Yodelin lot with the PCT avoided in winter for avalanche chutes; snowshoe reports are spring/winter; Peakbagger logs cluster Jan-May. Stored Dec-Apr kept; May allowed as margin."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1868413",
+          "verdict": "unsure",
+          "why": "4 Mar 2022, summited, loop; but it starts at the Stevens Pass lot (47.747,-121.088) and uses the PCT corridor, not the Yodelin lot / Nason Creek valley our route text describes."
+        },
+        {
+          "aid": "1868429",
+          "verdict": "different",
+          "why": "Report says the party took the PCT specifically to avoid the Nason Creek crossings from Yodelin, so it is an alternative approach."
+        },
+        {
+          "aid": "1652790",
+          "verdict": "different",
+          "why": "8 May 2021 one-way traverse out toward the west, starting at the Stevens Pass lot."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Our trailhead pin is correct: mapped data puts Yodelin ski area on US 2 at about 47.767,-121.077 (OpenStreetMap), matching our pin 47.7660,-121.0782. The three recordings start 1.7 miles west at the Stevens Pass ski area and cross our pin on their way north, so the start mismatch is a different approach, not a wrong pin. No pin move."
+}

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do a climber's profile photos STICK? Drives the real editor in headless Chrome as a brand-new
 // fixture account (no username, as every signup is), then reads the row and the screen back.
 //
@@ -19,7 +20,7 @@ assertQuietBox("probe-profile-photos-stick.mjs");
 
 const port = 5391, base = `http://127.0.0.1:${port}/Climbing-App/`;
 const log = (...a) => console.log(...a);
-const server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
+const server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
 for (let i = 0; i < 120; i++) { try { const r = await fetch(base); if (r.ok) break; } catch {} await new Promise(r => setTimeout(r, 1000)); }
 const fixture = await createFixture(log);
 const uid = fixture.owner ? fixture.owner.id : (fixture.session.user && fixture.session.user.id);

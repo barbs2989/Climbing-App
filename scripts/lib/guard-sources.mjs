@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Every static guard has to answer one question before it prints "ok": did it actually
 // read the app? None of them asked it, and this codebase has already been bitten by the
 // answer being no.
@@ -62,7 +63,7 @@ export function componentFiles(root, { js = false, guard = "a guard" } = {}) {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, e.name);
       if (e.isDirectory()) walk(p);
-      else if (ext.test(e.name) && !/\.d\.ts$/.test(e.name)) out.push(path.relative(root, p));
+      else if (ext.test(e.name) && !/\.d\.ts$/.test(e.name)) out.push(path.relative(root, p).replace(/\\/g, "/"));
     }
   };
   const comp = path.join(root, "src/components");
@@ -93,7 +94,7 @@ export function assertCovered(files, root, guard, required = REQUIRED) {
   if (!files || !files.length) {
     bail(guard, "the source walk found no files at all, so every assertion below passed on an empty set");
   }
-  const seen = new Set(files.map((f) => (path.isAbsolute(f) ? path.relative(root, f) : f)));
+  const seen = new Set(files.map((f) => (path.isAbsolute(f) ? path.relative(root, f).replace(/\\/g, "/") : f)));
   const missing = required.filter((f) => !seen.has(f));
   if (missing.length) {
     bail(guard, `the source walk covered ${files.length} file(s) but not ${missing.join(", ")}`);
@@ -194,13 +195,11 @@ export const MOVED = {
     "src/components/ReportModal.tsx",
     "src/components/FriendsFeed.tsx",
     "src/components/Contributions.tsx",
-    "src/components/CatchLedger.tsx",
     "src/components/DbAreaPicker.tsx",
     "src/components/AscentPyramid.tsx",
     "src/components/DbClimbPicker.tsx",
     "src/components/LoginScreen.tsx",
     "src/components/FloatPlan.tsx",
-    "src/components/LogCatch.tsx",
     "src/components/Comments.tsx",
     "src/components/Challenges.tsx",
     "src/components/Resume.tsx",
@@ -297,13 +296,13 @@ export const MOVED = {
     "src/components/CragWalkIn.tsx",
     "src/components/SaveOfflineChip.tsx",
     "src/components/TopoCaptionBox.tsx",
-    "src/components/BetaDiff.tsx",
     "src/components/CRow.tsx",
     "src/components/EditIconButton.tsx",
     "src/components/GapNote.tsx",
     "src/components/VerifNote.tsx",
     "src/components/TagChip.tsx",
     "src/components/RouteTagRow.tsx",
+    "src/components/RouteSocialRow.tsx",
     "src/components/CragSafetyNotes.tsx",
     "src/components/RackBetaList.tsx",
     "src/components/PitchConsensus.tsx",
@@ -428,13 +427,13 @@ export function readAppFile(abs) {
   const name = path.basename(abs);
   if (MOVED[name] && MOVED[name].length) return readParentSource(path.dirname(abs), name);
   // A parent inside lib/ (lib/DbAreaBrowser.jsx, PR65 on) is keyed by its path from the checkout root.
-  const rel = path.relative(OWN_ROOT, abs);
+  const rel = path.relative(OWN_ROOT, abs).replace(/\\/g, "/");
   if (MOVED[rel] && MOVED[rel].length) return readParentSource(OWN_ROOT, rel);
   return fs.readFileSync(abs, "utf8");
 }
 
 // The checkout this module lives in — never another worktree's (check:script-roots).
-const OWN_ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const OWN_ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx", guard = "a guard") {
   const parentP = path.join(root, parent);
   if (!fs.existsSync(parentP)) bail(guard, `${parent} is missing`);

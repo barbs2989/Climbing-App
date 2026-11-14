@@ -18,7 +18,7 @@ import { TEXT_TAP, TEXT_TAP_INLINE } from "./buttonStyles.js";
 import { CAPTCHA_ON, Turnstile } from "./captcha.jsx";
 import BrandMark from "../src/components/BrandMark.tsx";
 
-const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
+const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#a7b0ba", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const provBtn = { width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: 12, minHeight: 46, borderRadius: 11, border: "1px solid " + c.border, fontSize: 15, fontWeight: 600, cursor: "pointer" };
 // A provider the project has not switched on yet ("coming soon") is drawn DARK and outlined: as two
 // white slabs at 60% opacity they were the brightest thing on the sign-in screen and read as broken.

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Injection cases for `audit:ground-index`. Its healthy output is "0 retired, 0 drift", which is
 // also exactly what a broken audit prints — so a clean run proves nothing until each case has been
 // shown to move it.
@@ -12,7 +13,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const IDX = ROOT + "lib/ground-checked-pins.js";
 const sum = s => createHash("sha1").update(s).digest("hex").slice(0, 10);
 

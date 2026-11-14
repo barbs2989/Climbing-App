@@ -1,14 +1,16 @@
+import { NPX, NPX_PRE } from "../../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // Snapshot every RICH route filed OUTSIDE Washington (enough enrichment for two fields to disagree).
 // One SQL read picks the ids (no count=exact on routes: it 500s); rows are then fetched by id, paced.
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const OUT = new URL("../../../audits/oos-contradictions", import.meta.url).pathname;
+const OUT = fileURLToPath(new URL("../../../audits/oos-contradictions", import.meta.url));
 const sql = `select r.id, r.area_id from routes r join areas a on a.id = r.area_id
  where a.path is not null and not (a.path <@ 'usa.washington')
  and (r.timing is not null or r.itinerary is not null or r.waypoints is not null or r.approach_variants is not null or r.climbing_route is not null or r.seasonal_guidance is not null or r.pitch_detail is not null)`;
-const raw = execFileSync("npx", ["supabase", "db", "query", "--linked", "-o", "json", sql], { encoding: "utf8", maxBuffer: 1 << 28 });
+const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-o", "json", sql], { encoding: "utf8", maxBuffer: 1 << 28 });
 const ids = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
 console.log("rich out-of-state routes", ids.length);
 const sleep = ms => new Promise(r => setTimeout(r, ms));

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:pinned-dismiss — a popup's ✕ and ← Back stay on the screen however far it is scrolled.
 //
 // Why. Owner, 2026-10-24: "The x out to close the page and back button need to be sticky when a
@@ -23,7 +25,7 @@
 // question is asked. Without that, coverage would be a function of how much seed data exists.
 //
 // The popups no flag alone opens (NEEDS_EXTRA_STATE) are built by EXTRA_STATE_OPENERS via `?zx=`
-// and walked after the rest; Compare at 1280px, the only width it renders at.
+// and walked after the rest (an entry with a `viewport` is walked at that width).
 //
 // WHAT IT CANNOT SEE: popups no opener can build (listed as skipped, with why), a popup whose
 // only way out is a Cancel/Done (Edit profile's sticky Cancel·Save bar is that shape and is fine),
@@ -40,7 +42,7 @@ import { assertQuietBox } from "./lib/quiet-box.mjs";
 import { overlayStates, NEEDS_EXTRA_STATE, EXTRA_STATE_OPENERS, assertKnownOverlays, buildRouteDetailOpener, routeDetailSource } from "./lib/overlay-scaffold.mjs";
 
 assertQuietBox("check:pinned-dismiss");
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const PORT = 5250;
 const log = (s) => console.log(s);
 const fails = [];
@@ -84,9 +86,8 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port} with the overlay-scroll config...`);
 // detached so the whole process group can be killed: npx spawns vite as a CHILD, and killing
 // only the npx pid leaves a server squatting the port for every later run.
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;

@@ -1,0 +1,129 @@
+{
+  "area_id": "wa_austera_peak",
+  "routes": [
+    {
+      "route_id": "wa_austera_peak",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Logged ascents: 104 in July, ~28 each in May and June (ski/early snow trips), 26 Aug, 3 Sep, none Oct; glacier route needs bridged crevasses. Stored May-Oct is wider than the data supports."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3283382",
+          "verdict": "unsure",
+          "why": "Complete in-season round trip, but it is the same standard glacier-and-summit-tower line as the Southwest Ridge / McAllister route; the two entries cannot be told apart from the report, so the track is given to the Southwest Ridge route only."
+        },
+        {
+          "aid": "2563058",
+          "verdict": "unsure",
+          "why": "Track is a Primus-Austera link-up (its highest point is Primus), not a clean Austera round trip."
+        },
+        {
+          "aid": "3341091",
+          "verdict": "unsure",
+          "why": "Day trip from base camp only, does not start at the trailhead; start 4.8 km from our pin."
+        },
+        {
+          "aid": "3258102",
+          "verdict": "unsure",
+          "why": "Multi-peak link-up, track does not reach our summit (4 km high point)."
+        },
+        {
+          "aid": "3282833",
+          "verdict": "unsure",
+          "why": "Traverse link-up, highest point is another summit 1.6 km away."
+        },
+        {
+          "aid": "2331481",
+          "verdict": "unsure",
+          "why": "Link-up from Primus, geometry does not match a round trip from our trailhead."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_austera_peak_southwest_ridge",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Stored Jun-Sep, best mid-July to August; matches the logged-ascent histogram (July 104, Aug 26, Jun 29, Sep 3). May ascents are ski trips."
+      },
+      "track": {
+        "aid": "3283382",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "23 July 2026 summit, trailhead pin within 28 m, summit within 1 m of ours; round trip via Eldorado camp, the glacier traverse and the notch below the summit tower, which matches our route text. Report names no route label, so identification rests on this being the standard line."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2563058",
+          "verdict": "unsure",
+          "why": "Logged South Ridge, in season, but the line is a Primus-then-Austera link-up whose highest point is Primus."
+        },
+        {
+          "aid": "3341091",
+          "verdict": "unsure",
+          "why": "Starts at base camp, not at the trailhead."
+        },
+        {
+          "aid": "3258102",
+          "verdict": "unsure",
+          "why": "Multi-peak trip; track does not come near our summit."
+        },
+        {
+          "aid": "3282833",
+          "verdict": "unsure",
+          "why": "Link-up; highest point is a different summit."
+        },
+        {
+          "aid": "2331481",
+          "verdict": "unsure",
+          "why": "Link-up track, no usable round trip."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In July the notch between the false and true summits can still hold snow, with a small moat on the far side of the snow lip.",
+          "aids": [
+            "3283382",
+            "2563058"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "The notch below the summit tower can be rappelled or downclimbed; the downclimb has one or two awkward moves, so a rappel suits a mixed party.",
+          "aids": [
+            "3283382"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "In July a picket set in the tall snow berm beside the summit wall protects the leader before the first rock moves.",
+          "aids": [
+            "3283382"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "The two Austera routes appear to describe the same standard line (Eldorado trailhead, Inspiration/McAllister/Klawatti glaciers, summit tower), so the owner may want to merge them; the track went to the Southwest Ridge entry only. Parent route text puts the 75 ft rappel into the Klawatti Glacier, which no in-season report distinguished. No web search was run for season; it relies on stored guidebook-derived text and the ascent histogram."
+}

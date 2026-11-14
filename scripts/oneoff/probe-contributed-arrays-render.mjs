@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do CONTRIBUTED array rows reach the boxes that render them?
 //
 // Covers both array editors added for the contribute sweep: climbing_route's sections and
@@ -30,13 +32,13 @@ const fail = (m) => { console.log("  FAIL  " + m); failures++; };
 const dead = (w) => { console.error(`\nprobe FAILED — ${w}. Nothing below was checked.\n`); clean(); process.exit(1); };
 
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "RouteDetail.jsx"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "RouteDetail.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic", "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { dead("esbuild could not bundle RouteDetail.jsx"); }
 
-const mod = await import(out + "?t=" + Date.now());
+const mod = await import(fileHref(out + "?t=" + Date.now()));
 const { ClimbingRouteTable, ApproachVariants } = mod;
 if (typeof ClimbingRouteTable !== "function") dead("RouteDetail.jsx does not export ClimbingRouteTable — ANCHOR LOST");
 if (typeof ApproachVariants !== "function") dead("RouteDetail.jsx does not export ApproachVariants — ANCHOR LOST");

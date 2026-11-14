@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Which seed area does AreaLatest actually have something to show for, and what is the click
 // path to reach it?
 //
@@ -14,7 +15,7 @@ import { pathToFileURL } from "node:url";
 
 // Inside the repo, not /tmp: the externals (react etc.) must resolve from node_modules.
 const out = path.join("scripts", "oneoff", `.seed-areas-${process.pid}.mjs`);
-execFileSync("npx", ["esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm", "--loader:.jsx=jsx",
+execFileSync(NPX, [...NPX_PRE, "esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm", "--loader:.jsx=jsx",
   "--jsx=automatic", "--platform=node", "--external:react", "--external:react-dom",
   "--external:react-dom/server", "--external:@tanstack/react-query", "--external:react/jsx-runtime",
   // `import.meta.env` is a Vite-ism and is undefined under node; lib/supabase.js reads it at

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // inject-control-name-cases — prove check:control-names FAILS on the defects it claims to catch.
 //
 // The healthy output of that guard is "no findings", which is exactly what a broken scan prints,
@@ -14,7 +15,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { createHash } from "node:crypto";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const sum = (s) => createHash("sha1").update(s).digest("hex").slice(0, 12);
 
 const SWITCH_FILES = ["src/components/SettingsPrivacySheet.tsx", "src/components/SettingsNotifsSheet.tsx", "lib/EditProfileScreen.jsx", "lib/Leaderboards.jsx", "lib/PartnerSearch.jsx", "lib/Onboarding.jsx"];

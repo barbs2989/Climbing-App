@@ -1,0 +1,39 @@
+{
+ "wy_the_steam_shovel_wall": {
+  "_expect": { "name": "The Steam Shovel Wall", "region": "Wyoming" },
+  "blurb": "A sport-only wall tucked inside the Green Mile gully, part of the Island Area near Cody. It holds 13 bolted lines on a steep, near-vertical face. The grade spread leans hard and middle-heavy: one route in the 5.10 range, seven at 5.11 and five at 5.12, so this is a place for climbers already comfortable on mid-grade sport rather than newcomers. The gully around it is described as a cool, hidden corner that turns lush in summer, which suits warm days. Expect straightforward single-pitch cragging with good quality ratings across the wall.",
+  "review": { "sources": ["https://rakkup.com/guidebook/cody-rock-climbing/steam-shovel-wall/s23336", "https://rakkup.com/guidebook/cody-rock-climbing/green-mile/s23348"] }
+ },
+ "wy_5_american_nightmare_area": {
+  "_expect": { "name": "American Nightmare Area", "region": "Wyoming" },
+  "blurb": "A small sport zone on Fairfield Hill, the upper bench of Sinks Canyon above Lander. Thirteen bolted routes stand here, offering vertical faces where small crimps give way to pockets as you gain height. Grades run from the high 5.9s through a solid block of 5.11 and 5.12 climbs, plus one very hard route, so intermediate to strong sport climbers will find the most to do. It sits roughly 7,700 feet up and is reached by a hillside hike past other Fairfield Central crags rather than from the roadside, so budget extra time for the walk.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123492651/american-nightmare-area", "https://www.mountainproject.com/area/105827602/fairfield-central"] }
+ },
+ "wy_camel_jockey": {
+  "_expect": { "name": "Camel Jockey", "region": "Wyoming" },
+  "blurb": "A short sport wall in the middle of Sinks Canyon near Lander, centred on a dihedral with technical face climbing alongside. Thirteen bolted routes of about 50 feet run from an easy 5.9 up through a cluster of 5.11 and 5.12 lines to a single 5.13. Stone is mostly solid, though some loose debris can sit near the base. The wall catches strong sun in the morning and falls into shade later in the day, making it a cooler pick for afternoons, though the shade can feel chilly after sun exposure. Reach it by walking from the Addiction area, past White Heat Wall and Briskets.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/climbing-camel-jockey-wall-in-wyomings-sinks-canyon", "https://mountainproject.com/area/105827053/sinks-canyon"] }
+ },
+ "wy_cowboy_king_wall": {
+  "_expect": { "name": "Cowboy King Wall", "region": "Wyoming" },
+  "blurb": "The far-right section of the Aspen Glade cliff line at Wild Iris, south of Lander. Thirteen sport routes, topped by a big double-bulge roof on the main part of the wall. This is a wall for strong climbers: the bulk of the lines are 5.12, with a couple of 5.13 and a handful of easier outliers. Routes here are known as some of the longest at the Iris. The cliff takes sun for most of the day with only a little shade in the late evening, and few trees stand at its base, so it works on cooler days. Reach it by following the Gun Street trail and then heading right.",
+  "review": { "sources": ["https://mountainproject.com/area/106811726/cowboy-king-wall", "https://mountainproject.com/area/106811683/aspen-glade"] }
+ },
+ "wy_enclosure": {
+  "_expect": { "name": "Enclosure", "region": "Wyoming" },
+  "blurb": "A lesser-visited summit just west of the Grand Teton in Grand Teton National Park, offering mountaineering rather than cragging. Its 13 listed climbs are a mix of alpine rock, ice, and a single mixed route, with ice grades around WI2 to WI3 and rock mostly between easy fifth class and 5.10. Expect long, multi-pitch days, since the approach from Lupine Meadows is put at three to six hours. Rock on the north-facing sides tends to be broken and variable, though a solid, lightly fractured buttress has been reported on the steeper north face. Traffic is light compared with the Grand itself.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106557065/enclosure", "https://publications.americanalpineclub.org/articles/12197013200/Grand-Teton-North-Face-of-Enclosure"] }
+ },
+ "wy_frat_boys": {
+  "_expect": { "name": "Frat Boys", "region": "Wyoming" },
+  "blurb": "A sport wall in the lower Mondo Beyondo sector of Ten Sleep Canyon, split off from the neighbouring World Domination Wall. Thirteen bolted routes make up a very consistent mid-grade menu: four around 5.10, eight at 5.11 and one at 5.12. Several lines draw top ratings, so it is a good stop for climbers working through the 5.10s and 5.11s. The walk from the roadside lot goes up a trail, bearing right past Metropolis and Antarctica, and takes about half an hour.",
+  "review": { "sources": ["https://rakkup.com/guidebook/ten-sleep-rock-climbing/frat-boys-wall/s15220", "https://www.mountainproject.com/area/111852983/mondo-beyondo"] }
+ },
+ "_skipped": {
+  "wy_el_bloque_la_cebolla": "no fetched page about this boulder; the parent Crag 6 page lists zero boulder problems and does not mention it",
+  "wy_four_bear_towers": "only a route page and trail pages mention it; no fetched page about the crag itself"
+ },
+ "_conflicts": {
+  "wy_camel_jockey": "One page states south in its data box but east in its text; stored aspect E left unchanged (https://app.advcollective.com/climbing/climbing-camel-jockey-wall-in-wyomings-sinks-canyon)"
+ }
+}

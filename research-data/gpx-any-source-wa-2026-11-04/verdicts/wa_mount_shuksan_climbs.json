@@ -1,0 +1,101 @@
+{
+  "area_id": "wa_mount_shuksan_climbs",
+  "routes": [
+    {
+      "route_id": "wa_mount_shuksan_hanging_glacier",
+      "season": { "months": [7, 8], "window": "Jul-Aug", "evidence": "Stored Jul-Aug kept. No Peakbagger ascent is logged under this route name, so there is no histogram for it. Web search found no route-specific season page; general Shuksan guidance puts glacier and summit-pyramid climbing in July to September. Not independently confirmed." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3307280", "verdict": "different", "why": "Starts at the southern Shannon Ridge trail and climbs the Sulphide side; nowhere near the White Salmon cirque this route uses." },
+        { "aid": "3342955", "verdict": "different", "why": "Lake Ann side (Fisher Chimneys and the SE ridge); not this north-side line." },
+        { "aid": "3150780", "verdict": "different", "why": "Logged as the White Salmon Glacier route (a ski ascent); the Hanging Glacier is a different line even though both leave the same valley." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_shuksan_north_face",
+      "season": { "months": [5, 6, 7], "window": "May-Jul", "evidence": "Stored May-Jul kept. Logged route 'North Face' has successful ascents in Jan, May, Jun and Jul (one each), consistent with a late-spring to early-summer snow and ice line; no route-specific web season page found." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3150780", "verdict": "different", "why": "Logged as the White Salmon Glacier route, a different line from the North Face." },
+        { "aid": "2803453", "verdict": "different", "why": "Logged as the White Salmon Glacier route, not the North Face." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_shuksan_northeast_ridge",
+      "season": { "months": [7, 8], "window": "Jul-Aug", "evidence": "Stored Jul-Aug kept. Logged route 'NE Ridge' has a single August ascent; the peak's general climbing window is July-September. No route page found; low confidence." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3342955", "verdict": "unsure", "why": "Fisher Chimneys then the SE ridge; no report or line indicates the north-east ridge." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_shuksan_northwest_arete",
+      "season": { "months": [8, 9], "window": "Aug-Sep", "evidence": "Stored season is empty. The only logged ascent that names this line ('Northwest Arete to Labor Day Route') is in September; the arete is mixed rock and snow, so snow-free late summer fits. No route page found; low confidence." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3307280", "verdict": "different", "why": "Southern Shannon Ridge approach, Sulphide side; not the north-west arete." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_shuksan_price_glacier",
+      "season": { "months": [5, 6, 7], "window": "May-Jul", "evidence": "Stored May-Jun widened to May-Jul. Logged route 'Price Glacier' has one May and one July successful ascent; ski attempts on the glacier are reported in late April to mid-May, and summer ascents in July and August (route guide listings, 1945 first-ascent in September). Serac hazard grows as the season warms." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3231844", "verdict": "different", "why": "Sulphide route and the SE corner, southern side." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_shuksan_white_salmon_glacier",
+      "season": { "months": [4, 5, 6], "window": "Apr-Jun", "evidence": "Stored Jun-Sep looks late. Logged routes 'White Salmon Glacier'/'WSG'/'White Salmon' show successful ascents in Mar (2), Apr (3), May (1), Jun (1), all but one on skis. Web search: ski-route trip listings from February and April, and a note that in summer the approach is a long brushy bushwhack. So the practical window is spring snow." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3150780", "verdict": "unsure", "why": "Positive identity (logged as this route, camp near the glacier toe, summit and ski descent) and in season (Mar 28, within a month of April). But the track starts at the ski-area day lodge, 724 m from our stored hairpin pin and is not a round trip by the 300 m rule. The day lodge is a real, separate winter start (mapped at 48.86196,-121.65385, Nominatim), not the 'old lodge site' our text names, so I am not moving the pin. Owner may accept it as a winter-start track." },
+        { "aid": "2803453", "verdict": "unsure", "why": "Positive identity (logged as this route, report describes the glacier, Winnie's Slide, Upper Curtis, Hell's Highway) and in season (Apr 5), but same day-lodge winter start, and the track ends mid-mountain. Not usable." },
+        { "aid": "3305030", "verdict": "different", "why": "Fisher Chimneys + SE ridge, a different line that merely meets this glacier high up." },
+        { "aid": "3342955", "verdict": "different", "why": "Fisher Chimneys line." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 4, "text": "In early April a big avalanche debris field can choke the White Salmon creek drainage; budget about an hour to wind through it", "aids": ["2803453"] },
+        { "field": "monthBreakdown", "month": 4, "text": "In early April with a deep base the glaciers can be travelled unroped; crampons came out for the Upper Curtis Glacier and the upper part of Hell's Highway, and the snow in the summit gully was firm at midday.", "aids": ["2803453"] },
+        { "field": "pro_tips", "month": 4, "text": "In April the narrowest part of the final summit gully was easier on the climber's left than on the right.", "aids": ["2803453"] },
+        { "field": "what_to_bring", "month": 4, "text": "two ice axes (April, firm snow on the summit gully)", "aids": ["2803453"] }
+      ]
+    },
+    {
+      "route_id": "wa_southeast_ridge_se_corner",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep kept. Logged 'SE Ridge'/'Fisher Chimneys, SE ridge' ascents fall in Jun (rare), Jul and Aug mostly, a few Sep. Web: park ranger conditions pages say the SE ridge is mostly snow-covered in mid-June and close to snow-free by late July; a guided late-August trip found good rock and snow cover to the base." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3305030", "verdict": "unsure", "why": "Logged 'Fisher Chimneys + SE Ridge (5.3)', Aug 10, summited, a full car-to-car round trip, and the report names the ridge, pitches and a 5.3 crux, so the identity of the finish is positive. Not assigned because (a) it starts at the Lake Ann trailhead (about 10.4 km from our Shannon Ridge pin) and (b) the same ascent also fits the stored Fisher Chimneys route, so it may be one line filed twice. Owner may choose to accept it as the route's Fisher-approach variant." },
+        { "aid": "3308367", "verdict": "unsure", "why": "Same Fisher Chimneys + SE ridge climb, same reasons as 3305030." },
+        { "aid": "2947974", "verdict": "unsure", "why": "Same Fisher Chimneys + SE ridge climb, same reasons as 3305030 (Aug 2 2025)." },
+        { "aid": "3342955", "verdict": "unsure", "why": "Fisher Chimneys then the SE ridge (Sep 12); same reasons as 3305030, and it is a camp-to-camp style two-day trip." },
+        { "aid": "3231844", "verdict": "unsure", "why": "Positively this route's finish (Jun 14, 'Sulphide route and SE Corner', walked up the SE corner with 5th class moves) and in the approach corridor of our Shannon Ridge pin, but the track only starts at the 5,450 ft camp saddle (3.1 km from our trailhead pin), so it is not a full route track." },
+        { "aid": "3307280", "verdict": "unsure", "why": "Jul 31, starts at the Shannon Ridge trailhead and is a complete round trip with a base camp; the report mentions a 4th-class summit tower but never names the SE ridge versus the gully, so identity is not proven." },
+        { "aid": "3237828", "verdict": "different", "why": "Logged Sulphide Glacier; report says the party took the steep snow gully." },
+        { "aid": "3232814", "verdict": "different", "why": "Sulphide and gully; report says they chose the gully over the SE rib." },
+        { "aid": "2872876", "verdict": "not-summited", "why": "Turned back." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 8, "text": "By mid-August one stretch of the forest road to the Shannon Ridge trailhead is washed out and high clearance helps; the trail up the ridge is cleared and easy to follow, and the glacier's lowest slope is hard ice at dawn after a cold night, with crevasses right away and no set bootpack.", "aids": ["2285351"] },
+        { "field": "approach_note", "month": 6, "text": "In mid-June the snow is continuous from about 4,700 ft and the basin camp near 6,200 ft has running water and dry pads; slopes above camp can shed wet avalanches onto the trail on the way out.", "aids": ["3232814", "3231844"] },
+        { "field": "watch_out", "month": 8, "text": "Rope drag in the summit gully can knock loose plate-sized rocks onto the rappeller below in August", "aids": ["3305030"] },
+        { "field": "pro_tips", "month": 8, "text": "In early August a single rack of nuts, a few cams and slings was enough on the ridge; the first pitch can be simul-climbed and the rest belayed.", "aids": ["3305030", "2947974"] },
+        { "field": "descent_note", "month": 8, "text": "A pair of ropes rappelled double speeds the gully descent when other parties are queuing, and a lone single-rope rappel followed by two double-rope ones got a party down in August.", "aids": ["3305030"] }
+      ]
+    }
+  ],
+  "notes": "Seven routes were in the packet; none gets a track. Fisher Chimneys and Sulphide Glacier already have tracks and are not in this list. The strongest unassigned candidate is 3305030 (Aug 10 2026, Fisher Chimneys + SE ridge 5.3, complete from Lake Ann): our SE-corner route's own overview says it is climbed after a Fisher or Sulphide approach, so this is arguably the route's full line, but it also fits the Fisher Chimneys route and starts away from the stored Shannon Ridge pin. Likewise 3150780 and 2803453 (March/April ski ascents) are positively the White Salmon Glacier but start at the ski-area day lodge (48.86196,-121.65385, confirmed by a Nominatim search for White Salmon Day Lodge) rather than our hairpin pin 724 m away; our WSG stored season Jun-Sep looks too late (logged ascents Mar-Jun, mostly skied). Hanging Glacier, North Face, NE Ridge, NW Arete and Price Glacier have no tracks on Peakbagger for these lines in the harvest."
+}

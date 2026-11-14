@@ -69,6 +69,15 @@ const EXEMPT = [
     match: (style) => /zIndex:\s*9700/.test(style) && /flexDirection:\s*"column"/.test(style),
   },
   {
+    key: "trail-draw",
+    // TrailDrawMap's full-screen branch (lib/TrailDrawMap.jsx, 2026-11-05): the Add-the-trail drawer
+    // and the desktop Draw approach tool. A line is drawn BY EYE, point by point, and the owner asked
+    // for the whole screen to do it in. Same class as the route map; it sits at 10000 because the
+    // GPS submission sheet it opens from is a 9999 overlay, so the route map's 9700 would be under it.
+    why: "the trail drawer is a MAP -- spatial content, full-bleed like the route map, and a line drawn by eye needs the whole screen",
+    match: (style, file) => /TrailDrawMap\.jsx$/.test(file) && /zIndex:\s*10000(?!\d)/.test(style),
+  },
+  {
     key: "menu-wide",
     // The Menu's WIDE branch only (≥1024px, where the desktop shell is no longer a 520px column).
     // The owner asked for the Menu to fill the screen (2026-10-21); it had been a 440px drawer.
@@ -168,16 +177,19 @@ for (const f of FILES) {
 // check:refs, and it drops that file's views silently. Reformatting ClimbMatchCore alone takes
 // 24 -> 17 views, so the view floor trips on it.
 //
-// 20 sits just under today's 24: tight enough that losing one big file trips it, loose enough
-// that removing a view or two does not. It is a RATCHET -- if views are deliberately deleted
-// below it, move the floor in the same commit and say why.
+// The floor is 36 against today's 38 (it was 20 against 24 until the views moved out of core into
+// src/components/*.tsx). Injection-found blind spot: with the views spread over ~30 files, the
+// old floor of 20 let a whole-file reformat of ClimbMatch.jsx (-4 views) or of core (-2) pass
+// green. 36 trips on losing ClimbMatch.jsx's four; core's two are the residual below.
+// It is a RATCHET -- if views are deliberately deleted below it, move the floor in the same
+// commit and say why.
 //
 // RESIDUAL, stated rather than papered over: a file holding a SINGLE view (lib/DbGuides.jsx,
 // lib/DbAreaBrowser.jsx) can be reformatted without tripping either floor. A per-file expectation
 // would catch it and would be hand-maintained bookkeeping that rots, which this repo has been
 // burned by more than once; the floors are the cheaper trade.
-if (views < 20) {
-  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 20.`);
+if (views < 36) {
+  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 36.`);
   console.error("The scan is broken, the style shape moved, or views were deleted. NOT a clean result.");
   process.exit(1);
 }

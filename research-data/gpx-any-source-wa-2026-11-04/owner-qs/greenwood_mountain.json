@@ -1,0 +1,23 @@
+{
+  "key": "greenwood_mountain",
+  "question": "Every ascent pairs Dumbell and Greenwood; our route crosses the Dumbell ledge. Is the standard Greenwood route inherently over Dumbell?",
+  "answer": "Over Dumbell's ledge, yes; over Dumbell's summit, no. The standard Greenwood route (west ridge from upper Phelps Basin) has no way to Greenwood that avoids the ledge on Dumbell's east side. From a 7,900 ft notch in Dumbell's southeast ridge (not the notch used for Dumbell's own summit), a ledge about a foot wide curves round the east side of Dumbell and drops steeply east. Crossing it is the key to reaching the saddle and then Greenwood's west ridge (class 3 scree). Dumbell's summit is a separate short extra (about 0.3 mi and 500 ft of scree from the notch). Climbers pair them because the approach is long (about 19 mi round trip from Phelps Creek, 5,000+ ft) and Dumbell is cheap once there, so most logged tracks include both. The ledge's difficulty is disputed: class 3 by most, class 4 with loose rock by some, and nearly impassable when snow-covered (so mid-July to early September is the sensible window). Pairing in a track is therefore not evidence of two routes: our row correctly includes the ledge, and a track that also summits Dumbell contains our route plus a short spur. In the packet, 2011717 (Aug 2022, starts in the basin), 2629428 and 2581382 do not summit Dumbell; 2313859, 3265158, 2911094 and 2292066 add it.",
+  "recommendation": "Allow pairs. 2313859 (Sep 16 2023) is a complete trailhead-to-trailhead track from Phelps Creek (48.0829,-120.8349) that shows Dumbell as a 0.3 mi spur off the same notch, so it is acceptable if the owner accepts a combined climb; note its highest point is Dumbell's. If the owner wants a track that ends on Greenwood, 2581382 (Jul 20 2024, trailhead out-and-back, passes 25 m from the Greenwood pin) is the cleaner candidate. Keep the single West Ridge row and add a sentence that the ledge crossing is part of the route and Dumbell is an optional add-on.",
+  "confidence": "medium",
+  "proposed": {
+    "keep_row": "wa_greenwood_mountain_west_ridge",
+    "preferred_track_if_pairs_allowed": "2313859",
+    "cleaner_greenwood_end_candidate": "2581382",
+    "text_note": "The route cannot skip Dumbell's ledge: from the high notch on the southeast ridge of Dumbell you cross a foot-wide, steeply exposed ledge round the east side to reach the saddle below Greenwood's west ridge. Dumbell's own summit is an optional short extra, not part of the route. Snow on the ledge can make it nearly impassable, so go when it is clear, mid-July through early September."
+  },
+  "evidence": [
+    "https://summitpost.org/greenwood-mountain/858224 — 7,900 ft notch in Dumbell's SE ridge (not the summit notch), ledge about a foot wide curving round the east side, key to Greenwood; route 'Greenwood West Ridge via Phelps Creek' class 3",
+    "https://lemkeclimbs.com/dumbell-and-greenwood-mountains.html — Jul 2013 trip, ledge crossed both ways, Greenwood West Ridge class 3",
+    "Peakbagger ascent 2313859 (in packet) — notch 7,855 ft to Greenwood 0.8 mi, back to the notch, then Dumbell 0.3 mi: Dumbell is a spur off the same notch",
+    "https://cascadeclimbers.com/forum/topic/3787-questions-concerning-dumbell-amp-greenwood (search snippet) — dispute over class 3 vs class 4-5 near the ledge"
+  ],
+  "searched": [
+    "Dumbell Mountain Greenwood Mountain Phelps Basin ledge route class 3 — SummitPost, Lemke, CountryHighPoints, Mountaineers (combined page), CascadeClimbers",
+    "Computed the distance of each packet track's sampled shape from the Greenwood and Dumbell summit pins (minimums: 2313859 4 m / 10 m; 2581382 25 m / 58 m; 2011717 62 m / 128 m)"
+  ]
+}

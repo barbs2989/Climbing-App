@@ -1,3 +1,4 @@
+import { tx } from "../../lib/tapWords.js";
 import { C, DLOCALE, uTemp, uElev, uWind, uSnowfall, uPrecip } from "../../ClimbMatchCore.jsx";
 import { BOX, clockOf, floorQ, hrSpan } from "../../lib/alpineConditionsShared.js";
 import CardHead from "./CardHead.tsx";
@@ -74,7 +75,7 @@ export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayNam
         <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 4 }}>{extra}</span>
       </button>;
     })}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, padding: "9px 14px 11px", borderTop: "1px solid " + C.border }}>Whole-day figures at the forecast’s height. Tap a day to open it in every section.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, padding: "9px 14px 11px", borderTop: "1px solid " + C.border }}>{tx("Whole-day figures at the forecast’s height. Tap a day to open it in every section.")}</div>
     </div>
   </div>;
 }

@@ -100,6 +100,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   bare `setFixOpenSection("key")`, because that is a pencil that skips the lock. The first run after
   the rewrite reported "found only 0 edit pencil(s) — the scan broke", which is the fail-closed
   shape working as intended.
+- **`check:facts-pencil-open`** (2026-11-11) holds that a pencil covering SEVERAL fields is not one
+  field's pencil. The ROUTE FACTS card pencil was `openFix("grade")`, a crag route's grade is always
+  HIGH (0406), so the card opened the Flag sheet on every crag route while its Location and Pitches
+  were empty, and `HEAD_KEYS` put the grade's *High · locked* on the card heading. It checks
+  `lib/firstEditable.js` with 8 behaviour cases (empty before medium, never a locked or unknown key
+  while an open one exists, all-locked returns the first key). It also checks the source: the card
+  pencil goes through `factsPencilKey`, `CragFactSection` through `firstEditable`, `HEAD_KEYS` has no
+  ROUTE FACTS / TECHNICAL STATS, and TechStats draws the grade's own `ConfChip`. 4 injections put each
+  pre-fix shape back and must be caught. **Cannot see:** whether the editor actually scrolls to the
+  chosen field (verified by hand on a sport route, Coexistence 5.12b). Also out of reach: a pencil
+  added elsewhere that covers several fields but passes one key; route it through `firstEditable` too.
+  **Non-finding, measured 2026-11-11:** `route_field_confidence` had no rows, so no manual "high"
+  override locks an empty field, even though `_route_field_level_for` reads the override before the
+  empty test.
 - **`check:editable-coverage`** asserts that every `routes` column in the schema snapshot either has
   an editor (a `contribution_fields` row names it as a `column_name`) or is declared in the script's
   `NEVER` map with a reason a reviewer can check (identity, derived numbers, owner-curated lists,
@@ -408,8 +422,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:route-tags`** pins the route page's chip row (`RouteTagRow`, the one consumer of
   `lib/routeTags.js`): every real `routes.lists` string reaches its list chip, every chip agrees
-  with `routeInList`, and — since the 2026-09-25 tag audit — the two DERIVED chips claim only what
-  the route's own text supports. Static, in `npm run build`.
+  with `routeInList`, and — since 2026-11-05 — **only lists are drawn**. Static, in `npm run build`.
+  - **Lists only (owner, 2026-11-05: "keep list membership tag and remove all the rest").** The
+    character chips from `routes.features` (Exposed, Sustained, Slab… and any unknown value such
+    as "Talus", which the fallback drew grey) and the two derived warnings (Glacier travel, Raptor
+    closure) are gone from `routeTags()`; `FEATURE_TAGS`, `crossesGlacier`, `raptorClosure` and
+    `derivedTags` were deleted with their guard cases. The guard's composition case now carries
+    all three kinds of input and asserts the two list chips come back and nothing else. The
+    `features` column stays (data intact, reversible); the *Style / character* editor in SuggestFix and the Add-route picker went with the chips the same day, since they wrote a field nobody could see.
+    The paragraphs below record the derived chips' audit as it stood when they were drawn.
   - **Both derived chips fired on a bare word, and both were mostly wrong.** Measured over all
     211,716 routes: *Glaciated* sat on 659 and **328 crossed no glacier** — 170 on a place name
     alone (Glacier Peak Wilderness, the town of Glacier on SR 542, Glacier Basin), 109 on one

@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // Apply a generated catalog-fold migration (0294's shape) to the LIVE database in pieces the SQL gateway can finish.
 //
 // Why: `supabase db query` gives up after ~100 s (HTTP 524), and three per-row triggers on routes (route counts,
@@ -19,7 +21,7 @@
 import fs from "fs";
 import path from "path";
 import { spawnSync } from "child_process";
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "../..");
 const M = path.resolve(ROOT, process.argv[2] || ""); if (!fs.existsSync(M)) { console.error("usage: apply-fold-in-parts.mjs <migration.sql> [--dry] [--from=N]"); process.exit(2); }
 const s = fs.readFileSync(M, "utf8");
 const ver = path.basename(M).slice(0, 4), name = path.basename(M, ".sql").slice(5);
@@ -56,7 +58,7 @@ if (process.argv.includes("--dry")) { console.log(`${ver}: ${nMoves} moves; wrot
 const from = +(process.argv.find(a => a.startsWith("--from=")) || "--from=1").slice(7);
 for (let i = from - 1; i < pieces.length; i++) {
   const t0 = Date.now();
-  const r = spawnSync("npx", ["supabase", "db", "query", "--linked", "-f", fileOf(i)], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 26 });
+  const r = spawnSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "-f", fileOf(i)], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 26 });
   const out = (r.stdout || "") + (r.stderr || "");
   const ok = r.status === 0 && /"rows": \[\]/.test(out);
   console.log(`${String(i + 1).padStart(2, "0")}/${pieces.length} ${pieces[i][0]}: ${((Date.now() - t0) / 1000).toFixed(0)} s ${ok ? "ok" : "FAILED"}`);

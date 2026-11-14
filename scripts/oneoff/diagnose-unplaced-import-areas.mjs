@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Report-only: for Mountain Project routes import-route-grades.mjs refused as "area not in our
 // catalog", show WHERE the descent by name stops — the deepest area we do have, and the first name
 // we do not — so missing areas can be told apart from a name-matching gap.
@@ -8,7 +9,7 @@ import { readdirSync, readFileSync } from "node:fs";
 const st = process.argv[2] || "montana";
 const DIR = "catalog/_mp";
 const norm = s => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/&#0?39;|&apos;/g, "'").replace(/&amp;/g, "&").trim().toLowerCase();
-const out = execFileSync("npx", ["supabase", "db", "query", "--linked", `select a.id, a.name, a.parent_id from areas a where a.path <@ (select path from areas where id = '${st}')`], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] });
+const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", `select a.id, a.name, a.parent_id from areas a where a.path <@ (select path from areas where id = '${st}')`], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] });
 const rows = JSON.parse(out.slice(out.indexOf("{"))).rows;
 const kids = new Map(), byId = new Map(rows.map(r => [r.id, r]));
 for (const r of rows) { const k = r.parent_id; (kids.get(k) || kids.set(k, []).get(k)).push(r); }

@@ -1,0 +1,37 @@
+{
+ "nh_waterfall_area": {
+  "_expect": {"name": "Waterfall Area", "region": "New Hampshire"},
+  "blurb": "A steep, narrow gully on the Russell hillside near Woodstock, forming the left-hand part of the Bird Murder cliff. Steep walls rise on both sides: one is a sheer orange face, the other a gray wall full of corners and stacked roofs. Nearly everything here is bolted, and the grades are concentrated at 5.11, with a few 5.12s and a scattering of lines from 5.6 up to 5.10. Expect short, sustained, powerful pitches rather than a beginner crag. The gully funnels anything dropped from above onto the ground below, so helmets and care around the base are wise.",
+  "approach": "Hike straight up the hillside from the base of Summer Wall into the gully.",
+  "review": {"sources": ["https://www.mountainproject.com/area/123082477/waterfall-area", "https://www.mountainproject.com/area/120794672/bird-murder"]}
+ },
+ "nh_artist_s_bluff": {
+  "_expect": {"name": "Artist's Bluff", "region": "New Hampshire"},
+  "blurb": "A granite cliff in Franconia Notch, reached by a short trail hike that also leads to a viewpoint above the notch. Almost all of the twelve climbs are traditional, mostly moderate lines between about 5.4 and 5.8, including a few two-pitch outings. A handful of harder routes reach 5.10 and 5.11, plus one 5.12 bolted line. The stone is textured and takes gear well, with comfortable belay ledges, which makes it a friendly place for a first trad lead or an easy introduction to multi-pitch climbing. A path runs along the base of the cliff.",
+  "review": {"sources": ["https://mountainproject.com/area/106029008/artists-bluff", "https://www.cannonmt.com/things-to-do/activities/artists-bluff"]}
+ },
+ "nh_05_huntington_ravine": {
+  "_expect": {"name": "Huntington Ravine", "region": "New Hampshire"},
+  "blurb": "A big glacial cirque on the east side of Mount Washington, with serious multi-pitch trad climbing on long ridges and buttresses that start roughly 500 feet above the ravine floor. The twelve rock routes range from easy fifth-class ridge scrambles at the 5.3 to 5.4 level to a cluster of hard 5.11 and 5.12 pitches, with a few mid-grade classics between. This is an alpine setting, not a roadside crag: weather can turn quickly and severely, and the walk in from Pinkham Notch follows the Tuckerman Ravine fire trail, then the Huntington Ravine Trail, taking one to two miles depending on the route.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110935877/huntington-ravine", "https://en.wikipedia.org/wiki/Huntington_Ravine"]}
+ },
+ "nh_gonic_trails": {
+  "_expect": {"name": "Gonic Trails", "region": "New Hampshire"},
+  "blurb": "A small, low-key bouldering spot along the Isinglass River in Rochester, set in shaded mixed woods that also hold a mountain-bike and hiking trail network. Eleven granite problems run mostly from VB to V2, with one harder V5. The best lines sit on a lower wall by the river; further uphill along the trail the rock is crumblier and some lines are highball. It is not a destination area, but it suits a short session close to the seacoast, and brushing could open up harder lines.",
+  "parking_note": "Leave the car in the gravel lot off Rochester Neck Road, reached from Route 125 in Rochester; the trail head is roughly a mile down the road on the right.",
+  "review": {"sources": ["https://www.mountainproject.com/area/111276902/gonic-trails", "https://www.singletracks.com/bike-trails/the-gonic-trails/"]}
+ },
+ "nh_11_pine_mountain": {
+  "_expect": {"name": "Pine Mountain", "region": "New Hampshire"},
+  "blurb": "An old slab and cliff with many small overlaps on Pine Mountain, near Gorham in the Pinkham Notch area. The character is unusual and a bit adventurous: routes are mostly traditional, the lines wander, and bolts are sparse, so it works as an alternative to the better-known Conway slabs. The eleven climbs run from about 5.4 to 5.8, with two or three pitches on the longer ones. A light standard rack, small nuts and alpine draws are useful, and a 70 m rope is handy. The approach is fairly easy, around 20 to 25 minutes.",
+  "review": {"sources": ["https://mountainproject.com/area/112004279/pine-mountain", "https://vftt.org/threads/pine-mountain-nh-question.29178/post-271317"]}
+ },
+ "_skipped": {
+  "nh_lower_slab": "no fetched page is about the Lower Slab itself; only the parent Lincoln Crag page lists it",
+  "nh_left_side_2": "only the page for the whole Rock Rimmon wall was readable; other pages blocked (403)",
+  "nh_cliff_boulders_3": "no page found for a Cliff Boulders area near Conway; the only match is a Pawtuckaway area at a different location"
+ },
+ "_conflicts": {
+  "nh_05_huntington_ravine": "stored rock greywacke; https://www.mountainproject.com/area/110935877/huntington-ravine calls the rock schist"
+ }
+}

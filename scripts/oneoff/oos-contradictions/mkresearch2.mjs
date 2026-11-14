@@ -1,7 +1,8 @@
+import { fileURLToPath } from "node:url";
 // Phase 2: reader outputs (p2/read/g*.json) -> research files (p2/research/in/rNNN.json), ~10 contradictions each,
 // each carrying the snapshot row. Prints coverage against the batches.
 import fs from "node:fs";
-const T = new URL("../../../audits/oos-contradictions/p2", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/oos-contradictions/p2", import.meta.url));
 const R = Object.fromEntries(JSON.parse(fs.readFileSync(`${T}/p2-routes.json`)).map(r => [r.id, r]));
 const only = process.argv[2] ? new RegExp(process.argv[2]) : null;
 const reads = fs.readdirSync(`${T}/read`).filter(f => /^g\d+\.json$/.test(f) && (!only || only.test(f)));

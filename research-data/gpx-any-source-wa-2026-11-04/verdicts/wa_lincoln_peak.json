@@ -1,0 +1,37 @@
+{
+  "area_id": "wa_lincoln_peak",
+  "routes": [
+    {
+      "route_id": "wa_lincoln_peak_standard",
+      "season": { "months": [4, 5, 6], "window": "Apr-Jun", "evidence": "Stored Apr-Jun. Logged ascents: by route name: X Couloir May 2, Jun 3 (incl. X-Couloir), Jan 1; all routes Jan 5, May 9, Jun 11, Mar 1, Apr 1. Web: route accounts say too early means fresh-snow avalanche, too late means wet-snow slides and rockfall from crumbling rock, with a spring cold-freeze sweet spot (late April through June). Keep Apr-Jun." },
+      "track": { "aid": "967016", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "May 26 2018 summit, round trip from the Nooksack Middle Fork road side (start/end 11 m apart, 749 m elevation), climbing the southwest basin to the summit by the same line as the track logged by name as X Couloir (aid 810755, Jun 5): final 2 km coincide within ~100 m. Wilkes-Booth is on the opposite (northwest) face, so this line can only be the southwest-face route. Report text names no route (snow, glacier, ice climb, tent camp), so identity rests on line plus approach geometry; treat as likely rather than certain." },
+      "otherTracksConsidered": [
+        { "aid": "810755", "verdict": "same", "why": "Logged as X Couloir, Jun 5 2017, summited, but the track begins at the 5,800 ft camp, not a trailhead, so it is partial; best fallback." },
+        { "aid": "986384", "verdict": "unsure", "why": "Jun 4 2017, starts on the Thunder Glacier (Heliotrope side), report names no route; line merges with the same southwest basin finish but it is not a trailhead track." },
+        { "aid": "2836216", "verdict": "unsure", "why": "May 9 2025, X couloir described in text but no track." },
+        { "aid": "1146587", "verdict": "unsure", "why": "Apr 28 2019, no track." },
+        { "aid": "1220140", "verdict": "unsure", "why": "Jun 8 2003, no track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 6, "text": "In early June the bergschrund's center bridge may have collapsed; missing it in the dark pushed one party onto an ice-glazed rock step far to the left.", "aids": ["810755"] },
+        { "field": "pro_tips", "month": 6, "text": "In early June overnight lows in the 20s firmed the snow for a 2 a.m. start, and the upper couloir was in good order with few runnels and no icefall until later in the day.", "aids": ["810755"] },
+        { "field": "what_to_bring", "month": 5, "text": "about 10 pickets (May, if protecting every pitch)", "aids": ["2836216"] }
+      ]
+    },
+    {
+      "route_id": "wa_lincoln_peak_north_ridge",
+      "season": { "months": [1, 2, 3, 4], "window": "Jan-Apr", "evidence": "Stored: only documented ascent in March when the ice was frozen. Web: first ascent of this northwest-face line recorded 13 Mar 2015 (AAJ), 2,000 ft WI4, one day from the Heliotrope trailhead. No repeats found; Peakbagger ascents on the peak are all southwest face." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "967016", "verdict": "different", "why": "Approach from the south and summit via the southwest basin; not the northwest face." },
+        { "aid": "986384", "verdict": "different", "why": "Starts at Thunder Glacier but finishes via the southwest basin, not the northwest face." },
+        { "aid": "810755", "verdict": "different", "why": "Logged as X Couloir." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Standard route has no trailhead pin (only a summit). The track start is at about 2,457 ft on the FR-38 side; Trip accounts describe parking at switchbacks at 2,650-3,420 ft and biking to the road end near 3,700 ft, so the track start does not match a named, confirmable trailhead and I did not propose a pin. FR-38 is described as closed since mid-2026 in our stored text."
+}

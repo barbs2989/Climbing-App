@@ -1,0 +1,30 @@
+{
+  "key": "liberty-ridge-cross",
+  "question": "Is the Liberty Ridge row on Mount Rainier the same climb as 'Liberty Cap via Liberty Ridge' on the Liberty Cap area, i.e. is one climb filed twice?",
+  "answer": "Yes, one climb is filed twice. Liberty Ridge is the route up the buttress between Willis Wall and Liberty Wall that ends on Liberty Cap (14,112 ft), the northern sub-summit of Rainier. Both rows (wa_mount_rainier_liberty_ridge and wa_liberty_cap_liberty_ridge_finish) give AI3, aspect N, 'between Willis Wall and Liberty Wall', the same White River/Glacier Basin start, the same St. Elmo Pass, Winthrop Glacier, Curtis Ridge, Carbon Glacier approach, the same waypoints (Curtis Ridge camp 46.8937,-121.7680; St. Elmo Pass; Liberty Cap summit 46.8629,-121.7749), the same Emmons descent and the same hazards. The Liberty Cap row has the fuller text (first-ascent history, season May-Jul, month breakdown, Thumb Rock camp at 10,500 ft, Black Pyramid hazard, 30 track pts). The Rainier row has no track and fewer waypoints. The same split also affects Ptarmigan Ridge: wa_mount_rainier_ptarmigan_ridge (alpine 5.6, season May-Jun) and wa_liberty_cap_ptarmigan_ridge_finish (alpine 5.6, May-Jul) are also one climb (same crux chimney, same Liberty Cap top-out). The earlier dupes/same-climb reads do not mention either pair.",
+  "recommendation": "Merge into ONE row per climb. Keep wa_mount_rainier_liberty_ridge (the name and id are how the route is known, and it sits on Rainier where climbers look) and copy into it the richer Liberty Cap text: season May-Jul, best season and month breakdown, overview history, descent, beta, Thumb Rock / Black Pyramid / Curtis Ridge camp waypoints, and the track points if they are a recorded track. Reconcile gain (11,500 vs 9,700 ft) and distance (16.1 vs 30.3 km) by reading the track. Delete wa_liberty_cap_liberty_ridge_finish afterwards, moving any log or contribution references (route-identity procedure; assert area_id). Do the same for Ptarmigan Ridge: keep wa_mount_rainier_ptarmigan_ridge, merge in the beta of wa_liberty_cap_ptarmigan_ridge_finish (WI3 traverse, 5.6 chimney), delete the Liberty Cap duplicate. Recommendation only; no writes were made.",
+  "confidence": "high",
+  "proposed": {
+    "keep": [
+      "wa_mount_rainier_liberty_ridge",
+      "wa_mount_rainier_ptarmigan_ridge"
+    ],
+    "merge_and_remove": [
+      "wa_liberty_cap_liberty_ridge_finish",
+      "wa_liberty_cap_ptarmigan_ridge_finish"
+    ],
+    "fields_to_carry": "season, best_season, optimalWindow, monthBreakdown, overview, descent_text, beta, waypoints (Thumb Rock, Black Pyramid, Curtis Ridge camp), track points"
+  },
+  "evidence": [
+    "packets-all/wa_mount_rainier.json and packets-all/wa_liberty_cap.json - field-by-field comparison: same face, aspect, grade, approach, waypoints, descent, hazards.",
+    "https://mountainproject.com/route/106459197/liberty-ridge (search listing) - Liberty Ridge: Ice, Snow, Alpine, Grade IV, a single route on Mount Rainier.",
+    "https://publications.americanalpineclub.org/articles/12193647500/The-First-Ascent-of-Mt-Ranier-by-Way-of-Liberty-Ridge-on-Willis-Wall-September-28-October-1-1935 - (search listing) Liberty Ridge is a route of Rainier, first climbed 28 Sep-1 Oct 1935.",
+    "https://summitpost.org/liberty-ridge/638715 and NPS Liberty-Ridge-Routebrief.pdf - (search listings) route pages on Rainier; Thumb Rock camp; tops out via the Liberty Cap Glacier."
+  ],
+  "searched": [
+    "Liberty Ridge Mount Rainier route tops out Liberty Cap Thumb Rock 1935 - consistent: Grade IV, Thumb Rock ~10,500-10,800 ft",
+    "en.wikipedia Liberty_Ridge and nps.gov liberty-ridge.htm - 404",
+    "Packets compared by script, which also exposed the Ptarmigan Ridge pair",
+    "dupes-read.json / same-climb-read.json / holds.json - no entry for either pair"
+  ]
+}

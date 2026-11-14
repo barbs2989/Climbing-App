@@ -10,6 +10,7 @@
 // sheet never claims a write it could not make (check:claims). It resolves to true when the
 // rows were written. `area` may be null while a guard walks the overlay by name; the sheet
 // then renders its fields with nothing to submit to.
+import { tx } from "./tapWords.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AREA_EDIT_FIELDS, ASPECTS, MONTH_ABBR, PIN_NAME_MAX, myPendingAreaEdits, monthsLabel, pinLabel, pinProblem } from "./areaFields";
@@ -50,7 +51,7 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
   const crag = a.lat != null && a.lng != null && isFinite(Number(a.lat)) && isFinite(Number(a.lng)) ? { lat: Number(a.lat), lng: Number(a.lng), name: a.name || "The crag" } : null;
   const pinWps = useMemo(() => { const la = Number(pin.lat), ln = Number(pin.lng); return pin.lat !== "" && pin.lng !== "" && isFinite(la) && isFinite(ln) ? [{ type: "Trailhead", name: pin.name || "Parking", lat: la, lng: ln }] : []; }, [pin.lat, pin.lng, pin.name]);
   const pinFar = crag && pinWps.length ? kmApart(crag, pinWps[0]) : 0;
-  const lbl = { fontSize: 11, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const lbl = { fontSize: 11, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
 
   // What changed, validated against each field's limits. Unchanged and blank rows are skipped.
   const edits = [];
@@ -119,19 +120,19 @@ export default function AreaSuggestFix({ area, field, rows, myId, C, onClose, on
             <div style={lbl}>{f.label}</div>
             <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{cur ? <>{"Now: "}<span style={{ color: C.textSub, whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{cur.length > 140 && !fullCur[f.k] ? cur.slice(0, 140).trim() + "…" : cur}</span>{cur.length > 140 ? <button type="button" onClick={() => setFullCur(o => ({ ...o, [f.k]: !o[f.k] }))} aria-expanded={!!fullCur[f.k]} style={{minHeight:44, background: "none", border: "none", padding: "0 0 0 6px", color: C.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>{fullCur[f.k] ? "Show less" : "Show all"}</button> : null}</> : "Not on file yet."}</div>
             {pend ? <div style={{ fontSize: 11.5, color: C.text, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 8, padding: "6px 9px", marginBottom: 6 }}>{"Awaiting review: "}<b>{f.type === "months" ? monthsLabel(pend.value) : f.fmt ? f.fmt(pend.value) : String(pend.value)}</b></div> : null}
-            {f.type === "long" ? <textarea value={v || ""} onChange={e => set(f.k, e.target.value)} rows={3} maxLength={f.max} placeholder={f.hint} aria-label={f.label} style={{ ...input, resize: "vertical", minHeight: 76 }} /> : null}
-            {f.type === "text" ? <><input value={v || ""} onChange={e => set(f.k, e.target.value)} maxLength={f.max} placeholder={f.hint} aria-label={f.label} style={input} list={"af-opts-" + f.k} />{f.k === "rock" ? <datalist id={"af-opts-" + f.k}>{ROCK_OPTIONS.map(o => <option key={o} value={o} />)}</datalist> : null}</> : null}
-            {f.type === "int" ? <input value={v || ""} onChange={e => set(f.k, e.target.value)} inputMode="numeric" placeholder={f.hint} aria-label={f.label + " (minutes)"} style={input} /> : null}
+            {f.type === "long" ? <textarea value={v || ""} onChange={e => set(f.k, e.target.value)} rows={3} maxLength={f.max} placeholder={tx(f.hint)} aria-label={f.label} style={{ ...input, resize: "vertical", minHeight: 76 }} /> : null}
+            {f.type === "text" ? <><input value={v || ""} onChange={e => set(f.k, e.target.value)} maxLength={f.max} placeholder={tx(f.hint)} aria-label={f.label} style={input} list={"af-opts-" + f.k} />{f.k === "rock" ? <datalist id={"af-opts-" + f.k}>{ROCK_OPTIONS.map(o => <option key={o} value={o} />)}</datalist> : null}</> : null}
+            {f.type === "int" ? <input value={v || ""} onChange={e => set(f.k, e.target.value)} inputMode="numeric" placeholder={tx(f.hint)} aria-label={f.label + " (minutes)"} style={input} /> : null}
             {f.type === "aspect" ? <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>{f.opts.map(o => <button key={o} onClick={() => set(f.k, v === o ? "" : o)} aria-pressed={v === o} style={{ ...CHIP, border: "1px solid " + (v === o ? C.blue : C.border), background: v === o ? C.blueBg : C.card, color: v === o ? C.onSolid : C.textSub }}>{o === "varies" ? "Varies" : o}</button>)}</div> : null}
             {f.type === "months" ? <div style={{ display: "flex", gap: 3 }}>{MONTH_ABBR.map((m, i) => { const on = Array.isArray(v) && v.includes(i + 1); return <button key={m} onClick={() => set(f.k, on ? (v || []).filter(x => x !== i + 1) : [...(v || []), i + 1])} aria-pressed={on} aria-label={m} style={{ flex: 1, minWidth: 0, minHeight: 36, padding: 0, borderRadius: 7, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : C.card, color: on ? C.green : C.textSub, fontSize: 10.5, fontWeight: 700, cursor: "pointer" }}>{m[0]}</button>; })}</div> : null}
             {f.type === "pin" ? <div>
-              <WaypointMapPicker waypoints={pinWps} activeIdx={0} peakCoord={crag} tapHint={pinWps.length ? "Tap the map to move the parking pin" : "Tap the map where climbers park"} onPick={(la, ln) => setPin({ lat: la.toFixed(6), lng: ln.toFixed(6) })} />
+              <WaypointMapPicker waypoints={pinWps} activeIdx={0} peakCoord={crag} tapHint={pinWps.length ? tx("Tap the map to move the parking pin") : tx("Tap the map where climbers park")} onPick={(la, ln) => setPin({ lat: la.toFixed(6), lng: ln.toFixed(6) })} />
               <div style={{ display: "flex", gap: 6, marginBottom: 6 }}>
                 <input value={pin.lat} onChange={e => setPin({ lat: e.target.value })} inputMode="decimal" placeholder="Latitude" aria-label="Parking latitude" style={{ ...input, flex: 1, minWidth: 0 }} />
                 <input value={pin.lng} onChange={e => setPin({ lng: e.target.value })} inputMode="decimal" placeholder="Longitude" aria-label="Parking longitude" style={{ ...input, flex: 1, minWidth: 0 }} />
               </div>
               <input value={pin.name} onChange={e => setPin({ name: e.target.value })} maxLength={PIN_NAME_MAX} placeholder={hasPin && a.parking_name && a.parking_name !== "Trailhead" ? "Name (now: " + a.parking_name + ")" : "Name, if it has one (e.g. Main lot)"} aria-label="Parking name (optional)" style={input} />
-              <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 5 }}>{f.hint}</div>
+              <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 5 }}>{tx(f.hint)}</div>
               {pinFar > FAR_KM ? <div role="status" style={{ fontSize: 11.5, color: C.amber, lineHeight: 1.45, marginTop: 5 }}>{"This pin is " + Math.round(pinFar) + " km from the crag — check it is the right spot before sending."}</div> : null}
             </div> : null}
             {problems[f.k] ? <div role="alert" style={{ fontSize: 11.5, color: C.amber, marginTop: 5 }}>{problems[f.k]}</div> : null}

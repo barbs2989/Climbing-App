@@ -1,0 +1,26 @@
+{
+ "nm_heavenly_buttress": {
+  "_expect": { "name": "Heavenly Buttress", "region": "New Mexico" },
+  "blurb": "Heavenly Buttress is the north-facing wall that fills your view as you walk up Eden Canyon near Santa Fe, at roughly 6,000 feet. Fifteen routes, two thirds of them bolted and the rest trad, make it the canyon's best bet for gear climbing. Most lines fall in the 5.11 range, with a handful of 5.10s, a couple of 5.12s and a single 5.9, so it suits stronger leaders more than beginners. The wall sits in shade nearly all day: only the far left picks up some early summer sun and the far right a little late light, which makes it a good choice in the warm months and a cold one when the weather turns.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112228602/heavenly-buttress", "https://mountainproject.com/area/112228597/eden-canyon"] }
+ },
+ "nm_judas_crag_sector": {
+  "_expect": { "name": "Judas Crag Sector", "region": "New Mexico" },
+  "blurb": "Judas Crag is a short stretch of basalt cliffband on the Eden Wall in Diablo Canyon, outside Santa Fe, at around 6,100 feet. It holds fifteen routes, nearly all of them bolted, plus one trad crack. The difficulty is evenly split across the 5.10s, 5.11s and 5.12s, so there is nothing for true beginners, but a good spread for climbers working through the middle and upper grades. The parent wall faces east and gets sun through the morning, going into shade in the afternoon, which makes this a spot to time around the weather and season. It sits only a couple of minutes beyond the north sector.",
+  "approach": "Follow the trail to the Eden Wall and walk north along the base of the cliffband, passing the North Sector first. Judas Crag begins about two minutes further on.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112228657/judas-crag-sector", "https://www.mountainproject.com/area/112228617/eden-wall"] }
+ },
+ "nm_south_cliffband": {
+  "_expect": { "name": "South Cliffband", "region": "New Mexico" },
+  "blurb": "South Cliffband is a section of Cochiti Mesa in the Jemez area of New Mexico, known for harder lines than most of the mesa. Fifteen routes are listed here, mostly bolted with two trad lines, and the grades stack up in the 5.11s and 5.12s with a few 5.10s and a single 5.9. Expect thin slabs, cracks and some steep overhanging sections, and a handful of lines that can also be top-roped. The cliff turns a bit more toward the west than its neighbours, so it holds shade longer into the day. Reach the base from the downclimb by heading southeast, or rappel from the rim to some of the routes.",
+  "approach": "From the downclimb, head southeast along the base. Some routes are reached by rappelling from the mesa rim instead, in which case skip the downclimb and follow the rim trail southeast.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105893502/south-cliffband", "https://mountainproject.com/area/105891776/cochiti-mesa"] }
+ },
+ "_skipped": {
+  "nm_reservoir_wall": "no fetched page about this crag itself; only the Los Alamos Canyon parent page lists it, and the other Reservoir Wall pages found are in Utah and Pennsylvania",
+  "nm_main_cave_left": "no page found for Main Cave Left or El Camino Real Cave; only a route page and unrelated Main Caves (Tennessee, Greece) turned up",
+  "nm_lower_science_friction": "only mentioned in passing on the Upper Science Friction page; no page about it found",
+  "nm_beastie_alley": "no fetched page about Beastie Alley itself; Mosaic Rock page does not mention it and the LA Mountaineers guide returned 404",
+  "nm_the_low_blow_area": "only one fetched page (parent Snow Play Area) covers it; no separate page about the Low Blow Area found"
+ }
+}

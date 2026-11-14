@@ -1,0 +1,91 @@
+{
+ "area_id": "wa_remmel_mountain",
+ "routes": [
+  {
+   "route_id": "wa_remmel_mountain_nw_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep; Peakbagger months on the peak peak Jul and Sep (Oct within a month); web results point to snow-free July to early October."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2041351",
+     "verdict": "unsure",
+     "why": "Sep 24 logged West Gully/col south of North Peak: a west-side gully line from Andrews Pass, not clearly the north ridge over two gendarmes."
+    },
+    {
+     "aid": "2654843",
+     "verdict": "different",
+     "why": "Logged Southwest route, class 2/3 from Andrews Creek; not the NW ridge."
+    },
+    {
+     "aid": "3353480",
+     "verdict": "unsure",
+     "why": "Blank logged route on a peak with several routes; starts at Andrews Creek."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_remmel_mountain_southeast_slope",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep; peak histogram heavy Jul-Oct; web results (WTA, SummitPost-derived pages) show a late-June trip with snow patches near Four Point Lake and fall trips into mid-October, so Jul-Oct is practical."
+   },
+   "track": {
+    "aid": "3252658",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Reviewer: starts 37 m from this route's Thirtymile trailhead pin and returns there, 4 m from the summit; the only other route (NW Ridge) starts from a bushwhack above Remmel Lake ~7.8 km away with rappels and gendarmes, so the line identifies this route. Jul 4, in the Jul-Sep season."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "1381730",
+     "verdict": "offseason",
+     "why": "Logged Southern Slope from Thirtymile but on May 15 in snow; more than a month before the season."
+    },
+    {
+     "aid": "3368517",
+     "verdict": "different",
+     "why": "SE Trail, Oct 2, but the file is a 3-day multi-peak trip (Remmel, Amphitheater, Cathedral, Windy): a link-up."
+    },
+    {
+     "aid": "2576406",
+     "verdict": "unsure",
+     "why": "Jul 18 logged 4 Point Lake C2C, but it starts at a different trailhead 5.6 km from our pin and cannot be confirmed to match our route text."
+    },
+    {
+     "aid": "3353480",
+     "verdict": "unsure",
+     "why": "Sep 18 blank logged route from Andrews Creek."
+    },
+    {
+     "aid": "2654843",
+     "verdict": "different",
+     "why": "Southwest route via Airview Lake."
+    },
+    {
+     "aid": "3375531",
+     "verdict": "different",
+     "why": "Oct 9 track comes from Upper Cathedral Lake: a link-up."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Track 3252658 (Jul 4, 2026) almost certainly is the Southeast Slope round trip from Thirtymile, but the owner rule makes a blank logged route on a two-route peak unsure; the owner may wish to approve it by hand."
+}

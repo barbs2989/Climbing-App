@@ -1,0 +1,23 @@
+{
+  "area_id": "wa_tricouni_peak",
+  "routes": [
+    {
+      "route_id": "wa_tricouni_peak_southwest_slopes",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Web search: Mountaineers Primus/Borealis route page and trip reports favour early summer when snow bridges the glacier and makes Lucky Pass easy, while late season turns the direct line to ice; ascents histogram peaks Jul (15) then Jun (7). Stored Jul-Sep kept; usable window with margin is Jun-Oct." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2959248", "verdict": "different", "why": "Aug 23 2025, summited, but the report and the track's highest point (1 km from our summit pin, at Primus) show a Primus plus Tricouni link-up, and the recording starts at McAllister Camp, not the trailhead." },
+        { "aid": "1650006", "verdict": "offseason", "why": "May 2 ascent, a full-day round trip that also tops Primus (highest point at Primus); out of season and a link-up." },
+        { "aid": "1648507", "verdict": "offseason", "why": "May 2 ascent, partial track starting at Lucky Pass; out of season." },
+        { "aid": "2752933", "verdict": "offseason", "why": "January winter ascent that also climbs Primus." },
+        { "aid": "1639531", "verdict": "offseason", "why": "April 17 ascent, no track points checked." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 8, "text": "In late August, the Thunder Creek crossing near the old bridge site needed only a little wading, and a log near the log jam just upstream gave a way across on the return; earlier in summer the creek is deeper.", "aids": ["2959248"] },
+        { "field": "pro_tips", "month": 8, "text": "In late August the glacier above Borealis Lake is crevassed and meandering, with a long, tedious traverse to Lucky Pass; allow time for route-finding there.", "aids": ["2959248"] }
+      ]
+    }
+  ],
+  "notes": "The only in-season summited tracks are Primus plus Tricouni link-ups, so none is assigned. Our stored text names Lucky Pass as the way to the peak, consistent with all recordings."
+}

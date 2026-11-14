@@ -1,0 +1,261 @@
+{
+ "area_id": "wa_chair_peak",
+ "routes": [
+  {
+   "route_id": "wa_chair_bryant_traverse",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "Searched Mountaineers/guide pages for the traverse: nothing specific. Needs a dry ridge, so it shares the summer rock window (stored Jul-Oct); no Peakbagger ascent logged under this name."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3390533",
+     "verdict": "not-summited",
+     "why": "turned back"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_chair_peak_east_face",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Web search (Mountaineers, climbing database): summer rock routes June-September; stored season Jun-Sep. Logged ascent under this route is Aug 12."
+   },
+   "track": {
+    "aid": "2277814",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged route \"E face\"; report describes the chimney in the middle of the east face, four pitches (5.4, 5.4, 5.2, 4th) to the tree where it meets the NE Buttress, then class 3 to the summit and the south gully descent; track is a round trip from the Alpental lot (start 99 m, end 110 m from our pin) reaching our summit within 3 m."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3380230",
+     "verdict": "different",
+     "why": "logged NE Buttress"
+    },
+    {
+     "aid": "2918713",
+     "verdict": "different",
+     "why": "logged NE Buttress"
+    },
+    {
+     "aid": "3358146",
+     "verdict": "different",
+     "why": "logged Voie de Chaise"
+    },
+    {
+     "aid": "2970612",
+     "verdict": "different",
+     "why": "logged Voie de Chaise"
+    },
+    {
+     "aid": "2379823",
+     "verdict": "different",
+     "why": "logged Voie de Chaise"
+    },
+    {
+     "aid": "2667001",
+     "verdict": "different",
+     "why": "logged Voie de Chaise"
+    },
+    {
+     "aid": "3380331",
+     "verdict": "different",
+     "why": "SE Face Tooth Face variation, October"
+    },
+    {
+     "aid": "3268676",
+     "verdict": "different",
+     "why": "South Shoulder scramble"
+    },
+    {
+     "aid": "2232053",
+     "verdict": "different",
+     "why": "South Shoulder scramble"
+    },
+    {
+     "aid": "2625202",
+     "verdict": "different",
+     "why": "South Shoulder scramble"
+    },
+    {
+     "aid": "2901440",
+     "verdict": "different",
+     "why": "South Shoulder scramble"
+    },
+    {
+     "aid": "3373951",
+     "verdict": "unsure",
+     "why": "class 4/5 scrambler route, no route name"
+    },
+    {
+     "aid": "3390535",
+     "verdict": "not-summited",
+     "why": "turned back"
+    },
+    {
+     "aid": "3390533",
+     "verdict": "not-summited",
+     "why": "turned back"
+    },
+    {
+     "aid": "507915",
+     "verdict": "not-summited",
+     "why": "turned back, March"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 8,
+     "text": "In August the turn toward the east-face basin comes just after the first switchback above Source Lake, marked by a cairn; a faint path climbs the dry waterfall gully, then trees lead to the talus field below the face.",
+     "aids": [
+      "2277814"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Start in the obvious chimney-crack at the middle of the face; protection is scarce, with the first piece about 60 ft up and little on the second pitch, so bring a full rack.",
+     "aids": [
+      "2277814"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "No anchors mark pitch ends below the rappel slings at the top, so choose belay stances at flakes and ledges yourself.",
+     "aids": [
+      "2277814"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 8,
+     "text": "Going down the south gully, skip the first slung gully and the single sling on a boulder; head for the trees below, where four 60 m rappels reach the base, and watch for rockfall at the last station tucked behind an overhang.",
+     "aids": [
+      "2277814"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "A cairned, well-worn path runs from the basin back to the Source Lake trail and is gentler than the waterfall gully.",
+     "aids": [
+      "2277814"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_chair_peak_northwest_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "Searched Mountaineers/guide pages: nothing specific to the ridge; stored Jul-Oct; Peakbagger logs under NW Ridge/Northwest Ridge fall in Jul-Sep. No harvested track carries that route name."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3373951",
+     "verdict": "unsure",
+     "why": "class 4/5 scramble in October, no route name"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_chair_peak_south_ridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jun-Oct",
+    "evidence": "No stored season. Class 2 scramble; Peakbagger logs for the South Shoulder scramble run Jun-Sep and a web search put the summer rock window at Jun-Sep. Window inferred, not stored."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3268676",
+     "verdict": "unsure",
+     "why": "logged South Shoulder, complete round trip Jul 15; our route is named South Ridge with no text or pins, so identity cannot be confirmed"
+    },
+    {
+     "aid": "2232053",
+     "verdict": "unsure",
+     "why": "South Shoulder, Jun 29, same doubt"
+    },
+    {
+     "aid": "2625202",
+     "verdict": "unsure",
+     "why": "South Shoulder Scramble, Aug 29, same doubt"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_chair_peak_southeast_face",
+   "season": {
+    "months": [],
+    "window": "unknown",
+    "evidence": "Searched; no season found. Route is stored as steep snow; the only SE Face log is an October rock variation, which says nothing about the snow route."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3380331",
+     "verdict": "different",
+     "why": "Tooth Face rock variation in October, not the stored steep-snow route"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_chair_peak_west_ridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Stored Jun-Sep; Mountaineers/guide pages give nothing separate. A single Peakbagger log (July) has no harvested track."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Our South Ridge (Class 2, no text, no pins) may be the same line climbers call the South Shoulder scramble; several complete summited round trips exist (3268676, 2232053, 2625202, 2901440, 3373951) but identity was not provable. Owner may want to review or merge. Voie de Chaise has many logs but is not among the routes needing tracks."
+}

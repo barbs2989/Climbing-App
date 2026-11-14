@@ -1,0 +1,144 @@
+{
+ "area_id": "wa_mount_baker",
+ "routes": [
+  {
+   "route_id": "wa_mount_baker_boulder_park_cleaver",
+   "season": {
+    "months": [
+     7,
+     8
+    ],
+    "window": "Jul-Aug",
+    "evidence": "Stored Jul-Aug kept. Web search 2026-11-04: guide-service and USFS pages give North Ridge/Coleman Headwall as an early-season (May to early summer) climb; no dedicated season page found for the other lines, so stored season kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "All harvested Baker ascents log Easton, Squak, Coleman-Deming or unnamed standard lines, or are a Sherman survey/ski trip; none names or follows this route, and passing the summit pin proves nothing here."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_baker_cockscomb_ridge",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored best May-June kept. Web search 2026-11-04: guide-service and USFS pages give North Ridge/Coleman Headwall as an early-season (May to early summer) climb; no dedicated season page found for the other lines, so stored season kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "All harvested Baker ascents log Easton, Squak, Coleman-Deming or unnamed standard lines, or are a Sherman survey/ski trip; none names or follows this route, and passing the summit pin proves nothing here."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_baker_coleman_headwall",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Late Apr-Jun stored; climber logs say May-Aug at most, crevasses worsen late. Web search 2026-11-04: guide-service and USFS pages give North Ridge/Coleman Headwall as an early-season (May to early summer) climb; no dedicated season page found for the other lines, so stored season kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "All harvested Baker ascents log Easton, Squak, Coleman-Deming or unnamed standard lines, or are a Sherman survey/ski trip; none names or follows this route, and passing the summit pin proves nothing here."
+    },
+    {
+     "aid": "-",
+     "verdict": "unsure",
+     "why": "Logged routes named Coleman Headwall exist in the histogram (May/Jun) but no harvested track carries that name."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_baker_coleman_ski_descent",
+   "season": {
+    "months": [
+     4,
+     5,
+     6
+    ],
+    "window": "Apr-Jun",
+    "evidence": "No stored season; ski descents cluster Apr-Jun in the histogram, but no web page confirmed it. Web search 2026-11-04: guide-service and USFS pages give North Ridge/Coleman Headwall as an early-season (May to early summer) climb; no dedicated season page found for the other lines, so stored season kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "All harvested Baker ascents log Easton, Squak, Coleman-Deming or unnamed standard lines, or are a Sherman survey/ski trip; none names or follows this route, and passing the summit pin proves nothing here."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_baker_north_ridge",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-Jul",
+    "evidence": "May-Aug stored; guide pages say May to end of Aug, early best. Web search 2026-11-04: guide-service and USFS pages give North Ridge/Coleman Headwall as an early-season (May to early summer) climb; no dedicated season page found for the other lines, so stored season kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "All harvested Baker ascents log Easton, Squak, Coleman-Deming or unnamed standard lines, or are a Sherman survey/ski trip; none names or follows this route, and passing the summit pin proves nothing here."
+    },
+    {
+     "aid": "2902737",
+     "verdict": "different",
+     "why": "Logged Coleman-Deming; that route already has its own track."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_baker_park_glacier_headwall",
+   "season": {
+    "months": [
+     6,
+     7
+    ],
+    "window": "Jun-Jul",
+    "evidence": "Stored Jun-Aug kept; no season page found. Web search 2026-11-04: guide-service and USFS pages give North Ridge/Coleman Headwall as an early-season (May to early summer) climb; no dedicated season page found for the other lines, so stored season kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "All harvested Baker ascents log Easton, Squak, Coleman-Deming or unnamed standard lines, or are a Sherman survey/ski trip; none names or follows this route, and passing the summit pin proves nothing here."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "No track in the packet follows any of these six routes. Easton/Squak/Coleman-Deming tracks exist for routes already stored with tracks. Coleman Headwall, Cockscomb, North Ridge share the Heliotrope TH and could be one line mis-split; not assigned."
+}

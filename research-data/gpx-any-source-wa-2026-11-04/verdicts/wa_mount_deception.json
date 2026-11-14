@@ -1,0 +1,79 @@
+{
+  "area_id": "wa_mount_deception",
+  "routes": [
+    {
+      "route_id": "wa_honeymoon_route",
+      "season": {
+        "months": [
+          4,
+          5,
+          6
+        ],
+        "window": "Apr-Jun",
+        "evidence": "Logged ascents by this route name fall in Jan, Mar, Apr, May, Jun (5 of 9 in May). Web search found no dedicated season page for the couloir; related Olympic guidance favours snow-covered gullies before July because the rock loosens as it melts out, matching the stored Apr-Jun window."
+      },
+      "track": {
+        "aid": "3189014",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route is \"Honeymoon colouir\" (a synonym of the couloir), 9 May 2026, successful summit, round trip from the Upper Dungeness trailhead (start/end within 41/24 m of our pin, summit 54 m from our pin); report describes the ~50 degree snow couloir with axes and crampons. The 7 May 2026 track (3187657, \"NE Couloir/Honeymoon Route\") is an equally valid alternative; this one chosen for its description."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3187657",
+          "verdict": "unsure",
+          "why": "Also qualifies (named NE Couloir/Honeymoon Route, 7 May 2026, complete); not chosen only because it has no description text."
+        },
+        {
+          "aid": "3028036",
+          "verdict": "different",
+          "why": "24 May 2025 report says it followed the standard route on snow, logged as Deception-Martin Saddle."
+        },
+        {
+          "aid": "2754217",
+          "verdict": "offseason",
+          "why": "January winter ascent (camp-based), outside Mar-Jul."
+        },
+        {
+          "aid": "2932432",
+          "verdict": "unsure",
+          "why": "August, no route named; the report describes the standard scramble gullies."
+        },
+        {
+          "aid": "1468590",
+          "verdict": "different",
+          "why": "Logged as Royal Basin (standard line), August."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 5,
+          "text": "In early May the couloir snow turns soft and sloppy by late morning, so plan to be back down it before the sun has worked on it.",
+          "aids": [
+            "3189014"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 5,
+          "text": "In early May other parties often climb and descend the couloir at the same time; wait for them to clear rather than climbing beneath them.",
+          "aids": [
+            "3189014"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 5,
+          "text": "In early May water runs freely beside the trail up to roughly 5,700 ft, so there is no need to melt snow on the way in.",
+          "aids": [
+            "3189014"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Standard Scramble (Royal Basin) is stored separately and already has tracks. Several summer tracks with no route name (e.g. 2932432, 2975164, 3036679) fit the standard scramble, not this couloir."
+}

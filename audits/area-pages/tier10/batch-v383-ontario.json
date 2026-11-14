@@ -1,0 +1,50 @@
+{
+ "on_c_gooseberry": {
+  "_expect": {
+   "name": "GooseBerry",
+   "region": "Ontario"
+  },
+  "blurb": "GooseBerry is the southernmost wall along the Mount Nemo escarpment, in Ontario's Golden Horseshoe near Milton. It is a small area with about ten lines, mostly traditional with a few bolted ones, and the grades start at easy fifth-class and gully scrambling and climb up to the low 5.11 range, with the bulk of the climbs falling between 5.3 and 5.10. That spread makes it a friendly place for newer leaders building experience on gear, while a couple of well-regarded sport pitches give stronger climbers something to work on. The wall faces east, so it picks up morning light and goes into shade later in the day. You reach it by walking along the cliff top and dropping into an easy gully.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108153367/gooseberry",
+    "https://rakkup.com/guidebook/mount-nemo-ontario-rock-climbing/the-gooseberry-wall/s18323"
+   ]
+  }
+ },
+ "on_sctv_area": {
+  "_expect": {
+   "name": "SCTV Area",
+   "region": "Ontario"
+  },
+  "blurb": "This sector belongs to Metcalfe Rock, a shady, tree-covered dolostone face beside the road near Collingwood in central Ontario. About ten routes are filed here, a fairly even mix of sport lines and traditional climbs. Most of the grades sit between 5.7 and 5.11, with a handful in the 5.7 to 5.9 range for moderate climbers and a few steeper, harder pitches at the top end, plus one very difficult outlier. The sector was once known by a far less flattering nickname, and its route names lean toward playful B-movie humour. Metcalfe as a whole is quiet on weekdays but fills up with city climbers on weekends.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/metcalfe-ontario-rock-climbing/the-sctv-zone/s18831",
+    "https://mountainproject.com/area/109509888/metcalfe-rock"
+   ]
+  }
+ },
+ "on_dorion_tower": {
+  "_expect": {
+   "name": "Dorion Tower",
+   "region": "Ontario"
+  },
+  "blurb": "Dorion Tower is a free-standing pinnacle in the hills near Ouimet Canyon, between Thunder Bay and Nipigon in northwestern Ontario. It stands more than twenty metres tall and looks precarious but is reported to be solid. Most of the climbing here is traditional on easy to moderate terrain, from about 5.4 up to 5.9, along with a short bolted line and a few low-grade boulder problems around the base. The best-known route follows wide cracks and ledges to a small flat summit with views toward Black Bay, and climbers come down by rappel. Expect a roughly twenty-minute hilly hike in, and a rough road where extra ground clearance helps.",
+  "review": {
+   "sources": [
+    "https://gripped.com/?p=17738",
+    "https://curiocity.com/soaring-summit-dorion-tower-ontario/"
+   ]
+  }
+ },
+ "_skipped": {
+  "on_fat_city": "no fetched page about Fat City at Kama Lookout; Kama Bay rock page lists only Kama Lookout and no Fat City, other Fat Citys are elsewhere",
+  "on_pearl_1_north": "only the parent Pearl page fetched, no page about Pearl 1-North itself; also parent says gneiss slabs vs stored granodiorite",
+  "on_the_water_tower": "no page about the crag could be found or fetched; only a bare list entry in search snippets (search budget not hit)"
+ },
+ "_conflicts": {
+  "on_pearl_1_north": "Stored rock granodiorite; https://www.mountainproject.com/area/126822871/pearl calls Pearl a crag of gneiss slabs.",
+  "on_dorion_tower": "Stored rock conglomerate; https://gripped.com/?p=17738 describes nearby canyon walls as diabase and does not state the tower's rock."
+ }
+}

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // What does a climber SEE when the database is down?
 //
 // Every browser guard here walks a HEALTHY backend. Supabase has returned 503 PGRST002 and
@@ -54,7 +55,7 @@ const claim = (start) => new Promise((res, rej) => {
 const MODE = process.argv[2] || "500";           // 500 | schema | empty | none
 const port = await claim(5410);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   // DEMO_AUTOLOGIN decides whether this probe measures anything. With it ON the app serves the
   // SEEDED demo, so the six main tabs render identically with the database dead — measured, 4
   // requests blocked and byte-identical output. Off, realAuthGate is live and the app is

@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does a CRAG route render the same sections on Overview and on Plan?
 //
 // The crag Overview block renders unconditionally on cragOnly, while the Plan tab is
@@ -20,14 +22,14 @@ const clean = () => { fs.rmSync(out, { force: true }); fs.rmSync(entry, { force:
 
 fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
 try {
-  execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node",
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node",
     "--jsx=automatic", "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { clean(); console.error("FAIL — esbuild could not bundle RouteDetail.jsx"); process.exit(1); }
 
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("no realtime"); } };
-const { RouteDetail } = await import(out + "?t=" + Date.now());
+const { RouteDetail } = await import(fileHref(out + "?t=" + Date.now()));
 
 /* A crag route WITH content -- the case where both tabs can render. */
 const route = {

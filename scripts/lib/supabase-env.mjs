@@ -113,6 +113,21 @@ export async function patchRow(table, id, body, opts) {
   return rows[0];
 }
 
+// The PostgREST filter for "ids of this state" ("wa" → ids "wa_…") that the id btree can SERVE.
+// `id=like.wa_*` alone cannot use the index under this database's collation: each page seq-scans
+// the 205k-row table, and once the select carries a wide column (waypoints, prose) the anon
+// role's ~3 s statement timeout cancels it — HTTP 500 57014 on page 1 on a HEALTHY database
+// (audit:cross-route-pins and audit:prose-citations, 2026-11-04; 0.7 s with this filter). The
+// bounds are LETTERS ('wa' to 'wb') because '_' and '`' do not sort as in ASCII here; the `like`
+// stays to drop ids such as "wab…" that the letter range admits.
+export function stateIdFilter(state) {
+  const s = String(state).toLowerCase();
+  if (!/^[a-z]{2,}$/.test(s) || /^z+$/.test(s)) throw new Error(`stateIdFilter: "${state}" is not a state slug`);
+  const stem = s.replace(/z+$/, ""); // "az" → upper bound "b": every "az…" sorts below it
+  const upper = stem.slice(0, -1) + String.fromCharCode(stem.charCodeAt(stem.length - 1) + 1);
+  return `id=gte.${s}&id=lt.${upper}&id=like.${s}_*`;
+}
+
 // Keyset pagination. Offset paging over a filtered column with no index hits
 // the statement timeout on the 200k-row routes table; walking id ascending
 // does not. Also avoids the skip/duplicate bug an unordered .range() causes.

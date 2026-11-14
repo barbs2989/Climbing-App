@@ -1,0 +1,52 @@
+{
+  "area_id": "wa_cloudy_peak",
+  "routes": [
+    {
+      "route_id": "wa_cloudy_peak_southwest_slopes",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; web results say late July to early September, early summer deep snow at Spider Gap; Oct larch trips possible."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2675378",
+          "verdict": "different",
+          "why": "Oct 13 Cloudy plus North Star, starts at Cloudy Pass: link-up."
+        },
+        {
+          "aid": "2674094",
+          "verdict": "different",
+          "why": "57 mi trip with other peaks: link-up."
+        },
+        {
+          "aid": "2258120",
+          "verdict": "different",
+          "why": "Cloudy plus North Star in a day from a different trailhead: link-up."
+        },
+        {
+          "aid": "2562158",
+          "verdict": "different",
+          "why": "Jul 6 SW Face from North Star traverse, link-up with North Star."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 7,
+          "text": "In early July snow is continuous above roughly 6,600 ft around the peak and soft by mid-morning in warm weather; poles help, crampons were not needed.",
+          "aids": [
+            "2562158"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "All harvested Cloudy tracks are link-ups with North Star or larger trips; none assigned."
+}

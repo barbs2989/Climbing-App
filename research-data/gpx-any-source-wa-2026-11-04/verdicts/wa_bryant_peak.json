@@ -1,0 +1,134 @@
+{
+  "area_id": "wa_bryant_peak",
+  "routes": [
+    {
+      "route_id": "wa_bryant_peak_north_route",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jun-Oct",
+        "evidence": "Non-technical scramble from the Denny Creek trail; ascents peak Jul-Sep (50/56/53) with May, June and October also common; winter ascents need snow gear and are off-season."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3394357",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"North Route\" with a line that can be checked."
+        },
+        {
+          "aid": "3334757",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"North Route\" with a line that can be checked."
+        },
+        {
+          "aid": "3311557",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"North Route\" with a line that can be checked."
+        },
+        {
+          "aid": "3183349",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"North Route\" with a line that can be checked."
+        },
+        {
+          "aid": "573894",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"North Route\" with a line that can be checked."
+        },
+        {
+          "aid": "537456",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"North Route\" with a line that can be checked."
+        },
+        {
+          "aid": "383110",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"North Route\" with a line that can be checked."
+        }
+      ],
+      "pins": [
+        {
+          "type": "Summit",
+          "action": "add",
+          "lat": 47.451175,
+          "lng": -121.460975,
+          "name": "Bryant Peak",
+          "evidence": "Route has no Summit pin. Surveyed Peakbagger summit; four recent tracks top out within 4-19 m of it.",
+          "confirmedBy": "Peakbagger pid 2108 (lidar-surveyed 5790.5 ft) plus tracks 3394357, 3334757, 3311557, 3183349"
+        }
+      ],
+      "facts": []
+    },
+    {
+      "route_id": "wa_bryant_peak_west_face",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jun-Oct",
+        "evidence": "Non-technical scramble from the Denny Creek trail; ascents peak Jul-Sep (50/56/53) with May, June and October also common; winter ascents need snow gear and are off-season."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3394357",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"West Face\" with a line that can be checked."
+        },
+        {
+          "aid": "3334757",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"West Face\" with a line that can be checked."
+        },
+        {
+          "aid": "3311557",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"West Face\" with a line that can be checked."
+        },
+        {
+          "aid": "3183349",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"West Face\" with a line that can be checked."
+        },
+        {
+          "aid": "573894",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"West Face\" with a line that can be checked."
+        },
+        {
+          "aid": "537456",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"West Face\" with a line that can be checked."
+        },
+        {
+          "aid": "383110",
+          "verdict": "unsure",
+          "why": "Stored route has no text, face or pins to compare. Tracks follow the Denny Creek trail to Hemlock Pass then the class 3 west/southwest ridge; none logs a route name that matches \"West Face\" with a line that can be checked."
+        }
+      ],
+      "pins": [
+        {
+          "type": "Summit",
+          "action": "add",
+          "lat": 47.451175,
+          "lng": -121.460975,
+          "name": "Bryant Peak",
+          "evidence": "Route has no Summit pin. Surveyed Peakbagger summit; four recent tracks top out within 4-19 m of it.",
+          "confirmedBy": "Peakbagger pid 2108 (lidar-surveyed 5790.5 ft) plus tracks 3394357, 3334757, 3311557, 3183349"
+        }
+      ],
+      "facts": []
+    }
+  ],
+  "notes": "Both routes are empty shells (no waypoints; West Face grade 5.2 looks too high, every report calls the standard route class 3 via Hemlock Pass). Tracks start at the Franklin Falls / Denny Creek area (OSM Franklin Falls Trailhead 47.41316,-121.44276; Denny Creek Trailhead 47.41523,-121.44337; recordings start 47.4135,-121.4398 to 47.4128,-121.4414); no trailhead pin proposed because neither route names a trailhead. Likely only one real route exists here (West Face / North Route may be filing errors). Reports: boot path off Hemlock Pass to ~4,800 ft, a dry creek-bed scramble to ~5,000 ft in August, west ridge toe at ~5,400 ft, notch on the west side of the summit block; an October 2026 snow ascent found a steep snow-on-duff pitch near 4,840 ft."
+}

@@ -20,11 +20,11 @@
 //      when the fetch failed, and is gated to crag disciplines only — never alpine, scrambling,
 //      mountaineering, ice or mixed (a user decision, 2026-10-07).
 //   5. ROCK — a route's own rock outranks its crag's, and no rock type is labelled "(mapped)" (owner, 2026-10-15).
-//   6. HOME + MENU — the Best day tile is the same score, under the same gate.
+//   6. ONE SURFACE — Best day to climb was removed 2026-11-05; the route card is the score's one reader.
 //   7. CAPS AND INPUTS — rain, still-wet rock, wet sandstone, dew point and smoke CAP the stars with
 //      a named reason; drizzle counts; hours already gone are not offered; drying scales with the
 //      rain that fell; local time survives DST; prefs reach the score and live in ONE store that
-//      Settings, the route card and Home share; the card renders every section and honesty line.
+//      Settings and the route card share; the card renders every section and honesty line.
 //
 // Needs no network and no credentials.
 import fs from "node:fs";
@@ -159,32 +159,20 @@ console.log("check:conditions-score");
   else fail(`${marked} place(s) in RouteDetail.jsx still say "(mapped)" — the owner removed that qualifier 2026-10-15`);
 }
 
-// 6. HOME + MENU — the "Best day to climb" tile (lib/BestDayTile.jsx), on Home under Jump back in and in the Menu, is the SAME score over the saved crag
-//    climbs, so its number and the Conditions tab's must come from one function, under one gate.
+// 6. ONE SURFACE — "Best day to climb" (a Home tile, a Menu tile and a full-screen overlay that ran the
+//    score over the saved crag climbs and areas) was REMOVED by the owner on 2026-11-05. The score now has
+//    one reader on the phone, the route's Conditions card (Compare routes prints its best day as a cell).
+//    Nothing may bring the tile back under another name without re-deriving its honesty rules here.
 {
-  const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
   const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
-  if (/<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\} routeById=\{routeById\} onOpenArea=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && /\{"Jump back in"\}[\s\S]{0,3000}<BestDayTile ids=\{wishlist\} areaIds=\{bookmarks\}[\s\S]{0,800}<\/Suspense><div id="pinned-downloads">/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 2) ok("the Best day tile sits on Home under Jump back in and opens from the Menu (Plan & log), over the saved climbs and saved areas");
-  else fail("the Best day tile is no longer on Home under Jump back in AND in the Menu over the saved climbs (owner 2026-10-15: both)");
-  // With no saved crag climb or crag area the tile says how to get one, and prints no number: it rates nothing.
-  const empty = (tile.match(/if \(!located\.length\) return [^\n]*/) || [""])[0];
-  if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /Save a sport, trad, top-rope or bouldering climb/.test(empty) && /onClick=\{onExplore\}/.test(empty) && !/toFixed|stars/.test(empty)) ok("the tile scores with scoreForecast, crag climbs only, and with none saved shows how to save one, with no number");
-  else fail("the tile no longer shares the score, its crag-only gate, or its no-number empty state");
-  // A saved AREA goes through the same crag-only gate (a crag by its disciplines, a region by the climbs under it),
-  // and is scored for that discipline, not for whatever catOf makes of a stand-in row.
-  const areaGate = (tile.match(/const areaDisc = [\s\S]*?\n\};/) || [""])[0];
-  if ((areaGate.match(/CRAG_SCORE_DISCIPLINES\.includes/g) || []).length >= 3 && /crag \* 2 >= all/.test(areaGate) && /discipline: ar \? ar\.discipline : catOf\(x\.r\)/.test(tile) && /\["crag", "wall", "region"\]/.test(tile)) ok("a saved area is scored only as a crag place (crag disciplines; a region by the climbs under it), for that discipline");
-  else fail("the saved-area path no longer gates on crag disciplines, or scores an area for the wrong discipline");
-  // A score cell opens THAT day on the route's Conditions card, through the one-shot OPEN_DAY.
-  if (/OPEN_DAY\.date = d\.date; onOpen\(row\.r, "forecast"\)/.test(tile) && /OPEN_DAY\.date;OPEN_DAY\.date=null/.test(rd) && /d\.date===wantDate/.test(rd)) ok("a tapped score opens that climb's Conditions tab on that day");
-  else fail("a tapped score no longer opens its day on the Conditions tab");
-  if (/not a rating/.test(tile) && /No score: /.test(tile)) ok("a failed forecast or an unlocated climb is SAID, never scored or dropped");
-  else fail("the tile no longer says when a climb could not be scored");
-  // A wall direction researched for the crag (areas.aspect) reaches BOTH readers.
+  const home = fs.readFileSync(path.join(ROOT, "src/components/TodayTab.tsx"), "utf8");
+  if (!fs.existsSync(path.join(ROOT, "lib/BestDayTile.jsx")) && !/BestDayTile|bestDayOpen|Best day to climb/.test(app) && !/BestDayTile|Best day to climb/.test(home)) ok("Best day to climb is gone: no tile file, no Home tile, no Menu tile, no overlay (owner 2026-11-05)");
+  else fail("Best day to climb is back (lib/BestDayTile.jsx, a <BestDayTile>, bestDayOpen or its Menu tile) — the owner removed it 2026-11-05");
+  // A wall direction researched for the crag (areas.aspect) reaches the card.
   const fallback = /aspect(?:Text)?[:=] ?(?:x\.)?r(?:oute)?\.aspect ?\|\| ?(?:x\.)?r(?:oute)?\.face ?\|\| ?\((?:x\.)?r(?:oute)?\._dbArea ?&& ?(?:x\.)?r(?:oute)?\._dbArea\.aspect\)/;
-  if (fallback.test(rd.replace(/\s/g, "")) && fallback.test(tile.replace(/\s/g, ""))) ok("the card and the tile both fall back to the crag's researched wall direction");
-  else fail("a reader of the score no longer falls back to areas.aspect");
+  if (fallback.test(rd.replace(/\s/g, ""))) ok("the card falls back to the crag's researched wall direction");
+  else fail("the card no longer falls back to areas.aspect");
 }
 
 // 7. WHAT A SUM CANNOT SAY — caps, condensation, drizzle, the past, sandstone, prefs, local time,
@@ -374,7 +362,6 @@ console.log("check:conditions-score");
   if (/dew_point_2m/.test(crag) && /is_day/.test(crag) && /past_days=14/.test(crag) && /timeformat=unixtime/.test(crag) && /daily=sunrise,sunset/.test(crag) && !/weather_code/.test(crag)) ok("the crag fetch asks for what the score reads (dew point, is_day, 14 past days, sunrise/sunset, unix time) and nothing it does not");
   else fail("the crag fetch and what the score reads have drifted apart");
   const prefs = fs.readFileSync(path.join(ROOT, "lib/CondPrefs.jsx"), "utf8");
-  const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
   const slider = fs.readFileSync(path.join(ROOT, "lib/RangeSlider.jsx"), "utf8");
   if (/<RangeSlider label=\{\(ownOnly \? "Temperatures I like, " : "Ideal temperature, "\) \+ scopeName\}/.test(prefs) && /<RangeSlider label="Ideal wind"/.test(prefs) && /\["cool", "standard", "warm"\]\.map\(/.test(prefs) && /setRange\(TEMP_BANDS\[k\]\.slice\(\)\)/.test(prefs)) ok("temperature (every scope) AND wind are drag-both-ends ranges; Cool / Mild / Warm are shortcuts that set one, not exclusive choices");
@@ -402,10 +389,14 @@ console.log("check:conditions-score");
   else fail(`the disciplines offered a range (${offered}) differ from the ones the conditions score covers (${covered})`);
   if (/saveMyCondPrefs\(/.test(prefs) && /useMyCondPrefs\(/.test(prefs) && /useCondPrefsAccount\(uid\)/.test(app)) ok("Your conditions is saved to the account and read back on sign-in");
   else fail("Your conditions no longer reaches the account");
-  if (/useCondPrefs\(\)/.test(tile) && !/BAND_PREF\.load\(\)/.test(tile) && /useCondPrefs\(\)/.test(card) && /updateCondPrefs\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card and Home read ONE prefs store that broadcasts changes");
-  else fail("a prefs reader loads storage on its own again, so Home can go stale after a change on a route");
-  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /onPrefs=\{\(\)=>\{setBestDayOpen\(false\);setCondsOpen\(true\);\}\}/.test(app) && /\["snowflake","Your conditions",\(\)=>setCondsOpen\(true\)\]/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls\/>/.test(app)) ok("Your conditions is in Settings, in the Menu, and the Best day view links to it");
-  else fail("Your conditions is no longer reachable from Settings (menu and profile) or the Best day tile");
+  if (/useCondPrefs\(\)/.test(card) && !/BAND_PREF\.load\(\)/.test(card) && /updateCondPrefs\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card reads ONE prefs store that broadcasts changes");
+  else fail("a prefs reader loads storage on its own again, so the card can go stale after a change in Settings");
+  /* The controls may carry props (onSignIn since 2026-11-05), so match the tag, not a bare `<CondPrefsControls/>`. */
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\b[^<]{0,160}?\/>/.test(app) && /\["snowflake","Your conditions",\(\)=>setCondsOpen\(true\)\]/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls\b[^<]{0,160}?\/>/.test(app)) ok("Your conditions is in Settings and in the Menu");
+  else fail("Your conditions is no longer reachable from Settings (menu and profile)");
+  /* Signed out, the save line offers sign-in where the caller can open it (owner 2026-11-05): it used to say "Sign in to keep it on your account" with nothing to tap. */
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls onSignIn=\{/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls onSignIn=\{/.test(app) && /sync === "local" && onSignIn \? <button onClick=\{onSignIn\}/.test(prefs)) ok("signed out, Your conditions offers a sign-in button in Settings and in the Menu");
+  else fail("signed out, Your conditions says to sign in but offers nothing to tap (Settings or the Menu lost onSignIn)");
 }
 
 // 8. THE WEATHER BESIDE THE SCORE (Climbit's crag page, 2026-10-07) — rain hour by hour and day by

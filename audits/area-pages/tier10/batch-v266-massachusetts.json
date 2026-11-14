@@ -1,0 +1,40 @@
+{
+ "ma_welcome_boulder_2": {
+  "_expect": {"name": "Welcome Boulder", "region": "Massachusetts"},
+  "blurb": "A single boulder in the Garfield Woods conservation land in Berlin, reached by a short stroll through the trees. It holds ten problems and nothing else, so it works as a quick warm-up stop before the other boulderfields in the woods. Most lines are easy, with a handful of V0 and V1 problems, a couple of V2s and one much harder line up around V5, plus a traverse along one side. The rock is textured and the boulder is low enough that a single pad and a spotter cover most of it. Expect a tidy, local-feeling session rather than a destination trip.",
+  "parking_note": "Leave the car at the roadside pullout on Lancaster Street in Berlin, near the small conservation-land sign. The trail begins on the far side of the railroad tracks.",
+  "approach": "From the pullout, cross the railroad tracks, turn right along them for a few paces to a small side trail on the left, then keep going to a junction and bear left. The boulder is a short distance beyond.",
+  "review": {"sources": ["https://www.mountainproject.com/v/108387312", "https://www.mountainproject.com/area/107886296/garfield-woods"]}
+ },
+ "ma_trashcan_boulder": {
+  "_expect": {"name": "Trashcan Boulder", "region": "Massachusetts"},
+  "blurb": "One of the boulders at the Ayer bouldering spot in north-central Massachusetts, a short hike along the trail from the road, with the rock sitting off to the right. It carries ten problems that cover a wide range: an easy warm-up, a few V0 to V3 lines, then a thin tail of much harder problems that climbs all the way to a well-known V9 that starts seated between two arretes. The boulder stays mostly shaded through the day. Nest activity has been noted on the back side, so look before you pull on. Bring a pad; the hard problems are the draw here.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108036806/trashcan-boulder", "https://mountainproject.com/area/107262726/ayer-boulders"]}
+ },
+ "ma_fox_run_boulder": {
+  "_expect": {"name": "Fox Run Boulder", "region": "Massachusetts"},
+  "blurb": "A lone boulder about twelve feet tall beside a trail in the Breakheart Reservation in the Saugus and Wakefield area north of Boston. Landings are fairly flat and the top has an easy way down, which keeps it friendly for a short visit. The ten problems run from V0 up to a hard V8, with the middle of the range filled by V2 to V4 lines and one V5 besides. The walk from the entrance is brief, so it makes a handy add-on to a hike past the reservation's other boulders along the ridge.",
+  "review": {"sources": ["https://mountainproject.com/area/122193536/fox-run-boulder", "https://www.mountainproject.com/area/118946581/breakheart-reservation"]}
+ },
+ "ma_ladder_boulders": {
+  "_expect": {"name": "Ladder Boulders", "region": "Massachusetts"},
+  "blurb": "A pair of big glacial erratics of smooth granite in Douglas State Forest, a few minutes' walk from the Wallum Lake parking area, close to the trail toward the Titanic Boulder. The name comes from a ladder leaning on one of them. Ten problems are on record, running from V0 to V5, with a cluster of V4s at the top end and a few easy lines mixed in. Holds are sparse on the featureless granite, so some lines are hard or untried, and both boulders hint at harder potential. Good for a quick stop while exploring the wider Wallum Lake boulderfields.",
+  "review": {"sources": ["https://www.mountainproject.com/area/121860206/ladder-boulders", "https://mountainproject.com/area/121857013/wallum-lake-area"]}
+ },
+ "ma_roadside_crag_climbs": {
+  "_expect": {"name": "Roadside Crag Routes", "region": "Massachusetts"},
+  "blurb": "A small cliff in the Wendell and Montague area of western Massachusetts, only a minute or so from the car. Gneiss with plenty of juggy horizontals gives short, bolted sport routes from 5.9 to low 5.11, with a few of them around 5.10, alongside a handful of boulder problems that mostly fall in the V4 range. The face is mostly in shade, so it stays pleasant on warm days, and the tiny approach suits after-work laps, families or an overflow day when bigger nearby crags are busy. Expect dusty rock and short lines.",
+  "parking_note": "Use the small lot beside Wendell Road, a short distance up the hill from the Mormon Hollow Road junction when driving east from Millers Falls. It holds only a few cars.",
+  "approach": "A very short, obvious path leads from the pullout to the cliff, about a minute on foot.",
+  "approach_min": 1,
+  "review": {"sources": ["https://www.mountainproject.com/area/123410198/roadside-crag-routes", "https://www.mountainproject.com/area/112087887/roadside-crag", "https://climbgneiss.org/roadside-crag/"]}
+ },
+ "_skipped": {
+  "ma_forty_caves": "no fetched page about Forty Caves itself (only the Garfield Woods parent page mentions it)",
+  "ma_e_wall_aka_f_part_of_g_faces": "no fetched page about this wall itself; Quincy Quarries parent page lists no E Wall detail, other candidate pages returned 403 or refused"
+ },
+ "_conflicts": {
+  "ma_welcome_boulder_2": "stored rock phyllite; https://www.mountainproject.com/v/108387312 says granite",
+  "ma_fox_run_boulder": "stored rock quartzite; https://www.mountainproject.com/area/118946581/breakheart-reservation says granite boulders"
+ }
+}

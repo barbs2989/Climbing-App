@@ -1,0 +1,24 @@
+{
+  "area_id": "wa_mount_stone",
+  "routes": [
+    {
+      "route_id": "wa_lena_lake_to_mt_stone_traverse",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep kept. WebSearch: an outdoor club route page for the traverse lists June-September, and a regional climbing guide gives July-September as the normal season; reports describe hard icy snow at the gate in early season. Logged Mount Stone ascents peak Jul-Sep (months 7:51, 8:95, 9:43)." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3360834", "verdict": "different", "why": "Round trip from the Putvin trailhead (6.5 km from our Lena Lake pin): the Lake of the Angels route, which is a separate stored route that already has a track." },
+        { "aid": "3300704", "verdict": "different", "why": "Same, Putvin out and back." },
+        { "aid": "3257780", "verdict": "different", "why": "Same, Putvin out and back." },
+        { "aid": "990153", "verdict": "different", "why": "Putvin trail round trip." },
+        { "aid": "2963167", "verdict": "different", "why": "Putvin round trip." },
+        { "aid": "568680", "verdict": "different", "why": "Putvin start, SW ridge." },
+        { "aid": "254336", "verdict": "different", "why": "Putvin start." },
+        { "aid": "1531076", "verdict": "offseason", "why": "Nov 1 2020, starts at Lake of the Angels." },
+        { "aid": "3058326", "verdict": "not-summited", "why": "Nov 2025 turned back." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No harvested track traverses from Lena Lake via St. Peter's Gate; all complete tracks are Putvin-trail out-and-backs belonging to wa_mount_stone_lake_of_angels (already tracked). One logged 'St Peter's Traverse from Upper Lena' (October) has no track. No facts: the Putvin reports describe the other route and would not transfer."
+}

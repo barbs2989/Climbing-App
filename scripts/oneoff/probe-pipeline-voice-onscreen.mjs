@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // A WRITTEN COLUMN IS NOT A RENDERED ONE. redact-pipeline-voice-in-route-prose.mjs verified its own
 // write by re-reading the columns; that proves the table, not the page.
 //
@@ -67,7 +68,7 @@ fs.writeFileSync(out, [
   'process.exit(0);',
 ].join("\n"));
 
-execFileSync("npx", ["esbuild", out, "--bundle", "--platform=node", "--format=esm",
+execFileSync(NPX, [...NPX_PRE, "esbuild", out, "--bundle", "--platform=node", "--format=esm",
   "--jsx=automatic", "--loader:.jsx=jsx", "--external:react", "--external:react-dom",
   "--external:@tanstack/react-query", "--define:import.meta.env={}",
   `--outfile=${path.join(ROOT, ".probe-pipeline-voice.bundle.mjs")}`], { cwd: ROOT, stdio: "pipe" });

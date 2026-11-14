@@ -101,10 +101,10 @@
       @keyframes cm-puff { 0%{transform:translate(-50%,0) scale(.4);opacity:.65} 100%{transform:translate(-50%,-14px) scale(2.4);opacity:0} }
       @keyframes cm-countpop { 0%{transform:translateY(2px);opacity:.4} 100%{transform:translateY(0);opacity:1} }
       .cm-nudge { animation: cm-nudge .34s cubic-bezier(.2,.8,.2,1); }
-      /* Placeholder text is text (WCAG 1.4.3): #8b949e is >= 4.5:1 on every surface the app
+      /* Placeholder text is text (WCAG 1.4.3): #a7b0ba (C.textMuted; #8b949e before 2026-11-04) is >= 4.5:1 on every surface the app
          puts an input on. Browser defaults depend on color-scheme and can land at ~3:1, and the
          old opacity:0.6 put .cm-note at ~2.5:1. */
-      ::placeholder { color: #8b949e; opacity: 1; }
+      ::placeholder { color: #a7b0ba; opacity: 1; }
       /* Keyboard focus ring (only for keyboard nav, not mouse/touch) */
       /* !important is load-bearing (WCAG 2.4.7): ~54 inputs/selects carry an inline
          outline:"none", and an inline style beats a stylesheet rule, so without it a keyboard
@@ -122,16 +122,37 @@
          header carried the whole popup, ✕ and all, off the screen. */
       .cm-file-input { position: fixed; top: 0; left: 0; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
       label:has(.cm-file-input:focus-visible), .cm-file-input:focus-visible + label { outline: 2px solid #2f81f7; outline-offset: 2px; }
-      .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) both; }
+      /* `backwards`, never `both` or `forwards`, on anything that ends looking like itself (Windows,
+         2026-11-04: "is it just me or does the text look fuzzy on desktop?"). A fill that outlives the
+         animation keeps it ACTIVE, so Chrome keeps the element on its own GPU layer for good — and text on
+         a transparent layer loses ClearType and is drawn greyscale, which reads blurry on a 1x/1.25x PC
+         screen. A Mac's Retina screen hid it. #appscroll (every page) and every sheet were stuck that way.
+         These keyframes all END at the element's own look, so `backwards` changes nothing you see.
+         The one thing the lingering fill DID do: it made #appscroll a stacking context, which kept a
+         map's panes (z-index 400-1000) under the header and tab bar. #appscroll now says so itself
+         (isolation:isolate, ClimbMatch.jsx), which makes no GPU layer. */
+      .cm-pop { animation: cm-pop .42s cubic-bezier(.2,.8,.2,1) backwards; }
       .cm-burst { animation: cm-burst .85s ease-out forwards; }
       .cm-confetti { animation: cm-confetti 1.7s linear forwards; }
-      .cm-slideup { animation: cm-slideup .26s ease both; }
-      .cm-fadein { animation: cm-fadein .22s ease both; }
+      .cm-slideup { animation: cm-slideup .26s ease backwards; }
+      .cm-fadein { animation: cm-fadein .22s ease backwards; }
       .cm-pulse { animation: cm-pulse 2s ease-in-out infinite; }
       .cm-glow { animation: cm-glow 2.4s ease-in-out infinite; }
       .cm-ring { animation: cm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; display: inline-block; }
       .cm-puff { animation: cm-puff .6s ease-out forwards; }
       .cm-newitem { animation: cm-glow 1.6s ease-in-out 2; }
+      /* A map's layer buttons in a narrow map (lib/mapKit.jsx BaseLayerToggle): "Sat" for "Satellite". */
+      .cm-lyr-short { display: none; }
+      @container (max-width: 240px) { .cm-lyr-long { display: none; } .cm-lyr-short { display: inline; } }
+      /* ...and in the desktop rail's 276px map even "Street · Sat · Topo · Snow" ran under ⤢ Full screen
+         (owner's desktop audit 2026-11-04, "Snow" half hidden): the buttons lose 4px of side padding there. */
+      @container (max-width: 240px) { .cm-lyr-btn { padding-left: 7px !important; padding-right: 7px !important; } }
+      /* With the 3D button the route map's row is five buttons (Street · Sat · Topo · Snow · 3D): in the rail's
+         192px row they lose 3px more a side and half a point of text so 3D stays clear of ⤢ (2026-11-14). */
+      /* ...and a five-button row says "Sat" sooner: on a 360px phone the area map's row is ~260px wide. */
+      @container (max-width: 285px) { div:has(> .cm-lyr-3d) .cm-lyr-long { display: none; } div:has(> .cm-lyr-3d) .cm-lyr-short { display: inline; } }
+      @container (min-width: 241px) and (max-width: 285px) { div:has(> .cm-lyr-3d) .cm-lyr-btn { padding-left: 8px !important; padding-right: 8px !important; } }
+      @container (max-width: 215px) { .cm-lyr-btn { padding-left: 4px !important; padding-right: 4px !important; font-size: 10.5px !important; } }
       /* Scrollbars you can SEE, everywhere. Nothing styled them, so the browser drew its default
          dark thumb on the app's #0d1117 background: a black bar on a near-black page, invisible
          in the feed and in every popup (Add a climb was the report). One rule on :root reaches
@@ -257,10 +278,12 @@
       #cm-boot .b-mark { font-size: 35px; font-weight: 800; letter-spacing: -0.7px; text-align: center; color: #e6edf3; line-height: 1.1; }
       #cm-boot .b-mark span { color: #2f81f7; }
       #cm-boot .b-nav { display: flex; background: rgba(22,27,34,0.82); -webkit-backdrop-filter: saturate(160%) blur(16px); backdrop-filter: saturate(160%) blur(16px); box-shadow: 0 -1px 0 rgba(240,246,252,0.06), 0 -10px 30px rgba(0,0,0,0.35); position: sticky; bottom: 0; padding-bottom: env(safe-area-inset-bottom); }
-      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 11px 2px 8px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #99a3ad; }
+      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 11px 2px 8px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #b8c0c8; }
       #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; }
       #cm-boot .b-nav b { width: 24px; height: 24px; border-radius: 6px; background: #21262d; margin: 3px 13px; display: block; }
       #cm-boot .b-nav div:first-child b { background: #0d2044; }
+      /* Groups is a tab only on the website (the nav strip); the phone bar has no Groups tab. Its own class keeps it out of check:boot, which matches the phone bar. */
+      #cm-boot .b-nav .b-wide { display: none; }
       /* LOADING SCREEN. A branded splash over the boot shell -- the mark, the wordmark and a moving
          bar -- the way a native app opens, instead of a skeleton that reads as a half-drawn page.
          The shell underneath stays (check:boot keeps it matched to NAV). React draws the SAME splash
@@ -269,7 +292,7 @@
       #cm-splash svg { width: 92px; height: 92px; filter: drop-shadow(0 10px 28px rgba(47,129,247,0.35)); }
       #cm-splash .s-word { font-size: 32px; font-weight: 800; letter-spacing: -0.7px; color: #e6edf3; }
       #cm-splash .s-word span { color: #2f81f7; }
-      #cm-splash .s-tag { font-size: 14px; color: #99a3ad; margin-top: -6px; }
+      #cm-splash .s-tag { font-size: 14px; color: #b8c0c8; margin-top: -6px; }
       #cm-splash .s-bar { width: 132px; height: 4px; border-radius: 2px; background: #21262d; overflow: hidden; margin-top: 18px; }
       #cm-splash .s-bar i { display: block; width: 40%; height: 100%; border-radius: 2px; background: #2f81f7; animation: cm-splash-bar 1.1s ease-in-out infinite; }
       @keyframes cm-splash-bar { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
@@ -277,22 +300,24 @@
       #cm-boot .b-body { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 11px; }
       #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
       #cm-boot .b-line { height: 11px; border-radius: 6px; }
-      /* Wide screens: the same shell lib/wideLayout.js draws, so nothing jumps when React mounts. A 64px top bar across the window;
-         1024-1279px: a 72px icon sidebar + 24px gap + 640px column (736px shell, centred); 1280px and up: a 240px sidebar + 24 + the
-         column + 24 + a 300px rail (1228px shell, centred). */
+      /* Wide screens: the same layout lib/wideLayout.js's wideGeom() draws, so nothing jumps when React mounts. A fixed 112px
+         header: the 64px top bar, then the 48px NAV STRIP of tabs (owner 2026-11-11; the left sidebar is gone), its tabs starting where
+         the header search starts: the column's left edge, or 284px (just past the logo), whichever is further right. The 700px page column is centred as a BLOCK between 12px on the left and 28px on the right (the
+         Windows scrollbar): alone below 1280px, with GAP 24 + the 300px rail from 1280px (a 1024px block). */
       @media (min-width: 1024px) {
-        #cm-boot { max-width: none; width: 640px; margin-left: calc(max(16px, calc(50vw - 368px)) + 96px); margin-right: 0; padding-top: 64px; box-sizing: border-box; }
-        #cm-boot .b-bar { position: fixed; top: 0; left: 0; right: 0; height: 64px; box-sizing: border-box; padding: 0 16px; flex-direction: row; align-items: center; z-index: 2; }
-        #cm-boot .b-nav { position: fixed; top: 64px; bottom: 0; left: max(16px, calc(50vw - 368px)); width: 72px; box-sizing: border-box; flex-direction: column; gap: 2px; padding: 16px 8px; background: #0d1117; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-right: 1px solid #30363d; font-size: 0; }
-        #cm-boot .b-nav div { flex: none; flex-direction: row; justify-content: center; padding: 10px 0; font-size: 0; border-radius: 12px; }
-        #cm-boot .b-nav div:first-child { background: #0d2044; }
-        #cm-boot .b-nav b { margin: 0; }
+        #cm-boot { max-width: none; width: min(700px, calc(100vw - 40px)); margin-left: max(12px, calc((100vw - 16px) / 2 - min(700px, calc(100vw - 40px)) / 2)); margin-right: 0; padding-top: 112px; box-sizing: border-box; box-shadow: -1px 0 0 #30363d, 1px 0 0 #30363d; }
+        #cm-boot .b-bar { position: fixed; top: 0; left: 0; right: 0; height: 64px; box-sizing: border-box; padding: 0 16px; flex-direction: row; align-items: center; z-index: 2; border-bottom: none; }
+        #cm-boot .b-nav { position: fixed; top: 64px; bottom: auto; left: 0; right: 0; height: 48px; box-sizing: border-box; flex-direction: row; align-items: stretch; gap: 2px; padding: 0 28px 0 calc(max(284px, calc((100vw - 16px) / 2 - min(700px, calc(100vw - 40px)) / 2)) - 12px); background: #161b22; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-top: 1px solid #30363d; border-bottom: 1px solid #30363d; z-index: 2; }
+        #cm-boot .b-nav div { flex: none; flex-direction: row; align-items: center; gap: 8px; padding: 0 12px; font-size: 15px; white-space: nowrap; }
+        #cm-boot .b-nav div:first-child { color: #e6edf3; box-shadow: inset 0 -3px 0 #2f81f7; }
+        #cm-boot .b-nav div:last-child { display: none; }
+        #cm-boot .b-nav .b-wide { display: flex; }
+        #cm-boot .b-nav b { width: 20px; height: 20px; margin: 0; }
         #cm-boot .b-mark { display: none; }
       }
       @media (min-width: 1280px) {
-        #cm-boot { width: calc(min(1228px, calc(100vw - 32px)) - 588px); margin-left: calc(max(16px, calc(50vw - 614px)) + 264px); }
-        #cm-boot .b-nav { left: max(16px, calc(50vw - 614px)); width: 240px; padding: 16px 12px; }
-        #cm-boot .b-nav div { justify-content: flex-start; gap: 14px; padding: 10px 12px; font-size: 15.5px; }
+        #cm-boot { width: min(700px, calc(100vw - 688px)); margin-left: max(336px, calc((100vw - 16px) / 2 - min(700px, calc(100vw - 688px)) / 2)); }
+        #cm-boot .b-nav { padding-left: calc(max(284px, calc((100vw - 16px) / 2 - min(700px, calc(100vw - 688px)) / 2)) - 12px); }
       }
     </style>
   </head>
@@ -305,7 +330,7 @@
         <div class="b-card"><div class="b-line cm-shimmer" style="width:44%"></div><div class="b-line cm-shimmer" style="width:80%"></div></div>
         <div class="b-card"><div class="b-line cm-shimmer" style="width:66%"></div><div class="b-line cm-shimmer" style="width:52%"></div></div>
       </div>
-      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
+      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crews</div><div class="b-wide"><b></b>Groups</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
     </div></div>
     <script type="module" src="/main.jsx"></script>
   </body>

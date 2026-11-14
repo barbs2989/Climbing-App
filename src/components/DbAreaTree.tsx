@@ -1,3 +1,4 @@
+import { tx } from "../../lib/tapWords.js";
 import { useAreaChildren, useCountries, useAreaSearch, areaSearchTotal } from "../../lib/db";
 import Chevron from "./Chevron.tsx";
 import LoadingRows from "./LoadingRows.tsx";
@@ -160,8 +161,8 @@ export default function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate
             what is inside it without going anywhere. */}
         <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 7, lineHeight: 1.45 }}>
           {q.trim()
-            ? (total > 0 ? "Best matches first — tap one to open its climbs." : "Searches every area under " + stateRoot.name + ", at any depth.")
-            : "Tap a name to open that area’s climbs · tap the arrow to see what’s inside it"}
+            ? (total > 0 ? tx("Best matches first — tap one to open its climbs.") : "Searches every area under " + stateRoot.name + ", at any depth.")
+            : tx("Tap a name to open that area’s climbs · tap the arrow to see what’s inside it")}
         </div>
       </div>
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>

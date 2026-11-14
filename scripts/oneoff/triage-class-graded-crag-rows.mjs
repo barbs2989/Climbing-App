@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // The 225 class-graded rows filed under a crag discipline, triaged by evidence.
 //
 // I argued against a blanket reclassify and still do: for a real crag climb whose grade
@@ -56,7 +57,7 @@ console.log("\n--- bucket B, first 20 (left alone) ---");
 for (const r of B.slice(0, 20)) console.log("  " + r.id.padEnd(46) + r.name.slice(0, 46).padEnd(47) + "disc=" + r.discipline + " grade=" + JSON.stringify(r.grade));
 
 // Reversible: record the exact before-state of everything we will touch.
-const snapPath = new URL("../../audits/2026-08-08-class-graded-crag-rows-before.json", import.meta.url).pathname;
+const snapPath = fileURLToPath(new URL("../../audits/2026-08-08-class-graded-crag-rows-before.json", import.meta.url));
 fs.writeFileSync(snapPath, JSON.stringify({
   takenAt: "2026-08-08", note: "before-state for triage-class-graded-crag-rows.mjs --apply; restore by writing `discipline` back",
   bucketA: A.map((r) => ({ id: r.id, area_id: r.area_id, name: r.name, discipline: r.discipline, grade: r.grade })),

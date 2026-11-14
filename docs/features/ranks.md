@@ -11,6 +11,7 @@
   and **Ranking**, grouped Performance · Lists · Reliability · Community. Which boards a type offers is the `ids`
   list in `Leaderboards`: Send points on every graded type (not Mountaineering/Scrambling, whose class grades weigh
   nothing), Onsight points on sport/trad/bouldering, Peaks on the three peak types.
+- **Row height**: ~42px on the website (1024px+, tighter line heights), 56px on a phone (competitor review batch A, item 8, owner 2026-11-04; Mountain Project's tables run ~40px).
 - **The table**: a header row (`#` · Climber · the board's unit), one row per climber with the rank, avatar, name,
   location and "N of M backed", the value in a fixed right-hand column, and a ⚑ Report column on real rows.
   Rows alternate shading; yours is tinted with a blue edge. Only climbers with a score above 0 on that board are
@@ -18,7 +19,7 @@
   row is pinned under it whenever the visible part does not include you. *You're #N of M* sits above the table, or
   *You're not ranked on this board yet* when nothing you logged counts toward it.
 - **Backed climbs only** (signed in, log-counted boards): ranks on partner-confirmed / photo / GPS-backed climbs only.
-- **The climbs behind a number (0357)**: on every board counted from logs (not Belay, Vouched, Contributions
+- **The climbs behind a number (0357)**: on every board counted from logs (not Vouched, Contributions
   or Top climbs), a real row's value is a button that opens `RankBreakdown`, *How N points add up*: a sentence on
   how that board scores, then one line per counted climb — name, grade, date, tick, area, its backing tier
   (Partner confirmed ×1 · Photo or GPS ×0.75 · Self-logged ×0.5) on the points boards, and what it added. Send
@@ -30,6 +31,11 @@
   still count; the sheet sums them into one "N more climbs they keep private" line. Modelled on 8a.nu's
   scorecard (the ascents a score is summed from) and theCrag's CPR timeline (the ascent list under a column).
 - **Top climbs**: routes, not climbers, from `leaderboard_top_climbs`.
+- **Crag regular, under By area** (competitor review batch C, item 22, 2026-11-05 — Strava's Local Legend): below the area's
+  breadcrumb and its sub-area chips, one row names the climber with the most logged DAYS under that area in the last 90
+  (two at least, visible logs, no conditions reports, the same people the boards rank, ties by logs then last day) with the
+  count; the row opens their profile. `useCragRegular` → `crag_regular` (0404), signed-in only; nothing is drawn when nobody
+  has two days there, and a failed read draws nothing rather than a wrong name. The same row sits on the area page's PARTNERS HERE card.
 - Signed out (or `USE_DB` off) the board is the seed example set plus you, never mixed with real climbers.
 
 ## 2. How it works — the scoring (audited 2026-10-15, 0323)
@@ -56,7 +62,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 - **Classic climbs**: different classic routes sent.
 - **Per type**: on any type but All, Logged, Days, Vert, Classics and Peaks read `stats.<all|backed>.by.<type>`
   (sport and trad also roll up as `rock`), so the Bouldering board's Days are bouldering days.
-- **Belay** `counted_catch_count` (a catch both climbers recorded, 0361), **Vouched** distinct vouchers,
+- **Vouched** distinct vouchers (the Belay board was removed 2026-11-05 with the rest of belay catches),
   **Contributions** points from `contribution_points()` (0333) — all server-side.
 - **Contribution points (0333)**: ONE ledger, `contribution_points()`, feeds this board, every area's and route's
   TOP CONTRIBUTORS (`area_top_contributors`, rendered by `TopContributors` in `src/components/TopContributors.tsx`) and the profile's
@@ -84,7 +90,7 @@ Every number for a real climber comes from `leaderboard()` on the server; the cl
 ## 4. Data
 `climb_logs`, `climb_log_confirmations`, `routes` (`grade_system`, `grade_num`, `gain_ft`, `length_m`, `classic`,
 `discipline`), `areas` (`path` for By area), `profiles.show_on_ranks` (0177), `profile_zips`/`zip_centroids`,
-`connections`, `blocked_users`, `vouches`, `belay_catches`, `contributions`.
+`connections`, `blocked_users`, `vouches`, `contributions`.
 
 ## 5. Connections
 - **Logbook**: the log form's tick types (`tickTypesFor`) decide what a board can see, and each discipline offers only its own words (2026-10-25 audit). Alpine: Summit, Turned around, Lead, Follow, Hung, Fell. Ice and mixed: those plus Top-rope. Top rope: Top-rope, Hung, Attempt. Aid: Lead, Follow, Top-rope, Hung, Fell, Attempt. Sport and trad keep the full roped list (Onsight, Flash, Redpoint included). A summit and a style on one climb: pick the style, then tap *Also reached the summit*. The client reads both through `summitedLog()` in `ClimbMatchCore.jsx`.

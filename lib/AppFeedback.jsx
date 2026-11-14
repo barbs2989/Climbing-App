@@ -15,6 +15,7 @@
 // Same invariant as the sheets these replace: never clear what was typed unless it was saved,
 // never claim a delivery that did not happen.
 
+import { tx } from "./tapWords.js";
 import { useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { fileAppFeedback, useAppFeedbackQueue, useAppRatingSummary, setAppFeedbackStatus } from "./db.js";
@@ -118,7 +119,7 @@ export function RateForm({ uid, onFeedback }) {
     <div role="radiogroup" aria-label="Your rating, out of 5 stars" onKeyDown={key} style={{ display: "flex", justifyContent: "center", gap: 4, margin: "10px 0 2px" }}>
       {[1, 2, 3, 4, 5].map((s) => <button key={s} type="button" role="radio" aria-checked={stars === s} aria-label={s + (s === 1 ? " star" : " stars")} tabIndex={stars === s || (!stars && s === 1) ? 0 : -1} onClick={() => setStars(s)} style={{ width: 52, height: 52, padding: 0, border: "none", background: "transparent", fontSize: 40, lineHeight: 1, cursor: "pointer", color: s <= stars ? "#e3b341" : C.textMuted, opacity: s <= stars ? 1 : 0.55 }}>★</button>)}
     </div>
-    <div aria-hidden="true" style={{ textAlign: "center", fontSize: 12.5, color: C.textMuted, minHeight: 18 }}>{["Tap a star", "Poor", "Fair", "Good", "Very good", "Excellent"][stars]}</div>
+    <div aria-hidden="true" style={{ textAlign: "center", fontSize: 12.5, color: C.textMuted, minHeight: 18 }}>{[tx("Tap a star"), "Poor", "Fair", "Good", "Very good", "Excellent"][stars]}</div>
     {stars ? <>
       <label htmlFor="rate-text" style={lbl}>{stars <= 3 ? "What would make it better? (optional)" : "Anything you’d like to add? (optional)"}</label>
       <textarea id="rate-text" value={text} onChange={(e) => setText(e.target.value)} rows={3} maxLength={4000} style={{ ...field, resize: "vertical" }} />

@@ -1,0 +1,21 @@
+{
+  "area_id": "wa_mount_claywood",
+  "routes": [
+    {
+      "route_id": "wa_mount_claywood_standard",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "All-routes histogram: Jul 9, Aug 13, Sep 7, Oct 1. Web (park news items from several years): the dirt road from Hurricane Ridge to Obstruction Point opens around mid-July, typically stays open to mid-October, and varies with snowmelt. Stored Jul-Sep kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2911501", "verdict": "unsure", "why": "Jul 19 2025 from our Obstruction Point pin, but the recording is a 62-mile, 100 km tangle through the Grand Pass, Cameron and Lost basins that does not cleanly run to the summit and back (its highest recorded point is 4.2 km from the summit); the stats and report are empty. Not a reliable line." },
+        { "aid": "3000091", "verdict": "different", "why": "Aug 15 2024: from Mount Fromme down to Claywood Lake and up the east ridge, starting at the Dosewallips side camp. Different approach, partial track (start 15 km from our pin)." },
+        { "aid": "3375677", "verdict": "different", "why": "Oct 11 2026, car-to-car from the Dosewallips side over Hayden Pass and Fromme's SW ridge; different approach (13 km from our pin) and about two weeks past the season." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 8, "text": "Above Lost Pass a workable line climbs steep slopes and light brush to the 6,068 ft bump, then follows a ramp system on the east side of the summit block; it looks too steep from a distance but goes.", "aids": ["1450944", "1490685"] },
+        { "field": "watch_out", "month": 8, "text": "The final ramps are steep, compacted dirt and loose rubble; a slip would be serious, and in August the cliffs-side line was the firmer one", "aids": ["1450944"] }
+      ]
+    }
+  ],
+  "notes": "Single route on the peak, stored from Obstruction Point via Lost Pass. No harvested track follows that line cleanly. Several recent ascents (3375677, 3000091) come from the Dosewallips/Hayden Pass side, which our approach text mentions only as a southern alternative."
+}

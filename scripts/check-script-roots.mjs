@@ -46,7 +46,7 @@ for (const f of files) {
     // CLAUDE.md's account of the defect. Flagging those would forbid explaining the rule.
     const code = l.replace(/\/\/.*$/, "").replace(/\/\*[\s\S]*?\*\//g, "");
     const m = PINNED.exec(code);
-    if (m) findings.push({ file: path.relative(ROOT, f), line: i + 1, path: m[1] });
+    if (m) findings.push({ file: path.relative(ROOT, f).replace(/\\/g, "/"), line: i + 1, path: m[1] });
   });
 }
 

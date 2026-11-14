@@ -116,7 +116,9 @@ export default function RouteBreakdown({route,focus,onEdit,comments,commentsUnav
       ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", in route order."+short)
       :("How the route goes, section by section — "+stageCount+" leg"+(stageCount!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."));
   return <div id="route-breakdown" style={{marginBottom:ROUTE_GAP,scrollMarginTop:"80px"}}>
-    <SL action={<div style={{display:"flex",alignItems:"center",gap:8}}><span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>Tap a row for detail</span>{onEdit?<EditIconButton onClick={onEdit} title="Edit the route breakdown"/>:null}</div>}>ROUTE BREAKDOWN</SL>
+    {/* No caption beside the pencil (owner, 2026-11-05: "Tap a row for detail ... cuts off the edit button on the phone"):
+        the heading, a nowrap caption and the pencil did not fit a phone's width, and it was the pencil that lost. */}
+    <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit the route breakdown"/>:null}>ROUTE BREAKDOWN</SL>
     <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
       <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{intro}</div>
       {/* ASK THE CLIMBER WHO WAS THERE (owner note 2026-10-25, belay stations; multipitch audit proposal 2,

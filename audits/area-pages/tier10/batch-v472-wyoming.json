@@ -1,0 +1,77 @@
+{
+ "wy_stuffed_valley": {
+  "_expect": {
+   "name": "Stuffed Valley",
+   "region": "Wyoming"
+  },
+  "blurb": "Stuffed Valley is a small west-draining gulch on Douthitt Mountain in the Laramie Range, thick with aspen. It holds 11 routes, nearly all bolted sport with a single trad line. The grades are well spread: a few in the 5.7 to 5.9 range, a cluster of 5.10s, a couple of 5.11s and one very hard line at the top. The north wall offers slab and crack climbing and keeps the belayer in shade through summer, which makes it a pleasant place to be on a warm day. The mouth of the valley is easy to miss from the road, so carry the coordinates. A mixed party wanting moderates beside a few stiffer tests will be well served.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108918148/stuffed-valley",
+    "https://www.mountainproject.com/area/107470228/douthitt-mountain"
+   ]
+  }
+ },
+ "wy_sweet_static_wall": {
+  "_expect": {
+   "name": "Sweet Static Wall",
+   "region": "Wyoming"
+  },
+  "blurb": "Sweet Static Wall is a steep panel in the Island area near Cody, on the Green Mile. It carries 11 routes, nine of them bolted sport and two trad. The climbing is hard and not aimed at beginners: a couple of 5.11s, six routes at 5.12 and three in the 5.13 range. It ranks among the steepest faces in its neighbourhood, so expect sustained, overhanging movement. The trail to the neighbouring Trap Line Wall cuts across a bushy gully right beside this wall, so the two are easy to combine in one visit.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/cody-rock-climbing/sweet-static-wall/s23335",
+    "https://www.mountainproject.com/area/123445094/trap-line-wall"
+   ]
+  }
+ },
+ "wy_trinity_boulders": {
+  "_expect": {
+   "name": "Trinity Boulders",
+   "region": "Wyoming"
+  },
+  "blurb": "Trinity Boulders is a compact cluster of three large boulders within the Quarantine Boulders, in the Gros Ventre River Canyon near Jackson Hole. There are 11 problems, so a session here is short but varied. Four are easy warm-ups at VB or V0, a few sit in the V2 to V4 range, and two harder lines reach V6 and V7. One four-star V4 draws most of the attention and has eliminate and low-start variations. A road for off-road vehicles leads down toward the Quarantine boulders, and the setting is quiet and scenic.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118889343/trinity-boulders",
+    "https://mountainproject.com/area/118883194/gros-ventre-river-canyon"
+   ]
+  }
+ },
+ "wy_vietnam": {
+  "_expect": {
+   "name": "Vietnam",
+   "region": "Wyoming"
+  },
+  "blurb": "In upper Ten Sleep Canyon, Vietnam is a short wall where the Valhalla sector ends on the left. All 11 routes are bolted sport, and every one sits in the 5.11 to 5.12 range, split fairly evenly between the two. That makes it a wall for climbers already comfortable on steep, sustained sport routes, not a place to learn. A few lines are well liked and there are crack and face options within the same short stretch. It works well as a stop on a day moving along the Valhalla walls.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105847531/vietnam",
+    "https://rakkup.com/guidebook/ten-sleep-rock-climbing/vietnam/s17702"
+   ]
+  }
+ },
+ "wy_spelunk_spire": {
+  "_expect": {
+   "name": "Spelunk Spire",
+   "region": "Wyoming"
+  },
+  "blurb": "Spelunk Spire is a quiet backcountry crag in Vedauwoo near Laramie, hidden behind the busier Reynolds Hill. Of its 10 climbs, nine are traditional lines and one is a boulder problem, mostly short crack and face pitches. The grades start with an easy scramble-level line and run through a few 5.9s and 5.10s up to a couple of 5.11s. Reports say the ratings run stiff, so do not underestimate the cracks. The granite is solid, the walls face south and the crowds are thin. Spring and fall are comfortable; summer afternoons bring heavy sun.",
+  "approach": "Start as you would for Reynolds Hill and cross the creek. Bear right along higher ground above the willows, then pick up a faint path rising up and left through an open field with scattered trees. After a few hundred yards the trail firms up and the spire appears across a meadow.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105746835/spelunk-spire",
+    "https://app.advcollective.com/climbing/spelunk-spire-wyomings-untamed-backwoods-granite-crag"
+   ]
+  }
+ },
+ "_skipped": {
+  "wy_porter_s_prow": "no fetched page about the crag itself; only the Shady Side parent page (Mountain Project) mentions it, other searches found nothing",
+  "wy_trail_lake_pinnacle": "no fetched page about the pinnacle itself; two Mountain Project route pages only, SummitPost page returned 403",
+  "wy_hassler_s_hatbox": "only one fetchable page about the crag; SummitPost returned 403, trip report 404"
+ },
+ "_conflicts": {
+  "wy_trail_lake_pinnacle": "stored rock limestone; https://www.mountainproject.com/route/113328075/mountaineers-route says sandstone",
+  "wy_stuffed_valley": "stored rock gneiss; https://www.mountainproject.com/area/107470228/douthitt-mountain and /108918148/stuffed-valley describe a granite dome"
+ }
+}

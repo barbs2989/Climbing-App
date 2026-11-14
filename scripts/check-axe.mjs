@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:axe — every screen passes axe-core's WCAG 2.2 A/AA rules, in a real browser.
 //
 // Why it exists. The 2026-10-22 accessibility risk audit ran axe-core over the whole app for the
@@ -45,7 +47,7 @@ import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 import { assertQuietBox } from "./lib/quiet-box.mjs";
 
 const box = assertQuietBox("check:axe");
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const require = createRequire(import.meta.url);
 const AXE = fs.readFileSync(require.resolve("axe-core/axe.min.js"), "utf8");
 const argv = process.argv.slice(2);
@@ -82,7 +84,7 @@ async function startServer(autologin, from) {
   const port = await claimPort(from);
   if (port === null) { console.error(`check:axe: no free port in ${from}-${from + 39}`); process.exit(1); }
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
-  const srv = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  const srv = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: autologin ? "true" : "false" } });
   servers.push(srv);
   let died = false;
@@ -159,10 +161,19 @@ if (want("tabs") || want("routes") || want("overlays")) {
       try {
         await load(page, base, "?zr=1");
         await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 30000 }).catch(() => {});
+        // RouteDetail is a lazy chunk (ClimbMatch.jsx imports it on demand), so __routeOpen only
+        // means openRoute ran: for a while the screen is the "Loading climb…" fallback. The walk
+        // used to look for the tab straight away, find no tab bar, and report Plan, Conditions,
+        // Reports, Safety and Photos NOT REACHED on every run — while Overview "passed" by scanning
+        // the fallback, and Partners "passed" by clicking the app's own Partners nav button. So:
+        // wait for the route's OWN tab bar, and only ever look for a tab inside it.
+        const bar = await page.waitForSelector("[data-cm-route-tabs]", { timeout: 60000 }).then(() => true, () => false);
+        if (!bar) { unreached.push(`${label}:route·${st} (the route page never rendered its tab bar)`); continue; }
         if (st !== "Overview") {
           const got = await page.evaluate((t) => {
-            const tabs = [...document.querySelectorAll('[role="tab"], button')];
-            const b = tabs.find((x) => x.textContent.trim() === t);
+            const tabs = [...document.querySelectorAll("[data-cm-route-tabs] button")];
+            // A crag route's Reports tab reads "Send Reports" (RouteDetail.jsx), so the end of the label is matched.
+            const b = tabs.find((x) => { const s = x.textContent.trim(); return s === t || s.endsWith(" " + t); });
             if (b) { b.click(); return "opened"; }
             // A crag climb has no Plan tab, by design. The tab bar being there (Overview is) while this
             // one tab is not means the ROUTE does not offer it; no tab bar at all means the walk broke.

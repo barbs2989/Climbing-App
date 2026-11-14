@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Prove a keyboard can actually navigate the route detail screen.
 //
 // check:clickable is STATIC: it proves role/tabIndex/onKeyDown are present. It cannot
@@ -42,7 +43,7 @@ const claim = async (start) => {
 const ROUTE_ID = "1"; // the shared opener always opens ROUTES[0]; see the note at the bottom
 const port = await claim(5410);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 const stop = () => { try { process.kill(-server.pid, "SIGTERM"); } catch {} };
 process.on("exit", stop);

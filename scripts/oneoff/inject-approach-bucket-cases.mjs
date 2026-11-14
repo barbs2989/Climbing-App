@@ -45,10 +45,13 @@ const CASES = [
   },
   {
     name: "4-MUST_COVER-still-detects-a-stale-pin",
-    why: "the pinned-field check must still fire — re-pinning approach while nothing submits it",
+    // `approach` itself can no longer stand in: the form now has a SENTENCE control (not the bucket
+    // chips) and submits it, so pinning it would pass. The property is only that a pinned name
+    // nothing submits FAILS, so pin a name that is never submitted.
+    why: "the pinned-field check must still fire — pinning a field while nothing submits it",
     file: GUARD, find: '  "season", "commit", "descentText",',
-    repl: '  "approach", "season", "commit", "descentText",',
-    expect: /the proposal no longer submits approach/,
+    repl: '  "neverSubmittedField", "season", "commit", "descentText",',
+    expect: /the proposal no longer submits neverSubmittedField/,
   },
 ];
 

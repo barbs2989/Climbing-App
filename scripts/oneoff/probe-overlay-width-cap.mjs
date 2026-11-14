@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Do the opaque full-screen views actually render inside the app's 520px column on a DESKTOP
 // window, and still fill a phone?
 //
@@ -64,8 +65,8 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 
 // The overlay-scroll config, reused verbatim rather than adding a sixth scaffold: it injects the
 // shared `?z=` opener and rewrites nothing about app state.
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST/.test(s)) process.stderr.write(s); });

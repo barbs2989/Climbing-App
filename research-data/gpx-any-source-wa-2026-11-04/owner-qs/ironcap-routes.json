@@ -1,0 +1,42 @@
+{
+  "key": "ironcap-routes",
+  "question": "Are Iron Cap Mountain's 'Northeast Shoulder' and 'South Route' (Class 3 stub) one climb or two?",
+  "answer": "Two different things, and neither is a south-side climb. Every documented ascent of Iron Cap reaches the summit by its north ridge (Wikipedia names the North Ridge, class 2-3, the normal route). The 'northeast shoulder' is a real, used feature: the east-facing nose of that north ridge, which climbers use between the summit and the Tank Lakes side (a 2017 Peakbagger report: follow the north ridge to the NE shoulder, where cairns lead round to the saddle below the Tank Lakes plateau; a 2026 log calls it 'the standard northeast shoulder', brushy low down with a clear but occasionally confusing path). So Northeast Shoulder is the east (Tank Lakes) way onto the north ridge. The catalog's third row, 'West Ridge / North Ridge via Chetwoot Lake' (id ..._south_route, which holds a track), is the west way: talus from Chetwoot Lake to the west ridge, a class 3 downclimb to a notch, a wide ramp left below the summit onto the broad north ridge, then 150 ft to the top. They share the last stretch of the north ridge but their approaches differ greatly, and logged tracks exist for both sides (the 2023 track climbs from the east at 47.5503,-121.2495 and reaches the summit from the north). 'South Route' (Class 3) appears in no source: no report, peak page or log describes a route from the south (the south side drops toward the Middle Fork valley and is mentioned only as a view). Its id 'south_route_2' is the leftover of the earlier 'South Route' label that was renamed to the Chetwoot row, so the stub is most likely a second copy of the Chetwoot route, not a new line. Limit: Beckey was not readable, so a Beckey-only south line cannot be ruled out.",
+  "recommendation": "Treat as two: keep Northeast Shoulder (rename 'North Ridge via Northeast Shoulder') as the east-side climb, and merge wa_iron_cap_mountain_south_route_2 into wa_iron_cap_mountain_south_route (the West Ridge / North Ridge via Chetwoot Lake row, which keeps the track). Do not keep a 'South Route' row. Discipline for both: scrambling (class 2-3, unroped), not alpine; Northeast Shoulder grade Class 2-3. No pin or track can be added from this research (no trailhead coordinate confirmed from a fetched official page).",
+  "confidence": "medium",
+  "proposed": {
+    "merges": [
+      {
+        "drop": "wa_iron_cap_mountain_south_route_2",
+        "into": "wa_iron_cap_mountain_south_route"
+      }
+    ],
+    "keep_and_fill": {
+      "id": "wa_iron_cap_mountain_northeast_shoulder",
+      "name": "North Ridge via Northeast Shoulder",
+      "discipline": "scrambling",
+      "grade": "Class 2-3",
+      "approach": "Reached from the Tank Lakes side of the Alpine Lakes high route, via the Foss River trails, not from Chetwoot Lake.",
+      "beta": "From the basin east of the peak, climb a wide talus ramp to the nose of the north ridge, then follow the north ridge, over boulders and heather benches, to the summit. Cairns mark the way across the east-side talus; the lower section can be brushy and the path is clear but easy to lose.",
+      "descent_text": "Reverse the ascent: down the north ridge, round the northeast nose, and across talus to the saddle below the Tank Lakes plateau.",
+      "season": "July to September (logged summits by month: June 2, July 19, August 32, September 25, October 8)."
+    }
+  },
+  "evidence": [
+    "https://en.wikipedia.org/wiki/Iron_Cap_Mountain - North Ridge is the normal route, class 2-3; first ascent 1925; July-September window",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1218878 - 2021: Chetwoot Lake talus to the west ridge (class 3 downclimb to a notch), wide ramp left onto the north ridge, descend the north ridge then bushwhack SE below the east-face cliffs to the basin; no south or northeast route",
+    "https://peakbagger.com/climber/ascent.aspx?aid=861698 (search snippet; page 403) - 2017: follow the north ridge to the NE shoulder to reach the Tank Lakes saddle; west ridge mostly class 3; descent mostly class 2",
+    "https://trailcatjim.com/alpine-lakes-traverse-2021/ - northwest slope to the north ridge from Iron Cap Lake; descent down the north ridge and northeast nose to Iron Cap Pass",
+    "https://climberkyle.com/2021/09/01/big-snow-iron-cap-high-route/ - ridge to the true summit from the saddle above Chetwoot Lake, off the north side, contour beneath the east cliffs",
+    "Local packets-all/wa_iron_cap_mountain.json: aid 3281661 (2026-07-23) 'descended the standard northeast shoulder'; aid 2292650 track climbs from the east and reaches the summit from the north"
+  ],
+  "searched": [
+    "WebSearch: Iron Cap Mountain Chetwoot Lake scramble route summit northeast shoulder south route - no source for either name at first",
+    "WebSearch: Iron Cap 'northeast shoulder' Dutch Miller Gap Tank Lakes - found the NE shoulder as the Tank Lakes-side feature of the north ridge",
+    "WebSearch: Iron Cap north ridge class 2-3 normal route Chetwoot west ridge south side Beckey - no south-side route anywhere; Beckey unreachable (archive.org lending only)",
+    "WebFetch wta.org/go-hiking/hikes/iron-cap-mountain - no route text; trailhead 47.5540,-121.2848 only (not used)",
+    "WebFetch yellowleaf 2005 traverse - no class or side; WTA 2023 report and Peakbagger ascent page - HTTP 403 (not worked around)",
+    "Earlier dupes-read.json verdict ('unsure', South Route likely the Chetwoot approach) - consistent; this pass adds that NE shoulder is a distinct east-side line",
+    "Local verdicts/wa_iron_cap_mountain.json - both stubs have no text or pins"
+  ]
+}

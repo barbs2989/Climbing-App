@@ -1,0 +1,41 @@
+{
+ "co_difficult_wall_aka_difficult_cliff": {
+  "_expect": {"name": "Difficult Wall aka Difficult Cliff", "region": "Colorado"},
+  "blurb": "A two-tier granite wall in the Independence Pass corridor above Aspen, reached on foot from the Difficult Creek trail. Fourteen routes mix trad and sport, mostly in the 5.12 range, with a handful of easier lines around 5.9 and 5.10 and a few at 5.11. Expect cracks, a famous short chimney and sparse gear on some pitches. The upper tier takes some scrambling and fixed-rope climbing to reach. At high elevation it works best as a mid-summer crag, with spring and fall also pleasant, and the setting is quiet with long views.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108145181/difficult-wall-aka-difficult-cliff", "https://app.advcollective.com/climbing/id-chimney-at-difficult-wall-a-compact-trad-challenge-near-independence-pass"]}
+ },
+ "co_observatory_rock": {
+  "_expect": {"name": "Observatory Rock", "region": "Colorado"},
+  "blurb": "A small crag in the South Fork of St. Vrain Canyon, west of Lyons, sitting right above the highway pull-out. Most of the fourteen routes are trad, with a single sport line, and grades run from around 5.8 up through 5.10 and into 5.11. The wall faces south, so it is warmest in the afternoon, and spring and fall are the comfortable seasons. The stone is coarse and gritty, so gloves help on cracks. It is a quiet spot compared with busier Front Range cliffs, and the walk-off descent needs care on loose gravel.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105745292/observatory-rock", "https://app.advcollective.com/climbing/99-pure-a-classic-trad-climb-at-observatory-rock"]}
+ },
+ "co_mourning_glory": {
+  "_expect": {"name": "Mourning Glory", "region": "Colorado"},
+  "blurb": "A compact, fairly new sport crag at the top end of Clear Creek Canyon near Golden, on a hillside above the creek near Tunnel 5. All fourteen routes are bolted. Most fall between 5.9 and 5.11, with a few steps up through 5.12 and 5.13 and a headline roof line near the top of the scale that draws strong climbers. The slope under the routes is steep and loose, so watch your footing at the base. Expect a short walk upstream followed by a cairned trail climbing to the wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106463245", "https://rakkup.com/guidebook/clear-creek-canyon-rock-climbing/mourning-glory/s11483"]}
+ },
+ "co_mecca_boulder": {
+  "_expect": {"name": "Mecca Boulder", "region": "Colorado"},
+  "blurb": "One of the standout blocks in the Mecca bouldering area on Nine Mile Hill, in the Unaweep Canyon country near Grand Junction. It holds fourteen problems from V0 up to V6, with the bulk between V2 and V4. The east face offers friendly warm-ups, while the west face has a classic sloper lowball at the harder end. Landings are generally flat. Boulders here sit in the open and take lots of sun, so winter is pleasant and summer can be very hot; aim for the right time of day. Gnats can bother you in early summer.",
+  "review": {"sources": ["https://mountainproject.com/area/106647696/mecca-boulder", "https://www.mountainproject.com/area/109708958/mecca-area"]}
+ },
+ "co_massey_wall": {
+  "_expect": {"name": "Massey Wall", "region": "Colorado"},
+  "blurb": "The eastern end of the Quarry Wall Complex in Main Canyon, part of Unaweep Canyon south of Grand Junction. All fourteen routes are trad, several of them two pitches, and the wall is known for crack climbing. Difficulty is solid rather than gentle: a couple of 5.9s and a handful of 5.10s, then mostly 5.11 with a few 5.12 and 5.13 lines at the top. Most of the routes are recent. Routes can be reached from above or from below, and the canyon's rock can be jumbled with loose sections, so climb carefully.",
+  "review": {"sources": ["https://mountainproject.com/area/110016346/massey-wall", "https://mountainproject.com/area/106571734/main-canyon-unaweep-granite"]}
+ },
+ "co_mill_creek_dome": {
+  "_expect": {"name": "Mill Creek Dome", "region": "Colorado"},
+  "blurb": "A big, highly featured dome above Dumont in the Front Range foothills, about 9,000 feet up and sitting above the Mill Creek Crags. Fourteen routes split evenly between sport and trad, mostly 5.10 to 5.12 with one easy line and a single route at the top of the scale. Lengths run from short single pitches to a few three-pitch outings. The altitude keeps it noticeably cooler than Golden, Clear Creek or Boulder, so it is a good summer escape. It is popular and weekends can draw several parties. A cairned trail leads in.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107344575/mill-creek-dome", "https://app.advcollective.com/climbing/fractals-at-mill-creek-dome-a-sport-climb-with-varied-terrain-and-solid-moves"]}
+ },
+ "_skipped": {
+  "co_c_stargazer": "no fetched page about the crag itself (only the East Animas parent page lists it)",
+  "co_new_empire_wall": "no page found for this crag after several searches"
+ },
+ "_conflicts": {
+  "co_massey_wall": "stored rock sandstone, but the canyon page (https://mountainproject.com/area/106571734/main-canyon-unaweep-granite) says the canyon walls are granite/gneiss/quartz monzonite; rock left unchanged",
+  "co_mill_creek_dome": "stored rock gneiss and aspect E; page https://www.mountainproject.com/area/107344575/mill-creek-dome calls the rock granite, and the second page calls the sampled route south-facing; unchanged",
+  "co_observatory_rock": "stored rock quartz monzonite; https://www.mountainproject.com/area/105745292/observatory-rock calls it granite (likely compatible); unchanged"
+ }
+}

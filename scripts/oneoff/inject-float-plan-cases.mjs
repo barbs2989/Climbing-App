@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // Injection cases for check:float-plan-persistence.
 //
 // THE DEFECT THIS GUARD EXISTS FOR IS SILENT BY CONSTRUCTION, which is what the cases have to
@@ -18,7 +19,7 @@ import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const RD = path.join(ROOT, "RouteDetail.jsx");

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does the pin work, and does a WRONG pin fail safely?
 //
 // Both halves matter. Pinning a subresource is only worth doing if (a) the good hash still
@@ -43,7 +44,7 @@ const fail = (m) => { console.log("  FAIL  " + m); bad++; };
 
 const run = async (label) => {
   const port = await (async () => { for (let p = 5860; p < 5900; p++) { const free = await new Promise((res) => { const s = net.createServer(); s.once("error", () => res(false)); s.once("listening", () => s.close(() => res(true))); s.listen(p, "127.0.0.1"); }); if (free) return p; } })();
-  const server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore" });
+  const server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore" });
   // vite.config.js sets base "/Climbing-App/", so a probe page at the project root is served
   // UNDER it. Fetching without the base returns 404 forever, which the readiness loop
   // reports as "dev server never came up" -- a message that sent me to the machine load

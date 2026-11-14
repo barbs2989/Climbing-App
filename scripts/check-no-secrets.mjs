@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:no-secrets — no tracked or untracked source file may hold a Supabase credential or the
 // project's own URL as a LITERAL. Credentials belong in .env (service key) and .env.local (the
 // public anon key and URL), read through process.env / import.meta.env.
@@ -22,7 +23,7 @@
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const SRC_EXTS = /\.(jsx?|mjs|cjs|tsx?|json|html|sql|ya?ml|sh)$/;
 const ANY_EXTS = /\.(jsx?|mjs|cjs|tsx?|json|html|sql|ya?ml|sh|md|txt|env\.example)$/;
 

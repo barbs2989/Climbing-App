@@ -1,0 +1,70 @@
+{
+ "area_id": "wa_mount_lincoln",
+ "routes": [
+  {
+   "route_id": "wa_mount_lincoln_harniss_chute",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "mid-Jul to Sep",
+    "evidence": "WebSearch: Mountaineers reports from Mildred Lakes and Flapjack Lakes show steep snow in the gullies into June; stored standard-route window mid-July to September; Jun ascents needed axe and crampons, Sep ascents dry."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2654862",
+     "verdict": "unsure",
+     "why": "Sep 2024 complete track via the old south-end trail; report finds a class 3 gully but never names a chute and does not use the Flapjack Lakes approach."
+    },
+    {
+     "aid": "2863122",
+     "verdict": "different",
+     "why": "June, from Mildred Lakes, NE snow couloir."
+    },
+    {
+     "aid": "3208364",
+     "verdict": "different",
+     "why": "May, bike-in from Lake Cushman, south couloir."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_lincoln_standard",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "mid-Jul to Sep",
+    "evidence": "WebSearch: Mountaineers reports from Mildred Lakes and Flapjack Lakes show steep snow in the gullies into June; stored standard-route window mid-July to September; Jun ascents needed axe and crampons, Sep ascents dry."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2654862",
+     "verdict": "different",
+     "why": "Sep 2024: ascends from Staircase via old south trail, not the North Ridge from Flapjack Lakes."
+    },
+    {
+     "aid": "2863122",
+     "verdict": "different",
+     "why": "June 2025, Mildred Lakes approach and snow couloir."
+    },
+    {
+     "aid": "3208364",
+     "verdict": "offseason",
+     "why": "May 2026 Lake Cushman approach."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "No harvested track climbs either stored route from Flapjack Lakes; Harniss Chute could not be found online. The Sep 2024 track and the Staircase old-trail line may be a third route (south ridge via old Lincoln Way trail) not stored."
+}

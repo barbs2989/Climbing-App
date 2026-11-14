@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Injection harness for check:waypoint-placement. Its healthy output is "ok", which is exactly what
 // a guard that renders nothing also prints — and this one bundles and renders, so it has plenty of
 // ways to pass having measured nothing.
@@ -11,7 +12,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const FILES = { core: ROOT + "ClimbMatchCore.jsx", rd: ROOT + "RouteDetail.jsx", gpx: ROOT + "src/components/GPXMap.tsx",
   // PR57 moved WaypointList and TrailheadCard out of RouteDetail.jsx.
   wl: ROOT + "src/components/WaypointList.tsx", card: ROOT + "src/components/TrailheadCard.tsx" };

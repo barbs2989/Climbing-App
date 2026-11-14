@@ -1,0 +1,98 @@
+{
+  "area_id": "wa_wing_peak",
+  "routes": [
+    {
+      "route_id": "wa_wing_peak_northwest_ridge",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Histogram Jun 12, Jul 29, Aug 27, Sep 28, May 1, Oct 6. Stored Late May-June is too early: a late-May attempt met knee-deep slush and a cornice and turned back; a November attempt met 6-12 in of snow. Searches found no guidebook season for this peak."
+      },
+      "track": {
+        "aid": "3242572",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Our catalog has one route on the peak; the June 25 2026 summited track follows the described line (waterfall ravine, bootpath, saddle, summit block), round trip 292/298 m from pin. It also visits Gunn."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3350694",
+          "verdict": "same",
+          "why": "Sep 19, also complete, includes Gunn."
+        },
+        {
+          "aid": "1965310",
+          "verdict": "same",
+          "why": "Jul 14 2022 round trip but start 314 m from pin."
+        },
+        {
+          "aid": "3241396",
+          "verdict": "same",
+          "why": "Jun 24, incomplete."
+        },
+        {
+          "aid": "2982324",
+          "verdict": "same",
+          "why": "Sep 13, large link-up trip, incomplete."
+        },
+        {
+          "aid": "1925146",
+          "verdict": "not-summited",
+          "why": "May 24 2022 turned back."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 5,
+          "text": "A brushy spur off the forest road about 1,000 ft before the Barclay Lake lot saves roughly 300 ft of walking but is overgrown; parking on the shoulder is easier.",
+          "aids": [
+            "1925146"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 5,
+          "text": "In late May, continuous snow starts near 4,200 ft and becomes knee-deep slush by 5,000 ft, and a cornice overhangs the north approach to the summit.",
+          "aids": [
+            "1925146"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In mid-July the climbers trail is overgrown up to and past the waterfall crossing; north-aspect snow patches are firm enough to walk on.",
+          "aids": [
+            "1965310"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "The final summit block is the crux: roughly 20 ft of exposed Class 4 on either the north gully or the south side, with chossy footing.",
+          "aids": [
+            "3242572",
+            "1965310",
+            "3350694"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "In mid-September, a short hand line slung on a horn at the summit helped with the exposed Class 4 downclimb on the south side.",
+          "aids": [
+            "3350694"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Our trailhead pin is about 300 m from where all tracks start; the tracks start at a spur nearer the road, so no pin move proposed."
+}

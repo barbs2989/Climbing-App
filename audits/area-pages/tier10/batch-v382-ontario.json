@@ -1,0 +1,39 @@
+{
+ "on_chip_off_the_old_block": {
+  "_expect": { "name": "Chip Off The Old Block", "region": "Ontario" },
+  "blurb": "A big detached block of sandstone sitting below the main wall at Pass Lake, east of Thunder Bay, with a talus pile at its foot. It holds eleven short routes, mostly set up for top-roping, plus a couple of bolted lines and a couple of trad lines. Grades run from easy fifth class through the low 5.10s, with a few climbs reaching 5.11, so beginners and intermediates both find something. The walk from the road is only a few minutes along one of several trails, which makes it a quick, low-commitment stop for a short day out.",
+  "review": { "sources": ["https://mountainproject.com/area/113446809/chip-off-the-old-block", "https://www.mountainproject.com/area/113446713/pass-lake"] }
+ },
+ "on_agitez_bien_area": {
+  "_expect": { "name": "Agitez Bien Area", "region": "Ontario" },
+  "blurb": "One of the sectors of Metcalfe Rock, a dolomite cliff in the hills near Collingwood, reached from Grey Road 19. The sector has about a dozen routes split between bolted lines and gear climbs, mostly in the 5.10 to 5.12 range, with one easy line and a handful of mid-5.11s. A corner line gives the sector its name and a long two-pitch trad outing. Metcalfe Rock itself is treed and tends to stay shaded, is quiet midweek, and fills with day-trippers on weekends.",
+  "review": { "sources": ["https://rakkup.com/guidebook/metcalfe-ontario-rock-climbing/agitez-bien-area/s18827", "https://mountainproject.com/area/109509888/metcalfe-rock"] }
+ },
+ "on_timberwolf": {
+  "_expect": { "name": "Timberwolf", "region": "Ontario" },
+  "blurb": "A small cliff about fifteen metres high on the north side of Sudbury, next to a golf course, and one of the longest-established climbing spots around the city. Of its eleven routes, most are bolted, with two top-rope lines and one gear climb. Difficulty runs from easy fifth class up to a 5.12, with a good cluster in the 5.9 and 5.10 range. The top can be reached from either side, so anchors for top-roping are simple to set up. Expect a short outing close to town rather than a full-day destination.",
+  "review": { "sources": ["https://www.mountainproject.com/area/114495271/timberwolf", "https://northernontario.travel/outdoor-adventures/11-best-places-go-rock-climbing-ontario"] }
+ },
+ "on_bancroft_eagle_s_nest": {
+  "_expect": { "name": "Bancroft Eagle's Nest", "region": "Ontario" },
+  "blurb": "A compact cliff in the middle of the town of Bancroft, with one to three pitches of climbing. The eleven routes mix bolted and gear lines, running from 5.6 up to a single 5.11, with the bulk in the 5.9 and 5.10 band. It suits a short visit from climbers who want a few varied routes close to town services, and the walk in from the street is very short. Neighbouring properties are close, so keep a low profile and tidy up after yourself.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113350272/bancroft", "https://www.ontarioallianceofclimbers.ca/crags/eagles-nest-bancroft"] }
+ },
+ "on_q_camel_wall": {
+  "_expect": { "name": "Camel Wall", "region": "Ontario" },
+  "blurb": "A sector at the north end of Mount Nemo, on the Niagara Escarpment near Milton, with ten routes in a mix of gear and bolted climbing. Most of the lines are trad, ranging from easy to the 5.10s, with one 5.11 as the top end. Its best-known line is a sustained crack. Reaching the wall means a walk of roughly a quarter hour north from the lookout, including a short rocky stretch with a chain handrail, then dropping down a few terraces. Expect a forested setting and a decent amount of walking compared to the roadside sectors.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108161840/camel-wall", "https://app.advcollective.com/climbing/double-lead-at-camel-wall"] }
+ },
+ "on_air_jamaica_wall": {
+  "_expect": { "name": "Air Jamaica Wall", "region": "Ontario" },
+  "blurb": "A steep sport wall at Old Baldy, above the Beaver Valley near Kimberley. All ten routes are bolted and nearly all fall in the 5.11 range, with a couple at 5.12, so this is a sector for strong intermediates and up rather than beginners. Old Baldy as a whole offers sound rock, lead-only climbing with anchors that cannot be reached from above, and plenty of afternoon sun that lets the cliff come into condition early in the season. The approach follows the escarpment trail along the cliff edge down to the base.",
+  "review": { "sources": ["https://rakkup.com/guidebook/old-baldy-ontario-rock-climbing/jamaican-wall-area/s18837", "https://www.mountainproject.com/area/107248630/old-baldy"] }
+ },
+ "_skipped": {
+  "on_7_scalphunter_area": "no fetched page about the area itself (only a single route page at Lion's Head)",
+  "on_beginner_s_crack_area": "only parent page (The Bluffs) fetched; thecrag guide returned 403, no page about the crag itself"
+ },
+ "_conflicts": {
+  "on_q_camel_wall": "a low-reliability page (https://app.advcollective.com/climbing/double-lead-at-camel-wall) calls the rock granite and the wall south-facing, vs stored dolomite; stored values left alone"
+ }
+}

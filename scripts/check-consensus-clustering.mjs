@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Can three climbers who agree actually be COUNTED as agreeing?
 //
 // The merge gate is `win.n >= 3 || wasEmpty`: for a field that already holds a value, three
@@ -53,14 +55,14 @@ const dead = (what) => {
 };
 
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { dead("esbuild could not bundle ClimbMatchCore.jsx"); }
 
-const mod = await import(out + "?t=" + Date.now());
+const mod = await import(fileHref(out + "?t=" + Date.now()));
 const { sameEditValue, normEditStr, SET_FIELDS } = mod;
 if (typeof sameEditValue !== "function") dead("ClimbMatchCore.jsx does not export sameEditValue — ANCHOR LOST");
 if (typeof normEditStr !== "function") dead("ClimbMatchCore.jsx does not export normEditStr — ANCHOR LOST");

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does `what_to_bring` actually reach a screen, or does the assumed-gear filter eat it?
 //
 // check:field-renders lists what_to_bring as NEVER RENDERS, with the recorded reason
@@ -17,7 +18,7 @@ import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("../..", import.meta.url)).replace(/\/$/, "");
 if (!fs.existsSync(path.join(ROOT, "RouteDetail.jsx"))) { console.error("ROOT wrong:", ROOT); process.exit(1); }
 const require_ = createRequire(import.meta.url);
 

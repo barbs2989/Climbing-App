@@ -71,7 +71,7 @@ const die = (msg) => {
   process.exit(1);
 };
 
-const rel = (abs) => path.relative(ROOT, abs).split(path.sep).join("/");
+const rel = (abs) => path.relative(ROOT, abs).replace(/\\/g, "/").split(path.sep).join("/");
 
 function resolveSpec(fromAbs, spec) {
   if (!spec.startsWith(".") && !spec.startsWith("/")) return null;          // a package: not ours

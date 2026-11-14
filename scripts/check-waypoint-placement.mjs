@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:waypoint-placement — a waypoint the map cannot draw must SAY SO, and must not pretend to
 // be a control; and exactly one predicate decides which waypoints those are.
 //
@@ -29,7 +30,7 @@ import { join } from "node:path";
 import { createRequire } from "node:module";
 import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const core = readCoreSource();
 // readAppFile: RouteDetail.jsx with its moved components (WaypointList, TrailheadCard — PR57) stitched back in.
 const rd = readAppFile(join(ROOT, "RouteDetail.jsx"));

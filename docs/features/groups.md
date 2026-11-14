@@ -11,6 +11,7 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
   `groups update by manager` (0090) admits `is_group_manager()` only, and `setGroupVisibility` /
   `updateGroupSettings` report a zero-row update as a refusal rather than a success. Deleting a group is the
   owner's alone.
+- **Event cards** (`groupEventRow` in `ClimbMatch.jsx`; competitor review batch A, item 7, owner 2026-11-04, Meetup's pattern): under the title, the first four faces of who is going (`_groupPerson`, so a real member's photo shows) with *N going*; a capped event wears an amber *N spots left* badge at its top-right corner and says *Full* at none; the row's name for a screen reader carries both. The Discover view's title names the place once one is picked: *Climbing groups near Index*.
 - **Who may host events** is the group's own setting, *Who can create events?* — *Any member* or *Moderators only*
   (`groups.event_policy`), enforced by the `group events created per the group's event policy` insert policy (0230).
   **New groups default to Moderators only** (2026-10-16), as Meetup (organizer team), Strava clubs (admins) and
@@ -20,12 +21,23 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 - **Discover — search.** One box matches every word typed against a group's name, disciplines, typed location, its
   **state or province in both spellings** ("Washington" and "WA" both find "Seattle, WA"), and its About text,
   through the shared `searchMatches` rule (`lib/search.js`).
-- **Discover — explore by state.** Under *Explore by discipline*, *Explore by state* offers one chip per state or
-  province that has a group you could join, with its count. Your **home** state comes first, then the states of the
-  areas you listed yourself at for partners (`partner_areas`, 0300) — marked *You climb here* — then the rest. A
-  chip filters the list to that whole state and combines with the search box. The dropdown below browses
-  *Anywhere*, *All of <state>*, or one exact typed location. (This replaced one chip per CITY, ranked by your own
-  town, which could only ever reach groups where you already live.)
+- **Discover — explore by state** (reworked 2026-11-13 for scale). Under *Explore by discipline*, at most six state
+  chips (`STATE_CHIPS`): your **home** state, then the states of the areas you listed yourself at for partners
+  (`partner_areas`, 0300) — marked *You climb here* — then the states with the most groups. A chip filters the list to
+  that whole state and combines with the search box. The list below (*Every state* or one state, alphabetical, with
+  counts) holds every state; it no longer offers each typed town, which ran to hundreds of spellings. A town is found
+  by the search box and a distance by *Near a place*. Results show 20 at a time with *Show more groups*
+  (`DISC_PAGE`), reset whenever a filter changes.
+- **A group opens on About** (owner 2026-11-13), for members too; closing the group forgets the tab it was left on.
+- **Join / Leave and + Invite** in a group's header are compact pills; the joined state reads *✓ Joined* (its name
+  for a screen reader still says tap to leave, and leaving asks first).
+- **Removing a member** (the ✕ on Members) is for the owner and moderators only, never on yourself or the owner, and
+  a moderator cannot remove another moderator.
+- **Share an event** (owner 2026-11-13). A public group's event sheet offers *Share this event*: Text, Email,
+  Facebook, Copy link and More… (`ShareVia` with `facebook`). Facebook's dialog takes only the link, so the message is
+  copied first, to paste into a post or a Facebook group. The message carries the title, date, time, place and group,
+  because events are members-only (RLS): `?group=<id>&event=<id>` opens the event sheet for a member, and the group's
+  About with *Join … to see this event and RSVP* for anyone else. A private group's events offer + Invite only.
 - **Discover — near a place** (0396). *Near a place* searches every crag, peak and area in the catalog (`GroupPlaceSearch`),
   then lists the groups whose home area lies within 25, 50, 100 or 250 mi of it (shown in the climber's units), nearest
   first; each card says how far it is. It combines with the search box and the state chip. A crag or region page's
@@ -59,6 +71,7 @@ against the posts already held. A post ClimbMatch Safety takes down leaves every
 stops that UPDATE reaching them, so a trigger broadcasts the bare id on the public `moderation` topic and `lib/live.js`
 treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 
+- **Reactions are emoji, in Facebook's bar (2026-11-05).** On a post, Like gives the thumbs-up; resting the mouse on it, holding it, right-clicking it, or tapping the reaction count pops a floating pill of the 21 emoji over that button (`ReactionPicker`, emoji only, your pick on a blue disc), and the count line stacks the top three emoji on small discs (`reactionEmoji`). The same bar serves every comment thread (`Comments`). Detail in `docs/guards/social-and-crews.md`.
 - **Optimistic taps (2026-10-29).** On a real group, a post's reaction, pin and edit, an event RSVP and declining an event invite change the cached rows (`group-feed`, `group-events`, `my-event-invites`) through `patchQueries()` before the write, and the returned undo restores them if it fails. Joining a group, accepting a group invite and *Approve all* still wait for the server, because the server decides the outcome (approval needed, invite withdrawn, how many were approved).
 
 ## 3. Files
@@ -88,5 +101,7 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 ## 5. Known gaps
 - A group's location is free text; one typed with no state ("Squamish") has no region and is listed under *Other*.
 - Only groups that picked *Where it climbs* have a point; the rest are found by state and search, never by distance.
+- Discover still reads every visible group into the browser (`useMyGroups`) and filters there; paging the screen does
+  not page the read. Past a few thousand groups this wants a server-side search (state, text, distance) with paging.
 - *Near a place* measures from a catalog area, not from a town or zip; a town-based group picks the crag or region it
   climbs at.

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Does "⤓ Save map offline" on the route map (lib/SaveMapOffline.jsx) put a real route's map on the
  * device, and does Remove take it off again — against the LIVE catalog and the live USGS tiles?
  *
@@ -49,7 +50,7 @@ try {
     loader: { ".js": "jsx" }, jsx: "automatic",
     define: { "import.meta.env": JSON.stringify({ VITE_SUPABASE_URL: SUPABASE_URL, VITE_SUPABASE_ANON_KEY: anonKey(), VITE_USE_DB: "true" }) },
   });
-  mod = await import(out);
+  mod = await import(fileHref(out));
 } catch (e) { console.error("FAIL: could not bundle the save path — nothing was checked. " + (e.stack || e.message)); process.exit(1); }
 
 const H = { apikey: anonKey(), Authorization: "Bearer " + anonKey() };

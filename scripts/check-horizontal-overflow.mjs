@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:overflow — does the app still fit the phone it is built for?
 //
 // This app is mobile-first and has no CSS framework: every control is hand-positioned with
@@ -79,7 +80,7 @@ log(`starting dev server on ${port}...`);
 // The `?zt=`/`?z=` opener only exists when the scaffold is injected, which is a vite
 // config's job. Borrow the a11y-badges one: same populated demo, same opener, and reusing
 // it means this cannot drift on which overlays exist.
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 // Did OUR server start, and is it still ours?
 //

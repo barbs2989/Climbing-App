@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:message-delivery — somebody messages you. Does it arrive, and are they named?
 //
 // THE FIRST GUARD IN THIS REPO THAT INVOLVES TWO PEOPLE. Every other browser guard signs in as at
@@ -129,7 +130,7 @@ try {
   const port = await claimPort(PORT);
   const base = `http://127.0.0.1:${port}/`;
   log(`starting dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });
@@ -273,6 +274,21 @@ try {
     log("\n  --- the inbox, with a message waiting (first 700 chars) ---");
     log(inbox.slice(0, 700).replace(/\n{2,}/g, "\n"));
     log("  --- end ---\n");
+    // WHICH READ WAS MISSING, so the next red names its cause instead of being filed as a flake.
+    // The inbox needs two things from the owner's side: the message row (fetchMyDirectMessages) and,
+    // a round trip later, the sender's profile (useProfilesByIds) -- a thread without the second is
+    // dropped from the list. Both read BY ID as the OWNER, after the fact: diagnostic only, it
+    // asserts nothing and cannot turn a red green.
+    const asOwner = { headers: { apikey: ANON, Authorization: `Bearer ${fixture.session.access_token}` } };
+    const probe = async (p) => {
+      const r = await fetch(`${SUPA}/rest/v1/${p}`, asOwner).catch(() => null);
+      if (!r) return "no answer";
+      const j = await r.json().catch(() => null);
+      return `HTTP ${r.status}, ${Array.isArray(j) ? j.length + " row(s)" : "not a row list"}`;
+    };
+    log(`  diagnosis: the owner reads this run's message by id -> ${await probe(`messages?id=eq.${msgId}&select=id`)}`);
+    log(`  diagnosis: the owner reads the sender's profile by id -> ${await probe(`profiles?id=eq.${fixture.mate.id}&select=id`)}`);
+    log(`  diagnosis: page says ${/Loading your chats/i.test(inbox) ? "still LOADING" : /Couldn't load your chats/i.test(inbox) ? "a read FAILED" : "settled"}`);
   }
 
   // ---- open the thread and look for the words the mate actually wrote ----

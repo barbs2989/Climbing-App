@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { fileURLToPath } from "node:url";
 // KEPT SO NOBODY REBUILDS IT — the same reason measure-foreign-camp-lists.mjs is kept.
 //
 // audit:camp-route-fit can only judge a camp whose name carries a distinctive UNIQUE peak, which is
@@ -41,10 +43,10 @@
 //                                   counted, because a sweep whose refusals share one reason is a
 //                                   sweep to suspect rather than a worklist.
 import fs from "fs";
-const ROOT = new URL("../..", import.meta.url).pathname;
-const { SUPABASE_URL, anonKey, headers } = await import(`${ROOT}/scripts/lib/supabase-env.mjs`);
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
+const { SUPABASE_URL, anonKey, headers } = await import(fileHref(`${ROOT}/scripts/lib/supabase-env.mjs`));
 
-const CACHE = new URL("../../.camp-geocode-cache.json", import.meta.url).pathname; // written by geocode-camp-names.mjs
+const CACHE = fileURLToPath(new URL("../../.camp-geocode-cache.json", import.meta.url)); // written by geocode-camp-names.mjs
 const CROSS_FT = 400;   // DEM vs the stored elevation: the solver's own agreement bound.
 const HOME_KM = 8;      // a camp must be within this of at least one carrying route, or the
                         // coordinate itself is the suspect rather than any pairing.

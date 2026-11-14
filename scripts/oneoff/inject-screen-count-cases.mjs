@@ -10,21 +10,38 @@
 // check:rls case 1 and check:token-boxes case 0 are held to.
 //
 //   node scripts/oneoff/inject-screen-count-cases.mjs [beforeSnapshot afterSnapshot]
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
 import { checkScreenCounts } from "../lib/screen-counts.mjs";
 
 const [beforePath, afterPath] = process.argv.slice(2);
-const BEFORE = beforePath || "/Users/nathanbarber/.claude/jobs/30bb9906/tmp/ui-ground.json";
-const AFTER = afterPath || "/Users/nathanbarber/.claude/jobs/30bb9906/tmp/ui2.json";
-for (const p of [BEFORE, AFTER]) if (!existsSync(p)) {
+// The two recordings used to be hard-coded to one machine's job tmp dir, so nobody else could run
+// this. The AFTER capture is now taken here, from the current app, when no path is given (about two
+// minutes: it is the same walk as `npm run check:ui`). The BEFORE recording of the #1203 defect was
+// never committed and cannot be re-taken from today's code, so without one the case rebuilds that
+// exact shape (Profile "3 active" against Logbook "4 climbs to go") from the fresh capture.
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+let AFTER = afterPath;
+if (!AFTER) {
+  AFTER = path.join(mkdtempSync(path.join(tmpdir(), "screen-count-")), "ui.json");
+  console.log("no snapshot given -- capturing one with check:ui (takes a couple of minutes)...");
+  const r = spawnSync(process.execPath, [path.join(ROOT, "scripts", "check-ui.mjs"), "--snapshot", AFTER], { cwd: ROOT, encoding: "utf8" });
+  if (!existsSync(AFTER)) { console.error("check:ui wrote no snapshot, so there is nothing to measure:\n" + (r.stdout || "").slice(-600) + (r.stderr || "")); process.exit(1); }
+}
+const BEFORE = beforePath || null;
+for (const p of [BEFORE, AFTER]) if (p && !existsSync(p)) {
   console.error(`missing snapshot ${p}\nRe-create with: npm run check:ui -- --snapshot <file>`);
   process.exit(1);
 }
-const before = JSON.parse(readFileSync(BEFORE, "utf8"));
 const after = JSON.parse(readFileSync(AFTER, "utf8"));
 if (!after.Logbook || !after["Profile:Activity"]) { console.error("the AFTER snapshot lacks Logbook/Profile:Activity — wrong file?"); process.exit(1); }
 
 const clone = o => JSON.parse(JSON.stringify(o));
+const before = BEFORE ? JSON.parse(readFileSync(BEFORE, "utf8"))
+  : (() => { const s = clone(after); s["Profile:Activity"] = s["Profile:Activity"].replace(/My objectives\n(\d+) active/, "My objectives\n3 active"); return s; })();
 const run = s => checkScreenCounts(s);
 const kinds = r => r.map(x => x.kind).join(",");
 
@@ -32,7 +49,7 @@ const CASES = [
   { name: "a clean capture stays silent",
     build: () => after, want: r => r.length === 0 },
 
-  { name: "the REAL #1203 defect (captured, not injected)",
+  { name: BEFORE ? "the REAL #1203 defect (captured, not injected)" : "the #1203 defect shape (Profile 3 active vs Logbook 4 to go; rebuilt, no recording given)",
     build: () => before,
     want: r => r.some(x => x.kind === "disagree" && x.group === "objectives" && /climbs to go=4.*active=3/s.test(x.msg)) },
 

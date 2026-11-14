@@ -25,6 +25,7 @@
 // probe-terrain-corpus-blind-columns exited 0 while printing seven false LIVE findings.
 //
 //   node scripts/oneoff/run-browser-probe-sweep.mjs [--cap=480] [--out=DIR]
+import os from "node:os";
 import fs from "node:fs";
 import path from "node:path";
 import { spawn } from "node:child_process";
@@ -46,7 +47,7 @@ const SETTLE_MS = Number(process.argv.find((a) => a.startsWith("--settle="))?.sl
 const RETRIES = Number(process.argv.find((a) => a.startsWith("--retries="))?.slice(10) || 2);
 const FRESH = process.argv.includes("--fresh");
 const OUT = process.argv.find((a) => a.startsWith("--out="))?.slice(6)
-  || path.join(process.env.TMPDIR || "/tmp", "browser-probe-sweep");
+  || path.join(os.tmpdir(), "browser-probe-sweep");
 
 // The sweep obeys the same rule its members do. Refusing here costs a second; refusing 56 times
 // after spawning 56 node processes costs a great deal more and produces the same nothing.

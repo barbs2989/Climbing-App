@@ -1,0 +1,36 @@
+{
+ "tn_graceland": {
+  "_expect": {"name": "Graceland", "region": "Tennessee"},
+  "blurb": "Graceland is a small sandstone sector on Black Mountain, up on the Cumberland Plateau west of Knoxville near Crossville. It suits climbers who like moderates: about seven sport lines and five top-ropes sit alongside eight boulder problems. Roped climbs start around 5.6 and most fall between 5.7 and 5.10, with only a couple pushing into the 5.11 range, while the problems run from V1 up to V6. Expect short, compact cliffs set in a maze of boulders and forest, which makes it a relaxed place to bring newer climbers or to mix top-roping with a bit of bouldering.",
+  "parking_note": "Reach the mountain from the Crab Orchard exit off I-40, then follow Owls Roost Road uphill. There are two lots: one beside the first radio tower and another where the road ends at the top.",
+  "review": {"sources": ["https://www.mountainproject.com/area/120231149/graceland", "https://www.mountainproject.com/area/108342141/black-mountain", "https://www.seclimbers.org/project/black-mountain/"]}
+ },
+ "tx_shield_the": {
+  "_expect": {"name": "Shield, The", "region": "Texas"},
+  "blurb": "The Shield is the biggest, steepest wall on the back side of Main Dome at Enchanted Rock in the Texas Hill Country, and it holds many of the park's longest and most serious granite slab lines. Most of the 29 routes are trad, with a few bolted lines and some top-ropes. The right half is gear-protected and often runout, with protection ranging from poor to solid, while the left half is steeper and bolted. Grades are mostly 5.10 to 5.12, with a handful of 5.7 and 5.8 climbs. Expect slab technique, friction and commitment rather than a casual cragging day.",
+  "approach": "Take the Echo Canyon trail through the saddle between Main Dome and Little Dome, drop down the draw and cross the boulders, then follow the trail that loops around the dome to the wall's base.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105860697", "https://www.mountainproject.com/area/105860195/main-dome"]}
+ },
+ "tx_middle_earth_wall": {
+  "_expect": {"name": "Middle Earth Wall", "region": "Texas"},
+  "blurb": "Middle Earth Wall is the busiest wall on the North Shore of Reimers Ranch, west of Austin in the Hill Country. It is a limestone face with nearly thirty routes, almost all of them bolted sport lines plus a couple of top-rope options. Grades start around 5.6 and cluster in the 5.8 to 5.10 range, with a few 5.11s at the top end, so it works well for newer leaders and for climbers wanting a warm-up. The wall tends to be shaded in the morning, and holds are pocketed and sharp rather than polished. The rock can be loose in places, so helmets are wise.",
+  "approach_min": 10,
+  "review": {"sources": ["https://www.mountainproject.com/area/107788102/middle-earth-wall", "https://www.mountainproject.com/area/107788017/reimers-ranch-north-shore"]}
+ },
+ "tx_urban_assault": {
+  "_expect": {"name": "Urban Assault", "region": "Texas"},
+  "blurb": "Urban Assault is the tallest wall along the Barton Creek Greenbelt in Austin, a roughly 90-foot limestone face above the creek with sport routes and a scatter of boulders nearby. The roped lines are demanding, mostly 5.11 and 5.12 with a few 5.13s and one easier line, and the rock is described as loose and uneven, so check hardware and bring a helmet. The boulders range from V0 to V7 but cluster at V0 to V2, and many are riverbed blocks that can be underwater when the creek runs. It is best in the cooler months.",
+  "approach": "From the Gus Fruh entrance, walk down to the creek and follow it upstream; the wall stands on your left and the boulders lie both above and below it. Allow roughly ten minutes.",
+  "review": {"sources": ["https://app.advcollective.com/climbing/urban-assault-austins-tallest-greenbelt-limestone-wall", "https://www.mountainproject.com/area/117605083/urban-assault-bouldering"]}
+ },
+ "tx_insect_wall_including_block_party": {
+  "_expect": {"name": "Insect Wall (including Block Party)", "region": "Texas"},
+  "blurb": "The Insect Wall sits in the Sex Canyon stretch of Reimers Ranch near Austin and is a destination for strong sport climbers. Nearly all of its twenty-seven routes are bolted limestone lines, starting from 5.11 and concentrated in the 5.12 and 5.13 grades, with a few 5.14s. The wall is steep and overhanging at the start, easing off higher up, with some tufa-like features and fractured-looking rock in the lower sections. Because the grades are high, it tends to be quieter than the nearby easier walls, making it a good spot for projecting.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106315567/insect-wall-including-block-party", "https://www.mountainproject.com/route/114104006/mantis?print=1"]}
+ },
+ "_skipped": {
+  "tx_spacefarm": "no fetched page about Spacefarm itself (only park-level and route pages)",
+  "tx_gunks_the": "could not find any page about this crag (coordinates suggest Hueco Tanks East Spur, no fetchable pages)",
+  "tx_dugout_west_the": "no fetched page about The Dugout (West) itself; only the parent North Boulders page"
+ }
+}

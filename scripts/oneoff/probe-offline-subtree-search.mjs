@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* CAN YOU SEARCH A DOWNLOADED STATE WITH NO SIGNAL — and does the offline search ADMIT THE SAME
  * ROWS the database would?
  *
@@ -68,7 +69,7 @@ try {
       },
     }],
   });
-  mod = await import(out);
+  mod = await import(fileHref(out));
 } catch (e) {
   console.error("FAIL: could not bundle lib/offline.js — nothing was checked. " + (e.stack || e.message));
   fs.rmSync(tmp, { recursive: true, force: true });
