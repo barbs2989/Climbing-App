@@ -1,0 +1,374 @@
+{
+ "wa_mount_adams_lyman_glacier": {
+  "skip_reason": "one source only; stored 5,000 differs >10% from it",
+  "note": "Mountaineers 'Mount Adams Ice Climbing Routes' (covers North Lyman Glacier from Killen Creek TH) states Elevation Gain 7,700 ft (TH to camp 2,400, camp to summit 5,300). Stored 5,000 looks wrong; needs a second source to replace.",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes",
+    "retrieved_at": "2026-11-14",
+    "fact": "Killen Creek approach shared by Adams, North Lyman, NW Ridge north-face routes; elevation gain 7,700 ft to 12,276 ft"
+   }
+  ]
+ },
+ "wa_mount_angeles_standard": {
+  "skip_reason": "WTA 2,100 ft is a round-trip outing gain from Hurricane Ridge (6.25 mi rt); Mountaineers 1,924 ft over 6 mi names no trailhead. Neither is a one-way TH-to-summit figure for this approach.",
+  "checked": [
+   {
+    "url": "https://www.wta.org/go-hiking/hikes/mount-angeles",
+    "retrieved_at": "2026-11-14",
+    "fact": "6.25 mi roundtrip, 2,100 ft gain, high point 6,454 ft; Switchback TH is a steeper alternate"
+   },
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/mt-angeles",
+    "retrieved_at": "2026-11-14",
+    "fact": "Scramble of 6 miles with 1,924 ft gain, high point 6,454 ft"
+   }
+  ]
+ },
+ "wa_horseshoe_peak_scramble": {
+  "set": {
+   "return_gain_ft": 600,
+   "approach_loss_ft": 600
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/horseshoe-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Horseshoe Peak from Cascade Pass TH: elevation gain 5,500 ft, high point 8,480 ft, 14 mi"
+     }
+    ]
+   },
+   {
+    "field": "return_gain_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/horseshoe-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leg table: summit to trailhead gains 600 ft and loses 5,500 ft"
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/horseshoe-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Leg table: trailhead to camp gains 4,000 ft with no loss listed; camp to summit gains 1,500 ft, loses 600 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored gain 5,900 is within 10% of Mountaineers 5,500, so the stored value is locked (single source). Approach loss 600 is the only loss the leg table lists before the summit (camp-to-summit leg)."
+ },
+ "wa_argonaut_peak_east_ridge": {
+  "skip_reason": "one source differs >10% from stored",
+  "note": "Mountaineers Argonaut Peak/Southeast Ridge states 4,853 ft gain, 20 mi, high point 8,453; stored 4,300 differs 13%. Needs a second source to replace.",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+    "retrieved_at": "2026-11-14",
+    "fact": "Southeast Ridge: length 20 mi, elevation gain 4,853 ft, high point 8,453 ft"
+   }
+  ]
+ },
+ "wa_the_chopping_block_south_route": {
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6209,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/the-chopping-block-pinnacle-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Chopping Block & Pinnacle Peak: 12.5 mi, elevation gain 6,209 ft, high point 6,819 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 6,209 equals the Mountaineers figure exactly (likely its origin), so this is one source, not two."
+ },
+ "wa_kangaroo_temple_north_face": {
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/kangaroo-temple-north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kangaroo Temple North Face: 6 mi, elevation gain 2,500 ft, high point 7,572 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 2,500 equals the Mountaineers route page."
+ },
+ "wa_huckleberry_mountain_east_ridge": {
+  "skip_reason": "only page found is Mountaineers 'Huckleberry Mountain/East Face' (6,320 ft gain, 22 mi, high point 6,230); route name differs from East Ridge, so not used",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/huckleberry-mountain-east-face",
+    "retrieved_at": "2026-11-14",
+    "fact": "Huckleberry Mountain East Face: 22 mi, elevation gain 6,320 ft, high point 6,230 ft"
+   }
+  ]
+ },
+ "wa_hozomeen_mountain_northeast_buttress": {
+  "skip_reason": "Mountaineers 9,080 ft is the whole trip (TH to camp, camp to summit, summit back to camp); no stated TH-to-summit total",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/hozomeen-mountain-north-peak-norhteast-buttress",
+    "retrieved_at": "2026-11-14",
+    "fact": "North Peak NE Buttress via Skyline II trail: total elevation gain 9,080 ft over 10 mi, high point 8,066"
+   }
+  ]
+ },
+ "wa_goode_mountain_northeast_face": {
+  "skip_reason": "Mountaineers page is the Northeast Buttress (8,400 ft whole trip), a different route; nothing for the Northeast Face",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/goode-mountain-northeast-buttress",
+    "retrieved_at": "2026-11-14",
+    "fact": "Goode NE Buttress: 37 mi, elevation gain 8,400 ft; summit-to-TH leg gains 2,100 ft"
+   }
+  ]
+ },
+ "wa_overcoat_peak_southeast_route": {
+  "skip_reason": "one source differs >10% from stored",
+  "note": "Mountaineers Overcoat Peak (Middle Fork approach) states 8,000 ft gain over 26 mi, high point 7,432; stored 6,032 differs 33%. Unclear whether 8,000 is one-way; needs a second source.",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+    "retrieved_at": "2026-11-14",
+    "fact": "Overcoat Peak: 26 mi, elevation gain 8,000 ft, high point 7,432 ft"
+   }
+  ]
+ },
+ "wa_classic_route_3": {
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/lane-peak-zipper-lovers-lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lane Peak Zipper: trailhead to summit 1,500 ft gain, 5 mi, high point 6,012 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 1,400 is within 10% of Mountaineers 1,500 (trailhead to summit, Zipper). Assumes 'Classic Route' is the Zipper scramble."
+ },
+ "wa_gardner_mountain_west_ridge": {
+  "skip_reason": "Mountaineers page combines Gardner and North Gardner (8,100 ft, 28 mi); not this route alone",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/gardner-north-gardner-8897-8956",
+    "retrieved_at": "2026-11-14",
+    "fact": "Gardner and North Gardner scramble: 27-28 mi, 8,100 ft gain"
+   }
+  ]
+ },
+ "wa_mount_spickard_silver_glacier": {
+  "skip_reason": "Mountaineers 'The Chilliwacks Peaks' is a multi-peak trip (7,500 ft); no Silver Glacier TH-to-summit figure",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/the-chilliwacks-peaks",
+    "retrieved_at": "2026-11-14",
+    "fact": "Multi-peak Chilliwack trip: 15 mi, 7,500 ft gain, high point 8,979 ft"
+   }
+  ]
+ },
+ "wa_mount_terror_stoddard_buttress": {
+  "skip_reason": "Mountaineers Southern Picket Range is a multi-peak traverse (10,000 ft); nothing route-specific"
+ },
+ "wa_mount_terror_southeast_face": {
+  "skip_reason": "Mountaineers Southern Picket Range is a multi-peak traverse (10,000 ft); nothing route-specific"
+ },
+ "wa_mount_degenhardt_southwest_route": {
+  "skip_reason": "Mountaineers Southern Picket Range is a multi-peak traverse (10,000 ft); nothing route-specific"
+ },
+ "wa_sherpa_balanced_rock_standard": {
+  "set": {
+   "return_gain_ft": 1700
+  },
+  "ledger": [
+   {
+    "field": "return_gain_ft",
+    "value": 1700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/sherpa-peak/152244",
+      "retrieved_at": "2026-11-14",
+      "fact": "Longs Pass approach: returning from Ingalls Creek to Longs Pass regains 1,700 ft"
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost states 2,100 ft to Longs Pass + 3,800 ft Ingalls Creek to summit + 1,700 ft back to the pass = 7,600 ft round trip. Stored gain 7,500 looks like that ROUND-TRIP total, not trailhead-to-summit; no page states the one-way total, so not changed. Mountaineers Sherpa W Ridge (different route) gives TH-to-camp loss 1,500 and summit-to-TH regain 1,500 (7,400 total).",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/sherpa-peak-w-ridge",
+    "retrieved_at": "2026-11-14",
+    "fact": "W Ridge: TH to camp 4,700 gain 1,500 loss; summit to TH 1,500 gain; total 7,400 ft"
+   }
+  ]
+ },
+ "wa_amphitheater_mountain_finger_of_fatwa": {
+  "skip_reason": "SummitPost Cathedral Peak gives approach figures only (Andrews Creek TH to Upper Cathedral Lake about 4,800 ft over ~18 mi); stored 4,800 matches that approach, not the summit",
+  "checked": [
+   {
+    "url": "https://www.summitpost.org/cathedral-peak/155205",
+    "retrieved_at": "2026-11-14",
+    "fact": "Andrews Creek TH to Upper Cathedral Lake ~18 mi, overall gain about 4,800 ft"
+   }
+  ]
+ },
+ "wa_amphitheater_mountain_north_ridge": {
+  "skip_reason": "SummitPost Cathedral Peak gives approach figures only (Andrews Creek TH to Upper Cathedral Lake about 4,800 ft over ~18 mi); stored 4,800 matches that approach, not the summit",
+  "checked": [
+   {
+    "url": "https://www.summitpost.org/cathedral-peak/155205",
+    "retrieved_at": "2026-11-14",
+    "fact": "Andrews Creek TH to Upper Cathedral Lake ~18 mi, overall gain about 4,800 ft"
+   }
+  ],
+  "note": "Mountaineers Cathedral Peak & Amphitheater Mountain: 36 mi, 9,000 ft for a combined two-peak trip (not usable). Stored 4,800/6,000 not confirmed."
+ },
+ "wa_amphitheater_mountain_middle_finger_buttress_right_side": {
+  "skip_reason": "SummitPost Cathedral Peak gives approach figures only (Andrews Creek TH to Upper Cathedral Lake about 4,800 ft over ~18 mi); stored 4,800 matches that approach, not the summit",
+  "checked": [
+   {
+    "url": "https://www.summitpost.org/cathedral-peak/155205",
+    "retrieved_at": "2026-11-14",
+    "fact": "Andrews Creek TH to Upper Cathedral Lake ~18 mi, overall gain about 4,800 ft"
+   }
+  ],
+  "note": "Mountaineers Cathedral Peak & Amphitheater Mountain: 36 mi, 9,000 ft for a combined two-peak trip (not usable). Stored 4,800/6,000 not confirmed."
+ },
+ "wa_amphitheater_mountain_pilgrimage_to_mecca": {
+  "skip_reason": "SummitPost Cathedral Peak gives approach figures only (Andrews Creek TH to Upper Cathedral Lake about 4,800 ft over ~18 mi); stored 4,800 matches that approach, not the summit",
+  "checked": [
+   {
+    "url": "https://www.summitpost.org/cathedral-peak/155205",
+    "retrieved_at": "2026-11-14",
+    "fact": "Andrews Creek TH to Upper Cathedral Lake ~18 mi, overall gain about 4,800 ft"
+   }
+  ],
+  "note": "Mountaineers Cathedral Peak & Amphitheater Mountain: 36 mi, 9,000 ft for a combined two-peak trip (not usable). Stored 4,800/6,000 not confirmed."
+ },
+ "wa_ne_ridge": {
+  "skip_reason": "SummitPost Cathedral Peak gives approach figures only (Andrews Creek TH to Upper Cathedral Lake about 4,800 ft over ~18 mi); stored 4,800 matches that approach, not the summit",
+  "checked": [
+   {
+    "url": "https://www.summitpost.org/cathedral-peak/155205",
+    "retrieved_at": "2026-11-14",
+    "fact": "Andrews Creek TH to Upper Cathedral Lake ~18 mi, overall gain about 4,800 ft"
+   }
+  ],
+  "note": "Mountaineers Cathedral Peak & Amphitheater Mountain: 36 mi, 9,000 ft for a combined two-peak trip (not usable). Stored 4,800/6,000 not confirmed."
+ },
+ "wa_the_monk_west_cracks_right_crack": {
+  "skip_reason": "SummitPost Cathedral Peak gives approach figures only (Andrews Creek TH to Upper Cathedral Lake about 4,800 ft over ~18 mi); stored 4,800 matches that approach, not the summit",
+  "checked": [
+   {
+    "url": "https://www.summitpost.org/cathedral-peak/155205",
+    "retrieved_at": "2026-11-14",
+    "fact": "Andrews Creek TH to Upper Cathedral Lake ~18 mi, overall gain about 4,800 ft"
+   }
+  ],
+  "note": "Mountaineers Cathedral Peak & Amphitheater Mountain: 36 mi, 9,000 ft for a combined two-peak trip (not usable). Stored 4,800/6,000 not confirmed."
+ },
+ "wa_mount_olympus_west_ridge": {
+  "skip_reason": "Mountaineers page is the Blue Glacier route (7,400 ft whole trip, 44 mi; TH to camp 3,622, camp to summit 3,765); not the West Ridge, and no one-way total stated",
+  "checked": [
+   {
+    "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+    "retrieved_at": "2026-11-14",
+    "fact": "Blue Glacier: 44 mi, elevation gain 7,400 ft, high point 7,965 ft"
+   }
+  ]
+ },
+ "wa_three_fingers_r2": {
+  "skip_reason": "Mountaineers Three Fingers South (4,400 ft, 16 mi) is the South Peak, not Middle Peak"
+ },
+ "wa_fortress_mountain_east_ridge": {
+  "skip_reason": "SummitPost Fortress Mountain page found is in Wyoming; Mountaineers search had no WA Fortress page"
+ },
+ "wa_pinnacle_peak_tatoosh_r1": {
+  "skip_reason": "WTA pinnacle-saddle gives 1,000 ft to the saddle only (2.5 mi rt); Mountaineers pages are saddle or multi-peak trips (1,400 / 2,400 ft). No second summit figure to pair with Guide to 100 Peaks 2,000 ft."
+ },
+ "wa_north_star_mountain_east_route": {
+  "skip_reason": "WTA north-star-mountain: 4,500 ft, 25 mi roundtrip, high point 8,096; below pin difference from the Lyman Lakes TH, so not confirmed as TH-to-summit for this route"
+ },
+ "wa_mount_rainier_curtis_ridge": {
+  "skip_reason": "SummitPost Curtis Ridge page is a photo; CascadeClimbers 2014 TR states no gain figure"
+ },
+ "wa_burnt_boot_peak_north_route": {
+  "skip_reason": "search found only summit-height pages (Wikipedia, ListsOfJohn, Peakery); no route gain"
+ },
+ "wa_blizzard_peak_standard": {
+  "skip_reason": "WTA blizzard-peak page lists no stats; Peakery/ListsOfJohn give summit height only"
+ },
+ "wa_magic_mountain_northwest_ridge": {
+  "skip_reason": "SummitPost Magic Mountain (WA) page states no gain; Mountaineers page is South Ridge (different route)"
+ },
+ "wa_castle_peak_pasayten_scramble": {
+  "skip_reason": "WTA castle-peak lists high point only; Mountaineers Castle hits are the Rainier-area Castle"
+ },
+ "wa_bears_breast_mountain_southwest_face": {
+  "skip_reason": "WTA bears-breast lists no stats; SummitPost hits are photos; Mountaineers has no page"
+ },
+ "wa_chalangin_peak_little_giant_pass_luahna_col": {
+  "skip_reason": "no Mountaineers, WTA or SummitPost page for Chalangin or the Luahna Col route"
+ },
+ "wa_cutthroat_peak_northeast_face": {
+  "skip_reason": "Mountaineers Cutthroat pages are West Ridge, SE Buttress and North Ridge (other routes); not used"
+ },
+ "wa_cutthroat_peak_cauthorn_wilson_couloir": {
+  "skip_reason": "Mountaineers Cutthroat pages are other routes; not used"
+ },
+ "wa_the_hitchhiker": {
+  "skip_reason": "Mountaineers SEWS pages cover other routes (South Arete, SW Couloir, West Face); not used"
+ },
+ "wa_mojo_rising": {
+  "skip_reason": "Mountaineers SEWS pages cover other routes; not used"
+ },
+ "wa_liberty_bell_overexposure": {
+  "skip_reason": "Mountaineers Liberty Bell pages are Liberty Crack, NW Face, SW Face; nothing for Overexposure"
+ },
+ "wa_flight_of_the_falcon": {
+  "skip_reason": "no Mountaineers/WTA page for Waterfall Basin routes"
+ },
+ "wa_ellation": {
+  "skip_reason": "no Mountaineers/WTA page for Mamie Peak"
+ },
+ "wa_gunrunner": {
+  "skip_reason": "no Mountaineers page for Middle Peak (Pickets) routes"
+ },
+ "wy_beyer_east_face_i": {
+  "skip_reason": "Mountaineers has only Grand Teton Exum Ridge; nothing for Beyer East Face I"
+ }
+}

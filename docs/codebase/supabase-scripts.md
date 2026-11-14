@@ -90,7 +90,7 @@ changes nothing.
 **The same trap runs on the READ side, and there it corrupts DECISIONS rather than writes.**
 An anon `count=exact` on an RLS-protected table returns **0 with a 200** whatever the table
 holds, indistinguishable from a genuinely empty table. Measured 2026-08-20: `climb_logs` reads
-**0 to anon and 2 to the service key**, while `guide_documents`, `guide_profiles`,
+**0 to anon and 2 to the service key**, while `guide_documents`, `guide_profiles` (both dropped in 0445),
 `user_reports`, `contributions` and `vouches` are genuinely empty on both (`belay_catches` was too, and was dropped in 0417).
 
 That distinction is load-bearing here, because several decisions rest on a table being empty —

@@ -1,0 +1,1836 @@
+{
+ "wa_mount_adams_lava_glacier_headwall": {
+  "area": "wa_mount_adams",
+  "facts": [
+   {
+    "field": "times",
+    "value": "High camp to summit 6 hr; summit back to high camp 4 hr",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/4351-tr-mt-adams-lava-glacier-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: high camp to summit 6 hours, summit to high camp 4 hours."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camp on a plateau around 8,000 ft below the headwall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/4351-tr-mt-adams-lava-glacier-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped on a plateau around 8,000 feet."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Headwall slope about 50 degrees on solid snow/ice",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/4351-tr-mt-adams-lava-glacier-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The slope was 50 degrees and solid snow and ice."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Killen Creek trail to High Camp: 10.0 mi roundtrip, 2,300 ft gain, high point 6,900 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Killen Creek to High Camp: 10.0 miles roundtrip, 2,300 ft gain, highest point 6,900 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Two pages opened (CascadeClimbers TR, WTA Killen Creek). Mazamas/AAJ listings found but not read. SummitPost 403."
+ },
+ "wa_mount_adams_north_ridge": {
+  "area": "wa_mount_adams",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Moderate snow, Grade II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107223000/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Snow, Alpine, Grade II, rated Mod. Snow."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107223000/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 3500 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "A.G. Aiken, Edward J. Allen, Andrew J. Burge, 1854",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107223000/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed: A.G. Aiken, Edward J. Allen, Andrew J. Burge, 1854."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Killen Creek trail to High Camp: 10.0 mi roundtrip, 2,300 ft gain, high point 6,900 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Killen Creek to High Camp: 10.0 miles roundtrip, 2,300 ft gain, highest point 6,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass at Killen Creek trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/killen-creek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pass listed: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "MP FA (1854) is the first recorded ascent party credited on MP for this route; not confirmed elsewhere. SummitPost route page 403."
+ },
+ "wa_mount_adams_south_climb": {
+  "area": "wa_mount_adams",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6600,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers South Spur route page lists elevation gain 6,600 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA South Climb page lists elevation gain 6,700 feet, 12 miles roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12276,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed as 12,276 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point listed as 12,276 feet."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "April-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: April, May, June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass for parking",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pass listed: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "permit_backcountry",
+    "value": "Backcountry camping permit, applied for online (fee)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Permits required: backcountry camping permit, apply online, fee."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Also called the Lunch Counter Approach; the least technical way up Adams",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Calls the South Climb the Lunch Counter Approach, the route requiring the least technical skill."
+     }
+    ]
+   },
+   {
+    "field": "difficulty_rating",
+    "value": "Strenuous 5, Technical 4 (Mountaineers scale)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-south-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Strenuous 5, Technical 4."
+     }
+    ]
+   }
+  ],
+  "note": "Round-trip length disagrees (Mountaineers 14.0 mi, WTA 12.0 mi RT), so no distance recorded. SummitPost returned 403."
+ },
+ "wa_mount_adams_wilson_glacier_headwall": {
+  "area": "wa_mount_adams",
+  "facts": [
+   {
+    "field": "overview",
+    "value": "Wilson Glacier on Adams east slopes descends from about 10,600 ft to a terminus near 7,400 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Wilson_Glacier_(Mount_Adams)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilson Glacier, east slopes of Mount Adams, descends from about 10,600 ft to a terminus near 7,400 ft."
+     }
+    ]
+   }
+  ],
+  "note": "cascadecrusades.org Adams routes page opened but is image-only. SummitPost 403. No route-specific figures found for the headwall itself."
+ },
+ "wa_mount_anderson_eel_glacier": {
+  "area": "wa_mount_anderson",
+  "facts": [
+   {
+    "field": "season",
+    "value": "May-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Anderson/Eel Glacier: seasons May through September."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7321,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 7,321 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "Trailhead to camp 7-9 hr; camp to summit 5-7 hr",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: trailhead to camp 7-9 hrs, camp to summit 5-7 hrs."
+     }
+    ]
+   },
+   {
+    "field": "difficulty_rating",
+    "value": "Basic Glacier Climb (Mountaineers)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-anderson-eel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Basic Glacier Climb."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fairman B. Lee and a party of 13 settlers, 1920 (peak)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Anderson_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "First climbed by settlers in 1920 by Fairman B. Lee and a party of 13."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers trip profile gives per-leg gains (TH-camp 2,727; camp-summit 3,794) but no stated total. trailcatjim East Peak trip (38 mi incl. 10 by bike, 10,000 ft) included a West Peak attempt, so not used."
+ },
+ "wa_mount_baker_boulder_park_cleaver": {
+  "area": "wa_mount_baker",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Joe Morovits and party, July 2, 1894",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Joe Morovits and party, July 2, 1894."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 7100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 7100 ft, Snow, Alpine."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Moderate snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rating: Mod. Snow."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Boulder Ridge Trail maintained only ~2 mi to the wilderness boundary; beyond, steep, muddy, hard to follow with a third-class scramble",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Boulder Ridge Trail maintained about two miles to wilderness boundary; then steep, muddy, hard to follow, third-class scramble."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Most campsites at the end of Boulder Ridge near the Boulder Glacier; no toilets",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most campsites at end of Boulder Ridge near Boulder Glacier; no toilets, pack it out."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mount-baker-via-boulder-park-cleaver-boulder-glacier-2001/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt Baker via Boulder/Park Cleaver and upper Boulder Glacier: approx 13 miles, 8,200 ft gained and lost."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mount-baker-via-boulder-park-cleaver-boulder-glacier-2001/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 13 miles traveled round trip."
+     }
+    ]
+   }
+  ],
+  "note": "FS page is the Boulder Glacier route sharing the Boulder Ridge approach; only approach/camp facts taken from it."
+ },
+ "wa_mount_baker_coleman_deming": {
+  "area": "wa_mount_baker",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Coleman Glacier route page: elevation gain 8,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "3-4 hr trailhead to camp; 6-9 hr camp to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 3-4 hr trailhead to camp, 6-9 hr camp to summit."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10778,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 10,778 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-coleman-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers gain 8,100 ft conflicts with the app (7,080)."
+ },
+ "wa_mount_baker_coleman_headwall": {
+  "area": "wa_mount_baker",
+  "facts": [
+   {
+    "field": "pitches_note",
+    "value": "Up to 14 pitches depending on conditions",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAI route profile: depending on conditions, up to 14 pitches of climbing."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts about 8,500 ft left of the Roman Nose; mostly 45-50 degrees with steeper steps; eases near 10,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts near 8,500 ft left of Roman Nose, mostly 45-50 degrees, kicks back near 10,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Left-hand line: first half threatened by icefall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The left-hand line can be climbed but its first half is threatened by icefall."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "4 pickets, 6 ice screws, glacier gear, 40 m rope (one party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108565-trip-report-mount-baker-coleman-headwall-05242026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear notes: 4 pickets, 6 ice screws, glacier gear, 40m rope."
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Access road closed at milepost 3 (May 2026 report)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/108565-trip-report-mount-baker-coleman-headwall-05242026/",
+      "retrieved_at": "2026-11-14",
+      "fact": "May 24 2026 trip report: access road closed at MP 3."
+     }
+    ]
+   }
+  ],
+  "note": "Grade (AI4/Grade IV) not stated on the pages read."
+ },
+ "wa_mount_baker_easton_glacier": {
+  "area": "wa_mount_baker",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Easton Glacier route page: elevation gain 7,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10778,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 10,778 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Park Butte Trailhead (3,360 ft) at the end of Sulphur Creek Road (FR 13)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive Baker Lake Rd, FR 12, then FR 13 six miles to its end at Park Butte Trailhead, 3,360 ft."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "3-4 hr trailhead to camp; 5-8 hr camp to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 3-4 hr trailhead to camp, 5-8 hr climb to summit."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Railroad Grade camps; High Camps (4 sites at 5,600 ft); Sandy Camp at 5,900 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/easton-glacier-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Designated camps on Railroad Grade Trail: High Camps 4 sites at 5,600 ft; Sandy Camp at trail end, 5,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp_rule",
+    "value": "Camp only at designated sites below 6,000 ft in the NRA; no campfires; party size 12",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/easton-glacier-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping only at designated sites below 6,000 ft in the NRA; campfires prohibited; group limit 12."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Early-mid season a direct line up the glacier may cross the bergschrund on snow bridges",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-easton-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Early to mid season a direct Easton Glacier line may be possible, crossing the bergschrund on snow bridges."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_baker_north_ridge": {
+  "area": "wa_mount_baker",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers North Ridge route page: elevation gain 7,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "WI3, Grade III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106445849/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Ice, Snow, Alpine, Grade III, rated WI3 Steep Snow."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106445849/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 3000 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Dick Widrig, Ralph Widrig, August 1948",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106445849/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Fred Beckey, Dick Widrig, Ralph Widrig, August 1948."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Two pitches of about 70-degree ice; route splits from the Coleman route at the base of the Coleman Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/north-ridge-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach same as Coleman route to the glacier base; North Ridge involves two pitches of 70-degree ice."
+     }
+    ]
+   },
+   {
+    "field": "season_note",
+    "value": "Best early season before the Coleman Glacier breaks up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/north-ridge-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best climbed early season when the Coleman Glacier is not broken up and crevassed."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Kulshan Cabin site 5,000 ft; Hogsback 6,000 ft; on glacier 7,000 ft; below Black Buttes 7,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/north-ridge-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsites: old Kulshan Cabin site 5,000 ft, Hogsback 6,000 ft, glacier 7,000 ft, below Black Buttes 7,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10778,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 10,778 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-baker-north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_baker_park_glacier_headwall": {
+  "area": "wa_mount_baker",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Artist Point via Chain Lakes Trail 682 to Ptarmigan Ridge Trail 682.1; 3 mi on to Coleman Pinnacle base, 0.5 mi more to Camp Kiser",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Artist Point take Chain Lakes 682 to Ptarmigan Ridge 682.1; 3 mi to Coleman Pinnacle base, half mile to Camp Kiser."
+     }
+    ]
+   },
+   {
+    "field": "season_note",
+    "value": "Snow lingers late; best early season before the glacier breaks up",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/park-glacier-climbing-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow melts late; best climbed early season before the glacier is broken up."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_bigelow_scramble": {
+  "area": "wa_mount_bigelow",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Bigelow_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox easiest route: class 3 scrambling."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Eagle Lakes trail: 12.5 mi roundtrip, 2,350 ft gain, high point 7,110 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eagle-lakes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Eagle Lakes: 12.5 miles roundtrip, 2,350 ft gain, highest point 7,110 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/eagle-lakes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pass listed: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_carrie_se_route": {
+  "area": "wa_mount_carrie",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2 (YDS 2) via High Divide Trail and the Catwalk",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Carrie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: easiest route scrambling YDS 2 via the High Divide Trail and Cat Walk."
+     }
+    ]
+   }
+  ],
+  "note": "Opened trailcatjim (Seven Lakes loop, multi-peak stats 18.5 mi/3,500 ft excl. sidetrips — not usable) and Mountaineers Bailey Range trip report (multi-peak). App grade Class 3 conflicts with Wikipedia Class 2."
+ },
+ "wa_mount_carru_scramble": {
+  "area": "wa_mount_carru",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Hermann Ulrichs and Richard Alt, 1933 (peak)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Carru",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent 1933 by Hermann Ulrichs and Richard Alt."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3, south slope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Carru",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easiest route: scrambling class 3, south slope."
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim Carru page is a multi-peak trip (Lago, Carru, Blackcap) — not used."
+ },
+ "wa_mount_challenger_challenger_glacier": {
+  "area": "wa_mount_challenger",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.5, Grade II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112031867/challenger-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Challenger Glacier 5.5, Trad, Snow, Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112031867/challenger-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 1400 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Philip Dickert, Jack Hossack, George MacGowan, 1936",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112031867/challenger-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Philip Dickert, Jack Hossack & George MacGowan (1936)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8236,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-challenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Mount Challenger: highest point 8,236 feet."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Backcountry camping permit, in person at a ranger station (no fee); Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-challenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry camping permit, register in person at ranger station, no fee; Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Hannegan Pass Trailhead, or by boat to Big Beaver Campground on Ross Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-challenger",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reached from Hannegan Pass Trailhead or by boating to Big Beaver Campground across Ross Lake."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_chaval_scramble": {
+  "area": "wa_mount_chaval",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Richard Merritt, Keith and Ruth Rankin, September 20, 1946 (peak first ascent)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Chaval",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent September 20, 1946 by Richard Merritt, Keith and Ruth Rankin."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Park on Illabot Road at the west end of the old clear-cut near the Illabot Creek bridge; no trail to the peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/102164-tr-mount-chaval-standard-western-ramp-09282018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park on Illabot road at the western end of the old clear cut near the Illabot creek bridge; zero trail."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, ice axe, crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/102164-tr-mount-chaval-standard-western-ramp-09282018/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear notes: helmet, ice axe, crampons."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "Camp to summit about 2-3 hr (via the Jug Lake approach)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/mount-chaval-west-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Estimated camp to summit time 2-3 hours; party used the Jug Lake approach."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers trip report used a different (Jug Lake) approach."
+ },
+ "wa_mount_christie_west": {
+  "area": "wa_mount_christie",
+  "skip_reason": "Opened trailcatjim Mt Christie peak page and Quinault-Skyline loop (multi-peak, 43 mi/11,000 ft excl. sidetrips — not route-specific), Wikipedia Mount_Christie_(Washington) (no route/FA data), CascadeClimbers TR 53919 (East Ridge, a different route). SummitPost 403."
+ },
+ "wa_mount_clark_standard": {
+  "area": "wa_mount_clark",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "George R. Martin and Elvin Johnson, August 21, 1940 (peak)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Clark_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent August 21, 1940 by George R. Martin and Elvin Johnson."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Clark_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox easiest route: class 3 scrambling."
+     }
+    ]
+   }
+  ],
+  "note": "trailcatjim Gunsight Pass loop (27 mi, 8,300 ft) is a multi-peak loop — not used. App grade Class 4 conflicts."
+ },
+ "wa_mount_constance_north_chimney": {
+  "area": "wa_mount_constance",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Robert Schellin and A.E. Smith, 1922 (peak)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Constance",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent 1922 by Robert Schellin and A.E. Smith."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Constance/South Chute: elevation gain 7,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-constance-south-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lake Constance trail: 4.4 mi roundtrip, 3,300 ft gain, to 4,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/lake-constance",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lake Constance: 4.4 miles roundtrip, 3,300 ft gain, highest point 4,800 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers South Chute page lists high point 7,743 ft vs 7,756 on its other Constance pages."
+ },
+ "wa_mount_constance_north_chute": {
+  "area": "wa_mount_constance",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Constance/North Chute: elevation gain 7,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June through October."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7756,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 7,756 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-n-chute",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lake Constance trail: 4.4 mi roundtrip, 3,300 ft gain, to 4,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/lake-constance",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lake Constance: 4.4 miles roundtrip, 3,300 ft gain, highest point 4,800 ft."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_constance_west_arete": {
+  "area": "wa_mount_constance",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 7300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Constance/West Arete: elevation gain 7,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June through October."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7756,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 7,756 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mt-constance-w-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lake Constance trail: 4.4 mi roundtrip, 3,300 ft gain, to 4,800 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/lake-constance",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lake Constance: 4.4 miles roundtrip, 3,300 ft gain, highest point 4,800 ft."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_mount_cruiser_south_corner": {
+  "area": "wa_mount_cruiser",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.3, Grade II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111020298/south-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: South Corner 5.3, Trad, Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Paul Crews, Ray Layton, 1937 (peak; easiest route is the South Corner)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Cruiser",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia: first ascent 1937 Paul Crews, Ray Layton; easiest route class 5 South corner."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111020298/south-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 150 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111020298/south-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 150 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-cruiser-southwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Cruiser/Southwest Corner: elevation gain 5,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-cruiser-southwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June through October."
+     }
+    ]
+   },
+   {
+    "field": "times",
+    "value": "5-7 hr hike to camp; 4-5 hr climb to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-cruiser-southwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Times: 5-7 hr hike to camp, 4-5 hr climb to summit."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6104,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-cruiser-southwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 6,104 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-cruiser-southwest-corner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers names it Southwest Corner; treated as the same standard line (Basic Rock Climb)."
+ },
+ "wa_mount_custer_standard": {
+  "area": "wa_mount_custer",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Depot Creek, off Chilliwack Lake Road (BC)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-custer/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip started from Depot Creek / Chilliwack Lake Road."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Camp on the north side of Depot Creek; long traverse past Lake Ouzel with some elevation regain",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/usa/washington/mount-custer/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp on north side of Depot Creek; traversing high bench with Lake Ouzel in sight; some elevation regain."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (CascadeClimbers Rahm-Custer-Spickard TR) found but not read before tab loss; SummitPost 403."
+ },
+ "wa_mount_dana_scramble": {
+  "area": "wa_mount_dana",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "USGS survey party, 1928 (peak)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Dana_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent 1928 by USGS Survey party."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers/CascadeClimbers Bailey Range traverse reports are multi-peak; no route figures usable."
+ },
+ "wa_mount_daniel_daniel_glacier": {
+  "area": "wa_mount_daniel",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount Daniel/Daniel Glacier: elevation gain 5,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons listed: June, July, August."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7960,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point listed 7,960 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; wilderness permit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-daniel",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Mount Daniel: Northwest Forest Pass; permits required: wilderness permit."
+     }
+    ]
+   },
+   {
+    "field": "difficulty_rating",
+    "value": "Basic Glacier Climb (Mountaineers)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-daniel-daniel-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Basic Glacier Climb."
+     }
+    ]
+   }
+  ],
+  "note": "WTA Mount Daniel hike lists 4,600 ft gain, 15 mi RT, 7,986 ft; Mountaineers 5,200 ft, 16 mi. Gains differ >10%, not locked together."
+ },
+ "wa_mount_deception_standard": {
+  "area": "wa_mount_deception",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2 (YDS 2)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Deception_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox easiest route: YDS 2."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Royal Basin trail: 16.0 mi roundtrip, 2,650 ft gain, high point 5,700 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/royal-basin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Royal Basin: 16.0 miles roundtrip, 2,650 ft gain, highest point 5,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass; backcountry permit required",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/royal-basin",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA Royal Basin: Northwest Forest Pass; permits required: backcountry."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Mount Deception page (8,000 ft, 35 mi) uses the Dosewallips approach, not Royal Basin, so not used. trailcatjim Royal Basin trip (22 mi, 6,900 ft) also climbed Royal Peak, so not used."
+ },
+ "wa_mount_despair_east_route": {
+  "area": "wa_mount_despair",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 12000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-despair-via-southeast-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip via Thornton Pass, Triumph Pass, Despair Lakes, SE face: approx 24 miles, 12,000 ft gained and lost."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-despair-via-southeast-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approximate stats: 24 miles traveled round trip."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Thornton Lakes trailhead via the Thornton/Triumph Creek basins and Triumph Pass to the SE face",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-despair-via-southeast-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route: Thornton Pass, Triumph Pass, Despair Lakes, Southeast Face."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104189-tr-mount-despair-southeast-faceeast-ridge-08142021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard route approaches from the south via the Thornton and Triumph Creek basins."
+     }
+    ]
+   },
+   {
+    "field": "route_note",
+    "value": "SE face/east ridge is essentially the standard route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104189-tr-mount-despair-southeast-faceeast-ridge-08142021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report calls the southeast face/east ridge essentially the standard route for Mt Despair."
+     }
+    ]
+   },
+   {
+    "field": "grade_note",
+    "value": "Exposed class 3-4 with pack-hauling into the upper SE face basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104189-tr-mount-despair-southeast-faceeast-ridge-08142021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some exposed class 3-4 and pack-hauling before the upper SE face basin."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Party rappelled the summit dihedral after two short roped class 5 pitches",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/mt-despair-via-southeast-face/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two short roped pitches with class 5 crux; rappelled over the dihedral on descent."
+     }
+    ]
+   }
+  ],
+  "note": "TCJ trip took the SE-face dihedral variant; gain/distance are the whole round trip from Thornton Lakes trailhead."
+ },
+ "wa_mount_duckabush_standard": {
+  "area": "wa_mount_duckabush",
+  "skip_reason": "Opened Wikipedia Mount_Duckabush (no route or FA data) and Mountaineers trip report duckabush-river-2 (day hike to 5 Mile Camp only). No route figures for the peak found. SummitPost 403."
+ },
+ "wa_mount_fairchild_standard": {
+  "area": "wa_mount_fairchild",
+  "facts": [
+   {
+    "field": "season",
+    "value": "May-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-william-fairchild",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers Mount William Fairchild: seasons May through August."
+     }
+    ]
+   },
+   {
+    "field": "difficulty_rating",
+    "value": "Basic Alpine Climb (Mountaineers)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-william-fairchild",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty: Basic Alpine Climb."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Mount Carrie summit descend the Carrie Glacier, circle north of Fairchild, then ascend its southwest side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-william-fairchild",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide route: from Carrie summit down the Carrie Glacier, circling north of Fairchild, ascending the Southwest ridge."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Fairchild",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox easiest route: class 3 scrambling."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "1963 (peak first ascent year)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Fairchild",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox first ascent: 1963."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page lists 8,000 ft gain / 24 mi / high point 6,950 ft but covers both Elwha (425 ft TH) and Sol Duc approaches, so gain not attributed."
+ },
+ "wa_mount_ferry_standard": {
+  "area": "wa_mount_ferry",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Mount_Ferry",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia infobox easiest route: class 2 hiking."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Northern Bailey Range report (Cat, Carrie, Stephen, Ferry; 5 days) is multi-peak; no route figures usable."
+ }
+}

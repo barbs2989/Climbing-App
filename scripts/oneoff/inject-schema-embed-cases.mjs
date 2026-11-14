@@ -20,19 +20,21 @@ const original = fs.readFileSync(DB, "utf8");
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 8);
 
 const CASES = [
-  { name: "the real defect: guide_documents.created_at (it is uploaded_at)",
+  // The first case restored the real defect (guide_documents.created_at, which is uploaded_at). That
+  // embed went with the guide feature (2026-11-14), so the same shape is restored on a live embed:
+  // a plausible-but-absent column at the END of a multi-column embed.
+  { name: "a phantom column in a multi-column embed — routes(name, area_id, discipline)",
     expect: "fail",
-    edit: (s) => s.replace("guide_documents(id, doc_type, storage_path, credential_id, deleted_at, uploaded_at)",
-                           "guide_documents(id, doc_type, storage_path, credential_id, deleted_at, created_at)") },
-  { name: "a bad column in a plain embed — profiles(name:public_name, avatar, username)",
+    edit: (s) => s.replace("routes(name, area_id, discipline)", "routes(name, area_id, discipline, created_by_name)") },
+  { name: "a bad column in a plain embed — groups(name)",
     expect: "fail",
-    edit: (s) => s.replace("profiles(name:public_name, avatar, username)", "profiles(name:public_name, avatar, username, nickname)") },
+    edit: (s) => s.replace("groups(name)", "groups(name, nickname)") },
   { name: "a bad column in an aliased embed",
     expect: "fail",
     edit: (s) => s.replace("comment_reactions(user_id,reaction)", "comment_reactions(user_id,reaction,emoji_code)") },
-  { name: "an aggregate inside an embed is not a column — reviews(rating) -> reviews(count)",
+  { name: "an aggregate inside an embed is not a column — group_event_rsvps(user_id) -> group_event_rsvps(count)",
     expect: "pass",
-    edit: (s) => s.replace("reviews(rating)", "reviews(count)") },
+    edit: (s) => s.replace("group_event_rsvps(user_id)", "group_event_rsvps(count)") },
   { name: "untouched source",
     expect: "pass",
     edit: (s) => s },

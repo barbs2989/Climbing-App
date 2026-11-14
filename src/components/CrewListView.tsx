@@ -61,22 +61,46 @@ interface CrewListViewCrew {
 interface CrewListViewJoinReq { id: CrewListViewId; crewId: CrewListViewId; climberId: CrewListViewId }
 /** A climb the climber logged. */
 interface CrewListViewLog { crewId?: CrewListViewId; routeId: string; date?: string; text?: string | null }
+/** A local yyyy-mm-dd (toISOString is UTC, which turns an evening's "tomorrow" into today east of Greenwich and today into tomorrow west of it). */
+const isoDay = (d: Date) => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+const dayLabel = (iso: string) => { try { return new Date(iso + "T12:00:00").toLocaleDateString(DLOCALE, { weekday: "short", month: "short", day: "numeric" }); } catch (_e) { return iso; } };
+/** POST AN OPEN CREW (batch B item 17; polished 2026-11-14 on owner ask "polish it"): the form read as a bare dropdown, a raw "mm/dd/yyyy" box and Post. Now each field is labelled, the climbs are grouped by the list they were saved to (as + Create a crew groups them), the day is the next two weekends as one-tap chips with "Other day…" for the picker, and a line says what Post will make before it is pressed. */
 function QuickOpenCrew({ picks, activeCrews, formCrew }: { picks: ReadonlyArray<CrewListViewPickGroup>; activeCrews: ReadonlyArray<{ routeId?: string | null }>; formCrew: CrewListViewProps["formCrew"] }) {
   const [rid, setRid] = useState("");
   const [day, setDay] = useState("");
-  /* Tomorrow as a LOCAL yyyy-mm-dd. toISOString() is UTC, so east of Greenwich local midnight fell on the day before and `min` let a crew be posted for today. */
-  const t = new Date(); t.setDate(t.getDate() + 1); const min = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
-  /* The same climbs + Create a crew offers — every climb on your saved lists (crewPickGroups), grouped by list — less those that already have a crew. */
-  const groups = picks.map(g => ({ list: g.list, rs: g.rs.filter(r => !activeCrews.some(c => c.routeId === r.id)) })).filter(g => g.rs.length);
-  const free = groups.flatMap(g => g.rs);
-  const ok = !!rid && !!day && day >= min;
-  const sel = { minHeight: 40, boxSizing: "border-box" as const, padding: "0 10px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontFamily: "inherit", minWidth: 0 };
-  return <form onSubmit={e => { e.preventDefault(); if (!ok) return; formCrew(rid, [], { date: day }); setRid(""); setDay(""); }} aria-label="Post an open crew" style={{ display: "grid", gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr) auto", gap: 8, alignItems: "center", marginTop: 12, padding: "10px 12px", background: C.card, border: "1px solid " + C.border, borderRadius: 12 }}>
-    <div style={{ gridColumn: "1 / -1", fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label }}>Post an open crew</div>
-    <select aria-label="Which climb" value={rid} onChange={e => setRid(e.target.value)} style={sel}><option value="">Which saved climb?</option>{groups.map(g => <optgroup key={g.list.id} label={g.list.name}>{g.rs.map(r => <option key={r.id} value={r.id}>{r.name}</option>)}</optgroup>)}</select>
-    <input type="date" aria-label="Which day" value={day} min={min} onChange={e => setDay(e.target.value)} style={sel} />
-    <button type="submit" disabled={!ok} style={{ minHeight: 40, padding: "0 14px", borderRadius: 10, border: "1px solid " + (ok ? C.blueDim : C.border), background: ok ? C.blueBg : C.surface, color: ok ? C.onSolid : C.textMuted, fontSize: 13, fontWeight: 700, cursor: ok ? "pointer" : "default", whiteSpace: "nowrap" }}>Post</button>
-    <div style={{ gridColumn: "1 / -1", fontSize: 11.5, color: C.textMuted, lineHeight: 1.4 }}>{free.length ? "Climbs from your saved lists (My Objectives, then your other lists), minus any that already have a crew. Climbers can ask to join, with the day already proposed." : "Every climb on your saved lists already has a crew — save another climb first."}</div>
+  const [other, setOther] = useState(false);
+  const now = new Date();
+  const min = isoDay(new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1));
+  /* The next two weekends, counted from tomorrow (a crew posted today for today has no one to join it). */
+  const chips: string[] = [];
+  for (let i = 1; chips.length < 4 && i < 16; i++) { const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i); if (d.getDay() === 6 || d.getDay() === 0) chips.push(isoDay(d)); }
+  const free = picks.map(g => ({ list: g.list, rs: g.rs.filter(r => !activeCrews.some(c => c.routeId === r.id)) })).filter(g => g.rs.length);
+  const route = rid ? free.flatMap(g => g.rs).find(r => r.id === rid) : null;
+  const ok = !!route && !!day && day >= min;
+  const lbl = { fontSize: 12, fontWeight: 700, color: C.textSub, marginBottom: 6 };
+  const field = { width: "100%", minHeight: 40, boxSizing: "border-box" as const, padding: "0 10px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13, fontFamily: "inherit", minWidth: 0 };
+  const pill = (on: boolean) => ({ minHeight: 36, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.onSolid : C.textSub, fontSize: 13, fontWeight: 700, fontFamily: "inherit", cursor: "pointer", whiteSpace: "nowrap" as const });
+  const custom = !!day && !chips.includes(day);
+  const box = { marginTop: 12, padding: "12px 14px", background: C.card, border: "1px solid " + C.border, borderRadius: 12 };
+  const head = <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase" as const, color: C.label, marginBottom: 4 }}>Post an open crew</div>;
+  if (!free.length) return <div style={box}>{head}<div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.45 }}>Every saved climb already has a crew. Save another climb to post one.</div></div>;
+  return <form onSubmit={e => { e.preventDefault(); if (!ok) return; formCrew(rid, [], { date: day }); setRid(""); setDay(""); setOther(false); }} aria-label="Post an open crew" style={box}>
+    {head}
+    <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.45, marginBottom: 12 }}>Pick a climb and a day. Any climber can find the crew under Join a crew and ask to come.</div>
+    <label style={{ display: "block", marginBottom: 12 }}><div style={lbl}>Climb</div>
+      <select value={rid} onChange={e => setRid(e.target.value)} style={{ ...field, color: rid ? C.text : C.textMuted }}><option value="">Choose a saved climb</option>{free.map(g => <optgroup key={g.list.id} label={g.list.name}>{g.rs.map(r => <option key={r.id} value={r.id}>{r.name}</option>)}</optgroup>)}</select>
+    </label>
+    <div role="group" aria-label="Day" style={{ marginBottom: 12 }}><div style={lbl}>Day</div>
+      <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
+        {chips.map(d => <button key={d} type="button" aria-pressed={day === d} onClick={() => { setDay(d); setOther(false); }} style={pill(day === d)}>{dayLabel(d)}</button>)}
+        <button type="button" aria-pressed={other || custom} onClick={() => { setOther(true); if (!custom) setDay(""); }} style={pill(other || custom)}>{custom ? dayLabel(day) : "Other day…"}</button>
+      </div>
+      {other || custom ? <input type="date" aria-label="Other day" value={custom ? day : ""} min={min} onChange={e => setDay(e.target.value)} style={{ ...field, maxWidth: 220, marginTop: 8 }} /> : null}
+    </div>
+    <div style={{ display: "flex", alignItems: "center", gap: 12, paddingTop: 10, borderTop: "1px solid " + C.border }}>
+      <div aria-live="polite" style={{ flex: 1, minWidth: 0, fontSize: 12.5, color: ok ? C.text : C.textMuted, lineHeight: 1.4, overflowWrap: "anywhere" }}>{ok && route ? <>Posts <b>{route.name}</b> on <b>{dayLabel(day)}</b>, open to joiners.</> : !route ? "Choose a climb to post." : "Choose a day to post."}</div>
+      <button type="submit" disabled={!ok} style={{ flexShrink: 0, minHeight: 40, padding: "0 18px", borderRadius: 10, border: "1px solid " + (ok ? C.blueSolid : C.border), background: ok ? C.blueSolid : C.surface, color: ok ? C.onSolid : C.textMuted, fontSize: 13, fontWeight: 700, fontFamily: "inherit", cursor: ok ? "pointer" : "default", whiteSpace: "nowrap" }}>Post crew</button>
+    </div>
   </form>;
 }
 
