@@ -1,7 +1,7 @@
-// verify-0433-review-ai-verdicts-pglite.mjs — replays every migration into PGlite (as check:migration-replay
-// does) and checks review_ai_verdicts (0433): the service key writes and upserts, the owner (admin) reads,
+// verify-0435-review-ai-verdicts-pglite.mjs — replays every migration into PGlite (as check:migration-replay
+// does) and checks review_ai_verdicts (0435): the service key writes and upserts, the owner (admin) reads,
 // a signed-in climber and a signed-out visitor read nothing and cannot write.
-// No production database: run `node scripts/oneoff/verify-0433-review-ai-verdicts-pglite.mjs`. Exits 1 on failure.
+// No production database: run `node scripts/oneoff/verify-0435-review-ai-verdicts-pglite.mjs`. Exits 1 on failure.
 import fs from "node:fs";
 import path from "node:path";
 import { PGlite } from "@electric-sql/pglite";
@@ -90,5 +90,5 @@ ok(!!oi.e, "even the owner's browser cannot write one (service key only)" + (oi.
 const bad = await as("service", () => db.query("insert into public.review_ai_verdicts (item_kind,item_id,item_hash,verdict,confidence,reasoning) values ('flag', gen_random_uuid(), 'x', 'maybe', 'none', 'r')"));
 ok(!!bad.e, "an unknown verdict is refused by the check constraint");
 
-console.log(fails ? `\nverify-0433: ${fails} expectation(s) FAILED` : "\nverify-0433: ok — verdicts are admin-read, service-written");
+console.log(fails ? `\nverify-0435: ${fails} expectation(s) FAILED` : "\nverify-0435: ok — verdicts are admin-read, service-written");
 process.exit(fails ? 1 : 0);

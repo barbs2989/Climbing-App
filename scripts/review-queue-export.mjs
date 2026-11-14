@@ -9,7 +9,7 @@
 //   --limit   cap the batch (default 40 — one nightly session's search budget, see the workflow)
 //
 // Needs SUPABASE_SERVICE_KEY: route_flags is readable only by its reporter and admins (0307), and
-// review_ai_verdicts only by admins (0433). Reads are small and indexed (status filters, then
+// review_ai_verdicts only by admins (0435). Reads are small and indexed (status filters, then
 // rows by id=in.(…)), per the owner's throttle rule — run `node ~/dev/db-throttle/dbslot.mjs
 // acquire review-export` first when running locally.
 //

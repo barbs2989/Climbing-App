@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Write the nightly AI checker's verdicts into review_ai_verdicts (0433). Validates every row
+// Write the nightly AI checker's verdicts into review_ai_verdicts (0435). Validates every row
 // first and writes NOTHING if any row is malformed, so a half-wrong batch never half-lands.
 //
 //   node scripts/review-verdicts-write.mjs <verdicts.json> [--dry]

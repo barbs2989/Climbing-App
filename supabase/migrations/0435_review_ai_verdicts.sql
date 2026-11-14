@@ -1,4 +1,4 @@
--- 0433: review_ai_verdicts — what the nightly AI checker concluded about each held route edit and
+-- 0435: review_ai_verdicts — what the nightly AI checker concluded about each held route edit and
 -- each open "this is wrong" flag, for the owner's standalone Review desk (review.html).
 --
 -- Owner decision 2026-11-14: flags (route_flags) and held field edits (contributions, kind 'field',
@@ -43,7 +43,7 @@ create table if not exists public.review_ai_verdicts (
 create index if not exists review_ai_verdicts_route_idx on public.review_ai_verdicts (route_id);
 
 comment on table public.review_ai_verdicts is
-  'Nightly AI checker''s verdict on each held field edit / open route flag (0433). Advice only: the owner acts in review.html through the 0309 RPCs. Admin read; service key writes.';
+  'Nightly AI checker''s verdict on each held field edit / open route flag (0435). Advice only: the owner acts in review.html through the 0309 RPCs. Admin read; service key writes.';
 
 alter table public.review_ai_verdicts enable row level security;
 drop policy if exists "ai verdicts read by admin" on public.review_ai_verdicts;

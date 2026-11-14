@@ -62,7 +62,7 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
 - **The owner's Review desk** (`review.html` → `review/ReviewDesk.jsx`, owner decision 2026-11-14): its
   OWN page, not linked from the app, admin only. One table holds every held field edit AND every open flag:
   type, route, field, the page's current value, what the climber says, the nightly AI checker's verdict
-  (`review_ai_verdicts`, 0433: agree / disagree / partly / unsure at 2-source / 1-source / none) and the
+  (`review_ai_verdicts`, 0435: agree / disagree / partly / unsure at 2-source / 1-source / none) and the
   value it thinks is right; filter by type, verdict, state and field, sort by any column, and click a row
   for the full values, the AI's reasoning and quoted sources. Edits: Approve, Use AI value, Edit value,
   Turn down (reason ≥10 chars, strike unless "honest mistake"), Keep page value &amp; lock. Flags: Use AI
@@ -232,7 +232,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `RouteDetail.jsx` | `openFix`, which opens the edit sheet |
 | `review.html`, `review/main.jsx`, `review/ReviewDesk.jsx`, `vite.review.config.js` | The owner's standalone Review desk (its own build, written beside the app; the service worker leaves it alone) |
 | `scripts/review-queue-export.mjs`, `scripts/review-verdicts-write.mjs`, `.claude/workflows/review-flags-nightly.js` | The nightly AI checker: export → research + verify → write verdicts |
-| `supabase/migrations/0433_review_ai_verdicts.sql`, `scripts/oneoff/verify-0433-review-ai-verdicts-pglite.mjs` | The verdicts table (admin read, service-key write) and its RLS check |
+| `supabase/migrations/0435_review_ai_verdicts.sql`, `scripts/oneoff/verify-0435-review-ai-verdicts-pglite.mjs` | The verdicts table (admin read, service-key write) and its RLS check |
 | `lib/RouteQualityQueues.jsx` | `ContributorStandingQueue` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
@@ -287,7 +287,7 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 
 ## 7. Last significant change
 
-2026-11-14: held edits and flags moved off the Menu onto the standalone Review desk (`review.html`), as one table with the nightly AI checker's verdicts (0433). The Menu keeps only Contributor standing.
+2026-11-14: held edits and flags moved off the Menu onto the standalone Review desk (`review.html`), as one table with the nightly AI checker's verdicts (0435). The Menu keeps only Contributor standing.
 
 0382 (2026-10-28): 0325 withdrawn at the owner's word — every route edit waits for the owner again,
 the Agree button and other climbers' waiting suggestions are gone from the edit sheet, and the

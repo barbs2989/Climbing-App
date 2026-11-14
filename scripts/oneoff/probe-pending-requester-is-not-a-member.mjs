@@ -95,14 +95,15 @@ console.log("\n3. the SEVEN readers #1647 did not name\n");
 const more = [
   ["risk alignment lists the CREW's tolerances", /const risks=tp\.modules\.includes\("align"\)\?inCrew\.map\(/],
   ["the backcountry safety brief's total", /var total=inCrew\.length;var done=inCrew\.filter\(/],
-  ["waiting on X to tap a day that works", /var pendDay=inCrew\.filter\(/],
+  // Moved with the guided-journey card (2026-11-14): crewStage's Day step names who still has to pick, from `need`.
+  ["waiting on X to tap a day that works", /var need=\[0\]\.concat\(\(c\.members\|\|\[\]\)\.filter\(function\(m\)\{return m&&m\.status==="confirmed"&&m\.climberId!==0;\}\)/],
   ["the remove-vote / just-the-two-of-you gate", /\{inCrew\.length>2\?\(remPend\?/],
   // "Ready · N climbers" no longer exists on the collapsed card (no "Ready · " string is left in the
   // app), so its reader is not asserted. The N-of-M denominator moved to CrewListView: \`tot\` is built
   // from otherMem, which is crewInCrew(...), i.e. the same rule through the shared helper.
   ["...the crew list's N-of-M confirmed denominator", /const otherMem=crewInCrew\(cr\)[^;]*;const conf=1\+otherMem\.filter\([^;]*;const tot=1\+otherMem\.length;/, appSrc],
   ["usually free for everyone / no weekly slot works for the whole crew", /if\(inCrew\.length&&inCrew\.every\(m=>slotOn\(/],
-  ["Nudge N to pick a day", /var _un=inCrew\.filter\(function\(m\)\{return !m\._me/],
+  ["Nudge N to pick a day", /var _un=(?:ds\.length\?)?inCrew\.filter\(function\(m\)\{return !m\._me/],
 ];
 for (const [what, re, from] of more) {
   if (re.test(from || src)) ok(what + " reads inCrew");

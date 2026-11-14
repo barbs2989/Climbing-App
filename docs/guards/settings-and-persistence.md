@@ -650,6 +650,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     new account has — so `!profileReadFailed` is `check:profile-edit-gate`'s rule one surface over:
     opening a blank onboarding sheet over a profile the app could not load is how that profile gets
     overwritten, since onboarding writes `location`, `disciplines` and all three grades.
+  - **SINCE 2026-11-14 SETUP IS REQUIRED FOR A SIGNED-IN ACCOUNT, which changed both halves above.**
+    The predicate also asks for a **username** (0432 locks it once chosen), and that clause ignores
+    the session's `onboarded` flag, because finishing setup no longer proves one was chosen; the
+    guard executes *disciplines but no username* and *just finished, no username* and expects both
+    to NEED it. The effect skips the once-per-device preference for a signed-in account, so its
+    setup reopens on every load until done (the owner asked for it to be required, which is exactly
+    the "nag" this note used to warn about); a guest is still offered it once. The username clause
+    is written `profileLoaded&&signedIn&&!profileReadFailed` on purpose: the injection suite
+    anchors on the disciplines clause's `signedIn&&profileLoaded&&!profileReadFailed` and needs it
+    to occur once.
   - **THE PREDICATE IS LIFTED FROM SOURCE AND EXECUTED, never retyped** — a hand-typed copy would
     agree with itself whatever the app did, which is the entire question — with `ANCHOR LOST` if it
     moves and a **refusal if it is declared twice**, since then the guard cannot say which one is
