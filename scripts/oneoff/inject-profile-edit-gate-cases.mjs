@@ -24,7 +24,7 @@ const CASES = [
   {
     name: "1. getProfile discards the error again (the original defect)",
     file: AUTH, expect: "fail", needs: /throws on a read error/,
-    // Through my_profile() since 0432 (owner-only columns).
+    // Through my_profile() since 0434 (owner-only columns).
     find: "  const { data, error } = await supabase.rpc(\"my_profile\").single();\n  if (error && error.code !== \"PGRST116\") throw error;\n  return data && data.id === id ? data : null;",
     repl: "  return (await supabase.rpc(\"my_profile\").single()).data;",
   },

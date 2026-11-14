@@ -1,9 +1,9 @@
-// check:profile-privacy — does the API itself keep what a climber chose to hide (0432)?
+// check:profile-privacy — does the API itself keep what a climber chose to hide (0434)?
 //
-// Before 0432 every column of every profile was readable with the public anon key, signed out
+// Before 0434 every column of every profile was readable with the public anon key, signed out
 // included: the real name whatever show_name said, photos whatever photos_public said, location,
 // gender, availability, and account bookkeeping. The switches were honoured only by what the app
-// rendered. 0432 moved that into column grants plus three generated "public_" columns.
+// rendered. 0434 moved that into column grants plus three generated "public_" columns.
 //
 // This replays every migration into PGlite (as check:migration-replay does) WITH Supabase's default
 // grants — without them every query reads "permission denied" and nothing below would mean anything —
@@ -19,7 +19,7 @@
 //   5. what runs as the caller and reads profiles still works: the climber_resumes policy, an
 //      is_admin()-gated policy signed out, and the climb_logs default-visibility trigger;
 //   6. the SECURITY DEFINER readers that return a name read it through show_name (leaderboard run as
-//      another climber; every definer returning a profile name scanned; the seven 0432 fixed pinned).
+//      another climber; every definer returning a profile name scanned; the seven 0434 fixed pinned).
 //
 // Hand-run (~40s), like check:migration-replay: it needs @electric-sql/pglite.
 //   npm run check:profile-privacy
@@ -67,7 +67,7 @@ for (const f of files) {
   catch (e) { await db.exec("rollback").catch(() => {}); dead(`${f} did not replay: ${e.message}`); }
 }
 console.log(`check:profile-privacy: ${files.length} migrations replayed with Supabase's default grants.`);
-// 0432 ships in two steps; until step 2 is a migration, apply it here so the client is tested against it.
+// 0434 ships in two steps; until step 2 is a migration, apply it here so the client is tested against it.
 if ((await db.query(`select has_table_privilege('anon', 'public.profiles', 'select') as t`)).rows[0].t) {
   await db.exec(fs.readFileSync(path.join(ROOT, "supabase", "profile-grants-step2.sql"), "utf8"));
   console.log("check:profile-privacy: step 2 (supabase/profile-grants-step2.sql) is not a migration yet; applied for this check.");
@@ -198,7 +198,7 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
     for (const m of s.matchAll(/[^_a-z]profiles\(([a-z_:, ]+)\)/g)) add(m[1], true, rel + " (embed)");
     // raw selects on the table itself: own-row reads by a signed-in climber
     for (const m of s.matchAll(/from\("profiles"\)\s*\.select\("([^"]*)"/g)) {
-      if (m[1].trim() === "*" || m[1].trim() === "") { rawStar++; fail(`${rel}: .from("profiles").select("${m[1]}") — select * is refused for every client role since 0432`); }
+      if (m[1].trim() === "*" || m[1].trim() === "") { rawStar++; fail(`${rel}: .from("profiles").select("${m[1]}") — select * is refused for every client role since 0434`); }
       else add(m[1], false, rel + " (raw)");
     }
   }
@@ -271,12 +271,12 @@ const sqlCols = (list) => list.split(",").map((c) => c.trim()).filter(Boolean).m
     }
   }
   // The partner functions return a CTE built from `p.*`, which the alias rule above cannot follow, so
-  // the seven 0432 re-created are pinned by name: each must still read the name through the switch.
+  // the seven 0434 re-created are pinned by name: each must still read the name through the switch.
   const FIXED = ["log_tags_for_me", "partners_near", "partners_by_objective", "partners_for_my_areas", "partners_in_area", "crag_regular", "leaderboard"];
   for (const name of FIXED) {
     const f = fns.find((x) => x.proname === name);
     if (!f) { bad++; fail(`${name} no longer exists or no longer returns a name — re-check what replaced it`); continue; }
-    if (!/\.public_name\b|show_name or p\.id = me then p\.name/.test(f.prosrc)) { bad++; fail(`${name} returns the raw name again (0432 read it through show_name)`); }
+    if (!/\.public_name\b|show_name or p\.id = me then p\.name/.test(f.prosrc)) { bad++; fail(`${name} returns the raw name again (0434 read it through show_name)`); }
   }
   if (!bad) ok(`${fns.length} definer functions return a name from profiles; none reads the raw name without show_name`);
 }

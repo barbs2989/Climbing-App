@@ -151,7 +151,7 @@ try {
     const unique = `${fixture.mate.name} ${fixture.mate.id.slice(0, 6)}`;
     const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.mate.id}`, {
       method: "PATCH", headers: { ...H, Prefer: "return=representation" },
-      // show_name on: the share search matches a name only where the climber shows it (0432).
+      // show_name on: the share search matches a name only where the climber shows it (0434).
       body: JSON.stringify({ name: unique, show_name: true }),
     });
     const rows = r.ok ? await r.json() : [];

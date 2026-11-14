@@ -1,4 +1,4 @@
--- STEP 2 of 0432 (profiles column privileges). NOT a migration: copy it into the next free migration
+-- STEP 2 of 0434 (profiles column privileges). NOT a migration: copy it into the next free migration
 -- number once the step-1 client (PR #3347's) has been live long enough for open tabs to update.
 -- check:profile-privacy applies this file itself while the table-level grant still stands, so the
 -- client is proven ready for it before it ships.

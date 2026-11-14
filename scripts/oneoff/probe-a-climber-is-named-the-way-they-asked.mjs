@@ -40,7 +40,7 @@ const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 const core = readCoreSource(ROOT);
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
-// PARTNER_COLS and the column-grant aliases live here since 0432.
+// PARTNER_COLS and the column-grant aliases live here since 0434.
 const cols = fs.readFileSync(path.join(ROOT, "lib/profileCols.js"), "utf8");
 
 // Balance braces from the declaration rather than anchoring on a LINE: a comment written beside

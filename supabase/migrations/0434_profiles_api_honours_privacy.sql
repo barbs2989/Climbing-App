@@ -1,4 +1,4 @@
--- 0432 — profiles: the API itself honours a climber's privacy choices, and signed-out visitors get only
+-- 0434 — profiles: the API itself honours a climber's privacy choices, and signed-out visitors get only
 -- the public card. STEP 1 of 2: everything additive (the public_* columns, my_profile(), the trigger, the
 -- definer readers). The column grants described below are STEP 2 (supabase/profile-grants-step2.sql),
 -- applied in a later migration once this PR's client is live; see section 4.
@@ -70,15 +70,15 @@ alter table public.profiles
     generated always as (case when photos_public then photo_alts end) stored;
 
 comment on column public.profiles.public_name is
-  'name when show_name, else null. What other climbers and signed-out visitors can read (0432); the raw name is owner-only.';
+  'name when show_name, else null. What other climbers and signed-out visitors can read (0434); the raw name is owner-only.';
 comment on column public.profiles.public_photos is
-  'photos when photos_public, else empty. What other climbers can read (0432); the raw photos column is owner-only.';
+  'photos when photos_public, else empty. What other climbers can read (0434); the raw photos column is owner-only.';
 comment on column public.profiles.public_photo_alts is
-  'photo_alts when photos_public, else null (0432).';
+  'photo_alts when photos_public, else null (0434).';
 comment on column public.profiles.show_name is
-  'Show my real name publicly. Enforced by the API since 0432: other readers get public_name, which is null when this is false.';
+  'Show my real name publicly. Enforced by the API since 0434: other readers get public_name, which is null when this is false.';
 comment on column public.profiles.photos_public is
-  'Show my profile photos to other climbers. Enforced by the API since 0432: other readers get public_photos, which is empty when this is false.';
+  'Show my profile photos to other climbers. Enforced by the API since 0434: other readers get public_photos, which is empty when this is false.';
 
 -- ── 2. the owner's own full row ──────────────────────────────────────────────────────────────────────
 create or replace function public.my_profile()

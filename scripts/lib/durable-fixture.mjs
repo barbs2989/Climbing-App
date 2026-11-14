@@ -87,7 +87,7 @@ export async function durableFixture(log) {
   // and asserted on it. Selecting the column made the app render the mate's REAL handle
   // (@climbmatch-ci-mate) and the guard failed, having pinned a value that existed only because
   // of the defect. A fixture that reads the identity it asserts on cannot make that mistake.
-  // On the MATE's own JWT through my_profile(): since 0432 the raw name is readable only by its owner.
+  // On the MATE's own JWT through my_profile(): since 0434 the raw name is readable only by its owner.
   const res = await readBody(await fetch(
     `${SUPABASE_URL}/rest/v1/rpc/my_profile?select=id,name,username,discoverable`,
     { headers: { apikey: ANON, Authorization: `Bearer ${mateSession.access_token}` } },
@@ -114,7 +114,7 @@ export async function durableFixture(log) {
   // acceptCurrentPolicy() does in the app -- no service key, and nothing CI is not allowed to
   // hold. Idempotent: it reads first and writes only when the version differs, so a re-run is
   // one extra GET.
-  // terms_accepted_version is owner-only since 0432: read through my_profile() on the owner's JWT.
+  // terms_accepted_version is owner-only since 0434: read through my_profile() on the owner's JWT.
   const pol = await readBody(await fetch(
     `${SUPABASE_URL}/rest/v1/rpc/my_profile?select=terms_accepted_version`,
     { headers: { apikey: ANON, Authorization: `Bearer ${session.access_token}` } },
