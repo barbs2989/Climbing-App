@@ -276,7 +276,6 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
       {cur&&cur.dryFrac!=null?condRow("Rock now",cur.dryFrac>=1?(cur.factors.dry&&cur.factors.dry.damp?"Dried out from rain, but the air is at its dew point — shaded rock may be damp":"Likely dry"):"Likely wet — about "+Math.round(cur.dryFrac*100)+"% dried",cur.dryFrac>=1?C.green:C.amber):null}
       {dryLine?condRow("Likely dry from",dryLine):null}
       {score.seep?condRow("Seepage risk",<span><b style={{color:score.seep.risk==="high"?C.red:score.seep.risk==="moderate"?C.amber:C.green}}>{score.seep.risk==="high"?"High":score.seep.risk==="moderate"?"Moderate":"Low"}</b>{" · "+uPrecip(score.seep.rain7)+" of rain in 7 days, "+uPrecip(score.seep.rain14)+" in "+(score.seep.short?"the days on record":"14 days")}</span>):null}
-      <div style={condNote}>Seepage is a risk from recent rain, not a reading: cracks, seams and overhangs can stay wet for days after the face is dry. Drying times are rules of thumb for the rock type.</div>
     </div>)}
     {sec("Sun on the wall",<div style={condBox}>
       {day.sun?condRow("Sunrise",clockAt(score,day.sun.rise)):null}

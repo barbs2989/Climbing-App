@@ -158,6 +158,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 4. **Messaging**: `sendCrewMessage`/`fetchCrewMessages`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markMessageAsRead`.
 5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
    (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
+   Home's pinned card (`TodayTab`) lists the pins A to Z, one row each: the name on the left, and on the right the
+   device copy's age from `dlTimes` ("Last updated 3h ago") with an Update button (`updateState`), or Download for a pin
+   not on this device yet.
    A download lives in IndexedDB, asks the browser to keep it (`navigator.storage.persist()`), and is read back by
    `offlineDownloads()` on every launch, so it survives closing the app; a pin made on another device downloads here.
    It comes from the nightly state file (`scripts/build-state-snapshots.mjs`) when that file is under 3 days old, else

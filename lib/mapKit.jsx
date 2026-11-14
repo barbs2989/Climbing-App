@@ -380,8 +380,11 @@ export function applyBaseLayer(map, tileRef, baseLayer) {
 // (FireMap's zoom) leaves it off.
 // `slope` opts a map into the Slope toggle; `slopeOn`/`setSlopeOn` are the map's own state, because the
 // overlay is added to and removed from the map by the map (see GPXMap).
-/** @param {{baseLayer: string, setBaseLayer: (k: string) => void, C: Record<string, string>, snow?: boolean, snowAt?: {lat?: number|null, lng?: number|null}|null, slope?: boolean, slopeOn?: boolean, setSlopeOn?: (on: boolean) => void}} props */
-export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt, slope, slopeOn, setSlopeOn }) {
+// `on3d` puts a 3D button at the END of the same row, next to the layers, where a climber looks for
+// another way to see the map (owner, 2026-11-14: "move it higher with the rest of the views near
+// satellite"). It opens a view rather than picking a layer, so it is never marked current.
+/** @param {{baseLayer: string, setBaseLayer: (k: string) => void, C: Record<string, string>, snow?: boolean, snowAt?: {lat?: number|null, lng?: number|null}|null, slope?: boolean, slopeOn?: boolean, setSlopeOn?: (on: boolean) => void, on3d?: () => void}} props */
+export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt, slope, slopeOn, setSlopeOn, on3d }) {
   const pick = snow ? snowPick(baseLayer) : null;
   const passes = useSnowPasses(snowAt, !!pick);
   const list = passes ? passes.list : null;
@@ -413,6 +416,7 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt, slop
           const on = k === "snow" ? pick != null : baseLayer === k;
           return <button key={k} className="cm-lyr-btn" onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)", pointerEvents: "auto" }}>{k === "sat" ? <><span className="cm-lyr-long">{lbl}</span><span className="cm-lyr-short">Sat</span></> : lbl}</button>;
         })}
+        {on3d ? <button type="button" className="cm-lyr-btn cm-lyr-3d" onClick={on3d} aria-label="View in 3D" style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 11, fontWeight: 800, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)", pointerEvents: "auto", flexShrink: 0 }}>3D</button> : null}
       </div>
       {/* The right-hand column under ⤢ Full screen: the Slope toggle and its key, then the Snow stepper. One
           column, so the two can never draw over each other. */}
