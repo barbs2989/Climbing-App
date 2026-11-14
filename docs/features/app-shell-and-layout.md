@@ -225,9 +225,9 @@ only while `wide`; the sheet rule matches the sheets' own serialised inline styl
 boot shell already has the website's shape.
 
 **Views as pages.** The phone views share one inline shape — `position:fixed; inset:0; maxWidth:520`
-(`check:overlay-width-cap` keeps them to it) — so `wideCss` places that shape in the column. The six
-views `App` used to RETURN early (`legal`, `editDraft`, `dashOpen`, `guideAppOpen`, `calOpen`,
-`inboxOpen`) are built as elements (`_vLegal` … `_vInbox`); a phone still returns them alone, while a
+(`check:overlay-width-cap` keeps them to it) — so `wideCss` places that shape in the column. The
+views `App` used to RETURN early (`legal`, `editDraft`, `calOpen`,
+`inboxOpen`; the two guide screens were removed 2026-11-14) are built as elements (`_vLegal` … `_vInbox`); a phone still returns them alone, while a
 desktop draws `_pageView` in the column in place of `#appscroll` (Terms still replaces everything when
 signed out). `coveringLayer` counts a cover that starts under the top bar.
 

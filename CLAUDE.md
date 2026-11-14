@@ -344,7 +344,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
     fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
     reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and
     prose naming the absent id would fail on its own explanation.
-- `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
+- `discover` — find partners or crews (`partnersMode` is `"partners"` / `"crews"`, whose controls read *Find partners* / *Join a crew*). Only `"partners"` is tested with `partnersMode===`; crews is the else branch. The guide directory (*Hire a guide*, guide applications and the guide dashboard) was removed on 2026-11-14 (owner: "I don't want that anymore").
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.

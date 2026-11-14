@@ -25,10 +25,12 @@ const CASES = [
   },
   {
     name: "hardcoded-distance-chips",
-    why: "the distance chips go back to `Within 50 mi` while the SLIDER beside them converts",
-    edit: (s) => s.replace('["50","Within "+uDistMi(50)]', '["50","Within 50 mi"]'),
+    // The guide directory's chip this used to revert was removed with the guide feature
+    // (2026-11-14); a hand-spelled chip is now ADDED, which the guard must still refuse.
+    why: "a distance chip spells `Within 50 mi` by hand — a metric climber reads miles",
+    edit: (s) => s + '\nconst _probeDistChips=[["50","Within 50 mi"]];\n',
     expect: "fail",
-    must: /distance chip calls uDistMi/,
+    must: /no distance chip names a unit by hand/,
   },
   {
     name: "label-claims-600",
