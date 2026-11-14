@@ -294,10 +294,11 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
             <div style={{ fontSize: 13, color: C.blue, marginTop: 7 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "") : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
           </div>
           {/* The Fire map entry, on the area it opens focused on. Not drawn on a country or state page (owner,
-              2026-10-24): far too broad a place to ask "is anything burning near here?". */}
+              2026-10-24): far too broad a place to ask "is anything burning near here?". Sized like the Save area
+              button above it (34px tall, 12px text; owner, 2026-11-14) — it was a 44px button that outweighed the page. */}
           {onFireMap && area.area_type !== "country" && area.area_type !== "state" ? (
-            <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 7, minHeight: 44, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 11, padding: "0 14px", fontSize: 14, fontWeight: 800, cursor: "pointer", whiteSpace: "nowrap" }}>
-              <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
+            <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 5, height: 34, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 9, padding: "0 12px", fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
               {"Fire map"}
             </button>
           ) : null}
