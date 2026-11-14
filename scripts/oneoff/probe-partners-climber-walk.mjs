@@ -11,6 +11,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { assertQuietBox } from "../lib/quiet-box.mjs";
+import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
 
 assertQuietBox("probe-partners-climber-walk.mjs");
 
@@ -20,7 +21,7 @@ const port = 5300 + Math.floor(Math.random() * 400), base = `http://127.0.0.1:${
 const server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
 const fails = [], ok = (c, m) => { console.log((c ? "ok   " : "FAIL ") + m); if (!c) fails.push(m); };
 const note = (m) => console.log("     " + m);
-let fixture, browser;
+let fixture, browser, page;
 const shot = (page, n) => page.screenshot({ path: path.join(OUT, n + ".png") });
 // THE CREW CARD'S LOOK (lib/cardStyles.js, owner 2026-11-14): radius 16, a 1px edge, a shadow. Walks up from the
 // located element to the first box that draws a shadow, so it can start from a button inside a card.
@@ -31,10 +32,15 @@ const cardLook = async (loc, label) => {
 try {
   for (let i = 0; i < 60; i++) { try { if ((await fetch(base)).ok) break; } catch {} await new Promise((r) => setTimeout(r, 1000)); }
   fixture = await createFixture(() => {});
+  // Setup is REQUIRED since #3306: a signed-in account with no username opens on "Choose your username"
+  // (ClimbMatch.jsx accountNeedsOnboarding). Give the fixture one on its OWN token, as finishing setup does.
+  const un = "walk" + Date.now().toString(36);
+  const pr = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.session.user.id}`, { method: "PATCH", headers: { apikey: anonKey(), Authorization: `Bearer ${fixture.session.access_token}`, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ username: un }) });
+  ok(pr.ok, "the fixture finished setup (username @" + un + ", HTTP " + pr.status + ")");
   browser = await chromium.launch({ channel: "chrome", headless: true });
   // Salt Lake City, so "Near me now" has somewhere to measure from.
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, geolocation: { latitude: 40.67, longitude: -111.85 }, permissions: ["geolocation"] });
-  const page = await ctx.newPage();
+  page = await ctx.newPage();
   const errs = []; page.on("pageerror", (e) => { errs.push(e.message); console.log("PAGEERROR " + e.message.slice(0, 300)); });
   await page.addInitScript(({ key, value }) => { try { localStorage.setItem(key, value); } catch {} }, { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(fixture.session)) });
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 }); await page.waitForTimeout(12000);
@@ -175,7 +181,11 @@ try {
   await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(800);
   ok(!(await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)), "no horizontal overflow at 390px");
   ok(!errs.length, "no page errors" + (errs.length ? ": " + errs.join(" | ") : ""));
-} catch (e) { ok(false, "threw: " + e.message.split("\n")[0]); }
+} catch (e) {
+  ok(false, "threw: " + e.message.split("\n")[0]);
+  // Where it stuck: a screenshot and the first lines a climber would read.
+  if (page) { await shot(page, "0-stuck").catch(() => {}); note("stuck on: " + (await page.locator("body").innerText().catch(() => "")).replace(/\s+/g, " ").slice(0, 400)); }
+}
 finally { if (browser) await browser.close(); if (fixture) await fixture.cleanup().catch(() => {}); server.kill(); }
 console.log(fails.length ? "\n" + fails.length + " FAILED" : "\nall ok");
 process.exit(fails.length ? 1 : 0);
