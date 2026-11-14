@@ -1,0 +1,1392 @@
+{
+ "routes": [
+  {
+   "id": "co_megamydal_traverse",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Elk Range traverse that includes the Pyramid summit"
+  },
+  {
+   "id": "co_pyramid_peak_northeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard NE Ridge to the Pyramid summit (out-and-back)"
+  },
+  {
+   "id": "co_pyramidal_traverse",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Traverse over Pyramid Peak summit"
+  },
+  {
+   "id": "co_beardsley_route",
+   "summits": false,
+   "confidence": "low",
+   "reason": "5.10 rock route on the Quandary north-side cliffs; not a summit line"
+  },
+  {
+   "id": "co_golden_goat_2",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Golden Goat Buttress crag route"
+  },
+  {
+   "id": "co_golden_goat_buttress_goat_urea",
+   "summits": false,
+   "confidence": "high",
+   "reason": "2-pitch ice at Golden Goat Buttress; scramble off west from the outcrop top"
+  },
+  {
+   "id": "co_inwood_arete",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Long north-side arete that tops out on the Quandary summit ridge"
+  },
+  {
+   "id": "co_king_s_crown",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Rock route on the Quandary north-side cliffs/buttress"
+  },
+  {
+   "id": "co_lower_blue_lake_slab_center_mixed_line",
+   "summits": false,
+   "confidence": "high",
+   "reason": "6 m ice at Lower Blue Lake Slab"
+  },
+  {
+   "id": "co_lower_blue_lake_slab_east_side_flow",
+   "summits": false,
+   "confidence": "high",
+   "reason": "8 m ice at Lower Blue Lake Slab"
+  },
+  {
+   "id": "co_lower_blue_lake_slab_ice_bouldering_area",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Ice bouldering area, not a route to the top"
+  },
+  {
+   "id": "co_mccullough_gulch_blue_gold",
+   "summits": false,
+   "confidence": "high",
+   "reason": "1-pitch gulch ice; walk off down a couloir"
+  },
+  {
+   "id": "co_mccullough_gulch_claim_jumper",
+   "summits": false,
+   "confidence": "high",
+   "reason": "2-pitch gulch ice; walk off down a boxed couloir"
+  },
+  {
+   "id": "co_mccullough_gulch_noxious_fumes",
+   "summits": true,
+   "confidence": "low",
+   "reason": "457 m north-face line topping on the east ridge near summit; descends standard east ridge"
+  },
+  {
+   "id": "co_mccullough_gulch_sluice_box",
+   "summits": true,
+   "confidence": "low",
+   "reason": "457 m north-face couloir to the east ridge near summit; descends east ridge"
+  },
+  {
+   "id": "co_mccullough_gulch_the_canary_couloir",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Couloir tops out on the east ridge just below summit, standard finish continues"
+  },
+  {
+   "id": "co_north_star_goldschlager",
+   "summits": false,
+   "confidence": "high",
+   "reason": "1-pitch ice at North Star crag; rappel or downclimb"
+  },
+  {
+   "id": "co_north_star_north_star",
+   "summits": false,
+   "confidence": "high",
+   "reason": "North Star ice/mixed buttress; scramble off west or rappel"
+  },
+  {
+   "id": "co_north_star_ursa_major",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Ice/mixed crag line; walk off west or rappel to the base"
+  },
+  {
+   "id": "co_north_star_yukon_jack",
+   "summits": false,
+   "confidence": "high",
+   "reason": "2-pitch ice; walk off top of pitch 2 and rappel"
+  },
+  {
+   "id": "co_quandary_ice_crag_bourbon_beaver",
+   "summits": false,
+   "confidence": "high",
+   "reason": "1-pitch ice flow; walk off down talus"
+  },
+  {
+   "id": "co_quandary_ice_crag_trucksicle",
+   "summits": false,
+   "confidence": "high",
+   "reason": "12 m ice flow"
+  },
+  {
+   "id": "co_quandary_peak_standard_route_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard East Ridge trail to the summit"
+  },
+  {
+   "id": "co_second_reincarnation_of_the_golden_goat",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Golden Goat Buttress variant; buttress crag route"
+  },
+  {
+   "id": "co_snowblind",
+   "summits": false,
+   "confidence": "low",
+   "reason": "5.8 rock route on Quandary north-side cliffs"
+  },
+  {
+   "id": "co_the_golden_goat_buttress",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Golden Goat Buttress crag route"
+  },
+  {
+   "id": "co_uncle_andy",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Unknown 3rd-class line in the Quandary crag area; no evidence it reaches the summit"
+  },
+  {
+   "id": "co_red_mountain_north_ridge_from_culebra_peak",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_redcloud_peak_northeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_rio_grande_pyramid_east_slope_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_san_luis_peak_northeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_snowmass_mountain_east_slopes",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_stewart_peak_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_sunlight_peak_south_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_sunshine_peak_via_redcloud_peak",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_tabeguache_peak_via_mount_shavano",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_thunder_pyramid_west_face_white_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_kelso_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Kelso Ridge tops out on Torreys summit"
+  },
+  {
+   "id": "co_torrey_s_peak_dead_dog_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Couloir ends 150-200 ft below summit; scramble to top is the normal finish"
+  },
+  {
+   "id": "co_torrey_s_peak_north_face_aka_tuning_fork",
+   "summits": true,
+   "confidence": "low",
+   "reason": "North face (Tuning Fork) snow climb to the summit"
+  },
+  {
+   "id": "co_torrey_s_peak_south_paw_couloir",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Gully meets the ridge ~350 ft below summit; normally continued to the top"
+  },
+  {
+   "id": "co_torreys_peak_south_slopes",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard trail to the summit"
+  },
+  {
+   "id": "co_trinity_peak_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_turret_peak_northwest_slope",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_un_13_820_southwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_un_13_838_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_uncompahgre_peak_south_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_vermilion_peak_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_center_shift_on_wham_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Wham Ridge variation finishing on the Vestal summit"
+  },
+  {
+   "id": "co_east_face_2",
+   "summits": true,
+   "confidence": "low",
+   "reason": "East Face of Vestal tops out on the summit"
+  },
+  {
+   "id": "co_vestal_peak_south_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to Vestal summit"
+  },
+  {
+   "id": "co_wham_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Wham Ridge finishes on the summit"
+  },
+  {
+   "id": "co_wetterhorn_peak_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "co_nne_ridge",
+   "summits": true,
+   "confidence": "low",
+   "reason": "NNE Ridge alpine route to the summit"
+  },
+  {
+   "id": "co_nw_ridge",
+   "summits": true,
+   "confidence": "low",
+   "reason": "NW Ridge alpine route to the summit"
+  },
+  {
+   "id": "co_wilson_peak_southwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to Wilson Peak summit"
+  },
+  {
+   "id": "co_windom_peak_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "nv_mount_rose_mount_rose_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail to the summit"
+  },
+  {
+   "id": "ny_algonquin_van_hoevenberg_and_macintyre_range_trails",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_allen_mountain_allen_brook_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_basin_mountain_shoreys_shortcut",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_big_slide_mtn_the_brothers_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_free_soul",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Single rock climb on the Big Slide cliff, not a summit route"
+  },
+  {
+   "id": "ny_freudian_slip",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Sport route on the Big Slide cliff"
+  },
+  {
+   "id": "ny_slide_rules",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Rock route on the Big Slide cliff"
+  },
+  {
+   "id": "ny_blake_peak_via_mount_colvin",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Path to the summit"
+  },
+  {
+   "id": "ny_cascade_mountain_cascade_mountain_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail to the summit"
+  },
+  {
+   "id": "ny_cascade_mountain_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Slide climb; normally continues to the summit"
+  },
+  {
+   "id": "ny_cliff_mountain_uphill_brook_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_couchsachraga_peak_via_santanoni_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_dial_mountain_via_bear_den",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_buttress_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Dix slide climb that joins the Beckhorn summit area"
+  },
+  {
+   "id": "ny_dix_mtn_beckhorn_trail_from_elk_lake",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Beckhorn Trail to the summit"
+  },
+  {
+   "id": "ny_donaldson_mountain_seward_range_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Herd path to the summit"
+  },
+  {
+   "id": "ny_esther_mountain_herd_path_from_marble_mountain",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Herd path to the summit"
+  },
+  {
+   "id": "ny_bottle_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Giant slide climb that tops out on the ridge trail to summit"
+  },
+  {
+   "id": "ny_bottleneck",
+   "summits": false,
+   "confidence": "low",
+   "reason": "5.5 rock line on a Giant cliff/slide; likely not a summit finish"
+  },
+  {
+   "id": "ny_eagle_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Giant slide that joins the trail to the summit"
+  },
+  {
+   "id": "ny_east_face_cirque_several_routes_for_the_explorer",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Explorer cliff routes in the east-face cirque; not a defined summit line"
+  },
+  {
+   "id": "ny_giant_mountain_ridge_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Ridge Trail to the summit"
+  },
+  {
+   "id": "ny_gothics_2_four_rings_of_saturn",
+   "summits": false,
+   "confidence": "low",
+   "reason": "3-pitch WI4 ice flow; crag ice"
+  },
+  {
+   "id": "ny_gothics_2_north_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "366 m north-face snow/ice slide topping on the summit ridge"
+  },
+  {
+   "id": "ny_gothics_2_titan",
+   "summits": false,
+   "confidence": "high",
+   "reason": "18 m WI5- single pitch"
+  },
+  {
+   "id": "ny_gothics_arch",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Rock route on a feature (the Arch), not a summit line"
+  },
+  {
+   "id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail to the summit"
+  },
+  {
+   "id": "ny_original_route",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Gothics slide/slab climb topping on the summit ridge"
+  },
+  {
+   "id": "ny_rainbow_slide_over_the_rainbow",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Rainbow Slide climb topping near the summit"
+  },
+  {
+   "id": "ny_sagrada_familia",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Long slab route on Gothics south face to the summit ridge"
+  },
+  {
+   "id": "ny_south_face_gothics_direct",
+   "summits": true,
+   "confidence": "low",
+   "reason": "South Face slab direct to the summit ridge"
+  },
+  {
+   "id": "ny_takillya_sunrise",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Long slab route on Gothics to the summit ridge"
+  },
+  {
+   "id": "ny_grace_peak_dix_range_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Herd path to the summit"
+  },
+  {
+   "id": "ny_gray_peak_via_lake_tear_of_the_clouds",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Herd path to the summit"
+  },
+  {
+   "id": "ny_hough_peak_dix_range_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Herd path to the summit"
+  },
+  {
+   "id": "ny_iroquois_peak_via_algonquin_peak",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Herd path to the summit"
+  },
+  {
+   "id": "ny_lower_wolfjaw_khyber_s_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "610 m slide ice climb reaching the upper mountain/summit ridge"
+  },
+  {
+   "id": "ny_lower_wolfjaw_wedge_brook_and_range_trail_from_st_huberts",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail to the summit"
+  },
+  {
+   "id": "ny_macomb_mountain_macomb_slide",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Slide plus herd path to the summit"
+  },
+  {
+   "id": "ny_mount_colvin_gill_brook_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_mount_emmons_seward_range_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_mount_haystack_phelps_trail_from_the_garden",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_mount_marcy_van_hoevenberg_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_mount_marshall_herbert_brook_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_mount_redfield_uphill_brook_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_mount_skylight_via_mount_marcy",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_california_flake",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Single rock climb on the Colden cliffs (Avalanche Lake)"
+  },
+  {
+   "id": "ny_mt_colden_lake_arnold_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail to the summit"
+  },
+  {
+   "id": "ny_southeast_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Colden slide that tops out near the summit"
+  },
+  {
+   "id": "ny_trap_dike_summer",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trap Dike plus slide finishes on Colden summit"
+  },
+  {
+   "id": "ny_unknown_project",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Unknown project placeholder"
+  },
+  {
+   "id": "ny_wine_bottle_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Colden slide climb; assumed to reach the summit ridge"
+  },
+  {
+   "id": "ny_nipple_top_elk_pass_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail to the summit"
+  },
+  {
+   "id": "ny_nipple_top_nipple_top_slide",
+   "summits": true,
+   "confidence": "low",
+   "reason": "1021 m slide climb toward the summit"
+  },
+  {
+   "id": "ny_nye_mountain_via_indian_pass_brook",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_panther_peak_panther_brook_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_phelps_mountain_phelps_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_open_project",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Open project placeholder"
+  },
+  {
+   "id": "ny_porter_mountain_cascade_mountain_trail_to_porter_spur",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_rocky_peak_ridge_via_giant_mountain",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_saddleback_mountain_ore_bed_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_santanoni_peak_santanoni_express",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_sawteeth_weld_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_seward_mountain_seward_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_seymour_mountain_ward_brook_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_south_dix_dix_range_herd_path",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_street_mountain_via_indian_pass_brook",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_table_top_mountain_herd_path_from_the_van_hoevenberg_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_upper_wolfjaw_mountain_wedge_brook_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail/herd path to the summit"
+  },
+  {
+   "id": "ny_whiteface_chiller_pillar",
+   "summits": false,
+   "confidence": "high",
+   "reason": "1-pitch WI4 crag ice"
+  },
+  {
+   "id": "ny_whiteface_polar_soldier",
+   "summits": false,
+   "confidence": "high",
+   "reason": "1-pitch WI4 crag ice"
+  },
+  {
+   "id": "ny_whiteface_wilmington_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Wilmington Trail to the summit"
+  },
+  {
+   "id": "ny_perilous_journey",
+   "summits": false,
+   "confidence": "high",
+   "reason": "14 m crag route"
+  },
+  {
+   "id": "ny_ranger_danger",
+   "summits": false,
+   "confidence": "high",
+   "reason": "12 m crag route"
+  },
+  {
+   "id": "ny_the_hole_lizard_head_variation",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Short crag variation (15 m)"
+  },
+  {
+   "id": "ny_the_wright_crack",
+   "summits": false,
+   "confidence": "high",
+   "reason": "20 m crag route"
+  },
+  {
+   "id": "ny_the_wright_wrong_chimney",
+   "summits": false,
+   "confidence": "high",
+   "reason": "15 m crag chimney"
+  },
+  {
+   "id": "ny_wright_peak_wright_peak_spur_trail_from_algonquin_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Spur trail to the summit"
+  },
+  {
+   "id": "or_east_side_2_black_spider_fric_amos",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Black Spider line; normal finish joins Wy'East to the summit"
+  },
+  {
+   "id": "or_east_side_2_black_spider_three_little_monkeys_burkhardt_getlin",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Black Spider line; normal finish joins Wy'East to the summit"
+  },
+  {
+   "id": "or_east_side_2_newton_clark_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Newton Clark Headwall summit route"
+  },
+  {
+   "id": "or_east_side_2_wy_east",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Wy'East to the summit"
+  },
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard South Side route to the summit"
+  },
+  {
+   "id": "or_north_side_cathedral_ramp",
+   "summits": true,
+   "confidence": "low",
+   "reason": "North-side ice/snow route to the upper mountain"
+  },
+  {
+   "id": "or_north_side_cooper_spur",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Cooper Spur to the summit"
+  },
+  {
+   "id": "or_north_side_eliot_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Eliot Glacier Headwall to the summit"
+  },
+  {
+   "id": "or_north_side_north_face_left_gully",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Face gully to the summit"
+  },
+  {
+   "id": "or_north_side_north_face_right_gully",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Face gully to the summit"
+  },
+  {
+   "id": "or_north_side_ravine",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Short 2-pitch ice/mixed ravine line (122 m); no summit indicated"
+  },
+  {
+   "id": "or_north_side_sunshine_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Sunshine Route to the summit"
+  },
+  {
+   "id": "or_south_side_devil_s_kitchen_headwall_dkh_left_variation",
+   "summits": true,
+   "confidence": "low",
+   "reason": "DKH variation reaching the summit ridge"
+  },
+  {
+   "id": "or_south_side_devil_s_kitchen_headwall_dkh_right_variation",
+   "summits": true,
+   "confidence": "low",
+   "reason": "DKH variation reaching the summit ridge"
+  },
+  {
+   "id": "or_south_side_east_crater_wall_dkh_v4",
+   "summits": true,
+   "confidence": "low",
+   "reason": "DKH variation to the crater rim/summit"
+  },
+  {
+   "id": "or_south_side_flying_buttress_dkh_v3",
+   "summits": true,
+   "confidence": "low",
+   "reason": "DKH variation to the summit ridge"
+  },
+  {
+   "id": "or_south_side_icefall_chute_boy_scouts_chute",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Chute from the crater to the summit ridge"
+  },
+  {
+   "id": "or_south_side_men_of_steel",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Top joins Wy'East, which leads to the summit"
+  },
+  {
+   "id": "or_south_side_steel_cliff_south_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Steel Cliff face joining Wy'East to the summit"
+  },
+  {
+   "id": "or_south_side_west_crater_rim_route_wcr",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Crater Rim route to the summit"
+  },
+  {
+   "id": "or_west_side_3_cathedral_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West-side summit route"
+  },
+  {
+   "id": "or_west_side_3_leuthold_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West-side summit route"
+  },
+  {
+   "id": "or_west_side_3_reid_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West-side summit route"
+  },
+  {
+   "id": "or_west_side_3_sandy_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West-side summit route"
+  },
+  {
+   "id": "or_west_side_3_yocum_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Yocum Ridge tops out on the summit"
+  },
+  {
+   "id": "or_broken_top_2_full_richardson",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Climb continues to the summit pitches"
+  },
+  {
+   "id": "or_broken_top_nine_o_clock_gully",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Gully tops out at the crater rim, not the summit pinnacle"
+  },
+  {
+   "id": "or_eleven_o_clock_gully",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Gully to the crater rim; used as a descent"
+  },
+  {
+   "id": "or_high_noon_3",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Alpine route to the summit"
+  },
+  {
+   "id": "or_northwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northwest Ridge to the summit"
+  },
+  {
+   "id": "or_middle_sister_north_ridge_hayden_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Summit route"
+  },
+  {
+   "id": "or_middle_sister_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Summit route"
+  },
+  {
+   "id": "or_mt_bachelor_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Trail to the summit"
+  },
+  {
+   "id": "or_center_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit pinnacle"
+  },
+  {
+   "id": "or_jefferson_park_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit pinnacle"
+  },
+  {
+   "id": "or_mt_jefferson_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit pinnacle"
+  },
+  {
+   "id": "or_mt_jefferson_southwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit pinnacle"
+  },
+  {
+   "id": "or_mt_jefferson_whitewater_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit pinnacle"
+  },
+  {
+   "id": "or_north_milk_creek_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit pinnacle"
+  },
+  {
+   "id": "or_south_ridge_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit pinnacle"
+  },
+  {
+   "id": "or_mt_mcloughlin_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Summit route"
+  },
+  {
+   "id": "or_h_mt_thielsen_east_face_aka_brainless_child_tyler_adams_memorial_rout",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Big face route to the summit"
+  },
+  {
+   "id": "or_h_mt_thielsen_northeast_buttress_mclaughlin_memorial_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Finishes on the summit block"
+  },
+  {
+   "id": "or_h_mt_thielsen_northwest_arete",
+   "summits": false,
+   "confidence": "low",
+   "reason": "37 m single-pitch arete; not a summit route"
+  },
+  {
+   "id": "or_h_mt_thielsen_western_gulch",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Gulch ice/snow route to the summit"
+  },
+  {
+   "id": "or_partly_void_mostly_stars",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Alpine route on Thielsen; assumed to the summit"
+  },
+  {
+   "id": "or_west_ridge_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard West Ridge to the summit"
+  },
+  {
+   "id": "or_north_ridge_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Ridge route to the summit"
+  },
+  {
+   "id": "or_southeast_spur",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Ridge route to the summit"
+  },
+  {
+   "id": "or_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Ridge route to the summit"
+  },
+  {
+   "id": "or_north_sister_2_east_buttress",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Summit route"
+  },
+  {
+   "id": "or_north_sister_2_kids",
+   "summits": false,
+   "confidence": "low",
+   "reason": "2-pitch 61 m ice/mixed line; not a summit route"
+  },
+  {
+   "id": "or_north_sister_2_thayer_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Headwall to the summit"
+  },
+  {
+   "id": "or_north_sister_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_south_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_west_face_right",
+   "summits": true,
+   "confidence": "low",
+   "reason": "West face route to the summit"
+  },
+  {
+   "id": "or_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_old_crater_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_south_sister_2_north_face_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_south_sister_2_north_face_of_the_northwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_south_sister_2_silver_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_south_sister_prouty_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_south_sister_south_side_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Route to the summit"
+  },
+  {
+   "id": "or_south_ridge_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the summit"
+  },
+  {
+   "id": "ut_stolen_chimney",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Climbs to the Ancient Art summit"
+  },
+  {
+   "id": "ut_the_hippie_route_north_summit",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Goes to the North Summit, not the main corkscrew summit"
+  },
+  {
+   "id": "ut_the_wafer",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Tower route; assumed to the top"
+  },
+  {
+   "id": "ut_north_northeast",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_west_face_4",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_black_sun",
+   "summits": true,
+   "confidence": "high",
+   "reason": "4-pitch tower route to the top"
+  },
+  {
+   "id": "ut_burning_inside",
+   "summits": true,
+   "confidence": "high",
+   "reason": "4-pitch tower route to the top"
+  },
+  {
+   "id": "ut_discrete_start_to_black_sun",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Start variation to Black Sun"
+  },
+  {
+   "id": "ut_hollowpoint",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_kor_ingalls_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard route to the top"
+  },
+  {
+   "id": "ut_no_other_options",
+   "summits": false,
+   "confidence": "high",
+   "reason": "V1 boulder problem at the base"
+  },
+  {
+   "id": "ut_north_chimney",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_north_face_2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_north_face_original_pitch_1",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Single original first pitch"
+  },
+  {
+   "id": "ut_sacred_ground",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_stardust_cowboy",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_the_arrowhead",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_the_bjornstad_traverse_the_girdle_of_castleton_tower",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Girdle traverse around the tower, not to the top"
+  },
+  {
+   "id": "ut_the_ivory_tower",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  },
+  {
+   "id": "ut_west_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tower route to the top"
+  }
+ ],
+ "areas": [
+  {
+   "area": "co_quandary_peak_routes",
+   "peak": "co_quandary_peak",
+   "keepArea": false,
+   "reason": "Mixed crag area of north-side buttress rock routes and short ice flows; most do not reach the summit"
+  },
+  {
+   "area": "co_golden_goat_buttress",
+   "peak": "co_quandary_peak",
+   "keepArea": false,
+   "reason": "Buttress crag; routes end at the outcrop top"
+  },
+  {
+   "area": "co_lower_blue_lake_slab",
+   "peak": "co_quandary_peak",
+   "keepArea": false,
+   "reason": "Tiny ice slab by Lower Blue Lake"
+  },
+  {
+   "area": "co_mccullough_gulch",
+   "peak": "co_quandary_peak",
+   "keepArea": false,
+   "reason": "Gulch ice area; some long couloirs reach the east ridge but many are 1-2 pitch walk-offs"
+  },
+  {
+   "area": "co_north_star",
+   "peak": "co_quandary_peak",
+   "keepArea": false,
+   "reason": "Ice/mixed crag; walk off or rappel"
+  },
+  {
+   "area": "co_quandary_peak_standard_route",
+   "peak": "co_quandary_peak",
+   "keepArea": true,
+   "reason": "Standard East Ridge to the summit"
+  },
+  {
+   "area": "or_east_side_2",
+   "peak": "or_a_mt_hood",
+   "keepArea": true,
+   "reason": "East-side faces of Hood; routes finish on the summit"
+  },
+  {
+   "area": "or_south_side",
+   "peak": "or_a_mt_hood",
+   "keepArea": true,
+   "reason": "South-side summit routes and DKH variations"
+  },
+  {
+   "area": "or_north_side",
+   "peak": "or_a_mt_hood",
+   "keepArea": true,
+   "reason": "North-side summit routes (Cooper Spur, Sunshine, gullies)"
+  },
+  {
+   "area": "or_west_side_3",
+   "peak": "or_a_mt_hood",
+   "keepArea": true,
+   "reason": "West-side summit routes (Yocum, Leuthold, Reid)"
+  }
+ ]
+}

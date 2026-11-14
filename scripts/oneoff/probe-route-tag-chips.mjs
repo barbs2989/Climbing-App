@@ -55,11 +55,9 @@ for (const id of IDS) {
 // (FEATURE_TAGS was checked here too until the feature chips were removed, 2026-11-05.)
 const { LIST_TAGS } = await import("file://" + path.join(ROOT, "lib", "routeTags.js"));
 let bad = 0;
-for (const [table, defs] of [["LIST_TAGS", LIST_TAGS]]) {
-  for (const [name, def] of Object.entries(defs)) {
-    const fg = C[def.color], bg = C[def.color + "Bg"];
-    if (!fg || !bg) { console.log(`  FAIL ${table}.${name}: colour ${JSON.stringify(def.color)} -> fg=${fg} bg=${bg}`); bad++; }
-  }
+for (const [name, def] of Object.entries(LIST_TAGS)) {
+  const fg = C[def.color], bg = C[def.color + "Bg"];
+  if (!fg || !bg) { console.log(`  FAIL LIST_TAGS.${name}: colour ${JSON.stringify(def.color)} -> fg=${fg} bg=${bg}`); bad++; }
 }
 console.log(`\ncolour resolution: ${Object.keys(LIST_TAGS).length} list entries, ${bad} unresolved`);
 if (bad) process.exit(1);

@@ -52,7 +52,7 @@ B=$(sum $GD); perl -0pi -e "s|(actions/checkout\@$SHA) # v7\.0\.1|\$1|" $GD
 run | grep -E "FAIL|label" | head -2; restore
 
 echo "=========== CASE 10: actions/cache/restore by tag (outside FLOORS, still checked)"
-B=$(sum $DP); perl -0pi -e "s|actions/cache/restore\@$SHA # v4\.3\.0|actions/cache/restore\@v4|" $DP
+B=$(sum $DP); perl -0pi -e "s|actions/cache/restore\@$SHA # v6\.1\.0|actions/cache/restore\@v6|" $DP
 [ "$B" = "$(sum $DP)" ] && echo "  !! EDIT DID NOT LAND" || echo "  edit landed"
 run | grep -E "FAIL|not a commit SHA" | head -2; restore
 
