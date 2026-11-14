@@ -246,6 +246,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     "← Crews" row. The Crew tab itself is crews only; tapping the Crews nav resets `crewView`.**
     Crews is *not* captured: `crewView` defaults to it, so it is the `Crew` screen already
     captured, and that equality is asserted as a round-trip rather than dodged.
+    **Each crew there is one compact card since 2026-11-14 ("guided, not gated"):** cover, who is
+    in, a 7-step strip, one *Next step* button, a row per step and *Crew chat* / *⋯ More*. The
+    roster, the days, the meet-up and the rest open in a portalled step sheet (`lib/CrewStepSheet.jsx`,
+    a `role="dialog"` with a ✕ *Close*), so a walk that needs one opens it by its row
+    (`button[data-crew-step="crew"|"day"|"meet"|"ready"|"gear"|"itin"]`) and closes it before
+    reading the card again. There is no *View plan* any more.
   - **GROUPS IS A SCREEN OF ITS OWN (2026-10-14, Step 2 of the Facebook-style groups plan): NAV id
     `groups`, `bar:false` like Profile, opened by the Menu's "Groups" tile.** So it is in every
     guard's tab list (`check:screen-lists` demanded all twelve), and `MENU_SCREENS` maps it —
@@ -802,6 +808,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     roster by its `crew · N member` heading, which renders only behind each card's *View plan ▾*; two
     runs died "expected exactly 1 crew member who is not You, found 0" — reading exactly like a
     missing roster. `openMateProfile` clicks every *View plan ▾* first; the next run passed all 42.
+  - **There is no *View plan* since 2026-11-14 ("guided, not gated"): the roster is in each card's Crew
+    sheet.** The compact card names who is in ("You, Robin") and carries *Crew chat* itself, so
+    `check:signed-in`'s Crew:detail capture opens nothing (a sheet would put a dialog over the card the
+    chat click reads). `openMateProfile` opens each card's Crew step (`button[data-crew-step="crew"]`)
+    in turn, reads the `crew · N member` roster inside the sheet, closes it (`aria-label="Close"`), and
+    only after reading every card reopens the one holding the mate and clicks the row. The row closes
+    the sheet before opening the profile, so the profile is the top dialog.
   - **FIVE of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
