@@ -13,11 +13,16 @@ permissions:
   contents: read
 
 jobs:
-  # Its own job, not a step in `build`: this one needs the network and a token, and a
-  # failure should read as "Migration numbers are unclaimed" in the checks list rather than
-  # hiding inside a build log. It is deliberately NOT in `npm run build` — a local build
-  # must never depend on GitHub being reachable.
-  migration-claims:
+  # The three static side guards share ONE job (owner, 2026-11-13). They used to be three jobs,
+  # each paying checkout + setup + `npm ci` for a few seconds of work, and every PR push started
+  # 20 jobs against the free plan's ~20-runner pool -- measured, these jobs ran ~0.4 min and
+  # waited ~26 min for a runner, and the required `build` waited in the same queue. Each guard is
+  # still its own named STEP, and `if: success() || failure()` runs every step even after an
+  # earlier one fails, so one failure never hides another. None of them is in `npm run build`:
+  # migration-claims needs the network and a token, and a local build must never depend on
+  # GitHub being reachable.
+  side-guards:
+    name: Migration claims, overlay absence, merge survival
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -25,56 +30,41 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          # The script diffs this branch's migrations against the base branch, so it needs
-          # more than the single squashed commit a shallow clone provides.
+          # Both migration-claims (diffs this branch's migrations against the base) and
+          # merge-survival (diffs both parents against their merge base) need history that a
+          # shallow clone does not have.
           fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+
       - name: Migration numbers are unclaimed
         run: node scripts/check-migration-claims.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  overlay-absence:
-    # Static — no browser, no database, no secrets — but ~10s, nearly all of it Babel parsing two
-    # 400kB JSX files. `maskComments` needs a real parse because POSITION is the question: a regex
-    # comment-strip ate real code when this repo tried it. A build-chain guard is paid by every
-    # author on every build, so that cost belongs here rather than in `npm run build`.
-    #
-    # What it protects: two overlays shipped telling a climber they had nothing when a read had
-    # merely failed (#1276 Inbox, #1287 friends list). The other nine were then read and explained.
-    # All of that is a SNAPSHOT — a new overlay with a DB-backed empty state would be caught only
-    # if somebody remembered to re-run a probe in scripts/oneoff/, which nothing executes.
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
+      # Static -- no browser, no database, no secrets -- but ~10s, nearly all of it Babel parsing
+      # two 400kB JSX files. `maskComments` needs a real parse because POSITION is the question: a
+      # regex comment-strip ate real code when this repo tried it. A build-chain guard is paid by
+      # every author on every build, so that cost belongs here rather than in `npm run build`.
+      #
+      # What it protects: two overlays shipped telling a climber they had nothing when a read had
+      # merely failed (#1276 Inbox, #1287 friends list). The other nine were then read and
+      # explained. All of that is a SNAPSHOT -- a new overlay with a DB-backed empty state would be
+      # caught only if somebody remembered to re-run a probe in scripts/oneoff/, which nothing
+      # executes.
       - name: No overlay reads a failed read as an empty account
+        if: success() || failure()
         run: node scripts/check-overlay-absence.mjs
 
-  merge-survival:
-    # A `pull_request` checkout IS merge(head, base), so HEAD here is exactly the merge this
-    # guard exists to interrogate: did resolving it silently delete something either side had
-    # added? Git mis-merges this repo's dense single-line files without conflicting, and #482
-    # and #776 both shipped that way — clean merge, green CI, merged work quietly un-shipped.
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          # It diffs both parents against their merge base; a shallow clone has neither.
-          fetch-depth: 0
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-          cache: npm
+      # A `pull_request` checkout IS merge(head, base), so HEAD here is exactly the merge this
+      # guard exists to interrogate: did resolving it silently delete something either side had
+      # added? Git mis-merges this repo's dense single-line files without conflicting, and #482
+      # and #776 both shipped that way -- clean merge, green CI, merged work quietly un-shipped.
       - name: A merge kept everything both sides added
+        if: success() || failure()
         run: node scripts/check-merge-survival.mjs
 
   build:

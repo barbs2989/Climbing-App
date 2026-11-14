@@ -1,0 +1,30 @@
+{
+  "key": "price-south-ridge",
+  "question": "Is there a documented route up Mount Price's south ridge or south/southeast side, so the empty row wa_mount_price_south_ridge should be kept, renamed or deleted?",
+  "answer": "Yes, one south-side line is documented, but not under the name South Ridge. It is the Southeast Route: from the closed continuation of the Middle Fork road past the Dingford Creek trailhead, about 4 miles east to the short spur to the Goldmyer hot-springs parking (about 1,800 ft), then north / north-northwest onto a north-south spur ridge, forest to about 4,400 ft where it opens to talus, up the talus to the east-west crest, then west along the crest to the summit. It has its own dedicated route page and a 2001 trip report; the line lies outside the Alpine Lakes Wilderness (the boundary follows the crest). Nothing calls it a south ridge; the east-west crest is the ridge you gain, and one climber's report says the south side of that crest is too cliffy, so the crest is taken on its north side. All 7 logged ascents in the packet start at the Dingford Creek trailhead (about 47.517,-121.454) and use the Hester Lake / northeast or the west-ridge-to-Price-Lake lines; none starts near the Goldmyer spur, so no track exists for the southeast line. Limits: the route page and Beckey were not fetchable (403 / lending-only), so grade, gain and times rest on search-snippet text plus the earlier pass's harvest; grade Class 3 and gain figure are not re-confirmed.",
+  "recommendation": "Rename wa_mount_price_south_ridge to 'Southeast Route' (discipline scrambling) and fill it with the proposed text; do not keep the name South Ridge. If the owner prefers only fully verified rows, delete it instead; deletion loses a real, separately documented line. No ascent id summits by this line, so attach no track.",
+  "confidence": "medium",
+  "proposed": {
+    "rename": "Southeast Route",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "approach": "Walk or bike the closed continuation of the Middle Fork road east from the Dingford Creek trailhead for about 4 miles, to the short side road to the hot-springs parking area at roughly 1,800 ft. Leave the road there and head north, bending north-northwest onto the north-south spur ridge that rises from it.",
+    "beta": "Follow the spur through forest to about 4,400 ft, where the trees give way to an open talus slope. Climb the talus, or its edge, to the east-west crest near 5,100 ft, then turn west along the crest, staying on its forested north side because the south face is cliffy. Expect rock steps and towers to be passed or skirted, with hands needed in places. Route-finding is the main challenge.",
+    "stats": "About 3,700 ft of gain; 2 to 3 miles off-trail beyond the road walk, plus about 8 miles on the road round trip. Allow 3 to 5 hours up from the spur. Lies outside the Alpine Lakes Wilderness.",
+    "season": "Best from mid-July through October, when the brush is dry and snow is off the crest. Snow in November to May makes the talus and crest slow and avalanche-prone on the talus slope, though the road walk stays open for foot or bike travel.",
+    "hazards": "Dense brush on the spur; steep talus; exposed crest with loose rock steps; cliffs on the south side of the crest; long road walk makes a late descent in the dark likely; snow-loaded talus in winter and spring.",
+    "track": "none: no logged ascent follows this line"
+  },
+  "evidence": [
+    "https://www.summitpost.org/southeast-route/336534 and https://summitpost.org/mt-price-via-southeast-route/169747 (via search snippets; direct fetch 403) - dedicated Southeast route page: closed Middle Fork road 4 miles to Goldmyer spur at about 1,800 ft, north then NNW onto spur ridge, talus from about 4,400 ft, route outside the wilderness",
+    "https://www.summitpost.org/mount-price/153442 - peak page lists three ways up (Hester Lake, Southeast, Northwest); no south ridge",
+    "packets-all/wa_mount_price.json - 7 logged ascents, every start at the Dingford trailhead near 47.5173,-121.4543; none near the Goldmyer spur"
+  ],
+  "searched": [
+    "WebSearch: Mount Price Middle Fork Snoqualmie south ridge southeast route Goldmyer scramble - surfaced the Southeast route pages; no page named a south ridge; one report says the crest's south side is too cliffy",
+    "WebSearch: Mount Price southeast route 2001 Goldmyer talus east-west crest - confirmed the line's description; grade and date not shown",
+    "WebFetch summitpost southeast route page - 403, not worked around",
+    "Packet tracks: examined start points and shapes of all 7 ascents (2780554, 2330502, 2121141, 2121121, 2081787, 376045, 48341 no track) - all from Dingford; none south",
+    "Earlier owner-qs/price-stubs.json - already proposed Southeast Route; this pass confirms no south-ridge naming and no track"
+  ]
+}

@@ -25,7 +25,7 @@ const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest
 // so case 4 reproduces the shipped defect rather than something that resembles it.
 const VIEW_ALL_STYLE = 'style={{width:"100%",background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",padding:"6px 0",textAlign:"left"}}';
 const PRE_FIX_VIEW_ALL = '{mergedNotifs.length>8?<button onClick={()=>{setAlertsOpen(false);setNotifOpen(true);}} '
-  + VIEW_ALL_STYLE + '>{"View all "+mergedNotifs.length+" alerts"}</button>:null}';
+  + VIEW_ALL_STYLE + '>{"View all "+mergedNotifs.length+" notifications"}</button>:null}';   // the label's noun is today's (renamed from "alerts" 2026-11-11), so the guard's anchor still finds it
 const replaceViewAll = (s, withText) => {
   const a = s.indexOf("{(function(){/* This button LEAVES");
   if (a < 0) return s;
@@ -34,28 +34,18 @@ const replaceViewAll = (s, withText) => {
   return s.slice(0, a) + withText + s.slice(e + ":null;})()}".length);
 };
 
+// SECTION 1'S FIVE CASES ARE GONE (owner, 2026-11-11): Home's "Nothing needs you right now" card
+// was removed, so there is no empty-state gate left to fall short of the UNFINISHED BUSINESS list.
+// What they proved (a gate covering every source the list builds from) has no subject any more.
 const CASES = [
-  {
-    name: "reqn-misses-db-crew-invites",
-    why: "REAL DEFECT 1: Home listed a DB crew invite and its gate did not count it",
-    edit: (s) => s.replace("const reqN=_pendingForMe;",
-      "const reqN=friendReqIn.length+crewReqIn.length+groupReqs.length+crewJoinIn.length;"),
-    expect: /does not test it.*|myCrewInvitesQ/,
-  },
-  {
-    name: "gate-misses-day-confirmations",
-    why: "REAL DEFECT 2: a crew waiting on YOU to confirm a day was listed and not counted",
-    edit: (s) => s.replace("&&!crewsNeedingMyDay.length", ""),
-    expect: /crewsNeedingMyDay/,
-  },
   {
     name: "bell-counts-what-the-panel-does-not-list",
     file: MAIN,
     why: "REAL DEFECT 3: the badge counted crew invites and group requests the panel never renders",
-    edit: (s) => s.replace("{(_notifRequests.length+mergedNotifs.filter(n=>!n.read).length)>0?",
-      "{(friendReqIn.length+crewReqIn.length+groupReqs.length+mergedNotifs.filter(n=>!n.read).length)>0?")
-      .replace("{_notifRequests.length+mergedNotifs.filter(n=>!n.read).length}",
-        "{friendReqIn.length+crewReqIn.length+groupReqs.length+mergedNotifs.filter(n=>!n.read).length}"),
+    edit: (s) => s.replace("{(_notifRequests.length+_alerts.notifN)>0?",
+      "{(friendReqIn.length+crewReqIn.length+groupReqs.length+_alerts.notifN)>0?")
+      .replace("{_notifRequests.length+_alerts.notifN}</span>",
+        "{friendReqIn.length+crewReqIn.length+groupReqs.length+_alerts.notifN}</span>"),
     expect: /does not count the array NotifPanel renders/,
   },
   {
@@ -65,29 +55,6 @@ const CASES = [
     edit: (s) => s.replace("<NotifPanel requests={_notifRequests}",
       "<NotifPanel requests={friendReqIn.map(_reqClimber).filter(Boolean)}"),
     expect: /is an expression rather than a named array/,
-  },
-  {
-    name: "a-NEW-source-added-to-the-list-only",
-    file: MAIN,
-    why: "the rule must generalise past the three known instances — a source nobody has thought of yet",
-    edit: (s) => s.replace("var unfinished=[];",
-      'var unfinished=[];pendingGearLoans.forEach(function(g){unfinished.push({icon:"crews",text:"Gear loan",go:function(){}});});'),
-    expect: /pendingGearLoans/,
-  },
-  {
-    name: "SILENT-source-added-to-BOTH",
-    why: "MUST PASS — adding a source to the list and to the gate is ordinary correct work",
-    edit: (s) => s
-      .replace("var unfinished=[];",
-        'var unfinished=[];pendingGearLoans.forEach(function(g){unfinished.push({icon:"crews",text:"Gear loan",go:function(){}});});')
-      .replace("{(!reqN&&", "{(!reqN&&!pendingGearLoans.length&&"),
-    expect: null,
-  },
-  {
-    name: "SILENT-gate-covers-more-than-the-list",
-    why: "MUST PASS — the rule is one-directional; a gate may test something the list does not build from",
-    edit: (s) => s.replace("{(!reqN&&", "{(!reqN&&!somethingElseEntirely.length&&"),
-    expect: null,
   },
   {
     name: "view-all-counted-only-the-notifs",
@@ -111,7 +78,7 @@ const CASES = [
   {
     name: "SILENT-label-reworded",
     why: "MUST PASS — a guard pinned to one phrasing forbids improving the copy",
-    edit: (s) => s.replace('{"View all "+_all+" alerts"}', '{"See all "+_all+" alerts"}'),
+    edit: (s) => s.replace('{"View all "+_all+" notifications"}', '{"See all "+_all+" notifications"}'),
     expect: null,
   },
   {

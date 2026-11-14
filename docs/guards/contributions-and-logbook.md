@@ -100,6 +100,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   bare `setFixOpenSection("key")`, because that is a pencil that skips the lock. The first run after
   the rewrite reported "found only 0 edit pencil(s) — the scan broke", which is the fail-closed
   shape working as intended.
+- **`check:facts-pencil-open`** (2026-11-11) holds that a pencil covering SEVERAL fields is not one
+  field's pencil. The ROUTE FACTS card pencil was `openFix("grade")`, a crag route's grade is always
+  HIGH (0406), so the card opened the Flag sheet on every crag route while its Location and Pitches
+  were empty, and `HEAD_KEYS` put the grade's *High · locked* on the card heading. It checks
+  `lib/firstEditable.js` with 8 behaviour cases (empty before medium, never a locked or unknown key
+  while an open one exists, all-locked returns the first key). It also checks the source: the card
+  pencil goes through `factsPencilKey`, `CragFactSection` through `firstEditable`, `HEAD_KEYS` has no
+  ROUTE FACTS / TECHNICAL STATS, and TechStats draws the grade's own `ConfChip`. 4 injections put each
+  pre-fix shape back and must be caught. **Cannot see:** whether the editor actually scrolls to the
+  chosen field (verified by hand on a sport route, Coexistence 5.12b). Also out of reach: a pencil
+  added elsewhere that covers several fields but passes one key; route it through `firstEditable` too.
+  **Non-finding, measured 2026-11-11:** `route_field_confidence` had no rows, so no manual "high"
+  override locks an empty field, even though `_route_field_level_for` reads the override before the
+  empty test.
 - **`check:editable-coverage`** asserts that every `routes` column in the schema snapshot either has
   an editor (a `contribution_fields` row names it as a `column_name`) or is declared in the script's
   `NEVER` map with a reason a reviewer can check (identity, derived numbers, owner-curated lists,

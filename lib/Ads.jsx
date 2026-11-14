@@ -1,10 +1,14 @@
 // ADS ON ROUTE PAGES, DESKTOP ONLY (owner 2026-11-04: "i would also like to have ads on route pages.
 // So as you scroll down, ads will be on the left panel and right panels" — then "go" to ship it).
 //
-// Two slots, one each side of a route page's column: a 160×600 skyscraper in the SIDEBAR under Your
-// crews, and a 300×600 half-page in the RAIL under the route map. Both panels follow the page's
-// scroll (useRailFollow — the owner's "one consistent scroll bar"): the nav and the map slide away
-// with the page, the ad reaches the panel's top and stays in view. The phone never draws an ad.
+// Two slots, one each side of the page column: a 160×600 skyscraper in the LEFT PANEL beside the
+// centred column (SideAd; the left panel is as wide as the rail since 2026-11-11, "equal space"; it is a
+// fixed box under the header, at AD_SIDE_MIN px and up), and a 300×600
+// half-page in the RAIL, last in its column. The rail follows the page's scroll (useRailFollow — the
+// owner's "one consistent scroll bar"): the widgets or the map slide away, the ad reaches the panel's
+// top and stays in view. The phone never draws an ad.
+// BOTH SIDE PANELS ARE FUTURE AD SPACE (owner 2026-11-11): App decides per page which slots draw
+// (`_adPage` in ClimbMatch.jsx; route pages only for now), so adding a page is one line there.
 //
 // THE SLOTS ARE OFF UNTIL A PUBLISHER ID IS SET. There is no ad account yet; Google AdSense is the
 // network wired here (the only one a static Pages site can carry with no server). The build reads
@@ -16,6 +20,7 @@
 // LOCAL PREVIEW: the dev server with ?ads=preview draws labelled grey boxes in the two slots, the
 // mock-up the owner reviewed the placement on. Never in a build (import.meta.env.DEV).
 import { useEffect, useRef } from "react";
+import { ZOOM } from "./wideLayout.js";
 
 export const ADS_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || "";
 export const ADS_ON = !!ADS_CLIENT;
@@ -52,14 +57,18 @@ function AdSlot({ w, h, slot, note }) {
   return <ins ref={ref} className="adsbygoogle" style={{ display: "inline-block", width: w, height: h }} data-ad-client={ADS_CLIENT} data-ad-slot={slot} />;
 }
 
-/** The sidebar's slot, under Your crews on a route page. */
-export function SidebarAd() {
-  return <div data-cm-ad="" style={{ marginTop: 14, display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}><div style={{ width: 160 }}><Label /></div><AdSlot w={160} h={600} slot={SLOT_SIDE} note="stays in view" /></div>;
+/** The left panel's slot (lib/wideLayout.js wideLeft): last in the panel's column, under whatever a page
+ *  put there (the area page's sub-area list), against the column's side as it was when it was a fixed box
+ *  of its own. Zoomed back to 1, as RailAd is, so the unit is drawn at the 160×600 the network sells. */
+export function SideAd() {
+  return <div data-cm-ad="" style={{ marginTop: 2, alignSelf: "flex-end", width: 160, zoom: 1 / ZOOM }}><Label /><AdSlot w={160} h={600} slot={SLOT_SIDE} note="stays in view" /></div>;
 }
 
-/** The rail's slot, under the route map on a route page. */
+/** The rail's slot: last in the rail's column (under the route map, or under the widgets). The rail's
+ *  column is drawn at the website's ZOOM, which drew this 300px unit 330px wide, past the 300px rail
+ *  (a sideways scrollbar under it) and at a size the network does not sell: it is zoomed back to 1. */
 export function RailAd() {
-  return <div data-cm-ad="" style={{ marginTop: 2 }}><Label /><AdSlot w={300} h={600} slot={SLOT_RAIL} note="stays in view" /></div>;
+  return <div data-cm-ad="" style={{ marginTop: 2, zoom: 1 / ZOOM }}><Label /><AdSlot w={300} h={600} slot={SLOT_RAIL} note="stays in view" /></div>;
 }
 
 /** ONE SCROLLBAR (owner 2026-11-04: "i don't want a seperate scroll bar … it needs to be one
@@ -92,14 +101,10 @@ export function useRailFollow(ref) {
   }, [ref]);
 }
 
-/** A panel's column that follows the page (useRailFollow). The rail's widgets, the route page's rail
- *  (a portal target the route page fills with the map and tracks) and, on a route page, the sidebar. */
+/** A panel's column that follows the page (useRailFollow): the route page's rail (a portal target the
+ *  route page fills with the map and tracks). The widget rail (WideRail) follows by the same hook. */
 export function FollowColumn({ children, gap }) {
   const ref = useRef(null);
   useRailFollow(ref);
   return <div ref={ref} style={{ display: "flex", flexDirection: "column", gap: gap == null ? 14 : gap }}>{children}</div>;
-}
-/** The sidebar wraps its contents in a FollowColumn only when it carries an ad (`on`). */
-export function SideWrap({ on, children }) {
-  return on ? <FollowColumn gap={2}>{children}</FollowColumn> : <>{children}</>;
 }

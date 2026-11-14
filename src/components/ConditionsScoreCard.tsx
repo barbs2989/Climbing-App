@@ -1,6 +1,6 @@
 import { tx } from "../../lib/tapWords.js";
 import { C, catOf, ROUTE_GAP, DLOCALE, uTemp, uPrecip, uWind, RSL as SL, uTempN, uWindN, uImp } from "../../ClimbMatchCore.jsx";
-import { CRAG_SCORE_DISCIPLINES, OPEN_DAY, scoreForecast, starsLabel, FACTOR_LABEL, aqiCategory, WEIGHTS, clockAt } from "../../lib/conditionsScore";
+import { CRAG_SCORE_DISCIPLINES, scoreForecast, starsLabel, FACTOR_LABEL, aqiCategory, WEIGHTS, clockAt } from "../../lib/conditionsScore";
 import { useState, useEffect, useMemo } from "react";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "../../lib/CondPrefs.jsx";
 import { fetchCragForecastMeasured, fetchCragAir, fetchCragClimate, fetchAlpineSpread } from "../../lib/forecast";
@@ -79,7 +79,7 @@ interface ScoreFactor {
   want: string;
 }
 
-const _cragWx: Record<string,unknown>={},_cragAir: Record<string,unknown>={},_cragClim: Record<string,ScoreClimate>={},_cragSp: Record<string,unknown>={};
+const _cragWx: Record<string,unknown>={},_cragWxAt: Record<string,number>={},_cragAir: Record<string,unknown>={},_cragClim: Record<string,ScoreClimate>={},_cragSp: Record<string,unknown>={};
 const DIR8=["N","NE","E","SE","S","SW","W","NW"];
 const agoH=function(h: number){return h<48?h+" h ago":Math.round(h/24)+" days ago";};
 const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
@@ -100,7 +100,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     if(!hasPt||!on)return;
     if(_cragWx[ck]){setWx({data:_cragWx[ck]});return;}
     let live=true;setWx(null);
-    fetchCragForecastMeasured(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
+    fetchCragForecastMeasured(lat,lng).then(function(j){_cragWx[ck]=j;_cragWxAt[ck]=Date.now();if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
     return function(){live=false;};
   },[ck,tries]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on the crag coordinate key (ck encodes lat/lng) and retry count; on/hasPt follow the route
   useEffect(function(){
@@ -128,14 +128,12 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     return function(){live=false;};
   },[ck,hasPt,on,lat,lng]);
   useEffect(function(){setDayI(0);setHrI(null);},[route.id]);
-  const [wantDate,setWantDate]=useState<string|null>(function(){const d=OPEN_DAY.date;OPEN_DAY.date=null;return d;});
   const rk=routeRock(route);
   const aspectText=route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null;
   const score=useMemo(function(){
     if(!wx||!wx.data)return null;
     return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:aspectText,family:rk?rk.family:null,rock:rk?rk.rock:null,discipline:disc},scorePrefs(cp),undefined,aq&&aq.data?aq.data:null);
   },[wx,aq,cp,route.id,rk&&rk.family,aspectText]); // eslint-disable-line react-hooks/exhaustive-deps -- keyed on rock family and route id; lat/lng/disc/rk follow the route and rk is rebuilt each render
-  useEffect(function(){if(!wantDate||!score)return;const i=score.days.findIndex(function(d){return d.date===wantDate;});if(i>=0){setDayI(i);setHrI(null);}setWantDate(null);},[score,wantDate]);
   if(!on)return null;
   const box={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px",marginBottom:ROUTE_GAP};
   const head=<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}><CardHead style={{marginBottom:0}}>CONDITIONS SCORE</CardHead>{hasPt?<button onClick={function(){setShowPrefs(!showPrefs);}} aria-expanded={showPrefs} aria-label="Your ideal conditions" style={{minHeight:44,background:"none",border:"1px solid "+(showPrefs?C.blue:C.border),color:showPrefs?C.blue:C.textSub,borderRadius:8,padding:"5px 9px",fontSize:11.5,fontWeight:700,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:5}}><ActionIcon name="settings" size={12} color="currentColor"/>Your conditions</button>:null}</div>;
@@ -205,7 +203,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
   return <div data-conditions-score="1">
     {cur?sec("Right now",<div style={condBox}>
       {wetSand?sandWarn:dryChip}
-      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+clockHr(cur.hr)}</div></div></div>
+      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+clockHr(cur.hr)}</div></div></div>{/* IN WORDS (competitor review batch A, item 4, owner 2026-11-04): one or two sentences a climber can read without the chart — the score's own label, what holds it down (its caps), the best day of the week by the same stars — and when the forecast behind it was fetched (the forecast call's own clock, through the climber's date preference). Nothing here that the tiles below do not also say. */}{(function(){const parts: string[]=[];parts.push(starsLabel(cur.stars)+" right now"+(cur.caps.length?", held down by "+cur.caps.map(function(c: {why: string}){return c.why.charAt(0).toLowerCase()+c.why.slice(1);}).join(" and "):"")+".");let bi=-1;days.forEach(function(d,i){if(d.stars!=null&&(bi<0||(d.stars as number)>(days[bi].stars as number)))bi=i;});if(bi>=0&&days[bi].stars!=null)parts.push("Best of the week: "+dayName(days[bi],bi)+" ("+fmt(days[bi].stars)+").");const at=_cragWxAt[ck];const upd=at?new Date(at).toLocaleTimeString(DLOCALE,{hour:"numeric",minute:"2-digit"}):"";return <p style={{margin:"0 0 10px",fontSize:12.5,lineHeight:1.5,color:C.textSub}}>{parts.join(" ")}{upd?<span style={{color:C.textMuted}}>{" Updated "+upd+"."}</span>:null}</p>;})()}
       {cur.caps.length?condRow("Held down by",cur.caps.map(function(c: {why: string}){return c.why;}).join(" · "),C.amber):null}
       {condRow("Temperature",cur.temp!=null?uTemp(cur.temp)+(cur.feels!=null&&uTempN(cur.feels)!==uTempN(cur.temp)?" · feels like "+uTemp(cur.feels):""):"Not measured")}
       {condRow("Friction",cur.friction?cur.friction.label:"Not measured",cur.friction?(cur.friction.key==="crisp"?C.green:cur.friction.key==="ok"?C.text:C.amber):C.textMuted)}
@@ -217,7 +215,7 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     </div>,true):null}
     {sec("Best time to climb",<div style={box}>{head}
     {showPrefs?<div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
-      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>They change the score on every crag route and in the Best day to climb view. Also in the Menu and Settings.</div>
+      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>They change the score on every crag route. Also in the Menu and Settings.</div>
       <CondPrefsControls disc={disc}/>
     </div>:null}
     <div role="group" aria-label="Day" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:10}}>{days.map(function(d,i){const on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")} style={{flex:"0 0 58px",width:58,boxSizing:"border-box",minHeight:58,padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:11.5,fontWeight:700}}>{dayName(d,i)}</div><div style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</div><div style={{fontSize:10.5,color:C.textMuted}}>{d.hi!=null?uTemp(d.hi)+"/"+uTemp(d.lo):""}</div></button>;})}</div>
@@ -228,13 +226,13 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
     {wetTill?<div data-wet-until="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Rock likely wet until "+clockHr(wetTill.hr)+tx(": the hours before it score lower than the day. Tap one to see why.")}</div>:null}
     {dewTill&&!(wetTill&&wetTill.hr>=dewTill.hr)?<div data-dew-until="1" style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Air at its dew point until "+clockHr(dewTill.hr)+tx(": dew may dampen the rock, so earlier hours score lower than the day. Tap one to see why.")}</div>:null}
     {hrs.length?<div style={{marginBottom:10}}>
-      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>{dayI===0?"Pick an hour, rest of today ":"Pick an hour "}<span style={{textTransform:"none",letterSpacing:0,fontWeight:500}}>(daylight hours · colour is the overall score)</span></div>
+      <div style={{fontSize:10.5,fontWeight:800,color:C.label,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>{dayI===0?"Pick an hour, rest of today ":"Pick an hour "}<span style={{textTransform:"none",letterSpacing:0,fontWeight:500,color:C.textMuted}}>(daylight hours · colour is the overall score)</span></div>
       <div style={hrGrid}>{hrs.map(function(x: ScoreHour,i: number){return <button key={x.time} onClick={function(){setHrI(i);}} aria-pressed={i===selI} aria-label={clockHr(x.hr)+", overall score "+fmt(x.stars)+" stars"+(day.best&&i>=day.best.i&&i<day.best.i+3?", one of the best 3 hours":"")+(x.dryFrac!=null&&x.dryFrac<1?", rock about "+Math.round(x.dryFrac*100)+"% dry":"")+(x.precip>0?", "+uPrecip(x.precip)+" of rain":"")} style={{gridColumn:hrCol(x),boxSizing:"border-box",height:44,padding:0,borderRadius:5,cursor:"pointer",background:col(x.stars),opacity:0.6+(x.stars||0)/5*0.4,border:"2px solid "+(i===selI?C.text:"transparent")}}/>;})}</div>
       {day.best?<div aria-hidden="true" style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.slice(day.best.i,day.best.i+3).map(function(x: ScoreHour){return <div key={x.time} style={{gridColumn:hrCol(x),height:3,borderRadius:2,background:C.green}}/>;})}</div>:null}
       <div style={Object.assign({},hrGrid,{marginTop:3})}>{hrs.map(function(x: ScoreHour,i: number){const c=hrCol(x);return <div key={x.time} style={{gridColumn:c,fontSize:9.5,color:C.textMuted,textAlign:"center",whiteSpace:"nowrap"}}>{i===0||((c-1)%3===0&&c-hrCol(hrs[0])>=3)?clockHr(x.hr).replace(" ",""):""}{score.bearing!=null?<div aria-hidden="true" style={{fontSize:10,color:x.lit?C.yellow:C.textMuted}}>{x.lit?"●":"▪"}</div>:null}{hrs.some(function(y: ScoreHour){return y.precip>0;})?<div aria-hidden="true" style={{fontSize:10,color:C.blue,minHeight:13}}>{x.precip>0?"•":""}</div>:null}</div>;})}</div>
     </div>:null}
     {h?<div>
-      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:6}}>{"Why "+clockHr(h.hr)+" scores "+fmt(h.stars)+" · "+h.pts+" of "+h.max+" points"}</div>
+      <div style={{fontSize:10.5,fontWeight:800,color:C.label,letterSpacing:0.5,textTransform:"uppercase",marginBottom:6}}>{"Why "+clockHr(h.hr)+" scores "+fmt(h.stars)+" · "+h.pts+" of "+h.max+" points"}</div>
       {h.dryFrac!=null&&h.dryFrac<1?(function(){const y=dryAfter(h);return <div data-hour-dry="1" style={{fontSize:12.5,color:C.amber,fontWeight:700,marginBottom:8}}>{(h.factors.dry&&h.factors.dry.raining?"Raining at "+clockHr(h.hr):"Rock about "+Math.round(h.dryFrac*100)+"% dry at "+clockHr(h.hr))+" · "+(y?"likely dry from "+whenOf(y):"not dry within the 7-day forecast")}</div>;})():null}
       <div style={{display:"flex",flexDirection:"column",gap:7}}>{facKeys.filter(function(k){return (h.factors as Record<string,ScoreFactor>)[k];}).map(function(k){const f=(h.factors as Record<string,ScoreFactor>)[k],pc=f.pts/(WEIGHTS as Record<string,number>)[k];const fc=pc>=0.75?C.green:pc>=0.45?C.amber:C.red;return <div key={k} data-factor={k}>
         <div style={{display:"grid",gridTemplateColumns:"92px minmax(0,1fr) 44px",gap:8,alignItems:"center",fontSize:12.5}}><span style={{color:C.text}}>{(FACTOR_LABEL as Record<string,string>)[k]}</span><div style={{height:7,background:C.borderLight,borderRadius:4,overflow:"hidden"}}><div style={{width:Math.round(pc*100)+"%",height:"100%",background:fc}}/></div><span style={{textAlign:"right",color:C.textSub,fontVariantNumeric:"tabular-nums"}}>{f.pts+"/"+(WEIGHTS as Record<string,number>)[k]}</span></div>

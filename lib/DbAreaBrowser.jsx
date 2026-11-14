@@ -11,6 +11,8 @@ import { POP_BACK } from "./popupChrome.js";
 import { ScreenHero } from "./ScreenHero";
 import { nearbyPeaksLive, nearbyPeaksBounds, nearbyPeaksRows } from "./nearbyPeaks.js";
 import { ClimberCtx } from "./climberCtx.js";
+import { getClimbsAreaPos, setClimbsAreaPos, climbsHandledJumps, getClimbsPendingJump, setClimbsPendingJump } from "./climbsReturn.js";
+const HANDLED = climbsHandledJumps(); // the jump-request ids already handled; see lib/climbsReturn.js
 import SummitBriefing from "../src/components/SummitBriefing.tsx";
 import ObjectivesPanel from "../src/components/ObjectivesPanel.tsx";
 import StatePicker from "../src/components/StatePicker.tsx";
@@ -31,15 +33,34 @@ export { nearbyPeaksLive, nearbyPeaksBounds, nearbyPeaksRows };
 // the cycle static.
 
 
-export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
-  const [stateNode, setStateNode] = useState(null);
-  const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
-  const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
-  const [finderDisc, setFinderDisc] = useState(""); // a chart bar presets the finder's discipline
-  const [finderInit, setFinderInit] = useState(null); // a saved search being reopened: { id, q, filters }
+// The browser tab names the area you are on ("Index Town Wall – ClimbMatch"). App's own DocTitle names the tab
+// ("Climbs – ClimbMatch") and, as the parent, its effect runs after this one on the same commit, so this one sets
+// the title on the next frame.
+function AreaDocTitle({ name }) {
+  useEffect(() => {
+    if (typeof document === "undefined") return undefined;
+    const t = name + " – ClimbMatch";
+    const id = requestAnimationFrame(() => { document.title = t; });
+    return () => cancelAnimationFrame(id);
+  }, [name]);
+  return null;
+}
+
+export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignIn, onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, jumpToNearReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, onAddArea, TopContributors, rootHeader, onSuggestAreaEdit, myId, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify, onStartCrew, onCrewsHere, onGroupsHere, openCrewCountAt, onToggleWish, userLists, onToggleListRoute }) {
+  // Start where the Climbs tab stood when you last left it (lib/climbsReturn.js): picking another tab
+  // unmounts this component, and the owner wants Climbs to reopen on the page you were looking at.
+  const saved = useRef(getClimbsAreaPos()).current;
+  const [stateNode, setStateNode] = useState(saved ? saved.stateNode : null);
+  const [stack, setStack] = useState(saved ? saved.stack : []); // drill path within the state; last entry is "current"
+  const [screen, setScreen] = useState(saved ? saved.screen : "areas"); // "areas" | "finder" | "near" | "objectives"
+  const [finderDisc, setFinderDisc] = useState(saved ? saved.finderDisc : ""); // a chart bar presets the finder's discipline
+  const [finderInit, setFinderInit] = useState(saved ? saved.finderInit : null); // a search handed in from outside: { id, q, filters }
   const [treeOpen, setTreeOpen] = useState(false);
   const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
-  const handledJumpId = useRef(null);
+  // The jump requests below are App props that STAY set once handled, so a remount would re-run the
+  // last one (a search from an hour ago) over the position restored above. The ids already handled
+  // live in lib/climbsReturn.js with the position, mutated in place as each request is handled.
+  // (HANDLED, at module scope below the imports.)
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
   const crumbs = stateNode ? [stateNode, ...stack] : [];
@@ -63,38 +84,75 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
   }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]); // eslint-disable-line react-hooks/exhaustive-deps -- report the area context only when the area identity or position changes; current is a fresh object each render and onAreaContext is listed
 
   const jump = i => {
+    cancelJump();
     setScreen("areas");
     if (i < 0) { setStateNode(null); setStack([]); return; }
     if (i === 0) { setStack([]); return; }
     setStack(crumbs.slice(1, i + 1));
   };
   const back = () => jump(crumbs.length - 2);
-  const drill = a => { setScreen("areas"); setStack(s => [...s, a]); };
-  const pickState = s => { setStateNode(s); setStack([]); setScreen("areas"); };
+  const drill = a => { cancelJump(); setScreen("areas"); setStack(s => [...s, a]); };
+  // Picking somewhere directly supersedes any jump still loading (it would otherwise land late, over
+  // the pick): bump the sequence so its awaits drop out, and forget it as pending.
+  const jumpSeq = useRef(0);
+  const cancelJump = () => { jumpSeq.current++; setClimbsPendingJump(null); };
+  const pickState = s => { cancelJump(); setStateNode(s); setStack([]); setScreen("areas"); };
+
+  // A jump still loading when the tab was left (its request already marked handled) resumes here, so
+  // it lands whole: the full breadcrumb, and the Route finder for a header search. Not when a newer
+  // request is waiting this mount (a state from Manage areas, a Near me tap…): that one wins, and
+  // resuming would race it. Declared ABOVE the request effects (effects run in order) so it decides
+  // before they mark the new ids handled. On unmount, bump the sequence so an in-flight jump drops
+  // out WITHOUT clearing itself as pending.
+  useEffect(() => {
+    const p = getClimbsPendingJump();
+    if (p) {
+      const fresh = (r, id) => !!r && r.id !== id;
+      if (fresh(jumpToStateReq, HANDLED.state) || fresh(jumpToAreaReq, HANDLED.area) || fresh(jumpToFinderReq, HANDLED.finder) || fresh(jumpToNearReq, HANDLED.near)) setClimbsPendingJump(null);
+      else jumpToArea(p.area, p.finder);
+    }
+    const seqRef = jumpSeq;
+    return () => { seqRef.current++; };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- once, on mount / unmount
 
   // Lets a parent screen (e.g. the "Manage areas" list) jump straight into a
   // state from outside this component's own drill-down navigation.
   useEffect(() => {
-    if (!jumpToStateReq || handledJumpId.current === jumpToStateReq.id) return;
-    handledJumpId.current = jumpToStateReq.id;
+    if (!jumpToStateReq || HANDLED.state === jumpToStateReq.id) return;
+    HANDLED.state = jumpToStateReq.id;
     pickState(jumpToStateReq.state);
-  }, [jumpToStateReq]);
+  }, [jumpToStateReq]); // eslint-disable-line react-hooks/exhaustive-deps -- fires once per new request id; pickState/jumpToArea are fresh each render and only call setters and the stable jumpSeq ref
   // Jump straight to any area reached by something other than drilling — a
   // near-me map pin, a tree-search hit, or a tree-node tap — by rebuilding its
   // real state/region breadcrumb from the area's own ltree path.
   // Every await below is guarded by a sequence number: two jumps in flight at once
   // (tap a search hit, tap another before the first resolves) could otherwise land
   // out of order and leave the browser on the earlier area.
-  const jumpSeq = useRef(0);
-  const jumpToArea = async a => {
+  // `finderReq` (a header search) opens the Route finder there once the area has landed. While a jump
+  // loads it is recorded as pending (lib/climbsReturn.js), so leaving the tab mid-jump resumes it on
+  // return instead of keeping it half-done; it is cleared only when it lands while mounted.
+  const jumpToArea = async (a, finderReq) => {
     const seq = ++jumpSeq.current;
+    setClimbsPendingJump({ area: a, finder: finderReq || null });
     setTreeOpen(false);
     setStateNode(a); setStack([]); setScreen("areas");
+    const ok = await jumpToAreaSteps(a, seq);
+    if (jumpSeq.current !== seq) return false;
+    setClimbsPendingJump(null);
+    if (ok && finderReq) {
+      setFinderDisc("");
+      setFinderInit({ id: finderReq.id, q: finderReq.search.q, filters: finderReq.search.filters });
+      setScreen("finder");
+    }
+    return ok;
+  };
+  const jumpToAreaSteps = async (a, seq) => {
     // areas_in_subtree returns a narrow projection with no `path`, so a search hit
     // cannot build its own breadcrumb and every panel keyed on path renders empty.
     // Hydrate the full row before navigating.
     let full = a;
-    if (!a.path) {
+    // `_narrow`: a map pin's row carries only the columns the map draws (useNearbyAreas).
+    if (!a.path || a._narrow) {
       const row = await fetchArea(a.id).catch(() => null);
       if (jumpSeq.current !== seq) return false;
       if (row) { full = row; setStateNode(row); }
@@ -109,30 +167,36 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
   };
   // Saved-areas chips (and anything outside the browser) jump to a DB area by id;
   // the full row is fetched here because jumpToArea needs area_type + ltree path.
-  const handledAreaJump = useRef(null);
   const jumpAreaRowQ = useArea(jumpToAreaReq ? jumpToAreaReq.areaId : null);
   useEffect(() => {
-    if (!jumpToAreaReq || handledAreaJump.current === jumpToAreaReq.id || !jumpAreaRowQ.data) return;
-    handledAreaJump.current = jumpToAreaReq.id;
+    if (!jumpToAreaReq || HANDLED.area === jumpToAreaReq.id || !jumpAreaRowQ.data) return;
+    HANDLED.area = jumpToAreaReq.id;
     jumpToArea(jumpAreaRowQ.data);
-  }, [jumpToAreaReq, jumpAreaRowQ.data]);
-  // A SAVED SEARCH reopened from Logbook › Saved or the Menu: go to the area it was saved in, then
-  // open the finder there with its words and filters, as the climber left it.
-  const handledFinderJump = useRef(null);
+  }, [jumpToAreaReq, jumpAreaRowQ.data]); // eslint-disable-line react-hooks/exhaustive-deps -- fires once per new request id; pickState/jumpToArea are fresh each render and only call setters and the stable jumpSeq ref
+  // A search handed in from outside (the website header's typed search): go to the area it was
+  // scoped to, then open the finder there with its words and filters.
   const finderLocQ = useArea(jumpToFinderReq && jumpToFinderReq.search.loc ? jumpToFinderReq.search.loc.id : null);
   useEffect(() => {
-    if (!jumpToFinderReq || handledFinderJump.current === jumpToFinderReq.id) return;
-    if (finderLocQ.isError) { handledFinderJump.current = jumpToFinderReq.id; if (notify) notify("Couldn’t open that saved search — check your connection and try again."); return; }
+    if (!jumpToFinderReq || HANDLED.finder === jumpToFinderReq.id) return;
+    if (finderLocQ.isError) { HANDLED.finder = jumpToFinderReq.id; if (notify) notify("Couldn’t open the Route finder there — check your connection and try again."); return; }
     if (!finderLocQ.data) return;
-    handledFinderJump.current = jumpToFinderReq.id;
-    const req = jumpToFinderReq;
-    jumpToArea(finderLocQ.data).then(ok => {
-      if (!ok) return;
-      setFinderDisc("");
-      setFinderInit({ id: req.id, q: req.search.q, filters: req.search.filters });
-      setScreen("finder");
-    });
-  }, [jumpToFinderReq, finderLocQ.data, finderLocQ.isError, notify]);
+    HANDLED.finder = jumpToFinderReq.id;
+    jumpToArea(finderLocQ.data, jumpToFinderReq);
+  }, [jumpToFinderReq, finderLocQ.data, finderLocQ.isError, notify]); // eslint-disable-line react-hooks/exhaustive-deps -- fires once per new request id; pickState/jumpToArea are fresh each render and only call setters and the stable jumpSeq ref
+  // "NEAR ME" from the search box (owner 2026-11-04): open the map at the climber's position, from
+  // wherever the browser stands — before a state is picked too, so the map is drawn ahead of the picker.
+  useEffect(() => {
+    if (!jumpToNearReq || HANDLED.near === jumpToNearReq.id) return;
+    HANDLED.near = jumpToNearReq.id;
+    cancelJump(); // the map is where the climber asked to be; a jump landing later would leave it
+    setTreeOpen(false);
+    setScreen("near");
+  }, [jumpToNearReq]);
+
+  // Remember the position whenever it changes (the handled ids are kept in place by the handlers).
+  useEffect(() => {
+    setClimbsAreaPos({ stateNode, stack, screen, finderDisc, finderInit });
+  }, [stateNode, stack, screen, finderDisc, finderInit]);
 
   return (
     <ClimberCtx.Provider value={climber}>
@@ -151,6 +215,7 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
           where it goes (drawn with POP_BACK since 2026-09-25, like every other Back in the app:
           44px tall with a bright edge, so it is still easy to find without its own colour), and under it the full path, WRAPPING rather than scrolling,
           so every level above you is visible and tappable. */}
+      {screen === "areas" && current && current.name ? <AreaDocTitle name={current.name} /> : null}
       {crumbs.length ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: 10, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
@@ -158,13 +223,13 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
               <span aria-hidden="true">{"←"}</span>
               <span style={{ minWidth: 0, overflowWrap: "anywhere" }}>{"Back to " + (screen !== "areas" ? current.name : crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span>
             </button>
-            {/* On an area page the path stops at the PARENT: the area you are in is the header box
-                right below, so naming it here in bold too said it twice. On a sub-screen (Route
-                finder, Map…) the area stays in the path as the way back to its page. A path that
-                would only repeat the Back button above it (just "All areas") is not drawn. */}
+            {/* The path ends on the area you are IN (owner, 2026-11-11: "The area name needs to be on the top header
+                too"): its header box scrolls away on a long page, and this bar does not. It is the last item, in bold,
+                not a link (aria-current). On a sub-screen (Route finder, Map…) the area is a link, the way back to its page. */}
             {(() => {
               const path = screen === "areas" ? [null, ...crumbs.slice(0, -1)] : [null, ...crumbs];
-              return path.length < 2 ? null : (
+              const here = screen === "areas" && current ? current : null;
+              return path.length < 2 && !here ? null : (
                 <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 6, columnGap: 6, minWidth: 0 }}>
                   {path.map((c, i) => (
                     <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
@@ -172,22 +237,29 @@ export default function DbAreaBrowser({ jumpToFinderReq, onSignIn, onOpenRoute, 
                       <button onClick={() => { setScreen("areas"); jump(c ? i - 1 : -1); }} style={{ background: "transparent", border: "none", color: C.blue, fontSize: 14.5, cursor: "pointer", fontWeight: 700, padding: "2px 0", textAlign: "left", lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : "All areas"}</button>
                     </span>
                   ))}
+                  {here ? <span style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
+                    <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 16, fontWeight: 700 }}>{"›"}</span>
+                    <span aria-current="page" style={{ color: C.text, fontSize: 14.5, fontWeight: 800, lineHeight: 1.3, overflowWrap: "anywhere" }}>{here.name}</span>
+                  </span> : null}
                 </nav>
               );
             })()}
           </div>
         </div>
       ) : null}
-      {!stateNode ? (
+      {screen === "near" ? (
+        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} onOpenRoute={onOpenRoute} C={C} /></>
+      ) : !stateNode ? (
         <>{rootHeader || null}<StatePicker onPick={pickState} C={C} /></>
       ) : screen === "finder" ? (
-        <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} uid={uid} notify={notify} onSignIn={onSignIn} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
+        <RouteFinderPanel key={current.id + (finderInit ? ":" + finderInit.id : "")} initial={finderInit} scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} presetDisc={finderDisc} bookmarks={bookmarks} onToggleBookmark={onToggleBookmark} onToggleWish={onToggleWish} userLists={userLists} onToggleListRoute={onToggleListRoute} onAddClimb={onAddClimb} onAddArea={onAddArea} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
-      ) : screen === "near" ? (
-        <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} name={current ? current.name : null} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} onSignIn={onSignIn} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        // `areaDiscussion` (App's area comment thread) is drawn HERE, in the area-page branch only:
+        // never under the Map, the Route finder or Objectives (owner 2026-11-11, "Remove discussion
+        // from area maps"). Placed by this component, so it switches in the same render as the screen.
+        <><AreaPage key={current.id} onSignIn={onSignIn} TopContributors={TopContributors} onFireMap={onFireMap} onAddClimb={onAddClimb} onAddArea={onAddArea} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={d => { /* A chart bar hands a discipline; the inline form on the website hands a whole filter set, opened the way a saved search is (item 15). */ if (d && typeof d === "object") { setFinderInit({ id: "inline-" + Date.now(), q: "", filters: d }); setFinderDisc(""); } else { setFinderInit(null); setFinderDisc(typeof d === "string" ? d : ""); } setScreen("finder"); }} onSuggestAreaEdit={onSuggestAreaEdit} myId={myId} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />{areaDiscussion}</>
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />

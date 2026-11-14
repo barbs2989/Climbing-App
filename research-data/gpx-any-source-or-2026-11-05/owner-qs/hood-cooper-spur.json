@@ -1,0 +1,32 @@
+{
+ "key": "hood-cooper-spur",
+ "question": "Is Cooper Spur a standard Mount Hood route missing from the catalog, what is its full row, which Hood area holds it, and where is the Cloud Cap / Tilly Jane trailhead?",
+ "answer": "Confirmed missing: no row under any spelling (Cooper, Cloud Cap, Tilly, Eliot) in catalog-or-mountains.json except the separate Eliot Glacier Headwall on or_north_side. Cooper Spur is the most popular North Side route (Mountain Project: Grade III, trad/snow/alpine, Mod. Snow, ~5,300 ft, about 45 deg past Tie-in Rock, final pitch snow to ~50 deg or exposed rock; Mountain Project, Mountaineers and Summitpost list it under Hood's North Side). Trail leads from Cloud Cap or Tilly Jane through treeline to the stone shelter (~8,500 ft) then the crest to Tie-in Rock (~8,514 ft, where climbers traditionally rope up); above it rockfall, steep ice and a fall toward the Eliot headwall make descent the dangerous part, so most descend the South Side or the Sunshine route. Oregon Hikers field guide gives the Cloud Cap trailhead at 45.40243,-121.65486 (5,850 ft) and the Tilly Jane trailhead at 45.39939,-121.64810 (5,720 ft). First ascent is cited as 1891 (Langille brothers).",
+ "recommendation": "ADD route 'Cooper Spur' on area or_north_side (where Eliot Glacier Headwall already sits and where Mountain Project files it; or_east_side_2 holds the Timberline-side routes). Discipline alpine (45-50 deg snow/ice above Tie-in Rock on a glacier-flanked line, roped in most conditions, not a non-technical walk-up), disciplines [alpine,mountaineering]. Trailhead pin: Tilly Jane 45.39939,-121.64810 (Cloud Cap 45.40243,-121.65486 as the alternate, ~0.5 km away). Season May-Jul for the climb.",
+ "confidence": "high",
+ "proposed": {
+  "name": "Cooper Spur",
+  "area_id": "or_north_side",
+  "discipline": "alpine",
+  "disciplines": ["alpine", "mountaineering"],
+  "grade": "Grade III, Mod. Snow",
+  "face": "Northeast",
+  "aspect": "NE",
+  "season": "May-Jul",
+  "overview": "The classic northeast-side line on Mount Hood, following the crest of a long rocky spur above the Eliot Glacier. A trail carries you through the trees to a stone shelter and on to a big boulder on the ridge, the traditional place to rope up. Above it the slope steepens to about 45 degrees and finishes near 50 degrees on snow or loose rock, then joins the summit ridge. Rockfall and hard ice make this a serious climb, best done early in firm snow.",
+  "approach": "Drive the gravel Cloud Cap road to the Tilly Jane or Cloud Cap trailhead and follow the trail up through the forest to the shelter near treeline. Continue along the spur crest to the large boulder at about 8,500 ft, where the technical ground begins.",
+  "descent_text": "Do not retrace the spur: the descent is the riskiest part. Most parties cross to the south side and walk down the standard route, arranging a shuttle, or return by the Sunshine route to the campgrounds.",
+  "trailhead": { "name": "Tilly Jane Trailhead", "lat": 45.39939, "lng": -121.64810, "confirmedBy": "https://www.oregonhikers.org/field_guide/Tilly_Jane_Trailhead" },
+  "alt_trailhead": { "name": "Cloud Cap Trailhead", "lat": 45.40243, "lng": -121.65486, "confirmedBy": "https://www.oregonhikers.org/field_guide/Cloud_Cap_Trailhead" }
+ },
+ "evidence": [
+  "https://www.mountainproject.com/route/105796614/cooper-spur — Grade III, trad/snow/alpine, Mod. Snow, 5300 ft, approach via Tilly Jane/Cloud Cap to tie-in rock, descent dangerous, FA 1891, North Side",
+  "https://www.oregonhikers.org/field_guide/Cooper_Spur_Hike — Cloud Cap start, shelter 1.2 mi, Tie-in Rock, rockfall warning, high point 8,510 ft",
+  "https://www.oregonhikers.org/field_guide/Cloud_Cap_Trailhead — 45.40243,-121.65486, 5,850 ft, gravel road",
+  "https://www.oregonhikers.org/field_guide/Tilly_Jane_Trailhead — 45.39939,-121.64810, 5,720 ft"
+ ],
+ "searched": [
+  "grep catalog-or-mountains.json for cooper/cloud cap/tilly/eliot — only Eliot Glacier Headwall (or_north_side)",
+  "WebSearch Cooper Spur route description Tie-in Rock — Mountaineers, SummitPost, Mazamas, MP results; Mountaineers calls it a basic glacier climb, 13 deaths per SummitPost (snippet only, not fetched)"
+ ]
+}

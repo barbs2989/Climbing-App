@@ -1,7 +1,9 @@
-// Read-only: duplicates in everything the WA Peakbagger pass touched, and on those peaks.
+// Read-only: duplicates in everything a Peakbagger pass touched, and on those peaks.
+// Usage: node dup-audit-wa.mjs [rollback timestamp prefix regex, default the WA run's 17938[1-9][0-9]; OR 2026-11-05: 179390]
 import fs from "fs";
 import { selectAll } from "../../lib/supabase-env.mjs";
-const RB = fs.readdirSync("scripts").filter(f => /^rollback-(gpx-any-source-[a-z-]+-|fkt-gpx-tracks-)17938[1-9][0-9]/.test(f));
+const STAMP = process.argv[2] || "17938[1-9][0-9]";
+const RB = fs.readdirSync("scripts").filter(f => new RegExp("^rollback-(gpx-any-source-[a-z-]+-|fkt-gpx-tracks-)" + STAMP).test(f));
 const touched = new Set(RB.flatMap(f => JSON.parse(fs.readFileSync("scripts/" + f, "utf8")).rows.map(r => r.id)));
 const ids = [...touched];
 const rows = [];

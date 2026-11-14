@@ -906,6 +906,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (it was a 440px drawer). Its content is centred in a 720px column by the panel's padding. It is
     keyed on the WHOLE style string, so the Menu's phone branch, with the same zIndex and capped, is
     still checked.
+    A **fifth**, `trail-draw` (2026-11-05): `TrailDrawMap`'s full-screen branch, the Add-the-trail
+    drawer and the desktop Draw approach tool. Same class as the route map — a line is drawn by
+    eye, point by point, and the owner asked for the whole screen to do it in. It sits at
+    `zIndex: 10000`, not the route map's 9700, because the GPS submission sheet it opens from is a
+    9999 overlay; matched by file AND that literal, so a change to either fails as stale.
   - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
     That matches a **literal** style object, and `GPXMap` writes
     `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the
@@ -1097,7 +1102,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     anything outside those blocks (← → ↗ ⌂ ⇢ ◈ ● ▪ • ›). The waypoint glyphs are all outside them,
     so `check:wp-styles`' own "no emoji glyph" rule and this one agree; Hazard's ⚠ became "!" and the
     unstyled fallback 📍 became "○" (which `check:wp-styles` now asserts never renders).
-  - **Three things may still hold one, and the census line prints how many of each:**
+  - **Four things may still hold one, and the census line prints how many of each:**
     1. a **lookup key** — `{"🏆":"award"}`, quoted, after `{` or `,`, followed by `:`. `EMOJI_ICON`
        is the main one. A first draft accepted any quoted emoji followed by `:`, which let a
        ternary's `x.lit?"☀":"▪"` through as a "key" — the hourly forecast's sun and rain marks hid
@@ -1107,14 +1112,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
        to print it), so nothing passed to Lbl can reach the screen as a glyph. A string built
        elsewhere and passed to Lbl (`groupWhere()` returned `"📍 Based in …"`) is NOT recognised —
        move the emoji to the call site, as `<Lbl s={"📍 "+t}/>`;
-    3. `src/components/Lbl.tsx` itself, whose regex recognises the emoji it swaps.
+    3. `src/components/Lbl.tsx` itself, whose regex recognises the emoji it swaps;
+    4. **the `REACTIONS` table** in `ClimbMatchCore.jsx` (owner, 2026-11-05: "Emojis for comment and
+       discussion reactions should be added back"): only a quoted `e:` value on the one line that
+       opens `const REACTIONS=[`. The bar, the count discs and the Like button draw `r.e` from it,
+       which is data to this guard. It also fails if fewer than five are found, so the emoji cannot
+       quietly leave the table again.
   - **Comments are stripped first** (block, JSX `{/* */}`, and `//` after whitespace or punctuation
     so `https://` survives) — a comment may quote what a screen used to say.
   - **What it cannot see:** text from the database (a climber's own words, a list name typed with an
     emoji) and strings assembled at runtime from escapes. Neither is the app's own copy.
   - **Data that held emoji now holds icon NAMES:** `routeTags.js` (lists and features),
     `RISK_LEVELS`, the challenge lists and goal rows in `useCuratedLists`/`Challenges`, and
-    `REACTIONS` (`i`, an ActionIcon name or none — the faces have no icon and render as their word).
+    `REACTIONS` held `i`, an ActionIcon name or none, until 2026-11-05, when its emoji came back as `e` (item 4 above).
     `DISC`/`CAT` `icon`, `VERIF.icon`, `Contributions`' `ST.icon` and the Ranks metric `icon` were
     read by nothing and were removed or blanked. Saved `user_lists.icon` values are already names.
   - **Injection-tested 7/7** with a throwaway `src/components/` file: a drawn emoji, a ternary's
