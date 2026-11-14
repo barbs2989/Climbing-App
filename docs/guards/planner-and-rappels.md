@@ -1165,6 +1165,23 @@ disagree. A whole-day published figure is already car-to-car and is not given a 
 reads "incl."). `totalH` is unchanged: the summit clock and the alpine start count back from it.
 `check:return-leg` holds Total trip = Approach + Climbing + Descent.
 
+## Approach loss and return regain: `check:leg-loss-regain` (2026-11-14)
+
+Owner, 2026-11-14: *"mt goode northeast buttress has a pretty big descent on the approach, but the stats
+don't show that"*, then *"i dont want to have to do any of our own math, all the information should be
+online"*. The leg cards print **Loss** (downhill on the way to the summit) and **Regain** (uphill on the way
+back) ONLY from `routes.approach_loss_ft` / `return_gain_ft` (0441), which the research pipeline writes with
+their sources in `route_field_evidence` (0437). `publishedLegClimb()` in `lib/tripLegs.js` only reads them.
+
+- **Do not measure them.** PR #3352 summed the recorded track's heights (`measuredLegClimb`); the owner
+  replaced that the same day. The guard fails if the helper or either card reads `elevPts` or a track.
+- **`loss_ft` cannot stand in.** It holds two conventions (the descent to the car, or only the dips on the
+  way in) and on some rows a gain filed as a loss; the audit is `research-data/gain-loss-audit-2026-11-14/`.
+- **A loop's stored gain is the whole outing**, so the TRAILHEAD TO SUMMIT leg prints no gain of its own
+  (Goode NE Buttress read 10,700 ft to a summit 4,720 ft above its trailhead); the note states the outing's.
+- **Blind spot:** it renders synthetic routes; it cannot tell whether a stored figure is the one the source
+  states. That is the ledger's job (`check:research-locks`, enrich:apply).
+
 ## The trip-plan shape: `check:itinerary-shape` and `audit:itinerary-shape`
 
 Owner, 2026-11-11: *"text only plans convert day by day, make that a rule in the app when we do other

@@ -235,14 +235,14 @@ for (const f of FROM) {
 const key = anonKey();
 // Named so the settable-column assertion below can check itself against them rather than against a
 // string somebody has to remember to keep in step.
-const readSelect = "id,name,area_id,discipline,pitches,pitch_detail,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa";
+const readSelect = "id,name,area_id,discipline,pitches,pitch_detail,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa,gain_ft,approach_loss_ft,return_gain_ft";
 // `face` is prose describing the wall, the same class as `overview` — NOT a classification column.
 // It is settable because it is where a wrong route NAME leaves its residue: a row renamed in the
 // catalog keeps a `face` written to justify the old name, and four rows in the 2026-08-14
 // name-vs-aspect research carry exactly that (Cameron's "North ridge" on a ridge gained due west,
 // Tye's backwards "(west side)"). `aspect` stays OUT — it drives the sun/shade readout and is a
 // classification, so it goes through SQL a human runs.
-const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face", "fa"];
+const VERIFY_SCALAR = ["rappel_count_note", "rappels", "descent_text", "approach", "overview", "beta", "pro_needs", "bail", "face", "fa", "gain_ft", "approach_loss_ft", "return_gain_ft"];
 const VERIFY_JSON = ["hazards", "pro_tips", "watch_out", "road", "approach_logistics"];
 // `waypoints` and `rappel_detail` are compared entry by entry further down rather than whole, so
 // they are verified — just not by either list.
@@ -261,7 +261,12 @@ const SETTABLE = new Set([
   // hand-written one-off per route; this puts it on the same guarded path as everything else —
   // area asserted, patchRow, re-read and reconciled.
   "approach_logistics",
+  // The PUBLISHED climb (owner, 2026-11-14: "i dont want to have to do any of our own math, all the
+  // information should be online"): gain_ft, and the approach's downhill / the way back's uphill (0441)
+  // that the leg cards print. Integers only (checked below), each carried with `ledger` evidence.
+  "gain_ft", "approach_loss_ft", "return_gain_ft",
 ]);
+const SET_INT_FT = new Set(["gain_ft", "approach_loss_ft", "return_gain_ft"]);
 // A settable column is coupled to TWO other places, and getting either wrong is SILENT: it must be
 // in the re-read select or `after[k]` is undefined, and in a verify group or the write is checked by
 // nothing. Both failures report SUCCESS for a write nobody confirmed — the exact shape this script's
@@ -508,6 +513,8 @@ for (const id of ids) {
   if (spec.set) {
     for (const [k, v] of Object.entries(spec.set)) {
       if (!SETTABLE.has(k)) { console.error(`REFUSING ${id} — set.${k} is not an allowed column`); process.exitCode = 1; body._refuse = true; continue; }
+      if (SET_INT_FT.has(k) && !(v === null || (Number.isInteger(v) && v >= 0 && v <= 20000))) { console.error(`REFUSING ${id} — set.${k} must be whole feet 0-20000 or null (got ${JSON.stringify(v)})`); process.exitCode = 1; body._refuse = true; continue; }
+      if (SET_INT_FT.has(k) && !(Array.isArray(spec.ledger) && spec.ledger.some(e => e && e.field === k))) { console.error(`REFUSING ${id} — set.${k} is a published figure and needs a ledger entry with its sources`); process.exitCode = 1; body._refuse = true; continue; }
       body[k] = v;
     }
     if (body._refuse) { delete body._refuse; continue; }
