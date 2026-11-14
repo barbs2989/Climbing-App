@@ -34,7 +34,7 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows, noun, o
   const side = variant === "sidebar";
   const head = <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 8, marginBottom: side ? 6 : 4 }}>
     <h2 style={{ margin: 0, fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{noun + " (" + rows.length.toLocaleString() + ")"}</h2>
-    {side && onAllAreas ? <button onClick={onAllAreas} style={{ background: "none", border: "none", padding: "4px 0", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>All areas</button> : null}
+    {side && onAllAreas ? <button onClick={onAllAreas} aria-haspopup="dialog" style={{ background: C.surface, border: "1px solid " + C.blue, borderRadius: 8, padding: "5px 10px", color: C.blue, fontSize: 12.5, fontWeight: 800, cursor: "pointer" }}>Area tree</button> : null}
   </div>;
   const badge = (id: string | number) => { const n = objectives ? objectives[String(id)] || 0 : 0; return n ? <span aria-label={n + " of your objectives"} title={n + " of your objectives"} style={{ flexShrink: 0, fontSize: 11, fontWeight: 800, color: C.amber }}>{"★" + n}</span> : null; };
   const count = (n: number) => n.toLocaleString() + (side ? "" : " climb" + (n !== 1 ? "s" : ""));
