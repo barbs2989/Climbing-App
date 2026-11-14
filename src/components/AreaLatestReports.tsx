@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useAreaLatestReports, useProfilesByIds, useRoutesByIds } from "../../lib/db";
+import { useAreaLatestReports, useAreaLatestReportRows, useProfilesByIds, useRoutesByIds } from "../../lib/db";
 import { tripRowToActivity } from "../../lib/tripReportRow.js";
 import { isHazardTag, normTag, RECENT_DAYS } from "../../ClimbMatchCore.jsx";
 import { clickable } from "../../lib/clickable";
@@ -19,6 +19,7 @@ export interface AreaLatestReportsProps {
 
 interface LatestRow { id: string; route_id: string; user_id?: string | null; [k: string]: unknown }
 interface LatestRoute { id: string; name?: string; [k: string]: unknown }
+interface LatestRef { id: string; route_id?: string | null; user_id?: string | null }
 interface LatestActivity { user: string; avatar: string; date?: string | null; condTags: string[]; tickType?: string; summited?: boolean; text: string }
 
 // The notes come from the rich editor: a preview line shows their words, not their markup.
@@ -33,20 +34,26 @@ const fmtDate = (d?: string | null) => { if (!d) return ""; const q = String(d).
    with the app's own isHazardTag rule. A row opens its climb. Renders nothing while an area has neither. */
 export default function AreaLatestReports({ area, onOpenRoute, C }: AreaLatestReportsProps) {
   const q = useAreaLatestReports(area.id, 4);
-  const rows = useMemo(() => ((q.data && q.data.rows) || []) as unknown as LatestRow[], [q.data]);
+  // The report rows, and (from 0428's `refs`) the climbs and authors, are read together once the ids
+  // are in: two round trips. Without refs (a database before 0428) climbs and authors wait for the rows.
+  const ids = useMemo(() => ((q.data && q.data.ids) || []) as string[], [q.data]);
+  const refs = (q.data && q.data.refs) as LatestRef[] | null | undefined;
+  const rowsQ = useAreaLatestReportRows(ids);
+  const rows = useMemo(() => (rowsQ.data || []) as unknown as LatestRow[], [rowsQ.data]);
   const recentTags = ((q.data && q.data.recentTags) || []) as string[][];
-  const userIds = useMemo(() => [...new Set(rows.map(r => r.user_id).filter((x): x is string => !!x))], [rows]);
-  const routeIds = useMemo(() => [...new Set(rows.map(r => r.route_id).filter(Boolean))], [rows]);
+  const refSource = useMemo((): { user_id?: string | null; route_id?: string | null }[] => refs || rows, [refs, rows]);
+  const userIds = useMemo(() => [...new Set(refSource.map(r => r.user_id).filter((x): x is string => !!x))], [refSource]);
+  const routeIds = useMemo(() => [...new Set(refSource.map(r => r.route_id).filter((x): x is string => !!x))], [refSource]);
   const profQ = useProfilesByIds(userIds);
   const routesQ = useRoutesByIds(routeIds);
   const profById = useMemo(() => { const m: Record<string, unknown> = {}; ((profQ.data || []) as { id: string }[]).forEach(p => { m[p.id] = p; }); return m; }, [profQ.data]);
   const routeById = useMemo(() => { const m: Record<string, LatestRoute> = {}; ((routesQ.data || []) as LatestRoute[]).forEach(r => { m[r.id] = r; }); return m; }, [routesQ.data]);
   const hazardCount = recentTags.filter(tags => tags.some(t => isHazardTag(normTag(t)))).length;
 
-  if (q.isLoading) return <div style={{ marginTop: 14 }}><LoadingRows C={C} label="Loading the latest reports…" rows={2} /></div>;
-  if (q.isError) return <div role="alert" style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "10px 12px", borderRadius: 12, border: "1px solid " + C.border, background: C.card, fontSize: 12.5, color: C.text }}>
+  if (q.isLoading || (ids.length > 0 && rowsQ.isLoading)) return <div style={{ marginTop: 14 }}><LoadingRows C={C} label="Loading the latest reports…" rows={2} /></div>;
+  if (q.isError || rowsQ.isError) return <div role="alert" style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", padding: "10px 12px", borderRadius: 12, border: "1px solid " + C.border, background: C.card, fontSize: 12.5, color: C.text }}>
     <span style={{ flex: "1 1 200px", minWidth: 0 }}>Couldn’t load the latest reports for this area.</span>
-    <button onClick={() => q.refetch()} style={{ ...BTN, border: "1px solid " + C.border, background: C.surface, color: C.blue }}>Retry</button>
+    <button onClick={() => { if (q.isError) q.refetch(); else rowsQ.refetch(); }} style={{ ...BTN, border: "1px solid " + C.border, background: C.surface, color: C.blue }}>Retry</button>
   </div>;
   if (!rows.length && !hazardCount) return null;
 
@@ -71,7 +78,7 @@ export default function AreaLatestReports({ area, onOpenRoute, C }: AreaLatestRe
               {haz ? <span style={{ display: "inline-flex", alignItems: "center", gap: 3, fontSize: 10.5, color: C.red, fontWeight: 800 }}><span aria-hidden="true" style={{ display: "inline-flex" }}><ActionIcon name="alert" size={11} color="currentColor" /></span>Hazard</span> : null}
             </div>
             <div style={{ fontSize: 11.5, color: C.textMuted }}>{[a.user, fmtDate(a.date)].filter(Boolean).join(" · ")}</div>
-            {a.text ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{plain(a.text)}</div> : null}
+            {a.text ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, lineHeight: 1.45, overflowWrap: "anywhere" }}>{plain(a.text)}</div> : null}
           </div>
         </div>;
       })}

@@ -52,6 +52,7 @@ npm run check:dup-attrs # a declaration written TWICE: the later wins, the earli
 npm run check:no-module-scope-core-reads # a component core imports BACK must not read core at module scope — the bundle throws before React mounts (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
+npm run check:page-swipe # swiping a page's tabs on a phone (lib/pageSwipe.js): which tab a drag lands on, which touches it leaves to rows/sliders/maps/charts, every tab page still wired (in build)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:boot # index.html's boot placeholder AND the Help tour still match the real nav
 npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
@@ -147,6 +148,7 @@ npm run check:crew-place # a crew has ONE place, a route or an area, and every s
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
+npm run check:no-rack-class-1-3 # RULE: a Class 1-3 route (headline grade, any discipline) or a hike has NO RACK card; its own rack items go to GEAR & ESSENTIALS (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:trailhead-direction-shape # ...and those directions END AT THE TRAILHEAD, not a hike narrative (in build; --live daily)
 npm run check:approach-section # ONE approach section; the most-used way in is first, marked, and carries the paragraph (in build)
@@ -251,6 +253,7 @@ npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (i
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:challenge-rows # tick-list rows say something true, the tick matches the row, and no row's text overlaps at 390 or 320px
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
+npm run check:list-summit-audit # a peak list ticks only from a route that reaches the SUMMIT; every list peak was audited (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
@@ -258,6 +261,7 @@ npm run check:contrib-field-columns # every editable field has a DB row naming t
 npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
+npm run audit:list-summit-routes -- --check # DB slot: any route on a list peak with no summit verdict yet?
 
 # ── Grades — notes: docs/guards/grades.md ──
 npm run check:grade-parser  # grade_num is parsed in one place, and so is the DISPLAYED grade (in build)

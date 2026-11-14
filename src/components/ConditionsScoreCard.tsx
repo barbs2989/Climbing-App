@@ -262,7 +262,6 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
             <span style={{display:"block",fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{[d.rhMin!=null?"Humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax as number)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg)+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ")}</span>
           </span>
         </button>;})}
-      <div style={Object.assign({},condNote,{marginTop:0,padding:"9px 14px 11px",borderTop:"1px solid "+C.border})}>Temperature and rain cover the whole day; wind, humidity and cloud its daylight hours. Tap a day to open it above and in the charts.</div>
     </div>)}
     {sec("Hour by hour",<div style={condBox}>
       <div role="group" aria-label="Day for the hourly charts" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:4}}>{days.slice(0,7).map(function(d,i){const on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+dayDate(d)} style={{flex:"0 0 58px",width:58,minHeight:44,boxSizing:"border-box",padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.onSolid:C.textSub,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:12,fontWeight:on?800:700}}>{dayName(d,i)}</div><div style={{fontSize:10.5,color:on?C.blue:C.textMuted}}>{dayDate(d)}</div></button>;})}</div>
@@ -276,7 +275,6 @@ export default function ConditionsScoreCard({route,mtn,onAddAspect}: ConditionsS
       {cur&&cur.dryFrac!=null?condRow("Rock now",cur.dryFrac>=1?(cur.factors.dry&&cur.factors.dry.damp?"Dried out from rain, but the air is at its dew point — shaded rock may be damp":"Likely dry"):"Likely wet — about "+Math.round(cur.dryFrac*100)+"% dried",cur.dryFrac>=1?C.green:C.amber):null}
       {dryLine?condRow("Likely dry from",dryLine):null}
       {score.seep?condRow("Seepage risk",<span><b style={{color:score.seep.risk==="high"?C.red:score.seep.risk==="moderate"?C.amber:C.green}}>{score.seep.risk==="high"?"High":score.seep.risk==="moderate"?"Moderate":"Low"}</b>{" · "+uPrecip(score.seep.rain7)+" of rain in 7 days, "+uPrecip(score.seep.rain14)+" in "+(score.seep.short?"the days on record":"14 days")}</span>):null}
-      <div style={condNote}>Seepage is a risk from recent rain, not a reading: cracks, seams and overhangs can stay wet for days after the face is dry. Drying times are rules of thumb for the rock type.</div>
     </div>)}
     {sec("Sun on the wall",<div style={condBox}>
       {day.sun?condRow("Sunrise",clockAt(score,day.sun.rise)):null}

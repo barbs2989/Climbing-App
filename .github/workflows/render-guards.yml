@@ -26,7 +26,8 @@ name: Render guards
 # Independent jobs rather than steps, so a browser flake in one cannot stop the
 # others from reporting.
 #
-# They run on push to main as well as on pull_request, because a green PR is not a
+# They also walk main itself (on a four-hour schedule since 2026-11-13; on every push
+# before that -- see the `on:` block), because a green PR is not a
 # statement about main. A pull_request run tests merge(head, base) as base stood WHEN
 # THE RUN STARTED, so two PRs that are each green can still break main between them —
 # and that is not hypothetical here: #728 and #727 merged three seconds apart, both
@@ -53,8 +54,7 @@ on:
       # CI). Verified then: no walk script, nor anything it imports, reads these paths or any
       # .md file; the app names them only in comments. Everything else (app code, lib/, src/,
       # other scripts/, supabase/, package*.json, .github/) still runs every walk. Branch
-      # protection requires only `build`, so a skipped walk blocks nothing. The push list
-      # below is the SAME list: keep them identical.
+      # protection requires only `build`, so a skipped walk blocks nothing.
       - "audits/**"
       - "research-data/**"
       - "research/**"
@@ -67,21 +67,16 @@ on:
       - "scripts/pipeline/**"
       - "scripts/enrich/**"
       - "scripts/audit-*.mjs"
-  push:
-    branches: [main, master]
-    paths-ignore:
-      - "audits/**"
-      - "research-data/**"
-      - "research/**"
-      - "catalog/**"
-      - "enrichment-wip/**"
-      - "gear-research/**"
-      - "docs/**"
-      - "**.md"
-      - "scripts/oneoff/**"
-      - "scripts/pipeline/**"
-      - "scripts/enrich/**"
-      - "scripts/audit-*.mjs"
+  # Main is walked on a timer, not on every merge (owner, 2026-11-13). Per-merge walks started
+  # 15 browser jobs (16 with zero-state.yml) that gated nothing -- deploy.yml never waits on
+  # them -- and took the free plan's ~20-runner pool from every PR's required `build` and from
+  # the deploy itself. Measured over the previous ~60 runs: build-check jobs ran ~0.4 min but
+  # waited ~26 min for a runner; render-guard jobs waited ~39 min; a merge took ~19 jobs. The
+  # scheduled walk still answers "is main itself healthy?" (the #727/#728 case above) within
+  # four hours, and workflow_dispatch walks main on demand.
+  schedule:
+    - cron: "10 */4 * * *"
+  workflow_dispatch:
 
 concurrency:
   # On a PR, group by branch so a new push supersedes the run it replaces. On a push,
@@ -450,7 +445,7 @@ jobs:
       # does not. Measured on main: 3m43s at 8 screens (19:02 run) against 42m33s at 58 (21:41
       # run) — an 11.4x rise from #1233's expansion, invisible because a slower guard still goes
       # green. NOTHING STOPS BEING CHECKED: a mute control introduced inside an overlay is caught
-      # when the branch merges instead of while it is in review, the same trade check:ui's
+      # by the scheduled main walk (every 4 h) instead of while it is in review, the same trade check:ui's
       # live-site walk already makes by running on a schedule.
       #
       # `--overlays=` is an EXPLICIT empty list, which the guard obeys. Discovery finding almost
@@ -461,7 +456,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "pull request — walking the fast screens (tabs, onboarding, route detail + Plan)."
-            echo "The 50-overlay sweep runs on push to main; see the note above."
+            echo "The 50-overlay sweep runs on the scheduled main walk; see the note above."
             node scripts/ci-db-inconclusive.mjs npm run check:selected-state -- --overlays=
           else
             node scripts/ci-db-inconclusive.mjs npm run check:selected-state

@@ -14,7 +14,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **Menu › Your crews** (signed in or demo, under the card, above the tiles): up to five of `activeCrews` — the Crews tab's own list — each named by `placeOf` (its route or area) with its unread count (`crewUnread`); a tap opens that crew (`setOpenCrewId`) on the Crews tab, and *See all ›* appears past five. No active crews means no section; a failed read (`crewsUnavailable`) says so.
 - **View public profile** (`openMyPublicProfile`): your own `FullProfile`, built from `meLive`. `meLive` reads the pace The pace is never labelled *self-reported* (owner 2026-11-11): not on the *SPEED PROFILE* heading, its edit note, or the *You* side of a partner pace comparison (`SpeedCompat`).
   (`mySpeedFtHr`, saved to `hiking_speed_ft_hr`) and the certifications, skills and belay devices from `profile`
-  directly, so the Speed and Safety tabs show what you saved. Your objectives are public (as Mountain Project's to-do
+  directly, so the Overview pace card (*SPEED PROFILE*, above *SPEED COMPATIBILITY* on another climber; there is no Speed tab since 2026-11-14) and the Safety tab show what you saved. Your objectives are public (as Mountain Project's to-do
   list is) because partner search matches on them; on your own view the Objectives tab says so, and no row reads
   "You both want this!". Belay devices are set in Edit profile; the Profile tab's Certifications & Skills card has a
   button that opens it.
@@ -25,8 +25,10 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   issuers: NOLS/SOLO/WMA, AIARE/A3/Avalanche Canada, AMGA, PCGI, PCIA, ACMG, UK Mountain Training, IFMGA,
   USA Climbing, The Mountaineers, Leave No Trace) as you type, and *Browse certifications* lists them all. A pick
   only fills the box, so the expiry date still applies (the date box is captioned *Expires (optional)*, so it says what it is before you pick one); anything not listed is added as typed. **Skills** are the
-  `SKILLS` chips in `SKILL_GROUPS` (seven groups, 42 skills incl. technique and rescue) plus free-text ones;
-  the vouch form offers the same groups, and `rappel` stays retired.
+  `SKILLS` chips in `SKILL_GROUPS` (eight groups, 50 skills incl. technique, retreat and rescue) plus free-text ones;
+  the vouch form offers the same groups, and `rappel` stays retired. A profile stores skill LABELS, so every profile
+  reader runs `profileSkills()` (core): a key, the current label, or an old spelling listed in `SKILL_ALIASES` all
+  resolve (`skillKeyOf()`) to the current label. Rename a label only by adding its old spelling to `SKILL_ALIASES`.
   - **Home city + state are a LABEL, never geocoded.** The city is free text with a `US_CITIES` datalist; the state comes
     from the dropdown. They show on your profile and partner rows, and the state orders namesakes in search
     (`homeStatePath`). They place you nowhere: partner and crew distance come only from the zip.

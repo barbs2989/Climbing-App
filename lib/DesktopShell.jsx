@@ -73,6 +73,12 @@ const readRecent = () => { try { const v = JSON.parse(localStorage.getItem(RECEN
    else to the climber's home state, else to the state with the most climbs — and the row NAMES the
    scope, so nothing is picked silently. A place that was typed but not found offers no row: the
    plain hits (and "no matches") answer that. */
+/* MORE THAN A HANDFUL (owner 2026-11-13: "when i click mt only 6 show up, we should allow more
+   options"). The list opens at 8 places and 10 climbs, and grows IN PLACE: "Show all N places" lists
+   every place the search matched (usePlaceSearch already finds them all and counts them), and "Show
+   more climbs" asks for 30 more, up to 200. It is the same ranked search, only longer, so the rows a
+   climber already saw keep their order. The limits reset whenever the words change. */
+const PLACES_FIRST = 8, ROUTES_FIRST = 10, ROUTES_STEP = 30, MORE_MAX = 200;
 export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left, inline, onNearMe }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
@@ -82,8 +88,10 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const qq = q.trim();
   const remember = term => { const next = [term].concat(recent.filter(s => s.toLowerCase() !== term.toLowerCase())).slice(0, 5); setRecent(next); try { localStorage.setItem(RECENT_KEY, JSON.stringify(next)); } catch (_e) { /* private mode: the list is for this visit only */ } };
   const forget = () => { setRecent([]); try { localStorage.removeItem(RECENT_KEY); } catch (_e) { /* nothing stored */ } };
-  const routesQ = useRouteSearch(USE_DB ? qq : "", 6);
-  const placesQ = usePlaceSearch(USE_DB ? qq : "", 4);
+  const [lims, setLims] = useState({ q: "", places: PLACES_FIRST, routes: ROUTES_FIRST });
+  const lim = lims.q === qq ? lims : { q: qq, places: PLACES_FIRST, routes: ROUTES_FIRST };
+  const routesQ = useRouteSearch(USE_DB ? qq : "", lim.routes);
+  const placesQ = usePlaceSearch(USE_DB ? qq : "", lim.places);
   const typed = useMemo(() => (USE_DB && onOpenFinder ? parseTypedSearch(qq) : null), [qq, onOpenFinder]);
   const typedPlaceQ = usePlaceSearch(typed && typed.place ? typed.place : "", 1);
   const homePaths = useMyHomeStatePaths();
@@ -105,10 +113,24 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
   const seedHits = !USE_DB && qq ? ROUTES.filter(r => r.name.toLowerCase().includes(qq.toLowerCase())).slice(0, 6) : [];
   const places = USE_DB ? ((placesQ.data && placesQ.data.rows) || []) : [];
   const routes = USE_DB ? (routesQ.data || []) : seedHits;
-  const hits = (finderHit ? [finderHit] : []).concat(places.map(a => ({ kind: "place", a })), routes.map(r => ({ kind: "route", r })));
+  const placesTotal = USE_DB ? ((placesQ.data && placesQ.data.total) || 0) : 0;
+  // Asked for more and still showing the shorter list: say it is coming rather than drop the row.
+  const placesMore = !USE_DB || !places.length ? null
+    : lim.places > PLACES_FIRST && placesQ.isPlaceholderData ? "loading"
+    : placesTotal > places.length && lim.places < MORE_MAX ? "more" : null;
+  const routesMore = !USE_DB || !routes.length ? null
+    : lim.routes > ROUTES_FIRST && routesQ.isPlaceholderData ? "loading"
+    : routes.length >= lim.routes && lim.routes < MORE_MAX ? "more" : null;
+  const hits = (finderHit ? [finderHit] : []).concat(places.map(a => ({ kind: "place", a })), placesMore ? [{ kind: "more", what: "places", state: placesMore }] : [], routes.map(r => ({ kind: "route", r })), routesMore ? [{ kind: "more", what: "routes", state: routesMore }] : []);
   const failed = USE_DB && (routesQ.isError || placesQ.isError) && !hits.length;
   const busy = USE_DB && (routesQ.isLoading || placesQ.isLoading) && !hits.length;
   const pick = h => {
+    if (h.kind === "more") {
+      if (h.state !== "more") return;
+      setLims({ q: qq, places: h.what === "places" ? Math.min(Math.max(placesTotal, lim.places), MORE_MAX) : lim.places, routes: h.what === "routes" ? Math.min(lim.routes + ROUTES_STEP, MORE_MAX) : lim.routes });
+      if (input.current) input.current.focus();
+      return;
+    }
     if (qq) remember(qq);
     setOpen(false); setQ(""); if (input.current) input.current.blur();
     if (h.kind === "finder") onOpenFinder({ loc: { id: h.scope.id, name: h.scope.name, area_type: h.scope.area_type }, filters: { discs: h.t.discs, gSys: h.t.gSys, gLo: h.t.gLo, gHi: h.t.gHi } });
@@ -120,15 +142,35 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     else if (hits.length && e.key === "ArrowUp") { e.preventDefault(); setHi(i => (i - 1 + hits.length) % hits.length); }
     else if (hits.length && e.key === "Enter") { e.preventDefault(); pick(hits[Math.min(hi, hits.length - 1)]); }
   };
+  /* SAY WHICH STATE (owner 2026-11-13: "it should show the state or province of that search to be
+     more clear where it is"). A climb row read only its crag ("Cathedral Rock"), so Washington's and
+     Nevada's namesakes looked alike; it now reads "Cathedral Rock, Washington". The state or province
+     is the top-level area the crag's path sits under (useStates, already loaded above) — no extra read.
+     Place rows already carry it (usePlaceSearch's `where`). */
+  const stateOfPath = p => { const s = String(p || ""); return s ? ((allStates || []).find(st => st.path && (s === st.path || s.startsWith(st.path + "."))) || {}).name || "" : ""; };
+  const routeWhere = r => {
+    const a = r._dbArea;
+    if (!a) return "";
+    const st = stateOfPath(a.path);
+    // searchRoutesFor's namesake qualifier is often the state itself ("Cathedral Rock (New Mexico)"):
+    // drop it rather than print the state twice.
+    const name = st && String(a.name || "").endsWith(" (" + st + ")") ? a.name.slice(0, -(st.length + 3)) : a.name;
+    return [name, st && st !== name ? st : ""].filter(Boolean).join(", ");
+  };
   const row = (h, i) => {
     const on = i === hi;
+    if (h.kind === "more") {
+      const label = h.state === "loading" ? (h.what === "places" ? "Loading places…" : "Loading more climbs…")
+        : h.what === "places" ? (placesTotal > MORE_MAX ? "Show " + MORE_MAX + " of " + placesTotal + " places" : "Show all " + placesTotal + " places") : "Show more climbs";
+      return <button key={"more-" + h.what} id={"wide-search-" + i} role="option" aria-selected={on} aria-disabled={h.state !== "more" || undefined} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, minHeight: 44, background: on ? C.card : "transparent", cursor: h.state === "more" ? "pointer" : "default" }}><ActionIcon name={h.state === "more" ? "more" : "search"} size={16} color={h.state === "more" ? C.blue : C.textMuted}/><span style={{ fontSize: 13.5, fontWeight: 700, color: h.state === "more" ? C.blue : C.textMuted }}>{label}</span></button>;
+    }
     const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
     /* A climb row carries ITS discipline's glyph and colours its grade the same way (the competitor
        review, 2026-11-04: every climb drew one mountain glyph, so a V7 boulder, a 5.4 trad route and
        an AI3 ice route looked alike before anyone read them). Places keep the pin; the finder row the compass. */
     const disc = h.kind === "route" ? (h.r.discipline || catOf(h.r) || "") : "";
     const discColor = (CAT[disc] || {}).color || C.textMuted;
-    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : (h.r._dbArea && h.r._dbArea.name) || "";
+    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
     return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
   };
@@ -153,7 +195,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
       {failed ? <div role="alert" style={{ padding: "12px 10px", fontSize: 13, color: C.amber }}>Search isn’t reachable right now — check your connection and try again.</div>
         : busy ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>Searching…</div>
         : !hits.length ? <div style={{ padding: "12px 10px", fontSize: 13, color: C.textMuted }}>{"No climbs or places match “" + qq + "”."}</div>
-        : <>{finderHit ? row(finderHit, 0) : null}{places.length ? <div style={{ ...SECTION, padding: "6px 10px 4px" }}>Places</div> : null}{hits.slice(finderHit ? 1 : 0, (finderHit ? 1 : 0) + places.length).map((h, i) => row(h, i + (finderHit ? 1 : 0)))}{routes.length ? <div style={{ ...SECTION, padding: "8px 10px 4px" }}>Climbs</div> : null}{hits.slice((finderHit ? 1 : 0) + places.length).map((h, i) => row(h, i + (finderHit ? 1 : 0) + places.length))}</>}
+        : hits.map((h, i) => { const head = (h.kind === "place" || h.kind === "route") && (i === 0 || hits[i - 1].kind !== h.kind) ? (h.kind === "place" ? "Places" : "Climbs") : ""; return head ? [<div key={"head-" + h.kind} style={{ ...SECTION, padding: head === "Places" ? "6px 10px 4px" : "8px 10px 4px" }}>{head}</div>, row(h, i)] : row(h, i); })}
     </div> : showEmpty ? <div id="wide-search-list" role="listbox" aria-label="Search shortcuts" style={panel}>
       {onNearMe ? <button role="option" aria-selected={false} onMouseDown={e => e.preventDefault()} onClick={() => { setOpen(false); if (input.current) input.current.blur(); onNearMe(); }} style={plain}><ActionIcon name="pin" size={17} color={C.blue}/><span style={{ fontSize: 14, fontWeight: 700, color: C.blue }}>Near me</span><span style={{ fontSize: 12, color: C.textMuted }}>climbs around your position, on the map</span></button> : null}
       {recent.length ? <><div style={{ ...SECTION, padding: "8px 10px 4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}><span>Recent</span><button onMouseDown={e => e.preventDefault()} onClick={forget} style={{ border: "none", background: "transparent", color: C.textMuted, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: "4px 0", textTransform: "none", letterSpacing: 0 }}>Clear</button></div>
@@ -204,7 +246,7 @@ function RailCrews({ crews, crewMsgs, crewUnread, placeOf, unavailable, loading,
           <span aria-hidden="true" style={{ width: 28, height: 28, borderRadius: 10, background: C.card, border: "1px solid " + C.border, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}><ActionIcon name="crews" size={15} color={C.textSub} /></span>
           <span style={{ flex: 1, minWidth: 0 }}>
             <span style={{ display: "block", fontSize: 13.5, fontWeight: r.unread ? 800 : 700, overflowWrap: "anywhere" }}>{r.name}</span>
-            {r.m ? <span style={{ display: "block", fontSize: 12.5, color: r.unread ? C.textSub : C.textMuted, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{preview(r.m)}</span> : null}
+            {r.m ? <span style={{ display: "block", fontSize: 12.5, lineHeight: 1.4, color: r.unread ? C.textSub : C.textMuted, overflowWrap: "anywhere" }}>{preview(r.m)}</span> : null}
           </span>
           {badgeN(r.unread)}
         </button>)}
@@ -310,7 +352,7 @@ export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN:
     <section aria-labelledby="rail-alerts" style={CARD}>
       <button id="rail-alerts" onClick={() => setAlertsOpen(o => !o)} aria-expanded={alertsOpen} style={{minHeight:44, ...SECTION, width: "100%", display: "flex", alignItems: "center", gap: 8, padding: 0, border: "none", background: "transparent", cursor: "pointer", textAlign: "left" }}>{newN ? <span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: 4, background: waiting.length ? C.amber : C.blue, flexShrink: 0 }}/> : null}<span style={{ flex: 1 }}>{newN ? "Notifications · " + newN + " new" : "Notifications"}</span><span aria-hidden="true" style={{ display: "flex" }}><Chevron open={alertsOpen} size={14} color={C.blue} /></span></button>
       {!alertsOpen ? null : <div style={{ marginTop: 6 }}>{guest ? <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>Sign in to get notifications.<button onClick={onSignIn} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Sign in ›</button></div> : null}
-      {waitShown.map((u, i) => u.tag ? <LogTagRow key={"w" + i} compact tag={u.tag} showToast={showToast} /> : <button key={"w" + i} onClick={u.go} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ display: "flex", marginTop: 1, flexShrink: 0 }}><ActionIcon name={u.icon} size={15} color={C.amber} /></span><span style={{ fontSize: 13, lineHeight: 1.4, fontWeight: 700, color: C.text, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{u.text}</span></button>)}
+      {waitShown.map((u, i) => u.tag ? <LogTagRow key={"w" + i} compact tag={u.tag} showToast={showToast} /> : <button key={"w" + i} onClick={u.go} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ display: "flex", marginTop: 1, flexShrink: 0 }}><ActionIcon name={u.icon} size={15} color={C.amber} /></span><span style={{ fontSize: 13, lineHeight: 1.4, fontWeight: 700, color: C.text, overflowWrap: "anywhere" }}>{u.text}</span></button>)}
       {guest ? null : unreadShown.length ? unreadShown.map(n => <button key={n.id} onClick={onOpenAlerts} style={{ ...ROW, alignItems: "flex-start" }}><span aria-hidden="true" style={{ width: 7, height: 7, marginTop: 6, borderRadius: 4, background: C.blue, flexShrink: 0 }}/><span style={{ fontSize: 13, lineHeight: 1.4, color: C.text, overflowWrap: "anywhere" }}>{n.text}</span></button>) : waiting.length ? null : <div style={{ fontSize: 13, color: C.textMuted, padding: "2px 2px 4px" }}>You’re all caught up.</div>}
       {alerts.length || moreN > 0 ? <button onClick={onOpenAlerts} style={{ marginTop: 4, padding: "4px 10px", border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{moreN > 0 ? "See all notifications · " + moreN + " more ›" : "See all notifications ›"}</button> : null}</div>}
     </section>

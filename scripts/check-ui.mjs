@@ -418,6 +418,12 @@ async function capture(name) {
 // seconds, twelve failures deep, when the real story is one line: the app never
 // rendered. Poll for the bottom nav before any phase proceeds, and say that one
 // line if it never shows.
+//
+// A visitor with no session lands on the sign-in screen, which has no nav bar. The server
+// this script spawns skips it (VITE_DEMO_AUTOLOGIN), but a deployment walked with --url
+// does not: the live-site check failed every run from 2026-10-23 to 2026-11-13 on a
+// healthy site, because it waited two minutes for a "Home" button behind a gate it never
+// opened. So take the gate's own way in, "View as guest", whenever it is what is on screen.
 async function waitForApp(timeoutMs) {
   const t0 = Date.now();
   while (Date.now() - t0 < timeoutMs) {
@@ -425,6 +431,10 @@ async function waitForApp(timeoutMs) {
       [...document.querySelectorAll('button,[role="button"]')].some((e) => (e.textContent || "").trim() === "Home")
     ).catch(() => false);
     if (up) return true;
+    await page.evaluate(() => {
+      const g = [...document.querySelectorAll('button,[role="button"]')].find((e) => (e.textContent || "").trim() === "View as guest");
+      if (g) g.click();
+    }).catch(() => {});
     await page.waitForTimeout(1000);
   }
   return false;
@@ -806,13 +816,13 @@ try {
   await flow("log-a-climb-picker-opens", async () => {
     await tap("Logbook");
     // Flows share one browser and React keeps sub-tab state, so reset to the view
-    // that owns this control -- the previous flow leaves the Logbook on "Saved",
-    // where "Log a climb" legitimately does not render.
-    await tap("Objectives");
+    // that owns this control. Objectives no longer carries a header "Log a climb"
+    // (each objective row has its own Log); the picker opens from Completed.
+    await tap("Completed");
     const before = await page.innerText("body");
-    if (!(await tap("Log a climb"))) throw new Error("the 'Log a climb' button is not present");
+    if (!(await tap("Log a past climb"))) throw new Error("the 'Log a past climb' button is not present");
     const after = await page.innerText("body");
-    if (after === before) throw new Error("'Log a climb' changed nothing -- the picker did not open");
+    if (after === before) throw new Error("'Log a past climb' changed nothing -- the picker did not open");
     if (!/Pick a state|Log a past climb/i.test(after)) throw new Error("the picker opened but offers no way to choose a climb");
   });
 

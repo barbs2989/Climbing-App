@@ -8,12 +8,13 @@ import { fmtRopeLen, _ropeEdited } from "../../lib/rack";
 import { ropeworkFacts } from "../../lib/ropework";
 import { useContext } from "react";
 import { ConfidenceCtx, ConfChip } from "../../lib/confidence.jsx";
-import CragFactRows from "./CragFactRows.tsx";
+import CragFactRows, { MissingFactsLine } from "./CragFactRows.tsx";
+import { monthsLabel } from "../../lib/areaFields.js";
 import CragFactSection from "./CragFactSection.tsx";
 import CardHead from "./CardHead.tsx";
 import EditIconButton from "./EditIconButton.tsx";
 import CountUp from "./CountUp.tsx";
-import { FACT_FIELD } from "../../lib/cragFactField.js";
+import { AREA_FACT_FIELD } from "../../lib/cragFactField.js";
 import { usableFa } from "../../lib/fa";
 import { climbNoun } from "../../lib/discLabels.js";
 import type { CragFact } from "./CragFactRows.tsx";
@@ -55,7 +56,7 @@ export interface TechStatsRoute {
   descent?: string | null;
   sun?: string | null;
   aspect?: string | null;
-  _dbArea?: {aspect?: string | null} | null;
+  _dbArea?: {aspect?: string | null; areaType?: string | null; seasonMonths?: number[] | null; ancestorSeasonMonths?: number[] | null} | null;
   wet?: string | null; rockQuality?: string | null; fixedGear?: string | null;
   season?: string | null;
   ropeLen?: string | number | null; ropeLengthM?: number | null; ropeType?: string | null;
@@ -67,6 +68,8 @@ export interface TechStatsProps {
   onEdit?: ((field?: string) => void) | null;
   /** "rack" or another crag fact section: draw only that section's rows (the page places them in other cards) instead of the whole card. */
   part?: string | null;
+  /** Opens the route's AREA editor (wall, crag or peak) at an areas column; only where that area takes edits. */
+  onEditArea?: ((field: string) => void) | null;
 }
 
 const COMMITMENT_EXPLAINERS={I:"A few hours — backing off is quick and low-consequence.",II:"Half a day — retreat is straightforward.",III:"Most of a day — retreat takes real time and planning.",IV:"Full day+ — committing. Retreat is difficult once you're in it.",V:"Multi-day — big commitment. Retreat can mean an overnight out.",VI:"Multi-day, remote, or high-altitude — retreat is a serious undertaking on its own."};
@@ -76,9 +79,9 @@ const COMMITMENT_EXPLAINERS={I:"A few hours — backing off is quick and low-con
    "Pitches link" and "Simul-climbing" are ropework prose, often a paragraph long, so they sit in GEAR & SAFETY beside
    the rope, not in the top card, which keeps to grade, pitches, length and rock (owner, 2026-11-11: the top card was
    too long; the description goes right under grade and rock type). */
-const CRAG_FACT_SECTIONS: [string,string,string[]][]=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Pitches link","Simul-climbing","Fixed gear","Landing","Crash pads","Descent"]],["cond","CONDITIONS",["Aspect","Sun","Season","Wet","Rock quality"]]];
+const CRAG_FACT_SECTIONS: [string,string,string[]][]=[["location","WHERE IT STARTS",["Location","Start"]],["rack","RACK",["Bolts","Protection"]],["gear","GEAR & SAFETY",["Anchor","Rope","Rope notes","Pitches link","Simul-climbing","Fixed gear","Landing","Crash pads","Descent"]],["cond","ROCK & SEASON",["Aspect","Sun","Season","Wet","Rock quality"]]];
 /* Moved verbatim from RouteDetail.jsx (PR58); only the types were added. */
-export default function TechStats({route,onEdit,part}: TechStatsProps){
+export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps){
   const _cx=useContext(ConfidenceCtx);const _gradeLv=_cx&&_cx.levels?_cx.levels.grade||null:null;
   const disc=catOf(route);
   const hasElevPts=route.elevPts&&route.elevPts.length>0;
@@ -203,7 +206,7 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
      render on every discipline. Reputation is `guide_stars` (0-4), a guidebook rating kept apart from
      `stars` (the climbers' own 1-5 votes) and never attributed. It was labelled "Quality", then "Star rating";
      both read as the climbers' votes, which a route with no votes yet then seemed to have (owner, 2026-10-30). */
-  const crag=CRAG_CATS.includes(disc);const facts: CragFact[]=[];let _missN=0,_firstMiss: string|null=null;
+  const crag=CRAG_CATS.includes(disc);const facts: CragFact[]=[];let _missRows: CragFact[]=[];
   const _gsRaw=route.guideStars!=null?route.guideStars:route.guide_stars;const _gs=(_gsRaw==null||_gsRaw===""||!isFinite(+_gsRaw))?null:Math.max(0,Math.min(4,Math.round(+_gsRaw)));
   if(_gs!=null)stats.unshift(["Reputation","★".repeat(_gs)+"☆".repeat(4-_gs),C.amber]);
   const _alt=(function(a: unknown){return (Array.isArray(a)?a:(a?[a]:[])).map(function(x: unknown){return String(x==null?"":x).trim();}).filter(Boolean);})(route.altNames!=null?route.altNames:route.alt_names);
@@ -211,6 +214,8 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
   const _vars=(Array.isArray(route.variations)?route.variations:[]).map(function(v){if(v==null)return "";if(typeof v!=="object")return String(v).trim();return [v.name,v.grade].filter(Boolean).join(" · ")+(v.note?" — "+v.note:"");}).filter(Boolean);
   if(_vars.length)facts.push(["Variations",<>{_vars.map(function(v,i){return <div key={i} style={{marginTop:i?3:0}}>{v}</div>;})}</>]);
   if(crag){
+    /* The route's own area (a wall, crag or peak): crag-wide facts are read from it and, with onEditArea, added to it. */
+    const _ar=route._dbArea||null;const _arNoun=_ar&&["crag","wall","peak"].includes(String(_ar.areaType))?String(_ar.areaType):"area";
     if(disc!=="bouldering"&&+(route.bolts as number|string)>0)stats.push(["Bolts",String(Math.round(+(route.bolts as number|string))),C.blue]);
     /* ANCHOR is `anchor` (0242): a short value ("2-bolt chains", "tree, walk off"), the route's TOP
        anchor — a pitch's own anchor stays on its ROUTE BREAKDOWN row. Style is NOT here: `features`
@@ -229,7 +234,10 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
     /* WET, ROCK QUALITY and FIXED GEAR (0247): seepage after rain, loose or polished rock, and the
        pitons/bolt ladders already in place. Short stated values, so each is a facts row, not a tile. */
     [["Wet",route.wet],["Rock quality",route.rockQuality],["Fixed gear",route.fixedGear]].forEach(function(f){const v=String(f[1]||"").trim();if(v&&v.length<=160)facts.push([f[0] as string,v]);else if(v)_longOnFile.push(f[0] as string);});
-    const _sea=String(route.season||"").trim();if(_sea)facts.push(["Season",_sea]);
+    /* SEASON is the crag's, wall's or peak's unless the route states its own (owner, 2026-11-13: consolidate
+       to the crag, sub-area or peak). The route header already shows it (routeSeasonShort); the card said
+       "Not on file yet" beside it on 100% of crag routes. Up to four ancestors, as the header reads it. */
+    const _sea=String(route.season||"").trim();const _arM=_ar?((_ar.seasonMonths&&_ar.seasonMonths.length)?_ar.seasonMonths:_ar.ancestorSeasonMonths):null;const _seaA=_sea?"":monthsLabel(_arM);if(_sea)facts.push(["Season",_sea]);else if(_seaA)facts.push(["Season",_seaA+" ("+(_ar&&_ar.seasonMonths&&_ar.seasonMonths.length?"the "+_arNoun+"'s season":"the area's season")+")"]);
     /* ROPE. Rope length, rope type and the ropework note were read only by RouteRackBox and RopeworkBox,
        which mount OFF the crag disciplines, so on a trad, sport or aid route all three reached no screen
        (122 crag routes carry one) and the editor's rope length had nowhere to show. Same precedence as
@@ -245,12 +253,15 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
        below carries its own placeholder. */
     const _want=disc==="bouldering"?["Location","Landing","Crash pads","Start","Aspect","Season","Rock quality","Wet"]
       :["Location"].concat(disc==="toprope"?[]:["Pitches",disc==="aid"?"Wall height":"Route length"]).concat(disc==="sport"?["Bolts"]:[]).concat(disc==="sport"||disc==="trad"?["Protection"]:[]).concat(["Anchor"]).concat(disc==="toprope"?[]:["Rope"]).concat(["Aspect","Season","Rock quality","Wet"]).concat(disc==="trad"||disc==="aid"?["Fixed gear"]:[]);
-    _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,true]);});
+    /* A missing crag-wide fact (AREA_FACT_FIELD) is marked with the area's noun, so its Add edits the area once
+       for every route on it; the rest stay the route's. All of them render on ONE "Not on file yet" line. */
+    _want.forEach(function(k){if(_have.has(k))return;facts.push([k,<span style={{color:C.textMuted,fontStyle:"italic"}}>Not on file yet</span>,onEditArea&&(AREA_FACT_FIELD as Record<string,string>)[k]?_arNoun:true]);});
     const _secL=new Set(CRAG_FACT_SECTIONS.flatMap(function(s){return s[2];}));
     for(let i=stats.length-1;i>=0;i--){if(_secL.has(stats[i][0])){facts.push([stats[i][0],<span style={{color:stats[i][2],fontWeight:700}}>{stats[i][1]}</span>]);stats.splice(i,1);}}
-    if(part){const sec=CRAG_FACT_SECTIONS.find(function(s){return s[0]===part;});const rows=sec?sec[2].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[]:[];return !rows.length?null:part==="rack"?<div style={{marginTop:-6,marginBottom:6,borderBottom:"1px solid "+C.border}}><CragFactRows rows={rows} onEdit={onEdit}/></div>:<CragFactSection title={(sec as [string,string,string[]])[1]} rows={rows} onEdit={onEdit}/>;}
+    if(part){const sec=CRAG_FACT_SECTIONS.find(function(s){return s[0]===part;});const rows=sec?sec[2].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[]:[];return !rows.length?null:part==="rack"?<div style={{marginTop:-6,marginBottom:6,borderBottom:"1px solid "+C.border}}><CragFactRows rows={rows} onEdit={onEdit} onEditArea={onEditArea}/></div>:<CragFactSection title={(sec as [string,string,string[]])[1]} rows={rows} onEdit={onEdit} onEditArea={onEditArea}/>;}
     facts.splice(0,facts.length,...facts.filter(function(f){return !_secL.has(f[0]);}));
-    const _mt=facts.filter(function(f){return f[2];});_missN=_mt.length;_firstMiss=_mt.length?_mt[0][0]:null;
+    /* The card's own missing facts (Pitches, Route length) leave the rows and go on ONE line under them. */
+    _missRows=facts.filter(function(f){return f[2];});facts.splice(0,facts.length,...facts.filter(function(f){return !f[2];}));
   }
   /* A road closed below the trailhead: the distance starts where a climber can park, and the note
      says how much of it is the road (lib/outing.js roadWalkMi), so it reads as the walk it is. */
@@ -258,7 +269,7 @@ export default function TechStats({route,onEdit,part}: TechStatsProps){
   if(part)return null;
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><CardHead>{crag?climbNoun(disc).toUpperCase()+" FACTS":"TECHNICAL STATS"}</CardHead>{onEdit?<EditIconButton onClick={onEdit} title={crag?"Edit "+climbNoun(disc)+" facts":"Edit technical stats"}/>:null}</div>{(function(){const ag=route.alpineGrade||route.alpine_grade,rg=route.rockGrade||route.rock_grade,ig=route.iceGrade||route.ice_grade,adg=route.aidGrade||route.aid_grade,cm=route.commitment,gg=route.grade;const P: [string,string][]=[];if(rg)P.push(["Rock",rg]);if(cm)P.push(["Commitment",cm]);/* On a crag route the I-VI grade is how long the day is (NCCS commitment), not a claim the line is alpine: Outer Space, a Snow Creek Wall trad route, read "ALPINE III" and looked misfiled (owner, 2026-11-11). */const agL=crag&&!cm?"Commitment":"Alpine";if(ag)P.push([agL,ag]);if(ig)P.push(["Ice",ig]);if(adg)P.push(["Aid",adg]);if(P.length<1&&gg)P.push(["Grade",gg]);const notes: [string,string][]=[];[["Rock",rg],["Commitment",cm],[agL,ag],["Ice",ig],["Aid",adg],["Grade",gg]].forEach(function(p){const d=p[1]?gradeDetail(p[1]):"";if(!d||notes.some(function(n){return n[1]===d;}))return;notes.push([p[0] as string,d]);});if(P.length<1)return null;/* A class RANGE is one grade on screen (its top, or the headline it contains) plus this notice — see gradeRangeNote. */const rangeNote=gradeRangeNote(route);/* The same grade in other scales, as Mountain Project prints it under a route's grade (lib/grade.js gradeConversions). */const conv=gradeConversions(displayGrade(route));const cmExp=cm?(COMMITMENT_EXPLAINERS as Record<string,string>)[String(cm).replace(/^Grade\s*/i,"").trim()]:null;return <div style={{marginBottom:11,paddingBottom:11,borderBottom:"1px solid "+C.border}}><div style={{...SUB_LABEL,marginBottom:7,display:"flex",alignItems:"center"}}>Composite Grade{/* The GRADE's own level, here on the grade rather than on the card heading (owner, 2026-11-11): the card holds a dozen fields, and the heading chip read "High · locked" over rows that said "Not on file yet". */_gradeLv?<ConfChip level={_gradeLv} label="Grade" compact onFlag={_cx&&_cx.onFlag?function(){(_cx.onFlag as (k: string, l: unknown)=>void)("grade","Grade");}:null}/>:null}</div><div style={{display:"flex",flexWrap:"wrap",gap:6}}>{P.map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:13,fontWeight:700,color:C.text,background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"3px 9px"}}><span style={{color:C.label,fontSize:10,fontWeight:800,textTransform:"uppercase",letterSpacing:0.3}}>{p[0]}</span>{singleGrade(p[1],route)}</span>;})}</div>{conv.length?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:7}}>{"About "+conv.map(function(x){return x[1]+" "+x[0];}).join(" · ")}</div>:null}{rangeNote?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{rangeNote}</div>:null}{notes.length?<div style={{marginTop:8}}>{notes.map(function(n){return <div key={n[0]} style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:4}}><span style={{fontSize:10,fontWeight:800,color:C.label,textTransform:"uppercase",letterSpacing:0.3}}>{n[0]}</span>{" · "+n[1]}</div>;})}</div>:null}{cmExp?<div style={{fontSize:12,color:C.textSub,lineHeight:1.45,marginTop:8}}>{cmExp}</div>:null}{cmExp?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{"Commitment counts the climb, not the walk in — a long approach can make a Grade II a multi-day trip."}</div>:null}</div>;})()}<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:8}}>{stats.map(st=><div key={st[0]} style={{background:C.surface,borderRadius:9,padding:"8px 10px"}}><div style={{fontSize:15,fontWeight:700,color:st[2]}}><CountUp value={st[1]}/></div><div style={{fontSize:11,color:C.label,marginTop:2,textTransform:"uppercase",letterSpacing:0.4}}>{st[0]}</div></div>)}</div>{facts.length?<div style={{marginTop:stats.length?14:4}}>{(function(){/* GROUPED, so ten facts do not read as one undifferentiated run: what the line IS, what protects it,
      and when it is in shape. The label column is 92px and wraps at spaces — at 62px "PROTECTION" and
-     "ROCK QUALITY" ran under their own values. A heading shows only when more than one group renders. */const G: [string,string[]][]=[["The line",["Also called","Variations","Location","Start"]],["Gear & safety",["Bolts","Protection","Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["Conditions",["Aspect","Sun","Season","Wet","Rock quality"]]];const placed=new Set();let groups=G.map(function(g): [string,CragFact[]]{const rows=g[1].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[];rows.forEach(function(f){placed.add(f[0]);});return [g[0],rows];});const rest=facts.filter(function(f){return !placed.has(f[0]);});if(rest.length)groups[0][1]=groups[0][1].concat(rest);groups=groups.filter(function(g){return g[1].length;});return groups.map(function(g,gi){return <div key={g[0]} style={{marginTop:gi?14:0}}>{groups.length>1?<div style={{...SUB_LABEL,color:C.label,paddingBottom:6,marginBottom:2,borderBottom:"1px solid "+C.border}}>{g[0]}</div>:null}{g[1].map(function(f,i){return <div key={f[0]} style={{display:"flex",gap:12,alignItems:"baseline",padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}><span style={{fontSize:10.5,fontWeight:700,color:C.label,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.35,width:92,flexShrink:0}}>{f[0]}</span><span style={{fontSize:13,color:C.text,lineHeight:1.5,flex:1,minWidth:0,overflowWrap:"anywhere"}}>{f[1]}</span></div>;})}</div>;});})()}</div>:null}{_missN&&onEdit?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,flexWrap:"wrap",marginTop:12,paddingTop:10,borderTop:"1px solid "+C.border}}><span style={{fontSize:12,color:C.textMuted,lineHeight:1.4}}>{_missN+(_missN===1?" fact":" facts")+" not on file yet"}</span><button onClick={function(){onEdit((FACT_FIELD as Record<string,string>)[_firstMiss as string]);}} style={{padding:"6px 0",border:"none",background:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{"Add what you know →"}</button></div>:null}{route.fa&&!(route.peakMetadata&&route.peakMetadata.firstAscent)?<div style={{marginTop:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>First Ascent</span>{" · "+route.fa}</div>:null}{(function(){/* The first FREE and first WINTER ascent sit under the first-ascent line, each only when present and
+     "ROCK QUALITY" ran under their own values. A heading shows only when more than one group renders. */const G: [string,string[]][]=[["The line",["Also called","Variations","Location","Start"]],["Gear & safety",["Bolts","Protection","Anchor","Rope","Rope notes","Fixed gear","Landing","Crash pads","Descent"]],["Conditions",["Aspect","Sun","Season","Wet","Rock quality"]]];const placed=new Set();let groups=G.map(function(g): [string,CragFact[]]{const rows=g[1].map(function(l){return facts.find(function(f){return f[0]===l;});}).filter(Boolean) as CragFact[];rows.forEach(function(f){placed.add(f[0]);});return [g[0],rows];});const rest=facts.filter(function(f){return !placed.has(f[0]);});if(rest.length)groups[0][1]=groups[0][1].concat(rest);groups=groups.filter(function(g){return g[1].length;});return groups.map(function(g,gi){return <div key={g[0]} style={{marginTop:gi?14:0}}>{groups.length>1?<div style={{...SUB_LABEL,color:C.label,paddingBottom:6,marginBottom:2,borderBottom:"1px solid "+C.border}}>{g[0]}</div>:null}{g[1].map(function(f,i){return <div key={f[0]} style={{display:"flex",gap:12,alignItems:"baseline",padding:"8px 0",borderTop:i===0?"none":"1px solid "+C.borderLight}}><span style={{fontSize:10.5,fontWeight:700,color:C.label,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.35,width:92,flexShrink:0}}>{f[0]}</span><span style={{fontSize:13,color:C.text,lineHeight:1.5,flex:1,minWidth:0,overflowWrap:"anywhere"}}>{f[1]}</span></div>;})}</div>;});})()}</div>:null}{_missRows.length?<div style={{marginTop:facts.length?4:0,borderTop:facts.length?"1px solid "+C.borderLight:"none"}}><MissingFactsLine rows={_missRows} onEdit={onEdit} onEditArea={onEditArea} first/></div>:null}{route.fa&&!(route.peakMetadata&&route.peakMetadata.firstAscent)?<div style={{marginTop:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>First Ascent</span>{" · "+route.fa}</div>:null}{(function(){/* The first FREE and first WINTER ascent sit under the first-ascent line, each only when present and
    different from it. Both go through usableFa(), the same placeholder test `fa` gets ("unknown", "??"). */const fa0=String(route.fa||"").trim();const rows=[["First Free Ascent",route.ffa],["First Winter Ascent",route.fwa]].map(function(p){const v=usableFa(p[1]);return [p[0],v==null?"":String(v).trim()];}).filter(function(p){return p[1]&&p[1]!==fa0;});if(!rows.length)return null;return <>{rows.map(function(p,i){return <div key={p[0]} style={{marginTop:(i||route.fa)?4:10,fontSize:12.5,color:C.textSub,lineHeight:1.4}}><span style={{...SUB_LABEL}}>{p[0]}</span>{" · "+p[1]}</div>;})}</>;})()}{note?<div style={{fontSize:11.5,color:C.textMuted,marginTop:8,lineHeight:1.5}}>{note}</div>:null}</div>;
 }
 const pitchAnchorText=function(sum: NonNullable<ReturnType<typeof pitchAnchorSummary>>){return sum.map(function(x){return x[0]+" "+x[1];}).join(" · ");};
