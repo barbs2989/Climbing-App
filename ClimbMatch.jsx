@@ -256,7 +256,7 @@ export default function App(){
      waiting on you (amber is reserved for nudging yourself). */
   const myGuideInquiriesQ=useGuideInquiries(USE_DB&&uid?uid:null); /* Whether you are a listed guide decides which guide entry the Menu offers: the application, or the dashboard. */const myGuideProfileQ=useGuideProfile(USE_DB&&uid?uid:null);const isGuide=!!myGuideProfileQ.data;
   const guideInquiryN=(myGuideInquiriesQ.data||[]).filter(function(x){return x&&x.status==="new";}).length;
-  const myCrewsQ=useMyCrews(uid);var crewsUnavailable=!!(uid&&myCrewsQ&&myCrewsQ.isError),crewsLoading=!!(uid&&myCrewsQ&&myCrewsQ.isPending&&!myCrewsQ.isError);
+  const myCrewsQ=useMyCrews(uid);var crewsUnavailable=!!(uid&&myCrewsQ&&myCrewsQ.isError),crewsLoading=!!(uid&&myCrewsQ&&myCrewsQ.isPending);
   /* OPEN CREWS OTHER REAL CLIMBERS HAVE STARTED. `crew_listings` is a view 0036 built deliberately
      for this -- view-owner privileges so it can expose the browsable columns of `crews` while
      float_plan and meet_place are structurally ABSENT rather than filtered -- and `useCrewListings`
