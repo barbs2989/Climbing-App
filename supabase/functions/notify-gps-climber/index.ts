@@ -7,6 +7,7 @@
 // every field comes from the gps_submissions row validate-gps wrote:
 //   - the row must exist and be fresh (FRESH_MIN), so old ids cannot be replayed;
 //   - at most ONE receipt per submission (unique index, migration 0183);
+//   - the receipt goes only to the signed-in caller's own verified address;
 //   - the caller's IP is rate limited, and the mailer caps every recipient and the
 //     whole project (see _shared/mailer.ts).
 // The row is written first and is the system of record; `email_sent` records
@@ -14,7 +15,7 @@
 // climber the truth.
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { sendEmail, looksLikeEmail } from "../_shared/mailer.ts";
+import { sendEmail, looksLikeEmail, callerOwns } from "../_shared/mailer.ts";
 import { allow, clientIp, HOUR } from "../_shared/ratelimit.ts";
 
 const corsHeaders = {
@@ -60,6 +61,11 @@ serve(async (req) => {
       return json({ error: "Submission is too old to notify about" }, 409);
     }
     if (!looksLikeEmail(sub.climber_email)) {
+      return json({ success: true, emailed: false, reason: "no_recipient" });
+    }
+    // The receipt goes only to the signed-in caller's own verified address. validate-gps
+    // already stores nothing else; this also refuses rows written before that change.
+    if (!(await callerOwns(supabase, req, sub.climber_email))) {
       return json({ success: true, emailed: false, reason: "no_recipient" });
     }
 

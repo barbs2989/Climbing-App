@@ -2,6 +2,11 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4"
 import { allow, clientIp, DAY, HOUR, WEEK } from "../_shared/ratelimit.ts"
 
+// The climber's email is NEVER read from the request body: a body field let any caller
+// store an address that notify-gps-climber / notify-gps-admin would then mail. It comes
+// only from the caller's verified session (auth.getUser on the bearer token). A
+// signed-out caller (bearer = the public key) stores no email and gets no receipt.
+
 // CORS on EVERY response, including errors. The browser sends apikey/authorization
 // headers (the gateway needs them), so the preflight has to allow them; and an error
 // response without Allow-Origin is unreadable to the page, which then shows a
@@ -28,7 +33,6 @@ const supabase = createClient(
 interface GpsSubmission {
   routeId: string
   gpxData: [number, number][]
-  climberEmail?: string
   climberName?: string
   deviceType?: string
   climbDate?: string
@@ -151,7 +155,7 @@ serve(async (req) => {
     }
 
     const body: GpsSubmission = await req.json()
-    const { routeId, gpxData, climberEmail, climberName, deviceType, climbDate, notes } = body
+    const { routeId, gpxData, climberName, deviceType, climbDate, notes } = body
 
     // Validate input
     if (!routeId || !gpxData || !Array.isArray(gpxData) || gpxData.length === 0) {
@@ -170,12 +174,18 @@ serve(async (req) => {
         { status: 400, headers: JSON_HEADERS }
       )
     }
-    if (climberEmail !== undefined && climberEmail !== null && climberEmail !== "" &&
-        !(typeof climberEmail === "string" && climberEmail.length <= 254 && EMAIL_RE.test(climberEmail))) {
-      return new Response(
-        JSON.stringify({ error: "That email address doesn't look right" }),
-        { status: 400, headers: JSON_HEADERS }
-      )
+    // Receipt address: from a verified session only; any body `climberEmail` is ignored.
+    // getUser finds no user for the public key, which just means no email is stored.
+    let climberEmail: string | null = null
+    const token = (req.headers.get("Authorization") ?? "").replace(/^Bearer\s+/i, "")
+    if (token) {
+      try {
+        const { data: userData } = await supabase.auth.getUser(token)
+        const email = userData?.user?.email
+        if (typeof email === "string" && email.length <= 254 && EMAIL_RE.test(email)) climberEmail = email
+      } catch (_e) {
+        climberEmail = null
+      }
     }
 
     // Per-IP limits. The email limit below is keyed on an OPTIONAL field the caller
@@ -196,8 +206,8 @@ serve(async (req) => {
       )
     }
 
-    // Two more limits on top of the per-IP ones above: 10 per email per 24h (when an
-    // email is given), and a global 25 per route per week so no single route's review
+    // Two more limits on top of the per-IP ones above: 10 per email per 24h (when the
+    // caller is signed in), and a global 25 per route per week so no single route's review
     // queue can be flooded from many connections.
     const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
     const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
