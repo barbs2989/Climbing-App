@@ -40,7 +40,8 @@ function useSavedMap(routeId) {
 const btn = { padding: "7px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 12.5, fontWeight: 700, cursor: "pointer", minHeight: 36 };
 
 /* `extra` rides in the same row, after the save controls — the desktop rail puts Draw approach there. */
-export function SaveMapOffline({ routeId, notify, extra }) {
+/* `lead` is the route's Download GPX button: it comes first in this row, so the ways to take the map away sit side by side (owner, 2026-11-13). */
+export function SaveMapOffline({ routeId, notify, lead, extra }) {
   const [info, reload] = useSavedMap(routeId);
   const [busy, setBusy] = useState(false), [prog, setProg] = useState(null);
   const qc = useQueryClient();
@@ -60,11 +61,12 @@ export function SaveMapOffline({ routeId, notify, extra }) {
     unpackRouteOffline(routeId).then(function () { say("Map removed from this device"); }, function () { say("Couldn’t remove the map — it’s still on this device."); })
       .finally(function () { reload(); qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };
-  if (info === undefined) return extra ? <div style={{ display: "flex", marginTop: 8 }}>{extra}</div> : null;
+  if (info === undefined) return lead || extra ? <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 8 }}>{lead || null}{extra || null}</div> : null;
   const pct = mapPct(info), partial = info && info.missing > 0;
   // Beside Draw approach in the 300px desktop rail, both buttons have to fit one row.
   const saveBtn = extra ? { ...btn, padding: "7px 6px", fontSize: 12, whiteSpace: "nowrap", flex: "1 1 auto" } : btn;
   return <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
+    {lead || null}
     {busy ? <span role="status" style={{ fontSize: 12.5, color: C.textSub, fontWeight: 600 }}>{"Saving map… " + (prog && prog.total ? Math.round(100 * prog.done / prog.total) + "%" : "")}</span>
       : info ? <>
         <span style={{ fontSize: 12.5, color: partial ? C.amber : C.green, fontWeight: 700, flex: 1, minWidth: 0 }}>{partial ? pct + "% of the map saved offline" : "✓ Map saved offline · " + savedAgo(info.at)}</span>
