@@ -617,7 +617,7 @@
     ]
    }
   ],
-  "note": "App grade is 4th; MP gives 5.4 (not locked). Second source pending/checked below."
+  "note": "App grade is 4th; Mountain Project gives 5.4 (not locked). Second page opened: en.wikipedia.org/wiki/Cockscomb_(Tuolumne_Meadows) says only that the easiest route is Class 4, nothing for this route."
  },
  "ca_west_ridge_5": {
   "area": "ca_mt_conness",
@@ -750,8 +750,8 @@
     ]
    },
    {
-    "field": "approach_hours",
-    "value": 3.5,
+    "field": "approach_time",
+    "value": "3:30",
     "method": "single-source",
     "level": "locked-1src",
     "evidence": [
@@ -1008,5 +1008,1612 @@
    }
   ],
   "note": "Opened DDG results; no second publisher describes this ski line (only MP area pages, mapcarta). Permit page applies to Whitney zone generally."
+ },
+ "co_andrews_creek_the_gash_andrews_glacier": {
+  "area": "co_andrews_creek_the_gash",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy Snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881228/andrews-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Andrews Glacier rated Easy Snow."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881228/andrews-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-July soft low-angle snow; late summer-fall alpine ice",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881228/andrews-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Busy and soft in June-July; turns to alpine ice by late summer and fall, crampons advised."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avalanche potential after first snows; sides steeper than the center; late-season ice.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881228/andrews-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "After first snow avalanches possible; center lowest angle, sides steeper."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Pickets if protection wanted; crampons in late season.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105881228/andrews-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pickets work if you protect it; crampons advisable once icy."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Glacier Gorge Trailhead (9,240 ft), Bear Lake Road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.rockymountainhikingtrails.com/andrews-tarn.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Andrews Tarn hike starts at Glacier Gorge Trailhead on Bear Lake Road, trailhead elevation 9240 ft."
+     }
+    ]
+   }
+  ],
+  "note": "rockymountainhikingtrails gain (2,300 ft) is to Andrews Tarn, not the glacier route, so not used."
+ },
+ "co_bell_cord_couloir": {
+  "area": "co_maroon_bells",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Maroon Peak Bell Cord Couloir: Class 4, steep snow."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105758709/bell-cord-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bell Cord Couloir rated 4th YDS, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4556,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,556 ft from Maroon Lake."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length round-trip 8 miles."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Maroon Lake (Maroon Bells) trailhead, 9,600 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Maroon Lake at 9,600 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105758709/bell-cord-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach via the Maroon Bells TH and Crater Lake."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14163,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,163 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Late May-June",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758709/bell-cord-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Prime time late May to June depending on year."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Couloir reaches about 55 degrees in its upper third; from the notch follow ridge to South Maroon (3rd-4th) or North Maroon (~5.4).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758709/bell-cord-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 55 degrees in upper 1/3; from notch go to South Maroon (3rd-4th) or North Maroon (5.4ish)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Albert Ellingwood, 1919",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105758709/bell-cord-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA line: unknown, Albert Ellingwood, 1919."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "High exposure, high rockfall, high route-finding and commitment.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=maro3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure, rockfall, route-finding and commitment all High."
+     }
+    ]
+   }
+  ],
+  "note": "App gain 4600 is within 1% of 14ers 4,556."
+ },
+ "co_buffalo_mountain_silver_couloir": {
+  "area": "co_buffalo_mountain",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106639575/silver-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 3000 ft."
+     },
+     {
+      "url": "https://climberkyle.com/2023/04/10/buffalo-mountain-silver-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Silver Couloir nearly 3000 feet long; a 3000 foot descent."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Buffalo Mountain Trailhead, Ryan Gulch Road, Wildernest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/the-gore-range/buffalo-mountain/silver-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Buffalo Mountain Trailhead on Ryan Gulch Road in Wildernest."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From the couloir base continue east around Buffalo on an established trail back to the trailhead.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106639575/silver-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Continue east around Buffalo on a well established trail to the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Spring, after the snow consolidates; go early while frozen",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106639575/silver-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best after snow consolidates in spring; climb early while frozen."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Listed among the 50 classic ski descents; also called Elvis; sees heavy traffic.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backcountryrecon.com/colorado/the-gore-range/buffalo-mountain/silver-couloir/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Also called Elvis; one of the 50 classic ski descents, much traffic."
+     }
+    ]
+   }
+  ]
+ },
+ "co_fall_mountain_cirque_hold_fast": {
+  "area": "co_fall_mountain_cirque",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124477078/hold-fast",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 700 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124477078/hold-fast",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "FKA Gavin Erickson, June 2023",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124477078/hold-fast",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA unknown; first known ascent Gavin Erickson, June 2023."
+     }
+    ]
+   },
+   {
+    "field": "max_slope_deg",
+    "value": 47,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124477078/hold-fast",
+      "retrieved_at": "2026-11-14",
+      "fact": "Measured max angle 47 degrees, parts looked steeper."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons; rope not needed.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124477078/hold-fast",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice axe and crampons; author would not bring a rope."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Cornice overhangs most of the line; traverse left about 2/3 up to get out from under it.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124477078/hold-fast",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cornice above most of the route; left traverse at 2/3 height escapes it."
+     }
+    ]
+   }
+  ],
+  "note": "Second search (DuckDuckGo 'Fall Mountain cirque Hold Fast couloir') returned only unrelated pages (cirqueguides, stephabegg Powell cirque); no second publisher found."
+ },
+ "co_gash_ridge": {
+  "area": "co_blanca_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113342484/gash-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gash Ridge rated 5.0 YDS, Grade III."
+     },
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/sangre-range/blanca-group/blanca-gash/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gash Ridge rated low Class 5."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113342484/gash-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Enos A. Mills, 1911 (alternatively credited to Carl Blaurock party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113342484/gash-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Enos A. Mills 1911, or Carl Blaurock and party."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Huerfano / Lily Lake trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.merelyafleshwound.com/mountaineering/sangre-range/blanca-group/blanca-gash/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TH: Huerfano/Lily Lake; hike Huerfano Valley then a steep loose talus basin to the ridge."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Most free solo and rappel into the gash with a light rope; reversing the gash is 20-30 ft of 5.6-5.7.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113342484/gash-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel into the gash; reversing it is 20-30 ft of 5.6-5.7."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Same approach and descent as Ormes Buttress on Blanca.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113342484/gash-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Use the Ormes Buttress approach and descent."
+     }
+    ]
+   }
+  ],
+  "note": "merelyafleshwound 14 mi / 4,700 ft / 11.75 h is a loop that descended to Winchell Lakes, not used. 14ers.com Blanca routelist has no Gash Ridge entry."
+ },
+ "co_green_mountain_pinnacle_fern_alley": {
+  "area": "co_green_mountain_pinnacle",
+  "skip_reason": "Opened Mountain Project Green Mountain Pinnacle area (mountainproject.com/area/105745070/green-mountain-pinnacle, no Fern Alley route listed), Mountain Project search, thecrag.com route 20973577 (page rendered empty) and ukclimbing.com Green Mountain Pinnacle logbook (no Fern Alley entry). No page stated facts for this route."
+ },
+ "co_gunrunner_couloir_gunrunner_couloir": {
+  "area": "co_gunrunner_couloir",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1352,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118762728/gunrunner-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, 1352 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Park in a small turnout on the road and walk directly toward the couloir, picking up a faint trail at times.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118762728/gunrunner-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parked at a small road turnoff and walked straight toward the couloir, meeting a small trail at times."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Pickets possible at the steep crux; protection limited, maybe small cams on the rock variation.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118762728/gunrunner-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pickets may protect the steep snow; protection limited, perhaps small cams."
+     }
+    ]
+   }
+  ],
+  "note": "DuckDuckGo search for 'GunRunner Couloir' returned only unrelated (auction) sites; no second publisher found."
+ },
+ "co_hourglass_ridge": {
+  "area": "co_mt_alice",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108324323/hourglass-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hourglass Ridge rated 3rd class, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108324323/hourglass-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Trad, Alpine, 700 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Wild Basin trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backpacker.com/trips/rocky-mountain-national-park-mount-alice-via-hourglass-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at Wild Basin trailhead on the Wild Basin Trail past three waterfalls."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_total",
+    "value": 20.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backpacker.com/trips/rocky-mountain-national-park-mount-alice-via-hourglass-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route to Mount Alice via Hourglass Ridge is 20.4 miles."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Wild Basin Trail past Copeland, Calypso Cascades and Ouzel; to Lion Lake No. 1, path past Lion Lake No. 2, up ridge SW of Snowbank Lake to the Alice-Chiefs Head saddle.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backpacker.com/trips/rocky-mountain-national-park-mount-alice-via-hourglass-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to Lion Lake No.1, past No.2, ridge SW of Snowbank Lake to saddle with Chiefs Head."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "RMNP wilderness permit required for all overnight backcountry camping.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.backpacker.com/trips/rocky-mountain-national-park-mount-alice-via-hourglass-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilderness permit required for all overnight backcountry camping."
+     }
+    ]
+   }
+  ],
+  "note": "Backpacker gives 20.4 miles for the whole multi-day trip; it does not say one-way or round trip."
+ },
+ "co_kelso_ridge": {
+  "area": "co_torrey_s_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Torreys Peak Kelso Ridge rated Class 3."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105756724/kelso-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kelso Ridge rated 3rd YDS with occasional 4th class sections."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6.75,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length round-trip 6.75 mi."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Grays Peak (Stevens Gulch) trailhead, 11,280 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Grays Peak at 11,280 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105756724/kelso-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach via the Stevens Gulch trail, split north after reaching the upper basin."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14272,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,272 ft."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105756724/kelso-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Trad, Alpine, 2000 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend to the Grays-Torreys saddle and take the standard trail back.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105756724/kelso-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend to Grays-Torreys saddle and pick up trail to car."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "High exposure; considerable rockfall, route-finding and commitment; crumbly rock.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=torr4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exposure High; rockfall, route-finding, commitment Considerable."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105756724/kelso-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock is pretty crumbly; passive pro best."
+     }
+    ]
+   }
+  ]
+ },
+ "co_la_plata_peak_northwest_ridge": {
+  "area": "co_la_plata",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lapl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "La Plata Peak Northwest Ridge: Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-la-plata-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Northwest Ridge, Class 2."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lapl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,400 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-la-plata-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,400 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lapl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length round-trip 9.25 mi."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "La Plata (Gulch) trailhead, 10,150 ft; paved 2WD road, no restrooms, no fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lapl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead La Plata Peak at 10,150 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-la-plata-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "La Plata Gulch Trailhead: paved road, 2WD, no restrooms, no fee."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14344,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lapl1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,344 ft."
+     }
+    ]
+   }
+  ],
+  "note": "thenextsummit.org repeats 14ers.com's figures and cites 14ers.com ratings, so it is treated as the same source (single-source)."
+ },
+ "co_mount_democrat_east_slope": {
+  "area": "co_mount_democrat",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2150,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Democrat East Slope elevation gain 2,150 ft."
+     },
+     {
+      "url": "https://elementalquests.com/hikes/colorado/mount-democrat-east-slope/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,150 ft."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Kite Lake, 12,000 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Kite Lake at 12,000 feet."
+     },
+     {
+      "url": "https://elementalquests.com/hikes/colorado/mount-democrat-east-slope/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Begin hiking on the Kite Lake Trail."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length round-trip 4 mi."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From CO 9 in Alma take the Kite Lake road about 6 miles; last mile rougher but good-clearance 2WD can usually get near the lot when dry.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turn off CO 9 in Alma, 6 miles to Kite Lake; last mile rough, good-clearance 2WD OK when dry."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14154,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,154 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Moderate exposure and rockfall; altitude sickness and lightning.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=demo1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exposure Moderate, Rockfall Moderate."
+     }
+    ]
+   }
+  ],
+  "note": "Distance conflict: 14ers.com 4 mi vs elementalquests 5 mi out and back (>10%). elementalquests summit 14,148 ft vs 14ers 14,154 ft."
+ },
+ "co_mount_harvard_south_slopes": {
+  "area": "co_mount_harvard",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Harvard South Slopes gain 4,600 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-harvard/",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Slopes: elevation gain 4,600 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.75,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length round-trip 13.75 mi."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "North Cottonwood Creek, 9,900 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead N. Cottonwood Creek at 9,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14424,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,424 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Long day; many parties make it an overnight backpack.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-harvard/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length leads many to turn Harvard into an overnight trip."
+     }
+    ]
+   }
+  ],
+  "note": "thenextsummit.org repeats 14ers.com figures exactly, treated as same source."
+ },
+ "co_mount_shavano_east_slopes": {
+  "area": "co_mount_shavano",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=shav1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Shavano East Slopes gain 4,500 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-shavano-and-tabeguache-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "East Slopes gain 4,500 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=shav1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length round-trip 10 mi."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=shav1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Shavano/Tabeguache (Blanks Cabin) trailhead, 9,750 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=shav1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Shavano/Tabeguache at 9,750 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-shavano-and-tabeguache-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Shavano/Tabeguache (Blanks Cabin)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14230,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=shav1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,230 ft."
+     }
+    ]
+   }
+  ],
+  "note": "thenextsummit.org mirrors 14ers.com. App summit_elev 14231 vs 14ers 14,230."
+ },
+ "co_mount_yale_southwest_slopes": {
+  "area": "co_mount_yale",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=yale1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Yale Southwest Slopes gain 4,300 ft."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-yale/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Southwest Slopes gain 4,300 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=yale1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length round-trip 9.5 mi."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=yale1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Denny Creek, 9,900 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=yale1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Denny Creek at 9,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=yale1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Near 11,200 ft cross the Delaney Gulch stream on a log bridge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=yale1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Near 11,200 ft cross Delaney Gulch stream on a log bridge."
+     }
+    ]
+   }
+  ],
+  "note": "thenextsummit.org mirrors 14ers.com; it adds that staying on the crest near the top becomes easy Class 3."
+ },
+ "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_bad_finger_couloir_the": {
+  "area": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106176704/the-bad-finger-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 1000 ft, 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106176704/the-bad-finger-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "For descent, a 60 m rope plus webbing used to get over the cornice.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106176704/the-bad-finger-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Used a 60 m rope and webbing to pass the cornice on descent."
+     }
+    ]
+   }
+  ],
+  "note": "DuckDuckGo search returned no page describing this couloir besides Mountain Project (only SummitPost Mount Evans pages, which return 403, and unrelated powderproject lines)."
+ },
+ "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_goldfinger_couloir": {
+  "area": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105985094/goldfinger-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "max_slope_deg",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105985094/goldfinger-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Line is about 50 degrees; rollover at top near vertical or corniced."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Climb back out by the trail up to Summit Lake.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105985094/goldfinger-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbed back out via the trail up to Summit Lake; far less slogging."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Beacon, shovel, probe and partners; ice axes.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105985094/goldfinger-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Beacon, shovel, probe, partners; ice axes for going up."
+     }
+    ]
+   }
+  ],
+  "note": "backcountryrecon.com/colorado/front-range/goldfinger-couloir/ opened (files it under Mt. Spalding) but stated no figures."
+ },
+ "co_ne_buttress_hallett_peak_mixed_ice_hallett_couloir": {
+  "area": "co_ne_buttress_hallett_peak_mixed_ice",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114181926/hallett-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 800 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114181926/hallett-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "The north-facing couloir directly south of Emerald Lake.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114181926/hallett-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascends the north-facing couloir directly south of Emerald Lake."
+     }
+    ]
+   }
+  ],
+  "note": "DuckDuckGo search for Hallett North Couloir found only powderproject (East Couloir, a different line) and summitborn pages (self-described estimates); no second source used."
+ },
+ "co_north_ridge_of_kit_carson": {
+  "area": "co_kit_carson_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kit Carson Peak North Ridge: Class 4."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/119401183/north-ridge-of-kit-carson",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Ridge rated 4th YDS."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5315,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 5,315 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Willow Creek trailhead, 8,850 ft",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Willow Creek at 8,850 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/119401183/north-ridge-of-kit-carson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Return down North Slopes talus to the Willow Lake Trail."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119401183/north-ridge-of-kit-carson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Trad, Alpine, 1200 ft, 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Los Alamos Mountaineers, June 1968",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119401183/north-ridge-of-kit-carson",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Los Alamos Mountaineers, June 1968."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Toward Challenger Point with the standard-route traffic, then down the North Slopes talus to the Willow Lake Trail.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119401183/north-ridge-of-kit-carson",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow standard route toward Challenger Point and descend North Slopes talus to Willow Lake Trail."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14167,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,167 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Round trip conflicts: 14ers.com 11.4 mi vs Mountain Project author's tracked 14.5 mi; not recorded. thenextsummit Kit Carson page covers a different route (via Challenger), not used."
+ },
+ "co_northeast_ridge_knife_edge": {
+  "area": "co_capitol_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=capi1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Capitol Peak Northeast Ridge: Class 4."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105759126/northeast-ridge-knife-edge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Northeast Ridge (Knife-Edge) rated 4th YDS, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=capi1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gain from the TH 5,300 ft; from Capitol Lake 2,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=capi1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 17 mi from the TH; 5 mi from Capitol Lake."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Capitol Creek trailhead, 9,450 ft (alt. Snowmass Creek)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=capi1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Capitol Creek at 9,450 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/105759126/northeast-ridge-knife-edge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Capitol Creek TH is the longer approach; Snowmass Creek TH shorter with 2 miles of boulders."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Reach K2 (point NE of the summit), descend its ridge toward Capitol and cross the Knife Edge; easy but very exposed.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105759126/northeast-ridge-knife-edge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reach K2, descend ridge toward Capitol; easy climbing with much exposure."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14138,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=capi1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit 14,138 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "High exposure, rockfall and route-finding; extreme commitment; a fall would likely be fatal.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=capi1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exposure, rockfall, route-finding High; commitment Extreme."
+     }
+    ]
+   }
+  ],
+  "note": "thenextsummit.org Capitol page repeats 14ers.com figures (5,300 ft / 17 mi), treated as same source."
+ },
+ "co_paiute_peak_ghost_dancer_couloir": {
+  "area": "co_paiute_peak",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106454052/ghost-dancer-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 1200 ft; party climbed about 1,200 vertical feet on a 1,500 ft face."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bob Bliss and J. Herrington, August 7, 1993",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106454052/ghost-dancer-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Bob Bliss and J. Herrington, August 7, 1993."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Light rope and small rack; one belayed pitch for a short ice step in the hidden slot.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106454052/ghost-dancer-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Light rope and small rack; belayed one pitch for a short ice step."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bike from the Brainard Lake Road gate to the trailhead, up Audubon's east ridge to a ~12,700 ft saddle, then a slow, risky traverse to the face base.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themountainworld.blogspot.com/2009/06/ghost-dancers.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Biked from Brainard Lake Road gate, hiked Audubon east ridge to ~12,700 ft saddle, two hard hours to the face."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13088,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themountainworld.blogspot.com/2009/06/ghost-dancers.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Paiute Peak given as 13,088 feet."
+     }
+    ]
+   }
+  ],
+  "note": "The blog and the Mountain Project text are by the same party (Jack Roberts and partner, June 2009), so they count as one source."
  }
 }
