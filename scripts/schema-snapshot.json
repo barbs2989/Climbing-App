@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-11-04",
+  "generatedAt": "2026-11-14",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -81,16 +81,6 @@
       "walkin_gpx",
       "walkin_kind",
       "walkin_submission_id"
-    ],
-    "belay_catches": [
-      "belayer_id",
-      "climb_log_id",
-      "climber_id",
-      "created_at",
-      "date_occurred",
-      "description",
-      "filed_by",
-      "id"
     ],
     "blocked_users": [
       "blocked",
@@ -289,6 +279,16 @@
       "status",
       "value"
     ],
+    "conversation_state": [
+      "archived_at",
+      "cleared_before",
+      "kind",
+      "marked_unread",
+      "muted_until",
+      "target_id",
+      "updated_at",
+      "user_id"
+    ],
     "crew_day_acks": [
       "crew_id",
       "date",
@@ -313,6 +313,7 @@
       "created_by",
       "dates",
       "discipline",
+      "held_count",
       "id",
       "route_id"
     ],
@@ -1010,6 +1011,7 @@
     "topos": [
       "alt",
       "area_id",
+      "area_photo",
       "caption",
       "created_at",
       "created_by",
