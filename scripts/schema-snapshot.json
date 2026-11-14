@@ -59,6 +59,13 @@
       "n",
       "sys"
     ],
+    "area_subtree_rollup": [
+      "area_id",
+      "b",
+      "disc",
+      "n",
+      "sys"
+    ],
     "areas": [
       "approach",
       "approach_min",
@@ -126,10 +133,6 @@
       "name",
       "route_id",
       "state"
-    ],
-    "cert_track_disciplines": [
-      "cert_track",
-      "discipline"
     ],
     "climb_log_confirmations": [
       "created_at",
@@ -573,65 +576,6 @@
       "rules",
       "visibility"
     ],
-    "guide_credentials": [
-      "cert_number",
-      "cert_track",
-      "created_at",
-      "cross_cutting_type",
-      "guide_id",
-      "id",
-      "issuing_org",
-      "kind",
-      "label",
-      "rejected_reason",
-      "reviewed_by",
-      "status",
-      "submitted_at",
-      "verified_at",
-      "verified_expires_at"
-    ],
-    "guide_documents": [
-      "credential_id",
-      "deleted_at",
-      "doc_type",
-      "guide_id",
-      "id",
-      "storage_path",
-      "uploaded_at"
-    ],
-    "guide_profiles": [
-      "active_disciplines",
-      "agreement_signed_at",
-      "agreement_signed_name",
-      "base_location",
-      "bio",
-      "cancellation_policy",
-      "created_at",
-      "day_rate",
-      "group_max",
-      "id",
-      "independent_contractor_attested",
-      "independent_contractor_attested_at",
-      "insurance_attested",
-      "insurance_attested_at",
-      "insurance_carrier_name",
-      "languages",
-      "lat",
-      "listed_at",
-      "lng",
-      "permit_attested",
-      "permit_attested_at",
-      "regions",
-      "rejected_reason",
-      "response_hrs",
-      "specialty",
-      "status",
-      "submitted_at",
-      "title",
-      "updated_at",
-      "waiver_process_attested",
-      "waiver_process_attested_at"
-    ],
     "hazard_votes": [
       "created_at",
       "hazard_label",
@@ -640,20 +584,6 @@
       "updated_at",
       "user_id",
       "vote"
-    ],
-    "inquiries": [
-      "climber_disclaimer_accepted_at",
-      "climber_id",
-      "created_at",
-      "guide_id",
-      "guide_responded_at",
-      "id",
-      "includes_minor",
-      "message",
-      "objective",
-      "party_size",
-      "requested_dates",
-      "status"
     ],
     "kudos": [
       "climb_log_id",
@@ -792,16 +722,23 @@
       "restricted",
       "restrictor"
     ],
-    "reviews": [
-      "climber_id",
-      "created_at",
-      "guide_id",
-      "guide_reply",
-      "guide_reply_at",
+    "review_ai_verdicts": [
+      "ai_value",
+      "area_id",
+      "checked_at",
+      "confidence",
+      "current_value",
+      "field",
       "id",
-      "inquiry_id",
-      "rating",
-      "text"
+      "item_hash",
+      "item_id",
+      "item_kind",
+      "model",
+      "reasoning",
+      "route_id",
+      "sources",
+      "suggested_value",
+      "verdict"
     ],
     "route_base_checkins": [
       "accuracy_m",
@@ -850,6 +787,18 @@
       "route_id",
       "set_at",
       "set_by"
+    ],
+    "route_field_evidence": [
+      "batch",
+      "evidence",
+      "expires_at",
+      "field",
+      "history",
+      "level",
+      "method",
+      "route_id",
+      "set_at",
+      "value"
     ],
     "route_flags": [
       "created_at",
