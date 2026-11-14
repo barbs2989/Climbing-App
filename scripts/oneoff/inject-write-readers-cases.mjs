@@ -30,8 +30,8 @@ const CASES = [
     says: /giveKudosRow\(\) writes kudos and does not refresh: kudos-received/ },
   // A NEW writer of a table with readers, added with no refresh at all.
   { name: "new-writer-no-refresh", file: DB, expect: "fail",
-    find: 'const routeBaseCheckinsReaders = [["route-base-checkins"]];',
-    repl: 'export async function _injDropVouch(id) { const { error } = await supabase.from("vouches").delete().eq("id", id); if (error) throw error; return true; }\nconst routeBaseCheckinsReaders = [["route-base-checkins"]];',
+    find: 'const routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
+    repl: 'export async function _injDropVouch(id) { const { error } = await supabase.from("vouches").delete().eq("id", id); if (error) throw error; return true; }\nconst routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
     says: /_injDropVouch\(\) writes vouches and does not refresh: user-vouches, climber-vouches/ },
   // A DECLARED exception naming a writer that does not exist must not pass silently.
   { name: "declared-names-nobody", file: GUARD, expect: "fail",
@@ -45,8 +45,8 @@ const CASES = [
     says: null },
   // MUST STAY SILENT — a writer that refreshes through one other writer it calls.
   { name: "refresh-through-a-callee", file: DB, expect: "pass",
-    find: 'const routeBaseCheckinsReaders = [["route-base-checkins"]];',
-    repl: 'export async function _injRegiveKudos(giver, receiver, id) { const { error } = await supabase.from("kudos").delete().eq("id", id); if (error) throw error; return giveKudosRow(giver, receiver, null, null); }\nconst routeBaseCheckinsReaders = [["route-base-checkins"]];',
+    find: 'const routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
+    repl: 'export async function _injRegiveKudos(giver, receiver, id) { const { error } = await supabase.from("kudos").delete().eq("id", id); if (error) throw error; return giveKudosRow(giver, receiver, null, null); }\nconst routeBaseCheckinsReaders = [["route-base-checkins"], ["route-row"]];',
     says: null },
 ];
 

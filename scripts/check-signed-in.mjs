@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Walks the app as a REAL, SIGNED-IN account that already owns things.
 //
 // Why this exists. The two checks either side of it cannot reach this state:
@@ -60,7 +61,7 @@ import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.
 import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { settledText, looksLikeSpinner } from "./lib/render-settle.mjs";
-import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
+import { MENU_SCREENS, openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -148,7 +149,7 @@ try {
   // that is the whole difference from zero-state.config.mjs, which rewrites three anchors to
   // force a brand-new account. Here the session is real and uid comes from it, which is the
   // point: an overlay rendering real crew-mates is what nothing has ever walked.
-  server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });
@@ -254,6 +255,16 @@ try {
     return true;
   }, frag);
 
+  // A tab on a group page, by its WHOLE label, inside that group's own dialog (aria-label is the
+  // group's name). Returns false when the tab is not there.
+  const tapGroupTab = (groupName, label) => page.evaluate(([n, l]) => {
+    const dlg = [...document.querySelectorAll('[role="dialog"]')].find((d) => d.getAttribute("aria-label") === n);
+    const b = dlg && [...dlg.querySelectorAll("button")].find((x) => (x.textContent || "").trim() === l);
+    if (!b) return false;
+    b.click();
+    return true;
+  }, [groupName, label]);
+
   async function capture(name, opts = {}) {
     pageErrors.length = 0;
     // Read the screen once it stops changing. The literal spinner list this used to poll
@@ -316,7 +327,7 @@ try {
   log(`signed in as the fixture owner (${fixture.owner.id.slice(0, 8)}), real auth gate live`);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -333,6 +344,15 @@ try {
      after this capture: "North Ridge" was listed but "CI" was not named and the chat would not open,
      which read as the #569 regression. Same shape as the Group wait below. Waiting cannot mask a real
      defect: the assertions are unchanged, so a roster that never renders still fails, just 15s later. */
+  /* Every crew card starts COLLAPSED (2026-10-21: the tab used to open the first crew's whole plan
+     inline, and the owner found it overwhelming), so the roster and the chat button sit behind the
+     North Ridge card's "View plan". Open that card first; the assertions below are unchanged. */
+  await page.waitForFunction(() => [...document.querySelectorAll('[id^="crewcard-"]')].some((c) => (c.innerText || "").includes("North Ridge")), null, { timeout: 15000 }).catch(() => {});
+  await page.evaluate(() => {
+    const card = [...document.querySelectorAll('[id^="crewcard-"]')].find((c) => (c.innerText || "").includes("North Ridge"));
+    const b = card && [...card.querySelectorAll("button")].find((e) => (e.textContent || "").trim().startsWith("View plan"));
+    if (b) b.click();
+  });
   const mateWait = fixture.mate.name.split(" ")[0].toLowerCase();
   await page.waitForFunction(
     (m) => document.body.innerText.toLowerCase().includes(m),
@@ -343,10 +363,31 @@ try {
   // screen to open. Clicking the route name here does NOT drill into the crew, it
   // navigates to the ROUTE, which is how the first draft of this check "failed" on a
   // perfectly good roster.
+  /* The AREA crew's name arrives from a THIRD query (the area card, keyed off the invites read), so wait for
+     it the way the roster is waited for; the assertion below is unchanged, so a name that never renders
+     still fails, just 15s later. */
+  await page.waitForFunction(
+    (n) => document.body.innerText.includes(n),
+    fixture.areaCrew.areaName,
+    { timeout: 15000 },
+  ).catch(() => {});
   const crewText = await capture("Crew:detail");
   asserted++;
   if (!crewText.includes("North Ridge")) {
     fail("Crew:detail", "the fixture's crew is not listed — the signed-in crew query returned nothing");
+  }
+  // THE AREA CREW (0302). The fixture also seats the owner in a crag SESSION at World Wall, a crew
+  // with no route, so it renders as a crew CARD here. The card must name the crag -- before
+  // crewPlace() every reader resolved crew.routeId, and an area crew would have been declared "no
+  // longer available" at best and printed "undefined" at worst.
+  asserted++;
+  if (!crewText.includes(fixture.areaCrew.areaName)) {
+    const crewLines = crewText.split("\n").filter((l) => /crew|session|no longer available|Loading/i.test(l)).slice(0, 8).join(" | ");
+    fail("Crew:detail", `the fixture's AREA crew at ${JSON.stringify(fixture.areaCrew.areaName)} is not named on the Crew tab — an area crew's card resolves to nothing (the 0302 shape of #569). Crew lines seen: ${crewLines || "(none)"}`);
+  }
+  asserted++;
+  if (/\bundefined\b/.test(crewText)) {
+    fail("Crew:detail", "the Crew tab prints the word undefined — a crew's place resolved against the wrong store");
   }
   asserted++;
   // First name only, deliberately: the app renders members through pubFirst/pubName, so
@@ -398,12 +439,12 @@ try {
   // must appear on the roster. Before #680 both were false and the screen looked fine.
   log("a group the signed-in account owns:");
   await reset();
-  await tap("Crews");
-  // Groups are a sub-tab of Crew, not of Partners. Its label carries a count ("Groups1"),
-  // which clickText's trailing-digits allowance handles.
-  const toGroups = await clickText("Groups");
+  // Groups is a screen of its own, opened from the Menu's "Groups" tile (it used to be a Crew
+  // sub-tab whose label carried a count, "Groups1"). It opens on For you, which leads with a tile
+  // per group you are in -- so this run's group is one tap away by name.
+  const toGroups = await tapMenuItem(page, "Groups");
   asserted++;
-  if (!toGroups) fail("Group:detail", "could not find the Groups sub-tab on the Crew screen");
+  if (!toGroups) fail("Group:detail", "could not find the Groups tile in the Menu");
   await page.waitForTimeout(2000);
   // THIS run's group, by name, not a constant. In CI the accounts are durable and shared, so
   // a hardcoded name meant every concurrent run opened the same group and asserted on state
@@ -423,6 +464,14 @@ try {
 
        Waiting here cannot mask a real defect: the assertions below are unchanged, so a control
        that genuinely never renders still fails, with the same message, just later. */
+    // The group page is TABS (About · Discussion · Events · Members · Media) and a member lands on
+    // the Discussion, so the roster is one tap away: on Members, which renders it for a member and
+    // only a count for anyone else. The tap is scoped to THIS group's dialog and matches the tab's
+    // whole label -- a page-wide "contains" would also match "2 members" in the header.
+    asserted++;
+    if (!(await tapGroupTab(groupName, "Members"))) {
+      fail("Group:detail", "the group page has no Members tab — the roster below cannot be reached, so nothing about it was checked");
+    }
     await page.waitForFunction(
       () => /[+\u2212-]\s?Mod\b/.test(document.body.innerText),
       undefined,
@@ -482,9 +531,15 @@ try {
     }
     asserted++;
     // The visibility toggle is gated on isMod, a different question. Its LABEL ("Public
-    // group") renders regardless, so match the button verb instead.
-    if (!/Make (private|public)/.test(g)) {
-      fail("Group:detail", "the visibility toggle is absent for a manager of this group — the isMod check is not uuid-aware");
+    // group") renders regardless, so match the button verb instead. It lives on the About tab,
+    // beside the privacy it changes.
+    if (!(await tapGroupTab(groupName, "About"))) {
+      fail("Group:about", "the group page has no About tab — the visibility toggle cannot be reached, so it was never checked");
+    }
+    await page.waitForFunction(() => /Make (private|public)/.test(document.body.innerText), undefined, { timeout: 15000 }).catch(() => {});
+    const ga = await capture("Group:about");
+    if (!/Make (private|public)/.test(ga)) {
+      fail("Group:about", "the visibility toggle is absent for a manager of this group — the isMod check is not uuid-aware");
     }
   } else {
     fail("Group:detail", "could not open the group the fixture owns — it is not listed for its own owner");
@@ -531,7 +586,7 @@ try {
   // certifies a modal nobody looked at, which is strictly worse than asking for a second
   // distinguishing line -- and `render-settle` already masks digits for exactly this reason.
   const lineKey = (l) => l.trim().replace(/\d+/g, "#");
-  const TABS = ["me", "today", "crew", "routes", "logbook", "discover", "ranks"];
+  const TABS = ["me", "today", "crew", "routes", "logbook", "discover", "ranks", "groups"];
   const baselines = {};
   for (const t of TABS) {
     await page.goto(`${base}?zt=${t}`, { waitUntil: "domcontentloaded", timeout: 180000 });

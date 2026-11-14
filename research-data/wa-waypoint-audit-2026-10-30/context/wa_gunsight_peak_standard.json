@@ -1,0 +1,123 @@
+{
+ "id": "wa_gunsight_peak_standard",
+ "name": "Standard Route",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_middle_peak",
+  "name": "Middle Peak",
+  "lat": 48.30571,
+  "lng": -120.99439,
+  "elevation_ft": 8185,
+  "parent_id": "wa_gunsight_range_the",
+  "ground_ft": 7764
+ },
+ "dist_km": 27.35,
+ "gain_ft": 14000,
+ "high_point_ft": 8198,
+ "approach_logistics": {
+  "peakLat": 48.306555,
+  "peakLng": -120.994285,
+  "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+  "trailheadLat": 48.2595,
+  "trailheadLng": -121.2229,
+  "trailheadDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is in a parking lot just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4 (order in place to January 2028), so the last miles must be covered on foot or by bike."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.2595,
+   "lng": -121.2229,
+   "elev": 1400,
+   "name": "Downey Creek Trailhead",
+   "note": "Trail #768 into Glacier Peak Wilderness off Suiattle River Road; self-issue wilderness permit and Northwest Forest Pass/day-use fee at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Darrington, drive SR-530 north about 8 miles and turn east onto the Suiattle River Road (FS Road 26). Follow it about 20 miles to the Downey Creek bridge; the trail starts just past the bridge on the north side, with parking on the south side at about 1,450 ft. A Northwest Forest Pass or day fee and a free self-issue wilderness permit are required. Washouts have closed this road short of the trailhead for long periods, so check its status first.",
+   "ground_ft": 1500
+  },
+  {
+   "i": 1,
+   "lat": 48.32534,
+   "lng": -121.15697,
+   "elev": 2441,
+   "name": "Bachelor Creek crossing",
+   "note": "Downey Creek Trail ends here on a sturdy log bridge over Bachelor Creek; the steep, unmaintained Bachelor Creek climbers' path continues uphill from the far bank.",
+   "type": "Junction",
+   "distMi": 6.6,
+   "directions": "Follow Downey Creek Trail #768 up the valley on maintained tread that climbs only gently for most of its length. You cross five tributary creeks along the way, and the one draining Downey and Pilot Lakes can be a difficult ford in spring runoff. Expect old-growth blowdown across the tread in places and a brushy avalanche-chute crossing opposite Green Mountain; informal camps appear at roughly 1.6, 3, 3.5 and 4 miles if you need to break the day.",
+   "ground_ft": 2441
+  },
+  {
+   "i": 2,
+   "lat": 48.304704,
+   "lng": -121.122869,
+   "elev": 4500,
+   "name": "Bachelor Flats / Bachelor Meadows",
+   "note": "Informal, well-used forest camp in a flat basin; standard Day 1 stop before the alpine terrain above.",
+   "type": "Campsite",
+   "distMi": 8.9,
+   "directions": "From the far bank the climbers' path follows the north side of Bachelor Creek. Parties report an improved use-trail through here that bypasses the older, brushier line lower down, and it is worth finding because this is the slowest ground of the day. It climbs steadily to the flat basin above.",
+   "ground_ft": 4316
+  },
+  {
+   "i": 3,
+   "lat": 48.306123,
+   "lng": -121.088611,
+   "elev": 5900,
+   "name": "Cub Pass (above Cub Lake)",
+   "note": "Steep snow slopes lead to this pass overlooking often still-frozen Cub Lake; can hold near-full snow coverage into midsummer, so watch for glissade/postholing hazard.",
+   "type": "Junction",
+   "distMi": 11,
+   "directions": "Continue up steepening open slopes above the meadows to the pass. There is no maintained tread from here on, and route-finding through this section and on up to Itswoot Ridge is one of the approach's real difficulties in cloud or flat light.",
+   "ground_ft": 5322
+  },
+  {
+   "i": 4,
+   "lat": 48.308537,
+   "lng": -121.061628,
+   "elev": 6400,
+   "name": "Itswoot Ridge camp",
+   "note": "Flat meadow camp on the ridge with a stream fed from Spire Col; open views across to the Dome Glacier and Dome Peak, common Day 2 camp.",
+   "type": "Campsite",
+   "distMi": 12.5,
+   "directions": "Drop roughly 700 ft off the far side of the pass to Cub Lake, then cross the meadows beyond it and climb back up to gain Itswoot Ridge and Itswoot Pass. That descent is the one substantial loss of height on the approach, and it has to be re-climbed on the way out.",
+   "ground_ft": 6264
+  },
+  {
+   "i": 5,
+   "lat": 48.304486,
+   "lng": -121.033736,
+   "elev": 7500,
+   "name": "Dome Glacier crossing",
+   "note": "Roped glacier travel below Dome Peak on the way to the Chikamin-Dome col; crevasses are usually narrow enough to step across in-season but require glacier travel skills.",
+   "type": "Hazard",
+   "distMi": 14,
+   "directions": "From Itswoot Pass the route steps straight off rock and snow onto the ice, so rope up at the edge rather than partway across. The line traverses east below Dome Peak toward the col rather than climbing the glacier directly.",
+   "ground_ft": 8032
+  },
+  {
+   "i": 6,
+   "lat": null,
+   "lng": null,
+   "elev": 8500,
+   "name": "Chikamin-Dome Col",
+   "note": "Well-established high camp/col at the base of the technical climbing between Chikamin and Dome Peaks; watch for a bergschrund near the col.",
+   "type": "Junction",
+   "distMi": 15,
+   "directions": "Keep traversing east across the glacier and climb the final slope to the col at about 8,500 ft. The bergschrund below it is the one obstacle worth scouting before you commit to a line. Reaching this point is over 7,000 ft of cumulative gain from the road.",
+   "ground_ft": null
+  },
+  {
+   "i": 7,
+   "lat": 48.306555,
+   "lng": -120.994285,
+   "elev": 8198,
+   "name": "Gunsight Peak summit",
+   "note": "Tiny horn-shaped summit block, barely the size of a bar stool, reached via a Class 5.6 dihedral crux and short chimneys/cracks up to Class 5.5 along the exposed ridge crest.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "From the col the route drops before it climbs: a descending traverse of roughly 90 minutes reaches a snow bench and rock outcrop on the Chikamin Glacier around 7,000-7,500 ft directly under Gunsight's west face, and some parties move camp there rather than crossing the glacier twice. Above the bench, cross the bergschrund and take a short Class 3-4 wall to a broad ledge, then move left into the black basaltic dihedral whose uppermost 15 ft is the exposed 5.6 crux. Scramble the reddish-black dike above it, downclimb about 20 ft at the Main-North notch and traverse right across steep broken rock, then follow short chimneys and cracks to the ridge crest beside a large horn thickly slung with rappel webbing. The dike and upper gully hold loose rock and the gendarmed ridge is easy to misread in cloud, so fix that horn in mind — it confirms you are on line in both directions.",
+   "ground_ft": 8173
+  }
+ ]
+}

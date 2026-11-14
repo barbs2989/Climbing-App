@@ -1,0 +1,93 @@
+{
+ "id": "wa_enchantment_peak_southwest_scramble",
+ "name": "South Gully",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_enchantment_peak",
+  "name": "Enchantment Peak",
+  "lat": 47.4875,
+  "lng": -120.806389,
+  "elevation_ft": 8538,
+  "parent_id": "wa_stuart_range",
+  "ground_ft": 8465
+ },
+ "dist_km": 12.9,
+ "gain_ft": 6650,
+ "high_point_ft": 8538,
+ "approach_logistics": {
+  "peakLat": 47.4875,
+  "peakLng": -120.806389,
+  "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+  "trailheadLat": 47.5282,
+  "trailheadLng": -120.82036,
+  "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,400 ft)"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3500,
+   "name": "Stuart Lake Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3500,
+   "directions": "From US-2 at the west edge of Leavenworth, turn onto Icicle Creek Road and drive about 8.4 miles, then turn left onto FS Road 7601 (Eightmile Road) and follow the potholed gravel road about 3.7 miles to its end at the Stuart Lake Trailhead. A Northwest Forest Pass is required; day visitors self-issue a free Enchantment permit at the trailhead, and overnight stays need a lottery permit. FS Road 7601 is closed in winter, typically November to May.",
+   "ground_ft": 3399
+  },
+  {
+   "i": 1,
+   "lat": 47.4919578,
+   "lng": -120.8335801,
+   "elev": 5570,
+   "name": "Colchuck Lake",
+   "type": "Water",
+   "distMi": 4,
+   "elevFt": 5570,
+   "ground_ft": 5560
+  },
+  {
+   "i": 2,
+   "lat": 47.4803,
+   "lng": -120.8206,
+   "elev": 7841,
+   "name": "Aasgard Pass",
+   "type": "Junction",
+   "distMi": 5.5,
+   "elevFt": 7841,
+   "ground_ft": 7811
+  },
+  {
+   "i": 3,
+   "lat": 47.487,
+   "lng": -120.803,
+   "elev": 7600,
+   "name": "Base of south gully",
+   "type": "Junction",
+   "distMi": 7.4,
+   "elevFt": 7600,
+   "ground_ft": 8247
+  },
+  {
+   "i": 4,
+   "lat": 47.489186,
+   "lng": -120.80277,
+   "elev": 8538,
+   "name": "Enchantment Peak summit",
+   "type": "Summit",
+   "distMi": 7.7,
+   "elevFt": 8538,
+   "ground_ft": 8542
+  },
+  {
+   "i": 5,
+   "lat": 47.4878,
+   "lng": -120.8343,
+   "elev": 5570,
+   "name": "Colchuck Lake designated campsites",
+   "type": "Campsite",
+   "distMi": 4.6,
+   "ground_ft": 5569
+  }
+ ]
+}

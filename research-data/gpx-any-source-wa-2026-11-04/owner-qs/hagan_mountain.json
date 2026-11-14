@@ -1,0 +1,76 @@
+{
+  "key": "hagan_mountain",
+  "question": "All Peakbagger tracks use the north Blum Lakes approach; our text describes a south approach. Which is standard now, and should the text change?",
+  "answer": "The north approach is the standard one, and our text describes a different, rarely used route. Standard: Baker River trailhead (48.7506,-121.5559), a few minutes along the Baker River trail to the Blum Creek bridge, then a flagged climbers' path up the north bank of Blum Creek, steep forest to ~4,500 ft, a traverse south to talus at ~4,900 ft, Lower and Upper Blum Lakes (~4,900-5,023 ft), then up toward the Blum/Hagan ridge and south onto Hagan's glacier and the saddle between its peaks; the summit block is exposed Class 3 with a few Class 4 moves, with steep snow below it. Everything on record that starts at the Baker River trailhead goes this way: the packet's 19 Jun 2026 and 27 Apr 2025 tracks run up Blum Creek to the Blum Lakes at 48.746,-121.495 and then south to the summit area at 48.7243,-121.4917; the 2011 and 2005 reports and the Mountaineers/Beckey description do the same. Our stored text instead has the walker follow the Baker River trail all the way to Sulphide Creek camp (2.6 mi) and then bushwhack north-northeast to 'Hidden Lake' at ~4,550 ft and climb the south slopes through two cliff bands. That is the SOUTH approach, real but used mainly on Bacon-Hagan-Blum or Watson-Blum traverses (the 2020 and 2023 logs come in over Watson, not from the Baker River trailhead); it is not a route anyone reports from the trailhead. Its waypoints and 31 km / 6,600 ft statistics also describe the Watson traverse, not a trailhead round trip. Additional point: both recent Baker River tracks also summit Mount Blum (their high point is 2,310-2,340 m at 48.754,-121.482) - they are Blum+Hagan link-ups, so by the brief's rules neither can be attached to a Hagan row.",
+  "recommendation": "CHANGE the text. Two clean options; I recommend (A). (A) Add a new row 'North Slopes via Blum Lakes' (the standard; fill in 'proposed') and keep the existing South Slopes row but rewrite its approach and pro-tips to say plainly that it is the south route used on traverses, remove the Baker River trail sentence that makes it look like a trailhead approach (it is a two-day-plus bushwhack, not 'Baker River trail to Sulphide Creek'), and move the 31 km / 6,600 ft figures to a traverse note. (B) If the owner wants only one row, replace the South Slopes approach/beta/descent with the north text below and keep the id. Either way: no track is attachable today (both candidate logs link Hagan with Mount Blum; the 2023 log is the Watson traverse). A Hagan-only or Blum-then-Hagan log whose highest point is Hagan would qualify; none is in the packet. The summit pin (48.724455,-121.492005) is right: all three logs pass within 3-4 m of it.",
+  "confidence": "high",
+  "proposed": {
+    "new_row": {
+      "name": "North Slopes via Blum Lakes",
+      "discipline": "mountaineering",
+      "disciplines": [
+        "mountaineering"
+      ],
+      "grade": "Class 3",
+      "grade_system": "class",
+      "season": "Jul-Sep",
+      "best_season": "Mid-July through September for bare ground; April to June is the snow season, popular with ski and snow parties but with cornices and steep snow",
+      "high_point_ft": 7080,
+      "outing_shape": "outback",
+      "overview": "The usual way up Hagan: a steep climbers' path to the Blum Lakes, then a glacier-edge and snow route to a saddle among Hagan's peaks, and an exposed Class 3 finish. Hagan is a small range of several summits rather than one peak, so confirm the true high point (the southern one) before the last scramble. Most parties camp at the Blum Lakes and pair it with Mount Blum.",
+      "approach": "Park at the Baker River trailhead at the end of the Baker Lake road (about 800 ft). Walk the Baker River trail for a few minutes to the Blum Creek bridge, then take the faint, flagged climbers' path up the north side of Blum Creek. It is brushy at first, then steep forest to about 4,500 ft; traverse up and south to a talus field near 4,900 ft and cross to Lower Blum Lake, then follow the path to Upper Blum Lake (about 5,020 ft). Travel off the path is very difficult (devil's club, blueberry, brush). North Cascades National Park rules apply: a backcountry permit and camping limits.",
+      "beta": "From the lakes, climb toward the ridge to the southeast and gain about 5,600 ft, then turn south and cross the Hagan Glacier, roped if it is crevassed, to the saddle between the southern and middle peaks. Drop a short way into the Berdeen Lake drainage if the snow is good, and climb steep snow to the summit block. The block is exposed Class 3 with a few Class 4 moves; about ten minutes of rock above the col.",
+      "descent_text": "Reverse the route. The descent takes as long as the ascent; the path below the lakes is easy to lose, and the Blum Creek crossing gets harder once the snow bridge melts.",
+      "hazards": [
+        "Crevasses and a moat on the Hagan Glacier",
+        "Steep snow and cornices on the ridge in spring and early summer",
+        "Exposed Class 3-4 rock on the summit block",
+        "Dense brush and an easily lost path below the lakes"
+      ],
+      "gear": [
+        "Rope and glacier kit",
+        "Ice axe and crampons",
+        "Helmet"
+      ],
+      "waypoints": [
+        {
+          "type": "Trailhead",
+          "name": "Baker River Trailhead",
+          "lat": 48.7506,
+          "lng": -121.5559
+        },
+        {
+          "type": "Campsite",
+          "name": "Upper Blum Lake",
+          "lat": 48.74893,
+          "lng": -121.496492,
+          "elev": 5024
+        }
+      ],
+      "approach_logistics": {
+        "trailhead": "Baker River Trailhead",
+        "trailheadLat": 48.7506,
+        "trailheadLng": -121.5559
+      },
+      "track_aid": null,
+      "track_why": "Both recent trailhead tracks (3236575, 2824718) also summit Mount Blum, so they are two-peak link-ups."
+    },
+    "south_row_edit": "Keep wa_hagan_mountain_south but retitle the approach as the traverse-only southern approach; delete 'Baker River Trail to Sulphide Creek camp' as the way in."
+  },
+  "evidence": [
+    "https://www.nps.gov/noca/blogs/Mt-Blum-North-Glacier-July-12-2016.htm - Blum Creek north-bank climbers' path, flagging, steep forest to 4,500 ft, talus at 4,900 ft, Lower to Upper Blum Lake 5,023 ft; no fires; difficult brush",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=723200 - June 2011: trail starts just before the Blum Creek bridge, bootpack steeply up, snow from 4,600 ft, Lower Blum Lake ~4,900 ft, Hagan in ~1.5 h from a Blum S-ridge camp, exposed Class 3 with a few Class 4 moves, steep snow, cornices",
+    "https://turns-all-year.com/trip-reports/february-19-21-2005-hagan-peaks-and-mt-blum - Feb 2005 ski ascent from the Blum Lakes (camp 5,600 ft); S peak is the highest, 7,080 ft (Beckey)",
+    "https://climberkyle.com/2020/09/05/watson-blum-high-route/ - Sept 2020 Hagan from the south side on a Watson-Blum traverse, 'a moraine wasteland', no point above Class 3",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Baker+River+trailhead+Whatcom - OSM Baker River Trailhead 48.7506176,-121.5558726; packet tracks start 48.7503,-121.5554",
+    "Search snippets (Mountaineers 'Mount Blum & Mount Hagan' page): Baker River Trail 10 minutes to the bridge, then south toward Blum Creek; from lower Blum Lake ascend SE to 5,600 ft on the E-W ridge, traverse S (rope up for glacier) between the south and middle Hagan peaks; the southern approach (Bacon/Watson traverse) is listed separately",
+    "packets-all/wa_hagan_mountain.json - trackChecks: 3236575 and 2824718 both start 45-60 m from the trailhead, summit within 3-4 m, high point 2,295-2,340 m at 48.754,-121.482 (Mount Blum)"
+  ],
+  "searched": [
+    "Hagan Mountain Blum Lakes route approach Baker Lake summit - Mountaineers cross-country zone page, SummitPost Hagan/Blum, turns-all-year, climberkyle",
+    "Hagan Mountain climb Blum Lakes ... trip report 2024 OR 2025 OR 2026 - nothing newer than the 2025 Peakbagger log and 2020 report found",
+    "Fetch refused with HTTP 403 (not worked around): mountaineers.org Mount Blum & Mount Hagan page, summitpost hagan-mountain/1064993 (snippets only)",
+    "Nominatim Baker River trailhead; NPS Blum north glacier approach page; NWHikers 2011; turns-all-year 2005; trailcatjim (no standard route stated)",
+    "Did not find a post-2020 trip report describing the south approach as a trailhead route."
+  ]
+}

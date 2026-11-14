@@ -1,8 +1,9 @@
+import "../lib/load-env.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 // Simple REST API approach to avoid Supabase client initialization issues
-const API_URL = "https://ofuofhojhbcrcahuotya.supabase.co/rest/v1";
-const ANON_KEY = "sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5";
+const API_URL = `${process.env.VITE_SUPABASE_URL}/rest/v1`;
+const ANON_KEY = process.env.VITE_SUPABASE_ANON_KEY;
 
 async function query(table, select = "*", filters = []) {
   const url = new URL(`${API_URL}/${table}`);

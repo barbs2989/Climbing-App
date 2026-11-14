@@ -1,0 +1,35 @@
+{
+ "tn_white_wall_2": {
+  "_expect": {"name": "White Wall", "region": "Tennessee"},
+  "blurb": "White Wall is a short stretch of sport-only cliff at Foster Falls, the sandstone crag near Jasper. It is the first named section you meet when following the base trail from the falls, a couple of hundred yards beyond the Tea and Strumpets wall. Fifteen routes here lean hard toward the upper grades: most sit around 5.12, a handful are 5.11, and two reach 5.13. Easy climbing is absent, so this is a wall for strong sport climbers rather than a place to warm up or bring a beginner. The rock is regarded as some of the best at Foster Falls, and several lines are well-starred and worth the walk in.",
+  "review": {"sources": ["https://mountainproject.com/area/109078930/white-wall", "https://rakkup.com/guidebook/foster-falls-rock-climbing/the-white-wall/s14313"]}
+ },
+ "tn_goliath_wall": {
+  "_expect": {"name": "Goliath wall", "region": "Tennessee"},
+  "blurb": "Goliath Wall is a wall exposed from an old quarry in Collegedale, on the Southern Adventist University park grounds. Roughly 15 climbs are spread along more than 200 feet of wall, each about 40 to 60 feet tall. Most are bolted lines from 5.6 to about 5.10, with a few boulder problems nearby and a single trad line. It suits newer climbers and anyone wanting easy mileage, though the stone is looser and less pleasant low down and improves higher up. The wall catches direct sun, so cooler days are the better bet. A short flat walk leads to it from the park lot.",
+  "review": {"sources": ["https://mountainproject.com/area/107792390/goliath-wall", "https://www.southern.edu/academics/pehw/outdoor-programming/facilities/goliath-wall.html"]}
+ },
+ "tn_crime_buttress": {
+  "_expect": {"name": "Crime Buttress", "region": "Tennessee"},
+  "blurb": "Crime Buttress is a steep, straight-up face on the sandstone cliff at Foster Falls, the fourth section along the base when you count from the trail that climbs up from the suspension bridge. Nearly all of its 14 climbs are sport routes, with one trad line. The grades are concentrated hard: about nine are around 5.12, a few are 5.11, and only a couple fall below that. It has a reputation as one of the more intimidating walls at the crag, and the routes are named after crimes. Expect sustained, strenuous climbing rather than a gentle introduction. Foster Falls can be climbed through much of the year, avoiding the hottest and coldest stretches.",
+  "review": {"sources": ["https://rakkup.com/guidebook/foster-falls-rock-climbing/the-crime-buttress/s14315", "https://mountainproject.com/area/105883248/foster-falls"]}
+ },
+ "tn_asteroid_2": {
+  "_expect": {"name": "Asteroid", "region": "Tennessee"},
+  "blurb": "Asteroid is a single boulder in the public boulderfield on Old Wauhatchie Pike, at the foot of Lookout Mountain beside Chattanooga's St. Elmo neighborhood. Its face is covered in big rounded pockets and huecos, along with scoops, shelves and edges, which gives it an unusual feel among the area's boulders. About 14 problems are recorded, running from V0 up to V6, so there is something for beginners and for strong boulderers alike. The mix includes sit starts off underclings, a long traverse across the pockets, and several easier lines that finish in the same top groove. It is close to town and easy to reach.",
+  "review": {"sources": ["https://www.lookoutmountainconservancy.org/boulder-routes/asteroid", "https://mountainproject.com/area/113784468/the-boulders-on-old-wauhatchie-pike"]}
+ },
+ "tn_rustoleum_boulder": {
+  "_expect": {"name": "Rustoleum Boulder", "region": "Tennessee"},
+  "blurb": "Rustoleum Boulder is one large block in the Upper Middle Creek section of Middle Creek, near Chattanooga. It sits only a few yards from the creek, beside the trail, with a fairly level landing, and it is probably the most visited boulder in that part of the area. The roughly 14 problems are all hard, mostly V5 to V7 with a few lines up to V9. Climbing here is steep and roof-based, mixing long endurance moves on large holds with shouldery, crimpy sequences. It is a good stop for experienced boulderers and not a place for those just starting out. The walk from the road is short, about 5 to 10 minutes.",
+  "review": {"sources": ["https://www.mountainproject.com/area/121890495/rustoleum-boulder", "https://madboulder.org/middle-creek"]}
+ },
+ "_skipped": {
+  "tn_b_bolt_pinnacle_and_space_ranger_buttress": "no fetched page about this crag itself (only the Sunset North parent page lists it)",
+  "tn_the_west_wing": "no page found describing a West Wing sector at Whitehouse Cliffs; the cliff pages do not break it into named sectors",
+  "tn_k_the_right_side": "only one fetched page (Mountain Project) mentions this crag; the Pond Creek pages do not mention it"
+ },
+ "_conflicts": {
+  "tn_rustoleum_boulder": "stored rock is conglomerate, but https://madboulder.org/middle-creek describes Middle Creek rock as sandstone; stored value left unchanged and no rock named in the blurb"
+ }
+}

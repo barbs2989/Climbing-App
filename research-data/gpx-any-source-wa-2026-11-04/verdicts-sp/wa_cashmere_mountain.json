@@ -1,0 +1,28 @@
+{
+ "area_id": "wa_cashmere_mountain",
+ "routes": [
+  {
+   "route_id": "wa_cashmere_mountain_northeast_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "SummitPost peak page: main route mostly snow-free by July except the north slope; Mountaineers reports July-Aug; all-routes ascent histogram peaks Jul-Sep (130/133/123). No NE-ridge-specific source found."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "sp150650",
+     "verdict": "different",
+     "why": "Line leaves the Eightmile trail past Lake Caroline and reaches the summit from the west side (col between west and main peak), i.e. the West Ridge standard line, which already has its own track. It never goes around the north side to the NE ridge; also undated and does not return to the trailhead."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "The single SummitPost file is the West Ridge line; NE Ridge stays without a track."
+}

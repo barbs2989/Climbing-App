@@ -43,9 +43,12 @@ const REAL_SHA = "9afff4eb84d5a417af540545079d8aace4399c2e";
 const HEAD_SHA = "65ebe56367bd058010ac4568f07be2b1328633d2"; // in the window, never flagged
 const OLD_SHA = "ff0cf927721e99adec0f97e8fa002a91a8e2bd4f";  // depth 90 — outside a 40-commit window
 
+// The window is anchored at the commit under test, NOT at HEAD. It used to read "--ref HEAD", which
+// stopped reproducing once main grew ~1450 commits past 9afff4eb (the declared finding fell out of
+// any 40-commit window and every case read MISSED). The depths quoted above are relative to it.
 function run() {
   try {
-    const out = execFileSync("node", [TARGET, "--ref", "HEAD", "--commits", "40", "--fail-on-silent"],
+    const out = execFileSync("node", [TARGET, "--ref", REAL_SHA, "--commits", "40", "--fail-on-silent"],
       { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
     return { code: 0, out };
   } catch (e) {
@@ -74,7 +77,9 @@ const CASES = [
     name: "entry-matching-nothing-is-reported",
     edit: (s) => s.replace(REAL_SHA, HEAD_SHA),
     expectCode: 1,
-    expect: ["matched nothing in this run"],
+    // Name the entry: other REVIEWED entries now match nothing in this window too (the window is
+    // anchored at REAL_SHA, so older-than-window entries print the same note in the healthy run).
+    expect: ["REVIEWED entry 65ebe563 matched nothing in this run"],
     why: "a declaration that no longer applies must say so rather than sit unnoticed",
   },
   {
@@ -82,7 +87,7 @@ const CASES = [
     edit: (s) => s.replace("const REVIEWED = new Map([",
       `const REVIEWED = new Map([\n  ["${OLD_SHA}", "injected out-of-window case"],`),
     expectCode: 0,
-    expect: ["matched nothing in this run"],
+    expect: ["REVIEWED entry ff0cf927 matched nothing in this run"],
     why: "MUST NOT REDDEN MAIN: an inert entry is bookkeeping, not a defect",
   },
 ];

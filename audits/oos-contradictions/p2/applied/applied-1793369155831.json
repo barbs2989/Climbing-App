@@ -1,0 +1,98 @@
+{
+ "applied": [
+  {
+   "id": "ut_blue_grama_cliff_closed_moon_goddess_revenge",
+   "column": "descent",
+   "path": [],
+   "fact": "rappel vs route length"
+  },
+  {
+   "id": "ut_the_moonlight_buttress_clean_aid",
+   "column": "overview",
+   "path": [],
+   "fact": "aid vs free description"
+  },
+  {
+   "id": "ut_the_moonlight_buttress_clean_aid",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitches is 0 on a multi-pitch route"
+  },
+  {
+   "id": "wy_7_deer_creek_too_cold_to_fire",
+   "column": "overview",
+   "path": [],
+   "fact": "pitch count and length"
+  },
+  {
+   "id": "wy_7_deer_creek_too_cold_to_fire",
+   "column": "overview",
+   "path": [],
+   "fact": "pitch count and length"
+  },
+  {
+   "id": "wy_7_deer_creek_too_cold_to_fire",
+   "column": "overview",
+   "path": [],
+   "fact": "pitch count and length"
+  },
+  {
+   "id": "wy_disappointment_peak_almost_overhanging",
+   "column": "overview",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wy_enclosure_vision_quest_couloir",
+   "column": "length_m",
+   "path": [],
+   "fact": "length vs pitch count"
+  },
+  {
+   "id": "wy_gannett_peak_northeast_ridge",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ut_blue_grama_cliff_closed_moon_goddess_revenge",
+   "before": {
+    "descent": "rappel or lower 60 ft"
+   }
+  },
+  {
+   "id": "ut_the_moonlight_buttress_clean_aid",
+   "before": {
+    "overview": "Zion's classic free line: a stunning, very exposed climb of tough jamming and laybacking up the prominent buttress. The lower four pitches work rightward to the block at the buttress base and are weaker than the rest.",
+    "pitches": 0
+   }
+  },
+  {
+   "id": "wy_7_deer_creek_too_cold_to_fire",
+   "before": {
+    "overview": "Hike straight up the creek to a deep chimney on the right and scramble ice/rock to the first steep ice. A short step leads to a 10m ledge, then a 5m curtain or tube wedged in a snug corner; that step is frequently thin and hollow. P2 is a 20m slab to scramble. The last pitch, 35m at the back of the deep chimney on its left-facing wall, is the crux. Bolt/chain anchors sit at the top; another belay anchor stands right above the second pitch, on the climber's right."
+   }
+  },
+  {
+   "id": "wy_disappointment_peak_almost_overhanging",
+   "before": {
+    "overview": "Eight pitches on a route that sees little traffic, with lichen, loose rock and dirt. P1 (5.7): minimal protection on slabs with loose flakes, then a chimney past a chockstone. P2 (5.7): cracks, then a chimney, to a belay that is semi-hanging. P3 (5.9): undercling a flake (5.8), then a crux overhang with jugs over the roof, then 5.7 above. P4 (5.6): short, dirty. P5 (5.7): runout slabs (5.5), a corner past loose death blocks (5.5), a layback flake. P6-7 (5.7): loose ridge crest; test handholds on the west face (5.6), then a nose (5.7). P8 (5.7, one 5.9 move): a chimney, mantling a bulge at the top."
+   }
+  },
+  {
+   "id": "wy_enclosure_vision_quest_couloir",
+   "before": {
+    "length_m": 2134
+   }
+  },
+  {
+   "id": "wy_gannett_peak_northeast_ridge",
+   "before": {
+    "pitches": 1
+   }
+  }
+ ]
+}

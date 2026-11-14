@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:anniversary — the climb-anniversary notification still reaches a screen.
 //
 // #713 revived this feature. It used to map over MY_CLIMBS, a constant DEMO_FILLERS empties,
@@ -13,8 +14,10 @@
 // feature that is invisible to your guards 98% of the time is a feature that will break
 // silently and stay broken for a year.
 //
-// scripts/anniversary.config.mjs injects a log dated exactly one year ago today, cloned from
-// the seed entry so it is shaped like a real log, and this asserts the notification renders.
+// scripts/anniversary.config.mjs signs the browser in as a probe account whose climb_logs hold
+// one ascent dated exactly one year ago today, and this asserts the notification renders. It
+// goes through the ACCOUNT, not the seed logbook, because since #2789 a guest's alerts are
+// empty by design -- that is what turned this red with the feature intact.
 //
 //   npm run check:anniversary
 //   npm run check:anniversary -- --dump out.json
@@ -26,7 +29,7 @@
 // which is the failure that actually shipped.
 
 import { settledText } from "./lib/render-settle.mjs";
-import { oneYearAgoISO, firstLogEntry } from "./anniversary.config.mjs";
+import { oneYearAgoISO, probeRow, PROBE_UID } from "./anniversary.config.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -60,8 +63,8 @@ const fails = [];
 const fail = (where, msg) => fails.push(`${where}: ${msg}`);
 const log = (...a) => console.log(...a);
 
-// Browserless self-tests of the two pure helpers the scaffold depends on. They run here, in
-// the guard CI executes, because both have failure modes that produce a WRONG PROBE rather
+// Browserless self-tests of the pure helpers the scaffold depends on. They run here, in
+// the guard CI executes, because they have failure modes that produce a WRONG PROBE rather
 // than an error -- and a wrong probe fails the browser assertions below, sending whoever
 // reads it hunting for a bug in the anniversary feature that does not exist.
 //
@@ -80,16 +83,10 @@ function selfTest() {
     const got = oneYearAgoISO(new Date(now));
     if (got !== want) fail("self-test", `oneYearAgoISO(${now}) returned ${got}, expected ${want} — the injected probe would carry the wrong date`);
   }
-  // The balancer must ignore braces inside string literals. The seed entry's prose happens to
-  // contain none today, so REAL DATA DOES NOT EXERCISE THIS -- a synthetic case is the only
-  // way to know it works before somebody writes "{crux}" in a trip report and the injected
-  // literal silently becomes malformed.
-  const withBraces = 'const [logs,setLogs]=useState([{routeId:"x",date:"2020-01-02",text:"the {crux} then a lone } brace"},{routeId:"second"}]);';
-  const e = firstLogEntry(withBraces);
-  if (!e) fail("self-test", "firstLogEntry could not balance an entry whose prose contains braces");
-  else if (e.text.includes("second") || !e.text.endsWith('brace"}')) {
-    fail("self-test", `firstLogEntry stopped in the wrong place on prose containing braces: ${JSON.stringify(e.text.slice(-40))}`);
-  }
+  // The probe row must belong to the probe account and carry the date it is given: a row
+  // with another user_id is still hydrated, but it no longer describes the account it claims.
+  const r = probeRow("2025-10-25");
+  if (r.date_climbed !== "2025-10-25" || r.user_id !== PROBE_UID) fail("self-test", "probeRow did not carry the date and the probe uid it was given — the injected row would not belong to the probe account on the probe day");
 }
 selfTest();
 if (fails.length) {
@@ -125,9 +122,8 @@ if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); proc
 if (port !== PORT) log(`port ${PORT} is in use by another process — using ${port} instead`);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port}, with a log dated ${oneYearAgoISO()}...`);
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/anniversary.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/anniversary.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;
@@ -194,8 +190,17 @@ for (const s of SURFACES) {
   let text = "";
   // Some overlays are scoped to one screen, so opening them from the wrong tab renders
   // nothing and the check would read a bare tab. Take the first tab where the text appears.
-  for (const t of s.tabs) {
+  for (const [i, t] of s.tabs.entries()) {
     text = await load(s.qs.replace(/zt=[a-z]+/, "zt=" + t));
+    // The signed-in climb_logs fetch can land after the page "settles" on a slow CI runner,
+    // so a fixed pause read the panel before `_anniv` had a log to map (red on #3264/#3265/
+    // #3267 while the dropdown, read second, passed). Wait for the line itself; a severed
+    // path still fails, only later. The first tab gets the long wait -- by then the fetch has
+    // either landed or is not coming, so the remaining tabs need only a short one.
+    if (!text.includes(HEAD)) {
+      await page.waitForFunction((h) => document.body.innerText.includes(h), HEAD, { timeout: i === 0 ? 20000 : 3000 }).catch(() => {});
+      text = await page.innerText("body").catch(() => text);
+    }
     if (text.includes(HEAD)) break;
   }
   dump[s.label] = text;
@@ -220,12 +225,15 @@ if (fails.length) {
   console.error(`\ncheck:anniversary: ${fails.length} problem(s):\n`);
   for (const f of fails) console.error("  " + f);
   console.error(`
-A log dated exactly one year ago today was injected into the seed logbook, so \`_anniv\`
-should have produced a notification. If it did not, the path from \`logs\` to the
-notifications surface is severed -- which is what #713 fixed and this exists to hold.
+The browser was signed in as a probe account whose climb_logs held one ascent dated exactly
+one year ago today, so \`_anniv\` should have produced a notification. If it did not, the
+path climb_logs -> \`logs\` -> \`_anniv\` -> \`mergedNotifs\` -> the screen is severed --
+which is what #713 fixed and this exists to hold.
 
-Check \`_anniv\` in ClimbMatch.jsx still maps over \`logs\` (not a DEMO_FILLERS constant),
-and that its result is still spread into \`mergedNotifs\`.
+Check that the climb_logs hydration still fills \`logs\`, that \`_anniv\` still maps over
+\`logs\` (not a DEMO_FILLERS constant), and that its result is still spread into
+\`mergedNotifs\` for a signed-in account. This needs a USE_DB build (VITE_SUPABASE_URL,
+VITE_SUPABASE_ANON_KEY, VITE_USE_DB=true): without a backend there is no account to sign in.
 `);
   process.exit(1);
 }

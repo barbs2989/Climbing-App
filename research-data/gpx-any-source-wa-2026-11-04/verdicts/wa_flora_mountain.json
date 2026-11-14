@@ -1,0 +1,20 @@
+{
+  "area_id": "wa_flora_mountain",
+  "routes": [
+    {
+      "route_id": "wa_flora_mountain_southwest_slope",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Web search: SummitPost-type guides call it a summer and fall climb, snow gone by late August, axe only in early season; Mountaineers profile uses standard scramble gear. Ascent histogram peaks Jul-Sep." },
+      "track": { "aid": "2989530", "verdict": "same", "kind": "complete", "inSeason": true, "why": "Our catalog holds exactly one route on the peak, and the August 30 track follows its described line: Stehekin valley, Devore Creek trail, Bird Creek camp area, bushwhack to the south-west basin, talus to the summit (9 m from our pin), and back the same way. Start and end are about 570-640 m east of our Harlequin Bridge pin along the valley road (the airstrip end), so the mechanical 300 m check fails." },
+      "otherTracksConsidered": [
+        { "aid": "3206429", "verdict": "offseason", "why": "May 24 ascent on continuous snow, more than a month before the season starts." },
+        { "aid": "2850196", "verdict": "offseason", "why": "May 24, camp-based track on snow." },
+        { "aid": "2456750", "verdict": "offseason", "why": "Winter ascent in March." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "monthBreakdown", "month": 9, "text": "By the start of September the last slope to the summit is straightforward with little loose rock.", "aids": ["2631690"] }
+      ]
+    }
+  ],
+  "notes": "Trailhead pin not moved: the harlequin-bridge coordinate could not be confirmed from a fetched page (OSM had no result), and the recordings only suggest the road end near the airstrip. Apply script may need to relax the 300 m start rule for this one or the owner can decide. The September 2024 report approached from Holden over Tenmile Pass, a different approach."
+}

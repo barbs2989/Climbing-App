@@ -19,19 +19,20 @@
 //      for EVERY factor in WEIGHTS, says "not measured" for a missing one, refuses to show stars
 //      when the fetch failed, and is gated to crag disciplines only — never alpine, scrambling,
 //      mountaineering, ice or mixed (a user decision, 2026-10-07).
-//   5. ROCK — a MAPPED rock type says "(mapped)" wherever it renders.
-//   6. HOME — the Best day tile is the same score, under the same gate.
+//   5. ROCK — a route's own rock outranks its crag's, and no rock type is labelled "(mapped)" (owner, 2026-10-15).
+//   6. ONE SURFACE — Best day to climb was removed 2026-11-05; the route card is the score's one reader.
 //   7. CAPS AND INPUTS — rain, still-wet rock, wet sandstone, dew point and smoke CAP the stars with
 //      a named reason; drizzle counts; hours already gone are not offered; drying scales with the
 //      rain that fell; local time survives DST; prefs reach the score and live in ONE store that
-//      Settings, the route card and Home share; the card renders every section and honesty line.
+//      Settings and the route card share; the card renders every section and honesty line.
 //
 // Needs no network and no credentials.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk } from "../lib/conditionsScore.js";
+import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE, mergeMeasuredRain, monthFit, TEMP_BANDS } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 let failed = 0;
@@ -112,7 +113,7 @@ console.log("check:conditions-score");
 
 // 4. REACH
 {
-  const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const src = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "");
   if (/tab==="forecast"&&showScore\?<div><ConditionsScoreCard route=\{route\} mtn=\{mtn\}.*?\/>/.test(mask) && /\["forecast","Conditions"\]/.test(mask)) ok("ConditionsScoreCard has its own Conditions tab (sub-tab `forecast`)");
   else fail("ConditionsScoreCard is no longer the body of its own Conditions tab (sub-tab `forecast`)");
@@ -151,34 +152,27 @@ console.log("check:conditions-score");
   const own = routeRock({ rock: "Granite", _dbArea: { rock: "gneiss", rockBasis: "mapped" } });
   if (r && r.basis === "mapped" && own && own.basis === "route" && own.label === "Granite") ok("a route's own rock outranks its crag's; a crag's mapped rock is marked mapped");
   else fail(`routeRock precedence is wrong: ${JSON.stringify(r)} / ${JSON.stringify(own)}`);
-  const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const src = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const sites = src.match(/routeRock\(route\)/g) || [];
-  const marked = (src.match(/basis==="mapped"\?/g) || []).length;
-  if (sites.length && marked >= sites.length) ok(`${sites.length} place(s) render a rock type, and each marks a mapped one`);
-  else fail(`${sites.length} place(s) render routeRock but only ${marked} say "(mapped)"`);
+  const marked = (src.match(/\(mapped\)/g) || []).length;
+  if (sites.length && !marked) ok(`${sites.length} place(s) render a rock type, and none labels it "(mapped)"`);
+  else fail(`${marked} place(s) in RouteDetail.jsx still say "(mapped)" — the owner removed that qualifier 2026-10-15`);
 }
 
-// 6. HOME — the "Best day to climb" tile (lib/BestDayTile.jsx) is the SAME score over the saved crag
-//    climbs, so its number and the Conditions tab's must come from one function, under one gate.
+// 6. ONE SURFACE — "Best day to climb" (a Home tile, a Menu tile and a full-screen overlay that ran the
+//    score over the saved crag climbs and areas) was REMOVED by the owner on 2026-11-05. The score now has
+//    one reader on the phone, the route's Conditions card (Compare routes prints its best day as a cell).
+//    Nothing may bring the tile back under another name without re-deriving its honesty rules here.
 {
-  const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
-  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-  if (/<BestDayTile ids=\{wishlist\} routeById=\{routeById\} onOpen=/.test(app) && /<BestDayTile[\s\S]{0,320}<div><div style=\{hd\}>\{"Jump back in"\}/.test(app)) ok("the Best day tile is mounted on Home, over the saved climbs");
-  else fail("the Best day tile is no longer mounted on Home over the saved climbs");
-  // With no saved crag climb the tile says how to get one, and prints no number: it rates nothing.
-  const empty = (tile.match(/if \(!crag\.length\) return [^\n]*/) || [""])[0];
-  if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /Save a sport, trad, top-rope or bouldering climb/.test(empty) && /onClick=\{onExplore\}/.test(empty) && !/toFixed|stars/.test(empty)) ok("the tile scores with scoreForecast, crag climbs only, and with none saved shows how to save one, with no number");
-  else fail("the tile no longer shares the score, its crag-only gate, or its no-number empty state");
-  // A score cell opens THAT day on the route's Conditions card, through the one-shot OPEN_DAY.
-  if (/OPEN_DAY\.date = d\.date; onOpen\(row\.r, "forecast"\)/.test(tile) && /OPEN_DAY\.date;OPEN_DAY\.date=null/.test(rd) && /d\.date===wantDate/.test(rd)) ok("a tapped score opens that climb's Conditions tab on that day");
-  else fail("a tapped score no longer opens its day on the Conditions tab");
-  if (/not a rating/.test(tile) && /No score: /.test(tile)) ok("a failed forecast or an unlocated climb is SAID, never scored or dropped");
-  else fail("the tile no longer says when a climb could not be scored");
-  // A wall direction researched for the crag (areas.aspect) reaches BOTH readers.
+  const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
+  const home = fs.readFileSync(path.join(ROOT, "src/components/TodayTab.tsx"), "utf8");
+  if (!fs.existsSync(path.join(ROOT, "lib/BestDayTile.jsx")) && !/BestDayTile|bestDayOpen|Best day to climb/.test(app) && !/BestDayTile|Best day to climb/.test(home)) ok("Best day to climb is gone: no tile file, no Home tile, no Menu tile, no overlay (owner 2026-11-05)");
+  else fail("Best day to climb is back (lib/BestDayTile.jsx, a <BestDayTile>, bestDayOpen or its Menu tile) — the owner removed it 2026-11-05");
+  // A wall direction researched for the crag (areas.aspect) reaches the card.
   const fallback = /aspect(?:Text)?[:=] ?(?:x\.)?r(?:oute)?\.aspect ?\|\| ?(?:x\.)?r(?:oute)?\.face ?\|\| ?\((?:x\.)?r(?:oute)?\._dbArea ?&& ?(?:x\.)?r(?:oute)?\._dbArea\.aspect\)/;
-  if (fallback.test(rd.replace(/\s/g, "")) && fallback.test(tile.replace(/\s/g, ""))) ok("the card and the tile both fall back to the crag's researched wall direction");
-  else fail("a reader of the score no longer falls back to areas.aspect");
+  if (fallback.test(rd.replace(/\s/g, ""))) ok("the card falls back to the crag's researched wall direction");
+  else fail("the card no longer falls back to areas.aspect");
 }
 
 // 7. WHAT A SUM CANNOT SAY — caps, condensation, drizzle, the past, sandstone, prefs, local time,
@@ -197,6 +191,46 @@ console.log("check:conditions-score");
   const hW = at(sW, 12);
   if (hW && hW.dryFrac < 0.3 && hW.stars <= 1 && hW.caps.some((c) => /wet/i.test(c.why))) ok(`an hour after a soaking the rock is ${Math.round(hW.dryFrac * 100)}% dried and the hour is capped at 1 star`);
   else fail(`still-wet rock was not capped: dryFrac ${hW && hW.dryFrac}, stars ${hW && hW.stars}`);
+  // ...and rock that is drying but NOT yet dry can never read "Good". One cap at 30% was the whole
+  // rule, so the hour the card called "about 50% dry" scored 4.3 stars in green (Exit 38, 2026-10-18).
+  {
+    const drying = [];
+    for (const amt of [0.02, 0.2, 0.8]) for (const at0 of [60, 66, 72, 78]) for (const x of scoreForecast(fixture({ rainAt: [at0], rainAmt: amt }), WALL, null, NOW).days.flatMap(function (d) { return d.all; })) if (!x.factors.dry || !x.factors.dry.raining) drying.push(x);
+    const band = function (f) { for (const b of WET_BANDS) if (f < b[0]) return b; return null; };
+    const bad = drying.filter(function (x) { const b = x.dryFrac == null ? null : band(x.dryFrac); return b && !x.factors.dry.atLeast && (x.stars > b[1] + 1e-9 || starsLabel(x.stars) === "Good" || !x.caps.some((c) => /rock .*(wet|drying|damp)/i.test(c.why))); });
+    const mid = drying.filter(function (x) { return x.dryFrac >= 0.3 && x.dryFrac < 1; });
+    const dry = drying.filter(function (x) { return x.dryFrac === 1; });
+    if (!bad.length && mid.length >= 10 && dry.some((x) => starsLabel(x.stars) === "Good")) ok(`${mid.length} hours of drying rock (30–99% dry) are held to ${WET_BANDS[1][1]} / ${WET_BANDS[2][1]} stars, none reads Good; dry rock still can`);
+    else fail(`drying rock read too high: ${bad.slice(0, 3).map((x) => Math.round(x.dryFrac * 100) + "% dry -> " + x.stars.toFixed(2) + " " + x.caps.map((c) => c.why)).join("; ")} (mid ${mid.length}, dry Good ${dry.some((x) => starsLabel(x.stars) === "Good")})`);
+  }
+  // DRY_RATE (sped up 2026-10-15, fitted to CragReport): a damp or humid hour dries SLOWER than a plain
+  // one but never stops (0 at the dew point stalled a whole Northwest night), and night is never faster
+  // than day — the fit wanted that, and it is not physical.
+  {
+    const k = DRY_RATE;
+    if (k.damp > 0 && k.damp <= k.rh90 && k.rh90 <= k.rh75 && k.rh75 <= 1 && k.night <= 1 && k.rhDry >= 1 && k.sun >= 1 && k.wind >= 1) ok(`drying rates are ordered: dew point ${k.damp} ≤ 90% RH ${k.rh90} ≤ 75% RH ${k.rh75} ≤ 1, night ${k.night} ≤ day`);
+    else fail(`drying rates out of order: ${JSON.stringify(k)}`);
+  }
+  // MEASURED PAST RAIN (mergeMeasuredRain, 2026-10-15): the measurement decides HOW MUCH, the model only WHEN
+  // inside a 6-hour window; an hour no window covers keeps the model (a gap never reads as dry); a window that
+  // does not fit the series is skipped; and a measured dry spell over a modelled shower dries the rock.
+  {
+    const iso = (i) => Date.parse("2026-06-07T00:00:00Z") + i * 3600e3;
+    const base = fixture({ rainAt: [81, 83, 90] });
+    base.hourly.precipitation[83] = 0.1; // the model: 0.2" at 81, 0.1" at 83, 0.2" at 90
+    const m = mergeMeasuredRain(base, { kind: "6h", windows: [{ end: iso(84), hours: 6, inch: 0.6 }, { end: iso(78), hours: 6, inch: 0.3 }, { end: iso(2), hours: 6, inch: 0.9 }] });
+    const P = m.hourly.precipitation, sum = (a, b) => P.slice(a, b + 1).reduce((x, v) => x + v, 0);
+    const shaped = Math.abs(P[81] - 0.4) < 1e-6 && Math.abs(P[83] - 0.2) < 1e-6 && Math.abs(sum(79, 84) - 0.6) < 1e-6;
+    const even = [73, 74, 75, 76, 77, 78].every((i) => Math.abs(P[i] - 0.05) < 1e-6);
+    const kept = P[90] === 0.2 && P[2] === 0 && base.hourly.precipitation[81] === 0.2;
+    if (shaped && even && kept && m._rainMeasured && m._rainMeasured.windows === 2) ok("measured rain: a 6-h total keeps its amount and follows the model's timing (0.4\"/0.2\"), a dry-model window spreads evenly, an uncovered hour keeps the model, a window off the series is skipped, the input is not mutated");
+    else fail(`mergeMeasuredRain: 81=${P[81]} 83=${P[83]} sum=${sum(79, 84)} even=${even} 90=${P[90]} 2=${P[2]} meta=${JSON.stringify(m._rainMeasured)}`);
+    const wetModel = fixture({ rainAt: [83], rainAmt: 0.5 });
+    const dryMeasured = mergeMeasuredRain(wetModel, { kind: "6h", windows: [{ end: iso(84), hours: 6, inch: 0 }] });
+    const hm = at(scoreForecast(wetModel, WALL, null, NOW), 12), hd = at(scoreForecast(dryMeasured, WALL, null, NOW), 12), sd = scoreForecast(dryMeasured, WALL, null, NOW);
+    if (hm.dryFrac < 0.3 && hd.dryFrac === 1 && sd.rainMeasured && sd.rainMeasured.through === iso(84)) ok("a measured dry window overrides a modelled soaking: the rock reads dry, and the score says the rain was measured");
+    else fail(`measured rain did not reach the score: model ${hm.dryFrac}, measured ${hd.dryFrac}, ${JSON.stringify(sd.rainMeasured)}`);
+  }
   // Drizzle: Open-Meteo reports 0.1 mm steps (0.004"); `>= 0.01` used to throw it away.
   const sD = scoreForecast(fixture({ rainAt: [84], rainAmt: 0.004 }), WALL, null, NOW);
   const hD = at(sD, 12);
@@ -211,6 +245,16 @@ console.log("check:conditions-score");
   const hDew = at(sDew, 12), dryOk = at(scoreForecast(fixture({ dew: 30 }), WALL, null, NOW), 12);
   if (hDew && hDew.stars <= 2 && hDew.factors.humidity.friction.key === "damp" && hDew.factors.dry.pts <= 0.25 * WEIGHTS.dry && dryOk.caps.length === 0 && dryOk.factors.humidity.friction.key === "crisp") ok(`air ${60 - 58}° above its dew point reads damp and is capped (${hDew.stars.toFixed(2)}); 30° above reads crisp and is not`);
   else fail(`dew point is not read: damp hour ${hDew && hDew.stars} friction ${hDew && JSON.stringify(hDew.factors.humidity.friction)}`);
+  // DEW NEEDS A CLEAR, CALM NIGHT, and sun burns it off (audit 2026-10-28: the flat 5° rule capped sunny desert mornings).
+  {
+    const dewCap = (h) => !!h && h.caps.some((c) => /dew point/.test(c.why));
+    const d2 = (o) => scoreForecast(fixture(Object.assign({ dew: 56 }, o)), WALL, null, NOW).days[1];
+    const clear = d2({}), windy = d2({ wind: 10, gust: 14 }), cloudy = d2({ cloud: 80 }), sat = d2({ dew: 58, wind: 10, gust: 14, cloud: 80 });
+    const first = (d) => d.hours[0], noon = (d) => d.hours.find((h) => h.hr === 12);
+    const got = [dewCap(first(clear)), dewCap(noon(clear)), dewCap(first(windy)), dewCap(first(cloudy)), dewCap(noon(sat))];
+    if (JSON.stringify(got) === JSON.stringify([true, false, false, false, true])) ok("4° from the dew point: damp at first light after a clear calm night, not by noon in sun, not after a windy or overcast night; 2° is damp whatever the sky");
+    else fail(`the dew rule is wrong: [clear dawn, clear noon, windy dawn, cloudy dawn, saturated noon] capped = ${JSON.stringify(got)}, want [true,false,false,false,true]`);
+  }
   if (frictionOf(60, 40, null, [45, 68]) && frictionOf(60, null, 50, [45, 68]) === null) ok("friction with no humidity is not measured (null), never a default");
   else fail("friction with a missing input was guessed");
   // The past: today's window and default hour must be still to come.
@@ -234,6 +278,46 @@ console.log("check:conditions-score");
   const warm = at(scoreForecast(fixture({ temp: 75 }), WALL, { band: "warm" }, NOW), 12), std = at(scoreForecast(fixture({ temp: 75 }), WALL, { band: "standard" }, NOW), 12);
   if (warm.factors.temp.pts === WEIGHTS.temp && std.factors.temp.pts < WEIGHTS.temp) ok("a 'warm' band scores 75° as ideal; 'standard' does not");
   else fail(`the temperature band pref does not reach the score: warm ${warm.factors.temp.pts}, standard ${std.factors.temp.pts}`);
+  // A RANGE the climber sets (30-90) makes 85 ideal; their sport-only range (40-60) does not touch bouldering.
+  const wideAll = at(scoreForecast(fixture({ temp: 85 }), WALL, { temp: { all: [30, 90] } }, NOW), 12);
+  const sportOwn = at(scoreForecast(fixture({ temp: 85 }), WALL, { temp: { all: [30, 90], sport: [40, 60] } }, NOW), 12);
+  const boulderAll = at(scoreForecast(fixture({ temp: 85 }), { ...WALL, discipline: "bouldering" }, { temp: { all: [30, 90], sport: [40, 60] } }, NOW), 12);
+  if (wideAll.factors.temp.pts === WEIGHTS.temp && sportOwn.factors.temp.pts < WEIGHTS.temp && boulderAll.factors.temp.pts === WEIGHTS.temp) ok("a set range 30-90 scores 85 as ideal; a sport-only range overrides sport and leaves bouldering on the all-climbing range");
+  else fail(`the temperature range does not reach the score per discipline: wide ${wideAll.factors.temp.pts}, sport-own ${sportOwn.factors.temp.pts}, bouldering ${boulderAll.factors.temp.pts}`);
+  // OPTIONAL extras: each one set moves the score, and none set changes nothing.
+  const humDef = at(scoreForecast(fixture({ rh: 60 }), WALL, {}, NOW), 12), humOk = at(scoreForecast(fixture({ rh: 60 }), WALL, { rhMax: 70 }, NOW), 12);
+  if (humDef.factors.humidity.pts < WEIGHTS.humidity && humOk.factors.humidity.pts === WEIGHTS.humidity) ok("a humidity ceiling of 70% makes 60% full marks; the default 40% does not");
+  else fail(`the humidity ceiling does not reach the score: default ${humDef.factors.humidity.pts}, ceiling 70 ${humOk.factors.humidity.pts}`);
+  const sunAuto = at(scoreForecast(fixture({ temp: 85 }), WALL, {}, NOW), 12), sunWant = at(scoreForecast(fixture({ temp: 85 }), WALL, { sun: "sun" }, NOW), 12), sunEither = at(scoreForecast(fixture({ temp: 85 }), WALL, { sun: "either" }, NOW), 12);
+  if (sunAuto.factors.sun && sunAuto.factors.sun.want === "shade" && sunAuto.factors.sun.pts < WEIGHTS.sun && sunWant.factors.sun.pts === WEIGHTS.sun && sunWant.factors.sun.want === "sun" && sunEither.factors.sun.pts === WEIGHTS.sun) ok("a hot lit wall wants shade by default; 'I want sun' and 'don't mind' score it full");
+  else fail("the sun/shade preference does not reach the score");
+  const dayAll = scoreForecast(fixture(), WALL, {}, NOW).days[0], dayWin = scoreForecast(fixture(), WALL, { window: [14, 19] }, NOW).days[0];
+  if (dayWin.best && dayWin.best.start >= 14 && dayWin.best.end <= 19 && dayWin.hours.length === dayAll.hours.length) ok("a 2 PM-7 PM window picks the best window inside it and still lists every daylight hour");
+  else fail(`the daylight window does not bound the best window or hides hours: ${JSON.stringify(dayWin.best && [dayWin.best.start, dayWin.best.end])}`);
+  const noRoom = scoreForecast(fixture(), WALL, { window: [14, 16] }, NOW).days[0];
+  if (noRoom.best && noRoom.best.start === dayAll.best.start) ok("a window shorter than three hours is ignored rather than leaving no best window");
+  else fail("a too-short daylight window is not ignored");
+  const mkAir = (v) => { const a = { utc_offset_seconds: 0, hourly: { time: [], us_aqi: [], pm2_5: [] } }; for (let i = 0; i < 240; i++) { a.hourly.time.push(new Date(Date.parse("2026-06-07T00:00:00Z") + i * 3600e3).toISOString().slice(0, 16)); a.hourly.us_aqi.push(v); a.hourly.pm2_5.push(20); } return a; };
+  const capOf = (aqi, aq) => at(scoreForecast(fixture(), WALL, aq ? { aq } : {}, NOW, mkAir(aqi)), 12);
+  if (capOf(120).caps.length === 0 && capOf(120, "sensitive").stars <= 2 && capOf(180, "relaxed").caps.length === 0 && capOf(250, "relaxed").stars <= 2 && capOf(350, "relaxed").stars <= 1 && capOf(180).stars <= 2) ok("air quality: standard holds at 150/200, 'sensitive' at 100/150, 'relaxed' at 200/300, and hazardous air is held to 1 star whatever is picked");
+  else fail("the air-quality sensitivity does not move the caps as stated");
+  // RANGES: the climber drags both ends, so "cool through warm" is one choice (four exclusive chips could not say it).
+  const wide = scoreForecast(fixture({ temp: 75 }), WALL, { tempRange: [40, 80] }, NOW), narrow = scoreForecast(fixture({ temp: 75 }), WALL, { tempRange: [45, 68] }, NOW);
+  if (at(wide, 12).factors.temp.pts === WEIGHTS.temp && at(narrow, 12).factors.temp.pts < WEIGHTS.temp && wide.bandKey === "custom" && wide.band[0] === 40 && wide.band[1] === 80) ok("a dragged range (40-80) scores 75° as ideal where 45-68 does not, and reports its band as custom");
+  else fail("a temperature RANGE does not reach the score");
+  const bad = [[80, 40], [50, 52], [5, 60], [50, 200], null, "x", [50]].map((r) => scoreForecast(fixture({ temp: 75 }), WALL, { tempRange: r, band: "warm" }, NOW));
+  if (bad.every((x) => x.bandKey === "warm" && x.band[0] === 55)) ok("a range the store would refuse (reversed, under 4 deg wide, out of bounds, one number) is ignored, never half-applied");
+  else fail("an invalid temperature range was applied");
+  const w20 = (r) => at(scoreForecast(fixture({ wind: 20, gust: 20 }), WALL, r ? { windRange: r } : {}, NOW), 12).factors.wind.pts;
+  if (w20() === WEIGHTS.wind * 0.6 && w20([0, 10]) === w20() && w20([15, 30]) === WEIGHTS.wind && w20([0, 5]) < w20()) ok("wind: unchosen is the old rule exactly (20 mph = 0.6), [0,10] equals it, a range up to 30 mph scores 20 full, a stricter one scores less");
+  else fail(`the wind range does not reach the score or changed the default rule: ${w20()} ${w20([0, 10])} ${w20([15, 30])} ${w20([0, 5])}`);
+  const w2 = at(scoreForecast(fixture({ wind: 2, gust: 2 }), WALL, { windRange: [10, 20] }, NOW), 12).factors.wind.pts;
+  if (Math.abs(w2 - WEIGHTS.wind * 0.2) < 1e-9) ok("a climber who wants a breeze (10-20 mph) gets a still hour scored down: 2 mph = 0.2");
+  else fail(`the low end of the wind range is not scored: ${w2}`);
+  // The store keeps wind as `wind: [lo, hi]`; an older "up to" limit (windMax) reads as calm to it.
+  const wStore = at(scoreForecast(fixture({ wind: 20, gust: 20 }), WALL, { wind: [15, 30] }, NOW), 12).factors.wind.pts, wOld = at(scoreForecast(fixture({ wind: 20, gust: 20 }), WALL, { windMax: 25 }, NOW), 12).factors.wind.pts;
+  if (wStore === WEIGHTS.wind && wOld === WEIGHTS.wind) ok("the store's wind range (15-30) and an older 25 mph limit both score 20 mph full");
+  else fail(`the stored wind range or an older wind limit does not reach the score: ${wStore} ${wOld}`);
   const fx = fixture({ rainAt: [66] });
   // A limestone wall (24 h): granite dries in 12 h now, which would leave BOTH settings fully dry here.
   const LIME = { ...WALL, family: "limestone" };
@@ -265,7 +349,7 @@ console.log("check:conditions-score");
   else fail("aspect 'varies' is not distinguished");
 
   // The card, the tile, Settings and the fetch.
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
   const need = ["Wet sandstone is weak — holds can break. Stay off it until it’s dry", "Fewer than three daylight hours to score", "Capped at ", "not a clean-air reading", "This says nothing about its season", "the wall faces several ways", "Seepage risk", "<HourlyChart ", "<SeasonChart ", "Sun on the wall", "Right now", "Best time to climb", "Rock & drying", "Air quality", "Season"];
   const lost = need.filter((s) => !card.includes(s));
@@ -274,18 +358,45 @@ console.log("check:conditions-score");
   if (/No three dry daylight hours/.test(rd)) fail('the old "No three dry daylight hours" label is back (it was wrong: the window needs daylight, not dry)');
   else ok("the no-window label says what is actually required: three daylight hours");
   const fc = fs.readFileSync(path.join(ROOT, "lib/forecast.js"), "utf8");
-  const crag = (fc.match(/export function fetchCragForecast[\s\S]*?\n}\n/) || [""])[0];
+  const crag = (fc.match(/export function fetchCragForecast\([\s\S]*?\n}\n/) || [""])[0];
   if (/dew_point_2m/.test(crag) && /is_day/.test(crag) && /past_days=14/.test(crag) && /timeformat=unixtime/.test(crag) && /daily=sunrise,sunset/.test(crag) && !/weather_code/.test(crag)) ok("the crag fetch asks for what the score reads (dew point, is_day, 14 past days, sunrise/sunset, unix time) and nothing it does not");
   else fail("the crag fetch and what the score reads have drifted apart");
   const prefs = fs.readFileSync(path.join(ROOT, "lib/CondPrefs.jsx"), "utf8");
-  const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
-  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-  if (/\["auto", "cool", "standard", "warm"\]\.map\(/.test(prefs) && !/\.filter\(function \(k\) \{ return k === "auto" \|\|/.test(prefs)) ok("all four temperature choices are offered, so exactly one is always pressed");
-  else fail("the band chips filter a choice out again — a saved band equal to the default would press nothing");
-  if (/useCondPrefs\(\)/.test(tile) && !/BAND_PREF\.load\(\)/.test(tile) && /useCondPrefs\(\)/.test(card) && /setCondPref\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card and Home read ONE prefs store that broadcasts changes");
-  else fail("a prefs reader loads storage on its own again, so Home can go stale after a change on a route");
-  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /onPrefs=\{\(\)=>setSettingsOpen\(true\)\}/.test(app)) ok("Settings has a Your conditions section, and the Home tile links to it");
-  else fail("Your conditions is no longer reachable from Settings (menu and profile) or the Home tile");
+  const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
+  const slider = fs.readFileSync(path.join(ROOT, "lib/RangeSlider.jsx"), "utf8");
+  if (/<RangeSlider label=\{\(ownOnly \? "Temperatures I like, " : "Ideal temperature, "\) \+ scopeName\}/.test(prefs) && /<RangeSlider label="Ideal wind"/.test(prefs) && /\["cool", "standard", "warm"\]\.map\(/.test(prefs) && /setRange\(TEMP_BANDS\[k\]\.slice\(\)\)/.test(prefs)) ok("temperature (every scope) AND wind are drag-both-ends ranges; Cool / Mild / Warm are shortcuts that set one, not exclusive choices");
+  else fail("the ideal temperature or wind is no longer a range, or the shortcuts stopped setting one");
+  if (/role="slider"/.test(slider) && /aria-label=\{label \+ ", " \+ name\}/.test(slider) && /aria-valuetext=\{fmt\(v\)\}/.test(slider) && /onKeyDown=\{key\}/.test(slider) && /ArrowRight/.test(slider) && /"Home"/.test(slider)) ok("each handle is a named, keyboard-operable slider that reads its value in the climber's units");
+  else fail("a range handle lost its name or its keyboard");
+  // A swipe up or down that starts on a slider must SCROLL the page and leave the range alone (owner 2026-10-24:
+  // "Settings page is difficult to scroll"). touch-action:none on the track made two full-width rows of Your data &
+  // account unscrollable, and the track's pointerdown jumped a handle to the finger, so scrolling past the slider
+  // set the range. pan-y on BOTH, the track jump on a TAP that lifts where it began (a scroll is cancelled, never lifts), and a handle whose touch
+  // becomes a scroll (pointercancel) restores the range it started from.
+  if (!/touchAction: "none"/.test(slider) && (slider.match(/touchAction: "pan-y"/g) || []).length === 2 && /onPointerDown=\{function \(e\) \{ tap\.current = /.test(slider) && /onPointerCancel=\{function \(\) \{ tap\.current = null; \}\}/.test(slider) && /onPointerUp=\{function \(e\) \{ const t = tap\.current;[^\n]*> 10[^\n]*move\(/.test(slider) && /onPointerCancel=\{function \(\) \{ const b = before\.current;[^}]*onChange\(b\)/.test(slider) && /before\.current = \[lo, hi\]/.test(slider)) ok("a vertical swipe that starts on a range slider scrolls the page and cannot change the range (pan-y; the track jumps on a tap, not a swipe; a cancelled drag restores)");
+  else fail("a range slider traps vertical scrolling or changes the range on a scroll: its handles and track need touch-action pan-y, the track must jump on a lifted tap (not pointerdown), and pointercancel must restore the range");
+  if (/const THUMB = 28, HIT = 44;/.test(slider) && /width: HIT, height: HIT/.test(slider)) ok("each handle's touch target is 44 px (Apple's guideline; WCAG 2.2 AA asks 24) around a 28 px visible circle");
+  else fail("a range handle's touch target fell below 44 px");
+  // Pushed together at the top of the scale, a fixed "high on top" left every touch on the high handle, which
+  // cannot go further right: the low one was stuck and the range could not be widened again.
+  if (/const loOnTop = \(pos\(lo\) \+ pos\(hi\)\) \/ 2 > 50;/.test(slider) && /zIndex: which === "lo" \? \(loOnTop \? 4 : 2\) : 3/.test(slider)) ok("two handles pushed together stay movable: past the middle the LOW handle is on top (its free direction is left)");
+  else fail("the range handles no longer swap which is on top past the middle — two handles pushed together at the top of the scale strand the low one");
+  if (/const snapTemp = function \(f\) \{ return uTempIn\(uTempN\(f\)\); \}/.test(prefs) && /snapWind/.test(prefs) && /fmt=\{uTemp\}/.test(prefs) && /fmt=\{uWind\}/.test(prefs)) ok("the handles snap to a number the climber can SEE (whole degrees C when metric) and the stored value stays deg F / mph");
+  else fail("a range handle no longer snaps through the unit helpers");
+  const covered = (fs.readFileSync(path.join(ROOT, "lib/conditionsScore.js"), "utf8").match(/CRAG_SCORE_DISCIPLINES = (\[[^\]]*\])/) || [])[1];
+  const offered = (prefs.match(/COND_DISCS = (\[[^\]]*\])/) || [])[1];
+  if (covered && offered && covered.replace(/\s/g, "") === offered.replace(/\s/g, "")) ok("the per-discipline ranges are exactly the disciplines the score covers (alpine and ice/mixed have their own range scopes, outside the score)");
+  else fail(`the disciplines offered a range (${offered}) differ from the ones the conditions score covers (${covered})`);
+  if (/saveMyCondPrefs\(/.test(prefs) && /useMyCondPrefs\(/.test(prefs) && /useCondPrefsAccount\(uid\)/.test(app)) ok("Your conditions is saved to the account and read back on sign-in");
+  else fail("Your conditions no longer reaches the account");
+  if (/useCondPrefs\(\)/.test(card) && !/BAND_PREF\.load\(\)/.test(card) && /updateCondPrefs\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card reads ONE prefs store that broadcasts changes");
+  else fail("a prefs reader loads storage on its own again, so the card can go stale after a change in Settings");
+  /* The controls may carry props (onSignIn since 2026-11-05), so match the tag, not a bare `<CondPrefsControls/>`. */
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\b[^<]{0,160}?\/>/.test(app) && /\["snowflake","Your conditions",\(\)=>setCondsOpen\(true\)\]/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls\b[^<]{0,160}?\/>/.test(app)) ok("Your conditions is in Settings and in the Menu");
+  else fail("Your conditions is no longer reachable from Settings (menu and profile)");
+  /* Signed out, the save line offers sign-in where the caller can open it (owner 2026-11-05): it used to say "Sign in to keep it on your account" with nothing to tap. */
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls onSignIn=\{/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls onSignIn=\{/.test(app) && /sync === "local" && onSignIn \? <button onClick=\{onSignIn\}/.test(prefs)) ok("signed out, Your conditions offers a sign-in button in Settings and in the Menu");
+  else fail("signed out, Your conditions says to sign in but offers nothing to tap (Settings or the Menu lost onSignIn)");
 }
 
 // 8. THE WEATHER BESIDE THE SCORE (Climbit's crag page, 2026-10-07) — rain hour by hour and day by
@@ -371,25 +482,58 @@ console.log("check:conditions-score");
   if (cr.length === 1 && /Open Government Licence – Canada/.test(cr[0]) && terrainCredits(["ned/x.tif", "ned19/y.tif", "srtm/z.tif"]).length === 0) ok("the terrain credit appears only where its licence requires it (Canada yes; US 3DEP and SRTM, public domain, no)");
   else fail(`terrain credits are wrong: ${JSON.stringify(cr)}`);
 
+  // The SEASON chart's verdicts, pinned on measured months (Open-Meteo archive 2021-25, the chart's own
+  // source). Owner, 2026-10-24: July and August are perfect for sport, trad and bouldering in Canada,
+  // and the chart called them off because it read the afternoon high alone. A desert midsummer stays off.
+  const SEASON_PINS = [
+    ["Squamish July, sport/trad", { hi: 78.8, lo: 56.3, wetDays: 3.6, rain: 1.31 }, "standard", "prime"],
+    ["Squamish July, bouldering", { hi: 78.8, lo: 56.3, wetDays: 3.6, rain: 1.31 }, "cool", "prime"],
+    ["Squamish August, bouldering", { hi: 79.1, lo: 57.5, wetDays: 6.8, rain: 2.15 }, "cool", "good"],
+    ["Lake Louise July, 12 wet days of thunderstorms", { hi: 71.1, lo: 48.5, wetDays: 12.4, rain: 2.25 }, "standard", "prime"],
+    ["Val-David July, a wet month", { hi: 74.6, lo: 58.6, wetDays: 15.2, rain: 4.69 }, "standard", "good"],
+    ["Red Rock January", { hi: 49.7, lo: 37, wetDays: 3.6, rain: 1.04 }, "standard", "prime"],
+    ["Red Rock July", { hi: 98.4, lo: 75.2, wetDays: 1.8, rain: 0.41 }, "standard", "off"],
+    ["Bishop August, bouldering", { hi: 91.5, lo: 71.2, wetDays: 1.6, rain: 0.78 }, "cool", "off"],
+  ];
+  const seasonBad = SEASON_PINS.filter(([, mo, b, want]) => monthFit(mo, TEMP_BANDS[b]) !== want).map(([n, mo, b, want]) => `${n}: ${monthFit(mo, TEMP_BANDS[b])}, not ${want}`);
+  if (!seasonBad.length) ok(`the Season chart reads a Canadian July/August as climbable and a desert midsummer as off (${SEASON_PINS.length} measured months)`);
+  else fail(`the Season chart misjudges a month: ${seasonBad.join(" | ")}`);
+
   // The card and the fetch.
-  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
   const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
-  const chart = (rd.match(/function HourlyChart\([\s\S]*?\n}\n/) || [""])[0];
-  const need = ["Day by day", "Hour by hour", "All 7 days", "Shade map", "<ShadeMap ", "Cloud cover", "feels like ", " from the ", "Rain not measured", "A trace of rain"];
+  const chart = (rd.match(/function HourChartCard\([\s\S]*?\n}\n/) || [""])[0] + (rd.match(/function HourlyChart\([\s\S]*?\n}\n/) || [""])[0];
+  const need = ["Day by day", "Hour by hour", "Day for the hourly charts", "Shade map", "<ShadeMap ", "Cloud cover", "feels like ", " from the ", "Rain not measured", "A trace of rain"];
   const lost = need.filter((s) => !card.includes(s));
-  if (!lost.length) ok(`the card renders day by day, hour by hour (a day or all 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
+  if (card.includes("All 7 days")) fail("the hourly charts offer an \"All 7 days\" view again (owner, 2026-10-14: pick ONE day of the next 7, its hours below)");
+  if (!lost.length) ok(`the card renders day by day, hour by hour (one picked day of the 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
   else fail(`the card lost: ${lost.join(" | ")}`);
-  const chartNeed = ['"Rain ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "week"];
+  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "<HourStepper"]; // the hour picker (its "Pick an hour" group lives in lib/HourTiles.jsx)
   const cLost = chartNeed.filter((s) => !chart.includes(s));
-  if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for a day or the week");
+  if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for the picked day");
   else fail(`the hourly chart lost: ${cLost.join(" | ")}`);
   const fc = fs.readFileSync(path.join(ROOT, "lib/forecast.js"), "utf8");
-  const crag = (fc.match(/export function fetchCragForecast[\s\S]*?\n}\n/) || [""])[0];
+  const crag = (fc.match(/export function fetchCragForecast\([\s\S]*?\n}\n/) || [""])[0];
   if (/apparent_temperature/.test(crag) && /wind_direction_10m/.test(crag)) ok("the crag fetch asks for feels-like and wind direction, which the card reads");
   else fail("the crag fetch no longer asks for feels-like or wind direction");
   const sm = fs.readFileSync(path.join(ROOT, "lib/ShadeMap.jsx"), "utf8");
-  if (/IntersectionObserver/.test(sm) && /under a clear sky/.test(sm) && /not trees, overhangs/.test(sm) && /isn’t counted/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, says it is a clear-sky terrain shadow (not trees or one face), how far it reaches, and when it failed");
-  else fail("the shade map lost a caveat, its lazy load, its failure state or its slider's name");
+  if (/IntersectionObserver/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, and says when it failed");
+  else fail("the shade map lost its lazy load, its failure state or its slider's name");
+  // The score reads route.aspect, then the crag's areas.aspect. The ASPECT & SUN card must read the same two, or a crag whose
+  // wall facing came from the area says "No aspect recorded" directly under a score that used one.
+  const sunPanel = fs.readFileSync(path.join(ROOT, "src/components/AspectSunPanel.tsx"), "utf8");
+  if (/route\._dbArea\.aspect/.test(sunPanel) && !/sunReadout\(route\.aspect/.test(sunPanel)) ok("the Aspect & sun card reads the crag's wall aspect as well as the route's, like the score does");
+  else fail("the Aspect & sun card reads only the route's own aspect, so a crag whose facing is on its area says none is recorded under a score that used one");
+  // A WET MORNING UNDER A GOOD DAY (owner's note, 2026-10-28): red morning tiles beside a Good day read as a contradiction
+  // unless the card says the day is its best 3 hours and the rock is wet until a stated hour; each tile names its dryness.
+  const rd2 = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
+  if (/data-wet-until="1"[^\n]{0,200}"Rock likely wet until "\+clockHr\(wetTill\.hr\)/.test(rd2) && /", rock about "\+Math\.round\(x\.dryFrac\*100\)\+"% dry"/.test(rd2)) ok("a day with wet morning hours says when the rock dries, and each wet hour tile says how dry it is");
+  else fail("the wet-morning line or the hour tiles' dryness label is gone: red tiles under a Good day read as a contradiction again");
+  if (/data-dew-until="1"[^\n]{0,200}"Air at its dew point until "\+clockHr\(dewTill\.hr\)/.test(rd2) && /const dewTill=[^\n]*\/dew point\/\.test\(c\.why\)/.test(rd2)) ok("...and a dew-capped morning under a Good day says until when, too (most red mornings were dew, not rain)");
+  else fail("the dew-morning line is gone: a dew-capped red morning under a Good day is unexplained again");
+  // MODELS DISAGREE ON RAIN at a crag too, by the alpine card's rule, with the printed day total in the comparison; a failed read adds nothing.
+  if (/fetchAlpineSpread\(lat,lng,null\)\.then\(function\(j\)\{_cragSp\[ck\]=j;if\(live\)setSp\(j\);\},function\(\)\{if\(live\)setSp\(null\);\}\)/.test(rd2) && /modelSpread\(sp,d\.date,null,d\.rain\)/.test(rd2) && /data-rain-split="1"/.test(rd2)) ok("a crag day the forecast models split on rain says so, with the printed amount in the comparison");
+  else fail("the crag card lost its models-disagree-on-rain line, or reads it without the printed day total");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 

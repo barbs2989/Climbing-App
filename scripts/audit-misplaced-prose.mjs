@@ -139,9 +139,10 @@ const walkSrc = (v, p, id, table) => {
   if (typeof v === "object") for (const [k, x] of Object.entries(v)) walkSrc(x, `${p}.${k}`, id, table);
 };
 for (const r of rows) for (const [k, v] of Object.entries(r)) if (k !== "id") walkSrc(v, k, r.id, "routes");
-const areas = await selectAll("areas", "id,blurb", "blurb=not.is.null", { pageSize: 1000 });
-for (const a of areas) walkSrc(a.blurb, "blurb", a.id, "areas");
+// blurb, and since 0304 the two other area prose columns the page renders (GETTING THERE).
+const areas = await selectAll("areas", "id,blurb,approach,parking_note", "or=(blurb.not.is.null,approach.not.is.null,parking_note.not.is.null)", { pageSize: 1000 });
+for (const a of areas) { walkSrc(a.blurb, "blurb", a.id, "areas"); walkSrc(a.approach, "approach", a.id, "areas"); walkSrc(a.parking_note, "parking_note", a.id, "areas"); }
 const famS = {}; for (const h of src) { const f = h.table + " " + h.p.replace(/\[\d+\]/g, "[]"); famS[f] = (famS[f] || 0) + 1; }
-console.log(`\n4. A SOURCE NAMED IN A RENDERED STRING: ${src.length} strings on ${new Set(src.map((h) => h.table + h.id)).size} rows (${areas.length} area blurbs read)`);
+console.log(`\n4. A SOURCE NAMED IN A RENDERED STRING: ${src.length} strings on ${new Set(src.map((h) => h.table + h.id)).size} rows (${areas.length} areas with prose read: blurb, approach, parking_note)`);
 for (const [k, v] of Object.entries(famS).sort((a, b) => b[1] - a[1]).slice(0, 20)) console.log(`   ${String(v).padStart(4)}  ${k}`);
 show("   rows", src, (h) => `${h.table}.${h.id} ${h.p} ["${h.m || "fa"}"] ${h.v.slice(0, 150)}${h.v.length > 150 ? "…" : ""}`);

@@ -1,0 +1,117 @@
+{
+ "id": "wa_dark_side_of_liberty",
+ "name": "Dark Side of Liberty",
+ "area_id": "wa_liberty_bell",
+ "discipline": "alpine",
+ "grade": "5.13+",
+ "pitches": 10,
+ "length_m": 335,
+ "overview": "A 1,100-foot free route up Liberty Bell's shaded northeast face, established by Shanjean Lee and Mikey Schaefer. The pair began equipping the line in 2018 (rappelling in from the neighboring Barber Pole route) and completed the first free ascent in August 2019. The face is perpetually in shade except for a few hours in high summer; the crux Pitch 4 finger crack includes a boulder problem in the V9/V10 range.",
+ "description": null,
+ "beta": "Ten pitches climbing steeper, cleaner, more physical rock than the other East Face free routes, starting atop a car-sized chockstone in the gully at the base of the east face. The money pitch (P4) is a 45-ft finger crack into a V9/V10 boulder crux; P1-P2 hold a bouldery 5.12+ start and a sustained 5.13- roof pitch.",
+ "descent_text": "Two descent options exist. Most parties rappel the route itself on a single 80 m rope, back down the 1,100 ft face to the base and their packs; bring the 80 m, since shorter ropes are not described as reaching. Alternatively, continue about 150 m of 4th-class terrain to Liberty Bell’s true summit and take the standard descent: from the summit, go east to a tree hung with rappel slings, make one single-rope rappel to a sandy ledge, then two single-rope rappels of about 25 m from bolted anchors into the Liberty Bell-Concord notch. That leaves you on the opposite side of the mountain from the East Face approach.",
+ "descent": "Rappel the route on a single 80 m rope, or continue about 150 m of 4th-class terrain to the true summit and take the standard Liberty Bell descent.",
+ "rappels": "Rappel the route on a single 80 m rope. The route is 10 pitches and 1,100 ft; no count of rappel stations is published.",
+ "rappel_count_note": "The only published descent beta is to rappel the route on a single 80 m rope, so no station list is given here. The alternative is about 150 m of 4th-class terrain to the true summit and the standard Liberty Bell descent: a rappel off slung trees and two bolted rappels of about 25 m into the Liberty Bell-Concord notch.",
+ "rope_length_m": null,
+ "pitch_detail": [
+  {
+   "crux": false,
+   "bolts": 8,
+   "grade": "5.12+",
+   "notes": "Steep, exposed bolted face starting on slightly funky rock (yellow/orange lichen) that improves by the third bolt, building to a V6 boulder-problem finish.",
+   "pitch": 1,
+   "anchor": "Bolted anchor",
+   "lengthM": 40
+  },
+  {
+   "crux": false,
+   "bolts": 8,
+   "grade": "5.13-",
+   "notes": "Sustained climbing around an orange dyke with blind reaches and heel hooks through a horizontal roof; engagement stays high the whole pitch.",
+   "pitch": 2,
+   "anchor": "Bolted anchor",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 2,
+   "grade": "5.11",
+   "notes": "A relative break: hand crack and arete climbing, awkward for shorter climbers but easier than its neighbors.",
+   "pitch": 3,
+   "anchor": "Bolted anchor",
+   "lengthM": 30
+  },
+  {
+   "crux": true,
+   "bolts": 6,
+   "grade": "5.13+",
+   "notes": "The 'money pitch': a beautiful 45-ft finger crack to a jug-flake rest, then small feet and crimps into a V9/V10 boulder problem before a final mantel. The route's technical crux.",
+   "pitch": 4,
+   "anchor": "Bolted anchor",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 4,
+   "grade": "5.11",
+   "notes": "Slab rambling opens into a massive corner/roof feature with good offwidth protection and holds.",
+   "pitch": 5,
+   "anchor": "Bolted anchor",
+   "lengthM": 40
+  },
+  {
+   "crux": false,
+   "bolts": 4,
+   "grade": "5.11",
+   "notes": "Short 4th-class approach into funky jams on a large flake, protected with small cams.",
+   "pitch": 6,
+   "anchor": "Bolted anchor",
+   "lengthM": 35
+  },
+  {
+   "crux": false,
+   "bolts": 2,
+   "grade": "5.9",
+   "notes": "Ledgy, loose terrain finishing on an easier layback corner.",
+   "pitch": 7,
+   "anchor": "Bolted anchor",
+   "lengthM": 30
+  },
+  {
+   "crux": false,
+   "bolts": 4,
+   "grade": "5.11",
+   "notes": "Overhanging chimney climbed by stemming and jamming; watch for a wedged block hazard.",
+   "pitch": 8,
+   "anchor": "Bolted anchor",
+   "lengthM": 35
+  },
+  {
+   "crux": false,
+   "bolts": 2,
+   "grade": "5.10",
+   "notes": "Wide stems onto an arete transition into easy, enjoyable face climbing.",
+   "pitch": 9,
+   "anchor": "Bolted anchor",
+   "lengthM": 30
+  },
+  {
+   "crux": false,
+   "bolts": 2,
+   "grade": "5.8",
+   "notes": "Loose blocks near an arete lead to the top; most parties rappel the route on a single 80m rope rather than continuing to the true summit.",
+   "pitch": 10,
+   "anchor": "2-bolt rap anchor",
+   "lengthM": 25
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Mikey Schaefer & Shanjean Lee, August 2019 (2-season free-climbing project)",
+ "areas": {
+  "name": "Liberty Bell Mountain",
+  "parent_id": "wa_liberty_bell_group"
+ },
+ "parent_area": "Liberty Bell Group"
+}

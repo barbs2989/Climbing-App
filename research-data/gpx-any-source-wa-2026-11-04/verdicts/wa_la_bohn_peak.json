@@ -1,0 +1,71 @@
+{
+  "area_id": "wa_la_bohn_peak",
+  "routes": [
+    {
+      "route_id": "wa_la_bohn_peak_southwest_slopes",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Ascents by month peak Jul-Sep (99 of ~120). Web search of WTA and Mountaineers reports: late-June traverses found snow at the gap, mid-July through early September is good, late September and October get cold."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3357427",
+          "verdict": "different",
+          "why": "Round trip from trailhead but also climbs Hinman the same day."
+        },
+        {
+          "aid": "3284193",
+          "verdict": "different",
+          "why": "Trailhead round trip that also includes Hinman (highest point there)."
+        },
+        {
+          "aid": "2983414",
+          "verdict": "different",
+          "why": "Camp-based, finishes at the trailhead after Hinman; not a clean single-peak round trip."
+        },
+        {
+          "aid": "3305620",
+          "verdict": "different",
+          "why": "Walk up from La Bohn Gap camp; no trailhead start."
+        },
+        {
+          "aid": "2611911",
+          "verdict": "different",
+          "why": "Camp-based at La Bohn Lakes, no trailhead start."
+        },
+        {
+          "aid": "2317253",
+          "verdict": "different",
+          "why": "Camp-based within a longer backpack."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "In late September, strong wind can hit the final summit ridge hard enough to push you around; carry a windproof layer.",
+          "aids": [
+            "3357427"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "In September several cairned paths cross the upper talus and are easier to spot on the way down than going up; none is required.",
+          "aids": [
+            "3357427",
+            "2983414"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Only La Bohn East Ridge on this peak; no qualifying track because every summited trailhead start combined it with Hinman and every other track began from camp."
+}

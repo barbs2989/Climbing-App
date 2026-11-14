@@ -17,7 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // appSources returns the canonical app file list and bails if a REQUIRED source has been
@@ -39,7 +39,8 @@ if (!fs.existsSync(path.join(ROOT, "lib/objKeys.js"))) {
   console.error("live there and are shared by SuggestFix and AddRoute. Nothing below was checked.");
   process.exit(1);
 }
-const rd = read("RouteDetail.jsx"), cm = read("ClimbMatch.jsx");
+// stitched: the FIELDS list lives in SuggestFix.tsx since PR59
+const rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")), cm = read("ClimbMatch.jsx");
 
 // Anchored on the real declarations. A rename must fail loudly rather than yield an empty
 // set — an empty set on either side would make every comparison below pass vacuously, which
@@ -65,15 +66,16 @@ if (!form.length || !ss.size) {
 
 // There are TWO ways a field reaches onContribute, and checking only the first was this
 // guard's own first-draft bug. Besides the FIELDS list, RouteDetail calls onSubmit directly
-// with a literal field name — that is how startLocation is filed (bailout was too, until bail
-// points were removed), and it is NOT in FIELDS, so a FIELDS-only scan can never see that path at all.
+// with a literal field name — that is how startLocation was filed (until 0363 made the on-site
+// check-in the one start of a climb) and bailout too (until bail points were removed), neither
+// in FIELDS, so a FIELDS-only scan can never see that path at all.
 const direct = [...rd.matchAll(/onSubmit\(\{[^)]{0,120}?field:\s*"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);
 
 // Exempt from the SS requirement because onContribute returns BEFORE the field-edit path for
-// them: they are additive, geo-clustered lists read back through
-// startLocationConsensus, not scalar fields. A name here that stops being filed that way
-// must fail, so the list cannot rot.
-const EXEMPT = ["startLocation"];
+// them: additive, geo-clustered lists, not scalar fields. Empty since 0363 retired the last
+// one (startLocation). A name here that stops being filed that way must fail, so the list
+// cannot rot.
+const EXEMPT = [];
 const stale = EXEMPT.filter((k) => !direct.includes(k) && !form.includes(k));
 if (stale.length) {
   console.error(`stale exemption(s): ${stale.join(", ")} — no longer submitted anywhere. Remove from EXEMPT.`);
@@ -119,9 +121,11 @@ const objKeys = read("lib/objKeys.js");
 /* Every file that renders one of these objects. A reader outside this list is invisible, and an
    invisible reader reads as a dead sub-key — the direction that tells an author to delete working
    wiring, so a file that cannot be read is fatal rather than skipped. */
-const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx"];
+// lib/outing.js reads `road.walkMi` (roadWalkMi) for the TECHNICAL STATS card's distance note.
+const READER_FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "ClimbMatch.jsx", "EnrichmentPanels.jsx", "lib/outing.js"];
 const readerCorpus = READER_FILES.map((f) => {
-  try { return read(f); } catch {
+  // readAppFile: each parent STITCHED, so a reader moved into src/components/ (ClimateSeasonCard, PR53) stays read.
+  try { return readAppFile(path.join(ROOT, f)); } catch {
     console.error(`check:contrib-fields: cannot read ${f}, which holds panel readers — the scan would under-report.`);
     process.exit(1);
   }
@@ -183,7 +187,13 @@ function readsSubKey(corpus, field, key) {
    "pitchDetail" — a section that exists but edits a DIFFERENT column, so the correction landed
    under ROUTE BETA while CLIMBING ROUTE kept its old text. This catches the first shape; only
    reading the reader catches the second. */
-const pencilIds = [...rd.matchAll(/setFixOpenSection\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+/* Since 0307–0309 every pencil calls openFix(id), which checks the field's confidence level and opens the flag sheet for a locked (high) field before falling through to setFixOpenSection(id). Both spellings count; a pencil that bypasses openFix would skip the lock, so the raw call is also reported below. */
+const pencilIds = [...rd.matchAll(/(?:openFix|setFixOpenSection)\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+const rawPencils = [...rd.matchAll(/setFixOpenSection\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+if (rawPencils.length) {
+  console.error(`check:contrib-fields: ${rawPencils.length} pencil(s) call setFixOpenSection directly and skip the confidence lock (openFix): ${[...new Set(rawPencils)].join(", ")}`);
+  process.exit(1);
+}
 if (pencilIds.length < 10) {
   console.error(`check:contrib-fields: found only ${pencilIds.length} edit pencil(s) — the scan broke.`);
   process.exit(1);
@@ -209,9 +219,8 @@ if (ungrouped.length) {
 }
 console.log(`  ${_fieldKeys.length} editor field(s), every one in a section the sheet renders`);
 const sectionIds = new Set(_fieldKeys);
-// One section is rendered with a literal id rather than from a FIELDS key (bail points, the
-// other, were removed from the app on 2026-10-07).
-for (const extra of ["startLocation"]) sectionIds.add(extra);
+// No section is rendered with a literal id any more: bail points went 2026-10-07 and the start
+// location (now the on-site check-in, 0363) on 2026-10-23.
 const orphanPencils = [...new Set(pencilIds.filter((id) => !sectionIds.has(id)))];
 if (orphanPencils.length) {
   const n = pencilIds.filter((id) => orphanPencils.includes(id)).length;
@@ -229,7 +238,7 @@ console.log(`  ${pencilIds.length} edit pencil(s) open a section that exists`);
    never rendered. Cheap to assert, invisible until somebody opens the sheet. */
 const objKeysTypes = [...(rd.match(/const OBJ_KEYS=\{([^}]*)\}/) || [, ""])[1]
   .matchAll(/([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
-const objStateTypes = [...(rd.match(/const OBJ_STATE=\{([^;]*?)\};/) || [, ""])[1]
+const objStateTypes = [...(rd.match(/const OBJ_STATE=\{([^;]*?)\}(?: as [^;]+)?;/) /* a moved .tsx types it with a trailing `as` (PR59) */ || [, ""])[1]
   .matchAll(/([A-Za-z_$][\w$]*)\s*:\s*\[/g)].map((m) => m[1]);
 if (objKeysTypes.length < 3) {
   console.error("check:contrib-fields: parsed fewer than 3 OBJ_KEYS types — ANCHOR LOST.");

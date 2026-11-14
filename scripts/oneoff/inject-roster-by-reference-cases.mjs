@@ -41,10 +41,10 @@ const CASES = [
     name: "the-real-defect",
     file: APP,
     expect: "pass a SEED resolver by reference",
-    why: "the card's roster exactly as it stood: cl.memberIds.map(cById).filter(Boolean)",
+    why: "the card's roster exactly as it stood: cl.memberIds.map(cById).filter(Boolean). The Discover card shows a member COUNT only since 2026-10-14, so the roster line it replaced is gone; the case plants the shape on that card's helper, which is where a face strip would come back",
     edit: (s) => s.replace(
-      'var membs=_cardRosterIds.map(function(id){return _asCardMember(id)||(id===_meCardId?Object.assign({},ME,{id:_meCardId}):{id:id,name:"A climber",avatar:"",_profile:true});});',
-      "var membs=cl.memberIds.map(cById).filter(Boolean);"),
+      "var fit=groupMatchesMe(cl,myDiscs);",
+      "var fit=groupMatchesMe(cl,myDiscs);var membs=cl.memberIds.map(cById).filter(Boolean);void membs;"),
   },
   {
     name: "SILENT-resolver-consults-real-profiles",
@@ -52,8 +52,8 @@ const CASES = [
     silent: true,
     why: "a .map(cById) whose own expression also reads a profiles query is the SANCTIONED answer, not an exemption -- flagging it would tell an author to un-fix it",
     edit: (s) => s.replace(
-      "var friendsIn=cl.memberIds.filter(",
-      "var _demoRef=(cl.memberIds||[]).map(cById);void _demoRef;void grpCardProfilesQ;var friendsIn=cl.memberIds.filter("),
+      "var fit=groupMatchesMe(cl,myDiscs);",
+      "var _demoRef=(cl.memberIds||[]).map(cById);void _demoRef;void openGrpProfilesQ;var fit=groupMatchesMe(cl,myDiscs);"),
   },
   {
     name: "SILENT-comment-quoting-the-shape",
@@ -61,8 +61,8 @@ const CASES = [
     silent: true,
     why: "a comment naming the forbidden shape is documentation; a guard that failed on it would forbid explaining itself",
     edit: (s) => s.replace(
-      "var friendsIn=cl.memberIds.filter(",
-      "/* never write cl.memberIds.map(cById) here */var friendsIn=cl.memberIds.filter("),
+      "var fit=groupMatchesMe(cl,myDiscs);",
+      "/* never write cl.memberIds.map(cById) here */var fit=groupMatchesMe(cl,myDiscs);"),
   },
   {
     name: "scan-cannot-fire",

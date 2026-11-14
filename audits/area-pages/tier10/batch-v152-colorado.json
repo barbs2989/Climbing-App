@@ -1,0 +1,30 @@
+{
+ "co_upper_great_face_the": {
+  "_expect": {"name": "Upper Great Face, The", "region": "Colorado"},
+  "blurb": "A broad west-facing wall high on the slopes of Twin Sisters, just south of Estes Park, and one of the loftiest of the commonly visited faces at The Crags. Twelve routes, seven trad and five bolted, run from 5.7 up to 5.11, with most of the weight at 5.9 and 5.10. Lines are long, from a few hundred feet to nearly 600, so expect multi-pitch days in an alpine setting. Rock quality varies across the face, and a protruding pillar splits it. The walk in is the main commitment, so plan for an early start and a full day.",
+  "parking_note": "Leave the car at the Twin Sisters trailhead area off Highway 7, close to Lily Lake.",
+  "approach": "Follow the Twin Sisters trail up from the Highway 7 side, then work uphill toward the face by cairns and use trails. Expect an hour or a bit more.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105746635/the-upper-great-face", "https://mountainproject.com/area/105744340/the-crags"]}
+ },
+ "co_graduation_boulder_and_post_graduation_b": {
+  "_expect": {"name": "Graduation Boulder and Post-Graduation B", "region": "Colorado"},
+  "blurb": "Two roadside boulders in North Cheyenne Canyon above Colorado Springs, with a dozen problems between them. The grades suit a wide crowd: mostly V1 to V3, five of them V1, which makes it a good place to warm up or to introduce newcomers. The main boulder has easy faces toward the road, steeper highball lines on its creek side, and an overhanging west face with the best-known problem. A second, smaller boulder sits a short way uphill and holds a harder highball. Landings and heights vary, so bring pads and a spotter.",
+  "parking_note": "Drive about 0.7 miles up the canyon road from the park entrance and pull off beside the boulder.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105745615/graduation-boulder-and-post-graduation-b", "https://www.cheyennecanon.org/collections/graduation-boulder"]}
+ },
+ "co_flagstaff_amphitheatre_the": {
+  "_expect": {"name": "Flagstaff Amphitheatre, The", "region": "Colorado"},
+  "blurb": "A cluster of boulders on Flagstaff Mountain, just west of Boulder, set in a bowl-like pocket a couple of minutes up the trail from the road. Twelve problems here, almost all in the VB to V5 range, with a single much harder line, so it works well for moderate climbers. Faces point in many directions, so sun and shade depend on the problem. Expect pebbly, textured stone, some eroded holds, and a few tall or awkward-landing problems that call for pads and spotters.",
+  "review": {"sources": ["https://flagstaffmountainbouldering.blogspot.com/2008/01/frontside-of-amphitheater-miniguide.html?m=1", "https://www.mountainproject.com/area/105744225/flagstaff"]}
+ },
+ "_skipped": {
+  "co_workman_s_wall": "no fetched page with real content about the crag itself (guide page is a teaser)",
+  "co_climbing_area_54": "only one page about it, and it lists 1 climb against 12 stored",
+  "co_west_ironing_board": "only one page with a description of the crag; second page mentions it only in passing",
+  "co_cube_the": "could not fetch two pages about the crag itself",
+  "co_mineshaft_wall": "no fetched page about the crag itself, only a route page and a trip report"
+ },
+ "_conflicts": {
+  "co_upper_great_face_the": "Stored aspect SW; https://www.mountainproject.com/area/105746635/the-upper-great-face calls it west-facing"
+ }
+}

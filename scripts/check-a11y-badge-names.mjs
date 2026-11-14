@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:a11y-badges — a badge count glued into a control's own accessible name.
 //
 // The defect, as a screen reader hears it. The Crew sub-tab bar rendered
@@ -76,7 +77,7 @@ const argv = process.argv.slice(2);
 const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
 const DUMP = argOf("--dump");
 const PORT = 5290;
-const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me"];
+const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me", "groups"];
 
 // --only=route walks JUST the route detail screen, for the injection suite: the full sweep is 65
 // screens and an injection needs two runs of it. It REDUCES COVERAGE, so it can never print the
@@ -124,9 +125,8 @@ log(`starting dev server on ${port}...`);
 // detached puts vite in its own process group. `npx` spawns vite as a CHILD, so killing only
 // the npx pid leaves the real server listening — a leaked dev server then squats the port
 // for every later run and can answer for a DIFFERENT checkout. Kill the group.
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;
@@ -540,7 +540,7 @@ if (!ONLY) assertKnownOverlays(overlays, fail);
 // Some overlays are scoped to one screen, so opening them from the wrong tab renders
 // nothing and the sweep would scan a bare tab and call it clean. Take the first tab where
 // the overlay actually adds text — the same approach check:zero settled on.
-const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks"];
+const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"];
 // Compare LINE SETS, not text length — the same test check:zero uses. Length is the wrong
 // question: an overlay that replaces the tab's content rather than adding to it can leave
 // the total the same or SHORTER, and a length test then reports a perfectly good modal as

@@ -94,6 +94,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     its own unflagged query, and each asserts absence in its own words: *"No friends yet"*,
     *"0 joined"* / *"No groups yet"*, and **"No crew invites"** — which is the very sentence #734
     already shipped over a real invite, arrived at from the read side this time.
+    - (Groups has since left the Crew tab for a screen of its own, walked from `TABS`; the Crew
+      sub-views walked are Friends and Requests.)
     - All three fail the same way and it is the shape this file keeps recording: the state is
       hydrated by an effect that **returns early on a miss** (`if(accepted.length)`,
       `if(!uid||!myGroupsQ.data)return;`) or read through a `||[]`, and sign-in clears it — so a
@@ -155,7 +157,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         Overview is already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether
         or not the topos copy flips, and `check:topo-outage-copy` proves the copy statically.
         Isolating it here needs a run failing only that read — **`ONLY=topos`**, not
-        `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
+        `topo_photos`: `useRouteTopos` selects `from("topos")`, and ONLY is matched on the path
         segment after `/rest/v1/`, so a wrong table name intercepts nothing and now says so.
         - **Measured over three runs, 2026-09-02**: it intercepts (4 blocked, 80 through) and
           reports `RouteDetail` **5,018 → 5,031 says-broken=YES** identically every time, with
@@ -169,7 +171,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
           reproduced its exact counts (1,170 → 1,148) **twice** before coming back IDENTICAL on the
           third. *Two agreeing runs are not determinism*, and a **catch** on a loaded box is no
           more evidence than the miss this file already records. Nothing on those screens can read
-          topos: `useAreaTopos` has one call site, in `RouteDetail`, and Ranks is captured before
+          topos: `useRouteTopos` has one call site, in `RouteDetail`, and Ranks is captured before
           the route page is opened. The mechanism is `waitOutFetch`, which in the failing run
           re-settles only while a **spinner** is on screen — enough under a blanket outage where
           every read fails fast, not enough under `ONLY=` where the other 80 reads are still in
@@ -265,6 +267,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape and it fails as a *shorter
     worklist*, silently — nothing about a quiet run looks wrong. It is still a deny-list and will
     be short again; when a screen is added, check what its emptiness is CALLED.
+    - **And it was, for the Groups screen (2026-10-14):** *"You haven’t joined a group yet"* has no
+      `no` and no zero, so neither branch could spell it. `haven’t joined` is in the vocabulary and
+      the phrase is in `MUST_SPELL`. Groups is walked from `TABS` now (it left the Crew tab), and the
+      injection suite's `groups` case neutralises For you's `groupsUnavailable` test and names the
+      FINDING line (`/^ {2}Groups — /m`) — every run prints a table naming every screen, so a bare
+      `/Groups/` would match a failure about any screen at all.
   - **THE STALE-BOOKKEEPING ALARM FIRED, AND CLOSING IT TOOK TWO FIXES, NOT ONE.** The
     crew-invites heading used to be unmeasurable: `"No crew invites"` was on screen in the
     **healthy** run too, because the fixture's mate JOINS the crew rather than staying invited, so
@@ -487,6 +495,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `catch(cmFail)` and `_restore(setCondReports, …)`. **A too-narrow proxy manufactures
       findings here rather than hiding them** — it would have sent somebody to "fix" five correct
       handlers.
+  - **2026-10-29, the OPTIMISTIC-UI census (`scripts/oneoff/measure-pessimistic-writes.mjs`, report-only).** It asks the other half: does the screen move BEFORE the server answers? 218 sites across the three app files, `lib/*.jsx` and `src/components/`. **Two traps in building it**: a local wrapper (`var _put=function(v){setMyStars(...)}; _put(n)`) is a setter no name test sees, so the binding is resolved and its body read; and a setter written just AFTER an un-awaited call still runs in the same tick (`leaveGroupRow`). Its last section lists optimistic sites whose catch only refetches or toasts; **most are noise** (try/catch blocks and conditional-call `.catch`es it cannot attribute), but two were real and are fixed: `toggleWish` kept a failed objective lit, and `onUpdateList` relied on a refetch that returns the SAME structurally-shared array, so the effect copying `myListsQ.data` into `userLists` never re-ran. **Rule: when the guess lives in local state copied from a query, a refetch is not a rollback** — restore the row, or patch the query cache itself with `patchQueries()` so the undo restores the cache.
   - **AND THE THIRD DIRECTION IS EMPTY TOO, so the write side is closed: a write that SUCCEEDS
     whose result never reaches the screen.** That is the mirror of the two above — the climber's
     change vanishes until reload, so a successful write reads as a failure. Of 43 write call sites
@@ -1000,6 +1009,16 @@ their own Résumé showed an amber **"Unverified"** chip.
     `if(recs==null)return;`, which keeps the anchor intact and reproduces the defect exactly:
     **one** case fails and the other four stay green, so the probe is specific rather than firing
     on any change.
+  - **0306 (2026-10-15) REVERSED THE AUTHORITY on the owner's decision, and the guard went with it.**
+    Everything above argues that the session (`email_confirmed_at`) settles it. That held only while a
+    confirmed email meant an inbox had been read; with `mailer_autoconfirm` on, it is set for every
+    account at sign-up, so the rule verified everyone and wrote the record that showed others a ✓. Now
+    the RECORD is the authority, a session fresh from the inbox (`amr` otp/magiclink/recovery/
+    email-signup, < 30 min — what `verify_my_email()` itself checks) writes it, and only a read that
+    SUCCEEDED and found nothing says "not verified". The outage property survives in a stronger form:
+    a failed read decides NOTHING (the case asserts `untouched`), and `verificationUnavailable` hides
+    the Home and trust-card "Verify" prompts. Six cases now; restoring the old
+    `email_confirmed_at` branch fails two of them (OUTAGE and AUTOCONFIRM IS NOT PROOF).
 - **`check:profile-edit-gate`** — **a failed profile read turned "Edit profile" into a WIPE, and the
   class CLAUDE.md records as CLOSED AT ONE is therefore TWO.** Static (source + one executed
   expression), so it sits in `npm run build`.
@@ -1429,9 +1448,9 @@ that they had none — on the one screen whose whole subject is who you climb wi
     Injection suite `scripts/oneoff/inject-write-readers-cases.mjs`: 6 cases (a writer drops its
     refresh, a list forgets a reader, a NEW writer with none, a DECLARED name nobody declares; and two
     that must stay silent — an extra name, and a refresh through a callee).
-  - **It counts writers no screen calls.** `addVerification` is imported by three files and called
-    by none, so the production bundle drops it and its `verificationRecordsReaders` with it (43 of
-    the 44 lists survive minification). The guard reads source, not the bundle, and that is right —
+  - **It counts writers no screen calls.** `addVerification` was imported by three files and called
+    by none, so the production bundle dropped it (43 of the 44 lists survived minification). It was
+    deleted in 0339 (no ID verification); a writer like it may come back. The guard reads source, not the bundle, and that is right —
     a dead writer wired up tomorrow must already refresh its readers — but a bundle marker for this
     change must not expect every list.
 
@@ -1454,3 +1473,14 @@ that they had none — on the one screen whose whole subject is who you climb wi
     `check:read-failures` for why this repo refuses those). The helper is the fix; the probe is the
     measurement to re-run if the fan-out is ever in question. Every other table the app reads holds
     under ten rows pre-launch, so nothing else can approach the cap before the catalog does.
+
+- **`check:overlay-absence` comment floor and the six CHECKED reasons (2026-10-30, PR #2879).** The lib
+  floor was 1 comment for every lib file, so the terse `lib/condRows.jsx` (4 lines, no comments) failed as
+  a "broken parse". The floor now applies to files of 4 kB and over; smaller files keep the parse check.
+  Clearing the guard then meant reading the copy behind seven overlays that had no recorded reason:
+  settingsOpen, feedbackOpen, privacyOpen, rateOpen, contribOpen, eventForm, dataReq. Each now has a
+  CHECKED entry naming where its copy lives. Verdicts came from a read-only review: the "No crew invites"
+  empty state is CrewRequestsView, which shows the error copy first; "No areas" is AreaTree's in-memory
+  seed search; "no route carries one yet" and "no longer message" are static Help/Legal prose; the
+  SharedListView and ListsManager empty copy sit after their error branches. The stale `reviewQueue`
+  entry was removed because that overlay no longer asserts absence.

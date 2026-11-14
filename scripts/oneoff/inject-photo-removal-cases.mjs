@@ -33,7 +33,7 @@ const CASES = [
   {
     name: "noremove",
     why: "the call site stops passing onRemove — the control silently disappears and nothing else notices",
-    file: "ClimbMatch.jsx",
+    file: "src/components/MeTab.tsx",
     find: " onRemove={function(url){",
     repl: " onRemoveZZ={function(url){",
     expect: /exactly one call site may offer removal; 0 do/,
@@ -41,7 +41,7 @@ const CASES = [
   {
     name: "someoneelse",
     why: "another climber's strip gains a remove control — you could take down a photo that is not yours",
-    file: "ClimbMatchCore.jsx",
+    file: "src/components/FullProfile.tsx", // FullProfile renders the strip; moved from core in PR50
     find: "<PhotoStrip photos={climber.photos} alts={climber.photoAlts}/>",
     repl: "<PhotoStrip photos={climber.photos} alts={climber.photoAlts} onRemove={function(){}}/>",
     expect: /exactly one call site may offer removal; 2 do/,

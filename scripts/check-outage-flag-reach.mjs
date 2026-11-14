@@ -73,7 +73,7 @@ for (const f of FILES) {
   if (!fs.existsSync(abs)) dead(`${f} does not exist — the app moved, or this list is stale`);
   const src = readAppFile(abs);
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { dead(`could not parse ${f}: ${e.message}`); }
 
   const record = (p, file) => {

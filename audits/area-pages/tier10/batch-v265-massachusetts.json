@@ -1,0 +1,35 @@
+{
+ "ma_panther_cave": {
+  "_expect": { "name": "Panther Cave", "region": "Massachusetts" },
+  "blurb": "A jumble of boulders that forms a small cave-like shelter right beside a well-used walking path in the Middlesex Fells, just outside Boston. Ten bouldering problems are recorded, running from V1 up to V6 with a cluster around V4, so there is something for newer boulderers and a few lines to push on. Several starts are done sitting beneath overhanging rock, and one slab can also be climbed on a top rope. The problems are short and most of the lines face west. Because hikers use the cave as a rest stop, expect passers-by and an easy place to find.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111276080/panther-cave", "https://thetopo.com/crags/middlesex-fells/topos/panther-cave", "https://www.mountainproject.com/area/111276072/red-cross-path-vicinity"] }
+ },
+ "ma_atomic_boulder": {
+  "_expect": { "name": "Atomic Boulder", "region": "Massachusetts" },
+  "blurb": "One of the boulders in the Milford bouldering zone of eastern Massachusetts, set among town forest that bikers and hikers also use. It is the one nearest the road, which makes it a handy stop for a short after-work session. Ten problems cover a wide spread: roughly six at V3 and below, then a handful from V5 up to V8, including a long traverse and some hard single moves. The top-out faces east and can be overgrown, and graffiti covers parts of the rock. Expect a pleasant, compact block rather than a destination crag, best combined with the other Milford boulders.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108856794/atomic-boulder?print=1", "https://www.mountainproject.com/area/106336837/milford-bouldering"] }
+ },
+ "ma_south_wall": {
+  "_expect": { "name": "South Wall", "region": "Massachusetts" },
+  "blurb": "The south side of a narrow rock corridor within the Red Cross Cliffs, part of the granite boulder-filled Red Cross Path area of the Middlesex Fells north of Boston. Ten climbs live here, almost all boulder problems: a spread of easy to moderate lines from very easy to V3, a single V4, and one line that can also be top-roped. Walls in this part of the Fells are short, roughly 5 to 15 feet, so landings are mostly manageable. A good pick for a warm-up or for climbers of mixed ability, and easily linked with the other problems along the same path.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118993418/south-wall", "https://www.mountainproject.com/area/111276072/red-cross-path-vicinity"] }
+ },
+ "ma_the_stash_wall": {
+  "_expect": { "name": "The Stash Wall", "region": "Massachusetts" },
+  "blurb": "A small roof of rock on a wooded hillside in Wendell State Forest in western Massachusetts, among the Second Overlook boulders at about 1,050 feet. It holds ten boulder problems with a wide range: three at the easy end, a middle group around V1 to V3, three at V4, and one very hard line, plus a broken-looking project nobody has finished. The overhanging roof makes for fun, steep climbing rather than slab. You reach it by walking up the slope from the dirt road, and another small group of problems sits just below it.",
+  "review": { "sources": ["https://www.mountainproject.com/area/123094943/the-stash-wall", "https://www.mountainproject.com/area/123052804/second-overlook-areas"] }
+ },
+ "ma_phantom_tower": {
+  "_expect": { "name": "Phantom Tower", "region": "Massachusetts" },
+  "blurb": "A tall glacial erratic standing close to High Rock Road in Gilbert Hills State Forest, Foxborough, in eastern Massachusetts. Ten boulder problems wrap around it: about half are easy, V0 to V1, with a V2, a V4 and two V5s above those, and a very hard project at the top end. Because the block is tall, some landings are poor, so bring extra pads and a spotter. It sits in a forest that is littered with other boulders and short cliffs, so it works as one stop on a longer day of exploring.",
+  "review": { "sources": ["https://www.mountainproject.com/v/106531623", "https://mountainproject.com/area/106320464/gilbert-hills-state-park"] }
+ },
+ "_skipped": {
+  "ma_behemoth_boulder": "no second fetched page mentions this boulder (the parent Promised Land page does not name it); the only page about it is mostly an access caution",
+  "ma_st_moritz_park_rock": "no fetched page is about the crag itself (parent Rattlesnake Rocks page only lists it; the dedicated listing returned 404)",
+  "ma_b_wall": "no fetched page is about B Wall itself; only a route page naming it in the breadcrumb"
+ },
+ "_conflicts": {
+  "ma_panther_cave": "stored rock is rhyolite, but the Red Cross Path Vicinity page (https://www.mountainproject.com/area/111276072/red-cross-path-vicinity) calls the rock solid granite; rock left unchanged and not named in the blurb"
+ }
+}

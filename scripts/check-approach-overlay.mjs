@@ -18,7 +18,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { approachOptions, applyApproach, defaultApproachKey, APPROACH_OWNED_KEYS } from "../lib/approaches.js";
+import { approachOptions, applyApproach, defaultApproachKey, APPROACH_OWNED_KEYS, wholeLine } from "../lib/approaches.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const fails = [];
@@ -58,6 +58,24 @@ const rt = { ...route, timing: { approachTimeHrs: 5, summitTimeHrs: 9, totalHrs:
 const bt = applyApproach(rt, { key: "b", index: 1, variant: { name: "B", trip: { approachLogistics: { trailhead: "B" } } } }, null);
 check(bt.timing && bt.timing.summitTimeHrs === 9 && bt.timing.approachTimeHrs === undefined && bt.timing.totalHrs === undefined && bt.timing.recommendedStart === undefined && bt.timing.sectionBreakdown === undefined, "a trailhead way in with no times must drop the stored way's approach hours, total, start and legs — and keep the climb's own time");
 check(b.pitches === 3 && b.grade === "5.3", "the climb itself must be untouched");
+/* KNOWN HAZARDS follow the pick: a way in with its own hazard lists replaces the row's, a way in with
+   none keeps the row's, and the stored main way in keeps its own. Sulphide's crevasses never show
+   under a Fisher Chimneys pick (the Shuksan SE Ridge defect). */
+const hz = { ...route, hazards: ["ROW crevasses"], objHaz: ["crevasses"], approachVariants: [{ name: "A", primary: true, trip: { approachLogistics: { trailhead: "A" } }, hazards: ["A rockfall"], objHaz: ["rockfall"] }, { name: "B", trip: { approachLogistics: { trailhead: "B" } }, hazards: ["B loose rock"], objHaz: [] }, { name: "C", trip: { approachLogistics: { trailhead: "C" } } }] };
+const ho = approachOptions(hz);
+const hb = applyApproach(hz, ho.find((o) => o.variant.name === "B"), null);
+check(hb.hazards.join() === "B loose rock" && Array.isArray(hb.objHaz) && !hb.objHaz.length, "a picked way in's own hazards must replace the row's — no other way in's show");
+const hc = applyApproach(hz, ho.find((o) => o.variant.name === "C"), null);
+check(hc.hazards.join() === "ROW crevasses", "a way in with no hazard list of its own keeps the row's, unchanged");
+const hA = applyApproach(hz, ho.find((o) => o.variant.name === "A"), null);
+check(hA.hazards.join() === "A rockfall" && hA.objHaz.join() === "rockfall", "the stored main way in's own list must be read too");
+/* THE CLIMB TO A VIA ROUTE'S START is named, not added: the sibling's approach hours (which already
+   include it) stay the total, and the approach tile says how much of that walk is climbing. */
+const sibC = { id: "s", name: "Sibling", timing: { approachTimeHrs: 7.5, summitTimeHrs: 5, descentTimeHrs: 6 } };
+const vc = applyApproach({ ...route, timing: { summitTimeHrs: 5.5 } }, { key: "s", index: 0, variant: { name: "Via", viaRouteId: "s", climbToStartHrs: 5 } }, sibC);
+check(vc.timing.climbToStartHrs === 5 && vc.timing.approachTimeHrs === 7.5, "a via way in names its climb to start and keeps the sibling's approach hours (no double count)");
+const vn = applyApproach({ ...route, timing: { summitTimeHrs: 5.5 } }, { key: "s", index: 0, variant: { name: "Via", viaRouteId: "s" } }, sibC);
+check(vn.timing.climbToStartHrs === undefined, "a via way in with no climb-to-start figure must not show one");
 for (const k of APPROACH_OWNED_KEYS) check(k in b, `owned key ${k} must be set (to a value or empty) by every linked pick`);
 const rc = { ...route, bivy: [{ name: "A camp" }, { name: "B camp" }, { name: "Shared camp" }], approachVariants: [{ name: "From A", primary: true, camps: ["A camp", "Shared camp"] }, route.approachVariants[1]] };
 const ac = applyApproach(rc, approachOptions(rc)[0], null);
@@ -76,11 +94,23 @@ check(cv.bivy.map((c) => c.name).join() === "Sib north camp", "a linked route le
 check(c.gainFt === 5100 && c.waypoints[0].name === "S TH", "a via route must supply the way in");
 check(c.timing.summitTimeHrs === undefined && c.timing.totalHrs === undefined && c.timing.approachTimeHrs === 7.5, "a via route's own summit/total times time ITS finish and must be dropped");
 check(applyApproach(rv, vo, null) === rv, "with the via route not loaded nothing may be half-applied");
+// A VARIATION (Boving Roofs on the Southwest Rib): the parent's walk, but this route's OWN trip plan, and the whole line in climbing order.
+const sibItin = { ...sib, itinerary: { days: [{ note: "Climb Sib's 7 pitches" }] }, pitch_detail: [1, 2, 3, 4, 5, 6, 7].map((n) => ({ pitch: n, grade: "5." + n })) };
+const varV = { name: "via Sib", viaRouteId: "sib", viaPitches: { before: [1, 3], after: [6, 7] } };
+const rvar = { ...route, itinerary: { days: [{ note: "Own 8-pitch day" }] }, pitchDetail: [{ pitch: 1, grade: "5.2" }, { pitch: 2, grade: "5.10b" }, { pitch: 3, grade: "5.9" }], approachVariants: [varV] };
+const cvar = applyApproach(rvar, approachOptions(rvar)[0], sibItin);
+check(cvar.itinerary.days[0].note === "Own 8-pitch day" && cvar.waypoints[0].name === "S TH", "a variation must keep its OWN trip plan (the parent's narrates the parent's pitches) and still take the parent's walk");
+check(applyApproach({ ...rvar, approachVariants: [{ name: "via Sib", viaRouteId: "sib" }] }, approachOptions({ ...rvar, approachVariants: [{ name: "via Sib", viaRouteId: "sib" }] })[0], sibItin).itinerary.days[0].note === "Climb Sib's 7 pitches", "a plain via route (no viaPitches) still lends its trip plan");
+const wl = wholeLine(rvar, varV, sibItin);
+check(wl && wl.rows.map((r) => r.src + r.pitch).join() === "via1,via2,via3,own1,own2,own3,via6,via7" && wl.rows[7].n === 8, "the whole line must run parent 1–3, this route's 3, parent 6–7, numbered 1–8");
 
 // ── 2. wiring ────────────────────────────────────────────────────────────────────────────────
 const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
 check(/function RouteDetail\(\{route:routeRow,/.test(rd), "RouteDetail must receive the stored row as `routeRow`");
-check(/const route=useMemo\(function\(\)\{return applyApproach\(routeRow,/.test(rd), "RouteDetail's `route` must be the applyApproach overlay");
+// withRecordedTrackOnly wraps the overlay since 2026-10-25 (the route line is a recorded track or
+// nothing); it only drops a pin-join gpx, so `route` is still the applyApproach overlay. withCragWalkIn
+// (0397) wraps that: it only fills an EMPTY line with the crag's walk in, never touches the overlay's fields.
+check(/const route=useMemo\(function\(\)\{return (?:withCragWalkIn\()?(?:withRecordedTrackOnly\()?applyApproach\(routeRow,/.test(rd), "RouteDetail's `route` must be the applyApproach overlay");
 const sf = rd.match(/<SuggestFix route=\{(\w+)\}/g) || [];
 check(sf.length >= 1 && sf.every((m) => m === "<SuggestFix route={routeRow}"), `SuggestFix must be handed the STORED row (found ${sf.join(", ") || "no mount"})`);
 check(/<ApproachPicker /.test(rd), "the approach picker must be mounted");

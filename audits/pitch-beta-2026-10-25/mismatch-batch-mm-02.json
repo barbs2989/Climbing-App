@@ -1,0 +1,57 @@
+{
+ "wa_eldorado_peak_eldorado_glacier_nw": {
+  "area": "wa_main_peak",
+  "review": {
+   "confidence": "low",
+   "decision": "HOLD",
+   "sources": ["https://www.mountainproject.com/route/110444620/northwest-ice-couloir", "https://alpinedave.com/eldorado/nwcouloir/nwcouloir.htm", "https://climberkyle.com/2019/11/06/eldorado-peak-nw-ice-couloir-wi3/"],
+   "changed": "Nothing changed. No source states a pitch count for this couloir and the accounts are mostly simul-climbed.",
+   "pitch_count_found": 3,
+   "other_findings": "One account describes three simul-pitches on a 60 m rope; the route page gives no count; another account mentions one rock belay and a second lead then simul-climbing. Stored pitches is 8 with only two table rows, so the stored count looks high but cannot be corrected from a stated figure."
+  }
+ },
+ "wa_forbidden_peak_east_ridge": {
+  "area": "wa_forbidden_peak",
+  "review": {
+   "confidence": "low",
+   "decision": "HOLD",
+   "sources": ["https://www.mountainproject.com/route/107244142/east-ridge-direct", "https://spokalpine.com/2023/08/01/forbidden-peak-east-ridge-direct-iii-5-8/", "https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/"],
+   "changed": "Nothing changed. Sources give 6 (route page) and 6 to 8 (guide services), and none lists pitches one by one.",
+   "pitch_count_found": 6,
+   "other_findings": "Stored pitches is 6 but the table has 8 rows, including a rappel row and a summit scramble row. The route page puts the crux on the second-last pitch, while the stored table puts it at row 6 of 8."
+  }
+ },
+ "wa_forbidden_peak_northwest_face": {
+  "area": "wa_forbidden_peak",
+  "review": {
+   "confidence": "medium",
+   "decision": "KEEP",
+   "sources": ["https://www.mountainproject.com/route/112030839/northwest-face", "https://www.miyaradventures.com/trip/nw-face-of-forbidden-peak/"],
+   "changed": "Nothing written. Row labels 1-2, 3, 4-5, 6, 7 cover pitches 1 to 7, which equals the stored count and the route page count of 7. The flag is a false positive from range labels.",
+   "pitch_count_found": 7,
+   "other_findings": "None."
+  }
+ },
+ "wa_forbidden_peak_west_ridge": {
+  "area": "wa_forbidden_peak",
+  "review": {
+   "confidence": "low",
+   "decision": "HOLD",
+   "sources": ["https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge", "https://www.mountainschool.com/content/main/forbidden-peak-climb/", "https://www.mountainbureau.com/scheduled-programs-blog/forbidden-peak-west-ridge"],
+   "changed": "Nothing changed. Sources disagree: one club page lists four pitches, a guide service lists eight.",
+   "pitch_count_found": 4,
+   "other_findings": "Second source says 8. Stored pitches is 8 with 6 table rows. No source lists the pitches one by one."
+  }
+ },
+ "wa_garfield_mountain_preiss_route": {
+  "area": "wa_garfield_mountain",
+  "review": {
+   "confidence": "high",
+   "decision": "KEEP",
+   "sources": ["https://www.mountainproject.com/route/119496583/preiss-route"],
+   "changed": "Nothing written. Labels 1, 2, 3, 4-8, 9, 10, 11, 12, 13 cover pitches 1 to 13, matching the stored count and the route page count of 13. The flag is a false positive from the 4-8 range label.",
+   "pitch_count_found": 13,
+   "other_findings": "The route page's own prose says only 4 to 5 moderate pitches were belayed, with the rest simul-climbed or soloed; the header count is 13."
+  }
+ }
+}

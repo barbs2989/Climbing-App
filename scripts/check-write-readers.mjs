@@ -69,7 +69,7 @@ const tableReads = new Map(); // fn name -> Set(table) for helper resolution
 for (const rel of FILES) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { console.error(`check:write-readers — could not parse ${rel}: ${e.message}`); process.exit(1); }
   traverse(ast, {
     "FunctionDeclaration|VariableDeclarator"(p) {

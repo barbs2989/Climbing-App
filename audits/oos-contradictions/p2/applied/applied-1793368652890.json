@@ -1,0 +1,55 @@
+{
+ "applied": [
+  {
+   "id": "co_don_juan",
+   "column": "overview",
+   "path": [],
+   "fact": "way down"
+  },
+  {
+   "id": "co_east_face_left_4",
+   "column": "descent",
+   "path": [],
+   "fact": "number of rappels on the descent"
+  },
+  {
+   "id": "co_east_face_standard",
+   "column": "descent",
+   "path": [],
+   "fact": "number of rappels on the descent"
+  },
+  {
+   "id": "co_wudamudafuka_1st_pitch",
+   "column": "length_m",
+   "path": [],
+   "fact": "length vs rappel"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "co_don_juan",
+   "before": {
+    "overview": "A short, one-pitch crack line up the lower portion of the conspicuous buttress in the middle of the wall. It is a straightforward jam climb, with a simple scramble down."
+   }
+  },
+  {
+   "id": "co_east_face_left_4",
+   "before": {
+    "descent": "rappel the west side from the fixed summit eyebolts: about 40 ft into the South Bowl, 50 ft to Friday's Folly Ledge, then 70 ft from the ledge's west bolt, landing on the West Bench (two raps with double ropes)"
+   }
+  },
+  {
+   "id": "co_east_face_standard",
+   "before": {
+    "descent": "rappel the west side from the fixed summit eyebolts: about 40 ft into the South Bowl, 50 ft to Friday's Folly Ledge, then 70 ft from the ledge's west bolt, landing on the West Bench (two raps with double ropes)"
+   }
+  },
+  {
+   "id": "co_wudamudafuka_1st_pitch",
+   "before": {
+    "length_m": 12
+   }
+  }
+ ]
+}

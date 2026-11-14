@@ -1,0 +1,380 @@
+[
+ {
+  "id": "wa_lu_torment_forbidden",
+  "name": "Torment–Forbidden Traverse",
+  "state": "Washington",
+  "region": "North Cascades – Boston Basin",
+  "legs": [
+   {
+    "peak": "Mount Torment",
+    "route": "South Ridge (4th/5th class)",
+    "connect": "",
+    "route_id": "wa_mount_torment_south_ridge"
+   },
+   {
+    "peak": "Forbidden Peak",
+    "route": "West Ridge (5.7)",
+    "connect": "From the Torment summit, drop down its southeast face, cross the small glacier on the north side, then follow the roughly mile-long crest east over gendarmes and a knife-edge to the notch below the West Ridge.",
+    "route_id": "wa_forbidden_peak_west_ridge"
+   }
+  ],
+  "duration": "2 days; fast teams 1 very long day",
+  "how": "Climb Torment first, then Forbidden. The Torment leg is fourth and low fifth class rock above a bergschrund. The crest between the two is about a mile of gendarmes and exposed ledges, with a glacier crossing that gets harder through a warm summer as moats open. Many parties bivouac on the ridge where meltwater can be found. The grade is IV overall; the West Ridge has a crux tower, with a short low-fifth corner to reach the higher east summit. Bring glacier gear, a rock rack and rappel slings.",
+  "descent": "Nothing easy lies below the Forbidden summit. Parties downclimb the West Ridge with one rappel off the tower, or use the east ledges, then make several rappels down the gullies to the snow of Boston Basin. Expect roughly five to eight rappels in total, using the slings already in place.",
+  "logistics": "Start from the Boston Basin trailhead off the Cascade River road; the walk to the basin camps takes several hours. Overnight camping in the basin needs a North Cascades National Park permit and spaces are limited. Best in July and August, but a late warm season makes moats, ice and bergschrunds much worse.",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/torment-forbidden/",
+   "https://www.desktodirtbag.com/torment-forbidden-traverse/",
+   "https://blackbirdguides.com/products/torment-forbidden-traverse-alpine-climb",
+   "https://www.summitpost.org/torment-forbidden-traverse/224484 (search result only)",
+   "https://www.alpineinstitute.com/the-torment-forbidden-traverse-a-trip-report/ (search result only)"
+  ],
+  "confidence": "high",
+  "notes": "Fact-check pass. Grade: most sources say IV 5.6 overall; one detailed report titles the Forbidden West Ridge 5.7 and mentions a 5.8-ish flake variation; kept 5.7. Rappel count on the descent differs by report (about 5 to 8); text says roughly five to eight. Original text said the descent was the Forbidden standard route; corrected to downclimb/rappel of West Ridge or east ledges plus gully rappels. Original 1-day duration kept only as strong-team option; 2 days is the norm. Trailhead made specific (Boston Basin trailhead). Several pages (summitpost, mountaineers.org) returned 403; relied on fetched trip reports and search summaries.",
+  "also_route_ids": [
+   "wa_mount_torment_torment_forbidden_traverse"
+  ]
+ },
+ {
+  "id": "wa_lu_sahale_boston",
+  "name": "Sahale Peak and Boston Peak",
+  "state": "Washington",
+  "region": "North Cascades – Cascade Pass / Boston Basin",
+  "legs": [
+   {
+    "peak": "Sahale Peak",
+    "route": "Sahale Arm and Sahale Glacier, then the summit block (class 3)",
+    "connect": "",
+    "route_id": "wa_sahale_mountain_sahale_glacier"
+   },
+   {
+    "peak": "Boston Peak",
+    "route": "Ridge from the Sahale–Boston col, then the east face (class 3–4)",
+    "connect": "Skirt below the Sahale summit block to the low saddle, follow the crest north over knife-edge sections (class 4, one short snow crossing), then drop to the head of the Boston Glacier and climb ledges on the east face.",
+    "route_id": "wa_boston_peak_southeast_face"
+   }
+  ],
+  "duration": "1 very long day or 2 days",
+  "how": "The two summits are a third of a mile apart, so most climbers who go up Sahale add Boston. Sahale comes first, up the arm and glacier from the Cascade Pass side. The connecting ridge is a narrow crest with loose holds and a snow patch above a crevasse. Boston is much looser than Sahale, and the face is heavily ledged with one short chimney near the top. Bring a rope for the rappels, crampons, an axe and slings.",
+  "descent": "Rappel the Boston ridge and face, about three rappels, back to the Boston Glacier, then cross the glacier to the Sahale Glacier and descend it to Sahale Arm. From there it is the Cascade Pass trail out, rather than the descent from Sahale alone.",
+  "logistics": "Starts at the Cascade Pass trailhead at the end of the Cascade River road. A day trip is about 12 to 15 hours, so many parties camp on Sahale Arm; camping there falls under the park permit system. Mid-July to September, once the glacier snow has firmed up and the moat is manageable.",
+  "sources": [
+   "https://angelatravels.com/trip-report-scrambling-boston-peak-in-the-north-cascades/",
+   "https://www.lemkeclimbs.com/sahale-peak-boston-peak.html",
+   "https://www.mountainproject.com/area/107848148/sahale-peak",
+   "https://en.wikipedia.org/wiki/Boston_Peak",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-08-06.4969218146 (search result only; 403 on fetch)"
+  ],
+  "confidence": "high",
+  "notes": "Fact-check pass. Original had Boston Southeast Face reached by dropping across the basin; no source supports that. Two independent trip reports describe the actual pairing: Sahale first via the arm/glacier, then the knife-edge ridge north to Boston, climbing the east face (class 3, one 4th-class chimney) or the ridge directly (class 4), then three rappels back to the Boston Glacier. Quien Sabe Glacier is the Boston Basin-side Sahale route and is not what this link-up uses; replaced. Reported time about 15 hours car to car in one case. Sahale summit block described as class 3 by one report, low 5th by none; kept class 3."
+ },
+ {
+  "id": "wa_lu_inspiration_traverse",
+  "name": "Inspiration Traverse",
+  "state": "Washington",
+  "region": "North Cascades – Klawatti ice cap / Eldorado",
+  "legs": [
+   {
+    "peak": "Tricouni Peak",
+    "route": "West chute to the southwest ridge (snow and scramble)",
+    "connect": "",
+    "route_id": "wa_tricouni_peak_southwest_slopes"
+   },
+   {
+    "peak": "Primus Peak",
+    "route": "East slope (snow and scramble)",
+    "connect": "Cross the Borealis and North Klawatti glaciers from Tricouni; both peaks are usually done on the same day.",
+    "route_id": "wa_east_slope"
+   },
+   {
+    "peak": "Austera Peak",
+    "route": "South slope to south ridge (snow and rock)",
+    "connect": "Camp on the North Klawatti Glacier, then cross the ice cap to Austera; one rappel on the way off.",
+    "route_id": null
+   },
+   {
+    "peak": "Klawatti Peak",
+    "route": "South face (short class 4–5 pitch over the bergschrund, then steep snow)",
+    "connect": "Cross the ice cap to Klawatti, usually the same day as Austera; one rappel over the schrund when coming down.",
+    "route_id": null
+   },
+   {
+    "peak": "Dorado Needle",
+    "route": "Northeast face and northwest ridge (class 5, snow and ice on the rock)",
+    "connect": "Traverse the Inspiration Glacier from the Klawatti camp to the needle; two rappels off the summit.",
+    "route_id": "wa_northwest_ridge"
+   }
+  ],
+  "duration": "4 days",
+  "how": "A glaciated high route from Thunder Creek across the Klawatti ice cap to the Eldorado side, usually done in that direction. Tricouni and Primus come first, then Austera and Klawatti, then Dorado Needle on the last morning. Each summit is an optional side trip off the main glacier route. Expect crevasses, a bergschrund on Klawatti, a rime-covered chimney on Austera, and class 5 mixed rock on the needle. Eldorado is not part of this line; the longer variation that adds it is a different trip.",
+  "descent": "After the needle, cross the Inspiration Glacier to the saddle above Eldorado Creek and drop down that creek to the Cascade River road. It ends at a different trailhead, so a car shuttle is needed.",
+  "logistics": "Start at the Thunder Creek trailhead at Colonial Creek, end at the Eldorado Creek trailhead on the Cascade River road. Camping inside the national park needs a backcountry permit. Glacier travel is best late June to September; a rope, glacier kit and rappel gear are essential.",
+  "sources": [
+   "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/",
+   "https://www.mountaineers.org/activities/trip-reports/inspiration-traverse (search result only; 403 on fetch)",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-12-20.2905486903 (search result only)",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-12-16.9555821609 (search result only)",
+   "https://trailcatjim.com/inspiration-isolation-traverse-primus-peak-eldorado-peak-isolation-peak-snowfield-peak/ (search result only)"
+  ],
+  "confidence": "high",
+  "notes": "Fact-check pass. Original was wrong: it started on Eldorado and went to Thunder Creek. Two independent reports list the peaks as Tricouni, Primus, Austera, Klawatti, Dorado Needle (no Eldorado), running Thunder Creek trailhead to Eldorado Creek trailhead. Eldorado Peak appears only in the combined Inspiration–Isolation variant. Dorado Needle graded class 5 in one report; Klawatti class 4–5 at the schrund. Rappel counts are from one detailed report. Direction could be reversed by some parties; the north-to-south direction is the one documented. Permit statement for the park is general (not explicit in the trip report). Klawatti Peak also has a class 3–4 standard route on the north/west side per another source; text uses the south face as taken on this traverse."
+ },
+ {
+  "id": "wa_lu_eldorado_klawatti",
+  "name": "Eldorado and Klawatti Peak",
+  "state": "Washington",
+  "region": "North Cascades – Eldorado / Klawatti",
+  "drop": true,
+  "legs": [
+   {
+    "peak": "Eldorado Peak",
+    "route": "East Ridge",
+    "connect": ""
+   },
+   {
+    "peak": "Klawatti Peak",
+    "route": "From Klawatti Col",
+    "connect": ""
+   }
+  ],
+  "duration": "",
+  "how": "",
+  "descent": "",
+  "logistics": "",
+  "sources": [
+   "https://www.lemkeclimbs.com/eldorado-peak-klawatti-peak.html (search result only; 404 on fetch)",
+   "https://www.summitpost.org/klawatti-peak/152520 (search result only)",
+   "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/inspiration-mcallister-klawatti-ice-cap (search result only)"
+  ],
+  "confidence": "medium",
+  "notes": "DROPPED. Fact-check could not confirm this as a commonly done pairing from an Eldorado high camp. One report did Eldorado then Klawatti on consecutive days, but moving the camp across the Inspiration Glacier near Klawatti, which is effectively part of the traverse covered by the Inspiration Traverse entry. Guide pages say only that Eldorado's East Ridge can be combined with Klawatti and others. No second independent trip report of the pairing from an Eldorado camp found."
+ },
+ {
+  "id": "wa_lu_isolation_traverse",
+  "name": "Isolation Traverse",
+  "state": "Washington",
+  "region": "North Cascades – Cascade River road to Highway 20",
+  "legs": [
+   {
+    "peak": "Eldorado Peak",
+    "route": "Passed on the Eldorado climbers trail and Inspiration Glacier; summit is an optional detour (East Ridge or upper Inspiration Glacier)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Dorado Needle",
+    "route": "Passed at the col to its north; summit is optional (class 5)",
+    "connect": "Cross the Inspiration Glacier below Tepeh Towers, drop onto the McAllister Glacier, then climb to the col north of the needle.",
+    "route_id": null
+   },
+   {
+    "peak": "Isolation Peak",
+    "route": "Climbed by its ridge from the basin above the lakes; summit is optional",
+    "connect": "Rappel about 10 m off the col to Backbone Ridge, follow it, cross the Newhalem drainage and descend the Ice Elation couloir, then climb to the peak.",
+    "route_id": null
+   },
+   {
+    "peak": "Snowfield Peak",
+    "route": "Passed by its shoulder via the Neve Glacier; summit is optional",
+    "connect": "Go on from Isolation Peak past a frozen lake and up toward Snowfield, then drop across the Neve Glacier to the Neve–Colonial col.",
+    "route_id": "wa_snowfield_peak_neve_glacier"
+   }
+  ],
+  "duration": "2–4 days",
+  "how": "Started on the Eldorado side and finished at Highway 20, skis in spring being the usual way. It stays almost entirely on glaciers and snow for about 27 to 29 miles and roughly 14,000 feet of gain. Most parties do not touch every summit; Eldorado, Dorado Needle and Isolation Peak are tagged only by those with time and good snow. Key moves are a short rappel onto Backbone Ridge and the steep Ice Elation couloir. Another variation finishes down Thunder Creek instead.",
+  "descent": "From the Neve–Colonial col, drop onto the Colonial Glacier, traverse below Pyramid Peak and descend its ridge to the climbers trail, which leads down to Pyramid Lake and Highway 20. This is the opposite end from the start, so a car shuttle is needed.",
+  "logistics": "Start at the Eldorado trailhead; the Cascade River road is often gated a couple of miles short of it in spring. Camping in the park needs a backcountry permit. Spring, especially May, is the favoured season for firm snow and filled crevasses; long glacier and avalanche skills are required.",
+  "sources": [
+   "https://www.countryhighpoints.com/isolation-traverse-in-a-day/",
+   "https://climberkyle.com/2020/05/27/the-isolation-traverse/",
+   "https://skimo.co/isolation-traverse-washington",
+   "https://www.outdoorproject.com/wa/isolation-traverse (search result only)",
+   "https://trailcatjim.com/inspiration-isolation-traverse-primus-peak-eldorado-peak-isolation-peak-snowfield-peak/ (search result only)"
+  ],
+  "confidence": "high",
+  "notes": "Fact-check pass. Original was wrong: it listed Klawatti and Primus (those belong to the Inspiration Traverse) and had the route end back at Thunder Creek/Eldorado. Three independent reports agree: Eldorado trailhead (Cascade River road) to the Pyramid Lake trailhead on Highway 20 (east to west); passes the Inspiration, McAllister, Neve and Colonial glaciers. Summits Eldorado, Dorado Needle, Isolation Peak and Snowfield Peak are optional: one party stopped about 100 ft below Snowfield, one skipped Isolation. Routes on the optional summits are from the Inspiration–Isolation variant and may differ. Duration varies: roughly 17 hours for the day versions, longer for the typical two to three days. Isolation Peak approach differs by report (south ridge vs east/north ridge); text just says its ridge. Permit wording general; trip reports did not state it."
+ },
+ {
+  "id": "wa_lu_ptarmigan_traverse",
+  "name": "Ptarmigan Traverse",
+  "state": "Washington",
+  "region": "North Cascades – Cascade Pass to Downey Creek",
+  "legs": [
+   {
+    "peak": "Mount Formidable",
+    "route": "Route from the Spider–Formidable col (optional, class 3–4)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Spider Mountain",
+    "route": "Scramble from the col (optional)",
+    "connect": "From Cascade Pass go up to Cache Col, cross Kool-Aid Lake, the Red Ledges and the Middle Cascade Glacier to the Spider–Formidable col; both summits can be done from camp near the col.",
+    "route_id": "wa_spider_mountain_north_ridge"
+   },
+   {
+    "peak": "Le Conte Mountain",
+    "route": "North side (optional, mostly class 3 with a few class 4 moves)",
+    "connect": "Pass Yang Yang Lakes and follow the ridge to Le Conte Pass and the Le Conte Glacier.",
+    "route_id": "wa_le_conte_mountain_northern_aspect"
+   },
+   {
+    "peak": "Dome Peak",
+    "route": "Dana Glacier and Dome Glacier to the Dome–One Eyed Bull col, then the exposed northwest ridge (optional, glaciated)",
+    "connect": "Cross the South Cascade Glacier to White Rock Lakes, descend to Agnes Creek and climb the Dana Glacier; leave overnight gear at the col and return for it.",
+    "route_id": "wa_dome_peak_dome_glacier"
+   }
+  ],
+  "duration": "5–7 days; strong parties 3–4",
+  "how": "A roughly 30-mile off-trail route weaving among glaciers just below the crest, usually walked north to south. The Cascade Pass start is the last maintained trail. Most parties pick up only the summits they pass: Formidable and Spider at the middle col, Le Conte, and Dome as an extra day or half-day with day packs. Sentinel Peak is sometimes tried, but a moat on the southwest face can stop parties. Rope teams, glacier skills and route-finding are required.",
+  "descent": "After Dome, parties camp on Itswoot Ridge, drop to Cub Lake and cross into the Bachelor Creek drainage to join the Downey Creek trail, which leads out to the Suiattle River road. It finishes in a different valley from where it began, so the shuttle is long.",
+  "logistics": "A car shuttle between the Cascade River road end and the Suiattle River road is required, and either end can be closed by washouts or fire. Camping in the stretch before Cache Col is in the national park and needs a permit; beyond it the rules vary and the group-size limit is reported anywhere from six to twelve, so check current rules. July to early September.",
+  "sources": [
+   "https://rocknropenw.com/2025/07/25/ptarmigan-traverse/",
+   "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/",
+   "https://galenweld.com/blog/2025/7/18/trip-report-a-long-awaited-ptarmigan-traverse",
+   "https://trailcatjim.com/ptarmigan-traverse-dome-peak-2021/",
+   "https://en.wikipedia.org/wiki/Ptarmigan_Traverse",
+   "https://www.mountaineers.org/activities/routes-places/ptarmigan-traverse (search result only; 403 on fetch)",
+   "https://www.summitpost.org/ptarmigan-traverse/154644 (search result only; 403 on fetch)"
+  ],
+  "confidence": "medium",
+  "notes": "Fact-check pass. Replaced the vague area legs with real summits that several reports tag: Formidable and Spider (one report), Le Conte (two reports, class 3 with a few 4th class moves), Dome (four reports). Others commonly listed as options: Mix-up Peak, Magic Mountain, Sentinel (attempted, moat), Sinister, Spire Point, German Helmet, Lizard. Exit confirmed as Downey Creek via Cub Lake and the Bachelor Creek drainage to the Suiattle River road (Downey Creek trailhead) by four reports; Bachelor/Suiattle are part of that exit. UNRESOLVED: party-size limit: older page says six per party under wilderness rules, other pages say twelve; no official page found, so no number is in the app text. Permits: reports disagree (one 2025 report says none required; other says park permit before Cache Col). Fastest known time pages not re-read. Formidable class from a linked report only; the summit page was 403."
+ },
+ {
+  "id": "wa_lu_pickets_traverse",
+  "name": "Picket Range Traverse (north to south)",
+  "state": "Washington",
+  "region": "North Cascades – Picket Range",
+  "legs": [
+   {
+    "peak": "Whatcom Peak",
+    "route": "North Ridge (class 2–3)",
+    "connect": "",
+    "route_id": "wa_north_ridge_2"
+   },
+   {
+    "peak": "Mount Challenger",
+    "route": "Challenger Glacier and Challenger Arm (about 50 ft of 5.5 at the summit)",
+    "connect": "From Whatcom drop to Perfect Pass, then descend class 3 to the Challenger Glacier and cross it to the saddle below the Challenger Arm.",
+    "route_id": "wa_mount_challenger_challenger_glacier"
+   },
+   {
+    "peak": "Mount Fury",
+    "route": "North Buttress (5.8)",
+    "connect": "Come off Challenger into the Luna Cirque and camp below the buttress; the buttress is low-fifth with bergschrund detours.",
+    "route_id": "wa_mount_fury_east_north_buttress"
+   },
+   {
+    "peak": "Outrigger Peak",
+    "route": "From the col north of the peak (class 3–4, low 5th)",
+    "connect": "Descend the southeast glacier of Fury to the col, climb Outrigger, then work south along a knife-edge with one short rappel to Picket Pass.",
+    "route_id": null
+   }
+  ],
+  "duration": "6–8 days",
+  "how": "The full traverse is rated grade VI and normally runs north to south. Whatcom and Challenger come first, then the Fury North Buttress, then the rugged crest past Outrigger and Picket Pass to the Himmelhorn–Ottohorn col. The buttress is long and committing with a crux harder than most of the line. A shorter northern version runs between East Fury and Challenger and is also graded VI at 5.7, much of it chossy fourth class. Mount Terror is not on this line.",
+  "descent": "From Picket Pass climb loose fifth class to the Himmelhorn–Ottohorn col, make three rappels into the Crescent Creek basin, cross Chopping Block ridge, then descend the steep brushy Barrier crest and Terror Creek to the Goodell Creek trail. This ends at the highway side, not where it started.",
+  "logistics": "Access is by a water taxi across Ross Lake to the Little Beaver trailhead, then about 14 trail miles to a first camp; the end is the Goodell Creek trailhead near Newhalem, so a shuttle is needed. Park wilderness permits are required. Late July through early September, with spare days for storms.",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/pickets/pickets-traverse/",
+   "https://drdirtbag.com/2017/08/08/northern-pickets-traverse-east-fury-to-challenger-vi-5-7-28h32/",
+   "https://stephabegg.com/trip-reports/washington/pickets/",
+   "http://www.alpenglow.org/nwmj/06/061_Pickets.html (search result only; certificate error on fetch)",
+   "https://en.wikipedia.org/wiki/Picket_Range"
+  ],
+  "confidence": "medium",
+  "notes": "Fact-check pass. Original listed Challenger, Fury and Terror via Picket Pass; the documented complete traverse (north to south, 8 days, 2008 report) tags Whatcom, Challenger, Fury North Buttress and Outrigger, and exits via Himmelhorn–Ottohorn col to Goodell Creek. A 2005 report (Luna to Challenger, VI 5.7) and a 2017 report (East Fury to Challenger, VI 5.7, 28.5 hours, south to north) describe the northern traverse. Fury North Buttress: 5.8 in the title of the full-traverse report, whose author estimated the crux at 5.9; kept 5.8 and did not state 5.9 as a grade. Challenger Glacier route class 2 with about 50 ft of 5.5. Mount Terror is not on either traverse. Direction, summit list and access vary by party (Hannegan Pass or Ross Dam also used); only two to three documented ascents of the full thing, so medium confidence."
+ },
+ {
+  "id": "wa_lu_logan_goode_buckner",
+  "name": "Logan–Goode–Buckner Traverse",
+  "state": "Washington",
+  "region": "North Cascades – Highway 20 to Cascade Pass",
+  "drop": true,
+  "legs": [
+   {
+    "peak": "Mount Goode",
+    "route": "Northeast Buttress (5.5)",
+    "connect": ""
+   },
+   {
+    "peak": "Mount Logan",
+    "route": "Fremont Glacier",
+    "connect": ""
+   }
+  ],
+  "duration": "",
+  "how": "",
+  "descent": "",
+  "logistics": "",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/thunder-slam/",
+   "https://engineeredforadventure.com/buckner-logan-traverse/ (search result only)"
+  ],
+  "confidence": "medium",
+  "notes": "DROPPED. No source describes a Logan–Goode–Buckner traverse. The nearest documented trips differ: a six-day cross-country trip from Bridge Creek (Goode NE Buttress 5.5, Storm King, Booker NW route class 3, Logan via Fremont Glacier class 3, out over Easy Pass) where Buckner was tried and turned back; and a Buckner–Logan ski traverse from Bridge Creek down the Banded Glacier. That is two separate outings, neither the traverse in the original entry, and only one is a single-source report."
+ },
+ {
+  "id": "wa_lu_tower_golden_horn",
+  "name": "Tower Mountain and Golden Horn",
+  "state": "Washington",
+  "region": "North Cascades – Rainy Pass / Methow",
+  "legs": [
+   {
+    "peak": "Golden Horn",
+    "route": "Southwest slope and southwest gully (class 3–4; a short low-fifth move at the summit block)",
+    "connect": "",
+    "route_id": "wa_golden_horn_southwest_route"
+   },
+   {
+    "peak": "Tower Mountain",
+    "route": "West gully and west face (class 3, some fourth class)",
+    "connect": "Drop back to the Snowy Lakes basin, traverse to the base of the Tower west gully and climb it; the peaks are separate climbs from the same camp, not a ridge traverse.",
+    "route_id": null
+   }
+  ],
+  "duration": "2–3 days (one very long day is possible)",
+  "how": "Both peaks are usually climbed from a camp at the Snowy Lakes, either order, Golden Horn commonly in the morning and Tower in the afternoon. They are separate climbs on opposite sides of the basin rather than a connected ridge, so you return to camp between them. Golden Horn ends on a short summit block with a class 4 move, and many carry a rope for it. Tower's west gully holds loose rock, so move quickly and keep the party tight. A helmet is a good idea on both.",
+  "descent": "Both are descended by their ascent gullies back to the lakes and camp, then the same Pacific Crest Trail out to the road. Golden Horn is sometimes downclimbed by the north-side gully with a short rappel.",
+  "logistics": "Hike north from the Rainy Pass trailhead on the Pacific Crest Trail past Cutthroat and Granite passes, about 11 miles, then leave it for Snowy Lakes. A Northwest Forest Pass is needed at the trailhead; no wilderness camping permit is required as the peaks are outside the national park. July to October.",
+  "sources": [
+   "https://hike2hike.com/scrambling/tower-mountain-golden-horn-north-cascades/",
+   "https://trailcatjim.com/tower-mtn-golden-horn-snowy-lakes/",
+   "https://onehikeaweek.com/2014/08/10/golden-horn/",
+   "https://www.mountaineers.org/activities/routes-places/tower-mountain-golden-horn (search result only; 403 on fetch)",
+   "https://mazamas.org/activity/instance/1951/detail/ (search result only)"
+  ],
+  "confidence": "high",
+  "notes": "Fact-check pass. Camp and approach confirmed by three fetched reports: Rainy Pass trailhead, Pacific Crest Trail north, Snowy Lakes camp (about 6,700–6,900 ft), both peaks in one outing. The original claim of a shared east-west ridge is wrong: one source says only that Golden Horn is visible from Tower's summit and the peaks are in the Upper Methow Six group; reports climb them as two climbs from the lakes. Class disagreement: Golden Horn is class 3 (one club page), class 4 (two reports) or easy low 5th (one club page); wrote class 3–4 plus a low-fifth summit move to keep the higher; Tower gully is class 3 with some 4th. Permit: no wilderness permit (outside the national park); only a trailhead parking pass. Golden Horn descent by the north-side gully with a 35-foot rappel is from one report only."
+ },
+ {
+  "id": "wa_lu_shuksan_baker",
+  "name": "Mount Shuksan and Mount Baker in one trip",
+  "state": "Washington",
+  "region": "North Cascades – Mt Baker and Mt Shuksan",
+  "drop": true,
+  "legs": [
+   {
+    "peak": "Mount Shuksan",
+    "route": "Sulphide Glacier",
+    "connect": ""
+   },
+   {
+    "peak": "Mount Baker",
+    "route": "Easton Glacier or Coleman–Deming",
+    "connect": ""
+   }
+  ],
+  "duration": "",
+  "how": "",
+  "descent": "",
+  "logistics": "",
+  "sources": [
+   "https://www.ncmountainguides.com/routes/climbing/mount-shuksan-sulphide-glacier",
+   "https://turns-all-year.com/trip-reports/shuksan-kulshan-for-the-weekend"
+  ],
+  "confidence": "medium",
+  "notes": "DROPPED per the brief: two separate climbs joined only by a drive between trailheads, not a link-up (no shared ridge, camp or descent)."
+ }
+]

@@ -1,0 +1,23 @@
+{
+  "key": "castle_peak_pasayten",
+  "question": "Is 'Fight or Flight' filed twice on Castle Peak (Pasayten), and which row should be kept?",
+  "answer": "Yes, one climb is filed twice: wa_castle_peak_pasayten_north_face_left_buttress ('North Face (Left Buttress)', trad, '5.10d Easy Snow') and wa_north_face_left_buttress ('Fight or Flight', alpine, 5.10+). A Mountain Project page 'North Face (Left Buttress)' (posted by the first ascensionist, FA 2008, 5.10d, 12 pitches, about 1,400 ft, grade IV, begun while trying a 1993 Colorado route, east-ridge descent) matches Alpinist's 'Fight or Flight' (IV 5.10+, 1,400 ft, 3 Aug 2008, started just left of the clean buttress face, trying the Colorado Route). Same party, year, length and story. It is distinct from The Drawbridge (2017, middle buttress, 5.10+ with a short aid move, 10 pitches) and from the 1979 original north-face route.",
+  "recommendation": "Merge into wa_north_face_left_buttress (keep the name 'Fight or Flight'): it holds the full text (overview, both approaches, descent, hazards, summit and trailhead pins) and the only track points. Set its grade to 5.10d (the line's own rating) and keep discipline alpine. Delete wa_castle_peak_pasayten_north_face_left_buttress after confirming nothing references it; its 'trad' discipline also breaks the 5.x rule. Mention the alternate name 'North Face (Left Buttress)' in our own words in beta for searchability.",
+  "confidence": "high",
+  "proposed": {
+    "keep": "wa_north_face_left_buttress",
+    "drop": "wa_castle_peak_pasayten_north_face_left_buttress",
+    "grade": "5.10d",
+    "discipline": "alpine"
+  },
+  "evidence": [
+    "https://www.mountainproject.com/route/106464656/north-face-left-buttress - 5.10d, FA 2008, 12 pitches, 1,400 ft, Colorado Route attempt, east ridge descent (the phrase 'Fight or Flight' is not on that page)",
+    "https://alpinist.com/?p=54856 - Fight or Flight IV 5.10+ 1,400 ft, 3 Aug 2008, accidental line while trying the Colorado Route, started left of the clean buttress face",
+    "https://cascadeclimbers.com/forum/topic/100798-tr-castle-peak-quotthe-drawbridgequot-fa-of-the-middle-north-buttress-6242017 - Drawbridge is the middle buttress, a separate 2017 line (page 403, from search summary)"
+  ],
+  "searched": [
+    "WebSearch 'Fight or Flight Castle Peak north face' - Alpinist article, Drawbridge report",
+    "WebSearch 'Castle Peak Pasayten north face left buttress Mountain Project' - MP page; summary alone could not tie the names, but year, party route story, length and descent match",
+    "packets-all/wa_castle_peak_pasayten.json and audits/thin-descent-approach/context-02.json - both ids are siblings; the left_buttress id has no stored text beyond name, discipline and grade"
+  ]
+}

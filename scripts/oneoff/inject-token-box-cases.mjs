@@ -12,20 +12,21 @@ import { execSync } from "child_process";
 import crypto from "crypto";
 import fs from "fs";
 
-const FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "lib/ListsManager.jsx"];
+// PR57 moved ApproachVariants and CampSite out of RouteDetail.jsx; their cases aim at the new files.
+const FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "lib/ListsManager.jsx", "src/components/ApproachVariants.tsx", "src/components/CampSite.tsx"];
 const ORIGINAL = Object.fromEntries(FILES.map((f) => [f, fs.readFileSync(f, "utf8")]));
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 8);
 
 const CASES = [
   {
-    file: "RouteDetail.jsx",
+    file: "src/components/ApproachVariants.tsx",
     // The REAL defect, reproduced: put the raw season back in the pill.
     name: "1. approach variant season goes back into the nowrap pill (the real #4)",
-    edit: (s) => s.replace(">{seasonPill}</span>:null}", ">{seasonFull}</span>:null}"),
+    edit: (s) => s.replace('overflowWrap:"anywhere"}}>{seasonFull}</div>', 'whiteSpace:"nowrap"}}>{seasonFull}</div>'),
     want: /box\(es\) hold text too long for their shape/,
   },
   {
-    file: "RouteDetail.jsx",
+    file: "src/components/CampSite.tsx",
     // The camping defect's shape, reproduced on a live panel: render prose in a chip.
     name: "2. a camping site's water prose rendered as a chip again",
     edit: (s) => s.replace(
@@ -33,37 +34,32 @@ const CASES = [
       '{b.water?<span style={chip(C.textMuted,C.border)}>{b.water}</span>:null}'),
     want: /box\(es\) hold text too long for their shape/,
   },
+  // CASE 0 WAS REMOVED (it replayed `git show 6f82fc0:RouteDetail.jsx`, the file verbatim before the
+  // camping collapse, where capacity/water/permit rendered as chips of up to 1,386 characters, and
+  // it was the case both earlier designs of this guard failed). It cannot be replayed any more:
+  // that file imports modules the app has since deleted (lib/feedbackLoop, lib/provenance, #2546 and
+  // #2207) and db/auth exports that no longer exist, so the bundle does not build and the guard
+  // crashes rather than judging it -- a crash read as a MISS. The same shape, prose rendered as a
+  // chip in the camping panel, is injected into the CURRENT CampSite.tsx by case 2 above, which is
+  // what remains provable.
   {
-    file: "RouteDetail.jsx",
-    // THE HISTORICAL DEFECT, verbatim. Not a synthetic edit: RouteDetail.jsx exactly as it stood
-    // at 6f82fc0, the commit before the camping collapse, when capacity/water/permit rendered as
-    // chips holding up to 1,386 characters. This is the case both earlier designs of this guard
-    // FAILED — the route-rooted static version reported "ok" against this very tree — so it is
-    // the one that decides whether the guard is worth having.
-    name: "0. RouteDetail as it stood at 6f82fc0, before the camping collapse (the real #3)",
-    edit: () => execSync("git show 6f82fc0:RouteDetail.jsx", { encoding: "utf8", maxBuffer: 1 << 28 }),
-    want: /box\(es\) hold text too long for their shape/,
-  },
-  {
-    file: "RouteDetail.jsx",
+    file: "src/components/ApproachVariants.tsx",
     // MUST PASS. A box that explicitly accommodates long text has been thought about. The STAGES
     // table is the measured case — a stage's `grade` really is terrain prose, and its JSX already
     // carries word-break plus a wrapping parent, put there by someone who found this exact
     // problem. Reporting it would be telling an author to undo a correct fix.
     name: "4. long text in a box that explicitly wraps (must PASS)",
-    edit: (s) => s.replace(
-      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
-      '{seasonFull?<span style={{flexShrink:1,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{seasonFull}</span>:null}'),
+    // The approach window box wraps by construction (overflowWrap + word-break), so adding the
+    // explicit word-break is still a box that has been thought about.
+    edit: (s) => s.replace('overflowWrap:"anywhere"}}>{seasonFull}</div>', 'wordBreak:"break-word",overflowWrap:"anywhere"}}>{seasonFull}</div>'),
     want: null,
   },
   {
-    file: "RouteDetail.jsx",
+    file: "src/components/ApproachVariants.tsx",
     // MUST PASS. A long line in a box that clips with an ellipsis is correct handling, not a
     // defect — excluding these is what took an earlier scan from 104 candidates to 54.
     name: "3. long text in an ellipsis-clipping nowrap box (must PASS)",
-    edit: (s) => s.replace(
-      '{seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}',
-      '{seasonFull?<span style={{flexShrink:0,fontSize:11,color:C.blue,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",maxWidth:120}}>{seasonFull}</span>:null}'),
+    edit: (s) => s.replace('overflowWrap:"anywhere"}}>{seasonFull}</div>', 'whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{seasonFull}</div>'),
     want: null, // expect a clean run
   },
   {

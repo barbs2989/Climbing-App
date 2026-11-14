@@ -1,0 +1,64 @@
+{
+ "mn_sax_wall_2": {
+  "_expect": {
+   "name": "Sax Wall",
+   "region": "Minnesota"
+  },
+  "blurb": "About ninety minutes from the Twin Cities, Sax Wall is a little sandstone face in Robinson Park, in the town of Sandstone. Ten routes, nearly all bolted sport lines with one top-rope and one trad climb, run from 5.8 up to the low 5.12s, and the bulk of them sit around 5.10. The wall catches the sun from midday on and is tucked out of the wind, which makes it a pleasant pick on bright cold days, while summer calls for an early start and bug repellent. Every line can also be top-roped from above. Ledges on the face can punish a bad fall when leading.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106916010/sax-wall",
+    "https://www.mountainproject.com/area/105812719/robinson-park"
+   ]
+  }
+ },
+ "mn_swamp_wall": {
+  "_expect": {
+   "name": "Swamp Wall",
+   "region": "Minnesota"
+  },
+  "blurb": "Swamp Wall is a small, steep, remote sport crag on the Minnesota and Ontario border, one of the walls around Jeff's World. It sits over a boggy pond, so climbers cross the water on a community-built raft and use a hand line that runs along the base. Ten bolted routes span 5.8 to 5.13, with a cluster of easier lines near 5.8 and several hard 5.12s above them. The climbing is described as dynamic and a little tricky. Late summer is suggested for fewer bugs and warm weather. The water below is murky and deep, so take care.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108415169/swamp-wall",
+    "https://gearjunkie.com/climbing/jeffs-world-rock-climbing-bwca-minnesota-canada"
+   ]
+  }
+ },
+ "mn_east_quarry_boulder": {
+  "_expect": {
+   "name": "East Quarry Boulder",
+   "region": "Minnesota"
+  },
+  "blurb": "East Quarry Boulder is a compact bouldering spot in the old quarry at Blue Mounds State Park, near Luverne in the southwest corner of the state. It holds ten problems on quartzite, from easy V0 up to V4, with most falling between V1 and V3, so it suits climbers building up through the lower grades. The best-known lines here are a short V1 called Escape Route and the harder Lip Sync. It is one of several bouldering zones around the park, and the rock is reported to be slick when damp, so choose a dry day. Bring pads.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/classics/106572438/east-quarry-boulder",
+    "https://thetopo.com/crags/blue-mounds-state-park/routelist/east-quarry-boulder",
+    "https://app.advcollective.com/climbing/bouldering-at-blue-mounds-state-park-minnesota"
+   ]
+  }
+ },
+ "mn_quarry_corner_buttress": {
+  "_expect": {
+   "name": "Quarry Corner Buttress",
+   "region": "Minnesota"
+  },
+  "blurb": "Quarry Corner Buttress is a large block of cliff at Blue Mounds State Park near Luverne, right where the quarry trail meets the main cliffline. It offers ten top-rope lines, from easy fifth-class up to the 5.11 range, with the greatest concentration in the 5.9 to 5.11 band. Popular climbs include a corner, a face and a clingy line all around 5.10 to 5.11. The buttress is sunny and draws smaller crowds than the nearby Prairie Walls. Bring a rack of cams, stoppers or hexes to build anchors, since the park is mainly a traditional venue and has no bolted routes.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106059029/quarry-corner-buttress",
+    "https://mountainproject.com/area/105812716/blue-mounds-state-park-luverne"
+   ]
+  }
+ },
+ "_skipped": {
+  "mn_hartley": "no fetched page about the crag itself (only Duluth area list and city park page)",
+  "mn_elephant_rock": "only one fetched page about the crag (MP); second source blocked or off-topic",
+  "mn_tourist_rocks": "no fetched page about Tourist Rocks itself, only the park-level pages",
+  "mn_rock_bridge_the": "no page found about the crag itself; only route-page breadcrumbs"
+ },
+ "_conflicts": {
+  "mn_quarry_corner_buttress": "stored rock conglomerate; https://www.mountainproject.com/area/106059029/quarry-corner-buttress and https://mountainproject.com/area/105812716/blue-mounds-state-park-luverne both say quartzite"
+ }
+}

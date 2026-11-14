@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // What could the Add-a-climb area picker reach, and what can it reach now?
 //
 // The picker used to read the seed `MOUNTAINS` array. This measures both sides of that gap
@@ -44,7 +45,7 @@ const built = await build({
 const bundle = path.join(dir, "areareach-" + process.pid + ".mjs");
 writeFileSync(bundle, built.outputFiles[0].text);
 let MOUNTAINS;
-try { ({ MOUNTAINS } = await import(bundle)); } finally { rmSync(bundle, { force: true }); }
+try { ({ MOUNTAINS } = await import(fileHref(bundle))); } finally { rmSync(bundle, { force: true }); }
 if (!MOUNTAINS || MOUNTAINS.length < 5) { console.log("ANCHOR LOST — MOUNTAINS did not parse"); process.exit(1); }
 
 const seedSub = (rootId) => {

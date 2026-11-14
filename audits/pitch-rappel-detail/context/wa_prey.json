@@ -1,0 +1,61 @@
+{
+ "id": "wa_prey",
+ "name": "Prey",
+ "area_id": "wa_osprey_wall",
+ "discipline": "trad",
+ "grade": "5.10c",
+ "pitches": 5,
+ "length_m": 155,
+ "overview": "Prey climbs a 5-pitch (510 ft), mostly-bolted line up corners, roofs, and an arete on the right side of Osprey Wall on quality white marbled rock, highlighted by a celebrated 5.10c third pitch, the \"money pitch.\"",
+ "description": null,
+ "beta": "A series of corners, overhangs, and slabs to the top of Osprey Wall with excellent crystal pocket holds; protection is a mix of bolts and natural gear, with the third pitch fully bolted. Pitch 1 (\"First Flight,\" 5.6) is a bolted slab ending in a chute; P2 (5.9+) climbs a right-facing corner with a roof and bolted slab; P3 (5.10c, \"the money pitch\") features roof systems and an arete on white marbled rock; P4 (5.9) follows a corner ramp becoming an open book (with two variations); P5 (5.10c) finishes on an arete.",
+ "descent_text": "From the top of the wall, double-rope rappels (two 60 m ropes) from tree anchors on climber's left lead back down, trending slightly left to the next ledge — inspect any fixed gear before trusting it due to reported pika damage at anchors. Alternatively, descend the scree slope, using the full rope length as a handline/backup if downclimbing.",
+ "descent": "Rappel/scree descent from the top of the wall.",
+ "rappels": "Double-rope (60m) rappels from fixed tree anchors, trending left tree-to-tree back to lower ledges.",
+ "rappel_count_note": "The number of rappels is not published. The descent starts from a tree anchor on climber's left of the final belay and continues tree to tree on two 60 m ropes, trending slightly left to each lower ledge. Inspect the fixed slings before use; damage from pikas has been reported at the anchors.",
+ "rope_length_m": null,
+ "pitch_detail": [
+  {
+   "bolts": 4,
+   "grade": "5.6",
+   "notes": "Scramble up dirty ledges until the first bolt shows on the cleanest black-and-white granite, then follow bolts up the slab into a chute between two stands of trees. Exit right, then shift the belay uphill and left to sit beneath a right-facing corner.",
+   "pitch": "P1 – First Flight",
+   "lengthM": 30
+  },
+  {
+   "bolts": 5,
+   "grade": "5.9+",
+   "notes": "Stem the brown right-facing corner up to a roof; the crux moves here are exposed but well protected. Above the roof step right onto a short bolted slab. Bolts plus a few optional small cams or nuts.",
+   "pitch": "P2",
+   "lengthM": 40
+  },
+  {
+   "bolts": 11,
+   "grade": "5.10c",
+   "notes": "The only fully bolted pitch: steep, thoughtful corner climbing on white marbled rock through two roof sections, finishing on a sustained arête face. A #1 or #2 cam is optional near the top. Stated length for this pitch varies between roughly 30 and 40 m.",
+   "pitch": "P3 – The Money Pitch"
+  },
+  {
+   "bolts": 3,
+   "grade": "5.9",
+   "notes": "Follow the corner ramp as it trends right and steepens into an open book, mixing bolts and gear. A variation traverses out to a slung horn for more exposure; either way ends at the belay below the final arête.",
+   "pitch": "P4",
+   "lengthM": 30
+  },
+  {
+   "bolts": 3,
+   "grade": "5.10c",
+   "notes": "Three bolts up a short, fun arête to the top anchor. Leave a #1 cam in the overhang section to protect the follower. The double-rope rappel starts from a tree anchor above this belay.",
+   "pitch": "P5",
+   "lengthM": 15
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Christian Junkar, Tom Beirne, and Mik Metzler, Aug 2020",
+ "areas": {
+  "name": "Osprey Wall",
+  "parent_id": "wa_snoqualmie_pass_area"
+ },
+ "parent_area": "Snoqualmie Pass Area"
+}

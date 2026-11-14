@@ -1,0 +1,331 @@
+[
+ {
+  "i": 11,
+  "verdict": "corrected",
+  "finalDirection": "Turn north off SR 20 at milepost 82 onto the Baker Lake Highway (Forest Road 11) and drive 25.5 miles to its end at the Baker River trailhead.",
+  "numbersUsed": [
+   "20",
+   "82",
+   "11",
+   "25.5"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.fs.usda.gov/r06/mbs/recreation/baker-river-trailhead"
+  ],
+  "note": "Page gives milepost 82 on SR 20 and 25.5 miles; 'near Concrete' is not on the page."
+ },
+ {
+  "i": 13,
+  "verdict": "corrected",
+  "finalDirection": "From US 2 at Baring, near milepost 41, turn north onto 635th Place NE, cross the railroad tracks, keep left at the junction, and continue onto Forest Road 6024 for about 4 miles to the Barclay Lake trailhead.",
+  "numbersUsed": [
+   "2",
+   "41",
+   "635",
+   "6024",
+   "4"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/barclay-lake"
+  ],
+  "note": "Page gives 635th Place NE off US-2 near MP 41, then FR-6024 3.9 miles; 'paved then gravel' is not stated."
+ },
+ {
+  "i": 24,
+  "verdict": "confirmed",
+  "finalDirection": "Drive SR 20 about 42 miles east from Newhalem, or about 31 miles west from Winthrop, to the Blue Lake trailhead on the south side of the highway just below Washington Pass; SR 20 is closed in winter.",
+  "numbersUsed": [
+   "20",
+   "42",
+   "31",
+   "20"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/blue-lake",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+  ],
+  "note": "42.1 mi from Newhalem, 31.3 mi from Winthrop, south side, winter closure all on fetched pages."
+ },
+ {
+  "i": 25,
+  "verdict": "confirmed",
+  "finalDirection": "Drive SR 20 about 42 miles east from Newhalem, or about 31 miles west from Winthrop, to the Blue Lake trailhead on the south side of the highway just below Washington Pass; SR 20 is closed in winter.",
+  "numbersUsed": [
+   "20",
+   "42",
+   "31",
+   "20"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/blue-lake",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+  ],
+  "note": "42.1 mi from Newhalem, 31.3 mi from Winthrop, south side, winter closure all on fetched pages."
+ },
+ {
+  "i": 26,
+  "verdict": "confirmed",
+  "finalDirection": "Drive SR 20 about 42 miles east from Newhalem, or about 31 miles west from Winthrop, to the Blue Lake trailhead on the south side of the highway just below Washington Pass; SR 20 is closed in winter.",
+  "numbersUsed": [
+   "20",
+   "42",
+   "31",
+   "20"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/blue-lake",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+  ],
+  "note": "42.1 mi from Newhalem, 31.3 mi from Winthrop, south side, winter closure all on fetched pages."
+ },
+ {
+  "i": 27,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 at Marblemount, follow Cascade River Road about 22.5 miles to the small Boston Basin pullout, passing the Eldorado parking area at about mile 20. The first 10 miles are paved and the rest is rough gravel.",
+  "numbersUsed": [
+   "20",
+   "22.5",
+   "20",
+   "10"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm"
+  ],
+  "note": "NPS page: first 10 mi paved, Eldorado at mile 20, Boston Basin at mile 22.5."
+ },
+ {
+  "i": 36,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 at Marblemount, follow Cascade River Road about 23 miles to its end at the Cascade Pass parking lot. The first 10 miles are paved and the rest is gravel.",
+  "numbersUsed": [
+   "20",
+   "23",
+   "10"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/learn/news/cascade-river-road-now-open-to-cascade-pass-trailhead.htm"
+  ],
+  "note": "NPS: road ends at Cascade Pass 23.1 mi from Marblemount, first 10 paved."
+ },
+ {
+  "i": 37,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 at Marblemount, follow Cascade River Road about 23 miles to its end at the Cascade Pass parking lot. The first 10 miles are paved and the rest is gravel.",
+  "numbersUsed": [
+   "20",
+   "23",
+   "10"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/learn/news/cascade-river-road-now-open-to-cascade-pass-trailhead.htm"
+  ],
+  "note": "NPS: road ends at Cascade Pass 23.1 mi from Marblemount, first 10 paved."
+ },
+ {
+  "i": 38,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 at Marblemount, follow Cascade River Road about 23 miles to its end at the Cascade Pass parking lot. The first 10 miles are paved and the rest is gravel.",
+  "numbersUsed": [
+   "20",
+   "23",
+   "10"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/learn/news/cascade-river-road-now-open-to-cascade-pass-trailhead.htm"
+  ],
+  "note": "NPS: road ends at Cascade Pass 23.1 mi from Marblemount, first 10 paved."
+ },
+ {
+  "i": 40,
+  "verdict": "confirmed",
+  "finalDirection": "From SR 20 at Marblemount, follow Cascade River Road about 23 miles to its end at the Cascade Pass parking lot. The first 10 miles are paved and the rest is gravel.",
+  "numbersUsed": [
+   "20",
+   "23",
+   "10"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.nps.gov/noca/planyourvisit/cascade-river-road.htm",
+   "https://www.nps.gov/noca/learn/news/cascade-river-road-now-open-to-cascade-pass-trailhead.htm"
+  ],
+  "note": "NPS: road ends at Cascade Pass 23.1 mi from Marblemount, first 10 paved."
+ },
+ {
+  "i": 46,
+  "verdict": "corrected",
+  "finalDirection": "From Roslyn, follow SR 903 north about 14.8 miles to the end of the maintained road, bear right onto Forest Road 4330, and continue on gravel to the trailhead at its end.",
+  "numbersUsed": [
+   "903",
+   "14.8",
+   "4330"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cathedral-rock",
+   "https://www.wta.org/news/go-hiking/hikes/cathedral-rock"
+  ],
+  "note": "Page gives 14.8 mi on SR 903 past Roslyn to end of maintained road then NF-4330 gravel; 16.5 mi from Cle Elum and 12 gravel miles not on a fetched page."
+ },
+ {
+  "i": 47,
+  "verdict": "corrected",
+  "finalDirection": "From Roslyn, follow SR 903 north about 14.8 miles to the end of the maintained road, bear right onto Forest Road 4330, and continue on gravel to the trailhead at its end.",
+  "numbersUsed": [
+   "903",
+   "14.8",
+   "4330"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/cathedral-rock",
+   "https://www.wta.org/news/go-hiking/hikes/cathedral-rock"
+  ],
+  "note": "Page gives 14.8 mi on SR 903 past Roslyn to end of maintained road then NF-4330 gravel; 16.5 mi from Cle Elum and 12 gravel miles not on a fetched page."
+ },
+ {
+  "i": 54,
+  "verdict": "corrected",
+  "finalDirection": "From Newhalem, follow SR-20 east to milepost 130 at Diablo Lake, then enter the south side of Colonial Creek Campground and park in the large lot above the boat ramp.",
+  "numbersUsed": [
+   "20",
+   "130"
+  ],
+  "confidence": "medium",
+  "fetchedUrls": [
+   "https://www.nps.gov/noca/planyourvisit/thunder-creek-trail.htm"
+  ],
+  "note": "NPS gives mile 130 and south-side campground entry; highway side and winter closure not on the page."
+ },
+ {
+  "i": 56,
+  "verdict": "corrected",
+  "finalDirection": "From Highway 20 in Winthrop, turn north on West Chewuch Road, go straight at the junction with East Chewuch Road after about 7 miles, continue about 2.5 miles as the road becomes Forest Road 51, then turn left onto Forest Road 5130 (Eightmile Road) and follow it about 12 miles to the trailhead pullout on the right.",
+  "numbersUsed": [
+   "20",
+   "7",
+   "2.5",
+   "51",
+   "5130",
+   "12"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/copper-glance-lake"
+  ],
+  "note": "Eightmile Road is about 9.3 miles up, not 7; road becomes FR 51 first."
+ },
+ {
+  "i": 61,
+  "verdict": "corrected",
+  "finalDirection": "From Winthrop, drive west on SR-20 about 27 miles (about 4 miles east of Washington Pass), turn right onto Forest Road 400, and follow it about 1 mile to the trailhead parking.",
+  "numbersUsed": [
+   "20",
+   "27",
+   "4",
+   "400",
+   "1"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://trailsnw.com/trails/north-washington-cascades/cutthroat-lake",
+   "https://www.wta.org/go-hiking/hikes/cutthroat-lake"
+  ],
+  "note": "Westbound from Winthrop the turn onto FR 400 is RIGHT (left only for eastbound drivers); Winthrop distance is 26-28 miles."
+ },
+ {
+  "i": 62,
+  "verdict": "corrected",
+  "finalDirection": "From Winthrop, drive west on SR-20 about 27 miles (about 4 miles east of Washington Pass), turn right onto Forest Road 400, and follow it about 1 mile to the trailhead parking.",
+  "numbersUsed": [
+   "20",
+   "27",
+   "4",
+   "400",
+   "1"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://trailsnw.com/trails/north-washington-cascades/cutthroat-lake",
+   "https://www.wta.org/go-hiking/hikes/cutthroat-lake"
+  ],
+  "note": "Westbound from Winthrop the turn onto FR 400 is RIGHT (left only for eastbound drivers); Winthrop distance is 26-28 miles."
+ },
+ {
+  "i": 73,
+  "verdict": "corrected",
+  "finalDirection": "From I-90 exit 34 near North Bend, follow 468th to Middle Fork Snoqualmie Road, turn right and drive 12 miles, passing the large Middle Fork parking area on the right. Cross the large concrete bridge, immediately turn right onto the gravel road signed for Dingford and Dutch Miller Gap, and follow it about 6 miles to the gate and trailhead.",
+  "numbersUsed": [
+   "90",
+   "34",
+   "468",
+   "12",
+   "6"
+  ],
+  "confidence": "high",
+  "fetchedUrls": [
+   "https://www.wta.org/go-hiking/hikes/dingford-creek-myrtle-lake"
+  ],
+  "note": "Page supports the route; 'Forest Road 56' is not stated and the parking area comes before the bridge."
+ },
+ {
+  "i": 76,
+  "verdict": "confirmed",
+  "finalDirection": "From US-101 at Brinnon, drive west on Dosewallips Road about 10 miles to the washout, where vehicles must park.",
+  "numbersUsed": [
+   "101",
+   "10"
+  ],
+  "confidence": "low",
+  "fetchedUrls": [
+   "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/projects/archive/7483",
+   "https://peninsuladailynews.com/news/brinnon-dosewallips-road-will-be-repaired-reopened-forest-service-says"
+  ],
+  "note": "News piece puts the washout 10 miles west of US 101 and NPS says vehicles are barred beyond it; no page names the parking spot, and FS says 13 miles NW of Brinnon."
+ },
+ {
+  "i": 77,
+  "verdict": "confirmed",
+  "finalDirection": "From US-101 at Brinnon, drive west on Dosewallips Road about 10 miles to the washout, where vehicles must park.",
+  "numbersUsed": [
+   "101",
+   "10"
+  ],
+  "confidence": "low",
+  "fetchedUrls": [
+   "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/projects/archive/7483",
+   "https://peninsuladailynews.com/news/brinnon-dosewallips-road-will-be-repaired-reopened-forest-service-says"
+  ],
+  "note": "News piece puts the washout 10 miles west of US 101 and NPS says vehicles are barred beyond it; no page names the parking spot, and FS says 13 miles NW of Brinnon."
+ },
+ {
+  "i": 78,
+  "verdict": "confirmed",
+  "finalDirection": "From US-101 at Brinnon, drive west on Dosewallips Road about 10 miles to the washout, where vehicles must park.",
+  "numbersUsed": [
+   "101",
+   "10"
+  ],
+  "confidence": "low",
+  "fetchedUrls": [
+   "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+   "https://www.fs.usda.gov/r06/olympic/projects/archive/7483",
+   "https://peninsuladailynews.com/news/brinnon-dosewallips-road-will-be-repaired-reopened-forest-service-says"
+  ],
+  "note": "News piece puts the washout 10 miles west of US 101 and NPS says vehicles are barred beyond it; no page names the parking spot, and FS says 13 miles NW of Brinnon."
+ }
+]

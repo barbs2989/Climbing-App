@@ -12,7 +12,7 @@
 //   node scripts/oneoff/inject-remove-friend-journey-case.mjs --keep   # inject and stop
 //   node scripts/oneoff/inject-remove-friend-journey-case.mjs --restore
 //
-// It EDITS ClimbMatch.jsx IN PLACE, so do not commit while it is running -- #1190 was committed
+// It EDITS src/components/FriendsSheet.tsx IN PLACE, so do not commit while it is running -- #1190 was committed
 // mid-suite and shipped whichever revert happened to be live.
 import fs from "node:fs";
 import crypto from "node:crypto";
@@ -21,7 +21,8 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const APP = path.join(ROOT, "ClimbMatch.jsx");
+// The remove-friend handler now lives in FriendsSheet.tsx (moved out of ClimbMatch.jsx).
+const APP = path.join(ROOT, "src", "components", "FriendsSheet.tsx");
 const BAK = path.join(ROOT, `.remove-friend-case.${process.pid}.bak`);
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
@@ -38,7 +39,7 @@ function restore() {
   if (!fs.existsSync(BAK)) { console.log("nothing to restore (no backup for this pid)"); return; }
   fs.copyFileSync(BAK, APP);
   fs.unlinkSync(BAK);
-  console.log("restored ClimbMatch.jsx");
+  console.log("restored FriendsSheet.tsx");
 }
 
 if (process.argv.includes("--restore")) { restore(); process.exit(0); }
@@ -76,7 +77,7 @@ try {
   restore();
   const after = read();
   if (sum(after) !== sum(before)) {
-    console.error(`RESTORE FAILED: ${sum(before)} != ${sum(after)} — ClimbMatch.jsx is NOT byte-identical`);
+    console.error(`RESTORE FAILED: ${sum(before)} != ${sum(after)} — FriendsSheet.tsx is NOT byte-identical`);
     process.exit(1);
   }
   console.log(`restored byte-identically (${sum(after)})`);

@@ -122,6 +122,83 @@ function useSnowPasses(at, active) {
   return active ? res : null;
 }
 
+// SLOPE ANGLE (competitor review item 23, owner 2026-11-04; built 2026-11-11): steep ground shaded in
+// the avalanche-terrain bands, over whichever base layer is showing. Drawn IN THE BROWSER from the
+// public AWS Terrain Tiles (terrarium PNGs, elevation = R*256 + G + B/256 - 32768 metres; the bucket
+// answers access-control-allow-origin: *), so there is no tile set to build or host. Most of that
+// elevation is public domain (USGS 3DEP/SRTM), but Canada's CDEM and Mexico's INEGI make a credit a
+// condition of use, so the layer carries one while it is on -- the rule above: credit only where a
+// licence requires it. The credit links the dataset's registry page, which lists every credit it owes.
+//
+// Slope comes from each pixel's neighbours (central differences; one-sided at a tile's edge, which
+// leaves no visible seam at these angles). It is drawn from zoom 11: below that a pixel is over 50 m
+// of ground and every slope reads gentler than it is. Above 15 (the deepest the tiles go) Leaflet
+// magnifies the zoom-15 picture.
+const TERRAIN_URL = "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/";
+export const SLOPE_MIN_ZOOM = 11;
+// [from degrees, colour, legend label]. Under 27 is left clear: that is ground that rarely slides.
+export const SLOPE_BANDS = [
+  [27, "#f2d43a", "27"],
+  [30, "#f39a1e", "30"],
+  [35, "#e0352b", "35"],
+  [45, "#9b3fbf", "45"],
+  [60, "#1c1c3a", "60°"],
+];
+export const SLOPE_CREDIT = 'Slope: <a href="https://registry.opendata.aws/terrain-tiles/" target="_blank" rel="noopener noreferrer">USGS, NRCan, INEGI</a>';
+const _slopeRGB = SLOPE_BANDS.map(([, hex]) => [parseInt(hex.slice(1, 3), 16), parseInt(hex.slice(3, 5), 16), parseInt(hex.slice(5, 7), 16)]);
+function slopeBand(deg) {
+  for (let i = SLOPE_BANDS.length - 1; i >= 0; i--) if (deg >= SLOPE_BANDS[i][0]) return i;
+  return -1;
+}
+let _SlopeLayer = null;
+export function slopeLayer(L) {
+  if (!_SlopeLayer) {
+    _SlopeLayer = L.GridLayer.extend({
+      createTile(coords, done) {
+        const tile = document.createElement("canvas");
+        tile.width = tile.height = 256;
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => {
+          try {
+            const src = document.createElement("canvas");
+            src.width = src.height = 256;
+            const sx = src.getContext("2d");
+            sx.drawImage(img, 0, 0);
+            const d = sx.getImageData(0, 0, 256, 256).data;
+            const elev = new Float32Array(256 * 256);
+            for (let i = 0; i < 256 * 256; i++) elev[i] = d[i * 4] * 256 + d[i * 4 + 1] + d[i * 4 + 2] / 256 - 32768;
+            const out = tile.getContext("2d").createImageData(256, 256);
+            const o = out.data, n = Math.pow(2, coords.z);
+            for (let y = 0; y < 256; y++) {
+              // Ground metres per pixel shrink with latitude (Web Mercator), row by row.
+              const lat = Math.atan(Math.sinh(Math.PI * (1 - (2 * (coords.y + (y + 0.5) / 256)) / n)));
+              const m = (40075016.686 * Math.cos(lat)) / (256 * n);
+              const y0 = y > 0 ? y - 1 : y, y1 = y < 255 ? y + 1 : y;
+              for (let x = 0; x < 256; x++) {
+                const x0 = x > 0 ? x - 1 : x, x1 = x < 255 ? x + 1 : x;
+                const dzdx = (elev[y * 256 + x1] - elev[y * 256 + x0]) / ((x1 - x0) * m);
+                const dzdy = (elev[y1 * 256 + x] - elev[y0 * 256 + x]) / ((y1 - y0) * m);
+                const b = slopeBand((Math.atan(Math.sqrt(dzdx * dzdx + dzdy * dzdy)) * 180) / Math.PI);
+                if (b < 0) continue;
+                const k = (y * 256 + x) * 4, c = _slopeRGB[b];
+                o[k] = c[0]; o[k + 1] = c[1]; o[k + 2] = c[2]; o[k + 3] = 255;
+              }
+            }
+            tile.getContext("2d").putImageData(out, 0, 0);
+            done(null, tile);
+          } catch (e) { done(e, tile); }
+        };
+        img.onerror = () => done(new Error("terrain tile"), tile);
+        img.src = TERRAIN_URL + coords.z + "/" + coords.x + "/" + coords.y + ".png";
+        return tile;
+      },
+    });
+  }
+  // Above every base layer (they sit at the default zIndex 1), so swapping Street/Satellite/Topo keeps it on top.
+  return new _SlopeLayer({ minZoom: SLOPE_MIN_ZOOM, maxNativeZoom: 15, maxZoom: DEEPEST_ZOOM, opacity: 0.55, zIndex: 5, attribution: SLOPE_CREDIT });
+}
+
 // The one place a base tile layer is built, so a map that swaps layers in place and one that
 // builds its layer at init cannot disagree about a layer's URL or zoom limits.
 export function baseTileLayer(L, baseLayer) {
@@ -274,38 +351,55 @@ export function loadLeaflet(onReadyRaw, onError) {
 // tearing the whole map down — preserves pan/zoom/markers/geolocation state,
 // which matters most for WaypointMapPicker (don't lose a precise pick) and
 // NearMePanel (don't refire a network refetch on every toggle tap).
+// The tile credit's own control, once per map. Every map is built with attributionControl:false (Leaflet's default
+// prefix links Leaflet itself, which its BSD licence does not require); Leaflet then shows the credit of every layer
+// on the map -- the base layer's, and the slope overlay's while it is on. A map that builds its first layer itself
+// (GPXMap) calls this too: on first load the route map carried no credit until a layer button was pressed.
+export function addTileCredit(map, L) {
+  if (!map.__cmCredit) map.__cmCredit = L.control.attribution({ prefix: false, position: "bottomright" }).addTo(map);
+}
 export function applyBaseLayer(map, tileRef, baseLayer) {
   if (!map || !window.L) return;
   const L = window.L;
   // Every map is built with attributionControl:false (Leaflet's default prefix links Leaflet
   // itself, which its BSD licence does not require), so the tile credit gets its own control,
   // once per map. Leaflet then shows the ACTIVE layer's credit and swaps it with the layer.
-  if (!map.__cmCredit) map.__cmCredit = L.control.attribution({ prefix: false, position: "bottomright" }).addTo(map);
+  addTileCredit(map, L);
+  // BaseLayerToggle's row sits at top-left (top:10, ~38px tall), exactly where Leaflet puts its
+  // +/- by default: the + was hidden under the first layer button. Drop the zoom below the row.
+  if (map.zoomControl && !map.__cmZoomMoved) { map.__cmZoomMoved = true; try { map.zoomControl.getContainer().style.marginTop = "56px"; } catch (e) {} }
   if (tileRef.current) { try { map.removeLayer(tileRef.current); } catch (e) {} }
   tileRef.current = baseTileLayer(L, baseLayer).addTo(map);
   fitZoomToLayer(map, baseLayer);
 }
 
-// The satellite/topo/street button row — lifted verbatim from GPXMap, the one
-// map that already had this toggle. `snow` opts a map into the Snow layer, and `snowAt`
+// The street/satellite/topo button row — lifted verbatim from GPXMap, the one
+// map that already had this toggle. Street leads: it is the one a climber reads a town off. `snow` opts a map into the Snow layer, and `snowAt`
 // ({lat,lng}) is the point whose satellite passes it lists. Its stepper sits top-right under
 // the full-screen button (44px from top:10), so a map that puts its own controls there
 // (FireMap's zoom) leaves it off.
-export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
+// `slope` opts a map into the Slope toggle; `slopeOn`/`setSlopeOn` are the map's own state, because the
+// overlay is added to and removed from the map by the map (see GPXMap).
+// `on3d` puts a 3D button at the END of the same row, next to the layers, where a climber looks for
+// another way to see the map (owner, 2026-11-14: "move it higher with the rest of the views near
+// satellite"). It opens a view rather than picking a layer, so it is never marked current.
+/** @param {{baseLayer: string, setBaseLayer: (k: string) => void, C: Record<string, string>, snow?: boolean, snowAt?: {lat?: number|null, lng?: number|null}|null, slope?: boolean, slopeOn?: boolean, setSlopeOn?: (on: boolean) => void, on3d?: () => void}} props */
+export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt, slope, slopeOn, setSlopeOn, on3d }) {
   const pick = snow ? snowPick(baseLayer) : null;
   const passes = useSnowPasses(snowAt, !!pick);
   const list = passes ? passes.list : null;
+  const hasPick = !!pick, pickP = pick ? pick.p : null;
   // Bare "snow" becomes a real pass as soon as the list is in.
   useEffect(() => {
-    if (!pick || pick.p || !list || !list.length) return;
+    if (!hasPick || pickP || !list || !list.length) return;
     const clear = list.find((x) => x.cloud != null && x.cloud <= SNOW_DEFAULT_MAX_CLOUD);
     setBaseLayer(snowKey(clear || list[0]));
-  }, [pick && pick.p, list, setBaseLayer]);
+  }, [hasPick, pickP, list, setBaseLayer]);
   // Stepping is by DATE, not by index, so a key chosen before a remount still steps correctly.
   const older = pick && pick.p && list ? list.find((x) => x.date < pick.date) : null;
   const newer = pick && pick.p && list ? list.filter((x) => x.date > pick.date).pop() : null;
   const cur = pick && pick.p && list ? list.find((x) => x.date === pick.date && x.p === pick.p) : null;
-  const opts = [["sat", "Satellite"], ["topo", "Topo"], ["street", "Street"]].concat(snow ? [["snow", "Snow"]] : []);
+  const opts = [["street", "Street"], ["sat", "Satellite"], ["topo", "Topo"]].concat(snow ? [["snow", "Snow"]] : []);
   const step = { width: 30, height: 30, borderRadius: 7, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 15, fontWeight: 800, lineHeight: 1, padding: 0, cursor: "pointer" };
   const off = { opacity: 0.35, cursor: "default" };
   // The climber's date preference, read from its store: this file is imported BY core, so it
@@ -313,14 +407,33 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
   const fmt = (d) => new Date(d + "T12:00:00Z").toLocaleDateString(currentDateLocale(), { month: "short", day: "numeric", timeZone: "UTC" });
   return (
     <>
-      <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>
+      {/* The row stops 66px short of the right edge, where the map's ⤢ Full screen sits: in the desktop
+          rail's 276px map the four buttons ran under it and "Snow" could not be pressed (owner's audit,
+          2026-11-04). It is a CONTAINER, so when what is left is narrow, index.html's @container rule
+          shortens "Satellite" to "Sat" rather than letting a button disappear. */}
+      <div style={{ position: "absolute", top: 10, left: 10, right: 66, zIndex: 1000, display: "flex", gap: 4, containerType: "inline-size", pointerEvents: "none" }}>
         {opts.map(([k, lbl]) => {
           const on = k === "snow" ? pick != null : baseLayer === k;
-          return <button key={k} onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>{lbl}</button>;
+          return <button key={k} className="cm-lyr-btn" onClick={() => { if (!(k === "snow" && on)) setBaseLayer(k); }} aria-current={on ? "true" : undefined} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? "#fff" : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)", pointerEvents: "auto" }}>{k === "sat" ? <><span className="cm-lyr-long">{lbl}</span><span className="cm-lyr-short">Sat</span></> : lbl}</button>;
         })}
+        {on3d ? <button type="button" className="cm-lyr-btn cm-lyr-3d" onClick={on3d} aria-label="View in 3D" style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 11, fontWeight: 800, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)", pointerEvents: "auto", flexShrink: 0 }}>3D</button> : null}
       </div>
+      {/* The right-hand column under ⤢ Full screen: the Slope toggle and its key, then the Snow stepper. One
+          column, so the two can never draw over each other. */}
+      {slope || pick ? <div style={{ position: "absolute", top: 62, right: 10, zIndex: 1000, display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6, pointerEvents: "none" }}>
+      {slope ? (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4, pointerEvents: "auto" }}>
+          <button type="button" className="cm-lyr-btn" onClick={() => setSlopeOn(!slopeOn)} aria-pressed={!!slopeOn} style={{ padding: "9px 11px", borderRadius: 8, border: "1px solid " + (slopeOn ? C.blue : C.border), background: slopeOn ? C.blueBg : C.surface, color: slopeOn ? "#fff" : C.textSub, fontSize: 11, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>Slope</button>
+          {slopeOn ? (
+            <div role="img" aria-label="Slope shading: yellow from 27 degrees, orange from 30, red from 35, purple from 45, near-black from 60" style={{ background: C.surface, border: "1px solid " + C.border, borderRadius: 8, padding: "6px 7px 4px", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+              <div style={{ display: "flex" }}>{SLOPE_BANDS.map(([, hex, lbl]) => <div key={lbl} style={{ width: 26 }}><div style={{ height: 8, background: hex, opacity: 0.85 }} /><div style={{ fontSize: 9.5, color: C.textSub, marginTop: 2 }}>{lbl}</div></div>)}</div>
+              <div style={{ fontSize: 9.5, color: C.textMuted, marginTop: 2 }}>Zoom in to see it</div>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
       {pick ? (
-        <div style={{ position: "absolute", top: 62, right: 10, zIndex: 1000, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 6, boxShadow: "0 2px 8px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column", alignItems: "center", gap: 4, maxWidth: 150 }}>
+        <div style={{ pointerEvents: "auto", background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 6, boxShadow: "0 2px 8px rgba(0,0,0,0.4)", display: "flex", flexDirection: "column", alignItems: "center", gap: 4, maxWidth: 150 }}>
           {pick.p ? (
             <>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -338,6 +451,7 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
           )}
         </div>
       ) : null}
+      </div> : null}
     </>
   );
 }
@@ -350,7 +464,7 @@ export function ViewToggle({ mode, onList, onMap, C }) {
   );
   return (
     <div style={{ display: "flex", gap: 3, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 3, marginBottom: 12 }}>
-      {seg("list", "☰ List", onList)}
+      {seg("list", "List", onList)}
       {seg("map", "⤢ Map", onMap)}
     </div>
   );
@@ -443,14 +557,18 @@ export function acceptFix(cur, next) {
   return fixDistM(cur, next) > acc + cur.acc;
 }
 
+/**
+ * @param {import("react").MutableRefObject<any>} mapRef the Leaflet map, once built
+ * @param {{ C?: any, zoom?: number, onFix?: (fix: any, first: boolean) => void }} [opts]
+ */
 export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   const [locating, setLocating] = useState(false);
   const [following, setFollowing] = useState(false);
   const [acc, setAcc] = useState(null);
   const [lost, setLost] = useState(false);
   const [err, setErr] = useState("");
-  const watchRef = useRef(null), curRef = useRef(null), autoRef = useRef(false);
-  const dotRef = useRef(null), ringRef = useRef(null), hookedRef = useRef(null), onFixRef = useRef(onFix);
+  const watchRef = useRef(null), curRef = useRef(null), autoRef = useRef(false), quietRef = useRef(false);
+  const dotRef = useRef(null), ringRef = useRef(null), hookedRef = useRef(null), onFixRef = useRef(onFix), centredRef = useRef(false);
   onFixRef.current = onFix;
   const stop = () => { if (watchRef.current != null) { try { navigator.geolocation.clearWatch(watchRef.current); } catch (e) {} watchRef.current = null; } };
   useEffect(() => stop, []);
@@ -467,25 +585,33 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
     if (hookedRef.current !== map) { hookedRef.current = map; dotRef.current = null; ringRef.current = null; map.on("dragstart", () => { autoRef.current = false; }); }
     const ll = [fix.lat, fix.lng], r = Number.isFinite(fix.acc) ? fix.acc : 50;
     if (dotRef.current) dotRef.current.setLatLng(ll);
-    else dotRef.current = L.circleMarker(ll, { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
+    // An HTML marker lifted above every other marker, not a circleMarker: vector shapes draw in the
+    // overlay pane UNDER all markers, so on the area map a cluster bubble over a city hid the dot.
+    else dotRef.current = L.marker(ll, { icon: L.divIcon({ html: "<div style='width:14px;height:14px;border-radius:50%;background:" + C.green + ";border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.6);'></div>", className: "", iconSize: [20, 20], iconAnchor: [10, 10] }), zIndexOffset: 5000, keyboard: false }).addTo(map).bindTooltip("You are here", { direction: "top" });
     if (ringRef.current) ringRef.current.setLatLng(ll).setRadius(r);
     else ringRef.current = L.circle(ll, { radius: r, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12, interactive: false }).addTo(map);
     if (first) map.setView(ll, Math.max(map.getZoom(), zoom));
     else if (autoRef.current) map.panTo(ll, { animate: true });
   };
-  const locate = () => {
-    if (typeof navigator === "undefined" || !navigator.geolocation) { setErr("Location isn’t available on this device."); return; }
-    setErr("");
-    autoRef.current = true;
+  // `quiet` (from showDot) draws the dot and nothing else: no re-centre, no follow, no message,
+  // no button state. A climber who opened the map on Utah keeps Utah, and sees where they are on it.
+  const locate = (quiet) => {
+    quiet = quiet === true;
+    if (typeof navigator === "undefined" || !navigator.geolocation) { if (!quiet) setErr("Location isn’t available on this device."); return; }
     const map = mapRef.current;
+    if (!quiet) { setErr(""); autoRef.current = true; quietRef.current = false; }
     if (watchRef.current != null) {
-      // Already following: the button re-centres on the latest fix and resumes following.
+      if (quiet) return;
+      // Already watching: the button re-centres on the latest fix and resumes following.
       const c = curRef.current;
-      if (c && map) map.setView([c.lat, c.lng], Math.max(map.getZoom(), zoom));
+      if (c && map) {
+        map.setView([c.lat, c.lng], Math.max(map.getZoom(), zoom));
+        if (!centredRef.current) { centredRef.current = true; setFollowing(true); if (onFixRef.current) onFixRef.current(c, true); }
+      } else setLocating(true);
       return;
     }
-    setLocating(true);
-    let first = true;
+    quietRef.current = quiet;
+    if (!quiet) setLocating(true);
     watchRef.current = navigator.geolocation.watchPosition(
       (pos) => {
         const c = pos.coords || {};
@@ -494,14 +620,17 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
         setLost(false);
         if (!acceptFix(curRef.current, fix)) return;
         curRef.current = fix;
-        setLocating(false); setFollowing(true); setErr("");
+        const q = quietRef.current;
+        // The first fix after the button is pressed re-centres, even when a quiet watch started it.
+        const centre = !q && !centredRef.current;
+        if (!q) { setLocating(false); setFollowing(true); setErr(""); centredRef.current = true; }
         setAcc(Number.isFinite(fix.acc) ? fix.acc : null);
-        draw(fix, first);
-        if (onFixRef.current) onFixRef.current(fix, first);
-        first = false;
+        draw(fix, centre);
+        if (onFixRef.current && !q) onFixRef.current(fix, centre);
       },
       (e) => {
-        if (e && e.code === 1) { stop(); setLocating(false); setFollowing(false); setErr("Location permission is off for this site — allow it in your browser or device settings to see where you are."); return; }
+        if (quietRef.current) { if (e && e.code === 1) stop(); return; }
+        if (e && e.code === 1) { stop(); centredRef.current = false; setLocating(false); setFollowing(false); setErr("Location permission is off for this site — allow it in your browser or device settings to see where you are."); return; }
         // A timeout or a lost signal is not the end of a watch: it keeps trying.
         if (!curRef.current) setErr("Still looking for a GPS signal — step out from under trees or the wall.");
       },
@@ -511,7 +640,15 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
   // A view the climber asked for (Reset view, Fit all) must not be yanked back by the next fix.
   // The dot keeps moving; the button resumes following.
   const release = () => { autoRef.current = false; };
-  return { locate, release, locating, following, acc, lost, err };
+  // The dot without the ask: only when this site ALREADY has location permission, so opening a
+  // map never pops a permission prompt the climber did not request.
+  const showDot = () => {
+    try {
+      if (!navigator.permissions || !navigator.permissions.query) return;
+      navigator.permissions.query({ name: "geolocation" }).then((p) => { if (p && p.state === "granted") locate(true); }, () => {});
+    } catch (e) {}
+  };
+  return { locate: () => locate(false), showDot, release, locating, following, acc, lost, err };
 }
 // The locate button's words. Once following, the label IS the accuracy, in the climber's units, so
 // "a little off" is something the screen states rather than something you discover at the crag.
@@ -523,4 +660,24 @@ export function locateLabel(st, idle) {
   if (st.locating) return "Locating…";
   if (st.following) return st.lost ? "No GPS fix" : st.acc != null ? "±" + fmtFixAcc(st.acc) : idle;
   return idle;
+}
+
+// "Where is Moab?" -- a town, county, city, zip or Canadian postal code typed into a map, answered by
+// OpenStreetMap's place index. Run on submit only (its usage policy forbids per-keystroke
+// lookups). `bounds` ({minLat,maxLat,minLng,maxLng}) ranks places in the current view first, so
+// "Springdale" on a Utah map is the Zion one. Resolves to [] for no match; rejects on a failed read,
+// which the caller must say -- a network failure is not "no such place".
+export function searchPlaces(q, bounds) {
+  const t = String(q || "").trim();
+  if (!t) return Promise.resolve([]);
+  let url = "https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=us,ca&limit=5&dedupe=1&" + (/^\d{5}$/.test(t) ? "postalcode=" : "q=") + encodeURIComponent(t);
+  if (bounds && Number.isFinite(bounds.minLat)) url += "&viewbox=" + [bounds.minLng, bounds.maxLat, bounds.maxLng, bounds.minLat].map((n) => n.toFixed(4)).join(",");
+  return fetch(url, { headers: { Accept: "application/json" } }).then((r) => {
+    if (!r.ok) throw new Error("place search " + r.status);
+    return r.json();
+  }).then((rows) => (Array.isArray(rows) ? rows : []).map((r) => {
+    const parts = String(r.display_name || "").split(", ").filter((x) => x !== "United States" && x !== "Canada");
+    const bb = (r.boundingbox || []).map(Number);
+    return { name: parts[0] || t, sub: parts.slice(1).filter((x) => !/^(\d{5}|[A-Z]\d[A-Z] ?\d[A-Z]\d)$/i.test(x)).join(", "), lat: Number(r.lat), lng: Number(r.lon), bbox: bb.length === 4 && bb.every(Number.isFinite) ? [[bb[0], bb[2]], [bb[1], bb[3]]] : null };
+  }).filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng)));
 }

@@ -74,7 +74,7 @@ const CASES = [
     find: "showName: !!p.show_name", repl: "showName_disabled: !!p.show_name" },
 
   { name: "hook-stops-selecting", file: "db", expect: "hook still SELECTS the columns",
-    find: 'select("id, name, avatar, show_name, username")', repl: 'select("id, name, avatar")' },
+    find: 'select("id, name, avatar, show_name, username, availability, avail_week")', repl: 'select("id, name, avatar, availability, avail_week")' },
 
   // SILENT: documentation naming the forbidden constant is not the forbidden constant.
   { name: "SILENT-comment-quotes-the-forged-constant", file: "core", silent: true,

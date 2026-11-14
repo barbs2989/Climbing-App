@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Walks the app as a BRAND-NEW ACCOUNT sees it: every count zero, every list empty.
 //
 // Why this exists. check:ui walks the seeded demo -- bookmarks are pre-saved, a crew
@@ -49,7 +50,7 @@ const argv = process.argv.slice(2);
 const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
 const DUMP = argOf("--dump");
 const PORT = 5230;
-const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me"];
+const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me", "groups"];
 
 // Text that must never reach a user. The first five mirror check:ui; the rest are the
 // shapes that only appear once every field behind them is empty.
@@ -76,10 +77,12 @@ const FORBIDDEN = [
 const ZERO_LANDMARKS = {
   // #637: these four tiles and the dropdown used to be filtered out when their count
   // was 0, which is exactly when a new user needs them.
-  "tab:today": ["Explore climbs", "Find partners", "Find crews", "Unfinished business"],
-  // The dropdown has to say what it is empty OF. It used to read "Nothing waiting on you
-  // right now", a near-copy of the "Nothing needs you right now" card immediately below it.
-  "modal:unfinishedOpen": ["No requests, invites or unread messages."],
+  // The dropdown is now Home's ONE Alerts button (Unfinished business folded into it,
+  // 2026-10-23). A brand-new account already holds a notification, so its label carries a
+  // count -- a RegExp landmark, still matched against the WHOLE line. For the same reason the
+  // empty copy ("No requests, invites, unread messages, climbs to confirm or alerts.") is
+  // unreachable at zero and is not asserted here; the near-duplicate below is still forbidden.
+  "tab:today": ["Explore climbs", "Find partners", "Find crews", /^Notifications( · \d+ new)?$/],
 };
 
 // Controls that must NOT be offered at zero, because acting on them produces or shares
@@ -88,7 +91,7 @@ const FORBIDDEN_LANDMARKS = {
   // #674: a share block on a year of all zeros. Also the near-duplicate empty copy the
   // Unfinished business dropdown used to carry.
   "modal:recapOpen": ["Share your year", "Copy my year", "↗ Share…"],
-  "modal:unfinishedOpen": ["Nothing waiting on you right now."],
+  "modal:alertsOpen": ["Nothing waiting on you right now."],
 };
 
 const log = (...a) => console.log(...a);
@@ -158,9 +161,8 @@ log(`starting dev server on ${port} with the zero-state config...`);
 // detached puts vite in its own process group. `npx` spawns vite as a CHILD, so killing
 // only the npx pid leaves the real server listening -- a leaked dev server then squats the
 // port for every later run, and (worse) can answer for a DIFFERENT checkout. Kill the group.
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/zero-state.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/zero-state.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;
@@ -281,7 +283,7 @@ function assertScreen(label, lines) {
   const bare = lines.filter((l) => ICONS.has(l));
   if (bare.length) fail(label, `an icon name rendered as text: ${JSON.stringify([...new Set(bare)])}`);
   for (const want of ZERO_LANDMARKS[label] || []) {
-    if (!lines.includes(want)) fail(label, `landmark missing at zero: ${JSON.stringify(want)}`);
+    if (!(want instanceof RegExp ? lines.some((l) => want.test(l)) : lines.includes(want))) fail(label, `landmark missing at zero: ${want instanceof RegExp ? String(want) : JSON.stringify(want)}`);
   }
   for (const nope of FORBIDDEN_LANDMARKS[label] || []) {
     if (lines.includes(nope)) fail(label, `offered at zero when there is nothing behind it: ${JSON.stringify(nope)}`);
@@ -306,6 +308,19 @@ for (const t of TABS) {
   if (lines.some((l) => /^Loading[\s.…]/i.test(l))) fail("tab:" + t, `still showing a loading state after 45s: ${JSON.stringify(lines.find((l) => /^Loading[\s.…]/i.test(l)))}`);
   assertScreen("tab:" + t, lines);
 }
+// The Profile screen is TABS (Profile · Activity · Review). Its default view no longer holds the catch
+// record, the logbook or the filed reports, and the catch-record FORBIDDEN rules above (#654, #674)
+// would go blind without this: walk Activity too, under the same rules.
+{
+  const lines = await load(`?zt=me&mt=activity`, 2600, true);
+  dump["tab:me:activity"] = lines;
+  const n = lines.join("\n").length;
+  log(`  tab:me:activity`.padEnd(24) + String(n).padStart(6) + " chars");
+  if (n <= CHROME_ONLY) fail("tab:me:activity", `rendered only the nav bar (${n} chars) — the content area was empty`);
+  if (lines.some((l) => /^Loading[\s.…]/i.test(l))) fail("tab:me:activity", `still showing a loading state after 45s: ${JSON.stringify(lines.find((l) => /^Loading[\s.…]/i.test(l)))}`);
+  if (!lines.some((l) => /YOUR LOGBOOK|Your Logbook/.test(l))) fail("tab:me:activity", "the Activity tab did not render Your Logbook — the tab switch did not land, so the Activity rules were never applied");
+  assertScreen("tab:me:activity", lines);
+}
 
 // 2. Every overlay the app declares. The list comes from the source via the scaffold,
 //    so a modal added later is walked without being registered here.
@@ -327,7 +342,7 @@ if (!overlays.length) {
 // NAME in NEEDS_EXTRA_STATE, each recording its real gate, and a name there that stops
 // being an overlay fails, so the exemption list cannot rot in silence.
 const _maskDigits = (l) => String(l).replace(/\d+/g, "#");
-const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks"];
+const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"];
 assertKnownOverlays(overlays, fail);
 const noPayload = new Set();
 for (const name of overlays) {

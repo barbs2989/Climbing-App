@@ -1,0 +1,32 @@
+{
+  "area_id": "wa_eagle_rock",
+  "routes": [
+    {
+      "route_id": "wa_eagle_rock_scramble",
+      "season": { "months": [6, 7, 8, 9, 10], "window": "Jun-Oct", "evidence": "Stored Jun-Oct stands. Few ascents are logged (Jun 1, Jul 2, Aug 4, Sep 3, Oct 1); the winter ones come from a 12-mile snow approach (Dec 2023) and are off-season. Web search: the Mountaineers route listing gives May-Sep for this peak; a drivable high road end is needed, so late summer/early fall is most practical." },
+      "track": { "aid": "2660562", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Eagle Rock has exactly one route in our catalog; this track starts 6 m from our FR6517 trailhead pin, returns to it, and its high point is 3 m from our summit. The report describes the talus field, the ascending traverse to the cliff band, the upper meadow and the final slope, which is our described line. 29 Sep 2024 is in season (late September)." },
+      "otherTracksConsidered": [
+        { "aid": "1247685", "verdict": "same", "why": "21 Sep 2019 complete round trip from the same trailhead, summit 1 m; also valid but sparser and no description." },
+        { "aid": "1247792", "verdict": "same", "why": "21 Sep 2019 'E Route-N Ridge', same day party as 1247685; text only (the track is just a summit point)." },
+        { "aid": "1972107", "verdict": "unsure", "why": "22 Jul 2022 'Standard' but the track starts 6.8 km down the road (the party drove, not walked); not a trailhead round trip." },
+        { "aid": "3232536", "verdict": "different", "why": "West Flank from the valley floor by e-bike; different approach." },
+        { "aid": "2403474", "verdict": "offseason", "why": "23 Dec 2023, a snow approach of 17 mi from the lower road gate." },
+        { "aid": "2404163", "verdict": "offseason", "why": "23 Dec 2023." },
+        { "aid": "2666428", "verdict": "different", "why": "6 Oct 2024 south-southwest face bushwhack by his own description; no track." },
+        { "aid": "1016532", "verdict": "unsure", "why": "Aug 2018 'North side gully' report, no track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 9, "text": "In late September 2024 the gate low on the Beckler spur network was locked, adding about ten miles of road each way; the road beyond it is rutted but passable to an AWD or high-clearance vehicle. Another party in early October found that gate closed but unlocked. Check before driving.", "aids": ["2660562", "2666428"] },
+        { "field": "approach_note", "month": 7, "text": "By late July the upper road had several washed-out creek crossings and a rocky last mile needing 4WD, with brush scraping the vehicle; in mid-August it was reported passable to an ordinary car only for the first ~4-5 miles.", "aids": ["1972107", "1016532"] },
+        { "field": "watch_out", "month": 9, "text": "A roughly 15 m cliff band of slab and loose dirt sits between the talus and the upper meadow; it is class 3 when dry but class 4 when wet or mossy, with a steep forested runout above it.", "aids": ["2660562", "1247792"] },
+        { "field": "pro_tips", "month": 9, "text": "Put on microspikes before the cliff band and the steep duff above it; they help on the way down too.", "aids": ["2660562", "1972107"] },
+        { "field": "descent_note", "month": 9, "text": "Parties in September and July used a short rappel (about 15-30 m) from a tree above the cliff band, or the fixed rope found at the steep forest bypass, to get down the crux section safely.", "aids": ["2660562", "1247792", "1972107"] },
+        { "field": "pro_tips", "month": 7, "text": "A fixed black rope in July 2022 marked a steep forested gully that bypasses the sketchy corner; traverse climber's right of the first cliff band to avoid a second, minor one higher up.", "aids": ["1972107", "2660562"] },
+        { "field": "pro_tips", "month": 8, "text": "In mid-August the line was marked with blue ribbons through the gully above the lower cliff band; bring a hand line for the short scramble up to it.", "aids": ["1016532"] }
+      ]
+    }
+  ],
+  "notes": "CONFLICT with stored text: our stored descent says no rappels or technical sections and that the route is class 2/3, but four in-season reports (Jul 2022, Aug 2018, Sep 2019, Sep 2024) describe a ~15-30 m cliff band at class 3 dry / class 4 wet that the climbers rappelled or roped. The stored route's pro_tip about carrying a handline is consistent. The owner may want the grade/descent text reviewed. Also a road warning: a locked gate on the Beckler spur roads (Bolt Creek burn area) in Sep 2024."
+}

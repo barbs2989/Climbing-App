@@ -82,7 +82,7 @@ serve(async (req) => {
         "A climber reported " + what + " for: " + rep.reason + ".\n\n" +
         (excerpt ? "What was reported:\n“" + excerpt + (rep.snapshot && rep.snapshot.length > 400 ? "…" : "") + "”\n\n" : "") +
         "Open reports right now: " + (openCount ?? "?") + ".\n" +
-        "Review it in ClimbMatch: Menu → You → Safety reports. Target: acted on within 24 hours.\n" +
+        "Review it in the Supabase dashboard (table user_reports). Target: acted on within 24 hours.\n" +
         (urgent ? "\nIf someone may be in immediate danger, consider contacting local law enforcement; for child exploitation, report to NCMEC (report.cybertip.org).\n" : ""),
     }, supabase);
     return json({ sent: res.sent, reason: res.sent ? undefined : res.reason });

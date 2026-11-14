@@ -1,0 +1,195 @@
+[
+ {
+  "id": "ab_loder_peak_coire_dubh_integrale",
+  "slug": "coire-dubh-integtrale-ab-canada",
+  "tier": "round",
+  "why": "The FKT line is the Coire Dubh Integrale itself, descending the Loder south ridge and walking the highway back, matching the listed route and its loop descent.",
+  "peak": {
+   "name": "Loder Peak",
+   "lat": 51.0932,
+   "lng": -115.1424,
+   "elevation_ft": null,
+   "id": "ab_loder_peak"
+  }
+ },
+ {
+  "id": "ca_mt_baldy_trail_aka_south_ridge_or_bear_flat_trail",
+  "slug": "mt-baldy-ca",
+  "tier": "oneway",
+  "why": "FKT's 6.5 mi one-way Bear Canyon GPX is the Bear Canyon / Old Mt. Baldy (Bear Flat) trail up the south ridge, which sources equate with our trail route.",
+  "peak": {
+   "name": "Mount San Antonio (Mt. Baldy)",
+   "lat": 34.28891,
+   "lng": -117.64673,
+   "elevation_ft": null,
+   "id": "ca_mount_san_antonio_mt_baldy"
+  }
+ },
+ {
+  "id": "co_ellingwood_ridge",
+  "slug": "la-plata-peak-co",
+  "tier": "round",
+  "why": "FKT loop climbs Ellingwood Ridge and descends the standard Northwest Ridge, matching 14ers.com's Ellingwood Ridge route and its stated descent.",
+  "peak": {
+   "name": "La Plata",
+   "lat": 39.0294,
+   "lng": -106.473,
+   "elevation_ft": null,
+   "id": "co_la_plata"
+  },
+  "trailhead": {
+   "name": "La Plata Peak Trailhead (Highway 82)",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_north_ridge_2",
+  "slug": "spearhead-north-ridge-co",
+  "tier": "round",
+  "why": "FKT is the Spearhead North Ridge (5.6) from Glacier Gorge via Mills and Black Lakes, and Mountain Project's North Ridge page gives the same trailhead and Black Lake approach with a southwest descent.",
+  "peak": {
+   "name": "Spearhead",
+   "lat": 40.2567,
+   "lng": -105.63834,
+   "elevation_ft": null,
+   "id": "co_spearhead"
+  },
+  "trailhead": {
+   "name": "Glacier Gorge trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "nv_romanian_rib",
+  "slug": "romanian-rib-red-rock-canyon-nca-nv",
+  "tier": "round",
+  "why": "FKT climbs the 5.5 Romanian Rib and returns by the cairned gully and descent ledge, which Mountain Project gives as the route's own climb and descent.",
+  "peak": {
+   "name": "Labyrinth Wall",
+   "lat": 36.07745,
+   "lng": -115.48046,
+   "elevation_ft": null,
+   "id": "nv_first_creek_slabs"
+  },
+  "noSummitPin": true
+ },
+ {
+  "id": "ny_trap_dike_summer",
+  "slug": "adirondacks-mt-colden-trap-dike-ny",
+  "tier": "round",
+  "why": "FKT goes up Avalanche Lake and the Trap Dike and down by Lake Arnold, matching an independent description of the Trap Dike route and its south descent from Adirondack Loj.",
+  "peak": {
+   "name": "Mt Colden",
+   "lat": 44.12813,
+   "lng": -73.95962,
+   "elevation_ft": null,
+   "id": "ny_mt_colden"
+  },
+  "trailhead": {
+   "name": "Adirondack Loj (Heart Lake)",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ny_cascade_mountain_slide",
+  "slug": "cascade-slide-loop-ny",
+  "tier": "round",
+  "why": "FKT goes from the Cascade Lakes access road up the slide, bushwhacks to the summit and descends the hiking trail, matching an independent trip report of the Cascade slide.",
+  "peak": {
+   "name": "Cascade Mountain",
+   "lat": 44.21855,
+   "lng": -73.85993,
+   "elevation_ft": null,
+   "id": "ny_cascade_mountain"
+  }
+ },
+ {
+  "id": "or_south_sister_south_side_route",
+  "slug": "south-sister-or",
+  "tier": "round",
+  "why": "FKT follows the Climbers Trail from the Devils Lake area, which Mountain Project lists as the South Side Route, the most popular route there.",
+  "peak": {
+   "name": "South Sister",
+   "lat": 44.1023,
+   "lng": -121.7714,
+   "elevation_ft": null,
+   "id": "or_south_sister"
+  },
+  "trailhead": {
+   "name": "Devils Lake",
+   "confirmed": true
+  },
+  "noSummitPin": true,
+  "noSummitPinWhy": "catalog peak coordinate is 170-180 m from the track; no pin placed there"
+ },
+ {
+  "id": "ut_kings_peak_anderson_pass",
+  "slug": "kings-peak-ut",
+  "tier": "round",
+  "why": "FKT round trip from Henrys Fork trailhead matches the Henrys Fork to Anderson Pass route to the summit.",
+  "peak": {
+   "name": "Kings Peak",
+   "lat": 40.77506,
+   "lng": -110.37355,
+   "elevation_ft": null,
+   "id": "ut_kings_peak"
+  },
+  "trailhead": {
+   "name": "Henrys Fork",
+   "confirmed": true
+  },
+  "noSummitPin": true,
+  "noSummitPinWhy": "catalog peak coordinate is 170-180 m from the track; no pin placed there"
+ },
+ {
+  "id": "wa_mount_teneriffe_kamikaze_trail",
+  "slug": "mount-teneriffe-wa",
+  "tier": "oneway",
+  "why": "FKT is listed as a Kamikaze Trail ascent from the gravel lot at the end of the road, matching the opened trip description of the Kamikaze Trail past Kamikaze Falls to the summit.",
+  "peak": {
+   "name": "Mount Teneriffe",
+   "lat": 47.5087156,
+   "lng": -121.6959398,
+   "elevation_ft": null,
+   "id": "wa_mount_teneriffe"
+  },
+  "trailhead": {
+   "name": "Mount Si Road gravel turnaround",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "wa_mount_terror_west_ridge",
+  "slug": "mount-terror-wa",
+  "tier": "round",
+  "why": "FKT goes from Goodell Creek to the Terror west ridge and back, the same trailhead and west-ridge line described in an independent trip report.",
+  "peak": {
+   "name": "Mount Terror",
+   "lat": 48.7748,
+   "lng": -121.2993,
+   "elevation_ft": null,
+   "id": "wa_mount_terror"
+  },
+  "trailhead": {
+   "name": "Goodell Creek trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "wy_west_face_2",
+  "slug": "gannett-peak-wy",
+  "tier": "round",
+  "why": "The track goes from Green River Lakes via Tourist Creek to Minor Glacier and the north ridge, matching Mountain Project's West Face line, which allows Tourist or Wells Creek approaches.",
+  "peak": {
+   "name": "Gannett Peak",
+   "lat": 43.18417,
+   "lng": -109.65444,
+   "elevation_ft": null,
+   "id": "wy_gannett_peak"
+  },
+  "trailhead": {
+   "name": "Green River Lakes",
+   "confirmed": true
+  }
+ }
+]

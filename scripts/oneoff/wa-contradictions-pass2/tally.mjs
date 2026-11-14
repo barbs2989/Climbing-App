@@ -1,6 +1,7 @@
+import { fileURLToPath } from "node:url";
 // Totals across every research result and every applied patch, for the audit README.
 import fs from "node:fs";
-const T = new URL("../../../audits/wa-contradictions-pass2", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-contradictions-pass2", import.meta.url));
 const v = {}, routesFixed = new Set(), unresolved = [];
 let results = 0, discovered = 0;
 for (const f of fs.readdirSync(`${T}/research/out`)) {

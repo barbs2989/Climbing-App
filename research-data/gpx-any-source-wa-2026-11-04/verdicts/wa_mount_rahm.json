@@ -1,0 +1,81 @@
+{
+ "area_id": "wa_mount_rahm",
+ "routes": [
+  {
+   "route_id": "wa_mount_rahm_custer_traverse",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents Jul 20, Aug 9, Sep 3 (Jun 4); web: Ouzel Lake melted out by July, early-season snow needs an axe, Aug-Sep reports; stored Jul-Sep agrees"
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3345960",
+     "verdict": "unsure",
+     "why": "Summited Rahm, then turned back toward Custer in whiteout on the south ridge; did not complete the traverse"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rahm_south_side",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents Jul 20, Aug 9, Sep 3 (Jun 4); web: Ouzel Lake melted out by July, early-season snow needs an axe, Aug-Sep reports; stored Jul-Sep agrees"
+   },
+   "track": {
+    "aid": "3345960",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "13 Sep, camped at Ouzel Lake, followed the 7,600 ft line to the base of Rahm and took the right-hand gully, then both summits; matches our terrace, cliff band and right-fork description; summit pin 16 m; start=end round trip. The only other route here is a link between summits, not a peak ascent"
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3351011",
+     "verdict": "unsure",
+     "why": "No report and no logged route; different start in BC"
+    },
+    {
+     "aid": "2923736",
+     "verdict": "unsure",
+     "why": "Partial track from the road to Ouzel Lake, no round trip"
+    },
+    {
+     "aid": "2890073",
+     "verdict": "different",
+     "why": "Highest point is Spickard's summit area, not Rahm; South Gully there is a different peak"
+    },
+    {
+     "aid": "2281243",
+     "verdict": "unsure",
+     "why": "Logged South Ridge, no report detail, different start"
+    },
+    {
+     "aid": "3231416",
+     "verdict": "offseason",
+     "why": "13 June, more than a month before the season"
+    },
+    {
+     "aid": "2448526",
+     "verdict": "offseason",
+     "why": "February"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "No trailhead pin proposed: the harvested tracks start at three different points on the BC side (49.024,-121.381; 49.011,-121.358; 49.020,-121.376) and I could not confirm one named Depot Creek trailhead coordinate from a fetched page. The Custer-Rahm traverse has no completing track. No in-season fact met the not-already-stored test."
+}

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:selected-state — a control that LOOKS selected must SAY it is selected.
 //
 // Until #1041 the primary nav was the only control in this app that did:
@@ -51,7 +53,7 @@ import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { overlayStates, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
 import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
 // THE LABELS NAV ACTUALLY CARRIES. This list used to say "Discover", which is the tab's ID and
 // NOT its label -- NAV renders it as "Partners" -- and it omitted "Ranks" altogether. tap()
@@ -63,7 +65,7 @@ const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=
 //
 // It was not academic: the Partners tab carries [Find partners | Join a crew | Hire a guide],
 // which marks its selection with border, background AND colour and announced nothing.
-const TABS = arg("tabs", "Home,Climbs,Partners,Crews,Logbook,Ranks,Profile").split(",").filter(Boolean);
+const TABS = arg("tabs", "Home,Climbs,Partners,Crews,Logbook,Ranks,Profile,Groups").split(",").filter(Boolean);
 // EVERY overlay the app declares, DISCOVERED rather than listed.
 //
 // A hand-picked list is what put this guard wrong twice in one day. It shipped walking six
@@ -135,8 +137,8 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 // the shared `?z=` opener and rewrites nothing about app state, which is exactly what is
 // needed to reach onboardOpen on the populated demo.
 log(`starting dev server on ${port} with the overlay scaffold...`);
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });
@@ -258,13 +260,17 @@ const SCAN = `(() => {
   //
   // The argument for scoping was that every overlay opens with ?zt=me, so the background is always
   // the Profile tab, which is walked first on its own -- nothing could be lost. THAT PREMISE IS
-  // FALSE for the overlays that inject state: postMenuFor and reactPickerFor put a whole GROUP
+  // FALSE for the overlays that inject state: postMenuFor (and reactPickerFor, a dialog until 2026-11-05) put a whole GROUP
   // VIEW on screen behind their dialog, and no other walked screen reaches it. A before/after diff
   // of the measured controls (not the counts -- the SET) showed exactly two lost:
   //     overlay:postMenuFor   [Newest|Most reacted|Saved]   the group feed sort bar
   //     overlay:settingsOpen  [ft mi|m km]                  the units toggle
   // Both are controls #1233 had just fixed. A 25% saving is not worth two controls of coverage,
   // and this repo's own rule is that a skipped check is worth less than a runner minute.
+  // (2026-10-15: that sort bar is now a native <select>, which needs no aria state, but the same
+  // group view still puts stateful rows only it reaches behind the dialog: the page's tabs
+  // (aria-current), the topic filter (aria-pressed), and each post's Like (aria-pressed) and
+  // Comment (aria-expanded) buttons. The argument stands.)
   for (const el of document.querySelectorAll("button,[role='button'],[role='tab'],[role='checkbox']")) {
     if (!vis(el)) continue;
     const p = el.parentElement; if (!p) continue;

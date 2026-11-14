@@ -1,0 +1,122 @@
+[
+ {
+  "id": "co_quandary_peak_standard_route_east_ridge",
+  "i": 1,
+  "name": "Standard Route summit",
+  "from": [
+   39.3973,
+   -106.1064
+  ],
+  "op": "none",
+  "source": "GNIS 179667 Quandary Peak",
+  "reason": "Pin ~10 m from GNIS Summit; local max 14268 (published 14,265)."
+ },
+ {
+  "id": "co_solo_flight",
+  "i": 1,
+  "name": "Lone Eagle Peak summit",
+  "from": [
+   40.0714,
+   -105.66
+  ],
+  "op": "move",
+  "to": [
+   40.0694,
+   -105.66065
+  ],
+  "source": "GNIS 178451 Lone Eagle Peak",
+  "ground_ft_at_to": 11986,
+  "quote": "gaz_id 178451 Lone Eagle Peak, Summit, CO",
+  "reason": "Pin 229 m from GNIS Summit, ground 11842 vs published 11,920; GNIS point reads 11986 on the high ridge."
+ },
+ {
+  "id": "nh_whitney_gilman_ridge",
+  "i": 0,
+  "name": "Whitney-Gilman Area summit",
+  "from": [
+   44.15597,
+   -71.68713
+  ],
+  "op": "none",
+  "source": "GNIS 873192 Cannon Mountain (summit 1 km west)",
+  "reason": "Pin named for the cliff area (first pin), not Cannon Mountain summit; ground 2804 ft. No published coordinate for the cliff top found; left alone."
+ },
+ {
+  "id": "ny_big_slide_mtn_the_brothers_trail",
+  "i": 0,
+  "name": "Big Slide Mtn. summit",
+  "from": [
+   44.1822,
+   -73.8708
+  ],
+  "op": "none",
+  "source": "GNIS 943955 Big Slide Mountain",
+  "reason": "Pin ~12 m from GNIS Summit; local max 4236 ft (published ~4,240)."
+ },
+ {
+  "id": "ut_south_ridge",
+  "i": 0,
+  "name": "Mt. Superior / Monte Cristo summit",
+  "from": [
+   40.59001,
+   -111.66633
+  ],
+  "op": "move",
+  "to": [
+   40.59118,
+   -111.67119
+  ],
+  "source": "GNIS 2555142 Superior Peak",
+  "ground_ft_at_to": 11108,
+  "quote": "gaz_id 2555142 Superior Peak, Summit, UT",
+  "reason": "Pin 430 m ESE of the GNIS Summit at 10706 ft (not a max, ~430 ft below the peak); GNIS point is a 3DEP local max at 11108 (Mount Superior ~11,132)."
+ },
+ {
+  "id": "adams_avalanche_glacier",
+  "i": 2,
+  "name": "Mount Adams summit",
+  "from": [
+   46.202494,
+   -121.490746
+  ],
+  "op": "none",
+  "source": "GNIS 1515726 Mount Adams",
+  "reason": "Pin ~7 m from GNIS Summit; elev 12276 correct."
+ },
+ {
+  "id": "adams_northwest_ridge",
+  "i": 2,
+  "name": "Mount Adams summit",
+  "from": [
+   46.202494,
+   -121.490746
+  ],
+  "op": "none",
+  "source": "GNIS 1515726 Mount Adams",
+  "reason": "Pin ~7 m from GNIS Summit; elev 12276 correct."
+ },
+ {
+  "id": "wy_cathedral_traverse",
+  "i": 1,
+  "name": "Teewinot Mountain",
+  "from": [
+   43.74669,
+   -110.78002
+  ],
+  "op": "none",
+  "source": "GNIS 1603547 Teewinot Mountain",
+  "reason": "Pin 34 m from GNIS Summit; sharp peak, 3DEP at GNIS 12237 vs published 12,330; pin elev equals published."
+ },
+ {
+  "id": "wy_cirque_of_the_towers_traverse",
+  "i": 3,
+  "name": "Pingora",
+  "from": [
+   42.77912,
+   -109.22541
+  ],
+  "op": "none",
+  "source": "GNIS 1602176 Pingora Peak [42.77879,-109.22545]",
+  "reason": "Pin 37 m from GNIS Summit; local max 11843 vs 11,889."
+ }
+]

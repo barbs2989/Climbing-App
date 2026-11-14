@@ -1,0 +1,602 @@
+[
+ {
+  "id": "wa_cardinal_peak_se_slopes",
+  "waypoints": [
+   {
+    "lat": 48.0112,
+    "lng": -120.5718,
+    "elev": 3940,
+    "name": "North Fork Entiat Trailhead",
+    "note": "Self-issue wilderness register and NW Forest Pass/day-use fee kiosk at the lot; trail immediately enters the 2012 Pyramid Fire burn scar.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "FR-5606 ends at the lot, and the North Fork Entiat River Trail #1437 starts from it. The lower trail sits outside the wilderness boundary, so mountain bikes are legal on the first several miles and many parties use one — this is a 20-21 mile round trip with about 4,700 ft of gain, long enough that most do it as a very long day or a one-night backpack."
+   },
+   {
+    "lat": 48.013051000000004,
+    "lng": -120.57303893877551,
+    "elev": 3960,
+    "name": "Grouse Creek crossing",
+    "note": "Ford or log-crossing of Grouse Creek near the trailhead; can run high with early-season snowmelt.",
+    "type": "Water",
+    "distMi": 0.2,
+    "directions": "Follow #1437 up-valley from the lot, straight into the burn. The creek is crossed on a log, inside one of the fire-damaged stretches where blowdown is heaviest."
+   },
+   {
+    "lat": 48.07647,
+    "lng": -120.627495,
+    "elev": 5240,
+    "name": "Fern Lake Trail (#1436) junction",
+    "note": "North Fork Entiat Trail #1437 continues straight; Fern Lake Trail forks left/west and climbs steeply — stay right/straight for Cardinal Peak.",
+    "type": "Junction",
+    "distMi": 6.1,
+    "directions": "Roughly six miles of gentle, mostly forested grade beside the North Fork Entiat. The river runs alongside the whole way and is the last reliable water — everything above the basin is dry — so fill here. Expect to lose the tread briefly among downed timber in the burned sections and to scramble back onto it."
+   },
+   {
+    "lat": 48.094495,
+    "lng": -120.60995224489797,
+    "elev": 7100,
+    "name": "West-side basin camp below Cardinal Peak",
+    "note": "Flat, open bench (old glacial terrace) at the head of the North Fork Entiat basin, directly below the broad gully leading to the saddle between Cardinal's north and middle summits; last reliable camping and water before the climb.",
+    "type": "Campsite",
+    "distMi": 9,
+    "directions": "Stay on #1437 past the Fern Lake fork. Around mile 7, near 5,800 ft, the trail bends sharply east and switchbacks about half a mile to a junction with the Pyramid Mountain Trail #1433 at roughly 6,600 ft — a useful timing landmark, since the summit is about a mile northeast of it. The mile above that junction is steep and loose underfoot. Where the trail reaches open meadow and basin, leave it and hike east through sparse forest and then talus toward Cardinal's west flank."
+   },
+   {
+    "lat": 48.098197,
+    "lng": -120.61163012244899,
+    "elev": 7800,
+    "name": "Northwest-facing scree/snow gully",
+    "note": "Loose class 2 talus and scree gully that often holds snow to ~40 degrees well into summer; crampons/axe advisable early season, rockfall risk from parties above.",
+    "type": "Hazard",
+    "distMi": 9.4,
+    "directions": "Contour onto the peak's western slopes and work along below the summit ridge across steep talus and scree until you are underneath the broad gully leading to the notch between the north and middle summits. Loose rock is constant across this whole traverse, so a helmet is worthwhile and parties should spread out rather than climb directly above one another."
+   },
+   {
+    "lat": 48.100048,
+    "lng": -120.61246906122449,
+    "elev": 8300,
+    "name": "Saddle between north and middle summits",
+    "note": "Gully tops out on the summit ridge here; turn and scramble class 2-3 along or just east of the crest toward the true summit.",
+    "type": "Junction",
+    "distMi": 9.6,
+    "directions": "Straight up the gully. Early in the season this is moderately steep snow, up to about 40 degrees, and wants an axe and crampons; later in the summer it is loose class 2 talus and scree the whole way. Stow the crampons at the top if the rock above is dry."
+   },
+   {
+    "lat": 48.10308,
+    "lng": -120.61265,
+    "elev": 8596,
+    "name": "Cardinal Peak summit",
+    "note": "True summit of the Chelan Mountains' highest point; exposed class 3 scrambling leads to the middle summit, and a short 4th/low-5th-class step then gains this slightly higher south point, register has historically been a film canister tucked among the summit rocks.",
+    "type": "Summit",
+    "distMi": 9.8,
+    "directions": "Scramble along or just east of the crest. It is class 2-3 with genuinely exposed moves near the top — some parties call sections class 3-4 — and picking solid rock and a careful line matters more here than speed."
+   }
+  ],
+  "removed": [
+   {
+    "i": 2,
+    "wp": "Fern Lake Trail (#1436) junction",
+    "type": "Junction",
+    "offM": 944
+   },
+   {
+    "i": 3,
+    "wp": "West-side basin camp below Cardinal Peak",
+    "type": "Campsite",
+    "offM": 742
+   }
+  ]
+ },
+ {
+  "id": "wa_chockstone_route",
+  "waypoints": [
+   {
+    "lat": 48.596606,
+    "lng": -120.512815,
+    "elev": 2900,
+    "name": "Klipchuck Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.580406,
+    "lng": -120.624315,
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.518965,
+    "lng": -120.67436,
+    "elev": 5400,
+    "name": "Blue Lake TH",
+    "note": "SR 20 pullout about 1 mi west of Washington Pass.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 (the North Cascades Highway) to the Blue Lake Trailhead on the south side of the highway just west of Washington Pass. The highway over the pass closes in winter. A Northwest Forest Pass or day fee is required to park."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6900,
+    "name": "Spire col (gully base)",
+    "note": "Base of the gully between North and South Early Winters Spires, below the giant chockstones.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "Hike the Blue Lake Trail about a mile and a half to the signed Liberty Bell Trail #727 climbing-access junction, then take the climbers' path up through slabs, talus and heather into the basin below the west faces. Head for the foot of the huge cleft that splits North and South Early Winters Spires; this is the west-side gully, not the east-side couloir reached from the highway hairpin."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7300,
+    "name": "Chockstone crux",
+    "note": "5.7 pitch bypassing the first giant chockstone on the left.",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "Climb a short step of low fifth-class slab and layback moves, then walk up the gully bed, taking cracks and ramps along its left edge, to below the first giant chockstone. Early in the season the gully can hold snow, so carry an axe and crampons."
+   },
+   {
+    "lat": 48.51291,
+    "lng": -120.65557,
+    "elev": 7760,
+    "name": "North Early Winters Spire",
+    "type": "Summit",
+    "distMi": 2.5,
+    "directions": "Pass the chockstone on the left over blocky ground to an exposed lieback and a delicate slab, then continue on good, bolted rock with a rightward traverse and finish up a loose gully and chimney onto the summit plateau."
+   }
+  ],
+  "removed": [
+   {
+    "i": 0,
+    "wp": "Klipchuck Campground",
+    "type": "Campsite",
+    "offM": 13924
+   },
+   {
+    "i": 1,
+    "wp": "Lone Fir Campground",
+    "type": "Campsite",
+    "offM": 7722
+   }
+  ]
+ },
+ {
+  "id": "wa_eldorado_peak_eldorado_glacier_nw",
+  "waypoints": [
+   {
+    "lat": 48.529334,
+    "lng": -121.273768,
+    "elev": 1225,
+    "name": "Marble Creek Campground, Cascade River Road",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.4926,
+    "lng": -121.1222,
+    "elev": 2164,
+    "name": "Eldorado Creek Trailhead (Cascade River Road)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 2164,
+    "directions": "Drive Cascade River Road to the Eldorado trailhead pullout at about mile 20, at roughly 2,100 feet. The road usually doesn't open until late May or June, depending on snowpack. Camping in the Eldorado/Inspiration Glacier zone is a high-occupancy area requiring an advance wilderness permit reservation, so arrange that before you drive up."
+   },
+   {
+    "lat": 48.5352,
+    "lng": -121.1233,
+    "elev": 7634,
+    "name": "Eldorado / Inspiration Glacier camp",
+    "type": "Campsite",
+    "distMi": 3.5,
+    "elevFt": 7634,
+    "directions": "Walk about 90 ft back down the road and cross the Cascade River on the log, then go about 100 ft straight away from the river to the climbers' path. It climbs steeply through timber for about 1,500 ft to a boulder field; follow cairns up it, staying climber's right of Eldorado Creek, into Eldorado Creek Basin. Cross the ridge at about 6,100 ft into Roush Basin, take talus and slabs onto the Eldorado Glacier, rope up, and climb it to camp near 7,500 ft."
+   },
+   {
+    "lat": 48.54,
+    "lng": -121.14,
+    "elev": 7800,
+    "name": "Base of northwest couloir",
+    "type": "Junction",
+    "distMi": 4.5,
+    "elevFt": 7800,
+    "directions": "Roped, cross the glacier past the East Ridge and head for the obvious notch between Eldorado's North Ridge and the first rock spire (Dean's Tower), at about 8,100 ft. Rappel from the piton anchor on the far side into the Marble Creek cirque (one 60 m rope does it), then traverse a few hundred feet across the small glacier to the foot of the couloir near 7,800 ft. A moat or bergschrund there widens through the summer."
+   },
+   {
+    "lat": 48.5374,
+    "lng": -121.1345,
+    "elev": 8872,
+    "name": "Eldorado Peak summit",
+    "type": "Summit",
+    "distMi": 4.9,
+    "elevFt": 8872,
+    "directions": "Climb the couloir that splits the northwest face, about 1,000 ft of short ice steps separated by lower-angle snow, to a small flat area just below the summit ridge. From there follow the exposed snow knife-edge to the summit."
+   }
+  ],
+  "removed": [
+   {
+    "i": 0,
+    "wp": "Marble Creek Campground, Cascade River Road",
+    "type": "Campsite",
+    "offM": 10310
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_fairchild_standard",
+  "waypoints": [
+   {
+    "lat": 47.96963,
+    "lng": -123.86379,
+    "elev": 1684,
+    "name": "Sol Duc Hot Springs Resort campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.955249,
+    "lng": -123.835839,
+    "elev": 1950,
+    "name": "Sol Duc Trailhead",
+    "note": "Large trailhead parking lot at the end of Sol Duc Hot Springs Road; Olympic National Park entrance pass required; overnight trips need a wilderness permit reserved in advance, since none are issued at the trailhead.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Turn south off US 101 onto Sol Duc Hot Springs Road (about 29 miles west of Port Angeles) and follow it, paved the whole way, past the park entrance station, the Sol Duc Hot Springs Resort and the campground to the large lot at road's end — the trailhead is at the very end, beyond the resort."
+   },
+   {
+    "lat": 47.95064,
+    "lng": -123.8152,
+    "elev": 1980,
+    "name": "Sol Duc Falls",
+    "note": "Trail crosses a footbridge just below the falls; last easy, reliable water before the climb toward Appleton Pass begins in earnest.",
+    "type": "Water",
+    "distMi": 0.8,
+    "directions": "From the end of the lot take the Sol Duc River Trail up the valley: 0.8 mi of wide, near-level old-growth tread with essentially no elevation change (1,950 to 1,980 ft), ending at the footbridge just below the falls. This is the last easy, reliable water taken straight off the trail before the climbing starts."
+   },
+   {
+    "lat": 47.932375,
+    "lng": -123.75057,
+    "elev": 2900,
+    "name": "Appleton Pass Trail junction",
+    "note": "Leave the Sol Duc River Trail here and turn right/uphill onto the Appleton Pass Trail; elevation is a rough interpolation along the NPS-stated 2,000-5,100 ft climb.",
+    "type": "Junction",
+    "distMi": 4.9
+   },
+   {
+    "lat": 47.93842,
+    "lng": -123.72269,
+    "elev": 5114,
+    "name": "Appleton Pass",
+    "note": "Broad alpine pass on the Bailey Range crest with meadows and views into the Boulder Lake basin; leave the maintained trail here to begin cross-country travel into the Bailey Range proper.",
+    "type": "Junction",
+    "distMi": 7.3
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5500,
+    "name": "The Cat Walk (Cat Peak traverse)",
+    "note": "Old, narrow, exposed use-path sidehilling the steep flanks of Cat Peak; the steepest, most exposure-prone stretch of the whole approach, worse with a full pack.",
+    "type": "Hazard",
+    "distMi": 10.5
+   },
+   {
+    "lat": 47.890988,
+    "lng": -123.664591,
+    "elev": 5300,
+    "name": "Boston Charlie's Camp",
+    "note": "Small flat tent spot at the east end of the Cat Walk with a shallow melt-water sinkhole pond; water needs filtering and the site is exposed to wind/weather.",
+    "type": "Campsite",
+    "distMi": 11.5,
+    "directions": "Follow the sidehill path east to the far end of the Cat Walk arete, giving back roughly 200 ft. The camp is a single small flat tent spot at the east end with a shallow melt-water sinkhole pond beside it — filter that water, and expect the site to be fully exposed to wind and weather."
+   },
+   {
+    "lat": 47.894242,
+    "lng": -123.649295,
+    "elev": 6995,
+    "name": "Mount Carrie ridge/glacier gain",
+    "note": "Highest point in the Bailey Range (0.84 mi SW of Fairchild's summit); per the descent beta this is where the route regains the ridge/glacier system linking to the Fairchild Glacier.",
+    "type": "Junction",
+    "distMi": 14.5,
+    "directions": "Climb roughly 1,700 ft southeast from Boston Charlie's onto Mount Carrie (6,995 ft), the highest point in the Bailey Range. There is a real choice here: many parties sidehill the loose, exposed talus across Carrie's south face, but staying higher — up the ridge on Carrie's north side, over or just under the summit — avoids the worst of the sidehilling and sets up a cleaner entry onto the Fairchild Glacier. Where the crest becomes too sharp to walk, traverse up across the scree flanks. There is no reliable water on this stretch, so tank up at camp."
+   },
+   {
+    "lat": 47.8971915,
+    "lng": -123.64133100000001,
+    "elev": 6700,
+    "name": "Fairchild Glacier crossing",
+    "note": "Rope up and don crampons/axe here; follow the wind-formed ridge down-glacier toward the exit col on Ruth Peak's shoulder — crevasse hazard, especially late season when snow bridges are thin.",
+    "type": "Hazard",
+    "distMi": 15,
+    "directions": "Drop about 300 ft northeast off Carrie's ridge onto the upper Fairchild Glacier, which starts around 6,600-6,700 ft on the Bailey crest and falls away to the northeast. Rope up and put on crampons here; an ice axe is wanted most of the season. Rather than taking the direct line, follow the wind-formed snow ridge running down the glacier — the same idea as the Hogsback on Mount Hood — which keeps you clear of the crevasses. Late season the snow bridges thin and the surface goes to bare, hard ice, so this is full crampon technique, not microspikes."
+   },
+   {
+    "lat": 47.900458,
+    "lng": -123.633334,
+    "elev": 6899,
+    "name": "Mount Fairchild",
+    "note": "Second-highest peak in the Bailey Range; short final scramble on snow and rock from the glacier saddle to the true summit.",
+    "type": "Summit",
+    "distMi": 15.5,
+    "directions": "Leave the wind ridge and take the steeper exit section up onto Fairchild's summit ridge: roughly 35-40 degrees of snow past an icy patch, the steepest ground on the route. Stay roped and in crampons through it. From the summit ridge a short scramble on snow and rock gains the 6,899 ft true summit, second-highest in the Bailey Range. There is no rappel anywhere on this climb — the only way off is to reverse the entire line, and the glacier softens through the afternoon, so set an early turnaround."
+   },
+   {
+    "lat": 47.9067,
+    "lng": -123.6289,
+    "elev": 6600,
+    "name": "Fairchild Glacier",
+    "type": "Feature",
+    "elevFt": 6600
+   }
+  ],
+  "removed": [
+   {
+    "i": 0,
+    "wp": "Sol Duc Hot Springs Resort campground",
+    "type": "Campsite",
+    "offM": 2625
+   }
+  ]
+ },
+ {
+  "id": "wa_mount_herman_standard_scramble",
+  "waypoints": [
+   {
+    "lat": 48.904709,
+    "lng": -121.696731,
+    "elev": 2060,
+    "name": "Silver Fir Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.861419,
+    "lng": -121.682622,
+    "elev": 4200,
+    "name": "Bagley Lakes Trailhead / Heather Meadows",
+    "note": "South end of the upper Mt. Baker Ski Area parking lot off SR 542; Northwest Forest Pass required to park, self-issue fee machine at the lot.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From I-5 Exit 255 in Bellingham, follow SR 542, the Mount Baker Highway, east about 56 miles through Glacier to the Heather Meadows area at the Mt. Baker Ski Area. Turn into the large parking lot signed for Bagley Lakes, at about 4,200 ft. A Northwest Forest Pass or America the Beautiful pass is required to park."
+   },
+   {
+    "lat": 48.85403,
+    "lng": -121.6922,
+    "elev": 4300,
+    "name": "Bagley Lakes",
+    "note": "Trail skirts the Bagley Lakes basin shortly after the trailhead; last easy, reliable water before the climb toward Herman Saddle.",
+    "type": "Water",
+    "distMi": 0.5
+   },
+   {
+    "lat": 48.85906285714286,
+    "lng": -121.69788285714286,
+    "elev": 4500,
+    "name": "Chain Lakes Trail — switchbacks toward Herman Saddle",
+    "note": "Stay on Chain Lakes Trail as it switchbacks up toward Herman Saddle; the route leaves it only at the last switchback below the saddle, an unmarked exit that is easy to miss in cloud.",
+    "type": "Junction",
+    "distMi": 1.2
+   },
+   {
+    "lat": 48.85723,
+    "lng": -121.70916,
+    "elev": 5300,
+    "name": "Herman Saddle",
+    "note": "Broad saddle between Mazama Dome and Mount Herman with views of Baker, Shuksan and Iceberg Lake below; the true col is variously placed anywhere from ~5,300 to ~5,450 ft.",
+    "type": "Junction",
+    "distMi": 2
+   },
+   {
+    "lat": 48.861287272727274,
+    "lng": -121.7061,
+    "elev": 5700,
+    "name": "Heather-and-talus south slope",
+    "note": "Once on the ridge by the saddle, off any trail, work up loose heather benches and talus on Herman's broad south face — footing is unstable, especially wet or on the descent.",
+    "type": "Hazard",
+    "distMi": 2.5
+   },
+   {
+    "lat": 48.863763636363636,
+    "lng": -121.704288,
+    "elev": 5900,
+    "name": "Unnamed lake / gully to summit ridge",
+    "note": "A small unnamed tarn sits below a series of cirques; a gully rising directly from it leads to the low point on the summit ridge (near-true scramble, easy 3rd class).",
+    "type": "Junction",
+    "distMi": 2.8
+   },
+   {
+    "lat": 48.8662,
+    "lng": -121.7025,
+    "elev": 6285,
+    "name": "Mount Herman",
+    "note": "Short east ridge gains the summit block from the ridge low point; descend the same south/southwest ridge and heather-scree gully rather than the east side.",
+    "type": "Summit",
+    "distMi": 3.1
+   }
+  ],
+  "removed": [
+   {
+    "i": 0,
+    "wp": "Silver Fir Campground",
+    "type": "Campsite",
+    "offM": 4285
+   }
+  ]
+ },
+ {
+  "id": "wa_sews_sw_rib",
+  "waypoints": [
+   {
+    "lat": 48.596606,
+    "lng": -120.512815,
+    "elev": 2900,
+    "name": "Klipchuck Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.580406,
+    "lng": -120.624315,
+    "elev": 3600,
+    "name": "Lone Fir Campground",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.5191,
+    "lng": -120.6742,
+    "elev": 5400,
+    "name": "Blue Lake Trailhead, Hwy 20",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 5400,
+    "directions": "From Winthrop drive west on Highway 20 about 31 miles and pass the Washington Pass Overlook; the Blue Lake Trailhead is on the left just under a mile beyond it. From Newhalem drive east about 42 miles; the trailhead is on the right before Washington Pass. A Northwest Forest Pass or interagency pass is required to park."
+   },
+   {
+    "lat": 48.512275,
+    "lng": -120.655395,
+    "elev": 7807,
+    "name": "South Early Winter Spire summit",
+    "type": "Summit",
+    "distMi": 1.6,
+    "elevFt": 7807,
+    "directions": "Hike the Blue Lake Trail about 1.25 miles to a clearing. At a small, often cairned stream, leave the trail and follow climbers' tracks up the slabs beside the stream into the basin, then up talus to the Y-shaped larch at the base of the rib, just north of the Southwest Couloir. Climb the rib's seven pitches to the summit."
+   }
+  ],
+  "removed": [
+   {
+    "i": 0,
+    "wp": "Klipchuck Campground",
+    "type": "Campsite",
+    "offM": 14081
+   },
+   {
+    "i": 1,
+    "wp": "Lone Fir Campground",
+    "type": "Campsite",
+    "offM": 7289
+   }
+  ]
+ },
+ {
+  "id": "wa_sperry_peak_standard",
+  "waypoints": [
+   {
+    "lat": 48.070566,
+    "lng": -121.655575,
+    "elev": 1325,
+    "name": "Red Bridge Campground, Mountain Loop Highway",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.0247261,
+    "lng": -121.4778459,
+    "elev": 2350,
+    "name": "Sunrise Mine Trailhead",
+    "type": "Trailhead",
+    "distMi": null,
+    "elevFt": 2350,
+    "directions": "From Granite Falls, drive the Mountain Loop Highway east about 28 miles (about 17 miles past the Verlot Public Service Center) and turn right onto Sunrise Mine Road, FS Road 4065. Follow it about 2.2 miles to its end at the Sunrise Mine Trailhead, about 2,350 ft. A Northwest Forest Pass or equivalent recreation pass is required to park."
+   },
+   {
+    "lat": 48.0143,
+    "lng": -121.5085,
+    "elev": 5030,
+    "name": "Lake Elan (Vesper Lake)",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": 5030
+   },
+   {
+    "lat": 48.015975,
+    "lng": -121.502475,
+    "elev": 6120,
+    "name": "Sperry Peak Summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 6120
+   }
+  ],
+  "removed": [
+   {
+    "i": 0,
+    "wp": "Red Bridge Campground, Mountain Loop Highway",
+    "type": "Campsite",
+    "offM": 12070
+   }
+  ]
+ },
+ {
+  "id": "wa_windy_peak_trail",
+  "waypoints": [
+   {
+    "lat": 48.855663,
+    "lng": -119.946697,
+    "elev": 5500,
+    "name": "Windy Peak Trailhead / Long Swamp Campground",
+    "note": "Self-issue wilderness permit and NW Forest Pass at the kiosk; last car-accessible camping before Windy Peak Trail #342 climbs into the Pasayten Wilderness.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Tonasket, cross the Okanogan River and drive west on Loomis-Oroville Road to Loomis. Just north of town turn onto Toats Coulee Road, County Road 9425, which becomes 4066 and then FR-39, and follow it roughly 20 miles to the junction with FR-3900-300 at Long Swamp Campground, about 5,500 ft. That last stretch is a long dirt road and is often not reliably clear of snow and debris until late June. Park at the campground, fill out the self-issue wilderness permit at the kiosk, and display a NW Forest Pass. Do not confuse this with the Windy Creek / Cathedral Driveway trailhead about 3 miles farther west on the same road system, which starts a different and brushier trail."
+   },
+   {
+    "lat": 48.871585,
+    "lng": -119.950888,
+    "elev": 6800,
+    "name": "Pasayten Wilderness Boundary",
+    "note": "Steep switchbacked climb through burned lodgepole pine from the trailhead tops out at the wilderness boundary sign; no reliable water to this point.",
+    "type": "Junction",
+    "distMi": 2.5,
+    "directions": "From the trailhead, Windy Peak Trail #342 climbs steeply on switchbacks through burned lodgepole pine for about 2.5 miles and 1,300 ft to the signed Pasayten Wilderness boundary. There is no reliable water on this stretch, so carry what you need from the car."
+   },
+   {
+    "lat": 48.876732,
+    "lng": -119.952676,
+    "elev": 7050,
+    "name": "Two Bear Camp",
+    "note": "Established camp just past the burn where the trail's first reliable water source is found; good base camp for a two-day trip.",
+    "type": "Campsite",
+    "distMi": 3.3,
+    "directions": "A short, comparatively gentle stretch: the trail continues through the same burned lodgepole beyond the wilderness boundary sign to reach the camp. Fill bottles here, because the rest of the climb runs across open, burned hillsides."
+   },
+   {
+    "lat": 48.92748,
+    "lng": -119.97504,
+    "elev": 7935,
+    "name": "Windy Peak / Windy Creek Trail Junction",
+    "note": "Signed junction near the summit shoulder where the shorter Windy Creek Trail (5.5 mi alternate from Cathedral Driveway TH, brushy and blowdown-choked) joins the standard route.",
+    "type": "Junction",
+    "distMi": 10.2,
+    "directions": "The long middle of the route. The trail climbs steadily through burned timber and out onto open hillsides, passing junctions with the Clutch Creek and Basin Creek trails, which lead away toward Horseshoe Basin and the Boundary Trail; read the signs, since several of these connections make loops and it is possible to leave the Windy Peak trail without noticing. Higher up the tread runs along a ridge through meadows below the summit shoulder. Snow lingers on this upper section into July in many years, which matters more for routefinding than for footing, since it buries the tread."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": null,
+    "name": "Trail High Point / Summit Scramble Start",
+    "note": "Maintained tread ends on this open shoulder; the last 200-300 ft to the true summit is unmarked class 2 talus scrambling, not trail.",
+    "type": "Junction",
+    "distMi": 11,
+    "directions": "From the junction the trail keeps climbing the open ridge and meadows to its high point on the shoulder, gaining only a couple of hundred feet. The maintained tread simply ends here rather than at a sign, so note where you leave it."
+   },
+   {
+    "lat": 48.928205,
+    "lng": -119.970556,
+    "elev": 8335,
+    "name": "Windy Peak Summit (former fire lookout site)",
+    "note": "True summit and site of a 1932-1963 L-4 cab fire lookout (removed 1963); panoramic views across the Pasayten to Mt. Baker on clear days.",
+    "type": "Summit",
+    "distMi": 11.3,
+    "directions": "The last two to three hundred feet is off-trail on talus and blocks, unmarked and with no single line; some parties find easy class 3 moves near the top depending on where they thread it. Head straight for the high point above, where the old lookout site is. Footing is loose, so keep out from under anyone above you."
+   }
+  ],
+  "removed": [
+   {
+    "i": 1,
+    "wp": "Pasayten Wilderness Boundary",
+    "type": "Junction",
+    "offM": 607
+   },
+   {
+    "i": 2,
+    "wp": "Two Bear Camp",
+    "type": "Campsite",
+    "offM": 837
+   }
+  ]
+ }
+]

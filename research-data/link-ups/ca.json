@@ -1,0 +1,449 @@
+[
+ {
+  "id": "ca_lu_palisade_traverse",
+  "name": "Palisade Traverse (Thunderbolt to Sill)",
+  "state": "California",
+  "region": "Sierra Nevada, Palisades",
+  "legs": [
+   {
+    "peak": "Thunderbolt Peak",
+    "route": "Southwest Chute to the crest notch, then the 5.9 summit block (the Northeast Couloir is the other way to the crest)",
+    "connect": "",
+    "route_id": "ca_southwest_chute_1"
+   },
+   {
+    "peak": "Starlight Peak",
+    "route": "Underhill Couloir bypass (class 3 chimneys and slabs) to the Milk Bottle summit block, 5.4",
+    "connect": "Rappel back to the base of Thunderbolt's summit tower, then climb the class 3 chimney system on the Starlight side to the next summit.",
+    "route_id": null
+   },
+   {
+    "peak": "North Palisade",
+    "route": "Ridge from Starlight, around the 5.6 chimney via slabs, then the east slopes and a final chimney",
+    "connect": "Three rappels and about 100 feet of low fifth class lead to a notch; one rappel crosses a slot, then you angle left onto slabs below the top.",
+    "route_id": null
+   },
+   {
+    "peak": "Polemonium Peak",
+    "route": "Fourth class down to the U-Notch, then ridge scrambling up Polemonium",
+    "connect": "Downclimb fourth class and a 5.2 chimney, with two full-length rappels, to the U-Notch; the hardest moves come right out of the notch.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Sill",
+    "route": "East ridge, easy class 2 talus",
+    "connect": "Rappel the last class 4 step off Polemonium, then walk easy talus along the ridge to the summit.",
+    "route_id": null
+   }
+  ],
+  "duration": "3-5 days",
+  "how": "Climbers work the crest from Thunderbolt toward Sill so the hardest climbing and the high bivouac come early, with the easy talus finish last. The ridge is sustained fourth and fifth class with a 5.9 crux at the top of Thunderbolt and many rappels, so a rope, rock protection and rappel anchors are needed. Early in the season snow and ice skills are also required, and parties carry bivy gear because they sleep high on North Palisade.",
+  "descent": "Many parties leave the crest by the glacier drainage and a pass back to Thunderbolt Pass, which takes far longer than it looks because of cliff bands and boulder fields. Dropping from the U-Notch into the basin by rappel is the other option, and guided groups simply return to their high camp.",
+  "logistics": "Approach from the South Lake side via Dusy Basin to Thunderbolt Pass, or camp on the edge of the Palisade Glacier early in the season or in Palisade Basin later. Guided trips run May through September; carry bivy gear for a night high on North Palisade.",
+  "sources": [
+   "https://www.alpineinstitute.com/catalog/the-palisade-traverse",
+   "https://themtsarecalling.com/northpal/"
+  ],
+  "confidence": "high",
+  "notes": "Sources differ on the overall grade (5.6 to 5.9 depending on the variation); the hardest figure (5.9 on Thunderbolt) is used. The guided itinerary climbs Thunderbolt's Northeast Couloir, the solo report used the Southwest Chute.",
+  "also_route_ids": [
+   "ca_thunderbolt_to_sill_traverse"
+  ]
+ },
+ {
+  "id": "ca_lu_russell_carillon",
+  "name": "Mount Russell and Mount Carillon",
+  "state": "California",
+  "region": "Sierra Nevada, Whitney area",
+  "legs": [
+   {
+    "peak": "Mount Russell",
+    "route": "East Ridge from the Russell-Carillon saddle (class 3, very exposed)",
+    "connect": "",
+    "route_id": "ca_east_arete_3"
+   },
+   {
+    "peak": "Mount Carillon",
+    "route": "Sandy class 2 from the saddle with a little class 3",
+    "connect": "Return along the ridge to the saddle where packs were left, then walk east up the sandy slope to the summit and come back.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 day from a high camp; 2 days in all",
+  "how": "Both summits sit off one saddle, so you carry everything up to that col, leave packs, and climb Russell first because it is the serious one, then tag Carillon in a short side trip. The Russell ridge is exposed and has a gap to the higher west summit; carry helmets and be ready for loose rock. Carillon takes only about a quarter hour from the saddle.",
+  "descent": "Drop the scree from the saddle back to the lake camp in under an hour. Some parties instead go down toward Tulainyo Lake and out the far side, which is a different and longer exit.",
+  "logistics": "Camp at Upper Boy Scout Lake after the North Fork approach and Ebersbacher Ledges. This is inside the Whitney zone, so check the current permit rules for overnight trips.",
+  "sources": [
+   "https://themtsarecalling.com/russell/",
+   "https://climber.org/reports/1996/96.html",
+   "https://climber.org/reports/1997/286.html"
+  ],
+  "confidence": "high",
+  "notes": "Sources rate the Russell East Ridge from class 3 or easier to 'gnarly'; class 3 with severe exposure is used."
+ },
+ {
+  "id": "ca_lu_whitney_muir",
+  "name": "Mount Whitney and Mount Muir",
+  "state": "California",
+  "region": "Sierra Nevada, Whitney area",
+  "legs": [
+   {
+    "peak": "Mount Muir",
+    "route": "West side class 3 scramble from the Whitney Trail near Trail Crest",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Whitney",
+    "route": "Whitney Trail to the summit (or Mountaineer's Route if you climbed that way)",
+    "connect": "Return to the trail and continue along it to the summit of Whitney.",
+    "route_id": "ca_mt_whitney_mount_whitney_trail_the"
+   }
+  ],
+  "duration": "1 long day or part of a 2-3 day trip",
+  "how": "Muir is a short detour off the trail between Trail Crest and the Whitney summit. Climbers on the long Mountaineer's Route often descend by the trail and tag Muir on the way down, while trail hikers pick it up on the way up. The Muir scramble is steep, loose class 3 on blocks and a short chimney on the back of the final block. Finding the unmarked start is the main route-finding problem.",
+  "descent": "Descend the Whitney Trail switchbacks back to the portal. Climbers who came up the Mountaineer's Route can go down either way; the trail is the easier and better marked.",
+  "logistics": "Both peaks lie in the Whitney zone, so a day-use or overnight quota permit is needed year-round during the quota season. Early-season snow on the switchbacks may call for an axe and crampons.",
+  "sources": [
+   "https://climber.org/reports/1996/150.html",
+   "https://www.onxmaps.com/backcountry/trails/hiking/us/california/mount-muir-via-mount-whitney-trail-j064onej9q15"
+  ],
+  "confidence": "medium",
+  "notes": "One report climbs Muir after Whitney from the summit; others climb it on the way up. Order shown is the common trail-hiker order. Round trip about 18 miles with roughly 6,000 ft gain via the trail."
+ },
+ {
+  "id": "ca_lu_lyell_maclure",
+  "name": "Mount Lyell and Mount Maclure",
+  "state": "California",
+  "region": "Sierra Nevada, Yosemite",
+  "legs": [
+   {
+    "peak": "Mount Lyell",
+    "route": "Lyell Glacier to the Lyell-Maclure saddle, then class 3 rock to the summit",
+    "connect": "",
+    "route_id": "ca_lyell_glacier"
+   },
+   {
+    "peak": "Mount Maclure",
+    "route": "Southeast ridge from the saddle, class 2-3 talus and ledges",
+    "connect": "From the Lyell summit descend the ridge toward the saddle between the two peaks, using rock or snow, then climb the ridge of Maclure.",
+    "route_id": "ca_mount_maclure_standard_route"
+   }
+  ],
+  "duration": "1 very long day or 2 days",
+  "how": "Both summits share the same saddle at the top of the glacier, so you climb Lyell first (the bigger objective) and then walk over to Maclure from the col. Early season the glacier is snow and crampons help; later it can be hard ice and parties may traverse it rather than climb its steep upper part. The rock above the saddle is class 3 with a few exposed steps.",
+  "descent": "Glissade or walk the snow below Maclure back to the trail, rather than reversing the glacier. Some parties descend class 2-3 ledges toward their pack and then return down the canyon.",
+  "logistics": "From Tuolumne Meadows the trail up Lyell Canyon is long and flat, about 9 miles, then climbs steeply. Many climbers camp near the head of the canyon below Donohue Pass. Glacier conditions change a great deal from year to year.",
+  "sources": [
+   "https://www.snwburd.com/bob/trip_reports/lyell_1.html",
+   "https://www.climber.org/reports/2004/1330.html"
+  ],
+  "confidence": "high",
+  "notes": "One report found the climb to the summit plateau easier than the class 3-4 it had read about; class 3 with occasional class 4 on the rock above the saddle is used."
+ },
+ {
+  "id": "ca_lu_dana_gibbs",
+  "name": "Mount Dana and Mount Gibbs",
+  "state": "California",
+  "region": "Sierra Nevada, Yosemite and Tioga Pass",
+  "legs": [
+   {
+    "peak": "Mount Dana",
+    "route": "Tioga Pass use trail up the northwest side (class 1-2)",
+    "connect": "",
+    "route_id": "ca_mount_dana_2_standard_route"
+   },
+   {
+    "peak": "Mount Gibbs",
+    "route": "Northeast ridge or east face chute from the Dana-Gibbs saddle (class 2)",
+    "connect": "Drop about 1,200 feet of steep talus on Dana's south side to the saddle, then climb the jagged talus ridge toward Gibbs.",
+    "route_id": "ca_mount_gibbs_standard_route"
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Dana is the easy walk, so climbers do it first and then continue south over the saddle to the much quieter Gibbs. The ridge up Gibbs is loose talus that steepens to class 2; where it looks too committing near the top, an east-face chute leads to the summit. There is no use trail on Gibbs and snow can linger on Dana's southeast side early in the season.",
+  "descent": "Either descend Gibbs' west and northwest slopes and angle across Dana's lower flank to the starting point, or continue south along the crest to the Mono Pass trail and walk out to a second trailhead, which needs a shuttle.",
+  "logistics": "Start at the Tioga Pass entrance station. A loop back to the start needs no shuttle; exiting by the Mono Pass trail ends at a different trailhead and does.",
+  "sources": [
+   "https://climber.org/reports/1997/191.html",
+   "https://snwburd.com/bob/trip_reports/dana_1.html"
+  ],
+  "confidence": "high",
+  "notes": "Another report starts from the Mono Pass trailhead and climbs Gibbs alone first; the Tioga Pass order is the common one."
+ },
+ {
+  "id": "ca_lu_ritter_banner",
+  "name": "Mount Ritter and Banner Peak",
+  "state": "California",
+  "region": "Sierra Nevada, Ritter Range",
+  "legs": [
+   {
+    "peak": "Mount Ritter",
+    "route": "Southeast Glacier route via the Secor chute (snow/class 3-4)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Banner Peak",
+    "route": "Southwest slopes from the Ritter-Banner saddle (class 2)",
+    "connect": "Descend from Ritter to the saddle between the two peaks, then climb a steep snow chute to the col and walk about 1,000 feet of talus to Banner.",
+    "route_id": null
+   }
+  ],
+  "duration": "2 days (long 1-day push possible)",
+  "how": "The two peaks share a saddle, so a camp above Ediza Lake serves both, and parties usually climb one each day. Ritter is the harder peak with glacier and snow travel and some class 4 near the saddle; Banner is a simple talus walk once you reach the col. The saddle chute is steep and icy early in the season, so crampons, an axe and a helmet are needed.",
+  "descent": "Glissade the saddle chute and snowfields back to the lake camp. Some groups return by Thousand Island Lake, which is a longer loop than the way in.",
+  "logistics": "Approach from Agnew Meadows (a summer shuttle serves the trailhead) via Shadow Lake to a camp above Ediza Lake, about 7 miles. Plan for snow and ice on the saddle chute in early summer.",
+  "sources": [
+   "https://climber.org/reports/2003/1076.html",
+   "https://climberkyle.com/2022/04/29/mt-ritter-south-face-and-banner-peak-sw-face/",
+   "https://totallyunqualified.com/2019/07/mt-ritter-and-banner-peak/"
+  ],
+  "confidence": "high",
+  "notes": "Other reports start with Banner and Ritter on separate days, and one ski trip did both in 18 hours. Saddle chute is about 50 degrees at the top according to one report.",
+  "also_route_ids": [
+   "ca_northwest_glacier_to_southeast_ridge"
+  ]
+ },
+ {
+  "id": "ca_lu_tyndall_williamson",
+  "name": "Mount Tyndall and Mount Williamson",
+  "state": "California",
+  "region": "Sierra Nevada, Shepherd Pass",
+  "legs": [
+   {
+    "peak": "Mount Tyndall",
+    "route": "North Rib (class 3), descend the northwest ridge",
+    "connect": "",
+    "route_id": "ca_north_rib"
+   },
+   {
+    "peak": "Mount Williamson",
+    "route": "West Face (class 3) via the Williamson Bowl",
+    "connect": "Return to the camp near Shepherd Pass, rest, then cross the bowl boulder field the next morning to the base of the face.",
+    "route_id": "ca_west_face_11"
+   }
+  ],
+  "duration": "3-4 days",
+  "how": "Both are reached from one camp near Shepherd Pass, so climbers spend a day on each rather than moving the camp. Tyndall is the shorter day; Williamson takes longer because of the slow boulder-hopping in the bowl and a chimney near the top.",
+  "descent": "Return to the Shepherd Pass camp after each peak, then hike out over the pass and down the long trail.",
+  "logistics": "Start at the Shepherd Pass trailhead near Independence. Anvil Camp makes a halfway camp on the way in and out; the trail gains a lot of elevation, and snow below the pass in early season may call for crampons.",
+  "sources": [
+   "https://sites.google.com/view/wacziarg-climbing/2010-09-mount-tyndall-mount-williamson",
+   "https://climber.org/reports/1996/163.html"
+  ],
+  "confidence": "medium",
+  "notes": "Not a ridge link-up: two peaks from one camp. Williamson timings from the cited report: about 4.5 hours camp to summit."
+ },
+ {
+  "id": "ca_lu_cathedral_eichorn",
+  "name": "Cathedral Peak and Eichorn Pinnacle",
+  "state": "California",
+  "region": "Sierra Nevada, Tuolumne Meadows",
+  "legs": [
+   {
+    "peak": "Cathedral Peak",
+    "route": "Southeast Buttress (5.6) or the class 4 north side",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Eichorn Pinnacle",
+    "route": "North Face (5.4)",
+    "connect": "Move across the ridge north of Cathedral on class 4 terrain to the small spire on the west side.",
+    "route_id": "ca_north_face_23"
+   }
+  ],
+  "duration": "1 day",
+  "how": "Eichorn is a short spire on the Cathedral massif, usually added to a Cathedral day because it needs only a little extra rope work. Parties climb either one first and cross the ridge between them, which is exposed class 4. Bring a rope, protection and rock shoes.",
+  "descent": "A 70 foot rappel off the north side of Cathedral's summit leads to indistinct class 3 downclimbing and the marked descent trail to the base of the buttress, then down to the road.",
+  "logistics": "Park at the Cathedral Lakes trailhead and follow the climbers' trail along the creek. Trailhead moved to the visitor center in recent years, adding a short flat walk each way.",
+  "sources": [
+   "https://themtsarecalling.com/eichorn/",
+   "https://climber.org/reports/2000/587.html",
+   "https://www.mountainproject.com/route/108298250/cathedral-range-traverse"
+  ],
+  "confidence": "medium",
+  "notes": "Order differs between reports (Eichorn first in one, Cathedral first in the others). Summit register location not checked."
+ },
+ {
+  "id": "ca_lu_cathedral_range_traverse",
+  "name": "Cathedral Range Traverse",
+  "state": "California",
+  "region": "Sierra Nevada, Tuolumne Meadows",
+  "legs": [
+   {
+    "peak": "Cathedral Peak",
+    "route": "Class 4 north side or Southeast Buttress (5.6)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Echo Peaks",
+    "route": "Arete over the first peaks, easy class 3",
+    "connect": "Follow the crest northwest from Cathedral over Echo Peak 3 and the lower Echo summits.",
+    "route_id": null
+   },
+   {
+    "peak": "Echo Ridge",
+    "route": "East arete, class 4",
+    "connect": "Continue along the crest from the Echo Peaks.",
+    "route_id": null
+   },
+   {
+    "peak": "Cockscomb",
+    "route": "Class 4 crest",
+    "connect": "Keep to the crest northwest, scrambling over the granite crest.",
+    "route_id": null
+   },
+   {
+    "peak": "Unicorn Peak",
+    "route": "Class 4 notch to the north summit, with a short roped pitch for some",
+    "connect": "Follow the ridge to the final peak.",
+    "route_id": "ca_unicorn_peak_normal_route"
+   }
+  ],
+  "duration": "1 long day (about 12 hours)",
+  "how": "Climbers pick the direction by preference; counter-clockwise starting with Cathedral lets you finish with the descent from Unicorn. The ridge is mostly third and fourth class, with low fifth class moves on Unicorn and Cathedral's summit block, and a short rope and rack make it safer. Eichorn Pinnacle and Matthes Crest are optional extras.",
+  "descent": "From Unicorn, descend to the tarns below, cross their outlet and drop west-side slabs to forest, then join the creek trail to the road. A clockwise traverse ends with the Cathedral descent trail instead.",
+  "logistics": "Start and end at the Cathedral Lakes trailhead in Tuolumne Meadows; the loop is about 9 miles with roughly 4,800 feet of gain overall.",
+  "sources": [
+   "https://www.mountainproject.com/route/108298250/cathedral-range-traverse",
+   "https://climber.org/reports/2004/1339.html"
+  ],
+  "confidence": "high",
+  "notes": "Direction varies by source: one starts at Unicorn, the other at Cathedral. Summit list also includes Althuski in one source.",
+  "also_route_ids": [
+   "ca_cathedral_range_traverse"
+  ]
+ },
+ {
+  "id": "ca_lu_sawtooth_traverse",
+  "name": "Sawtooth Ridge Traverse",
+  "state": "California",
+  "region": "Sierra Nevada, Sawtooth Ridge near Bridgeport",
+  "legs": [
+   {
+    "peak": "Blacksmith Peak",
+    "route": "Start of the crest (some parties begin at the Cleaver instead)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "The Cleaver",
+    "route": "Serrated knife-edge, traversed along the left side",
+    "connect": "Follow the crest, down-climbing the col.",
+    "route_id": "ca_se_arete_2"
+   },
+   {
+    "peak": "The Sawblade",
+    "route": "Exposed fifth class crest; many rappel and traverse low on the east side",
+    "connect": "Continue along the crest south.",
+    "route_id": null
+   },
+   {
+    "peak": "The Three Teeth",
+    "route": "Northwest, middle and southeast teeth (5.5-5.9)",
+    "connect": "Climb over the three teeth and rappel the far side.",
+    "route_id": null
+   },
+   {
+    "peak": "The Doodad",
+    "route": "Summit block chimney, 5.2-5.6",
+    "connect": "Rappel from the Three Teeth and continue along the crest.",
+    "route_id": null
+   },
+   {
+    "peak": "The Dragtooth",
+    "route": "Crest climbing",
+    "connect": "Continue from the Doodad.",
+    "route_id": null
+   },
+   {
+    "peak": "Matterhorn Peak",
+    "route": "Northwest face, or the south side trail",
+    "connect": "Finish on the highest summit of the range.",
+    "route_id": null
+   }
+  ],
+  "duration": "2 days",
+  "how": "The ridge is a serious alpine rock route graded VI with many rappels, loose chimneys and route-finding. The usual direction runs from the Cleaver or Blacksmith end toward Matterhorn Peak, with a bivouac in Slide Canyon after the Three Teeth. Carry a lead rope, a second line for double-rope rappels and a small rack.",
+  "descent": "From Matterhorn Peak, the beaten climbers' trail on the south side is the usual way down; the northwest face is an alternative. One party also dropped a snowfield below the summit.",
+  "logistics": "Water can be found at a spring near the Slide Canyon bivy. Bivy sites are limited, and the Three Teeth take a long time, so parties often reach the bivy late.",
+  "sources": [
+   "https://climber.org/reports/1999/516.html",
+   "http://snowymonk.blogspot.com/2012/08/sawtooths-crest-traverse-one-in-ca-part_8.html"
+  ],
+  "confidence": "medium",
+  "notes": "Doodad grade disagrees: 5.2, a guidebook 4th class, and 5.6 in a second report (5.6 used). Many parties climb sections only; direction varies. Trailheads not confirmed in detail."
+ },
+ {
+  "id": "ca_lu_evolution_traverse",
+  "name": "Evolution Traverse",
+  "state": "California",
+  "region": "Sierra Nevada, Evolution Basin",
+  "legs": [
+   {
+    "peak": "Mount Mendel",
+    "route": "Crest from the north end; headwall up to 5.6",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Darwin",
+    "route": "Crest, up to 5.8",
+    "connect": "Follow the crest south.",
+    "route_id": null
+   },
+   {
+    "peak": "Peak 13,332",
+    "route": "Knife-edge descent from Darwin (5.9 or a rappel), the hardest section",
+    "connect": "Drop off Darwin and work along the crest, with several rappels.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Haeckel",
+    "route": "Mostly fourth class, northwest arete",
+    "connect": "Continue along the crest.",
+    "route_id": "ca_northwest_ridge_4"
+   },
+   {
+    "peak": "Mount Wallace",
+    "route": "Third class",
+    "connect": "Walk the crest from Haeckel.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Fiske",
+    "route": "Third class to 5.5",
+    "connect": "Continue south.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Warlow",
+    "route": "Low fifth class northeast ridge",
+    "connect": "Continue along the crest.",
+    "route_id": null
+   },
+   {
+    "peak": "Mount Huxley",
+    "route": "5.5-5.7",
+    "connect": "Finish on the last summit.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day to about 4 days",
+  "how": "A long ridge of granite on or near the crest, graded IV 5.9, with the hardest and most route-finding intensive section between Darwin and Peak 13,332. Rope use depends on your comfort soloing fifth class; several rappels are used, most of them between Darwin and Peak 13,332. Darwin's summit and the area near Haeckel offer bivy sites.",
+  "descent": "From Huxley, descend a third class gully to the basin, wade the river and hike out on the long trail.",
+  "logistics": "Approach from North Lake over Lamarck Col to Darwin Bench, about 10 miles. Water is scarce on the crest; the nearest lake is below Haeckel. Early season in a low-snow year is recommended.",
+  "sources": [
+   "https://fastestknowntime.com/route/evolution-traverse-ca",
+   "https://stephabegg.com/?p=7621"
+  ],
+  "confidence": "medium",
+  "notes": "Peak lists differ by source (one includes a starting peak 13,360, another starts at Gould). Pitch-by-pitch beta is disputed. Fastest times are around 15 hours car to car.",
+  "also_route_ids": [
+   "ca_evolution_traverse"
+  ]
+ }
+]

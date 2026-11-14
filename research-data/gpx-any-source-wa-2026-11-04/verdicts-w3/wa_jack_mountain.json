@@ -1,0 +1,101 @@
+{
+  "area_id": "wa_jack_mountain",
+  "routes": [
+    {
+      "route_id": "wa_jack_mountain_east_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep stands. WebSearch (SummitPost, Mountain-Forecast, a July 2025 ascent of this ridge): July-September is the window; the July 2025 party met a lot of snow on the route and said so made route-finding tricky; August-September when the south face melts out. Only one logged East Ridge ascent (12 Jul 2025)." },
+      "track": { "aid": "2902617", "verdict": "same", "kind": "camp-roundtrip", "inSeason": true,
+                 "why": "Logged route is 'East Ridge', report describes leaving the Jerry Lakes camp, dropping ~800 ft into the next basin, climbing the SE arm, gaining the East Ridge at ~7,200 ft with three 5th-class steps, summit, same line down. Track ends at the summit (7 m). BUT it is a camp-to-summit-to-camp day (starts at the Jerry Lakes basin ~48.757,-120.923), not trailhead-to-summit and not a full round trip from a road; the route has no Trailhead pin to measure from. Owner/apply script decides whether a camp-based round trip qualifies." },
+      "otherTracksConsidered": [
+        { "aid": "3340826", "verdict": "different", "why": "Logged South Face via Canyon Creek and Jerry Lakes; that is the separately stored South Face / Southeast Ridge route." },
+        { "aid": "3331141", "verdict": "different", "why": "Logged South Face." },
+        { "aid": "2659050", "verdict": "different", "why": "Logged South Face (late Sep)." },
+        { "aid": "3353276", "verdict": "unsure", "why": "No logged route, no report line; Canyon Creek start matches the South Face standard, not specifically this ridge." },
+        { "aid": "3349895", "verdict": "unsure", "why": "No logged route and no report." },
+        { "aid": "2261644", "verdict": "different", "why": "North Ridge attempt, turned back." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 7, "text": "Despite the Class 4 rating, July parties climbed about three roped-quality fifth-class steps: an early gully, an exposed low-fifth crux mid-ridge, and a pitch near the top.", "aids": ["2902617"] },
+        { "field": "watch_out", "month": 7, "text": "In mid-July a snow finger near the glacier toe collapsed onto the rock; keep away from thin snow remnants at the toe.", "aids": ["2902617"] },
+        { "field": "approach_note", "month": 7, "text": "In July, from the Jerry Lakes camp a goat path leads to the col; lose about 800 ft into the next basin, climb the southeast arm, cross a snowfield and scramble to the ridge near 7,200 ft.", "aids": ["2902617"] },
+        { "field": "what_to_bring", "month": 7, "text": "Rope, a few cams and slings for the ridge's fifth-class steps (July)", "aids": ["2902617"] },
+        { "field": "what_to_bring", "month": 7, "text": "Sandals or camp shoes for the Canyon Creek ford (July)", "aids": ["2902617"] },
+        { "field": "descent_note", "month": 7, "text": "In July the crux was downclimbed on a protected system and only one rappel off an existing tat anchor was needed lower on the ridge; the glacier basin below was best crossed on snow.", "aids": ["2902617"] }
+      ]
+    },
+    {
+      "route_id": "wa_jack_mountain_nohokomeen_headwall",
+      "season": { "months": [4, 5, 6], "window": "Apr-Jun, best May", "evidence": "Ascent log: Nohokomeen routes logged Apr (1), May (10), Jun (2). WebSearch (Mountaineers route page, Cascade Climbers, countryhighpoints): early-spring snow climb, bergschrund the timing limit; late May to early June workable, later opens up. Stored Apr-Jun confirmed." },
+      "track": { "aid": "1150554", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged 'Nohokomeen Headwall' on 5 May 2019, summited, start/end within 33-45 m of our East Bank Trailhead pin, passes within 5 m of the summit pin, goes via May Creek camp area and the north cirque (track shape runs the East Bank Trail north past Ross Lake, then climbs east to the headwall) which matches our route's text. Round trip from the trailhead." },
+      "otherTracksConsidered": [
+        { "aid": "1662202", "verdict": "same", "why": "22 May 2021 Nohokomeen Headwall, in season, but track starts at May Creek (camp) and wanders; lower quality than 1150554." },
+        { "aid": "971526", "verdict": "same", "why": "2 Jun 2018 headwall, in season, no GPS track in packet." },
+        { "aid": "2754278", "verdict": "offseason", "why": "January ascent." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "what_to_bring", "month": 5, "text": "About four pickets and a 60 m rope to simul-climb the headwall (May-early June)", "aids": ["1662202", "971526"] },
+        { "field": "monthBreakdown", "month": 5, "text": "In late May, fresh storm snow lay over an icy crust on the headwall, so parties placed pickets and lowered the steepest part on a buried deadman anchor.", "aids": ["1662202"] },
+        { "field": "approach_note", "month": 5, "text": "In late May, boots and crampons were enough on the snow below the glacier; one party carried snowshoes the whole way and never used them.", "aids": ["1662202"] }
+      ]
+    },
+    {
+      "route_id": "wa_jack_mountain_north_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep. WebSearch (SummitPost North Ridge page via search snippet): early July leaves enough snow to minimise the descent; Ross Lake boat from the south dock to Devils Creek. Two logged ascents/attempts, both July (2019 summit, 2023 turned back)." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1201950", "verdict": "unsure", "why": "Logged North Ridge, summited 21 Jul 2019 (in season), but packet has no GPS track (shape null), so nothing to assign." },
+        { "aid": "2261644", "verdict": "not-summited", "why": "North Ridge attempt, turned back at the fractured notch." },
+        { "aid": "1150554", "verdict": "different", "why": "Nohokomeen headwall, not this ridge, and out of this route's season." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 7, "text": "In July, take the lake boat to the Devils Creek landing and walk about two miles of shoreline to the Devils Creek bridge; fill up there, then climb the game trail just south of the bridge. The next water is a tarn near 5,700 ft (a pool on point 6,486 early in the month).", "aids": ["1201950"] },
+        { "field": "approach_note", "month": 7, "text": "A second July party camped on flat slabs at the glacier base near 5,400 ft after about 5.5 hours; cliff bands near 3,400 ft needed a few mossy class 4 moves and the timber above 5,000 ft turned brushy, and tracks from the snow-season headwall route do not help because snow hid the worst brush.", "aids": ["2261644"] },
+        { "field": "watch_out", "month": 7, "text": "The fractured notch on the ridge is loose and exposed; one July party retreated there, another bypassed it on a loose talus traverse to where the glacier meets the ridge.", "aids": ["1201950", "2261644"] },
+        { "field": "watch_out", "month": 7, "text": "In July the last few hundred feet of the ridge carry icy patches, and the gullies after the first saddle are very loose, so spread the party out.", "aids": ["1201950"] },
+        { "field": "pro_tips", "month": 7, "text": "Early on, the black pinnacle (point 6,937 ft) is a straightforward class 3 scramble, but the downclimb beyond it is loose enough to turn partners back.", "aids": ["1201950"] }
+      ]
+    },
+    {
+      "route_id": "wa_jack_mountain_northeast_glacier",
+      "season": { "months": [5, 6, 7], "window": "May-Jul", "evidence": "WebSearch: an April 2005 ski ascent of the NE Glacier and a Cascade Climbers account saying early season is turned back by a cornice on the East Ridge; stored May-Jul kept. No ascent in the packet is logged to this route." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3340826", "verdict": "different", "why": "Canyon Creek start but logged South Face." },
+        { "aid": "3353276", "verdict": "unsure", "why": "Canyon Creek start, no logged route." },
+        { "aid": "1469755", "verdict": "different", "why": "Logged S Face." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_jack_mountain_southeast_ridge_direct",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "WebSearch: August-September when snow leaves the steep south face; Mountain-Forecast lists Jul-Sep. No logged ascent names this 5.6 ridge." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3340826", "verdict": "different", "why": "Logged South Face; the stored South Face / Southeast Ridge route holds these Canyon Creek tracks." },
+        { "aid": "3331141", "verdict": "different", "why": "Logged South Face." },
+        { "aid": "1469755", "verdict": "different", "why": "Logged S Face." },
+        { "aid": "3349895", "verdict": "unsure", "why": "No logged route or report." },
+        { "aid": "3353276", "verdict": "unsure", "why": "No logged route or report." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_jack_mountain_southwest_ridge",
+      "season": { "months": [8, 9], "window": "Aug-Sep", "evidence": "WebSearch: August-September when snow has melted from the south side; a SummitPost log calls the Little Jack ridge approach not recommended above the Nohokomeen Glacier. No logged ascent names a Southwest Ridge." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2960853", "verdict": "unsure", "why": "Logged 'S Slopes' (26 Aug 2025); start 6 km from the East Bank pin, not clearly the ridge from Little Jack." },
+        { "aid": "1201950", "verdict": "different", "why": "North Ridge; its report only looked at the SW route from the summit." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Stored 'South Face / Southeast Ridge' (already has tracks) is the route the Canyon Creek tracks follow; East Ridge, NE Glacier and SE Ridge (Direct) share templated text and Canyon Creek/Jerry Lakes approach, so none of the South Face tracks were assigned. East Ridge stored grade is Class 4 but the only report found three 5th-class steps (low fifth); consider regrading. No trailhead or summit pins proposed (summit pin 48.77284,-120.95637 matches Peakbagger and the tracks' high points)."
+}

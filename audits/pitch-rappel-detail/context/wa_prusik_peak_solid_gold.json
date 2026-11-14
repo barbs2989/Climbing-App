@@ -1,0 +1,72 @@
+{
+ "id": "wa_prusik_peak_solid_gold",
+ "name": "Solid Gold",
+ "area_id": "wa_prusik_peak",
+ "discipline": "alpine",
+ "grade": "5.11a",
+ "pitches": 5,
+ "length_m": 137,
+ "overview": "Solid Gold climbs the steep south face of Prusik Peak on immaculate golden granite, offering several pitches of sustained, well-protected crack and face climbing at a stiffer grade than the popular west ridge. It is a coveted free climb in the Enchantments, prized for its clean rock, fierce position, and a crux that demands confident 5.11 climbing high in an alpine setting. Strong parties combine it with the surrounding granite for an unforgettable day.",
+ "description": null,
+ "beta": "Starts just right of the outside corner on the left flank of the south face and climbs a right-leaning crack system to a stembox, a roof/hand-crack pitch, slabby/off-width terrain past a chimney (loose rock caution), and a final splitter corner crack, topping out on the West Ridge rather than the true summit.",
+ "descent_text": "From the top of Solid Gold, most parties continue to easy ground and locate the shared 'Solid Gold' rap anchors (also used to descend Sail Away and other nearby lines) on the north side of the ridge. The standard descent is a single, full-length rappel — a 60m rope is typical — down the north face, landing on easier ground below; from there it's about a 30-minute scramble/downclimb east back around to the notch below the West Ridge and the base of the south face. Some parties instead break this into two shorter rappels from the same general anchor area depending on rope length and party size/gear drag. Anchors are natural (slung blocks/chockstones with webbing/tat), not bolted, and the anchors in this immediate area (shared with the West Ridge descent) have been periodically rebuilt and relocated as old tat accumulates — inspect and back up any station that looks worn.",
+ "descent": "Make one rappel down the north side, then scramble back around to the base of the south face.",
+ "rappels": "From the Solid Gold anchors, rappel the back (north) side to the backside walk-off: two rappels by the route description, though some parties report one rappel on a single 60 m rope followed by a scramble to the notch below the West Ridge. No station list is published. Or continue to the summit and take the standard four-rappel summit descent.",
+ "rappel_count_note": "Accounts of the short back-side descent from the Solid Gold anchors differ, one rappel or two, and none describes the stations, so no table is shown. The rangers rebuilt the anchors on this lower summit in 2018 after slings had piled up; back up whatever you find.",
+ "rope_length_m": 60,
+ "pitch_detail": [
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.10d",
+   "notes": "Right-leaning crack system to under an obvious roof; many parties feel this is the physical crux, though not the technical crux of the route.",
+   "pitch": 1,
+   "anchor": "Gear (under roof)",
+   "lengthM": 30
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "5.11a",
+   "notes": "Hard move under the roof, then a hand crack to a long horizontal crack; belay on gear standing in the horizontal.",
+   "pitch": 2,
+   "anchor": "Gear (#3 Camalot in horizontal)",
+   "lengthM": 30
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.10a",
+   "notes": "Slab climbing with a chimney exit; some rotten rock in the chimney, follow the seam arcing left on the chimney's left wall.",
+   "pitch": 3,
+   "anchor": "Gear",
+   "lengthM": 30
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.8",
+   "notes": "Off-width to a mantle move on an arching seam, ending at a large ledge below the final pitch.",
+   "pitch": 4,
+   "anchor": "Gear (large ledge)",
+   "lengthM": 25
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "5.11a",
+   "notes": "The aesthetic finishing pitch: a perfect corner crack for roughly 50 feet, stepping right to a small tree near the West Ridge.",
+   "pitch": 5,
+   "anchor": "Gear/tree",
+   "lengthM": 45
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Wayne Wallace and Tim Olson, 1989.",
+ "areas": {
+  "name": "Prusik Peak",
+  "parent_id": "wa_stuart_range"
+ },
+ "parent_area": "Stuart-Enchantments"
+}

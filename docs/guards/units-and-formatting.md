@@ -83,6 +83,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       change outright, which is the trap this section's own comment warns of. It now accepts either
       `const routePitches=(…` or `const routePitches=useMemo(function(){return (…`; what it slices
       and evaluates is the ternary itself in both cases, so the nine injection cases still land.
+      Since 2026-10-24 a third form, `useMemo(function(){return padPitchRows((…`, wraps it (page order
+      plus not-described rows; it converts nothing), and the submit keeps each row's label through
+      `isNumLbl`, which the section lifts from source alongside the store expression.
     - **MEASURED, so it needs no `_orig` guard where `itinStoreVal` does:** every length
       **1-200 m round-trips m→ft→m exactly**, so a box seeded from a stored length and saved
       untouched cannot drift. Miles and pounds do not, which is what that guard exists for.
@@ -128,6 +131,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       NOW) and where it is TYPED (`uElevIn` in the form). The guard asserts all four links and
       FAILS on the old `uElev(row.freezing_level_ft)` shape rather than accepting it. The legacy
       prose `cond.freezing` (seed routes) still renders as written.
+    - **`ReportStats` moved to `src/components/ReportStats.tsx` (PR32 of the component extraction).** The
+      `["Freezing lvl",uElev(cond.freezingFt)]` anchor is kept verbatim there and reaches this guard through
+      `readCoreSource()`'s `MOVED` stitch (the apply script asserts the fragment); the browser half that reads
+      two ReportStats temperatures per run is unaffected by where the component is defined. Measured by
+      `measure:guard-reach` around the move (no count decremented).
     - **The imperial output is NOT byte-identical here and that is stated rather than glossed**:
       `11000+" ft"` becomes `uElev(11000)` = `"11,000 ft"`. A thousands separator, matching the 35
       other `uElev` call sites in that file. The forecast tile IS byte-identical, since `freezeMax`
@@ -176,6 +184,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     probes it started from cost **~3x `check:policy-claims`**, the merged guard **~1.5x** — a little
     over half, for more assertions. **Quote the ratio, never the clock**: those readings were taken
     at load average 488, where this file already records a profile being off by 4x.
+  - **`ItineraryEditor` moved to `src/components/ItineraryEditor.tsx` (PR33 of the component extraction).** The
+    render probe's entry imported it from core BY PATH — the one shape the `MOVED` stitch cannot help, because
+    esbuild resolves the real file, not the stitched text — so the entry now imports the component file
+    (`IE_PATH`) and `FullProfile` from core as before; `TIME_PRESETS` moved with it. The guard's unit
+    assertions on the editor's labels are unchanged. Measured by `measure:guard-reach` around the move.
   - **THE CLASS IS ONE CLASS AND THE WRITE HALF IS THE SERIOUS END.** A display defect misinforms
     one reader; a form that stores what was typed corrupts the record for **every** reader — a
     metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own
@@ -219,8 +232,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     line-comment pattern protects `://`**: the forecast fetch is an https URL, and a naive `//`
     strip would delete the exact line the canonical-units check is looking for. Two injection cases
     must stay SILENT to pin both halves.
-  - **THE FORECAST FETCH LIVES IN `lib/forecast.js` SINCE 2026-09-24** (`fetchForecastRaw`, shared
-    with the trip pack, which stores the raw responses). The URL pins and the `wind_speed_10m`
+  - **THE FORECAST FETCH LIVES IN `lib/forecast.js` SINCE 2026-09-24** (`fetchForecastRaw`). It was
+    shared with the trip pack, which stored the raw responses; #2368 removed the pack, and WeatherPanel
+    is the only caller now (`snapshotPackForecast` is still defined and uncalled). The pins still
+    belong in `lib/forecast.js` because that is where the fetch is. The URL pins and the `wind_speed_10m`
     request are read THERE, and the guard also asserts WeatherPanel still calls `fetchForecastRaw` —
     without that link the pins could describe a fetch nothing uses. The two URL injection cases were
     repointed to `lib/forecast.js`; `panel-bypasses-the-shared-fetch` pins the new link.
@@ -336,6 +351,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       fetch explains `forecast_days` and the freezing-level unit in detail and says nothing about
       wind height. **This is the only weather fetch in the app**, so there was no internal
       inconsistency to trip over either.
+    - **THE HOURLY ROWS ARE 10 m (2026-10-14).** The day tile's headline stays at 80 m, but the expanded hourly
+      list printed the 80 m wind (and 80 m direction) in a box beside the 10 m gust, so an hour could read "wind
+      22, gusts 18". Each hourly row now reads `wind_speed_10m` / `wind_direction_10m` (the fetch asks for the
+      direction too), and an older saved forecast without them reads "Not measured", never an 80 m figure under a
+      10 m label; a missing temperature or wind no longer rounds `null` to "0". The URL pins are now read off
+      **`fetchForecastRaw`'s own `const omUrl =` line**: the crag and alpine fetches in the same file also ask for
+      `wind_speed_10m`, so the whole-file search stayed green with the panel's request no longer asking for it
+      (the `fetch-drops-the-10m-series` injection case could not fail).
     - **A GATE rather than a probe**, and folded into `check:units` rather than given its own file:
       the fix changes a URL field, a comparison and a string, so reverting the gate to
       `dy.gustMax>dy.windMax` moves **no identifier** and `audit:silent-reverts` is blind to it by
@@ -523,3 +546,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     (`FireMap`'s is passed from App — a reading, not a guarantee) passes. And `toLocaleString()` is
     deliberately excluded: in this app it formats NUMBERS, and a thousands separator is not the date
     preference. Injection suite: `scripts/oneoff/inject-date-locale-cases.mjs`, 5 cases.
+  - **IT WALKED THE ROOT FILES AND `lib/` ONLY, SO AN EXTRACTED COMPONENT LEFT ITS REACH (fixed in the
+    `MiniCalendar` extraction, PR26).** It reads files itself rather than through `readCoreSource()`, so
+    `MOVED` did not stitch `src/components/*.tsx` back for it: moving `MiniCalendar` (one
+    `toLocaleDateString(DLOCALE, …)`) took its count from 51 to 50. `measure:guard-reach` printed the
+    decrement but did not call it blinded — it flags a count that goes to zero, not one that shrinks —
+    so a reader who takes its summary line ("no guard lost a count") at face value misses this. Now it
+    walks `src/` too and accepts `.ts`/`.tsx` (the parser already had the `typescript` plugin). **Rule for
+    every guard that enumerates files itself:** walk `src/` as well as the root files and `lib/`, and after
+    an extraction read the per-guard `diff` lines of the measurement, not only its summary.

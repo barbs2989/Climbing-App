@@ -1,0 +1,55 @@
+{
+ "applied": [
+  {
+   "id": "ab_mount_snowdome_slipstream",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "ab_mount_temple_squashed_bones",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "ak_cantwell_creek_ice_alpine_aim_for_the_bushes",
+   "column": "length_m",
+   "path": [],
+   "fact": "route length"
+  },
+  {
+   "id": "ak_mount_yukla_2_gank_d_and_slayed",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ab_mount_snowdome_slipstream",
+   "before": {
+    "pitches": 1
+   }
+  },
+  {
+   "id": "ab_mount_temple_squashed_bones",
+   "before": {
+    "pitches": 1
+   }
+  },
+  {
+   "id": "ak_cantwell_creek_ice_alpine_aim_for_the_bushes",
+   "before": {
+    "length_m": 366
+   }
+  },
+  {
+   "id": "ak_mount_yukla_2_gank_d_and_slayed",
+   "before": {
+    "pitches": 1
+   }
+  }
+ ]
+}

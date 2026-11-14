@@ -55,7 +55,7 @@ for (const rel of files) {
   try {
     // errorRecovery is off on purpose: a file this guard cannot parse is a file it cannot
     // report on, and a partial parse would quietly narrow the scan.
-    ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+    ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   } catch (e) {
     console.error(`\n${GUARD} FAILED — could not parse ${rel}: ${String(e.message).split("\n")[0]}`);
     console.error("Nothing in that file was scanned, so a clean result would be about the rest of the app.");

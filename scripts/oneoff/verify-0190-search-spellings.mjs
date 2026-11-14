@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 // Is 0190 applied, backfilled, and does the DATABASE's spelling rule equal lib/search.js's?
 //
 // check:search-norm compares the two TABLES statically; this compares OUTPUTS on real names,
@@ -9,7 +10,7 @@
 // is missing.
 import path from "path";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
-const { searchNorm } = await import(path.resolve("lib/search.js"));
+const { searchNorm } = await import(fileHref(path.resolve("lib/search.js")));
 const H = headers(anonKey());
 const get = async (q) => {
   const r = await fetch(`${SUPABASE_URL}/rest/v1/${q}`, { headers: H });

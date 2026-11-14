@@ -1,7 +1,8 @@
+import { fileURLToPath } from "node:url";
 // Build audits/route-leftovers/single/out/<batch>-apply.json from <batch>.json: confirmed results only, minus the
 // ops the reviewer held, with the reviewer's text amendments. Usage: node build-single-apply.mjs s5
 import fs from "node:fs";
-const b = process.argv[2], dir = new URL("../../../audits/route-leftovers/single/out/", import.meta.url).pathname;
+const b = process.argv[2], dir = fileURLToPath(new URL("../../../audits/route-leftovers/single/out/", import.meta.url));
 const { results } = JSON.parse(fs.readFileSync(`${dir}${b}.json`, "utf8"));
 // Held after review: [id, column, path JSON] — the op is dropped, with the reason kept in the apply file.
 const HOLD = {

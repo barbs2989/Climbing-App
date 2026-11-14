@@ -55,14 +55,17 @@ const pass = (m) => console.log(`  ok   ${m}`);
 //     apostrophes — the same desynchronisation check:overlay-discovery records for the shared
 //     comment/string blanker. Do not reintroduce it.
 // Scanning lib/db.js alone is not enough either: the ?debugRoute lookup issues its own embed from
-// ClimbMatch.jsx, and lib/offline.js issues another.
+// ClimbMatch.jsx, and lib/offline.js issues another (the trip pack's).
 console.log("STATIC — every areas() embed in a .select() carries `name`:");
 const FILES = appSources(ROOT, GUARD);
 
-// ONE exemption, and it is a claim about the code rather than a pass. `lib/offline.js` embeds
-// `areas!inner(path)` purely to filter by ltree, then DESTRUCTURES THE KEY BACK OUT before
-// storing: `const { areas: _drop, ...row } = r`. So its rows never reach dbRouteToCamel carrying
-// an area at all, `_dbArea` is null, and the fallback works — this is not the defect.
+// NO exemptions today. There was one: `lib/offline.js`'s state download embedded
+// `areas!inner(path)` purely to filter by ltree, then destructured the key back out before storing.
+// It went on 2026-10-23, when that download started reading routes BY AREA id — the join timed out
+// on every state — and this guard failed its entry as stale, which is the mechanism working.
+//
+// An exemption is a claim about the code rather than a pass. It is shaped
+// `[file, { embed, why, proof }]`, where `proof` is a regex the file must still match.
 //
 // The exemption is verified against the file, not trusted: if that drop disappears, the
 // exemption fails as stale and the embed is reported. Same standard as check:field-renders'
@@ -77,13 +80,7 @@ const FILES = appSources(ROOT, GUARD);
 //
 // The stale check still holds in both directions: if `areas(path)` ever gains `name`, this entry
 // matches nothing, `exemptUsed` stays empty, and the run fails on the unused exemption below.
-const EXEMPT = new Map([
-  ["lib/offline.js", {
-    embed: "path",
-    why: "embeds areas!inner(path) to filter by ltree, then drops the key before storing",
-    proof: /const\s*\{\s*areas:\s*\w+\s*,\s*\.\.\.\w+\s*\}\s*=/,
-  }],
-]);
+const EXEMPT = new Map([]);
 
 // Comments stripped first: lib/db.js discusses `areas(...)` in prose and RouteDetail.jsx now
 // explains this very defect in a comment naming `areas(path)`. A scan that read comments would
@@ -92,8 +89,24 @@ const EXEMPT = new Map([
 // comment, but on its own it CANNOT MATCH AT POSITION 0, so a comment starting a line survived
 // the strip. Injection case 3 caught it — the guard failed on its own documentation.
 const strip = (s) => s
-  .replace(/\/\*[\s\S]*?\*\//g, " ")
+  .replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, " ")) // keep the newlines, so a reported line IS the file's line
   .split("\n").map((l) => l.replace(/(^|[^:])\/\/.*$/, "$1")).join("\n");
+
+// Every `areas(…)` embed with its FULL argument list, found by counting parentheses. It was a regex
+// that allowed ONE level of nesting, and the two widest embeds in lib/db.js (the route page's and
+// the list's) nest `parent:parent_id(…)` FOUR deep — so the regex never matched them and this guard
+// never read them. inject-area-name-cases.mjs case 1 edits exactly that embed and found the guard
+// passing. Returns `{ index, 1: inner }` so the loop below reads it as it read a match.
+function embedsIn(code) {
+  const out = [];
+  for (const m of code.matchAll(/\bareas\s*(?:!inner)?\s*\(/g)) {
+    let depth = 1, j = m.index + m[0].length;
+    for (; j < code.length && depth; j++) { if (code[j] === "(") depth++; else if (code[j] === ")") depth--; }
+    if (depth) continue; // unbalanced to end of file: not an embed
+    out.push({ index: m.index, 1: code.slice(m.index + m[0].length, j - 1) });
+  }
+  return out;
+}
 
 let selects = 0, embeds = 0;
 const exemptUsed = new Set();
@@ -101,7 +114,7 @@ for (const rel of FILES) {
   const code = strip(fs.readFileSync(path.join(ROOT, rel), "utf8"));
   selects++;
   {
-    for (const em of code.matchAll(/\bareas\s*(?:!inner)?\s*\(([^()]*(?:\([^()]*\)[^()]*)*)\)/g)) {
+    for (const em of embedsIn(code)) {
       embeds++;
       const inner = em[1];
       // `parent:parent_id(name)` is a NESTED embed; its `name` says nothing about the area's own.

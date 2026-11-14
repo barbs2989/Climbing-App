@@ -1,0 +1,177 @@
+{
+ "area_id": "or_south_sister",
+ "routes": [
+  {
+   "route_id": "or_north_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged North/NW Ridge ascents fall Jul-Sep (plus a few Apr-May ski trips); Mountain Project lists it T 4th steep snow; link-up traverse accounts describe it as a summer cinder ridge."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3382342",
+     "verdict": "different",
+     "why": "Devils Lake trailhead round trip on the south climbers trail, no north-ridge line."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_old_crater_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Mountain Project: 3rd class, easy scree or snow, rarely climbed, starts near Green Lakes; no dated season found, so snow-free summer window assumed from the all-routes histogram (Jul-Sep peak)."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2865738",
+     "verdict": "unsure",
+     "why": "June snow-basin climb from Green Lakes to the south ridge via Lewis Tarn; logged name does not say Old Crater Route and it ends on the standard ridge."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_south_sister_prouty_glacier",
+   "season": {
+    "months": [
+     6,
+     7
+    ],
+    "window": "Jun-Jul",
+    "evidence": "Logged Prouty Glacier ascents: 5 in June, 1 in July; club and trip reports from June describe firm early snow, with rockfall and soft snow limiting time later."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2865738",
+     "verdict": "different",
+     "why": "Climbs the Lewis basin to the south ridge, not the Prouty Glacier."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_south_sister_south_side_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Histogram of all logged ascents peaks Jul-Sep (309/341/225), Jun 194, Oct 87; guide pages give mid-July to September, snow-free by August, with snow possible late October. Accepted window Jun-Oct."
+   },
+   "track": {
+    "aid": "2992708",
+    "verdict": "same",
+    "kind": "oneway",
+    "inSeason": true,
+    "why": "Logged as Trail 36 (South Sister Climbers Trail) from Devils Lake trailhead, 12.6 mi, 4,950 ft gain, summit within 2 m of Peakbagger point, start 41 m and end 40 m from our Devils Lake pin, 22 Sep 2025 on maintained trail; matches our text exactly. Mechanical check flagged oneway only."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3362082",
+     "verdict": "unsure",
+     "why": "Same trail but recorded as one-way, 6.8 mi."
+    },
+    {
+     "aid": "3382342",
+     "verdict": "same",
+     "why": "Equivalent Oct 10 round trip from Devils Lake; second choice, late in season."
+    },
+    {
+     "aid": "3223894",
+     "verdict": "same",
+     "why": "Jun 7 snowy round trip, same line, within a month of season; lower priority than Sep track."
+    },
+    {
+     "aid": "2865738",
+     "verdict": "different",
+     "why": "Green Lakes start, Lewis basin snow route."
+    },
+    {
+     "aid": "2529651",
+     "verdict": "unsure",
+     "why": "Ski ascent, Jun 1, track 398 m from summit."
+    },
+    {
+     "aid": "3219702",
+     "verdict": "offseason",
+     "why": "31 May, more than a month before Jul."
+    }
+   ],
+   "pins": [
+    {
+     "type": "Summit",
+     "action": "add",
+     "lat": 44.10354,
+     "lng": -121.76929,
+     "name": "South Sister summit",
+     "evidence": "Peakbagger lidar summit (pid 2416) and the highest point of track 2992708 (44.10355,-121.76936) agree within 6 m",
+     "confirmedBy": "https://www.peakbagger.com/peak.aspx?pid=2416"
+    }
+   ],
+   "facts": [
+    {
+     "field": "monthBreakdown",
+     "month": 6,
+     "text": "In early June the lower trail can still be dusted with fresh snow and the upper slope below the rim is icy enough that crampons and an axe get used.",
+     "aids": [
+      "3223894",
+      "2863263"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 10,
+     "text": "By early October mornings at the trailhead freeze hard and frost coats the rocks, and the first dry flurries can arrive by afternoon, though the route is largely bare.",
+     "aids": [
+      "3382342"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "Biting insects are heavy below treeline in mid-July",
+     "aids": [
+      "2252063"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "The small tarn at the foot of the Lewis Glacier is a spot to refill water in August; filter it.",
+     "aids": [
+      "1281579"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "After gaining the crater rim, the true summit is across the crater on the far side, so allow for the extra walk along the rim.",
+     "aids": [
+      "3362082",
+      "429174"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Our seven routes match Mountain Project South Sister list exactly, so none missing. Green Lakes (south ridge via Green Lakes/Moraine) and the Northwest Ridge are logged variants but I could not fetch a page naming them as separate routes (SummitPost and a trip-report site returned 403), so no missing entries. or_old_crater_route and or_north_ridge have no summit pins; none proposed. Packet has no North Ridge tracks."
+}

@@ -1,0 +1,515 @@
+[
+ {
+  "id": "wa_mount_norton_scramble",
+  "itinerary": {
+   "cal": "Get a wilderness camping permit; best conditions are June through August.",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the trailhead (Madison Falls, since flood damage in November 2017 washed out the Olympic Hot Springs Road and closed it to vehicles beyond there) follow the old road bed and then the Elwha River Trail south through second-growth and old-growth forest. Grade is gentle and the trail is well-graded, so this is mostly a long valley walk.",
+     "hours": 6.5,
+     "miles": 11.5,
+     "title": "Backpack in to lower Elwha camp",
+     "gainFt": 900,
+     "lossFt": 200,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Reach the Elkhorn area"
+    },
+    {
+     "n": 2,
+     "note": "A shorter day continuing up-valley along the Elwha River Trail to the Hayes River patrol cabin/camp area, the closest trail camp to Mount Norton. Check current NPS trail-condition reports first — sections between Elkhorn and Hayes River have had flood/landslide damage in recent years.",
+     "hours": 3,
+     "miles": 5.3,
+     "title": "Continue to Hayes River",
+     "gainFt": 500,
+     "lossFt": 100,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Camp near Hayes River Guard Station"
+    },
+    {
+     "n": 3,
+     "note": "Leave the heavy gear at Hayes River camp and climb steep, brushy off-trail ground to the upper ridge, then follow class 2 talus/heather slopes to the summit. Out-and-back to the same camp same day.",
+     "hours": 8,
+     "miles": 4.2,
+     "title": "Summit push",
+     "gainFt": 3400,
+     "lossFt": 3400,
+     "packLb": 15,
+     "schedule": [
+      {
+       "time": "5:00 AM",
+       "label": "Leave Hayes River camp",
+       "detail": "Light day pack, leave tents/food cache set up."
+      },
+      {
+       "time": "6:00 AM",
+       "label": "Start the steep off-trail climb",
+       "detail": "Brushy, unmaintained, steep — pick the path of least resistance up open timber and heather bands."
+      },
+      {
+       "time": "9:00 AM",
+       "label": "Gain the summit ridge",
+       "detail": "Terrain eases to class 2 talus and heather."
+      },
+      {
+       "time": "10:00 AM",
+       "label": "Reach the summit (6,319 ft)",
+       "detail": "Views over the Bailey Range and Elwha/Hayes drainages."
+      },
+      {
+       "time": "11:00 AM",
+       "label": "Begin descent",
+       "detail": "Reverse the ascent line; steep terrain is slower and harder to reverse than it looks."
+      },
+      {
+       "time": "1:30 PM",
+       "label": "Back at Hayes River camp",
+       "detail": ""
+      }
+     ],
+     "objective": "Climb Mount Norton and return to camp"
+    },
+    {
+     "n": 4,
+     "note": "Retrace the Elwha River Trail (and road-walk/bike section from Madison Falls if the road closure is still in effect) all the way back to the car. A long but flat-grade day.",
+     "hours": 8,
+     "miles": 16.8,
+     "title": "Hike out",
+     "gainFt": 300,
+     "lossFt": 1600,
+     "packLb": 32,
+     "schedule": [],
+     "objective": "Return to trailhead"
+    }
+   ],
+   "totalNote": "A remote 4-day trip, roughly 38 miles and ~5,000+ ft round trip: two long valley-trail days in, one steep off-trail summit day from a Hayes River camp, and one long day out."
+  },
+  "road": {
+   "name": "Olympic Hot Springs Road / Whiskey Bend Road (Elwha access)",
+   "status": "Closed to vehicle traffic due to washout damage; open to pedestrians, bicycles, and leashed dogs",
+   "driveNote": "Vehicle access ends at the Madison Falls trailhead because of a long-standing road washout (closed for roughly a decade); reaching the Whiskey Bend trailhead/Elwha River Trail requires an additional ~7 miles of walking or biking up the closed road. NPS has an environmental assessment for rehabilitating the road, but the road stays closed to vehicles (open to pedestrians, bicycles and leashed dogs) with no end date given as of the Olympic National Park road-conditions page updated August 7, 2026.",
+   "seasonalGate": "The Olympic Hot Springs Road washed out in November 2017, ending vehicle access at Madison Falls and adding roughly 7 miles each way of road walking or biking before the old Whiskey Bend trailhead."
+  }
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "itinerary": {
+   "days": [
+    {
+     "n": 1,
+     "note": "Start at Whiskey Bend trailhead (or Madison Falls if the road is still washed out) and follow the Elwha River Trail south through old-growth forest and historic homestead sites. This is a long but gentle-grade trail day to bank miles before the terrain gets rougher.",
+     "hours": 6.5,
+     "miles": 12,
+     "title": "Approach up the Elwha River Trail",
+     "gainFt": 1500,
+     "lossFt": 300,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Reach a mid-trail camp (Elkhorn/Stony Point area)"
+    },
+    {
+     "n": 2,
+     "note": "Continue up the Elwha River Trail past Elkhorn, Hayes River, and Camp Wilder to Chicago Camp, then leave the maintained trail and work up into upper Elwha Basin (the brushy, route-finding terrain locals call \"the maze\"). Camp gives a shorter summit push the next day.",
+     "hours": 8,
+     "miles": 14,
+     "title": "Push to a high camp in upper Elwha Basin",
+     "gainFt": 1800,
+     "lossFt": 200,
+     "packLb": 36,
+     "schedule": [],
+     "objective": "Establish high camp near Elwha Basin / Dodwell-Rixon Pass approach"
+    },
+    {
+     "n": 3,
+     "note": "Drop the overnight gear at camp and go light. Climb cross-country up to Dodwell-Rixon Pass, then follow the ridge from the pass to the summit, bypassing a cliff band on a scree traverse, before reversing the entire route back to camp. Mostly Class 2 walking/scrambling with route-finding through brush and moraine.",
+     "hours": 11,
+     "miles": 10,
+     "title": "Summit push via Dodwell-Rixon Pass",
+     "gainFt": 3200,
+     "lossFt": 3200,
+     "packLb": 15,
+     "schedule": [
+      {
+       "time": "4:30 AM",
+       "label": "Leave high camp",
+       "detail": "Light daypack; aim to be over Dodwell-Rixon Pass by mid-morning."
+      },
+      {
+       "time": "6:30 AM",
+       "label": "Top of Dodwell-Rixon Pass (~4,760 ft)",
+       "detail": "Views open into Queets Basin; leave the pass and start up the ridge toward the summit."
+      },
+      {
+       "time": "8:00 AM",
+       "label": "Scree traverse below the cliff band",
+       "detail": "Where the ridge cliffs out, drop onto steep, firm scree on the east side and traverse before regaining the crest."
+      },
+      {
+       "time": "11:30 AM",
+       "label": "Summit (6,476 ft)",
+       "detail": "Class 2 slopes to the top; short weather/photo window."
+      },
+      {
+       "time": "2:00 PM",
+       "label": "Back at Dodwell-Rixon Pass",
+       "detail": "Begin the long descent back toward the Elwha Basin camp."
+      },
+      {
+       "time": "4:30 PM",
+       "label": "Return to high camp",
+       "detail": "Long day — budget extra time for brush and route-finding fatigue."
+      }
+     ],
+     "objective": "Climb the north ridge to the 6,476 ft summit and return to high camp"
+    },
+    {
+     "n": 4,
+     "note": "Break camp and descend out of Elwha Basin back to the maintained Elwha River Trail, retracing the route past Camp Wilder and Hayes River toward the Elkhorn area.",
+     "hours": 7,
+     "miles": 14,
+     "title": "Hike back down the Elwha",
+     "gainFt": 200,
+     "lossFt": 1800,
+     "packLb": 34,
+     "schedule": [],
+     "objective": "Retrace the approach toward the trailhead"
+    },
+    {
+     "n": 5,
+     "note": "Finish the descent of the Elwha River Trail back to the trailhead (plus the extra road walk/bike-out if Whiskey Bend Road is still closed to vehicles).",
+     "hours": 6,
+     "miles": 12,
+     "title": "Exit to the trailhead",
+     "gainFt": 300,
+     "lossFt": 1500,
+     "packLb": 30,
+     "schedule": [],
+     "objective": "Return to Whiskey Bend"
+    }
+   ],
+   "totalNote": "A serious 5-day, ~70-mile round-trip wilderness expedition to one of the most remote summits in Washington: two long days of trail approach up the Elwha River to a high camp in upper Elwha Basin, a long cross-country summit push to Dodwell-Rixon Pass and up the ridge from the pass, then two days back out."
+  },
+  "road": {
+   "name": "Olympic Hot Springs Road / Whiskey Bend Road",
+   "status": "Closed to vehicles since May 2021 washout; open to pedestrians, cyclists, and leashed dogs only",
+   "driveNote": "Park at Madison Falls trailhead (last vehicle access); walk or bike roughly 6-7 miles (partly pushing a bike around a washout) to reach the Whiskey Bend trailhead and start of the Elwha River Trail"
+  }
+ },
+ {
+  "id": "wa_mount_wilder_scramble",
+  "itinerary": {
+   "cal": "Best window is July–September once the Elwha fords and upper slopes are snow-free.",
+   "days": [
+    {
+     "n": 1,
+     "note": "Easy, well-graded river-valley trail from the Whiskey Bend trailhead through old-growth forest and the Geyser Valley area. Gentle warm-up day with a full multi-day pack.",
+     "hours": 5,
+     "miles": 9,
+     "title": "Up the lower Elwha valley",
+     "gainFt": 800,
+     "lossFt": 200,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Reach Mary's Falls Camp"
+    },
+    {
+     "n": 2,
+     "note": "The biggest mileage day of the trip, continuing up the Elwha River Trail past Elkhorn and Hayes River toward the head of the valley. Camp Wilder sits near the base of Mount Wilder's steep south/east flank, just below Chicago Camp and Low Divide.",
+     "hours": 8.5,
+     "miles": 11,
+     "title": "Long push to Camp Wilder",
+     "gainFt": 1400,
+     "lossFt": 200,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Reach Camp Wilder, base camp for the peak"
+    },
+    {
+     "n": 3,
+     "note": "Leave camp with a light day pack and climb cross-country up steep heather, scree and brushy rock bands on Wilder's south/east aspect — no maintained trail, expect route-finding and Olympic-style bushwhacking low down giving way to open class 2-3 slopes near the ridge and summit.",
+     "hours": 9,
+     "miles": 4.5,
+     "title": "Summit day: Mount Wilder",
+     "gainFt": 3300,
+     "lossFt": 3300,
+     "packLb": 15,
+     "schedule": [
+      {
+       "time": "5:00 AM",
+       "label": "Leave Camp Wilder",
+       "detail": "Light day pack, early start to beat afternoon thunderstorm risk and soften brush with morning cool."
+      },
+      {
+       "time": "6:30 AM",
+       "label": "Clear treeline brush, gain the ridge",
+       "detail": "Steepest, densest bushwhacking is in the lower 1,500 ft; terrain opens onto heather and rock above."
+      },
+      {
+       "time": "9:30 AM",
+       "label": "Summit Mount Wilder",
+       "detail": "5,939 ft — views into the Bailey Range and down the Elwha and Queets drainages."
+      },
+      {
+       "time": "10:15 AM",
+       "label": "Begin descent",
+       "detail": "Reverse the ascent line; downclimb loose rock bands carefully."
+      },
+      {
+       "time": "2:00 PM",
+       "label": "Back at Camp Wilder",
+       "detail": "Rest and refill water for the hike out."
+      }
+     ],
+     "objective": "Climb Mount Wilder and return to Camp Wilder"
+    },
+    {
+     "n": 4,
+     "note": "Reverse Day 2's route back down the Elwha River Trail. Mostly downhill/flat but long, with tired legs from the summit push the day before.",
+     "hours": 7,
+     "miles": 11,
+     "title": "Retreat down the valley",
+     "gainFt": 200,
+     "lossFt": 1400,
+     "packLb": 38,
+     "schedule": [],
+     "objective": "Return to Mary's Falls Camp"
+    },
+    {
+     "n": 5,
+     "note": "Easy final morning back down the lower valley trail to the car (or the current end-of-road walk if the Elwha Road closure is still in effect).",
+     "hours": 4.5,
+     "miles": 9,
+     "title": "Out to the trailhead",
+     "gainFt": 200,
+     "lossFt": 800,
+     "packLb": 30,
+     "schedule": [],
+     "objective": "Hike out to Whiskey Bend"
+    }
+   ],
+   "totalNote": "A genuine wilderness backpack, not a day trip: roughly 40 trail miles round trip up the Elwha valley to Camp Wilder plus a steep, off-trail summit scramble, typically done in 5 days by parties visiting this remote, rarely-climbed interior Olympics summit — usually as a side trip from Bailey Range/Elwha travel rather than for peak-list credit; Mount Wilder is not on Washington's Bulger List (100 highest peaks), whose lowest-ranked entries sit above 8,300 ft, far above Wilder's 5,939 ft."
+  },
+  "road": {
+   "name": "Olympic Hot Springs Road / Elwha access",
+   "status": "Closed to vehicles beyond Madison Falls due to flood washout; open to foot and bike traffic through to Whiskey Bend trailhead",
+   "driveNote": "Elwha-area road access has been affected by washouts in past years; verify current status.",
+   "seasonalGate": null
+  }
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "itinerary": {
+   "cal": "Best late July through September once high-elevation snow has melted enough for the off-trail ridge sections; requires an Olympic NP wilderness permit (quota + required bear canister) booked by phone with the Wilderness Information Center for the cross-country zones.",
+   "days": [
+    {
+     "n": 1,
+     "note": "Well-graded trail from the Sol Duc trailhead up through Deer Lake and along High Divide to a camp near Cat Basin, staged at the start of the off-trail traverse. Last easy water and maintained tread of the trip.",
+     "hours": 6,
+     "miles": 7.5,
+     "title": "Sol Duc to High Divide / Cat Basin",
+     "gainFt": 4300,
+     "lossFt": 200,
+     "packLb": 38,
+     "objective": "Reach the base of the Bailey Range crest"
+    },
+    {
+     "n": 2,
+     "note": "Off-trail route-finding begins here: the exposed 'Catwalk' traverse between Cat Peak and Mount Carrie, then sidehilling brushy meadows and gullies down to a beach camp on Stephen Lake.",
+     "hours": 7,
+     "miles": 7,
+     "title": "The Catwalk to Stephen Lake",
+     "gainFt": 3200,
+     "lossFt": 1400,
+     "packLb": 38,
+     "objective": "Cross the Catwalk and flank Mount Carrie"
+    },
+    {
+     "n": 3,
+     "note": "Climb out of the Stephen Lake basin and traverse post-glacial moraine and meadow terrain to camp in Upper Ferry Basin, with Stephen Peak an optional short side-scramble along the way.",
+     "hours": 6,
+     "miles": 5,
+     "title": "Stephen Lake to Ferry Basin",
+     "gainFt": 2600,
+     "lossFt": 1200,
+     "packLb": 36,
+     "objective": "Push south along the Bailey Range crest"
+    },
+    {
+     "n": 4,
+     "note": "Loose scree and talus lead over a shoulder near Mount Ferry into what parties often nickname 'Junkyard Basin,' then down to a grassy meadow camp near Bear Pass — the staging point for the Barnes side-trip.",
+     "hours": 5.5,
+     "miles": 5,
+     "title": "Ferry Basin to a high camp near Bear Pass",
+     "gainFt": 2400,
+     "lossFt": 1000,
+     "packLb": 35,
+     "objective": "Reach the meadow camp below Mount Barnes"
+    },
+    {
+     "n": 5,
+     "note": "Stash overnight gear in the meadow and go light. Scree and lingering snow patches lead southwest of the peak, then a moderate scree slope and a boot track curl left through brief brush to the summit, with big views of Olympus, Queets, Noyes, and Seattle — often shared with swarms of flying ants in late summer.",
+     "hours": 6,
+     "miles": 5.5,
+     "title": "Side-trip: climb Mount Barnes",
+     "gainFt": 2200,
+     "lossFt": 2200,
+     "packLb": 15,
+     "schedule": [
+      {
+       "time": "7:00 AM",
+       "label": "Leave camp, stash overnight gear",
+       "detail": "Cache tents/sleeping gear in the meadow southeast of Barnes and continue with a light daypack."
+      },
+      {
+       "time": "+1.5 hr",
+       "label": "Scree and snow patches to southwest of peak",
+       "detail": "Mixed scree and residual snow, no technical difficulty in late summer."
+      },
+      {
+       "time": "+1 hr",
+       "label": "Boot-track ridge, brief bushwhacking",
+       "detail": "Moderate scree slope, then a visible boot track curling left through short brushy sections."
+      },
+      {
+       "time": "+3 hr",
+       "label": "Summit Mount Barnes",
+       "detail": "360-degree views; parties sometimes continue toward Mount Queets from here if conditions and time allow."
+      },
+      {
+       "time": "+5-6 hr",
+       "label": "Retrace route to gear stash and camp",
+       "detail": "Same line in reverse back to the meadow cache."
+      }
+     ],
+     "objective": "Tag the Mount Barnes summit and return to camp"
+    },
+    {
+     "n": 6,
+     "note": "A long, punishing grind: down the largely melted-out Elwha Snowfinger gully (steep scree, slabs and an icy snow hump) into the tangled brush and stream crossings of the Elwha Basin ('the maze') to Chicago Camp, then a fast, well-graded push down the Elwha River Trail to the Whiskey Bend trailhead near Madison Falls. Tired parties often split this into two days at Hayes River instead; if the southern trail is fire-closed, exit via Dodger Point, which adds mileage and elevation change.",
+     "hours": 13,
+     "miles": 25.5,
+     "title": "Descend the Elwha Snowfinger and out to Whiskey Bend",
+     "gainFt": 1000,
+     "lossFt": 7400,
+     "packLb": 30,
+     "schedule": [],
+     "objective": "Exit via the Elwha Basin maze and Elwha River Trail"
+    }
+   ],
+   "totalNote": "A 6-day, roughly 55-mile off-trail Bailey Range traverse with 17,000+ ft of cumulative gain; Mount Barnes itself is only a half-day out-and-back scramble tacked onto a high camp near Bear Pass, usually paired with (or offered as an alternative to) Mount Queets, and the trip finishes with a very long exit day down the Elwha."
+  },
+  "road": {
+   "name": "Sol Duc Hot Springs Road (Sol Duc River Road, from US-101)",
+   "status": "Paved, 2WD-accessible to the road-end trailhead",
+   "driveNote": "From US-101 near Lake Crescent, follow Sol Duc Hot Springs Road roughly 14 miles past the resort to the road-end parking area. The Elwha-side alternative via Whiskey Bend is a genuine second approach to this peak but has no car access: Olympic Hot Springs Road is closed to vehicles beyond Madison Falls by a washout, with no reopening date, adding a 6.2-mile one-way walk or bike to reach Whiskey Bend.",
+   "seasonalGate": "Typically gated or closed by snow late October through late March; check NPS current road conditions before driving in."
+  }
+ },
+ {
+  "id": "wa_mount_pulitzer_standard",
+  "itinerary": {
+   "cal": "The classic Elwha Snowfinger exit is a permanent snowfield that has been melting out earlier each year and may be unreliable or gone by late summer — check current trip reports before committing to it as your exit, and book Sol Duc/Seven Lakes Basin wilderness permits early since they're competitive.",
+   "days": [
+    {
+     "n": 1,
+     "note": "A well-graded trail climb from the Sol Duc trailhead up the Sol Duc River and High Divide trails to Heart Lake, the last established camp before the Bailey Range cross-country section begins. Most parties treat this as an easy warm-up day.",
+     "hours": 5,
+     "miles": 7.5,
+     "title": "Approach to Heart Lake",
+     "gainFt": 3300,
+     "lossFt": 200,
+     "packLb": 42,
+     "schedule": [],
+     "objective": "Reach Heart Lake camp below the Catwalk"
+    },
+    {
+     "n": 2,
+     "note": "The signature exposed section: an undulating, off-trail traverse across the Catwalk between Cat Peak and Mt. Carrie, then a long sidehill below Mt. Carrie and Mt. Ruth, a steep drop to Cream Lake, and a climb back up into Upper Ferry Basin. Trip reports consistently flag this as the longest, most tiring day of the trip.",
+     "hours": 10,
+     "miles": 9,
+     "title": "Cross the Catwalk to Ferry Basin",
+     "gainFt": 2600,
+     "lossFt": 2600,
+     "packLb": 40,
+     "schedule": [],
+     "objective": "Reach Upper Ferry Basin camp"
+    },
+    {
+     "n": 3,
+     "note": "From Ferry Basin, most parties tag Mt. Ferry and/or Mt. Pulitzer as an early-morning side scramble before continuing the traverse south past Lone Tree Pass and over Bear Pass, dropping into Queets Basin to camp. This is widely described as the most scenic day of the traverse.",
+     "hours": 9,
+     "miles": 8,
+     "title": "Mount Pulitzer and on to Queets Basin",
+     "gainFt": 2500,
+     "lossFt": 2800,
+     "packLb": 38,
+     "schedule": [
+      {
+       "time": "5:30 AM",
+       "label": "Leave Ferry Basin camp",
+       "detail": "Drop packs or carry light for the Pulitzer side trip."
+      },
+      {
+       "time": "6:30 AM",
+       "label": "Reach the Ferry-Pulitzer col",
+       "detail": "Start of the class 3 scramble up Pulitzer's east ridge."
+      },
+      {
+       "time": "7:15 AM",
+       "label": "Summit Mount Pulitzer",
+       "detail": "6,283 ft; brief stop for views before descending the same way."
+      },
+      {
+       "time": "8:15 AM",
+       "label": "Back at camp, resume traverse south",
+       "detail": "Head toward Lone Tree Pass with full packs."
+      },
+      {
+       "time": "11:00 AM",
+       "label": "Cross Bear Pass",
+       "detail": "High point of the day's traverse leg."
+      },
+      {
+       "time": "2:00 PM",
+       "label": "Arrive Queets Basin camp",
+       "detail": "Large post-glacial basin with running water; watch for bears."
+      }
+     ],
+     "objective": "Summit Mount Pulitzer, then reach Queets Basin camp"
+    },
+    {
+     "n": 4,
+     "note": "From Queets Basin the traditional exit climbs back toward Bear Pass then drops steeply via the Elwha Snowfinger permanent snowfield into the headwaters of the Elwha River, losing most of the day's elevation. Parties camp somewhere along the upper Elwha River Trail once back on maintained trail.",
+     "hours": 9,
+     "miles": 11,
+     "title": "Exit via the Elwha Snowfinger",
+     "gainFt": 800,
+     "lossFt": 4500,
+     "packLb": 34,
+     "schedule": [],
+     "objective": "Descend Bear Pass/Queets Basin drainage to the Elwha valley"
+    },
+    {
+     "n": 5,
+     "note": "A long but gentle trail walk down the Elwha River Trail to the Whiskey Bend trailhead, ending the traverse. Some parties split this into two shorter days if legs are trashed from the cross-country sections.",
+     "hours": 6,
+     "miles": 12,
+     "title": "Elwha River Trail out to Whiskey Bend",
+     "gainFt": 200,
+     "lossFt": 800,
+     "packLb": 30,
+     "schedule": [],
+     "objective": "Hike out to the Whiskey Bend trailhead"
+    }
+   ],
+   "totalNote": "A 5-day, roughly 47-mile point-to-point traverse (Sol Duc to Whiskey Bend) with Mount Pulitzer climbed as an optional early-morning side summit on day 3 from a Ferry Basin or Queets Basin camp — not a car-to-car day climb given the remote approach."
+  },
+  "road": {
+   "name": "Sol Duc Road (start) / Whiskey Bend Road, Elwha (exit)",
+   "status": "Paved, open to the Sol Duc Falls trailhead area outside winter, but often closed through the winter for snow and ice; sections can also close temporarily for storm damage or repair work",
+   "driveNote": "Sol Duc Road is paved and open to vehicles to the Sol Duc Trailhead, the standard start. The Elwha-side Whiskey Bend Road is closed to vehicles (open to foot/bike travel only) due to flood damage, with no end date given as of the Olympic National Park road-conditions page updated August 7, 2026, adding several miles if exiting that way -- verify current status before driving."
+  }
+ }
+]

@@ -1,0 +1,38 @@
+{
+ "area_id":"wa_mount_ellinor",
+ "routes":[
+ {"route_id":"wa_mount_ellinor_southeast_chute",
+  "season":{"months":[3,4,5,6],"window":"Mar-Jun","evidence":"Snow-chute route: logged Winter Route/SE Chute ascents cluster Apr-Jun with some Jan-Mar; web search of trip reports shows the chute holds firm snow late March to early May, turns wet with running water by mid May and is often not worth it by June; summer trail is used when snow is gone."},
+  "track":{"aid":"2495703","verdict":"same","kind":"complete","inSeason":true,"why":"Logged 'Winter route' (Apr 23 2024), report describes leaving the trail onto the winter route, crampons and axe up the main snow chute, summit plateau, back at car; line ends at the summit 1 m from our pin and follows the chute (100-180 m from the summer-trail line on the upper section). Round trip from the lower trailhead. Needs the lower trailhead pin below to pass the 300 m rule."},
+  "otherTracksConsidered":[
+   {"aid":"2492287","verdict":"unsure","why":"Same lower-TH winter-route line, Apr 19 2024, but no report text; second-best alternate."},
+   {"aid":"3101785","verdict":"offseason","why":"Jan 18 winter route, more than a month outside Mar-Jun; also started mid-road."},
+   {"aid":"2223877","verdict":"different","why":"Apr 27 2023 road-walk start at 2136 ft, far from any pin."},
+   {"aid":"1380607","verdict":"different","why":"May 15 2020 started at the campground, 12 mi round trip; not a trailhead round trip."},
+   {"aid":"2719526","verdict":"different","why":"Jun 2022 start from far down the valley, 12.8 mi."},
+   {"aid":"2133993","verdict":"offseason","why":"Feb 19 2023, outside window."},
+   {"aid":"1549513","verdict":"offseason","why":"Nov 28 2020."}
+  ],
+  "pins":[{"type":"Trailhead","action":"add","lat":47.5066,"lng":-123.2321,"name":"Mount Ellinor Lower Trailhead","evidence":"Spring winter-route parties start here (the road to the upper lot is usually snowed; fee-free lot). The 2024 winter-route tracks start within 40 m of this point. The route has no trailhead pin stored.","confirmedBy":"https://www.wta.org/go-hiking/hikes/mount-ellinor (lists trailhead 47.5066, -123.2321; lower trailhead at 2,600 ft)"}],
+  "facts":[
+   {"field":"approach_note","month":3,"text":"In early March, snow can cover the road about a mile below the lower trailhead, adding a road walk before the trail starts.","aids":["1870185"]},
+   {"field":"watch_out","month":4,"text":"Mid-chute narrowing in April: a deep glissade trench runs down the middle; climb beside it, not in it.","aids":["2495703"]},
+   {"field":"watch_out","month":5,"text":"By mid to late May, snow bridges and hollow voids over running water form in the chute.","aids":["1380607","1670118"]}
+  ]},
+ {"route_id":"wa_mount_ellinor_standard",
+  "season":{"months":[6,7,8,9,10],"window":"Jun-Oct","evidence":"Stored Jun-Oct matches logged summer-trail ascents (Jun-Nov) and upper road access; searched trail reports show the snow chute taking over before June, and road snow returns in late autumn."},
+  "track":{"aid":"3294657","verdict":"same","kind":"complete","inSeason":true,"why":"Logged 'Mount Ellinor Trail' (Trail 812), Jun 13 2026, starts/ends at the upper trailhead (124/24 m from our pin), 4 mi / 2,491 ft round trip as the upper-TH trail should be, ends 3 m from our summit. Its line stays within ~40 m of an October snow-free upper-TH track, and 150 m or more away from the winter-chute tracks on the upper mountain, so it is the summer switchback trail, not the chute."},
+  "otherTracksConsidered":[
+   {"aid":"3366766","verdict":"unsure","why":"Oct 3, upper TH round trip on the same trail line (blank route name) - equally good alternate, logged name absent."},
+   {"aid":"3329056","verdict":"different","why":"Aug 30 traverse from Mount Washington; visits another peak."},
+   {"aid":"3321089","verdict":"different","why":"Aug 23 traverse via Mount Washington."},
+   {"aid":"1467547","verdict":"different","why":"Aug 2020 continues on to Mount Washington (end 1.25 km from pin)."},
+   {"aid":"3294652","verdict":"unsure","why":"Jun 7 starts from the lower trailhead area, 1.2 km from our upper pin."},
+   {"aid":"2613494","verdict":"different","why":"Aug 2024 summer trail from the lower trailhead, 1.2 km from upper pin."},
+   {"aid":"1549513","verdict":"offseason","why":"Nov 28."}
+  ],
+  "pins":[],
+  "facts":[]}
+ ],
+ "notes":"The Southeast Chute route has no trailhead pin; the proposed lower-trailhead pin differs from its text (which starts at the upper lot) but is where spring winter-route parties actually start. Standard Trail facts: no in-season trip report had usable text, so none proposed."
+}

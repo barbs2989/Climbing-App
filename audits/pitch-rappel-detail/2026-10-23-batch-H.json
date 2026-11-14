@@ -1,0 +1,121 @@
+{
+  "wa_boving_christensen": {
+    "area": "wa_prusik_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.9", "lengthM": 35, "bolts": 0, "anchor": "Gear", "crux": false,
+        "notes": "Start on the west side of the south face, about 100 ft right of Solid Gold. A short crack leads to a low-angle slab below a corner; follow the corner to a belay under a steep white face. The route sees little traffic, so test the rock, which can be loose in places." },
+      { "pitch": "2", "grade": "5.8", "lengthM": 60, "bolts": 0, "anchor": "Gear", "crux": false,
+        "notes": "A long pitch up exposed, somewhat dirty face cracks that are lined with lichen, trending a bit leftward to a ledge below a sharp corner. The line wanders, so expect heavy rope drag by the top; extend runners generously. Climb carefully on the lichen." },
+      { "pitch": "3", "grade": "5.10-", "lengthM": 30, "bolts": 0, "anchor": "Gear", "crux": false,
+        "notes": "The best pitch on the route. A fun bouldery move gets you into the clean corner, which you follow before exiting right into an alcove for the belay." },
+      { "pitch": "4", "grade": "5.10-", "lengthM": 50, "bolts": 0, "anchor": "Gear (West Ridge junction)", "crux": true,
+        "notes": "Starts with a finger crack on a slab (around 5.10b) that turns to hands, then steps left into a flake. The crack can thin back to fingers above the hand section, so carry small cams and place them before the thin part. Finish up the last hand cracks (about 5.8) to the West Ridge, where several nearby south-face routes top out. The first-ascent party climbed this with nuts and hexes only." }
+    ],
+    "rappel_detail": [
+      { "n": 1, "anchor": "Rappel anchor on the north side of the ridge (shared with Solid Gold)",
+        "station": "From the top of the route, or after scrambling the West Ridge, find the rappel anchor on the north side of the ridge, the same one used after Solid Gold.",
+        "notes": "A single 60 m rope reaches the ground. Scramble to the notch below the West Ridge route, then back to the base of the south face, trending right for a while to avoid cliffs directly below the notch. About 30 minutes from the top of the route to its base.",
+        "hazards": ["cliffs directly below the West Ridge notch on the scramble back"] }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"],
+      "changed": "Extended all four stored pitch notes (kept labels, grades, stored lengths and gear anchors) with the line's start, rope drag, the bouldery pitch-3 entry, and the pitch-4 finger-to-hand crack thinning. That source gives lengths in feet (about 120, 200, 100, 170 ft = 37, 61, 30, 52 m); stored values are close and were kept. Added a one-station rappel table from the descent description (one rappel down the north side, 60 m rope enough). Anchor type at the rappel is not stated by the source, so left out.",
+      "pitch_count_found": 4,
+      "other_findings": "Stored `rappels` text says 'Two rappels off tat to the base of the West Ridge' which disagrees with the single-source description of ONE rappel on the north side with a 60 m rope (the stored descent text agrees with one rappel). The source trip report is the only full description found; no Mountain Project page for this route was found."
+    }
+  },
+  "wa_mount_index_north_face": {
+    "area": "wa_north_peak_2",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Brushy NE spur", "grade": "Class 3–4 brush, slab",
+        "notes": "From the talus and grass above the rockslide on the west side of Lake Serene, scramble several hundred feet up the broken, bushy northeast spur to the first slab, staying just right of the crest until a vertical face blocks the way. Downsloping holds and moss make this slow and serious when wet, with big consequences for a slip. The face does not dry quickly: several days of dry weather are advisable before going, since easy moves feel insecure on wet moss." },
+      { "pitch": "Exposed corner", "grade": "Roped, very exposed",
+        "notes": "At the vertical face, which has a two-piton anchor at its base, go sharply left and back onto the crest, then climb an exposed corner and traverse about 15 ft left into a gully perched just above a sheer wall, with roughly 1,000 ft of air toward the lake. Moves are moderate but protection is almost nil and the position is serious. A block with old tat marks the end of the traverse; the crux move is easily wet." },
+      { "pitch": "Rock bowl and hidden ledge", "grade": "Exposed slab traverse",
+        "notes": "Climb about 50 ft up the rock bowl, then cut sharply right behind a block and around the skyline on the hidden ledge, which is more of a ramp and is easy to find once you know to look. It becomes an exposed slab with a short stretch of small holds. The common error is continuing up the bowl's headwall (slow, poorly protected 5.5); finding the ledge saves time for the upper rib." },
+      { "pitch": "Brushy gully", "grade": "Steep brush, 2 leads",
+        "notes": "Round a corner to the base of a steep, shallow, brushy gully and climb it for two leads. Protection is mostly bushes and small trees, which are generally more useful here than rock gear; short vertical steps of 10-20 ft in mud and moss are the difficulty, and a rap station with a pile of old slings turns up about every 50 ft. Wet slab moves out of the left-hand gully can force you up to a large tree for a belay." },
+      { "pitch": "Ramp to the open basin", "grade": "Slanting ramp",
+        "notes": "The gully tops out on a slanting ramp system that bears right for about 400 ft to the large open basin on the true north face. The basin can hold snow until mid-season, and without snow its loose, vegetated ground is hard to protect. Rappel stations exist in the basin, which is where the route is usually retreated from." },
+      { "pitch": "Right-curving gully", "grade": "Snow or slabby rock",
+        "notes": "Climb three to four leads up the steep, right-curving gully above the left side of the basin, on snow early in the season or rock later. Snow-free, its slabby rock is hard to protect and marginal when wet; rain on this face also starts stonefall. Rock in the upper gully can get loose and run-out, around 5.5-5.6." },
+      { "pitch": "North Rib", "grade": "5.5",
+        "notes": "As the gully ends, take a broad ramp slanting right onto the sharp North Rib and climb it for three leads, the first two on solid, exposed 5.5 rock with good protection. The rib ends at an open, grassy bench. Alternatively the rib can be gained directly from the basin by a rising traverse right, finishing over a near-vertical gendarme on good rock. The rib is brush-free and is the best climbing on the route." },
+      { "pitch": "Bench and upper gully", "grade": "Brush and trees",
+        "notes": "Follow the bench left around the corner toward the east face until it ends at a prominent gully. Climb about 100 ft of scrub and brush, and where the gully forks take the left branch through larger trees for two leads to a steep heather slope just below the crest." },
+      { "pitch": "Crest to the summit", "grade": "Easy rock, heather",
+        "notes": "Follow the crest right on easy rock to the first false summit, then follow a small depression southwest to the second point and drop about 50 ft to bypass a cliff. The summit spire is climbed by heather and broken rock on its north side. Expect the descent to take about as long as the climb." }
+    ],
+    "rappel_detail": [
+      { "n": 1, "anchor": "Slung trees, blocks and tied brush with old slings",
+        "station": "From the summit area, retrace the crest and upper gully to the rib and bench; stations on trees and blocks appear along the upper route. Look for existing tat before building your own.",
+        "notes": "Upper rappels run down the rib and the gully above the basin, mostly off trees. Numbers and lengths vary by line, so treat this as the start of a long series back to the basin.",
+        "hazards": ["old, sun-rotted slings", "loose rock and stonefall in rain"] },
+      { "n": 2, "anchor": "Tree or slung block at the head of the basin",
+        "station": "The stations at the edge of the north face basin, where the route is usually retreated from.",
+        "notes": "A single-rope rappel followed by a double-rope rappel off a tree lands at the bottom of the basin. A block can be slung for a traversing rappel back to the basin if you are across it on the far side, where there are no stations.",
+        "hazards": ["no stations on the far side of the bowl"] },
+      { "n": 3, "anchor": "Old slings on trees and bushes (a pile of tat at each station)",
+        "station": "Descend the brushy gully, finding the next station about every 50 ft or so; the quality of anchors varies, and some are clumps of brush cinched with webbing.",
+        "notes": "This is the slow, brushy part of the descent. Ropes snag and tangle constantly in the brush, so descend one rope-length at a time and manage the ends. Parties describe the descent as taking as long as the climb. A 200 ft rope stretch down a gully into the basin can lead to a stuck rope; rap to an intermediate point and pull from there.",
+        "hazards": ["ropes snagging in brush", "stuck rope on long double-rope rappels", "unreliable tied-brush anchors"] },
+      { "n": 4, "anchor": "Two-piton anchor (some report one bolt remaining after rockfall)",
+        "station": "The wall at the foot of the exposed traverse; the last rappel is a free-hanging double-rope rappel over a large cliff.",
+        "notes": "This rappel puts you near the two-piton anchor at the start of the roped climbing, below the exposed corner, before the brushy spur back to Lake Serene. Each pull fights heavy brush drag and the knot can get stuck.",
+        "hazards": ["free-hanging", "knot jamming in brush on the pull", "anchor damaged by rockfall, per a forum report"] }
+    ],
+    "review": {
+      "confidence": "low",
+      "sources": ["https://climberkyle.com/2020/07/05/north-index-attempt/", "https://www.mountainwerks.org/cma/2001/mtindex.html", "https://publications.americanalpineclub.org/articles/12200615600", "https://www.mountainproject.com/forum/topic/124605766/index-north-peak-reality-check"],
+      "changed": "Kept all nine stored pitch labels and extended notes with details from a 2020 attempt report (two-piton anchor at the vertical wall, tat on a block after the exposed corner, rap stations every ~50 ft in the brush, wet left gully) and a 2001 report. The rappel table is built from descriptions of retreating the route, not from a numbered station list: the actual number of rappels, lengths and exact locations are not published and the entries are a sequence of the documented kinds of station, not verified single stations. No lengthM given. Anchor type claims ('one bolt remaining') come from a single forum comment.",
+      "pitch_count_found": 9,
+      "other_findings": "Stored `rappel_count_note` says 4-5 rappels of 30-50 ft each; the descent reports describe a 200 ft rappel, free-hanging double-rope rappels and many short brush rappels, so that count and length range look low. Stored `pitches` is 12 while the table has 9 sections (several of which are multi-lead) - not a contradiction. Reported route wetness: the face dries slowly."
+    }
+  },
+  "wa_gunrunner": {
+    "area": "wa_middle_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.9",
+        "notes": "Starts on the Chickamin Glacier side, well north of the Northeast Peak where the ridge's continuous run ends in a dirty gully of bad rock. Begin off large squarish blocks just right of that broken dike or gully and climb a steep splitter hand crack in clean granite with good protection." },
+      { "pitch": "2", "grade": "5.10+",
+        "notes": "Twin hand cracks and a right-facing flake; excellent protection; sustained climbing. The route then follows the crest, with seven pitches in all up to the cavernous chimney below the summit of the Northeast Peak." },
+      { "pitch": "3", "grade": "5.10",
+        "notes": "Face climbing on the northeast face of Northeast Peak, continuing along the crest of the ridge. The ridge is steeper at its low north end, so the first pitches climb upward rather than traverse." },
+      { "pitch": "4-5", "grade": "5.9",
+        "notes": "Traverse toward North Peak on solid granite with good protection on the north face. Parties simul-climb some of the easier crest pitches here." },
+      { "pitch": "6", "grade": "5.10",
+        "notes": "Crack climbing on the North Peak north face. Somewhere on the Northeast Peak crest the line reaches a cavernous chimney capped by a large roof, which the leader exits through a hidden hole at the top; the exact pitch number is not published." },
+      { "pitch": "7", "grade": "5.10",
+        "notes": "Dead-end fist crack near the North Peak summit; stored beta says this takes one point of aid and a pendulum to escape. The first-ascent account says the short pendulum (A1) on the North Peak is easily avoided by future parties." },
+      { "pitch": "8-10", "grade": "5.8-5.9",
+        "notes": "Traverse from North Peak to the Gunsight Notch and the Middle Peak notch; three pitches of moderate climbing in the notch (the only section previously climbed). From the notch, a 5.9 dihedral on the east side of the crest, above the Blue Glacier, gains Middle Peak." },
+      { "pitch": "11-14", "grade": "5.10",
+        "notes": "Middle Gunsight north face; sustained crack climbing with excellent protection; four pitches of quality granite." },
+      { "pitch": "15-17", "grade": "5.9-5.10",
+        "notes": "Traverse to South Peak via mixed climbing and scrambling; three pitches of varied climbing, passing over a penultimate gendarme before the final pitches." },
+      { "pitch": "18", "grade": "5.8",
+        "notes": "Short final pitch to the highest point of South Gunsight. The first-ascent party climbed the last pitches by moonlight and then rappelled to the Blue Glacier in the dark." }
+    ],
+    "rappel_detail": [
+      { "n": 1, "anchor": "Not stated; check every anchor on the granite",
+        "station": "Descent from the South Peak summit toward the Blue Glacier on the east side of the range; this is the one rappel the first-ascent account describes.",
+        "notes": "The rappel is free-hanging over a gaping moat and lands on the Blue Glacier, so look for a line that clears the moat. Parties have done it in total darkness with only starlight reflecting off snow and white granite. How many rappels precede it and what the anchors are is not published.",
+        "hazards": ["free-hanging", "moat at the base", "descending in darkness is common after a long day"] }
+    ],
+    "review": {
+      "confidence": "low",
+      "sources": ["https://publications.americanalpineclub.org/articles/12200813000/North-America-United-States-Gunsight-Peaks-Traverse-Gunrunner", "https://www.mountainproject.com/route/106402140"],
+      "changed": "Kept all ten stored pitch labels, added crest/start/chimney/dihedral/gendarme details from the first-ascent account and the route page. Where the stored pitch 7 says aid is needed to escape a fist crack, the first-ascent account says the only aid point is a short pendulum (A1) on North Peak that can be avoided; I kept the stored note and flagged the disagreement in the note. The rappel table has only the one documented rappel; no other station is published.",
+      "pitch_count_found": 18,
+      "other_findings": "Stored `beta` says 'three pitches of 5.10 crack climbing' and puts the aid at a dead-end fist crack; first-ascent account says seven pitches reach the chimney below the Northeast Peak summit, with a pendulum A1 on North Peak, and 'mostly 5.9' per the route page. Stored descent says 'rappel the south side of each summit'; the source states only the final rappel from South Peak to the Blue Glacier. Pitch-number mapping of stored labels to the account's stages is approximate."
+    }
+  },
+  "skip_reasons": {
+    "wa_little_sister_north_face": "Only one source with real content (a thin route page: snow slopes from the Green Creek Glacier, moat crossing, scattered pin and tat anchors on looker's right of the face, or downclimb the SE Ridge) which the stored row already reproduces. No station-by-station or pitch-level description found; blog reports cover the NW face/aretes (a different line). Nothing to add without inventing.",
+    "wa_cascade_peak_nw_chimney": "Could not find any source describing this route (no Mountain Project route page, no trip report, no guidebook text reachable); several searches returned only other peaks. Cannot verify the stored row or add detail."
+  }
+}

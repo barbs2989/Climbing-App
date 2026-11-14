@@ -82,7 +82,7 @@ for (const f of fs.readdirSync(path.join(dir, "_text"))) {
 for (const [id, r] of [...found]) if (r.how === "crag") for (const k of (tree.get(id) || {}).kids || []) if (!found.has(k)) found.set(k, { aspect: r.aspect, how: "crag" });
 
 // Ours: same name, nearest within 2 km.
-const ours = await selectAll("areas", "id,name,lat,lng,aspect", null, { pageSize: 1000 });
+const ours = await selectAll("areas", "id,name,lat,lng,aspect", null, { pageSize: 300 });
 const byName = new Map();
 for (const a of ours) { const k = norm(a.name); if (!byName.has(k)) byName.set(k, []); byName.get(k).push(a); }
 const out = []; let unmatched = 0;
@@ -94,7 +94,9 @@ for (const [mp, r] of found) {
 }
 
 // Agreement against what we already hold: the routes' own aspect (majority per area) and areas.aspect.
-const routeAsp = await selectAll("routes", "id,area_id,aspect", "aspect=not.is.null", { pageSize: 1000 });
+const routeAsp = [];
+const ids = [...new Set(out.map(function (o) { return o.id; }))];
+for (let i = 0; i < ids.length; i += 40) routeAsp.push(...await selectAll("routes", "id,area_id,aspect", "aspect=not.is.null&area_id=in.(" + ids.slice(i, i + 40).map(encodeURIComponent).join(",") + ")", { pageSize: 500 }));
 const held = new Map();
 for (const r of routeAsp) { const m = String(r.aspect).match(/^\s*(north[- ]?east|north[- ]?west|south[- ]?east|south[- ]?west|north|south|east|west|ne|nw|se|sw|n|s|e|w)\b/i); if (m && !held.has(r.area_id)) held.set(r.area_id, B[key(m[1])]); }
 for (const o of ours) if (o.aspect && o.aspect !== "varies") held.set(o.id, B[o.aspect.toLowerCase()]);

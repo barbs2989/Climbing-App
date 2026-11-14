@@ -1,0 +1,32 @@
+{
+  "area_id": "wa_whistler_mountain_okanogan",
+  "routes": [
+    {
+      "route_id": "wa_whistler_mountain_scramble",
+      "season": {
+        "months": [6, 7, 8, 9, 10],
+        "window": "Jun-Oct",
+        "evidence": "Stored Jul-Oct (best mid-Jul to early Oct). Web search (Mountaineers Whistler Mountain page and trip reports, Summitpost, mountain-forecast): climbed as an early-season scramble once SR-20 opens, snow-free by summer; histogram of logged ascents spans May-Oct with June/July/Sept busiest. Treated as Jun-Oct."
+      },
+      "track": {
+        "aid": "2871289",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Only one route is stored on the peak. Jun 14 2025, summited, round trip from the Rainy Pass PCT North lot (33 m from our pin) to the summit (9 m), following the described line: leave the PCT, climb through timber to a meadow near 6,000 ft, then the ridge and summit scramble. Report says the ridge was snow-free and the stream approach was brushy. Mid-June is 2 weeks before the stored window opens, within tolerance."
+      },
+      "otherTracksConsidered": [
+        { "aid": "2248769", "verdict": "same", "why": "Jul 15 2023 summited round trip from the PCT lot (parking-lot start is 394 m from our pin, which is why it fails the 300 m test); same line, no report." },
+        { "aid": "2219221", "verdict": "same", "why": "Jun 15 2023, summited, same line, route fully snow-free; ends ~360 m from our pin." },
+        { "aid": "1975044", "verdict": "different", "why": "Jul 23 2022 North Ridge: starts from a highway pullout ~1.7 km east (48.513,-120.689) and climbs the north ridge (class 3-4, one rappel); a different route." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "monthBreakdown", "month": 6, "text": "By mid-June the route is usually clear of snow except small patches in the 6,000 ft meadow, and the summit ridge is dry.", "aids": ["2871289", "2219221"] },
+        { "field": "pro_tips", "month": 6, "text": "On the upper ridge keep to the left side, where the rock is firmer; the right side is loose.", "aids": ["2871289"] },
+        { "field": "approach_note", "month": 6, "text": "Crossing over to the stream too high in the forest costs extra bushwhacking; contour at a lower elevation instead.", "aids": ["2871289"] }
+      ]
+    }
+  ],
+  "notes": "The North Ridge (Grade II, class 3-4, one short rappel, from a SR-20 pullout near 48.513,-120.689, Jul 2022 track 1975044) looks like a second route that we do not hold on this peak. Trailhead pin matches where tracks start (the PCT lot spans ~400 m of 48.5146-48.5181), so no move."
+}

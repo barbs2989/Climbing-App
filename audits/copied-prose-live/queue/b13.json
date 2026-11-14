@@ -1,0 +1,933 @@
+[
+ {
+  "key": "s0841",
+  "text": "Upper section: 800 feet of 60-degree ice (AI4, WI3) with little reliable protection",
+  "runs": [
+   "800 feet of 60 degree ice ai4 wi3 with little reliable"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_coleman_headwall",
+    "path": "watch_out[0]"
+   }
+  ]
+ },
+ {
+  "key": "s0842",
+  "text": "A very early alpine start (1-2 AM) to travel up the center of the broken Coleman Glacier to the base of the headwall (~8,500 ft), then climb roughly 12 pitches of 45-50 degree ice with short steeper steps and a bergschrund crossing. Descend the non-technical Coleman-Deming route back to camp and hike out; this is a long, sustained technical day.",
+  "runs": [
+   "travel up the center of the broken coleman glacier to the base of the headwall"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_coleman_headwall",
+    "path": "itinerary.days[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0843",
+  "text": "Likely a handful to a dozen or so parties in a good ice year - described as one of the more accessible classic steep-ice lines in the Cascades, so it gets attention from technical climbers but far less than the standard glacier routes",
+  "runs": [
+   "one of the more accessible classic steep ice"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_coleman_headwall",
+    "path": "crowds.estimatePerSeason"
+   }
+  ]
+ },
+ {
+  "key": "s0844",
+  "text": "The face begins near 8,500 ft on the northwest side, bounded by the Roman Nose on the climber's right and serac walls on the left. Getting established means crossing a bergschrund, and there are two on the route; depending on the year the crossing can involve a very short vertical step and is often the most committing and least reversible move of the day. Two general lines exist: the right-hand one has more crevasses and schrunds but far less overhead exposure and is the usual recommendation, while it melts out and becomes unreliable from around the start of July; the left-hand line is threatened by icefall from the seracs for its lower half.",
+  "runs": [
+   "by the roman nose on the climber's right and serac walls on the left"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_coleman_headwall",
+    "path": "climbing_route[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0845",
+  "text": "Mt Baker-Snoqualmie National Forest — the approach runs through the Mt. Baker National Recreation Area and the upper moraine into Mount Baker Wilderness. No climbing permit and no overnight backcountry permit. A recreation pass is required to park at the Schriebers Meadow / Park Butte trailhead. Registering your climb at a ranger station is voluntary but sensible.",
+  "runs": [
+   "a recreation pass is required to park at the"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_easton_glacier",
+    "path": "bivy[0].permit"
+   }
+  ]
+ },
+ {
+  "key": "s0846",
+  "text": "The North Ridge of Mount Baker is the peak's premier moderate alpine ice route and a Cascades classic, first climbed by Fred Beckey, Ralph Widrig, and Dick Widrig in August 1948. From the Heliotrope Ridge approach, cross the Coleman Glacier laterally to the base of the ridge, then ascend snow slopes on the ridge's west flank (with crevasse crossings) to the ice cliff that forms the route's crux — 2-6 belayed pitches of 50-85 degree ice depending on the year and line chosen. Above the cliff, moderate snow/ice leads toward the summit cap, which steepens in its last few hundred feet with real exposure over the west face and a possible crevasse crossing near the summit plateau.",
+  "runs": [
+   "exposure over the west face and a possible crevasse crossing near the summit plateau"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_north_ridge",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0847",
+  "text": "From the Mount Baker Highway (SR 542), continue about 1 mile east of the Glacier Public Service Center and turn right onto Glacier Creek Road (FS 39). Drive about 8 miles, turn left at a junction and continue less than half a mile to the Heliotrope Ridge Trailhead for Trail 677, at about 3,700 ft. A Northwest Forest Pass is required to park.",
+  "runs": [
+   "8 miles turn left at a junction and continue less than half a mile to the"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_north_ridge",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0848",
+  "text": "Shares the Heliotrope Ridge Trailhead (~3,500-3,700 ft) and the same Trail 677 approach as the Coleman-Deming route: switchback through old growth to the Kulshan Cabin site/treeline fork (~2.25 mi), then up the Hogsback moraine to the standard high camp at ~6,000 ft (about 3 mi and 2,300 ft of gain, 4-5 hours for a laden party). From high camp, the North Ridge approach diverges from Coleman-Deming: rope up and cross the Coleman Glacier heading climbers' left (east), navigating crevasses and icefall, to gain the base of the North Ridge proper on the glacier's true right side. The standard start crosses a double bergschrund via a bridge or narrow snow ramp (can be a difficult, exposed step depending on the season) and climbs a broad 40-degree snow gully to the crest of the ridge. Hazards: crevasse and bergschrund crossing is the technical crux of the approach and is season-dependent (can close out entirely by late summer), icefall exposure on the glacier traverse, and the route sees far less traffic than Coleman-Deming so tracks/bridges may be unbroken.",
+  "runs": [
+   "a broad 40 degree snow gully to the crest of the ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_north_ridge",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0849",
+  "text": "Climbs a broad 40-degree snow gully to the crest of the ridge. The route sees far less traffic than Coleman-Deming, so tracks and bridges may be unbroken.",
+  "runs": [
+   "a broad 40 degree snow gully to the crest of the ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_north_ridge",
+    "path": "climbing_route[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0850",
+  "text": "From WA-20 at milepost 82, turn north onto Baker Lake Road (FS Road 11) and drive 12.5 miles to just past the Rocky Creek bridge. Turn left on FS Road 12 for 3.6 miles, then stay right on FS Road 13 for 5.3 miles to its end at the Schriebers Meadow (Park Butte) trailhead, about 3,360 ft. Road 13 is potholed and rocky; high clearance helps. A Northwest Forest Pass is required.",
+  "runs": [
+   "to just past the rocky creek bridge turn left"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_baker_squak_glacier",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0851",
+  "text": "A striking, roughly 2,000 ft alpine granite ridge climb up Berge's east side - sustained low-to-mid 5th class rock broken by one 5.8 chimney crux - comparable in quality and length to the Complete North Ridge of Mount Stuart.",
+  "runs": [
+   "comparable in quality and length to the complete north ridge of"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_berge_east_ridge",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0852",
+  "text": "From the Trinity / Buck Creek Trailhead, hike roughly six miles of Buck Creek Trail through an old burn recovering in fireweed, then drop through a meadow and ford Buck Creek — an easy crossing in normal summer flow.\n\nAcross the creek, climb to the crest of Mount Cleator's east ridge through logged and burned forest with a great deal of downed timber. The forest opens considerably above about 4,800 ft, and around 5,500 ft a faint trail appears and contours left.\n\nThat faint path leads to an Alder tunnel at the base of some cliffs. Breaking out of it, traverse slippery heather and blueberry slopes across a basin beneath a waterfall, then climb steep goat trails to a grassy knoll beside a talus field.\n\nThe route is nearly 2,000 vertical feet of generally low-angle, low- to mid-fifth granite, broken by a distinct notch and a burly 5.8 chimney crux, then towers and gendarmes to the summit. Rock is consistently solid enough for fast simul-climbing except at the crux — which is what makes this the peak's one technical line.",
+  "runs": [
+   "to an alder tunnel at the base of some cliffs"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_berge_east_ridge",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0853",
+  "text": "From the northernmost Blum Lake, cross over the mountain's northwest shoulder into the scoured rock-and-ice basin northwest of the summit, then sidehill across it toward the prominent North Ridge, scouting a line up the lower walls to the crest. The first ascent party bypassed a moat by climbing a chockstone-filled gully, then climbed several difficult pitches to easier climbing on the ridge crest; roughly 150 m of sustained 5.8-5.9 R climbing on very solid but compact granite is needed to surmount the crest, after which the route continues along the ridge (reported as at least 3 roped pitches, the hardest at 5.9) for a total rise described as over 1,900 vertical feet along nearly a horizontal mile of ridge.",
+  "runs": [
+   "from the northernmost blum lake cross over the",
+   "into the scoured rock and ice basin northwest of the summit",
+   "a line up the lower walls to the",
+   "a moat by climbing a chockstone filled gully",
+   "5.8 5.9 r climbing on very solid but"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_blum_north_ridge",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0854",
+  "text": "Ascending traverse along the south side of the ridge crests around here before dropping easily into the Blum Lakes basin.",
+  "runs": [
+   "ascending traverse along the south side of the ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_blum_south_ridge",
+    "path": "waypoints[4].note"
+   }
+  ]
+ },
+ {
+  "key": "s0855",
+  "text": "Keep climbing the steep, brushy crest of Blum Creek Ridge on faint tread through old growth and huckleberry until the path begins an ascending traverse along the south side of the ridge crests.",
+  "runs": [
+   "an ascending traverse along the south side of the ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_blum_south_ridge",
+    "path": "waypoints[4].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0856",
+  "text": "Watch for the unmarked boot path beginning about 175 yards downstream of the Baker River suspension bridge — it's the crux of not getting lost on this trip",
+  "runs": [
+   "about 175 yards downstream of the baker river suspension bridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_blum_south_ridge",
+    "path": "pro_tips[2]"
+   }
+  ]
+ },
+ {
+  "key": "s0857",
+  "text": "It's easy to walk right past the unmarked climber's path — it starts ~175 yards downstream of the Baker River suspension bridge, not at an obvious junction",
+  "runs": [
+   "175 yards downstream of the baker river suspension bridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_blum_south_ridge",
+    "path": "watch_out[0]"
+   }
+  ]
+ },
+ {
+  "key": "s0858",
+  "text": "This is the base camp for both peaks and effectively the only one. Getting here is the whole difficulty of the trip: leave trail 606 a short distance past the Baker River suspension bridge, before Blum Creek, and find the faint path that works away from the creek through old timber. The first section is genuine devil's club, fern and deadfall bushwhacking, and the path comes and goes; above that it settles into a steep, tiring forest ridge, then an ascending traverse along the south side of that ridge into the lake basin. Five hours from the car is a good day, and parties routinely take longer. For Mount Blum, the south ridge and southeast slopes go from here up through gullies and snow to the east ridge. For Hagan, climb southeast from the lower lake to about 5,600 ft on the east-west ridge, then traverse south toward the pass below the Hagan peaks. Best from mid-July into September; earlier and the traverse to the lakes is a snow slope with a long runout, later and the water thins. There is no shelter of any kind and no cell coverage.",
+  "runs": [
+   "an ascending traverse along the south side of"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_blum_south_ridge",
+    "path": "bivy[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0859",
+  "text": "A semi-cairned path switchbacks up Carrie's southwest ridge, about 2,000 ft in under a mile; grassy at first, then grass and rock outcrops as it narrows. Near 6,500 ft it contours around the top of a big south-facing scree basin ringed with summits; the rock is loose, so helmets on. The true summit is at the far right (east) side of the basin, reached via the summit ridge. Early season, snow in the basin calls for an axe.",
+  "runs": [
+   "the true summit is at the far right"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_carrie_se_route",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0860",
+  "text": "From SR 20 at Mazama follow Lost River Road to the end of the pavement, then the narrow gravel Harts Pass Road (FR 5400) to Harts Pass. At the guard station cabin turn right onto Slate Peak Road (FR 5400-600) and climb to the Slate Pass Trailhead at the second switchback beyond the horse loading area, about 6,900 ft. The road is usually open July to September. Fill out the free self-issue Pasayten Wilderness permit at the kiosk.",
+  "runs": [
+   "at the second switchback beyond the horse loading area"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_carru_scramble",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0861",
+  "text": "From Mazama take Lost River Road, which becomes Harts Pass Road (FR 5400), to Harts Pass; at the guard station turn right onto Slate Peak Road (FR 5400-600) and climb to the Slate Pass Trailhead at the second switchback beyond the horse loading area, about 6,900 ft. High clearance recommended.",
+  "runs": [
+   "at the second switchback beyond the horse loading area"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_carru_scramble",
+    "path": "approach_logistics.trailheadDirection"
+   }
+  ]
+ },
+ {
+  "key": "s0862",
+  "text": "A distinct line from the standard West Route. It is essentially an alpine scramble with two pitches of harder climbing on the steepest part of the ridge, but a recorded attempt found the ridge heavily coated in moss and heather, making the two technical pitches far slower and harder than the nominal grade suggests.",
+  "runs": [
+   "an alpine scramble with two pitches of harder climbing on the steepest part of the ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_chaval_north_ridge",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0863",
+  "text": "Mount Chaval (7,127 ft) is a craggy, three-summited peak straddling an east-west ridge (East Peak and Middle Peak, each 7,040 ft, plus the true 7,127-ft summit) in the Glacier Peak Wilderness of the Mt. Baker-Snoqualmie National Forest, roughly 15 miles northeast of Darrington in Skagit County. It sits immediately southwest of its taller, more massive neighbor Snowking Mountain (7,433 ft, 2.5 mi NE) and is built from the Late Cretaceous 'Chaval pluton,' a pyroxene-bearing diorite/tonalite. Richard Merritt and Keith and Ruth Rankin made the first ascent on September 20, 1946. Despite over 1,800 ft of prominence and striking relief above the Illabot Creek and Suiattle River drainages, Chaval is one of the least-visited named summits in the North Cascades — not because the final scrambling is hard, but because every approach (the shorter Illabot Creek Road/west-ramp line, or the longer historical Jug Creek/Bluff Lake/Jug Lake route from the Suiattle side) involves miles of pathless old growth, brush, and steep sidehilling before the climbing even starts.",
+  "runs": [
+   "keith and ruth rankin made the first ascent"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_chaval_scramble",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0864",
+  "text": "Several good camps on the north side of the lake, roomy by the standards of this zone. Unimproved, no toilet.",
+  "runs": [
+   "camps on the north side of the lake"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_chaval_scramble",
+    "path": "bivy[0].capacity"
+   }
+  ]
+ },
+ {
+  "key": "s0865",
+  "text": "An early alpine start beats afternoon sun on the exposed Surprise Basin slopes. From camp, climb talus/scree/snow over the moraine rim and across Surprise Basin to 6,920 ft Surprise Col, the Clark-Johnson col. From there the corkscrew route works around south and east ledges before an exposed Class 3-4 finish on the north side of the summit block. The col-to-summit section takes about 1.5-2 hours; most parties make a single ~60 ft rappel off the summit block rather than downclimbing the crux, then reverse the route to camp. Many groups combine Clark with neighboring Mount Deception on the same day since both share the Surprise Basin approach.",
+  "runs": [
+   "on the north side of the summit block"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_clark_standard",
+    "path": "itinerary.days[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0866",
+  "text": "Final Class 3-4 scramble finishes on the north side of the summit block.",
+  "runs": [
+   "on the north side of the summit block"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_clark_standard",
+    "path": "itinerary.days[1].schedule[3].detail"
+   }
+  ]
+ },
+ {
+  "key": "s0867",
+  "text": "From Lake Constance, ascend through Avalanche Canyon (0.6 mile) then climb the broad South Chute 1,200+ feet to the south ridge saddle. Cross to the east side and traverse north across heather, snow, and scree slopes to open terrain below the summit. Locate the North Chimney on the summit block's north side for the final 3rd class ascent to the peak.",
+  "runs": [
+   "cross to the east side and traverse north"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_north_chimney",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0868",
+  "text": "From the north end of the lake, head into Avalanche Canyon and turn east up the South Chute as soon as the Cat Ears come into view, climbing about 1,900 ft of scree to the saddle near 6,600 ft. Drop about 150 ft, climb a second scree gully to the notch near 7,300 ft, cross the Terrible or Finger Traverse to the base of the summit block, and climb the chimney on its north side to the top.",
+  "runs": [
+   "the south chute as soon as the cat ears"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_north_chimney",
+    "path": "waypoints[2].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0869",
+  "text": "Climb Avalanche Canyon and the South Chute to the notch, cross the exposed Terrible Traverse snow/scree cirque, then finish up the 3rd-class North Chimney gully that wraps around the north side of the summit block to the true summit. Reverse the whole line back to camp.",
+  "runs": [
+   "around the north side of the summit block"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_north_chimney",
+    "path": "itinerary.days[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0870",
+  "text": "3rd-class gully around the north side of the summit block.",
+  "runs": [
+   "around the north side of the summit block"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_north_chimney",
+    "path": "itinerary.days[1].schedule[3].detail"
+   }
+  ]
+ },
+ {
+  "key": "s0871",
+  "text": "From the lake, follow the boot path around the shore, out onto a large scree cone, and north into Avalanche Canyon between Inner Constance and Mount Constance. A large rock called the Thumb sits on the canyon's left side; the South Chute lies on the south side of the Thumb, and due south of the Cat Ears.\n\nThe most useful rule on this mountain: start up the South Chute as soon as the Cat Ears come into view, not when the chute starts to look obvious. Entering low keeps you on firmer ground, where there is a path in places; parties who keep walking up the canyon and attack the chute higher get the worst of the loose scree. If the Cat Ears have been visible for a while and you are still walking north, you have overshot the entrance.\n\nFrom the lake the chute line climbs roughly 1,900 ft of scree to a saddle near 6,560-6,600 ft below the Cat Ears. Descend about 150 ft, then a second gully leads to a notch near 7,300 ft.\n\nAbove that is the exposed upper maze, and identifying which traverse you are on is the thing to get right. The Finger Traverse is a downsloping ledge above a cliff with old rusted pitons on it — the pitons are the identifier, and some parties clip them as a solo-belay anchor. The Terrible Traverse is a hard-snow traverse of roughly 45 degrees above a big cliff and a nasty drainage. Both feed into class 3, occasionally class 4, ground leading to the base of the summit block. If you are on a traverse and the summit block is not visible above and ahead of you, you are on the wrong ledge.\n\nThe actual climbing is only the summit block, about 60 ft, with the North Chimney taking its north side at 3rd class — reported by plenty of people as feeling like easy 4th.",
+  "runs": [
+   "the south chute as soon as the cat ears"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_north_chimney",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0872",
+  "text": "Unchanged from the walk-in: around the lake, north into Avalanche Canyon, and up the South Chute as soon as the Cat Ears appear above you, with the Thumb on the canyon's left marking the chute's south side. The Cat Ears becoming visible is the trigger to start climbing, not a landmark to walk toward.",
+  "runs": [
+   "the south chute as soon as the cat ears"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_north_chimney",
+    "path": "approach_variants[1].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0873",
+  "text": "A more sustained, technical alternative to the standard scramble: roughly 1,100 feet of mostly broken class 3-4 rock with a few low-fifth-class steps over 5+ pitches, the hardest about 5.4-5.5, climbing the arete that rises directly above Crystal Pass at the head of Avalanche Canyon to the summit ridge. From Crystal Pass, traverse around a small tower to the start; climb a vertical crack protected by fixed webbing, then right-trending class 3 ledges to the arete crest. The route crosses occasionally snowy sections along the crest to a large ledge, then the crux: a right-trending ledge that cuts back left past a couple of fixed pitons into a chimney, followed by short face climbing and a hand traverse (sometimes snow-covered) before easing into scree near the summit ridge. Several belays use fixed pitons or slung anchors left in place.",
+  "runs": [
+   "directly above crystal pass at the head of avalanche canyon"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_west_arete",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0874",
+  "text": "From Crystal Pass (base of the West Arête), begin a rising traverse on the right side of the ridge crest at ~10:30 AM (typical timing). Terrain involves fairly broken Class 2 and 3 with occasional 4th or low 5th steps. Bypass towers via a ledge on the right side. Reach the crux step on the arête proper—traverse up and right on a groove (5.4), clip existing pitons, move straight up (5.4) then back left to a small alcove below a chimney. Anchor and ascend the chimney leftward to a sloping ledge, then traverse left to easier ground. Continue to ridge crest with talus climbing above, then cross to east side following the standard route descent to summit horn.",
+  "runs": [
+   "a rising traverse on the right side of the",
+   "straight up 5.4 then back left to a small alcove below a chimney"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_west_arete",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0875",
+  "text": "Same start as the standard route: the closed Dosewallips roadbed for roughly 5 miles, then the Lake Constance climbers' trail, which gains about 3,300-3,400 ft in under 2.2 miles with no switchbacks and hand-over-hand pulling in places. Figure 2.5-3.5 hours on that section. Camp at the established sites at the north end of the lake; a wilderness permit is required and the site is reservable for the May 15-October 15 summer season.\n\nFrom the lake, take the boot path around its eastern shore, come out onto a large scree cone, traverse north across the cone and into Avalanche Canyon. Do NOT turn off into the South Chute — that is the standard route. Instead keep going north up the canyon, past the Thumb, roughly 1.5 miles of steady uphill to Crystal Pass at the canyon's head.\n\nThe canyon is loose, poorly consolidated talus and scree when snow-free and much faster on firm early-season snow; carry an axe June into July. The final few hundred feet to the pass steepen, there is often a remnant of ice below the scree fan leading up to it, and softening snow by mid-morning is a good argument for an early start.",
+  "runs": [
+   "a remnant of ice below the scree fan leading"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_west_arete",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0876",
+  "text": "There is no ambiguity at the top: the West Arete is the prominent ridge rising directly out of Crystal Pass at the head of Avalanche Canyon, and it runs straight up to Constance's summit ridge crest. If you are standing in a windy col with the canyon behind you and a ridge going up on your right toward the summit, you are at the start.\n\nThe negative marker is a turn made much lower down. If you found yourself climbing a scree chute out of the east side of the canyon with the Cat Ears above you, you are on the standard South Chute route and will end up in the upper maze and the traverses, not on the arete. The arete approach never leaves the canyon floor until the canyon itself ends.\n\nOn the arete, the climbing stays close to the crest on broken class 2 and 3 with the odd class 4 or low fifth step, so easy ground at the start is correct here and is not a sign you are off route.",
+  "runs": [
+   "the west arete is the prominent ridge rising directly"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_constance_west_arete",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0877",
+  "text": "A wilderness permit is required and Flapjack Lakes is a named quota area, limited year round, so this is the one booking in the zone that will actually stop your trip. Permits are issued only through the federal recreation booking site; the online reservation window for this camp runs mid-June to mid-October, and the whole summer season releases in one drop on April 15 at 7 a.m. Pacific. No sites are held as same-day walk-ups — the old half-reserved, half-first-come arrangement is gone, and availability now updates live, so cancellations are the only late route in. For dates outside the online window you have to arrange it directly with the park's wilderness information office. Fees are a non-refundable per-permit reservation charge plus a per-person nightly charge for anyone sixteen and over, with an annual wilderness pass available that covers the nightly half. Parties of seven or more must take the group site. Bear canisters are required. Campfires are prohibited — the lakes are above the 3,500 ft parkwide fire line. Camping is in designated sites only. Stock is not allowed on the Flapjack trail, and dogs are not allowed on park wilderness trails. A park entrance pass is needed for the drive in, and the access road up Lake Cushman is unpaved for its last stretch and closes for snow and weather. Weekday permits here are usually gettable; summer weekends are not.",
+  "runs": [
+   "no sites are held as same day walk ups"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_cruiser_nw_face_corner",
+    "path": "bivy[0].permit"
+   },
+   {
+    "id": "wa_mount_cruiser_south_corner",
+    "path": "bivy[0].permit"
+   },
+   {
+    "id": "wa_mount_lincoln_standard",
+    "path": "bivy[0].permit"
+   },
+   {
+    "id": "wa_the_horn_scramble",
+    "path": "bivy[0].permit"
+   }
+  ]
+ },
+ {
+  "key": "s0878",
+  "text": "From Needle Pass, turn left (east) and scramble exposed class 3 to the top of Beta Peak, descend its right-most summit notch with one class 4 move and a short gully, then traverse high toward Cruiser and drop down a longer gully to its base. Climb the class 4 gully to the big chockstone, pass it on the left through the tunnel to the platform, and climb the two low-fifth pitches of the South Corner to the summit.",
+  "runs": [
+   "and scramble exposed class 3 to the top of beta",
+   "one class 4 move and a short gully then traverse high toward cruiser"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_cruiser_south_corner",
+    "path": "waypoints[3].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0879",
+  "text": "From the Staircase Ranger Station (~770-850 ft, at the end of Lake Cushman Rd/North Fork Skokomish Rd), the approach starts on the North Fork Skokomish River Trail, a gently graded old decommissioned roadbed that runs up-valley through old-growth forest for about 3.7-3.8 miles to the former road-end/Spike Camp junction with the Flapjack Lakes Trail. Bear onto the Flapjack Lakes Trail, which climbs steadily and then steeply (with one rough slide/washout bypass to pick through) for about 4 more miles, gaining about 2,000 ft, to reach Flapjack Lakes (~3,850 ft, about 7.5-8 miles from the trailhead) - the standard base camp. Flapjack Lakes is a designated, permit-limited backcountry camp, so reserve ahead for summer weekends. Reliable water is available at the lakes and at several creek crossings on the lower trail; treat before drinking. From camp, continue about 1.5 miles on maintained trail up-basin toward Gladys Divide; just before the divide, leave the trail and climb southeast up a steep snow/scree couloir (several hundred feet of gain, often 35-40+ degrees) to Needle Pass. This couloir holds firm, icy snow well into summer, and crampons plus an ice axe are advisable for most of the season - it's the single biggest hazard of the approach, since a slip on hard snow here has real consequences. From Needle Pass, turn left (east) and scramble exposed Class 3 terrain to the summit of Beta Peak, descend through its right-most summit notch (one Class 4 move and a short gully), traverse high toward Cruiser, then drop down a longer connecting gully to reach Cruiser's base, where the roped climbing begins (a Class 4 gully leads to a large chockstone; go left around it and squeeze through a short tunnel to reach the platform below the 5.0 pitch). All told this is roughly 8-9 miles from the trailhead to the base of the technical climbing, crossing Needle Pass at about 5,700 ft on the way, typically 5-7 hours to camp and another push to the base the next day. Fog and low cloud are common on the ridge and ridge-basin route-finding above Flapjack Lakes is easy to lose in flat light, so know the boot-tread line before committing.",
+  "runs": [
+   "one class 4 move and a short gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_cruiser_south_corner",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0880",
+  "text": "From Needle Pass turn east and scramble the exposed crest to Beta Peak, drop through its right-most summit notch on one Class 4 move and a short gully, traverse high toward Cruiser, then take the longer connecting gully down to Cruiser's south side. The base of the roped climbing is the mouth of a Class 4 gully and you identify it by the large chockstone wedged in it above you — pass that block on its left and squeeze through the short tunnel behind it. That tunnel is the Cannon Hole, and coming out of it puts you on the broad, airy platform where the rope comes out; from the far end of the platform the low-fifth face pitch runs to a belay on the summit crest. Two decoys: the couloir up from Gladys Divide has more than one apparent exit and the correct one is Needle Pass itself, not the first gap in the rock, and Beta Peak's other notches cliff out below. Above the platform, look hard at the anchor before you weight it — the good two-bolt station sits near older rusted hardware that should not be trusted.",
+  "runs": [
+   "one class 4 move and a short gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_cruiser_south_corner",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0881",
+  "text": "This is the most frequently ascended route. Start from Ouzel Lake (~5,700 ft) and head eastward up the west slopes, which are semi-open initially and transition to alpine terrain around 6,200 ft. Minor cliffbands require Class 3 scrambling to navigate around. Climb to the obvious SW basin (~7,700 ft), continue to the 8,260-ft notch immediately south of the summit, then traverse the final chossy South Ridge to the summit. Descent is more technical than ascent and may require roped sections. The peak is known for exceptionally loose, fractured volcanic rock throughout.",
+  "runs": [
+   "to the 8 260 ft notch immediately south of the summit then"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_custer_standard",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0882",
+  "text": "From the Depot Creek trailhead (reached via the unsigned dirt spur off Chilliwack Lake Road in BC), follow the old Depot Creek logging-road grade south about 3.2 miles (drivable in part, to a washout) to its end, then about 150 yards of trail through old growth to the border obelisk (Monument 65, about 2,750 ft) and trail register, then continue on the fading Depot Creek path up the valley. The first stretch follows an old roadbed for under a mile before it vanishes into forest; for roughly 3 miles the route weaves through timber and brush with no consistent tread. At the valley's headwall (about 3,800 ft at its base to 4,800 ft at its top) the trail parallels a waterfall on Depot Creek — expect a stream crossing at its base, wet slabs, and at least two fixed/dangling handlines on the exposed slab sections beside the falls (a real fall hazard if wet or icy). Above the falls the path becomes fainter through talus and brush in the open basin below Mount Redoubt before reaching Lake Ouzel (5,700 ft, ~8-9 miles and ~3,500 ft gain from the car, 5-6 hours), the standard base camp on flat sandy benches. From camp, scramble up the large broken buttress southwest of the lake (cairned to aid the return); partway up the buttress traverse far climber's-right, then continue up to gain the Redoubt Glacier easily. Cross/skirt the glacier (crevasse hazard, rope up if conditions warrant) to reach the obvious SW basin near 7,700 ft below Custer's summit, then continue to the 8,260-ft notch immediately south of the true summit. A short, vertical, 6-8-ft-wide rock gully (with occasional ice) breaks through here — this is the technical crux of the ascent.",
+  "runs": [
+   "to the 8 260 ft notch immediately south of the"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_custer_standard",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0883",
+  "text": "Cross/skirt the glacier — crevasse hazard, rope up if conditions warrant — to reach the obvious SW basin near 7,700 ft below Custer's summit, then continue to the 8,260-ft notch immediately south of the true summit.",
+  "runs": [
+   "to the 8 260 ft notch immediately south of the"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_custer_standard",
+    "path": "climbing_route[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0884",
+  "text": "Mount Daniel is the highest point in both King and Kittitas counties — a broad, multi-summited massif above the Cle Elum headwaters. It has five named summits (East Peak 7,899 ft, Middle Summit 7,959 ft, the true high point at West Summit, West Pyramid, and Northwest Peak); USGS topo maps historically mislabel the \"Daniels\" benchmark on the East Peak, so parties that stop at the Middle Summit have not reached the actual top. The mountain carries a shrinking glacier complex (Daniel, Lynch, and Foss Glaciers) that, together with neighboring Mount Hinman, included nine distinct glaciers as recently as 1984. First climbed in 1925 by a Mountaineers party via the north-side glacier route.",
+  "runs": [
+   "mount daniel is the highest point in both king"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_daniel_daniel_glacier",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0885",
+  "text": "From Peggy's Pond, ascend braided cat-trails west through alpine meadows to gain the Southeast Ridge. This immense ridge narrows westward with Hyas Creek Glacier on the right and Circle Lake far below to the left. Follow an often-faint climber's path through Class 2 and 3 scrambles. For glacier travel, enter Daniel Glacier just north of a prominent spire on the Northeast Ridge and traverse west across the glacier to Middle Summit. The route can be combined with the pure ridge scramble depending on snow and crevasse conditions.",
+  "runs": [
+   "from peggy's pond ascend braided cat trails west through alpine meadows to gain the"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_daniel_daniel_glacier",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0886",
+  "text": "The approach has a hard edge and it is the ledge traverse into Peggy's Pond. That half-mile of narrow ledges with exposure is the last thing between trail and mountain, and it is the point at which a party knows it has left the walking behind. Peggy's Pond is the base camp and the last water.\n\nFrom the pond, the finding is an altitude and a shape: braided boot paths head northwest then west across heather benches and talus, gaining roughly 1,500 ft over about a mile, to the broad southeast ridge at 6,800 to 7,000 ft. You are on the right ridge when it narrows westward with the Hyas Creek Glacier on your right and Circle Lake far below on your left. That pairing — glacier right, lake left — is the confirmation, and it does not need the summit to be visible.\n\nThe next checkpoint is a saddle at about 7,600 ft between the East and Middle summits, reached by traversing climbers' trail and open scree below the East Summit at 7,899 ft. The path is faint where it first leaves the ridge and well defined afterwards, so a faint start is not evidence you are off route.\n\nWhere the glacier comes in: to use the Daniel Glacier proper, enter it just north of a prominent spire on the Northeast Ridge and traverse west across it to the Middle Summit.\n\nAnd the one thing not to do near the top: the true West Summit at 7,960 ft is reached over loose talus, lingering snowfields and the rocky margin of the Daniel Glacier remnant. Stay on the rock and scree spine. Wandering onto the glacier ice on the north side is where the crevasses are.",
+  "runs": [
+   "the hyas creek glacier on your right and circle lake far below on your left"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_daniel_daniel_glacier",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0887",
+  "text": "This is rated 3rd class with only minor snow/ice difficulty; the glacier has receded significantly in recent years but is still quite manageable with good navigation and some scrambling. Early season, access the glacier via a snow finger on climber's right; late season, bypass via Class 3 scrambling left of the glacier. Cross the moat, ascend the upper glacier toward Mount Daniel's West Pyramid, and reach the col between the Middle and True summits.",
+  "runs": [
+   "the col between the middle and true summits"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_daniel_lynch_glacier",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0888",
+  "text": "The arrival test is a lake you walk across. Traversing below the Daniel Glacier you come to Lynch draw and, in season, to frozen Pea Soup Lake. Walk straight across it and get onto the ice above the low rocks on its far side. That is the base of the Lynch Glacier, and standing on the lake surface is an unambiguous confirmation you are in the right basin.\n\nWhat to do when the lake has melted out, which is the common case from mid-July: do not try to force the draw, which can be flooded. Instead climb the ridge separating the Daniel and Lynch glaciers for a couple of hundred yards to the first minor notch at about 6,600 ft. Drop roughly 100 ft off it to a snowfield hugging the ridge, then work climbers' left via a second snowfield and rock benches onto the Lynch Glacier. First minor notch at 6,600 ft, then down 100 ft and left: that is a counted sequence rather than a described one, which is what you want in cloud.\n\nGetting onto the ice, in either season: early, take the snow finger on climbers' right. Late, bypass on climbers' left by class 3 scrambling, and expect a moat at the transition. The loose rotten rock used to reach the ice is repeatedly reported as more dangerous than the glacier itself.\n\nAnd the top tells you which summit is which: the glacier leads to the gap between the two highest summits. From the notch, the west summit — on your right — is the true high point. Late in the season expect a detour around crevasses about two thirds of the way up.\n\nA scope note that matters to peak-list parties: reaching the upper Daniel Glacier from Peggy's Pond by the Southeast Ridge or the Hyas Creek Glacier is a scramble and is not this route.",
+  "runs": [
+   "to the gap between the two highest summits",
+   "crevasses about two thirds of the way up"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_daniel_lynch_glacier",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0889",
+  "text": "You are aiming for the outlet of Pea Soup Lake, and the shoulder above the Foss River is the waypoint that gets you there. From Dip Top Gap the traverse is west until you are on the shoulder looking down into the Foss River drainage; the descent from that shoulder lands at the lake outlet. If you are looking down into a drainage that is not the Foss, you have not traversed far enough west.\n\nFrom the outlet the finding is the same as from Peggy's Pond: get onto the ice above the low rocks at the head of the lake. Early season, take the snow finger on climbers' right; late season, bypass by class 3 on climbers' left and cross the moat. Then ascend the upper glacier toward the West Pyramid and the col between the Middle and True summits.\n\nThe negative test: this route is graded third class with only minor snow and ice difficulty. If you are on steep ice, you are not on the Lynch Glacier standard line.",
+  "runs": [
+   "the col between the middle and true summits"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_daniel_lynch_glacier",
+    "path": "approach_variants[1].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0890",
+  "text": "steep loose scree on the west side of the upper basin",
+  "runs": [
+   "on the west side of the upper basin"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_deception_standard",
+    "path": "approach_variants[0].hazards[2]"
+   }
+  ]
+ },
+ {
+  "key": "s0891",
+  "text": "An alpine-start round trip from camp: cross The Barrier via the upper crossing just below Degenhardt into Crescent Basin, then climb a Class 4 slot to the north ridge, a Class 4-5 …",
+  "runs": [
+   "a class 4 slot to the north ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_degenhardt_southwest_route",
+    "path": "timing.sectionBreakdown[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0892",
+  "text": "Start at the Goodell Creek Trailhead (Goodell Creek Group Camp, ~500-600 ft) off SR-20 just west of Newhalem. The first stretch follows an old logging-road grade/climbers' path along Goodell Creek for a little over a mile before it narrows to a boot-beaten track. Roughly 4 miles in, near Terror Creek, watch for the unmarked junction where the Terror Creek climbers' path splits off — historically flagged only by a rock arrow, a post, and a large cairn, so route-finding here is a genuine crux; the path is well-defined at first but dies out into creek-bottom brush and devils club lower down. Ford/cross Terror Creek at about 2000 ft: the customary crossing is a large log roughly 500 ft upstream of where the path hits the creek, but in high water this log is sometimes submerged and parties have had to scout alternate logs — treat this as a conditions-dependent obstacle, not a given. From the creek, the path grinds directly and relentlessly up the opposing hillside, gaining close to 4000 ft in under two miles through forest, then open heather slopes above treeline — steep and loose in spots. The climbers' path eventually merges into 'Stump Hollow' and follows the narrow crest north to the standard basecamp area near 'Chopping Block Camp' (~6000-6400 ft), the usual base for Southern Pickets objectives. The south ridge starts at the notch at the top of the Barrier — the long rocky rib dividing Terror Basin from Crescent Creek Basin — immediately south of Degenhardt's summit, and it can be reached from either basin. From Terror Basin, climb the Terror Glacier to its upper end (open crevasses can usually be walked around; crampons and an axe are standard here even in summer), then broken rock, heather benches and steep, loose dirt to the notch. From Crescent Creek Basin — reached by traversing Stump Hollow to the roughly 6400 ft saddle near the Chopping Block and descending about 200 ft — a snow ramp rises to the same notch. Parties moving between the two basins cross the Barrier either low, over loose ledges at the base of the Terror Glacier, or high, over moats and steep choss near the top of the glacier just below Degenhardt; both are loose, exposed, and consistently described as 'Pickets Class 3' — sustained, serious, low-fifth-class-feeling terrain despite the modest rating. Total trip is roughly 18.7 miles round-trip with about 600-8100+ ft of elevation range; water is available at Goodell Creek and the Terror Creek crossing, with seasonal snowmelt/tarns higher up that can dry out late season.",
+  "runs": [
+   "by a rock arrow a post and a large cairn"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_degenhardt_southwest_route",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0893",
+  "text": "An alpine-start round trip from camp: cross The Barrier via the upper crossing just below Degenhardt into Crescent Basin, then climb a Class 4 slot to the north ridge, a Class 4-5 face to the west ridge, and an exposed Class 3 ledge to the south ridge and summit. One rappel off the summit block on the way down; loose, chossy rock throughout. Trip reports clock roughly 5.3 hours up and 3.6 hours back down.",
+  "runs": [
+   "a class 4 slot to the north ridge",
+   "an exposed class 3 ledge to the south ridge and"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_degenhardt_southwest_route",
+    "path": "itinerary.days[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0894",
+  "text": "Start at the Goodell Creek Trailhead at the Goodell Creek Group Camp, about 500-600 ft, off SR-20 just west of Newhalem. The first stretch follows an old logging-road grade and climbers' path along Goodell Creek for a little over a mile before narrowing to a boot-beaten track.\n\nRoughly 4 miles in, near Terror Creek, watch for the unmarked junction where the Terror Creek climbers' path splits off, historically flagged only by a rock arrow, a post and a large cairn. Route-finding here is a genuine crux; the path is well-defined at first but dies out into creek-bottom brush and devil's club lower down.\n\nCross Terror Creek at about 2,000 ft. The customary crossing is a large log roughly 500 ft upstream of where the path hits the creek, but in high water that log is sometimes submerged and parties have had to scout alternates. From the creek the path grinds directly up the opposing hillside, gaining close to 4,000 ft in under two miles through forest and then open heather. It eventually merges into Stump Hollow and follows the narrow crest north to the basecamp area near Chopping Block Camp at about 6,000-6,400 ft.",
+  "runs": [
+   "by a rock arrow a post and a large cairn"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_degenhardt_southwest_route",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0895",
+  "text": "From US-101 at Hoodsport, take SR 119 (Lake Cushman Road) 9.3 miles to its end, turn right on FS Road 24 for 1.6 miles, then left on FS Road 2419 for 4.9 miles to the lower trailhead. Continue 1.7 miles farther and turn left on FS Road 2419-014 to the upper trailhead lot at its end, about 3,500 ft. A Northwest Forest Pass is required.",
+  "runs": [
+   "9.3 miles to its end turn right on",
+   "road 2419 for 4.9 miles to the lower trailhead"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_ellinor_standard",
+    "path": "waypoints[1].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0896",
+  "text": "Mount Fairchild (6,899 ft) is the second-highest peak in the Bailey Range, a glaciated subrange deep in the interior of Olympic National Park's Daniel J. Evans Wilderness. It carries the small, retreating Fairchild Glacier on its northeast flank and sits about 0.84 mi northeast of higher neighbor Mount Carrie (6,995 ft). No trail comes anywhere close to the summit — nearly all ascents are made as a side-trip during the multi-day Bailey Range Traverse rather than as a standalone climb, and the peak sees only a handful of ascents most years. First climbed in 1963 by Denny Pruitt, Dan Baker, Jack Christiansen, and Roy Etten.",
+  "runs": [
+   "is the second highest peak in the bailey range"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_fairchild_standard",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0897",
+  "text": "Mount Fairchild is the second-highest peak in the Bailey Range and is accessed via two primary routes: (1) the High Divide approach via Sol Duc and Mount Carrie, or (2) from the Elwha River over Mount Fitzhenry. Both routes involve significant glacier travel with crevasse hazards and require proper alpine mountaineering skills. The peak stands at the head of Fairchild Creek with the Fairchild Glacier on its east slope.",
+  "runs": [
+   "fairchild is the second highest peak in the bailey range"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_fairchild_standard",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0898",
+  "text": "Mount Ferry (6,195 ft) is the eighth-highest peak in the Bailey Range, rising above the glacial tarns of Ferry Basin between Stephen Peak (2.3 mi NW) and Mount Pulitzer (0.6 mi SW, its nearest higher neighbor). Named by the 1889-90 Seattle Press Expedition for Governor Elisha P. Ferry. It is almost never climbed as a standalone objective -- nearly every ascent is a side-summit tagged mid-trip during the multi-day Bailey Range Traverse, the off-trail alpine high route linking Sol Duc's High Divide to the Elwha valley. The summit block itself is a straightforward walk-up over loose 'Olympics dagger' scree from Ferry Basin; the real difficulty of this route is the days of off-trail travel, routefinding, and exposed ridge traverses required just to reach its base.",
+  "runs": [
+   "is the eighth highest peak in the bailey range"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_ferry_standard",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0899",
+  "text": "This is the part that is easy to get wrong, and it is a counting exercise rather than a description.\n\nFrom the col, go through the narrow eastern notch and descend roughly 150 vertical feet of steep snow — or in the moat beside it — before it becomes feasible to start contouring right, to the west. Do not try to contour immediately from the notch; you have to lose that height first.\n\nContinue west over slabs and snow, then heather and small rock outcrops. Leave the snow onto class 3 rock, climb up and then left to a distinct ledge. From that ledge make a rising traverse to the north-west, scrambling across two gullies. Then cross a spur ridge to reach a third gully — and it is the third gully that you climb.\n\nSo the test is: from the ledge, the first two gullies are crossed, not entered. If you start up the first gully you meet after the ledge you will be on steeper, looser ground short of the line. If you have crossed a spur ridge and are looking up a gully, that is the one.\n\nSome trip reports also describe reaching the south-face snow alcove from a staging camp near a notch at about 7,050 ft below the col, by either a hidden gully on the left with fifth-class moves or, more commonly, a winding ledge on the right at class 3 with one harder step. The right-hand ledge is the usual choice; if you are pulling fifth-class moves you have taken the left option.",
+  "runs": [
+   "a spur ridge to reach a third gully and"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_formidable_south_face",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0900",
+  "text": "Drive State Route 20 to the Ross Dam trailhead between mileposts 134 and 135, 14.0 miles east of Newhalem (small lot, 4 standard plus 2 ADA spaces, no pass required). Hike the trail about a mile down to the Ross Lake water-taxi dock and take the Ross Lake Resort boat to Big Beaver Landing at about 1,600 ft (reserve in advance; parties report roughly $35 per person, and older reports quote a $50 minimum charge for a group). Without the boat, add a six-mile shoreline walk. From Big Beaver Landing follow the well-maintained Big Beaver Creek Trail about 10-11.5 miles through old-growth cedar past 39 Mile Camp to Luna Camp, then continue roughly 1 to 1.5 miles further north. Watch on the left for a small cairn or a scratched arrow on a split log marking the cut-off, and cross Big Beaver Creek on a log just north of where Access Creek enters it; some years you have to wade. Then bushwhack up Access Creek: wade the valley-bottom devil's club, cross to the north side and climb directly upslope through huckleberry, then several hours of heavy forest, deadfall and alternating slide alder. Near 3,800 ft cross back to the south bank where the brush pinches out between a tongue of forest and a tongue of talus, and follow cairns and a faint climbers' path up talus into Access Creek Basin at about 4,300 ft - a good first camp. From the basin grind up a long, steep, grungy scree chute to Access Col at 6,100 ft, then make the notorious traverse on very steep heather, talus and slabs (ice axe out; some parties wear crampons for traction on the heather) to Luna Col / Luna Pass at about 7,100-7,200 ft, the standard high camp on glacially polished slabs. From Luna Col drop a few hundred feet east, then traverse right at about the 6,600 ft level across ribs, gullies and small basins to the crest of a subsidiary ridge running southeast, then cross the large basin in front of you dropping no lower than 6,300 ft. From 6,300 ft in the middle of that basin start the ascending traverse northwest to the 7,050 ft notch where the route proper begins.",
+  "runs": [
+   "in front of you dropping no lower than 6 300"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_fury_east_direct_east_ridge",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0901",
+  "text": "About 50 ft short of Point 7,850's high point, cross to its west side on a ledge and scramble down a Class 3 gully to the flat upper Fury Glacier at roughly 7,750 ft. Do not continue to the summit of the sub-peak.",
+  "runs": [
+   "class 3 gully to the flat upper fury glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_fury_east_direct_east_ridge",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0902",
+  "text": "The route begins at a numbered notch and the whole approach is a contour to reach it. From Luna Col drop a few hundred feet east, then traverse right at about the 6,600 ft level across ribs, gullies and small basins to the crest of a subsidiary ridge running southeast. Cross the large basin in front of you dropping no lower than 6,300 ft, and from 6,300 ft in the middle of that basin start an ascending traverse northwest to the 7,050 ft notch. That notch is where the route proper begins.\n\nSo the test is an altimeter test, and it works in cloud because it needs no view: the traverse is held between 6,300 and 6,600 ft, and then and only then does it climb. If you are below 6,300 ft you have dropped too far into the basin and will pay for it; if you never got below 6,600 ft you are still on the ribs and have not crossed the basin at all.\n\nArrival: a notch is a gap you can stand in with ground falling away on both sides. From it the ridge runs west toward Fury and there is an exposed, level stretch the route's own account calls the sidewalk in the sky. Reaching an airy horizontal crest immediately above the notch confirms it.\n\nWhat going too far looks like: continuing the ascending traverse past the notch, or contouring on around, puts you under the Southeast Glacier, which is the standard route's ground and a different climb.\n\nCountable feature on the route itself: there is one 20 ft step on the east ridge that parties rappel on the way down off a medium cam or chock. One step, not several.",
+  "runs": [
+   "in front of you dropping no lower than 6 300"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_fury_east_direct_east_ridge",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0903",
+  "text": "This is Wayne Wallace's solo masterpiece, first ascended August 24-27, 2006, in four days (exiting/reporting on the 28th). The route ascends the south buttress as a continuous skyline ridge featuring four major pinnacles separated by deep notches: Rooster Comb (knife-edge horizontal traverse) and the Pole of Remoteness (notable pinnacle near summit) are the most famous features. Technical climbing is moderate but committing (5.9–5.10), mixed with extensive scrambling and mandatory rappelling. Rock quality is variable (granodiorite and choss); many ascents done unroped to save time, increasing risk. First ascent involved free-soloing sections up to 5.8. The route is one of the longest ridgelines in the lower 48 and one of the most remote alpine objectives in North America.",
+  "runs": [
+   "one of the longest ridgelines in the lower"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_fury_east_mongo_ridge",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0904",
+  "text": "The West Peak route starts from the East Peak via the Southeast Glacier approach. The traverse between summits is a wild and fun scramble with decent exposure and more technical difficulty than the East Peak ascent. Three distinct towers require climbing up and over; rock quality on this connecting ridge is notoriously poor — climbers describe it as 'shockingly mobile' loose talus and standard chossy 4th class, not sound rock. The route involves low Class 5 rock climbing up to 5.4, though many climbers solo the final sections. A 50-60 meter rope is recommended for rappelling 4th and 5th class terrain.",
+  "runs": [
+   "summits is a wild and fun scramble with decent exposure and"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_fury_west_west_ridge",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0905",
+  "text": "From the PCT-Northbound (Rainy Pass) trailhead on SR 20 (elev. ~4,855-4,900 ft), follow the Pacific Crest Trail north. The trail climbs steadily through subalpine forest and larch parkland past Porcupine Creek, reaching Cutthroat Pass (6,820 ft) at about 4.9 miles / ~1,900 ft gain (roughly 2-2.5 hours at a hiking pace). There is no water at the pass itself; Porcupine Creek below is the last reliable source before the high country dries out in late summer, so top off there. From Cutthroat Pass continue north on the PCT, which drops to Granite Pass (~6,300 ft) and then contours across open, sparsely-treed slopes to Snowy Creek Meadow (~6,400-6,900 ft) - a common camp/water stop, with a short side-trail up to Snowy Lakes if you want a higher, more scenic bivy. From the meadow, stay on the PCT northbound roughly another 1-1.5 miles / ~350 ft gain (about an hour) to Methow Pass (~6,600 ft). Leave the trail here: travel west/southwest, off-trail, through open heather and talus benches toward Mount Hardy's east ridge. Gain the ridge and follow moderate slopes of sand, scree and talus - loose in spots, with real route-finding required - up to the saddle between the true summit and a lower false summit (roughly 7,200-7,600 ft). From the saddle, several hundred feet of enjoyable Class 2-3 scrambling over blocky rock leads to the summit at 8,097 ft; some parties note a notch below the true summit block that's crossed before a short, shallow summit gully. Total one-way distance from the trailhead to the summit is roughly 11-12 miles with about 5,100 ft of cumulative gain, matching the recorded figures - this is a long day for strong parties or, more commonly, a 2-day trip with camp near Snowy Creek Meadow/Snowy Lakes. Snow can linger on the upper ridge and in north-facing gullies near Cutthroat and Granite Passes well into early summer; the highway itself (and both this trailhead and the alternate Swamp Creek pullout used for the shorter South Ridge route) sit inside WSDOT's SR 20 winter closure zone, so the route is typically only accessible from around late April or May through November depending on snowpack. Carry an ice axe and know how to use it if attempting before the passes fully melt out.",
+  "runs": [
+   "saddle several hundred feet of enjoyable class 2 3 scrambling"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_hardy_snow_scramble",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0906",
+  "text": "Climb about 50 ft up the rock bowl, then cut sharply right behind a block and around the skyline on the hidden ledge, which becomes an exposed slab with a short stretch of small holds. The common error is continuing up the bowl's headwall (slow, poorly protected 5.5); finding the ledge saves time for the upper rib.",
+  "runs": [
+   "rock bowl then cut sharply right behind a block"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_index_north_face",
+    "path": "pitch_detail[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0907",
+  "text": "Round a corner to the base of a steep, shallow, brushy gully and climb it for two leads. Protection is mostly bushes and small trees, which are generally more useful here than rock gear; short vertical steps in mud and moss are the difficulty.",
+  "runs": [
+   "round a corner to the base of a steep"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_index_north_face",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0908",
+  "text": "The gully tops out on a slanting ramp system that bears right for about 400 ft to the large open basin on the true north face. The basin can hold snow until mid-season, and without snow its loose, vegetated ground is hard to protect.",
+  "runs": [
+   "about 400 ft to the large open basin on the true"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_index_north_face",
+    "path": "pitch_detail[4].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0909",
+  "text": "Follow the bench left around the corner toward the east face until it ends at a prominent gully. Climb about 100 ft of scrub and brush, and where the gully forks take the left branch through larger trees for two leads to a steep heather slope just below the crest.",
+  "runs": [
+   "left branch through larger trees for two leads to a steep heather slope just below the crest"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_index_north_face",
+    "path": "pitch_detail[7].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0910",
+  "text": "Follow the crest right on easy rock to the first false summit, then follow a small depression southwest to the second point and drop about 50 ft to bypass a cliff. The summit spire is climbed by heather and broken rock on its north side. Expect the descent to take about as long as the climb.",
+  "runs": [
+   "follow the crest right on easy rock to the first false summit"
+  ],
+  "targets": [
+   {
+    "id": "wa_mount_index_north_face",
+    "path": "pitch_detail[8].notes"
+   }
+  ]
+ }
+]

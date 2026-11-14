@@ -1,0 +1,89 @@
+{
+ "az_devil_s_head": {
+  "_expect": {
+   "name": "Devil’s Head",
+   "region": "Arizona"
+  },
+  "blurb": "A compact volcanic cliff on the southern flank of Mt. Elden above Flagstaff, in the high pines at roughly 8,300 feet. Fifteen bolted lines run about 50 to 60 feet, mostly in the 5.12 range, with a pair of 5.10 warm-ups and a few lines pushing into 5.13 and 5.14 territory. It is not a beginner or crowd venue: the approach is steep, the upper wall is exposed to wind, and the aspect looks west to northwest, so the face holds shade into the early afternoon. That makes it a good choice for summer mornings, while cooler days favour the later hours. Expect rough, grippy stone and a more adventurous feel than the town-side crags.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106172695/devils-head",
+    "https://www.mountainproject.com/area/105817313/mt-elden-crags"
+   ]
+  }
+ },
+ "az_alley_rocks": {
+  "_expect": {
+   "name": "Alley Rocks",
+   "region": "Arizona"
+  },
+  "blurb": "A split cluster of large boulders in the Groom Creek bouldering zone, in the Bradshaw foothills a short drive south of Prescott along Senators Highway at around 6,000 feet. The cluster sits just south of Layback Rock and holds fifteen problems. Grades start at V0 and most fall in the easy to middle range, up to about V5, with a small handful of seriously hard sit-start lines reaching V8 and V9. A good stop for a mixed group: warm-ups are easy to find, and strong climbers have a few projects to try. Surrounded by pines, so bring pads and a spotter.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/110492778/alley-rocks",
+    "https://mountainproject.com/area/110486906/senators-highway-areas-groom-creek"
+   ]
+  }
+ },
+ "az_viet_springs": {
+  "_expect": {
+   "name": "Viet Springs",
+   "region": "Arizona"
+  },
+  "blurb": "The original bouldering zone on the San Francisco Peaks north of Flagstaff, developed around the year 2000. Boulders lie scattered below a small cliff with a spring seeping from it, all under big aspen at about 8,500 feet. The fifteen problems run from easy V0 up to V7, with a cluster of quality moderates in the V3 to V5 range, and the stone is abrasive and can feel sharp. It gets little climbing traffic though hikers come through on summer weekends. Cool altitude makes it a way to escape summer heat rather than a winter destination.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107019447/viet-springs",
+    "https://mountainproject.com/area/110135690/flagstaff-bouldering",
+    "https://www.mountainproject.com/area/114339019/san-francisco-peaks"
+   ]
+  }
+ },
+ "az_bone_town": {
+  "_expect": {
+   "name": "Bone Town",
+   "region": "Arizona"
+  },
+  "blurb": "A sport wall in the Homestead canyon, the limestone sport destination in central Arizona's desert, at around 3,000 feet. Bone Town sits a short way northeast of Welcome Wall, across on the wash's eastern bank, with a mostly north-facing aspect. Its fifteen bolted routes run from about 5.9 up to 5.12, with the bulk in the 5.11 range and a handful of 5.10s, so it suits climbers who already lead steady 5.10 and want something firmer. The walk from the parking area heads uphill and passes the Welcome Wall on the way. Remote, quiet desert setting.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105951895/bone-town",
+    "https://www.mountainproject.com/v/the-homestead/105801318"
+   ]
+  }
+ },
+ "az_blue_goodness_sector": {
+  "_expect": {
+   "name": "Blue Goodness Sector",
+   "region": "Arizona"
+  },
+  "blurb": "A wall of blue-tinted, pocketed metasedimentary slab in Lime Kiln Canyon on the Arizona Strip, forming one sector of The Grail. All fifteen routes are bolted, and the grade range is stiff: a single 5.10, about five at 5.11, most of the rest at 5.12 and one 5.13. Some lines are two pitches, so a long rope is handy. The stone is high quality, with unusual runnel features on a few lines. The trail from the car climbs gently until the rock turns blue; the larger Grail area is mostly shady and short on room at the cliff base.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/200918680/blue-goodness-sector",
+    "https://www.mountainproject.com/area/111372538/the-grail"
+   ]
+  }
+ },
+ "az_saloon_the": {
+  "_expect": {
+   "name": "Saloon, The",
+   "region": "Arizona"
+  },
+  "blurb": "A short roadside wall in the Tucson Mountains, about 45 feet tall and a few minutes' walk from the road. It offers fifteen routes, split almost evenly between bolted and traditional lines, plus a single top-rope. Grades are friendly: most sit between 5.6 and 5.8, with one easy fourth-class-style line at the bottom end and a couple of harder options near 5.10 and 5.11. The volcanic stone has sharp edges and pockets and can be a little crumbly. Sunlight arrives mid-morning and lingers into the afternoon; hot days are best handled early or late. A popular spot for newer leaders.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/116232213/the-saloon",
+    "https://www.mountainproject.com/area/107294389/tucson-mountains"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_shoen_s_dam": "could not fetch two pages: only one page about the crag found",
+  "az_lonesome_pine_se_face": "could not fetch two pages: only the crag's own page found, others do not mention it"
+ },
+ "_conflicts": {
+  "az_viet_springs": "stored rock rhyolite; pages describe the cliff as andesite (https://www.mountainproject.com/area/107019447/viet-springs) and the Peaks areas as dacite (https://mountainproject.com/area/110135690/flagstaff-bouldering)",
+  "az_saloon_the": "stored aspect E; page says mostly SW and W (https://www.mountainproject.com/area/116232213/the-saloon)"
+ }
+}

@@ -1,0 +1,11 @@
+-- Undo a parking-notes batch: clears each note only while it still holds this batch's text.
+begin;
+update public.areas set parking_note=null where id='az_oaklands' and parking_note='Drive Schultz Pass Rd to Elden Lookout Rd; dirt starts at a gate about 1.9 mi in, and a pullout on the right at about 2.3 mi holds roughly five cars. If the gate is locked, park and walk the road about five minutes to the pullout.';
+update public.areas set parking_note=null where id='az_solitude_wall' and parking_note='Park at the cul-de-sac at the end of Paradise (off Linda Vista, a block or two north of the Safeway at Cedar Ave); do not park in front of the gated chain-link fence, out of courtesy to residents.';
+update public.areas set parking_note=null where id='az_sheepshead_the' and parking_note='Sheepshead parking area is the first one, about 0.4 mi from the Forest Road 687 junction; free primitive camping there. The approach road is rough dirt, so drive carefully in a passenger car.';
+update public.areas set parking_note=null where id='az_sweet_rock' and parking_note='Park about 2.0 mi along Forest Road 687 from the Middlemarch Rd junction at the Sweet Rock / Isle of Ewe pullout area; free primitive camping. The road is rough dirt.';
+update public.areas set parking_note=null where id='az_warpath_dome' and parking_note='Park at the signed Warpath Dome approach parking about 6.5 mi up the rough Forest Road 687 from the junction; high clearance helps and road damage to cars is possible.';
+update public.areas set parking_note=null where id='az_westworld_dome' and parking_note='Drive to the end of the road (about 10 mi past the Forest Road 687 junction) and park at the circular lot, which serves Westworld and Whale Domes; free primitive camping. The road is rough, so drive carefully.';
+update public.areas set parking_note=null where id='az_whale_dome' and parking_note='Drive to the end of the road (about 10 mi past the Forest Road 687 junction) and park at the circular lot, which serves Whale and Westworld Domes; free primitive camping. The road is rough, so drive carefully.';
+update public.areas set parking_note=null where id='ca_siberia' and parking_note='Park in the large paved lot at Key''s Corner (Wonderland trailhead area). Hike north on a well-defined trail; this is a long approach of about an hour.';
+commit;

@@ -1,17 +1,22 @@
 #!/usr/bin/env node
-/* Injection suite for check:offline-claims, rewritten when the trip pack became a real download.
+/* Injection suite for check:offline-claims.
  *
- * The old suite reproduced the twelve claims #1585 removed. Those cases are gone because the
- * world they describe is: packing a climb now writes its row to IndexedDB, so "saved on this
- * device" is TRUE and a case demanding the guard fire on it would be pinning a defect as the
- * contract. `honest-claim` is what replaces them, and it MUST STAY SILENT — the single case that
- * proves the reversal actually happened rather than the guard simply going quiet.
+ * Rewritten twice. The first suite reproduced the twelve claims #1585 removed; the second took the
+ * TRIP PACK apart link by link once packing became a real download. #2368 removed the pack and cut
+ * this suite to five state-download cases, which also dropped the cases proving the readers the
+ * state download still shares with the old pack (offlinePackReports / Contribs / Profiles and the
+ * `_packedAt` stamp) and the "say what is NOT saved" copy rules. Those are back (§4, §5, §10),
+ * pointed at the screens that describe the state download: Manage areas, Home's Pinned states card
+ * and the Help FAQ and tour.
  *
- * The cases now take the chain apart one link at a time, because the guard must not be able to
- * pass on the strength of its neighbours. `read-gone` is the most important: it leaves the write,
- * the copy and the hydration all intact and removes only the fallback, which is the shape that
- * fails SILENTLY — the rows sit in IndexedDB, correctly written, and the pack still empties at
- * the trailhead with every copy assertion green.
+ * The cases take the chain apart one link at a time, because the guard must not be able to pass on
+ * the strength of its neighbours. `read-gone` is the most important: it removes only the fallback,
+ * which is the shape that fails SILENTLY — the rows sit in IndexedDB, correctly written, and every
+ * list by id still empties at the trailhead with every copy assertion green.
+ *
+ * Two cases MUST STAY SILENT: `disclaimer-reworded` (§4 asks whether the fact is stated, not for one
+ * wording of it, and a negated "not saved to this device" must not trip §5) and `honest-claim` (a
+ * true claim about the catalog, phrased with the no-signal idiom that once excused every sentence).
  *
  * Each case names the text ITS OWN failure must carry. A case judged on the exit code alone is
  * satisfied by a run that died for an unrelated reason, and this repo has read one as the other
@@ -48,7 +53,7 @@ const LOCK = P("scripts/oneoff/.inject-offline-claims.lock");
 try {
   fs.writeFileSync(LOCK, String(process.pid), { flag: "wx" });
 } catch (e) {
-  console.error("REFUSING TO RUN: another injection run holds " + path.relative(ROOT, LOCK) + "\n"
+  console.error("REFUSING TO RUN: another injection run holds " + path.relative(ROOT, LOCK).replace(/\\/g, "/") + "\n"
     + "  (pid " + (fs.existsSync(LOCK) ? fs.readFileSync(LOCK, "utf8") : "?") + "). Two runs edit the same\n"
     + "  files in place, so overlapping them corrupts BOTH results and can leave an injected edit in\n"
     + "  the working tree. Wait for it, or delete the lock if that process is gone.");
@@ -60,74 +65,16 @@ const unlock = () => { try { fs.unlinkSync(LOCK); } catch (e) { /* already gone 
 process.on("exit", unlock);
 for (const sig of ["SIGINT", "SIGTERM"]) process.on(sig, () => { unlock(); process.exit(130); });
 
-const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", DB = "lib/db.js", OFF = "lib/offline.js", KIT = "lib/mapKit.jsx";
+const TODAY = "src/components/TodayTab.tsx"; // Home's Pinned states card, lifted out of App in PR61
+const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", CORE = "ClimbMatchCore.jsx", HELP = "lib/Help.jsx", DB = "lib/db.js", OFF = "lib/offline.js";
 
-/* The ordering case needs the hydration effect MOVED above the sign-in reset rather than edited,
- * because the defect is a position and not a character. Cut the block, re-insert it immediately
- * before the effect that clears `offline`. */
-function moveHydrationAboveReset(src) {
-  const start = src.indexOf("  /* THE TRIP PACK AND THE SAVED AREAS ARE HYDRATED");
-  if (start < 0) return null;
-  const endMark = "return function(){live=false;};},[uid]);\n";
-  const end = src.indexOf(endMark, start);
-  if (end < 0) return null;
-  const block = src.slice(start, end + endMark.length);
-  const rest = src.slice(0, start) + src.slice(end + endMark.length);
-  // The reset effect is the one whose body clears `offline`; find the useEffect( that opens it.
-  const clear = rest.indexOf("setOffline([])");
-  if (clear < 0) return null;
-  const at = rest.lastIndexOf("useEffect(", clear);
-  if (at < 0) return null;
-  return rest.slice(0, at) + block.trimStart() + "\n  " + rest.slice(at);
-}
-
+const TRIGGER_FILES = ["src/components/ManageAreasSheet.tsx", "src/components/TodayTab.tsx", "src/components/LogbookTab.tsx"];
 const CASES = [
-  { name: "write-gone", file: CM, must: "fail", expect: "never calls packRouteWithSnapshot",
-    why: "§1 — the pack button stops writing, so the beta is not on the device at all",
-    find: "packRouteWithSnapshot(id,{seed:seed,", repl: "Promise.resolve({seed:seed,", all: true },
-
-  /* The SECOND link of the write: the button still calls the wrapper, the wrapper stops writing the
-   * row. The snapshot would then be saved beside a route that is not there. */
-  { name: "row-write-gone", file: DB, must: "fail", expect: "no longer calls packRouteOffline",
-    why: "§1 — the wrapper saves the snapshot and never the route row",
-    find: "const res = await packRouteOffline(routeId, opts);", repl: "const res = { seed: !!(opts && opts.seed) };" },
-
-  /* §10's three silent links. Each leaves every render and name intact. */
-  { name: "reports-fallback-gone", file: DB, must: "fail", expect: "useRouteTripReports lost its pack fallback",
-    why: "§10 — reports are saved with the pack and never read back",
-    find: "() => offlinePackReports(routeId)", repl: "() => undefined" },
-  { name: "stamp-lost", file: DB, must: "fail", expect: "useRouteContributions lost its pack fallback or its stamp",
-    why: "§10 — structural sharing strips `_packedAt`, so saved corrections render undated",
-    find: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId,\n    structuralSharing: false,",
-    repl: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId," },
-  { name: "photos-in-snapshot", file: DB, must: "fail", expect: "no longer filters out photo rows",
-    why: "§10 — photo rows are saved without their images",
-    find: '(contribs || []).filter((c) => c.kind !== "photo")', repl: "(contribs || [])" },
-
-  { name: "store-gone", file: OFF, must: "fail", expect: "writes into no `pack` store",
-    why: "§1 — packRouteOffline stops putting the row in the pack store",
-    find: 'idbPutAll("pack",', repl: 'idbPutAll("nowhere",', all: true },
-
-  { name: "unpack-gone", file: OFF, must: "fail", expect: "could never be removed",
-    why: "§1 — removing from the pack stops reclaiming the storage",
-    find: 'export async function unpackRouteOffline(routeId) { await idbDelete("pack", routeId); try { await removeRouteMapOffline(routeId); }',
-    repl: "export async function unpackRouteOffline(routeId) { void routeId; try { await removeRouteMapOffline(routeId); }" },
-
-  /* §11. The pack keeps its row and snapshot and stops saving the map, so the card's Map chip and
-   * the toast promise tiles nobody wrote; and the map stops reading the saved tiles, so a pack
-   * full of tiles still shows a blank map with no signal. Neither changes a single render online. */
-  { name: "map-write-gone", file: DB, must: "fail", expect: "no longer calls saveRouteMapOffline",
-    why: "§11 — the pack stops saving the approach's map",
-    find: "map = await saveRouteMapOffline(routeId, row, opts && opts.onMapProgress);", repl: "map = null;" },
-  { name: "map-fallback-gone", file: KIT, must: "fail", expect: "no longer reads saved tiles",
-    why: "§11 — tiles are saved and the map never shows them offline",
-    find: "offlineTileUrl(layer, coords.z, coords.x, coords.y).then(", repl: "Promise.resolve(null).then(" },
-
   /* THE SILENT HALF. Write, copy and hydration all stay; only the fallback goes. Nothing renders
    * differently, no name moves, and the pack empties the moment there is no signal. */
   { name: "read-gone", file: DB, must: "fail", expect: "fallback is not offlineRoutesByIds",
     why: "§2 — the row is written and never read back; the defect no render assertion can see",
-    find: "}, () => offlineRoutesByIds(ids)),", repl: "}, () => []),"  },
+    find: "}, () => offlineRoutesByIds(ids)) : async () => {", repl: "}, () => []) : async () => {"  },
 
   { name: "reader-gone", file: OFF, must: "fail", expect: "no longer defines offlineRoutesByIds",
     why: "§2 — the reader itself is renamed out from under lib/db.js",
@@ -141,68 +88,86 @@ const CASES = [
     find: "() => orOfflineExact(async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\",",
     repl: "() => (async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\"," },
 
-  { name: "hydration-gone", file: CM, must: "fail", expect: "never calls packedRouteIds",
-    why: "§3 — the pack is empty after every reload however well the write worked",
-    find: "packedRouteIds().then(", repl: "Promise.resolve([]).then(" },
-
-  /* An ORDER, not a character: declared above the reset, the hydration fills the list and the
-   * reset empties it microseconds later on the same uid transition. */
-  { name: "hydration-above-reset", file: CM, must: "fail", expect: "declared ABOVE the sign-in reset",
-    why: "§3 — the check:verification-fallback defect, on the trip pack",
-    move: moveHydrationAboveReset },
-
-  { name: "disclaimer-gone", file: RD, must: "fail", expect: "no longer says what is NOT saved",
-    why: "§4 — the card lists what you have and stops naming what you do not",
-    find: "<b style={{color:C.text}}>Photos and topo images are not</b>, the saved map covers only the ground around the approach (US topo and satellite, to zoom 16), and anything newer needs a connection.",
-    repl: "Everything you need is here." },
-
-  { name: "claims-photos", file: RD, must: "fail", expect: "claims something is on the device",
-    why: "§5 — a live claim about content packing does not store",
-    find: '"Saves this climb\'s beta to this device so the page opens with no signal."',
-    repl: '"Saves the beta and every photo to this device."' },
-
-  { name: "killreal", file: CM, must: "fail", expect: "is gone. A downloaded state IS on the device",
+  { name: "killreal", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "is gone. A downloaded state IS on the device",
     why: "§6 — deleting the state download's TRUE claim to satisfy a rule about routes",
     find: "is saved on this device and keeps working with no signal", repl: "is downloaded" },
 
   { name: "bookmarks-gone", file: CM, must: "fail", expect: "nothing calls saveAreaIds",
     why: "§7 — saved areas go back to being lost on every reload",
-    find: "saveAreaIds(uid,next)", repl: "Promise.resolve(next)" },
+    // App writes saved areas at two sites (the toggle and the account hydrate): both must go
+    rx: [[/(?<![A-Za-z0-9_$])saveAreaIds\(/g, "Promise.resolve("]] },
 
-  /* MUST STAY SILENT, and this is the case the whole rewrite turns on. Before the pack was real
-   * this sentence was the defect; now it is the feature. A guard still firing on it would be
-   * telling an author to delete a true statement — arguing with correct work, which this repo
-   * records as the fastest way to make people ignore a gate. */
-  { name: "honest-claim", file: RD, must: "pass",
-    why: "MUST PASS — a packed route really does open with no signal",
-    find: '"Saves this climb\'s beta to this device so the page opens with no signal."',
-    repl: '"Saved here, this climb opens with no signal and needs no cell service."' },
+  /* §10 — the readers a downloaded state's reports, corrections and names come back through. Each
+   * edit leaves every render and every name intact online; the loss shows only with no signal. */
+  { name: "reports-fallback-gone", file: DB, must: "fail", expect: "useRouteTripReports lost its device fallback",
+    why: "§10 — a state's reports are downloaded and never read back",
+    find: "() => offlinePackReports(routeId)", repl: "() => undefined" },
+  { name: "stamp-lost", file: DB, must: "fail", expect: "useRouteContributions lost its device fallback or its structuralSharing",
+    why: "§10 — structural sharing strips `_packedAt`, so saved corrections render undated",
+    find: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId,\n    structuralSharing: false,",
+    repl: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId," },
+  { name: "names-fallback-gone", file: DB, must: "fail", expect: "useProfilesByIds has no device fallback",
+    why: "§10 — every saved report reads as an anonymous climber offline",
+    find: "() => offlinePackProfiles(ids)", repl: "() => undefined" },
+  { name: "plan-mirror-gone", file: DB, must: "fail", expect: "useMyItineraries no longer mirrors",
+    why: "§10 — the climber's own plan is not on the device at the trailhead",
+    find: "cacheItineraries(userId, out).catch(() => {});", repl: "" },
+  { name: "undated-reports", file: "src/components/RouteReportsTab.tsx", must: "fail", expect: "stopped dating the saved reports",
+    why: "§10 — a saved copy of the reports reads as live",
+    find: "savedAgo(reportsPackedAt)", repl: "\"\"" },
+  { name: "photos-ignore-stamp", file: CM, must: "fail", expect: "photosUnavailable ignores the `_packedAt` stamp",
+    why: "§10 — a route served from the device claims it has no photos",
+    find: "(dbContribs.data&&dbContribs.data._packedAt)", repl: "false" },
+  { name: "state-saves-photo-rows", file: OFF, must: "fail", expect: "the state download now stores photo rows",
+    why: "§10 — photo rows are stored without their images",
+    find: ".filter((c) => inPage.has(c.route_id) && c.kind !== \"photo\");", repl: ".filter((c) => inPage.has(c.route_id));" },
 
-  /* MUST STAY SILENT. The disclaimer may be reworded; §4 asks whether the fact is stated, and a
-   * guard pinned to one phrasing forbids improving it. This checks the assertion is on the CLAIM
-   * rather than on a string, by keeping both facts and changing nothing else around them. */
-  { name: "disclaimer-reworded", file: RD, must: "pass",
-    why: "MUST PASS — §4 is about the fact being stated, not about one wording of it",
-    find: "Tap <b style={{color:C.text}}>Download GPX</b> to open the track in a dedicated GPS/mapping app.",
-    repl: "Download the GPX to open the track in a mapping app." },
+  /* §4 — both Help surfaces keep naming what a download does NOT save. */
+  { name: "disclaimer-gone", file: HELP, must: "fail", expect: "the Help FAQ no longer says photos and map tiles are NOT saved",
+    why: "§4 — the FAQ lists what a download saves and stops naming what it does not",
+    find: "Photos and map tiles aren’t saved. ", repl: "" },
+  { name: "tour-disclaimer-gone", file: CORE, must: "fail", expect: "the Help tour (HELP_FEATS) no longer says",
+    why: "§4 — the Help tour stops naming what a download does not save",
+    find: "Only climbs work offline — photos and map tiles aren’t saved.", repl: "Only climbs work offline." },
+  /* MUST STAY SILENT, twice over: §4 is about the FACT, so a rewording passes; and the reworded
+   * sentence says "to this device" in the negative, which §5 must read as the denial it is. */
+  { name: "disclaimer-reworded", file: HELP, must: "pass",
+    why: "MUST PASS — §4 is about the fact, and a negated device claim is not a claim",
+    find: "Photos and map tiles aren’t saved. ", repl: "Photos and map tiles are not saved to this device. " },
 
-  /* BOTH files get a rename case. A single one is passed by a GLOBAL floor, because the other
-   * file's regions carry the run — which is how the first version of this guard reported a clean
-   * sweep with RouteDetail.jsx entirely blind. Per-file floors are what these two pin. */
-  { name: "renamed-rd", file: RD, must: "fail", expect: "trip-pack region(s)",
-    why: "fail closed — RouteDetail's trigger renamed, so its surfaces go unscanned",
-    rx: [[/(?<![A-Za-z0-9_$])offlineSaved(?![A-Za-z0-9_$])/g, "tripPacked"],
-         [/(?<![A-Za-z0-9_$])offlinePending(?![A-Za-z0-9_$])/g, "tripPending"]] },
+  /* §5 — one live claim per scanned surface. */
+  { name: "claims-photos-manage", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "claims something is on the device",
+    why: "§5 — Manage areas promises photos and map tiles the download never stores",
+    find: "\" downloads it: the full catalog — areas,", repl: "\" downloads it with every photo and map tile to this device: the full catalog — areas," },
+  { name: "claims-photos-home", file: TODAY, must: "fail", expect: "claims something is on the device",
+    why: "§5 — Home's Pinned states card promises photos",
+    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" downloads its climbs and their photos to this device so they open with no signal" },
+  { name: "claims-topos-help", file: HELP, must: "fail", expect: "claims something is on the device",
+    why: "§5 — the Help FAQ promises topos",
+    find: "its climbs, areas, gear and beta.", repl: "its climbs, areas, gear, beta and topos, all saved to your phone." },
+  /* MUST STAY SILENT: a true claim about the CATALOG, in the no-signal idiom. */
+  { name: "honest-claim", file: TODAY, must: "pass",
+    why: "MUST PASS — the catalog really is on the device and opens with no signal",
+    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" saves its climbs on this device, so they open with no signal" },
 
-  /* ClimbMatch carries several triggers, so renaming one is correctly NOT a miss — the first
-   * version of this case renamed only `setOffline`, the guard rightly passed, and that read as a
-   * guard defect when it was a harness one. Blinding the file needs all of them. */
-  { name: "renamed-cm", file: CM, must: "fail", expect: "trip-pack region(s)",
-    why: "fail closed — ClimbMatch's triggers renamed",
-    rx: [[/(?<![A-Za-z0-9_$])setOffline(?![A-Za-z0-9_$])/g, "setTripPack"],
-         [/(?<![A-Za-z0-9_$])offline(?![A-Za-z0-9_$])/g, "tripPack"],
-         [/(?<![A-Za-z0-9_$])packBusy(?![A-Za-z0-9_$])/g, "dlPending"],
-         [/(?<![A-Za-z0-9_$])offlinePending(?![A-Za-z0-9_$])/g, "tripPending"]] },
+  /* Fail closed — a rename blinds a surface. The Manage areas dialog is found by its aria-label,
+   * and the trigger regions alone would keep ClimbMatch's floor satisfied without it. */
+  { name: "manage-areas-renamed", file: "src/components/ManageAreasSheet.tsx", must: "fail", expect: "state-download dialog(s) by aria-label",
+    why: "fail closed — Manage areas' own copy would drop out of the scan",
+    find: "aria-label=\"Manage areas\"", repl: "aria-label=\"Your areas\"" },
+  // since PR62 the state-download triggers also live in the lifted sheets/tabs: `moreFiles` lists the extra files the same rename is applied to
+  { name: "download-state-renamed", file: CM, moreFiles: TRIGGER_FILES, must: "fail", expect: "region(s) and",
+    why: "fail closed — ClimbMatch's state-download triggers renamed, so Home's card goes unscanned",
+    rx: [[/(?<![A-Za-z0-9_$])downloadedStates(?![A-Za-z0-9_$])/g, "dlStates"],
+         [/(?<![A-Za-z0-9_$])setDownloadedStates(?![A-Za-z0-9_$])/g, "setDlStates"],
+         [/(?<![A-Za-z0-9_$])myPins(?![A-Za-z0-9_$])/g, "pinsMine"],
+         [/(?<![A-Za-z0-9_$])dlBusy(?![A-Za-z0-9_$])/g, "dlPending"],
+         [/(?<![A-Za-z0-9_$])downloadState(?![A-Za-z0-9_$])/g, "fetchState"],
+         [/(?<![A-Za-z0-9_$])removeState(?![A-Za-z0-9_$])/g, "dropState"],
+         [/(?<![A-Za-z0-9_$])pinState(?![A-Za-z0-9_$])/g, "togglePin"]] },
+  { name: "help-tour-renamed", file: CORE, must: "fail", expect: "ANCHOR LOST: HELP_FEATS",
+    why: "fail closed — the Help tour drops out of §4 and §5",
+    find: "HELP_FEATS", repl: "HELP_TOUR", all: true },
 ];
 
 /* stdio MUST name stderr explicitly. execFileSync defaults to ["pipe","pipe","INHERIT"], so a
@@ -243,7 +208,7 @@ const failText = (r) => r.out.split("\n").filter((l) => /^\s*FAIL/.test(l)).join
 /* Every file the suite may touch, checksummed BEFORE anything runs and re-checked at the end. A
  * per-case restore already runs, but a crash between write and restore leaves the tree edited and
  * nothing would say so — the failure this suite has already caused once. */
-const TOUCHED = [...new Set(CASES.map((c) => c.file))];
+const TOUCHED = [...new Set(CASES.flatMap((c) => [c.file, ...(c.moreFiles || [])]))];
 const BASELINE = new Map(TOUCHED.map((f) => [f, sum(f)]));
 
 let pass = 0, fail = 0;
@@ -253,29 +218,32 @@ for (const c of CASES) {
   let next;
   if (c.move) {
     next = c.move(orig);
-    if (!next || next === orig) { console.log("  " + c.name.padEnd(22) + "HARNESS BUG — the move did not apply"); fail++; continue; }
+    if (!next || next === orig) { console.log("  " + c.name.padEnd(24) + "HARNESS BUG — the move did not apply"); fail++; continue; }
   } else if (c.rx) {
     next = c.rx.reduce((s, [re, r]) => s.replace(re, r), orig);
-    if (next === orig) { console.log("  " + c.name.padEnd(22) + "HARNESS BUG — no regex matched"); fail++; continue; }
+    if (next === orig) { console.log("  " + c.name.padEnd(24) + "HARNESS BUG — no regex matched"); fail++; continue; }
   } else {
     const n = orig.split(c.find).length - 1;
     if (n === 0 || (!c.all && n !== 1)) {
-      console.log("  " + c.name.padEnd(22) + "HARNESS BUG — " + n + " matches for its find string");
+      console.log("  " + c.name.padEnd(24) + "HARNESS BUG — " + n + " matches for its find string");
       fail++; continue;
     }
     next = c.all ? orig.split(c.find).join(c.repl) : orig.replace(c.find, c.repl);
   }
   fs.writeFileSync(P(c.file), next);
+  const extra = (c.moreFiles || []).map((f) => ({ f, orig: fs.readFileSync(P(f), "utf8"), before: sum(f) }));
+  for (const x of extra) fs.writeFileSync(P(x.f), c.rx.reduce((t, [re, r]) => t.replace(re, r), x.orig));
   const landed = sum(c.file) !== before;
 
   const r = runGuard();
   fs.writeFileSync(P(c.file), orig);
-  const restored = sum(c.file) === before;
+  for (const x of extra) fs.writeFileSync(P(x.f), x.orig);
+  const restored = sum(c.file) === before && extra.every((x) => sum(x.f) === x.before);
 
   const wanted = c.must === "fail" ? !r.ok : r.ok;
   const named = c.must !== "fail" || !c.expect || failText(r).includes(c.expect);
   const good = landed && restored && wanted && named;
-  console.log("  " + c.name.padEnd(22) + (good ? "OK   " : "BAD  ")
+  console.log("  " + c.name.padEnd(24) + (good ? "OK   " : "BAD  ")
     + "(landed: " + landed + ", restored: " + restored + ", guard " + (r.ok ? "passed" : "failed")
     + ", wanted " + c.must + (c.expect ? ", named its own defect: " + named : "") + ")\n"
     + "        " + c.why);

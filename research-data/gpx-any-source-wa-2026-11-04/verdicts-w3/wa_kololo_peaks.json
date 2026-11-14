@@ -1,0 +1,65 @@
+{
+  "area_id": "wa_kololo_peaks",
+  "routes": [
+    {
+      "route_id": "wa_kololo_peaks_standard",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Logged ascents peak in July (20) with June and August next; web search found club trips mid-July through August, spring ski ascents in May-June, and early-season snow on the talus. Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2548444",
+          "verdict": "different",
+          "why": "June ski tour that also climbed Glacier Peak."
+        },
+        {
+          "aid": "1996196",
+          "verdict": "different",
+          "why": "Track also reaches Glacier Peak (highest point 3186 m)."
+        },
+        {
+          "aid": "1950272",
+          "verdict": "different",
+          "why": "Report says White Mountain was also tagged on the way out."
+        },
+        {
+          "aid": "2902794",
+          "verdict": "different",
+          "why": "Camp-based and also includes Glacier Peak."
+        },
+        {
+          "aid": "393327",
+          "verdict": "different",
+          "why": "74 mile biked trip, September, starts far from the trailhead."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "In mid-July the stretch past White Pass to the high camp near 6,600 ft has several unexpected dips and re-climbs of a couple hundred feet, adding time to the day.",
+          "aids": [
+            "831021"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "In mid-July the first rocky section above the glacier edge can be climbed unroped, and staying on rock keeps you above the worst crevassed ground before roping up.",
+          "aids": [
+            "2902794"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Every summited trailhead track also visits Glacier Peak or White Mountain, so none qualifies. Reports mostly cover the Glacier Peak combination."
+}

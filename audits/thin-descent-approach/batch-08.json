@@ -1,0 +1,129 @@
+{
+ "wa_mount_price_lower_ramp_route": {
+  "area": "wa_mount_price",
+  "skip_reason": "no source found describing this line separately from the Hester Lake and southeast routes on Mount Price; the line and its descent could not be confirmed"
+ },
+ "wa_mount_price_northeast_route": {
+  "area": "wa_mount_price",
+  "skip_reason": "no source found describing this line separately from the Hester Lake and southeast routes on Mount Price; the line and its descent could not be confirmed"
+ },
+ "wa_mount_price_prominent_dihedral": {
+  "area": "wa_mount_price",
+  "skip_reason": "no source found describing this line separately from the Hester Lake and southeast routes on Mount Price; the line and its descent could not be confirmed"
+ },
+ "wa_mount_price_south_ridge": {
+  "area": "wa_mount_price",
+  "skip_reason": "no source found describing this line separately from the Hester Lake and southeast routes on Mount Price; the line and its descent could not be confirmed"
+ },
+ "wa_mount_prophet_east": {
+  "area": "wa_mount_prophet",
+  "set": {
+   "descent_text": "Reverse the ascent: follow the ridge crest back down past the two intermediate high points, with the short Class 3 step below the summit taken carefully on the way down, to the saddle around 6,600 ft. Drop the brushy forested rib to Thirtynine Mile Creek, the last reliable water, and rejoin Big Beaver Trail. From there it is about 5 miles of trail back toward Ross Lake, and the lakeshore trail or the water taxi from Big Beaver Landing completes the exit. Loose rock on the upper ridge is a rockfall hazard for anyone below you, and the brush on the rib is slow in the dark."
+  },
+  "review": {
+   "sources": [
+    "https://Summitpost.org/south-ridge-mount-prophet/1066527",
+    "https://www.mountaineers.org/activities/trip-reports/mount-prophet"
+   ],
+   "confidence": "medium",
+   "notes": "Route line, 5.1 mi Big Beaver Trail to Thirtynine Mile Creek, water, and rockfall from the south ridge pages and trip report as summarised by search; descent is the reverse of the stored ascent line."
+  }
+ },
+ "wa_mount_queets_south": {
+  "area": "wa_mount_queets",
+  "skip_reason": "stored approach describes the north ridge, so the row looks misfiled or mixed; no source found for a south route descent"
+ },
+ "wa_mount_rainier_east_success_couloir": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "only ski trip reports found; no source describing a mountaineering approach or descent"
+ },
+ "wa_mount_rainier_emmons_glacier_2": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "duplicate of wa_mount_rainier_emmons_glacier"
+ },
+ "wa_mount_rainier_fuhrer_finger": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "descent_text": "Most parties go back down the finger early in the day, before sun and warming send rock and ice down it, and then retrace the approach across the Wilson Glacier and the Nisqually Glacier to the Nisqually Moraine and the Skyline Trail to Paradise. The other choice is a carryover: continue over the summit crater and descend the Disappointment Cleaver route to Camp Muir and the Muir Snowfield, which needs a plan for the car at Paradise either way. Some guided parties come down the Kautz route instead, depending on conditions. Stay roped on all glacier travel; the Nisqually crossing is crevassed and exposed to icefall, and Wilson Gully on the west side of the glacier is a rockfall zone."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-fuhrer-finger",
+    "https://www.rmiguides.com/programs/mt-rainier-fuhrer-finger"
+   ],
+   "confidence": "medium",
+   "notes": "Descend climbing route or carryover via Disappointment Cleaver from the Mountaineers page; retrace Wilson and Nisqually to Paradise, or Kautz depending on conditions, from the guide-service itineraries; Wilson Gully rockfall from the Mountaineers page."
+  }
+ },
+ "wa_mount_rainier_fuhrer_thumb": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "no source found describing the Thumb descent specifically; existing text already names the options"
+ },
+ "wa_mount_rainier_ingraham_glacier_direct": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "duplicate of wa_mount_rainier_ingraham_direct"
+ },
+ "wa_mount_rainier_north_mowich_icefall": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "no source found describing this line"
+ },
+ "wa_mount_rainier_ptarmigan_ridge": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "descent_text": "Ptarmigan Ridge is normally done as a carryover. Once on the summit plateau near the crater rim, descend the Emmons-Winthrop route: down the broad Emmons Glacier, threading its large crevasses, to Camp Schurman at about 9,500 ft. From the camp go around the south side of Steamboat Prow to Camp Curtis, descend the Inter Glacier, and follow the Glacier Basin Trail out to White River. Starting from the Mowich Lake side needs a car left at White River. The route finding on the Emmons is the main hazard in poor visibility, so keep a track of the way up if you came that way, and stay roped."
+  },
+  "review": {
+   "sources": [
+    "https://mountainproject.com/route/106846325/ptarmigan-ridge",
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge",
+    "https://countryhighpoints.com/mt-rainier-via-ptarmigan-ridge"
+   ],
+   "confidence": "high",
+   "notes": "All three recommend descending the Emmons Glacier as a carryover; Camp Schurman and Inter Glacier exit from the trip report and the sibling Emmons descent; car shuttle from the Mountaineers page and Mountain Project."
+  }
+ },
+ "wa_mount_rainier_sunset_ridge": {
+  "area": "wa_mount_rainier",
+  "set": {
+   "descent_text": "The usual way down is over the top and down the Disappointment Cleaver, across to Camp Muir, then the Muir Snowfield to Paradise; this is a carryover, so leave a car at Paradise or arrange a shuttle back to the Westside Road. Early in the season, a party that camps on Puyallup Cleaver can instead descend the Tahoma Glacier, or its Sickle shortcut that skirts the crevasses of the main glacier, and return to the high camp. Stay roped on the glaciers, and expect crevasses and icefall on both options."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+    "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier"
+   ],
+   "confidence": "medium",
+   "notes": "DC descent with shuttle, and Tahoma Glacier descent early season from Puyallup Cleaver camp, per the Mountaineers Sunset Ridge page; Sickle shortcut kept from the existing text and confirmed on the Tahoma page."
+  }
+ },
+ "wa_mount_roosevelt_southeast_route": {
+  "area": "wa_mount_roosevelt",
+  "skip_reason": "duplicate of wa_mount_roosevelt_standard (the standard route is the southeast gully)"
+ },
+ "wa_mount_seattle_noyes_basin": {
+  "area": "wa_mount_seattle",
+  "skip_reason": "no source found for this basin line approach or descent"
+ },
+ "wa_mount_seattle_seattle_creek": {
+  "area": "wa_mount_seattle",
+  "skip_reason": "no source found giving enough detail on the approach or descent for this line"
+ },
+ "wa_mount_sefrit_bloody_head_couloir": {
+  "area": "wa_mount_sefrit",
+  "skip_reason": "no source found stating where the couloir tops out or how a party descends"
+ },
+ "wa_mount_steel_first_divide": {
+  "area": "wa_mount_steel",
+  "set": {
+   "descent_text": "Reverse the ascent: from the summit block follow the ridge south to the saddle between Steel's two summits, then work northeast around the north side of the small lake in the basin and back east along the ridge to First Divide. Pick up the North Fork Skokomish River Trail (Trail 110) there and follow it down to Staircase, a long walk-out of more than ten miles. The scramble is non-technical, but the basin and ridge are open and easy to lose in cloud, so note your line on the way up. Allow a full day for the return, and check trail closures before you go."
+  },
+  "review": {
+   "sources": [
+    "https://www.summitpost.org/mountain/rock/152969/mount-steel.html",
+    "https://www.wta.org/go-hiking/hikes/north-fork-skokomish-river"
+   ],
+   "confidence": "medium",
+   "notes": "Basin, lake, saddle and ridge to summit block from the Mount Steel page as summarised by search; trail number 110 and the First Divide location from WTA."
+  }
+ }
+}

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 /* Does the grade pyramid on somebody ELSE's profile hold what its caption says it holds?
  *
  * FullProfile renders one section two ways. Viewing YOURSELF, AscentPyramid is handed
@@ -26,7 +27,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 // Inside the repo, not /tmp: react and friends are external and must resolve from node_modules.
 const out = path.join(ROOT, "scripts", "oneoff", `.pyr-${process.pid}.mjs`);
 
-execFileSync("npx", ["esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm", "--loader:.jsx=jsx",
+execFileSync(NPX, [...NPX_PRE, "esbuild", "ClimbMatchCore.jsx", "--bundle", "--format=esm", "--loader:.jsx=jsx",
   "--jsx=automatic", "--platform=node", "--external:react", "--external:react-dom",
   "--external:react-dom/server", "--external:@tanstack/react-query", "--external:react/jsx-runtime",
   // lib/supabase.js reads import.meta.env at module scope; without this the import throws.

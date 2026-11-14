@@ -28,6 +28,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { componentFiles } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CAP = 520;
@@ -37,8 +38,7 @@ const CAP = 520;
 // more, several of them the loading and error states of screens whose wrapper lives in core.
 // Capping a wrapper and not its loading state makes the screen jump width as the chunk lands.
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
-  .concat(fs.readdirSync(path.join(ROOT, "lib"))
-    .filter((x) => x.endsWith(".jsx")).map((x) => path.join("lib", x)));
+  .concat(componentFiles(ROOT, { guard: "check:overlay-width-cap" }));
 
 // Full-bleed ON PURPOSE. A media surface takes the whole window in this app -- the photo
 // lightboxes already do -- so the fire map is not a column. Each entry states its reason, and a
@@ -62,8 +62,29 @@ const EXEMPT = [
     // capping this one would put two maps in one app at two different widths, which is a worse
     // desktop/phone difference than the one the cap exists to fix. Reached only since the detector
     // learned to read a ternary style -- it was outside this guard's census entirely before that.
-    why: "the route map is a MAP -- spatial content, full-bleed like the fire map and the lightboxes",
-    match: (style) => /zIndex:9700/.test(style) && /flexDirection:"column"/.test(style),
+    // The AREA map's full screen (NearMePanel, lib/DbAreaBrowser.jsx) is the same view drawn the
+    // same way since the owner asked for it to work like the route map's (2026-10-23).
+    // The route map's 3D VIEW (lib/Route3DView.jsx, 2026-10-24) is the same map tilted, drawn the same way.
+    why: "the route map and the area map are MAPS -- spatial content, full-bleed like the fire map and the lightboxes",
+    match: (style) => /zIndex:\s*9700/.test(style) && /flexDirection:\s*"column"/.test(style),
+  },
+  {
+    key: "trail-draw",
+    // TrailDrawMap's full-screen branch (lib/TrailDrawMap.jsx, 2026-11-05): the Add-the-trail drawer
+    // and the desktop Draw approach tool. A line is drawn BY EYE, point by point, and the owner asked
+    // for the whole screen to do it in. Same class as the route map; it sits at 10000 because the
+    // GPS submission sheet it opens from is a 9999 overlay, so the route map's 9700 would be under it.
+    why: "the trail drawer is a MAP -- spatial content, full-bleed like the route map, and a line drawn by eye needs the whole screen",
+    match: (style, file) => /TrailDrawMap\.jsx$/.test(file) && /zIndex:\s*10000(?!\d)/.test(style),
+  },
+  {
+    key: "menu-wide",
+    // The Menu's WIDE branch only (≥1024px, where the desktop shell is no longer a 520px column).
+    // The owner asked for the Menu to fill the screen (2026-10-21); it had been a 440px drawer.
+    // Its content is centred in a 720px column by the panel's padding, so nothing stretches. Keyed
+    // on the whole style so the phone branch beside it -- same zIndex, capped -- is still checked.
+    why: "the desktop Menu is a full-window sheet by the owner's decision, its content centred at 720px",
+    match: (style) => style === 'position:"fixed",inset:0,zIndex:1200,background:C.bg,overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"',
   },
 ];
 
@@ -156,16 +177,19 @@ for (const f of FILES) {
 // check:refs, and it drops that file's views silently. Reformatting ClimbMatchCore alone takes
 // 24 -> 17 views, so the view floor trips on it.
 //
-// 20 sits just under today's 24: tight enough that losing one big file trips it, loose enough
-// that removing a view or two does not. It is a RATCHET -- if views are deliberately deleted
-// below it, move the floor in the same commit and say why.
+// The floor is 36 against today's 38 (it was 20 against 24 until the views moved out of core into
+// src/components/*.tsx). Injection-found blind spot: with the views spread over ~30 files, the
+// old floor of 20 let a whole-file reformat of ClimbMatch.jsx (-4 views) or of core (-2) pass
+// green. 36 trips on losing ClimbMatch.jsx's four; core's two are the residual below.
+// It is a RATCHET -- if views are deliberately deleted below it, move the floor in the same
+// commit and say why.
 //
 // RESIDUAL, stated rather than papered over: a file holding a SINGLE view (lib/DbGuides.jsx,
 // lib/DbAreaBrowser.jsx) can be reformatted without tripping either floor. A per-file expectation
 // would catch it and would be hand-maintained bookkeeping that rots, which this repo has been
 // burned by more than once; the floors are the cheaper trade.
-if (views < 20) {
-  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 20.`);
+if (views < 36) {
+  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 36.`);
   console.error("The scan is broken, the style shape moved, or views were deleted. NOT a clean result.");
   process.exit(1);
 }

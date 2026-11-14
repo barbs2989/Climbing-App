@@ -1,0 +1,413 @@
+[
+ {
+  "id": "wa_dorado_needle_east_ridge",
+  "found": 10,
+  "decision": "HOLD",
+  "changed": "Nothing. The stored table is section-style with ranges and no source states a pitch-by-pitch breakdown to rebuild it from.",
+  "other": "The route page states no pitch count (800 ft, Grade III). One guide service describes about 10 pitches; stored pitches is 14. Sources are thin and the 5.5 vs 5.7 grade also varies between them. No change made.",
+  "sources": [
+   "https://www.mountainproject.com/route/112156952/east-ridge",
+   "https://www.miyaradventures.com/trip/dorado-needle-and-early-morning-spire-2/",
+   "https://www.alpineinstitute.com/route-profile-dorado-needle-east-ridge/"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "East Ridge / Inspiration Glacier",
+   "area": "wa_dorado_needle",
+   "discipline": "alpine",
+   "pitches": 14,
+   "grade": "5.7",
+   "pd": 5
+  }
+ },
+ {
+  "id": "wa_dragontail_peak_serpentine_arete",
+  "found": 13,
+  "decision": "HOLD",
+  "changed": "Nothing. The stored table is coarse (labels 1, 2-3, 4-5, 6+) and the listed count is 13 against a stored 14, so a corrected numbered table cannot be built without inventing pitch splits.",
+  "other": "Stored pitches 14 vs 13 on the main route page; the second page read gave no clear count. The table's labels reach at least 6, consistent with either.",
+  "sources": [
+   "https://www.mountainproject.com/route/106015955/serpentine-arete",
+   "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Serpentine Arête",
+   "area": "wa_dragontail_peak",
+   "discipline": "alpine",
+   "pitches": 14,
+   "grade": "5.8",
+   "pd": 4
+  }
+ },
+ {
+  "id": "wa_eldorado_peak_eldorado_glacier_nw",
+  "found": 3,
+  "decision": "HOLD",
+  "changed": "Nothing changed. No source states a pitch count for this couloir and the accounts are mostly simul-climbed.",
+  "other": "One account describes three simul-pitches on a 60 m rope; the route page gives no count; another account mentions one rock belay and a second lead then simul-climbing. Stored pitches is 8 with only two table rows, so the stored count looks high but cannot be corrected from a stated figure.",
+  "sources": [
+   "https://www.mountainproject.com/route/110444620/northwest-ice-couloir",
+   "https://alpinedave.com/eldorado/nwcouloir/nwcouloir.htm",
+   "https://climberkyle.com/2019/11/06/eldorado-peak-nw-ice-couloir-wi3/"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Northwest Couloir / Eldorado Glacier",
+   "area": "wa_main_peak",
+   "discipline": "alpine",
+   "pitches": 8,
+   "grade": "AI3",
+   "pd": 2
+  }
+ },
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "found": 6,
+  "decision": "HOLD",
+  "changed": "Nothing changed. Sources give 6 (route page) and 6 to 8 (guide services), and none lists pitches one by one.",
+  "other": "Stored pitches is 6 but the table has 8 rows, including a rappel row and a summit scramble row. The route page puts the crux on the second-last pitch, while the stored table puts it at row 6 of 8.",
+  "sources": [
+   "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+   "https://spokalpine.com/2023/08/01/forbidden-peak-east-ridge-direct-iii-5-8/",
+   "https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "East Ridge Direct",
+   "area": "wa_forbidden_peak",
+   "discipline": "alpine",
+   "pitches": 6,
+   "grade": "5.8-",
+   "pd": 8
+  }
+ },
+ {
+  "id": "wa_forbidden_peak_west_ridge",
+  "found": 4,
+  "decision": "HOLD",
+  "changed": "Nothing changed. Sources disagree: one club page lists four pitches, a guide service lists eight.",
+  "other": "Second source says 8. Stored pitches is 8 with 6 table rows. No source lists the pitches one by one.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/forbidden-peak-west-ridge",
+   "https://www.mountainschool.com/content/main/forbidden-peak-climb/",
+   "https://www.mountainbureau.com/scheduled-programs-blog/forbidden-peak-west-ridge"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "West Ridge",
+   "area": "wa_forbidden_peak",
+   "discipline": "alpine",
+   "pitches": 8,
+   "grade": "5.6",
+   "pd": 6
+  }
+ },
+ {
+  "id": "wa_johannesburg_mountain_northeast_buttress",
+  "found": 0,
+  "decision": "HOLD",
+  "changed": "Nothing. Stored pitches is 20 but the table has 12 numbered rows. The one source read describes named sections, not a pitch count, so no source count can confirm either figure.",
+  "other": "Source only states one 200 ft ice pitch on the headwall and up to seven rappels on descent.",
+  "sources": [
+   "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Northeast Buttress",
+   "area": "wa_johannesburg_mountain",
+   "discipline": "alpine",
+   "pitches": 20,
+   "grade": "5.8",
+   "pd": 12
+  }
+ },
+ {
+  "id": "wa_mount_thomson_west_ridge",
+  "found": 5,
+  "decision": "HOLD",
+  "changed": "Table left unchanged: sources say 5 pitches (one) and about 6 counting a half-pitch (another); stored pitches is 6 with 5 rows.",
+  "other": "Sources disagree between 5 and ~6.",
+  "sources": [
+   "https://www.jessb.org/mt-thomson-west-ridge/",
+   "https://chossclimbers.com/testing/us/washington/alpine-lakes-wilderness-2/west-ridge-of-mount-thomson/",
+   "https://www.mountaineers.org/activities/routes-places/mount-thompson-west-ridgpe"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "West Ridge",
+   "area": "wa_mount_thomson",
+   "discipline": "alpine",
+   "pitches": 6,
+   "grade": "5.6",
+   "pd": 5
+  }
+ },
+ {
+  "id": "wa_north_face_left_buttress",
+  "found": 12,
+  "decision": "HOLD",
+  "changed": "Table unchanged: the only description ends P8-P12, i.e. 12 pitches, versus stored 14 (stored 9-12 row is consistent with the source).",
+  "other": "Stored pitches 14 vs source 12; only one source found.",
+  "sources": [
+   "https://www.mountainproject.com/route/106464656/north-face-left-buttress"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Fight or Flight",
+   "area": "wa_castle_peak_pasayten",
+   "discipline": "alpine",
+   "pitches": 14,
+   "grade": "5.10+",
+   "pd": 9
+  }
+ },
+ {
+  "id": "wa_north_ridge_west_side",
+  "found": 3,
+  "decision": "HOLD",
+  "changed": "Nothing written. Stored rows 1 and 2-3 sum to 3, so the flag looks like a range-label false positive, but the only full page read describes the north ridge as two or three pitches and does not clearly cover the west-side start; no page confirms this exact line.",
+  "other": "That page gives 5.7 and 5.8 pitches, while the stored grade is 5.4; the grade may belong to a different variation. The Mountaineers route page returned 403 and was not read; other results were search snippets only.",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12199413501/North-America-United-States-Washington-Traverse-of-Molar-Tooth-North-Peak-Cutthroat-Peak-and-Whistler"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "North Ridge - West Side",
+   "area": "wa_molar_tooth",
+   "discipline": "alpine",
+   "pitches": 3,
+   "grade": "5.4",
+   "pd": 2
+  }
+ },
+ {
+  "id": "wa_rapple_grapple",
+  "found": 4,
+  "decision": "HOLD",
+  "changed": "Nothing written. Both pages state 4 pitches but only describe the line in outline (first pitch shared with the neighbouring classic, ledge traverse, corner, crux variation, final scramble and slab), not four separate pitches, so a four-row table would require invention.",
+  "other": "Stored table has 3 rows against pitches=4; the stored count is supported, the table is one row short. A page with a per-pitch breakdown would let it be completed.",
+  "sources": [
+   "https://www.mountainproject.com/route/106509842/rapple-grapple",
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-Liberty-Bell-Rapple-Grapple"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Rapple Grapple",
+   "area": "wa_liberty_bell",
+   "discipline": "alpine",
+   "pitches": 4,
+   "grade": "5.8",
+   "pd": 3
+  }
+ },
+ {
+  "id": "wa_scarface_3",
+  "found": 5,
+  "decision": "HOLD",
+  "changed": "Nothing written. The only full page describes pitches 1 to 4 individually and then the finishing pitches with no total; a 6-pitch figure appeared only in a search snippet of another listing.",
+  "other": "Stored row 5 notes pitches 5 and 6; relabelling it 5-6 would make the table sum to 6 if a page confirms the total. The page header lists no pitch count, only 1200 ft, Grade III.",
+  "sources": [
+   "https://www.mountainproject.com/route/108157279/scarface"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Scarface",
+   "area": "wa_colchuck_balanced_rock",
+   "discipline": "alpine",
+   "pitches": 6,
+   "grade": "5.10+",
+   "pd": 5
+  }
+ },
+ {
+  "id": "wa_skeena26",
+  "found": 12,
+  "decision": "HOLD",
+  "changed": "Nothing changed. The page states 12 pitches, matching the stored count, but the stored table skips pitches 8, 10 and 11 and no source describes those individually, so filling them would invent steps.",
+  "other": "Stored table has gaps (no rows for 8, 10, 11). Needs a source with per-pitch text to complete.",
+  "sources": [
+   "https://www.mountainproject.com/route/118285647/skeena26"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Skeena26",
+   "area": "wa_south_face",
+   "discipline": "alpine",
+   "pitches": 12,
+   "grade": "5.9",
+   "pd": 6
+  }
+ },
+ {
+  "id": "wa_south_arete",
+  "found": 10,
+  "decision": "HOLD",
+  "changed": "Nothing changed. One source gives 10 pitches, a search snippet of another says three or four, and a third describes sections with no count. Sources disagree with each other and with the stored 3.",
+  "other": "Stored table has 2 rows for 3 pitches.",
+  "sources": [
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-South-Early-Winters-Spire-South-Arete",
+   "https://www.alpineinstitute.com/route-profile-the-south-arete-of-south-early-winter-spire/"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "South Arete",
+   "area": "wa_south_early_winters_spire",
+   "discipline": "alpine",
+   "pitches": 3,
+   "grade": "5.5",
+   "pd": 2
+  }
+ },
+ {
+  "id": "wa_south_face",
+  "found": 0,
+  "decision": "HOLD",
+  "changed": "Nothing changed. No source describing a South Face line on this tower was found.",
+  "other": "Stored table has 2 rows for 3 pitches; the stored beta calls it a two-pitch route. Only a different line (Northwest Face, two pitches) turned up.",
+  "sources": [],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "South Face",
+   "area": "wa_vasiliki_tower",
+   "discipline": "alpine",
+   "pitches": 3,
+   "grade": "5.6",
+   "pd": 2
+  }
+ },
+ {
+  "id": "wa_sperry_peak_upper_south_ridge",
+  "found": 0,
+  "decision": "HOLD",
+  "changed": "Nothing changed. The source speaks only of a first tower and 'a couple' of ropelengths twice, never a total; the stored labels sum to 8 but cannot be confirmed.",
+  "other": "Source recommends simul-climbing rather than formal pitches.",
+  "sources": [
+   "https://www.summitpost.org/upper-south-ridge/426544"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Upper South Ridge",
+   "area": "wa_sperry_peak",
+   "discipline": "alpine",
+   "pitches": 8,
+   "grade": "5.4",
+   "pd": 5
+  }
+ },
+ {
+  "id": "wa_spire_point_southwest_face",
+  "found": 0,
+  "decision": "HOLD",
+  "changed": "Nothing changed. The stored table is partly section-style (approach, chimney, ledge, summit pitch) and no source read states a pitch count.",
+  "other": "The one page read describes continuous movement with no belay count. A second source (SummitPost) returned 403 and could not be read in full.",
+  "sources": [
+   "https://onehikeaweek.com/2019/06/30/spire-point/"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Southeast Face",
+   "area": "wa_spire_point",
+   "discipline": "alpine",
+   "pitches": 5,
+   "grade": "5.4",
+   "pd": 4
+  }
+ },
+ {
+  "id": "wa_spontaneity_arete",
+  "found": 6,
+  "decision": "HOLD",
+  "changed": "Nothing changed. Sources disagree on the count and parties link pitches differently.",
+  "other": "One page read in full lists six pitches plus an optional seventh. Search snippets give 8 (one topo site), 7 (a trip report) and 10 (a logbook). The stored table has seven numbered rows, matching the optional-seventh reading.",
+  "sources": [
+   "https://www.mountainproject.com/route/107213171/spontaneity-arete",
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-Le-Petit-Cheval-Spontaneity-Are-770-te",
+   "https://www.mountaineers.org/activities/routes-places/le-petit-cheval-spontaneity-arete"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "Spontaneity Arete",
+   "area": "wa_le_petit_cheval",
+   "discipline": "alpine",
+   "pitches": 7,
+   "grade": "5.7",
+   "pd": 8
+  }
+ },
+ {
+  "id": "wa_west_ridge_2",
+  "found": 8,
+  "decision": "HOLD",
+  "changed": "Nothing changed. Sources give 8 pitches (and 10 in a guide-service snippet) against stored 7. The stored table links the first two pitches as one row, which fits a long-rope link.",
+  "other": "One full page lists eight pitches; the stored rows cover 1-2 then 3 to 8, so the table already spans eight pitch numbers while stored pitches says 7. Not changed because the count is disputed and pitches must not change.",
+  "sources": [
+   "https://www.mountainproject.com/route/108262093/west-ridge",
+   "http://www.supertopo.com/rock-climbing/Washington-Pass-Paisano-Pinnacle-West-Ridge",
+   "https://ncmountainguides.com/routes/climbing-routes/paisano-pinnacle-west-ridge"
+  ],
+  "keys": [
+   "area",
+   "review"
+  ],
+  "live": {
+   "name": "West Ridge",
+   "area": "wa_paisano_pinnacle",
+   "discipline": "alpine",
+   "pitches": 7,
+   "grade": "5.8+",
+   "pd": 7
+  }
+ }
+]

@@ -1,0 +1,135 @@
+{
+  "area_id": "wa_castle_peak_tatoosh",
+  "routes": [
+    {
+      "route_id": "wa_castle_peak_tatoosh_la_villa",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Rock summit-block route; range pages say the talus is best under snow Mar-Jun for scrambling/skiing but the technical rock is a summer objective; stored Jul-Sep with Stevens Canyon Road open."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1988905",
+          "verdict": "unsure",
+          "why": "Aug 2022 climber went up a low-5th face/NE gully line, not shown to be La Villa."
+        },
+        {
+          "aid": "1476157",
+          "verdict": "different",
+          "why": "Report is the standard east/5.0 route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_castle_peak_tatoosh_southeast_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; guide pages call the range best in snow Mar-Jun (ski/snow) with the rock pitch a summer scramble; Mazamas notes early-season snow; ascent histogram peaks May (snow/ski), which is not this route season."
+      },
+      "track": {
+        "aid": "1476157",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged \"East route\"; report calls it the standard east route, the 5.0 line that is mostly class 4 with one fifth-class move, to the true summit, which is our standard southeast-face route; track starts and ends within 62-71 m of the Reflection Lakes pin and passes 1 m from summit on 29 Aug 2020."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "815153",
+          "verdict": "same",
+          "why": "13 Jun 2017 snow climb from the pullout via the central crack; round trip, but June snow conditions, so the August track is preferred."
+        },
+        {
+          "aid": "1988905",
+          "verdict": "unsure",
+          "why": "Aug 2022 climber went up a different gully on the NE side, not the standard line."
+        },
+        {
+          "aid": "686775",
+          "verdict": "unsure",
+          "why": "Jul 2016 SE gully track starts 1.3 km from our pin (camp start), not a round trip."
+        },
+        {
+          "aid": "2667592",
+          "verdict": "different",
+          "why": "Oct 2024 track starts far east (Snow Lake side) and ends far from the pin."
+        },
+        {
+          "aid": "3178264",
+          "verdict": "offseason",
+          "why": "26 Apr 2026 ski ascent."
+        },
+        {
+          "aid": "2904095",
+          "verdict": "offseason",
+          "why": "31 May 2025 snow climb, more than a month before Jul."
+        },
+        {
+          "aid": "3292103",
+          "verdict": "different",
+          "why": "Aug 2026 track tops out 1.2 km from our summit pin."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In mid-June the climb is often still a snow outing from the roadside pullout and needs an axe, yet in some years the rock is bare by late June.",
+          "aids": [
+            "815153",
+            "326527",
+            "1683727"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 8,
+          "text": "Three rappel stations sit on the summit block; their slings looked sound in June 2021 and August 2022, but carry spare webbing anyway.",
+          "aids": [
+            "1683727",
+            "1988905"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 9,
+          "text": "Where the low trail around the Castle's south ridge looks like sketchy fourth class, drop nearer the end of the ridge before climbing to the crest.",
+          "aids": [
+            "2023388"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "A flat campsite just east of the Castle gives a long Rainier view and suits a tent overnight in late July.",
+          "aids": [
+            "686775"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "By the third week of June in a normal year the summit blocks can be snow-free while the snow below is still firm early and good for a glissade back to the pullout.",
+          "aids": [
+            "326527"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "La Villa has no distinguishing evidence in any harvested report. Several tracks are ski or snow ascents (Apr-May) outside the scramble season."
+}

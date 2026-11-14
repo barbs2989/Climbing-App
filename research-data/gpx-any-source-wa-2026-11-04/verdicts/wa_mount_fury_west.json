@@ -1,0 +1,39 @@
+{
+  "area_id": "wa_mount_fury_west",
+  "routes": [
+    {
+      "route_id": "wa_mount_fury_east_mongo_ridge",
+      "season": { "months": [7,8], "window": "Jul-Aug", "evidence": "Only one recorded Mongo Ridge ascent (July); web results show early-to-mid July parties (2021, 2022, 2024) and nothing contradicting the stored Jul-Aug window." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1700120", "verdict": "unsure", "why": "5 Jul 2021 logged Mongo Ridge, summited, but the track is a fragment near the Access basin, 6.3 km from the summit pin; not complete." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_fury_west_west_ridge",
+      "season": { "months": [7,8], "window": "Jul-Aug", "evidence": "Logged NW face and North Buttress ascents in Jul and Aug; whole-peak histogram Jul 15, Aug 8; web search finds July and August windows." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2340591", "verdict": "unsure", "why": "15 Jul 2023 summit, no logged route, track runs from Big Beaver to Luna Col only, not complete." },
+        { "aid": "2929064", "verdict": "different", "why": "Traverse from East Fury (the Ridge Traverse route), partial from Luna Col." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_ridge_traverse_from_east_fury",
+      "season": { "months": [7,8], "window": "Jul-Aug", "evidence": "Logged ascents in Jul and Aug; web results show July and early-August outings; stored Jul-Sep kept in text, Aug clearest." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2929064", "verdict": "unsure", "why": "2 Aug 2025: logged as a traverse from East Fury, summit 4 m from our pin, but the track starts and ends at Luna Col (about 19 km from the Ross Dam pin), so it fails the complete/one-way test; strong identity, partial track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 8, "text": "The third tower has a long chimney, around 170 ft, on its west side; in early August one soloist climbed it on the return and rappelled each tower.", "aids": ["2929064"] }
+      ]
+    }
+  ],
+  "notes": "The 'West Ridge / Northwest Route' row has face text saying it is the connecting ridge to East Fury, but its overview is the 1958 first ascent from the west (Challenger Glacier); the face field looks wrong. The Mongo Ridge id contains 'east' but it is the SW buttress of West Fury. No track from a trailhead reaches the summit for any of these; 2929064 would be a good Ridge Traverse summit-day track if partial tracks are allowed."
+}

@@ -1,0 +1,86 @@
+{
+ "area_id": "wa_cardinal_peak",
+ "routes": [
+  {
+   "route_id": "wa_cardinal_peak_nw_couloir_north_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Web search: a route page lists spring to fall for Cardinal; no source for this north-side line. Ascent histogram all routes: May 10, Jun 21, Jul 60, Aug 27, Sep 45, Oct 20. The north ridge holds snow into summer, so the stored Jul-Sep window is kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2299982",
+     "verdict": "unsure",
+     "why": "Logged N. Ridge (2023-09-02, in season) but the same trip continues to Emerald Peak as a four-peak outing, so it is a link-up; the report describes a scree slog to the ridge and a southern class-4 finish, not a northwest couloir. Not a complete round trip."
+    },
+    {
+     "aid": "3237690",
+     "verdict": "unsure",
+     "why": "Logged W Gully then N Ridge: a three-day link-up with Emerald, Pinnacle and Saska; the west gully is a different line."
+    },
+    {
+     "aid": "3254834",
+     "verdict": "unsure",
+     "why": "2026-07-03, blank logged route and no report; the peak holds two routes."
+    },
+    {
+     "aid": "3211630",
+     "verdict": "offseason",
+     "why": "2026-05-27, more than a month before the Jul-Sep window; blank route."
+    },
+    {
+     "aid": "2668710",
+     "verdict": "unsure",
+     "why": "2024-10-07, blank route, a ridge traverse over many peaks (link-up)."
+    },
+    {
+     "aid": "2059353",
+     "verdict": "different",
+     "why": "Logged West Gully, a different line."
+    },
+    {
+     "aid": "267178",
+     "verdict": "unsure",
+     "why": "Logged \"standard\" (2012), the southeast route; ends 10 km from the trailhead."
+    }
+   ],
+   "pins": [
+    {
+     "type": "Summit",
+     "action": "add",
+     "lat": 48.101899,
+     "lng": -120.613308,
+     "name": "Cardinal Peak summit",
+     "evidence": "Reviewer: route has no Summit pin; the surveyed peak coordinate and three summited tracks agree within 25 m",
+     "confirmedBy": "Peakbagger surveyed coordinate + 3 recorded summits"
+    }
+   ],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 6,
+     "text": "In late June the first three or four miles of the North Fork valley run through burnt forest with many fallen trees, and snow covers the trail between about 6,600 and 6,900 ft.",
+     "aids": [
+      "3237690"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "The basin camp at roughly 6,900 ft between the Emerald and Saska ridges has running water and flat tent sites in early September, and the larches there colour well.",
+     "aids": [
+      "2299982",
+      "3237690"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Our route has no Summit pin. The Peakbagger surveyed coordinate (48.10190, -120.61330) agrees with the highest points of 3237690, 2059353 and 2299982 within 25 m, so a Summit pin could be added there; not listed as a pin action because the brief allows add only for trailheads. The SE Slopes route already holds track points. The trailhead pin matches the recorded starts (11-76 m)."
+}

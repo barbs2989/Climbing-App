@@ -1,0 +1,87 @@
+{
+ "co_wild_river_crag": {
+  "_expect": {
+   "name": "Wild River Crag",
+   "region": "Colorado"
+  },
+  "blurb": "A small cliff on the East Fork of the San Juan River outside Pagosa Springs, sitting roughly 100 feet above the water on the far bank at about 7,000 feet. Most of the twelve lines are bolted sport routes, with a pair of winter ice and mixed lines also on the books. Sport grades run from the mid-5.6 range up to 5.11, with 5.11 the most common. The wall faces north and is gentler in angle than many of its neighbours along the canyon, and fairly free of moss. Dry stretches in summer and early fall are the best window. Reaching it means getting across the river, so low flow matters.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/122860876/wild-river-crag",
+    "https://www.mountainproject.com/area/106221644/pagosa-springs"
+   ]
+  }
+ },
+ "co_reynolds_boulder": {
+  "_expect": {
+   "name": "Reynolds Boulder",
+   "region": "Colorado"
+  },
+  "blurb": "One boulder with the biggest cluster of problems in the Loch Lomond cirque above Idaho Springs, standing where Reynolds Lake comes into view at around 11,500 feet. The twelve problems spread from V0 to V8, with most falling between V1 and V5. The south side offers easy slabs that suit a warm-up, while the steeper east side holds the harder lines and is close to being a lowball. It is a high alpine setting that sees few climbers, and the stone can feel sharp on skin. Expect a hike up past the lower lake to get there.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/109448557/reynolds-boulder",
+    "https://www.mountainproject.com/area/106051025/loch-lomond"
+   ]
+  }
+ },
+ "co_sea_cliffs_of_north_quarry": {
+  "_expect": {
+   "name": "Sea Cliffs of North Quarry",
+   "region": "Colorado"
+  },
+  "blurb": "A quarried wall on top of North Table Mountain above Golden, one of two such walls at the north end of the mesa. It holds a dozen routes, mostly bolted sport lines plus a couple of trad routes and two aid lines. Free grades start near 5.8 and cluster in the 5.10 to 5.11 range, with a few at 5.12. Route names follow a sunrise and sunset theme. It is reached from the mesa-top parking off CO 93, unlike the main cliff bands below, which are south and west facing. Climbs are short, so a single 50 m rope and a handful of draws goes a long way.",
+  "review": {
+   "sources": [
+    "https://rakkup.com/guidebook/north-table-mountain-rock-climbing/north-quarry---sea-cliffs/s11084",
+    "https://mountainproject.com/area/105744249/north-table-mountaingolden-cliffs"
+   ]
+  }
+ },
+ "co_sky_cafe_the": {
+  "_expect": {
+   "name": "Sky Cafe, The",
+   "region": "Colorado"
+  },
+  "blurb": "A hillside outcrop in the Sport Park at the top of Boulder Canyon, at roughly 8,000 feet. The twelve routes are mostly bolted sport lines of about 25 to 80 feet, with two gear routes. Grades are steep for a crag this size: one at 5.9, one at 5.10, and the rest split almost evenly between 5.11 and 5.12. It is the only obvious rock on its slope, which leaves it exposed, and climbers describe it as windy. It sits further out than the main Sport Park cliffs, so plan on a hike along the aqueduct trail and then uphill; cairns can be hard to follow.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105811194/the-sky-cafe",
+    "https://www.mountainproject.com/area/105744761/the-sport-park"
+   ]
+  }
+ },
+ "co_temple_of_tao_the": {
+  "_expect": {
+   "name": "Temple of Tao, The",
+   "region": "Colorado"
+  },
+  "blurb": "A trad-focused wall on Palisade Mountain, on the north side of US 34 in Big Thompson Canyon near Estes Park. Eleven of its twelve routes are gear climbs and one is bolted, with grades running from 5.9 up to 5.13, centred on 5.11. Its best-known lines are two-pitch routes, among them a 5.10a and a 5.11b. The mountain as a whole has solid rock with slabs and crack systems, but the walk up to its crags is steep through broken rock bands and vegetation, and poison ivy is common. This one is for experienced leaders.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/classics/107271985/the-temple-of-tao",
+    "https://www.mountainproject.com/area/105746737/palisade-mountain"
+   ]
+  }
+ },
+ "co_zipper_buttress": {
+  "_expect": {
+   "name": "Zipper Buttress",
+   "region": "Colorado"
+  },
+  "blurb": "A sport crag in Glenwood Canyon near Glenwood Springs, and the first one you meet when walking in. All twelve routes are single-pitch, about 25 to 100 feet, mostly bolted with a few pins. Grades run from 5.9 to 5.12, with 5.11 the largest group and a handful each of 5.9 and 5.10. Steeper rock sits toward the cave and chimney feature on the right, while slabbier lines wrap around the corner to the left. Zipper at 5.11c is a standout on grey limestone. The walk follows the railroad corridor, so stay off the tracks and use the river side instead.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106374561/zipper-buttress",
+    "https://www.mountainproject.com/route/106399547/zipper"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_waves_wall": "no fetched page describes Waves Wall itself (parent list only)",
+  "co_west_buttress_aka_comedy_wall": "only one fetched page about the crag; the parent Blob Rock page does not mention it"
+ },
+ "_conflicts": {
+  "co_wild_river_crag": "Stored rock is sandstone but https://www.mountainproject.com/area/122860876/wild-river-crag describes black basalt; rock left unchanged and not named in blurb."
+ }
+}

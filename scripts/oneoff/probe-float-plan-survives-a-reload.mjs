@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /**
  * Does a filed float plan survive a reload — and does it stay OUT of the wrong hands?
  *
@@ -52,7 +53,7 @@ try {
       },
     }],
   });
-  const mod = await import(out);
+  const mod = await import(fileHref(out));
   savedFloatPlan = mod.savedFloatPlan;
   saveFloatPlan = mod.saveFloatPlan;
 } catch (e) {

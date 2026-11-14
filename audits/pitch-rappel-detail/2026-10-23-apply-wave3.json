@@ -1,0 +1,66 @@
+{
+ "wa_prusik_peak_solid_gold": {
+  "area": "wa_prusik_peak",
+  "replace_pitch_detail": true,
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.10d",
+    "lengthM": 30,
+    "bolts": 0,
+    "anchor": "Gear (under roof)",
+    "crux": false,
+    "notes": "A right-leaning crack system leads to the obvious roof; it is hard to miss. Most parties find this the hardest-feeling pitch even though it is not the technical crux. Fingertip to hand-size gear, doubles recommended."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.11a",
+    "lengthM": 30,
+    "bolts": 0,
+    "anchor": "Gear (#3 Camalot in horizontal)",
+    "crux": true,
+    "notes": "Step out right under the roof and follow the corner above. The move under the roof is the technical crux and a small cam (a purple C3 was useful) protects it. The pitch ends at a long horizontal crack that takes a #3-size cam, where you belay on gear while standing in the crack. Parties often link this with the first half of the next pitch, or stop at a stance in the corner after linking pitch 1."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10a",
+    "lengthM": 30,
+    "bolts": 0,
+    "anchor": "Gear",
+    "crux": false,
+    "notes": "A slab leads to a short chimney exit. The chimney has loose rock, so one option is to skip it: take the ramp to its right and traverse left over the top into the easy corner. If you do climb it, follow the seam arcing left on the chimney's left wall. Linking this with the 5.8 above reaches a belay on a large ledge, and a 60 m rope often forces a stop before the looser 5.8 section."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.8",
+    "lengthM": 25,
+    "bolts": 0,
+    "anchor": "Gear (large ledge)",
+    "crux": false,
+    "notes": "Off-width to a mantle on an arching seam, ending on the large ledge at the foot of the last pitch. Often climbed together with pitch 3, in which case a 70 m rope links it more easily."
+   },
+   {
+    "pitch": "5",
+    "grade": "5.11a",
+    "lengthM": 45,
+    "bolts": 0,
+    "anchor": "Gear/tree",
+    "crux": true,
+    "notes": "The aesthetic finishing corner: a perfect corner crack above the ledge, about 50 feet, with small gear and nuts useful at the start (tips to fingers), then step right to a small tree below the crest of the West Ridge. With enough gear and good rope management you can keep going to the ridge top, where you can rappel the back side or continue to the summit. Some rate this pitch softer than the earlier 5.11a."
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.mountainproject.com/route/107618376/solid-gold",
+    "https://www.mountainproject.com/route/105808527/west-ridge",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "changed": "Kept all five stored pitch labels and facts; extended notes with protection tips (small cams at the roof and final corner, doubles from fingers to #2 plus one #3), linking options, the chimney bypass and the 60/70 m rope remarks. No rappel_detail: the sources only say to rappel the back side from the ridge top, and accounts of the back-side descent disagree (one rappel or two), with no station description; the West Ridge page describes four single rappels to the north side from the summit, but that is the summit descent and not stations of this route. Page was unreadable for the third source (only title read), so it is listed only for its grade/length line.",
+   "pitch_count_found": 4,
+   "other_findings": "The best-read source describes the route as four pitches (stored table has five, splitting the chimney/slab pitch from the 5.8 offwidth). Grade of the first pitch: some call it the physical crux. Stored lengths (30/30/30/25/45 m) were not verified from these sources.",
+   "batch": "G",
+   "reviewer_dropped": []
+  }
+ }
+}

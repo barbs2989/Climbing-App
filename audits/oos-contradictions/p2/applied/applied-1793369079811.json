@@ -1,0 +1,76 @@
+{
+ "applied": [
+  {
+   "id": "wy_collins_coombs",
+   "column": "length_m",
+   "path": [],
+   "fact": "length vs pitch count"
+  },
+  {
+   "id": "wy_collins_coombs",
+   "column": "pitches",
+   "path": [],
+   "fact": "length vs pitch count"
+  },
+  {
+   "id": "wy_emerson_chimney",
+   "column": "length_m",
+   "path": [],
+   "fact": "length vs pitch count"
+  },
+  {
+   "id": "wy_emerson_chimney",
+   "column": "pitches",
+   "path": [],
+   "fact": "length vs pitch count"
+  },
+  {
+   "id": "wy_east_face_direct",
+   "column": "hazards",
+   "path": [
+    1
+   ],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wy_symmetry_spire_reticent_slabs",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wy_collins_coombs",
+   "before": {
+    "length_m": 2134,
+    "pitches": 0
+   }
+  },
+  {
+   "id": "wy_emerson_chimney",
+   "before": {
+    "length_m": 2134,
+    "pitches": 0
+   }
+  },
+  {
+   "id": "wy_east_face_direct",
+   "before": {
+    "hazards": [
+     "The line is commonly misread where it borders Beyer II, a real routefinding trap right at the start",
+     "Six sustained 55-65 m pitches feeding into the Underhill Ridge system, so a slow party can get caught high on the face",
+     "No fixed protection to fall back on if gear runs short mid-pitch",
+     "Afternoon thunderstorms are the standard Grand Teton hazard for a route that tops out via the upper ridge"
+    ]
+   }
+  },
+  {
+   "id": "wy_symmetry_spire_reticent_slabs",
+   "before": {
+    "pitches": 1
+   }
+  }
+ ]
+}

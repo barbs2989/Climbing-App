@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // probe-switch-toggles-onscreen — does clicking a switch actually FLIP the aria-checked it
 // announces, or is the attribute bound to the wrong variable?
 //
@@ -33,7 +35,7 @@ import { settledText } from "../lib/render-settle.mjs";
 // runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
 assertQuietBox("probe-switch-toggles-onscreen.mjs");
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 
 // Every overlay that holds at least one switch, from check:control-names' own findings.
 const SCREENS = ["settingsOpen", "privacyOpen", "notifOpen", "editDraft"];
@@ -56,8 +58,8 @@ if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 
 console.log(`starting dev server on ${port} with the overlay scaffold...`);
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });

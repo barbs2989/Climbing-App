@@ -21,27 +21,31 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const sum = (p) => crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, p))).digest("hex");
 
+// PR59 moved the contribute form (SuggestFix) to src/components/SuggestFix.tsx: form-gain and form-loss edit that file.
 const CASES = [
-  { name: "form-dist", file: "RouteDetail.jsx",
-    why: "the contribute form's Distance current value (9 of 790 WA routes disagreed with the page)",
-    find: '(route.distKm*0.621371).toFixed(1)+" mi"', repl: '(route.distKm*0.621).toFixed(1)+" mi"',
-    expect: /RouteDetail\.jsx @\d+: 0\.621 —/ },
-  { name: "form-gain", file: "RouteDetail.jsx",
+  // The contribute form's Distance current value now prints through uDist itself, so the one
+  // km->mi constant both it and the page use lives in uDist; this reverts THAT one.
+  { name: "form-dist", file: "ClimbMatchCore.jsx",
+    why: "the km->mi constant behind the contribute form's Distance current value and the page (9 of 790 WA routes disagreed when they differed)",
+    find: 'const v=uImp()?n*0.621371:n;', repl: 'const v=uImp()?n*0.621:n;',
+    expect: /ClimbMatchCore\.jsx @\d+: 0\.621 —/ },
+  { name: "form-gain", file: "src/components/SuggestFix.tsx",
     why: 'the contribute form\'s Elev. gain current value ("14001 ft" against the page\'s "14,000 ft")',
-    find: 'uElev(route.gainFt||route.gainM*3.28084)', repl: 'uElev(route.gainFt||route.gainM*3.281)',
-    expect: /RouteDetail\.jsx @\d+: 3\.281 —/ },
-  { name: "form-loss", file: "RouteDetail.jsx",
+    find: 'uElev(route.gainFt||(route.gainM as number)*3.28084)', repl: 'uElev(route.gainFt||(route.gainM as number)*3.281)',
+    expect: /src\/components\/SuggestFix\.tsx @\d+: 3\.281 —/ },
+  { name: "form-loss", file: "src/components/SuggestFix.tsx",
     why: "the contribute form's Elev. loss current value (18 of 639)",
-    find: 'uElev(route.lossFt||route.lossM*3.28084)', repl: 'uElev(route.lossFt||route.lossM*3.281)',
-    expect: /RouteDetail\.jsx @\d+: 3\.281 —/ },
+    find: 'uElev(route.lossFt||(route.lossM as number)*3.28084)', repl: 'uElev(route.lossFt||(route.lossM as number)*3.281)',
+    expect: /src\/components\/SuggestFix\.tsx @\d+: 3\.281 —/ },
   { name: "card-gain-chip", file: "lib/CrewFinder.jsx",
     why: "the route-card gain chip, the same conversion a fourth way",
     find: 'Math.round(r.gainM*3.28084).toLocaleString()+" ft"', repl: 'Math.round(r.gainM*3.281).toLocaleString()+" ft"',
     expect: /lib\/CrewFinder\.jsx @\d+: 3\.281 —/ },
-  { name: "ascent-gain-tile", file: "lib/TripReport.jsx",
-    why: "the ascent card's Gain tile, whose neighbouring Distance tile already used the shared uDist()",
-    find: '["Gain",uElev(Math.round(r.gainM*3.28084))]', repl: '["Gain",uElev(Math.round(r.gainM*3.28))]',
-    expect: /lib\/TripReport\.jsx @\d+: 3\.28 —/ },
+  // "ascent-gain-tile" (lib/TripReport.jsx) was the fifth case until 2026-10-15: the trip report no
+  // longer prints the ROUTE's gain at all -- an opened report shows only what its reporter entered
+  // (owner decision; the tile was gone with the grade and distance tiles and the route's GPS line).
+  // Nothing replaced the conversion, so there is no edit to revert; the property is still proven by
+  // the four cases above, each a different conversion site.
 
   { name: "comment-naming-the-constants", file: "ClimbMatchCore.jsx", mustPass: true,
     why: "a COMMENT naming 3.281 and 0.621 is documentation; flagging it would forbid the probe's own explanation",

@@ -1,3 +1,7 @@
+/* The inquiry's dates are two calendar picks (owner 2026-11-05: no typed dates anywhere), stored as the one line the guide's dashboard prints, in the climber's date preference. */
+const todayIso = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+const fmtDay = d => new Date(d + "T12:00:00").toLocaleDateString(currentDateLocale(), { month: "short", day: "numeric", year: "numeric" });
+const requestedDates = (from, to) => !from ? "" : (to && to !== from) ? fmtDay(from) + " to " + fmtDay(to) : fmtDay(from);
 // Real "Hire a Guide" browse/detail/inquiry screen — backed by Supabase. Mirrors the
 // static Guides component's layout/copy but reads real listings, persists real
 // inquiries (instead of discarding the form on submit), gates on a climber disclaimer
@@ -6,15 +10,18 @@
 import { useMemo, useState, lazy, Suspense } from "react";
 import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
-import { useSession } from "./auth";
+import { useSession } from "../src/AuthContext.tsx";
 import { searchMatches } from "./search";
 import {
   useGuides, useGuideCredentials, useGuideReviews, useMyInquiriesWithGuide,
   submitInquiry, submitReview, withdrawInquiry,
-  dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS,
+  dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS, publicNameOf,
 } from "./db";
 import { POP_BACK } from "./popupChrome.js";
 import { askConfirm } from "./ConfirmSheet.jsx";
+import { photoThumb } from "./photoThumb";
+import { INPUT } from "./buttonStyles.js";
+import { currentDateLocale } from "./date-pref.js";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -24,7 +31,7 @@ function Check({ checked, onClick, children, C }) {
   // stop. Announcing it as a button would lose the state entirely.
   return (
     <div {...clickable(onClick, { role: "checkbox" })} aria-checked={!!checked} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
-      <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (checked ? C.blue : C.border), background: checked ? C.blueSolid : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{checked ? "✓" : ""}</span>
+      <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (checked ? C.blue : C.border), background: checked ? C.blueSolid : "transparent", color:C.onSolid, fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{checked ? "✓" : ""}</span>
       <span style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{children}</span>
     </div>
   );
@@ -34,13 +41,13 @@ function GuideCard({ g, verified, onOpen, C }) {
   return (
     <div {...clickable(onOpen)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 10, cursor: "pointer" }}>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-        {g.avatar ? <img src={g.avatar} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
+        {g.avatar ? <img src={photoThumb(g.avatar, 46)} alt="" onError={e => { e.currentTarget.style.visibility = "hidden"; }} style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 14.5, fontWeight: 700, color: C.text }}>{g.name}</span>
             {verified ? <span style={{ fontSize: 11, fontWeight: 700, color: C.green, background: C.greenBg, border: "1px solid " + C.greenDim, borderRadius: 6, padding: "1px 6px" }}>{"✓ Verified"}</span> : null}
           </div>
-          <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{g.title}</div>
+          <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, overflowWrap: "anywhere" }}>{g.title}</div>
         </div>
         <div style={{ textAlign: "right", flexShrink: 0 }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.text }}>{"$" + g.rate + "/day"}</div>
@@ -62,7 +69,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const { data: myInquiries, refetch: refetchMyInquiries } = useMyInquiriesWithGuide(uid, guide.id);
   const verified = isGuideVerified(credentials || []);
 
-  const [obj, setObj] = useState(""); const [dates, setDates] = useState(""); const [party, setParty] = useState(1); const [msg, setMsg] = useState("");
+  const [obj, setObj] = useState(""); const [dateFrom, setDateFrom] = useState(""); const [dateTo, setDateTo] = useState(""); const [party, setParty] = useState(1); const [msg, setMsg] = useState("");
   const [minor, setMinor] = useState(false); const [disclaimerOk, setDisclaimerOk] = useState(false);
   const [sent, setSent] = useState(false); const [sending, setSending] = useState(false); const [sentId, setSentId] = useState(null); const [withdrawing, setWithdrawing] = useState(false);
 
@@ -93,7 +100,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
     try {
       const row = await submitInquiry({
         guide_id: guide.id, climber_id: uid,
-        objective: obj, requested_dates: dates, party_size: party, message: msg,
+        objective: obj, requested_dates: requestedDates(dateFrom, dateTo), party_size: party, message: msg,
         includes_minor: minor,
       });
       setSent(true); setSentId(row && row.id || null); refetchMyInquiries && refetchMyInquiries();
@@ -122,7 +129,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
     }
   };
 
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
   const label = { fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 8, marginTop: 14, borderLeft: "3px solid " + C.blue, paddingLeft: 9 };
   const primaryCred = (credentials || []).find(c => c.kind === "primary_track");
 
@@ -133,7 +140,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          {guide.avatar ? <img src={guide.avatar} alt="" style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
+          {guide.avatar ? <img src={photoThumb(guide.avatar, 56)} alt="" onError={e => { e.currentTarget.style.visibility = "hidden"; }} style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
           <div>
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
               <span style={{ fontSize: 17, fontWeight: 700, color: C.text }}>{guide.name}</span>
@@ -150,7 +157,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           ["Disciplines listed", guide.disciplines.map(d => DISCIPLINE_LABELS[d] || d).join(", ") || "None yet"],
           ["Insurance", guide.insuranceCarrierName ? guide.insuranceCarrierName + " (self-attested, not independently confirmed)" : "Not on file"],
           ["Permits/licenses", guide.permitAttested ? "Attested by guide (not independently confirmed)" : "Not on file"],
-          ["Rate", "$" + guide.rate + "/day, up to " + guide.groupMax + " climbers"],
+          ["Rate", "$" + guide.rate + "/day, up to " + guide.groupMax + (guide.groupMax === 1 ? " climber" : " climbers")],
           ["Cancellation policy", guide.cancellationPolicy || "Not specified"],
         ].map(row => (
           <div key={row[0]} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "7px 0", borderBottom: "1px solid " + C.border, fontSize: 12.5 }}>
@@ -162,7 +169,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
         {(reviews || []).length ? reviews.map(r => (
           <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginBottom: 8 }}>
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, fontWeight: 700, color: C.text }}>
-              <span>{r.profiles && r.profiles.name || "Climber"}</span><span>{"★".repeat(r.rating)}</span>
+              <span>{publicNameOf(r.profiles)}</span><span>{"★".repeat(r.rating)}</span>
             </div>
             <div style={{ fontSize: 13, color: C.textSub, marginTop: 4 }}>{r.text}</div>
             {r.guide_reply ? <div style={{ marginTop: 8, background: C.surface, borderLeft: "2px solid " + C.blue, borderRadius: "0 8px 8px 0", padding: "7px 10px" }}>
@@ -176,7 +183,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 6 }}>Leave a review</div>
           <select aria-label="Star rating" value={rating} onChange={e => setRating(Number(e.target.value))} style={inp}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n + " star" + (n === 1 ? "" : "s")}</option>)}</select>
           <textarea aria-label="How did it go?" value={reviewText} onChange={e => setReviewText(e.target.value)} rows={2} placeholder="How did it go?" style={{ ...inp, marginTop: 6, resize: "vertical", fontFamily: "inherit" }} />
-          <button onClick={postReview} disabled={reviewBusy} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
+          <button onClick={postReview} disabled={reviewBusy} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color:C.onSolid, border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
         </div> : null}
 
         <div style={label}>Send an inquiry</div>
@@ -186,7 +193,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           <>
             {openInquiryId ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: "8px 10px", marginBottom: 8 }}><span style={{ flex: 1 }}>{"You have an inquiry waiting on " + guide.name.split(" ")[0] + "."}</span><button onClick={withdraw} disabled={withdrawing} style={{ flexShrink: 0, background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: withdrawing ? "default" : "pointer" }}>{withdrawing ? "Withdrawing…" : "Withdraw"}</button></div> : null}
             <textarea aria-label="What's your objective?" value={obj} onChange={e => setObj(e.target.value)} rows={2} placeholder="What's your objective?" style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
-            <input aria-label="Dates you're thinking of" value={dates} onChange={e => setDates(e.target.value)} placeholder="Dates you're thinking of" style={{ ...inp, marginTop: 8 }} />
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, marginBottom: 3, fontWeight: 700 }}>DATES YOU'RE THINKING OF</div><div style={{ display: "flex", gap: 8 }}><input type="date" aria-label="First day you're thinking of" value={dateFrom} min={todayIso()} onChange={e => { setDateFrom(e.target.value); if (dateTo && dateTo < e.target.value) setDateTo(e.target.value); }} style={inp} /><input type="date" aria-label="Last day you're thinking of" value={dateTo} min={dateFrom || todayIso()} onChange={e => setDateTo(e.target.value)} style={inp} /></div>
             <select aria-label="Party size" value={party} onChange={e => setParty(Number(e.target.value))} style={{ ...inp, marginTop: 8 }}>
               {Array.from({ length: guide.groupMax || 4 }, (_, i) => i + 1).map(n => <option key={n} value={n}>{n + (n > 1 ? " climbers" : " climber")}</option>)}
             </select>
@@ -196,7 +203,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
             <Check checked={disclaimerOk} onClick={() => setDisclaimerOk(v => !v)} C={C}>{DISCLAIMER_TEXT}</Check>
             <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>No payment now. You'll confirm dates and price directly with the guide.</div>
             {!uid ? <div style={{ fontSize: 12.5, color: C.textSub }}>Sign in to send an inquiry.</div> :
-              <button onClick={send} disabled={!disclaimerOk || sending} style={{ width: "100%", background: disclaimerOk ? C.blueSolid : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: disclaimerOk ? "pointer" : "default" }}>{sending ? "Sending…" : "Send inquiry"}</button>}
+              <button onClick={send} disabled={!disclaimerOk || sending} style={{ width: "100%", background: disclaimerOk ? C.blueSolid : C.border, color:C.onSolid, border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: disclaimerOk ? "pointer" : "default" }}>{sending ? "Sending…" : "Send inquiry"}</button>}
           </>
         )}
         <button onClick={() => { onClose(); onDash && onDash(); }} style={{ width: "100%", marginTop: 16, background: "none", border: "none", color: C.textMuted, fontSize: 12, cursor: "pointer" }}>Already listed? Open your guide dashboard →</button>
@@ -220,11 +227,11 @@ export default function DbGuides({ onDash, notify, C }) {
     return list;
   }, [rows, q, disc, sort]);
 
-  const inp = { width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, boxSizing: "border-box" };
+  const inp = INPUT(C);
 
   return (
     <div style={{ padding: 14 }}>
-      <input aria-label="Search guides, areas" value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, areas..." style={inp} />
+      <input aria-label="Search guides, areas" value={q} onChange={e => setQ(e.target.value)} placeholder="Search guides, areas…" style={inp} />
       <div style={{ display: "flex", gap: 8, marginTop: 8, overflowX: "auto" }}>
         <select aria-label="Filter by discipline" value={disc} onChange={e => setDisc(e.target.value)} style={{ ...inp, minWidth: 160 }}>
           <option value="">All disciplines</option>

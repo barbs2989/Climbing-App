@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // probe-mute-group-candidates — button groups that mark a selection with COLOUR and announce
 // nothing, found STATICALLY so that reachability stops mattering.
 //
@@ -63,7 +64,7 @@ import _traverse from "@babel/traverse";
 import { appSources } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const SAYS = ["aria-current", "aria-selected", "aria-pressed", "aria-expanded", "aria-checked"];
 
 const attr = (open, name) => open.attributes.find(

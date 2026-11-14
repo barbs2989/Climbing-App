@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // check:overlay-scroll says four overlays "never mounted on any tab". Is that true?
 //
 // It decides `landed` from scan(), which counts VISIBLE position:fixed divs at least 50% of the
@@ -45,8 +46,8 @@ async function claimPort(start, span = 40) {
 const port = await claimPort(5390);
 if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "ignore"], detached: true });
 let stopped = false;
 const stop = () => { if (stopped) return; stopped = true; try { process.kill(-server.pid, "SIGTERM"); } catch {} };

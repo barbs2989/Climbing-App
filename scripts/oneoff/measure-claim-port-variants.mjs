@@ -55,12 +55,12 @@ for (const f of files) {
   const m = DECL.exec(src);
   if (!m) continue;
   const body = bodyOf(src, m.index);
-  if (body === null) { rows.push({ f: path.relative(ROOT, f), hash: "UNPARSED", retries: false }); continue; }
+  if (body === null) { rows.push({ f: path.relative(ROOT, f).replace(/\\/g, "/"), hash: "UNPARSED", retries: false }); continue; }
   // Does anything in the file recover from losing the race? Either the spawn is retried on
   // EADDRINUSE / "already in use", or claimPort itself is re-entered after a failed start.
   const after = src.slice(m.index + body.length);
   const retries = /EADDRINUSE|already in use/.test(src) && /claimPort\s*\(/.test(after);
-  rows.push({ f: path.relative(ROOT, f), hash: crypto.createHash("md5").update(body).digest("hex").slice(0, 10), retries });
+  rows.push({ f: path.relative(ROOT, f).replace(/\\/g, "/"), hash: crypto.createHash("md5").update(body).digest("hex").slice(0, 10), retries });
 }
 
 // Fail closed. A scan that matched nothing prints the same reassuring summary as a tree where

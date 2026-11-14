@@ -1,0 +1,18 @@
+{
+  "area_id": "wa_mount_la_crosse",
+  "routes": [
+    {"route_id":"wa_mount_la_crosse_scramble","season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"NPS lists mid-July through October for the La Crosse Pass trail; another page gives June-September for the peak; logged ascents Jul 8, Aug 4. Kept Jul-Sep (stored)."},
+     "track":null,
+     "otherTracksConsidered":[
+      {"aid":"3312734","verdict":"unsure","why":"Aug 17 2026, summited (26 m), in season, and its line goes through the La Crosse Pass area then west along the ridge, but it is a 10-mile round trip from a start at 47.7037,-123.3136 about 20 km from our Duckabush trailhead pin; no route text. Not a trailhead-to-summit line, so not applied."},
+      {"aid":"3249133","verdict":"different","why":"Jun 29 2026 approach from the north (moraines, glacier edge), ends far away; different approach than our Duckabush/pass route."},
+      {"aid":"3242461","verdict":"not-summited","why":"Turned back."},
+      {"aid":"3084783","verdict":"unsure","why":"Jul 24 2025 summit via the La Crosse Pass ridge, matches our line, but no track points; used for facts."}],
+     "pins":[],
+     "facts":[
+      {"field":"watch_out","month":7,"text":"The summit tower is steeper than the Class 2 rating suggests: short Class 3-4 steps and a slot on loose, dirty rock (July).","aids":["3084783","3249133"]},
+      {"field":"pro_tips","month":7,"text":"Take the southeast corner of the summit tower: loose shale to a small notch, a short step, then crest scrambling to a brief ledge and a steep slot to the top (July).","aids":["3084783"]},
+      {"field":"descent_note","month":7,"text":"Rather than retrace the crest, a lower traverse back toward the pass is possible, but it crosses a deep washout gully on the sub-summit's face and is just as slow (July).","aids":["3084783"]}]}
+  ],
+  "notes": "Summit pin 28 m from the surveyed coordinate, fine. Only one route on the peak. Best track 3312734 not applied because it begins 20 km from the stored trailhead (probably a camp-based day). Trailhead pin not touched."
+}

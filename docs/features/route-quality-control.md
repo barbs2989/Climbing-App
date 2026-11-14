@@ -1,0 +1,289 @@
+# Route quality control
+
+How climber edits to route pages are held, checked, locked and flagged. Decided by the owner on
+2026-10-15: route data is safety data, so accuracy comes before speed. 0325 (the same day) let an
+empty field fill at once and two agreeing climbers change one; the owner withdrew it on 2026-10-28
+(0382), so every edit waits for the owner again.
+
+## 1. What it does today
+
+- **Every field edit is held for review — on routes and, since 0319, on areas.** An area edit (About, Walk in, Walk-in time, Drive & park, Rock, Faces, Season; `lib/areaFields.js`) is a `contributions` row with `area_id` and no `route_id`; the same queue, approve/reject functions, notices and strikes apply. One difference: an approved AREA value is written to its `areas` column by `apply_approved_area_field` (there is no client overlay for area pages), and area rows get no confidence lock.
+- **Every route edit is held for the owner (0382).** A climber's edit on the route page's "Add or fix
+  info" sheet is written to `contributions` (kind `field`) with status `pending` and shows nowhere
+  until the owner approves it — an empty field and a second climber sending the same value make no
+  difference. The sheet says "Sent for review — you’ll be told when it’s checked" and shows the
+  climber's own pending value as "Awaiting review". Other climbers' pending suggestions are not
+  shown on the page (there is no Agree button); they are the owner's to weigh. 0325 (2026-10-15 →
+  2026-10-28) approved an empty-field edit or a two-climber match at insert; rows it approved then
+  (review note *Added to an empty field* / *Agreed by 2 climbers*) stay live.
+- **A removal always waits for the owner (0351, owner note 2026-10-22: "people shouldn't be able to
+  delete waypoints when editing").** An edit *removes something* when the page holds a value and the
+  edit is empty, or both are lists and the edit has fewer rows, or fewer rows with a map pin
+  (`_edit_removes`, against `route_field_page_value`: the latest approved edit, else the column).
+  Like every edit it stays `pending`; it also carries `review_note` `REMOVAL_NOTE` (stamped by
+  `contribution_consensus`, which since 0382 does nothing else; the constant is in `lib/db.js`). The edit sheet (`SuggestFix`, `editRemoves` / `REMOVABLE_LISTS` — waypoints,
+  pitches, rappel stations, camps, ways in, climbing sections, hazards) says so before sending and
+  **requires a reason** (≥10 characters), sent as `contributions.reason`; the toast and the climber's
+  own waiting line say a removal waits for ClimbMatch. The owner's queue marks the
+  card *Removes something from the page* in red above the struck-through rows and shows each
+  climber's *Why*. A reckless removal the owner turns down is a strike like any other (3 →
+  restricted, 5 → banned). Modelled on theCrag (no delete of a referenced route; merge instead),
+  Mountain Project (deletions go to the regional admin) and OpenStreetMap's OSMCha (mass deletions
+  flagged for review).
+- **Approved edits reach the page**, as the owner applied them (`applied_value` when the owner
+  adjusted the value, else `value`), through the same client-side overlay the page always used.
+  An approved field becomes **high confidence**. A `grade` approval also writes `routes.grade`
+  (rewritten `apply_agreed_grade`).
+- **Every field has a confidence level** — high / medium / low — computed from the route row
+  (`route_field_level`) unless the owner set it by hand (`route_field_confidence`). **High = locked**:
+  the database refuses an edit to it ("This detail is locked at high confidence; flag it instead").
+  Identity fields, crag-discipline grades and guidebook-verified fields start high; empty fields,
+  inferred gear and auto-written prose start low; everything else medium. **Discipline is high once
+  it is on file** (0406, owner 2026-11-05: "locked and not allowed to be edited; they can only flag it
+  for review") — `discipline` and `rockStyle` answer high on every route that holds one, so no climber
+  edit to them is accepted; an EMPTY discipline takes the ordinary empty → low branch and can be
+  filled in ("when there's no information they should be able to edit it"), and the owner's
+  approval of that edit locks it. The owner's hand-set level still wins. Until 0406 discipline stayed
+  medium on scrambling / mountaineering / alpine / trad routes (the owner's stated ambiguity).
+- **Rejection is a strike.** The owner rejects with a reason (≥10 characters); the climber is
+  told the reason. Strikes drive `contribution_standing`: 1 → warned, 3 → restricted for 90 days
+  (no field edits; flags still allowed), 5 → banned from contributing (no edits, no flags). A
+  restricted or banned climber can appeal (`file_appeal` kind `contributing`); a reversal resets
+  the standing. Flags by other climbers never count as strikes.
+- **Flags.** A climber can file "this looks wrong" on a section without the right value
+  (`route_flags`, one open flag per reporter per target, ≤5 a day). An open flag drops a
+  medium field to low until the owner marks it fixed or dismissed; it never lowers a high field.
+- **Rate limit.** 20 field edits a day per account, 5 for accounts under 7 days old.
+- **Notices.** Approvals, rejections (with the reason), warnings, standing changes and flag
+  outcomes land in `user_notices` and appear in the bell panel; dismissing one marks it read.
+- **Your contributions** (Menu → Profile) shows each edit as Awaiting review / Added — live /
+  Not applied with the owner's reason.
+
+- **The owner's queues** (Menu › Review tiles, admin only; `lib/RouteQualityQueues.jsx`): *Route edits to review*
+  clusters pending rows by route, field and `sameEditValue` so three climbers who sent the same value
+  are one card; shows the page's current value beside the proposed one with a row-by-row diff for
+  pitch / rappel / waypoint tables; Approve, Edit &amp; approve (the owner's value becomes
+  `applied_value`), Turn down (reason ≥10 chars, canned reasons, "honest mistake" skips the strike),
+  Keep &amp; lock (field locked high, edit turned down without a strike), Open route. *Flagged route
+  details*: fixed / no change needed, with a note to the reporter. *Contributor standing*: reset,
+  warn, restrict 90 days, ban, each with a reason.
+- **The climber's standing on the edit sheet** (`ContributionStandingNotice` in `lib/SafetyNotices.jsx`):
+  warned / restricted-until / banned with the reason and an Appeal button (kind `contributing`).
+
+- **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
+  onFlag}) around `RouteDetail`; the shared heading components `SL` (core) and `CardHead` (`src/components/CardHead.tsx`) map their
+  text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
+  Low, with a ⚑ Flag button — headings, plus the grade's own chip beside *Composite Grade* in
+  `TechStats`). No legend line explains the levels (owner removed it 2026-11-11). The
+  page carries the chips alone. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
+  field's pencil opens the flag sheet instead of the editor. **A pencil that covers several fields is
+  not one field's pencil** (owner, 2026-11-11): the ROUTE FACTS / TECHNICAL STATS card pencil
+  (`factsPencilKey`) and each crag facts section's pencil (`CragFactSection`) open at the field
+  `firstEditable` (`lib/firstEditable.js`) picks — an empty (low) field first, then a medium one — and
+  reach the flag sheet only when every field they cover is locked. Before this the card pencil was
+  `openFix("grade")`, and a crag route's grade is always HIGH (0406), so the card opened the flag sheet
+  on every crag route while its Location and Pitches read "Not on file yet". For the same reason
+  "ROUTE FACTS" and "TECHNICAL STATS" are not in `HEAD_KEYS`: the card heading wore the grade's
+  "High · locked". `check:facts-pencil-open` holds both. In `SuggestFix` each field row shows its
+  chip (no ⚑ Flag button there, owner 2026-10-15) and a HIGH row cannot be opened. The sheet's
+  **Discipline card** is the one exception: since 2026-11-05, on a route with a discipline on file it
+  is not a chip picker but the route's own discipline, a High · locked chip and a *Flag it* button
+  (through `openFlag`, field `discipline`) — discipline has no pencil or heading chip on the page, so
+  without that button a climber could not flag it at all. Only a route with NO discipline keeps the
+  chip picker (`discLocked` false), and only then does the sheet send a `discipline` / `rockStyle` edit. `discLocked` follows the page’s confidence level (so the owner’s hand-set level unlocks the card like any field), falls back to "a discipline is on file" when no level has loaded, and is never set for an admin — the database lets admins through the lock, and an admin is the only one who can correct a filed discipline. A climber’s pending discipline suggestion shows as *Awaiting review* with the picker hidden.
+- **Trad vs alpine** (owner, 0197: "Trad only applies to climbs at a crag"; 2026-11-11: "yes crag for trad is just a short
+  approach"). Trad means a crag day: about an hour or less on foot, and the party comes back to the base, however tall
+  the wall (valley and canyon walls, desert towers, roadside formations high on a mountain). Alpine means a mountain
+  setting plus a summit or ridge-crest finish, a long backcountry approach, or snow or glacier travel. A commitment grade
+  or a long route alone is not alpine. Migration 0413 (#3242) moved 306 trad routes to alpine under this rule; the
+  sourced rule is in `research-data/trad-alpine-2026-11-11/RULE.md`, each call with its reason in `decisions.json` beside it.
+  A second pass (0418) read all 78,452 trad routes for approach and descent signals (camp, bivy, glacier, a
+  multi-hour or multi-mile walk) and moved 84 more (`pass2-decisions.json` beside it); only ~1% of trad routes
+  carry approach text, so a backcountry route with none is still not caught.
+  Discipline is locked against climber edits (0406), so a re-filing is an owner migration.
+- **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
+  sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show
+  the database's sentence.
+
+- **Pitches and rappels** (`SuggestFix`): each ROUTE BREAKDOWN row has its own "✎ Edit this pitch",
+  which opens the sheet scrolled to that pitch (`focusPitch`); pitches can be moved up and down;
+  clustering compares every pitch key (grade, gear, length, note, anchor, bolts, crux). The rappel
+  table has an editor at last — `rappelDetail`, type `rappels`: one row per station with length (in
+  the climber's units, stored in metres), anchor, how to find the station, hazards one per line and
+  notes; rows are prefilled from `rappel_detail`, can be added, removed and reordered, and the queue
+  shows them row by row.
+
+- **Everything a climber can see, a climber can correct** (`check:editable-coverage`): seven
+  columns that rendered with no editor — alternative names, variations, first free and first winter
+  ascent, high point, sun, pro tips — have edit-sheet entries and `contribution_fields` rows (0317);
+  every other column is either editable or declared with a reason. The log form offers "⚑ Something
+  on this route page is wrong?", which opens the flag sheet through `openFlag` (`lib/reportBus.js`).
+
+- **Adding a climb vs logging one** (reviewed 2026-10-24). They write different things, on purpose:
+  - *Add a climb* (`lib/AddRoute.jsx`) proposes the climb's FACTS — grade, pitches, gear, approach,
+    descent, history — as one `contributions` row of kind `new_route`. Nothing reaches a page until the
+    owner approves it in the proposal queue; `approve_new_route` then writes every field the form asks into
+    a new `routes` row (`check:add-route-fields`, `check:approve-route-columns`), keeping the proposal
+    verbatim in `provenance`. *Add an area* is the same with kind `new_area` (0360).
+  - *Log a climb* (`LogAscent`, `QuickLog`) records one VISIT as a `climb_logs` row, live at once. It never
+    changes the climb's facts: it feeds the Reports tab, the conditions consensus, crowds, camps, the rating
+    fallback and *Recently climbed* (the full map is in [logbook-crews-home.md](logbook-crews-home.md)). Its
+    bridges to the facts are the *still missing …* alert (`missingFacts`) that opens the contribute form, the
+    ⚑ flag link, *Add topo photo* and the sun vote.
+  - A climb can only be logged once it exists, so a proposal cannot carry its proposer's ascent (Mountain
+    Project's ticks also need a published route). Instead, **since 0367 the proposer is told**: approving or
+    rejecting a `new_route` / `new_area` row fires `trg_contribution_result`, which sends a bell notice
+    (*Your climb is live: …* — *Climbed it? Log it from its page.*, or the owner's reason) and records the
+    new row's id in `contributions.result_id`. Route edits have notified their author since 0309; added
+    climbs and areas told nobody. *Your contributions* (`Contributions`, `src/components/Contributions.tsx`) now shows them as *Route
+    added* / *Area added* with their status, and an approved one opens its page (not the edit sheet). Model:
+    MTB Project, Mountain Project's sister site, tells the submitter on the site and by email on approval.
+  - Notice links open: a notice's `route` is now the id, as every other notification carries it (it was a
+    route object that `routeById` never matched, so *Your route edit is live* opened nothing), and one not
+    loaded yet opens thin through `openableRoute`; an area link opens through `openAreaById`.
+  - The success screen no longer says a proposal is "visible to other climbers": no screen shows a pending
+    proposal to anyone but the owner.
+
+- **Add-a-climb asks for the same seven** (`lib/AddRoute.jsx`, 0327): first free / first winter
+  ascent, other names, variations, sun and pro tips in group 8, the high point in the numeric row
+  (in the climber's units, stored in feet like gain); `approve_new_route` writes all seven, and
+  the owner's proposal queue (`lib/RouteProposals.jsx`) shows them. `check:add-route-fields` and
+  `check:approve-route-columns` hold the form, the applier and the queue's keys together.
+
+- **Add-a-climb asks, per discipline, what the edit sheet takes** (`lib/AddRoute.jsx`, 0352,
+  2026-10-22): the walk-in **Approach** (a sentence) on every type; **Location on the wall**, **Anchor**,
+  **Rock quality** and **Wet / seepage** on crags and aid; **Bolts** on sport; **Fixed gear** on trad
+  and aid; **Rope length** (50–80 m chips, stored as metres) on roped types; the split **Hardest rock /
+  Hardest ice / Alpine grade** dropdowns and the **Steepest angle** off crags; and the facts the edit
+  sheet already offered that type (rock, style, crux grade, distance/gain/loss on ice and mixed,
+  pitches on alpine…). `FIELDS` now carries per-crag-type extras (`trad`/`sport`/`toprope`) on top of
+  `rock`, and `sf()` reads both. The gear steppers (quickdraws, ice screws, cams, nuts) and the ticked
+  items now become **rack rows** (`rackItems`, `{item, qty, sizes?}`, written to `rack_items` by `approve_new_route` since 0384; the ticked items stay text lines) — they used to land only in the `gear` object, which no screen reads
+  — and a non-rack item (helmet, crampons) goes to Route-specific essentials; crag types are offered
+  only rack items, since a crag page has no GEAR & ESSENTIALS card. The **Crux** box asks for a crux
+  *grade*: `routes.crux` prints in a stat tile, and it used to ask for a sentence.
+  `check:add-route-fields` §3b evaluates the edit sheet's `DROP` per type and fails on any fact the add
+  form does not ask, unless `NOT_AT_CREATION` / `NOT_FOR` names it with a reason (the multi-part
+  builders — waypoints, approach variants, rappel table, rescue card… — are added on the live route).
+
+- **Add-a-climb finds the area by searching the whole catalog** (`DbAreaPicker` in
+  `ClimbMatchCore.jsx`, `useCatalogAreaSearch` in `lib/db.js`): the first box searches every
+  area in every state and province, with no country or state needed first. It uses the Climbs tab's
+  spelling rules, so "jack mtn" finds Jack Mountain. Each hit names its type, its climb count and
+  its full trail ("Washington › Northwest Region › … › North Cascades Core"). The country → state
+  → area tree stays below it for browsing. The *Not in the catalog?* box lists existing areas
+  matching what is typed into it ("Already in the catalog? Tap it…") before treating it as a new
+  crag, and picking an existing area clears it. Opened from an area page, the form no longer
+  prefills that box with the area's own name, which used to file the area as a *new* crag. Each
+  field carries one line of context, shared with the route page's edit sheet through
+  `lib/fieldHints.js`.
+
+Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
+
+## 2. How it works
+
+1. **Submit.** `SuggestFix` (`src/components/SuggestFix.tsx`) calls `onContribute` in `ClimbMatch.jsx`, which
+   calls `submitContribution` (`lib/db.js`). The row is forced `pending` by `trg_contribution_status`
+   (0127). `contributions_guard_field_edit` (0308) refuses a high field, the 21st edit of the day,
+   and the restrictive policy "contribution standing allows field edits" refuses a restricted or
+   banned contributor. A refusal's sentence is shown as the toast; the local "Awaiting review"
+   entry is withdrawn.
+   Opening a field in `SuggestFix` shows **On the app now**: the field's full stored text
+   (`curRefStr`, fed by the `FULL` map), line breaks kept and list fields one item per line, in a
+   box that scrolls past ~260px. The row's collapsed summary and the contribution's `meta` line
+   keep the 44-character clip in `cur`. On a text or long-text field the box carries a **Start
+   from this text** button that copies that text into the empty input to edit. A copy left
+   unchanged (whitespace aside) is not a suggestion: `sameAsApp` keeps it out of `isFilled`, so
+   it is not sent and the field says "Same as what's on the app — change it to send a fix."
+2. **Overlay.** The route memo in `ClimbMatch.jsx` groups `kind='field'` rows by field: approved
+   rows are applied (latest by `reviewed_at`; `_contribFields` and `_contribAgreed` record them);
+   the caller's own pending rows feed `_pendingEdits` only.
+3. **Level.** `route_field_confidence_map(route_id)` returns `{field: level, …, _reasons}` over every
+   `contribution_fields` key; `useRouteFieldConfidence` reads it. The insert guard asks
+   `route_field_level` for the same answer.
+4. **Review.** `approve_field_contribution(id, value, also)` / `reject_field_contribution(id,
+   reason, also, strike)` (0309) move the row and its clustered siblings, upsert the field's level,
+   log to `moderation_actions`, notify through `_notify`, and (on reject) call
+   `_add_contribution_strike`. `set_contribution_standing` is the owner's override;
+   `set_route_field_confidence` locks or unlocks a field by hand.
+5. **Flags.** `file_route_flag` / `resolve_route_flag` (0309); `useMyRouteFlags`,
+   `useOpenRouteFlags`.
+6. **Notices.** `useMyNotices` is merged into `mergedNotifs` in `ClimbMatch.jsx` with
+   `cat:"contributions"`; `markNoticeRead` sets `read_at`.
+
+## 3. Files
+
+| File | What lives there |
+|---|---|
+| `ClimbMatch.jsx` | `onContribute` (submit + toast), the route memo's approved-only merge (`_contribFields`, `_pendingEdits`), `mergedNotifs` with notices |
+| `src/components/SuggestFix.tsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line, the standing notice (moved out of RouteDetail.jsx, PR59) |
+| `RouteDetail.jsx` | `openFix`, which opens the edit sheet |
+| `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
+| `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip` |
+| `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
+| `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
+| `src/components/DbAreaPicker.tsx` | `DbAreaPicker` (Add a climb's area step) |
+| `lib/AddRoute.jsx` | `AddRoute`: the add-a-climb form, its per-field context lines (`Lab`) |
+| `lib/fieldHints.js` | `HINTS`: one line of context per field, shared by the edit sheet and Add a climb |
+| `lib/db.js` | `useCatalogAreaSearch`: area search over the whole catalog |
+| `src/components/CardHead.tsx` | `CardHead` (the card heading; renders the chip on a route page — extracted from core, PR19) |
+| `lib/SafetyNotices.jsx` | `ContributionStandingNotice`, `AppealSheet` |
+| `ClimbMatchCore.jsx` | `sameEditValue` (clustering) |
+| `src/components/Contributions.tsx` | `Contributions` — the "Your contributions" ledger (`ST` statuses) |
+| `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
+| `scripts/check-contrib-field-columns.mjs` | the guard that keeps `contribution_fields` equal to the form |
+| `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
+| `supabase/migrations/0351_a_removal_waits_for_the_owner.sql` | `contributions.reason`, `route_field_page_value`, `_edit_removes`, `contribution_consensus` with the removal exit |
+| `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
+| `supabase/migrations/0406_discipline_is_locked.sql` | `_route_field_level_for` with `discipline` / `rockStyle` high once on file |
+| `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
+| `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |
+| `supabase/migrations/0382_every_route_edit_waits_for_the_owner.sql` | `contribution_consensus` reduced to the removal mark, `guard_contribution_status` without the consensus exit, the insert-time grade write-back dropped |
+| `supabase/migrations/0325_two_climbers_agree_or_an_empty_field.sql` | withdrawn by 0382; still defines `_edit_value_norm`, `route_field_is_empty`, `contribution_consensus` (trigger `trg_contribution_vote`), the consensus exit in `guard_contribution_status`, the grade write-back on insert |
+| `supabase/migrations/0309_field_contribution_review.sql` | `approve_field_contribution`, `reject_field_contribution`, `set_contribution_standing`, `set_route_field_confidence`, `file_route_flag`, `resolve_route_flag`, `apply_agreed_grade`, `file_appeal`, `decide_appeal` |
+
+## 4. Data
+
+- **`contributions`** (0002 … 0307): `status` pending | approved | rejected, `review_note`,
+  `reviewed_by/at`, **`applied_value`** (owner-edited value). Value cap 20000 characters.
+- **`contribution_fields`**: form key → `routes` column, `is_prose`, `is_gear`, `label`. Static;
+  76 rows; public read.
+- **`route_field_confidence`**: overrides only (`route_id`, `field`, `level`, `reason`, `set_by`).
+- **`contribution_standing`**: `status` ok | warned | restricted | banned, `strikes`, `until`,
+  `reason`. Read own or admin.
+- **`route_flags`**: `route_id`, `field` (null = whole route), `note`, `reporter`, `status` open |
+  fixed | dismissed, resolution. Read own or admin.
+- **`user_notices`**: `kind`, `title`, `body`, `link`, `read_at`. Read / mark-read / delete own;
+  inserted only by definer functions.
+- **`moderation_actions`**: every approve, reject, strike, lock, unlock and flag outcome.
+
+## 5. Connections
+
+- **Route page** ([route-page.md](route-page.md)): the overlay and the edit sheet.
+- **Moderation**: `account_standing` (0264) is the whole-account ladder; this one is
+  contribution-scoped and separate. Appeals share `moderation_appeals`.
+- **Home badge**: `useAdminQueueCounts` counts held edits and open flags into the admin total.
+
+## 6. Guards
+
+`check:contrib-field-columns` (the DB field list = the form), `check:contrib-fields`,
+`check:contrib-shapes`, `check:consensus-clustering` (clusters now serve the queue),
+`check:correction-readers`, `check:rls`, `check:function-columns`, `check:migration-replay`.
+
+## 7. Last significant change
+
+0382 (2026-10-28): 0325 withdrawn at the owner's word — every route edit waits for the owner again,
+the Agree button and other climbers' waiting suggestions are gone from the edit sheet, and the
+toasts and help text say "checked by ClimbMatch". 0325 (2026-10-15) had let an empty field fill on
+the first edit and two agreeing climbers change a filled one. Before that, steps 2–5: the owner's three queues, the climber's standing notice, the confidence chips and the flag sheet on the route page, per-pitch editing and the rappel-table editor. Step 1 shipped
+the hold-for-review gate, the computed confidence rule with the server-side lock, strikes and
+standing, flags, and notices (0307–0309). The page chips follow.
+
+## 8. Known gaps / open decisions
+
+- Field rows that were `pending` before 0307 and had been shown on pages under the old
+  "empty field → live" rule are no longer shown until approved; they are in the queue.
+- The queue clusters pending rows in JavaScript (`sameEditValue`); the server only checks that
+  clustered ids share a route and field.
+- Top contributors count only approved field edits and approved new climbs (0317, 0333); the scoring is in
+  `docs/features/ranks.md` › Contribution points.

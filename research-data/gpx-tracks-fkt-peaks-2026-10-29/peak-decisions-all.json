@@ -1,0 +1,397 @@
+[
+ {
+  "id": "wa_dragontail_peak_east_route",
+  "slug": "dragontail-peak-wa",
+  "tier": "round",
+  "why": "The FKT line climbs Aasgard Pass from Colchuck Lake and then the east-face snowfield to the summit, which is our East Route as written; Lemke Climbs, The Mountaineers and The Outbound describe that same standard line.",
+  "peak": {
+   "id": "wa_dragontail_peak",
+   "name": "Dragontail Peak",
+   "lat": 47.47873,
+   "lng": -120.833421,
+   "elevation_ft": 8840
+  },
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "wa_mount_si_trail",
+  "slug": "mount-si-wa",
+  "tier": "round",
+  "why": "FKT car-to-car follows the Mount Si trail up to the Haystack, the same as WTA's description of our trail route.",
+  "peak": {
+   "id": "wa_mount_si",
+   "name": "Mount Si",
+   "lat": 47.5068,
+   "lng": -121.7391,
+   "elevation_ft": 4167
+  },
+  "trailhead": {
+   "name": "Mount Si Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ab_mount_athabasca_aa_col",
+  "slug": "mount-athabaska-ab-canada",
+  "tier": "round",
+  "why": "The FKT page says its report is for the AA Col route, and guides list AA Col as a distinct west-side route to the summit, matching our AA Col.",
+  "peak": {
+   "id": "ab_mount_athabasca",
+   "name": "Mount Athabasca",
+   "lat": 52.181,
+   "lng": -117.20124,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "bc_mount_sir_donald_northwest_arete",
+  "slug": "mt-sir-donald-bc-canada",
+  "tier": "round",
+  "why": "FKT page titles the line Northwest Ridge car-to-car and Wikipedia names the Northwest Arete as the peak classic route, matching our only route.",
+  "peak": {
+   "id": "bc_mount_sir_donald",
+   "name": "Mount Sir Donald",
+   "lat": 51.2631,
+   "lng": -117.4314,
+   "elevation_ft": 10774
+  }
+ },
+ {
+  "id": "bc_wedge_mountain_northeast_arete",
+  "slug": "wedge-mountain-bc-canada",
+  "tier": "round",
+  "why": "FKT line is the trailhead-to-summit-and-back from the Wedgemount Lake trail, using the NE Arete (bypass up, normal ridge down); Wikipedia calls the Northeast Arete the direct route from Wedgemount Lake.",
+  "peak": {
+   "id": "bc_wedge_mountain",
+   "name": "Wedge Mountain",
+   "lat": 50.13278,
+   "lng": -122.7935,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "ca_sierra_buttes_lookout_trail",
+  "slug": "sierra-buttes-ca",
+  "tier": "round",
+  "why": "The FKT page and two trail write-ups agree on the Packer Lake Road trail up the PCT and old jeep road to the stair-topped lookout, matching our trail.",
+  "peak": {
+   "id": "ca_sierra_buttes",
+   "name": "Sierra Buttes",
+   "lat": 39.5936,
+   "lng": -120.6468,
+   "elevation_ft": 8591
+  }
+ },
+ {
+  "id": "ca_south_lake_peaks_traverse",
+  "slug": "south-lakes-peaks-traverse",
+  "tier": "round",
+  "why": "The FKT line is the Hurd, Peak 12,192, Trapezoid, Mt Johnson link-up from South Lake that Mountain Project describes as the South Lake Peaks Traverse.",
+  "peak": {
+   "id": "ca_hurd_peak",
+   "name": "Hurd Peak",
+   "lat": 37.1421,
+   "lng": -118.5661,
+   "elevation_ft": null
+  },
+  "trailhead": {
+   "name": "South Lake Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_tinker_knob_via_the_pacific_crest_trail",
+  "slug": "tinker-knob",
+  "tier": "round",
+  "why": "Out-and-back up Granite Chief Trail to the PCT, then PCT to the pass just southeast of the peak and a short use-trail to the summit, matching our route text.",
+  "peak": {
+   "id": "ca_tinker_knob",
+   "name": "Tinker Knob",
+   "lat": 39.2447,
+   "lng": -120.2851,
+   "elevation_ft": 8949
+  }
+ },
+ {
+  "id": "ca_white_mountain_peak_trail",
+  "slug": "white-mountain-peak",
+  "tier": "round",
+  "why": "Barcroft Gate to summit by the South Slopes road, the standard Class 1 route, out-and-back per the independent guide.",
+  "peak": {
+   "id": "ca_white_mountain_peak",
+   "name": "White Mountain Peak",
+   "lat": 37.6341,
+   "lng": -118.2557,
+   "elevation_ft": 14252
+  }
+ },
+ {
+  "id": "co_mount_hope_east_ridge",
+  "slug": "mount-hope-co",
+  "tier": "round",
+  "why": "FKT page and Climb13ers both describe the East Ridge via Hope Pass from Sheep Gulch, matching our route; Difficult Class 2 on both.",
+  "peak": {
+   "id": "co_mount_hope",
+   "name": "Mount Hope",
+   "lat": 39.0211,
+   "lng": -106.4199,
+   "elevation_ft": 13939
+  }
+ },
+ {
+  "id": "co_mount_sherman_southwest_ridge",
+  "slug": "mount-sherman-co",
+  "tier": "round",
+  "why": "FKT Fourmile Creek route follows the saddle then the southwest ridge, which 14ers.com gives as the standard Class 1 Southwest Ridge.",
+  "peak": {
+   "id": "co_mount_sherman",
+   "name": "Mount Sherman",
+   "lat": 39.2251,
+   "lng": -106.1701,
+   "elevation_ft": 14043
+  }
+ },
+ {
+  "id": "co_mount_silverheels_north_spur_from_hoosier_pass",
+  "slug": "mount-silverheels-co",
+  "tier": "round",
+  "why": "FKT entry is the North Spur out and back from Hoosier Pass, and a 14ers.com trip report describes the same Hoosier Ridge to North Spur line.",
+  "peak": {
+   "id": "co_mount_silverheels",
+   "name": "Mount Silverheels",
+   "lat": 39.3395,
+   "lng": -106.0054,
+   "elevation_ft": 13828
+  },
+  "trailhead": {
+   "name": "Hoosier Pass Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_mt_bierstadt_standard_route_west_slopes",
+  "slug": "mt-bierstadt-co",
+  "tier": "round",
+  "why": "FKT page names the standard Guanella Pass route and links 14ers.com, whose West Slopes page describes the same willows-to-shoulder-to-ridge line our route lists.",
+  "peak": {
+   "id": "co_mt_bierstadt_standard_route",
+   "name": "Standard Route",
+   "lat": 39.5826,
+   "lng": -105.6689,
+   "elevation_ft": null
+  },
+  "trailhead": {
+   "name": "Guanella Pass Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_mount_princeton_east_slopes",
+  "slug": "mt-princeton",
+  "tier": "round",
+  "why": "FKT out-and-back from the 2WD trailhead matches the 14ers.com standard East Slopes route via Tigger ridge.",
+  "peak": {
+   "id": "co_mount_princeton",
+   "name": "Mount Princeton",
+   "lat": 38.7492,
+   "lng": -106.2424,
+   "elevation_ft": 14204
+  }
+ },
+ {
+  "id": "co_quandary_peak_standard_route_east_ridge",
+  "slug": "quandary-peak-co",
+  "tier": "round",
+  "why": "FKT page describes the East Ridge up-and-back and CMC lists East Ridge as the standard route, matching our trail up the east ridge.",
+  "peak": {
+   "id": "co_quandary_peak_standard_route",
+   "name": "Standard Route",
+   "lat": 39.3973,
+   "lng": -106.1064,
+   "elevation_ft": null
+  },
+  "trailhead": {
+   "name": "Quandary Peak Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_rio_grande_pyramid_east_slope_ridge",
+  "slug": "rio-grande-pyramid-co",
+  "tier": "round",
+  "why": "FKT starts at Thirty Mile trailhead, follows Weminuche Trail then Skyline Trail to the summit, which Climb13ers names as the East Slope/Ridge standard route.",
+  "peak": {
+   "id": "co_rio_grande_pyramid",
+   "name": "Rio Grande Pyramid",
+   "lat": 37.6796,
+   "lng": -107.3924,
+   "elevation_ft": 13825
+  },
+  "trailhead": {
+   "name": "Thirty Mile Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_blitzen_ridge",
+  "slug": "ypsilon-mountain-blitzen-ridge-co",
+  "tier": "round",
+  "why": "The FKT line climbs Blitzen Ridge and descends Donner Ridge to the Lawn Lake trailhead; Steph Abegg, climber.org and SummitPost trip reports give Donner Ridge as the usual descent from Blitzen Ridge, so this is the full route.",
+  "peak": {
+   "id": "co_ypsilon_mountain",
+   "name": "Ypsilon Mountain",
+   "lat": 40.4569,
+   "lng": -105.681,
+   "elevation_ft": null
+  },
+  "trailhead": {
+   "name": "Lawn Lake Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "nv_mount_rose_mount_rose_trail",
+  "slug": "mount-rose-nv",
+  "tier": "round",
+  "why": "Standard out-and-back from the Mt Rose Summit trailhead on SR 431 up the Mount Rose Trail (waterfall, about 5 miles each way), matching our route and the trail guide's out-and-back advice.",
+  "peak": {
+   "id": "nv_mount_rose",
+   "name": "Mount Rose",
+   "lat": 39.3437,
+   "lng": -119.9177,
+   "elevation_ft": 10776
+  }
+ },
+ {
+  "id": "nh_whitney_gilman_ridge",
+  "slug": "cannon-cliff-trail-and-climbing-challenges-nh",
+  "tier": "round",
+  "why": "Loop climbs Whitney Gilman Ridge and returns by the descent trail from the top to the bike path and the lot, which Mountain Project gives as its usual descent.",
+  "peak": {
+   "id": "nh_whitney_gilman_area",
+   "name": "Whitney-Gilman Area",
+   "lat": 44.15597,
+   "lng": -71.68713,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "ny_allen_mountain_allen_brook_herd_path",
+  "slug": "allen-mtn-ny",
+  "tier": "round",
+  "why": "Out-and-back from the Allen/Adams lot near Upper Works to Allen Mountain by the Allen Brook herd path, which the independent guide describes the same way (unmarked turn at about 5 miles, Allen Brook, missing Opalescent bridge).",
+  "peak": {
+   "id": "ny_allen_mountain",
+   "name": "Allen Mountain",
+   "lat": 44.0708,
+   "lng": -73.9397,
+   "elevation_ft": 4340
+  }
+ },
+ {
+  "id": "ny_big_slide_mtn_the_brothers_trail",
+  "slug": "big-slide-mountain-ny",
+  "tier": "round",
+  "why": "Out-and-back from the Garden over the three Brothers to Big Slide, the same line and distance the Lake Placid guide gives for the Brothers Trail.",
+  "peak": {
+   "id": "ny_big_slide_mtn",
+   "name": "Big Slide Mtn.",
+   "lat": 44.1822,
+   "lng": -73.8708,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "ut_south_ridge",
+  "slug": "mount-superior-south-ridge-round-trip",
+  "tier": "round",
+  "why": "FKT line follows the south ridge from the dirt pullout at the base of the south face and descends east via Cardiff Pass to the canyon road, matching two independent descriptions of the South Ridge scramble and its usual descent.",
+  "peak": {
+   "id": "ut_mt_superior_monte_cristo",
+   "name": "Mt. Superior / Monte Cristo",
+   "lat": 40.59001,
+   "lng": -111.66633,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+  "slug": "clouds-rest-yosemite-ca",
+  "tier": "round",
+  "why": "FKT's Tenaya Lake line is the Clouds Rest Trail out and back, and Hiking Project describes the same trail from the west end of Tenaya Lake as an out-and-back. Trailhead not confirmed: no source gave its location to compare with the track start.",
+  "peak": {
+   "id": "ca_a_clouds_rest_trail",
+   "name": "Clouds Rest Trail",
+   "lat": 37.7677,
+   "lng": -119.4893,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "ca_mount_tallac_trail_mount_tallac_trail",
+  "slug": "mt-tallac-ca",
+  "tier": "round",
+  "why": "FKT up-and-down starts at the Mt Tallac Trailhead and follows the popular trail, which Tahoe Trail Guide describes as the Mount Tallac Trailhead out-and-back via Cathedral Lake. Trailhead not confirmed: no source gave its location to compare with the track start.",
+  "peak": {
+   "id": "ca_mount_tallac_trail",
+   "name": "Mount Tallac Trail",
+   "lat": 38.906,
+   "lng": -120.0989,
+   "elevation_ft": null
+  },
+  "trailhead": {
+   "name": "Mount Tallac Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_d_half_dome_cables_route_cables_route",
+  "slug": "half-dome-yosemite-ca",
+  "tier": "round",
+  "why": "FKT's standard route (Mist Trail, Little Yosemite Valley, Sub Dome, cables, same way down) matches the cables route as described by the Yosemite hiking guide.",
+  "peak": {
+   "id": "ca_d_half_dome_cables_route",
+   "name": "Cables Route",
+   "lat": 37.7457,
+   "lng": -119.5335,
+   "elevation_ft": null
+  },
+  "trailhead": {
+   "name": "Happy Isles Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_north_ridge_4",
+  "slug": "lone-pine-peak-ca",
+  "tier": "round",
+  "why": "FKT car-to-car North Ridge from the Meysan Lakes trailhead matches our North Ridge, and trip reports describe the same approach and a west-facing scree-chute descent.",
+  "peak": {
+   "id": "ca_lone_pine_peak",
+   "name": "Lone Pine Peak",
+   "lat": 36.5616,
+   "lng": -118.2251,
+   "elevation_ft": null
+  },
+  "trailhead": {
+   "name": "Meysan Lake Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_north_ar_te",
+  "slug": "mammoth-lakes-crystal-crag-ca",
+  "tier": "round",
+  "why": "FKT line climbs the North Arete (chimney start up to 5.6) along the ridge to the south summit and returns to Lake George; Mountain Project and a trip report give the same start, ridge and a west-face descent back to the Lake George trail.",
+  "peak": {
+   "id": "ca_north_arete",
+   "name": "North Arete",
+   "lat": 37.5926,
+   "lng": -119.0145,
+   "elevation_ft": null
+  }
+ }
+]

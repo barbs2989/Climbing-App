@@ -1,6 +1,6 @@
 // "Is anything burning near this climb?" — the per-route half of the Fire map.
 //
-// Sits at the top of a route's Safety tab, above the float plan and the forecast links —
+// Sits on a route's Safety tab under the forecast, above the hazards and the float plan —
 // a fire that can close an approach road is a hazard, not a description of the climb. (On a
 // route with no Safety tab, which is content-gated, RouteDetail keeps it on Overview instead
 // rather than dropping it.) The map answers "is the range on fire"; this answers it for one
@@ -24,8 +24,11 @@
 // Severity follows containment and distance together, because neither alone means
 // anything: a 100%-contained fire 5 miles off is smoke, and an uncontained one at 45
 // miles is a road-closure risk tomorrow, not today.
+import { useState } from "react";
 import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
 import { TILE_CREDIT } from "./mapKit";
+import Chevron from "../src/components/Chevron.tsx";
+import { TEXT_TAP } from "./buttonStyles.js";
 
 const MI_PER_KM = 0.621371;
 
@@ -34,6 +37,7 @@ const CLOSE_MI = 25;
 
 export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", onOpenFireMap }) {
   const q = useFiresNear(coord, NEAR_ROUTE_KM);
+  const [open, setOpen] = useState(false);
 
   // Rule 1. No point to measure from → no section at all. An absent section makes no
   // claim; an empty state would.
@@ -41,20 +45,20 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
 
   const fires = (q.data && q.data.fires) || [];
   const radiusMi = Math.round(NEAR_ROUTE_KM * MI_PER_KM);
-  const wrap = { border: "1px solid " + C.border, background: C.surface, borderRadius: 12, padding: "12px 13px", marginBottom: 14 };
+  const wrap = { border: "1px solid " + C.border, background: C.surface, borderRadius: 12, padding: "12px 13px", marginBottom: 12 }; // the route page's ROUTE_GAP
   /* = core's CardHead look (12/800, tracked, a 3px bar), so the first card on Safety reads as one of
      the route page's card titles. The fire-level heading below keeps its tone on text and bar. */
   const hd = { fontSize: 12, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.text, marginBottom: 8, borderLeft: "3px solid " + C.blueSolid, paddingLeft: 7, lineHeight: 1.1 };
 
   if (q.isLoading) {
-    return <div style={wrap}><div role="heading" aria-level={3} style={hd}>Fire &amp; smoke</div><div style={{ fontSize: 12, color: C.textMuted }}>Checking federal fire reports…</div></div>;
+    return <div style={wrap}><div role="heading" aria-level={2} style={hd}>Fire &amp; smoke</div><div style={{ fontSize: 12, color: C.textMuted }}>Checking federal fire reports…</div></div>;
   }
 
   // Rule 3.
   if (q.error) {
     return (
       <div style={{ ...wrap, borderColor: C.amber, background: C.amberBg }}>
-        <div role="heading" aria-level={3} style={hd}>Fire &amp; smoke</div>
+        <div role="heading" aria-level={2} style={hd}>Fire &amp; smoke</div>
         <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, display: "flex", gap: 8 }}>
           <ActionIcon name="alert" size={15} color={C.amber} />
           <span>
@@ -92,13 +96,29 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   // returns null AND sits after both of them in source order.
   if (!fires.length) return null;
 
+  // A DROPDOWN (owner, 2026-10-24): closed, it is one tinted row — the heading, how many fires and
+  // how close the nearest is — so the forecast above and the hazards below stay in view. The tone
+  // still colours the closed row, so an uncontained fire close by reads red without opening it.
+  // The body is HIDDEN, not unmounted, as AccessFold does: its caveats stay in the markup.
+  // 24px above and below is the route page's FOLD_GAP: a closed dropdown sits apart from the cards around it.
+  const nearest = fires.reduce((m, f) => Math.min(m, f.originMi), Infinity);
+  const summary = fires.length + " fire" + (fires.length === 1 ? "" : "s") + " · nearest " + uDistMi(Math.round(nearest * 10) / 10);
   return (
-    <div style={{ ...wrap, borderColor: tone.c, background: tone.bg }}>
-      <div role="heading" aria-level={3} style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
-        <ActionIcon name="fire" size={14} color={tone.c} />
-        {closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}
+    <div style={{ ...wrap, borderColor: tone.c, background: tone.bg, margin: "24px 0" }}>
+      <div role="heading" aria-level={2} style={{ margin: 0 }}>
+        <button onClick={() => setOpen(!open)} aria-expanded={open} style={{minHeight:44, display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
+              <ActionIcon name="fire" size={14} color={tone.c} />
+              <span data-jump-label="">{closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}</span>
+            </span>
+            <span style={{ display: "block", fontSize: 12, color: C.textSub }}>{summary}</span>
+          </span>
+          <span aria-hidden="true" style={{ display: "flex", flexShrink: 0 }}><Chevron open={open} size={15} color={tone.c} /></span>
+        </button>
       </div>
 
+      <div hidden={!open} style={{ marginTop: 10 }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {fires.slice(0, 4).map(f => (
           <div key={f.id} style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
@@ -124,6 +144,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
       </div>
 
       <Foot C={C} coord={coord} ActionIcon={ActionIcon} onOpenFireMap={onOpenFireMap} />
+      </div>
     </div>
   );
 }
@@ -140,7 +161,7 @@ function Foot({ C, coord, ActionIcon, onOpenFireMap }) {
         fire far from a route can still close its access road.
       </div>
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
-        <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontSize: 11.5, fontWeight: 700 }}>Forest Service alerts →</a>
+        <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontSize: 11.5, fontWeight: 700, ...TEXT_TAP }}>Forest Service alerts →</a>
       </div>
     </>
   );
@@ -190,7 +211,7 @@ function MapCard({ C, coord, ActionIcon, onOpen }) {
           <span style={{ display: "block", fontSize: 14, fontWeight: 800, color: C.blue }}>Open fire map</span>
           <span style={{ display: "block", fontSize: 11.5, color: C.textSub, lineHeight: 1.4 }}>Fire perimeters and red-flag warnings around this climb</span>
         </span>
-        <span aria-hidden="true" style={{ fontSize: 18, fontWeight: 700, color: C.blue }}>›</span>
+        <span aria-hidden="true" style={{display:"flex",flexShrink:0}}><Chevron size={16} color={C.textMuted}/></span>
       </span>
     </button>
   );

@@ -54,7 +54,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { readCoreSource, MOVED_FROM_CORE } from "./lib/guard-sources.mjs";
+import { componentFiles, readCoreSource, MOVED_ALL, readAppFile, stripTypes } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -97,6 +97,8 @@ const dead = (m) => { problems.push("BROKEN: " + m); throw new Error(STOP); };
 
 const CORE_PATH = path.join(ROOT, "ClimbMatchCore.jsx");
 const RD_PATH = path.join(ROOT, "RouteDetail.jsx");
+// ItineraryEditor lives in src/components since PR32+1; esbuild bundles the .tsx as it does the .jsx.
+const IE_PATH = path.join(ROOT, "src/components/ItineraryEditor.tsx");
 const APP_PATH = path.join(ROOT, "ClimbMatch.jsx");
 
 // ===== HARD-CODED IMPERIAL UNITS, APP-WIDE =============================================
@@ -109,7 +111,8 @@ const APP_PATH = path.join(ROOT, "ClimbMatch.jsx");
 //   1  App's area search  -- renders the SEED `MOUNTAINS` tree, so its distance is a different
 //      defect entirely (the AddRoute area-picker class) and converting it would polish a
 //      surface that is showing the wrong data.
-//   2  rapStr (core) and fmtRappels (RouteDetail) -- the object branch of the rappels column.
+// (lib/routeGaps.js holds _gapDist, the gap prompt's distance, since PR60 -- scanned so it stays in view.)
+//   2  rapStr (core) and fmtRappels (lib/rappelEdits.js since PR59) -- the object branch of the rappels column.
 //      Measured: 733 of 733 rows are STRINGS, so neither branch can be reached. The unit there
 //      is chosen by WHICH COLUMN the value came from rather than by the climber, which is why
 //      it is recorded as a tripwire: the day something writes an object, this arms itself.
@@ -122,7 +125,7 @@ const RAW_IMPERIAL_OK = 6;
 // assertions below were written, so every core read must include them or it silently stops
 // looking at three whole screens while still printing ok.
 const readCoreAndMoved = () => readCoreSource();
-const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_FROM_CORE];
+const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/rappelEdits.js", "lib/routeGaps.js", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_ALL];
 // " in" is EXCLUDED: it is the English preposition far more often than inches, and including it
 // reported `"APPROACHES · "+n+" way"+(s)+" in"` as a defect on the first run. A count is only as
 // good as its tokeniser.
@@ -136,7 +139,7 @@ function rawImperialUnits() {
   for (const f of RAW_FILES) {
     const src = fs.readFileSync(path.join(ROOT, f), "utf8");
     let ast;
-    try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+    try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
     catch (e) { dead(`${f} did not parse while scanning for hard-coded units: ` + (e && e.message)); }
     traverse(ast, {
       StringLiteral(p) {
@@ -153,6 +156,8 @@ function rawImperialUnits() {
           const parent = cur.parentPath;
           if (!parent) break;
           if (parent.isConditionalExpression() && RAW_GUARD.test(JSON.stringify(parent.node.test))) return;
+          // ...or an `if (uImp()) return ... + " ft³/s"` (StreamsSection's flowText, first scanned when it moved out of lib/).
+          if (parent.isIfStatement() && cur.key === "consequent" && RAW_GUARD.test(JSON.stringify(parent.node.test))) return;
           cur = parent;
         }
         let fn = p.getFunctionParent(); let owner = null;
@@ -186,7 +191,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactDOM from "react-dom";
 import RouteDetail from ${JSON.stringify(RD_PATH)};
-import { ItineraryEditor, FullProfile } from ${JSON.stringify(CORE_PATH)};
+import ItineraryEditor from ${JSON.stringify(IE_PATH)};
+import FullProfile from ${JSON.stringify(path.join(ROOT, "src/components/FullProfile.tsx"))};
 export { distMiles, ME } from ${JSON.stringify(CORE_PATH)};
 export {
   uTemp, uTempN, uTempDelta, uWind, uWindN, uPrecip, uSnowfall,
@@ -229,7 +235,7 @@ export function renderProfile(climber) {
     return renderToStaticMarkup(
       React.createElement(QueryClientProvider, { client: qc },
         React.createElement(FullProfile, {
-          climber, onClose: noop, onResume: noop, catchCredits: [], myCrews: [],
+          climber, onClose: noop, onResume: noop, myCrews: [],
           myFriendIds: [], vouched: false, mySpeedFtHr: 0, routeById: () => null,
         })));
   } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
@@ -320,7 +326,7 @@ async function runPersist() {
 
   // THE WIRING. Restoring happens in a useState initializer and persisting in an onClick --
   // neither of which a render can reach, so both are read from source.
-  const app = fs.readFileSync(APP_PATH, "utf8");
+  const app = readAppFile(APP_PATH);
   if (!/from "\.\/lib\/units-pref"/.test(app)) fail("ClimbMatch.jsx does not import the units preference");
   else ok("ClimbMatch.jsx imports it");
 
@@ -380,6 +386,10 @@ async function runWeather() {
     // non-boundary case beside it so the suite is not only testing a rounding tie.
     ["uPrecip", 0.25, '0.25"', "6.3 mm"],
     ["uPrecip", 0.5, '0.50"', "12.7 mm"],
+    // A drizzle the score counts as rain once printed "Rain in the past hour (0.00\")" -- a real amount
+    // that rounds to zero must say it is under the smallest step, never read as none.
+    ["uPrecip", 0.001, 'under 0.01"', "under 0.1 mm"],
+    ["uPrecip", 0, '0.00"', "0.0 mm"],
     ["uSnowfall", 6, '6.0"', "15.2 cm"],
   ];
   for (const [fn, input, imp, met] of CASES) {
@@ -398,9 +408,9 @@ async function runWeather() {
   // carry hard-coded imperial cut-offs; handing them a converted value would compile, render, and
   // mis-colour every reading -- 10°C would score as "below freezing" against a 32 threshold.
   // Nothing about the screen would look broken.
-  const src = fs.readFileSync(RD_PATH, "utf8");
+  const src = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { dead("RouteDetail.jsx did not parse: " + (e && e.message)); }
   let colourCalls = 0, helperCalls = 0;
   traverse(ast, {
@@ -429,8 +439,8 @@ async function runWeather() {
   // walks the AST and an AST does not see comments.
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 
-  // THE FETCH MOVED to lib/forecast.js (fetchForecastRaw), shared with the trip pack, which saves
-  // its raw responses. So the URL pins are read THERE, and the panel is asserted to still call it —
+  // THE FETCH MOVED to lib/forecast.js (fetchForecastRaw); it was shared with the trip pack until
+  // #2368 removed the pack. So the URL pins are read THERE, and the panel is asserted to still call it —
   // otherwise the pinned fetch could be one nothing uses while the panel fetched raw metric data.
   const FX_PATH = path.join(ROOT, "lib", "forecast.js");
   if (!fs.existsSync(FX_PATH)) dead("ANCHOR LOST: lib/forecast.js is gone — the forecast fetch's unit pins are unchecked");
@@ -469,7 +479,7 @@ async function runWeather() {
   //    number and both hydrations rendered it as `+" ft"`, which is another climber's report
   //    read in the wrong unit. check:log guards which COLUMNS each hydration carries and is
   //    blind to what unit one of them is rendered in.
-  const appMask = fs.readFileSync(APP_PATH, "utf8")
+  const appMask = readAppFile(APP_PATH)
     .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
   //    THE CONTRACT MOVED (log-form rework): both hydrations now carry the RAW NUMBER as
   //    `freezingFt`, and the conversion happens where it is DRAWN. Hydrating to uElev()'s string
@@ -518,7 +528,9 @@ async function runWeather() {
   //    10 m satisfies every gust assertion below AND takes a 27 mph AMBER day to GREEN while a
   //    29 mph gust stands. A rule that only ever demands the gust appear is satisfied by the
   //    change that under-warns.
-  const gwSrc = /function gustWorthShowing\(dy\)\{.*?\}\n/.exec(src);
+  // The moved .tsx types its parameter (PR58); the lift drops the annotation so the JS runs.
+  const gwSrc = /function gustWorthShowing\(dy(?:: [^)]*)?\)\{.*?\}\n/.exec(src);
+  if (gwSrc) gwSrc[0] = gwSrc[0].replace(/^function gustWorthShowing\(dy[^)]*\)/, "function gustWorthShowing(dy)");
   if (!gwSrc) dead("ANCHOR LOST: gustWorthShowing is gone from RouteDetail.jsx — the gust gate cannot be executed, so nothing below would be proved");
   let gustWorthShowing;
   try { gustWorthShowing = new Function(gwSrc[0] + ";return gustWorthShowing;")(); }
@@ -545,8 +557,15 @@ async function runWeather() {
   // tile still calls it, or whether the 10 m series it reads is still fetched and bucketed. A
   // stale-base squash takes exactly that half and moves NO identifier, which audit:silent-reverts
   // says in its own closing caveat it cannot see.
-  if (fxMask.includes("wind_speed_10m,")) ok("the forecast fetch asks for wind_speed_10m — the gate has a same-height figure to compare against");
+  // Read off THIS fetch's own URL: the crag and alpine fetches in the same file ask for wind_speed_10m too, so a
+  // whole-file search stayed green with the panel's own request no longer asking for it.
+  const omUrl = (/const omUrl = [^\n]*/.exec(fxMask) || [""])[0];
+  if (!omUrl) fail("ANCHOR LOST: fetchForecastRaw's `const omUrl = ` line moved — the panel's own request cannot be read");
+  else if (/[=,]wind_speed_10m,/.test(omUrl)) ok("the forecast fetch asks for wind_speed_10m — the gate has a same-height figure to compare against");
   else fail("the forecast fetch no longer asks for wind_speed_10m — wind10Max is null on every day and the gate degrades to always-show");
+  // The HOURLY rows pair the hour's wind with the 10 m gust beside it, so that wind and its direction are 10 m too.
+  if (/[=,]wind_direction_10m,/.test(omUrl) && /windMph:h\.wind_speed_10m\?h\.wind_speed_10m\[i\]:null,dir:h\.wind_direction_10m\?h\.wind_direction_10m\[i\]:null/.test(mask)) ok("the hourly rows read the 10 m wind and direction, at the height of the gust beside them");
+  else fail("the hourly rows no longer read the 10 m wind and its direction — an 80 m wind beside a 10 m gust reads the gust as weaker than the wind");
   if (/if\(h\.wind_speed_10m\)dd\.winds10\.push\(h\.wind_speed_10m\[i\]\);/.test(mask)) ok("the hourly loop buckets the 10 m series");
   else fail("the hourly loop no longer buckets wind_speed_10m into winds10 — the fetched field reaches nothing");
   if (/wind10Max:d\.winds10\.length\?Math\.round\(Math\.max\.apply\(null,d\.winds10\)\):null/.test(mask)) ok("wind10Max is null on an absent series, never -Infinity");
@@ -563,18 +582,6 @@ async function runWeather() {
   else ok("the 10 m series feeds the gust gate only, never the headline or its colour");
   if (/wxWindColor\(dy\.windMax\)/.test(mask)) ok("the colour threshold still reads the 80 m sustained");
   else fail("wxWindColor no longer reads dy.windMax — the amber/red banding has moved off the ridge-level figure");
-
-  // AND THE PANEL SAYS SO. A tile can now legitimately read "22 mph" above "gusts to 22", and the
-  // NWS/MET winds beside each day are surface figures against an 80 m headline -- on the seeded
-  // capture that is 36 mph against NWS's 10. Without a sentence naming the heights the reader
-  // sees a 3.6x disagreement between forecasters that is not one.
-  const capt = /Elevation-aware forecast[\s\S]{0,900}?<\/div>/.exec(mask);
-  if (!capt) fail("ANCHOR LOST: the forecast panel caption moved — the height caveat cannot be checked");
-  else {
-    const c = capt[0];
-    if (/80\s*m/.test(c) && /10\s*m/.test(c)) ok("the panel caption names BOTH heights");
-    else fail("the forecast caption no longer names the two wind heights — the tile shows a gust equal to its sustained, and NWS's wind beside it, with nothing saying why");
-  }
 }
 
 // =======================================================================================
@@ -635,11 +642,12 @@ async function runReports() {
   const shot = (u) => { M.__set_UNITS(u); const h = M.renderRoute(route, "conditions"); M.__set_UNITS("imperial"); return h; };
   const impT = strip(shot("imperial")), metT = strip(shot("metric"));
 
-  // Fails CLOSED: with no chip on screen every assertion below passes vacuously.
-  if (!impT.includes("CONDITIONS NOW") || !/\ud83c\udf21 Temp/.test(impT)) fail("ANCHOR LOST: no CONDITIONS NOW thermometer chip on the Conditions tab — this run proved nothing");
+  // Fails CLOSED: with no chip on screen every assertion below passes vacuously. The chip read
+  // "🌡 Temp" until polish round 3 removed the app's emoji (check:no-emoji); it is "Temp" now.
+  if (!impT.includes("CONDITIONS NOW") || !/Temp -?\d+\u00b0[FC]/.test(impT)) fail("ANCHOR LOST: no CONDITIONS NOW thermometer chip on the Conditions tab — this run proved nothing");
   else if (impT.length < 400 || metT.length < 400) fail(`thin render (${impT.length}/${metT.length} chars) — NOT MEASURED`);
   else {
-    const grab = (t) => (t.match(/\ud83c\udf21 Temp (-?\d+)\u00b0([FC])/) || []).slice(1);
+    const grab = (t) => (t.match(/Temp (-?\d+)\u00b0([FC])/) || []).slice(1);
     const gi = grab(impT), gm = grab(metT);
     if (!gi.length || !gm.length) fail(`could not read the Temp chip (imperial ${JSON.stringify(gi)}, metric ${JSON.stringify(gm)})`);
     else {
@@ -666,7 +674,7 @@ async function runReports() {
   // perfectly while the form went back to storing whatever was typed.
   const CORE = readCoreSource();
   let ast;
-  try { ast = parse(CORE, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(CORE, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { dead("ClimbMatchCore.jsx did not parse: " + (e && e.message)); }
   let sawIn = false, sawSeed = false;
   traverse(ast, {
@@ -895,16 +903,18 @@ async function runFilters() {
   //
   //    Lifted from source rather than bundled: DbAreaBrowser pulls in supabase and the whole DB
   //    layer, and the question here needs neither -- only the bucket table and its formatter.
-  const dbSrc = fs.readFileSync(path.join(ROOT, "lib/DbAreaBrowser.jsx"), "utf8");
+  const dbSrc = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx"));
   const dbMask = dbSrc.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
-  const bm = dbMask.match(/const LEN_BUCKETS = (\[[^\n]*\]);/);
+  // Since PR66 the table and formatter are in RouteFinderPanel.tsx (stitched in by readAppFile), typed:
+  // the annotation is skipped here and the formatter's types are stripped before it is evaluated.
+  const bm = dbMask.match(/const LEN_BUCKETS(?::[^=\n]*)? = (\[[^\n]*\]);/);
   if (!bm) dead("ANCHOR LOST: LEN_BUCKETS in lib/DbAreaBrowser.jsx — the live filter went unchecked.");
   const li = dbMask.indexOf("const lenLabel = (");
   if (li < 0) dead("ANCHOR LOST: lenLabel in lib/DbAreaBrowser.jsx — the live filter went unchecked.");
   // It takes (bucket, uElevN, uElevUnit) — the helpers are PARAMETERS, because the app passes them
   // as props. Injecting them as a closure instead lets the arrow's own params shadow them to
   // undefined, which is how the first version of this died.
-  const lenLabel = new Function("return " + dbMask.slice(li + "const lenLabel = ".length).split("\n};")[0] + "\n};")();
+  const lenLabel = new Function("return " + await stripTypes(dbMask.slice(li + "const lenLabel = ".length).split("\n};")[0] + "\n}", { expression: true }))();
   const lbl = (b) => lenLabel(b, M.uElevN, M.uElevUnit);
   const LB = JSON.parse(bm[1].replace(/'/g, '"'));
   if (LB.length < 4) dead("fewer than 4 live length buckets — the table moved.");
@@ -956,7 +966,7 @@ async function runFilters() {
   //    NEITHER DIRECTION OF check:dead-props SEES THIS: the component references the prop, and the
   //    call site passes nothing unread — the exact hole this file records for the float plan. Four
   //    links, asserted as source, the way check:topo-outage-copy pins its own.
-  const appMask = fs.readFileSync(APP_PATH, "utf8")
+  const appMask = readAppFile(APP_PATH)
     .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
   // A JSX tag here cannot be sliced with [^>]*: these props hold ARROW FUNCTIONS, so `=>` puts a
   // `>` inside the tag and the match stops in the middle of it. That is not hypothetical — it
@@ -1012,14 +1022,15 @@ async function runVariants() {
   section = "variants";
   console.log("\n== variants — the approach-variants editor, on both boundaries and in its labels\n");
   await loadBundle();
-  const src = fs.readFileSync(RD_PATH, "utf8");
+  const src = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
 
-  const seedKey = "const routeVars=(Array.isArray(route.approachVariants)";
-  const seedAt = src.indexOf(seedKey);
+  // SuggestFix is TypeScript since PR59: the declaration may carry a type, and the lifted seed is type-stripped before it runs.
+  const seedM = /const routeVars(?:: [^=]+)?=\(Array\.isArray\(route\.approachVariants\)/.exec(src);
+  const seedAt = seedM ? seedM.index : -1;
   if (seedAt < 0) dead("the routeVars seed is not where this section reads it — re-read RouteDetail.jsx");
   const seedEnd = src.indexOf(":[blankVar()];", seedAt);
   if (seedEnd < 0) dead("could not bound the routeVars seed");
-  const seedExpr = src.slice(seedAt + "const routeVars=".length, seedEnd + ":[blankVar()]".length);
+  const seedExpr = await stripTypes(src.slice(src.indexOf("=", seedAt) + 1, seedEnd + ":[blankVar()]".length), { expression: true });
   // A SHAPE TEST, NOT A CONTENT ONE. The first version of this demanded the slice mention
   // `itinDraftVal` -- i.e. it was written from the FIX -- so any other seeding, INCLUDING A
   // DELIBERATELY WRONG ONE, reported ANCHOR LOST rather than being measured. An anchor written
@@ -1040,7 +1051,7 @@ async function runVariants() {
   if (storeEnd < 0) dead("could not bound the variants submit branch");
   const storeExpr = src.slice(storeAt + 'if(f.type==="variants")return '.length, storeEnd).replace(/;\s*$/, "");
   if (!/\.map\(/.test(storeExpr) || !/\.filter\(/.test(storeExpr)) dead("the variants branch is not the map/filter shape this section reads");
-  const store0 = new Function("vals", "itinStoreVal", "uImp", "return " + storeExpr + ";");
+  const store0 = new Function("vals", "itinStoreVal", "uImp", "return " + await stripTypes(storeExpr, { expression: true }) + ";");
   const store = (vals, isv) => store0(vals, isv, () => M.uImp ? M.uImp() : true);
 
   const blankVar = () => ({ name: "", season: "", distMi: "", gainFt: "", hours: "", notes: "", hazards: "" });
@@ -1173,7 +1184,7 @@ async function runPitches() {
   section = "pitches";
   console.log("\n== pitches — the pitch-length box, on both boundaries and in its labels\n");
   await loadBundle();
-  const src = fs.readFileSync(RD_PATH, "utf8");
+  const src = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
 
   // ── Lift the two boundaries. SHAPE TESTS, never content ones: an anchor written from the FIX
   //    refuses every change instead of judging it, which is the trap the variants section records.
@@ -1182,15 +1193,18 @@ async function runPitches() {
   //    them); either way the lifted text is the ternary itself, which is what gets evaluated.
   const seedHead = "const routePitches=";
   const seedBody = "(route.pitchDetail&&route.pitchDetail.length)";
-  const seedKeys = [seedHead + seedBody, seedHead + "useMemo(function(){return " + seedBody];
+  //    Since 2026-10-24 the ternary is wrapped in padPitchRows(<expr>, …), which orders the rows as
+  //    the page does and adds the not-described ones; it converts nothing, so the ternary is still
+  //    the whole unit edge.
+  const seedKeys = [seedHead + seedBody, seedHead + "useMemo(function(){return " + seedBody, seedHead + "useMemo(function(){return padPitchRows(" + seedBody];
   const seedKey = seedKeys.find((k) => src.includes(k));
   if (!seedKey) dead("the routePitches seed is not where this section reads it — re-read RouteDetail.jsx");
   const seedAt = src.indexOf(seedKey);
-  const seedEnd = src.indexOf(":[blankPitch(1)];", seedAt);
+  const seedEnd = src.indexOf(":[blankPitch(1)]", seedAt);
   if (seedEnd < 0) dead("could not bound the routePitches seed");
   const seedExpr = src.slice(seedAt + seedKey.length - seedBody.length, seedEnd + ":[blankPitch(1)]".length);
   if (!/\.map\(/.test(seedExpr) || !/lengthM:/.test(seedExpr)) dead("the seed is not the map-over-pitchDetail shape this section reads");
-  const seed = new Function("route", "uLenN", "blankPitch", "return " + seedExpr + ";");
+  const seed = new Function("route", "uLenN", "blankPitch", "return " + await stripTypes(seedExpr, { expression: true }) + ";");
 
   const storeKey = 'if(f.type==="pitches")return (vals.pitchDetail||[])';
   const storeAt = src.indexOf(storeKey);
@@ -1199,7 +1213,11 @@ async function runPitches() {
   if (storeEnd < 0) dead("could not bound the pitches submit branch");
   const storeExpr = src.slice(storeAt + 'if(f.type==="pitches")return '.length, storeEnd).replace(/;\s*$/, "");
   if (!/\.map\(/.test(storeExpr) || !/\.filter\(/.test(storeExpr)) dead("the pitches branch is not the map/filter shape this section reads");
-  const store = new Function("vals", "uLenIn", "return " + storeExpr + ";");
+  // The store keeps each row's own label (`n`) through isNumLbl — lifted from source too, not re-typed.
+  const numAt = src.indexOf("function isNumLbl(");
+  if (numAt < 0) dead("isNumLbl is not where the pitches branch reads it");
+  const numSrc = src.slice(numAt, src.indexOf("\n", numAt));
+  const store = new Function("vals", "uLenIn", await stripTypes(numSrc) + "\nreturn " + await stripTypes(storeExpr, { expression: true }) + ";");
 
   const blankPitch = (n) => ({ pitch: n, grade: "", lengthM: "", gear: "", notes: "", anchor: "", bolts: "", crux: false });
   const STORED = { pitch: 1, n: 1, grade: "5.10a", lengthM: 45, gear: "Yellow C4", note: "Sustained hands", anchor: "2 bolts", bolts: 4, crux: true };
@@ -1249,7 +1267,7 @@ async function runPitches() {
      "a placeholder reading (m) over a feet box is the same lie in smaller type"],
     ["the editor summary labels the unit it is showing", /pp\.lengthM\+uLenUnit\(\)/,
      'a hardcoded "m" over a converted draft prints feet labelled metres'],
-    ["the current-value summary is fed the same convention as the draft", /pitchStr\(routePitches\)/,
+    ["the current-value summary is fed the same convention as the draft", /pitchStr\(routePitches[,)]/,
      "fed route.pitchDetail it would compare canonical metres against a display-unit draft"],
   ]) {
     if (re.test(src)) ok(label);
@@ -1299,7 +1317,7 @@ async function runProfile() {
   //    rendered immediately before a literal distance unit cannot convert, whatever the setting
   //    says. Measured across every app + lib source: exactly these three, and zero today.
   const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
-    .concat(fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.jsx$/.test(f)).map((f) => "lib/" + f))
+    .concat(componentFiles(ROOT, { guard: "check:units" }))
     .filter((f) => fs.existsSync(path.join(ROOT, f)));
   if (files.length >= 10) ok(`${files.length} source files walked for hardcoded units`);
   else fail(`only ${files.length} source file(s) found — the sweep below would be vacuous`);
@@ -1456,7 +1474,7 @@ async function runKeyed() {
   section = "keyed";
   // The registry is READ from the app, never restated here: a twelfth keyed editor added to
   // OBJ_KEYS must come into frame by itself, or this section silently stops covering it.
-  const rd = fs.readFileSync(RD_PATH, "utf8");
+  const rd = readAppFile(RD_PATH) /* stitched: the moved components (PR52 on) back in */;
   const m = rd.match(/const OBJ_KEYS\s*=\s*\{([^}]*)\}/);
   if (!m) dead("ANCHOR LOST: `const OBJ_KEYS={` is gone from RouteDetail.jsx — the keyed editors could not be enumerated, so this section proved nothing");
   const registered = [...m[1].matchAll(/([A-Za-z]+)\s*:\s*([A-Z_]+)/g)].map((x) => [x[1], x[2]]);

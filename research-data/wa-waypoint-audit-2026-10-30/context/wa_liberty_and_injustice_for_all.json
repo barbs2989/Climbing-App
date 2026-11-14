@@ -1,0 +1,51 @@
+{
+ "id": "wa_liberty_and_injustice_for_all",
+ "name": "Liberty and Injustice for All",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_liberty_bell",
+  "name": "Liberty Bell Mountain",
+  "lat": 48.515435,
+  "lng": -120.658365,
+  "elevation_ft": 7720,
+  "parent_id": "wa_liberty_bell_group",
+  "ground_ft": 7745
+ },
+ "dist_km": 8.05,
+ "gain_ft": 2400,
+ "high_point_ft": null,
+ "approach_logistics": {
+  "peakLat": 48.515435,
+  "peakLng": -120.658365,
+  "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+  "trailheadLat": 48.51454,
+  "trailheadLng": -120.64332,
+  "trailheadDirection": "From the hairpin-turn/pond pullout on SR-20 just east of Washington Pass (~5,100 ft), via the cairned climbers' paths"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.51454,
+   "lng": -120.64332,
+   "elev": 5200,
+   "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+   "note": "Pullout at the SR-20 hairpin east of Washington Pass; walk back toward the pass to the pond where the East Face climbers' path starts.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR-20 (North Cascades Highway) to Washington Pass and continue east down from the pass to the big hairpin turn below Liberty Bell's East Face, at about 5,200 ft; coming from Winthrop it is the hairpin just before the final climb to the pass. Park on the shoulder at the curve, then walk back up the road toward the pass to a small pond on the south side, where the climbers' path starts at its east end. SR-20 is closed over the pass in winter.",
+   "ground_ft": 5151
+  },
+  {
+   "i": 1,
+   "lat": null,
+   "lng": null,
+   "elev": null,
+   "name": "Top of pitch 5 (Thin Red Line pitch-7 anchor)",
+   "note": "The route ends here, about 650 ft up the East Face, where it joins Thin Red Line. Continue on Thin Red Line or rappel this route with two ropes; it does not reach the summit.",
+   "type": "Topout",
+   "distMi": null,
+   "directions": "Walk back up SR-20 to the pond, round its east end and follow the cairned climbers' path about a mile through forest to the talus below the East Face. Find Thin Red Line and start about 10 m to its right, then climb five pitches on two-bolt anchors to the Thin Red Line pitch-7 anchor.",
+   "ground_ft": null
+  }
+ ]
+}

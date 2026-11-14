@@ -60,7 +60,7 @@ if (!apply) { console.log(`\ndry run: ${plan.size} rows. Re-run with --apply.`);
 
 const backup = path.join(here, `feature-chip-fix-backup-${new Date().toISOString().replace(/[:.]/g, "-")}.json`);
 fs.writeFileSync(backup, JSON.stringify([...plan.keys()].map(id => ({ id, features: live.get(id).features })), null, 1));
-console.log(`backup: ${path.relative(process.cwd(), backup)}`);
+console.log(`backup: ${path.relative(process.cwd(), backup).replace(/\\/g, "/")}`);
 for (const [id, next] of plan) await patchRow("routes", id, { features: next });
 
 // A 200 is not evidence the data changed: re-read and reconcile.

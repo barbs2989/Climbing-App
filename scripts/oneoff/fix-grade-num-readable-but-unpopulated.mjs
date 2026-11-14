@@ -121,7 +121,7 @@ if (!APPLY) {
 const svc = requireServiceKey();
 const rbPath = path.join(ROOT, "scripts", `rollback-grade-num-unpopulated-${Date.now()}.json`);
 fs.writeFileSync(rbPath, JSON.stringify(planned.map((w) => ({ id: w.id, grade_num: w.from })), null, 2));
-console.log(`  rollback written: ${path.relative(ROOT, rbPath)}\n`);
+console.log(`  rollback written: ${path.relative(ROOT, rbPath).replace(/\\/g, "/")}\n`);
 
 let ok = 0;
 for (const w of planned) {

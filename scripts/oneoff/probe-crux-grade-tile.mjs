@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // The CRUX GRADE tile forks the app's grade resolver, and on 117 routes it shows the COMMITMENT
 // grade instead of the climbing grade.
 //
@@ -20,7 +21,7 @@ import path from "node:path";
 import { build } from "esbuild";
 import { shortGrade, gradeDetail, cruxGrade } from "../../lib/grade.js";
 
-const root = new URL("../..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("../..", import.meta.url));
 
 // `gradeLabelRaw` is LIFTED FROM THE APP, never copied: a copy would agree with the source the day
 // it was written and measure a fossil afterwards, which is the whole question here. Node cannot

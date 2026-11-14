@@ -1,0 +1,52 @@
+{
+ "at": "2026-11-04T20:31:12.390Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "wa_lundin_peak_east_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.4278,
+      "lng": -121.4135,
+      "name": "PCT North (Snoqualmie Pass) Trailhead",
+      "type": "Trailhead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_hinman_west_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.6659,
+      "lng": -121.2881,
+      "name": "Necklace Valley Trailhead",
+      "type": "Trailhead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.0587,
+      "lng": -121.736,
+      "name": "Pinnacle Lake Trailhead",
+      "type": "Trailhead"
+     },
+     {
+      "lat": 48.055438,
+      "lng": -121.780481,
+      "elev": 4655,
+      "name": "Bathtub Lakes basin, east of Mount Pilchuck",
+      "type": "Campsite"
+     }
+    ]
+   }
+  }
+ ]
+}

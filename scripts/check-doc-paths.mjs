@@ -45,10 +45,9 @@ const DOCS = DOC_NAMES.map((f) => path.join(ROOT, f));
 // Deliberately named though gone. A STALE entry fails, so this cannot rot into a description of
 // files that are back.
 const GONE = {
-  "scripts/oneoff/probe-reliability-zero-vs-untracked.mjs":
-    "named BY its own promotion notice in check:untracked-factors' entry — the sentence records that " +
-    "the rule ran nowhere until it was promoted, and that the probe PRINTED its core comparison " +
-    "rather than asserting it. Dropping the citation would delete why that guard exists.",
+  "scripts/check-trust-breakdown.mjs":
+    "named BY the retirement note in docs/guards/honesty-claims.md, which points a reader at " +
+    "`git log` on this path — the trust score and its guards were removed on 2026-10-21.",
   "scripts/oneoff/measure-horizontal-overflow.mjs":
     "named BY its own replacement notice — \"It replaces … (#818)\" — so the sentence is about the " +
     "file being gone. Removing the citation would delete the record of why check:overflow exists.",

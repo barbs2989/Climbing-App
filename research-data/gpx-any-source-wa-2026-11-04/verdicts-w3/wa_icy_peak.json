@@ -1,0 +1,74 @@
+{
+  "area_id": "wa_icy_peak",
+  "routes": [
+    {
+      "route_id": "wa_icy_peak_ruth_icy_traverse",
+      "season": {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "window": "Jun-Aug",
+        "evidence": "Searched Mountaineers route page, NPS and trip reports: late June through August is the practical window; crevasses open late in summer; bugs on the approach in July. Ascents here: Jun 2, Jul 2, Aug 5. Stored Jun-Jul; August ascents are within a month of it, so listed Jun-Aug."
+      },
+      "track": {
+        "aid": "2641605",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Round trip (start and end within 50 m of each other) from the Hannegan trailhead, passing over the Ruth Mountain summit and reaching our Icy summit pin within 8 m; that line (Hannegan, Ruth, saddle, Icy glacier, true summit) is this traverse and not the other Icy route. Another ascent logged the same day (2600343) describes the Icy Glacier and true summit. 2024-08-07, summited. Needs a Trailhead pin: our Hannegan pin is stored as a Campsite."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2005525",
+          "verdict": "different",
+          "why": "21 mi from a far trailhead (48.894,-121.653), approach from the west, not Hannegan/Ruth."
+        },
+        {
+          "aid": "2600343",
+          "verdict": "unsure",
+          "why": "Same-day report of the true summit; no track."
+        }
+      ],
+      "pins": [
+        {
+          "type": "Trailhead",
+          "action": "add",
+          "lat": 48.9101,
+          "lng": -121.5927,
+          "name": "Hannegan Trailhead",
+          "evidence": "Recorded track starts 100 m from here; WTA places the Hannegan Pass trailhead (parking at the end of Hannegan Pass Road, Hannegan Campground) at this coordinate. Our existing pin of that spot is typed Campsite (48.910208,-121.591714, about 85 m away); retyping it is an alternative.",
+          "confirmedBy": "https://www.wta.org/go-hiking/hikes/hannegan-pass"
+        }
+      ],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "In early August the traverse from the top of the Icy Glacier toward the col below the true summit crosses a steep, loose dirt gully with serious consequences.",
+          "aids": [
+            "2600343"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "In early August, descending about 600 ft of snow from the col and rejoining the glacier top proved faster and safer than recrossing the dirt gully.",
+          "aids": [
+            "2600343"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "The last pitch to the true summit may need a rope: a short vertical stretch near the top (low 5th) had very loose rock in early August.",
+          "aids": [
+            "2600343"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "The report 2600343 describes a low-5th final pitch on the true summit, which differs from the stored Class 4 grade. Southwest Route already has a track and is not in the packet."
+}

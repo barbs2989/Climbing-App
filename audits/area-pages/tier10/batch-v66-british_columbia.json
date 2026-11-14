@@ -1,0 +1,44 @@
+{
+ "bc_the_circus": {
+  "_expect": {"name": "The Circus", "region": "British Columbia"},
+  "blurb": "The Circus is a bolted wall within the Chek cluster of crags in Cheakamus Canyon, north of Squamish. It holds 19 sport routes and leans hard: roughly two thirds sit between 5.12 and 5.13, a handful are 5.11, and there are just a couple of 5.10s, one 5.8 and a single 5.14 at the top end. That makes it a place for strong sport climbers working on projects rather than a first outing for beginners. Chek as a whole sits close to the road yet feels sheltered from traffic noise, and the Circus is a convenient stop when you want a short, steep list of well-regarded lines.",
+  "review": {"sources": ["https://thetopo.com/crags/cheakamus-canyon/routelist/the-circus", "https://www.mountainproject.com/area/105959514/chek"]}
+ },
+ "bc_diamondback_east": {
+  "_expect": {"name": "Diamondback East", "region": "British Columbia"},
+  "blurb": "Diamondback East is the more demanding side of the Diamondback cluster in the Southern Crags at Skaha Bluffs, near Penticton. It has 19 routes, 13 of them bolted and 6 trad. Most fall in the 5.10 to 5.11 range, with one 5.12, one 5.9 and one 5.8 for variety. The sun arrives early and fades by afternoon, so it suits warm days when you start in the morning. Its short walk from the main lot makes it busy on good days; expect company at the popular lines.",
+  "approach": "From the upper parking lot, follow the trail that starts just below it. After the Daycare crags, a signed path on the right climbs the hill for a couple of minutes to the south side of Diamondback. Continue around the corner to reach the east side.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107292403/east-face", "https://www.mountainproject.com/area/107292396/diamondback"]}
+ },
+ "bc_raven_s_castle_south": {
+  "_expect": {"name": "Raven's Castle South", "region": "British Columbia"},
+  "blurb": "Raven's Castle South is a steep, little-visited sport and trad crag in the Southern Crags of Skaha Bluffs, near Penticton. Of its 19 routes, 17 are bolted and 2 are trad. The grade spread is unusually top-heavy for Skaha: most climbs are 5.12 to 5.14, with a smaller group of 5.10s and a few easier lines at 5.7 to 5.9 for warming up. A steep yellow section on the wall tends to attract climbers working hard projects. Crowds are thin here compared with the neighbouring Diamondback walls.",
+  "review": {"sources": ["https://mountainproject.com/area/106219352/ravens-castle", "https://www.mountainproject.com/area/105946462/skaha-bluffs"]}
+ },
+ "bc_left_central_main_wall": {
+  "_expect": {"name": "Left/Central Main Wall", "region": "British Columbia"},
+  "blurb": "The Left/Central Main Wall is the main section of The Apron at Marble Canyon, a scenic spot off Highway 99 beside Pavilion Lake, northeast of Lillooet. It holds 19 routes, split almost evenly between trad (10) and sport (9). Grades are friendly: about half sit at 5.10, with several 5.9s, a few easier lines and a lone 5.11. Some of the best-known lines here are long, multi-pitch outings, so it suits climbers comfortable with longer days on moderate terrain. Late spring through early fall is the usual window for visiting.",
+  "season_months": [5,6,7,8,9],
+  "review": {"sources": ["https://app.advcollective.com/climbing/exploring-the-left-and-central-main-wall-at-marble-canyon-bc", "https://www.mountainproject.com/area/122705482/the-apron"]}
+ },
+ "bc_e_survivor": {
+  "_expect": {"name": "Survivor", "region": "British Columbia"},
+  "blurb": "Survivor is a cluster of 19 boulder problems within the Grand Wall Boulders, at the foot of the Stawamus Chief in Squamish. The forest here stays cool and shaded, which makes it a reasonable summer choice. Difficulty is mostly in the low to middle range: a spread of V1 and V2 problems, a good number at V4 and V5, and a few easy and harder ones at either end up to V7. Problems tend to be low, and landings can be uneven with rocks and roots, so smaller pads help. The area is a maze, so a guide to the boulders saves time.",
+  "approach": "Follow the Titanic trail, which leaves from the north end of the upper parking lot and also serves the Titanic and Thighmaster boulders.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112842712/grand-wall-boulders", "https://mountainproject.com/area/classics/112842770/e-survivor"]}
+ },
+ "bc_the_metropolis": {
+  "_expect": {"name": "The Metropolis", "region": "British Columbia"},
+  "blurb": "The Metropolis is a handful of big boulders scattered through forest in The Grid, part of the Hunter Creek bouldering near Hope in the Fraser Valley. It holds 19 problems, all bouldering, and its range is wide. Most are V3, with a couple each of V2, V4, V7 and V8, one V6, and three hard lines at V11. That pairing of solid mid-grade problems and a few serious test pieces makes it worth a stop for strong boulderers. The Grid is known for flat, sandy landings in the trees, which makes pad placement straightforward.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109000935/the-metropolis", "https://www.mountainproject.com/area/109000923/the-grid"]}
+ },
+ "_skipped": {
+  "bc_the_farm": "only one fetched page about The Farm; second page did not describe it",
+  "bc_slug_boulder": "could not fetch a second page about the Pemberton Slug Boulder; only the parent area page described it"
+ },
+ "_conflicts": {
+  "bc_diamondback_east": "stored rock granodiorite; Skaha overview says gneiss (https://www.mountainproject.com/area/105946462/skaha-bluffs)",
+  "bc_raven_s_castle_south": "stored rock granodiorite; Skaha overview says gneiss (https://www.mountainproject.com/area/105946462/skaha-bluffs)",
+  "bc_left_central_main_wall": "stored rock limestone; one page says granite (https://app.advcollective.com/climbing/exploring-the-left-and-central-main-wall-at-marble-canyon-bc)"
+ }
+}

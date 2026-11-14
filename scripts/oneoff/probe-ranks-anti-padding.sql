@@ -8,6 +8,10 @@
 --   points.sport 51. Its photo carries no taken-on date and partner B is a brand-new account with
 --   no confirmed email, so NEITHER backs a climb any more; every other value is unchanged. The
 --   0203 rules have their own probe, probe-ranks-anti-collusion.sql.
+--   ...until 0323 (re-verified 2026-10-15): points.bouldering 31 (was 8: its V5 now weighs as 12.5 on
+--   the one grade scale, not 5), points.all 100, onsightPts.bouldering 28, vertYr 6193 (finished
+--   climbs only, plus the 27 m crag route's height twice), and a new stats.by per type. 0323's own
+--   rules: probe-ranks-0323.sql.
 -- a_all.onsights.sport.life 1, a_all.peaks.life 1, confirmations_after_edit 0, near_no_origin true.
 -- Route ids are real catalog rows; if one is ever deleted, pick another of the same shape.
 begin;

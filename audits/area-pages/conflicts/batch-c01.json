@@ -1,0 +1,100 @@
+{
+ "al_right_side_cliff": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "ar_whitcombs_the": {
+  "verdict": "unsure",
+  "why": "Only Mountain Project gives coordinates (34.88075,-93.09024), ~3.7 km from stored; no second source."
+ },
+ "az_hobo_jungle": {
+  "verdict": "unsure",
+  "why": "Demoted on review: the aspect rests on one site and the rock on an area-wide page. Was: Andesite/dacite crag (not rhyolite), facing mostly east.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107651160/hobo-jungle",
+    "https://rockaroundtheworld.co.uk/2023/11/05/flagstaff-from-the-peaks-to-the-pit/",
+    "https://www.mountainproject.com/area/107448766/flagstaff-area"
+   ]
+  }
+ },
+ "bc_hassler_crag": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "ca_summit_area": {
+  "verdict": "unsure",
+  "why": "Coordinate 5 km off from MP; no second source fetched."
+ },
+ "co_01_piggy_bank": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "co_brown_cloud_rocks": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "co_hawk_eagle_ridge": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "co_little_eiger": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "co_main_elk_crag": {
+  "verdict": "unsure",
+  "why": "Main Elk Creek page says crags face south, stored W; one source only."
+ },
+ "co_redgarden_lumpe_to_the_top": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "co_redgarden_s_buttress": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "co_widowmakers": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "ga_lost_wall": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "id_manning_crevice_bridge_area": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "id_thinking_spot_the": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Thinking Spot, The",
+   "region": "Idaho"
+  },
+  "rock": "granite",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106012875/the-thinking-spot",
+    "https://www.visitsouthwestidaho.org/6-climbing-spots-in-southwest-idaho/"
+   ]
+  },
+  "why": "Two sources call the formation granite, not quartzite."
+ },
+ "ky_long_wall": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "ma_mormon_hollow": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "md_gateway_trail_boulders": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ },
+ "md_jungle_cliffs": {
+  "verdict": "keep",
+  "why": "Not a real contradiction, stored value right, finer classification, or sources silent."
+ }
+}

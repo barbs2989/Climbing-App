@@ -34,7 +34,7 @@
 
 import fs from "fs";
 import path from "path";
-import { readAppFile } from "./guard-sources.mjs";
+import { componentFiles, readAppFile } from "./guard-sources.mjs";
 
 // Used ONLY to label a short screen as "still fetching" rather than "blank or broken". It
 // never decides when to stop waiting — settledText does that — so a string it misses costs
@@ -63,10 +63,7 @@ const SOURCE_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
 //   goes quietly wrong.
 export function spinnerCoverage(root = process.cwd()) {
   const files = [...SOURCE_FILES];
-  const libDir = path.join(root, "lib");
-  if (fs.existsSync(libDir)) {
-    for (const f of fs.readdirSync(libDir)) if (/\.jsx?$/.test(f)) files.push(path.join("lib", f));
-  }
+  for (const f of componentFiles(root, { js: true })) files.push(f);
 
   const found = new Map();
   let read = 0;

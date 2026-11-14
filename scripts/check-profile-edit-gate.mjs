@@ -99,8 +99,8 @@ ok("the flag is keyed on a real error, never on `!p`",
 
 // ---- 3. ORDER IS THE INVARIANT ------------------------------------------------------------------
 console.log("\n— the refusal must come BEFORE the draft is built —");
-const oeAt = anchor(app, "openEdit=()=>{", "openEdit");
-const oe = balanced(app, app.indexOf("{", oeAt + "openEdit=()=>".length), "{", "}") || "";
+const oeAt = anchor(app, "openEdit=(sec)=>{", "openEdit");
+const oe = balanced(app, app.indexOf("{", oeAt + "openEdit=(sec)=>".length), "{", "}") || "";
 const guardAt = oe.indexOf("profileUnavailable");
 const draftAt = oe.indexOf("setEditDraft(");
 ok("openEdit consults profileUnavailable at all", guardAt >= 0,
@@ -119,6 +119,8 @@ if (!paySrc || !draftSrc) { console.error("FAIL — could not balance a lifted e
 
 const weekOf = () => ["sat_am"];
 const showRealName = true;                       // App state the draft literal closes over
+const profile = {};                              // ...and so is profile (climbingSince, 0299), unset here
+const _since = null;                             // saveEdit's validated climbing_since (0299), computed above its payload
 const draftFrom = (ME) => eval("(" + draftSrc + ")");            // eslint-disable-line no-eval
 const patchFrom = (d) => {                                        // eslint-disable-line no-eval
   const f = eval("(" + paySrc + ")");

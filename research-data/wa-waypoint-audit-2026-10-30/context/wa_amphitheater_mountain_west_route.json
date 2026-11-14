@@ -1,0 +1,69 @@
+{
+ "id": "wa_amphitheater_mountain_west_route",
+ "name": "West Route",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_amphitheater_mountain",
+  "name": "Amphitheater Mountain",
+  "lat": 48.97566,
+  "lng": -120.192342,
+  "elevation_ft": 8358,
+  "parent_id": "wa_pasayten",
+  "ground_ft": 8367
+ },
+ "dist_km": 29,
+ "gain_ft": 3000,
+ "high_point_ft": 8358,
+ "approach_logistics": {
+  "peakLat": 48.97566,
+  "peakLng": -120.192342,
+  "trailhead": "Andrews Creek Trailhead (Trail #504)",
+  "trailheadLat": 48.7837,
+  "trailheadLng": -120.1086,
+  "trailheadDirection": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.7837,
+   "lng": -120.1086,
+   "elev": 3050,
+   "name": "Andrews Creek Trailhead",
+   "type": "Trailhead",
+   "distMi": null,
+   "elevFt": 3050,
+   "directions": "From Highway 20 in Winthrop, turn onto County Road 1213 (West Chewuch Road) and follow it about 6 miles to where it joins Forest Road 51. Continue north on FR 51 to the end of the pavement and turn right into the Andrews Creek Trailhead at 3,050 ft. A Northwest Forest Pass or Interagency pass is needed to park, and a free self-issued Pasayten Wilderness permit is required.",
+   "ground_ft": 3036
+  },
+  {
+   "i": 1,
+   "lat": 48.926203,
+   "lng": -120.217519,
+   "elev": 6700,
+   "name": "Andrews Pass",
+   "type": "Campsite",
+   "ground_ft": 6675
+  },
+  {
+   "i": 2,
+   "lat": 48.98166,
+   "lng": -120.20075,
+   "elev": 7400,
+   "name": "Upper Cathedral Lake basin",
+   "type": "Campsite",
+   "ground_ft": 7369
+  },
+  {
+   "i": 3,
+   "lat": 48.97556,
+   "lng": -120.19222,
+   "elev": 8358,
+   "name": "Amphitheater Mountain Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 8358,
+   "directions": "Hike Andrews Creek Trail #504 about 12 miles over Andrews Pass, then 3 miles down to the Spanish Camp guard station, and take the trail on the right just before the cabin 3 miles to Upper Cathedral Lake. From the lake follow the trail around the toe of the west ridge about half a mile to a boot path at about 7,200 ft; climb grass and scree into the basin at 8,000 ft, then walk the plateau to its highest point.",
+   "ground_ft": 8362
+  }
+ ]
+}

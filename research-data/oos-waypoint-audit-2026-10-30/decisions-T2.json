@@ -1,0 +1,144 @@
+[
+ {
+  "id": "ca_fingertrip",
+  "i": 0,
+  "name": "Humber Park Trailhead",
+  "from": [
+   33.76448,
+   -116.68575
+  ],
+  "op": "none",
+  "coordinate_key": "33.76448,-116.68575",
+  "source": "https://www.openstreetmap.org/way/198875024",
+  "reason": "verified: OSM way 198875024 'Humber Park Trailhead' at 33.765183,-116.686191, 88 m from stored."
+ },
+ {
+  "id": "ca_right_on",
+  "i": 0,
+  "name": "Hall of Horrors Parking",
+  "from": [
+   33.99825,
+   -116.14483
+  ],
+  "op": "none",
+  "coordinate_key": "33.99825,-116.14483",
+  "source": "https://www.openstreetmap.org/way/88311985",
+  "reason": "verified: OSM parking way 88311985 'Hall of Horrors Parking Area' at 33.998578,-116.144943, 38 m from stored."
+ },
+ {
+  "id": "ca_saber_ridge_traverse_south_to_north",
+  "i": 0,
+  "name": "Crescent Meadow Trailhead",
+  "from": [
+   36.55458,
+   -118.74863
+  ],
+  "op": "none",
+  "coordinate_key": "36.55458,-118.74863",
+  "source": "https://www.openstreetmap.org/node/3557301631",
+  "reason": "verified: OSM node 3557301631 'Crescent Meadow' (road-end stop) at 36.554573,-118.748801, 15 m from stored. No trailhead node published; no change."
+ },
+ {
+  "id": "ca_the_mountaineer_s_route",
+  "i": 0,
+  "name": "Whitney Portal",
+  "from": [
+   36.58609,
+   -118.24182
+  ],
+  "op": "move",
+  "to": [
+   36.586878,
+   -118.24014
+  ],
+  "source": "https://www.openstreetmap.org/node/88405285",
+  "quote": "OSM node 88405285, highway=trailhead, name='Whitney Portal Trailhead', 36.586878,-118.240140 (Nominatim search result)",
+  "ground_ft_at_to": 8345,
+  "reason": "Stored point 174 m from the OSM Whitney Portal Trailhead node (also 87 m from the NRT Upper Trailhead node 88405221); moved to the named trailhead. 3DEP 8345 ft vs pin elev 8355 ft.",
+  "coordinate_key": "36.58609,-118.24182"
+ },
+ {
+  "id": "ca_east_arete_3",
+  "i": 0,
+  "name": "Whitney Portal",
+  "from": [
+   36.58734,
+   -118.24044
+  ],
+  "op": "none",
+  "coordinate_key": "36.58734,-118.24044",
+  "source": "https://www.openstreetmap.org/node/88405285",
+  "reason": "verified: OSM trailhead node 88405285 'Whitney Portal Trailhead' at 36.586878,-118.240140, 58 m from stored."
+ },
+ {
+  "id": "ca_north_ridge_4",
+  "i": 0,
+  "name": "Meysan Lakes Trailhead",
+  "from": [
+   36.58926,
+   -118.23044
+  ],
+  "op": "move",
+  "to": [
+   36.588614,
+   -118.228346
+  ],
+  "source": "https://www.openstreetmap.org/node/5143322280",
+  "quote": "OSM node 5143322280, highway=trailhead, name='Meysan Lake Trailhead', 36.588614,-118.228346 (Nominatim search result)",
+  "ground_ft_at_to": 7896,
+  "reason": "Stored point 200 m from the OSM Meysan Lake Trailhead node; moved. 3DEP 7896 ft vs pin elev 7946 ft (50 ft).",
+  "coordinate_key": "36.58926,-118.23044"
+ },
+ {
+  "id": "ca_west_face_11",
+  "i": 0,
+  "name": "Shepherd Pass Trailhead",
+  "from": [
+   36.72698,
+   -118.27896
+  ],
+  "op": "none",
+  "coordinate_key": "36.72698,-118.27896",
+  "source": "https://www.openstreetmap.org/node/88231836",
+  "reason": "verified: OSM trailhead node 88231836 'Shepherd Pass Trailhead' at 36.726993,-118.278966, 2 m from stored."
+ },
+ {
+  "id": "ca_south_lake_peaks_traverse",
+  "i": 0,
+  "name": "South Lake Trailhead",
+  "from": [
+   37.16925,
+   -118.56561
+  ],
+  "op": "none",
+  "coordinate_key": "37.16925,-118.56561",
+  "source": "https://www.openstreetmap.org/node/3710095154",
+  "reason": "verified: OSM trailhead node 3710095154 'South Lake Trailhead' at 37.169291,-118.565826, 20 m from stored."
+ },
+ {
+  "id": "ca_southeast_face_aka_the_waterfall_route",
+  "i": 0,
+  "name": "North Lake (Piute Pass) Trailhead",
+  "from": [
+   37.22731,
+   -118.62759
+  ],
+  "op": "none",
+  "coordinate_key": "37.22731,-118.62759",
+  "source": "https://www.openstreetmap.org/node/1866439799",
+  "reason": "verified: OSM trailhead node 1866439799 'North Lake Trailhead' at 37.227358,-118.627496, 10 m from stored."
+ },
+ {
+  "id": "ca_southwest_slope_and_northwest_face",
+  "i": 0,
+  "name": "North Lake (Piute Pass) Trailhead",
+  "from": [
+   37.22734,
+   -118.62751
+  ],
+  "op": "none",
+  "coordinate_key": "37.22734,-118.62751",
+  "source": "https://www.openstreetmap.org/node/1866439799",
+  "reason": "verified: same OSM node 1866439799 at 37.227358,-118.627496, 2 m from stored."
+ }
+]

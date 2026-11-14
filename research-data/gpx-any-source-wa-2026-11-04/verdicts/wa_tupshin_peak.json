@@ -1,0 +1,87 @@
+{
+  "area_id": "wa_tupshin_peak",
+  "routes": [
+    {
+      "route_id": "wa_tupshin_peak_east_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "SummitPost says reasonably climbable May-October with early snow over lower brush; Mountaineers runs it in summer; logged East Face ascents Jul and Aug, reports Jul 3 to Sep 13. Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2629994",
+          "verdict": "unsure",
+          "why": "Aug 31 round trip from Stehekin passing within 9 m of the summit, but the same trip includes Devore, the report names no face, and the approach is Devore Creek not our Company Creek text; not a clean single-route track."
+        },
+        {
+          "aid": "2985938",
+          "verdict": "unsure",
+          "why": "Sep 13 combined Tupshin plus Devore, start and end are in the valley; report describes flake pitches only."
+        },
+        {
+          "aid": "2564924",
+          "verdict": "unsure",
+          "why": "Jul 4 partial recording starting mid-slope (about 5,000 ft), no trailhead, no report."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "Most parties in July to September go in by the Devore Creek trail to the Bird Creek camp near 5,400-5,500 ft, then fight slide alder up to a basin camp around 5,800 ft; easy slopes lead to a ridge near 7,000 ft, then a descending traverse to the snow basin east of the summit block.",
+          "aids": [
+            "673511",
+            "1991717",
+            "2562833",
+            "2985938"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In July and early August a snow patch or firm snow in the basin below the face must be crossed to reach the first ramp.",
+          "aids": [
+            "673511",
+            "1991717",
+            "2562833"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "Loose rock on the upper face sends stones down onto parties below; avoid climbing beneath other teams.",
+          "aids": [
+            "673511",
+            "1991717"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "Plan on four or five rappels to get back to the base, with a large anchor below the summit block.",
+          "aids": [
+            "673511",
+            "1991717",
+            "2985938"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 9,
+          "text": "Cams from 0.75 to #2 for the flake pitches; most of the rest was scrambled",
+          "aids": [
+            "2985938"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Our approach text (Company Creek trail, White Goat west slopes) differs from what all in-season reports did (Devore Creek trail and Bird Creek). Summit pin matches Peakbagger. No trailhead pin added: no confirmed coordinate."
+}

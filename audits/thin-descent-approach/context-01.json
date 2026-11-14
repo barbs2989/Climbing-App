@@ -1,0 +1,604 @@
+{
+ "targets": [
+  {
+   "approach": null,
+   "area_id": "wa_agathla_tower",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "id": "wa_east_gully",
+   "name": "East Gully",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Frenchman Coulee, AKA Vantage",
+   "peak": "Agathla Tower",
+   "peak_elev": null,
+   "peak_lat": 47.0247,
+   "peak_lng": -119.9689,
+   "pitches": 0,
+   "siblings": [
+    "wa_agathla_unchained = Agathla Unchained",
+    "wa_lancaster_s_crack = Lancaster's Crack",
+    "wa_house_of_cards = House of Cards"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different stop, a couple of miles up-road of the Eldorado trailhead, and just before the road's end at Cascade Pass). From there a steep, unmaintained climbers' path follows the old Diamond Mine roadbed briefly before climbing hard, crossing several streams, and breaking above treeline (~5,300 ft) to reach the popular Boston Basin high camp around 6,400 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain. From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest. Because Boston Basin is a high-demand cross-country camping zone in North Cascades National Park, overnight parties need a wilderness permit; a portion of peak-season (mid-May to mid-October) slots can be reserved in advance via Recreation.gov's early-access lottery, with the remainder issued as limited first-come, first-served walk-up permits. For this specific route: from Boston Basin high camp, a short approach up into the Forbidden Peak zone reaches this minor summit; North and South Ridge differ only in which side of the formation is climbed from the same camp.",
+   "area_id": "wa_aiguille_de_l_m",
+   "corrected": false,
+   "descent": "Descend the North Ridge: one short rappel from fixed slings, then reverse that ridge.",
+   "descent_text": "Descend the North Ridge: make one rappel of about 40 ft from fixed slings, then downclimb the rest of that ridge and return to camp.",
+   "discipline": "alpine",
+   "grade": "5.6",
+   "id": "wa_south_ridge_6",
+   "name": "South Ridge",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Boston Basin",
+   "peak": "Aiguille de l'M",
+   "peak_elev": null,
+   "peak_lat": 48.50663,
+   "peak_lng": -121.06681,
+   "pitches": 5,
+   "siblings": [
+    "wa_north_ridge_7 = North Ridge"
+   ],
+   "trailhead": "Boston Basin climbers' trailhead (Cascade River Road)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_american_border_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "mountaineering",
+   "grade": "Class 4",
+   "id": "wa_american_border_peak_northeast_face",
+   "name": "Northeast Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Bellingham and Mt Baker Hwy",
+   "peak": "American Border Peak",
+   "peak_elev": 7998,
+   "peak_lat": 48.9954,
+   "peak_lng": -121.6651,
+   "pitches": null,
+   "siblings": [
+    "wa_american_border_peak_southeast_face = Southeast Face / South Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Backpack to Upper Cathedral Lake as for the West Route; the face is directly above the lake on the Middle Finger Buttress.",
+   "area_id": "wa_amphitheater_mountain",
+   "corrected": true,
+   "descent": "As for Middle Finger Buttress routes: hike east along the ridge crest to the small col southwest of the North Ridge, then descend the 3rd-class gully on the north slope.",
+   "descent_text": "From the top, join the Middle Finger Buttress-Left descent line: traverse east to the col southwest of the North Ridge and downclimb the 3rd-class north-slope gully back to the approach trail.",
+   "discipline": "alpine",
+   "grade": "5.11c",
+   "id": "wa_amphitheater_mountain_finger_of_fatwa",
+   "name": "Finger of Fatwa",
+   "need_approach": true,
+   "need_descent": false,
+   "parent": "Pasayten Wilderness",
+   "peak": "Amphitheater Mountain",
+   "peak_elev": 8358,
+   "peak_lat": 48.97566,
+   "peak_lng": -120.192342,
+   "pitches": 5,
+   "siblings": [
+    "wa_amphitheater_mountain_middle_finger_buttress_left_side = Middle Finger Buttress - Left Side",
+    "wa_amphitheater_mountain_middle_finger_buttress_right_side = Middle Finger Buttress - Right Side",
+    "wa_amphitheater_mountain_west_route = West Route",
+    "wa_amphitheater_mountain_north_ridge = North Ridge",
+    "wa_amphitheater_mountain_pilgrimage_to_mecca = Pilgrimage to Mecca"
+   ],
+   "trailhead": "Andrews Creek Trailhead (Trail #504)"
+  },
+  {
+   "approach": "Backpack to Upper Cathedral Lake as for the West Route; the route is on the right side of the largest buttress above the lake.",
+   "area_id": "wa_amphitheater_mountain",
+   "corrected": false,
+   "descent": "Hike east along the ridge crest to a small col southwest of the North Ridge, then descend a 3rd-class gully down the north slope.",
+   "descent_text": "From the top, traverse east along the ridge crest to the col southwest of the North Ridge and downclimb the 3rd-class north-slope gully back toward the approach trail.",
+   "discipline": "alpine",
+   "grade": "5.9",
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+   "name": "Middle Finger Buttress - Right Side",
+   "need_approach": true,
+   "need_descent": false,
+   "parent": "Pasayten Wilderness",
+   "peak": "Amphitheater Mountain",
+   "peak_elev": 8358,
+   "peak_lat": 48.97566,
+   "peak_lng": -120.192342,
+   "pitches": 7,
+   "siblings": [
+    "wa_amphitheater_mountain_middle_finger_buttress_left_side = Middle Finger Buttress - Left Side",
+    "wa_amphitheater_mountain_west_route = West Route",
+    "wa_amphitheater_mountain_finger_of_fatwa = Finger of Fatwa",
+    "wa_amphitheater_mountain_north_ridge = North Ridge",
+    "wa_amphitheater_mountain_pilgrimage_to_mecca = Pilgrimage to Mecca"
+   ],
+   "trailhead": "Andrews Creek Trailhead (Trail #504)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_amphitheater_the",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "id": "wa_gully_1",
+   "name": "Gully 1",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Cape Disappointment",
+   "peak": "Amphitheater, The",
+   "peak_elev": null,
+   "peak_lat": 46.29594,
+   "peak_lng": -124.07394,
+   "pitches": 0,
+   "siblings": [
+    "wa_finnish_face = Finnish Face",
+    "wa_the_greater_roof = The Greater Roof",
+    "wa_gully_2 = Gully 2"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_amphitheater_the",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "id": "wa_gully_2",
+   "name": "Gully 2",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Cape Disappointment",
+   "peak": "Amphitheater, The",
+   "peak_elev": null,
+   "peak_lat": 46.29594,
+   "peak_lng": -124.07394,
+   "pitches": 0,
+   "siblings": [
+    "wa_finnish_face = Finnish Face",
+    "wa_the_greater_roof = The Greater Roof",
+    "wa_gully_1 = Gully 1"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_bald_eagle_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "mountaineering",
+   "grade": null,
+   "id": "wa_bald_eagle_peak_daniel_glacier",
+   "name": "Daniel Glacier",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Bald Eagle Peak",
+   "peak_elev": 6259,
+   "peak_lat": 47.616805,
+   "peak_lng": -121.271555,
+   "pitches": null,
+   "siblings": [
+    "wa_bald_eagle_peak_south_spur = South Spur",
+    "wa_bald_eagle_peak_southwest_route = Southwest Route",
+    "wa_bald_eagle_peak_scramble = Standard Scramble"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_bald_eagle_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_bald_eagle_peak_south_spur",
+   "name": "South Spur",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Bald Eagle Peak",
+   "peak_elev": 6259,
+   "peak_lat": 47.616805,
+   "peak_lng": -121.271555,
+   "pitches": null,
+   "siblings": [
+    "wa_bald_eagle_peak_daniel_glacier = Daniel Glacier",
+    "wa_bald_eagle_peak_southwest_route = Southwest Route",
+    "wa_bald_eagle_peak_scramble = Standard Scramble"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_bald_eagle_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_bald_eagle_peak_southwest_route",
+   "name": "Southwest Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Bald Eagle Peak",
+   "peak_elev": 6259,
+   "peak_lat": 47.616805,
+   "peak_lng": -121.271555,
+   "pitches": null,
+   "siblings": [
+    "wa_bald_eagle_peak_daniel_glacier = Daniel Glacier",
+    "wa_bald_eagle_peak_south_spur = South Spur",
+    "wa_bald_eagle_peak_scramble = Standard Scramble"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_big_chiwaukum",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_big_chiwaukum_mount_temple_ridge",
+   "name": "Mount Temple Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Chiwaukum Range",
+   "peak": "Big Chiwaukum",
+   "peak_elev": 8081,
+   "peak_lat": 47.702272,
+   "peak_lng": -120.934692,
+   "pitches": null,
+   "siblings": [
+    "wa_big_chiwaukum_west_ridge = West Ridge via Wildhorse Creek",
+    "wa_big_chiwaukum_three_musketeers_ridge = Three Musketeers Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_big_chiwaukum",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_big_chiwaukum_three_musketeers_ridge",
+   "name": "Three Musketeers Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Chiwaukum Range",
+   "peak": "Big Chiwaukum",
+   "peak_elev": 8081,
+   "peak_lat": 47.702272,
+   "peak_lng": -120.934692,
+   "pitches": null,
+   "siblings": [
+    "wa_big_chiwaukum_west_ridge = West Ridge via Wildhorse Creek",
+    "wa_big_chiwaukum_mount_temple_ridge = Mount Temple Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Begins from the Big Four viewpoint / Ice Caves Trailhead on the Mountain Loop Highway, as with the peak's other technical routes.",
+   "area_id": "wa_big_four_mountain",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "mountaineering",
+   "grade": "Class 4",
+   "id": "wa_big_four_mountain_northwest_ridge",
+   "name": "Northwest Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Darrington and Mountain Loop Hwy",
+   "peak": "Big Four Mountain",
+   "peak_elev": 6170,
+   "peak_lat": 48.042355,
+   "peak_lng": -121.523305,
+   "pitches": null,
+   "siblings": [
+    "wa_big_four_mountain_tower_route = Tower Route",
+    "wa_big_four_mountain_spindrift_couloir = Spindrift Couloir",
+    "wa_big_four_mountain_dry_creek_route = Dry Creek Route"
+   ],
+   "trailhead": "Ice Caves Trailhead"
+  },
+  {
+   "approach": "Approach via the Big Four Ice Caves trail from the Big Four Picnic Area / Ice Caves Trailhead, then traverse toward the north side of the mountain to reach the base of the first tower's gully.",
+   "area_id": "wa_big_four_mountain",
+   "corrected": false,
+   "descent": "Descend via the north side towers, reversing rappels between towers; alternatively downclimb to the notch system used on ascent.",
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.7",
+   "id": "wa_big_four_mountain_tower_route",
+   "name": "Tower Route",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Darrington and Mountain Loop Hwy",
+   "peak": "Big Four Mountain",
+   "peak_elev": 6170,
+   "peak_lat": 48.042355,
+   "peak_lng": -121.523305,
+   "pitches": null,
+   "siblings": [
+    "wa_big_four_mountain_northwest_ridge = Northwest Ridge",
+    "wa_big_four_mountain_spindrift_couloir = Spindrift Couloir",
+    "wa_big_four_mountain_dry_creek_route = Dry Creek Route"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Approach as for the East Ridge/Hardscrabble Route: walk/bike the gated Middle Fork Snoqualmie River Road to the Hardscrabble Lakes boot path, then continue to lower Hardscrabble Lake. Traverse the lake's left (north) side and scramble two rock bands to reach the buttress's south side at roughly 5,400 ft.",
+   "area_id": "wa_big_snow_mountain",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.7",
+   "id": "wa_big_snow_mountain_east_buttress",
+   "name": "East Buttress",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Big Snow Mountain",
+   "peak_elev": 6680,
+   "peak_lat": 47.5348342,
+   "peak_lng": -121.365929,
+   "pitches": 10,
+   "siblings": [
+    "wa_big_snow_mountain_southwest_ridge = Southwest Ridge",
+    "wa_big_snow_mountain_east_ridge_hardscrabble_route = East Ridge (Hardscrabble) Route",
+    "wa_big_snow_mountain_sasquatch_s_breath = Sasquatch's Breath",
+    "wa_big_snow_mountain_north_slope_dingford_route = North Slope (Dingford) Route"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_big_snow_mountain",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_big_snow_mountain_southwest_ridge",
+   "name": "Southwest Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Big Snow Mountain",
+   "peak_elev": 6680,
+   "peak_lat": 47.5348342,
+   "peak_lng": -121.365929,
+   "pitches": null,
+   "siblings": [
+    "wa_big_snow_mountain_east_buttress = East Buttress",
+    "wa_big_snow_mountain_east_ridge_hardscrabble_route = East Ridge (Hardscrabble) Route",
+    "wa_big_snow_mountain_sasquatch_s_breath = Sasquatch's Breath",
+    "wa_big_snow_mountain_north_slope_dingford_route = North Slope (Dingford) Route"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "As for the other routes: Rainy Pass/Lake Ann trailhead on SR-20, via Heather Pass and Lewis Lake to Wing Lake camp; the East Buttress is accessed from the east side of the Wing Lake basin rather than the south col or NE ridge notch.",
+   "area_id": "wa_black_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "scrambling",
+   "grade": "Class 4",
+   "id": "wa_black_peak_east_buttress",
+   "name": "East Buttress",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Washington Pass",
+   "peak": "Black Peak",
+   "peak_elev": 8970,
+   "peak_lat": 48.523611,
+   "peak_lng": -120.816193,
+   "pitches": null,
+   "siblings": [
+    "wa_south_ridge_3 = South Ridge",
+    "wa_black_peak_northeast_ridge = Northeast Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Standard approach follows the same Lucerne ferry -> Holden Village -> hike to the North Star-Bonanza col camp used for the Soviet Route; the first-ascent party's much longer bike-and-hike approach was due to temporary ferry/road closures in 2013 and is not typical.",
+   "area_id": "wa_bonanza_peak",
+   "corrected": false,
+   "descent": "No dedicated descent beta found; presumed similar to the Soviet Route's two-rappel descent given the routes share their upper 600 ft and summit.",
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "id": "wa_bonanza_peak_oregonian_route",
+   "name": "Oregonian Route",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Entiat Mountain Range",
+   "peak": "Bonanza Peak",
+   "peak_elev": 9516,
+   "peak_lat": 48.238217,
+   "peak_lng": -120.866415,
+   "pitches": null,
+   "siblings": [
+    "wa_bonanza_peak_cascadian_route = Cascadian Route",
+    "wa_bonanza_peak_mary_green_glacier = Mary Green Glacier (Standard Route)",
+    "wa_bonanza_peak_northeast_buttress = Northeast Buttress",
+    "wa_needle_peak_north_ridge = Northwest Ridge (from Needle Peak)",
+    "wa_soviet_route = Soviet Route"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From Stehekin (reached only by passenger boat or floatplane up Lake Chelan — no road access), follow the Agnes Creek Trail upstream and leave the maintained trail at Swamp Creek to travel cross-country onto Needle Peak's north side and gain the North Ridge.",
+   "area_id": "wa_bonanza_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.8",
+   "id": "wa_needle_peak_north_ridge",
+   "name": "Northwest Ridge (from Needle Peak)",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Entiat Mountain Range",
+   "peak": "Bonanza Peak",
+   "peak_elev": 9516,
+   "peak_lat": 48.238217,
+   "peak_lng": -120.866415,
+   "pitches": null,
+   "siblings": [
+    "wa_bonanza_peak_oregonian_route = Oregonian Route",
+    "wa_bonanza_peak_cascadian_route = Cascadian Route",
+    "wa_bonanza_peak_mary_green_glacier = Mary Green Glacier (Standard Route)",
+    "wa_bonanza_peak_northeast_buttress = Northeast Buttress",
+    "wa_soviet_route = Soviet Route"
+   ],
+   "trailhead": "High Bridge (Stehekin Valley Road)"
+  }
+ ],
+ "richSiblingsOnSamePeak": {
+  "wa_american_border_peak_southeast_face": {
+   "approach": "Start at the Twin Lakes trailhead (~5,200 ft), the rough, rutted end of Twin Lakes Road (many parties park short and walk the final rutted miles, as the road note indicates). From the parking area pick up the signed High Pass Trail; at about a quarter mile it splits from the short spur up Winchester Mountain Lookout — stay left/north on the High Pass Trail. The trail contours along the west side of Winchester Mountain, dips across an unnamed minor saddle often called Low Pass (open views west to Tomyhoi Peak), then climbs steadily to High Pass itself (~5,960 ft, roughly 2 miles and about 750 ft of gain from the trailhead), where Mount Baker comes into view to the south. At High Pass, leave the maintained tread and follow the climbers' path north and west down to the old Gargett Mine workings (~5,400 ft) — the mine creek is the last reliable water source until you reach lingering snow patches high on the peak. From the mine, traverse north and contour onto Mount Larrabee's southwest and west flanks: this is a long, unmarked, exposed sidehill (well over a mile) across steep talus, scree, heather, and brush, aiming for a notch around 6,200-6,300 ft on Larrabee's northwest rib. Drop sl",
+   "area_id": "wa_american_border_peak",
+   "descent_text": "Descend by reversing the Southeast Face/South Ridge line back down to the South AmBo Saddle — the terrain is loose and complex enough that there is no clean walk-off alternative. Expect two to four short rappels through the summit chimney/gully system, with the count depending on party size, rope handling, and which chockstone squeeze you take: the standard, recommended line threads the low \"keyhole\"/tunnel beneath a large chockstone (pull packs off, push them through, crawl after), giving a clean, low-angle rappel; parties who instead rig over the lip of the chockstone get a harder, overhanging drop and sometimes add an extra rappel to manage it. A single 60m rope, doubled, is sufficient for the individual rappels (each reported at around 75 ft/~23 m), so plan on doubled-strand rappels off a 60m rope rather than needing two ropes. Anchors are entirely natural — slung chockstones and horns with in-place webbing that is often sun-bleached and aged — there are no bolts on this route, so inspect and back up (or replace) any tat you find and carry your own cord/rap rings; at least one party describes sacrificing a rope that got stuck in a rappel crack, so a pull-cord or a stuck-rope co",
+   "name": "Southeast Face / South Ridge"
+  },
+  "wa_amphitheater_mountain_finger_of_fatwa": {
+   "approach": "Backpack to Upper Cathedral Lake as for the West Route; the face is directly above the lake on the Middle Finger Buttress.",
+   "area_id": "wa_amphitheater_mountain",
+   "descent_text": "From the top, join the Middle Finger Buttress-Left descent line: traverse east to the col southwest of the North Ridge and downclimb the 3rd-class north-slope gully back to the approach trail.",
+   "name": "Finger of Fatwa"
+  },
+  "wa_amphitheater_mountain_middle_finger_buttress_left_side": {
+   "approach": "Approach exactly as for Cathedral Peak/Amphitheater: backpack to Upper Cathedral Lake (see West Route / peak-level approach), then walk around to the south side of the lake (by the west shore if you are camped on the north side) and scramble roughly 15 minutes to the base of the buttress directly above the lake.",
+   "area_id": "wa_amphitheater_mountain",
+   "descent_text": "From the top of the buttress, walk east along the ridge crest to the small col located southwest of the North Ridge, then downclimb the 3rd-class gully on the north slope back toward the approach trail.",
+   "name": "Middle Finger Buttress - Left Side"
+  },
+  "wa_amphitheater_mountain_middle_finger_buttress_right_side": {
+   "approach": "Backpack to Upper Cathedral Lake as for the West Route; the route is on the right side of the largest buttress above the lake.",
+   "area_id": "wa_amphitheater_mountain",
+   "descent_text": "From the top, traverse east along the ridge crest to the col southwest of the North Ridge and downclimb the 3rd-class north-slope gully back toward the approach trail.",
+   "name": "Middle Finger Buttress - Right Side"
+  },
+  "wa_amphitheater_mountain_north_ridge": {
+   "approach": "Backpack to Upper Cathedral Lake/Cathedral Pass as for the West Route, then scramble to the base of the north ridge from the pass.",
+   "area_id": "wa_amphitheater_mountain",
+   "descent_text": "From the summit plateau, either reverse toward Cathedral Pass and drop southwest around the mountain to Upper Cathedral Lake, or head to a small col just southwest of the North Ridge and downclimb a 3rd-class gully on the north slope back toward the approach.",
+   "name": "North Ridge"
+  },
+  "wa_amphitheater_mountain_pilgrimage_to_mecca": {
+   "approach": "Backpack in via Andrews Creek or Chewuch River trailheads to Upper Cathedral Lake (see West Route approach). From camp on the north side of Upper Cathedral Lake, walk about 15 minutes around the west side of the lake and scramble up to the base of the Ka'aba Buttress.",
+   "area_id": "wa_amphitheater_mountain",
+   "descent_text": "From the top of the route, hike east to gain the saddle area of Amphitheater Mountain, then follow the descent trail/slopes south back down to Upper Cathedral Lake to rejoin the approach.",
+   "name": "Pilgrimage to Mecca"
+  },
+  "wa_amphitheater_mountain_west_route": {
+   "approach": "Two common trailheads reach the base: (1) Andrews Creek Trailhead (Trail 504) — from Winthrop, take Hwy 20 to County Road 1213/West Chewuch Road, drive ~6 miles to Forest Road 51, continue ~22 miles to the trailhead at the end of the pavement (3,050 ft). Hike via Andrews Pass and the Boundary Trail to Upper Cathedral Lake (roughly 7 hours for a loaded backpacking pace). (2) Chewuch River Trail/Thirtymile Trailhead — a longer approach (about 20 miles and ~4,900 ft gain to Upper Cathedral Lake), also joining near Cathedral Pass. Most parties backpack in and camp at or near Upper Cathedral Lake (~7,380 ft) before a summit day.",
+   "area_id": "wa_amphitheater_mountain",
+   "descent_text": "From the summit plateau, descend the same scree/grass slopes back into the west basin, then follow the boot path down to the trail and back to Upper Cathedral Lake. Parties combining with Cathedral Peak often traverse between the two via a connecting gully rather than returning all the way to the lake between summits.",
+   "name": "West Route"
+  },
+  "wa_bald_eagle_peak_scramble": {
+   "approach": "From the pullout along FR 6835 (West Fork Foss Road) — just past the concrete bridge over the East Fork Foss River, about half a mile from its junction with FR 68 and roughly 5.2 miles from US-2 at Skykomish — there is no maintained trail. Climbers cross to the north side of the road and pick up the toe of Bald Eagle's north ridge at about 1,600 ft, entering second-growth forest thick with fallen timber that requires weaving/scrambling over deadfall for the first few hundred feet of gain. Stay on or near the ridge crest heading south-southeast; around 2,600 ft the forest transitions to older growth and the underbrush thins out, making travel noticeably easier and the ridgeline easy to follow with few reasons to leave it. The going stays moderate until roughly 4,500 ft, where the ridge narrows and steepens into the trip's brushiest stretch — a pointier crest with real drop-offs on both sides, dense small trees/slide alder crowding the tread, and (in season) heavy mosquito pressure; move carefully here as exposure picks up. By 5,200 ft the ridge opens into rockier, more open terrain, with snow patches lingering later into the season (more persistent on the east side of the crest than",
+   "area_id": "wa_bald_eagle_peak",
+   "descent_text": "This is a walk-off/downclimb — descend by reversing the North Ridge exactly as ascended; there is no rappelling on the standard route. From the summit, downclimb the steep snow/small-tree section back to the top of the 5,400 ft cliff band, then carefully reverse the rising traverse and gully bypass on the east side of the crest to regain the ridge crest below the cliffs — this bypass is the one spot demanding real route-finding and careful downclimbing (loose rock and exposure in the gully), so many parties down-face here rather than walk it. Below 5,200 ft, follow the open rocky ridge back into the brushy, exposed 4,500-5,200 ft stretch, staying on the crest to avoid the steep drop-offs to either side. Once back into old-growth forest below 4,500 ft the ridge broadens and travel gets easy and fast; one party found the descent takes well under half the time of the ascent once past the brush and cliff band. Continue down through the second-growth/deadfall lower forest to regain FR 6835 at the East Fork Foss River bridge pullout. No technical anchors (bolted or natural) are used on this route — it is entirely natural terrain.",
+   "name": "Standard Scramble"
+  },
+  "wa_big_chiwaukum_west_ridge": {
+   "approach": "From the Whitepine Creek Trailhead (about 2,800 ft), follow Whitepine Creek Trail #1582 up the valley for about 2.5 miles to the junction with Wildhorse Creek Trail #1592. Bear left onto the Wildhorse Creek Trail and climb through forest into the Wildhorse basin to about 5,400 ft, where the trail passes directly west of the summit. Leave the trail here.",
+   "area_id": "wa_big_chiwaukum",
+   "descent_text": "Reverse the route: down the summit ledges to below the headwall, back west along the west ridge, then down through the meadows to rejoin the Wildhorse Creek Trail, and out the Whitepine Creek Trail to the car.",
+   "name": "West Ridge via Wildhorse Creek"
+  },
+  "wa_big_four_mountain_dry_creek_route": {
+   "approach": "From the Big Four Picnic Area / Ice Caves Trailhead (1,640 ft) on the Mountain Loop Highway, follow the paved nature-trail toward the ice caves, then leave the trail to cross the South Fork Stillaguamish River on a fallen log. Travel southeasterly through open forest roughly a mile to reach Dry Creek, then ascend through the lower basin -- in snow conditions via a hidden snow chute, in bare conditions via a series of class 3-4 ledges and ramps -- into the upper basin. From the upper basin, climb the steep main couloir, then traverse the exposed red slabs to gain the summit ridge.",
+   "area_id": "wa_big_four_mountain",
+   "descent_text": "Most parties descend the same Dry Creek line they climbed. From the true summit, reverse the summit ridge over the lower (first) bump, then set up a roughly 60-meter rappel from a notch on the south ridge -- some parties have found a 60m rope barely reaches the anchor/chockstone. Below the rappel, bypass steep snow and waterfall-moistened rock to the side, then downclimb roughly two more rope-lengths of steep terrain to regain the lower basin before retracing the approach back across the South Fork Stillaguamish and out to the trailhead. In winter/spring, parties instead downclimb the Dry Creek couloir itself, which parties describe as a genuinely dangerous, insecure downclimb.",
+   "name": "Dry Creek Route"
+  },
+  "wa_big_four_mountain_spindrift_couloir": {
+   "approach": "Walk the nearly wheelchair-accessible nature trail from the Big Four Picnic Area toward the Ice Caves, to the open basin below the North Face. From the trail's end, move right to find a break in the lower cliffs -- straightforward with adequate snow cover, but may require bushwhacking on the far right in sparse-snow years.",
+   "area_id": "wa_big_four_mountain",
+   "descent_text": "The route tops out on the summit ridge well west of the true summit. Descent goes northwest, via rappels and steep downclimbing, to the col between Big Four and Hall Peak; from there, multiple tree-anchored rappels lead back down through the North Face bowl to the base of the face. Careful navigation is essential -- parties have mistakenly descended south instead of northwest in poor visibility.",
+   "name": "Spindrift Couloir"
+  },
+  "wa_big_snow_mountain_east_ridge_hardscrabble_route": {
+   "approach": "Start at the Dingford Creek Trailhead gate and walk (or mountain-bike) the closed Middle Fork Snoqualmie River Road about 7 miles to the boot path for Hardscrabble Lakes, which starts roughly half a mile short of the old Hardscrabble Horse Camp, across the road from a large fallen log. Follow the climbers path east through forest to upper Hardscrabble Lake, staying near the inlet — straying left leads into cliff bands.",
+   "area_id": "wa_big_snow_mountain",
+   "descent_text": "From the summit, retrace the east ridge onto the north-slope granite slab, climb back up to the col, and descend the gully to upper Hardscrabble Lake; follow the inlet-side climbers path back down to the lower lake and rejoin the old road for the multi-mile walk-out.",
+   "name": "East Ridge (Hardscrabble) Route"
+  },
+  "wa_big_snow_mountain_north_slope_dingford_route": {
+   "approach": "Drive to the Dingford Creek Trailhead gate via Middle Fork Snoqualmie River Rd / FSR 56 (about 18 mi from North Bend; the last several miles are rough gravel, high-clearance recommended). Hike the Dingford Creek Trail roughly 3.2 mi to the Hester Lake Trail junction, continue left (east) toward Myrtle Lake (about 2 more miles). From Myrtle Lake, leave the trail and climb steep, increasingly brushy terrain toward Big Snow Lake, then traverse right around Snowflake Lake before ascending gullies/a snow couloir on the mountain's NW flank to the upper rock fields.",
+   "area_id": "wa_big_snow_mountain",
+   "descent_text": "Downclimb the same chutes/couloir used on ascent, taking care on crumbly, mossy rock and any residual snow or ice, especially early in the season; traverse back around Snowflake Lake, drop to Big Snow Lake, then pick a line down through brush to Myrtle Lake and follow the Dingford Creek Trail out to the trailhead.",
+   "name": "North Slope (Dingford) Route"
+  },
+  "wa_black_peak_northeast_ridge": {
+   "approach": "As for the South Ridge: Rainy Pass/Lake Ann trailhead on SR-20, via Heather Pass and Lewis Lake to a camp at Wing Lake (~6,900 ft). From camp, ascend snow (a small permanent snowfield/mini-glacier can persist below the col into September) toward the low point in the Northeast Ridge — following the hogsback moraine wide right and then traversing back left to the notch is reported to stay on more stable ground than a direct line.",
+   "area_id": "wa_black_peak",
+   "descent_text": "From the summit, work down and south toward the South Ridge route, using one rappel or a down-climb to get below the initial band of rock, then continuing south to the south col. From there the descent follows the South Ridge's loose, cairned gully (described by multiple parties as tedious and 'choss'-prone) back down to snow slopes and Wing Lake. Some parties glissade the snow lower down early in the season.",
+   "name": "Northeast Ridge"
+  },
+  "wa_bonanza_peak_cascadian_route": {
+   "approach": "Multi-stage approach (~11+ miles): drive to Chelan, ferry to Lucerne, bus to Holden Village, then hike to a camp at about 7,000 ft near the North Star-Bonanza col - a full day of travel and approach.",
+   "area_id": "wa_bonanza_peak",
+   "descent_text": "From the Southwest Summit, downclimb/traverse to the Isella Glacier and descend along an undulating line of steep rock and moraine at about two-thirds of the glacier's height, then cross through a notch in the south ridge to regain the North Star-Bonanza col camp.",
+   "name": "Cascadian Route"
+  },
+  "wa_bonanza_peak_mary_green_glacier": {
+   "approach": "From Holden Village (~3,300') walk the gravel road/Railroad Creek Trail (FST 1256) west about 0.9 mile to the signed junction with the Holden Lake Trail and bear right (north). The Holden Lake Trail climbs steadily for about 4 miles through forest, brush, and a few small side-creek crossings (reliable water) to Holden Lake (5,278'), set in a cirque directly below Bonanza's east face — a natural camp and last easy water before things get rougher. From the lake's outlet the tread becomes increasingly faint, skirting the north shore through slide alder and talus (real bushwhacking and route-finding here, especially early season with high water), then climbing a hillside traverse northwest to Holden Pass (6,360'), the standard high camp and last reliable water before committing to the glacier. From the pass, make a rising traverse west along the ridge/slope to a snowfield beneath rock slabs around 7,000–7,300'; scramble the class 3 slabs — start high and right to skirt a waterfall — to gain the northern edge of the Mary Green Glacier. All told, roughly 5 miles and ~3,000' gain from Holden Village to high camp, then another ~3,000' of glacier and summit rock above that. Hazards: black f",
+   "area_id": "wa_bonanza_peak",
+   "descent_text": "Reverse the route: down-climb the summit ridge and rocky rib back toward the glacier, staying climber's left of the standard line to dodge rockfall funneling down the gullies. The established descent uses 6–7 fixed rappel stations (horns, flakes, and slung boulders left by prior parties) along the class 3–4 rock band, typically consolidated into about four rappels using a 60m x 8mm rope — a common sequence is one rappel off the east ridge into the upper gully, then three more down through the rock to within roughly 200 feet of the glacier, where you downclimb or walk the rest onto snow. One frequently-used anchor sits on a large boulder/flake at a wet slab lower on the route; multiple trip reports flag it as sketchy and overdue for fresh webbing, so back it up or extend it rather than trusting it outright. Inspect every fixed station before weighting it — Cascades alpine anchors get sun-bleached, chewed by rockfall, or buried season to season. Parties comfortable downclimbing exposed 3rd/easy 4th class can skip some of the raps. Once back on the glacier, recross the moat and descend to Holden Pass camp.",
+   "name": "Mary Green Glacier (Standard Route)"
+  },
+  "wa_bonanza_peak_northeast_buttress": {
+   "approach": "The approach follows the same trailhead-in as the standard route — Railroad Creek Trail (FST 1256) from Holden Village to the Holden Lake Trail junction, then up to Holden Lake (5,278') and Holden Pass (6,360') for high camp — but instead of angling onto the Mary Green Glacier itself, continue on benches and talus/heather to climber's right (east/north side) of the glacier. This adds roughly another 3 hours and substantial elevation gain beyond Holden Pass to reach the base of the Northeast Buttress/Face around 8,350'. Total gain ends up close to the standard Mary Green line's, since both leave the same camp and finish on the same summit. Water sources match the standard approach (Holden Lake, Holden Pass); above the pass, plan on carrying what you need since there's little reliable water on the buttress approach itself. Expect loose rock and routefinding on the benches, and — because this line stays right of the glacier on rock rather than crossing snow/ice — less exposure to crevasse hazard but more exposure to rockfall and unconsolidated talus underfoot.",
+   "area_id": "wa_bonanza_peak",
+   "descent_text": "The straightforward descent reverses down to the Mary Green Glacier and follows the standard route's descent: down-climb the summit ridge/rock rib, use the fixed rappel stations through the class 3–4 band (about four rappels with a 60m rope, 8mm lines are common), cross the moat, and descend the glacier to Holden Pass camp — see the Mary Green Glacier route's descent notes for full detail on that shared lower section. Parties combining this face with a full three-summit traverse instead descend from the Southwest Peak via ledges onto the Isella Glacier's upper snowfields, traverse to the Southeast (Holden) Ridge, climb a short ~5.7 chimney, and then make a single rappel from the col back down onto the Mary Green Glacier before rejoining the standard glacier descent to camp. Either way, expect loose rock on the upper buttress and ridge sections and take care with rope management around the gendarmes and notches.",
+   "name": "Northeast Buttress"
+  },
+  "wa_north_ridge_7": {
+   "approach": "From Seattle, drive I-5 north to Burlington, then WA-20 east through Marblemount, and turn onto Cascade River Road, following its paved-then-gravel surface about 21.7 miles to a small pullout at 3,200 ft that marks the unmaintained Boston Basin Trailhead (a different stop from the Eldorado trailhead about 2.5 miles down-road, and just before the road's end at Cascade Pass). From there a steep, unmaintained climbers' path follows the old Diamond Mine roadbed briefly before climbing hard, crossing several streams, and breaking above treeline (~5,300 ft) to reach the popular Boston Basin high camp around 6,400 ft — roughly 3-4 miles one-way with about 3,000-3,300 ft of elevation gain. From camp, West Ridge climbers continue cross-country over the glacier to a couloir that gains the ridge crest. Because Boston Basin is a high-demand cross-country camping zone in North Cascades National Park, overnight parties need a wilderness permit; a portion of peak-season (mid-May to mid-October) slots can be reserved in advance via Recreation.gov's early-access lottery, with the remainder issued as limited first-come, first-served walk-up permits. For this specific route: from Boston Basin high ca",
+   "area_id": "wa_aiguille_de_l_m",
+   "descent_text": "From tower summit, establish anchor and rappel 40 feet. Reverse fourth-class scrambling pitches and traverse back toward notch before descending to camp.",
+   "name": "North Ridge"
+  },
+  "wa_south_ridge_3": {
+   "approach": "Start at the Rainy Pass Picnic Area/Lake Ann trailhead on SR 20 (milepost ~157.5, elev. ~4,850 ft; 40-car lot with privy). Follow the Lake Ann/Maple Pass Trail (#740) about 1-1.5 miles to a signed junction and take the right fork toward Heather Pass (the left fork is the spur to Lake Ann). Climb through meadows to Heather Pass (~2.6 mi, ~6,100 ft), where the maintained trail ends. From the pass, pick up the unmarked climbers' path heading north, crossing two talus/boulder fields before dropping to Lewis Lake (~3.5-4 mi, ~5,700 ft; timbered campsites on the north side, water available) — this off-trail stretch is the main route-finding challenge of the approach, especially with cairns buried by early-season snow. From Lewis Lake, climb roughly 1,200 ft more of meadow and talus to Wing Lake (~5 mi, ~6,900 ft), the standard base camp, with sites in the trees on the right as you reach the lake and reliable water into late summer. From Wing Lake, go around the right (north) side of the lake and aim for the obvious talus/snow gully leading into the couloir just south of the summit; climb this gully, then angle climber's-right out of it to avoid cliff bands directly below the col, topping",
+   "area_id": "wa_black_peak",
+   "descent_text": "This is the standard descent line for the peak — no separate down-route to learn. The ascent from the south col follows the cairned ridge (some class 3 moves) and a loose gully just west of the crest to the summit pyramid; the final section is a cairned class 2 ledge system traversing below the summit block that is exposed near its end, followed by a short (~15 ft) class 4 step to the true summit. On the way down, reverse this: downclimb the class 4 step (a boulder slung here permits a short optional rappel or hand-line — a single 30m rope is more than enough rope, and many parties skip the rope and downclimb it facing in), reverse the ledge traverse and the gully, and retrace the ridge back to the south col. From the col, descend the scree-and-snow slope (glissade-able early season) back down to Wing Lake, then hike out the approach trail. There is no mandatory multi-pitch rappel sequence on this route; the class 4 summit step is the only spot where climbers occasionally use a rope on the way down.",
+   "name": "South Ridge"
+  },
+  "wa_soviet_route": {
+   "approach": "From Holden Village, follow the Railroad Creek Trail (FST 1256) west about 3.5 miles to Hart Lake (3,956'), passing (but not taking) the Holden Lake Trail junction along the way — stay on the main valley trail. At Hart Lake, leave the maintained trail and climb the rock-and-heather terraces on the true left (west) side of the drainage below Bonanza's massive west-facing buttress: roughly 3,000' of gain in about three hours of steep, routefinding-heavy travel — open forest giving way to heather benches and then blocky, loose terrain — to reach a camp near the 7,100' col/pass between North Star Mountain and Bonanza's Southwest Peak. Water is available at Hart Lake and again at the camp near the pass (snowmelt/tarns), but is scarce on the terrace climb between them, so fill up at both. There is no trail above Hart Lake; the terrace system requires real routefinding judgment, and the lower slopes hold loose rock and brush that make the approach itself a meaningful crux before the technical climbing starts.",
+   "area_id": "wa_bonanza_peak",
+   "descent_text": "From the Southwest Peak (route's high point), traverse the Northeast Ridge to the West Peak — about 2 hours, negotiating a series of gendarmes mostly on 3rd/4th-class ledges, with one short rappel along the way. From the West Peak, descend the northwest side: downclimb talus, then make two rappels of roughly 200 feet each down steep slabs back into the approach basin. Anchors on this descent have historically been improvised rather than fixed — one documented descent used a nut at the top station and a piton at the lower one — so carry a small rack/cordage to build or reinforce anchors rather than counting on hardware being in place. Two 200-ft rappels require a rope of at least 60m (or two ropes joined) to reach each next stance without coming up short. Parties have finished this descent after dark on long summit days, so budget extra time and bring a headlamp. From the bottom of the raps, continue downclimbing talus back to camp near the 7,100' pass, then reverse the terrace descent to Hart Lake and the Railroad Creek Trail back to Holden.",
+   "name": "Soviet Route"
+  }
+ }
+}

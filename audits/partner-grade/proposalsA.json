@@ -1,0 +1,289 @@
+[
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "verdict": "fix",
+  "route_crux": "5.8",
+  "stored_grade_ok": true,
+  "grade_note": "MP lists 5.8- and the crux dihedral is reported as 5.8; stored grade fine.",
+  "reason": "Skill asks for 5.6 leading although the route's crux is 5.8; leader must lead 5.8 solidly.",
+  "sources": [
+   "https://www.mountainproject.com/v/direct-east-ridge/106364956",
+   "https://www.mountaineers.org/activities/trip-reports/forbidden-peak-east-ridge-direct",
+   "https://cascadeclimbers.com/forum/topic/79384-tr-forbidden-peak-east-ridge-direct-972008"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strenuous - same Boston Basin approach as the West Ridge (~7 mi, 3,100+ ft gain) plus a longer technical day (8 pitches, ~10.5 hr).",
+    "packWeight": "Overnight alpine pack, roughly 25-35 lb."
+   },
+   "approachTime": "~5-6 hrs to Boston Basin camp, plus additional approach time to gain the east ridge proper.",
+   "requiredSkills": [
+    "multi-pitch trad leading at solid 5.8 on loose rock",
+    "route-finding through towers and gendarmes",
+    "rappelling",
+    "stamina for a long, sustained technical day",
+    "sound retreat judgment on an exposed crest in changing weather"
+   ],
+   "experienceLevel": "Experienced alpine trad leader comfortable with longer, more sustained routes and loose-rock route-finding among gendarmes."
+  }
+ },
+ {
+  "id": "wa_ingalls_peak_south_ridge",
+  "verdict": "fix",
+  "route_crux": "5.6 (popular variation; 5.4 on the easiest line)",
+  "stored_grade_ok": true,
+  "grade_note": "Stored 5.4 with the 5.6 variation noted in rock_grade is consistent.",
+  "reason": "The popular crack variation is 5.6, so the skill should name it; the plain 5.4 line remains an option.",
+  "sources": [
+   "https://www.summitpost.org/south-ridge-5-4/156856",
+   "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-ridge",
+   "https://stevensong.com/ingalls-peak/"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Roundtrip on the order of 6-9 miles with ~2,800-3,200 ft of gain, including a pass crossing (Ingalls Pass) and off-trail talus/slab travel to the base of the ridge",
+    "packWeight": "Light alpine rack (small rack + a few slings, approach shoes swapped for rock shoes), roughly 15-20 lbs"
+   },
+   "approachTime": "Roughly 3-4 hours from the Esmeralda Basin trailhead via Ingalls Pass and the Ingalls Lake basin to the start of the ridge",
+   "requiredSkills": [
+    "Leading/following 5.4 traditional or alpine rock (5.6 if you take the harder crack variation)",
+    "Multi-pitch rope management and efficient transitions",
+    "Routefinding on talus, slab, and an unmarked alpine ridge to gain and follow the route",
+    "Comfort on loose blocky rock and exposed, airy ridge terrain",
+    "Basic self-rescue / rappel competence for the descent"
+   ],
+   "experienceLevel": "Intermediate alpine rock climber - comfortable leading low 5th class (5.4) alpine rock with loose rock and moderate exposure, and competent scrambling on class 2-3 talus/slabs for the approach"
+  }
+ },
+ {
+  "id": "wa_liberty_bell_independence_route",
+  "verdict": "fix",
+  "route_crux": "5.12a",
+  "stored_grade_ok": true,
+  "grade_note": "Some listings show 5.12b; free crux pitches are 5.12a. Stored 5.12a left as is, owner may check 5.12b.",
+  "reason": "Requirements name 5.11+, below the 5.12 crux pitches; leader needs to lead 5.12 solidly.",
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201214486",
+   "https://blakeclimbs.blogspot.com/2014/07/independence-route-and-east-face-info.html",
+   "https://jensholsten.blogspot.com/2009/01/independence-route-v-512a-r.html"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Short, steep forest and talus approach from the SR-20 hairpin to the East Face",
+    "packWeight": "Trad rack for sustained crack/face climbing, roughly 18-22 lb"
+   },
+   "approachTime": "Roughly 1 hour from the SR-20 hairpin pullout to the East Face",
+   "requiredSkills": [
+    "solid 5.12 crack and face leading (5.12a crux pitches)",
+    "multi-pitch endurance across 12 pitches in a day",
+    "route-finding among adjacent East Face lines",
+    "efficient descent management",
+    "comfort with serious commitment typical of a grade V route"
+   ],
+   "experienceLevel": "Strong 5.12 trad/free climber comfortable with sustained face and crack pitches and the commitment of a grade V, 12-pitch outing"
+  }
+ },
+ {
+  "id": "wa_mount_challenger_challenger_glacier",
+  "verdict": "keep",
+  "route_crux": "5.6 (one short protected summit pitch; reports range 5.5 to 5.7)",
+  "stored_grade_ok": true,
+  "grade_note": "Stored 5.5 matches the most cited rating; some climbers report 5.6 and a 5.7 move on the summit block.",
+  "reason": "The 5.5-5.7 range is for one ~50 ft pitch with fixed protection and an optional handline, within one step of the reported crux; text already states the range.",
+  "sources": [
+   "https://www.mountainproject.com/route/112031867/challenger-glacier",
+   "https://www.mountaineers.org/activities/routes-places/mt-challenger-challenger-glacier",
+   "https://summitpost.org/mount-challenger/151237"
+  ]
+ },
+ {
+  "id": "wa_mount_fury_east_mongo_ridge",
+  "verdict": "keep",
+  "route_crux": "5.10a (a 5.11 headwall is bypassed at 5.7)",
+  "stored_grade_ok": true,
+  "grade_note": "Stored 5.10a with the 5.7 bypass matches published VI 5.10; a repeat noted 5.10b+ on a route-finding error.",
+  "reason": "Skill asks for confident 5.10 leading, which matches the crux; the 5.11 headwall has a stated 5.7 bypass.",
+  "sources": [
+   "https://mountainproject.com/route/120989922/southwest-ridge-mongo-ridge",
+   "https://publications.americanalpineclub.org/articles/12200713002/North-America-United-States-Washington-Cascade-Range-Mt-Fury-West-Peak-Mongo-Ridge",
+   "https://alpinist.com/climbing-notes/mt-fury/"
+  ]
+ },
+ {
+  "id": "wa_mount_olympus_west_ridge",
+  "verdict": "keep",
+  "route_crux": "5.4 (PG13; a move or two of 5.7 reported if off-route)",
+  "stored_grade_ok": true,
+  "grade_note": "Stored 5.4 matches the route listing (never harder than 5.4).",
+  "reason": "The 5.6-5.7 mention is a contingency for loose rock if off-route, not a lead requirement; the route itself is 5.4. Owner may soften wording if the audit rule is strict.",
+  "sources": [
+   "https://mountainproject.com/route/114973736/west-ridge",
+   "https://mountaineers.org/activities/routes-places/mount-olympus-blue-glacier"
+  ]
+ },
+ {
+  "id": "wa_mount_stuart_girth_pillar",
+  "verdict": "fix",
+  "route_crux": "5.11b (5.11- on one listing)",
+  "stored_grade_ok": false,
+  "grade_note": "Stored 5.11- (Mountain Project); one guide-service report gives 5.11b. Higher is 5.11b; not changed.",
+  "reason": "Requirements ask for 5.10+ crack skill, below the 5.11 crux; leader should lead 5.11 cracks solidly.",
+  "sources": [
+   "https://www.mountainproject.com/route/106475357/girth-pillar",
+   "https://www.alpineinstitute.com/articles/trip-reports/girth-pillar-perfect-alpine-rock-on-mt-stewart",
+   "https://summitpost.org/mountain/150353"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Excellent \u2014 a remote glacier approach followed by sustained hard climbing",
+    "packWeight": "Alpine rack plus glacier-travel gear, ~25-30 lb"
+   },
+   "approachTime": "Long, remote approach up the Ice Cliff Glacier to the base of the pillar; likely requires a bivy",
+   "requiredSkills": [
+    "sustained hard crack climbing (solid 5.11 leading)",
+    "glacier travel",
+    "self-sufficient multi-day alpine climbing",
+    "committing-retreat/rappel management"
+   ],
+   "experienceLevel": "Expert alpine rock climber and solid 5.11 crack leader with glacier-approach experience"
+  }
+ },
+ {
+  "id": "wa_mount_stuart_west_ridge",
+  "verdict": "fix",
+  "route_crux": "5.6",
+  "stored_grade_ok": true,
+  "grade_note": "One guidebook-style listing gives 5.4 but trip reports consistently put a 5.6 crux (finger/hand cracks) near the summit; keeping higher. Stored 5.6 ok.",
+  "reason": "Skill and summary say 5.4, below the 5.6 crux near the top.",
+  "sources": [
+   "https://climberkyle.com/2020/07/11/mt-stuart-west-ridge-5-6/",
+   "https://www.summitpost.org/mt-stuart-west-ridge/517399",
+   "https://www.mountaineers.org/activities/trip-reports/mount-stuart-west-ridge-1"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very strong \u2014 a ~13hr car-to-car day with large elevation gain/loss",
+    "packWeight": "Light day/alpine pack, ~15-20 lb"
+   },
+   "approachTime": "Long \u2014 over Longs Pass and Ingalls Creek similar to the Cascadian approach, then gaining and following the west ridge over the False Summit",
+   "requiredSkills": [
+    "easy trad multi-pitch leading (solid 5.6 for the crux high on the route)",
+    "extended 3rd/4th-class scrambling and route-finding among towers and notches",
+    "long alpine-day endurance",
+    "comfort with sustained exposure on an unmaintained ridge crest"
+   ],
+   "experienceLevel": "Competent 5.6 trad climber with extensive alpine scrambling stamina and exposure tolerance"
+  }
+ },
+ {
+  "id": "wa_mount_terror_southeast_face",
+  "verdict": "fix",
+  "route_crux": "5.8 (as stored)",
+  "stored_grade_ok": false,
+  "grade_note": "Conflict: id says southeast_face, name says East Ridge. One SummitPost page lists East Ridge at 5.6; 5.8 appears for other Terror routes. Keeping the higher stored 5.8; owner should check this row is the right route.",
+  "reason": "Text names 5.6 while stored crux is 5.8; leader must lead 5.8.",
+  "sources": [
+   "https://www.summitpost.org/mount-terror-east-ridge/871460",
+   "https://www.summitpost.org/mount-terror/155359"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very high - multi-day trailless approach to Crescent Creek basin with sustained off-trail travel and elevation gain",
+    "packWeight": "Heavy multi-day alpine kit typically 35-45+ lb for the approach"
+   },
+   "approachTime": "Multi-day approach to Crescent Creek basin given extreme remoteness of the range; not a single-push objective",
+   "requiredSkills": [
+    "off-trail/bushwhack route-finding in trailless terrain",
+    "5.8 rock climbing on ledges and short rock steps, often in mountain boots with a pack",
+    "route-finding among towers to avoid wrong-summit errors",
+    "basic multi-pitch rope work",
+    "self-sufficiency for remote extraction"
+   ],
+   "experienceLevel": "Experienced alpine climbers with North Cascades approach experience; the modest rock grade (5.8) makes this the more accessible of Mount Terror's two routes, but the remoteness and route-finding demands still rule out newer alpine climbers"
+  }
+ },
+ {
+  "id": "wa_mount_torment_south_ridge",
+  "verdict": "fix",
+  "route_crux": "5.5 (5.4 on most listings)",
+  "stored_grade_ok": true,
+  "grade_note": "Most listings 5.4; one gives 5.5; keeping higher.",
+  "reason": "Skill asks for 5.6 leading, two steps above a 5.4 route; solid 5.5 with one step margin fits.",
+  "sources": [
+   "https://www.summitpost.org/route/223951/south-ridge.html",
+   "https://www.mountainproject.com/route/112057303/south-ridge",
+   "https://climbskirun.blogspot.com/2012/08/torment-and-sahale.html"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strong; sustained approach with an overnight pack into Boston Basin followed by a glacier approach to the base of the ridge the next day",
+    "packWeight": "Overnight/multi-day pack (camp gear, rack, glacier gear), roughly 35-45 lb"
+   },
+   "approachTime": "~4-6 hrs to a Boston Basin camp, then ~1-2 hrs of glacier/snow approach to the base of the south ridge on climbing day",
+   "requiredSkills": [
+    "glacier travel and crevasse rescue (approach crosses a glaciated basin)",
+    "solid 5.5 traditional multi-pitch leading on alpine rock (5.6 at the crag gives margin)",
+    "route-finding among towers on the ridge crest",
+    "basic snow travel with axe and crampons",
+    "comfort downclimbing/rappelling on loose, blocky terrain"
+   ],
+   "experienceLevel": "Solid intermediate alpine climber with prior glacier-travel and multi-pitch alpine-rock experience; comfortable with loose rock and route-finding without a well-beaten path"
+  }
+ },
+ {
+  "id": "wa_mushroom_tower_standard",
+  "verdict": "fix",
+  "route_crux": "5.5",
+  "stored_grade_ok": true,
+  "grade_note": "Stored grade 5.4 vs rock_grade 5.5; sources thin. Keeping higher 5.5.",
+  "reason": "Skill names 5.4, below the 5.5 rock grade.",
+  "sources": [
+   "https://www.mountainproject.com/area/120293785/mushroom-tower"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Moderate off-trail approach fitness for the Kangaroo Ridge basin approach off SR 20, including talus/scree and brush",
+    "packWeight": "Light alpine rack (single rope, small trad rack, rap gear) - no glacier or heavy overnight gear needed for this short route"
+   },
+   "approachTime": "Roughly 1.5-2.5 hours from the SR 20 pullout near the Hairpin turn up into the Kangaroo Ridge basin, consistent with other short Kangaroo Ridge approaches",
+   "requiredSkills": [
+    "5.5 trad/multi-pitch rock leading",
+    "rappelling and anchor evaluation",
+    "loose-rock/choss management and careful movement",
+    "basic alpine route-finding on an infrequently-climbed line",
+    "thunderstorm awareness/bail judgment given exposed summit moves"
+   ],
+   "experienceLevel": "Comfortable multi-pitch trad rock climber with prior alpine rock experience; should be unfazed by loose rock and unfamiliar/older rappel anchors, and capable of independent route-finding since this isn't a heavily-trafficked line"
+  }
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "verdict": "fix",
+  "route_crux": "5.4 (thin sourcing)",
+  "stored_grade_ok": true,
+  "grade_note": "Sources list 5.4 with a question mark; none supports 5.6. Crux is the snow/ice couloir rather than rock.",
+  "reason": "Skill asks for 5.6 leading, two steps above a 5.4 route; solid 5.4 with one step of margin fits.",
+  "sources": [
+   "https://www.summitpost.org/beckey-schmidtke/163780",
+   "https://en.wikipedia.org/wiki/Nooksack_Tower",
+   "https://publications.americanalpineclub.org/articles/12194743602"
+  ],
+  "new_partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Very high - a brutal, mostly off-trail approach via the Nooksack Cirque with brush, river fords, talus, and glacier travel to a high camp around 5,900 ft, followed by a very long (often 18-21 hour) summit push and descent",
+    "packWeight": "Moderate-heavy overnight alpine load (glacier travel gear, technical rock rack, camp/bivy gear) carried through bushwhacking and boulder-hopping terrain, not maintained trail"
+   },
+   "approachTime": "Multi-day: typically a full day (6-10+ hrs) up the Nooksack Cirque via brush, river fords, and glacier travel to high camp, followed by a very long summit day (often 18-21 hrs round trip from high camp) that includes roughly ten rappels back down to the glacier",
+   "requiredSkills": [
+    "Glacier travel and crevasse rescue (East Nooksack/Price Glacier approach)",
+    "Multi-pitch traditional leading at solid 5.4 on loose, featured alpine rock (5.5 at the crag gives margin)",
+    "Route-finding on complex, unmarked, loose terrain",
+    "Steep snow/ice couloir climbing (reported up to ~50 degrees)",
+    "Building and trusting rappel anchors, including deadman/picket anchors, for a long multi-rappel descent",
+    "Strong off-trail navigation and bushwhacking stamina",
+    "Self-sufficiency and sound judgment - this is a remote committing objective with no realistic quick rescue"
+   ],
+   "experienceLevel": "Experienced alpine climbing team only - a serious Grade IV North Cascades objective; partners should have prior success on remote, multi-day alpine rock routes with glacier approaches before attempting this"
+  }
+ }
+]

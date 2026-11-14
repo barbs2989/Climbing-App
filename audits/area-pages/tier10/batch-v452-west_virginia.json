@@ -1,0 +1,24 @@
+{
+ "wv_mushroom_boulder_picnic_table": {
+  "_expect": {"name": "Mushroom Boulder (Picnic Table)", "region": "West Virginia"},
+  "blurb": "A single compact boulder cluster in Coopers Rock State Forest, listed under Upper Rock City and also known by its Picnic Table name, not far from Morgantown. It holds ten bouldering problems, mostly overhanging lines with a very short walk from the road. The spread runs from V2 up through a handful of V3 to V5 problems, plus one far harder test piece near V10, so it suits climbers who already boulder at a moderate level. Many lines stay damp for days after rain, so pick a dry spell. The rock is sandstone.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109163271/mushroom-boulder-picnic-table", "https://thetopo.com/crags/coopers-rock-picnic-table/cragmap/mushroom-boulder"]}
+ },
+ "wv_shadow_boxer_boulder": {
+  "_expect": {"name": "Shadow Boxer Boulder", "region": "West Virginia"},
+  "blurb": "A small bouldering spot in the Good Block Area of Tilted Tree, the busiest climbing zone in Coopers Rock State Forest near Morgantown. Ten problems are stored here, and the spread is wide: several easy lines from V0 to V2, a V3, then a big jump to the namesake V6 classic and a V10 test piece at the top end. That mix gives beginners something to warm up on while strong boulderers have a long-standing goal. Expect company on weekends, since the zone draws crowds, and bring pads.",
+  "review": {"sources": ["https://www.mountainproject.com/area/124136618/shadow-boxer-boulder", "https://mountainproject.com/area/107041734/tilted-tree"]}
+ },
+ "wv_4_fire_and_ice_buttress": {
+  "_expect": {"name": "Fire and Ice Buttress", "region": "West Virginia"},
+  "blurb": "A buttress in the Kaymoor section of the New River Gorge, placed midway between the two trails that lead down to the Kaymoor cliffs. Ten routes are stored, mostly trad (seven) with three bolted lines. Nothing here is easy: four routes sit in the 5.10 range, three in 5.11, two in 5.12 and one in 5.13, so it is a place for climbers already comfortable leading the 5.10s. Rock is sandstone.",
+  "review": {"sources": ["https://rakkup.com/guidebook/new-river-gorge-rock-climbing/fire-and-ice-buttress/s10489", "https://rakkup.com/guidebook/new-river-gorge-rock-climbing/kaymoor/s10627"]}
+ },
+ "_skipped": {
+  "wv_09_rainbow_ledge_area": "no fetched page about the crag itself (only a guidebook sector list entry with a climb count)",
+  "wv_road_to_nowhere_area": "only a route page fetched, no page about the area itself",
+  "wv_good_block_area_climbs": "no fetched page about this crag itself; only a parent listing with a climb count",
+  "wv_first_wall_right": "only the First Wall page fetched, which covers the whole wall rather than this crag",
+  "wv_34d_wall": "only a route page and the parent West Face East Fin page; none about the wall itself"
+ }
+}

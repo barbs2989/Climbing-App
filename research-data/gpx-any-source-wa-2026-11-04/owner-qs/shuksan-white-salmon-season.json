@@ -1,0 +1,25 @@
+{
+  "key": "shuksan-white-salmon-season",
+  "question": "What is the right season window for the White Salmon Glacier route on Shuksan, on foot and on skis?",
+  "answer": "Two real seasons. SKIS (the dominant use): logged ascents and trip reports run late March through May, April and early May being the sweet spot (stable snow, corn on the way down); January-March outings exist but sit under avalanche terrain (hanging icefall, northwest couloir, wind loading); a late-June ski trip found about 2.5 h of alder brush and broken-up glaciers and advised going earlier. ON FOOT: the approach is a clearcut/slide-alder bushwhack that is only pleasant with snow cover; the glacier itself is snow-only and bridged through July and early August (park-service logs: few open crevasses, steps on Winnie's Slide on July 20 2024), then crevasses open widely on the Upper Curtis and Sulphide glaciers by mid-August and blue ice forms on Winnie's Slide from mid-August into September. The stored Jun-Sep ignores the ski season entirely and runs a little long at the back end.",
+  "recommendation": "Change the stored season to 'Mar-Sep' and put the explanation in best_season (skiers late March-May, best April to early May; walkers July to mid-August; harder after). A foot-only summer report starting from the White Salmon valley was not found (most summer parties use this glacier as the descent after Fisher Chimneys), so the foot window is inferred from the park-service conditions logs - medium confidence.",
+  "confidence": "medium",
+  "proposed": {
+    "season": "Mar-Sep",
+    "best_season": "Ski ascents run late March through May, best in April and early May when the snow is stable and softens to corn. On foot, July through mid-August is the usual window, while the glaciers are still snow-covered and bridged. From mid-August into September crevasses open wide and Winnie's Slide turns to bare ice."
+  },
+  "evidence": [
+    "https://www.mountainproject.com/route/107476711/white-salmon-glacier - Easy Snow, FA Sept 9 1926; approach best with good snow cover; schrund trouble later in the season; popular ski descent; Hanging Glacier avalanche hazard",
+    "https://turns-all-year.com/trip-reports/may-2-white-salmon-glacier-mt-shuksan - skied May 2 2006, firm snow, spring corn, stable",
+    "https://turns-all-year.com/trip-reports/shuksan-sulphide-upper-curtis-white-salmon-glacier - April 14 2024 ski: firm uphill, slush by early afternoon",
+    "https://turns-all-year.com/trip-reports/june-25-mt-shuksan-white-salmon-glacier - June 25 2006 ski: brushy approach, broken glaciers; advises earlier in the season",
+    "https://wildsnow.com/9660/mount-shuksan-backcountry-skiing/ - March 2013 ski: wind loading, serac fall from the Hanging Glacier, avalanche from the northwest couloir",
+    "https://www.nps.gov/noca/blogs/climbing-conditions-mt-shuksan-2024.htm - crevasses few on July 20, large on Upper Curtis/Sulphide Aug 18, heavily crevassed Sept 6; Winnie's Slide snow with steps July 20, could turn to ice Aug 18, blue ice expected Sept 17",
+    "Repo packet packets-all/wa_mount_shuksan_climbs.json - logged White Salmon ascents Mar 28 2026 and Apr 5 2025 (both ski from the ski-area lodge); logged months Mar, Apr, Jun"
+  ],
+  "searched": [
+    "Mount Shuksan White Salmon Glacier route ski best season - turns-all-year reports (Jan, Feb, Mar, Apr, May, Jun)",
+    "Shuksan White Salmon Glacier Winnie's Slide summer conditions - NPS conditions pages 2022-2026, guide-service blogs",
+    "Wikipedia White Salmon Glacier page - nothing on seasons"
+  ]
+}

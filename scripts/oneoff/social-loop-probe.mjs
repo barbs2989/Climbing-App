@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Can two real climbers connect and talk?
 //
 // The partnership loop (crew -> invite -> accept -> agree a day -> chat) is covered by
@@ -76,7 +77,7 @@ try {
   const port = await claimPort(5550);
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   log(`dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   if (!(await waitForServer(base))) { console.error("dev server never came up"); process.exit(1); }
   browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 180000 });
@@ -184,11 +185,7 @@ try {
         } else {
           const reqTab = pageB.getByRole("button", { name: /^Requests/ }).first();
           if (await reqTab.count()) { await reqTab.click(); await pageB.waitForTimeout(2000); }
-          // Friend requests arrive COLLAPSED: "FRIEND REQUESTS (1) … 1 friend request /
-          // Tap to review". The name only appears once expanded, so asserting on the name
-          // without expanding reports a working screen as broken.
-          const review = pageB.getByText(/Tap to review/i).first();
-          if (await review.count()) { await review.click(); await pageB.waitForTimeout(2000); }
+          // Friend requests render EXPANDED (they used to sit behind "Tap to review"), so the name is on screen.
           let seen = "";
           for (let i = 0; i < 12; i++) {
             await pageB.waitForTimeout(1500);

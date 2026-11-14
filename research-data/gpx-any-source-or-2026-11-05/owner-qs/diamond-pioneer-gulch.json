@@ -1,0 +1,26 @@
+{
+ "key": "diamond-pioneer-gulch",
+ "question": "What is the Pioneer Gulch trailhead coordinate for Diamond Peak's Southwest Ridge, and does 'South Ridge (from Summit Lake)' describe a separate line?",
+ "answer": "No fetched page gives a coordinate for the Pioneer Gulch trailhead itself (Oregon Hikers, Mountain Project, southernoregon.org, turns-all-year are silent; Summitpost returned 403). OpenStreetMap maps Pioneer Gulch Trail #3630 (way 288534656, 59 points) running from 43.49876,-122.19396 (west end) to 43.50124,-122.17252; Pioneer Gulch Road FR 2149 is way 5503410. A route description (search snippet, not fetched) puts the Pioneer Gulch TH on Road 2160 branching off 2149, 1.8 km before the Corrigan Lake TH. The OSM trail's west end is the best mapped candidate but no page labels it a trailhead. The South Ridge from Summit Lake is a separate line: it starts at a bend in the PCT near 43.5047,-122.1425 (Oregon Hikers) and climbs the south ridge on a non-technical climbers trail in summer; the SW ridge starts on the opposite side, from the Pioneer Gulch junction on the Diamond Peak trail, goes steeply uphill to the SW ridge and only merges with the south ridge high up, and is a spring snow/ski route (7.5 mi, ~4,000 ft per Mountain Project). Different start, approach and season.",
+ "recommendation": "Keep both rows; South Ridge (from Summit Lake) is a separate line, no change. Do NOT write a confirmed Pioneer Gulch trailhead pin: none is confirmed by a page. Optional, low confidence: pin at the west end of OSM Pioneer Gulch Trail #3630 (43.49876,-122.19396) only if the owner accepts a mapped trail endpoint as the trailhead; better is a GPS track from the FR 2160 road end or a Willamette NF map page.",
+ "confidence": "medium",
+ "proposed": {
+  "pioneer_gulch_trailhead_candidate": { "lat": 43.49876, "lng": -122.19396, "confirmedBy": "https://www.openstreetmap.org/way/288534656", "caveat": "west end of mapped Pioneer Gulch Trail #3630; not labelled a trailhead on any fetched page" },
+  "south_ridge_start_pct_bend": { "lat": 43.5047, "lng": -122.1425, "confirmedBy": "https://www.oregonhikers.org/field_guide/Diamond_Peak" },
+  "south_ridge_row": "no change"
+ },
+ "evidence": [
+  "https://overpass-api.de/api/interpreter (OSM way 288534656) — Pioneer Gulch Trail #3630 geometry, first point 43.4987589,-122.1939606",
+  "https://www.mountainproject.com/route/200328362/southwest-ridge?print=1 — SW Ridge from Pioneer Gulch TH, 7.5 mi, ~4,000 ft, joins south ridge, no coordinates",
+  "https://www.oregonhikers.org/field_guide/Diamond_Peak — south ridge starts at PCT bend 43.5047,-122.1425; summit 43.52071,-122.14964",
+  "https://www.oregonhikers.org/forum/viewtopic.php?p=215290 — SW ridge reached via Pioneer Gulch junction, separate from the Marie Lake south-ridge approach"
+ ],
+ "searched": [
+  "Diamond Peak Pioneer Gulch trailhead coordinates Oregon — Trailforks point 43.46647,-122.15357 (snippet only, unnamed, not used)",
+  "summitpost pioneer-gulch-southwest-ridge and diamond-peak — 403",
+  "Nominatim Pioneer Gulch trailhead — empty",
+  "Overpass name~Pioneer Gulch — three ways (road, trail, stream), no trailhead node",
+  "oregonhikers Pioneer_Gulch_Trailhead — 404; southernoregon.org Diamond Peak South Trailhead — no coordinates",
+  "turns-all-year diamond-peak-or-19-april — Corrigan Lake start, unsure whether Rockpile and Pioneer Gulch THs are the same"
+ ]
+}

@@ -1,0 +1,64 @@
+{
+  "area_id": "wa_huckleberry_mountain",
+  "routes": [
+    {
+      "route_id": "wa_huckleberry_mountain_east_ridge",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct holds. Logged successful ascents run Jun-Oct (Jul 25, Aug 39, Sep 38, Oct 7). Web search of Mountaineers East Face/East Ridge reports and SummitPost: early July still has steep hard snow on the PCT past the Katwalk and at the ridge base; Aug-Sep easy; late Sep/Oct snow possible near the Katwalk. No source names a single best month." },
+      "track": { "aid": "1508573", "verdict": "same", "kind": "oneway", "inSeason": true,
+                 "why": "Logged route is 'East Ridge' (Oct 5 2020); report says he scrambled the exposed 4th-class east ridge; line leaves the PCT near Joe Lake/Huckleberry Flats, climbs the east side and ends on the summit (about 20 m from our pin). Start is 74 m from our PCT North trailhead pin. Ascent-only recording (return not in file). Early Oct is the last month of the stored season." },
+      "otherTracksConsidered": [
+        { "aid": "2020291", "verdict": "unsure", "why": "Complete round trip Sep 4 2022 but logged only as 'East Face' with no report; the line also detours to a different high point before the summit. East Face appears to be the same ridge line other reports call East Face, but no text proves it." },
+        { "aid": "831970", "verdict": "unsure", "why": "Logged 'East Face', Jul 1 2017, one-way start only; same naming doubt as 2020291, and our route's stored text does not use the name East Face." },
+        { "aid": "2989720", "verdict": "unsure", "why": "Sep 2025 multi-day traverse starting at Ridge Lake, not from our trailhead; report describes the east-side scramble and rappel but it is a through traverse." },
+        { "aid": "2938168", "verdict": "unsure", "why": "Aug 2025 traverse recording that starts at the trailhead but ends far away; no route name, report empty." },
+        { "aid": "2685139", "verdict": "unsure", "why": "Sep 2024; starts 4 km from our trailhead pin (different start, not confirmed), no route name." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "what_to_bring", "month": 7, "text": "Ice axe and crampons (early July snow on the PCT beyond the Katwalk and at the ridge base)", "aids": ["828110","831970"] },
+        { "field": "watch_out", "month": 7, "text": "Early July: PCT beyond the Katwalk is mostly snow-covered, with steep hard snow and a runout below the trail", "aids": ["828110","831970"] },
+        { "field": "watch_out", "month": 8, "text": "Rock on the ridge and the final summit moves is crumbly through Aug-Oct; test every hold before weighting it", "aids": ["1508573","2654907","700379"] },
+        { "field": "pro_tips", "month": 8, "text": "Late Aug-Sep: many parties scramble the lower ridge unroped and only rope up for the notch and the last crack.", "aids": ["700379","2989720"] },
+        { "field": "approach_note", "month": 8, "text": "From the Joe Lake stretch of the PCT, the east slope's heather and blueberry bench leads to the 6,000 ft shoulder and the crest; there is no need to cut onto the loose south-face gully (August).", "aids": ["700379"] },
+        { "field": "pro_tips", "month": 7, "text": "Bring bug repellent in early July; mosquitoes and flies are heavy around Ridge Lake and Gravel Lake camps.", "aids": ["828110"] }
+      ]
+    },
+    {
+      "route_id": "wa_huckleberry_mountain_north_route",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "No stored season or text; same PCT-accessed peak as the East Ridge, so Jul-Oct by analogy and web search above." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "Stored row has no text, no pins, no description; no logged route or report names a North Route." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_huckleberry_mountain_north_spur",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "No stored data; same reasoning as North Route." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "Stored row empty; no report names a North Spur." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_huckleberry_mountain_south_face",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct; approach is the same PCT corridor. Web search found no separate best-month source." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "different", "why": "Every report describes the east ridge/East Face line; one Aug 2016 report explicitly avoided the south-face gully." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_huckleberry_mountain_southwest_slope",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "No stored data; assumed to share the peak's snow-free window." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "all", "verdict": "unsure", "why": "Stored row is a bare Class 2 grade with no text; no report describes a southwest slope walk-up (every report says the summit needs a 4th/5th class finish)." } ],
+      "pins": [], "facts": []
+    },
+    {
+      "route_id": "wa_huckleberry_mountain_west_route",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Oct, best August; web search consistent. West gully holds snow and drops rock early; Aug-Sep safest." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "2020291", "verdict": "unsure", "why": "Passes the West Face pins only because the PCT approach is shared; every logged route and report describes the east side." },
+                                 { "aid": "1508573", "verdict": "different", "why": "Logged East Ridge." } ],
+      "pins": [], "facts": []
+    }
+  ],
+  "notes": "No report anywhere names West Face, South Face, North Route, North Spur or Southwest Slope; those routes likely have no recorded ascents on Peakbagger. The West Face row carries the existing 370-point track. Reports logged as 'East Face' (2017, 2022, 2024) describe the same ridge as 'East Ridge'; consider treating them as one line when matching later. North Route, North Spur and Southwest Slope are empty rows (no text, pins or grade) and may be placeholders."
+}

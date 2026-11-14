@@ -1,0 +1,63 @@
+{
+  "area_id": "wa_mount_ballard",
+  "routes": [
+    {
+      "route_id": "wa_mount_ballard_south",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peakbagger successful ascents: May 1, Jun 2, Jul 10, Aug 6, Sep 8, Oct 7. A search found a Summit Post suggestion of May to first autumn snows for neighbouring Azurite; stored Jul-Sep kept: May/June reports are snow-affected and Oct is off-season."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1426475",
+          "verdict": "unsure",
+          "why": "Jul 2020: from Azurite Pass to the mine, then the west face of Ballard, then out Mill Creek; the climb leaves the mine like our route but is a west-face gully, and the track is not a Canyon Creek round trip. Not enough evidence it is our line."
+        },
+        {
+          "aid": "3336131",
+          "verdict": "different",
+          "why": "Slate Creek east face route from the Harts Pass side; 13 km from our trailhead pin."
+        },
+        {
+          "aid": "1703157",
+          "verdict": "different",
+          "why": "Logged East Face, Slate Creek approach."
+        },
+        {
+          "aid": "984789",
+          "verdict": "different",
+          "why": "Logged The Stupid Way, Slate Creek approach."
+        },
+        {
+          "aid": "1056821",
+          "verdict": "offseason",
+          "why": "Mid October, Slate Creek east face."
+        },
+        {
+          "aid": "1165540",
+          "verdict": "not-summited",
+          "why": "May 2019 turn-around."
+        },
+        {
+          "aid": "2251688",
+          "verdict": "unsure",
+          "why": "Survey trip report with no track or route text."
+        },
+        {
+          "aid": "789646",
+          "verdict": "unsure",
+          "why": "Aug 2007 climb from the Azurite Mine up a west-face gully; no track."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Our catalog holds only the Mill Creek / Azurite Mine south side. Most Peakbagger ascents (and a 2018 report calling it the standard way) use the East Face from the end of the Slate Creek road below Harts Pass, trailhead near 48.7288,-120.7414; that route appears to be MISSING from the catalog (allRoutesOnPeak holds only South Slopes). Summit pin agrees with Peakbagger's coordinate."
+}

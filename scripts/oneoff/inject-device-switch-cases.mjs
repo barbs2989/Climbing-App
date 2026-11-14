@@ -30,7 +30,8 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(path.join(RO
 const APP = "ClimbMatch.jsx";
 const PREF = "lib/browse-visibility-pref.js";
 const PRES = "lib/presence.js";
-const TOUCHABLE = [APP, PREF, PRES];
+// since PR62 the Privacy sheet lives in SettingsPrivacySheet.tsx; it is checksummed too
+const TOUCHABLE = [APP, PREF, PRES, "src/components/SettingsPrivacySheet.tsx"];
 
 /* Only FAIL lines. The guard prints its rule labels on `ok` lines too, and `dead()` writes
  * "FAIL: …" on a line of its own, so both shapes count and nothing else does. */
@@ -57,7 +58,7 @@ const CASES = [
   {
     name: "save-gone",
     why: "the toggle works for this session and never persists — the volatile-switch defect",
-    file: APP,
+    file: "src/components/SettingsPrivacySheet.tsx",
     find: "setVisibleWhileBrowsing(next);saveVisibleWhileBrowsing(next);",
     repl: "setVisibleWhileBrowsing(next);",
     expect: "nothing calls `saveVisibleWhileBrowsing(`",
@@ -95,9 +96,11 @@ const CASES = [
     name: "import-gone",
     why: "the module exists and the app never reaches it",
     file: APP,
-    find: `import { visibleWhileBrowsingPref, saveVisibleWhileBrowsing } from "./lib/browse-visibility-pref";`,
+    // since PR62 saveVisibleWhileBrowsing is imported by SettingsPrivacySheet.tsx; App keeps only the reader
+    find: `import { visibleWhileBrowsingPref } from "./lib/browse-visibility-pref";`,
     repl: "",
-    expect: "imports nothing from ./lib/browse-visibility-pref",
+    // the guard merges imports across App and the lifted sheets (PR62), so dropping App's import reports the reader as not imported
+    expect: "`visibleWhileBrowsingPref` is not imported",
   },
   {
     /* A COMMENT MUST NOT SATISFY THE CONSUMER CLAUSE. This guard reads raw source — deliberately,

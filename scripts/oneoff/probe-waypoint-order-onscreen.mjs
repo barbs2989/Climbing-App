@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Does the NEW stored order reach the screen? A reordered column is not a reordered list:
 // tidyWaypoints runs at the DB boundary and could re-sort, and WaypointList could impose its own.
 import fs from "fs";
@@ -34,7 +35,7 @@ export { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};
   const React = (await import("react")).default;
   const { renderToStaticMarkup } = await import("react-dom/server");
   const { QueryClient, QueryClientProvider } = await import("@tanstack/react-query");
-  const { RouteDetail, dbRouteToCamel } = await import(bundle);
+  const { RouteDetail, dbRouteToCamel } = await import(fileHref(bundle));
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   const noop = () => {};
   const strip = (h) => h.replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");

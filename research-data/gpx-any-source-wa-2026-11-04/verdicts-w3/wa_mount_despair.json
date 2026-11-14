@@ -1,0 +1,24 @@
+{
+  "area_id": "wa_mount_despair",
+  "routes": [
+    {
+      "route_id": "wa_mount_despair_east_route",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Logged ascents Jun 2, Jul 4, Aug 3; trailhead described as best mid-summer through fall; east ridge trips reported in July, August and September." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3232364", "verdict": "not-summited", "why": "Turned back 110 m from the summit (mid-June, from Triumph Pass); also June is before the window." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_despair_northeast_buttress",
+      "season": { "months": [7,8], "window": "Jul-Aug", "evidence": "Only documented first ascent in late July 2014; no other season guidance found." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Only one Peakbagger track exists and it did not summit."
+}

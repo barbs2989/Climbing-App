@@ -1,0 +1,114 @@
+{
+ "wa_dragontail_peak_boving_route": {
+  "area": "wa_dragontail_peak",
+  "skip_reason": "no per-route source reachable (SummitPost and Mountaineers blocked); where this line tops out is not stated anywhere read, so the descent was not assumed"
+ },
+ "wa_dragontail_peak_colchuck_col_buttress": {
+  "area": "wa_dragontail_peak",
+  "skip_reason": "no per-route source reachable (SummitPost and Mountaineers blocked); where this line tops out is not stated anywhere read, so the descent was not assumed"
+ },
+ "wa_dragontail_peak_east_route": {
+  "area": "wa_dragontail_peak",
+  "skip_reason": "no source read says which line this row is (Aasgard Pass, Colchuck Col or the West Couloir); the base and top-out could not be pinned, so nothing was assumed"
+ },
+ "wa_dragontail_peak_northwest_face": {
+  "area": "wa_dragontail_peak",
+  "skip_reason": "no per-route source reachable (SummitPost and Mountaineers blocked); where this line tops out is not stated anywhere read, so the descent was not assumed"
+ },
+ "wa_dragontail_peak_west_route": {
+  "area": "wa_dragontail_peak",
+  "skip_reason": "no source read says which line this row is (Aasgard Pass, Colchuck Col or the West Couloir); the base and top-out could not be pinned, so nothing was assumed"
+ },
+ "wa_east_twin_needle_north_buttress": {
+  "area": "wa_east_twin_needle",
+  "skip_reason": "no source read describes the descent from the North Buttress top-out; the only available descent fact (Eye Col gullies) belongs to Thread of Ice"
+ },
+ "wa_east_twin_needle_thread_of_ice": {
+  "area": "wa_east_twin_needle",
+  "skip_reason": "tops out at Eye Col per the stored text, but no source read describes the descent from there (only a ski report into Crescent Creek Basin)"
+ },
+ "wa_garfield_mountain_east_rib": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "only general Garfield Mountain access found; no source describes this line's base or descent"
+ },
+ "wa_garfield_mountain_north_route": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "only general Garfield Mountain access found; no source describes this line's base or descent"
+ },
+ "wa_garfield_mountain_southeast_face": {
+  "area": "wa_garfield_mountain",
+  "skip_reason": "only general Garfield Mountain access found; no source describes this line's base or descent"
+ },
+ "wa_glacier_peak_gerdine_ridge_cool_glacier": {
+  "area": "wa_glacier_peak",
+  "skip_reason": "misfiled: this is a Mount Rainier route (Tahoma/Gerdine/Cool Glacier) filed under Glacier Peak"
+ },
+ "wa_glacier_peak_south_tahoma_headwall": {
+  "area": "wa_glacier_peak",
+  "skip_reason": "misfiled: this is a Mount Rainier route (Tahoma/Gerdine/Cool Glacier) filed under Glacier Peak"
+ },
+ "wa_glacier_peak_tahoma_cleaver": {
+  "area": "wa_glacier_peak",
+  "skip_reason": "misfiled: this is a Mount Rainier route (Tahoma/Gerdine/Cool Glacier) filed under Glacier Peak"
+ },
+ "wa_goat_mountain_eastern_route": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "no source read names this line on Goat Mountain (Mount Baker Hwy); cannot tell which line it is or where it tops out"
+ },
+ "wa_goat_mountain_southeast_face": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "no source read names this line on Goat Mountain (Mount Baker Hwy); cannot tell which line it is or where it tops out"
+ },
+ "wa_goat_mountain_southeast_route": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "no source read names this line on Goat Mountain (Mount Baker Hwy); cannot tell which line it is or where it tops out"
+ },
+ "wa_goat_mountain_southwest_route": {
+  "area": "wa_goat_mountain",
+  "skip_reason": "no source read names this line on Goat Mountain (Mount Baker Hwy); cannot tell which line it is or where it tops out"
+ },
+ "wa_early_morning_spire_southwest_face": {
+  "area": "wa_early_morning_spire",
+  "set": {
+   "approach": "Two approaches are in use. One climbs from the Eldorado trailhead to the base of Eldorado's East Ridge, crosses the Inspiration and McAllister glaciers (obvious crevasses that are easy to avoid) and reaches Dorado Col. The alternative goes by Sibley Pass and Triad Col. From Dorado Col, drop into the Marble Creek cirque over bare ice and snow to roughly 6,000 ft, contour west along a bench, then climb a snow gully to the foot of the southwest face. Good bivy sites are at the base of Eldorado's East Ridge, at Dorado Col, and on the 6,000 ft bench in the cirque.",
+   "descent_text": "From the summit, downclimb a short way down the north side, then work west to a rappel anchor. A single-rope rappel to the west lands on the Marble Creek glacier; downclimbing to the east has been tried and does not go. Contour east on the glacier to a saddle, rappel a loose gully, cross the moat at the bottom, and descend an unnamed glacier to rejoin the approach. Retrace the approach back through Dorado Col, and expect loose rock in the gully and an awkward moat."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/blogs/early-morning-spire.htm",
+    "https://en.wikipedia.org/wiki/Early_Morning_Spire"
+   ],
+   "confidence": "medium",
+   "notes": "NPS climbing-ranger report gave both approach and descent for the SW Face from one party; the descent line is that party's, and the summit is the top-out (SW Face is the first-ascent line)."
+  }
+ },
+ "wa_forbidden_peak_north_ridge": {
+  "area": "wa_forbidden_peak",
+  "set": {
+   "descent_text": "The North Ridge finishes on the summit, and the way off is the West Ridge. Downclimb and rappel the West Ridge to the notch (one rope is enough for the rappels, and several anchors exist, so the mix is a matter of choice), then downclimb or rappel the snow couloir below the notch into Boston Basin; the Cat Scratch Gully to the climber's left is a rappel alternative. Allow more time than expected, because mixed downclimbing and rappelling takes most parties longer than the ascent suggests, and carry an axe for the couloir."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/forbidden-peak-north-ridge",
+    "https://www.nps.gov/noca/blogs/north-ridge-forbidden-peak.htm"
+   ],
+   "confidence": "medium",
+   "notes": "Mountaineers page says route climbs to the summit; NPS report and Mountaineers describe West Ridge descent, notch couloir and Cat Scratch Gully alternative."
+  }
+ },
+ "wa_gilbert_peak_conrad_glacier": {
+  "area": "wa_gilbert_peak",
+  "set": {
+   "descent_text": "Retrace the ascent: from the summit scramble down the west side of the south ridge to the Meade Glacier, then cross it back toward the saddle at about 7,200 ft. The crossing drops slightly on the way out, so stay high on the return to avoid regaining elevation. From the saddle go down the east side of the Conrad Glacier, roped for the crevassed section, pass Barren Lake, and follow the trail back to Conrad Meadows."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/gilbert-peak-conrad-glacier",
+    "https://www.mountaineers.org/activities/trip-reports/gilbert-peak-via-conrad-and-meade-glaciers",
+    "https://mazamas.org/activity/192/"
+   ],
+   "confidence": "medium",
+   "notes": "Route reversed; Mountaineers route page and 2024 trip report give the saddle, Meade crossing, stay-high advice, roped Conrad Glacier and Barren Lake."
+  }
+ }
+}

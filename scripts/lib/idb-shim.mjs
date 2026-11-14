@@ -26,6 +26,8 @@ function makeStore(def) {
     // transaction and what lib/offline.js relies on.
     get: (k) => { const r = new Req(); soon(() => { r.result = def.rows.get(k); r.onsuccess && r.onsuccess(); }); return r; },
     getAll: () => { const r = new Req(); soon(() => { r.result = [...def.rows.values()]; r.onsuccess && r.onsuccess(); }); return r; },
+    // lib/offlineTiles.js asks which tiles it already holds before downloading (probe-live-route-map-save).
+    getAllKeys: () => { const r = new Req(); soon(() => { r.result = [...def.rows.keys()]; r.onsuccess && r.onsuccess(); }); return r; },
     put: (row) => { def.rows.set(row[def.keyPath], row); const r = new Req(); soon(() => r.onsuccess && r.onsuccess()); return r; },
     delete: (k) => { def.rows.delete(k); const r = new Req(); soon(() => r.onsuccess && r.onsuccess()); return r; },
     createIndex: (name, keyPath) => { def.indexes.set(name, keyPath); },

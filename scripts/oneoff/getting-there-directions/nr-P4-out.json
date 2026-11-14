@@ -1,0 +1,61 @@
+[
+ {
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "found": true,
+  "trailhead": "Westside Road — Dry Creek Trailhead",
+  "trailheadDirection": "From the Nisqually entrance of Mount Rainier National Park, drive 1 mile to Westside Road and turn left (north). Follow it to the barricade at Dry Creek and park in the small lot south of it; the road beyond is currently closed to vehicles.",
+  "approach": "From Westside Road — Dry Creek Trailhead, walk the closed road past the barricade to the Tahoma Creek Trail and climb it about 2 miles to the Wonderland Trail junction near 4300 ft. Cross the Tahoma Creek suspension bridge, follow the Wonderland Trail and Mirror Lakes Trail to the basin by Pyramid Peak, then work cross-country to Success Cleaver and up it to about 8000 ft. From the cleaver, a roped traverse onto the South Tahoma Glacier leads toward the foot of the headwall.",
+  "numbersUsed": ["1", "2", "4300", "8000"],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+   "https://www.mountaineers.org/activities/routes-places/glacier-island-peak",
+   "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier",
+   "https://www.nps.gov/places/westside-road-dry-creek-trailhead.htm"
+  ],
+  "note": "low: approach up Success Cleaver to 8000 ft is sourced; the headwall base itself is inferred, no page describes it. Dry Creek barricade per NPS."
+ },
+ {
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "found": true,
+  "trailhead": "Westside Road — Dry Creek Trailhead",
+  "trailheadDirection": "From the Nisqually entrance of Mount Rainier National Park, drive 1 mile to Westside Road and turn left (north). Follow it to the barricade at Dry Creek and park in the small lot south of it; the road beyond is currently closed to vehicles.",
+  "approach": "From Westside Road — Dry Creek Trailhead, walk the closed road past the barricade to the Tahoma Creek Trail and climb it about 2 miles to the Wonderland Trail junction near 4300 ft. Go south over the Tahoma Creek suspension bridge, follow the Wonderland Trail to Indian Henry's Hunting Ground, then take the Mirror Lakes Trail until it fades in the basin between Copper and Pyramid Peaks. Continue cross-country past Pyramid Peak to Success Cleaver and gain about 8000 ft, where a roped traverse across the South Tahoma Glacier reaches the base of Tahoma Cleaver at roughly 8100 ft.",
+  "numbersUsed": ["1", "2", "4300", "8000", "8100"],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountaineers.org/activities/routes-places/glacier-island-peak",
+   "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+   "https://www.nps.gov/places/westside-road-dry-creek-trailhead.htm"
+  ],
+  "note": "Glacier Island Traverse page reaches Tahoma Cleaver at ~8100 ft from Success Cleaver; Dry Creek barricade per NPS (park south of it)."
+ },
+ {
+  "id": "wa_big_chiwaukum_mount_temple_ridge",
+  "found": true,
+  "trailhead": "Snow Lakes Trailhead",
+  "trailheadDirection": "From US-2 at Leavenworth, turn onto Icicle Creek Road and drive south 4.2 miles to the Snow Lakes trailhead parking lot.",
+  "approach": "From the Snow Lakes Trailhead, follow the Snow Lakes Trail 5.2 miles to Nada Lake. About 0.5 miles around the right side of the lake, cross Nada Creek and climb left of the talus slope toward the notch into Temple Canyon, using a ledge and slabs where the talus narrows. Follow the way trail through Temple Canyon and scramble up left onto the broad bench of Tamarack Meadows, below Temple Ridge.",
+  "numbersUsed": ["2", "4.2", "5.2", "0.5"],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side",
+   "https://www.wta.org/go-hiking/hikes/nada-lake"
+  ],
+  "note": "low: West Side page of the same 8,292 ft summit gives the approach to Tamarack Meadows; this ridge route's own start is not described."
+ },
+ {
+  "id": "wa_big_chiwaukum_three_musketeers_ridge",
+  "found": true,
+  "trailhead": "Snow Lakes Trailhead",
+  "trailheadDirection": "From US-2 at Leavenworth, turn onto Icicle Creek Road and drive south 4.2 miles to the Snow Lakes trailhead parking lot.",
+  "approach": "From the Snow Lakes Trailhead, follow the Snow Lakes Trail past the footbridge about 4 miles in and on to Nada Lake. Go up the gully that drains Temple Canyon and Tamarack Meadows into the lake, including the mossy slot that summer parties avoid, until the terrain eases near 5800 ft. From there the ridge to the summit is about one mile and 2000 ft of climbing.",
+  "numbersUsed": ["2", "4.2", "4", "5800", "2000"],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.mountaineers.org/activities/trip-reports/three-musketeers-ridge",
+   "https://www.wta.org/go-hiking/hikes/nada-lake"
+  ],
+  "note": "one winter trip report of this ridge (browser-read, cached); drive from WTA Nada Lake page."
+ }
+]

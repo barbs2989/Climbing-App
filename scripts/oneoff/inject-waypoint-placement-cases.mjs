@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Injection harness for check:waypoint-placement. Its healthy output is "ok", which is exactly what
 // a guard that renders nothing also prints — and this one bundles and renders, so it has plenty of
 // ways to pass having measured nothing.
@@ -11,27 +12,29 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
-const FILES = { core: ROOT + "ClimbMatchCore.jsx", rd: ROOT + "RouteDetail.jsx" };
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
+const FILES = { core: ROOT + "ClimbMatchCore.jsx", rd: ROOT + "RouteDetail.jsx", gpx: ROOT + "src/components/GPXMap.tsx",
+  // PR57 moved WaypointList and TrailheadCard out of RouteDetail.jsx.
+  wl: ROOT + "src/components/WaypointList.tsx", card: ROOT + "src/components/TrailheadCard.tsx" };
 const ORIG = Object.fromEntries(Object.entries(FILES).map(([k, p]) => [k, readFileSync(p, "utf8")]));
 const sum = (s) => createHash("sha1").update(s).digest("hex").slice(0, 12);
 
 const CASES = [
   {
     name: "the honesty line is deleted — an unplaced pin looks identical to a placed one",
-    file: "rd",
+    file: "wl",
     edit: (s) => s.replace(/\{placed\?null:<div style=\{\{fontSize:11,color:C\.textMuted,marginTop:6,lineHeight:1\.45\}\}>No coordinate on file[^<]*<\/div>\}/, "{null}"),
     expect: "fail",
   },
   {
     name: "an UNPLACED row is made a control — a tap that pans the map to nothing",
-    file: "rd",
+    file: "wl",
     edit: (s) => s.replace("const act=(placed&&onFocus)?", "const act=(onFocus)?"),
     expect: "fail",
   },
   {
     name: "the tap hint renders with no placed waypoint — promises an impossible interaction",
-    file: "rd",
+    file: "wl",
     edit: (s) => s.replace("{(onFocus&&anyPlaced)?", "{(onFocus)?"),
     expect: "fail",
   },
@@ -49,8 +52,10 @@ const CASES = [
   },
   {
     name: "GPXMap re-inlines a bare lat-null test alongside the helper",
-    file: "core",
-    edit: (s) => s.replace("const wpPts=(waypoints||[]).filter(w=>wpPlaced(w));", "const wpPts=(waypoints||[]).filter(w=>w&&w.lat!=null);"),
+    // GPXMap lives in src/components/GPXMap.tsx since PR13 of the component extraction; the guard still
+    // reads it through the stitch. Its filter goes through `placed`, the typed predicate over wpPlaced().
+    file: "gpx",
+    edit: (s) => s.replace("const wpPts=(waypoints||[]).filter(placed);", "const wpPts=(waypoints||[]).filter(w=>w&&w.lat!=null);"),
     expect: "fail",
   },
   /* Section 1b: a placement test born OUTSIDE GPXMap. Case 8 is the real historical defect —
@@ -96,7 +101,7 @@ const CASES = [
      them explain this very rule. */
   {
     name: "a second trailhead resolver — TrailheadCard reading logistics itself, as it did",
-    file: "rd",
+    file: "card",
     edit: (s) => s.replace(
       "  const tp=trailheadPoint(route);",
       "  const tp=trailheadPoint(route);const _x=al.trailheadLat!=null?al.trailheadLat:null;"),
@@ -116,10 +121,10 @@ const CASES = [
   },
   {
     name: "a COMMENT naming trailheadLat is documentation, not a resolver",
-    file: "rd",
+    file: "card",
     edit: (s) => s.replace(
-      "function TrailheadCard({route,onEdit}){",
-      "/* al.trailheadLat and al.trailheadLng are read only by trailheadPoint(). */\nfunction TrailheadCard({route,onEdit}){"),
+      "export default function TrailheadCard({route,onEdit}: TrailheadCardProps){",
+      "/* al.trailheadLat and al.trailheadLng are read only by trailheadPoint(). */\nexport default function TrailheadCard({route,onEdit}: TrailheadCardProps){"),
     expect: "pass",
   },
   {

@@ -1,0 +1,146 @@
+{
+ "file": "r007.json",
+ "results": [
+  {
+   "id": "co_jaws_2",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Beta only narrates the first two pitches and does not say the route has two; it does not conflict with a stored count. Separately, the route's Mountain Project page lists 4 pitches (330 ft), theCrag gives no pitch count, and CMC/LA Mountaineers/SummitPost pages give no count, so there is no second source to change 3.",
+   "sources": [
+    "https://www.mountainproject.com/route/105756760/jaws",
+    "https://www.thecrag.com/es/escalar/united-states/south-platte/area/12573007/routes"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_twin_owls_2_copperhead",
+   "fact": "aid grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists Copperhead as C3 and says the old A4 crux now goes at C3 without fixed pro, which explains the C3 vs A4 difference (modern clean grade vs original). No second source found: searches of SummitPost Twin Owls pages, theCrag RMNP list and web searches for Copperhead/Aaron Walters/Bob Bradley returned only the MP page. Not changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/105759474/copperhead",
+    "https://www.summitpost.org/rock-climbing-routes-on-twin-owls/243095/c-"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_us_highway_550_south_of_silverton_cataract_gulch",
+   "fact": "climb length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Route's Mountain Project page gives 600 ft (182 m), 2 pitches; the 100 ft sheet / ~100 m main ice are the ice portion and the creek walking above makes up the rest of the length. 183 m matches the page's own total; the prose describes only the main ice band, not the whole outing. No second source on a different length.",
+   "sources": [
+    "https://www.mountainproject.com/route/200254834/cataract-gulch"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_valhalla_peak_eldar_tower_i_found_the_letters",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route page lists 5 pitches (650 ft) while its description numbers segments P1-P8, where P3 is a 100 ft scramble, P2 a ledge traverse and P8 a 20 ft scramble; 5 counts the technical pitches, so numbered segments (to P7) do not contradict it. Eldar Tower area page also gives a 650 ft tower. No source gives a different count.",
+   "sources": [
+    "https://www.mountainproject.com/route/201567597/i-found-the-letters",
+    "https://www.mountainproject.com/area/201567441/valhalla-peak-eldar-tower"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ga_the_lowers_fourteen",
+   "fact": "aid grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists Fourteen as 5.8 A0, 20 ft, 'likely have to aid the first bolt', old army aid route. Nothing found for aid_grade A1: searches on SummitPost Lowers page, rockclimbing.com Yonah listing and several web queries returned no other listing of this route. One source only, so no change.",
+   "sources": [
+    "https://www.mountainproject.com/route/200326501/fourteen",
+    "https://www.summitpost.org/lowers/378639/c-"
+   ],
+   "patches": []
+  },
+  {
+   "id": "mt_sphinx_helmet_area_the_earl_trimble",
+   "fact": "length vs pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project lists the route at 1500 ft (455 m), 5 pitches, matching the stored 457 m. The pitch lengths in the prose describe the ice bands only and may leave out snow/ramps between them; a 2023 trip report and Outside Bozeman give no length. No second source for a different length, so left unchanged.",
+   "sources": [
+    "https://www.mountainproject.com/route/202078409/the-earl-trimble",
+    "https://tenthousandtoofar.com/2023/11/13/chasing-the-frozen-dragon-lowe-route-wi4-ii-sphinx-mountain-mt-11-10-23/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "mt_the_thunderdome_mega_mega",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's Mountain Project page gives 140 ft (42 m) with no pitch count and says two approach pitches precede the pillar plus three mixed pitches above (not part of the graded line). Stored 43 m matches a single pillar pitch. AAC Thunderdome article and Alpinist news item do not give the count. Only one real source; left unchanged.",
+   "sources": [
+    "https://www.mountainproject.com/route/200395245/mega-mega",
+    "https://publications.americanalpineclub.org/articles/13201215025",
+    "https://alpinist.com/newswire/new-ice-routes-in-montanas-cabinet-mountains/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "nh_west_side_of_greeley_northern_pond_2_damnation_runnel",
+   "fact": "route length",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": null,
+   "evidence": "The row's overview says the runnel runs 300-400 ft, so a 1 m length is impossible. The route's Mountain Project page lists 3 ft (1 m) as a placeholder and a climber comment there says it actually runs 300-400 ft. Right figure not stated by a second source, so the header length is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/107461233"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 1,
+     "value": null,
+     "id": "nh_west_side_of_greeley_northern_pond_2_damnation_runnel",
+     "fact": "route length"
+    }
+   ]
+  },
+  {
+   "id": "or_northwest_passage_aid",
+   "fact": "aid grade",
+   "verdict": "fixed",
+   "correct_value": "C2",
+   "evidence": "Row grade says 5.7 C2. Mountain Project's Northwest Passage (Aid) listing shows 5.7 C2 (4 pitches, 350 ft) and SummitPost's Northwest Passage page gives aid difficulty C2, rock 5.7, 4 pitches. aid_grade A0 appears to belong to the free-climbed variant, so aid_grade set to C2.",
+   "sources": [
+    "https://www.mountainproject.com/route/105895096/northwest-passage-aid",
+    "https://www.summitpost.org/northwest-passage/250097"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "aid_grade",
+     "path": [],
+     "expect": "A0",
+     "value": "C2",
+     "id": "or_northwest_passage_aid",
+     "fact": "aid grade"
+    }
+   ]
+  },
+  {
+   "id": "or_pioneer_route",
+   "fact": "aid grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: Mountain Project 5.7 C0, SummitPost Smith guide 5.7 A0, a blog quoting Watts' guide 5.7 C1, Smith Rock guide service A1, 27crags A1. No two agree on C1 or C0, so neither field changed.",
+   "sources": [
+    "https://www.mountainproject.com/route/105791058/pioneer-route",
+    "https://gethighonaltitude.com/2022/09/08/monkey-face-pioneer-route/",
+    "https://27crags.com/crags/smith-rocks/routes/pioneer-route",
+    "https://www.summitpost.org/pioneer-route/157716"
+   ],
+   "patches": []
+  }
+ ]
+}

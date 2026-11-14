@@ -1,0 +1,117 @@
+{
+ "wa_bryant_peak_north_route": {
+  "area": "wa_bryant_peak",
+  "skip_reason": "no reachable source describes this line's approach or descent"
+ },
+ "wa_bryant_peak_west_face": {
+  "area": "wa_bryant_peak",
+  "skip_reason": "no reachable source describes this line (searches only found winter ice lines and the Denny Creek scramble)"
+ },
+ "wa_burnt_boot_peak_north_ridge": {
+  "area": "wa_burnt_boot_peak",
+  "skip_reason": "no source found for the roped North Ridge descent; the sibling descent is for a different, scrambling line"
+ },
+ "wa_cardinal_peak_nw_couloir_north_ridge": {
+  "area": "wa_cardinal_peak",
+  "skip_reason": "no source found describing this line or its descent"
+ },
+ "wa_cashmere_mountain_northeast_ridge": {
+  "area": "wa_cashmere_mountain",
+  "skip_reason": "no source found describing the Northeast Ridge descent"
+ },
+ "wa_castle_peak_pasayten_east_ridge": {
+  "area": "wa_castle_peak_pasayten",
+  "skip_reason": "no source found for this line; sibling approach is for another route"
+ },
+ "wa_castle_peak_pasayten_north_ridge": {
+  "area": "wa_castle_peak_pasayten",
+  "skip_reason": "no source found for this line"
+ },
+ "wa_castle_peak_pasayten_south_route": {
+  "area": "wa_castle_peak_pasayten",
+  "skip_reason": "no source found to thicken the descent beyond what is stored"
+ },
+ "wa_chair_peak_southeast_face": {
+  "area": "wa_chair_peak",
+  "skip_reason": "no accessible source (Mountaineers and SummitPost blocked); mapping to a described line uncertain"
+ },
+ "wa_chimney_rock_north_ridge": {
+  "area": "wa_chimney_rock",
+  "skip_reason": "no accessible source describes this ridge"
+ },
+ "wa_chimney_rock_northeast_ridge": {
+  "area": "wa_chimney_rock",
+  "skip_reason": "no accessible source describes this ridge"
+ },
+ "wa_chimney_rock_northwest_ridge": {
+  "area": "wa_chimney_rock",
+  "skip_reason": "no accessible source describes this ridge"
+ },
+ "wa_chimney_rock_southeast_ridge": {
+  "area": "wa_chimney_rock",
+  "skip_reason": "no accessible source describes this ridge"
+ },
+ "wa_chimney_rock_southeast_shoulder": {
+  "area": "wa_chimney_rock",
+  "skip_reason": "no accessible source describes this line"
+ },
+ "wa_cadet_peak_ne_ridge": {
+  "area": "wa_cadet_peak",
+  "set": {
+   "approach": "Start from the end of Forest Service road 4096 and follow the Bedal Creek trail, which is rough and blown down in places. Where the tread is lost in a rocky creek bed, keep going up the creek through one short wet step until the path reappears on the right. The trail fades in the heather beneath the southwest face of Sloan; from the basin there, climb about a thousand feet south to the ridge crest. Drop on grassy, rocky ground to the small tarn often called Cadet Lake, cross over Heineken Peak, and go down its steep grassy gullies to a low point near 5,600 ft above the remnant Mayflower Glacier. The route starts there, on the ridge rising on the northeast side of Cadet Peak toward a small hanging glacier.",
+   "descent_text": "Cross the summit plateau and come down the standard route toward Glacier Basin. The upper cliff band is the tricky part when you did not climb the standard line: follow cairns and look for the worn boot path through it. Lower down a tunnel through the brush leads into Glacier Basin. The whole descent is steep and loose, hard on the knees, but not technical. From the basin pick up the Glacier Basin trail, an old miners' path that is rough and overgrown, and follow it out toward Monte Cristo and the Barlow Pass road."
+  },
+  "review": {
+   "sources": [
+    "https://climberkyle.com/2023/09/09/heineken-high-route/"
+   ],
+   "confidence": "medium",
+   "notes": "Single trip report climbing this NE ridge from Bedal Creek and descending via Glacier Basin; the standard-descent landmarks match the stored Standard Scramble sibling."
+  }
+ },
+ "wa_cashmere_mountain_se_route": {
+  "area": "wa_cashmere_mountain",
+  "set": {
+   "descent_text": "Reverse the ascent. Downclimb the SE gully, mostly class 2-3, staying in the main gully rather than drifting left onto harder ground, which is easy to do in fog. At the foot of the gullies a snowfield leads down; early in the season it is firm in the morning and may call for crampons, and by afternoon it softens enough to boot-ski or plunge-step. Below it, the burned hillside of ash and deadfall is the slowest part going up but quick coming down by plunge-stepping, and it leads back to the old logging road and the Eightmile Trail. No rappels are needed."
+  },
+  "review": {
+   "sources": [
+    "https://climberkyle.com/2017/06/11/mt-cashmere-se-route/"
+   ],
+   "confidence": "medium",
+   "notes": "One trip report of the SE Route up and down (class 2-3 gullies, snowfield, burn zone, no rappels). Summitpost not reachable (blocked)."
+  }
+ },
+ "wa_chair_peak_south_ridge": {
+  "area": "wa_chair_peak",
+  "skip_reason": "lead review: the researched line (rappel station, exposed fatal-fall traverse) does not match this row's Class 2 grade, so it may be a different route"
+ },
+ "wa_the_monk_le_gibet": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "descent_text": "Rappel the northeast gully in three rappels of about 75 feet (roughly 23 m) each; a single 60 m rope doubled is enough for every rappel. Carry slings and rap rings to back up or build the stations. The gully is the standard way off the Monk, and it deposits you on the talus at the foot of the formation, from where a short walk down talus and slabs returns you to camp at Upper Cathedral Lake."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109095945/the-monk-le-gibet",
+    "https://www.mountainproject.com/route/109095922/the-monk-odine"
+   ],
+   "confidence": "medium",
+   "notes": "MP states descent via NE gully, three 75 ft rappels; walk back to Upper Cathedral Lake camp from area page and sibling routes."
+  }
+ },
+ "wa_the_monk_odine": {
+  "area": "wa_cathedral_peak_pasayten",
+  "set": {
+   "descent_text": "Rappel the northeast gully in three rappels of about 75 feet (roughly 23 m) each; a doubled 60 m rope reaches between stations. Carry slings and rap rings to back up or build the stations. The gully drops to the talus at the foot of the Monk, from where a short walk down talus and slabs returns you to camp at Upper Cathedral Lake."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/109095945/the-monk-le-gibet",
+    "https://www.mountainproject.com/route/109095922/the-monk-odine"
+   ],
+   "confidence": "medium",
+   "notes": "MP states descent via NE gully, three 75 ft rappels; walk back to Upper Cathedral Lake camp from area page and sibling routes."
+  }
+ }
+}

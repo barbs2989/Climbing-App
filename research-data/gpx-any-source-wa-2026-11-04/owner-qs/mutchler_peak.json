@@ -1,0 +1,36 @@
+{
+  "key": "mutchler_peak",
+  "question": "Mutchler Peak is described as a glacier climb but stored as a scramble: which is right, and what discipline and grade?",
+  "answer": "Both are partly right; the glacier is the reason to change the discipline. The summit itself is easy: the NE ridge is reached by a third-class heather and duff ramp onto a flat plateau with about 400 ft left to the top (July 2012 solo report: no rope used on Mutchler, no rappel); a June 2026 party took snow from the cirque up the NE ridge with no exposure. But the usual way in is across or beside the Mutchler Glacier: the 2012 report says the ramp puts you right onto the glacier, with gaping cracks; a later party roped up, used crampons and crossed blue ice and a crevasse; and a Mountaineers trip on 3-5 July 2026 turned back because the transition onto the glacier was unsafe. The glacier has shrunk (only the highest north-facing slopes still hold ice), so late-season ascents are scrambles while June to early July is snow and glacier travel. The stored row's own text says 'snow/glacier remnants' and one traverse rappelled a cornice. A comment on a 2026 trip report quotes a guidebook as saying the south shoulder climbs easily, which would be a pure scramble, but I could not confirm an approach to it.",
+  "recommendation": "Change discipline to alpine (mountaineering is walk-up only and glacier travel is roped, so alpine is the compliant label), grade 'Class 3', keep season Jul-Sep. Add hazards: crevasses and glide cracks on the Mutchler Glacier, cornice on the ridge above Cyclone Lake in early summer; add rope, glacier kit and ice axe for June and early July. If the owner wants a scramble row, it would have to be a separate 'South Shoulder' row, which is unconfirmed.",
+  "confidence": "medium",
+  "proposed": {
+    "discipline": "alpine",
+    "disciplines": [
+      "alpine",
+      "scrambling"
+    ],
+    "grade": "Class 3",
+    "grade_system": "class",
+    "hazards_add": [
+      "crevasses and glide cracks on the Mutchler Glacier",
+      "cornice on the ridge above Cyclone Lake in early summer"
+    ],
+    "gear_add": [
+      "rope and glacier kit for the cirque crossing in June and early July",
+      "ice axe"
+    ]
+  },
+  "evidence": [
+    "https://www.nwhikers.net/forums/viewtopic.php?p=815973 - July 2012 traverse: 3rd class heather ramp on the NE ridge, ramp lands on the glacier, big cracks, no rappel needed near Mutchler",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1014540 - high route party crossed the cracked Mutchler Glacier roped with crampons, blue ice and a crevasse",
+    "https://climberkyle.com/2026/06/19/buckindy-high-route/ - June 2026: straightforward NE ridge by snow; glacier mostly gone except the highest north-facing slopes",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mutchler-peak - filed as a basic glacier climb; July 2026 party turned back at the glacier (from search summary; page 403)"
+  ],
+  "searched": [
+    "WebSearch Mutchler Peak route / glacier / Snowking / Buckindy - NWHikers, Climber Kyle, SummitPost Snowking",
+    "WebSearch Mutchler Peak Cyclone Lake - Mountaineers route page and trip report titles",
+    "WebFetch mountaineers.org Mutchler route page - 403",
+    "Read packet track 3238499: 20 June 2026, summited, snow from the cirque up the NE ridge; a single rappel on the Tara wall earlier in the traverse"
+  ]
+}

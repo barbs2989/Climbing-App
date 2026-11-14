@@ -1,0 +1,94 @@
+{
+  "area_id": "wa_sinister_peak",
+  "routes": [
+    {
+      "route_id": "wa_sinister_peak_north_face",
+      "season": {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "window": "Jun-Aug",
+        "evidence": "Mountaineers lists Jul-Sep for the north face (Jun-Sep for the northwest face); SummitPost says July and August best, May/October possible, schrund trouble late season. Logged North/NW face ascents are Jun and Jul. Stored May-Jul adjusted to Jun-Aug."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2893252",
+          "verdict": "different",
+          "why": "Logged West Ridge; report climbs the direct west ridge with a class 4 move."
+        },
+        {
+          "aid": "2566905",
+          "verdict": "different",
+          "why": "Ptarmigan traverse, report scrambles the west ridge."
+        },
+        {
+          "aid": "2871837",
+          "verdict": "different",
+          "why": "Report tries west ridge then south-side snow ramp and gully."
+        },
+        {
+          "aid": "2549867",
+          "verdict": "different",
+          "why": "Report climbs gully on south side of summit block."
+        },
+        {
+          "aid": "2895142",
+          "verdict": "unsure",
+          "why": "No route name or report text; track alone cannot separate north face from ridge routes."
+        },
+        {
+          "aid": "2548473",
+          "verdict": "unsure",
+          "why": "No route name or report text."
+        },
+        {
+          "aid": "2707532",
+          "verdict": "unsure",
+          "why": "Logged only \"Downey Cr\", no report; track also includes Dome."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "The Downey Creek trail grows muddy, brushy and tangled with deadfall toward Bachelor Creek, then stays rooty and slick for hours until the basin below the ridge.",
+          "aids": [
+            "2893252",
+            "2549867"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "In mid-June snow can cover the trail well short of Cub Lake, so plan camp placement around it.",
+          "aids": [
+            "2871837",
+            "2549867"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 6,
+          "text": "In mid to late June the Chickamin Glacier was firm and only needed weaving around a few cracks.",
+          "aids": [
+            "2871837",
+            "2549867"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 7,
+          "text": "By early July the bergschrund under the Dome side is very wide while the one below the Sinister col is only starting to sag; both were passable without hard route-finding.",
+          "aids": [
+            "2893252"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "All harvested summit tracks climb the west ridge / south gully, not the north face (those belong to the Southwest Route, which already has track points). No track was assigned. Facts are approach and glacier conditions shared with the face; none describe the face itself."
+}

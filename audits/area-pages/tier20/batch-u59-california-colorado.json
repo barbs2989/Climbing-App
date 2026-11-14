@@ -1,0 +1,76 @@
+{
+ "ca_solarium": {
+  "_expect": {
+   "name": "Solarium",
+   "region": "California"
+  },
+  "blurb": "Solarium sits at the north end of the Central Gorge in the Owens River Gorge outside Bishop, close to the old power plant. It is a bolted single-pitch sport crag with a couple of trad lines, and the faces run roughly 80 to 120 feet. Grades start around 5.8 but the wall is really for strong sport climbers: most of the twenty routes fall between 5.11 and 5.12, with only a few easier lines. The cliff catches plenty of sun, which makes it a good pick when the rest of the gorge feels cold. Expect the usual gorge style of steep, sustained pitches on solid volcanic rock, and bring a standard rack of quickdraws.",
+  "review": {
+   "sources": [
+    "https://app.advcollective.com/climbing/solarium-climbing-guide-owens-river-gorges-sunny-central-crag",
+    "https://www.mountainproject.com/area/105843300/central-gorge"
+   ]
+  }
+ },
+ "ca_great_burrito": {
+  "_expect": {
+   "name": "Great Burrito",
+   "region": "California"
+  },
+  "blurb": "The Great Burrito is a sizable formation in Real Hidden Valley, in the Hidden Valley part of Joshua Tree National Park, a short distance from the nature trail. Every route is one pitch of traditional climbing, and the line-up runs from beginner-level 5.3 up to about 5.10, with the bulk of the twenty climbs between 5.9 and 5.10 and a pair set up as top ropes. The granite is mostly firm but turns grainy in places. The routes lie on the southwest side, so the wall takes sun for most of the day, which helps in winter and makes summer afternoons hot. Descent is by rappel or a walk-off to the northwest.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105721592/great-burrito?print=1",
+    "https://adammartin.space/2018-joshua-tree-hidden-valley/"
+   ]
+  }
+ },
+ "ca_intersection_rock_west_and_south_faces": {
+  "_expect": {
+   "name": "Intersection Rock (West and South Faces)",
+   "region": "California"
+  },
+  "blurb": "Intersection Rock is one of the best-known climbing formations in Joshua Tree National Park, a big monzonite monolith next to Hidden Valley Campground just off Park Boulevard. The west and south faces hold a broad mix of mostly traditional routes, with a single bolted line and one aid route, and the difficulty is unusually wide: a few scrambling-level climbs, some moderate crack and chimney routes in the 5.5 to 5.8 range, and a heavier cluster at 5.10 with a handful of 5.11 pitches. Because it sits beside the campground and the nature trail parking, it is quick to reach and often busy, making it a classic first stop for the area.",
+  "review": {
+   "sources": [
+    "https://cali49.com/jtnp/2014/10/27/intersection-rock",
+    "https://app.advcollective.com/climbing/jungle-at-intersection-rock-joshua-tree"
+   ]
+  }
+ },
+ "co_midnight_rock": {
+  "_expect": {
+   "name": "Midnight Rock",
+   "region": "Colorado"
+  },
+  "blurb": "Midnight Rock is a steep sport and trad cliff in Upper Dream Canyon, a quiet side canyon above Boulder at around 7,300 feet. It is a crag for strong climbers: of its twenty-nine routes, the large majority are 5.11 and 5.12 sport lines, with a few at 5.13 and just one at 5.9. Pitches are roughly 40 to 90 feet, and a 60 m rope can be needed to lower from some of them. There is a lower face and an upper ledge, and getting down to the rock involves a fourth-class gully, so it feels more committing than the neighbouring walls. Expect fewer people than the main Boulder Canyon crags.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105744674/midnight-rock",
+    "https://mountainproject.com/area/105744234/upper-dream-canyon"
+   ]
+  }
+ },
+ "co_scout_rock": {
+  "_expect": {
+   "name": "Scout Rock",
+   "region": "Colorado"
+  },
+  "blurb": "Scout Rock is a small crag right beside the highway in South St. Vrain Canyon, a few miles up from Lyons. It offers a bit of everything on short single-pitch lines: roughly equal parts sport and trad, plus a couple of top ropes and two aid lines. Grades span beginner terrain around 5.4 through the 5.9 range to a bump of 5.11 and a couple of 5.12s, so mixed parties can find something. Rock quality varies, with sound sections next to loose ones, so wear a helmet. The cliff faces south and picks up good sun, though sitting low in the canyon it gets little winter sunshine, and it can be climbed year round.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105744935/scout-rock",
+    "https://app.advcollective.com/climbing/keemosabe-a-sunny-sport-climb-on-scout-rock"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_pic_a_nic_area": "both pages describe the parent Old LA Zoo, not this area",
+  "co_backside_area": "both pages describe parent/neighbour areas, not this one",
+  "co_main_area_5": "only the parent bouldering page and one route page"
+ },
+ "_conflicts": {
+  "co_scout_rock": "Stored rock is quartz monzonite; one page (https://app.advcollective.com/climbing/keemosabe-a-sunny-sport-climb-on-scout-rock) calls the climbing sandstone, while https://www.mountainproject.com/area/105744935/scout-rock says granite of varying quality.",
+  "ca_intersection_rock_west_and_south_faces": "Stored rock is monzogranite; https://app.advcollective.com/climbing/jungle-at-intersection-rock-joshua-tree calls it desert sandstone, while https://cali49.com/jtnp/2014/10/27/intersection-rock says quartz monzonite."
+ }
+}

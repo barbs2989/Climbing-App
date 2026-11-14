@@ -1,5 +1,6 @@
-const supabaseUrl = "https://ofuofhojhbcrcahuotya.supabase.co";
-const supabaseKey = "sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5";
+import "../lib/load-env.mjs";
+const supabaseUrl = process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY;
 
 async function checkMajorPeaks() {
   const peaks = ["Mount Rainier", "Mount Adams", "Mount Baker", "Mount Shuksan", "Mount Stuart", "Glacier Peak"];

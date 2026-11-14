@@ -20,6 +20,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   "Watch out for on this type of climb" were the same canned lines on every route of a kind,
   advice about climbing in general rather than this climb — and section 3 pins that they stay
   gone on every discipline. The sport bolt-problem reporter survives: it acts on this route.
+  **Section 7 (2026-10-31): a boulder line is a PROBLEM.** Every tab of a bare boulder problem, and of the same
+  problem with a description, a season and one report (the branches a bare row never opens), must not say
+  "route" in visible text or in an aria-label / title / placeholder; "route-finding" and "Route finder" are
+  allowed. Its anchor is the filled problem's *Problem description* card. Injection: put "Route description"
+  back in `RouteOverviewTab` and it fails twice (the word, and the lost anchor). It cannot see a string that
+  renders only with data it does not seed (a photo, a topo, a crew), nor the forms (LogAscent, AddRoute,
+  SuggestFix), which were fixed by reading. A ConsensusPanel string is gated on `VOLATILE_DISC`, which has no
+  bouldering, so an injection there is correctly silent.
   Both were invisible to a guard that
   only renders a populated route. Gated by `npm run build`. Injection-tested: restoring the
   pre-#641 file trips 6 assertions, and renaming a UI anchor trips `ANCHOR LOST` rather than
@@ -45,6 +53,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Plan tab shows them on Overview — and only there, so a route WITH a Plan tab must not repeat them.
     Injection-tested: removing the Season row, reverting the strap, and reverting `cragOnly` to three
     disciplines each fail by name.
+  - **GEAR BETA reaches the rack card on every roped discipline (2026-10-14).** #2363 took a logged
+    ascent's `gearBeta` out of CLIMBER BETA so one fact was not two boxes, and "moved" it into a
+    `sport` branch of `RouteGearCheck` — which is mounted only OFF `CRAG_CATS`, so the branch could
+    never run and on trad, sport, toprope and aid the gear beta reached **no screen**. Nothing here
+    saw it because a bare route carries no `activity`. `RackBetaList` is now the one list, at the
+    foot of `RouteRackBox` (alpine, Plan) and `CragRack` (crag, Overview, placeholder card included),
+    never on bouldering. The section renders a sentinel gear beta on each and asserts it appears
+    **exactly once**, under "Rack beta". Proven against the pre-fix `RouteDetail.jsx`: 4 failures,
+    one per crag discipline, alpine still green.
 - **`check:approach-section`** renders the real `RouteDetail` and pins that the Plan tab has
   **one** APPROACH section. There used to be two: "APPROACHES · N ways in" (`approach_variants`)
   and, under it, a separate APPROACH box holding the `approach` paragraph, which read as a third
@@ -74,6 +91,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   identifier is referenced. Only rendering can. It pulls a **real value from the live DB** per
   column, injects it onto a bare route, renders all six sub-tabs, and looks for it on screen.
   Runs on every PR via `render-guards.yml`; not a build gate (it reads the DB).
+  - **Every column in `FIELDS` needs a partial index `routes (id) where <col> is not null`**
+    (0387). The sample query is `<col>=not.is.null&order=id.asc&limit=8`; on a column filled on
+    under 6% of 315k routes, without that index the planner walks `routes_pkey` and discards rows
+    until it finds eight — 282,764 rows and ~1.8 GB of buffer reads for `climbing_route` alone,
+    61 times per run, on every PR push from every parallel session. That load was the likeliest
+    cause of the 2026-10-28 database stall. Adding a column to `FIELDS`? Add its index in a new
+    migration (`create index concurrently` by hand on production, then record the version).
   - It replaced `scripts/oneoff/measure-which-tab-renders-each-field.mjs`, which hardcoded
     `ROOT` to the `rappels-rack-filter-class-audit` worktree — so it silently measured a
     different branch's code than the one you ran it in.
@@ -85,8 +109,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `EmergencyRescueCard` owns emergency); one discipline base, when `RouteGearCheck` is
     `cragOnly`; testing only the longest string leaf, which condemns a column over one hidden
     sub-key (it called `pitch_detail` dead, and that visibly renders); and confusing **used**
-    with **echoed** — the RACK box prints `rackSummary()`, so raw `gear` prose never appears
-    verbatim though the column drives the screen.
+    with **echoed** — the old PROTECTION card printed `rackSummary()`, a derived label, so raw
+    `gear` prose never appeared verbatim though the column drove the screen (that card and
+    `rackSummary` were removed 2026-10-23; the BASELINE below still covers any derived readout).
     - **A SEVENTH, added 2026-08-20 after it produced a wrong claim in a merged PR:
       `dbRouteToCamel` opens `return { ...r, ... }`.** It SPREADS the raw row and then adds
       camelCase aliases, so every snake_case column reaches the app whether or not the mapper
@@ -244,7 +269,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:summit-briefing`** asserts that a peak page's **ACROSS EVERY ROUTE HERE** panel states
   what its routes agree on and refuses where they do not. Renders the real `SummitBriefing`
   (`lib/DbAreaBrowser.jsx`) over real catalog rows, so it reads the DB and is **not** a build gate;
-  it runs on every PR and every push to main via `render-guards.yml`, on the **anon key** — `routes`
+  it runs on every PR, and on main every 4 hours, via `render-guards.yml`, on the **anon key** — `routes`
   is publicly readable and CI has no business holding a key that bypasses RLS, the same stance
   `check:field-renders` takes one job over.
   - **THE ACCESS & PERMITS BLOCK WAS REMOVED BY THE OWNER (2026-10-04).** The panel's Permit /
@@ -473,6 +498,24 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   sources" to come out of the app, so the chip, its module and this guard were deleted, and the
   `autoGenerated` mapping in `dbRouteToCamel` went with them (nothing else read it). **Do not
   rebuild a per-section "how this was sourced" label** — see `check:no-sources`.
+- **`check:no-rack-class-1-3`** holds the owner's rule (2026-11-13): **a Class 1, 2 or 3 route has no
+  RACK card, and neither does a hike.** Grays Peak North Slopes (`scrambling`, `Class 1`, no rack
+  of its own) printed RACK with `DISC_RACK.scrambling`, "Light rope + a few slings for exposed
+  steps", which makes no sense on a walk-up. Static (one esbuild bundle of RouteGearCheck, SSR
+  renders), in `npm run build`.
+  - **The rule reads the HEADLINE grade, `displayGrade`, not the raw `grade` column**, so a range
+    counts at its top: "Class 2-3" is Class 3 and loses the card, "Class 3-4" is Class 4 and keeps
+    it. "Class 3+", "3rd class" and "Easy Class 3" count as Class 3. It applies on **every
+    discipline**, not only `scrambling`: a Class 2 mountaineering walk-up is a Class 2 route.
+    `hiking` is Class 1 by definition, graded or not.
+  - **Nothing a route states is dropped.** The card, the generic discipline rack and the "add the
+    rack" placeholder go; the route's own rack (`rackForNoRackClass`: counted rows plus
+    `routeRackFor`) joins GEAR & ESSENTIALS, so a Class 2 snow route that records a picket still
+    shows it. The printed route sheet heads those items "Gear" instead of "Rack".
+  - **It fails closed and pins both directions**: a render with no GEAR heading is a broken probe
+    (every "no RACK" assertion passes against an empty render), and Class 4, Class 3-4 and a 5.6
+    alpine route must still render RACK, so the rule cannot quietly over-reach. The card heading
+    is matched as `>RACK<`, never as a substring ("ROUTE TRACK" contains RACK).
 - **`check:access-checked-line`** asserts the road/access **CHECKED DATE** reaches a screen, and that
   a route without one says **nothing**. Static (one esbuild bundle, two SSR renders), so it sits in
   `npm run build`.
@@ -590,6 +633,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:trailhead-directions`** asserts a screen offers **exactly one way to drive to the
   trailhead**, that the **coordinates** are beside it, and that a **label describes the value under
   it**. Static (one esbuild bundle, five SSR renders), so it sits in `npm run build`.
+  - **SECTION 9 (2026-10-25 update): each leg carries its TIME, and the DESCENT strip repeats it.** The
+    time on *Summit to trailhead* must equal the time the DESCENT section's leg strip prints, because
+    both read one `planTimes()` call at the Planner's settings. The old assertion (`!\bhr\b`, "no time")
+    was retired: `\bhr\b` never matches `5.2hr` (no word boundary between a digit and `h`), so it passed
+    with a time on the page. The time regex is now `[≥]?\d+\.\d+hr`.
+  - **SECTION 9: THE TWO LEGS SIT WITH GETTING THERE** (owner, 2026-10-21). `SummitLegsCard` renders
+    *Trailhead to summit* / *Summit to trailhead* under `TrailheadCard`, and the section asserts both
+    legs render between the coordinates and ACCESS & REGULATIONS, with `planTimes()`' times and the
+    one-way distance. It is a SEPARATE card on purpose: section 7 keeps stat tiles out of the
+    TRAILHEAD card, and its slice stops at the next caps heading, which "TRAILHEAD TO SUMMIT" is.
+    Injection-tested by hand: removing the mount fails "did not render". Trap met: `/\b5 hr/`
+    matches inside "4.5 hr" (a word boundary sits after the dot), so the time assertion is
+    `(?<![\d.])5 hr`.
   - **IT IS THE GATE #1437 DID NOT GET.** That change moved `TrailheadCard` up under GETTING THERE
     and dropped the standalone *"Directions to trailhead"* button standing there — both resolved
     the same `trailheadPoint()`, so the page offered one destination twice and printed the road
@@ -746,7 +802,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     column was populated, so `check:field-renders` and every coverage audit read it as done.
     `check:trailhead-directions` asks how many drive CONTROLS a screen has, not what the prose says.
   - **THE ORIGIN IS THE HAND-WRITTEN SQL, and `check:sql` now refuses it.** 31 of the 48 values
-    the committed `.sql` files write fail the test, most of them from `alpine_trailhead_enrichment.sql`
+    the committed `.sql` files write fail the test, most of them from `docs/archive/root-2026-07/alpine_trailhead_enrichment.sql`
     (*"North-northeast via glacier traversals"*). `scripts/lib/trailhead-direction-sql.mjs` reads
     the three shapes those files use (a `jsonb_set` JSON string, `to_jsonb('…')`, a whole JSON object)
     and `check:sql` exits before any DB read if one fails. The `wa-enrich-batch` workflow does NOT
@@ -801,31 +857,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     request of a CI run is cold**: 2.6s against the 3s anon `statement_timeout` is a measured first
     call, and `--live` now retries a 5xx (4 tries, growing pause) and still throws if it never reads.
     Locally the retry absorbed two 57014s before reading all 681 directions.
-- **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
-  nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
-  `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
-  never mapped by `dbRouteToCamel`, never written by any enrichment JSON. So the entire
-  who's-bringing-what feature rendered on the demo and on **no real Washington route**. Static
-  (it imports `lib/rack.js`, which imports nothing), so it sits in `npm run build`.
-  - **Every layer reviewed as finished**, which is why this survived: the component existed, the
-    props were wired, and the seed route rendered it correctly. Only the data said otherwise —
-    the same shape as `descent_text` populated on 1,021 routes and rendered on none, and as
-    `approve_new_route` writing six columns nothing filled.
-  - **The honesty rule is the second half.** `Required`/`Recommended`/`Optional` is a real
-    ranking on a seed route and on a contribution; the DB carries a rack, not a priority order.
-    Painting a derived list red as REQUIRED is a safety-adjacent claim nothing in the row
-    supports, so derived gear renders as **neutral groups** and the guard fails if
-    `required`/`recommended`/`optional` ever appear on a derived result.
-  - **The generic table is a last resort and says so.** Measured 2026-08-14 against 8,366 WA
-    routes: `detailed_rack` 957, `pro_needs` 990, `what_to_bring` 1028 — so the route's *own*
-    rack answers for ~12% and `DISC_RACK` answers for the rest. A stock list is labelled
-    *"Typical … rack — not this route's own"*, and a route that has its own rack must never get
-    one stapled underneath it; both are asserted.
-  - It also pins the crew card as a **third reader of the rack correction rivalry**
-    (`check:correction-readers`): a climber's agreed rack must reach the crew card, not the
-    value they replaced. That is where this would silently diverge from the RACK box.
-  - Comments are stripped before the structural scan, because `CrewCard` now *explains* the bug
-    in prose naming `route.gearTiers` — the same trap `check:ci-cancel` records.
+- **`check:crew-gear` was REMOVED (2026-10-14) with the thing it guarded.** The crew card used to
+  derive a "what to bring" list from the route (`crewGearFor`, `GearTiers`); the route page already
+  shows the gear a climb takes, so the card now holds the crew's OWN typed list, and each member
+  marks what they bring (`lib/CrewGearList.jsx`, on `gearExtras`/`gearClaims`, stored per member by
+  0209). Since 0286 a confirmed member can also put a CREWMATE down for an item; every write is ONE
+  item (`assign_crew_gear`; 0287 stopped a whole-list write erasing assignments, 0289 made adding and
+  removing one item too and matched items ignoring case), and 0291 limits a claim to a confirmed
+  target (or yourself) and to an item that is on the list. The client runs a crew's writes in order,
+  one patch at a time (`queueCrewGear` in `ClimbMatch.jsx`), so an item is listed before it is
+  claimed; `scripts/oneoff/verify-crew-gear-assign.mjs` checks the functions as two real climbers. It shows
+  for every discipline -- the bouldering gate went with the route-derived list. Nothing is derived,
+  so there is no ranking to invent and no stock list to staple under a route's own rack.
   - `rackFromText`/`_rackEdited`/`contribRack`/`routeRackFor`/`DISC_RACK` moved to **`lib/rack.js`**
     for this: core cannot import `RouteDetail.jsx` (lazy-loaded, and it already imports *from*
     core, so a static import both cycles and drags the route page into the main bundle). Same
@@ -889,9 +932,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `route.gear`; the write lands only through `dbRouteToCamel`'s
     `rack: toArr(r.rack).length ? toArr(r.rack) : gearArr(r.gear)` fallback, so a populated
     `routes.rack` would have shadowed all 13 silently. Checked: all 13 rows have it empty.
-- **A SPORT route could not say it needs natural gear, on any tab.** `RouteGearCheck` takes an
-  early branch for `sport`, computes a quickdraw count from bolt counts and returns — so the RACK
-  box never renders and the route's own rack reaches **nothing**. Right for a pure sport line,
+- **A SPORT route could not say it needs natural gear, on any tab.** `RouteGearCheck` took an
+  early branch for `sport`, computed a quickdraw count from bolt counts and returned — so the RACK
+  box never rendered and the route's own rack reached **nothing**. (That branch is DELETED: since
+  crag routes moved to `CragRack`, `RouteGearCheck` mounts only off `CRAG_CATS` and the branch could
+  not run. A sport route's natural gear now rides in `CragRack`'s `rack_items`, which `check:bare`
+  asserts with its quantities.) Right for a pure sport line,
   where the rack IS draws; a lie for the exception. `wa_technicians_of_the_sacred` is a 6-pitch
   5.12c whose own pitch 6 reads *"Hand crack, natural gear; only unbolted pitch"*, and a party
   racking off that page brings draws and arrives with nothing to place.
@@ -988,6 +1034,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
   drives the whole page and nothing from another leaks under its name.
+  - **Hazards (2026-10-25, KNOWN HAZARDS follows the pick).** A way in with its own `hazards` / `objHaz`
+    replaces the row's list (`overlayHazards`); one with none keeps the row's. Asserted on fixtures:
+    the picked way in's list shows, another's does not, and a list-less way in keeps the row's.
+  - **`audit:approach-hazards`** (read-only, not in build) is the catalog census: every switchable way in
+    has its own list (MISSING) and no two ways in on one route share identical text (IDENTICAL). It reads
+    with keyset paging — an offset-paged filter over the 315k-row table returns 500. It cannot say whether
+    a list is RIGHT for its way in; the apply run's `unsure` flags are the reading job.
+  - **A VARIATION (2026-10-24, Boving Roofs on the Southwest Rib)** is a via route the climb leaves
+    and REJOINS (`viaPitches`). The guard asserts it keeps its OWN `itinerary` — the parent's narrated
+    "7 pitches of 5.6–5.8" on Boving Roofs' page — while still taking the parent's walk, that a plain
+    via route still lends its trip plan, and that `wholeLine` orders parent 1–3, own 1–3, parent 6–7.
+    Injection-tested: dropping the itinerary exemption fails the first assertion.
   - **Mount Shuksan's Southeast Ridge is why.** It is a summit-pyramid FINISH reached by the
     Sulphide Glacier or the Fisher Chimneys, from two trailheads. The row could hold one: its pins,
     camps and numbers were the Sulphide's while its own road prose named Lake Ann, and its 6,627 ft /
@@ -1027,3 +1085,83 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Cannot see:** whether a variant's linked data is TRUE — that is `audit:multi-approach` and
     research. Nor a panel that reads a field outside `APPROACH_OWNED_KEYS` that is in fact
     approach-specific; add the key there, not a special case in the panel.
+
+- **`audit:rack-items`** — **the RACK card showed an ice axe**, and three columns and one table put it
+  there. Measured 2026-10-15 over **14,200 WA routes**: 1,275 rendered a rack of their own and
+  **386** of those printed non-rack gear under RACK — 331 through `detailed_rack` (158 whole
+  sentences such as *"Carry an ice axe if snow lingers."* and 226 mixing both: *"A 60m rope and a
+  medium alpine rack; light crampons and a light ice axe are recommended into early summer."*),
+  33 through `gear` (95 entries — "Helmet", "Sturdy boots that edge well" — reached because db.js
+  falls back `rack -> gear` and `routeRackFor` printed whatever came), 22 through `pro_needs`
+  (a *"no protection"* statement that goes on to advise an axe), plus 52 `rack` arrays holding
+  *"Ice axe and crampons (glacier approach)"*. The other 12,925 routes rendered `DISC_RACK`, whose
+  alpine, mountaineering, ice, mixed and scrambling rows carried ice axe, crampons, layers,
+  navigation and food — so the generic card did it too.
+  - **Two halves, data and reader.** `scripts/oneoff/fix-rack-non-rack-items.mjs` rewrote the data
+    (**379 rows** in the first pass, **~20** in the second): the rack half of each sentence stays in
+    `detailed_rack`, the non-rack half becomes a `what_to_bring` entry in *"item — qualifier"* form so
+    `mergeGearList` folds it into GEAR & ESSENTIALS by item; `pro_needs` keeps the protection
+    statement; `rack` arrays keep only rack. The 403 sentence rewrites live in
+    `scripts/oneoff/rack-rewrites.json`, keyed by id **and** the exact stored sentence, so a row
+    edited since is skipped rather than half-repaired; the script re-reads and reconciles after
+    writing (379 of 379 exact). Two routes went rackless after the split and were **researched**
+    rather than left to the generic table: Lane Peak's Zipper (pickets, 1–2 screws only with ice, a
+    rope to rappel — Mountaineers route page and 2017–2025 trip reports) got a sentence restating the
+    rack already in its `rack`/`gear` columns; Mount Adams South Climb's `pro_needs` keeps *"rope and
+    glacier gear are not needed"* (Gifford Pinchot NF summit page).
+    - The reader half is `isRackEntry` / `isNonRackGear` / `splitRackEntries` in **`lib/rack.js`**:
+      `routeRackFor` now returns only the rack-shaped entries of whatever source it answered from, and
+      **`rackLeftovers`** hands the entries that NAME non-rack gear to `RouteGearEssentialsBox`, so a
+      future import that files a helmet under rack cannot put it back on the card and loses nothing.
+      An entry that is neither ("Terrain includes sections of loose boulders.") stays where it is —
+      GEAR & ESSENTIALS would be the wrong card for it too — and the audit lists it separately. A
+      sentence saying **no** rack is needed is rack information and stays (`unroped`, `non-technical`,
+      `no rock gear` are in the rack regex for that reason). `DISC_RACK` is rack-only now; the kit it
+      lost is `DISC_ASSUMED`'s and renders there already.
+  - **Every state, not just Washington (owner, same day: "make this a general rule for all states").**
+    Catalog-wide the three columns are populated on **6,177** routes; the WA pass left **141** of them
+    filing non-rack gear — 136 through `detailed_rack` (CA 41, CO 32, WY 23, BC 13, AK 12, UT 10, AB 5)
+    and 7 `rack` entries — and the same rewrite ran over them (fourth pass). The audit now reads the whole
+    catalog by default and `--state wa` narrows it.
+  - **What it cannot see.** It reads `detailed_rack`, `pro_needs` and `rack`; **`gear` is not a
+    finding** — it is the whole gear list by name and the reader splits it. The classifier is two
+    regexes: a sentence naming gear it does not know ("portaledge" was added when met) is reported
+    as *neither* rather than as non-rack, so a new kind of kit shows up in the second list, not the
+    first. It is a WA audit by scope (`--state`), hand-run, exit 1 on any finding; `--selftest`
+    asserts `DISC_RACK` and eight classifier cases with no database.
+
+- **`check:declination`** asserts that **the base-of-the-climb arrow turns a magnetic phone compass
+  into TRUE north**. *Point the way with your compass* (`BaseCheckinPanel`, 2026-10-28) rotates an
+  arrow toward the base from `bearingDeg`, which is TRUE, against the phone's heading, which is
+  MAGNETIC: WebKit fills `webkitCompassHeading` from `CLHeading.magneticHeading` and corrects nothing
+  (`WebCoreMotionManager.mm`, read 2026-10-28), and Android's absolute orientation follows the
+  geomagnetic field. In the Cascades the gap is ~15°, so without the correction the arrow points at
+  the wrong line from 100 m and looks exactly like a right one. The correction is `declinationDeg`
+  in **`lib/declination.js`**, a World Magnetic Model evaluator carrying NOAA's WMM2025 coefficient
+  file verbatim.
+  - **It EXECUTES the model** against NOAA's own 100 published test values (`WMM2025_TestValues.txt`,
+    shipped in the coefficient zip), each within 0.01° — NOAA prints two decimals, so the measured
+    worst case of 0.005° is rounding alone. It then runs the heading helpers in `lib/baseCheckin.js`
+    on constructed events: an iPhone heading plus the declination, Android's counter-clockwise
+    `alpha`, the screen-angle term, refusal of a non-absolute `alpha` (measured from wherever the
+    phone faced when listening began, never north) and of iOS's uncalibrated `-1`, the eight turn
+    words, and the circular average (359° and 1° → 0°, not 180°).
+  - **What it cannot see.** Whether a real phone's sensor is right: a magnetometer near a rack or
+    against rock is off by more than any declination, which is why the card tells the climber so,
+    shows iOS's own accuracy when it exceeds 25°, and stops pointing inside GPS error. The model is
+    valid 2025.0–2030.0; replace the `COF` table with WMM2030 when NOAA publishes it (the test file
+    in the new zip replaces `NOAA` here).
+
+- **`check:bare` section 6, rewritten 2026-11-13 (crag facts on one line, crag-wide facts on the crag).**
+  The old assertion — every missing fact a "Not on file yet" ROW with "+ Add" as the next segment —
+  is replaced: each discipline fact must appear as a `+ <Fact>` button, none may still render as
+  its own "Not on file yet" row, and there are at most five "Not on file yet" lines (the card,
+  WHERE IT STARTS, RACK, GEAR & SAFETY, CONDITIONS). New cases: a crag with `seasonMonths` shows
+  Season "(the crag's season)" and offers no `+ Season`; a wall with only an ancestor season shows
+  "(the area's season)"; with `onSuggestAreaEdit` wired, Season and Aspect read `+ … · crag` while
+  Location stays the route's; on an `areaType: "area"` (not editable on the area page) nothing goes
+  to the area editor. `render()` now takes a third `extra` props argument for such cases.
+  - Trap met: react-dom/server escapes the apostrophe, so a regex on "crag's" must also accept
+    `&#x27;`. And a value read from a `const` declared later in `RouteDetail`'s body throws "Cannot
+    access … before initialization" when the JSX reading it is built earlier — `check:bare` caught
+    `areaFactEdit` doing exactly that on every tab; declare it before the first TechStats mount.

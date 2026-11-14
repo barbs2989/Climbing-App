@@ -38,7 +38,7 @@ const CASES = [
     expect: "says an alarm gets raised off a float plan",
     why: "the real historical Privacy §\"What others can see\", restored verbatim" },
 
-  { name: "sheet-crew-sees-it", file: "ClimbMatch.jsx", fires: true,
+  { name: "sheet-crew-sees-it", file: "src/components/PrivacySheet.tsx", fires: true,
     find: "The float plan you fill in stays on your phone until you send it to somebody yourself. Filing one against a crew records the date and the crew’s agreed return day on that crew, which the other members can read — nothing in the app shows it back to them, so ClimbMatch cannot raise the alarm for you.",
     repl: "A float plan you share is seen by your crew so they know your route and return time — it includes your emergency contact, so they can raise the alarm if you do not come back.",
     expect: "says an alarm gets raised off a float plan",
@@ -51,8 +51,8 @@ const CASES = [
     why: "0237's contact is owner-only and deliberately NOT fed to the crew float plan; the day it is, a crew can read it and the premise has moved" },
 
   { name: "plan-becomes-rendered", file: "lib/CrewCard.jsx", fires: true,
-    find: "{crew.floatPlan?\"✓ Float plan\":\"⚠ Set float plan\"}",
-    repl: "{crew.floatPlan?\"✓ Back by \"+crew.floatPlan.returnBy:\"⚠ Set float plan\"}",
+    find: "{crew.floatPlan?\"✓ Float plan\":\"Set float plan\"}",
+    repl: "{crew.floatPlan?\"✓ Back by \"+crew.floatPlan.returnBy:\"Set float plan\"}",
     expect: "a screen reads the stored crew float plan",
     why: "the day a crew is SHOWN the plan, \"your crew can see it\" becomes true — the other half of the premise, and a different repair from a settable contact" },
 

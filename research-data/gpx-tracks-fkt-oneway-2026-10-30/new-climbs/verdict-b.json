@@ -1,0 +1,309 @@
+[
+ {
+  "slug": "fisher-peak-bc-canada",
+  "verdict": "walkup",
+  "reason": "Most accounts rate the standard route as steep Class 2 hiking with a short exposed finish, below the Class 3 bar, though a few reports call the top 3rd to 4th class.",
+  "aliases": [
+   "Mount Fisher"
+  ],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Mause Creek Road trailhead",
+  "trailheadConfirmed": false,
+  "sources": [
+   "https://fastestknowntime.com/route/fisher-peak-bc-canada",
+   "https://www.oocities.org/truedino/fisherpk.htm",
+   "https://en.wikipedia.org/wiki/Mount_Fisher_(British_Columbia)"
+  ]
+ },
+ {
+  "slug": "mt-northover-bc-canada",
+  "verdict": "add",
+  "reason": "The south ridge is a rated 4th-class, exposed scramble to a 3,048 m summit on the Alberta/BC divide, and the FKT track file is the south-ridge line from the Interlakes area.",
+  "aliases": [
+   "Northover"
+  ],
+  "area": {
+   "id": "ab_mount_northover",
+   "name": "Mount Northover",
+   "parent_id": "ab_kananaskis",
+   "area_type": "peak",
+   "lat": 50.58889,
+   "lng": -115.24028,
+   "elevation_ft": 10000,
+   "prominence_ft": 1138,
+   "region": "Alberta",
+   "blurb": "Mount Northover is a 3,048 m summit on the Continental Divide on the Alberta and British Columbia border, standing at the head of the Three Isle, Aster and Joffre creek valleys in the Kananaskis backcountry. It is a serious scrambler's peak, usually reached from camps at Aster or Three Isle lakes."
+  },
+  "route": {
+   "id": "ab_mount_northover_south_ridge",
+   "area_id": "ab_mount_northover",
+   "name": "South Ridge",
+   "discipline": "scrambling",
+   "grade": "4th",
+   "grade_system": "class",
+   "rock_grade": "Exposed 4th class on a narrow ridge with a harder chimney-like crack below the top",
+   "season": "July-September",
+   "best_season": "Dry, snow-free late summer. Snow or ice on the ridge makes it far more dangerous.",
+   "overview": "The South Ridge is the usual way up Mount Northover, a 3,048 m peak on the Continental Divide in the Kananaskis backcountry. Easy grass and slab lead onto a narrow, exposed ridge with cliff bands and loose rubble, and a steep summit block finishes the climb. It is a serious, committing scramble with real fall consequences.",
+   "beta": "From the Aster Lake flats, head up grassy lower slopes and easy slabs to the start of the ridge. The crest narrows with big drops on both sides, broken by cliff bands and loose rubble. Near the top the angle steepens at the summit block; the hardest moves are a chimney-like crack just below the top, which can be avoided by a ledge traverse to a crack that leads to the summit. Terrain just off the line is harder than the route, so staying on it matters.",
+   "descent_text": "Many parties come down the same ridge. An alternative descent goes west from the south summit over steep, loose, exposed ground to a col and shoulder, then back toward Aster Lake; it is loose 4th class.",
+   "hazards": [
+    "Severe exposure on the narrow ridge",
+    "Loose rock on the ascent and descent",
+    "Harder terrain off the line",
+    "Fatigue and route-finding errors late in the day",
+    "Snow and ice make the route much more dangerous"
+   ],
+   "gear": [
+    "Helmet",
+    "Sturdy boots or approach shoes"
+   ],
+   "high_point_ft": 10000,
+   "outing_shape": "outback",
+   "approach_logistics": {
+    "trailhead": "Interlakes parking area, Upper Kananaskis Lake"
+   }
+  },
+  "parentNote": "Peak sits on the Alberta/BC border. parent_id ab_kananaskis is the nearest Kananaskis area in the tree; a Joffre Group / Peter Lougheed Provincial Park region would be better if one exists. trackTop is about 400 m from the published summit coordinate. Gain ~650 m is from the camp at Aster Lake only, so no gain_ft is given.",
+  "trailhead": "Interlakes parking lot",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-northover-bc-canada",
+   "https://en.wikipedia.org/wiki/Mount_Northover",
+   "https://explor8ion.com/trips/northover-mount/"
+  ],
+  "trailheadNote": "Interlakes parking lot, Upper Kananaskis Lake"
+ },
+ {
+  "slug": "mount-macfarlane-bc-canada",
+  "verdict": "walkup",
+  "reason": "A long steep hike on a built trail with chain-aided steps and, per one source, some Class 3 near the top; closer to a hike than a climb.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Chilliwack Lake Road / Pierce Lake trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mount-macfarlane-bc-canada",
+   "https://besthikesbc.ca/hiking-mount-macfarlane-in-the-fraser-valley/"
+  ]
+ },
+ {
+  "slug": "three-brothers-mountain-bc-canada",
+  "verdict": "walkup",
+  "reason": "A maintained alpine-meadow trail from the Blackwall Road lot with a narrow ridge but no scrambling.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Blackwall Road upper parking lot, Manning Park",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/three-brothers-mountain-bc-canada"
+  ]
+ },
+ {
+  "slug": "ossa-mountain-bc-canada",
+  "verdict": "add",
+  "reason": "Ossa's easiest route is a scramble (east ridge listed as Class 4) with a notch downclimb and chimney crux per the FKT page; only one independent page was opened, and the stored track is about 7 km of a 30 km route.",
+  "aliases": [],
+  "area": {
+   "id": "bc_ossa_mountain",
+   "name": "Ossa Mountain",
+   "parent_id": "bc_tantalus_range",
+   "area_type": "peak",
+   "lat": 49.86333,
+   "lng": -123.36722,
+   "elevation_ft": 7418,
+   "prominence_ft": 577,
+   "region": "British Columbia",
+   "blurb": "Ossa Mountain is a 2,261 m summit in the Tantalus Range northwest of Squamish, with views across the Sunshine Coast ranges and Mount Tantalus. It is the more reachable of the Tantalus peaks, with a scramble as its easiest route."
+  },
+  "route": {
+   "id": "bc_ossa_mountain_east_ridge",
+   "area_id": "bc_ossa_mountain",
+   "name": "East Ridge",
+   "discipline": "scrambling",
+   "grade": "4th",
+   "grade_system": "class",
+   "rock_grade": "Class 4 scrambling with a downclimb into a notch and a chimney crux near the top",
+   "season": "July-September",
+   "best_season": "Midsummer to early fall, once snow has melted off the upper mountain; any glacier cover on the trail calls for crampons and an axe.",
+   "overview": "Ossa Mountain is climbed by its east ridge, a long day from the Squamish side with steep forest, meadows and creek crossings below a route-finding scramble. Near the top the route downclimbs into a notch and works through a chimney section before the summit.",
+   "beta": "Climb steeply through forest and meadows, crossing creeks, to the upper mountain. The upper scramble is hard to follow: expect route-finding, a downclimb into a notch, and a crux in chimneys. Plenty of water is available lower down.",
+   "descent_text": "Return the same way; the downclimbs and loose ground make the descent as serious as the ascent.",
+   "hazards": [
+    "Loose rock",
+    "Exposure near the summit",
+    "Route-finding on the upper mountain",
+    "Snow or glacier cover early in the season"
+   ],
+   "gear": [
+    "Helmet",
+    "Ice axe and crampons if snow or ice remains"
+   ],
+   "high_point_ft": 7418,
+   "outing_shape": "outback",
+   "approach_logistics": {
+    "trailhead": "Ossa Mountain trailhead, about 30 minutes from Squamish"
+   }
+  },
+  "parentNote": "trackTop (49.86167,-123.38392) is about 1.2 km west of the published summit coordinate, so the track may not end on the summit; verify before drawing it. Grade rests on a single list entry (east ridge class 4).",
+  "trailhead": "Ossa Mountain trailhead (about 30 min from Squamish)",
+  "trailheadConfirmed": false,
+  "sources": [
+   "https://fastestknowntime.com/route/ossa-mountain-bc-canada",
+   "https://en.wikipedia.org/wiki/Ossa_Mountain"
+  ]
+ },
+ {
+  "slug": "south-pioneer-peak-ak",
+  "verdict": "add",
+  "reason": "The Pioneer Ridge route ends in off-and-on Class 3 scrambling above a trail, with exposed ground reported along the summit ridge, and the track starts at the usual trailhead.",
+  "aliases": [
+   "Pioneer Peak (south summit)"
+  ],
+  "area": {
+   "id": "ak_south_pioneer_peak",
+   "name": "South Pioneer Peak",
+   "parent_id": "ak_anchorage_south_central_alaska",
+   "area_type": "peak",
+   "lat": 61.4584804,
+   "lng": -149.0169032,
+   "elevation_ft": 6400,
+   "region": "Alaska",
+   "blurb": "South Pioneer Peak is the trail-accessible southern summit of Pioneer Peak, the Chugach landmark standing over the Knik River valley south of Palmer. A relentless ridge trail climbs from near sea level to a saddle, and a rough scramble leads to the top."
+  },
+  "route": {
+   "id": "ak_south_pioneer_peak_pioneer_ridge",
+   "area_id": "ak_south_pioneer_peak",
+   "name": "Pioneer Ridge",
+   "discipline": "scrambling",
+   "grade": "3rd",
+   "grade_system": "class",
+   "rock_grade": "Off-and-on Class 3 scrambling on the summit ridge",
+   "season": "June-September",
+   "best_season": "Summer, once snow has melted off the saddle and ridge; patches can linger into late June.",
+   "overview": "The Pioneer Ridge route climbs about 6,000 feet in one push from the Knik River valley, through forest and brush onto open tundra ridge and then to a saddle near 5,200 ft. A rough, exposed scramble along the ridge reaches the south summit.",
+   "beta": "Follow the steep trail through forest and alder to treeline, then up tundra and switchbacks to the saddle near 5,200 ft. From there the route heads northeast along the ridge, rolling at first and steepening, with off-and-on Class 3 scrambling near the top. Keep to the east side of the ridge after the false summit.",
+   "descent_text": "Descend the same way, with extra care on the loose, exposed ridge, then the long trail back to the car.",
+   "hazards": [
+    "Exposure and loose rock on the ridge",
+    "Sparse water above the lower trail",
+    "Heat and insects in the forest",
+    "Devil's club and thick brush on the lower trail"
+   ],
+   "gear": [
+    "Sturdy boots",
+    "Plenty of water",
+    "Helmet"
+   ],
+   "gain_ft": 6900,
+   "high_point_ft": 6400,
+   "outing_shape": "outback",
+   "approach_logistics": {
+    "trailhead": "Pioneer Ridge Trailhead, Knik River Road"
+   }
+  },
+  "parentNote": "Wikipedia's Pioneer Peak coordinate (61.4756,-149.0331) is the north/true summit, not the south one, so area lat/lng uses the track top. South summit elevation ~6,400 ft from a trail page; Wikipedia gives 6,398 ft for Pioneer Peak.",
+  "trailhead": "Pioneer Ridge Trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/south-pioneer-peak-ak",
+   "https://alaskahikesearch.com/hikes/pioneer-ridge/",
+   "https://en.wikipedia.org/wiki/Pioneer_Peak_(Alaska)"
+  ],
+  "trailheadNote": "Pioneer Ridge Trailhead, Knik River Road (mile 4)"
+ },
+ {
+  "slug": "matanuska-peak-ak",
+  "verdict": "walkup",
+  "reason": "The standard route is a long steep trail ending in Class 2 scrambling, with no glacier or technical ground.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Smith Road, Lazy Mountain",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/matanuska-peak-ak",
+   "https://en.wikipedia.org/wiki/Matanuska_Peak"
+  ]
+ },
+ {
+  "slug": "donoho-peak-ak",
+  "verdict": "skip",
+  "reason": "The route needs a Root Glacier crossing and loose scrambling but no source gives a class, and the stored 9.5 km track covers well under half of the 24.5 km line from the Kennecott guides office.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Kennecott Wilderness Guides office",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/donoho-peak-ak",
+   "https://www.steliasguides.com/blog/trip-report-donoho-peak-summit/",
+   "https://en.wikipedia.org/wiki/Donoho_Peak"
+  ]
+ },
+ {
+  "slug": "mount-olomana-hi",
+  "verdict": "add",
+  "reason": "The first peak needs Class 3 scrambling plus a roughly 15 ft Class 4 section, often on unmaintained fixed ropes, and the track is a short 1.3 km line to it.",
+  "aliases": [
+   "Olomana Peak 1",
+   "Oahu's Matterhorn"
+  ],
+  "area": {
+   "id": "hi_mount_olomana",
+   "name": "Mount Olomana",
+   "lat": 21.3641667,
+   "lng": -157.7536111,
+   "elevation_ft": 1643,
+   "region": "Hawaii",
+   "area_type": "peak",
+   "blurb": "Mount Olomana is a sharp three-summit ridge on the windward side of Oahu, between Kailua and Waimanalo, a remnant of the old Koolau volcano. Locals compare it to a miniature Matterhorn for its steep, narrow profile."
+  },
+  "route": {
+   "id": "hi_mount_olomana_north_ridge",
+   "area_id": "hi_mount_olomana",
+   "name": "North Ridge (First Peak)",
+   "discipline": "scrambling",
+   "grade": "4th",
+   "grade_system": "class",
+   "rock_grade": "Class 3 scrambling with a roughly 15 ft Class 4 step near the first summit",
+   "season": "Year-round in dry weather",
+   "best_season": "Dry, calm days; avoid the trail during or just after rain, when the dirt turns very slippery.",
+   "overview": "The North Ridge route climbs through rainforest and red dirt to the first summit of Olomana, the highest of its three peaks. A steep final boulder step is usually protected by unofficial fixed ropes of unknown condition. The second and third peaks are far more exposed and are not part of this route.",
+   "beta": "Walk the paved country-club road to the signed trail, then follow a nearly flat track through rainforest past an abandoned water station. At an exposed red-dirt junction, climb the ridge through ironwood trees. Near the top there is Class 3 scrambling and a roughly 15 ft Class 4 section, often aided by old fixed ropes, then some exposed scrambling to the summit.",
+   "descent_text": "Return the same way, down-climbing the steep boulder step with care; descending the exposed sections is harder than climbing them.",
+   "hazards": [
+    "Fixed ropes are unofficial and of unknown condition",
+    "Drop-offs on one or both sides of the ridge",
+    "Slippery dirt and rock when wet",
+    "Falls here can be fatal"
+   ],
+   "gear": [
+    "Sturdy shoes with good grip",
+    "Gloves for rope sections"
+   ],
+   "gain_ft": 1500,
+   "high_point_ft": 1643,
+   "outing_shape": "outback",
+   "approach_logistics": {
+    "trailhead": "Olomana trailhead, off the golf-club road, Maunawili"
+   }
+  },
+  "parentNote": "Hawaii tree is empty. Place under Oahu > Koolau Range (windward Oahu, between Kailua and Waimanalo, Honolulu County), creating those parents if absent. trackTop is about 400 m from the published coordinate.",
+  "trailhead": "Olomana trailhead, off the private golf-club road (Maunawili / Kailua side)",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mount-olomana-hi",
+   "https://en.wikipedia.org/wiki/Olomana_(mountain)",
+   "https://livethatadventure.com/olomana-trail-how-to-hike-all-three-peaks-oahu-hi/"
+  ]
+ }
+]

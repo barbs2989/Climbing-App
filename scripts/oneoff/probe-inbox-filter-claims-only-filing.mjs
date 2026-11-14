@@ -27,7 +27,8 @@ import { fileURLToPath } from "node:url";
 import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// since PR62 the Privacy settings sheet (the inbox-filter control) lives in SettingsPrivacySheet.tsx
+const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8") + "\n" + fs.readFileSync(path.join(ROOT, "src", "components", "SettingsPrivacySheet.tsx"), "utf8");
 const core = readCoreSource(ROOT);
 const problems = [];
 const ok = (m) => console.log("  ok    " + m);
@@ -44,7 +45,8 @@ else ok(`no migration defines a message-permission column (${migs.length} read) 
 // ── 2. The control is a FILTER in core, which is what the copy must describe.
 if (/mainT=\(msgFrom==="everyone"\?dmThreads/.test(core)) ok("msgFrom selects which threads reach the inbox (mainT)");
 else fail("ANCHOR LOST: msgFrom no longer drives mainT — re-read what this control does before trusting the copy assertions");
-if (/reqT=msgFrom==="requests"\?dmThreads\.filter/.test(core)) ok("the Message requests list the middle option promises actually exists (reqT)");
+// reqT lives in lib/Inbox.jsx (it left App before PR62)
+if (/reqT=\(?msgFrom==="requests"\?dmThreads\.filter/.test(core + "\n" + fs.readFileSync(path.join(ROOT, "lib", "Inbox.jsx"), "utf8"))) ok("the Message requests list the middle option promises actually exists (reqT)");
 else fail("ANCHOR LOST: reqT is gone — the middle option promises a list that no longer exists");
 
 // ── 3. No surface may claim a restriction on OTHER PEOPLE'S ability to send.

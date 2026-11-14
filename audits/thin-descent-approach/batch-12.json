@@ -1,0 +1,72 @@
+{
+ "wa_the_pyramid_picket_east_ridge": {
+  "area": "wa_the_pyramid_picket",
+  "skip_reason": "no source describing this route's descent or approach could be read"
+ },
+ "wa_three_queens_approach_routes": {
+  "area": "wa_three_queens",
+  "skip_reason": "not a climb: an area-level 'Approach Routes' entry; the peak's real routes are siblings"
+ },
+ "wa_thunder_mountain_north_face": {
+  "area": "wa_thunder_mountain_and_slippery_slab_tower",
+  "skip_reason": "no source found for where this face tops out or how it is descended"
+ },
+ "wa_tinkham_peak_east_route": {
+  "area": "wa_tinkham_peak",
+  "skip_reason": "no source defines which line this East Route is"
+ },
+ "wa_tinkham_peak_north_route": {
+  "area": "wa_tinkham_peak",
+  "skip_reason": "no source defines which line this North Route is"
+ },
+ "wa_tinkham_peak_southeast_spur": {
+  "area": "wa_tinkham_peak",
+  "skip_reason": "sources describe a Southeast Ridge from the south end of Mirror Lake but could not confirm it is this line"
+ },
+ "wa_tinkham_peak_west_route": {
+  "area": "wa_tinkham_peak",
+  "skip_reason": "no source defines which line this West Route is"
+ },
+ "wa_roan_wall_center_stage": {
+  "area": "wa_waterfall_basin",
+  "skip_reason": "no additional source for the descent beyond the existing rappel-the-route text"
+ },
+ "wa_snoqualmie_mountain_boogie_wonderland": {
+  "area": "wa_winter_spring_ice_snow_mixed_2",
+  "skip_reason": "no source found for this route's top-out or descent"
+ },
+ "wa_witches_tower_northwest_buttress": {
+  "area": "wa_witches_tower",
+  "skip_reason": "no source for this route's approach to its base or top-out; only the other routes' beta found"
+ },
+ "wa_tinkham_peak_northwest_ridge": {
+  "area": "wa_tinkham_peak",
+  "set": {
+   "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480, a short drive from I-90 exit 62, at about 3,600 ft. Hike the Mirror Lake trail about 1 mile to the Cottonwood Lake spur, then roughly 0.6 mile more to the Pacific Crest Trail. Turn north on the PCT for about 0.6 mile to the point where a boot path leaves the trail on the left and climbs toward the peak's northwest ridge.",
+   "descent_text": "Reverse the ridge on the boot path, taking care with the loose rock on the final scramble and the one short Class 3 gully crossing near the top. Back on the PCT, turn south and drop down the Mirror Lake trail past Cottonwood Lake to the trailhead, about 6 miles round trip for the day."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mirror-lake-tinkham-peak",
+    "https://www.mountaineers.org/activities/routes-places/silver-tinkham-abiel-peaks",
+    "https://www.wta.org/go-hiking/hikes/mirror-lake-and-cottonwood-lakes"
+   ],
+   "confidence": "medium",
+   "notes": "Trailhead, mileages and the PCT/boot-path junction from the Mountaineers listing and WTA (Mountaineers page was blocked to fetch; read via search summaries). Class 3 gully and loose final scramble from the SummitPost NW route summary; Windy Pass option from the Silver/Tinkham listing. Exact start of the NW ridge off the boot path is inferred."
+  }
+ },
+ "wa_wilmans_peak_scramble": {
+  "area": "wa_wilmans_peak",
+  "set": {
+   "descent_text": "Reverse the Class 3-4 scramble from the summit blocks down the ridge and slopes to Glacier Basin, watching for loose rock. From the basin, follow Glacier Basin Trail #719 down to the South Fork Sauk River crossing, then the gated Monte Cristo road about 4 miles back to Barlow Pass. A bicycle left at the gate saves time on the road."
+  },
+  "review": {
+   "sources": [
+    "https://homes.cs.washington.edu/~weld/climbing.html",
+    "https://sverdina.com/east_wilmans_spire1.asp"
+   ],
+   "confidence": "medium",
+   "notes": "Class 3/4 rating and the crevassed glacier east of the Wilmans peaks from the Weld trip report; Glacier Basin return to Monte Cristo from the Wilmans Spire account; trail #719 and the 4-mile road from the row's existing approach text."
+  }
+ }
+}

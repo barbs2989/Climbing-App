@@ -1,0 +1,30 @@
+{
+  "area_id": "wa_indian_head_peak",
+  "routes": [
+    {
+      "route_id": "wa_indian_head_peak_southwest_slopes",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep kept. Logged successful ascents: Jun 5, Jul 18, Aug 18, Sep 9, Oct 4; WebSearch: peak page lists spring/summer/fall with no permit, glacier-area approach hikes snowy early; the Jul 2 report still found lots of snow between White Pass and the peak." },
+      "track": { "aid": "2558531", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Only one route stored on this peak. Complete round trip July 2 2024 logged 'White Pass': starts/ends 48 and 62 m from our North Fork Sauk pin, follows the PCT to White Pass and south, leaves the trail near Indian Pass and climbs the west/southwest slopes to the summit (high point 2 m from Peakbagger summit), descends the NW snow. Matches our described line. Early July but in July season." },
+      "otherTracksConsidered": [
+        { "aid": "3264440", "verdict": "same", "why": "Jul 11 2026, same approach but one-way (ends at summit, no return track); second choice." },
+        { "aid": "3362357", "verdict": "different", "why": "Sep 28 2026, round trip from the White River / Indian Creek side, 21 km from our pin, west ridge direct." },
+        { "aid": "2945244", "verdict": "different", "why": "Aug 2025, starts at the same east-side trailhead." },
+        { "aid": "2577525", "verdict": "different", "why": "Jul 2024 through-hike with other peaks, not round trip." },
+        { "aid": "567348", "verdict": "different", "why": "Aug 2015 PCT to NW ridge from White Pass camp, a northwest line." }
+      ],
+      "pins": [
+        { "type": "Summit", "action": "add", "lat": 48.007925, "lng": -121.098305, "name": "Indian Head Peak summit",
+          "evidence": "The route stores only a trailhead pin; the Peakbagger surveyed summit coordinate matches the highest point of three independent tracks within 2-4 m (the other three within 36 m).",
+          "confirmedBy": "Peakbagger surveyed coordinate 48.007925, -121.098305 (lidar elevation 7447.4 ft) from the packet's peakbagger record" }
+      ],
+      "facts": [
+        { "field": "pro_tips", "month": 7, "text": "Maps show a ridge boot path that is not really there; expect to pick your own line over grass and talus by sight.", "aids": ["3264440", "2558531", "2945244"] },
+        { "field": "pro_tips", "month": 8, "text": "The short class 3 step on the east summit can be skipped by circling around it.", "aids": ["3264440", "694680", "567348"] },
+        { "field": "watch_out", "month": 8, "text": "The peak itself is dry in August; refill at the spring-fed stream just south of White Pass on the PCT.", "aids": ["567348", "446335"] },
+        { "field": "descent_note", "month": 9, "text": "In late September one party found descending the southeast col and granite shelves easier than the airy west ridge: class 2 with a few easy class 3 moves.", "aids": ["3362357"] }
+      ]
+    }
+  ],
+  "notes": "Route has no Summit pin stored; proposed add from Peakbagger plus track highs. Peak has twin summits (west 7436 ft, east 7447 ft); tracks reach both."
+}

@@ -1,0 +1,82 @@
+{
+  "area_id": "wa_denny_mountain",
+  "routes": [
+    {
+      "route_id": "wa_denny_mountain_north_slopes",
+      "season": {
+        "months": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "May-Sep",
+        "evidence": "Stored Apr-Sep. Search: a guide lists late summer/fall as the snow-free window and late spring to mid-July as the snow-travel window; resort closes early May. Histogram: May 120, Jun 71, Jul 30. Oct tolerated."
+      },
+      "track": {
+        "aid": "3272181",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Our catalog has exactly one route on the peak; the July 18 2026 track starts and ends at the Alpental lot (78/81 m from pin), summit within 6 m, 7.1 mi round trip, 2,544 ft gain, up the ski-run line."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3272287",
+          "verdict": "same",
+          "why": "Also complete, but starts 242 m from pin and visits the South Peak first."
+        },
+        {
+          "aid": "3272169",
+          "verdict": "same",
+          "why": "Complete, July 18, sparser track."
+        },
+        {
+          "aid": "525613",
+          "verdict": "same",
+          "why": "May 2015 Under the Chair lifts; end 1.7 km from pin so not a complete round trip."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In July and August the lower slopes grow dense leafy brush; the cleared service road beside the Sessel lift avoids the worst of it.",
+          "aids": [
+            "2264804",
+            "1471830"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "On a summer weekend the Alpental lot can be full by mid-morning; arrive early.",
+          "aids": [
+            "1471830"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "The summit block is a short scramble, and a small chimney gives access.",
+          "aids": [
+            "1471830",
+            "2264804"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "In early October the steep dirt and brush are slick when damp and the bootpath is easy to lose; carry a GPS track.",
+          "aids": [
+            "2048161",
+            "468173"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Three July 18 2026 tracks exist; 3272181 chosen as the most complete."
+}

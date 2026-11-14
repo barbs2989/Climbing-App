@@ -1,0 +1,42 @@
+{
+ "ab_sunshine_slabs": {
+  "_expect": {"name": "Sunshine Slabs", "region": "Alberta"},
+  "blurb": "Sunshine Slabs is a small roadside limestone crag in Banff National Park, a short drive west of the town of Banff. All 19 routes are bolted. Most fall between 5.8 and 5.10, with a couple of easier lines at the bottom and a few 5.11s at the top end. The wall is low angled and technical, so footwork matters more than strength, while some neighbouring lines are steeper and bouldery. The walk from the car takes well under a minute, which makes it a handy stop for a quick session, a short day, or introducing newer leaders to outdoor sport climbing.",
+  "approach": "A very short walk from the parking lot, well under a minute, around the corner to the base of the slabs.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117595737/sunshine-slabs", "https://sendage.com/area/sunshine-rock-banff-national-park-ab-canada"]}
+ },
+ "ab_the_bayon": {
+  "_expect": {"name": "The Bayon", "region": "Alberta"},
+  "blurb": "The Bayon is a sport wall up Heart Creek canyon, a short drive east of Canmore and less than an hour from Calgary. All 19 routes are bolted and they sit at the hard end of the scale: about eight at 5.12 and eleven at 5.13, so this is a wall for strong climbers rather than a first outing. The rock is good but the lines are short and bouldery, rewarding raw power over stamina. The cliff is shady and tends to seep, staying damp for a while after rain, so pick a dry spell. The walk in follows the canyon past the easier walls.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112141272/the-bayon", "https://mountainproject.com/area/107142418/heart-creek"]}
+ },
+ "ab_kid_goat_buttress": {
+  "_expect": {"name": "Kid Goat Buttress", "region": "Alberta"},
+  "blurb": "Kid Goat Buttress is a limestone crag in the Bow Valley, reached from Highway 1A east of Canmore. It mixes bolted single-pitch and multi-pitch lines with a few trad routes, 19 in all, the longest running up to about six pitches. Grades are friendly: roughly 5.6 through 5.10, with the heaviest concentration around 5.9 and 5.10 and a handful of easier moderates. Rock quality varies, and the trad lines are the best of it. It suits climbers stepping up to longer days on moderate terrain, and the approach is short but needs a little care to follow the right trail.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105933009/kid-goat-buttress", "https://app.advcollective.com/climbing/hazy-days-at-kid-goat-buttress"]}
+ },
+ "ab_5_the_cheese_grater": {
+  "_expect": {"name": "The Cheese Grater", "region": "Alberta"},
+  "blurb": "The Cheese Grater is one of the upper sectors of Bataan, the steep-hiking sport cliff above the Bow Valley near Canmore. It holds 19 bolted routes with a strong bias to the harder grades: about five at 5.10, nine at 5.11, a few at 5.12, and two at 5.13 and 5.14 for the very strong. The wall catches only filtered sun, and snow can hang around the belay ledges long after the rest of the cliff is clear, so it is better judged on a dry day. Expect a long uphill hike to reach it, though the belay platforms are plentiful.",
+  "review": {"sources": ["https://mountainproject.com/area/125782577/the-cheese-grater", "https://www.mountainproject.com/area/115144708/bataan"]}
+ },
+ "ab_little_brother": {
+  "_expect": {"name": "Little Brother", "region": "Alberta"},
+  "blurb": "Little Brother is the smallest of the three granite boulders at Millennium Park in Calgary, set among the skate park and volleyball courts. It is the first one you meet on the walk in from the parking area. The rock is paler than its siblings and has a clean, granite feel. It carries 19 problems spread across a wide range, from a few very easy lines up to V10, with the bulk around V4 to V7. The boulders are quite tall, so a down-climbing rope hangs from the top, and wood chips cover the ground; bring your own pad.",
+  "review": {"sources": ["https://sendage.com/area/little-brother-shaw-millennium-park-calgary-area-ab-canada", "https://mountainproject.com/area/125054698/millennium-park"]}
+ },
+ "ab_single_pitch_ground_level": {
+  "_expect": {"name": "Single Pitch (ground level)", "region": "Alberta"},
+  "blurb": "This is the roadside part of the Emerald Lake cliff in Crowsnest Pass, close to the water. Of its 19 routes, 17 are sport and two are trad, on average-quality limestone that has been cleaned thoroughly because access is so easy. Grades run from about 5.6 to 5.11, with the most routes at 5.10 and a decent number of 5.8s and 5.9s. The climbing is mostly in shade, which suits hot summer days, and the lake is right there for a swim afterward. It can get windy. The path from the car is flat and takes only moments.",
+  "parking_note": "Drive Highway 3 to the campus near Crowsnest Lake, turn south, and follow the road to its end: gravel at first, then paved for roughly 1.5 km to the lot.",
+  "approach": "A short, flat path from the lot, a few minutes at most.",
+  "review": {"sources": ["https://www.mountainproject.com/area/122941922/single-pitch-ground-level", "https://www.mountainproject.com/area/123578954/emerald-lake"]}
+ },
+ "_skipped": {
+  "ab_1_first_cave": "could not fetch a page about First Cave itself (MP link was a Taiwan crag, summitpost/thecrag 403, sendage page empty); only the Bataan parent page was readable",
+  "ab_the_cove": "only one fetched page (sendage) describes The Cove at Moose Mountain; the Mountain Project pages named The Cove are in California, Utah and Wyoming; Explore Kananaskis does not mention it"
+ },
+ "_conflicts": {
+  "ab_kid_goat_buttress": "stored aspect E agrees with https://www.mountainproject.com/area/105933009/kid-goat-buttress (east-facing, morning sun) but https://app.advcollective.com/climbing/hazy-days-at-kid-goat-buttress says south-facing"
+ }
+}

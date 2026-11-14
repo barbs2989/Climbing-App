@@ -1,0 +1,461 @@
+{
+ "batches": [
+  "b003",
+  "b004",
+  "b005"
+ ],
+ "routes_read": 209,
+ "ids_read": [
+  "bc_alpaca_peak_whitewater",
+  "bc_ibex_peak_east_ridge",
+  "bc_ibex_peak_proof_is_in_the_pudding",
+  "bc_ibex_peak_southeast_ridge",
+  "bc_yak_peak_all_in_the_family",
+  "bc_yak_peak_beckey_route_speedway",
+  "bc_yak_peak_cardiyak_rhythm",
+  "bc_yak_peak_clyde_and_isabelle",
+  "bc_yak_peak_coquihalla_honey",
+  "bc_yak_peak_east_face_cracks",
+  "bc_yak_peak_hole_in_my_heaven",
+  "bc_yak_peak_madness",
+  "bc_yak_peak_porcelain_chicken",
+  "bc_yak_peak_reality_check",
+  "bc_yak_peak_somwow_seven_one_move_wonders_of_the_world",
+  "bc_yak_peak_southwest_gully",
+  "bc_yak_peak_wind_walker",
+  "bc_yak_peak_yak_check",
+  "bc_yak_peak_yak_crack",
+  "bc_cheam_peak_northwest_face",
+  "bc_mount_bardean_the_tuning_fork",
+  "bc_flood_falls_along_for_the_ride",
+  "bc_flood_falls_medusa",
+  "bc_flood_falls_mousetrap",
+  "bc_skihist_mountain_traverse_of_the_seasons",
+  "bc_north_illusion_peak_illusion_traverse_south_to_north",
+  "bc_mount_rexford_north_face_couloir",
+  "bc_mount_rexford_west_ridge",
+  "bc_nesakwatch_spires_dairyland",
+  "bc_nesakwatch_spires_lazy_lunch_packers",
+  "bc_nesakwatch_spires_nesakwatch_enchainment_d",
+  "bc_nesakwatch_spires_north_nesakwatch_spire_nesakwatch_notch_ne_buttress",
+  "bc_nesakwatch_spires_north_nesakwatch_spire_nw_face_to_w_ridge",
+  "bc_nesakwatch_spires_north_spire_sw_ridge",
+  "bc_nesakwatch_spires_south_spire_east_buttress",
+  "bc_nesakwatch_spires_south_spire_fairytales_fantasies_5_11_5_11",
+  "bc_nesakwatch_spires_south_spire_north_ridge_ad",
+  "bc_nesakwatch_spires_south_spire_south_ridge",
+  "bc_nesakwatch_spires_south_spire_west_buttress",
+  "bc_nesakwatch_spires_waltz_right_in",
+  "bc_arthur_seat_mountain_east_buttress",
+  "bc_arthur_seat_mountain_original_route",
+  "bc_block_tower_enagonio_mank",
+  "bc_hall_peak_quarter_life_crisis_original_east_face",
+  "bc_kootenay_fsr_gibraltar_wall",
+  "bc_enterprise_falls_enterprise_falls",
+  "bc_hela_peak_hela_monster",
+  "bc_mount_gimli_another_dimension",
+  "bc_mount_gimli_beach_break",
+  "bc_mount_gimli_dark_side_of_the_moon",
+  "bc_mount_gimli_kristiansen_croston",
+  "bc_mount_gimli_kristiansen_croston_direct_start",
+  "bc_mount_gimli_lusting_after_women",
+  "bc_mount_gimli_north_face_arete",
+  "bc_mount_gimli_south_ridge",
+  "bc_mount_gimli_space_jam",
+  "bc_mount_gimli_tight_ass",
+  "bc_mount_gimli_valhalla_gold",
+  "bc_bugaboo_spire_divine_intervention",
+  "bc_bugaboo_spire_kain_route_south_ridge",
+  "bc_south_howser_tower_beckey_chouinard",
+  "bc_mount_bryce_3_507m_northeast_ridge",
+  "bc_mount_bryce_3_507m_rice_cooker",
+  "bc_icefall_brook_back_from_the_storm",
+  "bc_icefall_brook_blue_lagoon",
+  "bc_icefall_brook_deep_throat",
+  "bc_icefall_brook_deviation",
+  "bc_icefall_brook_fossen_falls",
+  "bc_icefall_brook_jumping_for_joy",
+  "bc_icefall_brook_l_etonnement",
+  "bc_icefall_brook_mexican_overdrive",
+  "bc_icefall_brook_popsicle_toes",
+  "bc_icefall_brook_quarantine",
+  "bc_icefall_brook_satiata",
+  "bc_icefall_brook_seige_tactics",
+  "bc_icefall_brook_sun_pillar",
+  "bc_mt_hunter_jacob_s_ladder",
+  "bc_mt_hunter_the_french_maid",
+  "bc_mount_assiniboine_3_618m_north_ridge",
+  "bc_wiwaxy_peak_grassi_ridge",
+  "bc_mount_harvey_north_face_ramp_winter",
+  "bc_mount_harvey_pup_buttress",
+  "bc_mount_land_east_ridge",
+  "bc_rex_s_pillar_slalok_stonecrop_face",
+  "bc_mount_athelstan_gnomon_direct",
+  "bc_mount_athelstan_keep_your_heid",
+  "bc_mount_athelstan_kiss_of_death_sinnes_couloir",
+  "bc_mount_athelstan_lillarete",
+  "bc_mount_athelstan_moonraker",
+  "bc_mount_athelstan_raised_by_bears",
+  "bc_mount_athelstan_selective_cut",
+  "bc_mount_athelstan_solstice_start",
+  "bc_mount_athelstan_south_face_randy_stoltmann_tower",
+  "bc_mount_athelstan_standing_wave",
+  "bc_mount_shadowfax_not_so_grand_sorta_central_ns_couloir",
+  "bc_peregrine_peak_hobbit_pipe_weed",
+  "bc_chance_peak_tejaky_buttress",
+  "bc_mount_garibaldi_brohm_ridge_ne_face",
+  "bc_showcase_spire_darn_gendarme",
+  "bc_ionia_mountain_ionia_ne_spur",
+  "bc_1_north_faces_from_fairy_meadow_adamant_north_ridge_via_variation_of_kaufman_route",
+  "bc_1_north_faces_from_fairy_meadow_adamant_turret_austerity_traverse",
+  "bc_1_north_faces_from_fairy_meadow_austerity_std_route",
+  "bc_1_north_faces_from_fairy_meadow_direct_northwest_ridge_of_outpost",
+  "bc_1_north_faces_from_fairy_meadow_gog_east_face",
+  "bc_1_north_faces_from_fairy_meadow_horn_se_face_and_unicorn",
+  "bc_1_north_faces_from_fairy_meadow_magog",
+  "bc_1_north_faces_from_fairy_meadow_mount_quadrant_west_face_to_north_summit_stem_winder",
+  "bc_1_north_faces_from_fairy_meadow_mt_austerity_east_face",
+  "bc_1_north_faces_from_fairy_meadow_n_e_ridge_of_pioneer",
+  "bc_1_north_faces_from_fairy_meadow_north_peak_of_colossal_via_east_couloir",
+  "bc_1_north_faces_from_fairy_meadow_northeast_ridge_mt_austerity_nester_ridge",
+  "bc_1_north_faces_from_fairy_meadow_nw_ridge_quadrant_with_rabbit_ears_arete_s",
+  "bc_1_north_faces_from_fairy_meadow_pioneer_via_pioneer_pass_east_ridge",
+  "bc_1_north_faces_from_fairy_meadow_sentenel_peak_shoofly_arete_of_north_ridge",
+  "bc_1_north_faces_from_fairy_meadow_the_black_rib",
+  "bc_1_north_faces_from_fairy_meadow_w_face_of_quadrant_s_so_peak_cross_hall",
+  "bc_mount_sir_donald_northwest_ridge",
+  "bc_mount_sir_donald_uto_peak_southwest_ridge",
+  "bc_rugged_mountain_thunderbird",
+  "bc_mt_arrowsmith_newman_foweraker_route",
+  "bc_mt_arrowsmith_scottish_soup_kitchen",
+  "bc_pinder_peak_solution_groove",
+  "bc_mt_colonel_foster_walsh_s_foray",
+  "bc_crown_mountain_crater_couloir_winter",
+  "bc_crown_mountain_widowmaker_arete",
+  "bc_goat_mountain_sugar_mummy_north_face",
+  "bc_mount_seymour_coldwell_creek_couloir",
+  "nb_deliverance_area_deliverance",
+  "nb_deliverance_area_paid_vacation",
+  "nb_eye_of_the_needle_area_el_grotto",
+  "nb_eye_of_the_needle_area_fireball_alley",
+  "nb_eye_of_the_needle_area_gin_and_tonic",
+  "nb_eye_of_the_needle_area_giza_s_way_out",
+  "nb_eye_of_the_needle_area_margarita",
+  "nb_eye_of_the_needle_area_narwhal",
+  "nb_eye_of_the_needle_area_orca",
+  "nb_eye_of_the_needle_area_radio_silence",
+  "nb_eye_of_the_needle_area_snapping_turtle",
+  "nb_eye_of_the_needle_area_tequila_sunrise",
+  "nb_eye_of_the_needle_area_the_blue_wall",
+  "nb_geezer_area_chimney_fire",
+  "nb_geezer_area_chock_it_up",
+  "nb_geezer_area_elegant_violence",
+  "nb_geezer_area_geezer_falls",
+  "nb_geezer_area_it_s_never_enough",
+  "nb_geezer_area_kardu",
+  "nb_geezer_area_reluctant_arborist",
+  "nb_geezer_area_thick_or_thin",
+  "nb_geezer_area_white_fang",
+  "nb_lsr_north_alpine_gully",
+  "nb_lsr_north_bobcat",
+  "nb_lsr_north_cave_in_the_wall",
+  "nb_lsr_north_easy_street",
+  "nb_lsr_north_fiddler_on_the_roof",
+  "nb_lsr_north_first_street",
+  "nb_lsr_north_fomo_fuel",
+  "nb_lsr_north_french_immersion",
+  "nb_lsr_north_glenkitchie",
+  "nb_lsr_north_grog",
+  "nb_lsr_north_lynx",
+  "nb_lsr_north_scratch_the_itch",
+  "nb_lsr_north_six_dry_feet",
+  "nb_lsr_north_stringed_instruments",
+  "nb_lsr_north_technicolor_playground",
+  "nb_lsr_north_the_gallery",
+  "nb_lsr_north_the_jolly_rancher",
+  "nb_lsr_north_too_adult_to_party",
+  "nb_lsr_north_ub40",
+  "nb_lsr_north_warm_up_lap",
+  "nb_lsr_south_alaska_flaskback",
+  "nb_lsr_south_blue_steel",
+  "nb_lsr_south_castor_canadensis",
+  "nb_lsr_south_into_the_wild",
+  "nb_lsr_south_iron_clad",
+  "nb_lsr_south_le_ruban_d_or",
+  "nb_lsr_south_my_valentine",
+  "nb_lsr_south_patricia",
+  "nb_lsr_south_rain_dance_country",
+  "nb_lsr_south_scotian_birthday_smash",
+  "nb_lsr_south_the_moose_s_tooth",
+  "nb_lsr_south_three_pistols",
+  "nb_upper_quiddy_river_incognito_45m_w2",
+  "nb_upper_quiddy_river_rassemblage_35m_w3",
+  "nb_upper_quiddy_river_river_wall_35m_w3",
+  "nb_upper_quiddy_river_waterfall_wall_40m_w3",
+  "nb_walton_glen_falls_area_center_face",
+  "nb_walton_glen_falls_area_don_s_pillar",
+  "nb_walton_glen_falls_area_holey_moley",
+  "nl_cholesterol_wall_apocalypse_now",
+  "nl_cholesterol_wall_the_lion_the_witch_and_the_wardrobe",
+  "nl_western_brook_pond_dreamline",
+  "ns_arch_brook_area_ice_maritime_hospitality",
+  "ns_arch_brook_area_ice_the_crack_of_noon",
+  "ns_big_bald_brook_to_carey_brook_kluskap",
+  "ns_big_bald_brook_to_carey_brook_kwimu",
+  "ns_big_bald_brook_to_carey_brook_lentuk",
+  "ns_big_bald_brook_to_carey_brook_mui_n",
+  "ns_big_bald_brook_to_carey_brook_puowini_skw",
+  "ns_big_bald_brook_to_carey_brook_put_p",
+  "ns_big_bald_brook_to_carey_brook_tqoqwej",
+  "ns_cozy_warm_area_ice_cozy_warm",
+  "ns_cozy_warm_area_ice_free_and_easy",
+  "ns_cozy_warm_area_ice_shore_thing",
+  "ns_cozy_warm_area_ice_the_key",
+  "ns_cozy_warm_area_ice_the_wim_hof_method",
+  "ns_high_and_wild_area_ice_high_and_wild",
+  "ns_high_and_wild_area_ice_living_in_the_spirit_of",
+  "ns_high_and_wild_area_ice_maritime_alpinism"
+ ],
+ "routes": [
+  {
+   "id": "bc_yak_peak_madness",
+   "name": "Madness",
+   "area": "bc_yak_peak",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "overview",
+       "says": "Six long pitches in the dihedral to its right reach that route's top ledge"
+      }
+     ],
+     "why": "Stored pitch count of 1 contradicts a route described as six dihedral pitches plus further pitches after the ledge, after a ~300 m solo approach.",
+     "internal_resolution": "overview",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "bc_yak_peak_reality_check",
+   "name": "Reality Check",
+   "area": "bc_yak_peak",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "12"
+      },
+      {
+       "field": "overview",
+       "says": "Pitch 13 is 4th class to trees."
+      }
+     ],
+     "why": "Overview numbers a 13th pitch, and descent says the final pitch is a fourth-class slab to trees, but pitches is 12.",
+     "internal_resolution": "overview and descent_text agree on a 13th pitch",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "bc_north_illusion_peak_illusion_traverse_south_to_north",
+   "name": "Illusion Traverse - South to North",
+   "area": "bc_north_illusion_peak",
+   "contradictions": [
+    {
+     "fact": "direction of au cheval/notch in reversed descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "ride the au cheval to its north end, rappel into the notch"
+      },
+      {
+       "field": "overview",
+       "says": "Half a pitch of cracks and slabs with black lichen gains the au cheval ridge, which leads to a belay at its south end"
+      }
+     ],
+     "why": "The notch/col lies at the south end of the au cheval ridge (route goes S to N), so the reversed descent should leave the ridge at its south end, not its north end.",
+     "internal_resolution": "overview",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "bc_hela_peak_hela_monster",
+   "name": "Hela Monster",
+   "area": "bc_hela_peak",
+   "contradictions": [
+    {
+     "fact": "route length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "351"
+      },
+      {
+       "field": "overview",
+       "says": "P1 58 m 5.7, P2 58 m 5.10a, P3 45 m 5.6, P4 68 m 5.6, P5 30 m 5.2, P6 65 m 5.8, P7 60 m 5.5, P8 58 m 5.8, P9 60 m 5.2, P10 60 m 4th class"
+      }
+     ],
+     "why": "Stated pitch lengths sum to about 562 m, 60% more than length_m.",
+     "internal_resolution": "pitch list",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "bc_bugaboo_spire_kain_route_south_ridge",
+   "name": "Kain Route (South Ridge)",
+   "area": "bc_bugaboo_spire",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "overview",
+       "says": "it takes 120' in two strenuous leads to the ridge crest and a gendarme. The gendarme takes two more leads to a groove and the crux belay"
+      }
+     ],
+     "why": "Overview counts at least four leads before the crux wall, gully and summit climb, plus easy ledges rope-up, so 4 pitches is too few.",
+     "internal_resolution": "overview",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "bc_nesakwatch_spires_waltz_right_in",
+   "name": "Waltz Right In",
+   "area": "bc_nesakwatch_spires",
+   "contradictions": [
+    {
+     "fact": "grade vs pitch grades",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "5.10b/c PG13"
+      },
+      {
+       "field": "overview",
+       "says": "Six pitches: 5.10a (30 m), 5.7 (35 m, slightly run-out on the ramp), 3rd/4th (50 m), 5.8 (40 m), 5.9 (35 m), 5.10a (35 m)"
+      }
+     ],
+     "why": "No pitch in the overview is harder than 5.10a, but the header grade is 5.10b/c.",
+     "internal_resolution": "null",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "bc_mount_athelstan_moonraker",
+   "name": "Moonraker",
+   "area": "bc_mount_athelstan",
+   "contradictions": [
+    {
+     "fact": "pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "10"
+      },
+      {
+       "field": "overview",
+       "says": "First, 4 mid-5th pitches (5.4-5.6) wander anywhere between sickle and left arete. Next, six 4th class pitches over rubbly ledges ... Last, two 5.7 pitches"
+      }
+     ],
+     "why": "Overview breakdown totals 4+6+2 = 12 pitches vs pitches 10.",
+     "internal_resolution": "null",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "bc_mount_sir_donald_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "bc_mount_sir_donald",
+   "contradictions": [
+    {
+     "fact": "rappel length vs rope",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "about 12 rappels of 25 m with ledge scrambling between them"
+      },
+      {
+       "field": "descent_text",
+       "says": "using bolted two-bolt rappel stations spaced for a 50 m rope"
+      }
+     ],
+     "why": "Rappel station spacing is given as 25 m in one field and as suited to a 50 m rope in the other.",
+     "internal_resolution": "null",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "nb_lsr_north_easy_street",
+   "name": "Easy Street",
+   "area": "nb_lsr_north",
+   "contradictions": [
+    {
+     "fact": "pitch count vs length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "23"
+      },
+      {
+       "field": "length_m",
+       "says": "107"
+      }
+     ],
+     "why": "23 pitches in 107 m is about 5 m per pitch; one of the two stats is wrong.",
+     "internal_resolution": "null",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "nb_lsr_north_the_jolly_rancher",
+   "name": "The Jolly Rancher",
+   "area": "nb_lsr_north",
+   "contradictions": [
+    {
+     "fact": "pitch count vs length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "2"
+      },
+      {
+       "field": "length_m",
+       "says": "198"
+      }
+     ],
+     "why": "198 m of climbing in 2 pitches is about 99 m per pitch, longer than any rope.",
+     "internal_resolution": "null",
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "at": "2026-11-05T01:50:14.979Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 46.465202,
+      "lng": -121.531786,
+      "elev": 4500,
+      "name": "Chambers Lake Campground",
+      "type": "Campsite"
+     },
+     {
+      "lat": 46.4644,
+      "lng": -121.5178,
+      "elev": 4600,
+      "name": "Snowgrass Flats Trailhead (#96)",
+      "note": "Trail 96 begins here on FR 2150; Northwest Forest Pass required and self-issue Goat Rocks Wilderness permit at the trailhead kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead sits at the end of Forest Road 2150, at about 4,600 feet, where the Snowgrass Flat Trail (#96) begins. A Northwest Forest Pass is required, and a free self-issue Goat Rocks Wilderness permit is available at the trailhead kiosk. The access road has taken washout damage in past winters, so confirm current conditions before driving in."
+     },
+     {
+      "lat": 46.481292,
+      "lng": -121.495331,
+      "elev": 4563,
+      "name": "Goat Creek crossing",
+      "type": "Water",
+      "distMi": 1.7
+     },
+     {
+      "lat": 46.488888,
+      "lng": -121.472739,
+      "elev": 5562,
+      "name": "Snowgrass Creek crossing",
+      "type": "Water",
+      "distMi": 3.7
+     },
+     {
+      "lat": 46.489239,
+      "lng": -121.476662,
+      "elev": 5575,
+      "name": "Trail 97 junction",
+      "note": "Trail 97, the bypass trail, forks right (east) here toward Cispus Basin; stay left on Trail 96, which continues up through the meadows to the PCT.",
+      "type": "Junction",
+      "distMi": 3.9,
+      "directions": "Follow Trail 96 up through forest, crossing Goat Creek on a footbridge at about 1.9 miles and passing the springs at the head of Snowgrass Creek, then ford Snowgrass Creek on logs and rocks. At about 3.9 miles the Bypass Trail 97 forks right toward Cispus Basin; stay left on Trail 96."
+     },
+     {
+      "lat": 46.4934549470503,
+      "lng": -121.47009769844419,
+      "elev": 5800,
+      "name": "Snowgrass Flats meadows",
+      "note": "Trail 96 opens into heather meadows and wildflower bogs with reliable creek water; camping is prohibited within Snowgrass Flat itself per Gifford Pinchot wilderness regulations (36 CFR 261.58(e)) — use designated sites above/below the flats instead. Trail 86 splits off to the left toward Goat Lake at the upper end, about 4.7 miles.",
+      "type": "Landmark",
+      "distMi": null,
+      "directions": "Stay on Trail 96 as it breaks out of the forest into the open heather meadows and wildflower bogs of Snowgrass Flat at about 5,800 ft."
+     },
+     {
+      "lat": 46.49865,
+      "lng": -121.46408,
+      "elev": 6399,
+      "name": "PCT junction",
+      "note": "Trail 96 tops out on the Pacific Crest Trail; turn north and climb a series of open benches with views of Mt. Adams and the Goat Rocks crest.",
+      "type": "Junction",
+      "distMi": 5.4,
+      "directions": "Continue up Trail 96 through the meadows, going straight past the Trail 86 junction (left, to Goat Lake), and climb in long open benches to meet the Pacific Crest Trail at about 6,400 ft."
+     },
+     {
+      "lat": 46.513694,
+      "lng": -121.462348,
+      "elev": 7190,
+      "name": "Old Snowy climbers'-path junction",
+      "note": "Unmarked junction where an unmaintained climbers' path leaves the PCT for Old Snowy; many parties stash trekking poles/packs here before the scramble.",
+      "type": "Junction",
+      "distMi": 7,
+      "directions": "Turn left (north) on the PCT and follow it about 1.6 to 1.8 miles across the rocky, increasingly exposed west flank of Old Snowy, where snow can linger into midsummer. Watch for the unmarked climbers' path, the first thing that turns uphill, branching right (east) toward a rocky saddle on the northwest ridge. If the PCT starts descending, you have passed it."
+     },
+     {
+      "lat": 46.51352,
+      "lng": -121.458623,
+      "elev": 7550,
+      "name": "Summit scree/talus scramble",
+      "note": "Final ~0.5 mi/350 ft leaves the tread for loose scree and talus with a short Class 3 hand-climbing section; watch for rockfall dislodged by climbers above and lingering steep snow into early summer.",
+      "type": "Hazard",
+      "distMi": 7.3,
+      "directions": "Take the climbers' path right off the PCT and switchback steeply uphill toward the northwest ridge until the tread gives way to loose scree and talus."
+     },
+     {
+      "lat": 46.51194,
+      "lng": -121.45389,
+      "elev": 7880,
+      "name": "Old Snowy Mountain",
+      "note": "True summit (7,880+ ft); panoramic views of Mt. Adams, Mt. Rainier, Mt. St. Helens and the McCall, Conrad and Meade Glaciers, with Packwood Glacier visible just below to the northwest.",
+      "type": "Summit",
+      "distMi": 7.6,
+      "directions": "Scramble the last few hundred feet over loose Class 2-3 rock and talus to the summit, staying out of the fall line of parties above."
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "Snowgrass Flat, the PCT north, and the unmarked climbers' path to the northwest ridge",
+      "notes": "From the Snowgrass Flats trailhead at about 4,600 ft at the end of the forest road, start on Trail 96. It climbs gently through forest, crossing Goat Creek on a footbridge at about 1.9 miles.\n\nAround 2.4 to 2.6 miles you reach the springs at the head of Snowgrass Creek just off the trail to the right, the last easy water before treeline. About 0.8 mile past that the trail fords Snowgrass Creek; there is no bridge, but logs and rocks usually allow a dry crossing except in heavy snowmelt.\n\nJust beyond the ford at about 3.9-4 miles and 5,800 ft the trail breaks into the open heather meadows of Snowgrass Flat. Camping is prohibited within the flat itself under wilderness regulations; parties camp at designated sites above or below it.\n\nStay left where the bypass trail forks right at about 3.9 miles, continue straight past the Goat Lake trail junction at about 4.7 miles, and reach the PCT at about 5.4 miles and 6,400 ft; turn left, north. Follow the PCT about 1.8 miles across rocky, increasingly exposed sidehill on Old Snowy's west flank.\n\nRound trip is roughly 15.5 miles with about 3,600 ft of gain, typically 8.5 to 9.5 hours car to car. The access road has taken washout damage in past winters, so confirm before driving.",
+      "season": "Roughly mid-Jul through Sep, most reliable in August",
+      "hazards": [
+       "An unmarked, easily missed turn off the PCT — the route's one real navigation problem",
+       "A persistent snowfield on the PCT traverse below the summit, firm and icy in early morning",
+       "Loose rock and talus on the summit scramble, with rockfall risk to climbers below",
+       "High wind and lightning exposure on an open crest, with common afternoon thunderstorms",
+       "Route-finding difficulty in poor visibility once off the PCT",
+       "Unreliable cell coverage throughout the wilderness"
+      ],
+      "baseFinding": "The turn off the PCT is unmarked, and it is the only thing on this route you can get wrong.\n\nThe test that works in fog is about motion, not landmarks: the PCT here is sidehilling — traversing across the slope. The climbers' path is the first thing that turns uphill and stops contouring, branching right, east, toward a rocky saddle on Old Snowy's northwest ridge. Take the first thing that climbs.\n\nThe negative is equally mechanical: if the PCT starts descending on the far side of the mountain, you have walked past the turn. Go back; do not climb straight up from where you noticed.\n\nDistance cross-check: about 1.8 miles north of the Trail 96 junction, near 7,100 ft, and the path switchbacks steeply for about half a mile from where you leave the trail.\n\nSecond marker, and it sits before the turn rather than after it: a persistent snowfield on the PCT below the summit lingers into July and is a well-documented trouble spot on the exposed sidehill traverse. Meeting it means the turn is still ahead of you. It is firmest and safest crossed in the morning.\n\nA soft confirmation at the saddle, worth knowing because it is visible from a distance: many parties stash trekking poles there for the scramble. A cache of poles on a rocky saddle is a good sign you are at the right one.\n\nBase of the scramble: the last few hundred feet to the summit is Class 2-3 hands-and-feet on loose rock, moderately exposed but not technical. Loose talus and rock knocked down by parties above is the hazard, so do not stack directly below other climbers.\n\nAnd a negative that is about visibility rather than ground: once you leave the PCT there is no maintained tread. Poor visibility is the recorded route-finding difficulty on this peak, and the honest response is to turn round at the PCT rather than to search for the spur."
+     }
+    ],
+    "approach": "From the Snowgrass Flats Trailhead (end of FR-2150, elev. ~4,600 ft), start on Trail 96 (Snowgrass Flat Trail). The first stretch climbs gently through forest, crossing Goat Creek on a footbridge at about 1.9 miles. Around 2.4-2.6 miles in you'll hear and then reach the springs that form the head of Snowgrass Creek just off the trail to the right - the last reliable, easy water source before treeline. About 0.8 mile past that the trail fords Snowgrass Creek itself; there's no bridge, but logs and rocks usually allow a dry crossing except during heavy snowmelt, when it can run fast enough to require care. Just beyond the ford (~3.9-4 miles, ~5,800 ft) the trail breaks out of forest into the open heather meadows and wildflower bogs of Snowgrass Flat, a scenic rest and water-filter stop before the climb — note that camping is prohibited within Snowgrass Flat itself under Gifford Pinchot wilderness regulations (36 CFR 261.58(e)); parties camp instead at designated sites above/below the flats. Stay left on Trail 96 where the Bypass Trail 97 forks right toward Cispus Basin at about 3.9 miles, and continue straight past the Trail 86 junction (left, to Goat Lake) at about 4.7 miles, staying on the main track as it climbs in long benches with Mount Adams and the Goat Rocks opening up behind you. At about 5.4 miles the trail meets the Pacific Crest Trail at roughly 6,400 ft; turn left (north) onto the PCT. Follow the PCT north for about 1.8 miles, traversing rocky, increasingly exposed sidehill terrain on Old Snowy's west flank - snow patches can linger here into midsummer and may require an ice axe/traction for a secure traverse in early season. Watch for an unmarked climbers' path branching right (east) off the PCT toward a rocky saddle on Old Snowy's northwest ridge; take it and switchback steeply uphill for about a half mile. Many parties stash poles here for the final scramble: the last few hundred feet to the 7,880 ft summit are Class 2-3 hand-and-foot scrambling on loose rock, moderately exposed but not technical. Loose talus and rockfall kicked down by parties above are the main hazard on this final pitch, so avoid stacking directly below other climbers. Total one-way distance is approximately 7.5 miles with about 3,600 ft of gain; round trip is roughly 15.5 miles, typically taking 8.5-9.5 hours car to car. After leaving US-12 the approach road is about 16 miles of unpaved washboard; no big potholes in late August, but higher clearance is more comfortable."
+   }
+  }
+ ]
+}

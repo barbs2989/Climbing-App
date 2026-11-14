@@ -1,0 +1,81 @@
+{
+  "area_id": "wa_three_queens",
+  "routes": [
+    {
+      "route_id": "wa_three_queens_middle_peak",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Web search: club route page lists the area June through October; one route page suggests spring. Reports show snow in the upper basin and a moat in late June and mid-July. Histogram all routes: May 4, Jul 16, Aug 7, Oct 4. Stored Jun-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2901430",
+          "verdict": "unsure",
+          "why": "2025-07-11, blank logged route; its high point is within 21 m of the surveyed highest-summit coordinate, and the report climbs a ramp from a saddle, not the south chimney described here."
+        },
+        {
+          "aid": "1893454",
+          "verdict": "different",
+          "why": "Logged Standard route, which we hold as its own route; not a complete trip."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 6,
+          "text": "As of late May 2026 a gate stands near the old trailhead and the trail now starts from a small lot (4-5 cars) at the end of a narrow logging road; a short descent leads to the first log crossing.",
+          "aids": [
+            "3213299"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "The Kachess River and Mineral Creek are both crossed on logs in June and July; the logs are bare and slick, so some parties sit and shuffle across.",
+          "aids": [
+            "3213299",
+            "2875349",
+            "2901430"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_three_queens_west_peak",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "Web search: club route page lists June-October for the area; one October ascent recorded. Stored Jul-Oct kept. A wildfire closure notice (Aug 2026) affects trailheads here."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2901430",
+          "verdict": "unsure",
+          "why": "Blank route name; the summit reached is the highest point, not described as the West Peak via its west ridge."
+        },
+        {
+          "aid": "1893454",
+          "verdict": "different",
+          "why": "Logged Standard route."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "The harvested tracks (2901430, 1893454) reach the Peakbagger highest-summit coordinate (East Peak, 47.44636, -121.27031); none targets the Middle or West subpeak, and we have no Summit pins for those routes. Standard Scramble already has track points and was not in the request. A closure notice for a 2026 fire near Three Queens was seen on the Spectacle Lake page."
+}

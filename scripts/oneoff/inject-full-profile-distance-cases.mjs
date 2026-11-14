@@ -20,14 +20,16 @@ import fs from "node:fs";
 import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 
-const CORE = "ClimbMatchCore.jsx";
+// FullProfile lives in src/components since PR50 (2026-10-25); the header and card text is unchanged.
+const CORE = "src/components/FullProfile.tsx";
 const FIRE = "lib/FireNearRoute.jsx";
 const PROBE = ["node", ["scripts/oneoff/probe-full-profile-distance-honours-units.mjs"]];
 const GUARD = ["node", ["scripts/check-units.mjs", "--only=profile"]];
 const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
 
-const HEADER = '<span style={{color:C.blue}}>{uDistMi(+dist.toFixed(1))+" away"}</span>';
-const CARD = '{score>=80?"Excellent match":score>=60?"Good match":"Limited overlap"} · {uDistMi(+dist.toFixed(1))+" away"}';
+// A REAL climber's distance prints approximately ("~X" / "under 5"); the seed path still prints uDistMi to 1dp.
+const HEADER = '<span style={{color:C.blue}}>{(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away"}</span>';
+const CARD = '"Limited overlap")+(_unkN?" · based on limited info":"")+(dist!=null&&isFinite(dist)?" · "+(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away":"")';
 const FIRELINE = "and {fires.length - 4} more within {uDistMi(radiusMi)}";
 
 const CASES = [
@@ -42,8 +44,10 @@ const CASES = [
     name: "2-compatibility-card-prints-bare-miles",
     why: "REAL DEFECT: the card read `{dist.toFixed(1)} miles away`",
     file: CORE, find: CARD,
-    repl: '{score>=80?"Excellent match":score>=60?"Good match":"Limited overlap"} · {dist.toFixed(1)} miles away',
-    targets: { guard: /hardcoded unit/, probe: /hardcoded unit|metric still renders miles/ },
+    repl: '"Limited overlap")+(_unkN?" · based on limited info":"")+(dist!=null&&isFinite(dist)?" · "+dist.toFixed(1)+" miles away":"")',
+    // The card is ONE string expression now, which the hardcoded-unit TEXT scan cannot read; the helper
+    // count and the rendered readouts still see it.
+    targets: { guard: /hardcoded unit|FullProfile calls uDistMi 1 time|metric readouts read/, probe: /hardcoded unit|metric still renders miles|not converting/ },
   },
   {
     name: "3-fire-panel-radius-prints-bare-miles",
@@ -56,7 +60,8 @@ const CASES = [
     name: "4-a-unit-word-swapped-with-NO-conversion",
     why: "the dangerous near-miss: metric reads km while the NUMBER is still miles",
     file: CORE, find: HEADER,
-    repl: '<span style={{color:C.blue}}>{dist.toFixed(1)+(uImp()?" mi":" km")+" away"}</span>',
+    // uImp is a ClimbMatchCore local that FullProfile.tsx does not import, so the old edit threw at render and the probe never reached the number check; uApproxDist is already imported here and is not one of the guard's counted helpers.
+    repl: '<span style={{color:C.blue}}>{dist.toFixed(1)+(/km/.test(uApproxDist(5))?" km":" mi")+" away"}</span>',
     // The guard sees the helper count drop; only the RENDER can see that the number never moved.
     targets: { guard: /routes 1 distance readout|uDistMi 1 time/, probe: /number did not change between units/ },
   },

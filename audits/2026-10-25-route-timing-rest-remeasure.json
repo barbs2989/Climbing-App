@@ -1,0 +1,28 @@
+{
+ "date": "2026-10-25",
+ "what": "The 18 rows the 2026-10-08 timing audits left open (action leave in the residual, repairs and extended-search files), re-measured under lib/planTimes.js with REST_PER_MOVING_HR = 1/6 (#2820). Each was held as short-or-unverified under the no-rest model.",
+ "rule": "A leave stands unless the rest model, read against the SAME reports the audit already used, leaves a stored leg more than 20% short against at least three timed reports. Rest only lengthens modelled legs, so it can move a leave only toward 'not short'.",
+ "measured": "Planner time to summit (totalH), descent (downH) and car-to-car (tripH), rest included, at the default fitness (intermediate), 10 lb pack and party of 2. Read-only: scripts/oneoff/measure-planner-times-vs-reports.mjs --ids.",
+ "counts": {"routes": 18, "changed": 0, "left": 18},
+ "rollback": "none: no rows were written",
+ "routes": [
+  {"id": "id_thompson_peak_south_couloir", "action": "leave", "timeToSummitH": 5.27, "descentH": 4.59, "carToCarH": 9.86, "stored": null},
+  {"id": "wa_colchuck_peak_north_buttress_couloir", "action": "leave", "timeToSummitH": 6.37, "descentH": 5.3, "carToCarH": 11.67, "stored": "recommendedStart only"},
+  {"id": "wa_cutthroat_south_buttress", "action": "leave", "timeToSummitH": 6.81, "descentH": 3.69, "carToCarH": 10.5, "stored": {"totalHrs": 10.5, "approachTimeHrs": 1.5}},
+  {"id": "wa_dark_peak_dark_glacier_route", "action": "leave", "timeToSummitH": 13, "descentH": 10.25, "carToCarH": 23.25, "stored": {"totalHrs": 23.25, "summitTimeHrs": 9, "descentTimeHrs": 10.25, "approachTimeHrs": 4}},
+  {"id": "wa_elephant_butte_standard_route", "action": "leave", "timeToSummitH": 8, "descentH": 8.94, "carToCarH": 16.94, "stored": {"totalHrs": 36, "summitTimeHrs": 3, "descentTimeHrs": 4, "approachTimeHrs": 5}},
+  {"id": "wa_luahna_peak_southwest_slope_southeast_ridge", "action": "leave", "timeToSummitH": 17.04, "descentH": 10.92, "carToCarH": 27.96, "stored": {"summitTimeHrs": 4.6, "descentTimeHrs": 3.6}},
+  {"id": "wa_mount_adams_adams_glacier", "action": "leave", "timeToSummitH": 13.85, "descentH": 11.15, "carToCarH": 25, "stored": {"totalHrs": 20, "summitTimeHrs": 15, "approachTimeHrs": 5}},
+  {"id": "wa_mount_challenger_challenger_glacier", "action": "leave", "timeToSummitH": 18.5, "descentH": 13.61, "carToCarH": 32.11, "stored": {"totalHrs": 26, "summitTimeHrs": 11, "descentTimeHrs": 7.5, "approachTimeHrs": 7.5}},
+  {"id": "wa_mount_cruiser_south_corner", "action": "leave", "timeToSummitH": 12.67, "descentH": 6.37, "carToCarH": 19.04, "stored": {"totalHrs": 18, "summitTimeHrs": 13, "approachTimeHrs": 5}},
+  {"id": "wa_mount_formidable_south_face", "action": "leave", "timeToSummitH": 20, "descentH": 7.25, "carToCarH": 27.25, "stored": {"totalHrs": 26, "summitTimeHrs": 14, "descentTimeHrs": 6, "approachTimeHrs": 6}},
+  {"id": "wa_mount_logan_r1", "action": "leave", "timeToSummitH": 19.5, "descentH": 10.29, "carToCarH": 29.79, "stored": {"totalHrs": 26.5, "summitTimeHrs": 13, "descentTimeHrs": 7, "approachTimeHrs": 6.5}},
+  {"id": "wa_mount_rainier_disappointment_cleaver", "action": "leave", "timeToSummitH": 12.08, "descentH": 7.33, "carToCarH": 19.41, "stored": {"totalHrs": 17, "summitTimeHrs": 12, "approachTimeHrs": 5}},
+  {"id": "wa_mount_shuksan_north_face", "action": "leave", "timeToSummitH": 17, "descentH": 8.18, "carToCarH": 25.18, "stored": {"totalHrs": 22, "summitTimeHrs": 11, "descentTimeHrs": 5, "approachTimeHrs": 6}},
+  {"id": "wa_mount_stuart_ice_cliff_glacier", "action": "leave", "timeToSummitH": 19.5, "descentH": 9.28, "carToCarH": 28.78, "stored": {"totalHrs": 24, "summitTimeHrs": 14, "descentTimeHrs": 4.5, "approachTimeHrs": 5.5}},
+  {"id": "wa_ptarmigan_traverse", "action": "leave", "timeToSummitH": 5.7, "descentH": 18.08, "carToCarH": 23.78, "stored": {"totalHrs": 30, "summitTimeHrs": 0, "descentTimeHrs": 10, "approachTimeHrs": 5.7}},
+  {"id": "wa_raven_ridge_southeast_ridge_crater_lake", "action": "leave", "timeToSummitH": 4.13, "descentH": 3.51, "carToCarH": 7.64, "stored": "recommendedStart only"},
+  {"id": "wa_sherpa_glacier", "action": "leave", "timeToSummitH": 11, "descentH": 8, "carToCarH": 19, "stored": {"totalHrs": 19, "summitTimeHrs": 7, "descentTimeHrs": 8, "approachTimeHrs": 4}},
+  {"id": "wa_silver_star_glacier", "action": "leave", "timeToSummitH": 9.7, "descentH": 4.31, "carToCarH": 14, "stored": {"totalHrs": 14, "summitTimeHrs": 10.5, "approachTimeHrs": 3.5}}
+ ]
+}

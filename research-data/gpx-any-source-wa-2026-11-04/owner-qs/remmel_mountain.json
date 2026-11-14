@@ -1,0 +1,20 @@
+{
+  "key": "remmel_mountain",
+  "question": "Is ascent 3252658 (Jul 4 2026, from Thirtymile) the SE Slope route, and which routes exist on Remmel?",
+  "answer": "Yes. Ascent 3252658 starts and ends at the Thirtymile trailhead (48.8231,-120.0198), 34.8 mi round trip with 6,444 ft gain, and reaches the lidar summit (48.92341,-120.19683). The track passes the Four Point Lake valley (48.9219,-120.1696) and the old Coleman Ridge trail junction area (48.9181,-120.1805; our stored junction is 48.9183,-120.1818) before the summit, which is exactly the stored SE Slope (Standard) approach. The same trailhead and line are logged by ascents named 'SE Trail' (3368517, Oct 2026) and 'Southern Slope' (1381730, May 2020). No other route leaves Thirtymile. Routes on the peak: (1) Southeast Slope, class 1-2 walk-up, from Thirtymile (about 17 mi each way) or from Andrews Creek via Four Point Lake and the old Coleman Ridge trail - held; (2) NW Ridge 5.2 from Remmel Lake - held; (3) a west/southwest line from the Andrews Creek side via Airview Lake or Andrews Pass, logged as 'Southwest route' class 2/3 (Sep 2024) and 'West gully/col south of North Peak' with class 3 gullies, class 4 moves and class 5 slabs (Sep 2022), plus a class 4 west-face scramble from Andrews Pass in a 2017 log - NOT held. The west-side line is probably real but is poorly described and the loggers disagree on grade, so it is a candidate, not a settled route.",
+  "recommendation": "Assign ascent 3252658 to wa_remmel_mountain_southeast_slope as its complete track (a clean Thirtymile out-and-back with the summit reached). Leave the west/southwest line as an unfilled candidate for a later pass; do not create a row without a better description.",
+  "confidence": "high",
+  "proposed": {
+    "assign_track": {"aid": "3252658", "route_id": "wa_remmel_mountain_southeast_slope", "note": "Thirtymile out-and-back, 34.8 mi, 6,444 ft gain, about 9.5 h up and 7 h down in early July"},
+    "candidate_route_not_filled": {"name": "West / Southwest Gullies (from Andrews Creek)", "loggedAs": ["2654843 Southwest route class 2/3", "2041351 West Gully / col south of North Peak: class 3 gullies, class 4, class 5 slabs"]}
+  },
+  "evidence": [
+    "Peakbagger ascents 3252658, 3368517, 1381730 (in packet) — Thirtymile starts, track passes the Four Point Lake valley and the Coleman Ridge junction area",
+    "https://www.mountainproject.com/area/109095663/mt-remmel (search snippet) — easiest approach Four Point Creek trail from the SE; also Remmel Creek from the north and Andrews Creek from the southwest",
+    "https://summitpost.org/remmel-mountain/climbers-log/153242 (search snippet) — class 4 west face from Andrews Pass; NW ridge per Beckey"
+  ],
+  "searched": [
+    "Remmel Mountain routes southwest route Andrews Creek Airview Lake west ridge Beckey Pasayten — no page describes a southwest route in detail",
+    "Nominatim Remmel Mountain — 48.9232,-120.1968, matches the lidar summit"
+  ]
+}

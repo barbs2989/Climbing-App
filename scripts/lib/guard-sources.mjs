@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Every static guard has to answer one question before it prints "ok": did it actually
 // read the app? None of them asked it, and this codebase has already been bitten by the
 // answer being no.
@@ -25,8 +26,8 @@ import path from "node:path";
 
 // The app source files that any whole-app guard must be reading. Deliberately not
 // "every file" — these are the three that hold the app, so their absence from a scan
-// means the scan covered a fraction of it. main.jsx is the entry shim and lib/ is
-// enumerated dynamically, so neither belongs in a must-exist list.
+// means the scan covered a fraction of it. main.jsx is the entry shim and the component
+// folders are enumerated dynamically, so neither belongs in a must-exist list.
 export const REQUIRED = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
 
 const bail = (guard, msg) => {
@@ -36,8 +37,42 @@ const bail = (guard, msg) => {
   process.exit(1);
 };
 
+// ── Where components live ───────────────────────────────────────────────────────────────────
+// lib/ holds the DB, auth and area-browser modules plus the screens moved out of core in 2026-09;
+// src/components/ holds the single-job TypeScript components being extracted from the three app
+// files since 2026-10 (docs/refactor-progress.md). A guard that enumerates "the component files"
+// must see BOTH, or a component in the new folder is invisible to it — the #547 shape again, one
+// directory over. So the list is built here, once, and every guard takes it from here.
+//
+//   componentFiles(root)             → every .jsx/.tsx under lib/ (flat) and src/components/ (recursive)
+//   componentFiles(root, { js: true }) → ...plus the .js/.ts modules beside them (db.js, auth.js, ...)
+//
+// Root-relative, sorted, so two guards agree on the order. lib/ missing or empty is a hard failure
+// (it cannot be right); src/components/ may be absent until the first component lands, and the
+// files KNOWN to have moved there are each asserted by name in readParentSource().
+export const COMPONENT_DIRS = ["lib", "src/components"];
+export function componentFiles(root, { js = false, guard = "a guard" } = {}) {
+  const ext = js ? /\.[jt]sx?$/ : /\.[jt]sx$/;
+  const libDir = path.join(root, "lib");
+  if (!fs.existsSync(libDir)) {
+    bail(guard, "there is no lib/ directory, so the DB, auth and area-browser modules went unscanned");
+  }
+  const out = fs.readdirSync(libDir).filter((f) => ext.test(f)).map((f) => "lib/" + f);
+  if (!out.length) bail(guard, "lib/ contains no .js/.jsx files, which cannot be right");
+  const walk = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (ext.test(e.name) && !/\.d\.ts$/.test(e.name)) out.push(path.relative(root, p).replace(/\\/g, "/"));
+    }
+  };
+  const comp = path.join(root, "src/components");
+  if (fs.existsSync(comp)) walk(comp);
+  return out.sort();
+}
+
 // For guards that name their inputs (check:refs, check:hooks). Returns the app source
-// list — the required files, main.jsx if present, and every lib/*.js(x) — and exits
+// list — the required files, main.jsx if present, and every component file — and exits
 // naming any required file it could not find, rather than dropping it.
 export function appSources(root, guard) {
   const missing = REQUIRED.filter((f) => !fs.existsSync(path.join(root, f)));
@@ -46,13 +81,7 @@ export function appSources(root, guard) {
   }
   const list = [...REQUIRED];
   if (fs.existsSync(path.join(root, "main.jsx"))) list.push("main.jsx");
-  const libDir = path.join(root, "lib");
-  if (!fs.existsSync(libDir)) {
-    bail(guard, "there is no lib/ directory, so the DB, auth and area-browser modules went unscanned");
-  }
-  const lib = fs.readdirSync(libDir).filter((f) => /\.jsx?$/.test(f));
-  if (!lib.length) bail(guard, "lib/ contains no .js/.jsx files, which cannot be right");
-  return list.concat(lib.map((f) => "lib/" + f));
+  return list.concat(componentFiles(root, { js: true, guard }));
 }
 
 // For guards that discover their inputs by walking the tree. Walking is already the
@@ -65,7 +94,7 @@ export function assertCovered(files, root, guard, required = REQUIRED) {
   if (!files || !files.length) {
     bail(guard, "the source walk found no files at all, so every assertion below passed on an empty set");
   }
-  const seen = new Set(files.map((f) => (path.isAbsolute(f) ? path.relative(root, f) : f)));
+  const seen = new Set(files.map((f) => (path.isAbsolute(f) ? path.relative(root, f).replace(/\\/g, "/") : f)));
   const missing = required.filter((f) => !seen.has(f));
   if (missing.length) {
     bail(guard, `the source walk covered ${files.length} file(s) but not ${missing.join(", ")}`);
@@ -73,67 +102,354 @@ export function assertCovered(files, root, guard, required = REQUIRED) {
   return files;
 }
 
-// ── Components moved OUT of ClimbMatchCore.jsx so they load lazily ─────────────────────────
-// Splitting the startup bundle moved these whole components, verbatim, into lib/<Name>.jsx
-// (each one's default export). Most guards were written while they were core source and read
-// core by text — so after a move they do not fail, they go BLIND: every pattern that used to
-// match inside the component matches nothing, and a rule that only ever forbids passes.
+// ── Components moved OUT of an app file ─────────────────────────────────────────────────────
+// Splitting the startup bundle (2026-09) moved whole components, verbatim, into lib/<Name>.jsx;
+// the extraction into single-job components (2026-10) moves them into src/components/<Name>.tsx.
+// Either way, the component is still the parent file's code as far as the guards are concerned.
+// Most guards were written while the code was in the parent and read the parent by text — so
+// after a move they do not fail, they go BLIND: every pattern that used to match inside the
+// component matches nothing, and a rule that only ever forbids passes.
 //
-// readCoreSource() rebuilds the text core had before the moves: core, then each moved file
-// with its import lines dropped and `export default function` turned back into `function`.
-// That is a valid module (the moved imports were core's own bindings or core's own imports),
-// so text scans, regexes and Babel parses all see the moved code as they did before. A guard
-// that reads core by text should read it through here; one that BUNDLES core to execute it
-// must import the moved component from lib/ instead, since a bundle cannot be rebuilt this way.
+// readParentSource(root, parent) rebuilds the text the parent had before the moves: the parent,
+// then each moved file with its import lines dropped and `export default function` turned back
+// into `function`. That is a valid module (the moved imports were the parent's own bindings or
+// the parent's own imports), so text scans, regexes and Babel parses all see the moved code as
+// they did before — the parses must carry the "typescript" plugin, which every guard's does. A
+// guard that reads a parent by text should read it through here (readAppFile does it for a file
+// loop); one that BUNDLES core to execute it must import the moved component instead, since a
+// bundle cannot be rebuilt this way — coreModuleEntry() below.
 //
-// A moved file that is missing is a HARD failure, for the reason at the top of this file.
-export const MOVED_FROM_CORE = [
-  "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx",
-  "lib/CrewCard.jsx", "lib/AddRoute.jsx", "lib/LogAscent.jsx",
-  "lib/ListsManager.jsx", "lib/TripReport.jsx", "lib/EditProfileScreen.jsx",
-  "lib/Help.jsx", "lib/LegalView.jsx", "lib/Calendar.jsx", "lib/FriendsList.jsx", "lib/Inbox.jsx",
-  "lib/GiveVouch.jsx", "lib/Onboarding.jsx", "lib/ShareCard.jsx", "lib/NotifPanel.jsx",
-  "lib/MyAscents.jsx", "lib/SafetyTab.jsx",
-];
-export function movedAsCoreText(text, file = "a moved file") {
+// Every extracted component is REGISTERED here under its parent, in the same PR as the move
+// (docs/refactor-progress.md). A moved file that is missing is a HARD failure, for the reason at
+// the top of this file. Each moved file must have exactly one `export default function` — the
+// convention the stitch depends on, and the one the progress doc states.
+export const MOVED = {
+  "ClimbMatchCore.jsx": [
+    "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx",
+    "lib/CrewCard.jsx", "lib/AddRoute.jsx", "lib/LogAscent.jsx",
+    "lib/ListsManager.jsx", "lib/TripReport.jsx", "lib/EditProfileScreen.jsx",
+    "lib/Help.jsx", "lib/LegalView.jsx", "lib/Calendar.jsx", "lib/FriendsList.jsx", "lib/Inbox.jsx",
+    "lib/GiveVouch.jsx", "lib/Onboarding.jsx", "lib/ShareCard.jsx", "lib/NotifPanel.jsx",
+    "lib/MyAscents.jsx", "lib/SafetyTab.jsx",
+    // Not moved OUT of core — born lazy (0300/0302) — but registered the same way so every guard that
+    // reads "core" (overlay discovery, absence copy, real-profile rows, popup chrome) sees them.
+    "lib/MyPartnerAreas.jsx", "lib/StartCrewSheet.jsx",
+    "src/components/RiskBadge.tsx",
+    "src/components/DiscBadge.tsx",
+    "src/components/DiscBadges.tsx",
+    "src/components/Lbl.tsx",
+    "src/components/CountUp.tsx",
+    "src/components/Pill.tsx",
+    "src/components/ActionIcon.tsx",
+    "src/components/ElevChart.tsx",
+    "src/components/DiscIcon.tsx",
+    "src/components/Av.tsx",
+    "src/components/GPXMap.tsx",
+    "src/components/SwipeRow.tsx",
+    "src/components/ChatComposer.tsx",
+    "src/components/ScreenSkeleton.tsx",
+    "src/components/OverlaySkeleton.tsx",
+    "src/components/MessageRow.tsx",
+    "src/components/TypingIndicator.tsx",
+    "src/components/Hr.tsx",
+    "src/components/Stars.tsx",
+    "src/components/Bar.tsx",
+    "src/components/CardHead.tsx",
+    "src/components/PhotoAltField.tsx",
+    "src/components/PhotoDescribeBox.tsx",
+    "src/components/ShareExportRow.tsx",
+    "src/components/ReactionPicker.tsx",
+    "src/components/PullToRefresh.tsx",
+    "src/components/TopContribBadge.tsx",
+    "src/components/RetryReminder.tsx",
+    "src/components/PlaceMatches.tsx",
+    "src/components/SectionJumps.tsx",
+    "src/components/MiniCalendar.tsx",
+    "src/components/SunCorrect.tsx",
+    "src/components/AreaRegionSelect.tsx",
+    "src/components/TopContributors.tsx",
+    "src/components/PhotoStrip.tsx",
+    "src/components/ReportStats.tsx",
+    "src/components/ItineraryEditor.tsx",
+    "src/components/RealClimberRow.tsx",
+    "src/components/CommentMenu.tsx",
+    "src/components/DbAreaLevel.tsx",
+    "src/components/DbCountryAreaHits.tsx",
+    "src/components/BadgeGrid.tsx",
+    "src/components/VouchCard.tsx",
+    "src/components/SpeedCompat.tsx",
+    "src/components/TrackedLists.tsx",
+    "src/components/SpeedProfile.tsx",
+    "src/components/QuickLog.tsx",
+    "src/components/TickList.tsx",
+    "src/components/CrewInviteModal.tsx",
+    "src/components/SearchSplit.tsx",
+    "src/components/WaypointMapPicker.tsx",
+    "src/components/SharedListView.tsx",
+    "src/components/ConnectModal.tsx",
+    "src/components/AspectSunPanel.tsx",
+    "src/components/Questionnaire.tsx",
+    "src/components/RichEditor.tsx",
+    "src/components/AreaTree.tsx",
+    "src/components/LogRoutePicker.tsx",
+    "src/components/ReportModal.tsx",
+    "src/components/FriendsFeed.tsx",
+    "src/components/Contributions.tsx",
+    "src/components/DbAreaPicker.tsx",
+    "src/components/AscentPyramid.tsx",
+    "src/components/DbClimbPicker.tsx",
+    "src/components/LoginScreen.tsx",
+    "src/components/FloatPlan.tsx",
+    "src/components/Comments.tsx",
+    "src/components/Challenges.tsx",
+    "src/components/Resume.tsx",
+    "src/components/FullProfile.tsx",
+    "src/components/PolicyUpdateNotice.tsx",
+  ],
+  "lib/AlpineConditionsCard.jsx": [
+    "src/components/AirSection.tsx",
+    "src/components/AlertsSection.tsx",
+    "src/components/AvalancheSection.tsx",
+    "src/components/DayByDay.tsx",
+    "src/components/DayHead.tsx",
+    "src/components/ForecastBox.tsx",
+    "src/components/HourByHour.tsx",
+    "src/components/OutcomesSection.tsx",
+    "src/components/RangeLine.tsx",
+    "src/components/ReportFreshness.tsx",
+    "src/components/SeasonSection.tsx",
+    "src/components/SnowSection.tsx",
+    "src/components/SnowfallSection.tsx",
+    "src/components/StreamsSection.tsx",
+    "src/components/SunShadeSection.tsx",
+  ],
+  "lib/DbAreaBrowser.jsx": [
+    "src/components/RouteRow.tsx",
+    "src/components/AddHereFooter.tsx",
+    "src/components/AreaGettingThere.tsx",
+    "src/components/ClassicsList.tsx",
+    "src/components/NearbyPeaks.tsx",
+    "src/components/DbSearchSplit.tsx",
+    "src/components/DbSuggestedClimbs.tsx",
+    "src/components/PartnersHereCard.tsx",
+    "src/components/SummitBriefing.tsx",
+    "src/components/ObjectivesPanel.tsx",
+    "src/components/StatePicker.tsx",
+    "src/components/DbAreaTree.tsx",
+    "src/components/NearMePanel.tsx",
+    "src/components/AreaPage.tsx",
+    "src/components/RouteFinderPanel.tsx",
+  ],
+  "EnrichmentPanels.jsx": [
+    "src/components/Head.tsx",
+    "src/components/EmptyPanel.tsx",
+    "src/components/PeakMetadataPanel.tsx",
+    "src/components/SeasonalGuidancePanel.tsx",
+    "src/components/CrowdsPanel.tsx",
+    "src/components/PartnerRequirementsPanel.tsx",
+  ],
+  "ClimbMatch.jsx": [
+    "src/components/CrewRequestsView.tsx",
+    "src/components/CrewFriendsView.tsx",
+    "src/components/CrewListView.tsx",
+    "src/components/DirectChatScreen.tsx",
+    "src/components/CrewChatScreen.tsx",
+    "src/components/TodayTab.tsx",
+    "src/components/RoutesTab.tsx",
+    "src/components/DiscoverTab.tsx",
+    "src/components/GroupsTab.tsx",
+    "src/components/LogbookTab.tsx",
+    "src/components/MeTab.tsx",
+    "src/components/GroupDiscussionTab.tsx",
+    "src/components/GroupAboutTab.tsx",
+    "src/components/GroupMembersTab.tsx",
+    "src/components/GroupEventsTab.tsx",
+    "src/components/GroupMediaTab.tsx",
+    "src/components/GroupEventForm.tsx",
+    "src/components/SettingsPrivacySheet.tsx",
+    "src/components/SettingsDataSheet.tsx",
+    "src/components/SettingsMenuSheet.tsx",
+    "src/components/ReviewQueueSheet.tsx",
+    "src/components/LogClimbSheet.tsx",
+    "src/components/ManageAreasSheet.tsx",
+    "src/components/PrivacySheet.tsx",
+    "src/components/OnboardingSheet.tsx",
+    "src/components/GiveVouchSheet.tsx",
+    "src/components/ObjectivesList.tsx",
+    "src/components/GroupJoinQuestionsEditor.tsx",
+    "src/components/DeleteAccountConfirm.tsx",
+    "src/components/BlockedClimbersSheet.tsx",
+    "src/components/ClimberProfileSheet.tsx",
+    "src/components/DataRequestSheet.tsx",
+    "src/components/AboutSheet.tsx",
+    "src/components/FriendsSheet.tsx",
+    "src/components/ReportUserSheet.tsx",
+    "src/components/SettingsLegalSheet.tsx",
+    "src/components/SettingsNotifsSheet.tsx",
+    "src/components/CrewSafetyScreen.tsx",
+  ],
+  "RouteDetail.jsx": [
+    "src/components/GradeTag.tsx",
+    "src/components/PinNum.tsx",
+    "src/components/TopoSwatch.tsx",
+    "src/components/MediaImg.tsx",
+    "src/components/CragWalkIn.tsx",
+    "src/components/SaveOfflineChip.tsx",
+    "src/components/TopoCaptionBox.tsx",
+    "src/components/CRow.tsx",
+    "src/components/EditIconButton.tsx",
+    "src/components/GapNote.tsx",
+    "src/components/VerifNote.tsx",
+    "src/components/TagChip.tsx",
+    "src/components/RouteTagRow.tsx",
+    "src/components/RouteSocialRow.tsx",
+    "src/components/CragSafetyNotes.tsx",
+    "src/components/RackBetaList.tsx",
+    "src/components/PitchConsensus.tsx",
+    "src/components/FloatPlanFold.tsx",
+    "src/components/TopoCaption.tsx",
+    "src/components/ClampText.tsx",
+    "src/components/ClimateSeasonCard.tsx",
+    "src/components/PhotoRow.tsx",
+    "src/components/TopoStroke.tsx",
+    "src/components/VarTag.tsx",
+    "src/components/PinIcon.tsx",
+    "src/components/TopoPinLegend.tsx",
+    "src/components/TopoLineOverlay.tsx",
+    "src/components/TopoVariantKey.tsx",
+    "src/components/TopoPinKey.tsx",
+    "src/components/TopoThumb.tsx",
+    "src/components/EmptySection.tsx",
+    "src/components/PitchPhotos.tsx",
+    "src/components/CopyCoordButton.tsx",
+    "src/components/TopoZoomPhoto.tsx",
+    "src/components/TopoPhotoModal.tsx",
+    "src/components/AccessFold.tsx",
+    "src/components/CragRack.tsx",
+    "src/components/CragLocationCard.tsx",
+    "src/components/PairsWellWith.tsx",
+    "src/components/WeatherIcon.tsx",
+    "src/components/OvernightPermit.tsx",
+    "src/components/BreakdownHandoff.tsx",
+    "src/components/CragFactRows.tsx",
+    "src/components/CragFactSection.tsx",
+    "src/components/WallNeighbours.tsx",
+    "src/components/BoulderNeighbours.tsx",
+    "src/components/RoadReports.tsx",
+    "src/components/SummitLegsCard.tsx",
+    "src/components/DescentLegStrip.tsx",
+    "src/components/TripProfileCard.tsx",
+    "src/components/ClimbingRouteTable.tsx",
+    "src/components/Capped.tsx",
+    "src/components/GradePicker.tsx",
+    "src/components/RappelRow.tsx",
+    "src/components/RappelTable.tsx",
+    "src/components/PitchComments.tsx",
+    "src/components/RouteGearEssentialsBox.tsx",
+    "src/components/WaypointList.tsx",
+    "src/components/RouteRackBox.tsx",
+    "src/components/RouteGearCheck.tsx",
+    "src/components/DiffRadar.tsx",
+    "src/components/TrailheadCard.tsx",
+    "src/components/ApproachPicker.tsx",
+    "src/components/HourChartCard.tsx",
+    "src/components/HourlyChart.tsx",
+    "src/components/SeasonChart.tsx",
+    "src/components/CampSite.tsx",
+    "src/components/CampingPanel.tsx",
+    "src/components/ApproachVariants.tsx",
+    "src/components/TopoDrawer.tsx",
+    "src/components/TopoSection.tsx",
+    "src/components/RouteBreakdown.tsx",
+    "src/components/BaseCheckinPanel.tsx",
+    "src/components/ConsensusPanel.tsx",
+    "src/components/SafetyMatrix.tsx",
+    "src/components/ItineraryView.tsx",
+    "src/components/Calculator.tsx",
+    "src/components/TechStats.tsx",
+    "src/components/WeatherPanel.tsx",
+    "src/components/ConditionsScoreCard.tsx",
+    "src/components/SuggestFix.tsx",
+    "src/components/RoutePhotosTab.tsx",
+    "src/components/RouteReportsTab.tsx",
+    "src/components/RoutePartnersTab.tsx",
+    "src/components/RouteSafetyTab.tsx",
+    "src/components/RouteOverviewTab.tsx",
+    "src/components/RouteShareSheet.tsx",
+    "src/components/RoutePhotoLightbox.tsx",
+    "src/components/RoutePlanTab.tsx",
+  ],
+};
+// The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.
+export const MOVED_FROM_CORE = MOVED["ClimbMatchCore.jsx"];
+// Every moved file under every parent — for a scan that lists the three app files by name and must
+// keep the components moved out of ANY of them in view (RouteDetail.jsx's since PR52, 2026-10-29).
+export const MOVED_ALL = Object.values(MOVED).flat();
+
+export function movedAsParentText(text, file = "a moved file") {
   const body = text.replace(/^import [^\n]*\n/gm, "");
   const n = (body.match(/^export default function /gm) || []).length;
   if (n !== 1) throw new Error(`${file}: expected exactly one "export default function", found ${n}`);
   return body.replace(/^export default function /m, "function ");
 }
+export const movedAsCoreText = movedAsParentText;
+
+// For a guard that LIFTS code out of the stitched text and EVALUATES it (new Function): a moved
+// component is TypeScript, and `(o: unknown)` does not run. Returns the code with its types
+// stripped by esbuild (JS passes through unchanged). An expression is wrapped so it stays one.
+export async function stripTypes(code, { expression = false } = {}) {
+  const { transform } = await import("esbuild");
+  const src = expression ? `(${code})` : code;
+  const out = (await transform(src, { loader: "tsx", jsx: "preserve", minifyWhitespace: false })).code.trim();
+  return expression ? out.replace(/;$/, "") : out;
+}
+
 // For a guard that BUNDLES core to execute or render it: an entry file exporting everything core
-// exports PLUS each moved component under its old name (they are lib/ default exports now), so the
+// exports PLUS each moved component under its old name (they are default exports now), so the
 // bundle has the module shape it had before the moves and `mod.Inbox` still resolves. Written
 // inside the checkout (react must resolve from its node_modules), pid-scoped; call cleanup().
 export function coreModuleEntry(root = OWN_ROOT) {
   const p = path.join(root, `.core-entry-${process.pid}-${Math.random().toString(36).slice(2, 8)}.jsx`);
   const lines = [`export * from "./ClimbMatchCore.jsx";`];
-  for (const f of MOVED_FROM_CORE) {
+  for (const f of MOVED["ClimbMatchCore.jsx"]) {
     if (!fs.existsSync(path.join(root, f))) throw new Error(`${f} is missing — it cannot be re-exported`);
-    lines.push(`export { default as ${path.basename(f, ".jsx")} } from "./${f}";`);
+    lines.push(`export { default as ${path.parse(f).name} } from "./${f}";`);
   }
   fs.writeFileSync(p, lines.join("\n") + "\n");
   return { path: p, cleanup: () => fs.rmSync(p, { force: true }) };
 }
 
-// For a guard that loops over a fixed list of app files which does NOT include lib/: reading
-// core through here keeps the moved components in view without scanning anything twice.
-// (A guard that already walks lib/ sees them as lib files and must keep reading core raw.)
+// For a guard that loops over a fixed list of app files which does NOT include the component
+// folders: reading a parent through here keeps its moved components in view without scanning
+// anything twice. (A guard that already walks lib/ and src/components/ sees them as component
+// files and must keep reading the parent raw.)
 export function readAppFile(abs) {
-  if (path.basename(abs) === "ClimbMatchCore.jsx") return readCoreSource(path.dirname(abs));
+  const name = path.basename(abs);
+  if (MOVED[name] && MOVED[name].length) return readParentSource(path.dirname(abs), name);
+  // A parent inside lib/ (lib/DbAreaBrowser.jsx, PR65 on) is keyed by its path from the checkout root.
+  const rel = path.relative(OWN_ROOT, abs).replace(/\\/g, "/");
+  if (MOVED[rel] && MOVED[rel].length) return readParentSource(OWN_ROOT, rel);
   return fs.readFileSync(abs, "utf8");
 }
 
 // The checkout this module lives in — never another worktree's (check:script-roots).
-const OWN_ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
-export function readCoreSource(root = OWN_ROOT, guard = "a guard") {
-  const coreP = path.join(root, "ClimbMatchCore.jsx");
-  if (!fs.existsSync(coreP)) bail(guard, "ClimbMatchCore.jsx is missing");
-  let out = fs.readFileSync(coreP, "utf8");
-  for (const f of MOVED_FROM_CORE) {
+const OWN_ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
+export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx", guard = "a guard") {
+  const parentP = path.join(root, parent);
+  if (!fs.existsSync(parentP)) bail(guard, `${parent} is missing`);
+  if (!MOVED[parent]) bail(guard, `${parent} is not a file components are registered as moved from`);
+  let out = fs.readFileSync(parentP, "utf8");
+  for (const f of MOVED[parent]) {
     const p = path.join(root, f);
-    if (!fs.existsSync(p)) bail(guard, `${f} (a component moved out of ClimbMatchCore.jsx) is missing, so it would go unscanned`);
-    out += "\n" + movedAsCoreText(fs.readFileSync(p, "utf8"), f);
+    if (!fs.existsSync(p)) bail(guard, `${f} (a component moved out of ${parent}) is missing, so it would go unscanned`);
+    // A parent that still USES what it extracted imports it back (core imports DiscBadge for
+    // DiscBadges). Stitched verbatim, that import plus the moved body is a duplicate declaration
+    // and Babel refuses the whole file — so the parent's own import of each moved file is dropped.
+    out = out.replace(new RegExp(`^import [^\\n]* from "[^"\\n]*/${path.basename(f).replace(/\./g, "\\.")}";?\\n`, "m"), "");
+    out += "\n" + movedAsParentText(fs.readFileSync(p, "utf8"), f);
   }
   return out;
+}
+export function readCoreSource(root = OWN_ROOT, guard = "a guard") {
+  return readParentSource(root, "ClimbMatchCore.jsx", guard);
 }

@@ -1,0 +1,107 @@
+{
+ "area_id": "wa_chalangin_peak",
+ "routes": [
+  {
+   "route_id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "Web: Clark/Luahna parties go in July-Sept; a Nov 2024 trip found the Little Giant route snowed over; June parties meet poor snow on the Clark Glacier. Stored Jul-Oct kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2921887",
+     "verdict": "different",
+     "why": "Starts at White River trailhead on the Clark-Luahna-Chalangin traverse, not Little Giant Pass."
+    },
+    {
+     "aid": "2641627",
+     "verdict": "different",
+     "why": "Same White River traverse."
+    },
+    {
+     "aid": "2607939",
+     "verdict": "different",
+     "why": "Same White River traverse."
+    },
+    {
+     "aid": "2601289",
+     "verdict": "different",
+     "why": "Same White River traverse."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "From the Luahna col, staying on the ridge crest means a few class 5 moves and lots of class 4; the terrain just west of the crest is class 2-3 with some snow in late June.",
+     "aids": [
+      "2554181"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "From the col a ledge system with a short downclimb leads across slab to scree and the ridge; around mid-August it is dry.",
+     "aids": [
+      "2607939"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 6,
+     "text": "Return from the summit staying slightly west of the ridge to reach the col easily.",
+     "aids": [
+      "2554181"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_chalangin_peak_southwest_face",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Stored text says late May-Sep, header says May-Jun; web: Nov 2024 attempts on the White River line stopped by avalanche danger, lowland snow lingers late spring. Months uncertain."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2641627",
+     "verdict": "different",
+     "why": "Starts at White River trailhead but climbs via Clark and Luahna and the col ridge, not Thunder Creek/Chalangin Basin SW face."
+    },
+    {
+     "aid": "2607939",
+     "verdict": "different",
+     "why": "Same Clark-Luahna traverse."
+    },
+    {
+     "aid": "2601289",
+     "verdict": "different",
+     "why": "Same."
+    },
+    {
+     "aid": "2921887",
+     "verdict": "different",
+     "why": "Same."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "All harvested tracks are Clark-Luahna-Chalangin traverses from the White River trailhead (consistent with our pin 47.96285,-120.945). None climbs either stored route."
+}

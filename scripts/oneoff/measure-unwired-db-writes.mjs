@@ -71,7 +71,6 @@ const KNOWN = {
   updateTopoLine: "no control — the app has no edit-a-topo-line UI at all (searched for Edit/Delete topo).",
   deleteTopoLine: "no control, same as updateTopoLine.",
   deleteTopoPhoto: "no control, same as updateTopoLine.",
-  addVerification: "no control. verifyMyEmail is the wired one, on the Profile trust card; this is for verification kinds no screen offers yet.",
   fetchCrewMessages: "superseded, not missing. fetchOlderCrewMessages(id, MSG_PAGE, null) serves both the first page and paging — a null cursor means most recent. Called twice.",
   fetchComments: "superseded by the useComments hook, which is called.",
   markMessageAsRead: "superseded by markDmThreadRead / markCrewRead, both called twice.",

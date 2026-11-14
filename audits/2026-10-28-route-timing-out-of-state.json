@@ -1,0 +1,521 @@
+{
+ "date": "2026-10-28",
+ "what": "Out-of-state pass of the route time audit (owner: \"yes audit routes outside WA too\"). The 52 alpine-family rows outside WA that store a time, a distance or gain, or are on a classics list were researched online in 4 batches; the remaining 5,133 out-of-state rows store none of those.",
+ "rule": "Same as audits/2026-10-28-route-timing-catalog.json.",
+ "counts": {
+  "researched": 166,
+  "repaired": 28,
+  "writes": 28
+ },
+ "status": "WRITTEN. The project was restarted by the owner after the outage; every repair below was previewed through planTimes, dry-run, written compare-and-set 1000 ms apart with a rollback file (copied to the main checkout's scripts/), and re-run to reconcile (ALREADY).",
+ "held": [
+  {
+   "route": "ab_mount_edith_cavell_north_face",
+   "why": "Published summit-to-road ~5 hr, but the page is 403 and was read only as a search snippet; held as Mount Washington (Olympics) was."
+  },
+  {
+   "route": "or_mt_hood_south_side_hogsback (beyond approach 0)",
+   "why": "The stored 7 / 4 / 12 is the SLOW end (typical 3.5-4 up, 2-3 down, 6-7 car to car); it is not short, so the rule does not move it."
+  },
+  {
+   "route": "wy_east_ridge_9 (Wolfs Head)",
+   "why": "The two agreeing descent times end at the Cirque of the Towers camp, not the car; the two approach times (5, 7) disagree."
+  },
+  {
+   "route": "wy_direct_south_buttress (Moran)",
+   "why": "The only approach figure is the canoe crossing, snippet only; the two car-to-car times (17.5, 27.2) disagree."
+  },
+  {
+   "route": "nt_lotus_flower_tower_southeast_face",
+   "why": "Fly-in expedition: no car leg exists."
+  },
+  {
+   "route": "rainier_central_mowich_face",
+   "why": "Approach 7.5 (one AAJ account) against 11 (one 2002 report): disagree."
+  },
+  {
+   "route": "ca_east_face_10 (Whitney East Face)",
+   "why": "Two agreeing car-to-summit times (4.9) but no descent: a lone summit leg is not written."
+  },
+  {
+   "route": "co_mount_elbert_northeast_ridge and the other 14ers",
+   "why": "Stored gain but no distance, so the Planner shows a floor (≥); the reports disagree (5 vs 8.5). Their published round-trip distances are a dist_km question, not timing, and dist_km holds two conventions (never filled in bulk)."
+  },
+  {
+   "route": "Alaska, Yukon, Waddington, Fairweather, Saint Elias, Logan, Huntington",
+   "why": "Expeditions measured in days and fly-ins: no leg in hours exists."
+  },
+  {
+   "route": "Golden Horn East Face",
+   "why": "Stored summit leg 11 is really a whole fast day, not a camp leg; needs re-filing as a whole-day row or a camp set, which changes the outing's shape."
+  },
+  {
+   "route": "Prusik Peak Burgner-Stanley",
+   "why": "Stored 6.5 hr summit leg fits neither a day trip (about 9 hr car to summit) nor camp to summit (about 4.5 hr)."
+  },
+  {
+   "route": "Spider Mountain North Ridge",
+   "why": "One report puts camp to summit at 8.1 hr against a stored 3; one report is under the bar."
+  },
+  {
+   "route": "Sefrit SE Ridge",
+   "why": "Looks car-to-summit, but rests on one borrowed snippet."
+  },
+  {
+   "route": "Agnes Mountain, Fortress Mountain",
+   "why": "Camp-based, so the walk-in is right in kind, but one report each says the real approach is longer than the walk model (about 15 and 5.8 hr)."
+  },
+  {
+   "route": "Mountaineer's Route (Whitney), Williamson West Face, Shavano, Marcy",
+   "why": "Their 'published' figures were a snippet of an unreachable page, a personal planning estimate, an AllTrails reviewer, or a hiking blog; not guidebook figures."
+  },
+  {
+   "route": "Sneffels SW Ridge, Wilson Peak NW Ridge, Old Crater Route, Jefferson North Ridge",
+   "why": "Descents from two different trailheads, or figures borrowed from a sibling route."
+  }
+ ],
+ "passes": {
+  "classicsAndStoredRows": "The 52 out-of-state rows that store a time, distance or gain, or are on a classics list: 3 repairs (Bugaboo, Petit Grepon, Mount Hood).",
+  "summitLegWithNoApproach": "A census of every timed alpine-family row (858, from this session's snapshot) found 30 that store a summit leg but no approach and get the Planner's walk-in added IN FRONT of it (whole-day rows are unaffected). Each was researched for where its stored summit leg starts. Where it already starts at the CAR, the walk was counted twice and the fix is approach 0 (5 repairs); where it starts at a CAMP, the walk-in is the right addition and the row was left.",
+  "tradeRoutes": "Empty rows on well-climbed peaks (CO 14ers, state highpoints, volcanoes, Tetons, Whitney): 191 matched by AREA name, narrowed to 84 trade routes (scrambles, snow routes, 3rd/4th class). 6 repairs: 3 full sets (Sherman SW Ridge, Capitol Knife-Edge, South Sister South Side) and 3 lone approaches (Sunlight, Windom, Middle Sister SE Ridge)."
+ },
+ "repairs": [
+  {
+   "id": "bc_bugaboo_spire_east_ridge",
+   "before": null,
+   "after": [
+    3.5,
+    null,
+    null,
+    null
+   ],
+   "why": "Empty row. The Alpine Club of Canada's Conrad Kain Hut page gives the walk from the parking lot to the hut, the camp for this route, as 3-4 hr (4.6 km, ~720 m). Stored as a lone approach, which the Planner treats as a floor (#2859); the climb stays unknown.",
+   "rollback": "scripts/rollback-timing-fixes-1793246053537.json"
+  },
+  {
+   "id": "co_south_face",
+   "before": null,
+   "after": [
+    2.1,
+    null,
+    null,
+    null
+   ],
+   "why": "Empty row (Petit Grepon South Face). Two timed reports from the Glacier Gorge trailhead agree on the walk to the base: 2 hr (2024) and 2 hr 15 (2020), median 2.1. Stored as a lone approach floor (#2859). Car to car in the same reports is 8-8.8 hr, but a lone total is not written.",
+   "rollback": "scripts/rollback-timing-fixes-1793246053537.json"
+  },
+  {
+   "id": "or_mt_hood_south_side_hogsback",
+   "before": [
+    null,
+    7,
+    4,
+    12
+   ],
+   "after": [
+    0,
+    7,
+    4,
+    12
+   ],
+   "why": "The row stored 7 hr to the summit and 4 down but no approach, so the Planner added its own 4.8 hr walk-in IN FRONT of a summit leg that already starts at the Timberline lot (15.8 hr car to car beside a stored 12). Every source gives it as a day trip from Timberline Lodge with no separate approach; approach 0 makes the stored legs one convention. The stored 7 / 4 / 12 is the slow end of the evidence (typical parties 3.5-4 up, 2-3 down), and is kept: only an approach was added.",
+   "rollback": "scripts/rollback-timing-fixes-1793246053537.json"
+  },
+  {
+   "id": "wa_ruby_mountain_northwest_ridge",
+   "before": [
+    null,
+    5.25,
+    3.25,
+    8.5
+   ],
+   "after": [
+    0,
+    5.25,
+    3.25,
+    8.5
+   ],
+   "why": "Day trip from Highway 20 with no camp (3 timed reports). The stored 5.25 hr up and 3.25 hr down match a car-to-summit report (5.13 / 3.25), so the summit leg already starts at the car; with no approach stored the Planner added a 5.3 hr walk-in in front of it. Approach 0 makes the stored legs one convention; the stored legs are kept.",
+   "rollback": "scripts/rollback-timing-fixes-1793246604456.json"
+  },
+  {
+   "id": "wa_mount_persis_west_ridge",
+   "before": [
+    null,
+    2.5,
+    null,
+    4.5
+   ],
+   "after": [
+    0,
+    2.5,
+    null,
+    4.5
+   ],
+   "why": "Day trip from the end of the forest road (2 agreeing day-trip reports, about 4.9 hr car to car against a stored 4.5). The stored 2.5 hr summit leg is car-to-summit (one report 2.8), so the Planner's 2.6 hr walk-in in front counted the walk twice. Approach 0; the stored legs are kept.",
+   "rollback": "scripts/rollback-timing-fixes-1793246604456.json"
+  },
+  {
+   "id": "wa_three_queens_middle_peak",
+   "before": [
+    null,
+    4.9,
+    3.6,
+    8.5
+   ],
+   "after": [
+    0,
+    4.9,
+    3.6,
+    8.5
+   ],
+   "why": "Day trip from Mineral Creek. The stored 4.9 hr up and 3.6 hr down are exactly one car-to-summit report, so the summit leg already starts at the car; the Planner added a 4.1 hr walk-in in front of it. Approach 0 states the convention the stored legs came from; the stored legs are kept.",
+   "rollback": "scripts/rollback-timing-fixes-1793246604456.json"
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_north_route",
+   "before": [
+    null,
+    7.1,
+    6,
+    13.1
+   ],
+   "after": [
+    0,
+    7.1,
+    6,
+    13.1
+   ],
+   "why": "Day trip from the Hozomeen Ranger Station is the usual style. The stored 7.1 hr up and 6 hr down are exactly one car-to-summit report, so the summit leg already starts at the car; the Planner added a 7.6 hr walk-in in front of it. Approach 0; the stored legs are kept.",
+   "rollback": "scripts/rollback-timing-fixes-1793246604456.json"
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "before": [
+    null,
+    10,
+    16,
+    26
+   ],
+   "after": [
+    0,
+    10,
+    16,
+    26
+   ],
+   "why": "The stored 10 hr summit leg is car-to-summit: two timed parties reached the 7,100 ft bivy in 8 and 9.25 hr and the summit 1-2.5 hr later (9-11.75 hr from the car), so the Planner's 4.9 hr walk-in in front of it counted the approach twice. Approach 0; the stored legs are kept (the stored 16 hr descent is long against 7.5-11 reported, not short, so the rule leaves it).",
+   "rollback": "scripts/rollback-timing-fixes-1793246604456.json"
+  },
+  {
+   "id": "co_mount_sherman_southwest_ridge",
+   "before": null,
+   "after": [
+    0,
+    2.25,
+    1.67,
+    3.92
+   ],
+   "why": "Empty row. Day trip from the Fourmile Creek gate (12,000 ft; 5.25 mi round trip, 2,100 ft). Five timed parties put car to summit at a median 2.25 hr and three put summit to car at 1.67 hr (3.5-4 hr moving car to car). Full set written; total is the sum of the legs.",
+   "rollback": "scripts/rollback-timing-fixes-1793247563806.json"
+  },
+  {
+   "id": "co_northeast_ridge_knife_edge",
+   "before": null,
+   "after": [
+    2.75,
+    3.5,
+    5.75,
+    12
+   ],
+   "why": "Empty row (Capitol Peak, Knife-Edge). Published Capitol Creek trailhead to Capitol Lake 2.5-3 hr and car to car 10-14 hr; three timed parties agree on lake to summit (3.5, 3.5, 4 hr) and summit back to the car (5.5, 5.75, 6 hr). Full set 2.75 / 3.5 / 5.75 / 12.",
+   "rollback": "scripts/rollback-timing-fixes-1793247563806.json"
+  },
+  {
+   "id": "co_sunlight_peak_south_face",
+   "before": null,
+   "after": [
+    3.25,
+    null,
+    null,
+    null
+   ],
+   "why": "Empty row. Parties camp in Chicago Basin; two timed parties put the Needleton trailhead to camp at 3 and 3.5 hr. Stored as a lone approach floor (#2859); the climb stays unknown (nobody timed Sunlight alone summit back to camp).",
+   "rollback": "scripts/rollback-timing-fixes-1793247866812.json"
+  },
+  {
+   "id": "co_windom_peak_west_ridge",
+   "before": null,
+   "after": [
+    3.25,
+    null,
+    null,
+    null
+   ],
+   "why": "Empty row. The same Needleton trailhead to Chicago Basin camp approach as Sunlight Peak (the same two ends): two timed parties at 3 and 3.5 hr. Stored as a lone approach floor (#2859).",
+   "rollback": "scripts/rollback-timing-fixes-1793247866812.json"
+  },
+  {
+   "id": "or_middle_sister_southeast_ridge",
+   "before": null,
+   "after": [
+    3.5,
+    null,
+    null,
+    null
+   ],
+   "why": "Empty row. Camp-based from the Pole Creek trailhead; two timed parties both put the trailhead to Camp Lake at 3.5 hr. Stored as a lone approach floor (#2859).",
+   "rollback": "scripts/rollback-timing-fixes-1793247866812.json"
+  },
+  {
+   "id": "or_south_sister_south_side_route",
+   "before": null,
+   "after": [
+    0,
+    5.3,
+    3.9,
+    9.2
+   ],
+   "why": "Empty row. Day trip from the Devils Lake / South Sister trailhead (about 12.5 mi, 5,350 ft). Three timed parties to the summit (3.5, 5.3, 9 hr; median 5.3) and two agreeing descents (3.8, 4 hr). Full set 0 / 5.3 / 3.9 / 9.2, inside the typical 8-10 hr car to car.",
+   "rollback": "scripts/rollback-timing-fixes-1793247866812.json"
+  },
+  {
+   "id": "ca_casaval_ridge",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    12.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree (13 and 12 hr car to car from Bunny Flat); a fast party at 9 hr is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "ca_mt_langley_standard_route_south_slopes",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    11
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed parties car to car from Cottonwood Lakes (11, 11.5, 10 hr; median 11); a fast party is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "ca_mt_shasta_west_face_gully",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    18.25
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed single-push parties agree within 15% (19.5 and 17 hr car to car from Bunny Flat).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "ca_mt_whitney_mount_whitney_trail_the",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    13
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Four timed day-hike parties from Whitney Portal (14.1, 12, 14, 11 hr; median 13).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_democrat_east_slope",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    4
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree (4 and 4 hr car to car from Kite Lake).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_oxford_via_mount_belford",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    11.2
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree within 15% (11.9 and 10.5 hr car to car from Missouri Gulch, over Belford).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_yale_southwest_slopes",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    7.3
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed parties car to car from Denny Creek (8, 7.3, 6.9 hr; median 7.3).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_sunshine_peak_via_redcloud_peak",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    10
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed parties car to car from Silver Creek over Redcloud (10, 7.9, 11 hr; median 10); a fast party is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "or_west_ridge_2",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    7.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Club trip figure of 6-9 hr car to car (midpoint 7.5); four timed parties (8.5, 7.5, 6 fast, 9.5) sit inside that range.",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "wy_east_face",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    8.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Two timed parties agree (8 and 9 hr car to car from Lupine Meadows).",
+   "rollback": "scripts/rollback-timing-fixes-1793251167030.json"
+  },
+  {
+   "id": "co_mount_harvard_south_slopes",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    6.5
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Three timed day trips from North Cottonwood agree (6.5, 6.4, 6.5 hr car to car, about 14 mi and 4,600 ft); a fast party is left out. (second research pass)",
+   "rollback": "scripts/rollback-timing-fixes-1793252891044.json"
+  },
+  {
+   "id": "co_san_luis_peak_northeast_ridge",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    7.4
+   ],
+   "why": "Empty row; whole-day car-to-car total only (owner approved storing totals alone, 2026-10-28). Four single-peak day trips from Stewart Creek (6.25, 6.75, 8, 8 hr car to car; median 7.4). (second research pass)",
+   "rollback": "scripts/rollback-timing-fixes-1793252891044.json"
+  },
+  {
+   "id": "co_crestone_needle_south_face",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    8.4
+   ],
+   "why": "Empty row; whole-day car-to-car total only, from the upper 4WD South Colony trailhead (owner, 2026-10-29: go; about 11.5 mi and 4,700 ft). Two timed day trips from that lot agree within 15% (7.75 and 9 hr); a party from the 2WD lot by bike is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793253921776.json"
+  },
+  {
+   "id": "co_crestone_peak_south_face",
+   "before": null,
+   "after": [
+    null,
+    null,
+    null,
+    15.25
+   ],
+   "why": "Empty row; whole-day car-to-car total only, from the upper 4WD South Colony trailhead (owner, 2026-10-29: go). Two timed day trips from that lot agree (15 and 15.5 hr, via the Red Gully); a fast party is left out.",
+   "rollback": "scripts/rollback-timing-fixes-1793253921776.json"
+  }
+ ],
+ "ownerDecision": {
+  "question": "Store a car-to-car total ALONE on an empty row (the whole-day shape the Planner already reads for many WA rows)? The rule used so far writes an empty row only as a full set or a lone approach/descent, so these were NOT written. Several 'published' figures are guide-site summaries read as search snippets.",
+  "answer": "Owner, 2026-10-28: \"do what you recommend based on research\". Recommended and done: store a car-to-car total alone (totalHrs only, which the Planner reads as one whole day) where it clears the usual bar (a readable guidebook or club figure, 3 timed reports, or 2 agreeing within 15%, fast parties left out). 10 written, 10 held.",
+  "written": [
+   "ca_casaval_ridge",
+   "ca_mt_langley_standard_route_south_slopes",
+   "ca_mt_shasta_west_face_gully",
+   "ca_mt_whitney_mount_whitney_trail_the",
+   "co_mount_democrat_east_slope",
+   "co_mount_oxford_via_mount_belford",
+   "co_mount_yale_southwest_slopes",
+   "co_sunshine_peak_via_redcloud_peak",
+   "or_west_ridge_2",
+   "wy_east_face",
+   "co_mount_harvard_south_slopes",
+   "co_san_luis_peak_northeast_ridge",
+   "co_crestone_needle_south_face",
+   "co_crestone_peak_south_face"
+  ],
+  "held": [
+   {
+    "id": "ca_castle_peak_summit_via_castle_pass",
+    "route": "Via Castle Pass",
+    "carToCarHrs": 3.25,
+    "basis": "published",
+    "why": "a snippet range only",
+    "secondPass": "Second pass: a fast party and a snippet only."
+   },
+   {
+    "id": "co_challenger_point_north_slope",
+    "route": "North Slope",
+    "carToCarHrs": 12,
+    "basis": "published",
+    "why": "one report plus a guide-site range read as a snippet",
+    "secondPass": "Second pass: still one car-to-car figure."
+   },
+   {
+    "id": "co_grays_peak_north_slopes",
+    "route": "North Slopes",
+    "carToCarHrs": 5.5,
+    "basis": "published",
+    "why": "a hiking-blog range and one report",
+    "secondPass": "Second pass: 5 and 7.5 hr, 33% apart."
+   },
+   {
+    "id": "co_mount_antero_west_slopes",
+    "route": "West Slopes",
+    "carToCarHrs": 10.5,
+    "basis": "published",
+    "why": "a hiking-blog range and one fast report",
+    "secondPass": "Second pass: 9 and 7.5 hr (snippet), 16% apart; a third was a fast party."
+   },
+   {
+    "id": "co_mount_lincoln_west_ridge",
+    "route": "West Ridge",
+    "carToCarHrs": 4.75,
+    "basis": "published",
+    "why": "an AllTrails figure and one report",
+    "secondPass": "Second pass: single-peak West Ridge reports are rare; nearly all are Decalibron days."
+   },
+   {
+    "id": "co_wetterhorn_peak_southeast_ridge",
+    "route": "Southeast Ridge",
+    "carToCarHrs": 8,
+    "basis": "published",
+    "why": "a snippet range and one report",
+    "secondPass": "Second pass: one more report with legs but no total."
+   }
+  ],
+  "crestones": "Owner, 2026-10-29: \"go\" on writing the Crestones from the upper 4WD South Colony lot, where 14ers.com measures its standard figures."
+ }
+}

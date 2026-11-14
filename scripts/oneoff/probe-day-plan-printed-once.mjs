@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // THE PLANNER MUST PRINT ITS DAY PLAN ONCE — and must still print it for the routes whose only
 // copy is the PUBLISHED TIMES panel.
 //
@@ -35,12 +37,12 @@ fs.writeFileSync(entry, [
   `export { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};`,
 ].join("\n"));
 try {
-  execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
 } catch { dead("esbuild could not bundle RouteDetail.jsx"); }
 if (typeof globalThis.WebSocket === "undefined") globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
-const { RouteDetail, dbRouteToCamel } = await import(out);
+const { RouteDetail, dbRouteToCamel } = await import(fileHref(out));
 if (typeof dbRouteToCamel !== "function") dead("lib/db.js no longer exports dbRouteToCamel — ANCHOR LOST");
 
 /* TWO PHASES, AND THE FIRST ATTEMPT WAS ONE. `selectAll("routes","*",…)` over a 205k-row table

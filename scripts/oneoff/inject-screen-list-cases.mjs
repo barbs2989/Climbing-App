@@ -34,7 +34,7 @@ const CASES = [
   {
     name: "1 REAL: a guard drops the Ranks tab (the state five guards shipped in)",
     file: "scripts/check-horizontal-overflow.mjs",
-    edit: (s) => s.replace('["today", "routes", "discover", "crew", "logbook", "ranks", "me"]', '["today", "routes", "discover", "crew", "logbook", "me"]'),
+    edit: (s) => s.replace('["today", "routes", "discover", "crew", "logbook", "ranks", "me", "groups"]', '["today", "routes", "discover", "crew", "logbook", "me", "groups"]'),
     want: (r) => r.code === 1 && /check-horizontal-overflow[\s\S]*never walks ranks/.test(r.out),
   },
   {
@@ -58,13 +58,13 @@ const CASES = [
   {
     name: "5 SILENT: a complete list is correct work and must not be flagged",
     file: "scripts/check-outage.mjs",
-    edit: (s) => s.replace('["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]', '["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks",  "Profile"]'),
+    edit: (s) => s.replace('["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"]', '["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks",  "Profile", "Groups"]'),
     want: (r) => r.code === 0,
   },
   {
     name: "6 a declared subset that has become COMPLETE is stale bookkeeping",
     file: "scripts/check-anniversary.mjs",
-    edit: (s) => s.replace('tabs: ["me", "today", "crew", "logbook"]', 'tabs: ["me", "today", "crew", "logbook", "routes", "discover", "ranks"]'),
+    edit: (s) => s.replace('tabs: ["me", "today", "crew", "logbook"]', 'tabs: ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"]'),
     want: (r) => r.code === 1 && /STALE PARTIAL_ON_PURPOSE[\s\S]*now COMPLETE/.test(r.out),
   },
   {

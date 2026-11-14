@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // ROLLBACK SNAPSHOT for 0259 (the generic-area fold), taken straight before it is applied: the full row of
 // every area the plan touches, the area of every climb it moves, and the full row of every duplicate climb
 // it merges away. Restoring = re-insert the deleted areas (parents first), set name/parent_id/area_type
@@ -6,7 +7,7 @@
 import fs from "fs";
 import path from "path";
 import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const plan = JSON.parse(fs.readFileSync(path.join(ROOT, "audits/generic-area-names-2026-10-07/plan.json"), "utf8"));
 const key = requireServiceKey();
 const created = new Set(plan.ops.filter(o => o.op === "create").map(o => o.id));
@@ -23,4 +24,4 @@ const drops = plan.ops.filter(o => o.op === "merge").map(o => o.drop);
 if (drops.length) merged.push(...await selectAll("routes", "*", `id=in.(${enc(drops)})`, { key, pageSize: 1000 }));
 const out = path.join(ROOT, `scripts/rollback-generic-area-fold-${Date.now()}.json`);
 fs.writeFileSync(out, JSON.stringify({ migration: "0259_fold_generic_discipline_areas", taken: new Date().toISOString(), areas, routes_area_before: moved, merged_away_routes: merged }, null, 1));
-console.log(`snapshot: ${areas.length} areas, ${moved.length} climb positions, ${merged.length} merged-away climbs -> ${path.relative(ROOT, out)}`);
+console.log(`snapshot: ${areas.length} areas, ${moved.length} climb positions, ${merged.length} merged-away climbs -> ${path.relative(ROOT, out).replace(/\\/g, "/")}`);

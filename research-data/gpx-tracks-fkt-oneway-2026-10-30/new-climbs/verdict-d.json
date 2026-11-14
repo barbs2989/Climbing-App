@@ -1,0 +1,316 @@
+[
+ {
+  "slug": "labyrinth-mountain-wa",
+  "verdict": "walkup",
+  "reason": "The standard route is a steep trail to Minotaur Lake then a Class 2 boot-path scramble to the south-ridge saddle and summit; nothing harder than Class 2, so not added (the catalog's Labyrinth region is a different, rock-climbing area).",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Minotaur Lake Trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/labyrinth-mountain-wa",
+   "https://mountaineers.org/activities/routes-places/labyrinth-mountain"
+  ]
+ },
+ {
+  "slug": "lake-benchmark-mountain-ak",
+  "verdict": "walkup",
+  "reason": "Tundra ridge walk plus a steep 500-600 ft face the route notes call non-technical; no source supports Class 3, and the page only describes it as a scramble up a steep slope.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Dalton Highway mile 271.4 pipeline access road",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/lake-benchmark-mountain-ak",
+   "https://adventuresoflupe.com/?p=46440"
+  ]
+ },
+ {
+  "slug": "mount-shinn-ca",
+  "verdict": "walkup",
+  "reason": "Easiest route is Class 2 up the west slope, reached by a long 25-mile trail and off-trail round trip; length, not difficulty, is the challenge.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Maxson Trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mount-shinn-ca",
+   "https://en.wikipedia.org/wiki/Mount_Shinn_(California)"
+  ]
+ },
+ {
+  "slug": "mt-cartier-bc-canada",
+  "verdict": "walkup",
+  "reason": "Long steep trail to an old fire lookout and a final easy scramble of about 200 m that older cable and rope merely assist; described as a hike, not Class 3.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Mt Cartier trailhead near Upper Arrow Lake",
+  "trailheadConfirmed": false,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-cartier-bc-canada",
+   "https://en.wikipedia.org/wiki/Mount_Cartier"
+  ]
+ },
+ {
+  "slug": "mt-landale-bc-canada",
+  "verdict": "add",
+  "reason": "Unmarked route above Lomas Lake climbs a gully to the Landale-El Capitan col and a ridge to the top, with Grade 3 scrambling including very steep ground per a club trip listing, so it qualifies as a scramble.",
+  "aliases": [
+   "Mt Landale"
+  ],
+  "area": {
+   "id": "bc_mount_landale",
+   "name": "Mount Landale",
+   "parent_id": "bc_vancouver_island",
+   "area_type": "peak",
+   "lat": 48.944402,
+   "lng": -124.216458,
+   "elevation_ft": 5036,
+   "region": "British Columbia",
+   "blurb": "Mount Landale is a high summit on southern Vancouver Island above Cowichan Lake near Youbou, reached from a gated logging road and a lake basin. Its upper slopes are untrailed, with steep scrambling to the top."
+  },
+  "route": {
+   "id": "bc_mount_landale_lomas_lake_route",
+   "area_id": "bc_mount_landale",
+   "name": "Lomas Lake Route",
+   "discipline": "scrambling",
+   "grade": "3rd",
+   "grade_system": "class",
+   "rock_grade": "Grade 3 scrambling with some very steep ground",
+   "season": "July-October",
+   "best_season": "Summer into early autumn, when the logging road is dry and the upper gully and ridge are clear of snow.",
+   "overview": "The standard way up Mount Landale starts at a gate on a logging road above Cowichan Lake, follows a moderate trail to Lomas Lake, then leaves marked trail for a steep, largely unmarked climb to the col shared with El Capitan. A short ridge scramble finishes at the summit. Good route-finding and comfort on steep ground are needed.",
+   "beta": "From the Cottonwood Main gate, follow the logging road about 6 km to the Lomas Lake trail and climb it by switchbacks to the lake. Beyond the lake there is no maintained path: head up a gully past an old mine working to a notch in the El Capitan-Landale col, then cross a small bench to gain the ridge and follow it to the top. A final short scramble leads to the summit cairn. The steepest scrambling is in the gully and on the upper ridge; look for the easiest line rather than forcing steep ground.",
+   "approach": "Reach the Cottonwood Main gate on the Youbou-North Shore Road near Lake Cowichan. Walk the gated logging road about 6 km to the Lomas Lake trailhead; with a gate key and a high-clearance AWD or 4WD vehicle, about 8 km can be driven, saving a couple of hours of walking.",
+   "descent_text": "Return the way you came: down the ridge, through the col notch and gully, then the Lomas Lake trail and logging road to the gate.",
+   "high_point_ft": 5036,
+   "outing_shape": "outback",
+   "gear": [
+    "Boots with good tread",
+    "Helmet",
+    "Scrambling gloves",
+    "Trekking poles"
+   ],
+   "what_to_bring": [
+    "Ten essentials",
+    "Two or more litres of water",
+    "Headlamp",
+    "Navigation for the unmarked upper route",
+    "Layers"
+   ],
+   "hazards": [
+    "Grade 3 scrambling on steep ground",
+    "Unmarked route needing navigation",
+    "Bushwhacking",
+    "Exposed, windy upper ridge"
+   ],
+   "obj_haz": [
+    "Weather change on the exposed ridge",
+    "Rough logging road"
+   ],
+   "features": [
+    "Scenic",
+    "Remote"
+   ],
+   "road": {
+    "name": "Cottonwood Main",
+    "status": "Gated logging road; high-clearance AWD or 4WD to drive past the gate with a key",
+    "driveNote": "Leaves the Youbou-North Shore Road at a gate; about 6 km of road to the Lomas Lake trailhead."
+   },
+   "timing": {
+    "recommendedStart": "Early morning"
+   },
+   "grade_num": 3,
+   "pitches": 0,
+   "dist_km": 28,
+   "approach_logistics": {
+    "trailhead": "Cottonwood Main gate"
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": "Southern Vancouver Island, Cowichan Lake / Youbou area; no region in the tree fits better than the Vancouver Island group (bc_vancouver_island, assuming that heading is itself an area); a Lake Cowichan area may need creating.",
+  "trailhead": "Cottonwood Main gate",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/mt-landale-bc-canada",
+   "https://accvi.ca/?p=10090",
+   "https://discourse.accvi.ca/t/mt-landale-1535m-c2/1612"
+  ]
+ },
+ {
+  "slug": "purple-rainbow-wa",
+  "verdict": "skip",
+  "reason": "A roughly 60-mile, 15,000 ft trail loop through the Stehekin and Bridge Creek country, not a summit climb.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Bridge Creek Trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/purple-rainbow-wa"
+  ]
+ },
+ {
+  "slug": "ruby-dome-nv",
+  "verdict": "walkup",
+  "reason": "Standard route from Griswold Lake is Class 2 (reference pages describe it as a Class 2 scramble), with snow the only complication; not added.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Griswold Trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/ruby-dome-nv",
+   "https://en.wikipedia.org/wiki/Ruby_Dome"
+  ]
+ },
+ {
+  "slug": "schoolyard-lunch-lady-wy",
+  "verdict": "skip",
+  "reason": "A 5-mile singletrack trail-running loop in Laramie's Pilot Hill open space with about 184 ft of gain, no summit; the catalog's Schoolyard crag is unrelated.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": null,
+  "trailheadConfirmed": false,
+  "sources": [
+   "https://fastestknowntime.com/route/schoolyard-lunch-lady-wy"
+  ]
+ },
+ {
+  "slug": "storelk-mountain-bc-canada",
+  "verdict": "add",
+  "reason": "The only established line is a bushwhack to a col then a loose, exposed east-face and ridge scramble rated Class 4 by a trip report, on a peak that straddles the Alberta-BC border.",
+  "aliases": [],
+  "area": {
+   "id": "ab_storelk_mountain",
+   "name": "Storelk Mountain",
+   "parent_id": "ab_kananaskis",
+   "area_type": "peak",
+   "lat": 50.5383,
+   "lng": -114.9833,
+   "elevation_ft": 9419,
+   "prominence_ft": 594,
+   "region": "Alberta",
+   "blurb": "Storelk Mountain is a summit on the Continental Divide in the Elk Range, on the Alberta-British Columbia border near Highwood Pass. It is a difficult scramble with an untrailed approach in grizzly country."
+  },
+  "route": {
+   "id": "ab_storelk_mountain_east_face",
+   "area_id": "ab_storelk_mountain",
+   "name": "East Face and Ridge",
+   "discipline": "scrambling",
+   "grade": "4th",
+   "grade_system": "class",
+   "rock_grade": "Class 4 on a steep, loose east face and an exposed ridge nose, with scree-covered slab",
+   "season": "July-September",
+   "best_season": "Summer through early autumn, once the face is free of snow; larch season in late September is popular.",
+   "overview": "Storelk is a serious scramble rather than a walk. The approach has no trail and is a bushwhack through dense berry brush, then the route gains a col and climbs a loose east face and a steep ridge nose to the north-south summit ridge. The difficulty rating also reflects the approach, route-finding and bear country.",
+   "beta": "Start in forest near Highwood Pass. A flagged ribbon at the start may lead to a false trail, so navigate carefully, cross the stream to its south side and climb steep slopes through dense berry bushes. A natural drainage leads up to the col. From the col, cross a meadow to the south and climb the steep, loose east face, detouring along the base of a short cliff band. Higher, a steep, exposed ridge nose reaches the main north-south ridge, which is followed over scree-covered slab, with several no-slip zones, to the summit. Parties using other lines, including the east ridge, have found the crest bushy and the ground steep and loose.",
+   "approach": "Highwood Pass on Highway 40 in Kananaskis. The route starts in forest near the pass and quickly becomes a route-finding bushwhack; there is no maintained trail to the peak.",
+   "descent_text": "Stay on the summit ridge rather than traversing below it across loose rubble and slab, then reverse the east face, taking care at the exposed step past the cliff band. A blazed trail marks the final stretch back to the road.",
+   "high_point_ft": 9419,
+   "gain_ft": 3300,
+   "outing_shape": "outback",
+   "gear": [
+    "Helmet",
+    "Sturdy boots",
+    "Bear spray"
+   ],
+   "what_to_bring": [
+    "Navigation (map, GPS)",
+    "Water",
+    "Layers",
+    "Bear spray"
+   ],
+   "hazards": [
+    "Class 4 exposed scrambling on loose rock",
+    "Rockfall from the loose east face",
+    "No-slip slab",
+    "Grizzly bears in the approach brush",
+    "Route-finding"
+   ],
+   "obj_haz": [
+    "Rockfall onto parties below",
+    "Bears in dense berry bushes"
+   ],
+   "features": [
+    "Remote"
+   ],
+   "timing": {
+    "recommendedStart": "Early morning"
+   },
+   "grade_num": 4,
+   "pitches": 0,
+   "dist_km": 9,
+   "approach_logistics": {
+    "trailhead": "Highwood Pass"
+   },
+   "auto_generated": true,
+   "classic": false
+  },
+  "parentNote": "Elk Range on the Continental Divide, Highwood Pass area of Kananaskis (the route starts on the Alberta side); the summit is on the AB/BC border, so file under Kananaskis and keep the bc_ id the item calls for, or switch both to ab_.",
+  "trailhead": "Highwood Pass",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/storelk-mountain-bc-canada",
+   "https://explor8ion.com/trips/storelk-mountain/",
+   "https://en.wikipedia.org/wiki/Storelk_Mountain",
+   "https://bobspirko.ca/OtherScrambles/HighwoodJunction/StorelkEastRidge/StorelkEastRidge.html"
+  ]
+ },
+ {
+  "slug": "three-kings-id",
+  "verdict": "skip",
+  "reason": "A 19-mile off-trail link-up of Glassford, Ryan and Kent Peaks in the Boulder Mountains, not a single-peak route.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "North Fork Wood River Trailhead",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/three-kings-id"
+  ]
+ },
+ {
+  "slug": "three-sisters-ak",
+  "verdict": "skip",
+  "reason": "A 4.8-mile ridge loop linking three Kodiak peaks, a multi-peak link-up.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Monashka Bay Road shooting pullout",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/three-sisters-ak"
+  ]
+ },
+ {
+  "slug": "west-spanish-peak-co",
+  "verdict": "walkup",
+  "reason": "Standard route from Cordova Pass is a trail then cairned scree, rated Class 2; not added.",
+  "aliases": [],
+  "area": null,
+  "route": null,
+  "parentNote": null,
+  "trailhead": "Cordova Pass",
+  "trailheadConfirmed": true,
+  "sources": [
+   "https://fastestknowntime.com/route/west-spanish-peak-co",
+   "https://en.wikipedia.org/wiki/West_Spanish_Peak"
+  ]
+ }
+]

@@ -1,0 +1,59 @@
+{
+"wa_bonanza_peak_cascadian_route": {
+ "area": "wa_bonanza_peak",
+ "pitch_detail": [
+  {"pitch":"1","grade":"5.4","lengthM":67,"notes":"Easy climbing up pale slabs to a comfortable stance beneath a darker band of rock. Treat it as a warm-up and a chance to sort out the rope."},
+  {"pitch":"2","grade":"5.8","lengthM":58,"notes":"Follow an open book to its top, then move left across low-fifth-class ground to a talus-strewn bowl where the belay sits."},
+  {"pitch":"3","grade":"5.6","lengthM":79,"notes":"Take the rib on the right side of the bowl, with some scrambling mixed in, to a wide talus ledge. A long lead, so expect rope drag."},
+  {"pitch":"4","grade":"5.9 R","lengthM":43,"notes":"Crosses a very loose band of rock before reaching a gully with sounder stone. Little reliable protection and a lot of loose material; keep the second clear of the fall line. A weathered old cam was found around here, hinting at an earlier attempt."},
+  {"pitch":"5","grade":"low 5th","lengthM":70,"notes":"Easy fifth-class going up the gully, ending at a secure belay."},
+  {"pitch":"6","grade":"low 5th","lengthM":46,"notes":"More of the same gully, easy fifth-class ground."},
+  {"pitch":"7","grade":"5.7","lengthM":30,"notes":"Angle left to a left-facing corner and climb it to a good ledge on the prow."},
+  {"pitch":"8","grade":"5.10a","lengthM":34,"notes":"Climb past one roof, up a ramp, and on to a second roof. A good ledge above serves as the belay."},
+  {"pitch":"9","grade":"5.10","lengthM":61,"notes":"A thin right-facing corner, then a short steep section, a ramp and a further corner lead to a big ledge."},
+  {"pitch":"10","grade":"5.7","lengthM":55,"notes":"Low-angle but loose face climbing ending at a poor belay."},
+  {"pitch":"11","grade":"5.10 R","lengthM":46,"notes":"Face climbing to a reasonable ledge; the anchor there takes some care to build. Run-out in places."},
+  {"pitch":"12","grade":"5.10 R","lengthM":55,"notes":"Keeps going up the face, finishing in the notch where the ridge shoulders out. Also run-out in places."},
+  {"pitch":"13","grade":"5.10+","lengthM":18,"crux":true,"notes":"A short overhanging splitter crack, the hardest climbing on the route by grade, finishing on a loose ramp."},
+  {"pitch":"14","grade":"5.9","lengthM":52,"notes":"A varnished corner that relaxes into loose, mid-fifth-class terrain."},
+  {"pitch":"15","grade":"5.8","lengthM":34,"notes":"Traverse right to a ramp and follow it to the south ridge."},
+  {"pitch":"16","grade":"4th class","lengthM":76,"notes":"Scramble to the southwest summit."}
+ ],
+ "review": {
+  "confidence": "medium",
+  "sources": ["https://publications.americanalpineclub.org/articles/13201216753"],
+  "changed": "Wrote all 16 pitches from the first-ascent account (grades and lengths converted from feet). Single source; no bolt or anchor counts stated so none given. Crux assigned to the 5.10+ splitter pitch by grade. Pitch 4 old-cam note comes from the same account.",
+  "pitch_count_found": 16,
+  "other_findings": "Stored pitch count (16) and length agree. Source main text says five pitches of 5.10; pitch table lists 5.10 on 8, 9, 11, 12, 13."
+ }
+},
+"wa_chimney_rock_east_face_direct": {
+ "area": "wa_chimney_rock",
+ "pitch_detail": [
+  {"pitch":"1","grade":"5.4","notes":"Crack in a right-facing dihedral, mostly 5.4 with a couple of 5.6 moves. Protection is good, and the lead can use the whole rope. Late in the season the moat may only be crossable right at the base, over a small snow bridge."},
+  {"pitch":"2","grade":"4th class","notes":"Mostly fourth class, ending on a large grassy slope."},
+  {"pitch":"3","grade":"5.4","notes":"Reached after class 2-3 scrambling up a long left-trending ramp. Blocks and face climbing near the ridge crest end on a ledge."},
+  {"pitch":"4","grade":"low 5th","notes":"A delicate traverse to the right with sparse protection, then a V-shaped grass and dirt constriction. One party reported being slightly left of the usual line here. Pitches of 40-50 m."},
+  {"pitch":"5","grade":"low 5th","notes":"Easier ground than the one below, continuing toward the key ledge."},
+  {"pitch":"6","grade":"low 5th","notes":"Reaches the key ledge, a common bivy spot."},
+  {"pitch":"7","notes":"A chimney with a small overhang and some loose blocks."},
+  {"pitch":"8","grade":"4th class","notes":"A short slab with nothing to protect it."},
+  {"pitch":"9","grade":"low 5th","notes":"A short slab ending on a ledge. This and the previous pitch could be linked into one."},
+  {"pitch":"10","notes":"A deep, wide chimney to the summit."}
+ ],
+ "review": {
+  "confidence": "low",
+  "sources": ["https://lemkeclimbs.com/chimney-rock-2"],
+  "changed": "Wrote the pitch sequence as one party climbed it (10 pitches by their count). Grades only where stated; no lengths, bolts or anchors given. A second source (Mountaineers) mentioned a 5.5 chimney move near the summit and a .2 to #3 rack but could not be fetched in full, so it is not used for pitch notes.",
+  "pitch_count_found": 10,
+  "other_findings": "Stored pitch count is 9; the one account counts 10 and says it could be 9 if pitches 8 and 9 are linked. Descent in that account was about 13 single-rope rappels, not recorded in the stored row (rappels not in this wave)."
+ }
+},
+"skip_reasons": {
+ "wa_argonaut_peak_east_ridge": "Only route summaries found (8 pitches, 5.6, two single-rope rappels into the notch); no pitch-by-pitch account located.",
+ "wa_bulls_tooth_south_ridge": "Only one trip account, which describes nearly the whole roped section in a single 40 m pitch; stored count of 2 not supportable and no per-pitch detail.",
+ "wa_dome_peak_indian_summer": "Only a one-line summary (III 5.10, south face) found; no pitch descriptions beyond the stored beta.",
+ "wa_dragontail_peak_boving_route": "No source found describing this route at all.",
+ "wa_dragontail_peak_colchuck_col_buttress": "No source found describing this route at all."
+}
+}

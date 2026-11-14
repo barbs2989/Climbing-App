@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Does the TOPO section's outage copy reach a screen, and does it stop inviting the first topo?
 //
 // CLAUDE.md records `toposUnavailable` as the one outage flag nothing has proven, and says why:
@@ -63,6 +65,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 // scripts/, not scripts/oneoff/ — one level up since the promotion.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -83,7 +86,7 @@ const dead = (what) => {
 
 try {
   // USE_DB must be TRUE or `toposUnavailable` is dead by construction and every assertion about it
-  // is vacuous — `useAreaTopos` is `enabled: !!supabase && !!areaId`. A .invalid host is safe:
+  // is vacuous — `useRouteTopos` is `enabled: !!supabase && !!routeId`. A .invalid host is safe:
   // createClient issues no request, and SSR never fetches.
   const env = JSON.stringify({
     VITE_USE_DB: "true",
@@ -99,7 +102,7 @@ try {
   ].join("\n"));
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle in
   // the OS temp dir throws ERR_MODULE_NOT_FOUND.
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     `--define:import.meta.env=${env}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -116,7 +119,7 @@ if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 }
 
-const mod = await import(out + "?t=" + Date.now());
+const mod = await import(fileHref(out + "?t=" + Date.now()));
 const { TopoSection, topoEmptyCopy, PitchComments, USE_DB } = mod;
 if (typeof PitchComments !== "function") dead("RouteDetail.jsx does not export PitchComments — ANCHOR LOST");
 if (typeof TopoSection !== "function") dead("RouteDetail.jsx does not export TopoSection — ANCHOR LOST");
@@ -163,7 +166,7 @@ const route = { id: "probe_route", mountainId: AREA, name: "Probe Route" };
 let markup;
 try {
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  qc.setQueryData(["area-topos", AREA], []);
+  qc.setQueryData(["route-topos", route.id], []);
   markup = renderToStaticMarkup(
     React.createElement(QueryClientProvider, { client: qc },
       React.createElement(TopoSection, { route })));
@@ -264,17 +267,18 @@ const CHAIN = [
    "App no longer computes the flag from the comments query"],
   ["ClimbMatch.jsx", "commentsUnavailable={commentsUnavailable}",
    "App no longer hands the flag to RouteDetail"],
-  ["RouteDetail.jsx", "comments,commentsUnavailable,onCommentAdd,",
+  ["RouteDetail.jsx", "comments,commentsUnavailable,commentApi={},",
    "RouteDetail no longer accepts the flag"],
-  ["RouteDetail.jsx", "commentsUnavailable={commentsUnavailable} onCommentAdd={onCommentAdd}",
+  ["RouteDetail.jsx", "commentsUnavailable={commentsUnavailable} onCommentAdd={commentApi.canPost===false?null:commentApi.onAdd}",
    "RouteDetail no longer hands the flag to RouteBreakdown"],
-  ["RouteDetail.jsx", "function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){",
+  ["RouteDetail.jsx", "function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd,dbPhotos,onAddPitchPhoto,logged}", // no `){`: the moved .tsx types the props (PR58)
    "RouteBreakdown no longer accepts the flag"],
   ["RouteDetail.jsx", "comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}",
    "RouteBreakdown no longer hands the flag to PitchComments"],
 ];
 const SRC = {};
-for (const [f] of CHAIN) if (!SRC[f]) SRC[f] = fs.readFileSync(path.join(ROOT, f), "utf8");
+// readAppFile: RouteDetail.jsx is read with its moved components (TopoSection, RouteBreakdown — PR58) stitched back in.
+for (const [f] of CHAIN) if (!SRC[f]) SRC[f] = readAppFile(path.join(ROOT, f));
 for (const [f, needle, why] of CHAIN) {
   cases++;
   if (SRC[f].includes(needle)) ok(`wiring: ${f} — ${why.replace("no longer ", "")}`);

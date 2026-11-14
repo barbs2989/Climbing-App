@@ -1,0 +1,102 @@
+{
+ "area_id": "wa_courtney_peak",
+ "routes": [
+  {
+   "route_id": "wa_courtney_peak_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "window": "Jul-Oct",
+    "evidence": "WTA/guide search: roughly June-October, stream fords high into July, larches late Sep-early Oct; stored text mid-July to early October. Peakbagger months cluster Jun-Oct."
+   },
+   "track": {
+    "aid": "3295705",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Only route in catalog; logged \"West Fork Buttermilk trail\", Aug 1 round trip of 16 mi from the trailhead (start 37 m, end 27 m from our pin), summit within 21 m, follows trail to Fish Creek Pass then the SE ridge boulders."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3338860",
+     "verdict": "unsure",
+     "why": "multi-peak linkup via west ridge"
+    },
+    {
+     "aid": "3346087",
+     "verdict": "unsure",
+     "why": "multi-peak day, no report"
+    },
+    {
+     "aid": "2016695",
+     "verdict": "unsure",
+     "why": "one-way recording, ends far from trailhead"
+    },
+    {
+     "aid": "3222713",
+     "verdict": "unsure",
+     "why": "June, partial segment of a linkup"
+    },
+    {
+     "aid": "1919255",
+     "verdict": "offseason",
+     "why": "May with snow"
+    },
+    {
+     "aid": "1116084",
+     "verdict": "offseason",
+     "why": "February winter ascent"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 10,
+     "text": "Past the washout roughly three miles in, fallen trees still need to be climbed over in early October, and the creek is crossed on a log; flagging marks the easiest line through the washout.",
+     "aids": [
+      "2663065"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 10,
+     "text": "In early October the outlet stream of Star Lake is the easy water source for a camp near the pass, and the lakeside sites fill up.",
+     "aids": [
+      "2663065"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 10,
+     "text": "A bootpath climbs the ridge directly from Fish Creek Pass; it is easy to follow by headlamp for a sunrise summit in early October.",
+     "aids": [
+      "2663065",
+      "2016695"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 6,
+     "text": "In late June the pass can still hold melting snow and Star Lake is mostly iced over; plan for wet ground and cold nights.",
+     "aids": [
+      "2548576"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 10,
+     "text": "Early October brings peak larch colour around the pass and Star Lake, with weekend crowds on the trail.",
+     "aids": [
+      "2663065"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Several recordings are multi-peak days (Star/Oval) so only the one Courtney-only round trip was assigned."
+}

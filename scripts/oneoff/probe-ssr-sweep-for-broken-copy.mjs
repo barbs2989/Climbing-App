@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // `check:ui` scans rendered copy for NaN / undefined / [object Object] — on TWENTY screens, and
 // exactly ONE route detail, which it picks by name. `check:bare` renders one synthetic route with
 // no enrichment. Neither sweeps the CATALOG, and this repo's own history says the defects live in
@@ -46,7 +47,7 @@ await build({ stdin: { contents: ENTRY, resolveDir: ROOT, loader: "js" }, bundle
   platform: "node", jsx: "automatic", loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error" });
 const { render, dbRouteToCamel } = require_(out);
-const { SUPABASE_URL, anonKey, headers } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { SUPABASE_URL, anonKey, headers } = await import(fileHref(path.join(ROOT, "scripts/lib/supabase-env.mjs")));
 
 const text = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, " ")
   .replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");

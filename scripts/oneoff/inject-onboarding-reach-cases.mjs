@@ -42,6 +42,10 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const APP = path.join(ROOT, "ClimbMatch.jsx");
+// Home's card is in TodayTab.tsx since PR61 (Home's body, lifted out of App); a case names its file,
+// the default is App. TGT is the file the current case edits, and the one restore() writes back.
+const TODAY = path.join(ROOT, "src/components/TodayTab.tsx");
+let TGT = APP;
 const GUARD = path.join(ROOT, "scripts/check-onboarding-reach.mjs");
 const LOCK = path.join(ROOT, ".onboarding-reach-cases.lock");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
@@ -59,7 +63,7 @@ const CASES = [
     expect: "keyed on `authed` again",
   },
   {
-    name: "revert-card-gate", find: CARD,
+    name: "revert-card-gate", file: TODAY, find: CARD,
     repl: '(!onboarded&&!homeDismiss.includes("climbsetup"))',
     expect: "gated on `!onboarded` again",
   },
@@ -78,7 +82,7 @@ const CASES = [
     expect: "does NOT — predicate said true, expected false",
   },
   {
-    name: "card-off-home", find: CARD + "?<div {...clickable(()=>setOnboardOpen(true))}",
+    name: "card-off-home", file: TODAY, find: CARD + "?<div {...clickable(()=>setOnboardOpen(true))}",
     repl: "false?<div {...clickable(()=>setOnboardOpen(true))}",
     // The gate string disappears entirely, so the guard's own exactly-once check is what fires.
     expect: "cannot disagree — matched 0, expected 1",
@@ -100,7 +104,7 @@ const CASES = [
 let bak = null;
 function restore(quiet) {
   if (!bak) return;
-  fs.writeFileSync(APP, bak); bak = null;
+  fs.writeFileSync(TGT, bak); bak = null;
   if (!quiet) console.log("restored");
 }
 
@@ -121,7 +125,7 @@ if (base.status !== 0) {
 const cleanOut = (base.stdout || "") + (base.stderr || "");
 console.log("baseline: check:onboarding-reach is green\n");
 
-const pristine = read(APP);
+const pristine = read(APP), pristineT = read(TODAY);
 const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 const run = CASES.filter((c) => !only.length || only.includes(c.name));
 if (!run.length) { console.error(`no such case. Known: ${CASES.map((c) => c.name).join(", ")}`); process.exit(1); }
@@ -137,9 +141,10 @@ for (const c of run) {
 
 for (const c of run) {
   console.log(`=== ${c.name} ===`);
-  if (sum(read(APP)) !== sum(pristine)) { console.error("REFUSED: ClimbMatch.jsx moved between cases"); bad++; break; }
+  if (sum(read(APP)) !== sum(pristine) || sum(read(TODAY)) !== sum(pristineT)) { console.error("REFUSED: ClimbMatch.jsx or TodayTab.tsx moved between cases"); bad++; break; }
 
-  const before = read(APP);
+  TGT = c.file || APP;
+  const before = read(TGT);
   const n = before.split(c.find).length - 1;
   if (n !== 1) {
     console.error(`HARNESS BUG — "${c.find.slice(0, 60)}" occurs ${n} times, expected 1. Re-anchor.`);
@@ -152,7 +157,7 @@ for (const c of run) {
   if (sum(injected) === sum(before) || (c.repl && !injected.includes(c.repl))) {
     restore(true); console.error("REFUSED: the edit did not land"); bad++; continue;
   }
-  fs.writeFileSync(APP, injected);
+  fs.writeFileSync(TGT, injected);
   console.log(`injected: ${sum(before)} -> ${sum(injected)}`);
 
   let out = "";
@@ -161,7 +166,7 @@ for (const c of run) {
     out = (r.stdout || "") + (r.stderr || "");
   } finally {
     restore(true);
-    if (sum(read(APP)) !== sum(before)) { console.error("TREE NOT RESTORED: ClimbMatch.jsx is NOT byte-identical"); bad++; }
+    if (sum(read(TGT)) !== sum(before)) { console.error("TREE NOT RESTORED: " + path.basename(TGT) + " is NOT byte-identical"); bad++; }
   }
 
   // A FAIL LINE, never the word: the guard's own labels contain "FAILED" (as in "a FAILED
@@ -183,6 +188,6 @@ for (const c of run) {
   console.log("");
 }
 
-if (sum(read(APP)) !== sum(pristine)) { console.error("TREE NOT RESTORED at exit"); bad++; }
+if (sum(read(APP)) !== sum(pristine) || sum(read(TODAY)) !== sum(pristineT)) { console.error("TREE NOT RESTORED at exit"); bad++; }
 console.log(`${run.length - bad}/${run.length} case(s) behaved as declared.`);
 process.exit(bad ? 1 : 0);

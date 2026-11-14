@@ -1,0 +1,50 @@
+{
+  "area_id": "wa_mount_teneriffe",
+  "routes": [
+    {
+      "route_id": "wa_mount_teneriffe_kamikaze_trail",
+      "season": { "months": [5,6,7,8,9,10], "window": "May-Oct", "evidence": "Stored May-Oct kept. Logged Kamikaze ascents cluster Jan-Jul and Aug-Oct with a spring peak; WebSearch of WTA trip reports shows the upper Kamikaze line holding snow/ice Dec-Apr and snow-free by late spring through fall; Mountaineers lists a separate winter scramble, so May-Oct is the clear-ground window." },
+      "track": { "aid": "1463770", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route 'Kamikaze Route' (Aug 20 2020), summited, round trip from the Teneriffe trailhead (start/end within 47 m of our pin, summit 2 m from ours). Report describes the falls viewpoint, steep rooty switchbacks, rocky ridge, bracken clearing above 4000 ft then joining the main trail for the summit rocks - exactly our Kamikaze line; stats show descent by the standard route, i.e. our ~10 mile loop." },
+      "otherTracksConsidered": [
+        { "aid": "3005850", "verdict": "same", "why": "Oct 5 2025, Kamikaze up / standard down, complete, but includes West Teneriffe and Blowdown extras; second choice." },
+        { "aid": "1679700", "verdict": "unsure", "why": "Logged 'Kamikaze' June 13 2021, loop, but report text says nothing about the line." },
+        { "aid": "1929039", "verdict": "same", "why": "May 30 2022 Kamikaze up, standard down; valid but the 2020 report has the fuller line description." },
+        { "aid": "1946206", "verdict": "unsure", "why": "Logged 'Teneriffe Falls' June 2022, also continues to Dixie; line is same ascent but loop extends beyond our route." },
+        { "aid": "3389209", "verdict": "unsure", "why": "Oct 24 2026, no logged route name; goes on to Mount Si." },
+        { "aid": "3308387", "verdict": "unsure", "why": "Aug 2026 Teneriffe-Si traverse; no route name." },
+        { "aid": "3288248", "verdict": "unsure", "why": "Jul 29 2026, no name, one-way start 622 m from pin." },
+        { "aid": "3191424", "verdict": "unsure", "why": "May 2026 four-peak traverse; not a round trip on this route." },
+        { "aid": "3294614", "verdict": "different", "why": "Si-Teneriffe connector approach from Mount Si side, April." },
+        { "aid": "1644134", "verdict": "same", "why": "Apr 24 2021 Kamikaze Ridge; one month before season; not chosen, 1463770 is in season." },
+        { "aid": "1642417", "verdict": "same", "why": "Apr 22 2021 Kamikaze Route; one month before season, not chosen." },
+        { "aid": "3131500", "verdict": "offseason", "why": "Feb 28 2026." },
+        { "aid": "3088634", "verdict": "offseason", "why": "Jan 2026, no track points." },
+        { "aid": "2079910", "verdict": "offseason", "why": "Nov 14 2022 'Old trail' (not clearly Kamikaze); winter snow." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 8, "text": "Where the forest path splits into several faint lines, stay on the crest of the ridge and the boot track reappears.", "aids": ["1463770", "3005850"] },
+        { "field": "pro_tips", "month": 8, "text": "Past about 4,000 ft the track crosses a bracken-and-fireweed clearing and a short rocky outcrop of easy scrambling before it joins the standard trail for the last summit rocks.", "aids": ["1463770"] },
+        { "field": "monthBreakdown", "month": 5, "text": "By late May, continuous slushy snow covers the route above roughly 4,300 ft, and the lower tread can stay packed snow down toward 3,800 ft.", "aids": ["1929039"] },
+        { "field": "approach_note", "month": 8, "text": "The trailhead gate was reported locked at about 8 pm and unlocked around 7 am in May and August, so plan a loop that finishes before then.", "aids": ["1210875", "2507257"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_teneriffe_standard_route",
+      "season": { "months": [4,5,6,7,8,9,10,11], "window": "Apr-Nov", "evidence": "Stored Mar-Nov; WebSearch of WTA trip reports shows continuous snow on the upper ridge in Mar-early May, melted out late spring to fall, snow returning by Nov-Dec; logged standard-trail ascents are spread across the year with a Jan-May bulge from snow-free lower trail. Kept the stored breadth but report snow-free best Jun-Oct." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "all-harvested", "verdict": "different", "why": "Every harvested track with geometry leaves the trail for the Teneriffe Falls / Kamikaze boot track (passes within 80 m of our Kamikaze junction pin); none ascends the standard switchback trail and returns. The standard-trail reports (1210875 Aug 2019, 2507257 May 2024, 288440 Oct 2011) have no track points." },
+        { "aid": "1463770", "verdict": "different", "why": "Kamikaze up / standard down loop; filed under the Kamikaze route, not assigned twice." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 8, "text": "A small false summit knob sits in the trees about half a mile short of the top; keep going past it.", "aids": ["1210875"] },
+        { "field": "monthBreakdown", "month": 5, "text": "In early May snow patches begin near 3,850 ft and become continuous by about 4,000 ft, covering most of the final stretch along the ridge.", "aids": ["2507257"] },
+        { "field": "approach_note", "month": 8, "text": "The trailhead gate was reported locked at about 8 pm and unlocked around 7 am in May and August, so budget the descent to beat it.", "aids": ["1210875", "2507257"] }
+      ]
+    }
+  ],
+  "notes": "Standard route got no track: all harvested geometry uses the falls/Kamikaze line, and the standard-only reports carry no GPS. The stored Teneriffe-area routes are distinct lines (Kamikaze boot track vs graded switchbacks); no duplicates detected. Kamikaze route allRoutesOnPeak already shows 637 stored track points, so the harvested track may only improve it. Gate-hours fact is shared by both routes, apply once if desired."
+}

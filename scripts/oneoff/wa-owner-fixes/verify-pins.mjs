@@ -1,10 +1,11 @@
+import { fileURLToPath } from "node:url";
 // Agents only PROPOSE pin coordinates; this decides. For every waypoint lat/lng patch in a research
 // output: the new point must be in Washington, the USGS ground elevation there must agree with the
 // pin's own `elev` (after the file's patches), and it must not sit within 30 m of another pin on the
 // route. A result with any failing pin loses ALL its patches (a half-moved pin is worse than none).
 // usage: node verify-pins.mjs F1 F2 ...   (rewrites research/out/<f>.json in place, prints verdicts)
 import fs from "node:fs";
-const T = new URL("../../../audits/wa-owner-fixes", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-owner-fixes", import.meta.url));
 const R = Object.fromEntries(JSON.parse(fs.readFileSync(`${T}/wa-routes.json`)).map(r => [r.id, r]));
 const TOL_FT = 200;
 async function ground(lat, lng) {

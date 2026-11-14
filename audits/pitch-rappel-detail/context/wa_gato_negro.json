@@ -1,0 +1,83 @@
+{
+ "id": "wa_gato_negro",
+ "name": "Gato Negro",
+ "area_id": "wa_whine_spire",
+ "discipline": "alpine",
+ "grade": "5.10d",
+ "pitches": 12,
+ "length_m": 457,
+ "overview": "Gato Negro is a newer alpine rock route on Whine Spire, a sub-peak of Silver Star Mountain. This big, sustained 1,500-foot climb features impressive granite pitches with mostly solid rock, though loose sections and tricky route-finding require careful attention.",
+ "description": null,
+ "beta": "Gato Negro is a full-day alpine rock climb with fairly sustained 5.10a/b climbing spread across 12 long pitches. Most pitches span 180-190 feet with none shorter than 150 feet. The route features a spectacular hand-crack first pitch, bolted 5.10a face climbing on fragile flakes, rising traverses under roofs, and splitter cracks on the final headwall. Route-finding is somewhat challenging; avoid a clean blocky chimney to the right of the route that looks good but is not as good as it appears. Cruxes are mostly well-protected, but a few slightly runout 5.8 sections on loose granite and a 5.9+ offwidth chimney section present additional challenges.",
+ "descent_text": "The descent does not reverse the route. Make a few rappels over the top of the spire into the steep gully between Whine Spire and the west summit of Silver Star, then work down the gully with long sections of loose 4th-class downclimbing and a few more rappels. The gully is extremely loose, with rock coming down through it constantly, so keep the party out of one another's fall line and clear of the ropes. Do not attempt it in rock shoes. Plan on 2.5 to 3 hours in good conditions; parties benighted here describe about three hours of complex route-finding in the dark, and advise against starting it after dark.",
+ "descent": "Steep gully requiring 4th-class down-climbing with multiple rappels and loose rock throughout.",
+ "rappels": "A few rappels over the top of the spire into the descent gully between Whine Spire and the west summit of Silver Star, then a few more in the gully between long sections of loose 4th-class downclimbing. No exact count is published, so carry a rope and gear for several rappels and cord to build anchors.",
+ "rappel_count_note": "No party has published a station-by-station count for this descent, so none is listed here. Both halves are described the same way, as a few rappels: first over the top of the spire, then intermittently in the gully. Expect to find or build your own anchors in loose rock rather than bolted stations.",
+ "rope_length_m": 60,
+ "pitch_detail": [
+  {
+   "grade": "5.10",
+   "notes": "Start right of the big yellow scar, after crossing the firm snow patch and scree moat at the base. A 5.8 splitter crack leads to a layback up the left side of a big flake, then a pumpy crux with good finger locks and jams; keep the placements out of the finger slots. Do not take the clean, blocky chimney around the corner to the right — it looks easier and is off route.",
+   "pitch": "1"
+  },
+  {
+   "bolts": 10,
+   "grade": "5.10a",
+   "notes": "From the ledge, move the belay uphill beneath the bolt line; this bolted variation is now standard and avoids the rotten corner to the left. Sustained 5.9-5.10a face on dishes, flakes and huecos, some of them fragile-feeling, with the crux a mantel near the top before a two-bolt belay in a small alcove. Grades given for it range 5.10a-5.10b.",
+   "pitch": "2",
+   "anchor": "bolted"
+  },
+  {
+   "notes": "Traverse left and up from the alcove to a ledge beneath the obvious chimney and belay there. Parties commonly lose the line on this lower section, so match the ground to a topo before committing.",
+   "pitch": "3"
+  },
+  {
+   "crux": true,
+   "grade": "5.10d",
+   "notes": "The crux pitch. A 5.8+/5.9 squeeze chimney with a hard 5.9+ offwidth section is hard to protect; chockstones can be slung (old tat on the first one is unreliable), but a 4-5 inch cam pushed along is better. Exit on yellow flakes into the short, steep double overhanging corners, which are well protected, then belay at a tree on a small ledge.",
+   "pitch": "4",
+   "anchor": "tree"
+  },
+  {
+   "notes": "Route-finding pitch: do not get drawn up and to the right. Retreat from the lower route is possible off trees, but above this point bailing means leaving gear, and loose rock and rope-snagging flakes make it serious.",
+   "pitch": "5"
+  },
+  {
+   "notes": "Do not go through the hole up and to the left; instead go around the corner, past a few trees, and up a finger crack to a ledge. From this ledge the route-finding becomes more straightforward.",
+   "pitch": "6"
+  },
+  {
+   "notes": "Climb the dihedral system above the ledge, make a short walking traverse across, then follow a 5.7 hand crack that ends below an alcove.",
+   "pitch": "7"
+  },
+  {
+   "grade": "5.10b",
+   "notes": "The second-hardest pitch: a strenuous 5.10b finger-crack layback, then a rising traverse under a large greenish roof with a powerful high step; both cruxes protect well. Beyond the roof the climbing eases but becomes poorly protected face on grainy, loose granite, with only one solid flake to build the belay on.",
+   "pitch": "8"
+  },
+  {
+   "notes": "Climb the corner above, whose 2-inch crack is actually flaring and grainy: gear is only fair and the rock is hard on the hands. Near the top the moves get a little harder, but the crack turns parallel-sided up to the belay. Some parties link pitches 8-10 into two long leads.",
+   "pitch": "9"
+  },
+  {
+   "notes": "Continue up the same corner system, pull past a block on the right, then face-traverse out to the ridge crest and follow it toward the final summit tower.",
+   "pitch": "10"
+  },
+  {
+   "notes": "The final headwall on the summit tower, one of the best pitches on the route: a few committing moves low down lead into clean splitter cracks and good features on the face.",
+   "pitch": "11"
+  },
+  {
+   "notes": "A lichen-covered last pitch to the top of Whine Spire. Many parties skip it to save time for the long, loose descent; it is worthwhile only if daylight allows.",
+   "pitch": "12"
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Larry Goldie and Scott Johnston, summer solstice 2001 (bolted variation on pitches 2-3 later added by Chris Clark)",
+ "areas": {
+  "name": "Whine Spire",
+  "parent_id": "wa_silver_star_and_wine_spires"
+ },
+ "parent_area": "Silver Star and Wine spires"
+}

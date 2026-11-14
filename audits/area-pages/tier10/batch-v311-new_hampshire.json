@@ -1,0 +1,27 @@
+{
+ "nh_railroad_cut": {
+  "_expect": { "name": "Railroad Cut", "region": "New Hampshire" },
+  "blurb": "Railroad Cut is a short, bolted corridor of climbing inside an old rail cutting near Lake Sunapee, and it makes up part of the larger Newbury Cut. Thirteen climbs are mostly sport, with one trad line and a single boulder problem. Grades run from 5.6 up to the low 5.11s, with the bulk of the interest in the 5.8 to 5.10 range. The stone is blocky and the holds are directional, so the movement leans on body position and tension more than on pulling hard. Moss and loose pebbles can show up. The left side stays damp from spring into late summer, so the right side is the safer bet for those months.",
+  "review": { "sources": ["https://www.mountainproject.com/area/111064226/railroad-cut", "https://www.mountainproject.com/area/110932578/dartmouth-lake-sunapee"] }
+ },
+ "nh_welcome_boulders": {
+  "_expect": { "name": "Welcome Boulders", "region": "New Hampshire" },
+  "blurb": "Welcome Boulders is a small cluster of granite boulders in the Blair Woods section of Pawtuckaway State Park, close to where the trail starts. It holds 13 problems, and most are friendly: roughly half sit at the easy end from VB to V1, with a handful of moderate lines in the middle and a few tougher ones reaching V5. Steep entry-level problems share the space with well-liked classics, and there is a cave with a project in it. The boulders lie right beside the path, so there is very little walking, and one face is tall enough to feel like a highball. Bring pads and a spotter.",
+  "review": { "sources": ["https://www.mountainproject.com/v/welcome-boulders/106964285", "https://www.mountainproject.com/route/106356108/the-north-face?print=1"] }
+ },
+ "nh_beta_bunch": {
+  "_expect": { "name": "Beta Bunch", "region": "New Hampshire" },
+  "blurb": "Beta Bunch is a group of 13 boulder problems in the Vader Boulders, part of the upper Black Jack Boulders above Rumney. The grades have a good spread: a couple of easy V1s, some in the V3 to V4 range, then a solid block of V6 problems and a few harder ones up to V8. A handful of lines carry a serious-fall warning, so pads and spotters matter. The Black Jack boulders sit in woods at the base of the hill, which makes them pleasant on dry winter days but hot and buggy in summer.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/120043576/beta-bunch", "https://www.mountainproject.com/area/105899478/black-jack-boulders"] }
+ },
+ "_skipped": {
+  "nh_wonderland": "only one fetched page about the crag (second page did not describe it)",
+  "nh_trail_boulders": "only parent area page fetched; no page about the crag itself",
+  "nh_zig_zag_boulder_the": "only parent page plus a single route page; no page about the boulder itself",
+  "nh_bobby_s_boulder": "only parent page and route/classics lists; no page describing the boulder itself",
+  "nh_barnyard_boulders_the": "only parent page plus a single route page; no page about the crag itself"
+ },
+ "_conflicts": {
+  "nh_barnyard_boulders_the": "stored rock is diorite; the parent Boulder Natural page (https://www.mountainproject.com/area/106523360/boulder-natural) calls the rock granite"
+ }
+}

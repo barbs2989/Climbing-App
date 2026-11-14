@@ -1,14 +1,18 @@
 // Screens and controls that live in the MENU (the avatar button at the top left), not on the
-// bottom bar. Profile left the bar when the Menu arrived: it is a screen in NAV marked
-// `bar:false`, opened from the Menu's "You" card. The footer link strip (Settings, Feedback,
+// bottom bar. Profile left the bar when the Menu arrived and came back as its right-most tab on
+// 2026-10-24; walks still open it from the Menu's "You" card, which leads to the same screen. The footer link strip (Settings, Feedback,
 // Privacy, Rate app, About us, How ClimbMatch works) moved into the Menu at the same time.
 //
 // A walk that taps a bar label by its text finds nothing named "Profile" any more, so every
 // walk routes those labels through here instead -- one implementation, so the walks cannot
 // drift on how the Menu is opened.
 
-// label a walk asks for -> accessible-name prefix of the control inside the Menu
-export const MENU_SCREENS = { Profile: "Your profile" };
+// label a walk asks for -> accessible-name prefix of the control inside the Menu.
+// Groups on 2026-10-14: a NAV screen marked `bar:false`, opened by the Menu's
+// "Groups" tile. A tile carries no aria-label, so its name is its text.
+export const MENU_SCREENS = { Profile: "Your profile", Groups: "Groups" };
+// label -> the bar tab that leads to the same screen, for a visitor whose Menu has no such card.
+const BAR_FALLBACK = { Profile: "Profile" };
 
 async function openMenu(page) {
   const ok = await page.evaluate(() => {
@@ -29,13 +33,30 @@ export async function openFromMenu(page, label, settleMs = 1600) {
   if (!(await openMenu(page))) return false;
   const ok = await page.evaluate((c) => {
     const b = [...document.querySelectorAll('[role="dialog"][aria-label="Menu"] button')]
-      .find((e) => (e.getAttribute("aria-label") || "").startsWith(c));
+      .find((e) => (e.getAttribute("aria-label") || (e.innerText || "").trim().split("\n")[0].trim()).startsWith(c));
     if (!b) return false;
     b.click();
     return true;
   }, card);
-  if (ok) await page.waitForTimeout(settleMs);
-  return ok;
+  if (ok) { await page.waitForTimeout(settleMs); return true; }
+  // A GUEST has no "Your profile" card: the Menu's You card asks them to sign in instead. The
+  // screen is still there, on the bar's own tab (back since 2026-10-24), so a walk of a
+  // deployment entered through "View as guest" takes that. Close the Menu first: it is a
+  // dialog over the bar.
+  if (!BAR_FALLBACK[label]) return false;
+  await page.keyboard.press("Escape").catch(() => {});
+  await page.waitForTimeout(300);
+  // Already on the screen, on another of its tabs: the screen's own tab strip is the way back to
+  // its first tab (the bar tab leaves the open sub-tab where it is).
+  const viaBar = await page.evaluate((name) => {
+    const own = [...document.querySelectorAll('[role="main"] button,[role="main"] [role="tab"]')].find((e) => (e.textContent || "").trim() === name);
+    const t = own || document.querySelector('[aria-label="Primary"] button[aria-label="' + name + '"]');
+    if (!t) return false;
+    t.click();
+    return true;
+  }, BAR_FALLBACK[label]);
+  if (viaBar) await page.waitForTimeout(settleMs);
+  return viaBar;
 }
 
 // Tap a Menu ROW or TILE by its visible text (e.g. "Settings"). Closes nothing on failure:
@@ -44,7 +65,7 @@ export async function tapMenuItem(page, text, settleMs = 1200) {
   if (!(await openMenu(page))) return false;
   const ok = await page.evaluate((t) => {
     const b = [...document.querySelectorAll('[role="dialog"][aria-label="Menu"] button')]
-      .find((e) => (e.innerText || "").trim().split("\n")[0].trim() === t); // a row ends in a "›" line
+      .find((e) => { const f = (e.innerText || "").trim().split("\n")[0].trim(); return f === t || f.startsWith(t + " ·"); }); // a row ends in a "›" line; a tile may carry a count ("Crews · 3"); a corner badge comes after the label, so it is never the first line
     if (!b) return false;
     b.click();
     return true;

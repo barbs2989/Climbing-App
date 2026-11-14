@@ -47,7 +47,7 @@ import path from "node:path";
 import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -56,7 +56,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { FloatPlan, floatPlanState } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import { floatPlanState } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import FloatPlan from ${JSON.stringify(path.join(ROOT, "src/components/FloatPlan.tsx"))};
 export function render(props) {
   // FloatPlan reads the climber's saved emergency contact (0237) through React Query, which the app
   // always provides; the harness must too, or the render throws before any assertion runs.
@@ -120,7 +121,7 @@ else fail("the ready-to-send panel shows on an UNSAVED plan");
 
 // ---- 4. `checkedIn` likewise: losing it re-presents a party that has checked in as overdue.
 const inR = render({ plan: Object.assign({}, TYPED, { saved: true, checkedIn: true }), onPlan() {} });
-if (/Checked In Safe/.test(inR)) ok("a lifted `checkedIn` still shows as checked in");
+if (/Checked [Ii]n [Ss]afe/.test(inR)) ok("a lifted `checkedIn` still shows as checked in");
 else fail("`checkedIn` no longer reaches the panel");
 
 // ---- 5. THE UNCONTROLLED PATH MUST STILL WORK, or this breaks SafetyTab, the other call site.
@@ -146,7 +147,8 @@ else fail("the uncontrolled path starts already saved");
 // wired app as broken — a guard failing on its own documentation, the trap check:ci-cancel
 // records.
 const strip = (t) => t.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
-const rdRaw = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+// readAppFile: RouteDetail.jsx with the components moved out of it (PR52 on) stitched back in.
+const rdRaw = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
 const rd = strip(rdRaw);
 const fpRaw = fs.readFileSync(path.join(ROOT, "lib", "FloatPlans.jsx"), "utf8");
 const fp = strip(fpRaw);

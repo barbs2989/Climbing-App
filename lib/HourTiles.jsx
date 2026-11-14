@@ -8,7 +8,9 @@
 // and the 10 m GUST are the sum / probability / maximum of the PRECEDING hour (T-1 to T). One label for
 // both -- "2 PM" -- is wrong for half of the numbers beside it, so the boxes carry `at(T)` or
 // `spanEnding(T)` and never share a time.
+import { useRef, useEffect } from "react";
 import { C } from "../ClimbMatchCore.jsx";
+import { boxZoom } from "./wideLayout.js";
 
 const COMPASS = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
 // The direction the wind blows FROM, as 16-point compass text; null when there is no direction.
@@ -25,17 +27,66 @@ export function spanEnding(endHr) {
 }
 
 // One reading. `tone` is a palette colour for the value (and a tinted edge); `wide` takes the full row.
+// `when` is said in words: "at 2 PM" reads "At 2 PM" (the reading at that moment), a bare span like
+// "1–2 PM" reads "During 1–2 PM" (the total or peak over that hour).
+export function whenText(when) {
+  if (!when) return null;
+  if (/^\d/.test(when)) return "During " + when;
+  return when.charAt(0).toUpperCase() + when.slice(1);
+}
+/** @param {{label: string, when?: string|null, value?: import("react").ReactNode, sub?: import("react").ReactNode, tone?: string|null, wide?: boolean}} props */
 export function Tile({ label, when, value, sub, tone, wide }) {
-  return <div style={{ background: C.surface, border: "1px solid " + (tone ? tone + "77" : C.border), borderRadius: 10, padding: "8px 10px", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
-    <div style={{ fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</div>
-    {when ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{when}</div> : null}
-    <div style={{ fontSize: 17, fontWeight: 800, color: tone || C.text, marginTop: 3, lineHeight: 1.2, overflowWrap: "anywhere" }}>{value}</div>
-    {sub ? <div style={{ fontSize: 11.5, color: C.textSub, marginTop: 2, lineHeight: 1.4 }}>{sub}</div> : null}
+  return <div style={{ background: C.surface, border: "1px solid " + (tone ? tone + "77" : C.border), borderLeft: "4px solid " + (tone || C.borderHi), borderRadius: 10, padding: "9px 11px", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
+    <div style={{ fontSize: 12, fontWeight: 800, color: C.label, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>
+    {when ? <div style={{ display: "inline-block", fontSize: 11.5, fontWeight: 600, color: C.textMuted, background: C.card, border: "1px solid " + C.borderLight, borderRadius: 20, padding: "1px 8px", marginTop: 3 }}>{whenText(when)}</div> : null}
+    <div style={{ fontSize: 21, fontWeight: 800, color: tone || C.text, marginTop: 5, lineHeight: 1.15, overflowWrap: "anywhere" }}>{value}</div>
+    {sub ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 3, lineHeight: 1.4 }}>{sub}</div> : null}
+  </div>;
+}
+// A titled group of tiles ("Temperature", "Wind", ...) so a dozen readings read as three small topics.
+/** @param {{title: string, children?: import("react").ReactNode, min?: number}} props */
+export function TileGroup({ title, children, min }) {
+  return <div style={{ marginTop: 12 }}>
+    <div style={{ fontSize: 12.5, fontWeight: 800, color: C.text, margin: "0 0 6px", paddingBottom: 4, borderBottom: "1px solid " + C.borderLight }}>{title}</div>
+    <TileGrid min={min}>{children}</TileGrid>
   </div>;
 }
 // A reading the forecast did not carry: said, never a blank and never a zero.
 export const NOT_MEASURED = <span style={{ color: C.textMuted, fontSize: 13, fontWeight: 600 }}>Not measured</span>;
 
+/** @param {{children?: import("react").ReactNode, min?: number}} props */
 export function TileGrid({ children, min }) {
-  return <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(" + (min || 104) + "px,1fr))", gap: 6 }}>{children}</div>;
+  // A lone tile keeps a tile's width instead of stretching across the whole card.
+  const lone = [children].flat(Infinity).filter(Boolean).length === 1;
+  return <div style={{ display: "grid", gridTemplateColumns: lone ? "minmax(" + (min || 130) + "px,220px)" : "repeat(auto-fit,minmax(" + (min || 130) + "px,1fr))", gap: 6 }}>{children}</div>;
+}
+
+/* THE HOUR STRIP: a scrolling row of hour chips with an Earlier / Later step on either side (owner, 2026-10-15:
+   "hour by hour doesn't click well when going to the next hour"). Two things made the next hour hard to reach:
+   there was no step control, so the only way on was to tap the next chip; and every tap re-centred the row with an
+   INSTANT scrollLeft jump, so the chip you meant to tap next leapt out from under your finger. Now the row only
+   moves when the picked chip (with a neighbour either side) is not already in view, and it glides there; a new
+   day, or the first paint, still lands at once. `children` are the chips, one per index, in order. */
+/** @param {{index: number, count: number, onPick: (j: number) => void, label: (j: number) => string, children?: import("react").ReactNode}} props */
+export function HourStepper({ index, count, onPick, label, children }) {
+  const rowRef = useRef(null), seen = useRef(null);
+  useEffect(function () {
+    const row = rowRef.current, b = row && row.children[index];
+    if (!b) return;
+    const first = seen.current !== count; seen.current = count;
+    const rr = row.getBoundingClientRect(), br = b.getBoundingClientRect(), pad = b.offsetWidth + 5;
+    if (!first && br.left - pad >= rr.left && br.right + pad <= rr.right) return;
+    const left = row.scrollLeft + (br.left - rr.left) / boxZoom(row) - (row.clientWidth - b.offsetWidth) / 2;
+    if (first || !row.scrollTo) row.scrollLeft = left; else row.scrollTo({ left: left, behavior: "smooth" });
+  }, [index, count]);
+  const step = function (d) { const j = index + d; if (j >= 0 && j < count) onPick(j); };
+  const arrow = function (d) {
+    const off = d < 0 ? index <= 0 : index >= count - 1;
+    return <button onClick={function () { step(d); }} disabled={off} aria-label={(d < 0 ? "Earlier hour" : "Later hour") + (off ? "" : ", " + label(index + d))} style={{ flex: "0 0 auto", width: 44, minHeight: 44, borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: off ? C.textMuted : C.text, fontSize: 20, fontWeight: 800, lineHeight: 1, cursor: off ? "default" : "pointer", opacity: off ? 0.4 : 1, touchAction: "manipulation" }}>{d < 0 ? "‹" : "›"}</button>;
+  };
+  return <div style={{ display: "flex", alignItems: "flex-start", gap: 5 }}>
+    {arrow(-1)}
+    <div ref={rowRef} role="group" aria-label="Pick an hour" style={{ flex: 1, minWidth: 0, display: "flex", gap: 5, overflowX: "auto", overscrollBehaviorX: "contain", WebkitOverflowScrolling: "touch", paddingBottom: 6 }}>{children}</div>
+    {arrow(1)}
+  </div>;
 }

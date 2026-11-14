@@ -1,21 +1,23 @@
 import { useState } from 'react'
-import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat, formatCoordinatesForDisplay } from './gpxParser'
+import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat } from './gpxParser'
 import { POP_CLOSE } from "./popupChrome.js";
+import TrailDrawMap from './TrailDrawMap'
+import { MIN_RECORDED_PTS } from './track'
+import { tx } from './tapWords.js'
+import ActionIcon from '../src/components/ActionIcon.tsx'
+import { C } from '../ClimbMatchCore.jsx'
 
-const C = {
-  bg: '#1a1a1a',
-  bg70: '#2a2a2a',
-  text: '#fff',
-  text70: '#999',
-  accent: '#4a9eff',
-  warning: '#ff9500',
-  error: '#ff3b30',
-  success: '#34c759',
-  border: '#333'
-}
-
-export default function GpsSubmissionModal({ routeId, routeName, onClose, onSuccess }) {
-  const [tab, setTab] = useState('paste') // 'paste', 'upload', 'devices'
+export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, cragAt, onClose, onSuccess, initialPts, initialShape }) {
+  // A crag's trail can be TRACED on the map ('draw') as well as recorded. It opens first on a crag
+  // whenever the map has somewhere to open: the parking pin or the crag's own coordinate.
+  // ...or when a line drawn in the desktop tool is handed over: it drew without a pin, so this can show it.
+  const canDraw = !!(crag && (parkAt || cragAt || (initialPts && initialPts.length)))
+  const [tab, setTab] = useState(canDraw ? 'draw' : 'paste') // 'draw', 'paste', 'upload', 'devices'
+  // A line already drawn in the desktop drawing tool (lib/DrawRoute.jsx) arrives here to be submitted.
+  const [drawPts, setDrawPts] = useState(() => (canDraw && initialPts && initialPts.length ? initialPts : []))
+  const drawing = tab === 'draw'
+  // A leg still being routed: what is on screen is about to change, so it is not yet a line to submit.
+  const [drawPending, setDrawPending] = useState(false) // a handed-over line never carries a pending leg: the desktop tool waits for routing before it hands over
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
   const [climbDate, setClimbDate] = useState('')
@@ -126,29 +128,32 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
     setError('')
 
     // Client-side validation
-    if (coordinates.trim().length === 0) {
-      setError('Please paste or upload GPS coordinates')
+    // MIN_RECORDED_PTS: the map draws no line under 10 points (lib/track.js), and review_gps_submission
+    // (0397) refuses one, so a shorter trace is stopped here rather than approved into nothing.
+    if (drawing && drawPending) { setError('A leg of the trail is still being followed. Wait a moment, then submit.'); return }
+    if (drawing ? drawPts.length < MIN_RECORDED_PTS : coordinates.trim().length === 0) {
+      setError(drawing ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail, one at every bend and fork (you have ' + drawPts.length + ')') : 'Please paste or upload GPS coordinates')
       return
     }
 
     if (!climbDate) {
-      setError('Please select the climb date')
+      setError(crag ? 'Please select when you last walked it' : 'Please select the climb date')
       return
     }
 
     if (!confirmations.climbed) {
-      setError('Please confirm you personally climbed this route')
+      setError(crag ? 'Please confirm you have walked this trail yourself' : 'Please confirm you personally climbed this route')
       return
     }
 
     if (!confirmations.isRoute) {
-      setError('Please confirm this is the climbing route, not the approach')
+      setError(crag ? 'Please confirm this is the walk in, not the climb' : 'Please confirm this is the climbing route, not the approach')
       return
     }
 
     // Parse coordinates
-    const format = detectGpxFormat(coordinates)
-    let parsed = []
+    const format = drawing ? null : detectGpxFormat(coordinates)
+    let parsed = drawing ? drawPts : []
 
     if (format === 'gpx') {
       parsed = parseGpxXml(coordinates)
@@ -156,8 +161,8 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
       parsed = parseCoordinateList(coordinates)
     }
 
-    if (parsed.length < 5) {
-      setError('Track needs at least 5 waypoints')
+    if (!drawing && parsed.length < MIN_RECORDED_PTS) {
+      setError('Track needs at least ' + MIN_RECORDED_PTS + ' points')
       return
     }
 
@@ -187,7 +192,8 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
           gpxData: parsed,
           climberEmail: climbEmail || undefined,
           climberName: climbName || undefined,
-          deviceType,
+          // A traced line is said to be one, so a reviewer never reads it as a recording.
+          deviceType: drawing ? 'Traced on the map' : deviceType,
           climbDate,
           notes: notes || undefined
         })
@@ -246,215 +252,164 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
     }
   }
 
-  if (showSuccess) {
-    return (
-      <div style={{...styles.overlay}} onClick={onClose}>
-        <div style={{...styles.modal}} onClick={(e) => e.stopPropagation()}>
-          <div style={{...styles.successContent}}>
-            <div style={{fontSize: '32px', marginBottom: '12px'}}>✓</div>
-            <h2 style={{...styles.heading, color: C.success}}>Thanks for contributing!</h2>
-            {/* No turnaround is promised: a person reviews tracks when they can, and nothing measures or enforces 24-48 hours. */}<p style={{...styles.text}}>Your GPS track is waiting for a person to review it.</p>
-            <div style={{...styles.scoreBox}}>
-              <div style={{fontSize: '18px', fontWeight: 'bold', color: C.accent}}>
-                Quality Score: {qualityScore}/100
-              </div>
-            </div>
-            <p style={{...styles.textSmall, color: C.text70}}>
-              Once it's approved your track shows up on this route's page. Thank you for helping the climbing community!
-              {emailed ? " We've emailed you a receipt." : ""}
-            </p>
-            <button style={{...styles.button, ...styles.buttonPrimary}} onClick={onClose}>
-              Done
-            </button>
+  // ---- Presentation -------------------------------------------------------------------------
+  // Drawn in the app's own sheet chrome (ReportContentSheet, AreaSuggestFix): C.surface card, a
+  // header ROW with the title on the left and the shared ✕ on the right, small caps section labels,
+  // C.card fields and one full-width primary action in a footer. It used to carry a private
+  // palette and put the ✕ in the header's flow, so the close button landed under the description,
+  // on the left, wherever the copy happened to end ("in a terrible place", owner 2026-11-11).
+  const S = sheetStyles()
+  const title = crag ? 'Add the trail to the crag' : 'Submit a GPS track'
+  const dismiss = submitting ? undefined : onClose
+  // TrailDrawMap draws with the keys this file's old palette used; feed it the app's colours.
+  const mapC = { accent: C.blue, warning: C.orange, bg: C.bg, bg70: C.card, border: C.border, text: C.text, text70: C.textMuted }
+
+  const shell = (body) => (
+    <div onClick={dismiss} tabIndex={-1} onKeyDown={(e) => { if (e.key === 'Escape' && !submitting) onClose() }} role="dialog" aria-modal="true" aria-label={title} style={{ position: 'fixed', inset: 0, background: C.scrimStrong, zIndex: 9999, display: 'flex', alignItems: 'flex-start', justifyContent: 'center', padding: '16px 12px', overflowY: 'auto', overscrollBehavior: 'contain' }}>
+      <div onClick={(e) => e.stopPropagation()} style={S.card}>
+        <div style={S.header}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={S.title}>{showSuccess ? 'Thanks for contributing' : title}</div>
+            {routeName ? <div style={S.subtitle}>{routeName}</div> : null}
           </div>
+          <button aria-label="Close" style={POP_CLOSE} onClick={onClose}>✕</button>
         </div>
+        {body}
+      </div>
+    </div>
+  )
+
+  if (showSuccess) {
+    return shell(
+      <div style={{ padding: '22px 16px 16px', textAlign: 'center' }}>
+        <div aria-hidden="true" style={S.successMark}>✓</div>
+        {/* No turnaround is promised: a person reviews tracks when they can, and nothing measures or enforces 24-48 hours. */}<p style={{ margin: '0 0 12px', fontSize: 14, color: C.text, lineHeight: 1.5 }}>{crag ? 'Your trail to the crag is waiting for a person to review it.' : 'Your GPS track is waiting for a person to review it.'}</p>
+        {/* The score rates a RECORDING (point density, spread); a traced line has neither, so it shows none. */}{drawing ? null : <div style={{ ...S.box, marginBottom: 12, fontSize: 15, fontWeight: 700, color: C.blue }}>Quality score: {qualityScore}/100</div>}
+        <p style={{ margin: '0 0 16px', fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>
+          {crag ? "Once it's approved the trail shows on the crag map of every climb at this crag." : "Once it's approved your track shows up on this route's page."} Thank you for helping the climbing community!
+          {emailed ? " We've emailed you a receipt." : ''}
+        </p>
+        <button style={S.primary} onClick={onClose}>Done</button>
       </div>
     )
   }
 
-  return (
-    <div style={{...styles.overlay}} onClick={onClose}>
-      <div style={{...styles.modal}} onClick={(e) => e.stopPropagation()}>
-        <div style={{...styles.header}}>
-          <h2 style={{...styles.heading}}>Submit GPS Track</h2>
-          <p style={{...styles.subheading}}>{routeName}</p>
-          <button aria-label="Close" style={POP_CLOSE} onClick={onClose}>✕</button>
-        </div>
+  const tabs = canDraw ? ['draw', 'paste', 'upload', 'devices'] : ['paste', 'upload', 'devices']
+  const tabLabel = { draw: 'Draw on map', paste: 'Paste', upload: 'Upload file', devices: 'How to export' }
+  const check = (on, label, set) => (
+    <button role="checkbox" aria-checked={on} onClick={() => set(!on)} style={{ ...S.checkRow, border: '1px solid ' + (on ? C.blue : C.border), background: on ? C.blueBg : C.card }}>
+      <span aria-hidden="true" style={{ ...S.checkBox, border: '1px solid ' + (on ? C.blue : C.borderHi), background: on ? C.blueSolid : 'transparent' }}>{on ? '✓' : ''}</span>
+      <span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 600, color: C.text, lineHeight: 1.4 }}>{label}</span>
+    </button>
+  )
+  const devices = [
+    ['Apple Watch', ['Open the Health app on your iPhone', 'Activity → Segment → your climb', 'Share → Save to Files → choose GPX']],
+    ['Garmin Connect', ['Go to garmin.com/connect', 'Find the activity from your climb date', 'Menu → Export → GPX']],
+    ['Strava', ['Open the activity in the Strava app', 'Tap the menu (⋮) → Export GPX']],
+    ['Komoot or AllTrails', ['Find your recorded activity', 'Tap Share → Export as GPX']],
+  ]
 
-        {error && (
-          <div style={{...styles.errorBox}}>
-            <div style={{color: C.error, fontSize: '14px'}}>{error}</div>
-          </div>
-        )}
+  return shell(
+    <>
+      <div style={{ padding: 16 }}>
+        {/* A crag climb summits nothing, so its track is the walk in: say where to start and stop the recording. */}
+        {crag && <p style={{ margin: '0 0 14px', fontSize: 12.5, color: C.textMuted, lineHeight: 1.5 }}>From where you park to the base of the crag, or on to this climb if it sits away from the main wall. Stop at the base: the climb itself is not part of it. Trace it on the map, or add a recording from your phone or watch.</p>}
 
-        {/* Tabs */}
-        <div style={{...styles.tabs}}>
-          {['paste', 'upload', 'devices'].map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)} aria-current={tab === t ? "true" : undefined}
-              style={{
-                ...styles.tab,
-                borderBottom: tab === t ? `2px solid ${C.accent}` : '1px solid ' + C.border,
-                color: tab === t ? C.accent : C.text70
-              }}
-            >
-              {t === 'paste' && 'Paste Coordinates'}
-              {t === 'upload' && 'Upload File'}
-              {t === 'devices' && 'Device Instructions'}
+        <div style={S.section}>{crag ? 'THE TRAIL' : 'THE TRACK'}</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 12 }}>
+          {tabs.map((t) => (
+            <button key={t} onClick={() => setTab(t)} aria-current={tab === t ? 'true' : undefined} style={{ ...S.pill, border: '1px solid ' + (tab === t ? C.blue : C.border), background: tab === t ? C.blueBg : C.card, color: tab === t ? C.blue : C.textSub }}>
+              {tabLabel[t]}
             </button>
           ))}
         </div>
 
-        {/* Tab Content */}
-        <div style={{...styles.tabContent}}>
-          {tab === 'paste' && (
-            <div>
-              <label style={{...styles.label}}>Paste GPX XML or Coordinates</label>
-              <p style={{...styles.helpText}}>
-                Paste your GPS data. Format: GPX XML or one coordinate per line (lat, lng)
-              </p>
-              <textarea aria-label="Paste coordinates or GPX"
-                value={coordinates}
-                onChange={handlePaste}
-                placeholder="48.123, -121.456&#10;48.124, -121.457&#10;...&#10;&#10;or paste GPX XML starting with &lt;?xml..."
-                style={{...styles.textarea}}
-              />
-            </div>
-          )}
+        {/* Kept MOUNTED behind the other tabs: unmounting it would turn a routed line back into one anchor per point and lose Undo. */}
+        {canDraw && <div style={{ display: tab === 'draw' ? 'block' : 'none' }}><TrailDrawMap start={parkAt} end={cragAt} pts={drawPts} setPts={setDrawPts} C={mapC} active={tab === 'draw'} onShape={(s) => setDrawPending(s.some((x) => x.pending))} initialShape={initialShape && initialShape.length ? initialShape : null} /></div>}
 
-          {tab === 'upload' && (
-            <div>
-              <label style={{...styles.label}}>Upload GPX File</label>
-              <div
-                onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
-                onDragEnter={(e) => { e.preventDefault(); setDragOver(true) }}
-                onDragLeave={() => setDragOver(false)}
-                onDrop={handleDrop}
-                style={{...styles.uploadBox, ...(dragOver ? {borderColor: C.accent, background: C.accent + '18'} : {})}}
-              >
-                <input aria-label="Upload GPX file"
-                  type="file"
-                  accept=".gpx"
-                  onChange={handleFileUpload}
-                  className="cm-file-input"
-                  id="gpxFileInput"
-                />
-                <label htmlFor="gpxFileInput" style={{...styles.uploadLabel}}>
-                  <div style={{fontSize: '24px', marginBottom: '8px'}}>📁</div>
-                  <div>Click to select .gpx file</div>
-                  <div style={{fontSize: '12px', color: C.text70}}>{dragOver ? 'Drop the .gpx to load it' : 'or drag and drop'}</div>
-                </label>
-              </div>
-            </div>
-          )}
-
-          {tab === 'devices' && (
-            <div style={{...styles.deviceGuide}}>
-              <h4>How to Export from Your Device:</h4>
-
-              <div style={{marginBottom: '16px'}}>
-                <strong>Apple Watch:</strong>
-                <p style={{fontSize: '14px', color: C.text70}}>
-                  1. Open Health app on iPhone<br/>
-                  2. Activity → Segment → [your climb]<br/>
-                  3. Share → Save to Files → Select format as GPX
-                </p>
-              </div>
-
-              <div style={{marginBottom: '16px'}}>
-                <strong>Garmin Connect:</strong>
-                <p style={{fontSize: '14px', color: C.text70}}>
-                  1. Visit garmin.com/connect<br/>
-                  2. Find activity from climb date<br/>
-                  3. Menu → Export → GPX
-                </p>
-              </div>
-
-              <div style={{marginBottom: '16px'}}>
-                <strong>Strava:</strong>
-                <p style={{fontSize: '14px', color: C.text70}}>
-                  1. Open activity in Strava app<br/>
-                  2. Tap menu (⋮) → Export GPX
-                </p>
-              </div>
-
-              <div style={{marginBottom: '16px'}}>
-                <strong>Komoot or AllTrails:</strong>
-                <p style={{fontSize: '14px', color: C.text70}}>
-                  1. Find your recorded activity<br/>
-                  2. Tap Share → Export as GPX
-                </p>
-              </div>
-
-              <p style={{fontSize: '13px', color: C.text70, fontStyle: 'italic'}}>
-                ℹ️ Most devices auto-save GPS tracks. Check if you have a file from your climb date.
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Quality Indicator */}
-        {qualityScore !== null && coordinates.trim().length > 0 && (
-          <div style={{...styles.qualityBox, borderColor: qualityScore >= 70 ? C.success : C.warning}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px'}}>
-              <span>Quality Score</span>
-              <span style={{fontSize: '18px', fontWeight: 'bold', color: qualityScore >= 70 ? C.success : C.warning}}>
-                {qualityScore}/100
-              </span>
-            </div>
-
-            {validationIssues.length > 0 && (
-              <div style={{fontSize: '13px', color: C.text70}}>
-                {validationIssues.map((issue, i) => (
-                  <div key={i} style={{marginBottom: '4px', paddingLeft: '4px'}}>
-                    ⚠ {issue}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {qualityScore >= 90 && (
-              <p style={{fontSize: '13px', color: C.success, marginTop: '4px'}}>
-                ✓ High quality - will likely be auto-approved
-              </p>
-            )}
+        {tab === 'paste' && (
+          <div>
+            <p style={S.help}>Paste GPX XML, or one coordinate per line (lat, lng).</p>
+            <textarea aria-label="Paste coordinates or GPX"
+              value={coordinates}
+              onChange={handlePaste}
+              placeholder="48.123, -121.456&#10;48.124, -121.457&#10;...&#10;&#10;or paste GPX XML starting with &lt;?xml..."
+              style={{ ...S.field, minHeight: 150, fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace', fontSize: 12, resize: 'vertical' }}
+            />
           </div>
         )}
 
-        {/* Form Fields */}
-        <div style={{...styles.formSection}}>
-          <label style={{...styles.label}}>
-            <input
-              type="checkbox"
-              checked={confirmations.climbed}
-              onChange={(e) => setConfirmations({...confirmations, climbed: e.target.checked})}
-              style={{marginRight: '8px'}}
+        {tab === 'upload' && (
+          <div
+            onDragOver={(e) => { e.preventDefault(); setDragOver(true) }}
+            onDragEnter={(e) => { e.preventDefault(); setDragOver(true) }}
+            onDragLeave={() => setDragOver(false)}
+            onDrop={handleDrop}
+            style={{ ...S.drop, ...(dragOver ? { borderColor: C.blue, background: C.blueBg } : {}) }}
+          >
+            <input aria-label="Upload GPX file"
+              type="file"
+              accept=".gpx"
+              onChange={handleFileUpload}
+              className="cm-file-input"
+              id="gpxFileInput"
             />
-            I personally climbed this exact route on:
-          </label>
-          <input aria-label="Climb date"
-            type="date"
-            value={climbDate}
-            onChange={(e) => setClimbDate(e.target.value)}
-            style={{...styles.input, marginLeft: '16px', marginBottom: '12px'}}
-          />
+            <label htmlFor="gpxFileInput" style={{ cursor: 'pointer', display: 'block' }}>
+              <div aria-hidden="true" style={{ display: 'flex', justifyContent: 'center', marginBottom: 8 }}><ActionIcon name="doc" size={24} color={C.blue} /></div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: C.blue }}>Choose a .gpx file</div>
+              <div style={{ fontSize: 12, color: C.textMuted, marginTop: 3 }}>{dragOver ? 'Drop the .gpx to load it' : 'or drag and drop it here'}</div>
+            </label>
+          </div>
+        )}
 
-          <label style={{...styles.label}}>
-            <input
-              type="checkbox"
-              checked={confirmations.isRoute}
-              onChange={(e) => setConfirmations({...confirmations, isRoute: e.target.checked})}
-              style={{marginRight: '8px'}}
-            />
-            This is the climbing route, not the approach
-          </label>
+        {tab === 'devices' && (
+          <div>
+            {devices.map(([name, steps]) => (
+              <div key={name} style={{ ...S.box, marginBottom: 8 }}>
+                <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 4 }}>{name}</div>
+                <ol style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>
+                  {steps.map((s) => <li key={s}>{s}</li>)}
+                </ol>
+              </div>
+            ))}
+            <p style={{ ...S.help, margin: '4px 0 0' }}>Most devices save a track automatically. Look for one from the day you climbed.</p>
+          </div>
+        )}
 
-          <label style={{...styles.label, marginTop: '16px'}}>GPS Device Type</label>
-          <select aria-label="GPS device type"
+        {/* Quality Indicator */}
+        {!drawing && qualityScore !== null && coordinates.trim().length > 0 && (
+          <div style={{ ...S.box, marginTop: 12, borderColor: qualityScore >= 70 ? C.green : C.amber }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontSize: 13, color: C.textSub }}>Quality score</span>
+              <span style={{ fontSize: 16, fontWeight: 700, color: qualityScore >= 70 ? C.green : C.amber }}>{qualityScore}/100</span>
+            </div>
+            {validationIssues.length > 0 && (
+              <div style={{ fontSize: 12.5, color: C.textMuted, marginTop: 6, lineHeight: 1.45 }}>
+                {validationIssues.map((issue, i) => <div key={i} style={{ marginBottom: 3 }}>{issue}</div>)}
+              </div>
+            )}
+            {qualityScore >= 90 && <div style={{ fontSize: 12.5, color: C.green, marginTop: 6 }}>High quality: likely to be approved quickly</div>}
+          </div>
+        )}
+
+        <div style={{ ...S.section, marginTop: 18 }}>{crag ? 'WHEN YOU WALKED IT' : 'WHEN YOU CLIMBED IT'}</div>
+        <input aria-label={crag ? 'Date you last walked it' : 'Climb date'}
+          type="date"
+          value={climbDate}
+          onChange={(e) => setClimbDate(e.target.value)}
+          style={{ ...S.field, colorScheme: 'dark', marginBottom: 10 }}
+        />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+          {check(confirmations.climbed, crag ? "I've walked this trail myself" : 'I personally climbed this exact route', (v) => setConfirmations({ ...confirmations, climbed: v }))}
+          {check(confirmations.isRoute, crag ? 'This is the walk in from parking, not the climb' : 'This is the climbing route, not the approach', (v) => setConfirmations({ ...confirmations, isRoute: v }))}
+        </div>
+
+        {!drawing && <>
+          <label htmlFor="gps-device" style={{ ...S.section, display: 'block', marginTop: 18 }}>RECORDED WITH</label>
+          <select id="gps-device" aria-label="GPS device type"
             value={deviceType}
             onChange={(e) => setDeviceType(e.target.value)}
-            style={{...styles.input}}
+            style={{ ...S.field, colorScheme: 'dark' }}
           >
             <option>Apple Watch</option>
             <option>Garmin</option>
@@ -465,233 +420,62 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             <option>Manual GPS Logger</option>
             <option>Other</option>
           </select>
+        </>}
 
-          <label htmlFor="gps-email" style={{...styles.label}}>Email (optional)</label>
-          <input
-            id="gps-email"
-            type="email"
-            value={climbEmail}
-            onChange={(e) => setClimbEmail(e.target.value)}
-            placeholder="your.email@example.com"
-            style={{...styles.input}}
-          />
-
-          <label htmlFor="gps-name" style={{...styles.label}}>Your name (optional)</label>
-          <input
-            id="gps-name"
-            type="text"
-            value={climbName}
-            onChange={(e) => setClimbName(e.target.value)}
-            placeholder="Anonymous"
-            style={{...styles.input}}
-          />
-
-          <label htmlFor="gps-notes" style={{...styles.label}}>Additional notes</label>
-          <textarea
-            id="gps-notes"
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder="e.g., Early season snow / Late season dry / Took West Ridge variant"
-            style={{...styles.textarea, height: '80px'}}
-          />
+        <div style={{ ...S.section, marginTop: 18 }}>ABOUT YOU <span style={{ fontWeight: 500 }}>(optional)</span></div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          <input id="gps-name" aria-label="Your name (optional)" type="text" value={climbName} onChange={(e) => setClimbName(e.target.value)} placeholder="Your name" style={{ ...S.field, flex: '1 1 150px', minWidth: 0 }} />
+          <input id="gps-email" aria-label="Email (optional)" type="email" value={climbEmail} onChange={(e) => setClimbEmail(e.target.value)} placeholder="Email, for a receipt" style={{ ...S.field, flex: '1 1 150px', minWidth: 0 }} />
         </div>
 
-        {/* Buttons */}
-        <div style={{...styles.buttonGroup}}>
-          <button
-            onClick={onClose}
-            style={{...styles.button}}
-            disabled={submitting}
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleSubmit}
-            style={{...styles.button, ...styles.buttonPrimary}}
-            disabled={submitting || !coordinates.trim() || !climbDate}
-          >
-            {submitting ? 'Submitting...' : 'Submit Track'}
+        <label htmlFor="gps-notes" style={{ ...S.section, display: 'block', marginTop: 18 }}>NOTES <span style={{ fontWeight: 500 }}>(optional)</span></label>
+        <textarea
+          id="gps-notes"
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
+          placeholder={crag ? 'e.g., Keep right at the fork by the big boulder / Muddy in spring' : 'e.g., Early season snow / Late season dry / Took West Ridge variant'}
+          rows={3}
+          style={{ ...S.field, minHeight: 72, resize: 'vertical', lineHeight: 1.5 }}
+        />
+      </div>
+
+      {/* The footer holds the one way forward, and the reason a submit was refused sits right on top
+          of it, where the climber's eye already is, rather than at the head of a long form. */}
+      <div style={{ padding: '12px 16px', borderTop: '1px solid ' + C.border }}>
+        {error && <div role="alert" style={S.error}>{error}</div>}
+        {/* WHY Submit is off, in words on the sheet: a tooltip on a disabled button is shown by no phone and read by no screen reader. */}
+        {drawing && !submitting && (drawPts.length < MIN_RECORDED_PTS || drawPending) ? <div style={{ fontSize: 12.5, color: C.textMuted, marginBottom: 8, textAlign: 'right' }}>{drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail to submit it (you have ' + drawPts.length + ').') : 'Still following the trail for a leg.'}</div> : null}
+        <div style={{ display: 'flex', gap: 10 }}>
+          <button onClick={onClose} disabled={submitting} style={S.secondary}>Cancel</button>
+          <button onClick={handleSubmit} disabled={submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending))} title={drawing && drawPts.length < MIN_RECORDED_PTS ? tx('Tap at least ' + MIN_RECORDED_PTS + ' points along the trail') : drawing && drawPending ? 'Still following the trail for a leg' : undefined} style={{ ...S.primary, flex: 2, ...(submitting || (drawing && (drawPts.length < MIN_RECORDED_PTS || drawPending)) ? { background: C.border, color: C.textMuted, cursor: 'default' } : {}) }}>
+            {submitting ? 'Submitting…' : crag ? 'Submit trail' : 'Submit track'}
           </button>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
-const styles = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 9999
-  },
-  modal: {
-    backgroundColor: C.bg,
-    borderRadius: '12px',
-    maxWidth: '500px',
-    maxHeight: '80vh',
-    overflow: 'auto',
-    border: '1px solid ' + C.border,
-    boxShadow: '0 10px 40px rgba(0,0,0,0.3)'
-  },
-  header: {
-    padding: '16px',
-    borderBottom: '1px solid ' + C.border,
-    position: 'relative'
-  },
-  heading: {
-    margin: '0 0 4px',
-    fontSize: '18px',
-    fontWeight: 'bold',
-    color: C.text
-  },
-  subheading: {
-    margin: '0',
-    fontSize: '14px',
-    color: C.text70
-  },
-  closeButton: {
-    position: 'absolute',
-    top: '12px',
-    right: '12px',
-    background: 'none',
-    border: 'none',
-    color: C.text70,
-    fontSize: '20px',
-    cursor: 'pointer'
-  },
-  errorBox: {
-    padding: '12px 16px',
-    backgroundColor: 'rgba(255, 59, 48, 0.1)',
-    borderLeft: '3px solid ' + C.error,
-    margin: '0'
-  },
-  tabs: {
-    display: 'flex',
-    borderBottom: '1px solid ' + C.border,
-    padding: '0'
-  },
-  tab: {
-    flex: 1,
-    padding: '12px',
-    background: 'none',
-    border: 'none',
-    borderBottom: '1px solid ' + C.border,
-    color: C.text70,
-    fontSize: '14px',
-    cursor: 'pointer',
-    textAlign: 'center'
-  },
-  tabContent: {
-    padding: '16px'
-  },
-  label: {
-    display: 'block',
-    marginBottom: '8px',
-    fontSize: '14px',
-    fontWeight: '500',
-    color: C.text
-  },
-  helpText: {
-    margin: '0 0 8px',
-    fontSize: '13px',
-    color: C.text70
-  },
-  textarea: {
-    width: '100%',
-    minHeight: '150px',
-    padding: '12px',
-    backgroundColor: C.bg70,
-    border: '1px solid ' + C.border,
-    borderRadius: '8px',
-    color: C.text,
-    fontFamily: 'monospace',
-    fontSize: '12px',
-    resize: 'vertical'
-  },
-  uploadBox: {
-    padding: '24px',
-    border: '2px dashed ' + C.border,
-    borderRadius: '8px',
-    textAlign: 'center',
-    backgroundColor: C.bg70
-  },
-  uploadLabel: {
-    cursor: 'pointer',
-    display: 'block',
-    color: C.accent
-  },
-  deviceGuide: {
-    fontSize: '14px',
-    color: C.text70
-  },
-  qualityBox: {
-    margin: '16px',
-    padding: '12px',
-    backgroundColor: C.bg70,
-    border: '1px solid ' + C.border,
-    borderRadius: '8px',
-    fontSize: '14px'
-  },
-  formSection: {
-    padding: '16px'
-  },
-  input: {
-    width: '100%',
-    padding: '10px',
-    marginBottom: '12px',
-    backgroundColor: C.bg70,
-    border: '1px solid ' + C.border,
-    borderRadius: '6px',
-    color: C.text,
-    fontSize: '14px',
-    boxSizing: 'border-box'
-  },
-  buttonGroup: {
-    display: 'flex',
-    gap: '12px',
-    padding: '16px',
-    borderTop: '1px solid ' + C.border
-  },
-  button: {
-    flex: 1,
-    padding: '12px',
-    borderRadius: '8px',
-    border: 'none',
-    backgroundColor: C.bg70,
-    color: C.text,
-    cursor: 'pointer',
-    fontSize: '14px',
-    fontWeight: '500'
-  },
-  buttonPrimary: {
-    backgroundColor: C.accent,
-    color: '#000'
-  },
-  successContent: {
-    padding: '32px',
-    textAlign: 'center'
-  },
-  scoreBox: {
-    padding: '16px',
-    backgroundColor: C.bg70,
-    borderRadius: '8px',
-    marginBottom: '12px'
-  },
-  text: {
-    margin: '0 0 12px',
-    fontSize: '14px',
-    color: C.text
-  },
-  textSmall: {
-    margin: '12px 0 0',
-    fontSize: '13px',
-    color: C.text70
+// Built at render, not at module scope: C comes from core (check:no-module-scope-core-reads).
+function sheetStyles() {
+  const field = { width: '100%', boxSizing: 'border-box', padding: '10px 11px', borderRadius: 9, border: '1px solid ' + C.border, background: C.card, color: C.text, fontSize: 14, fontFamily: 'inherit', outline: 'none' }
+  const btn = { boxSizing: 'border-box', padding: 12, borderRadius: 11, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit' }
+  return {
+    card: { background: C.surface, borderRadius: 18, width: '100%', maxWidth: 500, border: '1px solid ' + C.border, overflow: 'hidden', color: C.text },
+    header: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, padding: '14px 16px', borderBottom: '1px solid ' + C.border },
+    title: { fontSize: 16, fontWeight: 700, color: C.text },
+    subtitle: { fontSize: 12, color: C.textMuted, marginTop: 2, overflowWrap: 'anywhere' },
+    section: { fontSize: 12, color: C.textMuted, fontWeight: 700, letterSpacing: 0.3, marginBottom: 8 },
+    help: { margin: '0 0 8px', fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 },
+    pill: { padding: '7px 12px', borderRadius: 20, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit' },
+    field,
+    box: { background: C.card, border: '1px solid ' + C.border, borderRadius: 10, padding: '10px 12px', textAlign: 'left' },
+    drop: { padding: 24, border: '2px dashed ' + C.borderHi, borderRadius: 12, textAlign: 'center', background: C.card },
+    checkRow: { width: '100%', display: 'flex', alignItems: 'center', gap: 10, textAlign: 'left', padding: '11px 12px', borderRadius: 11, cursor: 'pointer', boxSizing: 'border-box', fontFamily: 'inherit' },
+    checkBox: { flexShrink: 0, width: 18, height: 18, borderRadius: 5, color: C.onSolid, fontSize: 12, lineHeight: '16px', textAlign: 'center', fontWeight: 700 },
+    error: { background: C.redBg, border: '1px solid ' + C.red, borderRadius: 10, padding: '9px 12px', marginBottom: 10, fontSize: 13, color: C.text, lineHeight: 1.45 },
+    successMark: { width: 44, height: 44, margin: '0 auto 12px', borderRadius: 22, background: C.greenBg, border: '1px solid ' + C.green, color: C.green, fontSize: 22, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center' },
+    primary: { ...btn, width: '100%', flex: 1, background: C.blueSolid, color: C.onSolid, border: '1px solid rgba(0,0,0,0.22)' },
+    secondary: { ...btn, flex: 1, background: C.card, color: C.text, border: '1px solid ' + C.border },
   }
 }

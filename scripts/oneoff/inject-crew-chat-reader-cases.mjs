@@ -67,8 +67,8 @@ const CASES = [
   // MUST STAY SILENT. The fix's own comment names the forbidden raw-roster form, so a probe
   // reading unstripped source would fail on its own documentation.
   { name: "SILENT-comment-names-the-old-form", file: APP, silent: true,
-    find: "  const activeCrewRoute=activeCrew?(routeById(activeCrew.routeId)||{}):{};",
-    repl: "  /* was activeCrew.members.map( before 0042's policy was honoured here */\n  const activeCrewRoute=activeCrew?(routeById(activeCrew.routeId)||{}):{};" },
+    find: "  const activeCrewPlace=activeCrew?placeOf(activeCrew):null;const activeCrewRoute=(activeCrewPlace&&activeCrewPlace.route)||{};",
+    repl: "  /* was activeCrew.members.map( before 0042's policy was honoured here */\n  const activeCrewPlace=activeCrew?placeOf(activeCrew):null;const activeCrewRoute=(activeCrewPlace&&activeCrewPlace.route)||{};" },
 
   // MUST STAY SILENT. Renaming the helper's own parameter is a correct refactor.
   { name: "SILENT-param-renamed", file: CORE, silent: true,

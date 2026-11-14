@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // A mutual friend must be REAL, NAMED THE WAY THEY ASKED, and COUNTED AS THE LIST THAT RENDERS.
 //
 // `mutualIds()` took no arguments and returned a literal `[]`, so `mutualCount()` was 0 for
@@ -53,7 +54,7 @@ const read = (rel) => {
 // on the short ones. The file this scan SELECTS still goes through read().
 const readRaw = (rel) => readAppFile(path.join(ROOT, rel));
 const ast = (src, file) => {
-  try { return parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { return parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { return dead("could not parse " + file + ": " + e.message); }
 };
 
@@ -70,7 +71,7 @@ console.log("\n1. the pure helpers, run rather than read\n");
 
 const out = path.join(ROOT, `.mutual-probe-${process.pid}.mjs`);
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic", "--loader:.jsx=jsx",
     `--define:import.meta.env=${JSON.stringify({ VITE_USE_DB: "true", VITE_SUPABASE_URL: "https://probe.invalid", VITE_SUPABASE_ANON_KEY: "probe" })}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",

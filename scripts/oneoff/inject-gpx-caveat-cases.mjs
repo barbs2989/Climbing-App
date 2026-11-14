@@ -23,7 +23,7 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("
 const CASES = [
   { name: "no-track-desc", file: CORE, expect: "fail",
     why: "the track carries no description — the caveat stops at the browser, which is the whole defect",
-    says: /FAIL\s+a sketched line exports with no <desc>/,
+    says: /FAIL\s+a captioned line exports with no <desc>/,
     from: "const trkDesc=notes.length?", to: "const trkDesc=false?" },
 
   { name: "no-metadata-desc", file: CORE, expect: "fail",
@@ -58,13 +58,14 @@ const CASES = [
     from: "<desc>${esc([].concat(notes,wpNote?[wpNote]:[]).join(\" \"))}</desc>",
     to: "<desc>${[].concat(notes,wpNote?[wpNote]:[]).join(\" \")}</desc>" },
 
-  // MUST STAY SILENT. The notes are composed in lib/track.js and the file only carries them, so
-  // reordering the composition changes nothing a reader can see — and a guard that fired on it
-  // would be pinning an implementation detail rather than the promise.
-  { name: "reordered-composition", file: TRACK, expect: "pass",
-    why: "composing the notes in a different order is not a change to what the file says",
-    from: "  if (trackIsJustTheWaypoints(r.gpxPts, r.waypoints)) notes.push(WAYPOINT_LINE_CAVEAT);\n  const stub = trackStubCaveat(r.gpxPts, r.waypoints, fmt);\n  if (stub) notes.push(stub);",
-    to: "  const stub = trackStubCaveat(r.gpxPts, r.waypoints, fmt);\n  if (stub) notes.push(stub);\n  if (trackIsJustTheWaypoints(r.gpxPts, r.waypoints)) notes.push(WAYPOINT_LINE_CAVEAT);" },
+  // THE RULE SINCE 2026-10-25: a line that is only the pins joined up is not a track, so the file
+  // carries the waypoints alone. (Replaces "reordered-composition", which reordered the pin-join
+  // note; that note can no longer be written, so there was nothing left to reorder.)
+  { name: "pin-join-line-exported-again", file: CORE, expect: "fail",
+    why: "the download writes the pins joined up as the route's track again",
+    says: /FAIL\s+a line that is only the pins joined up is exported as the route's track/,
+    from: "(recordedTrackPts(r&&r.gpxPts,r&&r.waypoints)||[])",
+    to: "((r&&r.gpxPts)||[])" },
 ];
 
 let pass = 0, fail = 0;

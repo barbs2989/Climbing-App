@@ -37,73 +37,21 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const src = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// Read stitched: Home's gate moved into TodayTab (PR61); the builder and the names it follows stay in App.
+const src = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 
 let failures = 0, cases = 0;
 const ok = (m) => console.log("ok    " + m);
 const fail = (m) => { failures++; console.log("FAIL  " + m); };
 const dead = (m) => { console.error("\nBROKEN GUARD: " + m + "\n(this run proved nothing — it is not a pass)"); process.exit(1); };
 
-// ── 1. HOME'S EMPTY STATE vs THE LIST IT RENDERS.
-//
-//    The sources are read off the UNFINISHED BUSINESS builder rather than listed here, so a
-//    source added there is covered without editing this file — which is the whole point, since
-//    both live defects were a source added to the list and not to the gate.
-{
-  const i = src.indexOf("var unfinished=[];");
-  if (i < 0) dead("the UNFINISHED BUSINESS builder moved — this run would compare nothing");
-  const j = src.indexOf("unfinished.length", i);
-  if (j < 0 || j - i < 400) dead("the UNFINISHED BUSINESS builder parsed short — its sources would go uncounted");
-  const block = src.slice(i, j);
-
-  // Each entry is pushed from a `.forEach` over one source. `(x.data||[]).forEach` is the shape a
-  // react-query list takes, and matching only the bare identifier misses exactly the DB-backed
-  // source that was the defect.
-  const sources = [...block.matchAll(/(?:\((\w+)\.data\|\|\[\]\)|([A-Za-z_$][\w$]*))\.forEach\(/g)]
-    .map((m) => m[1] || m[2]);
-  const uniq = [...new Set(sources)];
-  if (uniq.length < 5) dead(`only ${uniq.length} source(s) parsed out of the list — with none, every comparison below passes vacuously`);
-
-  // The gate: Home's empty-state test, plus the definition of whatever it tests through.
-  const g = src.indexOf('{(!reqN&&');
-  if (g < 0) dead("Home's empty-state gate moved — its coverage cannot be read");
-  const gateEnd = src.indexOf(")?", g);
-  if (gateEnd < 0) dead("Home's empty-state gate does not close");
-  let gate = src.slice(g, gateEnd);
-  // FOLLOW A NAME ONLY WHERE THE GATE ACTUALLY REACHES IT. A first version appended `reqN`'s and
-  // `_pendingForMe`'s definitions unconditionally — so with `reqN` reverted to its longhand the
-  // gate no longer used `_pendingForMe`, and the guard still credited it with everything
-  // `_pendingForMe` counts. It reported full coverage of a gate that had just lost a source, and
-  // only the injection said so. Expansion is transitive from what the gate names, bounded by a
-  // short-definition cap so a gate helper is followed and a component never is.
-  {
-    const seen = new Set();
-    for (let depth = 0; depth < 4; depth++) {
-      const names = new Set([...gate.matchAll(/[A-Za-z_$][\w$]*/g)].map((m) => m[0]));
-      let grew = false;
-      for (const n of names) {
-        if (seen.has(n)) continue;
-        const d = src.indexOf("const " + n + "=");
-        if (d < 0) continue;
-        const e = src.indexOf(";", d);
-        if (e < 0 || e - d > 400) continue;   // an arithmetic helper, never a component
-        seen.add(n);
-        gate += " " + src.slice(d, e);
-        grew = true;
-      }
-      if (!grew) break;
-    }
-  }
-  if (!/Nothing needs you/.test(src)) dead("the empty state's copy is gone — the gate would be guarding nothing");
-
-  for (const s of uniq) {
-    cases++;
-    if (gate.includes(s)) ok(`Home's empty state accounts for ${s}`);
-    else fail(`Home's UNFINISHED BUSINESS list renders an entry for every ${s}, and the empty-state gate does not test it — so "Nothing needs you right now" can render directly above one`);
-  }
-}
+// ── 1. RETIRED (owner, 2026-11-11). Home's "Nothing needs you right now" card is gone: it
+//    flashed on every load, before the reads that would hide it had landed, and the Alerts
+//    dropdown already says when nothing is waiting. With no empty-state card there is no gate
+//    to fall short of the UNFINISHED BUSINESS list, so this section has nothing left to guard.
 
 // ── 2. THE BELL BADGE vs THE PANEL IT OPENS.
 //
@@ -138,7 +86,12 @@ let panelProps = null;
   else fail(`NotifPanel's requests prop is an expression rather than a named array (${prop.slice(0, 60)}) — nothing else can count the same list, so the badge must re-derive it and the two can drift`);
 
   // The badge: the rendered number beside the bell.
-  const b = src.indexOf('ActionIcon name="bell"');
+  // The bell that CARRIES a badge sits in a position:relative button; Settings' Notifications row
+  // draws the same icon earlier in the file, so the first match is not necessarily the top bar's.
+  let b = -1;
+  for (let at = src.indexOf('ActionIcon name="bell"'); at >= 0; at = src.indexOf('ActionIcon name="bell"', at + 1)) {
+    if (src.slice(Math.max(0, at - 300), at).includes('position:"relative"')) { b = at; break; }
+  }
   if (b < 0) dead("the alerts bell moved — its badge cannot be read");
   const badge = src.slice(b, b + 900);
   cases++;
@@ -168,13 +121,15 @@ let panelProps = null;
   if (b0 < 0) dead("Home's alerts block moved — the control that opens the panel cannot be read");
   // Anchored on the NOUN, not on "View all " — that phrase is shared with the Past crews
   // control, and an anchor matching two controls reads one while claiming the other.
-  const t = src.indexOf('" alerts"', b0);
+  /* The noun is "notifications" since the Alerts/Notifications merge (2026-11-11). */
+  const t = src.indexOf('" notifications"', b0);
   if (t < 0) dead('Home\'s "View all N alerts" control moved — its count cannot be read');
-  if (src.indexOf('" alerts"', t + 1) >= 0) dead('the " alerts" label occurs more than once — the control this section reads is ambiguous');
+  if (src.indexOf('" notifications"', t + 1) >= 0) dead('the " notifications" label occurs more than once — the control this section reads is ambiguous');
   const close = src.indexOf("</button>", t);
   if (close < 0) dead('the "View all N alerts" control does not close');
   const raw = src.slice(b0, close);
-  if (!raw.includes("setNotifOpen(true)")) dead('the control read for section 3 does not open NotifPanel — the wrong region was scoped');
+  /* `_alerts.openAll()` is openAllNotifs: the same NotifPanel, as a page on the website. */
+  if (!raw.includes("setNotifOpen(true)") && !raw.includes("_alerts.openAll()")) dead('the control read for section 3 does not open NotifPanel — the wrong region was scoped');
 
   // Comments are stripped: this control now EXPLAINS the defect in prose naming both arrays, so a
   // guard reading them would pass on the strength of the explanation.
@@ -182,7 +137,7 @@ let panelProps = null;
 
   // The number the label prints, and — where that is a name — the definition behind it. Both
   // shapes have to resolve, or the guard cannot speak about the defect's own form.
-  const lab = ctl.match(/\+([^+]+)\+" alerts"/);
+  const lab = ctl.match(/\+([^+]+)\+" notifications"/);
   if (!lab) dead('the "View all N alerts" label does not build its number by concatenation — it cannot be read');
   const printed = lab[1].trim();
   let expr = printed, via = "inline";
@@ -207,7 +162,7 @@ let panelProps = null;
   else fail(`"View all N alerts" prints ${printed} while its gate tests something else — the control's condition and its count describe two different lists`);
 }
 
-if (cases < 11) dead(`only ${cases} assertion(s) ran — a guard that quietly stops asking still exits 0`);
+if (cases < 5) dead(`only ${cases} assertion(s) ran — a guard that quietly stops asking still exits 0`);
 console.log();
 if (failures) { console.log(`${failures} failure(s) across ${cases} assertions`); process.exit(1); }
 console.log(`ok — every count agrees with the list under it (${cases} assertions)`);

@@ -25,7 +25,7 @@ const CASES = [
   { name: "guard-removed-from-the-shared-core", file: "lib/prefs.js", expect: "fail",
     find: "    try {\n      const v = localStorage.getItem(key);\n      return valid.indexOf(v) >= 0 ? v : dflt;\n    } catch {\n      // Includes the ReferenceError when `localStorage` does not exist at all (node, SSR).\n      return dflt;\n    }",
     repl: "    const v = localStorage.getItem(key);\n    return valid.indexOf(v) >= 0 ? v : dflt;",
-    says: /survives having no localStorage|localStorage is not defined/ },
+    says: /survives having no localStorage|localStorage is not defined|threw with no localStorage/ },
   // Validating only on write trusts whatever is already stored, and "" is the reachable junk.
   { name: "read-stops-validating", file: "lib/prefs.js", expect: "fail",
     find: "      return valid.indexOf(v) >= 0 ? v : dflt;", repl: "      return v === null ? dflt : v;",
@@ -41,17 +41,18 @@ const CASES = [
   { name: "not-seeded", file: "ClimbMatch.jsx", expect: "fail",
     find: '[msgFrom,setMsgFrom]=useState(loadInboxFilter)', repl: '[msgFrom,setMsgFrom]=useState("everyone")',
     says: /is not seeded/ },
-  { name: "not-written", file: "ClimbMatch.jsx", expect: "fail",
+  { name: "not-written", file: "src/components/SettingsPrivacySheet.tsx", expect: "fail",
     find: 'onChange={e=>{setMsgFrom(e.target.value);saveInboxFilter(e.target.value);}}',
     repl: 'onChange={e=>setMsgFrom(e.target.value)}',
     says: /does not write it/ },
   // Not about the fold: persisting this control is only honest while its label is.
-  { name: "precondition-label-claims-permission", file: "ClimbMatch.jsx", expect: "fail",
+  { name: "precondition-label-claims-permission", file: "src/components/SettingsPrivacySheet.tsx", expect: "fail",
     find: 'aria-label="Which messages reach your inbox"', repl: 'aria-label="Who can message you"',
     says: /durably keeps a promise the app cannot keep/ },
   // MUST STAY SILENT: a valid rewrite of the shared core.
   { name: "valid-refactor-of-the-core", file: "lib/prefs.js", expect: "pass",
-    find: "  const save = (v) => {", repl: "  const save = function (v) {",
+    // anchor widened with the next line: prefs.js grew two more `save` helpers (object/JSON prefs) that share the first line
+    find: "  const save = (v) => {\n    if (valid.indexOf(v) < 0) return;", repl: "  const save = function (v) {\n    if (valid.indexOf(v) < 0) return;",
     says: null },
 ];
 

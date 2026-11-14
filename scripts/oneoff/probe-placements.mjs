@@ -1,6 +1,5 @@
 // Confirm the three placement changes by rendering, not by reading the diff:
-//   - "Got beta?" sits with the beta cluster on Overview, not at the page bottom
-//   - TURNAROUND is gone from Plan and its prose is on Safety, under BAILOUT & TURNAROUND
+//   - "Got beta?" closes Overview, Plan and Safety (after "More on"), and is absent from Reports/Conditions
 //   - the planner no longer names the formula behind its estimate
 import { build } from "esbuild";
 import { createRequire } from "module";
@@ -43,24 +42,21 @@ const ck = (name, ok, extra) => { console.log((ok ? "  ok    " : "  FAIL  ") + n
 
 const ov = txt(render(route, "overview"));
 const iBeta = ov.indexOf("CLIMBER BETA") > -1 ? ov.indexOf("CLIMBER BETA") : ov.indexOf("BETA");
-const iCta = ov.indexOf("Got beta?") > -1 ? ov.indexOf("Got beta?") : ov.indexOf("got beta?");
-const iLog = ov.indexOf("Log an ascent");
+const iCta = ov.search(/Got beta\?|Know this route\?/);
+const iLog = ov.indexOf("Quick log");
 const iMore = ov.indexOf("More on ");
-console.log("\n--- Overview: the contribute prompt sits with the beta ---");
+console.log("\n--- The contribute prompt closes the editable tabs ---");
 ck("the prompt renders on Overview", iCta > -1);
 ck("it sits AFTER the beta block", iBeta > -1 && iCta > iBeta, "beta@" + iBeta + " cta@" + iCta);
-ck("it sits BEFORE 'Log an ascent'", iLog > -1 && iCta < iLog, "log@" + iLog);
-ck("it is no longer past 'More on <peak>'", iMore > -1 && iCta < iMore, "more@" + iMore);
+ck("it sits AFTER 'Quick log'", iLog > -1 && iCta > iLog, "log@" + iLog);
+ck("it sits AFTER 'More on <peak>'", iMore > -1 && iCta > iMore, "more@" + iMore);
+const hasCta = t => /Got beta\?|Know this route\?/.test(txt(render(route, t)));
+for (const t of ["planner", "safety"]) ck("it renders on " + t, hasCta(t));
+for (const t of ["conditions", "forecast", "partners", "photos"]) ck("it is NOT on " + t, !hasCta(t));
 
-console.log("\n--- Turnaround moved off Plan and onto Safety ---");
+// The TURNAROUND / BAILOUT & TURNAROUND checks that stood here were removed with the section
+// itself: the owner took bail and turnaround off the route page, so they were red on main.
 const pl = txt(render(route, "planner"));
-const sf = txt(render(route, "safety"));
-ck("no TURNAROUND heading on Plan", !/\bTURNAROUND\b/.test(pl));
-ck("the turnaround prose is NOT on Plan", !pl.includes(TURN));
-ck("Safety carries the merged heading", sf.includes("BAILOUT & TURNAROUND") || sf.includes("BAILOUT &amp; TURNAROUND"));
-ck("the turnaround prose IS on Safety", sf.includes(TURN));
-ck("it sits ABOVE the bail points", sf.indexOf(TURN) < sf.indexOf("Retreat from the notch"));
-
 console.log("\n--- The planner no longer names its formula ---");
 ck("no 'Scarf' anywhere on Plan", !/Scarf/i.test(pl));
 ck("the estimate is still labelled", /estimate for your party/i.test(pl));

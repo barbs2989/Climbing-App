@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:waypoint-placement — a waypoint the map cannot draw must SAY SO, and must not pretend to
 // be a control; and exactly one predicate decides which waypoints those are.
 //
@@ -27,11 +28,12 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const core = readCoreSource();
-const rd = readFileSync(join(ROOT, "RouteDetail.jsx"), "utf8");
+// readAppFile: RouteDetail.jsx with its moved components (WaypointList, TrailheadCard — PR57) stitched back in.
+const rd = readAppFile(join(ROOT, "RouteDetail.jsx"));
 /* Resolve esbuild through NODE'S OWN resolution, never a path under ROOT and never `npx`.
    This repo is worked in git worktrees whose own `node_modules` is EMPTY — packages resolve from
    the parent checkout — so a hardcoded ROOT/node_modules/.bin path does not exist here and the
@@ -93,7 +95,7 @@ if (!/wpPlaced\(/.test(rd)) fail("RouteDetail never calls wpPlaced().");
      construction, so nothing about what is asserted changes. */
   const parsed = [];
   for (const [label, src] of [["ClimbMatchCore.jsx", core], ["RouteDetail.jsx", rd]]) {
-    try { parsed.push([label, src, parse(src, { sourceType: "module", plugins: ["jsx"] })]); }
+    try { parsed.push([label, src, parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] })]); }
     catch (e) { fail(`could not parse ${label} to look for placement tests (${String(e.message).slice(0, 80)})`); }
   }
   /* Section 1c's rule, run in the same pass rather than a second one. */

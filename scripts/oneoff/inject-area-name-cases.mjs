@@ -5,9 +5,9 @@
 // restores the original afterwards — the discipline this repo records after an injection reported
 // "not caught" while the file had never been modified.
 //
-// Two cases must PASS, and they are the ones that matter: a comment naming `areas(path)` is
-// documentation (RouteDetail.jsx carries exactly such a comment now), and the offline.js
-// exemption must hold while its drop is in place.
+// One case must PASS, and it is the one that matters: a comment naming `areas(path)` is
+// documentation (RouteDetail.jsx carries exactly such a comment now). The offline.js exemption
+// it also proved is gone (2026-10-23); its case now proves that file's join would be caught.
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
@@ -53,11 +53,12 @@ const CASES = [
     want: "PASS — documentation is not a regression",
   },
   {
-    name: "remove offline.js's drop, so its exemption is stale",
+    // offline.js was EXEMPT for this join until 2026-10-23; with the exemption gone, its return is a finding.
+    name: "the state download regains its areas!inner(path) join",
     file: "lib/offline.js",
-    edit: (s) => s.replace(/const \{ areas: _drop, \.\.\.row \} = r;/, "const row = r;"),
-    expect: (r) => r.code !== 0 && /NO LONGER TRUE/.test(r.out),
-    want: "FAIL as a stale exemption",
+    edit: (s) => s.replace('from("routes").select("*").in("area_id", batch)', 'from("routes").select("*, areas!inner(path)").in("area_id", batch)'),
+    expect: (r) => r.code !== 0 && /lib\/offline\.js:\d+ areas\(path\) omits `name`/.test(r.out),
+    want: "FAIL naming lib/offline.js — no exemption covers it now",
   },
   {
     name: "break the embed pattern so nothing matches",

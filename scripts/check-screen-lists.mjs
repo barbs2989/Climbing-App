@@ -45,7 +45,7 @@ import _traverse from "@babel/traverse";
 const traverse = _traverse.default || _traverse;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const rel = (f) => path.relative(ROOT, f);
+const rel = (f) => path.relative(ROOT, f).replace(/\\/g, "/");
 
 // A subset that is CORRECT, each with the reason it is a subset. Keyed by file, vocabulary and
 // the exact values in source order: an exemption is a claim about one particular list, so a
@@ -125,7 +125,7 @@ let classified = 0;
 for (const f of files) {
   const src = readFileSync(f, "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); } catch (e) {
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); } catch (e) {
     fail(`${rel(f)} did not parse (${e.message.slice(0, 80)}) — it was NOT checked`);
     continue;
   }

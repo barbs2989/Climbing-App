@@ -61,7 +61,7 @@ const NATIVE = new Set(["button", "a", "input", "select", "textarea", "summary",
 
 const KEY_HANDLERS = ["onKeyDown", "onKeyUp", "onKeyPress"];
 
-const files = appSources(ROOT, "check:clickable").filter((f) => f.endsWith(".jsx"));
+const files = appSources(ROOT, "check:clickable").filter((f) => /\.[jt]sx$/.test(f));
 
 const offenders = [];
 let candidates = 0;
@@ -69,7 +69,7 @@ let candidates = 0;
 for (const rel of files) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { console.error(`\ncheck:clickable FAILED — could not parse ${rel}: ${e.message}\n`); process.exit(1); }
 
   traverse(ast, {
@@ -276,7 +276,16 @@ This is NOT baselined. It is held at zero.\n`);
 // declarations onto one physical line where a line number does not. A STALE entry fails, so
 // this cannot rot into a description of code that is gone.
 const DUPLICATES = {
-  "ClimbMatch.jsx": [
+  // The three Crew views (friends, crews, requests) moved out of App in PR61, each with one of these avatars.
+  "src/components/CrewFriendsView.tsx": [
+    ["()=>{setSharedRoute(null);setProfileModal(c);}",
+     "avatar beside a sibling running the identical handler and already named — a second tab stop to the same profile is noise, not access"],
+  ],
+  "src/components/CrewListView.tsx": [
+    ["()=>{setSharedRoute(null);setProfileModal(c);}",
+     "avatar beside a sibling running the identical handler and already named — a second tab stop to the same profile is noise, not access"],
+  ],
+  "src/components/CrewRequestsView.tsx": [
     ["()=>{setSharedRoute(null);setProfileModal(c);}",
      "avatar beside a sibling running the identical handler and already named — a second tab stop to the same profile is noise, not access"],
   ],

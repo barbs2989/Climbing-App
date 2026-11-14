@@ -1,0 +1,48 @@
+{
+ "id": "wa_spontaneous_distraction",
+ "name": "Spontaneous Distraction",
+ "area_id": "wa_le_petit_cheval",
+ "discipline": "alpine",
+ "grade": "5.10b",
+ "pitches": 4,
+ "length_m": 122,
+ "overview": "A four-pitch, partly-bolted 5.10 route beside Spontaneity Arête, combining a couple of well-protected face/crack pitches with easier finishing cracks.",
+ "description": null,
+ "beta": "Pitch 1 climbs face moves protected by 3 bolts above a left-trending overlap (5.10a); pitch 2 climbs past two bolts to a crack (5.10a) with a traverse right at the third bolt; pitch 3 is a sport-style pitch with a hard start (5.10a) easing into 5.7-5.8 face climbing; pitch 4 finishes on fun 5.6-5.7 cracks.",
+ "descent_text": "Descend by rappelling the route itself using a single 70m rope for pitches 1-2; a 70m rope does not reach from the trees directly above pitch 3's last bolt, so that rappel needs an intermediate station off to the side. Alternatively, parties finishing higher on the peak can rappel down from Spontaneity Arête's descent line to reach the gully near this route.",
+ "descent": "Rappel the route; a single 70m rope is sufficient.",
+ "rappels": "Rappel the route; one 70m rope reaches on pitches 1-2, but not from the trees above pitch 3's last bolt, so that rappel needs an intermediate station or another way down",
+ "rappel_count_note": null,
+ "rope_length_m": 70,
+ "pitch_detail": [
+  {
+   "grade": "5.10a",
+   "notes": "The first bolt blends into the rock and is hard to spot. Climb just above a left-trending overlap, then up past three bolts on thin, exciting face climbing to the anchor. Short runouts, and some poor rock between bolts.",
+   "pitch": "1"
+  },
+  {
+   "grade": "5.10a",
+   "notes": "Climb past two bolts to reach a crack. At the third bolt, traverse right and follow easier cracks to the anchor. Pitches 1 and 2 can each be rappelled with a 70 m rope. Short runouts and some poor rock.",
+   "pitch": "2"
+  },
+  {
+   "grade": "5.10a",
+   "notes": "The long bolted pitch. A hard start for about the first 20 ft, then moderate 5.7–5.8 face and slab climbing to a tree anchor. Inspect the webbing at the tree before trusting it.",
+   "pitch": "3",
+   "anchor": "tree"
+  },
+  {
+   "grade": "5.7",
+   "notes": "Enjoyable cracks graded 5.6–5.7 lead to the top. Belay from a gear anchor or a tree. To descend, scramble back to the top of pitch 3 and rappel the route.",
+   "pitch": "4"
+  }
+ ],
+ "rappel_detail": null,
+ "climbing_route": null,
+ "fa": "Thad Nelson & Joe Wiederhold, August 2011",
+ "areas": {
+  "name": "Le Petit Cheval",
+  "parent_id": "wa_sub_wapass"
+ },
+ "parent_area": "Washington Pass"
+}

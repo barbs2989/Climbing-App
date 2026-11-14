@@ -1,0 +1,87 @@
+{
+ "or_rat_cave": {
+  "_expect": {
+   "name": "Rat Cave",
+   "region": "Oregon"
+  },
+  "blurb": "Rat Cave is a small, tucked-away sport crag in the Portland and Columbia Gorge region of Oregon, sitting close to sea level. It holds about twenty bolted lines and every one of them is hard: roughly a third are in the 5.12 range, most of the rest are 5.13, and a handful reach 5.14. The walls are steep to strongly overhanging, so the climbing is powerful, pumpy and heavy on sequence-solving, and the grades tend to feel stiff. Some of the rock is loose, so wear a helmet and avoid yanking on questionable holds. The lines mostly stay dry in a rain shower but can seep through winter and spring. This is a spot for strong, patient climbers, not a beginner venue.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105878082/rat-cave",
+    "https://www.mountainproject.com/route/105878116/tuffnerd?print=1"
+   ]
+  }
+ },
+ "or_2_windfall_wall": {
+  "_expect": {
+   "name": "Windfall Wall",
+   "region": "Oregon"
+  },
+  "blurb": "Windfall Wall is a basalt column wall along the Lower Gorge's eastern side at Smith Rock in central Oregon, easy to pick out from across the Crooked River. Of its twenty routes, most are trad and a few are bolted, spanning 5.8 to 5.12 with the heaviest concentration in the 5.10 and 5.11 range. Many lines are long: they carry on beyond the columns into the faces higher up, and some wander, so bring a full rack and a few extra alpine draws. Expect a long walk in along the river to reach it. Anyone comfortable on moderate-to-hard crack and column climbing will find plenty to do here, but it is not a beginner crag.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105865193/2-windfall-wall",
+    "https://chossclimbers.com/testing/us/oregon/smith-rock/windfall-wall-with-friends"
+   ]
+  }
+ },
+ "or_3_hand_job_wall": {
+  "_expect": {
+   "name": "Hand Job Wall",
+   "region": "Oregon"
+  },
+  "blurb": "Hand Job Wall is a basalt column wall set into the Lower Gorge's eastern wall at Smith Rock in central Oregon. Of its twenty routes, seventeen are trad and three are bolted, mostly decent moderate lines. Grades start around 5.7 and top out at 5.12, with the bulk between 5.8 and 5.11. Unlike the neighboring Windfall Wall, these columns do not run all the way to the rim. There is a 5.9 off-width that wants cams larger than a number 4, so bring big gear if you plan to lead it. The hike in is long, which makes this a wall for climbers who like to earn their moderates.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105865164/hand-job-wall",
+    "https://chossclimbers.com/testing/us/oregon/smith-rock/hand-job/"
+   ]
+  }
+ },
+ "or_moondial_the": {
+  "_expect": {
+   "name": "Moondial, The",
+   "region": "Oregon"
+  },
+  "blurb": "The Moondial is a steep sport crag in the Cane Creek area of Oregon's Willamette Valley, built from high-friction brecciated rhyolitic tuff. All twenty routes are bolted, and the grades lean hard: most sit at 5.12 and 5.13, a couple reach 5.14, and only a few easier lines fill in below 5.11. The climbing is cave-style, on pseudo-tufa with plenty of pinches, and rewards endurance and good flow over single hard moves. The crag is consistently shaded and a lot of it stays dry when it rains. Ledges with fixed handlines lead to the main cave, with a short fourth-class scramble. Falling trees, loose rock and ash are hazards, so wear a helmet. It is not a crag for kids or dogs.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/121900292/the-moondial",
+    "https://mountainproject.com/route/122370531/never-forever?print=1"
+   ]
+  }
+ },
+ "or_wombat_the": {
+  "_expect": {
+   "name": "Wombat, The",
+   "region": "Oregon"
+  },
+  "blurb": "The Wombat is the most prominent block above the Marsupials in Smith Rock State Park, central Oregon, with a big southwest-facing wall. Roughly two thirds of its twenty routes are bolted and the rest are trad, including a few multi-pitch lines. The grades are mostly 5.10 to 5.13, concentrated around 5.11 and 5.12, with just a scramble and one easy 5.7 at the bottom end, so it suits climbers already comfortable on harder terrain. Getting up here means a long uphill hike on climber trails above the valley floor, which tends to keep it off the beaten track. Bring a full day of water and energy.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105916774/the-wombat",
+    "https://www.thetopo.com/crags/smith-rocks/topos/the-wombat"
+   ]
+  }
+ },
+ "pa_fins_the": {
+  "_expect": {
+   "name": "Fins, The",
+   "region": "Pennsylvania"
+  },
+  "blurb": "The Fins is a small bouldering area on Rocky Ridge in south-central Pennsylvania, one of several boulder groups inside a county park. The rock is rough conglomerate, and the main cluster is made up of a few thin, fin-shaped boulders. Problems are mostly on the easy side: about a dozen at V0, a handful of VB, a few at V1 and V2, and a single V3, so it works well for beginners, warm-ups and families climbing together. Reaching it takes a hike of around a mile from the park lots on creek-side trails, with a creek crossing near the boulders.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118849136/the-fins",
+    "https://mountainproject.com/area/118837671/rocky-ridge"
+   ]
+  }
+ },
+ "_skipped": {
+  "pa_trailside": "no fetched page about Trailside itself (only the parent section page and a general Safe Harbor page that does not mention it)",
+  "pa_main_area_3": "could not fetch a second page about Emmaus Boulders / Main Area (only one Mountain Project page; others returned 503 or did not mention it)"
+ },
+ "_conflicts": {
+  "or_moondial_the": "stored aspect N; the area page describes consistent shade but a photo caption mentions a SW face (https://www.mountainproject.com/area/121900292/the-moondial)"
+ }
+}

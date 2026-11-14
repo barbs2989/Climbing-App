@@ -1,0 +1,163 @@
+{
+  "area_id": "wa_gilbert_peak",
+  "routes": [
+    {
+      "route_id": "wa_gilbert_peak_conrad_glacier",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Mountaineers/Mazamas route listings give a broad Apr-Oct glacier window; SummitPost June-Nov; late July-August is the usual advice for a snow-free upper basin; our two logged Conrad Glacier ascents are Jul and Aug. Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3371659",
+          "verdict": "unsure",
+          "why": "Logged only as \"Surprise Lake\" (Oct 6); start is Conrad Meadows but nothing names the Conrad Glacier, and the line goes via the Warm Lake / southeast side, not the north-side glacier."
+        },
+        {
+          "aid": "3366743",
+          "verdict": "different",
+          "why": "Logged Southeast Ridge via Warm Lake; not the Conrad Glacier."
+        },
+        {
+          "aid": "2259534",
+          "verdict": "different",
+          "why": "Logged as the Warm Lake / Klickton ridge line, not the Conrad Glacier."
+        },
+        {
+          "aid": "1950216",
+          "verdict": "different",
+          "why": "Logged as the Klickton divide line from Warm Lake; a snow ridge walk, not the Conrad Glacier."
+        },
+        {
+          "aid": "3328439",
+          "verdict": "different",
+          "why": "Report describes Surprise Lake, the flat south of Warm Lake and the ridge: the southeast ridge line."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_gilbert_peak_meade_glacier",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Mountaineers lists Apr-Oct, SummitPost Jun-Nov; reporters advise late July-August so the upper snowfield is gone (early July basin still all snow). Stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3371659",
+          "verdict": "unsure",
+          "why": "Logged \"Surprise Lake\", Oct 6; no report text, line heads for Warm Lake / southeast ridge rather than the Meade Glacier basin. Cannot show it crosses the glacier."
+        },
+        {
+          "aid": "3353575",
+          "verdict": "different",
+          "why": "Report says via the Warm Lake approach, straightforward hike and brief scramble: the southeast ridge, not the glacier."
+        },
+        {
+          "aid": "3366743",
+          "verdict": "different",
+          "why": "Logged Southeast Ridge, report says the south ridge nearly has a trail to the summit."
+        },
+        {
+          "aid": "2259534",
+          "verdict": "different",
+          "why": "Warm Lake / Klickton ridge line."
+        },
+        {
+          "aid": "1950216",
+          "verdict": "different",
+          "why": "Klickton divide with crampons along the ridge, no glacier."
+        },
+        {
+          "aid": "1071182",
+          "verdict": "offseason",
+          "why": "November ascent."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_gilbert_peak_west_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "SummitPost route page gives roughly Jun-Nov with crampons needed on frozen snow in early season; logged West Route ascents cluster Jul-Aug (Jun 1, Jul 3, Aug 1, Oct 1). Stored Jul-Sep kept."
+      },
+      "track": {
+        "aid": "2919340",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged \"W Route\" from the Snowgrass trailhead (start 136 m from our pin), report describes the 7,200 ft saddle, the rib-by-rib goat-track traverse and the 7,600 ft saddle matching our Goat Ribs text; summited Jul 26 2025, round trip."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2573697",
+          "verdict": "same",
+          "why": "Jul 15 2024, Snowgrass Trail 96 / Bypass 97 / west scramble, complete and summited; equally valid, 2919340 preferred as explicitly named W Route and newer."
+        },
+        {
+          "aid": "2967874",
+          "verdict": "same",
+          "why": "Aug 31 West Route but start is 5 km from our pin (partial record), so not a complete track."
+        },
+        {
+          "aid": "3328565",
+          "verdict": "not-summited",
+          "why": "Turned back."
+        },
+        {
+          "aid": "2893643",
+          "verdict": "not-summited",
+          "why": "Turned back from Snowgrass in early July."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Above the 7,200 ft saddle expect a faint goat track over at least four ribs, each a short drop and regain, until the ground eases near 7,600 ft.",
+          "aids": [
+            "2919340"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "From the 7,600 ft saddle the summit is farther than it looks, with two more class 3 steps still to climb.",
+          "aids": [
+            "2919340"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 7,
+          "text": "Mid-July can leave a steep snowfield across the upper crux; one party downclimbed class 4 beside it and sidehilled over once low enough.",
+          "aids": [
+            "2573697"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Three listed routes only; the Conrad/Meade glacier routes have no matching track. The most-logged line from Conrad Meadows (via Surprise Lake, Warm Lake, then the southeast ridge / Klickton divide; tracks 2259534, 1950216, 3366743, 3353575, 3328439) is not in allRoutesOnPeak under any name; it looks like a missing standard route, class 2-3, roughly Jun-Oct."
+}

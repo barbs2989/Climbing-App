@@ -1,0 +1,90 @@
+{
+ "ok_crag_the": {
+  "_expect": {
+   "name": "Crag, The",
+   "region": "Oklahoma"
+  },
+  "blurb": "A compact cluster of tall granite boulders on the eastern edge of Medicine Park, out past the hill known as Bear Mountain. Most of what you will find here are highballs, so spotters and pads matter more than usual. The list is 15 boulder problems plus a single trad line at 5.9, and the difficulty stays friendly: mostly V0 to V1, a few V2s and V3s, and nothing harder. That makes it a decent stop for newer boulderers who are comfortable with height. It is a small area, best treated as a short session rather than a full day.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118332190/the-crag",
+    "https://www.mountainproject.com/area/118332146/medicine-park"
+   ]
+  }
+ },
+ "ok_lair_the": {
+  "_expect": {
+   "name": "Lair, The",
+   "region": "Oklahoma"
+  },
+  "blurb": "A small boulder pocket tucked into the west side of Chandler Park, below the community center on the Tulsa side of the Arkansas River. The limestone here holds 15 problems, one of them a top-rope line, with the bulk sitting between V2 and V3 and a couple of harder tests in the V7 range. A steep arete problem on matched crimps is the local standout. Expect polished holds, as at the rest of the park, and a hot, buggy summer. You reach it by following the Lost City trail down from the main stairs and through the narrows, so it works well as an add-on to a circuit on the main wall.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/117983292/the-lair",
+    "https://www.mountainproject.com/area/105929121/autobahn-area-main-chandler",
+    "https://www.mountainproject.com/area/105915445/chandler-park"
+   ]
+  }
+ },
+ "ok_gamma_wall": {
+  "_expect": {
+   "name": "Gamma Wall",
+   "region": "Oklahoma"
+  },
+  "blurb": "A sandstone bouldering wall in Osage Hills State Park, north of Tulsa. It lines the Creek Loop Trail on its northern edge, and most of the problems can be spotted from the path, so scouting is easy. There are 16 boulder problems with a wide spread: a handful of easy V1 to V3 lines, a solid middle of V4 to V6, and several hard problems at V8 and V9 that are the real draw. The park's bouldering as a whole leans toward the moderately hard, though this wall has enough easier climbs to give a mixed group something to do.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106117127/gamma-wall",
+    "https://www.mountainproject.com/area/106088693/osage-hills-state-park"
+   ]
+  }
+ },
+ "ok_vice_grips": {
+  "_expect": {
+   "name": "Vice Grips",
+   "region": "Oklahoma"
+  },
+  "blurb": "A bouldering-only pocket along Avery Drive, west of Chandler Park near Sand Springs and Tulsa, across the road from the Arkansas River. Fifteen problems are on offer, running from a few V1 to V4 lines up to a cluster of V5s and several V6 to V7 problems, with a top end near V8. Sharply overhanging aretes are a feature. The Avery Drive cliffs overall are short, with plenty of highballs and pumpy traverses. The rock sits a few hundred yards back in the woods, a walk south from the road, so it feels more secluded than the nearby park.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107286199/vice-grips",
+    "https://www.mountainproject.com/area/107286155/avery-drive"
+   ]
+  }
+ },
+ "ok_wintergarden_wall": {
+  "_expect": {
+   "name": "Wintergarden Wall",
+   "region": "Oklahoma"
+  },
+  "blurb": "A short granite wall in the West Horizon Pass area of Charon's Gardens, deep in the Wichita Mountains Wildlife Refuge. A tree-filled gully splits the face; most lines start from a ledge to its right and a few from lower on the left. Fifteen routes, almost all trad with a couple of bolted ones, run from easy 5.6 to 5.11, with the largest share around 5.8 and 5.9. The rock ranges from smooth and solid to coarse crystalline, which can chew up hands. There is no maintained trail, and the walk in is rough: bushwhacking, boulder hopping and scrambling, unpleasant in summer.",
+  "parking_note": "Leave the car at the Treasure Lake lot on the south side of Charon's Gardens; the walk to the pass begins from there.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105884037/wintergarden-wall",
+    "https://www.mountainproject.com/area/106426780/west-horizon-pass"
+   ]
+  }
+ },
+ "ok_parking_lot": {
+  "_expect": {
+   "name": "Parking Lot",
+   "region": "Oklahoma"
+  },
+  "blurb": "A boulder field in the Charon's Gardens section of the Wichita Mountains Wildlife Refuge, in southwest Oklahoma near Lawton. Sixteen problems are logged, and the range is wide: several easy ones at VB to V1, a good number of V2 to V3, and a few steeper tests at V5 and V7. It is a low-commitment stop compared with the long scrambling approaches elsewhere in the gardens. The wider area climbs year-round, though south-facing rock is best avoided in summer and north-facing rock in winter.",
+  "review": {
+   "sources": [
+    "https://thetopo.com/crags/wichita-mountains-wildlife-refuge-wmwr/topos/parking-lot-boulders",
+    "https://www.mountainproject.com/area/106426609/charons-gardens"
+   ]
+  }
+ },
+ "_skipped": {
+  "ok_lower_troop": "no fetched page about Lower Troop itself; only the parent Autobahn Area and Chandler Park pages mention it",
+  "ok_the_hangar": "no fetched page about The Hangar itself; only the McGee Creek parent page lists it (other Hangar pages found are in West Virginia)"
+ },
+ "_conflicts": {
+  "ok_vice_grips": "Stored rock is sandstone but the Avery Drive page (https://www.mountainproject.com/area/107286155/avery-drive) describes short limestone cliffs; rock left out of the blurb.",
+  "ok_wintergarden_wall": "Aspect disagrees: the wall page (https://www.mountainproject.com/area/105884037/wintergarden-wall) puts it on the north side of the pass, the West Horizon Pass page (https://www.mountainproject.com/area/106426780/west-horizon-pass) says south-facing; no aspect written."
+ }
+}

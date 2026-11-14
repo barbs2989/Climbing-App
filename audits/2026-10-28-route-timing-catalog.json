@@ -1,0 +1,352 @@
+{
+ "date": "2026-10-28",
+ "what": "Catalog pass on the owner's note that route totals still read short (rests and breaks). After the 515-route re-measure (#2838, audits/2026-10-25-route-timing-rest-remeasure.json) and the lone-leg floor (#2859), every WA alpine, mountaineering and scrambling route with a stored or modelled time that the 2026-10-08 run never researched (311) was researched online in 20 batches, and each row more than 20% short of the evidence was read on its own.",
+ "rule": [
+  "Same as audits/2026-10-08-route-timing-repairs.json: a published figure for this route and trailhead wins (inside a range the leg stands); otherwise >= 3 timed reports or 2 that agree within 15%.",
+  "Only a leg the Planner shows > 20% short moves; a stored total is kept where the evidence allows.",
+  "A leg is evidence when its two ENDS match this route's (a shared approach, or a shared descent named in the row's own descent_text). A car-to-car time borrowed from another route is not evidence.",
+  "A descent or approach stored ALONE is a safe floor since #2859; the climb stays unknown and the total keeps its '>='.",
+  "Every repair previewed through lib/planTimes.js (scripts/oneoff/preview-timing-fixes.mjs), dry-run, then written compare-and-set by scripts/oneoff/apply-timing-fixes.mjs with a rollback file, and re-run to reconcile (ALREADY)."
+ ],
+ "counts": {
+  "researched": 311,
+  "clearEvidenceBar": 75,
+  "flaggedShortOver20pct": 20,
+  "repaired": 15,
+  "writes": 15
+ },
+ "repairs": [
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "round": 1,
+   "before": [
+    null,
+    null,
+    3,
+    3
+   ],
+   "after": [
+    null,
+    null,
+    4,
+    4
+   ],
+   "why": "Stored 3 hr ran summit to Boston Basin only; the route page puts summit to car at about 4 hr (about 3 to the basin, 1 more to the car). Added the 1 hr walk out; descent and total 3 -> 4.",
+   "rollback": "scripts/rollback-timing-fixes-1793204678914.json"
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "round": 1,
+   "before": [
+    2,
+    2.5,
+    null,
+    11
+   ],
+   "after": [
+    2,
+    4,
+    4,
+    11
+   ],
+   "why": "Published route profile: trailhead to climb 2-3 hr, climb 4, summit to car 4, car to car 11; a 2006 report took 4 hr 7 min base to summit and 11.6 car to car. Stored climb 2.5 -> 4 (37% short), missing descent -> 4; approach 2 (inside 2-3) and total 11 kept.",
+   "rollback": "scripts/rollback-timing-fixes-1793204678914.json"
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "round": 2,
+   "before": [
+    null,
+    5,
+    null,
+    null
+   ],
+   "after": [
+    6,
+    5,
+    5,
+    16
+   ],
+   "why": "Only a 5 hr summit leg was stored, with no distance, so the Planner walked no approach and gave 3.3 hr summit to car. The route returns to the Inspiration Glacier camp the standard East Ridge uses, so its legs share that route’s ends: approach 6 hr as stored on every Eldorado route from this camp, summit to car 5 hr (13 timed standard-route reports, median 5.1). Full set: 6 / 5 / 5 / 16.",
+   "rollback": "scripts/rollback-timing-fixes-1793205474237.json"
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "round": 2,
+   "before": [
+    8,
+    null,
+    null,
+    17
+   ],
+   "after": [
+    8,
+    5.3,
+    5,
+    18.3
+   ],
+   "why": "Descends the East Ridge (its own descent text), whose 13 timed reports put summit to car at a 5.1 hr median; the Planner gave 3.7 hr, the 0.41 share of a derived 9 hr leg. Descent set to 5; the way up kept at the 5.3 hr it already read (0.59 of 9), so the start does not move later; total 17 -> 18.3.",
+   "rollback": "scripts/rollback-timing-fixes-1793205474237.json"
+  },
+  {
+   "id": "wa_golden_horn_north_face",
+   "round": 3,
+   "before": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "after": [
+    null,
+    null,
+    5.75,
+    null
+   ],
+   "why": "Descends the Southwest Route back to Snowy Lakes and out to Rainy Pass (its own descent text); that route’s four timed reports put summit to car at a 5.75 hr median, against 1.7 hr walked from this row’s inputs. Descent stored alone, so it floors the walk model; the climb stays unknown (≥).",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_golden_horn_northeast_arete",
+   "round": 3,
+   "before": null,
+   "after": [
+    null,
+    null,
+    5.75,
+    null
+   ],
+   "why": "Ends on the summit and comes off by the Southwest Route (its own descent text): four timed reports, summit to car 5.75 hr median, against 2.2 hr walked. Descent stored alone; the climb stays unknown.",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_mount_adams_northwest_ridge",
+   "round": 3,
+   "before": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "after": [
+    null,
+    null,
+    5,
+    null
+   ],
+   "why": "Descends the North Ridge to high camp and Killen Creek (its own descent text); the North Ridge’s route figures put summit to trailhead at 5 hr (the Adams Glacier page from the same trailhead gives 5-8), against 2.1 hr walked. Descent stored alone.",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_mount_chaval_north_ridge",
+   "round": 3,
+   "before": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "after": [
+    null,
+    null,
+    4.5,
+    null
+   ],
+   "why": "Parties traverse off and descend the West Route (its own descent text), whose five timed reports put summit to car at 4.5 hr via Bluff Lake, against 0.8 hr walked. Descent stored alone.",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "round": 3,
+   "before": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "after": [
+    null,
+    null,
+    5.6,
+    null
+   ],
+   "why": "Comes down the Silver Star Glacier to Burgundy Col and the highway (its own descent text), the standard route’s descent: eight timed reports, summit to car 5.6 hr median, against 2.1 hr walked. Descent stored alone.",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_mount_spickard_silver_glacier",
+   "round": 3,
+   "before": [
+    null,
+    3.5,
+    null,
+    null
+   ],
+   "after": [
+    null,
+    3.5,
+    6.5,
+    null
+   ],
+   "why": "Returns by Silver Lake and the Depot Creek trail, as the standard route does; its timed reports put summit to car at 6.5 hr (summit to Ouzel Lake camp 1, camp to trailhead 5.5), against no descent at all. Descent stored beside the 3.5 hr summit leg.",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_austera_peak",
+   "round": 3,
+   "before": [
+    4,
+    1,
+    4,
+    null
+   ],
+   "after": [
+    4,
+    1,
+    7,
+    null
+   ],
+   "why": "Reverses the route through Klawatti Col and across the Inspiration Glacier to the Eldorado trail; three timed reports of the route put summit to car at 7 hr, against the stored 4 (43% short). Descent 4 -> 7; approach and climb kept.",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "round": 3,
+   "before": [
+    8.5,
+    12,
+    8,
+    28
+   ],
+   "after": [
+    8.5,
+    12,
+    14,
+    34.5
+   ],
+   "why": "Shares the Northeast Buttress descent (Southwest Couloir, then out to Bridge Creek); six timed reports of that descent put summit to car at a 14 hr median, and the Buttress row already stores 15. Descent 8 -> 14, total 28 -> 34.5; the approach section is set to its own 8.5 hr leg (it read 8).",
+   "rollback": "scripts/rollback-timing-fixes-1793205776219.json"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "round": 4,
+   "before": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "after": [
+    6.5,
+    null,
+    6.5,
+    null
+   ],
+   "why": "No times were stored and no distance, so the Planner gave 6.8 hr car to car. Three timed reports put Goodell Creek to the Terror Basin camp at 6.5-7 hr and camp back to the trailhead at 4-7 hr (median 6.5). Approach 6.5 and descent 6.5 stored alone, as floors; the climb from camp has one report (about 5 hr), so it stays unknown.",
+   "rollback": "scripts/rollback-timing-fixes-1793205870265.json"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "round": 4,
+   "before": [
+    2.5,
+    null,
+    null,
+    17
+   ],
+   "after": [
+    6.5,
+    null,
+    null,
+    21
+   ],
+   "why": "Stored approach 2.5 hr against 6.5-7 hr from Goodell Creek to the Terror Basin camp in three timed reports (60% short). Approach 2.5 -> 6.5; the stored climb-and-descent (total less approach, 14.5 hr) is kept, so total 17 -> 21.",
+   "rollback": "scripts/rollback-timing-fixes-1793205870265.json"
+  },
+  {
+   "id": "wa_witches_tower_southwest_corner",
+   "round": 5,
+   "before": [
+    7,
+    2.5,
+    1,
+    null
+   ],
+   "after": [
+    7,
+    3.5,
+    4.5,
+    15
+   ],
+   "why": "The route's own published profile gives trailhead to camp 6-8 hr, camp to summit 2-3, summit back to camp 1, camp to trailhead 4-5. The stored descent of 1 hr was only summit to camp, so the walk out was missing (Planner 2.6 hr summit to car). Re-filed in the camp shape the Planner reads: approach 7 (kept), summit day from camp and back 3.5 (2.5 up + 1 down), camp to car 4.5, total 15.",
+   "rollback": "scripts/rollback-timing-fixes-1793206285431.json"
+  }
+ ],
+ "left": [
+  {
+   "route": "Golden Horn (walk inputs)",
+   "why": "Its walk inputs leave out the Rainy Pass approach, so the walk model is short; the fix is to the inputs, not the stored time, and is owner-reviewed."
+  },
+  {
+   "route": "Mount Rahm South Side",
+   "why": "Stored 4 hr whole day is really camp to summit; published car to summit is 6-7 hr. Re-filing changes the outing's shape, so held."
+  },
+  {
+   "route": "Johannesburg NE Rib 1951 (wa_johannesburg_mountain_northeast_rib_1951_route)",
+   "why": "One clean report only."
+  },
+  {
+   "route": "Nooksack Tower (three rows)",
+   "why": "Three rows with confused identity; the South Face descent reports run 10.5-11.5 hr against a stored 4. Identity first, owner-reviewed."
+  },
+  {
+   "route": "Klawatti Peak North Ridge (wa_klawatti_peak_north_ridge)",
+   "why": "Only col-to-summit legs are published; no car-to-car evidence."
+  },
+  {
+   "route": "Mount Blum",
+   "why": "A stored total of 20 is ignored beside a summit leg of 6; needs reading as a whole, not a leg fix."
+  },
+  {
+   "route": "Liberty Crack (wa_liberty_crack)",
+   "why": "The stored 10 hr likely came from the 2017 report, which then checks nothing."
+  },
+  {
+   "route": "Colchuck Balanced Rock and Concord Tower lines",
+   "why": "Accendo Lunae, Full Tilt, Leche la Vaca, Milk n Honey, Rikki Tikki Tavi, Scarface, Colchuck Balanced Rock col approach, Concord North Face and its variation, Rapple Grapple: only BORROWED car-to-car times from other routes (West Face, Let it Burn). The shared descent they do support already matches the Planner."
+  },
+  {
+   "route": "Mount Shuksan NW Arete",
+   "why": "The reference time includes breaking camp."
+  },
+  {
+   "route": "Ptarmigan Ridge finish",
+   "why": "Reports start from a different trailhead."
+  },
+  {
+   "route": "Cathedral Rock; Mount Baker Squak Glacier (wa_mount_baker_squak_glacier)",
+   "why": "Inside their published ranges."
+  },
+  {
+   "route": "Mount Washington, Olympics (wa_mount_washington_olympic_standard)",
+   "why": "Two club reports at 7-7.5 hr car to car against 5, but both read only as search snippets; held rather than written."
+  },
+  {
+   "route": "Mount Stuart West Ridge (wa_mount_stuart_west_ridge)",
+   "why": "Five reports mix the Longs Pass and Esmeralda trailheads; the three Longs Pass parties median 14 hr, 14% over the stored 12, under the 20% bar."
+  },
+  {
+   "route": "Whitehorse NW Shoulder (wa_whitehorse_mountain_nw_shoulder)",
+   "why": "Two agreeing reports 15.95 hr vs 13: 18.5% short, under the bar."
+  },
+  {
+   "route": "Hurry-Up Peak South Ridge (wa_hurry_up_peak_south_ridge)",
+   "why": "Its only published figure is Magic Mountain's, a different summit."
+  },
+  {
+   "route": "Clean Break (wa_clean_break)",
+   "why": "Planner 11.9 hr is inside the published SuperTopo ranges and within 20% of the timed reports."
+  }
+ ],
+ "researchFiles": "Per-batch research JSON lived in the session's job folder and is not kept; the evidence behind each repair is summarised in its `why`."
+}

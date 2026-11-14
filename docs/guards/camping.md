@@ -7,6 +7,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
+  - **Case 20 (0358)**: `campReportsOf` counts a report once per camp, by name case aside, never a near-miss (`Wing Lake camp` is not `Wing Lake`); an unlisted camp comes back in `extra`; and both reach the rendered Planner. Injection-tested: dropping `activity={activity}` from the mount fails both render assertions.
   - **The mount has already been silently lost once**, which is why this is a script and not the
     comment it replaces. It lived on a dense line, main changed the same line, and the merge kept
     main's copy — leaving the panel **defined and rendered nowhere**. Nothing caught it:
@@ -47,6 +48,30 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       field as serialising to a string, so a new builder type must be added to its `STRUCTURED`
       set; until `bivy` was, it correctly reported *"reader discards a string, and CONV has no
       `bivy` entry"*. Keyed on the TYPE, so the next builder field is exempt automatically.
+    - **THE GROUPS ARE GONE: ONE LIST IN WALKING ORDER (owner, 2026-10-24).** The entry below is
+      history. The owner asked for camps "ordered by where people would camp if they were doing the
+      whole route", and grouping by USE contradicts that — a `main` high camp printed above the
+      valley campground a party sleeps at first. `campRouteOrder` (inside `campSites`) orders by
+      trail distance, slots a distance-less site in by height before the first distanced site above
+      it, and puts a site with neither LAST rather than guessing; `campOrderNote` says so on screen
+      and names how many could not be placed. The role survives as a tag (`campRoleLabel`) whose
+      words are still the form's options — section 12a now matches the option against the tag, and
+      the unsorted rule below still holds: no role, no tag. Section 12 pins the order (pure and
+      rendered), the absent headings, the tags and `campFromPrev` (the stretch from the camp
+      before, FarOut's tent-site number, only from two known distances). Known limit: height
+      ordering assumes the walk in goes UP; a traverse that camps on its descent side would list
+      that camp too early when it has no distance.
+    - **A SITE WITH NO ROLE GETS ITS OWN GROUP, AND THE FORM SPEAKS THE PAGE'S WORDS (2026-10-14).**
+      #2339 cut the groups to WHERE MOST PARTIES SLEEP / OTHER OPTIONS and filed every unsorted site
+      (a pre-role contribution, or the form's *Not sure*) under OTHER OPTIONS, whose blurb — *"a slower
+      pace, bad weather or an emergency"* — was researched for the `route` role only. So a site nobody
+      had sorted read as a researched fallback. It now sits last under **NOT YET SORTED**, with a blurb
+      that claims neither a use nor a provenance ("added by climbers" is not on the row). The form's
+      role options read *Where most parties sleep* / *Other option (slow day, weather, emergency)* /
+      *Not sure*; they read *Main camp* / *On the route* before, a second vocabulary for the same
+      choice. Sections 12 and 12a pin both, 12a by reading the `<select>` from source (the form is a
+      modal a static render does not open) and matching each option against the group `campGroups`
+      actually files that role under. Proven against the pre-fix file: 5 failures.
     - The guard asserts the **contributed shape** renders, which is NOT the enrichment shape:
       `structuredVal` emits every text key as a string (empty when left blank) where enrichment
       omits keys it has nothing for. It also asserts blank strings do not become empty chips —
@@ -884,3 +909,74 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - Section 11 pins the rule in **both** directions, because a rule that only ever ADMITS is
       indistinguishable from having no rule: trad on a peak renders, trad on a crag does not.
       Injection cases 9 and 10 are the pair (revert the gate; make `climbsAPeak` always true).
+- **`audit:camp-pins`** asks the owner's question of 2026-10-25 — *"Are all campgrounds waypoints
+  there and on the route track for all routes?"* — through the panel's **own** `campSites()`
+  (bundled with esbuild, the way `check:camping` imports it), never a copy of its pairing rule.
+  Per CAMPING & BIVY row: is a Campsite **pin** behind it, does the pin have a **coordinate**, and is
+  it within **500 m** (`audit:waypoints`' `WP_TOL`) of the route's **recorded** track
+  (`recordedTrackPts`)? Read-only, anon key; `--json` also carries every Campsite pin it read, which
+  the solver uses as its donor set. Report-only; not a build gate.
+  - **The first census (2026-10-28), 774 routes, 2,003 listed camps:** 375 backed by a pin (125 on
+    their track, 167 on routes with no recorded track, **48 with no coordinate** — still stamped
+    *"Marked on the track"*, because `onTrack` is `!!pin` — and 35 more than 500 m off), **1,028
+    single-place camps with no pin**, and **600 that cannot be one pin** (`camp-names.mjs`
+    `unresolvable()`: a dispersed zone, or two places in one name). The 600 are counted, never
+    "missing": a pin for a zone invents precision the record does not carry.
+  - **The chip now needs a coordinate.** `campSites` sets `onTrack` only when the pin `pointOf()` can
+    draw, so neither a coordinate-less pin's own row nor a site it backs says *Marked on the track*, and
+    neither counts toward the intro's "also a pin under ROUTE TRACK". `check:camping` section 8b pins
+    both; injection (put back `!!p` / `true`) fails both.
+  - **A camp BELOW its trailhead is reported ROADSIDE, not off-track.** It is a valley car-campground
+    you drive to (the 72% roadside-vocabulary measurement above); the walking track never passes it.
+  - **A "track" of fewer than two usable points is no track.** The first run measured a pin as
+    *Infinity* m off one (`wa_mount_adams_mazama_glacier_headwall`).
+  - **Its reads are ids first, columns by primary key.** One statement selecting `bivy`+`waypoints`
+    for every match hit the statement timeout whenever a dozen sessions shared the database.
+- **`scripts/oneoff/add-camp-pins.mjs`** is the repair half: it pins each camp it can PROVE and
+  lists the rest with the reason. **No coordinate is ever computed** — nothing snapped onto a track,
+  spaced between pins or derived from a height (the 427 interpolated pins this catalog already
+  repaired are why). A candidate comes from, in this order: an **official** camp point (NPS Olympic
+  wilderness camps KML, NPS North Cascades `ncampsp1`, USFS INFRA recreation sites — the agency that
+  issues the permit is the best record of where the camp is), a surveyed **donor** Campsite pin for
+  the same camp on a nearby route (name, or `samePlaceCamp`), an **OSM** feature by the camp's own
+  name (the `camp-names.mjs` gates plus an EXTENT gate: wider than 1 km has no point that is the
+  camp), **USGS GNIS** (point-like classes only, ±200 ft, never for a feature OSM refused for its
+  shape — Waptus Lake, 2 km long, came back through GNIS on the first run), or **research**. Every
+  candidate must then fit the **ground** (USGS 3DEP within 400 ft of the stated height) and, on a
+  route with a recorded track, lie **on it** (500 m) unless roadside. `distMi` is written only when
+  MEASURED along a recorded track from the trailhead's position on it, using the FIRST pass of an
+  out-and-back recording.
+  - **Writes:** one PATCH per route returning only `id` (patchRow's full-row echo carried the gpx),
+    re-read first and skipped if another session changed the waypoints, rollback file first,
+    1.1 s pace, a read-latency check every 20 writes, and a **stop** on any write over 15 s — two
+    runs stopped themselves on 112 s and 151 s writes with a dozen sessions on the database.
+  - **Compare jsonb with keys SORTED.** Postgres stores object keys in its own order, so the first
+    reconcile reported all 93 written routes as "changed by someone else" — every one had landed.
+    And a route with NO waypoints stores `null`, not `[]`: twelve such routes were skipped three
+    passes running until the guard read `null` as empty (#2874).
+  - **Agency spellings, after the exact identity fails** (`variantKey`): "Mt" is "Mount", a possessive
+    "s" goes, a plural last word is made singular (never a "-ss" word) — "Lewis Meadows Camp" is NPS
+    "Lewis Meadow", "Andrews Pass" is GNIS "Andrew Pass". Official points and GNIS only.
+  - **A zone-worded name gets the agency's camp point or nothing.** `unresolvable()`'s ZONE words
+    ("meadows", "camps", "sites") flag "Glacier Meadows" and "Honeymoon Meadows", which ARE NPS camps,
+    so an exact (or variant) OFFICIAL match places them. Nothing else may: on the first variant run 15
+    of 22 donor matches were zone names ("Perfect Pass cross-country zone"), and copying one route's
+    spot in a zone to every route invents a precision no record holds.
+  - **Never solve from a stale census.** A timed-out audit left the previous JSON in place and the
+    next run began re-pinning camps the last batch had pinned. `apply.sh` (in the run dir) stops on a
+    failed audit, the solver refuses a census older than the newest rollback, never pins a camp a live
+    pin already carries under its own name, and the audit reports PINNED TWICE (0 after every batch).
+  - **The 32 OFF-THE-TRACK pins were triaged and NONE was wrong** (`scripts/oneoff/triage-offtrack-camp-pins.mjs`,
+    2026-10-28). A pin moves only when an independent record of the same camp (official camp point,
+    GNIS, the same camp pinned on another route) sits ON the recorded track and fits the ground at the
+    stated height. Result: 19 OTHER WAY IN — an independent record puts the camp exactly where the pin
+    is, so the recording takes another approach or the camp is the descent camp (Camp Schurman on
+    Ptarmigan Ridge); 12 UNRESOLVED — no independent record exists; 1 PROTECTED — moved from an NPS
+    point by the camp-location session (its write log, `~/dev/camp-audit-06856cffd7/writes.jsonl`,
+    is honoured as a source). Some OTHER WAY IN camps sit kilometres off (Deer Lake 8 km off Mount
+    Ferry's track, Luna Camp 5.6 km off Fury's): whether those routes should LIST them is a removal,
+    which is always the owner's call — reported, not acted on. Per-pin verdicts:
+    `offtrack-triage.json` in the run dir.
+  - **What stays unpinned, and why, is a file, not a count**: `remaining-camps.csv` in the run dir.
+    Of ~500 left, most are relative ("bench below the west face") with no published point; research
+    is near-exhausted (of 197 leftover names only 56 named a findable feature, all searched, 14 found).

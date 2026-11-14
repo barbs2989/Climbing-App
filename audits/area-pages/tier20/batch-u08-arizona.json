@@ -1,0 +1,54 @@
+{
+ "az_green_slabs_sw_face": {
+  "_expect": {
+   "name": "Green Slabs (SW Face)",
+   "region": "Arizona"
+  },
+  "blurb": "A roadside crag on the Catalina Highway in the Santa Catalina Mountains above Tucson, at a mid-level elevation of roughly 5,600 feet. It is mainly a trad venue, with a couple of bolted lines, and the grades run from easy fifth class up to the low 5.12s. Most of the 28 climbs sit between 5.6 and 5.9, which makes it a friendly place for newer leaders who can place their own gear. The wall faces southwest, catches shade early in the day and sunshine after, and stays pleasant on cool days. Trees break up the sun in places. It sees steady use without feeling packed, and the walk from the car is only a few minutes.",
+  "parking_note": "Pull off at mile marker 9.9 of the Catalina Highway, on the uphill (eastbound) shoulder, just short of where the road passes through a cut in the ridge. The crag is the formation touching the road.",
+  "approach": "A well-worn trail climbs northeast from the pullout and reaches the base of the wall in under five minutes.",
+  "approach_min": 5,
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105738050/green-slabs-sw-face",
+    "https://www.mountainproject.com/area/106822703/mount-lemmon-catalina-highway"
+   ]
+  }
+ },
+ "az_wall_of_the_marching_munchkins": {
+  "_expect": {
+   "name": "Wall of the Marching Munchkins",
+   "region": "Arizona"
+  },
+  "blurb": "A long cliff band at about 6,500 feet on Mount Lemmon, reached from the Rose Canyon lake area outside Tucson. This is a sport wall: nearly all of the 27 climbs are bolted, with a handful of trad lines. Grades start around 5.8 and reach 5.12, but the bulk fall in the 5.10 and 5.11 range, so it suits strong intermediates better than beginners. The face looks generally north along the ridgetop, with late-day sun swinging in from the west, so it works as a cooler choice in the warm months if you start early. It is a popular spot. Expect a short hike with some cairned trail and a brief descent to reach the base.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106124399/wall-of-the-marching-munchkins",
+    "https://www.mountainproject.com/area/105738203/munchkinland-area"
+   ]
+  }
+ },
+ "az_goosehead": {
+  "_expect": {
+   "name": "Goosehead",
+   "region": "Arizona"
+  },
+  "blurb": "A formation within the Windy Ridge sector of Mount Lemmon, beside the Catalina Highway north of Tucson at roughly 6,500 feet. The 28 climbs are split between sport and trad lines, with a lone aid route and a single boulder problem. Most routes sit in the 5.9 to 5.12 range, with a few harder sport lines above that, and a few easy trad pitches as well. Because of the elevation, summers run hot and winters turn cold, so spring and fall are the best times to visit. Roadside access keeps logistics simple.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106824304/5-windy-ridge",
+    "https://www.fs.usda.gov/r03/coronado/recreation/mt-lemmon-climbing-areas"
+   ]
+  }
+ },
+ "_skipped": {
+  "az_cholla_mountain": "only one page found describing it as a climbing area",
+  "az_6_swallow_wall": "only Mountain Project pages found; no independent second page for the wall itself",
+  "az_main_wall_left": "only Mountain Project pages found describing it; no confirmed independent second page",
+  "az_insomnia_canyon": "climbing area pages found are Mountain Project only; other hits describe the canyoneering route",
+  "az_striped_wall_area": "only Mountain Project found; also under Mormon Trail closures-in-effect access warning"
+ },
+ "_conflicts": {
+  "az_wall_of_the_marching_munchkins": "stored aspect W, but https://www.mountainproject.com/area/106124399/wall-of-the-marching-munchkins says the face looks generally north with late-day western sun"
+ }
+}

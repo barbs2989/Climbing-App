@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Drives the real app in a real browser and asserts things that must be true on
 // every screen. Complements scripts/check-undefined-refs.mjs: that one catches
 // unbound identifiers at build time, this one catches what only shows up once
@@ -38,7 +39,7 @@ import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-set
 import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
 import { tapByName as tapByNameOn } from "./lib/tap-by-name.mjs";
 import { checkScreenCounts } from "./lib/screen-counts.mjs";
-import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
+import { MENU_SCREENS, openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -63,12 +64,18 @@ let ROUTE = argOf("--route") || (USE_DB ? "North Ridge (Complete)" : "West Slabs
 let STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 
 // A screen with less text than this rendered nothing useful -- the blank-screen signal.
-// "Crew:Groups" is legitimately the shortest screen in the app: the demo has joined no
-// groups, so it is a heading, one explanatory line and two CTAs -- a correct and complete
-// empty state, measured at 353 chars. The floor is set just under that rather than at the
-// 400 default, which would fail a working screen. It stays a real floor: the nav chrome
-// alone is ~90 chars, so a blank content area still trips it.
-const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, "Crew:Groups": 300 };
+// The GROUPS screen and its tabs are legitimately short: the demo has joined no groups, so a
+// tab can be its header, the tab strip and one explanatory line -- a correct and complete
+// empty state. (When Groups was a Crew sub-view it measured 353 chars.) The floor is set under
+// that rather than at the 400 default, which would fail a working screen. It is a weak floor
+// on its own -- the header and strip alone are ~250 -- so every tab but For you also carries a
+// LANDMARK below that only its own body renders, and the twin rule catches a tab that
+// silently renders a sibling.
+// 2026-10-24: the Groups header's line under the title went from 100 characters to 45 (every header
+// was cut to one short line), so every Groups tab measures 55 fewer and the floor moved down by the
+// same 55: Events' empty state now measures 255. The landmarks below still prove each tab's body.
+const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, Groups: 245,
+  "Groups:Your groups": 245, "Groups:Your activity": 245, "Groups:Discover": 245, "Groups:Events": 245 };
 
 // Text that should never reach a user. Tuned to the bugs above; each entry is a
 // regex plus a note on the shape it catches.
@@ -89,13 +96,17 @@ const FORBIDDEN = [
 // disappears while the check stays green.
 const LANDMARKS = {
   "route:Overview": ["Overview"],
-  "route:Plan": ["GETTING THERE", "APPROACH", "ASPECT & SUN", "RACK"],
+  "route:Plan": ["GETTING THERE", "APPROACH", "RACK"],
+  // ASPECT & SUN and SEASONAL GUIDANCE moved from Plan to the Conditions tab (owner, 2026-10-23).
+  "route:Conditions": ["ASPECT & SUN", "SEASONAL GUIDANCE"],
   // The Year in Climbing banner is the ONLY opener of that modal, and until #713 it was
   // gated on MY_CLIMBS.length — a constant DEMO_FILLERS empties — so the whole modal was
   // unreachable and nothing said so. check:dead-flag-gates catches a re-gating onto a dead
   // constant; this catches the banner simply disappearing. Built from the current year
   // because the label carries it, so this does not rot every January.
-  Profile: [`Your ${new Date().getFullYear()} Year in Climbing`],
+  // It lives on the Profile screen's ACTIVITY tab (Profile · Activity · Review), walked by the
+  // profile-tabs-switch flow below; the default Profile view no longer carries it.
+  "Profile:Activity": [`Your ${new Date().getFullYear()} Year in Climbing`],
   // The Crew sub-views, unreachable to this check until #740/#755 named their buttons.
   //
   // "PEOPLE YOU'VE CLIMBED WITH" is the surface #713 revived: it used to map over
@@ -108,8 +119,17 @@ const LANDMARKS = {
   "Crew:Friends": ["PEOPLE YOU’VE CLIMBED WITH", "FRIENDS’ RECENT ACTIVITY"],
   // Descriptive lines rather than counts: "CREW INVITES (1)" moves with the seed data and
   // would rot into a false failure the first time somebody adds an invite.
-  "Crew:Groups": ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
-  "Crew:Requests": ["Friend requests, crew invites, and group activity waiting on you."],
+  // The Groups screen (Menu → Groups). Its header line renders on every tab, so it proves only
+  // that the SCREEN opened; each other tab is proved by a heading only its own body renders
+  // (uppercase: innerText returns the CSS-transformed text). Those headings carry their count
+  // ("ALL YOUR GROUPS · 3"), so capture() also matches a line with a trailing " · N" removed,
+  // and the landmark stays the descriptive part the rule above asks for.
+  Groups: ["Communities with their own events and members."],
+  "Groups:Your groups": ["ALL YOUR GROUPS"],
+  "Groups:Your activity": ["EVENTS YOU’RE GOING TO", "YOUR POSTS"],
+  "Groups:Discover": ["GROUPS TO JOIN"],
+  "Groups:Events": ["UPCOMING IN YOUR GROUPS"],
+  "Crew:Requests": ["What’s waiting on you, and what you’ve sent."],
 };
 
 // Disclosure affordances: controls that reveal more of the screen they are on.
@@ -128,9 +148,8 @@ const LANDMARKS = {
 // so clicking a control and capturing is what turns that silence into a failure.
 const DISCLOSURE = [
   /^\d+ updates?\s*[▾▸]?$/,     // "11 updates ▾"  (activity feed)
-  /^Alerts( · \d+ new)?\s*[▾▸]?$/,
-  /^Unfinished business( · \d+)?\s*[▾▸]?$/,
-  /^View all \d+ \w+$/,                   // "View all 14 alerts"
+  /^Notifications( · \d+ new)?\s*[▾▸]?$/,   // Home's list, called Alerts until 2026-11-11
+  /^View all \d+ \w+$/,                   // "View all 14 notifications"
   /^View \d+ more suggestions?$/,
   /^Suggested climbs( · \d+)?\s*[▾▸]?$/,
   /^\d+ (updates|reports|climbs)\s*[▾▸]$/,
@@ -219,7 +238,7 @@ if (!base) {
   log(`starting dev server on ${port}...`);
   // VITE_DEMO_AUTOLOGIN keeps the demo gate open for this harness. Without it the real
   // account gate blocks every screen and the check can only ever report the login form.
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
   // --strictPort means vite exits rather than sliding to another port. If it dies,
   // whatever answers our URL is not ours, so treat its exit as fatal instead of
@@ -382,7 +401,9 @@ async function capture(name) {
   const min = MIN_CHARS[name] ?? MIN_CHARS.default;
   if (text.length < min) fail(name, `rendered only ${text.length} chars (min ${min}) — blank or broken screen`);
   for (const [re, why] of FORBIDDEN) { const m = text.match(re); if (m) fail(name, `${why} — found ${JSON.stringify(m[0])}`); }
-  const lines = new Set(text.split("\n").map((l) => l.trim()));
+  // Each line, plus the same line without a trailing " · N" count (a heading that counts its
+  // list is still that heading). Additive: every line that matched before still does.
+  const lines = new Set(text.split("\n").map((l) => l.trim()).flatMap((l) => [l, l.replace(/ · \d+$/, "")]));
   for (const want of LANDMARKS[name] || []) { if (!lines.has(want)) fail(name, `expected section ${JSON.stringify(want)} is missing`); }
   for (const e of pageErrors) fail(name, `uncaught page error: ${e}`);
   const twin = Object.keys(screens).find((k) => k !== name && screens[k] === text);
@@ -397,6 +418,12 @@ async function capture(name) {
 // seconds, twelve failures deep, when the real story is one line: the app never
 // rendered. Poll for the bottom nav before any phase proceeds, and say that one
 // line if it never shows.
+//
+// A visitor with no session lands on the sign-in screen, which has no nav bar. The server
+// this script spawns skips it (VITE_DEMO_AUTOLOGIN), but a deployment walked with --url
+// does not: the live-site check failed every run from 2026-10-23 to 2026-11-13 on a
+// healthy site, because it waited two minutes for a "Home" button behind a gate it never
+// opened. So take the gate's own way in, "View as guest", whenever it is what is on screen.
 async function waitForApp(timeoutMs) {
   const t0 = Date.now();
   while (Date.now() - t0 < timeoutMs) {
@@ -404,6 +431,10 @@ async function waitForApp(timeoutMs) {
       [...document.querySelectorAll('button,[role="button"]')].some((e) => (e.textContent || "").trim() === "Home")
     ).catch(() => false);
     if (up) return true;
+    await page.evaluate(() => {
+      const g = [...document.querySelectorAll('button,[role="button"]')].find((e) => (e.textContent || "").trim() === "View as guest");
+      if (g) g.click();
+    }).catch(() => {});
     await page.waitForTimeout(1000);
   }
   return false;
@@ -415,7 +446,7 @@ try {
   await page.waitForTimeout(2500);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -626,7 +657,7 @@ try {
       fail("route", `the route page blanked after opening (${opened.length} chars) — a component threw during render`);
       for (const e of pageErrors) fail("route", `uncaught page error: ${e}`);
     }
-    for (const sub of ["Overview", "Plan", "Safety", "Photos"]) {
+    for (const sub of ["Overview", "Plan", "Conditions", "Safety", "Photos"]) {
       if (!(await tap(sub))) continue;   // not every route exposes every sub-tab
       await capture("route:" + sub);
     }
@@ -730,8 +761,11 @@ try {
     // Crew screen already captured in the main walk -- capturing it again would be a
     // byte-identical twin and fail for being correct. That equality is worth asserting
     // rather than dodging, so it becomes the round-trip check at the end.
-    for (const sub of ["Friends", "Groups", "Requests"]) {
-      if (!(await tapByName(sub))) throw new Error(`the Crew sub-tab ${JSON.stringify(sub)} is not present, or has lost its aria-label`);
+    for (const sub of ["Friends", "Requests"]) {
+      // Friends and Requests left the Crew tab's bar: they open from the Menu now, and the Crew tab
+      // is crews only. Each still renders as a crewView, with a "← Crews" row to return. Groups
+      // left the Crew tab altogether -- it is its own screen, walked in the main loop and below.
+      if (!(await tapMenuItem(page, sub))) throw new Error(`the Menu tile ${JSON.stringify(sub)} is not present`);
       // capture() settles the screen, records it into --snapshot, and applies the same
       // min-length / FORBIDDEN / LANDMARKS / identical-twin rules every other screen gets.
       // The twin check is global, so a sub-view that silently renders another screen fails
@@ -742,6 +776,40 @@ try {
     const back = await settledText(page, { min: 30, timeout: 45000 });
     if (screens.Crew && back !== screens.Crew) {
       throw new Error("returning to the Crews sub-tab did not restore the Crew screen -- the bar navigates one way only");
+    }
+  });
+
+  // THE GROUPS SCREEN'S OWN TABS (Menu → Groups: For you · Your groups · Your activity · Discover ·
+  // Events). The main walk captures the first; each of the others is captured here under the same
+  // min-length / FORBIDDEN / LANDMARKS / twin rules, so a tab that renders nothing, or silently
+  // renders a sibling, fails. For you is tapped last so the screen is left where a visit starts.
+  await flow("groups-tabs-switch", async () => {
+    if (!(await tap("Groups"))) throw new Error("the Menu's Groups tile is not present");
+    for (const sub of ["Your groups", "Your activity", "Discover", "Events"]) {
+      if (!(await tap(sub))) throw new Error(`the Groups tab ${JSON.stringify(sub)} is not present`);
+      await capture("Groups:" + sub);
+    }
+    if (!(await tap("For you"))) throw new Error("the Groups tab \"For you\" is not present");
+    const back = await settledText(page, { min: 30, timeout: 45000 });
+    if (screens.Groups && back !== screens.Groups) {
+      throw new Error("returning to For you did not restore the Groups screen -- the tab strip navigates one way only");
+    }
+  });
+
+  // THE PROFILE SCREEN'S OWN TABS (Profile · Activity · Review for admins). The main walk captures
+  // Profile; Activity holds the logbook and the Year in Climbing banner, so it is
+  // captured here under the same rules (LANDMARKS["Profile:Activity"] asserts the banner). Profile is
+  // tapped last so the screen is left where a visit starts.
+  await flow("profile-tabs-switch", async () => {
+    if (!(await tap("Profile"))) throw new Error("the Menu's profile card is not present");
+    if (!(await tap("Activity"))) throw new Error("the Profile tab \"Activity\" is not present");
+    await capture("Profile:Activity");
+    // Opening Profile from the Menu lands on its Profile tab (Review only when an admin has items
+    // waiting, which the fixture account does not), so this one tap is the way back.
+    if (!(await tap("Profile"))) throw new Error("the Menu's profile card is not present");
+    const back = await settledText(page, { min: 30, timeout: 45000 });
+    if (screens.Profile && back !== screens.Profile) {
+      throw new Error("returning to the Profile tab did not restore the Profile screen -- the tab strip navigates one way only");
     }
   });
 

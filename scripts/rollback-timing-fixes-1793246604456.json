@@ -1,0 +1,120 @@
+[
+ {
+  "id": "wa_ruby_mountain_northwest_ridge",
+  "field": "timing",
+  "before": {
+   "totalHrs": 8.5,
+   "summitTimeHrs": 5.25,
+   "descentTimeHrs": 3.25,
+   "approachTimeHrs": null,
+   "recommendedStart": "Early morning, to descend before spring/afternoon snow softens and avalanche hazard rises"
+  },
+  "after": {
+   "totalHrs": 8.5,
+   "summitTimeHrs": 5.25,
+   "descentTimeHrs": 3.25,
+   "approachTimeHrs": 0,
+   "recommendedStart": "Early morning, to descend before spring/afternoon snow softens and avalanche hazard rises"
+  }
+ },
+ {
+  "id": "wa_mount_persis_west_ridge",
+  "field": "timing",
+  "before": {
+   "totalHrs": 4.5,
+   "summitTimeHrs": 2.5,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Morning start; not an alpine-start objective, but early enough to allow for road-approach uncertainty and route-finding."
+  },
+  "after": {
+   "totalHrs": 4.5,
+   "summitTimeHrs": 2.5,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 0,
+   "recommendedStart": "Morning start; not an alpine-start objective, but early enough to allow for road-approach uncertainty and route-finding."
+  }
+ },
+ {
+  "id": "wa_three_queens_middle_peak",
+  "field": "timing",
+  "before": {
+   "totalHrs": 8.5,
+   "summitTimeHrs": 4.9,
+   "descentTimeHrs": 3.6,
+   "approachTimeHrs": null,
+   "recommendedStart": "Start well before dawn if attempting this car-to-car — the documented ascent alone took nearly 5 hours before any summit time or the 3.6-hr descent."
+  },
+  "after": {
+   "totalHrs": 8.5,
+   "summitTimeHrs": 4.9,
+   "descentTimeHrs": 3.6,
+   "approachTimeHrs": 0,
+   "recommendedStart": "Start well before dawn if attempting this car-to-car — the documented ascent alone took nearly 5 hours before any summit time or the 3.6-hr descent."
+  }
+ },
+ {
+  "id": "wa_hozomeen_mountain_north_peak_north_route",
+  "field": "timing",
+  "before": {
+   "totalHrs": 13.1,
+   "summitTimeHrs": 7.1,
+   "descentTimeHrs": 6,
+   "approachTimeHrs": null,
+   "recommendedStart": "Alpine start in the dark from the ranger station - this is a 13+ hour moving day and you do not want the deadfall descent by headlamp."
+  },
+  "after": {
+   "totalHrs": 13.1,
+   "summitTimeHrs": 7.1,
+   "descentTimeHrs": 6,
+   "approachTimeHrs": 0,
+   "recommendedStart": "Alpine start in the dark from the ranger station - this is a 13+ hour moving day and you do not want the deadfall descent by headlamp."
+  }
+ },
+ {
+  "id": "wa_johannesburg_mountain_northeast_buttress",
+  "field": "timing",
+  "before": {
+   "totalHrs": 26,
+   "summitTimeHrs": 10,
+   "descentTimeHrs": 16,
+   "approachTimeHrs": null,
+   "recommendedStart": "Early start",
+   "sectionBreakdown": [
+    {
+     "hrs": 10,
+     "note": "From the Cascade Pass trailhead, cross the valley and climb steep brush, tree-climbing, loose slabs, and heather onto the buttress proper, then pitch out lower rock to reach a bivy…",
+     "fromTo": "Climb the lower buttress to high bivy",
+     "section": "Climb"
+    },
+    {
+     "hrs": 16,
+     "note": "A short but technical push from the high bivy — snow arete, glacier crossing, and a final ice pitch — reaches the summit in about 2-2.5 hours. The descent is the long part: downcli…",
+     "fromTo": "Finish the buttress, summit, and descend Doug's Direct",
+     "section": "Descent"
+    }
+   ]
+  },
+  "after": {
+   "totalHrs": 26,
+   "summitTimeHrs": 10,
+   "descentTimeHrs": 16,
+   "approachTimeHrs": 0,
+   "recommendedStart": "Early start",
+   "sectionBreakdown": [
+    {
+     "hrs": 10,
+     "note": "From the Cascade Pass trailhead, cross the valley and climb steep brush, tree-climbing, loose slabs, and heather onto the buttress proper, then pitch out lower rock to reach a bivy…",
+     "fromTo": "Climb the lower buttress to high bivy",
+     "section": "Climb"
+    },
+    {
+     "hrs": 16,
+     "note": "A short but technical push from the high bivy — snow arete, glacier crossing, and a final ice pitch — reaches the summit in about 2-2.5 hours. The descent is the long part: downcli…",
+     "fromTo": "Finish the buttress, summit, and descend Doug's Direct",
+     "section": "Descent"
+    }
+   ]
+  }
+ }
+]

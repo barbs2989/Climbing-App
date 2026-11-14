@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Verifies the two things the guards do NOT assert: that partner browse actually lists a
 // real climber, and that the Settings toggle both persists to profiles.discoverable AND
 // removes that person from the other account's browse list.
@@ -59,7 +60,7 @@ try {
   const port = await claimPort(5430);
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   log(`dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   if (!(await waitForServer(base))) { console.error("dev server never came up"); process.exit(1); }
   browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 180000 });
@@ -225,7 +226,7 @@ try {
   // matches production.
   const port2 = await claimPort(port + 1);
   const base2 = `http://127.0.0.1:${port2}/Climbing-App/`;
-  const server2 = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port2), "--strictPort"],
+  const server2 = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port2), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
   try {
     if (!(await waitForServer(base2))) {

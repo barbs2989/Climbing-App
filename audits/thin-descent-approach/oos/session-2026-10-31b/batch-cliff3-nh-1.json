@@ -1,0 +1,31 @@
+{
+ "nh_04_lion_s_head_lion_s_head_standard": {
+  "area": "nh_04_lion_s_head",
+  "skip_reason": "no source describes this route"
+ },
+ "nh_04_upper_face_upper_tier_thor": {
+  "area": "nh_04_upper_face_upper_tier",
+  "skip_reason": "no source describes this route"
+ },
+ "nh_3_buttress_3_buttress_3": {
+  "area": "nh_3_buttress_3",
+  "skip_reason": "no source describes this route"
+ },
+ "nh_alpine_breeze_wall_route_66": {
+  "area": "nh_alpine_breeze_wall",
+  "set": {
+   "descent_text": "Rappel from the two-bolt anchor at the top of the buttress, using two ropes."
+  },
+  "review": {
+   "sources": [
+    "https://mountainproject.com/route/123463535/route-66"
+   ],
+   "confidence": "medium",
+   "notes": "Route page; anchors reported replaced on a forum thread."
+  }
+ },
+ "nh_slabs_unknown": {
+  "area": "nh_slabs",
+  "skip_reason": "no source describes this route"
+ }
+}

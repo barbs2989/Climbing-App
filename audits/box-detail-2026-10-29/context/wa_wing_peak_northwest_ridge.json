@@ -1,0 +1,74 @@
+{
+ "id": "wa_wing_peak_northwest_ridge",
+ "name": "Northwest Ridge (Standard Route)",
+ "area_id": "wa_wing_peak",
+ "discipline": "scrambling",
+ "grade": "Class 4",
+ "pitches": null,
+ "pitch_detail": [
+  {
+   "grade": "Class 2 trail + bushwhack",
+   "notes": "Barclay Lake Trail to a Barclay/Tailgunner Creek bushwhack and an overgrown logging road up to about 4,000 ft.",
+   "pitch": "Approach"
+  },
+  {
+   "grade": "Class 2-3",
+   "notes": "Scramble crossing of a waterfall ravine around 4,000 ft.",
+   "pitch": "Waterfall ravine"
+  },
+  {
+   "grade": "Steep snow/grass",
+   "notes": "Grass and snow patches leading to Tailgunner Pass (roughly 5,320-5,360 ft).",
+   "pitch": "Tailgunner Couloir"
+  },
+  {
+   "grade": "Steep snow, Class 3",
+   "notes": "Series of steep snow faces and rock benches; crampons and running belays used on hard/refrozen snow.",
+   "pitch": "Northwest Ridge"
+  },
+  {
+   "grade": "~70° snow/ice",
+   "notes": "Horribly exposed snowfinger below the summit horn; often protected with a picket and belayed or roped.",
+   "pitch": "Snowfinger (crux)"
+  },
+  {
+   "grade": "Class 4",
+   "notes": "Final short rock section to the true summit; rappelled on descent.",
+   "pitch": "Summit block"
+  }
+ ],
+ "rappel_detail": [
+  {
+   "n": 1,
+   "notes": "A short rappel (or downclimb) off the summit; a 30 m rope is enough.",
+   "anchor": "not described; bring slings",
+   "lengthM": null,
+   "station": "The summit of Wing Peak."
+  },
+  {
+   "n": 2,
+   "notes": "A short rappel down the steepest snow. Below it, crampon carefully through the rock defile where a narrow ribbon of snow runs between deep moats.",
+   "anchor": "snow anchor or rock; bring a picket or slings",
+   "hazards": [
+    "Deep moats on either side of the snow ribbon in the defile below."
+   ],
+   "lengthM": null,
+   "station": "The top of the steepest section of the upper snow face."
+  }
+ ],
+ "rappels": "2 short rappels (off the summit, then down the upper snow face), 30m rope sufficient",
+ "descent_text": "From the summit, downclimb/rappel a short distance, then rappel the steepest section of the upper snow face. Below that, careful cramponing is needed through a rock defile where a narrow ribbon of snow winds between deep moats — described by one party as the most unnerving part of the descent. Continue down the northwest ridge's snow faces and benches to Tailgunner Pass, then down the Tailgunner Couloir and the bushwhack drainage back to Barclay Creek Trail and the trailhead.",
+ "approach": "From the Barclay Lake Trailhead (~2,300 ft, reached via Forest Road 6024 off US Highway 2 in Baring), follow Barclay Creek Trail 1055, then leave the maintained trail to bushwhack along Barclay Creek and up Tailgunner Creek to an old, overgrown logging road. A bootpath climbs through forest to about 4,000 ft, crosses a Class 2-3 waterfall ravine, then follows the Tailgunner Couloir (grass and snow patches) to Tailgunner Pass (roughly 5,320-5,360 ft), which lies WNW of the Wing Peak summit.",
+ "overview": "A remote scramble up Wing Peak's northwest ridge from Tailgunner Pass, mixing steep snow faces and rock benches with a final exposed snow/ice finger and short Class 4 summit block; almost always combined with neighboring Gunn Peak and Tailgunner Peak in the same trip.",
+ "beta": "Wing Peak has no maintained trail. Parties approach via the Barclay Creek/Tailgunner Creek drainage to Tailgunner Pass, then climb steep snow faces and rock benches along the peak's northwest ridge. The crux is a roughly 70-degree, heavily exposed snowfinger just below the summit, above which loose Class 4 rock leads to the top. Most parties climb Wing as part of a 2-3 day traverse with Gunn Peak and Tailgunner Peak, camping near Tailgunner Pass.",
+ "gear": [
+  "30m rope",
+  "snow pickets",
+  "slings for rappel anchors",
+  "crampons",
+  "ice axe",
+  "helmet"
+ ],
+ "fa": null,
+ "face": "Northwest Ridge"
+}

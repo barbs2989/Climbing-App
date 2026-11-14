@@ -38,7 +38,7 @@ serve(async (req) => {
       );
     }
 
-    const { submissionId, action, adminNotes } = await req.json();
+    const { submissionId, action, adminNotes, toArea } = await req.json();
 
     if (!submissionId || !["approve", "reject"].includes(action)) {
       return new Response(
@@ -47,81 +47,28 @@ serve(async (req) => {
       );
     }
 
-    // Fetch the submission
-    const { data: submission, error: fetchError } = await supabase
-      .from("gps_submissions")
-      .select("*")
-      .eq("id", submissionId)
-      .single();
-
-    if (fetchError || !submission) {
+    // ONE implementation of approval (0397): review_gps_submission(). This function used to APPEND an
+    // approved line to the route's existing one (`[...existing, ...new]`), so the map drew two walks
+    // joined by a straight jump, and it could only write to the one route, never to the crag. It now
+    // calls the database function AS THE CALLER, whose own is_admin() check decides, and which
+    // replaces the line (keeping the old one in replaced_gpx) and can save a crag's walk in.
+    const asCaller = createClient(supabaseUrl, Deno.env.get("SUPABASE_ANON_KEY") ?? "", {
+      global: { headers: { Authorization: "Bearer " + token } },
+    });
+    const { data: result, error: rpcError } = await asCaller.rpc("review_gps_submission", {
+      p_id: submissionId, p_action: action, p_to_area: !!toArea, p_notes: adminNotes ?? null,
+    });
+    if (rpcError) {
       return new Response(
-        JSON.stringify({ error: "Submission not found" }),
-        { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        JSON.stringify({ error: rpcError.message }),
+        { status: rpcError.code === "42501" ? 403 : 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-
-    if (action === "approve") {
-      // Update submission status
-      await supabase
-        .from("gps_submissions")
-        .update({
-          status: "approved",
-          approved_at: new Date().toISOString(),
-          approved_by: callerEmail,
-          admin_notes: adminNotes,
-        })
-        .eq("id", submissionId);
-
-      // Merge GPS data into route
-      const { data: route } = await supabase
-        .from("routes")
-        .select("gpx")
-        .eq("id", submission.route_id)
-        .single();
-
-      if (route) {
-        // Combine existing GPX with new submission
-        const existingGpx = route.gpx || [];
-        const mergedGpx = [...existingGpx, ...submission.gpx_data];
-
-        // routes has no gps_contributor_email or updated_at column — writing
-        // unknown columns makes PostgREST reject the whole PATCH (42703), so
-        // the merge would silently never happen. Verified against live schema.
-        await supabase
-          .from("routes")
-          .update({
-            gpx: mergedGpx,
-            gps_contributor_name: submission.climber_name,
-          })
-          .eq("id", submission.route_id);
-
-        console.log(`[APPROVE] GPS merged for route ${submission.route_id} by ${submission.climber_name}`);
-      }
-
-      return new Response(
-        JSON.stringify({ success: true, message: "Submission approved and merged", routeId: submission.route_id }),
-        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    if (action === "reject") {
-      // Update submission status
-      await supabase
-        .from("gps_submissions")
-        .update({
-          status: "rejected",
-          admin_notes: adminNotes || "Rejected by admin",
-        })
-        .eq("id", submissionId);
-
-      console.log(`[REJECT] GPS submission rejected: ${submissionId}`);
-
-      return new Response(
-        JSON.stringify({ success: true, message: "Submission rejected", submissionId }),
-        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+    console.log(`[REVIEW] GPS submission ${submissionId}: ${result}`);
+    return new Response(
+      JSON.stringify({ success: true, result }),
+      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
   } catch (error) {
     console.error("Error:", error.message);
     return new Response(

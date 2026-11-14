@@ -1,0 +1,103 @@
+{
+  "area_id": "wa_mount_carru",
+  "routes": [
+    {
+      "route_id": "wa_mount_carru_scramble",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched: SummitPost says climbable in all but winter, access via Harts Pass road; stored text already puts the start at about July 1 when the road and Fred/Rolo passes clear. Ascents peak Jul-Sep (120 of 149); one 29 June ascent still had rotten snow on the pass. Keeps Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2555589",
+          "verdict": "unsure",
+          "why": "Logged South Slopes and SE Ridge, Class 3, summited 2024-06-29 (within a month of season), summit pin within 8 m, but track start/end are 447 m from our Slate Pass pin (a different parking spot at the road end). Fails the 300 m rule; I could not confirm a trailhead coordinate from a fetched page (WTA URL 404, Nominatim empty), so no pin move proposed. Best candidate if the owner accepts the start offset."
+        },
+        {
+          "aid": "2970245",
+          "verdict": "different",
+          "why": "Four-day multi-peak slam (Osceola, Carru, Lago, Ptarmigan, Lost, Blackcap); not a single Carru route."
+        },
+        {
+          "aid": "2967120",
+          "verdict": "unsure",
+          "why": "Starts from Lake Doris camp (11.6 km from pin); no route name."
+        },
+        {
+          "aid": "2991364",
+          "verdict": "unsure",
+          "why": "No route name, start 815 m from pin."
+        },
+        {
+          "aid": "1396370",
+          "verdict": "offseason",
+          "why": "May 27 2020, outside season (snow)."
+        },
+        {
+          "aid": "2312275",
+          "verdict": "unsure",
+          "why": "Multi-peak trip, no track."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In mid-July the Pasayten River must be forded on the way in, and the Eureka Creek trail has some blowdown.",
+          "aids": [
+            "2576628"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "Fill water bottles well before the 7,100-ft meadow below the south slopes; in mid-July it offered only a thin trickle.",
+          "aids": [
+            "2576628"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 7,
+          "text": "Gaiters for the loose scree (July-September)",
+          "aids": [
+            "2576628"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 8,
+          "text": "Pencil for the summit register (it has been found without one, Aug-Sep)",
+          "aids": [
+            "2555589",
+            "2312275"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "In late August one party left the Eureka Creek trail near 5,950 ft and climbed open, lightly forested slopes, partly on a climbers path, to about 7,300 ft before turning toward the summit.",
+          "aids": [
+            "2970245"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 6,
+          "text": "In late June the lower descent toward the river from the col was brushy, worst at the very bottom, and the upper scree allowed quick boot-skiing that avoids the Class 3 bits.",
+          "aids": [
+            "2555589"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Our Slate Pass trailhead pin is matched by one Aug 2025 track (62 m), while a June 2024 track began 447 m west at what looks like another parking spot; pin not changed."
+}

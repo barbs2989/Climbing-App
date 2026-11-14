@@ -1,0 +1,41 @@
+[
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "walkMi": 2.5,
+  "dayNotePrefix": "Walk or bike the 2.5 closed miles of Cascade River Road from the Eldorado gate to the Boston Basin trailhead first.",
+  "why": "NPS Cascade River Road map (nps.gov/noca/planyourvisit/cascade-river-road.htm, via search 2026-10-29): Eldorado parking at MP 20, Boston Basin parking at about MP 22.5, Cascade Pass TH at road end (~23.1). WTA 2026-10-15 reports gate at MP 20. So the Boston Basin trailhead lies ABOVE the gate by about 2.5 mi (22.5-20); it is not the Cascade Pass 3 mi. Row day1 (3.5 mi) and day2 (4.8) start at the Boston Basin trailhead, so the road is not included. MP 22.5 is a map figure marked about; no sourced gain so walkGainFt omitted."
+ },
+ {
+  "id": "wa_earl_peak_southwest_ridge",
+  "walkMi": 1.4,
+  "dayNotePrefix": "Walk the washed-out spur road from its barricade up to the Beverly Creek trailhead first.",
+  "roadPatch": {
+   "status": "The spur to the Beverly Creek trailhead is washed out and barricaded at its lower end as of autumn 2026, so you walk the whole spur, roughly a mile and a half, to the trailhead."
+  },
+  "why": "Mountaineers Bean Creek Basin page: spur about 1.4 mi long; WTA trip report 2025-05-10 (entry labelled 9.22.26): trailhead cannot be reached by vehicle due to washout/closure of FR 9737-112; Cle Elum road table 2026-09-08 lists it closed (per research file). Barricade is at the bottom of the spur, so the whole 1.4 mi is walked (research gave 1.0-1.4; barricade position along the spur not stated precisely). Row day1 is 7.5 mi car-to-car starting at the Beverly Turnpike trailhead, so road not included. No sourced gain."
+ },
+ {
+  "id": "wa_the_triad_east_peak",
+  "walkMi": 1.9,
+  "dayNotePrefix": "Walk the washed-out part of Sibley Creek Road up to the Hidden Lake trailhead first.",
+  "roadPatch": {
+   "status": "Sibley Creek Road 1540 has been closed by a washout since early July 2026 with no end date given, so about 2 miles of the road are walked to reach the Hidden Lake trailhead."
+  },
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/sibley-creek-hidden-lake-trailhead-road-fsr-1540-closure-mt-baker-ranger-district (washout MP 2.6, from 2026-07-08, no end date, still listed 2026-10); FS Hidden Lake Lookout page (2026-09-23) says road is 4.5 mi and washed out at 2.4. 4.5-2.6=1.9 (2.1 using 2.4). Row: single day, 9.3 mi car-to-car from Hidden Lake TH (dist_km 7.5), road not included; applier adds 2x1.9. Foot access past the washout not stated in the alert. No sourced gain. Row status said several miles; corrected."
+ },
+ {
+  "id": "wa_mount_watson_scramble",
+  "walkMi": 6.2,
+  "dayNotePrefix": "Walk or bike the closed part of Anderson-Watson Road from the washout to the Watson Lakes trailhead first.",
+  "roadPatch": {
+   "status": "Anderson-Watson Road 1107 has been closed by a washout at mile 3.8 since July 2026, with no reopening date, so the Watson Lakes trailhead is roughly 6 miles farther up the road."
+  },
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/anderson-watson-road-fsr-1107-closure-mt-baker-ranger-district (MP 3.8, 2026-07-08, no end date, still posted 2026-09-25); WTA Anderson and Watson Lakes: 8.9 mi on FR 1107 + 1.1 mi to trailhead. 8.9-3.8+1.1=6.2 mi one way. Row day1 4.7 + day2 6.2 start at the trailhead, road not included. Foot access not stated by sources. No sourced gain."
+ },
+ {
+  "id": "wa_bacon_peak_diobsud",
+  "walkMi": 6.2,
+  "distKmNew": 23,
+  "why": "Same closure as Watson: FR 1107 washout MP 3.8, 6.2 mi to Watson Lakes trailhead (FS alert 2026-07-08; WTA). Row has itinerary days with no miles, so the tile uses dist_km 13.04 (8.1 mi). The primary (first) variant and approach text start at Watson Lakes trailhead via Anderson Lakes; the Bacon Creek Rd approach in the timing notes is the alternate. Row text describes a 3-day traverse reversed on the way out, and 8.1 mi cannot be a round trip with 6261 ft gain, so dist_km is read as ONE WAY (the tile convention). New = 13.04 + 6.2*1.609 = 23.0 km one way. CAVEAT: convention inferred, not stated by the row. No sourced gain."
+ }
+]

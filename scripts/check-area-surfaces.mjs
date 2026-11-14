@@ -13,14 +13,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:area-surfaces";
 appSources(ROOT, GUARD);
 
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const browser = fs.readFileSync(path.join(ROOT, "lib/DbAreaBrowser.jsx"), "utf8");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
+const browser = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx"));
 const problems = [];
 const ok = (m) => console.log(`  ok    ${m}`);
 
@@ -84,6 +84,19 @@ if (!/areaCommentTargets[\s\S]{0,200}\["world","country","state"\]/.test(app)) {
   ok("world/country/state are excluded from area comments");
 }
 
+// Area PAGE only (owner 2026-11-11, "Remove discussion from area maps"). RoutesTab hands the thread to
+// DbAreaBrowser as `areaDiscussion`, and the browser draws it in exactly one place: right after
+// <AreaPage …/>, in the branch that renders when no other screen (finder / objectives / Map) is up.
+// Placed by the browser itself, so it switches in the same render as the screen (no frame under the Map).
+const slots = browser.split("{areaDiscussion}").length - 1;
+if (!/<DbAreaBrowser\s+areaDiscussion=\{/.test(app)) {
+  problems.push("RoutesTab no longer hands the area thread to DbAreaBrowser as `areaDiscussion` — the browser cannot place it on the area page.");
+} else if (slots !== 1 || !/<AreaPage key=\{current\.id\}[^\n]*\/>\{areaDiscussion\}<\/>\s*\)\}/.test(browser)) {
+  problems.push(`area comments are no longer limited to the area page — DbAreaBrowser must draw {areaDiscussion} once, right after <AreaPage …/> (found ${slots}); the Discussion would show under the area Map again.`);
+} else {
+  ok("area comments render on the area page only, not under the Map");
+}
+
 // ---------------------------------------------------------------------------------------
 // 2. DIRECTIONS TO AN AREA — present, and gated to somewhere you can actually park.
 //
@@ -94,8 +107,11 @@ if (!/maps\/dir/.test(browser)) {
   problems.push("the area Directions link is gone from lib/DbAreaBrowser.jsx — a climber cannot navigate to a crag again (RouteDetail's links are trailhead-level, a different question).");
 } else {
   ok("the area page offers directions");
-  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\][\s\S]{0,120}maps\/dir|maps\/dir[\s\S]{0,400}/.test(browser)
-    && /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)/.test(browser);
+  // Since 2026-10-15 the drive links live in AreaGettingThere (the GETTING THERE card), and the
+  // gate is on its MOUNT — so the test is that the mount is written `["crag","peak","wall"].includes(area.area_type) ? <AreaGettingThere`.
+  // The older shape (gate within 120 chars of the href) is accepted too, so the card can move.
+  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)\s*\?\s*<AreaGettingThere/.test(browser)
+    || /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)[\s\S]{0,120}maps\/dir/.test(browser);
   if (!gated) {
     problems.push('the Directions link is no longer gated on area_type in ["crag","peak","wall"] — every area has a coordinate, so this offers to route a climber to a state or country centroid.');
   } else {
@@ -108,6 +124,33 @@ if (!/maps\/dir/.test(browser)) {
   }
 }
 
+// ---------------------------------------------------------------------------------------
+// 3. PARTNERS HERE (0300) — the card that lets a climber LIST THEMSELVES at an area and see who is
+// listed there, rendered from AreaPage, fed by the signed-in count read, and gated to the crag family's
+// areas and their ancestors below the state: never a peak (matched by route), never a state.
+// ---------------------------------------------------------------------------------------
+if (!/function PartnersHereCard\(/.test(browser)) {
+  problems.push("PartnersHereCard is gone from lib/DbAreaBrowser.jsx — a climber cannot list themselves at an area from the Climbs tab, which is the surface the 0300 decision named first.");
+} else {
+  ok("the area page defines PartnersHereCard");
+  if (!/<PartnersHereCard\s/.test(browser)) problems.push("PartnersHereCard is defined but never rendered — AreaPage must draw it.");
+  else ok("AreaPage renders PartnersHereCard");
+  const gate = browser.match(/const PARTNER_CARD_TYPES\s*=\s*\[([^\]]+)\]/);
+  const types = gate ? gate[1].split(",").map((s) => s.trim().replace(/^"|"$/g, "")) : null;
+  if (!types) problems.push("PARTNER_CARD_TYPES is gone — the card would render on every area type, peaks and states included.");
+  else if (types.includes("peak") || types.includes("state") || types.includes("country") || types.includes("world")) problems.push(`PARTNER_CARD_TYPES includes ${types.filter((t) => ["peak", "state", "country", "world"].includes(t)).join("/")} — a peak's climbing is matched by route and a state is too broad to list from its page.`);
+  else if (!types.includes("crag")) problems.push("PARTNER_CARD_TYPES no longer includes crag — the one area type a crag climber actually stands at.");
+  else ok(`the card is gated to [${types.join(", ")}]`);
+  if (!/PARTNER_CARD_TYPES\.includes\(area\.area_type\)\s*\?\s*<PartnersHereCard/.test(browser)) problems.push("the PartnersHereCard render is not gated on PARTNER_CARD_TYPES.includes(area.area_type).");
+  else ok("the render is gated on that list");
+  if (!/usePartnerAreaCount\(area\.id/.test(browser) || !/usePartnersInArea\(area\.id/.test(browser)) problems.push("PartnersHereCard no longer reads the count and the rows for THIS area (usePartnerAreaCount / usePartnersInArea on area.id).");
+  else ok("the card reads the count and the rows for the area on screen");
+  if (!/savePartnerArea\(uid,\s*\{\s*areaId:\s*area\.id/.test(browser) || !/removePartnerArea\(uid,\s*area\.id\)/.test(browser)) problems.push("the one-tap List me here / Listed ✓ toggle no longer writes THIS area's listing (savePartnerArea / removePartnerArea on area.id).");
+  else ok("List me here writes and removes this area's listing");
+  if (!/Sign in to see who climbs here/.test(browser)) problems.push("the signed-out card no longer says to sign in — the count RPC refuses a signed-out caller, so the card would read as nobody listed.");
+  else ok("signed out, the card asks for sign-in rather than claiming nobody is listed");
+}
+
 if (problems.length) {
   console.error(`\n${GUARD} FAILED — ${problems.length} problem(s):\n`);
   for (const p of problems) console.error("  - " + p);
@@ -116,4 +159,4 @@ if (problems.length) {
   console.error("again precisely because losing them breaks nothing that any other guard can see.\n");
   process.exit(1);
 }
-console.log(`\n${GUARD}: ok — a climber can discuss an area and navigate to a crag.`);
+console.log(`\n${GUARD}: ok — a climber can discuss an area, navigate to a crag, and list themselves there.`);

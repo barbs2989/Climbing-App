@@ -1,0 +1,37 @@
+{
+  "area_id": "wa_windy_peak",
+  "routes": [
+    {
+      "route_id": "wa_windy_peak_windy_creek_trail",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct; logged Windy Creek Trail ascents Jun-Oct (2/1/1/1/1 plus all-route peak Jun-Oct); trailhead page notes creek has water through August and snow-free hiking from early summer. Jun 28 ascent kept as within a month." },
+      "track": { "aid": "3246192", "verdict": "same", "kind": "complete", "inSeason": true,
+        "why": "Logged 'Windy Creek Trail' on 2026-06-28 (stats: start Chewuch trailhead, same route out), round trip of about 10 mi, summit 3 m from our pin; track start and end coincide with the Windy Creek / Cathedral Driveway trailhead (48.8722,-120.0035). Report describes the long burned-forest trail to the summit. Date is 3 days under the stored Jul start, within a month." },
+      "otherTracksConsidered": [
+        { "aid": "3251640", "verdict": "unsure", "why": "2026-07-03 round trip from the same trailhead, in season, no logged route name; backup." },
+        { "aid": "2915767", "verdict": "unsure", "why": "2025-07-24 same trailhead, no logged route name; backup." },
+        { "aid": "3222357", "verdict": "offseason", "why": "2026-06-06, sparse (437 pts), more than a month before July." },
+        { "aid": "3368462", "verdict": "different", "why": "October loop from Thirtymile via Basin Creek with a bushwhack, a different line." },
+        { "aid": "3368520", "verdict": "different", "why": "Multi-day Bulger trip from Thirtymile." },
+        { "aid": "517706", "verdict": "offseason", "why": "April snow ascent." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "add", "lat": 48.8722, "lng": -120.0035, "name": "Windy Creek (Cathedral Driveway / Chewuch) Trailhead",
+          "evidence": "Three in-season round-trip tracks start within 20 m of 48.8722,-120.0033; the Windy Creek Trail page gives this trailhead at the end of FR 39-300, 3.0 mi past the FR 39 junction, and the Cathedral Driveway page states that it is the same trailhead our route text names.",
+          "confirmedBy": "https://www.wta.org/go-hiking/hikes/windy-creek" }
+      ],
+      "facts": [
+        { "field": "approach_note", "month": 6, "text": "In late June the road from Loomis was mostly paved and the last stretch to the trailhead was broken pavement, slow going, with a small fallen tree that drivers had to lift clear.", "aids": ["3246192"] },
+        { "field": "watch_out", "month": 6, "text": "The long walk through burned forest is exposed to wind; snags creak and sway, and the top 600 ft above the trail is windy and often cloud-covered.", "aids": ["3246192"] },
+        { "field": "pro_tips", "month": 6, "text": "Late June brought only a few short muddy sections and one stretch with three trees across the trail; grade is flat for miles and then mild to the summit.", "aids": ["3246192"] }
+      ]
+    },
+    {
+      "route_id": "wa_windy_peak_iron_gate_trail",
+      "season": { "months": [7, 8, 9, 10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct; WTA notes the Iron Gate trailhead is among those closed in the fall 2026 fire closure; ascents from this side are mostly winter or spring attempts." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "1319355", "verdict": "offseason", "why": "January winter ascent from the Iron Gate side, no track." } ],
+      "pins": [], "facts": []
+    }
+  ],
+  "notes": "Windy Peak Trail (standard, Long Swamp) already has a track and was not in scope. Trailhead pin for the Windy Creek route was missing; added with WTA coordinate."
+}

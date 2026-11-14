@@ -43,22 +43,22 @@ function walk(dir, out = []) {
     if (e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p, out);
-    else if (/\.(jsx?|mjs)$/.test(e.name)) out.push(p);
+    else if (/\.(jsx?|mjs|tsx?)$/.test(e.name)) out.push(p);
   }
   return out;
 }
 const files = ["main.jsx", "ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx"]
   .map((f) => path.join(ROOT, f)).filter((f) => fs.existsSync(f))
-  .concat(walk(path.join(ROOT, "lib")));
+  .concat(walk(path.join(ROOT, "lib")), walk(path.join(ROOT, "src")));
 if (files.length < 20) dead(`only ${files.length} app source files found — the walk is broken`);
 
 let calls = 0;
 const describe = (a) => !a ? "no argument" : a.type === "Identifier" ? a.name : a.type === "StringLiteral" ? JSON.stringify(a.value) : a.type === "NullLiteral" ? "null" : a.type;
 for (const f of files) {
-  const rel = path.relative(ROOT, f);
+  const rel = path.relative(ROOT, f).replace(/\\/g, "/");
   const code = fs.readFileSync(f, "utf8");
   let ast;
-  try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: true }); }
+  try { ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true }); }
   catch (e) { dead(`${rel} does not parse: ${e.message}`); }
   traverse(ast, {
     CallExpression(p) {

@@ -35,7 +35,7 @@ if (clean.code !== 0) {
 console.log("baseline: green\n");
 
 const HEADER = "the remainder is no longer fully accounted for";
-// Two real controls in ClimbMatch.jsx: one already converted, one a DECLARED duplicate that
+// Two real controls (TodayTab.tsx and CrewListView.tsx since PR61): one already converted, one a DECLARED duplicate that
 // is deliberately still mouse-only. Swapping their states leaves the count untouched.
 const CONVERTED = '{...clickable(()=>setOnboardOpen(true))}';
 const PLAIN_EQUIV = 'onClick={()=>setOnboardOpen(true)}';
@@ -45,7 +45,7 @@ const DUP_CONVERTED = '{...clickable(()=>{setSharedRoute(null);setProfileModal(c
 const CASES = [
   {
     name: "1. a NEW mouse-only control is caught",
-    file: "ClimbMatch.jsx",
+    file: "src/components/TodayTab.tsx",
     // Convert one control back. Well-formed: only the attribute changes, no JSX is spliced —
     // the first attempt spliced whole elements in and produced a PARSE ERROR, which the
     // harness then read as "pass" because it judges on the classification header.
@@ -56,18 +56,20 @@ const CASES = [
   },
   {
     name: "2. a ONE-FOR-ONE SWAP is caught — the count is UNCHANGED",
-    file: "ClimbMatch.jsx",
+    // Since PR61 the declared duplicate lives in the Crew views, so the swap is made inside one of
+    // them, CrewListView, against a converted control of its own (the past-crews toggle).
+    file: "src/components/CrewListView.tsx",
     // -1 mouse-only (convert a declared duplicate) and +1 (un-convert another). The count
     // baseline sees nothing; the classification sees an undeclared control AND a stale
     // declaration.
-    edit: (s) => s.replace(DECLARED_DUP, DUP_CONVERTED).replace(CONVERTED, PLAIN_EQUIV),
+    edit: (s) => s.replace(DECLARED_DUP, DUP_CONVERTED).replace("{...clickable(()=>setPastArchShown(o=>!o))}", "onClick={()=>setPastArchShown(o=>!o)}"),
     expect: "fail",
     need: /NEW mouse-only control/,
     why: "THE POINT: a count baseline cannot see this; the classification can",
   },
   {
     name: "3. a new BACKDROP must NOT be flagged",
-    file: "ClimbMatch.jsx",
+    file: "src/components/TodayTab.tsx",
     // Same un-conversion, but given a backdrop's style, so it must be excused.
     edit: (s) => s.replace(CONVERTED, PLAIN_EQUIV + ' style={{position:"fixed",inset:0}}'),
     expect: "pass",

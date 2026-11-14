@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Runs lib/photoEvidence.js's REAL photoFingerprint -- its source, imported as a module -- in headless
 // Chrome over real JPEG and PNG files, and checks what 0208 relies on: a copy of a photo (re-save,
 // resize, PNG) lands within the 8-bit bar, and a different scene does not.
@@ -29,7 +30,7 @@ const page = await browser.newPage();
 page.setDefaultTimeout(600000);
 await page.setContent("<!doctype html><title>fingerprint probe</title>");
 const hashes = await page.evaluate(async ({ src, payload }) => {
-  const mod = await import(URL.createObjectURL(new Blob([src], { type: "text/javascript" })));
+  const mod = await import(fileHref(URL.createObjectURL(new Blob([src], { type: "text/javascript" }))));
   const out = {};
   for (const [name, b64] of Object.entries(payload)) {
     const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));

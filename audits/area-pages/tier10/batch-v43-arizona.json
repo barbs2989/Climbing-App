@@ -1,0 +1,24 @@
+{
+ "az_tritower": {
+  "_expect": {"name": "TriTower", "region": "Arizona"},
+  "blurb": "TriTower is a small, remote sport crag high on Mount Lemmon above Tucson, around 7,200 feet in the Upper Highway zone. Thirteen bolted lines spread across three separate towers, which present faces toward the east, north and west. The grades lean hard: a couple of 5.9s and a single 5.10, then mostly 5.11 with a handful of 5.12s, so it suits climbers already comfortable leading in the low 5.11 range. Expect a quiet day with a view out toward the San Pedro valley. Footing below some of the lines is loose and parts of the rock still carry lichen, so go in expecting a little cleaning and care on the ground.",
+  "review": {"sources": ["https://www.mountainproject.com/v/113166401", "https://www.mountainproject.com/area/106824468/7-upper-highway"]}
+ },
+ "az_assassin_s_cradle_the": {
+  "_expect": {"name": "Assassin's Cradle, The", "region": "Arizona"},
+  "blurb": "The Assassin's Cradle is a bouldering cluster on Mount Lemmon near Summerhaven, part of the Aspen Trail Boulders at roughly 7,100 feet. It is one of the first boulders met after the stream crossing and the short climb up from the car, and the problems sit right beside the trail, which doubles as the landing. Thirteen problems run from very easy up to V12, with about half at V3 or below, a handful in the middle, and a few serious hard lines at the top end. Some of the lower-numbered problems have not been cleaned, so check for loose holds before committing. The cooler elevation makes the Aspen Trail boulders a good summer choice.",
+  "review": {"sources": ["https://mountainproject.com/area/108872576/the-assassins-cradle", "https://www.mountainproject.com/area/106544219/aspen-trail-boulders"]}
+ },
+ "az_road_area": {
+  "_expect": {"name": "Road Area", "region": "Arizona"},
+  "blurb": "Road Area is a small, friendly corner of Lower Devil's Canyon in Queen Creek Canyon country near Superior. Thirteen routes sit on the north side of the dirt road, spread west of the end-of-road parking and around it to the north and south. Most are sport lines, with a few trad routes and one top-rope. The grades are modest for the canyon: a couple of easy lines near 5.4 and 5.5, a cluster around 5.7 and 5.8, and a few up to 5.10, so newer leaders can find something here. The wider canyon sees little traffic because of its rough drive in, so the walls are often quiet.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106497650/road-area", "https://www.mountainproject.com/area/105861158/lower-devils-canyon"]}
+ },
+ "_skipped": {
+  "az_lizard_rock": "no fetched page about the crag itself (only the Windy Ridge parent listing and a Lizard Boulders problem page)",
+  "az_obscure_rock": "only a single route page mentions it; no page about the crag",
+  "az_pancake_house": "could not fetch a second page about the crag (bivy page empty, parent page only)",
+  "az_right_side_2": "pages found describe Left Side and other Secret Garden areas; nothing fetched about Right Side",
+  "az_muttonhead_the": "summitpost page returned 403; only the Sheepshead area parent page was fetched"
+ }
+}

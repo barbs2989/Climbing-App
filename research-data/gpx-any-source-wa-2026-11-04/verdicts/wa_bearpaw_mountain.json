@@ -1,0 +1,58 @@
+{
+  "area_id": "wa_bearpaw_mountain",
+  "routes": [
+    {
+      "route_id": "wa_bearpaw_mountain_scramble",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep fits: logged successful ascents run Jun-Oct, peaking Jul-Aug; mid-July ascent was snow free; the high-country scramble needs melt-out."
+      },
+      "track": {
+        "aid": "3269822",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Only route on the peak; 2026-07-16 summit, track starts 131 m from the FS 3160 road-end pin, reaches summit within 13 m, returns to start; ~1,240 ft gain and ~4 mi round trip match our 1,300 ft / 5.9 km Church Lake line."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3001976",
+          "verdict": "unsure",
+          "why": "July summit from Church Lake but the track starts and ends about 1 km from the trailhead pin (not a complete round trip); lower priority than the complete track."
+        },
+        {
+          "aid": "2920946",
+          "verdict": "unsure",
+          "why": "July summit report with no track data attached."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "In July the last four miles of the Forest Service road to the trailhead are steep and deeply rutted; a high-clearance all-wheel-drive or 4x4 vehicle is the safe choice, and a phone map may send you to a different trailhead, so aim for the road end.",
+          "aids": [
+            "3269822",
+            "2920946"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 7,
+          "text": "By mid-July in a normal year the scramble was free of snow, leaving a moderate scramble with class 3 sections along the ridge.",
+          "aids": [
+            "3269822",
+            "3001976"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Packet had 3 tracks, all July. No pin changes needed: trailhead pin is within 131 m of the recorded start."
+}

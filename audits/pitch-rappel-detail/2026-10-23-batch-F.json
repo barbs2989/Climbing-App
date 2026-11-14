@@ -1,0 +1,106 @@
+{
+  "wa_prey": {
+    "area": "wa_osprey_wall",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1 – First Flight", "grade": "5.6", "lengthM": 30, "bolts": 4,
+        "notes": "Dirty ledges lead to the first bolt, which is easiest to spot on the cleanest black-and-white granite. Follow the bolted slab up into a chute between two stands of trees and exit it to the right. Walk the belay uphill and left so the belayer sits under a right-facing corner." },
+      { "pitch": "P2", "grade": "5.9+", "lengthM": 40, "bolts": 5,
+        "notes": "Start in the brown right-facing corner with jagged rock and stem up to a roof. The moves at the roof are airy, but the crux is well bolted. Step right above the roof onto a short bolted slab that finishes at the anchor beneath a clean left-facing corner. Small optional gear is useful above the slab crux." },
+      { "pitch": "P3 – The Money Pitch", "grade": "5.10c",
+        "notes": "The only pitch that needs no trad gear. Begin on incut holds off the belay, follow the steep corner past the first roof (a brief move right, then back left onto the bolt line), and continue through the second overhang on white marbled rock. The top is a full-value arete: sustained face moves to the left, or bigger dynamic moves out right. A #1 or #2 cam is optional at the top. A first-time leader does well to clip the final hanger on the left and trend left. Stated length ranges from about 30 to 40 m.",
+        "bolts": 11 },
+      { "pitch": "P4", "grade": "5.9", "lengthM": 30, "bolts": 3,
+        "notes": "Follow the right-trending corner ramp as it turns into an open book, with bolts visible ahead; skip the extra bolt far out right on the arete unless taking that variation. After three bolts, trend right along the arete to a bolted anchor on a slight ledge that looks straight across at the P5 crux. Variation 1: step right off the belay with small gear to huge exposed fins, then go straight up to a four-inch slung horn and rejoin the normal line. Variation 2: from the slung horn, traverse right about 20 m on clean rock to the large gully, staying in the corner on its right side, to a trad belay just right of the final bolted crux; protection is small gear plus .75, .3 and a 2 at the anchor, and it is a bit runout on easy ground." },
+      { "pitch": "P5", "grade": "5.10c", "lengthM": 15, "bolts": 3,
+        "notes": "Three bolts up a short, fun arete. Put a #1 cam in at the end of the overhang to protect the follower, then continue up and right to the bolted belay at the top of the wall. For the descent, look climber's left of this belay for a tree rappel anchor." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/118562306/prey"],
+      "changed": "Extended all five stored pitch notes from the route description (P2 anchor location and gear, P3 line through the roofs and the left-trending advice, both P4 variations, P5 protection and the tree anchor for the descent). Kept every stored label, bolt count, grade and length. Only one source page was readable; second-source searches found nothing else. No rappel table written: the only rappel beta is a tree anchor to the climber's left of the top belay and double 60 m ropes trending left to the next ledge; the number and location of later stations is not published.",
+      "pitch_count_found": 5,
+      "other_findings": "One search listing shows the route as 4 pitches while the description has a Pitch 5 heading; the 5-pitch table is consistent with the description. The stored descent text mentions a scree option that the source page does not state in the description I read."
+    }
+  },
+  "wa_dark_side_of_liberty": {
+    "area": "wa_liberty_bell",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.12+", "lengthM": 40, "bolts": 8, "anchor": "Bolted anchor", "crux": false,
+        "notes": "Starts at the top of the car-sized chockstone at the base of the east face. The first bolts are on slightly funky rock with yellow and orange lichen, but quality improves by the third bolt and the last five bolts are on superb granite. The climbing builds steadily on a steep, exposed face to a cryptic, steep crux (about V6) just below the anchor." },
+      { "pitch": "2", "grade": "5.13-", "lengthM": 45, "bolts": 8, "anchor": "Bolted anchor", "crux": false,
+        "notes": "Almost no easy ground. The first half works up and around a vertical orange dike on interesting holds, leading into a short horizontal roof that needs blind reaches and heel hooks. Above the roof the angle eases only a little, with insecure moves to a small stance at the anchor." },
+      { "pitch": "3", "grade": "5.11", "lengthM": 30, "bolts": 2, "anchor": "Bolted anchor", "crux": false,
+        "notes": "A breather before the crux pitch. Step left off the belay and around the arete to a short, easy hand crack that leads to a larger arete. A few moves are funky and surprisingly hard, particularly for shorter climbers." },
+      { "pitch": "4", "grade": "5.13+", "lengthM": 45, "bolts": 6, "anchor": "Bolted anchor", "crux": true,
+        "notes": "The money pitch. Scramble up the ramp to the left to a short flake, pass a few bolts of bouldery moves, then reach right to the start of the finger crack. Layback and jam the roughly 45-foot crack to a good jug flake and rest. From there small feet and crimps lead over the bulge in a V9/V10 boulder problem, finished with a mantel onto a short slab. Without beta or chalk it can feel much harder than its grade." },
+      { "pitch": "5", "grade": "5.11", "lengthM": 40, "bolts": 4, "anchor": "Bolted anchor", "crux": false,
+        "notes": "Ramble up the slab to the huge corner and roof overhead. Most of the pitch is jamming or laybacking on good holds. It steepens before a traverse out and right around the offwidth roof; undercling and layback the offwidth until it is possible to squeeze inside, where feet and hands are good and the climbing quickly eases. Gear in the protection list: a single #3 is needed only on this pitch." },
+      { "pitch": "6", "grade": "5.11", "lengthM": 35, "bolts": 4, "anchor": "Bolted anchor", "crux": false,
+        "notes": "A short stretch of 4th class leads to a bolt by a tree, where the belay is moved. Climb left up a ramp, mantel up and right onto the top of a large flake, and place a few small cams before setting off on insecure, funky jams. The difficulty tapers off and better locks appear higher." },
+      { "pitch": "7", "grade": "5.9", "lengthM": 30, "bolts": 2, "anchor": "Bolted anchor", "crux": false,
+        "notes": "Straight up small ledges through some loose rock, a bit runout but never hard. Gain the huge open corner and turn right onto fun, easy laybacking." },
+      { "pitch": "8", "grade": "5.11", "lengthM": 35, "bolts": 4, "anchor": "Bolted anchor", "crux": false,
+        "notes": "Jam and stem the left side of the overhanging open chimney until it is possible to stem out right. Avoid the large wedged block near the end of the pitch, and build the belay on the bolts out left so the rope does not pinch behind that block." },
+      { "pitch": "9", "grade": "5.10", "lengthM": 30, "bolts": 2, "anchor": "Bolted anchor", "crux": false,
+        "notes": "A few wide stems up the chimney reach the first bolt, then step left around the arete. Easy, enjoyable face climbing leads up and left toward the arete that divides the east and north faces, where the route meets Thin Red Line. Can be linked with pitch 10 if little gear is placed." },
+      { "pitch": "10", "grade": "5.8", "lengthM": 25, "bolts": 2, "anchor": "2-bolt rap anchor", "crux": false,
+        "notes": "Easy but loose blocks just left of the arete lead to the top. From here the choice is about 150 m of 4th-class terrain to the true summit, or rappelling the route on a single 80 m rope; the anchors on the route were placed roughly 40 m apart." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": [
+        "https://www.mountainproject.com/route/117673432/dark-side-of-liberty",
+        "https://publications.americanalpineclub.org/articles/13201215339"
+      ],
+      "changed": "Kept every stored label, grade, length, bolt count and anchor. Extended the notes with the line description from the route page and the first-ascent write-up (pitch 1 and 2 character, how pitch 4 starts, pitch 5 gear, pitch 6 belay move, pitch 8 belay placement, pitch 9 link to Thin Red Line, anchor spacing). No rappel table: the only rappel beta is 'rappel the route on a single 80 m rope', anchors were drilled about 40 m apart, and no station-by-station description exists in any source I could read.",
+      "pitch_count_found": 10,
+      "other_findings": "A third-party write-up calls the route 11 pitches and 5.13d; the first-ascent article says 1,100 ft, IV 5.13+ with 'remaining six' pitches after the first four plus one, consistent with 10 pitches here. Stored P3 length/bolt counts could not be cross-checked. The first-ascent article mentions the team called P5 5.11 'hero climbing' but gives no further detail."
+    }
+  },
+  "wa_garfield_mountain_infinite_bliss": {
+    "area": "wa_garfield_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1-7", "grade": "5.8",
+        "notes": "Low-angle, sometimes water-polished slab at 5.4-5.8, with runouts that can be long but on easy ground. The first two pitches link in one lead, and a competent party can run the next three and a half as a running belay to the top of the lower slabs. The pitch that reaches the first big ledge can be wet; a ramp on the left avoids it. P7 climbs a short 5.7 wall before easing back to slab. The whole route follows a gully slab, so anything knocked off above funnels straight down these pitches — the many bent hangers show it; do not linger below other parties." },
+      { "pitch": "P8", "grade": "5.5",
+        "notes": "A fun blocky ramp cutting through the steeper wall above the lower slabs, a full rope length from the base of that wall. Protection is sparse — two bolts of 5.7-5.8 at the start, a bolt about halfway and a fixed pin about 15 ft below the belay — but the climbing is easy. On the way down this ramp is downclimbed rather than rappelled." },
+      { "pitch": "P9", "grade": "5.9",
+        "notes": "The first 5.9 pitch, on steeper rock where the bolts are closer together as the moves get harder. It ends on a large ledge." },
+      { "pitch": "P10", "grade": "5.7", "anchor": "flake, gear",
+        "notes": "Easy climbing above the ledge. Bypass the chain anchors and scramble up to the base of the steep wall on the left, belaying on a flake below the bolt line of the next pitch." },
+      { "pitch": "P11", "grade": "5.10b",
+        "notes": "The first 5.10 pitch: well-bolted, balancy face climbing that is a fair test for the upper crux. Stay on the bolt line; forcing moves off it makes the pitch harder." },
+      { "pitch": "P12", "anchor": "chains", "lengthM": 30,
+        "notes": "A more moderate pitch (roughly 5.8) up to chains. The top of this pitch makes a worthwhile objective on its own; above it the rock and climbing are poorer." },
+      { "pitch": "P13-18",
+        "notes": "Easy (about 5.0-5.8) but the most runout section, on fair, slightly polished rock that sheds stones onto parties below. P13 is a full rope length with small cams useful in flakes, and can be run as one lead to a second set of chains up and right. A moderate pitch with five or six bolts follows to a belay where the wall kicks back. P15's two bolts are easy to miss and P16-17 have only the stations. Where the wall kicks back, go left to a bolt, up and right to a belay between a stand of trees and a heather patch (about 40 m, two bolts), then right along an obvious ramp of roughly 120 ft to the headwall; the trees and heather are useful landmarks on the descent too. Parties most often get lost here." },
+      { "pitch": "P19",
+        "notes": "The first pitch of the upper headwall, where the bolt line picks back up, finishing on a tricky friction slab (around 5.9)." },
+      { "pitch": "P20", "crux": true, "grade": "5.10",
+        "notes": "The crux: a steep, sustained wall nearly a full 60 m rope length, needing around 17 draws (bring long ones or back-clean). Its anchor has no chains; a chained station about 10 m higher lets two 60 m ropes reach the base of this pitch on the descent." },
+      { "pitch": "P21", "grade": "5.10a",
+        "notes": "A chimney climbed by stemming and scrounging; it is often wet and can feel harder than the crux late in the day. Grades given for it range from 5.9 to 5.10a." },
+      { "pitch": "P22",
+        "notes": "An easier, fun pitch up blocky ground, ending about 30 m below the summit." },
+      { "pitch": "P23", "grade": "5.10a",
+        "notes": "A steep friction finish to the summit that looks easy from the belay but has few holds; well bolted and airy. Grades given for it range from 5.9 to 5.10a." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": [
+        "https://alpinedave.com/garfield/infinite_bliss.htm",
+        "https://stephabegg.com/trip-reports/washington/garfield-infinite-bliss/"
+      ],
+      "changed": "Kept every stored label and fact; added linking and wet-pitch detail for P1-7, the two bolts at the start of P8 and the ramp downclimb, the P13 full rope length and flake cams plus the ramp length and landmarks for P13-18. Did not write a rappel table: sources only say all rappels are chained double-rope (2 x 60 m) stations taking 2.5-4 hours, with the P8 ramp downclimbed; no source lists stations, lengths or counts, and the stored 20-25 rappels note already says the count differs.",
+      "pitch_count_found": 23,
+      "other_findings": "Grades for the route differ by source: 5.10b in the earlier write-up, 5.10c as the crux in the later report. No Mountain Project route page was found. Stored P11 is 5.10b and P20 is labelled only 5.10 (not 5.10c)."
+    }
+  },
+  "skip_reasons": {
+    "wa_the_devils_club": "No readable source describes any pitch or rappel station. The only real beta found (a 2005 news item) gives the 25-pitch scale, 1,000 ft of slab to a bivy ledge, a 1,500 ft headwall, and a first rappel that hung up followed by about a dozen more; the Mountain Project page has no description. The stored 25-row pitch table (specific grades and lengths per pitch) has no supporting source I could find, so I did not extend it and recommend it be reviewed.",
+    "wa_vanishing_point": "Stored table is already rich and matches the one full route description I read (P1-P9 notes, protection, descent); the route is a walk-off via the base-jumper trail, so no rappel table is appropriate. Nothing to add that a source states."
+  }
+}

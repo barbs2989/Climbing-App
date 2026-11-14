@@ -1,0 +1,695 @@
+[
+ {
+  "id": "wa_american_border_peak_northeast_face",
+  "skip": true,
+  "reason": "No openable source describes the Northeast Face (only a 1952 Beckey first-ascent citation turned up); all trip reports found are for the Southeast Route, and SummitPost/Mountaineers/CascadeClimbers pages returned 403. Row also has no gain/dist/approach to anchor a plan."
+ },
+ {
+  "id": "wa_big_four_mountain_northwest_ridge",
+  "skip": true,
+  "reason": "Sources found (sverdina.com, stevensong.com) describe the Dry Creek route from the south, not the Northwest Ridge; no NW Ridge trip report with timing could be opened (SummitPost/Mountaineers 403). Too thin for an honest route-specific plan."
+ },
+ {
+  "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+  "itinerary": {
+   "cal": "Best from mid-July to early October once the upper basin melts out; earlier trips (late May-June) found the trail snow-covered above ~6,600 ft and needed boots and axe. Most parties take 3 days and combine Cardinal with Emerald and Saska from the same high camp; self-issue Glacier Peak Wilderness permit at the trailhead.",
+   "totalNote": "A 3-day trip: hike up the North Fork Entiat past Fox Camp to a ~6,800 ft meadow camp in the basin under Cardinal, climb snow from the northwest basin to the north ridge and scramble to the summit (often adding Emerald and Saska), then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to the basin below Cardinal",
+     "objective": "Reach a high camp near 6,800 ft below Cardinal",
+     "note": "About 8 miles up the North Fork Entiat trail to the Fox Camp area, then roughly 1.5 miles more to the basin between Emerald and Saska; one party reached a meadow camp at about 6,800 ft beneath Cardinal in the late afternoon. Lower trail runs through burned forest with blowdown. Gain derived from the row's ~3,880 ft trailhead to a ~6,800 ft camp.",
+     "gainFt": 2900,
+     "lossFt": 0,
+     "hours": 7,
+     "miles": 9.5,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Cardinal from the northwest basin",
+     "objective": "Summit Cardinal Peak (8,590 ft) and return to camp",
+     "note": "From the snow-covered basin on Cardinal's northwest side, climb moderate snow directly to the summit ridge, then scramble the exposed ridge to the top; expect loose blocky rock. Many parties also tag Emerald and Saska the same day, which turns it into a full day returning near dark. Gain derived from camp (~6,800 ft) to summit.",
+     "gainFt": 1800,
+     "lossFt": 1800,
+     "hours": 6,
+     "miles": 3,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out the North Fork Entiat",
+     "objective": "Return to the trailhead",
+     "note": "Reverse the approach; parties report the walk out going somewhat faster than the hike in. Water is reliable along the North Fork once back down at Fox Camp.",
+     "gainFt": 0,
+     "lossFt": 2900,
+     "hours": 5,
+     "miles": 9.5,
+     "packLb": 35,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2017/05/27/saska-emerald-and-cardinal-peaks/",
+   "https://lemkeclimbs.com/?p=2838",
+   "https://countryhighpoints.com/cardinal-emerald-saska-peaks",
+   "https://www.wta.org/go-hiking/hikes/north-fork-entiat-river"
+  ],
+  "confidence": "low",
+  "notes": "Row has no gain/dist/summit elevation. Cardinal summit 8,590 ft per lemkeclimbs. Approach mileage (8 mi to Fox Camp + 1.5 mi to basin) and trailhead ~3,880 ft come from the row's bivy notes; camp elevation 6,800 ft from climberkyle. Lemke climbed the NW basin snow to the summit ridge (approached from Lake Chelan side, not N Fork Entiat); climberkyle used the Entiat side. Day 2 miles is an estimate. A winter party (countryhighpoints) did Cardinal+Saska car-to-car-ish over 2 days, 46 mi / 9,400 ft, from a sno-park far below the trailhead. WTA lists the area trails closed (Little Giant Fire) in 2026."
+ },
+ {
+  "id": "wa_crooked_thumb_peak_east_face",
+  "skip": true,
+  "reason": "No source describes the East Face itself (row descent is 'presumed'); found reports cover the NW couloir and general Northern Pickets approaches only, and CascadeClimbers/SummitPost return 403. Too thin for an honest route-specific plan."
+ },
+ {
+  "id": "wa_earl_peak_standup_creek_route",
+  "itinerary": {
+   "cal": "Snow-free from about mid-June to October; early-season parties have turned back in deep snow in the upper drainage. Done as a single day by nearly everyone, either out-and-back or as a loop down Bean Creek.",
+   "totalNote": "A long single day: up the Standup Creek trail with its many creek crossings to the ~6,200 ft saddle, along Earl's ridge to the 7,036 ft summit, and back the same way or down the SW ridge and Bean Creek.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Standup Creek to Earl Peak and back",
+     "objective": "Summit Earl Peak and return to the car",
+     "note": "The old-road trail crosses Standup Creek six to seven times before switchbacking to the saddle SE of Earl, then roughly 0.7 mile of ridge leads to the summit. Reported car-to-car times run 8.5-10 hours; a 2005 party logged 4,240 ft of gain. Many parties descend the SW ridge to Bean Creek instead, which needs a shuttle or a walk back to the Standup trailhead.",
+     "gainFt": 4100,
+     "lossFt": 4100,
+     "hours": 9,
+     "miles": 10.4,
+     "packLb": 18,
+     "schedule": [
+      {"time": "9:10 AM", "label": "Leave trailhead", "detail": "Start up the Standup Creek trail; first creek crossings come early."},
+      {"time": "~2:05 PM", "label": "Summit", "detail": "About 5 hours up via the saddle and summit ridge."},
+      {"time": "~3:25 PM", "label": "Leave summit", "detail": "Descend the SW ridge toward Bean Creek or reverse the ascent."},
+      {"time": "~6:55 PM", "label": "Back at trailhead", "detail": "About 9.75 hours total including a long summit stop."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://kuresman.com/2014/Trip_Reports/Earl_Peak/Report_Earl_Peak.html",
+   "https://www.yellowleaf.org/scramble/g/r/2005-11-19-earl.html"
+  ],
+  "confidence": "medium",
+  "notes": "Miles = 2 x row dist_km 8.4 (10.4 mi); gain uses row 4,100 ft (yellowleaf 2005 measured 4,240 ft; ascent 5h19m, descent 2h58m, 8h33m car-to-car). Schedule is from the 2014 kuresman trip, which descended via Bean Creek (loop), not an out-and-back."
+ },
+ {
+  "id": "wa_mount_ellinor_southeast_chute",
+  "itinerary": {
+   "cal": "A winter and spring snow climb (roughly December-May) needing axe, crampons and avalanche judgment; the chute is often churned by glissade tracks and gets thin with running water underneath by May. Always a single day.",
+   "totalNote": "A one-day snow climb from the lower (winter) or upper trailhead, up the trail to the ~4,500 ft winter-route junction, then up the chute to the 5,944 ft summit and back down, often by glissade.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb the chute to Mount Ellinor",
+     "objective": "Summit via the snow chute and return",
+     "note": "From the upper trailhead it is about 3.2 miles round trip and 2,444 ft of gain; in winter the road is usually blocked near the lower trailhead, making it about 6.2 miles and 3,300 ft. Leave the summer trail at the signed junction near 4,500 ft and climb the chute (about 1,300 ft of snow) to the summit; check the avalanche forecast and dig a pit if loaded. Figures shown are for the lower-trailhead winter start.",
+     "gainFt": 3300,
+     "lossFt": 3300,
+     "hours": 6,
+     "miles": 6.2,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/mount-ellinor",
+   "https://turns-all-year.com/trip-reports/may-9-2017-mt-ellinor-winter-route-2"
+  ],
+  "confidence": "medium",
+  "notes": "Row has no gain/dist. Distance/gain from WTA (lower TH 6.2 mi RT / 3,300 ft; upper TH 3.2 mi / 2,444 ft). Hours is an estimate (no source gave timing); Mountaineers/WTA trip reports were 403."
+ },
+ {
+  "id": "wa_mount_si_trail",
+  "itinerary": {
+   "cal": "Hikeable most of the year, with snow and ice near the top in winter; start before about 9 AM to beat weekend crowds and a full lot. Always a day hike.",
+   "totalNote": "A half-day out-and-back on the Mount Si trail to Haystack Basin (about 8 miles and 3,150 ft), with an optional exposed scramble up the Haystack.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike Mount Si to Haystack Basin",
+     "objective": "Reach Haystack Basin (3,900 ft) and return",
+     "note": "Steady switchbacks for a little under 4 miles and about 3,100 ft to the viewpoint at Haystack Basin; most hikers take 3-6.5 hours round trip. The Haystack (true summit, 4,167 ft) is a rough, exposed scramble beyond the lunch spot and adds about half a mile.",
+     "gainFt": 3150,
+     "lossFt": 3150,
+     "hours": 4.5,
+     "miles": 8,
+     "packLb": 15,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/mount-si",
+   "https://theoutbound.com/washington/hiking/hike-mt-si"
+  ],
+  "confidence": "high",
+  "notes": "Row dist_km 6.4 one-way = 8.0 mi RT, matches WTA (8.0 mi, 3,150 ft). Outbound lists 3,241 ft and 3-4 hours."
+ },
+ {
+  "id": "wa_mount_baker_squak_glacier",
+  "itinerary": {
+   "cal": "An early-season route, best May to early July before the bergschrund and crevasses open; June is the classic month. Most parties take 2 days with a night at Crag View, though fast parties and skiers do it in a single push. No climbing permit; camping below 6,000 ft on this route is not allowed.",
+   "totalNote": "The classic 2-day Squak: hike and climb to Crag View camp (~6,500 ft) on day one, then summit via the Squak Glacier and Roman Wall early on day two and descend all the way to the car the same afternoon.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Crag View camp",
+     "objective": "Reach camp at Crag View (~6,500 ft)",
+     "note": "Scott Paul trail from Schriebers Meadow, leaving the trail near 4,600 ft on the climbers' path up the moraine to Crag View, about 3.5 miles and 3,300 ft. Parties report arriving around 4 PM after a late-morning start; tent spots are usually available. Gain derived from the 3,200 ft trailhead to the 6,498 ft camp.",
+     "gainFt": 3300,
+     "lossFt": 0,
+     "hours": 5,
+     "miles": 3.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Summit via the Squak and hike out",
+     "objective": "Climb to Grant Peak and descend to the trailhead",
+     "note": "Rope up at camp and climb the Squak Glacier east of the Crag View camps, past Sherman Crater, then up the Roman Wall to the summit; camp to summit runs about 2-5 hours depending on crevasse route-finding. Descent back to camp is quick (3-4 hours from the summit), then pack up and hike out. Gain derived from 6,498 ft camp to the 10,781 ft summit.",
+     "gainFt": 4300,
+     "lossFt": 7600,
+     "hours": 11,
+     "miles": 6.5,
+     "packLb": 18,
+     "schedule": [
+      {"time": "~5:15 AM", "label": "Leave camp", "detail": "Roped up from Crag View onto the Squak Glacier."},
+      {"time": "~9:00-10:15 AM", "label": "Summit", "detail": "Reported summit times 8:30-10:15 AM from Crag View starts between 4:30 and 6:30 AM."},
+      {"time": "~12:20 PM", "label": "Back at camp", "detail": "Pack up camp."},
+      {"time": "~3:45 PM", "label": "Back at trailhead", "detail": "About 3.5 hours out from Crag View."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier",
+   "https://turns-all-year.com/trip-reports/mt-baker-via-squak-june-4-5-2016",
+   "https://turns-all-year.com/trip-reports/july-2-3-2014-mt-baker-squak-glacier"
+  ],
+  "confidence": "medium",
+  "notes": "Row dist_km 5.5 (3.4 mi) conflicts with its own approach text (3.5 mi to Crag View alone) and with Outbound's ~10 mi round trip / 7,500 ft; day miles apportioned from Outbound's 10 mi total (summit day = 3 mi round trip from camp + 3.5 mi out), so summit-day mileage is approximate. Outbound's 7,500 ft gain vs. ~7,600 ft derived from row elevations agree. Schedule combines 2016 (leave 5:15, camp 12:20, car 3:45) and 2014 (start 6:30, summit 10:15) reports."
+ },
+ {
+  "id": "wa_sherman_peak_baker_squak_glacier",
+  "itinerary": {
+   "cal": "Strictly early season (roughly June, or earlier on skis): later in summer a bergschrund opens across the line and Sherman's summit melts out to loose rock, and several July parties have switched to Grant Peak instead. Plan 2 days with a night at Crag View; no permit, but no camping below 6,000 ft.",
+   "totalNote": "A 2-day climb: hike to Crag View (~6,500 ft) on the Squak Glacier, then climb the Squak to the saddle below the Roman Wall, scramble to Sherman's summit, and descend to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Crag View camp",
+     "objective": "Reach camp on the Squak moraine near 6,500 ft",
+     "note": "Scott Paul/Park Butte trail from Schriebers Meadow, leaving the trail around 4,600 ft for the climbers' path to Crag View, about 3.5 miles and 3,300 ft. Some parties push higher to the Sulphur moraine near 6,800-7,000 ft to shorten summit day, at the cost of an exposed camp and melting all water.",
+     "gainFt": 3200,
+     "lossFt": 0,
+     "hours": 5,
+     "miles": 3.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Sherman Peak and hike out",
+     "objective": "Summit Sherman Peak (10,133 ft) and return to the car",
+     "note": "Leave camp around 4 AM; the Squak is mostly crevasse-free to about 8,700 ft, then weave through a crevassed, icy section on crampons to the saddle below the Roman Wall (~9,000 ft) and climb from there to Sherman's summit. Reverse to camp, then hike out. Gain derived from Crag View to the 10,133 ft summit.",
+     "gainFt": 3600,
+     "lossFt": 6800,
+     "hours": 10,
+     "miles": 6.5,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://turns-all-year.com/trip-reports/november-11-12-2018-mt-baker-and-sherman-peak",
+   "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier",
+   "https://www.whereiskylemiller.com/?p=9032"
+  ],
+  "confidence": "low",
+  "notes": "Row gain 6,800 ft matches 3,337 ft trailhead to 10,133 ft summit; row dist_km is null. Summit-day miles are an estimate (shares the Squak line with the Baker route; Outbound gives ~10 mi round trip to Grant Peak, Sherman is a bit shorter). The 2018 turns-all-year party camped at ~6,800 ft at the glacier edge and left at 4 AM; no source gave summit/return times for a Sherman-only climb. Mountaineers trip reports (most of the Sherman beta) returned 403."
+ },
+ {
+  "id": "wa_mount_baker_coleman_ski_descent",
+  "itinerary": {
+   "cal": "A spring ski objective (roughly April-June) when the Coleman-Deming holds continuous snow to camp; early in the season the road may be closed short of the trailhead, adding 1-3 miles each way. Usually 2 days with a camp near 6,000 ft at the Hogsback, though strong parties do it in a single day.",
+   "totalNote": "Two days: skin/hike to a camp near 6,000 ft at the edge of the Coleman Glacier, then climb the Coleman-Deming to the summit, ski the route back to camp in corn, and continue out to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike and skin to the Hogsback camp",
+     "objective": "Reach camp near 6,000 ft at the Coleman Glacier",
+     "note": "Trail 677 from the Heliotrope Ridge trailhead (~3,700 ft) past the old Kulshan Cabin site, then the climbers' trail up the Hogsback to the glacier edge near 6,000 ft; one party took about 1.5 hours walking and 45 minutes skinning. Gain derived from trailhead to camp elevations.",
+     "gainFt": 2300,
+     "lossFt": 0,
+     "hours": 3,
+     "miles": 3,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Coleman-Deming and ski out",
+     "objective": "Summit Mount Baker, ski the route, and return to the car",
+     "note": "Skin up the Coleman Glacier to the Coleman-Deming col, then usually boot-pack the Roman Wall with crampons and axe to the summit. Ski parties start later than climbers so the Roman Wall and glacier soften to corn; one May party left camp at 8 AM, summited about 12:30 PM and found the Roman Wall still firm at 1 PM. Gain derived from ~6,000 ft camp to the 10,781 ft summit.",
+     "gainFt": 4800,
+     "lossFt": 7100,
+     "hours": 9,
+     "miles": 8,
+     "packLb": 20,
+     "schedule": [
+      {"time": "8:00 AM", "label": "Leave camp", "detail": "Later start than a climbing party, timed for the snow to soften on the descent."},
+      {"time": "~12:30 PM", "label": "Summit", "detail": "Skis carried up the Roman Wall from the Coleman-Deming col."},
+      {"time": "~1:00 PM", "label": "Drop the Roman Wall", "detail": "Still firm at this hour; corn below the col back to camp."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://turns-all-year.com/trip-reports/mt-baker-via-heliotrope",
+   "https://thepeakseeker.com/routes/coleman-deming-route-mount-baker/"
+  ],
+  "confidence": "medium",
+  "notes": "Row has no gain/dist. Peakseeker: ~11 mi round trip, ~7,080 ft gain from ~3,700 ft trailhead. Day-1 miles (3 mi) and day-2 miles (8 mi) are apportioned from that 11-mile total and are approximate. Car-to-car single-push reports run 10-16.5 hours."
+ },
+ {
+  "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+  "itinerary": {
+   "cal": "A snow route for late spring to early summer (roughly June-early July) while the Avalanche and White Salmon glaciers hold smooth snow; later, crevasses and a schrund near the top of the White Salmon open. Usually 2 days with a camp in the 7,200 ft moraine bowl; strong ski parties do the route in a single day from Cold Springs.",
+   "totalNote": "Two days from Cold Springs: traverse the Round the Mountain trail to a camp in the 7,200 ft moraine bowl, then climb the Avalanche Glacier to the ~10,200 ft moraine saddle and the White Salmon Glacier to the summit, and return to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Traverse to the Avalanche Glacier bowl",
+     "objective": "Camp in the moraine bowl near 7,200 ft",
+     "note": "South Climb trail about 2 miles up the old roadbed to the Round the Mountain trail near 6,200 ft, roughly 2 miles of up-and-down traverse northwest to the stream draining the Avalanche basin near 6,100 ft, then up the stream and moraines to the bowl where the Southwest Chutes and Avalanche routes meet. Gain derived from 5,600 ft trailhead to 7,200 ft camp plus traverse undulation.",
+     "gainFt": 1800,
+     "lossFt": 200,
+     "hours": 4,
+     "miles": 5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb to the summit and return",
+     "objective": "Summit Mount Adams via the Avalanche and White Salmon glaciers",
+     "note": "Climb the Avalanche Glacier to the moraine saddle between it and the White Salmon Glacier near 10,200 ft, then up the White Salmon (about 35 degrees, steepening to ~45 near the top) to the summit plateau. Reverse the route, or descend the South Spur. A 2004 party descending this line left the summit at 2 PM, reached the Round the Mountain trail at 3:15 PM and the car around 5 PM. Gain derived from 7,200 ft to the 12,276 ft summit.",
+     "gainFt": 5100,
+     "lossFt": 6700,
+     "hours": 11,
+     "miles": 10,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://turns-all-year.com/trip-reports/june-20-2004-mt-adams-avalanche-white-salmon",
+   "https://turns-all-year.com/trip-reports/june-21-22-adams-white-salmon-attempt"
+  ],
+  "confidence": "low",
+  "notes": "Row has no gain/dist/summit elevation (12,276 ft taken from the Mazama row). Sources are ski reports: 2004 ascended the South Spur and skied this line in a day from Cold Springs; 2014 camped at ~6,800 ft (from Williams Mine) and turned around at ~9,200 ft. Day-2 miles and both days' hours are estimates; no source gives a climbing-direction summit-day timing. The FS trail-183 URL came from search results (2-mile roadbed to the Round the Mountain junction), not opened."
+ },
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "itinerary": {
+   "cal": "Best July to early September, when the Yakama Nation opens the Bird Creek Meadows area (a tribal permit/fee is required, and the Nation decides each year whether overnight stays are allowed). Most parties take 2-3 days with a camp at Sunrise Camp; in day-use-only years it becomes a single long push.",
+   "totalNote": "A 2-3 day climb: hike from Bird Creek Meadows to Sunrise Camp (~8,300 ft), climb the Mazama Glacier and its headwall to the summit on an alpine start, then descend to camp and hike out (same day or the next morning).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Sunrise Camp",
+     "objective": "Reach Sunrise Camp at the edge of the Mazama Glacier",
+     "note": "From the Bird Creek Meadows trailhead (~5,700 ft), trail then moraines and snowfields from about 6,700 ft, working across the right side of the lower Mazama Glacier to Sunrise Camp; parties report about 3.5 hours with photo stops. Gain derived from 5,700 ft to 8,314 ft.",
+     "gainFt": 2600,
+     "lossFt": 0,
+     "hours": 3.5,
+     "miles": 3.5,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Mazama Glacier Headwall",
+     "objective": "Summit Mount Adams (12,276 ft) and return to camp",
+     "note": "Rope up early and climb the 35-degree Mazama Glacier to the headwall near 11,300 ft, then onto the summit plateau; about 4,000 ft from camp. Descent takes about 3.5 hours back to Sunrise Camp. Gain derived from 8,314 ft camp to summit.",
+     "gainFt": 4000,
+     "lossFt": 4000,
+     "hours": 9,
+     "miles": 4.4,
+     "packLb": 18,
+     "schedule": [
+      {"time": "2:00 AM", "label": "Wake up", "detail": "Melt water and pack."},
+      {"time": "3:00 AM", "label": "Leave camp", "detail": "Roped up and on the glacier by about 4 AM."},
+      {"time": "~8:30-9:00 AM", "label": "Summit", "detail": "Fast parties; a slower 2007 party summited 11:40 AM-12:15 PM."},
+      {"time": "~12:30 PM", "label": "Back at Sunrise Camp", "detail": "About 3.5 hours down from the summit."}
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Hike out to Bird Creek Meadows",
+     "objective": "Return to the trailhead",
+     "note": "Reverse the approach; many parties instead pack up and hike out on the afternoon of summit day, reaching the trailhead around 4 PM.",
+     "gainFt": 0,
+     "lossFt": 2600,
+     "hours": 2.5,
+     "miles": 3.5,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://obsidians.org/?p=26637",
+   "https://mountainwateradventures.blogspot.com/2007/09/mt-adams-mazama-glacier.html"
+  ],
+  "confidence": "medium",
+  "notes": "Row has no gain/dist. Obsidians 2013 lists 6,300 ft total gain and 11.4 (mi) total distance, Sunrise Camp at 8,300 ft (trailhead 5,700 ft in report vs 6,000 ft in event listing). Per-day miles are apportioned from the 11.4 total and are approximate. Schedule from Obsidians 2013 (3 AM start, descent began ~9 AM, camp 12:30 PM)."
+ },
+ {
+  "id": "wa_mount_adams_pinnacle_glacier_headwall",
+  "skip": true,
+  "reason": "Only the Mountain Project route page (approach via Riley Camp trail, ~2,000 ft headwall, descend West Ridge) describes the climb; the other reports found are approach recons or day hikes that never climbed the headwall, with no camp or timing. No source shows how parties structure the trip."
+ },
+ {
+  "id": "wa_mount_daniel_lynch_glacier",
+  "itinerary": {
+   "cal": "Best June to early July, while snow covers the lower icefall and Pea Soup Lake is still frozen; from mid-July the Pea Soup approach and the upper moat get harder as the shrinking glacier melts out. Usually 2 days, with a self-issue Alpine Lakes Wilderness permit at the trailhead.",
+   "totalNote": "A 2-day loop: hike past Deception Pass and Marmot Lake to camp at Jade Lake, then cross Dip Top Gap to Pea Soup Lake, climb the Lynch Glacier to the summit, and descend the Hyas side via Peggy's Pond to the trailhead.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Jade Lake",
+     "objective": "Camp at Jade Lake (~5,500 ft)",
+     "note": "Deception Pass trail from Tucquala Meadows (~3,400 ft) to Marmot Lake, then the rough path past No-Name Lake to Jade Lake, about 9.7 miles and 3,200 ft. Alternatively camp at the Pea Soup Lake outlet over Dip Top Gap to shorten summit day.",
+     "gainFt": 3200,
+     "lossFt": 1100,
+     "hours": 6,
+     "miles": 9.7,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Lynch Glacier to the summit and out",
+     "objective": "Summit Mount Daniel and return to the trailhead",
+     "note": "Climb the snow couloir to Dip Top Gap (steep, exposed snow and loose scree), traverse down to the Pea Soup Lake outlet, then take the snow finger (or a Class 3 bypass late season) and the Lynch Glacier to the col between the middle and true summits. Descend southeast via the Hyas Glacier snowfield to Peggy's Pond and out over Cathedral Pass, about 9.9 miles and 3,500 ft for the day.",
+     "gainFt": 3500,
+     "lossFt": 5600,
+     "hours": 11,
+     "miles": 9.9,
+     "packLb": 30,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://trailcatjim.com/dip-top-loop-mt-daniel-marmot-lake-peggy-pond/",
+   "https://www.mountainproject.com/route/124973025/lynch-glacier",
+   "https://turns-all-year.com/trip-reports/july-4-5-2018-mt-daniel-ski-jade-lake-paddle-loop"
+  ],
+  "confidence": "medium",
+  "notes": "Row has no gain/dist. Trailcatjim: 19.6 mi and ~6,700 ft total over 2 days (day 1 9.7 mi/3,200 ft to Jade Lake 5,500 ft; day 2 9.9 mi/3,500 ft). Day-1 loss and day-2 loss are derived from those elevations (TH 3,400 ft, summit 7,960 ft), assuming the 6,700 ft is gain. Row descent says reverse the ascent; source loops out via Hyas Glacier/Peggy's Pond. Row's main camp is Peggy's Pond, but the Lynch approach camps are Jade Lake or the Pea Soup outlet (Mountain Project). turns-all-year 2018 ski loop: ~25 mi, ~7,000 ft, ~12 hours each day. Hours are estimates."
+ },
+ {
+  "id": "wa_mount_hinman_west_ridge",
+  "itinerary": {
+   "cal": "Best August to September once the ridge and La Bohn Gap melt out; the upper glaciers have receded and snow can linger. Most parties take 2-3 days from a camp in Necklace Valley or at La Bohn Lakes; very fit parties do the ~25-mile round trip in a day. Free self-issue wilderness permit at the trailhead; no campfires.",
+   "totalNote": "A 3-day trip: hike up the East Fork Foss into Necklace Valley and camp at the lakes, climb over La Bohn Gap to La Bohn Lakes and up the broad ridge to Hinman, then hike out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hike in to Necklace Valley",
+     "objective": "Camp at the Necklace Valley lakes",
+     "note": "The first 5 miles are gentle forest gaining about 600 ft to the East Fork Foss footlog, then about 2,400 ft in three miles of steep, rooty trail to Jade Lake and on to Emerald Lake; roughly 9 miles and 3,400 ft. Established sites at Jade Lake; Emerald and Opal lakes are quieter.",
+     "gainFt": 3400,
+     "lossFt": 0,
+     "hours": 6,
+     "miles": 9,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Hinman via La Bohn Gap",
+     "objective": "Summit Mount Hinman and return to camp",
+     "note": "From the head of the valley go off-trail to La Bohn Gap (the waterfall line is usually preferred over the gully), past La Bohn Lakes, then up the broad, mostly Class 2 ridge, crossing the upper remnants of the north-side glaciers to the summit ridge. The true high point is ambiguous and many parties stop at a near-equal bump. Gain is the remainder of the ~7,000 ft round-trip total.",
+     "gainFt": 3600,
+     "lossFt": 3600,
+     "hours": 7,
+     "miles": 7,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out the East Fork Foss",
+     "objective": "Return to the trailhead",
+     "note": "Reverse the steep descent from Jade Lake to the river crossing, then the flat forest walk out.",
+     "gainFt": 0,
+     "lossFt": 3400,
+     "hours": 4.5,
+     "miles": 9,
+     "packLb": 35,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2015/08/15/mt-hinman/",
+   "https://www.wta.org/go-hiking/hikes/necklace-valley"
+  ],
+  "confidence": "medium",
+  "notes": "Row has no gain/dist/summit elevation. Climberkyle did it as a ~25 mi / ~7,000 ft single day; WTA gives Necklace Valley 18 mi RT / 3,400 ft to 5,000 ft. Day-2 miles and gain are the remainder of those totals (approximate). Search snippets of WTA 2024 trip reports describe 3-day trips of ~24.6-25 mi and up to 8,475 ft (not opened, 403)."
+ },
+ {
+  "id": "wa_mount_shuksan_white_salmon_glacier",
+  "itinerary": {
+   "cal": "Best in late winter through early summer (roughly March-July) with good snow cover, which lets you stay high and avoid the slide-alder valley; it is also a popular ski line. Usually done car-to-car in a long day, though parties can bivy on rock outcrops at the east edge of the White Salmon Glacier; a North Cascades National Park backcountry permit is required to camp.",
+   "totalNote": "Usually a long single day: from the White Salmon Lodge gate down to the glacier toe, up the White Salmon to Winnie's Slide, across the Upper Curtis and up Hell's Highway onto the Sulphide, then the summit pyramid, reversing the route to the car.",
+   "days": [
+    {
+     "n": 1,
+     "title": "White Salmon Glacier to the summit and back",
+     "objective": "Summit Mount Shuksan and return to the car",
+     "note": "With snow cover drop to White Salmon Creek and follow it to the glacier toe; without it, contour high through the old clearcut to avoid the alder. Climb the glacier to Winnie's Slide (40-45 degrees, ~6,800 ft), cross the crevassed Upper Curtis to Hell's Highway, then the Sulphide to the summit pyramid (4th-class West Ridge or the 3rd-4th class central gully, which is rockfall-prone). Car-to-car reports run 8 hours (fast ski party, turned below the pyramid) to 14 hours (Steph Abegg, ~13 miles and ~10,000 ft via the North Face, descending this route).",
+     "gainFt": 7500,
+     "lossFt": 7500,
+     "hours": 12,
+     "miles": 10,
+     "packLb": 22,
+     "schedule": [
+      {"time": "7:25 AM", "label": "Leave White Salmon Lodge gate", "detail": "Ski party start; climbing parties typically start pre-dawn."},
+      {"time": "~9:00 AM", "label": "Foot of the White Salmon Glacier", "detail": "After dropping to the valley floor about 8 AM."},
+      {"time": "~11:00 AM", "label": "Winnie's Slide", "detail": "Reach the ~7,000 ft col, then boot up the slide."},
+      {"time": "~12:30 PM", "label": "Through Hell's Highway", "detail": "Onto the Sulphide Glacier."},
+      {"time": "~1:15 PM", "label": "Below the summit pyramid", "detail": "This party turned back for rime and wind; allow 1-2 more hours for the pyramid."},
+      {"time": "~3:30 PM", "label": "Back at the car", "detail": "About 8 hours car-to-car on skis."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/107476711/white-salmon-glacier",
+   "https://engineeredforadventure.wordpress.com/2020/03/17/trip-report-white-salmon-glacier-mt-shuksan-march-2020/",
+   "https://stephabegg.com/trip-reports/washington/shuksan-nf/"
+  ],
+  "confidence": "medium",
+  "notes": "Row gain 7,500 ft matches the 2020 ski report (7,500 ft, 10 mi). Row dist_km 7.2 (9.0 mi RT) is a bit short vs 10 mi (ski report) and ~13 mi (Abegg, different ascent). Hours (12) is a midpoint estimate for a climbing party; schedule is from a ski party that did not summit. Row's main bivy (east edge of glacier) is a real option per Mountain Project, but both timed sources went car-to-car."
+ },
+ {
+  "id": "wa_mount_steel_first_divide",
+  "itinerary": {
+   "cal": "Best mid-July through September once snow leaves First Divide and Steel's north slopes; a reserved Olympic National Park wilderness permit and bear canister are required. Plan 3 days (some parties take 2 by camping high); check the North Fork Skokomish trail status, which has had fire-damage closures.",
+   "totalNote": "A 3-day trip: walk up the North Fork Skokomish to Nine Stream, climb past First Divide to Mount Steel and back on day two, and walk out on day three (or camp at Home Sweet Home just beyond the divide).",
+   "days": [
+    {
+     "n": 1,
+     "title": "Walk up the North Fork to Nine Stream",
+     "objective": "Camp at Nine Stream (~2,040 ft)",
+     "note": "A long, mostly gentle forest walk from Staircase past Camp Pleasant (about 6.7 miles) to Nine Stream at about 9.7 miles, the last low camp before the trail climbs hard to First Divide. Camp Pleasant is the usual alternative first night if you start late.",
+     "gainFt": 1300,
+     "lossFt": 0,
+     "hours": 5,
+     "miles": 9.7,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Mount Steel from First Divide",
+     "objective": "Summit Mount Steel (6,225 ft) and return to camp",
+     "note": "Climb the trail toward First Divide (~4,700 ft) and leave it just before it turns east to the divide, following a branch-blocked boot path up into the basin below Steel; a game trail leads most of the way up the face and the top is steep but straightforward. Fill water about a third of the way up. Gain derived from Nine Stream (2,040 ft) to the summit.",
+     "gainFt": 4200,
+     "lossFt": 4200,
+     "hours": 8,
+     "miles": 8,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Walk out to Staircase",
+     "objective": "Return to the Staircase trailhead",
+     "note": "Reverse the valley trail; easy grades and reliable river water the whole way.",
+     "gainFt": 0,
+     "lossFt": 1300,
+     "hours": 4.5,
+     "miles": 9.7,
+     "packLb": 35,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.hikeoftheweek.com/2022/10/06/home-sweet-home/",
+   "https://www.oregonhikers.org/forum/viewtopic.php?t=13380"
+  ],
+  "confidence": "low",
+  "notes": "Row gain 5,440 ft and dist 20.4 km (12.7 mi one-way to First Divide, ~25.4 mi RT) roughly match this plan (1,300 + 4,200 ft; 9.7+8+9.7 = 27.4 mi). Day-2 miles (~3 mi Nine Stream to First Divide area per row mileages, ~1 mi to summit, each way) and day-1 gain (Staircase trailhead elevation not in row; a search snippet put Nine Stream at ~1,000 ft gain) are approximate. Hikeoftheweek: Camp Pleasant 6.8 mi, Nine Stream 9.7 mi, First Divide 4,700 ft, Home Sweet Home 27 mi RT / 4,300 ft. Oregonhikers party did a 2-day overnight with a bivy just below the summit; no timing in any source. Row approach's 29 mi / ~7,000 ft single push figure not verified."
+ },
+ {
+  "id": "wa_ruby_mountain_happy_creek",
+  "itinerary": {
+   "cal": "A winter and spring ski or snowshoe route (roughly December-April) from the SR 20 winter closure; check the avalanche forecast, since the upper north bowls are avalanche terrain. Always a single day.",
+   "totalNote": "A single long day: from the SR 20 closure, follow the east side of Happy Creek through forest and meadows to treeline near 5,600 ft, up the north bowls to the summit ridge, and descend the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Happy Creek to Ruby Mountain and back",
+     "objective": "Summit Ruby Mountain (7,408 ft) and return to the highway",
+     "note": "Walk or skin the closed highway (about 0.7 mile from Ross Dam when the gate is there), then follow the east side of Happy Creek past meadows near 3,400 and 3,900 ft, through steeper forest to treeline near 5,600 ft and into the north bowls to the summit ridge. Expect alder, logs and rocks between about 3,000 and 4,000 ft in thin snow, and sticky snow in the lower forest on the way down. About 5,300 ft of gain; most parties reach the top in about 5 hours and are back in 8-9.",
+     "gainFt": 5300,
+     "lossFt": 5300,
+     "hours": 8.5,
+     "miles": 11,
+     "packLb": 20,
+     "schedule": [
+      {"time": "~8:00 AM", "label": "Leave the car", "detail": "Skin the closed highway to the Happy Creek trail."},
+      {"time": "~1:00 PM", "label": "Summit", "detail": "Just under 5 hours from the car."},
+      {"time": "~4:15 PM", "label": "Back at the car", "detail": "About 8 hours car-to-car."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.jeffreyjhebert.com/adventures/ruby-mountain-2021",
+   "https://turns-all-year.com/trip-reports/march-24-2012-ruby-mtn-north-side-via-happy-crk",
+   "https://climberkyle.com/2021/03/16/ruby-mountain-ski-tour/"
+  ],
+  "confidence": "medium",
+  "notes": "Row has no gain/dist. Gain ~5,300 ft from turns-all-year 2012 (2,100 ft gate to 7,408 ft; summit 4:30 PM from a ~10:30 AM start, car just before 7 PM). Miles (11) is from a 2025 WTA report seen only as a search snippet (~11 mi RT, ~9 hr); peakery's aggregate Happy Creek route is 8.8 mi / 4,905 ft. Distance depends on where the highway is gated that year."
+ },
+ {
+  "id": "wa_ruby_mountain_northwest_ridge",
+  "itinerary": {
+   "cal": "A winter and spring snow scramble (roughly December-May) and one of the last climbs reachable along SR 20 before the winter gate; snow usually starts near 4,000 ft. Done car-to-car in a day.",
+   "totalNote": "A single 9-11 hour day: from the boulder-field turnout, straight up the timbered ridge past cliff bands to Point 6315, then along the open west ridge to an exposed final scramble on the 7,408 ft summit, and back the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Northwest Ridge to Ruby Mountain",
+     "objective": "Summit Ruby Mountain and return to the highway",
+     "note": "Start just left of the boulder field and climb straight up the timbered ridge, staying left of the rock bands in the first thousand feet (loose rocks hide under moss); snow ramps get past the cliff bands. Near 5,400 ft the ridge turns into the West Ridge over Point 6315, and the last 300-500 ft is an exposed mixed rock-and-snow scramble, sometimes corniced. Reported 7-8.3 miles and 5,500-5,590 ft round trip.",
+     "gainFt": 5500,
+     "lossFt": 5500,
+     "hours": 9,
+     "miles": 8.3,
+     "packLb": 20,
+     "schedule": [
+      {"time": "7:15 AM", "label": "Start up the ridge", "detail": "From the turnout at ~1,900 ft."},
+      {"time": "9:15 AM", "label": "Snow line (~4,000 ft)", "detail": "Snowshoes on."},
+      {"time": "11:18 AM", "label": "Point 6315", "detail": "Open ridge from here; breakable crust possible."},
+      {"time": "12:15-12:45 PM", "label": "Summit", "detail": "Final exposed scramble; about 5 hours 15 minutes up."},
+      {"time": "4:15 PM", "label": "Back at the car", "detail": "About 3 hours 15 minutes down."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/ruby/",
+   "https://www.mtnvista.net/Mountains/Mountains%202004/Ruby%20Mtn%2004-25-04.htm"
+  ],
+  "confidence": "high",
+  "notes": "Row gain 5,500 ft matches both sources (Abegg ~5,500; mtnvista 5,500 net / 5,590 metered). Row dist_km 6.7 (8.3 mi RT) matches Abegg's 8.3 mi; mtnvista ~7 mi, companion GPS 6.4 mi. Row waypoint summit 7,426 ft vs 7,408 ft in sources and row high_point. Mtnvista party was slower (6:55 up, 3:45 down)."
+ },
+ {
+  "id": "wa_mount_rainier_east_success_couloir",
+  "itinerary": {
+   "cal": "A late-spring to early-summer snow line (roughly May-June) while the rock bands are snow-filled and the bergschrund at the apron is passable; it is climbed mostly by ski-mountaineering parties. Usually 2 days with a high camp on the Success Glacier; a Mount Rainier climbing permit and backcountry camping permit are required.",
+   "totalNote": "Two days: climb from Comet Falls/Van Trump Park (or Paradise) across the Kautz to a high camp near 9,400 ft on the Success Glacier, then climb the eastern couloir to Point Success on an alpine start and descend to the car the same day.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Climb to a Success Glacier high camp",
+     "objective": "Dig in a camp near 9,400 ft on the Success Glacier",
+     "note": "From the Comet Falls trailhead up through Van Trump Park (continuous snow from about 5,000 ft in June), then traverse the Kautz and Success glaciers to a lower-angle slope near 9,400 ft out of the couloirs' firing line; crevasses and loose moraine make it slow, and one party reached camp at 7 PM. Other parties have camped on the Wapowety Cleaver from Paradise and traversed in at about 8,000 ft.",
+     "gainFt": 5800,
+     "lossFt": 0,
+     "hours": 9,
+     "miles": 5,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "East Success Couloir to Point Success",
+     "objective": "Top out at Point Success and descend to the car",
+     "note": "Cross under the apron and over the bergschrund, then boot the eastern (climber's right) couloir; the lower rock bands are usually snow-filled, the last one needs a few steps of easy exposed rock. Expect sustained 40-45 degree slopes and about 4,400-4,800 ft of climbing from camp. Descend the route (most parties ski it), break camp, and exit via Van Trump Park. Gain derived from 9,400 ft camp to Point Success (~14,160 ft).",
+     "gainFt": 4800,
+     "lossFt": 10600,
+     "hours": 12,
+     "miles": 7,
+     "packLb": 20,
+     "schedule": [
+      {"time": "4:00 AM", "label": "Leave camp", "detail": "Skin or walk around crevasses to the base of the eastern couloir."},
+      {"time": "~7:00 AM", "label": "Sun hits the face", "detail": "Keep moving; the couloirs are a rockfall zone once warmed."},
+      {"time": "~9:30 AM", "label": "Regroup at 12,800 ft", "detail": "Set a turnaround (10 AM in the source party)."},
+      {"time": "~10:00 AM", "label": "Point Success", "detail": "About 6 hours from camp."}
+     ]
+    }
+   ]
+  },
+  "sources": [
+   "https://www.turns-all-year.com/trip-reports/mt-rainier-success-glacier-couloir",
+   "https://turns-all-year.com/trip-reports/may-3-4-mrnp-thumb-e-success"
+  ],
+  "confidence": "low",
+  "notes": "Row is empty (no approach, gain, dist, camps). Both sources are ski-mountaineering trips: 2020 (Comet Falls/Van Trump approach, camp ~9,400 ft, 4 AM start, Point Success just after 10 AM) and 2013 (Paradise, camp on Wapowety Cleaver, climbed the couloir from ~8,000 to 12,400 ft, skied it ~1:45 PM). Day gains derived using a ~3,600 ft Comet Falls trailhead (not from row) and ~14,160 ft Point Success; daily miles are rough estimates, no source gives mileage. A 2017 CascadeClimbers TR (Westside Road/Tahoma Creek approach, camps at 7,000 and 9,000 ft) was seen only as a search snippet (403)."
+ },
+ {
+  "id": "wa_mount_rainier_north_mowich_icefall",
+  "skip": true,
+  "reason": "Row is empty and the only reports found (CascadeClimbers 2012, SummitPost, 1967 AAJ, a 2026 NWAC accident report) were blocked or describe neighbouring Mowich Face/Ptarmigan Ridge lines; one notes the classic rock at the base of the icefall has disappeared. Too thin and too conditions-dependent for an honest plan."
+ },
+ {
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "skip": true,
+  "reason": "No trip report for Rainier's Tahoma Cleaver could be found or opened; results were all Disappointment Cleaver/Success Cleaver. Note: id says glacier_peak but area_id and peak are Mount Rainier."
+ },
+ {
+  "id": "wa_mount_crowder_southwest_route",
+  "skip": true,
+  "reason": "Only first-hand Crowder beta found is a one-sentence mention in Steph Abegg's Mystery Ridge enchainment (approached from the south via Pioneer Ridge, not the Easy Ridge/Perfect Pass approach in the row); no source gives days, camps or timing for the northern approach to the Phantom-Crowder col."
+ },
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "skip": true,
+  "reason": "Only a one-line Mountain Project area mention (a hard Bryan Burdo alpine rock climb on the north face); no grade, length, approach, descent or trip report found."
+ },
+ {
+  "id": "wa_mount_sefrit_bloody_head_couloir",
+  "skip": true,
+  "reason": "All route-specific sources (SummitPost route/trip report, CascadeClimbers 2015 TR) return 403; search snippets only (~1,800 ft couloir, loose gully, avalanche-prone), no openable source with timing or gain."
+ }
+]

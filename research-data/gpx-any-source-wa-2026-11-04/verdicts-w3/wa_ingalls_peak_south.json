@@ -1,0 +1,30 @@
+{
+  "area_id": "wa_ingalls_peak_south",
+  "routes": [
+    {
+      "route_id": "wa_ingalls_peak_south_scramble",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct (best Jul-Sep)", "evidence": "Stored Jul-Sep. Peakbagger successful ascents: Jun 94, Jul 72, Aug 60, Sep 64, Oct 100 (larch season). Web search of Mountaineers/WTA reports: mid-June still has snow and a frozen Lake Ingalls needing an ice axe above the lake; July-Aug snow-free approach; early/mid-October reports found snow and ice on the scramble. Oct is usable but riskier." },
+      "track": { "aid": "3305281", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Only one route is stored on South Peak. Jul 25 2026 round trip from the Esmeralda trailhead (23 m from our pin at start, 10 m at end), logged 'south side', reaches our summit pin within 4 m via Ingalls Pass and Lake Ingalls, matching the stored line. Gain 3,495 ft." },
+      "otherTracksConsidered": [
+        { "aid": "1511608", "verdict": "unsure", "why": "Oct 9 2020 complete loop via Ingalls Pass, basin, ridge also fits; lower priority than the July track." },
+        { "aid": "2293781", "verdict": "unsure", "why": "Aug 2023 logged as 'Fortune Peak' combo." },
+        { "aid": "3382866", "verdict": "unsure", "why": "Oct 18 2026 complete, no route name; late season." },
+        { "aid": "3000302", "verdict": "different", "why": "Sep 2025 report 'easy 4 pitch climb' is a roped route on Ingalls, 256 m from our pin." },
+        { "aid": "3375799", "verdict": "unsure", "why": "Oct 11 2026 starts 1.3 km from our trailhead pin." },
+        { "aid": "1789987", "verdict": "offseason", "why": "Oct 23 2021 North Ridge in whiteout, past the end of the season." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 6, "text": "Mid-June: snow bridges over running water in the basin below the col can give way when probed; Lake Ingalls is still partly frozen.", "aids": ["2221436"] },
+        { "field": "what_to_bring", "month": 6, "text": "Ice axe, microspikes and helmet (mid-June snowfields to the col)", "aids": ["2221436","1678535"] },
+        { "field": "watch_out", "month": 10, "text": "Mid-October: a skiff of fresh snow ices the slabs, upper trail and summit blocks; the face right of the col becomes unsafe.", "aids": ["3375799"] },
+        { "field": "what_to_bring", "month": 10, "text": "Traction spikes for the upper trail near the pass (mid-October)", "aids": ["3375799"] },
+        { "field": "pro_tips", "month": 8, "text": "Near the top, the gully left of the summit works well, and keeping to the north side of the summit block makes the final pitch nearly a walk (June-August).", "aids": ["2596371","1678535"] },
+        { "field": "descent_note", "month": 8, "text": "The steep dusty climbers' path from the col is slick and a snow patch can linger across it into August; boulders beside it grip better than the dust.", "aids": ["2596371"] },
+        { "field": "pro_tips", "month": 6, "text": "After the col, you pass a lichen-covered knob that needs the pack off to squeeze through a narrow gap before the easier slope to the top.", "aids": ["2221436"] }
+      ]
+    }
+  ],
+  "notes": "Stored season Jul-Sep is narrower than ascent history; Oct has 100 logged ascents but conditions are weather-dependent. The catalog holds a single row for this peak although other roped lines exist on Ingalls."
+}

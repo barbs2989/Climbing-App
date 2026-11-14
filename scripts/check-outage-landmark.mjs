@@ -31,6 +31,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 // ONE level up, not two. This was promoted out of scripts/oneoff/, and its depth changed with it —
 // the trap check:pitch-discount records, where a promoted one-off resolved the wrong tree and
@@ -63,7 +64,7 @@ console.log("landmark: /" + lifted[1] + "/i  -> " + ALTS.length + " alternative(
 // template contents -- a brace inside a string would desynchronise the counter, and this file's
 // prose is full of them.
 function region(src, needle, what) {
-  const a = src.indexOf(needle);
+  const a = typeof needle === "number" ? needle : src.indexOf(needle);
   if (a < 0) throw new Error("ANCHOR LOST: " + what + " (" + needle + ")");
   const i = src.lastIndexOf("{", a);
   let j = i, depth = 0, started = false, q = null;
@@ -81,11 +82,16 @@ function region(src, needle, what) {
   return { start: i, end: j, text: src.slice(i, j + 1) };
 }
 
-const app = rd("ClimbMatch.jsx");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 let logbook, lists;
 try {
-  logbook = region(app, 'tab==="logbook"', "the Logbook tab");
-  lists = region(app, 'logbookTab==="lists"', "the Logbook's Areas sub-view");
+  // Since PR61 the tab body is LogbookTab (src/components/LogbookTab.tsx, stitched in by readAppFile):
+  // the region is that function's body, carved from the brace before its `return`.
+  const lb = app.indexOf("function LogbookTab(");
+  if (lb < 0) throw new Error("ANCHOR LOST: the Logbook tab (function LogbookTab)");
+  logbook = region(app, app.indexOf("\n  return ", lb), "the Logbook tab");
+  // `?<div`, not the bare test: the header's title ternary tests logbookTab==="lists" first.
+  lists = region(app, 'logbookTab==="lists"?<div', "the Logbook's Areas sub-view");
 } catch (e) {
   console.log("FAIL-CLOSED: " + e.message);
   console.log("  Regions that cannot be carved make every assertion below vacuous.");
@@ -121,9 +127,11 @@ if (REST.length < 800) {
               "tests would pass against almost no text.");
   process.exit(1);
 }
-if (!REST.includes("all in one place")) {
-  console.log("FAIL-CLOSED: rest-of-Logbook does not contain the shared header prose, so the carve " +
-              "is not separating the header from the Areas view -- which is the whole question.");
+// The header is a <ScreenHero> since 2026-10-15, its title and line chosen per sub-tab -- the old
+// fixed prose ("...all in one place.") is gone, so the anchor is the header element itself.
+if (!REST.includes("<screenhero")) {
+  console.log("FAIL-CLOSED: rest-of-Logbook does not contain the Logbook's header (<ScreenHero>), so the " +
+              "carve is not separating the header from the Areas view -- which is the whole question.");
   process.exit(1);
 }
 const AREAS = lists.text.toLowerCase();
@@ -159,9 +167,11 @@ for (const alt of ALTS) {
 // Saved (2026-09-24): it now reads "...challenges and everything you've saved — all in one place."
 // Same trap, new word: a landmark on bare "saved" would match that header on every sub-tab. So
 // assert the header still carries it (the reason section 1's exclusion test matters) and that no
-// alternative is that bare word or the old vacuous phrase.
+// alternative is that bare word or the old vacuous phrase. Since 2026-10-15 the header's line is
+// per sub-tab and the Saved one reads "Everything you've saved — routes, peaks, …": it sits in the
+// header, OUTSIDE the lists region, so a bare "saved" landmark would still match it there.
 if (REST.includes("you\u2019ve saved") || REST.includes("you've saved")) {
-  ok('the header prose says "everything you\u2019ve saved" on every sub-tab, so a landmark on bare ' +
+  ok('the Logbook header (outside the Saved view) says "everything you\u2019ve saved", so a landmark on bare ' +
      '"saved" would be vacuous -- section 1 is what keeps the alternatives off it');
 } else {
   bad('the Logbook header no longer says "everything you\u2019ve saved". Re-read the header prose ' +
@@ -186,10 +196,13 @@ for (const alt of ALTS) {
            "\n        FIX: delete it from the landmark in scripts/check-outage.mjs. It protects" +
            "\n        nothing, and while it sits there the alternation LOOKS broader than it is.");
 }
-if (!appLower.includes("offline library") && !core.includes("offline library")) {
-  ok('"offline library" is confirmed absent from the app -- the dead term the landmark used to carry');
+// Since 2026-10-24 "Offline library" is a MENU tile that opens Saved on its Offline chip. It is a
+// label on the way IN, not a heading on this view, so it still cannot identify the view: what this
+// asserts now is that it has not become text inside the Saved sub-view, where it would need deciding.
+if (!lists.text.toLowerCase().includes("offline library")) {
+  ok('"offline library" is not text on the Saved sub-view -- the dead term the landmark used to carry');
 } else {
-  bad('"offline library" now exists in the app; re-check whether it belongs in the landmark');
+  bad('"offline library" now renders on the Saved sub-view; re-check whether it belongs in the landmark');
 }
 
 // ---------------------------------------------------------------- 4. the landmark is a HEADING

@@ -1,0 +1,158 @@
+[
+ {
+  "id": "bc_lu_skypilot_copilot",
+  "name": "Sky Pilot Mountain and The Copilot",
+  "state": "British Columbia",
+  "region": "Coast Mountains, Squamish (Sky Pilot group)",
+  "legs": [
+   {
+    "peak": "Sky Pilot Mountain",
+    "route": null,
+    "connect": ""
+   },
+   {
+    "peak": "The Copilot",
+    "route": "NE Gully",
+    "connect": "Descend Sky Pilot back to the Stadium Glacier basin, cross the glacier and its debris, then climb a rubble slope and a rock rib to the saddle below the Copilot's summit block."
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Both summits share the same approach up the valley to the glacier basin, so peak-baggers usually add the Copilot after Sky Pilot rather than making a second trip. The Copilot is the harder of the two: a steep gully of about 100 vertical metres at class 3–4, usually soloed, with a rope worth carrying for the descent. Crampons are handy for the glacier crossings and can be cached between summits. Some parties climb the Copilot first while others carry on to Sky Pilot.",
+  "descent": "Down-climb or rappel the gully (several fixed rappel stations exist), then return across the glacier basin and out the approach valley, the same way you came in.",
+  "logistics": "The drive ends at a gate on the road beyond the gondola; the walk starts with several kilometres of road and then trail. Snow lingers in the basin into summer and the rubble is loose, so allow a full day and turn back early if weather moves in.",
+  "sources": [
+   "https://stevensong.com/the-copilot",
+   "https://tareef.tech/blog/the-copilot"
+  ],
+  "confidence": "medium",
+  "notes": "Sky Pilot route name not given on the pages read, so left null. One report did Sky Pilot then Copilot; the other had the party climb the Copilot first while friends went on to Sky Pilot."
+ },
+ {
+  "id": "bc_lu_cheam_lady",
+  "name": "Mount Cheam and Lady Peak",
+  "state": "British Columbia",
+  "region": "Cheam Range, Chilliwack",
+  "legs": [
+   {
+    "peak": "Mount Cheam",
+    "route": "Standard hikers' trail",
+    "connect": ""
+   },
+   {
+    "peak": "Lady Peak",
+    "route": null,
+    "connect": "From the signed fork on the Cheam trail near the 1,750 m level, take a narrow traverse across a forested bump to the open west face of Lady, then climb straight up it."
+   }
+  ],
+  "duration": "1 long day, or 2 days with a camp",
+  "how": "The two summits share one trailhead and the first stretch of trail, so many parties tag both. Cheam is a walk on a maintained trail. Lady splits off at a fork and climbs a steeper face of dirt and scree with a short class 2 scramble and braided paths near the top; the traverse onto the face is narrow and a slip there would matter. Groups often camp below the peaks and do one each day.",
+  "descent": "Descend the way you came up. After Lady, drop back to the fork and rejoin the Cheam trail, or finish Cheam first and walk out.",
+  "logistics": "A long, rough forest road leads to the trailhead, so high clearance helps. There was no reliable water at the camp area in one report. Snow can linger on Lady's upper slopes early in the season.",
+  "sources": [
+   "https://tareef.tech/blog/lady-peak",
+   "https://ubc-voc.com/trip-reports/lady-and-the-cheam-11775/",
+   "https://fastestknowntime.com/route/cheam-range-traverse-bc-canada"
+  ],
+  "confidence": "high",
+  "notes": "Lady route name not confirmed on the pages read (a forum title mentions a southeast ridge variation, not read), so left null. The full eight-peak Cheam Range traverse continues past Lady to Knight and beyond (see bc_lu_knight_babymunday_stewart)."
+ },
+ {
+  "id": "bc_lu_knight_babymunday_stewart",
+  "name": "Knight Peak, Baby Munday North and Stewart Peak",
+  "state": "British Columbia",
+  "region": "Cheam Range, Chilliwack (Airplane Creek side)",
+  "legs": [
+   {
+    "peak": "Knight Peak",
+    "route": "South slopes",
+    "connect": ""
+   },
+   {
+    "peak": "Baby Munday Peak (north summit)",
+    "route": null,
+    "connect": "From the Baby Munday–Knight col, climb rubble to a snow couloir leading to the high col between the north and central summits, then wrap round to the back side for a short scramble."
+   },
+   {
+    "peak": "Stewart Peak",
+    "route": "SE Face",
+    "connect": "Down-climb the north summit, then traverse undulating ground and a small glacier to the base of the southeast slopes."
+   }
+  ],
+  "duration": "1 long day (about 10 hours or more)",
+  "how": "These three summits are commonly strung together because the access road and steep trail are unpleasant and it pays to get as much as possible from one trip. Knight is a plod up open slopes. The north summit of Baby Munday is a short scramble. Stewart's standard southeast face is class 2–3, though snow made it steeper and more serious in shoulder season. The true summit of Baby Munday is a separate, technical climb and is not part of this outing.",
+  "descent": "Return over the same terrain to the trail junction and down the very steep forest trail to the road, retracing the approach.",
+  "logistics": "The forest roads are very rough and the last stretch needs high clearance. The trail gains about 600 m steeply to treeline. Snow in the couloirs and basins can call for an axe and crampons outside high summer; camping in the alpine meadows is possible.",
+  "sources": [
+   "https://stevensong.com/knight-peak",
+   "https://stevensong.com/stewart-peak",
+   "https://fastestknowntime.com/route/cheam-range-traverse-bc-canada",
+   "https://www.livetrails.com/trails/Knight-Peak-1044.html"
+  ],
+  "confidence": "medium",
+  "notes": "Baby Munday North is a sub-summit; the full Cheam Range traverse lists it as optional and The Still is another frequent add-on. Both Stevensong pages come from the same trip. Knight alone is ~11 km, 1,355 m gain, ~9 h per a separate log. DROPPED by reviewer: two pages from one trip; thin independent support.",
+  "drop": true
+ },
+ {
+  "id": "ab_lu_haddo_aberdeen",
+  "name": "Mount Aberdeen and Haddo Peak",
+  "state": "Alberta",
+  "region": "Lake Louise, Banff National Park",
+  "legs": [
+   {
+    "peak": "Mount Aberdeen",
+    "route": null,
+    "connect": ""
+   },
+   {
+    "peak": "Haddo Peak",
+    "route": null,
+    "connect": "Follow Aberdeen's short exposed summit ridge, down-climb a break in the cliffs to the east glacier, and cross it to the dry col; from the col it is an easy walk to Haddo."
+   }
+  ],
+  "duration": "1 long day",
+  "how": "The two sit side by side and are frequently climbed together. The scramble route climbs a long avalanche gully of treadmill scree on Aberdeen's south side, then links over the ridge. The ridge has a short exposed section with a moderate down-climb onto steep glacier, a no-slip zone where crampons and an axe are wanted. Parties also do the pair on the glacier route, or on skis in spring.",
+  "descent": "Most scrambling parties climb back over Aberdeen and retrace the gully, glissading the snow patch if present. This is longer than descending after Aberdeen alone, because the col crossing and re-ascent are added.",
+  "logistics": "Start from the Paradise Valley trailhead with a very early start, then follow a decommissioned trail and some bushwhacking to the gully. Bears are a concern in the valley. Glacier and snow conditions decide the timing.",
+  "sources": [
+   "https://sonnybou.ca/ssbou2015/aberdeenhaddo.html",
+   "https://on-top.ca/Outings/2015/Haddo-Peak-July-2015.html",
+   "https://mattruta.com/2017/05/24/haddoaberdeen-double/"
+  ],
+  "confidence": "high",
+  "notes": "Order differs: the scramble reports go Aberdeen then Haddo, the ski report Haddo then Aberdeen. One group reached Haddo via the glacier route instead of the ridge. Gain for the pair is about 1,800 m per one page."
+ },
+ {
+  "id": "bc_lu_uto_eagle_avalanche",
+  "name": "Uto – Eagle – Avalanche Traverse",
+  "state": "British Columbia",
+  "region": "Selkirk Mountains, Rogers Pass",
+  "legs": [
+   {
+    "peak": "Uto Peak",
+    "route": "Southwest Ridge",
+    "connect": ""
+   },
+   {
+    "peak": "Eagle Peak",
+    "route": null,
+    "connect": "Descend Uto's northwest ridge toward the Uto–Eagle col, getting past a crumbly rock tower on the way, then grind up talus to Eagle."
+   },
+   {
+    "peak": "Avalanche Mountain",
+    "route": null,
+    "connect": "Drop from Eagle along a ridge that is more technical than its grade suggests, then take an easy scramble to the top; Avalanche is optional."
+   }
+  ],
+  "duration": "1 long day (about 11 hours)",
+  "how": "Going south to north is preferred, because Uto's southwest ridge is the best climbing at about 5.1 and works well as an ascent. The tower between Uto and Eagle is loose and steep and eats time. The ridge off Eagle toward Avalanche is around 5.0 on poor rock and a rope may be wanted, though some parties down-climb it. Many do only Uto and Eagle, as a moderate outing.",
+  "descent": "Descend Avalanche's southwest face, glissading snow where possible, then follow the long trail back to the highway. A party stopping at Eagle uses a different, shorter exit.",
+  "logistics": "Start from the Rogers Pass area; the finish is the end of a long trail, so plan a ride or a short walk back. The loop is a full day, and loose rock calls for helmets and care with parties below.",
+  "sources": [
+   "https://mattruta.com/2018/08/08/uto-eagle-avalanche-traverse/",
+   "https://acmgmcrarc.blogspot.com/2005/08/mcr-rogers-pass-aug-18-19.html",
+   "https://stevensong.com/uto-peak/"
+  ],
+  "confidence": "high",
+  "notes": "One report calls the Uto–Eagle section moderate with low loose rock, another calls the tower crumbly; keeping the harder description. A separate report names the north ridge of Eagle for the Uto-Eagle traverse; Eagle route left null. Uto alone is usually a loop up the SW ridge and down the N ridge."
+ }
+]

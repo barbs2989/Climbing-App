@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 /* Injection suite for audit:gain's climbing-vertical credit.
  *
  * WHY A FIXTURE RATHER THAN AN EDIT: the faults this audit reports live in the DATA, so a case
@@ -19,7 +20,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const AUDIT = path.join(ROOT, "scripts", "audit-gain-vs-waypoints.mjs");
 const FT_PER_PITCH = 35 * 3.28084;
 

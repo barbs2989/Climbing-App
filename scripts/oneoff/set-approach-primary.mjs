@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // One-off: mark the way in MOST parties take on every route with two or more approach_variants.
 //
 //   node scripts/oneoff/set-approach-primary.mjs <decisions.json> [--apply]
@@ -77,7 +78,7 @@ console.log(`\n${plan.length} to write, ${refused} refused.`);
 if (!APPLY) { console.log("dry run — pass --apply to write."); process.exit(refused ? 1 : 0); }
 if (!plan.length) process.exit(refused ? 1 : 0);
 
-const rb = path.join(path.dirname(new URL(import.meta.url).pathname), "..", `rollback-approach-primary-${Date.now()}.json`);
+const rb = path.join(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", `rollback-approach-primary-${Date.now()}.json`);
 fs.writeFileSync(rb, JSON.stringify(plan.map((p) => ({ id: p.id, area_id: p.area_id, approach_variants: p.before })), null, 1));
 console.log(`rollback written: ${rb}`);
 for (const p of plan) await patchRow("routes", p.id, { approach_variants: p.after }, { filter: `area_id=eq.${encodeURIComponent(p.area_id)}` });

@@ -1,0 +1,71 @@
+{
+ "id": "wa_se_ridge_aka_shield_wall",
+ "name": "SE Ridge AKA Shield Wall",
+ "area_id": "wa_mount_washington_olympic",
+ "discipline": "alpine",
+ "grade": "5.7",
+ "pitches": 13,
+ "pitch_detail": [
+  {
+   "grade": "5.easy-5.7",
+   "notes": "First pitch has two fixed bolts mid-route and a bolted belay station.",
+   "pitch": "1"
+  },
+  {
+   "grade": "Low 5th-5.7",
+   "notes": "Continue up the Shield Wall face/crack system; crux is a well-protected finger crack passing the second tower on the right.",
+   "pitch": "2-7"
+  },
+  {
+   "grade": null,
+   "notes": "Up to 3 x 30m rappels descending/traversing the upper ridge's rock parapets and gendarmes.",
+   "pitch": "Rappels"
+  },
+  {
+   "grade": "3rd class-5.7",
+   "notes": "Remaining pitches navigate the SE Ridge's gendarmes to the summit; rock quality remains poor and retreat is difficult.",
+   "pitch": "8-13"
+  }
+ ],
+ "rappel_detail": [
+  {
+   "n": 1,
+   "notes": "First of three rappels made on the way up the ridge, not on the descent. Climbing resumes from the notch.",
+   "anchor": "slings; bring extra webbing to build or back up",
+   "lengthM": 30,
+   "station": "The first notch on the upper SE Ridge, after topping out on the Shield Wall and starting along the towers."
+  },
+  {
+   "n": 2,
+   "notes": "Second rappel into a notch between towers. Some parties combine two of these rappels into one.",
+   "anchor": "slings; bring extra webbing",
+   "lengthM": 30,
+   "station": "A second notch farther along the upper ridge."
+  },
+  {
+   "n": 3,
+   "notes": "Third and last rappel; about six pitches of 3rd class to 5.7 continue to the summit.",
+   "anchor": "slings; bring extra webbing",
+   "hazards": [
+    "Retreat from the ridge is complicated: once past these rappels, the way off is over the summit."
+   ],
+   "lengthM": 30,
+   "station": "The last notch on the upper ridge before the final pitches to the summit."
+  }
+ ],
+ "rappels": "3 rappels of about 30 m into notches on the upper ridge, made on the way up (some parties combine two into one); the descent is the standard scramble route from the summit",
+ "descent_text": "The route finishes on the summit ridge of Mount Washington, and the way down is the standard route rather than the SE Ridge, which would mean many rappels and the fifth-class cracks in reverse. Descend the Class 3-4 scramble to the basin; lingering snow often covers the upper slopes in early summer, and the narrow hourglass constriction can be bypassed on its west side. Below the basin, continue down through forest on the climbers' path to the FR-2419 trailhead at Big Creek, the same road end used for the approach.",
+ "approach": "From the road-end parking on Forest Road 2419 (off North Lake Cushman Road/FR-24), shared with the standard route, walk the old roadbed past the standard route's trail entrance to just beyond the Big Creek crossing (~3,100 ft); a way trail leads to the base of the southeast ridge's rock section. Follow an old roadbed across Big Creek and a climbers' trail up a rock rib, gaining roughly 1,600 ft to a bowl below the Shield Wall; a gully ascends up and left to a notch at the wall's left corner (~4,850 ft) where the technical climbing begins.",
+ "overview": "A serious Grade III alpine rock route up Mount Washington's southeast ridge: 5th-class climbing up the 'Shield Wall' proper, followed by exposed, loose parapets along the upper SE ridge to the true summit. Rock quality is generally poor to fair, protection is sparse in places, and retreat from partway up the route is reported to be difficult — a route for experienced alpine rock parties comfortable with runout, low-quality rock.",
+ "beta": "The Shield Wall is a prominent buttress visible from the Forest Service road below. The lower seven pitches climb generally modest fifth-class rock up the wall face, with a bolted first-pitch belay and two fixed bolts mid-pitch; the crux is a well-protected finger crack passing the second tower on the right. Above the wall, three 30m rappels alternate with about six more pitches (3rd class to 5.7) through the ridge's rock parapets and gendarmes to the summit. Expect to place only 1-5 pieces of protection on many pitches, with few opportunities to sling horns or blocks despite what older published descriptions suggest, and generally poor rock quality throughout.",
+ "gear": [
+  "single rack cams 0.3-3",
+  "full stopper/wire set",
+  "60m rope (or 40m lead + 30m rap line)",
+  "helmet (mandatory)",
+  "rock shoes + approach shoes",
+  "rappel device, prusik/autoblock"
+ ],
+ "fa": null,
+ "face": "Shield Wall / Southeast Ridge"
+}

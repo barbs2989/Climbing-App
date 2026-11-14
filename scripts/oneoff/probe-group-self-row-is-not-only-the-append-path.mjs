@@ -38,16 +38,15 @@ const fail = (m) => { console.log("  FAIL  " + m); problems.push(m); };
 
 const start = src.indexOf("var _rosterIds=");
 if (start < 0) { console.error("ANCHOR LOST: `var _rosterIds=` is not in ClimbMatch.jsx — the group roster moved"); process.exit(1); }
-const modsAt = src.indexOf("var mods=", start);
+// The roster expression used to end where `var mods=` began; that Moderators strip is gone (members see
+// a count, managers the roster), so the lift now ends where the posts list begins.
+const modsAt = src.indexOf("var posts=groupPostsAll[", start);
 if (modsAt < 0) { console.error("ANCHOR LOST: could not bound the _roster expression"); process.exit(1); }
 let block = src.slice(start, modsAt).replace(/\/\*[\s\S]*?\*\//g, " ");
 if (!/_rosterIds/.test(block) || !/_asMember/.test(block)) { console.error("ANCHOR LOST: the lifted block is not the roster shape"); process.exit(1); }
 
-// `mods` is lifted too, because its ABSENCE is one of the four symptoms and asserting it from a
-// re-typed copy would prove nothing about the app.
-const modsEnd = src.indexOf(";", modsAt);
-const modsBlock = src.slice(modsAt, modsEnd).replace(/\/\*[\s\S]*?\*\//g, " ");
-if (!/modIds\.map\(_asMember\)/.test(modsBlock)) { console.error("ANCHOR LOST: `mods` is no longer modIds.map(_asMember)"); process.exit(1); }
+// The `mods` (Moderators strip) half of this probe is gone with the strip itself: it is no longer
+// rendered, so its absence on the unresolved path is no longer a symptom that can be asserted.
 
 const OWNER = "11111111-1111-4111-8111-111111111111";
 const MATE = "22222222-2222-4222-8222-222222222222";
@@ -62,8 +61,7 @@ function build({ mem, resolvable }) {
     : null);
   const roster = new Function("mem", "isMod", "_meGid", "_asMember", "ME", block + " return _roster;")
     (mem, true, OWNER, _asMember, ME);
-  const mods = new Function("modIds", "_asMember", modsBlock + "; return mods;")([OWNER], _asMember);
-  return { roster, mods };
+  return { roster };
 }
 
 // THE PATH THE DUMP SHOWS: `mem` HOLDS BOTH, and the profiles read has not resolved.
@@ -86,11 +84,6 @@ else fail(`row 1 is ${JSON.stringify(r[1] && r[1].name)} — expected the placeh
 if (r[0] && r[0].name === ME.name) ok("your row came from the ME fallback — it carries your real name, so the dump's handle is explained");
 else fail(`your row's name is ${JSON.stringify(r[0] && r[0].name)} — expected ME's, or the dump's handle has another source`);
 
-// THE FOURTH SYMPTOM: `mods` has no fallback, so the same unresolved read empties it and the
-// "Moderators" strip disappears — present in the passing attempt, absent in the failing one.
-if (unresolved.mods.length === 0) ok('`mods` is empty on this path — the missing "Moderators" strip is the SAME cause');
-else fail(`mods has ${unresolved.mods.length} entries — the strip's absence is not explained by this path`);
-
 // THE FIX MUST COVER THIS PATH TOO. All four readers, executed rather than described.
 const ownerId = OWNER, modIds = [OWNER], meGid = OWNER;
 const subtitle = (c) => (ownerId === c.id ? "Owner" : (modIds.indexOf(c.id) >= 0 ? "Moderator" : "Member"));
@@ -107,8 +100,6 @@ else fail("the roster offers + Mod on YOUR OWN row — the id carried by the fal
 const resolved = build({ mem: [OWNER, MATE], resolvable: [OWNER, MATE] });
 if (resolved.roster.length === 2 && resolved.roster[0].id === OWNER && resolved.roster[1].id === MATE) ok("with the read resolved the same roster is unchanged in shape");
 else fail("the resolved control changed shape — this fixture is not measuring what it claims");
-if (resolved.mods.length === 1) ok('with the read resolved the "Moderators" strip returns');
-else fail(`the resolved control has ${resolved.mods.length} moderators — expected 1`);
 
 if (problems.length) { console.error("\nFAIL:"); problems.forEach((p) => console.error("  - " + p)); process.exit(1); }
 console.log("\nok — the self-row fallback also fires when `mem` CONTAINS you and the profiles read has not resolved,");

@@ -505,6 +505,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the fourth time this file records that.
 - **`check:count-matches-its-list`** asserts that **a count agrees with the list under it**, on one
   screen. Static (one source read), so it sits in `npm run build`.
+  - **SECTION 1 RETIRED (owner, 2026-11-11).** Home's *"Nothing needs you right now"* card was
+    removed: it flashed on every load before its reads landed, and the Alerts dropdown already
+    carries the empty state. With no empty-state gate left, section 1 (and its *UNFINISHED
+    BUSINESS* fail-closed checks) is gone; sections 2 and 3 (the bell and *View all N alerts*)
+    still run, and the assertion floor dropped from 11 to 5. The history below is kept as record.
   - **`check:ui` ALREADY ASSERTS THIS ACROSS TWO SCREENS** — #1203, where the Profile said *"3
     active"* and the Logbook *"4 climbs to go"* about one list. **Home does it to ITSELF, twice**,
     and no browser walk can see either: both surfaces are correct in isolation, and only their
@@ -599,6 +604,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     none, every comparison passes **vacuously**), a moved empty-state gate, a `requests` prop that
     does not close, and a missing bell. It also fails if the *"Nothing needs you"* copy is gone —
     a gate guarding nothing is not a gate.
+  - **THE BELL IS THE ONE IN A `position:"relative"` BUTTON, not the first bell icon in the file**
+    (2026-10-24). Settings' *Notifications* row drew a bell earlier in `ClimbMatch.jsx`, and the
+    first-match read compared the badge against that row — which carries no badge — and failed.
   - **A WIDER DETECTOR WAS MEASURED AND REJECTED — do not re-derive it.**
     `scripts/oneoff/measure-controls-rendered-from-a-loop.mjs` sizes the general blind spot this
     came from: **349 of 1,133 interactive JSX sites (31%) sit inside a `.map`**, so a scan reading
@@ -758,3 +766,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
+  - **`PhotoStrip` moved to `src/components/PhotoStrip.tsx` (PR31 of the component extraction).** The
+    guard still reads it: `readCoreSource()` stitches every `MOVED` file back into core's text, so the
+    `onRemove?` gate is found as before, and the call-site scan still counts three (`FullProfile` in core
+    imports the component back and renders it; `ClimbMatch.jsx`; `lib/TripReport.jsx`). One anchor had to
+    move with it: the signature regex matched `function PhotoStrip({…})` and the TypeScript form is
+    `function PhotoStrip({…}: PhotoStripProps)`, so it now accepts an optional `: Identifier` before the
+    `)` — and nothing looser, so a renamed or re-shaped signature still reads ANCHOR LOST. Measured by
+    `measure:guard-reach` around the move (no count decremented).

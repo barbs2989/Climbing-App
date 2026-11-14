@@ -1,0 +1,21 @@
+{
+  "area_id": "wa_mount_fricaba",
+  "routes": [
+    {
+      "route_id": "wa_mount_fricaba_standard",
+      "season": { "months": [7,8,9,10], "window": "Jul-Oct", "evidence": "Stored Jul-Oct, best mid-Jul to Sep. Ascents: May 11, Jun 9, Jul 20, Aug 16, Sep 9, Oct 5. Web search: SummitPost says climbable any season but late spring/early summer best, melting snow for water in spring; Mountaineers lists the Dungeness traverse. Stored window kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3200933", "verdict": "offseason", "why": "May 21 2026 complete round trip via Home Lake/Constance Pass matching our line, but May is two months before the window and snow-covered." },
+        { "aid": "2441948", "verdict": "unsure", "why": "Oct 28 2023 complete round trip but via the Royal Basin side and the north-east ridge, not the Home Lake/Constance Pass approach this row describes." },
+        { "aid": "3000133", "verdict": "unsure", "why": "Jul 17 2024 partial recording starting in Deception Basin, 9.5 km from trailhead pin." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "descent_note", "month": 9, "text": "Late September: on the way down the summit ridge, stay on the north side; a lower path there skips the towers and is far less exposed.", "aids": ["3349500"] },
+        { "field": "pro_tips", "month": 9, "text": "From Deception Basin, the saddle between Hal Foss and Fricaba gives a plain class 2 scree slog, far easier than the glacier-side gully (September).", "aids": ["3349500"] }
+      ]
+    }
+  ],
+  "notes": "Only the May track follows the described Home Lake line and it is off-season. Oct 28 2023 track (2441948) uses a Royal Basin-side approach; add as an alternate approach later if the owner wants it."
+}

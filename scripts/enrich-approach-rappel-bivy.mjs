@@ -27,6 +27,7 @@
 import fs from "fs";
 import { patchRow, SUPABASE_URL, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 import { shoutedStrings } from "./lib/shouted-prose.mjs";
+import { checkEntry, proseStrings } from "./lib/source-overlap.mjs";
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
@@ -317,7 +318,7 @@ function checkPitchDetail(id, spec, before, commented) {
     if (p.grade != null && String(p.grade).length > 30) errs.push(`${at} grade is ${String(p.grade).length} chars — a grade token, qualifiers belong in notes`);
     if (p.lengthM != null && !(typeof p.lengthM === "number" && p.lengthM > 0 && p.lengthM < 1500)) errs.push(`${at} lengthM ${JSON.stringify(p.lengthM)} is not a plausible number of metres`);
     if (p.bolts != null && !Number.isInteger(p.bolts)) errs.push(`${at} bolts ${JSON.stringify(p.bolts)} is not an integer`);
-    for (const k of ["pitch", "grade", "notes", "note", "anchor"]) { const m = p[k] != null && (String(p[k]).match(SOURCE_RE) || String(p[k]).match(PER_SOURCE_RE)); if (m) errs.push(`${at} ${k} names a source: ${JSON.stringify(m[0])}`); }
+    for (const k of ["pitch", "grade", "notes", "note", "anchor", "belay"]) { const m = p[k] != null && (String(p[k]).match(SOURCE_RE) || String(p[k]).match(PER_SOURCE_RE)); if (m) errs.push(`${at} ${k} names a source: ${JSON.stringify(m[0])}`); }
   });
   return errs;
 }
@@ -476,6 +477,18 @@ for (const id of ids) {
   const shouted = shoutedStrings(body);
   if (shouted.length) {
     for (const f of shouted.slice(0, 5)) console.error(`REFUSING ${id} — ${f.path} is written in ALL CAPS (${f.fragments.slice(0, 6).join(" ")}). Write it in sentence case; a real acronym goes in ACRONYMS in scripts/lib/shouted-prose.mjs`);
+    process.exitCode = 1; continue;
+  }
+
+  // Every word written must be our own (owner, 2026-10-01). Briefs asked for that and #2655 still
+  // shipped source sentences, so the entry is checked against the pages its own review.sources
+  // lists: a run of MIN_RUN+ words shared with one is refused, and the string goes back to be
+  // rewritten. A source that will not load is named, not taken as clean (scripts/lib/source-overlap.mjs).
+  const overlap = await checkEntry({ review: spec.review, ...body });
+  for (const u of overlap.unread) console.warn(`warn ${id} — could not read source ${u}; nothing in it was checked`);
+  if (!overlap.listed && proseStrings(body).length) console.warn(`warn ${id} — review.sources lists no URL; the text was not checked against anything`);
+  if (overlap.hits.length) {
+    for (const h of overlap.hits.slice(0, 5)) console.error(`REFUSING ${id} — ${h.path} repeats its source word for word: "${h.runs[0]}". Rewrite it in our own words`);
     process.exitCode = 1; continue;
   }
 

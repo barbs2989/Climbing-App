@@ -20,13 +20,14 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { componentFiles } from "./lib/guard-sources.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (f) => readFileSync(join(ROOT, f), "utf8");
 const fail = [];
 
 const appFiles = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "main.jsx",
-  ...readdirSync(join(ROOT, "lib")).filter((f) => /\.jsx?$/.test(f)).map((f) => "lib/" + f)];
+  ...componentFiles(ROOT, { js: true, guard: "check:chunk-reload" })];
 const lazyCount = appFiles.reduce((n, f) => n + (read(f).match(/\bimport\(\s*["'`]/g) || []).length, 0);
 
 const main = read("main.jsx");

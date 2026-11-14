@@ -1,0 +1,106 @@
+{
+ "id": "wa_three_fingers_r1",
+ "name": "North Peak",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_three_fingers",
+  "name": "Three Fingers",
+  "lat": 48.169895,
+  "lng": -121.687865,
+  "elevation_ft": 6865,
+  "parent_id": "wa_glacier_peak_region",
+  "ground_ft": 6851
+ },
+ "dist_km": null,
+ "gain_ft": 7000,
+ "high_point_ft": 6870,
+ "approach_logistics": {
+  "peakLat": 48.174145,
+  "peakLng": -121.690045,
+  "trailhead": "Tupso Pass Trailhead",
+  "trailheadDirection": "From the Mountain Loop Highway near milepost 7, turn onto Tupso Pass Road (Forest Road 41). The road is washed out about 4.8 miles in and closed to vehicles beyond, so the trailhead at its end is reached only on foot or by bike. From September 29 through December 31, 2026 the road is also closed to all traffic from the Forest Road 4110 junction for timber operations."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.1935,
+   "lng": -121.77165,
+   "elev": 3030,
+   "name": "Saddle Lake / Three Fingers Trailhead (Trail #641)",
+   "note": "Trailhead on Tupso Pass Spur Rd (FR 4160) off FR 41; no permit required, but the access road has a permanent washout past the Canyon Creek bridge that adds miles of foot/bike travel to reach here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Granite Falls, drive the Mountain Loop Highway east to about milepost 7 and turn left (north) onto Forest Road 41, Tupso Pass Road. The road is closed to vehicles at the washed-out Canyon Creek bridge; park there and walk or bike the remaining 8 to 9 miles, staying on FR 41 past the side roads and then turning right onto FR 4160 to the trailhead at its end. A free self-issued wilderness permit is required.",
+   "ground_ft": 3032
+  },
+  {
+   "i": 1,
+   "lat": 48.177085,
+   "lng": -121.753752,
+   "elev": 3900,
+   "name": "Saddle Lake",
+   "note": "Soggy subalpine lake with an Everett Mountaineers-built shelter at its meadow edge; camping is banned within 200 ft of the lake and campfires are prohibited from here upward.",
+   "type": "Water",
+   "distMi": 2.5,
+   "directions": "Follow Trail #641 uphill from the parking area on a steady forest grade, crossing a couple of small seasonal streams on the way. Routefinding is straightforward and the lake arrives as an abrupt soggy opening rather than a viewpoint. Fill bottles here, since this is the last easy water before the alpine part of the route.",
+   "ground_ft": 3811
+  },
+  {
+   "i": 2,
+   "lat": 48.165987,
+   "lng": -121.723497,
+   "elev": 5200,
+   "name": "Goat Flats",
+   "note": "Broad open meadow atop the ridge and the standard basecamp for the climb, about 2.5 mi below the lookout; reliable snowmelt tarns nearby but can dry out late season.",
+   "type": "Campsite",
+   "distMi": 4.8,
+   "directions": "Climb roughly two more miles past the lake, gaining out of the timber and onto the crest of the ridge before the trail opens into subalpine meadow with views west toward Puget Sound. Campfires are prohibited from the lake upward, so plan a stove-only camp when you stop.",
+   "ground_ft": 5130
+  },
+  {
+   "i": 3,
+   "lat": 48.168332,
+   "lng": -121.704054,
+   "elev": 5600,
+   "name": "Tin Can Gap high camp",
+   "type": "Campsite",
+   "ground_ft": 5752
+  },
+  {
+   "i": 4,
+   "lat": 48.167123,
+   "lng": -121.702317,
+   "elev": 5900,
+   "name": "Tin Can Gap",
+   "note": "Trail crisscrosses the ridge to gain this notch; marks the end of maintained tread and the start of technical scrambling toward the peaks.",
+   "type": "Junction",
+   "distMi": 6.2,
+   "directions": "From the meadows the trail contours and climbs about two more miles, crisscrossing the ridge crest as it works north. Snow lies across this stretch well into summer and can bury the tread entirely, so carry an axe and expect to navigate by terrain rather than by trail. The gap gives the first full view of the three summits and the glacier below; do not continue past it without snow gear and routefinding experience, as this is where parties have needed rescue.",
+   "ground_ft": 5932
+  },
+  {
+   "i": 5,
+   "lat": 48.1728,
+   "lng": -121.6884,
+   "elev": 6452,
+   "name": "Col between Middle and North Finger",
+   "note": "Traverse across the glacier gains this col between the Middle and North Fingers, the jump-off point for the West Couloir onto North Peak's South Face.",
+   "type": "Junction",
+   "distMi": 7,
+   "directions": "From the gap leave the trail and drop about 400 feet down snow or talus onto the glacier; early in the year this is a plain snow descent, but by late summer expect hard snow or bare ice and a moat where the snow meets the rock. Traverse north across the glacier below the Middle Finger, then climb roughly a thousand feet of snow to the notch between the Middle and North Fingers; the eastern of the gullies leading up takes steps well when it is firm, and in a low-snow year it is loose rock and scree. Crampons and an axe are wanted, and small crevasses open along the traverse as the season goes on. The col is the last flat ground, so sort gear there before starting up the rock.",
+   "ground_ft": 6452
+  },
+  {
+   "i": 6,
+   "lat": 48.174145,
+   "lng": -121.690045,
+   "elev": 6870,
+   "name": "North Peak, Three Fingers",
+   "note": "True summit (Class 4, 5.4 variation), topped out via the West Couloir and South Face above the col; descend by rappelling the chimney, then reversing the col, the glacier crossing and the trail.",
+   "type": "Summit",
+   "distMi": 7.3,
+   "directions": "From the col climb the West Couloir onto the South Face, starting on loose third and fourth class rock where anyone above will send debris down. Follow the ramp on the ridge to a chimney holding the hardest moves, exposed fourth to low fifth class and worth a rope and a few slings; a direct line on the upper west face is harder still at about 5.4. Above the chimney the angle eases to class 2-3, but a false summit sits short of the real one, so keep going until you find the register. Coming down is two to three rappels through the chimney and ramp section, often off fixed slings of unknown age that should be backed up.",
+   "ground_ft": 6725
+  }
+ ]
+}

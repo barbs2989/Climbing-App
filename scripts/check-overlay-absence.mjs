@@ -41,7 +41,7 @@ import { overlayStates } from "./lib/overlay-scaffold.mjs";
 const traverse = _traverse.default || _traverse;
 
 import { fileURLToPath } from "node:url";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { componentFiles, readCoreSource } from "./lib/guard-sources.mjs";
 // scripts/, not scripts/oneoff/ — one level up since the promotion.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRaw = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
@@ -62,9 +62,13 @@ const core = maskComments(coreRaw, "ClimbMatchCore.jsx");
    copy that stays TRUE during an outage ("No areas match."), a fallback label, a statement about a
    row's own data, or a comment. So this adds coverage without adding findings — which is the
    result, not a disappointment. */
-const libSrc = fs.readdirSync(path.join(ROOT, "lib"))
-  .filter((f) => /\.jsx$/.test(f))
-  .map((f) => maskComments(fs.readFileSync(path.join(ROOT, "lib", f), "utf8"), "lib/" + f, 1));
+const libSrc = componentFiles(ROOT, { guard: "check:overlay-absence" })
+  .map((rel) => {
+    /* The comment floor applies only where a comment is expected: a few-line lib module (condRows.jsx,
+       4 lines, no comments) is correctly terse. Files under 4 kB keep the parse check but need no comment. */
+    const raw = fs.readFileSync(path.join(ROOT, rel), "utf8");
+    return maskComments(raw, rel, raw.length >= 4000 ? 1 : 0);
+  });
 
 /* lib/ SPELLS ITS GATE DIFFERENTLY, and following these bodies without knowing that would report
    correctly-gated components as ungated — the guard-flags-correct-work failure, introduced by the
@@ -93,7 +97,7 @@ const FLAGS = [...new Set([...(app + core).matchAll(/([A-Za-z_$][\w$]*Unavailabl
    Position is the whole question — masking answers it, set-membership cannot. */
 function maskComments(src, label, minComments = 50) {
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false }); }
   catch (e) { console.error(`FAIL — could not parse ${label}: ${e.message}`); process.exit(1); }
   const cs = ast.comments || [];
   /* Fail closed. Zero comments in a 400kB file of this repo's prose density means the parse
@@ -219,11 +223,15 @@ if (!rows.some((r) => r.name === "inboxOpen")) {
    Each entry is a REASON, verified by reading the component, not a pass. A name here that starts
    naming a flag is stale bookkeeping and is reported as such below. */
 const CHECKED = {
+  dataReq: 'the "No areas" copy is AreaTree\'s in-memory seed search (no DB read); "no route carries one yet" and "no longer message" are static Help / Legal prose, not counts of the reader\'s own data (same components as privacyOpen)',
+  settingsOpen: 'the "No crew invites" copy is an <option> value in SettingsPrivacySheet (a setting, not a count); the one empty-state with that text is CrewRequestsView, which shows "Couldn’t load your crew invites" instead whenever the invites read errored (crewInvitesUnavailable, ClimbMatch.jsx) — the error branch is checked first',
+  feedbackOpen: 'the "No areas" phrases are search-result copy: AreaTree\'s "No areas match" filters the seed MOUNTAINS tree in memory (no DB read to fail); DbAreaTree\'s "No areas." sits beneath its own `if (error)` branch ("Couldn’t load the area tree.")',
+  privacyOpen: 'the "no route carries one yet" and "no longer message" phrases are static Help / Legal prose about the catalog and blocking, not counts of the reader\'s own data; the "No areas" copy is AreaTree\'s in-memory seed search (see feedbackOpen)',
+  rateOpen: 'the "no route carries one yet" and "no longer message" phrases are static Help / Legal prose (lib/Help.jsx, lib/LegalView.jsx), not counts of the reader\'s own data',
+  contribOpen: 'the "No areas" phrases are the in-memory seed search and DbAreaTree\'s error-guarded empty state (see feedbackOpen); no per-account read renders an empty line here',
+  eventForm: '"No climbs on this list yet." (SharedListView) sits after its `(!given&&q.isError)` branch ("Couldn’t load this list…") and the missing-list branch, so a failed read cannot reach it; ListsManager\'s empty copy sits after its error branch ("Couldn’t load your objectives…")',
   areaTreeOpen: "AreaTree is gated on `selArea`, which is written only on the SEED catalog path — dead in production (VITE_USE_DB=true renders DbAreaBrowser)",
   logPickOpen: "LogRoutePicker filters the seed ROUTES/MOUNTAINS module constants; no DB read to fail",
-  logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',
-  giveVouchWith: 'same "No climbs match." filter copy',
-  quickLogFor: 'same "No climbs match." filter copy',
   eventInvite: "renders FullProfile; its vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
   /* The Help FAQ answers "Can I see other people's recorded GPX tracks?" and has to say that
      almost none exist -- `communityTracks` is a SEED-ONLY field and `routes` has no track column

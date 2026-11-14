@@ -1,0 +1,127 @@
+{
+ "area_id": "or_mt_washington",
+ "routes": [
+  {
+   "route_id": "or_southeast_spur",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Logged SE Spur/Southeast Spur: Jun 1, Jul 1, Sep 1. Web: guided parties climb it in summer; one July party needed crampons and axe for permanent snowfields on the approach (Mountain Project/SummitPost snippets). No harvested track is logged as the SE Spur."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3275972",
+     "verdict": "unsure",
+     "why": "No description; not shown to be the SE Spur."
+    },
+    {
+     "aid": "3393187",
+     "verdict": "different",
+     "why": "Report says North Ridge."
+    },
+    {
+     "aid": "2996938",
+     "verdict": "different",
+     "why": "Report describes the North Ridge chimney crux."
+    },
+    {
+     "aid": "2020847",
+     "verdict": "different",
+     "why": "Logged North Ridge."
+    },
+    {
+     "aid": "182456",
+     "verdict": "different",
+     "why": "PCT/North Ridge."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_west_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged West Ridge: Jul 3, Aug 1, Sep 5. Mountain Project (West Ridge, 7 pitches, Grade II) and SummitPost logs cover July-August; one log calls it a fine summer climb with mosquitoes."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "836098",
+     "verdict": "unsure",
+     "why": "Logged West Ridge, Jul 23, in season, but no GPS track points."
+    },
+    {
+     "aid": "1009648",
+     "verdict": "unsure",
+     "why": "Logged West Ridge, Aug 1, in season, but no GPS track points."
+    },
+    {
+     "aid": "2020847",
+     "verdict": "different",
+     "why": "North Ridge."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "Reach the ridge from the Big Lake trailhead on the PCT: about five miles along, where the PCT bends south under the ridge, leave it and go cross-country to a low notch on the ridge.",
+     "aids": [
+      "836098",
+      "1009648"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "The north-side ways into the lower notch have the worst rock; the south-side fourth-class slab is cleaner (July-August).",
+     "aids": [
+      "836098"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "Pitch out only the low dihedral; the narrow middle crest simuls well with long slings over horns.",
+     "aids": [
+      "836098",
+      "1009648"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 7,
+     "text": "50 m rope and about a dozen slings, several double-length (July-August); cams to #3 and a few offset nuts",
+     "aids": [
+      "836098",
+      "1009648"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 7,
+     "text": "Come down the North Ridge: three rappels, and with a 50 m rope one short fourth-class downclimb remains after the second; avoid kicking scree onto parties below (July-August).",
+     "aids": [
+      "836098",
+      "1009648"
+     ]
+    }
+   ]
+  }
+ ],
+ "missing": [],
+ "notes": "No harvested track is logged as West Ridge or Southeast Spur with GPS points, so both tracks are null. All harvested tracks with points (3275972, 3393187, 2996938, 2020847, 182456) are North Ridge, which is or_north_ridge_2 (already has a track, not in this packet). Peakbagger summit 44.33215,-121.83853 agrees with all track highs (3-18 m)."
+}

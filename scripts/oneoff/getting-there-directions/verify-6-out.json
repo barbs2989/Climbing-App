@@ -1,0 +1,629 @@
+[
+ {
+  "i": 242,
+  "verdict": "accurate",
+  "problem": "Matches the WTA directions (4.6 miles past the ranger station, right onto FR 4020); no closure found.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/pinnacle-lake"
+  ]
+ },
+ {
+  "i": 243,
+  "verdict": "accurate",
+  "problem": "15 miles to the Stevens Canyon junction and 1.5 miles to Reflection Lakes match; Stevens Canyon Road is currently closed for the season (normal winter closure).",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/pinnacle-saddle",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ]
+ },
+ {
+  "i": 244,
+  "verdict": "not-directions",
+  "problem": "Text names the trailhead but gives no drive.",
+  "correctedDirection": "From the Nisqually entrance of Mount Rainier National Park, drive Paradise Road about 15 miles to the Stevens Canyon Road junction, turn right and go 1.5 miles to the Reflection Lakes parking area.",
+  "numbersUsed": [
+   "15",
+   "1.5"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/pinnacle-saddle",
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ]
+ },
+ {
+  "i": 245,
+  "verdict": "fix",
+  "problem": "Says 1.4 miles east of the junction but also about 1.9 miles from the Paradise turnoff, which contradicts the 1.5 miles from the junction given by the trailhead page.",
+  "correctedDirection": "From the Nisqually entrance of Mount Rainier National Park, drive Paradise Road about 15 miles to the Stevens Canyon Road junction, turn right and go about 1.5 miles to the Reflection Lakes pullouts.",
+  "numbersUsed": [
+   "15",
+   "1.5"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/pinnacle-saddle"
+  ]
+ },
+ {
+  "i": 246,
+  "verdict": "unverifiable",
+  "problem": "Not checked against a fetched page that covers this pullout.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 247,
+  "verdict": "accurate",
+  "problem": "FR 25 about 12 miles from US 101 with the first 8 paved to Lena Lake matches the Forest Service page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/olympic/recreation/putvin-trailhead"
+  ]
+ },
+ {
+  "i": 248,
+  "verdict": "accurate",
+  "problem": "6.4 miles past Newhalem, parking on the left, trail on the right matches WTA.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/pyramid-lake"
+  ]
+ },
+ {
+  "i": 249,
+  "verdict": "accurate",
+  "problem": "6.4 miles past Newhalem matches WTA.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/pyramid-lake"
+  ]
+ },
+ {
+  "i": 250,
+  "verdict": "accurate",
+  "problem": "Exit 62, Kachess Lake Road, FR 4930 match WTA; note WTA reports the trail closed for the Three Queens Fire (7/30/26) and the Forest Service lists a reduced fire closure order dated October 1, 2026 - drive text itself not contradicted.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/rachel-lake",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts"
+  ]
+ },
+ {
+  "i": 251,
+  "verdict": "accurate",
+  "problem": "FR 4930 at the end of the road matches WTA (name Box Canyon Road not confirmed); Three Queens Fire closure reported nearby, see Rachel Lake entry.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/rachel-lake"
+  ]
+ },
+ {
+  "i": 252,
+  "verdict": "accurate",
+  "problem": "About 50 miles from Marblemount per WTA vs 52 stated, within tolerance; south side lot matches.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/maple-pass"
+  ]
+ },
+ {
+  "i": 253,
+  "verdict": "not-directions",
+  "problem": "Text names the trailhead but gives no drive.",
+  "correctedDirection": "Drive SR-20 about 50 miles east of Marblemount to Rainy Pass; the PCT north trailhead parking is on the north side of the highway.",
+  "numbersUsed": [
+   "20",
+   "50"
+  ],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/maple-pass"
+  ]
+ },
+ {
+  "i": 254,
+  "verdict": "accurate",
+  "problem": "Twisp River Road to FR 4435 then a left at the trailhead sign matches WTA; the spur number is not on that page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/reynolds-creek"
+  ]
+ },
+ {
+  "i": 255,
+  "verdict": "not-directions",
+  "problem": "Text is only \"from the roadside pullout\"; no source found for Osprey Wall access.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 256,
+  "verdict": "not-directions",
+  "problem": "Names the roads but gives no drive from a town.",
+  "correctedDirection": "From Winthrop drive about 15 miles west on SR 20, turn right onto Lost River Road, keep left after half a mile, and follow it about 7.5 miles on pavement, then 1.25 miles on gravel FR 5400 to the Robinson Creek Trailhead on the right.",
+  "numbersUsed": [
+   "20",
+   "15",
+   "7.5",
+   "1.25",
+   "5400"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/robinson-creek"
+  ]
+ },
+ {
+  "i": 257,
+  "verdict": "accurate",
+  "problem": "Matches WTA exactly.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/robinson-creek"
+  ]
+ },
+ {
+  "i": 258,
+  "verdict": "accurate",
+  "problem": "Dirt pullout on the north side of US 2 near milepost 73 is consistent with WTA (left turn eastbound).",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/rock-mountain"
+  ]
+ },
+ {
+  "i": 259,
+  "verdict": "not-directions",
+  "problem": "Text starts at the trailhead and describes the walk.",
+  "correctedDirection": "From Newhalem, drive SR-20 east about 14 miles; the trailhead parking is on the right between mileposts 134 and 135.",
+  "numbersUsed": [
+   "20",
+   "14",
+   "134",
+   "135"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/ross-dam-trail"
+  ]
+ },
+ {
+  "i": 260,
+  "verdict": "accurate",
+  "problem": "Newhalem, about 14 miles east, between mileposts 134 and 135 matches WTA.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/ross-dam-trail"
+  ]
+ },
+ {
+  "i": 261,
+  "verdict": "not-directions",
+  "problem": "Text starts at the trailhead and describes the walk and boat.",
+  "correctedDirection": "From Newhalem, drive SR-20 east about 14 miles; the trailhead parking is on the right between mileposts 134 and 135.",
+  "numbersUsed": [
+   "20",
+   "14",
+   "134",
+   "135"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/ross-dam-trail"
+  ]
+ },
+ {
+  "i": 262,
+  "verdict": "accurate",
+  "problem": "About 17.5 miles from Leavenworth and 18 from Stevens Pass past the Nason Creek rest area match WTA; the final turn onto FR 6910 is not stated.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/round-mountain-1"
+  ]
+ },
+ {
+  "i": 263,
+  "verdict": "accurate",
+  "problem": "Louella Road, Palo Alto Road, FR 2880 and FR 2870 match WTA; total distance fits the 6.5-9 mile range.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/royal-basin"
+  ]
+ },
+ {
+  "i": 264,
+  "verdict": "unverifiable",
+  "problem": "Fetched WTA Hannegan page confirms FR 32 and Ruth Creek Road but not the milepost 3 weir pullout.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/hannegan-pass"
+  ]
+ },
+ {
+  "i": 265,
+  "verdict": "accurate",
+  "problem": "About 22 miles from Twisp vs WTA 21.8; road turns to FR 4440 gravel.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/scatter-lake"
+  ]
+ },
+ {
+  "i": 266,
+  "verdict": "not-directions",
+  "problem": "Text names the trailhead but gives no drive.",
+  "correctedDirection": "From SR-20 turn left onto Baker Lake Road 0.4 miles past milepost 82 and follow it 12.3 miles, turn left onto FR 12 for 3.7 miles, then right onto FR 13 for 5.3 miles to the trailhead parking.",
+  "numbersUsed": [
+   "20",
+   "0.4",
+   "82",
+   "12.3",
+   "12",
+   "3.7",
+   "13",
+   "5.3"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/park-butte"
+  ]
+ },
+ {
+  "i": 267,
+  "verdict": "not-directions",
+  "problem": "Text names the trailhead but gives no drive.",
+  "correctedDirection": "From SR-20 turn left onto Baker Lake Road 0.4 miles past milepost 82 and follow it 12.3 miles, turn left onto FR 12 for 3.7 miles, then right onto FR 13 for 5.3 miles to the trailhead parking.",
+  "numbersUsed": [
+   "20",
+   "0.4",
+   "82",
+   "12.3",
+   "12",
+   "3.7",
+   "13",
+   "5.3"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/park-butte"
+  ]
+ },
+ {
+  "i": 268,
+  "verdict": "accurate",
+  "problem": "FR 1152-014 at the end off Baker Lake Road matches WTA.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/shannon-ridge"
+  ]
+ },
+ {
+  "i": 269,
+  "verdict": "accurate",
+  "problem": "Silver Star Creek crossing at milepost 171 matches WTA; the 8.5 miles east of Washington Pass is not stated there.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/silver-star-view-snowshoe"
+  ]
+ },
+ {
+  "i": 270,
+  "verdict": "fix",
+  "problem": "Deadhorse Road (FR 37) is closed by flood damage; the normal drive is described as open.",
+  "correctedDirection": "From Glacier, drive Mt. Baker Highway (SR 542) east about 1 mile past the Glacier Public Service Center to Glacier Creek Road (FS 39); turn right, then take an immediate left onto Deadhorse Road (FS 37). Deadhorse Road has been closed to vehicles for flood damage, with a Forest Service alert dated June 2026, so check before you go.",
+  "numbersUsed": [
+   "542",
+   "1",
+   "39",
+   "37",
+   "2026"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead",
+   "https://www.fs.usda.gov/r06/mbs/alerts",
+   "https://www.wta.org/go-hiking/hikes/skyline-divide"
+  ]
+ },
+ {
+  "i": 271,
+  "verdict": "not-directions",
+  "problem": "Text is a walk within the lot, and the building described does not match the trailhead page.",
+  "correctedDirection": "From Everett, drive US 2 east about 65 miles to Stevens Pass, pass under the pedestrian overpass and turn left into the large lot on the north side of the highway.",
+  "numbersUsed": [
+   "2",
+   "65"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/skyline-lake"
+  ]
+ },
+ {
+  "i": 272,
+  "verdict": "fix",
+  "problem": "States a Forest Service day-use fee applies; the trailhead page lists no parking pass or fee.",
+  "correctedDirection": "Park in the large lot on the north side of US 2 at Stevens Pass, turning left after the pedestrian overpass when coming from the west or right just before it when coming from Leavenworth.",
+  "numbersUsed": [
+   "2"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/skyline-lake"
+  ]
+ },
+ {
+  "i": 273,
+  "verdict": "accurate",
+  "problem": "Slate Pass at about 6,900 ft via Harts Pass Road matches a fetched route description.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://nwhiker.com/slatepeak.html"
+  ]
+ },
+ {
+  "i": 274,
+  "verdict": "accurate",
+  "problem": "Lost River Road onto FR 5400, then the second switchback past Harts Pass, matches the route page.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://nwhiker.com/slatepeak.html",
+   "https://www.wta.org/go-hiking/hikes/harts-pass-and-slate-peak"
+  ]
+ },
+ {
+  "i": 275,
+  "verdict": "accurate",
+  "problem": "Right at Harts Pass onto Slate Peak Road (FR 5400-600), second switchback, 6,900 ft all match; horse loading area detail not confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://nwhiker.com/slatepeak.html"
+  ]
+ },
+ {
+  "i": 276,
+  "verdict": "not-directions",
+  "problem": "Harts Pass Road does not end at Slate Pass; it continues about 2 miles to a gate. No drive given.",
+  "correctedDirection": "From Mazama, take Lost River Road, which becomes FR 5400, about 19 miles to Harts Pass, turn right onto Slate Peak Road (FR 5400-600) and drive about 1.8 miles to the second switchback and the Slate Pass trailhead.",
+  "numbersUsed": [
+   "5400",
+   "19",
+   "5400",
+   "600",
+   "1.8"
+  ],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://nwhiker.com/slatepeak.html"
+  ]
+ },
+ {
+  "i": 277,
+  "verdict": "fix",
+  "problem": "Describes a normal drive up FR 6700, which is closed by a Forest Service order through 2027.",
+  "correctedDirection": "Park at the Smithbrook Trailhead (elev. ~4,000 ft) on Smithbrook Road (FR 6700), about 3 miles up from Hwy 2. Smithbrook Road (FR 6700) is closed to vehicles under a storm-damage order effective May 20, 2026 through December 31, 2027 unless lifted sooner; confirm it has reopened before driving.",
+  "numbersUsed": [
+   "4",
+   "000",
+   "6700",
+   "3",
+   "2",
+   "6700",
+   "20",
+   "2026",
+   "31",
+   "2027"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district"
+  ]
+ },
+ {
+  "i": 278,
+  "verdict": "accurate",
+  "problem": "Already carries the dated closure; drive details are consistent with the Forest Service page (about 3 miles).",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district"
+  ]
+ },
+ {
+  "i": 279,
+  "verdict": "fix",
+  "problem": "Describes a normal drive on FR 6700, which is closed by a Forest Service order through 2027.",
+  "correctedDirection": "Drive US 2 to Smithbrook Road (Forest Road 6700); the turnoff is about 4.2 miles east of Stevens Pass summit. Smithbrook Road (FR 6700) is closed to vehicles under a storm-damage order effective May 20, 2026 through December 31, 2027 unless lifted sooner; confirm it has reopened before driving.",
+  "numbersUsed": [
+   "2",
+   "6700",
+   "4.2",
+   "6700",
+   "20",
+   "2026",
+   "31",
+   "2027"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+   "https://www.fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-river-district"
+  ]
+ },
+ {
+  "i": 280,
+  "verdict": "not-directions",
+  "problem": "Text names the trailhead but gives no drive; no fetched source for Snow Lake distances. Stevens Canyon Road is now closed for the season (normal).",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/road-status.htm"
+  ]
+ },
+ {
+  "i": 281,
+  "verdict": "accurate",
+  "problem": "About 4 miles up Icicle Creek Road matches WTA 4.2.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snow-lakes"
+  ]
+ },
+ {
+  "i": 282,
+  "verdict": "accurate",
+  "problem": "4.2 miles from US 2 on Icicle Road matches WTA; side of road not confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snow-lakes"
+  ]
+ },
+ {
+  "i": 283,
+  "verdict": "accurate",
+  "problem": "About 4.2 miles from US 2 matches WTA.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snow-lakes"
+  ]
+ },
+ {
+  "i": 284,
+  "verdict": "fix",
+  "problem": "Says turn east onto FR 21; WTA has the turn off US 12 about 3 miles west of Packwood heading south.",
+  "correctedDirection": "From US 12 about 3 miles west of Packwood, turn south onto Forest Road 21 and follow it about 13 miles, take a slight left onto FR 2150 (signed for Chambers Lake and Snowgrass Flat), then go less than 3 miles to the Snowgrass Flat Trailhead.",
+  "numbersUsed": [
+   "12",
+   "3",
+   "21",
+   "13",
+   "2150",
+   "3"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snowgrass"
+  ]
+ },
+ {
+  "i": 285,
+  "verdict": "accurate",
+  "problem": "FR 2150 access matches WTA, though the road continues a short way to another trailhead.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snowgrass"
+  ]
+ },
+ {
+  "i": 286,
+  "verdict": "accurate",
+  "problem": "FR 21 off US 12 about 3 miles west of Packwood matches WTA; the road name \"Johnson Creek Road\" is not confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/snowgrass"
+  ]
+ },
+ {
+  "i": 287,
+  "verdict": "accurate",
+  "problem": "About 14 miles of Sol Duc Road from US 101, open per NPS; turn about 29 miles west of Port Angeles per WTA.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+   "https://www.wta.org/go-hiking/hikes/sol-duc-falls"
+  ]
+ },
+ {
+  "i": 288,
+  "verdict": "not-directions",
+  "problem": "Text names the trailhead but gives no drive.",
+  "correctedDirection": "Head west from Port Angeles on US 101 about 29 miles to Sol Duc Road, turn left and go 14 miles, passing the hot springs, to the parking lot at the end of the road.",
+  "numbersUsed": [
+   "101",
+   "29",
+   "14"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/sol-duc-falls",
+   "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm"
+  ]
+ },
+ {
+  "i": 289,
+  "verdict": "accurate",
+  "problem": "Same as Sol Duc Hot Springs Road entry: matches WTA and NPS.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+   "https://www.wta.org/go-hiking/hikes/sol-duc-falls"
+  ]
+ }
+]

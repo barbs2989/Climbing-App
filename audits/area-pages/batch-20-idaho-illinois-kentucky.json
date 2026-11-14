@@ -1,0 +1,96 @@
+{
+ "id_short_cliffs": {
+  "_expect": {
+   "name": "Short Cliffs",
+   "region": "Idaho"
+  },
+  "blurb": "Short Cliffs is one of the main sections of the Black Cliffs, a band of dark columnar basalt above the Boise River on the east side of town. The name fits: the walls are low, but there is plenty of hard climbing on them. Most lines are traditional cracks, stems and corners, with a smaller set of bolted face routes, and grades run from 5.6 to 5.12 with the 5.10s the most common. Bologna Pony, Bag of Stems and Basic Training are typical favorites. Basalt feels slick in summer heat, so spring and fall are the comfortable seasons, and winter days can be cold.",
+  "parking_note": "Take Highway 21 east from Boise and leave the car in the lot at the diversion dam, then follow the trail up the hillside to the base of the cliff line.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106060670/short-cliffs",
+    "https://localwiki.org/boise/The_Black_Cliffs",
+    "https://www.visitsouthwestidaho.org/6-climbing-spots-in-southwest-idaho/"
+   ]
+  }
+ },
+ "il_f_the_promised_land": {
+  "_expect": {
+   "name": "The Promised Land",
+   "region": "Illinois"
+  },
+  "blurb": "The Promised Land is one of the many sub-areas that make up Jackson Falls, the largest cluster of sandstone sport climbing in southern Illinois's Shawnee National Forest. This part of the canyon is almost entirely bolted, and it skews hard: most of the lines fall between 5.11 and 5.13, with only a handful of easier options. The sandstone is grippy, so routes often feel more approachable than the numbers suggest. Fashionably Late, Generator X and Team Honda are among the better-liked lines. Summers are hot and humid, though the canyon has plenty of shade; fall and early winter are usually the most pleasant.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106017458/jackson-falls",
+    "https://climbinghouse.com/jackson-falls-guide/",
+    "https://terrain-mag.com/?p=65650",
+    "https://en.wikipedia.org/wiki/Jackson_Falls"
+   ]
+  }
+ },
+ "il_a_shelter_1_bluff": {
+  "_expect": {
+   "name": "Shelter 1 Bluff",
+   "region": "Illinois"
+  },
+  "blurb": "Shelter 1 Bluff is a sandstone cliff inside Giant City State Park near Makanda, and the busier of the park's two climbing areas. It has a mix of bolted and traditional routes plus a low traverse along the base, with grades from easy 5.x through 5.12; the 5.10s and 5.11s are the most numerous. The rock is gritty and iron-rich, and the climbing tends toward pumpy and powerful. The walk from the road takes only a minute or so, which makes it popular for short sessions. Many routes start with a high first bolt, so bring a stick clip. Makanda Layback, Shake And Bake Direct and Walking Gunslinger are good places to start.",
+  "rock": "sandstone",
+  "approach": "A very short walk from the road puts you at the foot of the bluff.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106612569/giant-city-state-park?print=1",
+    "https://terrain-mag.com/?p=41999"
+   ]
+  }
+ },
+ "ky_long_wall": {
+  "_expect": {
+   "name": "Long Wall",
+   "region": "Kentucky"
+  },
+  "blurb": "Long Wall is a continuous sandstone cliff on the north side of the Red River Gorge, in the Northern Gorge. Routes average around 80 feet, though only a few reach the very top of the cliff, and most are traditional with a smaller share of sport lines and a few boulder problems. Grades are spread wide, from low 5.x through the 5.12s, with the 5.11s the most numerous. The trail up from the road is steep and not always obvious, so take your time finding the base. Once there you can walk right for the popular moderates or left toward the far end of the wall.",
+  "parking_note": "Use the gravel pulloff beside the forest road in the gorge, west of the iron bridge on Highway 77; the trail up to the wall starts at the right-hand end of the pullout.",
+  "approach": "A steep trail leads uphill from the pulloff to the cliff. It is distinct at the start but easy to lose, so follow it carefully to the wall.",
+  "review": {
+   "sources": [
+    "https://sendage.com/area/long-wall-northern-gorge-red-river-gorge-ky-usa",
+    "https://mountainproject.com/area/118235451/northern-gorge"
+   ]
+  }
+ },
+ "ky_bear_s_den_the": {
+  "_expect": {
+   "name": "Bear's Den, The",
+   "region": "Kentucky"
+  },
+  "blurb": "The Bear's Den is a sport crag in the southern Red River Gorge, within the Bald Rock Recreational Preserve alongside the Motherlode, Chocolate Factory and Unlode. Nearly everything here is bolted, with just a few traditional lines. It is a harder-grade crag: the bulk of the routes sit in the 5.11 and 5.12 range, with a good handful of 5.13s and very little at the easy end. Its neighbors have a reputation for steep, powerful climbing, so expect pumpy lines and bring a good set of quickdraws.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112439039/brrp-bald-rock-recreational-preserve",
+    "https://conservationalliance.com/success/bald-rock-recreational-preserve-acquisition/"
+   ]
+  }
+ },
+ "ky_drive_by_crag": {
+  "_expect": {
+   "name": "Drive-By Crag",
+   "region": "Kentucky"
+  },
+  "blurb": "Drive-By Crag is a long, tall sandstone wall in the Pendergrass-Murray Recreational Preserve in the southern Red River Gorge. The layout is open, so you can see the rest of the wall from almost anywhere along it. Nearly everything is bolted sport climbing, with a few trad lines, and grades run from the 5.9s up into the 5.13s, with 5.10 through 5.12 making up most of the routes. The rock has good texture, and the height and vertical angle make some of the harder lines feel less intimidating than they look.",
+  "review": {
+   "sources": [
+    "https://thedihedral.com/2022/04/13/the-red-drive-by-crag",
+    "https://mountainproject.com/area/106585368/pendergrass-murray-recreational-preserve-pmrp",
+    "https://rrgcc.org/?p=195"
+   ]
+  }
+ },
+ "_skipped": {
+  "in_unlikely_wall": "only one readable page; access to the roadcut is described as prohibited",
+  "ky_ash_branch": "only one readable page (Mountain Project) describing it"
+ },
+ "_conflicts": {
+  "ky_long_wall": "aspect: stored null; one source calls it a north-facing wall (sendage.com) but it is the gorge's north wall so may face south; left out"
+ }
+}

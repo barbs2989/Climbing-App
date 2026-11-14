@@ -1,10 +1,11 @@
+import { fileURLToPath } from "node:url";
 // Re-read the LIVE row for every route in research/in/<f>.json just before its research agent starts:
 // other sessions edit these rows during the day, and research against a stale row is wasted.
 // usage: node refresh.mjs r110 [r111 ...]
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const T = new URL("../../../audits/wa-contradictions-rest", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-contradictions-rest", import.meta.url));
 const DROP = ["gpx", "elev_pts", "name_search", "data_quality"];
 for (const f of process.argv.slice(2)) {
   const p = `${T}/research/in/${f}.json`, items = JSON.parse(fs.readFileSync(p));

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does a custom list show its description, and does an empty one stop claiming it is finished?
 //
 // 0186 gave user_lists a nullable `description`; ListsManager now asks for one when a list is
@@ -13,7 +14,7 @@ import { build } from "esbuild";
 import path from "path"; import os from "os"; import fs from "fs";
 import { createRequire } from "module";
 import { readCoreSource } from "../lib/guard-sources.mjs";
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "../..");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";

@@ -44,7 +44,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { appSources } from "./lib/guard-sources.mjs";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:contrib-shapes";
@@ -52,7 +52,8 @@ appSources(ROOT, GUARD);
 
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 const APP = read("ClimbMatch.jsx");
-const RD = read("RouteDetail.jsx");
+// Through readAppFile(): the stitched page, so the components moved out of it (PR52 on) stay read.
+const RD = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
 // Through readCoreSource(): AddRoute (whose `_nr` object this reads) moved to lib/ to load lazily.
 const CORE = readCoreSource();
 
@@ -127,9 +128,12 @@ const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access
   "crowds", "partnerRequirements", "seasonalGuidance", "emergency", "approachLogistics",
   // `sections` builds the {n,label,class,notes} array ClimbingRouteTable reads, exactly as
   // `pitches` builds pitchDetail's — structuredVal emits the shape, so no CONV applies.
-  "sections", "variants", "difficulty", "climate", "seasonalHazards"]);
+  "sections", "variants", "difficulty", "climate", "seasonalHazards",
+  // `rappels` builds rappel_detail's [{n,lengthM,anchor,station?,hazards?,notes}] the way `pitches` builds pitch_detail.
+  "rappels"]);
 
-const readers = stripComments(RD + "\n" + CORE);
+// lib/routeKw.js holds the `hazards` reader since PR58 (a lib/ helper is not stitched into RD).
+const readers = stripComments(RD + "\n" + CORE + "\n" + fs.readFileSync(path.join(ROOT, "lib/routeKw.js"), "utf8"));
 // The stripper's own failure mode is silent: desynchronise on an apostrophe and it eats real
 // code, after which every pattern below is absent and the guard reports a clean sweep. Assert
 // a known live reader survives it before trusting a single result.
@@ -251,8 +255,10 @@ for (const [key, expr] of nrPairs) {
   // broken the moment AddRoute started converting with a helper. Rather than loosen the rule to
   // "anything with parentheses", each allowed helper is named here AND its definition is checked
   // to actually produce an array — so the allowance cannot rot into a hole. `linesOf` splits a
-  // textarea into one entry per line, which is how whatToBring/watchOut/objHaz are read back.
-  const ARRAY_HELPERS = ["linesOf"];
+  // textarea into one entry per line, which is how whatToBring/watchOut/objHaz are read back;
+  // `commaOf` splits a comma list, which is how altNames/variations are read back (0327) — the
+  // same split routeForDetail's CONV applies to an edit of either.
+  const ARRAY_HELPERS = ["linesOf", "commaOf"];
   const helperOk = ARRAY_HELPERS.filter((h) => {
     const def = CORE.match(new RegExp("(?:const|function)\\s+" + h + "\\s*=?\\s*(?:function)?\\s*\\([^)]*\\)\\s*\\{[^}]{0,300}"));
     return def && /\.split\(|\.filter\(|\.map\(|\[\]/.test(def[0]);

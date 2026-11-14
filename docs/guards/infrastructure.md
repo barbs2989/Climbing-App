@@ -148,11 +148,32 @@ the total when deciding where a new guard belongs.
     different: nothing ever asks that question again. The exemption is keyed to
     `group: pages`, so if that group changes the run **fails as stale bookkeeping** — the same
     standard as `NEEDS_EXTRA_STATE`.
-  - It also pins the **#795** invariant it depends on: both browser guards must still trigger
-    on push to main. A workflow that stops being push-triggered would otherwise drop out of
-    the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
+  - It also pins the **#795** invariant it depends on: both browser guards must still walk
+    main, on a push to main OR a `schedule:` cron. Since #3289 (owner, 2026-11-13) both walk
+    main every 4 hours instead of on every merge: per-merge walks were 16 jobs that gated
+    nothing and kept PR builds and the deploy waiting 25–40 min for a runner. A workflow with
+    neither trigger would otherwise drop out of the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
     exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
     broken scan, never as safe CI.
+  - **The walk workflows SKIP a PR or merge that touches only files no walk reads**
+    (`paths-ignore` in `render-guards.yml` and `zero-state.yml`, one identical list on both
+    events: `audits/`, `research-data/`, `research/`, `catalog/`, `enrichment-wip/`,
+    `gear-research/`, `docs/`, `*.md`, `scripts/oneoff|pipeline|enrich/`, `scripts/audit-*.mjs`).
+    A skipped run is not a missing check: nothing it walks changed, and the run stays absent
+    rather than pending, so it cannot be confused with the cancellation above.
+    - **Why (2026-11-05):** the production DB was stalling, and the load was CI. In a 3.6 h
+      `pg_stat_statements` window the signed-in boot RPCs (`my_trust_counts` 157 ms,
+      `people_you_may_know` 91 ms, …) each ran ~1,760 times, all from walks; render-guards had
+      5–13 runs in flight most of 2026-11-04 (16 jobs each). About a third of that day's PRs
+      were data/audit/doc-only.
+    - **Queueing runs does NOT reduce the load**, which is why this skips rather than queues:
+      GitHub Free already caps the account at 20 concurrent jobs, so a run-level queue only
+      reorders the same ~20 browser jobs, and a shared concurrency group would CANCEL pending
+      runs (above).
+    - **Verified when added:** no walk script, nor anything under `scripts/lib/` it imports,
+      reads those paths or any `.md`; app code names them only in comments. **A walk that starts
+      reading one of them must take it off the list.** Data written to the DB by those PRs'
+      scripts was never tested by the PR's walk anyway (it lands out of band).
   - **TWO MORE WAYS A RUN GOES MISSING WITHOUT REPORTING A FAILURE, both met on #1229 and both
     the same shape as the cancellation above: `gh pr checks` can only report on runs that
     EXIST.** Neither is a flake to re-run past — each needs a different action.
@@ -238,6 +259,103 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     the missing file and its own file count; breaking the `db.js` vocabulary regex fails
     `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
     `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
+  - **Components live in TWO folders since 2026-10-15** — `lib/` (the 2026-09 lazy-load moves) and
+    `src/components/` (the single-job TypeScript extractions, `docs/refactor-progress.md`) — and
+    the #547 shape was one directory away from recurring: **11 guards enumerated `lib/` by hand**
+    and **19 filtered on `.jsx`**, so a `.tsx` in the new folder was invisible to all of them, and
+    **44 parsed with Babel `plugins:["jsx"]`**, which THROWS on a `.tsx` (loud, at least). Now one
+    list, `componentFiles(root, { js })`, feeds `appSources()` and every hand-rolled walker, every
+    parse carries the `typescript` plugin, and `MOVED` is keyed by parent file so a component
+    extracted from `ClimbMatch.jsx` or `RouteDetail.jsx` is stitched back like one from core
+    (`readParentSource()`; `readCoreSource()`/`MOVED_FROM_CORE` kept as aliases for 21 importers).
+    Measured before the plugin went in: parsing every existing `.js/.jsx` with and without
+    `typescript` gives **identical ASTs** apart from `importKind`/`exportKind: "value"` on
+    import/export nodes, which no guard reads. `check:refs` skips identifiers in TS *type*
+    positions (`Record<K,V>`, `: Props`) — erased before anything runs — but not inside `x as T`,
+    which wraps a value.
+  - **A parent that still USES what it extracted imports it back** (`DiscBadge`, PR3: core's own
+    `DiscBadges` renders it). Stitched verbatim, that import line plus the moved body is a duplicate
+    declaration and Babel refuses the WHOLE stitched file — every text guard on core would have gone
+    red at once, not blind. `readParentSource()` drops the parent's own import of each moved file
+    before appending it; the stitch probe (one def, zero leftover imports, parses) is the check.
+- **`check:types`** runs `tsc --noEmit` over `tsconfig.json` (strict, `allowJs` so a component can
+  import the three JS app files with inferred types). It exists because **Vite compiles `.tsx`
+  with esbuild, which strips types and checks nothing**, so without it a type error ships. It is a
+  `node scripts/check-types.mjs` entry, not a bare `tsc`, because `run-build-guards.mjs` parses the
+  chain for exactly that shape and would silently skip anything else. Fails closed on zero
+  TypeScript files under `src/` (a layout move, not a pass). ~7 s CPU: `tsc` follows the imports
+  into the 2.3 MB of JSX; the wall time on a loaded box is much longer and is not a defect.
+  - **Trap, met on the first component:** a JS function's destructured parameter
+    (`const Pill=({label,color,bg,sm,icon})=>`) is inferred as an object with every property
+    REQUIRED, so a `.tsx` that omits `icon` fails TS2741. Type the seam on the JS side with a
+    JSDoc `@param {{label?: …}}` — one line, no runtime change, and every later component
+    benefits — rather than casting in the component.
+  - `npm run type-check` is the same script under the name the owner asked for (2026-10-15), and
+    `tsconfig.json` gained `noUnusedParameters` then (src/ was already clean under it).
+- **`lint`** (`scripts/check-lint.mjs`, config `eslint.config.js`, added 2026-10-15 on the owner's
+  request) runs ESLint with `--max-warnings 0` over the app — the root `.jsx`, `lib/`, `main.jsx`
+  and `src/` (134 files; `scripts/`, `supabase/` and the data folders are ignored). The rules are
+  the three the owner named and nothing else: unused variables, `any` (`src/` also gets
+  typescript-eslint `strict`), and `react-hooks/rules-of-hooks` + `exhaustive-deps`, all errors.
+  `react/jsx-uses-vars` is on only so a component used solely in JSX does not read as unused —
+  without it the first count was 643 unused variables, 386 of them false.
+  - **It must ignore the guards' scratch files** (2026-10-16): `npm run build` runs every guard concurrently, and ESLint
+    scanning `.` died with `ENOENT: scandir .cm-apsec-…` when `check:approach-section` removed its scratch directory
+    mid-scan — two deploys in a row failed on it (c50e07f8, 6f000593), neither of which touched lint. `.cm-*/**`,
+    `.wpplace-*/**`, `.core-entry-*.jsx` and `.trusttierprobe-*.mjs` are now in the config's `ignores`. A guard that
+    adds a new scratch name in the checkout root has to add it there too, or the race comes back.
+  - **Legacy findings are a ratchet.** On the day it landed, 257 unused variables and 148
+    incomplete hook dependency arrays already sat in 24 files (mostly the three big JSX files).
+    Fixing the dependency arrays in `App` is a behaviour change per effect (a missing dep added to
+    an effect that sets state can loop), so they were recorded with `eslint --suppress-all` into
+    `eslint-suppressions.json` (per file, per rule, a COUNT) rather than swept. A new finding
+    pushes its file over the count and fails. Fixing an old one also fails ("unused
+    suppressions") until `npx eslint . --prune-suppressions` shrinks the file, so the baseline can
+    only go down. Never re-run `--suppress-all` to make a new finding go away.
+  - **The baseline is GONE (2026-10-28).** All 385 held findings (248 unused variables, 137
+    dependency arrays) were fixed file by file and `eslint-suppressions.json` was deleted; lint now
+    FAILS if that file exists, because ESLint reads it automatically and a `--suppress-all` would
+    hide any new finding behind it. How the dependency arrays were settled: a missing dep was ADDED
+    only when stable (setters, refs, module constants) or extracted when the array held an
+    expression (`hasPick`/`pickP` in `lib/mapKit.jsx`, `meId`/`meVisible` in `lib/presence.js`,
+    `selAreaId` in `App`); `x || []` became a module `NO_ITEMS`/`NO_ROWS` so the identity is stable;
+    every other omission (an effect keyed on an id or a signature like `ck`/`grid.key`, an
+    unmemoized parent callback, a Leaflet map built once) KEPT its array and carries a per-line
+    `eslint-disable-line react-hooks/exhaustive-deps -- <why>`, so no effect fires at a new time.
+    Dead code removed with it, kept here so nobody hunts for it: `toggleDisc`/`reconcileDisc` in
+    `App` (the old Climbs discipline chips; filters live in `DbAreaBrowser` now), CrewCard's
+    `addable`/`goodPeriod` (unused since the first upload), RouteDetail's `rappelLabel`/
+    `rappelCount`/`VerifyBadge` (no callers).
+  - **Every disable names its rule and a reason** (2026-10-28): a directive without a rule, or
+    without ` -- <why>`, fails lint. A bare `// eslint-disable-line` silences EVERY rule on its line —
+    one sat in `lib/MyPartnerAreas.jsx`. Injection-tested: a bare directive and a rule-without-reason
+    each failed; `/* … -- reason */` and `// … -- reason` passed; an empty `{}` suppressions file failed.
+  - Fails closed on fewer than 40 files linted (an ignore edit that hides the app) and on an
+    eslint run that produced no JSON report. Injection-tested on landing: an unused `const` in
+    `lib/presence.js`, an effect reading `tab` with `[]` deps in `ClimbMatch.jsx`, and `: any` in a
+    new `.tsx` each failed it.
+  - Two pre-existing findings were FIXED, not suppressed: `CountUp`'s effect now lists the
+    primitives it reads (`[clean, target, dur]`, not `[value]` — same runs, since both derive from
+    the value), and `Lbl`'s emoji regex had ZWJ/VS16 inside a character class
+    (`no-misleading-character-class`), rewritten as an alternation; 14,801 string literals from
+    the app split identically under the old and new pattern.
+- **`measure:guard-reach`** is the blindness detector the 2026-09 moves recorded and nobody had
+  built: run every build guard, record its exit code and **every integer it printed**, then run
+  again after a move with `--compare` and fail on a guard that passed before and fails now, prints
+  fewer numbers, or has a count that fell to **zero**. A changed count is listed, not failed — a
+  move legitimately shifts a file count by one. Hand-run around every extraction
+  (`docs/refactor-progress.md` step 2 and 4), never in the chain: it IS the chain, run twice.
+  Its first use, the `RiskBadge` extraction, is the measurement that this entry's claims rest on:
+  110 guards, 25 with changed counts — every one the new `.tsx` being SEEN (a file count up by one in
+  ten guards, the chain and the doc citations up by the new scripts) — and no drop.
+  - **Its first run also produced two false positives and the fix is in the tool:** `check:return-leg`
+    and `check:pitch-discount` "lost" 60 numbers each. Both blocks were Node's own
+    `(node:85793) ExperimentalWarning` text plus stack frames — pids and line numbers that appear or
+    not with the box's load — printed in the baseline and not after, while the guards' own counts were
+    identical to the last digit. Those lines are stripped before counting now. The lesson generalises:
+    **a count taken from a guard's output must come from what the guard SAID, not from what the
+    runtime said around it.** And run it without piping through `tail`: the pipe hides the exit code.
+
 **Can the database even answer, before a guard spends half an hour finding out?**
 `scripts/lib/db-preflight.mjs` asks once, up front, and is used by `check:ui`, `check:zero`
 and `check:overflow` (#865). `check:field-renders` answers the same question its own way,
@@ -513,3 +631,63 @@ still break main between them.
 Landmark assertions in `check:ui` match whole lines, never substrings — a
 substring test passes `"RACK"` on the strength of `"ROUTE TRACK"`, which is exactly
 how a live section gets deleted while the check stays green.
+
+## Running the guards on Windows (since 2026-11-04)
+
+Every guard was written on a Mac. The first `npm run build` on a Windows machine failed **92 of
+122** build guards before any of them checked anything, and every browser walk left its Vite server
+running after it exited. Five causes, all fixed in scripts only (behaviour on macOS/Linux unchanged):
+
+- **`new URL("..", import.meta.url).pathname` as a file path** (164 scripts) gives `/C:/Users/…`
+  on Windows. `git` spawned with it as `cwd` reported `ENOENT`, which read like a missing git.
+  Written now as `fileURLToPath(new URL(…))`. `check:injection-anchors` resolves suite targets from
+  that spelling too, so it learned to read `fileURLToPath(…)` as the same file.
+- **`spawn("npx", …)`** (150 scripts): Windows ships `npx.cmd`, and Node will not spawn a `.cmd`
+  without a shell (CVE-2024-27980), which would re-split the SQL and paths the guards pass. Every
+  site now spawns `NPX, [...NPX_PRE, …]` from `scripts/lib/npx.mjs`. That is plain `npx` off
+  Windows. On Windows it is `node scripts/lib/npx-shim.cjs`, which loads a tool installed in this
+  repo (vite, esbuild) IN ITS OWN PROCESS. That part matters: through npm's npx, `server.kill()`
+  killed only the wrapper and every walk orphaned a Vite server on its port. Tools not installed
+  here (the supabase CLI) fall through to npm's `npx-cli.js`.
+- **`await import(path)`** of a computed absolute path (100 sites): `C:` reads as a URL scheme
+  (`ERR_UNSUPPORTED_ESM_URL_SCHEME`). Now `import(fileHref(path))`, from `scripts/lib/file-href.mjs`.
+- **`path.relative()` / `path.join()` output compared against `"src/components/X.tsx"` keys** (48
+  sites): Windows separators are `\`. `relative()` results are now normalised to `/`. Guards that
+  compare paths failed CLOSED on coverage ("the source walk covered 4 file(s) but not lib/fire.js"),
+  which is how this class was found. No guard went quietly blind on it.
+- **Worktrees:** `ln -s` needs Developer Mode on Windows. Link credentials with hardlinks and
+  directories with junctions instead (PowerShell: `New-Item -ItemType HardLink` for `.env` and
+  `.env.local`, `-ItemType Junction` for `supabase/.temp` and `node_modules`). Neither needs admin.
+
+- **`check:portable-scripts`** (in build, static) fails on the first three spellings anywhere under
+  `scripts/`. Comments are stripped first, because `npx.mjs` and the guard itself describe the bad
+  spellings. The guard's own file is skipped, since its RULES spell every bad pattern; `--selftest`
+  covers it instead. Measured false positives, now excluded: `import(` followed by `${` (template
+  text), `?` (a regex group such as `/import(?:ed)?/`) and `s)` (prose such as "import(s)"). The
+  sweep missed one real site, `return import(out)` in `probe-pinned-states-follow-the-account.mjs`,
+  because it only matched `await import(`; the guard's first run found it. Not checked: `\`
+  separators. They have no single spelling, and the coverage floors already catch them.
+  **Rule 4 (added 2026-11-04): a literal `"/Users/<name>/"` or `"/home/<name>/"` path.** The first
+  full audit run on Windows found `audit:summit-pins` reading its credentials from
+  `/Users/nathanbarber/dev/Climbing-App/.env.local` (ENOENT before any check), and
+  `pipeline/flag-classics.mjs` defaulting three data dirs there. The build guards never saw it,
+  because no build guard imports either file. `scripts/oneoff/` is exempt from this rule only:
+  15 one-offs name job folders from finished Mac runs, and they are history, not tools.
+- **Running injection suites concurrently on one box gives false MISSes.** A suite that passes 7/7
+  alone reported 1/7 while a second batch of browser walks ran beside it (its subprocess timed out,
+  so the failure carried no SELF-TEST text and read as a pass). Run suites one at a time, and re-run
+  any batch failure alone before diagnosing it.
+- **`"/tmp"` is `C:\tmp` on Windows**, which does not exist. Temp files come from `os.tmpdir()`.
+  `check:migration-replay` did `realpathSync(TMPDIR || "/tmp")`; a probe that created it left a
+  stray `C:\tmp` behind. Hard-coded `/tmp/...` paths remain only in one-off scripts.
+- **Supabase CLI 3.0 asks before ANY `db query` when it detects an agent** (`AI_AGENT` /
+  `CLAUDECODE` in the environment): `HostedMutationConsentRequiredError … Nothing was changed`.
+  npx fetches the latest CLI, so this arrived without a lockfile change and is not Windows-specific.
+  Every guard that only READS passes `--read-only`, which the CLI accepts without confirmation.
+  Scripts that WRITE (`apply-*`, pipeline imports, write probes) were left alone on purpose: the
+  confirmation is the point, and `--yes` is the owner's call per run.
+- **The shared UI fixture's mate is "Robin Belay" in every run**, and the orphan sweep leaves any
+  account under 45 minutes alone, so concurrent walks see each other's mates. The share sheet's
+  search is `profiles.name ilike`, so `check:new-climber-journey` found 5 Send rows and died in
+  phase 3. It now renames its own mate to `Robin Belay <id6>` before searching; the handle is
+  unchanged, so every later phase reads what it always did.

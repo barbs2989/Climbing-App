@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* CAN YOU SEARCH A DOWNLOADED STATE WITH NO SIGNAL — and does the offline search ADMIT THE SAME
  * ROWS the database would?
  *
@@ -68,7 +69,7 @@ try {
       },
     }],
   });
-  mod = await import(out);
+  mod = await import(fileHref(out));
 } catch (e) {
   console.error("FAIL: could not bundle lib/offline.js — nothing was checked. " + (e.stack || e.message));
   fs.rmSync(tmp, { recursive: true, force: true });
@@ -170,8 +171,8 @@ else no("maxGrade admitted the wrong rows: " + names(rows));
 rows = await mod.offlineSubtreeRoutes("wa_index", { minGrade: 5 });
 if (names(rows) === "Godzilla") ok("...and a minimum-grade filter excludes it as well");
 else no("minGrade admitted the wrong rows: " + names(rows));
-rows = await mod.offlineSubtreeRoutes("wa_index", { minStars: 1 });
-if (names(rows) === "Godzilla") ok("an unrated route counts as 0 stars, never as unknown-and-therefore-fine");
+rows = await mod.offlineSubtreeRoutes("wa_index", { minStars: 4 });
+if (names(rows) === "Aries, Boulder Problem") ok("a route RATED below the minimum is out, and an UNRATED one stays in (0334)");
 else no("minStars admitted the wrong rows: " + names(rows));
 rows = await mod.offlineSubtreeRoutes("wa_index", { minPitches: 1 });
 if (names(rows) === "Aries, Godzilla")
@@ -189,6 +190,9 @@ else no("the name filter is wrong: " + names(rows));
 rows = await mod.offlineSubtreeRoutes("wa_index", { disc: "trad" });
 if (names(rows) === "Aries, Godzilla") ok("the discipline filter is exact");
 else no("the discipline filter is wrong: " + names(rows));
+rows = await mod.offlineSubtreeRoutes("wa_index", { disc: "trad,bouldering" });
+if (names(rows) === "Aries, Boulder Problem, Godzilla") ok("...and a comma list takes every discipline in it (0334)");
+else no("the discipline list is wrong: " + names(rows));
 
 /* ── 4. ordering, including nulls-last on a DESCENDING sort ──────────────────────────────────── */
 console.log("\n4. THE ORDERING MATCHES, AND NULLS STAY LAST IN BOTH DIRECTIONS:");

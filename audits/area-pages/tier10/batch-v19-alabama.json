@@ -1,0 +1,39 @@
+{
+ "al_ninja_wall": {
+  "_expect": {
+   "name": "Ninja Wall",
+   "region": "Alabama"
+  },
+  "blurb": "Ninja Wall is a compact sport crag in Little River Canyon, outside Fort Payne in northeast Alabama. Fifteen bolted lines climb the sandstone, and the grades start at the low end of 5.10 and mostly sit in the 5.11 and 5.12 range, with a pair of 5.13s at the top. The wall is a deep, cave-like alcove, so the routes are steep and a little shorter than elsewhere in the canyon, rewarding powerful moves over long endurance. The overhang keeps off light showers and the wall tends to lose the sun by afternoon. This is a place for strong intermediate and advanced sport climbers; there is little here for beginners.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112787009/ninja-wall",
+    "https://mountainproject.com/area/112396116/little-river-canyon"
+   ]
+  }
+ },
+ "al_lynn_overlook": {
+  "_expect": {
+   "name": "Lynn Overlook",
+   "region": "Alabama"
+  },
+  "blurb": "Lynn Overlook is a small sandstone crag on the rim of Little River Canyon in northeast Alabama. Twelve of its fourteen climbs are bolted sport lines and two are trad, with most grades falling in the 5.11 range, a few easier 5.9s, and a handful at 5.12. The cliff faces east and is overhung, with much of the face tucked under a roof, so the rock often stays dry after rain. Trees crowd the base. Expect a short, rough walk through the woods and along a creek bed to reach the wall. It suits climbers comfortable on steep, sustained sandstone more than beginners.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118586540/lynn-overlook",
+    "https://mountainproject.com/area/112396116/little-river-canyon"
+   ]
+  }
+ },
+ "_skipped": {
+  "al_wash_the": "no fetched page about The Wash itself",
+  "al_white_wall": "no fetched page about the Jamestown White Wall itself; stored rock limestone vs sandstone cliffs at Jamestown",
+  "al_roadside_boulders_cadillac_thrills_boulder": "could not fetch two pages about this crag",
+  "al_temp_hp40": "temp/aggregate area; no page about it itself",
+  "al_fireplace_rock": "no fetched page describing Fireplace Rock itself beyond a problem list",
+  "al_point_boulders_highlife_boulder": "no fetched page about this boulder itself (sibling page and area publisher page only)"
+ },
+ "_conflicts": {
+  "al_white_wall": "stored rock limestone; Jamestown cliffs are sandstone per https://www.mountainproject.com/area/105905660/jamestown"
+ }
+}

@@ -19,12 +19,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     A coverage hole in a guard is invisible by construction unless something asks from
     outside, which is what this script is. Same lesson as `check:drift`: *a workflow cannot
     report on a run that never existed.*
+  - **App's early-return SCREENS have two spellings** (2026-10-21, desktop phase 2a).
+    `screenOverlays()` found `legal` and `editDraft` only through `if(x)return <`; when the
+    desktop shell began drawing those screens inside its page column, App started building them
+    as `const _vX=x?<>…</>:null` and returning them alone only on a phone. Both screens dropped
+    out of every overlay guard at once — `check:zero` said they "no longer render a dialog" and
+    `check:overlay-absence` called their CHECKED entries stale. The screens had not changed; the
+    spelling had. `screenOverlays` now reads both. Before renaming the `_v` prefix, change it here.
   - Two precision rules, both wrong in the first draft. **Balance the braces, never take a
     fixed window** — half these modals are wrapped in an IIFE (`{crewInvite&&(()=>{…})()}`)
     so the dialog can be thousands of characters past the state name, and on a 428,000-char
     file there is no safe window size. And **the dialog must be the region's own first
     element**: `openGroupId` renders a full-screen group view whose nested `ReactionPicker`
-    puts `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
+    (a dialog until 2026-11-05) put `role="dialog"` **24,227 characters in, behind 107 open tags**. Counting that would
     classify every screen large enough to contain a modal as a modal.
   - Brace-matching runs over **raw source**, deliberately *not* the comment/string blanker
     that `check:seed-history` and `check:dead-flag-gates` use. That blanker treats every
@@ -164,6 +171,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       total-minus-completed. They coincide today only because nothing in the seed demo is completed,
       so the rule is `to go == active` and `routes >= active` — the day a climber ticks an objective,
       a three-way equality fires on working code.
+    - **The friends pair measured the WRONG number for weeks, and agreed.** Its "Friends badge" read
+      (`/Friends\s*\n?\s*(\d+)/`) was written when the box had a count beside its title; #1881
+      removed the badge and the regex silently re-attached to the ← Crews row's repeated "Friends"
+      followed by *"2 online now"* — the ONLINE count, equal to the friend count only because every
+      fixture friend is online. #2430 dropped that repeated title and the read went unmeasured
+      (CI red). It now COUNTS the friend rows (one *Message* per row) between *"See all friends
+      (N)"* and *"Find more friends"*, capped at the list's five (`listCap`). A `count` read whose
+      section is missing is ABSENT, never zero rows. Lesson: a regex that still matches after its
+      target was deleted is worse than one that fails — check what it matched, not that it did.
     - **Scope a read by SECTION, never by a character window.** The Logbook renders a *"1 climb to
       go"* badge per CUSTOM LIST, so an unanchored read compares a different list. A `{0,400}` window
       was tried and silently stopped finding the badge on the one snapshot carrying the defect —
@@ -224,14 +240,32 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     **silently**, so a caller that ignored it went on clicking whatever was on screen. Six
     attempts failed that way before the cause was clear. `tapByName()` clicks by **accessible
     name** instead, which is authored (`aria-label`) and so does not move when the count does.
+    **Since the Menu restructure (2026-10-14) Friends and Requests are no longer on a Crew
+    sub-tab bar: they open from the Menu's "Yours" tiles (`tapMenuItem`, which also accepts a tile
+    that carries a count, "Crews · 3"; Requests carries its count as a corner badge instead), still render as `crewView`s, and return through a
+    "← Crews" row. The Crew tab itself is crews only; tapping the Crews nav resets `crewView`.**
     Crews is *not* captured: `crewView` defaults to it, so it is the `Crew` screen already
     captured, and that equality is asserted as a round-trip rather than dodged.
+  - **GROUPS IS A SCREEN OF ITS OWN (2026-10-14, Step 2 of the Facebook-style groups plan): NAV id
+    `groups`, `bar:false` like Profile, opened by the Menu's "Groups" tile.** So it is in every
+    guard's tab list (`check:screen-lists` demanded all twelve), and `MENU_SCREENS` maps it —
+    `openFromMenu` now matches a tile by its first line of text when the control has no
+    `aria-label`, which the tiles do not. Its five tabs (For you · Your groups · Your activity ·
+    Discover · Events) are captured by the `groups-tabs-switch` flow, each with a 300 floor and a
+    heading landmark only its own body renders (`ALL YOUR GROUPS`, `EVENTS YOU’RE GOING TO`,
+    `GROUPS TO JOIN`, `UPCOMING IN YOUR GROUPS`); For you is the main walk's `Groups` capture and
+    the round-trip target. The 300 floor is **weak on its own** — the header and tab strip are ~250
+    — which is why the landmarks carry the proof. **Those headings carry their count on the same
+    line** ("ALL YOUR GROUPS · 0"), and the landmark test was an exact whole-line match, so all
+    five failed in CI on the first push, which I had not walked locally. `capture()` now also
+    matches each line with a trailing " · N" removed. That is additive: replayed over CI's own
+    `ui-screens.json`, it moved those 5 to found and left the other 10 landmarks found.
     `Crew:Friends` landmarks **`PEOPLE YOU’VE CLIMBED WITH`** — the surface #713 revived onto
     real `logs`, which until now nothing rendered in any guard (`check:dead-flag-gates` proves
     the constant feeding it is not dead, a different question from whether it reaches a
     screen). Uppercase with a curly apostrophe because `innerText` returns the CSS-transformed
-    text, not the source string. `Crew:Groups` gets a 300-char floor: at 353 it is the app's
-    shortest screen and a **correct** empty state, so the 400 default would fail working code.
+    text, not the source string. `Crew:Groups` got a 300-char floor (at 353 it was the app's
+    shortest screen and a **correct** empty state); the floor moved to the Groups screen with it.
     Injection-tested: removing the aria-label fails naming the sub-tab, and neutering the
     revived block fails naming the missing landmark.
 - **`check:zero`** walks all six tabs and every overlay the app declares (49 today) as a
@@ -246,6 +280,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (the share card putting the word `undefined` into the clipboard copy, the `mailto:` body,
   the `sms:` body and the tweet). The pattern in all four: *a section that is correct with
   data becomes a lie, a dangling label, or a dead end at zero.*
+  Since 2026-10-23 Unfinished business is folded into Home's ONE *Alerts* dropdown, so the #637
+  landmark is `/^Alerts( · N new)?$/` (a brand-new account already holds one notification, so the
+  label carries a count and the dropdown's empty copy is unreachable at zero; the near-duplicate
+  "Nothing waiting on you right now." stays forbidden on `modal:alertsOpen`).
   - The zero state is forced by `scripts/zero-state.config.mjs`, a Vite config used only by
     this check. It rewrites three anchors **in memory** to replay the app's own sign-in
     reset — never edit the source, and never hand-copy that reset: a copy that omits
@@ -293,6 +331,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the 2026-08-05 `--signed-in` attempt was injection-tested, **missed**, and was reverted.
     Per-run rather than one permanent QA account, because a fake climber left in `profiles`
     surfaces in partner search for real users.
+  - **The group page is tabs** (see social-and-crews.md), so the group section taps two of them
+    with `tapGroupTab(groupName, label)`: **Members** for the roster assertions (`Group:detail`)
+    and **About** for *Make private/public* (`Group:about`). The tap is scoped to that group's
+    `role="dialog"` and matches the tab's whole label, because a page-wide *contains* would hit
+    "2 members" in the header first. A missing tab fails, rather than leaving its assertions
+    unchecked.
   - Emails are on the reserved `.invalid` domain, so a stray confirmation can never route.
     `sweepOrphans()` runs before each fixture and removes anything an earlier run left, so a
     killed process leaks at most until the next run — teardown retries are not enough on
@@ -355,7 +399,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
     - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
-      screen. FIXED — the landmark is `/saved searches|trip pack/i` now.** It led with `saved
+      screen. FIXED — the landmark became `/saved searches/i`, and is `/my itineraries/i` since
+      2026-11-05, when saved searches were removed from the app (the `My itineraries` heading is
+      the other `<MeH>` rendered unconditionally in the All view, and is unique app-wide).** It led with `saved
       areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
       on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
       — all in one place."* One alternative matching is enough, so a capture that never left the
@@ -371,13 +417,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         have sent the next reader to delete a flag that is doing real work — `innerText` returns
         `SAVED SEARCHES` for the card heading, so without `/i` the *new* landmark would miss.
       - **`offline library` appeared ZERO times anywhere in the app**, so a third of the alternation
-        had never matched once and could only ever report a false miss.
-      - Both survivors are `<MeH>` headings rendered **unconditionally** inside the
-        `logbookTab==="lists"` region, so neither moves with the data or with the outage — which is
-        the rule the comment states and the old landmark broke. `saved searches` is unique
-        app-wide; `trip pack` also heads two cards on the **Profile** tab, which a Logbook capture
-        cannot contain, and is kept as a second landmark so a single rename fails CLOSED rather
-        than silently.
+        had never matched once and could only ever report a false miss. **Since 2026-10-24 it does
+        exist** — as the Menu tile that opens Saved on its *Offline* chip — so the test asks only
+        that it is not text inside the Saved sub-view. A Menu label is a way in, not a heading on
+        the view, and the Offline card's own heading renders only behind its chip.
+      - The survivor is a `<MeH>` heading rendered **unconditionally** inside the
+        `logbookTab==="lists"` region, so it does not move with the data or with the outage — which
+        is the rule the comment states and the old landmark broke. `saved searches` is unique
+        app-wide. There used to be a second alternative, `trip pack`, which also headed two cards
+        on the **Profile** tab; #2368 removed the trip pack and the term with it, so it is gone from
+        the landmark too (an alternative that matches nothing is the `offline library` defect
+        above). A rename of the one remaining heading now leaves the landmark matching nothing,
+        which `check:outage-landmark` reports at build time.
+      - **2026-10-15: the Logbook header became a per-sub-tab `<ScreenHero>`** (title and line follow
+        `logbookTab`; the fixed *"…all in one place."* prose is gone). Two of the probe's anchors
+        moved with it: the header check now looks for `<ScreenHero`, and the Saved-view carve
+        anchors on `logbookTab==="lists"?<div`, because the header's title ternary tests
+        `logbookTab==="lists"` FIRST and a bare-needle carve lifted 122 chars of it.
       - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
         two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
         changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own
@@ -545,6 +601,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the owner then signs in and opens the inbox. It asserts the inbox does not claim to be empty,
     the sender is **identified**, the body is previewed, the thread opens, and the body renders in
     the words the sender wrote — 9 assertions.
+  - **A SHARED CLIMB, too (2026-10-29, owner's sharing note).** Before the plain message the mate
+    sends a climb in the shape App's `onShareRoute` sends (`Check out this route: NAME …` plus a
+    `?route=` link built by `appLink`'s own rule: `VITE_PUBLIC_URL`, else this origin + the Vite
+    base — `chatText` draws only OUR address as a link). The owner's open thread must show it as
+    *Open the climb ›*, and tapping it must open that climb's route page **in place** (a window
+    marker set before the tap survives). 15 assertions now. Two traps met building it:
+    - **The climb's name is already in the chat bubble**, so "the name is on screen after the tap"
+      passed with nothing opened. It asserts the route page's own `<h1 title=NAME>`, with a
+      **control** that no such heading is showing before the tap.
+    - **The share is sent FIRST** because the thread-list preview shows the newest message and the
+      preview assertion reads `BODY_PROSE`. The link is found inside the bubble carrying this run's
+      tag, so a concurrent run's share cannot satisfy it; teardown deletes it by id with a read-back.
   - **Never the service key.** It bypasses RLS, and *what a second REAL account can do* is the
     entire question; a service-key insert would manufacture a state the app's own flow may not
     reach. This is the rule `check:signed-in` already records from the other side, where seeding as
@@ -722,6 +790,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     local state renders perfectly — which is precisely why each needed its own census to find.
     `check:signed-in` walks an account that ALREADY OWNS THINGS and asserts what renders; this one
     performs an action and then asks whether it survived.
+  - **THE STEPPED SETUP (#2687) BROKE THE WALK, AND ONLY RUNNING IT SHOWED THAT** (2026-10-24). It
+    picked chips and clicked *Finish setup* on what had been ONE screen; setup is now welcome →
+    photo → home area → climbing → gender → alerts, so the walk now clicks through the steps, TYPES a
+    home area and PICKS a gender, and asks `profiles` for `location` and `gender` too, plus the
+    gender on the reloaded Profile. Its auto-open wait used to be a fixed 60 s: on a loaded box the
+    profile read alone landed ~78 s into the page, the sheet opened after the wait expired, and the
+    walk then found it on screen anyway. The wait is the navigation budget now, and the elapsed time
+    is printed (0.0 s on the warm re-run).
+  - **Crew cards start COLLAPSED (#2531), so the walk opens them** (fixed 2026-10-24). Phase 5 read the
+    roster by its `crew · N member` heading, which renders only behind each card's *View plan ▾*; two
+    runs died "expected exactly 1 crew member who is not You, found 0" — reading exactly like a
+    missing roster. `openMateProfile` clicks every *View plan ▾* first; the next run passed all 42.
   - **FIVE of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
@@ -955,6 +1035,93 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     hand-run only until 2026-08-09, by which point it had **already gone red on main** and
     nobody knew (#724, the guide application sheet). A guard that runs only when somebody
     remembers is a guard you do not have.
+- **`check:pinned-dismiss`** opens every overlay (the same scaffold and opener as
+  `check:overlay-scroll`, at 390x844), scrolls every pane holding the TOPMOST layer's first ✕ / ← Back
+  to its end, and asks whether that control is still inside the viewport AND is what a tap at its
+  centre hits (`elementFromPoint`). Owner, 2026-10-24: *"The x out to close the page and back button
+  need to be sticky when a popup page comes up."* Runs in CI as a second step of the overlay-scroll
+  job in `render-guards.yml`; not in `npm run build`.
+  - **What it found before the fix:** 5 popups lost the ✕ with the demo's own content (Menu, Privacy,
+    Log a climb at 3,124px of travel, Suggest a fix at 3,634px, the trip report), the sign-in sheet's ✕
+    sat UNDER the app header, Settings › Your data's Back sat under a range-slider thumb (z 4 over a
+    sticky header at z 2), and **45 more** failed once the latent test below added content. 8 had
+    pinned their own header by hand.
+  - **The fix it guards is central** — `pinDismiss` in `lib/dialogA11y.js` makes the header ROW
+    (the tallest ancestor of the control at most 120px tall, below the pane that scrolls, within 80px
+    of that pane's top) `position:sticky` with the background of what it sits on, and a box-shadow
+    strip that paints the pane's top padding so content does not show above it. Already-sticky rows
+    are only lifted to z 5. An absolute ✕ (over a photo) is left alone: the trip report pins its own
+    in a zero-height sticky bar.
+  - **LATENT, NOT VACUOUS.** A popup with nothing to scroll in the demo passes for free — 45 of them
+    did on the first run. When no pane holding the control overflows, 3000px is appended to the block
+    the header row sits in (NOT to the pane: a sticky row is held inside its own parent, and appending
+    to the pane made already-sticky headers read as failing), and the same question is asked.
+  - **TOPMOST layer only.** The first version measured the outermost overlay and reported the group
+    page's own Back as "covered" by Post options open over it — correct behaviour. `.slice(-1)` of
+    the fixed layers in document order is the top one, since a nested layer follows its parent.
+  - **The "covered" half earned its place on the first run:** the sign-in sheet's ✕ was on screen and
+    untappable, because `lib/AuthModal.jsx` rendered inside `#appscroll` unportalled — the trap
+    `check:overlays` exists for — and `check:overlays` missed it twice: its style is a
+    `gate ? {...} : {...}` conditional the guard did not read, and its function is `LoginScreen`
+    imported as `AuthModal`, so the render graph edge ended at a name no overlay carried. Both are
+    fixed in `scripts/check-overlay-portals.mjs`; reading conditionals then flagged `GPXMap`'s
+    full-screen map, which IS portalled through a variable (`const mapUI=…; createPortal(mapUI,…)`),
+    so the guard now follows a declarator into `createPortal` too.
+  - **A negative TOP margin on the ✕ defeats the pin (#2794, red on main 2026-10-25).** The Menu's ✕
+    drew a 34px circle inside its 44px button with `margin:-5`, so the button sat 5px ABOVE its header
+    row; `pinDismiss` pins the ROW at `top:0`, which left the button at `top -5px` — off the screen,
+    scrolled to the end — and this failed `menuOpen`. The CI job reads "Overlays contain their own
+    scroll" because this runs as its second step; `check:overlay-scroll` itself stayed green. Fixed by
+    making the margin sideways only (`"0 -5px"`) and taking the 5px off the panel's top padding and the
+    row's bottom margin instead, so the layout is pixel-identical. A pinned control must sit INSIDE its
+    row's box vertically.
+  - **A second scroller nobody wrote:** Log a climb's backdrop scrolled 3,968px although its card was
+    clamped to the screen — three `.cm-file-input`s (visually-hidden file pickers, `position:absolute`)
+    belonged to the backdrop as their nearest positioned box, at their place deep in the form. Now
+    `position:fixed` in `index.html`.
+  - **The NEEDS_EXTRA_STATE popups are walked too (2026-10-29).** Three of the four no flag alone
+    opens are built by `EXTRA_STATE_OPENERS` in `scripts/lib/overlay-scaffold.mjs`, asked for with
+    `?zx=<name>` so no other guard starts walking them: All areas (a seed state selected first),
+    Compare (at 1280x900, since it renders only `wide`) and the Review queue (`overlay-scroll.config.mjs`
+    rewrites its `isAdmin` gate to also accept `window.__ovAdminGate`, which only that opener sets;
+    the anchor is asserted, like the opener's). All three pass on their OWN structure — Compare and the
+    Review queue hand-pin a sticky header, All areas keeps its header outside the list that scrolls —
+    so disabling `pinLayers()` alone leaves them green; an opener that mounts nothing FAILS rather than
+    reverting to "skipped". `crewListOpen` stays skipped: an inline disclosure, not a popup.
+  - **Cannot see:** popups whose only way out is Cancel/Done (Edit profile's sticky Cancel·Save bar),
+    and the desktop layout except Compare. Listed at the end of every run: the overlays with no ✕ /
+    Back at all.
+  - **Injection cases** (2026-10-24): (1) `pinLayers()` disabled in `useDialogA11y` → Settings, Menu
+    and Friends FAIL, the hand-pinned vouch sheet and the Fire map (header outside its scroller) stay
+    ok; (2) the sign-in portal undone → `loginOpen` FAILS "covered by Messages", the app header's chat
+    button.
+- **`check:overlay-fullscreen`** opens every overlay (same scaffold and opener, 390x844) and asks the
+  two things the owner's note asks of a popup (2026-10-24: *"fill the whole screen. Like an actual page
+  on itself"* and *"You shouldn't be able to scroll on anything in the background"*). Runs in CI as the
+  third step of the overlay-scroll job in `render-guards.yml` (timeout raised 60 → 90 min); not in
+  `npm run build`.
+  - **Covers the screen:** a 3x7 grid of `elementFromPoint` samples on the TOPMOST layer; each must
+    land on an element inside it with an opaque background (alpha ≥ 0.9, a background image, or an
+    img/canvas/video) before reaching the layer's root. A point on the app, or on nothing but the
+    dimmed backdrop, is a hole. Exempt by the same opt-outs index.html honours: `data-sheet` =
+    `menu` / `alert` / `viewer`.
+  - **Holds the app behind still:** 3000px is appended to `#appscroll` (LATENT, as above — the demo's
+    tab may be too short to scroll), then 2,000px of wheel at the centre and at the header; `#appscroll`'s
+    top and `scrollY` must not change. A CALIBRATION pass first wheels a bare tab with the same 3000px
+    and fails the run if nothing moves, so the half cannot pass vacuously.
+  - **First run (2026-10-29): no findings** — 66 of 68 openable overlays pass; `postMenuFor` (menu) and
+    `confirmDelete` (alert) opt out; `alertsOpen` (an inline dropdown) and `legal` (a screen of its own)
+    are not fixed layers. It was built to verify #2692/#2728, which reach popups only through the
+    markup shapes their CSS names, and a new shape would have floated unnoticed.
+  - **Injection cases** (2026-10-29): (1) the card rule deleted from index.html → Settings (19 of 21
+    points the backdrop) and Feedback FAIL, the Menu (its own full-screen markup) stays ok; (2) the page
+    lock off (`setPageLock(false)` in `useDialogA11y`) alone → still ok, because the full-screen pane and
+    most backdrops carry `overscroll-behavior: contain` and stop the chain themselves — two independent
+    protections; (3) lock off AND `* { overscroll-behavior: auto !important }` → Settings, Feedback, About
+    us and Notifications FAIL with the app moved 4,000px behind them.
+  - **Cannot see:** overlays the scaffold cannot open (printed as skipped), a TOUCH drag on iOS (the
+    wheel is Chrome's; iOS is why the lock pins `<body>` — see `lib/dialogA11y.js`), and the desktop
+    layout, where a centred window is the design.
 - **`check:a11y-badges`** asks whether any control announces **two fragments welded into one
   token** — a badge count glued to its label, or one word glued to the next. The Crew sub-tab
   bar rendered `<button>{label}{n?<span>{n}</span>:null}</button>`, so Chrome computed the name
@@ -1265,6 +1432,92 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     which proves both that the button is scanned at all and that `Lbl` is what names it; the
     no-op attribute edit it replaced proved neither and would have passed against a guard that
     never looked at that button.
+- **`check:blue-on-blue`** fails any element that owns text drawn in **blue on a blue box** (owner
+  note: "I don't like the blue text on blue boxes, change text to white"). It walks the screens
+  check:axe walks signed in, at 390px only, and reads the RENDERED colours: the text's computed
+  `color`, and the colour behind it, made by compositing every painted ancestor from the page down
+  (translucent washes and gradient stops included). Runs in `render-guards.yml`, not the build.
+  `--where` prints the inline style that SETS the colour and the one that paints the box, which is
+  what you grep for to fix one.
+  - **Why it is a browser walk, not a source scan.** #2752 rewrote 189 style objects that set a blue
+    fill and a blue colour in the same object. On 2026-10-29 the same text-level scan, widened to
+    conditional fills (`on?C.blueBg:C.surface` beside `on?C.blue:C.textSub`), found 71 more that
+    #2752's pattern missed, and the walk then found the shape no source scan can see: the blue box on
+    a WRAPPER and the blue text on a child inside it (the Ranks "You're #17 of 18" card, a partner
+    card's match percentage). Which ancestor paints is a property of the rendered tree.
+  - **The thresholds.** Blue text: blue ≥180 and leading red by ≥110 and green by ≥60 (C.blue,
+    C.blueSolid and the lifted `Pill` blues). A blue box: blue leading red by ≥35 and green by ≥20.
+    The app's neutral dark surfaces lean blue too (C.bg by 10, C.surface by 12, C.card by 20), so the
+    box threshold sits well clear of them; C.blueBg leads by 55, C.blueChip by 50, C.blueDim by 81.
+  - **The fix is white text (`"#fff"`)**, the owner's word, as #2752 chose; the blue fill and blue
+    border stay, so a selected control still reads as selected.
+  - **What it cannot see:** a state the walk does not land in (a chip that is blue only once tapped,
+    a row that only expands on a click), text inside an `<svg>`, and a box drawn by an image.
+- **`check:axe`** runs **axe-core's WCAG 2.2 A/AA rules** over every screen, in Chrome, signed in
+  (8 NAV tabs and 7 route tabs at 390px and 1280px, plus every scaffold overlay at 390px) **and
+  signed out** (sign-in, create-account, and the Accessibility statement with its guest report
+  form, on a second dev server started with `VITE_DEMO_AUTOLOGIN=false`). Runs in
+  `render-guards.yml`, not the build: it renders the app.
+  - **Why: the static a11y guards were all green and axe still found eight rules failing**
+    (2026-10-22 accessibility risk audit). Desktop footer links 22px tall on every page; tag text
+    at 3.9:1 (`Pill` now lifts its text to 4.5:1 against its own tint, `lib/contrast.js`); 49
+    Manage-areas rows that were buttons holding buttons; seven unnamed dialogs; an avatar button
+    with no name; photo buttons with `alt=""` (which tells a screen reader to skip them) and
+    `role="button"` at once; no `<h1>` on Home, Profile or the route page; and the full-screen
+    views a phone returns EARLY (legal, editor, inbox, calendar, dashboards) outside any main
+    landmark. Contrast, size and nesting are properties of LAYOUT, so no text-reading guard can
+    see them.
+  - **The dialog-name half is also static now**: `check:dialog-dismiss` section 2 fails any
+    `role="dialog"` with no `aria-label`/`aria-labelledby` on its own opening tag. Its first draft
+    reported 38 — it read the tag with `endOfTag()`, which stops at the `>` of an `onClick={()=>…}`
+    arrow, so every attribute after the handler was invisible. The brace-counting `openingTag()`
+    reads the whole tag; the true count was 7, all fixed.
+  - **One per-node carve-out: target-size "partially obscured".** axe measures the page as the walk
+    left it scrolled, so a Ranks row half under the sticky bottom bar, or a chip half outside a
+    horizontal scroller, fails or passes depending on where the walk stopped. Those are reported
+    (`--all`), not failed. The real defect behind the class — a focused control hidden under the
+    bar, WCAG 2.4.11 — is handled by `scroll-padding-bottom` in `index.html`. A target that is
+    simply too small (`insufficient size (WxH)`) is never excused.
+  - **A screen it cannot open FAILS** (NOT REACHED), or coverage erodes silently. The first run
+    could not open Crews or Logbook: it matched nav buttons by EXACT text, and those carry a badge
+    count ("Crews2"). Matched by name prefix now.
+  - **The route tabs wait for the route page's OWN tab bar** (2026-11-11). RouteDetail is a lazy
+    chunk, so `window.__routeOpen` only means `openRoute` ran: the screen is still the "Loading
+    climb…" fallback. The walk looked for each tab at once and reported Plan, Conditions, Reports,
+    Safety and Photos NOT REACHED on every run, every branch — while Overview "passed" by scanning
+    the fallback and Partners "passed" by clicking the app's own *Partners* NAV button. It now
+    waits for `[data-cm-route-tabs]`, looks for a tab only inside it, and matches a crag route's
+    *Send Reports* by the end of the label. All 14 route screens are reached.
+  - **On Windows a run can leave its vite dev servers running** (npx-shim on ports 546x) after it
+    exits. Find the node processes whose command line names your worktree and end them.
+  - **Gated best-practice rules** (`GATED_PRACTICE`): page-has-heading-one, landmark-one-main,
+    region, aria-dialog-name, presentation-role-conflict, landmark-no-duplicate-main,
+    landmark-unique. Wrapping LegalView's body in `<main>` passed on a phone and made a SECOND main
+    on desktop (where `_pageView` is already inside `role="main"`); the landmark now goes on the
+    phone's early return instead.
+  - **Blind to**: what a screen reader does over time (focus order, what is announced on change),
+    any state the walk never opens, contrast over a photo. Automated rules find about a third of
+    real barriers — the manual pass is `docs/accessibility-testing.md`.
+- **`check:overflow -- --width 1280` walks the DESKTOP website** (2026-10-28): at 1024px and
+  wider the app is a different layout (top bar, sidebar, a 640px column, a right rail from
+  1280), built from inline styles the phone walk never draws, and the feature doc listed "No
+  browser walk runs at desktop width" as a known gap. `--width N` sets the viewport (height
+  900 at desktop widths, 844 on a phone); the default is still 390. `render-guards.yml` runs
+  the walk twice in the `horizontal-overflow` job, the 1280 step under `!cancelled()` so a red
+  phone walk does not hide a desktop finding. 1280 rather than 1024 because it draws the rail
+  too, so it measures the widest shell. The sub-tab taps (`tapByText`) skip fixed elements, so
+  the sidebar's own *Partners* row cannot steal the route page's *Partners* tap. The
+  self-test's injected boxes are now sized from the viewport (`vw+210`, `vw+130`, `vw+510`;
+  the same 600/520/900 at 390): the fixed sizes fit inside 1280, and the first desktop run
+  failed its own self-test, seeing 0 of 2. First run (seed data; the DB was answering 522):
+  8 tabs, 7 route views and 70 of 74 overlays, 1280/1280, 0 offenders.
+- **`check:overflow` also measures an OPEN pitch** (2026-10-28): the route sub-tab walk only
+  ever saw ROUTE BREAKDOWN closed, and the pinned sample route has no pitch rows, so the pitch
+  card (belay / anchor / gear boxes, *Add a photo of this pitch*, clamped comments) had never
+  been measured. After the sub-tabs it reloads with `?zr=1&zrp=1` (the scaffold's pick of a
+  seed route WITH pitch detail), taps Plan, opens the first `[data-kind="pitch"]` row and scans
+  again as `route:Plan (pitch open)`. First run: 390/390, 0 offenders. "no pitch row reached"
+  in the log means the seed lost its pitched route — fix the seed, not the guard.
 - **`check:overflow`** asks whether the app still fits the phone it is built for. Every
   control here is hand-positioned with inline styles and there is no CSS framework, which is
   exactly the setup where one fixed `minWidth`, a `flex` row with `nowrap`, or a single
@@ -1273,7 +1526,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   see it:** `check:ui` reads text, and a screen whose right-hand edge is off-viewport
   reports the same characters as a correct one. Two bugs of this shape are already on record
   and both were found by eye. It walks the 6 tabs and every openable overlay at 390×844.
-  Runs on every PR and every push to main via `render-guards.yml`; not a build gate
+  Runs on every PR, and on main every 4 hours, via `render-guards.yml`; not a build gate
   (browser automation).
   - **The precision rule is what makes it usable.** A chip row with `overflowX:auto` is a
     *correct* pattern that is supposed to scroll sideways, so an element is reported only if
@@ -1296,10 +1549,51 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     It injects three shapes into a real page — a plain over-wide box, one pushed out by a
     fixed `minWidth`, and one inside an `overflow-x:auto` parent — and the first two must be
     caught and the third must not, or the run fails having measured nothing.
-  - Fails closed in the other direction too: an empty `__overlays` or fewer than 26 screens
-    walked is a failure, not a pass. The openable count varies run to run (42–46 of 50)
-    because some payloads resolve only on some tabs, so the floor is deliberately well below
-    it rather than pinned.
+  - Fails closed in the other direction too: an empty `__overlays` or fewer than
+    `TABS.length + 20` screens walked is a failure, not a pass. The floor is deliberately well
+    below the openable count rather than pinned, because some payloads resolve only on some
+    tabs. When it trips, the run now NAMES the overlays — split into "opener never set
+    `__overlaysReady`" and "opener ran but nothing new rendered" — because the same list run
+    after run is a broken opener and a list that changes every run is timing.
+  - **Every `load` waits for `window.__overlaysReady` BEFORE `settledText`, and that order is
+    the fix for a month of red (2026-10-25).** The opener fires on a timer (1200ms after App
+    mounts for `?z=`, 900ms for `?zr=1`); `settledText` only waits for the text to stop
+    changing, and a tab that renders fully on mount is stable for its three samples before the
+    timer fires. This guard never waited on the flag (every other browser walk does), so a load
+    could settle on the bare tab, find no fresh lines, and move on to the next tab to lose the
+    same race again. Measured on a laptop: 5 of 33 overlay loads settled with the flag still
+    false. On CI runners most did — the job failed about half the time on main and on unrelated
+    branches with "59 of 74 overlays did not open" (also 57, 64…), a DIFFERENT set missing each
+    run, and zero overflow findings. With the wait: 70 of 74 open, nearly all on the first tab.
+    A run that dies here with a list of names is now worth reading; do not answer it with a
+    longer sleep.
+  - **The clip exclusion skips `<html>` and `<body>`, or the overlay walk is blind.** Every
+    popup locks the page with `overflow:hidden` on `<html>` (`lib/dialogA11y.js`
+    `setPageLock`, #1794, 2026-09-23). `<html>` is an ancestor of everything and its computed
+    `overflowX` is then `hidden`, so the "an ancestor clips it on purpose" test excused every
+    element of every open overlay: from that day the overlay half of this guard could not fail.
+    Found while injection-testing the readiness fix — a `minWidth:520` row inside the Blocked
+    climbers dialog reported `offenders:0`. A clip at the viewport is the page-lock, not a
+    component cropping its child, and content cut off there is exactly the defect. The
+    self-test now takes the same lock before injecting, so a detector that goes blind under an
+    open popup fails the self-test (verified: removing the skip prints `SELF-TEST FAILED ... saw
+    0`).
+  - Injection-tested 2026-10-25: (1) `minWidth:520` inside the Blocked climbers dialog fails
+    the run naming `modal:blockedOpen`, `+130px`, and the element; the unmodified app reports
+    no offenders on any of the 70 overlays. (2) Making every opener thunk a no-op (`void v`
+    instead of the setter call in `buildOpener`) fails the run with the named "opener ran but
+    nothing new rendered" list (68 of 74; the 6 that still count are the three `rd:` names,
+    which navigate to a route, and three whose `prep` opens a screen of its own).
+  - **That second injection first PASSED, and the reason is the mount test.** With every
+    opener dead, 48 of 74 overlays still "opened" on Home: the bare tab captured as the
+    baseline at the start of the run had drifted by the time those overlays were tried, and
+    the drifted lines counted as fresh. Two changes close it: line sets are compared with
+    **digits masked** (as `settledText` masks them — "3 min ago" vs "4 min ago" is the same
+    line), and a fresh read is only believed after the bare tab is **reloaded beside it** and
+    still lacks those lines (the baseline is replaced either way). With both, the dead-opener
+    run counted 0 drifted reads, so the masking carried it; the reload is the backstop and
+    costs one load per opened overlay. Before this, a green run could have been partly
+    overlays that never opened.
   - Mount detection compares **line sets, not text length** — the trap `check:a11y-badges`
     records, and one this repeated in draft: with a `>120 chars` test every modal reported
     the Home tab's numbers, because that was true on the first tab every time.
@@ -1340,6 +1634,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     today, and the seed logbook holds one entry dated 2026-05-24 — so on ~360 days of the year
     it renders nothing, and every other guard walks the app on one of those days. A feature
     invisible to your guards 98% of the time will break silently and stay broken for a year.
+  - **It walks a SIGNED-IN account, through climb_logs (since 2026-10-25).** #2789 made alerts the
+    account's: a guest in a backend build gets an empty `mergedNotifs` by design, because every
+    alert source there is the seed demo. The guard used to prepend its probe to the SEED `logs` of
+    a guest, a path #2789 legitimately closed, so it went red on `main` with the feature intact (a
+    real climber's `_anniv` still maps their hydrated climb_logs). The scaffold now forces a uid
+    (`PROBE_UID`, a VALID uuid — a malformed one makes PostgREST answer 400, the logs query errors
+    and nothing hydrates; `zero-state.config.mjs` can get away with its malformed one, this cannot)
+    and prepends one synthetic climb_logs row (`probeRow()`) to what `useUserLogs(uid)` returns, so
+    the path held is the shipping one: climb_logs row → hydration → `logs` → `_anniv` →
+    `mergedNotifs` → screen. The wrapper is keyed on the query's DATA, not the query object, or every
+    effect keyed on `myLogsQ.data` would re-run each render. Needs a USE_DB build. Injection-tested:
+    dropping `_anniv` from `mergedNotifs` fails both surfaces. The seed-entry clone and its
+    brace-balancing walk described below are GONE with it; the bullets about them are history.
   - `scripts/anniversary.config.mjs` injects a log dated **exactly one year ago today**,
     computed at config load so it never rots. The date is built in **local** time, because
     `_anniv` compares `new Date(y,m,d)` against `new Date()`; a UTC-derived date is a day off

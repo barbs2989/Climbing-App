@@ -1,0 +1,739 @@
+{
+ "targets": [
+  {
+   "approach": "Same as the Silver Star Glacier route to Burgundy Col and onto the glacier (see that route for full trailhead-to-glacier detail), then trend toward the northeast side of the west summit.",
+   "area_id": "wa_silver_star_mountain_okanogan",
+   "corrected": false,
+   "descent": "Reverse via the glacier and Burgundy Col.",
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.9",
+   "id": "wa_silver_star_ne_ridge",
+   "name": "Northeast Ridge",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Silver Star and Wine spires",
+   "peak": "Silver Star Mountain",
+   "peak_elev": 8876,
+   "peak_lat": 48.547945,
+   "peak_lng": -120.585127,
+   "pitches": null,
+   "siblings": [
+    "wa_silver_star_northwest_face = Northwest Face",
+    "wa_silver_star_glacier = Silver Star Glacier",
+    "wa_east_ridge_3 = East Ridge",
+    "wa_silver_star_west_face_couloir = West Face Couloir"
+   ],
+   "trailhead": "SR-20 pullout near milepost 165-166 (Silver Star / Wine Spires)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_snoqualmie_mountain_climbs",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_snoqualmie_mountain_south_face",
+   "name": "South Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Mountain",
+   "peak": "Snoqualmie Mountain Routes",
+   "peak_elev": null,
+   "peak_lat": 47.4588854,
+   "peak_lng": -121.4164703,
+   "pitches": null,
+   "siblings": [
+    "wa_snoqualmie_mountain_standard_route = Standard Route (Southwest Slopes)",
+    "wa_snoqualmie_mountain_west_ridge = West Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_snoqualmie_mountain_climbs",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_snoqualmie_mountain_west_ridge",
+   "name": "West Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Mountain",
+   "peak": "Snoqualmie Mountain Routes",
+   "peak_elev": null,
+   "peak_lat": 47.4588854,
+   "peak_lng": -121.4164703,
+   "pitches": null,
+   "siblings": [
+    "wa_snoqualmie_mountain_standard_route = Standard Route (Southwest Slopes)",
+    "wa_snoqualmie_mountain_south_face = South Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From the Blue Lake Trailhead (1 mile west of Washington Pass on SR-20), head into the woods, break treeline around 5,900 ft, and navigate toward the distinctive Y-shaped snow gully below the South Arete.",
+   "area_id": "wa_south_early_winters_spire",
+   "corrected": false,
+   "descent": "Downclimb or rappel the Southwest Couloir, as snow and rock conditions dictate.",
+   "descent_text": "Descend by downclimbing or rappelling the same Southwest Couloir; conditions (snow vs. loose rock) dictate the safest method.",
+   "discipline": "alpine",
+   "grade": "5.0",
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "name": "Southwest Couloir",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Liberty Bell Group",
+   "peak": "South Early Winters Spire",
+   "peak_elev": 7807,
+   "peak_lat": 48.512275,
+   "peak_lng": -120.655395,
+   "pitches": null,
+   "siblings": [
+    "wa_boving_roofs = Boving Roofs",
+    "wa_sews_sw_rib = Southwest Rib",
+    "wa_southern_man = Southern Man",
+    "wa_the_hitchhiker = The Hitchhiker",
+    "wa_south_early_winter_spire_direct_east_buttress = Direct East Buttress",
+    "wa_northwest_face_boving_pollock = Northwest Face (Boving-Pollock)",
+    "wa_south_early_winters_spire_east_buttress_direct = East Buttress Direct",
+    "wa_south_early_winters_spire_south_east_mank = South East Mank",
+    "wa_south_early_winters_spire_the_rubbernecker = The Rubbernecker",
+    "wa_south_early_winters_spire_backseat_driver = Backseat Driver",
+    "wa_mojo_rising = Mojo Rising",
+    "wa_dolphin_chimney = Dolphin Chimney",
+    "wa_south_early_winter_spire_passenger = Passenger",
+    "wa_free_mojo = Free Mojo",
+    "wa_south_arete = South Arete",
+    "wa_south_early_winters_spire_nothing = Nothing"
+   ],
+   "trailhead": "Blue Lake Trailhead (SR-20)"
+  },
+  {
+   "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached from the same Darrington trailhead: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, walk the old roadbed past the flagged landslide crossing to the Squire Creek Trail sign and on to two cut logs with old logging cable, turn right onto the boot track, ford Squire Creek, and climb steeply through old-growth forest up two gullies to the grassy saddle below the South Face, roughly 3 hours from the car. For Doorway Flake, go west along the base of the wall past the start of Skeena26 and scramble 4th class onto the far western wall.",
+   "area_id": "wa_south_face",
+   "corrected": false,
+   "descent": null,
+   "descent_text": "Rappel the line of ascent using the fixed hand-drilled bolt and Fixe chain anchors; two 60m ropes recommended.",
+   "discipline": "alpine",
+   "grade": "5.9",
+   "id": "wa_doorway_flake",
+   "name": "Doorway Flake",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Squire Creek Walls",
+   "peak": "South Face",
+   "peak_elev": null,
+   "peak_lat": 48.19575,
+   "peak_lng": -121.65485,
+   "pitches": 5,
+   "siblings": [
+    "wa_south_face_loggers_crack = Loggers' Crack",
+    "wa_concerto_in_c_for_drill_and_hammer = Concerto in C for Drill and Hammer",
+    "wa_natures_way = Nature's Way",
+    "wa_primal_scream = Primal Scream",
+    "wa_western_dihedral = Western Dihedral",
+    "wa_miracle_ramps = Miracle Ramps",
+    "wa_skeena26 = Skeena26"
+   ],
+   "trailhead": "Squire Creek Road washout parking (Darrington)"
+  },
+  {
+   "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the rough, unmaintained climbers' approach — the old roadbed past a landslide crossing to a boot track that drops to a ford of Squire Creek, then a climbers' track across a tributary and up through old-growth forest into two steep, dirty gullies that top out on the grassy saddle below the South Face, roughly 3 hours from the car, with route-finding (flagging, cairns) required in several spots.",
+   "area_id": "wa_south_face",
+   "corrected": false,
+   "descent": null,
+   "descent_text": "Rappel the line of ascent; 50-meter ropes are adequate for most pitches, while 60-meter ropes allow combining pitches 5 and 6 to speed the descent.",
+   "discipline": "alpine",
+   "grade": "5.9",
+   "id": "wa_skeena26",
+   "name": "Skeena26",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Squire Creek Walls",
+   "peak": "South Face",
+   "peak_elev": null,
+   "peak_lat": 48.19575,
+   "peak_lng": -121.65485,
+   "pitches": 12,
+   "siblings": [
+    "wa_south_face_loggers_crack = Loggers' Crack",
+    "wa_concerto_in_c_for_drill_and_hammer = Concerto in C for Drill and Hammer",
+    "wa_natures_way = Nature's Way",
+    "wa_primal_scream = Primal Scream",
+    "wa_doorway_flake = Doorway Flake",
+    "wa_western_dihedral = Western Dihedral",
+    "wa_miracle_ramps = Miracle Ramps"
+   ],
+   "trailhead": "Squire Creek Road washout parking (Darrington)"
+  },
+  {
+   "approach": "South Face is the southwest-facing slab wall around the corner west of the Illusion Wall, with its own approach separate from Waterfall Basin. Take I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. Walk the old roadbed past the flagged landslide crossing to the brown Squire Creek Trail #654 sign and 8-10 minutes beyond it, to two cut logs either side of the road with old logging cable visible. Turn right a few steps past them on a well-beaten boot track, drop to Squire Creek and ford it where it is shallowest (hard in early season or after storms), then follow the climbers' track briefly downstream before it turns uphill, crosses a tributary and climbs old-growth forest and two gullies, steep and dirty near the top, to the grassy saddle, about 3 hours from the car. For this route go left (west) from the saddle to the base of Skeena26, scramble about 100 m of class 4 ramps and small dihedrals to a large shelf, follow it left to a deep gully (two-bolt anchor for a hand line or a short rappel), cross it and follow a cairned boot track west across talus and cedar ribs to the large talus field below the far western wall, about an hour from Skeena26.",
+   "area_id": "wa_south_face",
+   "corrected": false,
+   "descent": null,
+   "descent_text": "Descend by rappelling the line of ascent using the fixed hand-drilled bolt anchors; two 60m ropes recommended.",
+   "discipline": "alpine",
+   "grade": "5.8",
+   "id": "wa_western_dihedral",
+   "name": "Western Dihedral",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Squire Creek Walls",
+   "peak": "South Face",
+   "peak_elev": null,
+   "peak_lat": 48.19575,
+   "peak_lng": -121.65485,
+   "pitches": 5,
+   "siblings": [
+    "wa_south_face_loggers_crack = Loggers' Crack",
+    "wa_concerto_in_c_for_drill_and_hammer = Concerto in C for Drill and Hammer",
+    "wa_natures_way = Nature's Way",
+    "wa_primal_scream = Primal Scream",
+    "wa_doorway_flake = Doorway Flake",
+    "wa_miracle_ramps = Miracle Ramps",
+    "wa_skeena26 = Skeena26"
+   ],
+   "trailhead": "Squire Creek Road washout parking (Darrington)"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_south_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_south_peak_dike_chimney_and_east_ridge",
+   "name": "Dike Chimney and East Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "South Peak",
+   "peak_elev": null,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": null,
+   "siblings": [
+    "wa_west_face = West Face",
+    "wa_accidental_discharge_east_face = Accidental Discharge (East Face)",
+    "wa_south_peak_south_arete = South Arete",
+    "wa_south_peak_southeast_face = Southeast Face",
+    "wa_south_peak_northeast_face = Northeast Face",
+    "wa_south_peak_southwest_face = Southwest Face",
+    "wa_south_ridge = South Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_south_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_south_peak_northeast_face",
+   "name": "Northeast Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "South Peak",
+   "peak_elev": null,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": null,
+   "siblings": [
+    "wa_west_face = West Face",
+    "wa_accidental_discharge_east_face = Accidental Discharge (East Face)",
+    "wa_south_peak_dike_chimney_and_east_ridge = Dike Chimney and East Ridge",
+    "wa_south_peak_south_arete = South Arete",
+    "wa_south_peak_southeast_face = Southeast Face",
+    "wa_south_peak_southwest_face = Southwest Face",
+    "wa_south_ridge = South Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_south_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "Class 4",
+   "id": "wa_south_peak_south_arete",
+   "name": "South Arete",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "South Peak",
+   "peak_elev": null,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": null,
+   "siblings": [
+    "wa_west_face = West Face",
+    "wa_accidental_discharge_east_face = Accidental Discharge (East Face)",
+    "wa_south_peak_dike_chimney_and_east_ridge = Dike Chimney and East Ridge",
+    "wa_south_peak_southeast_face = Southeast Face",
+    "wa_south_peak_northeast_face = Northeast Face",
+    "wa_south_peak_southwest_face = Southwest Face",
+    "wa_south_ridge = South Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_south_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_south_peak_southeast_face",
+   "name": "Southeast Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "South Peak",
+   "peak_elev": null,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": null,
+   "siblings": [
+    "wa_west_face = West Face",
+    "wa_accidental_discharge_east_face = Accidental Discharge (East Face)",
+    "wa_south_peak_dike_chimney_and_east_ridge = Dike Chimney and East Ridge",
+    "wa_south_peak_south_arete = South Arete",
+    "wa_south_peak_northeast_face = Northeast Face",
+    "wa_south_peak_southwest_face = Southwest Face",
+    "wa_south_ridge = South Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_south_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "Class 4",
+   "id": "wa_south_peak_southwest_face",
+   "name": "Southwest Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "South Peak",
+   "peak_elev": null,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": null,
+   "siblings": [
+    "wa_west_face = West Face",
+    "wa_accidental_discharge_east_face = Accidental Discharge (East Face)",
+    "wa_south_peak_dike_chimney_and_east_ridge = Dike Chimney and East Ridge",
+    "wa_south_peak_south_arete = South Arete",
+    "wa_south_peak_southeast_face = Southeast Face",
+    "wa_south_peak_northeast_face = Northeast Face",
+    "wa_south_ridge = South Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of South Peak's granite faces; this is an experienced-mountaineers-only objective, not a roadside crag.",
+   "area_id": "wa_south_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.9+",
+   "id": "wa_west_face",
+   "name": "West Face",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Gunsight Range, The",
+   "peak": "South Peak",
+   "peak_elev": null,
+   "peak_lat": 48.30571,
+   "peak_lng": -120.99439,
+   "pitches": 4,
+   "siblings": [
+    "wa_accidental_discharge_east_face = Accidental Discharge (East Face)",
+    "wa_south_peak_dike_chimney_and_east_ridge = Dike Chimney and East Ridge",
+    "wa_south_peak_south_arete = South Arete",
+    "wa_south_peak_southeast_face = Southeast Face",
+    "wa_south_peak_northeast_face = Northeast Face",
+    "wa_south_peak_southwest_face = Southwest Face",
+    "wa_south_ridge = South Ridge"
+   ],
+   "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)"
+  },
+  {
+   "approach": "When below the east face, scramble up through brush and easy rock to an obvious slabby rock face just left of the small pocket glacier on the east face.",
+   "area_id": "wa_sperry_peak",
+   "corrected": false,
+   "descent": "Not known in detail; parties would descend via the standard west-ridge/southwest-slope route to Lake Elan and out over Headlee Pass.",
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.8+",
+   "id": "wa_sperry_peak_east_face",
+   "name": "East Face (2002)",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Darrington and Mountain Loop Hwy",
+   "peak": "Sperry Peak",
+   "peak_elev": 6120,
+   "peak_lat": 48.015975,
+   "peak_lng": -121.502475,
+   "pitches": 9,
+   "siblings": [
+    "wa_sperry_peak_upper_south_ridge = Upper South Ridge",
+    "wa_sperry_peak_standard = Standard Scramble"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From High Bridge, take the Park Creek trail up the Park Creek valley and climb to the snow line on the south side of the saddle between Goode and Storm King; the first party camped there. Gain the saddle, make one rappel onto the glacier on the north side, and descend it through crevasses and beneath an ice cliff to the foot of the roughly 3,000 ft rock rib that leads straight to the main (east) summit. Expect a bivy at the base of the rib.",
+   "area_id": "wa_storm_king",
+   "corrected": true,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.0",
+   "id": "wa_storm_king_north_face",
+   "name": "North Face",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "North Cascades Core",
+   "peak": "Storm King",
+   "peak_elev": 8565,
+   "peak_lat": 48.4913,
+   "peak_lng": -120.9228,
+   "pitches": null,
+   "siblings": [
+    "wa_storm_king_southwest_scramble = Southwest Scramble"
+   ],
+   "trailhead": "High Bridge Camp"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_summer_fall_rock_2",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "Class 4",
+   "id": "wa_the_tooth_north_ridge",
+   "name": "North Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "The Tooth",
+   "peak": "Summer-Fall (rock)",
+   "peak_elev": null,
+   "peak_lat": 47.4459,
+   "peak_lng": -121.45444,
+   "pitches": null,
+   "siblings": [
+    "wa_summer_fall_rock_2_south_face = South Face",
+    "wa_summer_fall_rock_2_east_face = East Face",
+    "wa_chair_peak_voie_de_chaise = Voie de Chaise",
+    "wa_the_tooth_indentured_servant = Indentured Servant",
+    "wa_tooth_chair_traverse = Tooth - Chair Traverse",
+    "wa_the_tooth_fairy = The Tooth Fairy",
+    "wa_southwest_face = Southwest Face"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": null,
+   "area_id": "wa_summit_chief_mountain",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "Class 2",
+   "id": "wa_summit_chief_mountain_southeast_face",
+   "name": "Southeast Face",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Western Alpine Lakes",
+   "peak": "Summit Chief Mountain",
+   "peak_elev": 7467,
+   "peak_lat": 47.5234895,
+   "peak_lng": -121.2685305,
+   "pitches": null,
+   "siblings": [
+    "wa_summit_chief_mountain_north_face = North Face",
+    "wa_summit_chief_mountain_south_route = South Route"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Reached from the same Crater Creek/Eagle Lakes Trailhead system, branching toward the Boiling Lake basin rather than continuing to Cooney Lake.",
+   "area_id": "wa_switchback_mountain",
+   "corrected": false,
+   "descent": "Reverse the west face/west ridge scramble back to the contour bench and Boiling Lake basin; no rappels reported.",
+   "descent_text": null,
+   "discipline": "mountaineering",
+   "grade": "Class 3",
+   "id": "wa_switchback_mountain_west_ridge",
+   "name": "West Ridge / West Face (via Boiling Lake)",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Sawtooth / Lake Chelan",
+   "peak": "Switchback Mountain",
+   "peak_elev": 8321,
+   "peak_lat": 48.175751,
+   "peak_lng": -120.358334,
+   "pitches": null,
+   "siblings": [
+    "wa_switchback_mountain_scramble = Standard Scramble"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "Via the multi-day Goodell Creek approach to a camp on the Chopping Block ridge (~6,400 ft); the route starts up the lower NE Ridge before diverging onto the north face traverse.",
+   "area_id": "wa_the_chopping_block",
+   "corrected": false,
+   "descent": "A 2008 party descended via single-rope rappels down the Northeast Ridge rather than reversing the traverse.",
+   "descent_text": "Rather than reverse the exposed north-face traverse, parties have rappelled off via the Northeast Ridge using a single rope.",
+   "discipline": "alpine",
+   "grade": "Class 4",
+   "id": "wa_the_chopping_block_northwest_route",
+   "name": "Northwest Route",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Southern Pickets",
+   "peak": "The Chopping Block",
+   "peak_elev": 6819,
+   "peak_lat": 48.7549246,
+   "peak_lng": -121.3079051,
+   "pitches": null,
+   "siblings": [
+    "wa_the_chopping_block_south_route = Southeast Face",
+    "wa_the_chopping_block_northeast_ridge = Northeast Ridge"
+   ],
+   "trailhead": null
+  },
+  {
+   "approach": "From US 101 near Sequim, follow Palo Alto Rd/Forest Road 2880 to Dungeness Forks Campground, then FR 2870 about 8.7 miles to the Upper Dungeness Trailhead (~2,500 ft, at the Dungeness River bridge). Hike the Upper Dungeness Trail #833 about 1 mile to the Royal Creek/Royal Basin Trail #832 junction, then continue roughly 6 more miles and 2,500 ft of gain to Royal Lake (7 mi / 2,500 ft total from the trailhead). From Royal Lake it's about 1 more mile and 500 ft of gain to the Upper Basin (5,600 ft), from which climbers scramble talus and heather benches up onto the Needles ridgeline below The Incisor — roughly 4,900 ft of total gain from trailhead to summit.",
+   "area_id": "wa_the_incisor",
+   "corrected": false,
+   "descent": "Reverse the route, downclimbing or rappelling exposed steps.",
+   "descent_text": "Reverse the scramble; rappel or downclimb the exposed steps with care.",
+   "discipline": "alpine",
+   "grade": "5.4",
+   "id": "wa_the_incisor_scramble",
+   "name": "Knife-Edge Ridge",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "North-Central Olympic Mountains (Deception–Gray Wolf)",
+   "peak": "The Incisor",
+   "peak_elev": 7440,
+   "peak_lat": 47.828325,
+   "peak_lng": -123.235105,
+   "pitches": null,
+   "siblings": null,
+   "trailhead": "Upper Dungeness Trailhead (Trail #833.2, FR-2870)"
+  }
+ ],
+ "richSiblingsOnSamePeak": {
+  "wa_accidental_discharge_east_face": {
+   "approach": "One approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching South Peak. That way arrives on the Chickamin Glacier on the west side of the crest, while this route starts out of the moat of the Blue Glacier on the east side; the approach from the east up Agnes Creek puts you on that side directly. Either way this is an experienced-mountaineers-only objective, not a roadside crag.",
+   "area_id": "wa_south_peak",
+   "descent_text": "Rappel off the summit by the same line as the peak's other routes: about 35 m north, then a second rappel east onto the Blue Glacier. The last rappel can hang free over the moat at the foot of the face, so land beyond the lip and carry cord to build or back up anchors rather than relying on fixed gear. Do not plan on reversing the loose line of ascent.",
+   "name": "Accidental Discharge (East Face)"
+  },
+  "wa_boving_roofs": {
+   "approach": "Same start as the Southwest Rib: Blue Lake Trailhead, Blue Lake Trail ~1.25 miles to the NW clearing, climber's path up into the basin to the Y-shaped larch tree at the base of the Southwest Rib (left of the Southwest Couloir). Climb the first 3 pitches of the Southwest Rib (or approach via the Northwest Face/Boving-Pollock line), then go left at a ledge where the two roofs come into view — this is pitch 5 of the combined line, about 100 ft of sustained 5.10b climbing under and pulling through the double roofs. Watch for a loose block right at the start of the roof pitch.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Do not reverse the roofs: rappelling back through an overhanging roof is awkward and not the documented practice. Climb the Southwest Rib's last two pitches (its 6th and 7th) to the true summit, then take the standard South Arete descent: downclimb the arete to the Rabbit Ears, then 3 single-rope rappels (60 m rope) from the bolted chain stations climber's right of the gully. They land at the foot of the South Arete, not at the Y-shaped larch where you started — walk back north across the foot of the Southwest Couloir for anything left there, then down the climbers' trail to the Blue Lake Trail. So the 3 rappels are the descent from the summit, not a way down from the roofs. If bailing below the roofs, natural gear anchors would be needed since no fixed rappel line down the roof pitch itself was documented.",
+   "name": "Boving Roofs"
+  },
+  "wa_chair_peak_voie_de_chaise": {
+   "approach": "From the Alpental parking lot, follow the standard summer trail toward Source Lake and the East Face approach, crossing talus fields and a snow patch, then a final stretch of loose scree to the base of the route; about 2-3 hours from the parking lot.",
+   "area_id": "wa_summer_fall_rock_2",
+   "descent_text": "Most parties rappel the route on a single 60 m rope, using two rappel stations added in 2023. Belay the leader back down pitch 8 rather than rappelling it: rappelling it knocks loose rock onto anyone below. From the top anchor, rappel straight down to the chain anchor just right of the pitch-6 belay, then to the top of pitch 5, then down the belay stations to the ground, seven rappels in all. Several leave less than 5 ft of rope to spare, so knot the ends. If other parties are on the route, descend the East Gully instead: hike, downclimb and rappel the normal descent.",
+   "name": "Voie de Chaise"
+  },
+  "wa_concerto_in_c_for_drill_and_hammer": {
+   "approach": "From Highway 530 in Darrington, go south on Madison Avenue to the T, turn right on Darrington Street and follow it as it becomes Squire Creek Road (FS 2040) to the washout that blocks it. Walk or bike the old roadbed past the landslide crossing to the Squire Creek Trail #654 sign, then continue 8–10 minutes to two cut logs on either side of the track, with old logging cable low and just right of it. A few steps past the logs, turn right on a well-beaten boot track down to Squire Creek and ford it where it is shallowest — hard in early season or after storms. Across the creek, follow a climbers' track right (downstream); it soon turns uphill, crosses a tributary (also hard early in the season), climbs through old-growth forest and drops left into two gullies, which it follows up. The top of the second gully is steep and dirty and opens onto a grassy saddle with good bivy sites, near the start of Concerto. Allow about 3 hours from the car. This turn-off comes before the one for Waterfall Basin, which is farther along at a wide streambed of white boulders.",
+   "area_id": "wa_south_face",
+   "descent_text": "Rappel the line of ascent on fixed chain/bolt anchors; parties typically rappel to the Pitch 13 chain anchor near the summit before continuing down.",
+   "name": "Concerto in C for Drill and Hammer"
+  },
+  "wa_dolphin_chimney": {
+   "approach": "Start from the Blue Lake Trailhead on Highway 20 just west of Washington Pass. Follow the maintained Blue Lake Trail roughly 1.25 miles (about an hour of easy hiking, modest gain) to the open meadow/clearing on the northwest side of the Liberty Bell massif marked by a wooden trail sign. Leave the maintained trail here and follow the well-worn climber's path up through talus and heather benches into the basin below South Early Winters Spire's west side. Continue up the scree/boulder slope toward the base of the Southwest Rib / Boving-Pollock start (the Y-shaped larch tree left of the southwest couloir is the landmark most parties use). Dolphin Chimney itself is not started from the ground — it is gained by climbing the first 2-3 pitches of the Southwest Rib or Northwest Face (Boving-Pollock), then traversing left over easy terrain to the obvious dark, unmistakable chasm about 100 ft left of the Boving Roof.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Dolphin Chimney is a single spectacular ~75 ft pitch (5.9+ R), not a full line to the summit, so it is normally done as a one-pitch add-on within a Southwest Rib / Boving-Pollock day rather than climbed and descended on its own. Most parties either continue past it on easier cracks to rejoin the Southwest Rib and finish to the summit, then take the standard South Early Winters Spire descent: downclimb the South Arete (3rd/4th class with one short, more exposed step) to the 'Rabbit Ears' — two boulder towers with fixed rappel slings — then make a short traverse/downclimb into the descent gully and do 3 single-rope rappels (60m rope) from bolted anchors/chains to the base, finishing on scree back to the climber's trail and Blue Lake Trail. If a party climbs the Dolphin as an out-and-back pitch, expect to lower or make a single rappel back to the ledge below rather than continue up. Given the offwidth/chimney nature of the pitch and sparse gear noted by climbers, rope management on any rappel of the chimney itself deserves extra care.",
+   "name": "Dolphin Chimney"
+  },
+  "wa_east_ridge_3": {
+   "approach": "Start from the Cedar Creek trailhead near Mazama -- a different trailhead than the Silver Star Creek/Highway 20 pullout used for the Glacier and NE Ridge routes -- and gain the ridge near the confluence of Cedar and Early Winters Creeks, then follow the crest north and west for roughly 3.5 miles to the summit.",
+   "area_id": "wa_silver_star_mountain_okanogan",
+   "descent_text": "From the summit, rope down or downclimb a short distance to gain the Silver Star Glacier, then descend the glacier west/northwest toward Burgundy Col. From the col, climb/hike up and over to the Burgundy Col climbers' trail, which drops back to Highway 20 near milepost 166 (roughly 4 miles from Washington Pass) — several miles of highway from the Cedar Creek Trailhead used for the approach. Carry glacier travel gear (and an ice axe/crampons in early season) for this descent, since it crosses real crevassed glacier terrain, not just snow slopes.",
+   "name": "East Ridge"
+  },
+  "wa_free_mojo": {
+   "approach": "Same basin approach as Mojo Rising and the Northwest Face: Blue Lake Trailhead, Blue Lake Trail to the NW-side clearing, climber's path up talus into the basin below the west face. Free Mojo starts roughly 40 ft down and right of the large chockstone-filled chimney between the two spire formations, on a nondescript crack that leads to a two-piece fixed anchor on a pedestal (end of pitch 1); pitch 2 climbs obvious double incipient cracks up to a series of ledges.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Only pitch 1 ends at a fixed anchor (a two-piece nut-and-cam anchor on a pedestal); the belay atop pitch 2 is built from gear on ledges, so a party retreating from above pitch 1 must leave gear for an anchor to get back down to the pitch 1 anchor, then rappel from it to the ground. For the full route to the summit (6 pitches), finish via the standard South Arete descent: downclimb the arete to the Rabbit Ears, then 3 single-rope rappels (60m) from bolted anchors/chains down the gully to the base.",
+   "name": "Free Mojo"
+  },
+  "wa_mojo_rising": {
+   "approach": "Approach as for the Northwest Face: Blue Lake Trailhead, Blue Lake Trail ~1-1.25 miles to the NW-side clearing, then the climber's path up talus into the basin below the west face. Mojo Rising starts on an obvious bolted face about 20 ft downhill from a large chockstone-filled chimney/notch feature, just left of pitch 1 of the Northwest Face (Boving-Pollock) route — the chockstone chimney is the key landmark for locating the start among several closely-spaced lines on this wall.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Mojo Rising offers two descent options depending on the day's plan. To bail or descend the route itself, rappel the first 3 pitches with a single 60m rope from bolted/chain anchors back to the ground. To finish the full climb, pitches 7-9 are typically simul-climbed or pitched out onto the well-traveled Southwest Rib finish to the true summit; from there, take the standard South Arete descent — downclimb the arete to the Rabbit Ears, then 3 single-rope rappels (60m) from bolted anchors/chains down the gully to the base, and hike out via the Blue Lake Trail.",
+   "name": "Mojo Rising"
+  },
+  "wa_northwest_face_boving_pollock": {
+   "approach": "From the Blue Lake Trailhead, follow the Blue Lake Trail about 1-1.25 miles (roughly an hour) to the clearing/meadow on the spire's northwest side. Leave the trail on the well-worn climber's path and ascend talus and heather into the basin directly below the northwest face — this is the same basin used to access the Southwest Rib, Mojo Rising, and Free Mojo, so route-finding to the base is shared. The Boving-Pollock start is identifiable by a steep corner system; the first pitch traverses into the corner and makes committing moves (~5.10ish) up to a prominent ledge, where some parties belay while others continue to a tree-anchored stance.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "The northwest face is the shorter of SEWS's west-side lines (6 pitches), and parties typically continue to the true summit and take the standard South Arete descent: downclimb the arete (3rd/4th class with a short 5th-class step) to the Rabbit Ears, then 3 single-rope rappels (60m rope) from bolted anchors/chains down the gully to the base, returning via the climber's trail to Blue Lake Trail. There is no route-specific rappel-the-face option, so bailing mid-route would mean building natural gear anchors (pitons/cams noted in the route description) rather than relying on fixed hardware.",
+   "name": "Northwest Face (Boving-Pollock)"
+  },
+  "wa_primal_scream": {
+   "approach": "From the grassy saddle bivy, cross class 4 ramps to a shallow dihedral with a small tree, then continue to a dirt ledge at the base of a short wall marking the start.",
+   "area_id": "wa_south_face",
+   "descent_text": "Rappel the line of ascent using the 2023-installed modern bolted anchors; the upper three pitches share anchors with Concerto in C for Drill and Hammer.",
+   "name": "Primal Scream"
+  },
+  "wa_sews_sw_rib": {
+   "approach": "From Blue Lake Trailhead (1 mile west of Washington Pass on Highway 20), hike Blue Lake Trail 1.25-1.5 miles to a clearing. At a small stream (possibly marked with cairns), leave the trail and ascend climber tracks through slabs parallel to the stream to reach the basin. Route base is identifiable by the distinctive Y-shaped larch tree. Total approach time: 1-1.5 hours; elevation gain to route base: 900-1,200 ft.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Descend via the South Arete (the standard descent for the peak): downclimbing 3rd/4th class terrain to the Rabbit Ears, then three single-rope rappels on a 60 m rope from bolted chain anchors back toward the Blue Lake basin. Expect delays at rappel stations on busy weekends since South Arete parties are often descending the same line.",
+   "name": "Southwest Rib"
+  },
+  "wa_silver_star_glacier": {
+   "approach": "Park at the broad pullout/overlook on SR-20 near milepost 165–166 (about 4 miles east of Washington Pass), where a sign points toward Silver Star Mountain. From the pullout, drop down the embankment roughly 150–200 ft to Early Winters Creek and cross on a log (logjams shift year to year — scout up- and downstream for the best crossing, and be ready to ford in high water/early season, when the creek runs cold and fast with snowmelt). On the far bank, pick up the unofficial but well-defined climber's trail that climbs the timbered rib on the west (left) side of the Burgundy Creek drainage. From here the trail climbs relentlessly and steeply through forest and brush for roughly 2,500–3,000 ft with almost no switchbacks and only fleeting creek-side water access early on — treat the crossing at Early Winters Creek as your last reliable water until camp. At around 6,000–6,400 ft the grade eases at 'the Bench,' an open larch-and-heather shelf with several established campsites and usually a seasonal trickle or snowmelt nearby; this is the standard overnight camp for a two-day trip and a natural break point/turnaround check for day-trippers. Above the bench, continue up open subalpine terr",
+   "area_id": "wa_silver_star_mountain_okanogan",
+   "descent_text": "Descend by reversing the ascent route. From the summit, downclimb the short class 3–4 rock (the same easy, somewhat exposed ledge system used on the way up) back to the col between the east and west summits; several trip reports and topo photos document a natural/slung rappel anchor near the true summit that parties use to bypass the most exposed section of this downclimb — a single rappel with one 50 m rope (or a 60 m rope doubled) is enough to get below the crux and onto easier ground, though plenty of parties simply downclimb the whole way and skip it entirely, so treat this as an optional, not mandatory, rappel with a natural anchor (sling on a horn/block), not bolts. From the base of the summit scramble, work back down onto the Silver Star Glacier and re-descend it, wrapping below the rock slabs of Burgundy Spire; note that this traverse dips below the elevation of Burgundy Col, so you must reclimb a couple hundred feet of steep snow from the low point back up to the col — a sting in the tail that catches parties expecting a pure descent. From Burgundy Col, downclimb the steep snow and loose, unstable 'kitty litter' rock/gully back toward the bench; this section is notoriously",
+   "name": "Silver Star Glacier"
+  },
+  "wa_snoqualmie_mountain_standard_route": {
+   "approach": "Park in the Alpental lot at the end of Alpental Rd (NW Forest Pass required at the trailhead kiosk). Walk toward the signed Snow Lake trailhead, but instead of taking that trail, look for an unsigned boot path/old roadbed about 50 ft downhill (south) of the Snow Lake trailhead sign, dropping into a band of slide alder — this is the shared start for both Guye Peak and Snoqualmie Mountain. The path immediately steepens and follows a creek drainage (Source Creek) up through roots, talus, and brush; it is a climbers' path only, not a maintained trail, and can be hard to follow in the alder in early season or after blowdown. At roughly 1 mile / ~1,000 ft gain, a junction splits: the right fork climbs to Guye Peak and Cave Ridge proper, while the main Snoqualmie route continues left/straight. About a third of a mile past that junction the path fords the creek near a 50-ft waterfall (the main water source on route — treat before drinking); a quarter mile beyond the crossing it breaks out of the trees onto the open west-facing gully/slope below Cave Ridge and switchbacks steeply up this slope for roughly the final mile to the summit ridge and the true summit at 6,278 ft. Expect loose scree",
+   "area_id": "wa_snoqualmie_mountain_climbs",
+   "descent_text": "This is a walk-off, not a rappel route — descend by reversing the ascent gully/climbers' path back down through Cave Ridge's west slope, past the waterfall creek crossing and the Guye Peak junction, to the Alpental lot. No rappelling or fixed anchors are involved (rappels = 0). The descent is the crux for many parties: the scree/dirt path is looser and harder to control on the way down than it looks going up, and the upper gully holds snow into summer, so in spring conditions a glissade down the snow-filled chute is a common (faster) alternative to the dry boot path — carry an ice axe and know self-arrest if attempting it, since the gully funnels into trees and rock lower down. In winter and spring this same gully is recognized avalanche terrain (a frequent subject of NWAC-relevant trip reports and Mountaineers winter scramble/ski trip logs), so check avalanche conditions and be prepared to bail to Cave Ridge rather than push through unstable snow. Watch footing carefully near the top where the ridge narrows and exposure increases just below the summit.",
+   "name": "Standard Route (Southwest Slopes)"
+  },
+  "wa_south_arete": {
+   "approach": "Start at the Blue Lake Trailhead (elev. ~5,400 ft) on SR-20 just west of Washington Pass. Follow the well-built Blue Lake Trail (Trail #314) as it climbs gently through subalpine fir and larch forest, switchbacking up open slabs with good views back at the highway. After roughly 1.3-1.5 miles and about 1,000 ft of gain, watch for a minor stream crossing/drainage coming down from the basin below the Early Winter Spires — this is well before Blue Lake itself, which lies another mile-plus further on the maintained trail. Leave the maintained trail here and pick up the climbers' boot path (cairned but braided in spots) that works up through granite slabs and heather benches, then continues up open talus and boulder country roughly parallel to the stream, which is a reliable water source through most of the season lower down but disappears into talus higher up — fill up before leaving it. Continue up this climbers' trail, angling toward the southwestern corner/toe of South Early Winter Spire (the right-hand, southernmost of the two spires, before the saddle). Expect roughly another 1,000 ft of gain from where you leave the maintained trail to reach the base of the route at the level of ",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Descend by rappelling/downclimbing the South Arete climbing route itself. In recent years the route has been equipped with three fixed rappel stations (bolts and chains) set slightly climber's right of the summer gully/chimney and off the main line of ascent, giving clean, mostly-vertical pulls; a single 60m rope is sufficient for each rappel and gets you back to the base of the route in 2-3 rappels, supplemented by short sections of easy downclimbing between stations depending on how much you choose to downclimb versus rappel. Because some of the down-climbing is exposed with real fall consequences, parties newer to alpine terrain should stay roped and consider placing gear on the downclimbed sections rather than soloing them. From the base of the raps, reverse the approach: pick up the climbers' trail back down through the talus and slabs paralleling the stream to the Blue Lake Trail, then follow it back to the trailhead. An alternative descent used by some parties is to traverse to the Southwest Couloir and downclimb/walk that gully back into the basin instead of re-rapping the arete; it avoids rope work but is loose underfoot and can hold firm snow well into summer, in which ca",
+   "name": "South Arete"
+  },
+  "wa_south_early_winter_spire_direct_east_buttress": {
+   "approach": "Park at the 'hairpin' pullout on Highway 20 (separate from the Blue Lake Trailhead), hike up Spire Gully following occasional cairns to the last large tree in the gully, then traverse right across talus (or snow early-season — bring crampons/axe) to the gully leading to the notch between North and South Early Winters Spire, then traverse left to the base of the east buttress. Roughly 1.5 hours car-to-base at a moderate pace; the line is visible from the road.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Downclimb the South Arete from the summit — mostly 3rd/4th class with one short, more exposed 5th-class section — down to bolted anchors above the standard SEWS descent gully, then make 3 single-rope rappels (60m rope) from bolted anchors/chains to the base of the wall. From the base, hike out via the climber's trail to the Blue Lake Trail; if you parked at the hairpin rather than the Blue Lake Trailhead, plan a short road walk or car shuttle back.",
+   "name": "Direct East Buttress"
+  },
+  "wa_south_early_winter_spire_passenger": {
+   "approach": "From the South Arete base (reached via the Blue Lake Trailhead climber's trail, about 2.5 miles and 2,000 ft from the car), head down and right along the base of the wall, eventually dropping away to skirt steeper terrain, to reach the start at double cracks beside a fir tree — about 10 minutes of scrambling/traversing from the South Arete. The Hitchhiker begins roughly 100 ft further along the same traverse.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "From the summit, downclimb the South Arete (3rd/4th class with one short, more exposed step) to the Rabbit Ears, then make 3 single-rope rappels (60m rope) from bolted anchors/chains down the SEWS gully to the base, and hike out via the climber's trail to Blue Lake Trail. The Passenger itself is not commonly rappelled top-to-bottom; parties top out and use this shared descent gully.",
+   "name": "Passenger"
+  },
+  "wa_south_early_winters_spire_nothing": {
+   "approach": "From the Blue Lake Trailhead on SR-20, take the Blue Lake Trail and the climbers' path to the base of the South Arete, about an hour. Traverse down and right along the foot of the southeast face, past the fir tree and double cracks of the Passenger and the four-bolt dihedral of The Hitchhiker. This route starts about 150 ft right of The Hitchhiker.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "Descend the South Arete, as for the other southeast-face routes: downclimb the arete to the Rabbit Ears, rappel the gully below them to the base, and walk back out on the climbers' path to the Blue Lake Trail.",
+   "name": "Nothing"
+  },
+  "wa_south_ridge": {
+   "approach": "The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route up Bachelor Creek past Cub Lake and over Itswoot Ridge, involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of South Peak's granite faces; this is an experienced-mountaineers-only objective, not a roadside crag.",
+   "area_id": "wa_south_peak",
+   "descent_text": "Do not reverse the ridge. Rappel about 35 m north off the summit, then make a second rappel east onto the Blue Glacier; a moat usually separates rock from ice at the bottom. Carry two 60 m ropes — joined, they give rappels of up to a full 60 m, enough to reach past the lip of the moat — and cord to leave an anchor.",
+   "name": "South Ridge"
+  },
+  "wa_southern_man": {
+   "approach": "Same as Direct East Buttress: park at the hairpin pullout on Highway 20, hike Spire Gully (cairned) to the last large tree, traverse right across talus/snow to the gully leading to the notch between North and South Early Winters Spire, then traverse left to the base of the east buttress. Southern Man shares the East Buttress's first pitches, then splits off around halfway up to climb the south-facing headwall on the upper south side of the peak for its final 5 pitches (9 total) to the top.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "From the summit, take the standard South Arete descent: downclimb the arete (3rd/4th class with a short, more exposed 5th-class section) to the Rabbit Ears, then 3 single-rope rappels (60m rope) from bolted anchors/chains down the gully to the base. Note that the belays on Southern Man itself are vague and not yet equipped with fixed anchors — this affects the climb, not the descent, but underscores that this route sees less traffic than the East Buttress it starts from, so don't expect a fully bolted rap line down the route itself if you need to bail from the upper headwall; natural anchors would be required there.",
+   "name": "Southern Man"
+  },
+  "wa_southwest_face": {
+   "approach": "From Alpental parking (~3,100 ft) off I-90 Exit 52, take the Snow Lake Trail about 1.5 miles, fork toward Source Lake, cross talus, and climb the steep gully to Pineapple Pass. This route takes the standard Tooth approach but breaks off north of the Pineapple Pass gully rather than continuing to the South Face notch, climbing open books/left-facing slab to the summit.",
+   "area_id": "wa_summer_fall_rock_2",
+   "descent_text": "From the summit, several parties instead scramble roughly 30 feet north along the summit ridge, descend a short gully/chimney, follow easy slabs down and north to a major gully, work up to a narrow notch in the summit ridge, cross it (a belay is prudent), and continue north to a descent gully leading down the north end of the west face — but for most parties the simplest option is to rappel the South Face's equipped stations (about four rappels) back to Pineapple Pass and retrace the approach; rappelling the loose east-side gully carries notable rockfall hazard and is not recommended.",
+   "name": "Southwest Face"
+  },
+  "wa_sperry_peak_standard": {
+   "approach": "From the Sunrise Mine Trailhead (2,350 ft, end of FS Road 4065), follow the Sunrise Mine Trail (#707) into the Morning Star NRCA. About 0.5 mile in, the trail makes a tricky crossing of the South Fork Stillaguamish River — no bridge, sometimes aided by a small-diameter log and a hand rope; this ford can be genuinely difficult and dangerous after heavy rain or early-season snowmelt. Beyond the crossing the trail climbs gradually through forest for roughly a mile to Wirtz Basin, where the terrain opens up and turns rockier. From the basin the trail steepens sharply into a narrow, loose rock chute switchbacking up to Headlee Pass (4,720 ft, about 2.7 miles from the trailhead) — this chute is notorious for rockfall dislodged by parties above and is also an avalanche path in shoulder-season/spring snow conditions, so groups should spread out and move through it deliberately. From Headlee Pass the trail contours around Sperry's south/east flank and drops slightly into the upper Vesper Creek basin to Vesper Lake (Lake Elan, roughly 3 miles in). Leave the maintained trail at the lake's outlet, follow its east shore, then climb open, welcoming slopes to the saddle/notch between Vesper and S",
+   "area_id": "wa_sperry_peak",
+   "descent_text": "Reverse the ascent line: downclimb the loose, brushy west ridge/west slope scramble back to Sperry Saddle, then drop to the Vesper Lake outlet and rejoin the maintained Sunrise Mine Trail. Route-finding on the upper scramble is the main hazard on the way down — the easiest line up is not obvious from above, and it's easy to end up descending a different, steeper gully than the one you climbed, so note landmarks (the climber's-right ramp and the cairned dirt path into the trees) on the way up and look for them again on the way down. From the lake, retrace the trail back through Headlee Pass and down its rockfall-prone switchback chute (loose underfoot, stay alert for rock knocked loose by other parties), through Wirtz Basin, back across the South Fork Stillaguamish ford, and out to the trailhead. This is a walk-off/downclimb scramble route with no rappelling involved anywhere on the standard line.",
+   "name": "Standard Scramble"
+  },
+  "wa_sperry_peak_upper_south_ridge": {
+   "approach": "Approach to Headlee Pass as for the standard route (see that route's approach). Cross the talus toward Vesper/Elan Lake, then take the first ramp heading up and to the right to reach the base of the South Ridge.",
+   "area_id": "wa_sperry_peak",
+   "descent_text": "From the summit, follow the standard Class 3 route down to the west to the pass between Vesper and Sperry, then head south back over Headlee Pass and down to the car - do not try to reverse the South Ridge itself.",
+   "name": "Upper South Ridge"
+  },
+  "wa_storm_king_southwest_scramble": {
+   "approach": "Storm King sits at the head of Thunder Creek in the North Cascades and is one of the range's most remote 'Bulger/Top 100' summits — a three-day car-to-car trip is the norm, and three separate trailhead approaches converge on the same high basin below Mount Goode's south side. The most common line is the Thunder Creek approach: from the Colonial Creek Campground trailhead on SR-20, follow the Thunder Creek Trail (an easy, mostly-forested stock/hiker trail) about 13 miles with only ~600 ft of gain to the McAllister Creek confluence — McAllister Camp (~mile 6) is a common night-one camp. Continue past Junction Camp (~mile 9.5) and Skagit Queen Camp (~mile 13.5) to Thunder Basin Camp (~mile 16.5), then pick up the signed Park Creek Pass Trail junction a couple miles beyond and follow it up through meadows to Park Creek Pass. Two alternate approaches reach the same basin: a steeper, more direct line over McAlester Pass and down Rainbow Creek from SR-20 (camp at Rainbow Lake, ~9 mi and 2,700 ft of gain), or a southern approach via boat/shuttle to Stehekin and High Bridge Camp, then up the Park Creek Trail to Park Creek Pass from the south. All three meet on the Park Creek trail: from the",
+   "area_id": "wa_storm_king",
+   "descent_text": "Descent reverses the ascent line. From the notch/crack area just below the true summit, most parties downclimb the ~15-ft crux crack and the exposed Class 4 ledge just below it. Some instead rappel off the fixed slings (in-situ tat/webbing — inspect it and back it up before committing) back to the ledge on the north side; even with a 60 m rope, expect to downclimb some Class 3 terrain. From the ledge, cross back through the right-most notch and descend the loose talus and scree slope to the cirque. From the base of the talus, traverse back to the basin below Goode and descend the cairned climbers' path and the burned ridge to the Park Creek trail just past the big washout, then continue via whichever of the three approach trails (Thunder Creek, McAlester Pass/Rainbow Creek, or Park Creek/Stehekin) matches your itinerary. Loose rock is the dominant descent hazard from the summit all the way down through the talus — keep helmets on and parties tight until well below the scree.",
+   "name": "Southwest Scramble"
+  },
+  "wa_summit_chief_mountain_north_face": {
+   "approach": "Approach from the Middle Fork Snoqualmie valley (North Bend side): drive the Middle Fork Snoqualmie Road (NF-56) to its plowed/drivable end, then bike or hike the remaining distance (about 1 mile in the FA party's case) into the valley. Continue on foot through snowy forest along the valley trail, crossing multiple braids of the Middle Fork Snoqualmie River (the crux of the approach in high water), then climb to a camp below the north face. The FA party's full approach from vehicle to camp took about 6.5 hours.",
+   "area_id": "wa_summit_chief_mountain",
+   "descent_text": "From the summit area, downclimb neve on the southwest aspect to the top of a snow gully, then make two 30m rappels down the gully to regain lower-angle terrain and return toward the approach basin/camp.",
+   "name": "North Face"
+  },
+  "wa_summit_chief_mountain_south_route": {
+   "approach": "Start at the Pete Lake Trailhead (~2,840 ft) at the end of Cooper Lake Road (Forest Road 46) off the Salmon La Sac Road. Follow the Pete Lake Trail (#1323) roughly 4.5 miles of gentle, mostly flat forest walking along the Cooper River to Pete Lake. From Pete Lake, continue up the Lemah Creek/Lemah Meadows drainage (watch for windfall and thick vine maple in the meadow bypass) to join the Pacific Crest Trail; turn right (north) and climb the PCT's long switchback section roughly 4-4.5 more miles to Lower and Upper Vista Lake (~5,500-5,600 ft) — camp is commonly made here, making this a two-day approach of about 10 miles and 2,800 ft to reach the alpine basin. This is also the last reliable water before the high basin — carry extra, as the route above is reported bone-dry until you're back near Vista Lakes. From Vista Lakes, leave the PCT and traverse cross-country north along Vista Ridge toward Summit Chief Pass, crossing a convoluted series of sandstone/siltstone slabs cut by numerous slots and gullies; stay left (west) of Summit Chief Lake and minimize elevation loss while rounding into the southeast basin below the peak. Many parties stash overnight gear around 6,300 ft in the lo",
+   "area_id": "wa_summit_chief_mountain",
+   "descent_text": "This is a walk-off/downclimb — no rappelling is involved on the standard South Route. Reverse the ascent line exactly: downclimb the loose, exposed southwest gully and its outward-dipping slab back to the ~7,200 ft notch, taking care with the loose rock and steep dirt in the upper 500 feet (this section has real rockfall potential for parties below). Continue down through the talus and hardpan to the 6,300 ft basin (recover any stashed gear here), then retrace the slab traverses back onto Vista Ridge and down to Vista Lakes/the PCT. From Vista Lakes, follow the PCT switchbacks back down to Lemah Meadows and the Pete Lake Trail, then out to the Pete Lake Trailhead. Some parties vary the return by continuing along the PCT to Waptus Lake and crossing Waptus Pass back to the Pete Lake trailhead as an alternate loop. The round trip runs roughly 25 miles car to car, so most parties treat this as an overnight with a basin or Vista Lakes camp rather than a single push.",
+   "name": "South Route"
+  },
+  "wa_switchback_mountain_scramble": {
+   "approach": "Two trailheads reach Cooney Lake and the SE Ridge. (1) Foggy Dew Trailhead (end of FR 4340-200, 3,400 ft) — from Twisp, take SR 20 east ~2 mi, then SR 153 south ~12 mi, then Gold Creek Loop Rd/County Rd 1034 and FR 4340 to the FR 4340-200 spur. Hike Foggy Dew Creek Trail #417 about 4.9 miles to its end, then Martin Creek Trail #429 north 2.7 miles and Cooney Lake Trail #434 0.2 mile to Cooney Lake (~7,200 ft); climb to Cooney Pass and the SE Ridge from there. Round trip is roughly 19 miles with about 5,560 ft of gain (a logged trip report took ~5.5 hr up, ~3 hr down). (2) Eagle Lakes/Crater Creek Trailhead (also off FR 4340, 4,700 ft) — follow the Crater Creek/Eagle Lake Trail #431 about 2.5 miles to a signed cutoff heading south toward Martin and Cooney Lakes, then 4.0 miles to Martin Lakes (6,700 ft) and 2.2 more miles to Cooney Lake (7,200 ft) to join the same summit route.",
+   "area_id": "wa_switchback_mountain",
+   "descent_text": "Reverse the Southeast Ridge down to Cooney Pass and Cooney Lake — the standard line is a walk-down with no rappels. From the lake, retrace to whichever trailhead you started from; parties based at Foggy Dew can vary the return slightly through Merchants Basin.",
+   "name": "Standard Scramble"
+  },
+  "wa_the_chopping_block_northeast_ridge": {
+   "approach": "Via the multi-day Goodell Creek approach to a camp on the Chopping Block ridge (~6,400 ft) or the col separating the peak from the main Picket Range; from there, walk and scramble (some exposed 3rd class) southwest to the base of the ridge.",
+   "area_id": "wa_the_chopping_block",
+   "descent_text": "Descend by rappelling the ridge itself — most parties use a 70m rope to reach most stations comfortably; one reporting party got down on a 50m rope with a tagline. Existing fixed rap slings have been reported along the route.",
+   "name": "Northeast Ridge"
+  },
+  "wa_the_chopping_block_south_route": {
+   "approach": "Drive SR 20 to Newhalem, which is reachable year-round from the west (Marblemount/Concrete) since the seasonal highway closure gate sits farther east near Ross Dam/Diablo. Park at the Goodell Creek trailhead on the north side of SR 20, across from Newhalem Campground (take the left just past crossing Goodell Creek, past the gravel pit, to road's end by the creek). Hike the old Goodell Creek Trail — a former logging-road bed — roughly 4 miles up-valley to the Terror Creek Trail junction, marked by a large cairn. About a mile beyond, at around 2,000 ft, cross Terror Creek on a log or by wading (calf-deep by late summer; the last reliable water before high camp), then climb one of the steepest maintained climbers' trails in the Cascades, gaining the ridge crest between Terror and Crescent Creeks via roots and 3rd-class dirt scrambling. Once on the crest — brushy with blueberry bushes and prone to fading in and out — follow it northwest several miles toward Stump Hollow (~5,600 ft) or the Chopping Block/Barrier Ridge camps overlooking Crescent Creek Basin and Mount Terror. Most parties reach camp in one long, steep day and climb the peak the next. Total approach is roughly 6-7 miles wi",
+   "area_id": "wa_the_chopping_block",
+   "descent_text": "Descend the face by about seven low-angle rappels, watching for loose rock. Parties combining the Chopping Block with Mount Degenhardt or the Twin Needles typically continue along the Barrier/Chopping Block Ridge rather than dropping straight back to camp.",
+   "name": "Southeast Face"
+  },
+  "wa_the_hitchhiker": {
+   "approach": "Approach as for the Passenger: Blue Lake Trailhead climber's trail (~1 hour) to the South Arete base, then traverse down and right along the base of the wall past the Passenger's fir-tree/double-crack start, continuing roughly another 100 ft to a small left-facing dihedral with 4 bolts — the Hitchhiker's start, on the steep SE face of the spire.",
+   "area_id": "wa_south_early_winters_spire",
+   "descent_text": "The Hitchhiker is a long day (up to 8 hours for 9 pitches) of sustained face climbing with about 20 bolts but still requiring a full trad rack; it tops out at the summit rather than being descended via its own rappel line. From the top, take the standard South Arete descent: downclimb the arete (3rd/4th class with a short, more exposed step) to the Rabbit Ears, then 3 single-rope rappels (a 60m rope is standard and matches the rope length noted in the route's protection beta) from bolted anchors/chains down the gully to the base, then hike out via the climber's trail to Blue Lake Trail.",
+   "name": "The Hitchhiker"
+  },
+  "wa_the_tooth_fairy": {
+   "approach": "Same Alpental to Snow Lake Trail to Source Lake fork to Pineapple Pass approach as the standard Tooth routes (~3,100 ft trailhead); near the top, continue left past the Southwest Face to a bolted line on the west-facing wall. Early season, a moat between snow and rock may require extra scrambling to the start.",
+   "area_id": "wa_summer_fall_rock_2",
+   "descent_text": "From the top of P6 (the anchor is unequipped at the true summit — P7 is a short scramble with no rappel anchor), rappel the bolted line: 6 single-rope rappels, or 3 double-rope rappels with a 60m rope for the longest one. Some parties instead go down the South Face, rappelling its line to Pineapple Pass.",
+   "name": "The Tooth Fairy"
+  },
+  "wa_the_tooth_indentured_servant": {
+   "approach": "Follow the normal South Face/Tooth Fairy approach (Snow Lake Trail from Alpental to the Source Lake talus/climbers' path, up toward Pineapple Pass), but below the pass continue further left (west), past The Tooth Fairy, to a route starting on the left side of a large gully that splits the cliff.",
+   "area_id": "wa_summer_fall_rock_2",
+   "descent_text": "From the top of P5, clip one more bolt and continue onto the North Ridge for roughly 100m of scrambling to the true summit. From there, most parties descend via the South Face's established rappel line (4 raps) back to Pineapple Pass; alternatively, rappel back down Indentured Servant itself with a 60m rope from the bolted anchors.",
+   "name": "Indentured Servant"
+  },
+  "wa_tooth_chair_traverse": {
+   "approach": "Begin via any Tooth route (historically the South Face) from the Alpental/Source Lake approach (~3,100 ft trailhead), then follow the crest toward Chair Peak: a short forested walking section right after the Tooth, exposed 4th/low-5th-class ridge travel, and a mandatory rappel off Bryant.",
+   "area_id": "wa_summer_fall_rock_2",
+   "descent_text": "Chair Peak's standard descent downclimbs from the summit to a saddle and continues down the steep, SW-facing gully back to the basin below; conditions and cornicing at the gully's head can vary through the season, so rope up or downclimb as conditions dictate.",
+   "name": "Tooth - Chair Traverse"
+  }
+ }
+}

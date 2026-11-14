@@ -17,10 +17,15 @@ import { fileURLToPath } from "url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILE = path.join(ROOT, "RouteDetail.jsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+// PR57 moved the camp helpers (campFromTrailhead, campSites, trailheadFt) to lib/camps.js.
+const CAMPS = path.join(ROOT, "lib/camps.js");
+// PR59 moved campingGate to lib/campingGate.js (case 9).
+const GATE = path.join(ROOT, "lib/campingGate.js");
 const sum = (x) => crypto.createHash("sha1").update(x).digest("hex").slice(0, 10);
 
 const CASES = [
   {
+    file: CAMPS,
     name: "6. render the RAW gain instead of the 'below' wording",
     want: /below-trailhead|NEGATIVE number/i,
     edit: (s) => s.replace(
@@ -30,17 +35,19 @@ const CASES = [
                'const head=[d,g!=null?uElev(g):null].filter(Boolean).join(" \\u00b7 ");'),
   },
   {
+    file: CAMPS,
     name: "7. DERIVE a distance from lat/lng for bivy sites (a chord posing as a trail)",
     want: /DISTANCE rendered for a bivy site/i,
     // The tempting bug, written the tempting way: a great-circle distance from the trailhead pin.
     // Repointed when campSites began borrowing a same-named PIN's distance: a researched site with
     // no pin still gets null, and this case makes that null a chord instead.
     edit: (s) => s.replace(
-      "  return bivy.map(b=>{const p=pinOf(b);",
-      "  const _th=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,\"Trailhead\"))[0];\n  const _chord=b=>{if(!b||b.lat==null||_th==null||_th.lat==null)return null;const dx=(Number(b.lng)-Number(_th.lng))*46,dy=(Number(b.lat)-Number(_th.lat))*69;return Math.sqrt(dx*dx+dy*dy);};\n  return bivy.map(b=>{const p=pinOf(b);")
+      "  return campRouteOrder(bivy.map(b=>{const p=pinOf(b);",
+      "  const _th=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,\"Trailhead\"))[0];\n  const _chord=b=>{if(!b||b.lat==null||_th==null||_th.lat==null)return null;const dx=(Number(b.lng)-Number(_th.lng))*46,dy=(Number(b.lat)-Number(_th.lat))*69;return Math.sqrt(dx*dx+dy*dy);};\n  return campRouteOrder(bivy.map(b=>{const p=pinOf(b);")
       .replace("distMi:p?_campMi(p):null,", "distMi:p?_campMi(p):_chord(b),"),
   },
   {
+    file: CAMPS,
     name: "8. trailheadFt() returns a CONSTANT instead of null (a gain with no anchor)",
     want: /gain rendered with no trailhead elevation/i,
     edit: (s) => s.replace(
@@ -52,6 +59,7 @@ const CASES = [
   },
   {
     name: "9. revert campingGate() to the bare catOf() list (the Fury defect)",
+    file: GATE,
     want: /trad on a peak does NOT render|trad-is-alpine rule is not wired/i,
     edit: (s) => s.replace(
       'return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route))||climbsAPeak(route);',

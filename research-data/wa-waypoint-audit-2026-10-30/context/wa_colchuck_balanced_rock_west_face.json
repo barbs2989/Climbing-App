@@ -1,0 +1,92 @@
+{
+ "id": "wa_colchuck_balanced_rock_west_face",
+ "name": "West Face",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_colchuck_balanced_rock",
+  "name": "Colchuck Balanced Rock",
+  "lat": 47.4914,
+  "lng": -120.8188,
+  "elevation_ft": 8240,
+  "parent_id": "wa_stuart_range",
+  "ground_ft": 8228
+ },
+ "dist_km": 8,
+ "gain_ft": 4760,
+ "high_point_ft": 8240,
+ "approach_logistics": null,
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Northwest Forest Pass required for parking; day trips self-issue a free permit at the kiosk; camping overnight May 15-Oct 31 needs an Enchantment overnight (quota) permit.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 2 at the west edge of Leavenworth, turn south onto Icicle Road and drive 8.4 miles, then turn left onto FS Road 7601 and follow this rough dirt road 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass is required to park, and day trips need the free self-issued permit at the trailhead.",
+   "ground_ft": 3399
+  },
+  {
+   "i": 1,
+   "lat": 47.503907,
+   "lng": -120.840358,
+   "elev": 4300,
+   "name": "Colchuck Lake / Stuart Lake Trail split",
+   "note": "Signed junction where trail flattens briefly; bear left (south) onto Colchuck Lake Trail #1599A, Stuart Lake Trail continues straight.",
+   "type": "Junction",
+   "distMi": 2.25,
+   "directions": "Follow the Stuart Lake Trail about 2.25 miles through forest along Mountaineer Creek, crossing it on a log bridge near the 1.5-mile mark, to the signed junction where the Colchuck Lake Trail splits left.",
+   "ground_ft": 4505
+  },
+  {
+   "i": 2,
+   "lat": 47.49832,
+   "lng": -120.83265,
+   "elev": 5560,
+   "name": "Colchuck Lake outlet crossing",
+   "note": "Cross the outlet at the lake's north end, at or just below the small dam; a real crossing, not a step-across, in early season.",
+   "type": "Junction",
+   "distMi": 4.3,
+   "directions": "Where the trail meets the lake, take the left fork and stay high, ignoring the spurs that drop to the water, to the small dam at the lake's north end. Cross the outlet creek on or just below the dam.",
+   "ground_ft": 5560
+  },
+  {
+   "i": 3,
+   "lat": 47.4917,
+   "lng": -120.8207,
+   "elev": 7170,
+   "name": "Talus cirque below the West Face",
+   "note": "Boulder-hop the cirque basin below the wall; loose talus and route-finding through the cairned climbers' path to the obvious crack system.",
+   "type": "Hazard",
+   "distMi": 5.1,
+   "directions": "On the far side of the outlet, follow the well-cairned climbers' path up and across the timbered hillside; it gains height quickly and puts you on the talus field below the West Face in about an hour. Snow can linger on this ground into early summer.",
+   "ground_ft": 7166
+  },
+  {
+   "i": 4,
+   "lat": 47.491451,
+   "lng": -120.818789,
+   "elev": 8240,
+   "name": "Colchuck Balanced Rock summit",
+   "note": "Final moves are an exposed V1 boulder problem to mantel onto the nesting summit block.",
+   "type": "Summit",
+   "distMi": 5.2,
+   "directions": "Boulder-hop the cirque to a left-facing, lightly vegetated corner at the foot of the wall and scramble up to a ledge where the first pitch starts; if you are under black streaks or a large pale rock scar you are too far right. Climb nine pitches of sustained cracks and corners, finishing with an exposed boulder move to mantel onto the summit block.",
+   "ground_ft": 8231
+  },
+  {
+   "i": 5,
+   "lat": 47.491476,
+   "lng": -120.818755,
+   "elev": 8200,
+   "name": "Summit rappel station",
+   "note": "Single ~30m rappel off a slung horn near the summit; rope can hang up in the sling if pulled from the wrong angle, then downclimb scree clockwise around the peak.",
+   "type": "Hazard",
+   "distMi": 5.2,
+   "directions": "From the summit block, scramble to the webbing-slung horn on its east side for the single 30 m rappel.",
+   "ground_ft": 8227
+  }
+ ]
+}

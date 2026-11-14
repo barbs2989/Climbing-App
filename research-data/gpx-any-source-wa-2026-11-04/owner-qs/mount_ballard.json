@@ -1,0 +1,55 @@
+{
+  "key": "mount_ballard",
+  "question": "Most Mount Ballard ascents use an East Face route from the Slate Creek road (~48.7288,-120.7414): do we lack it?",
+  "answer": "Yes, we lack it. The stored South Slopes row covers the Mill Creek / Azurite mine side, and its own text says the east ridge from the Slate Creek side is a separate, harder line 'described under its own approach', but no such row exists on the peak. The East Face (also written up as East Ridge then West Face) is the modern standard: drive over Harts Pass and down the Slate Creek road to the locked gate at about 3,800 ft (tracks start 48.7288,-120.7414); walk the old South Fork Slate Creek road 1 to 1.5 mi to a large bridge near 4,000 ft; leave the road and go south through forest to a talus field near 4,900 ft; up forest to a bench near 6,200 ft on the east ridge; a steep heather-and-grass slot (class 4, the crux); class 2-3+ ridge scrambling into the east cirque and up to a saddle near 8,150 ft north of the summit; ledges to the summit gully, a 10 ft 4th-class corner or a 40 ft class 3-4 west-face slot, with a low-fifth variation on the north side. About 9 miles round trip and 5,000 ft of gain. Ascents are mostly July to October (a May snow ascent exists). Two tracks fit: 1703157 (11 Jul 2021, logged East Face, start about 70 m from the gate, high point within 5 m of our summit) and 3336131 (6 Sep 2026, same line).",
+  "recommendation": "Add route 'East Face' under wa_mount_ballard (scrambling, Class 4). Attach track 1703157 (logged East Face, July, summits) in preference to 3336131, which has no logged name. Trailhead pin: the gate at about 3,800 ft; the coordinate 48.7288,-120.7414 comes from two independent summiting tracks, not a mapped page (Nominatim returned nothing), so add it only if the owner accepts track-derived coordinates.",
+  "confidence": "high",
+  "proposed": {
+    "name": "East Face",
+    "id_suggestion": "wa_mount_ballard_east_face",
+    "discipline": "scrambling",
+    "disciplines": [
+      "scrambling"
+    ],
+    "grade": "Class 4",
+    "grade_system": "class",
+    "season": "Jul-Oct",
+    "best_season": "July to September once the Harts Pass road is open and the east slopes are mostly snow-free; October trips meet fresh snow on the face.",
+    "overview": "The approach most climbers use: a bushwhack from the Slate Creek road to the east ridge, a steep vegetated slot, scrambling into the east cirque, then a ledge traverse to the summit gully on the west side of the top block.",
+    "approach": "Drive the Harts Pass road over the pass and down the Slate Creek road to the locked gate (about 3,800 ft). Walk the old South Fork Slate Creek road roughly a mile to the large bridge near 4,000 ft, then leave the road and travel south through open forest.",
+    "beta": "Aim for the big talus field right at 4,900 ft to limit slide-alder fighting, keep left through the forest to the next boulder field, gain the east ridge bench near 6,200 ft, climb the steep grassy slot (class 4) and follow the ridge at class 2-3 into the east cirque. From the saddle near 8,150 ft traverse ledges to the summit gully; the last pitch is a short corner or slot at class 3-4, with a low-fifth variation on the north side.",
+    "descent_text": "Retrace the route; descend the green slot carefully and keep to the forest on the left on the way down to avoid the alder.",
+    "hazards": [
+      "loose rock in the slot and cirque",
+      "steep slide alder on the approach",
+      "exposed ledges near the summit block",
+      "wet snow on the face in May and October"
+    ],
+    "high_point_ft": 8371,
+    "waypoints": [
+      {
+        "type": "Trailhead",
+        "name": "Slate Creek road gate",
+        "lat": 48.7288,
+        "lng": -120.7414
+      }
+    ],
+    "approach_logistics": {
+      "trailhead": "Slate Creek road gate (about 3,800 ft)",
+      "trailheadLat": 48.7288,
+      "trailheadLng": -120.7414
+    },
+    "track_aid": "1703157"
+  },
+  "evidence": [
+    "https://trailcatjim.com/mt-ballard-via-slate-creek-east-ridge-west-face/ - Aug 2010: gate near 3,800 ft, bridge near 4,000 ft, class 4 slot, class 2-3+ ridge, 5,000 ft gain, about 9 mi",
+    "http://www.nwhikers.net/forums/viewtopic.php?t=8029591 - May 2019 East Face by snow: bridge near 4,000 ft, basin at 4,900 ft, east bench at 6,200 ft, col at 8,150 ft, class 3-4 summit",
+    "https://www.countryhighpoints.com/mount-ballard/ - Oct 2018: east ridge then west face, 10 ft 4th-class corner",
+    "packets-all/wa_mount_ballard.json - tracks 1703157 and 3336131 start at 48.7288-48.7291,-120.7414/-120.7406 and top out on the summit"
+  ],
+  "searched": [
+    "WebSearch Mount Ballard East Face Slate Creek - four write-ups",
+    "WebFetch nominatim Slate Creek Road Okanogan - no results; pin not map-confirmed",
+    "WebFetch stevensong.com Mount Ballard - only site navigation returned"
+  ]
+}

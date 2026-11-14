@@ -1,0 +1,195 @@
+{
+  "area_id": "wa_cathedral_rock",
+  "routes": [
+    {
+      "route_id": "wa_cathedral_rock_northeast_buttress",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Cathedral Rock logs: all-routes Jun 16, Jul 32, Aug 40, Sep 33, Oct 6; web: no formal season but snow on the Cathedral Pass approach limits early July (WTA reports); Mountaineers lists the SW face as a summer scramble; stored Jul-Oct."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Cathedral Rock logs: all-routes Jun 16, Jul 32, Aug 40, Sep 33, Oct 6; web: no formal season but snow on the Cathedral Pass approach limits early July (WTA reports); Mountaineers lists the SW face as a summer scramble; stored Jul-Oct."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cathedral_rock_northwest_couloir",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "NW Couloir logs: Jun 1, Jul 1, Aug 2, Sep 3, Oct 1; stored Jul-Sep/Jul-Oct."
+      },
+      "track": {
+        "aid": "1478550",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "3 Sep 2020 logged NW Couloir; report describes the Peggy Pond approach, the cairned shoulder, the two spires at the base, chockstone and tunnel, matching our text; round trip from the trailhead (30 m start, 23 m end), summit 10 m. Caveat: the track also visits Mount Daniel (its highest point), so the owner may want to trim it."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "1745581",
+          "verdict": "unsure",
+          "why": "Aug 2021 NW Couloir, round trip, but no report and it also includes Mount Daniel."
+        },
+        {
+          "aid": "1760231",
+          "verdict": "unsure",
+          "why": "Sep 2021 NW Couloir report, but no track points."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 9,
+          "text": "In September a cairned line crosses heather benches up the west shoulder to the couloir base; the steep loose talus alternative is slower.",
+          "aids": [
+            "1478550"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 9,
+          "text": "Going counter-clockwise round Peggy Pond reaches the rock field by a path; traversing high and clockwise through steep heather is much worse.",
+          "aids": [
+            "1760231"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "The tunnel under the chockstone is a tight squeeze; push the pack ahead of you.",
+          "aids": [
+            "1478550",
+            "1760231"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "A helmet is essential; a short handline covers the steps, and September parties carried a rope but did not use it.",
+          "aids": [
+            "1478550",
+            "1760231"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 9,
+          "text": "September: low in the streambed approach a 10-15 ft class 4 rock step splits the gully; the right side is easier.",
+          "aids": [
+            "1478550"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_cathedral_rock_southeast_face_chimney",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Cathedral Rock logs: all-routes Jun 16, Jul 32, Aug 40, Sep 33, Oct 6; web: no formal season but snow on the Cathedral Pass approach limits early July (WTA reports); Mountaineers lists the SW face as a summer scramble; stored Jul-Oct."
+      },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cathedral_rock_standard",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "SW face/gully logs Aug 1, Sep 4, Oct 1; stored Jul-Oct, best Jul-Sep; Mountaineers describes it as a summer scramble."
+      },
+      "track": {
+        "aid": "2929501",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "3 Aug 2025 report: gully approach, short rope pitch to a boulder festooned with slings, traverse to the summit block, rappel back down the gully, matching our SW face/horn-rappel text; track starts/ends 23-32 m from the trailhead pin and peaks 9 m from our summit. The report does not use the route name, so identity rests on the description."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "274292",
+          "verdict": "unsure",
+          "why": "Logged Southwest gully (30 Sep 2012) but one-way, ending at Nosh Nosh Wahtum 972 m from the trailhead."
+        },
+        {
+          "aid": "2930464",
+          "verdict": "unsure",
+          "why": "Same day and party as 2929501, no report."
+        },
+        {
+          "aid": "2535348",
+          "verdict": "offseason",
+          "why": "8 Jun 2024 snow ascent, no report, line unknown."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "approach_note",
+          "month": 8,
+          "text": "Where the faint path below the base ends, an exposed notch scramble on the right reaches a flat bench; then head left toward the tall spire marking the approach gully, staying left of the gully floor on an exposed ledge to avoid rockfall.",
+          "aids": [
+            "2929501"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "The alternate descent gully on the skier-right side is full of loose rock with narrow choke points; move one at a time.",
+          "aids": [
+            "2929501"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "In early August the party roped for the pitch above the gully and the traverse to the summit block, and unroped at the block.",
+          "aids": [
+            "2929501"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "NE Buttress, NE Ridge and SE Chimney have no identifiable track. Harvested start clusters all sit within 25 m of the trailhead pin, so no pin work needed."
+}

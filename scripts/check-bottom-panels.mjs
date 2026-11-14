@@ -46,8 +46,19 @@ const GUARD = "check:bottom-panels";
 const DECLARED = [
   {
     style: 'position:"fixed",left:0,right:0,bottom:0',
-    file: "ClimbMatchCore.jsx",
+    file: "src/components/PolicyUpdateNotice.tsx",
     why: "PolicyUpdateNotice — non-dismissible by design, so it MUST reserve space; #appscroll's paddingBottom is the reservation",
+    reserves: true,
+  },
+  {
+    style: 'position:"fixed",top:HEAD_H/ZOOM,bottom:0,left:"calc(var(--cm-col-left) / "+ZOOM+")",width:280/ZOOM',
+    file: "lib/Inbox.jsx",
+    why: "the desktop Messages LEFT PANE (Inbox pane=\"side\", 1024px+ only) — it runs to the bottom of the window by design, beside the conversation, not over it",
+    // Drawn at the website's ZOOM since 2026-11-04 (it zooms itself, so its geometry is written
+    // divided by ZOOM and still lands 280 screen px wide at the column's left edge).
+    // ClimbMatch.jsx reserves its 280px: #appscroll takes paddingLeft:280/ZOOM (it is zoomed too) while the pane is open
+    // (_inboxSide) and the "Choose a conversation" prompt takes marginLeft:280, so nothing in the
+    // page column is ever drawn underneath it.
     reserves: true,
   },
 ];

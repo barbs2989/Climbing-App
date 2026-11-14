@@ -17,7 +17,7 @@
 import { useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
 
-const P = { surface: "#161b22", card: "#1c2330", border: "#30363d", text: "#e6edf3", textSub: "#99a3ad", redSolid: "#d0443d", blueSolid: "#2a74de" };
+const P = { surface: "#161b22", card: "#1c2330", border: "#30363d", text: "#e6edf3", textSub: "#b8c0c8", redSolid: "#d0443d", blueSolid: "#2a74de" };
 // Below the toast (Z_TOAST in ClimbMatch.jsx is 1000000), above every other overlay.
 const Z = 999000;
 

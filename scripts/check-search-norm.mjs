@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "./lib/file-href.mjs";
 // check:search-norm — the JS and SQL halves of "how a typed name is matched" are ONE rule.
 //
 // Migration 0190 made every search forgive spelling: "mt baker" finds Mount Baker, "bobs wall"
@@ -26,7 +27,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const S = await import(path.join(ROOT, "lib/search.js"));
+const S = await import(fileHref(path.join(ROOT, "lib/search.js")));
 const fails = [];
 
 // ── 1. the forms table ──────────────────────────────────────────────────────────────────────

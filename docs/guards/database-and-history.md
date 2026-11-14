@@ -339,7 +339,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     hiding in a build log.
   - Injection-tested; the four cases are named at the bottom of the script and are driven by
     `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
-- **`check:rls`** guards three database-security invariants that were each broken in production,
+- **`check:rls`** guards five database-security invariants that were each broken in production,
   and which **58 existing guards could not see** — not one of them was about RLS. All six defects
   the 2026-08-19/20 audit found were on tables holding **zero rows**: a policy that has never been
   asked to refuse anything has never been tested, and 21 of the 32 tables `lib/db.js` writes were
@@ -373,6 +373,37 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     about the run looked wrong; it was caught only by diffing the parsed set against `pg_policy` on
     the live database — **79 parsed against 114 live**. Now 122 = 114 public + 8 `storage.objects`,
     with **zero** live-but-unparsed. Re-run that diff after any change to the parsing.
+  - **Rule 4 — every permissive WRITE policy asks who is calling (2026-10-15).** The owner asked
+    that a signed-in climber can insert, update and delete only their own rows. "Their own" is not
+    always a `user_id` column (a crew's organizer edits its members, a group's managers approve a
+    join), so the rule is the part that holds for all of them: an INSERT/UPDATE/DELETE/ALL policy
+    must contain `auth.uid()`/`auth.jwt()`/`auth.role()`, or call a helper whose **latest**
+    definition reads one (`is_group_manager`, `is_admin`, ...). Permissive policies OR together, so
+    one `with check (true)` defeats every careful policy beside it. RESTRICTIVE policies are skipped
+    (they only narrow), and SELECT is not judged: the public reads (`routes`, `areas`, `reviews`,
+    `contributions`, `objectives`, `crew_members`, `vouches`, ...) are deliberate. Audited live the
+    same day: 75/75 public tables RLS-on, 144 permissive write policies, every one bound; the only
+    write policies without a direct `auth.uid()` are the group-manager ones, whose helpers read it.
+    Parsed set re-diffed against `pg_policy`: identical (one name differs only by Postgres's 63-char
+    identifier truncation). Injections 7 (`with check (true)`) and 8 (strip a helper's
+    `auth.uid()`) both fire; a restrictive `with check (true)` correctly does not.
+  - **Rule 5 — every VIEW is read-only to `anon` and `authenticated` (2026-10-28, `0376`).** Rule 3
+    sees tables only, and a view is not held by RLS: it runs as its owner (`postgres`) unless it is
+    `security_invoker`. Supabase's default privileges give the client roles **every** privilege on a
+    new object in `public`, and the migrations that made `crew_listings` (0036) and
+    `catalog_directory`/`catalog_routes` (0214) only ever GRANTed select. `crew_listings` and
+    `catalog_directory` are one-table views, so Postgres writes **through** them
+    (`information_schema.views.is_updatable = YES`): the anon key could update or delete any crew or
+    any area, past every policy (`set local role anon; explain delete from crew_listings` planned
+    "Delete on crews"). Live re-audit the same day: 84/84 tables RLS-on, 257 policies, every
+    permissive write bound (rule 4); 4 tables have no policy at all (`connection_events`,
+    `edge_rate_events`, `route_base_pin_changes`, `route_views`) — deny-all to the app keys, written
+    only by service-role edge functions or definer RPCs. `0376` revokes everything but SELECT and
+    makes the two catalog views `security_invoker` (Supabase lint 0010); `crew_listings` stays
+    owner-rights on purpose (it reads the private `crews` table and re-exposes listing columns only).
+    After applying, the same EXPLAIN as anon fails `42501 permission denied`, and anon reads of all
+    three still return rows. A DROP then CREATE of a view starts fresh grants, `create or replace`
+    keeps them; the replay tracks both. Injection 9 (remove 0376's revoke) names the three views.
   - A dropped table takes its policies with it, or the guard keeps checking policies on tables
     nobody can fix (measured: `account_links` kept two after #1141 removed account linking).
   - Fails **closed** three ways — zero tables, zero policies or zero definer functions parsed are
@@ -382,7 +413,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     PostgREST does not expose `pg_catalog`, and this repo's rule is that CI never holds privileged
     credentials. Catching the shape where it is *written* is better than catching it in the
     database a day later anyway.
-  - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
+  - Injection-tested 9/9, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
 - **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
   whether one already has. Built 2026-09-25 after `import-route-grades --create-areas` filed MP's
@@ -417,6 +448,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     and length. 0271 merged 10 (higher grade kept); listed as READ: Discord 5.8 trad / WI4+ ice,
     Headless Horseman 5.10b / V7, "Unknown Left" 5.10c/d / 5.10b (placeholder, different grades). A
     future fold should expect this guard to name its leftovers.
+  - **Three placeholder names the exclusion misses (2026-11-04), READ and listed.** "Unnamed DWS"
+    (Black Rocks MI, V2 / V3), "Unknown (5.12)" (Cape Pond Head NL, two Mountain Project ids) and
+    "Unnamed (Oct 25)" (Bottle Glass ON, two Mountain Project ids, walls 5 and 10 apart). A
+    placeholder with a qualifier in brackets or a trailing word is still a placeholder; widening
+    PLACEHOLDER would retire these from the list.
+  - **On Windows** the trigger read needs `shell` + `--read-only` (the CLI now refuses an agent's
+    unmarked query, `HostedMutationConsentRequiredError`), and ROOT goes through `fileURLToPath`
+    (`URL.pathname` gives `/C:/...`, which `path.resolve` turns into `C:C:...`).
   - **catalog_key is recomputed in JS** (`lib/search.js` `searchCanon` + 0214's stoplist). In SQL
     it does not finish over 211k routes: measured `57014` at the default timeout, then a gateway
     **524** with `statement_timeout = 300s`. `check:search-norm` keeps the JS and SQL tables one.
@@ -443,6 +482,57 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     is `audits/area-pairs-2026-09-26/fold.mjs`) or a newly READ different place (`--write-baseline`).
   - **Proven to fail**: with Kraft Boulders / Kraft Crags removed from the list it exits 1 naming
     exactly that pair.
+  - **BUCKET COPIES, third pass (0340, 2026-10-21)**: an area NAMED by a list of places — MP's
+    "Cascade River Drainage (Eldorado, Forbidden, Johannesburg, Sahale, Torment, etc.)" and its child
+    "Boston Basin Peaks (Forbidden, Johannesburg, etc.)" stood beside North Cascades Core, which holds every
+    one of those peaks. The owner: *"this keeps happening … We need to have guards"*. Neither pass above nor
+    0216 could pair it: no coordinate, and no key folds a list onto one peak. A bucket is TWO OR MORE
+    parenthesised names whose `catalog_key` is already an area elsewhere in the state (not inside it);
+    compass/face words do not count. The SAME rule is the trigger `refuse_bucket_copy_area` (0340), which
+    refuses one at insert or rename (bypass: `catalog.allow_duplicate`). Measured over all 67,371 areas the
+    day it was built: 5 parenthesised lists hit 2+ names — the 2 North Cascades buckets (folded by 0340;
+    their one boulder field moved into North Cascades Core), McClellan Mountain (Gray's & Torrey's area) —
+    a separate Colorado 13er, LISTED as read — and 2 face-letter names the face-word rule now drops ("Sport
+    Boulder (E and NE Face)", "Sunset Slab (N & S)"). Proven: before the fold it exited 1 naming exactly the
+    two buckets; a rolled-back re-insert of both was refused live while a face-word, a one-match and a plain
+    name went in. Washington's other same-key areas near the North Cascades were read the same day: all
+    different places (Main Wall, Big Rock, Hairpin, The Temple…).
+    - **Its three gaps, worked by 0341 (2026-10-22, the owner: "keep trying for the others")**:
+      - SPELLING: a listed name now also matches with its spaces taken out ("El Dorado" = Eldorado Peak), in
+        the trigger (index `areas_catalog_compact_key_idx`) and the daily pass. No stored bucket depended on
+        it. Probed live, rolled back: "(El Dorado, Johannes Burg)" refused.
+      - A list OUTSIDE parentheses: a FOURTH pass, daily only, never refused at insert. A hit counts only
+        when the named area is filed NEAR (under the list area's grandparent, or its parent when the
+        grandparent is the state); statewide, 41 names hit and nearly all were one generic word matching a
+        far place. Near, 12 hit + Ouray once the parent rule went in: 3 were copies, folded by 0341 —
+        Arizona's "Courthouse Butte & Bell Rock", Pennsylvania's "Devils Den, Gettysburg" › Plum Run,
+        Icicle Creek's "The Fist/Rob's Corral" — and 7 are LISTED as read, each with its reason.
+        **Shared climbs do NOT decide it**: all 12 shared ZERO climbs with their twins, the 3 copies
+        included — a copy parent holds a DIFFERENT child (Plum Run), exactly as Cascade River held a
+        boulder field Core lacked. Read each one. Proven with `--areas-file` on the pre-fold dump: it
+        names exactly those 3 copies (plus Ouray, then read).
+      - A list naming only ONE place we hold: measured, NOT built — 8 in the catalog, all a generic word
+        matching a different place ("The Lookout (main wall and shield)" vs Castleview's Main Wall).
+    - **Still cannot see** a one-name list, a list split by words other than , / & + "and", or a copy
+      whose listed places sit farther away than the grandparent.
+  - **SIBLINGS refused at insert/move (0385, 2026-10-28, same owner note)**: #2835 dissolved MP's ice/mixed
+    buckets by moving their crags up a level, which filed two places twice under ONE parent — Squamish's
+    "The Smoke Bluffs Ice" beside "The Smoke Bluffs", Durango's "Pine River" (ice) beside "Pine River Area".
+    The second pass caught both the next day; the trigger did not, because one side of each had NO coordinate
+    and 0216/0218 then compare peaks only (the Cascade River bucket had none either). `refuse_duplicate_area`
+    now first refuses a child whose `catalog_sibling_key` (search_canon minus the/area/areas/climbing/climbs/ice
+    — KEEPING mount/peak/crag, so Mount Wilson / Wilson Peak, Baker Crags / Mount Baker, Index / Mount Index
+    and Crested Butte / Mt. Crested Butte, all LISTED as different places, still go in) equals a sibling's.
+    Measured over the live catalog before the fold: exactly 3 sibling pairs on that key — the 2 copies and
+    Illinois' Jump For Jesus pair already LISTED. Proven live in a rolled-back run: re-adding "Pine River"
+    under Durango and "The Smoke Bluffs (Ice)" under Squamish refused; "Smoke Bluffs Bouldering", a bare
+    "Ice" and an unrelated name went in. The fold: the 3 Smoke Bluffs ice climbs onto the crags their MP
+    pages name (Frozen Zombie, Alice → Wall Area; Bughouse Heights Ice → Bughouse Heights), the copy deleted
+    after a 0-count of every referencing table; the Pine River ice leaf moved UNDER Pine River Area as
+    "Pine River Trail" (routes must sit on a leaf, and the two climbs are 3 and 9 miles up that trail).
+    - **`--areas-file <dump>`** runs the passes on a saved `{rows:[…]}` dump instead of the live read, to
+      prove a pass against the catalog BEFORE a fold. Include `lat,lng` in the dump, or the first pass
+      sees no coordinates and goes quiet.
   - **SAME PARENT, second pass (0256, 2026-10-07)**: two children of one area under the plain
     `catalog_key` pair at ANY distance, with or without a coordinate or climbs. The first pass skips
     a shared parent, and 209 groups had collected there unseen — one import's "Pawn, The" beside
@@ -564,6 +654,198 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **A tie the grade parser cannot break**: `gradeNumFor` scores "5.9" and "5.9+" alike, so "keep
       the HIGHER grade" needs a tie-break on the suffix ("+" over none over "-") or a fold quietly keeps
       the lower-reading one. 0278's planner (`higher.mjs`) applies it.
+    - **The source's ROUTE ids find what no name key can — 0284** (2026-10-14). Every route was resolved
+      to the source route id it came from (the import CSVs' URLs: name + wall + the wall's parent, else
+      name + wall within 15 km — 292,741 of 314,917 resolve to exactly one). 82 ids were held twice: 77
+      on ONE wall — the source's own renames imported under both names ("Silt and Bone" / "Silt and
+      Stone", "Slim Harpo" / "De Sable"), spellings `route_name_key` keeps apart ("He Bro" / "HeBro"), and
+      same-grade placeholders — and 5 across walls, every one a PLACE filed twice. That led to a spelling
+      census of areas (names equal without spaces, or one or two letters apart on one pin), each pair read
+      against the source's area tree: ~55 folds ("Coal Pit" / "Coalpit Buttress", "Pywiak" / "Pywiack
+      Dome", "Haimovi" / "Hiamovi Tower", empty twins), DeMoisy Peak and Steamboat Pass copies pinned 75
+      and 49 km off, and four parallel PARENTS this guard could not pair because one copy had no pin
+      (Q'Emiln Park, Gunpowder Falls - Hereford Area, The Ribcage, Red River Gorge's Zoo — the source now
+      files it as "The Zoo (CLOSED)", so the old copy folded INTO the closed one, parking kept off).
+      Kept apart, read: ice beside rock on one wall (Orange Wall, Emperor Slab(s), Barton High Cliff(s)),
+      separate discipline trees (True Summit Block(s)), and pairs the source itself keeps as two places
+      (High / Higher Energy Crag, Shardwal / Shartwall, Doja / Dojo Boulder). Mount Olympus / Mt Olympus
+      left the read list: #2302 kept it apart only because the leaf rule stopped two couloirs moving
+      onto a mountain with sub-areas; 0284 NESTS them as "Mount Olympus Couloirs". Two traps for the next
+      fold: the CLI's own overhead was ~80 s a call that day, so a dry run can 524 at the gateway while
+      the SQL is quick (a 524 says nothing about commit — read `schema_migrations`); and a child named
+      for its parent ("Blue River Bend" › "WM: Blue River Bend") cannot hand its climbs UP while it
+      exists (`routes_require_leaf`) — the child takes the parent's place instead (0284 step 5c).
+    - **Pairs sharing ONE or TWO climbs — 0285** (2026-10-14). 0278 read every pair sharing three or more;
+      the tail under 2 km was 266 pairs, each shared climb's two copies set beside the source tree's entry
+      or entries and both rows' FA, length and description, then read (four Sonnet readers, their flagged
+      blocks re-read): 157 merged — most where the SOURCE lists one climb on two walls itself (Pentecost on
+      Down Under and Outback Wall, one FA) — 154 kept apart (rock vs ice or boulder, different FAs, grades
+      far apart, and everything unsure), 6 places folded. Kept apart on a judgement worth knowing: Missouri's
+      closed Hiker's Boulder beside the park's Planet Express (Seymour, Ankylosaurus — no source entry says
+      which boulder — settled by their pages in 0288); Interstate Park's roped "The Pit" beside its bouldering tree's "Pit (AKA Arm Pit)".
+      Cupids Bower's old copy named its climbs "BA", "Master Degree", "PHD" with the same "5.9" on all three:
+      merged into the current names WITHOUT the higher-grade rule, because a uniform grade is not a reading.
+    - **The 34 0285 left unsure, settled from their own PAGES — 0288** (2026-10-14). The tree says where a
+      climb is FILED; only its route page says where it IS. Each copy's page (description, location, FA,
+      height) and the area page above it were read: 6 merged, 27 two climbs, 1 unsettled (South West
+      Overhang — nothing describes the V3-4 copy on High Ball Boulder). Seymour and Ankylosaurus went to the
+      PARK boulders: the source now files both under the closed Hiker's Boulder, but their own pages start
+      one beside The Last Samurai and put the other on the Lost World boulder. Traps met: the agents' WebFetch
+      cannot open those pages but a plain `fetch` from node can (and the local crawl's `_routes/` holds some);
+      and a sort number on the SOURCE's own climb names ("4. Super Collider") hid an entry from the name
+      match — read the area's list, not just the route ids the match returned.
+    - **The source's "New Sub-Area N" placeholders, named or folded — 0292** (2026-10-14). 18 areas; see
+      `check:generic-area-names` for what they were. Two new planner steps: `newAreas` (a boulder the source
+      names and we lack, created at the source's pin before its climbs move in) and `lift` (a placeholder
+      steps OUT of the area its climbs move into first — `routes_require_leaf` refuses a climb on an area with
+      sub-areas, and the planner moves climbs before it deletes areas; the first dry run stopped exactly
+      there). An area that starts holding climbs is retyped `region` → `crag`: every one of the 52,383
+      climb-holding leaves is a crag or a peak. Rollback: `scripts/data/placeholder-sub-areas-rollback.json`.
+      Numbered 0290 first: `check:migration-claims` was clean, then another PR merged its own 0290 and recorded
+      it before the apply ran. The PLAIN record insert (the README fix of 0288's day) failed on the taken
+      version, the whole apply rolled back, nothing landed, and it was renumbered. The old `on conflict do
+      nothing` would have reported success and recorded nothing. 0291 was then claimed by an open crew PR
+      (#2395) too, neither applied; this one moved again, to 0292, because regenerating costs it nothing.
+    - **The same climb on two areas 2 km+ apart — 0293** (2026-10-15). 0285 read only pairs under 2 km. Of the
+      3,573 farther pairs sharing 1-2 climb names, 3,390 are names the SOURCE lists twice in the state (two
+      climbs; not read again). Of the 183 left, 49 differ in description or FA (two). 134 read by two Sonnet
+      readers from pre-fetched source pages, then every ONE re-read: **50 pairs, 68 climbs merged**, 7 emptied
+      areas folded (same place under two names, or a placeholder/catch-all). The signal that decides most:
+      for each side, how many of the AREA's climbs the source still files under that area's name — a side
+      the source files 0 of its climbs under is a stale copy (a dissolved catch-all, a holding pen). Distance
+      decides nothing: pins inherited from a parent made one pair look 232 km apart. Traps: a name match
+      across the state (Rumbling Bald's "The Pit" received Moore's Wall's Pit Area problems; Leavenworth's
+      "Upper Castle" a Rainier crag's route); a WA guidebook import that hung 11 hard sport routes on Burge
+      Mountain's beginner ledge (3 merged into Marcus/China Bend; **the other 8 are still there**, origin
+      unread). Kept apart on reading: 7 UNSURE and the common names ("Front Left", "Perfect Route"). Also
+      found, NOT fixed: whole catch-alls the source has re-filed ("Forest Hill Park Bouldering" 32, "A and B
+      Blocks" 22) — the Rainbow Mountain pattern. Rollback: `scripts/data/far-twins-rollback.json`.
+    - **Lists the source has re-filed onto boulders we already have — 0296** (2026-10-15). The Rainbow
+      Mountain pattern swept catalog-wide: for every area, how many of its climbs the source still files
+      under that area vs another. **1,157** lists file most of theirs elsewhere (13,693 climbs). A climb
+      MOVES only when the source lists its name ONCE in the state, under an area of ours that shares the
+      list's parent or grandparent, within 3 km, a leaf, lacking the climb, and the name is not generic
+      ("Project", "V0", "Traverse" — 162 held back): **4,174 moved**, 3 merged, 62 emptied lists folded
+      (50 were an older copy of ONE area: the Gunks' "Moe (closure) to Harvest Moon" = "Closure to Harvest
+      Moon"). 40 drawn at random checked against the live pages: 40 agree. The likely cause: a newer import
+      created the named boulders, and `refuse_duplicate_route` refused each climb because the old flat list
+      already held it nearby — so the boulders exist with a few climbs each and the list keeps the rest.
+      **Left, measured:** 5,644 climbs whose source home we do not have (an area to create, Rainbow-style),
+      2,103 whose name the source lists more than once, 1,435 whose home is the list's own parent (the
+      catalog's "<Crag> Routes" convention — fine). **Applied in parts**
+      (`scripts/oneoff/apply-fold-in-parts.mjs`, 0251's method made generic): 4,174 moves at ~60 ms of
+      triggers each outlast the ~100 s gateway. Two generator costs found timing it: the ancestor set read by
+      a self-join on `@>` (now read off the path's labels — each IS an id) and a recount that re-scanned
+      whole states per ancestor (now one pass). Rollback: `scripts/data/catch-alls-rollback.json` (merges)
+      and the migration's own `m_move` (every move's from and to).
+    - **The source's holding bins, each climb filed by its own page — 0297** (2026-10-15). Areas named as a
+      bin ("ZZTemp Holding", "temp holding", "(Placeholder)"): the source STILL files every climb in them in
+      its own bin, so no name match places one; each climb's page (Location, Description) and the bin's pin
+      did. The pin is the strongest signal: the Rumney Pound's 12 boulders sit 0-31 m from our "Pound
+      (closed), The". Merged: Oliverian Notch's 5 routes "added twice" (Big Wall holds each), Spanish Fly,
+      South West Overhang (one on the source, on Southern Boulder). Placed: two boulders the pages name
+      (Cottonwood Springs' Crossfit boulder, Hillbilly Highball Boulder), a bin renamed for the boulder it is
+      (Warm-up Boulder), two nests (Beaver Pond Road Cut Ice, North Fork of Taylor Routes). 16 empty bins and
+      the source's 2 test routes deleted. Name twins of a bin's climbs elsewhere in the state were 50-171 km
+      away, with other grades: none was the same climb. **Left for the owner, an ACCESS decision:** WA's
+      closed areas filed under initials ("2C (Placeholder)", 105 climbs), the Pound ("Currently closed per the
+      owners … Don't climb here"), Bunyan Mountain (landowner asks people not to use it), Pickledish's temp
+      holding (closed by the landowners), Maine's "Rockporxxt Harboxxr Hotel". Left unplaced: 6 Maine climbs
+      and 7 Hillbilly problems whose pages name no crag or boulder. Burge's 8 Ledge routes: no record found
+      anywhere (source, web), still there. Planner: junk rows now come from `extra.json`, and a climb cannot be
+      moved onto a place that has walls (`routes_require_leaf`), so a list there nests as "<Place> Routes".
+      Rollback: `scripts/data/holding-bins-rollback.json`.
+    - **Places the source WITHHOLDS for access, withdrawn — 0301** (2026-10-15, owner: "do what you
+      recommend based on online research"). The rule: follow the source's own practice. What it HIDES (WA's
+      closed crags under initials, the Rumney Pound's boulders kept "for history ... Don't climb here", Bunyan
+      Mountain's "respect the landowner's request", a Maine spire on hotel land named in disguise) is deleted:
+      227 climbs, 48 areas, every row whole in `scripts/data/closed-places-rollback.json` to restore if access
+      reopens. What it SHOWS with a closure banner (Pickledish, "Pound (closed), The") stays. Also South West
+      Overhang back to the source's V1+: keep-the-higher is for old guidebooks graded low, not a misfiled copy's
+      grade (Dishpan Hands keeps V8: the source's "V0-1" is a placeholder on an "unfinished brutal highball").
+    - **The source's boulders we lacked, created, and their climbs filed on them — 0310** (2026-10-15). 0296's
+      5,644 "no area of ours" climbs. 5,481 passed 0296's rules (one home in the state, inside the list's crag,
+      ≤ 3 km). **2,289 were already home**: with the name read clean, the LIST itself is the home — the sweep's
+      key missed a sort label ("1. Upper Wall"). Placed: **2,056 climbs onto 417 new areas** (and existing levels
+      reused), 91 emptied lists folded. Applied in parts (`apply-fold-in-parts.mjs`); dry runs: part 1 in full,
+      and an Oregon subset end to end. Traps, each caught before it shipped: (1) the source's page HEADING
+      appends the area type on a new line ("Middle Marker\n Rock Climbing") and HIDES a leading initial ("T.
+      Barnum Wall" for "P.T. Barnum Wall"): the real name is the BREADCRUMB's; (2) the export's stored names had
+      the same cut; (3) a name matched exactly where the planner matches without stop-words ("Middle Marker" vs
+      "Middle Marker Area"): match siblings the PLANNER's way; (4) the "duplicates" found were each climb paired
+      with ITSELF (the list was the home) — 2,099 merges that would have deleted every one; (5) a new area under
+      one that holds climbs is MIXED (`routes_require_leaf`). Left: 491 whose chain has a generic level
+      ("Bouldering", "Top Rope"), 282 whose home has a same-named area within 1.5 km (likely ours under another
+      parent), and the places dropped as not-new or unnamed (Turtle Rock, Mordor, S.B.R. Block, "E. Macy Park").
+      Planner: a new area's parent may be another new one (`insertUnder`), and "left empty" counts its subtree.
+      Rollback: `scripts/data/boulders-created-rollback.json` (folded lists) and the migration's own `m_move`.
+      **REVERTED by 0316** — see the next entry.
+    - **0310 reverted exactly — 0316** (2026-10-15). After 0310, `check:area-duplicates` failed on 17 pairs and
+      `check:summit-briefing` on its fixture: Mount Baker had lost 7 of its routes to a new "Mt. Baker" under the
+      source's North Cascades. 0310's "does this place exist?" test matched names EXACTLY within 1.5 km; a wider read
+      (state-wide, Mt./Mount, spellings, labels, our `_2` ids) found ~60 places re-created: Stone Fort's whole tree a
+      second time, Chuckwalla / Chuckawalla Wall, Ellesmere / Ellsmere Island, "(.3) Cougar's Den" / "Cougar's Den",
+      peaks under a second parent. Fixing pair by pair was a redo, so 0316 puts 0310 back from its own rollback: the
+      91 lists re-created (id, name, parent, every column), the 2,056 moves reversed, its 417 areas folded away, the
+      keeper fill undone. Dry runs: part 1 in full, and an Oregon subset end to end. **For the redo, "is this place
+      ours already?" must search the WHOLE STATE**, under the planner's match plus Mt./Mount, spelling distance,
+      sort labels and `(aka …)` qualifiers, read every hit, and treat a peak's own route list as the place, never a
+      catch-all. A guard that names a FIXTURE (`check:summit-briefing`'s Mount Baker) is a free tripwire: run the
+      route-page guards after any catalog fold, not only the catalog ones.
+    - **0310 redone strictly, plus the names the source lists twice — 0320** (2026-10-15). The rule above, built:
+      every level of a climb's home is looked up state-wide (planner match, Mt./Mount, labels, parentheticals,
+      `| 1234`, spelling distance ≤ 2, 5 km by the nearest pin above OR below an unpinned area, and any same-named
+      area under the same parent). One hit is reused, two make the climb wait, and none creates the area. A climb never
+      leaves a peak's own list, nor a list that already IS its home under another spelling (3,796 of those: "Chuckawalla
+      Wall" ⇐ "Chuckwalla Wall", "Sinkhole" ⇐ "The Sinkhole", "Slesse Mountain" ⇐ "Mt. Slesse"). Then every new
+      area was read against every area within 3 km, and 8 more were the same place ("The Vault - CLOSED TO CLIMBING",
+      "Boulder N (aka Pimp Juice Boulder)", "Shinall (Chenal) Mountain"). The 2,103 ambiguous names were placed
+      only where exactly ONE of the source's homes sits inside the list's own crag within 3 km (1,120). 1,284 climbs
+      moved, 256 areas created, 110 emptied lists deleted, no grade changed, and 40 random moves were checked
+      against the live pages, all agreeing. The pin miss that let one through: an area with no pin above it
+      ("Beale Springs Wall") read as "not near". **An unpinned area is not a far one.**
+      After the apply, `check:generic-area-names` caught a new "CT Bouldering". decide.mjs had called
+      `genericAreaName(name, [])` with no ancestors, so the "discipline words beside the state" rule never fired. The
+      climbs whose source chain began at the STATE (17) were the risky class: **0324** puts AL's 7 back on Horse
+      Pens 40 Routes (0320 had re-created the source's "Temp HP40" bin under Alabama) and files CT's Babyface/Warm-Up
+      Slab under our Coney Rock Preserve, deleting the copy and "CT Bouldering". **Pass the ancestors, and treat
+      a chain anchored at a state as unsure.**
+    - **Pickledish's last holding bin — 0321** (2026-10-15). The source's "temp holding" > WW / BW > "Section 3
+      (edit later)": WW's page says "eastern end of SMW formation", so Crumbly Slab joins Spring Morning Wall. BW is
+      its own undeveloped buttress, so it stays, lifted under Pickledish, with The Bad on it. Three placeholders are
+      deleted.
+    - **The rest of 0320's waiting climbs — 0349** (2026-10-22), plus **0350** (the last sort label, "c Electric Co.
+      Sector"). Three rules from 0324 were added:
+      - a chain that begins at the state waits (420 did);
+      - "generic" is tested with the ancestors, and a generic LEVEL is stepped over;
+      - of several areas of ours that could be the home, the one inside the list's crag is taken.
+
+      It also covers the 591 names the source lists once but which several of our areas share. 364 climbs moved
+      (nearly all onto areas we had), 4 walls were created, and 11 lists were folded. **Every move, not a sample, was
+      checked against its live page**, and 21 were dropped. Seven had been re-filed by the source since the crawl
+      (Hotel Boulders: C Block → A Block). Fourteen were a spelling-distance false match: Seal Rock's "S Side" read as
+      our "South Ridge" (side/ridge is 2 edits). **Edit distance ≤ 2 matches different words when they are short; a
+      live check of every move is cheap (~8 min) and catches it.** Still waiting: 481 whose source home is itself
+      generic, 420 state-anchored, 123 with several areas of ours outside the crag, and ~217 the source lists
+      under several homes. (An earlier count of ~1,341 for that last group included the 1,120 that 0320 had
+      already placed.)
+    - **A third pass — 0355** (2026-10-23), plus **0356** (the 18 area names ending in the source's id suffix).
+      0355 adds three ways to settle a climb:
+      - a state-anchored chain counts, but only when it creates nothing;
+      - of several areas of ours, the one nearest the source's pin, when it is within 1 km and the next is 3× as far;
+      - a name filed under several homes inside the crag, when exactly ONE home's live climb page gives our grade
+        (71 of 121).
+
+      Every move was live-checked and 28 of 51 agreed. Five more were left out by reading: three come from
+      "Restricted Access" lists (0301 withheld access there, and placing them would make them findable), and two
+      would have moved our "Climbing Area 57" onto a new "Area55". That leaves 23 moves and one emptied list.
+      0356 handles the 18 "Carter Lake | 5876" names:
+      - 13 renamed: the suffix off, and "<Place> Routes" where that would repeat the parent;
+      - 3 same-named middle layers lifted, their descendants re-pathed explicitly, because the path trigger rewrites only
+        the touched row;
+      - 2 folded into a twin. **The duplicate trigger (0216) caught one twin the plan had missed:** after a lift,
+        "Painted Savage Boulders | 8759" would have landed beside an existing "Painted Savage Boulders". Check a
+        rename against the FINAL parent, after the lifts.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
@@ -584,6 +866,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     wall's name), Horse Flats' "Y Crack Boulder" / "A Boulder", "Y - North/South Side" kept (the crag
     is The Y), "N. Red-Yellow" and "B. School" kept as unsettled. Only 150 renames had no labelled
     sibling to vouch for them; those were the ones read.
+  - **A protest label is stripped the same way** (2026-10-29): Mountain Project carried an area named
+    "PUBLIC LAND FOR SALE-Wayne's World" (North Bend dry-tooling), from a 2025 campaign asking
+    climbers to put that phrase on route and area names. It is not the place's name. The one
+    WA area that had it was renamed to "Wayne's World"
+    (`scripts/oneoff/getting-there-directions/fix-protest-area-names.mjs`). The rule only strips it when a
+    dash or colon follows it, so a wall truly named "Public Land Wall" keeps its name.
   - **The rule must be IDEMPOTENT** — the importer strips names the rename already stripped. The
     first run broke it three ways ("V3 - " read as a letter-dash label, ". . more" as dot markers,
     "Z1:1:" stacked); tested since: f(f(x)) === f(x) for all 58,515 distinct names.
@@ -622,6 +910,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     NOT merged, on purpose: pairs that read as two climbs ("The Last / The Lost Gardener"), the
     UNSURE ones, and names whose grade or mark IS the difference ("The 5.7 / 5.7+ Corner"). Same-named
     placeholders with different grades ("Unnamed" 5.6 / 5.9) are different climbs, never candidates.
+  - **WIDENED by 0284** (2026-10-14): the rule needed a space after the label, so 66 labels sat in plain
+    sight with the guard green — 21 unspaced ("1.The Left Wall", "01.Entrance Boulder", "A.Trad Dad
+    Boulder", "D2.Renaissance"), 29 digit-dash series ("1-Upper Wall", Silver Lake's "0-Bachar" … "9-Secor"),
+    16 decimal guidebook numbers with a dash (Devil's Lake's "7.2.1 - Birthday Rocks") — plus 108 REGION
+    codes the source sorts a state by (Missouri's EM/CM/WM/SW/NM/XM/ZM, New Hampshire's "WM:" White
+    Mountains). Read and KEPT as names: "5-Mile Boulders", "12-Bar Boulder", "41-Minute Dome", "1-Bolt
+    Boulder", "20-Meter Freestyle Area", "3-Star", "4-H Nature Area", "7-11 Crag", "30-30 Rock", grade-named
+    walls ("5.10 Wall"), and a decimal with no dash — Safe Harbor's walls are named by TRAIL MILEAGE
+    ("1.0 Spectator Wall", "4.49 Cemetery Wall"), which tells a climber where the wall is. "EM: (closed)"
+    and "WM: (Closed) Kaysinger" keep their code: stripped, one would read as a bare "(closed)". Six
+    labels hid a sibling twin ("1.The Left Wall" beside a one-climb "The Left Wall"; three empty Missouri
+    copies) and were folded, not renamed. Devil's Lake's roped "7.1.1 - Railroad Amphitheater" and
+    "7.4 - Pony Barricade" meet same-named boulder fields of the source's separate BOULDERING tree once
+    stripped — two discipline trees of one place, listed in the area-duplicates read list like every
+    such pair.
   - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
     set the order on screen and removing them lost no guidebook sequence.
 
@@ -683,6 +986,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     finds it next time. Any import must run from a checkout that has `scripts/lib/generic-area-name.mjs`;
     a red here after an import means it did not. Fold a re-created bucket by hand: move what it holds to
     its geographic home (`catalog_find_area` first), keep the child's own name, delete the bucket.
+  - **The source's PLACEHOLDER counts too** (2026-10-14, **0292**): "New Sub-Area 1", "Sub-Area 3" — the
+    source's default for a sub-area nobody named. The number rule ("Boulder 3" is an identity) let all 18
+    through, so the placeholder is tested FIRST. What they were: Rainbow Mountain's 53 problems in one beside
+    the 15 boulders the source has since named; Shady Corridor's main list, held twice; one-problem walls;
+    seven empty. The importer now steps THROUGH such a level, so a re-import does not re-create one beside
+    the area 0292 named. A placeholder the SOURCE never named is not researched again: its climbs' own pages
+    were read (Stone Fort's said "On the Potato Boulder"; the rest name no boulder), so it took the catalog's
+    "<Place> Routes / Bouldering", or the name of its only problem. Not covered, deliberately: the holding
+    bins ("ZZTemp Holding", 110 climbs in NH; Washington's "(Placeholder)" walls under "ZZ Holding Spot for
+    Temporarily Closed Areas"), which park closed or unplaced climbs and need each climb researched first.
 
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
@@ -893,6 +1206,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       head**, so it injected the forbidden shape while claiming to be innocent; and an
       outside-the-form decoy that included `u1` tripped the older file-wide rule instead, saying
       nothing about the new one. **A case that fails for its own reasons proves nothing.**
+    - **2026-10-15, rule 4 fired on purpose and the fix was a NEW DEFINITION, 0327.** 0317 made
+      seven more columns editable on the route page (`ffa`, `fwa`, `alt_names`, `variations`,
+      `high_point_ft`, `sun`, `pro_tips`); offering them in `lib/AddRoute.jsx`'s `FIELDS` without
+      a migration fails rule 4 against 0157, which is the point — the form must not ask what
+      approval drops. 0327 was **generated from 0157's body by INSERTION** (the generator refuses
+      a file whose column count and value count disagree: 58 and 58) and restates 0171's
+      `set search_path` in the definition. A trap met: `String.prototype.replace` reads `$$` in
+      its replacement as ONE `$`, so the first generated file lost the dollar-quote and
+      `check:migration-replay` stopped at it with `syntax error at or near "$"` — use a function
+      replacer. The form sends `highPointFt` in FEET (through its `canonFt`, like gain), so the
+      SQL rounds without converting; `altNames` is unnested to `text[]` like `rack`, and
+      `variations`/`proTips` pass through as jsonb arrays like `whatToBring`.
 - **`check:function-columns`** asks the general form of the question `check:approve-route-columns`
   rule 1 asks about one function: **does every column a stored function WRITES still exist?**
   #1020 dropped `routes.source`, swept the five call sites its header names, and missed
@@ -1201,7 +1526,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   (`approachFinishes`) reads siblings' `approach_variants`, so that column stays in the list; and
   the climb picker (`DbClimbPicker`), which hands a row to the LOG FORM rather than to openRoute,
   so it asks for `{ full: true }` under its own key. **What the guard does:** parses the readers
-  (RouteRow, SummitBriefing, the sibling cells and rows, ApproachPicker, the two approach memos)
+  (RouteRow, SummitBriefing, NEXT DOOR (`WallNeighbours`, since 2026-10-21; it replaced the header strip's `cell`) and the sibling rows, ApproachPicker, the two approach memos)
   and every function they hand a row to, across lib/DbAreaBrowser.jsx, lib/grade.js,
   lib/outing.js, ClimbMatchCore.jsx and RouteDetail.jsx; maps camelCase reads back to columns
   through dbRouteToCamel's own object; decides what IS a column from `scripts/schema-snapshot.json`
@@ -1227,7 +1552,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 Owner rule: a peak route with rock-climbing pitches (5th class and above) is **alpine**; mountaineering is a true walk-up or glacier/snow slog with no required rock pitch. Eldorado's East Ridge (5.7 at the top) was filed mountaineering. Three layers keep it so: migration **0280** (a BEFORE trigger turns mountaineering into alpine when `grade`, `rock_grade` or `alpine_grade` carries a YDS 5.x, keeping the row's other disciplines), `catOf` in `ClimbMatchCore.jsx` (same test on read, `hasFifthClassGrade`), and this audit (reads every `discipline=mountaineering` row; refuses fewer than 100 rows read, so an RLS-empty read is not a pass). Needs the anon key only. Not in build (it reads the database).
 
-- **Only the grade columns decide.** A 5.x in `pitch_detail`, `overview` or `gear` is NOT counted: the 2026-10-08 sweep of 157 candidates found stray pitch 5.x on Class 3-4 rows belonging to a different route on the same peak (Pandora's Box, Klawatti, Fury, Snowfield). Those were researched one by one (4 agents, 22 routes each), and 99 were relabelled (69 with a 5.x grade/pitch, 28 on a high/medium "alpine" verdict). A "5.2 miles" is a distance, not a grade (the regex excludes unit words).
+- **Only the grade columns decide.** A 5.x in `pitch_detail`, `overview` or `gear` is NOT counted: the 2026-10-08 sweep of 157 candidates found stray pitch 5.x on Class 3-4 rows belonging to a different route on the same peak (Pandora's Box, Klawatti, Fury, Snowfield). Those were researched one by one (4 agents, 22 routes each), and 106 were relabelled (69 with a 5.x grade/pitch, 28 on a high/medium "alpine" verdict). A "5.2 miles" is a distance, not a grade (the regex excludes unit words).
 - **Glacier crossing alone stays mountaineering** (see `glacier-means-mountaineering`): glacier + a REQUIRED 5th-class pitch or technical ice is alpine; the conditions card keeps the glacier flags for those (`condKind`).
-- **`HELD` list.** 10 rows whose own grade says 5.x but whose research found no required rock (Sahale Glacier, Storm King North Face, Tepeh Towers …). They are not exempt: relabel them or correct their grade, then delete the id. Note the trigger will flip any of them on its next grade edit.
+- **`HELD` list: one row.** Dragontail's Pandora's Box West Route (Class 3 snow couloir; its 5.6 is an optional summit-pinnacle pitch in `rock_grade`). The other nine rows held on 2026-10-08 were settled by reading each row, not its fingerprint: seven carry their own 5th-class evidence (`rock_grade` "low 5th"/"Easy 5th", a rack, a rope for pitched climbing, a pitch count) and went alpine (Anderson's Thumb, Burnt Boot N Ridge, Inner Constance NW Buttress, Goatshead Spire, Crowder NE Ridge, Storm King N Face, Tepeh Towers); Sahale Glacier and Overcoat East Face had a STALE 5.x (sources: glacier plus Class 3-4, a low-5th move only possible on the summit block) and were regraded to Class 4, staying mountaineering. `scripts/oneoff/fix-held-mountaineering-grades.mjs` did it.
 - Scrambling verdicts from the research (Ellinor, North Gardner, Plummer, Tricouni SW, Windy Peak) were NOT applied: moving mountaineering to scrambling was not part of the ask.
+- **Widened 2026-10-24 to SCRAMBLING and to the `disciplines` LIST.** Owner, on Monte Cristo ("Standard Scramble", 5.6): "Most people don't scramble a 5.6 graded route." The row's primary had been alpine since #1854, but its list still read `["scrambling"]`, and `DiscBadges`/`rDiscs` let a non-empty list win outright, so the page said Scrambling. 83 rows' lists omitted their own primary, because every walk-up round re-filed `discipline` and left `disciplines`. Now: `rDiscs` leads with `catOf(r)` and drops "scrambling" from a 5.x route; `catOf` and trigger **0366** turn scrambling + 5.x into alpine (Cardinal SE Slopes, Mount Meany, Huckleberry West Face, Lundin East Ridge — each carries rope or rack for its pitch) and keep the primary in the list on every write; `scripts/oneoff/fix-disciplines-list-matches-primary.mjs` repaired 123 rows (rollback file in `scripts/`), renamed Monte Cristo's row *North Col* (The Mountaineers list it as "Basic Alpine Climb — Monte Cristo/North Col") and Horseshoe/Spire's "Standard Scramble" to *Standard Route*; four peak labels (Huckleberry, Lundin, Meany, Cardinal) moved to alpine with their standard route. This audit fails on either kind again. It reads with the **service key** now: under the anon key RLS makes the sparse scrambling/alpine keyset pages hit the statement timeout.
+- **Residue fixed 2026-10-25 (owner's note: "5.6 or 5.7 yds still counted as mountaineering").** 0280 turned a mountaineering row alpine but kept "mountaineering" in its `disciplines` list, and `rDiscs` reads that list, so **83 live alpine routes with a 5.x grade still showed the Mountaineering chip**. The audit's primary-column pass could not see it (their `discipline` was already alpine). Fixed three ways: `rDiscs` drops "mountaineering" from a 5.x route as it does "scrambling"; `scripts/oneoff/strip-mountaineering-residue.mjs` stripped the tag from exactly those 83 rows (paced, each PATCH asserts its old list; re-read: 0 left; 20 alpine+mountaineering rows with no 5.x kept as walk-ups); this audit now also fails on a five-class alpine row listing mountaineering. Note the audit's `disciplines=cs.` array filter times out on `routes`, so the residue scan reads the indexed primary `discipline=eq.alpine` and filters the array in memory. No new trigger: 0366 already keeps every grade-driven write honest.
+- **Class 1-2 mountaineering rows lost "alpine"/"scrambling" from their list** (walk-ups — Baker Easton, Rainier Emmons, Mount Townsend's trail). **Class 3+ lists were left alone**: a first draft that rebuilt lists from the Class grade tagged Rainier's Disappointment Cleaver a scramble.

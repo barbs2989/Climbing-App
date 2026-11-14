@@ -472,8 +472,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     Ridge) — `lengthM` feeds the planner, so a rewrite drops an unsourced length rather than keep it.
     `verify-route-breakdown-renders.mjs` checks the rows reach the Plan tab; it is spent once the
     rows are edited again.
-  - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` are mutually
-    exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` used to be
+    mutually exclusive through `isPitched()` — only on pitched routes; 121 unpitched routes drew
+    both, breakdown first. Since 2026-10-22 both render wherever written, CLIMBING ROUTE first;
+    both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
     dense line its mount lived on.
 - **`audit:area-parents`** asks whether each area is filed under the place it belongs to —
@@ -1119,6 +1121,46 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Service key, reads ~230k routes + 53k areas (~3 min). After 2026-09-30: **0 on 0 rows.** Not a
     build gate — a property of the DB, not the checkout.
 
+- **`audit:prose-length`** asks whether a route's **description** (`overview`, the *Route
+  description* card) states a climb length or pitch count that its own **stats** contradict — the
+  *Route length*/*Climb length* tile (`length_m`, else the `pitch_detail` sum) and *Pitches*
+  (`pitches` when > 0). Reported by the owner on 2026-10-24: *"the description says the climb
+  length is different than technical stats show"*. Report-only; `scripts/audit-prose-length.mjs`.
+  - **Almost every number in this prose is a SECTION**, so the extractor is POSITIONAL: a length
+    counts only at the OPENING of the description, after "the route/climb/it is|runs N", or as
+    "N m in total" not tied to a numbered pitch; a pitch count only where a sentence OPENS with it,
+    as "a/an N-pitch <route noun>", or "N pitches long". The unrestricted first pass read 1,633
+    pitch phrases and every "a 50-ft chimney" as a route length. One-sided by design: a whole-route
+    length stated mid-paragraph is missed, never manufactured. `--selftest` holds 9 cases.
+  - **First run, 2026-10-24: 18,463 described routes, 29 contradictions on 28 routes.** Every one
+    was READ and researched (Mountain Project, the AAC, SummitPost, theCrag):
+    - **16 were not contradictions** — the number describes a spur, an extension, the opening
+      section, another line, an option ("plus an optional 7th"). They sit in `READ` in the script,
+      each with its reason, and print as a count so a later edit that makes one real is not hidden.
+    - **7 repaired on the first pass** (`scripts/oneoff/fix-prose-length-2026-10-24.mjs`, compare-and-set, rollback in
+      `audits/prose-length/`). Stats wrong: Dual Track w/ Extension 1→2 pitches and Expresso
+      (Cap Trinité) 1→9, both itemised by their own prose with the stored length already agreeing;
+      Stringer 2→4 pitches and 49→120 m, its prose itemising 45+30+20+25 m. Prose wrong: Leviathan
+      "ten-pitch"→nine (AAC: 9; the prose lists nine pitch grades), Doug's Dandy Lower
+      "four-pitch"→three (four is the Upper section), Stop That Train 12→11 (published 11 pitches,
+      1,400 ft), Air Kentucky "A 200 ft sky route"→"200 ft off the ground" (the pitch is 75 ft).
+    - **2 more on a second-source pass**: Stokeman Pillar 5→6 pitches and 183→200 m (the first
+      ascensionist's AAJ report: 200 m of climbing above the couloir, 250 m overall); Lichen Arete
+      prose "eight-pitch"→nine (a guide service lists 9 pitches, as stored). **9 repaired in all.**
+    - **3 stay OPEN, on purpose** — the only source contradicts itself and nothing independent
+      names the route: The Mammoth (header 8 pitches, text itemises P1–P7), Station D Peak North
+      Buttress (header 7, text "nine pitches"), Echo Location (header 30 m, text "a 55 m pillar").
+      A guidebook settles them; do not pick a side from the one page again.
+    - **Where the one source disagrees with itself** (a stats header saying 5, its own text saying
+      6), the itemised pitch-by-pitch text wins only when it also states the total; otherwise the
+      row stays open rather than picking a side.
+  - **The 163 + 17 "stated where the stats show none" are a GAP, not a contradiction** — nothing on
+    screen disagrees, because a 0 pitch count and a missing length do not render. They are counted,
+    not listed (`--missing` lists them). Filling them from the prose is a separate job, and a
+    fingerprint does not authorise a bulk fill: read them first.
+  - Service key, reads every route with an `overview` in 500-row pages (1,000-row pages hit the
+    statement timeout on 2026-10-24). Not a build gate — a property of the DB, not the checkout.
+
 - **`audit:multi-approach`** — which climbs can be reached more than ONE way, and can the page
   switch between them? Report-only; a signal is a reason to read the row and research the climb.
   - Signals: `VARIANTS` (≥2 cards, none linked), `PROSE` (names an alternate approach, <2 cards),
@@ -1131,6 +1173,17 @@ the correction knows the screen is wrong, and they have no way to report it.
     not the route being a finish. Research decides; never re-quote these counts, re-run it.
   - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
     with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **`CARD_TWO`: a card that describes two ways in** (owner note 2026-10-28). Mount Logan's Banded
+    Glacier was switchable, so every signal above skipped it, but its default card began "Two ways in,
+    and which one you use depends on whether SR-20 is open" and the page draws one way in at a time, so
+    it read as one approach with two descriptions. No prose signal read a card's own `notes`. This one
+    does, on switchable routes too, and a verdict never hides it. The fix is per route: split the text
+    so each card narrates only its own way in, and give each its own data.
+    `CARD_TWO`'s ALT_RE caught 16 cards across 842 routes, and most were fair comparisons ("the
+    shorter of the two ways in"). A wider net (alternate/fallback/"also be reached", two named
+    trailheads in one card) gave 92 routes to read, and 23 really did narrate another way in
+    (`scripts/oneoff/approach-cards-one-way-each.plan.json`). So a CARD_TWO count of zero is not the
+    class closed: re-run that wider read before calling it done.
   - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
     carried a signal, all already read and judged one way in, so every run buried anything new under
     them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
@@ -1152,3 +1205,98 @@ the correction knows the screen is wrong, and they have no way to report it.
     128. Before treating a drop as a lost switch, diff the ids every `*multi-approach*.before.json`
     touched against the live table, read each missing id's KEPT row in that work's merge plan, and
     compare its ways in with the deleted row's (the rollback file holds the deleted row in full).
+
+- **`audit:copied-prose`** asks whether a research batch repeats its OWN SOURCES word for word,
+  and `enrich:apply` refuses the same thing at the write (shared code: `scripts/lib/source-overlap.mjs`).
+  Asked by the owner on 2026-10-24 (*"are we making sure we aren't copying the text of our app
+  from other sources?"*). The answer was: by request only. The 2026-10-01 audit (#2142) found
+  copying concentrated in quoted passages and rewrote 292 strings, and every brief since says
+  "your own words" — but nothing checked, and the 2026-10-23 pitch wave (#2655) shipped 74 strings on
+  21 of 25 routes that kept 8+ word runs of the pages it listed (Dark Shadows P4 carried a
+  20-word source sentence whole). Rewritten the same day, re-checked clean, written through
+  `enrich:apply` with the new gate on.
+  - **Why 8 words.** At 6, almost every route trips on climbing's shared vocabulary ("to a two-bolt
+    anchor at the base of"); at 8, the runs that remain are overwhelmingly sentences or clauses
+    that were lifted, with a few generic ones ("bolted belay at the top of the wall") that are
+    cheap to reword. Normalised for case, punctuation and hyphens, so "right-facing" ≡ "right facing".
+  - **What it cannot see.** A source it could not load (SummitPost and theCrag 403 to scripts;
+    some `review.sources` entries carry notes after the URL and fail to fetch) — named in the
+    output, never counted as clean. Since 2026-10-29 a researcher who read such a page in the real
+    browser saves the text it drew on and maps it in `review.source_texts` (URL → repo path); the
+    check then reads that copy instead of fetching, so a SummitPost-sourced entry is checked too. A copy from a page the batch did not list. A paraphrase that
+    swaps one word in every seven. Prose already in the catalog with no batch file behind it — that
+    is the #2142 audit's ground, measured then at ~1 verbatim lift per 160 sampled phrases, and
+    deliberately NOT re-run here.
+  - **`--live` (2026-10-29): the catalog's side, not the batch's.** A batch check sees the text as
+    written; everything applied before the gate existed, and anything edited since, was never compared.
+    `--live` walks EVERY JSON file under `audits/` (2,601 files), credits each route id with every URL
+    anywhere beneath the object that names it (an `id` field, or the id as a key — the shapes differ
+    by wave: contradiction `results[]`, grade arrays, `{id: spec}` batches), then reads that route's
+    LIVE row (public key) and runs the same 8-word test over every string in it of 8+ words, except
+    ids, names and provenance columns. 1,469 routes, ~7,700 cited pages. Pages are fetched one at a
+    time per site, 1 s apart, eight sites at once (`--cache DIR` keeps them for a re-run;
+    `--fetch-only` warms the cache without touching the database). `review.source_texts` copies are
+    used when a research file carries them. Cannot see: a route whose research cited no URL, and the
+    sites that refuse scripts — the same blind spots as the batch check.
+  - **First run, 2026-10-29: 841 of 1,469 routes, 3,067 runs.** 6,355 of the 7,730 cited pages
+    were readable. 1,061 of the runs were names, not prose: an agency and ranger district, an
+    address, a road number, a first-ascent party and date (60%+ of the run's non-function words
+    capitalised or numeric — `scripts/oneoff/copied-prose-live/prepare.mjs`). Those were left as
+    they are. The rest were 1,657 distinct strings (1,754 placements on 690 routes), heaviest in
+    `access`, `approach_variants`, `pitch_detail`, `waypoints`, `approach` and `beta`: the waves
+    before the gate, including the contradiction and leftover passes. Every one was reworded clause
+    by clause, with the same facts and the same digits. Each was re-checked against the same cached
+    pages and written through `scripts/oneoff/rewrite-copied-prose.mjs` (an exact splice that refuses
+    a drifted row; re-read after each write; rollback files in `audits/copied-prose-live/rollback/`).
+    The writes go through `scripts/oneoff/copied-prose-live/apply-batches.mjs`. It probes a one-row
+    read before every batch and waits out an outage (10 min after a stop, giving up after 6 stops). A
+    re-run is safe: a row already rewritten reads back as ALREADY. 114 columns landed on 2026-10-29
+    before the database stopped taking writes; the rest resumes with
+    `node scripts/oneoff/copied-prose-live/apply-batches.mjs b01 b02 … b24` (delete `applied.txt` first
+    for a full pass that also catches rows refused on a failed read).
+    A few rewrites also dropped a sentence that credited a source by name. The rule is
+    [no-sources](../codebase/enrichment-prose.md).
+  - **Selftest:** `--selftest` needs no network: the Dark Shadows sentence as applied is flagged,
+    the same facts reworded are not, a short shared phrase is not, and `review`/`area`/labels are
+    never walked.
+
+- **`audit:partner-grade`** asks whether a route's **Partner requirements** panel
+  (`partner_requirements.experienceLevel` + `.requiredSkills`) asks for a lead grade the route's
+  own grade contradicts. Reported by the owner 2026-10-28: Liberty Bell's Overexposure (5.8) read
+  *"Strong 5.10-5.11 free climber"* — already corrected by the WA contradictions pass (#1965,
+  `audits/wa-contradictions-rest/research/out/r182.json`), so the owner had seen a stale copy;
+  the CLASS had never been measured. Report-only; `scripts/audit-partner-grade.mjs`.
+  - The standard it enforces, and the research behind it, is in
+    [enrichment-prose.md](../codebase/enrichment-prose.md#partner_requirements-ask-for-the-grade-the-route-is):
+    lead the crux grade solidly, at most ONE step of margin (a number grade through 5.9, a letter
+    from 5.10a).
+  - **ABOVE** (more than one step over the route's highest 5.x), **BELOW** (highest named grade
+    under the crux), **NONE** (no 5.x on the route, a 5.x lead above 5.6 asked). A clause that
+    names an aided, French-freed, optional or variation section does not count as asked —
+    "Solid 5.10 leader; the 5.11a crux can be aided" is honest, not BELOW. `--selftest` holds 32 cases.
+  - **The route's crux is the highest 5.x in `rock_grade`, `grade` AND its own `pitch_detail[].grade`**
+    (2026-10-30). Headers lag their pitches: Spire Point's SW Face reads 5.4 with two 5.6 pitches,
+    Mox's standard 5.5 with a 5.7 pitch, Lundin's south face 5.0 with a 5.6 last pitch. A partner
+    text asking for that 5.6 is RIGHT; the header is a different audit's question (not changed here —
+    no outside source settled those three).
+  - **A bare letter grade is its whole range** ("a solid 5.11 leader" asks for 5.11a and promises up
+    to 5.11d). Read as the b/c middle, it flagged "Solid 5.11 trad leader" on a 5.11a route.
+  - A "+" is half a step: "Solid 5.9" on a 5.9+ crux is not BELOW; BELOW needs a full step.
+  - In a GRADE string, a parenthesis with no grade of its own qualifies the grade before it
+    ("5.7 (unprotectable, usually bypassed)" is not the line); one WITH a grade qualifies that
+    grade ("5.4 (5.6 on the variation)"). `off-route`, `variant`, `bypassed` count as not asked.
+  - **Census and outcome, 2026-10-30** (service key): **470** routes carry partner requirements,
+    **109** name a 5.x grade, all in WA. First run (old parser): 18 ABOVE, 13 BELOW, 0 NONE;
+    7 ABOVE were the bare-grade misreading. Every remaining row was researched (two Sonnet batches,
+    `audits/partner-grade/proposals{A,B}.json`) and **20 rows rewritten** in our own words by
+    `scripts/oneoff/fix-partner-grade.mjs` (16) and `fix-partner-grade-2.mjs` (4, the rows the
+    pitch-grade crux surfaced); rollbacks `scripts/rollback-partner-grade-*.json`. Now:
+    **0 ABOVE, 1 BELOW, 0 NONE**.
+  - **The one accepted row:** `wa_ingalls_peak_south_ridge` — pitch 2's grade field reads 5.6, but
+    its own note says that is the harder crack and the left line goes at 5.4; the partner text names
+    both. The audit reads pitch GRADES, not pitch notes, so it will keep listing it. Not a finding.
+  - Stored grades kept despite a lower outside listing, by the keep-the-higher rule: Terror's East
+    Ridge 5.8 (one listing 5.6), Stuart's West Ridge 5.6 (older listings 5.4), Burgner-Stanley 5.10a
+    (5.9+ to 5.10b). Sharkfin Tower stays 5.0 (near-universal) with its text naming "a couple of
+    harder moves near 5.4".
+  - Service key, `partner_requirements=not.is.null` in 100-row pages. Not a build gate.

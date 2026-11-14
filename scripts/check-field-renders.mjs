@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "./lib/file-href.mjs";
 // check:field-renders — for every enriched route column, does its value actually reach a
 // screen? A column can be mapped in dbRouteToCamel, offered in the fix form, and still be
 // displayed nowhere. `routes.descent_text` was exactly that: populated on 1,021 routes,
@@ -34,8 +35,8 @@ import path from "path";
 const ROOT = process.cwd();          // never hardcode a worktree — the predecessor did, and
                                      // measured a different branch's code than the one you ran it in
 const require_ = createRequire(import.meta.url);
-const { SUPABASE_URL, headers, anonKey } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
-const { assertDbReachable } = await import(path.join(ROOT, "scripts/lib/db-preflight.mjs"));
+const { SUPABASE_URL, headers, anonKey } = await import(fileHref(path.join(ROOT, "scripts/lib/supabase-env.mjs")));
+const { assertDbReachable } = await import(fileHref(path.join(ROOT, "scripts/lib/db-preflight.mjs")));
 const KEY = process.env.SUPABASE_SERVICE_KEY || anonKey();
 const TABS = ["overview", "forecast", "conditions", "planner", "safety", "photos", "partners"];
 
@@ -123,7 +124,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 import { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};
-import { enrichRoute, AspectSunPanel, EmergencyRescueCard, C, ActionIcon, MOUNTAINS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import { enrichRoute, EmergencyRescueCard, C, MOUNTAINS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import AspectSunPanel from ${JSON.stringify(path.join(ROOT, "src/components/AspectSunPanel.tsx"))};
+import ActionIcon from ${JSON.stringify(path.join(ROOT, "src/components/ActionIcon.tsx"))};
 import { SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel } from ${JSON.stringify(path.join(ROOT, "EnrichmentPanels.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
@@ -304,7 +307,7 @@ async function rowWith(col) {
 }
 
 // Two bases, because whole sections are discipline-gated: RouteGearCheck (and the essentials
-// box it owns) render only when cragOnly is true, and the Plan/Safety tabs behave differently
+// box it owns) render only when cragOnly is FALSE, CragRack only when it is true, and the Plan/Safety tabs behave differently
 // either side of that line. Probing alpine alone reported crag-only sections as dead — the
 // same blind spot that let #655 hide the crag safety advice.
 const BASES = {
@@ -400,8 +403,8 @@ function assessSentinel(col) {
   return { hits, changed, needle };
 }
 
-// A field can be USED without being echoed: the RACK box prints rackSummary(route.rack), so
-// the raw gear prose never appears verbatim even though the column drives the screen. Without
+// A field can be USED without being echoed: a derived readout (the old PROTECTION card's
+// rackSummary, removed 2026-10-23) never prints the raw gear prose verbatim even though the column drives the screen. Without
 // this baseline the probe reports such a field as dead and sends you chasing a non-bug.
 const BASELINE = {};
 for (const [bname, b] of Object.entries(BASES)) {

@@ -1,0 +1,75 @@
+{
+ "id": "wa_bonanza_peak_northeast_buttress",
+ "name": "Northeast Buttress",
+ "area_id": "wa_bonanza_peak",
+ "discipline": "alpine",
+ "grade": "5.7",
+ "pitches": null,
+ "pitch_detail": [
+  {
+   "grade": "Class 4 to low 5th",
+   "notes": "Ridge steepens and narrows quickly above the glacier.",
+   "pitch": "Lower buttress"
+  },
+  {
+   "grade": "5.6-5.7",
+   "notes": "Climbing on or around the crest, mostly solid but lichen-covered rock, some wild exposure.",
+   "pitch": "Mid buttress"
+  },
+  {
+   "grade": "Class 4",
+   "notes": "Eases to easy 4th class terrain leading to the main summit.",
+   "pitch": "Upper buttress"
+  }
+ ],
+ "rappel_detail": [
+  {
+   "n": 1,
+   "notes": "Rappel off the east ridge into the upper gully.",
+   "anchor": "fixed natural station (horn, flake or slung boulder)",
+   "hazards": [
+    "Stay climber's left of the standard line to avoid rockfall funnelling down the gullies."
+   ],
+   "lengthM": null,
+   "station": "On the east ridge below the summit, after downclimbing the summit ridge and rib."
+  },
+  {
+   "n": 2,
+   "notes": "First of three rappels down through the rock band; parties link the six or seven fixed stations into these rappels on a doubled 60 m rope.",
+   "anchor": "fixed natural station (horn, flake or slung boulder)",
+   "lengthM": null,
+   "station": "A station in the upper part of the Class 3-4 rock band."
+  },
+  {
+   "n": 3,
+   "notes": "Second rappel through the rock band.",
+   "anchor": "often a large boulder or flake above a wet slab",
+   "hazards": [
+    "The webbing on the wet-slab boulder is repeatedly reported as sketchy; back it up or replace it."
+   ],
+   "lengthM": null,
+   "station": "A station lower in the rock band; one commonly used anchor here is a big boulder or flake at a wet slab."
+  },
+  {
+   "n": 4,
+   "notes": "Last rappel, ending roughly 200 ft above the glacier; downclimb or walk the rest onto snow, then recross the moat.",
+   "anchor": "fixed natural station",
+   "lengthM": null,
+   "station": "The lowest station used in the rock band."
+  }
+ ],
+ "rappels": "About 4 rappels on the Mary Green Glacier descent, linking the fixed natural stations through the Class 3-4 rock band on a 60 m rope (three or four by how much the party downclimbs)",
+ "descent_text": "The straightforward descent reverses down to the Mary Green Glacier and follows the standard route's descent: down-climb the summit ridge/rock rib, use the fixed rappel stations through the class 3–4 band (about four rappels with a 60m rope, 8mm lines are common), cross the moat, and descend the glacier to Holden Pass camp — see the Mary Green Glacier route's descent notes for full detail on that shared lower section. Parties combining this face with a full three-summit traverse instead descend from the Southwest Peak via ledges onto the Isella Glacier's upper snowfields, traverse to the Southeast (Holden) Ridge, climb a short ~5.7 chimney, and then make a single rappel from the col back down onto the Mary Green Glacier before rejoining the standard glacier descent to camp. Either way, expect loose rock on the upper buttress and ridge sections and take care with rope management around the gendarmes and notches.",
+ "approach": "The approach follows the same trailhead-in as the standard route — Railroad Creek Trail (FST 1256) from Holden Village to the Holden Lake Trail junction, then up to Holden Lake (5,278') and Holden Pass (6,360') for high camp — but instead of angling onto the Mary Green Glacier itself, continue on benches and talus/heather to climber's right (east/north side) of the glacier. This adds roughly another 3 hours and substantial elevation gain beyond Holden Pass to reach the base of the Northeast Buttress/Face around 8,350'. Total gain ends up close to the standard Mary Green line's, since both leave the same camp and finish on the same summit. Water sources match the standard approach (Holden Lake, Holden Pass); above the pass, plan on carrying what you need since there's little reliable water on the buttress approach itself. Expect loose rock and routefinding on the benches, and — because this line stays right of the glacier on rock rather than crossing snow/ice — less exposure to crevasse hazard but more exposure to rockfall and unconsolidated talus underfoot.",
+ "overview": "Bonanza Peak is the highest non-volcanic summit in Washington. This route is the Northeast Buttress, a serious, mostly-rock alpine line that gains Bonanza's true (9,516') summit directly, branching off the standard Mary Green Glacier approach at about 8,350 ft. Climbing in the 5.7 range (the V, 5.7/5.8 grade belongs to the full three-summit traverse it begins), the Northeast Buttress offers sustained, exposed ridge climbing on generally solid but lichen-covered rock, deep in the Glacier Peak Wilderness above Holden and Lake Chelan.",
+ "beta": "From the buttress base (~8,350 ft), the ridge steepens and narrows quickly. Climbing is mostly solid rock but lichen-covered in places, with sustained sections in the 5.7 range and sections of wild exposure along the crest. Expect roughly 4 hours of climbing from the buttress base to Bonanza's true (main) summit.",
+ "gear": [
+  "helmet",
+  "single set of nuts + cams to ~2-3in (with doubles in thin-to-hand sizes)",
+  "glacier travel gear for the approach (ice axe, crampons, rope)",
+  "single 60m rope",
+  "a handful of slings/runners for anchors and rope-drag management on the wandering ridge crest"
+ ],
+ "fa": "Kurt Buchwald, Peter Avolio, and Martin Volken, August 21-22, 2004 (the first leg of the first three-summit traverse of Bonanza)",
+ "face": "Northeast Face / Northeast Buttress"
+}

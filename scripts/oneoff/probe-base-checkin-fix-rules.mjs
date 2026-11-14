@@ -11,7 +11,7 @@
  *   node scripts/oneoff/probe-base-checkin-fix-rules.mjs
  */
 import {
-  summariseFixes, acquireBaseFix, clusterBasePoints, baseCheckinMessage, distM,
+  summariseFixes, acquireBaseFix, baseCheckinMessage, distM,
   BASE_MAX_ACCURACY_M, BASE_TARGET_SAMPLES,
 } from "../../lib/baseCheckin.js";
 
@@ -74,12 +74,7 @@ is(!r.ok && r.reason === "denied", "a permission refusal is reported as such", r
 r = await acquireBaseFix(null, { timeoutMs: 100 });
 is(!r.ok && r.reason === "unsupported", "no geolocation API is reported as such", r);
 
-console.log("\n--- clusterBasePoints ---");
-const pts = [{ ...off(0, 0), mine: false }, { ...off(8, 1), mine: true }, { ...off(12, 2), mine: false }, { ...off(300, 0), mine: false }];
-const cl = clusterBasePoints(pts);
-is(cl.length === 2, "points 12 m apart are one spot, 300 m apart are two", cl);
-is(cl[0].n === 3 && cl[0].mine === true, "the most-confirmed spot comes first and knows it includes you", cl);
-is(cl[1].n === 1 && cl[1].mine === false, "the outlier stands alone", cl);
+// clusterBasePoints is gone: the spots are the database's (0363 route_base_spots), probed live.
 
 console.log("\n--- baseCheckinMessage ---");
 const fmt = (m) => Math.round(m) + " m";
@@ -92,5 +87,5 @@ is(/1998 m/.test(tf) && /500 m/.test(tf), "too_far states both the distance and 
 is(/location on file may be wrong/.test(tf), "...and admits the location on file may be the wrong half", tf);
 
 console.log(`\n${ran - bad}/${ran} passed`);
-if (ran < 24) { console.log("FAIL: fewer assertions ran than written"); process.exit(1); }
+if (ran < 21) { console.log("FAIL: fewer assertions ran than written"); process.exit(1); }
 process.exit(bad ? 1 : 0);

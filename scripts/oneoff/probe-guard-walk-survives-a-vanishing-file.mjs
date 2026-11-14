@@ -51,7 +51,7 @@ const walk = (dir) => {
     const p = path.join(dir, name);
     let st; try { st = fs.statSync(p); } catch { continue; }
     if (st.isDirectory()) walk(p);
-    else if (/\.(jsx?|mjs)$/.test(name) && name.startsWith(".")) dotSource.push(path.relative(ROOT, p));
+    else if (/\.(jsx?|mjs)$/.test(name) && name.startsWith(".")) dotSource.push(path.relative(ROOT, p).replace(/\\/g, "/"));
   }
 };
 walk(ROOT);
@@ -62,10 +62,21 @@ else ok("no dot-prefixed .js/.jsx/.mjs file exists outside the skipped directori
 // SECTION 2 -- the crash, reproduced. A dangling symlink named like a guard's temp file.
 const bait = path.join(ROOT, ".probe-vanishing-file.mjs");
 const baitScripts = path.join(ROOT, "scripts", ".probe-vanishing-file.mjs");
-const clean = () => { for (const b of [bait, baitScripts]) { try { fs.unlinkSync(b); } catch {} } };
+const clean = () => { for (const b of [bait, baitScripts]) { try { fs.unlinkSync(b); } catch { try { fs.rmdirSync(b); } catch {} } } };
 clean();
-fs.symlinkSync(path.join(ROOT, "no-such-target-" + process.pid), bait);
-fs.symlinkSync(path.join(ROOT, "no-such-target-" + process.pid), baitScripts);
+// A dangling FILE symlink needs a privilege Windows withholds from ordinary accounts (EPERM). A
+// junction needs none but cannot point at a missing target, so there: point it at a real
+// directory and delete that directory, which leaves the same unstattable entry.
+const dangle = (at) => {
+  const target = path.join(ROOT, "no-such-target-" + process.pid);
+  try { fs.symlinkSync(target, at); }
+  catch (e) {
+    if (e.code !== "EPERM") throw e;
+    fs.mkdirSync(target); fs.symlinkSync(target, at, "junction"); fs.rmdirSync(target);
+  }
+};
+dangle(bait);
+dangle(baitScripts);
 
 let crashed = 0, ran = 0;
 try {

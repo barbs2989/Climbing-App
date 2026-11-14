@@ -1,0 +1,63 @@
+{
+  "area_id": "wa_eagle_peak",
+  "routes": [
+    {
+      "route_id": "wa_scramble_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; Peakbagger months peak Jul-Sep; NPS lists summer May-Oct; snow on saddle/ridge may last to June, rarely August."
+      },
+      "track": {
+        "aid": "3307622",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Only one route on the peak; Aug 13 summited round trip from Eagle Peak Trailhead (start/end within 40 m of our pin, 8 mi, 3150 ft gain) and up the saddle and scramble as described. 3320551 and 3312262 (Aug 2026) also qualify."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3320551",
+          "verdict": "same",
+          "why": "Aug 23 complete, equal quality, no report."
+        },
+        {
+          "aid": "3312262",
+          "verdict": "same",
+          "why": "Aug 16 complete, equal quality, no report."
+        },
+        {
+          "aid": "1777663",
+          "verdict": "different",
+          "why": "Oct 8 link-up with Chutla and Wahpenayo."
+        },
+        {
+          "aid": "257996",
+          "verdict": "different",
+          "why": "Starts at the saddle, South face Class 4 variation."
+        },
+        {
+          "aid": "158679",
+          "verdict": "not-summited",
+          "why": "Winter ski turnaround."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "There is nowhere to place protection on the rock step in early September, so a rope adds little; plan on an unroped downclimb and help each other through the blind step.",
+          "aids": [
+            "2024357"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": ""
+}

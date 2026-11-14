@@ -1,0 +1,121 @@
+{
+  "area_id": "wa_american_border_peak",
+  "routes": [
+    {
+      "route_id": "wa_american_border_peak_northeast_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peak ascents Jul 10, Aug 5, Sep 17, Oct 3; stored Jul-Sep kept."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2305299",
+          "verdict": "different",
+          "why": "Line goes High Pass, Larrabee flank, South AmBo Saddle, i.e. the southeast route, not the glacier below the NE face."
+        },
+        {
+          "aid": "2313591",
+          "verdict": "different",
+          "why": "Same southeast line as above."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_american_border_peak_southeast_face",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Peak ascents Jul 10, Aug 5, Sep 17, Oct 3; stored mid-Jul to Sep kept; an early October ascent met no snow."
+      },
+      "track": {
+        "aid": "2305299",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "9 Sep 2023 summited; starts and ends within 32 m of our Twin Lakes pin, follows High Pass, the Larrabee flank and South AmBo Saddle, and passes within 20 m of our summit pin, matching our route text and waypoints."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2313591",
+          "verdict": "same",
+          "why": "16 Sep 2023 same line, same start; second choice (no report)."
+        },
+        {
+          "aid": "2631953",
+          "verdict": "unsure",
+          "why": "No track data."
+        },
+        {
+          "aid": "3368586",
+          "verdict": "unsure",
+          "why": "No track; used for facts only (route matches)."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 10,
+          "text": "Late in the season there is no dependable water above the old mine, so carry the day's supply from there.",
+          "aids": [
+            "3368586"
+          ]
+        },
+        {
+          "field": "monthBreakdown",
+          "month": 10,
+          "text": "In early October the snow gully and apron were bare, leaving dry rock the whole way.",
+          "aids": [
+            "3368586"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 10,
+          "text": "Splitting the chimney into two pitches under 30 m each keeps partners within calling range.",
+          "aids": [
+            "3368586"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "Camping in the basin below the notch, or at High Pass, shortens summit day.",
+          "aids": [
+            "2305299",
+            "3368586"
+          ]
+        },
+        {
+          "field": "descent_note",
+          "month": 10,
+          "text": "In early October the last forested stretch to the trailhead is steep and was reached in darkness; keep a headlamp handy.",
+          "aids": [
+            "3368586"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 9,
+          "text": "In early September one party wandered off line and lost an hour; follow a downloaded track.",
+          "aids": [
+            "2305299"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Our NE Face row has no trailhead pin and no track climbs it; the glacier line shows no recordings."
+}

@@ -1,0 +1,40 @@
+{
+  "key": "forbidden_peak",
+  "question": "Is Forbidden Peak's 'Northeast Face' (AI2) a real ice route, and does our May/June text actually describe the Northwest Face of the North Ridge?",
+  "answer": "No Northeast Face ice route exists in anything I could read. The only 'northeast face' on Forbidden is the East Ledges: the NE Ledge, also called the Northeast Face, a loose Class 4 ledge system used as the usual descent (our East Ledges row already says so). The text on our 'Northeast Face' row, however, is a clear description of a real, separate route: the Northwest Face of the North Ridge, an ice and steep-snow climb. It matches point for point: approach over Sharkfin Col (~7,720 ft) after about ten feet of 5.7 and a Class 3 gully, a rappel to the Boston Glacier, a traverse across the Boston Glacier to the base, about 900 ft of snow and ice with ice sections split by a rock band, a steepest patch of about 50 degrees, then the rock of the upper North Ridge, and descent by the West Ridge and the Cat Scratch gullies. That route has its own pages (Mountaineers 'Forbidden Peak/Northwest Face of North Ridge', Grade III, 5.6-5.7, an ice or steep snow climb) and is a variation of the North Ridge, so it is distinct from our North Ridge row (rock ridge, 5.6) and from our 'Northwest Face' row (the 1959 rock route, 5.8, 7 pitches, 1,200 ft). The 'May/June' season is NOT supported: the dated reports I found for this face are late Jul 2020 (North Ridge via the NW face), a Jul 2022 Mountaineers report (snow ramp onto the NW face), forum threads titled 27 Jul 2013 and 18 Jul 2021 (NW face; titles only, pages refused), and NPS condition notes of 29 Jul and 11 Aug 2023 saying it had become mostly ice needing screws by then. I found no May or June report. Boston Basin is also snow-bound to its camps in early season.",
+  "recommendation": "Do not delete; RE-IDENTIFY. Rename wa_forbidden_peak_northeast_face to 'Northwest Face of the North Ridge' (keep the id or let the owner choose a new one; ids are not shown), set aspect NW and face 'North Ridge, northwest face (snow and ice variation)', keep discipline alpine, set grade to the guidebook-style 'III 5.6' with an ice note (the stored AI2 understates the 50-degree ice and the 5.6-5.7 rock; if a pure ice grade is required keep AI2-3 with the rock grade in rock_grade), and replace the season: Jul-Aug, best July while the face is snow-linked, 'mostly ice' by August (late-season screws); drop the May/June monthBreakdown and the line 'rarely climbed, remote cirque'. The approach, descent and waypoints in the row are already correct. Also fix the East Ledges overview sentence that mentions a 'distinct, genuinely technical Northeast Face ice route': remove it or point it at the NW Face of the North Ridge. The track hasTrackPts 6 for this row is the Boston Basin approach only; no log in the packet is on this face (the 2025-07-12 'North Ridge' log descends the West Ridge and may be the North Ridge or this face; not checked against the ice variation).",
+  "confidence": "high",
+  "proposed": {
+    "row": "wa_forbidden_peak_northeast_face",
+    "name": "Northwest Face of the North Ridge",
+    "aspect": "NW",
+    "face": "North Ridge, northwest face (snow and ice variation)",
+    "grade": "III 5.6",
+    "note_ice": "about 900 ft of snow and ice to roughly 50 degrees, then the 5.6-5.7 rock of the upper ridge",
+    "season": "Jul-Aug",
+    "best_season": "July while the face is linked by snow; by August it is mostly ice and wants screws and steel crampons",
+    "overview_rewrite": "A snow-and-ice variation that cuts straight up the northwest side of the North Ridge, about 900 ft of two ice sections split by a narrow rock band, then joins the ridge for its final rock to the summit. It shares the approach, the col, and the descent with the North Ridge, and is the more committing and objective-hazard-prone choice, especially as the face dries out in late summer.",
+    "remove_from_row": [
+      "monthBreakdown for April, May, June as 'best' months",
+      "'rarely climbed' phrasing"
+    ],
+    "east_ledges_fix": "drop the claim that a technical Northeast Face ice route exists"
+  },
+  "evidence": [
+    "Search snippet of https://www.mountaineers.org/activities/routes-places/forbidden-peak-northwest-face-of-north-ridge - Grade III, 5.6-5.7, ice or steep snow, two ice sections divided by a narrow rock band, 900 ft to the crest of the North Ridge, Sharkfin Col (7,720 ft) access (page itself returned 403)",
+    "https://mountainmadness.com/trips/washington-forbidden-peak-northwest-face - snow/ice to 50 degrees before the North Ridge, solid rock to ~5.7 (separate from the Beckey NW Face)",
+    "https://www.mountainproject.com/route/112030839/northwest-face - Beckey/Cooper 15 Jul 1959 rock route, 5.8, 7 pitches, 1,200 ft; descend the West Ridge or the East Ledges",
+    "https://gethighonaltitude.com/2020/07/26/forbidden-peak-north-ridge-via-nw-face/ - late July 2020 North Ridge via the NW face; Sharkfin Col rappel to the Boston Glacier; descent by rappels",
+    "https://spokalpine.com/2020/07/29/forbidden-peak-nw-face-iv-5-8/ - July 25 2020 the 1959 NW Face is the rock route (separate)",
+    "Search snippet of https://www.nps.gov/noca/blogs/climbing-conditions-for-boston-basin-area.htm - 29 Jul 2023: NW face snow variation no longer connected, mainly ice, screws recommended; 11 Aug 2023 large moats, steel crampons and screws",
+    "Search snippet of the SummitPost Forbidden Peak page - 'NE Ledge' is also called the Northeast Face, loose, a fatal fall on the traverse in 1975",
+    "https://www.mountainproject.com/area/106450578/forbidden-peak?print=1 - the area lists West Ridge, East Ridge Direct, North Ridge, Northwest Face; no Northeast Face route"
+  ],
+  "searched": [
+    "Forbidden Peak Northeast Face ice route North Ridge northwest face Beckey - Mountaineers x3, Mountain Project x4, SummitPost, CascadeClimbers x4, AAJ (unrelated Mount Baker NE face)",
+    "Forbidden Peak \"northeast face\" climb AAJ OR Beckey OR \"Cascade Alpine Guide\" ice - nothing; SummitPost NE Ledge note only",
+    "Forbidden Peak NW face ... conditions June OR July OR August - NPS conditions page, CascadeClimbers TRs 2013/2021, no June report",
+    "Fetch refused with HTTP 403 (not worked around): mountaineers.org NW Face of North Ridge page; cascadeclimbers topics 3835, 27565, 92228; SummitPost NW Face page 644749",
+    "Not read: Beckey's Cascade Alpine Guide text itself (the NE-face question rests on absence in every secondary source plus the SummitPost note). Note the Mountain Project North Ridge route fetch returned an unrelated Mount Baker route."
+  ]
+}

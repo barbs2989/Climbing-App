@@ -1,0 +1,46 @@
+[
+ {
+  "id": "or_diamond_peak_south_ridge",
+  "i": 0,
+  "name": "Summit Lake Trailhead",
+  "from": [43.46358, -122.13479],
+  "coordinate_key": "43.46358,-122.13479",
+  "op": "none",
+  "reason": "OSM node 980042489 (highway=trailhead, alt_name 'Summit Lake Trailhead (PCT); Emigrant Pass Trailhead (PCT)') at 43.4637344,-122.1347515 is about 15 m from stored; OSM parking node 980042488 at 43.4635844,-122.1347919 is about 1 m away. Within 150 m. The 1.8 km USFS point is a different Summit Lake site.",
+  "source": "https://www.openstreetmap.org/node/980042489",
+  "quote": "\"alt_name\": \"Summit Lake Trailhead (PCT); Emigrant Pass Trailhead (PCT)\", \"highway\": \"trailhead\", lat 43.4637344, lon -122.1347515"
+ },
+ {
+  "id": "or_mt_bachelor_trail",
+  "i": 0,
+  "name": "West Village Lodge",
+  "from": [43.99402, -121.66066],
+  "coordinate_key": "43.99402,-121.66066",
+  "op": "move",
+  "to": [44.00289, -121.67811],
+  "reason": "USGS GNIS feature 'West Village Lodge' (Building) per TopoQuest, 44.002894,-121.678112, about 1.7 km from stored (stored sits east of the ski area). Wikipedia Mt. Bachelor ski area point 44 deg 00'11\"N 121 deg 40'37\"W (44.00306,-121.67694) is about 100 m from it. 3DEP ground at the new point 6373 ft vs pin elev 6416 ft (43 ft).",
+  "source": "https://www.topoquest.com/place-detail.php?id=2563002",
+  "quote": "Feature Name: \"West Village Lodge\"; Type: \"Building\"; Latitude: \"N44.002894\"; Longitude: \"W121.678112\"; Elevation: \"6371 ft MSL\""
+ },
+ {
+  "id": "or_north_ridge_2",
+  "i": 0,
+  "name": "PCT trailhead, Old Santiam Wagon Road",
+  "from": [44.38011, -121.85595],
+  "coordinate_key": "44.38011,-121.85595",
+  "op": "none",
+  "reason": "No published coordinate: searches and OSM/Oregon Hikers/USFS pages print coordinates only for the Santiam Pass PCT trailhead on Highway 20 (about 5 km north), not for the Old Santiam Wagon Road / PCT crossing."
+ },
+ {
+  "id": "or_mt_hood_south_side_hogsback",
+  "i": 0,
+  "name": "Timberline Lodge",
+  "from": [45.33177, -121.7077],
+  "coordinate_key": "45.33177,-121.7077",
+  "op": "move",
+  "to": [45.32928, -121.70836],
+  "reason": "USFS Mt. Hood NF climbing page prints 'Start of climbers path at Timberline: 10T 0601216 5020342' (UTM 10N), which converts to 45.32928,-121.70836, about 282 m from stored. Corroborated by OSM parking way 44553837 (centre 45.32978,-121.70848, about 55 m away), the lot at the climbers path. 3DEP ground 5851 ft vs pin elev 5905 ft (54 ft).",
+  "source": "https://www.fs.usda.gov/r06/mthood/permits/climbing-mt-hood",
+  "quote": "Start of climbers path at Timberline: 10T 0601216  5020342."
+ }
+]

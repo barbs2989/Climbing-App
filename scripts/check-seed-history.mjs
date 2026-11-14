@@ -168,7 +168,8 @@ function flat(fn) {
   if (!hadDoc) globalThis.document = { body: {} };
   try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
 }
-import { Resume, ME, __set_DB_UID } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import Resume from ${JSON.stringify(path.join(ROOT, "src/components/Resume.tsx"))};
+import { ME, __set_DB_UID } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const noop = () => {};
 export function render(climber, uid) {
   __set_DB_UID(uid);
@@ -247,6 +248,7 @@ if (!demo.includes(MARK)) {
   const VOUCH_ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import GiveVouch from ${JSON.stringify(path.join(ROOT, "lib", "GiveVouch.jsx"))};
 import { ROUTES } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
@@ -254,9 +256,16 @@ const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(friend, names) {
   const suggest = names ? ROUTES.filter((r) => names.includes(r.name)).map((route) => ({ route, date: "", together: false })) : undefined;
-  return renderToStaticMarkup(
-    React.createElement(QueryClientProvider, { client: qc },
-      React.createElement(GiveVouch, { friend, suggest, onClose: noop, onSave: noop })));
+  // GiveVouch is portalled to document.body since 2026-10-21 (it draws above a climber's profile), which
+  // the server renderer refuses: flattened for THIS call only, the same scoped patch as Resume above.
+  const orig = ReactDOM.createPortal, hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try {
+    return renderToStaticMarkup(
+      React.createElement(QueryClientProvider, { client: qc },
+        React.createElement(GiveVouch, { friend, suggest, onClose: noop, onSave: noop })));
+  } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
 }
 `;
   const stub = (useDb) => ({
@@ -317,6 +326,18 @@ export function render(friend, names) {
       if (!promptM) fail("ANCHOR LOST: the picker's unsearched-yet branch could not be read out of ClimbMatchCore.jsx");
       else if (!dbBody.includes(promptM[1])) fail(`the empty picker does not render its own prompt ("${promptM[1]}") — it is blank with no way forward`);
       else ok(`the empty picker asks the climber to search ("${promptM[1]}")`);
+
+      // THE TYPED-SEARCH PATH, read from the source. This render cannot type: q is component state
+      // and a static render never leaves q === "", where seedMs is [] under ANY gate. When the
+      // picker stopped listing seed climbs on an empty query (seedMs=USE_DB||!q?[]:ROUTES.filter),
+      // reverting the USE_DB gate became invisible to every assertion above -- injection case 1 of
+      // inject-vouch-picker-cases went MISSED. So the seed list a search offers must still be
+      // gated on USE_DB, checked on the declaration itself.
+      const gv = fs.readFileSync(path.join(ROOT, "lib", "GiveVouch.jsx"), "utf8");
+      const seedDecl = gv.match(/var seedMs=([^;]*?)ROUTES\.filter\(/);
+      if (!seedDecl) fail("ANCHOR LOST: the vouch picker's seed-search list (var seedMs=...ROUTES.filter) could not be found in lib/GiveVouch.jsx");
+      else if (!/USE_DB/.test(seedDecl[1])) fail("the vouch picker's typed search offers the seed demo catalog to a real climber (seedMs is not gated on USE_DB) - and the pick is written onto the vouch");
+      else ok("the vouch picker's typed search withholds seed climbs under USE_DB");
     }
   }
 }

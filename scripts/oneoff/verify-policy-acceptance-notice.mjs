@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // An existing account is asked to accept the current policy — and is NOT asked twice.
 //
 // The false-positive is the dangerous side here: showing a legal notice to somebody who has
@@ -16,9 +18,9 @@ import { chromium } from "playwright-core";
 // DID exist it was worse than dead: it silently measured a different branch's code than the
 // one you ran it in, the defect CLAUDE.md records for measure-which-tab-renders-each-field.mjs.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const { createFixture, sessionForStorage, STORAGE_KEY } = await import(ROOT + "/scripts/lib/ui-fixture.mjs");
-const { loadEnv } = await import(ROOT + "/scripts/lib/supabase-env.mjs");
-const { POLICY_VERSION } = await import(ROOT + "/lib/policy.js");
+const { createFixture, sessionForStorage, STORAGE_KEY } = await import(fileHref(ROOT + "/scripts/lib/ui-fixture.mjs"));
+const { loadEnv } = await import(fileHref(ROOT + "/scripts/lib/supabase-env.mjs"));
+const { POLICY_VERSION } = await import(fileHref(ROOT + "/lib/policy.js"));
 const env = loadEnv();
 const SB = env.VITE_SUPABASE_URL, ANON = env.VITE_SUPABASE_ANON_KEY, SVC = env.SUPABASE_SERVICE_KEY;
 const svcH = { apikey: SVC, Authorization: "Bearer " + SVC, "Content-Type": "application/json" };
@@ -51,7 +53,7 @@ try {
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   const envLocal = ROOT + "/.env.local", hidden = envLocal + ".probe-hidden";
   if (fs.existsSync(envLocal)) { fs.renameSync(envLocal, hidden); restoreEnv = () => fs.existsSync(hidden) && fs.renameSync(hidden, envLocal); }
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore",
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore",
     env: { ...process.env, VITE_SUPABASE_URL: SB, VITE_SUPABASE_ANON_KEY: ANON, VITE_USE_DB: "true", VITE_DEMO_AUTOLOGIN: "" } });
   let up = false;
   for (let i = 0; i < 150; i++) { try { const x = await fetch(base); if (x.ok) { up = true; break; } } catch {} await new Promise((r) => setTimeout(r, 2000)); }

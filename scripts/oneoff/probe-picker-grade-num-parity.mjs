@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Proves picker_grade_num() (0210, SQL) gives the SAME scale and number as lib/grade.js
 // gradeNumFrom for every grade the contribute form's picker can submit. The SQL function exists so
 // an agreed grade correction can reach routes.grade_num without the client supplying the number;
@@ -24,7 +25,7 @@ for (const [name, sys] of Object.entries(SETS)) {
 if (tokens.length < 150) { console.error("FAIL: only " + tokens.length + " picker grades lifted"); process.exit(1); }
 
 const lit = tokens.map(x => "'" + x.t.replace(/'/g, "''") + "'").join(",");
-const out = execFileSync("npx", ["supabase", "db", "query", "--linked", `select t, (picker_grade_num(t)).sys as sys, (picker_grade_num(t)).num as num from unnest(array[${lit}]) as t`], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], maxBuffer: 1 << 26 });
+const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", `select t, (picker_grade_num(t)).sys as sys, (picker_grade_num(t)).num as num from unnest(array[${lit}]) as t`], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], maxBuffer: 1 << 26 });
 const rows = JSON.parse(out.slice(out.indexOf("{"))).rows;
 const bySql = new Map(rows.map(r => [r.t, r]));
 
@@ -36,7 +37,7 @@ for (const { t, sys } of tokens) {
 }
 // Non-vacuity: free text and alpine grades must convert to NOTHING, or the trigger would apply them.
 const neg = ["Grade III", "AD+", "easy scramble", "WI", "5.", "A"];
-const nout = execFileSync("npx", ["supabase", "db", "query", "--linked", `select t, (picker_grade_num(t)).sys as sys from unnest(array[${neg.map(x => "'" + x + "'").join(",")}]) as t`], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+const nout = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", `select t, (picker_grade_num(t)).sys as sys from unnest(array[${neg.map(x => "'" + x + "'").join(",")}]) as t`], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
 for (const r of JSON.parse(nout.slice(nout.indexOf("{"))).rows) if (r.sys != null) { fails++; console.log(`FAIL  "${r.t}" converted to ${r.sys} — only picker grades may convert`); }
 console.log(fails ? fails + " failed" : `ok — ${tokens.length} picker grades agree with gradeNumFrom; ${neg.length} non-picker strings convert to nothing`);
 process.exit(fails ? 1 : 0);

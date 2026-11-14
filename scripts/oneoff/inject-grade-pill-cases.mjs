@@ -18,6 +18,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// rowGrade lives in lib/areaBrowserShared.js since PR65 (moved out of lib/DbAreaBrowser.jsx).
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const sum = (p) => crypto.createHash("sha256").update(fs.readFileSync(p)).digest("hex");
 const run = () => {
@@ -30,7 +31,7 @@ const CLEAN = run();
 if (exits() !== 0) { console.error("REFUSING TO RUN: check:grade-parser is already failing. A dirty tree makes every case unattributable."); process.exit(1); }
 
 const CASES = [
-  { name: "rowgrade-chain-restored", file: "lib/DbAreaBrowser.jsx",
+  { name: "rowgrade-chain-restored", file: "lib/areaBrowserShared.js",
     find: "function rowGrade(r) { return displayGrade(r) || \"—\"; }",
     repl: "function rowGrade(r) { return shortGrade(r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || \"\") || \"—\"; }",
     expect: "the displayed-grade column chain is written more than once", why: "the real second copy, restored verbatim" },
@@ -42,7 +43,7 @@ const CASES = [
     why: "the whole defect back with ONE chain still in the tree — rule A cannot see this, which is why rule B exists" },
 
   { name: "rule-gutted", file: "lib/grade.js",
-    find: "  for (const v of cands) if (carriesClimbingGrade(v)) return cruxGrade(v);\n",
+    find: "  for (const v of cands) if (carriesClimbingGrade(v)) return topOfRange(cruxGrade(v));\n",
     repl: "",
     expect: "expected \"5.9 A2\"", why: "displayGrade stops preferring a climbing grade" },
 
@@ -56,19 +57,19 @@ const CASES = [
     repl: "export function displayGradeX(route) {",
     expect: "no longer exports displayGrade", why: "fails CLOSED rather than skipping the section" },
 
-  { name: "SILENT-comment-naming-the-chain", file: "lib/DbAreaBrowser.jsx",
+  { name: "SILENT-comment-naming-the-chain", file: "lib/areaBrowserShared.js",
     find: "function rowGrade(r) { return displayGrade(r) || \"—\"; }",
     repl: "// was: r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment\nfunction rowGrade(r) { return displayGrade(r) || \"—\"; }",
     silent: true, why: "this guard's own documentation quotes the chain; failing on it is a trap" },
 
-  { name: "SILENT-two-spellings-of-one-column", file: "lib/DbAreaBrowser.jsx",
+  { name: "SILENT-two-spellings-of-one-column", file: "lib/areaBrowserShared.js",
     find: "function rowGrade(r) { return displayGrade(r) || \"—\"; }",
     repl: "function _rawAlpine(r) { return r.alpineGrade || r.alpine_grade; }\nfunction _rawRock(r) { return r.rockGrade || r.rock_grade; }\nfunction rowGrade(r) { return displayGrade(r) || \"—\"; }",
     silent: true, why: "two SPELLINGS of one column is what RouteDetail's COMPOSITE GRADE block correctly does" },
 
   { name: "SILENT-commitment-only-route-keeps-it", file: "lib/grade.js",
-    find: "  return cands.length ? shortGrade(cands[0]) : \"\";\n}",
-    repl: "  return cands.length ? shortGrade(cands[0]) : \"\"; /* nothing better exists */\n}",
+    find: "  return cands.length ? topOfRange(shortGrade(cands[0])) : \"\";\n}",
+    repl: "  return cands.length ? topOfRange(shortGrade(cands[0])) : \"\"; /* nothing better exists */\n}",
     silent: true, why: "a route whose record holds only a commitment grade must still show it" },
 ];
 

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:control-names — a control must say WHAT IT IS, and a switch must say WHAT IT IS SET TO.
 //
 // Found by reading check:selected-state's own skipped-control counter: it reported "14 control(s)
@@ -28,7 +29,7 @@ import _traverse from "@babel/traverse";
 import { appSources } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const LIST = process.argv.includes("--list");
 
 const attr = (open, name) => open.attributes.find(
@@ -95,7 +96,7 @@ for (const f of files) {
   const src = readFileSync(f, "utf8");
   let ast;
   try {
-    ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+    ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   } catch (e) {
     console.error("check:control-names FAILED — could not parse " + f + ": " + e.message);
     console.error("Nothing was checked. This is a coverage failure, not a clean tree.");

@@ -1,0 +1,23 @@
+{
+  "key": "shuksan-hanging-glacier-season",
+  "question": "What month window do climbers actually use for the Shuksan Hanging Glacier (1939 route), given season says Jul-Aug but best_season says May to June?",
+  "answer": "The only dated climbing ascent found with a route description is a three-day trip posted late Aug 2009 (glacier travel, ice to ~65 degrees, 5.6 rock on the pyramid east ridge, bivy around 7,000 ft); a second party was in the area in Aug 2012 on the NW Rib/NW arete (not the 1939 line). May-June evidence is ski/snow activity on the Hanging Glacier headwall and east/west exits (trip reports dated Mar 2012, Mar 2023, May 2017, Apr 2015), which is a different activity: ski descents of the glacier, not the roped ice-and-rock route. A 2015 spring report notes the usual exit ramp was out of shape in a low-snow year, showing the line is condition-dependent. The ice-plus-rock climb with a long bivy approach is evidently done in the summer window when the approach is snow-free enough and the pyramid rock is dry; the stored May-June text looks like a ski-season or generic template value (it also carries a generated month breakdown). No source gives a firm window for the roped climb, so this is inferred, not documented.",
+  "recommendation": "Keep season as a summer window and rewrite best_season/optimalWindow/monthBreakdown to agree with it: Jul-Aug, with Jul early-to-mid the best (snow bridges, rock drying) and late Aug-Sep icier and more crevassed as the glacier retreats. Do not publish May-June for the roped route. Owner may prefer Jun-Aug; do not extend earlier since no climbing ascent in June was found.",
+  "confidence": "low",
+  "proposed": {
+    "season": "Jul-Aug",
+    "best_season": "Mid-July through August is when parties tackle this line: the approach valley has lost most of its snow, the summit-pyramid rock has dried, and the glacier still has usable ice. Spring belongs to ski descents of the glacier rather than the roped climb, and by September the ice turns harder and the crevasses open wider."
+  },
+  "evidence": [
+    "https://kurthicks.com/2009/08/30/mt-shuksans-hanging-glacier/ - late-summer 2009 ascent: glacier, ice to 65 degrees, 5.6 east-ridge rock; no explicit season comment",
+    "https://turns-all-year.com/trip-reports/shuksan-nwc-hanging-glacier-east - Mar 2023 ski descent of Hanging Glacier east exit (winter/spring ski activity, serac hazard)",
+    "https://cascadeclimbers.com/forum/topic/87973-tr-mt-shuksan-hanging-glacier-via-the-nw-rib-and-the-nw-ar%C3%AAte-8112012 - Aug 2012 party near the line (page 403; snippet only)",
+    "https://www.summitpost.org/mount-shuksan/150347 - snippet: late Jul to Aug is prime for Shuksan routes; late season glaciers icier"
+  ],
+  "searched": [
+    "Shuksan Hanging Glacier route 1939 trip report season - Aug 2009 ascent, Aug 2012 neighbor, spring ski reports",
+    "Shuksan Hanging Glacier climbed June/July/August conditions - no dated June climbing report; no Mountain Project page for the route",
+    "Fetched kurthicks 2009, turns-all-year Mar 2023 reports; cascadeclimbers 403, skimountaineer cert error, karakoram redirect not followed",
+    "Packet ascent months: no logged ascents for this route name; North Face logged Jan, May-Jul"
+  ]
+}

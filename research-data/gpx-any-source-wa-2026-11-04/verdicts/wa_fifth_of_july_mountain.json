@@ -1,0 +1,39 @@
+{
+  "area_id": "wa_fifth_of_july_mountain",
+  "routes": [
+    {
+      "route_id": "wa_fifth_of_july_mountain_scramble",
+      "season": {
+        "months": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "window": "Jul-Oct",
+        "evidence": "All-routes: Jun 3, Jul 6, Aug 6, Sep 6, Oct 8; web (WTA reports, Mountaineers): snow lingers into July, larches peak in early October; stored Jul-Oct."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1742318",
+          "verdict": "unsure",
+          "why": "26 Aug 2021 round trip, but it starts at 47.9785,-120.7263, 7.6 km from our Entiat River pin; this looks like the Basalt Pass trailhead approach, a different approach to the same south ridge."
+        },
+        {
+          "aid": "2220280",
+          "verdict": "unsure",
+          "why": "Same start as 1742318, 17 Jun 2023."
+        },
+        {
+          "aid": "2674623",
+          "verdict": "not-summited",
+          "why": "Camp-to-summit one-way from Larch Lakes (Oct), not a trailhead route; flagged not-summited only in the sense that it is not a full ascent."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Our Entiat River Trailhead pin (48.0246,-120.6508) is confirmed by OpenStreetMap (48.02449,-120.65025) and the USFS page, so I did NOT move it. The three tracks start 7.6 km away near 47.978,-120.726, an alternate approach (our beta already mentions a Basalt Pass trailhead). It could be stored as a second approach; I could not find a confirmed coordinate for the Basalt Pass trailhead."
+}

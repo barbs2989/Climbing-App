@@ -21,6 +21,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const PARTNER_SEARCH = path.join(ROOT, "lib", "PartnerSearch.jsx");
+const REAL_ROW = path.join(ROOT, "src", "components", "RealClimberRow.tsx");   // the browse row moved out of core (PR34)
 const LOCK = path.join(ROOT, ".match-pct-injection.lock");
 
 // Two runs of one suite must never overlap: both snapshot, edit and restore the same file, so a
@@ -53,48 +54,50 @@ const cases = [
   {
     name: "THE REAL DEFECT: both terms uncapped again, under a hard clamp at 99",
     edits: [
-      ['s+=Math.min(CMAX_DISC,(_ad.filter(x=>_bd.includes(x)).length)*16);', 's+=(_ad.filter(x=>_bd.includes(x)).length)*16;'],
-      ['s+=Math.min(CMAX_OBJ,(_ao2.filter(x=>_bo2.includes(x)).length)*14);', 's+=(_ao2.filter(x=>_bo2.includes(x)).length)*14;'],
+      ['pts:Math.min(CMAX_DISC,_sd.length*16),', 'pts:_sd.length*16,'],
+      ['pts:Math.min(CMAX_OBJ,_so.length*14),', 'pts:_so.length*14,'],
       ['return Math.max(COMPAT_BASE,Math.min(COMPAT_TOP,Math.round(COMPAT_BASE+((s-COMPAT_BASE)/(COMPAT_MAX-COMPAT_BASE))*(COMPAT_TOP-COMPAT_BASE))));', 'return Math.min(99,Math.max(s,20));'],
     ],
     expect: "still clamps at a literal 99",
   },
   {
     name: "only the DISCIPLINES cap reverts",
-    edits: [['s+=Math.min(CMAX_DISC,(_ad.filter(x=>_bd.includes(x)).length)*16);', 's+=(_ad.filter(x=>_bd.includes(x)).length)*16;']],
+    edits: [['pts:Math.min(CMAX_DISC,_sd.length*16),', 'pts:_sd.length*16,']],
     // NOT the maximal-pair assertion: with ONE term uncapped the rescale overshoots and re-clamps
     // to exactly COMPAT_TOP, so that assertion still passes. What catches it is the saturation
     // returning and the weakest signals being swamped again.
-    expect: "verified trust CANNOT move the number",
+    expect: "verified CANNOT move the number",
   },
   {
     name: "only the OBJECTIVES cap reverts",
-    edits: [['s+=Math.min(CMAX_OBJ,(_ao2.filter(x=>_bo2.includes(x)).length)*14);', 's+=(_ao2.filter(x=>_bo2.includes(x)).length)*14;']],
-    expect: "verified trust CANNOT move the number",
+    edits: [['pts:Math.min(CMAX_OBJ,_so.length*14),', 'pts:_so.length*14,']],
+    expect: "verified CANNOT move the number",
   },
   {
     name: "COMPAT_MAX becomes a LITERAL, so a new term can drift from the ceiling",
-    edits: [['COMPAT_MAX=COMPAT_BASE+CMAX_DISC+CMAX_GRADE+CMAX_OBJ+CMAX_VERIF+CMAX_PACE+CMAX_AVAIL;', 'COMPAT_MAX=114;']],
+    edits: [['COMPAT_MAX=COMPAT_BASE+CMAX_DISC+CMAX_GRADE+CMAX_OBJ+CMAX_VERIF+CMAX_PACE+CMAX_AVAIL+CMAX_AREA;', 'COMPAT_MAX=128;']],
     expect: "not derived",
   },
   {
     name: "a signal stops mattering: the grade term is flattened to its neutral value",
-    edits: [['s+=_gp?Math.max(0,CMAX_GRADE-Math.abs(_gp[0]-_gp[1])*3):CMAX_GRADE/2;', 's+=CMAX_GRADE/2;']],
+    edits: [['pts:_gp?Math.max(0,CMAX_GRADE-Math.abs(_gp[0]-_gp[1])*3):CMAX_GRADE/2,', 'pts:CMAX_GRADE/2,']],
     expect: "grade range CANNOT move the number",
   },
   {
     name: "the copy promises a signal nothing wires (belay catches)",
     file: PARTNER_SEARCH,   // the Find-partners copy moved out of core with PartnerSearch
-    edits: [['blends your shared objectives, grade range, disciplines, availability overlap and verified trust.', 'blends your shared objectives, grade range, disciplines, availability overlap and belay catches.']],
+    edits: [['blends your shared objectives and listed areas, grade range, disciplines, availability overlap and whether they are verified.', 'blends your shared objectives and listed areas, grade range, disciplines, availability overlap and belay catches.']],
     expect: "which this guard cannot tie to any signal",
   },
   {
     name: "THE REAL DEFECT: the browse row calls every real climber a NEW PROFILE",
+    file: REAL_ROW,
     edits: [['>Not enough shared info to score a match<', '>New profile — not enough shared info to score a match yet<']],
     expect: 'calls every real climber a "New profile"',
   },
   {
     name: "...and the other half of it: the refusal promises the score arrives YET",
+    file: REAL_ROW,
     // Separated deliberately. The two claims fail differently — one blames the climber, one
     // promises a resolution nothing on `profiles` can deliver — and a case that restored both
     // would pass on the strength of either.
@@ -103,23 +106,27 @@ const cases = [
   },
   {
     name: "the refusal is deleted, leaving the absence unexplained beside the seed card's big score",
+    file: REAL_ROW,
     edits: [['>Not enough shared info to score a match<', '><']],
     expect: "no longer explains the missing match %",
   },
   {
     name: "_cand narrows back to the pre-0209 projection, so every real climber reads the refusal again",
+    file: REAL_ROW,
     // The regression 0209 closed: objectives hardcoded empty and the new columns dropped.
-    edits: [['objectiveIds:Array.isArray(objIds)?objIds:[]};', 'objectiveIds:[]};'],
+    edits: [['objectiveIds:Array.isArray(objIds)?objIds:[],', 'objectiveIds:[],'],
             ['hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,', '']],
     expect: "for a COMPLETE profile",
   },
   {
     name: "the objectives gate is removed, so an UNREAD list scores as zero shared objectives",
+    file: REAL_ROW,
     edits: [['{!_objReady?<div', '{false?<div']],
     expect: "before its objectives are read",
   },
   {
     name: "SILENT: the refusal is REWORDED, truthfully and differently",
+    file: REAL_ROW,
     // The load-bearing negative. 6b/6c test the lifted TEXT for two forbidden claims and a
     // length, never for today's phrasing — a guard pinned to one sentence forbids improving it.
     edits: [['>Not enough shared info to score a match<', '>Match scores need objectives and availability, which a public profile does not carry<']],
@@ -127,7 +134,8 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the old wording",
-    edits: [['function RealClimberRow({p,onOpen,objIds,objErr}){', '/* this used to read "New profile — …score a match yet" */\nfunction RealClimberRow({p,onOpen,objIds,objErr}){']],
+    file: REAL_ROW,
+    edits: [['export default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing}: RealClimberRowProps){', '/* this used to read "New profile — …score a match yet" */\nexport default function RealClimberRow({p,onOpen,objIds,objErr,verified,listing}: RealClimberRowProps){']],
     expect: null,
   },
   {

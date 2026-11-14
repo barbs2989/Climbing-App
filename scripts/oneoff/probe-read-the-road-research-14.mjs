@@ -10,9 +10,9 @@
 //     re-homing after all rather than research
 import { selectAll } from "../lib/supabase-env.mjs";
 
+// wa_don_t_climb_that_she_said was the fourteenth; the owner had it deleted on 2026-10-22, so 13 remain.
 const IDS = [
   "wa_cashmere_mountain_northeast_ridge",
-  "wa_don_t_climb_that_she_said",
   "wa_east_mcmillan_spire_northeast_buttress",
   "wa_east_ridge_7",
   "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",

@@ -1,0 +1,84 @@
+{
+  "area_id": "or_mt_jefferson",
+  "routes": [
+    {
+      "route_id": "or_center_ridge",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "No source found naming a Center Ridge on Mount Jefferson (searches of SummitPost/Mazamas/Mountaineers/Mountain Project listings). No logged ascent names it. Window is the general summit season only; low confidence." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "or_jefferson_park_glacier",
+      "season": { "months": [6,7,8], "window": "Jun-Aug", "evidence": "Peakbagger ascents logged as Jefferson Park Glacier fall in May, Jul (6) and Aug (4), one Sep. Mountaineers/SummitPost list it as the second most climbed line, a snow/glacier route (search results; pages returned 403 on fetch). Snow route so early to mid summer." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "257282", "verdict": "unsure", "why": "Aug 2012 Jefferson Park Glacier, but the packet holds only a start point, no recorded line, so nothing to attach." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "or_mt_jefferson_north_ridge",
+      "season": { "months": [6,7], "window": "Jun-Jul", "evidence": "Our own text says do it only while snow-covered; Mazamas/SummitPost say the north-side routes are better in late spring when snow limits rockfall. Logged North Ridge ascents: Jul (2), Aug (1)." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1211458", "verdict": "different", "why": "Logged Whitewater Glacier (the report mentions a North Ridge high-point side trip only in passing)." },
+        { "aid": "844314", "verdict": "unsure", "why": "Logged West Rib from the Woodpecker Ridge side, empty report; not the North Ridge." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "or_north_milk_creek_glacier",
+      "season": { "months": [5,6], "window": "May-Jun", "evidence": "Mazamas route page (fetched): climb only when snow-covered, later it is a steep scree gully with rockfall and waterfalls; spring/summer/winter marked. SummitPost: north/east/west routes best in late spring. One logged ascent, in June." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3286429", "verdict": "different", "why": "Pamelia Lake round trip on the SW ridge line, not the Milk Creek gully." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "or_south_ridge_2",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Mountain Project (fetched): best with snow on the Red Saddle traverse, late season it can be bypassed; recent reports Jul-Aug. Logged South Ridge ascents: Jul 9, Aug 8 (incl. lowercase variants), Sep 2, Oct 1. Wilderness permit season Jun 15-Oct 15 (Oregon Hikers)." },
+      "track": { "aid": "686897", "verdict": "same", "kind": "oneway", "inSeason": true,
+        "why": "Logged South Ridge, report says they skipped the SW ridge and took the South Ridge via Shale Lake to Red Saddle; line starts at Pamelia Lake TH (~220 m from confirmed coordinate), reaches the summit (3 m from summit coordinate), recording ends near Shale Lake because the phone died. Only one South Ridge in our catalog. July 30." },
+      "otherTracksConsidered": [
+        { "aid": "2019756", "verdict": "unsure", "why": "Sep 2022 South ridge via Shale Lake, in season, but starts mid-way (not at the trailhead), so it is not a trailhead-to-summit line." },
+        { "aid": "1003294", "verdict": "unsure", "why": "Jul 2018 South Ridge, in season, but starts at a gate/road end near 44.6366,-121.808, not at the Pamelia TH; a different approach, so left out." },
+        { "aid": "3274250", "verdict": "different", "why": "Logged SW ridge, a separate line (missing route below)." },
+        { "aid": "2993630", "verdict": "different", "why": "Logged SW route." },
+        { "aid": "2621666", "verdict": "unsure", "why": "No logged route name, no report, start mid-way." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "add", "lat": 44.66015, "lng": -121.89159, "name": "Pamelia Lake Trailhead",
+          "evidence": "The route has no pins. Track 686897 starts about 220 m from here and the report names Pamelia Lake TH; the Oregon Hikers field-guide page gives this coordinate.",
+          "confirmedBy": "https://www.oregonhikers.org/field_guide/Pamelia_Lake_Trailhead" },
+        { "type": "Summit", "action": "add", "lat": 44.6743, "lng": -121.79964, "name": "Mount Jefferson summit",
+          "evidence": "No summit pin stored. Peakbagger lidar coordinate 44.6743,-121.79964 and the tracks' highest points (44.67432,-121.7996) agree within ~20 m.",
+          "confirmedBy": "Peakbagger peak 2401 (packet peakbagger field)" }
+      ],
+      "facts": [
+        { "field": "monthBreakdown", "month": 7, "text": "In late July a long steep snow slope can still fill the Red Saddle traverse, steep enough that a self-arrest is unlikely to hold; parties placed pickets or ran a fixed line.", "aids": ["686897","1003294"] },
+        { "field": "monthBreakdown", "month": 9, "text": "By early September the traverse can shrink to a small ice patch with a dirt line beside it, and Shale Lake is nearly dry.", "aids": ["2019756"] },
+        { "field": "watch_out", "month": 7, "text": "Mosquitoes are thick in the forest below Shale Lake in July", "aids": ["686897"] },
+        { "field": "watch_out", "month": 9, "text": "Above the trees near 6,200 ft it is loose scree and sand to the summit, easy to slide on and slow", "aids": ["2019756","1003294"] }
+      ]
+    }
+  ],
+  "missing": [
+    { "kind": "route", "peak": "Mount Jefferson", "name": "Whitewater Glacier", "alt_names": ["White Water Glacier","Whitewater"],
+      "discipline": "alpine", "grade": "Class 4 / low 5th summit pinnacle, glacier", "face": "NE", "season": "Jun-Sep",
+      "overview": "The most-logged line on the peak after the south side. From the Whitewater trailhead, hike through the burn into Jefferson Park, camp near 8,300 ft, cross the gentle glacier to the southeast ridge, grind up scree to Red Saddle, then cross the Terrible Traverse and finish up the summit pinnacle.",
+      "loggedAscents": 22, "aids": ["3257845"],
+      "evidence": ["https://www.willhiteweb.com/oregon_climbing/mount_jefferson/whitewater_glacier_266.htm - Whitewater trailhead via road 2243, glacier, SE ridge near 9,000 ft, class 4-5 pinnacle", "https://www.mountaineers.org/activities/routes-places/mount-jefferson-via-whitewater-glacier (search snippet only; fetch 403)"] },
+    { "kind": "route", "peak": "Mount Jefferson", "name": "Southwest Ridge", "alt_names": ["SW Ridge","SW route","South West Ridge","Southwest slope"],
+      "discipline": "alpine", "grade": "Class 3-4 scramble, Terrible Traverse snow/ice", "face": "SW", "season": "Jul-Sep",
+      "overview": "The usual day-trip line, started from Pamelia Lake: take the trail to the PCT, leave it on a faint climber path through some brush, and follow the long loose ridge up to Red Saddle, then the Terrible Traverse and the summit pinnacle.",
+      "loggedAscents": 15, "aids": ["3274250","2993630"],
+      "evidence": ["https://www.willhiteweb.com/oregon_climbing/mount_jefferson/whitewater_glacier_266.htm - mentions Pamelia Lake as the quickest approach", "search snippet (uib.no 3000m list) calls SW ridge from Pamelia the most common route; fetch redirected"] }
+  ],
+  "notes": "Our catalog holds no pins or text on any of the five routes. Whitewater Glacier and SW Ridge are the two most climbed lines and are not stored. 'Center Ridge' (Easy 5th) is not a name I could find anywhere; Mountain Project rates the South Ridge Easy 5th, so it may be a misfiled alias of the South Ridge (a duplicate). Our South Ridge is graded 4th; Mountain Project says Easy 5th. Track 686897 is one-way (phone died), so it needs the Pamelia TH pin to pass the 300 m check. Tracks 3274250, 2993630 (SW) and 3257845, 2887420 (Whitewater) belong to the new routes if inserted."
+}

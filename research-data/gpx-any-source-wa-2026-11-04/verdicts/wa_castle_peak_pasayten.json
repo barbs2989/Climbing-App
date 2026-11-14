@@ -1,0 +1,169 @@
+{
+ "area_id": "wa_castle_peak_pasayten",
+ "routes": [
+  {
+   "route_id": "wa_castle_peak_pasayten_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored text late Jul-Sep; a route page says spring-fall with crampons early and heavy mosquitoes; late July to September is the practical window for the Ross Lake approach. Peakbagger shows Oct ascents in dry years."
+   },
+   "track": {
+    "aid": "2338179",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Oct 7 2023 (one week after the window, inside the one-month margin). Round trip from the Lightning Creek boat landing up the Lightning Creek and Freezeout Creek line to the summit; the same party report names that route, our route is that US-side line, and the track approaches the summit from the west. Blank logged route, but the other stored routes are north-face technical lines or have no text. Starts at the lake landing (not our Ross Dam pin) so the trailhead is not matched."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "1062786",
+     "verdict": "unsure",
+     "why": "Oct 27 2018 from Manning Park, the Castle Creek south route; no track points in packet."
+    },
+    {
+     "aid": "789648",
+     "verdict": "unsure",
+     "why": "Oct 2012 via a north gully from Canada; no track points."
+    },
+    {
+     "aid": "1071963",
+     "verdict": "not-summited",
+     "why": "Turned back placeholder, Nov."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "monthBreakdown",
+     "month": 10,
+     "text": "In early October after a dry spell the snow had melted off the Freezeout Creek line and trail runners with no traction were enough, but the round trip from the lake landing is about 36 miles with roughly 8,400 ft of gain.",
+     "aids": [
+      "2338179"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_castle_peak_pasayten_east_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "No stored text; peak-level season late Jul-Sep from route pages. Peakbagger months for east ridge/SE ridge: Sep, Oct."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2338179",
+     "verdict": "unsure",
+     "why": "Blank logged route on a peak with several routes; line follows the Freezeout Creek standard."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_castle_peak_pasayten_north_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "No stored text; peak-level season from route pages."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2338179",
+     "verdict": "unsure",
+     "why": "Blank logged route; not a north-ridge line."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_castle_peak_pasayten_south_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored text Jul-Sep; Castle Creek brush and slopes; an Oct 27 2018 Manning Park ascent was about a month after."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2338179",
+     "verdict": "different",
+     "why": "Approaches from the west via Freezeout Creek, not the Castle Creek south line."
+    },
+    {
+     "aid": "1062786",
+     "verdict": "unsure",
+     "why": "Appears to be this south line from Manning Park, but no track points harvested."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_castle_peak_pasayten_the_drawbridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep",
+    "evidence": "Stored text Jun-Sep (first climbed late June); search found nothing contradicting."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2338179",
+     "verdict": "different",
+     "why": "Walk-up line, not the north face."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_north_face_left_buttress",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored text Jul-Sep, first ascent early August; no contrary source found."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2338179",
+     "verdict": "different",
+     "why": "Walk-up line, not the north face."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Fight or Flight (wa_north_face_left_buttress) and wa_castle_peak_pasayten_north_face_left_buttress look like the same north-face left-buttress route filed twice. A WTA page for Castle Peak carried a closure note dated July 31 2026 (Ptarmigan Fire). The landing coordinate on Ross Lake could not be confirmed from a fetched page, so no trailhead pin was proposed."
+}

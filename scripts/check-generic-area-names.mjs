@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:generic-area-names — is any area named only by DISCIPLINE, not by place?
 //
 // 2026-10-07, the owner: "I notice in many areas that an area will be just called bouldering, ice
@@ -13,7 +14,8 @@
 // The rule is ONE function, scripts/lib/generic-area-name.mjs, shared with the importer (which steps
 // THROUGH a generic level of the source's path rather than re-creating it). What it deliberately does
 // NOT call generic is written there: a name that also names a place ("Smith Rock Bouldering"), a single
-// feature ("Sport Wall", "Dry Wall"), a name with a number ("Boulder 3").
+// feature ("Sport Wall", "Dry Wall"), a name with a number ("Boulder 3") — except the source's placeholder
+// for a sub-area nobody named, "New Sub-Area 1" / "Sub-Area 3" (2026-10-14: 18 of them, 0292).
 //
 // EXEMPT, listed with a reason each: scripts/data/generic-area-names-exempt.json — names the rule
 // matches that are, on reading, the place's real name ("The General" at Dedham, beside The Captain,
@@ -32,7 +34,7 @@ import path from "path";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { genericAreaName } from "./lib/generic-area-name.mjs";
 
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const EXEMPT = JSON.parse(fs.readFileSync(path.join(ROOT, "scripts/data/generic-area-names-exempt.json"), "utf8")).exempt;
 
 await selectAll("areas", "id", "id=eq.__warmup_no_such_area__", { pageSize: 1 });   // cold start: see check-area-counts.mjs

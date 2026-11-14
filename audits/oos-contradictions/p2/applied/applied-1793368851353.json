@@ -1,0 +1,31 @@
+{
+ "applied": [
+  {
+   "id": "nh_west_side_of_greeley_northern_pond_2_damnation_runnel",
+   "column": "length_m",
+   "path": [],
+   "fact": "route length"
+  },
+  {
+   "id": "or_northwest_passage_aid",
+   "column": "aid_grade",
+   "path": [],
+   "fact": "aid grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "nh_west_side_of_greeley_northern_pond_2_damnation_runnel",
+   "before": {
+    "length_m": 1
+   }
+  },
+  {
+   "id": "or_northwest_passage_aid",
+   "before": {
+    "aid_grade": "A0"
+   }
+  }
+ ]
+}

@@ -118,7 +118,7 @@ routes(
   pitches       int,
   length_m      int,
   sort_order    int,                    -- left-to-right cliff order (MP "by area")
-  stars         numeric,                -- cached avg from trip reports
+  stars         numeric,                -- cached avg, one vote per climber: route_ratings (header stars) else latest public trip report (0294)
   fa            text,
   lat, lng      double precision,
   aspect        text,
@@ -166,7 +166,6 @@ crew_members(crew_id, user_id, status)
 messages(id, thread_type, thread_id, sender_id, body, image_url, created_at)   -- realtime
 clubs(...) / club_members(...) / club_posts(...) / events(...)
 vouches(from_id, target_id, route, ratings jsonb, text)   -- trust inputs
-belay_catches(user_id, partner_id, date, high_factor bool) -- trust ledger
 ```
 
 Reference tables: `condition_tags`, `hazard_tags` (today's `HAZARD_TAGS`, `COND_KW`).
@@ -174,7 +173,7 @@ Reference tables: `condition_tags`, `hazard_tags` (today's `HAZARD_TAGS`, `COND_
 Auth/profile tables landed via `0009_auth_profiles.sql`. **The social tables above are LIVE —
 this section described them as simulated until 2026-09-02, more than a month after they were
 migrated.** `crews` / `crew_members` / `crews_messages`, `messages` (direct), `connections`,
-`vouches`, `belay_catches`, `objectives`, `climb_logs`, `user_reports`, `groups` /
+`vouches`, `objectives`, `climb_logs`, `user_reports`, `groups` /
 `group_members` all exist in the live schema **and** are read or written by `lib/db.js`.
 Re-derive rather than trust this paragraph: `grep -o 'from("[a-z_]*")' lib/db.js | sort -u`
 returns **37** tables against 41 live.
@@ -351,8 +350,11 @@ A topo is **two separate things**, and conflating them is the usual mistake:
 1. a real **photo** of the wall, and
 2. a **vector overlay** drawn on it — the route line, belays, pitch numbers, anchors.
 
-Key modelling point: a topo is **per-wall, not per-route**. One photo of a buttress carries
-many route lines (this is how MP/theCrag do it). So: one photo → N lines, each line → a route.
+Key modelling point (changed 2026-10-23, 0364): a topo photo **belongs to the route page it was
+posted from** (`topos.route_id`) and shows on that route only. It was per-wall (filed by `area_id`),
+but an alpine route's area is the whole peak, so a north-face photo showed on every south-side
+route. `area_id` is still stored (contribution points credit it to the area). The schema still
+allows one photo → N lines, each line → a route.
 Normalized line coordinates make the overlay resolution-independent.
 
 ### Sourcing is a legal problem, not a technical one

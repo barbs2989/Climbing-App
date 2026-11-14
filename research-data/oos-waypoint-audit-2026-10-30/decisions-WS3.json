@@ -1,0 +1,211 @@
+[
+ {
+  "id": "wa_north_face_3",
+  "i": 5,
+  "name": "Lexington Tower summit",
+  "from": [
+   48.514154,
+   -120.65743
+  ],
+  "op": "none",
+  "reason": "No published coordinate found; ground 7518 ft vs stated 7560 (42 ft). Left."
+ },
+ {
+  "id": "wa_sharkfin_tower_southeast_ridge",
+  "i": 3,
+  "name": "Sharkfin Tower summit",
+  "from": [
+   48.4996,
+   -121.0398
+  ],
+  "op": "none",
+  "reason": "No published coordinate found; ground 8161 vs 8120 (41 ft). Left."
+ },
+ {
+  "id": "wa_southeast_face",
+  "i": 4,
+  "name": "Sharkfin Tower summit",
+  "from": [
+   48.4996,
+   -121.0398
+  ],
+  "op": "none",
+  "reason": "Same coordinate as the other Sharkfin pin; no published coordinate; 41 ft gap."
+ },
+ {
+  "id": "wa_hourglass_gully_winter",
+  "i": 1,
+  "name": "Mount Index Main Peak Summit",
+  "from": [
+   47.77453,
+   -121.58094
+  ],
+  "op": "none",
+  "reason": "GNIS 1521160 Mount Index Summit [47.77432,-121.58038] is ~50 m away; ground 5951 vs 5991 (40 ft)."
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "i": 0,
+  "name": "Chianti Spire summit",
+  "from": [
+   48.553205,
+   -120.590401
+  ],
+  "op": "none",
+  "reason": "No published coordinate found; ground 8376 vs 8400 (24 ft). Left."
+ },
+ {
+  "id": "wa_chianti_spire_north_face",
+  "i": 0,
+  "name": "Chianti Spire summit",
+  "from": [
+   48.553205,
+   -120.590401
+  ],
+  "op": "none",
+  "reason": "Same coordinate as the other Chianti pin; 24 ft gap."
+ },
+ {
+  "id": "wa_gray_wolf_ridge_se_slopes",
+  "i": 7,
+  "name": "Gray Wolf Mountain summit",
+  "from": [
+   47.88148,
+   -123.20629
+  ],
+  "op": "none",
+  "reason": "GNIS 1529266 Gray Wolf Summit [47.88090,-123.20641] is ~65 m away; ground 7206 vs 7218."
+ },
+ {
+  "id": "wa_southwest_rib_2",
+  "i": 3,
+  "name": "Crystal Lake Tower",
+  "from": [
+   47.47,
+   -120.792
+  ],
+  "op": "none",
+  "reason": "No published coordinate found (no GNIS feature); ground 7812 vs 7800 (12 ft). Left."
+ },
+ {
+  "id": "wa_east_twin_needle_south_route",
+  "i": 8,
+  "name": "East Twin Needle",
+  "from": [
+   48.7767,
+   -121.3115
+  ],
+  "op": "none",
+  "reason": "Ground 7840 equals stated 7840. GNIS 1527548 Twin Needles Pillar [48.77458,-121.30348] is a different named feature ~600 m east; no published coordinate for the East Twin Needle top. Left."
+ },
+ {
+  "id": "wa_reynolds_peak_scramble",
+  "i": 5,
+  "name": "Reynolds Peak (true/south summit)",
+  "from": [
+   48.37375,
+   -120.567037
+  ],
+  "op": "none",
+  "reason": "Wikipedia lists Reynolds Peak 48 22 25 N 120 34 01 W (48.3737,-120.5670), 8,517 ft; pin is within ~20 m and is a 3DEP local max. GNIS point is 241 m north, 3DEP 8361 there."
+ },
+ {
+  "id": "wa_mount_ballard_south",
+  "i": 8,
+  "name": "Mount Ballard summit (south/true peak)",
+  "from": [
+   48.686066,
+   -120.757928
+  ],
+  "op": "none",
+  "reason": "Deliberate south summit: Country High Points says the south peak looks obviously higher than the surveyed 8,371 ft point (GNIS/Wikipedia 48.6885,-120.7594); pin is a 3DEP local max, ground 8281 vs 8278 at GNIS. No published coordinate for the south top. Left."
+ },
+ {
+  "id": "wa_vanishing_point",
+  "i": 1,
+  "name": "Dolomite Tower",
+  "from": [
+   47.77918,
+   -121.43599
+  ],
+  "op": "none",
+  "reason": "No published coordinate for Dolomite Tower (Mt Baring sub-peak) found. Pin is a 3DEP local max but ground 6074 vs stated 5708 (366 ft); 150 m neighbours S/SW/W read 5696-5709, so the 6074 may be a DEM cliff artefact. Left; flag for review."
+ },
+ {
+  "id": "wa_buck_mountain_south_ridge",
+  "i": 4,
+  "name": "Buck Mountain",
+  "from": [
+   48.09363,
+   -120.9122
+  ],
+  "op": "none",
+  "reason": "Wikipedia: 48 05 37 N 120 54 44 W (48.09361,-120.91222), 8,534 ft; pin within ~3 m. GNIS is 237 m south."
+ },
+ {
+  "id": "wa_first_amendment",
+  "i": 2,
+  "name": "Le Petit Cheval summit",
+  "from": [
+   48.53569,
+   -120.62207
+  ],
+  "op": "none",
+  "reason": "No published coordinate found. Pin is a 3DEP local max (6684 ft); the two routes state 6386 and 6480 ft, and no source found to pick a published elevation. Left; flag."
+ },
+ {
+  "id": "wa_spontaneity_arete",
+  "i": 2,
+  "name": "Le Petit Cheval summit",
+  "from": [
+   48.53569,
+   -120.62207
+  ],
+  "op": "none",
+  "reason": "Same coordinate as the other Le Petit Cheval pin; elev 6480 vs ground 6684, no published elevation found."
+ },
+ {
+  "id": "wa_bulls_tooth_standard",
+  "i": 3,
+  "name": "Bulls Tooth Summit",
+  "from": [
+   47.682633,
+   -121.003887
+  ],
+  "op": "none",
+  "reason": "Wikipedia: 47 40 57 N 121 00 14 W (47.6825,-121.0039), 6,840 ft; pin within ~15 m and elev matches. GNIS is 255 m off."
+ },
+ {
+  "id": "wa_icy_peak_ruth_icy_traverse",
+  "i": 2,
+  "name": "Icy Peak Summit (Southeast/true summit)",
+  "from": [
+   48.835294,
+   -121.525779
+  ],
+  "op": "none",
+  "reason": "Wikipedia: 48 50 08 N 121 31 32 W (48.8356,-121.5256), 7,073 ft; pin within ~40 m and elev matches. GNIS is 214 m off."
+ },
+ {
+  "id": "wa_ingalls_peak_east_ne_ridge_route",
+  "i": 0,
+  "name": "Ingalls Peak - East Peak",
+  "from": [
+   47.472505,
+   -120.943405
+  ],
+  "op": "none",
+  "reason": "Deliberate East Peak of the triple-summit mountain (GNIS/Wikipedia 47.4725,-120.9465 is the main top ~220 m west); pin is a 3DEP local max, ground 7524 vs 7480."
+ },
+ {
+  "id": "wa_ingalls_peak_east_route",
+  "i": 6,
+  "name": "Ingalls Peak \u2014 East Peak",
+  "from": [
+   47.472505,
+   -120.943405
+  ],
+  "op": "none",
+  "reason": "Same East Peak pin as the other Ingalls route."
+ }
+]

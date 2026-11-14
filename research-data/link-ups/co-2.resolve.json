@@ -1,0 +1,694 @@
+[
+ {
+  "lu": "co_lu_longs_meeker",
+  "leg": 0,
+  "peak": "Mount Meeker",
+  "route": "Loft Couloir, then the short walk to the summit from the top of the Loft",
+  "pick": {
+   "id": "co_mt_meeker_the_loft_route",
+   "name": "The Loft Route",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Mt. Meeker",
+   "score": 0.14285714285714285
+  },
+  "others": [
+   {
+    "id": "co_mt_meeker_the_loft_route",
+    "name": "The Loft Route",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Mt. Meeker",
+    "score": 0.14285714285714285
+   },
+   {
+    "id": "co_kiener_s_route",
+    "name": "Kiener's Route",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Long's Peak/Mt. Meeker Cirque",
+    "score": 0
+   },
+   {
+    "id": "co_heat_seeker",
+    "name": "Heat Seeker",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Mt. Meeker",
+    "score": 0
+   },
+   {
+    "id": "co_the_flying_buttress",
+    "name": "The Flying Buttress",
+    "disc": "alpine",
+    "grade": "5.10",
+    "area": "Mt. Meeker",
+    "score": 0
+   },
+   {
+    "id": "co_main_vein",
+    "name": "Main Vein",
+    "disc": "alpine",
+    "grade": "5.11",
+    "area": "Mt. Meeker",
+    "score": 0
+   },
+   {
+    "id": "co_bands_and_brothers",
+    "name": "Bands and Brothers",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Mt. Meeker",
+    "score": 0
+   },
+   {
+    "id": "co_the_iron_finger",
+    "name": "The Iron Finger",
+    "disc": "alpine",
+    "grade": "5.12c",
+    "area": "Mt. Meeker",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_longs_meeker",
+  "leg": 1,
+  "peak": "Longs Peak",
+  "route": "Clark's Arrow downclimb and Keplinger's Couloir to the Homestretch",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_arapaho_peaks_traverse",
+  "leg": 0,
+  "peak": "South Arapaho Peak",
+  "route": "Arapaho Glacier Trail to the saddle, then the southeast slopes",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_arapaho_peaks_traverse",
+  "leg": 1,
+  "peak": "North Arapaho Peak",
+  "route": "Connecting ridge north (class 3-4)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_castle_conundrum",
+  "leg": 0,
+  "peak": "Castle Peak",
+  "route": "Northeast Ridge from Montezuma Basin",
+  "pick": {
+   "id": "co_castle_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Castle Peak",
+   "score": 0.3333333333333333
+  },
+  "others": [
+   {
+    "id": "co_castle_peak_northeast_ridge",
+    "name": "Northeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Castle Peak",
+    "score": 0.3333333333333333
+   },
+   {
+    "id": "co_the_western_mountaineer_s_route",
+    "name": "The Western Mountaineer's Route",
+    "disc": "alpine",
+    "grade": "5.10",
+    "area": "Main Castle Formation",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_castle_conundrum",
+  "leg": 1,
+  "peak": "Conundrum Peak",
+  "route": "South Ridge from the Castle-Conundrum saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_wetterhorn_uncompahgre",
+  "leg": 0,
+  "peak": "Wetterhorn Peak",
+  "route": "Southeast Ridge from the Matterhorn Creek trailhead",
+  "pick": {
+   "id": "co_wetterhorn_peak_southeast_ridge",
+   "name": "Southeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Wetterhorn Peak",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "co_wetterhorn_peak_southeast_ridge",
+    "name": "Southeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Wetterhorn Peak",
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_wetterhorn_uncompahgre",
+  "leg": 1,
+  "peak": "Uncompahgre Peak",
+  "route": "Southeast ridge / standard route, joined by a cross-country link",
+  "pick": {
+   "id": "co_uncompahgre_peak_south_ridge",
+   "name": "South Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Uncompahgre Peak",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_uncompahgre_peak_south_ridge",
+    "name": "South Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Uncompahgre Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 0,
+  "peak": "Peak 1",
+  "route": "Trail from Rainbow Lake trailhead to the ridge; Mount Royal and Mount Victoria are optional earlier summits",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 1,
+  "peak": "Tenmile Peak",
+  "route": "Ridge south, about half a mile from Peak 1",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_fletcher_peak_to_atlantic_peak_traverse",
+    "name": "Fletcher Peak to Atlantic Peak Traverse",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Tenmile Range Traverses",
+    "score": 0
+   },
+   {
+    "id": "co_helen_dyer_traverse",
+    "name": "Helen/Dyer Traverse",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Tenmile Range Traverses",
+    "score": 0
+   },
+   {
+    "id": "co_tenmile_traverse",
+    "name": "Tenmile Traverse",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Tenmile Range Traverses",
+    "score": 0
+   },
+   {
+    "id": "co_mayflower_cirque_traverse",
+    "name": "Mayflower Cirque Traverse",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Tenmile Range Traverses",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 2,
+  "peak": "Peak 3",
+  "route": "Ridge scramble past Peak 2",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 3,
+  "peak": "Peak 4",
+  "route": "Exposed ridge scramble with knife edges",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 4,
+  "peak": "Peak 6",
+  "route": "Mostly flat tundra ridge past Peak 5",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 5,
+  "peak": "Peak 7",
+  "route": "Descend a notable saddle then regain steeply",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 6,
+  "peak": "Peak 8",
+  "route": "Tundra ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 7,
+  "peak": "Peak 9",
+  "route": "Steep grassy slopes after a major saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_tenmile_traverse",
+  "leg": 8,
+  "peak": "Peak 10",
+  "route": "Jeep road to the saddle, then the ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_apache_navajo",
+  "leg": 0,
+  "peak": "Apache Peak",
+  "route": "From the Apache/Navajo saddle or the Apache Couloir to the south ridge",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_the_bishop",
+    "name": "The Bishop",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Apache Peak",
+    "score": 0
+   },
+   {
+    "id": "co_kasparov_traverse",
+    "name": "Kasparov Traverse",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Apache Peak",
+    "score": 0
+   },
+   {
+    "id": "co_the_queen",
+    "name": "The Queen",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Apache Peak",
+    "score": 0
+   },
+   {
+    "id": "co_bishop_s_scepter",
+    "name": "Bishop's Scepter",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Apache Peak",
+    "score": 0
+   },
+   {
+    "id": "co_black_knight",
+    "name": "Black Knight",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Apache Peak",
+    "score": 0
+   },
+   {
+    "id": "co_the_rook",
+    "name": "The Rook",
+    "disc": "alpine",
+    "grade": "5.9+",
+    "area": "Apache Peak",
+    "score": 0
+   },
+   {
+    "id": "co_apache_peak_queen_s_way",
+    "name": "Queen's Way",
+    "disc": "mountaineering",
+    "grade": "Steep Snow",
+    "area": "Apache Peak",
+    "score": 0
+   },
+   {
+    "id": "co_rook_s_pawn",
+    "name": "Rook's Pawn",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Apache Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_apache_navajo",
+  "leg": 1,
+  "peak": "Navajo Peak",
+  "route": "West Chimney (class 4)",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_north_face_of_dicker_s_peck",
+    "name": "North Face of Dicker's Peck",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Navajo Peak",
+    "score": 0
+   },
+   {
+    "id": "co_north_face_4",
+    "name": "North Face",
+    "disc": "alpine",
+    "grade": "5.3",
+    "area": "Navajo Peak",
+    "score": 0
+   },
+   {
+    "id": "co_dicker_s_peck",
+    "name": "Dicker's Peck",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Navajo Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_pawnee_toll",
+  "leg": 0,
+  "peak": "Pawnee Peak",
+  "route": "East Ridge (Little Pawnee is an optional first summit)",
+  "pick": {
+   "id": "co_little_pawnee_to_pawnee_traverse",
+   "name": "Little Pawnee to Pawnee Traverse",
+   "disc": "alpine",
+   "grade": "4th",
+   "area": "Pawnee Peak",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "co_little_pawnee_to_pawnee_traverse",
+    "name": "Little Pawnee to Pawnee Traverse",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Pawnee Peak",
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_pawnee_toll",
+  "leg": 1,
+  "peak": "Mount Toll",
+  "route": "South slope",
+  "pick": {
+   "id": "co_mount_toll_south_face",
+   "name": "South Face",
+   "disc": "mountaineering",
+   "grade": "Easy Snow",
+   "area": "Mount Toll",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_mount_toll_south_face",
+    "name": "South Face",
+    "disc": "mountaineering",
+    "grade": "Easy Snow",
+    "area": "Mount Toll",
+    "score": 0.5
+   },
+   {
+    "id": "co_north_ridge_5",
+    "name": "North Ridge",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Mount Toll",
+    "score": 0
+   },
+   {
+    "id": "co_ne_rib_submitted_as_ne_buttress",
+    "name": "NE Rib? (submitted as NE Buttress)",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Mount Toll",
+    "score": 0
+   },
+   {
+    "id": "co_barber_shop_traverse_west_face_spiral_route",
+    "name": "Barber Shop Traverse (West Face Spiral Route)",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Mount Toll",
+    "score": 0
+   },
+   {
+    "id": "co_north_wall_left_chimney",
+    "name": "North Wall, Left Chimney",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Mount Toll",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_glacier_gorge_traverse",
+  "leg": 0,
+  "peak": "Powell Peak",
+  "route": "Northeast Ridge (from Thatchtop, or on the way from Taylor)",
+  "pick": {
+   "id": "co_northeast_ridge_ii",
+   "name": "Northeast Ridge II",
+   "disc": "alpine",
+   "grade": "Easy 5th",
+   "area": "Powell Peak",
+   "score": 0.16666666666666666
+  },
+  "others": [
+   {
+    "id": "co_northeast_ridge_ii",
+    "name": "Northeast Ridge II",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Powell Peak",
+    "score": 0.16666666666666666
+   },
+   {
+    "id": "co_snark",
+    "name": "Snark",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Powell Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_glacier_gorge_traverse",
+  "leg": 1,
+  "peak": "McHenrys Peak",
+  "route": "Through McHenrys Notch",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_glacier_gorge_traverse",
+  "leg": 2,
+  "peak": "Chiefs Head Peak",
+  "route": "Long ridge, mostly third class",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_glacier_gorge_traverse",
+  "leg": 3,
+  "peak": "Pagoda Mountain",
+  "route": "West Ridge bypass or northwest face",
+  "pick": {
+   "id": "co_west_ridge_bypass",
+   "name": "West Ridge Bypass",
+   "disc": "alpine",
+   "grade": "Easy 5th",
+   "area": "Pagoda Mountain",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_west_ridge_bypass",
+    "name": "West Ridge Bypass",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Pagoda Mountain",
+    "score": 0.5
+   },
+   {
+    "id": "co_late_to_the_party_bypass",
+    "name": "Late to the Party - Bypass",
+    "disc": "alpine",
+    "grade": "5.3",
+    "area": "Pagoda Mountain",
+    "score": 0.25
+   },
+   {
+    "id": "co_west_ridge_2",
+    "name": "West Ridge",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Pagoda Mountain",
+    "score": 0.25
+   },
+   {
+    "id": "co_north_buttress",
+    "name": "North Buttress",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Pagoda Mountain",
+    "score": 0
+   },
+   {
+    "id": "co_crescent_ridge",
+    "name": "Crescent Ridge",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Pagoda Mountain",
+    "score": 0
+   },
+   {
+    "id": "co_northeast_face",
+    "name": "Northeast Face",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Pagoda Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_glacier_gorge_traverse",
+  "leg": 4,
+  "peak": "Longs Peak",
+  "route": "Keyhole Route",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_glacier_gorge_traverse",
+  "leg": 5,
+  "peak": "Storm Peak",
+  "route": "Walk-off via the Keyhole saddle",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_se_ridge_2",
+    "name": "SE Ridge",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Storm King",
+    "score": 0
+   },
+   {
+    "id": "co_north_face_3",
+    "name": "North Face",
+    "disc": "alpine",
+    "grade": "5.7+",
+    "area": "Storm King",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_capitol_snowmass",
+  "leg": 0,
+  "peak": "Capitol Peak",
+  "route": "Northeast Ridge (Knife Edge)",
+  "pick": {
+   "id": "co_northeast_ridge_knife_edge",
+   "name": "Northeast Ridge (Knife-Edge)",
+   "disc": "alpine",
+   "grade": "4th",
+   "area": "Capitol Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_northeast_ridge_knife_edge",
+    "name": "Northeast Ridge (Knife-Edge)",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Capitol Peak",
+    "score": 1
+   },
+   {
+    "id": "co_early_times",
+    "name": "Early Times",
+    "disc": "alpine",
+    "grade": "5.10",
+    "area": "Capitol Peak",
+    "score": 0
+   },
+   {
+    "id": "co_capitol_snowmass_traverse",
+    "name": "Capitol-Snowmass Traverse",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Capitol Peak",
+    "score": 0
+   },
+   {
+    "id": "co_northwest_buttress",
+    "name": "Northwest Buttress",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Capitol Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_capitol_snowmass",
+  "leg": 1,
+  "peak": "Snowmass Mountain",
+  "route": "Ridge via North Snowmass, then third-class summit",
+  "pick": {
+   "id": "co_snowmass_mountain_east_slopes",
+   "name": "East Slopes",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Snowmass Mountain",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_snowmass_mountain_east_slopes",
+    "name": "East Slopes",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Snowmass Mountain",
+    "score": 0
+   }
+  ]
+ }
+]

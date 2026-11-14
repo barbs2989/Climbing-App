@@ -1,0 +1,39 @@
+{
+ "id_lightning_bolt_wall": {
+  "_expect": {
+   "name": "Lightning Bolt Wall",
+   "region": "Idaho"
+  },
+  "blurb": "Lightning Bolt Wall is one of three walls in the Funny Business area at Massacre Rocks, a basalt sport-climbing zone on the Snake River plain near American Falls. Of its ten climbs, nine are bolted lines, mostly around 5.9 and 5.10 with a single 5.11, and there is one V4 boulder problem. The wall is a dark brown face that looks southeast and catches sunshine through most of a winter afternoon, which makes it a good cool-season pick. Summer afternoons here run very hot, so aim for early or late sessions. It sits a short stroll below the rim and close to its two neighbouring walls.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/111401751/funny-business-area",
+    "https://mountainproject.com/area/105886274/massacre-rocks"
+   ]
+  }
+ },
+ "id_window_rock_west": {
+  "_expect": {
+   "name": "Window Rock - West",
+   "region": "Idaho"
+  },
+  "blurb": "The west side of Window Rock in City of Rocks, southern Idaho, is the demanding half of the formation; the other side is a low-angle slab that novices like. Ten routes here split evenly between bolted lines and gear routes. Apart from one easy 5.5, they cluster around 5.11, with a handful of 5.12s and a single 5.13, so it is best for climbers already comfortable on hard granite. Several lines carry three-star reputations. The rock lies just north of Parking Lot Rock, a short trail walk from the lot, which keeps the day relaxed.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105739760/window-rock",
+    "https://www.mountainproject.com/area/107588615/window-rock-east?print=1"
+   ]
+  }
+ },
+ "_skipped": {
+  "id_brush_lake_crags": "no page about the crag found; one article mentions bolting only (could not fetch two pages)",
+  "id_east_side_2": "the only East Side page found was a Connecticut bouldering area; nothing for the Pocatello North Area",
+  "id_lower_decadent_asian_wall": "only one fetched page describes it (second Breadloaves pages do not mention the wall)",
+  "id_willy_wonka_s_dynamic_fist": "only one fetched page mentions the sector, with no description of it",
+  "id_hannah_s_haunt": "no page found for it despite several searches",
+  "id_in_the_trees": "neither page is about the crag itself (area page and a directory listing)"
+ },
+ "_conflicts": {
+  "id_in_the_trees": "stored rock is rhyolite; the South Park page (https://mountainproject.com/area/106995736/south-park) calls the wall black basalt"
+ }
+}

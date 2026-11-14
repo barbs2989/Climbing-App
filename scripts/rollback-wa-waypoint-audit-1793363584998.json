@@ -1,0 +1,875 @@
+[
+ {
+  "table": "routes",
+  "id": "wa_mount_fairchild_standard",
+  "waypoints": [
+   {
+    "lat": 47.955249,
+    "lng": -123.835839,
+    "elev": 1950,
+    "name": "Sol Duc Trailhead",
+    "note": "Large trailhead parking lot at the end of Sol Duc Hot Springs Road; Olympic National Park entrance pass required; overnight trips need a wilderness permit reserved in advance, since none are issued at the trailhead.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Turn south off US 101 onto Sol Duc Hot Springs Road (about 29 miles west of Port Angeles) and follow it, paved the whole way, past the park entrance station, the Sol Duc Hot Springs Resort and the campground to the large lot at road's end — the trailhead is at the very end, beyond the resort."
+   },
+   {
+    "lat": 47.95064,
+    "lng": -123.8152,
+    "elev": 1980,
+    "name": "Sol Duc Falls",
+    "note": "Trail crosses a footbridge just below the falls; last easy, reliable water before the climb toward Appleton Pass begins in earnest.",
+    "type": "Water",
+    "distMi": 0.8,
+    "directions": "From the end of the lot take the Sol Duc River Trail up the valley: 0.8 mi of wide, near-level old-growth tread with essentially no elevation change (1,950 to 1,980 ft), ending at the footbridge just below the falls. This is the last easy, reliable water taken straight off the trail before the climbing starts."
+   },
+   {
+    "lat": 47.92666,
+    "lng": -123.8238,
+    "elev": 3527,
+    "name": "Deer Lake",
+    "type": "Water",
+    "distMi": 0.8,
+    "directions": "From the end of the lot take the Sol Duc River Trail up the valley: 0.8 mi of wide, near-level old-growth tread with essentially no elevation change (1,950 to 1,980 ft), ending at the footbridge just below the falls. This is the last easy, reliable water taken straight off the trail before the climbing starts."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5500,
+    "name": "The Cat Walk (Cat Peak traverse)",
+    "note": "Old, narrow, exposed use-path sidehilling the steep flanks of Cat Peak; the steepest, most exposure-prone stretch of the whole approach, worse with a full pack.",
+    "type": "Hazard",
+    "distMi": 10.5
+   },
+   {
+    "lat": 47.890988,
+    "lng": -123.664591,
+    "elev": 5300,
+    "name": "Boston Charlie's Camp",
+    "note": "Small flat tent spot at the east end of the Cat Walk with a shallow melt-water sinkhole pond; water needs filtering and the site is exposed to wind/weather.",
+    "type": "Campsite",
+    "distMi": 11.5,
+    "directions": "Follow the sidehill path east to the far end of the Cat Walk arete, giving back roughly 200 ft. The camp is a single small flat tent spot at the east end with a shallow melt-water sinkhole pond beside it — filter that water, and expect the site to be fully exposed to wind and weather."
+   },
+   {
+    "lat": 47.894242,
+    "lng": -123.649295,
+    "elev": 6995,
+    "name": "Mount Carrie ridge/glacier gain",
+    "note": "Highest point in the Bailey Range (0.84 mi SW of Fairchild's summit); per the descent beta this is where the route regains the ridge/glacier system linking to the Fairchild Glacier.",
+    "type": "Junction",
+    "distMi": 14.5,
+    "directions": "Climb roughly 1,700 ft southeast from Boston Charlie's onto Mount Carrie (6,995 ft), the highest point in the Bailey Range. There is a real choice here: many parties sidehill the loose, exposed talus across Carrie's south face, but staying higher — up the ridge on Carrie's north side, over or just under the summit — avoids the worst of the sidehilling and sets up a cleaner entry onto the Fairchild Glacier. Where the crest becomes too sharp to walk, traverse up across the scree flanks. There is no reliable water on this stretch, so tank up at camp."
+   },
+   {
+    "lat": 47.8971915,
+    "lng": -123.64133100000001,
+    "elev": 6700,
+    "name": "Fairchild Glacier crossing",
+    "note": "Rope up and don crampons/axe here; follow the wind-formed ridge down-glacier toward the exit col on Ruth Peak's shoulder — crevasse hazard, especially late season when snow bridges are thin.",
+    "type": "Hazard",
+    "distMi": 15,
+    "directions": "Drop about 300 ft northeast off Carrie's ridge onto the upper Fairchild Glacier, which starts around 6,600-6,700 ft on the Bailey crest and falls away to the northeast. Rope up and put on crampons here; an ice axe is wanted most of the season. Rather than taking the direct line, follow the wind-formed snow ridge running down the glacier — the same idea as the Hogsback on Mount Hood — which keeps you clear of the crevasses. Late season the snow bridges thin and the surface goes to bare, hard ice, so this is full crampon technique, not microspikes."
+   },
+   {
+    "lat": 47.900458,
+    "lng": -123.633334,
+    "elev": 6899,
+    "name": "Mount Fairchild",
+    "note": "Second-highest peak in the Bailey Range; short final scramble on snow and rock from the glacier saddle to the true summit.",
+    "type": "Summit",
+    "distMi": 15.5,
+    "directions": "Leave the wind ridge and take the steeper exit section up onto Fairchild's summit ridge: roughly 35-40 degrees of snow past an icy patch, the steepest ground on the route. Stay roped and in crampons through it. From the summit ridge a short scramble on snow and rock gains the 6,899 ft true summit, second-highest in the Bailey Range. There is no rappel anywhere on this climb — the only way off is to reverse the entire line, and the glacier softens through the afternoon, so set an early turnaround."
+   },
+   {
+    "lat": 47.9067,
+    "lng": -123.6289,
+    "elev": 6600,
+    "name": "Fairchild Glacier",
+    "type": "Feature",
+    "elevFt": 6600
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_cloudy_peak_southwest_slopes",
+  "waypoints": [
+   {
+    "lat": 48.083107,
+    "lng": -120.834805,
+    "elev": 3500,
+    "name": "Phelps Creek Trailhead",
+    "note": "Trail #1511 starts on an old mining road; self-issue Glacier Peak Wilderness permit and Northwest Forest Pass required at the kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From US-2 at Coles Corner take WA-207 north, then Chiwawa River Road (FR-62) about 22 miles — paved for the first eleven, gravel and rough after that — and finish with 2.3 miles up Phelps Creek Road (FR-6211) to the road end. Low-clearance vehicles struggle on the last stretch. Cloudy Pass can also be reached from Holden Village up Railroad Creek or from Trinity over Buck Creek Pass, but both are longer multi-day alternatives; the waypoints below follow the Phelps Creek line."
+   },
+   {
+    "lat": 48.133732,
+    "lng": -120.862635,
+    "elev": 4550,
+    "name": "Leroy Creek crossing",
+    "note": "Largest of roughly 16 creek crossings on the approach and often the wettest ford; an unmaintained climbers' path branches here toward Leroy Basin.",
+    "type": "Water",
+    "distMi": 4.5,
+    "directions": "Follow Phelps Creek Trail #1511 up the valley on an old mining grade, crossing into the Glacier Peak Wilderness around the two-and-a-half-mile mark. The grade is gentle and Phelps Creek runs alongside the whole way, so water is never a concern. Leroy Creek is the largest of the tributary crossings and the one most likely to soak your feet; the unmaintained path climbing toward Leroy Basin leaves here and is not your turn."
+   },
+   {
+    "lat": 48.14707,
+    "lng": -120.85343,
+    "elev": 4800,
+    "name": "Spider Meadow",
+    "note": "Broad subalpine meadow with established camps at its upper end; no campfires allowed (prohibited above 4,000 ft).",
+    "type": "Campsite",
+    "distMi": 6.5,
+    "directions": "Stay on #1511 as the valley opens out — roughly 1,900 ft of gain over the six and a half miles from the car, so this is easy ground. The meadow is the last flat, sheltered camping before the climb to the gap, and it is the obvious place to stage from if you are not going car-to-car."
+   },
+   {
+    "lat": 48.16985,
+    "lng": -120.88232,
+    "elev": 7100,
+    "name": "Spider Gap / Spider Glacier remnant",
+    "note": "Unmaintained, cairned route climbs steep loose scree then crosses a permanent snowfield (the shrinking Spider Glacier) to the gap; microspikes and an ice axe are recommended even in summer.",
+    "type": "Hazard",
+    "distMi": 7.7,
+    "directions": "Above the meadow the trail climbs into upper Phelps Basin and the maintained tread gives out; a cairned, unmaintained line goes up steep loose scree to the base of the snow around 5,300 ft. From there about half a mile of permanent snowfield leads to the gap. It generally boots or plunge-steps easily in summer, but early season brings open crevasses and firm refrozen snow, and a whiteout or a morning refreeze turns the axe and traction from optional into necessary."
+   },
+   {
+    "lat": 48.20263,
+    "lng": -120.92538,
+    "elev": 6440,
+    "name": "Cloudy Pass",
+    "note": "Broad meadow saddle above the Lyman Lakes basin where the climbers' trail toward Cloudy Peak's southwest ridge leaves the maintained Cloudy Pass Trail #1256.",
+    "type": "Junction",
+    "distMi": 13,
+    "directions": "Descend the north side of the gap. The first hundred vertical feet are the steepest, with the softer, less sun-affected snow usually on the climber's-left (north) side, and it eases into scree and then a gentler snowfield. Follow the basin down past the Lyman Glacier and the Upper Lyman Lakes to Lower Lyman Lake, then climb back up through open meadows to the pass — several miles for a modest net loss and regain, and the pass is the normal camp for the peak."
+   },
+   {
+    "lat": 48.208416,
+    "lng": -120.916887,
+    "elev": 7300,
+    "name": "Southwest ridge gain point",
+    "note": "Climbers' path through meadows fades into heather benches and then talus; aim for the broad crest of the southwest ridge above the pass.",
+    "type": "Junction",
+    "distMi": 13.8,
+    "directions": "Leave the maintained trail at the pass and head roughly north-northeast up open wildflower meadows on an obvious boot path. The path fades onto heather benches and then talus; keep working toward the broad crest of the southwest ridge rather than contouring across the slopes below it."
+   },
+   {
+    "lat": 48.210587,
+    "lng": -120.913702,
+    "elev": 7800,
+    "name": "Notch below the summit block",
+    "note": "A notch separates the ridge from the summit block, blocking the direct line; traverse climber's-right around to the north side of the block to find the scramble route (helmet recommended - falls here would be serious).",
+    "type": "Hazard",
+    "distMi": 14.1,
+    "directions": "Follow the crest of the ridge itself. Straying onto the flanking slopes drops you into seriously unstable scree that is both slower and harder to reverse, and the crest falls away sharply on its far (north) side. Pick a deliberate line through the loose talus blocks — this is exactly the terrain for knocking rock onto a partner, so spread out and keep helmets on."
+   },
+   {
+    "lat": 48.21206,
+    "lng": -120.91145,
+    "elev": 7915,
+    "name": "Cloudy Peak summit",
+    "note": "True summit gained by a short, exposed Class 3-4 scramble on the north side of the block; first climbed in 1921 by a Mountaineers party.",
+    "type": "Summit",
+    "distMi": 14.3,
+    "directions": "The notch blocks the direct line, so traverse climber's-right around the east side of the summit block and keep going onto its north (back) side, where a short Class 3-4 weakness leads to the top. It is narrow with real exposure and is the technical crux of the route; cautious parties rope the last few moves."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_lincoln_peak_north_ridge",
+  "waypoints": [
+   {
+    "lat": 48.802181,
+    "lng": -121.894725,
+    "elev": 3700,
+    "name": "Heliotrope Ridge Trailhead",
+    "note": "FS Trail 677 off Glacier Creek Rd (FS-39); Northwest Forest Pass or digital day-use pass required at the kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Glacier on the Mount Baker Highway (SR-542), drive about 1 mile east and turn right onto Glacier Creek Road (FS Road 39). Follow it about 8 miles to the Heliotrope Ridge Trailhead parking on the left side of the road. A Northwest Forest Pass is required."
+   },
+   {
+    "lat": 48.790503692307695,
+    "lng": -121.88274915384616,
+    "elev": 4600,
+    "name": "Heliotrope Creek crossing",
+    "note": "Fast, rock-hopped crossing that worsens with afternoon snowmelt; real injuries have happened here — cross early in the day.",
+    "type": "Water",
+    "distMi": 1.8,
+    "directions": "Trail #677 leaves the lot and climbs steadily through old growth, the lower creeks bridged and no junctions to think about for the first couple of miles. The grade is relentless but it is plain walking; on the pre-dawn start this route needs, it is the stretch you cover in the dark."
+   },
+   {
+    "lat": 48.79734,
+    "lng": -121.87015,
+    "elev": 4700,
+    "name": "Kulshan Cabin site",
+    "note": "Established camp at the old 1925 Kulshan Cabin site, just before the signed Climbers' Trail junction.",
+    "type": "Campsite",
+    "distMi": 2,
+    "directions": "A short, steepening 0.2 mi carries on through thinning forest to the flat bench where the cabin stood, with a backcountry toilet as the obvious landmark. That toilet and the one at Harrison Camp are the only ones on this side — everything above here is pack-it-out."
+   },
+   {
+    "lat": 48.7893,
+    "lng": -121.867771,
+    "elev": 6000,
+    "name": "Hogsback moraine camp",
+    "note": "Climbers' Trail switchbacks up the Hogsback moraine crest to a common high camp just below the Coleman Glacier toe.",
+    "type": "Junction",
+    "distMi": 3,
+    "directions": "Just past the cabin site the trail reaches a well-signed fork: take the right branch, the Climbers' Trail. The left branch is the hikers' continuation toward the Heliotrope Ridge viewpoint and is the common wrong turn here. The right fork gains roughly 1,000 ft in about a mile, steep and direct up the moraine crest."
+   },
+   {
+    "lat": 48.77942884615385,
+    "lng": -121.87064057692308,
+    "elev": 7000,
+    "name": "Coleman Glacier toe / rope-up point",
+    "note": "Rope up here for glacier travel; crevasse hazard increases traversing beneath the Black Buttes cirque toward Lincoln Peak.",
+    "type": "Junction",
+    "distMi": 3.5,
+    "directions": "Stay on the moraine crest above camp as it narrows and runs out at the glacier's edge, another ~1,000 ft over about half a mile. Footing is loose rock and sand on the crest, and the ground turns to ice and rubble where the moraine meets the toe."
+   },
+   {
+    "lat": 48.778849,
+    "lng": -121.860647,
+    "elev": 7200,
+    "name": "Black Buttes basin camp",
+    "note": "High camp used for Black Buttes objectives, tucked below the Buttes off the standard Coleman Glacier line.",
+    "type": "Campsite",
+    "distMi": 4,
+    "directions": "From the toe the travel is roped glacier across to the 7,200 ft bench beneath the Black Buttes. The line passes under serac bands on the Coleman's icefall, so it is a stretch to keep moving through rather than rest in, and it wants crossing early while the glacier is still frozen — timing matters more on this side than on the peak's southwest approach."
+   },
+   {
+    "lat": 48.77291423076923,
+    "lng": -121.86351788461538,
+    "elev": 7800,
+    "name": "NW Face start / hanging glacier icefall",
+    "note": "Same start as Assassin Spire's Shooting Gallery route: a 60m WI4 pitch right of a prominent hanging glacier — icefall and rockfall exposure.",
+    "type": "Hazard",
+    "distMi": 4.5,
+    "directions": "From the bench, continue roped south across the glacier below the Black Buttes to the start of Lincoln's northwest face, just right of the prominent hanging glacier, the same start as the Assassin Spire routes."
+   },
+   {
+    "lat": 48.76814,
+    "lng": -121.85868,
+    "elev": 9085,
+    "name": "Lincoln Peak summit",
+    "note": "Rime-covered summit ridge gains the top; descend via the SW face (snow/ice to 65°) rather than reversing the NW Face.",
+    "type": "Summit",
+    "distMi": 5.2,
+    "directions": "The ground above the base is roped ice and mixed climbing, not a snow slog: a 60 m WI4 pitch immediately right of the hanging glacier is the technical crux, after which parties simul-climb across the upper amphitheater basin. Above that expect roughly four more roped pitches on steeper ice separated by snowfields up to 70 degrees, finishing on rime-plastered ridge and an icy chimney. The rock off the ice is rotten volcanic choss with no fixed gear, so anchors come off slung horns and blocks and every one of them should be treated as suspect."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_the_tooth_south_face",
+  "waypoints": [
+   {
+    "lat": 47.44565,
+    "lng": -121.42365,
+    "elev": 3100,
+    "name": "Alpental / Snow Lake Trailhead",
+    "note": "Large gravel lot at the end of Alpental Road (1.5 mi past I-90 Exit 52); Northwest Forest Pass required to park.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Take I-90 to Exit 52 and follow Alpental Road to its end, about 1.5 miles, where a large gravel lot at roughly 3,100 ft serves as the trailhead. A Northwest Forest Pass is required to park."
+   },
+   {
+    "lat": 47.455605,
+    "lng": -121.452107,
+    "elev": 3780,
+    "name": "Source Lake basin, Alpental valley",
+    "type": "Campsite",
+    "distMi": 1.8
+   },
+   {
+    "lat": 47.456863,
+    "lng": -121.443809,
+    "elev": 4100,
+    "name": "Source Lake junction",
+    "note": "Signed spur splits toward the Source Lake overlook; leave the Snow Lake Trail here and head off-trail toward Great Scott Bowl for the South Face approach.",
+    "type": "Junction",
+    "distMi": 1.8,
+    "directions": "From the lot follow the Snow Lake Trail (#1013) north, climbing steadily through forest for about two miles and 1,000 ft to the small signed fork where the Source Lake spur splits off. Bear toward Source Lake. This is the last of the maintained tread — everything above it is off-trail."
+   },
+   {
+    "lat": 47.455841,
+    "lng": -121.455524,
+    "elev": 4700,
+    "name": "Great Scott Bowl talus/snow field",
+    "note": "Off-trail talus (snow-covered into early summer) beneath The Tooth's south side; loose rock and overhead rockfall risk from parties above, helmet recommended once you leave the trail.",
+    "type": "Hazard",
+    "distMi": 2.7,
+    "directions": "Watch on the left as the trail curves for the point where a continuous talus field starts running alongside it, and leave the tread there. Traverse west into the boulders, losing a little height at first, then climb back up toward The Tooth's obvious south-facing wall by whatever line through talus and lingering snow gives least resistance. Helmets go on here: the bowl is loose and parties above will knock rock down it."
+   },
+   {
+    "lat": 47.448642,
+    "lng": -121.453493,
+    "elev": 5100,
+    "name": "Notch south of Pineapple Pass",
+    "note": "Gain this notch on the ridge just south of the true pass, then contour clockwise (exposed sidewalk traverse) to reach Pineapple Pass proper.",
+    "type": "Junction",
+    "distMi": 3.4,
+    "directions": "Work up the bowl aiming for the gully just left (south) of the prominent pointed rock partway up, and take that to the second notch south of the south face rather than trying to gain the pass directly. Early in the season this is a sustained steep snow climb that warrants an axe and sometimes crampons. A moat where the snow has pulled back from the rock often guards the last step onto the crest."
+   },
+   {
+    "lat": 47.44534,
+    "lng": -121.45407,
+    "elev": 5280,
+    "name": "Pineapple Pass",
+    "note": "Named saddle where pitch 1 of the South Face begins; a moat where seasonal snow pulls away from the rock can make the final step onto the col tricky into midsummer.",
+    "type": "Junction",
+    "distMi": 3.7,
+    "directions": "From the notch drop a short way down the far side, contour clockwise around beneath The Tooth, and climb back up to the pass. It is Class 3 to 4 but short and not exposed. The col is where the first pitch starts, so this is the place to rope up and sort the rack."
+   },
+   {
+    "lat": 47.445106,
+    "lng": -121.454253,
+    "elev": 5550,
+    "name": "The Catwalk",
+    "note": "Narrow, exposed rock traverse near the top of pitch 4 — the real crux of the climb despite the 5.4 rating; stay roped and protect it well.",
+    "type": "Hazard",
+    "distMi": 3.9,
+    "directions": "Four short pitches of low fifth-class lead up from the pass: a groove trending right on juggy rock, connecting ledges past a pair of trees, an easy fourth-class ramble, then the steeper headwall. The Catwalk is the left-hand finish of that last pitch — a narrow, balancy ledge with a great deal of air beneath it. Two easier finishes exist to the right, and a steeper crack further left for parties wanting harder climbing."
+   },
+   {
+    "lat": 47.44595,
+    "lng": -121.454655,
+    "elev": 5606,
+    "name": "The Tooth summit",
+    "note": "Small, exposed summit block with views of Chair Peak, Bryant Peak and the Alpental valley; begin the four-rappel descent back to Pineapple Pass from anchors here.",
+    "type": "Summit",
+    "distMi": 4,
+    "directions": "From the end of the Catwalk a few metres of unroped scrambling tops out on the small summit block. There is no continuation off the far side — everyone comes back down the face they climbed — so keep the party gathered and organised for the rappels rather than spread across the top."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_cadet_peak_scramble",
+  "waypoints": [
+   {
+    "lat": 48.0268,
+    "lng": -121.4422917,
+    "elev": 2360,
+    "name": "Barlow Pass Trailhead",
+    "note": "Gated old Monte Cristo Road starts here; $5/day or Northwest Forest/Interagency pass required at the self-issue kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Barlow Pass is where the pavement ends on the Mountain Loop Highway. The old Monte Cristo road beyond the gate is closed to cars but open to bikes, and most parties ride it to save their legs for the scramble."
+   },
+   {
+    "lat": 48.028536,
+    "lng": -121.445021,
+    "elev": 2361,
+    "name": "Barlow Pass roadhead",
+    "type": "Campsite"
+   },
+   {
+    "lat": 47.9847,
+    "lng": -121.3897,
+    "elev": 2800,
+    "name": "Monte Cristo Townsite",
+    "note": "End of the 4-mile gated gravel road (bike or hike); pick up the Glacier Basin/Glacier Creek trail heading east out of the old mining townsite.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Four miles of gently rising gravel road following the South Fork Sauk River. There is a bike rack under the trees at the townsite end; leave the bike there and walk through the old town. Bridges and creek crossings on this stretch have washed out before, so expect the odd detour."
+   },
+   {
+    "lat": 47.98556,
+    "lng": -121.39389,
+    "elev": 2800,
+    "name": "Monte Cristo townsite campground, four miles up the closed road",
+    "type": "Campsite",
+    "distMi": 4.2
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 4500,
+    "name": "Ray's Knoll, Glacier Basin",
+    "note": "Timbered knoll in the middle of the basin used as the standard camp; treat water carefully as old mine tailings have contaminated basin runoff with heavy metals.",
+    "type": "Campsite",
+    "distMi": 6.2,
+    "directions": "Cross the footbridge on the far side of the townsite and follow signs onto the Glacier Basin Trail, which climbs steadily beside Glacier Creek past a prominent waterfall before easing off into the basin. Aim for the prominent hummock in the middle of the basin. Early in the season the last of this holds patchy snow."
+   },
+   {
+    "lat": 47.985263170731706,
+    "lng": -121.36942219512196,
+    "elev": 6500,
+    "name": "Erosion gully to headwall waterfall",
+    "note": "Ascend the obvious mine-tailings-colored erosion gully on Cadet's SW face to a headwall with a small waterfall; loose rock underfoot, stay climbers' left of the falls.",
+    "type": "Hazard",
+    "distMi": 7.3,
+    "directions": "Find a safe place to ford Glacier Creek — it can be a swift, cold wade during snowmelt — then navigate by the two large boulders: an approximately 15-ft one marks the start of the scramble, and a bigger one across the basin is the next mark. From there start up the reddish blown-out gully, climbing the rib that separates it from the deeper gully immediately to its left. Cairns and occasional flagging carry on where the maintained tread ends."
+   },
+   {
+    "lat": 47.98522585365854,
+    "lng": -121.36310097560975,
+    "elev": 6650,
+    "name": "Cliff-band crux ledge",
+    "note": "Traverse sharply left on a moderately exposed Class 3 ledge to find the correct notch through the cliff band; easy to lose on the way down.",
+    "type": "Hazard",
+    "distMi": 7.6,
+    "directions": "About 25 ft below the waterfall headwall, break out of the gully to climber's left onto a band of red rock. It reads as a dead end from below, and it is the one feature parties lose on the way down — worth building a duck or cairn as you pass through it."
+   },
+   {
+    "lat": 47.98518853658537,
+    "lng": -121.35677975609757,
+    "elev": 6900,
+    "name": "Southwest ridge crest",
+    "note": "Climber's path exits the brush/scrub onto the ridge crest here; follow heather slopes northeast toward the summit block.",
+    "type": "Junction",
+    "distMi": 7.9,
+    "directions": "Traverse the ledges upward through scrub trees and brush, then pick up the faint climbers' path that switchbacks the rest of the way onto the crest."
+   },
+   {
+    "lat": 47.98518,
+    "lng": -121.34948,
+    "elev": 7186,
+    "name": "Cadet Peak",
+    "note": "True summit register; the subsidiary South Cadet high point is a short detour back along the SW ridge.",
+    "type": "Summit",
+    "distMi": 8.25,
+    "directions": "Follow the crest northeast — loose in places, but easy route-finding. Do not be drawn into the deep gully well to climber's left; it is a hazardous false lead. Around 6,500 ft a distinctive hobbit-like rock feature marks a sharp left turn onto a loose talus traverse that runs below the rock and out to the summit ridge. One or two short class 3-4 moves are typical near the top, and everything up here throws rock, so avoid stacking directly below another party."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_davis_peak_nc_north_face",
+  "waypoints": [
+   {
+    "lat": 48.7171,
+    "lng": -121.15,
+    "name": "Stetattle Creek Trailhead, Diablo (approach; closed for post-fire hazards, check status)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": null,
+    "directions": "Drive SR 20 to milepost 126 and turn into the town of Diablo (not Diablo Dam). The trailhead is just past the Stetattle Creek bridge at the entrance to town; park in the small turnout on the right, leaving room for others. Overnight stays need a North Cascades backcountry permit."
+   },
+   {
+    "lat": 48.72945,
+    "lng": -121.20281,
+    "elev": 7054,
+    "name": "Davis Peak summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 7054,
+    "directions": "Hike the Stetattle Creek Trail about 2 miles, drop about 200 ft to ford the creek opposite Davis Peak, then bushwhack and scramble a Class 3-4 rib, roped for the slabby sections, through slide alder to flat ground at the toe of the glacier near 4,000 ft. Climb the glacier to the bergschrund, then the face and couloir to the summit ridge near 6,700 ft, and follow the ridge about an hour to the summit."
+   },
+   {
+    "lat": 48.7118,
+    "lng": -121.2002,
+    "elev": 1096,
+    "name": "Gorge Creek bridge, SR 20 (~MP 123) — descent exit and shuttle car",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": 1096,
+    "directions": "Descend the south ridge crest past the 5,720 ft saddle, over or around Point 5872, then straight down the trackless south-slope forest. The cliff bands near 2,800 and 2,400 ft must be turned on the right line, so do the top 1,500 ft in daylight and steer by compass to avoid drifting toward Stetattle Creek. You reach SR 20 at the Gorge Creek bridge, about four road miles west of Diablo."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "waypoints": [
+   {
+    "lat": 48.7118,
+    "lng": -121.2002,
+    "elev": 1096,
+    "name": "Gorge Creek bridge / Gorge Creek Falls parking, SR 20 (~MP 123)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 1096,
+    "directions": "Drive SR 20 to the bridge over Gorge Creek, about 2.6 miles east of Newhalem and about the same distance west of the Gorge Lake causeway and the Diablo turnoff. Watch the sharp curve at the east end of the bridge. Park in the lot at the west end; the east lot is signed for motorhomes and oversize vehicles. There is no trail: the route leaves the highway directly."
+   },
+   {
+    "lat": 48.72945,
+    "lng": -121.20281,
+    "elev": 7054,
+    "name": "Davis Peak summit",
+    "type": "Summit",
+    "distMi": 3.1,
+    "elevFt": 7054,
+    "directions": "From the east end of the bridge, cross the highway and head straight uphill into the woods. Climb the brushy lower gully and steep, trackless timber, where cliff bands near 2,400 and 2,800 ft must be turned, to granite slabs at about 4,850 ft. Scramble the Class 2-3 South Buttress, passing Point 5872 on its north side, to the 5,720 ft saddle, climb about 200 ft of slab to the sharp ridge, then follow the broad ridge to the summit."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_east_twin_needle_south_route",
+  "waypoints": [
+   {
+    "lat": 48.673235,
+    "lng": -121.267375,
+    "elev": 500,
+    "name": "Goodell Creek Campground, roadhead staging",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.68664,
+    "lng": -121.27121,
+    "elev": 600,
+    "name": "Goodell Creek Trailhead (Cross-Country Zone Access, Upper Goodell Creek)",
+    "note": "Goodell Creek Trail -> Terror Creek ford -> The Barrier -> Crescent Creek Basin -> Eye Col approach used for all Twin Needles routes.",
+    "type": "Trailhead",
+    "elevFt": 600,
+    "directions": "Drive SR-20 east to Newhalem. Just after crossing Goodell Creek, take the first left onto a small road, turn immediately left at the T, and follow the road uphill to the Upper Goodell Creek Group Camp at about 600 ft; park there, and the climbers' path starts just down the road. Overnight camps in Crescent Creek Basin need a North Cascades backcountry permit, issued walk-up only at the Marblemount Wilderness Information Center."
+   },
+   {
+    "lat": 48.720424186046515,
+    "lng": -121.27755162790697,
+    "elev": 2100,
+    "name": "Terror Creek logjam crossing",
+    "note": "Climbers' path fades to bushwhack here; cross Terror Creek by fording, or on a big log just upstream when one is in place (last reliable water before the steep, cliffy push up toward the Barrier).",
+    "type": "Water",
+    "distMi": 3.8,
+    "directions": "Follow the old Goodell Creek roadbed, an unmaintained climbers' path with deadfall and washouts, about 4 miles upvalley to a large cairn where the path leaves the roadbed. Cross Terror Creek here by wading or on a big log just upstream when one is in place; it runs higher with snowmelt in the afternoon."
+   },
+   {
+    "lat": 48.764392,
+    "lng": -121.28099,
+    "elev": 5800,
+    "name": "Terror Basin camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.766899,
+    "lng": -121.301569,
+    "elev": 6050,
+    "name": "Crescent Creek Basin camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.745203255813955,
+    "lng": -121.28299348837209,
+    "elev": 6100,
+    "name": "The Barrier ridge crossing",
+    "note": "Loose, exposed scrambling (harder late-season without snow cover) gains this ridge that separates the Terror Creek drainage from Crescent Creek Basin.",
+    "type": "Junction",
+    "distMi": 6.3,
+    "directions": "Climb straight up the steep, brushy crest of the Barrier, with no water until snowmelt puddles appear around 5,400 ft, to timberline near 5,600 ft. Loose, exposed ledges and talus, harder late in the season without snow cover, lead to the ridge crossing at about 6,100 ft."
+   },
+   {
+    "lat": 48.756967,
+    "lng": -121.30485,
+    "elev": 6400,
+    "name": "Chopping Block saddle camp (above Crescent Creek Basin)",
+    "note": "Established bivy sites on the saddle northeast of the Chopping Block, used as base camp for both Twin Needles; Crescent Creek Basin, the talus/scree basin below the south-facing summit gullies, lies about 200 ft below.",
+    "type": "Campsite",
+    "distMi": 7,
+    "directions": "Cross slabs and heather through Stump Hollow, between the Barrier crest and the Chopping Block, to the established bivy sites on the saddle northeast of the Chopping Block at about 6,400 ft."
+   },
+   {
+    "lat": 48.7765,
+    "lng": -121.312,
+    "elev": null,
+    "name": "Eye Col",
+    "note": "Class-5 chockstone squeeze gains the notch between the summit gullies shared with West Twin Needle; rope up for this section.",
+    "type": "Junction",
+    "distMi": 8.5,
+    "directions": "Drop about 200 ft into Crescent Creek Basin, cross its talus, slabs and snow, and work around buttresses to the loose south-facing gullies beneath the Eye Col. Keep the party together against rockfall; the small chockstones low in the gully are scrambled, the larger ones higher up are fifth class and usually roped, and a short scree walk finishes at the notch."
+   },
+   {
+    "lat": 48.7767,
+    "lng": -121.3115,
+    "elev": 7840,
+    "name": "East Twin Needle",
+    "note": "East Twin Needle sits atop 'Eye Col' immediately adjacent to West Twin Needle.",
+    "type": "Summit",
+    "elevFt": 7840,
+    "directions": "Climb the steep summit block of East Twin Needle directly above the col, roped; the crux is a short hand crack near the top, which can hold ice early in the season."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_oval_peak_scramble",
+  "waypoints": [
+   {
+    "lat": 48.35256,
+    "lng": -120.407046,
+    "elev": 3036,
+    "name": "Eagle Creek/Oval Trailhead",
+    "note": "Self-issue Northwest Forest Pass / $5 day-use fee at the kiosk; trail enters Lake Chelan-Sawtooth Wilderness a short way in, vault toilet and stock ramp at the lot.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Park at the Eagle Creek/Oval trailhead at about 3,000 ft, at the end of FR 4420-080. Reach it on Twisp River Road/FR 44 roughly 12.5 miles west of Twisp, then turn up the West Buttermilk/FR 4420 spur and follow it to the road's end. There is a vault toilet and a stock ramp at the lot; self-issue a Northwest Forest Pass or pay the $5 day-use fee at the kiosk, and the trail enters the Lake Chelan-Sawtooth Wilderness a short way in. The access road and the lake basins are typically snow-free from early July into October."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 3450,
+    "name": "Eagle Creek / Oval Creek Trail junction",
+    "note": "Ford the side stream here, then turn left off Eagle Creek Trail #410 onto Oval Creek Trail #410A toward the Oval Lakes basin.",
+    "type": "Junction",
+    "distMi": 1.9
+   },
+   {
+    "lat": 48.250915,
+    "lng": -120.430899,
+    "elev": 6200,
+    "name": "Oval Creek / Oval Lakes Trail junction",
+    "note": "Bear onto Oval Lakes Trail #410B, which climbs past an old moraine below Gray Peak before dropping into the Oval Lakes basin — this section burned in the 2018 Crescent Fire and is dry/dusty with little shade.",
+    "type": "Junction",
+    "distMi": 7.9
+   },
+   {
+    "lat": 48.261515,
+    "lng": -120.426635,
+    "elev": 6940,
+    "name": "Middle Oval Lake outflow",
+    "note": "Maintained trail ends at the lake outflow; established stock/backpacker camp with fishing (cutthroat) — this is where you leave the trail and start up open heather/talus toward the Sawtooth crest.",
+    "type": "Campsite",
+    "distMi": 9.5
+   },
+   {
+    "lat": 48.272016,
+    "lng": -120.415184,
+    "elev": 7900,
+    "name": "Saddle on Oval Peak's south ridge",
+    "note": "Gain the Sawtooth crest via open heather and talus above the lake's outflow; no maintained tread here, easy to lose the line in fog or low visibility.",
+    "type": "Junction",
+    "distMi": 10.3
+   },
+   {
+    "lat": 48.279412,
+    "lng": -120.422042,
+    "elev": 8400,
+    "name": "Talus/boulder field on the south ridge crest",
+    "note": "Broad ridge of loose, sometimes slick talus and large boulders — the crux annoyance of the route (twisted-ankle terrain, not technical).",
+    "type": "Hazard",
+    "distMi": 11
+   },
+   {
+    "lat": 48.2870858,
+    "lng": -120.4245368,
+    "elev": 8800,
+    "name": "Oval Peak",
+    "note": "Highest point in the Lake Chelan-Sawtooth Wilderness and of the Methow Mountains; small rock glacier on the north slopes, views of Star, Courtney, and Gray Peaks.",
+    "type": "Summit",
+    "distMi": 11.5
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_chianti_spire_east_face",
+  "waypoints": [
+   {
+    "lat": 48.549,
+    "lng": -120.630965,
+    "name": "SR-20 Wine Spires pullout (milepost 166)",
+    "note": "Unmarked highway pullout ~2-4 miles east of the Washington Pass hairpin turn; climbers descend to Early Winters Creek then switchback up to Burgundy Col.",
+    "type": "Trailhead",
+    "directions": "Drive SR-20 to the unsigned pullout near milepost 166, roughly four miles east of Washington Pass, at about 4,300 ft. There is no sign and no developed trailhead here, only a broad shoulder pullout, so watch your odometer. Check WSDOT before travelling: the highway is gated shut through the winter and reopens somewhere between mid-April and late June depending on snowpack and slide repair."
+   },
+   {
+    "lat": 48.554232,
+    "lng": -120.601804,
+    "elev": 6400,
+    "name": "Burgundy Creek bench camp — west side",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.554323,
+    "lng": -120.591969,
+    "elev": 7900,
+    "name": "Burgundy Col",
+    "type": "Junction",
+    "distMi": null,
+    "elevFt": 7900,
+    "directions": "From the pullout, drop off the highway on a steep, faint boot path and descend the talus to Early Winters Creek, crossing on logs. Climb the far side on the climber's path, switchbacking up talus benches and loose cairned gullies through timber and boulders; where the boot track braids, stay climber's-left, keeping north of the drainage coming down from the basin below the spires, and aim for the obvious notch of the col. It is about 3,500 ft of gain and 3-4 hours with an overnight pack, and snow can linger in the gully below the col into July, so carry an axe early in the season."
+   },
+   {
+    "lat": 48.55186,
+    "lng": -120.59014,
+    "elev": 7900,
+    "name": "Chianti Spire / East Face (Rebel Yell) area",
+    "type": "Base",
+    "distMi": null,
+    "elevFt": null,
+    "directions": "Drop off the col down a short snow and rock step and traverse south beneath the east face of Burgundy Spire, crossing a small snowy rib onto the upper Silver Star Glacier, then around to the obvious east side of Chianti Spire at about 7,900 ft. Reckon on under an hour from the col, or from the larch bench camp lower down. Carry an ice axe through midsummer, as the rib and the glacier margin are often firm or icy first thing in the morning."
+   },
+   {
+    "lat": 48.55186,
+    "lng": -120.59014,
+    "elev": 8420,
+    "name": "Chianti Spire Summit",
+    "type": "Summit",
+    "elevFt": 8420,
+    "directions": "Seven pitches of gear-protected crack climbing up the east face, four to six hours for most parties. Start up flakes into the obvious wide dihedral, taking either the easier right-hand start or the thinner left-hand finger crack, which rejoins by the top of pitch 1, then the offwidth and the lower-angle dihedral above, then the balancy blind step left across the arete past a fixed bolt on pitch 4. Pitch 5 is the technical crux, a sustained thin-hands crack widening through cupped hands to fists and capped by a strenuous offwidth move, and pitch 6 follows the same system to a rising ramp trending left to the exposed summit block, gained by short final moves past a single bolt."
+   }
+  ]
+ },
+ {
+  "table": "areas",
+  "id": "wa_rimrock_ridge",
+  "lat": 48.3720712,
+  "lng": -121.0001074,
+  "elevation_ft": 7255
+ },
+ {
+  "table": "routes",
+  "id": "wa_east_face",
+  "waypoints": [
+   {
+    "lat": 48.2595,
+    "lng": -121.2229,
+    "elev": 1440,
+    "name": "Downey Creek Trailhead",
+    "note": "Remote 2-day approach: Downey/Bachelor Creek trail to Itswoot Ridge, then over the Dome-Chickamin col and across the Chickamin Glacier to the Gunsight Range.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Darrington drive SR 530 north about 8 miles to the Suiattle River Road (FS Road 26) and follow it east about 20 miles to the Downey Creek Trailhead, just past the Downey Creek bridge; the trail starts on the north side and parking is on the south side. A Northwest Forest Pass is required."
+   },
+   {
+    "lat": 48.30563,
+    "lng": -121.09123,
+    "elev": 5338,
+    "name": "Cub Lake",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.30571,
+    "lng": -120.99439,
+    "elev": 8000,
+    "name": "Middle Peak (Gunsight Range)",
+    "note": "East Face (5.10d) climbs 6-7 pitches of clean granite on Middle Gunsight; approach distance is approximate given the glaciated, multi-day approach.",
+    "type": "Summit",
+    "distMi": 17,
+    "directions": "Hike the Downey Creek Trail about 6 miles up the valley, then turn up Bachelor Creek on a faint, brushy path toward Cub Lake and Itswoot Ridge. From the ridge cross the Dome Glacier to the Dome-Chickamin col, the usual base camp, then cross the Chickamin Glacier to the Gunsight Range and climb the six to seven pitches of the East Face to the summit. Plan on two days to reach the base."
+   }
+  ]
+ },
+ {
+  "table": "routes",
+  "id": "wa_gunrunner",
+  "waypoints": [
+   {
+    "lat": 48.2595,
+    "lng": -121.2229,
+    "elev": 1440,
+    "name": "Downey Creek Trailhead",
+    "note": "Remote 2-day approach: Downey/Bachelor Creek trail to Itswoot Ridge, then over the Dome-Chickamin col and across the Chickamin Glacier to the Gunsight Range.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Darrington, drive north on SR 530 about 8 miles to the Suiattle River Road (FS Road 26) and follow it east about 20 miles to the Downey Creek Trailhead at about 1,440 ft, just past the Downey Creek bridge. Park on the south side of the road; the trail starts on the north side. A Northwest Forest Pass or the $5 day fee is required to park."
+   },
+   {
+    "lat": 48.30563,
+    "lng": -121.09123,
+    "elev": 5338,
+    "name": "Cub Lake",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.30571,
+    "lng": -120.99439,
+    "elev": 8000,
+    "name": "Middle Peak (Gunsight Range)",
+    "note": "Gunrunner (IV 5.10-, 18 pitches) traverses all four Gunsight summits; Middle Peak is one of the four climbed en route. Distance is approximate given the remote, glaciated approach.",
+    "type": "Summit",
+    "distMi": 17,
+    "directions": "Hike the Downey Creek Trail to the Bachelor Creek crossing and follow the climbers' path up Bachelor Creek to Cub Lake and Itswoot Ridge. Rope up for the Dome Glacier to the Dome-Chickamin col, then cross the Chickamin Glacier beneath the Gunsight peaks to the north end of the ridge. Climb the crest over the Northeast and North peaks to Gunsight Notch, then a dihedral on the east side of the crest to Middle Peak."
+   }
+  ]
+ },
+ {
+  "table": "areas",
+  "id": "wa_middle_peak",
+  "lat": 48.30571,
+  "lng": -120.99439,
+  "elevation_ft": 8185
+ },
+ {
+  "table": "routes",
+  "id": "wa_cathedral_peak_pasayten_se_buttress",
+  "waypoints": [
+   {
+    "lat": 48.7838,
+    "lng": -120.1088,
+    "elev": 3050,
+    "name": "Andrews Creek Trailhead",
+    "note": "Self-issue wilderness permit at the kiosk; trail #504 starts in a 2003-burn zone with little shade for the first several miles.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive West Chewuch Road / FR-51 north out of Winthrop roughly 22-23 miles to the road end at about 3,050 ft. Everything above is gained on foot — this is one of the longest wilderness approaches in the state, and the Chewuch River trailhead to the east is a longer alternative to the same camp."
+   },
+   {
+    "lat": 48.835231,
+    "lng": -120.147377,
+    "elev": 4200,
+    "name": "Andrews Creek (burn-zone crossings)",
+    "note": "Trail parallels and repeatedly crosses Andrews Creek through the burn — last easy, frequent water before the climb toward the pass.",
+    "type": "Water",
+    "distMi": 4,
+    "directions": "Trail #504 climbs steadily up the Andrews Creek drainage through the 2003 burn scar: little shade, brushy regrowth that soaks you through after rain, and blowdown between trail-crew visits. The creek runs beside the tread for these miles, so there is no reason to carry much water on this stretch."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6200,
+    "name": "Peepsight Trail junction",
+    "note": "Stay on Andrews Creek Trail (left/straight) for Andrews Pass; the right fork climbs to Peepsight Lake.",
+    "type": "Junction",
+    "distMi": 5.5,
+    "directions": "Stay on #504 as it continues up-valley. The Peepsight Trail branches off toward Peepsight Creek and eventually rejoins the Andrews Creek line much higher by a far longer loop — not the way to Cathedral. Burn and brushy tread continue past the fork."
+   },
+   {
+    "lat": 48.944476,
+    "lng": -120.228605,
+    "elev": 6700,
+    "name": "Andrews Pass",
+    "note": "Burn zone ends and open meadow country begins here; dispersed camps sit on the bluff just east of the pass, trail then contours toward Spanish Creek and the Boundary Trail.",
+    "type": "Junction",
+    "distMi": 12,
+    "directions": "Above the Peepsight fork the trail keeps grinding up the drainage in burned timber until it tops out at the pass, where open parkland and meadow replace the snags and the view opens north toward Amphitheater Mountain. Snow patches can hold on this stretch into early July."
+   },
+   {
+    "lat": 48.98166,
+    "lng": -120.20075,
+    "elev": 7400,
+    "name": "Upper Cathedral Lake camp",
+    "note": "Established basecamp used by SE Buttress climbers, in parkland meadows just west of Cathedral Pass; last reliable water before the route.",
+    "type": "Campsite",
+    "distMi": 18,
+    "directions": "From the pass follow the Boundary Trail (#533) through rolling meadow toward Spanish Creek, then take the Cathedral Lakes side trail, which bears off near the old wilderness guard-station cabin, for the last few miles into the lake basin. Budget a full, long day from the car to here; most parties arrive mid-afternoon."
+   },
+   {
+    "lat": 48.98599,
+    "lng": -120.19233,
+    "elev": 7600,
+    "name": "Cathedral Pass",
+    "note": "40-60 min walk from camp; the Pacific Northwest Trail crosses here between Cathedral Peak and Amphitheater Mountain — leave the trail toward the Cathedral-Monk gully.",
+    "type": "Junction",
+    "distMi": null,
+    "directions": "A 40-60 minute walk from camp, climbing east out of the lake basin on the trail that crosses the pass between Cathedral Peak and Amphitheater Mountain. Leave it at the first switchback above the pass and start up toward the gully."
+   },
+   {
+    "lat": 48.984996,
+    "lng": -120.197464,
+    "elev": 7750,
+    "name": "Cathedral–Monk gully approach",
+    "note": "Loose, wide gully separating Cathedral Peak from The Monk; route starts about 150 ft up it — watch for rockfall from other parties above.",
+    "type": "Hazard",
+    "distMi": null,
+    "directions": "Cross meadow and talus toward the obvious deep cleft between Cathedral Peak and the pinnacle called The Monk. There is no climbers' path, so pick the line by eye — 30 to 60 minutes from camp in total. Scramble up into the gully; the first pitch is on the left (north) wall a short way in, launched from a tall pedestal that makes a solid belay stance."
+   },
+   {
+    "lat": 48.98926,
+    "lng": -120.188954,
+    "elev": 8606,
+    "name": "Cathedral Peak summit",
+    "note": "True summit atop the route's two-pitch headwall; descend trending west then southwest, 4th-class with an exposed gap crossing, back down into the meadows above Upper Cathedral Lake.",
+    "type": "Summit",
+    "distMi": null,
+    "directions": "Ten pitches up the buttress: corners, a chockstone and chimney ground low down, easier discontinuous terrain through the middle, then the sustained headwall — linking pitches 8 and 9 into one 55-60 m lead avoids the route's only semi-hanging belay. Two short hand-crack steps and third-class scrambling finish at the true summit."
+   }
+  ]
+ }
+]

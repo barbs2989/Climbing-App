@@ -1,0 +1,813 @@
+{
+ "wa_amphitheater_mountain_north_ridge": [
+  {
+   "name": "Andrews Creek over Andrews Pass",
+   "camps": [
+    "Upper Cathedral Lake basin",
+    "Cathedral Pass benches and the tarn slabs",
+    "Andrews Pass"
+   ],
+   "notes": "Hike the Andrews Creek trail up the valley and over Andrews Pass to Upper Cathedral Lake, then scramble up to Cathedral Pass and along to the base of the north ridge. It is the shorter of the two ways in and the usual one for a climbing trip.",
+   "objHaz": [
+    "loose rock",
+    "exposed climbing",
+    "weather",
+    "remote",
+    "route-finding"
+   ],
+   "hazards": [
+    "Loose rock along the ridge",
+    "Exposure on the steeper steps",
+    "Afternoon thunderstorms typical in summer",
+    "Long backpack over Andrews Pass to Upper Cathedral Lake, far from help",
+    "Route-finding along the ridge from Cathedral Pass to the base"
+   ],
+   "primary": true
+  },
+  {
+   "name": "Chewuch River trail from Thirtymile",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 7400,
+      "name": "Upper Cathedral Lake basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+      "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+      "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+      "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+     },
+     {
+      "elev": 7600,
+      "name": "Cathedral Pass benches and the tarn slabs",
+      "role": "main",
+      "type": "bivy",
+      "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+      "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+      "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+      "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Thirtymile Trailhead (Chewuch Trail #510)",
+     "trailheadLat": 48.823696,
+     "trailheadLng": -120.018578,
+     "trailheadElevFt": 3430
+    }
+   },
+   "notes": "Start at the Thirtymile trailhead at the end of the Chewuch road and follow the Chewuch River trail up the valley, then climb to Cathedral Pass. It is longer than the Andrews Creek line but on a steady, well-used trail, and many parties walk in one way and out the other.",
+   "objHaz": [
+    "loose rock",
+    "exposed climbing",
+    "weather",
+    "remote",
+    "route-finding"
+   ],
+   "hazards": [
+    "Loose rock along the ridge",
+    "Exposure on the steeper steps",
+    "Afternoon thunderstorms typical in summer",
+    "Longer walk-in up the Chewuch River trail before the climb to Cathedral Pass",
+    "Route-finding along the ridge from Cathedral Pass to the base"
+   ]
+  }
+ ],
+ "wa_amphitheater_mountain_west_route": [
+  {
+   "name": "Upper Cathedral Lake and the west-side boot path",
+   "camps": [
+    "Upper Cathedral Lake basin",
+    "Andrews Pass",
+    "Cathedral Pass benches and the tarn slabs",
+    "Amphitheater Mountain upper basin"
+   ],
+   "notes": "The whole peak is a backpack with a short walk-up bolted onto the end of it. Nearly every party camps at or near Upper Cathedral Lake, around 7,380 ft, and climbs from there. The lake is reached most directly from the Andrews Creek Trailhead at the end of the pavement on Forest Road 51, going in over Andrews Pass and along the Boundary Trail; the Chewuch River option out of Thirtymile is considerably longer and joins the same ground near Cathedral Pass. Once at the lake nothing about the climb is committing: it is grass, scree and boulder from the trail to the top, with the occasional short step where hands come out. Most parties tag Cathedral Peak the same day, and the two are linked by a connecting gully rather than a return to the lake between them.",
+   "objHaz": [
+    "loose rock",
+    "lingering snow",
+    "weather",
+    "remote"
+   ],
+   "season": "Early July to late September",
+   "hazards": [
+    "Loose talus and scree on the upper slopes and summit plateau",
+    "Snow lingering in the access gullies and upper basin into July",
+    "High, cold creek crossings on the approach during runoff",
+    "Open, treeless plateau with no shelter from afternoon storms",
+    "Long day's walk or more from the nearest road"
+   ],
+   "primary": true,
+   "baseFinding": "From Upper Cathedral Lake the trail runs southeast and rounds the low toe of Amphitheater's west ridge. Roughly half a mile along, at about 7,200 ft, a beaten boot path breaks off uphill and climbs grass and scree to the northeast. That boot path is the start of the climb, and it is the only prepared thing you will see between the lake and the top. If the trail is still contouring level, you have not reached it; if the trail begins to lose elevation steadily and the ridge above you falls back behind your shoulder, you have walked past it. The path leads into an open bowl at about 8,000 ft rimmed with broken rock, the amphitheater the mountain is named for, and once you are standing in that bowl you are on the route. Two things fool parties here. In early season a steep snow gully rises straight out of the lake basin toward the ridge crest, and it does work, but it is a harder and icier start than the boot path and it is not the standard line. And the summit mass is shaped like a T with several plateau rises on it, so the first high point you reach after leaving the bowl is often not the highest. Keep walking the plateau until the ground stops rising. The check on the other side is the rock: the dramatic spires standing north of the lake belong to Cathedral Peak, and if you are climbing toward them you are on the wrong mountain."
+  },
+  {
+   "name": "Chewuch River trail from Thirtymile",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 7400,
+      "name": "Upper Cathedral Lake basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "The working climbers' camp for both the Southeast Buttress and Amphitheater's ridges, sitting directly under the peaks with short walks to either. The basin has taken heavy use for decades and the Forest Service has posted revegetation closures on damaged ground here in the past, so treat the shoreline as off limits and camp on rock or bare dirt well back from the water. Check the posted signs on arrival rather than assuming last year's layout still applies — which sites are open has changed between seasons. Nights are cold and exposed at this elevation even in August.",
+      "water": "The most dependable water anywhere on this approach — the lake holds through the season and needs no rationing. The one place on the route where you can plan on filling without checking a report first.",
+      "permit": "Free self-issue wilderness permit from the kiosk at the Andrews Creek trailhead. No quota, no reservation, nothing to arrange in advance. Northwest Forest Pass, Interagency pass or a day fee to park.",
+      "capacity": "A handful of established sites on slabs and benches back from the water; realistically three or four small parties before it feels crowded, and it does fill on midsummer weekends and during larch season"
+     },
+     {
+      "elev": 6800,
+      "name": "Remmel Lake and the Spanish Camp meadows",
+      "role": "route",
+      "type": "camp",
+      "notes": "This sits a short way off the main line to Cathedral Pass and works well as a base if Remmel Mountain is on the list alongside Cathedral and Amphitheater. The meadow ground is soft and easily damaged, so pull back onto the timber edge rather than pitching in the open grass. There is a signed spur from near the guard station running up toward the Cathedral basin, which makes this a workable alternative if the lakes above are full or posted closed. Being lower and more sheltered, it is a considerably kinder camp in bad weather than anything at the pass.",
+      "water": "Reliable — the lake plus the creeks draining the meadows. Along with Upper Cathedral, the other place on the approach where you can count on filling.",
+      "permit": "Free self-issue trailhead permit, no quota. The cabin at Spanish Camp is a Forest Service administrative structure, not a public shelter, and should not be treated as available lodging.",
+      "capacity": "Broad grassy meadows with room for multiple parties, but the sites are dispersed rather than developed and horse parties use this area heavily"
+     },
+     {
+      "elev": 7600,
+      "name": "Cathedral Pass benches and the tarn slabs",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Useful mainly as a high, quick bivy if you arrive late or want to be moving before dawn, since it saves the drop into the lake basin and puts you already at the crest. The ground is rock and thin turf, so pick a slab and leave the vegetation alone. Wind is the real cost — the pass funnels it and there is nothing to hide behind. Most parties are better off dropping to the lake and accepting the extra few hundred feet of regain.",
+      "water": "A small tarn and lingering snowmelt only, and both are unreliable. By late summer the pass area can be dry and the trail east toward Tungsten is reported dry for its whole length, so treat this as a place you carry water TO, not one you collect at.",
+      "permit": "Same free self-issue trailhead permit; no quota and no reservation anywhere in this wilderness.",
+      "capacity": "One or two parties on flat rock; there is no established site and no shelter from wind"
+     },
+     {
+      "name": "Amphitheater Mountain upper basin",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Reached by following the trail southeast around Amphitheater's west ridge from Upper Cathedral Lake and then a boot path up scree and grass into the basin. Worth considering only if you want to be on the ridge at first light, because the water problem is real and it gains you very little over camping at the lake. The ground is loose and sparsely vegetated, which makes it easy to occupy without leaving a mark if you are careful. Treat it as an emergency or tactical bivy rather than a planned camp. No elevation is recorded — none was confidently sourced.",
+      "water": "Snowmelt only, and only early. Once the last patches go there is nothing up here, so plan on carrying everything up from the lake. This is the driest camp option in the zone.",
+      "permit": "Free self-issue trailhead permit covers it; no quota, no reservation, and no designated-site system in this wilderness.",
+      "capacity": "One or two parties on scree and grass benches; informal ground, no established sites"
+     }
+    ],
+    "gainM": 1494,
+    "distKm": 32.03,
+    "gainFt": 4900,
+    "outingShape": "outback",
+    "approachLogistics": {
+     "trailhead": "Thirtymile Trailhead (end of Chewuch road, FR 51)"
+    }
+   },
+   "notes": "Start at the Thirtymile trailhead at the end of the Chewuch road and follow the Chewuch River trail up the valley past the Tungsten Creek junction, then climb to Cathedral Pass and drop to Upper Cathedral Lake. It is longer than the Andrews Creek line but on a steady, well-used trail, and many parties walk in one way and out the other as a loop.",
+   "objHaz": [
+    "loose rock",
+    "lingering snow",
+    "weather",
+    "remote"
+   ],
+   "hazards": [
+    "Loose talus and scree on the upper slopes and summit plateau",
+    "Snow lingering in the access gullies and upper basin into July",
+    "Stream crossings can be hazardous in high early-season runoff",
+    "Open, treeless plateau with no shelter from afternoon storms",
+    "Considerably longer walk-in from Thirtymile, far from the road"
+   ]
+  }
+ ],
+ "wa_azurite_peak_southeast": [
+  {
+   "name": "Azurite Pass, the 7,400 ft shoulder and the west-face traverse",
+   "camps": [
+    "Horse Heaven Camp, West Fork Methow",
+    "Azurite Pass",
+    "River Bend and Ballard campgrounds, Lost River Road",
+    "Horse Heaven Camp"
+   ],
+   "notes": "From Azurite Pass leave the trail and work northeast and east up krummholz, sand, scree and talus to a flat shoulder at about 7,400 ft — flat enough that parties cache overnight gear on it, and easy to relocate on the way down. Continue up the crest to roughly 7,600 ft, where a lower south summit obstructs the ridge and the well-cairned climbers' route drops off westward. From there a gently rising traverse, clearly marked by ducks and cairns, crosses a succession of ribs, gullies and sandy slopes, staying below the cliffs rather than in them, and crossing two or three short snow runnels that an ice axe handles. The traverse runs toward the peak's prominent west rib.",
+   "objHaz": [
+    "loose rock",
+    "lingering snow",
+    "exposed climbing",
+    "route-finding",
+    "weather"
+   ],
+   "season": "Late Jul-Sep",
+   "hazards": [
+    "Loose, disintegrating rock on the traverse and in the final gully; stay out of each other's fall line",
+    "Final gully often holds steep snow into midsummer; axe, crampons if icy",
+    "Two or three short snow runnels to cross on the west-face traverse",
+    "Many similar ribs and gullies; turning up too late puts you on the southwest face",
+    "Exposed class 3 on the traverse and summit gully",
+    "Afternoon thunderstorm exposure on the open upper ridge"
+   ],
+   "primary": true,
+   "baseFinding": "Turn up too late and you meet the southwest face — that is the error to watch for. The correct gully is narrow at its base and cannot be seen from the ridge, so parties keep traversing hoping for something obvious, run out onto the imposing southwest face, and find it goes Class 4 in a hurry. The stated fix from those who have made that mistake is to back down to the previous gully on the south side and climb that one. The right line stays loose and never harder than short steps of Class 3 for roughly the last 200 ft to the top: if you are climbing more than short sections of Class 4, you are off route, and if you have drifted onto cleaner, more solid rock high on the gully's climber's-left wall you have left the gully floor for steeper and more exposed ground. One gully on this line pinches to about three feet, tight enough to touch both walls with your arms out — that constriction is a confirmation you are in a real line, not a warning."
+  },
+  {
+   "name": "Harts Pass and the Pacific Crest Trail south",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 4350,
+      "name": "Horse Heaven Camp, West Fork Methow",
+      "role": "main",
+      "type": "camp",
+      "notes": "This is the natural first night on the eastern approach to Azurite Pass and it breaks a walk that is otherwise too long to enjoy. From the trailhead near two thousand seven hundred feet the trail follows the West Fork Methow past Trout Creek and Brush Creek toward Jet Creek, and the camp sits partway along at about four thousand three hundred and fifty feet. Two warnings are worth taking seriously. The lower trail is overgrown and faint in places, though the tread improves as it climbs. And the brush on the banks of Jet Creek becomes extremely dense with no clear path through it at all, which is the section that costs parties hours and tempers. From here it is a sustained climb of well over two thousand feet to Azurite Pass and the peaks beyond, so leave early. Anyone weighing the two approaches should know they are about the same length and about equally neglected — pick by which side of the mountains you are driving from, not by hoping one has a better trail.",
+      "water": "Creek water close at hand, reliable through the season. This is the last comfortable water before the long climb to the pass, so fill completely here.",
+      "permit": "None. Dispersed national forest camping — no permit, no quota, no reservation. Northwest Forest Pass to park at the West Fork Methow trailhead. Fires only in an existing ring and only outside a burn ban, which by August usually means not at all.",
+      "capacity": "An unimproved valley camp partway up the eastern approach, past the Trout Creek and Brush Creek junctions. Space for a party or two on flat ground in the timber. Nothing is maintained."
+     },
+     {
+      "elev": 6713,
+      "name": "Azurite Pass",
+      "role": "main",
+      "type": "bivy",
+      "notes": "This is the hinge of the whole zone and the only camp that serves both summits well. Azurite Peak rises directly north of the pass and Mount Ballard stands about two miles further north again along the same ridge, so a party camped here can take Azurite by its south ridge and south-west gully and then continue to Ballard, or split the two across a pair of days. Both approaches converge on this spot, which is why it is worth carrying water and a tent this high rather than trying either peak from the valley. Reckon on the pass being under snow into July in a normal year and later after a heavy winter; the north-facing ground above it holds much longer. Weather comes across from the west with no warning here and there is no shelter for hours in any direction, so this is a camp to be conservative about.",
+      "water": "Seasonal snowmelt only, and not to be relied on late in the summer. The dependable sources are down in Mill Creek on the west side and in the Brush Creek drainage on the east. Fill low and carry it up; a party that arrives here dry in September has a problem.",
+      "permit": "None. National forest, dispersed camping, no permit and no quota. Camp on gravel or scree rather than the meadow. No fires — there is nothing to burn and a ban is likely in force anyway.",
+      "capacity": "Open ground at and just below the pass, at around six thousand seven hundred feet — mapping and reports put it anywhere between about 6,680 and 6,750, so take the figure loosely. Room for a couple of small tents. Exposed, with no shelter and no windbreak worth the name."
+     },
+     {
+      "name": "River Bend and Ballard campgrounds, Lost River Road",
+      "role": "route",
+      "type": "camp",
+      "notes": "These are the staging camps for the eastern approach and the comfortable answer to the night before. From Winthrop the drive runs west on SR 20 and then up the Lost River Road through Mazama to the end of the pavement, continuing a mile and a half or so on the gravel of the Harts Pass road. The West Fork Methow trailhead sits close by at around two thousand seven hundred feet, at a wooden fence just off a short spur. Being low and in timber, they are usable well before and after the high country is in condition, and they are far enough down the road that none of the Harts Pass driving difficulties apply. They also make a sensible base for a party that wants a look at the trail before committing to it, which on this side is worth doing — the West Fork Methow tread is badly overgrown and in poor repair, and the brush on the banks of the upper creeks is dense enough that the trail effectively disappears.",
+      "water": "The river is right there. Treat these as basic sites and assume you will filter rather than find a working spigot.",
+      "permit": "No permit and no reservation, just a nightly fee paid on arrival. A Northwest Forest Pass is not needed to occupy a campsite, only to park at a trailhead. These are outside any wilderness, so none of the Pasayten self-issue paperwork applies.",
+      "capacity": "Two small forested Forest Service campgrounds a short distance apart along the West Fork Methow, roughly eight to nine miles up the road from Mazama. Both are first come, first served only — there is no way to reserve and you must arrive in person to claim and pay for a site. Each is modest, so a summer weekend is a gamble."
+     },
+     {
+      "name": "Horse Heaven Camp",
+      "role": "hidden"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Harts Pass (end of FR 5400)"
+    }
+   },
+   "notes": "Start high at Harts Pass and follow the Pacific Crest Trail south to Horse Heaven Camp, where the old Mill Creek trail climbs to Azurite Pass. It avoids the lower West Fork Methow trail, which has been brushy and slow past its first few miles.",
+   "objHaz": [
+    "loose rock",
+    "lingering snow",
+    "exposed climbing",
+    "route-finding",
+    "weather"
+   ],
+   "hazards": [
+    "Long approach on the Pacific Crest Trail with a sustained climb to Azurite Pass",
+    "Loose, disintegrating rock on the traverse and in the final gully",
+    "Final gully often holds steep snow into midsummer; axe, crampons if icy",
+    "Exposed class 3 on the west-face traverse and summit gully",
+    "Route-finding among ribs and gullies on the upper slopes",
+    "Afternoon thunderstorm exposure on the open upper ridge"
+   ]
+  },
+  {
+   "name": "Canyon Creek and Mill Creek from SR-20",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 6713,
+      "name": "Azurite Pass",
+      "role": "main",
+      "type": "bivy",
+      "notes": "This is the hinge of the whole zone and the only camp that serves both summits well. Azurite Peak rises directly north of the pass and Mount Ballard stands about two miles further north again along the same ridge, so a party camped here can take Azurite by its south ridge and south-west gully and then continue to Ballard, or split the two across a pair of days. Both approaches converge on this spot, which is why it is worth carrying water and a tent this high rather than trying either peak from the valley. Reckon on the pass being under snow into July in a normal year and later after a heavy winter; the north-facing ground above it holds much longer. Weather comes across from the west with no warning here and there is no shelter for hours in any direction, so this is a camp to be conservative about.",
+      "water": "Seasonal snowmelt only, and not to be relied on late in the summer. The dependable sources are down in Mill Creek on the west side and in the Brush Creek drainage on the east. Fill low and carry it up; a party that arrives here dry in September has a problem.",
+      "permit": "None. National forest, dispersed camping, no permit and no quota. Camp on gravel or scree rather than the meadow. No fires — there is nothing to burn and a ban is likely in force anyway.",
+      "capacity": "Open ground at and just below the pass, at around six thousand seven hundred feet — mapping and reports put it anywhere between about 6,680 and 6,750, so take the figure loosely. Room for a couple of small tents. Exposed, with no shelter and no windbreak worth the name."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Canyon Creek Trailhead (SR-20)",
+     "trailheadLat": 48.7063,
+     "trailheadLng": -120.9185
+    }
+   },
+   "notes": "From the Canyon Creek trailhead on SR-20, follow Canyon Creek to the Mill Creek trail and up past the old Azurite Mine to the west slopes of the peak or on to Azurite Pass. The Mill Creek trail is badly overgrown in places and route-finding through alder is slow, so most parties prefer the east-side starts.",
+   "objHaz": [
+    "loose rock",
+    "lingering snow",
+    "route-finding",
+    "exposed climbing",
+    "weather"
+   ],
+   "hazards": [
+    "Mill Creek trail badly overgrown, with slow alder route-finding",
+    "Long approach; Azurite Pass under snow into July in a normal year",
+    "Loose, disintegrating rock on the traverse and in the final gully",
+    "Final gully often holds steep snow into midsummer; axe, crampons if icy",
+    "Exposed class 3 on the west-face traverse and summit gully",
+    "Afternoon thunderstorms; no shelter near the pass"
+   ]
+  }
+ ],
+ "wa_bear_mountain_chilliwack_north_buttress": [
+  {
+   "name": "Hannegan Pass and the Chilliwack River Trail to Bear Creek",
+   "camps": [
+    "Meadow basin below the northwest-ridge saddle"
+   ],
+   "notes": "From the road end at about 3,100 ft, Trail #674 runs nearly level for the first mile and then climbs at a steady grade to Hannegan Pass at about 5,100 ft. Drop off the east side and continue down into the Chilliwack valley, bearing right at the park boundary onto the Chilliwack River Trail proper. The tread loses height past a backcountry camp to the Chilliwack River crossing - historically a hand-pulled cable car, and a serious ford if it is not running, so check its status before you plan around it - then runs down-valley past further camps to the Bear Creek confluence. The camp at that confluence has been closed since fire came through the drainage, so confirm it is open rather than assuming a bed there.\n\nAt Bear Creek the maintained trail ends. Ford the creek, which can be a genuinely committing crossing in snowmelt, and climb steep brushy timber eastward; higher the brush turns to huckleberry and slide alder before opening into meadows above Ruta Lake. Traverse the divide from there, skirting the loose south-facing slopes below two unnamed points and crossing a rock rib, to a broad saddle at about 6,480 ft with running water and heather tent sites. Most parties split this over two days.",
+   "objHaz": [
+    "rockfall",
+    "icefall",
+    "loose rock",
+    "river crossing",
+    "route-finding",
+    "remote"
+   ],
+   "season": "Late July through September, once the Chilliwack crossing has dropped and the buttress is dry",
+   "hazards": [
+    "Chilliwack River crossing depends on a cable car being in service; serious ford if not",
+    "Bear Creek ford in snowmelt can be committing",
+    "Steep brushy timber and slide alder with no tread above Bear Creek",
+    "Loose south-facing slopes on the divide traverse",
+    "Rockfall and icefall from the shrinking glacier in the couloir",
+    "Moat between neve and slab worsens through the season",
+    "Days from any road; loose, hard-to-protect rock on the buttress"
+   ],
+   "primary": true,
+   "baseFinding": "The route begins by losing height, and that is the single most important thing to know at camp. From the 6,480 ft saddle you drop down steep scree, trending climber's right, and cross several minor gullies to reach the toe of the small glacier remnant spilling out of the couloir below the buttress. Any line that climbs upward from the saddle toward rock is the wrong one.\n\nIdentify the saddle first: it is broad, it has running water on it and flat heather sites, and it sits on the north-west ridge with the wall around the corner rather than above you. A saddle with no water and no camping is not it.\n\nAt the ice, the positive test is which side of the buttress you go up. This route climbs the glacier or neve on the climber's-left side of the buttress and then works into slabs that lead to a corner system - the corner is where the technical climbing starts. The toe of the buttress itself, where the rock meets the ice on the right-hand side, is the start of the direct and not of this route. If you are roping up at the very bottom of the rock rather than walking past it on snow, you are on the harder line.\n\nWatch the join between snow and rock. A moat opens where the neve pulls away from the slabs and it deepens through the season; getting out of it onto the slabs is often the awkward move of the approach and it is worth an axe and crampons even in high summer.\n\nA cross-check once committed: the climbing above the corner runs up to about 5.10 with the hardest move an offwidth part-way up, and it finishes on the buttress top, from where a scramble gains the true summit. If your first pitch off the ice is already at your limit, you have started too low and too far right."
+  },
+  {
+   "name": "From the Chilliwack Lake road on the Canadian side",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Meadow basin below the northwest-ridge saddle",
+      "role": "main",
+      "type": "bivy",
+      "elevM": 1951,
+      "notes": "The standard and effectively the only high camp for the buttress, in heather meadow a little below the notch on the northwest ridge, where scattered trees give some wind shelter and flat grassy ground. Reached by climbing roughly 3,000 ft out of the Bear Creek valley to treeline on a rough climbers' path through open forest that gives way to blueberry brush. Around nine hours from the Chilliwack Lake road on the Canadian side; the American approach over Hannegan Pass and down the Chilliwack River is far longer, on the order of seventeen miles, but is the one that keeps the permit straightforward. Expect mosquitoes.",
+      "water": "Running water at the camp, fed by semi-permanent snowfields just above; those patches are described as holding meltwater well into the later part of the season.",
+      "permit": "North Cascades National Park wilderness permit, Bear Mountain cross-country zone: maximum party of six and six permits per night. This zone cannot be reserved in advance — it is walk-up only, from the Wilderness Information Center. Cross-country camping is restricted to durable ground.",
+      "capacity": "No published tent count. The binding number is the permit: six people per party, six parties a night in the zone."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Chilliwack Lake road, south end (British Columbia)"
+    }
+   },
+   "notes": "There is a far shorter line to the same camp from the road on the Canadian side of the border - a fraction of the distance the Hannegan approach covers. It crosses the border on foot where there is no port of entry, and this page cannot say that crossing is lawful, so confirm it with the border authorities before planning on it; and the tread turns unmaintained and badly overgrown after the first mile or two, so the miles it saves are not all easy ones. Most parties starting in the United States take the long way rather than deal with it; parties already north of the border have the opposite calculation.",
+   "objHaz": [
+    "rockfall",
+    "icefall",
+    "loose rock",
+    "route-finding",
+    "remote"
+   ],
+   "season": "Same window, and only if the border crossing is confirmed lawful",
+   "hazards": [
+    "Border crossing on foot with no port of entry; legality unconfirmed",
+    "Unmaintained, heavily overgrown tread for most of the distance",
+    "Loose south-facing slopes on the divide traverse",
+    "Rockfall and icefall from the glacier remnant beneath the buttress",
+    "Loose, hard-to-protect rock on the buttress",
+    "Remote position; a rescue may involve two countries"
+   ],
+   "baseFinding": "The approach variant changes only how you arrive at the 6,480 ft saddle. Once there, everything is as for the long approach: the camp is the broad saddle with running water and heather sites on the north-west ridge, and the route starts by dropping off it on steep scree, trending climber's right, across several minor gullies to the toe of the glacier remnant beneath the couloir.\n\nThe same two tests apply at the ice. Go up the snow on the climber's-left side of the buttress into the slabs and the corner system. If you are tying in at the very toe of the rock where it meets the ice on the right, you are under the Direct.\n\nAnd the same negative marker: gaining height straight from the saddle toward rock means you have not gone far enough down. The wall is below and around the corner from camp, not above it."
+  }
+ ],
+ "wa_blackcap_mountain_scramble": [
+  {
+   "name": "Shellrock Basin camp and the traverse to the east-face col",
+   "camps": [
+    "Doris Lake and Freds Lake basins",
+    "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+    "Harts Pass and Meadows campgrounds",
+    "Fred's Lake",
+    "Shellrock Basin"
+   ],
+   "notes": "Blackcap is a leg of a multi-day traverse rather than an objective on its own, and the walk in is measured in days, not hours. The usual staging is a camp in Shellrock Basin just below and east of Shellrock Pass, reached over Rolo Pass from Fred's Lake after a long valley approach up the Middle Fork Pasayten. From camp the peak is a half-day round trip on easy ground. Water is at the basin and in upper Eureka Creek and there is none on the mountain. An eastern line exists off the Monument Creek trail into the open Monument-Blackcap basin, but the Shellrock side is the travelled one and the one with a recognisable start.",
+   "objHaz": [
+    "loose rock",
+    "lingering snow",
+    "river crossing",
+    "remote",
+    "exposed climbing"
+   ],
+   "season": "Mid-July to September",
+   "hazards": [
+    "Loose scree and talus on the east face, worse descending than ascending",
+    "Exposure and loose blocks near the top of the northeast ridge",
+    "Steep snowfield below Shellrock Pass can persist into early summer",
+    "High, cold fords of Eureka Creek and the Middle Fork Pasayten in runoff",
+    "Days from the nearest road with no cell coverage"
+   ],
+   "primary": true,
+   "baseFinding": "The base is a col, and getting to it is the only route-finding on the day. Leave the trail at Shellrock Pass itself and traverse south-southwest across the open grassy and rocky basin, keeping below the cliff bands the whole way. That traverse ends at the foot of a talus slope. Work the left, eastern edge of that talus southward until the cliff band above you finally runs out; the saddle at the end of it, directly beneath Blackcap's east face, is where the climbing starts. The confirmation is the rock itself and it is the clearest single marker on this peak: Blackcap's summit cap is near-black hornfels and shale sitting abruptly on top of much paler rock, and the colour boundary is visible from the col and is under your hands within a few minutes of leaving it. If everything around you is still light-coloured after several hundred feet of scree, you are on the wrong flank. Two ways to know you have overshot. Following the trail over Shellrock Pass and down its far side takes you away from the peak altogether. Continuing south past the end of the cliff band instead of turning up drops you toward the Monument basin. In early season a steep snowfield sits below the pass on this traverse and is normally bypassed on its left; carry an axe if it is still there."
+  },
+  {
+   "name": "Robinson Creek over Robinson Pass",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 6975,
+      "name": "Doris Lake and Freds Lake basins",
+      "role": "main",
+      "type": "camp",
+      "notes": "This is the working climbers' camp for Osceola Peak and Blackcap Mountain and the first night of the long traverse that links them with Carru and Lago. The line in starts high, which is the point: from Slate Pass at about 6,900 feet a short connector drops to the Middle Fork Pasayten trail, five miles of valley walking leads to the Ferguson Lake spur, and three more miles of climbing reaches Doris Lake at just under 7,000 feet. Osceola is then a short cross-country scramble northeast through open forest from camp, which is as close as anything in the Pasayten comes to convenient. Blackcap is further along the ridge system and is usually taken on the second or third day. Freds Lake sits on the parallel line toward Rolo Pass and serves the same purpose for parties heading for Shellrock. Reckon on three to four days for anything based here and remember that the return from a high camp means regaining Slate Pass at the end. Larches turn in the last week of September and the first of October, which is also when the nights get genuinely cold at this elevation.",
+      "water": "Both lakes hold through the season and are the dependable supply for this whole group of peaks. Between them and the Middle Fork river flats a party can plan a multi-day traverse without rationing, which is not true of most of this wilderness.",
+      "permit": "Free self-issue wilderness permit from the kiosk at Slate Pass or Harts Pass, no quota. Northwest Forest Pass to park. Camp at least a hundred feet back from either shoreline — the ground close to the water is thin and already worn. Weed-free feed for stock, and no tying animals to trees overnight.",
+      "capacity": "Informal sites on benches and ridge shoulders back from the water, room for two or three small parties without crowding. Nothing developed, no tables, no toilets."
+     },
+     {
+      "name": "Shellrock Pass, Shellrock Basin and the Eureka Creek meadows",
+      "role": "main",
+      "type": "camp",
+      "notes": "Shellrock is the camp for Ptarmigan Peak and Dot Mountain, both of which are otherwise out of reach. The standard line leaves Slate Pass, follows the Middle Fork Pasayten to Berk Creek, climbs to Freds Pass and crosses the head of Eureka Creek to Shellrock Pass, which puts a party in position to scramble Ptarmigan the following day; Dot is taken from the same country on the way through, usually in combination with the Lago and Carru group. This is genuinely remote — thirty-five miles and thirteen thousand feet of gain over four days is a fair description of a trip that collects three or four summits here — and there is no short version. The meadow ground is soft and holds a footprint for years, so pitch on the timber edge or on gravel rather than in the open grass. Snow lingers on the north sides of these passes into late July in an ordinary year and much later after a heavy winter, which is the single biggest constraint on when this is worth attempting.",
+      "water": "Reliable at the creek camp and in the Eureka meadows, and the pond in Shellrock Basin usually holds. The passes themselves are dry, so fill in the basin or the meadows before going up rather than expecting to find snowmelt on the crest late in the season.",
+      "permit": "Free self-issue Pasayten permit, no quota and no reservation anywhere in this wilderness. Northwest Forest Pass to park at Slate Pass or Robinson Creek. Stock use is significant through here — weed-free feed is required and animals may not be tied to trees overnight. Fires are legal outside a ban but the meadows are fragile and most parties cook on a stove and leave it at that.",
+      "capacity": "Dispersed rather than designated. There is a forested site by the creek at about 5,800 feet where the old Eureka Creek trail joins, a broad spread of good ground in the Eureka Creek meadows near 6,300 feet, and open camping around the pond in Shellrock Basin. Several parties can spread out through this country without seeing each other."
+     },
+     {
+      "name": "Fred's Lake",
+      "role": "hidden"
+     },
+     {
+      "name": "Shellrock Basin",
+      "role": "hidden"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Robinson Creek Trailhead (Lost River Road)",
+     "trailheadLat": 48.6617,
+     "trailheadLng": -120.54201
+    }
+   },
+   "notes": "From the Robinson Creek trailhead on the Lost River road, climb over Robinson Pass and descend into the Middle Fork Pasayten, joining the standard line up to Freds Lake and over Rolo Pass into Shellrock Basin. It starts much lower than Slate Pass but works when the upper Harts Pass road is not an option, and suits loop trips.",
+   "objHaz": [
+    "loose rock",
+    "lingering snow",
+    "river crossing",
+    "remote",
+    "exposed climbing"
+   ],
+   "hazards": [
+    "Loose scree and talus on the east face, worse descending than ascending",
+    "Exposure and loose blocks near the top of the northeast ridge",
+    "Steep snowfield below Shellrock Pass can persist into early summer",
+    "High, cold fords of Eureka Creek and the Middle Fork Pasayten in runoff",
+    "Multi-day approach over Robinson Pass, with the return regaining the pass",
+    "Days from the nearest road with no cell coverage"
+   ]
+  },
+  {
+   "name": "Monument Creek and the Monument-Blackcap basin",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Monument Creek Trailhead (Lost River Road)",
+     "trailheadLat": 48.65617,
+     "trailheadLng": -120.51276
+    }
+   },
+   "notes": "Follow the Monument Creek trail toward Butte Pass, and a few miles short of the pass leave it where Monument Creek bends west into the basin between Monument Peak and Blackcap. The lower basin is slow going, but its upper part is open and pleasant, and the peak is climbed from there.",
+   "objHaz": [
+    "loose rock",
+    "avalanche",
+    "route-finding",
+    "remote"
+   ],
+   "hazards": [
+    "Slow going in the lower Monument-Blackcap basin",
+    "Loose scree and talus on the climb; descending is worse",
+    "Exposure and loose blocks near the top of the northeast ridge",
+    "Exposed 5th-class ridge toward Monument Peak; avoid it as a route",
+    "Avalanche and cornice terrain on winter approaches",
+    "Long, remote approach with no quick escape"
+   ]
+  }
+ ],
+ "wa_booker_mountain_northeast_face": [
+  {
+   "name": "Head of Park Creek: easier cliffs to the small glacier, then right through the icefall",
+   "camps": [
+    "Thunder Basin Hiker Camp",
+    "Neve Camp",
+    "Junction Camp",
+    "Skagit Queen Camp"
+   ],
+   "notes": "A multi-day backpack toward Park Creek Pass and the head of Park Creek — from the Thunder Creek trail out of Colonial Creek Campground, or as part of a Buckner-area traverse — then camp near the base of the face for an alpine start.\n\nFrom camp the sequence is: climb easier cliffs to a small glacier at the base of the face, ascend left up that glacier to an icefall, then traverse right through the icefall to reach the main rock wall. The first-ascent party described that crossing as genuinely exposed and frightening.\n\nThe face averages about 70 degrees and is over 3,000 ft high, on generally sound Cascade granodiorite and orthogneiss, apart from one band that is not. The first ascent was made in August 1964.\n\nThe descent is not the face: from the summit, take the ordinary route down to the Booker-Buckner col and back toward a Park Creek camp — which is what the first-ascent party did, reaching their camp just before dark.",
+   "objHaz": [
+    "icefall",
+    "crevasses",
+    "rockfall",
+    "exposed climbing",
+    "remote"
+   ],
+   "season": "Climbed historically in early-to-mid August; the window is narrow because it depends on a stable, well-bridged icefall and on residual snow and ice in the summit gully",
+   "hazards": [
+    "Icefall traversed on the approach; crevasse and serac fall, and the crossing is described as frightening",
+    "Crumbly red rock band across the whole face at mid-height is the source of rockfall",
+    "Extreme remoteness; an incident on a 3,000 ft face this rarely climbed is very hard to get help for",
+    "Heavy packs on class 4-5 ground compound the difficulty",
+    "Narrow season window depending on a bridged icefall and residual snow in the summit gully"
+   ],
+   "primary": true,
+   "baseFinding": "The sequence is countable from bottom to top and it is the best thing this route has: easier cliffs, then a small glacier, then left up it to an icefall, then right through the icefall to the rock. The direction reverses — left to reach the icefall, right to get through it — and that reversal is what tells you the crossing you are making is the intended one. The rope-up point is a ledge system near the second prominent tree, where the ledge makes its first descent. An oddly specific marker, and a genuinely countable one if the trees are visible. The mid-route confirmation is a colour and it crosses the whole face: a prominent, crumbly red stratum at roughly half height. You cannot go round it — it spans the face — so meeting a red band of bad rock at mid-height is proof you are on the line and not beside it. It is also the crux and the rockfall source, so it is worth expecting. Between those two, follow the prominent central rib essentially straight up. Near the top a 100-ft notch is passed on steep snow or ice through a narrow gully angling across the rib, and then it is easier ground to the summit. And the negative test is the whole peak: Booker's other two routes are walks. If the ground you are on is class 2-3 talus, you are on the Northwest Route or the South Ridge — this is the only technical line on the mountain, and the first ascent said so in as many words."
+  },
+  {
+   "name": "Park Creek trail from the Stehekin valley",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 3921,
+      "name": "Five Mile Camp, Park Creek trail",
+      "role": "route",
+      "type": "camp",
+      "notes": "The eastern counterpart to Thunder Basin: the last practical night before crossing Park Creek Pass from the Stehekin side, and the staging point for Buckner and Booker approached from the east. The trail above climbs through hanging meadows to the pass with good views of Goode, Buckner and Booker on the way. Coming in from Stehekin turns a very long one-way walk into a shorter approach than the roughly nineteen miles from Colonial Creek, at the cost of a lake crossing and road transport. Which side is faster depends entirely on whether the shuttle is running to the upper valley that season.",
+      "water": "Park Creek is immediately adjacent and reliable.",
+      "permit": "NPS wilderness permit required, covering Lake Chelan National Recreation Area as well as the park proper. Permits for an approach started from Stehekin still come through the same park system. Plan around Lake Chelan boat and shuttle schedules, since a missed connection can put you a day off your permitted itinerary.",
+      "capacity": "Creekside stock camp on the Park Creek trail. Small; the neighbouring Two Mile camp downvalley was reduced to a single site by past flooding, so do not count on it as overflow."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Park Creek Trailhead (Stehekin Valley Road)"
+    }
+   },
+   "notes": "Reach the Stehekin valley by boat and the valley shuttle, or on foot over Cascade Pass, then walk or bike the washed-out upper valley road to the Park Creek trailhead. The Park Creek trail climbs toward Park Creek Pass, and the face sits at the head of the valley below the pass. Much less walking than Thunder Creek once you are in the valley.",
+   "objHaz": [
+    "icefall",
+    "crevasses",
+    "rockfall",
+    "remote"
+   ],
+   "hazards": [
+    "Icefall traversed above the small glacier; crevasse and serac fall",
+    "Crumbly red rock band across the face at mid-height is the source of rockfall",
+    "Extreme remoteness; an incident on this face is very hard to get help for",
+    "Boat and shuttle schedules; a missed connection can cost a day",
+    "Washed-out upper valley road before the Park Creek trailhead"
+   ]
+  }
+ ],
+ "wa_boving_christensen": [
+  {
+   "name": "Aasgard Pass and the Core, then a hundred feet right of the left-flank classic",
+   "camps": [
+    "Perfection Lake and Inspiration Lake basin camps",
+    "Gnome Tarn",
+    "Colchuck Lake designated campsites"
+   ],
+   "notes": "The shared Core Enchantments approach: Stuart Lake trailhead, Stuart Lake Trail to the Colchuck Lake Trail junction, across Mountaineer Creek and up to Colchuck Lake at 5,570 ft, then the boulder field at the south end and Aasgard Pass — 2,000 ft in 1.25 miles of loose scree, the crux of the walk in, dangerous under snow into early July and avalanche-prone in shoulder season.\n\nFrom the pass, cross-country north past Isolation and Tranquil Lake toward Gnome Tarn and the base of the south face — roughly 7.5 to 8 miles and 4,600 ft one way, the last stretch unmarked over slabs and talus.\n\nFour pitches, about 450 ft: a short crack and slab to a corner, a long exposed and somewhat dirty face-crack pitch, a corner with a bouldery move, and a finishing fingers-to-hands pitch to the ridge.",
+   "distMi": 7.5,
+   "gainFt": 4600,
+   "objHaz": [
+    "loose rock",
+    "avalanche",
+    "exposed climbing",
+    "route-finding",
+    "weather"
+   ],
+   "season": "Roughly Jul-Sep",
+   "hazards": [
+    "Aasgard Pass: loose scree with hidden creek and moat under early-season snow",
+    "Long, exposed, somewhat dirty second pitch",
+    "Natural non-bolted rappel anchors on the north side; check slings and tat",
+    "Unmarked cross-country approach over slabs and talus",
+    "Afternoon thunderstorms with a long walk back over the pass",
+    "Avalanche-prone approach in shoulder season"
+   ],
+   "primary": true,
+   "baseFinding": "Pace it off from the left-flank classic: this route starts about 100 feet to the right of it, on the west side of the south face. That is a measurable distance rather than a description, and it is what makes the start findable — everything else on this end of the face is identified relative to the same outside corner.\n\nSo the procedure in poor visibility is two steps. First find the outside corner where the south face turns onto the west side. The classic left-flank line starts just right of that corner. Then walk right roughly a hundred feet along the base. That is where you are.\n\nWhat tells you you have overshot: keep walking right along the base and the ground under the middle of the face is where the summit route starts, and beyond that the two large V-features of the next line along. Reaching either means you have gone several hundred feet too far.\n\nWhat tells you you are short: a large roof at the base means you have crossed the corner onto the west face entirely and are two routes left.\n\nFirst-pitch confirmation: a short crack and slab leading to a corner. It is not a long lead and it is not hard. The long, exposed, somewhat dirty face crack is the second pitch. If your first pitch is long and dirty you have started one pitch too high or on the wrong line.\n\nAnd the top-out check: this route finishes on the West Ridge, not the summit — the same as its two neighbours on this flank. That shared finish is why they share one rappel descent on the north side."
+  },
+  {
+   "name": "Snow Lakes and the lower Enchantments",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 7190,
+      "name": "Perfection Lake and Inspiration Lake basin camps",
+      "role": "main",
+      "type": "camp",
+      "notes": "The natural base for Prusik Peak's West Ridge and South Face, putting the approach at well under an hour of walking and scrambling to Prusik Pass. Most parties reach it over Aasgard Pass from Colchuck Lake, which is a steep loose grind with a heavy pack rather than a trail in any real sense. Camp on rock, sand or gravel and stay off the heather — the meadows here recover very slowly. No fires at any elevation in the basin.",
+      "water": "Reliable — the chain of lakes and the connecting streams hold water all season",
+      "permit": "Core Enchantment zone. This is the hardest overnight permit in the area to draw; the advance lottery through recreation.gov is the main route in, with a small number of Core spots also released in the geofenced daily lottery at Leavenworth. A Core permit is the flexible one — it is valid for camping in any of the five zones (Core, Colchuck, Snow, Stuart, Eightmile/Caroline).",
+      "capacity": "Numerous hardened sites on granite benches and sand between the two lakes; the whole Core zone is held to roughly two dozen people a night, so it is never crowded once you are in"
+     },
+     {
+      "elev": 7372,
+      "name": "Gnome Tarn",
+      "role": "main",
+      "type": "camp",
+      "notes": "The tarn sits almost directly under Prusik's south side and gives the shortest approach of anywhere to the South Face routes and the West Ridge. Getting there means leaving the main basin route and scrambling up from around Perfection Lake toward Prusik Pass on a faint, easily lost path over granite. It is exposed and high, so a night here can be considerably colder and windier than the lakes below. The camping is on rock, which is both the right surface to use and the reason a level spot takes some hunting.",
+      "water": "The tarn itself, though it is small and can drop low or silty late in a dry season; the lakes below are the fallback",
+      "permit": "Core Enchantment zone, same permit and same lottery reality as the Perfection Lake camps. There is no separate allocation for climbers and no exemption for a single night below a route.",
+      "capacity": "A handful of small sites on slab and sand; realistically one or two parties before it feels crowded"
+     }
+    ],
+    "distKm": 16.09,
+    "outingShape": "outback",
+    "approachLogistics": {
+     "trailhead": "Snow Lakes Trailhead",
+     "trailheadLat": 47.5441,
+     "trailheadLng": -120.7095
+    }
+   },
+   "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the face below Prusik Pass. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet.",
+   "objHaz": [
+    "loose rock",
+    "exposed climbing",
+    "route-finding",
+    "weather"
+   ],
+   "hazards": [
+    "Long approach, about ten miles with well over 5,000 ft of gain",
+    "Avoids the Aasgard Pass scree but still crosses unmarked slab and talus to the face",
+    "Long, exposed, somewhat dirty second pitch",
+    "Natural non-bolted rappel anchors on the north side; check slings and tat",
+    "Afternoon thunderstorms with a long way back to the trailhead"
+   ]
+  }
+ ],
+ "wa_bryant_peak_southeast_slopes": [
+  {
+   "name": "Denny Creek Trail to Hemlock Pass, then the ridge",
+   "notes": "The standard summer approach. From the Denny Creek trailhead (~2,300 ft), reached from I-90 Exit 47 by Denny Creek Road and FR 5830, follow the Denny Creek Trail #1014 toward Melakwa Lake past waterfalls and up steeper switchbacks to Hemlock Pass, about 4 miles and roughly 2,300 ft of gain. Leave the trail at the pass for the ridge on the right.",
+   "gainFt": 3600,
+   "objHaz": [
+    "loose rock",
+    "rockfall",
+    "lingering snow",
+    "exposed climbing"
+   ],
+   "season": "Late July to September for a dry scramble; earlier the ridge and talus hold snow and an axe is needed",
+   "hazards": [
+    "Loose rock and rockfall on the summit block; parties above can knock rocks down",
+    "Lingering snow on the ridge and talus early in the season; axe needed",
+    "Brush in the notch below the talus once the snow has gone",
+    "Exposure on the north side of the summit block",
+    "Loose scree on the upper slopes"
+   ],
+   "primary": true,
+   "baseFinding": "Hemlock Pass is where the trail stops climbing. At its crest, before the trail drops toward Melakwa Lake, turn right onto the ridge and hold a bearing of about 33°, skirting the cliff bands mainly on their left. The check that you are on line is a plateau and meadow on the ridge, then a talus field wrapping most of the peak's base with the summit block above. Negative marker: if you are descending toward a lake, you stayed on the trail past the pass."
+  },
+  {
+   "name": "Alpental, Source Lake and Great Scott Basin to the Bryant-Chair gully",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Alpental / Snow Lake Trailhead (I-90 Exit 52)",
+     "trailheadLat": 47.44542,
+     "trailheadLng": -121.42353
+    }
+   },
+   "notes": "A steeper alternative from the Alpental side, better known as a winter and spring snow climb than as a summer scramble. From the Alpental day-use trailhead at about 3,120 ft, take the Snow Lake Trail #1013 through old avalanche brush and second growth. At roughly 1.8 miles and 720 ft of gain, a boot path splits left (southwest) toward Source Lake while the main trail continues right toward Snow Lake Col. Drop briefly to cross Source Lake's outlet creek — the last dependable water — and follow the use trail along the lake's north and east shore into the open basin below The Tooth and Chair Peak. From there the tread becomes intermittent boot-track over boulders and heather benches, climbing southwest into Great Scott Basin under The Tooth's east face. Contour left (south) beneath the broken cliff bands on Bryant's east side and cross a talus field to the foot of the gully.",
+   "objHaz": [
+    "avalanche",
+    "rockfall",
+    "loose rock",
+    "lingering snow",
+    "exposed climbing"
+   ],
+   "season": "Roughly July to September once the gully has melted out; earlier the gully holds snow and needs an axe and crampons",
+   "hazards": [
+    "Gully is an active avalanche path in winter and spring",
+    "Loose scree, centre and left markedly worse than the right",
+    "Gully funnels rockfall from parties above",
+    "Lingering early-season snow requiring axe and crampons",
+    "Exposed, loose class 3 on the north side of the summit block when dry"
+   ],
+   "baseFinding": "The thumbtack is the landmark you walk past, and the gully is the one immediately beyond it. Contouring south beneath Bryant's east side you cross a talus field below the rock spire known locally as the Thumbtack. The mouth of the route's gully is at the far side of that talus. Spire behind you, steep scree-and-talus gully splitting the face in front of you.\n\nWhat the gully is, in other words: this is the same drainage backcountry skiers call the Bryant Couloir or the wonder gully. If your winter partner knows the ski line, they know the route.\n\nThe footing test tells you where to be within it: climb favouring the far climbers' right side of the gully, which is noticeably firmer than the loose centre and left. A party grinding up loose ground in the middle is in the correct gully and in the wrong part of it.\n\nWhere it delivers you: the gully tops out on the Bryant-Chair connecting ridge, not on a summit. From there you work south over blocky ridge and talus to the base of the summit block. A gully that finishes on a summit is not this one.\n\nAnd the last step changes character with the snow, which is worth knowing before you commit: with snow on the block the final scramble is easy class 3 with little real exposure. Dry, the only reasonable line goes round the north — climbers' left — side on exposed and distinctly loose class 3. Test every hold."
+  }
+ ],
+ "wa_buck_mountain_south_ridge": [
+  {
+   "name": "Trinity to Buck Creek Pass, then the High Pass high route around the west side",
+   "camps": [
+    "Buck Creek Pass and the High Pass camps",
+    "Buck Creek Pass"
+   ],
+   "hours": "6",
+   "notes": "Start at Trinity at the end of the Chiwawa River Road, FR 62, at about 2,800 ft. Take the Buck Creek trail #1513, which splits off the Chiwawa River trail within the first mile and climbs steadily to Buck Creek Pass — roughly six hours and about 3,100 ft of gain.\n\nWhy this way round at all is worth understanding before you commit: Buck sits only about three miles from Trinity as the crow flies and is Class 2-3 from the south-west, but a long rugged ridge runs north and south of it and there is no road or trail up the Napeequa on the west, so the normal route is a very long way round. The two documented ways to reach that west side are the high route north from Buck Creek Pass and Little Giant Pass from the south.\n\nAt the pass there is a large established camp with toilets just before the switchbacks up toward Liberty Cap. Fill up with water there — there is none for the next four miles and the ridge walk is fully sun-exposed.\n\nFollow the old High Pass trail as it winds high around the side of Liberty Cap, then south for several miles until the tread dies out in talus and hard snowfields at High Pass; crampons are worth having for that. Contour through the pass and under Mount Berge, then angle up to the ridge crest just south of Point 7839. A short section of Class 3 reaches a faint saddle from which there is an easy walk-off down into Louis Creek Basin.",
+   "gainFt": 3100,
+   "objHaz": [
+    "loose rock",
+    "exposed climbing",
+    "route-finding",
+    "snow",
+    "remoteness"
+   ],
+   "season": "Roughly Jul-Sep; the traverse from the Berge saddle crosses steep heather that is nasty when wet, and holds snow into summer",
+   "hazards": [
+    "Burn scar on the lower Buck Creek trail: hot, exposed, with blowdown",
+    "No water for four miles beyond Buck Creek Pass on a fully sun-exposed ridge",
+    "Hard snowfields at High Pass where crampons are worth having",
+    "Waterfall slabs below the traverse line if you lose too much height; steep heather ledges at the Berge saddle are sketchy when wet",
+    "Loose, rubbly schist on the summit crest; a fatal fall is on record",
+    "Short Class 3-4 step near a rock horn just below the summit",
+    "Afternoon thunderstorms possible in late summer"
+   ],
+   "primary": true,
+   "baseFinding": "The critical instruction on the traverse is about height, and it comes with a stated consequence: from the saddle south of Berge, curving right around the bowl toward the mountain, stay high. Drop too low and you end up in steep waterfall slabs. If you are looking at running water over slabby ground, you have lost too much elevation and should climb back.\n\nThe arrival is unmistakable and it is not rock: you reach a beautiful forested bench with larches — good enough that parties note it as a campsite — and cross a river. Once across that river you are at the base of Buck.\n\nAbove there the ground is broad pumice, talus and low-angle snowfield up to the south ridge around 7,400 ft, and then rubbly slabby schist along the crest with a short step up to Class 3-4 near a horn close to the top.\n\nSummit warning, and it is a genuine unresolved disagreement rather than a caution: parties do not agree how many summits Buck has or which is highest. One party climbed the middle of the long crest, found the register there, and judged it higher than both the north point and the south by twenty feet or more. Another says the south is the true one. A third found the register — dated 1967 — on the north horn and reported the two tops as roughly equal. Only one of those parties actually measured anything. The summit crest holds several bumps within a few feet of each other, so expect to walk the crest rather than to arrive at an obvious high point, and do not treat a register as proof.\n\nA useful sighting cue from a party approaching by a different line: the summit does not come into view until you reach the flat ground around 8,000 ft, in an upper cirque one climber described as looking like the flying bridge of a boat.\n\nThis mountain has killed someone — a climber fell fifty feet scrambling on a route on the east side, direct from Trinity, in 2018. The direct east line involves a river ford and a savage brushy bushwhack and is generally recommended as a descent rather than an ascent."
+  },
+  {
+   "name": "Little Giant Pass and the Napeequa valley",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Little Giant Trailhead (Chiwawa River Road, Trail #1518)",
+     "trailheadLat": 48.0266,
+     "trailheadLng": -120.829
+    }
+   },
+   "notes": "Ford the Chiwawa River at the Little Giant trailhead, climb steeply over Little Giant Pass and drop into the Napeequa valley. Go upvalley, then leave the trail at Louis Creek and climb its brushy left side past a waterfall into the basin around 6,400 ft on the peak's southwest side. The river ford can be deep and swift in early summer.",
+   "objHaz": [
+    "loose rock",
+    "creek crossing",
+    "bushwhacking",
+    "route-finding",
+    "snow",
+    "exposed climbing",
+    "remoteness"
+   ],
+   "hazards": [
+    "Fording the Chiwawa River at the trailhead; it can be deep and swift in early summer",
+    "Steep climb over Little Giant Pass into the Napeequa valley",
+    "Leaving the trail at Louis Creek: brushy slope beside a waterfall, off-trail",
+    "Loose, slabby schist on the upper scramble slopes",
+    "Short Class 3-4 step near a rock horn just below the summit",
+    "Lingering snowfields into early summer",
+    "Afternoon thunderstorms possible in late summer"
+   ]
+  }
+ ],
+ "wa_burgundy_spire_north_face": [
+  {
+   "name": "Burgundy Col in a single push",
+   "hours": "4-6",
+   "notes": "Park at the pullout on SR-20 near milepost 166, roughly four miles east of Washington Pass and looking straight across the valley at Silver Star Mountain. There is no numbered Forest Service trail here — the whole thing is an established boot path.\n\nScramble down the embankment past cairns. The first stretch is loose, scree-covered talus before it settles into a proper path. Cross Early Winters Creek on one of the logs; the logjam shifts year to year, so look up and down stream for the best one, and expect a cold, pushy ford in early season.\n\nOn the far bank the path winds through forest for about a quarter of a mile, then turns straight uphill between two small creeks and climbs relentlessly. At about 6,460 ft the angle relents at a broad flat bench — big enough for a dozen tents and the obvious rest stop.\n\nAbove the bench the path climbs and traverses loose scree gullies before a final cairned stretch of very unstable scree over slab to Burgundy Col at about 7,770 ft, the notch between Burgundy Spire and Paisano Pinnacle. That is roughly 3,700 ft above the creek. That last scree is worse on the way down than the way up.",
+   "season": "Jul-Sep",
+   "hazards": [
+    "Early Winters Creek crossing — logs shift, and the ford is cold and swift in early season",
+    "extremely unstable ball-bearing scree over slab on the final stretch to the col — this is the section that kicks rocks onto whoever is below, so travel close together",
+    "loose talus on the initial drop from the highway",
+    "very large gain for a day trip; most parties camp"
+   ],
+   "longForm": true,
+   "baseFinding": "The col is the destination and the route starts essentially straight off it. Burgundy Col is a narrow notch with Burgundy Spire on one side and Paisano Pinnacle on the other, and once you are stood in it the first pitch is directly above and visually obvious — the North Face rises immediately from the col rather than requiring any traverse along the base. If you have to walk any distance from the notch to find a start, you are at the wrong notch. Confirmation from the col: the Silver Star Glacier lies below on the far (east) side, so a col that drops onto a glacier behind you is the right one."
+  },
+  {
+   "name": "Camp at the 6,460 ft bench",
+   "notes": "The usual way this is done. Walk the same line from the milepost 166 pullout — down the loose talus embankment, across Early Winters Creek on logs, through the forest and then steeply up between the two small creeks — and stop at the broad flat bench at about 6,460 ft, which holds a dozen or more tents and is the natural halfway point. There is usually a seasonal trickle or snowmelt nearby.\n\nNext morning you carry only what you need for the col and the route, which makes the loose scree above the bench substantially less unpleasant. Reckon on the bench being the last flat ground and the last reliable water.",
+   "season": "Jul-Sep",
+   "hazards": [
+    "the direct-looking gully to the col is the wrong line — loose and exposed",
+    "loose scree over slab on the traverse into the col",
+    "no reliable water above the bench",
+    "rockfall onto parties below on the final approach"
+   ],
+   "primary": true,
+   "baseFinding": "From camp, the route to the col climbs and traverses scree gullies with cairns on the final stretch. Aim for the narrow notch with Burgundy Spire on your left and Paisano Pinnacle on your right; the first pitch of the North Face rises directly out of it. Do not take the obvious direct gully that appears to lead straight to the col — it is loose and exposed. The path goes up the gully above camp and then makes a rising traverse right beneath the cliffs on heather-covered slabs into the col."
+  }
+ ],
+ "wa_cannon_mountain_south_slopes": [
+  {
+   "name": "Snow Lakes trail to Perfection Lake, Prusik Pass and the Druid Plateau",
+   "camps": [
+    "Snow Lakes",
+    "Nada Lake"
+   ],
+   "notes": "Start at the Snow Lakes trailhead, about four miles up Icicle Creek Road from Leavenworth. Follow Snow Lakes Trail #1553 through burn-scarred forest and switchbacks above Icicle Creek, past Nada and Snow Lakes at roughly six to seven miles, and on into the core basin — Lake Viviane, Leprechaun, Sprite, then Perfection Lake, by which point you have covered ten or eleven miles and about 6,000 ft.\n\nAt the north side of Perfection Lake, leave the main trail on the scramblers' path that switchbacks up to Prusik Pass at about 7,460-7,500 ft. That junction is easy to miss and the pass is the last reliable water.\n\nFrom the pass everything is cross-country. Contour northwest across talus and heather benches at roughly 7,300-7,400 ft, keeping to the west side of the Lorelei Lakelets, then north to a broad rib at about 7,900-8,000 ft. From just below 8,000 ft turn northwest and climb steep talus and scree onto the Druid Plateau at about 8,350 ft.\n\nThere are no cairns and no tread above Prusik Pass. Round trip is 30-plus miles with 7,300-plus ft of gain, so essentially everyone camps.",
+   "gainFt": 6000,
+   "objHaz": [
+    "rockfall",
+    "route-finding",
+    "lightning",
+    "lingering snow and ice",
+    "exposed climbing"
+   ],
+   "season": "Roughly Jul-Sep; the cross-country section above Prusik Pass frequently holds snow into July",
+   "hazards": [
+    "No cairns or tread above Prusik Pass: serious route-finding over talus and heather",
+    "Steep talus and scree up to the Druid Plateau, loose underfoot",
+    "Snow lingering on the cross-country section into July; verglas on shaded ground",
+    "Final fifteen feet are an exposed, holdless friction slab, harder to downclimb than climb",
+    "No shelter on open high ground: sun, lightning and afternoon storms",
+    "Very long approach (30+ miles round trip, 7,300+ ft gain) so nearly everyone camps"
+   ],
+   "primary": true,
+   "baseFinding": "The summit block is a separate object and the plateau is not the top. This is the failure mode on Cannon: parties gain the Druid Plateau at about 8,350 ft, find themselves on broad high ground, and treat arriving there as arriving. The actual climbing is a distinct block that only comes into view once you are on the plateau, across it to the west.\n\nSo the test is: can you see a discrete block of rock standing above the plateau surface? If you are on flat or gently rolling ground with nothing obviously above you, you have not crossed the plateau yet. Cross it and take the western slopes to the foot of the block.\n\nWhich side of the block, and this is the part that matters in cloud: the way up is a ramp on the block's south side. It is the last fifteen feet or so to the true summit, low-angle friction slab with almost no positive holds. If you have walked round the block and found only steep unfriendly rock, you are on the wrong aspect — keep going round to the south.\n\nWhat the right ground feels like: this is a friction problem, not a hold problem. Approach shoes with good rubber, or rock shoes, make a real difference, and the downclimb of the same ramp is the psychological crux of the day for most parties because low-angle slab is harder to read going down.\n\nStaging check below the plateau: from Prusik Pass you should pass the Lorelei Lakelets on their west side and reach a broad rib around 7,900-8,000 ft before turning northwest. If you passed the lakelets on their east, you are drifting toward the wrong drainage."
+  },
+  {
+   "name": "Stuart Lake trailhead and the Cannon Creek basin — the shorter, rougher side",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+     "trailheadLat": 47.5282,
+     "trailheadLng": -120.82036
+    }
+   },
+   "notes": "The documented alternative reaches the same staging ground near the Druid Plateau from the north instead, out of the Stuart Lake trailhead: up the Mountaineer Creek valley and then cross-country into the Cannon Creek basin.\n\nThis is much shorter than the Snow Lakes walk, and that is the whole of its appeal. It is also markedly rougher: the lower section is brushy and there are cliff bands to negotiate, and there is no trail for any of it.\n\nCannon has no maintained trail to its summit by any line, so both approaches end in the same cross-country problem. What differs is how much of the day is spent on tread before that starts — nearly all of it on the Snow Lakes side, very little on this one.\n\nNo reliable published time or distance exists for this variant and none is given. Treat it as a full day of navigation rather than a walk with a scramble at the end.",
+   "objHaz": [
+    "rockfall",
+    "route-finding",
+    "lightning",
+    "lingering snow and ice",
+    "bushwhacking"
+   ],
+   "season": "Roughly Jul-Sep; the lower cross-country section is brushy and holds snow later than the trail does",
+   "hazards": [
+    "Brushy lower cross-country with cliff bands to negotiate and no trail at all",
+    "No cairns or tread anywhere on the upper mountain; landmarks of the other approach do not apply",
+    "Steep gully below the plateau can hold snow into July; verglas on shaded ground",
+    "Exposed, holdless friction ramp on the summit block, harder to downclimb",
+    "No shelter on high ground: lightning and afternoon storms",
+    "Loose talus and scree on the slopes; benches can cliff out on descent"
+   ],
+   "baseFinding": "Both approaches converge on the Druid Plateau, so the base test is identical and the arrival test is not. Coming from the north you reach the plateau area from the Cannon Creek basin rather than from Prusik Pass, so the Lorelei Lakelets and the broad rib are not on your route and cannot be used to confirm position — do not try to apply the southern approach's landmarks here.\n\nWhat still holds: the summit block is a distinct object standing above the plateau, reached across the plateau on its western slopes, and the way up it is a low-angle friction ramp on its south side, roughly the last fifteen feet to the true summit. Almost no positive holds. That is the base, and it is the same base for anyone who gets here.\n\nThe north-side-specific warning: the ground below the basin has cliff bands in it. Unlike the southern route, where the navigation problem is featureless open talus, here it is possible to be cliffed out and to have to lose height to get round. If you are on steepening ground with the basin still above you, come down and traverse rather than pushing on.\n\nAnd a route-choice note: the northeast ridge is a separate line on this mountain and is described as an ascent route only, with most parties descending the Prusik Pass side. If you have come up from the north expecting to reverse it, check which line you are actually on before committing to that plan."
+  }
+ ]
+}

@@ -1,0 +1,182 @@
+{
+  "area_id": "wa_dorado_needle",
+  "routes": [
+    {
+      "route_id": "wa_direct_southwest_buttress",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; web search (Mountain Project, SummitPost, Mountaineers) shows Dorado routes climbed July-August; 137 of 192 ascents here are July-August."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "548912",
+          "verdict": "unsure",
+          "why": "Logged as plain Southwest Buttress; one team took a harder variation but the report calls the line standard, so it is assigned to the Southwest Buttress"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_dorado_needle_east_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; East Ridge logged July-September."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2264625",
+          "verdict": "unsure",
+          "why": "Logged East Ridge, 2023-07-09, summited, but the track starts at the glacier camp and ends at the trailhead, so it is not a complete round trip"
+        },
+        {
+          "aid": "2005644",
+          "verdict": "different",
+          "why": "Track also summits Eldorado Peak (link-up)"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_northwest_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; web search (Mountaineers, Mountain Project) puts the standard line in July-August; logged \"NW ridge\" ascents are Jun-Sep, mostly July."
+      },
+      "track": {
+        "aid": "2264164",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged \"NW ridge with wrap around SW face variation\" on 2023-07-30, summited, round trip from the trailhead pin; the line climbs the northwest ridge after a lower start on the southwest face, per the report"
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3237502",
+          "verdict": "unsure",
+          "why": "Blank logged route; report mentions 5.4 pitch, a crack crux and a ridge that lost a block around 2019, which fits the northwest ridge but is never named"
+        },
+        {
+          "aid": "2563045",
+          "verdict": "different",
+          "why": "Logged northwest ridge, but the track continues onto other peaks of the traverse (link-up)"
+        },
+        {
+          "aid": "3255491",
+          "verdict": "different",
+          "why": "Track also visits Eldorado Peak (link-up)"
+        },
+        {
+          "aid": "2897348",
+          "verdict": "different",
+          "why": "Link-up with Klawatti and Eldorado"
+        },
+        {
+          "aid": "3282831",
+          "verdict": "different",
+          "why": "Multi-day link-up from another trailhead"
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "Early July: the step from the snow finger onto the rock across the moat is committing and worsens as it melts.",
+          "aids": [
+            "2236390",
+            "2563045"
+          ]
+        },
+        {
+          "field": "watch_out",
+          "month": 8,
+          "text": "Mid-August: the glacier below the ridge is badly broken; finding the crossing to the upper glacier takes careful routefinding.",
+          "aids": [
+            "2278921"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 8,
+          "text": "The hand-crack block near the summit can be sidestepped by placing a large cam and belaying a short traverse to the right (mid-August).",
+          "aids": [
+            "2278921"
+          ]
+        },
+        {
+          "field": "what_to_bring",
+          "month": 7,
+          "text": "Pickets for the steep snow below the rock (early July)",
+          "aids": [
+            "2236390"
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "wa_southwest_buttress",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored late July-August; web search (Mountain Project, SummitPost, trip reports) shows the approach gully can be hard to identify in early July; ascents here are July-August."
+      },
+      "track": {
+        "aid": "548912",
+        "verdict": "same",
+        "kind": "oneway",
+        "inSeason": true,
+        "why": "Logged Southwest Buttress on 2015-07-18; report describes the notch above the McAllister Glacier, the base of the southwest ridge, a left-leaning corner start and nine pitches; the track runs trailhead to summit (one-way, ends at our summit pin within 23 m). One team took a harder variation but the line is the standard buttress."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2379814",
+          "verdict": "different",
+          "why": "Logged SW Butt but track continues as a multi-day link-up to Klawatti and the moraine lake"
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "In mid-July the notch above the McAllister Glacier is bare and loose; descend to snow and walk around the first rib rather than crossing it on rock.",
+          "aids": [
+            "548912"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 7,
+          "text": "The route starts at a left-leaning corner at the far end of a rock plateau, reached from the right.",
+          "aids": [
+            "548912"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "The Direct Southwest Buttress and Southwest Buttress share approach and summit, so only logged route names separate them. Most recordings are link-ups with Eldorado, Klawatti or the Inspiration traverse."
+}

@@ -1,0 +1,136 @@
+{
+ "id": "wa_forbidden_peak_northwest_face",
+ "name": "Northwest Face",
+ "area_id": "wa_forbidden_peak",
+ "discipline": "alpine",
+ "grade": "5.8",
+ "pitches": 7,
+ "pitch_detail": [
+  {
+   "grade": "low 5th",
+   "notes": "From the top of the snow and ice approach, solo or simul-climb steep, somewhat loose 4th to low-5th class rock up the rib toward the summit. The rock here is the worst on the route: move carefully and keep the party close to limit rockfall. Rope up for real where the rib narrows into a knife-edge.",
+   "pitch": "1-2",
+   "lengthM": 152
+  },
+  {
+   "grade": "5.6",
+   "notes": "Cross the exposed knife-edge section of the rib, staying on the crest. The climbing is moderate but the position is airy on both sides; protect it as a proper pitch even if the lower ground was simul-climbed.",
+   "pitch": "3"
+  },
+  {
+   "crux": true,
+   "grade": "5.8",
+   "notes": "The rib steepens into the crux: stay true to the crest, stemming and crack climbing on solid granite flakes. Some parties find the ground just before the crest somewhat dirty and sparsely protected. The crux grade is 5.8 in rock shoes; it is often described as about 5.6 in the boots most parties wear for the approach.",
+   "pitch": "4-5"
+  },
+  {
+   "grade": "5.6",
+   "notes": "Where the rib blends into the face, head up and left into a wide chimney where the rock steepens; old fixed gear marks it. The rock is poor near the chimney's base, then improves markedly as it opens onto the true northwest face, with excellent crack systems above.",
+   "pitch": "6"
+  },
+  {
+   "grade": "5.6",
+   "notes": "Continue up low-5th to 5.6 cracks and flakes on good rock to the summit, joining the upper West Ridge just below the top. Much of this upper ground is commonly simul-climbed; parties who do so should keep enough gear in to protect a fall on juggy but exposed terrain.",
+   "pitch": "7"
+  }
+ ],
+ "rappel_detail": [
+  {
+   "n": 1,
+   "pull": "Set the knot well clear of the lip and check the pull before committing.",
+   "notes": "Ridge rappel 1 of about 3. Downclimb from the summit back past the false summit to reach it.",
+   "anchor": "natural horn/block, top of the crux tower",
+   "hazards": [
+    "The pull angles here are awkward and a rope that is not weighted cleanly off the horn can hang up. Watch the rope over the edge before the last person goes."
+   ],
+   "lengthM": null,
+   "station": "On the crux tower at the top of the steep section, roughly 175 ft below the summit. Slings and cord are usually in place; it is the first station most parties use rather than downclimbing."
+  },
+  {
+   "n": 2,
+   "notes": "Ridge rappel 2 of about 3, landing on north-side snow.",
+   "anchor": "natural horn/block",
+   "hazards": [
+    "The landing is on snow, and the step from rock to snow is where parties come off the rappel awkwardly. Have crampons and an axe ready before you start down."
+   ],
+   "lengthM": null,
+   "station": "Below the crux tower, dropping onto snow on the north side of the ridge. Natural anchors: slung horns and blocks with accumulated tat, not a bolted station."
+  },
+  {
+   "n": 3,
+   "notes": "Ridge rappel 3 of about 3, back down to the notch between Forbidden and Torment. How many of the ridge steps you rappel rather than downclimb is up to the party.",
+   "anchor": "natural horn/block",
+   "hazards": [
+    "Exposed downclimbing between stations. Stay roped on wet rock."
+   ],
+   "lengthM": null,
+   "station": "On the lower ridge above the notch. Slung horn or block with tat; the 3rd/4th-class steps between here and the stations above are usually downclimbed."
+  },
+  {
+   "n": 4,
+   "notes": "Cat Scratch rappel 1 of about 5. Three parallel chimneys all go; parties most often use the one nearest the snow couloir.",
+   "anchor": "fixed anchor on the rib",
+   "hazards": [
+    "Loose rock throughout. Rappel one at a time, and let each climber move out of the fall line before the next one pulls the rope."
+   ],
+   "lengthM": null,
+   "station": "Top of the Cat Scratch gullies, the rock chimneys immediately west of the snow couloir. From the notch, downclimb a short section of 3rd-class rock to reach it."
+  },
+  {
+   "n": 5,
+   "notes": "Cat Scratch rappel 2 of about 5.",
+   "anchor": "fixed anchor on the rib",
+   "hazards": [
+    "The rappel line follows fixed anchors on the small rib on the down-climber's left of the gullies. Parties that drift into the right-hand gully end up on loose ground with no stations, which is the descent error reported most often here."
+   ],
+   "lengthM": null,
+   "station": "Next station down the same chimney, on the rib on the down-climber's left."
+  },
+  {
+   "n": 6,
+   "notes": "Cat Scratch rappel 3 of about 5.",
+   "anchor": "fixed anchor on the rib",
+   "hazards": [
+    "Some stations are deliberately short and easy to rappel straight past. Do not skip an anchor because you cannot yet see the next one."
+   ],
+   "lengthM": null,
+   "station": "Mid-gully, on the rib on the down-climber's left."
+  },
+  {
+   "n": 7,
+   "pull": "Carry enough cord to build an extra station if you cannot find the next one.",
+   "notes": "Cat Scratch rappel 4 of about 5.",
+   "anchor": "fixed anchor on the rib",
+   "hazards": [
+    "Loose rock throughout. Rappel one at a time, and let each climber move out of the fall line before the next one pulls the rope."
+   ],
+   "lengthM": null,
+   "station": "Lower gully, on the rib on the down-climber's left. This is the station most often reported as hard to find: if you cannot see it, stop and look on the rib before continuing."
+  },
+  {
+   "n": 8,
+   "notes": "Cat Scratch rappel 5 of about 5, landing on the snowfield. From here, reverse the glacier-remnant and talus traverse back to Boston Basin.",
+   "anchor": "fixed anchor on the rib",
+   "hazards": [
+    "The moat where the snow pulls away from the rock reappears at the bottom and can need a step across or a short downclimb. Have crampons and an axe ready for the snow."
+   ],
+   "lengthM": null,
+   "station": "Bottom of the gullies, above the snowfield below Forbidden's south face."
+  }
+ ],
+ "rappels": "~8 single-rope rappels down the West Ridge: about 3 on the ridge back to the notch, mixed with downclimbing, then about 5 down the Cat Scratch gullies to the snowfield below the south face. Late season, expect one or two more in the gullies.",
+ "descent_text": "Do not reverse the Northwest Face; descend by the standard West Ridge. From the true summit, downclimb back past the false summit to the crux tower, then work down the West Ridge crest with exposed 3rd/4th-class downclimbing and about 3 rappels off slung horns and blocks, back to the West Ridge notch. From the notch, downclimb a short section of 3rd-class rock to the first station of the Cat Scratch gullies, the parallel rock chimneys immediately west of the snow couloir. About 5 single-rope rappels with a 60 m rope, off fixed anchors on the rib on the down-climber's left, bring you to the snowfield below the south face. Some stations are deliberately short, so do not skip one, and be ready to build an anchor if you cannot find the next. Early season, while the couloir still holds good snow, some parties descend it instead, rappelling the steepest snow to the moat and downclimbing the rest. From the base, cross back to Boston Basin camp and hike out the climbers' trail. This means NW Face parties do not re-cross the Boston or Forbidden Glaciers or re-climb Sharkfin Col on the way down.",
+ "approach": "From Boston Basin Trailhead, hike ~3-4 mi via old mine road then a climbers' path (4 stream crossings) to high camp near 6,400 ft (3-4 hrs), often continuing to a bench at ~7,500 ft beside the Quien Sabe Glacier below Sharkfin Tower. Ascend the west side of the Quien Sabe Glacier to a notch above Sharkfin Col, rappel onto the Boston Glacier below the bergschrund, traverse the heavily crevassed Boston Glacier, then continue around to the north arm of the Forbidden Glacier. Climb ~900 ft of 30-40+ degree snow/ice to reach the base of the technical rock (5.6 knife-edge ridge leading into the 5.8 crux). Most parties treat this as a 3-day trip.",
+ "overview": "Forbidden's tallest, steepest, and most remote established route, first climbed by Fred Beckey and Ed Cooper in July 1959. It is a notably pure line whose mixed character demands real climbing ability and adaptable alpine skills. From a high bivy, roughly 500 ft of steep, somewhat loose 4th-to-low-5th-class terrain gains a knife-edge section (5.6), leading into four 60m pitches up to the 5.8 crux before the face blends into the upper West Ridge near the summit.",
+ "beta": null,
+ "gear": [
+  "Crampons and ice axe (aluminium is fine early season)",
+  "Ice screws — worth carrying late season, when the two ice bands harden up",
+  "A light alpine rock rack for the North Ridge finish: offset nuts and cams .2-2\", doubles in .3-2\" if you want them, though a single rack goes",
+  "60m rope",
+  "Helmet",
+  "Crevasse rescue kit for the Forbidden Glacier below the face"
+ ],
+ "fa": "Fred Beckey and Ed Cooper — July 15, 1959",
+ "face": "Northwest Face (of the North Ridge)"
+}

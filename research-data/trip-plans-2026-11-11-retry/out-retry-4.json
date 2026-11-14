@@ -1,0 +1,453 @@
+[
+ {
+  "id": "wa_mount_hinman_west_route",
+  "skip": true,
+  "reason": "No new source could be found or opened to tell a West Route apart from the climbers' track north from La Bohn Gap, which the file already uses for the Southeast Route. The web-search budget ran out before more could be tried. If the two rows are the same line, reuse the Southeast Route plan."
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "skip": true,
+  "reason": "The NE Ridge of the summit pyramid is only a finish to the North Face or NW Rib, not a separate trip. No opened source gives days or timing for it, and the search budget ran out before a second source could be found."
+ },
+ {
+  "id": "wa_mount_shuksan_northwest_arete",
+  "skip": true,
+  "reason": "The trip reports found are for the 2007 'Northwest Arayete' (III 5.9, about 1,300 ft, reached from the White Salmon Glacier, 16 h car-to-car on the FA). That is a different line from this row's long Northwest Arete (5.7, AI2+, bushwhack from the White Salmon lodge). No reachable source describes the Arete's days or camps, and the CascadeClimbers reports return 403."
+ },
+ {
+  "id": "wa_silver_star_ne_ridge",
+  "skip": true,
+  "reason": "Search snippets confirm only the grade (III 5.9) and the 1952 Beckey ascent of the west peak's NE side from the Silver Star Glacier. No opened source describes the ridge's pitches, time on route or descent, and the search budget ran out."
+ },
+ {
+  "id": "wa_snoqualmie_mountain_boogie_wonderland",
+  "skip": true,
+  "reason": "Nothing new to add to the previous attempt: one 60 ft pitch with no approach time, descent or car-to-car figure in any source. The search budget ran out before a second source could be found."
+ },
+ {
+  "id": "wa_snoqualmie_mountain_south_face",
+  "skip": true,
+  "reason": "The row has no grade or description, and the name could be either the standard south-side scramble or a technical face route. No source was found that ties a route by this name to the row."
+ },
+ {
+  "id": "wa_snoqualmie_mountain_west_ridge",
+  "skip": true,
+  "reason": "No source describes a West Ridge route on Snoqualmie Mountain, and the row has no grade or description."
+ },
+ {
+  "id": "wa_spectre_peak_haunted_wall",
+  "skip": true,
+  "reason": "No source describing the Haunted Wall could be found or opened. The row has no waypoints or elevations, and the search budget ran out."
+ },
+ {
+  "id": "wa_storm_king_north_face",
+  "skip": true,
+  "reason": "Search snippets say only that a North Face route exists (FA 1978, Emerson and Grove) and that Park Creek camp is used for Storm King's standard route. No opened source describes this line's timing or camps."
+ },
+ {
+  "id": "wa_the_incisor_scramble",
+  "skip": true,
+  "reason": "The only route description is a 2004 CascadeClimbers report (5.4, thin ridge, small nuts, single-rope rappel), and that site returns 403. Mountain Project's 'The Incisor' page is a different peak, in Montana's Crazy Mountains. The climb itself has no source that could be opened."
+ },
+ {
+  "id": "wa_the_tooth_north_ridge",
+  "skip": true,
+  "reason": "The opened sources (Belitz, climberkyle) describe only the South Face and the shared Alpental to Pineapple Pass approach (about 3 h, 7 to 10 am, in Belitz). Nothing describes the North Ridge, and the row has no gain, distance or high point, so a day figure cannot be sourced. This replaces the earlier low-confidence plan."
+ },
+ {
+  "id": "wa_thunder_mountain_north_face",
+  "skip": true,
+  "reason": "Sources cover only Slippery Slab Tower and Thunder Mountain's SE-slope scramble from Upper Thunder Lake. No source describing the North Face was found, and the search budget ran out."
+ },
+ {
+  "id": "wa_west_face",
+  "skip": true,
+  "reason": "No trip report or route page for the West Face of South Peak in the Gunsight Range could be found or opened. Day counts and timing would be invented."
+ },
+ {
+  "id": "wa_whistler_mountain_north_ridge",
+  "skip": true,
+  "reason": "Only the sverdina log (opened) describes this ridge: a short approach to the Whistler-Cutthroat saddle, an airy crest, and descent by the SW gully, with no times, distance or gain. The Mountain Project 'North Ridge' page that turned up is for Cutthroat Peak, not Whistler, and SummitPost and Mountaineers return 403."
+ },
+ {
+  "id": "wa_the_chopping_block_northwest_route",
+  "itinerary": {
+   "cal": "July through September, once the Barrier crest and the Chopping Block ridge are mostly snow-free. A North Cascades National Park wilderness permit is required for the cross-country camps. Most parties take three days, or fold the peak into a longer Southern Pickets trip.",
+   "totalNote": "Three days: a steep, brushy carry from Goodell Creek up the Barrier to the Chopping Block ridge camp, a short Class 4 summit day, then the long descent out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Chopping Block ridge camp",
+     "objective": "Carry to the ridge camp near 6,400 ft",
+     "note": "Follow the old roadbed up Goodell Creek, cross Terror Creek on a log near 2,000 ft, then take the climbers' path up the Barrier crest above timberline to the camp overlooking Crescent Creek Basin. One party leaving at 3 am reached camp well before noon. The alternative is to camp in Terror Basin (about 7 h from the car) and cross the Barrier on day 2 by a loose Class 3 grassy ledge.",
+     "gainFt": 5800,
+     "lossFt": 0,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northwest Route",
+     "objective": "Summit the Chopping Block and return to camp",
+     "note": "Scramble Class 3 partway up the NE Ridge, make the exposed Class 4 ledge traverse across the north face (the route-finding is tricky), then go up easy Class 3 on the NW Ridge to the summit. Descend the NE Ridge with a few single-rope rappels.",
+     "gainFt": 420,
+     "lossFt": 420,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend the Barrier to Goodell Creek",
+     "objective": "Return to the trailhead",
+     "note": "Go down snow, slabs and heather to the Barrier crest at about 5,600 ft. A faint path follows the crest to about 3,600 ft, then the descent to the Terror Creek log is steep, brushy and cliffy. Back on the Goodell Creek path at 1,700 ft, follow it out to the trailhead at 600 ft. This took about 7 hours.",
+     "hours": 7,
+     "gainFt": 0,
+     "lossFt": 5800,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8949",
+   "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+   "https://www.nwhikers.net/forums/viewtopic.php?t=8032077",
+   "https://climberkyle.com/2019/08/29/west-mcmillan-spire/"
+  ],
+  "confidence": "medium",
+  "notes": "The route itself (NE Ridge scramble, Class 4 north-face traverse, NW Ridge, single-rope rappels down the NE Ridge) and the 7 h walk-out come from Steph Abegg's Southern Pickets 1 (2008). The NWHikers 2020 report independently describes the direct approach to Chopping Block Camp: a log over Terror Creek, about 1,800 ft of climbers' path up the ridge, and a 3 am start reaching camp well before noon. Climberkyle confirms the shared Goodell Creek approach (4 mi of roadbed, then about 4,000 ft in 2 mi). Gain and loss are derived from Abegg's elevations (trailhead 600 ft, camp 6,400 ft, summit 6,819 ft); no source gives per-day mileage. Abegg reached this camp by way of Terror Basin over two days, not directly."
+ },
+ {
+  "id": "wa_the_chopping_block_northeast_ridge",
+  "itinerary": {
+   "cal": "July into October, after the Barrier crest melts out. A North Cascades National Park wilderness permit is required for the cross-country camp on the Chopping Block ridge. Usually done in three days, or as part of a longer Southern Pickets trip.",
+   "totalNote": "Three days: carry from Goodell Creek up the Barrier to the Chopping Block ridge camp, climb and rappel the four-pitch NE Ridge, and descend out.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Goodell Creek to Chopping Block ridge camp",
+     "objective": "Carry to the ridge camp near 6,400 ft",
+     "note": "Old roadbed up Goodell Creek, a log crossing of Terror Creek, then a climbers' path up the Barrier crest to the camp above Crescent Creek Basin. One party starting at 3 am arrived well before noon.",
+     "gainFt": 5800,
+     "lossFt": 0,
+     "packLb": 42,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb the Northeast Ridge",
+     "objective": "Climb the ridge and rappel back to its base",
+     "note": "Walk and scramble southwest from camp to the foot of the ridge. Some of it is exposed 3rd class, and the lower ridge is mossy 3rd class. Climb the four pitches to the summit, then rappel the route; one party used a single rope.",
+     "gainFt": 420,
+     "lossFt": 420,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Descend the Barrier to Goodell Creek",
+     "objective": "Return to the trailhead",
+     "note": "Down the Barrier crest on a faint path to about 3,600 ft, then a steep, brushy descent to the Terror Creek log and the Goodell Creek path. About 7 hours.",
+     "hours": 7,
+     "gainFt": 0,
+     "lossFt": 5800,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://stephabegg.com/?p=8949",
+   "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-1/",
+   "https://www.nwhikers.net/forums/viewtopic.php?t=8032077"
+  ],
+  "confidence": "low",
+  "notes": "The camp, approach and walk-out come from Abegg (who descended the NE Ridge by single-rope rappels but did not climb it) and the NWHikers 2020 report. The pitch count, the 5.5 grade and the rappel descent come from the row. Search snippets, not opened (CascadeClimbers 403), describe the route as 5 pitches, 5.5, Grade II on the Mountaineers page, mossy 3rd class low down, and under an hour camp to summit simul-climbing. Gain and loss are derived from Abegg's elevations (600 / 6,400 / 6,819 ft)."
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "itinerary": {
+   "cal": "Mid-July to mid-August, while the glaciers are well covered. Nights on the park side need an NPS wilderness permit; south of Cache Col it is a free Glacier Peak Wilderness self-issue permit. Parties usually climb Old Guard as a side day on a 6-7 day Ptarmigan Traverse.",
+   "totalNote": "A six-day north-to-south Ptarmigan Traverse with a climbing day from White Rock Lakes for Old Guard's east ridge, exiting by Itswoot Ridge and Downey Creek.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Cascade Pass to Kool-Aid Lake",
+     "objective": "Cross Cache Col to the first camp",
+     "note": "Switchback 3.7 mi up to Cascade Pass, head south up the Mix-up Arm, cross the Cache Glacier to Cache Col, then drop southwest to Kool-Aid Lake. Cache Col has no water, so some parties camp there and carry it up.",
+     "hours": "6-8",
+     "gainFt": 3320,
+     "lossFt": 800,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Red Ledge and Middle Cascade to Yang Yang",
+     "objective": "Reach Yang Yang Lakes",
+     "note": "Traverse past the Red Ledge, cross the Middle Cascade Glacier above the icefall to the Spider-Formidable col, then descend steep snow (up to 40 degrees or more) and granite benches under Formidable to the lakes.",
+     "hours": "8-11",
+     "gainFt": 1280,
+     "lossFt": 1550,
+     "packLb": 43,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Le Conte Glacier to White Rock Lakes",
+     "objective": "Reach White Rock Lakes",
+     "note": "Go via Le Conte Pass and up the Le Conte Glacier to the Sentinel-Le Conte saddle, then down onto the South Cascade Glacier and over Lizard Pass to the lakes.",
+     "hours": "7-11",
+     "gainFt": 1950,
+     "lossFt": 1600,
+     "packLb": 41,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Climb Old Guard Peak's east ridge",
+     "objective": "Summit Old Guard and return to White Rock Lakes",
+     "note": "Go back up onto the Le Conte Glacier and climb Old Guard's east ridge: two pitches of mid-fifth class to the summit. Sentinel's SW ridge is often climbed the same day. Old Guard can also be reached from the Old Guard-Sentinel col by a third-class scramble.",
+     "gainFt": 2060,
+     "lossFt": 2060,
+     "packLb": 15,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Dana Glacier to Itswoot Ridge",
+     "objective": "Cross to the Itswoot Ridge or Cub Lake camp",
+     "note": "Drop toward the West Fork Agnes, climb a snow and scree gully onto the Dana Glacier and over a 7,600 ft col with a short Class 3 step, then descend and traverse three gullies to camp on Itswoot Ridge near 6,400 ft. Cub Lake is about an hour farther.",
+     "hours": "8-12",
+     "gainFt": 1400,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 6,
+     "title": "Bachelor Creek and Downey Creek out",
+     "objective": "Walk out to the Downey Creek trailhead",
+     "note": "Over the 6,000 ft saddle into Bachelor Creek (2-3 h), down the brushy creek with a crossing near 3,750 ft to Six Mile camp on Downey Creek (3-5 h), then 6.6 mi of maintained trail.",
+     "hours": "7-12",
+     "packLb": 36,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.alpineinstitute.com/itinerary-bakw00-26r-ptarmtraverse/",
+   "https://stephabegg.com/?p=8961",
+   "https://www.countryhighpoints.com/sentinel-peak-and-old-guard-peak-surveys/"
+  ],
+  "confidence": "medium",
+  "notes": "The day structure and the east-ridge description (two mid-fifth pitches from the Le Conte Glacier, on day 4 from White Rock Lakes) come from the AAI itinerary. Hours are AAI's stated ranges (6-8, 8-11, 7-11, 8-12, 7-12 h). AAI's day 6 Dome Peak ascent is omitted. Abegg (2009, the reverse direction) confirms the camps and elevations: Kool-Aid 6,120, Yang Yang 5,830, White Rock 6,200, Cache Col 6,920, Sentinel-Le Conte saddle 7,280 (AAI gives 7,800 ft). Abegg gives 30+ mi and 13,000+ ft for the traverse. Countryhighpoints gives the summit as 8,259.6 ft (2025 survey) and reached it by a third-class scramble from the Old Guard-Sentinel col. Gain and loss are derived from these elevations. Day 5 gain is a minimum (White Rock to the 7,600 ft col), and no per-day mileage is sourced. Row high_point_ft is null, and its 5.5 grade is not confirmed (AAI says mid-fifth)."
+ },
+ {
+  "id": "wa_phantom_peak_west_ridge",
+  "itinerary": {
+   "cal": "July to August, when the Chilliwack ford is wadeable and Easy Ridge and the Challenger Glacier are in shape. A North Cascades National Park wilderness permit is needed for each cross-country zone night. Plan about five days.",
+   "totalNote": "Five days: two days in over Hannegan Pass, Easy Ridge and the Challenger Glacier to a bivy under Ghost Peak, a ten-pitch climbing day, and two days back out the same way.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Hannegan Pass to Easy Ridge",
+     "objective": "Ford the Chilliwack and camp on Easy Ridge",
+     "note": "Go over Hannegan Pass and down to the Chilliwack, wade it near Easy Creek, and climb the steep path to the first camp where it reaches the crest of Easy Ridge. Seasonal tarns are the only water up there.",
+     "hours": 8.5,
+     "packLb": 45,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Easy Ridge to the Ghost Peak bivy",
+     "objective": "Cross Perfect Pass and the Challenger Glacier",
+     "note": "Traverse Easy Ridge over Easy Peak and solo exposed fourth class across the Imperfect Impasse, dropping to about 4,450 ft. Climb back to Perfect Pass, cross the Challenger Glacier, then descend and traverse snow, talus and glacier to a scrabbly bivy below Ghost Peak.",
+     "gainFt": 1850,
+     "packLb": 43,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Climb the West Ridge of Phantom Peak",
+     "objective": "Climb the ridge and descend the southeast face",
+     "note": "Climb to the 6,100 ft saddle and scramble to a notch to rope up. Ten pitches follow, mostly 5.7+, with a 5.10 stemming cleft on pitch 6 and a 100 ft rappel into a notch after pitch 7. About 400 ft of fourth class leads to the summit pinnacle. Descend the southeast face; there is a rockfall-exposed snowfield on the way back to camp.",
+     "gainFt": 1916,
+     "packLb": 17,
+     "schedule": []
+    },
+    {
+     "n": 4,
+     "title": "Back over Perfect Pass to Easy Peak",
+     "objective": "Return to an Easy Ridge camp",
+     "note": "Recross the Challenger Glacier to Perfect Pass, drop around the Imperfect Impasse and climb back to Easy Peak. From Perfect Pass alone this took one party a little over 6 hours.",
+     "gainFt": 2160,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 5,
+     "title": "Easy Ridge to the Hannegan trailhead",
+     "objective": "Walk out",
+     "note": "Descend to the Chilliwack ford, climb back over Hannegan Pass and walk out to the car.",
+     "hours": 9.3,
+     "packLb": 37,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://publications.americanalpineclub.org/articles/13201216005",
+   "https://apps.yellowleaf.org/scramble/g/r/2006-07-13-16-challenger.html"
+  ],
+  "confidence": "low",
+  "notes": "The route and the two-day approach come from the only documented ascent (Wehrly and Larson, AAJ, July 2021). The AAJ does not split the approach between days or describe the exit. Yellowleaf's 2006 Easy Ridge/Perfect Pass trip supplies segment times on the shared approach: about 8.5 h trailhead to the Easy Ridge camp, about 6.2 h Perfect Pass back to Easy Peak, and about 9.3 h Easy Peak to the car. Yellowleaf's total is 12,720 ft for 4 days. Day 2 gain is a minimum (impasse low point ~4,450 ft to Perfect Pass ~6,300 ft), and day 4 gain is impasse to Easy Peak (6,613 ft). Day 3 uses the row's 1,916 ft. No per-day mileage is sourced beyond the AAJ's ~10 mi of trail and the 5-mile Easy Ridge."
+ },
+ {
+  "id": "wa_prusik_peak_prayer_for_a_friend",
+  "itinerary": {
+   "cal": "July through September; the first free ascent was in early October. An overnight Enchantments permit from the lottery is required to camp in the Core.",
+   "totalNote": "A minimum three-day trip: in over Aasgard Pass to Gnome Tarn, a climbing day on the seven-pitch south-face line, and out. The free ascent took ten days of effort across two seasons.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Colchuck Lake and Aasgard Pass to Gnome Tarn",
+     "objective": "Reach the Gnome Tarn bivy",
+     "note": "Go up the Colchuck Lake trail, round the lake to the boulders at its south end, and climb the loose, cairned Aasgard Pass, which gains about 1,900-2,200 ft in under a mile. Cross the upper Enchantments past Isolation and Perfection lakes, then go cross-country from near the Prusik Pass junction to Gnome Tarn, about 20 minutes from the face.",
+     "gainFt": 4200,
+     "packLb": 40,
+     "schedule": []
+    },
+    {
+     "n": 2,
+     "title": "Climb Prayer for a Friend",
+     "objective": "Climb the route and descend the West Ridge",
+     "note": "Start in the easy corner left of Der Sportsman. Five pitches of 5.9 to 5.12- lead to the 5.14a finger-splitter headwall, which ends on the West Ridge. Scramble to the summit and descend by the West Ridge rappels. On the free ascent the climber used a second day to rap in to the crux pitch from the West Ridge.",
+     "gainFt": 600,
+     "lossFt": 600,
+     "packLb": 18,
+     "schedule": []
+    },
+    {
+     "n": 3,
+     "title": "Hike out over Aasgard or via Snow Lakes",
+     "objective": "Return to the trailhead",
+     "note": "Reverse Aasgard Pass to Colchuck Lake, or take the longer Snow Lakes trail out and arrange a car shuttle.",
+     "gainFt": 0,
+     "lossFt": 4200,
+     "packLb": 38,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/125073409/prayer-for-a-friend",
+   "https://publications.americanalpineclub.org/articles/13201216752",
+   "https://stephabegg.com/?p=58486",
+   "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ],
+  "confidence": "medium",
+  "notes": "The route comes from Mountain Project (600 ft; six pitches then the West Ridge scramble, so 7 listed) and the AAC account of Vanoni's 2023 free ascent (two days on the route, camped nearby, ten days over two seasons in all). Abegg's 2025 Der Sportsman trip, a neighbouring south-face route, supplies the logistics: Aasgard approach, Gnome Tarn bivy 20 minutes from the face, a three-day plan, packs of 40-41 lb, and a Snow Lakes exit. Day 1 gain combines WTA's 2,280 ft to Colchuck Lake with about 1,900 ft for Aasgard (WTA; Abegg says about 2,200). WTA's one-way thru-hike gain is 4,500 ft to the 7,800 ft high point. The walk-out ignores the short climb from Gnome Tarn back to Aasgard. Row says 6 pitches; the sources say 7. No per-day mileage or hours are sourced."
+ },
+ {
+  "id": "wa_the_exorcism_of_mark_hanna",
+  "itinerary": {
+   "cal": "June through September. No permit is needed on this Okanogan-Wenatchee National Forest land. A one-day climb from the car.",
+   "totalNote": "A single short day: about an hour up the Supercave gully, three pitches, and rappels with one 70 m rope.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Supercave gully and three pitches",
+     "objective": "Climb the route and rappel to the gully",
+     "note": "From the milepost 166 pullout, go straight up the talus and gully below the Supercave, staying left where forced. The route starts from a belay bolt on a small ledge on the right side of the gully, roughly below Ellen Pea. The pitches are 5.6 cracks, then a slab and overlaps with two 5.11a cruxes (5.9 A0 if aided), then a 5.10a crack. It is set up to rappel with one 70 m rope.",
+     "miles": 1,
+     "gainFt": 1600,
+     "lossFt": 1600,
+     "packLb": 18,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/107811969/the-exorcism-of-mark-hanna",
+   "https://www.mountainproject.com/area/106565701/mm-wall-supercave",
+   "https://www.mountainproject.com/approach-trail/126868220/approach-to-mm-wall-supercave",
+   "https://www.mountainproject.com/route/106565918/ellen-pea",
+   "https://stephabegg.com/trip-reports/washington/supercave/"
+  ],
+  "confidence": "medium",
+  "notes": "Pitches, the 300 ft length, the start and the single-70 m rappel come from the Mountain Project route page. Approach: Mountain Project gives 0.5 mi and 1,285 ft one way, about 1 h to the lower ledge. Abegg (Ellen Pea, same gully) gives about 45 min. Day gain is 1,285 ft plus 300 ft of route, rounded to 1,600. The row's 1,900 ft is higher than this, though its own waypoints (4,360 to 5,895 ft) give about 1,535 ft to the base. No source states total day hours."
+ },
+ {
+  "id": "wa_south_face_4",
+  "itinerary": {
+   "cal": "June through September. No permit is needed. Done as a long single day from the hairpin, often after a night at the pullout.",
+   "totalNote": "A long day: 2-4 hours over Kangaroo Pass to the hidden South Face, eight runout pitches, then rappels on the north side.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Kangaroo Pass and the South Face",
+     "objective": "Climb the South Face and rappel the north side",
+     "note": "From the hairpin, take the faint, cairned climbers' trail across talus and through forest to Kangaroo Pass. Drop below the pass and traverse to the base of the South Face, 2-4 hours from the car in all. The rock varies, route-finding is challenging and there are R-rated sections. Descend by the standard rappels on the north side; one party found a single 60 m rap from the summit and a double 60 m rap to the notch.",
+     "gainFt": 2400,
+     "lossFt": 2400,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://www.mountainproject.com/route/114267009/south-face",
+   "https://tripreportblog.blogspot.com/2008/07"
+  ],
+  "confidence": "low",
+  "notes": "Only Mountain Project describes this route (800 ft, 8 pitches, Grade III, 5.8 R, approach 2-4 h, no descent info). The 2008 blog report covers the shared hairpin to Kangaroo Pass approach and the north-side rappels, but its route is unnamed. Day gain is the row's 2,400 ft, which matches the row's 5,160 ft trailhead and 7,572 ft summit. Row says 7 pitches; MP says 8. Previous notes record MP's area page giving 7,238 ft for the summit (not re-opened). No hours or mileage are sourced."
+ },
+ {
+  "id": "wa_skeena26",
+  "itinerary": {
+   "cal": "June through September, once the Squire Creek crossing is manageable. No permit is needed. A one-day climb from the car.",
+   "totalNote": "One day: about 2-3 hours to the grassy saddle, a twelve-pitch slab-and-crack route that fast parties simul-climb, then the descent.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Squire Creek saddle and Skeena26",
+     "objective": "Climb the twelve pitches above the grassy saddle",
+     "note": "Walk the old Squire Creek roadbed, cross the creek (one party found logs just downstream where it splits), and climb the forest and two dirty gullies to the grassy saddle, about 2-3 hours. A fast party simul-climbing 2-3 pitches at a time topped out 2.5 hours after roping up. Plan the descent before committing; no source describes the standard one.",
+     "gainFt": 2200,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"
+  ],
+  "confidence": "low",
+  "notes": "Only one opened source: climberkyle (2021), about 2 h car to saddle and 2.5 h on route, continuing to Buckeye and Whitehorse rather than descending. The CascadeClimbers FA reports return 403, and the search budget ran out before a second source could be found. Day gain is the row's 2,200 ft. The row's approach says about 3 h to the saddle. Climberkyle lists the grade as 5.8; the row says 5.9. Descent is unsourced."
+ },
+ {
+  "id": "wa_western_dihedral",
+  "itinerary": {
+   "cal": "June through September, once the Squire Creek ford is manageable. No permit is needed. A long single day from the car.",
+   "totalNote": "One long day: about 3 hours to the grassy saddle, roughly another hour of scrambling and traversing west past Skeena26 to the far western wall, then five pitches.",
+   "days": [
+    {
+     "n": 1,
+     "title": "Squire Creek to the far western wall",
+     "objective": "Climb the five-pitch dihedral",
+     "note": "From the saddle, go left past the base of Skeena26 and scramble about 100 m of class 4 ramps to a shelf. Cross a deep gully, where a two-bolt anchor serves for a hand line or short rappel, then follow a cairned track west over talus to the far western wall. Plan the descent before committing; no source describes it.",
+     "gainFt": 2200,
+     "packLb": 20,
+     "schedule": []
+    }
+   ]
+  },
+  "sources": [
+   "https://openbeta.io/climb/52651ee0-b9b1-5112-a07d-9f9a43240114",
+   "https://climberkyle.com/2021/06/19/the-darrington-rodeo/"
+  ],
+  "confidence": "low",
+  "notes": "OpenBeta confirms only the grade (5.8) and the 2017 FA (Enger, Lewis, Daubert); its description is empty. Climberkyle covers the shared approach to the grassy saddle (about 2 h). The traverse beyond comes from the row's own approach text. Day gain is the row's 2,200 ft. No source gives the descent, distance or total hours."
+ }
+]

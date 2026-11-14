@@ -1,0 +1,39 @@
+{
+ "mo_2_wizard_s_point": {
+  "_expect": {"name": "Wizard's Point", "region": "Missouri"},
+  "blurb": "A small wall on the Mountain Right side of the Sage Mountain climbing area in east-central Missouri, about an hour out of St. Louis. Ten routes are listed, most of them bolted sport lines, plus a top-rope line and a single trad route. Difficulty starts around 5.6 and tops out in the low 5.10s, with the bulk of the lines in the 5.7 to 5.9 range, so it works well for newer leaders and anyone wanting moderate mileage. Nearby you will also find boulder problems and a second bolted wall, which makes it an easy half-day stop on a bouldering trip.",
+  "approach": "Walk up the gravel road beyond the main lot and keep going past the fork; as the road climbs, the wall comes into view on the right.",
+  "review": {"sources": ["https://www.mountainproject.com/area/121814362/wizards-point", "https://www.mountainproject.com/area/127092253/mountain-right", "https://mountainproject.com/area/121568608/em-sage-mountain-recreation-area"]}
+ },
+ "mo_c_jam_wall": {
+  "_expect": {"name": "Jam Wall", "region": "Missouri"},
+  "blurb": "A steep, powerful section of the Main Bluff in St. Francois State Park, close to the Main Bluff parking area in eastern Missouri. Ten routes are split among sport, trad and top-rope, with grades running from the high 5.7s through the 5.10s and into the 5.12s, plus one 5.13 for the strong. Several of the better-known lines are hard 5.10 and 5.11 sport pitches, while a few crack lines suit those who prefer to place gear. The cliffs here are short with sharp holds, and they stay shady through summer. Few other parties tend to be around, so you may have the wall to yourself.",
+  "review": {"sources": ["https://www.mountainproject.com/area/112155593/jam-wall", "https://mountainproject.com/area/112155099/em-st-francois-state-park"]}
+ },
+ "mo_crocodile_rock_and_the_nubbin": {
+  "_expect": {"name": "Crocodile Rock and The Nubbin", "region": "Missouri"},
+  "blurb": "Two neighbouring boulders on the slope below the Thurmond slab, part of the Main Bluff boulders in St. Francois State Park in eastern Missouri. Ten problems are recorded, mostly easy to moderate, from beginner-level up to about V3, with most falling around V1 and V2. Crocodile Rock is an overhanging block with somewhat crumbly rock, offering a few direct lines and both a short and a long traverse. The Nubbin beside it has a pair of easy slabs, a tougher arete, and a harder face line on its right side. Bring a pad; it makes a quick warm-up stop.",
+  "review": {"sources": ["https://mountainproject.com/area/113938817/crocodile-rock-and-the-nubbin", "https://www.mountainproject.com/route/113940192/2-long-traverse"]}
+ },
+ "mo_golden_eye_area": {
+  "_expect": {"name": "Golden Eye Area", "region": "Missouri"},
+  "blurb": "A cluster of boulders in the Paddy Creek Wilderness of south-central Missouri, centred on the big Golden Eye boulder. Ten problems are listed and the grade range starts at V3 and reaches V9, with the largest group in the V4 to V5 range and a handful of harder lines above that. It is a good pick for climbers past the beginner stage who want solid mid-range problems with a couple of hard goals nearby. A trail heading north from the road leads in, and the boulders are easy to spot. The wider wilderness holds plenty of further bouldering to explore.",
+  "review": {"sources": ["https://www.mountainproject.com/area/117967315/golden-eye-area", "https://mountainproject.com/area/113901772/cm-paddy-creek-wilderness"]}
+ },
+ "mo_missoureality_wall": {
+  "_expect": {"name": "Missoureality Wall", "region": "Missouri"},
+  "blurb": "One of the walls at Trapper's Camp, a stretch of riverside limestone bluffs in west-central Missouri. This wall has ten routes, mostly sport with a pair of trad lines. The climbing is largely slab with some steeper, more vertical stretches, and the rock is mostly good quality. Grades start around 5.6, cluster in the 5.9 and 5.10 range, and reach a couple of 5.11 lines. The best-rated routes are slabby 5.10s. Expect hot afternoons and ticks in summer, and plan on fall for the most comfortable conditions. Check anchors, since a few routes may lack lower-offs.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105899166/missoureality-wall", "https://www.mountainproject.com/area/105899028/wm-trappers-camp"]}
+ },
+ "_skipped": {
+  "mo_the_den": "Only one fetched page is about this Den (Three Creeks); the parent Rooftown page does not mention it and Dan's Jugs is a different Den at Robinson Bluff.",
+  "mo_the_backside": "No fetched page describes this sector beyond a bare name and count in the Peter's Branch parent listing; the other fetched topo page had no detail.",
+  "mo_katy_cliff": "Fetched page states the cliff is closed by the landowner and park service."
+ },
+ "_conflicts": {
+  "mo_2_wizard_s_point": "Stored rock dolomite; fetched pages call Sage Mountain sandstone (https://mountainproject.com/area/121568608/em-sage-mountain-recreation-area) and a sandstone/limestone mix (https://terrain-mag.com/sage-mountain-recreation-area-opens-in-berger-missouri/).",
+  "mo_c_jam_wall": "Stored rock dolomite; the park page says the park's climbing is limestone (https://mountainproject.com/area/112155099/em-st-francois-state-park).",
+  "mo_crocodile_rock_and_the_nubbin": "Stored rock dolomite; the park page says the park's climbing is limestone (https://mountainproject.com/area/112155099/em-st-francois-state-park).",
+  "mo_golden_eye_area": "Stored rock dolomite; the Paddy Creek Wilderness page says sandstone (https://mountainproject.com/area/113901772/cm-paddy-creek-wilderness)."
+ }
+}

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:field-renders reports seasonal_hazards.crevasses as reaching no screen, and after
 // #1 that is CORRECT-BY-DESIGN for the route it samples: that value is
 // "N/A - no glacier travel on this route", a negation the Safety block deliberately
@@ -11,7 +12,7 @@ import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("../..", import.meta.url)).replace(/\/$/, "");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";

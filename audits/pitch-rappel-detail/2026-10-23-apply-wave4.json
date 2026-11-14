@@ -1,0 +1,66 @@
+{
+ "wa_boving_christensen": {
+  "area": "wa_prusik_peak",
+  "replace_pitch_detail": true,
+  "pitch_detail": [
+   {
+    "pitch": "1",
+    "grade": "5.9",
+    "lengthM": 35,
+    "bolts": 0,
+    "anchor": "Gear",
+    "crux": false,
+    "notes": "Start on the west side of the south face, about 100 ft right of Solid Gold. A short crack leads to a low-angle slab below a corner; follow the corner to a belay under a steep white face. The route sees little traffic, so test the rock, which can be loose in places."
+   },
+   {
+    "pitch": "2",
+    "grade": "5.8",
+    "lengthM": 60,
+    "bolts": 0,
+    "anchor": "Gear",
+    "crux": false,
+    "notes": "A long pitch up exposed, somewhat dirty face cracks that are lined with lichen, trending a bit leftward to a ledge below a sharp corner. The line wanders, so expect heavy rope drag by the top; extend runners generously. Climb carefully on the lichen."
+   },
+   {
+    "pitch": "3",
+    "grade": "5.10-",
+    "lengthM": 30,
+    "bolts": 0,
+    "anchor": "Gear",
+    "crux": false,
+    "notes": "The best pitch on the route. A fun bouldery move gets you into the clean corner, which you follow before exiting right into an alcove for the belay."
+   },
+   {
+    "pitch": "4",
+    "grade": "5.10-",
+    "lengthM": 50,
+    "bolts": 0,
+    "anchor": "Gear (West Ridge junction)",
+    "crux": true,
+    "notes": "Starts with a finger crack on a slab (around 5.10b) that turns to hands, then steps left into a flake. The crack can thin back to fingers above the hand section, so carry small cams and place them before the thin part. Finish up the last hand cracks (about 5.8) to the West Ridge, where several nearby south-face routes top out. The first-ascent party climbed this with nuts and hexes only."
+   }
+  ],
+  "rappel_detail": [
+   {
+    "n": 1,
+    "anchor": "Rappel anchor on the north side of the ridge (shared with Solid Gold)",
+    "station": "From the top of the route, or after scrambling the West Ridge, find the rappel anchor on the north side of the ridge, the same one used after Solid Gold.",
+    "notes": "A single 60 m rope reaches the ground. Scramble to the notch below the West Ridge route, then back to the base of the south face, trending right for a while to avoid cliffs directly below the notch. About 30 minutes from the top of the route to its base.",
+    "hazards": [
+     "cliffs directly below the West Ridge notch on the scramble back"
+    ]
+   }
+  ],
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "changed": "Extended all four stored pitch notes (kept labels, grades, stored lengths and gear anchors) with the line's start, rope drag, the bouldery pitch-3 entry, and the pitch-4 finger-to-hand crack thinning. That source gives lengths in feet (about 120, 200, 100, 170 ft = 37, 61, 30, 52 m); stored values are close and were kept. Added a one-station rappel table from the descent description (one rappel down the north side, 60 m rope enough). Anchor type at the rappel is not stated by the source, so left out.",
+   "pitch_count_found": 4,
+   "other_findings": "Stored `rappels` text says 'Two rappels off tat to the base of the West Ridge' which disagrees with the single-source description of ONE rappel on the north side with a 60 m rope (the stored descent text agrees with one rappel). The source trip report is the only full description found; no Mountain Project page for this route was found.",
+   "batch": "H",
+   "reviewer_dropped": []
+  }
+ }
+}

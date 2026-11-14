@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // CAN A CLIMBER TAKE A PROFILE PHOTO BACK DOWN, AND DOES A FAILED REMOVAL DESTROY THE FILE?
 //
 // WHY THIS IS A BUILD GATE. Both invariants it holds are invisible to every other guard:
@@ -99,7 +101,9 @@ for (const s of sites) {
 // The component must actually consult the prop -- a call site that passes onRemove to a
 // component ignoring it is the dead-wiring shape, and reads as a shipped feature.
 const core = readCoreSource();
-const decl = core.match(/function PhotoStrip\(\{([^}]*)\}\)/);
+// The component lives in src/components/PhotoStrip.tsx (reached through readCoreSource's MOVED stitch), so the
+// destructure may carry its props annotation: `}: PhotoStripProps)`. The anchor accepts that and nothing looser.
+const decl = core.match(/function PhotoStrip\(\{([^}]*)\}(?::\s*\w+)?\)/);
 if (!decl) dead("PhotoStrip's signature moved — ANCHOR LOST");
 if (!/\bonRemove\b/.test(decl[1])) bad("PhotoStrip does not destructure onRemove");
 else ok("PhotoStrip destructures onRemove");
@@ -111,7 +115,7 @@ console.log("\n2. removeProfilePhoto against a stubbed transport\n");
 
 const out = path.join(ROOT, `.photo-remove-probe-${process.pid}.mjs`);
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "lib/db.js"),
+  execFileSync(NPX, [...NPX_PRE, "esbuild", path.join(ROOT, "lib/db.js"),
     "--bundle", "--format=esm", "--platform=node",
     `--define:import.meta.env=${JSON.stringify({ VITE_USE_DB: "true", VITE_SUPABASE_URL: "https://probe.invalid", VITE_SUPABASE_ANON_KEY: "probe" })}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -148,7 +152,7 @@ globalThis.fetch = async (input, init) => {
   return new Response("[]", { status: 200, headers: { "Content-Type": "application/json" } });
 };
 
-const db = await import(out + "?t=" + Date.now());
+const db = await import(fileHref(out + "?t=" + Date.now()));
 fs.rmSync(out, { force: true });
 if (typeof db.removeProfilePhoto !== "function") dead("removeProfilePhoto is not exported from lib/db.js — ANCHOR LOST");
 if (typeof db.photoStorageKey !== "function") dead("photoStorageKey is not exported from lib/db.js — ANCHOR LOST");
@@ -282,7 +286,10 @@ const avCore = readCoreSource()
   .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 if (/removeProfileAvatar\(uid,/.test(avCore)) ok("the editor calls removeProfileAvatar with its uid");
 else bad("the editor no longer calls removeProfileAvatar(uid, …)");
-if (/\(avaPreview\|\|draft\.avatar\)\?<button onClick=\{removeAva\}/.test(avCore))
+// Gated on hasAva, which must also exclude FALLBACK_AV: the draft is seeded from ME.avatar, the
+// silhouette for a climber with no photo, so a truthy avatar alone offered "Remove photo" over nothing.
+if (/\{hasAva\?<button onClick=\{removeAva\}/.test(avCore) &&
+    /const hasAva=!!\(avaPreview\|\|draft\.avatar\)&&\(avaPreview\|\|draft\.avatar\)!==FALLBACK_AV;/.test(avCore))
   ok("the Remove control is GATED on there being a photo to remove");
 else bad("the Remove control is not gated on there being a photo (an empty avatar would offer one)");
 if (/function EditProfileScreen\(\{[^}]*\buid\b/.test(avCore)) ok("EditProfileScreen destructures uid");

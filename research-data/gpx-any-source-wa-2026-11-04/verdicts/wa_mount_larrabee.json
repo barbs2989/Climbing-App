@@ -1,0 +1,27 @@
+{
+  "area_id": "wa_mount_larrabee",
+  "routes": [
+    {
+      "route_id": "wa_mount_larrabee_south_ridge",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Logged ascents: Jul 45, Aug 38, Sep 41, Oct 18, Jun 10. Searches (Mountaineers route page, Cascade Climbers/WTA reports, SummitPost) show snow on the High Pass trail and in the summit gully into early July, loose scree through late summer; most ascents Jul-Oct. Stored Jul-Sep confirmed; late June and early October are shoulder months." },
+      "track": { "aid": "3350724", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Only one route is catalogued on this peak. 19 Sep 2026 round trip from Twin Lakes Trailhead (start 67 m, end 73 m from our pin) via the High Pass trail, the basin and the south-west spur to the summit (6 m from our pin, 5 m from the surveyed point), returning the same way; matches the stored line. Summited, in season, dense (2770 points)." },
+      "otherTracksConsidered": [
+        { "aid": "3356238", "verdict": "unsure", "why": "22 Sep 2026, valid same-line round trip, but its report says it was extended to Winchester Mountain, so the loop is longer than the route." },
+        { "aid": "3005959", "verdict": "unsure", "why": "5 Oct 2025, logged High Pass Trail to south ridge, valid round trip; a month outside the stored window, so second choice." },
+        { "aid": "2896544", "verdict": "unsure", "why": "7 Jul 2025 Southwest Route, summited but the track's start/end are 450 m off our pin and not a clean round trip." },
+        { "aid": "3336192", "verdict": "unsure", "why": "6 Sep 2026, ends at the summit (one-way, no descent recorded)." },
+        { "aid": "1872301", "verdict": "offseason", "why": "31 Oct 2020 SW chute, outside the window; valid line." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "descent_note", "month": 9, "text": "Of the two gullies, the left-hand one (marked by a cairn at its top) descends on firmer, slabby rock and was judged safer than the loose main channel; reports from late September and October prefer it for coming down.", "aids": ["3356238", "3387134"] },
+        { "field": "watch_out", "month": 10, "text": "In early October the scree is frozen solid at dawn and climbs firmly, but rock released by the thawing sun rattles down the gullies from late morning.", "aids": ["3005959"] },
+        { "field": "pro_tips", "month": 9, "text": "The loose rock is much worse with several parties on the face; choose a weekday in September if you can.", "aids": ["3356238"] },
+        { "field": "pro_tips", "month": 6, "text": "In late June the basin below the south-west spur still holds enough snow to ease the scree, and microspikes were enough without an axe; parking near the lakes may be buried in snow and avalanche debris.", "aids": ["2228586"] },
+        { "field": "pro_tips", "month": 7, "text": "The summit has no false top and a flat, cleared tent-sized spot, but it is very exposed to wind.", "aids": ["2896544", "3005959"] }
+      ]
+    }
+  ],
+  "notes": "Trailhead and summit pins already agree with every recording (within 70 m / 17 m); no pin change. Reports disagree on difficulty (class 2 with choss vs class 3 to 4th-class moves) depending on ridge versus gully line; stored Class 3 is reasonable."
+}

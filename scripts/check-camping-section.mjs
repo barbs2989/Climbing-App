@@ -43,6 +43,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -51,8 +52,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf };
+import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -74,7 +75,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf } = require_(out);
+const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campRouteOrder, campRoleLabel, campFromPrev, campOrderNote, overnightPermitOf, samePlaceCamp, campNightsOf, campNightsLabel, campWalkHrs, campReportsOf, campSleptLine } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -209,6 +210,15 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   const onTrack = text(render(route("alpine", { waypoints: [WP] }), "planner"));
   if (/pin under ROUTE TRACK/.test(onTrack)) ok("the track-pin claim appears when a site IS on the track");
   else fail("a waypoint-derived site should say it is pinned on the track");
+  // A PIN WITH NO COORDINATE IS NOT ON THE MAP (2026-10-28, audit:camp-pins: 48 such pins wore the
+  // chip). Neither the pin's own row nor a researched site it backs may claim it.
+  const bare = { ...WP, lat: null, lng: null };
+  const own = text(render(route("alpine", { waypoints: [bare] }), "planner"));
+  if (!/Marked on the track/.test(own) && !/pin under ROUTE TRACK/.test(own)) ok("a pin with no coordinate does not claim to be on the track");
+  else fail("a Campsite pin with no lat/lng is stamped 'Marked on the track' — the map cannot draw it");
+  const backed = text(render(route("alpine", { waypoints: [bare], bivy: [{ name: WP.name, elev: 2360 }] }), "planner"));
+  if (!/Marked on the track/.test(backed)) ok("a site backed by a coordinate-less pin does not borrow the chip");
+  else fail("a researched site borrowed 'Marked on the track' from a pin with no coordinate");
 }
 
 // ── 8c. THE CONTRIBUTED SHAPE RENDERS. `bivy` became contributable, and structuredVal() emits a
@@ -402,25 +412,66 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
 }
 
 
-// ── 12. MAIN CAMPS vs ON THE ROUTE. A researched `role` splits the list, main camps first; a list
-//    nobody has sorted stays the flat list it always was (no heading filing everything as OTHER).
+// ── 12. IN THE ORDER THE WALK IN REACHES THEM (owner, 2026-10-24). One list, ordered by distance
+//    from the trailhead, a site with no distance placed by its height, a site with neither last; the
+//    researched `role` is a TAG on the site, never a group that would put a high camp above the valley
+//    campground you sleep at first. Replaced the WHERE MOST PARTIES SLEEP / OTHER OPTIONS / NOT YET
+//    SORTED groups.
 {
-  const sorted = [
-    { name: "Side Bivy", role: "route" }, { name: "Base Camp Alpha", role: "main" }, { name: "Loose Site" },
-  ];
-  const t = text(render(route("alpine", { bivy: sorted }), "planner"));
-  const iM = t.indexOf("WHERE MOST PARTIES SLEEP"), iO = t.indexOf("OTHER OPTIONS");
-  if (iM >= 0 && iO > iM) ok("sorted sites render WHERE MOST PARTIES SLEEP, then OTHER OPTIONS");
-  else fail(`group headings missing or out of order (main ${iM}, other ${iO})`);
+  const names = (l) => campRouteOrder(l).map((s) => s.name).join(" > ");
+  const o1 = names([{ name: "High", distMi: 6, elev: 7000 }, { name: "Low", distMi: 2, elev: 4000 }, { name: "Mid", distMi: 4, elev: 5500 }]);
+  if (o1 === "Low > Mid > High") ok("sites with a distance run from the trailhead outward");
+  else fail("sites with a distance are not in walking order: " + o1);
+  const o2 = names([{ name: "Loose" }, { name: "High", distMi: 6, elev: 7000 }, { name: "Valley CG", elev: 1200 }, { name: "Lake", elev: 5000 }, { name: "Low", distMi: 2, elev: 4000 }]);
+  if (o2 === "Valley CG > Low > Lake > High > Loose") ok("a site with only a height slots in by height; one with neither comes last");
+  else fail("height-only or unplaceable sites are misplaced: " + o2);
+  const o3 = names([{ name: "A", elev: 5000 }, { name: "B", elev: 5000 }]);
+  if (o3 === "A > B") ok("a tie keeps the stored order");
+  else fail("a tie reordered the stored list: " + o3);
+
+  const t = text(render(route("alpine", { bivy: [
+    { name: "Side Bivy", role: "route", elev: 2800 }, { name: "Base Camp Alpha", role: "main", elev: 2000 }, { name: "Loose Site" },
+  ] }), "planner"));
   const a = t.indexOf("Base Camp Alpha"), b = t.indexOf("Side Bivy"), c = t.indexOf("Loose Site");
-  if (a > iM && a < iO && b > iO && c > iO) ok("each site renders under its own group");
-  else fail("a site rendered under the wrong group");
-  const flat = text(render(route("alpine", { bivy: [SITE, { name: "Other Place" }] }), "planner"));
-  if (!/WHERE MOST PARTIES SLEEP|OTHER OPTIONS/.test(flat)) ok("an unsorted list renders flat, with no group headings");
-  else fail("an unsorted list was given group headings");
-  const g = campGroups([{ name: "Pin", role: "route", onTrack: true }]);
-  if (g.length === 1 && g[0].title === null) ok("a Campsite pin's default role alone does not trigger grouping");
-  else fail("a pin's default role triggered grouping on an unsorted route");
+  if (a >= 0 && b > a && c > b) ok("the page draws the sites in walking order, not stored or use order");
+  else fail(`the page did not draw the sites in walking order (alpha ${a}, side ${b}, loose ${c})`);
+  if (!/WHERE MOST PARTIES SLEEP|OTHER OPTIONS|NOT YET SORTED/.test(t)) ok("no use-group heading splits the walking order");
+  else fail("a use-group heading is back, splitting the list out of walking order");
+  if (/Where most parties sleep/.test(t.slice(a, b)) && /Other option/.test(t.slice(b, c)) && !/Where most parties sleep|Other option/.test(t.slice(c))) ok("each site carries its use as a tag, and an unsorted site claims none");
+  else fail("the use tags are missing, on the wrong site, or an unsorted site claims a use");
+  if (/order you reach them walking in from the trailhead; the site with no distance or height on file comes last/.test(t)) ok("the list says it runs in walking order, and names the site it could not place");
+  else fail("the list does not say how it is ordered, or hides that a site could not be placed");
+  if (campOrderNote([{ name: "x" }, { name: "y" }]) === "" && campOrderNote([{ name: "x", elev: 1 }]) === "") ok("no order claim when nothing can be placed, or for one site");
+  else fail("the order note claims a walking order it could not establish");
+
+  const step = campFromPrev({ name: "B", distMi: 5, elev: 6000 }, { name: "A", distMi: 2, elev: 4500 });
+  if (/on from A · /.test(step) && /higher$/.test(step)) ok(`a site states the stretch from the camp before it ("${step}")`);
+  else fail("the stretch from the previous camp is missing: " + JSON.stringify(step));
+  if (campFromPrev({ name: "B", elev: 6000 }, { name: "A", distMi: 2, elev: 4500 }) === "") ok("no stretch is stated without two known distances");
+  else fail("a stretch was stated from a missing distance");
+}
+
+// ── 12a. The contribute form's ROLE options speak the page's words: the tag a site carries is the
+//    option the climber picked. They once read "Main camp" / "On the route" while the page said
+//    something else, so a climber chose one vocabulary and found their camp filed under another.
+//    Read from the source: the form is a modal a static render of the route page does not open.
+{
+  const src = readAppFile(path.join(ROOT, "RouteDetail.jsx")) /* stitched: SuggestFix lives in src/components since PR59 */;
+  const sel = src.match(/aria-label=\{"Site "\+\(idx\+1\)\+" role"\}[\s\S]*?<\/select>/);
+  if (!sel) { fail("ANCHOR LOST: the camping form's role <select> is gone or renamed — its labels were not checked"); }
+  else {
+    const opts = Object.fromEntries([...sel[0].matchAll(/<option value="([^"]*)">\{"([^"]*)"\}<\/option>/g)].map((m) => [m[1], m[2]]));
+    const stems = (s) => (String(s || "").toLowerCase().match(/[a-z]+/g) || []).map((w) => w.replace(/s$/, ""));
+    for (const role of ["main", "route"]) {
+      const tag = campRoleLabel(role), label = opts[role];
+      if (!label) fail(`the camping form offers no "${role}" role option`);
+      else if (!tag) fail(`campRoleLabel gives a "${role}" site no tag`);
+      else if (stems(tag).every((w) => stems(label).includes(w))) ok(`the form's "${role}" option ("${label}") names the tag the site shows (${tag})`);
+      else fail(`the form's "${role}" option reads "${label}" but the site is tagged ${tag}`);
+    }
+    if (opts[""] != null && campRoleLabel("") === "") ok(`the form keeps an unsorted choice ("${opts[""]}"), which shows no tag`);
+    else fail("the camping form lost its unsorted / not-sure role option, or an unsorted site claims a use");
+  }
 }
 
 // ── 12b. A role:"hidden" stub hides the same-named Campsite PIN from the list, and itself.
@@ -436,6 +487,70 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a role:hidden stub did not hide its pin (or hid the whole panel)");
 }
 
+// ── 12c. ONE PLACE UNDER TWO SPELLINGS lists once, and the pin lends the researched site its
+//    distance. The Glacier Peak shape (2026-10-22): a researched "Mackinaw Shelter camp, North Fork
+//    Sauk" and a pin "Mackinaw Shelter (former shelter site)", both at 2,950 ft. And the two ways the
+//    rule must REFUSE: two lakes 100 ft apart that differ by "Lower"/"Middle", and a record with no
+//    height, which is never guessed into another.
+{
+  const th = { name: "North Fork Sauk Trailhead", type: "Trailhead", elev: 2050, distMi: 0 };
+  const t = text(render(route("alpine", {
+    bivy: [{ name: "Mackinaw Shelter camp, North Fork Sauk", elev: 2950, role: "route", notes: "First night." }],
+    waypoints: [th, { name: "Mackinaw Shelter (former shelter site)", type: "Campsite", elev: 2950, distMi: 5, lat: 48.1, lng: -121.1 }],
+  }), "planner"));
+  const start = t.indexOf(HEAD), intro = t.indexOf("pin under ROUTE TRACK", start);
+  const end = t.indexOf("ROUTE TRACK", intro >= 0 ? intro + 21 : start);
+  const panel = t.slice(start, end > start ? end : undefined);
+  const n = (panel.match(/Mackinaw Shelter/g) || []).length;
+  if (start >= 0 && n === 1) ok("a site and a pin spelling one place differently list once");
+  else fail(`the Mackinaw shape rendered ${n} rows naming it (want 1) — a differently spelled pin is a second camp again`);
+  if (/5(\.0)? mi/.test(panel)) ok("the merged pin lends its trail distance to the researched site");
+  else fail("the merged pin's distance did not reach the researched site");
+  if (samePlaceCamp({ name: "Lower Blum Lake", elev: 4900 }, { name: "Middle Blum Lake", elev: 5000 })) fail("Lower and Middle Blum Lake were merged — two lakes are one camp");
+  else ok("Lower and Middle Blum Lake stay two camps");
+  if (samePlaceCamp({ name: "Wing Lake" }, { name: "Wing Lake camp", elev: 6923 })) fail("a record with no height was merged by name alone");
+  else ok("a record with no height is never merged by name alone");
+  if (samePlaceCamp({ name: "Wing Lake", elev: 6900 }, { name: "Wing Lake camp", elev: 6923 })) ok("Wing Lake / Wing Lake camp at 6,900 / 6,923 ft are one place");
+  else fail("Wing Lake and Wing Lake camp were not recognised as one place");
+}
+
+// ── 12d. CHOOSING A CAMP: the night the trip plan spends there, and the walk in at the planner pace.
+{
+  const itin = { days: [
+    { n: 1, title: "Approach to Glacier Gap camp", objective: "Reach high camp at Glacier Gap" },
+    { n: 2, title: "Ferry Basin to Queets Basin", objective: "Climb the peak and return to Low Divide" },
+    { n: 3, title: "Hike out to Glacier Gap", objective: "Return to trailhead" },
+  ] };
+  const r = { itinerary: itin };
+  const got = (nm) => JSON.stringify(campNightsOf(r, nm));
+  if (got("Glacier Gap") === "[1]") ok("a day that ENDS at a camp tags its night (and the last day is never a night)");
+  else fail(`Glacier Gap read as nights ${got("Glacier Gap")} (want [1])`);
+  if (got("Ferry Basin") === "[]") ok("the place a day LEAVES is not tagged as that night");
+  else fail(`Ferry Basin, which day 2 leaves, was tagged ${got("Ferry Basin")}`);
+  if (got("Low Divide, the pass camp") === "[2]") ok("\"return to X\" tags X as that night");
+  else fail(`"return to Low Divide" read as ${got("Low Divide, the pass camp")} (want [2])`);
+  if (campNightsLabel([1, 2], 3) === "Nights 1\u20132 of the 3-day trip plan") ok("night label reads as a range");
+  else fail("night label: " + campNightsLabel([1, 2], 3));
+  const s = { distMi: 5, gainFt: 900 };
+  const slow = campWalkHrs(s, { fit: "beginner", pack: 20 }), fast = campWalkHrs(s, { fit: "expert", pack: 5 });
+  if (slow > fast) ok("the walk-in time moves with the planner's fitness and pack");
+  else fail(`walk-in time did not respond to the planner inputs (${slow} vs ${fast})`);
+  if (campWalkHrs({ distMi: 5, gainFt: null }, {}) === null) ok("no walk-in time without a gain — distance alone would read fast");
+  else fail("a walk-in time printed with no gain behind it");
+  const th = { name: "TH", type: "Trailhead", elev: 2050, distMi: 0 };
+  const t = text(render(route("alpine", {
+    itinerary: itin,
+    bivy: [{ name: "Glacier Gap", elev: 7300, role: "main", notes: "High camp." }],
+    waypoints: [th, { name: "Glacier Gap", type: "Campsite", elev: 7300, distMi: 15, lat: 48.1, lng: -121.1 }],
+  }), "planner"));
+  if (t.includes("Night 1 of the 3-day trip plan")) ok("the night tag reaches the camp card");
+  else fail("the night tag did not reach the screen");
+  if (/\u2248\d+(\.5)? h walk in at your planner pace/.test(t)) ok("the walk-in time reaches the camp card");
+  else fail("the walk-in time did not reach the screen");
+  if (t.includes("Choosing a camp:")) ok("the panel says once what the tags and times mean");
+  else fail("no explanation of the night tag and walk-in time");
+}
+
 // ── 13. OVERNIGHT PERMIT: what + where + the agency link, and only an https link.
 {
   const acc = { overnight_permit: { what: "Free self-issue wilderness permit", where: "Fill one out at the trailhead kiosk.", url: "https://www.fs.usda.gov/x" } };
@@ -449,6 +564,36 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("a non-https permit url was accepted");
   if (overnightPermitOf({ access: {} }) === null) ok("no overnight permit renders nothing");
   else fail("an empty access block produced a permit");
+}
+
+// ── 20. WHERE CLIMBERS SAY THEY SLEPT (0358). The log form's WHERE DID YOU CAMP? stores cond.camps by
+// the names this list uses; the panel counts reports per site by NAME (case aside, nothing fuzzier),
+// once per report, and offers a camp no site carries as one to ADD — never writing it into the list.
+{
+  const sites = [{ name: "Boston Basin" }, { name: "Sahale Glacier camp" }];
+  const acts = [
+    { date: "2026-08-01", cond: { camps: ["boston basin", "Sahale Glacier camp"] } },
+    { date: "2026-08-20", cond: { camps: ["Boston Basin", "Boston Basin"] } },
+    { date: "2026-07-04", cond: { camps: ["Basin Creek"] } },
+    { date: "2026-07-05", cond: { nights: "0" } },
+  ];
+  const r = campReportsOf(sites, acts);
+  const bb = r.by.get(0), sg = r.by.get(1);
+  if (bb && bb.n === 2 && bb.last === "2026-08-20") ok("a camp's count is of reports, once each, case aside, with the latest date");
+  else fail(`campReportsOf counted Boston Basin as ${JSON.stringify(bb)} (want n 2, last 2026-08-20)`);
+  if (sg && sg.n === 1) ok("a second camp in one report counts for that camp too");
+  else fail("the second camp of a multi-camp report was not counted");
+  if (r.extra.length === 1 && r.extra[0].name === "Basin Creek" && r.extra[0].n === 1) ok("a camp the list lacks comes back as one to add");
+  else fail(`unlisted camps came back as ${JSON.stringify(r.extra)}`);
+  if (campReportsOf([{ name: "Wing Lake" }], [{ cond: { camps: ["Wing Lake camp"] } }]).by.size === 0) ok("a near-miss name is not counted against a listed camp");
+  else fail("a near-miss camp name was counted against a listed site");
+  if (campSleptLine(null) === "" && /^Slept here in 2 trip reports/.test(campSleptLine(bb))) ok("the slept-here line reads as a count of reports");
+  else fail(`campSleptLine said ${JSON.stringify(campSleptLine(bb))}`);
+  const t = text(render(route("alpine", { bivy: [SITE], activity: [{ id: "a1", user: "x", date: "2026-08-01", cond: { camps: ["Boston Basin"] } }, { id: "a2", user: "y", date: "2026-08-02", cond: { camps: ["Hidden Lake"] } }] }), "planner"));
+  if (t.includes("Slept here in 1 trip report")) ok("a reported night reaches the camp's card on the Planner");
+  else fail("a trip report's camp did not reach the CAMPING & BIVY card");
+  if (t.includes("NAMED IN TRIP REPORTS") && t.includes("Hidden Lake")) ok("an unlisted reported camp is offered on the Planner");
+  else fail("an unlisted camp from a trip report was not offered to add");
 }
 
 console.log(failures

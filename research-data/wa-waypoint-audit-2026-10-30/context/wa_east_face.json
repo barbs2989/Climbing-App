@@ -1,0 +1,58 @@
+{
+ "id": "wa_east_face",
+ "name": "East Face",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_middle_peak",
+  "name": "Middle Peak",
+  "lat": 48.30571,
+  "lng": -120.99439,
+  "elevation_ft": 8185,
+  "parent_id": "wa_gunsight_range_the",
+  "ground_ft": 7764
+ },
+ "dist_km": 41.84,
+ "gain_ft": 5000,
+ "high_point_ft": 8200,
+ "approach_logistics": {
+  "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+  "trailheadLat": 48.2591,
+  "trailheadLng": -121.2244,
+  "trailheadDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is in a parking lot just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4 (order in place to January 2028), so the last miles must be covered on foot or by bike."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.2595,
+   "lng": -121.2229,
+   "elev": 1440,
+   "name": "Downey Creek Trailhead",
+   "note": "Remote 2-day approach: Downey/Bachelor Creek trail to Itswoot Ridge, then over the Dome-Chickamin col and across the Chickamin Glacier to the Gunsight Range.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Darrington drive SR 530 north about 8 miles to the Suiattle River Road (FS Road 26) and follow it east about 20 miles to the Downey Creek Trailhead, just past the Downey Creek bridge; the trail starts on the north side and parking is on the south side. A Northwest Forest Pass is required.",
+   "ground_ft": 1500
+  },
+  {
+   "i": 1,
+   "lat": 48.30563,
+   "lng": -121.09123,
+   "elev": 5338,
+   "name": "Cub Lake",
+   "type": "Campsite",
+   "ground_ft": 5343
+  },
+  {
+   "i": 2,
+   "lat": 48.30571,
+   "lng": -120.99439,
+   "elev": 8000,
+   "name": "Middle Peak (Gunsight Range)",
+   "note": "East Face (5.10d) climbs 6-7 pitches of clean granite on Middle Gunsight; approach distance is approximate given the glaciated, multi-day approach.",
+   "type": "Summit",
+   "distMi": 17,
+   "directions": "Hike the Downey Creek Trail about 6 miles up the valley, then turn up Bachelor Creek on a faint, brushy path toward Cub Lake and Itswoot Ridge. From the ridge cross the Dome Glacier to the Dome-Chickamin col, the usual base camp, then cross the Chickamin Glacier to the Gunsight Range and climb the six to seven pitches of the East Face to the summit. Plan on two days to reach the base.",
+   "ground_ft": 7764
+  }
+ ]
+}

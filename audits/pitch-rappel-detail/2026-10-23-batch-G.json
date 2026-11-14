@@ -1,0 +1,47 @@
+{
+  "wa_south_face": {
+    "area": "wa_vasiliki_tower",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.6", "notes": "The best pitch of the route: easy 5.6 on good rock, staying on the southern face above Burgundy Col. Getting to the start takes some thought, since you either scramble over a small nub from the col (with a tricky downclimb) or drop down and around a larger feature. The belay is a gear anchor on a loose ledge, just past the first rappel station." },
+      { "pitch": "2", "grade": "5.5", "notes": "The line crosses a gully of loose, poor-quality rock. Moving left onto the more solid rock gives better climbing but adds some rope drag, and the good belay spot makes for a short pitch." },
+      { "pitch": "3", "notes": "Follow the line under the two small block roofs. The rock is better here, but the surface is mostly dried lichen and moss that sloughs off under the feet, which makes the climbing feel more insecure than its grade suggests." },
+      { "pitch": "4", "notes": "Belay under the small trees on climber's right, then follow the dihedral to the top. These are the best moves on the route, though dried vegetation on the holds makes the footing feel sketchy. Parties who link pitches can do the route in fewer, longer leads; four pitches is one party's split to manage rope drag." }
+    ],
+    "rappel_detail": [
+      { "n": 1, "station": "Slung trees and boulders on climber's right of the top-out, with a mix of old tat.", "notes": "Goes straight over a lip and hangs free for roughly 10 feet over an overhang before the feet touch rock again, then continues to the next station. Inspect and back up the tat; it has been described as due for replacement.", "hazards": ["free-hanging start over a lip", "old slings on trees and boulders"] },
+      { "n": 2, "station": "Well to climber's right on a bench with a cluster of trees, not where the topo arrow puts it. The slings here were old and were replaced.", "notes": "The line runs down a loose, dirty gully and then traverses far climber's left to reach the next station.", "hazards": ["loose gully", "rope-snagging traverse"] },
+      { "n": 3, "station": "Lower and out of sight of the photo topo; newer slung rock with a very old, tiny slung boulder just below it that should not be trusted.", "notes": "Drops straight down to the start of the climb.", "hazards": ["old slung boulder beside the better anchor"] }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/114432444/south-face"],
+      "changed": "Rewrote the two stored pitch notes from the single detailed account and added pitches 3 and 4 (one party's four-pitch split). Dropped the stored 'sandy bench' and 'good cracks on the left side with finger-sized features' because the source describes a loose gully and lichen-covered rock instead. Wrote a three-rappel table from the same account; no rappel lengths are given and the stored line says a 70 m rope reaches each station and a 60 m rope suffices with easy downclimbing (kept as stated). Only one source was readable (other sites blocked), so the pitch breakdown is single-source.",
+      "pitch_count_found": 4,
+      "other_findings": "Stored 'pitches' is 3 while the description says two-pitch and the pitch_detail has two; the one detailed account climbed it in four pitches because of rope drag. The stored beta calls it a solid, friendly granite route, but the only detailed account calls it loose, vegetated and not a great beginner lead. Descent: the stored North Ridge scramble (class 3) was not verified in this source; the rappels are the alternative."
+    }
+  },
+  "wa_prusik_peak_solid_gold": {
+    "area": "wa_prusik_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "1", "grade": "5.10d", "lengthM": 30, "bolts": 0, "anchor": "Gear (under roof)", "crux": false, "notes": "A right-leaning crack system leads to the obvious roof; it is hard to miss. Most parties find this the hardest-feeling pitch even though it is not the technical crux. Fingertip to hand-size gear, doubles recommended." },
+      { "pitch": "2", "grade": "5.11a", "lengthM": 30, "bolts": 0, "anchor": "Gear (#3 Camalot in horizontal)", "crux": true, "notes": "Step out right under the roof and follow the corner above. The move under the roof is the technical crux and a small cam (a purple C3 was useful) protects it. The pitch ends at a long horizontal crack that takes a #3-size cam, where you belay on gear while standing in the crack. Parties often link this with the first half of the next pitch, or stop at a stance in the corner after linking pitch 1." },
+      { "pitch": "3", "grade": "5.10a", "lengthM": 30, "bolts": 0, "anchor": "Gear", "crux": false, "notes": "A slab leads to a short chimney exit. The chimney has loose rock, so one option is to skip it: take the ramp to its right and traverse left over the top into the easy corner. If you do climb it, follow the seam arcing left on the chimney's left wall. Linking this with the 5.8 above reaches a belay on a large ledge, and a 60 m rope often forces a stop before the looser 5.8 section." },
+      { "pitch": "4", "grade": "5.8", "lengthM": 25, "bolts": 0, "anchor": "Gear (large ledge)", "crux": false, "notes": "Off-width to a mantle on an arching seam, ending on the large ledge at the foot of the last pitch. Often climbed together with pitch 3, in which case a 70 m rope links it more easily." },
+      { "pitch": "5", "grade": "5.11a", "lengthM": 45, "bolts": 0, "anchor": "Gear/tree", "crux": true, "notes": "The aesthetic finishing corner: a perfect corner crack above the ledge, about 50 feet, with small gear and nuts useful at the start (tips to fingers), then step right to a small tree below the crest of the West Ridge. With enough gear and good rope management you can keep going to the ridge top, where you can rappel the back side or continue to the summit. Some rate this pitch softer than the earlier 5.11a." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "sources": ["https://www.mountainproject.com/route/107618376/solid-gold", "https://www.mountainproject.com/route/105808527/west-ridge", "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"],
+      "changed": "Kept all five stored pitch labels and facts; extended notes with protection tips (small cams at the roof and final corner, doubles from fingers to #2 plus one #3), linking options, the chimney bypass and the 60/70 m rope remarks. No rappel_detail: the sources only say to rappel the back side from the ridge top, and accounts of the back-side descent disagree (one rappel or two), with no station description; the West Ridge page describes four single rappels to the north side from the summit, but that is the summit descent and not stations of this route. Page was unreadable for the third source (only title read), so it is listed only for its grade/length line.",
+      "pitch_count_found": 4,
+      "other_findings": "The best-read source describes the route as four pitches (stored table has five, splitting the chimney/slab pitch from the 5.8 offwidth). Grade of the first pitch: some call it the physical crux. Stored lengths (30/30/30/25/45 m) were not verified from these sources."
+    }
+  },
+  "skip_reasons": {
+    "wa_half_moon_southwest_slopes": "Could not read any full page with pitch-by-pitch or rappel-station detail for the Half Moon North Ridge. The only substantive page (SummitPost) is blocked; Mountain Project has no route page for it (the area lists one unrelated climb). Search snippets only mention double ropes and no fixed gear, which matches what is already stored. Also note the stored route id says 'southwest slopes' while the name is 'North Ridge'.",
+    "wa_pernod_spire_standard": "No Mountain Project route page exists for the standard route (the area lists only Direct West Face and South Face), and SummitPost/Mountaineers pages are blocked. No readable source with pitch or rappel-station detail.",
+    "wa_gato_negro": "Stored pitch table is already rich and matches the readable sources (Mountain Project, SuperTopo, Ian Nicholson's report, Wayne Wallace's report). No source describes the descent rappels station by station (only 'a few raps over the top into the gully'), so no rappel table. Findings: pitches are long (most 180-190 ft, none under 150 ft per one report; one party combined pitches 8-10 into two 61 m leads); a 2025 Mountain Project comment suggests an alternative descent by simul-climbing roughly 300 ft of moderate fifth class to the ridge top, crossing snow, and descending the open scree gully between the west peak and the summit to a large cairn (single comment, unverified); Mountain Project grade is 5.10 versus 5.10d on SuperTopo; sources used: https://www.mountainproject.com/route/113324178/gato-negro, http://www.supertopo.com/rock-climbing/Washington-Pass-Whine-Spire-Gato-Negro, http://iannicholsonslife.blogspot.com/2010/09/gato-negro-iv-510d-with-rebecca.html, https://waynewallace.wordpress.com/2013/09/04/gato-negro-whine-spire/, https://publications.americanalpineclub.org/articles/12200319301"
+  }
+}

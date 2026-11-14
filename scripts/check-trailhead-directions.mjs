@@ -1,3 +1,5 @@
+import { fileHref } from "./lib/file-href.mjs";
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // ONE way to drive to the trailhead per screen, the coordinates beside it, and a label that
 // describes the value under it.
 //
@@ -57,7 +59,7 @@ try {
   fs.writeFileSync(entry, `export { default as RouteDetail } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};\n`);
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle in
   // the OS temp dir throws ERR_MODULE_NOT_FOUND.
-  execFileSync("npx", ["esbuild", entry,
+  execFileSync(NPX, [...NPX_PRE, "esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -73,7 +75,7 @@ if (typeof globalThis.WebSocket === "undefined") {
   globalThis.WebSocket = class { constructor() { throw new Error("probe: no realtime"); } };
 }
 
-const { RouteDetail } = await import(out + "?t=" + Date.now());
+const { RouteDetail } = await import(fileHref(out + "?t=" + Date.now()));
 if (typeof RouteDetail !== "function") dead("RouteDetail.jsx has no default export — ANCHOR LOST");
 
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false, refetchOnMount: false } } });
@@ -158,7 +160,7 @@ const pTxt = text(plan), nTxt = text(noCoord), coTxt = text(cragOv), cpTxt = tex
    is not matched and neither is a paragraph that merely says "drive here". */
 /* "Google Maps" / "Apple Maps" are CragLocationCard's pair: ONE destination offered in two apps,
    counted as one offer below (cragOffer), never as two destinations. */
-const DRIVE_LABEL = /^(?:Drive here|Directions to (?:trailhead|crag) \(Google Maps\)|Google Maps|Apple Maps)$/;
+const DRIVE_LABEL = /^(?:Directions to (?:trailhead|crag) \(Google Maps\)|Google Maps|Apple Maps)$/;
 const cragOffer = (html) => { const c = driveControls(html); return c.length === 2 && c.includes("Google Maps") && c.includes("Apple Maps"); };
 const driveControls = (html) => [...html.matchAll(/<(a|button)\b[^>]*>([^<]*)<\/\1>/g)]
   .map((m) => m[2].replace(/&amp;/g, "&").trim())
@@ -181,8 +183,8 @@ ok("both GETTING THERE panels, TrailheadCard and the APPROACH heading render, so
    Section 1b asserts that directly rather than leaving it implied. */
 for (const [n, html] of [["Plan tab", plan]]) {
   const c = driveControls(html);
-  if (c.length === 1) ok(`${n}: exactly one drive control (${JSON.stringify(c[0])})`);
-  else fail(`${n}: ${c.length} drive control(s) — ${JSON.stringify(c)}. One destination must be offered once.`);
+  if (cragOffer(html)) ok(`${n}: one drive offer, in two apps (Google Maps + Apple Maps to one destination)`);
+  else fail(`${n}: ${c.length} drive control(s) — ${JSON.stringify(c)}. One destination must be offered once, as the Google Maps + Apple Maps pair.`);
 }
 
 // ── 1b. one PAGE, one GETTING THERE — a crag says it once, on Overview ───────────────────────────
@@ -206,7 +208,7 @@ for (const [n, html] of [["a crag with plan content", cragDup], ["a crag with no
    two headings is the invariant. */
 const iGetting = pTxt.indexOf("GETTING THERE");
 const iApproach = pTxt.indexOf("APPROACH", iGetting);
-const iDrive = pTxt.indexOf("Drive here");
+const iDrive = pTxt.indexOf("Google Maps");
 if (iDrive > iGetting && iApproach > iGetting && iDrive < iApproach) ok("the Plan tab's control sits between GETTING THERE and APPROACH");
 else fail(`the drive control is not with GETTING THERE (GETTING THERE @${iGetting}, control @${iDrive}, APPROACH @${iApproach})`);
 
@@ -325,6 +327,40 @@ if (eOB < eOBc) ok("...and an out-and-back whose column holds the ROUND TRIP get
 else fail("an out-and-back route whose stored column holds the round trip did not get a SHORTER estimate - the direction is inverted");
 if (ePT > ePTc) ok("a recorded point-to-point gets a LONGER walk, so the planner is not halving unconditionally");
 else fail("a recorded point-to-point route did not get a longer estimate - either the planner is reading the stored column again, or it halves unconditionally; the assertions above say which");
+
+/* -- 9. TRAILHEAD TO SUMMIT / SUMMIT TO TRAILHEAD sit with GETTING THERE ---------------------------
+   The owner (2026-10-21) asked for the two legs -- time, gain, distance -- beside the drive and the
+   coordinates, the way The Mountaineers print a route's trip profile. SummitLegsCard renders them
+   directly under the TRAILHEAD card. Asserted: both legs render, AFTER the coordinates and BEFORE
+   ACCESS & REGULATIONS, and their times are planTimes()' -- the fixture stores approach 3 + summit 2
+   + descent 2.5 with a 10 km out-and-back walk, so up reads 5 hr and down the stored 2.5 is beaten
+   by the walk down (10 km and 5,000 ft is longer than 2.5 hr, and the descent is the longer of
+   the two), so what is asserted is that the down leg has its own time and is not the up leg. Distance per leg is the one-way walk, ~6.2 mi. */
+const legsHtml = render(ROUTE({ distKm: 10, gainFt: 5000, gainM: 1524, lossFt: 5000, lossM: 1524, timing: { approachTimeHrs: 3, summitTimeHrs: 2, descentTimeHrs: 2.5, totalHrs: 7.5 } }), "planner");
+const lt = text(legsHtml);
+const iCoord = lt.indexOf(COORD), iUp = lt.indexOf("TRAILHEAD TO SUMMIT"), iDown = lt.indexOf("SUMMIT TO TRAILHEAD"), iAccess = lt.indexOf("ACCESS & REGULATIONS");
+if (iUp < 0 || iDown < 0) fail("the TRAILHEAD TO SUMMIT / SUMMIT TO TRAILHEAD legs did not render on a route with stored times, a gain and a distance");
+else {
+  if (iCoord >= 0 && iCoord < iUp && iUp < iDown && (iAccess < 0 || iDown < iAccess)) ok("the two legs render under the trailhead coordinates, before ACCESS & REGULATIONS");
+  else fail("the two legs render, but not between the trailhead coordinates and ACCESS & REGULATIONS - they belong with GETTING THERE");
+  const upSeg = lt.slice(iUp, iDown), downSeg = lt.slice(iDown, iDown + 200);
+  /* The owner's trip-profile request (2026-10-25) puts a TIME on every leg, and the times must agree
+     across sections. So each leg carries its time, gain and distance, and the time is written as
+     "5.2hr" (the Full trip time card's format). The regex is not \bhr\b: a word boundary does not sit
+     between a digit and "h", so that test matches nothing and passes for the wrong reason. */
+  const TIME_RE = /[≥]?\d+\.\d+hr/;
+  const upT = upSeg.match(TIME_RE), downT = downSeg.match(TIME_RE);
+  if (/5,000 ft/.test(upSeg) && /6\.2 mi/.test(upSeg) && upT) ok("TRAILHEAD TO SUMMIT carries the whole gain, the one-way distance and a time (" + upT[0] + ")");
+  else fail("TRAILHEAD TO SUMMIT does not read 5,000 ft / 6.2 mi with a time: " + upSeg.slice(0, 160));
+  if (/6\.2 mi/.test(downSeg) && downT) ok("SUMMIT TO TRAILHEAD carries the one-way distance and a time (" + downT[0] + ")");
+  else fail("SUMMIT TO TRAILHEAD is missing its distance or its time: " + downSeg.slice(0, 160));
+  /* THE DESCENT SECTION REPEATS THE LEG, and the two must print the same time: that is the match the
+     owner asked for. The second "SUMMIT TO TRAILHEAD" in the text is the DESCENT section's strip. */
+  const iDescStrip = lt.indexOf("SUMMIT TO TRAILHEAD", iDown + 1);
+  const descT = iDescStrip > 0 ? lt.slice(iDescStrip, iDescStrip + 200).match(TIME_RE) : null;
+  if (descT && downT && descT[0] === downT[0]) ok("the DESCENT section's time matches the SUMMIT TO TRAILHEAD leg (" + descT[0] + ")");
+  else fail("the DESCENT section does not print the same time as the SUMMIT TO TRAILHEAD leg (leg " + (downT ? downT[0] : "none") + ", descent " + (descT ? descT[0] : "none") + ")");
+}
 
 console.log("");
 if (failures) {

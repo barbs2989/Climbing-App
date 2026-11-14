@@ -21,9 +21,16 @@ or a data update that a later session has since corrected:
 
 ```sql
 insert into supabase_migrations.schema_migrations (version, name)
-values ('0225', 'declare_four_hand_built_indexes')   -- number, and the file name after it
-on conflict (version) do nothing;
+values ('0225', 'declare_four_hand_built_indexes');  -- number, and the file name after it
 ```
+
+**No `on conflict (version) do nothing`.** This page used to say to add it, and on 2026-10-14 it
+hid a collision: 0286 was applied by hand while another PR had already merged its own 0286, so the
+record line found the number taken, did nothing, and the apply reported success, leaving the change
+recorded under nobody's name (it was renumbered 0288 and recorded then). A plain insert fails on a
+taken number. Put it before the file's `commit;` and the whole apply rolls back; then renumber and
+re-run. After an apply, check the NAME as well as the version:
+`select name from supabase_migrations.schema_migrations where version = '0225'`.
 
 `npx supabase migration list --linked` shows local and recorded versions side by side; every file
 on `main` should have both columns filled.
@@ -71,6 +78,13 @@ To check before pushing, the owner's session keeps a PGlite replay harness (it s
 2. If you replace a function used in an index predicate, the index must be **DROP + CREATE**.
    `REINDEX` is a no-op: the predicate is stored inlined in `pg_index.indpred`, and REINDEX
    rebuilds from that stored copy. See `0067` for the detail and the verified evidence.
+3. **An area FOLD repoints every area-keyed climber table before it deletes the area.** The
+   convention (0292's shape, step 3): `topos`, `contributions`, **`crews`** (0302, FK with no
+   cascade — a session at the folded crag moves to the keeper, it is never lost) and
+   **`partner_areas`** (0300, cascades, so a listing silently vanishes unless repointed first).
+   Write the four `update … set area_id = d.into_area from m_drop_area d where …` lines together and
+   re-count all four afterwards. The refusal counter stays as it is: a same-place fold MOVES a
+   session or a listing, it does not lose one.
 
 ## Related habit
 

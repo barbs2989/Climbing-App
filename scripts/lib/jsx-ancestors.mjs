@@ -26,7 +26,7 @@ import _traverse from "@babel/traverse";
 const traverse = _traverse.default || _traverse;
 
 export function parseJsx(code) {
-  return parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: true });
+  return parse(code, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true });
 }
 
 // The inline `style={{…}}` of one JSX element, as a flat {prop: rawSourceText} map.

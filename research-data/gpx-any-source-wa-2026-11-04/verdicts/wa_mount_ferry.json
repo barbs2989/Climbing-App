@@ -1,0 +1,28 @@
+{
+ "area_id": "wa_mount_ferry",
+ "routes": [
+  {
+   "route_id": "wa_mount_ferry_standard",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep; logged ascents Jul 8, Aug 24, Sep 4; web: late Jul-Aug best, snow in gullies into August, firm snowfields in mid-September."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "1479049",
+     "verdict": "different",
+     "why": "Multi-day Bailey Range Traverse one-way from Sol Duc, camp-based, ends 44 km away; summit reached but not a trailhead-to-summit track."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Bailey Range traverse peak; no qualifying track."
+}

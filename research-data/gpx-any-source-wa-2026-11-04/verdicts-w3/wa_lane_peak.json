@@ -1,0 +1,59 @@
+{
+  "area_id": "wa_lane_peak",
+  "routes": [
+    {
+      "route_id": "wa_lane_peak_r1",
+      "season": { "months": [1,2,3,4,5], "window": "Jan-May", "evidence": "Logged ascents named Zipper cluster Jan-May (Dec and one June 2010 outing exist but are thin); Mountaineers route page and several Cascade Climbers/turns-all-year reports describe late winter to early spring as the good window for the north-face couloirs; stored Dec-Jun is the outer edge, Dec/Jun marginal." },
+      "track": { "aid": "939844", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route is The Zipper, 18 Mar 2018, summited (3 m from our summit coordinate). Line leaves the Narada Falls lot, crosses to the basin under the north face, climbs the central couloir to the ridge and returns over the east side; same line as the other three Zipper-named recordings. Fails our trailhead check only because r1's single pin is Reflection Lakes (about 1.2 km away) while r1's own approach text names Narada Falls as the winter/spring start; with the Narada pin added it is a round trip (start 146 m, end 23 m from that lot)." },
+      "otherTracksConsidered": [
+        { "aid": "786355", "verdict": "unsure", "why": "Apr 2017 Zipper, summited, same line and also a Narada round trip; equally valid, sparser than 939844." },
+        { "aid": "1923468", "verdict": "unsure", "why": "May 2022 Zipper, same line, very sparse." },
+        { "aid": "677991", "verdict": "unsure", "why": "Apr 2016 Zipper, same line, sparse." },
+        { "aid": "1857400", "verdict": "not-summited", "why": "Feb 2022 Zipper, skipped the summit." },
+        { "aid": "3298827", "verdict": "offseason", "why": "Aug 2026 scramble up the south side from Reflection Lakes: the summer Classic Route, not this couloir." },
+        { "aid": "3298816", "verdict": "offseason", "why": "Aug 2026 summer scramble, the Classic Route." },
+        { "aid": "1020817", "verdict": "different", "why": "Aug 2018 Pinnacle Saddle approach, summer scramble." },
+        { "aid": "1778336", "verdict": "different", "why": "Oct 2021 Denman-Lane Ridge, summer scramble." },
+        { "aid": "797472", "verdict": "different", "why": "Apr 2017 South Face standard route (snow-covered scramble), not the couloir." },
+        { "aid": "528230", "verdict": "different", "why": "May 2015 SE Ledges, south side." },
+        { "aid": "465925", "verdict": "different", "why": "Oct 2014 South Gully, south side." },
+        { "aid": "1658014", "verdict": "unsure", "why": "May 2021 report clearly describes the Zipper and a summit, but the packet carries no track line for it." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "add", "lat": 46.775, "lng": -121.74611, "name": "Narada Falls parking (winter and spring start)",
+          "evidence": "All four Zipper-named recordings start and end at this lot (46.7748-46.7752, -121.7465), and r1's own approach text names Narada Falls as the start whenever the Stevens Canyon road is gated. The falls and its roadside lot are one spot on the highway. Not within 50 m of the stored Reflection Lakes pin and a different name.",
+          "confirmedBy": "https://en.wikipedia.org/wiki/Narada_Falls (coordinate 46.77500, -121.74611); same point already stored for the neighbouring Lover's Lane route as 'Narada Falls trailhead/parking'" }
+      ],
+      "facts": [
+        { "field": "pro_tips", "month": 5, "text": "In mid-May, be inside the shaded couloir by about 9 am; snow in the sun below it was already softening later in the morning.", "aids": ["1658014"] },
+        { "field": "watch_out", "month": 5, "text": "Mid-May: the creek crossing below the basin may lose its snow bridge well before the couloir itself goes out.", "aids": ["1658014"] },
+        { "field": "pro_tips", "month": 5, "text": "At the couloir exit, heading straight up onto the right-hand rock turned loose and nearly low-5th in mid-May; bearing south to a snow finger gave a class 3 slot to the top.", "aids": ["1658014"] },
+        { "field": "what_to_bring", "month": 4, "text": "snowshoes or skis for the approach (fresh snow, Jan-Apr)", "aids": ["786355", "797472", "1923468"] }
+      ]
+    },
+    {
+      "route_id": "wa_lane_peak_r2",
+      "season": { "months": [1,2,3,4,5], "window": "Jan-May", "evidence": "Logged Fly ascents fall Feb-May; same winter/spring window as the Zipper per the Mountaineers route page and Cascade Climbers/turns-all-year reports (Jan and Apr Fly trips); stored Dec-Jun kept as outer edge." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1853697", "verdict": "not-summited", "why": "Feb 2022 Fly, turned back by choice; also not a summit." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 2, "text": "In winter the Paradise road closes at a fixed daily time, so size the day to be back at Narada Falls before it; one February party dropped the summit for exactly this reason.", "aids": ["1853697"] }
+      ]
+    },
+    {
+      "route_id": "wa_lane_peak_r3",
+      "season": { "months": [1,2,3,4,5], "window": "Jan-May", "evidence": "Logged Lover's Lane ascents fall Jan (3), Feb (6), Apr (3-4), May (1); Mountaineers route page pairs it with the Zipper as a winter climb; stored Dec-May consistent." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "939844", "verdict": "different", "why": "Logged as The Zipper; nothing in the report or line names Lover's Lane, and one ascent goes to one route." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Packet routes are the three couloirs. The summer scramble (wa_classic_route_3, Class 4) is the route the Aug 2026 Reflection Lakes recordings and the Oct/Aug south-side logs belong to; it already has a track (144 pts) so it was not in this packet. Aug 7 2026 tracks 3298827/3298816 are summer scrambles, not couloir climbs. r1's only Trailhead pin is Reflection Lakes but its own text says winter/spring parking is Narada Falls, hence the added pin. Two Zipper ascents are logged against 'South Gully' on the way down only. Lover's Lane has plenty of in-season ascents on Peakbagger but none were harvested with a track."
+}

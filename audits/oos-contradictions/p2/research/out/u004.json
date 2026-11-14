@@ -1,0 +1,27 @@
+{
+ "file": "u004",
+ "results": [
+  {
+   "id": "ga_the_lowers_fourteen",
+   "fact": "aid grade",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A0",
+   "evidence": "grade (5.8 A0) and aid_grade_num (0) agree against aid_grade A1; the route listing and the Lowers area list both give A0 (first bolt aided, then free). [Lead review: patch dropped — standing rule 'keep the higher grade' forbids lowering A1 to A0 on one source.] [Lead decision, final: no source gives A1; both listings and the row's own grade/aid_grade_num say A0. Keep-the-higher protects a PUBLISHED grade from an older lower one; an unsourced outlier is not that, and the owner's 2026-10-01 leftovers rule accepts one source. aid_grade set to A0.]",
+   "sources": [
+    "https://www.mountainproject.com/route/200326501",
+    "https://www.mountainproject.com/area/106086327/the-lowers"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "aid_grade",
+     "path": [],
+     "expect": "A1",
+     "value": "A0",
+     "id": "ga_the_lowers_fourteen",
+     "fact": "aid grade"
+    }
+   ]
+  }
+ ]
+}

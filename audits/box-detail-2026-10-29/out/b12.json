@@ -1,0 +1,48 @@
+{
+ "wa_southeast_ridge_se_corner": {
+  "boxes": {
+   "P1-3": {
+    "notes": "Reach the start notch by scrambling around the bergschrunds, about 100 ft above the base of the pyramid. The first pitch is class 3 on solid rock with good cracks for gear up to about 1.5 in; the next two are easy 4th class with horns for slings or terrain belays."
+   }
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": ["https://www.mountainproject.com/route/114984342/southeast-ridge-se-corner"],
+   "changed": "Wrote P1-3 only (terrain split between class 3 and easy 4th, horns, crack protection, bergschrund scramble to the notch). P4-6 not in batch. Second page (SummitPost Southeast Corner) returned 403, so only one full page read.",
+   "other_findings": "Search snippets disagree on difficulty of the upper pitches (5.3-5.4 vs a 5.6 report); the stored 5.6/5.7 crest-steps note is not confirmed by the page read."
+  }
+ },
+ "wa_tenpeak_mountain_north_couloir": {
+  "boxes": {
+   "Summit pitch": {
+    "notes": "The couloir tops out on the ridge. From there easy rock scrambling leads over to the NW Ridge, where a single 5.4 rock pitch reaches the summit. One party used a rappel anchor and downclimbed the rest on the way off."
+   }
+  },
+  "review": {
+   "confidence": "low",
+   "sources": ["https://stephabegg.com/?p=8925"],
+   "changed": "Wrote the summit pitch from one trip report; no length, gear or anchor details stated, so none added. The ski report read did not go to the summit.",
+   "other_findings": "None."
+  }
+ },
+ "wa_three_fingers_south_peak_lookout": {
+  "boxes": {
+   "Goat Flats to Tin Can Gap": {
+    "notes": "Mostly above treeline: follow the ridge above the flats until it steepens, then traverse right across a south-facing slope to the gap. Easy trail in summer; wet slides and cornices are a concern in winter and spring. The maintained trail effectively ends at the gap."
+   },
+   "Tin Can Gap across the Queest-Alb Glacier edge": {
+    "notes": "Cross or skirt a small, steep snowfield on the north side of the ridge, then cross the ridge onto the south face and return north at the top of the glacier. Late summer, a moat between ice and rock can be followed. A slip near the glacier slides about 200 ft into rock, so carry an axe, and consider crampons and a rope. Ends at a snowfield below the summit rock."
+   }
+  },
+  "review": {
+   "confidence": "medium",
+   "sources": ["https://www.wta.org/go-hiking/hikes/three-fingers", "https://stephabegg.com/trip-reports/washington/three-fingers-lookout/"],
+   "changed": "Wrote both boxes from two pages; no lengths stated for these segments so none added. Mixed winter ski-report conditions limited to a short hazard note.",
+   "other_findings": "Stored approach says Goat Flats to the gap is about 2 miles; neither page gives that segment distance. Stored pitch label for the glacier box says crevasse hazard; pages show conditions vary a lot by year."
+  }
+ },
+ "skip_reasons": {
+  "wa_the_horn_scramble": "Mountaineers pages for The Fin/Horn returned 403 and the forum report did not load; only search snippets, no full page read of the traverse.",
+  "wa_the_monk_west_cracks_left_crack": "Only the Right Crack page exists online; nothing found describing the Left Crack pitch beyond the stored note."
+ }
+}

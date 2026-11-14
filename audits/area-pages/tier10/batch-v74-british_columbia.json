@@ -1,0 +1,35 @@
+{
+ "bc_shaketown": {
+  "_expect": { "name": "Shaketown", "region": "British Columbia" },
+  "blurb": "Shaketown is a compact sport crag south of Revelstoke, split into three short cliffs of roughly fifteen metres. All 16 routes are bolted, and the grades run from the upper 5.7 range through 5.11 with a couple of harder lines, with the bulk of them sitting in the 5.10 to 5.11 band. The walls are steep and fingery, which gives the place a gym-like feel, and the routes are short enough that a full session fits in a few hours. The cliffs face south, so they catch plenty of sun. The walk from the parking lot is only a couple of minutes on a faint path, making it a handy option for a quick outing or for newer leaders stepping up.",
+  "aspect": "S",
+  "review": { "sources": ["https://sendage.com/area/shaketown-revelstoke-bc-canada", "https://www.mountainproject.com/area/119530190/shaketown"] }
+ },
+ "bc_hippy": {
+  "_expect": { "name": "Hippy", "region": "British Columbia" },
+  "blurb": "Hippy is one of the bouldering sectors at Grohman Narrows, on the river corridor between Nelson and Castlegar. It holds about fifteen problems, spread fairly evenly from easy warm-ups through the mid grades, with a handful of harder problems up to around V5. The rock is the fine-grained, textured granite found across the Narrows, which rewards slopers, smeary feet and committed top-outs in a style often compared to Squamish. Most of the sectors at the Narrows are within a short walk of the trailhead, so it combines well with neighbouring boulders for a full day. Bring a few pads and expect natural, uncleaned landings.",
+  "review": { "sources": ["https://thetopo.com/crags/grohman-narrows/topos/hippy-boulder", "https://www.mountainproject.com/area/109462111/grohman-narrows"] }
+ },
+ "bc_hatzic_prairie": {
+  "_expect": { "name": "Hatzic Prairie", "region": "British Columbia" },
+  "blurb": "Hatzic Prairie is a small roadside crag in the Mission area of the Fraser Valley, east of Vancouver. It is a short cliff, only about fifteen metres high, with a mix of sport bolting and traditional lines, plus a few spots that suit a top-rope setup. The 16 routes range from easy 5.7 climbing up through the 5.11s, with a few hard lines above that, so there is something for most leaders. It catches sun early in the day and tends to see few other parties. The wall points toward the east, so it gets pleasant in the morning and cools off by mid-afternoon in summer.",
+  "review": { "sources": ["https://mountainproject.com/area/107203481/hatzic-prairie", "https://bcmc.ca/events/1400547658"] }
+ },
+ "bc_electric_avenue_west_face": {
+  "_expect": { "name": "Electric Avenue West Face", "region": "British Columbia" },
+  "blurb": "The West Face is the broad, low-angle wall on one side of Electric Avenue in Cheakamus Canyon, along the Sea to Sky corridor south of Whistler. Its 15 sport routes lean toward gentle, beginner-friendly terrain, starting at very easy grades and running up to 5.9, with most falling in the 5.6 to 5.9 range. A low belay ledge in the middle of the face is a favourite for teaching anchor building and multi-pitch skills. The face looks east, so it falls into shade in the afternoon, and the base is a flat, shared belay area just a short walk from the road.",
+  "approach": "A short walk of about five minutes up the forest road and across the flat belay area to the base of the face.",
+  "approach_min": 5,
+  "review": { "sources": ["https://www.mountainproject.com/area/124775706/electric-avenue-west-face", "https://www.mountainproject.com/area/116961775/electric-avenue"] }
+ },
+ "_skipped": {
+  "bc_the_shire_2": "only one fetched page about the crag itself (Mountain Project); no second Revelstoke Shire page fetchable",
+  "bc_nordic_crag": "only one fetched page about the crag itself (Mountain Project); no second page found",
+  "bc_high_society": "no fetched page about the sector itself; only the parent Ladybird Creek page",
+  "bc_corral_crag": "no fetched page about Corral Crag in Gilpin Grasslands BC; Mountain Project hits were a Utah Corral Crags area"
+ },
+ "_conflicts": {
+  "bc_nordic_crag": "Mountain Project (https://www.mountainproject.com/area/200792387/nordic-crag) says limestone, stored rock is metamorphic rock; skipped anyway",
+  "bc_electric_avenue_west_face": "Parent page (https://www.mountainproject.com/area/116961775/electric-avenue) says mostly 5.10 and harder, own page (https://www.mountainproject.com/area/124775706/electric-avenue-west-face) says low-angle 5.2 to 5.9; blurb follows stored stats and the own page"
+ }
+}
