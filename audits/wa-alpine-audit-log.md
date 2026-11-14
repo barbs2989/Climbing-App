@@ -39130,3 +39130,14 @@ exactly; Sept 16, 1965 Firey/Meulemans/Hovey FA confirmed via SummitPost).
 
 0 confirmed errors fixed, 1 flagged for human review (reconfirmed, not new), 7 clean.
 Next batch will continue id-ascending from `wa_austera_peak_southwest_ridge` (pass 9).
+
+## 2026-11-14 — Outage (no batch), attempted after `wa_austera_peak_southwest_ridge`
+
+Supabase (`ofuofhojhbcrcahuotya`) did not respond to any PostgREST table query this run. Same
+signature as the 2026-11-05 outage: `GET /rest/v1/` answered fast (401, as expected without a
+session), but every query against `routes` or `areas` — including a trivial `select id limit 1`
+and the id-range query for the next batch — timed out client-side with zero bytes after 20-35s,
+across seven attempts over several minutes. The agent proxy's own status endpoint showed no
+relay failures, ruling out a proxy-side cause. No batch processed, no SQL written, progress
+unchanged. Next batch will still continue id-ascending from `wa_austera_peak_southwest_ridge`
+(pass 9) once the database is reachable again.

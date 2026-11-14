@@ -11038,6 +11038,13 @@
       "result": "no batch processed -- Supabase project (ofuofhojhbcrcahuotya) did not respond to any PostgREST table query (routes, areas) this run",
       "detail": "apikey/auth gateway endpoints (GET /rest/v1/ root, GET /auth/v1/health) answered in under a second; every query touching an actual table (routes, areas) via /rest/v1/ timed out with zero bytes after 30-110s client-side, and once with an explicit 504 \"upstream request timeout\" from the proxy after ~137s. Six separate attempts over roughly 10 minutes, same result every time. This looks like a DB-side outage/pause on the Supabase project itself, not a network/proxy/credential problem on this side.",
       "last_processed_id_unchanged": true
+    },
+    {
+      "date": "2026-11-14",
+      "attempted_after": "wa_austera_peak_southwest_ridge",
+      "result": "no batch processed -- Supabase project (ofuofhojhbcrcahuotya) did not respond to any PostgREST table query (routes, areas) this run",
+      "detail": "Same signature as the 2026-11-05 outage. GET /rest/v1/ root answered in ~0.2s (401, expected without a valid session -- gateway itself is reachable), but this time GET /auth/v1/health also timed out, and every /rest/v1/routes and /rest/v1/areas query (plain select id limit 1, and the id-range query for the next batch) timed out client-side with zero bytes after 20-35s each. Seven attempts across both tables and both gateway/table endpoints over several minutes, same result every time. Checked the agent proxy status (GET $HTTPS_PROXY/__agentproxy/status): no recentRelayFailures, confirming this is not a proxy-side problem. This again looks like a DB-side outage/pause on the Supabase project itself.",
+      "last_processed_id_unchanged": true
     }
   ]
 }
