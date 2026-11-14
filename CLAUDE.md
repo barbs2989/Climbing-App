@@ -52,6 +52,7 @@ npm run check:dup-attrs # a declaration written TWICE: the later wins, the earli
 npm run check:no-module-scope-core-reads # a component core imports BACK must not read core at module scope — the bundle throws before React mounts (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
+npm run check:page-swipe # swiping a page's tabs on a phone (lib/pageSwipe.js): which tab a drag lands on, which touches it leaves to rows/sliders/maps/charts, every tab page still wired (in build)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:boot # index.html's boot placeholder AND the Help tour still match the real nav
 npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)

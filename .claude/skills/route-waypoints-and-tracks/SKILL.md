@@ -19,6 +19,8 @@ description: Place ClimbMatch route waypoints on the exact map spot (summit, tra
 
 **Not usable — and agents do not even open them to compare:** AllTrails, Gaia GPS, CalTopo,
 Strava, Wikiloc, Peakbagger tracks, Mountain Project / Hiking Project.
+**Tracks already stored from these sources are KEPT** (owner, 2026-11-14); the rule applies
+to new tracks only.
 
 ### What may be drawn
 - A **recorded track** draws as today (ascent blue, descent orange). It must: have ≥10 points
@@ -36,13 +38,14 @@ sits within 50 m of the track. Elevation comes from official data, never a websi
 
 | pin type | placed at | second check |
 |---|---|---|
-| `Summit` | the **USGS official summit point, exactly** (not moved to the DEM high point); elevation = USGS published figure | the route's summit named in a source; track reaches it |
+| `Summit` | the **USGS official summit point, exactly** (not moved to the DEM high point); elevation = the **published official figure** (land manager / survey), USGS elevation model only as fallback | a second USGS feature for the top (e.g. "Columbia Crest" within 6 m of "Mount Rainier"); track reaches it |
 | `Trailhead` | the **parking lot** (the *Drive here* button's target), from an OSM parking/trailhead node | USFS / recreation.gov trailhead point |
 | `Junction` | the exact OSM node where the two mapped trails meet | the junction named in the route text |
 | `Water` | where the named creek crosses the track, or the lake shore nearest it (`scripts/oneoff/add-water-pins.mjs`) | named in the route text |
 | `Campsite` | OSM / USFS designated site, or the named lake / meadow feature | named in a source |
 | `Base` (start of climbing) | the mapped feature a source names (col, notch, glacier edge, end of trail); crags use the base check-in consensus | named in a source |
-| `Hazard`, `Topout` | only on a named, mappable feature | named in a source |
+| `Hazard`, `Topout` | only on a named, FIXED mappable feature. **Things that move each season (a named crevasse, bergschrund, snow bridge) get no pin** — text only | named in a source |
+| landmark `Junction` (a knoll, viewpoint, rock band the route passes) | **on the trail/track at the point nearest the landmark's USGS point**, not on the landmark (Panorama Point's top is 139 m off the trail) | the landmark named in the route text |
 
 **Every WA alpine route aims for:** Trailhead, Summit, every trail Junction, Water, Camps,
 Base. Missing ones stay missing until a real placement exists.
