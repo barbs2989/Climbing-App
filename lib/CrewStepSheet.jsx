@@ -12,11 +12,14 @@
 import { createPortal } from "react-dom";
 import { C } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "./popupChrome.js";
-import { BTN_GO, BTN_SECONDARY } from "./buttonStyles.js";
+import { BTN_PRIMARY, BTN_SECONDARY } from "./buttonStyles.js";
 import { useWideScreen } from "./wideLayout.js";
 
-export default function CrewStepSheet({ title, stepNo, stepOf, sub, onClose, nextLabel, onNext, children }) {
+export default function CrewStepSheet({ title, stepNo, stepOf, sub, onClose, nextLabel, onNext, stepDone, children }) {
   const wide = useWideScreen();
+  /* The crew card's solid blue (its "Propose days" / "Remind or invite" buttons), not BTN_GO's green,
+     which buttonStyles.js keeps for saying yes to a person or recording a climb. */
+  const SOLID = { ...BTN_PRIMARY(C), background: C.blueSolid, border: "1px solid " + C.blueSolid, color: C.onSolid };
   const close = (e) => { if (e) e.stopPropagation(); onClose && onClose(); };
   return createPortal(<div onClick={close} role="dialog" aria-modal="true" aria-label={title} style={{ position: "fixed", inset: 0, zIndex: 1200, background: C.scrim, display: "flex", alignItems: wide ? "center" : "flex-end", justifyContent: "center", padding: wide ? 16 : 0, boxSizing: "border-box" }}>
     <div onClick={(e) => e.stopPropagation()} style={{ background: C.surface, color: C.text, borderRadius: wide ? 18 : "18px 18px 0 0", border: "1px solid " + C.border, width: "100%", maxWidth: 520, boxSizing: "border-box", maxHeight: wide ? "88vh" : "90vh", display: "flex", flexDirection: "column", boxShadow: "0 -10px 40px rgba(0,0,0,0.5)" }}>
@@ -30,8 +33,13 @@ export default function CrewStepSheet({ title, stepNo, stepOf, sub, onClose, nex
       </div>
       <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "14px 16px" }}>{children}</div>
       <div style={{ display: "flex", gap: 10, padding: "10px 16px calc(12px + env(safe-area-inset-bottom, 0px))", borderTop: "1px solid " + C.borderLight, flexShrink: 0 }}>
-        <button type="button" onClick={close} style={{ ...BTN_SECONDARY(C), flex: onNext ? "0 0 auto" : 1, minHeight: 44, minWidth: 96 }}>Done</button>
-        {onNext ? <button type="button" onClick={(e) => { e.stopPropagation(); onNext(); }} style={{ ...BTN_GO(C), flex: 1, minHeight: 44 }}>{"Next: " + nextLabel + " ›"}</button> : null}
+        {/* THE FOOTER NEVER REFLOWS (owner 2026-11-14: "the Done needs to be a more clear button"). Next
+            used to appear only once the step was done, so Done swapped from full width to a narrow grey
+            outline under the pointer -- a tap meant for Done landed on Next. Both now sit in the same
+            places whenever there is a next step; the one you most likely want is the solid button:
+            Done while the step is still waiting on someone, Next once it is done. */}
+        <button type="button" onClick={close} style={{ ...(onNext && stepDone ? BTN_SECONDARY(C) : SOLID), flex: onNext ? "0 0 auto" : 1, minHeight: 44, minWidth: 110, fontWeight: 800 }}>✓ Done</button>
+        {onNext ? <button type="button" onClick={(e) => { e.stopPropagation(); onNext(); }} style={{ ...(stepDone ? SOLID : BTN_SECONDARY(C)), flex: 1, minHeight: 44, fontWeight: 800 }}>{"Next: " + nextLabel + " ›"}</button> : null}
       </div>
     </div>
   </div>, document.body);
