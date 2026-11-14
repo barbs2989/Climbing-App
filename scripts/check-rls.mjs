@@ -96,6 +96,8 @@ const functions = new Map();
 const policies = new Map();
 // views:     name -> { created: file, readOnly: file|null } — rule 5
 const views = new Map();
+// execGrants: function name -> Set of roles holding EXECUTE ("public" covers every role) — rule 6
+const execGrants = new Map();
 
 // Matches `create policy "x" on t for insert with check ( ... );` — balanced to the final
 // semicolon at depth 0, because a policy body is full of parenthesised subqueries and a
@@ -161,6 +163,7 @@ for (const f of files) {
     }
     functions.set(name, {
       body,
+      trigger: /returns\s+(event_)?trigger\b/i.test(head),
       definer: definer || (prev ? prev.definer : false),
       // `create or replace` RESETS function settings, so a later CREATE without one un-pins it.
       searchPath: sp ? sp[1].trim() : null,
@@ -175,6 +178,29 @@ for (const f of files) {
   for (const m of sql.matchAll(/drop\s+function\s+(?:if\s+exists\s+)?([a-z_0-9.]+)/gi)) {
     const name = m[1].replace(/^public\./, "");
     if (functions.has(name)) functions.get(name).dropped = true;
+  }
+
+  // EXECUTE grants, in statement order — rule 6. No migration alters default privileges, so a NEW
+  // function is executable by public, anon and authenticated (Supabase's defaults); `create or
+  // replace` keeps whatever grants the function already had; a DROP forgets them. `revoke all` and
+  // `revoke execute` remove roles, `grant execute`/`grant all` add them.
+  const fEvents = [];
+  for (const m of sql.matchAll(/create\s+(?:or\s+replace\s+)?function\s+([a-z_0-9.]+)\s*\(/gi)) fEvents.push({ at: m.index, kind: "create", name: m[1] });
+  for (const m of sql.matchAll(/drop\s+function\s+(?:if\s+exists\s+)?([a-z_0-9.]+)/gi)) fEvents.push({ at: m.index, kind: "drop", name: m[1] });
+  for (const m of sql.matchAll(/\b(grant|revoke)\s+(all(?:\s+privileges)?|execute)\s+on\s+function\s+([a-z_0-9.]+)\s*(?:\([^;]*?\))?\s+(?:to|from)\s+([a-z_,\s]+?)\s*(?:cascade|restrict)?\s*;/gi)) {
+    const roles = m[4].toLowerCase().split(",").map((r) => r.trim()).filter(Boolean);
+    fEvents.push({ at: m.index, kind: m[1].toLowerCase(), name: m[3], roles });
+  }
+  fEvents.sort((a, b) => a.at - b.at);
+  for (const e of fEvents) {
+    const n = e.name.replace(/^public\./, "");
+    if (e.kind === "drop") execGrants.delete(n);
+    else if (e.kind === "create") { if (!execGrants.has(n)) execGrants.set(n, new Set(["public", "anon", "authenticated"])); }
+    else {
+      if (!execGrants.has(n)) execGrants.set(n, new Set(["public", "anon", "authenticated"]));
+      const s = execGrants.get(n);
+      for (const r of e.roles) e.kind === "grant" ? s.add(r) : s.delete(r);
+    }
   }
 
   // Views, in statement order: a DROP then CREATE starts a fresh object, which Supabase's default
@@ -329,11 +355,85 @@ for (const [v, e] of views) {
 if (views.size < 3) dead(`only ${views.size} view(s) parsed — the create-view parse broke`);
 if (!writableViews) ok(`all ${views.size} view(s) are read-only to anon and authenticated`);
 
+// ── rule 6: a definer function a CLIENT can call must ask who is calling ──────
+// A SECURITY DEFINER function runs as its owner, which RLS does not hold, so every row it reads or
+// writes is outside RLS. Pinning search_path (rule 2) stops it being hijacked; it does nothing about
+// WHO may call it. Supabase exposes every function to /rest/v1/rpc, and a new function is executable
+// by anon and authenticated until a migration revokes it. So a definer function the client roles can
+// still call must either read the caller's identity (auth.uid()/jwt()/role(), or a helper whose latest
+// body does — the same test rule 4 uses) or be listed below as deliberately public, with the reason.
+// Triggers are skipped: PostgREST cannot invoke them. Fix a failure by revoking:
+//   revoke all on function public.f(...) from public, anon, authenticated;   -- internal helper
+//   revoke all on function public.f(...) from public, anon;                  -- signed-in only
+//   grant execute on function public.f(...) to authenticated;                   (and check auth.uid())
+// A name here that no longer exists, is no longer definer, is no longer client-callable, or now reads
+// an identity FAILS as stale bookkeeping, like RLS_EXEMPT: an exemption nobody re-checks rots.
+// Each entry was read in full on 2026-11-14 (latest body in the migration named by the FAIL line).
+const PUBLIC_DEFINER = {
+  // ── public route / area reads: aggregates or ids, no identities ──
+  area_top_contributors: "area board: contributor ids + point totals, the same numbers the public board shows",
+  user_top_contributor_areas: "profile badge: area ids/names where a contributor ranks #1 — public by design",
+  route_star_summary: "average stars + rater count; per-log stars only from trip_report_visibility = 'public'",
+  route_field_level: "confidence level of one public route field; reads routes + contribution metadata only",
+  route_field_confidence_map: "per-field confidence for a public route plus the moderator's public reason text",
+  route_field_is_empty: "whether a public route field is blank; boolean over routes/contributions",
+  // CAVEAT: counts and last_climbed include private logs (no identities). On a route with ONE climber
+  // last_climbed is that climber's private log date — a known, accepted aggregate leak.
+  route_stats: "route counts (climbs, senders, views, stars by month) — aggregates only, no user ids returned",
+  area_logged_months: "12 monthly log counts under an area — aggregates only",
+  // CAVEAT: recent_tags aggregates cond_tags from private logs too, unattributed and undated.
+  area_latest_reports: "returns ids of PUBLIC trip reports only (rows then read under RLS) + unattributed cond tags",
+  crew_share_preview: "gated by the crew's unguessable share_token AND share_on; returns first names only where show_name",
+  // ── policy helpers: a policy calls these AS the caller, so the caller needs EXECUTE ──
+  is_active_user: "restrictive 'cannot post' policies call it with auth.uid(); reveals only banned/suspended yes/no",
+  can_contribute_fields: "contributions policy calls it with auth.uid(); yes/no on contribution standing",
+  can_flag: "flag policies call it with auth.uid(); yes/no on contribution standing",
+  group_has_rules: "group_members policy helper; yes/no whether a group has rules",
+  group_invite_policy: "group_members invite policy helper; returns the group's invite_policy text",
+  group_user_banned: "group_members join/invite policies; yes/no whether a user is banned from a group",
+  verified_user_ids: "the public verified tick: which of the given ids have a verified email; authenticated only",
+  reconcile_guide_verification: "lib/db.js calls it on read; only flips EXPIRED verified credentials to lapsed (idempotent)",
+};
+const clientCallable = (n) => {
+  const s = execGrants.get(n);
+  if (!s) return []; // never seen a create — cannot judge; counted below
+  return ["anon", "authenticated"].filter((r) => s.has(r) || s.has("public"));
+};
+const readsIdentity = (f) => {
+  const b = f.body || "";
+  if (IDENTITY.test(b)) return true;
+  const calls = [...b.matchAll(/\b([a-z_][a-z_0-9]*)\s*\(/gi)].map((m) => m[1]);
+  return calls.some((c) => identityHelpers.has(c));
+};
+let openDefiner = 0, callableDefiner = 0;
+for (const [name, f] of functions) {
+  if (!f.definer || f.dropped || f.trigger) continue;
+  const who = clientCallable(name);
+  if (!who.length) continue;
+  callableDefiner++;
+  if (readsIdentity(f)) continue;
+  if (name in PUBLIC_DEFINER) continue;
+  openDefiner++;
+  fail(`${f.file}: ${name}() is SECURITY DEFINER, callable by ${who.join(" + ")}, and never asks who is calling.`);
+  fail(`        It reads past RLS for anyone with the anon key. Revoke execute from the client roles,`);
+  fail(`        check auth.uid() in the body, or list it in PUBLIC_DEFINER with the reason it is safe.`);
+}
+for (const [n, why] of Object.entries(PUBLIC_DEFINER)) {
+  const f = functions.get(n);
+  if (!why || why.length < 20) fail(`PUBLIC_DEFINER.${n} has no real reason — say why exposing it is safe.`);
+  if (!f || f.dropped) fail(`PUBLIC_DEFINER names ${n}, which no live migration defines — stale bookkeeping.`);
+  else if (!f.definer) fail(`PUBLIC_DEFINER names ${n}, which is not SECURITY DEFINER — stale bookkeeping.`);
+  else if (!clientCallable(n).length) fail(`PUBLIC_DEFINER names ${n}, which the client roles can no longer call — stale bookkeeping.`);
+  else if (readsIdentity(f)) fail(`PUBLIC_DEFINER names ${n}, which now reads the caller's identity — stale bookkeeping.`);
+}
+if (execGrants.size < 50) dead(`only ${execGrants.size} function grant state(s) tracked — the grant replay broke`);
+if (!openDefiner) ok(`all ${callableDefiner} client-callable SECURITY DEFINER function(s) ask who is calling or are listed as public`);
+
 if (failures) {
   console.error(`\ncheck:rls FAILED — ${failures} problem(s).`);
   process.exit(1);
 }
-console.log("\ncheck:rls: ok — policies bind the right column, definer functions pin pg_temp, every table has RLS, every write asks who is calling, every view is read-only.\n");
+console.log("\ncheck:rls: ok — policies bind the right column, definer functions pin pg_temp, every table has RLS, every write asks who is calling, every view is read-only, every callable definer function asks who is calling or is listed public.\n");
 
 // Injection tests (run by hand after any change to the parsing; each must FAIL the run):
 //   1. Reinstate 0042's `m.crew_id = crew_id` by deleting 0163  -> rule 1 names the policy.
@@ -349,3 +449,8 @@ console.log("\ncheck:rls: ok — policies bind the right column, definer functio
 //   8. Strip auth.uid() from is_group_manager's latest body     -> rule 4 names the group policies
 //      that lean on it (a helper vouches only while it reads an identity itself).
 //   9. Delete 0376's revoke                                     -> rule 5 names the three views.
+//  10. New migration: a definer `leak_logs(u uuid)` selecting climb_logs, no revoke
+//                                                               -> rule 6 names it (anon + authenticated).
+//  11. Same file plus `revoke all on function leak_logs(uuid) from public, anon, authenticated;`
+//                                                               -> rule 6 passes again.
+//  12. Drop route_stats in a new migration                      -> PUBLIC_DEFINER stale-bookkeeping failure.
