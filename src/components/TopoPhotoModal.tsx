@@ -64,8 +64,14 @@ export default function TopoPhotoModal({photo,pos,onClose,onDraw,onDescribe,onCa
   const [altIdx,setAltIdx]=useState(0);const [editCap,setEditCap]=useState(false);
   const active=photo.lines[altIdx]||null;const [delBusy,setDelBusy]=useState(false);
   const del=function(fn: () => Promise<boolean>){if(delBusy)return;setDelBusy(true);fn().then(function(ok){setDelBusy(false);if(ok)setAltIdx(0);});};
-  return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Topo" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9400,display:"flex",alignItems:"center",justifyContent:"center",padding:16}}>
-    <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderRadius:16,width:"100%",maxWidth:520,border:"1px solid "+C.border,overflowX:"hidden",overflowY:"auto",maxHeight:"92vh",overscrollBehavior:"contain"}}>
+  return createPortal(<div onClick={onClose} role="dialog" aria-modal="true" aria-label="Topo" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:9400,display:"flex",justifyContent:"center",padding:16,overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
+    {/* FITS THE SCREEN YOU CAN SEE (owner, 2026-11-14: "the screen is stuck so the top is cutoff ie the x
+        button and the box at the bottom ... isn't fully shown"). Capped at 92vh and centred, the box was
+        taller than a phone's visible screen whenever the browser bars showed (vh counts the space behind
+        them), and centring pushed the close button off the top and the Draw button off the bottom, with
+        nothing left to scroll. It is now capped at the dynamic viewport, and margin:auto centres it only
+        while it fits: if it ever doesn't, the backdrop scrolls from its top. */}
+    <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderRadius:16,width:"100%",maxWidth:520,margin:"auto",border:"1px solid "+C.border,overflowX:"hidden",overflowY:"auto",maxHeight:"calc(100dvh - 32px)",overscrollBehavior:"contain",boxSizing:"border-box"}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"12px 14px",borderBottom:"1px solid "+C.border}}>
         <div style={{fontSize:14,fontWeight:700}}>{pos&&pos.n>1?"Topo "+(pos.i+1)+" of "+pos.n:"Topo"}</div>
         <div style={{display:"flex",alignItems:"center",gap:6}}>

@@ -3,6 +3,7 @@ import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityS
 import { POP_CLOSE } from "./popupChrome.js";
 import TrailDrawMap from './TrailDrawMap'
 import { MIN_RECORDED_PTS } from './track'
+import { supabase } from './supabase'
 import { tx } from './tapWords.js'
 import ActionIcon from '../src/components/ActionIcon.tsx'
 import { C } from '../ClimbMatchCore.jsx'
@@ -21,7 +22,6 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
   const [coordinates, setCoordinates] = useState('')
   const [deviceType, setDeviceType] = useState('Garmin')
   const [climbDate, setClimbDate] = useState('')
-  const [climbEmail, setClimbEmail] = useState('')
   const [climbName, setClimbName] = useState('')
   const [notes, setNotes] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -182,15 +182,22 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
       // carries no key — these three calls sent none, so every live submission got a
       // 401. The publishable key is public by design; the functions do their own
       // rate limiting and never trust a recipient or text from this request.
+      // Signed in, the bearer is the climber's own session token: the functions read the
+      // receipt address from it (never from this body), so a receipt can only go to the
+      // account that submitted. Signed out it is the public key, and no email is sent.
       const ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
-      const fnHeaders = { 'Content-Type': 'application/json', apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }
+      let accessToken = null
+      try {
+        const { data } = supabase ? await supabase.auth.getSession() : { data: null }
+        accessToken = (data && data.session && data.session.access_token) || null
+      } catch (_e) { accessToken = null }
+      const fnHeaders = { 'Content-Type': 'application/json', apikey: ANON_KEY, Authorization: `Bearer ${accessToken || ANON_KEY}` }
       const response = await fetch(`${SUPABASE_URL}/functions/v1/validate-gps`, {
         method: 'POST',
         headers: fnHeaders,
         body: JSON.stringify({
           routeId,
           gpxData: parsed,
-          climberEmail: climbEmail || undefined,
           climberName: climbName || undefined,
           // A traced line is said to be one, so a reviewer never reads it as a recording.
           deviceType: drawing ? 'Traced on the map' : deviceType,
@@ -215,11 +222,10 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
       const submissionId = result.submissionId
       const qualityScore = result.qualityScore
 
-      // Notify climber. Email is optional on this form, and the function rejects a
-      // blank one — skip the round-trip rather than fire a request that 400s.
-      // Only the id: the function reads the address, name and route from the
-      // submission row itself, so it cannot be used to mail anyone else.
-      if (climbEmail) fetch(`${SUPABASE_URL}/functions/v1/notify-gps-climber`, {
+      // Notify climber: only when signed in, since only then is there an address (the
+      // account's own). Only the id: the function reads the address, name and route
+      // from the submission row and checks it against the caller's session.
+      if (accessToken) fetch(`${SUPABASE_URL}/functions/v1/notify-gps-climber`, {
         method: 'POST',
         headers: fnHeaders,
         body: JSON.stringify({ submissionId })
@@ -425,7 +431,6 @@ export default function GpsSubmissionModal({ routeId, routeName, crag, parkAt, c
         <div style={{ ...S.section, marginTop: 18 }}>ABOUT YOU <span style={{ fontWeight: 500 }}>(optional)</span></div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           <input id="gps-name" aria-label="Your name (optional)" type="text" value={climbName} onChange={(e) => setClimbName(e.target.value)} placeholder="Your name" style={{ ...S.field, flex: '1 1 150px', minWidth: 0 }} />
-          <input id="gps-email" aria-label="Email (optional)" type="email" value={climbEmail} onChange={(e) => setClimbEmail(e.target.value)} placeholder="Email, for a receipt" style={{ ...S.field, flex: '1 1 150px', minWidth: 0 }} />
         </div>
 
         <label htmlFor="gps-notes" style={{ ...S.section, display: 'block', marginTop: 18 }}>NOTES <span style={{ fontWeight: 500 }}>(optional)</span></label>

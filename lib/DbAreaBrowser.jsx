@@ -11,7 +11,7 @@ import { POP_BACK } from "./popupChrome.js";
 import { ScreenHero } from "./ScreenHero";
 import { nearbyPeaksLive, nearbyPeaksBounds, nearbyPeaksRows } from "./nearbyPeaks.js";
 import { ClimberCtx } from "./climberCtx.js";
-import { getClimbsAreaPos, setClimbsAreaPos, climbsHandledJumps, getClimbsPendingJump, setClimbsPendingJump } from "./climbsReturn.js";
+import { getClimbsAreaPos, setClimbsAreaPos, climbsHandledJumps, getClimbsPendingJump, setClimbsPendingJump, scrollAppToTop } from "./climbsReturn.js";
 const HANDLED = climbsHandledJumps(); // the jump-request ids already handled; see lib/climbsReturn.js
 import SummitBriefing from "../src/components/SummitBriefing.tsx";
 import ObjectivesPanel from "../src/components/ObjectivesPanel.tsx";
@@ -192,6 +192,17 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
     setTreeOpen(false);
     setScreen("near");
   }, [jumpToNearReq]);
+
+  // A new area page (drill, Back, breadcrumb, jump) or sub-screen starts at the top, like every other
+  // page in the app. Skipped on mount: reopening the Climbs tab restores where you were (App calls
+  // restoreAppScroll), and a reset here would undo it.
+  const areaKey = (stateNode ? stateNode.id : "") + "/" + (current ? current.id : "") + "/" + screen;
+  const lastAreaKey = useRef(areaKey);
+  useEffect(() => {
+    if (lastAreaKey.current === areaKey) return;
+    lastAreaKey.current = areaKey;
+    scrollAppToTop();
+  }, [areaKey]);
 
   // Remember the position whenever it changes (the handled ids are kept in place by the handlers).
   useEffect(() => {
