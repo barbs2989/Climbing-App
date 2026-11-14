@@ -394,7 +394,6 @@ const PUBLIC_DEFINER = {
   group_user_banned: "group_members join/invite policies; yes/no whether a user is banned from a group",
   crew_is_private: "crew_members 'join or invite' policy helper; yes/no whether a crew is private (anon revoked in 0431)",
   verified_user_ids: "the public verified tick: which of the given ids have a verified email; authenticated only",
-  reconcile_guide_verification: "no app caller since the guide feature was removed (2026-11-14); only flips EXPIRED verified credentials to lapsed (idempotent)",
 };
 const clientCallable = (n) => {
   const s = execGrants.get(n);
