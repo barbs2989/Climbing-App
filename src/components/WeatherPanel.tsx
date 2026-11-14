@@ -365,7 +365,7 @@ export default function WeatherPanel({waypoints,showPlan,fallback,crag}: Weather
               <div style={{fontSize:13.5,fontWeight:800,color:C.text}}>{lbl}</div>
               <div style={{fontSize:10.5,color:C.textMuted}}>{sub}</div>
             </div>
-            {dy.wx?<span style={{display:"flex",alignItems:"center",gap:4,fontSize:10,fontWeight:700,color:condColor,background:condColor+"1a",border:"1px solid "+condColor+"55",borderRadius:20,padding:"3px 9px",whiteSpace:"nowrap",flexShrink:0,marginLeft:8}}><WeatherIcon code={dy.wxCode} color={condColor} size={12}/>{dy.wx}</span>:null}
+            {dy.wx?<span style={{display:"flex",alignItems:"center",gap:4,fontSize:10,fontWeight:700,/* The words are C.text, the icon and border keep the condition colour: blue words on the blue tint were 4.43:1 at 10px (check:axe, 2026-11-14, the first week snow was in the forecast). */color:C.text,background:condColor+"1a",border:"1px solid "+condColor+"55",borderRadius:20,padding:"3px 9px",whiteSpace:"nowrap",flexShrink:0,marginLeft:8}}><WeatherIcon code={dy.wxCode} color={condColor} size={12}/>{dy.wx}</span>:null}
           </div>
           <div style={{fontSize:17,fontWeight:800,marginBottom:3}}><span style={{color:wxTempColor(dy.tempHi)}}>{"High "+uTemp(dy.tempHi)}</span><span style={{color:C.textMuted,fontWeight:600}}>{"  ·  "}</span><span style={{color:wxTempColor(dy.tempLo)}}>{"Low "+uTemp(dy.tempLo)}</span></div>
           <div style={{fontSize:11,fontWeight:frostbite?700:400,color:frostbite?C.red:chilly?C.blue:C.textMuted,marginBottom:10}}>{"Feels like: High "+uTemp(dy.feelsHi)+" · Low "+uTemp(dy.feelsLo)+(chilly?" (wind chill)":"")+(frostbite?" — frostbite risk in 30 min":"")}</div>
