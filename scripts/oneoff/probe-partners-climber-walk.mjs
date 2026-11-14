@@ -10,8 +10,8 @@ import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
-import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 
 assertQuietBox("probe-partners-climber-walk.mjs");
 
@@ -65,7 +65,7 @@ try {
   const youTxt = await you.innerText().catch(() => "");
   note("You card: " + youTxt.replace(/\n/g, " / "));
   ok(/not listed anywhere/i.test(youTxt), "unlisted: the You card says so");
-  ok(await page.locator("button", { hasText: /^Choose my areas$/ }).count() === 1, "Choose my areas is offered ONCE on the screen (the empty card), not twice");
+  ok(await page.locator("button", { hasText: /^\+ Add an area$/ }).count() === 1, "+ Add an area is offered ONCE on the screen (the You card), not twice");
   ok(/I’m free this weekend/.test(youTxt), "the free-this-weekend switch is in the You card");
   ok(!/ended/i.test(youTxt), "no ended-dates warning");
   await cardLook(you, "the You card");
@@ -83,7 +83,7 @@ try {
   const emptyTxt = await empty.innerText().catch(() => "");
   await cardLook(empty, "the empty card");
   note("empty card: " + emptyTxt.replace(/\n/g, " / "));
-  ok(/Choose my areas/.test(emptyTxt) && /Invite a climbing friend/.test(emptyTxt), "it offers Choose my areas and Invite");
+  ok(!/Add an area|Choose my areas/.test(emptyTxt) && /Invite a climbing friend/.test(emptyTxt), "it offers Invite (the You card above has + Add an area)");
   const meanwhile = await page.locator("text=/^Meanwhile, climbers/i").count();
   note("meanwhile list shown: " + (meanwhile ? "yes" : "no (no other discoverable climbers?)"));
   await shot(page, "1-myareas-unlisted");
@@ -156,7 +156,7 @@ try {
   await page.evaluate(() => window.scrollTo(0, 0));
   await by.selectOption("myareas"); await page.waitForTimeout(7000);
   const you2 = await you.innerText(); note("You card now: " + you2.replace(/\n/g, " / "));
-  ok(/Your listed areas:\s+Utah/.test(you2) && /Edit ›/.test(you2), "the You card names Utah (\"Your listed areas: Utah\") with Edit ›");
+  ok(/My areas · 1/.test(you2) && /Utah/.test(you2), "the You card names Utah (My areas · 1, a Utah chip)");
   const e3 = page.locator("[data-partner-empty]");
   if (await e3.count()) { const t3 = await e3.innerText(); note("listed, empty: " + t3.replace(/\n/g, " / ")); ok(/at your area/.test(t3) && /Pick an area/.test(t3), "listed but nobody else: the card names your area and offers Pick an area"); }
   else note("someone else is listed across Utah's reach -- results shown");

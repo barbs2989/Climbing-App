@@ -21,14 +21,21 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
   counts the panel filters). The pills are 44px on a phone and 36px on the website (#3156). The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
 - **The You card — how other climbers find you** (owner, climber walkthrough 2026-11-13): one compact card above the pills holding
-  everything about YOUR visibility, so the pill row is only "who am I looking for": *Your listed areas: <first two> +N more* with **Edit ›**
-  (not "Listed at": the list can mix a state and a crag), or, unlisted, *You're not listed anywhere yet* with *Choose my areas* — except
-  under My areas › Where I'm listed, where the empty card below already carries that button, so the screen offers it once, the **I'm free this weekend** switch (`role="switch"`; it writes your own
+  everything about YOUR visibility, so the pill row is only "who am I looking for". **My areas · N** (owner 2026-11-14: "a larger and more clear box",
+  folded into this card rather than a second box): every listed area as a chip (tap = edit that listing) over one full-width **+ Add an area**
+  that opens `MyPartnerAreas` — the only way onto that screen here (the empty card no longer repeats it); then the **I'm free this weekend** switch (`role="switch"`; it writes your own
   `profiles.free_until`, which is why it left the filter row — as a pill there, a tap meant to find free climbers published your status),
   and at most one hint: listing turned off (*Turn listing on*), no profile photo (you are not shown until you add one), or no gender. With no zip on file, the point-of-use zip form (#3306) sits under the pills in the same card look and the real lists wait for it. Ended date windows are NOT flagged here (owner):
   an ended listing still matches (0311 only drops the dates), and the listing screen already marks it.
+- **Distance defaults to Anywhere in the place modes** (My areas, Pick an area; walkthrough 2026-11-14): with a zip on file it defaulted
+  to *within 50 mi of <zip>* everywhere, so a Bellingham climber listed at Smith Rock saw nobody there. Near my zip stays the default for
+  Everyone and My objectives, and is one pick away in every mode.
+- **Area search finds every state** (*+ Add an area* and Pick an area, whose box now sits above the state dropdowns): partial names,
+  mt/mount, apostrophes, climber nicknames (`PLACE_NICKNAMES` in lib/search.js: rrg, jtree, nrg, hcr, lcc, bcc, shawangunks) and, when
+  nothing matched, typos via `search_names_fuzzy` ("closest names"). Audit 2026-11-14 (`scripts/oneoff/audit-area-search.mjs`): 67/67
+  corpus places found, against 22/67 for the old one-state box.
 - **No dead ends** (owner, 2026-11-13): every empty real list (My areas, Pick an area, My objectives, A route, Everyone within a radius)
-  is one card (`emptyCard`, `data-partner-empty`) of one-tap next steps, each shown only when it changes the list — *Choose my areas*,
+  is one card (`emptyCard`, `data-partner-empty`) of one-tap next steps, each shown only when it changes the list —
   *Search anywhere*, *Within <next radius>*, *Pick an area*, *See everyone*, *Invite a climbing friend* (inline `ShareVia`, a link to the
   app) — and under it *Meanwhile, climbers near you / on ClimbMatch*: up to 5 real climbers (`nearPeople` when a radius is on, else `browsePeople`).
 - **ⓘ How matching and listing work**: one `<details>` above the safety note holds the fine print that used to be five paragraphs down
@@ -42,7 +49,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 - **Find someone by name** (DB only): a search box (min 2 chars) over real profiles, opened from the *Name* pill.
 - **Search for partners by** five modes (the Search by ▾ pill; owner 2026-11-13 merged Near my areas and Saved areas): **My areas** (signed in, the default),
   with two chips under the pills — **Where I'm listed** (internal mode `myareas`: climbers whose listings overlap yours, most
-  in common first; with no listing, the empty card offers *Choose my areas* over the meanwhile list) and **Saved areas** (internal mode `saved`: the
+  in common first; with no listing, the You card's *+ Add an area* is the way in and the empty card shows the meanwhile list) and **Saved areas** (internal mode `saved`: the
   areas you saved with Save area as the search — a chip row *All saved · N* plus one chip per saved crag, canyon, range or state;
   climbers listed at, inside, or across a wider area containing any of them, listed in the most of them first; saved peaks are left
   out, since alpine partners are found by route; at most the first 12 saved areas; with none saved it says how to save one; an
@@ -110,7 +117,7 @@ whole guide feature on 2026-11-14 (owner). This doc covers the partners mode (`l
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
 | `lib/cardStyles.js` | `CARD(C, edge?)` / `EYEBROW(color)` — the crew card's look (radius 16, padding 14, a 1px edge in the state colour, its shadow; the uppercase label over a title), read by the crew card and every Partners box: the You card, the empty card, the More filters panel, the real and example climber cards, and the list-me box (owner 2026-11-14: "make it consistent" with crew cards) |
 | `src/components/ListMeInAreaBox.tsx` | `ListMeInAreaBox` — By Area's *List me at <place>* box under the picker (optimistic `savePartnerArea` / `removePartnerArea`, then `onListMe` for dates and types) |
-| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
+| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first over every area in every state (`useCatalogAreaSearch`, the Add-a-climb picker's search and the Climbs tab's spelling rules; it searched one state from a dropdown until 2026-11-14), each hit with its type, its trail (*Oregon › Central Oregon*) and climb count, one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
 | `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
