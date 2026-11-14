@@ -2,7 +2,7 @@
 // check their flag and recommendation of edit … in a database or table way … not part of the app in
 // the menu." One table holds every HELD route/area edit (contributions kind 'field', status
 // 'pending') and every OPEN route flag (route_flags). Beside each one is what the nightly AI checker
-// concluded (review_ai_verdicts, 0435): agree / disagree / partly / unsure, how well sourced, the
+// concluded (review_ai_verdicts, 0436): agree / disagree / partly / unsure, how well sourced, the
 // value it thinks is right, and its sources.
 //
 // The AI never acts. Every button here is one of the existing is_admin()-checked RPCs (0309) through
@@ -48,7 +48,7 @@ const short = (v, n = 90) => { const t = fmtVal(v).replace(/\s+/g, " "); return 
 const when = (iso) => { try { return new Date(iso).toLocaleDateString(DLOCALE, { month: "short", day: "numeric" }); } catch (_e) { return String(iso || "").slice(0, 10); } };
 const ageDays = (iso) => Math.max(0, Math.floor((Date.now() - new Date(iso).getTime()) / 86400000));
 
-// ── AI verdicts (0435) ───────────────────────────────────────────────────────────────
+// ── AI verdicts (0436) ───────────────────────────────────────────────────────────────
 function useAiVerdicts(enabled) {
   return useQuery({
     queryKey: ["review-ai-verdicts"],

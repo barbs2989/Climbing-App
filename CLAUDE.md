@@ -183,6 +183,7 @@ npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris t
 npm run check:itinerary-shape # a trip plan is day by day or NOTHING, never prose (lib/itineraryShape.js), and every pipeline loader and trip-plan apply script still refuses prose (in build)
 npm run audit:itinerary-shape # does every LIVE trip plan follow that rule? fails on prose; reports gap days (service key)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
+npm run check:leg-loss-regain # the leg cards print the downhill on the way up (Loss) and the uphill on the way back (Regain), measured on the recorded track; a loop's leg gain is the leg, not the outing (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
