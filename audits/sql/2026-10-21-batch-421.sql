@@ -1,0 +1,12 @@
+-- Magic Mountain, South Ridge / Southeast Slopes (wa_magic_mountain_south_ridge): the route's own
+-- `beta` field opened with "From Kool-Aid Lake, descend about 600 ft on the Ptarmigan Traverse
+-- path, then traverse and climb to a 7,100 ft col east of the lake." That 600 ft descent is the
+-- Cache Col -> Kool-Aid Lake leg, already correctly described in this same row's `approach` field
+-- ("From Cache Col, descend roughly 600 ft ... dropping to Kool-Aid Lake"). From Kool-Aid Lake
+-- itself, `approach` and `overview` both say the route climbs directly (no descent) about 1,000 ft
+-- to the 7,100 ft col -- matching the external description on the Mountaineers' route page
+-- ("From the lake, the route climbs about 1,000 ft to the col between Magic Mountain and Hurry Up
+-- Peak"). `beta` had duplicated the already-completed descent onto the Kool-Aid-Lake-to-col leg.
+-- Corrected to agree with this row's own approach/overview and the external source; the rest of
+-- the field (false summit, ledges, moat) is unchanged.
+UPDATE routes SET beta = 'From Kool-Aid Lake, climb about 1,000 ft directly up heather and scree to the 7,100 ft col between Magic Mountain and Hurry-up Peak. From that col, ascend the South Ridge on heather and rock (Class 3) toward a false summit roughly 50 ft below and southeast of the true summit. Drop off the false summit and cross broken, exposed Class 3-4 ledges/gully on the east side of the summit tower to reach the true summit. Fresh snow can force a detour into the summit moat.' WHERE id = 'wa_magic_mountain_south_ridge';
