@@ -84,6 +84,14 @@ another; two pages crediting the same guidebook. When unsure, they are not indep
 - **Gain may be measured:** official summit figure − USGS elevation model at the trailhead
   parking point (Rainier: 14,410 − 5,410 = 9,000 ft), and agrees with a published figure.
 
+### Per-discipline rules
+Before researching a route, read **[disciplines.md](disciplines.md)** for its discipline: what
+the key facts are and where the general rules bend (sport, trad, toprope, bouldering, aid, ice,
+mixed, alpine, scrambling, mountaineering). Two rules from it apply everywhere: **Mountain
+Project / OpenBeta coordinates are never evidence**, and **MP alone locks grade / length /
+pitches / bolts / anchor / rack at the 1-source tier** when the other sources are blocked or
+paywalled (never coordinates or a first ascent). No derived values.
+
 ## 3. Contradicting a locked field
 
 An agent may replace a `locked` value only with **3+ independent sources** that disagree with
