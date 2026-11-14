@@ -104,9 +104,10 @@ function why(r, ar, x) { // null = passes; else the failed rule
   if (x.minTripKm != null || x.maxTripKm != null) { const t = tripKm(r); if (t == null || (x.minTripKm != null && t < x.minTripKm) || (x.maxTripKm != null && t > x.maxTripKm)) return "trip"; }
   return null;
 }
-// Postgres en_US collation ignores case/punctuation at the first level: compare loosely so only real misorders count.
-const loose = s => String(s ?? "").toLowerCase().replace(/[^a-z0-9]+/g, "");
-const cmpL = (p, q) => (loose(p) < loose(q) ? -1 : loose(p) > loose(q) ? 1 : 0);
+// The database collation compares case-insensitively but keeps punctuation (hyphen sorts before letters):
+// "A-rester" before "Acceptable Risk", "banana slab" beside "Banana Wall". Intl.Collator("en") at base strength does the same.
+const COLL = new Intl.Collator("en", { sensitivity: "base" });
+const cmpL = (p, q) => COLL.compare(String(p ?? ""), String(q ?? ""));
 const nl = (p, q, desc) => (p == null && q == null ? 0 : p == null ? 1 : q == null ? -1 : desc ? (q < p ? -1 : q > p ? 1 : 0) : (p < q ? -1 : p > q ? 1 : 0));
 function primaryCmp(sortBy, areaOf, x) {
   const an = r => (areaOf.get(r.area_id) || {}).name, km = r => { const ar = areaOf.get(r.area_id); return ar && ar.lat != null && x.nearLat != null ? kmBetween(x.nearLat, x.nearLng, +ar.lat, +ar.lng) : null; };
