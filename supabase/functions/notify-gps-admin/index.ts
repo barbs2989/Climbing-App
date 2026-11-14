@@ -8,13 +8,14 @@
 // in the admin's inbox and mail to any address. Every field now comes from the
 // gps_submissions row, the row must be fresh, and there is at most ONE notification
 // of each type per submission (unique index, migration 0183). The admin address is
-// server-side configuration, never a request field.
+// server-side configuration, never a request field. The low-score note goes to the
+// climber only when the caller is signed in as that address (callerOwns).
 //
 // Routing by quality score: >=90 tells the admin it is ready to merge, 70-89 asks
 // for a review, <70 goes back to the climber with feedback.
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { sendEmail, adminAddress, looksLikeEmail } from "../_shared/mailer.ts";
+import { sendEmail, adminAddress, looksLikeEmail, callerOwns } from "../_shared/mailer.ts";
 import { allow, clientIp, HOUR } from "../_shared/ratelimit.ts";
 
 const corsHeaders = {
@@ -115,7 +116,7 @@ serve(async (req) => {
         quality_score: score,
         status: "rejected",
         feedback,
-      }, climberEmail ? {
+      }, climberEmail && (await callerOwns(supabase, req, climberEmail)) ? {
         to: climberEmail,
         subject: `GPS track needs another pass: ${routeName}`,
         text: `Hi ${climberName || "there"},\n\nYour GPS track for ${routeName} scored ${score}/100, which is below our review threshold.\n\n${feedback}\n\nRe-submitting is welcome any time. If you didn't submit this, you can ignore it.\n\n— ClimbMatch`,
