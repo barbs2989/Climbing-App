@@ -11,7 +11,7 @@ name: Zero state
 # is what playwright-core's channel:"chrome" drives. That is the whole reason this can
 # run in CI at all — playwright-core downloads no browser of its own.
 
-# Runs on push to main as well, for the reason render-guards.yml records at length: a
+# Walks main as well (on a schedule since 2026-11-13), for the reason render-guards.yml records at length: a
 # pull_request run tests the base as it stood when that run started, so nothing here
 # has ever been a statement about main itself.
 
@@ -27,8 +27,7 @@ on:
       # CI). Verified then: no walk script, nor anything it imports, reads these paths or any
       # .md file; the app names them only in comments. Everything else (app code, lib/, src/,
       # other scripts/, supabase/, package*.json, .github/) still runs every walk. Branch
-      # protection requires only `build`, so a skipped walk blocks nothing. The push list
-      # below is the SAME list: keep them identical.
+      # protection requires only `build`, so a skipped walk blocks nothing.
       - "audits/**"
       - "research-data/**"
       - "research/**"
@@ -41,21 +40,10 @@ on:
       - "scripts/pipeline/**"
       - "scripts/enrich/**"
       - "scripts/audit-*.mjs"
-  push:
-    branches: [main, master]
-    paths-ignore:
-      - "audits/**"
-      - "research-data/**"
-      - "research/**"
-      - "catalog/**"
-      - "enrichment-wip/**"
-      - "gear-research/**"
-      - "docs/**"
-      - "**.md"
-      - "scripts/oneoff/**"
-      - "scripts/pipeline/**"
-      - "scripts/enrich/**"
-      - "scripts/audit-*.mjs"
+  # Main on a four-hour timer instead of every merge: see render-guards.yml's `on:` block.
+  schedule:
+    - cron: "15 */4 * * *"
+  workflow_dispatch:
 
 concurrency:
   # On a PR, group by branch so a new push supersedes the run it replaces. On a push,

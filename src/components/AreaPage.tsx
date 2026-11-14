@@ -1,5 +1,6 @@
 import { DISCIPLINES, ATYPE } from "../../lib/areaBrowserShared.js";
-import { useState, useRef, useContext, type CSSProperties } from "react";
+import { useState, useRef, useContext, useEffect, type CSSProperties } from "react";
+import { createPortal } from "react-dom";
 import { useArea, useAreaClimbStats, useAreaContributions, useAreaChildren, useAreaChildrenGradeCounts, useAreaRoutes, useAreaClassics, useAreaLoggedMonths, useAreaNamesByIds, useScopedWishlistRoutes, submitAreaPlacementClaim } from "../../lib/db";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
 import AreaActionRow from "./AreaActionRow.tsx";
@@ -9,7 +10,7 @@ import { DISC_LABELS as DL } from "../../lib/discLabels";
 import { ScreenHero } from "../../lib/ScreenHero";
 import { Pill, SL } from "../../lib/areaBrowserParts.jsx";
 import { PendingAreaEdits, AboutCard, AreaFactsCard, GradeSpreadDisclosure, gradeFinderFilters, areaSheet } from "../../lib/AreaPageSections";
-import { useWideScreen } from "../../lib/wideLayout.js";
+import { useWideScreen, useFullWidth } from "../../lib/wideLayout.js";
 import { ClimberCtx } from "../../lib/climberCtx.js";
 import ClassicsList from "./ClassicsList.tsx";
 import { BTN_LG, CHIP, BTN } from "../../lib/buttonStyles.js";
@@ -194,6 +195,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   // side, the finder's form inline under them preset to the climber's grade, classics as one-line rows,
   // and MOST LOGGED HERE beside Season. The phone keeps its stacked page and its Route finder button.
   const wide = useWideScreen();
+  // The website's LEFT PANEL (App's #cm-left-panel, lib/wideLayout.js wideLeft), from FULL_MIN up: the map and the
+  // sub-areas are drawn there, beside the page, and the page column keeps its whole width (owner, 2026-11-11: "this
+  // needs to be in the left panel on desktop… then everything else isn't squished in the middle section"). They
+  // used to be a 196px column INSIDE the page column. Narrower than that there is no panel: the phone's section.
+  const full = useFullWidth();
+  const [leftEl, setLeftEl] = useState<HTMLElement | null>(null);
+  useEffect(() => { setLeftEl(wide && full ? document.getElementById("cm-left-panel") : null); }, [wide, full]);
   const logged: AreaPageQuery<number[]> = useAreaLoggedMonths(wide && formation ? area.id : null);
   const { profile } = useContext(ClimberCtx);
   const prof = (profile || null) as { sportGrade?: string | null; tradGrade?: string | null; boulderGrade?: string | null } | null;
@@ -208,7 +216,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
   const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
   const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
-  const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && chartable && isLeaf === false ? area.id : null);
+  const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && !full && chartable && isLeaf === false ? area.id : null); // not in the left panel (owner, 2026-11-13: "remove the grade spread from the left panel"), so not read there
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
   const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
   const loading = lc || (isLeaf && lr);
@@ -253,7 +261,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const showAbout = formation || !!(area.blurb && String(area.blurb).trim());
   const childRows = !loading && children && children.length > 0 ? children : null;
   const mapPin = area.lat != null && area.lng != null && isFinite(Number(area.lat)) && isFinite(Number(area.lng)) ? { lat: Number(area.lat), lng: Number(area.lng), zoom: MAP_ZOOM[area.area_type] || 10, name: area.name } : null;
-  const childList = (variant: "sidebar" | "section") => childRows ? <AreaChildrenList rows={childRows} noun={childNoun(children)} onDrill={onDrill} C={C} grades={wide ? kidGrades.data || null : null} objectives={objByChild} variant={variant} onAllAreas={onAllAreas} map={variant === "sidebar" ? mapPin : null} onNear={onNear} /> : null;
+  const childList = (variant: "sidebar" | "section") => childRows ? <AreaChildrenList rows={childRows} noun={childNoun(children)} onDrill={onDrill} C={C} grades={wide && variant === "section" ? kidGrades.data || null : null} objectives={objByChild} variant={variant} onAllAreas={onAllAreas} map={variant === "sidebar" ? mapPin : null} onNear={onNear} /> : null;
   // CLASSIC CLIMBS HERE. Above a wall: all of them across the subtree (ClassicsList: five, then a dropdown), each
   // row naming the wall it is on; a failed read says so; an area with no classics shows nothing rather than "none".
   // A wall: areaClassics over its own rows; with none, TOP RATED HERE -- the rows that carry a climber star rating
@@ -302,7 +310,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
         {chartable ? <GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} /> : null}
         {showAbout ? <AboutCard area={area} C={C} onEdit={editOn} flat first={!chartable} /> : null}
         <AreaActionRow C={C} first={!chartable && !showAbout} routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />
-        {!wide && childRows ? <div style={{ padding: "12px 14px 4px", borderTop: "1px solid " + C.border }}>{childList("section")}</div> : null}
+        {!leftEl && childRows ? <div style={{ padding: "12px 14px 4px", borderTop: "1px solid " + C.border }}>{childList("section")}</div> : null}
         {classicsEl}
         {area.area_type !== "world" && area.area_type !== "country" ? <AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} /> : null}
         {/* GETTING THERE -- the one drive control on the area page: the words first, then the map. ONLY where a
@@ -431,12 +439,13 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={8}/></div> : null}
     </div>
   );
-  // The website: the sub-areas as a column beside the page (owner chose "Sidebar on web, early on phone").
-  if (wide && childRows) return (
-    <div style={{ display: "grid", gridTemplateColumns: "196px minmax(0, 1fr)", gap: 14, alignItems: "start" }}>
-      <aside aria-label={childNoun(children) + " in " + area.name} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px" }}>{childList("sidebar")}</aside>
+  // The website: the map and the sub-areas in the left panel beside the page (owner chose "Sidebar on web, early on
+  // phone"; in the left panel since 2026-11-11), and the page column all the page's own.
+  if (leftEl && childRows) return (
+    <>
+      {createPortal(<aside aria-label={childNoun(children) + " in " + area.name} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px" }}>{childList("sidebar")}</aside>, leftEl)}
       {main}
-    </div>
+    </>
   );
   return main;
 }

@@ -71,7 +71,7 @@ export default function AreaLatestReports({ area, onOpenRoute, C }: AreaLatestRe
               {haz ? <span style={{ display: "inline-flex", alignItems: "center", gap: 3, fontSize: 10.5, color: C.red, fontWeight: 800 }}><span aria-hidden="true" style={{ display: "inline-flex" }}><ActionIcon name="alert" size={11} color="currentColor" /></span>Hazard</span> : null}
             </div>
             <div style={{ fontSize: 11.5, color: C.textMuted }}>{[a.user, fmtDate(a.date)].filter(Boolean).join(" · ")}</div>
-            {a.text ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>{plain(a.text)}</div> : null}
+            {a.text ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 2, lineHeight: 1.45, overflowWrap: "anywhere" }}>{plain(a.text)}</div> : null}
           </div>
         </div>;
       })}
