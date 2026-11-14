@@ -386,12 +386,11 @@ const PUBLIC_DEFINER = {
   area_latest_reports: "returns ids of PUBLIC trip reports only (rows then read under RLS) + unattributed cond tags",
   crew_share_preview: "gated by the crew's unguessable share_token AND share_on; returns first names only where show_name",
   // ── policy helpers: a policy calls these AS the caller, so the caller needs EXECUTE ──
-  is_active_user: "restrictive 'cannot post' policies call it with auth.uid(); reveals only banned/suspended yes/no",
-  can_contribute_fields: "contributions policy calls it with auth.uid(); yes/no on contribution standing",
-  can_flag: "flag policies call it with auth.uid(); yes/no on contribution standing",
+  // 0441: the four standing helpers (is_active_user, can_flag, can_contribute_fields, group_user_banned)
+  // now answer only about the caller, so they left this list. Their real logic lives in private.*.
+  "private.group_user_banned": "the group_members invite policy asks it about the INVITEE as the caller, so authenticated needs EXECUTE; the API serves only public + graphql_public (PGRST106 for private), so no client can call it",
   group_has_rules: "group_members policy helper; yes/no whether a group has rules",
   group_invite_policy: "group_members invite policy helper; returns the group's invite_policy text",
-  group_user_banned: "group_members join/invite policies; yes/no whether a user is banned from a group",
   crew_is_private: "crew_members 'join or invite' policy helper; yes/no whether a crew is private (anon revoked in 0431)",
   verified_user_ids: "the public verified tick: which of the given ids have a verified email; authenticated only",
 };

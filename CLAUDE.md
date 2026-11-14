@@ -12,6 +12,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/hand-written-sql.md](docs/codebase/hand-written-sql.md) | hand the user SQL to paste into the Supabase SQL Editor |
 | [docs/codebase/route-identity.md](docs/codebase/route-identity.md) | resolve, dedupe, import or write to route rows by id |
 | [docs/codebase/enrichment-prose.md](docs/codebase/enrichment-prose.md) | write researched text into any existing `routes` column |
+| [docs/codebase/research-ledger.md](docs/codebase/research-ledger.md) | research or verify route facts, or touch `route_field_evidence` / the lock rules (skills: `.claude/skills/route-research/`) |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
 | [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
@@ -53,6 +54,7 @@ npm run check:no-module-scope-core-reads # a component core imports BACK must no
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:page-swipe # swiping a page's tabs on a phone (lib/pageSwipe.js): which tab a drag lands on, which touches it leaves to rows/sliders/maps/charts, every tab page still wired (in build)
+npm run check:fix-filter # the "you are here" dot on every map (lib/fixFilter.js): which readings count, the dot smooths jitter standing still but keeps up walking, a coarse first fix frames its ring instead of zooming in (in build)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:boot # index.html's boot placeholder AND the Help tour still match the real nav
 npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
@@ -244,6 +246,7 @@ npm run check:enrichment-traceable # does a climbing_route batch invent anything
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
 npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
+npm run check:research-locks # can a research batch overwrite a field the evidence ledger has locked? (in build)
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
