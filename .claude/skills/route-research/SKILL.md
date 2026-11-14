@@ -69,6 +69,21 @@ another; two pages crediting the same guidebook. When unsure, they are not indep
 | prose (approach, descent, overview…) | never matched as text — locks when EVERY fact inside it (trail names, miles, gain, turns) is itself locked; see `route-prose` |
 | opinion words (classic, chossy, sandbagged, loose) | a fact like any other: 2 sources |
 
+### Verifier rules learned on the worked example (Rainier, Disappointment Cleaver, 2026-11-14)
+
+- **A search-engine summary is never evidence.** Only the page itself counts; the verifier
+  opens it. (A summary named a 1950 first-ascent party including a climber born c. 1940.)
+- **One source that is implausible stays `unconfirmed`** and goes on the Disputed list,
+  even if the page really says it — check names against dates, numbers against geography.
+- **Official pages that contradict each other:** the one that **states the year of the fact**
+  wins, not the most recently edited page (an NPS page edited 2026-07 still quoted a 2022
+  annual fee; the 2026-01 fee FAQ said "$82 per person per climb" for 2026).
+- **Summit elevation = the published official figure** (land manager / survey, e.g. NPS
+  14,410 ft for Rainier). The USGS elevation model is the fallback only. The USGS
+  place-names bulk file (`DomesticNames_<ST>_Text.zip`) has coordinates but no elevations.
+- **Gain may be measured:** official summit figure − USGS elevation model at the trailhead
+  parking point (Rainier: 14,410 − 5,410 = 9,000 ft), and agrees with a published figure.
+
 ## 3. Contradicting a locked field
 
 An agent may replace a `locked` value only with **3+ independent sources** that disagree with
