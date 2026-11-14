@@ -13,6 +13,11 @@ updates:
     groups:
       npm-minor-and-patch:
         update-types: [minor, patch]
+    # axe-core is held at 4.10.3. 4.14 turns label-content-name-mismatch from experimental into a
+    # gated WCAG rule, and check:axe then reports 215 nodes across the app (2026-11-14, after the
+    # grouped bump #3118). Lift this once those accessible names are fixed in their own pass.
+    ignore:
+      - dependency-name: axe-core
 
   - package-ecosystem: github-actions
     directory: /
