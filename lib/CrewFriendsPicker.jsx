@@ -13,7 +13,7 @@ import { BTN_SECONDARY, BTN_LINK, TEXT_TAP_INLINE } from "./buttonStyles.js";
 import Av from "../src/components/Av.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 
-export default function CrewFriendsPicker({ friends, allAlreadyIn, disc, placeName, placeSub, grade, onInvite, onFindPartners }) {
+export default function CrewFriendsPicker({ friends, allAlreadyIn, disc, placeName, placeSub, grade, onInvite }) {
   const [picked, setPicked] = useState([]);
   const [note, setNote] = useState("");
   const [showNote, setShowNote] = useState(false);
@@ -22,7 +22,6 @@ export default function CrewFriendsPicker({ friends, allAlreadyIn, disc, placeNa
     return <div style={{ background: C.card, border: "1px dashed " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 10 }}>
       <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 3 }}>{allAlreadyIn ? "All your friends are on this crew" : "No friends to invite yet"}</div>
       <div style={{ fontSize: 12, color: C.textMuted, lineHeight: 1.45, marginBottom: 6 }}>{allAlreadyIn ? "Search below to invite anyone else on ClimbMatch." : "Friends you add from Partners show here, ready to invite in one tap. Search below for anyone on ClimbMatch."}</div>
-      {onFindPartners ? <button type="button" onClick={onFindPartners} style={{ ...BTN_LINK(C), ...TEXT_TAP_INLINE }}>Find partners ›</button> : null}
     </div>;
   }
   const isOn = id => picked.indexOf(id) >= 0;
