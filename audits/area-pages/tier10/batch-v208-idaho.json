@@ -1,0 +1,21 @@
+{
+ "id_populace_wall": {
+  "_expect": { "name": "Populace Wall", "region": "Idaho" },
+  "blurb": "Populace Wall is a compact basalt column wall within the Black Cliffs, on the Boise River side of town near Lucky Peak. Fourteen climbs, split between trad lines and bolted sport routes, make it a friendly stop for newer leaders: most of the grades sit between 5.7 and 5.9, with a couple of 5.10 pitches thrown in. The columns catch sun for most of the day, so spring and fall suit it best, since the surrounding cliffs bake in summer and turn cold in winter. Expect some loose rock here and there, and keep to the left on the hike up so you do not drift over to the taller, harder cliffs.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106068989/populace-wall", "https://www.mountainproject.com/area/106060666/black-cliffs"] }
+ },
+ "id_heffalump": {
+  "_expect": { "name": "Heffalump", "region": "Idaho" },
+  "blurb": "Heffalump is a modest formation in the east part of Castle Rocks in south-central Idaho, the first one east of Fenceline Spire. Fourteen climbs mix sport, trad and a top-rope option, and the grades lean easy to moderate: a few low-fifth-class lines, a cluster of 5.7 to 5.8 routes, then a handful at 5.9 and a single 5.10 at the top end. Pitches are generally shorter than 30 meters, and the climbing happens mostly on the west and south faces, so it works as a relaxed objective for newer leaders. The walk in from the main parking is under a mile.",
+  "approach": "Follow the road north from the ranch house lot, then take the trail toward Eagle Grove, or walk to Fenceline Spire and pick up the trail heading east to the formation. Under a mile in total.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106458495/heffalump", "https://www.mountainproject.com/area/107935627/east-sector"] }
+ },
+ "_skipped": {
+  "id_garden_wall": "could not fetch a page about the crag itself (only the Q'emiln Park parent page and a route page; rockclimbing.com refused connections)",
+  "id_the_shire": "no page found for an Idaho Shire; the Mountain Project hits for The Shire are in Kentucky and New Hampshire, and the Riggins Limestone parent page only lists it with a route count",
+  "id_wolftone": "only one fetched page describes the crag (Mountain Project Wolftone); the Central Idaho parent page gives only a route count",
+  "id_2_dog_wall": "no page found for 2 Dog Wall; the Massacre Rocks and Main Wall pages do not mention it, and the BLM portion is closed to climbing",
+  "id_closed_to_climbing_down_under": "closed to climbing (name says so; Massacre Rocks BLM closure)",
+  "id_closed_to_climbing_the_outback": "closed to climbing (name says so; Massacre Rocks BLM closure)"
+ }
+}

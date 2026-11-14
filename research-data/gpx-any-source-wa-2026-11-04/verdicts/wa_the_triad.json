@@ -1,0 +1,61 @@
+{
+  "area_id": "wa_the_triad",
+  "routes": [
+    {
+      "route_id": "wa_the_triad_east_peak",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Searched: ranger report on July 6 had the Sibley Pass approach still very snowy; Hidden Lake stays frozen until late June or early July; area is also a ski objective in spring. Peakbagger ascents Jun-Oct, Aug highest. Matches stored mid-July to September."
+      },
+      "track": {
+        "aid": "2015806",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Sep 1 2022, summited, trailhead round trip from our Hidden Lake pin (33 m): climbs to Sibley Pass, crosses the Triad Glacier side at 1,960-2,000 m past the west and middle summits without visiting them, reaches the east summit (1 m of pin) and returns by the same line. That is the East Peak route as our text describes it, and it is not the three-summit traverse. Logged route name is blank and there is no report text, so identity rests on the line."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "3273171",
+          "verdict": "unsure",
+          "why": "Jul 17 2026 \"W Face\"; same line but starts 1.4 km and 350 m lower on the access road; the logged name does not match ours."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_the_triad_traverse",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Same search; stored text says late July to early September, matching glacier and snow conditions on the Sibley Pass approach."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2015806",
+          "verdict": "different",
+          "why": "Visits only the east summit, not the west-middle-east crest."
+        },
+        {
+          "aid": "3273171",
+          "verdict": "different",
+          "why": "Visits only the east summit."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No recorded traverse exists. Track 2015806 has no logged route name and no report; assignment rests on the line matching the East Peak route text."
+}

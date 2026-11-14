@@ -1,0 +1,76 @@
+{
+ "mt_flanders": {
+  "_expect": {
+   "name": "Flanders",
+   "region": "Montana"
+  },
+  "blurb": "Flanders is the middle drainage of Hyalite Canyon, south of Bozeman, and a winter destination for ice and mixed climbing. Most of the 15 climbs here are water ice, spanning WI3 to WI6 with the bulk at WI5, plus a mixed line around M5 and a couple of easy 5.7 rock routes. The walk in is longer than at the canyon's roadside flows, so it sees fewer people than the main fork, though it is getting busier. The way in changes with the snowpack: sometimes you can drive close, other days you hike or ski an unplowed road and a logging track. Several well-known Hyalite lines are found here.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/113969660/flanders",
+    "https://www.mountainproject.com/area/106291254"
+   ]
+  }
+ },
+ "mt_bukowski_buttress": {
+  "_expect": {
+   "name": "Bukowski Buttress",
+   "region": "Montana"
+  },
+  "blurb": "Bukowski Buttress is a sport wall in Avalanche Gulch in the Big Belt Mountains, roughly an hour's drive from Helena. It holds 15 bolted routes from 5.8 up to the 5.12 range, with the heart of the grade spread at 5.10 and 5.11, so it suits climbers who have moved past the beginner stage. The wall sits in the shade, the belay ledges are good, and the base has been tidied up. It faces the neighbouring Blue Collar wall across the gulch, which makes a handy second stop for a day out.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108143524/bukowski-buttress",
+    "https://www.mountainproject.com/area/107984946/avalanche-gulch"
+   ]
+  }
+ },
+ "mt_phipps_park": {
+  "_expect": {
+   "name": "Phipps Park",
+   "region": "Montana"
+  },
+  "blurb": "Phipps Park sits just outside Billings along the sandstone Rimrocks, and is best known for bouldering, with dozens of problems from easy to hard slopers. The roped side is smaller: ten trad crack lines, a pair of top-ropes and two V4 boulder problems are logged here, with trad grades running from 5.9 to the 5.12 range and most at 5.11. Locals rate the crack climbing highly. Winter days are pleasant when the sun is out, and summer afternoons can get very hot, so cooler seasons or evenings work better.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107978805/phipps-park",
+    "https://www.visitbillings.com/blog/family-fun/if-youre-a-rock-climber-heres-your-day-in-billings-montana/",
+    "https://billings365.com/billings-montana-on-the-rocks"
+   ]
+  }
+ },
+ "mt_obscurity_crag": {
+  "_expect": {
+   "name": "Obscurity Crag",
+   "region": "Montana"
+  },
+  "blurb": "Obscurity Crag is a small wall at Allenspur in Paradise Valley. Of its 14 routes, twelve are bolted and two are trad, running from about 5.7 up to 5.11, with the largest share in the 5.11 range, so it leans toward harder climbers. The routes are fairly long for the area and the cliff picks up extra sun on winter days compared with the nearby 7-11 crag. It tends to draw fewer people than the busier Allenspur walls. Allenspur is generally dry and breezy, and spring and fall are the favourite seasons.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/110184571/obscurity-crag",
+    "https://www.mountainproject.com/area/106428134/allenspur"
+   ]
+  }
+ },
+ "mt_blow_hard_wall": {
+  "_expect": {
+   "name": "Blow-Hard Wall",
+   "region": "Montana"
+  },
+  "blurb": "Blow-Hard Wall is the southernmost section of the main wall in Blackleaf Canyon, in north-central Montana, a gravel-road drive from Choteau. It offers 14 sport routes, from a few easy ones around 5.6 through the 5.9 to 5.11 range, with a couple at 5.12, and some run to several pitches. The popular easier lines have hard bands and fossils in them. Expect a short walk from the car, and as the name warns, plenty of wind; locals treat it as the place to go when other sections are blowing. Loose rock is common in the canyon, so wear a helmet.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119055239/blow-hard-wall",
+    "https://www.mountainproject.com/area/106447499/blackleaf-canyon"
+   ]
+  }
+ },
+ "_skipped": {
+  "mt_main_area": "no fetched page is about the Main Area itself (only the whole Frog Rock crag and passing mentions); MP and thecrag pages unreachable or wrong place",
+  "mt_nude_beach_sw_face_aka_name_wall": "only the parent Nude Beach page and Avalanche Gulch page fetched; no page about this wall itself",
+  "mt_identity_wall": "no page describes the wall; fetched page lists it only among closed north-side areas on private land"
+ },
+ "_conflicts": {
+  "mt_blow_hard_wall": "stored rock is dolomite but https://www.mountainproject.com/area/106447499/blackleaf-canyon describes chert limestone"
+ }
+}

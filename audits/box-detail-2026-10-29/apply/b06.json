@@ -1,0 +1,89 @@
+{
+ "or_krag_peak_traverse": {
+  "area": "or_wallowa_mountains_traverses",
+  "pitch_detail": [
+   {
+    "grade": "Class 1",
+    "notes": "East Eagle Trail #1910 runs about 1.5 mi up the valley floor before the route leaves it to the right. The trailhead has a self-issue wilderness permit station; fill one out before starting.",
+    "pitch": "Trail approach"
+   },
+   {
+    "grade": "Class 3",
+    "notes": "Steep, loose rib between two drainages on the west side. Exposure and big loose blocks; the crux of the day.",
+    "pitch": "West-side rib"
+   },
+   {
+    "grade": "Class 3",
+    "notes": "Cross the crest between the two tops of the double summit; the east summit is the higher.",
+    "pitch": "West summit to east summit"
+   },
+   {
+    "grade": "Class 2-3",
+    "notes": "After the east summit the route keeps to the crest, then drops rubbly, loose slopes to Crater Lake. The lake is a dammed reservoir with campsites along its north shore; the trail is picked up near the outlet by the dam.",
+    "pitch": "Crest and descent to Crater Lake"
+   },
+   {
+    "grade": "Class 1",
+    "notes": "Little Kettle Creek Trail runs down a steep, open north-facing slope in more than 25 switchbacks, with little shade. It crosses rocky gullies and small creeks, passes a pika talus slope, is lightly used and can be overgrown or rough in places.",
+    "pitch": "Trail descent"
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://fastestknowntime.com/route/krag-peak-traverse-or",
+    "https://www.oregonhikers.org/field_guide/Crater_Lake_via_Little_Kettle_Creek_Hike",
+    "https://chossclimbers.com/testing/us/oregon/the-wallowas/krag-peak-and-red-mountain/"
+   ],
+   "changed": "Wrote all three thin boxes. Trail descent details come from the same trail described in the uphill direction (switchbacks, open slope, creeks, overgrowth). Crater Lake box adds only the dam/campsite facts; no crest distance or terrain was stated anywhere so none invented. No lengths given.",
+   "other_findings": "FKT page calls the return the Kettle Creek Trail; the stored Little Kettle Creek #1945 matches the Forest Service trail name."
+  }
+ },
+ "co_arapaho_peaks_traverse": {
+  "area": "co_indian_peaks_traverses",
+  "pitch_detail": [
+   {
+    "grade": "Class 1-2",
+    "notes": "Arapaho Pass trail to the mine ruins, Arapaho Glacier trail to the saddle, then a loose rocky scramble past a false summit to the top.",
+    "pitch": "Trailhead to South Arapaho"
+   },
+   {
+    "grade": "Class 3",
+    "notes": "Leave South Arapaho northward; an exposed downclimb of about 50 ft, then sustained blocky scrambling. Stay near the crest, escape west at difficulties.",
+    "pitch": "Ridge, first half"
+   },
+   {
+    "grade": "Class 4",
+    "notes": "About three quarters of the way along: two short steps of roughly 8-10 ft each on good holds, above exposure.",
+    "pitch": "Crux"
+   },
+   {
+    "grade": "Class 2-3",
+    "notes": "Past the hard steps, work along the east side of the crest, then climb through large boulders to the broad, fairly flat summit with a big cairn. Cairns mark the last stretch and the line is easy to lose; backtrack rather than force it.",
+    "pitch": "Final slopes to North Arapaho"
+   },
+   {
+    "grade": "Class 3-4",
+    "notes": "Reverse the ridge back to South Arapaho, downclimbing the crux steps; allow roughly an hour. The ridge stays around 13,500 ft for a long stretch, so start early and watch for afternoon storms. The rock is mostly sound, with some rotten sections.",
+    "pitch": "Return traverse"
+   },
+   {
+    "grade": "Class 1-2",
+    "notes": "Scramble off South Arapaho to the saddle, then follow the Arapaho Glacier trail and the Arapaho Pass trail back down past the mine ruins.",
+    "pitch": "Descent to trailhead"
+   }
+  ],
+  "replace_pitch_detail": true,
+  "review": {
+   "confidence": "medium",
+   "sources": [
+    "https://www.climb13ers.com/colorado-13ers/north-arapaho-peak",
+    "https://www.14ers.com/php14ers/tripreport.php?trip=4501",
+    "https://sep.stanford.edu/sep/morgan/adventures/colorado/arapaho.html"
+   ],
+   "changed": "Wrote the three thin boxes from the three pages. Old Baldy is described on one page as a 15-min walk from the saddle east of South Arapaho. Left out lengths (none firm).",
+   "other_findings": "One page says orange paint arrows mark the ridge; stored beta says marks are sparse. One page puts the trailhead to mine ruins at ~1.6 mi, stored row says ~2 mi."
+  }
+ }
+}

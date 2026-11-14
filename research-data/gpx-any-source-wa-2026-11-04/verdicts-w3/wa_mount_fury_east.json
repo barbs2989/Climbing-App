@@ -1,0 +1,42 @@
+{
+  "area_id": "wa_mount_fury_east",
+  "routes": [
+    {
+      "route_id": "wa_mount_fury_east_direct_east_ridge",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Logged ascents Jul 35, Aug 9, Sep 1 (Apr 1 ski, Oct 2 survey trips are off-season). Searches: SummitPost climbers' log and Mountain Project call the East Ridge variation the later-season option once the Fury glacier opens up; Mountaineers route page for the Luna Col traverse." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3255987", "verdict": "unsure", "why": "4 Jul 2026, summited, titled East Ridge and east lobe of the glacier, camp-based from Luna Col; line fits both this route and the Standard (they appear to be the same line), and it is not a trailhead round trip." },
+        { "aid": "2929056", "verdict": "unsure", "why": "2 Aug 2025 via Luna Col and the glacier, camp-based; same ambiguity, no route named." },
+        { "aid": "2561508", "verdict": "unsure", "why": "5 Jul 2024 59-mile summit trip, no route named, starts at the lake not the trailhead." },
+        { "aid": "1700116", "verdict": "different", "why": "Logged East Ridge from Luna Col but the recorded track never goes near Fury's summit (a different ridge; 6 km off)." },
+        { "aid": "2248511", "verdict": "unsure", "why": "15 Jul 2023 report, no track in the packet." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_fury_east_north_buttress",
+      "season": { "months": [7,8], "window": "Jul-Aug", "evidence": "No North Buttress ascent in the histogram; searches (Cascade Climbers reports 7/4/2004, Jul 23-25, Aug 2016 and a 2017 report, SummitPost route page) put it in July and August. Stored Jul-Sep window kept but Jul-Aug is where the evidence sits." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3255987", "verdict": "different", "why": "Ridge and glacier route from Luna Col, not the north face." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_fury_east_southeast_glaciers",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Logged ascents July dominant (35 of ~48), then Aug 9. Searches: SummitPost route page (earlier season, May-July, easier to take the whole glacier), a Cascade Climbers report calling the glacier nearly a walk-up in early July, and a Mountaineers page on the Luna Col traverse (a June 2025 party turned back after a crevasse accident)." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3255987", "verdict": "unsure", "why": "Summited 4 Jul 2026 via Luna Col ridge and the glacier; could be this route or the Direct East Ridge (same ground). The report does not say which, and it is not a trailhead round trip." },
+        { "aid": "2561508", "verdict": "unsure", "why": "5 Jul 2024 full trip ending at Ross Dam; track starts at the lake shore, no route named and no report; line matches either route. 59 m from the trailhead pin at the end." },
+        { "aid": "2929056", "verdict": "unsure", "why": "Aug 2025 via the glacier variation, camp-based, no route named." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Probable duplicate filing: Direct East Ridge and Southeast Glaciers (Standard) both read as Luna Col -> east ridge bumps with a 20-25 ft step -> Fury glacier -> summit fin, so every Luna Col recording fits both. One ascent goes to one route, so none assigned and no facts proposed. Useful in-season facts for whichever route the owner keeps (4 Jul 2026, aid 3255987): in early July the talus after the third ridge bump is fully snow-covered, wet mossy slabs lead to a firm snowfield at about 6,800 ft needing crampons, roped travel from the flat shelf near 7,500 ft, and the bergschrund was bypassed far to the west; 5th class step was rappelled coming down. Also 2 Aug 2025: the cliffy waypoints near 6,500 ft are best skirted 100-200 ft higher. North Buttress has no harvested ascent. Direct East Ridge has no Trailhead pin; no add proposed because the recordings start at a camp, not a trailhead."
+}

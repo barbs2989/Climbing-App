@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import "./lib/load-env.mjs";
 /**
  * Rebuild phase 3 batch file with actual database route IDs from Supabase.
  * Queries live database for routes on each phase 3 peak, then updates batch file.
@@ -14,8 +15,7 @@ if (!SERVICE_KEY) {
   process.exit(1);
 }
 
-const SUPABASE_URL = 'db.swwbvzvhndqpnqsblpov.supabase.co';
-const PROJECT_ID = 'db.swwbvzvhndqpnqsblpov';
+const SUPABASE_URL = new URL(process.env.VITE_SUPABASE_URL).hostname;
 
 // Peak names and their expected DB area names
 const PHASE3_PEAKS = [

@@ -1,0 +1,19 @@
+{
+ "area_id": "wa_lundin_peak",
+ "routes": [
+  {
+   "route_id": "wa_lundin_peak_east_ridge",
+   "pins": [
+    {
+     "type": "Summit",
+     "action": "add",
+     "lat": 47.462815,
+     "lng": -121.400305,
+     "name": "Lundin Peak summit",
+     "evidence": "Peakbagger surveyed coordinate; the in-season recording's highest point is 18 m from it",
+     "confirmedBy": "Peakbagger surveyed coordinate + recorded high point"
+    }
+   ]
+  }
+ ]
+}

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Batch J arrived without `area` on any of its 21 entries, so enrich:apply would have refused every
 // one of them ("batch entry has no area to assert against") and written nothing. The guard did its
 // job; this fills the field in from the live rows so the batch can actually be applied.
@@ -15,7 +16,7 @@
 import fs from "fs";
 import { selectAll } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../../", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const SRC = `${ROOT}research-data/approach-variants-batch-J-raw-2026-08-13.json`;
 const DEST = `${ROOT}research-data/approach-variants-batch-J-2026-08-13.json`;
 

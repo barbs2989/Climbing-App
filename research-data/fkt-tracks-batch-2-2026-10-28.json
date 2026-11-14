@@ -1,0 +1,41 @@
+{
+ "measuredAt": "2026-10-28",
+ "source": "FastestKnownTime route pages (fastestknowntime.com/route/<slug>-wa), GPX file linked under GPS Track. 25 Washington pages found by probing <peak>-wa for 406 Washington peak areas; 24 link a GPX.",
+ "rule": "A track is written only when (a) the FKT route description names the database route, (b) the route's current track fails assessTrack() (scripts/audit-track-completeness.mjs), and (c) the FKT track passes assessTrack() against that route's own trailhead and summit pins. Pins alone cannot tell routes apart (Dragontail's routes share one trailhead and summit), so pins are never the only test.",
+ "written": [
+  {"id": "wa_south_ridge_3", "route": "Black Peak, South Ridge", "fkt": "black-peak-wa", "file": "Black_Peak_via_South_Ridge_.gpx", "before": "one-way, ends 6.0 km from trailhead", "points": 4734},
+  {"id": "wa_mount_baker_easton_glacier", "route": "Mount Baker, Easton Glacier", "fkt": "mount-baker-wa", "file": "TrailRun20220731233643.gpx", "before": "one-way, ends 7.8 km from trailhead", "points": 16972},
+  {"id": "wa_robinson_mountain_southeast_ridge", "route": "Robinson Mountain, Southeast Ridge", "fkt": "robinson-mountain-wa", "file": "Bulgers_FKT_day_6_15_100 (1).gpx", "before": "one-way, ends 7.5 km from trailhead", "points": 22344},
+  {"id": "wa_snowfield_peak_neve_glacier", "route": "Snowfield Peak, Neve Glacier / Standard Route", "fkt": "snowfield-peak-wa", "file": "Snowfield Peak.gpx", "before": "one-way, ends 8.3 km from trailhead", "points": 30803},
+  {"id": "wa_kaleetan_peak_south_ridge", "route": "Kaleetan Peak, South Ridge", "fkt": "kaleetan-peak-wa", "file": "Kaleetan-Peak.gpx", "before": "one-way, ends 5.9 km from trailhead", "points": 7894},
+  {"id": "wa_little_tahoma_east_shoulder", "route": "Little Tahoma, East Shoulder", "fkt": "little-tahoma-peak-wa", "file": "Little_Tahoma_with_Arya_Reid_and_McKenzie_.gpx", "before": "one-way, ends 8.8 km from trailhead", "points": 41610},
+  {"id": "wa_crater_mountain_standard_route", "route": "Crater Mountain, Standard Route (SE Ridge via Jackita Ridge)", "fkt": "crater-mountain-wa", "file": "Crater_Mountain_run.gpx", "before": "one-way, ends 3.6 km from trailhead", "points": 7126},
+  {"id": "wa_jack_mountain_south_face", "route": "Jack Mountain, South Face / Southeast Ridge", "fkt": "jack-mountain-wa", "file": "Jack_S_Face.gpx", "before": "one-way, ends 7.9 km from trailhead", "points": 52311}
+ ],
+ "skipped": [
+  {"id": "wa_navaho_peak_south_slopes", "reason": "already complete before this batch"},
+  {"fkt": "glacier-peak-wa", "reason": "Glacier_via_North_Sauk.gpx is complete, but no database route is North Sauk. Glacier Peak rows are Gerdine Ridge/Cool Glacier, Frostbite Ridge, Kennedy Glacier and others. Adding a route row is an owner decision."},
+  {"fkt": "abernathy-peak-wa", "reason": "FKT track passes the Scatter Lake South Ridge pins, but the FKT description does not name the route; not written"},
+  {"fkt": "little-annapurna-wa", "reason": "FKT track passes the North Slopes pins, but the description does not confirm the standard route; not written"},
+  {"fkt": "mount-deception-wa", "reason": "description names the Dungeness approach; the database has Honeymoon and Royal Basin routes; the match is not clear; not written"},
+  {"fkt": "mount-terror-wa", "reason": "description names no route; the database has four; not written"},
+  {"fkt": "dragontail-peak-wa", "reason": "the track passes six Dragontail routes' pins because they share a trailhead and summit; the description does not name one; not written"},
+  {"fkt": "ruth-mountain-wa", "reason": "description says north ridge; the database has the Ruth-Icy Traverse and North Face routes; not written"},
+  {"fkt": "mount-si-wa", "reason": "Haystack scramble and trail hike; not a climbing route in the database; not written"},
+  {"fkt": "mount-teneriffe-wa", "reason": "no database route passes the pins; not written"},
+  {"fkt": "eldorado-peak-wa", "reason": "no mountain routes in the database area; not written"},
+  {"fkt": "bacon-peak-wa", "reason": "no database route passes the pins; not written"},
+  {"fkt": "chelan-butte-wa", "reason": "no database route passes the pins; not written"},
+  {"fkt": "hadley-peak-wa", "reason": "no database route passes the pins; not written"},
+  {"fkt": "luna-peak-wa", "reason": "no GPX linked on the FKT page; not written"},
+  {"fkt": "oval-peak-wa", "reason": "two FKT GPX files; neither passes the database pins; not written"},
+  {"fkt": "whatcom-peak-wa", "reason": "no database route passes the pins; not written"},
+  {"fkt": "jack-mountain-wa (Jason_s_Silly_Map)", "reason": "a map file with no trackpoints; not written"}
+ ],
+ "washingtonRemainingIncomplete": {
+  "afterBatch1": 492,
+  "writtenHere": 8,
+  "remainingIncompleteOrNoTrack": 484,
+  "note": "The count of 484 subtracts the 8 writes from the 492 list in fkt-tracks-2026-10-25.json. Route rows still need a full re-audit before any further write."
+ }
+}

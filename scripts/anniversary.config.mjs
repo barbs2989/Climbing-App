@@ -1,18 +1,22 @@
 // Vite config used only by check:anniversary.
 //
 // Climb anniversaries are DATE-GATED: `_anniv` fires only for a log whose yearly anchor is
-// within two days of today. The seed logbook has one entry, dated 2026-05-24, so on all but
-// ~5 days of the year the feature renders NOTHING -- and every render guard walks the app on
-// one of the other 360. That is why #713 could revive it and no check could see it.
+// within two days of today, so on ~360 days of the year the feature renders NOTHING -- and
+// every render guard walks the app on one of those days. That is why #713 could revive it
+// and no check could see it.
 //
-// So this injects a log dated EXACTLY ONE YEAR AGO TODAY, computed at config load, and the
-// check then asserts the anniversary notification reaches the screen.
+// So this makes the check's browser a SIGNED-IN climber whose climb_logs hold one ascent
+// dated EXACTLY ONE YEAR AGO TODAY, and the check asserts the anniversary notification
+// reaches the screen.
 //
-// The injected entry is a CLONE OF THE SEED ENTRY with only its date rewritten, lifted out of
-// the source rather than hand-written here. A hand-written literal would be a second copy of
-// a shape that lives somewhere else: add a field to the seed log and the clone silently stops
-// matching it, and `logs` feeds Resume, TickList and _pastClimbs as well as _anniv. Deriving
-// it means the probe is always shaped like the real thing.
+// Why signed in, and why through climb_logs: since #2789 alerts are the ACCOUNT's. A guest in
+// a backend build has no account, every alert source is the seed demo, and mergedNotifs is
+// empty for them by design. This used to prepend a clone of the SEED log to a guest's
+// `logs`, a path #2789 legitimately closed -- the guard went red with the feature intact. A
+// real climber's `logs` are filled from their climb_logs rows by the hydration effect, so the
+// probe goes in there: a uid is forced (as zero-state.config.mjs does), and one synthetic row
+// is prepended to what useUserLogs(uid) returns. The path held is therefore the shipping
+// one: climb_logs row -> hydration -> logs -> _anniv -> mergedNotifs -> the screen.
 //
 // Does not ship. Only ever passed via `vite --config`.
 
@@ -20,7 +24,12 @@ import base from "../vite.config.js";
 import { buildOpener, lazyChunks, routeDetailTransform } from "./lib/overlay-scaffold.mjs";
 
 const OPENER_ANCHOR = "  const prevUidRef=useRef(uid);";
-const LOGS_ANCHOR = "[logs,setLogs]=useState([";
+const UID_ANCHOR = "const uid=(USE_DB&&session&&session.user)?session.user.id:null;";
+const LOGS_Q_ANCHOR = "const myLogsQ=useUserLogs(uid);";
+// A VALID uuid, unlike zero-state's: useUserLogs filters climb_logs on it, and a malformed
+// one makes PostgREST answer 400, the query errors, and no hydration runs at all. A real
+// uuid that owns nothing answers [] -- an account with no logs but the probe.
+export const PROBE_UID = "00000000-0000-4000-8000-00000000a771";
 
 // One year ago today, as YYYY-MM-DD in LOCAL time.
 //
@@ -37,27 +46,20 @@ export function oneYearAgoISO(now = new Date()) {
   return `${y}-${p(now.getMonth() + 1)}-${p(now.getDate())}`;
 }
 
-// Pull the first seed log entry out of the source by balancing braces.
-//
-// Over RAW source, and skipping string contents. Not the comment/string blanker the static
-// guards use: that treats every quote as a delimiter, and this app's prose is full of
-// apostrophes, so it desynchronises and swallows braces (the lesson check:overlay-discovery
-// records). Here the opposite care is needed -- a brace INSIDE a string literal must not be
-// counted, or the walk ends in the wrong place.
-export function firstLogEntry(code) {
-  const at = code.indexOf(LOGS_ANCHOR);
-  if (at < 0) return null;
-  const start = at + LOGS_ANCHOR.length;
-  let depth = 0, str = null;
-  for (let i = start; i < code.length; i++) {
-    const c = code[i];
-    if (str) { if (c === "\\") { i++; continue; } if (c === str) str = null; continue; }
-    if (c === '"' || c === "'" || c === "`") { str = c; continue; }
-    if (c === "{") depth++;
-    else if (c === "}") { depth--; if (depth === 0) return { start, end: i + 1, text: code.slice(start, i + 1) }; }
-  }
-  return null;
+// The climb_logs row the probe account holds. Only the columns the hydration effect in
+// ClimbMatch.jsx reads; every other one it defaults when absent, as it does for a real row
+// with nulls. The route id need not resolve -- the check asserts the head and tail of the
+// line, not the route name.
+export function probeRow(date = oneYearAgoISO()) {
+  return { id: "anniv-probe", user_id: PROBE_UID, route_id: "anniv_probe_route", date_climbed: date, stars: 4, tick_type: "Lead", notes: "", cond_tags: [], photos: [], partners: [] };
 }
+
+const once = (code, anchor, why) => {
+  const n = code.split(anchor).length - 1;
+  if (n !== 1) {
+    throw new Error("ANCHOR LOST in ClimbMatch.jsx: expected exactly 1 occurrence of\n  " + anchor + "\nbut found " + n + ". " + why + " Update the anchor in scripts/anniversary.config.mjs.");
+  }
+};
 
 function anniversaryScaffold() {
   return {
@@ -70,43 +72,27 @@ function anniversaryScaffold() {
       if (_rd !== null) return _rd;
       if (!id.endsWith("/ClimbMatch.jsx")) return null;
 
-      const n = code.split(OPENER_ANCHOR).length - 1;
-      if (n !== 1) {
-        throw new Error(
-          "ANCHOR LOST in ClimbMatch.jsx: expected exactly 1 occurrence of\n  " + OPENER_ANCHOR +
-          "\nbut found " + n + ". Without the opener the notifications overlay never mounts, so " +
-          "this check would look at a bare tab and report green over nothing. Update the anchor " +
-          "in scripts/anniversary.config.mjs."
-        );
-      }
-      const logsCount = code.split(LOGS_ANCHOR).length - 1;
-      if (logsCount !== 1) {
-        throw new Error(
-          "ANCHOR LOST in ClimbMatch.jsx: expected exactly 1 occurrence of\n  " + LOGS_ANCHOR +
-          "\nbut found " + logsCount + ". Without it no dated log is injected, no anniversary can " +
-          "fire, and this check would fail as though the feature were broken. Update the anchor " +
-          "in scripts/anniversary.config.mjs."
-        );
-      }
-      const seed = firstLogEntry(code);
-      if (!seed) throw new Error("anniversary scaffold: could not balance the first seed log entry — the injected probe would not be shaped like a real log.");
-      const dated = seed.text.replace(/date:\s*"\d{4}-\d{2}-\d{2}"/, `date:"${oneYearAgoISO()}"`);
-      if (dated === seed.text) {
-        throw new Error('anniversary scaffold: the seed log entry has no `date:"YYYY-MM-DD"` field to rewrite, so the injected entry would carry the ORIGINAL date and no anniversary could fire.');
-      }
+      once(code, OPENER_ANCHOR, "Without the opener the notifications overlay never mounts, so this check would look at a bare tab and report green over nothing.");
+      once(code, UID_ANCHOR, "Without a uid the browser is a guest, whose alerts are empty by design (#2789), and this check would fail as though the feature were broken.");
+      once(code, LOGS_Q_ANCHOR, "Without it no dated climb_logs row reaches the hydration, no anniversary can fire, and this check would fail as though the feature were broken.");
+      const row = probeRow();
+      if (row.date_climbed !== oneYearAgoISO()) throw new Error("anniversary scaffold: the probe row is not dated one year ago today, so no anniversary could fire.");
 
       const { inject } = buildOpener(code, OPENER_ANCHOR, "check:anniversary");
       let out = code.replace(OPENER_ANCHOR, OPENER_ANCHOR + "\n  " + inject);
-      // Prepend the dated clone. Splicing by string keeps this readable and the anchor count
-      // above already proved it appears exactly once.
-      out = out.replace(LOGS_ANCHOR, LOGS_ANCHOR + dated + ",");
+      out = out.replace(UID_ANCHOR, "const uid=USE_DB?" + JSON.stringify(PROBE_UID) + ":null;");
+      // Prepend the probe once the account's own read has answered (or failed), so the
+      // hydration -- which runs once, on the first data it sees -- receives the probe AND
+      // whatever the account holds, exactly as it would receive a real climber's rows. Keyed
+      // on the data, not the query object, so effects keyed on myLogsQ.data see a stable array.
+      out = out.replace(LOGS_Q_ANCHOR, "const _myLogsQ=useUserLogs(uid);const _annivData=useMemo(()=>(_myLogsQ.data||_myLogsQ.isError)?[" + JSON.stringify(row) + "].concat(_myLogsQ.data||[]):undefined,[_myLogsQ.data,_myLogsQ.isError]);const myLogsQ=Object.assign({},_myLogsQ,{data:_annivData});");
       return out;
     },
   };
 }
 
 const WARM = lazyChunks("check:anniversary");
-console.log("check:anniversary — injecting a log dated " + oneYearAgoISO() + "; warming " + WARM.length + " lazy chunk(s)");
+console.log("check:anniversary — signed in as a probe account whose climb_logs hold one ascent dated " + oneYearAgoISO() + "; warming " + WARM.length + " lazy chunk(s)");
 
 export default {
   ...base,

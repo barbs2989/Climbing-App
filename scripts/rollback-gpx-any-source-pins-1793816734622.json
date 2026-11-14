@@ -1,0 +1,138 @@
+{
+ "at": "2026-11-04T18:25:34.622Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.0112,
+      "lng": -120.5718,
+      "name": "North Fork Entiat Trailhead",
+      "type": "Trailhead",
+      "directions": "From US 97A at Entiat, turn onto Entiat River Road (County Road 19, which becomes FR 51) just after the bridge and drive about 32 miles up the valley to FR 5606, about 2 miles past Silver Falls Campground. Follow FR 5606 north about 3 miles to its end at the North Fork Entiat Trailhead, about 3,940 ft. A Northwest Forest Pass or the day-use fee is required."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_east_ridge_9",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_observation_rock_standard_scramble_route",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "wa_reynolds_peak_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.4056,
+      "lng": -120.4897,
+      "elev": 3170,
+      "name": "Reynolds Creek Trailhead",
+      "note": "End of Spur 4435-015 off FR 4435, which turns off Twisp River Road (~18.3 mi from Twisp); a self-issue wilderness permit is typical at the kiosk, but no Northwest Forest Pass is required at this unimproved trailhead.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Twisp, drive west up the Twisp River Road (FR 44) for 18.3 miles and bear left onto FR 4435. Cross the Twisp River in 0.3 mile, turn right after the bridge to stay on FR 4435, drive 1.1 miles upriver and turn left onto Spur 4435-015, reaching the trailhead in another 0.3 mile at about 3,100 ft. A free self-issued Lake Chelan-Sawtooth Wilderness permit is filled out at the kiosk."
+     },
+     {
+      "lat": 48.38518,
+      "lng": -120.54179,
+      "elev": 4823,
+      "name": "South Fork Reynolds Creek confluence",
+      "note": "Trail opens up where the South Fork joins the Main Fork; cross on a log and leave the trail here and stay on one side of the South Fork, above the streambed, to avoid extra creek crossings and heavy log-hopping.",
+      "type": "Junction",
+      "distMi": 2.8,
+      "directions": "Follow Reynolds Creek Trail #402 up the north side of Reynolds Creek through forest for about 2.8 miles to around 4,800 ft, where the South Fork valley comes in from the south. The trail is primitive and sees little maintenance, so expect deadfall."
+     },
+     {
+      "lat": 48.381181,
+      "lng": -120.578111,
+      "elev": 6576,
+      "name": "Reynolds Creek crossing",
+      "type": "Water"
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 6700,
+      "name": "Upper Reynolds Creek basin",
+      "note": "Open basin below Reynolds' east face where trees give way to scree and talus; last flat ground and reliable creek water before the summit push.",
+      "type": "Campsite",
+      "distMi": 4.8,
+      "directions": "Cross the creek on a downed log at the confluence and leave the maintained tread. Follow the South Fork drainage upward, staying roughly 50 ft above the water to avoid the worst alder and log-hopping, for about 2 miles of intermittent bushwhacking through slide alder and downed timber on a boot path that comes and goes. The timber thins around 5,600 ft and a ravine opens into the talus and scree basin below the southeast face."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 7300,
+      "name": "Reynolds-Rennie saddle",
+      "note": "Unnamed saddle/ridge crest between Reynolds and the Rennie/Camel's Hump massif; loose sand, scree and talus underfoot on the final approach to it.",
+      "type": "Junction",
+      "distMi": 5.3,
+      "directions": "Climb scree, talus and, early in the season, snow up the gully out of the basin to the saddle on the ridge above. The gully often holds snow well into summer; carry an axe."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 8100,
+      "name": "Summit block gully",
+      "note": "Class 3-4 gully splits the summit block to a notch in the ridge crest; loose, sometimes snow-covered rock with real exposure — the crux of the standard route.",
+      "type": "Hazard",
+      "distMi": 5.4,
+      "directions": "From the saddle, move into the loose gully that splits the summit block and climb it toward the notch in the crest. This is the Class 3-4 crux, with real exposure and rock that is sometimes snow-covered."
+     },
+     {
+      "lat": 48.37375,
+      "lng": -120.567037,
+      "elev": 8517,
+      "name": "Reynolds Peak (true/south summit)",
+      "note": "True summit is the south horn; the lower North Peak (8,384 ft) sits about 0.3 mi north across the notch.",
+      "type": "Summit",
+      "distMi": 5.5,
+      "directions": "Scramble the exposed summit rocks to the true summit, the southern of the two horns. The lower north peak across the notch is not the high point."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.694408,
+      "lng": -121.042952,
+      "elev": 7408,
+      "name": "Ruby Mountain summit",
+      "type": "Summit",
+      "distMi": null,
+      "elevFt": 7408
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_windy_peak_windy_creek_trail",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.928205,
+      "lng": -119.970556,
+      "elev": 8335,
+      "name": "Windy Peak summit",
+      "type": "Summit",
+      "distMi": 5.5,
+      "elevFt": 8335
+     }
+    ]
+   }
+  }
+ ]
+}

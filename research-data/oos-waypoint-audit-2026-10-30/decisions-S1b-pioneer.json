@@ -1,0 +1,27 @@
+[
+ {
+  "id": "ak_south_pioneer_peak_pioneer_ridge", "i": 1, "name": "South Pioneer Peak summit", "from": [61.4584804, -149.0169032],
+  "op": "move", "to": [61.469418, -149.026944],
+  "source": "https://www.peakbagger.com/peak.aspx?pid=43984",
+  "quote": "South Pioneer Peak, 61.469418, -149.026944 (WGS84), Elevation: 6300+ feet, Prominence 300 ft (Peakbagger pid 43984, read via search index; the page answers 403 to fetches)",
+  "second_source": "https://www.hikingproject.com/trail/7046083/south-pioneer-peak-hike (High point 6,299' (1,920 m)); 3DEP local maximum 6,291 ft at the new point",
+  "ground_ft_at_to": 6291,
+  "reason": "The stored pin (and the peak's area row, same coordinate) sat on a 5,182 ft ridge bump 1.2 km SE of the summit, 1,200 ft below its own stated height. The published coordinate is a 3DEP local maximum at 6,291 ft, matching Hiking Project's 6,299 ft high point."
+ },
+ {
+  "id": "ak_south_pioneer_peak_pioneer_ridge", "i": 1, "name": "South Pioneer Peak summit", "from": [61.4584804, -149.0169032],
+  "op": "setElev", "elev": 6299,
+  "source": "https://www.hikingproject.com/trail/7046083/south-pioneer-peak-hike",
+  "quote": "High point 6,299' (1,920 m)",
+  "second_source": "Peakbagger pid 43984: Elevation 6300+ feet",
+  "reason": "6,400 ft is the north (true) summit's rounded height; the south summit the route reaches is published at 6,299 ft (Hiking Project) / 6300+ (Peakbagger)."
+ },
+ {
+  "id": "ak_south_pioneer_peak_pioneer_ridge", "area_id": "ak_south_pioneer_peak", "from": [61.4584804, -149.0169032],
+  "op": "areaMove", "to": [61.469418, -149.026944], "elev": 6299,
+  "source": "https://www.peakbagger.com/peak.aspx?pid=43984",
+  "quote": "61.469418, -149.026944, Elevation: 6300+ feet",
+  "second_source": "https://www.hikingproject.com/trail/7046083/south-pioneer-peak-hike",
+  "reason": "The peak's own row carried the same wrong coordinate as the pin."
+ }
+]

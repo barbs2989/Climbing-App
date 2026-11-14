@@ -1,0 +1,57 @@
+{
+ "area_id": "wa_enchantment_peak",
+ "routes": [
+  {
+   "route_id": "wa_enchantment_peak_east_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged successful ascents Jun-Oct, peak Sep (7); stored late Jun-early Oct. Searches (Mountaineers, SummitPost, trip logs) found no stricter window; mid-Oct reports describe it dry, snow lingers into early summer. Jul-Sep kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2353291",
+     "verdict": "different",
+     "why": "Oct 2023: 5.2 southwest face to the SW summit then NE arete traverse; a different line"
+    },
+    {
+     "aid": "1789266",
+     "verdict": "not-summited",
+     "why": "Marked Unsuccessful - Turned Back, although the report says it reached the NE summit; recording ends off the peak"
+    },
+    {
+     "aid": "3321846",
+     "verdict": "not-summited",
+     "why": "Aug 2026 turned back on SW summit ridge"
+    },
+    {
+     "aid": "3010830",
+     "verdict": "not-summited",
+     "why": "Oct 2025 turned back on the SW summit ridge"
+    },
+    {
+     "aid": "2229428",
+     "verdict": "unsure",
+     "why": "Jun 2023 survey, no track"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 10,
+     "text": "Early October: a thin snow skim made the SW sub-summit ridge dangerous; skip it unless dry and roped.",
+     "aids": [
+      "3010830"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Peakbagger coordinate is 464 m off ours because it points at the SW summit; track highs agree our summit pin is the NE (true) summit - do not move. South Gully route not in packet routes (already has a track)."
+}

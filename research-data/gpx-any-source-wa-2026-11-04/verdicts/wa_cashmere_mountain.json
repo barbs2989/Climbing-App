@@ -1,0 +1,108 @@
+{
+  "area_id": "wa_cashmere_mountain",
+  "routes": [
+    {
+      "route_id": "wa_cashmere_mountain_northeast_ridge",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep. Web search found no page that dates this specific line; north-side snow lingers early (heavy early-season snow makes the north face intimidating), July and September reports found it snow-free; histogram peaks Jul-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3367730",
+          "verdict": "unsure",
+          "why": "Oct 3 report only says to finish on the NE side of the summit block, which is the standard Windy Pass finish; nothing names a traverse to a low point on the NE ridge. Also one month past window."
+        },
+        {
+          "aid": "3388399",
+          "verdict": "unsure",
+          "why": "Oct 24, unnamed route, no NE ridge description; offseason."
+        },
+        {
+          "aid": "2575078",
+          "verdict": "different",
+          "why": "Logged West Ridge."
+        },
+        {
+          "aid": "2249873",
+          "verdict": "different",
+          "why": "SE slopes ascent."
+        },
+        {
+          "aid": "2929712",
+          "verdict": "different",
+          "why": "SE gully ascent."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_cashmere_mountain_se_route",
+      "season": {
+        "months": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "May-Sep",
+        "evidence": "Search: a trip report calls the SE route a good early-season option since it melts out first; an aggregator says late spring through mid summer; logged SE-route ascents fall in Jul (3), Sep, and one early Oct. Kept May-Sep, Oct tolerated as +1 month."
+      },
+      "track": {
+        "aid": "2249873",
+        "verdict": "same",
+        "kind": "complete",
+        "inSeason": true,
+        "why": "Logged route \"SE Approach\"; July 15 report describes the old jeep road, burned hillside, a meadow near 5,700 ft and the gully toward the saddle, matching our SE Route text; track leaves the Eightmile trail early and climbs the SE slopes directly (not via Windy Pass); summited; round trip from our trailhead pin (start 74 m, end 53 m)."
+      },
+      "otherTracksConsidered": [
+        {
+          "aid": "2929712",
+          "verdict": "same",
+          "why": "Oct 8 2022 \"SE Gulley\", same line, summited, complete; one month past the window so second choice."
+        },
+        {
+          "aid": "3388399",
+          "verdict": "unsure",
+          "why": "Unnamed, Oct 24, reaches the summit via the maintained trail."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 7,
+          "text": "In mid-July the burned slope above the old road is overgrown with thick, leafy brush over loose ash; the first hour is slow.",
+          "aids": [
+            "2249873"
+          ]
+        },
+        {
+          "field": "approach_note",
+          "month": 7,
+          "text": "The old jeep road is hard to keep to under regrowth; one party found the going easier after climbing straight up to a meadow near 5,700 ft, then angling across at a gentler pitch to about 7,200 ft below the saddle.",
+          "aids": [
+            "2249873"
+          ]
+        },
+        {
+          "field": "pro_tips",
+          "month": 10,
+          "text": "In early October the gully line has no boot-pack at all, so expect to route-find alone; the final scramble is longer and more solid than the standard finish.",
+          "aids": [
+            "2929712"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "West Ridge already has a track and is not in this packet. 3367730 and 3388399 (Oct) are standard Windy Pass ascents. NE Ridge: no harvested track names it. Both SE-route tracks come down the standard (west) side, so only the ascent follows the SE line."
+}

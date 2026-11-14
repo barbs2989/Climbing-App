@@ -1,8 +1,9 @@
+import { fileURLToPath } from "node:url";
 // Settled rule: summitTimeHrs holding the car-to-car total is nulled ONLY when an approach or
 // descent leg is also published (only then does the Planner count the walk twice). Strip any
 // other summitTimeHrs -> null patch from a research output before it is applied.
 import fs from "node:fs";
-const T = new URL("../../../audits/wa-contradictions-pass2", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-contradictions-pass2", import.meta.url));
 const R = Object.fromEntries(JSON.parse(fs.readFileSync(`${T}/wa-routes.json`)).map(r => [r.id, r]));
 for (const f of process.argv.slice(2)) {
   const p = `${T}/research/out/${f}.json`, j = JSON.parse(fs.readFileSync(p)); let n = 0;

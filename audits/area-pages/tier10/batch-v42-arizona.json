@@ -1,0 +1,36 @@
+{
+ "az_swiss_wall": {
+  "_expect": {"name": "Swiss Wall", "region": "Arizona"},
+  "blurb": "Swiss Wall is a compact limestone sport wall inside Jacks Canyon, east of Flagstaff near Winslow in northern Arizona. Fourteen bolted lines cover a friendly spread: a handful of 5.8 to 5.10 routes make up the bulk, followed by a few 5.11 and 5.12 pitches and a single 5.13. The face sits back in an alcove under dense trees, so it stays noticeably cooler than the open walls around it and works well on hot days. The stone is pocketed and edgy, and the short, easy walk from the canyon floor makes it a relaxed place to warm up or spend a half day.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105827968/swiss-wall", "https://mountainproject.com/area/105799277/jacks-canyon"]}
+ },
+ "az_white_wall_the": {
+  "_expect": {"name": "White Wall, The", "region": "Arizona"},
+  "blurb": "The White Wall is the long, uninterrupted face at The Pit, a limestone sport area just south of Flagstaff in northern Arizona. It is the place to come for difficult climbing: of its 14 bolted routes, eight fall in the 5.13 range, with a few 5.11s, one 5.12 and a lone 5.10 at the easy end. Expect the pocketed, edgy, generally short style the whole crag is known for. The wall catches sun well into the late afternoon, so it suits cooler days better than midsummer. Reach it by walking left from the neighbouring Swiss Wall and around the corner.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105810963/the-white-wall", "https://www.mountainproject.com/area/105787831/the-pit-aka-le-petit-verdon"]}
+ },
+ "az_skyline": {
+  "_expect": {"name": "Skyline", "region": "Arizona"},
+  "blurb": "Skyline is a small bouldering area high on the south face of Mt. Elden above Flagstaff, part of the larger Skyline Boulders. It holds 14 problems, with most sitting around V4 and a spread running from V1 up to V7, so it leans toward intermediate and strong boulderers more than beginners. The climbing is on small edges with poor feet. The south-facing slope warms quickly and clears of snow fast after a storm, which makes it a good choice on cold winter days. Expect a short hike through oak scrub and slabs from the lower boulders, with a shady alcove up the slope for hot spells.",
+  "review": {"sources": ["https://www.mountainproject.com/area/114807146/skyline", "https://www.mountainproject.com/area/108648059/skyline-boulders"]}
+ },
+ "az_upper_midgley_wash": {
+  "_expect": {"name": "Upper Midgley Wash", "region": "Arizona"},
+  "blurb": "Upper Midgley Wash is a bouldering spot in the dry wash beneath the old Midgley Bridge site just outside Sedona, northern Arizona. Fourteen problems are spread across the boulders, mostly in the V3 to V5 range, with a few easy warm-ups at the bottom of the scale and one problem as hard as V6. The wash is only a few minutes on foot from where you leave the car, and there is some natural shade for summer visits and some shelter in winter, so it can be climbed through much of the year. A good short session for a small group rather than a full day destination.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107220598/upper-midgley-wash", "https://www.mountainproject.com/v/sedona-bouldering/110135684"]}
+ },
+ "az_hooligan_s_hollow": {
+  "_expect": {"name": "Hooligan's Hollow", "region": "Arizona"},
+  "blurb": "Hooligan's Hollow is a small crag at Windy Point on the Catalina Highway up Mount Lemmon, outside Tucson. Its 13 routes are mostly bolted, with a few trad lines, and sit in a moderate band from 5.9 to 5.11, so it works for climbers who want a short session on mid-grade pitches. The cliff is not tall, with a roof-capped prow at one end, and most lines face east. Winter, spring and fall are the comfortable seasons; summer afternoons can run warm. The walk is brief and easy along the ridge below the main Windy Point crags.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107881229/hooligans-hollow", "https://www.mountainproject.com/area/106824256/4-windy-point-west"]}
+ },
+ "_skipped": {
+  "az_faded_rock": "no fetched page about the crag itself (only a parent listing and a route page)",
+  "az_porcini_area": "no fetched page about the crag itself (only the parent Upper Middle Elden Canyon page)",
+  "az_k12": "could not find any page about this crag"
+ },
+ "_conflicts": {
+  "az_skyline": "stored rock rhyolite; the parent and area pages describe the boulders as dacite (https://www.mountainproject.com/area/108648059/skyline-boulders)",
+  "az_upper_midgley_wash": "stored rock shale; the Sedona Bouldering page describes the area's rock as sandstone (https://www.mountainproject.com/v/sedona-bouldering/110135684)"
+ }
+}

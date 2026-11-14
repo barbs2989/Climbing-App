@@ -318,7 +318,7 @@ function checkPitchDetail(id, spec, before, commented) {
     if (p.grade != null && String(p.grade).length > 30) errs.push(`${at} grade is ${String(p.grade).length} chars — a grade token, qualifiers belong in notes`);
     if (p.lengthM != null && !(typeof p.lengthM === "number" && p.lengthM > 0 && p.lengthM < 1500)) errs.push(`${at} lengthM ${JSON.stringify(p.lengthM)} is not a plausible number of metres`);
     if (p.bolts != null && !Number.isInteger(p.bolts)) errs.push(`${at} bolts ${JSON.stringify(p.bolts)} is not an integer`);
-    for (const k of ["pitch", "grade", "notes", "note", "anchor"]) { const m = p[k] != null && (String(p[k]).match(SOURCE_RE) || String(p[k]).match(PER_SOURCE_RE)); if (m) errs.push(`${at} ${k} names a source: ${JSON.stringify(m[0])}`); }
+    for (const k of ["pitch", "grade", "notes", "note", "anchor", "belay"]) { const m = p[k] != null && (String(p[k]).match(SOURCE_RE) || String(p[k]).match(PER_SOURCE_RE)); if (m) errs.push(`${at} ${k} names a source: ${JSON.stringify(m[0])}`); }
   });
   return errs;
 }

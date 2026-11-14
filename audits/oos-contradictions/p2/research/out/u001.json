@@ -1,0 +1,166 @@
+{
+ "file": "u001.json",
+ "results": [
+  {
+   "id": "ab_mount_athabasca_north_face_var",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searches (extended web search, MP forum, SummitPost north face, LA Mountaineers NAC pages, Gripped) found only the regular North Face and a forum mention of an ice runnel out left, no pitch count for this variation. The row itself says one true pitch plus an easier second rope length, so 1 is not provably wrong.",
+   "sources": [
+    "https://summitpost.org/north-face/430710",
+    "https://www.mountainproject.com/forum/message/112494762"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_mount_snowdome_slipstream",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "Route listing: 909 m, lower half soloed or simul-climbed to a 50 m ice curtain, then 3 more ice pitches, so well over one pitch. A 2010 climber blog says up to 6 ice pitches (about 3 by rope length) on top of the long lower section; Gripped gives about 1,000 m. Sources disagree on the exact count, so the false 1 is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/119219878/slipstream",
+    "https://firstascent-dane.blogspot.com/2010/12/slipstream-mt-snowdome-canadain.html",
+    "https://gripped.com/?p=6869"
+   ],
+   "patches": [
+    {
+     "id": "ab_mount_snowdome_slipstream",
+     "fact": "pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "ab_mount_temple_squashed_bones",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "Route listing gives 3,600 ft (1,091 m) and 6 to 10 roped pitches on the buttress plus about 6 more on the upper East Ridge; the AAJ report describes roughly six roped pitches on the lower buttress alone. Both prove it is far more than 1 pitch but no total is stated, so the false 1 is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/117956702/squashed-bones",
+    "https://publications.americanalpineclub.org/articles/12200227101/North-America-Canada-Canadian-Rockies-Mt-Temple-East-Northeast-Buttress-Squashed-Bones"
+   ],
+   "patches": [
+    {
+     "id": "ab_mount_temple_squashed_bones",
+     "fact": "pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "ab_outpost_peak_north_buttress",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": "7",
+   "evidence": "Mountain Project lists 7 pitches (about 800 ft) and a guide-service program page independently describes three pitches on the first tower, three on the second and a seventh reaching the ridge. The overview's 5 pitches is a towers-only count with a 70 m rope, an alternative way of splitting the same ground, so the row value 7 stands.",
+   "sources": [
+    "https://www.mountainproject.com/route/121324309/north-buttress",
+    "https://yamnuska.com/mountaineering/intermediate-advanced-programs/tonquin-valley-alpine-climbing/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_peyto_tower_the_prow",
+   "fact": "grade vs pitch grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: MP gives 5.9 overall, 4 pitches, with one user's P3 at 5.10b; the AAC note calls it a moderate classic, and a MP forum thread mentions some tricky/aid climbing. No guidebook, thecrag or SummitPost page states pitch grades, so neither number can be overturned by two sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/119306179/the-prow",
+    "https://publications.americanalpineclub.org/articles/13201215271/Peyto-Tower-Various-Routes",
+    "https://www.mountainproject.com/forum/topic/112840334/west-face-leaning-tower-vs-the-prow"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ak_cantwell_creek_ice_alpine_aim_for_the_bushes",
+   "fact": "route length",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "The route's own pitch lengths (25, 45, 63 m, plus an optional 10 m) total roughly 133-143 m and the party's write-up gives 150-160 m, both well below the stored 366 m (the 1,200 ft header figure). Two accounts contradict 366 but give slightly different lengths, so length_m is blanked. A further search for other pages on this 2023 route found none.",
+   "sources": [
+    "https://www.mountainproject.com/route/124696020/aim-for-the-bushes",
+    "https://alaskaiceclimbing.com/?p=3995"
+   ],
+   "patches": [
+    {
+     "id": "ak_cantwell_creek_ice_alpine_aim_for_the_bushes",
+     "fact": "route length",
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 366,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "ak_mount_yukla_2_gank_d_and_slayed",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "The AAJ report and the climber's blog both describe a three-day, 2,800 ft climb with an aid headwall, a M5-6 chimney, a dihedral, several WI3-4 pitches, a WI/AI6 drip and a final WI3 pitch, clearly many pitches. No total is given, so the false 1 is blanked.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200717302",
+    "https://higherdreams.blogspot.com/2007/12/"
+   ],
+   "patches": [
+    {
+     "id": "ak_mount_yukla_2_gank_d_and_slayed",
+     "fact": "pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "bc_nesakwatch_spires_waltz_right_in",
+   "fact": "grade vs pitch grades",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searches show only the route's own Mountain Project page (5.10b/c PG13, 6 pitches, pitch 1 5.10a) and its stats page; the Nesakwatch guide pages and trip reports cover other lines. The crux may be unlisted, so the header cannot be overturned.",
+   "sources": [
+    "https://www.mountainproject.com/route/124688946/waltz-right-in",
+    "https://www.vanmtnguides.com/nesakwatch-traverse"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_north_illusion_peak_illusion_traverse_south_to_north",
+   "fact": "direction of au cheval/notch in reversed descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry: ClubTread thread, both MP directions and Ocean to Alpine confirm a rappel into the notch after the au cheval but no source names the compass end; the two MP pages themselves conflict.",
+   "sources": [
+    "https://forums.clubtread.com/27-british-columbia/45559-south-north-illusion-peaks-reverse-traverse.html",
+    "https://www.oceantoalpinemedia.com/post/a-grand-illusion"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_slesse_mountain_station_d_peak_north_buttress",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry searches (extended, thecrag, AAJ, OpenBeta) found only the Mountain Project page, which says 7 in the header and nine in the text; no independent page gives a pitch count for this line.",
+   "sources": [
+    "https://www.mountainproject.com/route/119554730/station-d-peak-north-buttress"
+   ],
+   "patches": []
+  }
+ ]
+}

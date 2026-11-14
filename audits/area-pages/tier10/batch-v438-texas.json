@@ -1,0 +1,24 @@
+{
+ "tx_icarus_boulder": {
+  "_expect": { "name": "Icarus Boulder", "region": "Texas" },
+  "blurb": "Icarus Boulder is a single named block on the south side of North Mountain at Hueco Tanks, in far West Texas near El Paso. It holds ten bouldering problems on syenite, with a wide spread: a handful of easy-to-middling problems around V1 to V6, then a few serious tests from V8 up into the V10s. That range makes it a stop for strong boulders as much as for people warming up. The block faces northeast, so it sits on the shadier side of the mountain. It is a good place to build a session around a few lines rather than a long circuit.",
+  "review": { "sources": ["https://www.mountainproject.com/area/classics/106338519/icarus-boulder", "https://thetopo.com/crags/north-mountain/topos/icarus"] }
+ },
+ "tx_robinson_ridge_playground": {
+  "_expect": { "name": "Robinson Ridge Playground", "region": "Texas" },
+  "blurb": "Robinson Ridge Playground is a small bouldering feature inside a city park in north McKinney, Texas. It is a built, artificial boulder with several faces and a cave on its northwest side, set over mulch landings. The ten problems are all easy: from the very bottom of the scale up to about V2, with most at V0 or V1. That makes it a handy spot for kids, first-timers and anyone wanting a quick movement session near the playground, but not a destination for experienced boulderers. The walk from the car is minimal.",
+  "review": { "sources": ["https://mountainproject.com/area/200317585/robinson-ridge-playground", "https://communityimpact.com/mckinney/government/robinson-ridge-park-debuts-in-north-mckinney/"] }
+ },
+ "tx_hog_s_back_caves": {
+  "_expect": { "name": "Hog's Back Caves", "region": "Texas" },
+  "blurb": "Hog's Back Caves is the far end of the cliff band at Rogers Park, above Lake Belton near Belton in central Texas. A couple of caves are followed by several vertical walls, all with limestone bouldering. The ten problems run from V2 to V7, bunched around V3 and V4, with a few harder lines at the top end. Expect steep, powerful moves on pocketed rock, and walls roughly 12 to 30 feet tall. The park gets mostly shade, which helps on warm days, and a brush is useful. It is a short hike from the gate, though you pass lower, less appealing rock on the way.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107232333/hogs-back-caves", "https://mountainproject.com/area/106084033/rogers-park"] }
+ },
+ "_skipped": {
+  "tx_adair_springs": "only one fetchable page (OpenBeta page returned 404; MP not fetched); no two pages about the crag",
+  "tx_dreamer_s_wall": "no fetched page is about the wall itself; only the parent North Shore pages (one 403) mention it",
+  "tx_flower_power_ledge": "no fetched page about the ledge itself besides a route page; parent canyon page does not describe it",
+  "tx_bailey_river_cliffs": "no page found naming Bailey River Cliffs",
+  "tx_carrion_wall": "only parent Hamm Creek Park page and a sibling (Indian Head) page; no page about Carrion Wall itself"
+ }
+}

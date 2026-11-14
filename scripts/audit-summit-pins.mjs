@@ -8,12 +8,8 @@
 // name are the same feature, a large distance is a CONTRADICTION — the two records disagree
 // about one point. If the pin names something else, the distance is expected and is context.
 // Same shape as audit:aspect-name's ridge/face split.
-import { readFileSync } from "node:fs";
-const env = {};
-for (const line of readFileSync("/Users/nathanbarber/dev/Climbing-App/.env.local", "utf8").split("\n")) {
-  const m = line.match(/^([A-Z_]+)=(.*)$/); if (m) env[m[1]] = m[2].trim();
-}
-const URL_ = env.VITE_SUPABASE_URL, KEY = env.VITE_SUPABASE_ANON_KEY;
+import { SUPABASE_URL, anonKey } from "./lib/supabase-env.mjs";
+const URL_ = SUPABASE_URL, KEY = anonKey();
 const H = { apikey: KEY, Authorization: "Bearer " + KEY };
 const WP_TYPE_MAP = { trailhead:"Trailhead","trailhead/pass":"Trailhead",summit:"Summit",topout:"Topout",junction:"Junction",
   camp:"Campsite",campsite:"Campsite","pass/camp":"Campsite","base/bivy":"Campsite",bivy:"Campsite",

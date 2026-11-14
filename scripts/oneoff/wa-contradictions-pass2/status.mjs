@@ -1,6 +1,7 @@
+import { fileURLToPath } from "node:url";
 // Pipeline status: reader groups done, research in/out, applied files.
 import fs from "node:fs";
-const T = new URL("../../../audits/wa-contradictions-pass2", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-contradictions-pass2", import.meta.url));
 const ls = d => (fs.existsSync(d) ? fs.readdirSync(d) : []);
 const reads = ls(`${T}/read`).filter(f => /^g\d+\.json$/.test(f)).map(f => +f.slice(1, 4)).sort((a, b) => a - b);
 const rin = ls(`${T}/research/in`).map(f => +f.slice(1, 4)).sort((a, b) => a - b);

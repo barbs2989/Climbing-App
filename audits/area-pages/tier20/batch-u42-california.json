@@ -1,0 +1,90 @@
+{
+ "ca_south_whizz_dome": {
+  "_expect": {
+   "name": "South Whizz Dome",
+   "region": "California"
+  },
+  "blurb": "South Whizz Dome is the southern member of the Whizz Domes pair, a granite dome in the Tuolumne Meadows part of Yosemite, set along the Tioga Road corridor not far from Daff and Polly Domes. The 23 climbs mix modern bolted lines with older, bolder gear routes and a handful of aid lines. Sport climbs make up the largest share, and the difficulty is concentrated high: most routes fall between the low 5.11s and 5.13, with only a couple of easier ones in the 5.7 to 5.10 range. This is a destination for strong climbers, not a beginner crag, and at roughly 8,600 feet the climbing season is a short alpine summer one.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105990889/south-whizz-dome",
+    "https://en.wikipedia.org/wiki/South_Whizz_Dome"
+   ]
+  }
+ },
+ "ca_shadow_rock": {
+  "_expect": {
+   "name": "Shadow Rock",
+   "region": "California"
+  },
+  "blurb": "Shadow Rock is a slab-focused crag on Bishop Peak, the volcanic plug that rises beside Cal Poly on the edge of San Luis Obispo. The 23 routes are mostly bolted face and slab lines, with a smaller group of gear routes and two top-rope lines. Difficulty stays moderate: nearly all of it sits between 5.8 and 5.10, with a few easier lines and one 5.11. Footwork and balance matter more than strength here, and the crag is generally quieter than the busier walls on the peak. The walk-in is a short, mild hike on trails, and the Central Coast climate keeps it workable through much of the year.",
+  "review": {
+   "sources": [
+    "https://app.advcollective.com/climbing/shadow-rock-climbing-central-coast-slab-adventures-in-california",
+    "https://mountainproject.com/area/105737100/bishop-peak"
+   ]
+  }
+ },
+ "ca_2_central_wall_amphitheater": {
+  "_expect": {
+   "name": "Central Wall Amphitheater",
+   "region": "California"
+  },
+  "blurb": "Central Wall Amphitheater is the steepest section of Pigeon Cliff, a roadside crag at the west edge of Susanville in northeastern California. It occupies an old quarry, so many lines are strongly overhanging and among the longest on the cliff. Most of the 23 routes are gear climbs, with three bolted lines. Grades start in the 5.7 range, cluster around 5.10 through 5.12, and top out in the low 5.13s, which makes it a better fit for experienced leaders. Much of the wall is sound, but loose blocks litter the old quarry floor and bolts often guard broken rock beside cracks.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/118692567/central-wall-amphitheater",
+    "https://www.mountainproject.com/area/106940043/pigeon-cliff"
+   ]
+  }
+ },
+ "ca_isles_in_the_sky_northeast_face": {
+  "_expect": {
+   "name": "Isles in the Sky (Northeast Face)",
+   "region": "California"
+  },
+  "blurb": "This is the northeast side of Isles in the Sky, a big granite formation in the Split Rocks area of Joshua Tree's Pinto Basin, on the quiet side of the park. Of its 23 routes, most are trad cracks and faces, with several bolted lines and a few top-rope setups. Grades run wide, from scrambling-level lines through the moderate 5.8 to 5.10 range that holds most of the climbing, up to a few 5.12s. The wall points northeast, so it catches morning sun and then goes shady, which suits warm days. Expect coarse, grippy granite and some loose flakes near the base ledge.",
+  "aspect": "NE",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/116550777/isles-in-the-sky-northeast-face",
+    "https://app.advcollective.com/climbing/celebrated-beast-a-classic-moderate-on-joshua-trees-northeast-face"
+   ]
+  }
+ },
+ "ca_cove_the": {
+  "_expect": {
+   "name": "Cove, The",
+   "region": "California"
+  },
+  "blurb": "The Cove is a granite sport crag in Bowman Valley, in the Sierra foothills along the I-80 corridor north of Lake Tahoe, at about 5,000 feet. Of its 23 routes, most are bolted sport lines, with a couple of boulder problems and one top-rope. The grades lean hard: the bulk sit around 5.11 and 5.12, with a handful of 5.10s, a few easier climbs at the far left end of the cliff, and two high V-grade boulder problems. Expect a walk along a flume to reach the base, and good conditions from spring through fall.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108013136/the-cove",
+    "https://app.advcollective.com/climbing/bat-company-a-bold-ascent-at-the-cove"
+   ]
+  }
+ },
+ "ca_dilithium_crystal_the": {
+  "_expect": {
+   "name": "Dilithium Crystal, The",
+   "region": "California"
+  },
+  "blurb": "The Dilithium Crystal is a compact, steep formation in the Inner Gorge of the Owens River Gorge, near Bishop in the Eastern Sierra, at about 5,500 feet. All 23 routes are bolted sport climbs packed tightly together, with short pitches of roughly 50 to 70 feet. Most of the climbing is in the 5.10 through 5.12 range, with a single easy 5.8 and 5.9 at the low end and one 5.13 at the top, so it rewards climbers who have stepped past the entry-level grades. Sun arrives in the afternoon, and the river canyon setting makes for a pleasant, focused session.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105880598/the-dilithium-crystal",
+    "https://app.advcollective.com/climbing/exploring-the-dilithium-crystal-bishops-compact-511-crag"
+   ]
+  }
+ },
+ "_skipped": {
+  "ca_west_face_center_flintstone_slab": "could not fetch two pages that describe it (only a classics list, no rock/approach text)",
+  "ca_the_southern_front": "only the Daff Area parent page fetched; no second page about this sub-area"
+ },
+ "_conflicts": {
+  "ca_2_central_wall_amphitheater": "stored rock andesite; the parent Pigeon Cliff page (https://www.mountainproject.com/area/106940043/pigeon-cliff) says columnar basalt",
+  "ca_shadow_rock": "stored rock dacite; https://app.advcollective.com/climbing/shadow-rock-climbing-central-coast-slab-adventures-in-california mentions granite and sandstone slabs (low-reliability page)",
+  "ca_dilithium_crystal_the": "stored aspect W and rock welded tuff; https://app.advcollective.com/climbing/exploring-the-dilithium-crystal-bishops-compact-511-crag says south-facing granite (low-reliability page)"
+ }
+}

@@ -1,0 +1,62 @@
+[
+ {
+  "id": "ca_lu_matterhorn_whorl",
+  "name": "Matterhorn Peak and Whorl Mountain",
+  "state": "California",
+  "region": "Sierra Nevada, northern Yosemite (Horse Creek Pass)",
+  "legs": [
+   {
+    "peak": "Matterhorn Peak",
+    "route": null,
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Whorl Mountain",
+    "route": null,
+    "connect": "Walk back down to the tarn camp past the pass, then on another morning contour around the base of Whorl to the gullies that lead into its upper cliffs.",
+    "route_id": null
+   }
+  ],
+  "duration": "2 days (overnight at the pass)",
+  "how": "Both summits are reached from a camp just over Horse Creek Pass, so parties hike in on one day, climb Matterhorn that afternoon or the next, and take Whorl the following morning. Matterhorn is mostly class 2 talus with a move or two of easy third class near the top. Whorl is the more involved of the two: a series of chutes and ledges, a squeeze past a chockstone, and a ledge across the west face, with only short stretches of class 3.",
+  "descent": "Return to the camp from each summit by the same ground, then follow the steep use trail down the talus slope to the trailhead on the way out.",
+  "logistics": "Start from the Twin Lakes backpacker parking; the camp is near the headwaters of Spiller Creek just past the pass. Wilderness permit needed; summer to early fall is the usual window.",
+  "sources": [
+   "https://climber.org/reports/1997/287.html",
+   "https://climber.org/reports/2000/577.html"
+  ],
+  "confidence": "medium",
+  "notes": "Neither report names the route used on either peak, so route is null. Both parties climbed the peaks on separate days from the same camp; no traverse between them. The second report also did Twin Peaks and Virginia Peak from the same camp (Twin-Virginia ridge has loose class 3). Both reports are single trips by small parties, so confidence is medium."
+ },
+ {
+  "id": "ca_lu_sawtooth_needham",
+  "name": "Sawtooth Peak and Needham Mountain",
+  "state": "California",
+  "region": "Sierra Nevada, Mineral King (Sequoia National Park)",
+  "legs": [
+   {
+    "peak": "Sawtooth Peak",
+    "route": "Northwest Ridge from Sawtooth Pass (class 2)",
+    "connect": "",
+    "route_id": "ca_northwest_ridge_7"
+   },
+   {
+    "peak": "Needham Mountain",
+    "route": "Traverse from Sawtooth Peak (class 2-3), finishing on class 3 summit rocks",
+    "connect": "Follow the ridge south, dropping to roughly 11,500 feet to get around the towers, then climb the sandy slope to the summit.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Climbers go up the trail past the Monarch Lakes to Sawtooth Pass, scramble the class 2 ridge to Sawtooth, then continue along the crest toward Needham. The traverse is class 2-3 and avoids the ridge towers by dropping below them. Needham's summit area has a couple of steep class 3 pinnacles, so the top takes some care. The same two peaks are also done in the opposite order from a camp near Franklin Pass, approaching Needham cross-country first.",
+  "descent": "Head down Needham's sandy southwest slope to Amphitheater Lake, then cross Crystal Pass keeping to easier ground and follow the trail down by Crystal Lake to the trailhead.",
+  "logistics": "Mineral King trailhead; budget roughly 11 to 12 hours for the loop. Cars should be protected from marmots in early season. Summer through early fall is the usual window.",
+  "sources": [
+   "https://sites.google.com/view/wacziarg-climbing/2025-07-mineral-king-peaks",
+   "https://climber.org/reports/2002/990.html"
+  ],
+  "confidence": "medium",
+  "notes": "The 2002 party did Needham first (class 2 southwest side) then Sawtooth southwest face, from Franklin Pass camp via Soda Creek; the 2025 party did Sawtooth first then traversed. The 2025 report gives the higher class (2-3) for the ridge. A further log not fetched calls the traverse class 3."
+ }
+]

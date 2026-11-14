@@ -1,0 +1,78 @@
+{
+ "ab_planet_x": {
+  "_expect": {
+   "name": "Planet X",
+   "region": "Alberta"
+  },
+  "blurb": "Planet X is a steep limestone wall shaped like a shallow cave, high in the Cougar Creek drainage above Canmore. Reaching it means roughly an hour of walking along the creek bed, which was reshaped by a flood, so expect loose stones. This area has 27 sport routes, running from the 5.11s through 5.12 and 5.13 into 5.14, which makes it a place for strong climbers rather than beginners. Routes are long and pumpy, with stepped roofs and big moves between small holds. Wear a helmet, since rock can break off. Spring runoff keeps the creek high.",
+  "approach": "Park on the west side of Cougar Creek in Canmore and follow the dry creek bed upstream, roughly an hour, to where it forks; bear right and the wall soon appears.",
+  "approach_min": 60,
+  "review": {
+   "sources": [
+    "https://gripped.com/?p=30191",
+    "https://gripped.com/profiles/evan-hau-sends-new-5-14-at-planet-x-in-canmore/",
+    "https://gripped.com/news/sara-frangos-sends-planet-x-5-13/"
+   ]
+  }
+ },
+ "ab_cat_s_eye_wall": {
+  "_expect": {
+   "name": "Cat's Eye Wall",
+   "region": "Alberta"
+  },
+  "blurb": "Cat's Eye Wall is a limestone sport wall in Cougar Canyon, close to Canmore in the Bow Valley. The base is a short hike in. This area has 27 single-pitch sport routes, mostly in the 5.10 and 5.11 range, with two easier lines and one 5.12. Climbing leans technical, with slabs, corners and some roofs where balance and footwork count more than power. The rock is sound, though small chips can come loose, so a helmet is sensible. The wall catches strong afternoon sun and holds heat, so mornings or late afternoons suit warm days.",
+  "review": {
+   "sources": [
+    "https://app.advcollective.com/climbing/double-play-at-cats-eye-wall",
+    "https://app.advcollective.com/climbing/dead-dog-cafe-a-dynamic-59-sport-climb-on-cats-eye-wall"
+   ]
+  }
+ },
+ "ab_raven_crag": {
+  "_expect": {
+   "name": "Raven Crag",
+   "region": "Alberta"
+  },
+  "blurb": "Raven Crag sits high on the north side of Sulphur Mountain above the town of Banff, with views over the Bow Valley and the Vermilion Lakes. It offers sport climbing on limestone, with both single pitches and multi-pitch lines, and older routes have been retro-bolted while newer moderate lines were added for people wanting something easier. This area has 24 sport routes: a few from 5.9 to 5.11, a core of 5.12s and 5.13s, and one much harder line. The approach is a sustained uphill walk with a few hundred metres of elevation gain, so allow time.",
+  "review": {
+   "sources": [
+    "https://gripped.com/?p=17643",
+    "https://www.mountainproject.com/route/113313077/plutonian-shores"
+   ]
+  }
+ },
+ "ab_gery_s_wall": {
+  "_expect": {
+   "name": "Gery's Wall",
+   "region": "Alberta"
+  },
+  "blurb": "Gery's Wall is a single-pitch sport crag at the left end of the Stanley Headwall in Banff National Park, close to the Nemesis waterfall. The headwall is famous for winter ice and mixed climbing, and this wall gives a summer option. This area has 23 sport routes, mostly in the 5.12 range with a few 5.13s and some easier lines. The rock is textured and rewards careful footwork. The walk in is alpine in character, and the last stretch below the wall is steep, exposed and covered in loose stone; ledges above shed rocks, so wear a helmet. Afternoon sun hits the wall, so start early on hot days.",
+  "review": {
+   "sources": [
+    "https://gripped.com/news/new-sport-crag-on-stanley-headwall-is-perfect-for-hot-days/",
+    "https://app.advcollective.com/climbing/gerys-wall-technical-alpine-climbing-in-banff-national-park"
+   ]
+  }
+ },
+ "ab_middle_brother": {
+  "_expect": {
+   "name": "Middle Brother",
+   "region": "Alberta"
+  },
+  "blurb": "Middle Brother is one of the Three Little Brothers, the climbing boulders in Cowboys Park (formerly Millennium Park) in downtown Calgary. They are shaped granite blocks placed in the city park, and opened in 2023. This area has 23 problems, from V1 through the middle grades, with a few at V6 and harder. The three boulders together offer overhang, slab and technical faces. A wood-chip landing sits below, and because the blocks are tall, a rope on top allows a downclimb. The city requires a helmet, and you need your own pad. It is popular after work and on weekends.",
+  "review": {
+   "sources": [
+    "https://calgary.ca/millenniumpark",
+    "https://mountainproject.com/area/125054698/millennium-park"
+   ]
+  }
+ },
+ "_skipped": {
+  "ab_morning_side": "could not fetch two pages",
+  "ab_larry_s_gym": "could not fetch two pages",
+  "ab_the_lookout_main_wall_and_shield": "could not fetch two pages"
+ },
+ "_conflicts": {
+  "ab_cat_s_eye_wall": "stored aspect E; fetched pages describe the wall as south, southwest or west facing: https://app.advcollective.com/climbing/double-play-at-cats-eye-wall, https://app.advcollective.com/climbing/dead-dog-cafe-a-dynamic-59-sport-climb-on-cats-eye-wall"
+ }
+}

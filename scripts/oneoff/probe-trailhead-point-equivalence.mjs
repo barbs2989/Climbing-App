@@ -1,3 +1,5 @@
+import { fileHref } from "../lib/file-href.mjs";
+import { fileURLToPath } from "node:url";
 // Does the shared `trailheadPoint()` send the Directions button to the SAME place the two inline
 // expressions it replaced did?
 //
@@ -14,7 +16,7 @@
 import fs from "fs";
 import { selectAll } from "../lib/supabase-env.mjs";
 
-const SRC = new URL("../../ClimbMatchCore.jsx", import.meta.url).pathname;
+const SRC = fileURLToPath(new URL("../../ClimbMatchCore.jsx", import.meta.url));
 const src = fs.readFileSync(SRC, "utf8");
 
 // --- extract the real functions, with ANCHOR LOST rather than a silent fallback ----------------
@@ -38,10 +40,10 @@ const wpIsSrc = lift("wpIs", "function wpIs(");
 const wpPlacedSrc = lift("wpPlaced", "export function wpPlaced(").replace(/^export /, "");
 const thSrc = lift("trailheadPoint", "function trailheadPoint(");
 const mod = `${WP_TYPE_MAP}\n${wpPlacedSrc}\n${wpTypeSrc}\n${wpIsSrc}\n${thSrc}\nexport {trailheadPoint,wpIs};`;
-const tmp = new URL("./.trailhead-lift.mjs", import.meta.url).pathname;
+const tmp = fileURLToPath(new URL("./.trailhead-lift.mjs", import.meta.url));
 fs.writeFileSync(tmp, mod);
 let trailheadPoint, wpIs;
-try { ({ trailheadPoint, wpIs } = await import(tmp + "?v=" + src.length)); }
+try { ({ trailheadPoint, wpIs } = await import(fileHref(tmp + "?v=" + src.length))); }
 finally { try { fs.unlinkSync(tmp); } catch {} }
 
 // --- the pre-change expression, verbatim -------------------------------------------------------

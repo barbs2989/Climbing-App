@@ -1,0 +1,42 @@
+{
+  "area_id": "wa_vesper_peak",
+  "routes": [
+    {
+      "route_id": "wa_fish_whistle",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Web search: a guide service lists alpine climbing on Vesper as early July through end of August; Mountaineers pages describe the north-face routes in late July; the stored Jul-Sep window and the rock-route histogram (Jul-Oct) agree." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2653074", "verdict": "different", "why": "Logged as True Grit (same shared approach and ledge, so passing the pins proves nothing); a different climbing route from Fish & Whistle." },
+        { "aid": "2605076", "verdict": "different", "why": "Report names True Grit (first pitch party identified it as True Grit); different route." },
+        { "aid": "2271525", "verdict": "different", "why": "Logged and described as True Grit." },
+        { "aid": "3363303", "verdict": "unsure", "why": "Blank logged route on a peak with several routes; no description to tie it to the Fish & Whistle line." },
+        { "aid": "3306584", "verdict": "different", "why": "Report describes a Ragged Edge variation." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_true_grit_2",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Web search: a guide service says early July through end of August for Vesper alpine climbs; Mountaineers late-July reports; True Grit's own logged ascents fall in Jul (3), Aug (4), Sep (6), Oct (1)." },
+      "track": { "aid": "2605076", "verdict": "same", "kind": "complete", "inSeason": true, "why": "Logged route is True Grit and the report places the party at the true base after an off-route detour, describes the bolted pitches and the pitch-4 crux; the track runs trailhead to summit and back with the stash at the col notch. Round trip within 40 m of our trailhead pin, summit within 5 m." },
+      "otherTracksConsidered": [
+        { "aid": "2653074", "verdict": "unsure", "why": "Also logged True Grit in September, complete round trip, but no report text to confirm the line; kept as a backup only." },
+        { "aid": "2271525", "verdict": "unsure", "why": "Logged True Grit in August with a report mentioning the ledge traverse and pitch 4; valid backup, track passes 13 m from the summit pin and starts 34 m from the trailhead pin." },
+        { "aid": "3311481", "verdict": "different", "why": "Logged Ragged Edge." },
+        { "aid": "2960588", "verdict": "different", "why": "Logged Ragged Edge 5.7." },
+        { "aid": "1973073", "verdict": "different", "why": "Report says the party climbed Ragged Edge." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 8, "text": "A grassy ramp just left of the real start tempts parties off route; it has loose holds and is serious to reverse (August)", "aids": ["2605076"] },
+        { "field": "approach_note", "month": 8, "text": "The two usual ways to the col notch near 5,720 ft are a traverse north from the trail at about 5,630 ft or a line hugging the west side of Lake Elan; going higher than that forces a slick slab down-climb to reach the col (August).", "aids": ["2605076", "2271525"] },
+        { "field": "pro_tips", "month": 8, "text": "Packs are commonly left at the notch near 5,720 ft; the base of the first pitch is a short scramble further along the ledge.", "aids": ["2605076"] },
+        { "field": "pro_tips", "month": 8, "text": "Pitch 4 is the standout crux and feels harder than the grade; the bolts and belay stations are plentiful and in good shape.", "aids": ["2605076", "2271525"] },
+        { "field": "watch_out", "month": 8, "text": "The ledge traverse below the col is narrow with no-fall consequences, though the dirt underfoot is firm (August)", "aids": ["2271525"] },
+        { "field": "monthBreakdown", "month": 8, "text": "In mid-August there was no snow on the approach and no stream crossing that needed wading.", "aids": ["2605076"] },
+        { "field": "what_to_bring", "month": 8, "text": "Trekking poles for the long knee-punishing descent (August)", "aids": ["2605076"] }
+      ]
+    }
+  ],
+  "notes": "Only two of the peak's routes were in scope. Fish & Whistle has no harvested track (one September logged ascent exists on Peakbagger but no track was in the packet). Ragged Edge already has track points. North Face (wa_vesper_peak_north_face) and the standard route were not in routes[]."
+}

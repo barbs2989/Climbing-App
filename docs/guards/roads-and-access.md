@@ -803,3 +803,265 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `expiredanswered`/`pastreport` must report zero under `expired`. **Re-run all six after touching
     the output path** — `--json` routes every report line through `say()`, so a mistake there is
     silent on stdout and invisible in the exit code.
+- **Getting there, batch 1 (owner note 2026-10-25): 64 missing DRIVES filled, 7 walks replaced.**
+  `scripts/oneoff/getting-there-directions/` holds the whole batch: `list-targets.mjs` (WA alpine
+  routes with a trailhead card and >=200 chars of approach prose but no `trailheadDirection` — 76),
+  the research per STORED trailhead string (`th-A-out.json`, `th-B-out.json`, 61 trailheads, each
+  with its source URLs for review, never in the text), and `apply-trailhead-directions-batch.mjs`.
+  - **Research the TRAILHEAD, not the route.** 76 routes needed only 61 strings and ~45 real places;
+    the drive to a trailhead is the same for every climb that starts there, so the shared text is
+    correct, not the pasted-paragraph fingerprint (that one is about the WALK).
+  - **The approach prose cannot be summarised into a drive.** It is a walk; the drive is usually not
+    in it at all, so a "one-line summary of the prose" would fail this file's shape detector. Every
+    direction was researched online.
+  - **Rails in the applier:** fills an absent value only; matches by the exact stored trailhead
+    string; writes only `found:true` at `high`/`medium` confidence; numbers in the text must equal
+    `numbersUsed`; no source name or URL; must pass `trailheadDirectionProblem()`; merges into
+    `approach_logistics`; refresh `routes.json` immediately before `--apply`, because the merge base
+    is that snapshot. Paced 1 s, reconciled by re-read (64/64).
+  - **Refused, so still open (12):** three trailheads no source could place (Cutthroat South Buttress
+    and West Ridge pullouts, Mount Crowder's "no separate trailhead"); High Bridge (Stehekin, no
+    road); Jack Mountain South Face (no stored trailhead name); and seven at LOW confidence —
+    Canyon Creek milepost (forum only), Cedar Creek (not shown to be the North Gardner access), the
+    Maynard Burn #816 (no trailhead of that name, the drive found was to Upper Dungeness), FR-6220 /
+    Anderson Creek (the drive found ends at the Mount Persis road end), Depot Creek x2 (newest source
+    ~2020 for a WASHED-OUT road). Lowered by hand on review, not by the agent: Anderson Creek and
+    Depot Creek. Corrected by hand: Pete Lake (FR-46 leaves BEFORE Salmon la Sac, not past it).
+  - **Two refusals were the detector being right about the WORDS:** Duckabush's "pavement ends at
+    3.6 miles" matches the on-foot `at N miles` rule, and Mineral Creek's "about 7 miles to Cooper
+    Pass" the to-a-Pass rule because "it" names no road. Reworded, facts unchanged — the rule stays.
+  - **Mount Robson's 7 routes** held "Via the Berg Lake Trail, from the north/south side of the peak",
+    the only failures of `check:trailhead-direction-shape --live`. `fix-robson-trailhead-direction.mjs`
+    swaps it for the drive (Hwy 16, visitor centre, 2 km road) by compare-and-swap on the exact old
+    string. The trail reopened in full in 2025 after the 2021 floods; the text says to check status.
+- **Getting there, the online ACCURACY check of the existing directions (owner note 2026-10-25).**
+  `getting-there-directions/list-existing.mjs` groups every live `trailheadDirection` by (trailhead,
+  text): 751 routes, **379 distinct drives**, so each is checked once (`verify-1..8.json`, brief in
+  `VERIFY_BRIEF.md`). Corrections go through `apply-direction-corrections.mjs`: compare-and-swap on
+  the exact old text, every rail of the batch-1 applier, merged, paced, reconciled.
+  - **One researcher is not enough; every correction gets a SECOND, independent check that must
+    FETCH the page** (`second-opinion-*.json`). Measured on batches 1–2: the first pass proposed a
+    "fix" to Cutthroat Lake (FR-400 is a LEFT turn) that was WRONG — the page it read was written for
+    EASTBOUND drivers; westbound from Winthrop it is a right, as the app already said. The second
+    check also cut unsourced mileages (Cathedral Rock's "12 gravel miles", Copper Glance's 7 -> 9.3).
+    Batch 1's researcher admitted fetching NO pages, which is why the brief now has an Evidence rule:
+    no verdict from a search snippet, `unverifiable` when no page opened.
+  - **Most "defects" are NAME-ONLY texts, not wrong ones** ("From the Cascade Pass Trailhead"). The
+    shape detector passes them (they end at the trailhead) and they are not false, but they tell a
+    driver nothing; they are replaced only where a fetched page gives the drive.
+  - Batches 1–2: 98 drives checked, 40 judged accurate (SHALLOW — batch 1 fetched nothing, so treat
+    those as unchecked), 17 corrections written over **71 routes**, 3 refused (Dosewallips washout
+    parking: low confidence, sources disagree on where the road ends).
+  - Batch 3 (fetched pages): 48 drives, 25 corrections confirmed by the second check, **59 routes**.
+    **It caught a defect this item's OWN batch 1 wrote:** Hannegan Pass read "FR-32 1.3 miles, then
+    the left fork 5.4 more" (6.7 mi, from two WTA pages); the Forest Service trailhead page and the
+    PNT both give **5.3 miles** in total, and WTA's own Goat Mountain page puts that trailhead 2.1 mi up
+    the same road. Batch-1 text is not exempt from the accuracy pass — it went through it like the rest.
+  - **A second source that DISAGREES is the reason for the second check**, not noise: WTA's 1.3 + 5.4
+    and the Forest Service's 5.3 cannot both be true. Prefer the land manager, and say why in the note.
+  - Batches 4–7: 192 drives, **49 corrections over 86 routes**, each confirmed by the second check.
+    The ones that change what a climber DOES: Mowich Lake (4 entries, one written by this item's own
+    batch 1) now says the road is closed at the Fairfax Bridge instead of describing a drive; Phelps
+    Creek, Smithbrook (FR 6700, order May 20 2026 through Dec 31 2027) and Deadhorse Road (FR 37,
+    closed at mile 3.1) carry their dated closures; Snowgrass Flat's FR 21 turn, Teneriffe's exit (32,
+    not 31), Pilchuck (ended at Verlot, not the trailhead), and a day-use fee at Skyline Lake that
+    no fetched page lists — removed.
+  - Batch 8 and the RE-CHECK of batches 1–2 (9, 10 — 78 entries the shallow first pass had called
+    accurate or left): **40 corrections over 83 routes.** The re-check is what earned its cost: entries
+    batch 1 had passed as "accurate" without opening a page were WRONG — Cedar Creek's turnoff (17 mi
+    west of Winthrop, not "east of Klipchuck"), Cathedral Driveway's last road (FR 3900-300) — and
+    batch 1's own Blanca Lake drive now reads as it is: Index-Galena Road closed at mileposts 10–14 and
+    Beckler River Road (FR 65) closed, both since December 2025, so the trailhead cannot be reached by
+    car. Every other text that drives FR 65 (four) got the dated closure too, and so did batch 1's own
+    Lincoln Peak drive (FR 38, washout at milepost 7 since July 2026, found while checking Elbow Lake).
+  - **A closure found on one route is a QUESTION for every route on that road.** Fairfax Bridge,
+    Beckler River Road and FR 38 each surfaced on one entry and each reached others: grep
+    `existing.json` for the road before calling the closure done.
+  - **Whole pass, 2026-10-28:** all 379 distinct drives checked with fetched pages (457 checks with the
+    re-check): 216 accurate, 31 wrong, 132 name-only, 78 unverifiable (no page opened — left as they
+    are; most are SR-20 pullouts and Mountaineers pages that answer 403). **131 corrections written over
+    299 route rows**, every one compare-and-swapped and reconciled; `check:trailhead-direction-shape
+    --live` passes on all 751.
+  - **Left OPEN, deliberately:** Cascade River Road — a WTA alert (10.15.26) says closed at milepost 20
+    for maintenance, the park's road page says open; one non-agency alert does not override the land
+    manager, so the six texts are unchanged. Dosewallips washout parking (sources disagree on where
+    the road ends). SR-20 pullout distances east of Washington Pass that disagree with each other
+    (2.8 / 3 / 4 mi) with no page to settle them.
+  - **Fill batch 2** (`list-targets-2.mjs`, `th-C*.json`): the 23 WA alpine routes left with a
+    trailhead card but no drive, whatever their prose. 12 trailheads researched (the 8 batch 1 showed
+    unresolvable skipped), each checked a second time; **13 routes filled**, including both Jack
+    Mountain routes batch 1 refused (Canyon Creek now page-backed). Refused: White Salmon (only a
+    winter snowshoe page). The merge base was refreshed by an id read (`id=in.(…)`) instead of a
+    re-listing, because full scans were timing out that afternoon.
+  - **The second check also SUBTRACTS.** It added an unproven "North Shore Road bridge out" note to
+    North Fork Quinault, which the first pass had already shown (park road page) this drive never
+    crosses; removed by hand. And a check that writes "per a Forest Service alert" is citing a source
+    in app text — reworded, and every written text scanned for citation phrasing (none left).
+  - **A TEMPORARY closure in a drive line is DATED** ("closed since August 2026 for the Little Giant
+    Fire; check the road status before you go") and keeps the normal drive, so the line is right again
+    the day the road reopens. A durable one (Mowich Lake: the Fairfax Bridge on SR-165, closed to all
+    traffic since April 2025, no funded replacement) replaces the drive outright.
+    - **`audit:expiring-closures` now reads the drive line too (2026-10-29)**, as a SEPARATE narrow
+      read (`dir:approach_logistics->>trailheadDirection`, never an OR on the road/access query — that
+      timed out with 57014 on 2026-10-28), and its open-ended tier matches the dated shape this pass
+      writes ("closed since July 2026", "Since December 2025 … has been closed"; the "since" must be
+      followed by a DATE, so "closed for culvert work … and has since reopened" stays history). New
+      injection case `--inject=drivesince`. The rule was tested offline against 7 sample texts; the
+      LIVE run and the six injection runs did not complete that day — every whole-WA scan answered
+      HTTP 500 twice and the audit stopped itself, as it should. **Run them when the database is
+      quiet:** plain, then `--inject=drivesince` (open-ended == drive lines), `clean`, `yearonly`,
+      `expiredanswered`, `pastreport`.
+    - **Dated closures RE-CHECKED against the land manager, 2026-10-29** (`closure-recheck.json`,
+      `apply-closure-recheck.mjs`: compare-and-swap on the exact live text, paced, re-read). Every road
+      a drive line dated a closure on was checked by a researcher and again by a fetched page. **17
+      routes corrected:** Chiwawa River Road (7 — the storm-damage order closes FR 6200 north of
+      Atkinson Flats May 20, 2026 – Dec 31, 2027 and lists the Phelps Creek Trailhead; the Little
+      Giant Fire order runs only to Oct 31), Deadhorse Road (closed at its START since June 2026 for
+      repair, not "at mile 3.1"), Tupso Pass Road (the Sep 29 – Dec 31, 2026 timber closure from FR
+      4110 added), Beckler River Road (4 — open to Jack Pass, closed beyond, North Fork Skykomish bridge
+      on FR 63 out; FR 6514 gated at its start, FR 6510 at mile 1), Vantage Road (rockslides since
+      May 2026), FR 38 (the "elk winter range" reason no page supports, removed). **Confirmed as
+      written:** Suiattle (order runs to Jan 1, 2028), FR 1107 (washout at MP 3.8), FR 38 washout
+      at MP 7, Index-Galena MP 10-14, Smith Brook order dates, Fairfax Bridge, Madison Falls, Westside
+      Road at Dry Creek, the Mount Adams Recreation Area closure order (Aug 26), SR 542 gated Oct 25.
+      **Still open:** Cascade River Road (park page "open", dated July; WTA alert Oct 15 "closed at
+      MP 20") — unchanged, as before; Dosewallips washout parking (no page says where the road ends).
+    - **Round 4, 2026-10-29: the live run, and every tier re-checked** (`getting-there-directions/r4/`).
+      The plain run read 2,373 WA routes, 931 drive lines, 6,258 values; 94 flagged (1 expired, 85
+      open-ended, 8 as-of-period). All five injection runs behaved: `drivesince` reported exactly
+      931 = 931, and `clean`, `yearonly`, `expiredanswered` and `pastreport` reported 0 in every tier.
+      The 25 values round 3 had just checked were left alone. The other 65 were researched (one
+      Sonnet researcher each for the Olympics and the Cascades), and every fix got a second fetched
+      page. **26 values on 20 routes rewritten** (`r4/final.json`, `r4/apply-final.mjs`, which
+      compares against the exact live text first):
+      - **Silver-Skagit Road reopened Oct 26, 2026.** DriveBC's advisory only renders in a browser;
+        it was read in Chrome. That changed every Hozomeen note and Castle Peak. DriveBC now calls
+        Oct 15 – Apr 15 *unmaintained*, not shut, so the stale "2025-26 winter shutdown" windows
+        were rewritten to say that.
+      - **Quinault South Shore Road reopened Oct 8, 2026** (Meany, Noyes, Seattle). The temporary
+        bridge joining the two shore roads is out for the winter. The researcher's "either road
+        reaches both" was wrong on that point, and the second check rewrote it.
+      - **Mount Olson's expired "closed through Oct 1"** now reads: only FS-2451 and Copper Creek
+        stay shut. The Forest Service reopened every other site on July 8.
+      - **Mount Berge:** the storm-damage order's dates were added and the lapsing fire order
+        dropped.
+      - **Mount Lincoln:** the trail-status date moved to Sep 30.
+      - **Cascade River Road** is now "closed at the Eldorado gate since at least mid-October 2026".
+        The park page is still dated July. Two October sources agree on the closure, so the stale
+        land-manager page does not out-vote them.
+      - **Unverifiable:** Alpental roads, the Olney Creek gate, and the FR 32 bypass. These were left
+        as written.
+  - **numbersUsed compares as SETS.** A number used twice in a text ("SR 20 ... mile 20") was declared
+    twice and refused four checked corrections; duplicates are not untraceability.
+  - **The BACKLOG: WA alpine routes with NEITHER a trailhead card NOR approach prose (329 on
+    2026-10-28, 102 areas).** `getting-there-directions/list-neither.mjs` lists them without scanning
+    `areas` (routes filtered by id, discipline and empty prose; only their own areas and parents are
+    fetched by id), and builds `th-library.json`: trailhead coordinates OTHER routes already store,
+    kept only where every copy agrees within 200 m. `apply-getting-there-batch.mjs` now refuses an
+    entry whose drive fails `trailheadDirectionProblem()`, whose sources could not be FETCHED, or
+    whose approach or drive shares an 8-word run with a fetched source (`copiedRuns`), and it copies a
+    coordinate only from that library (`--library`), never from a typed research coordinate. Not
+    started: the database answered a 50-row read with 504 after 140 s that evening, so the batch
+    did not run (throttle rule). Mountain Project route pages fetch with curl and carry a per-route
+    Description; matching our route names to theirs is the hard part (3 of 16 at Dragontail matched
+    by name).
+  - **Backlog batch 1, the 94 PEAK routes (2026-10-29)** — `build-batch-n.mjs` gives each route the
+    trailheads and drives its SIBLINGS on the same peak already carry (89 of 94 had one), research per
+    `FILL_BRIEF.md`, second check per `FILL_CHECK_BRIEF.md`, `prepare-fill-apply.mjs` re-reads the live
+    rows by id so the absence rail and merge base are today's. 24 found at high/medium by research, 22
+    sent to the second check, which rejected 6 (Hibox ×3, Mount Hinman, Old Snowy, Mount Roosevelt:
+    each tied to a named route by the route NAME alone) and dropped 3 to low (borrowed approaches).
+    The applier then refused 5 more until reworded (two drives and one approach shared an 8-word run
+    with a fetched page; two approaches did not contain their trailhead name exactly). **13 written**, each
+    re-read: Rainier (Emmons, Ingraham Direct, Wilson Headwall), Lane Peak, Bryant Peak (Hot Tubbs),
+    Glacier Peak (Gerdine Ridge), Table Mountain (2), Eldorado Main Peak, Mesahchie, Mount Adams
+    (Pinnacle Glacier Headwall), Mount Stuart (Always the Cowboy), Nooksack Tower. 315 remain.
+    - **Yield is the finding: research fills about 1 peak route in 7.** The rest have no fetchable page
+      that describes THAT route's start — SummitPost and mountaineers.org answer 403 to curl and
+      WebFetch, and Mountain Project often lists a peak's scrambles under other names or not at all.
+      A browser session could reach SummitPost; nothing else on the open web is left for these.
+    - **Misfiled (5), all REFILED by 2026-10-29.** "Tahoma Cleaver" and "South Tahoma Headwall" had
+      already been moved to Mount Rainier by another pass. The other three were empty stubs
+      (`misfiled-fix.sql`, rollback in `misfiled-rollback.json`): "Daniel Glacier" on Bald Eagle Peak
+      was a DUPLICATE of Mount Daniel's own "Daniel Glacier / Southeast Slopes" and was deleted after a
+      count showed 0 rows in every table pointing at it; "Mount Temple Ridge" moved to The Temple;
+      "Three Musketeers Ridge", an Enchantments summit above Nada Lake that the catalog lacked under any
+      spelling, got its own peak under the Stuart Range (coordinate marked approximate — the ground is
+      7,574 ft there against a published ~7,700; Peakbagger and ListsOfJohn are behind a bot check).
+    - **A seasonal gate is stated as its yearly pattern** ("gated overnight from late October through
+      the winter"), not as this year's start date, so the line does not go stale every November.
+  - **Backlog batch 2, the 219 CRAG routes (2026-10-29): 136 filled, on 25 crags.** Almost all are ice
+    and drytooling crags. Only 9 had a sibling with a card, so each CRAG was researched once
+    (`CRAG_BRIEF.md`: where to park, the drive, the walk to the base), checked a second time, and
+    `expand-crag-fill.mjs` put the same checked text on every backlog route at that crag; the route
+    applier then ran its rails per route (125 routes on 15 crags, 11 on 10).
+    - **Why the ROUTE rows, not `areas.approach`:** that column is the walk only, by design (never
+      roads, parking or permits), and `CragWalkIn` renders it only on rock categories
+      (`CRAG_CATS`). These crags' ice and mixed routes show their own trailhead card, so a crag
+      walk-in would have reached the area page and none of the routes. Do not "move" these fills to
+      the area without making the ice route page read it first — that is a page change, not data.
+    - The second check rejected the loose collections (the SW Cascades "waterfall ice" area has
+      several approaches) and McClellan Butte (no page describes the couloir's base); hand edits
+      removed winter-parking clauses that rested only on search snippets, and climbing advice from
+      a walk-in. Banks Lake and Devils Punch Bowl park on the SR 155 shoulder with no pass stated,
+      because no page states one outside the state park.
+    - **Wayne's World / Dark Side / Excellent Adventure Wall sit under an area literally named
+      "PUBLIC LAND FOR SALE-Wayne's World".** No page opened explains it; the lot is state DNR land
+      with a Discover Pass. Written, with the land status UNPROVEN — worth the owner's look.
+    - Not written (28 of 53 crags; 26 not found by research, 2 rejected): mostly a road hint with no parking or walk, or a summit hike rather than a
+      crag base. **179 routes of the backlog remain** (81 peak, 83 crag, the 15 on Dragontail, Colchuck
+      Peak and Mount Johnson left to the parallel session); `check:trailhead-direction-shape --live`
+      passes on all 914.
+  - **Backlog round 3, 2026-10-29: the BROWSER lever.** `list-remaining.mjs` re-read the backlog by
+    id (no scans): 144 of 328 filled, 9 rows gone, **175 still empty** (93 peak routes, 82 crag
+    routes on 29 crags). Researchers read mountaineers.org in Chrome (SummitPost turned on a bot
+    check part-way through the day; Peakbagger and ListsOfJohn always show one), saved each page to
+    `~/dev/getting-there-page-cache/` (outside the repo — not our text to commit), and
+    `apply-getting-there-batch.mjs --page-cache DIR` runs the 8-word copy check against those
+    copies and REFUSES an entry citing a page it could read neither way. `NR_BRIEF.md` is the addendum.
+    - **Peaks: 5 written of 93** (Dragontail West Route, Ingalls North Peak SW Face, Mount Hinman West
+      Route, Tahoma Cleaver from the Dry Creek barricade, Luna Peak SW Ridge), every one re-read.
+      The second check rejected Hibox South Route and Preacher North Route (a peak page's one line
+      matched to a named route by where it ends up) and lowered Dragontail Direct North Buttress,
+      Sherpa NE Face, Rainier East Success Couloir and Three Musketeers Ridge to low. The applier then
+      refused three until reworded (two drives shared an 8-word run with a page, one numbersUsed
+      missed a "2"). **Yield is the finding again: about 1 peak route in 19.** The Mountaineers
+      route pages that exist describe a peak's standard line; the variations in our catalog
+      (Colchuck ×4, Little Annapurna ×3, Mount Johnson ×6, Gunsight ×4…) have no page anywhere
+      that says where they start.
+    - **Crags: 13 of 29 passed the second check**, which also had to say WHICH routes a page shows
+      the walk reaching (`appliesTo`; `expand-crag-fill.mjs` honours it) — Tumwater's walk reaches
+      Drury Falls and The Pencil, not its other three climbs; Goat Wall's only The Standard; Moses
+      Coulee's only Sundance Kid. 28 route rows queued (`nr-crags-routes-check.json`). McClellan
+      Butte rejected again: FSR 9020 has been closed at miles 0.7–1.1 since June 2026.
+      **All 28 written** that night, through the runner's DB slot gate (`~/dev/db-throttle/dbslot.mjs`),
+      after the applier refused 8 of them on the copy check until six crags' walks were reworded;
+      reconciled 28 of 28. Crags: Erikland, Hubba Hubba, Moses Coulee, Pee Wee's Playhouse (10),
+      Tumwater, Skookum Falls, Clear Creek Falls (White Pass), Demilitarized Zone, Goat Wall,
+      Eightmile Buttress, Keechelus Lake, Melakwa Flows, Upper Black Ice.
+    - **What is LEFT of the backlog: 88 peak routes and ~54 crag routes**, each researched twice
+      (2026-10-28 and this round) and refused for want of a page. Do not re-run web research on them;
+      the open web has nothing more. A guidebook (Beckey's Cascade Alpine Guide) is the only source left, and
+      archive.org's copy is loan-only: its search-inside servers still answered 403 on 2026-10-29.
+
+
+- **`audit:closure-distance`** (2026-10-29, owner note on Three Fingers South Peak via Lookout: "Description
+  said road was washed out so it adds extra miles but that isn't reflected in the technical stats distance").
+  Lists every route whose own prose (approach, `road.*`, `access.*`, approach-card notes and season, trailhead
+  pin text) says a road is washed out, gated or closed, next to the one-way miles the Distance tile prints
+  (`lib/outing.js` `effDistKm`, the tile's own reader) and the most-used card's distance. FLAG means the text
+  names extra miles and no stored distance is that long.
+  - **The FLAG count is not the backlog — ask its denominator.** On the first run 11 of 415 closure routes
+    flagged. A Sonnet classification of all 415 found **151 with an in-force closure on 34 roads** (136
+    IN_FORCE, 15 NO_ACCESS; 93 seasonal-only, 171 history-only). Most in-force rows name no mileage, so the
+    regex cannot flag them. The worklist is `audits/closure-distance/` (one plan + `.verdicts.json` per road;
+    `BRIEF.md` is the research procedure), not this audit's FLAG lines.
+  - **The fix's shape:** the stored distance starts where a climber can PARK, and `road.walkMi` (one way) /
+    `road.walkGainFt` (ascent the road adds) record how much of it is the road. TECHNICAL STATS says so in
+    its note (`roadWalkMi`). The applier (`scripts/oneoff/apply-closure-distance.mjs`) adds the miles to the
+    first and last itinerary day, or sets an explicit `dist_km` (never arithmetic on that column: it holds
+    two conventions). It refuses a row that already carries `walkMi`, so a re-run cannot add the road twice;
+    a reopening is undone by its rollback file or by subtracting `walkMi`.
+  - **It cannot see:** whether a closure is still in force (`audit:expiring-closures` and research decide);
+    a route whose closed road is on an ALTERNATE way in (that card gets its own `distMi`); a route with no
+    stored distance at all (nothing to extend — recorded NO_CHANGE).

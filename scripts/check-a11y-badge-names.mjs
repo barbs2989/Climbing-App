@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:a11y-badges — a badge count glued into a control's own accessible name.
 //
 // The defect, as a screen reader hears it. The Crew sub-tab bar rendered
@@ -124,9 +125,8 @@ log(`starting dev server on ${port}...`);
 // detached puts vite in its own process group. `npx` spawns vite as a CHILD, so killing only
 // the npx pid leaves the real server listening — a leaked dev server then squats the port
 // for every later run and can answer for a DIFFERENT checkout. Kill the group.
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;

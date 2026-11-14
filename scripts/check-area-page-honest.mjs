@@ -20,6 +20,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (rel) => fs.readFileSync(path.join(ROOT, rel), "utf8");
@@ -28,7 +29,7 @@ const fail = (m) => { console.log("  FAIL  " + m); fails++; };
 const ok = (m) => console.log("  ok    " + m);
 
 const sections = read("lib/AreaPageSections.jsx");
-const browser = read("lib/DbAreaBrowser.jsx");
+const browser = readAppFile(path.join(ROOT, "lib/DbAreaBrowser.jsx"));
 
 // ── 1. every fact is gated on its own column ──
 const factsBody = (sections.match(/export function AreaFactsCard[\s\S]*?\n\}/) || [""])[0];

@@ -128,7 +128,7 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
   return createPortal(
     <div role="dialog" aria-modal="true" aria-label="3D route map" style={{ position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 9, gap: 10 }}>
-        <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title ? title + " · 3D" : "3D route map"}</span>
+        <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title ? title + " · 3D" : "3D route map"}</span>
         <button onClick={onClose} aria-label="Close 3D map" style={POP_CLOSE}>✕</button>
       </div>
       <div style={{ position: "relative", flex: 1, minHeight: 0 }}>

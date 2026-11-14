@@ -1,0 +1,29 @@
+{
+ "or_castle": {
+  "_expect": { "name": "Castle", "region": "Oregon" },
+  "blurb": "Castle is a low ring of basalt buttresses out in the Oregon Badlands, east of Bend on the high desert. The walls are short, roughly 10 to 25 feet, so this is a small-scale spot with 13 problems and routes: nine trad lines, all easy to moderate (5.5 to 5.9), plus four boulder problems between V0 and V2. The rock is mostly sound, but tops can be loose and some faces hold dirt or moss, so bouldering suits it better than roped climbing. Landings are sandy and traffic is light. Expect a sandy walk in, and bring your own water because none is available nearby.",
+  "rock": "basalt",
+  "review": { "sources": ["https://www.mountainproject.com/area/107357989/castle", "https://www.oregonhikers.org/field_guide/Flatiron_Rock_Loop_Hike"] }
+ },
+ "or_hank_collins_memorial_wall_the": {
+  "_expect": { "name": "Hank Collins Memorial Wall, The", "region": "Oregon" },
+  "blurb": "This is a compact sport wall at the foot of The Monument in Smith Rock State Park, central Oregon. Thirteen bolted lines share it, and the grades skew hard: most sit around 5.12, with a few 5.10s and 5.11s and a single 5.13. The tuff is steep, and at least one line overhangs with a roof of sloping holds and crimps. Routes were bolted in a burst of development beginning in 2014, so the wall feels newer and less crowded than the park's famous cliffs. Reaching the far-left line takes a third-class slab scramble to a gully start.",
+  "review": { "sources": ["https://www.smithrock.com/news-all/climbing-areas-route-development-monument-marsupials-smith-rock", "https://mountainproject.com/route/111380682/sweet-as-hank"] }
+ },
+ "or_orange_wall": {
+  "_expect": { "name": "Orange Wall", "region": "Oregon" },
+  "blurb": "Orange Wall is a steep, rust-coloured face at Madrone Wall, a Clackamas County crag outside Portland. It holds 13 routes split fairly evenly between trad and sport, running from about 5.8 to 5.12, with the bulk in the 5.10 to 5.11 range. Locals rate it among the best lines at Madrone. A trail leads left from the main wall to reach it, and a toprope is also available. Poison oak grows around the base and along the paths, so cover up and watch where you scramble.",
+  "review": { "sources": ["https://www.mountainproject.com/area/112449037/orange-wall", "https://rakkup.com/guidebook/madrone-and-carver-cliffs-rock-climbing/orange-wall/s19382"] }
+ },
+ "or_southside": {
+  "_expect": { "name": "Southside", "region": "Oregon" },
+  "blurb": "Southside lies behind Brogan Spire in the Marsupials sector of Smith Rock, central Oregon. It offers a friendly mix of easier climbing on tuff: a few three-pitch trad routes at 5.5 to 5.7, and about ten sport lines. Grades run from 5.5 to 5.12, with five of the 13 at 5.10 and the rest spread around it, so it suits climbers stepping up from moderates. Getting here is a real hike and includes a fourth-class notch, which keeps the crowds down. The old trad lines are sparsely protected, so treat their ratings with care.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118897491/southside", "https://smithrock.com/marsupials"] }
+ },
+ "_skipped": {
+  "or_e_sun_deck": "no fetched page about Sun Deck itself (only the Eagles Rest parent page and a route page); sendage page had no sector info; thecrag 403",
+  "or_the_middle_garden_boulders": "only the Armageddon/Upper Garden parent page and the Garden page were fetched; neither describes Middle Garden Boulders itself; search budget not the issue, no second page found",
+  "or_main_area_4": "no page found for a Main Area at 42.58, -119.72; the Mountain Project Main Area found is in Colorado, others undetermined",
+  "or_shire_zone": "no page mentions a Shire Zone; Phone Home Boulders page fetched but has no Shire info"
+ }
+}

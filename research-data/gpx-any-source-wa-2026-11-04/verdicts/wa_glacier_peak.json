@@ -1,0 +1,67 @@
+{
+  "area_id": "wa_glacier_peak",
+  "routes": [
+    {
+      "route_id": "wa_glacier_peak_kennedy_glacier",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Web: Mountaineers lists the Frostbite Ridge/Kennedy Glacier line June-September (early season basic, late season ice); guidebook-derived pages call July the best month for the peak overall. Stored Jun-Aug extended one month to September; peak-wide logged ascents cluster Jul-Aug."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "3351771",
+          "verdict": "different",
+          "why": "Blank logged route; line is the south-side Cool Glacier approach from the North Fork Sauk, not the Kennedy Glacier/Kennedy Ridge line."
+        },
+        {
+          "aid": "2929474",
+          "verdict": "different",
+          "why": "Logged Cool Glacier; same south-side line, not Kennedy."
+        },
+        {
+          "aid": "2762898",
+          "verdict": "offseason",
+          "why": "Logged Sitkum Glacier but a February winter ascent with no GPS track."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_glacier_peak_sitkum_glacier",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "Web: guidebook pages put the Sitkum route in spring-summer, with late season giving bare ice and big crevasses; Peakbagger logs under this route name are spread May-Oct. Stored Jun-Aug extended to September."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "2762898",
+          "verdict": "offseason",
+          "why": "Only ascent logged as Sitkum Glacier; it is a February winter trip and has no GPS track."
+        },
+        {
+          "aid": "3265097",
+          "verdict": "unsure",
+          "why": "July 2026 ascent, no GPS and no route name."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No harvested track names or follows the Kennedy or Sitkum lines; every GPS track is the standard south-side line, which we already hold as the Cool Glacier route (3000 track points). Our Sitkum trailhead (North Fork Sauk) does not match the historic White Chuck start the Sitkum logs use."
+}

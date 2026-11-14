@@ -18,7 +18,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILE = path.join(ROOT, "RouteDetail.jsx");
+const FILE = path.join(ROOT, "src/components/RouteOverviewTab.tsx") /* the conditions list moved out of RouteDetail.jsx */;
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const FIXED = 'marginBottom:2}}>{pat.label}{" "}{pat.when?<span';

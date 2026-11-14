@@ -1,0 +1,77 @@
+[
+ {
+  "batch": "T6",
+  "id": "id_southwest_ridge",
+  "i": 0,
+  "name": "Borah Peak Trailhead",
+  "from": [
+   44.13256,
+   -113.83448
+  ],
+  "state": "Idaho",
+  "ground_ft": 7407,
+  "pins": [
+   {
+    "id": "id_southwest_ridge",
+    "i": 0,
+    "name": "Borah Peak Trailhead",
+    "elev": 7392
+   }
+  ],
+  "route_names": [
+   "Southwest Ridge"
+  ],
+  "text": "",
+  "first_pass": "Single weak listing matches stored to a few metres, so it may echo the same data; ground 7,407 ft vs pin 7,392 ft and the usual 7,200-7,400 ft trailhead height is consistent. Unverified independently; left."
+ },
+ {
+  "batch": "T7",
+  "id": "id_diamond_peak_east_ridge",
+  "i": 0,
+  "name": "Pass Creek Road End",
+  "from": [
+   44.14738,
+   -113.03906
+  ],
+  "state": "Idaho",
+  "ground_ft": 8137,
+  "pins": [
+   {
+    "id": "id_diamond_peak_east_ridge",
+    "i": 0,
+    "name": "Pass Creek Road End",
+    "elev": 8137
+   }
+  ],
+  "route_names": [
+   "East Ridge"
+  ],
+  "text": "{\"trailhead\":\"Pass Creek Road End\",\"trailheadLat\":44.14738,\"trailheadLng\":-113.03906}",
+  "first_pass": "No published coordinate found: guides describe the gate on Pass Creek Road (FS-181) by mileage only; unverified."
+ },
+ {
+  "batch": "T7",
+  "id": "id_thompson_peak_south_couloir",
+  "i": 0,
+  "name": "Redfish Trailhead",
+  "from": [
+   44.14842,
+   -114.91999
+  ],
+  "state": "Idaho",
+  "ground_ft": 6578,
+  "pins": [
+   {
+    "id": "id_thompson_peak_south_couloir",
+    "i": 0,
+    "name": "Redfish Trailhead",
+    "elev": 6571
+   }
+  ],
+  "route_names": [
+   "South Couloir"
+  ],
+  "text": "{\"trailhead\":\"Redfish Trailhead\",\"trailheadLat\":44.14842,\"trailheadLng\":-114.91999}",
+  "first_pass": "Unverified: the Redfish Lake trailhead pages found (fs.usda.gov Sawtooth) print no coordinate; third-party points (visitor center 44.1436,-114.9197, North Shore picnic area 44.143686,-114.915795) are different places."
+ }
+]

@@ -1,0 +1,48 @@
+{
+ "bc_squamish_buttress": {
+  "_expect": {
+   "name": "Squamish Buttress",
+   "region": "British Columbia"
+  },
+  "blurb": "A trad sector high on the Apron of the Stawamus Chief in Squamish, just south of Rock On Gully. Ten climbs, all trad, start around 5.9 and reach the low 5.12s, though most fall in the 5.10 range, with one at 5.11 and a couple at 5.12. The main draw is the long classic line up the buttress, a six-pitch outing, and the area is often strung together with lower Apron routes to build a full day that finishes on the Chief's summit. The top headwall adds several steep single-pitch cracks on granodiorite. You first have to climb up to Broadway Ledge, so plan a committed multi-pitch day rather than a quick crag session.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106072245/squamish-buttress",
+    "https://mountainproject.com/route/106072248/the-squamish-buttress"
+   ]
+  }
+ },
+ "bc_hillside_sector": {
+  "_expect": {
+   "name": "Hillside Sector",
+   "region": "British Columbia"
+  },
+  "blurb": "A bouldering sector inside Hunter Creek in the Fraser Valley of British Columbia, laid out on forested hillside between the Solitude Boulder and the Sleight of Hand area and running uphill toward the Balcony Sector. Ten problems are described, mostly easy to moderate: four at V0 to V1, a couple each at V2 and V3, then a single V5 and a single V6 at the top end. It is a loose scattering of good problems rather than one tight cluster, and it includes long traverse-style lines, one of them tucked behind the Sleight of Hand boulder. Trails between boulders are faint, so expect some wandering, and bring pads.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119077872/hillside-sector",
+    "https://www.mountainproject.com/route/106776060/deliverance"
+   ]
+  }
+ },
+ "bc_sleight_of_hand_boulder": {
+  "_expect": {
+   "name": "Sleight of Hand Boulder",
+   "region": "British Columbia"
+  },
+  "blurb": "A single, well-regarded boulder in the Sleight of Hand Sector at Hunter Creek, in the Fraser Valley of British Columbia. Ten problems cover a hard-leaning spread: one V1 and one V3, six between V4 and V5, a V6 and a V8. The climbing is technical and crimpy, built on sidepulls and small footholds, and the best-known line moves left to an arete before topping out straight up. The boulder sits in a sector with a high density of classic problems, reached by following the winding trail east from the Solitude Boulder along the hillside.",
+  "review": {
+   "sources": [
+    "https://thetopo.com/crags/hunter-creek/topos/sleight-of-hand-boulder",
+    "https://mountainproject.com/area/119077875/sleight-of-hand-sector"
+   ]
+  }
+ },
+ "_skipped": {
+  "bc_traverse_wall": "no fetched page about the Traverse Wall itself (Murrin Park listing does not mention it)",
+  "bc_action_man": "no fetched page about Action Man; North Walls page does not list it",
+  "bc_old_man_willow": "only parent Goldfinger Sector page fetched; no page about Old Man Willow itself",
+  "bc_buzz_height_year": "its own page has no description and no second fetched page mentions it",
+  "bc_south_apron": "page about South Apron itself returned 403; only parent Apron page and a route page fetched"
+ }
+}

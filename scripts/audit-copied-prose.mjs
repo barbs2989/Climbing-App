@@ -7,6 +7,7 @@
 //
 //   node scripts/audit-copied-prose.mjs <batch.json> [more.json …]
 //   node scripts/audit-copied-prose.mjs --selftest        (no network)
+//   node scripts/audit-copied-prose.mjs --live [--cache DIR] [--json out.json]   (live rows; see audit-copied-prose-live.mjs)
 //
 // Exit 1 when any string repeats a source. An unreadable source is listed, never counted as clean.
 // The rule, the threshold and what it cannot see: scripts/lib/source-overlap.mjs.
@@ -14,6 +15,9 @@ import fs from "node:fs";
 import { MIN_RUN, sourceIndex, copiedRuns, proseStrings, checkEntry } from "./lib/source-overlap.mjs";
 
 const argv = process.argv.slice(2);
+
+// --live: the same test against the LIVE rows of every route the audits/ research cited a page for.
+if (argv.includes("--live")) { await import("./audit-copied-prose-live.mjs"); process.exit(process.exitCode ?? 0); }
 
 if (argv.includes("--selftest")) {
   const src = ["From the bolt anchor, take the right-facing desert-varnished dihedral for about 60 feet, then move left to the belay anchors."];

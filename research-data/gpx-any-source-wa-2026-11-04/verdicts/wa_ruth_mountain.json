@@ -1,0 +1,23 @@
+{
+  "area_id": "wa_ruth_mountain",
+  "routes": [
+    {
+      "route_id": "wa_ruth_icy_traverse",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Web search: Mountaineers route page lists June to October, with July through early August the common window and late-August bare ice in low-snow years; the traverse logged ascents fall in August; the stored Jul-Sep window kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3201877", "verdict": "offseason", "why": "The only track that reaches Icy Peak (an out-and-back on the same ridge from Ruth, logged as Standard) was on May 23, about five weeks before the traverse season starts, on full snow; also an out-and-back from a camp, not a one-way traverse." },
+        { "aid": "3340985", "verdict": "different", "why": "Ruth summit only; never goes south of the Ruth summit." },
+        { "aid": "3242565", "verdict": "different", "why": "Ruth summit only." },
+        { "aid": "3226289", "verdict": "different", "why": "Ruth summit only." },
+        { "aid": "2889123", "verdict": "different", "why": "Ruth summit only, in June." },
+        { "aid": "2271042", "verdict": "different", "why": "Ruth summit only." },
+        { "aid": "2270792", "verdict": "different", "why": "Ruth summit only." },
+        { "aid": "2488080", "verdict": "different", "why": "Ruth only, in April." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "No in-season track exists that continues over the saddle to Icy Peak. Several Ruth-only reports (including a mid-September one noting scarce water above Hannegan Pass and a receded glacier that can be avoided) belong to the South Slopes route, which already has a track and was not in routes[]."
+}

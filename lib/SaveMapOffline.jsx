@@ -1,3 +1,4 @@
+import { tx } from "./tapWords.js";
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { C } from "../ClimbMatchCore.jsx";
@@ -38,7 +39,9 @@ function useSavedMap(routeId) {
 
 const btn = { padding: "7px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 12.5, fontWeight: 700, cursor: "pointer", minHeight: 36 };
 
-export function SaveMapOffline({ routeId, notify }) {
+/* `extra` rides in the same row, after the save controls — the desktop rail puts Draw approach there. */
+/* `lead` is the route's Download GPX button: it comes first in this row, so the ways to take the map away sit side by side (owner, 2026-11-13). */
+export function SaveMapOffline({ routeId, notify, lead, extra }) {
   const [info, reload] = useSavedMap(routeId);
   const [busy, setBusy] = useState(false), [prog, setProg] = useState(null);
   const qc = useQueryClient();
@@ -50,7 +53,7 @@ export function SaveMapOffline({ routeId, notify }) {
       const m = res && res.map;
       if (!m || !m.total) { say("This climb has no location on file, so there is no map to save."); return unpackRouteOffline(routeId); }
       if (!m.ok) { say(m.reason === "quota" ? "The map didn’t fit on this device — free some space and try again." : "Couldn’t download the map — try again with a better signal."); return unpackRouteOffline(routeId); }
-      say(m.missing ? "Saved " + Math.round(100 * m.saved / m.total) + "% of the map — tap Retry with a better signal for the rest." : "Map saved on this device — the way in and this page open with no signal.");
+      say(m.missing ? "Saved " + Math.round(100 * m.saved / m.total) + tx("% of the map — tap Retry with a better signal for the rest.") : "Map saved on this device — the way in and this page open with no signal.");
     }).catch(function (e) { say("Couldn’t save the map — " + ((e && e.message) || "check your connection")); })
       .finally(function () { setBusy(false); setProg(null); reload(); qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };
@@ -58,16 +61,20 @@ export function SaveMapOffline({ routeId, notify }) {
     unpackRouteOffline(routeId).then(function () { say("Map removed from this device"); }, function () { say("Couldn’t remove the map — it’s still on this device."); })
       .finally(function () { reload(); qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };
-  if (info === undefined) return null;
+  if (info === undefined) return lead || extra ? <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 8 }}>{lead || null}{extra || null}</div> : null;
   const pct = mapPct(info), partial = info && info.missing > 0;
+  // Beside Draw approach in the 300px desktop rail, both buttons have to fit one row.
+  const saveBtn = extra ? { ...btn, padding: "7px 6px", fontSize: 12, whiteSpace: "nowrap", flex: "1 1 auto" } : btn;
   return <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
+    {lead || null}
     {busy ? <span role="status" style={{ fontSize: 12.5, color: C.textSub, fontWeight: 600 }}>{"Saving map… " + (prog && prog.total ? Math.round(100 * prog.done / prog.total) + "%" : "")}</span>
       : info ? <>
         <span style={{ fontSize: 12.5, color: partial ? C.amber : C.green, fontWeight: 700, flex: 1, minWidth: 0 }}>{partial ? pct + "% of the map saved offline" : "✓ Map saved offline · " + savedAgo(info.at)}</span>
         {partial ? <button onClick={save} style={btn}>Retry</button> : null}
         <button onClick={remove} aria-label="Remove the saved map from this device" style={{ ...btn, color: C.textSub }}>Remove</button>
       </>
-      : <button onClick={save} style={btn}>⤓ Save map offline</button>}
+      : <button onClick={save} style={saveBtn}>⤓ Save map offline</button>}
+    {extra || null}
   </div>;
 }
 
@@ -85,12 +92,12 @@ export function SavedRouteMaps({ onOpen, notify }) {
       .finally(function () { qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };
   return <section aria-label="Saved route maps" style={{ marginTop: 18 }}>
-    <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.textMuted, marginBottom: 8 }}>{"Saved route maps · " + metas.length}</div>
+    <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 8 }}>{"Saved route maps · " + metas.length}</div>
     {metas.map(function (m) {
       const r = byId[m.id];
       const name = r ? r.name : (rowsQ.isLoading ? "Loading…" : "A saved climb");
       const pct = m.mapTotal ? Math.round(100 * m.mapTiles / m.mapTotal) : 0;
-      return <div key={m.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", background: C.card, border: "1px solid " + C.border, borderRadius: 11, marginBottom: 8 }}>
+      return <div key={m.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", background: C.card, border: "1px solid " + C.border, borderRadius: 12, marginBottom: 8 }}>
         <button onClick={function () { if (r && onOpen) onOpen(dbRouteToCamel(r)); }} disabled={!r} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", padding: 0, cursor: r ? "pointer" : "default", color: C.text }}>
           <div style={{ fontSize: 14, fontWeight: 700 }}>{name}</div>
           <div style={{ fontSize: 11.5, color: m.mapMissing ? C.amber : C.textMuted }}>{(r && r.areas && r.areas.name ? r.areas.name + " · " : "") + (m.mapMissing ? pct + "% of the map saved" : "map saved " + savedAgo(m.mapAt))}</div>

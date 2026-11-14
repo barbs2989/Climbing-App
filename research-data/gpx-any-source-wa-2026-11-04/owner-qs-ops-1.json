@@ -1,0 +1,14 @@
+[
+ { "op": "merge", "id": "wa_luna_peak_southeast_slopes", "into": "wa_luna_peak_southwest_ridge", "area_id": "wa_luna_peak", "name": "Southeast Slopes", "move": "*",
+   "set": { "discipline": "scrambling", "grade": "Class 3", "aspect": "SW", "season": "Jul-Sep" } },
+ { "op": "delete", "id": "wa_summit_chief_mountain_southeast_face", "area_id": "wa_summit_chief_mountain", "name": "Southeast Face" },
+ { "op": "delete", "id": "wa_big_chiwaukum_mount_temple_ridge", "area_id": "wa_the_temple", "name": "Mount Temple Ridge" },
+ { "op": "delete", "id": "wa_bald_eagle_peak_south_spur", "area_id": "wa_bald_eagle_peak", "name": "South Spur" },
+ { "op": "delete", "id": "wa_bald_eagle_peak_southwest_route", "area_id": "wa_bald_eagle_peak", "name": "Southwest Route" },
+ { "op": "delete", "id": "wa_bryant_peak_north_route", "area_id": "wa_bryant_peak", "name": "North Route" },
+ { "op": "delete", "id": "wa_bryant_peak_west_face", "area_id": "wa_bryant_peak", "name": "West Face" },
+ { "op": "delete", "id": "wa_old_snowy_mountain_north_route", "area_id": "wa_old_snowy_mountain", "name": "North Route" },
+ { "op": "delete", "id": "wa_old_snowy_mountain_west_route", "area_id": "wa_old_snowy_mountain", "name": "West Route" },
+ { "op": "patch", "id": "wa_mount_shuksan_white_salmon_glacier", "area_id": "wa_mount_shuksan_climbs", "name": "White Salmon Glacier",
+   "set": { "season": "Mar-Sep", "best_season": "Ski ascents run late March through May, best in April and early May when the snow is stable and softens to corn. On foot, July through mid-August is the usual window, while the glaciers are still snow-covered and bridged. From mid-August into September crevasses open wide and Winnie's Slide turns to bare ice." } }
+]

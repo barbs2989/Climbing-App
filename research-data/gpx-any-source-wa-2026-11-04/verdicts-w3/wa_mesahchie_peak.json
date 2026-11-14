@@ -1,0 +1,102 @@
+{
+ "area_id": "wa_mesahchie_peak",
+ "routes": [
+  {
+   "route_id": "wa_mesahchie_peak_west_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents peak Jul-Sep (62/61/38), June 8 and Oct 7; web sources point to July-August as the scramble window (mid-Aug club trips, late-July reports); stored best_season mid-July to September agrees"
+   },
+   "track": {
+    "aid": "3345672",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Round trip from the Easy Pass trailhead (21 m off our pin), summited (12 m from summit pin), 12 Sep. Report describes the Easy Pass sidehill traverse, the waterfall, the basin, the rib between Katsuk and Mesahchie and the obvious summit gully, which is our route's line; only route of this name-family in the catalog besides the east-ridge icefall line"
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3325578",
+     "verdict": "unsure",
+     "why": "No logged name, no report; starts at same trailhead but identity unproven"
+    },
+    {
+     "aid": "2902825",
+     "verdict": "unsure",
+     "why": "Logged 'Chossy Gully' (Jul 12, complete); plausible same line but name is not clearly ours, so second choice only"
+    },
+    {
+     "aid": "3352492",
+     "verdict": "different",
+     "why": "Logged East ridge, goes Kitling-Cub then the east ridge, not the west ridge / SW gully"
+    },
+    {
+     "aid": "3351658",
+     "verdict": "unsure",
+     "why": "Standard South Route, Sep 19, but the packet track has no points"
+    },
+    {
+     "aid": "3264752",
+     "verdict": "unsure",
+     "why": "Logged West Ridge, 11 Jul, but starts at the basin after a bivy, not a trailhead round trip"
+    },
+    {
+     "aid": "3385387",
+     "verdict": "offseason",
+     "why": "20 Oct, over a month past the season and not a round trip"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "Holding the Easy Pass sidehill at about 6,500 to 6,800 ft avoids needless up-and-down through cliff bands; the return is smoother about 100 ft higher (September).",
+     "aids": [
+      "3345672",
+      "3351658"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "The waterfall near 6,500 ft was the last running water in mid-September; higher up only snow patches remain, so fill up there.",
+     "aids": [
+      "3345672",
+      "3351658"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 7,
+     "text": "On 11 July the basin still held lingering snow and an unmelted tarn, and the left-hand gully at about 8,100 ft held steep snow with a poor runout while the right-hand (reddish) gully had melted out.",
+     "aids": [
+      "3264752"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "Bugs are moderate to intense on the lower approach in July.",
+     "aids": [
+      "3264752"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 7,
+     "text": "A rappel station sits at the top of the obvious gully on the climbers' left side of the descent; a few class 4 moves remain there but the rock is better.",
+     "aids": [
+      "2902825"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "The E Ridge via Mesahchie Icefall Couloir route (wa_mesahchie_peak_2_e_ridge_via_mesahchie_icefall_couloir_variation) is not in this packet's routes[]; the east-ridge ascent 3352492 follows a different line (Kitling-Cub ridge) so was not assigned to it either. Our West Ridge / SW Gully text also describes the 'Chossy Gully' line, so 2902825 is the same line probably."
+}

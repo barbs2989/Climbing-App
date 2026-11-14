@@ -1,0 +1,147 @@
+{
+ "area_id": "wa_mcmillan_spire_west",
+ "routes": [
+  {
+   "route_id": "wa_mcmillan_spire_west_southwest_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Peakbagger histogram for the peak is Jul 53, Aug 60, Sep 18 (Jun 11). Stored Jul-Sep matches. Search: reports cover late Jul and mid-Aug; snow from about 5,500-6,200 ft in early July."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2585301",
+     "verdict": "different",
+     "why": "Follows the standard West Ridge via the snow finger and col, not the technical southwest ridge."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mcmillan_spire_west_west_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged West Ridge ascents Jul 3, Aug 1, Sep 4, Jun 2; histogram Jul-Aug dominant. Search: reports from late Jul and mid-Aug; July 2018 report notes snow from 5,500-6,200 ft. Stored guidance (late Jul-Sep) kept."
+   },
+   "track": {
+    "aid": "2585301",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Jul 24 2024. Report describes the Goodell Creek forest climb, the notch above Terror Basin, the glacial lake outlet and slabs, the snow gully to the col and the class 3 scramble to the summit: our West Ridge route step by step. The track is a round trip from the trailhead, summit within 4 m. It starts about 460 m from our trailhead pin, so the pin is a little off but a confirmed coordinate could not be found."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "995369",
+     "verdict": "same",
+     "why": "Jul 8 2018 logged West Ridge, same round trip; no description, so the 2024 report was preferred."
+    },
+    {
+     "aid": "3319995",
+     "verdict": "unsure",
+     "why": "Aug 20 2026, same line and trailhead but no logged route or report."
+    },
+    {
+     "aid": "2938343",
+     "verdict": "unsure",
+     "why": "Camp-based summit day with descent to trailhead; start at camp, not a complete trailhead round trip."
+    },
+    {
+     "aid": "1982434",
+     "verdict": "unsure",
+     "why": "Camp-based summit day from Terror Basin; not a trailhead round trip."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "A bees nest sits under a large boulder beside the forest climb at about 4,800-4,900 ft; in late July a party was swarmed there.",
+     "aids": [
+      "2593959"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "In late July a stream was still running at roughly 5,200-5,300 ft, so top up there before the drop into the basin.",
+     "aids": [
+      "2593959"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "Rangers patrol the basin in summer checking permits, food storage and human-waste bags, so have all three sorted.",
+     "aids": [
+      "2593959"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 7,
+     "text": "Around July 1-2 the snow was negligible up to the notch, but a short cornice remnant at the col had to be downclimbed, and the basin snow was firm enough in the morning for crampons.",
+     "aids": [
+      "2236292"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "By late August the snow finger has shrunk to a short strip and its last stretch is bare, very loose rock; keep partners out of each other's fall line.",
+     "aids": [
+      "1474529",
+      "1474258"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "In late August mornings the outlet boulders of the glacial lake can be glazed with ice, making the crossing slick.",
+     "aids": [
+      "1474529"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "From early August on, several parties skipped the snow finger because of constant rockfall and scrambled loose rock to its right.",
+     "aids": [
+      "2938343",
+      "2593959"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Cairns between the basin camp and the glacier base lead nowhere in places; navigate the dark section by map, not cairns.",
+     "aids": [
+      "1474529",
+      "1474258"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 8,
+     "text": "Descending from the lake outlet back to camp, a lower line along cairns ended in a cliff band that forced a re-ascent; stay on the rocky benches used on the way up.",
+     "aids": [
+      "2938343"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "West Ridge tracks 3319995, 2585301, 995369 all start about 460 m from our Goodell Creek trailhead pin (48.68664,-121.27121); the recordings cluster near 48.6827,-121.2692. Search found no mapped coordinate for the Upper Goodell Group Camp trailhead (a WTA guidebook list gives 48.6733,-121.2658 unlabelled), so no pin move is proposed."
+}

@@ -1,0 +1,32 @@
+{
+ "or_6_rainy_day_cave": {
+  "_expect": {"name": "Rainy Day Cave", "region": "Oregon"},
+  "blurb": "Rainy Day Cave is a steep sport wall in the Rattlesnake area of southwest Oregon, at roughly 3,000 feet. Despite the name it is more of a recess with an overhanging lip than a true cave, and the longest lines go up the outside of the formation. Twelve bolted routes run from 5.10 through 5.12, with a single 5.13 project at the top end, so it suits climbers who already lead in the 5.10s and low 5.11s. The pitches are short, around 60 feet, and the rock offers pockets, edges and steep movement. The walk in continues past Jane's Buttress, and you can walk off afterwards without rappelling.",
+  "review": {"sources": ["https://mountainproject.com/area/106557542/rainy-day-cave", "https://app.advcollective.com/climbing/rainy-day-cave-steep-sport-climbs-in-southwest-oregon"]}
+ },
+ "or_3_pumpkin_boulder": {
+  "_expect": {"name": "Pumpkin Boulder", "region": "Oregon"},
+  "blurb": "Pumpkin Boulder is a freestanding block in the Cline Falls bouldering area of Central Oregon, in the Main Area Boulders. Because you can circle the whole thing, problems start on every side, and a dozen lines are spread around it. The grades cover almost the full range: several easy problems from V0 to V2 make it a decent warm-up spot, a middle band sits around V4 to V7, and a few hard lines reach V8 and V9. It is the obvious central landmark of the cluster, reached by dropping down from the powerlines and following the base of the bluff.",
+  "approach": "Walk down from below the powerlines, turn right and follow the foot of the bluff; the boulder stands alone in the middle and is hard to miss.",
+  "review": {"sources": ["https://www.mountainproject.com/area/123193397/pumpkin-boulder", "https://www.mountainproject.com/area/121655644/bluff-zone"]}
+ },
+ "or_5_jungle_land": {
+  "_expect": {"name": "Jungle Land", "region": "Oregon"},
+  "blurb": "Jungle Land is a small wall on the West Side of the Lower Gorge at Smith Rock in Central Oregon, tucked up the river past the Star Wall. It holds a dozen routes, almost all of them trad with a single sport line, and the grades start around 5.10 and climb through 5.12 to one 5.13. Its position away from the busier faces keeps traffic light, though a few of the lines are well regarded. The big chimney is the most obvious feature. The surrounding West Side cliffs are basalt columns, and expect some scrambling on the way in.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105865369/jungle-land", "https://www.mountainproject.com/area/105865150/west-side"]}
+ },
+ "or_the_sarlacc_pit": {
+  "_expect": {"name": "The Sarlacc Pit", "region": "Oregon"},
+  "blurb": "The Sarlacc Pit is the headline boulder in The Crops, a talus field below a spire on Kitson Ridge in the Willamette Valley, among old-growth trees and vine maples. Its twelve problems are steep and tough for western Oregon, running from a couple of easy lines near V1 up through the V8 to V11 range to one V13. Most of the area is andesite of uneven quality, though the left side of this boulder is solid. The holds turn brittle when damp, so it is best saved for dry weather; summer is said to be the best time. It lies a short walk past the Den boulder.",
+  "review": {"sources": ["https://www.mountainproject.com/area/125288849/the-sarlacc-pit", "https://mountainproject.com/area/124940143/the-crops"]}
+ },
+ "_skipped": {
+  "or_hueco_wall": "no fetched page about Hueco Wall itself (only a single route page; same-name pages are other states)",
+  "or_c_north_wall_north_slab": "only parent Flagstone pages fetched; no page about the North Wall and North Slab itself (summitpost 403)",
+  "or_drive_in_the": "no fetched page about The Drive In itself; only Castle area page and search snippets",
+  "or_6_puddy_s_tower": "no fetched page about Puddy's Tower itself; only a route page and the Monument Area page that does not mention it"
+ },
+ "_conflicts": {
+  "or_5_jungle_land": "Stored approach says a long brushy bushwhack; https://www.mountainproject.com/area/105865369/jungle-land says the former bushwhack is now an easy 5-10 minute walk with some scrambling past the Star Wall."
+ }
+}

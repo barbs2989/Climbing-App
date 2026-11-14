@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // MEASUREMENT, not a guard: does any control's aria-label fail to contain its own
 // visible text? That is WCAG 2.5.3 "Label in Name", and its practical consequence is
 // that a voice-control user who says the words they can SEE cannot activate the
@@ -62,8 +63,8 @@ if (port === null) { console.error("no free port"); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 
 // the overlay-scroll scaffold, reused verbatim rather than adding another config
-const server = spawn("npx",
-  ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
 server.stdout.on("data", () => {});
 server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST|Error/.test(s)) process.stderr.write(s); });

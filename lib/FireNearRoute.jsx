@@ -28,6 +28,7 @@ import { useState } from "react";
 import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
 import { TILE_CREDIT } from "./mapKit";
 import Chevron from "../src/components/Chevron.tsx";
+import { TEXT_TAP } from "./buttonStyles.js";
 
 const MI_PER_KM = 0.621371;
 
@@ -105,11 +106,11 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   return (
     <div style={{ ...wrap, borderColor: tone.c, background: tone.bg, margin: "24px 0" }}>
       <div role="heading" aria-level={2} style={{ margin: 0 }}>
-        <button onClick={() => setOpen(!open)} aria-expanded={open} style={{ display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
+        <button onClick={() => setOpen(!open)} aria-expanded={open} style={{minHeight:44, display: "flex", alignItems: "center", gap: 8, width: "100%", padding: 0, background: "transparent", border: "none", cursor: "pointer", textAlign: "left" }}>
           <span style={{ flex: 1, minWidth: 0 }}>
             <span style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 3, display: "flex", alignItems: "center", gap: 6 }}>
               <ActionIcon name="fire" size={14} color={tone.c} />
-              {closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}
+              <span data-jump-label="">{closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}</span>
             </span>
             <span style={{ display: "block", fontSize: 12, color: C.textSub }}>{summary}</span>
           </span>
@@ -160,7 +161,7 @@ function Foot({ C, coord, ActionIcon, onOpenFireMap }) {
         fire far from a route can still close its access road.
       </div>
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
-        <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontSize: 11.5, fontWeight: 700 }}>Forest Service alerts →</a>
+        <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontSize: 11.5, fontWeight: 700, ...TEXT_TAP }}>Forest Service alerts →</a>
       </div>
     </>
   );

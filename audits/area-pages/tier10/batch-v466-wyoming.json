@@ -1,0 +1,39 @@
+{
+ "wy_heap_the": {
+  "_expect": { "name": "Heap, The", "region": "Wyoming" },
+  "blurb": "The Heap is the biggest formation in the Upper Blair group at Vedauwoo, in the Laramie area, and it sits at the high northeast end of that cluster. Its granite carries both north-facing and south-facing lines, so you can pick a side to suit the day. Most of the 13 climbs are trad, running from easy 5.7 up to 5.12, with a handful of hard boulder problems from V7 to V12 and one sport line. Hard crack and face climbing dominate, so this is a spot for experienced leaders rather than beginners. The best-known line here is a long-standing 5.11 crack, and a mid-grade tick list is thin compared with the 5.11 and 5.12 pitches.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106854633/the-heap", "https://thetopo.com/crags/vedauwoo/routelist/upper-blair-the-heap"] }
+ },
+ "wy_hidden_corral": {
+  "_expect": { "name": "Hidden Corral", "region": "Wyoming" },
+  "blurb": "Hidden Corral is a sheltered, fairly flat cove tucked inside the big Douthitt Mountain dome in the Laramie Range of southeast Wyoming. A tall, steep wall rings the cove, mostly vertical with the odd bulge and plenty of holds. The 13 routes are mainly bolted sport lines, with a few top-rope lines and two trad climbs, spanning about 5.8 to 5.12 with most of the weight in the 5.9 to 5.11 range. Mornings can run warm because the sun reaches the wall early, while afternoons settle into shade, and the cove blocks much of the wind. A good choice for a mixed party wanting moderates and a few harder lines.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108918158/hidden-corral", "https://www.mountainproject.com/area/107470228/douthitt-mountain"] }
+ },
+ "wy_hideout_wall_the": {
+  "_expect": { "name": "Hideout Wall, The", "region": "Wyoming" },
+  "blurb": "The Hideout Wall is the first cliff you meet on the ledge system of the Upper Bridge Bands, in Shoshone Canyon west of Cody, and it is the largest wall in that upper zone. All 13 routes are bolted sport climbs on dolomite, from 5.10 up to 5.13, with the bulk at 5.11 and 5.12. Expect short, pocketed, powerful pitches with low bouldery cruxes and a roof that stands out, finished with lower-off anchors. The cliff faces south, which makes it a good cool-weather, sunny-day choice and a warm one in summer. Reaching it means a steep slog up a scree field, so it sees fewer visitors than the lower bands.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106160392/the-hideout-wall", "https://www.mountainproject.com/area/106160383/upper-bridge-bands"] }
+ },
+ "wy_rap_stars_wall": {
+  "_expect": { "name": "Rap Stars Wall", "region": "Wyoming" },
+  "blurb": "Rap Stars Wall is the main long-route wall at Crag 6, a high-elevation sport crag up in the Bighorn Mountains above Ten Sleep Canyon, at roughly 9,500 feet, which makes it a summer destination. The 13 sport routes are a hard-leaning set: a couple at 5.10 and a couple at 5.11, a few at 5.12, and the biggest group at 5.13. Expect a mix of bouldery cruxes and sustained endurance pitches. With so few easy warm-ups at the crag as a whole, busy days can crowd around the lower grades. The walk from the road is a bit over a mile along a trail through forest and past a gate.",
+  "review": { "sources": ["https://rakkup.com/guidebook/ten-sleep-rock-climbing/rap-stars-wall/s15187", "https://mountainproject.com/area/111982597/crag-6"] }
+ },
+ "wy_sector_d_or_et_bleu": {
+  "_expect": { "name": "Sector D'or et Bleu", "region": "Wyoming" },
+  "blurb": "Sector D'or et Bleu is a dolomite wall in the French Cattle Ranch zone of Ten Sleep Canyon, just beyond Sector Shinto and around 8,000 feet in elevation. The rock is slightly overhanging and streaked in blue, orange and pale grey. All 13 routes are sport climbs aimed at strong climbers: one in the 5.11s, six at 5.12, and the rest split between 5.13 and 5.14, with a stemming line as the lone easy-ish entry point. Trees give partial shade and the wall is fully shaded in the afternoon, which suits warm days. Climbing is technical and footwork-heavy rather than simply steep.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105856690/sector-dor-et-bleu", "https://rakkup.com/guidebook/ten-sleep-rock-climbing/sector-d'or-et-bleu/s18002"] }
+ },
+ "wy_symmetry_spire": {
+  "_expect": { "name": "Symmetry Spire", "region": "Wyoming" },
+  "blurb": "Symmetry Spire is a granite peak of roughly 10,600 feet on the northwest side of Jenny Lake in Grand Teton National Park, overlooking Cascade Canyon. It is an alpine objective rather than a roadside crag: of the 13 climbs here, most are alpine routes and two are trad, running from class 4 scrambling through low 5th class to 5.8, with the typical ridge routes landing around 5.6 and 5.7. Teton granite on the ridges is solid and golden, with long, low-angle crack pitches over a thousand feet. Northern routes begin in Hanging Canyon with snow and loose ledges, so route choice and the season matter.",
+  "review": { "sources": ["https://en.wikipedia.org/wiki/Symmetry_Spire", "https://tenthousandtoofar.com/2023/10/25/season-ender-on-the-durrance-ridge-5-6-ii-symmetry-spire-gtnp-wy-10-14-23/", "https://mountainproject.com/route/107771803/symmetry-spire-north-west-couloir-and-ledges"] }
+ },
+ "_skipped": {
+  "wy_gun_street_wall": "no fetched page about the crag itself: Aspen Glade parent page only describes it in passing; thecrag page returned 403; Aspen Glades topo page does not mention it",
+  "wy_rest_of_the_east_bridge_bands_the": "no page about this crag itself: only the parent East Bridge Bands page lists it, and the guidebook East End section is a different section"
+ },
+ "_conflicts": {
+  "wy_hidden_corral": "stored rock is gneiss but both https://www.mountainproject.com/area/108918158/hidden-corral and https://www.mountainproject.com/area/107470228/douthitt-mountain say granite"
+ }
+}

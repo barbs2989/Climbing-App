@@ -1,0 +1,33 @@
+{
+ "or_shipwreck_wall_east_face": {
+  "_expect": {"name": "Shipwreck Wall - East Face", "region": "Oregon"},
+  "blurb": "The east-facing side of the East Ship outcrop at Smith Rock State Park, standing across the river path from the dark mass of Shiprock. It is a bolted face of about twenty single-pitch routes, with one top-rope line. Most of the climbing sits in the 5.11 and 5.12 range, with a handful of easier routes in the 5.9 to 5.10 bracket and a single 5.13. Expect short, bulgy pitches with plenty of bolts rather than long outings. The neighbouring gullies hold shade on hot days, which makes the area a useful summer fallback.",
+  "approach": "Cross the footbridge, turn left on the river path and follow it past the dark bulk of Shiprock, then take the short stepped trail up into the gullies to reach the face.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105789313/shipwreck-wall-east-face", "https://smithrock.com/ships-gullies/"]}
+ },
+ "or_silver_bullet_bluff": {
+  "_expect": {"name": "Silver Bullet Bluff", "region": "Oregon"},
+  "blurb": "A short cliff section on Rocky Butte, an urban crag in northeast Portland close to the freeway. The bluff holds about twenty routes, mostly trad lines and top-ropes with a single bolted line. Grades run from the high 5.7s up to 5.11, with the bulk between 5.8 and 5.10, so it suits climbers building skills on short pitches. Reaching the base generally means rappelling in from above, which calls for solid rope skills, and the walls tend to be damp in the wet season, noisy and somewhat overgrown.",
+  "review": {"sources": ["https://thetopo.com/crags/rocky-butte/topos/silver-bullet-bluff", "https://www.mountainproject.com/area/105788995/rocky-butte"]}
+ },
+ "or_reproductive_wall": {
+  "_expect": {"name": "Reproductive Wall", "region": "Oregon"},
+  "blurb": "A crag on the left end of the Student Wall in Smith Rock's gorge, reached by a walk of roughly a quarter hour from the river. About twenty routes mix trad, sport and a little top-roping, plus one aid line. Difficulty is spread widely, from beginner-level 5.5 and 5.6 up to 5.12, though most routes fall between 5.10 and 5.11. It has a few standout sport pitches alongside crack climbs, and it sees little traffic apart from beginner groups, so it tends to feel quiet.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105803536/reproductive-wall", "https://www.mountainproject.com/area/105803533/student-wall"]}
+ },
+ "or_2_llama_wall": {
+  "_expect": {"name": "Llama Wall", "region": "Oregon"},
+  "blurb": "A steep wall of pebbled, strongly featured rock tucked just right of Phoenix Buttress in the Smith Rock group. Nearly all of its twenty-one routes are bolted sport climbs, with a couple of trad lines. The grade spread starts with one easy 5.8, then centres on 5.10 through 5.12 with several 5.11s, and finishes with three routes in the 5.13 range, so it favours intermediate to strong sport climbers who like overhanging, sustained pitches rather than slab.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107283563/llama-wall", "https://www.mountainproject.com/area/105803939/smith-rock-group"]}
+ },
+ "or_azain_boulder": {
+  "_expect": {"name": "Azain Boulder", "region": "Oregon"},
+  "blurb": "The biggest formation in the Garden, a forested boulder zone near Sweet Home in the Willamette Valley. From downhill it reads as a tall cliff, and most problems are on the uphill side. About twenty boulder problems range from VB-V1 starters through a solid middle of V3 to V5, with a tail of harder lines that reach double-digit V grades, plus one roped route. The surrounding Garden has a name as one of the state's best places to boulder, with rounded blocks and slopey holds.",
+  "review": {"sources": ["https://www.mountainproject.com/area/119940489/azain-boulder", "https://mountainproject.com/area/105818193/the-garden"]}
+ },
+ "_skipped": {
+  "or_e_the_colosseum": "no fetched page is about the crag itself; only the parent Marsupial Wall page and a news article mention it",
+  "or_power_lines": "could not fetch two pages (only one search snippet; fetch returned 404)",
+  "or_madrone_coves": "pages list the area as closed (private logging land lease)"
+ }
+}

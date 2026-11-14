@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Can two real climbers connect and talk?
 //
 // The partnership loop (crew -> invite -> accept -> agree a day -> chat) is covered by
@@ -76,7 +77,7 @@ try {
   const port = await claimPort(5550);
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
   log(`dev server on ${port}...`);
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   if (!(await waitForServer(base))) { console.error("dev server never came up"); process.exit(1); }
   browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 180000 });

@@ -1,0 +1,118 @@
+{
+ "area_id": "wa_del_campo_peak",
+ "routes": [
+  {
+   "route_id": "wa_del_campo_peak_standard",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Our only route; 600+ logged successful ascents peak Jul-Sep (Jun 38, Oct 58). Searches (Outdoor Project, Mountaineers, WTA, trail guides) put Gothic Basin snow-free from late Jul to mid Oct with axe/crampons advised into late Aug; Jun/early Jul need axe, Nov has fresh snow. Stored Jul-Sep kept."
+   },
+   "track": {
+    "aid": "1730487",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Only route we hold on the peak. Logged Standard Route, 12 Aug 2021, summited; track starts 40 m from our Barlow Pass pin, ends 42 m from it, passes 5 m from our summit pin, and follows the Gothic Basin / Foggy Lake line (about 4,500 ft gain)."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2639491",
+     "verdict": "unsure",
+     "why": "Also Standard Route, Sep 2024, in season, but start 87 m / loop 119 m; 1730487 is cleaner"
+    },
+    {
+     "aid": "2249454",
+     "verdict": "unsure",
+     "why": "Jul 2023 logged South Gully; start 140 m off our pin; same peak line but the gully is not recommended by our text"
+    },
+    {
+     "aid": "288092",
+     "verdict": "offseason",
+     "why": "7 Oct 2012, dropped; others suffice"
+    },
+    {
+     "aid": "1073727",
+     "verdict": "offseason",
+     "why": "18 Nov 2018"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "In early July the trail from about 4,000 ft is snow-covered, the basin lakes are still frozen, and soft snow persists up to the notch below the summit gully.",
+     "aids": [
+      "992810"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "Mid-July: a snow patch sits just below the notch gully but is soft enough to cross without an axe",
+     "aids": [
+      "2249454"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "Keep to the left-hand ledges all the way up; the central gully to the notch is not the line.",
+     "aids": [
+      "2249454",
+      "2588829"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "Barlow Pass lot holds about 30 cars and fills before 6:30 am on a late-July Saturday; roadside spots just outside work, and the Forest Pass is needed inside the lot.",
+     "aids": [
+      "2588829"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "Take the first signed right off the old road for Gothic Basin; the later junction leads to a brushed-over trail.",
+     "aids": [
+      "2588829",
+      "992810"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "Water is plentiful at the stream crossings and Foggy Lake in July, so carry little from the trailhead.",
+     "aids": [
+      "2588829",
+      "2249454"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "In mid-August a firm perennial snowfield below the ridge is easiest to skirt via its upper moat, not traverse in boots",
+     "aids": [
+      "847637"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Blue flags and cairns mark the climbers path along the north side of Foggy Lake and up the talus in August.",
+     "aids": [
+      "2588829",
+      "847637"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Single route on peak; track assignment rests on the one-route rule plus the route name and geometry. No trailhead/summit pin changes: all tracks start within 150 m of our pin."
+}

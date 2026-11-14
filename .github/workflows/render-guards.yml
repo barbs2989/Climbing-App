@@ -26,7 +26,8 @@ name: Render guards
 # Independent jobs rather than steps, so a browser flake in one cannot stop the
 # others from reporting.
 #
-# They run on push to main as well as on pull_request, because a green PR is not a
+# They also walk main itself (on a four-hour schedule since 2026-11-13; on every push
+# before that -- see the `on:` block), because a green PR is not a
 # statement about main. A pull_request run tests merge(head, base) as base stood WHEN
 # THE RUN STARTED, so two PRs that are each green can still break main between them —
 # and that is not hypothetical here: #728 and #727 merged three seconds apart, both
@@ -34,12 +35,48 @@ name: Render guards
 # collision; nothing catches the general case, because until now no browser guard had
 # ever been run against main. The failure would surface on the NEXT unrelated PR,
 # attributed to whoever opened it.
+#
+# Every guard step runs through scripts/ci-db-inconclusive.mjs. When a guard fails ONLY
+# because the production database was down (its own "THE DATABASE IS UNREACHABLE" / "proves
+# NOTHING" / gateway 52x lines), the job ends with a yellow "Inconclusive" warning instead of
+# a red failure. Measured 2026-11-11: ~95% of red jobs here were outages, each one emailed the
+# owner, and the handful of real findings drowned in them. Any other failure stays red.
 
 on:
   pull_request:
     branches: [main, master]
-  push:
-    branches: [main, master]
+    paths-ignore:
+      # Files no walk reads and the built app does not contain. A PR or merge touching ONLY
+      # these cannot change what any screen renders, so walking it costs ~16 browser jobs
+      # against the PRODUCTION database for no new evidence. Measured 2026-11-04/05: about a
+      # third of PRs were data/audit/doc-only, and the walks are the load that stalled the
+      # project (pg_stat_statements: the signed-in boot RPCs ran ~1,760 times in 3.6 h, all
+      # CI). Verified then: no walk script, nor anything it imports, reads these paths or any
+      # .md file; the app names them only in comments. Everything else (app code, lib/, src/,
+      # other scripts/, supabase/, package*.json, .github/) still runs every walk. Branch
+      # protection requires only `build`, so a skipped walk blocks nothing.
+      - "audits/**"
+      - "research-data/**"
+      - "research/**"
+      - "catalog/**"
+      - "enrichment-wip/**"
+      - "gear-research/**"
+      - "docs/**"
+      - "**.md"
+      - "scripts/oneoff/**"
+      - "scripts/pipeline/**"
+      - "scripts/enrich/**"
+      - "scripts/audit-*.mjs"
+  # Main is walked on a timer, not on every merge (owner, 2026-11-13). Per-merge walks started
+  # 15 browser jobs (16 with zero-state.yml) that gated nothing -- deploy.yml never waits on
+  # them -- and took the free plan's ~20-runner pool from every PR's required `build` and from
+  # the deploy itself. Measured over the previous ~60 runs: build-check jobs ran ~0.4 min but
+  # waited ~26 min for a runner; render-guard jobs waited ~39 min; a merge took ~19 jobs. The
+  # scheduled walk still answers "is main itself healthy?" (the #727/#728 case above) within
+  # four hours, and workflow_dispatch walks main on demand.
+  schedule:
+    - cron: "10 */4 * * *"
+  workflow_dispatch:
 
 concurrency:
   # On a PR, group by branch so a new push supersedes the run it replaces. On a push,
@@ -80,8 +117,9 @@ jobs:
     # A hung dev server or a browser that never launches should fail in minutes,
     # not sit for the default six hours.
     # 50 overlays since the scaffold's discovery was widened (was 28); walked twice since
-    # check:pinned-dismiss joined (2026-10-24), so the budget doubled.
-    timeout-minutes: 60
+    # check:pinned-dismiss joined (2026-10-24), so the budget doubled; three times since
+    # check:overlay-fullscreen joined (2026-10-29).
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -104,7 +142,7 @@ jobs:
           google-chrome --version
 
       - name: Overlay scroll containment
-        run: npm run check:overlay-scroll
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overlay-scroll
         env:
           # Match zero-state.yml. Without these USE_DB is off and the app under test
           # is not the one that ships, so a pass would say nothing about production.
@@ -116,7 +154,17 @@ jobs:
       # Same scaffold, same opener, same browser: a popup's ✕ / ← Back stays on screen and tappable
       # scrolled to the end. A second walk of the same overlays, so the job's timeout covers both.
       - name: Popup close and back stay pinned
-        run: npm run check:pinned-dismiss
+        run: node scripts/ci-db-inconclusive.mjs npm run check:pinned-dismiss
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      # Third walk of the same overlays: on a phone each popup covers the screen as a page, and the
+      # app behind never shows through around a card (owner 2026-10-24, index.html's full-screen rules).
+      - name: Popups fill the phone screen
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overlay-fullscreen
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -150,7 +198,7 @@ jobs:
           google-chrome --version
 
       - name: Walk every screen
-        run: npm run check:ui -- --snapshot ui-screens.json
+        run: node scripts/ci-db-inconclusive.mjs npm run check:ui -- --snapshot ui-screens.json
         env:
           # Match zero-state.yml. Without these USE_DB is off and check:ui walks the
           # seed catalog instead of the DB one — a different app than production, and
@@ -195,7 +243,7 @@ jobs:
           google-chrome --version
 
       - name: Badge counts stay out of accessible names
-        run: npm run check:a11y-badges
+        run: node scripts/ci-db-inconclusive.mjs npm run check:a11y-badges
         env:
           # Same reasoning as overlay-scroll above: without these USE_DB is off and the
           # app under test is not the one that ships.
@@ -228,7 +276,7 @@ jobs:
           google-chrome --version
 
       - name: A qualifying log produces an anniversary
-        run: npm run check:anniversary
+        run: node scripts/ci-db-inconclusive.mjs npm run check:anniversary
         env:
           # Same reasoning as overlay-scroll above: without these USE_DB is off and the
           # app under test is not the one that ships.
@@ -253,7 +301,7 @@ jobs:
       - run: npm ci
 
       - name: No column's prose lands in a chip
-        run: npm run check:token-boxes
+        run: node scripts/ci-db-inconclusive.mjs npm run check:token-boxes
         env:
           # Read-only, anon key. Same stance as field-renders below: `routes` is publicly
           # readable and CI has no business holding a key that bypasses RLS.
@@ -279,7 +327,7 @@ jobs:
       - run: npm ci
 
       - name: Every enriched column reaches a screen
-        run: npm run check:field-renders
+        run: node scripts/ci-db-inconclusive.mjs npm run check:field-renders
         env:
           # Read-only, and the ANON key on purpose — `routes` and `areas` are publicly
           # readable, CI has no business holding a key that bypasses RLS, and a checker
@@ -303,7 +351,7 @@ jobs:
       - run: npm ci
 
       - name: The peak briefing speaks and refuses in the right places
-        run: npm run check:summit-briefing
+        run: node scripts/ci-db-inconclusive.mjs npm run check:summit-briefing
         env:
           # Read-only, and the ANON key on purpose — `routes` is publicly readable, CI has no
           # business holding a key that bypasses RLS, and a checker that could write is a
@@ -312,11 +360,11 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
   horizontal-overflow:
-    name: The app fits a 390px phone
+    name: The app fits a 390px phone and a 1280px desktop
     runs-on: ubuntu-latest
     # Walks the same 6 tabs and ~43 openable overlays as its siblings; measured at ~6m
     # locally, so this is headroom rather than an expected duration.
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -334,10 +382,22 @@ jobs:
           google-chrome --version
 
       - name: Nothing runs off the right-hand edge
-        run: npm run check:overflow
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overflow
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app
           # under test is not the one that ships.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          VITE_DEMO_AUTOLOGIN: "true"
+
+      - name: Nothing runs off the right-hand edge of the desktop website (1280px)
+        # Its own finding even when the phone walk above is red.
+        if: ${{ !cancelled() }}
+        run: node scripts/ci-db-inconclusive.mjs npm run check:overflow -- --width 1280
+        env:
+          # The desktop layout (sidebar, 640px column, right rail) is its own set of inline
+          # styles that the phone walk never draws. Same env as the phone walk.
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_USE_DB: "true"
@@ -385,7 +445,7 @@ jobs:
       # does not. Measured on main: 3m43s at 8 screens (19:02 run) against 42m33s at 58 (21:41
       # run) — an 11.4x rise from #1233's expansion, invisible because a slower guard still goes
       # green. NOTHING STOPS BEING CHECKED: a mute control introduced inside an overlay is caught
-      # when the branch merges instead of while it is in review, the same trade check:ui's
+      # by the scheduled main walk (every 4 h) instead of while it is in review, the same trade check:ui's
       # live-site walk already makes by running on a schedule.
       #
       # `--overlays=` is an EXPLICIT empty list, which the guard obeys. Discovery finding almost
@@ -396,10 +456,10 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             echo "pull request — walking the fast screens (tabs, onboarding, route detail + Plan)."
-            echo "The 50-overlay sweep runs on push to main; see the note above."
-            npm run check:selected-state -- --overlays=
+            echo "The 50-overlay sweep runs on the scheduled main walk; see the note above."
+            node scripts/ci-db-inconclusive.mjs npm run check:selected-state -- --overlays=
           else
-            npm run check:selected-state
+            node scripts/ci-db-inconclusive.mjs npm run check:selected-state
           fi
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app under
@@ -431,7 +491,7 @@ jobs:
           google-chrome --version
 
       - name: The Challenges list panel renders real rows
-        run: npm run check:challenge-rows
+        run: node scripts/ci-db-inconclusive.mjs npm run check:challenge-rows
         env:
           # Same reasoning as the jobs above: without these USE_DB is off and the app
           # under test is not the one that ships.
@@ -466,7 +526,7 @@ jobs:
       # fails if a screen whose content changed says nothing about the failure. A screen that is
       # identical either way is seed-backed and is reported as proving nothing.
       - name: Walk a signed-in account with the database down
-        run: npm run check:outage
+        run: node scripts/ci-db-inconclusive.mjs npm run check:outage
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -512,7 +572,7 @@ jobs:
       # discoverable=false and so cannot surface in partner browse. lib/durable-fixture.mjs
       # re-asserts that on every run rather than trusting the day it was set.
       - name: Walk a real signed-in account
-        run: npm run check:signed-in -- --dump signed-in-screens.json
+        run: node scripts/ci-db-inconclusive.mjs npm run check:signed-in -- --dump signed-in-screens.json
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -589,7 +649,7 @@ jobs:
       # GITHUB_RUN_ID so a run asserts on its OWN message. Without that last part run A passes on
       # run B's row — a false pass in the exact window this guard watches.
       - name: Deliver a message between two real accounts
-        run: npm run check:message-delivery
+        run: node scripts/ci-db-inconclusive.mjs npm run check:message-delivery
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
@@ -626,7 +686,39 @@ jobs:
       # -- properties of LAYOUT that only a rendered page has. The guard sets VITE_DEMO_AUTOLOGIN
       # itself: "true" for the signed-in walk, "false" for the signed-out one, so it is not set here.
       - name: WCAG 2.2 A/AA on every screen
-        run: npm run check:axe
+        run: node scripts/ci-db-inconclusive.mjs npm run check:axe
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+
+  blue-on-blue:
+    name: No blue text on a blue box
+    runs-on: ubuntu-latest
+    # The same screens check:axe walks at phone width (8 tabs, 7 route tabs, ~55 overlays), one cheap
+    # in-page probe each.
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:blue-on-blue cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # Owner note (2026-10): "I don't like the blue text on blue boxes, change text to white". #2752
+      # fixed the style objects that set both; this reads the RENDERED colours, so a blue box on a
+      # wrapper with blue text in a child is caught too.
+      - name: Blue boxes carry white text
+        run: node scripts/ci-db-inconclusive.mjs npm run check:blue-on-blue
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}

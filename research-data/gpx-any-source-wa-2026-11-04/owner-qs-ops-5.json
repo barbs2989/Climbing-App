@@ -1,0 +1,176 @@
+[
+ {
+  "op": "patch",
+  "id": "wa_mount_cameron_standard",
+  "area_id": "wa_mount_cameron",
+  "name": "Standard Route (Southeast Slopes)",
+  "expect": {
+   "waypoints": [
+    {
+     "lat": 47.9183,
+     "lng": -123.3822,
+     "elev": 6135,
+     "name": "Obstruction Point Trailhead",
+     "note": "End of Obstruction Point Road (highest road in Olympic NP, gravel, no trailers), 8 mi east of Hurricane Ridge Visitor Center; Grand Pass Trail begins here.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Obstruction Point Road is the way in, and it is the highest road in Olympic National Park: from the Hurricane Ridge Visitor Center follow it 8 miles east to its end at the Obstruction Point trailhead, topping out around 6,135 ft. It is narrow, one-lane gravel the whole way and no place for trailers. The road is usually open only from early-to-mid July through mid-October, so it is not a road you can count on before July — confirm it is open before committing to the drive. The Grand Pass Trail starts at the road end, and an online wilderness camping permit plus a bear canister are required for the Cameron Basin camp zone."
+    },
+    {
+     "lat": 47.86565,
+     "lng": -123.35546,
+     "elev": 6450,
+     "name": "Grand Pass",
+     "note": "Grand Pass Trail crests the divide here between the Grand/Lillian River drainages and Cameron Creek; the descent to the Cameron side is steep and can be dangerously slick in wet weather or lingering snow.",
+     "type": "Junction",
+     "distMi": 6,
+     "directions": "From Obstruction Point follow the Grand Pass Trail south along the open crest of Lillian Ridge, descend into Grand Valley and follow the trail up the valley past Moose and Gladys Lakes to Grand Pass, about 6 miles from the trailhead."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6000,
+     "name": "Cameron Basin camp",
+     "note": "Established backcountry sites in the upper basin below Cameron Pass along Cameron Creek; bear canister required (no trees to hang food), no campfires above 3,500 ft, and an online wilderness camping permit is mandatory.",
+     "type": "Campsite",
+     "distMi": 8.3,
+     "directions": "Continue up along Cameron Creek into the upper basin below Cameron Pass to the established camp sites at about 6,000 ft. A bear canister is required and there are no fires."
+    },
+    {
+     "lat": 47.825718,
+     "lng": -123.358249,
+     "elev": 6448,
+     "name": "Cameron Pass snow slopes",
+     "note": "Steep snow can persist on the pass into late July or August; ice axe and self-arrest skills recommended, and the climbers' path is frequently obscured under snow here.",
+     "type": "Hazard",
+     "distMi": 9.3,
+     "directions": "Continue up the Cameron Pass Trail from the basin to Cameron Pass. Steep snow can cover the climbers' path on the final slopes into late July or August, so carry an ice axe."
+    },
+    {
+     "lat": 47.82536799936158,
+     "lng": -123.32846678390986,
+     "elev": 7190,
+     "name": "Mount Cameron summit",
+     "note": "True 7,190 ft highpoint of triple-summited Mount Cameron, reached from Cameron Basin/Pass by Class 2 scree and talus along the ridge that rises east from the pass.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "From Cameron Pass leave the trail and follow the broad ridge crest east and up on Class 1-2 scree and talus. The ridge crosses many false summits, so do not stop at the first high point; the true top is still easy ground, and Class 3-4 steps mean you have passed it and started the traverse toward the Middle Peak."
+    }
+   ],
+   "pro_tips": [
+    "Plan a multi-day trip - the approach is long",
+    "Carry navigation; the open slopes require route-finding",
+    "Best mid-summer after snow has melted from the upper slopes",
+    "Most parties tag only the true (East) summit rather than traversing to the Middle and West tops -- linking all three involves exposed Class 3-4 moves on loose rock.",
+    "The highest top is the steep-blocked West Peak; the broad, flat East Peak is clearly lower, so make sure you reach the west end of the ridge.",
+    "In September, parties stayed below and to the side of the crest, which avoids the most technical Class 3 false summit near the top."
+   ]
+  },
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.9183,
+     "lng": -123.3822,
+     "elev": 6135,
+     "name": "Obstruction Point Trailhead",
+     "note": "End of Obstruction Point Road (highest road in Olympic NP, gravel, no trailers), 8 mi east of Hurricane Ridge Visitor Center; Grand Pass Trail begins here.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Obstruction Point Road is the way in, and it is the highest road in Olympic National Park: from the Hurricane Ridge Visitor Center follow it 8 miles east to its end at the Obstruction Point trailhead, topping out around 6,135 ft. It is narrow, one-lane gravel the whole way and no place for trailers. The road is usually open only from early-to-mid July through mid-October, so it is not a road you can count on before July — confirm it is open before committing to the drive. The Grand Pass Trail starts at the road end, and an online wilderness camping permit plus a bear canister are required for the Cameron Basin camp zone."
+    },
+    {
+     "lat": 47.86565,
+     "lng": -123.35546,
+     "elev": 6450,
+     "name": "Grand Pass",
+     "note": "Grand Pass Trail crests the divide here between the Grand/Lillian River drainages and Cameron Creek; the descent to the Cameron side is steep and can be dangerously slick in wet weather or lingering snow.",
+     "type": "Junction",
+     "distMi": 6,
+     "directions": "From Obstruction Point follow the Grand Pass Trail south along the open crest of Lillian Ridge, descend into Grand Valley and follow the trail up the valley past Moose and Gladys Lakes to Grand Pass, about 6 miles from the trailhead."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6000,
+     "name": "Cameron Basin camp",
+     "note": "Established backcountry sites in the upper basin below Cameron Pass along Cameron Creek; bear canister required (no trees to hang food), no campfires above 3,500 ft, and an online wilderness camping permit is mandatory.",
+     "type": "Campsite",
+     "distMi": 8.3,
+     "directions": "Continue up along Cameron Creek into the upper basin below Cameron Pass to the established camp sites at about 6,000 ft. A bear canister is required and there are no fires."
+    },
+    {
+     "lat": 47.825718,
+     "lng": -123.358249,
+     "elev": 6448,
+     "name": "Cameron Pass snow slopes",
+     "note": "Steep snow can persist on the pass into late July or August; ice axe and self-arrest skills recommended, and the climbers' path is frequently obscured under snow here.",
+     "type": "Hazard",
+     "distMi": 9.3,
+     "directions": "Continue up the Cameron Pass Trail from the basin to Cameron Pass. Steep snow can cover the climbers' path on the final slopes into late July or August, so carry an ice axe."
+    },
+    {
+     "lat": 47.825825,
+     "lng": -123.33409,
+     "elev": 7194,
+     "name": "Mount Cameron summit (West Peak)",
+     "note": "The highest of Cameron’s three tops at about 7,194 ft, the first one reached along the ridge from Cameron Pass. The Middle and East tops are lower.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "From Cameron Pass leave the trail and follow the broad ridge crest east on Class 1-2 scree and talus. Several false summits come first; the West Peak is the true top. Going on toward the Middle and East tops means exposed Class 3-4 moves on loose rock."
+    }
+   ],
+   "pro_tips": [
+    "Plan a multi-day trip - the approach is long",
+    "Carry navigation; the open slopes require route-finding",
+    "Best mid-summer after snow has melted from the upper slopes",
+    "The highest top is the steep-blocked West Peak; the broad, flat East Peak is clearly lower, so make sure you reach the west end of the ridge.",
+    "In September, parties stayed below and to the side of the crest, which avoids the most technical Class 3 false summit near the top."
+   ],
+   "face": "Broad ridge rising east from Cameron Pass to the West Peak, the true summit"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_mount_fury_west_west_ridge",
+  "area_id": "wa_mount_fury_west",
+  "name": "West Ridge / Northwest Route",
+  "expect": {
+   "beta": "The West Peak route starts from the East Peak via the Southeast Glacier approach. The traverse between summits is a wild and fun scramble with decent exposure and more technical difficulty than the East Peak ascent. Three distinct towers require climbing up and over; rock quality on this connecting ridge is notoriously poor — climbers describe it as 'shockingly mobile' loose talus and standard chossy 4th class, not sound rock. The route involves low Class 5 rock climbing up to 5.4, though many climbers solo the final sections. A 50-60 meter rope is recommended for rappelling 4th and 5th class terrain.",
+   "descent_text": "Most parties reverse the route: from West Peak, cross back over the connecting ridge toward East Fury and descend via the Fury-Luna traverse and Access Col to Access Creek and the Big Beaver Trail. Off the West Peak summit itself, descend by dropping slightly east of the true summit down a chute, then make a descending 'choss-traverse' back west to regain the ridge crest, followed by dirty, ledge-y 4th-class terrain down to a small glacier on the northwest side of the peak, which is then downclimbed or crossed to rejoin the Luna Col traverse back toward Access Creek. A 50-60m rope is recommended and gets used for occasional single-rope-length rappels over 4th-class/low-5th-class steps both on this direct descent and along the East-West Fury connecting ridge if that's the return line - realistically a handful of short raps (estimate 2-4) rather than a fixed rappel sequence. Anchors are natural (horns, slings around blocks or small gendarmes) and not fixed/bolted - this terrain sees very light traffic and carries no in-place gear, so carry cord/slings to build and abandon anchors. Expect loose, chossy rock throughout the descent, especially on the gendarmes and ledge systems, and be prepared for route-finding uncertainty in marginal visibility. Note: the original 1981 solo first ascent of the full connecting West Ridge (a much longer multi-day traverse over several gendarmes, not a standalone summit-day descent) used twelve rappels across four days - that figure describes the entire ridge project, not what a typical party rappels descending from West Peak alone."
+  },
+  "set": {
+   "face": "West side: the glacier west of the peak, then steep chimneys to the west ridge",
+   "aspect": "W",
+   "grade": null,
+   "beta": "The original line to West Fury. Cross the glacier on the west side of the peak, pass the bergschrund, and climb one of two steep, shallow chimneys onto the west ridge; broken ledges and rotten rock lead to a final easy scramble to the summit. No modern grade is recorded; expect steep, loose low-fifth-class rock in the chimneys. The ridge from East Fury is a separate climb.",
+   "descent_text": null
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_little_annapurna_south_slopes",
+  "area_id": "wa_little_annapurna",
+  "name": "North Slopes",
+  "set": {
+   "discipline": "scrambling",
+   "grade": "Class 3"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_observation_rock_standard_scramble_route",
+  "area_id": "wa_observation_rock",
+  "name": "Standard scramble route",
+  "expect": {
+   "road": null
+  },
+  "set": {
+   "road": {
+    "name": "Mowich Lake Road",
+    "status": "No public vehicle, bike or foot access via SR 165: the Fairfax Bridge over the Carbon River has been permanently closed since April 2025, with no detour and no date to reopen.",
+    "driveNote": "Mowich Lake is now reached only on foot, a walk in of roughly 20 to 30 miles depending on the start (Westside Road, Sunrise, Longmire, or up the Carbon River). Plan this climb as a backpacking trip and carry the park’s overnight wilderness permit."
+   },
+   "approach": "Mowich Lake is no longer a drive-up trailhead (see the road note): reaching it is a long walk in of its own. From the Mowich Lake trailhead, take the Spray Park Trail (the Wonderland Trail at first) about 3.5 miles to Spray Park at roughly 5,800 ft. Near 6,200 ft a way trail leaves the main trail, easy to follow for about a mile, and climbs toward the saddle between Echo Rock and Observation Rock near 7,600 ft. Stay on snow where you can to spare the meadows. The north side of Observation is steep and loose, so contour clockwise round the foot of the peak, crossing the east icefield of the Flett Glacier if it is in, to the scree and talus of the south slope, where the climb starts."
+  }
+ }
+]

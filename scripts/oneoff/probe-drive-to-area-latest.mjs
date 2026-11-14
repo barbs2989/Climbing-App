@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Can the Climbs tab's browse navigation be DRIVEN as far as AreaLatest?
 //
 // #1046 recorded that setting `selArea` from the scaffold is NOT enough — that tab drives its
@@ -56,9 +57,8 @@ const CANDIDATES = [
   { label: "crag", path: ["Wasatch Range", "Central Wasatch", "Little Cottonwood Canyon", "The Egg"] }, // 3
 ];
 
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 // A dead spawn is fatal. Without this flag the only symptom of a vite that never started is a

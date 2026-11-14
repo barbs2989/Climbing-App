@@ -1,0 +1,90 @@
+[
+ {
+  "lu": "id_lu_pioneer_trifecta",
+  "leg": 0,
+  "peak": "Old Hyndman Peak",
+  "route": "Ridge scramble from the Big Basin side",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_pioneer_trifecta",
+  "leg": 1,
+  "peak": "Cobb Peak",
+  "route": "Ridge from Old Hyndman",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "id_lu_pioneer_trifecta",
+  "leg": 2,
+  "peak": "Hyndman Peak",
+  "route": "Standard route from the saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "or_lu_three_fingered_jack_washington",
+  "leg": 0,
+  "peak": "Three Fingered Jack",
+  "route": "South Ridge",
+  "pick": {
+   "id": "or_south_ridge_route",
+   "name": "South Ridge Route",
+   "disc": "alpine",
+   "grade": "5.2",
+   "area": "Three Fingered Jack",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "or_south_ridge_route",
+    "name": "South Ridge Route",
+    "disc": "alpine",
+    "grade": "5.2",
+    "area": "Three Fingered Jack",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "or_lu_three_fingered_jack_washington",
+  "leg": 1,
+  "peak": "Mount Washington",
+  "route": "North Ridge",
+  "pick": {
+   "id": "or_north_ridge_2",
+   "name": "North Ridge",
+   "disc": "alpine",
+   "grade": "5.3",
+   "area": "Mt. Washington",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "or_north_ridge_2",
+    "name": "North Ridge",
+    "disc": "alpine",
+    "grade": "5.3",
+    "area": "Mt. Washington",
+    "score": 1
+   },
+   {
+    "id": "or_west_ridge",
+    "name": "West Ridge",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Mt. Washington",
+    "score": 0
+   },
+   {
+    "id": "or_southeast_spur",
+    "name": "Southeast Spur",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Mt. Washington",
+    "score": 0
+   }
+  ]
+ }
+]

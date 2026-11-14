@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Fill `routes.grade_num` for the V-Beginner rows the parser could not read.
  *
  * WHY A DATA PASS HAS TO FOLLOW THE PARSER CHANGE. `grade_num` is the sortable grade and both
@@ -49,7 +50,7 @@ const tmp = path.join(ROOT, "scripts", `_grade-vbfix-${process.pid}.mjs`);
 let OLD_FOR;
 try {
   fs.writeFileSync(tmp, execFileSync("git", ["show", `${REF}:lib/grade.js`], { cwd: ROOT, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 }));
-  ({ gradeNumFor: OLD_FOR } = await import(`file://${tmp}`));
+  ({ gradeNumFor: OLD_FOR } = await import(fileHref(`file://${tmp}`)));
 } finally { try { fs.unlinkSync(tmp); } catch {} }
 if (typeof OLD_FOR !== "function") {
   console.error(`FAIL — could not load the reference parser from ${REF}. Nothing was compared and nothing written.`);
@@ -117,7 +118,7 @@ if (!APPLY) { console.log(`\n  DRY RUN — pass --apply to write.\n`); process.e
 const svc = requireServiceKey();
 const rbPath = path.join(ROOT, "scripts", `rollback-grade-num-vb-${Date.now()}.json`);
 fs.writeFileSync(rbPath, JSON.stringify(writes.map((w) => ({ id: w.id, grade_num: w.from })), null, 2));
-console.log(`  rollback written: ${path.relative(ROOT, rbPath)}\n`);
+console.log(`  rollback written: ${path.relative(ROOT, rbPath).replace(/\\/g, "/")}\n`);
 
 let ok = 0;
 for (const w of writes) {

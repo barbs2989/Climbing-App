@@ -1,3 +1,5 @@
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
+import { fileURLToPath } from "node:url";
 // check:catalog-duplicates — can the catalog gain a duplicate route again, and has it?
 //
 // 2026-09-25: import-route-grades --create-areas filed Mountain Project's `North Cascades › Mt. Baker`
@@ -41,7 +43,7 @@ import { execFileSync } from "child_process";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { searchCanon } from "../lib/search.js";
 
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const BASELINE = path.join(ROOT, "scripts/data/catalog-duplicates-baseline.json");
 const WRITE = process.argv.includes("--write-baseline");
 const ROWS_ONLY = process.argv.includes("--rows-only");   // CI: no management token, so half 2 only
@@ -54,7 +56,7 @@ fs.writeFileSync(tmp, `select tgname, tgenabled::text en, (tgtype & 4) > 0 ins, 
   from pg_trigger where tgname in ('trg_refuse_duplicate_area', 'trg_refuse_duplicate_route') and not tgisinternal;`);
 let trig;
 try {
-  const raw = execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", tmp], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  const raw = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--read-only", "-f", tmp], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
   trig = JSON.parse(raw.slice(raw.indexOf("{"))).rows;
   if (!Array.isArray(trig)) throw new Error(raw.slice(0, 300));
 } catch (e) {
@@ -100,7 +102,7 @@ const dups = Object.fromEntries([...groups].filter(([, ids]) => ids.length > 1).
 if (WRITE) {
   fs.mkdirSync(path.dirname(BASELINE), { recursive: true });
   fs.writeFileSync(BASELINE, JSON.stringify({ written: new Date().toISOString().slice(0, 10), groups: dups }, null, 1) + "\n");
-  console.log(`wrote ${Object.keys(dups).length} pre-existing duplicate groups to ${path.relative(ROOT, BASELINE)}`);
+  console.log(`wrote ${Object.keys(dups).length} pre-existing duplicate groups to ${path.relative(ROOT, BASELINE).replace(/\\/g, "/")}`);
 } else {
   const base = JSON.parse(fs.readFileSync(BASELINE, "utf8")).groups;
   let fixed = 0;

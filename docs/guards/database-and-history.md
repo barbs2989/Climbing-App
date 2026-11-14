@@ -339,7 +339,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     hiding in a build log.
   - Injection-tested; the four cases are named at the bottom of the script and are driven by
     `--inject=`, since the fault lives on GitHub and the checker cannot open pull requests.
-- **`check:rls`** guards three database-security invariants that were each broken in production,
+- **`check:rls`** guards five database-security invariants that were each broken in production,
   and which **58 existing guards could not see** — not one of them was about RLS. All six defects
   the 2026-08-19/20 audit found were on tables holding **zero rows**: a policy that has never been
   asked to refuse anything has never been tested, and 21 of the 32 tables `lib/db.js` writes were
@@ -373,6 +373,37 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     about the run looked wrong; it was caught only by diffing the parsed set against `pg_policy` on
     the live database — **79 parsed against 114 live**. Now 122 = 114 public + 8 `storage.objects`,
     with **zero** live-but-unparsed. Re-run that diff after any change to the parsing.
+  - **Rule 4 — every permissive WRITE policy asks who is calling (2026-10-15).** The owner asked
+    that a signed-in climber can insert, update and delete only their own rows. "Their own" is not
+    always a `user_id` column (a crew's organizer edits its members, a group's managers approve a
+    join), so the rule is the part that holds for all of them: an INSERT/UPDATE/DELETE/ALL policy
+    must contain `auth.uid()`/`auth.jwt()`/`auth.role()`, or call a helper whose **latest**
+    definition reads one (`is_group_manager`, `is_admin`, ...). Permissive policies OR together, so
+    one `with check (true)` defeats every careful policy beside it. RESTRICTIVE policies are skipped
+    (they only narrow), and SELECT is not judged: the public reads (`routes`, `areas`, `reviews`,
+    `contributions`, `objectives`, `crew_members`, `vouches`, ...) are deliberate. Audited live the
+    same day: 75/75 public tables RLS-on, 144 permissive write policies, every one bound; the only
+    write policies without a direct `auth.uid()` are the group-manager ones, whose helpers read it.
+    Parsed set re-diffed against `pg_policy`: identical (one name differs only by Postgres's 63-char
+    identifier truncation). Injections 7 (`with check (true)`) and 8 (strip a helper's
+    `auth.uid()`) both fire; a restrictive `with check (true)` correctly does not.
+  - **Rule 5 — every VIEW is read-only to `anon` and `authenticated` (2026-10-28, `0376`).** Rule 3
+    sees tables only, and a view is not held by RLS: it runs as its owner (`postgres`) unless it is
+    `security_invoker`. Supabase's default privileges give the client roles **every** privilege on a
+    new object in `public`, and the migrations that made `crew_listings` (0036) and
+    `catalog_directory`/`catalog_routes` (0214) only ever GRANTed select. `crew_listings` and
+    `catalog_directory` are one-table views, so Postgres writes **through** them
+    (`information_schema.views.is_updatable = YES`): the anon key could update or delete any crew or
+    any area, past every policy (`set local role anon; explain delete from crew_listings` planned
+    "Delete on crews"). Live re-audit the same day: 84/84 tables RLS-on, 257 policies, every
+    permissive write bound (rule 4); 4 tables have no policy at all (`connection_events`,
+    `edge_rate_events`, `route_base_pin_changes`, `route_views`) — deny-all to the app keys, written
+    only by service-role edge functions or definer RPCs. `0376` revokes everything but SELECT and
+    makes the two catalog views `security_invoker` (Supabase lint 0010); `crew_listings` stays
+    owner-rights on purpose (it reads the private `crews` table and re-exposes listing columns only).
+    After applying, the same EXPLAIN as anon fails `42501 permission denied`, and anon reads of all
+    three still return rows. A DROP then CREATE of a view starts fresh grants, `create or replace`
+    keeps them; the replay tracks both. Injection 9 (remove 0376's revoke) names the three views.
   - A dropped table takes its policies with it, or the guard keeps checking policies on tables
     nobody can fix (measured: `account_links` kept two after #1141 removed account linking).
   - Fails **closed** three ways — zero tables, zero policies or zero definer functions parsed are
@@ -382,7 +413,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     PostgREST does not expose `pg_catalog`, and this repo's rule is that CI never holds privileged
     credentials. Catching the shape where it is *written* is better than catching it in the
     database a day later anyway.
-  - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
+  - Injection-tested 9/9, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
 - **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
   whether one already has. Built 2026-09-25 after `import-route-grades --create-areas` filed MP's
@@ -417,6 +448,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     and length. 0271 merged 10 (higher grade kept); listed as READ: Discord 5.8 trad / WI4+ ice,
     Headless Horseman 5.10b / V7, "Unknown Left" 5.10c/d / 5.10b (placeholder, different grades). A
     future fold should expect this guard to name its leftovers.
+  - **Three placeholder names the exclusion misses (2026-11-04), READ and listed.** "Unnamed DWS"
+    (Black Rocks MI, V2 / V3), "Unknown (5.12)" (Cape Pond Head NL, two Mountain Project ids) and
+    "Unnamed (Oct 25)" (Bottle Glass ON, two Mountain Project ids, walls 5 and 10 apart). A
+    placeholder with a qualifier in brackets or a trailing word is still a placeholder; widening
+    PLACEHOLDER would retire these from the list.
+  - **On Windows** the trigger read needs `shell` + `--read-only` (the CLI now refuses an agent's
+    unmarked query, `HostedMutationConsentRequiredError`), and ROOT goes through `fileURLToPath`
+    (`URL.pathname` gives `/C:/...`, which `path.resolve` turns into `C:C:...`).
   - **catalog_key is recomputed in JS** (`lib/search.js` `searchCanon` + 0214's stoplist). In SQL
     it does not finish over 211k routes: measured `57014` at the default timeout, then a gateway
     **524** with `statement_timeout = 300s`. `check:search-norm` keeps the JS and SQL tables one.
@@ -476,6 +515,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         matching a different place ("The Lookout (main wall and shield)" vs Castleview's Main Wall).
     - **Still cannot see** a one-name list, a list split by words other than , / & + "and", or a copy
       whose listed places sit farther away than the grandparent.
+  - **SIBLINGS refused at insert/move (0385, 2026-10-28, same owner note)**: #2835 dissolved MP's ice/mixed
+    buckets by moving their crags up a level, which filed two places twice under ONE parent — Squamish's
+    "The Smoke Bluffs Ice" beside "The Smoke Bluffs", Durango's "Pine River" (ice) beside "Pine River Area".
+    The second pass caught both the next day; the trigger did not, because one side of each had NO coordinate
+    and 0216/0218 then compare peaks only (the Cascade River bucket had none either). `refuse_duplicate_area`
+    now first refuses a child whose `catalog_sibling_key` (search_canon minus the/area/areas/climbing/climbs/ice
+    — KEEPING mount/peak/crag, so Mount Wilson / Wilson Peak, Baker Crags / Mount Baker, Index / Mount Index
+    and Crested Butte / Mt. Crested Butte, all LISTED as different places, still go in) equals a sibling's.
+    Measured over the live catalog before the fold: exactly 3 sibling pairs on that key — the 2 copies and
+    Illinois' Jump For Jesus pair already LISTED. Proven live in a rolled-back run: re-adding "Pine River"
+    under Durango and "The Smoke Bluffs (Ice)" under Squamish refused; "Smoke Bluffs Bouldering", a bare
+    "Ice" and an unrelated name went in. The fold: the 3 Smoke Bluffs ice climbs onto the crags their MP
+    pages name (Frozen Zombie, Alice → Wall Area; Bughouse Heights Ice → Bughouse Heights), the copy deleted
+    after a 0-count of every referencing table; the Pine River ice leaf moved UNDER Pine River Area as
+    "Pine River Trail" (routes must sit on a leaf, and the two climbs are 3 and 9 miles up that trail).
     - **`--areas-file <dump>`** runs the passes on a saved `{rows:[…]}` dump instead of the live read, to
       prove a pass against the catalog BEFORE a fold. Include `lat,lng` in the dump, or the first pass
       sees no coordinates and goes quiet.
@@ -812,6 +866,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     wall's name), Horse Flats' "Y Crack Boulder" / "A Boulder", "Y - North/South Side" kept (the crag
     is The Y), "N. Red-Yellow" and "B. School" kept as unsettled. Only 150 renames had no labelled
     sibling to vouch for them; those were the ones read.
+  - **A protest label is stripped the same way** (2026-10-29): Mountain Project carried an area named
+    "PUBLIC LAND FOR SALE-Wayne's World" (North Bend dry-tooling), from a 2025 campaign asking
+    climbers to put that phrase on route and area names. It is not the place's name. The one
+    WA area that had it was renamed to "Wayne's World"
+    (`scripts/oneoff/getting-there-directions/fix-protest-area-names.mjs`). The rule only strips it when a
+    dash or colon follows it, so a wall truly named "Public Land Wall" keeps its name.
   - **The rule must be IDEMPOTENT** — the importer strips names the rename already stripped. The
     first run broke it three ways ("V3 - " read as a letter-dash label, ". . more" as dot markers,
     "Z1:1:" stacked); tested since: f(f(x)) === f(x) for all 58,515 distinct names.
@@ -1497,4 +1557,5 @@ Owner rule: a peak route with rock-climbing pitches (5th class and above) is **a
 - **`HELD` list: one row.** Dragontail's Pandora's Box West Route (Class 3 snow couloir; its 5.6 is an optional summit-pinnacle pitch in `rock_grade`). The other nine rows held on 2026-10-08 were settled by reading each row, not its fingerprint: seven carry their own 5th-class evidence (`rock_grade` "low 5th"/"Easy 5th", a rack, a rope for pitched climbing, a pitch count) and went alpine (Anderson's Thumb, Burnt Boot N Ridge, Inner Constance NW Buttress, Goatshead Spire, Crowder NE Ridge, Storm King N Face, Tepeh Towers); Sahale Glacier and Overcoat East Face had a STALE 5.x (sources: glacier plus Class 3-4, a low-5th move only possible on the summit block) and were regraded to Class 4, staying mountaineering. `scripts/oneoff/fix-held-mountaineering-grades.mjs` did it.
 - Scrambling verdicts from the research (Ellinor, North Gardner, Plummer, Tricouni SW, Windy Peak) were NOT applied: moving mountaineering to scrambling was not part of the ask.
 - **Widened 2026-10-24 to SCRAMBLING and to the `disciplines` LIST.** Owner, on Monte Cristo ("Standard Scramble", 5.6): "Most people don't scramble a 5.6 graded route." The row's primary had been alpine since #1854, but its list still read `["scrambling"]`, and `DiscBadges`/`rDiscs` let a non-empty list win outright, so the page said Scrambling. 83 rows' lists omitted their own primary, because every walk-up round re-filed `discipline` and left `disciplines`. Now: `rDiscs` leads with `catOf(r)` and drops "scrambling" from a 5.x route; `catOf` and trigger **0366** turn scrambling + 5.x into alpine (Cardinal SE Slopes, Mount Meany, Huckleberry West Face, Lundin East Ridge — each carries rope or rack for its pitch) and keep the primary in the list on every write; `scripts/oneoff/fix-disciplines-list-matches-primary.mjs` repaired 123 rows (rollback file in `scripts/`), renamed Monte Cristo's row *North Col* (The Mountaineers list it as "Basic Alpine Climb — Monte Cristo/North Col") and Horseshoe/Spire's "Standard Scramble" to *Standard Route*; four peak labels (Huckleberry, Lundin, Meany, Cardinal) moved to alpine with their standard route. This audit fails on either kind again. It reads with the **service key** now: under the anon key RLS makes the sparse scrambling/alpine keyset pages hit the statement timeout.
+- **Residue fixed 2026-10-25 (owner's note: "5.6 or 5.7 yds still counted as mountaineering").** 0280 turned a mountaineering row alpine but kept "mountaineering" in its `disciplines` list, and `rDiscs` reads that list, so **83 live alpine routes with a 5.x grade still showed the Mountaineering chip**. The audit's primary-column pass could not see it (their `discipline` was already alpine). Fixed three ways: `rDiscs` drops "mountaineering" from a 5.x route as it does "scrambling"; `scripts/oneoff/strip-mountaineering-residue.mjs` stripped the tag from exactly those 83 rows (paced, each PATCH asserts its old list; re-read: 0 left; 20 alpine+mountaineering rows with no 5.x kept as walk-ups); this audit now also fails on a five-class alpine row listing mountaineering. Note the audit's `disciplines=cs.` array filter times out on `routes`, so the residue scan reads the indexed primary `discipline=eq.alpine` and filters the array in memory. No new trigger: 0366 already keeps every grade-driven write honest.
 - **Class 1-2 mountaineering rows lost "alpine"/"scrambling" from their list** (walk-ups — Baker Easton, Rainier Emmons, Mount Townsend's trail). **Class 3+ lists were left alone**: a first draft that rebuilt lists from the Class grade tagged Rainier's Disappointment Cleaver a scramble.

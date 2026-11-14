@@ -1,0 +1,57 @@
+{
+  "area_id": "wa_mount_price",
+  "routes": [
+    {
+      "route_id": "wa_mount_price_hester_lake_route",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Mountaineers route page and WTA/yellowleaf-style reports point to snow-free summer and early fall for the Hester Lake line, with the standard gully route kept for snow months; Peakbagger ascents on this peak are overwhelmingly Dec-May snow trips, so only the Oct 1 2023 ascent is near the window." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2330502", "verdict": "unsure", "why": "Oct 1 2023, summited, complete round trip from the trailhead, but it climbs by bushwhacking the northeast ridge over Point 4892 and only descends toward Little Hester Lake; our route gains the east ridge from the boulder field south of the lake. Logged name 'Hester Lake to NE Ridge' does not settle which of our routes it is." },
+        { "aid": "2780554", "verdict": "offseason", "why": "March 2025 snow ascent." },
+        { "aid": "2121141", "verdict": "offseason", "why": "January 2023." },
+        { "aid": "2121121", "verdict": "offseason", "why": "January 2023." },
+        { "aid": "2081787", "verdict": "offseason", "why": "November 2022 and not a complete round trip." },
+        { "aid": "376045", "verdict": "offseason", "why": "December 2013." },
+        { "aid": "48341", "verdict": "unsure", "why": "August 2008 summit, but no trip detail or track checks for identity." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 10, "text": "In early October the shaded boulder slope south of Little Hester Lake is coated in wet moss and slick underfoot.", "aids": ["2330502"] },
+        { "field": "pro_tips", "month": 10, "text": "In early October, running water can be found beneath the boulders a few hundred feet above Little Hester Lake, a handy refill before the long walk out.", "aids": ["2330502"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_price_lower_ramp_route",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Technical 5.8 alpine rock route; dry-rock summer window assumed, supported by guide pages recommending snow-free summer months for the peak. No route-specific source found." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "2330502", "verdict": "different", "why": "Hiking/scramble ascent; nothing links any track to this technical line." } ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_price_northeast_route",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "Same snow-free summer-to-early-fall guidance as the other Price lines; no route-specific page found." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "2330502", "verdict": "unsure", "why": "Report climbs a northeast ridge on Oct 1, but our Northeast Route has no text, pins or description to show it is the same line; could be a different northeast route." } ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_price_prominent_dihedral",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Technical 5.10 rock; dry summer window assumed. No route-specific source found." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_price_south_ridge",
+      "season": { "months": [6,7,8,9,10], "window": "Jun-Oct", "evidence": "General Price guidance (snow-free summer/early fall); no South Ridge specific source found." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "2330502", "verdict": "unsure", "why": "Descent was logged as 'SE Ridge to Little Hester Lake', not a South Ridge ascent." } ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Almost all Peakbagger ascents of Price are winter/spring snow trips from the standard gully, off-season for the stored routes. The only route with a trailhead pin is Hester Lake Route (Dingford Creek; tracks start about 120 m from it, fine). Lower Ramp, Prominent Dihedral, Northeast and South Ridge are empty stubs; some may be the same line as another stub or the Hester route."
+}

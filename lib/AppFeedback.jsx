@@ -15,10 +15,12 @@
 // Same invariant as the sheets these replace: never clear what was typed unless it was saved,
 // never claim a delivery that did not happen.
 
+import { tx } from "./tapWords.js";
 import { useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { fileAppFeedback, useAppFeedbackQueue, useAppRatingSummary, setAppFeedbackStatus } from "./db.js";
 import pkg from "../package.json";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 export const APP_VERSION = pkg.version;
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -47,7 +49,7 @@ export function storeListing(platform) {
 
 const field = { width: "100%", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 14, outline: "none", boxSizing: "border-box", fontFamily: "inherit" };
 const lbl = { display: "block", fontSize: 12.5, fontWeight: 700, color: C.textSub, margin: "12px 0 5px" };
-const primary = (on) => ({ width: "100%", marginTop: 14, padding: 12, minHeight: 46, background: on ? C.blueSolid : C.bg, color: on ? "#fff" : C.textMuted, border: on ? "none" : "1px solid " + C.border, borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: on ? "pointer" : "default" });
+const primary = (on) => ({ width: "100%", marginTop: 14, padding: 12, minHeight: 46, background: on ? C.blueSolid : C.bg, color: on ? C.onSolid : C.textMuted, border: on ? "none" : "1px solid " + C.border, borderRadius: 11, fontSize: 14, fontWeight: 700, cursor: on ? "pointer" : "default" });
 const why = (e) => (e && e.code === "P0001" && e.message ? e.message + " " : "");
 
 function GuestEmail({ id, email, setEmail }) {
@@ -76,7 +78,7 @@ export function FeedbackForm({ uid }) {
   return <form onSubmit={(e) => { e.preventDefault(); send(); }} aria-label="Send feedback">
     <div style={{ fontSize: 13, color: C.textSub, marginBottom: 12, lineHeight: 1.5 }}>Found a bug or have an idea? It goes straight to the ClimbMatch team, and we read every one.</div>
     <div role="radiogroup" aria-label="What is it about" style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-      {KINDS.map(([k, label]) => <button key={k} type="button" role="radio" aria-checked={kind === k} onClick={() => setKind(k)} style={{ minHeight: 40, padding: "8px 13px", borderRadius: 20, border: "1px solid " + (kind === k ? C.blue : C.border), background: kind === k ? C.blueBg : C.bg, color: kind === k ? "#fff" : C.textSub, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{label}</button>)}
+      {KINDS.map(([k, label]) => <button key={k} type="button" role="radio" aria-checked={kind === k} onClick={() => setKind(k)} style={{ minHeight: 40, padding: "8px 13px", borderRadius: 20, border: "1px solid " + (kind === k ? C.blue : C.border), background: kind === k ? C.blueBg : C.bg, color: kind === k ? C.onSolid : C.textSub, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{label}</button>)}
     </div>
     <label htmlFor="fb-text" style={lbl}>{kind === "bug" ? "What happened, and on which screen?" : kind === "idea" ? "What would make ClimbMatch better?" : "What’s on your mind?"}</label>
     <textarea id="fb-text" value={text} onChange={(e) => { setText(e.target.value); if (state !== "sending") setState("idle"); }} rows={5} maxLength={4000} style={{ ...field, resize: "vertical" }} />
@@ -111,13 +113,13 @@ export function RateForm({ uid, onFeedback }) {
   </div>;
   return <form onSubmit={(e) => { e.preventDefault(); send(); }} aria-label="Rate ClimbMatch">
     {store ? <>
-      <a href={store.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: 12, background: C.blueSolid, color: "#fff", borderRadius: 11, fontSize: 14, fontWeight: 700, textDecoration: "none", boxSizing: "border-box" }}>{"Rate us on " + store.name}</a>
+      <a href={store.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: 46, padding: 12, background: C.blueSolid, color:C.onSolid, borderRadius: 11, fontSize: 14, fontWeight: 700, textDecoration: "none", boxSizing: "border-box" }}>{"Rate us on " + store.name}</a>
       <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, margin: "10px 0 4px" }}>{"A rating on " + store.name + " helps other climbers find ClimbMatch. Or rate us here — that one comes only to the team."}</div>
     </> : <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.55, marginBottom: 4 }}>How is ClimbMatch working for you? Your rating goes straight to the ClimbMatch team.</div>}
     <div role="radiogroup" aria-label="Your rating, out of 5 stars" onKeyDown={key} style={{ display: "flex", justifyContent: "center", gap: 4, margin: "10px 0 2px" }}>
       {[1, 2, 3, 4, 5].map((s) => <button key={s} type="button" role="radio" aria-checked={stars === s} aria-label={s + (s === 1 ? " star" : " stars")} tabIndex={stars === s || (!stars && s === 1) ? 0 : -1} onClick={() => setStars(s)} style={{ width: 52, height: 52, padding: 0, border: "none", background: "transparent", fontSize: 40, lineHeight: 1, cursor: "pointer", color: s <= stars ? "#e3b341" : C.textMuted, opacity: s <= stars ? 1 : 0.55 }}>★</button>)}
     </div>
-    <div aria-hidden="true" style={{ textAlign: "center", fontSize: 12.5, color: C.textMuted, minHeight: 18 }}>{["Tap a star", "Poor", "Fair", "Good", "Very good", "Excellent"][stars]}</div>
+    <div aria-hidden="true" style={{ textAlign: "center", fontSize: 12.5, color: C.textMuted, minHeight: 18 }}>{[tx("Tap a star"), "Poor", "Fair", "Good", "Very good", "Excellent"][stars]}</div>
     {stars ? <>
       <label htmlFor="rate-text" style={lbl}>{stars <= 3 ? "What would make it better? (optional)" : "Anything you’d like to add? (optional)"}</label>
       <textarea id="rate-text" value={text} onChange={(e) => setText(e.target.value)} rows={3} maxLength={4000} style={{ ...field, resize: "vertical" }} />
@@ -151,7 +153,7 @@ export function AppFeedbackQueue({ notify }) {
   };
   return <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
     <div style={{ fontSize: 12.5, color: sum.error ? C.red : C.textSub, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "10px 12px", lineHeight: 1.5 }}>{summary}</div>
-    {isLoading ? <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>Loading feedback…</div>
+    {isLoading ? <LoadingRows C={C} label="Loading feedback…" style={{padding: "10px 2px"}}/>
       : error ? <div style={{ fontSize: 12.5, color: C.red, padding: "10px 2px" }}>{"Couldn't load feedback — " + ((error && error.message) || "try again") + ". Do not read this as 'no feedback'."}</div>
       : !data || !data.length ? <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>No unread feedback.</div>
       : data.map((r) => {
@@ -165,7 +167,7 @@ export function AppFeedbackQueue({ notify }) {
           {r.message ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 6, lineHeight: 1.45, whiteSpace: "pre-wrap" }}>{r.message}</div> : null}
           <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6 }}>{[r.platform, r.app_version ? "v" + r.app_version : null, r.reply_to ? "Reply to " + r.reply_to : "No address to reply to"].filter(Boolean).join(" · ")}</div>
           <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
-            {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff", fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
+            {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color:C.onSolid, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
             <button disabled={busy === r.id} onClick={() => done(r)} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: busy === r.id ? "default" : "pointer" }}>{busy === r.id ? "Working…" : "Mark as read"}</button>
           </div>
         </div>;

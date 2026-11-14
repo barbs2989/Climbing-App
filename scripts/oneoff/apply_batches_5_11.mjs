@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import "../lib/load-env.mjs";
 // Applies gear-audit data from batch 5-11 cohort JSON files directly to the live
 // Supabase DB via the service_role key (bypasses RLS). Requires SUPABASE_SERVICE_KEY env var.
 import { createClient } from "@supabase/supabase-js";
@@ -9,7 +10,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const url = "https://ofuofhojhbcrcahuotya.supabase.co";
+const url = process.env.VITE_SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_KEY;
 if (!key) { console.error("Set SUPABASE_SERVICE_KEY env var"); process.exit(1); }
 const supabase = createClient(url, key, { auth: { persistSession: false }, realtime: { transport: ws } });

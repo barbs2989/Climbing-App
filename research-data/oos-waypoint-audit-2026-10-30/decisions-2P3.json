@@ -1,0 +1,38 @@
+[
+ {
+  "batch": "2P3",
+  "id": "id_southwest_ridge",
+  "i": 0,
+  "name": "Borah Peak Trailhead",
+  "decision": "none",
+  "coordinate_key": "44.13256,-113.83448",
+  "reason": "SummitPost Borah Peak Trailhead page lists Lat/Lon 44.13238N / 113.83595W (about 7,250 ft); stored point is about 119 m away (second hit: Mazamas Google Maps link, lat 44.1324725). Within 150 m.",
+  "source": "https://www.summitpost.org/borah-peak-trailhead/639736",
+  "quote": "Location Lat/Lon: 44.13238°N / 113.83595°W",
+  "op": "none"
+ },
+ {
+  "batch": "2P3",
+  "id": "id_diamond_peak_east_ridge",
+  "i": 0,
+  "name": "Pass Creek Road End",
+  "decision": "none",
+  "coordinate_key": "44.14738,-113.03906",
+  "reason": "no published coordinate: the climbing guide gives the road by mileage only (gate at about 3.4 mi, forest boundary at about 6 mi, RTE CLOSED sign); the only coordinate on the page is the peak's. Unverified.",
+  "source": "https://www.idahoaclimbingguide.com/bookupdates/diamond-peak-12197/",
+  "quote": "Follow the main track keeping right at 3.4 miles and passing through a gate.",
+  "op": "none"
+ },
+ {
+  "batch": "2P3",
+  "id": "id_thompson_peak_south_couloir",
+  "i": 0,
+  "name": "Redfish Trailhead",
+  "decision": "none",
+  "coordinate_key": "44.14842,-114.91999",
+  "reason": "USFS Sawtooth Redfish Trailhead listed at 44.14838,-114.91992 and AllTrails Redfish Lake Trail at 44.14831,-114.91984 (both via search results; the FS page itself redirected on fetch): about 6 m and 10 m from stored. Within 150 m.",
+  "source": "https://www.fs.usda.gov/recarea/sawtooth/recreation/recarea/?recid=5939&actid=51",
+  "quote": "44.14838, -114.91992",
+  "op": "none"
+ }
+]

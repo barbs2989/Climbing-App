@@ -34,7 +34,6 @@ const PAIRS = {
   dbReports: "reportsUnavailable",
   joinedGroups: "groupsUnavailable",
   crewReqIn: "crewInvitesUnavailable",
-  savedSearches: "searchesUnavailable",
 };
 
 // STATED SO IT READS AS A WORKLIST, not a caveat: nothing has yet asked about a count that has

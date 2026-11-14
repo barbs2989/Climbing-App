@@ -22,7 +22,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { componentFiles } from "./lib/guard-sources.mjs";
+import { componentFiles, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APP = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx",
@@ -53,7 +53,8 @@ let calls = 0;
 let mainSrc = "";
 for (const rel of APP) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
-  if (rel === "ClimbMatch.jsx") mainSrc = src;
+  // The join-requests heading moved into CrewRequestsView (PR61): the anchor reads App stitched.
+  if (rel === "ClimbMatch.jsx") mainSrc = readAppFile(path.join(ROOT, rel));
   let m, n = 0;
   CALL.lastIndex = 0;
   while ((m = CALL.exec(src))) {

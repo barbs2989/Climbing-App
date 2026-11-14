@@ -23,11 +23,14 @@
 // Portalled to document.body: #appscroll is a permanent stacking context beneath
 // the header's zIndex 30, so a position:fixed overlay rendered inside it paints
 // under the chrome no matter what z-index it asks for (see check:overlay-portals).
+import { tx } from "./tapWords.js";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
+import { TEXT_TAP } from "./buttonStyles.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
-import { useActiveFires, useFirePerimeters, useFireWeather, useHeat, useFireAlert, nwsPointPage, HEAT_MIN_ZOOM, HEAT_HOURS, fmtHoursAgo, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
+import { useActiveFires, useFirePerimeters, useFireWeather, useHeat, useFireAlert, nwsPointPage, HEAT_MIN_ZOOM, HEAT_HOURS, fmtHoursAgo, useSmokeWindow, smokeHours, smokeTileUrl, fmtSmokeHour, SMOKE_BANDS, SMOKE_MAX_NATIVE_ZOOM, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const Z = 3000;
 // Continental US, the honest default when we have nothing better to centre on.
@@ -108,14 +111,15 @@ function bboxForView(el, lat, lng, zoom) {
 // in miles: a climber with metric selected was shown "mi" on every row, and the km
 // branch was unreachable. The default here is a formatter, not `true`, so a caller
 // that forgets to pass it degrades to imperial rather than crashing.
+const NO_ITEMS = [];
 export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", focus = null, locale = undefined }) {
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
-  const perimRef = useRef(null), wxRef = useRef(null), fireRef = useRef(null), heatRef = useRef(null);
+  const perimRef = useRef(null), wxRef = useRef(null), fireRef = useRef(null), heatRef = useRef(null), smokeRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
   const [bbox, setBbox] = useState(null);
   const [baseLayer, setBaseLayer] = useState("topo");
-  const [show, setShow] = useState({ fires: true, perims: true, wx: true, heat: true });
+  const [show, setShow] = useState({ fires: true, perims: true, wx: true, heat: true, smoke: true });
   const [sel, setSel] = useState(null);
   // Map-only view: the list and its notes step aside and the map takes the screen, as the
   // area map's and the route map's ⤢ do. The legend stays — a map you cannot read is not
@@ -134,17 +138,25 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     const [vLat, vLng, vZoom] = viewFor(focus);
     const seed = bboxForView(mapDiv.current, vLat, vLng, vZoom);
     if (seed) setBbox(b => b || seed);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- seeds the viewport once on mount; later focus changes must not reset the bbox
 
   const firesQ = useActiveFires(bbox, show.fires);
   const perimQ = useFirePerimeters(bbox, show.perims);
   const wxQ = useFireWeather(bbox, show.wx);
   const heatOn = show.heat && zoom >= HEAT_MIN_ZOOM;
   const heatQ = useHeat(bbox, heatOn);
+  // The smoke forecast: which hours it holds, and the one being drawn (an index into
+  // them; 0 is the current hour). `smokeErr` is set by a tile that failed to load, so
+  // a blank overlay from a dead service never passes for clean air.
+  const smokeQ = useSmokeWindow(show.smoke);
+  const hours = useMemo(() => smokeHours(smokeQ.data), [smokeQ.data]);
+  const [hourIx, setHourIx] = useState(0);
+  const smokeAt = hours.length ? hours[Math.min(hourIx, hours.length - 1)] : null;
+  const [smokeErr, setSmokeErr] = useState(false);
 
-  const fires = (firesQ.data && firesQ.data.fires) || [];
-  const perims = (perimQ.data && perimQ.data.perims) || [];
-  const zones = (wxQ.data && wxQ.data.zones) || [];
+  const fires = (firesQ.data && firesQ.data.fires) || NO_ITEMS;
+  const perims = (perimQ.data && perimQ.data.perims) || NO_ITEMS;
+  const zones = (wxQ.data && wxQ.data.zones) || NO_ITEMS;
   const heatData = heatQ.data;
   const heat = useMemo(() => (heatOn && heatData && heatData.heat) || [], [heatOn, heatData]);
 
@@ -171,6 +183,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       wxRef.current = L.layerGroup().addTo(map);
       perimRef.current = L.layerGroup().addTo(map);
       heatRef.current = L.layerGroup().addTo(map);
+      smokeRef.current = L.layerGroup().addTo(map);
       fireRef.current = L.layerGroup().addTo(map);
       // The place the map was opened FOR, named on the map itself. A route page asks for
       // this (focus.pin) because "zoom in until you can find Vesper Peak" was the job the
@@ -196,9 +209,9 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     return () => {
       cancelled = true; clearTimeout(ft);
       if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} }
-      mapRef.current = null; tileRef.current = null; perimRef.current = null; wxRef.current = null; fireRef.current = null; heatRef.current = null;
+      mapRef.current = null; tileRef.current = null; perimRef.current = null; wxRef.current = null; fireRef.current = null; heatRef.current = null; smokeRef.current = null;
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- builds the Leaflet map once; baseLayer, focus and theme are applied by their own effects, and re-running would destroy the map
 
   useEffect(() => { if (mapRef.current) applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
   // The map div changes size when the list steps aside; Leaflet only measures on resize.
@@ -271,6 +284,28 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
     });
   }, [ready, heat, heatOn, zoom, C]);
 
+  // --- draw the smoke forecast ---------------------------------------------
+  // A tile layer whose tiles are one forecast hour's image for that tile's box, in a
+  // pane above the base map and below every fill and dot, so smoke tints the ground
+  // without hiding a fire or a perimeter.
+  useEffect(() => {
+    const L = window.L, grp = smokeRef.current, map = mapRef.current;
+    if (!ready || !L || !grp || !map) return;
+    grp.clearLayers();
+    setSmokeErr(false);
+    if (!show.smoke || smokeAt == null) return;
+    if (!map.getPane("smoke")) { const pane = map.createPane("smoke"); pane.style.zIndex = 350; pane.style.pointerEvents = "none"; }
+    const Smoke = L.TileLayer.extend({
+      getTileUrl(c) {
+        const size = 40075016.68557849 / Math.pow(2, c.z), o = 20037508.342789244;
+        return smokeTileUrl([c.x * size - o, o - (c.y + 1) * size, (c.x + 1) * size - o, o - c.y * size], smokeAt);
+      },
+    });
+    const layer = new Smoke("", { pane: "smoke", opacity: 0.55, maxNativeZoom: SMOKE_MAX_NATIVE_ZOOM, maxZoom: 19, tileSize: 256 });
+    layer.on("tileerror", () => setSmokeErr(true));
+    layer.addTo(grp);
+  }, [ready, show.smoke, smokeAt]);
+
   // --- draw incident points ------------------------------------------------
   useEffect(() => {
     const L = window.L, grp = fireRef.current;
@@ -340,6 +375,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   // things rather than lumping tomorrow's watch in with tonight's warning.
   const peerCount = Math.max(0, (topIsUpcoming ? upcoming.length : inEffect.length) - 1);
 
+  const smokeFailed = show.smoke && (!!smokeQ.error || smokeErr);
   const anyError = firesQ.error || perimQ.error || wxQ.error || (heatOn && heatQ.error);
   const anyLoading = (show.fires && firesQ.isFetching) || (show.perims && perimQ.isFetching) || (show.wx && wxQ.isFetching) || (heatOn && heatQ.isFetching);
   // The weather layer was missing here, so a viewport hitting CAP.wx drew a subset of
@@ -365,13 +401,13 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
 
   const chip = (key, label, color, n) => (
     <button onClick={() => setShow(s => ({ ...s, [key]: !s[key] }))} aria-pressed={show[key]}
-      style={{ display: "flex", alignItems: "center", gap: 5, padding: "6px 9px", borderRadius: 8, cursor: "pointer", fontSize: 11, fontWeight: 700, background: show[key] ? C.card : C.surface, color: show[key] ? C.text : C.textMuted, border: "1px solid " + (show[key] ? color : C.border), boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+      style={{ display: "flex", alignItems: "center", gap: 5, padding: "9px 11px", minHeight: 36, borderRadius: 8, cursor: "pointer", fontSize: 11.5, fontWeight: 700, background: show[key] ? C.card : C.surface, color: show[key] ? C.text : C.textMuted, border: "1px solid " + (show[key] ? color : C.border), boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
       <span style={{ width: 9, height: 9, borderRadius: 2, background: show[key] ? color : "transparent", border: "1.5px solid " + color, flexShrink: 0 }} />
       {label}{n != null && show[key] ? " " + n : ""}
     </button>
   );
 
-  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub };
+  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label };
 
   return createPortal(
     <div role="dialog" aria-label="Fire map" onClick={e => { if (e.target === e.currentTarget) onClose(); }}
@@ -382,8 +418,8 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
         <ActionIcon name="fire" size={19} color={C.red} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 15, fontWeight: 800, lineHeight: 1.2 }}>Fire map</div>
-          <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-            Active wildfires &amp; fire weather
+          <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2, overflowWrap: "anywhere" }}>
+            Active wildfires, smoke &amp; fire weather
           </div>
         </div>
         {/* In the map-only view the ✕ leaves THAT view, as the area map's full screen does —
@@ -439,6 +475,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
               {chip("perims", "Perimeters", C.orange, perimQ.data ? perims.length : null)}
               {chip("wx", "Red flag", C.amber, wxQ.data ? zones.length : null)}
               {chip("heat", "Heat", C.yellow, heatOn && heatQ.data ? heat.length : null)}
+              {chip("smoke", "Smoke", C.textSub, null)}
             </div>
             {/* Inside the map branch, so it is not offered when the map failed to load —
                 there is nothing to centre, and a button whose only outcome is an apology
@@ -446,7 +483,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             {/* The area map's button, exactly: "📍 Me". It was a line-drawn pin icon in
                 the same white as its word, which read as decoration, not "where am I". */}
             <button onClick={locate} disabled={me.locating} aria-label="Show my location on the map"
-              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: me.locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
+              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color:C.onSolid, border: "none", borderRadius: 9, padding: "9px 12px", fontSize: 12.5, fontWeight: 700, cursor: me.locating ? "default" : "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}><span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span></button>
             {fullscreen ? null : <button onClick={() => setFullscreen(true)} aria-label="Full screen" title="Full screen" style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>⤢</button>}
             {/* Top-right under the zoom buttons (which end ~140px down, below the ⤢), not
                 GPXMap's bottom-left: that corner holds the layer chips here. */}
@@ -469,6 +506,27 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           <span style={{ display: "inline-flex", alignItems: "center", gap: 5, whiteSpace: "nowrap" }}><span aria-hidden="true" style={{ width: 11, height: 8, borderRadius: 2, border: "1.5px dashed " + C.orange, flexShrink: 0 }} />Red Flag Warning</span>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 5, whiteSpace: "nowrap" }}><span aria-hidden="true" style={{ width: 11, height: 8, borderRadius: 2, border: "1.5px dashed " + C.amber, flexShrink: 0 }} />Fire Weather Watch</span>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 5, whiteSpace: "nowrap" }}><span aria-hidden="true" style={{ width: 7, height: 7, borderRadius: "50%", background: C.yellow, flexShrink: 0 }} />{"Heat seen by satellite, last " + HEAT_HOURS + " h (brighter = newer)"}</span>
+          {show.smoke ? (
+            <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: 5, paddingTop: 2 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ fontWeight: 700, color: C.text, flex: 1, minWidth: 0 }}>{smokeAt != null ? "Smoke forecast, " + fmtSmokeHour(smokeAt, locale) : "Smoke forecast"}</span>
+                <button onClick={() => setHourIx(i => Math.max(0, i - 1))} disabled={!hours.length || hourIx <= 0} aria-label="Earlier smoke forecast"
+                  style={{ minWidth: 36, minHeight: 32, borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: hourIx <= 0 ? C.textMuted : C.text, fontSize: 13, fontWeight: 700, cursor: hourIx <= 0 ? "default" : "pointer" }}>‹</button>
+                <button onClick={() => setHourIx(i => Math.min(hours.length - 1, i + 1))} disabled={!hours.length || hourIx >= hours.length - 1} aria-label="Later smoke forecast"
+                  style={{ minWidth: 36, minHeight: 32, borderRadius: 8, border: "1px solid " + C.border, background: C.card, color: hourIx >= hours.length - 1 ? C.textMuted : C.text, fontSize: 13, fontWeight: 700, cursor: hourIx >= hours.length - 1 ? "default" : "pointer" }}>›</button>
+              </div>
+              {smokeFailed ? (
+                <div style={{ color: C.amber, lineHeight: 1.45 }}>Couldn&apos;t load the smoke forecast, so smoke is not shown. This is not a clean-air reading.</div>
+              ) : smokeQ.isLoading ? <div style={{ color: C.textMuted }}>Loading the smoke forecast…</div> : (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "5px 12px" }}>
+                  {SMOKE_BANDS.map(([lo, col, word], i) => (
+                    <span key={word} style={{ display: "inline-flex", alignItems: "center", gap: 5, whiteSpace: "nowrap" }}><span aria-hidden="true" style={{ width: 11, height: 8, borderRadius: 2, background: col, opacity: 0.75, flexShrink: 0 }} />{word + " (" + (i + 1 < SMOKE_BANDS.length ? lo + "–" + (SMOKE_BANDS[i + 1][0] - 0.1).toFixed(1) : lo + " and up") + " µg/m³)"}</span>
+                  ))}
+                </div>
+              )}
+              <div style={{ color: C.textMuted, lineHeight: 1.45 }}>Fine smoke near the ground, an hour&apos;s average, forecast for the region up to two days out — not a reading at your route. Clear map means under 9 µg/m³.</div>
+            </div>
+          ) : null}
           <div style={{ width: "100%", color: C.textMuted, lineHeight: 1.45 }}>
             A fire&apos;s dot is where it started, sized by acres — not its edge. The perimeter and the heat show where it is burning.
             {show.heat && zoom < HEAT_MIN_ZOOM ? " Zoom in to see heat." : ""}
@@ -501,7 +559,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           {!show.fires ? (
             <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>
               The Fires layer is turned off.
-              <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>Tap “Fires” on the map to list active wildfires again.</div>
+              <div style={{ color: C.textMuted, fontSize: 11.5, marginTop: 4 }}>{tx("Tap “Fires” on the map to list active wildfires again.")}</div>
             </div>
           ) : null}
 
@@ -565,7 +623,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
                 style={{ textAlign: "left", border: "1px solid " + (open ? color : C.border), background: open ? C.card : C.surface, borderRadius: 10, padding: "10px 12px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 4, width: "100%" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
                   <span style={{ width: 9, height: 9, borderRadius: "50%", background: color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text, flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{f.name}</span>
+                  <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text, flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{f.name}</span>
                   {/* Formatted by the app's unit-aware formatter, and never suppressed:
                       the old `mi >= 1` guard hid the distance for the very nearest
                       fires, which is the one case where the number matters most. */}
@@ -600,9 +658,9 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
               national feed for them. A fire far from your route can still close its access road. Check
               the managing agency before you drive.
               <div style={{ marginTop: 7, display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>Forest Service alerts →</a>
-                <a href="https://www.nps.gov/planyourvisit/alerts.htm" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>National Park alerts →</a>
-                <a href="https://inciweb.wildfire.gov/" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700 }}>InciWeb →</a>
+                <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>Forest Service alerts →</a>
+                <a href="https://www.nps.gov/planyourvisit/alerts.htm" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>National Park alerts →</a>
+                <a href="https://inciweb.wildfire.gov/" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontWeight: 700, ...TEXT_TAP }}>InciWeb →</a>
               </div>
             </div>
           </div>
@@ -634,7 +692,7 @@ function FireAlertSheet({ zone, onClose, C, locale }) {
   const para = { fontSize: 12.5, color: C.text, lineHeight: 1.6, whiteSpace: "pre-wrap", overflowWrap: "anywhere" };
   return (
     <div role="dialog" aria-label={zone.label}
-      style={{ position: "fixed", inset: 0, zIndex: Z + 100, background: "rgba(0,0,0,0.55)", display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
+      style={{ position: "fixed", inset: 0, zIndex: Z + 100, background:C.scrim, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
       <div style={{ width: "100%", maxWidth: 520, maxHeight: "85%", background: C.surface, borderTop: "1px solid " + C.border, borderRadius: "16px 16px 0 0", display: "flex", flexDirection: "column" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
@@ -646,14 +704,14 @@ function FireAlertSheet({ zone, onClose, C, locale }) {
         <div style={{ flex: "1 1 auto", minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", padding: "12px 14px 18px", display: "flex", flexDirection: "column", gap: 10 }}>
           {!zone.url ? <div style={{ fontSize: 12.5, color: C.textSub }}>No text was published with this product.</div>
             : q.error ? <div style={{ fontSize: 12.5, color: C.textSub }}>Couldn&apos;t load the text — the weather service didn&apos;t answer.</div>
-            : !d ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading…</div>
+            : !d ? <LoadingRows C={C} label="Loading…"/>
             : d.gone ? <div style={{ fontSize: 12.5, color: C.textSub }}>This product has expired or been replaced, so its text is no longer published.</div>
             : (
               <>
                 {d.headline ? <div style={{ fontSize: 13, fontWeight: 700, color: C.text, lineHeight: 1.45 }}>{d.headline}</div> : null}
                 {d.areaDesc ? <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>{d.areaDesc}</div> : null}
                 {d.description ? <div style={para}>{d.description}</div> : null}
-                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
+                {d.instruction ? <div><div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.label, marginBottom: 4 }}>What to do</div><div style={para}>{d.instruction}</div></div> : null}
               </>
             )}
           <a href={nwsPointPage(zone.pt)} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, fontWeight: 700, color: C.blue, textDecoration: "none", marginTop: 4 }}>Forecast and alerts for this area on weather.gov →</a>

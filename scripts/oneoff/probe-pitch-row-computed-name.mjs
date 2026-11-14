@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Widening check:a11y-badges to walk a pitched route did NOT catch the "5.9CRUX" glue when the
 // aria-label was removed — so either the walk does not reach the rows, or the detector does not
 // flag them. Those need opposite repairs, and reasoning about Chrome's name computation from the
@@ -35,7 +36,7 @@ async function claimPort(start, span = 40) {
 const port = await claimPort(PORT);
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 console.log(`dev server on ${port}...`);
-const server = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 const stop = () => { try { process.kill(-server.pid, "SIGTERM"); } catch {} };
 process.on("exit", stop);

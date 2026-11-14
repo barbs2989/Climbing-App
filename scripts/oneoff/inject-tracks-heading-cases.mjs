@@ -12,7 +12,7 @@
 // forbids improving the wording, and one that only ever forbids the old words is satisfied by a
 // heading that drops "tracks" — which a seed route really does carry.
 //
-// TWO FILES, because the claim spans them: the heading is in RouteDetail.jsx and the FAQ that
+// TWO FILES, because the claim spans them: the heading is in RoutePlanTab.tsx and the FAQ that
 // points at it is in ClimbMatchCore.jsx, and the drift between them is the defect.
 //
 //   node scripts/oneoff/inject-tracks-heading-cases.mjs
@@ -24,7 +24,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const RD = path.join(ROOT, "RouteDetail.jsx");
+const RD = path.join(ROOT, "src", "components", "RoutePlanTab.tsx");   // the tracks section moved here out of RouteDetail (PR60)
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const HELP = path.join(ROOT, "lib", "Help.jsx");   // the FAQ moved out of core with Help
 const LOCK = path.join(ROOT, ".tracks-heading-injection.lock");
@@ -106,7 +106,7 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the old heading",
-    edits: [[RD, "var ctSeed=(route.communityTracks||[]);", "/* was headed Recent recorded tracks */var ctSeed=(route.communityTracks||[]);"]],
+    edits: [[RD, "const ctSeed=(route.communityTracks||[]);", "/* was headed Recent recorded tracks */const ctSeed=(route.communityTracks||[]);"]],
     expect: null,
   },
 ];

@@ -1,0 +1,46 @@
+{
+  "area_id": "wa_mount_daniel",
+  "routes": [
+    {
+      "route_id": "wa_mount_daniel_lynch_glacier",
+      "season": {
+        "months": [
+          6,
+          7
+        ],
+        "window": "Jun-Jul",
+        "evidence": "Searched Mountaineers route page and trip reports: early season (June into early July) crosses the frozen lake or a snow finger onto the glacier; from mid-July the lake melts out and the moat and bypass become the problem. Matches stored Jun-Jul. Logged Lynch Glacier ascents cluster Jun-Jul (20 of 27)."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1702146",
+          "verdict": "unsure",
+          "why": "Logged Lynch Glacier, summited 2021-07-10 (in season), round trip from the Cathedral Rock trailhead past Peggy's Pond, not the Deception Pass approach our route text describes; no trip report and no track shape to confirm the line onto the glacier. Our route has no Trailhead pin, and the Cathedral start would contradict its stated approach."
+        },
+        {
+          "aid": "2317247",
+          "verdict": "offseason",
+          "why": "Lynch Glacier, 2023-09-16: September is outside Jun-Jul (glacier bare, moat wide)."
+        },
+        {
+          "aid": "3221485",
+          "verdict": "not-summited",
+          "why": "Lynch Glacier, 2026-06-03, turned back at the saddle."
+        }
+      ],
+      "pins": [],
+      "facts": [
+        {
+          "field": "watch_out",
+          "month": 6,
+          "text": "In early June a large cornice can overhang the saddle above the glacier, so the final exit from the snow may need care.",
+          "aids": [
+            "3221485"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Daniel Glacier / Southeast Slopes already has a track. Many Peakbagger Lynch Glacier ascents start from the Cathedral Rock trailhead via Peggy's Pond, an approach our Lynch route text (Deception Pass) does not describe; the owner may want it added as an alternative. Track 1702146 is a plausible later assignment if so."
+}

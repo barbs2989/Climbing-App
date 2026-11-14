@@ -1,0 +1,171 @@
+[
+ {
+  "lu": "ut_lu_timpanogos_north_south",
+  "leg": 0,
+  "peak": "North Timpanogos",
+  "route": "Northeast ridge from the campground road, class 4 face near the top if the scree ledge is skipped",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ut_lu_timpanogos_north_south",
+  "leg": 1,
+  "peak": "Bomber Peak",
+  "route": null,
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ut_lu_timpanogos_north_south",
+  "leg": 2,
+  "peak": "Mount Timpanogos",
+  "route": "Faint trail from the ridge down to the main trail, then up the main trail",
+  "pick": {
+   "id": "ut_lecherous_leanings",
+   "name": "Lecherous Leanings",
+   "disc": "alpine",
+   "grade": "5.11+",
+   "area": "Mt. Timpanogos",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ut_lecherous_leanings",
+    "name": "Lecherous Leanings",
+    "disc": "alpine",
+    "grade": "5.11+",
+    "area": "Mt. Timpanogos",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ut_lu_timpanogos_north_south",
+  "leg": 3,
+  "peak": "South Timpanogos",
+  "route": "Trail to the saddle, then a worn scree slope and class 2 scramble",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ut_lu_pfeifferhorn_white_baldy_red_baldy",
+  "leg": 0,
+  "peak": "Pfeifferhorn",
+  "route": "Red Pine Lake route to the east ridge",
+  "pick": null,
+  "others": [
+   {
+    "id": "ut_northeast_face",
+    "name": "Northeast Face",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Pfeifferhorn",
+    "score": 0
+   },
+   {
+    "id": "ut_north_ridge_4",
+    "name": "North Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Pfeifferhorn",
+    "score": 0
+   },
+   {
+    "id": "ut_northwest_ramp",
+    "name": "Northwest Ramp",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Pfeifferhorn",
+    "score": 0
+   },
+   {
+    "id": "ut_northwest_face_2",
+    "name": "Northwest Face",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Pfeifferhorn",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ut_lu_pfeifferhorn_white_baldy_red_baldy",
+  "leg": 1,
+  "peak": "White Baldy",
+  "route": "Heather and talus above the south side of the ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ut_lu_pfeifferhorn_white_baldy_red_baldy",
+  "leg": 2,
+  "peak": "Red Baldy",
+  "route": "Southeast ridge of White Baldy, then the saddle (optional extension)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ut_lu_mount_nebo_traverse",
+  "leg": 0,
+  "peak": "South Nebo",
+  "route": "Steep ridge or gully from the south side",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ut_lu_mount_nebo_traverse",
+  "leg": 1,
+  "peak": "Middle Nebo",
+  "route": null,
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ut_lu_mount_nebo_traverse",
+  "leg": 2,
+  "peak": "Mount Nebo",
+  "route": "Ridge north, dropping to the east side onto a class 2 social trail",
+  "pick": {
+   "id": "ut_mt_nebo_champagne_chute",
+   "name": "Champagne Chute",
+   "disc": "mountaineering",
+   "grade": "Mod. Snow",
+   "area": "Mt. Nebo",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "ut_mt_nebo_champagne_chute",
+    "name": "Champagne Chute",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "Mt. Nebo",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ut_lu_mount_nebo_traverse",
+  "leg": 3,
+  "peak": "North Peak",
+  "route": "South ridge or the official trail (optional)",
+  "pick": {
+   "id": "ut_pinnacle_on_north_ridge_of_peak_11_158_standard_route_s",
+   "name": "Pinnacle on North Ridge of Peak 11,158, \"Standard Route,\" South Face",
+   "disc": "alpine",
+   "grade": "5.4",
+   "area": "Pinnacle on North Ridge of Peak 11,158, West of Ruth Lake",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "ut_pinnacle_on_north_ridge_of_peak_11_158_standard_route_s",
+    "name": "Pinnacle on North Ridge of Peak 11,158, \"Standard Route,\" South Face",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Pinnacle on North Ridge of Peak 11,158, West of Ruth Lake",
+    "score": 0.25
+   }
+  ]
+ }
+]

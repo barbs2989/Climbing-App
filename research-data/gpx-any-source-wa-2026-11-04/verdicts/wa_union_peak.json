@@ -1,0 +1,25 @@
+{
+  "area_id": "wa_union_peak",
+  "routes": [
+    {
+      "route_id": "wa_union_peak_se_route",
+      "season": {
+        "months": [7, 8, 9, 10],
+        "window": "Jul-Oct",
+        "evidence": "Stored Jul-Oct (best late Jul-Sep). Web search (Mountaineers Union and Jove Peaks, WTA, Wenatchee Outdoors): summer/fall is a non-technical scramble; Smithbrook Road snow-covered early summer; an Oct 2025 WTA report found muddy trail and no snow to Union Gap. The peak's histogram is dominated by Dec-Apr ski ascents."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3147333", "verdict": "offseason", "why": "Mar 22 2026 snow ascent." },
+        { "aid": "2754184", "verdict": "offseason", "why": "Jan 26 2025 winter ascent." },
+        { "aid": "2745096", "verdict": "offseason", "why": "Jan 12 2025 winter ascent." },
+        { "aid": "2783049", "verdict": "offseason", "why": "Mar 14 2025 ski loop with Jove." },
+        { "aid": "1115646", "verdict": "offseason", "why": "Feb 17 2019." },
+        { "aid": "610338", "verdict": "offseason", "why": "Jan 10 2016." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "All six harvested tracks are Jan-Mar winter ascents (the starts are ~3.6 km from our Smithbrook trailhead pin because they begin at the Highway 2 pullout and road-walk). None is in or near the Jul-Oct window, so no track and no facts. The only warm-season logged ascents (3 each in Jun-Sep) have no GPX in the harvest."
+}

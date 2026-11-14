@@ -32,6 +32,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sunRiseSet } from "../lib/conditionsScore.js";
+import { componentFiles } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TOLERANCE_S = 180;
@@ -92,7 +93,9 @@ if (failures === 0) ok("polar day, polar night and bad input keep their shapes")
 const cal = fs.readFileSync(path.join(ROOT, "lib/Calendar.jsx"), "utf8");
 if (!/import \{[^}]*\bsunRiseSet\b[^}]*\} from "\.\/conditionsScore(\.js)?"/.test(cal)) fail("lib/Calendar.jsx does not import sunRiseSet from ./conditionsScore.js — its Daylight line is reading something else");
 if (!/\bsunRiseSet\(/.test(cal)) fail("lib/Calendar.jsx never calls sunRiseSet — its Daylight line is estimating again");
-const APP = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx", ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.(jsx?|mjs)$/.test(f)).map((f) => "lib/" + f)];
+// src/components/ too: App's render moved there (PR61), and a sunTimes declared in a component would
+// otherwise pass unseen. componentFiles walks lib/ and src/components/; .mjs in lib/ is kept as before.
+const APP = [...new Set(["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx", ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.(jsx?|mjs)$/.test(f)).map((f) => "lib/" + f), ...componentFiles(ROOT, { js: true, guard: "check:sun-times" })])];
 for (const f of APP) {
   const src = fs.readFileSync(path.join(ROOT, f), "utf8");
   // A FUNCTION named sunTimes. Not any binding: scoreForecast keeps a plain map called sunTimes

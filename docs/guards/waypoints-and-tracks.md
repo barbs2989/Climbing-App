@@ -369,6 +369,37 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     pins, and do not repair a track by moving vertices onto pins** (`audit:stranded-track-vertices`
     now says so too). `check:gpx-caveats` section 1 asserts the export side: a pin-join route's file
     has `<wpt>` and no `<trk>`.
+  - **Summit reach (owner, 2026-10-28: "only use gpx tracks where the person reached the summit").**
+    `reachesTheSummit` / `SUMMIT_REACH_M` (300 m) make a track that stops short of a summit pin count
+    as no track in `recordedTrackPts`. Measured 2026-10-25 over 444 non-pin-join tracks with a summit
+    pin: 375 within 150 m, 19 in 150-300 m, 50 beyond 300 m (Mount Rainier Emmons Glacier, Luna Peak,
+    Berdeen Peak, Mount Barnes, Himmelhorn). Audit table: `~/dev/mp-data/_tracks/route-track-audit-2026-10-25.json`.
+    Section 6 of `check:track-caveat` asserts the drop, the keep, and that a route with no summit pin
+    keeps its track. The old on-screen caveats for "stops short of the summit" and "different way up"
+    now assert the track is NOT drawn, because the owner's rule replaces the caveat with no track.
+  - **Enough points to be a recording (`MIN_RECORDED_PTS` = 10, 2026-10-29).** Measured over the 425
+    drawn tracks: 74 had 2-9 points at a median spacing of 1,392 m, two had 13 and 15, and the 314 of
+    100+ points sit 17 m apart (`scripts/oneoff/gpx-sparse-measure.mjs`). The earlier note that "the
+    spacing distribution is continuous" was measured over captioned and uncaptioned lines together;
+    by point count the void is between 9 and 13. `recordedTrackPts` refuses a line under the floor, so
+    `trackStubCaveat`'s two-point / three-point sentence could no longer render and was deleted; its
+    placeholder sentence (a line under 500 m across) still fires for a line of 10+ points.
+    `check:track-caveat` section 5 now pins both sides of the floor (a 2-point chord and a 9-point
+    line are no track, the dense fixture is kept) and renders the placeholder on a 10-point stub;
+    fixtures SHORT/TOP were densified to 13 points. `check:gpx-caveats` sections 3, 4 and 6 moved from
+    the chord to a PARTIAL fixture (a real line missing the walk in), which still exports a caption.
+  - **Ascent and descent (`splitAtSummit`, 2026-10-29).** `GPXMap` draws the way up wide blue and the
+    way down thin orange over it, NOT dashed: the `dashArray` ban in section 6 stands, since a dashed
+    line on this map meant one built from the pins.
+  - **Is it a recording? asks the VERTEX half alone (`lineIsBuiltFromPins`, 2026-10-28).**
+    `recordedTrackPts` used `trackIsJustTheWaypoints`, whose PIN half (most pins sit on the line)
+    exists for the CAPTION. Adding two camp pins off a stored trailhead-to-summit chord failed that
+    half, so the chord was drawn as a recorded track (21 routes after the camp-pin run; any route a
+    climber adds two off-line pins to). Now: the line's points sit on at least TWO distinct pins (a
+    stub piled on one pin stays with `trackStubCaveat`). `measure-pin-promoted-lines.mjs` read all
+    608 routes carrying a gpx: drawn before 463, after 426, **37 no longer drawn, 0 gained** — every
+    one a 2-6 point line, none a recording. Injection: point `recordedTrackPts` back at
+    `trackIsJustTheWaypoints` and section 6's off-pin chord assertion fails.
   - **The provenance chip does not already cover this, and the measurement says so in the worst
     way.** `auto_generated` is true on **45%** of the synthetic tracks and on **78%** of the routes
     whose track is genuine — it points the **wrong way**, so a climber reading the chip cannot tell
@@ -1774,3 +1805,203 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
       Magic Mountain's Kool-Aid Lake distance (5.5 mi, set by #2130) is the owner's decision. The
       evidence is in that row's `none` reason.
+
+- **`audit:water-pins`** asks the owner's question of 2026-10-28 — *"Audit water waypoints. Make sure
+  we have all of them per route."* "All of them" is read as: every water source the route's **own
+  record names** is a Water pin (types `water` / `lake` / `lake/basin`, `WP_TYPE_MAP`). What counts
+  as a named source lives in `scripts/lib/water-sources.mjs`, shared with the solver
+  (`scripts/oneoff/add-water-pins.mjs`), so the two cannot disagree. A source is a capitalised
+  Creek / Lake / Tarn / Spring / River / Pond / Falls / Brook / Fork in a sentence about drinking water,
+  in `approach`, `approach_logistics`, `itinerary`, `description`, `overview`, `descent_text`,
+  `approach_variants`, a camp's `bivy[].water`, or a pin's note. Classes: MISSING, AT ANOTHER PIN (a
+  camp or a crossing already stands there — not a defect), NO COORDINATE, OFF THE TRACK (500 m, the
+  `audit:waypoints` tolerance), UNNAMED ONLY (water promised, no place — never pinned), NO WATER STATED
+  (the denominator). Reads `--from` a dump or live in primary-key windows. Report-only; not a build gate.
+  - **What it structurally cannot see:** water a route never mentions, and water named in prose with
+    no capital ("the creek"). It also over-reads: a river a campground sits beside, named in a camp's
+    `water` note, is a "source" even when the walk never touches it. The solver's track and
+    height gates are what separate those, so MISSING is a worklist, not a defect count.
+  - **Traps met building it** (each one was a wrong answer on the first census):
+    - A name built from capitalised words ate the sentence opener ("Fill Boulder Creek") and a
+      compass word lost its Fork ("Fork Teanaway River").
+    - "Holden Lake Trail" read as a lake called "Lake Trail".
+    - "Ross Lake Resort water taxi" read as drinking water.
+    - A Trailhead or Campground NAMED after a creek ("Killen Creek Trailhead") was counted as the
+      creek's pin. It is not where you get water.
+    - A Hazard that only MENTIONS a lake ("Scree scramble to La Bohn Lakes") was too.
+  - **First census, 2026-10-30, 1,070 routes:** 917 named sources. 80 were pinned as Water, 203
+    were at another pin, and 634 were missing on 443 routes. There were also 34 Water pins with no
+    coordinate, 15 off the track, 195 routes promising only unnamed water, and 174 alpine routes
+    naming none.
+  - **The solver** measures, never computes, from a local Geofabrik WA extract (Overpass answered in
+    ~35 s a query). Where a creek crosses the RECORDED track (first crossing walking in), it pins the
+    crossing. With no track, it pins the one place a mapped `path`/`footway` crosses the creek; a
+    forest road (`highway=track`) is not a trail. For a lake, it pins the shore vertex nearest the
+    track; with no track, a lake under 1 km across takes its GNIS/OSM point. Every candidate is then
+    gated by 3DEP height (not below the trailhead, not above the summit). On a route with no track,
+    the candidate must be within 1.5 km of one of the route's real pins. The chord between sparse
+    pins put Fortress Mountain's Chiwawa crossing 4.3 km upstream of the bridge the route uses.
+    First run: 150 pins on 126 routes, all re-read and confirmed. MISSING went 634 → 484.
+  - **Second pass, same day:**
+    - Two coordinate-less Water pins had their place read from their own name ("Jet Creek crossing"):
+      4 were measured (`--nocoord`).
+    - Two matcher fixes, sentence-opening "Ford …" / "Both …" and "Lake Stuart Trail", made 5 more
+      pinnable.
+    - Then research ADJUDICATED, never located. `--candidates` lists every measured point (each
+      mapped-trail crossing of the named creek within 4 km of a real pin, with its trail name and
+      height), research picks one cid or null, and `--picks` runs the pick through the same height
+      gates.
+    - **The first research pass answered from memory with no web lookups.** Its 37 picks were not
+      written. A second pass had to cite a fetched page for every pick. It confirmed 16 and
+      overturned 13: three "Killen Creek" crossings on Adams were the PCT, not the Killen Creek
+      trail, and Mildred Lakes is not on the Skokomish route.
+    - Two weakly-sourced picks were dropped. 14 were written.
+    - **Final census, 1,070 routes:** 368 Water pins (199 before) on 295 routes (189 before), 250
+      sources pinned as Water, and MISSING 634 → 462.
+    - The 462 left each carry their refusal, in `~/dev/water-pins-run/remaining-water.csv`:
+      - 115: no trail and no track, so no measured point
+      - 107: not under that name near the route
+      - 89: the track runs beside the source and never crosses it
+      - 51: below the trailhead, i.e. roadside
+      - 34: ambiguous, and research could not settle it
+      - the rest: lakes off the route
+    - Do not re-run the research on these: of 46 candidate sets, only 14 could be confirmed from a
+      fetched page.
+  - **The 15 OFF-TRACK Water pins were triaged, not moved:**
+    - 11 stand within 300 m of the OSM feature they are named for, so the recorded track is another
+      way in. KEEP.
+    - 2 name no feature.
+    - 3 do not sit on their named feature: `wa_cloudy_peak_southwest_slopes` "Leroy Creek crossing"
+      (1.8 km off the creek), `wa_lundin_peak_west_ridge` "Commonwealth Creek crossing" (608 m) and
+      `wa_skookum_peak_twinsisters_scramble` "Green Creek at the cirque mouth" (1.3 km). Those three
+      belong to the WA waypoint-location audit, which owns moving existing pins.
+- **WA ALPINE WAYPOINT AUDIT, 2026-10-30** (owner note: "audit and review all waypoints exact location
+  for all WA alpine, mountaineering and scramble routes"). Every waypoint audit was re-run on WA ONE AT
+  A TIME (a parallel run timed the database out on 2026-10-28), against 854 routes in scope.
+  Research data, decisions and scripts live in `research-data/wa-waypoint-audit-2026-10-30/` and
+  `scripts/oneoff/wa-waypoint-audit/`. `apply.mjs` writes only a published coordinate (`move`),
+  `clear`, `setElev`/`nullElev`, `setDist`/`nullDist` or `areaMove`. It refuses when the live pin
+  differs from the researched one, when a moved pin's ground is more than max(300 ft, 15%) from its
+  height, when the route's impossible-distance pairs grow or a new one appears, or when an `areaMove`
+  is not a 3DEP local maximum within 250 ft. Rollbacks: `scripts/rollback-wa-waypoint-audit-*.json`.
+  - **What the re-run found clean, so do not re-derive it:** audit:coord-origin 0;
+    audit:waypoint-elevations --ground BEYOND 0; audit:travel-bearings 0 opposed;
+    audit:cross-route-pins 1 split (Andrews Pass, fixed).
+  - **Contradictions (batches A and B, 15 rows):**
+    - The impossible distances #3017's GNIS moves left behind: Fairchild's Deer Lake (setDist 4.0,
+      half WTA's 8.0 mi round trip), Spider Gap and the Tooth's Source Lake junction (nullDist).
+    - Pins on the wrong ground cleared, with no published point to move to: Lincoln's Heliotrope
+      crossing, Cadet's two hazards, the Barrier crossing, Oval Creek junction, the Tooth's Catwalk,
+      and Chianti's base, which sat on its summit.
+    - Davis Peak's Gorge Creek bridge (ground 4,356 ft for a 1,096 ft bridge) moved to GNIS 1520163,
+      Gorge Creek's mouth at Gorge Lake, where SR 20 bridges it.
+    - Middle Peak, Gunsight Range: the area row and two summit pins moved to Mountain Project's
+      published 48.30639,-120.99403 (8,200 ft). The old point stood on 7,764 ft ground.
+    - Rimrock Ridge's area row moved onto its summit pin (GNIS 1525058, a local maximum).
+  - **Summit pins against GNIS (`summit-gnis.mjs`):** 809 summit pins, 538 within 100 m and 584
+    within 300 m. Of those over 300 m, ONE moved: Mount Cameron, to the point GNIS and Wikipedia
+    share. The rest are on the true summit, where GNIS is the one off: Daniel's West Summit,
+    Esmeralda's West Summit, Spire, Merchant, Duckabush, Storm King, and named sub-summits.
+  - **Trailheads.**
+    - **Same name, placed apart (batch D):** 11 pins moved. Cinderella's FR-38 "Elbow Lake" pin was
+      REFUSED on review: its text is the north trailhead, and WTA's point is the south one.
+    - **Off the track by 1 km+ (batch C2):** 2 moved, Lundin's PCT North and Osceola's Slate Pass.
+    - **Every remaining trailhead (batches E1-E9, 325 coordinates):** checked against the WTA
+      hike page's `geo` trailhead coordinate, or USFS/NPS. Results are in `decisions-E*.json`.
+      About 250 sit within 150 m of the published point, 37 are spots nothing publishes (washouts,
+      pullouts, gates) and 18 are unverified. 27 pins were proposed for a move of 160 m to 1.4 km and 26 moved: Dosewallips
+      washout x5, Big Four x4, Bedal/Sloan x3, Rainy Pass Maple Pass lot x3, High Bridge x2,
+      Mount Adams x2, Denny Creek, Reflection Lakes, Old Mine Road gate, Harlequin, Rattlesnake,
+      Slate Pass (Dot), Twin Lakes (Pleiades). Mount Herman's Bagley Lakes move was REFUSED by the
+      distance gate: that pin is the other Heather Meadows lot. A
+      single WTA point that is far higher or lower than a stored pin matching its own height is
+      SPLIT evidence and was not moved: Foggy Dew, Boulder Ridge, Shannon Ridge, Nooksack Cirque,
+      Eldorado Creek, Bridge Creek, West Fork Buttermilk. Some WTA `geo` points mark the
+      destination, not the parking.
+    - **Road screen (`trailhead-roads.mjs`):** OpenStreetMap, used only as a check, never as a
+      source. 12 of 356 trailhead coordinates had no road within 150 m. All are covered by the
+      batches above, and most are washout parking OSM does not map.
+  - **Left as recorded, not defects:**
+    - The 443 unplaced pins: their names are not point features (hazards, junctions, crux
+      ledges). `unplaced-gnis.mjs` found 2 GNIS matches, both Lane Peak couloir topouts that end at a
+      notch, not the summit.
+    - Summit pins off a recorded track while matching GNIS within 25 m (American Border, Copper,
+      Preacher, Barnes, Magic). That is a TRACK question, not a pin question.
+    - Rainy Pass's two lots (USFS and WTA disagree by 380 m, and each pin matches one).
+    - Goodell's two camps, the Squire Creek washout and the Cutthroat and Wine Spires pullouts.
+      Nothing publishes them.
+  - **AFTER (re-run 2026-10-30, every write re-read):** 55 rows written (53 routes, 2 areas).
+    - audit:waypoint-distances WA: 5 routes -> 1, the one left an ice route out of scope.
+    - audit:cross-route-pins: split candidates 1 -> 0.
+    - audit:summit-pins section 1: Rimrock is out. Mount Cameron is IN, because its pin moved to
+      GNIS but the area row's `areaMove` was refused: the GNIS point is on a flat crest with one ring
+      neighbour 5 ft higher, so it is not a strict local maximum. Leave the area row; the gate is
+      right not to bend.
+    - audit:stranded-track-vertices: 32 -> 34 adrift on +1 route (Diamond in the Rough). The audit
+      reads it as CAVEAT LOST, but that line has 4 vertices, under `MIN_RECORDED_PTS`, so the app
+      never draws it.
+    - audit:cross-route-pins can answer HTTP 500 on its FIRST page while the database is healthy
+      (a 300-row jsonb page). It passed on a single retry both times.
+  - **Follow-up, same day.** (a) A second research pass on the unverified trailheads
+    (`decisions-G.json`, `trailheads-unverified.json`) verified 9, found 5 that nothing publishes and
+    left 3 unverified. It moved Davis Peak's two Gorge Creek pins from the creek mouth to GNIS
+    1529797 Gorge Creek Falls (ground 1,096 ft, the pins' own elev). (b) The 19 routes in
+    audit:waypoints' TRACK DOES NOT REACH THE SUMMIT were checked for a track recorded somewhere
+    else (`track-ends.mjs`: where it starts, ends and tops out on the ground). Only ONE was:
+    Berdeen Peak's 100-point "track" was the drive up Bacon Creek Road from SR 20 to the trailhead
+    (high point 795 ft for a 6,420 ft summit), so its `gpx` was nulled
+    (`remove-offroute-tracks.mjs`, rollback `scripts/rollback-wa-offroute-tracks-*.json`). The rest
+    are the route's own approach stopping short, which the app already captions. Goode NE Face,
+    Gibraltar Ledges, Summit Chief and Mix-up start 2-11 km from the stored trailhead, but they end
+    on their own peak, so the difference is a different way in, not a different mountain. Curtis Ridge
+    and Emmons share one White River -> Camp Schurman recording, which Curtis Ridge's own pins follow.
+    Do not re-derive these.
+- **OUT-OF-STATE WAYPOINT AUDIT + WA SUMMITS ONE BY ONE, 2026-10-30** (owner note: "Way points
+  markers are still way off for many routes. Start with just researching trailhead location and
+  audit the map. Do summit then do each 1 by 1 in smaller batches"). Washington had been done the
+  same day (above); this pass took every route OUTSIDE Washington that has waypoints, then the WA
+  summit pins that pass had not researched one by one. Scripts: `scripts/oneoff/oos-waypoint-audit/`
+  (`apply.mjs` is the WA one with its paths changed, so the same gates hold). Data and every
+  decision with its source: `research-data/oos-waypoint-audit-2026-10-30/`.
+  - **Census (`snapshot.mjs`, `census.mjs`):** only 112 non-WA routes carry waypoints, with 213 pins:
+    90 trailhead pins (83 distinct coordinates), 103 summit pins and 20 others. No impossible
+    distance pair and no non-summit pin off its stated height. Only 14 of the routes have more than
+    two pins.
+  - **Trailheads (`trailhead-batches.mjs`, batches T1-T9 plus a second pass 2P1-2P4):** every one of
+    the 83 coordinates checked against a published point: OSM `highway=trailhead` nodes, USFS, NPS,
+    GNIS buildings, Oregon Hikers, and others. 14 pins moved, by 170 m to 1.7 km: Whitney Portal,
+    Meysan, Happy Isles x2, Cathedral Lakes, Saddlebag x2, Leavitt Meadow, Bear Lake (+ elev 9,475),
+    Adirondak Loj, Devils Lake, Mt Bachelor West Village, and Timberline's climbers' start, converted
+    from the USFS's published UTM point. Refused on review:
+    - Lupine Meadows: listing sites only, and the other route on that lot stays, so one lot would
+      have become two points.
+    - Twin Lakes: the proposed point is the Robinson Creek trailhead, but Matterhorn's North Arete
+      starts up Horse Creek.
+    Nothing publishes Interlakes, the two Tenaya pullouts, Pass Creek road end, or the PCT/Old
+    Santiam crossing.
+  - **Summits (`summits-*.json`, S1-S4):** 39 flagged pins researched. Most "not a 3DEP local max"
+    flags are DEM smoothing on big glaciated peaks; Robson, Lefroy and the Canadian Rockies are on
+    their CGNDB points. Changes:
+    - South Pioneer Peak's pin AND area row sat on a 5,182 ft ridge bump 1.2 km from the summit.
+      Both moved to Peakbagger's point (3DEP local max at 6,291 ft), elev 6,299 (Hiking Project).
+    - Crystal Crag, Pikes Peak, Lone Eagle and Mount Superior moved to their GNIS Summit.
+    - Wedge and Athabasca elevations filled.
+    - Mount Emerson and Half Dome keep their pins: GNIS is the one off there.
+  - **Other pins (`other-pins.mjs`, P3):** the 20 camps, water and junctions all sit on their
+    published points: Robson's campgrounds on OSM, Helen Lake, Tower Lake and Big Sandy Lake on
+    GNIS. Pole Creek is the Three Sisters traverse's finish trailhead, not a defect.
+  - **WA summit pins not researched one by one by #3083 (`wa-summit-triage.mjs`, WS1-WS11):** 252
+    pins, 161 coordinates. These are the ones 100-300 m from GNIS, or whose name matched no GNIS
+    Summit. Each was probed for a 3DEP local max and its ground against its elev. 119 were clean.
+    The rest were researched.
+    - 13 pins moved: Tiffany x2 (pin ground 525 ft low), Mount Stuart x2 (470 ft low; now 17-69 m
+      from the other 14 Stuart routes' pins), Hinman, Booker x3, Bacon, Ferry, Frenzel Spitz,
+      East Wilmans Spire, and Spectre (pin ground 1,000 ft low).
+    - Dorado Needle's elev was set to 8,440.
+    - Left, with no published figure: Slippery Slab, Chablis, Middle Gunsight, Le Petit Cheval
+      (the two routes disagree, 6,386 vs 6,480; both are published) and Dolomite Tower (the pin IS
+      Mountain Project's coordinate, and the ground there reads 366 ft above its printed 5,708).
+  - **Written:** 21 + 14 rows, every one re-read. Rollbacks are
+    `scripts/rollback-oos-waypoint-audit-1793390785776.json` and `-1793390876664.json`.
+    audit:summit-splits timed out on `areas` (57014) right after. The same check was done locally
+    against the summit census: no moved summit opened a split.

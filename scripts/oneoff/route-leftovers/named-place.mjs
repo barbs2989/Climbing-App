@@ -1,9 +1,10 @@
+import { fileURLToPath } from "node:url";
 // Read-only: where do WA routes pin a named place? usage: node named-place.mjs "Hannegan Pass" ["Blue Lake Trailhead" ...]
 // Prints every waypoint whose name contains the text, with its route, so a moved pin can agree with its neighbours.
 // The first run caches every WA pin to audits/route-leftovers/wa-pins.json (git-ignored); delete it to refresh.
 import fs from "node:fs";
 import { selectAll, requireServiceKey } from "../../lib/supabase-env.mjs";
-const cache = new URL("../../../audits/route-leftovers/wa-pins.json", import.meta.url).pathname;
+const cache = fileURLToPath(new URL("../../../audits/route-leftovers/wa-pins.json", import.meta.url));
 let pins;
 if (fs.existsSync(cache)) pins = JSON.parse(fs.readFileSync(cache));
 else {

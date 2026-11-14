@@ -1,0 +1,2035 @@
+{
+ "note": "full rows before apply-owner-qs.mjs; restore a patch with patchRow, a delete by re-inserting `before`",
+ "at": "2026-11-05T15:51:48.599Z",
+ "steps": [
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_tinkham_peak_southeast_spur",
+    "area_id": "wa_tinkham_peak",
+    "name": "Southeast Spur",
+    "fill": {
+     "season": "Jun-Oct",
+     "best_season": "July through October; the boot path is often snow-covered into June",
+     "outing_shape": "outback",
+     "overview": "The easy way onto Tinkham: a short, steep boot path from the south end of Mirror Lake straight up the southeast spur to the lower east summit. The true high point, the west summit, is a few minutes along an easy ridge. Often combined with the Northwest Ridge for a loop.",
+     "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480 (about 3,600 ft). Hike the Mirror Lake trail to the lake, mostly level, then follow the PCT to the lake's south end and find the boot path.",
+     "beta": "The path climbs about 1,200 ft in just over a mile through grass and talus on the southeast spur, with no exposure. From the east summit continue west along the ridge to the true high point; the ridge is easy and takes a few minutes. Return the same way or drop to the PCT by the Northwest Ridge boot path."
+    }
+   },
+   "before": {
+    "id": "wa_tinkham_peak_southeast_spur",
+    "area_id": "wa_tinkham_peak",
+    "name": "Southeast Spur",
+    "discipline": "alpine",
+    "grade": "Class 2+",
+    "grade_system": "class",
+    "grade_num": 2,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": "Jun-Oct",
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": "The easy way onto Tinkham: a short, steep boot path from the south end of Mirror Lake straight up the southeast spur to the lower east summit. The true high point, the west summit, is a few minutes along an easy ridge. Often combined with the Northwest Ridge for a loop.",
+    "beta": "The path climbs about 1,200 ft in just over a mile through grass and talus on the southeast spur, with no exposure. From the east summit continue west along the ridge to the true high point; the ridge is easy and takes a few minutes. Return the same way or drop to the PCT by the Northwest Ridge boot path.",
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": "July through October; the boot path is often snow-covered into June",
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480 (about 3,600 ft). Hike the Mirror Lake trail to the lake, mostly level, then follow the PCT to the lake's south end and find the boot path.",
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": "outback",
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "southeast se spur",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "merge",
+    "id": "wa_tinkham_peak_east_route",
+    "into": "wa_tinkham_peak_southeast_spur",
+    "area_id": "wa_tinkham_peak",
+    "name": "East Route",
+    "move": "*",
+    "set": {
+     "name": "Southeast Spur (East Peak)",
+     "discipline": "scrambling",
+     "grade": "Class 2"
+    }
+   },
+   "before": {
+    "id": "wa_tinkham_peak_east_route",
+    "area_id": "wa_tinkham_peak",
+    "name": "East Route",
+    "discipline": "alpine",
+    "grade": "Class 2",
+    "grade_system": "class",
+    "grade_num": 2,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": null,
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": null,
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "east route rte",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": {
+    "id": "wa_tinkham_peak_southeast_spur",
+    "area_id": "wa_tinkham_peak",
+    "name": "Southeast Spur",
+    "discipline": "alpine",
+    "grade": "Class 2+",
+    "grade_system": "class",
+    "grade_num": 2,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": "Jun-Oct",
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": "The easy way onto Tinkham: a short, steep boot path from the south end of Mirror Lake straight up the southeast spur to the lower east summit. The true high point, the west summit, is a few minutes along an easy ridge. Often combined with the Northwest Ridge for a loop.",
+    "beta": "The path climbs about 1,200 ft in just over a mile through grass and talus on the southeast spur, with no exposure. From the east summit continue west along the ridge to the true high point; the ridge is easy and takes a few minutes. Return the same way or drop to the PCT by the Northwest Ridge boot path.",
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": "July through October; the boot path is often snow-covered into June",
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480 (about 3,600 ft). Hike the Mirror Lake trail to the lake, mostly level, then follow the PCT to the lake's south end and find the boot path.",
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": "outback",
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "southeast se spur",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   }
+  },
+  {
+   "op": {
+    "op": "merge",
+    "id": "wa_tinkham_peak_north_route",
+    "into": "wa_tinkham_peak_northwest_ridge",
+    "area_id": "wa_tinkham_peak",
+    "name": "North Route",
+    "move": "*",
+    "set": {
+     "discipline": "scrambling"
+    }
+   },
+   "before": {
+    "id": "wa_tinkham_peak_north_route",
+    "area_id": "wa_tinkham_peak",
+    "name": "North Route",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": null,
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": null,
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "north route rte",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": {
+    "id": "wa_tinkham_peak_northwest_ridge",
+    "area_id": "wa_tinkham_peak",
+    "name": "Northwest Ridge",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": null,
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480, a short drive from I-90 exit 62, at about 3,600 ft. Hike the Mirror Lake trail about 1 mile to the Cottonwood Lake spur, then roughly 0.6 mile more to the Pacific Crest Trail. Turn north on the PCT for about 0.6 mile to the point where a boot path leaves the trail on the left and climbs toward the peak's northwest ridge.",
+    "descent_text": "Reverse the ridge on the boot path, taking care with the loose rock on the final scramble and the one short Class 3 gully crossing near the top. Back on the PCT, turn south and drop down the Mirror Lake trail past Cottonwood Lake to the trailhead, about 6 miles round trip for the day.",
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "northwest nw ridge rdg",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   }
+  },
+  {
+   "op": {
+    "op": "delete",
+    "id": "wa_tinkham_peak_west_route",
+    "area_id": "wa_tinkham_peak",
+    "name": "West Route"
+   },
+   "before": {
+    "id": "wa_tinkham_peak_west_route",
+    "area_id": "wa_tinkham_peak",
+    "name": "West Route",
+    "discipline": "alpine",
+    "grade": "Class 2",
+    "grade_system": "class",
+    "grade_num": 2,
+    "pitches": null,
+    "length_m": null,
+    "sort_order": null,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": null,
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": null,
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": null,
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "west route rte",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_dragontail_peak_r3",
+    "area_id": "wa_dragontail_peak",
+    "name": "Pandora's Box (W Couloir)",
+    "set": {
+     "discipline": "mountaineering"
+    }
+   },
+   "before": {
+    "id": "wa_dragontail_peak_r3",
+    "area_id": "wa_dragontail_peak",
+    "name": "Pandora's Box (W Couloir)",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3,
+    "pitches": 0,
+    "length_m": 975,
+    "sort_order": 15,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": "SW",
+    "season": "May-Jul",
+    "description": null,
+    "gear": [
+     "ice axe",
+     "crampons",
+     "helmet",
+     "optional short rope/picket for the exposed summit traverse"
+    ],
+    "hazards": [
+     "rockfall in the couloir, especially with parties above",
+     "avalanche terrain early season after storm loading",
+     "steep, sometimes icy snow requiring solid self-arrest technique"
+    ],
+    "verif": null,
+    "overview": "Pandora's Box (also called the W Couloir) is the standard moderate couloir linking Colchuck and Dragontail near Colchuck Col. It's a west-facing snow/talus couloir a couple hundred feet east of Colchuck Col, most often climbed as the summit finish for Dragontail Peak via the Colchuck Glacier approach. The couloir is class 3 scrambling with sections of steep snow up to roughly 40-45° in the couloir and about 50° on the snow slope just below the notch on the Dragontail side; it is not a technical ice or mixed climb. A single ice axe, crampons, and comfort on steep snow/talus are the normal kit.",
+    "beta": "From the Colchuck Glacier, ascend to Colchuck Col; the couloir entrance is a couple hundred feet left (east) of the col. Climb moderate snow (up to ~40-45°) to a notch in the ridge. From the notch, drop down and traverse northeast to the true summit — some parties rope up for this exposed traverse. Class 3 scrambling throughout; conditions determine whether it's a snow climb or a talus/scree scramble by late summer.",
+    "turnaround": "Turn around if the couloir's snow is icy/unconsolidated or rockfall is active; this is a moderate scramble with little fixed protection if conditions deteriorate.",
+    "auto_generated": true,
+    "alpine_grade": "I/II (Grade I-II snow route)",
+    "rock_grade": "5.6 (optional, true summit pinnacle only)",
+    "ice_grade": "Moderate snow (Grade II)",
+    "gain_ft": 5500,
+    "loss_ft": null,
+    "dist_km": 6.4,
+    "max_angle": 50,
+    "rappels": "0",
+    "commitment": "II",
+    "face": "West/Southwest side, via Colchuck Glacier and Colchuck Col",
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "comms": "Cell coverage in the Colchuck Lake basin and on Dragontail's northeast side is unreliable to absent; carry a satellite communicator.",
+    "descent": "Descend the Aasgard Pass scramble route",
+    "obj_haz": [
+     "loose, friable rock",
+     "high wind exposure near the summit"
+    ],
+    "waypoints": [
+     {
+      "lat": 47.5278,
+      "lng": -120.8205,
+      "elev": 3400,
+      "name": "Stuart Lake Trailhead",
+      "note": "Self-issue day-use wilderness permit and NW Forest Pass required at the kiosk.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Take Icicle Creek Road to Eightmile Road (FR-7601) and follow it to its end at the Stuart Lake Trailhead, 3,400 ft. A Northwest Forest Pass is required to park, and you self-issue a day-use wilderness permit at the kiosk. Worth knowing before you commit to a date: the firm spring snow this route wants, April through June, falls largely before the May 15 to Oct 31 permit season."
+     },
+     {
+      "lat": 47.4878,
+      "lng": -120.8343,
+      "elev": 5570,
+      "name": "Colchuck Lake",
+      "note": "Reliable water and camps; head along the west shore toward the Colchuck Glacier.",
+      "type": "Campsite",
+      "distMi": 4,
+      "directions": "From the trailhead, follow Stuart Lake Trail #1599 along Mountaineer Creek about 2.5 miles to the signed junction, turn left onto Colchuck Lake Trail #1599A, cross the creek and switchback up to Colchuck Lake at about 5,570 ft. Camps are along the shore toward the south end."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 6800,
+      "name": "Colchuck Glacier approach",
+      "note": "Ascend easy snow on the Colchuck Glacier's east lobe toward Colchuck Col.",
+      "type": "Junction",
+      "distMi": 5,
+      "directions": "Follow the trail along the lake's west shore to the boulder field at the south end, then climb talus and the moraine onto the Colchuck Glacier below the Colchuck-Dragontail col."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 8040,
+      "name": "Colchuck Col",
+      "note": "Saddle between Colchuck Peak and Dragontail; the couloir start is a couple hundred feet left (east) of the col.",
+      "type": "Junction",
+      "distMi": 5.6,
+      "directions": "Climb the glacier to Colchuck Col, the saddle between Colchuck Peak and Dragontail. It is mostly snow early in the season and firm neve or ice with talus showing later; carry crampons and an axe, and look for a snow finger on the right if a band of blue ice spans the snowfield."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 8600,
+      "name": "Pandora's Box notch",
+      "note": "Steep snow/ice couloir (up to roughly 35-40 degrees near the bottom) leading to a notch in the ridge; some parties rope up here.",
+      "type": "Hazard",
+      "distMi": 5.8,
+      "directions": "The couloir entrance is not at the col but a couple hundred feet toward Dragontail along the base of the ridge. Climb the couloir, firm 40-45 degree snow early in the season and loose Class 3 talus by late summer, to the notch that cuts right through the ridge."
+     },
+     {
+      "lat": 47.47873,
+      "lng": -120.833421,
+      "elev": 8840,
+      "name": "Dragontail Peak summit",
+      "note": "From the notch, drop down and traverse northeast to the true summit; descend via Aasgard Pass.",
+      "type": "Summit",
+      "distMi": 6,
+      "directions": "From the notch, descend the steep, narrow snow finger on the far side, or leave the couloir about 30 ft below the notch and climb about 20 ft of Class 4 rock to the ridge. Traverse the easier snow and talus below the south side of the ridge, exposed in places, and scramble up to the summit."
+     },
+     {
+      "lat": 47.48028,
+      "lng": -120.82056,
+      "elev": 7841,
+      "name": "Aasgard Pass",
+      "type": "Junction",
+      "elevFt": 7841,
+      "distFrom": "track",
+      "directions": "Descend to the saddle southeast of the summit, then make the long traverse east across the snow slope to Aasgard Pass."
+     }
+    ],
+    "gpx": [
+     [
+      47.527663,
+      -120.820985
+     ],
+     [
+      47.52569,
+      -120.82182
+     ],
+     [
+      47.52434,
+      -120.82255
+     ],
+     [
+      47.52213,
+      -120.82307
+     ],
+     [
+      47.52096,
+      -120.82338
+     ],
+     [
+      47.51972,
+      -120.82362
+     ],
+     [
+      47.51899,
+      -120.8247
+     ],
+     [
+      47.5172,
+      -120.82559
+     ],
+     [
+      47.516,
+      -120.82631
+     ],
+     [
+      47.51511,
+      -120.82694
+     ],
+     [
+      47.51392,
+      -120.82764
+     ],
+     [
+      47.51274,
+      -120.82784
+     ],
+     [
+      47.51202,
+      -120.82842
+     ],
+     [
+      47.51138,
+      -120.82889
+     ],
+     [
+      47.5099,
+      -120.82938
+     ],
+     [
+      47.50935,
+      -120.82999
+     ],
+     [
+      47.50923,
+      -120.83057
+     ],
+     [
+      47.50916,
+      -120.83217
+     ],
+     [
+      47.50855,
+      -120.83288
+     ],
+     [
+      47.50797,
+      -120.83366
+     ],
+     [
+      47.50754,
+      -120.83531
+     ],
+     [
+      47.50782,
+      -120.83694
+     ],
+     [
+      47.50727,
+      -120.83857
+     ],
+     [
+      47.50599,
+      -120.83919
+     ],
+     [
+      47.5056,
+      -120.83976
+     ],
+     [
+      47.50513,
+      -120.84035
+     ],
+     [
+      47.5043,
+      -120.84033
+     ],
+     [
+      47.50399,
+      -120.84013
+     ],
+     [
+      47.50331,
+      -120.84092
+     ],
+     [
+      47.50272,
+      -120.84182
+     ],
+     [
+      47.50236,
+      -120.84186
+     ],
+     [
+      47.50159,
+      -120.84246
+     ],
+     [
+      47.50093,
+      -120.84307
+     ],
+     [
+      47.50057,
+      -120.84389
+     ],
+     [
+      47.50006,
+      -120.84346
+     ],
+     [
+      47.50024,
+      -120.84267
+     ],
+     [
+      47.49967,
+      -120.84252
+     ],
+     [
+      47.49949,
+      -120.84147
+     ],
+     [
+      47.49993,
+      -120.84026
+     ],
+     [
+      47.49982,
+      -120.8397
+     ],
+     [
+      47.49961,
+      -120.83939
+     ],
+     [
+      47.49891,
+      -120.83914
+     ],
+     [
+      47.49897,
+      -120.83901
+     ],
+     [
+      47.49859,
+      -120.83842
+     ],
+     [
+      47.49892,
+      -120.83789
+     ],
+     [
+      47.49985,
+      -120.83672
+     ],
+     [
+      47.5001,
+      -120.83627
+     ],
+     [
+      47.50006,
+      -120.83593
+     ],
+     [
+      47.49974,
+      -120.83619
+     ],
+     [
+      47.49895,
+      -120.83695
+     ],
+     [
+      47.49803,
+      -120.83742
+     ],
+     [
+      47.49724,
+      -120.8368
+     ],
+     [
+      47.49728,
+      -120.83639
+     ],
+     [
+      47.49723,
+      -120.83616
+     ],
+     [
+      47.49751,
+      -120.83618
+     ],
+     [
+      47.49755,
+      -120.83607
+     ],
+     [
+      47.49765,
+      -120.83564
+     ],
+     [
+      47.49776,
+      -120.83512
+     ],
+     [
+      47.49784,
+      -120.83453
+     ],
+     [
+      47.49751,
+      -120.83451
+     ],
+     [
+      47.49711,
+      -120.83443
+     ],
+     [
+      47.49643,
+      -120.83475
+     ],
+     [
+      47.49592,
+      -120.83515
+     ],
+     [
+      47.49537,
+      -120.83565
+     ],
+     [
+      47.49498,
+      -120.83622
+     ],
+     [
+      47.4946,
+      -120.83686
+     ],
+     [
+      47.49397,
+      -120.83712
+     ],
+     [
+      47.49352,
+      -120.83666
+     ],
+     [
+      47.49293,
+      -120.83674
+     ],
+     [
+      47.49253,
+      -120.83683
+     ],
+     [
+      47.49209,
+      -120.83665
+     ],
+     [
+      47.49159,
+      -120.83707
+     ],
+     [
+      47.49125,
+      -120.83721
+     ],
+     [
+      47.48962,
+      -120.83797
+     ],
+     [
+      47.48928,
+      -120.83802
+     ],
+     [
+      47.48901,
+      -120.83792
+     ],
+     [
+      47.48852,
+      -120.8375
+     ],
+     [
+      47.48834,
+      -120.83632
+     ],
+     [
+      47.48776,
+      -120.83524
+     ],
+     [
+      47.48777,
+      -120.83461
+     ],
+     [
+      47.48774,
+      -120.83415
+     ],
+     [
+      47.4876,
+      -120.83349
+     ],
+     [
+      47.48736,
+      -120.83285
+     ],
+     [
+      47.48735,
+      -120.83226
+     ],
+     [
+      47.48691,
+      -120.82966
+     ],
+     [
+      47.48637,
+      -120.82861
+     ],
+     [
+      47.48621,
+      -120.82764
+     ],
+     [
+      47.48626,
+      -120.82662
+     ],
+     [
+      47.48621,
+      -120.82599
+     ],
+     [
+      47.48589,
+      -120.82551
+     ],
+     [
+      47.48559,
+      -120.82481
+     ],
+     [
+      47.48513,
+      -120.82431
+     ],
+     [
+      47.48497,
+      -120.82384
+     ],
+     [
+      47.48469,
+      -120.8235
+     ],
+     [
+      47.48432,
+      -120.82356
+     ],
+     [
+      47.48412,
+      -120.82327
+     ],
+     [
+      47.48367,
+      -120.82279
+     ],
+     [
+      47.48312,
+      -120.82322
+     ],
+     [
+      47.48258,
+      -120.82321
+     ],
+     [
+      47.48255,
+      -120.82305
+     ],
+     [
+      47.4823,
+      -120.82285
+     ],
+     [
+      47.48089,
+      -120.82286
+     ],
+     [
+      47.48078,
+      -120.82245
+     ],
+     [
+      47.48052,
+      -120.82212
+     ],
+     [
+      47.48032,
+      -120.82143
+     ],
+     [
+      47.48036,
+      -120.82085
+     ],
+     [
+      47.48012,
+      -120.82017
+     ],
+     [
+      47.47973,
+      -120.82008
+     ],
+     [
+      47.47983,
+      -120.81979
+     ],
+     [
+      47.48018,
+      -120.81941
+     ],
+     [
+      47.480179,
+      -120.81899
+     ],
+     [
+      47.48016,
+      -120.81841
+     ],
+     [
+      47.48,
+      -120.81804
+     ],
+     [
+      47.48002,
+      -120.81769
+     ],
+     [
+      47.47992,
+      -120.81714
+     ],
+     [
+      47.47977,
+      -120.81612
+     ],
+     [
+      47.47946,
+      -120.81549
+     ],
+     [
+      47.47928,
+      -120.8151
+     ],
+     [
+      47.478893,
+      -120.814832
+     ],
+     [
+      47.478722,
+      -120.815234
+     ],
+     [
+      47.478276,
+      -120.815776
+     ],
+     [
+      47.474519,
+      -120.816822
+     ],
+     [
+      47.472257,
+      -120.818667
+     ],
+     [
+      47.473185,
+      -120.824096
+     ],
+     [
+      47.475333,
+      -120.827916
+     ],
+     [
+      47.478029,
+      -120.831671
+     ],
+     [
+      47.478189,
+      -120.83225
+     ],
+     [
+      47.479037,
+      -120.832969
+     ]
+    ],
+    "elev_pts": null,
+    "disciplines": [
+     "alpine",
+     "mountaineering"
+    ],
+    "timing": {
+     "totalHrs": 15.3,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 2.5,
+     "approachTimeHrs": 3.8,
+     "recommendedStart": "4:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 3.8,
+       "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the base for the approach up toward the Colchuck-Dragontail col.",
+       "fromTo": "Approach to Colchuck Lake camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "Climb steep snow (up to ~45 degrees near the top) up the couloir from near the Colchuck-Dragontail col to the summit ridge. Descend the standard Aasgard Pass scramble back to camp.",
+       "fromTo": "Climb Pandora's Box (W Couloir), descend to camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 2.5,
+       "note": "Break camp and hike out.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "detailed_rack": "No technical rack needed; optionally a short rope/picket for the exposed summit-pinnacle traverse.",
+    "what_to_bring": [
+     "ice axe",
+     "crampons",
+     "helmet",
+     "sturdy boots"
+    ],
+    "pro_tips": [
+     "Reserve this for stable conditions and climbers experienced on steep snow",
+     "Early start to manage avalanche and warming hazards",
+     "Often combined with Colchuck Peak or a full Enchantments traverse; watch for rockfall on Aasgard Pass during the descent."
+    ],
+    "watch_out": "Constant 40-50 degree angle with slightly steeper sections half way up depending on year\nMiddle section can melt out early in season - creates instability and avalanche risk\nRock band near summit requires navigation through exposed stone\nObjective hazard from falling rock during warmer conditions when snow melts around exposed stone\nLate May through early July typically has the best snow conditions - expect poorer conditions outside this window\nGrade II alpine terrain demands steep-snow mountaineering experience and conservative decision-making\nProtection: a picket is optional if you are uncomfortable on steep snow; no rack is needed for the couloir",
+    "pro_needs": "No technical protection needed for the couloir itself; optional light rack (nuts/small cams) only if attempting the 5.6 summit-pinnacle variation.",
+    "best_season": "Spring through summer. It is best with a firm, consolidated snowpack.",
+    "high_point_ft": 8840,
+    "aid_grade": null,
+    "approach": "From the Stuart Lake Trailhead (3,400 ft) follow Stuart Lake Trail #1599 to the junction at 2.6 miles, then Colchuck Lake Trail #1599A to Colchuck Lake (5,570 ft) at roughly 4.3-4.4 miles and about 2,200 ft of gain (2-2.5 hours). Unlike the Aasgard Pass routes, continue around the lake's west/south side toward the Colchuck Glacier below the Colchuck-Dragontail col. Ascend talus and then the glacier itself - early season mostly snow, becoming firmer neve/ice with exposed talus by mid-to-late season; the glacier's east lobe is generally reported free of significant crevasses but can be hard enough to want crampons and an axe. Climb the glacier to Colchuck Col; the couloir entrance for Pandora's Box (the W Couloir) is a couple hundred feet left (east) of the col itself and climbs to a notch in the ridge. Total approach 3-4 hours. Hazards: firm morning snow/ice on the glacier approach, and the couloir is a fall-line funnel for rockfall/icefall from the terrain above, so an early start to beat sun-loosened debris and softening snow matters.",
+    "descent_text": "From the top of the couloir/Pandora's Box, descend left and traverse northeast to the true summit (some parties rope up for this exposed traverse), or alternatively exit about 30 ft below the notch, scramble Class 4 rock roughly 20 ft, and follow the ridge left to the top. From the summit, the standard descent is southeast to a saddle, then east across a long snow slope to Aasgard Pass, then down the pass's steep talus/snow (~2,200 ft in under a mile) to Colchuck Lake - stay climbers' left near the granite walls and beware drifting climbers' right into cliffs. Crampons/axe are recommended into mid-summer; early season the descent can largely be glissaded. No rappels are needed on this standard summit-and-Aasgard-Pass finish. If a party instead retreats directly back down the couloir rather than topping out, downclimbing steep snow/ice or building an improvised rappel off natural gear (slung chockstones or horns) in the couloir could become necessary - this specific scenario is not recorded anywhere but is a reasonable contingency to plan for in a steep snow couloir.",
+    "bail": "The couloir can be downclimbed for most of its length; there's no fixed rappel anchor, so retreat relies on downclimbing or an improvised anchor on natural gear.",
+    "pitch_detail": null,
+    "itinerary": {
+     "cal": "Best climbed on firm spring snow (April-June) via the Colchuck-Dragontail col; this window is largely before/around the start of the May 15-Oct 31 permit season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Stuart Lake Trail to Colchuck Lake and camp below the north face, the base for the approach up toward the Colchuck-Dragontail col.",
+       "hours": 3.75,
+       "miles": 4.3,
+       "title": "Approach to Colchuck Lake camp",
+       "gainFt": 2300,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach camp at Colchuck Lake"
+      },
+      {
+       "n": 2,
+       "note": "Climb steep snow (up to ~45 degrees near the top) up the couloir from near the Colchuck-Dragontail col to the summit ridge. Descend the standard Aasgard Pass scramble back to camp.",
+       "hours": 9,
+       "miles": 3.6,
+       "title": "Climb Pandora's Box (W Couloir), descend to camp",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Enter the couloir",
+         "detail": "Near the Colchuck-Dragontail col."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Top out",
+         "detail": "Steepest section (~45°) near the top."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Begin descent",
+         "detail": "Aasgard Pass scramble route."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit via Pandora's Box"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike out.",
+       "hours": 2.5,
+       "miles": 4.3,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 2300,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 2-3 day trip: camp at Colchuck Lake, then a moderate snow-climbing day (8-10 hrs) up Pandora's Box to the summit and back to camp before hiking out."
+    },
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+     "permit": "Free Self-Issue Day Permit",
+     "seasonal": null,
+     "group_limit": 8,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/233273",
+      "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+      "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+     }
+    },
+    "road": {
+     "name": "Eightmile Road (FR 7601)",
+     "driveNote": "From Leavenworth, take Icicle Road about 8.5 miles, turn left onto Eightmile Road (FR 7600), then bear right onto FR 7601 and continue about 4 miles to the Stuart Lake/Colchuck trailhead (3,400 ft). High-clearance recommended; 4WD advised.",
+     "seasonalGate": "Upper road snow-gated in winter"
+    },
+    "climate": {
+     "typical": "East-slope alpine; SW-facing snow couloir, primarily a spring/early-summer climb",
+     "bySeason": {
+      "fall": "Usually melted out; not a typical season",
+      "spring": "Primary season - firm, consolidated snow typical (May-June per documented ascents)",
+      "summer": "Couloir typically melts out to talus/scree by mid-to-late summer",
+      "winter": "Rarely climbed - short daylight and elevated avalanche danger"
+     },
+     "forecastZone": "Washington East Slopes Central Cascades"
+    },
+    "emergency": {
+     "notes": "No cell coverage on the route; carry a satellite communicator.",
+     "county": "Chelan",
+     "rangerStation": "Wenatchee River Ranger District (Leavenworth), Okanogan-Wenatchee National Forest",
+     "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth, WA — 24-hour ER, (509) 548-5815",
+     "sheriffDispatch": "911 for emergencies; Chelan County Sheriff non-emergency line (509) 667-6851 coordinates backcountry SAR."
+    },
+    "lists": null,
+    "crowds": {
+     "peakTraffic": "commonly climbed; occasional ascents in good late-winter/spring conditions",
+     "solitudeRating": 4,
+     "estimatePerSeason": "unknown - low-traffic; likely under 10-15 parties per season based on limited indexed trip reports"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong - spring/early-summer approach to Colchuck Lake and up the Colchuck Glacier",
+      "packWeight": "25-40 lbs with axe, crampons and helmet"
+     },
+     "approachTime": "2-2.5 hours to Colchuck Lake; 3-4 hours in all to the couloir",
+     "requiredSkills": [
+      "steep snow climbing with ice axe and crampons",
+      "self-arrest",
+      "avalanche hazard evaluation",
+      "rockfall awareness in a couloir",
+      "exposed 4th-class scrambling"
+     ],
+     "experienceLevel": "Mountaineer comfortable on sustained steep snow and exposed 4th-class rock; no ice or mixed leading is required"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Late May through early July, on a firm consolidated snowpack",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Snow usually covers the glacier and fills the couloir; start before dawn to stay ahead of warming and rockfall",
+       "status": "good"
+      },
+      "July": {
+       "reason": "Still climbed on snow early in the month; the glacier firms toward hard neve and ice as it goes",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Typically the most reliable month, with firm snow on the glacier and in the couloir",
+       "status": "good"
+      },
+      "April": {
+       "reason": "Couloir well filled, but the approach is still snowbound and storm-loaded slopes keep avalanche hazard elevated",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "The glacier can be bare blue ice and the couloir melts out to loose talus with more rockfall",
+       "status": "marginal"
+      }
+     }
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Cold, west-facing alpine conditions typical of the east-slope Cascades in spring and early summer",
+      "probability": "Storm loading and wind-transport onto the west-facing couloir drive most of the hazard"
+     },
+     "exposure": "High - sustained steep snow in a narrow couloir with a long fall line; avalanche danger early in the season and rockfall as the route warms are the dominant hazards",
+     "avalanche": {
+      "zone": "NWAC East Central zone (Stuart Range/Enchantments) - exact boundary for this specific couloir not confirmed",
+      "byMonth": {
+       "April": "Moderate",
+       "March": "Considerable",
+       "January": "Considerable",
+       "December": "Considerable",
+       "February": "Considerable"
+      }
+     },
+     "crevasses": "Low - the approach crosses the Colchuck Glacier, which has few if any crevasses; by mid-season it can turn to hard or bare ice"
+    },
+    "data_quality": {
+     "gaps": [
+      "Corrected 2026-07-15: this record previously conflated the real Pandora's Box (this route) with an invented 'distinct NE-facing ice route with M4-M5 mixed crux' that matched no real source. Content has been corrected to describe the genuine Pandora's Box couloir near Colchuck Col.",
+      "The distinct real NE-facing ice route on Dragontail's north face is Triple Couloirs (WI3, FA Joiner/Nelson/Seman 1974) — not documented under this record; would need its own separate entry if added."
+     ],
+     "confidence": "MEDIUM-HIGH",
+     "lastVerified": "2026-07-15"
+    },
+    "difficulty": {
+     "exposure": 3,
+     "physical": 3,
+     "technical": 2,
+     "commitment": 2,
+     "routefinding": 2
+    },
+    "approach_logistics": {
+     "peakLat": 47.47873,
+     "peakLng": -120.833421,
+     "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+     "trailheadLat": 47.5282,
+     "trailheadLng": -120.82036,
+     "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,400 ft), via the Colchuck Lake Trail"
+    },
+    "sling_rack": {
+     "picket": "1 (optional)",
+     "runner": "1x sling for optional belay anchor on summit traverse"
+    },
+    "alpine_draws": 0,
+    "rope_type": "optional 30m accessory/half rope (not always carried)",
+    "rope_length_m": 30,
+    "rope_note": "Pandora's Box itself is climbed unroped with axe and crampons per firsthand accounts; a short rope is only occasionally carried as belay backup for the exposed 4th-class summit traverse above the notch, not for the couloir.",
+    "ascender": null,
+    "corrections": "Directly confirmed via engineeredforadventure.com's firsthand account: parties climb Pandora's Box unroped with only ice axe and crampons (one party used strap-on crampons), no rack — independently corroborating this route's existing DB correction away from a fabricated M4-M5 mixed description. The optional rope/picket for the summit traverse isn't itemized in any source found, so that detail is inferred from the existing DB note.",
+    "gear_confidence": "verified",
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": [],
+    "features": [
+     "Exposed",
+     "Committing"
+    ],
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": "outback",
+    "approach_variants": [
+     {
+      "name": "Colchuck Glacier to Colchuck Col",
+      "notes": "Stuart Lake Trailhead at 3,400 ft, Stuart Lake Trail #1599 to the junction at 2.6 miles, then Colchuck Lake Trail #1599A to Colchuck Lake at 5,570 ft — roughly 4.3 miles and 2,200 ft.\n\nThis one does not use Aasgard Pass. Continue around the lake's west and south side toward the Colchuck Glacier under the Colchuck-Dragontail col. Ascend talus and then the glacier: mostly snow early in the season, turning to firmer neve and ice with talus showing through by late season. The east lobe is generally reported free of significant crevassing but gets hard enough to want crampons and an axe. Late in the season a band of blue ice can span most of the snowfield, and parties have found a continuous snow finger on the right to get past it.\n\nAllow three to four hours from the lake.",
+      "season": "May-Jul, best on a firm consolidated snowpack",
+      "hazards": [
+       "Firm morning snow and ice on the glacier — crampons and axe",
+       "A blue-ice band across the snowfield late in the season",
+       "The couloir is a fall-line funnel for rockfall and icefall from above — start early, before sun-loosened debris and softening snow"
+      ],
+      "baseFinding": "Climb the glacier to Colchuck Col. The couloir entrance is not at the col — it is a couple of hundred feet left of it, meaning east, toward Dragontail.\n\nThe confirmation is what the gully ends in. Pandora's Box is a notch that goes right through the ridge: standing in it you look down the far side, into the Colchuck basin on one hand and the Dragontail side on the other. If the gully you are in simply fades out onto a summit slope rather than opening into a slot you can see through, you are in the wrong feature.\n\nFrom the notch the summit is reached by descending a little and traversing left, north-east, toward the top; there is also an exit about thirty feet below the notch leading left onto twenty feet or so of class 4 rock and then the ridgeline.\n\nIf you have topped out at the col itself with Colchuck Peak on your right, you have simply reached the col and not yet started the route — walk left along the base of the ridge."
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "40–45° snow",
+      "label": "Couloir from Colchuck Col to Pandora's Box notch",
+      "notes": "The couloir starts a couple hundred feet east (left) of Colchuck Col, at about 8,000 ft. Climb it to the notch in the ridge beside the Pandora's Box spire. Early season it is firm snow up to 40–45° and steeper near the notch, so most parties self-belay with an axe. By late summer it is loose Class 3 talus. The couloir funnels rockfall, so climb it before the sun loosens the slopes above."
+     },
+     {
+      "n": 2,
+      "crux": true,
+      "class": "Steep snow",
+      "label": "Off the notch onto the Dragontail side",
+      "notes": "From the notch, the ground drops immediately down a steep, narrow snow finger on the south side. A slip here would have serious consequences. Crampons and a confident axe are the norm, and some parties rope up. The alternative is to leave the couloir about 30 ft below the notch, climb about 20 ft of Class 4 rock on the left, and follow the ridge. As the snow melts, an easier way around the finger usually appears."
+     },
+     {
+      "n": 3,
+      "class": "Class 3",
+      "label": "South-side traverse to the summit",
+      "notes": "Traverse northeast across the easier snow and talus slopes below the south side of the ridge. Then scramble up to the summit at about 8,840 ft. The traverse is exposed in places, so some parties keep the rope on. Afternoon softening makes the snow here slushy, and the descent toward Aasgard Pass leaves from the saddle southeast of the summit."
+     }
+    ],
+    "bivy": [
+     {
+      "elev": 5570,
+      "name": "Colchuck Lake designated campsites",
+      "role": "main",
+      "type": "camp",
+      "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+      "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+      "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+      "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+     },
+     {
+      "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+      "role": "main",
+      "type": "camp",
+      "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+      "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+      "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+      "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+     },
+     {
+      "name": "Talus and boulder bivies below Dragontail's north side",
+      "role": "route",
+      "type": "bivy",
+      "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps half an hour and a clearer look at the route, at the cost of a colder, windier and rockier night. Whether that is worth it is genuinely contested: the time saved is small against a full day on either route, and the ground is poor. Because these are informal spots, camp on bare rock or gravel and leave no trace of a platform.",
+      "water": "Snowmelt runnels and pools early in the season; unreliable by late summer once the snowfields shrink, so many parties carry water up from the lake",
+      "permit": "Still inside the Colchuck Lake zone, so an overnight permit is required exactly as it is at the lake — sleeping on rock rather than in a designated site does not exempt a party. The zone boundary with the Core Enchantment zone lies up toward Aasgard Pass, and a Core permit is valid in every zone, so a party unsure which side of the line it will sleep on is safest holding Core.",
+      "capacity": "Two to four people on flat granite blocks and sand patches; nothing established, and the good spots are scattered rather than clustered"
+     },
+     {
+      "name": "Colchuck Lake",
+      "role": "hidden"
+     }
+    ],
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "pandoras box west w couloir coulior",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": [
+     "West Route"
+    ],
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": 2,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_granite_mountain_beargrass_rib",
+    "area_id": "wa_granite_mountain",
+    "name": "Beargrass Rib",
+    "set": {
+     "discipline": "alpine"
+    }
+   },
+   "before": {
+    "id": "wa_granite_mountain_beargrass_rib",
+    "area_id": "wa_granite_mountain",
+    "name": "Beargrass Rib",
+    "discipline": "alpine",
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0,
+    "pitches": 1,
+    "length_m": 12,
+    "sort_order": 2,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": null,
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": [
+     "alpine"
+    ],
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": null,
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "beargrass rib",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  },
+  {
+   "op": {
+    "op": "patch",
+    "id": "wa_granite_mountain_winter_route_first_south_rib",
+    "area_id": "wa_granite_mountain",
+    "name": "Winter Route First South Rib",
+    "set": {
+     "discipline": "alpine"
+    }
+   },
+   "before": {
+    "id": "wa_granite_mountain_winter_route_first_south_rib",
+    "area_id": "wa_granite_mountain",
+    "name": "Winter Route First South Rib",
+    "discipline": "alpine",
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0,
+    "pitches": 1,
+    "length_m": 12,
+    "sort_order": 1,
+    "stars": null,
+    "fa": null,
+    "lat": null,
+    "lng": null,
+    "aspect": null,
+    "season": null,
+    "description": null,
+    "gear": null,
+    "hazards": null,
+    "verif": null,
+    "overview": null,
+    "beta": null,
+    "turnaround": null,
+    "auto_generated": false,
+    "alpine_grade": null,
+    "rock_grade": null,
+    "ice_grade": null,
+    "gain_ft": null,
+    "loss_ft": null,
+    "dist_km": null,
+    "max_angle": null,
+    "rappels": null,
+    "commitment": null,
+    "face": null,
+    "permit": null,
+    "comms": null,
+    "descent": null,
+    "obj_haz": null,
+    "waypoints": null,
+    "gpx": null,
+    "elev_pts": null,
+    "disciplines": [
+     "alpine"
+    ],
+    "timing": null,
+    "detailed_rack": null,
+    "what_to_bring": null,
+    "pro_tips": null,
+    "watch_out": null,
+    "pro_needs": null,
+    "best_season": null,
+    "high_point_ft": null,
+    "aid_grade": null,
+    "approach": null,
+    "descent_text": null,
+    "bail": null,
+    "pitch_detail": null,
+    "itinerary": null,
+    "access": null,
+    "road": null,
+    "climate": null,
+    "emergency": null,
+    "lists": null,
+    "crowds": null,
+    "partner_requirements": null,
+    "seasonal_guidance": null,
+    "seasonal_hazards": null,
+    "data_quality": null,
+    "difficulty": null,
+    "approach_logistics": null,
+    "sling_rack": null,
+    "alpine_draws": null,
+    "rope_type": null,
+    "rope_length_m": null,
+    "rope_note": null,
+    "ascender": null,
+    "corrections": null,
+    "gear_confidence": null,
+    "rappel_detail": null,
+    "rappel_count_note": null,
+    "rack": null,
+    "features": null,
+    "classic": false,
+    "gear_bucket": null,
+    "assumed_gear": null,
+    "gps_contributor_name": null,
+    "outing_shape": null,
+    "approach_variants": null,
+    "climbing_route": null,
+    "bivy": null,
+    "prot_rating": null,
+    "start_type": null,
+    "landing": null,
+    "pads": null,
+    "rock": null,
+    "crux": null,
+    "access_checked_at": null,
+    "name_search": "winter route rte first 1st south rib",
+    "ice_grade_num": null,
+    "mixed_grade_num": null,
+    "aid_grade_num": null,
+    "bolts": null,
+    "guide_stars": null,
+    "alt_names": null,
+    "variations": null,
+    "ffa": null,
+    "fwa": null,
+    "anchor": null,
+    "location": null,
+    "snow_grade_num": null,
+    "rack_items": null,
+    "sun": null,
+    "wet": null,
+    "rock_quality": null,
+    "fixed_gear": null,
+    "classic_score": null
+   },
+   "keptBefore": null
+  }
+ ]
+}

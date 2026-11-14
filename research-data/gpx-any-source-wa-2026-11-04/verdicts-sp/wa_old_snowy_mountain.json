@@ -1,0 +1,72 @@
+{
+ "area_id": "wa_old_snowy_mountain",
+ "routes": [
+  {
+   "route_id": "wa_old_snowy_mountain_north_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Jul-Sep window: web search (cleverhiker, oregonhikers forum, Mountaineers) says high trails lose most snow mid-July, best late July-Sep, PCT snow patches near summit can persist into Sept; SummitPost When To Climb says melt-out to mid-July. Stub row with no text/pins; same walk-up peak."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "sp150873",
+     "verdict": "unsure",
+     "why": "The only file climbs the Snowgrass Flats - PCT - summit-spur line, which is the Northwest Ridge / PCT route (r1). North Route has no text or pins, so nothing separates it from r1; one ascent goes to one route."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_old_snowy_mountain_r1",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Jul-Sep window: web search (cleverhiker, oregonhikers forum, Mountaineers) says high trails lose most snow mid-July, best late July-Sep, PCT snow patches near summit can persist into Sept; SummitPost When To Climb says melt-out to mid-July. Matches stored Jul-Sep; Peakbagger months for the peak: Jul 181, Aug 223, Sep 159, Oct 42."
+   },
+   "track": {
+    "aid": "sp150873",
+    "verdict": "same",
+    "kind": "oneway",
+    "inSeason": true,
+    "why": "Only route with text on the peak. The line runs from the Berry Patch connector onto the Snowgrass Flats trail (passes our trailhead pin within ~100 m), up to the PCT, to the 7,190 ft spur junction (matches our climbers-path junction pin) then the spur to the summit (61 m from our pin). Matches SummitPost standard route text. File dated 2013-09-15 (September, in season). One-way ascent of 42 points ending at the summit; the start is ~800 m west of our trailhead pin because the file starts at the adjacent Berry Patch trailhead."
+   },
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_old_snowy_mountain_west_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Jul-Sep window: web search (cleverhiker, oregonhikers forum, Mountaineers) says high trails lose most snow mid-July, best late July-Sep, PCT snow patches near summit can persist into Sept; SummitPost When To Climb says melt-out to mid-July. Stub row with no text/pins; same walk-up peak."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "sp150873",
+     "verdict": "unsure",
+     "why": "The only file climbs the Snowgrass Flats - PCT - summit-spur line, which is the Northwest Ridge / PCT route (r1). West Route has no text or pins, so nothing separates it from r1; one ascent goes to one route."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "North Route and West Route are empty stub rows (no grade, text or pins) on a peak whose single walk-up route is stored as r1; they may be aliases of r1 or misfiled. The only SummitPost file is a Berry Patch/Snowgrass one-way ascent assigned to r1. Our trailhead pin needs no move. REVIEWER HOLD 2026-11-04: sp150873 is a real Sept-2013 recording of this route but starts at Berry Patch Trailhead (OSM 46.4667806,-121.5277621, on Trail #96), ~800 m from our Snowgrass Flats pin, so it fails the trailhead rule. Applying it needs a second Trailhead pin + an approach sentence naming Berry Patch: owner question."
+}

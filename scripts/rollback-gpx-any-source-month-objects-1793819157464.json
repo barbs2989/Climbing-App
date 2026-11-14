@@ -1,0 +1,1153 @@
+{
+ "at": "2026-11-04T19:05:57.464Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late May to early June, while the couloir holds consolidated spring snow and the trailhead road has opened",
+     "monthBreakdown": {
+      "May": {
+       "reason": "The trailhead road typically opens in May and late-month freeze-thaw firms the 35-50 degree couloir; start early before the sun softens it.",
+       "status": "optimal"
+      },
+      "July": {
+       "reason": "The couloir melts out into loose rock, brush and moats, rockfall increases in the narrow slot, and the Colchuck Glacier descent opens up.",
+       "status": "risky"
+      },
+      "June": "[object Object] In mid-June the snow becomes consistent from about 6,000 ft, steepening above about 7,600 ft with patches of rock and ice, so one tool is workable but two are better.",
+      "April": {
+       "reason": "The trailhead road is usually still gated, adding miles of snowy walking, and the couloir can hold unconsolidated or avalanche-prone snow.",
+       "status": "marginal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, with August generally the sweet spot",
+     "monthBreakdown": {
+      "July": "[object Object] In early July, snow is consolidated above about 6,000 ft and allows a shortcut up to 6,500 ft, while the lower brush is slow and mosquitoes arrive; water is plentiful on the way out.",
+      "June": "In late June the big snow slope and the final slopes under the icecap carried stable snow with shallow boot penetration at midday, but the last steep pitch turned to deep slush in afternoon heat; the summit finishes on a narrow snow crest about 20 m long.",
+      "August": {
+       "reason": "Most stable weather window of the season; brush more manageable and glacier generally passable, though afternoon thunderstorms are possible",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Can offer stable spells and cooler temps, but crevasses are more open late season",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-August through September, once the high country has melted out",
+     "monthBreakdown": {
+      "July": "[object Object] By mid-July in a normal year the scramble was free of snow, leaving a moderate scramble with class 3 sections along the ridge.",
+      "June": {
+       "reason": "Deep snow still covers approach slopes and the summit scramble; not in season",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Scramble season is established once high country has melted; best combination of dry rock/heather and stable weather",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Border-country weather deteriorates and early snow can return, closing the short seasonal window",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Continuation of the short clear scramble window before fall weather moves in",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late May to June, when snow still covers the loose slope to the west-ridge saddle and the Willow Creek brush is low",
+     "monthBreakdown": {
+      "May": "[object Object] Mid-to-late May: snow is continuous from roughly 6,500-6,800 ft and firm in the morning, good with crampons to about 7,200 ft, but it turns punchy by afternoon.",
+      "July": {
+       "reason": "Snow melts back, exposing more loose talus, and the lower Willow Creek slope gets brushier; the ridge itself is dry.",
+       "status": "good"
+      },
+      "June": "[object Object] Late June: the basin is still snow-filled up to the ridge slope, leaving only 50-100 ft of loose scree at the top; an axe and crampons are useful there.",
+      "April": {
+       "reason": "SR-20 is usually still gated for spring clearing; once open, the deep Willow Creek basin carries real avalanche risk.",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "The 400-ft slope to the saddle becomes loose kitty-litter scree, the brush is at its worst and the open ridge is hot.",
+       "status": "marginal"
+      },
+      "October": {
+       "reason": "Cold, short days and early snow on the friction slab; SR-20 can close at short notice with the first big storms.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still a loose scree slog to the saddle, though cooler; fresh snow on the summit slab makes the unprotected move dangerous.",
+       "status": "marginal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July to mid-September, after the gully to the col melts out and before autumn snow returns to the granite slab",
+     "monthBreakdown": {
+      "May": "In mid-May snow becomes continuous from about 4,500 ft, burying the boulder fields so that legs punch through the gaps; a short class 3 step near 4,800 ft above the upper lake leads to snow slopes that run to a notch around 5,800 ft. In late May the lower lake can still be mostly frozen, and the ridge narrows to a snow fin near 6,400 ft; the summit area itself is bare.",
+      "July": {
+       "reason": "The upper gully and col melt out through the month; early July can still hold a snow patch in the gully.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "The road walk is clear, but the gully to the col and the north-slope slab still hold snow that needs an axe and often crampons.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Snow-free gully and dry granite slab give the easiest travel; start early for the long bike or walk on the gated road.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "First snows ice the open slab on the north slope and daylight barely covers the 14-mile road round trip plus the climb.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Dry route, cooler temperatures for the long road approach, and fewer bugs at the lakes; days are noticeably shorter.",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_big_snow_mountain_north_slope_dingford_route",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July to mid-September, once the gullies above Big Snow Lake have mostly melted but the couloir can still hold firm snow",
+     "monthBreakdown": {
+      "July": "[object Object] In early July the snow above the lakes was hard and steep with poor runouts, so an axe is essential and crampons were wished for; mosquitoes and gnats swarm the Myrtle Lake camps.",
+      "June": "[object Object] In early June the Dingford and Myrtle Lake trail is clear except thin snow patches near the lake, but side streams run high. In early June snow is continuous from Big Snow Lake to the summit and soft enough that crampons stayed in the pack; the descent can be plunge-stepped or glissaded.",
+      "August": {
+       "reason": "Gullies are largely melted out and route-finding past Snowflake Lake is easiest, though the couloir turns to loose talus.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early snow and verglas on the chutes, short days for a long off-trail route, and a remote setting for self-rescue.",
+       "status": "marginal"
+      },
+      "September": "[object Object] In a dry September the route was snow-free and axes stayed packed, but extra brush and route-finding made the day longer."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, with late July-August offering the driest, most reliable talus conditions",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early July can still have residual snow patches; conditions typically firm up to match the mid-July start of best-season",
+       "status": "good"
+      },
+      "June": "[object Object] In late June the Shellrock slopes hold rotten snow and a small cornice can sit near the black cap; an axe helps, and the crest is the safer way down.",
+      "August": {
+       "reason": "Prime in summer - driest continental NE Cascades conditions and most stable weather window",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still within the best-season and generally stable per climate data, but shorter daylight and higher chance of an early-season weather change late in the month",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_boston_peak_southeast_face",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September",
+     "monthBreakdown": {
+      "July": "[object Object] By the end of July the snow bridge over the Quien Sabe bergschrund can collapse; a sturdier bridge was found a little farther climber's right.",
+      "June": "[object Object] In early June the glacier approach was roped from about 6,300 ft, and the party biked the road from the lower gate before reaching the basin.",
+      "August": {
+       "reason": "Core of the best season; driest, most stable rock conditions for the Class 4 climbing",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Outside the best-season window; climate field indicates fall cooling toward winter, with new snow likely making the loose Class 4 terrain more hazardous",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Still within the best season but fall is Cool - shorter days and earlier storms possible",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through September, with August the most reliable month",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Late-July start of the window; lingering snowfields on approach slopes and higher creek flows are possible of spring snow lingering",
+       "status": "marginal"
+      },
+      "June": "In mid-June the broad south-face gully above the meadows can still be filled with stable snow that is climbed with an ice axe up to the summit ridge, which then has patchy rock and snow. In late June the south-face gully is loose class 3 choss, and the burned valley below has many blowdowns but game trails help.",
+      "August": {
+       "reason": "Driest, most stable east-side Cascades conditions; summer is the Best season",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Still generally dry but the window is short ('Short window' for fall) before autumn storms and early snow move in",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_concord_tower_north_face",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Prime season once gully snow has melted out; long daylight for the full ~7-hr day",
+       "status": "optimal"
+      },
+      "June": "At the end of June the first pitch can still be wet, and the second pitch feels harder than its grade when damp.",
+      "August": {
+       "reason": "Driest, most stable conditions; also the busiest month, so midweek starts help avoid Liberty Bell overflow traffic",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Cool, stable weather and fewer parties, but shorter daylight window narrows the margin for the alpine start",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_arete",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "June–September; south-southwest aspect clears early and holds condition later than shadier SEWS routes — described as 'nearly year-round' once SR-20 is open in low-snow years",
+     "monthBreakdown": {
+      "May": "[object Object] In mid-to-late May expect thin snow through the forest, firm snow near the base, a damp first pitch, and snow on the sandy ledges and below the fin; axe and crampons are carried.",
+      "July": {
+       "reason": "Reliable dry rock season, also the peak-traffic period",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "South-southwest aspect clears early; pass-opening timing varies year to year",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Reliable dry rock season",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Snow/moisture risk rising ahead of SR-20's seasonal closure",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Sunny aspect holds good condition later into the season than shadier routes",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "May, in the weeks after the North Cascades Highway opens, while the couloir still holds continuous snow",
+     "monthBreakdown": {
+      "May": "[object Object] In mid-May of a good snow year the couloir is continuous snow; parties run the rope with several pickets and a tree sling, and the final 20-30 ft is the steepest bit. In early May the right fork is snow except one short band of mixed scree, ice and wet rock that is the crux; snow resumes above it to the ridge, where a tree with old slings marks the top.",
+      "July": {
+       "reason": "The couloir melts out to loose class 3-4 rubble with rockfall from above; only the lowest snow remains.",
+       "status": "marginal"
+      },
+      "June": {
+       "reason": "Snow thins quickly, and in a light year the upper couloir melts out to loose rock steps by mid-June.",
+       "status": "good"
+      },
+      "April": {
+       "reason": "The North Cascades Highway is usually still closed for the winter, and the couloir is avalanche terrain under spring storm snow.",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "A dry gully of loose rock with steady rockfall; climb the neighbouring rock routes instead.",
+       "status": "risky"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "July through September, with July-August the most reliable window for snow-free rock.",
+     "monthBreakdown": {
+      "May": "In mid-May the Snow Lakes trail was snow-covered from about 4,100 ft, firm enough in the morning to go without snowshoes; the basin above Nada Lake was still deep in snow with frozen lakes.",
+      "July": {
+       "reason": "Season typically opens as snow clears from the approach and ridge; matches start of best season.",
+       "status": "optimal"
+      },
+      "June": "In late June the last approach to the base is steep snow that needs an ice axe and crampons, and the slopes below High Priest can be icy and brushy.",
+      "August": "[object Object] By early August the snow in the access gully can be gone, exposing wet, gritty slabs below a large chockstone; one party roped up and squeezed behind the block to pass.",
+      "October": {
+       "reason": "Past the usual season: cold temps, shorter daylight, and potential early snowfall increase risk on exposed fourth-class terrain.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable, cooler weather with fewer thunderstorms, but shorter days and possible early-season snow late in the month.",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_castle_peak_tatoosh_southeast_face",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late July to mid-September, when Stevens Canyon Road is open and the chimney pitch is dry",
+     "monthBreakdown": {
+      "May": {
+       "reason": "A snow climb from Narada Falls, with avalanche exposure below Pinnacle's west face and a snow-choked chimney needing pickets and a tool.",
+       "status": "risky"
+      },
+      "July": {
+       "reason": "Stevens Canyon Road is open and the trail clears, though residual snow can linger on the shaded parts of the traverse early in the month.",
+       "status": "good"
+      },
+      "June": "[object Object] In mid-June the climb is often still a snow outing from the roadside pullout and needs an axe, yet in some years the rock is bare by late June. By the third week of June in a normal year the summit blocks can be snow-free while the snow below is still firm early and good for a glissade back to the pullout.",
+      "August": {
+       "reason": "Snow-free trail and scree traverse and a dry easy-fifth chimney; start early to avoid afternoon thunderstorms on the exposed summit crest.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early snow and verglas on the chimney and summit crest; once Stevens Canyon Road closes, the approach starts at Narada Falls.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Cool, stable weather and dry rock, with fewer people on the Reflection Lakes trailhead.",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_cloudy_peak_southwest_slopes",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late September for larch season, with late July through August also fully viable and less crowded",
+     "monthBreakdown": {
+      "July": "[object Object] In early July snow is continuous above roughly 6,600 ft around the peak and soft by mid-morning in warm weather; poles help, crampons were not needed.",
+      "August": {
+       "reason": "Driest, most stable window with dry meadows and firm talus/scree footing",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Best - larch color peaks late in the month with cooler, typically stable air, though early snow is possible toward the very end of the month",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late October through May, whenever sustained cold keeps the couloir frozen",
+     "monthBreakdown": {
+      "May": "[object Object] By mid-May the route is near the end of its season; the exit snowfield and the walk down were easy.",
+      "July": {
+       "reason": "The couloirs melt out in summer, increasing rockfall",
+       "status": "risky"
+      },
+      "June": {
+       "reason": "Past the usual late-October-to-May season; warming brings rockfall into the couloir and softens the ice",
+       "status": "risky"
+      },
+      "April": {
+       "reason": "Firm alpine ice/snow on the Black Buttes couloirs as the prime season signature",
+       "status": "optimal"
+      },
+      "March": {
+       "reason": "Well inside the late-October-to-May season; the route has been climbed in good condition in early March",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through early September, while the glacier is still well covered",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Start of the optimal window; glacier travel conditions improve through the month but bridges are still transitioning early on.",
+       "status": "good"
+      },
+      "June": "[object Object] In early June snow begins near 4,800 ft and is continuous above 5,200 ft; wet, unconsolidated and knee-deep postholing in the heat.",
+      "August": "[object Object] In late August the snow near Colonial Lake has melted; follow the northwest ridge past tarns, then the snow finger and a short class-2 notch to the north face, where the upper snowfield has a bad runout.",
+      "October": {
+       "reason": "Snow returns in fall; conditions shift toward full winter alpine and SR 20 access can become unreliable ahead of its seasonal closure.",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Early fall starts stable before snow returns - still within the recommended window but crevasses are most open and the weather window is narrowing.",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_copper_peak_south_route",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through September, with August the most reliable month",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow receding but lingering patches possible on approach and upper talus early in the month",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Still snow-covered per typical climate pattern; avalanche terrain and difficult stream/creek crossings on approach",
+       "status": "risky"
+      },
+      "August": "[object Object] By late August the route is free of snow and ice, and parties have climbed it without an axe or crampons.",
+      "September": {
+       "reason": "Short, generally clear window before fall snow returns",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_courtney_peak_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early July can still carry lingering snow on the crest; conditions firm up to prime by mid-month, matching the best-season start",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Trails and the crest are typically still snow-covered; approach and route-finding are much harder",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Core of the stated best-season window; hot, dry east-side conditions with the most reliable footing and water access",
+       "status": "optimal"
+      },
+      "October": "[object Object] Early October brings peak larch colour around the pass and Star Lake, with weekend crowds on the trail.",
+      "September": {
+       "reason": "Stable weather but shorter days and possible early storms as the season turns; still within the best-season range",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-June to July, while snow smooths the upper basin and the Dark Glacier crevasses are still well bridged",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Deep snow on the approach and steep slopes below Dark Fin Col, and the valley shuttle to High Bridge runs only a limited early schedule, if at all.",
+       "status": "marginal"
+      },
+      "July": "[object Object] By mid-July the glacier is soft and mushy; falling ice and debris from the cirque walls cross the traverse, so keep moving through that stretch.",
+      "June": {
+       "reason": "Steps can be kicked up the long snow slopes to the col and the glacier is firm and bridged, though the Swamp Creek brush is still wet and slow.",
+       "status": "optimal"
+      },
+      "August": {
+       "reason": "Crevasses open and the summit moat grows, loose wet rock appears at the glacier margins, and wildfire can close the Agnes Creek trails.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "The glacier is bare and broken with a wide moat below the summit, and the valley shuttle and ferry move to their reduced autumn schedules.",
+       "status": "risky"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_davis_peak_nc_south_slope_and_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "monthBreakdown": {
+      "April": "In early April the snow line sits near 4,000 ft, so the first 3,000 ft is bare brush; by early May the boulder field above the burn is clear and snow starts near 4,800 ft."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_dot_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September, with late July-August the most reliable stretch for a fully snow-free ridge traverse",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow is receding through the month; by mid-July conditions generally match the best-season start, but early July can still have patchy snow on north-facing ridge sections",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Trails are snow-covered in spring; early June still typically has lingering snowpack on approach trails and the connecting ridges, and access roads may not be fully open",
+       "status": "risky"
+      },
+      "August": "[object Object] Late August: the north side of the Carru-Lago col and the talus below Lago needed almost no snow travel, and the small glacier under Lago has mostly melted away, leaving loose rock.",
+      "September": {
+       "reason": "Stable but short days; early storms are possible later in the month, so plan for a tighter weather window and be ready to bail off the ridge early",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_esmeralda_peaks_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through October, with August-September as the most reliable stretch",
+     "monthBreakdown": {
+      "July": {
+       "reason": "The valley trail and scree slope are generally clear by mid-July but lingering snow patches from the prior winter can still be present early in the month; thunderstorm season is active",
+       "status": "good"
+      },
+      "June": "In mid-June 2025 the De Roux route and the peaks were free of snow.",
+      "August": {
+       "reason": "Prime dry-season conditions; watch for afternoon storm buildup",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Excellent and clear, but early-season snow is possible later in the month, especially at higher sub-summits",
+       "status": "good"
+      },
+      "September": {
+       "reason": "Cool, clear, stable east-slope weather; one of the best months",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "August to late September, when the talus is snow-free and dry and the larches turn late in the month",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow lingers on the approach benches into early July and the summit can be wintry, but most talus melts out by late month.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Snow covers the benches toward the Enigma saddle and the upper Castle Creek gully, and the upper talus is still snowbound.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Benches and talus are mostly snow-free, Bird Creek Camp has water, and long days suit the cross-country round trip.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Talus stays dry in a clear spell, but first snows can glaze the loose slope and Stehekin valley transport runs a reduced schedule.",
+       "status": "marginal"
+      },
+      "September": "[object Object] By the start of September the last slope to the summit is straightforward with little loose rock."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_greenwood_mountain_west_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "monthBreakdown": {
+      "July": "In late July the connecting ledge can be free of snow and the Greenwood side may need no axe, though patches linger and boots beat approach shoes."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_gunnshy_peak_standard_route",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "August to September, when the waterfall gully runs low or dry and the upper slabs and heather are free of snow",
+     "monthBreakdown": {
+      "May": {
+       "reason": "The waterfall gully crossing runs high over slick rock, and the upper basin and slabs are still avalanche-prone snow.",
+       "status": "risky"
+      },
+      "July": "[object Object] In early July the creek can be crossed by hopping closely spaced rocks, and drinking water above is only slow drips off snow patches in flat spots.",
+      "June": {
+       "reason": "Snowmelt keeps the gully crossing and Barclay Creek high, and snow lingers on the upper slabs and summit approach.",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "The waterfall gully is typically low or dry and the heather, talus and slabs to the summit are snow-free.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Fall rain makes the mossy path and slick gully rock hazardous, and early snow patches settle on the upper slabs and exposed summit block.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Dry gully, snow-free scrambling and cooler temperatures for the steep, brushy climber's path.",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_east_ridge_9",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July to early September, once the talus gully to the notch has melted out and the serpentine is dry",
+     "monthBreakdown": {
+      "May": {
+       "reason": "Late May ascents happen, but the approach gully is full snow, hard in the morning and prone to wet slides as it warms.",
+       "status": "marginal"
+      },
+      "July": {
+       "reason": "Snow in the gully shrinks to short patches and the slick serpentine dries; the Ingalls Way trailhead lot fills early on weekends.",
+       "status": "optimal"
+      },
+      "June": "[object Object] In early June the gully below the route still holds snow with an awkward moat at the rock, and some parties carried an axe and crampons for it.",
+      "August": "[object Object] By early August the moat in the gully has widened enough to step across without touching snow.",
+      "October": {
+       "reason": "Early snow and verglas on the serpentine make the squeeze and downclimbs treacherous, and the rappel descent slows in cold.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Larches turn and crowds peak on the Ingalls Way trail; dry rock but shorter days on a long 14-16 hour outing.",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_observation_rock_standard_scramble_route",
+   "before": {
+    "seasonal_guidance": {
+     "monthBreakdown": {
+      "August": "By August the Flett Glacier is mostly bare ice with snow left only along its edges; microspikes and an axe handled it for most parties.",
+      "September": "By late September and early October the glacier is hard blue ice with step-over crevasses and meltwater channels, so aluminum crampons are the safer choice than spikes."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_old_snowy_mountain_r1",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through August, tapering into a good but cooling window in September — to September.",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow is melting out per the best-season start; early July can still have lingering snow slopes on the ridge requiring an axe.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Likely still holds substantial snow on approach and summit slopes; the snow-slope hazard is most acute here, and access roads may still be snow-blocked or just opening.",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Most snow-free, most stable trail conditions, and the peak crowd window — best balance of safe conditions against the highest traffic of the season.",
+       "status": "optimal"
+      },
+      "October": "In early October the route was completely free of snow, with the berry bushes at peak colour in the meadows.",
+      "September": "[object Object] By mid-September only small snow patches sit near the summit and the scramble is straightforward class 2 talus with decent footing."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "April-May, while the snow is still deep enough to walk over the brush; winter ascents on snowshoes also go",
+     "monthBreakdown": {
+      "July": {
+       "reason": "The snow is usually gone by now, so the off-trail climb above the lake turns into a slow bushwhack through dense brush and forest, even though the ground is dry",
+       "status": "marginal"
+      },
+      "June": {
+       "reason": "Lingering snow patches possible on the upper ridge in higher-snow years, and brush is leafing out and at its thickest, compounding the already-brushy approach",
+       "status": "marginal"
+      },
+      "March": "In late March snow is thin below about 3,000 ft with a brushy stretch near the start, but above that snowshoes or skis work well.",
+      "August": {
+       "reason": "Driest month, but with no snow cover the route above the lake is a full bushwhack through the thickest brush of the year, and afternoon thunderstorms are most common now",
+       "status": "marginal"
+      },
+      "October": {
+       "reason": "Early snow or sustained rain can arrive, wet brush and rock significantly slow and add risk to the already loose, routefinding-heavy terrain",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable weather and cooler temps typical, brush begins dying back which can ease travel, but shorter days trim margin for a long brushy day",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_preacher_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late July through September-July-October season",
+     "monthBreakdown": {
+      "May": "In early May snow is patchy just below Rainy Lake and continuous halfway up the ridge, the climbers' path above the lake is hard to hold, and gaining the last ridge above the upper lake is the crux.",
+      "July": {
+       "reason": "Season opens mid-month; early July can still hold snow in shaded gullies on this south-aspect route, improving through the month",
+       "status": "good"
+      },
+      "April": "In early April snow begins near 2,000 ft with poor consistency up to the lake, and the ridge above is mostly side-hilling, easily a whiteout day. In late April the final steep push needed an axe and snowshoes; a small slide had run recently, and starting early keeps the snow firm.",
+      "August": {
+       "reason": "Driest, most stable conditions; south aspect fully melted out, loose rock and brush at their most manageable",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Tail end of season window; early snow, rain, and shorter daylight increase routefinding and exposure risk on the off-trail sections",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable weather typically continues with fewer thunderstorms than mid-summer; good visibility for the off-trail approach",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_east_slope",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late June to mid-August, while snow bridges the Borealis Glacier and before it goes to bare ice",
+     "monthBreakdown": {
+      "May": "[object Object] In late May the whole route is under snow; ice axe and rope are needed for the glacier and the ridge above it.",
+      "July": {
+       "reason": "The Lucky Ridge path is mostly snow-free and crevasses on the Borealis Glacier are still bridged and easy to read.",
+       "status": "optimal"
+      },
+      "June": "[object Object] In mid-June the Borealis Glacier and the Lucky Pass snow were soft and continuous enough that crampons stayed in the pack.",
+      "August": {
+       "reason": "Lower creek levels ease the Thunder Creek ford; crevasses and moats open through the month, so stay on the glacier's eastern margin.",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Bare, broken glacier, new snow on loose rock, and short days for a 2-3 day remote trip with a long off-trail descent.",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "The glacier turns to bullet ice with exposed crevasses and loose rock near Lucky Pass, and fall storms can shut the short window.",
+       "status": "marginal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through August; conditions can hold into early September in a good year",
+     "monthBreakdown": {
+      "July": "[object Object] In early July the North Klawatti crossing showed only small cracks needing no detour; the south slopes were a slog of snow-to-rock transitions with the final ~100 ft on class 1-2 rock.",
+      "August": {
+       "reason": "Prime climbing month - glacier generally most stable and bergschrund most manageable",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Crevasses and bergschrund open up further and snow bridges deteriorate as summer progresses; early-season snowfall can arrive by late month",
+       "status": "marginal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "July through late September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Dry, warm granite and the start of peak season; expect the most weekend traffic",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Lingering snow on the Aasgard Pass approach and possible wet/cold rock; Enchantments permit season begins May 15 but conditions are often still wintry",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Most reliable warm, dry conditions; also the busiest month",
+       "status": "optimal"
+      },
+      "October": "[object Object] Mid-October can bring a calm, clear day with golden larches, but the rock is cold, there is a queue below the slab pitch, and the dusty, slippery top of Aasgard Pass makes the descent in the dark slow.",
+      "September": {
+       "reason": "Still dry and climbable with fewer crowds, but shorter days and increasing chance of early-season weather",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_raven_ridge_standard_route",
+   "before": {
+    "seasonal_guidance": {
+     "monthBreakdown": {
+      "October": "By mid-October the larches are shedding and nights at the cabin camps freeze, so pack winter layers even for a day trip."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_reynolds_peak_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Conditions improve through the month; best season begins mid-July, so early July can still carry residual snow and high runoff",
+       "status": "good"
+      },
+      "June": "[object Object] In early June the creek basin still carries firm snow from roughly 5,800 ft up, the summit block itself can already be bare, and meltwater is plentiful; a glissade back to camp is possible but the thin snow punches through beside rocks.",
+      "August": {
+       "reason": "Most reliable dry conditions and stable access; watch for typical afternoon thunderstorms on the exposed crest",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Generally stable weather but shorter daylight; early-season snow is possible late in the month",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September; late July-August is the most reliable stretch once the col and approach basins have shed most snow",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow typically lingering in the Emerald-Saska col and shaded gullies early in the month; conditions firm up by mid-to-late July",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Most reliable month - col and approach basins typically snow-free, stable dry-scramble conditions, though afternoon thunderstorms are a known hazard",
+       "status": "optimal"
+      },
+      "September": "[object Object] In mid-September a fresh storm can plaster the upper rock with snow, so expect it slower and give it time to melt."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sinister_peak_north_face",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "June to early July, while the face holds firm snow over the ice and the bergschrund at its base is still filled",
+     "monthBreakdown": {
+      "May": {
+       "reason": "A filled bergschrund and firm snow, but a long snowbound approach over the Dome-Chickamin col and a real spring avalanche cycle.",
+       "status": "marginal"
+      },
+      "July": "[object Object] By early July the bergschrund under the Dome side is very wide while the one below the Sinister col is only starting to sag; both were passable without hard route-finding.",
+      "June": "[object Object] In mid to late June the Chickamin Glacier was firm and only needed weaving around a few cracks.",
+      "April": {
+       "reason": "The face can be in good snow with the bergschrund filled, but the approach is buried and exposed to avalanches for days.",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "The face bares to hard alpine ice, the bergschrund widens and rockfall and icefall from the upper slopes increase.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Bare ice, an open bergschrund and heavy rockfall; the glacier approach is a maze of open crevasses.",
+       "status": "risky"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sloan_peak_corkscrew",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "mid-July through September, with late July-August the most reliable stretch",
+     "monthBreakdown": {
+      "July": {
+       "reason": "ford levels start dropping and the corkscrew usually clears of snow by mid-month, matching the best-season start",
+       "status": "good"
+      },
+      "June": {
+       "reason": "North Fork Sauk typically runs high with snowmelt, and residual snow can still cover parts of the corkscrew and approach trail",
+       "status": "risky"
+      },
+      "August": "[object Object] Glacier condition swings by year: in mid-August 2026 it was easy enough to cross unroped, while another year in the same fortnight showed large open crevasses.",
+      "September": {
+       "reason": "low water and stable rock continue, though shortening days and possible early-season snow late in the month add risk",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July to early September, once the flagged trail and ridge crest are snow-free",
+     "monthBreakdown": {
+      "May": {
+       "reason": "A long snow slog over Kindy Ridge with the flagging buried; feasible for strong parties with an axe, but avalanche-prone slopes above Cyclone Lake.",
+       "status": "marginal"
+      },
+      "July": {
+       "reason": "The ridge crest and heather benches melt out and camps near Cyclone Lake have water; early July can still hold summit-block cornices.",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Mostly snow travel on the ridge and near the summit block; the pink-flagged forest trail is harder to follow where it is snow-covered.",
+       "status": "good"
+      },
+      "August": "[object Object] Late August: the summit scramble was snow-free and most snow and the glacier could be avoided; the notch below the summit block is a short, slightly awkward downclimb.",
+      "October": {
+       "reason": "Early snow hides the flagging and slicks the ridge slabs, and daylight is short for a two-day, 6,800 ft trip.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Dry talus and slabs with fall color, but shorter days on a 5,000-plus ft approach from the washed-out FR-1570.",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September",
+     "monthBreakdown": {
+      "July": "[object Object] In early July the high bench near 7,400 ft is still under snow with no running water; melt snow, and expect soft snow on the traverse to the notch.",
+      "August": {
+       "reason": "Driest, most stable window with the least residual snow in the gullies and benches - the best month for the southwest flank scramble",
+       "status": "optimal"
+      },
+      "September": {
+       "reason": "Rock is dry and stable but days are shorter and early-season snow/weather can arrive late in the month, especially at this 8500+ ft elevation",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_three_fingers_r1",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Late July to September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Improves through the month as snow melts out; matches the start of the late July window",
+       "status": "marginal"
+      },
+      "June": {
+       "reason": "Lingering snow slopes low on the route and near the summit steps, plus longer/harder road access",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Driest, most consolidated conditions and core of the best-season",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Outside the window — early snow and shorter weather windows increase risk on the exposed ladder section",
+       "status": "risky"
+      },
+      "September": "[object Object] Late August into September is the usual window to dodge the moat and most glacier work below the Tin Can Gap shoulder."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through mid-September, once seasonal snow has cleared from the approach gully and summit notch —-season guidance",
+     "monthBreakdown": {
+      "July": "[object Object] By late July only a couple of steps of snow remained above Granite Pass, and biting insects were heavy around the lakes.",
+      "August": {
+       "reason": "Most reliable month for dry rock and a cleared approach; watch for the afternoon thunderstorm hazard, which peaks in August",
+       "status": "optimal"
+      },
+      "October": "By mid-October frost coats the ground at dawn, and leftover snow and ice can make the ledge traverse under the headwall slower; the larches are golden and the trail sees fewer people late in the month.",
+      "September": "[object Object] In mid-September the only dependable water between Cutthroat Pass and the lakes is a small stream near the Snowy Lakes turnoff, so fill bottles there."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_true_grit_2",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "August to early September, after the snow slope on the heather benches melts and before fall rain slicks them",
+     "monthBreakdown": {
+      "July": {
+       "reason": "The route dries out, but early July can still hold the steep snowfield on the approach ledges; bring an axe and crampons.",
+       "status": "good"
+      },
+      "June": {
+       "reason": "The Mountain Loop gate usually opens by late spring, but the river log crossing runs high and a steep snow slope covers the benches.",
+       "status": "marginal"
+      },
+      "August": "[object Object] In mid-August there was no snow on the approach and no stream crossing that needed wading.",
+      "October": {
+       "reason": "Short days, cold rock on a north face, and slick heather after rain; the first snow can return to the approach ledges.",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still dry in stable spells, but the north face is cold, and rain makes the heather benches and lichen-covered rock slick.",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through early October, once snow has melted off the upper slopes",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Snow typically clears from the upper gully by mid-July; long daylight and stable summer weather, though early-July ascents can still hit lingering snowfields",
+       "status": "optimal"
+      },
+      "June": "By mid-June the route is usually clear of snow except small patches in the 6,000 ft meadow, and the summit ridge is dry.",
+      "August": {
+       "reason": "Most reliable month - talus fully exposed, driest conditions, though afternoon thunderstorms are common and should be watched for",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early season snow can return to the high pass terrain at any time, days are short, and North Cascades Highway/access conditions become less predictable",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still generally dry and clear with fewer bugs and crowds than midsummer, but shorter daylight and first frosts begin",
+       "status": "good"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_winchester_mountain_south_trail",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through October - with the caveat that early-mid July still commonly has the steep snow traverse in place",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Steep snow often still covers the south/west traverse early in the month; ice axe and snow-travel experience recommended until it melts out, improving to good by late July",
+       "status": "marginal"
+      },
+      "August": {
+       "reason": "Typically the most reliable month - trail clear of snow, wildflowers and berries out, road usually passable",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Can still be climbed but watch for early-season snow or ice returning to the traverse and the access road, plus shorter daylight windows",
+       "status": "good"
+      },
+      "November": "At the start of November about a foot of loose new snow can cover the trail above roughly 6,000 ft, with the road iced from the switchbacks, so the climb becomes a trail-breaking slog.",
+      "September": {
+       "reason": "Stable, dry conditions and fall colors; cooler temps and shorter days but generally the best combination of clear trail and light crowds",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "before": {
+    "seasonal_guidance": {
+     "monthBreakdown": {
+      "May": "In late May, continuous snow starts near 4,200 ft and becomes knee-deep slush by 5,000 ft, and a cornice overhangs the north approach to the summit."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_wolframite_mountain_scramble",
+   "before": {
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September; July–August is the core dry-trail window",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Season start (mid-July); trail and off-trail slopes typically snow-free, long daylight for the long approach",
+       "status": "optimal"
+      },
+      "June": {
+       "reason": "Lingering snow on north-facing terrain and high creek crossings on the long approach; trails may not be fully melted out this far north in the Pasayten",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Most reliable dry-trail, low-snow window; watch for the documented afternoon thunderstorms",
+       "status": "optimal"
+      },
+      "October": "[object Object] By mid-October the larches are past peak and blowing off, and the trailhead is nearly empty.",
+      "September": {
+       "reason": "Still within the best-season window; stable weather but shorter days and rising chance of early-season snow toward late month",
+       "status": "good"
+      }
+     }
+    }
+   }
+  }
+ ]
+}

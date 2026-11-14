@@ -1,0 +1,35 @@
+{
+ "ak_split_face_boulder": {
+  "_expect": { "name": "Split Face Boulder", "region": "Alaska" },
+  "blurb": "A small cluster of granite boulders in the Delta Range of interior Alaska, set among trees just off the Richardson Highway near Black Rapids. Ten problems cover a broad spread: mostly V0 through V4, with the middle grades best represented, plus two far harder testpieces around V7 and V10. The walk from the road is almost nothing, which makes it an easy add-on to a drive through the range. The surrounding forest keeps the blocks shady and screens them from passing traffic, so expect cool, mossy conditions and few other climbers.",
+  "review": { "sources": ["https://www.mountainproject.com/area/119188568/split-face-boulder", "https://www.mountainproject.com/area/119188565/black-rapids-bouldering"] }
+ },
+ "ak_weekender_wall": {
+  "_expect": { "name": "Weekender Wall", "region": "Alaska" },
+  "blurb": "A compact roadside wall above Ravine Lake in the Mat-Su Valley, off the Glenn Highway north of Anchorage. Ten routes are packed into a short stretch of cliff: eight bolted lines and two trad climbs. The grades lean hard, with most routes in the 5.12 range, a pair around 5.11 and a pair of 5.9s, so it suits stronger sport climbers more than novices. The face catches sun for much of the day and dries quickly after rain, and the walk down from the parking area is very short.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109051313/weekender-wall", "https://www.mountainproject.com/area/109051152/ravine-lake-climbing-areas"] }
+ },
+ "ak_sea_cave": {
+  "_expect": { "name": "Sea Cave", "region": "Alaska" },
+  "blurb": "A small, steep cave right at the water's edge on the Seward Highway between Anchorage and Girdwood. Ten routes split evenly between bolted and trad lines, running from an easy 5.8 up through a cluster of 5.10 and 5.11 climbs to a single 5.12. Overhanging terrain is unusual along this stretch of road, so it appeals to people wanting powerful, short, hard pitches. It is a quiet spot, but the tide matters here, and the nearby rock is often loose, so wear a helmet and look over fixed hardware, which the salt air corrodes.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107152858/sea-cave", "https://mountainproject.com/area/105991968/seward-highway"] }
+ },
+ "ak_beggar_s_canyon": {
+  "_expect": { "name": "Beggar's Canyon", "region": "Alaska" },
+  "blurb": "A small pocket of limestone on the northeast side of the East Grapefruit dome, north of Fairbanks along the Elliott Highway. Ten short climbs are split among top-rope, bolted and trad styles, and the difficulty stays modest: roughly 5.8 to 5.10, with half the routes at the 5.10 level. Rock quality is uneven, though a few lines are well worth doing. The reward is solitude and wide views from the dome, and you reach it by hiking over the top and dropping down toward the crag.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106764353/beggars-canyon", "https://www.mountainproject.com/area/105974971/east-grapefruit-rocks"] }
+ },
+ "ak_seed_of_redoubt_the": {
+  "_expect": { "name": "Seed of Redoubt, The", "region": "Alaska" },
+  "blurb": "A big, isolated beach boulder at Captain Cook State Recreation Area on the northern Kenai Peninsula, roughly a quarter mile along the shore from the picnic area. Ten problems climb the block, which stands over fifteen feet tall. Most are easy, with six at V0 and two at V1, then one around V4 and one around V5 for the stronger visitors. The rock is solid with plenty of holds, some of them sharp on the skin. Traffic is light, but this is a tidal beach, so check the tide and keep an eye on the water.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108219657/the-seed-of-redoubt", "https://mountainproject.com/area/108219460/capt-cook-state-recreation-area"] }
+ },
+ "_skipped": {
+  "ak_warm_ups": "no fetched page about this boulder area (Savage River / Marmot Rock Warm-Ups); only unrelated warm-up pages",
+  "ak_wedge_the": "only page found about a climbing area named The Wedge is the Montana Humbug Spires one (different location); no second Alaska page about the crag",
+  "ak_the_cragway_boulder": "no fetched page about the boulder itself; only the parent Cragway page mentions it"
+ },
+ "_conflicts": {
+  "ak_weekender_wall": "stored rock is sandstone, but https://www.mountainproject.com/area/109051313/weekender-wall describes gritty igneous intrusion rock"
+ }
+}

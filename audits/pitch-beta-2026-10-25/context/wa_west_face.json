@@ -1,0 +1,58 @@
+{
+ "id": "wa_west_face",
+ "name": "West Face",
+ "area_id": "wa_south_peak",
+ "discipline": "alpine",
+ "grade": "5.9+",
+ "pitches": 4,
+ "pitch_detail": [
+  {
+   "notes": "Left-side chimney start.",
+   "pitch": "P1"
+  },
+  {
+   "grade": "5.9+",
+   "notes": "Traverse right onto the face.",
+   "pitch": "P2"
+  },
+  {
+   "grade": "5.9+",
+   "notes": "Right-facing dihedral high on the route.",
+   "pitch": "P3"
+  },
+  {
+   "notes": "Finish up the face and left to the summit.",
+   "pitch": "P4"
+  }
+ ],
+ "rappel_detail": [
+  {
+   "n": 1,
+   "notes": "Rappel 1 of 2, about 35 m north, to the notch. A 35 m rappel needs two ropes or a 70 m rope.",
+   "anchor": "summit anchor (build or back up with cord)",
+   "hazards": [
+    "Do not plan on reversing the loose line of ascent."
+   ],
+   "lengthM": 35,
+   "station": "The summit, shared by every route on the peak."
+  },
+  {
+   "n": 2,
+   "notes": "Rappel 2 of 2, east onto the Blue Glacier.",
+   "anchor": "anchor at the notch (build or back up with cord)",
+   "hazards": [
+    "The last rappel can hang free over the moat at the foot of the face. Land beyond the lip."
+   ],
+   "lengthM": null,
+   "station": "The notch north of the summit."
+  }
+ ],
+ "rappels": "2 rappels off the shared summit: about 35 m north to the notch, then east onto the Blue Glacier",
+ "descent_text": null,
+ "approach": "The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of South Peak's granite faces; this is an experienced-mountaineers-only objective, not a roadside crag.",
+ "overview": "The only route on this face.",
+ "beta": null,
+ "gear": null,
+ "fa": "Cliff Leight and a partner, early 1990s",
+ "face": "West Face"
+}

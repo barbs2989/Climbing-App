@@ -1,0 +1,42 @@
+{
+ "applied": [
+  {
+   "id": "ut_fine_jade",
+   "column": "variations",
+   "path": [
+    0
+   ],
+   "fact": "Grade of the roof on the regular finish"
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "column": "overview",
+   "path": [],
+   "fact": "Pitch layout in the overview vs pitch_detail"
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "column": "overview",
+   "path": [],
+   "fact": "Pitch layout in the overview vs pitch_detail"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ut_fine_jade",
+   "before": {
+    "variations": [
+     "Traditional finish: short corner, a leftward hand-traverse (5.7), off-width (5.8), then left under a roof (5.9+)",
+     "Direct finish: short corner then face moves (5.11a)"
+    ]
+   }
+  },
+  {
+   "id": "wy_irene_s_arete",
+   "before": {
+    "overview": "A knife-edge ridge that goes almost straight up its crest, popular for its clean line, excellent stone and short approach. Friction slabs and a crack lead to a small belay basin, the fourth pitch is hard (a jam-and-lieback crack past a flake, or a traverse right under an overhang), then lieback cracks follow the near-vertical crest to a second step. The seventh pitch traverses left, crosses an overhang and laybacks to another step. The lower section can be skipped by traversing in from the left."
+   }
+  }
+ ]
+}

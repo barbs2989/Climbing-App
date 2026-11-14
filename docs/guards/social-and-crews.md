@@ -355,9 +355,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   by hand, which `check:date-locale` cannot see because it reads only `toLocale*String` calls), and
   a ⋯ button. Then the text (long posts clamp with *See more*), the photo grid, a counts line
   (reaction emoji + total, *N comments*) and one row: **Like · Comment**.
-  - **Like is the 👍 reaction (`solid`).** A tap toggles it; press-and-hold or right-click opens
-    every reaction, and so does the reaction count, so **no reaction needs a long press** (a
-    keyboard can reach all of them). Like carries `aria-pressed`, Comment `aria-expanded`:
+  - **Like is the 👍 reaction (`solid`).** A tap toggles it; resting the mouse on it, press-and-hold
+    or right-click opens **the reaction bar**, and so does the reaction count, so **no reaction needs a
+    long press** (a keyboard can reach all of them). **The bar is Facebook's (2026-11-05**, owner: "Emojis
+    for comment and discussion reactions should be added back … more like how Facebook does it"):
+    `ReactionPicker` is a floating pill of the 21 emoji (`REACTIONS[].e`), seven to a row, **no word
+    under each** (the word is the button's `aria-label`), anchored over the control that opened it,
+    your pick on a blue disc, the pointer swelling the one under it; nothing dims, a tap elsewhere,
+    Escape or a scroll closes it, and one the mouse opened closes when the mouse leaves. It is
+    `role="group"`, not a dialog, so the overlay scaffold no longer lists `reactPickerFor`.
+    `reactionTrigger` (same file) is the handler set that makes a button behave as Like does. The
+    count line stacks the top three emoji on small discs (`reactionEmoji`); the button shows your
+    emoji and its word once you have reacted, as Facebook's turns into *Haha*. Between 2026-10-25 and
+    then the picker was a bottom sheet of line icons over words. Like carries `aria-pressed`, Comment `aria-expanded`:
     `check:selected-state` measures that row behind the `postMenuFor` overlay.
   - **Photos: 1 full width, 2 side by side, 3 as one wide over two, 4 as a square, 5+ as a square
     whose last tile is "+N"** and shows them all. There is no photo viewer yet, so "+N" must reveal
@@ -399,9 +409,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **EVERY THREAD IS FACEBOOK'S (2026-10-15).** `Comments` in core is the ONE thread component: routes
   and their five tabs, areas, trip reports, photos and group posts. A change there reaches all of them.
   - **A comment is a grey bubble** (name + words), with a small line under it: *time · Like · Reply ·
-    React*. Reactions are a pill at the bubble's edge that opens the picker. Edit, Delete, Report,
-    Remove and **Block** live behind ⋯ (`menuFor`, a portalled sheet at z 9700 like `ReactionPicker`,
-    state local to `Comments` so the overlay scaffold, which reads App's state, has nothing to register).
+    React*. Reactions are a pill at the bubble's edge (the top emoji stacked, `reactionEmoji`) that
+    opens the reaction bar; Like opens it on hover, hold or right-click too (`reactionTrigger`), and
+    React shows the emoji you gave with its word. Edit, Delete, Report, Remove and **Block** live
+    behind ⋯ (`menuFor`, a portalled sheet at z 9700, the bar's depth, state local to `Comments`
+    so the overlay scaffold, which reads App's state, has nothing to register).
   - **Time is `commentWhen`**: *now / 5m / 3h / 2d*, then a date through `DLOCALE`; a tap spells out
     the day and time. Replies have a time now. `ago()` printed fixed English and stays for other callers.
   - **Sort: Most relevant (default) · Newest · Oldest.** Relevant = reactions + likes + 2 × replies,
@@ -799,6 +811,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     existing Partners-list switch (every RPC filters on `discoverable`), so no new control.
   - The example (seed) list stands down under Near my areas: seed climbers list no areas, and a
     "0 climbers found" header under a real list would be the seed path showing through.
+
+- **THE AREA DISCUSSION IS ON THE AREA PAGE ONLY (owner 2026-11-11, "Remove discussion from area maps").**
+  RoutesTab passes the thread to `DbAreaBrowser` as `areaDiscussion`; the browser draws `{areaDiscussion}` once,
+  right after `<AreaPage …/>`, so it never shows under the Map, the Route finder or Objectives, and it
+  switches in the same render as the screen. `check:area-surfaces` asserts the handoff (gated on
+  `areaCommentTargets.length`) and the single placement; the injection harness covers drawing it under
+  the Map, outside the area-page branch, and dropping the handoff. **Blind spot:** it reads the JSX
+  text, so a slot reached through some other variable name would not be seen.
 
 - **THE AREA PAGE, THE CRAG ROUTE PAGE AND THE LOGBOOK ALL REACH THE LISTING (0300, Step 5).**
   `PartnersHereCard` on every crag-family area page and its ancestors below the state ("12 climbers

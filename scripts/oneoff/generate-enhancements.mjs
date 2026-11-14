@@ -1,6 +1,7 @@
+import "../lib/load-env.mjs";
 // Generate detailed enhancement recommendations from audit findings
-const API_URL = "https://ofuofhojhbcrcahuotya.supabase.co/rest/v1";
-const ANON_KEY = "sb_publishable_Xeg2L1pOa5YK6RjTUuYvNA_7B0tfRr5";
+const API_URL = `${process.env.VITE_SUPABASE_URL}/rest/v1`;
+const ANON_KEY = process.env.VITE_SUPABASE_ANON_KEY;
 
 async function getDetailedHazardRoutes() {
   console.log("Fetching detailed hazard routes for recommendations...\n");

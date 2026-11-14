@@ -1,3 +1,4 @@
+import { fileHref } from "./lib/file-href.mjs";
 // Two questions about the climbing-time discount, and the second is the one that rots.
 //
 //   1. Does pitchedFraction() actually have the properties its comment claims -- never shortens
@@ -52,7 +53,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, pitchedFraction, techHrs } = await import(out);
+const { render, pitchedFraction, techHrs } = await import(fileHref(out));
 
 let fails = 0;
 const ck = (l, c) => { console.log("  " + (c ? "ok  " : "FAIL") + "  " + l); if (!c) fails++; };

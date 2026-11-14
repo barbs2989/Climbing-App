@@ -1,0 +1,54 @@
+{
+  "area_id": "wa_mount_constance",
+  "routes": [
+    {
+      "route_id": "wa_mount_constance_north_chimney",
+      "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Logged summits peak Jun-Sep (6:31, 7:39, 8:53, 9:41); route pages give June-October, with leftover snow in the canyon making travel easier in May-June but adding avalanche exposure; Finger Traverse best once ledges are dry." },
+      "track": { "aid": "2956652", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged as South Chute - Finger Traverse (22 Aug 2025), summited, report describes the Dosewallips washout, Lake Constance, Avalanche Canyon, notch, Finger Traverse and the rap station on the summit block, matching this route's text; track starts/ends 52-68 m from our trailhead pin and reaches the summit within 1 m." },
+      "otherTracksConsidered": [
+        { "aid": "2240551", "verdict": "same", "why": "Also South Chute + Finger Traverse, July 2023, complete; second-best (older, same line)." },
+        { "aid": "3352877", "verdict": "unsure", "why": "No logged route or report; line ends at summit but route identity unproven." },
+        { "aid": "3393202", "verdict": "unsure", "why": "Logged as Std South Chute (Finger Traverse) in report but no stored route name field; fewer points than the chosen one." },
+        { "aid": "2953091", "verdict": "different", "why": "West Arete, turned back short of the summit." },
+        { "aid": "2597658", "verdict": "unsure", "why": "Right line but start is mid-road 7 km from our pin (not complete round trip)." },
+        { "aid": "2271540", "verdict": "unsure", "why": "Track not a full round trip from the trailhead." },
+        { "aid": "1717658", "verdict": "unsure", "why": "Starts at Lake Constance only." },
+        { "aid": "2203645", "verdict": "offseason", "why": "28 May is more than a month before the Jun-Sep window and was a snow ascent." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 8, "text": "On the burned lower slope, flagging tape and cairns can pull you onto a worse side path; if you find yourself bushwhacking you are off the real trail, so back up to the climber's-right line over the logs (reports from July and August).", "aids": ["2240551","2956652"] },
+        { "field": "watch_out", "month": 8, "text": "Marmots and other critters at the Lake Constance camp steal small items such as socks left in boots (August).", "aids": ["2956652"] },
+        { "field": "watch_out", "month": 8, "text": "The gully up to the south col has about 200 ft of unavoidable rockfall exposure; stay clear of the fall line and avoid stopping in constrictions (late August).", "aids": ["3322091"] },
+        { "field": "monthBreakdown", "month": 8, "text": "By late August the only snow met was a short patch in the east-west notch, and snow gear went unused by parties that carried it.", "aids": ["2956652","2597658"] },
+        { "field": "monthBreakdown", "month": 7, "text": "In early July most Avalanche Canyon snow has melted, leaving a few easy snowfields between scree stretches.", "aids": ["2240551"] },
+        { "field": "monthBreakdown", "month": 6, "text": "In early June snow is continuous above the lake and soft enough that some parties managed without axe or crampons, though the runouts are poor.", "aids": ["2862639"] },
+        { "field": "pro_tips", "month": 8, "text": "At the summit block the easier line goes left, with good hand and footholds; a rap station sits on top if you prefer not to downclimb (July and August).", "aids": ["3393202","2956652"] },
+        { "field": "pro_tips", "month": 8, "text": "Gaiters help on the scree descent from the notch, which parties ski down in loose boulders; keep a group spread out.", "aids": ["3322091","2956652"] }
+      ]
+    },
+    {
+      "route_id": "wa_mount_constance_north_chute",
+      "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Route listings give June-October for the North Chute; shares the peak's Jun-Sep ascent peak; early-season snow adds avalanche exposure." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3352877", "verdict": "unsure", "why": "No route name or report; cannot show it climbed the North Chute." },
+        { "aid": "3393202", "verdict": "different", "why": "Report says South Chute." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_constance_west_arete",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Route listings give June-October; the only logged West Arete attempt was mid-August; stored Jul-Sep kept." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2953091", "verdict": "not-summited", "why": "West Arete logged but turned back below the summit; track starts at the lake, not the trailhead, ends 169 m from summit." }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "North Chimney (Standard Route) is the South Chute / Finger Traverse line. Peakbagger has no complete summited West Arete track."
+}

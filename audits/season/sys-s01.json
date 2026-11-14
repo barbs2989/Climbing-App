@@ -1,0 +1,1830 @@
+[
+ {
+  "id": "nv_red_rocks",
+  "name": "Red Rocks",
+  "region": "Nevada",
+  "inside": "Southern Nevada",
+  "lat": 36.1103116660956,
+  "lng": -115.470669894169,
+  "units": [
+   {
+    "id": "nv_first_pullout_calico_i",
+    "name": "First Pullout (Calico I)",
+    "routes": 390,
+    "open": false,
+    "lat": 36.1476397222222,
+    "lng": -115.428693333333
+   },
+   {
+    "id": "nv_second_pullout_calico_ii",
+    "name": "Second Pullout (Calico II)",
+    "routes": 293,
+    "open": false,
+    "lat": 36.1546741346154,
+    "lng": -115.43613125
+   },
+   {
+    "id": "nv_calico_basin",
+    "name": "Calico Basin",
+    "routes": 271,
+    "open": false,
+    "lat": 36.1529296339286,
+    "lng": -115.427426169643
+   },
+   {
+    "id": "nv_sandstone_quarry",
+    "name": "Sandstone Quarry",
+    "routes": 187,
+    "open": true,
+    "lat": 36.1664528042328,
+    "lng": -115.449502698413
+   },
+   {
+    "id": "nv_willow_spring",
+    "name": "Willow Spring",
+    "routes": 184,
+    "open": true,
+    "lat": 36.1580215789474,
+    "lng": -115.499441578947
+   },
+   {
+    "id": "nv_first_creek_canyon",
+    "name": "First Creek Canyon",
+    "routes": 170,
+    "open": true,
+    "lat": 36.079889375,
+    "lng": -115.47946875
+   },
+   {
+    "id": "nv_pine_creek_canyon",
+    "name": "Pine Creek Canyon",
+    "routes": 170,
+    "open": true,
+    "lat": 36.1246588095238,
+    "lng": -115.492916190476
+   },
+   {
+    "id": "nv_juniper_canyon",
+    "name": "Juniper Canyon",
+    "routes": 169,
+    "open": true,
+    "lat": 36.1145441666667,
+    "lng": -115.490864166667
+   },
+   {
+    "id": "nv_black_velvet_canyon",
+    "name": "Black Velvet Canyon",
+    "routes": 142,
+    "open": true,
+    "lat": 36.037802962963,
+    "lng": -115.465404444444
+   },
+   {
+    "id": "nv_oak_creek_canyon",
+    "name": "Oak Creek Canyon",
+    "routes": 131,
+    "open": true,
+    "lat": 36.1029338333333,
+    "lng": -115.490511666667
+   },
+   {
+    "id": "nv_icebox_canyon",
+    "name": "Icebox Canyon",
+    "routes": 90,
+    "open": true,
+    "lat": 36.1430814285714,
+    "lng": -115.494689285714
+   },
+   {
+    "id": "nv_white_rock_spring",
+    "name": "White Rock Spring",
+    "routes": 61,
+    "open": true,
+    "lat": 36.169308,
+    "lng": -115.489382
+   },
+   {
+    "id": "nv_southern_outcrops",
+    "name": "Southern Outcrops",
+    "routes": 55,
+    "open": true,
+    "lat": 36.00263,
+    "lng": -115.46417
+   },
+   {
+    "id": "nv_mt_wilson",
+    "name": "Mt. Wilson",
+    "routes": 54,
+    "open": true,
+    "lat": 36.0893216666667,
+    "lng": -115.479376666667
+   },
+   {
+    "id": "nv_windy_peak",
+    "name": "Windy Peak",
+    "routes": 33,
+    "open": true,
+    "lat": 36.018446,
+    "lng": -115.468394
+   },
+   {
+    "id": "nv_calico_peaks",
+    "name": "Calico Peaks",
+    "routes": 21,
+    "open": true,
+    "lat": 36.1590733333333,
+    "lng": -115.437656666667
+   },
+   {
+    "id": "nv_mud_spring_canyon",
+    "name": "Mud Spring Canyon",
+    "routes": 16,
+    "open": true,
+    "lat": 36.027525,
+    "lng": -115.466725
+   },
+   {
+    "id": "nv_sandstone_canyon",
+    "name": "Sandstone Canyon",
+    "routes": 14,
+    "open": true,
+    "lat": 36.0601466666667,
+    "lng": -115.47407
+   }
+  ]
+ },
+ {
+  "id": "co_south_platte",
+  "name": "South Platte",
+  "region": "Colorado",
+  "inside": "Colorado",
+  "lat": 39.2023836438042,
+  "lng": -105.311530118032,
+  "units": [
+   {
+    "id": "co_devil_s_head",
+    "name": "Devil's Head",
+    "routes": 576,
+    "open": false,
+    "lat": 39.2601868600733,
+    "lng": -105.10071983956
+   },
+   {
+    "id": "co_elevenmile_canyon",
+    "name": "Elevenmile Canyon",
+    "routes": 266,
+    "open": false,
+    "lat": 38.9287265882353,
+    "lng": -105.418796058824
+   },
+   {
+    "id": "co_goose_creek_molly_gulch_campground",
+    "name": "Goose Creek/Molly Gulch Campground",
+    "routes": 163,
+    "open": true,
+    "lat": 39.1997744202898,
+    "lng": -105.326747789855
+   },
+   {
+    "id": "co_turkey_rocks",
+    "name": "Turkey Rocks",
+    "routes": 158,
+    "open": true,
+    "lat": 39.11911,
+    "lng": -105.239636
+   },
+   {
+    "id": "co_cathedral_spires_area",
+    "name": "Cathedral Spires Area",
+    "routes": 153,
+    "open": true,
+    "lat": 39.4175651629073,
+    "lng": -105.261102243108
+   },
+   {
+    "id": "co_buffalo_creek",
+    "name": "Buffalo Creek",
+    "routes": 106,
+    "open": true,
+    "lat": 39.3535072072704,
+    "lng": -105.277990523916
+   },
+   {
+    "id": "co_deckers",
+    "name": "Deckers",
+    "routes": 90,
+    "open": true,
+    "lat": 39.3608054545454,
+    "lng": -105.175671818182
+   },
+   {
+    "id": "co_wigwam_creek_lost_creek_wilderness",
+    "name": "Wigwam Creek/Lost Creek Wilderness",
+    "routes": 73,
+    "open": true,
+    "lat": 39.2636792763158,
+    "lng": -105.434768355263
+   },
+   {
+    "id": "co_pine_area",
+    "name": "Pine Area",
+    "routes": 68,
+    "open": true,
+    "lat": 39.417048,
+    "lng": -105.320512
+   },
+   {
+    "id": "co_rampart_range_road",
+    "name": "Rampart Range Road",
+    "routes": 53,
+    "open": true,
+    "lat": 39.1551402708333,
+    "lng": -105.019553377188
+   },
+   {
+    "id": "co_staunton_state_park",
+    "name": "Staunton State Park",
+    "routes": 52,
+    "open": true,
+    "lat": 39.5117293401154,
+    "lng": -105.39644278456
+   },
+   {
+    "id": "co_castle_view_crags_boulders",
+    "name": "Castle View Crags & Boulders",
+    "routes": 48,
+    "open": true,
+    "lat": 39.366178,
+    "lng": -105.383394
+   },
+   {
+    "id": "co_wonderland_2",
+    "name": "Wonderland",
+    "routes": 46,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "co_west_creek",
+    "name": "West Creek",
+    "routes": 35,
+    "open": true,
+    "lat": 39.1611519444444,
+    "lng": -105.206608979469
+   },
+   {
+    "id": "co_sedalia_crack_bouldering",
+    "name": "Sedalia Crack Bouldering",
+    "routes": 34,
+    "open": true,
+    "lat": 39.37691,
+    "lng": -105.09801
+   },
+   {
+    "id": "co_crystal_fortress",
+    "name": "Crystal Fortress",
+    "routes": 29,
+    "open": true,
+    "lat": 39.02396,
+    "lng": -105.30554
+   },
+   {
+    "id": "co_noddle_heads",
+    "name": "Noddle Heads",
+    "routes": 20,
+    "open": true,
+    "lat": 39.32084,
+    "lng": -105.14452
+   },
+   {
+    "id": "co_dog_rocks",
+    "name": "Dog Rocks",
+    "routes": 18,
+    "open": true,
+    "lat": 39.086875,
+    "lng": -105.405015
+   },
+   {
+    "id": "co_woodland_park",
+    "name": "Woodland Park",
+    "routes": 10,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "co_tarryall",
+    "name": "Tarryall",
+    "routes": 8,
+    "open": true,
+    "lat": 39.1451133333333,
+    "lng": -105.44699
+   },
+   {
+    "id": "co_elevenmile_reservoir",
+    "name": "Elevenmile Reservoir",
+    "routes": 6,
+    "open": true,
+    "lat": 38.970075,
+    "lng": -105.509305
+   },
+   {
+    "id": "co_saylor_park_boulders",
+    "name": "Saylor Park Boulders",
+    "routes": 2,
+    "open": true,
+    "lat": 39.1253,
+    "lng": -105.0174
+   },
+   {
+    "id": "co_am_pm_area",
+    "name": "AM/PM Area",
+    "routes": 2,
+    "open": true,
+    "lat": 39.09605,
+    "lng": -105.39322
+   },
+   {
+    "id": "co_slacker_dome_area",
+    "name": "Slacker Dome Area",
+    "routes": 1,
+    "open": true,
+    "lat": 39.4057,
+    "lng": -105.3682
+   },
+   {
+    "id": "co_cheesman_canyon",
+    "name": "Cheesman Canyon",
+    "routes": 1,
+    "open": true,
+    "lat": 39.22206,
+    "lng": -105.26262
+   }
+  ]
+ },
+ {
+  "id": "ut_southeast_utah",
+  "name": "Southeast Utah",
+  "region": "Utah",
+  "inside": "Utah",
+  "lat": 38.3733813915562,
+  "lng": -109.651407293286,
+  "units": [
+   {
+    "id": "ut_indian_creek",
+    "name": "Indian Creek",
+    "routes": 1623,
+    "open": false,
+    "lat": 38.0694290357143,
+    "lng": -109.572404464286
+   },
+   {
+    "id": "ut_kane_springs_canyon",
+    "name": "Kane Springs Canyon",
+    "routes": 176,
+    "open": true,
+    "lat": 38.506711,
+    "lng": -109.602967125
+   },
+   {
+    "id": "ut_river_road",
+    "name": "River Road",
+    "routes": 93,
+    "open": true,
+    "lat": 38.5699938088235,
+    "lng": -109.375969460784
+   },
+   {
+    "id": "ut_la_sal_mountains",
+    "name": "La Sal Mountains",
+    "routes": 89,
+    "open": true,
+    "lat": 38.525919672619,
+    "lng": -109.324473571429
+   },
+   {
+    "id": "ut_blanding",
+    "name": "Blanding",
+    "routes": 80,
+    "open": true,
+    "lat": 37.6431327083333,
+    "lng": -109.585296458333
+   },
+   {
+    "id": "ut_arches_national_park",
+    "name": "Arches National Park",
+    "routes": 78,
+    "open": true,
+    "lat": 38.676624625,
+    "lng": -109.589148375
+   },
+   {
+    "id": "ut_fisher_towers",
+    "name": "Fisher Towers",
+    "routes": 62,
+    "open": true,
+    "lat": 38.7240735,
+    "lng": -109.304783
+   },
+   {
+    "id": "ut_valley_of_the_gods",
+    "name": "Valley of the Gods",
+    "routes": 61,
+    "open": true,
+    "lat": 37.2818362962963,
+    "lng": -109.837456296296
+   },
+   {
+    "id": "ut_potash_road",
+    "name": "Potash Road",
+    "routes": 53,
+    "open": true,
+    "lat": 38.5694115178571,
+    "lng": -109.627225714286
+   },
+   {
+    "id": "ut_castle_valley",
+    "name": "Castle Valley",
+    "routes": 51,
+    "open": true,
+    "lat": 38.6690857142857,
+    "lng": -109.391015714286
+   },
+   {
+    "id": "ut_tusher_canyon",
+    "name": "Tusher Canyon",
+    "routes": 46,
+    "open": true,
+    "lat": 38.6815575,
+    "lng": -109.749590833333
+   },
+   {
+    "id": "ut_state_highway_313",
+    "name": "State Highway 313",
+    "routes": 43,
+    "open": true,
+    "lat": 38.6224153571429,
+    "lng": -109.71666297619
+   },
+   {
+    "id": "ut_harts_draw",
+    "name": "Harts Draw",
+    "routes": 40,
+    "open": true,
+    "lat": 38.174005,
+    "lng": -109.520635
+   },
+   {
+    "id": "ut_moab_rim_area",
+    "name": "Moab Rim Area",
+    "routes": 39,
+    "open": true,
+    "lat": 38.5462233333333,
+    "lng": -109.550155
+   },
+   {
+    "id": "ut_sunshine_wall",
+    "name": "Sunshine Wall",
+    "routes": 38,
+    "open": true,
+    "lat": 38.8565088888889,
+    "lng": -109.736067777778
+   },
+   {
+    "id": "ut_island_in_the_sky",
+    "name": "Island In The Sky",
+    "routes": 35,
+    "open": true,
+    "lat": 38.4106584821429,
+    "lng": -109.878680708333
+   },
+   {
+    "id": "ut_lost_world_butte_area",
+    "name": "Lost World Butte Area",
+    "routes": 32,
+    "open": true,
+    "lat": 38.69515,
+    "lng": -109.923591428571
+   },
+   {
+    "id": "ut_191_south",
+    "name": "191 South",
+    "routes": 23,
+    "open": true,
+    "lat": 38.1772988392857,
+    "lng": -109.443634642857
+   },
+   {
+    "id": "ut_labyrinth_canyon",
+    "name": "Labyrinth Canyon",
+    "routes": 18,
+    "open": true,
+    "lat": 38.614046,
+    "lng": -110.04438
+   },
+   {
+    "id": "ut_lockhart_basin",
+    "name": "Lockhart Basin",
+    "routes": 16,
+    "open": true,
+    "lat": 38.4011616666667,
+    "lng": -109.651711666667
+   },
+   {
+    "id": "ut_sand_flats",
+    "name": "Sand Flats",
+    "routes": 10,
+    "open": true,
+    "lat": 38.572855,
+    "lng": -109.451348333333
+   },
+   {
+    "id": "ut_comb_ridge",
+    "name": "Comb Ridge",
+    "routes": 9,
+    "open": true,
+    "lat": 37.3869714285714,
+    "lng": -109.66377
+   },
+   {
+    "id": "ut_ken_s_lake",
+    "name": "Ken's Lake",
+    "routes": 9,
+    "open": true,
+    "lat": 38.482945,
+    "lng": -109.4089025
+   },
+   {
+    "id": "ut_onion_creek",
+    "name": "Onion Creek",
+    "routes": 9,
+    "open": true,
+    "lat": 38.7042644444444,
+    "lng": -109.301413015873
+   },
+   {
+    "id": "ut_spring_canyon_2",
+    "name": "Spring Canyon",
+    "routes": 6,
+    "open": true,
+    "lat": 38.628212,
+    "lng": -109.991588
+   },
+   {
+    "id": "ut_red_canyon",
+    "name": "Red Canyon",
+    "routes": 1,
+    "open": true,
+    "lat": 37.49401,
+    "lng": -110.18846
+   },
+   {
+    "id": "ut_hammond_canyon",
+    "name": "Hammond Canyon",
+    "routes": 1,
+    "open": true,
+    "lat": 37.7057,
+    "lng": -109.803
+   }
+  ]
+ },
+ {
+  "id": "co_nine_mile_bouldering",
+  "name": "Nine Mile Bouldering",
+  "region": "Colorado",
+  "inside": "Nine Mile Hill",
+  "lat": 38.9271826950717,
+  "lng": -108.490750904731,
+  "units": [
+   {
+    "id": "co_black_wave_boulder_area",
+    "name": "Black Wave Boulder Area",
+    "routes": 153,
+    "open": true,
+    "lat": 38.9030002,
+    "lng": -108.4984856
+   },
+   {
+    "id": "co_reba_boulders",
+    "name": "Reba Boulders",
+    "routes": 140,
+    "open": true,
+    "lat": 38.9470177777778,
+    "lng": -108.480545333333
+   },
+   {
+    "id": "co_bone_park_boulder_area",
+    "name": "Bone Park Boulder Area",
+    "routes": 123,
+    "open": true,
+    "lat": 38.9301445714286,
+    "lng": -108.490192857143
+   },
+   {
+    "id": "co_rock_garden_boulder_area",
+    "name": "Rock Garden Boulder Area",
+    "routes": 94,
+    "open": true,
+    "lat": 38.94143925,
+    "lng": -108.48433375
+   },
+   {
+    "id": "co_triangle_boulder_area",
+    "name": "Triangle Boulder Area",
+    "routes": 92,
+    "open": true,
+    "lat": 38.9242265972222,
+    "lng": -108.49340125
+   },
+   {
+    "id": "co_texas_boulder_area",
+    "name": "Texas Boulder Area",
+    "routes": 84,
+    "open": true,
+    "lat": 38.9555905128205,
+    "lng": -108.47689025641
+   },
+   {
+    "id": "co_dave_loves_donna_boulders",
+    "name": "Dave Loves Donna Boulders",
+    "routes": 82,
+    "open": true,
+    "lat": 38.9181137037037,
+    "lng": -108.494460740741
+   },
+   {
+    "id": "co_late_bloomer_boulder_area",
+    "name": "Late Bloomer Boulder Area",
+    "routes": 55,
+    "open": true,
+    "lat": 38.973171875,
+    "lng": -108.465704375
+   },
+   {
+    "id": "co_zephyr_boulders",
+    "name": "Zephyr Boulders",
+    "routes": 46,
+    "open": true,
+    "lat": 38.8805828571429,
+    "lng": -108.50654047619
+   },
+   {
+    "id": "co_pebbleton_boulder_area",
+    "name": "Pebbleton Boulder Area",
+    "routes": 45,
+    "open": true,
+    "lat": 38.8964175,
+    "lng": -108.502356
+   },
+   {
+    "id": "co_dirty_dozen_boulder_area",
+    "name": "Dirty Dozen Boulder Area",
+    "routes": 37,
+    "open": true,
+    "lat": 38.9089976923077,
+    "lng": -108.495227692308
+   },
+   {
+    "id": "co_area_51_boulder_area",
+    "name": "Area 51 Boulder Area",
+    "routes": 32,
+    "open": true,
+    "lat": 38.91202,
+    "lng": -108.494386363636
+   },
+   {
+    "id": "co_crack_hole_area",
+    "name": "Crack Hole Area",
+    "routes": 31,
+    "open": true,
+    "lat": 38.950903,
+    "lng": -108.477021
+   },
+   {
+    "id": "co_freight_yard_boulder_area",
+    "name": "Freight Yard Boulder Area",
+    "routes": 28,
+    "open": true,
+    "lat": 38.9720525,
+    "lng": -108.46098
+   },
+   {
+    "id": "co_nine_style_boulder_area",
+    "name": "Nine Style Boulder Area",
+    "routes": 20,
+    "open": true,
+    "lat": 38.961754,
+    "lng": -108.47571
+   },
+   {
+    "id": "co_north_east_creek_boulder_area",
+    "name": "North East Creek Boulder Area",
+    "routes": 20,
+    "open": true,
+    "lat": 38.9154633333333,
+    "lng": -108.506589166667
+   },
+   {
+    "id": "co_animal_farm_boulder_area",
+    "name": "Animal Farm Boulder Area",
+    "routes": 13,
+    "open": true,
+    "lat": 38.923925,
+    "lng": -108.4916875
+   },
+   {
+    "id": "co_cattle_guard_sign_parking",
+    "name": "Cattle Guard Sign Parking",
+    "routes": 8,
+    "open": true,
+    "lat": 38.957738,
+    "lng": -108.4751
+   },
+   {
+    "id": "co_pool_of_plenty_boulder_area",
+    "name": "Pool of Plenty Boulder Area",
+    "routes": 1,
+    "open": true,
+    "lat": 38.9005438573336,
+    "lng": -108.503220840008
+   }
+  ]
+ },
+ {
+  "id": "wi_devil_s_lake",
+  "name": "Devil's Lake",
+  "region": "Wisconsin",
+  "inside": "Baraboo Range",
+  "lat": 43.416549461523,
+  "lng": -89.7234281791586,
+  "units": [
+   {
+    "id": "wi_east_bluff_04_east_rampart",
+    "name": "East Bluff 04 - East Rampart",
+    "routes": 214,
+    "open": false,
+    "lat": 43.4135276470588,
+    "lng": -89.7136223529412
+   },
+   {
+    "id": "wi_east_bluff_03_west_of_the_quarry",
+    "name": "East Bluff 03 - West of the Quarry",
+    "routes": 156,
+    "open": true,
+    "lat": 43.4125123076923,
+    "lng": -89.7057438461538
+   },
+   {
+    "id": "wi_east_bluff_07_railroad_tracks",
+    "name": "East Bluff 07 - Railroad Tracks",
+    "routes": 107,
+    "open": true,
+    "lat": 43.4173225,
+    "lng": -89.72664625
+   },
+   {
+    "id": "wi_east_bluff_02_east_of_the_quarry",
+    "name": "East Bluff 02 - East of the Quarry",
+    "routes": 96,
+    "open": true,
+    "lat": 43.413023,
+    "lng": -89.6957
+   },
+   {
+    "id": "wi_west_bluff_02_misery_rocks_the_pantry",
+    "name": "West Bluff 02 - Misery Rocks & The Pantry",
+    "routes": 77,
+    "open": true,
+    "lat": 43.41658625,
+    "lng": -89.7384175
+   },
+   {
+    "id": "wi_devil_s_lake_bouldering",
+    "name": "Devil's Lake Bouldering",
+    "routes": 64,
+    "open": true,
+    "lat": 43.4175784662994,
+    "lng": -89.7174814575781
+   },
+   {
+    "id": "wi_east_bluff_01_sandstone_area",
+    "name": "East Bluff 01 - Sandstone Area",
+    "routes": 60,
+    "open": true,
+    "lat": 43.41264,
+    "lng": -89.683125
+   },
+   {
+    "id": "wi_west_bluff_03_cleo_amphitheater",
+    "name": "West Bluff 03 - Cleo Amphitheater",
+    "routes": 59,
+    "open": true,
+    "lat": 43.41739,
+    "lng": -89.7383016666667
+   },
+   {
+    "id": "wi_west_bluff_07_north_woods",
+    "name": "West Bluff 07 - North Woods",
+    "routes": 56,
+    "open": true,
+    "lat": 43.4270733333333,
+    "lng": -89.7367233333333
+   },
+   {
+    "id": "wi_east_bluff_08_north_end",
+    "name": "East Bluff 08 - North End",
+    "routes": 52,
+    "open": true,
+    "lat": 43.4242866666667,
+    "lng": -89.72482
+   },
+   {
+    "id": "wi_east_bluff_05_potholes_area",
+    "name": "East Bluff 05 - Potholes Area",
+    "routes": 51,
+    "open": true,
+    "lat": 43.414022,
+    "lng": -89.71947
+   },
+   {
+    "id": "wi_west_bluff_06_west_bluff_towers",
+    "name": "West Bluff 06 - West Bluff Towers",
+    "routes": 42,
+    "open": true,
+    "lat": 43.4234936363636,
+    "lng": -89.7375018181818
+   },
+   {
+    "id": "wi_east_bluff_06_balanced_rock",
+    "name": "East Bluff 06 - Balanced Rock",
+    "routes": 39,
+    "open": true,
+    "lat": 43.4146975,
+    "lng": -89.724495
+   },
+   {
+    "id": "wi_west_bluff_04_great_tower_area",
+    "name": "West Bluff 04 - Great Tower Area",
+    "routes": 34,
+    "open": true,
+    "lat": 43.418866,
+    "lng": -89.7375
+   },
+   {
+    "id": "wi_linkups_contrivances_oddities_and_triflings",
+    "name": "Linkups, Contrivances, Oddities and Triflings",
+    "routes": 29,
+    "open": true,
+    "lat": 43.41474,
+    "lng": -89.727088
+   },
+   {
+    "id": "wi_west_bluff_05_west_rampart",
+    "name": "West Bluff 05 - West Rampart",
+    "routes": 22,
+    "open": true,
+    "lat": 43.4208093333333,
+    "lng": -89.7382093333333
+   },
+   {
+    "id": "wi_south_bluff_towers",
+    "name": "South Bluff Towers",
+    "routes": 6,
+    "open": true,
+    "lat": 43.4042266666667,
+    "lng": -89.7175466666667
+   },
+   {
+    "id": "wi_west_bluff_01_stettner_rocks",
+    "name": "West Bluff 01 - Stettner Rocks",
+    "routes": 3,
+    "open": true,
+    "lat": 43.415095,
+    "lng": -89.739315
+   }
+  ]
+ },
+ {
+  "id": "bc_skaha_bluffs",
+  "name": "Skaha Bluffs",
+  "region": "British Columbia",
+  "inside": "Okanagan",
+  "lat": null,
+  "lng": null,
+  "units": [
+   {
+    "id": "bc_red_tail_group",
+    "name": "Red Tail Group",
+    "routes": 106,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_northeastern_crags",
+    "name": "Northeastern Crags",
+    "routes": 93,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_gillies_creek",
+    "name": "Gillies Creek",
+    "routes": 90,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_evergreen_drive_crags",
+    "name": "Evergreen Drive Crags",
+    "routes": 89,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_southern_crags",
+    "name": "Southern Crags",
+    "routes": 86,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_the_fortress",
+    "name": "The Fortress",
+    "routes": 83,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_doctors_group",
+    "name": "Doctors' Group",
+    "routes": 80,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_small_eastern_crags",
+    "name": "Small Eastern Crags",
+    "routes": 78,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_white_walls",
+    "name": "White Walls",
+    "routes": 71,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_grand_canyon",
+    "name": "Grand Canyon",
+    "routes": 71,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_maternal_group",
+    "name": "Maternal Group",
+    "routes": 50,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "bc_northern_crags",
+    "name": "Northern Crags",
+    "routes": 49,
+    "open": true,
+    "lat": null,
+    "lng": null
+   }
+  ]
+ },
+ {
+  "id": "ny_adirondacks",
+  "name": "Adirondacks",
+  "region": "New York",
+  "inside": "New York",
+  "lat": 44.0461038926855,
+  "lng": -74.0404148859623,
+  "units": [
+   {
+    "id": "ny_d_keene_valley_and_chapel_pond",
+    "name": "Keene Valley and Chapel Pond",
+    "routes": 200,
+    "open": false,
+    "lat": 44.1525816666667,
+    "lng": -73.7261305555556
+   },
+   {
+    "id": "ny_e_high_peaks_region",
+    "name": "High Peaks Region",
+    "routes": 194,
+    "open": false,
+    "lat": 44.1394777388167,
+    "lng": -73.8635638398268
+   },
+   {
+    "id": "ny_h_southern_mountains",
+    "name": "Southern Mountains",
+    "routes": 159,
+    "open": true,
+    "lat": 43.2472942513369,
+    "lng": -74.4442988146168
+   },
+   {
+    "id": "ny_b_chapel_pond_pass",
+    "name": "Chapel Pond Pass",
+    "routes": 154,
+    "open": true,
+    "lat": 44.1372804807692,
+    "lng": -73.7424007692308
+   },
+   {
+    "id": "ny_f_lake_george_region",
+    "name": "Lake George Region",
+    "routes": 95,
+    "open": true,
+    "lat": 43.587669122449,
+    "lng": -73.6322061785714
+   },
+   {
+    "id": "ny_c_keene_region",
+    "name": "Keene Region",
+    "routes": 92,
+    "open": true,
+    "lat": 44.234647,
+    "lng": -73.799878
+   },
+   {
+    "id": "ny_a_lake_champlain_region",
+    "name": "Lake Champlain Region",
+    "routes": 89,
+    "open": true,
+    "lat": 44.0851015350877,
+    "lng": -73.6492844736842
+   },
+   {
+    "id": "ny_i_old_forge_region",
+    "name": "Old Forge Region",
+    "routes": 76,
+    "open": true,
+    "lat": 43.7635083333333,
+    "lng": -74.9748483333333
+   },
+   {
+    "id": "ny_g_indian_lake_region",
+    "name": "Indian Lake Region",
+    "routes": 67,
+    "open": true,
+    "lat": 43.6963461582341,
+    "lng": -74.1969039325397
+   },
+   {
+    "id": "ny_k_northern_region",
+    "name": "Northern Region",
+    "routes": 65,
+    "open": true,
+    "lat": 44.4075206965241,
+    "lng": -74.2979862709447
+   },
+   {
+    "id": "ny_d_wilmington_region",
+    "name": "Wilmington Region",
+    "routes": 57,
+    "open": true,
+    "lat": 44.3379255555556,
+    "lng": -73.8713233333333
+   },
+   {
+    "id": "ny_g_the_southern_region",
+    "name": "The Southern Region",
+    "routes": 21,
+    "open": true,
+    "lat": 43.3251733333333,
+    "lng": -74.4884733333333
+   },
+   {
+    "id": "ny_f_the_central_region",
+    "name": "The Central Region",
+    "routes": 14,
+    "open": true,
+    "lat": 43.7505062962963,
+    "lng": -73.8747644444444
+   },
+   {
+    "id": "ny_e_interior_high_peaks",
+    "name": "Interior High Peaks",
+    "routes": 13,
+    "open": true,
+    "lat": 44.117396,
+    "lng": -73.895342
+   },
+   {
+    "id": "ny_b_climbs_near_lake_placid",
+    "name": "Climbs near Lake Placid",
+    "routes": 8,
+    "open": true,
+    "lat": 44.3629,
+    "lng": -73.8879466666667
+   },
+   {
+    "id": "ny_point_au_roche",
+    "name": "Point Au Roche",
+    "routes": 6,
+    "open": true,
+    "lat": 44.77153,
+    "lng": -73.38953
+   },
+   {
+    "id": "ny_a_northeast",
+    "name": "Northeast",
+    "routes": 5,
+    "open": true,
+    "lat": 44.3805375,
+    "lng": -73.5616983333333
+   },
+   {
+    "id": "ny_adirondack_slides",
+    "name": "Adirondack Slides",
+    "routes": 4,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "ny_j_cranberry_lake",
+    "name": "Cranberry Lake",
+    "routes": 3,
+    "open": true,
+    "lat": 44.1049158333333,
+    "lng": -74.6469316666667
+   },
+   {
+    "id": "ny_c_northwest",
+    "name": "Northwest",
+    "routes": 1,
+    "open": true,
+    "lat": 44.5138425,
+    "lng": -74.67931
+   }
+  ]
+ },
+ {
+  "id": "wa_icicle_creek",
+  "name": "Icicle Creek",
+  "region": "Washington",
+  "inside": "Leavenworth",
+  "lat": 47.5511488740975,
+  "lng": -120.739434687215,
+  "units": [
+   {
+    "id": "wa_bouldering_in_icicle_creek",
+    "name": "Bouldering in Icicle Creek",
+    "routes": 94,
+    "open": true,
+    "lat": 47.5514971321734,
+    "lng": -120.743511180899
+   },
+   {
+    "id": "wa_purina_and_careno_area",
+    "name": "Purina and Careno Area",
+    "routes": 71,
+    "open": true,
+    "lat": 47.548978,
+    "lng": -120.705672
+   },
+   {
+    "id": "wa_lower_icicle_canyon",
+    "name": "Lower Icicle Canyon",
+    "routes": 68,
+    "open": true,
+    "lat": 47.545906,
+    "lng": -120.702735
+   },
+   {
+    "id": "wa_carnival_crag",
+    "name": "Carnival Crag",
+    "routes": 59,
+    "open": true,
+    "lat": 47.55582,
+    "lng": -120.76768
+   },
+   {
+    "id": "wa_bridge_creek_area",
+    "name": "Bridge Creek Area",
+    "routes": 54,
+    "open": true,
+    "lat": 47.5661838461538,
+    "lng": -120.780656923077
+   },
+   {
+    "id": "wa_snow_creek_area",
+    "name": "Snow Creek Area",
+    "routes": 53,
+    "open": true,
+    "lat": 47.5322266666667,
+    "lng": -120.716923333333
+   },
+   {
+    "id": "wa_duty_dome_warrior_wall_peek_a_boo_area",
+    "name": "Duty Dome - Warrior Wall - Peek-a-boo Area",
+    "routes": 49,
+    "open": true,
+    "lat": 47.5486214285714,
+    "lng": -120.747041428571
+   },
+   {
+    "id": "wa_clamshell_cave",
+    "name": "Clamshell Cave",
+    "routes": 44,
+    "open": true,
+    "lat": 47.54524,
+    "lng": -120.72914
+   },
+   {
+    "id": "wa_eight_mile_area",
+    "name": "Eight Mile Area",
+    "routes": 42,
+    "open": true,
+    "lat": 47.5531028571429,
+    "lng": -120.763502857143
+   },
+   {
+    "id": "wa_barney_s_rubble",
+    "name": "Barney's Rubble",
+    "routes": 36,
+    "open": true,
+    "lat": 47.54333,
+    "lng": -120.73567
+   },
+   {
+    "id": "wa_playground_point",
+    "name": "Playground Point",
+    "routes": 34,
+    "open": true,
+    "lat": 47.54314,
+    "lng": -120.72265
+   },
+   {
+    "id": "wa_clamshell",
+    "name": "Clamshell",
+    "routes": 31,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "wa_fourth_of_july_area",
+    "name": "Fourth of July Area",
+    "routes": 30,
+    "open": true,
+    "lat": 47.5697425,
+    "lng": -120.776565
+   },
+   {
+    "id": "wa_domestic_dome_area",
+    "name": "Domestic Dome Area",
+    "routes": 30,
+    "open": true,
+    "lat": 47.5449633333333,
+    "lng": -120.739053333333
+   },
+   {
+    "id": "wa_hammerhead_and_nearby_crags_not_playground",
+    "name": "Hammerhead and nearby crags (not Playground)",
+    "routes": 30,
+    "open": true,
+    "lat": 47.5434594444444,
+    "lng": -120.724623888889
+   },
+   {
+    "id": "wa_little_italy_area",
+    "name": "Little Italy Area",
+    "routes": 28,
+    "open": true,
+    "lat": 47.571242,
+    "lng": -120.785604
+   },
+   {
+    "id": "wa_madsen_s_buttress",
+    "name": "Madsen's Buttress",
+    "routes": 25,
+    "open": true,
+    "lat": 47.5427,
+    "lng": -120.7106
+   },
+   {
+    "id": "wa_bebop_dinky_secret_crags",
+    "name": "Bebop-Dinky-Secret Crags",
+    "routes": 24,
+    "open": true,
+    "lat": 47.5427,
+    "lng": -120.7106
+   },
+   {
+    "id": "wa_mountaineer_s_dome_and_contractor_s_areas",
+    "name": "Mountaineer's Dome and Contractor's Areas",
+    "routes": 18,
+    "open": true,
+    "lat": 47.547055,
+    "lng": -120.698315
+   },
+   {
+    "id": "wa_scuttlebuttress_crags",
+    "name": "Scuttlebuttress Crags",
+    "routes": 15,
+    "open": true,
+    "lat": 47.55936,
+    "lng": -120.7912
+   },
+   {
+    "id": "wa_mountaineer_s_and_contractor_s_areas",
+    "name": "Mountaineer's and Contractor's Areas",
+    "routes": 9,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "wa_lower_snow_creek_area",
+    "name": "Lower Snow Creek area",
+    "routes": 7,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "wa_icicle_buttress_and_bob_s_wall",
+    "name": "Icicle Buttress and Bob's Wall",
+    "routes": 7,
+    "open": true,
+    "lat": 47.548625,
+    "lng": -120.751095
+   },
+   {
+    "id": "wa_crags_below_bathtub",
+    "name": "Crags Below Bathtub",
+    "routes": 6,
+    "open": true,
+    "lat": 47.57272,
+    "lng": -120.780696666667
+   },
+   {
+    "id": "wa_givler_s_magic_domes",
+    "name": "Givler's & Magic Domes",
+    "routes": 5,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "wa_candyland",
+    "name": "Candyland",
+    "routes": 3,
+    "open": true,
+    "lat": 47.55703,
+    "lng": -120.761175
+   }
+  ]
+ },
+ {
+  "id": "co_durango",
+  "name": "Durango",
+  "region": "Colorado",
+  "inside": "Colorado",
+  "lat": 37.4055044638551,
+  "lng": -107.870100648233,
+  "units": [
+   {
+    "id": "co_sailing_hawks",
+    "name": "Sailing Hawks",
+    "routes": 227,
+    "open": false,
+    "lat": 37.3119151315789,
+    "lng": -107.884555087719
+   },
+   {
+    "id": "co_east_animas",
+    "name": "East Animas",
+    "routes": 173,
+    "open": true,
+    "lat": 37.3201663636364,
+    "lng": -107.834599090909
+   },
+   {
+    "id": "co_cascade_canyon",
+    "name": "Cascade Canyon",
+    "routes": 93,
+    "open": true,
+    "lat": 37.6578866666667,
+    "lng": -107.809483333333
+   },
+   {
+    "id": "co_turtle_lake",
+    "name": "Turtle Lake",
+    "routes": 80,
+    "open": true,
+    "lat": 37.3334579166667,
+    "lng": -107.88423875
+   },
+   {
+    "id": "co_lemon_reservoir",
+    "name": "Lemon Reservoir",
+    "routes": 74,
+    "open": true,
+    "lat": 37.46445,
+    "lng": -107.6788
+   },
+   {
+    "id": "co_vallecito_crags",
+    "name": "Vallecito Crags",
+    "routes": 73,
+    "open": true,
+    "lat": 37.48508875,
+    "lng": -107.531765
+   },
+   {
+    "id": "co_area_071",
+    "name": "Area 071",
+    "routes": 71,
+    "open": true,
+    "lat": 37.342942,
+    "lng": -107.801398
+   },
+   {
+    "id": "co_x_rock",
+    "name": "X Rock",
+    "routes": 65,
+    "open": true,
+    "lat": 37.3611433333333,
+    "lng": -109.477705555556
+   },
+   {
+    "id": "co_golf_wall",
+    "name": "Golf Wall",
+    "routes": 58,
+    "open": true,
+    "lat": 37.5166366666667,
+    "lng": -107.81563
+   },
+   {
+    "id": "co_new_lightner",
+    "name": "New Lightner",
+    "routes": 36,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "co_junction_creek",
+    "name": "Junction Creek",
+    "routes": 33,
+    "open": true,
+    "lat": 37.33585,
+    "lng": -107.907951666667
+   },
+   {
+    "id": "co_fume_wall",
+    "name": "Fume Wall",
+    "routes": 25,
+    "open": true,
+    "lat": 37.4580475,
+    "lng": -107.8045625
+   },
+   {
+    "id": "co_purgatory",
+    "name": "Purgatory",
+    "routes": 17,
+    "open": true,
+    "lat": 37.64307,
+    "lng": -107.81132
+   },
+   {
+    "id": "co_pine_river_trad",
+    "name": "Pine River Trad",
+    "routes": 15,
+    "open": true,
+    "lat": 37.48919,
+    "lng": -107.4724225
+   },
+   {
+    "id": "co_pine_river_area",
+    "name": "Pine River Area",
+    "routes": 11,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "co_horse_gulch_open_space",
+    "name": "Horse Gulch Open Space",
+    "routes": 9,
+    "open": true,
+    "lat": 37.26675,
+    "lng": -107.850016666667
+   },
+   {
+    "id": "co_smelter_mountain",
+    "name": "Smelter Mountain",
+    "routes": 9,
+    "open": true,
+    "lat": 37.2581425,
+    "lng": -107.8833175
+   },
+   {
+    "id": "co_fort_lewis_college",
+    "name": "Fort Lewis College",
+    "routes": 6,
+    "open": true,
+    "lat": 37.273432,
+    "lng": -107.872284
+   },
+   {
+    "id": "co_west_animas",
+    "name": "West Animas",
+    "routes": 5,
+    "open": true,
+    "lat": 37.32247,
+    "lng": -107.855265
+   },
+   {
+    "id": "co_lightner_creek",
+    "name": "Lightner Creek",
+    "routes": 4,
+    "open": true,
+    "lat": 37.31,
+    "lng": -107.9432
+   },
+   {
+    "id": "co_animas_mountain",
+    "name": "Animas Mountain",
+    "routes": 2,
+    "open": true,
+    "lat": 37.3117992,
+    "lng": -107.867451
+   },
+   {
+    "id": "co_chris_park",
+    "name": "Chris Park",
+    "routes": 2,
+    "open": true,
+    "lat": 37.515,
+    "lng": -107.79333
+   }
+  ]
+ },
+ {
+  "id": "az_central_arizona",
+  "name": "Central Arizona",
+  "region": "Arizona",
+  "inside": "Arizona",
+  "lat": 33.8873757071844,
+  "lng": -111.624513050292,
+  "units": [
+   {
+    "id": "az_homestead_the",
+    "name": "Homestead, The",
+    "routes": 241,
+    "open": false,
+    "lat": 33.1734087179487,
+    "lng": -110.780531025641
+   },
+   {
+    "id": "az_stewart_pocket",
+    "name": "Stewart Pocket",
+    "routes": 186,
+    "open": true,
+    "lat": 34.2206723611111,
+    "lng": -111.269824027778
+   },
+   {
+    "id": "az_isolation_canyon",
+    "name": "Isolation Canyon",
+    "routes": 150,
+    "open": true,
+    "lat": 34.361477,
+    "lng": -111.450046
+   },
+   {
+    "id": "az_christopher_creek_gorge",
+    "name": "Christopher Creek Gorge",
+    "routes": 138,
+    "open": true,
+    "lat": 34.3126057142857,
+    "lng": -111.064162142857
+   },
+   {
+    "id": "az_queen_creek_canyon",
+    "name": "Queen Creek Canyon",
+    "routes": 96,
+    "open": true,
+    "lat": 33.3036324276567,
+    "lng": -111.066991637844
+   },
+   {
+    "id": "az_phoenix_areas",
+    "name": "Phoenix Areas",
+    "routes": 75,
+    "open": true,
+    "lat": 33.6048600104471,
+    "lng": -111.980752399476
+   },
+   {
+    "id": "az_east_verde",
+    "name": "East Verde",
+    "routes": 27,
+    "open": true,
+    "lat": 34.3002066666667,
+    "lng": -111.354416666667
+   },
+   {
+    "id": "az_water_wheel_falls",
+    "name": "Water Wheel Falls",
+    "routes": 25,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "az_mesquite_wash_rockpile",
+    "name": "Mesquite Wash Rockpile",
+    "routes": 20,
+    "open": true,
+    "lat": 33.71255,
+    "lng": -111.51233
+   },
+   {
+    "id": "az_dromedary_peak",
+    "name": "Dromedary Peak",
+    "routes": 19,
+    "open": true,
+    "lat": 33.25791,
+    "lng": -111.24973
+   },
+   {
+    "id": "az_eagletail_mountains",
+    "name": "Eagletail Mountains",
+    "routes": 18,
+    "open": true,
+    "lat": 33.4422866666667,
+    "lng": -112.501206666667
+   },
+   {
+    "id": "az_sierra_ancha_mountains",
+    "name": "Sierra Ancha Mountains",
+    "routes": 13,
+    "open": true,
+    "lat": 33.76713,
+    "lng": -110.97708
+   },
+   {
+    "id": "az_colony_the",
+    "name": "Colony, The",
+    "routes": 13,
+    "open": true,
+    "lat": 33.80646,
+    "lng": -111.477481666667
+   },
+   {
+    "id": "az_crackerjack_buttress",
+    "name": "Crackerjack Buttress",
+    "routes": 13,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "az_crown_king_area",
+    "name": "Crown King Area",
+    "routes": 10,
+    "open": true,
+    "lat": 33.81868,
+    "lng": -112.20521
+   },
+   {
+    "id": "az_five_mile_draw",
+    "name": "Five Mile Draw",
+    "routes": 10,
+    "open": true,
+    "lat": 34.591705,
+    "lng": -110.083215
+   },
+   {
+    "id": "az_mingus_mountain",
+    "name": "Mingus Mountain",
+    "routes": 9,
+    "open": true,
+    "lat": 34.69948,
+    "lng": -112.15881
+   },
+   {
+    "id": "az_nothing",
+    "name": "Nothing",
+    "routes": 8,
+    "open": true,
+    "lat": 34.481965,
+    "lng": -113.33487
+   },
+   {
+    "id": "az_four_peaks_wilderness",
+    "name": "Four Peaks Wilderness",
+    "routes": 3,
+    "open": true,
+    "lat": 33.7214539583333,
+    "lng": -111.374156041667
+   },
+   {
+    "id": "az_canyon_lake_deep_water_solo",
+    "name": "Canyon Lake Deep Water Solo",
+    "routes": 3,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "az_santans",
+    "name": "Santans",
+    "routes": 3,
+    "open": true,
+    "lat": 33.12858,
+    "lng": -111.65372
+   },
+   {
+    "id": "az_forest_lakes_bouldering",
+    "name": "Forest Lakes Bouldering",
+    "routes": 3,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "az_boulder_mountain",
+    "name": "Boulder Mountain",
+    "routes": 2,
+    "open": true,
+    "lat": 33.7878425,
+    "lng": -111.441935
+   },
+   {
+    "id": "az_mazatzals",
+    "name": "Mazatzals",
+    "routes": 2,
+    "open": true,
+    "lat": null,
+    "lng": null
+   },
+   {
+    "id": "az_saguaro_lake",
+    "name": "Saguaro Lake",
+    "routes": 1,
+    "open": true,
+    "lat": 33.5599006666667,
+    "lng": -111.510249555556
+   },
+   {
+    "id": "az_santa_maria_s_surrounding_ranges",
+    "name": "Santa Maria's & Surrounding Ranges",
+    "routes": 1,
+    "open": true,
+    "lat": 34.74478,
+    "lng": -112.88843
+   },
+   {
+    "id": "az_hinterland",
+    "name": "Hinterland",
+    "routes": 1,
+    "open": true,
+    "lat": 33.4314,
+    "lng": -112.0715
+   },
+   {
+    "id": "az_general_area",
+    "name": "General area",
+    "routes": 1,
+    "open": true,
+    "lat": 34.3147,
+    "lng": -110.94525
+   },
+   {
+    "id": "az_goldfield_mountains",
+    "name": "Goldfield Mountains",
+    "routes": 1,
+    "open": true,
+    "lat": 33.54538,
+    "lng": -111.54168
+   }
+  ]
+ }
+]

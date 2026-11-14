@@ -21,6 +21,8 @@ const MARKERS = [
   /^-+\s*(?=[A-Za-z0-9])/,                      // "- Crawford Notch", "-Camden Hills"
   /^\.\s+(?=[A-Za-z0-9])/,                      // ". Western NH" — not ". . more . . ." (that dot is the name)
   /^,\s+/,                                      // ", The Vault"
+  /^public\s+land\s+for\s+sale\s*[-–—:|]+\s*(?=\S)/i, // a 2025 protest label climbers put on the source's
+                                                //  names, not the place's: "PUBLIC LAND FOR SALE-Wayne's World"
 ];
 const LABELS = [
   /^[A-Za-z]\d{0,2}[.)]\s+(?![A-Za-z]\.)/,      // "a. ", "a1. ", "A) " — not initials "J. R."

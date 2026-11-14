@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Does every peak's stored coordinate sit at the height that peak claims to be?
 //
 // `audit:summit-pins` can only see a peak where TWO records disagree. A peak whose
@@ -22,7 +23,7 @@
 import { readFileSync } from "node:fs";
 import { elevationAt, summitProbe, selfTest } from "./lib/terrain.mjs";
 
-const root = new URL("..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("..", import.meta.url));
 const env = {};
 for (const f of [".env.local", ".env"]) {
   try { for (const l of readFileSync(root + f, "utf8").split("\n")) {

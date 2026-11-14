@@ -68,15 +68,20 @@ for (let i = 0; i < WPS.length - 1; i++)
     REAL.push([WPS[i].lat + (WPS[i + 1].lat - WPS[i].lat) * (s / 8), WPS[i].lng + (WPS[i + 1].lng - WPS[i].lng) * (s / 8)]);
 REAL.push([WPS[3].lat, WPS[3].lng]);
 const CHORD = [[48.4926, -121.1176], [48.5543, -121.1043]];
+// A real recording that misses the walk in: it starts at the basin camp, so the file must say the
+// approach is not in it. (The two-point CHORD used to carry the captioned-file cases; since
+// 2026-10-29 a line under MIN_RECORDED_PTS is no track at all, so it exports none.)
+const PARTIAL = REAL.slice(8);
 
 const sketch = buildGpx({ id: "r1", name: "Probe", gpxPts: SYNTH, waypoints: WPS });
 const real = buildGpx({ id: "r2", name: "Probe", gpxPts: REAL, waypoints: WPS });
 const chord = buildGpx({ id: "r3", name: "Probe", gpxPts: CHORD, waypoints: [WPS[1], WPS[2]] });
+const partial = buildGpx({ id: "r4", name: "Probe", gpxPts: PARTIAL, waypoints: WPS });
 
 // FAIL CLOSED. Every "must contain" assertion below passes against a file that was never built,
 // and every "must not contain" one passes against an empty string.
 if (sketch.length < 200 || real.length < 200) dead(`buildGpx produced ${sketch.length}/${real.length} characters — too thin to assert on`);
-if (!/<trkpt /.test(real) || !/<wpt /.test(real) || !/<trkpt /.test(chord)) dead("the built file carries no track points or waypoints — the probe is not exercising the writer");
+if (!/<trkpt /.test(real) || !/<wpt /.test(real) || !/<trkpt /.test(partial)) dead("the built file carries no track points or waypoints — the probe is not exercising the writer");
 
 // ── 1. A LINE THAT IS ONLY THE PINS JOINED UP IS NOT EXPORTED AS A TRACK (owner, 2026-10-25). The
 //    route line is a recorded track or nothing, so its file is the waypoints alone, with no note
@@ -93,22 +98,25 @@ else ok("no note about a line the file does not carry");
 if (/<desc>/.test(real)) fail("a genuine recorded track is exported with a disclaimer — a false warning on good data");
 else ok("a genuine track exports with no disclaimer");
 
-// ── 3. the second kind of line gets the second sentence, on the track AND at file level
-if (!chord.includes("single straight segment")) fail("a two-point chord exports without saying it is a straight segment");
-else ok("a two-point chord says so in the file");
-if (!/<trk>[\s\S]*?<desc>/.test(chord)) fail("a captioned line exports with no <desc> on its track — the caveat stops at the browser");
+// ── 3. A line of too few points to be a recording exports no track (MIN_RECORDED_PTS), and a
+//    partial recording says which end is missing, on the track AND at file level.
+if (/<trk>|<trkpt /.test(chord)) fail("a two-point chord is exported as the route's track");
+else ok("a two-point chord exports no track");
+if (!partial.includes("The walk in is not in this line")) fail("a track missing the walk in exports without saying so");
+else ok("a partial track says so in the file");
+if (!/<trk>[\s\S]*?<desc>/.test(partial)) fail("a captioned line exports with no <desc> on its track — the caveat stops at the browser");
 else ok("a captioned line carries a track description");
-if (!/<metadata><desc>/.test(chord)) fail("the file carries no metadata description — a reader that shows only file-level notes sees nothing");
+if (!/<metadata><desc>/.test(partial)) fail("the file carries no metadata description — a reader that shows only file-level notes sees nothing");
 else ok("the file carries a metadata description too");
 
 // ── 4. STRUCTURE. GPX 1.1 is a SEQUENCE — metadata before wpt before trk, and inside a trk,
 //    name before desc before trkseg. Out of order is an invalid file, and some readers reject one.
 {
-  // On the two-point chord: it is the fixture that carries metadata, waypoints AND a described track.
-  const iMeta = chord.indexOf("<metadata>"), iWpt = chord.indexOf("<wpt "), iTrk = chord.indexOf("<trk>");
+  // On the partial track: it is the fixture that carries metadata, waypoints AND a described track.
+  const iMeta = partial.indexOf("<metadata>"), iWpt = partial.indexOf("<wpt "), iTrk = partial.indexOf("<trk>");
   if (!(iMeta >= 0 && iMeta < iWpt && iWpt < iTrk)) fail(`GPX element order is wrong: metadata ${iMeta}, wpt ${iWpt}, trk ${iTrk}`);
   else ok("metadata, waypoints and track appear in the order GPX 1.1 requires");
-  const trk = chord.slice(iTrk);
+  const trk = partial.slice(iTrk);
   const iName = trk.indexOf("<name>"), iDesc = trk.indexOf("<desc>"), iSeg = trk.indexOf("<trkseg>");
   if (!(iName >= 0 && iName < iDesc && iDesc < iSeg)) fail(`inside <trk> the order is wrong: name ${iName}, desc ${iDesc}, trkseg ${iSeg}`);
   else ok("inside the track, name precedes desc precedes trkseg");
@@ -141,8 +149,8 @@ else ok("the file carries a metadata description too");
 //    exports a community track through `overridePts`, and none of these claims is true of it —
 //    they are about the ROUTE's own stored line.
 {
-  // On the CHORD route, whose own line does carry a caveat, so inheriting it is observable.
-  const other = buildGpx({ id: "r5", name: "Probe", gpxPts: CHORD, waypoints: [WPS[1], WPS[2]] }, REAL, "Someone's track");
+  // On the PARTIAL route, whose own line does carry a caveat, so inheriting it is observable.
+  const other = buildGpx({ id: "r5", name: "Probe", gpxPts: PARTIAL, waypoints: WPS }, REAL, "Someone's track");
   if (/<desc>/.test(other)) fail("a climber's own recorded track inherits the route line's disclaimer");
   else ok("an exported community track carries no claim about the route's stored line");
 }

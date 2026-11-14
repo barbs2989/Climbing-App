@@ -1,0 +1,80 @@
+{
+ "id": "wa_mount_daniel_daniel_glacier",
+ "name": "Daniel Glacier / Southeast Slopes",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_mount_daniel",
+  "name": "Mount Daniel",
+  "lat": 47.565031,
+  "lng": -121.180891,
+  "elevation_ft": 7960,
+  "parent_id": "wa_western_alpine_lakes",
+  "ground_ft": 7969
+ },
+ "dist_km": 12.1,
+ "gain_ft": 5100,
+ "high_point_ft": 7960,
+ "approach_logistics": {
+  "peakLat": 47.565031,
+  "peakLng": -121.180891,
+  "trailhead": "Cathedral Rock / Deception Pass Trailhead (Tucquala Meadows)",
+  "trailheadDirection": "From Roslyn, follow SR 903 north about 14.8 miles to the end of the maintained road, bear right onto Forest Road 4330, and continue on gravel to the trailhead at its end."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.5435,
+   "lng": -121.0966,
+   "elev": 3370,
+   "name": "Tucquala Meadows Trailhead",
+   "note": "FS 4330 (Cle Elum Valley Rd), ~13 mi past Salmon-la-Sac. Standard access for Peggys Pond via Cathedral Pass Trail #1345 to Cathedral Pass, continuing to Mount Daniel's SE slopes/Daniel Glacier.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive up the Cle Elum River valley on Forest Service Road 4330 (Cle Elum Valley Road), about 13 miles past Salmon-la-Sac, to its end at the trailhead, roughly 3,400 feet. The access road is rough gravel and is best driven with a high-clearance or 4x4 vehicle.",
+   "ground_ft": 3375
+  },
+  {
+   "i": 1,
+   "lat": 47.53478,
+   "lng": -121.11397,
+   "elev": 4839,
+   "name": "Squaw Lake",
+   "type": "Campsite",
+   "distMi": 2.5,
+   "ground_ft": 4843
+  },
+  {
+   "i": 2,
+   "lat": 47.556164,
+   "lng": -121.141633,
+   "elev": 5591,
+   "name": "Peggys Pond",
+   "type": "Campsite",
+   "distMi": 5,
+   "ground_ft": 5558
+  },
+  {
+   "i": 3,
+   "lat": 47.5560755,
+   "lng": -121.1417331,
+   "name": "Peggys Pond",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null,
+   "directions": "Take the Cathedral Rock Trail #1345, which crosses the Cle Elum River on a bridge and climbs past Squaw Lake to Cathedral Pass and the Pacific Crest Trail, about 4.5 miles. Follow the PCT briefly toward Deep Lake; at the first switchback down, take the spur to Peggys Pond, about half a mile of steep, narrow path along ledges with sheer drop-offs and loose rock.",
+   "ground_ft": 5558
+  },
+  {
+   "i": 4,
+   "lat": 47.565031,
+   "lng": -121.180891,
+   "elev": 7960,
+   "name": "Mount Daniel (true/West Summit)",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 7960,
+   "directions": "Follow braided boot paths northwest then west across heather and talus, gaining about 1,500 ft in a mile to the broad southeast ridge near 7,000 ft, with the Hyas Creek Glacier on your right and Circle Lake below on your left. Traverse climbers' trail and scree below the East Summit to the 7,600-ft saddle, then cross loose talus, snow and the rocky glacier margin to the West Summit, staying on rock off the glacier ice.",
+   "ground_ft": 7969
+  }
+ ]
+}

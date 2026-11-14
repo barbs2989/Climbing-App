@@ -1,0 +1,27 @@
+{
+ "tn_luna": {
+  "_expect": { "name": "Luna", "region": "Tennessee" },
+  "blurb": "Luna is a small boulder cluster inside the public bouldering park on Old Wauhatchie Pike, on the Lookout Mountain side of Chattanooga. The main attraction is a steep, overhanging bulge sitting right beside the trail, which gives short powerful pulls, a few sit starts and a long traverse. The twelve problems on the sandstone run from V0 up to V5, spread fairly evenly, so a mixed group can all find something to try, though nothing here goes beyond the low V5 range. Bring your own pads and shoes, since it is one stop among a couple dozen boulders across the park.",
+  "review": { "sources": ["https://www.mountainproject.com/area/118233046/luna", "https://www.visitchattanooga.com/blog/post/wauhatchie-boulders/"] }
+ },
+ "tn_f_roadkill_buttress": {
+  "_expect": { "name": "Roadkill Buttress", "region": "Tennessee" },
+  "blurb": "Roadkill Buttress is a small face of sandstone above the main cliffline trail in the southern half of Sunset Park, on Lookout Mountain above Chattanooga. All twelve routes are trad. They are gentle by Sunset standards: most fall between 5.6 and 5.8, with several wide sections where bigger cams help, and a single hard line around 5.11. Protection is reported as good, making it a sensible place for newer leaders or anyone wanting a relaxed day without sandbagged grades. The base is reached by scrambling up a gully off the trail, and the southern part of the cliff tends to be quieter than its neighbors.",
+  "review": { "sources": ["https://www.mountainproject.com/area/202805633/roadkill-buttress", "https://www.mountainproject.com/area/105890113/sunset-south"] }
+ },
+ "tn_h_sunset_rock": {
+  "_expect": { "name": "Sunset Rock", "region": "Tennessee" },
+  "blurb": "Sunset Rock is a trad cliff at the western brink of Lookout Mountain above Chattanooga, part of the Sunset Park climbing. It holds a dozen routes, all placed on removable gear. The grades lean hard: half of them sit at 5.10, a handful at 5.11, with one at 5.12 and a single route near 5.8, so it suits confident leaders rather than beginners. The rock is sandstone, and the cliff doubles as a popular overlook, so expect walkers at the top. Getting here means a trail hike from the Cravens House side of the mountain.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105890109/sunset-north", "https://www.southeasttennessee.com/hiking-to-lookout-mountains-sunset-rock/"] }
+ },
+ "_skipped": {
+  "tn_riverdance_boulder": "no fetched page about the Riverdance Boulder itself (only a page for the single problem and a Dayton Pocket article)",
+  "tn_white_house_middle": "no fetched page about White House Middle; only a page for the whole cliff",
+  "tn_main_area_gravestone_boulder": "no page found about Gravestone Boulder or its main area after two searches",
+  "tn_widow_s_crack": "no page found about Widow's Crack; only a parent campus listing",
+  "tn_springfield": "no page about the Springfield crag; the Blue Heron page has no description"
+ },
+ "_conflicts": {
+  "tn_riverdance_boulder": "stored rock is conglomerate, but https://www.southeasttennessee.com/rock-climbing-paradise-in-dayton-tn/ calls the Riverdance ledges sandstone"
+ }
+}

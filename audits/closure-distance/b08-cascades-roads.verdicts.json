@@ -1,0 +1,87 @@
+[
+ {
+  "id": "wa_cascade_peak_east_ridge",
+  "verdict": "PLAN",
+  "why": "WTA 2026-10-15 wta.org/news/signpost/...cascade-river-road-closure-10-15-26 (closed at MP 20 until further notice, foot/bike allowed) and wta.org/go-hiking/hikes/cascade-pass (road 23 mi from Marblemount), read 2026-10-29. 23-20 = 3 mi one way (inferred). Gain of the road (~1500 ft) appears in one route text only, so walkGainFt omitted. Stored day miles start at the Cascade Pass trailhead (day1 5.7/6.5/5.7 mi), so the road is not included. Row status says roughly 4 mi; sources give 3."
+ },
+ {
+  "id": "wa_horseshoe_peak_scramble",
+  "verdict": "PLAN",
+  "why": "WTA 2026-10-15 wta.org/news/signpost/...cascade-river-road-closure-10-15-26 (closed at MP 20 until further notice, foot/bike allowed) and wta.org/go-hiking/hikes/cascade-pass (road 23 mi from Marblemount), read 2026-10-29. 23-20 = 3 mi one way (inferred). Gain of the road (~1500 ft) appears in one route text only, so walkGainFt omitted. Stored day miles start at the Cascade Pass trailhead (day1 5.7/6.5/5.7 mi), so the road is not included. Row status wrongly says the June closure was lifted; WTA Oct 2026 shows a new maintenance closure."
+ },
+ {
+  "id": "wa_hurry_up_peak_south_ridge",
+  "verdict": "PLAN",
+  "why": "WTA 2026-10-15 wta.org/news/signpost/...cascade-river-road-closure-10-15-26 (closed at MP 20 until further notice, foot/bike allowed) and wta.org/go-hiking/hikes/cascade-pass (road 23 mi from Marblemount), read 2026-10-29. 23-20 = 3 mi one way (inferred). Gain of the road (~1500 ft) appears in one route text only, so walkGainFt omitted. Stored day miles start at the Cascade Pass trailhead (day1 5.7/6.5/5.7 mi), so the road is not included. Row status wrongly says the June closure was lifted; WTA Oct 2026 shows a new maintenance closure."
+ },
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "verdict": "NO_CHANGE",
+  "why": "Day1 starts at the Cascade River Road trailhead into Boston Basin; the row text calls it the same trailhead as the West Ridge but its own status says the gate adds 3 mi to the Cascade Pass trailhead. Which trailhead (Boston Basin vs Cascade Pass) lies above MP 20 is not settled by the sources read, so no number is added. Needs a check of the Boston Basin trailhead milepost."
+ },
+ {
+  "id": "wa_cadet_peak_scramble",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Itinerary day miles start at Barlow Pass (road included): day1 15.5 mi car-to-car with bike on the Monte Cristo road."
+ },
+ {
+  "id": "wa_columbia_peak_scramble",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Itinerary day miles start at Barlow Pass (road included): day1 8.5 mi from Barlow incl. the road; day2 13 mi hike out."
+ },
+ {
+  "id": "wa_foggy_peak_scramble",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Itinerary day miles start at Barlow Pass (road included): 16 mi car-to-car from Barlow; row text says first/last 4 mi each way are the road."
+ },
+ {
+  "id": "wa_wilmans_peak_scramble",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Itinerary day miles start at Barlow Pass (road included): 13.7 mi car-to-car from Barlow Pass."
+ },
+ {
+  "id": "wa_monte_cristo_peak_scramble",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Itinerary day miles start at Barlow Pass (road included): day1 6.7 mi = 4.2 mi road + 2.5 trail."
+ },
+ {
+  "id": "wa_sheep_gap_mountain_scramble",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Itinerary day miles start at Barlow Pass (road included): day1 starts at Barlow, ~1 mi of road to the Weden Creek trail."
+ },
+ {
+  "id": "wa_gothic_peak_standard",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Itinerary day miles start at Barlow Pass (road included): day1 starts at Barlow Pass on Weden Creek trail (road part ~1 mi or less)."
+ },
+ {
+  "id": "wa_east_wilmans_spire",
+  "verdict": "NO_CHANGE",
+  "why": "Stored 7.4 km (4.6 mi) cannot be both road (4 mi) and trail to Glacier Basin (6 mi from Barlow per WTA 12 mi round trip), and the convention is unclear; the peek shows only the first 500 chars of approach. It does not plainly start at the townsite either, so no number added; needs a human look at the full row."
+ },
+ {
+  "id": "wa_moss_out_for_harambe",
+  "verdict": "NO_CHANGE",
+  "why": "No stored distance (dist_km null, no itinerary); gain 500 is the climb only. Nothing to correct; the approach text already states the 4 mi closed road. WTA 4.0 mi/700 ft to townsite."
+ },
+ {
+  "id": "wa_you_moss_be_joking",
+  "verdict": "NO_CHANGE",
+  "why": "No stored distance (dist_km null, no itinerary); gain 500 is the climb only. Nothing to correct; the approach text already states the 4 mi closed road. WTA 4.0 mi/700 ft to townsite."
+ },
+ {
+  "id": "wa_east_ridge_2",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 already starts at the FR 1570 washout parking (about 0.4 mi past the Cascade River bridge); the Cascade River Rd MP 20 gate lies above the turnoff (~14.2 mi) so it is irrelevant here."
+ },
+ {
+  "id": "wa_snowking_mountain_standard",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 already starts at the FR 1570 washout parking (about 0.4 mi past the Cascade River bridge); the Cascade River Rd MP 20 gate lies above the turnoff (~14.2 mi) so it is irrelevant here."
+ },
+ {
+  "id": "wa_mutchler_peak_scramble",
+  "verdict": "ALREADY_INCLUDED",
+  "why": "Day1 already starts at the FR 1570 washout parking (about 0.4 mi past the Cascade River bridge); the Cascade River Rd MP 20 gate lies above the turnoff (~14.2 mi) so it is irrelevant here."
+ }
+]

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Walks the app as a BRAND-NEW ACCOUNT sees it: every count zero, every list empty.
 //
 // Why this exists. check:ui walks the seeded demo -- bookmarks are pre-saved, a crew
@@ -81,7 +82,7 @@ const ZERO_LANDMARKS = {
   // count -- a RegExp landmark, still matched against the WHOLE line. For the same reason the
   // empty copy ("No requests, invites, unread messages, climbs to confirm or alerts.") is
   // unreachable at zero and is not asserted here; the near-duplicate below is still forbidden.
-  "tab:today": ["Explore climbs", "Find partners", "Find crews", /^Alerts( · \d+ new)?$/],
+  "tab:today": ["Explore climbs", "Find partners", "Find crews", /^Notifications( · \d+ new)?$/],
 };
 
 // Controls that must NOT be offered at zero, because acting on them produces or shares
@@ -160,9 +161,8 @@ log(`starting dev server on ${port} with the zero-state config...`);
 // detached puts vite in its own process group. `npx` spawns vite as a CHILD, so killing
 // only the npx pid leaves the real server listening -- a leaked dev server then squats the
 // port for every later run, and (worse) can answer for a DIFFERENT checkout. Kill the group.
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/zero-state.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/zero-state.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;
@@ -318,7 +318,7 @@ for (const t of TABS) {
   log(`  tab:me:activity`.padEnd(24) + String(n).padStart(6) + " chars");
   if (n <= CHROME_ONLY) fail("tab:me:activity", `rendered only the nav bar (${n} chars) — the content area was empty`);
   if (lines.some((l) => /^Loading[\s.…]/i.test(l))) fail("tab:me:activity", `still showing a loading state after 45s: ${JSON.stringify(lines.find((l) => /^Loading[\s.…]/i.test(l)))}`);
-  if (!lines.some((l) => /BELAY & CATCH RECORD|Belay & Catch Record/.test(l))) fail("tab:me:activity", "the Activity tab did not render the Belay & Catch Record — the tab switch did not land, so the catch-record rules were never applied");
+  if (!lines.some((l) => /YOUR LOGBOOK|Your Logbook/.test(l))) fail("tab:me:activity", "the Activity tab did not render Your Logbook — the tab switch did not land, so the Activity rules were never applied");
   assertScreen("tab:me:activity", lines);
 }
 

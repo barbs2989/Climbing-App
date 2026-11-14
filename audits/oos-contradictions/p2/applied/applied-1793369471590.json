@@ -1,0 +1,43 @@
+{
+ "applied": [
+  {
+   "id": "ca_charlotte_dome_sheepish",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "co_east_face_standard",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitches is 0 on a multi-pitch route"
+  },
+  {
+   "id": "co_twin_owls_2_copperhead",
+   "column": "aid_grade",
+   "path": [],
+   "fact": "aid grade"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "ca_charlotte_dome_sheepish",
+   "before": {
+    "pitches": 1
+   }
+  },
+  {
+   "id": "co_east_face_standard",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "id": "co_twin_owls_2_copperhead",
+   "before": {
+    "aid_grade": "A4"
+   }
+  }
+ ]
+}

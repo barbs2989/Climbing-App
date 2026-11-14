@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:no-emoji — the app draws no emoji. Owner, 2026-10-25: "i dont want emojis".
 //
 // Every icon the app shows is a line icon (`ActionIcon`, src/components/ActionIcon.tsx) or no icon
@@ -11,20 +12,24 @@
 // What does NOT: the typographic marks the app uses as glyphs on purpose — ✓ ✔ ✕ ✖ ✗ ✦ ★ ☆ ☾ —
 // and everything outside those blocks (← → ↗ ⌂ ⇢ ◈ ● ▪ • ›).
 //
-// Two places may still hold one:
+// Four places may still hold one:
 //   1. A LOOKUP KEY — `{"🏆":"award"}`, after `{` or `,` (a ternary's `?"☀":` is NOT a key). Lists a climber saved before this change (lists.icon) and
 //      `Lbl` strings carry an emoji that a map turns into an icon NAME; the key is never drawn.
 //   2. The START of a string handed straight to `<Lbl s=…>`. Lbl draws a leading emoji as the
 //      ActionIcon `EMOJI_ICON` names for it, and DROPS one it has no icon for, so it never
 //      reaches the screen as a glyph.
 //   3. src/components/Lbl.tsx, whose regex RECOGNISES a leading emoji in order to swap it.
+//   4. The REACTIONS table in ClimbMatchCore.jsx (`{k:"fire",e:"🔥",l:"Fire"}`): the ONE thing the app draws as an
+//      emoji on purpose. Owner, 2026-11-05: "Emojis for comment and discussion reactions should be added back", as
+//      Facebook's reactions are emoji. Only an `e:` value on that one statement's line; a reaction drawn anywhere
+//      else reads `r.e` from the table, which is data, not a glyph in the source.
 // Comments are stripped first: a comment may quote what a screen used to say.
 //
 // Static — no browser, no DB, no network — so it sits in `npm run build`.
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const APP = /^(ClimbMatch\.jsx|ClimbMatchCore\.jsx|RouteDetail\.jsx|EnrichmentPanels\.jsx|main\.jsx|lib\/.*\.(jsx?|tsx?)|src\/.*\.(jsx?|tsx?))$/;
 const EXEMPT = new Set(["src/components/Lbl.tsx"]);
 const EMOJI = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{23E9}-\u{23FA}\u{231A}\u{231B}]/gu;
@@ -45,7 +50,7 @@ const stripComments = (s) => s
   .replace(/(^|[\s;{}(),])\/\/[^\n]*/g, (m, pre) => pre + " ".repeat(m.length - pre.length));
 
 const hits = [];
-let keys = 0, lbls = 0;
+let keys = 0, lbls = 0, reactions = 0;
 for (const f of files) {
   let src;
   try { src = readFileSync(ROOT + f, "utf8"); } catch { continue; }
@@ -61,6 +66,8 @@ for (const f of files) {
       // The start of a string literal passed directly to <Lbl s={…}> or <Lbl s="…">.
       if (q && /<Lbl\s+s=\{?\s*$/.test(before.slice(0, open)) && /^[\u{FE0F}\u{200D}]*$/u.test(before.slice(open + 1).replace(EMOJI, ""))) { lbls++; continue; }
       if (q && close >= 0 && !(before.slice(open + 1) + after.slice(0, close)).replace(EMOJI, "").replace(/[\u{FE0F}\u{200D}]/gu, "") && /^\s*:/.test(after.slice(close + 1)) && /[{,]\s*$/.test(before.slice(0, open))) { keys++; continue; }
+      // A reaction's own emoji: the quoted value of `e:` on the `const REACTIONS=[` line of ClimbMatchCore.jsx, nothing else in it.
+      if (f === "ClimbMatchCore.jsx" && q && close >= 0 && /const REACTIONS=\[/.test(before) && /[{,]e:\s*$/.test(before.slice(0, open)) && !(before.slice(open + 1) + after.slice(0, close)).replace(EMOJI, "").replace(/[\u{FE0F}\u{200D}]/gu, "")) { reactions++; continue; }
       hits.push({ f, line: i + 1, ch: m[0], ctx: ln.slice(Math.max(0, m.index - 50), m.index + 40).trim() });
     }
   });
@@ -74,7 +81,8 @@ if (hits.length) {
   for (const h of all ? hits : hits.slice(0, 60)) console.error(`  ${h.f}:${h.line}  ${h.ch}   …${h.ctx}…`);
   if (!all && hits.length > 60) console.error(`  …and ${hits.length - 60} more`);
   console.error("\nUse an ActionIcon (aria-hidden) beside the words, or drop the glyph and keep the words.");
-  console.error("An emoji may stay only as a lookup KEY that a map turns into an icon name (\"🏆\":\"award\").");
+  console.error("An emoji may stay only as a lookup KEY that a map turns into an icon name (\"🏆\":\"award\"), or as a reaction's `e:` in REACTIONS.");
   process.exit(1);
 }
-console.log(`check:no-emoji ok — ${files.length} app files, 0 drawn emoji (${keys} lookup key(s) that map to an icon name, ${lbls} Lbl string(s) that open on one).`);
+if (reactions < 5) { console.error(`check:no-emoji FAILED — only ${reactions} reaction emoji seen in REACTIONS; the reactions lost their emoji, or the table moved off its line.`); process.exit(1); }
+console.log(`check:no-emoji ok — ${files.length} app files, 0 drawn emoji outside the ${reactions} reaction(s) in REACTIONS (${keys} lookup key(s) that map to an icon name, ${lbls} Lbl string(s) that open on one).`);

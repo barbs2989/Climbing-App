@@ -1,7 +1,8 @@
+import "../lib/load-env.mjs";
 import { createClient } from "@supabase/supabase-js";
 import ws from "ws";
 
-const url = "https://ofuofhojhbcrcahuotya.supabase.co";
+const url = process.env.VITE_SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_KEY;
 if (!key) { console.error("Set SUPABASE_SERVICE_KEY env var"); process.exit(1); }
 const supabase = createClient(url, key, { auth: { persistSession: false }, realtime: { transport: ws } });

@@ -1,0 +1,29 @@
+{
+  "area_id": "wa_mount_logan",
+  "routes": [
+    {
+      "route_id": "wa_mount_logan_r2",
+      "season": {
+        "months": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "window": "Jun-Sep",
+        "evidence": "SummitPost route page lists Spring, Summer, Fall; web search (Cascade Climbers, Mountaineers) shows snow on Easy Pass trail in mid-June and wildflowers late July; Peakbagger Douglas logs Jun and Sep; peak months Jun 22, Jul 118, Aug 46, Sep 15. Matches stored Jun-Sep."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "sp154947",
+          "verdict": "different",
+          "why": "The file is a round trip from Colonial Creek (48.6856,-121.0926) up Thunder Creek and Park Creek Pass to the summit: the Fremont Glacier line, ~24 km from the Easy Pass trailhead pin and never near the Fisher Creek / Douglas Glacier approach. Fremont Glacier already holds a track."
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "The only SummitPost file is the Fremont Glacier route from Colonial Creek, not Douglas. Douglas Glacier left without a track; no pins proposed."
+}

@@ -1,0 +1,50 @@
+{
+  "area_id": "wa_colfax_peak",
+  "routes": [
+    {
+      "route_id": "wa_colfax_peak_cosley_houston",
+      "season": { "months": [10,11,12,1,2,3,4,5], "window": "Oct-May", "evidence": "Stored Oct-May agrees with guide-service and forum reports: climbed in November and in spring up to mid-May; always thinner and harder in fall than spring; a mid-May report called it near the end of the season." },
+      "track": { "aid": "526574", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged route Cosley-Houston; report describes the crux pillar and exit snowfield of this ice route; track starts 7 m from our trailhead pin, ends 127 m away, summit 2 m; May 10 is in season; summited." },
+      "otherTracksConsidered": [
+        { "aid": "3393567", "verdict": "different", "why": "Oct 31 2026 ski day via Coleman-Deming to East Ridge, not the couloir." },
+        { "aid": "1288011", "verdict": "unsure", "why": "Logged Colsey-Houston Nov 30 2019 but track is not complete (start far from trailhead) and has no report." },
+        { "aid": "3177600", "verdict": "different", "why": "South face ski from the Easton side." },
+        { "aid": "2873157", "verdict": "different", "why": "Coleman Glacier, bergschrund, summit ridge ski day; not the couloir." },
+        { "aid": "2869958", "verdict": "unsure", "why": "Face to the false peak, June 14; not named, not the couloir." },
+        { "aid": "2862808", "verdict": "unsure", "why": "Coleman Glacier, June 7; no route detail." },
+        { "aid": "2837511", "verdict": "different", "why": "Coleman Glacier combined with Baker." },
+        { "aid": "2821794", "verdict": "different", "why": "Survey trip." },
+        { "aid": "2632034", "verdict": "different", "why": "Survey trip, early September, East Ridge." },
+        { "aid": "3177961", "verdict": "different", "why": "Survey trip by the south face." },
+        { "aid": "3314957", "verdict": "different", "why": "Survey trip by the south approach." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "watch_out", "month": 5, "text": "In mid-May the lowest ice below the crux pillar can have water running beneath it, and the pillar itself keeps streaming.", "aids": ["526574"] },
+        { "field": "pro_tips", "month": 5, "text": "Ice screws take poorly in the aerated pillar ice of mid-May; pickets are the protection that works, including on the upper snowfield, where rock gear is of no use.", "aids": ["526574"] },
+        { "field": "monthBreakdown", "month": 5, "text": "By mid-May the route is near the end of its season; the exit snowfield and the walk down were easy.", "aids": ["526574"] }
+      ]
+    },
+    {
+      "route_id": "wa_colfax_peak_polish_route",
+      "season": { "months": [11,12,1,2,3,4,5], "window": "Nov-May", "evidence": "Stored Nov-May; searches show documented ascents in March, spring and Feb, with the hanging dagger forming only in some years; autumn attempts turned back." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "526574", "verdict": "different", "why": "Logged Cosley-Houston." },
+        { "aid": "2869958", "verdict": "unsure", "why": "June 14, bergschrund on the face to the false peak; not named as the Polish." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_colfax_peak_kimchi_suicide_volcano",
+      "season": { "months": [3,4,5], "window": "Mar-May", "evidence": "First climbed in early April; search found only the first-ascent write-ups and no repeats, so the stored Mar-May window stands." },
+      "track": null,
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Only 526574 qualifies. Two other north-face routes have no logged tracks. Glacier Creek Road was reported washed out about 9 miles below the trailhead in winter 2026, still under repair in mid-August 2026; the 2026 tracks therefore start elsewhere. Not stated as a fact because it is time-bound."
+}

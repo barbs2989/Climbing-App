@@ -49,7 +49,7 @@ function stripComments(src) {
   }
   return out;
 }
-const read = (rel) => { const p = path.join(ROOT, rel); if (!fs.existsSync(p)) dead(`${rel} is missing`); return stripComments(rel === "ClimbMatchCore.jsx" ? readAppFile(p) : fs.readFileSync(p, "utf8")); };
+const read = (rel) => { const p = path.join(ROOT, rel); if (!fs.existsSync(p)) dead(`${rel} is missing`); return stripComments((rel === "ClimbMatchCore.jsx" || rel === "ClimbMatch.jsx") ? readAppFile(p) : fs.readFileSync(p, "utf8")); };
 
 const app = read("ClimbMatch.jsx"), core = read("ClimbMatchCore.jsx");
 const libs = { "lib/CrewCard.jsx": read("lib/CrewCard.jsx"), "lib/CrewFinder.jsx": read("lib/CrewFinder.jsx"), "lib/Inbox.jsx": read("lib/Inbox.jsx"), "lib/FloatPlans.jsx": read("lib/FloatPlans.jsx"), "lib/PartnerSearch.jsx": read("lib/PartnerSearch.jsx") };
@@ -88,7 +88,6 @@ const ALLOW = {
     ["const r=routeById(ci.routeId)||{}", "a seed crew INVITE (crewReqIn), which is a route invite by shape"],
     ["const acceptCrewInvite=(ci)=>{const r=routeById(ci.routeId)", "accepting a seed crew INVITE (crewReqIn) builds a route crew from it — the seed shape has no area"],
     ["routeName:(routeById(ci.routeId)||{}).name||\"their crew\"", "the profile modal's seed crew INVITE (crewReqIn) — route by shape"],
-    ["const r=routeById(c.routeId);const fn=c.friendName", "a belay CATCH, not a crew"],
   ],
   "lib/CrewFinder.jsx": [], "lib/CrewCard.jsx": [], "lib/Inbox.jsx": [], "lib/FloatPlans.jsx": [], "lib/PartnerSearch.jsx": [],
 };

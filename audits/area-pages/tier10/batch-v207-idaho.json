@@ -1,0 +1,32 @@
+{
+ "id_morning_glory_spire": {
+  "_expect": { "name": "Morning Glory Spire", "region": "Idaho" },
+  "blurb": "A tall, slender granite spire near the heart of City of Rocks, also known as the Incisor, and one of the park's best-loved formations. Around fifteen routes cover the faces and ridges: mostly traditional lines with a handful of bolted ones. Grades start in the easy fifth class, but the bulk of the climbing sits in the 5.10 to 5.12 range, so it suits confident leaders more than beginners. The standout is a long ridge route at a moderate grade that mixes jams, a delicate traverse and a steep splitter, protected by small cams and nuts. The summit is roomy enough for a few people and gives wide views over the surrounding domes.",
+  "review": { "sources": ["https://mountainproject.com/area/105739635/morning-glory-spire", "https://www.climbing.com/.amp/places/skyline-58/?scope=anon", "https://rakkup.com/guidebook/city-of-rocks-climbing/the-incisor/s13701"] }
+ },
+ "id_taco_the": {
+  "_expect": { "name": "Taco, The", "region": "Idaho" },
+  "blurb": "A small granite formation in the East Sector of Castle Rocks, south-central Idaho, in the scattered group of domes and faces near the Comp Wall. It holds about fifteen routes, split fairly evenly between traditional lines and bolted ones. Grades run from the 5.6 range up to a single 5.11, with the bulk of the climbs at 5.9 and below, which makes it a friendly stop for moderate leaders. Expect a short walk in on one of the sector's own trails; like many crags here it is tucked among bigger formations and takes a little hunting to find.",
+  "review": { "sources": ["https://rakkup.com/guidebook/castle-rocks-idaho-climbing/the-taco/s14418", "https://www.mountainproject.com/area/107935627/east-sector"] }
+ },
+ "id_burnt_boulder_area": {
+  "_expect": { "name": "Burnt Boulder Area", "region": "Idaho" },
+  "blurb": "A cluster of basalt boulders in the Swan Falls bouldering zone beside the Snake River, southwest of Boise. It lies between two neighbouring boulder groups, a short way along the dirt road north of the dam, and takes its name from a large overhanging boulder with a dark, burnt-looking face near the lot. About fourteen problems, from easy slabs at V0 up to around V4, with the majority in the V0 to V3 range, so it works well for a mixed group. There is no tree shade, so spring, autumn and winter are the comfortable seasons, and the zone is rarely busy.",
+  "rock": "basalt",
+  "review": { "sources": ["https://www.mountainproject.com/area/123576643/burnt-boulder-area", "https://www.mountainproject.com/area/106234652/swan-falls", "https://www.madboulder.org/swan-falls"] }
+ },
+ "id_bath_rock_east": {
+  "_expect": { "name": "Bath Rock - East", "region": "Idaho" },
+  "blurb": "The east side of Bath Rock, a granite dome beside the City of Rocks road, is mostly a traditional crag with an easy-going character. Of about fourteen routes, nearly all are trad and one is bolted. Grades are low: roughly half sit at 5.4 to 5.6, and the hardest are around 5.8, which makes it a good place for newer leaders to practise placing gear. A longer two-pitch line climbs from an alcove behind a juniper near the rock's sign, and the usual way down is the rebar-assisted back side. Bring a standard rack with cams up to about four inches.",
+  "review": { "sources": ["https://rakkup.com/guidebook/city-of-rocks-climbing/bath-rock---east-1/s14621", "https://rakkup.com/guidebook/city-of-rocks-climbing/bath-rock---east-2/s14622", "https://www.mountainproject.com/route/106920506/tree-start"] }
+ },
+ "_skipped": {
+  "id_the_old_sawmill_slabs": "only one fetched page describes it (Mountain Project); the Central Idaho listing and the OpenBeta page gave nothing or 404. Also stored rock dolomite vs the page's quartzite",
+  "id_boulder_wall": "the sub-area is closed to climbing (BLM land at Massacre Rocks); no usable page set",
+  "id_closed_to_climbing_boulder_wall": "named closed to climbing; BLM closure",
+  "id_closed_to_climbing_the_play_pen": "named closed to climbing; BLM closure"
+ },
+ "_conflicts": {
+  "id_the_old_sawmill_slabs": "stored rock dolomite; Mountain Project page https://www.mountainproject.com/v/the-old-sawmill-slabs/112190826 says orange quartzite"
+ }
+}

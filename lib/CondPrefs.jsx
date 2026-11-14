@@ -4,6 +4,7 @@ import { BAND_PREF, RAIN_PREF, TEMP_RANGE_PREF, WIND_RANGE_PREF, TEMP_BANDS, WIN
 import { RangeSlider } from "./RangeSlider.jsx";
 import { useMyCondPrefs, saveMyCondPrefs } from "./db.js";
 import { DISC_LABELS } from "./discLabels.js";
+import { TEXT_TAP } from "./buttonStyles.js";
 
 /* "YOUR CONDITIONS" — the climber's ideal temperature RANGE (one for all climbing, and optionally
    one per discipline), the wind RANGE they are happy in, and how long they give rock after rain.
@@ -86,6 +87,8 @@ export function cleanPrefs(o) {
   return out;
 }
 const isDefault = function (p) { return p.rain === "normal" && !p.wind && p.rhMax == null && !p.sun && !p.aq && !p.window && !Object.keys(p.temp).length; };
+// True once a climber has set anything (Home's "Finish setting up" asks until then).
+export function condPrefsSet(p) { return !!p && !isDefault(p); }
 const hasExtras = function (p) { return p.rhMax != null || !!p.sun || !!p.aq || !!p.window; };
 
 let mem = null, acct = null, syncState = "local", saveTimer = null;
@@ -171,7 +174,7 @@ const HOUR_TICKS = [0, 3, 6, 9, 12, 15, 18, 21, 24];
 const hourTick = function (h) { return (h % 12 || 12) + (h % 24 < 12 ? "a" : "p"); };
 const rangeText = function (r) { return uTemp(r[0]) + "–" + uTemp(r[1]); };
 const same = function (a, b) { return !!a && !!b && a[0] === b[0] && a[1] === b[1]; };
-const LBL = { fontSize: 10.5, fontWeight: 800, color: C.textMuted, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 5 };
+const LBL = { fontSize: 10.5, fontWeight: 800, color: C.label, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 5 };
 const NOTE = { fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 6 };
 // A step the climber can SEE: a whole degree C when metric, a whole degree F otherwise, and a whole km/h or mph.
 const snapTemp = function (f) { return uTempIn(uTempN(f)); };
@@ -189,7 +192,11 @@ const SYNC_TEXT = {
 /* The controls. `disc` is the route's discipline when shown on a route (so it opens on that
    discipline's range); in Settings and the Menu there is none, so it opens on All climbing.
    `only="temp"` shows the temperature range alone (the alpine Conditions tab). */
-export function CondPrefsControls({ disc, only }) {
+/* `onSignIn`, where the caller can open sign-in (the Menu's Your conditions, Settings), turns the signed-out line into an action:
+   it used to say "Sign in to keep it on your account" with nothing to tap (owner 2026-11-05). The route page's temperature box has
+   no sign-in path, so it passes none and keeps the plain line. */
+/** @param {{disc?: string, only?: string, onSignIn?: () => void}} props */
+export function CondPrefsControls({ disc, only, onSignIn }) {
   const p = useCondPrefs();
   const sync = useCondSync();
   const [scope, setScope] = useState(scopeForDiscipline(disc));
@@ -240,7 +247,7 @@ export function CondPrefsControls({ disc, only }) {
       <div style={NOTE}>{"Full marks inside your range, fading to nothing " + uWind(WIND_FADE_UP) + " above it and, if the bottom is above calm, " + uWind(WIND_FADE_DOWN) + " below it. A gust counts at 70%." + (p.wind ? "" : " Default: calm to " + uWind(WIND_DEFAULT[1]) + ".")}</div>
     </div>
     <div>
-      <button onClick={function () { setMore(!more); }} aria-expanded={more} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{(more ? "Fewer conditions" : "More conditions (optional)") + (hasExtras(p) && !more ? " · some set" : "")}</button>
+      <button onClick={function () { setMore(!more); }} aria-expanded={more} style={{minHeight:44, background: "none", border: "none", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", ...TEXT_TAP }}>{(more ? "Fewer conditions" : "More conditions (optional)") + (hasExtras(p) && !more ? " · some set" : "")}</button>
     </div>
     {more ? <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <div>
@@ -268,6 +275,9 @@ export function CondPrefsControls({ disc, only }) {
     </div> : null}
     <div><div style={LBL}>After rain</div><div role="group" aria-label="After rain" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>{chip(p.rain === "normal", "Usual drying time", function () { updateCondPrefs(function (x) { x.rain = "normal"; return x; }); }, "n")}{chip(p.rain === "cautious", "Give it longer", function () { updateCondPrefs(function (x) { x.rain = "cautious"; return x; }); }, "c")}</div></div>
     </> : null}
-    <div role="status" style={{ fontSize: 11.5, color: sync === "failed" ? C.amber : C.textMuted, lineHeight: 1.5 }}>{SYNC_TEXT[sync] || SYNC_TEXT.local}</div>
+    <div>
+      <div role="status" style={{ fontSize: 11.5, color: sync === "failed" ? C.amber : C.textMuted, lineHeight: 1.5 }}>{sync === "local" && onSignIn ? "Saved on this device." : (SYNC_TEXT[sync] || SYNC_TEXT.local)}</div>
+      {sync === "local" && onSignIn ? <button onClick={onSignIn} style={{ minHeight: 44, background: "none", border: "none", color: C.blue, fontSize: 12.5, fontWeight: 700, cursor: "pointer", ...TEXT_TAP }}>Sign in to keep it on your account</button> : null}
+    </div>
   </div>;
 }

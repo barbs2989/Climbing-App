@@ -38,7 +38,7 @@ function sources(dir, acc = []) {
     if (e.name === "node_modules" || e.name === "dist" || e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) { if (!/^(scripts|catalog|supabase|enrichment-wip|docs|research)$/.test(e.name)) sources(p, acc); }
-    else if (/\.[jt]sx?$/.test(e.name)) acc.push(path.relative(ROOT, p));
+    else if (/\.[jt]sx?$/.test(e.name)) acc.push(path.relative(ROOT, p).replace(/\\/g, "/"));
   }
   return acc;
 }
@@ -85,6 +85,19 @@ function scan() {
         // The App body contains every handler; scanning it would attribute every toast to
         // every write. Only look at handler-sized functions.
         if (src.length > 60000) return;
+        // A RENDER BODY is not a handler either: a component that is one `return <jsx>` (the tab
+        // bodies lifted out of App in PR61) holds every handler of its screen, and attributing all
+        // their toasts to one of their writes is the App-body error above. Its handlers are
+        // functions of their own and are still visited.
+        const only = p.node.body.body;
+        const jsxReturn = s => s && s.type === "ReturnStatement" && s.argument && /^JSX/.test(s.argument.type);
+        if (only.length === 1 && jsxReturn(only[0])) return;
+        // ...and a COMPONENT (a capitalised function) that ends in `return <jsx>` is still a render
+        // body when a hook or a const sits above that return: MeTab gained `useWideScreen()` and two
+        // button consts (#3133) and its whole screen was read as ONE handler, every toast on the
+        // Profile tab blamed on an `if(uid)` in some other handler. Its handlers are still visited.
+        const name = p.node.id?.name || (p.parent?.type === "VariableDeclarator" && p.parent.id?.name) || "";
+        if (/^[A-Z]/.test(name) && jsxReturn(only[only.length - 1])) return;
         const viaHelper = [...gated].find(h => new RegExp(`\\b${h}\\s*\\(`).test(src));
         const viaInline = /if\s*\(\s*uid\s*[&)]/.test(src);
         if (!viaHelper && !viaInline) return;

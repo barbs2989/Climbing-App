@@ -43,6 +43,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -209,6 +210,15 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   const onTrack = text(render(route("alpine", { waypoints: [WP] }), "planner"));
   if (/pin under ROUTE TRACK/.test(onTrack)) ok("the track-pin claim appears when a site IS on the track");
   else fail("a waypoint-derived site should say it is pinned on the track");
+  // A PIN WITH NO COORDINATE IS NOT ON THE MAP (2026-10-28, audit:camp-pins: 48 such pins wore the
+  // chip). Neither the pin's own row nor a researched site it backs may claim it.
+  const bare = { ...WP, lat: null, lng: null };
+  const own = text(render(route("alpine", { waypoints: [bare] }), "planner"));
+  if (!/Marked on the track/.test(own) && !/pin under ROUTE TRACK/.test(own)) ok("a pin with no coordinate does not claim to be on the track");
+  else fail("a Campsite pin with no lat/lng is stamped 'Marked on the track' — the map cannot draw it");
+  const backed = text(render(route("alpine", { waypoints: [bare], bivy: [{ name: WP.name, elev: 2360 }] }), "planner"));
+  if (!/Marked on the track/.test(backed)) ok("a site backed by a coordinate-less pin does not borrow the chip");
+  else fail("a researched site borrowed 'Marked on the track' from a pin with no coordinate");
 }
 
 // ── 8c. THE CONTRIBUTED SHAPE RENDERS. `bivy` became contributable, and structuredVal() emits a
@@ -446,7 +456,7 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
 //    something else, so a climber chose one vocabulary and found their camp filed under another.
 //    Read from the source: the form is a modal a static render of the route page does not open.
 {
-  const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const src = readAppFile(path.join(ROOT, "RouteDetail.jsx")) /* stitched: SuggestFix lives in src/components since PR59 */;
   const sel = src.match(/aria-label=\{"Site "\+\(idx\+1\)\+" role"\}[\s\S]*?<\/select>/);
   if (!sel) { fail("ANCHOR LOST: the camping form's role <select> is gone or renamed — its labels were not checked"); }
   else {

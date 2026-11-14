@@ -27,7 +27,9 @@ const CASES = [
   { name: "1. gating back on the wide window (the real defect)",
     find: "gated: FLAGS.filter((f) => own.text.includes(f))",
     repl: "gated: FLAGS.filter((f) => wide.text.includes(f))",
-    needs: /STALE: logPickOpen/ },
+    // The guard now lists every accused overlay on ONE line ("STALE: settingsOpen, logPickOpen, ..."),
+    // so logPickOpen is no longer necessarily first.
+    needs: /STALE: [^\n]*\blogPickOpen\b/ },
   { name: "4. a CHECKED entry for an overlay that names a flag of its own (STALE, direct)",
     find: "const CHECKED = {",
     repl: "const CHECKED = {\n  friendsOpen: 'INJECTED -- this overlay is gated by connectionsUnavailable',",

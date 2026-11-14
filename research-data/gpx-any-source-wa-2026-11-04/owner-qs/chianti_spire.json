@@ -1,0 +1,21 @@
+{
+  "key": "chianti_spire",
+  "question": "The East Face summit pin is 168 m off the others; where is the true summit?",
+  "answer": "The East Face row's summit pin (48.55186,-120.59014) is the outlier, about 168 m south of the true summit. Peakbagger's lidar-refined position is 48.553355,-120.590487 (8459.4 ft NAVD88, lidar 3DEP 2024 click). SummitPost independently gives 48.55320,-120.59063 (about 8,400 ft). Those agree within about 20 m, and the other two routes' pins (48.553205,-120.590401) are within 20 m of both. OSM has no node for the spire (Nominatim returns nothing), so there is no mapped third source, but two independent sources and two of our own rows agree. The East Face pin is the wrong one, probably placed on the face below the top.",
+  "recommendation": "Move the Summit waypoint on wa_chianti_spire_east_face to 48.55335,-120.59049. The other two rows are already within 20 m, so no change is required. Update high_point_ft on the East Face row from ~8,420 (and ~8,400 on the others) to ~8,459, the most recent (lidar 2024) source.",
+  "confidence": "high",
+  "proposed": {
+    "summit_pin": {"lat": 48.553355, "lng": -120.590487, "elev_ft": 8459},
+    "routes_to_fix": ["wa_chianti_spire_east_face"],
+    "high_point_ft": 8459
+  },
+  "evidence": [
+    "Peakbagger peak 38131 (in packet) — 48.553355,-120.590487, lidar 3DEP 2024 site-manual click, 8459.4 ft",
+    "https://summitpost.org/chianti-spire/229839 — Lat/Lon 48.55320 N / 120.59063 W, ~8400 ft; second of the Wine Spires from the north, just south of Burgundy Col; all routes 5th class"
+  ],
+  "searched": [
+    "Chianti Spire summit coordinates Washington Peakbagger Rebel Yell — AAC, SummitPost, chossclimbers and OpenBeta pages; no coordinates in snippets",
+    "Nominatim 'Chianti Spire' and 'Burgundy Spire' — no results (not in OSM)",
+    "https://www.peakbagger.com/peak.aspx?pid=38131 — fetch gave no usable text; used the packet copy"
+  ]
+}

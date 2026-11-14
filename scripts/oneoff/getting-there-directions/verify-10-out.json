@@ -1,0 +1,479 @@
+[
+ {
+  "i": 51,
+  "verdict": "not-directions",
+  "problem": "Text only names the trailhead and trail; no drive.",
+  "correctedDirection": "From Trout Lake, drive north on Mount Adams Road to the V intersection with Forest Road 23, veer right and go about 1 mile, then turn left onto Forest Road 80 (signed South Climb) and follow it to its end. Turn right onto Forest Road 8040 and drive north past Morrison Creek Campground to the trailhead; the last 3 miles are very rough and narrow.",
+  "numbersUsed": [
+   "23",
+   "1",
+   "80",
+   "8040",
+   "3"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb"
+  ]
+ },
+ {
+  "i": 52,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb"
+  ]
+ },
+ {
+  "i": 53,
+  "verdict": "accurate",
+  "problem": "Brief but consistent with the road sequence.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-adams-south-climb"
+  ]
+ },
+ {
+  "i": 55,
+  "verdict": "unverifiable",
+  "problem": "not checked against a fetched page; Colonial Creek page could not be opened",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 57,
+  "verdict": "accurate",
+  "problem": "West Chewuch to FR 5130 is about 9 miles and FR 5130 about 12.4, within tolerance.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/copper-glance-lake"
+  ]
+ },
+ {
+  "i": 58,
+  "verdict": "accurate",
+  "problem": "FR 33 about 11 miles, room for 8-10 vehicles, matches. Road has a seasonal winter gate.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://besthikesbc.ca/hiking-cougar-divide-in-the-mount-baker-wilderness/"
+  ]
+ },
+ {
+  "i": 59,
+  "verdict": "accurate",
+  "problem": "Mileages differ slightly (4.4 vs 4.6) but are within tolerance.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/crater-lakes"
+  ]
+ },
+ {
+  "i": 60,
+  "verdict": "accurate",
+  "problem": "Correct as far as it goes; it ends on FR 4340 short of the trailhead.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/crater-lakes"
+  ]
+ },
+ {
+  "i": 63,
+  "verdict": "unverifiable",
+  "problem": "Washington Pass pullout 1.5 miles west could not be confirmed from an opened page",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 64,
+  "verdict": "unverifiable",
+  "problem": "no page found that confirms or contradicts it",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 65,
+  "verdict": "unverifiable",
+  "problem": "no page found that confirms or contradicts it",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 66,
+  "verdict": "unverifiable",
+  "problem": "Two pages disagree on which side of US-2 the Deception Creek road leaves and the trailhead is in a fire closure (Three Queens Fire, Aug 2026); unclear which Deception Pass trailhead the route uses",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 67,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/denny-creek"
+  ]
+ },
+ {
+  "i": 68,
+  "verdict": "accurate",
+  "problem": "FR 58 and exit 47 confirmed; the FR 5830 number was not confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/denny-creek"
+  ]
+ },
+ {
+  "i": 69,
+  "verdict": "unverifiable",
+  "problem": "source page could not be opened",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 70,
+  "verdict": "unverifiable",
+  "problem": "source page could not be opened",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 71,
+  "verdict": "unverifiable",
+  "problem": "source page could not be opened",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 72,
+  "verdict": "accurate",
+  "problem": "Matches the stored text; a June 2026 Snoqualmie district road alert could not be opened.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/dingford-creek"
+  ]
+ },
+ {
+  "i": 74,
+  "verdict": "accurate",
+  "problem": "Gate at the end of the 6-mile potholed road confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/dingford-creek"
+  ]
+ },
+ {
+  "i": 75,
+  "verdict": "accurate",
+  "problem": "Road end 8.5 miles from US-101 at Brinnon confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/dosewallips-river"
+  ]
+ },
+ {
+  "i": 79,
+  "verdict": "fix",
+  "problem": "Suiattle River Road has been closed to vehicles at milepost 4 by flood damage since February 2026 (order runs to January 2028), so the trailhead is not drivable; the text gives no drive.",
+  "correctedDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4, so the last miles must be covered on foot or by bike.",
+  "numbersUsed": [
+   "530",
+   "26",
+   "20",
+   "2026",
+   "4"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/downey-creek",
+   "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"
+  ]
+ },
+ {
+  "i": 80,
+  "verdict": "fix",
+  "problem": "Suiattle River Road has been closed to vehicles at milepost 4 by flood damage since February 2026 (order runs to January 2028), so the trailhead is not drivable; the text gives no drive.",
+  "correctedDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4, so the last miles must be covered on foot or by bike.",
+  "numbersUsed": [
+   "530",
+   "26",
+   "20",
+   "2026",
+   "4"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/downey-creek",
+   "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"
+  ]
+ },
+ {
+  "i": 81,
+  "verdict": "fix",
+  "problem": "Suiattle River Road has been closed to vehicles at milepost 4 by flood damage since February 2026 (order runs to January 2028), so the trailhead is not drivable; the text gives no drive.",
+  "correctedDirection": "From Darrington, drive Highway 530 to the Suiattle River Road (Forest Road 26) and turn east; the trailhead is just past the Downey Creek bridge, about 20 miles from Highway 530. Since February 2026 the road has been closed to vehicles at milepost 4, so the last miles must be covered on foot or by bike.",
+  "numbersUsed": [
+   "530",
+   "26",
+   "20",
+   "2026",
+   "4"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/downey-creek",
+   "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure"
+  ]
+ },
+ {
+  "i": 82,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/duckabush-river"
+  ]
+ },
+ {
+  "i": 83,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/duckabush-river"
+  ]
+ },
+ {
+  "i": 84,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/duckabush-river"
+  ]
+ },
+ {
+  "i": 85,
+  "verdict": "accurate",
+  "problem": "Gate and road confirmed; the 7.7 miles beyond it was not.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/dingford-creek"
+  ]
+ },
+ {
+  "i": 86,
+  "verdict": "not-directions",
+  "problem": "Text only places the trailhead relative to a bridge; no drive.",
+  "correctedDirection": "From the Nisqually Entrance of Mount Rainier National Park, drive to Longmire, pass the National Park Inn and turn right at the two-story building with the flagpole. Continue straight through the employee housing area and across the suspension bridge, which has a 3-ton vehicle limit; the trailhead is 300 feet past the bridge and parking is limited.",
+  "numbersUsed": [
+   "3",
+   "300"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://home.nps.gov/mora/planyourvisit/eagle-peak.htm"
+  ]
+ },
+ {
+  "i": 87,
+  "verdict": "accurate",
+  "problem": "Milepost 138 confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/east-bank-ross-lake"
+  ]
+ },
+ {
+  "i": 88,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/easy-pass"
+  ]
+ },
+ {
+  "i": 89,
+  "verdict": "not-directions",
+  "problem": "Text only names the trailhead; no drive.",
+  "correctedDirection": "From Marblemount, drive SR-20 east about 45 miles and turn right between mileposts 151 and 152 onto the signed Easy Pass road to the trailhead.",
+  "numbersUsed": [
+   "20",
+   "45",
+   "151",
+   "152"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/easy-pass"
+  ]
+ },
+ {
+  "i": 90,
+  "verdict": "not-directions",
+  "problem": "Text refers to an earlier drive note that is not in the text.",
+  "correctedDirection": "From Highway 2 on the west side of Leavenworth, turn south onto Icicle Road and drive 8.4 miles, then turn left onto Forest Road 7601 (Eightmile Road, washboard and potholed) and go 3.1 miles to the Eightmile trailhead on the right.",
+  "numbersUsed": [
+   "2",
+   "8.4",
+   "7601",
+   "3.1"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/eightmile-lake"
+  ]
+ },
+ {
+  "i": 91,
+  "verdict": "fix",
+  "problem": "Forest Road 38 has been closed by a washout at milepost 7 since July 2026, which the text does not say.",
+  "correctedDirection": "From Sedro-Woolley, drive WA-9 north to Acme, turn right (east) onto Mosquito Lake Road and follow it about 9 miles, cross the Middle Fork Nooksack River and continue onto Forest Road 38 for about 11 miles to the Elbow Lake trailhead. Since July 2026 Forest Road 38 has been closed to vehicles by a washout at milepost 7.",
+  "numbersUsed": [
+   "9",
+   "38",
+   "11",
+   "2026",
+   "7"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/elbow-lake",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ]
+ },
+ {
+  "i": 92,
+  "verdict": "fix",
+  "problem": "Text gives no usable drive and omits that Forest Road 38 has been closed by a washout at milepost 7 since July 2026.",
+  "correctedDirection": "From Acme on WA-9, turn east onto Mosquito Lake Road and follow it about 9 miles, cross the Middle Fork Nooksack River and continue onto Forest Road 38 for about 11 miles to the Elbow Lake trailhead. Since July 2026 Forest Road 38 has been closed to vehicles by a washout at milepost 7.",
+  "numbersUsed": [
+   "9",
+   "38",
+   "11",
+   "2026",
+   "7"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/elbow-lake",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ]
+ },
+ {
+  "i": 93,
+  "verdict": "fix",
+  "problem": "Omits that Forest Road 38 has been closed by a washout at milepost 7 since July 2026.",
+  "correctedDirection": "The Elbow Lake trailhead is about 11 miles up Forest Road 38 off Mosquito Lake Road, and the road is gated December 1 to June 15 for elk winter range. Since July 2026 Forest Road 38 has also been closed to vehicles by a washout at milepost 7.",
+  "numbersUsed": [
+   "11",
+   "38",
+   "1",
+   "15",
+   "2026",
+   "7"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/elbow-lake",
+   "https://www.fs.usda.gov/r06/mbs/alerts"
+  ]
+ },
+ {
+  "i": 94,
+  "verdict": "accurate",
+  "problem": "Road shown open now; trailhead at mile 20 confirmed; the road washes out most years.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/eldorado-peak",
+   "https://www.nps.gov/noca/planyourvisit/road-conditions.htm"
+  ]
+ },
+ {
+  "i": 95,
+  "verdict": "not-directions",
+  "problem": "Text only names the trailhead; no drive.",
+  "correctedDirection": "From Marblemount, go straight past the last gas station onto Cascade River Road, cross the bridge and drive to the Eldorado Creek trailhead at mile 20, on the right; the last 10 miles are gravel.",
+  "numbersUsed": [
+   "20",
+   "10"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+  ]
+ },
+ {
+  "i": 96,
+  "verdict": "accurate",
+  "problem": "Mile 20 confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/eldorado-peak"
+  ]
+ },
+ {
+  "i": 97,
+  "verdict": "unverifiable",
+  "problem": "winter gate position not confirmed from an opened page",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ }
+]

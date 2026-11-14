@@ -9,7 +9,7 @@
  *
  * Every case proves its edit LANDED by checksum before the guard is believed -- "checksum movement
  * proves an edit happened, not that it was the right one" is why each also declares the text its
- * own failure must carry -- and restores ClimbMatchCore.jsx BYTE-IDENTICALLY afterwards.
+ * own failure must carry -- and restores FullProfile.tsx BYTE-IDENTICALLY afterwards.
  *
  * Expectations are matched against FAIL lines only, and the harness REFUSES any expectation that
  * already appears in the healthy run: an expectation written against the text an assertion prints
@@ -23,7 +23,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILE = path.join(ROOT, "ClimbMatchCore.jsx");
+const FILE = path.join(ROOT, "src", "components", "FullProfile.tsx");
 const GUARD = path.join(ROOT, "scripts", "check-profile-claims.mjs");
 
 const sha = (s) => crypto.createHash("sha1").update(s).digest("hex");
@@ -40,7 +40,9 @@ const failLines = (out) => out.split("\n").filter((l) => l.includes("FAIL")).joi
 
 const CAPTION = '"Their sends by grade — a quick read on where they operate."';
 const HISTORICAL = '"Climbs logged at each grade — a quick read on where they operate."';
-const TAG = "<AscentPyramid routeById={routeById} logs={climber.__selfLogs} pyramid={climber.pyramid}/>";
+// FullProfile moved out of core; its logs prop is now own-or-their real logs (_lg), with the stored
+// summary still passed as the fallback for a climber whose logs are not hydrated.
+const TAG = "<AscentPyramid routeById={routeById} logs={_lg} pyramid={climber.pyramid}/>";
 
 const cases = [
   {
@@ -70,7 +72,7 @@ const cases = [
     name: "SILENT: 'logged' is correct once the branch is fed real logs",
     edits: [
       [CAPTION, HISTORICAL],
-      [TAG, TAG.replace("logs={climber.__selfLogs}", "logs={climber.__selfLogs||climber.__peerLogs}")],
+      [TAG, TAG.replace(" pyramid={climber.pyramid}", "")],
     ],
     silent: true,
   },
@@ -122,7 +124,7 @@ for (const c of cases) {
   } finally {
     fs.writeFileSync(FILE, original);
     if (sha(read()) !== originalSum) {
-      console.log("TREE NOT RESTORED — ClimbMatchCore.jsx differs from its original checksum");
+      console.log("TREE NOT RESTORED — FullProfile.tsx differs from its original checksum");
       process.exit(1);
     }
   }

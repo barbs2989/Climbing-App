@@ -1,0 +1,105 @@
+{
+ "id": "wa_lichtenberg_mountain_se_route",
+ "name": "Southeast Slopes Scramble",
+ "discipline": "mountaineering",
+ "area": {
+  "id": "wa_lichtenberg_mountain",
+  "name": "Lichtenberg Mountain",
+  "lat": 47.7882093,
+  "lng": -121.0912723,
+  "elevation_ft": 5844,
+  "parent_id": "wa_stevens_pass_lake_valhalla",
+  "ground_ft": 5844
+ },
+ "dist_km": 7.2,
+ "gain_ft": 2500,
+ "high_point_ft": 5844,
+ "approach_logistics": {
+  "peakLat": 47.7882093,
+  "peakLng": -121.0912723,
+  "trailhead": "Smithbrook Trailhead",
+  "trailheadLat": 47.8025,
+  "trailheadLng": -121.0765,
+  "trailheadDirection": "From Leavenworth, drive US 2 west about 31 miles, turn right onto Smithbrook Road (Forest Road 6700) and go about 3 miles to the trailhead on the left. Forest Road 6700 is closed to vehicles by a storm-damage order from May 20, 2026 through December 31, 2027, unless lifted sooner."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.802498,
+   "lng": -121.076645,
+   "elev": 4000,
+   "name": "Smithbrook Trailhead",
+   "note": "End of FR 6700 gravel spur off US-2 near milepost 68; Northwest Forest Pass required, self-issue wilderness permit at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US-2 near milepost 68, turn onto Smithbrook Road (FR 6700), a gravel spur, and follow it about 3 miles to the Smithbrook Trailhead at roughly 4,000 ft. A Northwest Forest Pass is required, and you self-issue the wilderness permit at the kiosk here. Smithbrook Road is unplowed in winter and typically melts out by early to mid summer; attempt it before the road opens and you add about two miles of snow-road walking each way.",
+   "ground_ft": 3981
+  },
+  {
+   "i": 1,
+   "lat": 47.798139,
+   "lng": -121.077837,
+   "elev": 4300,
+   "name": "Smithbrook Trail / PCT junction",
+   "note": "Smithbrook Trail #1590 tops out at the Pacific Crest Trail; turn left (south) toward Lake Valhalla.",
+   "type": "Junction",
+   "distMi": 0.9,
+   "ground_ft": 4229
+  },
+  {
+   "i": 2,
+   "lat": 47.7898414,
+   "lng": -121.1008325,
+   "elev": 4834,
+   "name": "Lake Valhalla, south tip",
+   "note": "Where the PCT bends southwest away from the lake, drop off-trail down a steep dirt path to the water and follow rocky shoreline to the south tip to leave the maintained trail.",
+   "type": "Water",
+   "distMi": 3.4,
+   "ground_ft": 4834
+  },
+  {
+   "i": 3,
+   "lat": 47.789621,
+   "lng": -121.082619,
+   "elev": 5100,
+   "name": "Base of southeast boulder slope",
+   "note": "Past the lake's south tip, boulder-hop southeast until Lichtenberg's southeast shoulder comes into view and a class 2 line up to the ridge is visible.",
+   "type": "Junction",
+   "distMi": 4.1,
+   "ground_ft": 4901
+  },
+  {
+   "i": 4,
+   "lat": 47.788598,
+   "lng": -121.085093,
+   "elev": 5600,
+   "name": "Southeast gully / talus slope",
+   "note": "Loose rock and shifting talus on the class 2 climb to the ridgeline; test holds and watch for parties below.",
+   "type": "Hazard",
+   "distMi": 4.2,
+   "ground_ft": 5034
+  },
+  {
+   "i": 5,
+   "lat": 47.787994,
+   "lng": -121.086883,
+   "elev": 5750,
+   "name": "Ridge gain point east of true summit",
+   "note": "Boulder scramble tops out on the summit ridge just east of the true summit, the eastern of the mountain's two tops; turn west for the final walk to the top.",
+   "type": "Junction",
+   "distMi": 4.3,
+   "ground_ft": 5213
+  },
+  {
+   "i": 6,
+   "lat": 47.7882093,
+   "lng": -121.0912723,
+   "elev": 5844,
+   "name": "Lichtenberg Mountain summit",
+   "note": "True summit overlooks Lake Valhalla to the west and Lichtenwasser Lake to the northeast; on descent retrace the ridge and gully, taking care on the loose upper talus.",
+   "type": "Summit",
+   "distMi": 4.5,
+   "ground_ft": 5844
+  }
+ ]
+}

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:waypoint-placement — a waypoint the map cannot draw must SAY SO, and must not pretend to
 // be a control; and exactly one predicate decides which waypoints those are.
 //
@@ -27,11 +28,12 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const core = readCoreSource();
-const rd = readFileSync(join(ROOT, "RouteDetail.jsx"), "utf8");
+// readAppFile: RouteDetail.jsx with its moved components (WaypointList, TrailheadCard — PR57) stitched back in.
+const rd = readAppFile(join(ROOT, "RouteDetail.jsx"));
 /* Resolve esbuild through NODE'S OWN resolution, never a path under ROOT and never `npx`.
    This repo is worked in git worktrees whose own `node_modules` is EMPTY — packages resolve from
    the parent checkout — so a hardcoded ROOT/node_modules/.bin path does not exist here and the

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // check:outage — when the database is down, does any screen quietly tell a signed-in climber
 // that they have nothing?
 //
@@ -337,6 +338,13 @@ const _NOUNS = ABSENCE_NOUNS.map(_plural).join("|");
 // could spell it, and a failed read of your groups behind that sentence would have walked past.
 const CLAIMS_NONE_RE = new RegExp(
   "no .* yet|nothing here|none yet|no results|haven[’']t joined" +
+  // A SEVENTH, found by check:outage's own injection suite (inject-outage-cases `logbook`): with
+  // MyAscents's logsUnavailable gate reverted, Logbook:Completed under an outage printed "Log your
+  // completed climbs here" -- the empty-state INVITATION, to somebody whose climbs merely failed
+  // to load -- and nothing flagged it, because the only other "couldn't load" line on that screen
+  // satisfied rule 1 and this sentence has no "no", no zero and no "yet". An invitation to start
+  // is how this app says "you have none" when it does not say it outright.
+  "|\\blog your (?:\\w+ ){0,3}here\\b" +
   `|\\bno(?: \\w+){0,2} (?:${_NOUNS})\\b` +
   `|\\b0 (?:${_NOUNS}|${ABSENCE_VERBS.join("|")})\\b`, "i");
 // EVERY PHRASING THIS GUARD HAS EVER MISSED, as an executable assertion rather than as the
@@ -344,7 +352,8 @@ const CLAIMS_NONE_RE = new RegExp(
 // somebody widened the pattern by hand; a comment recording them rots, and this repo has the
 // scar to prove it. A rewrite that drops one fails here, before a browser is started.
 const MUST_SPELL = ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
-  "No crew invites", "No custom lists", "no friends yet", "No groups yet", "You haven’t joined a group yet"];
+  "No crew invites", "No custom lists", "no friends yet", "No groups yet", "You haven’t joined a group yet",
+  "Log your completed climbs here"];
 for (const phrase of MUST_SPELL) {
   if (!CLAIMS_NONE_RE.test(phrase)) {
     console.error(`check:outage: rule 2's vocabulary can no longer spell ${JSON.stringify(phrase)},`
@@ -486,10 +495,10 @@ async function walk(browser, base, session, fail) {
   // clean result rather than as a miss. Say which it was.
   out[SUBTAB] = /My [Aa]scents|Log your completed climbs|Couldn\u2019t load your climbs/.test(compText)
     ? compText : "SUBTAB CLICK DID NOT LAND -- this is the default Logbook view, not Completed\n" + compText;
-  // The FOURTH Logbook sub-tab, and the one a flag has been sitting on unwalked. `saved_searches`
-  // feeds a card here that says "No saved searches yet -- save a filter set from the Climbs page."
-  // to an account that has some; #1238 flagged it and could not demonstrate it, because
-  // `logbookTab` defaults to "objectives" and this walk stopped at that view and Completed.
+  // The FOURTH Logbook sub-tab, and the one a flag has been sitting on unwalked. `user_itineraries`
+  // and `saved_areas` feed cards here that can read as empty to an account that has some; #1238
+  // flagged the first such card and could not demonstrate it, because `logbookTab` defaults to
+  // "objectives" and this walk stopped at that view and Completed.
   //
   // Clicked by TEXT, because these four buttons carry their own text and `aria-current`, and no
   // aria-label -- tapByName queries [aria-label] and nothing else, so it would return false on a
@@ -515,19 +524,20 @@ async function walk(browser, base, session, fail) {
   // followed named two empty states that are on screen in BOTH runs. "offline library" appears
   // ZERO times anywhere in the app, so a third of the alternation had never matched once.
   //
-  // "saved searches" is unique app-wide — 0 occurrences outside this region, in either app file.
-  // (There is no per-route trip pack any more, so "saved searches" is the only landmark.)
+  // "my itineraries" is unique app-wide — 0 occurrences outside this region, in either app file.
+  // (It replaced "saved searches" when saved searches were removed, 2026-11-05; there is no
+  // per-route trip pack any more either, so it is the only landmark.)
   //
   // The `/i` is NOT what made the old landmark vacuous, and it would be the tempting thing to
   // remove instead: the HEADINGS are uppercased in CSS but the header PROSE is not, so a
   // case-sensitive `/saved areas/` matched it too. Dropping the flag would have fixed nothing and
   // broken the replacement, because:
   // CASE-INSENSITIVE, and that is not defensive tidying: these headings are uppercased in CSS and
-  // `innerText` returns the TRANSFORMED text, so the screen says "SAVED SEARCHES" where the source
-  // says "Saved searches". A case-sensitive match reported this stop as never landing while the
+  // `innerText` returns the TRANSFORMED text, so the screen says "MY ITINERARIES" where the source
+  // says "My itineraries". A case-sensitive match reported this stop as never landing while the
   // dump showed it landing perfectly — the same trap check:ui records for `PEOPLE YOU’VE CLIMBED
   // WITH`. Matching either case also survives someone dropping the text-transform later.
-  out[SUBTAB2] = /saved searches/i.test(areasText)
+  out[SUBTAB2] = /my itineraries/i.test(areasText)
     ? areasText : "SUBTAB CLICK DID NOT LAND -- this is not the Logbook's Saved view\n" + areasText;
   // The three Crew sub-views. Reached by ACCESSIBLE NAME, never by text: the badge count renders
   // inside the button, so textContent is "Friends2". The count is in the aria-label too, and an
@@ -662,7 +672,7 @@ const base = `http://127.0.0.1:${port}/Climbing-App/`;
 // wrong app here). It calls buildOpener + routeDetailTransform, and both are inert without a
 // `?z=`/`?zr=` parameter, so every screen walked before the route page is measured exactly as
 // it was before this changed.
-const server = spawn("npx", ["vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/signed-in.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "" } });
 const up = async () => { for (let i = 0; i < 90; i++) { try { if ((await fetch(base)).ok) return true; } catch {} await new Promise(r => setTimeout(r, 1000)); } return false; };
 if (!await up()) { server.kill(); throw new Error("dev server never came up"); }

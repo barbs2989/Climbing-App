@@ -55,6 +55,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -64,7 +65,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { realPitches, MAX_PITCH_FT } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
+export { realPitches, MAX_PITCH_FT, planTimes } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route) {
@@ -81,7 +82,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, realPitches, MAX_PITCH_FT } = require_(out);
+const { render, realPitches, MAX_PITCH_FT, planTimes } = require_(out);
 
 const text = (h) => h.replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const FT = 3.28084;
@@ -196,6 +197,16 @@ const pitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTime
 const unpitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }));
 eq("ANCHOR: pitched and unpitched stored-leg fixtures rendered", !!pitchedStored && !!unpitchedStored, true);
 eq("a STORED summit leg already covers its rappels: no 0.7 x climb is added on top", pitchedStored && unpitchedStored ? pitchedStored.down === unpitchedStored.down : null, true);
+/* A stored approach or descent with NO summit leg beside it is still the route's own figure, so it
+   FLOORS the walk model (lib/planTimes.js, 2026-10-28). It used to be dropped: Davis Peak's North Face
+   stores 8.5 hr in and 4.5 out with no gain or distance, and the Planner printed a 0 hr day. A floor
+   only lengthens: a stored leg SHORTER than the walk leaves the walk alone. */
+const loneNoWalk = legs(route({ distKm: null, timing: { approachTimeHrs: 8.5, descentTimeHrs: 4.5 } }));
+const loneShort = legs(T({ approachTimeHrs: 0.5, descentTimeHrs: 0.5 }));
+const walkOnly = legs(T(null));
+eq("ANCHOR: the lone-leg fixtures rendered", !!loneNoWalk && !!loneShort && !!walkOnly, true);
+eq("a stored approach and descent with no summit leg and no walk inputs are kept: summit 8.5 hr out, 4.5 hr down", loneNoWalk ? JSON.stringify([loneNoWalk.summit, loneNoWalk.down]) : null, JSON.stringify([(6 + 8.5) * 60, 4.5 * 60]));
+eq("...and lone stored legs SHORTER than the walk model leave the walk unchanged (a floor never shortens)", loneShort && walkOnly ? JSON.stringify([loneShort.summit, loneShort.down]) === JSON.stringify([walkOnly.summit, walkOnly.down]) : null, true);
 /* A stored approach is not a hole: with no distance or gain on file the Approach tile states the
    stored leg as a value, not a floor, and the lower-bound note stays away when both legs are stored. */
 const noWalkHtml = text(render(route({ distKm: null, timing: { approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 2, totalHrs: 10 } })));
@@ -233,7 +244,7 @@ eq("a daylight return carries NO warning", daylight.ret, "");
 eq("a daylight summit carries NO warning", daylight.summit, "");
 
 /* Same day, past the thresholds. Both warnings are correct here and must survive the fix. */
-const sameDay = labels(route({ distKm: 24, gainM: 5200 / FT, lossM: 500 / FT }));
+const sameDay = labels(route({ distKm: 20, gainM: 4200 / FT, lossM: 500 / FT }));
 eq("ANCHOR: the same-day dusk route rendered both captions", sameDay.summit !== null && sameDay.ret !== null, true);
 eq("a same-day return after dusk is still warned about", sameDay.ret !== "", true);
 eq("a same-day summit after 1 PM is still warned about", sameDay.summit !== "", true);
@@ -260,7 +271,7 @@ eq("...while its next-day return is worded like a next-day return", split.ret, n
 
 /* The label and the "(+Nd)" suffix come from ONE function, so they cannot disagree. Asserted
    rather than assumed: a second next-day test written beside the label is the drift this guards. */
-const dayOfDecls = (fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8").match(/const dayOf=/g) || []).length;
+const dayOfDecls = (readAppFile(path.join(ROOT, "RouteDetail.jsx")).match(/const dayOf=/g) || []).length;
 eq("dayOf is declared exactly once", dayOfDecls, 1);
 
 /* -- 3. a multi-day route SAYS SO, and points at something that is on the screen ----------------
@@ -350,6 +361,21 @@ console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- no
   eq("a placeholder count with NO walk either leaves nothing to estimate: Total reads N/A, not '≥0.6hr'", tileOf(bare, "Total trip"), "N/A");
   eq("realPitches: a count of 1 stands up to the cap and is 0 over it; a longer count and none are untouched", [realPitches({ pitches: 1, routeFt: MAX_PITCH_FT }), realPitches({ pitches: 1, routeFt: MAX_PITCH_FT + 1 }), realPitches({ pitches: 6, routeFt: 99999 }), realPitches({ pitches: 0 }), realPitches({}), realPitches(null)].join(","), "1,0,6,0,0,0");
   eq("...and a route with no length keeps its count (seed routes carry none)", realPitches({ pitches: 3 }), 3);
+  /* CLIMBING IS ALWAYS IN THE TOTAL (owner rule, 2026-10-30). A stored climb to the start of a way in
+     is added to the Total once: the Total moves by exactly that climb, and the walk and summit legs do not. */
+  const base = { distKm: 6, gainM: 900, lossM: 900, pitches: 4, timing: { approachTimeHrs: 7.5, summitTimeHrs: 4, descentTimeHrs: 3 } };
+  const plain = planTimes(base).totalH;
+  const withClimb = planTimes({ ...base, timing: { ...base.timing, climbToStartHrs: 5 } });
+  eq("climb to start: the Total carries the stored climb, once", Math.round((withClimb.totalH - plain) * 100), 500);
+  eq("climb to start: the Total-trip clock carries it too (the return moves by the same climb)", Math.round((withClimb.tripH - planTimes(base).tripH) * 100), 500);
+  eq("climb to start: the climb is reported as its own figure", withClimb.climbToStartH, 5);
+  eq("climb to start: a published whole-day total already includes it, so it is NOT added again", planTimes({ ...base, timing: { totalHrs: 12, climbToStartHrs: 5 } }).totalH, 12);
+  eq("climb to start: no figure on file adds nothing", planTimes({ ...base, timing: { ...base.timing, climbToStartHrs: null } }).totalH, plain);
+  /* A climbing route with NO pitch count still carries its climb: the length gives the rope (1,150 ft is ten
+     pitches of the 35 m default), so the Total is longer than the same route with no length at all. */
+  const noCount = { discipline: "alpine", grade: "5.8", distKm: 6, gainM: 900, lossM: 900, timing: {} };
+  eq("no pitch count: a climbing route's length puts its climb in the Total", planTimes({ ...noCount, routeFt: 1150 }).totalH > planTimes(noCount).totalH, true);
+  eq("no pitch count: a walk-up (mountaineering) is not given a climb from its length", planTimes({ ...noCount, discipline: "mountaineering", routeFt: 1150 }).totalH, planTimes({ ...noCount, discipline: "mountaineering" }).totalH);
 }
 
 const FLOOR = 67;

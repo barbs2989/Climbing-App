@@ -39,14 +39,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
-export function render(route, tab) {
+export function render(route, tab, extra) {
   return renderToStaticMarkup(
     React.createElement(QueryClientProvider, { client: qc },
       React.createElement(RouteDetail, {
         route, initialSubTab: tab, onBack: noop, onSubTab: noop,
         contribs: [], myReports: [], connections: [], comments: {},
         hzVotes: {}, sunReports: {}, gearEdits: {}, diffRatings: {},
-        crewsForRoute: [], myStars: {}, presence: null,
+        crewsForRoute: [], myStars: {}, presence: null, ...(extra || {}),
       })));
 }
 `;
@@ -243,10 +243,13 @@ for (const d of [...CRAG, "alpine"]) {
   // also has a Conditions tab: before 2026-10-24 it was left off Safety for such routes.
   const st = text(render(located("alpine"), "safety"));
   const iF = st.search(FIRE), iB = st.indexOf("Committing objective"), iW = st.indexOf("Weather & mountain forecasts");
+  // Since 2026-11-11 (owner) the forecast is NOT repeated on Safety for a route whose Conditions tab
+  // carries it (this alpine fixture has one), and "Got beta?" is off Safety on every route.
   if (iB < 0) fail("ANCHOR LOST: the Safety tab's float-plan banner was renamed — update this guard");
-  else if (iW < 0) fail("forecast: no longer on the Safety tab of a route that has a Conditions tab");
-  else if (!(iW < iF && iF < iB)) fail("Safety order broke: forecast, then the fire panel, then the float plan");
-  else ok("Safety order: forecast first, the fire panel under it, the float plan last");
+  else if (iW >= 0) fail("forecast: duplicated onto the Safety tab of a route that has a Conditions tab");
+  else if (/Got beta\?|Know this (route|climb|problem)\?/.test(st)) fail("\"Got beta?\" is back on the Safety tab");
+  else if (!(iF < iB)) fail("Safety order broke: the fire panel, then the float plan");
+  else ok("Safety order: no repeated forecast, no Got beta, the fire panel above the float plan");
 }
 
 /* ── a SPORT route must be able to say it needs natural gear ─────────────────────────────────
@@ -325,42 +328,91 @@ for (const d of [...CRAG, "alpine"]) {
 //    as "Not on file yet" with an "Add what you know" link — a placeholder for climbers to fill, never
 //    an "unknown" that reads as a fact, and never a value the route does not have. Facts the
 //    discipline does not have (bolts on a boulder, landing on a sport line) and facts that are not
-//    a discipline question (Star rating, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
+//    a discipline question (Reputation, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
 //    Still: no "Season TBD", and a crag route's breakdown/climate render on Overview.
 {
-  const FACT_LABELS = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
+  const FACT_LABELS = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
+  // CONDITIONS (Aspect, Sun, Season, Wet, Rock quality) sits on the CONDITIONS TAB on a discipline that has one
+  // (owner, 2026-11-14: "remove the CONDITIONS section, we already have a conditions subtab"). Aid has no
+  // Conditions tab (CRAG_SCORE_DISCIPLINES), so it keeps the section on Overview.
+  const COND_TAB = ["sport", "trad", "toprope", "bouldering"];
+  const COND_FACTS = ["Aspect", "Season", "Rock quality", "Wet"];
+  // Where a crag route's facts render: Overview, plus the Conditions tab where the CONDITIONS section lives.
+  const factsHtml = (r, d, extra) => render(r, "overview", extra) + (COND_TAB.includes(d) ? render(r, "forecast", extra) : "");
+  const condSegs = (r, d, extra) => { const s = segs(render(r, COND_TAB.includes(d) ? "forecast" : "overview", extra)); const i = s.indexOf("CONDITIONS"); return i < 0 ? s : s.slice(i); };
   for (const d of CRAG) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
     const t = text(html), sg = segs(html);
-    if (!t.includes("ROUTE FACTS")) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ROUTE FACTS — this section checked nothing`);
+    // A boulder problem's card is PROBLEM FACTS (owner's note: "we call bouldering problems not routes").
+    const factsHead = d === "bouldering" ? "PROBLEM FACTS" : "ROUTE FACTS";
+    if (!t.includes(factsHead)) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ${factsHead} — this section checked nothing`);
+    if (d === "bouldering" && t.includes("ROUTE FACTS")) fail("bare bouldering problem: its facts card is titled ROUTE FACTS — a boulder line is a PROBLEM");
     const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspect", "Season", "Rock quality", "Wet"],
       sport: ["Location", "Bolts", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
       trad: ["Location", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"],
       toprope: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
       aid: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"] }[d];
     if (!WANT) fail(`ANCHOR LOST: no expected fact list for crag discipline ${d} — add one`);
-    const valueOf = (l) => { const i = sg.indexOf(l); return i < 0 ? null : sg[i + 1]; };
-    const missing = (WANT || []).filter((l) => valueOf(l) !== "Not on file yet");
-    const stray = FACT_LABELS.filter((l) => !(WANT || []).includes(l) && sg.includes(l));
-    if (missing.length) fail(`bare ${d} route: these discipline facts are not shown as "Not on file yet" placeholders: ${missing.join(", ")}`);
-    else if (stray.length) fail(`bare ${d} route: ROUTE FACTS prints rows that are not this discipline's facts and have no value (${stray.join(", ")})`);
-    // Since 2026-10-15 each placeholder sits in its own section (WHERE IT STARTS — renamed from LOCATION 2026-10-21 and moved above BASE OF THE CLIMB —, GEAR & SAFETY, CONDITIONS) and
-    // carries its OWN "+ Add" — the page-wide "Add what you know" text also belongs to other cards, so
-    // finding it proved nothing. The control must be the segment right after the placeholder.
-    else if ((WANT || []).some((l) => sg[sg.indexOf(l) + 2] !== "+ Add")) fail(`bare ${d} route: a "Not on file yet" placeholder has no + Add beside it`);
-    else if (!["WHERE IT STARTS", "GEAR &amp; SAFETY", "CONDITIONS"].every((h) => sg.includes(h))) fail(`ANCHOR LOST: ${d} overview lacks a WHERE IT STARTS / GEAR & SAFETY / CONDITIONS section heading`);
-    else if ([["Location", "WHERE IT STARTS"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"], ["Rock quality", "CONDITIONS"]].some(([l, h]) => sg.indexOf(l) < sg.indexOf(h)))
+    const onTab = COND_TAB.includes(d);
+    const WANT_OV = (WANT || []).filter((l) => !onTab || !COND_FACTS.includes(l));
+    const OV_HEADS = ["WHERE IT STARTS", "GEAR &amp; SAFETY"].concat(onTab ? [] : ["CONDITIONS"]);
+    // ONE LINE PER SECTION (owner, 2026-11-13): a crag route lacked 8-11 facts on 95% of 303,571 routes, so
+    // the missing ones no longer get a "Not on file yet" row each. Each section lists what it has, then ONE
+    // "Not on file yet" line whose every name is its own "+ <Fact>" button (one tap per gap, as before).
+    const add = (l) => sg.indexOf("+ " + l);
+    const missing = WANT_OV.filter((l) => add(l) < 0);
+    const stray = FACT_LABELS.filter((l) => !WANT_OV.includes(l) && (sg.includes(l) || sg.includes("+ " + l)));
+    const oldRows = WANT_OV.filter((l) => sg[sg.indexOf(l) + 1] === "Not on file yet");
+    const lines = sg.filter((x) => x === "Not on file yet").length;
+    if (missing.length) fail(`bare ${d} route: these discipline facts have no "+ <Fact>" button on a Not-on-file-yet line: ${missing.join(", ")}`);
+    else if (stray.length) fail(`bare ${d} route: ROUTE FACTS offers facts that are not this discipline's (${stray.join(", ")})`);
+    else if (oldRows.length) fail(`bare ${d} route: ${oldRows.join(", ")} still render as a "Not on file yet" ROW each — they belong on the section's one line`);
+    else if (lines > 5) fail(`bare ${d} route: ${lines} "Not on file yet" lines — expected at most one per place (the card, WHERE IT STARTS, RACK, GEAR & SAFETY, CONDITIONS)`);
+    else if (!OV_HEADS.every((h) => sg.includes(h))) fail(`ANCHOR LOST: ${d} overview lacks a ${OV_HEADS.join(" / ").replace("&amp;", "&")} section heading`);
+    else if (onTab && sg.includes("CONDITIONS")) fail(`bare ${d} route: Overview still has a CONDITIONS section — it belongs on the Conditions tab`);
+    else if ([["Location", "WHERE IT STARTS"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"]].concat(onTab ? [] : [["Rock quality", "CONDITIONS"]]).some(([l, h]) => add(l) < sg.indexOf(h)))
       fail(`bare ${d} route: a fact renders outside its section (Location under WHERE IT STARTS, Anchor under GEAR & SAFETY, Rock quality under CONDITIONS)`);
-    else ok(`bare ${d} route: every ${d} fact shows as a fillable "Not on file yet" placeholder, and nothing else`);
+    else ok(`bare ${d} route: every ${d} fact is a "+ <Fact>" on its section's one Not-on-file-yet line, and nothing else`);
+    if (onTab) {
+      const cg = segs(cache.get(d + "/forecast") || render(bare(d, "5.9"), "forecast"));
+      const h = cg.indexOf("CONDITIONS");
+      const off = COND_FACTS.filter((l) => cg.indexOf("+ " + l) < 0 || cg.indexOf("+ " + l) < h);
+      if (h < 0) fail(`ANCHOR LOST: bare ${d} route's Conditions tab has no CONDITIONS section heading`);
+      else if (off.length) fail(`bare ${d} route: the Conditions tab's CONDITIONS section lacks a "+ <Fact>" for ${off.join(", ")}`);
+      else ok(`bare ${d} route: CONDITIONS (${COND_FACTS.join(", ")}) is on the Conditions tab, not Overview`);
+    }
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
+  }
+  // CRAG-WIDE FACTS (owner, 2026-11-13: consolidate to the crag, sub-area or peak). A route with no season of its
+  // own shows its area's (or an ancestor's); and where the page can open the area's editor, the missing
+  // Season and Aspect are added to the AREA ("+ Season · crag"), while a route fact (Location) stays the route's.
+  {
+    const withSeason = { ...bare("sport", "5.10a"), _dbArea: { ...bare("sport", "5.10a")._dbArea, seasonMonths: [4, 5, 6, 7, 8, 9, 10] } };
+    const sg1 = condSegs(withSeason, "sport");
+    const si = sg1.indexOf("Season");
+    if (si < 0 || !/\(the crag(?:'|&#x27;)s season\)/.test(sg1[si + 1] || "")) fail(`crag season: a route on a crag with season_months Apr-Oct shows Season as ${JSON.stringify(si < 0 ? null : sg1[si + 1])} — expected the crag's season`);
+    else if (sg1.includes("+ Season")) fail("crag season: Season is still offered as missing although the crag states one");
+    else ok("crag season: a route with no season of its own shows its crag's, marked as the crag's");
+    const ancestor = { ...bare("trad", "5.9"), _dbArea: { ...bare("trad", "5.9")._dbArea, areaType: "wall", seasonMonths: null, ancestorSeasonMonths: [5, 6, 7, 8, 9] } };
+    const sg2 = condSegs(ancestor, "trad");
+    const ai = sg2.indexOf("Season");
+    if (ai < 0 || !/\(the area(?:'|&#x27;)s season\)/.test(sg2[ai + 1] || "")) fail(`crag season: a wall with no season under a crag that has one shows ${JSON.stringify(ai < 0 ? null : sg2[ai + 1])} — expected the ancestor's season`);
+    else ok("crag season: a wall with none inherits its parent area's season");
+    const sg3 = segs(factsHtml(bare("sport", "5.10a"), "sport", { onSuggestAreaEdit: () => {} }));
+    if (!sg3.includes("+ Season · crag") || !sg3.includes("+ Aspect · crag")) fail(`crag-wide Add: with the area editor wired, Season/Aspect are not offered for the whole crag (${sg3.filter((x) => /^\+ (Season|Aspect)/.test(x)).join(", ") || "neither found"})`);
+    else if (!sg3.includes("+ Location") || sg3.includes("+ Location · crag")) fail("crag-wide Add: Location is a fact of the ROUTE (where it starts) and must stay the route's own Add");
+    else ok("crag-wide Add: Season and Aspect go to the crag's editor; Location stays the route's");
+    const sg4 = segs(factsHtml({ ...bare("sport", "5.10a"), _dbArea: { ...bare("sport", "5.10a")._dbArea, areaType: "area" } }, "sport", { onSuggestAreaEdit: () => {} }));
+    if (sg4.some((x) => / · (crag|area)$/.test(x))) fail("crag-wide Add: an area the area page does not let climbers edit (area_type 'area') still sends Season/Aspect to its editor");
+    else ok("crag-wide Add: on a non-editable area type, Season/Aspect fall back to the route's own Add");
   }
   for (const d of ["sport", "trad", "toprope", "aid"]) {
     const r = { ...bare(d, "5.10a"), pitches: 2, bolts: 9, guideStars: 3, aspect: "SW", season: "Apr-Oct", descent: "Lower from chains.",
       altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
-    const html = render(r, "overview");
+    const html = factsHtml(r, d);
     const t = text(html), sg = segs(html);
-    const want = ["Star rating", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    const want = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
     if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
     else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
       fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);
@@ -370,9 +422,10 @@ for (const d of [...CRAG, "alpine"]) {
   // Season in the header strap for every crag discipline, the way bouldering always had it.
   for (const d of ["sport", "trad", "toprope", "aid"]) {
     const html = render({ ...bare(d, "5.9"), season: "ZZSEASONZZ" }, "overview");
-    const strap = (html.match(/WebkitLineClamp|-webkit-line-clamp/g) || []).length;
-    if (!strap) fail("ANCHOR LOST: the header strap's line-clamp style moved — update this guard");
-    if (!/-webkit-line-clamp:2[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
+    // Anchored on data-header-strap: the strap's 2-line clamp is gone (it wraps now, owner note 2026-10-29: text cut off).
+    const strap = (html.match(/data-header-strap="1"/g) || []).length;
+    if (!strap) fail("ANCHOR LOST: the header strap's data-header-strap marker moved — update this guard");
+    if (!/data-header-strap="1"[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
     else ok(`${d}: season shows in the header strap`);
   }
   // A crag route with a breakdown and a climate box but nothing that opens Plan: the breakdown on
@@ -405,6 +458,30 @@ for (const d of [...CRAG, "alpine"]) {
       else ok("aid (no Conditions tab): CLIMATE & SEASON stays on Overview");
     }
   }
+}
+
+// 7. A BOULDER line is a PROBLEM, never a "route" (owner's note, 2026-10-21: "we call bouldering
+//    problems not routes"). Every tab of a bare boulder problem, visible text AND the names a screen
+//    reader or a tooltip reads (aria-label, title, placeholder), must not call it a route. Words
+//    that are not the climb's noun stay: "route-finding", "Route finder" (the search tool).
+{
+  const ALLOWED = /\broute[- ]finding\b|\broute finder\b/gi;
+  const attrs = (html) => [...html.matchAll(/\b(?:aria-label|title|placeholder)="([^"]*)"/g)].map((m) => m[1]).join(" · ");
+  let bad = 0;
+  // ...and the same problem once it HAS a description, a season and a report, which opens the
+  // sections a bare row never reaches (the description card, the season note, the consensus).
+  const filled = { ...bare("bouldering", "V4"), overview: "Sit start on the low jug, top out right.", season: "Fall through spring",
+    activity: [{ date: new Date().toISOString().slice(0, 10), stars: 3, condTags: ["Dry"], user: "Probe climber" }] };
+  for (const tab of TABS) {
+    for (const [label, html] of [["bare", cache.get("bouldering/" + tab)], ["filled", (() => { try { return render(filled, tab); } catch (e) { fail(`filled bouldering/${tab} threw: ${e.message.split("\n")[0].slice(0, 120)}`); return ""; } })()]]) {
+    if (!html) continue;
+    const t = (text(html) + " · " + attrs(html)).replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(ALLOWED, "");
+    for (const m of t.matchAll(/[^.·]{0,50}\broutes?\b[^.·]{0,40}/gi)) { fail(`${label} bouldering/${tab}: calls the problem a route — "${m[0].trim()}"`); bad++; }
+    }
+  }
+  if (!text(render(filled, "overview")).includes("Problem description")) fail("ANCHOR LOST: a filled boulder problem's Overview has no \"Problem description\" card — section 7 never saw the description branch");
+  if (!cache.get("bouldering/overview")) fail("ANCHOR LOST: no bouldering/overview render — section 7 checked nothing");
+  else if (!bad) ok("bare boulder problem: no tab calls it a route");
 }
 
 fs.rmSync(path.dirname(out), { recursive: true, force: true });

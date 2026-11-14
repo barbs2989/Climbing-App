@@ -1,0 +1,55 @@
+{
+ "applied": [
+  {
+   "id": "bc_yak_peak_madness",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "bc_yak_peak_reality_check",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "ca_green_thunder",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count (stored 0)"
+  },
+  {
+   "id": "ca_airstream",
+   "column": "pitches",
+   "path": [],
+   "fact": "pitch count (stored 0)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "bc_yak_peak_madness",
+   "before": {
+    "pitches": 1
+   }
+  },
+  {
+   "id": "bc_yak_peak_reality_check",
+   "before": {
+    "pitches": 12
+   }
+  },
+  {
+   "id": "ca_green_thunder",
+   "before": {
+    "pitches": 0
+   }
+  },
+  {
+   "id": "ca_airstream",
+   "before": {
+    "pitches": 0
+   }
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "co_kaleidoscope_wall": {
+  "_expect": { "name": "Kaleidoscope Wall", "region": "Colorado" },
+  "blurb": "A small wall of about twenty routes on the Grand Mesa above Grand Junction, at roughly 10,000 feet in the Land's End area. Steeper bolted lines sit toward the left, while the right side holds gentler gear routes. Most climbs fall between 5.8 and 5.11, with the bulk of them in the 5.10 range, so it suits solid intermediates best. Trad outnumbers sport here. The walk in is short and easy enough that families and dogs make the trip, which makes it a relaxed place for a half day. Being high on the mesa, it is a summer destination rather than a cold-season one.",
+  "review": { "sources": ["https://www.mountainproject.com/area/109688516/kaleidoscope-wall", "https://www.mountainproject.com/area/107685647/lands-end-area"] }
+ },
+ "co_maiden_the": {
+  "_expect": { "name": "Maiden, The", "region": "Colorado" },
+  "blurb": "A tall freestanding fin at the southern end of the Flatirons, just south of Boulder and close to Eldorado Canyon, sitting around 7,300 feet. Its north and south faces are sheer, the west side is a big overhang, and the east ridge stands vertical. Most of the twenty routes are trad, with a handful of bolted lines and one top rope, and grades climb from 5.6 up to the low 5.13s, concentrated in the 5.11 range. It is an outing, not a quick crag: the hike in takes a long time and the trail junctions are easy to confuse. Summit parties come down by a dramatic free rappel.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105745076/the-maiden", "https://www.mountainproject.com/route/105750454/north-face?print=1"] }
+ },
+ "co_industrial_buttress": {
+  "_expect": { "name": "Industrial Buttress", "region": "Colorado" },
+  "blurb": "One of the more conspicuous walls along the cliff band of North Table Mountain above Golden, set between Twelve Pack Wall and MBA Buttress. Climbs here are mostly trad with a smaller number of bolted lines, and they run from easy fifth class to the upper 5.11s, with the greatest number in the 5.8 range. The band faces south and west, so it takes the sun and works well on cool days; hot afternoons can leave holds feeling greasy. Routes are short, and the lava rock tends to be polished and the tops can be loose. A rope of 50 metres is plenty.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105744249/north-table-mountaingolden-cliffs", "https://rakkup.com/guidebook/north-table-mountain-rock-climbing/industrial-buttress/s10885"] }
+ },
+ "co_red_slab_the": {
+  "_expect": { "name": "Red Slab, The", "region": "Colorado" },
+  "blurb": "A broad, east-southeast facing wall in Clear Creek Canyon west of Golden, with good rock and routes around 85 feet long. Roughly two-thirds of the twenty climbs are bolted, plus some top-rope and a few gear-protected multi-pitch lines around the corner to the left. Grades center on 5.9 to 5.10, from an easy 5.5 up to a single 5.12 testpiece, so it works for climbers stepping up. Bolts are spaced out on many lines, so expect to stay composed. The wall catches sun through the middle of the day, which makes mornings the pick in warm months and keeps it popular through winter.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105744995/the-red-slab", "https://rakkup.com/guidebook/clear-creek-canyon-rock-climbing/red-slab/s11261"] }
+ },
+ "co_long_boulder_2": {
+  "_expect": { "name": "Long Boulder", "region": "Colorado" },
+  "blurb": "A long, low boulder on the creek side of the trail among the Tunnel 1 boulders near the mouth of Clear Creek Canyon, west of Golden. About twenty problems share its length, ranging from an easy warm-up around V0 through a good middle band of V4 to V6, with a couple of far harder lines at the top end. The nearby boulders face the sun for much of the day, which keeps this corner of the canyon pleasant in winter. The walk from the lot is short and flat, so it combines easily with the neighboring blocks.",
+  "approach": "From the trailhead lot, follow the creek downstream on the trail for a few minutes; the boulder lies on the river side of the path.",
+  "review": { "sources": ["https://www.mountainproject.com/area/121581147/long-boulder", "https://mountainproject.com/area/121275895/tunnel-1-trail-boulders"] }
+ },
+ "co_elk_creek": {
+  "_expect": { "name": "Elk Creek", "region": "Colorado" },
+  "blurb": "A small side drainage on the north side of Clear Creek Canyon near Golden, between Tunnel 3 and Iron Buttress. Boulder problems make up most of the twenty climbs here, and they reach well into the harder grades, from about V4 up past V10, with Prairie Dog and similar lines popular at the lower end. A few bolted and gear routes at roughly 5.10 to 5.12 round it out, and the neighboring Law Wall adds more bolted lines. The place suits strong boulderers looking for hard problems more than beginners. A short walk up the wash leads to the first big boulder.",
+  "approach": "Walk up the Elk Creek drainage for about five minutes to a large boulder in the middle of the wash.",
+  "approach_min": 5,
+  "review": { "sources": ["https://www.mountainproject.com/area/106133648/elk-creek", "https://www.mountainproject.com/area/105744243/clear-creek-canyon"] }
+ },
+ "_skipped": {
+  "co_nez_perce_boulders": "could not fetch a page about this boulder area itself; the only page mentioning it (Loin Cloth Area) gives route names only; the search hit for Nez Perce was a Wyoming peak",
+  "co_telluride_edge": "no page found describing a crag called Telluride Edge; only a guidebook table-of-contents mention"
+ },
+ "_conflicts": {
+  "co_kaleidoscope_wall": "stored rock is mudstone but the parent page describes the Land's End walls as basalt: https://www.mountainproject.com/area/107685647/lands-end-area"
+ }
+}

@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Does the camping disclosure actually OPEN?
 //
 // `check:camping` proves the prose is selected by campDetail() and that a labelled control
@@ -54,9 +55,8 @@ const port = await claimPort(PORT);
 if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); process.exit(1); }
 const base = `http://127.0.0.1:${port}/Climbing-App/`;
 log(`starting dev server on ${port} with ${FIXTURE.length} injected bivy site(s)...`);
-const server = spawn(
-  "npx",
-  ["vite", "--config", "scripts/camping-expand.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX,
+  [...NPX_PRE, "vite", "--config", "scripts/camping-expand.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
 let died = false;

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // THE DATE FORMAT STILL RESET ON EVERY RELOAD.
 //
 // #1589 made the UNITS toggle survive a reload and stopped there. The Settings screen offers a
@@ -116,7 +117,7 @@ else {
   if (port === null) fail("no free port — NOT MEASURED");
   else {
     const base = `http://127.0.0.1:${port}/Climbing-App/`;
-    const server = spawn("npx", ["vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1",
+    const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/overlay-scroll.config.mjs", "--host", "127.0.0.1",
       "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
     server.stdout.on("data", () => {});
     server.stderr.on("data", (d) => { const t = String(d); if (/ANCHOR LOST/.test(t)) process.stderr.write(t); });
@@ -174,7 +175,8 @@ else {
 // =======================================================================================
 // SECTION 3 -- THE WIRING. Sections 1 and 2 both survive a squash that keeps the module and
 // drops the call sites: loadDateFmt would work perfectly while nothing called it.
-const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// since PR62 the Data settings sheet (where the format select WRITES) lives in SettingsDataSheet.tsx
+const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8") + "\n" + fs.readFileSync(path.join(ROOT, "src", "components", "SettingsDataSheet.tsx"), "utf8");
 for (const [re, what] of [
   [/\[dateFmt,setDateFmt\]=useState\(loadDateFmt\)/, "the date-format state is SEEDED from storage"],
   [/setDateFmt\(e\.target\.value\);saveDateFmt\(e\.target\.value\)/, "choosing a format WRITES it"],

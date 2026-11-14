@@ -15,7 +15,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { readCoreSource } from "../lib/guard-sources.mjs";
+import { readCoreSource, readAppFile } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
@@ -25,6 +25,8 @@ const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
 // Through readCoreSource(): CrewCard, which owns every reader asserted here, moved to lib/ to load lazily.
 const src = readCoreSource(ROOT);
+// The crew list (CrewListView.tsx) is stitched into the App file, not core.
+const appSrc = readAppFile(path.join(ROOT, "ClimbMatch.jsx"));
 
 // The rule, lifted from source rather than retyped -- a copy would agree with itself whatever the
 // app did, which is the whole question.
@@ -95,13 +97,15 @@ const more = [
   ["the backcountry safety brief's total", /var total=inCrew\.length;var done=inCrew\.filter\(/],
   ["waiting on X to tap a day that works", /var pendDay=inCrew\.filter\(/],
   ["the remove-vote / just-the-two-of-you gate", /\{inCrew\.length>2\?\(remPend\?/],
-  ["the collapsed card's Ready-N-climbers", /"Ready · "\+inCrew\.length\+" climber"/],
-  ["...and its N-of-M confirmed denominator", /\+"\/"\+inCrew\.length\+" confirmed"/],
+  // "Ready · N climbers" no longer exists on the collapsed card (no "Ready · " string is left in the
+  // app), so its reader is not asserted. The N-of-M denominator moved to CrewListView: \`tot\` is built
+  // from otherMem, which is crewInCrew(...), i.e. the same rule through the shared helper.
+  ["...the crew list's N-of-M confirmed denominator", /const otherMem=crewInCrew\(cr\)[^;]*;const conf=1\+otherMem\.filter\([^;]*;const tot=1\+otherMem\.length;/, appSrc],
   ["usually free for everyone / no weekly slot works for the whole crew", /if\(inCrew\.length&&inCrew\.every\(m=>slotOn\(/],
   ["Nudge N to pick a day", /var _un=inCrew\.filter\(function\(m\)\{return !m\._me/],
 ];
-for (const [what, re] of more) {
-  if (re.test(src)) ok(what + " reads inCrew");
+for (const [what, re, from] of more) {
+  if (re.test(from || src)) ok(what + " reads inCrew");
   else fail(what + " is back on `roster` — it is counting a climber who only asked to join");
 }
 

@@ -55,7 +55,9 @@ const CASES = [
   },
   {
     name: "brokenscan",
-    file: "ClimbMatchCore.jsx",
+    // ClimbMatch.jsx, not core: the full-screen views moved out into src/components, so core now
+    // holds 2 of 38 and ClimbMatch.jsx's 4 are the largest single-file loss a reformat can cause.
+    file: "ClimbMatch.jsx",
     why: "ONE file's `style={{` is reformatted to `style = {{` — whitespace around a JSX attribute's " +
          "`=` is legal, React renders it IDENTICALLY and check:refs cannot see it, so this is the " +
          "genuinely SILENT way the scan dies. It is partial, which is how a shape test actually " +
@@ -77,7 +79,7 @@ const CASES = [
   },
   {
     name: "brokenscan-firstdraft",
-    file: "ClimbMatchCore.jsx",
+    file: "ClimbMatch.jsx",
     why: "the FIRST version of the case above renamed C.bg in one file and MISSED: it removed only " +
          "6 of 23 views, clearing a floor of 15. Kept as a case because it pins the floor at a " +
          "level that catches a single-file loss. (It is also not a silent failure in the real app " +
@@ -91,7 +93,7 @@ const CASES = [
     file: "ClimbMatch.jsx",
     why: "MUST STAY SILENT — a backdrop scrim is MEANT to cover the whole window, and its inner " +
          "panel carries its own maxWidth. Flagging it would tell authors to break correct code.",
-    edit: (s) => s.replace('position:"fixed",inset:0,background:"rgba(0,0,0,0.6)"',
+    edit: (s) => s.replace('position:"fixed",inset:0,background:C.scrim',
                            'position:"fixed",inset:0,background:"rgba(0,0,0,0.61)"'),
     expect: "pass",
   },

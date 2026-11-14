@@ -1,0 +1,51 @@
+{
+ "id": "wa_lane_peak_r2",
+ "name": "The Fly (couloir)",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_lane_peak",
+  "name": "Lane Peak",
+  "lat": 46.757985,
+  "lng": -121.752965,
+  "elevation_ft": 6012,
+  "parent_id": "wa_tatoosh_range",
+  "ground_ft": 6009
+ },
+ "dist_km": 3.2,
+ "gain_ft": 2000,
+ "high_point_ft": 6012,
+ "approach_logistics": {
+  "peakLat": 46.757985,
+  "peakLng": -121.752965,
+  "trailhead": "Pinnacle Saddle Trailhead (Reflection Lakes, Stevens Canyon Road)",
+  "trailheadLat": 46.76861,
+  "trailheadLng": -121.72969,
+  "trailheadDirection": "From the Nisqually entrance of Mount Rainier National Park, drive Paradise Road about 15 miles to the Stevens Canyon Road junction, turn right and go 1.5 miles to the Reflection Lakes parking area."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 46.76861,
+   "lng": -121.72969,
+   "elev": 4855,
+   "name": "Pinnacle Saddle Trailhead (Reflection Lakes, Stevens Canyon Road)",
+   "note": "Approach to the Lane Peak north face couloirs from Stevens Canyon Road.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From the Nisqually Entrance of Mount Rainier National Park, drive about 15 miles past Longmire toward Paradise and bear right onto Stevens Canyon Road. The Reflection Lakes parking is about 1.5 miles on, with the trailhead across the road. A park entrance pass is required. Stevens Canyon Road is closed roughly November to May; then park at Narada Falls and climb about 200 ft through the timber to regain the road.",
+   "ground_ft": 4859
+  },
+  {
+   "i": 1,
+   "lat": null,
+   "lng": null,
+   "elev": null,
+   "name": "Lane Peak - The Fly couloir",
+   "note": "The Fly is the broad, easiest couloir at the base of the face, trending right to a notch in the west ridge.",
+   "type": "Topout",
+   "distMi": 1.8,
+   "directions": "Walk the road a short way, then drop south into the basin toward Tatoosh Creek and climb the debris triangle to the base of the north-face couloirs, about 45 to 75 minutes. The Fly is the rightmost and broadest of the three, 40 to 50 ft wide; climb it at about 45 degrees, trending slightly right, as it eases to 30 to 35 degrees near its top at the notch in the west ridge.",
+   "ground_ft": null
+  }
+ ]
+}

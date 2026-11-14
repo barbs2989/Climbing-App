@@ -1,0 +1,65 @@
+{
+  "area_id": "wa_old_guard_peak",
+  "routes": [
+    {
+      "route_id": "wa_old_guard_peak_east_side_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored Jul-Sep; Ptarmigan Traverse timing (July-August) from web search."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1874820",
+          "verdict": "unsure",
+          "why": "Ptarmigan Traverse link-up, report says Class 3 scramble, not the roped east side"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_old_guard_peak_southwest_route",
+      "season": {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "window": "Jul-Sep",
+        "evidence": "Stored mid-July-August; web search (SummitPost, Mountain Project) shows the peak as part of the summer Ptarmigan Traverse; ascents July 24, August 11."
+      },
+      "track": null,
+      "otherTracksConsidered": [
+        {
+          "aid": "1874820",
+          "verdict": "different",
+          "why": "Traverse link-up (Le Conte, Dome)"
+        },
+        {
+          "aid": "2566904",
+          "verdict": "different",
+          "why": "Traverse link-up"
+        },
+        {
+          "aid": "2064219",
+          "verdict": "different",
+          "why": "37-mile traverse link-up"
+        },
+        {
+          "aid": "2868823",
+          "verdict": "offseason",
+          "why": "June 12-13 surveying trip with other peaks"
+        }
+      ],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Every recording is a Ptarmigan Traverse link-up, so none is assigned. East side route has no pins at all."
+}

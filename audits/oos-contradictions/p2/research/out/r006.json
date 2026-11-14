@@ -1,0 +1,174 @@
+{
+ "file": "r006.json",
+ "results": [
+  {
+   "id": "co_andrews_creek_the_gash_the_production",
+   "fact": "route length and pitch count vs the pitches the overview describes",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route's listing gives 800 ft and 5 pitches; the route begins partway up Brain Freeze (an 8-pitch, 1000 ft line), so the stored length and pitch count include the shared lower pitches while the overview only details the three pitches of the route proper (170, 150, 100 ft). Stored 244 m matches the listed 800 ft. No second independent source found in 3 searches; nothing to change.",
+   "sources": [
+    "https://www.mountainproject.com/route/108077143/the-production",
+    "https://www.mountainproject.com/route/106112237/brain-freeze"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_arrowhead_2_the_hourglass_couloir",
+   "fact": "descent direction",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route page offers two descents: the southeast gully to Black Lake (may need rappels), or climb west to the low point of the ridge between Arrowhead and McHenrys and drop back to the Solitude Lake cirque. The row's two fields are those two options, not a conflict.",
+   "sources": [
+    "https://www.mountainproject.com/route/105814388/the-hourglass-couloir"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_north_face_crag",
+   "fact": "length and pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "This record is the crag-level entry for a trio of adjacent one-pitch 200 ft lines; its listed 600 ft (183 m) and 3 pitches are the three lines together, as the overview states. Stored values match the listing; no per-route figure to substitute without splitting the record.",
+   "sources": [
+    "https://www.mountainproject.com/route/109064256/north-face-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_ne_buttress_hallett_peak_mixed_ice_analysis_paralysis",
+   "fact": "which side of the buttress the start is on",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route description says to aim for the western edge of the 3rd Buttress, which forms the right skyline of the north face, and that the P2 V-groove is close to but still on the eastern edge of that skyline. Approach and overview describe the same spot from different reference frames (buttress vs skyline).",
+   "sources": [
+    "https://www.mountainproject.com/route/110209018/analysis-paralysis"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_north_face_of_pike_s_peak_guide_s_couloir",
+   "fact": "route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The listing gives 800 ft, 4 pitches; the four described pitches (100+120+150+85 ft) are only the difficulties, and the description adds continued easy snow to the shoulder near the summit, accounting for the rest. Stored 244 m matches 800 ft.",
+   "sources": [
+    "https://www.mountainproject.com/route/203142257/guides-couloir"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_north_star_yukon_jack",
+   "fact": "length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's listing gives 400 ft (121 m), 2 pitches, with 150 ft pitches described, so the header length is slightly more than the pitches (likely includes ground between). Stored 122 m matches the listing. Searched the area page, route page and two web searches for another source; none found, so no change.",
+   "sources": [
+    "https://www.mountainproject.com/route/108356987/yukon-jack",
+    "https://www.mountainproject.com/area/106716473/north-star"
+   ],
+   "patches": []
+  },
+  {
+   "id": "co_don_juan",
+   "fact": "way down",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "overview says a short rappel from the anchors",
+   "evidence": "The route's page says to rappel with a single rope from the anchors at the top, and the row's own descent field (and its neighbour's beta) say a rappel is needed, so the overview's plain scramble down is wrong. Could not fetch a second independent page (summitpost blocked).",
+   "sources": [
+    "https://www.mountainproject.com/route/105763998/don-juan"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "with a simple scramble down",
+     "replace": "with a short rappel from the anchors to get down",
+     "id": "co_don_juan",
+     "fact": "way down"
+    }
+   ]
+  },
+  {
+   "id": "co_east_face_left_4",
+   "fact": "number of rappels on the descent",
+   "verdict": "fixed",
+   "correct_value": "three raps, two with doubled ropes skipping the first station",
+   "evidence": "Standard-route descent (shared finish) is three rappels from fixed eyebolts; with a 60-70 m rope or doubles the first intermediate station can be skipped for two rappels. The row listed three lengths yet said two raps.",
+   "sources": [
+    "https://www.mountainproject.com/route/105748047/east-face-standard",
+    "https://www.summitpost.org/third-flatiron-standard-east-face/167406",
+    "https://www.alpineinstitute.com/route-profile-east-face-standard-third-flatiron/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "(two raps with double ropes)",
+     "replace": "(three raps; with double ropes the first station can be skipped, making two)",
+     "id": "co_east_face_left_4",
+     "fact": "number of rappels on the descent"
+    }
+   ]
+  },
+  {
+   "id": "co_east_face_standard",
+   "fact": "number of rappels on the descent",
+   "verdict": "fixed",
+   "correct_value": "three raps, two with doubled ropes skipping the first station",
+   "evidence": "Same as above: the route page states three rappels from fixed eyebolts, and other guides say a 60-70 m rope allows skipping the first intermediate station for two.",
+   "sources": [
+    "https://www.mountainproject.com/route/105748047/east-face-standard",
+    "https://www.summitpost.org/third-flatiron-standard-east-face/167406",
+    "https://www.alpineinstitute.com/route-profile-east-face-standard-third-flatiron/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "(two raps with double ropes)",
+     "replace": "(three raps; with double ropes the first station can be skipped, making two)",
+     "id": "co_east_face_standard",
+     "fact": "number of rappels on the descent"
+    }
+   ]
+  },
+  {
+   "id": "co_east_face_standard",
+   "fact": "pitches is 0 on a multi-pitch route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "pitches = 0 is wrong (route page: 6 rope-stretching pitches, or 8 as described with a 50 m rope), but sources disagree on the count and I found no second source; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/105748047/east-face-standard"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "co_wudamudafuka_1st_pitch",
+   "fact": "length vs rappel",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "length_m blanked",
+   "evidence": "Stored 12 m is impossible against the row's own 24 m rappel from the pitch-top station; the route page gives 70 ft (21 m) with a 70 ft rappel (its bolted-arete variation page repeats 70 ft, not independent). Right figure is not agreed (21 vs ~24), so the false 12 m is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/105763482/wudamudafuka-1st-pitch",
+    "https://www.mountainproject.com/route/106630074/gobble-this"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "length_m",
+     "path": [],
+     "expect": 12,
+     "value": null,
+     "id": "co_wudamudafuka_1st_pitch",
+     "fact": "length vs rappel"
+    }
+   ]
+  }
+ ]
+}

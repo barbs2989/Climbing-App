@@ -65,7 +65,7 @@ function flat(fn) {
   if (!hadDoc) globalThis.document = { body: {} };
   try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
 }
-import { Resume } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import Resume from ${JSON.stringify(path.join(ROOT, "src/components/Resume.tsx"))};
 const climber = { id: "u_9f1c2d", name: "Robin Belay", username: "robinbelay", avatar: "",
   location: "Bellingham, WA", vouches: [], certifications: [], courses: [], pyramid: {} };
 const ROUTE = { id: "wa_x", name: "North Ridge", grade: "5.7", discipline: "trad", mountainId: null };
@@ -105,8 +105,11 @@ if (!bad) ok(`rendered (empty ${emptyR.length}, logged ${loggedR.length}, typed 
 if (/The Nose/.test(typedR)) ok("a hand-typed entry reaches the EXPERIENCE list");
 else fail("the hand-typed entry did not render — the next assertion would be vacuous");
 
-if (/added by hand/i.test(typedR)) ok("...and is marked 'added by hand'");
-else fail("a hand-typed entry renders identically to a logged ascent");
+// REVERSED 2026-11-05 (owner): no row is marked "added by hand" or "self-reported" any more — a
+// climber who adds a climb or a certification is not labelled for it. The invariant that remains
+// is the one the mark was standing in for: a hand-typed row never gains anything a logged one has.
+if (!/added by hand/i.test(typedR)) ok("...and is NOT marked 'added by hand' (owner 2026-11-05)");
+else fail("a hand-typed entry is still marked 'added by hand' — the owner removed that mark on 2026-11-05");
 
 if (/North Ridge/.test(loggedR)) ok("a logged climb reaches the EXPERIENCE list");
 else fail("the logged climb did not render — the next assertion would be vacuous");
@@ -115,9 +118,9 @@ else fail("the logged climb did not render — the next assertion would be vacuo
 if (!/added by hand/i.test(loggedR)) ok("...and a logged climb is NOT marked");
 else fail("a logged climb carries the mark too, so the mark says nothing");
 
-const marks = (bothR.match(/added by hand/gi) || []).length;
-if (marks === 1) ok("with one typed and one logged row, exactly one is marked");
-else fail(`with one typed and one logged row, ${marks} rows are marked`);
+const marks = (bothR.match(/added by hand|self-reported/gi) || []).length;
+if (marks === 0) ok("with one typed and one logged row, neither is marked");
+else fail(`with one typed and one logged row, ${marks} row(s) carry a mark the owner removed on 2026-11-05`);
 
 if (!/partner- and community-corroborated/.test(emptyR))
   ok("an empty résumé does not claim partner- and community-corroboration");
@@ -147,8 +150,10 @@ if (realR.length < 900 || selfR.length < 900)
 if (/✓ verified/.test(realR)) ok("a genuinely verified credential still reads '✓ verified'");
 else fail("the real verified chip was damaged");
 
-if (/self-reported/i.test(selfR) && !/✓ verified/.test(selfR)) ok("a self-reported course reads 'self-reported', never verified");
-else fail("the self-reported chip was lost, or a self-reported course now reads verified");
+// The "self-reported" chip was removed on 2026-11-05 (owner): a course you add shows no mark. What
+// must still hold is that it never reads verified.
+if (!/✓ verified/.test(selfR) && !/self-reported/i.test(selfR)) ok("a self-added course shows neither '✓ verified' nor a 'self-reported' chip (owner 2026-11-05)");
+else fail("a self-added course reads verified, or the 'self-reported' chip the owner removed on 2026-11-05 is back");
 
 // The chip must not OPEN with a word character or it glues onto the course name in the announced
 // text — "WFRverified" — the defect check:a11y-badges exists for.
@@ -189,7 +194,13 @@ if (!pyr) fail("ANCHOR LOST: could not read the sends-by-grade caption beside <A
 else {
   const otherCap = un(pyr[2]);
   const tag = pyr[4];
-  const pyramidFed = /logs=\{climber\.__selfLogs\}/.test(tag) && /pyramid=\{climber\.pyramid\}/.test(tag);
+  // The premise is that the pyramid can be fed the STORED summary. The old test also demanded
+  // `logs={climber.__selfLogs}`; when FullProfile began passing `logs={_lg}` (own logs OR another
+  // real climber's __theirLogs) that clause stopped matching and this whole section went vacuous
+  // ("premise has moved") while `pyramid={climber.pyramid}` was still the fallback for a climber
+  // with no hydrated logs -- found by scripts/oneoff/inject-pyramid-caption-cases.mjs. Only
+  // removing the stored-summary prop genuinely retires the premise.
+  const pyramidFed = /pyramid=\{climber\.pyramid\}/.test(tag);
 
   if (!pyramidFed) {
     ok("the non-self pyramid is no longer fed by `climber.pyramid` -- this section's premise has moved, so it asserts nothing");

@@ -1,0 +1,23 @@
+{
+ "ok_lost_dome_bouldering": {
+  "_expect": { "name": "Lost Dome Bouldering", "region": "Oklahoma" },
+  "blurb": "A small cluster of granite boulders in the Charon's Gardens part of the Wichita Mountains Wildlife Refuge, scattered around the base of the Lost Dome wall. Fifteen problems are recorded, running from an easy V0 up to roughly V8, with most of them landing between V3 and V6. The thickest concentration sits a few hundred feet short of the main wall, and everything is within a short walk of it. It is a quiet, secluded spot with plenty of shade, which helps in warm weather. Landings are pad-only, and some of the rock is sharp or flaky, so test holds before pulling hard.",
+  "review": { "sources": ["https://www.mountainproject.com/area/108706616/lost-dome-bouldering", "https://www.mountainproject.com/route/112899623/typhoon"] }
+ },
+ "ok_little_germany": {
+  "_expect": { "name": "Little Germany", "region": "Oklahoma" },
+  "blurb": "Little Germany is a small sector among the short cliffs along Avery Drive on the west side of Tulsa, close to Chandler Park. Around fourteen climbs are recorded and the mix is unusual for the area: about half are boulder problems, with a handful of bolted sport lines, one top rope and one trad route. Boulder grades stretch from easy to V10, while the roped climbs range from 5.6 to 5.12. Expect highball-leaning, short-wall climbing rather than long routes; the sector is compact, so it suits a brief visit combined with its neighbours along the road.",
+  "review": { "sources": ["https://thetopo.com/crags/avery-drive/routelist/little-germany", "https://www.mountainproject.com/area/107286155/avery-drive"] }
+ },
+ "_skipped": {
+  "ok_jungle_boulders": "no fetched page about Jungle Boulders itself; only the Pear and Apple parent page lists it",
+  "ok_crab_eyes_bouldering": "no fetched page about Crab Eyes Bouldering itself; only the Crab Eyes formation parent page",
+  "ok_control_and_resistance": "no fetchable page about this wall; Chandler Park parent page does not mention it, kaya page empty",
+  "ok_4_treasure_chest": "no fetched page about Treasure Chest itself other than the Boulder Picnic parent page; the Treasure Chest MP area found is a Colorado one",
+  "ok_disease_wall": "only parent pages (Autobahn Area, Chandler Park) mention it; no page about the wall itself",
+  "ok_gold_rush_area": "no page found mentioning Gold Rush; Shotgun page does not list it"
+ },
+ "_conflicts": {
+  "ok_little_germany": "stored rock is sandstone but Avery Drive page (https://www.mountainproject.com/area/107286155/avery-drive) describes short limestone cliffs"
+ }
+}

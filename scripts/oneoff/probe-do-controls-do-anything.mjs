@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // MEASUREMENT, not a guard: click every control on the six tabs and record whether anything
 // changed. The question is the user's — "does each button work, related to the rest of the
 // app?" — and the static half is already answered: 799 <button>s, 1423 handlers, ZERO with no
@@ -87,7 +88,7 @@ console.log(`dev server on ${port}...`);
    was ignored and all six "tabs" were the same default screen. Every tab reported exactly 29
    controls, which is the only reason it was caught. Reusing the a11y-badges config because it
    already applies buildOpener() and keeps the populated demo. */
-const server = spawn("npx", ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+const server = spawn(NPX, [...NPX_PRE, "vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
 let died = false;
 server.on("exit", () => { died = true; });

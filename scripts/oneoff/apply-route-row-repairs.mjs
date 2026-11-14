@@ -211,5 +211,5 @@ for (const p of plans) {
   if (diff.length) { bad++; console.log(`MISMATCH ${p.id}: ${diff.join(",")} did not land`); }
   else record({ key: p.key, id: p.id, state: "done", touched: p.touched, next: snap(p.next) });
 }
-console.log(`applied ${plans.length - bad} route(s), ${bad} mismatched. Backups in ${path.relative(process.cwd(), BACKUP)}`);
+console.log(`applied ${plans.length - bad} route(s), ${bad} mismatched. Backups in ${path.relative(process.cwd(), BACKUP).replace(/\\/g, "/")}`);
 process.exit(bad ? 1 : 0);

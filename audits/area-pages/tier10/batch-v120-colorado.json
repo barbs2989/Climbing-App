@@ -1,0 +1,50 @@
+{
+ "co_rebel_wall": {
+  "_expect": {
+   "name": "Rebel Wall",
+   "region": "Colorado"
+  },
+  "blurb": "Rebel Wall is a small, seldom-visited cliff band in Clear Creek Canyon, west of Golden, perched on the slope above the canyon road. Its 16 routes mostly follow cracks, with just two bolted lines, so it suits climbers who bring a trad rack. Difficulty starts at easy fifth class and peaks in the 5.9 range, where the most routes sit, with a handful of 5.11s and a single 5.12 at the top. The wall catches decent sun. Because it sits so close above the road, loose rock is a real worry and care is warranted. Few parties come here compared with the canyon's busier crags, so expect quiet and thin route information.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105745837/rebel-wall",
+    "https://rakkup.com/guidebook/clear-creek-canyon-rock-climbing/rebel-wall/s11460"
+   ]
+  }
+ },
+ "co_dinosaur_rock": {
+  "_expect": {
+   "name": "Dinosaur Rock",
+   "region": "Colorado"
+  },
+  "blurb": "Dinosaur Rock is a formation in the Central Flatirons above Boulder, reached on foot from the National Center for Atmospheric Research lot. Climbing wraps around all four sides: gentle slabs on the east and south, bolted lines on the north, and an easy descent route down the west. Of the 16 routes here, most are sport, with some trad and a single top-rope. Grades fall into two groups, a few low fifth-class lines and then a run of 5.10 climbs and 5.12 to 5.13 testpieces. Expect lichen-covered plates with big holds. It draws fewer parties than the east-facing Flatiron classics nearby, and the commitment is modest.",
+  "parking_note": "Leave the car in the free National Center for Atmospheric Research lot at the top of Table Mesa Drive; the trail to the rock starts from there.",
+  "approach": "Follow the Mallory Cave Trail from the National Center for Atmospheric Research lot until you reach the northeast corner of Dinosaur Rock, where the routes begin.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/105745684/dinosaur-rock",
+    "https://www.mountainproject.com/route/105762027/east-face-rightdinosaur-rock"
+   ]
+  }
+ },
+ "co_arch_boulder_aka_ground_arch_boulder": {
+  "_expect": {
+   "name": "Arch Boulder (aka Ground Arch Boulder)",
+   "region": "Colorado"
+  },
+  "blurb": "Arch Boulder is a low block in the Snake Pit group at Garden of the Gods in Colorado Springs, easy to spot by the little arch at its southeast corner and a crack up the west side. It holds 16 problems, all but two between VB and V3, plus one V5 and one V7 for the strong. Easy face climbs and a sustained traverse make it a handy warm-up stop. Landings are flat and sandy, and the height seldom calls for a pad. The coarse-grained bouldering nearby tends toward long, sustained traverses rather than tall highballs.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106642763/arch-boulder-aka-ground-arch-boulder",
+    "https://www.mountainproject.com/area/105746245/the-snake-pit-area"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_east_side_6": "no fetched page about the crag itself: only a route page (Mighty Thor) was fetchable; thecrag/summitpost returned 403 and web search budget was exhausted",
+  "co_mccurdy_park_tower": "only a route-level page and the parent Wigwam Creek area page were fetchable (summitpost 403); no page about the tower itself, and the parent page lists 6 climbs vs 16 stored",
+  "co_almost_heaven": "no page found: one search found nothing, further searches blocked by exhausted search budget",
+  "co_south_side": "no fetched page about this sector: only the sibling North Side page was fetchable and it does not mention South Side; search budget exhausted",
+  "co_arrowhead_arete_area": "only the parent Dark Side area page and a single boulder-problem page were fetchable; no page about the Arrowhead Arete area itself (summitpost 403)"
+ }
+}

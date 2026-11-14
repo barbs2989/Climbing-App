@@ -1,0 +1,828 @@
+{
+ "wa_mount_rahm_south_side": [
+  {
+   "name": "Depot Creek from the Canadian side",
+   "notes": "The unmaintained Depot Creek trail crosses the border to Ouzel Lake, then the bench leads east to the south side. The easiest and most used way, but it means crossing the border on foot away from a port of entry, so confirm the entry rules first, and the road needs high clearance.",
+   "objHaz": [
+    "rockfall",
+    "loose rock",
+    "snow and ice",
+    "route-finding"
+   ],
+   "hazards": [
+    "Rockfall and loose rock in the Class 4/5 crux gully, especially when wet",
+    "No rappel anchors reported in the crux gully; it must be downclimbed",
+    "Steep snowfield in the upper basin can be icy early season",
+    "Border crossing on foot away from a port of entry; high-clearance road to the trailhead",
+    "Ouzel Lake camp reached by an unmaintained trail; Custer-Spickard saddle and terrace traverse are cross-country"
+   ],
+   "primary": true,
+   "storedRow": true
+  },
+  {
+   "name": "Silver Creek from Ross Lake",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628
+    }
+   },
+   "notes": "The all-US way: a water taxi up Ross Lake to the mouth of Silver Creek, then a long bushwhack up Silver Creek to Silver Lake and north to the upper terrace. Harder and much brushier.",
+   "objHaz": [
+    "rockfall",
+    "loose rock",
+    "route-finding",
+    "snow and ice"
+   ],
+   "hazards": [
+    "Long, brushy bushwhack up Silver Creek to Silver Lake; harder than the other way in",
+    "Water taxi up Ross Lake needed to reach the mouth of Silver Creek",
+    "Climbing above lakeside cliffs or talus and slabs to reach the upper terrace",
+    "Rockfall and loose rock in the Class 4/5 crux gully, especially when wet",
+    "No rappel anchors reported in the crux gully; steep snowfield in the upper basin can be icy early season"
+   ],
+   "whyThisWay": "When staying entirely within the United States, avoiding the foot crossing of the border and the rough road to Depot Creek, at the cost of a boat ride and a long bushwhack."
+  }
+ ],
+ "wa_mount_spickard_silver_glacier": [
+  {
+   "name": "From Ross Lake by boat and up Silver Creek to the lake basin camp",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Silver Lake camp",
+      "role": "main",
+      "type": "camp"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628
+    }
+   },
+   "notes": "Book a water taxi for the long run up Ross Lake and get dropped at the mouth of Silver Creek at about 1,600 ft. A trail climbs the north side of the creek roughly two and a half miles to an old cabin at about 2,900 ft; above that the route is cross-country with occasional blazes, across slide alder and forest slopes, to the camp in the Silver Lake basin at about 6,763 ft. This is the shorter side for this particular route and it keeps the whole trip inside the United States, at the cost of depending on a boat.",
+   "objHaz": [
+    "crevasses",
+    "bergschrund",
+    "rockfall",
+    "loose lichen-covered rock",
+    "route-finding"
+   ],
+   "season": "Late July through September",
+   "hazards": [
+    "Boat access from Ross Lake Resort must be booked; no road out if plans slip",
+    "Slide alder and unmarked cross-country above the old cabin at 2,900 ft",
+    "Loose moraine between the lake and the glacier toe",
+    "Crevasses and a bergschrund on the Silver Glacier; the glacier is thinning so lines shift yearly",
+    "Class 4 summit-block step on loose, lichen-covered rock",
+    "Long, committing retreat from a high camp"
+   ],
+   "whyThisWay": "To keep the whole trip inside the United States with no border crossing on foot, for parties willing to book a water taxi up Ross Lake and push through the cross-country above the cabin.",
+   "baseFinding": "From the Silver Lake camp the route does not go near a col. Walk round the north side of the lake to its far, south-west end, then head south across moraine and snow, skirting a small rock buttress, to the toe of the glacier at about 7,400 ft. Allow an hour to an hour and a half from camp.\n\nYou should be able to see at least the lower glacier from camp, so pick your line onto it before you leave. The ice comes down toward the lake from the north side of the peak; you rope up at its toe and climb it, with no saddle or gully on the way.\n\nThe wide gully and the col at about 7,380 ft between this peak and its neighbour to the north-west belong to the other approach, from the lake on the Depot Creek side. If you are climbing a gully toward a gap, you have left this line.\n\nAnd the negative marker that matters most: the south-west route on this peak starts at the toe of a different glacier on the other flank, reached by traversing round a rock buttress into heather and moraine basins rather than by gaining any col. If you are roping up at the foot of an icefall with no saddle in sight, you have started the other route."
+  },
+  {
+   "name": "Depot Creek from the north side of the border, over the col between the two peaks",
+   "camps": [],
+   "notes": "The other way in starts on the Canadian side: a rough spur off the lake road to a washout at about 2,600 ft, an overgrown roadbed to the boundary obelisk and register, and then the climbers' path up the creek through old growth to the falls, whose wet slabs and old fixed hand-line are the crux of the walk-in. Above them the path leads to the lake camp at about 5,700 ft. From that camp the way to this route climbs toward and over the col between the two peaks rather than onto the south-west side.",
+   "objHaz": [
+    "crevasses",
+    "bergschrund",
+    "rockfall",
+    "loose lichen-covered rock",
+    "route-finding"
+   ],
+   "season": "Late July through September, and only with passports",
+   "hazards": [
+    "International border crossing on foot; passports needed",
+    "Wet slabs and an old fixed hand-line at Depot Creek Falls, the crux of the walk-in",
+    "Overgrown approach road that washes out and lengthens the walk",
+    "Crevasses and a bergschrund on the Silver Glacier beyond the Custer-Spickard saddle",
+    "Class 4 summit-block step on loose, lichen-covered rock",
+    "Taking the wrong route from the shared Ouzel Lake camp costs a day"
+   ],
+   "primary": true,
+   "baseFinding": "From the Depot Creek camp, climb north-east from the lake's north side up the obvious wide gully that leads to the col.\n\nThe fixed point is the same: the col at about 7,380 ft between this peak and its neighbour to the north-west. It is a gap with a summit on either hand and the glacier beyond. The wide gully you came up is the way back to camp; the glacier lies on the far side.\n\nThe test that you are at the right gap is that both summits are identifiable from it, and that the ice you are about to climb runs away from the col rather than up to it. A notch with only one summit beside it, or with no glacier beyond, is a different gap on the same ridge.\n\nDo not confuse this start with the south-west route, which leaves the same camp. That route turns right around the toe of a rock buttress well before any saddle and ropes up at the toe of a glacier on the other flank. If you have not gained a col, you are not on this route."
+  }
+ ],
+ "wa_mount_spickard_southwest": [
+  {
+   "name": "Depot Creek from the north side of the border to the lake camp",
+   "camps": [
+    "Ouzel Lake",
+    "Lower Depot Creek bench",
+    "Ouzel Lake basecamp"
+   ],
+   "notes": "From the road washout at about 2,600 ft, reached by a rough spur off the lake road on the Canadian side, walk the old roadbed about nine minutes to an inconspicuous spur on the left, follow that spur four minutes to a T-junction, and bear right onto an extremely overgrown and sporadically muddy road for about thirty-five minutes. That brings you to the boundary obelisk, where there is a register - carry a passport, because this approach crosses the international border on foot.\n\nAbove the boundary the way becomes a crude but discernible climbers' path along the creek through old growth, easy where deadfall has been cut and full of uncut logs where it has not. About three miles in it reaches the falls, which are the real crux of the approach: wet slick boulders and slabs at their base, with steep steps rigged with an old fixed hand-line. Treat the line as an aid rather than as protection, and back it up with a heavy pack on.\n\nAbove the falls the path continues through meadow and upper valley to the lake at roughly 5,700 ft - flat sandy mostly treeless benches at the toe of the talus, the standard base camp for this peak and its neighbour, with reliable water.",
+   "objHaz": [
+    "rockfall",
+    "loose rock",
+    "crevasses",
+    "steep snow"
+   ],
+   "season": "Late July through September, for a crossable glacier and a passable creek",
+   "hazards": [
+    "Border crossing on foot; passport needed, with a register at the obelisk",
+    "Washed-out road lengthens the walk without warning",
+    "Wet slick boulders and slabs at Depot Creek Falls with an old fixed hand-line of unknown condition",
+    "Crevasses on the southwest glacier, including a marginal snow bridge on the standard line",
+    "Short steep loose rock gully at the glacier head, then loose Class 2-3 ribs and gullies near the summit",
+    "30-40 degree snow near the summit ridge",
+    "Extreme remoteness, no cell coverage"
+   ],
+   "primary": true,
+   "baseFinding": "The critical instruction is that you leave the drainage before the pass, not at it. From camp, ascend the broad talus couloir and stream drainage north to north-east toward the saddle at roughly 7,200 ft - but well before reaching that saddle, cut right around the toe of a steep rocky buttress into open heather and moraine basins.\n\nThe negative marker is exact and easy to use: if you have arrived at the saddle and are looking down into the cirque on the far side, you have gone too far. Go back down and find the buttress toe.\n\nThe buttress toe is the feature - a steep rock nose that the couloir runs past on its left. Turning its foot puts you into open heather and moraine, which is different ground from the couloir you have been climbing, and that change underfoot is the confirmation.\n\nThe base is the toe of the south-west glacier, reached by traversing those basins. Rope up and put crampons on there rather than part-way across. The line up the ice is its climber's-right margin, which holds hard snow and ice at thirty to forty degrees and relatively few crevasses; about half-way up, one poor-looking crevasse has to be crossed on a marginal bridge, so probe it and expect it to be worse late in the season.\n\nConfirm at the top of the ice: a short steep loose rock gully at the glacier's head tops out on a low col on the south-west ridge, above the cirque. That col is where the summit scramble starts. If the ice runs you out onto a broad snow shoulder with no gully and no col, you have taken the glacier's centre or its left side instead of its right margin."
+  },
+  {
+   "name": "From Ross Lake by boat and up Silver Creek to the lake basin",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628
+    }
+   },
+   "notes": "The other side of the mountain is reached without leaving the United States. A booked water taxi runs a long way up Ross Lake to a drop at the mouth of Silver Creek at about 1,600 ft. A trail climbs the north side of the creek for roughly two and a half miles to an old cabin at about 2,900 ft, above which the way is cross-country with occasional blazes across slide alder and forest slopes to the camp in the Silver Lake basin at about 6,763 ft.\n\nThis puts you on the opposite side of the peak from the Depot Creek camp, so it changes which col you reach and in what order - plan the climb from this camp rather than translating a description written from the other one.",
+   "objHaz": [
+    "crevasses",
+    "rockfall",
+    "loose rock",
+    "route-finding"
+   ],
+   "season": "Late July through September, once the boat is running and the cross-country is clear of snow",
+   "hazards": [
+    "Boat access must be booked; no road out",
+    "Slide alder and unmarked cross-country above the old cabin at 2,900 ft",
+    "Long carry to a high camp at about 6,763 ft",
+    "Crevasses on the glaciers either side of the divide, including a marginal snow bridge on the southwest glacier",
+    "Short steep loose rock gully at the glacier head and loose Class 2-3 rock near the summit",
+    "Camp is on the opposite side from Depot Creek, so col-based descriptions can mislead"
+   ],
+   "whyThisWay": "To keep the whole trip inside the United States with no border crossing on foot, for parties who will book a water taxi up Ross Lake and handle the long cross-country approach.",
+   "baseFinding": "The old cabin at about 2,900 ft is the proof you are on the right side of the creek. The trail climbs the north side; if you have not passed a cabin by the time the trail gives out, you are on the wrong bank and should cross before the cross-country starts, not after.\n\nAbove the cabin the markers are occasional blazes on trees rather than tread. Blazes that stop appearing mean you have drifted; the slide alder will let you keep going anyway, which is why this is worth checking rather than assuming.\n\nThe camp is the lake basin at about 6,763 ft, and from it the route to this peak's south-west side goes up and over toward the col between it and its neighbour to the north-west.\n\nBe clear which route you are on when you arrive. From this side the natural line gains the col at about 7,380 ft between the two peaks, which is where the glacier route on the north side starts. The south-west route instead wants the toe of the south-west glacier, which is reached by traversing into open heather and moraine basins round the toe of a rock buttress, not by gaining a col. If you find yourself standing in a saddle between two summits, you are on the other route's start."
+  }
+ ],
+ "wa_southeast_mox_peak_se_rib": [
+  {
+   "name": "Depot Creek from the north side of the border to the lake camp",
+   "notes": "From the parking on the abandoned logging spur off the lake road on the Canadian side at roughly 2,350 ft, walk the old roadway grade uphill, taking the left-hand fork, about a mile to the boundary marker, where you cross into the park and should sign in at the kiosk. Carry a passport.\n\nFrom there the way is an unmaintained, unmarked climbers' path through old growth for roughly three miles to the base of the falls - one of the tallest in the state - where the path climbs steep, often wet and slippery slabs along their left edge. A fixed handline is present at the crux scramble and this is the approach's main technical hazard: exposed greasy rock, far worse in the wet and worse again in the dark, and several parties have lost the tread here at night.\n\nAbove the falls the path eases through scrubby subalpine forest onto a broad outwash plain and reaches treeline, where most parties change into mountaineering boots. Class 3 tread gains roughly eight hundred feet into the glacier basin, where the lake is the usual first camp.",
+   "season": "Late July through September, when the talus is out and the glacier is still bridged",
+   "hazards": [
+    "an international border crossing on foot with a register at the boundary",
+    "steep wet slabs beside the falls with a fixed handline of unknown condition, and a tread that parties lose in the dark",
+    "crevasses on the glacier, usually minor and avoidable in normal late-season conditions",
+    "a thousand feet of unstable sandy talus below the col, which is the dominant hazard of the upper approach",
+    "exposed class 4 ground on loose rock above the col that many parties belay",
+    "no water above camp"
+   ],
+   "primary": true,
+   "baseFinding": "The col between the two Mox summits is the whole navigation, and the trap is that there are two summits. From high camp, traverse east across snow and glacier beneath the southern side of the western summit toward the saddle between the two peaks, finishing with a steep thousand-foot climb over notoriously unstable sandy talus - helmets on well before the col.\n\nAt the col, check which tower you are under. This route is on the eastern summit, which is the harder and higher of the pair. If the peak above you is the one you traversed beneath on the way in, you are facing the western summit and have turned the wrong way out of the saddle.\n\nThe sequence above the col is a ladder of specific shapes, in order, and it is how you know you are right: a ramp leading right past a snow patch into a gully; then class 4 scrambling up and right, exposed enough that many parties belay it, toward a notch in a ridge of gendarmes; then a short sequence of ledges that zig-zag right, left, right through that notch; then a brief descent to a small flat area. The flat spot after a downclimb is the confirmation - a line that only ever goes up has missed the notch.\n\nFrom that flat area, locate the correct gully leading to a high notch on the west ridge. That notch is where the roped climbing starts: two pitches of fifth class to the summit tower, then a short exposed scramble, kept roped, to the top. If you are uncoiling a rope at the col itself, you are hundreds of feet too low.\n\nCarry water from camp. The glacier and the lake supply it below; the upper ridge does not."
+  },
+  {
+   "name": "Two camps: the lake basin or the glacier saddle above it",
+   "notes": "The lake in the glacier basin is the common first camp and has water. Most parties then move camp three or four hours further up onto the glacier saddle at about 7,150 ft, which is flat glacier travel with minor and usually avoidable crevasse hazard in normal late-season conditions, and which puts the party far closer to the peaks for summit day. The trade is an exposed camp on ice with weather and visibility to consider, and a second carry.",
+   "season": "Same window; the higher camp is only worth it once the glacier is reasonable",
+   "hazards": [
+    "an exposed camp on the glacier edge with poor visibility common",
+    "a second carry to move camp",
+    "crevassed travel between the two camps",
+    "the same loose talus and exposed class 4 above the col",
+    "no water above the lake basin"
+   ],
+   "whyThisWay": "When the glacier is in good shape and the weather is settled, a party moves up to the saddle camp for a much shorter summit day instead of staying at the lake.",
+   "baseFinding": "From either camp the route meets at the same place: the saddle between the two Mox summits, gained by traversing east beneath the western peak's southern side and then climbing a steep thousand feet of loose sandy talus.\n\nThe high camp's own marker is that it sits on rock outcrops at the glacier's edge at the top of a broken buttress, rather than on open ice. Rope up there for the crevassed travel beyond; visibility on this ground is often poor, and the saddle is not visible from camp.\n\nAt the saddle, the summit you want is the eastern one - the higher and harder of the pair. The western summit is the one you traversed beneath on the way in, so if the tower above you is on the side you came from, you have turned the wrong way.\n\nThe confirmation sequence is the same ladder: ramp right past a snow patch into a gully, class 4 up and right to a notch in the gendarme ridge, ledges zig-zagging right-left-right through it, then a short downclimb to a small flat area, and only then the gully to the high notch on the west ridge where the rope comes out."
+  }
+ ],
+ "wa_bear_mountain_chilliwack_north_buttress": [
+  {
+   "name": "Hannegan Pass and the Chilliwack River Trail to Bear Creek",
+   "camps": [
+    "Meadow basin below the northwest-ridge saddle"
+   ],
+   "notes": "From the road end at about 3,100 ft, Trail #674 runs nearly level for the first mile and then climbs at a steady grade to Hannegan Pass at about 5,100 ft. Drop off the east side and continue down into the Chilliwack valley, bearing right at the park boundary onto the Chilliwack River Trail proper. The tread loses height past a backcountry camp to the Chilliwack River crossing - historically a hand-pulled cable car, and a serious ford if it is not running, so check its status before you plan around it - then runs down-valley past further camps to the Bear Creek confluence. The camp at that confluence has been closed since fire came through the drainage, so confirm it is open rather than assuming a bed there.\n\nAt Bear Creek the maintained trail ends. Ford the creek, which can be a genuinely committing crossing in snowmelt, and climb steep brushy timber eastward; higher the brush turns to huckleberry and slide alder before opening into meadows above Ruta Lake. Traverse the divide from there, skirting the loose south-facing slopes below two unnamed points and crossing a rock rib, to a broad saddle at about 6,480 ft with running water and heather tent sites. Most parties split this over two days.",
+   "objHaz": [
+    "rockfall",
+    "icefall",
+    "loose rock",
+    "river crossing",
+    "route-finding",
+    "remote"
+   ],
+   "season": "Late July through September, once the Chilliwack crossing has dropped and the buttress is dry",
+   "hazards": [
+    "Chilliwack River crossing depends on a cable car being in service; serious ford if not",
+    "Bear Creek ford in snowmelt can be committing",
+    "Steep brushy timber and slide alder with no tread above Bear Creek",
+    "Loose south-facing slopes on the divide traverse",
+    "Rockfall and icefall from the shrinking glacier in the couloir",
+    "Moat between neve and slab worsens through the season",
+    "Days from any road; loose, hard-to-protect rock on the buttress"
+   ],
+   "primary": true,
+   "baseFinding": "The route begins by losing height, and that is the single most important thing to know at camp. From the 6,480 ft saddle you drop down steep scree, trending climber's right, and cross several minor gullies to reach the toe of the small glacier remnant spilling out of the couloir below the buttress. Any line that climbs upward from the saddle toward rock is the wrong one.\n\nIdentify the saddle first: it is broad, it has running water on it and flat heather sites, and it sits on the north-west ridge with the wall around the corner rather than above you. A saddle with no water and no camping is not it.\n\nAt the ice, the positive test is which side of the buttress you go up. This route climbs the glacier or neve on the climber's-left side of the buttress and then works into slabs that lead to a corner system - the corner is where the technical climbing starts. The toe of the buttress itself, where the rock meets the ice on the right-hand side, is the start of the direct and not of this route. If you are roping up at the very bottom of the rock rather than walking past it on snow, you are on the harder line.\n\nWatch the join between snow and rock. A moat opens where the neve pulls away from the slabs and it deepens through the season; getting out of it onto the slabs is often the awkward move of the approach and it is worth an axe and crampons even in high summer.\n\nA cross-check once committed: the climbing above the corner runs up to about 5.10 with the hardest move an offwidth part-way up, and it finishes on the buttress top, from where a scramble gains the true summit. If your first pitch off the ice is already at your limit, you have started too low and too far right."
+  },
+  {
+   "name": "From the Chilliwack Lake road on the Canadian side",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Meadow basin below the northwest-ridge saddle",
+      "role": "main",
+      "type": "bivy",
+      "elevM": 1951,
+      "notes": "The standard and effectively the only high camp for the buttress, in heather meadow a little below the notch on the northwest ridge, where scattered trees give some wind shelter and flat grassy ground. Reached by climbing roughly 3,000 ft out of the Bear Creek valley to treeline on a rough climbers' path through open forest that gives way to blueberry brush. Around nine hours from the Chilliwack Lake road on the Canadian side; the American approach over Hannegan Pass and down the Chilliwack River is far longer, on the order of seventeen miles, but is the one that keeps the permit straightforward. Expect mosquitoes.",
+      "water": "Running water at the camp, fed by semi-permanent snowfields just above; those patches are described as holding meltwater well into the later part of the season.",
+      "permit": "North Cascades National Park wilderness permit, Bear Mountain cross-country zone: maximum party of six and six permits per night. This zone cannot be reserved in advance — it is walk-up only, from the Wilderness Information Center. Cross-country camping is restricted to durable ground.",
+      "capacity": "No published tent count. The binding number is the permit: six people per party, six parties a night in the zone."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Chilliwack Lake road, south end (British Columbia)"
+    }
+   },
+   "notes": "There is a far shorter line to the same camp from the road on the Canadian side of the border - a fraction of the distance the Hannegan approach covers. It crosses the border on foot where there is no port of entry, and this page cannot say that crossing is lawful, so confirm it with the border authorities before planning on it; and the tread turns unmaintained and badly overgrown after the first mile or two, so the miles it saves are not all easy ones. Most parties starting in the United States take the long way rather than deal with it; parties already north of the border have the opposite calculation.",
+   "objHaz": [
+    "rockfall",
+    "icefall",
+    "loose rock",
+    "route-finding",
+    "remote"
+   ],
+   "season": "Same window, and only if the border crossing is confirmed lawful",
+   "hazards": [
+    "Border crossing on foot with no port of entry; legality unconfirmed",
+    "Unmaintained, heavily overgrown tread for most of the distance",
+    "Loose south-facing slopes on the divide traverse",
+    "Rockfall and icefall from the glacier remnant beneath the buttress",
+    "Loose, hard-to-protect rock on the buttress",
+    "Remote position; a rescue may involve two countries"
+   ],
+   "whyThisWay": "Only for parties already in Canada who have confirmed a lawful border crossing; much shorter, but the tread is overgrown after the first mile or two.",
+   "baseFinding": "The approach variant changes only how you arrive at the 6,480 ft saddle. Once there, everything is as for the long approach: the camp is the broad saddle with running water and heather sites on the north-west ridge, and the route starts by dropping off it on steep scree, trending climber's right, across several minor gullies to the toe of the glacier remnant beneath the couloir.\n\nThe same two tests apply at the ice. Go up the snow on the climber's-left side of the buttress into the slabs and the corner system. If you are tying in at the very toe of the rock where it meets the ice on the right, you are under the Direct.\n\nAnd the same negative marker: gaining height straight from the saddle toward rock means you have not gone far enough down. The wall is below and around the corner from camp, not above it."
+  }
+ ],
+ "wa_direct_north_buttress": [
+  {
+   "name": "Hannegan Pass and the Chilliwack River Trail to Bear Creek",
+   "camps": [
+    "Basin below the Bear Mountain saddle",
+    "Hannegan Camp, below Hannegan Pass",
+    "Boundary Camp",
+    "US Cabin Camp, Chilliwack River"
+   ],
+   "notes": "From the road end at about 3,100 ft, Trail #674 climbs to Hannegan Pass near 5,100 ft, then drops off the east side into the Chilliwack valley, bearing right at the park boundary onto the Chilliwack River Trail. Past a backcountry camp the trail reaches the Chilliwack River crossing, where a hand-pulled cable car carries hikers over in high water (by late July and August the river is often below knee deep and can be forded), then continues down-valley to the Bear Creek confluence, where the maintained trail ends. The camp there has been closed since the 2021 fire.\n\nFord Bear Creek, climb steep brushy timber east through huckleberry and slide alder into meadows above Ruta Lake, then traverse the divide - loose south-facing slopes below two unnamed points, and a rock rib - to the broad 6,480 ft saddle with running water and heather tent sites. Two days for most parties.",
+   "objHaz": [
+    "rockfall",
+    "icefall",
+    "loose rock",
+    "route-finding",
+    "remoteness"
+   ],
+   "season": "Late July through September, for dry rock and a river crossing that is passable",
+   "hazards": [
+    "Chilliwack River crossing in high water; cable car or ford",
+    "Bear Creek ford in snowmelt",
+    "Steep brushy timber, slide alder and a loose divide traverse",
+    "Rockfall and icefall from the glacier remnant in the couloir below the wall",
+    "Deep moat at the toe of the buttress late season",
+    "Loose blocks on the mid-route traverse; sparse protection on several pitches",
+    "Remote and committing, several days from help"
+   ],
+   "primary": true,
+   "baseFinding": "The Direct starts at the very bottom of the rock, and that is what separates it from the route it shares a camp with. From the saddle you first go down: steep scree trending climber's right, across several minor gullies, to the small glacier remnant filling the couloir below the wall.\n\nThe toe of the buttress lies on the right-hand side of that ice, where the rock runs down into the snow. That junction is the start. You should be tying in with the whole buttress rising above you and no snow left to climb.\n\nThe negative marker is unambiguous and it is the common mistake: the regular North Buttress walks past this toe and continues up the glacier on the buttress's climber's-left side, then moves onto slabs leading into a corner system well above the bottom of the rock. If you are still walking on snow with the buttress rising to your right, you have walked past the Direct and are heading for the regular start. Turn round and go back to where rock meets ice.\n\nA second check is how soon it gets hard. The Direct gives sustained climbing from low down, with an offwidth, thin cracks and steep crest pitches; the regular line gives a snow climb and slabs first. A long easy start means you are not on the Direct.\n\nWatch the moat at the junction. Where the neve has pulled away from the rock the gap deepens through the season and can be the hardest move of the day before any climbing has started."
+  },
+  {
+   "name": "From the Chilliwack Lake road on the Canadian side",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 6500,
+      "name": "Basin below the Bear Mountain saddle",
+      "role": "main",
+      "type": "bivy",
+      "notes": "The launching point for the north side of Bear Mountain, reached by leaving the Chilliwack valley trail and following a lightly marked line up the ridge toward treeline and then over into the basin. It is a long way in — most parties treat it as a second or third night rather than something reachable from the road — and the ground above the trail is faint enough that route-finding matters. The alternative approach from Chilliwack Lake in British Columbia is shorter, but the cross-border stretch can be heavy bushwhacking, so the long trail-based approach from Hannegan Pass is the price of certainty.",
+      "water": "Snowmelt and tarns in the basin, reliable in early summer and can fail entirely by late season — carry water up if the year has been dry",
+      "permit": "North Cascades National Park backcountry permit for a cross-country zone rather than a designated camp, arranged at Marblemount. Zones are quota-limited with their own siting rules, so ask for the zone by name rather than assuming a valley camp reservation covers you.",
+      "capacity": "Informal boulder-and-heather sites for a small party; no facilities of any kind"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Chilliwack Lake road, south end (British Columbia)"
+    }
+   },
+   "notes": "A much shorter walk to the same saddle camp exists from the road on the Canadian side, but it crosses the border on foot where there is no port of entry, and follows an unmaintained, heavily overgrown tread after the first stretch. It is the natural choice for parties already north of the border and the awkward one for parties starting south of it.",
+   "objHaz": [
+    "rockfall",
+    "icefall",
+    "loose rock",
+    "bushwhacking",
+    "remoteness"
+   ],
+   "season": "Same window, and only if the border crossing is confirmed lawful",
+   "hazards": [
+    "International border crossing on foot",
+    "Overgrown, unmaintained tread; heavy bushwhacking on the cross-border stretch",
+    "Same glacier remnant, moat and rockfall below the buttress",
+    "Loose blocks on the mid-route traverse; sparse protection on several pitches",
+    "Cross-border rescue complications; remote and committing"
+   ],
+   "whyThisWay": "For parties already in Canada, as it is a much shorter walk to the saddle camp, but it crosses the border on foot away from a port of entry and is not a lawful way in for everyone.",
+   "baseFinding": "Arrival differs, the start does not. From the 6,480 ft saddle drop down steep scree trending climber's right, cross the minor gullies, and reach the glacier remnant under the couloir.\n\nTie in at the toe of the rock on the right-hand side of the ice, where the buttress runs down into the snow and there is no more snow above you. If you find yourself climbing neve with the buttress on your right, you have passed the Direct's start and are on the regular route's line toward the slabs and corner.\n\nExpect the moat where snow has pulled back from the rock to be the first real obstacle, and expect the climbing to be hard immediately rather than after a snow lead."
+  }
+ ],
+ "wa_north_face_left_buttress": [
+  {
+   "name": "Ross Lake boat crossing, Lightning Creek and the abandoned Freezeout Creek trail to the north-face glacier",
+   "camps": [
+    "Castle Peak north-side glacier bivy"
+   ],
+   "notes": "The approach that stays inside the United States, and much the longer of the two.\n\nFrom the highway pullout above the dam, a spur trail drops to the lake shore; cross by water taxi or by a boat portaged down it, and land near the head of the lake. Follow the Lightning Creek trail, then the abandoned and increasingly brushy Freezeout Creek trail. The steep rock-and-alder diagonal immediately above the trail junction is the hardest navigation on the whole walk; look for intermittent orange flagging. The cabin at about 3,600 ft is a waypoint and an emergency shelter, and tread mostly disappears around 4,200 ft.\n\nCamping in the lower corridor needs a park backcountry permit; the upper part is wilderness with a free self-issue permit.\n\nFrom the upper basin, work round to the north side and onto the glacier at the foot of the wall, which is mellow enough for easy travel.",
+   "objHaz": [
+    "rockfall",
+    "bergschrund",
+    "glacier travel",
+    "route-finding",
+    "remote"
+   ],
+   "season": "Summer; the documented ascent was made in early August",
+   "hazards": [
+    "Boat crossing of Ross Lake needed; a long multi-day approach with a retreat measured in days",
+    "Abandoned, brushy Freezeout Creek trail; tread mostly disappears around 4,200 ft",
+    "Steep rock-and-alder diagonal above the trail junction is the hardest navigation of the walk",
+    "Awkward bergschrund or moat where the glacier meets the rock",
+    "Rockfall, worse once sun hits the face",
+    "Several unmarked lines on one wall; descent by the east ridge and snow finger, not the route reversed"
+   ],
+   "primary": true,
+   "baseFinding": "The face is about fourteen hundred feet of granite ribs, gullies and couloirs above a glacier and it carries several routes with nothing marked. Do not identify by name; identify by feature.\n\nFirst, place the central buttress. Stand back on the glacier and find the summit, then look at the buttress directly beneath it — that is the neighbouring route, and this line is not on it. This route takes the left margin of that buttress system, so you want to be off to the left of the plumb line from the summit.\n\nSecond, find the gully or chimney at the buttress's left edge. The start is in the blocky line of face holds just left of it. Blocky face holds, immediately left of a gully or chimney, at the left edge of the buttress: that is the whole identification at the ground. The first pitch is long, mostly low fifth class, with a wide crack near its end.\n\nThird, and this is the confirmation higher up that nothing else on the face gives you: this route follows a distinctive yellow quartz dyke up the wall to avoid the dirtier rock either side of it. A yellow band running up the granite is not a subtle feature. If you never meet one, you are on a different climb.\n\nWatch for an awkward bergschrund or moat where the glacier meets the rock.\n\nNegative markers, and they matter because two of the neighbours are hard: if the summit is directly overhead from your belay and your second pitch is desperate face climbing wanting an aid move, you are on the central buttress line. And the face's original route and at least two others also exist here, so the honest rule is that anything without the yellow dyke above it is not this.\n\nDescent is not the route reversed and not a rappel: take the east ridge from the top to an obvious col, then a snow finger back down toward the approach glacier and basin."
+  },
+  {
+   "name": "Provincial park approach from the north over Frosty Mountain to Crow Creek",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Castle Peak north-side glacier bivy",
+      "role": "main",
+      "type": "bivy",
+      "notes": "Camp below the glacier under the north face, at the end of the approach and at the foot of the glacier crossing to the route.",
+      "water": "Snowmelt and glacier runoff.",
+      "permit": "Free self-issue Pasayten Wilderness permit.",
+      "capacity": "A few tent spots on rock and moraine; no established sites."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Lightning Lake, E.C. Manning Provincial Park (British Columbia)"
+    }
+   },
+   "notes": "Read the legal point first. This approach walks in from the provincial park on the northern side and crosses the international boundary cross-country. That is not a lawful crossing. Away from a port of entry it needs prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over. It is recorded because it is the commonly published line and the shorter of the two, not as a recommendation.\n\nAs described, it follows the marked trail from Lightning Lake up the Frosty Mountain area to a pass near 8,000 ft, then leaves the trail and travels cross-country south over the boundary, descending through the next creek basin and over the divide into the drainage below the peak's north face, finishing at the toe of the glacier.\n\nThe lawful alternatives are the boat crossing and abandoned creek trail from the east, or the crest trail from the west, both of which are considerably longer.",
+   "objHaz": [
+    "rockfall",
+    "bergschrund",
+    "glacier travel",
+    "route-finding",
+    "remote"
+   ],
+   "season": "Summer, once the divide traverse is clear enough to travel",
+   "hazards": [
+    "The described approach crosses the international boundary cross-country, which is not a lawful crossing",
+    "Cross-country over a mountain and a drainage divide to reach the glacier",
+    "Awkward bergschrund or moat at the base of the wall",
+    "Rockfall, worse once sun hits the face",
+    "Several unmarked lines on one wall; descent by the east ridge and snow finger, not the route reversed",
+    "Very remote, multi-day approach with no quick rescue"
+   ],
+   "baseFinding": "Whichever way you arrive, the glacier is the same and so is the identification, and this side has one advantage worth using: you come down toward the wall, which gives you the whole face in one view before you are under it. Take that view rather than sorting the routes out from the bergschrund.\n\nFrom back on the glacier, find the summit and note the buttress directly under it — that is the neighbouring line and it is not this one. This route is on the left margin of the same buttress system.\n\nThe ground marker is a gully or chimney at the buttress's left edge, with the route starting in the blocky line of face holds just left of it. The confirmation above is a yellow quartz dyke, which the line follows deliberately to stay on clean rock and away from the dirtier granite either side. Yellow band, left margin, blocky start beside a chimney: those three together are the route.\n\nExpect an awkward bergschrund or moat at the transition from ice to rock.\n\nNegative markers. Directly under the summit with a very hard second pitch means the central buttress line. No yellow dyke anywhere above you means one of the other lines on this face, of which there are several and none is marked.\n\nSecond negative marker and it is not about climbing: the boundary clearing is a visible cut line across this ground. It is not a route and it is not a shortcut.\n\nDescent is the east ridge to an obvious col and then a snow finger back to the glacier and basin."
+  },
+  {
+   "name": "Pacific Crest Trail north from Harts Pass",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Castle Peak north-side glacier bivy",
+      "role": "main",
+      "type": "bivy",
+      "notes": "Camp below the glacier under the north face, at the end of the approach and at the foot of the glacier crossing to the route.",
+      "water": "Snowmelt and glacier runoff.",
+      "permit": "Free self-issue Pasayten Wilderness permit.",
+      "capacity": "A few tent spots on rock and moraine; no established sites."
+     },
+     {
+      "elev": 6200,
+      "name": "Harts Pass and Meadows campgrounds",
+      "role": "route",
+      "type": "camp",
+      "notes": "This is the staging ground for almost everything in the zone and the road to it is a substantial fact in its own right. Forest Road 5400 climbs roughly twenty miles of unpaved single lane from Mazama with pullouts rather than passing room, a rock wall on one side and an unguarded drop on the other, and grades approaching seventeen percent on the upper ramps. Trailers are prohibited outright and motorhomes and wide vehicles are strongly discouraged. The road opens with the snowmelt, typically early to mid July and occasionally not until later, and closes with the first serious autumn storms. Above the pass it continues to the gate below Slate Peak at about 7,440 feet, the highest driveable point in the state, which puts you at a trailhead where the walking starts near 7,000 feet instead of 2,500. Four trails leave from here — the Pacific Crest Trail, the West Fork Pasayten, the Middle Fork Pasayten and Buckskin Ridge — so this one pass is the door to Osceola, Blackcap, Dot, Ptarmigan, Castle and Blizzard. Nights are cold and wind at the pass is relentless; pitch behind timber rather than in the open meadow. Wildfires close this road and parts of the northern wilderness in some summers, so confirm the road is actually open before committing to a long drive.",
+      "water": "None. Neither campground has potable water and there is no piped supply anywhere on the pass, so haul everything up from the valley or plan on filtering from creeks well below. This is the single most common mistake parties make staging here.",
+      "permit": "Northwest Forest Pass or an Interagency pass to park at the trailheads; the campgrounds themselves are free but carry no services and no trash collection, so everything you bring comes back out. The free self-issue Pasayten wilderness permit is filled out at the trailhead kiosk before you walk in, not here. Campfires are legal in the existing rings when no burn ban is in effect, but the ground is thin alpine meadow and firewood is scarce, so most parties do without.",
+      "capacity": "Two small Forest Service campgrounds a mile apart, five or six sites at the pass itself and roughly twice that at Meadows, first come first served with no reservations. They fill on summer weekends and in larch season, and there is no overflow up here."
+     },
+     {
+      "name": "Windy Pass and the crest camps north of Harts Pass",
+      "role": "route",
+      "type": "camp",
+      "notes": "This is the first day of every trip toward Castle and Blizzard and the natural stop for anyone who wants a night high on the crest without a valley grind. The trail leaves Harts Pass at about 6,200 feet, tops out just under 7,000 a little over two miles north, and never drops below 5,000 the whole way to the border, so this is sustained high open country with long views and no shelter. Snow lingers on the north-facing traverses well into the summer and those crossings are the reason most parties wait until mid August in a heavy year. Wind is the standing complaint at Windy Pass and it earns the name; camping a little below the crest costs nothing and buys a great deal. There is no mobile service anywhere along here. As pure staging these camps do nothing for the Robinson Creek or Middle Fork peaks, which go the other direction from the pass.",
+      "water": "Sparse and the defining planning problem of this stretch. There is nothing at the pass itself; the nearest campsites with water sit most of a mile further on and a couple of hundred feet higher. Carry enough for at least six miles at a time, and treat the basin between Foggy Pass and Windy Pass, the Shaw Creek crossing and the spring near Holman Peak as the fixed points to plan around rather than assuming you will find something in between.",
+      "permit": "Free self-issue wilderness permit from the kiosk at Harts Pass, no quota and nothing to reserve. Northwest Forest Pass or Interagency pass to park. Party size limits and any seasonal campfire ban are posted at the trailhead and change year to year, so read the board rather than assuming. Camping is prohibited within a hundred feet of any lake shoreline, and stock parties must carry certified weed-free feed and may not tie animals to trees overnight.",
+      "capacity": "A string of small established sites in the meadows and basins along the crest, most taking one or two tents. The Pacific Crest Trail hiking season overlaps the climbing season, so expect company at the obvious ones and be ready to walk on to the next."
+     },
+     {
+      "name": "Hopkins Lake and Castle Pass",
+      "role": "route",
+      "type": "camp",
+      "notes": "These are the camps that make Castle Peak and Blizzard Peak possible at all from the American side. Hopkins Lake sits about twenty-four trail miles north of Harts Pass, six hundred feet below the trail, and Castle Pass is roughly twenty-seven miles out at about 5,450 feet. Castle Peak rises directly north and east of the pass and is a scramble from a camp here; Blizzard Peak lies further east toward Frosty Pass and the Chuchuwanteen country and is more often reached by dropping down the West Fork Pasayten from Harts Pass instead, which is a different but comparably long line. Either way this is a three to five day trip for a fit party and there is no shortcut — the loss of the Canadian exit removed the only short approach that ever existed for these two summits. Plan food and water for the full round trip, expect snow on the north slopes into August, and understand that a weather change up here leaves you a very long way from the car.",
+      "water": "Hopkins Lake is the reliable one and is worth the descent for that reason alone — it is the best water for many miles in either direction. Castle Pass is drier and the sources near it are seasonal, so fill at the lake before continuing north.",
+      "permit": "Free self-issue wilderness permit, no quota. Northwest Forest Pass to park at Harts Pass. The international boundary matters here in a way it does not elsewhere in the zone: crossing north into Canada from the backcountry is not lawful and the long-standing arrangement that let northbound trail hikers walk out to the highway in British Columbia was ended in 2025, so there is no exit that way and no legal entry southbound either. Everything in this corner is now an out-and-back from Harts Pass. Camping is prohibited within a hundred feet of the lake shoreline; pull back into the trees.",
+      "capacity": "Hopkins Lake holds several small established sites in the trees around the shore and is the most comfortable camp in the far north of the wilderness. Castle Pass itself has room for a couple of parties in the timber. Neither is large and both see through-hiker traffic."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Harts Pass (end of FR 5400)"
+    }
+   },
+   "notes": "Follow the Pacific Crest Trail north from Harts Pass along the crest, about 27 miles to Castle Pass, then go cross-country onto the peak and around to the north side. It needs no boat and stays in the United States, but it is a very long high walk and the Harts Pass road usually opens only in July.",
+   "objHaz": [
+    "rockfall",
+    "bergschrund",
+    "weather",
+    "remote"
+   ],
+   "hazards": [
+    "Very long high walk of about 27 miles, a 3-5 day trip with no shortcut",
+    "Harts Pass road is single lane, steep and exposed; usually opens only in July; wildfire can close it",
+    "Snow lingering on north-facing traverses into August; sparse water along the crest",
+    "Wind and cold on the open crest, far from the car if weather turns",
+    "Awkward bergschrund or moat at the base of the wall",
+    "Rockfall, worse once sun hits the face; descent by the east ridge and snow finger"
+   ],
+   "whyThisWay": "When no boat is available and you want to stay in the United States; it is about 27 miles each way along the crest from Harts Pass, which usually opens only in July."
+  }
+ ],
+ "wa_castle_peak_pasayten_the_drawbridge": [
+  {
+   "name": "Ross Lake boat crossing, Lightning Creek and the abandoned Freezeout Creek trail to the north-face glacier",
+   "notes": "This is the approach that stays inside the United States, and it is a multi-day trudge rather than a walk.\n\nFrom the highway pullout above the dam a short spur trail drops to the lake shore. Cross by water taxi or by a boat you portage down that spur, and land near the head of the lake where the Lightning Creek trail begins. Follow it, then pick up the abandoned and increasingly brushy Freezeout Creek trail, whose worst navigation is the steep rock-and-alder diagonal immediately above the junction — intermittent orange flagging marks it. The cabin at about 3,600 ft is a good waypoint and an emergency shelter; tread mostly dies around 4,200 ft.\n\nThe lower corridor is national recreation area and camping there needs a park backcountry permit; the upper part is wilderness with a free self-issue permit.\n\nFrom the upper basin, cross round to the north side and onto the glacier at the foot of the wall. The glacier itself is mellow and allows easy travel.",
+   "objHaz": [
+    "rockfall",
+    "loose rock",
+    "route-finding",
+    "remoteness"
+   ],
+   "season": "Roughly late June through September, once the approach glacier and moraine are passable",
+   "hazards": [
+    "Multi-day approach by boat and abandoned, brushy trail; steep rock-and-alder diagonal above the junction",
+    "Several unmarked routes on a 1,400 ft wall; identification is by position under the summit only",
+    "Awkward bergschrund or moat at the start of the climbing",
+    "Rockfall on the lower wall, worst once sun hits the face",
+    "Dirt- and moss-filled cracks mid-route and teetering blocks near the top",
+    "No cell coverage and an extremely slow retreat"
+   ],
+   "primary": true,
+   "baseFinding": "The north face is a wall of granite ribs, gullies and couloirs about fourteen hundred feet high, holding ice or the remnants of it, with a glacier at its foot. It carries several routes and they are not marked, so identification is by position against the summit and nothing else.\n\nThe test is simple and it is the whole identification: this route takes the central buttress, and that buttress sits directly below the summit. Stand back on the glacier, find the summit on the skyline, and drop a plumb line from it. The buttress under that line is this route. If the summit is off to one side from where you are standing, you are under a different climb.\n\nGetting onto it is the second problem. Expect an awkward bergschrund or moat where the glacier meets the rock, and start with easy fifth-class ground whose purpose is to get out of the rockfall line rather than to climb anything — that first pitch is a position move, not a feature.\n\nConfirm on pitch two, because it arrives fast and it is unmistakable: the crux comes almost immediately, mid-fifth-class face climbing hard enough that the first ascent used a short aid move to pass it. A wall this size whose hardest pitch is the second one is unusual, and it is the strongest evidence you are on line.\n\nThe middle of the route then traverses out of a dihedral on a tricky flake and takes a roof on the left via cracks and stemming, over slabs that needed heavy cleaning of dirt and moss. After about five pitches the route gains the ridge proper and the rock quality improves markedly, with one short harder hand-and-fist crack. The final technical pitch picks its way around teetering blocks, and then moderate snow slopes run the last four hundred feet to the top.\n\nNegative marker: if your line starts in a blocky set of face holds beside a gully or chimney at the left edge of the buttress, you are on the neighbouring route at the buttress's left margin, and higher up it follows a distinctive yellow quartz dyke that this route does not touch.\n\nDescent is not the climb reversed. Walk off the south side and the east ridge back toward camp."
+  },
+  {
+   "name": "Provincial park approach from the north over Frosty Mountain to Crow Creek",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Lightning Lake, E.C. Manning Provincial Park (British Columbia)"
+    }
+   },
+   "notes": "Read the legal point first. This line walks in from the provincial park on the northern side and then crosses the international boundary cross-country. That is not a lawful crossing. Away from a port of entry it requires prior arrangement with the border authority, the corridor is patrolled, and casual parties cannot simply walk over. It is the first-ascent line, not a recommendation.\n\nIt starts from the lake in the provincial park, climbs up and over Frosty Mountain, descends into the next creek basin to the south, traverses to the divide, and drops into the Crow Creek drainage below the peak's north face. The first ascent camped on the only dry spot on the ridge, roughly two-thirds of the way down toward the glacier.\n\nThe wholly lawful alternatives are the boat crossing and abandoned creek trail from the east, or the crest trail from the west.",
+   "objHaz": [
+    "rockfall",
+    "loose rock",
+    "route-finding",
+    "remoteness"
+   ],
+   "season": "Roughly late June through September",
+   "hazards": [
+    "The described line crosses the international boundary cross-country, which is not a lawful crossing",
+    "Cross-country travel over a mountain and two drainage divides, one dry camp on the ridge",
+    "Awkward bergschrund or moat at the base of the wall",
+    "Rockfall on the lower face; loose blocks near the top of the technical climbing",
+    "Retreat from anywhere on the trip is measured in days"
+   ],
+   "longForm": true,
+   "baseFinding": "However you reach it, the glacier at the foot of the wall is the same and the identification is the same.\n\nCome down the ridge from camp to the glacier, which is mellow enough to walk. Then stand back far enough to see the whole face at once — this is the step the approach itself makes easy from this side, because you descend toward the wall rather than arriving under it, and a descending approach gives you the one view that settles the route.\n\nFrom that view, drop a plumb line from the summit. The buttress under it is this route. The face carries several other lines and none is marked; being under the summit is the identification.\n\nWatch for an awkward bergschrund or moat where the glacier meets the rock. The first pitch is easy fifth-class ground taken to escape the rockfall line rather than for the climbing, and the crux arrives at once on pitch two — face climbing hard enough that a short aid move was used on the first ascent.\n\nNegative marker: a start in blocky face holds beside a gully or chimney at the left edge of the buttress is the neighbouring route, which follows a yellow quartz dyke higher up.\n\nSecond negative marker, and it applies from the moment you leave camp: the boundary clearing is a visible cut line on this ground and it is not a route. The summit sits about a mile south of it.\n\nDescent is the south side and the east ridge, unroped third and fourth-class ground from the top of the technical climbing, back toward camp."
+  },
+  {
+   "name": "Pacific Crest Trail north from Harts Pass",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Harts Pass (end of FR 5400)"
+    }
+   },
+   "notes": "Follow the Pacific Crest Trail north from Harts Pass along the crest, about 27 miles to Castle Pass, then go cross-country onto the peak and around to the north side. It needs no boat and stays in the United States, but it is a very long high walk and the Harts Pass road usually opens only in July.",
+   "objHaz": [
+    "rockfall",
+    "loose rock",
+    "route-finding",
+    "remoteness"
+   ],
+   "hazards": [
+    "About 27 miles of high walking on the crest to Castle Pass before any off-trail travel",
+    "Harts Pass road usually opens only in July",
+    "Cross-country onto the peak and around to the north side, then the glacier at the wall's foot",
+    "Rockfall on the lower wall and loose blocks near the top of the technical climbing",
+    "Awkward bergschrund or moat; no cell coverage and a multi-day retreat"
+   ],
+   "whyThisWay": "When you have no boat or water taxi and will walk the roughly 27 miles of crest in, after the Harts Pass road opens, usually in July."
+  }
+ ],
+ "wa_liberty_cap_ptarmigan_ridge_finish": [
+  {
+   "name": "Mowich Lake, Spray Park and the Ptarmigan crest",
+   "camps": [
+    "Ptarmigan Ridge high camp",
+    "Camp Schurman",
+    "Camp Schurman (Emmons-Winthrop descent)"
+   ],
+   "notes": "The prettier of the two ways in, and the one that puts you on the route's own ridge from the bottom. Mowich Lake sits at about 4,929 ft at the end of a road that has had no public access since the SR 165 Fairfax Bridge closed in April 2025 (before that it was often snowed shut into early or mid July), and that single fact decides whether this approach is available at all. From the lake it is three to four miles of trail up through Spray Park; at about 6,400 ft a beaten path breaks off right toward the permanent snow. Cross the Flett Glacier in the gap between Echo Rock, 7,870 ft, and Observation Rock, 8,364 ft, at somewhere around 7,500 ft, climb to the saddle immediately east of Observation Rock, and cross onto the Russell Glacier near 7,800 ft. From there the crest runs south, sometimes on rock but mostly on easy snow just left of the crest line, with the Russell falling away east. This stretch is uncrevassed and is genuinely a walk. The last few hundred yards to camp are not: the crest narrows to a knife edge with an overhanging rock step on it, and most parties bypass that by dropping about 200 ft onto 40 degree snow on the east side and traversing back. Well above the base, the exit gully through the rock buttress is the one identification climbers argue about — whether it is the first or the second break in the cliffs is genuinely unsettled, so climb to the fixed pin rather than to a count. The descent is the Emmons route out to White River, so coming in this way needs a car shuttle or a very long road walk.",
+   "objHaz": [
+    "serac/icefall",
+    "rockfall",
+    "crevasses",
+    "bergschrund",
+    "exposed climbing",
+    "loose rock"
+   ],
+   "season": "June to early July",
+   "hazards": [
+    "Ice avalanche off the Liberty Cap Glacier's ice cliffs onto the traverse between camp and the bergschrund",
+    "Bergschrund and crevasses at the start of the technical ground, around 9,800 ft",
+    "Bare rock at the 5.6 crux chimney in lean years raises both the grade and the rockfall",
+    "Rockfall off decomposing volcanic cliffs on everything below about 12,200 ft",
+    "Overhanging rock step on the knife-edge crest into high camp; sustained 45 to 60 degree snow and ice with a long exposed traverse",
+    "No road access to Mowich Lake since the April 2025 bridge closure, and a descent that finishes at a different trailhead",
+    "Remote, rarely-traveled route: slow rescue"
+   ],
+   "primary": true,
+   "baseFinding": "The walking and the climbing are cleanly separated here and the boundary is a flat spot, but the climb does not start above camp — it starts several hundred feet below it and on the far side of the ridge, and that is what parties get wrong. Follow the crest south from the saddle beside Observation Rock until the ridge stops rising and levels out at about 10,200 to 10,300 ft. You will know the place without being told, because four things sit together there and nowhere else: room for a couple of small tents on flat ground, a steep 2,000 ft drop to the Carbon Glacier immediately east of you, huge banded ice cliffs standing directly south above you where the Liberty Cap Glacier ends, and a clean view straight across at Liberty Ridge. From that camp the route drops west off the crest a few hundred feet onto the upper Mowich Glacier and crosses the bergschrund at about 9,800 ft, aiming for a bridge just left of a rock outcropping near the middle of the face. Look that crossing over from camp the evening before, because it is in plain sight from up there and its condition changes year to year. The traverse down to it passes under the run-out of the ice cliffs and is usually walked across old avalanche debris and stray boulders sitting on the ice, so it is done in the dark and fast. Two ways to know you are wrong. If you have descended onto the Mowich Glacier and kept going west or south, you are wandering out onto Mowich Face ground rather than to the schrund. And if you cross a bergschrund with no ice cliffs above and to your left, stop: from the schrund the route rises back east, climber's left, toward those cliffs, not away from them. The route finishes on Liberty Cap; Columbia Crest is a separate trip across the summit plateau and is not part of this climb."
+  },
+  {
+   "name": "White River, St. Elmo Pass and across the Carbon",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Ptarmigan Ridge high camp",
+      "role": "main",
+      "type": "bivy",
+      "notes": "The high camp the route is climbed from, on the crest of Ptarmigan Ridge near 10,000 ft. Exposed to wind; no running water.",
+      "water": "Melt snow",
+      "permit": "Mount Rainier wilderness permit and climbing registration",
+      "capacity": "A few tent sites on the ridge crest"
+     },
+     {
+      "elev": 4400,
+      "name": "White River Campground",
+      "role": "route",
+      "type": "camp",
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the last to open, around late June, and the first to close in September, so early-season parties often sleep outside the park. Its availability is not guaranteed year to year — it has been listed closed for fire activity — so confirm status before driving in. A reasonable place to sort gear and get a short night before an early start up the Inter Glacier.",
+      "water": "Potable water at the campground when it is open for the season",
+      "permit": "No wilderness permit needed, but this is inside Mount Rainier National Park so park entrance applies, and the park has operated timed-entry reservations for corridor access in recent summers. Recent NPS listings show it as first-come rather than reservable, which contradicts several third-party campground sites still advertising reservations, so check the current NPS page before relying on either. A camping permit here does not cover the mountain: the wilderness permit and the climbing fee are separate.",
+      "capacity": "88 individual drive-in sites with flush toilets and fire grates; RV length is limited to about 27 ft"
+     },
+     {
+      "elev": 9440,
+      "name": "Camp Schurman",
+      "role": "route",
+      "type": "camp",
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its exterior and toilet facilities, but the hut is staff quarters and not a shelter climbers can sleep in, so a tent is mandatory. Access is gated by the White River Road, which typically does not open until late June, and by the Inter Glacier, which is small but crevassed enough that roping up is a judgement call that changes through the season. Late in a dry summer the Inter Glacier turns to bare ice and rubble.",
+      "water": "Snow to melt in most conditions, and the camp generally has adequate clean snow through the season. Some parties find running meltwater near camp late in summer, but it is seasonal and should not be counted on when planning fuel",
+      "permit": "Mount Rainier National Park wilderness camping permit required, same reservation and walk-up split as the rest of the park's climbing camps, with in-person registration before the climb. The climbing cost recovery fee applies to anyone continuing onto the Emmons or Winthrop glaciers or attempting the summit; walking to Camp Schurman as a day trip without going higher does not trigger it.",
+      "capacity": "Considerably smaller than Camp Muir, on the order of a dozen tent sites on the snow and rock around Steamboat Prow; the quota fills quickly on good-weather weekends"
+     },
+     {
+      "name": "Camp Schurman (Emmons-Winthrop descent)",
+      "role": "hidden"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "White River Campground",
+     "trailheadLat": 46.9022,
+     "trailheadLng": -121.6442
+    }
+   },
+   "notes": "The way in that is actually available during the ice season, because the White River road opens in late spring while Mowich Lake has had no road access since the 2025 bridge closure, and it puts you back at your own car after the Emmons descent instead of on the far side of the mountain. It is the Liberty Ridge approach as far as the Carbon: Glacier Basin, then a boot track up snow and scree to St. Elmo Pass, given variously as 7,400 or 7,600 ft, then onto the Winthrop Glacier and a roped traverse at roughly 7,200 to 7,400 ft around to Curtis Ridge, where there are good bivy sites near 7,500 ft. Next morning drop and cross the Carbon around 7,000 ft, staying clear of its seracs and north of the ice cliffs where the Russell calves onto it, then take snowfields up onto the Ptarmigan crest at about its 9,000 ft point and follow the ridge to high camp. It is longer than the Mowich walk, it crosses three glaciers, and it spends hours under actively shedding walls, so it wants to be done cold and early. One thing to fix in your head before the descent: parties coming off Liberty Cap routes routinely wander onto the busy Disappointment Cleaver at Columbia Crest instead of the faint Emmons track, which is the wrong side of the mountain if your car is at White River.",
+   "objHaz": [
+    "serac/icefall",
+    "rockfall",
+    "crevasses",
+    "bergschrund",
+    "exposed climbing"
+   ],
+   "season": "Mid-May to early July",
+   "hazards": [
+    "Hours of exposure to rockfall and icefall crossing beneath Willis Wall and the Liberty Wall",
+    "Crevasses on the Winthrop and the Carbon: thin bridges early, open cracks late",
+    "Committing traverse with no quick exit once past Curtis Ridge",
+    "Ice avalanche off the Liberty Cap Glacier's cliffs onto the traverse into the route",
+    "Sustained 45 to 60 degree ice and a rock or mixed crux around 12,000 ft",
+    "Very little traffic, so no established track above the Carbon and a slow rescue",
+    "Losing the faint Emmons descent to the well-trodden Disappointment Cleaver at the summit"
+   ],
+   "whyThisWay": "When the Mowich Lake road is closed or snowed in, and for parties without a car shuttle, since it returns to the White River car after the Emmons descent; longer and crosses more glaciers.",
+   "baseFinding": "This is the approach on which Rainier's two Liberty Cap routes actually get confused, and the trap is a physical one: there is usually a bootpack running from St. Elmo Pass to the Carbon Glacier, and it was stamped in by parties going to Liberty Ridge. It is the right track as far as the Carbon and the wrong one after that. Working west you cross under Willis Wall and meet a narrow rock and snow ridge dropping straight to the glacier. That first spine is Liberty Ridge. Keep going. Past it the ground opens beneath a big pale cirque wall capped by hanging ice, and the next crest beyond that wall, roughly a mile and a half further west, is Ptarmigan Ridge. Put it the simple way and it is hard to get wrong: on Liberty Ridge the Liberty Wall is on your right, and on Ptarmigan Ridge it is on your left. Cross the Carbon below the seracs, gain the Ptarmigan crest at about its 9,000 ft point and follow the ridge up to the flat high camp at 10,200 to 10,300 ft. That flat is the base of the climb, and four things fix it together: room for a couple of small tents, a steep 2,000 ft drop to the Carbon immediately east, banded ice cliffs standing directly south above you where the Liberty Cap Glacier ends, and Liberty Ridge in full view straight across. From camp the route drops west off the crest onto the upper Mowich Glacier and crosses the bergschrund at about 9,800 ft, near a rock outcropping about the middle of the face — study that crossing from camp the evening before, because it is in plain sight from up there. Above the schrund the line rises back east, climber's left, toward the ice cliffs. If you have crossed a schrund with no ice cliff up and left of you, you are on the wrong part of the mountain."
+  }
+ ],
+ "wa_mount_rainier_ptarmigan_ridge": [
+  {
+   "name": "Mowich Lake and Spray Park",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 10300,
+      "name": "Ptarmigan Ridge high camp",
+      "role": "main",
+      "notes": "Planned high camp and the one the route is built around. Comfortable bivy ground on the ridge crest, deliberately sited just outside the serac fall line off the Liberty Wall — that icefall is the single largest objective hazard on the climb, so the exact spot matters more than the comfort. Fully exposed to wind. Parties who want an acceptable risk margin wait for an overnight freezing level at or below about 12,000 ft.",
+      "water": "none — melt snow",
+      "permit": "climbing permit required above 10,000 ft in addition to the camping permit",
+      "capacity": "one to two tents on dug snow platforms"
+     },
+     {
+      "elev": 9460,
+      "name": "Camp Schurman",
+      "role": "route",
+      "notes": "Descent camp, not an ascent camp — most parties come off Ptarmigan Ridge down the Emmons-Winthrop and use this. Has a ranger hut and a solar toilet, but both can be buried in snow well into the season, so plan to be self-sufficient and pack out waste. Reserve early; this is one of the first camps on the mountain to fill.",
+      "water": "none — melt snow",
+      "permit": "wilderness camping permit required; separate climbing permit for glacier travel",
+      "capacity": "limited designated tent sites; fills early in season"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Mowich Lake Trailhead",
+     "trailheadLat": 46.937,
+     "trailheadLng": -121.8628
+    }
+   },
+   "notes": "From Mowich Lake, follow the trail roughly 3 miles to Spray Park, then climb the lower slopes of Ptarmigan Ridge. The ridge narrows above Observation Rock; continue along it until you find bivouac sites. High camp is normally somewhere between about 9,500 and 10,300 ft, at the point where Ptarmigan Ridge runs into the main cone below the Liberty Cap icefall. Higher camps are worth the extra carry because they let you look at the bergschrund and pick a line the evening before.\n\nThis is the shorter of the two approaches, and it is the one most parties would choose if the road cooperated. Since April 2025 the Mowich Lake road has had no public access, because the SR 165 Fairfax Bridge was closed permanently to cars, bikes and walkers; this start is unavailable until that changes. Even before that, the summer-only road usually opened after the route came into condition.\n\nThe approach to high camp is normally split over two days.",
+   "objHaz": [
+    "icefall",
+    "crevasses",
+    "avalanche",
+    "rockfall",
+    "exposed climbing"
+   ],
+   "season": "May-Jul; the road to Mowich Lake has had no public access since the SR 165 Fairfax Bridge closed permanently on April 22, 2025, so this start cannot be reached by car",
+   "hazards": [
+    "Mowich Lake road has no public access since April 2025; this start is unavailable",
+    "Bergschrund crossing off the Mowich Glacier, conditions-dependent",
+    "Icefall exposure below the Liberty Cap icefall near high camp; site camp outside the serac fall line",
+    "Loose rock descending from high camp onto the glacier; verglassed rock and water ice on the upper mixed ground",
+    "Crevasse fall crossing the Mowich or Winthrop glaciers; avalanche-prone approach slopes on the Mowich/Carbon side",
+    "Committing, remote position with a carry-over descent by the Emmons-Winthrop"
+   ],
+   "whyThisWay": "In early summer once its road is open, for a shorter walk in, if a car shuttle to the White River end can be arranged, since the usual descent comes out there.",
+   "baseFinding": "High camp is not the start of the climbing — and the mistake this route invites is treating the ridge you camped on as the ridge you climb.\n\nFrom camp at around 10,000–10,300 ft you descend, on loose rock or steep snow, onto the Mowich Glacier. If you are gaining height straight out of the tents along a rocky crest, you are still on the approach ridge.\n\nThe first real feature is the bergschrund, usually crossed by a bridge just left of a rock outcropping near the centre. Above it the climbing is 40–45 degree snow for about 1,000 ft, and it ends in an obvious way: you run up under large rock cliffs. That is the signal to traverse left into an hourglass-shaped snow face rather than to keep going up.\n\nThe next decision point is a rock buttress at about 11,500 ft, where the route splits — left and around toward Liberty Cap between the buttress and the icefall, or right through mixed ground, a minor rock rib and the left margin of the Mowich Face to a second rock gully. Either way there is a short section of real rock or mixed climbing above 12,000 ft; if you have got that high on pure snow, you have probably drifted onto the Liberty Cap glacier ground.\n\nDescent is normally the Emmons, not this route."
+  },
+  {
+   "name": "White River, St Elmo Pass and Curtis Ridge",
+   "camps": [
+    "Ptarmigan Ridge high camp",
+    "Glacier Basin camp",
+    "Curtis Ridge camp",
+    "Camp Schurman"
+   ],
+   "notes": "Follow the Glacier Basin trail from White River Campground and leave it for St Elmo Pass (7,400 ft), about 4 miles in. Descend onto the Winthrop Glacier and traverse west toward Curtis Ridge, holding elevation. Cross Curtis Ridge, cross the Carbon Glacier, then climb moderate snow slopes onto Ptarmigan Ridge below its 10,200 ft high point, where there are good bivouac sites.\n\nThis is the long way around the north side of the mountain and it shares its first half with the Liberty Ridge approach. It usually implies a car shuttle or, more often, a carry-over with descent by the Emmons–Winthrop back to White River — which conveniently is also the standard descent from the route itself.",
+   "objHaz": [
+    "icefall",
+    "crevasses",
+    "glacier travel",
+    "exposed climbing"
+   ],
+   "season": "Available earlier in the season than the Mowich Lake road, at the cost of a much longer approach",
+   "hazards": [
+    "Serac discharge from Willis Wall on the traverse between Curtis Ridge and the Carbon",
+    "Crevasse fields on the Winthrop and Carbon glaciers; crossing the Carbon",
+    "Long committing traverse with no quick exit; much longer approach",
+    "Icefall exposure below the Liberty Cap icefall near high camp",
+    "Bergschrund and upper mixed ground; verglassed rock and water ice late season",
+    "Carry-over descent by the Emmons-Winthrop through large crevasses"
+   ],
+   "primary": true,
+   "baseFinding": "Up to the Carbon Glacier this is the Liberty Ridge approach, and the same negative markers apply: leave the Glacier Basin trail rather than walking into Glacier Basin, lose height off St Elmo Pass rather than gaining it, and treat the ground under Willis Wall as a crossing rather than a place to stand.\n\nWhere it diverges: instead of turning up the Carbon toward the toe of Liberty Ridge, you continue west across the Carbon and climb snow onto Ptarmigan Ridge below its 10,200 ft high point. If you find yourself gaining a defined rib immediately above the Carbon with Willis Wall right behind you, you have stopped at Liberty Ridge — Ptarmigan is further round to the west.\n\nOnce camped on Ptarmigan Ridge the start of the climbing is the same as from the Mowich side: down off the ridge onto the Mowich Glacier, then the bergschrund, then 40–45 degree snow to the base of the rock cliffs."
+  }
+ ],
+ "wa_sloan_peak_corkscrew": [
+  {
+   "name": "Bedal Creek Trail #705 (FR 4096)",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Ridge above the Sloan Glacier",
+      "role": "main",
+      "type": "camp",
+      "elevM": 1768,
+      "notes": "The preferred high camp, on the crest overlooking the glacier with a long view. From here it is about half a mile of traverse east-southeast to the saddle near 5,900 ft and then up to gain the glacier around 6,800 ft, which makes for a short summit morning. Expect to camp on snow through June; the route's window is squeezed at both ends, with routefinding through the heather benches hard when they are still buried and the glacier growing impassable late in the season.",
+      "water": "Snowmelt streams below camp; the last running water is around 6,000 ft, and above that you are melting snow.",
+      "capacity": "Several pleasant spots, with one dry site big enough for about four tents — more if you are willing to pitch on snow."
+     },
+     {
+      "name": "Bedal-Sloan saddle",
+      "role": "main",
+      "type": "camp",
+      "elevM": 1625,
+      "notes": "The first camp on the ridge, reached by traversing open and partly brushy slopes past a small lake. Usable, but the ridge above is the better camp and most parties who carry a camp go the extra distance. Elevation is given as either 5,330 or 5,380 ft depending on the account.",
+      "water": "A tarn at the saddle, and it is the weak point — it is stagnant, and parties have found frog and mosquito larvae in it. Better water is a short way above, around 5,500 ft, where small streams cascade down; fill there rather than at the pond.",
+      "capacity": "Four to six tents, so leave room for another party."
+     },
+     {
+      "name": "Bedal Creek roadhead",
+      "role": "route",
+      "type": "camp",
+      "notes": "Worth recording because it is the overnight most Sloan parties actually use. The Corkscrew from Bedal Creek is a reasonable single day of thirteen or fourteen hours for a fit party, and successful ascents in under twelve hours are common, so the usual pattern is to sleep at the trailhead and start around four in the morning rather than carry a camp to the ridge.",
+      "water": "Carry it, or take it from Bedal Creek on the way in.",
+      "permit": "A Northwest Forest Pass is usually reported as the required parking permit, though not universally; carry one.",
+      "capacity": "Roadside parking, not a designated site."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Bedal Creek Trailhead (FR-4096)",
+     "trailheadLat": 48.0719,
+     "trailheadLng": -121.3764
+    }
+   },
+   "hours": "3-5",
+   "notes": "From the Mountain Loop Highway take FR 4096, a rough narrow spur where high clearance genuinely helps, to the Bedal Creek trailhead at about 2,790 ft. Distance and gain above are the full round trip by this line.\n\nWalk the old Bedal Creek trail roughly 1.5 miles and 700 ft. It is overgrown in stretches but stays followable. The critical junction is around 3,500 ft, where a climbers' path turns off to the left near 48.0560, -121.3631; it has carried pink flagging tape in recent years. Missing that turn is the standard error here — the old tread continues and dies in a brushy washout below the basin.\n\nThe climbers' path gains about 1,400 ft steeply through forest. At roughly 4,900 ft it breaks out into talus, then bends southeast through meadow and scattered timber to the Bedal-Sloan saddle at 5,300 ft, where a shallow, somewhat stagnant pond marks the usual camp. This is the last easy water; cascading streams just below the saddle are the alternative.\n\nSoutheast from the saddle the ground opens into scramble terrain. At about 5,800 ft you cross a minor rock ridge and get your first view of the glacier. Snow from here is often firm in the morning and may want axe and crampons.",
+   "distMi": 9.5,
+   "gainFt": 5300,
+   "objHaz": [
+    "crevasses",
+    "rockfall",
+    "loose rock",
+    "route-finding",
+    "exposed climbing"
+   ],
+   "season": "Jul-Sep, once the forest band below 4,900 ft is clear of snow",
+   "hazards": [
+    "Rough, narrow FR 4096 spur; high clearance helps",
+    "Losing the 3,500 ft climbers'-path junction and ending in a brushy washout",
+    "Firm early-morning snow on open slopes above 5,800 ft",
+    "Crevasses on the Sloan Glacier, normally bridged but open in lean years",
+    "Rockfall and loose rock on the Corkscrew shelf and summit block, worse with parties stacked in the gully",
+    "Low-5th-class exposed step about 100 ft below the summit, downclimbed on the way back",
+    "Moat falls on the glacier edge have caused a documented accident"
+   ],
+   "primary": true,
+   "baseFinding": "The Corkscrew does not begin at the glacier — it begins after you are off it. Cross the Sloan Glacier and keep going until you are standing on bare rock at the southeast edge of the summit block, around 7,300 ft; that bare-rock arrival is where parties cache rope, axe and crampons, and it is the single most reliable confirmation on the route. From there a boot track runs along heather ledges for ten to fifteen minutes. Watch to your right for a gully of pale, near-white rock and take that. Two negatives to check yourself against: if you are still on snow or ice you have not reached the start, and if you have walked the heather for much more than a quarter hour with no white-rock gully on the right, you are contouring too low — climb."
+  },
+  {
+   "name": "North Fork Sauk / Cougar Creek (FR 49)",
+   "camps": [],
+   "hours": "4-6",
+   "notes": "The start is an unsigned climbers' pullout on FR 49 (Sloan Creek Road) at roughly 1,900 ft, on the north side of the North Fork Sauk. It is not the maintained North Fork Sauk River Trail #649 — that is a different trailhead a short distance back along the road, and taking it is the common mistake.\n\nThe path runs flat and brushy through stinging nettle and then devil's club for a few tenths of a mile before dropping to the river. The river must be forded or crossed on a log jam; jams are usually adequate around half a mile in but shift from year to year and are a poor bet in high water. The path then crosses river braids two or three times over the next mile before turning up Cougar Creek on a faint, intermittently cairned and flagged track through sandy streambed and forest.\n\nAround 3,000-3,200 ft the path crosses Cougar Creek itself; lower crossings can be impassable, so hold out for the 3.2K-ish one. Steep forest switchbacks follow, passing a waterfall on Cougar Creek near 5,000 ft — roughly two to two and a half hours from the car and the last reliable water before the basin. Above the falls the track leaves the trees onto scree and slabs and angles up to the 5,800 ft basin on Sloan's northeast side, where there is a small stream and the standard bivy. This line converges with the Bedal Creek approach around 5,000-5,500 ft.",
+   "objHaz": [
+    "crevasses",
+    "rockfall",
+    "loose rock",
+    "river crossing",
+    "route-finding",
+    "exposed climbing"
+   ],
+   "season": "Jul-Aug, after the North Fork Sauk drops from snowmelt flow",
+   "hazards": [
+    "Fording or log-crossing the North Fork Sauk: deep, cold and fast in early season; log jams move year to year",
+    "Devil's club and nettle on the lower path",
+    "Faint, easily lost tread up the Cougar Creek streambed",
+    "Crevasses on the Sloan Glacier",
+    "Rockfall and loose rock on the Corkscrew shelf and summit block, worse with parties stacked in the gully",
+    "Low-5th-class exposed step about 100 ft below the summit, downclimbed on the way back",
+    "Moat falls on the glacier edge have caused a documented accident"
+   ],
+   "longForm": true,
+   "storedRow": true,
+   "whyThisWay": "Later in July and August when the river is low, or if the rough spur road to the Bedal trailhead is impassable or the climbers' path turn off the old trail worries the party.",
+   "baseFinding": "Same as the Bedal line: from the basin, ledges and slabs lead to the toe of the Sloan Glacier — rope and gear up there, not earlier. The climbing begins only once you are back on bare rock at the southeast edge of the summit block near 7,300 ft, and the entry is the gully of pale rock on your right, ten to fifteen minutes along the heather ledges from where you leave the ice."
+  }
+ ],
+ "wa_mount_constance_north_chimney": [
+  {
+   "name": "Dosewallips roadbed, Lake Constance trail, Avalanche Canyon and the South Chute",
+   "hours": "2.5-3.5 for the Lake Constance trail alone",
+   "notes": "Park at the Dosewallips road washout around 600 ft, reached from US 101 at Brinnon on FR 2610. The road has been closed to vehicles since a washout in 2002, so the first 5 miles up the Dosewallips valley are on the old roadbed.\n\nThe Lake Constance climbers' path is signed but unmaintained and carries no Forest Service trail number — it is a boot path. It launches straight into root-and-branch pulling through old burn debris for the first 0.4 mile before the old growth closes in. At about 0.8 mile, Half Acre Rock is a large monolith with campsites beside Constance Creek and is the obvious rest and water stop; by late summer the creek and the canyon above it run dry, so treat it as the last reliable water below the lake.\n\nPast 1.1 miles the brush opens onto steep exposed slopes, and by 1.3 miles the creek is forced through a defile and the path is pushed up and over a series of rock ledges and short cliff bands, using roots and a landmark Alaska cedar to gain the next ledge. Exposure increases with each one and a slip is serious.\n\nAll told it gains roughly 3,200-3,400 ft in under two miles to Lake Constance at 4,680-4,800 ft, one of the steepest approach trails in the Olympics. Lake Constance is a reservable Olympic National Park backcountry site with reservations for the May 15-October 15 summer season; a wilderness permit is required for the overnight, and parties of seven or more must use the designated group sites.",
+   "gainFt": 3300,
+   "season": "Jun-Sep; June snow makes the South Chute far pleasanter than late-summer scree",
+   "hazards": [
+    "fatal-fall exposure on both the Terrible and Finger Traverses",
+    "steep firm snow on the Terrible Traverse - several pickets advised in early season",
+    "exposed rock ledges and short cliff bands on the Lake Constance trail above 1.3 miles",
+    "loose talus and scree the length of Avalanche Canyon and the South Chute",
+    "no water above the lake in late summer, and Constance Creek itself runs dry"
+   ],
+   "primary": true,
+   "baseFinding": "From the lake, follow the boot path around the shore, out onto a large scree cone, and north into Avalanche Canyon between Inner Constance and Mount Constance. A large rock called the Thumb sits on the canyon's left side; the South Chute lies on the south side of the Thumb, and due south of the Cat Ears.\n\nThe most useful rule on this mountain: start up the South Chute as soon as the Cat Ears come into view, not when the chute starts to look obvious. Entering low keeps you on firmer ground, where there is a path in places; parties who keep walking up the canyon and attack the chute higher get the worst of the loose scree. If the Cat Ears have been visible for a while and you are still walking north, you have overshot the entrance.\n\nFrom the lake the chute line climbs roughly 1,900 ft of scree to a saddle near 6,560-6,600 ft below the Cat Ears. Descend about 150 ft, then a second gully leads to a notch near 7,300 ft.\n\nAbove that is the exposed upper maze, and identifying which traverse you are on is the thing to get right. The Finger Traverse is a downsloping ledge above a cliff with old rusted pitons on it — the pitons are the identifier, and some parties clip them as a solo-belay anchor. The Terrible Traverse is a hard-snow traverse of roughly 45 degrees above a big cliff and a nasty drainage. Both feed into class 3, occasionally class 4, ground leading to the base of the summit block. If you are on a traverse and the summit block is not visible above and ahead of you, you are on the wrong ledge.\n\nThe actual climbing is only the summit block, about 60 ft, with the North Chimney taking its north side at 3rd class — reported by plenty of people as feeling like easy 4th."
+  },
+  {
+   "name": "Bike the closed Dosewallips roadbed",
+   "notes": "The roughly 5 miles of closed roadbed between the washout and the Lake Constance path is old road surface rather than trail, and mountain-biking it is a common way to cut the walk at both ends of the trip. The bike is left at the signed start of the climbers' path.\n\nEverything above that point is identical to the walk-in variant: the same unmaintained boot path, the same 3,200-3,400 ft in under two miles, the same rock ledges and the same lake.\n\nThe same permit rules apply — a wilderness permit for the overnight at Lake Constance, reservable for the May 15-October 15 summer season, with group sites required for parties of seven or more.",
+   "distMi": 5,
+   "season": "Jun-Sep",
+   "hazards": [
+    "old roadbed surface with washouts",
+    "everything above the bike drop is unchanged, including the exposed ledges on the Lake Constance path"
+   ],
+   "whyThisWay": "To cut the long road walk at both ends of the trip, leaving the bike at the start of the climbers' path; the climb above is the same.",
+   "baseFinding": "Unchanged from the walk-in: around the lake, north into Avalanche Canyon, and up the South Chute as soon as the Cat Ears appear above you, with the Thumb on the canyon's left marking the chute's south side. The Cat Ears becoming visible is the trigger to start climbing, not a landmark to walk toward."
+  }
+ ]
+}

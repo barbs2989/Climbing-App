@@ -19,10 +19,12 @@
 //   node scripts/oneoff/probe-resume-shows-their-routes.mjs [routeId ...]
 
 import { build } from "esbuild";
+import { createRequire } from "module";
 import { writeFileSync, mkdirSync, rmSync } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { requireServiceKey, SUPABASE_URL } from "../lib/supabase-env.mjs";
+import ReactDOM from "react-dom";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const ids = process.argv.slice(2).filter(a => !a.startsWith("-"));
@@ -37,20 +39,27 @@ const ep = path.join(dir, "resume-ep-" + process.pid + ".jsx");
 writeFileSync(ep, `
 import React from "react";
 import {renderToStaticMarkup} from "react-dom/server";
-import {Resume, ROUTES} from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import Resume from ${JSON.stringify(path.join(ROOT, "src/components/Resume.tsx"))};
+import {ROUTES} from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 import {dbRouteToCamel} from ${JSON.stringify(path.join(ROOT, "lib/db.js"))};
 export {React, renderToStaticMarkup, Resume, ROUTES, dbRouteToCamel};
 `);
 const built = await build({
-  entryPoints: [ep], bundle: true, write: false, format: "esm", platform: "node",
+  entryPoints: [ep], bundle: true, write: false, format: "cjs", platform: "node",
   jsx: "automatic", loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   external: ["react", "react-dom", "react-dom/server", "react/jsx-runtime", "@tanstack/react-query", "@supabase/supabase-js", "leaflet"],
   absWorkingDir: ROOT, logLevel: "error",
 });
-const bundle = path.join(dir, "resume-" + process.pid + ".mjs");
+const bundle = path.join(dir, "resume-" + process.pid + ".cjs");
 writeFileSync(bundle, built.outputFiles[0].text);
+// Resume ends in createPortal(..., document.body), which the server renderer refuses: portals are PLACEMENT, and
+// check:overlays owns that. Flattened for this probe's process. The bundle is CommonJS (as the in-build guards'
+// are) so createPortal is read at call time; an ESM bundle's named import would be a snapshot taken at link time,
+// before any patch — which is why this probe went from "document is not defined" to "Target container is not a DOM element".
+ReactDOM.createPortal = (children) => children;
+if (!("document" in globalThis)) globalThis.document = { body: {} };
 let m;
-try { m = await import(bundle); } finally { rmSync(bundle, { force: true }); rmSync(ep, { force: true }); }
+try { m = createRequire(import.meta.url)(bundle); } finally { rmSync(bundle, { force: true }); rmSync(ep, { force: true }); }
 const { React, renderToStaticMarkup, Resume, ROUTES, dbRouteToCamel } = m;
 
 // the exact select useRoutesByIds issues, so what is rendered is what the app would hold

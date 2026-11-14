@@ -1,0 +1,354 @@
+[
+ {
+  "id": "wa_icy_peak_southwest_route",
+  "i": 8,
+  "name": "Icy Peak summit",
+  "from": [
+   48.835643,
+   -121.525539
+  ],
+  "op": "none",
+  "ground_ft_at_to": 7056,
+  "reason": "3DEP local max 7056 ft vs stated 7073 (-17); pin 209 m from GNIS Icy Peak 1521130 but on the local max matching the elevation."
+ },
+ {
+  "id": "wa_ruth_icy_traverse",
+  "i": 7,
+  "name": "Icy Peak",
+  "from": [
+   48.8356,
+   -121.5256
+  ],
+  "op": "none",
+  "ground_ft_at_to": 7058,
+  "reason": "Same coordinate as the Icy Peak pin: 3DEP local max 7058 ft vs 7073; within tolerance."
+ },
+ {
+  "id": "wa_mount_rahm_south_side",
+  "i": 0,
+  "name": "Mount Rahm summit (west/high point)",
+  "from": [
+   48.9977,
+   -121.2306
+  ],
+  "op": "none",
+  "ground_ft_at_to": 8428,
+  "reason": "Pin is named the west/high point; 3DEP local max 8428 ft vs 8480 (-52); GNIS 152 m east is the other top. Deliberate."
+ },
+ {
+  "id": "wa_four_brothers_southwest_route",
+  "i": 8,
+  "name": "Four Brothers (south peak)",
+  "from": [
+   47.465751,
+   -121.304877
+  ],
+  "op": "none",
+  "ground_ft_at_to": 6426,
+  "reason": "Pin marks the south peak on purpose; 3DEP local max 6426 vs 6485 (-59), 142 m from GNIS."
+ },
+ {
+  "id": "wa_three_fingers_r2",
+  "i": 3,
+  "name": "Three Fingers - Middle Peak summit",
+  "from": [
+   48.171425,
+   -121.687515
+  ],
+  "op": "none",
+  "ground_ft_at_to": 6784,
+  "reason": "Pin marks Middle Peak on purpose, a different top from GNIS Three Fingers; local max 6784 vs 6797."
+ },
+ {
+  "id": "wa_liberty_traverse",
+  "i": 3,
+  "name": "Lexington Tower",
+  "from": [
+   48.514255,
+   -120.657465
+  ],
+  "op": "none",
+  "ground_ft_at_to": 7619,
+  "reason": "Lexington Tower is a separate tower from Liberty Bell; local max, ground 7619 vs 7560 (+59), within tolerance."
+ },
+ {
+  "id": "wa_slippery_slab_tower_ne_face",
+  "i": 6,
+  "name": "Slippery Slab Tower",
+  "from": [
+   47.66888,
+   -121.12634
+  ],
+  "op": "none",
+  "ground_ft_at_to": 6202,
+  "reason": "3DEP local max 6202 vs stated 6361 (-159). No GNIS feature and no published coordinate or elevation found (Wikipedia has no page); cannot justify a move or setElev."
+ },
+ {
+  "id": "wa_mount_si_haystack_scramble",
+  "i": 1,
+  "name": "Haystack (Mount Si summit)",
+  "from": [
+   47.5068,
+   -121.7391
+  ],
+  "op": "none",
+  "ground_ft_at_to": 4178,
+  "reason": "3DEP local max 4178 vs 4167; GNIS Mount Si 130 m off but the pin is on the local max matching the elevation."
+ },
+ {
+  "id": "wa_mount_si_trail",
+  "i": 1,
+  "name": "Mount Si summit",
+  "from": [
+   47.5068,
+   -121.7391
+  ],
+  "op": "none",
+  "ground_ft_at_to": 4178,
+  "reason": "3DEP local max 4178 vs 4167; GNIS Mount Si 130 m off but the pin is on the local max matching the elevation."
+ },
+ {
+  "id": "wa_east_face_2",
+  "i": 1,
+  "name": "Chablis Spire - Summit",
+  "from": [
+   48.55259,
+   -120.59032
+  ],
+  "op": "none",
+  "ground_ft_at_to": 8485,
+  "reason": "3DEP local max 8485 vs 8350 (+135). No GNIS feature, no published elevation found (no Wikipedia page); left unchanged."
+ },
+ {
+  "id": "wa_mount_rainier_disappointment_cleaver",
+  "i": 7,
+  "name": "Columbia Crest",
+  "from": [
+   46.8517,
+   -121.7603
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14397,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14397 ft) vs 14,406 stated; 126 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_emmons_glacier",
+  "i": 4,
+  "name": "Columbia Crest",
+  "from": [
+   46.8517,
+   -121.7603
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14397,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14397 ft) vs 14,406 stated; 126 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_thumb",
+  "i": 1,
+  "name": "Columbia Crest (summit)",
+  "from": [
+   46.8517,
+   -121.7603
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14397,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14397 ft) vs 14,406 stated; 126 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_kautz_headwall",
+  "i": 2,
+  "name": "Columbia Crest (true summit)",
+  "from": [
+   46.8517,
+   -121.7603
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14397,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14397 ft) vs 14,406 stated; 126 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_tahoma_glacier",
+  "i": 1,
+  "name": "Columbia Crest (true summit)",
+  "from": [
+   46.8517,
+   -121.7603
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14397,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14397 ft) vs 14,406 stated; 126 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_inspiration_traverse",
+  "i": 6,
+  "name": "Dorado Needle",
+  "from": [
+   48.54981,
+   -121.13867
+  ],
+  "op": "setElev",
+  "ground_ft_at_to": 8449,
+  "elev": 8440,
+  "source": "https://en.wikipedia.org/wiki/Dorado_Needle",
+  "quote": "Elevation 8,440+ ft (2,570+ m)",
+  "second_source": "GNIS gaz_id 1518870 (48.54971,-121.13850, 15 m from pin)",
+  "reason": "Pin is on GNIS Dorado Needle and a 3DEP local max (8449 ft); stored elev 8320 is 120 ft below the published 8,440+."
+ },
+ {
+  "id": "wa_east_face",
+  "i": 2,
+  "name": "Middle Peak (Gunsight Range)",
+  "from": [
+   48.30639,
+   -120.99403
+  ],
+  "op": "none",
+  "ground_ft_at_to": 8072,
+  "reason": "3DEP local max 8072 vs 8200 (-128). GNIS Gunsight Peak 1520417 is 60 m away but a different named top; no published elevation for Middle Gunsight found; left unchanged."
+ },
+ {
+  "id": "wa_gunrunner",
+  "i": 2,
+  "name": "Middle Peak (Gunsight Range)",
+  "from": [
+   48.30639,
+   -120.99403
+  ],
+  "op": "none",
+  "ground_ft_at_to": 8072,
+  "reason": "3DEP local max 8072 vs 8200 (-128). GNIS Gunsight Peak 1520417 is 60 m away but a different named top; no published elevation for Middle Gunsight found; left unchanged."
+ },
+ {
+  "id": "wa_sw_ridge",
+  "i": 1,
+  "name": "Middle Gunsight summit",
+  "from": [
+   48.30639,
+   -120.99403
+  ],
+  "op": "none",
+  "ground_ft_at_to": 8072,
+  "reason": "3DEP local max 8072 vs 8200 (-128). GNIS Gunsight Peak 1520417 is 60 m away but a different named top; no published elevation for Middle Gunsight found; left unchanged."
+ },
+ {
+  "id": "wa_mount_rainier_curtis_ridge",
+  "i": 4,
+  "name": "Columbia Crest",
+  "from": [
+   46.851731,
+   -121.760395
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14405,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14405 ft) vs 14,406 stated; 123 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_fuhrer_finger",
+  "i": 1,
+  "name": "Columbia Crest",
+  "from": [
+   46.851731,
+   -121.760395
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14405,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14405 ft) vs 14,406 stated; 123 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_gibraltar_ledges",
+  "i": 3,
+  "name": "Columbia Crest",
+  "from": [
+   46.851731,
+   -121.760395
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14405,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14405 ft) vs 14,406 stated; 123 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_ingraham_direct",
+  "i": 3,
+  "name": "Columbia Crest",
+  "from": [
+   46.851731,
+   -121.760395
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14405,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14405 ft) vs 14,406 stated; 123 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_mount_rainier_nisqually_icefall",
+  "i": 3,
+  "name": "Columbia Crest",
+  "from": [
+   46.851731,
+   -121.760395
+  ],
+  "op": "none",
+  "ground_ft_at_to": 14405,
+  "reason": "Columbia Crest is the Rainier true summit; pin is a 3DEP local max (14405 ft) vs 14,406 stated; 123 m from GNIS Mount Rainier."
+ },
+ {
+  "id": "wa_monument_peak_pasayten_scramble",
+  "i": 7,
+  "name": "Monument Peak Summit",
+  "from": [
+   48.793975,
+   -120.543485
+  ],
+  "op": "none",
+  "ground_ft_at_to": 8610,
+  "reason": "3DEP local max 8610 vs 8597 (+13); 103 m from GNIS; within tolerance."
+ },
+ {
+  "id": "wa_big_four_mountain_dry_creek_route",
+  "i": 1,
+  "name": "Big Four Mountain Summit",
+  "from": [
+   48.042355,
+   -121.523305
+  ],
+  "op": "none",
+  "ground_ft_at_to": 6168,
+  "reason": "3DEP local max 6168 vs 6170; pin on the summit, 107 m from GNIS."
+ },
+ {
+  "id": "wa_big_four_mountain_northwest_ridge",
+  "i": 1,
+  "name": "Big Four Mountain Summit",
+  "from": [
+   48.042355,
+   -121.523305
+  ],
+  "op": "none",
+  "ground_ft_at_to": 6168,
+  "reason": "3DEP local max 6168 vs 6170; pin on the summit, 107 m from GNIS."
+ },
+ {
+  "id": "wa_big_four_mountain_spindrift_couloir",
+  "i": 2,
+  "name": "Big Four Mountain Summit",
+  "from": [
+   48.042355,
+   -121.523305
+  ],
+  "op": "none",
+  "ground_ft_at_to": 6168,
+  "reason": "3DEP local max 6168 vs 6170; pin on the summit, 107 m from GNIS."
+ },
+ {
+  "id": "wa_big_four_mountain_tower_route",
+  "i": 1,
+  "name": "Big Four Mountain Summit",
+  "from": [
+   48.042355,
+   -121.523305
+  ],
+  "op": "none",
+  "ground_ft_at_to": 6168,
+  "reason": "3DEP local max 6168 vs 6170; pin on the summit, 107 m from GNIS."
+ }
+]

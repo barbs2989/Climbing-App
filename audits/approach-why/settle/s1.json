@@ -1,0 +1,233 @@
+{
+ "wa_mount_rahm_south_side": {
+  "decision": "move",
+  "primary": "Silver Creek from Ross Lake",
+  "movePrimary": true,
+  "why": {
+   "Depot Creek from the Canadian side": "Usually the shortest way, but it crosses into the United States on foot away from a port of entry, which is not permitted."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1",
+    "https://summitpost.org/silver-creek-approach/496289",
+    "https://www.summitpost.org/mount-rahm/153619"
+   ],
+   "notes": "Depot Creek is the most used but enters the US on foot off a port of entry; NPS says crossings must be through a designated port of entry and GAO says any other land entry is illegal. Mark moved to the lawful Silver Creek way."
+  }
+ },
+ "wa_mount_spickard_silver_glacier": {
+  "decision": "move",
+  "primary": "From Ross Lake by boat and up Silver Creek to the lake basin camp",
+  "movePrimary": true,
+  "why": {
+   "Depot Creek from the north side of the border, over the col between the two peaks": "Usually the shortest way, but it crosses into the United States on foot away from a port of entry, which is not permitted."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1"
+   ],
+   "notes": "Depot Creek is the usual way but walks across the border at the boundary obelisk, not a port of entry; mark moved to the lawful Ross Lake and Silver Creek way."
+  }
+ },
+ "wa_mount_spickard_southwest": {
+  "decision": "move",
+  "primary": "From Ross Lake by boat and up Silver Creek to the lake basin",
+  "movePrimary": true,
+  "why": {
+   "Depot Creek from the north side of the border to the lake camp": "Usually the shortest way, but it crosses into the United States on foot away from a port of entry, which is not permitted."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1"
+   ],
+   "notes": "Depot Creek is the usual way but walks across the border at the boundary obelisk, not a port of entry; mark moved to the lawful Ross Lake and Silver Creek way."
+  }
+ },
+ "wa_southeast_mox_peak_se_rib": {
+  "decision": "unmarked",
+  "why": {
+   "Two camps: the lake basin or the glacier saddle above it": "When the glacier is in good shape and the weather is settled, a party moves up to the saddle camp for a much shorter summit day instead of staying at the lake."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1"
+   ],
+   "notes": "Stored primary (Depot Creek) crosses the border on foot off a port of entry, so it must not be Most used. The only other stored way is a camp choice on the same Canadian-side approach, not a lawful way in, so no mark can be moved. Owner: clear the mark or add a lawful approach."
+  },
+  "clearPrimary": true
+ },
+ "wa_bear_mountain_chilliwack_north_buttress": {
+  "decision": "keep",
+  "why": {
+   "From the Chilliwack Lake road on the Canadian side": "Normally the shortest way in, but it crosses into the United States on foot away from a port of entry, which is not permitted."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1"
+   ],
+   "notes": "Primary is the lawful Hannegan Pass approach; the Canadian-side way is shorter but not lawful on foot off a port of entry. Keep."
+  }
+ },
+ "wa_direct_north_buttress": {
+  "decision": "keep",
+  "why": {
+   "From the Chilliwack Lake road on the Canadian side": "Normally the shortest way in, but it crosses into the United States on foot away from a port of entry, which is not permitted."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1"
+   ],
+   "notes": "Primary is the lawful Hannegan Pass approach; keep. Why line made plain about the border."
+  }
+ },
+ "wa_north_face_left_buttress": {
+  "decision": "keep",
+  "why": {
+   "Provincial park approach from the north over Frosty Mountain to Crow Creek": "Walks in from the Canadian provincial park over Frosty Mountain, but it crosses into the United States on foot away from a port of entry, which is not permitted.",
+   "Pacific Crest Trail north from Harts Pass": "When no boat is available and you want to stay in the United States; it is about 27 miles each way along the crest from Harts Pass, which usually opens only in July."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1",
+    "https://www.countryhighpoints.com/castle-peak/",
+    "https://stevensong.com/usa/washington/castle-peak-pasayten-wa/"
+   ],
+   "notes": "Primary is the all-US Ross Lake boat approach; sources describe it as the lawful route, so keep. Frosty Mountain way is unlawful on foot off a port of entry and was never primary."
+  }
+ },
+ "wa_castle_peak_pasayten_the_drawbridge": {
+  "decision": "keep",
+  "why": {
+   "Provincial park approach from the north over Frosty Mountain to Crow Creek": "Walks in from the Canadian provincial park over Frosty Mountain, but it crosses into the United States on foot away from a port of entry, which is not permitted.",
+   "Pacific Crest Trail north from Harts Pass": "When you have no boat or water taxi and will walk the roughly 27 miles of crest in, after the Harts Pass road opens, usually in July."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/hozomeen.htm",
+    "https://www.finance.senate.gov/download/testimony-of-mr-greg-kutz&download=1",
+    "https://www.wta.org/go-hiking/hikes/castle-peak",
+    "https://stevensong.com/usa/washington/castle-peak-pasayten-wa/"
+   ],
+   "notes": "No two sources show the PCT as more used than the boat approach; keep. Frosty Mountain way is unlawful off a port of entry."
+  }
+ },
+ "wa_liberty_cap_ptarmigan_ridge_finish": {
+  "decision": "move",
+  "primary": "White River, St. Elmo Pass and across the Carbon",
+  "movePrimary": true,
+  "why": {
+   "Mowich Lake, Spray Park and the Ptarmigan crest": "Only if the Mowich Lake road reopens, for the prettier walk that reaches the ridge from the bottom; it needs a car shuttle to the White River end, where the Emmons descent comes out."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/road-status.htm",
+    "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+    "https://www.summitpost.org/ptarmigan-ridge/156184"
+   ],
+   "notes": "Mowich Lake road has no public access (NPS road status, Oct 2026); recent reports and Mountain Project say Ptarmigan Ridge must be reached from White River. Mark moved."
+  }
+ },
+ "wa_mount_rainier_ptarmigan_ridge": {
+  "decision": "keep",
+  "why": {
+   "Mowich Lake and Spray Park": "Only if the Mowich Lake road reopens, for a shorter walk in; it needs a car shuttle to the White River end, since the usual descent comes out there."
+  },
+  "review": {
+   "sources": [
+    "https://www.nps.gov/mora/planyourvisit/road-status.htm",
+    "https://www.mountainproject.com/route/106846325/ptarmigan-ridge"
+   ],
+   "notes": "White River already marked and is the only reachable start now. Mowich line rewritten because its road is closed."
+  }
+ },
+ "wa_mount_stuart_north_ridge": {
+  "decision": "keep",
+  "why": {},
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106050599/north-ridge",
+    "https://www.summitpost.org/north-ridge/155700"
+   ],
+   "notes": "Sources split: Mountain Project lists both approaches without ranking; some favour the south side later in summer. No two sources agree on a move."
+  }
+ },
+ "wa_silver_star_glacier": {
+  "decision": "keep",
+  "why": {},
+  "review": {
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-08.091129923629",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-silver-star-mountain-silver-star-glacier"
+   ],
+   "notes": "Day trips and overnights at the bench are both common in recent reports; split, so keep."
+  }
+ },
+ "wa_sloan_peak_corkscrew": {
+  "decision": "keep",
+  "why": {
+   "North Fork Sauk / Cougar Creek (FR 49)": "Later in July and August when the river is low, or when the rough spur to the Bedal trailhead is impassable; the traditional approach, but with log crossings and brushy tread."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/sloan-peak-corkscrew-route-bedal-creek-approach",
+    "https://www.summitpost.org/corkscrew/159638"
+   ],
+   "notes": "Bedal Creek increasingly preferred, Cougar Creek the traditional standard; Bedal mark stays."
+  }
+ },
+ "wa_the_brothers_south_couloir": {
+  "decision": "keep",
+  "why": {},
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse",
+    "https://www.summitpost.org/the-brothers/517714"
+   ],
+   "notes": "One source calls summer the usual season, others praise the early-season snow ascent; both ways are the same Lena Lake approach. One source is not enough to move."
+  }
+ },
+ "wa_mount_constance_north_chimney": {
+  "decision": "move",
+  "primary": "Bike the closed Dosewallips roadbed",
+  "movePrimary": true,
+  "why": {
+   "Dosewallips roadbed, Lake Constance trail, Avalanche Canyon and the South Chute": "For parties without a bike, or who prefer to walk the five miles of closed road; it adds hours to the day at both ends."
+  },
+  "review": {
+   "sources": [
+    "https://www.summitpost.org/mount-constance/151586",
+    "https://www.mountaineers.org/activities/trip-reports/mount-constance-south-chute",
+    "https://www.jeffreyjhebert.com/adventures/mount-constance-south-chute"
+   ],
+   "notes": "Three independent accounts (including a Sept 2026 trip) ride bikes up the closed road; one calls biking highly recommended."
+  }
+ },
+ "wa_let_it_burn": {
+  "decision": "keep",
+  "why": {},
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108157307/let-it-burn",
+    "http://publications.americanalpineclub.org/articles/12201108800/Colchuck-Balanced-Rock-Let-it-Burn"
+   ],
+   "notes": "Route shares the West Face approach; no source ranks the two ways in, so keep."
+  }
+ },
+ "wa_golden_age": {
+  "decision": "keep",
+  "why": {},
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106565701/mm-wall-supercave"
+   ],
+   "notes": "No evidence that the centre-route start is more used than the gully ledge; keep."
+  }
+ }
+}

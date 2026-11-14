@@ -1,0 +1,26 @@
+{
+  "key": "jack-east-ridge-class",
+  "question": "What grade do guidebooks and recent reports give the East Ridge of Jack Mountain, and what grade and discipline should we store?",
+  "answer": "The only guide-style grade found is Grade II, class 4 (first ascent Carl and Gordon Skoog, 16 July 1984; the route list on the Jack Mountain Wikipedia page, which follows Beckey; Beckey's own text was not seen). Two independent reports say there is low fifth class on it: a 22 July 2006 CascadeClimbers report (up the North Ridge, down the East Ridge) finished with 'a final pitch of low fifth directly up the East Ridge' and set several belays on the loose, fractured upper third; a July 2025 report (the packet's track 2902617, 11-13 July 2025) describes three distinct pitches of 5th-class climbing, the middle one called a 5.0 crux, between hours of exposed class 3-4 terrain, with one rappel off an existing tat anchor and a protected downclimb of the crux. So the ridge is mostly class 3-4 with up to three short low-5th steps (5.0 at the hardest stated). Nothing harder than 5.0 is reported.",
+  "recommendation": "Change discipline from mountaineering to alpine (owner rule: any roped 5.x = alpine; the 2025 party led the steps on rope) and grade from 'Class 4' to '5.0'. Replace the overview line 'A Grade II, class 4 ridge line' with the wording below. Existing watch_out/pro_tips about exposure and loose rock stay; add that a rope and a few pieces are carried.",
+  "confidence": "medium",
+  "proposed": {
+    "discipline": "alpine",
+    "grade": "5.0",
+    "overview": "A long, exposed rock ridge on the east side of Jack Mountain, mostly class 3 and 4 on loose greenstone with up to three short roped steps of low fifth class (the hardest about 5.0). Parties carry a rope and a few pieces for those steps and for protecting the downclimb.",
+    "watch_out_add": "Three short low-fifth-class steps interrupt the class 3-4 ridge; a party with no rope has no safe way to reverse the hardest one."
+  },
+  "evidence": [
+    "https://en.wikipedia.org/wiki/Jack_Mountain - route list: 'East ridge first ascent Carl and Gordon Skoog July 16, 1984. Grade II, class 4.' (Southeast Ridge is the 5.6 entry).",
+    "https://cascadeclimbers.com/forum/topic/43937-tr-jack-mountain-up-the-north-ridge-down-the-east-ridge-7222006 - (403 on fetch; text from search snippet) 2006 party: 'final pitch of low fifth directly up the East Ridge'; belays on the descent; top third loose.",
+    "packets-all/wa_jack_mountain.json track 2902617 (12 Jul 2025, East Ridge) - report: three distinct pitches of 5th-class climbing, a 5.0 crux, exposed class 3-4 between, one rappel, rope and crampons used.",
+    "https://cascadeclimbers.com/forum/topic/87998-tr-jack-mountain-south-face-8112012/ - (403; snippet) comments call the East Ridge a very underrated climb/scramble."
+  ],
+  "searched": [
+    "Jack Mountain East Ridge route grade class 4 low 5th class Beckey - Wikipedia, SummitPost TR (south side), AllTrails; no Beckey text",
+    "Jack Mountain east ridge Skoog 1984 class 4 ... - Wikipedia confirmed Grade II class 4",
+    "Jack Mountain East Ridge trip report 2006 north ridge up east ridge down - found the 2006 report",
+    "SummitPost jack-mountain/168703, Peakbagger pid 2470, CascadeClimbers topic fetches - all 403",
+    "Beckey Cascade Alpine Guide scan not located; the class 4 figure is second-hand via Wikipedia"
+  ]
+}

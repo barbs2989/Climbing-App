@@ -1,9 +1,10 @@
+import { fileURLToPath } from "node:url";
 // DEEP retry inputs: the retry pass's UNRESOLVED results (research/out/uNNN.json) -> research/in/vNNN.json, ~10 facts per file,
 // each carrying what both passes found and the LIVE row.
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const T = new URL("../../../audits/route-tab-contradictions", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/route-tab-contradictions", import.meta.url));
 const byId = {};
 for (const f of fs.readdirSync(`${T}/research/out`).filter(f => /^u\d+\.json$/.test(f))) {
   for (const r of JSON.parse(fs.readFileSync(`${T}/research/out/${f}`)).results || [])

@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Every static guard has to answer one question before it prints "ok": did it actually
 // read the app? None of them asked it, and this codebase has already been bitten by the
 // answer being no.
@@ -62,7 +63,7 @@ export function componentFiles(root, { js = false, guard = "a guard" } = {}) {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, e.name);
       if (e.isDirectory()) walk(p);
-      else if (ext.test(e.name) && !/\.d\.ts$/.test(e.name)) out.push(path.relative(root, p));
+      else if (ext.test(e.name) && !/\.d\.ts$/.test(e.name)) out.push(path.relative(root, p).replace(/\\/g, "/"));
     }
   };
   const comp = path.join(root, "src/components");
@@ -93,7 +94,7 @@ export function assertCovered(files, root, guard, required = REQUIRED) {
   if (!files || !files.length) {
     bail(guard, "the source walk found no files at all, so every assertion below passed on an empty set");
   }
-  const seen = new Set(files.map((f) => (path.isAbsolute(f) ? path.relative(root, f) : f)));
+  const seen = new Set(files.map((f) => (path.isAbsolute(f) ? path.relative(root, f).replace(/\\/g, "/") : f)));
   const missing = required.filter((f) => !seen.has(f));
   if (missing.length) {
     bail(guard, `the source walk covered ${files.length} file(s) but not ${missing.join(", ")}`);
@@ -194,20 +195,196 @@ export const MOVED = {
     "src/components/ReportModal.tsx",
     "src/components/FriendsFeed.tsx",
     "src/components/Contributions.tsx",
-    "src/components/CatchLedger.tsx",
     "src/components/DbAreaPicker.tsx",
     "src/components/AscentPyramid.tsx",
     "src/components/DbClimbPicker.tsx",
     "src/components/LoginScreen.tsx",
     "src/components/FloatPlan.tsx",
-    "src/components/LogCatch.tsx",
     "src/components/Comments.tsx",
+    "src/components/Challenges.tsx",
+    "src/components/Resume.tsx",
+    "src/components/FullProfile.tsx",
+    "src/components/PolicyUpdateNotice.tsx",
   ],
-  "ClimbMatch.jsx": [],
-  "RouteDetail.jsx": [],
+  "lib/AlpineConditionsCard.jsx": [
+    "src/components/AirSection.tsx",
+    "src/components/AlertsSection.tsx",
+    "src/components/AvalancheSection.tsx",
+    "src/components/DayByDay.tsx",
+    "src/components/DayHead.tsx",
+    "src/components/ForecastBox.tsx",
+    "src/components/HourByHour.tsx",
+    "src/components/OutcomesSection.tsx",
+    "src/components/RangeLine.tsx",
+    "src/components/ReportFreshness.tsx",
+    "src/components/SeasonSection.tsx",
+    "src/components/SnowSection.tsx",
+    "src/components/SnowfallSection.tsx",
+    "src/components/StreamsSection.tsx",
+    "src/components/SunShadeSection.tsx",
+  ],
+  "lib/DbAreaBrowser.jsx": [
+    "src/components/RouteRow.tsx",
+    "src/components/AddHereFooter.tsx",
+    "src/components/AreaGettingThere.tsx",
+    "src/components/ClassicsList.tsx",
+    "src/components/NearbyPeaks.tsx",
+    "src/components/DbSearchSplit.tsx",
+    "src/components/DbSuggestedClimbs.tsx",
+    "src/components/PartnersHereCard.tsx",
+    "src/components/SummitBriefing.tsx",
+    "src/components/ObjectivesPanel.tsx",
+    "src/components/StatePicker.tsx",
+    "src/components/DbAreaTree.tsx",
+    "src/components/NearMePanel.tsx",
+    "src/components/AreaPage.tsx",
+    "src/components/RouteFinderPanel.tsx",
+  ],
+  "EnrichmentPanels.jsx": [
+    "src/components/Head.tsx",
+    "src/components/EmptyPanel.tsx",
+    "src/components/PeakMetadataPanel.tsx",
+    "src/components/SeasonalGuidancePanel.tsx",
+    "src/components/CrowdsPanel.tsx",
+    "src/components/PartnerRequirementsPanel.tsx",
+  ],
+  "ClimbMatch.jsx": [
+    "src/components/CrewRequestsView.tsx",
+    "src/components/CrewFriendsView.tsx",
+    "src/components/CrewListView.tsx",
+    "src/components/DirectChatScreen.tsx",
+    "src/components/CrewChatScreen.tsx",
+    "src/components/TodayTab.tsx",
+    "src/components/RoutesTab.tsx",
+    "src/components/DiscoverTab.tsx",
+    "src/components/GroupsTab.tsx",
+    "src/components/LogbookTab.tsx",
+    "src/components/MeTab.tsx",
+    "src/components/GroupDiscussionTab.tsx",
+    "src/components/GroupAboutTab.tsx",
+    "src/components/GroupMembersTab.tsx",
+    "src/components/GroupEventsTab.tsx",
+    "src/components/GroupMediaTab.tsx",
+    "src/components/GroupEventForm.tsx",
+    "src/components/SettingsPrivacySheet.tsx",
+    "src/components/SettingsDataSheet.tsx",
+    "src/components/SettingsMenuSheet.tsx",
+    "src/components/ReviewQueueSheet.tsx",
+    "src/components/LogClimbSheet.tsx",
+    "src/components/ManageAreasSheet.tsx",
+    "src/components/PrivacySheet.tsx",
+    "src/components/OnboardingSheet.tsx",
+    "src/components/GiveVouchSheet.tsx",
+    "src/components/ObjectivesList.tsx",
+    "src/components/GroupJoinQuestionsEditor.tsx",
+    "src/components/DeleteAccountConfirm.tsx",
+    "src/components/BlockedClimbersSheet.tsx",
+    "src/components/ClimberProfileSheet.tsx",
+    "src/components/DataRequestSheet.tsx",
+    "src/components/AboutSheet.tsx",
+    "src/components/FriendsSheet.tsx",
+    "src/components/ReportUserSheet.tsx",
+    "src/components/SettingsLegalSheet.tsx",
+    "src/components/SettingsNotifsSheet.tsx",
+    "src/components/CrewSafetyScreen.tsx",
+  ],
+  "RouteDetail.jsx": [
+    "src/components/GradeTag.tsx",
+    "src/components/PinNum.tsx",
+    "src/components/TopoSwatch.tsx",
+    "src/components/MediaImg.tsx",
+    "src/components/CragWalkIn.tsx",
+    "src/components/SaveOfflineChip.tsx",
+    "src/components/TopoCaptionBox.tsx",
+    "src/components/CRow.tsx",
+    "src/components/EditIconButton.tsx",
+    "src/components/GapNote.tsx",
+    "src/components/VerifNote.tsx",
+    "src/components/TagChip.tsx",
+    "src/components/RouteTagRow.tsx",
+    "src/components/RouteSocialRow.tsx",
+    "src/components/CragSafetyNotes.tsx",
+    "src/components/RackBetaList.tsx",
+    "src/components/PitchConsensus.tsx",
+    "src/components/FloatPlanFold.tsx",
+    "src/components/TopoCaption.tsx",
+    "src/components/ClampText.tsx",
+    "src/components/ClimateSeasonCard.tsx",
+    "src/components/PhotoRow.tsx",
+    "src/components/TopoStroke.tsx",
+    "src/components/VarTag.tsx",
+    "src/components/PinIcon.tsx",
+    "src/components/TopoPinLegend.tsx",
+    "src/components/TopoLineOverlay.tsx",
+    "src/components/TopoVariantKey.tsx",
+    "src/components/TopoPinKey.tsx",
+    "src/components/TopoThumb.tsx",
+    "src/components/EmptySection.tsx",
+    "src/components/PitchPhotos.tsx",
+    "src/components/CopyCoordButton.tsx",
+    "src/components/TopoZoomPhoto.tsx",
+    "src/components/TopoPhotoModal.tsx",
+    "src/components/AccessFold.tsx",
+    "src/components/CragRack.tsx",
+    "src/components/CragLocationCard.tsx",
+    "src/components/PairsWellWith.tsx",
+    "src/components/WeatherIcon.tsx",
+    "src/components/OvernightPermit.tsx",
+    "src/components/BreakdownHandoff.tsx",
+    "src/components/CragFactRows.tsx",
+    "src/components/CragFactSection.tsx",
+    "src/components/WallNeighbours.tsx",
+    "src/components/BoulderNeighbours.tsx",
+    "src/components/RoadReports.tsx",
+    "src/components/SummitLegsCard.tsx",
+    "src/components/DescentLegStrip.tsx",
+    "src/components/TripProfileCard.tsx",
+    "src/components/ClimbingRouteTable.tsx",
+    "src/components/Capped.tsx",
+    "src/components/GradePicker.tsx",
+    "src/components/RappelRow.tsx",
+    "src/components/RappelTable.tsx",
+    "src/components/PitchComments.tsx",
+    "src/components/RouteGearEssentialsBox.tsx",
+    "src/components/WaypointList.tsx",
+    "src/components/RouteRackBox.tsx",
+    "src/components/RouteGearCheck.tsx",
+    "src/components/DiffRadar.tsx",
+    "src/components/TrailheadCard.tsx",
+    "src/components/ApproachPicker.tsx",
+    "src/components/HourChartCard.tsx",
+    "src/components/HourlyChart.tsx",
+    "src/components/SeasonChart.tsx",
+    "src/components/CampSite.tsx",
+    "src/components/CampingPanel.tsx",
+    "src/components/ApproachVariants.tsx",
+    "src/components/TopoDrawer.tsx",
+    "src/components/TopoSection.tsx",
+    "src/components/RouteBreakdown.tsx",
+    "src/components/BaseCheckinPanel.tsx",
+    "src/components/ConsensusPanel.tsx",
+    "src/components/SafetyMatrix.tsx",
+    "src/components/ItineraryView.tsx",
+    "src/components/Calculator.tsx",
+    "src/components/TechStats.tsx",
+    "src/components/WeatherPanel.tsx",
+    "src/components/ConditionsScoreCard.tsx",
+    "src/components/SuggestFix.tsx",
+    "src/components/RoutePhotosTab.tsx",
+    "src/components/RouteReportsTab.tsx",
+    "src/components/RoutePartnersTab.tsx",
+    "src/components/RouteSafetyTab.tsx",
+    "src/components/RouteOverviewTab.tsx",
+    "src/components/RouteShareSheet.tsx",
+    "src/components/RoutePhotoLightbox.tsx",
+    "src/components/RoutePlanTab.tsx",
+  ],
 };
 // The pre-2026-10 name, kept because 21 guards import it. Same array, same meaning.
 export const MOVED_FROM_CORE = MOVED["ClimbMatchCore.jsx"];
+// Every moved file under every parent — for a scan that lists the three app files by name and must
+// keep the components moved out of ANY of them in view (RouteDetail.jsx's since PR52, 2026-10-29).
+export const MOVED_ALL = Object.values(MOVED).flat();
 
 export function movedAsParentText(text, file = "a moved file") {
   const body = text.replace(/^import [^\n]*\n/gm, "");
@@ -216,6 +393,16 @@ export function movedAsParentText(text, file = "a moved file") {
   return body.replace(/^export default function /m, "function ");
 }
 export const movedAsCoreText = movedAsParentText;
+
+// For a guard that LIFTS code out of the stitched text and EVALUATES it (new Function): a moved
+// component is TypeScript, and `(o: unknown)` does not run. Returns the code with its types
+// stripped by esbuild (JS passes through unchanged). An expression is wrapped so it stays one.
+export async function stripTypes(code, { expression = false } = {}) {
+  const { transform } = await import("esbuild");
+  const src = expression ? `(${code})` : code;
+  const out = (await transform(src, { loader: "tsx", jsx: "preserve", minifyWhitespace: false })).code.trim();
+  return expression ? out.replace(/;$/, "") : out;
+}
 
 // For a guard that BUNDLES core to execute or render it: an entry file exporting everything core
 // exports PLUS each moved component under its old name (they are default exports now), so the
@@ -239,11 +426,14 @@ export function coreModuleEntry(root = OWN_ROOT) {
 export function readAppFile(abs) {
   const name = path.basename(abs);
   if (MOVED[name] && MOVED[name].length) return readParentSource(path.dirname(abs), name);
+  // A parent inside lib/ (lib/DbAreaBrowser.jsx, PR65 on) is keyed by its path from the checkout root.
+  const rel = path.relative(OWN_ROOT, abs).replace(/\\/g, "/");
+  if (MOVED[rel] && MOVED[rel].length) return readParentSource(OWN_ROOT, rel);
   return fs.readFileSync(abs, "utf8");
 }
 
 // The checkout this module lives in — never another worktree's (check:script-roots).
-const OWN_ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const OWN_ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx", guard = "a guard") {
   const parentP = path.join(root, parent);
   if (!fs.existsSync(parentP)) bail(guard, `${parent} is missing`);

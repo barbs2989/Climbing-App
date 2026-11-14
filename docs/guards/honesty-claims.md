@@ -350,7 +350,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `extra` is the *Add to résumé* form — six free-text/select inputs, **no route id, no
     verification, no source marker**. Type "The Nose / El Capitan / 5.9 / Lead" and it sat there
     looking like a logged ascent.
-  - **THE MARK IS "added by hand", DELIBERATELY NOT "self-reported".** A logged climb is
+  - **2026-11-05: BOTH MARKS REMOVED by the owner** ("Remove self reported notice when someone
+    adds something ie certifications and same with routes"). The "added by hand" sub-line on a
+    hand-typed climb and the amber "self-reported" chip on a hand-added course are gone; sections
+    1 and 2 now assert the opposite — that NEITHER string renders on any row — so the marks cannot
+    creep back, while keeping what the marks were standing in for: a hand-typed row still renders,
+    and a self-added course never reads "✓ verified". The history below is kept because the
+    reasoning (a logged climb is self-reported too) still explains why the two never shared a word.
+    Same PR: the résumé's ✕ remove buttons became swipe rows (`SwipeRow`), because a long name or
+    role squeezed the ✕ off the end of the flex row and seed rows had no control at all.
+  - **THE MARK WAS "added by hand", DELIBERATELY NOT "self-reported" (2026-09-03 → 2026-11-05).** A logged climb is
     self-reported too, so reusing the courses vocabulary would imply `live` rows are corroborated
     — fixing one false claim by making another. It is tagged at **composition**
     (`...((extra)||[]).map(e=>({...e,selfAdded:true}))`) rather than in `addClimb`, because
@@ -865,6 +874,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   trad / top-rope / bouldering only — `lib/conditionsScore.js`, card `ConditionsScoreCard` in
   `RouteDetail.jsx`) **adds up, leaves out what it did not measure, and is offered nowhere it cannot
   judge**. Static, no network, no credentials; in `npm run build`.
+  - **The SEASON chart's verdicts are pinned (2026-10-28)**: `monthFit` once read only the afternoon
+    high, so a Canadian July (Squamish 79 °F against the 45-68 band) read "Off season" (owner's note,
+    2026-10-24; fixed in #2784 without a pin). Eight measured months (Open-Meteo archive 2021-25) must
+    keep their verdicts: Squamish July prime for sport/trad AND bouldering, Squamish August good for
+    bouldering, Lake Louise July prime despite 12 thunderstorm days, wet Val-David July good, Red Rock
+    January prime, Red Rock July and Bishop August off. Reverting to the high alone fails five of them.
+    Measured and left as is: Ontario and Okanagan bouldering in July (Bon Echo, Niagara Glen, Skaha:
+    dawn already 61-68 °F, 3-10° above the 35-58 cool band) still reads off; they are as hot against
+    that band as Joshua Tree's August is against the standard one, so no rule can pass one and not the
+    other. A climber who boulders warmer sets their range under Your conditions.
   - **Arithmetic**: each factor is rounded to whole points BEFORE summing, so the "x of y points"
     line is exactly the sum of the rows printed under it, and stars are exactly 5 × points / measured
     points. There is **no clamp** anywhere — the same lesson as `compat()` (docs/codebase/algorithms.md).
@@ -947,10 +966,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
     not modelled — seepage is only a risk from recent rain — and the card says so.
-  - **Menu tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, opened from Menu › Plan & log; it left Home 2026-10-14) is the SAME
-    `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
-    nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an
-    unlocated climb as "No score: …" rather than dropping it. At most 8 crags are fetched, and it says so.
+  - **Best day to climb — REMOVED (§6)**: the Home tile, Menu tile and overlay that ran `scoreForecast`
+    over the saved crag climbs and areas (with its own honesty rules: "not a rating" on a failed
+    forecast, "No score: …" for an unlocated climb, an 8-crag cap it said out loud) was removed by the
+    owner on 2026-11-05. §6 now fails if the tile file, a `<BestDayTile>`, `bestDayOpen` or the Menu
+    tile comes back; anyone restoring it must re-derive those rules there. *Compare routes* keeps its one
+    best-day cell, and the card's `areas.aspect` fallback check stayed in §6.
   - **Wall direction (0249)**: `areas.aspect` is written ONLY from an online statement about the wall
     or its crag (agents: `research-data/crag-aspects/`, `scripts/apply-crag-research.mjs`; page text:
     `scripts/extract-wall-aspects.mjs`), never from terrain. Both the card and the tile fall back to
@@ -986,6 +1007,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       are public domain and add nothing. Checked live: an Alberta crag shows the OGL – Canada line,
       Smith Rock shows only the imagery credit.
     - **It loads only near the screen** (IntersectionObserver): sixteen height tiles are ~1.5 MB.
+    - **Your conditions reachability matches the TAG, not `<CondPrefsControls/>`** (2026-11-05, #3213): it pinned
+      the bare self-closing tag, so passing `onSignIn` failed CI as "no longer reachable from Settings" while
+      both entry points still worked. It matches `<CondPrefsControls` plus up to 160 non-`<` characters to `/>`
+      (`[^>]*` would stop at the arrow in `()=>`). A sibling assertion pins the sign-in button: Settings and the
+      Menu overlay pass `onSignIn`, and `CondPrefsControls` renders it only while signed out.
 
 - **`check:alpine-conditions`** asserts that the **alpine Conditions tab** (sub-tab `forecast` on
   alpine, mountaineering, scrambling, ice and mixed routes — `lib/AlpineConditionsCard.jsx`, logic in

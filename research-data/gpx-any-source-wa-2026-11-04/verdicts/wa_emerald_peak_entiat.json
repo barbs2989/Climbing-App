@@ -1,0 +1,29 @@
+{
+  "area_id": "wa_emerald_peak_entiat",
+  "routes": [
+    {
+      "route_id": "wa_emerald_peak_west_route",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored season blank. Ascent histogram: Jun 30, Jul 54, Aug 29, Sep 47, Oct 28 successful logs; snow lingers on trail and in the basin into June. Web (Wenatchee Outdoors West Route page, Mountaineers Emerald and Saska page, Summitpost) names no season but suggests midsummer and fall larch; so core Jul-Sep, with Jun and Oct as the one-month shoulders." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "3237687", "verdict": "unsure", "why": "Logged Standard w/ Gully Variation (Jun 19 2026): took the west gully only partway, switched to a class 4 / low-5th cliff band when it filled with snow near 8,150 ft, then rejoined the standard line; not our class 3 west gully as described, and starts at camp." },
+        { "aid": "3237246", "verdict": "unsure", "why": "Logged West Ridge (Jun 20 2026); report says it took the left gully, but the track starts at camp in the basin (not trailhead) and the line is not stated as our west gully." },
+        { "aid": "2238368", "verdict": "unsure", "why": "Jul 1 2023 from the North Fork trail; used a gully climbers-right of 'the easier route' then traversed to the right gully; unclear which of the two it is; the track is a complete round trip but identity is not positive." },
+        { "aid": "3254838", "verdict": "unsure", "why": "Jul 5 2026, start 112 m from our trailhead pin, one-way, no logged route or report text; cannot say which line." },
+        { "aid": "2630056", "verdict": "different", "why": "Logged South Route, Sep 1 2024; starts at the basin camp." },
+        { "aid": "2299991", "verdict": "different", "why": "Logged SW Slopes (talus, class 3-4), Sep 2 2023; differs from the described west gully." },
+        { "aid": "2331214", "verdict": "different", "why": "Logged South Slope, Oct 1 2023." },
+        { "aid": "3267429", "verdict": "unsure", "why": "Jul 12 2026 via Saska Pass from Snow Brushy meadows camp; report describes scree gully slightly left of the summit, not a trailhead round trip." },
+        { "aid": "3214183", "verdict": "offseason", "why": "May 30 2026, outside the Jun-Oct window; starts at camp." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 6, "text": "In mid-June the North Fork Entiat trail had many fallen trees, the first three to four miles run through burned forest with little shade, and snow patches covered the trail from about 6,600 to 6,900 ft.", "aids": ["3237687"] },
+        { "field": "approach_note", "month": 7, "text": "By early July the trail had been cleared of most blowdowns, though a few logs still needed climbing over, and the basin below the peak had plenty of water and no snow crossings.", "aids": ["2238368"] },
+        { "field": "pro_tips", "month": 9, "text": "Flat tent sites with running water sit in the larch basin between Emerald and Saska at roughly 6,800-6,900 ft, which makes a good base from June through September.", "aids": ["3237687", "2299991", "2630056"] },
+        { "field": "watch_out", "month": 6, "text": "In mid-June the basin below the peak still holds snow (soft by mid-morning) and the west gully is filled with steep snow around 8,150 ft.", "aids": ["3237246", "3237687"] }
+      ]
+    }
+  ],
+  "notes": "Two routes on the peak (SE Ridge already has a track). Every harvested track follows the standard talus/south-west slopes or an unnamed line; none positively names our west gully, so no track is assigned. The only clear west-gully report took a different upper line because of snow. Our trailhead pin (48.01076,-120.57224) is confirmed by the many tracks starting within ~50 m of it, but no pin change is needed."
+}

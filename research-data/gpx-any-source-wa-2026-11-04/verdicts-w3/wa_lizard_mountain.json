@@ -1,0 +1,33 @@
+{
+ "area_id": "wa_lizard_mountain",
+ "routes": [
+  {
+   "route_id": "wa_lizard_mountain_south_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored Jul-Sep; logged ascents Jul-Sep (10/2/2), May ones are ski; web: Ptarmigan Traverse mid-Jul to mid-Sep."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "2264814",
+     "verdict": "different",
+     "why": "One-way multi-day Ptarmigan Traverse track, camp-based, ends 26 km from the Cascade Pass pin."
+    },
+    {
+     "aid": "2254830",
+     "verdict": "different",
+     "why": "Full 52-mile traverse through other peaks; camp-based."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Peak has no trailhead; reached only from a White Rock Lakes camp, so no qualifying track."
+}

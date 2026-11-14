@@ -1,0 +1,402 @@
+[
+ {
+  "id": "mn_jeff_s_world_mn_ca_border",
+  "name": "Jeff's World (MN/CA border)",
+  "region": "Minnesota",
+  "type": "region",
+  "inside": "Minnesota < United States",
+  "lat": 48.335526,
+  "lng": -92.462282,
+  "routes": 98
+ },
+ {
+  "id": "nc_central_area",
+  "name": "Central Area",
+  "region": "North Carolina",
+  "type": "region",
+  "inside": "Sentinel Buttress Boulderfield < Moore's Wall (Bouldering)",
+  "lat": 36.3974284210526,
+  "lng": -80.2871252631579,
+  "routes": 98
+ },
+ {
+  "id": "nh_town_forest_south",
+  "name": "Town Forest South",
+  "region": "New Hampshire",
+  "type": "region",
+  "inside": "Exeter Area Bouldering < Southeast / Seacoast",
+  "lat": 42.9983733793103,
+  "lng": -70.9605543045977,
+  "routes": 98
+ },
+ {
+  "id": "pa_ralph_stover_state_park_high_rocks",
+  "name": "Ralph Stover State Park (High Rocks)",
+  "region": "Pennsylvania",
+  "type": "region",
+  "inside": "Southeastern Lowlands < Pennsylvania",
+  "lat": 40.441203125,
+  "lng": -75.0980625,
+  "routes": 98
+ },
+ {
+  "id": "sd_big_picture_gully",
+  "name": "Big Picture Gully",
+  "region": "South Dakota",
+  "type": "region",
+  "inside": "Spearfish Canyon < South Dakota",
+  "lat": 44.3224493333333,
+  "lng": -103.906278666667,
+  "routes": 98
+ },
+ {
+  "id": "tx_paradise_on_the_brazos",
+  "name": "Paradise on the Brazos",
+  "region": "Texas",
+  "type": "region",
+  "inside": "Texas < United States",
+  "lat": 32.9978545454545,
+  "lng": -98.4580727272727,
+  "routes": 98
+ },
+ {
+  "id": "ut_woodbury_road_crags",
+  "name": "Woodbury Road Crags",
+  "region": "Utah",
+  "type": "region",
+  "inside": "Utah Hills < Saint George",
+  "lat": 37.0214666666667,
+  "lng": -113.8552,
+  "routes": 98
+ },
+ {
+  "id": "wa_upper_town_wall",
+  "name": "Upper Town Wall",
+  "region": "Washington",
+  "type": "region",
+  "inside": "Index < Skykomish Valley",
+  "lat": 47.8235170833333,
+  "lng": -121.566741666667,
+  "routes": 98
+ },
+ {
+  "id": "az_lower_devil_s_canyon",
+  "name": "Lower Devil's Canyon",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Queen Creek Canyon < Central Arizona",
+  "lat": 33.2746587268519,
+  "lng": -111.034483287037,
+  "routes": 97
+ },
+ {
+  "id": "il_fountain_bluff_land_water_reserve",
+  "name": "Fountain Bluff Land & Water Reserve",
+  "region": "Illinois",
+  "type": "region",
+  "inside": "Illinois < United States",
+  "lat": null,
+  "lng": null,
+  "routes": 97
+ },
+ {
+  "id": "nm_upper_east_fork_uef",
+  "name": "Upper East Fork (UEF)",
+  "region": "New Mexico",
+  "type": "region",
+  "inside": "Jemez Mountains and Jemez Valley < New Mexico",
+  "lat": 35.820929,
+  "lng": -106.51613,
+  "routes": 97
+ },
+ {
+  "id": "ny_silver_lake",
+  "name": "Silver Lake",
+  "region": "New York",
+  "type": "region",
+  "inside": "Northern Region < Adirondacks",
+  "lat": 44.5165690909091,
+  "lng": -73.8173272727273,
+  "routes": 97
+ },
+ {
+  "id": "oh_athens",
+  "name": "Athens",
+  "region": "Ohio",
+  "type": "region",
+  "inside": "Southeast Ohio < Ohio",
+  "lat": 39.40923625,
+  "lng": -82.195195,
+  "routes": 97
+ },
+ {
+  "id": "ok_autobahn_area_main_chandler",
+  "name": "Autobahn Area (Main Chandler)",
+  "region": "Oklahoma",
+  "type": "region",
+  "inside": "Chandler Park < Tulsa Area",
+  "lat": 36.1311028571429,
+  "lng": -96.0760607142857,
+  "routes": 97
+ },
+ {
+  "id": "az_la_milagrosa_canyon",
+  "name": "La Milagrosa Canyon",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Southern Arizona < Arizona",
+  "lat": 32.2999953846154,
+  "lng": -110.710391538462,
+  "routes": 96
+ },
+ {
+  "id": "az_queen_creek_canyon",
+  "name": "Queen Creek Canyon",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Central Arizona < Arizona",
+  "lat": 33.3036324276567,
+  "lng": -111.066991637844,
+  "routes": 96
+ },
+ {
+  "id": "co_dumont_vicinity",
+  "name": "Dumont vicinity",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Colorado < United States",
+  "lat": 39.7772625,
+  "lng": -105.6086125,
+  "routes": 96
+ },
+ {
+  "id": "ma_bow_ridge_area",
+  "name": "Bow Ridge Area",
+  "region": "Massachusetts",
+  "type": "region",
+  "inside": "Lynn Woods < North Shore",
+  "lat": 42.506858,
+  "lng": -71.004924,
+  "routes": 96
+ },
+ {
+  "id": "sd_blue_sky",
+  "name": "Blue Sky",
+  "region": "South Dakota",
+  "type": "region",
+  "inside": "Spearfish Canyon < South Dakota",
+  "lat": 44.3489088888889,
+  "lng": -103.913607222222,
+  "routes": 96
+ },
+ {
+  "id": "ut_san_rafael_swell_south",
+  "name": "San Rafael Swell - South",
+  "region": "Utah",
+  "type": "region",
+  "inside": "San Rafael Swell < South Central Utah",
+  "lat": 38.7109646583851,
+  "lng": -110.696451086957,
+  "routes": 96
+ },
+ {
+  "id": "wv_5th_pull_off_school_bus_area",
+  "name": "5th Pull Off (School Bus Area)",
+  "region": "West Virginia",
+  "type": "region",
+  "inside": "Darnell Hollow < Cheat Canyon",
+  "lat": 39.6907088888889,
+  "lng": -79.801835,
+  "routes": 96
+ },
+ {
+  "id": "ar_rock_creek",
+  "name": "Rock Creek",
+  "region": "Arkansas",
+  "type": "region",
+  "inside": "Big Piney Region < North-Central Arkansas",
+  "lat": 35.74513375,
+  "lng": -93.26888125,
+  "routes": 95
+ },
+ {
+  "id": "az_drysdale_trail_the",
+  "name": "Drysdale Trail, The",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Land of High Bouldering AKA The Ridge < Lake Mary Areas",
+  "lat": 35.113197,
+  "lng": -111.58475,
+  "routes": 95
+ },
+ {
+  "id": "az_granite_mountain",
+  "name": "Granite Mountain",
+  "region": "Arizona",
+  "type": "region",
+  "inside": "Prescott Area < Central Arizona",
+  "lat": 34.6263922222222,
+  "lng": -112.560666507937,
+  "routes": 95
+ },
+ {
+  "id": "ca_mission_gorge",
+  "name": "Mission Gorge",
+  "region": "California",
+  "type": "region",
+  "inside": "South San Diego County < San Diego County",
+  "lat": 32.8258348148148,
+  "lng": -117.05185,
+  "routes": 95
+ },
+ {
+  "id": "co_land_s_end_area",
+  "name": "Land's End Area",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Grand Mesa < Grand Junction Area",
+  "lat": 39.00743,
+  "lng": -108.193064285714,
+  "routes": 95
+ },
+ {
+  "id": "co_red_rock_canyon_open_space",
+  "name": "Red Rock Canyon Open Space",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Colorado Springs < Colorado",
+  "lat": 38.8426428571429,
+  "lng": -104.883312142857,
+  "routes": 95
+ },
+ {
+  "id": "ny_f_lake_george_region",
+  "name": "Lake George Region",
+  "region": "New York",
+  "type": "region",
+  "inside": "Adirondacks < New York",
+  "lat": 43.587669122449,
+  "lng": -73.6322061785714,
+  "routes": 95
+ },
+ {
+  "id": "sd_vc_the",
+  "name": "VC, The",
+  "region": "South Dakota",
+  "type": "region",
+  "inside": "Rapid City Area < South Dakota",
+  "lat": 44.0407983333333,
+  "lng": -103.334313333333,
+  "routes": 95
+ },
+ {
+  "id": "ca_marble_caves",
+  "name": "Marble Caves",
+  "region": "California",
+  "type": "region",
+  "inside": "Redwood Coast < California",
+  "lat": 40.3943925,
+  "lng": -123.33043,
+  "routes": 94
+ },
+ {
+  "id": "co_eldorado_canyon_bouldering",
+  "name": "Eldorado Canyon Bouldering",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Eldorado Canyon State Park < Boulder",
+  "lat": 39.9303314140625,
+  "lng": -105.292694390625,
+  "routes": 94
+ },
+ {
+  "id": "co_rock_garden_boulder_area",
+  "name": "Rock Garden Boulder Area",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Nine Mile Bouldering < Nine Mile Hill",
+  "lat": 38.94143925,
+  "lng": -108.48433375,
+  "routes": 94
+ },
+ {
+  "id": "co_indian_peaks",
+  "name": "Indian Peaks",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Colorado < United States",
+  "lat": 40.0609203,
+  "lng": -105.65606255,
+  "routes": 94
+ },
+ {
+  "id": "co_mitchell_creek_canyon",
+  "name": "Mitchell Creek Canyon",
+  "region": "Colorado",
+  "type": "region",
+  "inside": "Denver South < Denver Metropolitan Area Bouldering and Buildering",
+  "lat": 39.3800366666667,
+  "lng": -104.79599,
+  "routes": 94
+ },
+ {
+  "id": "ct_pinnacle_rock",
+  "name": "Pinnacle Rock",
+  "region": "Connecticut",
+  "type": "region",
+  "inside": "Central Valley < Connecticut",
+  "lat": 41.6885544444444,
+  "lng": -72.8331044444444,
+  "routes": 94
+ },
+ {
+  "id": "nh_mt_willard",
+  "name": "Mt. Willard",
+  "region": "New Hampshire",
+  "type": "region",
+  "inside": "Crawford Notch < New Hampshire",
+  "lat": 44.208164,
+  "lng": -71.405802,
+  "routes": 94
+ },
+ {
+  "id": "nm_albuquerque_area",
+  "name": "Albuquerque Area",
+  "region": "New Mexico",
+  "type": "region",
+  "inside": "New Mexico < United States",
+  "lat": 35.1750601010448,
+  "lng": -106.438941102481,
+  "routes": 94
+ },
+ {
+  "id": "nv_kyle_canyon",
+  "name": "Kyle Canyon",
+  "region": "Nevada",
+  "type": "region",
+  "inside": "Mount Charleston < Southern Nevada",
+  "lat": 36.2642588888889,
+  "lng": -115.656269583333,
+  "routes": 94
+ },
+ {
+  "id": "pa_rocky_ridge",
+  "name": "Rocky Ridge",
+  "region": "Pennsylvania",
+  "type": "region",
+  "inside": "South Central PA < Pennsylvania",
+  "lat": 40.008815,
+  "lng": -76.6569875,
+  "routes": 94
+ },
+ {
+  "id": "tn_suck_creek_canyon",
+  "name": "Suck Creek Canyon",
+  "region": "Tennessee",
+  "type": "region",
+  "inside": "Tennessee < United States",
+  "lat": 35.1326125,
+  "lng": -85.3894125,
+  "routes": 94
+ }
+]

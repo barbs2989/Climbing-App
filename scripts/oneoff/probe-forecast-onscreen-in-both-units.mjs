@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // The forecast panel, rendered TWICE -- once imperial, once metric -- and the two compared.
 //
 // The sibling check (check:units, the `weather` section) unit-tests the helpers and
@@ -50,7 +51,7 @@ async function walk(config, label) {
   const port = await freePort(5760, 5799);
   if (port === null) throw new Error("no free port");
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
-  const server = spawn("npx", ["vite", "--config", config, "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  const server = spawn(NPX, [...NPX_PRE, "vite", "--config", config, "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: ["ignore", "pipe", "pipe"], detached: true });
   server.stdout.on("data", () => {});
   server.stderr.on("data", (d) => { const s = String(d); if (/ANCHOR LOST/.test(s)) process.stderr.write(s); });

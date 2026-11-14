@@ -57,7 +57,7 @@ const ROWS = [
 const seed = [[["leaderboard", "overall", null, null, ""], ROWS],
   [["leaderboard-top-climbs", "overall", null, "all", null, ""], [{ route: { id: "probe_route_x", name: "Zyxwv Arete", grade: "5.9", discipline: "alpine", area_id: "probe_area" }, area_name: "Probe Crag", climbers: 3, avg_stars: 4.3 }]]];
 
-const BOARDS = ["trust", "catches", "vouched", "active", "points", "onsight", "vert", "days", "peaksLife", "climbs", "classics_b", "contribs"];
+const BOARDS = ["catches", "vouched", "active", "points", "onsight", "vert", "days", "peaksLife", "climbs", "classics_b", "contribs"];
 // 1. The real board, every board id.
 for (const b of BOARDS) {
   let h; try { h = text(render({ ...base, rankBoard: b, uid: "11111111-1111-1111-1111-111111111111", useDb: true }, seed)); }
@@ -82,9 +82,9 @@ for (const b of BOARDS.filter((x) => x !== "contribs")) {
   if (/Report .*climbs or ranking|Backed climbs only|Qorvath/.test(h)) fail(`demo/${b}: a real-mode control leaked into the demo board`);
   ok(`demo/${b} renders`);
 }
-const demoOptions = render({ ...base, rankBoard: "trust", uid: null, useDb: false });
+const demoOptions = render({ ...base, rankBoard: "catches", uid: null, useDb: false });
 /value="contribs"/.test(demoOptions) ? fail("demo offers a Contributions board it cannot fill") : ok("demo does not offer Contributions");
-/value="contribs"/.test(render({ ...base, rankBoard: "trust", uid: "u", useDb: true }, seed)) ? ok("real offers Contributions") : fail("real board lacks Contributions");
+/value="contribs"/.test(render({ ...base, rankBoard: "catches", uid: "u", useDb: true }, seed)) ? ok("real offers Contributions") : fail("real board lacks Contributions");
 // 4. A failed read says so instead of rendering an empty board.
 {
   const h = text(render({ ...base, rankBoard: "points", uid: "u", useDb: true }, []));
@@ -113,6 +113,19 @@ const demoOptions = render({ ...base, rankBoard: "trust", uid: null, useDb: fals
   days.includes("47") && days.includes("12") ? ok("the Sport board's Days are the sport days (stats.by), not the career total") : fail("the Sport board's Days did not read stats.by.sport");
   const help = text(pts);
   /Career performance points|Climbs are self-reported/.test(help) ? fail("the scoring text still renders on the board (it lives in Help › Ranks)") : ok("the scoring text is off the board");
+}
+// 6. 0379: past #100 the server returns only some board's top 100, so your place and the board's
+//    size come from your row's stats.standing, not from counting the rows that came back.
+{
+  const me = { ...ROWS[0], stats: { ...ROWS[0].stats, standing: { "all|all|points": [250, 4321] } } };
+  const seed3 = [[["leaderboard", "overall", null, null, ""], [me, ROWS[1]]]];
+  const h = render({ ...base, rankBoard: "points", uid: "11111111-1111-1111-1111-111111111111", useDb: true }, seed3);
+  const t = text(h);
+  /You’re #250 of 4,321/.test(t) ? ok("You're #N of M reads the server's standing") : fail("You're #N of M counted the returned rows, not stats.standing");
+  /The top 100 of 4,321 climbers ranked/.test(t) ? ok("the footer names the board's true size") : fail("the footer counted the returned rows");
+  /aria-label="#250, /.test(h) ? ok("your pinned row carries your true rank") : fail("your pinned row shows a rank counted from the returned rows");
+  const old = text(render({ ...base, rankBoard: "points", uid: "11111111-1111-1111-1111-111111111111", useDb: true }, seed));
+  /You’re #2 of 2/.test(old) ? ok("without stats.standing (before 0379) the board still counts its rows") : fail("the pre-0379 fallback broke");
 }
 console.log(failures ? `\nFAIL: ${failures}` : "\nok — Ranks renders in both populations");
 process.exit(failures ? 1 : 0);

@@ -1,0 +1,61 @@
+{
+  "area_id": "wa_ruby_mountain",
+  "routes": [
+    {
+      "route_id": "wa_ruby_mountain_happy_creek",
+      "season": { "months": [12, 1, 2, 3, 4], "window": "Dec-Apr", "evidence": "Stored Dec-Apr stands. Logged Happy Creek ascents: Jan 1, Feb 1, Mar 4, Apr 4, May 7 (May ones are bushwhacky, snow only above ~4,700 ft). Web search: a ski guide calls it a winter/spring ski objective set by when SR 20 reopens (usually late Apr-May), and many March-April ski reports exist; a May 2021 report notes the road was still closed." },
+      "track": { "aid": "2494296", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged 'Winter route' with start trailhead named Happy Creek; the line runs up the Happy Creek drainage and north-side bowl to the summit and returns to the same start (start and end 5 m apart); it is the only north-side/Happy Creek line in our catalog from that trailhead. 20 Apr 2024 is in season. Needs the proposed Trailhead pin below to pass the 300 m rule (start is ~130 m from it)." },
+      "otherTracksConsidered": [
+        { "aid": "3015275", "verdict": "same", "why": "5 Apr 2025, 'Happy Creek Trail', complete from the closure gate, summited; also valid but starts at the winter gate (an unconfirmed spot) so ranked second." },
+        { "aid": "2465743", "verdict": "same", "why": "16 Mar 2024 'Happy Creek', complete from the gate; valid, ranked after the others." },
+        { "aid": "2146070", "verdict": "same", "why": "7 Mar 2023 'Happy Creek winter route' from the gate; valid, distance field looks wrong (9.1 mi)." },
+        { "aid": "2808535", "verdict": "unsure", "why": "13 Apr 2025, no route name, gate start, summited; unnamed." },
+        { "aid": "2851059", "verdict": "same", "why": "25 May 2025, in season +1 month; but the track starts at a mid-road point and ends 1.5 km short of its start, so not complete." },
+        { "aid": "2189464", "verdict": "same", "why": "12 May 2023 'Happy Creek'; valid, a May ascent." },
+        { "aid": "2809000", "verdict": "unsure", "why": "13 Apr 2025 'Happy Creek' report, no track." },
+        { "aid": "1658022", "verdict": "unsure", "why": "May 2021 logged 'NW Ridge from HWY 20' but the report climbs from the Happy Creek trailhead; no track." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "add", "lat": 48.72797, "lng": -121.05449, "name": "Happy Creek trailhead (Happy Creek Forest Walk lot, SR 20)",
+          "evidence": "Round-trip tracks 2494296 and 2189464 start at 48.7286,-121.0560 and 48.7286,-121.0561, ~130 m from the mapped Happy Creek Forest Walk. Our route text names the Happy Creek Nature Trail lot as the spring trailhead, and the two names are the same place on the highway.",
+          "confirmedBy": "https://nominatim.openstreetmap.org/search?format=json&q=Happy+Creek+Forest+Walk+Washington (Happy Creek Forest Walk, Whatcom County: 48.7279705, -121.0544925)" }
+      ],
+      "facts": [
+        { "field": "approach_note", "month": 3, "text": "In mid-March of a low-snow year the highway walk was part bare and the trail was snow-free up to the first meadow; skins went on near 3,300 ft, with logs, rocks and alder to dodge between about 3,000 and 4,000 ft.", "aids": ["2465743"] },
+        { "field": "pro_tips", "month": 4, "text": "In early to mid April snow starts near 3,400-4,000 ft; snowshoes sufficed to near treeline or about 6,100 ft, and crampons were unnecessary on settled snow.", "aids": ["3015275", "2809000"] },
+        { "field": "watch_out", "month": 4, "text": "A big avalanche path crosses the usual line between about 4,500 and 4,850 ft in April; the track that turns east near 4,600 ft stays clear of it.", "aids": ["2809000"] },
+        { "field": "watch_out", "month": 3, "text": "After mid-March warming, wet loose debris collects in the bowl under the summit and in the couloirs north and northwest of it.", "aids": ["2465743"] },
+        { "field": "watch_out", "month": 4, "text": "A boulder traverse at about 3,600-3,700 ft is awkward when only partly snow-covered; descending it was the worst part for one April party.", "aids": ["3015275", "2807812"] },
+        { "field": "pro_tips", "month": 4, "text": "In late April the upper snow was crusty and wind-scoured; the far-left gully gave a good descent line.", "aids": ["2494296"] },
+        { "field": "approach_note", "month": 5, "text": "By late May the lower creek corridor turns into dense alder and devil's club above ~4,300 ft; continuous snow begins near 4,700 ft. A narrow break in the cliffs near 5,100 ft leads to the open upper slopes.", "aids": ["2851059", "2189464"] },
+        { "field": "descent_note", "month": 5, "text": "In late May a party glissaded to the cliff break and then sidehilled the pine slope beside the creek to dodge the alder; the stream was running high by evening.", "aids": ["2851059"] }
+      ]
+    },
+    {
+      "route_id": "wa_ruby_mountain_northwest_ridge",
+      "season": { "months": [12, 1, 2, 3, 4, 5], "window": "Dec-May", "evidence": "Stored Dec-May stands. Web search: Ruby guides say in winter or when snowy most parties choose either the NW ridge from the highway or Happy Creek; a Mountaineers winter scramble report exists. Peakbagger has only one log naming it (May 2021) and it actually climbed from the Happy Creek trailhead." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "1658022", "verdict": "unsure", "why": "Logged 'NW Ridge from HWY 20', May 2021, but the report and start trailhead are Happy Creek, and no track points are stored." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_ruby_mountain_south_ridge",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jul-Sep stands. Thunder Creek-side logs: Jul 44 / Aug 26 / Sep 17 (all-route histogram). Web search: WTA says a snow-free climb is normally possible about mid-July; a late-June 2024 report found the south slopes mostly melted but the summit ridge snowy." },
+      "track": { "aid": "3225782", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "No logged route name or report, but the line is unambiguous: start 31 m from our Thunder Creek TH pin at Colonial Creek, along Thunder Creek to the Fourth of July Pass junction, then north to the summit (2 m from our pin), round trip returning 20 m from start. Our other two Ruby routes start on SR 20 at different turnouts; the only route from this trailhead is the south ridge. 11 Jun 2026 is 20 days before Jul 1, so within the one-month margin; expect snow." },
+      "otherTracksConsidered": [
+        { "aid": "3307253", "verdict": "same", "why": "12 Aug 2026, in peak season, summited, same line, but it is one-way only (ends ~1.5 km short of the trailhead); ranked below the complete one." },
+        { "aid": "189729", "verdict": "same", "why": "7 Aug 2011 report names the Fourth of July Pass abandoned trail, but there is no track." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "approach_note", "month": 8, "text": "In early August the trees end near 6,600 ft; above that is easy grass and talus to the ridge, then a simple walk to the true summit, with only a few snow patches and a small cornice still lingering up high.", "aids": ["189729"] }
+      ]
+    }
+  ],
+  "notes": "The South Ridge route already has a stored 800-point line in allRoutesOnPeak; the new track 3225782 is a recorded one, so only replace if the owner prefers it. The NW Ridge route's own turnout is not where any recorded track starts; the single 'NW ridge' log is really Happy Creek. The Happy Creek route has no Trailhead pin at all, hence the add; no pin was proposed for the winter gate because it could not be confirmed from a mapped page (OSM search for 'Ross Dam trailhead' returned nothing)."
+}

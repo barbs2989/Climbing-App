@@ -1,0 +1,47 @@
+{
+ "ca_eldorado_roof": {
+  "_expect": {"name": "Eldorado Roof", "region": "California"},
+  "blurb": "Eldorado Roof is a steep, overhanging wall in the Inner Gorge of the Owens River Gorge near Bishop, sitting on the east side of the river at roughly 5,450 feet. All 27 climbs are bolted sport routes, and the grades live at the hard end: a handful of 5.11s, a big cluster of 5.12s, a good number of 5.13s and a single 5.14. Most lines are one pitch, with a couple of longer outings. Because the rest of the gorge is mostly vertical, this roof makes a change of pace for strong climbers. It is an advanced-level crag and not a place to learn the ropes.",
+  "approach": "From the Central Gorge gully, walk north for about ten minutes. The roof is the obvious feature across the river on the east side.",
+  "approach_min": 10,
+  "review": {"sources": ["https://www.mountainproject.com/area/105882774/eldorado-roof", "https://app.advcollective.com/climbing/eldorado-roof-epic-roof-climbing-over-owens-river-gorge"]}
+ },
+ "ca_main_wall_13": {
+  "_expect": {"name": "Main Wall", "region": "California"},
+  "blurb": "Main Wall is the biggest formation at Promontory, a sandstone crag on California's far north coast that looks out over the Pacific. It rises as a large overhanging wave of rock, and nearly all of its 27 climbs are bolted sport routes, with just one trad line. A few 5.10s and 5.11s open the grade range, then comes a big block of 5.12s and 5.13s, topped by a couple of 5.14s. Expect steep, featured climbing on pockets, with big holds that are solid and smaller ones that can be fragile. Sand often collects on the holds, and weekends can draw climbers from the nearby coastal towns. Best suited to climbers comfortable on hard, powerful terrain.",
+  "parking_note": "Pull into the large paved lot beside the ocean, off Highway 101 near the Wilson Creek Road junction.",
+  "approach": "From the lot, walk north across the beach and look for the largest overhanging wall.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106033326/main-wall", "https://touchstoneclimbing.com/promontory/"]}
+ },
+ "ca_derrydale_cliff": {
+  "_expect": {"name": "Derrydale Cliff", "region": "California"},
+  "blurb": "Derrydale Cliff is a long sandstone band running along Highway 33 above Ojai, at about 4,000 feet in California's Central Coast region. Climbs are single pitch, roughly 60 to 100 feet tall, and most of the 27 are bolted sport routes, with a few trad lines and one top rope. Grades run from 5.8 up to 5.12, with the weight between 5.9 and 5.11. The stone is uneven: some sections are very solid while others are loose or crumbly, so wear a helmet and leave the rock alone after rain. It is a quiet, lightly developed cliff right beside the road, split into a few sectors.",
+  "parking_note": "A small roadside turnout on Highway 33 sits directly below the cliff, about a mile past the Fortress turnout or half a mile up the highway from the Potrero Creek trailhead.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106216535/derrydale-cliff", "https://app.advcollective.com/climbing/derrydale-cliff-rugged-sandstone-climbing-above-hwy-33"]}
+ },
+ "ca_dihedrals": {
+  "_expect": {"name": "Dihedrals", "region": "California"},
+  "blurb": "The Dihedrals is one of the popular cliffs in the Upper Gorge of the Owens River Gorge, near Bishop in the Eastern Sierra. Its 27 climbs sit on welded tuff and are mostly bolted sport routes (19), with six trad lines and two top-rope options. Grades stretch from 5.6 up to 5.13, but the bulk fall in the 5.10 and 5.11 range, so it suits solid intermediate climbers best. Cliffs in this part of the gorge face different directions, which lets you chase sun on cool mornings or shade later in the day.",
+  "parking_note": "Use the Upper Gorge parking lot; a short walk down the upper power plant road leads to the trail that drops into the gorge.",
+  "review": {"sources": ["https://mountainproject.com/area/105843291/upper-gorge", "https://app.advcollective.com/climbing/upper-gorge-climbing-guide-owens-river-california"]}
+ },
+ "ca_summit_area_west": {
+  "_expect": {"name": "Summit Area West", "region": "California"},
+  "blurb": "Summit Area West is the western half of the summit zone on Mount Woodson, a small granite hill in northern San Diego County near Poway. Its 27 climbs mix trad lines, top ropes, a couple of sport routes and three boulder problems between V3 and V5. The rock is short, clean granite with cracks and faces, and the grades cluster around 5.10 and 5.11, with a few easier lines and one 5.12. Short routes with stiff ratings are common. The setting is dry chaparral with little shade, so summer is a poor choice and spring or fall works better.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105799341/the-summit-area", "https://www.climbing.com/places/mount-woodson?scope=anon"]}
+ },
+ "ca_west_face_right_side": {
+  "_expect": {"name": "West Face - Right Side", "region": "California"},
+  "blurb": "West Face - Right Side is a busy stretch of the broad west face of Tahquitz Rock above Idyllwild, found by heading right from the landmark Lunch Rock. The 27 climbs are almost all traditional, with routes of one to four pitches up a mix of cracks and faces at around 7,350 feet. Grades start at 5.4 and reach a lone 5.13, but most lines fall at 5.10 and 5.11, with a decent handful of 5.8 and 5.9 options. The face gets its sun from midday into the evening during the busy season.",
+  "aspect": "W",
+  "review": {"sources": ["https://www.mountainproject.com/area/106181534/west-face-right-side", "https://mountainproject.com/area/105788031/tahquitz-rock"]}
+ },
+ "_skipped": {
+  "ca_little_rock_candy_mountain": "could not fetch two pages that describe it (summitpost 403; only one fetched page, a blog post, covers the formation)",
+  "ca_cathouse_the": "could not fetch two pages (summitpost 403; only one Mountain Project sub-area page describes it)"
+ },
+ "_conflicts": {
+  "ca_eldorado_roof": "stored rock 'welded tuff' vs https://app.advcollective.com/climbing/eldorado-roof-epic-roof-climbing-over-owens-river-gorge saying granite (that page is internally inconsistent; its aspect also disagrees with https://www.mountainproject.com/area/105882774/eldorado-roof)",
+  "ca_derrydale_cliff": "aspect not filled: https://app.advcollective.com/climbing/derrydale-cliff-rugged-sandstone-climbing-above-hwy-33 gives northwest in text and south in metadata"
+ }
+}

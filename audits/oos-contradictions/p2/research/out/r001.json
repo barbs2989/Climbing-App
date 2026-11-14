@@ -1,0 +1,145 @@
+{
+ "file": "r001.json",
+ "results": [
+  {
+   "id": "ab_david_thompson_highway_kitty_hawk",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The overview only narrates the three main ice pitches (60 m, ~50 m pillar, short easier pitch to a bolted station) and never states a total. The route's own listing gives 4 pitches because the approach gully's ice steps are pitched out in lean snow; the American Alpine Club accident note says 3 and another listing says 5, so no figure is contradicted by the row and no two sources agree on a different count.",
+   "sources": [
+    "https://www.mountainproject.com/route/108151278/kitty-hawk",
+    "https://publications.americanalpineclub.org/articles/13201215245",
+    "https://avalanche.ca/resources/ice-climbing/atlas/kitty-hawk"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_edge_of_the_world_edge_of_the_world",
+   "fact": "length",
+   "verdict": "fixed",
+   "correct_value": "length_m 61 stays; the unsupported '~20 m' rappel figures are removed from the overview",
+   "evidence": "Two independent sources put the route at about 60 m: the route's listing (200 ft / 61 m, 2 pitches) and Parks Canada's Jasper ice list (60 m, WI2). Nothing independent supports ~20 m per rappel (they come from one listing's casual description), and two 20 m rappels cannot account for 60 m, so the column is kept and the rough per-pitch figures are dropped from the prose rather than invented replacements.",
+   "sources": [
+    "https://www.mountainproject.com/route/116498578/edge-of-the-world",
+    "https://pc.gc.ca/pn-np/ab/jasper/activ/experience/hiver-winter/escalglace-iceclimb"
+   ],
+   "patches": [
+    {
+     "id": "ab_edge_of_the_world_edge_of_the_world",
+     "fact": "length",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "first pitch (~20 m) from",
+     "replace": "first pitch from"
+    },
+    {
+     "id": "ab_edge_of_the_world_edge_of_the_world",
+     "fact": "length",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "second pitch (~20 m).",
+     "replace": "second pitch."
+    }
+   ]
+  },
+  {
+   "id": "ab_mount_athabasca_north_face_var",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction (overview says a second equal-length pitch gains the ridge, row says 1). The only source with detail is the route's own listing, which describes one rope length of real climbing then one more rope length to the ridge and has no pitch count in its header. Searched the listing, forum threads, SummitPost north face page, Gripped, and the classic-climbs guide pages; none describe this variation separately, so no second source for a count.",
+   "sources": [
+    "https://www.mountainproject.com/route/111661981/north-face-var",
+    "https://summitpost.org/north-face/430710"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_mount_snowdome_slipstream",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: pitches=1 on a 914 m line. Sources agree on length (909 m listing, 925 m Parks Canada, WI4+) and on the structure (lower half soloed/simul-climbed, 50 m ice curtain, 3 more ice pitches, long snow slope, ice cap, ice rappels), but none states a total pitch count, so no number can be adopted from two sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/119219878/slipstream",
+    "https://pc.gc.ca/pn-np/ab/jasper/activ/experience/hiver-winter/escalglace-iceclimb",
+    "https://gripped.com/?p=6869"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_mount_temple_squashed_bones",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: pitches=1 vs 6-10 lower roped pitches plus ~6 upper. The route listing says 6 to 10 roped pitches to the buttress top; the 2002 American Alpine Club report implies about six roped pitches on the lower buttress; neither gives a total for the whole route including the upper East Ridge, so no total count is established by two sources.",
+   "sources": [
+    "https://www.mountainproject.com/route/117956702/squashed-bones",
+    "https://publications.americanalpineclub.org/articles/12200227101/North-America-Canada-Canadian-Rockies-Mt-Temple-East-Northeast-Buttress-Squashed-Bones"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_outpost_peak_north_buttress",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Searched Mountain Project (area lists only a different route), SummitPost (blocked), the Alpine Club of Canada and AAC publications, and general searches; no page gives a pitch count or tower pitch lengths for this line. The overview's 5 pitches refers to the three towers only while the row's 7 may include other roped ground, so it cannot be settled.",
+   "sources": [
+    "https://www.mountainproject.com/area/119623835/outpost-peak",
+    "https://alpineclubofcanada.ca/connecting-about-change"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ab_peyto_tower_the_prow",
+   "fact": "grade vs pitch grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's listing states grade 5.9 and a P3 of 5.10b in the same page; the AAC describes the line only as a moderate classic and gives no pitch grades; theCrag and SummitPost pages for it could not be found or read. Only one source gives pitch grades, so neither the 5.9 nor the 5.10b can be overturned.",
+   "sources": [
+    "https://www.mountainproject.com/route/119306179/the-prow",
+    "https://publications.americanalpineclub.org/articles/13201215271"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ak_cantwell_creek_ice_alpine_aim_for_the_bushes",
+   "fact": "route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real tension. The route's Mountain Project listing gives 1200 ft (364 m), 3 pitches with pitch lengths of 25, 45 and 63 m; the party's own write-up gives 150-160 m, 3-4 pitches. The 366 m figure matches the first, the stated pitches (about 133-143 m) and the second match each other. One source each side, so neither value is adopted.",
+   "sources": [
+    "https://www.mountainproject.com/route/124696020/aim-for-the-bushes",
+    "https://alaskaiceclimbing.com/?p=3995"
+   ],
+   "patches": []
+  },
+  {
+   "id": "ak_mount_yukla_2_gank_d_and_slayed",
+   "fact": "pitch count",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: pitches=1 on a 2,800 ft (854 m) multi-day route. The AAJ 2007 report and the climber's own blog both describe a three-day climb with a first-pitch aid headwall, a snow-chimney pitch at M6, a dihedral, several pitches of WI3-4, a WI/AI6 drip, a snow traverse and a final WI3 pitch, and give length 2,800 ft (matches the row), but neither gives a total pitch count.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12200717302",
+    "https://higherdreams.blogspot.com/2007/12/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "az_east_face_4_breathairian",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route's listing is 270 ft (82 m, matching length_m) in 3 pitches: P1 5.10 R 140 ft, P2 5.11 R 80 ft, and P3 a 50 ft fourth-class walk up the ramp. The beta and overview describe the two technical pitches ending at the ramp, which is the way off, so a header of 3 including the short ramp walk is consistent.",
+   "sources": [
+    "https://www.mountainproject.com/route/127158389/breathairian"
+   ],
+   "patches": []
+  }
+ ]
+}

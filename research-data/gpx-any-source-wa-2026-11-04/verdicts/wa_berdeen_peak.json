@@ -1,0 +1,15 @@
+{
+  "area_id": "wa_berdeen_peak",
+  "routes": [
+    {
+      "route_id": "wa_berdeen_peak_scramble",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored best season late July-September fits a snow-free off-trail climb in the Pickets country; only 9 logged summits (Jun 2, Jul 4, Aug 3). Web search found no guidebook or agency page to change it." },
+      "track": { "aid": "3232353", "verdict": "same", "kind": "oneway", "inSeason": true,
+                 "why": "Only route on the peak. 2026-06-13 summit, part of a Mystery Ridge loop: climbs Porkbelly Ridge from the Bacon Creek road end, tops out 2 m from our summit pin and ends at camp near Berdeen Lake, the line our approach text describes. Mid-June, within a month of the window, with snow on the ground. CAUTION: it starts 644 m from our trailhead pin and does not return, so the mechanical 300 m rule fails." },
+      "otherTracksConsidered": [],
+      "pins": [],
+      "facts": []
+    }
+  ],
+  "notes": "Trailhead not moved: the track starts at 48.65034,-121.42484 (243 m elevation), 644 m north of our Bacon Creek Road End pin (48.64467,-121.42308, 850 ft), but I could not confirm any road-end coordinate from an official or mapped source (searches returned nothing useful). Either the road end is farther up the old roadbed or our pin is short; check a USFS road map before moving. The single report has no text, so no facts. Our monthBreakdown calls June snowbound/risky; this party used an ice axe and bivouac on 6/13 and succeeded, so June is feasible with snow gear."
+}

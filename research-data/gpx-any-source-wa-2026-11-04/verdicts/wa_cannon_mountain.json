@@ -1,0 +1,68 @@
+{
+ "area_id": "wa_cannon_mountain",
+ "routes": [
+  {
+   "route_id": "wa_cannon_mountain_northeast_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Stored text says mid-to-late summer once the burn slopes, ridge and Coney Lake basin are clear; a route page and a Mountaineers page agree early-season attempts mean steep snow/couloir. Peakbagger ascents of the peak by any route peak Jun-Oct (Aug 98, Sep 80)."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3355753",
+     "verdict": "different",
+     "why": "Logged NW ridge/standard; line gains the north-west ridge via the Mountaineer Creek forest, then continues to Enchantment Peak (link-up). Not the NE ridge above Coney Lake."
+    },
+    {
+     "aid": "3346626",
+     "verdict": "different",
+     "why": "Report calls it the NW ridge; line climbs the west side from the Stuart Lake trail, not the NE crest, and descends via Prusik Pass."
+    },
+    {
+     "aid": "3328748",
+     "verdict": "different",
+     "why": "Blank logged route; line is the west/NW ridge, then continues to Enchantment Peak (link-up)."
+    },
+    {
+     "aid": "1951173",
+     "verdict": "different",
+     "why": "Report describes a west-ridge line (Mountaineer Creek gullies to a flat basin at ~6100 ft then the W ridge), not the NE ridge."
+    },
+    {
+     "aid": "2527834",
+     "verdict": "different",
+     "why": "Logged SW ridge; same west-side line, and June 1 is offseason anyway."
+    },
+    {
+     "aid": "3200968",
+     "verdict": "offseason",
+     "why": "May 22 and a four-peak link-up; NW ridge anyway."
+    },
+    {
+     "aid": "530581",
+     "verdict": "offseason",
+     "why": "May 24. The report (landslide slopes, ridge, option to drop toward Coney Lake, north couloir) does match our NE ridge/couloir variation, but May is two months before the season. Also exits via the Enchantments."
+    },
+    {
+     "aid": "245895",
+     "verdict": "unsure",
+     "why": "June 10 north couloir/NW ridge snow climb that is a multi-peak link-up (Enchantment group); no assignment."
+    },
+    {
+     "aid": "3321844",
+     "verdict": "different",
+     "why": "Prusik Pass/Druid Plateau approach, not NE ridge."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Most Peakbagger tracks climb the west/NW ridge from the Stuart Lake trail via Mountaineer Creek; we hold no route by that name (stored: Northeast Ridge and South Slopes only), so a NW/West Ridge route may be worth adding. South Slopes already has a track."
+}

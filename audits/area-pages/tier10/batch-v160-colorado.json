@@ -1,0 +1,76 @@
+{
+ "co_main_cliffs_the": {
+  "_expect": {
+   "name": "Main Cliffs, The",
+   "region": "Colorado"
+  },
+  "blurb": "The Main Cliffs are a section of the Sacred Cliffs on Boulder's Green Mountain, reached by a short ridge walk from the Flatirons side. Twelve climbs here are mostly traditional, plus a couple of bolted lines. The grade spread is wide but centres on 5.10, with a handful in the 5.7 to 5.8 range, a few 5.11 and 5.12 pitches, and one easy scramble-grade line. This wall carries some of the longest lines at the Sacred Cliffs, and a number of them are bold, with gear that needs care. It suits experienced trad climbers more than first-time leaders, and it is usually quieter than the better-known Flatirons faces.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105745184/the-main-cliffs",
+    "https://app.advcollective.com/climbing/green-corners-a-classic-trad-experience-on-boulders-sacred-cliffs"
+   ]
+  }
+ },
+ "co_leaning_wall_the": {
+  "_expect": {
+   "name": "Leaning Wall, The",
+   "region": "Colorado"
+  },
+  "blurb": "The Leaning Wall is a steep granite face along the river road north of Buena Vista, around 8,000 feet. All twelve climbs are traditional, spanning 5.6 up to 5.12, with the left side holding the friendlier lines and the right side the harder ones, including three at 5.11. Most routes want a rack of gear in addition to a few bolts. The wall catches strong afternoon sun, which keeps it climbable through much of the year, and the rock is gritty and still cleaning up with traffic. The base is a short uphill walk, so it works as a quick trad session for climbers comfortable around 5.8 to 5.10.",
+  "review": {
+   "sources": [
+    "https://mountainproject.com/area/106536061/the-leaning-wall",
+    "https://app.advcollective.com/climbing/golden-plate-a-classic-trad-challenge-on-the-leaning-wall"
+   ]
+  }
+ },
+ "co_overlook_the_2": {
+  "_expect": {
+   "name": "Overlook, The",
+   "region": "Colorado"
+  },
+  "blurb": "The Overlook is a compact sport crag perched at the top of Staunton Rocks, southwest of Denver at roughly 9,300 feet. Twelve bolted routes run short, steep and slightly overhanging, and the grades are firmly in hard territory: most are 5.11, with a few 5.12s and one harder line, so there is little here for beginners. Afternoon shade arrives early, and some upper lines stay in shade all day under big trees, which helps on warm days. The approach climbs a steep scree slope above the lower crags, and the newer routes are still being cleaned, so a helmet is wise. It offers a quieter alternative when the busier cliffs below are crowded.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/119648838/the-overlook",
+    "https://rakkup.com/guidebook/staunton-state-park-rock-climbing/the-overlook/s22039"
+   ]
+  }
+ },
+ "co_no_name_canyon_boulder_problems": {
+  "_expect": {
+   "name": "No Name Canyon Boulder Problems",
+   "region": "Colorado"
+  },
+  "blurb": "This is a loose collection of twelve boulder problems scattered through No Name Canyon, a side canyon off Glenwood Canyon just east of Glenwood Springs, at about 6,200 feet. The canyon itself is known for granite and for traditional cracks, and the boulders share that rock. Grades run from V1 up to V7, with most problems between V4 and V5 and a few easier traverses for warming up. There is no single cluster, so expect to look around the canyon floor for each block and bring a pad. It makes a handy bouldering side trip if you are already in the canyon to climb cracks.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/107375900/no-name-canyon-boulder-problems",
+    "https://mountainproject.com/area/105746566/no-name-canyon"
+   ]
+  }
+ },
+ "co_main_area_4": {
+  "_expect": {
+   "name": "Main Area",
+   "region": "Colorado"
+  },
+  "blurb": "The Main Area is the central bouldering zone of the Moccasin Area near Buena Vista, on the south end of Sleeping Indian Mountain. Boulders sit along the base of a small cliff just west of the power lines, with more rock on the hilltop above. Twelve problems here are mostly in the V2 to V3 range, which makes it a friendly spot for newer boulderers and for warming up, with a few tougher problems up to V6 for variety. The walk in from the parking area is short, and the zone is a natural starting point before moving on to the other Moccasin sectors.",
+  "review": {
+   "sources": [
+    "https://thetopo.com/crags/moccasin-area/topos/moccasin-main",
+    "https://www.mountainproject.com/approach-trail/122931693/approach-to-moccasin-area"
+   ]
+  }
+ },
+ "_skipped": {
+  "co_lower_slab": "no fetched page about this crag itself (only an Upper Slab route page and unrelated Lower Slabs areas)",
+  "co_death_by_wildlife": "only one fetched page (parent Beyond Authority page); no second page about the crag",
+  "co_boulbous_boulder": "no fetched page about this boulder beyond a one-line route page; could not fetch two pages"
+ },
+ "_conflicts": {
+  "co_leaning_wall_the": "stored aspect W; https://app.advcollective.com/climbing/golden-plate-a-classic-trad-challenge-on-the-leaning-wall says S/SW, https://mountainproject.com/area/106536061/the-leaning-wall says strong afternoon sun",
+  "co_main_cliffs_the": "stored aspect N not confirmed; https://app.advcollective.com/climbing/green-corners-a-classic-trad-experience-on-boulders-sacred-cliffs lists south facing"
+ }
+}

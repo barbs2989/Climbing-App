@@ -1,0 +1,332 @@
+[
+ {
+  "lu": "nh_lu_north_south_kinsman",
+  "leg": 0,
+  "peak": "North Kinsman",
+  "route": "Lonesome Lake Trail, Fishin' Jimmy Trail, then the Kinsman Ridge Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_north_south_kinsman",
+  "leg": 1,
+  "peak": "South Kinsman",
+  "route": "Kinsman Ridge Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_osceola_east_osceola",
+  "leg": 0,
+  "peak": "Mount Osceola",
+  "route": "Mount Osceola Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_osceola_east_osceola",
+  "leg": 1,
+  "peak": "East Osceola",
+  "route": "Short ridge trail from Osceola, past the Chimney",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_north_south_hancock",
+  "leg": 0,
+  "peak": "South Hancock",
+  "route": "Hancock Notch Trail, Cedar Brook Trail, then the Hancock Loop Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_north_south_hancock",
+  "leg": 1,
+  "peak": "North Hancock",
+  "route": "Hancock Loop Trail along the ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_tripyramids",
+  "leg": 0,
+  "peak": "North Tripyramid",
+  "route": "North Slide, from Livermore Road via the Mount Tripyramid Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_tripyramids",
+  "leg": 1,
+  "peak": "Middle Tripyramid",
+  "route": "Mount Tripyramid Trail along the ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_tripyramids",
+  "leg": 2,
+  "peak": "South Tripyramid",
+  "route": "Mount Tripyramid Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_wildcat_ridge_a_to_d",
+  "leg": 0,
+  "peak": "Wildcat D",
+  "route": "Wildcat Ridge Trail, with a bushwhack to the true high point",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_wildcat_ridge_a_to_d",
+  "leg": 1,
+  "peak": "Wildcat A",
+  "route": "Wildcat Ridge Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_carter_moriah_traverse",
+  "leg": 0,
+  "peak": "Wildcat D",
+  "route": "Wildcat Ridge Trail from the highway lot (optional: the traverse can start at the notch)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_carter_moriah_traverse",
+  "leg": 1,
+  "peak": "Wildcat A",
+  "route": "Wildcat Ridge Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_carter_moriah_traverse",
+  "leg": 2,
+  "peak": "Carter Dome",
+  "route": "Carter-Moriah Trail from Carter Notch",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_carter_moriah_traverse",
+  "leg": 3,
+  "peak": "Mount Hight",
+  "route": "Carter-Moriah Trail (optional spur; a bypass skips it)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_carter_moriah_traverse",
+  "leg": 4,
+  "peak": "South, Middle and North Carter",
+  "route": "Carter-Moriah Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "nh_lu_carter_moriah_traverse",
+  "leg": 5,
+  "peak": "Mount Moriah",
+  "route": "Carter-Moriah Trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "ny_lu_seward_range",
+  "leg": 0,
+  "peak": "Seward Mountain",
+  "route": "Herd path from the Blueberry side",
+  "pick": {
+   "id": "ny_seward_mountain_seward_herd_path",
+   "name": "Seward herd path",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Seward Mountain",
+   "score": 0.6666666666666666
+  },
+  "others": [
+   {
+    "id": "ny_seward_mountain_seward_herd_path",
+    "name": "Seward herd path",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Seward Mountain",
+    "score": 0.6666666666666666
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_seward_range",
+  "leg": 1,
+  "peak": "Donaldson Peak",
+  "route": "Herd path along the ridge",
+  "pick": {
+   "id": "ny_donaldson_mountain_seward_range_herd_path",
+   "name": "Seward Range herd path",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Donaldson Mountain",
+   "score": 0.6666666666666666
+  },
+  "others": [
+   {
+    "id": "ny_donaldson_mountain_seward_range_herd_path",
+    "name": "Seward Range herd path",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Donaldson Mountain",
+    "score": 0.6666666666666666
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_seward_range",
+  "leg": 2,
+  "peak": "Emmons Peak",
+  "route": "Herd path",
+  "pick": {
+   "id": "ny_mount_emmons_seward_range_herd_path",
+   "name": "Seward Range herd path",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mount Emmons",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "ny_mount_emmons_seward_range_herd_path",
+    "name": "Seward Range herd path",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Emmons",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_giant_rocky_peak_ridge",
+  "leg": 0,
+  "peak": "Giant Mountain",
+  "route": "Trail from the Chapel Pond side (past the Washbowl) or from the falls",
+  "pick": null,
+  "others": [
+   {
+    "id": "ny_giant_mountain_ridge_trail",
+    "name": "Ridge Trail",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Giant Mountain",
+    "score": 0
+   },
+   {
+    "id": "ny_bottleneck",
+    "name": "Bottleneck",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Giant Mountain",
+    "score": 0
+   },
+   {
+    "id": "ny_eagle_slide",
+    "name": "Eagle Slide",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Giant Mountain",
+    "score": 0
+   },
+   {
+    "id": "ny_bottle_slide",
+    "name": "Bottle slide",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "Giant Mountain",
+    "score": 0
+   },
+   {
+    "id": "ny_east_face_cirque_several_routes_for_the_explorer",
+    "name": "East Face Cirque - Several Routes for the Explorer",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Giant Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "ny_lu_giant_rocky_peak_ridge",
+  "leg": 1,
+  "peak": "Rocky Peak Ridge",
+  "route": "Ridge trail from Giant",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "me_lu_bigelow_range_traverse",
+  "leg": 0,
+  "peak": "Little Bigelow",
+  "route": "Long-distance trail from the east road (some skip it)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "me_lu_bigelow_range_traverse",
+  "leg": 1,
+  "peak": "Avery Peak",
+  "route": "Long-distance trail",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "me_lu_bigelow_range_traverse",
+  "leg": 2,
+  "peak": "West Peak",
+  "route": "Long-distance trail",
+  "pick": null,
+  "others": [
+   {
+    "id": "me_a_wexler_s_center_chimney_grade_unknown",
+    "name": "A. Wexler's \"Center Chimney\" Grade Unknown",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Northwest Basin",
+    "score": 0
+   },
+   {
+    "id": "me_wild_wild_life",
+    "name": "Wild, Wild Life",
+    "disc": "alpine",
+    "grade": "5.10a",
+    "area": "Northwest Basin",
+    "score": 0
+   },
+   {
+    "id": "me_a_wexler_s_right_hand_chimney_route",
+    "name": "A. Wexler's \"Right Hand Chimney Route\"",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Northwest Basin",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "me_lu_bigelow_range_traverse",
+  "leg": 3,
+  "peak": "South Horn",
+  "route": "Long-distance trail along the ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "me_lu_bigelow_range_traverse",
+  "leg": 4,
+  "peak": "Cranberry Peak",
+  "route": "Blue-blaze side trail (end of the full range)",
+  "pick": null,
+  "others": []
+ }
+]

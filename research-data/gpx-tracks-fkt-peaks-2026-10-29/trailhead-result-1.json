@@ -1,0 +1,156 @@
+[
+ {
+  "id": "wa_dragontail_peak_east_route",
+  "slug": "dragontail-peak-wa",
+  "trailhead": "Stuart Lake Trailhead",
+  "sourceLat": 47.5277547,
+  "sourceLng": -120.8208662,
+  "distanceM": 18,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Stuart+Lake+Trailhead",
+  "note": "FKT page says the route begins at the Colchuck/Stuart Lk TH; OSM trailhead node sits on the track start."
+ },
+ {
+  "id": "wa_mount_si_trail",
+  "slug": "mount-si-wa",
+  "trailhead": "Mount Si Trailhead",
+  "sourceLat": 47.4880076,
+  "sourceLng": -121.7231554,
+  "distanceM": 112,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Mount+Si+Trailhead",
+  "note": "OSM trailhead node is within 400 m of the track start; FKT page does not name the start."
+ },
+ {
+  "id": "ab_mount_athabasca_aa_col",
+  "slug": "mount-athabaska-ab-canada",
+  "trailhead": null,
+  "sourceLat": 52.2200251,
+  "sourceLng": -117.226912,
+  "distanceM": 312,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Athabasca+Glacier+trailhead",
+  "note": "Start is at an unnamed parking spot; nearest named parking is 'Icefields Parking 2' (not a trailhead name) and the FKT page names no start."
+ },
+ {
+  "id": "bc_mount_sir_donald_northwest_arete",
+  "slug": "mt-sir-donald-bc-canada",
+  "trailhead": null,
+  "sourceLat": 51.2650883,
+  "sourceLng": -117.4950228,
+  "distanceM": 308,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Illecillewaet+Campground",
+  "note": "Only a campground (Illecillewaet) was found, no named trailhead at the start, and the FKT page names none."
+ },
+ {
+  "id": "bc_wedge_mountain_northeast_arete",
+  "slug": "wedge-mountain-bc-canada",
+  "trailhead": null,
+  "sourceLat": 50.1729945,
+  "sourceLng": -122.8629047,
+  "distanceM": 59,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Wedgemount+Lake+Trail",
+  "note": "FKT says it starts at the Wedge Creek FSR main parking lot, not the Wedgemount Lake trailhead; no named trailhead found."
+ },
+ {
+  "id": "ca_sierra_buttes_lookout_trail",
+  "slug": "sierra-buttes-ca",
+  "trailhead": null,
+  "sourceLat": 39.6116113,
+  "sourceLng": -120.6654358,
+  "distanceM": 13,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Sierra+Buttes+Lookout+Trail",
+  "note": "OSM shows only an unnamed parking lot at the start; no signed trailhead name found."
+ },
+ {
+  "id": "ca_south_lake_peaks_traverse",
+  "slug": "south-lakes-peaks-traverse",
+  "trailhead": "South Lake Trailhead",
+  "sourceLat": 37.1692908,
+  "sourceLng": -118.5658261,
+  "distanceM": 20,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=South+Lake+trailhead+Bishop",
+  "note": "FKT page says the route starts from the trailhead at South Lake; OSM node matches the start."
+ },
+ {
+  "id": "ca_tinker_knob_via_the_pacific_crest_trail",
+  "slug": "tinker-knob",
+  "trailhead": null,
+  "sourceLat": 39.2024438,
+  "sourceLng": -120.2435581,
+  "distanceM": 763,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Granite+Chief+Trail+Olympic+Valley",
+  "note": "FKT says Granite Chief Trail trailhead but the only OSM location (trail path) is over 400 m from the start; no trailhead node found."
+ },
+ {
+  "id": "ca_white_mountain_peak_trail",
+  "slug": "white-mountain-peak",
+  "trailhead": null,
+  "sourceLat": 37.5576799,
+  "sourceLng": -118.23561,
+  "distanceM": 23,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=White+Mountain+Road+Mono+County",
+  "note": "FKT names the locked Barcroft Gate, but no source opened gave its location; only an unnamed parking node at the start."
+ },
+ {
+  "id": "co_mount_hope_east_ridge",
+  "slug": "mount-hope-co",
+  "trailhead": null,
+  "sourceLat": 38.9958124,
+  "sourceLng": -106.4039344,
+  "distanceM": 14,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Sheep+Gulch+Rockdale",
+  "note": "OSM shows an unnamed parking at Sheep Gulch at the start; no source names a trailhead there."
+ },
+ {
+  "id": "co_mount_sherman_southwest_ridge",
+  "slug": "mount-sherman-co",
+  "trailhead": null,
+  "sourceLat": 39.2260233,
+  "sourceLng": -106.1853681,
+  "distanceM": 26,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=County+Road+2B+Lake+County+Colorado",
+  "note": "FKT start is the gate on the Fourmile road; no source with its coordinates was opened."
+ },
+ {
+  "id": "co_mount_silverheels_north_spur_from_hoosier_pass",
+  "slug": "mount-silverheels-co",
+  "trailhead": null,
+  "sourceLat": 39.3618827,
+  "sourceLng": -106.062631,
+  "distanceM": 64,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Hoosier+Pass+Colorado",
+  "note": "OSM has Hoosier Pass (63 m away) but as a pass, not a named trailhead, and the FKT page names no start."
+ },
+ {
+  "id": "co_mt_bierstadt_standard_route_west_slopes",
+  "slug": "mt-bierstadt-co",
+  "trailhead": "Guanella Pass Trailhead",
+  "sourceLat": 39.597246,
+  "sourceLng": -105.7125591,
+  "distanceM": 212,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Guanella+Pass+Trailhead",
+  "note": "OSM names this parking as Guanella Pass Trailhead, 213 m from the start; FKT page does not name the start."
+ },
+ {
+  "id": "co_mount_princeton_east_slopes",
+  "slug": "mt-princeton",
+  "trailhead": null,
+  "sourceLat": 38.740214,
+  "sourceLng": -106.1755931,
+  "distanceM": 84,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?format=json&q=Mount+Princeton+Road+Chaffee+County",
+  "note": "FKT says '2WD trailhead' with no proper name; OSM shows only an unnamed horse-stable parking."
+ }
+]

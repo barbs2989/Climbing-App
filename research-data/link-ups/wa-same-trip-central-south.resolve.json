@@ -1,0 +1,397 @@
+[
+ {
+  "lu": "wa_lu_vesper_sperry",
+  "leg": 0,
+  "peak": "Vesper Peak",
+  "route": "Via Headlee Pass and the ridge above Vesper Lake",
+  "pick": {
+   "id": "wa_vesper_peak_standard_route",
+   "name": "Standard Route (Headlee Pass)",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Vesper Peak",
+   "score": 0.4
+  },
+  "others": [
+   {
+    "id": "wa_vesper_peak_standard_route",
+    "name": "Standard Route (Headlee Pass)",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Vesper Peak",
+    "score": 0.4
+   },
+   {
+    "id": "wa_ragged_edge",
+    "name": "Ragged Edge",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Vesper Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_fish_whistle",
+    "name": "Fish & Whistle",
+    "disc": "alpine",
+    "grade": "5.10-",
+    "area": "Vesper Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_true_grit_2",
+    "name": "True Grit",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "Vesper Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_vesper_sperry",
+  "leg": 1,
+  "peak": "Sperry Peak",
+  "route": "South side of the west ridge",
+  "pick": {
+   "id": "wa_sperry_peak_upper_south_ridge",
+   "name": "Upper South Ridge",
+   "disc": "alpine",
+   "grade": "5.4",
+   "area": "Sperry Peak",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_sperry_peak_upper_south_ridge",
+    "name": "Upper South Ridge",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Sperry Peak",
+    "score": 0.5
+   },
+   {
+    "id": "wa_sperry_peak_east_face",
+    "name": "East Face (2002)",
+    "disc": "alpine",
+    "grade": "5.8+",
+    "area": "Sperry Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_sperry_peak_standard",
+    "name": "Standard Scramble",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Sperry Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_del_campo_gothic",
+  "leg": 0,
+  "peak": "Del Campo Peak",
+  "route": "South face / south gully from Foggy Lake",
+  "pick": {
+   "id": "wa_del_campo_peak_standard",
+   "name": "Standard Scramble",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Del Campo Peak",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_del_campo_peak_standard",
+    "name": "Standard Scramble",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Del Campo Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_del_campo_gothic",
+  "leg": 1,
+  "peak": "Gothic Peak",
+  "route": "West ridge from the Gothic–Del Campo saddle",
+  "pick": {
+   "id": "wa_gothic_peak_standard",
+   "name": "Standard Scramble (from Foggy Lake)",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Gothic Peak",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "wa_gothic_peak_standard",
+    "name": "Standard Scramble (from Foggy Lake)",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Gothic Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_ingalls_fortune",
+  "leg": 0,
+  "peak": "South Ingalls Peak",
+  "route": "From the col between the north and south summits, class 3 on the final section",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "wa_lu_ingalls_fortune",
+  "leg": 1,
+  "peak": "Fortune Peak",
+  "route": "Ridge from South Ingalls",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_fortune_peak_east_slope",
+    "name": "East Slope Route (Headlight Basin)",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Fortune Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_fortune_peak_standard_route",
+    "name": "Standard Route (Esmeralda Basin – Lake Ann Pass)",
+    "disc": "mountaineering",
+    "grade": "Class 2",
+    "area": "Fortune Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_cannon_enchantment_peak",
+  "leg": 0,
+  "peak": "Cannon Mountain",
+  "route": "Northeast ridge, class 3",
+  "pick": {
+   "id": "wa_cannon_mountain_northeast_ridge",
+   "name": "Northeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 4",
+   "area": "Cannon Mountain",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_cannon_mountain_northeast_ridge",
+    "name": "Northeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 4",
+    "area": "Cannon Mountain",
+    "score": 0.5
+   },
+   {
+    "id": "wa_cannon_mountain_south_slopes",
+    "name": "South Slopes",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Cannon Mountain",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_cannon_enchantment_peak",
+  "leg": 1,
+  "peak": "Enchantment Peak",
+  "route": "From Prusik Pass, class 3 with a short steeper pillar near the top",
+  "pick": {
+   "id": "wa_enchantment_peak_east_ridge",
+   "name": "East Ridge (Prusik Pass)",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Enchantment Peak",
+   "score": 0.2222222222222222
+  },
+  "others": [
+   {
+    "id": "wa_enchantment_peak_east_ridge",
+    "name": "East Ridge (Prusik Pass)",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Enchantment Peak",
+    "score": 0.2222222222222222
+   },
+   {
+    "id": "wa_enchantment_peak_southwest_scramble",
+    "name": "South Gully",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Enchantment Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_pinnacle_plummer_denman",
+  "leg": 0,
+  "peak": "Pinnacle Peak",
+  "route": "Scramble from the Pinnacle–Plummer saddle",
+  "pick": {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "name": "Pinnacle Saddle / South Gully",
+   "disc": "scrambling",
+   "grade": "Class 4",
+   "area": "Pinnacle Peak",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "wa_pinnacle_peak_tatoosh_r1",
+    "name": "Pinnacle Saddle / South Gully",
+    "disc": "scrambling",
+    "grade": "Class 4",
+    "area": "Pinnacle Peak",
+    "score": 0.5
+   },
+   {
+    "id": "wa_pinnacle_mountain_entiat_scramble",
+    "name": "Standard Scramble",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Pinnacle Mountain",
+    "score": 0.25
+   },
+   {
+    "id": "wa_rampage",
+    "name": "Rampage",
+    "disc": "alpine",
+    "grade": "5.10d",
+    "area": "Paisano Pinnacle",
+    "score": 0
+   },
+   {
+    "id": "wa_west_ridge_2",
+    "name": "West Ridge",
+    "disc": "alpine",
+    "grade": "5.8+",
+    "area": "Paisano Pinnacle",
+    "score": 0
+   },
+   {
+    "id": "wa_east_ridge_8",
+    "name": "East Ridge",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Pinnacle Peak",
+    "score": 0
+   },
+   {
+    "id": "wa_poltergeist_pinnacle_north_route",
+    "name": "East Face",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Poltergeist Pinnacle",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_pinnacle_plummer_denman",
+  "leg": 1,
+  "peak": "Plummer Peak",
+  "route": "From the saddle, a short heather scramble",
+  "pick": {
+   "id": "wa_plummer_peak_r1",
+   "name": "Pinnacle Saddle / North Slopes",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Plummer Peak",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "wa_plummer_peak_r1",
+    "name": "Pinnacle Saddle / North Slopes",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Plummer Peak",
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_pinnacle_plummer_denman",
+  "leg": 2,
+  "peak": "Denman Peak",
+  "route": "Ridge scramble",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "wa_lu_washington_ellinor",
+  "leg": 0,
+  "peak": "Mount Washington",
+  "route": "Standard climbers trail to the upper basin, then the summit block by ledges",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_mount_washington_olympic_winter_direct",
+    "name": "Winter Direct",
+    "disc": "alpine",
+    "grade": "Class 4",
+    "area": "Mount Washington",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_washington_olympic_standard",
+    "name": "Standard Scramble (above Lake Cushman)",
+    "disc": "scrambling",
+    "grade": "Class 4",
+    "area": "Mount Washington",
+    "score": 0
+   },
+   {
+    "id": "wa_washington_ellinor_traverse_ridge",
+    "name": "Washington Ellinor Traverse (Ridge)",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Mount Washington",
+    "score": 0
+   },
+   {
+    "id": "wa_se_ridge_aka_shield_wall",
+    "name": "SE Ridge AKA Shield Wall",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Mount Washington",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "wa_lu_washington_ellinor",
+  "leg": 1,
+  "peak": "Mount Ellinor",
+  "route": "Ridge east from Washington",
+  "pick": null,
+  "others": [
+   {
+    "id": "wa_mount_ellinor_standard",
+    "name": "Standard Trail (Upper Trailhead, NFR 24)",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Ellinor",
+    "score": 0
+   },
+   {
+    "id": "wa_mount_ellinor_southeast_chute",
+    "name": "Southeast Chute",
+    "disc": "mountaineering",
+    "grade": "Easy Snow",
+    "area": "Mount Ellinor",
+    "score": 0
+   }
+  ]
+ }
+]

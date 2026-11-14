@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { NPX, NPX_PRE } from "./lib/npx.mjs";
 // Drives the real app in a real browser and asserts things that must be true on
 // every screen. Complements scripts/check-undefined-refs.mjs: that one catches
 // unbound identifiers at build time, this one catches what only shows up once
@@ -147,8 +148,8 @@ const LANDMARKS = {
 // so clicking a control and capturing is what turns that silence into a failure.
 const DISCLOSURE = [
   /^\d+ updates?\s*[▾▸]?$/,     // "11 updates ▾"  (activity feed)
-  /^Alerts( · \d+ new)?\s*[▾▸]?$/,
-  /^View all \d+ \w+$/,                   // "View all 14 alerts"
+  /^Notifications( · \d+ new)?\s*[▾▸]?$/,   // Home's list, called Alerts until 2026-11-11
+  /^View all \d+ \w+$/,                   // "View all 14 notifications"
   /^View \d+ more suggestions?$/,
   /^Suggested climbs( · \d+)?\s*[▾▸]?$/,
   /^\d+ (updates|reports|climbs)\s*[▾▸]$/,
@@ -237,7 +238,7 @@ if (!base) {
   log(`starting dev server on ${port}...`);
   // VITE_DEMO_AUTOLOGIN keeps the demo gate open for this harness. Without it the real
   // account gate blocks every screen and the check can only ever report the login form.
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } });
   // --strictPort means vite exits rather than sliding to another port. If it dies,
   // whatever answers our URL is not ours, so treat its exit as fatal instead of
@@ -417,6 +418,12 @@ async function capture(name) {
 // seconds, twelve failures deep, when the real story is one line: the app never
 // rendered. Poll for the bottom nav before any phase proceeds, and say that one
 // line if it never shows.
+//
+// A visitor with no session lands on the sign-in screen, which has no nav bar. The server
+// this script spawns skips it (VITE_DEMO_AUTOLOGIN), but a deployment walked with --url
+// does not: the live-site check failed every run from 2026-10-23 to 2026-11-13 on a
+// healthy site, because it waited two minutes for a "Home" button behind a gate it never
+// opened. So take the gate's own way in, "View as guest", whenever it is what is on screen.
 async function waitForApp(timeoutMs) {
   const t0 = Date.now();
   while (Date.now() - t0 < timeoutMs) {
@@ -424,6 +431,10 @@ async function waitForApp(timeoutMs) {
       [...document.querySelectorAll('button,[role="button"]')].some((e) => (e.textContent || "").trim() === "Home")
     ).catch(() => false);
     if (up) return true;
+    await page.evaluate(() => {
+      const g = [...document.querySelectorAll('button,[role="button"]')].find((e) => (e.textContent || "").trim() === "View as guest");
+      if (g) g.click();
+    }).catch(() => {});
     await page.waitForTimeout(1000);
   }
   return false;
@@ -786,7 +797,7 @@ try {
   });
 
   // THE PROFILE SCREEN'S OWN TABS (Profile · Activity · Review for admins). The main walk captures
-  // Profile; Activity holds the logbook, the catch record and the Year in Climbing banner, so it is
+  // Profile; Activity holds the logbook and the Year in Climbing banner, so it is
   // captured here under the same rules (LANDMARKS["Profile:Activity"] asserts the banner). Profile is
   // tapped last so the screen is left where a visit starts.
   await flow("profile-tabs-switch", async () => {

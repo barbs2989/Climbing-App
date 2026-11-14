@@ -1,0 +1,34 @@
+{
+  "area_id": "wa_arrowhead_mountain",
+  "routes": [
+    {
+      "route_id": "wa_arrowhead_mountain_south_route",
+      "season": { "months": [12,1,2,3,4], "window": "Dec-Apr", "evidence": "Successful logged ascents: Jan 62, Mar 53, Feb 33, Dec 28, Apr 23, May 19, Nov 10, Jul-Oct only 4 in total. Guide pages for this approach call it a winter-snow outing and our own text says it is almost always done on snow. Stored Dec-Apr stands; Nov and May reports are within the one-month margin." },
+      "track": { "aid": "2481857", "verdict": "same", "kind": "oneway", "inSeason": true,
+                 "why": "Feb 5 2022, Successful Summit. Starts 39 m from our trailhead pin, runs west to the Nason Creek bridge, doubles back east along the rail/forest-road line, climbs the forest to the ridge near 4,800 ft east of the summit and follows it west to the summit (highest point 9 m from our pin). That is the line our approach and beta text describe (cross Nason Creek and the railroad, steep forest, ridge at about 4,600-4,800 ft). The logged name 'north face - east ridge' is loose but the line agrees. It is a one-way recording that ends at the summit; there is no descent." },
+      "otherTracksConsidered": [
+        { "aid": "2107213", "verdict": "same", "why": "Jan 2 2023 round trip, same line, summit reached. Not chosen only because its start (318 m) and end (312 m) miss our trailhead pin by a little over the 300 m rule, so it is not mechanically 'complete'. The trailhead was not confirmable (see notes), so no pin move is proposed. If the owner later accepts the pullout 310 m east of our pin, this becomes the best complete round trip (and 3393598 too)." },
+        { "aid": "3393598", "verdict": "offseason", "why": "Oct 31 2026: bare-ground ascent, same line and cluster as 2107213 (start 307 m), outside the Dec-Apr window and a month beyond the Jul-Sep bare-ground window." },
+        { "aid": "3106346", "verdict": "different", "why": "Jan 25 2026 summit, but starts about 1 km west at another pullout (just after the railway underpass) and walks the rail line, a longer variant of the access; line from the ridge up is the same. Start misses our trailhead by 1.0 km so it is not our approach." },
+        { "aid": "3100045", "verdict": "different", "why": "Jan 18 2026, same west-pullout start as 3106346 (1.0 km from our trailhead pin); no usable report text." },
+        { "aid": "942716", "verdict": "different", "why": "Mar 25 2018 East Ridge summit; walked the rail line from the west pullout (1.3 km from our pin), so a different start than our text." },
+        { "aid": "942248", "verdict": "different", "why": "Mar 25 2018 East Ridge, same west-pullout start as 942716 (1.3 km)." },
+        { "aid": "911585", "verdict": "different", "why": "Jan 2 2018 East Ridge, west-pullout start (1.0 km from our pin)." },
+        { "aid": "597259", "verdict": "different", "why": "Nov 27 2015 summit, in the one-month margin, but starts at the west pullout (1.3 km from our pin)." },
+        { "aid": "417683", "verdict": "different", "why": "May 10 2014 NE Ridge from White Pine Creek Road on the east side; a different approach and trailhead, 3 km from our pin." },
+        { "aid": "1329939", "verdict": "unsure", "why": "Feb 11 2020 summit; no track points, so cannot be checked. Report matches our approach (cross Nason Creek, railroad, ridge near 5,000 ft) and is used for facts only." },
+        { "aid": "1118780", "verdict": "different", "why": "Feb 24 2019 ski ascent via the northeast timbered basin to the east ridge; no track points and a different approach line." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "what_to_bring", "month": 1, "text": "Crampons (January to March: the lower forest slope is often hard and icy)", "aids": ["2107213","942716"] },
+        { "field": "pro_tips", "month": 2, "text": "From about 4,500 ft up in February, expect roughly a foot of soft snow over a hard crust, so snowshoes are worth wearing there.", "aids": ["1329939","2107213"] },
+        { "field": "monthBreakdown", "month": 3, "text": "Late March can mean hard crust under knee-deep powder on the last 1,000 ft, which slows the final stretch even in snowshoes.", "aids": ["942716","1329939"] },
+        { "field": "monthBreakdown", "month": 1, "text": "In a cold, low-snow January the pack can stay firm enough for traction spikes alone, with a belt of blowdowns near 3,800-4,000 ft the main postholing risk.", "aids": ["3106346"] },
+        { "field": "descent_note", "month": 3, "text": "In February and March the forest descent is quick: boot-ski down on the crust, but soft snow lying over crust can feel slick, so keep an axe handy.", "aids": ["942716","1329939","3106346"] },
+        { "field": "approach_note", "month": 2, "text": "In February 2020 the highway patrol checked cars left on the shoulder and the maintenance yard itself was off limits for parking; pick a legal, signed spot well off the road.", "aids": ["1329939"] }
+      ]
+    }
+  ],
+  "notes": "Trailhead: no move or add proposed because I could not confirm a coordinate from an official or mapped source (Nominatim has nothing here; guide pages describe the parking in words only: a pullout just east of the WSDOT yard/Nason Creek bridge, walk west on the shoulder, cross the creek, cross the railroad). Evidence nominates a spot 310 m east of our pin at about 47.77445,-120.96232 (three tracks start there, and a Feb 2020 report puts the legal wide spot about a quarter mile east of the creek and the yard further west). Our pin (47.774492,-120.96643) sits at the yard itself. A second cluster of five tracks starts about 1 km west (47.771,-120.979) and walks the railroad, which is an alternative access not in our text. Other pin oddities: our 'Gain the northeast shoulder/ridge' pin (47.7635,-120.9763, 4,800 ft) and 'Minor cliff bands' pin (47.7587,-120.9712) lie 1 km or more west of the summit, but every track reaches the 4,800 ft ridge at about 47.7587,-120.9525, EAST of the summit, and follows it west; the east-ridge line fits the guide text (ridge reached at 4,800 ft, walk west to the summit). Those two pins look misplaced and the route name 'South Route' does not match its north-side approach. Summit pin is fine (5 m from Peakbagger's lidar coordinate and within 20 m of every track's high point). A summer (Jul-Sep) bare-ground window is claimed by our text but only 4 logged ascents fall between Jul and Oct, all unlabeled."
+}

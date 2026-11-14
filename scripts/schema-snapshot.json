@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-25",
+  "generatedAt": "2026-11-04",
   "tables": {
     "accessibility_reports": [
       "assistive",
@@ -18,6 +18,18 @@
       "set_by",
       "status",
       "until",
+      "user_id"
+    ],
+    "app_errors": [
+      "build",
+      "component_stack",
+      "created_at",
+      "id",
+      "kind",
+      "message",
+      "path",
+      "stack",
+      "user_agent",
       "user_id"
     ],
     "app_feedback": [
@@ -65,7 +77,10 @@
       "rock",
       "rock_basis",
       "route_count",
-      "season_months"
+      "season_months",
+      "walkin_gpx",
+      "walkin_kind",
+      "walkin_submission_id"
     ],
     "belay_catches": [
       "belayer_id",
@@ -173,6 +188,7 @@
       "snow_condition",
       "snow_depth",
       "stars",
+      "summited",
       "sun_note",
       "sun_vote",
       "temp_f",
@@ -185,8 +201,10 @@
     ],
     "climber_resumes": [
       "climbs",
+      "conditioning",
       "courses",
       "headline",
+      "hidden_logs",
       "updated_at",
       "user_id"
     ],
@@ -321,6 +339,14 @@
       "last_read_at",
       "user_id"
     ],
+    "crew_rides": [
+      "crew_id",
+      "from_area",
+      "mode",
+      "seats",
+      "updated_at",
+      "user_id"
+    ],
     "crew_safety_answers": [
       "answers",
       "crew_id",
@@ -345,7 +371,9 @@
       "itinerary_by",
       "meet_place",
       "meet_time",
-      "route_id"
+      "route_id",
+      "share_on",
+      "share_token"
     ],
     "crews_messages": [
       "body",
@@ -394,6 +422,7 @@
       "admin_notes",
       "approved_at",
       "approved_by",
+      "area_id",
       "climb_date",
       "climber_email",
       "climber_name",
@@ -404,6 +433,7 @@
       "issues",
       "notes",
       "quality_score",
+      "replaced_gpx",
       "route_id",
       "status",
       "submitted_at",
@@ -512,6 +542,7 @@
     ],
     "groups": [
       "accent",
+      "area_id",
       "blurb",
       "created_at",
       "created_by",
@@ -520,6 +551,8 @@
       "id",
       "invite_policy",
       "join_questions",
+      "lat",
+      "lng",
       "location",
       "moderation",
       "name",
@@ -811,6 +844,20 @@
       "route_id",
       "status"
     ],
+    "route_link_ups": [
+      "checked_at",
+      "created_at",
+      "descent",
+      "duration",
+      "how",
+      "id",
+      "legs",
+      "logistics",
+      "name",
+      "region",
+      "route_ids",
+      "state"
+    ],
     "route_ratings": [
       "created_at",
       "route_id",
@@ -846,6 +893,7 @@
       "bivy",
       "bolts",
       "classic",
+      "classic_score",
       "climate",
       "climbing_route",
       "commitment",
@@ -941,13 +989,6 @@
     "saved_areas": [
       "area_id",
       "created_at",
-      "user_id"
-    ],
-    "saved_searches": [
-      "created_at",
-      "id",
-      "name",
-      "query",
       "user_id"
     ],
     "screening_terms": [

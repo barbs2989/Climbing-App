@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // One-off: apply REVIEWED replacements of whole `routes` column values, each against a DECLARED current value.
 //
 //   node scripts/oneoff/apply-declared-fields.mjs <fixes.json> <audit-subdir> [--apply]
@@ -56,7 +57,7 @@ console.log(`\n${plan.length} to write, ${refused} refused.`);
 if (!APPLY) { console.log("dry run — pass --apply to write."); process.exit(refused ? 1 : 0); }
 if (!plan.length) process.exit(refused ? 1 : 0);
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 fs.mkdirSync(path.join(ROOT, "audits", sub), { recursive: true });
 const rb = path.join(ROOT, "audits", sub, `rollback-declared-fields-${Date.now()}.json`);
 fs.writeFileSync(rb, JSON.stringify(plan.map((p) => ({ id: p.id, area_id: p.area_id, ...p.before })), null, 1));

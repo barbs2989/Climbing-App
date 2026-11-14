@@ -1,0 +1,124 @@
+{
+ "id": "wa_east_twin_needle_south_route",
+ "name": "South Route",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_east_twin_needle",
+  "name": "East Twin Needle",
+  "lat": 48.7767,
+  "lng": -121.3115,
+  "elevation_ft": 7868,
+  "parent_id": "wa_southern_pickets",
+  "ground_ft": 7840
+ },
+ "dist_km": 31.4,
+ "gain_ft": 7268,
+ "high_point_ft": 7868,
+ "approach_logistics": {
+  "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+  "trailheadLat": 48.68664,
+  "trailheadLng": -121.27121,
+  "trailheadDirection": "From Burlington drive about 60 miles east on SR-20 to milepost 119 near Newhalem, where the steep, narrow dirt access road to the Upper Goodell group campground leaves the highway."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.673235,
+   "lng": -121.267375,
+   "elev": 500,
+   "name": "Goodell Creek Campground, roadhead staging",
+   "type": "Campsite",
+   "ground_ft": 487
+  },
+  {
+   "i": 1,
+   "lat": 48.68664,
+   "lng": -121.27121,
+   "elev": 600,
+   "name": "Goodell Creek Trailhead (Cross-Country Zone Access, Upper Goodell Creek)",
+   "note": "Goodell Creek Trail -> Terror Creek ford -> The Barrier -> Crescent Creek Basin -> Eye Col approach used for all Twin Needles routes.",
+   "type": "Trailhead",
+   "elevFt": 600,
+   "directions": "Drive SR-20 east to Newhalem. Just after crossing Goodell Creek, take the first left onto a small road, turn immediately left at the T, and follow the road uphill to the Upper Goodell Creek Group Camp at about 600 ft; park there, and the climbers' path starts just down the road. Overnight camps in Crescent Creek Basin need a North Cascades backcountry permit, issued walk-up only at the Marblemount Wilderness Information Center.",
+   "ground_ft": 611
+  },
+  {
+   "i": 2,
+   "lat": 48.720424186046515,
+   "lng": -121.27755162790697,
+   "elev": 2100,
+   "name": "Terror Creek logjam crossing",
+   "note": "Climbers' path fades to bushwhack here; cross Terror Creek by fording, or on a big log just upstream when one is in place (last reliable water before the steep, cliffy push up toward the Barrier).",
+   "type": "Water",
+   "distMi": 3.8,
+   "directions": "Follow the old Goodell Creek roadbed, an unmaintained climbers' path with deadfall and washouts, about 4 miles upvalley to a large cairn where the path leaves the roadbed. Cross Terror Creek here by wading or on a big log just upstream when one is in place; it runs higher with snowmelt in the afternoon.",
+   "ground_ft": 3426
+  },
+  {
+   "i": 3,
+   "lat": 48.764392,
+   "lng": -121.28099,
+   "elev": 5800,
+   "name": "Terror Basin camp",
+   "type": "Campsite",
+   "ground_ft": 5940
+  },
+  {
+   "i": 4,
+   "lat": 48.766899,
+   "lng": -121.301569,
+   "elev": 6050,
+   "name": "Crescent Creek Basin camp",
+   "type": "Campsite",
+   "ground_ft": 6293
+  },
+  {
+   "i": 5,
+   "lat": 48.745203255813955,
+   "lng": -121.28299348837209,
+   "elev": 6100,
+   "name": "The Barrier ridge crossing",
+   "note": "Loose, exposed scrambling (harder late-season without snow cover) gains this ridge that separates the Terror Creek drainage from Crescent Creek Basin.",
+   "type": "Junction",
+   "distMi": 6.3,
+   "directions": "Climb straight up the steep, brushy crest of the Barrier, with no water until snowmelt puddles appear around 5,400 ft, to timberline near 5,600 ft. Loose, exposed ledges and talus, harder late in the season without snow cover, lead to the ridge crossing at about 6,100 ft.",
+   "ground_ft": 3109
+  },
+  {
+   "i": 6,
+   "lat": 48.756967,
+   "lng": -121.30485,
+   "elev": 6400,
+   "name": "Chopping Block saddle camp (above Crescent Creek Basin)",
+   "note": "Established bivy sites on the saddle northeast of the Chopping Block, used as base camp for both Twin Needles; Crescent Creek Basin, the talus/scree basin below the south-facing summit gullies, lies about 200 ft below.",
+   "type": "Campsite",
+   "distMi": 7,
+   "directions": "Cross slabs and heather through Stump Hollow, between the Barrier crest and the Chopping Block, to the established bivy sites on the saddle northeast of the Chopping Block at about 6,400 ft.",
+   "ground_ft": 6225
+  },
+  {
+   "i": 7,
+   "lat": 48.7765,
+   "lng": -121.312,
+   "elev": null,
+   "name": "Eye Col",
+   "note": "Class-5 chockstone squeeze gains the notch between the summit gullies shared with West Twin Needle; rope up for this section.",
+   "type": "Junction",
+   "distMi": 8.5,
+   "directions": "Drop about 200 ft into Crescent Creek Basin, cross its talus, slabs and snow, and work around buttresses to the loose south-facing gullies beneath the Eye Col. Keep the party together against rockfall; the small chockstones low in the gully are scrambled, the larger ones higher up are fifth class and usually roped, and a short scree walk finishes at the notch.",
+   "ground_ft": 7745
+  },
+  {
+   "i": 8,
+   "lat": 48.7767,
+   "lng": -121.3115,
+   "elev": 7840,
+   "name": "East Twin Needle",
+   "note": "East Twin Needle sits atop 'Eye Col' immediately adjacent to West Twin Needle.",
+   "type": "Summit",
+   "elevFt": 7840,
+   "directions": "Climb the steep summit block of East Twin Needle directly above the col, roped; the crux is a short hand crack near the top, which can hold ice early in the season.",
+   "ground_ft": 7840
+  }
+ ]
+}

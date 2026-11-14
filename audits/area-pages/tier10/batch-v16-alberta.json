@@ -1,0 +1,28 @@
+{
+ "ab_back_wall": {
+  "_expect": { "name": "Back Wall", "region": "Alberta" },
+  "blurb": "Back Wall is a sector of Little Russia, a limestone sport venue in the canyon west of Nordegg along the David Thompson corridor. It holds eleven bolted routes. Most fall between 5.8 and 5.11, with a couple of easier lines and several 5.11s, so it suits climbers who are past the beginner stage but not yet chasing the hardest grades. The face is vertical to slightly off-vertical, and it sits on the canyon side that is easier and sunnier than the steep, shaded walls opposite. Expect some loose rock and falling debris, particularly early in the season, so a helmet is worthwhile.",
+  "approach": "Follow the trail along the north and east bank of the creek, take the signed left fork, and cross the creek just before the canyon narrows to reach the large overhang. The wall lies on the far side of the creek, directly facing the North Face sector.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120181541/back-wall", "https://mountainproject.com/area/116647936/little-russia"] }
+ },
+ "ab_far_left": {
+  "_expect": { "name": "Far Left", "region": "Alberta" },
+  "blurb": "Far Left is a shaded sector in Little Russia, a limestone sport area in a canyon near Nordegg in the David Thompson corridor. Its eleven bolted lines are mostly vertical and technical, on generally solid stone. The grades start around 5.10 and cluster heavily in the 5.11s, with a few at 5.12, so it is a place for climbers already comfortable on hard sport routes rather than newcomers. The wall gets almost no direct sun, which keeps it cool on warm days; air drifting down the canyon can be a mix of warm and very cold. Wear a helmet, as some loose rock remains.",
+  "review": { "sources": ["https://www.mountainproject.com/area/120181530/far-left", "https://mountainproject.com/area/116647936/little-russia"] }
+ },
+ "ab_the_dark_side": {
+  "_expect": { "name": "The Dark Side", "region": "Alberta" },
+  "blurb": "The Dark Side is a small single-pitch sport crag at the eastern end of the Ostraland cliff line on Moose Mountain in Kananaskis. It has about ten bolted routes, nearly all of them 5.11 with a single 5.12, on dark, firm rock. The climbing is steepish, with short, clearly defined cruxes rather than long sustained sections. As the name hints, the wall faces north and stays shaded, so it is a cool choice in summer and early fall, though damp conditions can leave the rock slick. It sits close to the Painted Wall, sees few visitors, and is a good pick for 5.11 climbers wanting a quiet day.",
+  "review": { "sources": ["https://app.advcollective.com/climbing/climbing-the-dark-side-a-north-facing-challenge-in-kananaskis", "https://sendage.com/area/dark-side-moose-mountain-kananaskis-ab-canada"] }
+ },
+ "_skipped": {
+  "ab_mount_wilson": "no fetched page about the ice crag itself (only Wikipedia on the peak)",
+  "ab_stanley_headwall_routes": "only a route page fetched; no area page about this ice crag",
+  "ab_3_the_sweet_hereafter": "could not fetch two pages about the crag (403s; sendage is a single route, Bataan page does not mention it)",
+  "ab_the_scoop": "no page about The Scoop itself; only the Tunnel Mountain parent page fetched",
+  "ab_memorial_wall": "the only Memorial Wall page found is in Arizona; no fetched page about this Alberta crag"
+ },
+ "_conflicts": {
+  "ab_back_wall": "Stored aspect N, but https://www.mountainproject.com/area/120181541/back-wall (morning and afternoon sun) and https://mountainproject.com/area/116647936/little-russia (right side of canyon is the sunnier side) say it is sunny"
+ }
+}

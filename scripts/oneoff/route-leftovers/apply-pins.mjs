@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Apply confirmed pin operations: move a waypoint (compare-and-set on its name + coordinate), or remove one.
 // A route whose drawn line passes exactly through the old coordinate has that vertex carried with the pin, so a
 // repair does not strand the line (docs/guards/waypoints-and-tracks.md, "A PIN REPAIR HAS TO CARRY ITS SKETCHED LINE").
@@ -6,7 +7,7 @@
 import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../../lib/supabase-env.mjs";
 const key = requireServiceKey();
-const T = new URL("../../../audits/route-leftovers", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/route-leftovers", import.meta.url));
 const file = process.argv[2], DRY = process.argv.includes("--dry");
 const { results } = JSON.parse(fs.readFileSync(`${T}/${file}`));
 const one = async id => (await (await fetch(`${SUPABASE_URL}/rest/v1/routes?select=id,waypoints,gpx&id=eq.${encodeURIComponent(id)}`, { headers: headers(key) })).json())[0];

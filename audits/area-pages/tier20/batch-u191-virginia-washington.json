@@ -1,0 +1,40 @@
+{
+ "va_quarry": {
+  "_expect": {"name": "Quarry", "region": "Virginia"},
+  "blurb": "An old quarry on Belle Isle, an island in the James River right in Richmond. The cut faces are short, mostly 30 to 40 feet, and almost everything here is set up as a top rope, with just a few bolted lines. Difficulty runs from easy fifth class up to 5.9, with the bulk of the routes in the 5.7 to 5.9 range, so it suits newer climbers and anyone wanting quick laps close to town. There is some bouldering nearby too. Because so few routes have lower-offs, bring your own rope and slings for building anchors, and expect to walk in from the footbridge side.",
+  "review": {"sources": ["https://jamesriverpark.org/climbing", "https://www.mountainproject.com/viewer-old/107008498"]}
+ },
+ "wa_spire_rock": {
+  "_expect": {"name": "Spire Rock", "region": "Washington"},
+  "blurb": "A man-made climbing wall on the edge of Tacoma, put together by volunteers in the 1970s from stacked stone blocks set in concrete. It is one of the oldest artificial practice walls in the state. Most lines are top-ropes reached by scrambling up the back, and about a third can be led on natural gear, with cracks, chimneys, small roofs and face climbs. Grades span easy fifth class to 5.11, with a cluster around 5.10, plus one hard boulder problem. Holds can be slick and the cracks are often damp and mossy, so it works best as a place to practice gear placements and anchor building rather than for polished movement.",
+  "review": {"sources": ["https://mountainproject.com/area/107211913/spire-rock", "https://c3620763.myzen.co.uk/spirerock.htm"]}
+ },
+ "wa_banks_lake_ice_climbing": {
+  "_expect": {"name": "Banks Lake Ice Climbing", "region": "Washington"},
+  "blurb": "Roadside waterfall ice along State Route 155 between Coulee City and Grand Coulee, on the basalt walls of the coulee in central Washington. Most flows are visible from the car and need only a short walk. Grades run from WI3 up to WI6, with the largest group at WI5 and a fair number of WI4 lines. Flows come in only after a sustained cold snap, so the season is brief and some winters give very little. Ice quality ranges from plastic to brittle, many climbs finish in brush, and the biggest flows shed ice as the day warms, so early starts are wise.",
+  "review": {"sources": ["https://www.mountainproject.com/area/116630932/banks-lake-ice-climbing", "https://alpinedave.com/banks_lake/banks_lake1.html"]}
+ },
+ "wa_playground_point_climbs": {
+  "_expect": {"name": "Playground Point Routes", "region": "Washington"},
+  "blurb": "A friendly, compact crag in the Icicle Creek corridor near Leavenworth, made up of tiered cliff bands with a roughly even split of sport and trad lines. Most routes are short single pitches finishing at anchors with walk-off descents, which keeps it relaxed for beginners and groups learning to lead. Grades run from 5.3 up to 5.10, with most of the climbing between 5.6 and 5.8. The approach is a short hike on a signed trail from the road, and it tends to be quieter than the bigger walls up the canyon. Bring a standard rack with small to medium cams if you plan to lead the trad lines.",
+  "review": {"sources": ["https://app.advcollective.com/climbing/playground-point-area-icicle-creek-climbing-guide", "https://www.mountainproject.com/v/playground-point/106495306"]}
+ },
+ "wa_narrow_arrow_and_further_right": {
+  "_expect": {"name": "Narrow Arrow and further right", "region": "Washington"},
+  "blurb": "The right-hand stretch of the Lower Town Wall at Index, in the Skykomish Valley, beginning at a tower and continuing as the cliff curls back into the hillside. All the climbing here is traditional, mostly cracks, and the wall is steeper than the rest of the lower cliff. Grades range from 5.8 to 5.13, but the weight is firmly in the 5.10 to 5.12 range, so it is better for experienced leaders than newcomers. A few routes are multi-pitch. Because the rock turns away from the sun, this end gets shade earlier in the day than the left side of the wall, which helps on hot afternoons.",
+  "review": {"sources": ["https://mountainproject.com/area/108143218/narrow-arrow-and-further-right?print=1", "https://www.mountainproject.com/area/105790643/lower-town-wall"]}
+ },
+ "wa_bend_north": {
+  "_expect": {"name": "Bend North", "region": "Washington"},
+  "blurb": "The first section of the Bend that you see when driving west up the Tieton River canyon near Yakima. The andesite here is split by clean crack lines up to about 90 feet, with a handful of bolted column routes among them. Nearly all of the climbing is trad, with a smaller number of sport lines. Grades start around 5.6 and reach into the low 5.12 range, with a strong concentration at 5.10, so there is plenty for solid intermediate leaders and a few moderates for warming up. The trail in crosses a suspension footbridge, and rattlesnakes live along the approaches in warm weather.",
+  "review": {"sources": ["https://mountainproject.com/area/105929558/bend-north", "https://mountainproject.com/area/105929507/the-bend"]}
+ },
+ "_skipped": {
+  "wa_elwhall_the": "could not fetch two pages: only the parent Elwha River page was readable (Mountaineers page returned 403, UKClimbing 402)",
+  "wa_waka_beach": "could not fetch two pages: only the parent Elwha River page was readable (Mountaineers page returned 403, UKClimbing 402)"
+ },
+ "_conflicts": {
+  "va_quarry": "stored rock gneiss; the Belle Isle page calls it an old granite quarry (https://www.mountainproject.com/viewer-old/107008498)",
+  "wa_playground_point_climbs": "stored rock diorite; one page says granite (https://app.advcollective.com/climbing/playground-point-area-icicle-creek-climbing-guide), the other does not state the rock"
+ }
+}

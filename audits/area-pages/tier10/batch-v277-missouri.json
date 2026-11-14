@@ -1,0 +1,80 @@
+{
+ "mo_overhang_the": {
+  "_expect": {
+   "name": "Overhang, The",
+   "region": "Missouri"
+  },
+  "blurb": "The Overhang is a steep, roof-capped wall on the Cliff Drive limestone bluffs in Kansas City, Missouri, set to the right of the Big Crack and Small Crack sections. It holds 17 routes, nearly all bolted sport lines with a single trad route. The grades lean hard: most routes sit around 5.12, with a handful of 5.11s, one 5.10 and one easy outlier. The climbing is sequential and powerful, and routes can feel stiffer than their numbers. Rock quality is regarded as the best on the cliff, though the stone is smooth and a bit polished. Most of the wall was re-bolted in 2014, and a few lines can be top-roped by rappelling to the anchors. A good pick for strong sport climbers who like steep walls close to town.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106125377/the-overhang",
+    "https://mountainproject.com/area/106125346/wm-cliff-drive"
+   ]
+  }
+ },
+ "mo_c_legacy_wall": {
+  "_expect": {
+   "name": "Legacy Wall",
+   "region": "Missouri"
+  },
+  "blurb": "Legacy Wall is a long, scooped section of cliff within Robinson Bluff in eastern Missouri, built almost entirely of bolted sport routes with a few that can also be top-roped. Lines run roughly 35 to 100 feet, and one reaches two pitches. The 17 climbs here are mostly 5.10, with a good number of 5.11s and a few easier routes from 5.6 to 5.9, so it suits climbers working through the 5.10 range. The face is steep and slightly overhanging in places, with slotted pockets, small cave ledges and red-stained stone. It stays shaded through summer and catches morning sun in winter. The trail to the base passes another wall first and is redirected around a set of boulders at the foot.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/114524838/legacy-wall",
+    "https://www.mountainproject.com/route/116576947/legacy-falls"
+   ]
+  }
+ },
+ "mo_em_washington_state_park": {
+  "_expect": {
+   "name": "Washington State Park",
+   "region": "Missouri"
+  },
+  "blurb": "This is a bluff of roughly 50 feet above the Big River near De Soto, about an hour south of St. Louis. The face is streaked orange, black and gray, and its older bolts were swapped for new hardware in a recent restoration. All 16 routes here are sport climbs, and the spread skews hard: most are in the 5.12 to 5.13 range, with a couple of 5.11s and only a few easier lines from the 5.4 to 5.10 range. Moves include side pulls, underclings and dynamic reaches, so this is mainly a destination for strong climbers, with a few warm-ups and moderates. Expect a quieter day than at Missouri's more famous crags.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112851992/em-washington-state-park",
+    "https://www.stlpr.org/health-science-environment/2022-12-29/parks-workers-hope-crag-updates-make-underrated-missouri-a-climbing-haven",
+    "https://terrain-mag.com/?p=52641"
+   ]
+  }
+ },
+ "mo_battress_area": {
+  "_expect": {
+   "name": "Battress Area",
+   "region": "Missouri"
+  },
+  "blurb": "Battress Area is the northern end of the Providence bluffs along the Katy Trail near the Missouri River, south of Columbia. The bluff faces southwest, with trees giving afternoon shade, and mornings are the cooler time to climb in summer. It has 16 routes, nearly all bolted sport with one trad crack. Climbs run from an easy 5.5 up to 5.11, but the heart of the area is 5.10, with several 5.11s as well. Hard bands and pockets are common on the cliffs here, and belayers do well to wear a helmet and stand off to the side. Spring, fall and winter are the comfortable seasons.",
+  "parking_note": "Use the Providence access lot, reached from Providence Road about five miles south of Columbia.",
+  "approach": "From the lot, head north along the Katy Trail, then take a short uphill path to the bluff and walk along its base to the climbs.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112174688/battress-area",
+    "https://www.mountainproject.com/area/112174691/north-area",
+    "https://www.mountainproject.com/area/112174683/cm-providence"
+   ]
+  }
+ },
+ "mo_washboard_area_the": {
+  "_expect": {
+   "name": "Washboard Area, The",
+   "region": "Missouri"
+  },
+  "blurb": "The Washboard Area is one of the main sections of the lakeside limestone cliffs at Warsaw, on the shore of Truman Lake in west-central Missouri. It is the second zone from the west end of the cliff line, reached by dropping down the western gully and turning west at the bottom. About 15 routes are here, most of them bolted sport lines with a few trad climbs. Grades go from easy to 5.12, but the bulk are 5.9 to 5.11, so it works for intermediate climbers. Many of the cliff's classics are on this stretch. Routes are short, typically a 50 meter rope reaches, and because the tops are walkable you can rappel in or set top-ropes on most lines. Expect wind and sun for much of the day.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/105899094/the-washboard-area",
+    "https://www.mountainproject.com/area/105899025/wm-warsaw"
+   ]
+  }
+ },
+ "_skipped": {
+  "mo_the_reef": "only one fetched page about the crag (Mountain Project); no second page found after multiple searches",
+  "mo_gans_creek": "only a parent-area page (Columbia Area Bouldering) mentions it; no page about the crag itself",
+  "mo_c_the_front_range": "only a parent-area page (Elephant Rocks SP) lists it; no page about the crag itself"
+ },
+ "_conflicts": {
+  "mo_em_washington_state_park": "stored rock dolomite; fetched pages (https://www.mountainproject.com/area/112851992/em-washington-state-park, https://terrain-mag.com/?p=52641) say limestone",
+  "mo_battress_area": "stored rock dolomite; https://www.mountainproject.com/area/112174683/cm-providence says limestone and chert"
+ }
+}

@@ -32,6 +32,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MIG = path.join(ROOT, "supabase", "migrations");
@@ -149,7 +150,8 @@ for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
   (/\bCRAG_CATS\.includes\(catOf\(r\)\)/.test(app) ? ok : fail)("...and excludes crag-family routes with the imported CRAG_CATS + catOf, the same rule as the SQL");
   const raw = /export (?:async )?function useObjectivesOfUsers\b/.test(db);
   (!raw ? ok : fail)("lib/db.js no longer exports useObjectivesOfUsers — a raw objectives list cannot reach compat() by any path");
-  const feeders = ["lib/PartnerSearch.jsx", "RouteDetail.jsx"].map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]);
+  // Stitched: the Partners tab, where <RealClimberRow> renders, is RoutePartnersTab.tsx since PR60.
+  const feeders = ["lib/PartnerSearch.jsx", "RouteDetail.jsx"].map((f) => [f, readAppFile(path.join(ROOT, f))]);
   for (const [f, src] of feeders) {
     ((/\bcompat\(|<RealClimberRow\b/.test(src) && /\buseMatchObjectivesOfUsers\b/.test(src) && !/\buseObjectivesOfUsers\b/.test(src)) ? ok : fail)(`${f} scores real rows from useMatchObjectivesOfUsers`);
   }

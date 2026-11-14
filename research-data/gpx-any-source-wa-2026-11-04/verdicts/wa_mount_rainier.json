@@ -1,0 +1,417 @@
+{
+ "area_id": "wa_mount_rainier",
+ "routes": [
+  {
+   "route_id": "wa_glacier_peak_south_tahoma_headwall",
+   "season": {
+    "months": null,
+    "window": null,
+    "evidence": "No stored season and no guidebook-derived timing found for this line; general Rainier season is May-Sep (NPS, guide services), so none asserted."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_glacier_peak_tahoma_cleaver",
+   "season": {
+    "months": null,
+    "window": null,
+    "evidence": "No stored season; searches found no timing for the Tahoma Cleaver; none asserted."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_curtis_ridge",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored May-Jun (cold, stable, frozen rockfall); consistent with early-season guidance for hard Rainier lines. Searches found no route-specific page."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_east_success_couloir",
+   "season": {
+    "months": null,
+    "window": null,
+    "evidence": "No stored season; no timing found; none asserted."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_edmunds_headwall",
+   "season": {
+    "months": [
+     6,
+     7
+    ],
+    "window": "Jun-Jul",
+    "evidence": "Stored Jun-Jul (firm ice, passable NW approach); Mowich road typically opens early July. No route-specific page found."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_emmons_glacier",
+   "season": {
+    "months": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "window": "Late May-Aug",
+    "evidence": "NPS Emmons-Winthrop route brief: season runs from late May (White River Road opening) to August when crevasses open; guide sources put the best conditions late May to early July; Jun 29 ascent in season."
+   },
+   "track": {
+    "aid": "2888705",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged as Emmons-Winthrop (our route name); report describes two nights at Camp Schurman, the Steamboat Prow scramble and the Emmons Corridor; track starts and ends at White River and reaches the summit within 10 m of our pin; Jun 29 is inside the late May-Aug window."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2904050",
+     "verdict": "unsure",
+     "why": "Logged Emmons, Jul 13 2025, summited; one-way (starts White River, ends at the summit) so ranks below the complete track."
+    },
+    {
+     "aid": "2907081",
+     "verdict": "unsure",
+     "why": "Logged Emmons, Jul 13 2025, summited, but track starts at Camp Schurman and ends at the trailhead: partial."
+    },
+    {
+     "aid": "3274248",
+     "verdict": "unsure",
+     "why": "Logged Emmons, Jul 19 2026, summited, but track is Schurman-to-summit only: partial."
+    },
+    {
+     "aid": "3239585",
+     "verdict": "unsure",
+     "why": "Jun 22 2026, complete from White River to the summit, but no logged route and no report; likely Emmons but identity not proven."
+    },
+    {
+     "aid": "3260702",
+     "verdict": "not-summited",
+     "why": "Emmons-Winthrop attempt, turned back."
+    },
+    {
+     "aid": "2864865",
+     "verdict": "unsure",
+     "why": "Jun 9 2025 Emmons-Winthrop, summited, partial (starts at Schurman, ends near Glacier Basin)."
+    },
+    {
+     "aid": "3279599",
+     "verdict": "different",
+     "why": "Starts at Paradise; south-side route, not Emmons."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 6,
+     "text": "In late June and July the scramble between Steamboat Prow and the glacier funnels parties and rains loose rock on those below; keep clear of the fall line.",
+     "aids": [
+      "2888705",
+      "2907081"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In mid-July the crevasses and snow bridge near 11,500 ft on the Corridor were cracking and settling; a collapse there can close the route for the year.",
+     "aids": [
+      "2907081"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In July the lower glacier above Camp Schurman held widening crevasses, and a rope was needed for that stretch.",
+     "aids": [
+      "2907081",
+      "3274248"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In July one crevasse around 12,200-12,500 ft was a leap or a narrow, slightly tilted snow bridge; protect it before crossing.",
+     "aids": [
+      "2907081",
+      "3274248"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "In late June, join the ranger conditions talk at Camp Schurman in the late afternoon; the preferred line and bridge condition change week to week.",
+     "aids": [
+      "2888705"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 6,
+     "text": "In late June do not follow every bootpack blindly: sagging bridges pushed parties to end-run, so the track shifts.",
+     "aids": [
+      "2888705"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 7,
+     "text": "A couple of pickets for running protection at crevasse crossings (June-July)",
+     "aids": [
+      "3274248",
+      "2907081"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 7,
+     "text": "In July the scree below Camp Curtis becomes a one-at-a-time bottleneck; in warm weather a long glissade chute helped the lower Inter Glacier descent.",
+     "aids": [
+      "2907081",
+      "2888705"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_mount_rainier_fuhrer_finger",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored May-Jun; searches found no route-specific timing beyond general early-season advice for rockfall-prone south-side lines."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_fuhrer_thumb",
+   "season": {
+    "months": [
+     4,
+     5,
+     6
+    ],
+    "window": "Apr-Jun",
+    "evidence": "Stored Apr-Jun spring window; no independent page found."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_gibraltar_ledges",
+   "season": {
+    "months": [
+     12,
+     1,
+     2,
+     3,
+     4
+    ],
+    "window": "Dec-Apr",
+    "evidence": "Stored Dec-Apr frozen conditions (documented into early June); no independent page found."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_ingraham_direct",
+   "season": {
+    "months": [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "window": "Jan-May",
+    "evidence": "Stored Jan-May while the headwall is filled; guide pages say the standard shifts from Ingraham Direct to the Disappointment Cleaver around early June."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_kautz_glacier",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-mid Jul",
+    "evidence": "Stored May to mid-July; a guide service says Kautz is best mid-June to mid-July and stops by early August."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_kautz_headwall",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored May-Jun; consistent with Kautz season guidance (more snow early, ice later). No route-specific page."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_liberty_ridge",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored mid-May to mid-June classic window; NPS Liberty Ridge route brief refers to a short season."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_mowich_face",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored season column says Jun-Aug but best-season text says May-June; the latter matches early-season ice guidance. Conflict left for the owner."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_nisqually_icefall",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored May-Jun; no independent page found."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_north_mowich_icefall",
+   "season": {
+    "months": null,
+    "window": null,
+    "evidence": "No stored season; none found."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_ptarmigan_ridge",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored May-Jun; searches found no seasonal guidance for Ptarmigan Ridge itself."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_sunset_ridge",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored May-Jun; no independent page found."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_tahoma_glacier",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-Jul",
+    "evidence": "Stored May-Jul (west aspect keeps firm snow longer); searches found no independent page."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_rainier_willis_wall",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Stored late-spring cold-conditions window; no independent page found."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Only 15 harvested tracks, almost all on Emmons-Winthrop, the Disappointment Cleaver (from Paradise, already tracked) and a few unlabeled Paradise-start ones. No track names Curtis, Fuhrer, Kautz, Liberty, Ptarmigan, Tahoma, Sunset, Mowich or Edmunds, so only Emmons-Winthrop gets one. Paradise-start complete tracks in the Fuhrer Finger/Thumb checks are DC ascents, not those routes. Two entries in this packet (South Tahoma Headwall, Tahoma Cleaver) have no trailhead or waypoints and carry a wa_glacier_peak_ id prefix although they are Rainier lines: likely misfiled. Mowich Face has a stored season (Jun-Aug) that disagrees with its best-season text (May-June). No pin proposed; the Emmons trailhead pin already sits within ~10 m of the track start."
+}

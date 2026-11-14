@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // One-off: remove REVIEWED foreign camps from routes' `bivy` lists.
 //
 //   node scripts/oneoff/remove-foreign-camps.mjs <removals.json> [--apply]
@@ -65,7 +66,7 @@ console.log(`\n${plan.length} route(s), ${camps} camp(s), ${pins} pin(s); ${refu
 if (!APPLY) { console.log("dry run — pass --apply to write."); process.exit(refused ? 1 : 0); }
 if (!plan.length) process.exit(refused ? 1 : 0);
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..", "..");
 const rb = path.join(ROOT, "audits", "camp-fit", `rollback-remove-foreign-camps-${Date.now()}.json`);
 fs.mkdirSync(path.dirname(rb), { recursive: true });
 fs.writeFileSync(rb, JSON.stringify(plan.map((p) => ({ id: p.id, area_id: p.area_id, ...p.before })), null, 1));

@@ -1,0 +1,120 @@
+{
+ "id": "wa_burnt_boot_peak_north_route",
+ "name": "North Route",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_burnt_boot_peak",
+  "name": "Burnt Boot Peak",
+  "lat": 47.5009,
+  "lng": -121.3276,
+  "elevation_ft": 6540,
+  "parent_id": "wa_western_alpine_lakes",
+  "ground_ft": 6460
+ },
+ "dist_km": 31.06,
+ "gain_ft": 5300,
+ "high_point_ft": 6540,
+ "approach_logistics": {
+  "peakLat": 47.5009,
+  "peakLng": -121.3276,
+  "trailhead": "Dingford Creek Trailhead (Middle Fork Snoqualmie Road)",
+  "trailheadLat": 47.5172,
+  "trailheadLng": -121.45437,
+  "trailheadDirection": "Park at the Dingford Creek Trailhead, where Middle Fork Snoqualmie Road (FS Road 56) is gated to vehicles; high-clearance is strongly recommended for the potholed last miles."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.510099,
+   "lng": -121.34632,
+   "elev": 2828,
+   "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+   "type": "Campsite",
+   "ground_ft": 2828
+  },
+  {
+   "i": 1,
+   "lat": 47.5104,
+   "lng": -121.3495,
+   "elev": 2862,
+   "name": "Dutch Miller Gap Trailhead",
+   "note": "Old end of FS Road 56, reached on foot or by bike about 7.5 mi past the vehicle gate at Dingford Creek Trailhead; self-issue Alpine Lakes Wilderness permit required, high-clearance vehicle recommended for the last miles.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive FS Road 56 up the Middle Fork Snoqualmie from I-90 Exit 34 to the vehicle gate at Dingford Creek Trailhead; the last miles are potholed and washboarded, so high clearance is worth having. Walk or bike the closed road about 7.5 miles beyond the gate to this old road end, where the maintained Dutch Miller Gap trail begins; this route does not use that trail.",
+   "ground_ft": 2991
+  },
+  {
+   "i": 2,
+   "lat": 47.509820999999995,
+   "lng": -121.34559405,
+   "elev": 2900,
+   "name": "Middle Fork Snoqualmie River ford",
+   "note": "Leave the trail here and ford the river to a boulder field on the far shore; can run thigh-deep and swift in early season.",
+   "type": "Hazard",
+   "distMi": 0.1,
+   "directions": "Walk roughly 300 ft upstream from the lot and cross to the true-right (north) bank. Do not follow the Dutch Miller Gap trail — the route leaves the valley right here. In June and other high-water periods, scout upstream for a braided section or a log rather than forcing the main channel.",
+   "ground_ft": 2814
+  },
+  {
+   "i": 3,
+   "lat": 47.508883,
+   "lng": -121.34370215,
+   "elev": 3260,
+   "name": "Cliff band / gully entrance",
+   "note": "Boulder field ends at a ~400-ft cliff band; go left into a steep gully choked with salmonberry and black currant bushes.",
+   "type": "Junction",
+   "distMi": 0.3,
+   "directions": "Straight up from the far bank: climb the boulder and talus field directly above the river for about 400 vertical feet until the rock band stops you.",
+   "ground_ft": 2994
+  },
+  {
+   "i": 4,
+   "lat": 47.506538,
+   "lng": -121.3389724,
+   "elev": 3900,
+   "name": "Treeline at ~3,900 ft",
+   "note": "Gully tops out in scattered timber; leave the brush here and angle SSE cross-country toward the talus slopes.",
+   "type": "Junction",
+   "distMi": 0.8,
+   "directions": "Angle left (west) off the boulder field into the gully and force your way up it. This is real bushwhacking through salmonberry and black currant, not a trail, and it is the slowest ground of the day. The gully tops out where the brush gives way to timber.",
+   "ground_ft": 4247
+  },
+  {
+   "i": 5,
+   "lat": 47.503724,
+   "lng": -121.33329669999999,
+   "elev": 5800,
+   "name": "Steep snow ramp below north wall",
+   "note": "A persistent snow ramp crosses the talus below Burnt Boot's north face; can hold snow into September and is the crux of the descent in reverse.",
+   "type": "Hazard",
+   "distMi": 1.4,
+   "directions": "Traverse upward through the trees until they run out onto open talus, then work up and climber's-left toward the low notch beside Point 5,841 — that notch is the key route-finding target. Above roughly 5,400 ft, pick a line through talus and boulders that keeps you off the steepest snow; the heather and cedar benches on this stretch give the easiest going.",
+   "ground_ft": 5303
+  },
+  {
+   "i": 6,
+   "lat": 47.502317,
+   "lng": -121.33045885,
+   "elev": 5750,
+   "name": "Pass at Point 5,841",
+   "note": "Low saddle between the Burnt Boot summit block and neighboring Point 5,841; gain the ridge here for the final scramble.",
+   "type": "Junction",
+   "distMi": 1.7,
+   "directions": "The last couple of hundred vertical feet to the notch are the ramp itself: firm, sustained snow. An ice axe is required and crampons or microspikes are worth having early season — this is genuine self-arrest terrain, not a patch to walk across. Near the top, watch for a moat between snow and rock; a short traverse beneath the snow edge is sometimes needed to reach solid ground.",
+   "ground_ft": 5868
+  },
+  {
+   "i": 7,
+   "lat": 47.5009,
+   "lng": -121.3276,
+   "elev": 6540,
+   "name": "Burnt Boot Peak",
+   "note": "Class 3 summit block with a short ridge scramble east from the 5,841 pass; views to Lemah Mountain and Overcoat Peak.",
+   "type": "Summit",
+   "distMi": 2,
+   "directions": "A short class 3-4 ridge step east off the notch, then boulder-hopping up the last of the talus to the summit block. Stay on this line: the neighbouring northwest gully is reported to hold class 4 ground and is not the way up.",
+   "ground_ft": 6460
+  }
+ ]
+}

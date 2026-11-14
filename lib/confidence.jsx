@@ -30,7 +30,10 @@ export const HEAD_KEYS = {
   "CLIMATE & SEASON": "climate", "ASPECT & SUN": "aspect",
   "SEASONAL GUIDANCE": "seasonalGuidance", "CROWDS": "crowds", "CROWDS & SOLITUDE": "crowds",
   "PARTNER REQUIREMENTS": "partnerRequirements", "EMERGENCY & RESCUE": "emergency",
-  "TECHNICAL STATS": "grade", "ROUTE FACTS": "grade",
+  /* TECHNICAL STATS / ROUTE FACTS are NOT here (owner, 2026-11-11): those cards hold a dozen fields, and
+     the heading wore the GRADE's level, so a card of "Not on file yet" rows read "High · locked" on
+     every crag route. The grade's chip sits on the grade itself (TechStats), and the card's pencil
+     opens the editor at a field that is still open (firstEditable). */
   "CAMPING & BIVY": "bivy", "WAYPOINTS": "waypoints", "KEY WAYPOINTS": "waypoints",
   "CELL / SAT COVERAGE": "comms", "CELL COVERAGE": "comms",
   "ROUTE DESCRIPTION": "overview", "MY ITINERARY": "itinerary", "TRIP PLAN": "itinerary",
@@ -42,6 +45,8 @@ export function headKey(text) {
   const t = text.replace(/\s*[·—-]\s*\d.*$/, "").trim().toUpperCase().replace(/&AMP;/g, "&");
   return HEAD_KEYS[t] || null;
 }
+// firstEditable: which field a pencil covering several fields opens at (lib/firstEditable.js).
+export { firstEditable } from "./firstEditable.js";
 export const LEVEL_LABEL = { high: "High", medium: "Medium", low: "Low" };
 const LEVEL_HELP = {
   high: "High confidence — checked and locked. If it has changed, flag it.",
@@ -52,19 +57,14 @@ export function levelColors(level) {
   return level === "high" ? [C.green, C.greenBg, C.greenDim] : level === "medium" ? [C.amber, C.amberBg, C.amber + "66"] : [C.textMuted, C.surface, C.border];
 }
 
+/** @param {{level: string, label?: unknown, onFlag?: unknown, compact?: boolean}} props */
 export function ConfChip({ level, label, onFlag, compact }) {
   if (!level) return null;
   const [col, bg, bd] = levelColors(level);
   const name = (label || "this detail").toString().replace(/\s+/g, " ").trim();
   return <span style={{ display: "inline-flex", alignItems: "center", gap: 4, flexShrink: 0, marginLeft: compact ? 4 : 6 }}>
     <span title={LEVEL_HELP[level]} aria-label={name + ": " + LEVEL_LABEL[level] + " confidence" + (level === "high" ? ", locked" : "")} style={{ fontSize: 10, fontWeight: 800, letterSpacing: 0.4, textTransform: "uppercase", color: col, background: bg, border: "1px solid " + bd, borderRadius: 6, padding: "1px 6px", lineHeight: 1.6, whiteSpace: "nowrap" }}>{LEVEL_LABEL[level] + (level === "high" ? " · locked" : "")}</span>
-    {onFlag ? <button onClick={function (e) { e.stopPropagation(); onFlag(); }} title={"Flag " + name + " as wrong"} aria-label={"Flag " + name + " as wrong"} style={{ background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 6, fontSize: 11, lineHeight: 1.4, padding: "1px 6px", cursor: "pointer", whiteSpace: "nowrap" }}>{"Flag"}</button> : null}
+    {onFlag ? <button onClick={function (e) { e.stopPropagation(); onFlag(); }} title={"Flag " + name + " as wrong"} aria-label={"Flag " + name + " as wrong"} style={{ background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 6, fontSize: 11, lineHeight: 1.4, padding: "1px 6px", cursor: "pointer", whiteSpace: "nowrap", pointerEvents: "auto" }}>{"Flag"}</button> : null}
   </span>;
 }
 
-// One line under the route's first section explaining the three levels, shown once per page.
-export function ConfidenceLegend() {
-  return <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, margin: "0 0 10px", padding: "7px 10px", background: C.surface, border: "1px solid " + C.border, borderRadius: 9 }}>
-    {"Every detail on this page carries a confidence level. "}<b style={{ color: C.green }}>High</b>{" is checked and locked — flag it if it has changed. "}<b style={{ color: C.amber }}>Medium</b>{" is on file and open to your edits. "}<b style={{ color: C.textSub }}>Low</b>{" is missing, inferred or flagged — your edit is most welcome there. Adding to an empty detail puts it on the page at once; a change goes live when a second climber sends the same, or once ClimbMatch checks it."}
-  </div>;
-}

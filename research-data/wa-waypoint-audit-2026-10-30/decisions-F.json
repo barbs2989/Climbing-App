@@ -1,0 +1,19 @@
+[
+ {
+  "id": "wa_mount_cameron_standard",
+  "i": 4,
+  "name": "Mount Cameron summit",
+  "op": "areaMove",
+  "area_id": "wa_mount_cameron",
+  "from": [
+   47.825825,
+   -123.33409
+  ],
+  "to": [
+   47.82536799936158,
+   -123.32846678390986
+  ],
+  "source": "USGS GNIS gaz_id 1517247 (Mount Cameron, Summit); Wikipedia 47.8253625,-123.3284517",
+  "reason": "The route summit pin was moved to this published point (batch C1); the area row still held the old pin coordinate, so audit:summit-pins split the two by 423 m."
+ }
+]

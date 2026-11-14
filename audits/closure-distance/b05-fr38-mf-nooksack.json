@@ -1,0 +1,44 @@
+[
+ {
+  "id": "wa_cinderella_peak_scramble",
+  "walkMi": 4,
+  "dayNotePrefix": "Walk or bike the 4 closed miles of FR 38 from the washout to the Elbow Lake trailhead first.",
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure (MP 7 washout, start 2026-07-27, no end date, last updated 2026-07-27, fetched 2026-10-29); WTA Elbow Lake page (fetched 2026-10-29) still reports washout/barrier at MP 7; PNT/WTA/row text give trailhead ~11 mi from Mosquito Lake Rd. Derivation: 11 (trailhead) - 7 (closure) = 4 mi one way on closed road. Stored day1 miles=12 (6 one-way) match the trailhead-to-summit figure (~5 mi to glacier + ridge) so the road is NOT included; the day note mentions the road but miles omit it. No sourced gain for the road, so walkGainFt omitted."
+ },
+ {
+  "id": "wa_skookum_peak_twinsisters_scramble",
+  "walkMi": 4,
+  "dayNotePrefix": "Walk or bike the 4 closed miles of FR 38 from the washout to the Elbow Lake trailhead first.",
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure (MP 7 washout, start 2026-07-27, no end date, last updated 2026-07-27, fetched 2026-10-29); WTA Elbow Lake page (fetched 2026-10-29) still reports washout/barrier at MP 7; PNT/WTA/row text give trailhead ~11 mi from Mosquito Lake Rd. Derivation: 11 (trailhead) - 7 (closure) = 4 mi one way on closed road. Stored day1 miles=14 is a trailhead car-to-car figure (Elbow Lake Trail + Green Creek cirque); road not included. No sourced road gain."
+ },
+ {
+  "id": "wa_lincoln_peak_standard",
+  "walkMi": 5.5,
+  "dayNotePrefix": "Walk or bike the closed stretch of FR 38 from the washout up to the mile-12.5 switchback before the basin approach.",
+  "why": "FS alert as above (fetched 2026-10-29). Primary variant drives FR 38 to the mile-12.5 switchback, which lies beyond the MP 7 closure. Derivation: 12.5 - 7 = 5.5 mi one way, both milepost figures from the row text/FS alert (same origin assumed; caveat). Stored day1 miles=7 start at the switchback so road not included. No sourced road gain."
+ },
+ {
+  "id": "wa_little_sister_north_face",
+  "walkMi": 4,
+  "distKmNew": 14.4,
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure (MP 7 washout, start 2026-07-27, no end date, last updated 2026-07-27, fetched 2026-10-29); WTA Elbow Lake page (fetched 2026-10-29) still reports washout/barrier at MP 7; PNT/WTA/row text give trailhead ~11 mi from Mosquito Lake Rd. Derivation: 11 (trailhead) - 7 (closure) = 4 mi one way on closed road. Row dist_km=8 (5 mi) is ONE WAY from the Elbow Lake trailhead (row text: 'Green Glacier approach is 5 miles one way'; South Couloir ~10 mi car-to-car). New = 8 + 4*1.609 = 14.4 km, same one-way convention. No sourced gain for the road."
+ },
+ {
+  "id": "wa_little_sister_south_couloir",
+  "walkMi": 4,
+  "distKmNew": 14.4,
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure (MP 7 washout, start 2026-07-27, no end date, last updated 2026-07-27, fetched 2026-10-29); WTA Elbow Lake page (fetched 2026-10-29) still reports washout/barrier at MP 7; PNT/WTA/row text give trailhead ~11 mi from Mosquito Lake Rd. Derivation: 11 (trailhead) - 7 (closure) = 4 mi one way on closed road. Row dist_km=8 (5 mi) is ONE WAY from the Elbow Lake trailhead (row text: 'Green Glacier approach is 5 miles one way'; South Couloir ~10 mi car-to-car). New = 8 + 4*1.609 = 14.4 km, same one-way convention. No sourced gain for the road."
+ },
+ {
+  "id": "wa_little_sister_southeast_ridge",
+  "walkMi": 4,
+  "distKmNew": 14.4,
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure (MP 7 washout, start 2026-07-27, no end date, last updated 2026-07-27, fetched 2026-10-29); WTA Elbow Lake page (fetched 2026-10-29) still reports washout/barrier at MP 7; PNT/WTA/row text give trailhead ~11 mi from Mosquito Lake Rd. Derivation: 11 (trailhead) - 7 (closure) = 4 mi one way on closed road. Row dist_km=8 (5 mi) is ONE WAY from the Elbow Lake trailhead (row text: 'Green Glacier approach is 5 miles one way'; South Couloir ~10 mi car-to-car). New = 8 + 4*1.609 = 14.4 km, same one-way convention. No sourced gain for the road."
+ },
+ {
+  "id": "wa_little_sister_west_face",
+  "walkMi": 4,
+  "distKmNew": 14.4,
+  "why": "FS alert fs.usda.gov/r06/mbs/alerts/middle-fork-nooksack-fsr-38-road-closure (MP 7 washout, start 2026-07-27, no end date, last updated 2026-07-27, fetched 2026-10-29); WTA Elbow Lake page (fetched 2026-10-29) still reports washout/barrier at MP 7; PNT/WTA/row text give trailhead ~11 mi from Mosquito Lake Rd. Derivation: 11 (trailhead) - 7 (closure) = 4 mi one way on closed road. Row dist_km=8 (5 mi) is ONE WAY from the Elbow Lake trailhead (row text: 'Green Glacier approach is 5 miles one way'; South Couloir ~10 mi car-to-car). New = 8 + 4*1.609 = 14.4 km, same one-way convention. No sourced gain for the road."
+ }
+]

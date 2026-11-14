@@ -1,3 +1,4 @@
+import { fileHref } from "./lib/file-href.mjs";
 // check:logged-times — a climber's logged time must reach the planner.
 //
 // WHY THIS NEEDS ITS OWN GUARD. The "what parties actually took" panel renders only when
@@ -55,7 +56,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render } = await import(out);
+const { render } = await import(fileHref(out));
 
 // Alpine, because the Calculator is gated on !cragOnly. A crag route has no time-to-summit
 // panel at all, so probing one would assert the absence of something that was never there.

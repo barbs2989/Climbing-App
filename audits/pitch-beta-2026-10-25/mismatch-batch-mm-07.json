@@ -1,0 +1,38 @@
+{
+ "wa_spire_point_southwest_face": {
+  "area": "wa_spire_point",
+  "review": {
+   "confidence": "low",
+   "decision": "HOLD",
+   "sources": ["https://onehikeaweek.com/2019/06/30/spire-point/"],
+   "changed": "Nothing changed. The stored table is partly section-style (approach, chimney, ledge, summit pitch) and no source read states a pitch count.",
+   "pitch_count_found": 0,
+   "other_findings": "The one page read describes continuous movement with no belay count. A second source (SummitPost) returned 403 and could not be read in full.",
+   "evidence": "one full page read; no pitch count stated"
+  }
+ },
+ "wa_spontaneity_arete": {
+  "area": "wa_le_petit_cheval",
+  "review": {
+   "confidence": "medium",
+   "decision": "HOLD",
+   "sources": ["https://www.mountainproject.com/route/107213171/spontaneity-arete", "http://www.supertopo.com/rock-climbing/Washington-Pass-Le-Petit-Cheval-Spontaneity-Are-770-te", "https://www.mountaineers.org/activities/routes-places/le-petit-cheval-spontaneity-arete"],
+   "changed": "Nothing changed. Sources disagree on the count and parties link pitches differently.",
+   "pitch_count_found": 6,
+   "other_findings": "One page read in full lists six pitches plus an optional seventh. Search snippets give 8 (one topo site), 7 (a trip report) and 10 (a logbook). The stored table has seven numbered rows, matching the optional-seventh reading.",
+   "evidence": "one full page read; others snippets only"
+  }
+ },
+ "wa_west_ridge_2": {
+  "area": "wa_paisano_pinnacle",
+  "review": {
+   "confidence": "medium",
+   "decision": "HOLD",
+   "sources": ["https://www.mountainproject.com/route/108262093/west-ridge", "http://www.supertopo.com/rock-climbing/Washington-Pass-Paisano-Pinnacle-West-Ridge", "https://ncmountainguides.com/routes/climbing-routes/paisano-pinnacle-west-ridge"],
+   "changed": "Nothing changed. Sources give 8 pitches (and 10 in a guide-service snippet) against stored 7. The stored table links the first two pitches as one row, which fits a long-rope link.",
+   "pitch_count_found": 8,
+   "other_findings": "One full page lists eight pitches; the stored rows cover 1-2 then 3 to 8, so the table already spans eight pitch numbers while stored pitches says 7. Not changed because the count is disputed and pitches must not change.",
+   "evidence": "one full page read; others snippets only (supertopo unreachable)"
+  }
+ }
+}

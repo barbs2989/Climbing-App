@@ -60,7 +60,7 @@ export function AppealSheet({ target, busy, onClose, onSubmit }) {
   const [text, setText] = useState("");
   const isAccount = target && target.kind === "account";
   const what = isAccount ? "your account’s suspension" : (target && target.label) || "this removal";
-  return <div onClick={busy ? undefined : onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape" && !busy) onClose(); }} role="dialog" aria-label={"Appeal " + what} aria-modal="true" style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)", zIndex: 1150, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "16px 12px", overflowY: "auto", overscrollBehavior: "contain" }}>
+  return <div onClick={busy ? undefined : onClose} tabIndex={-1} onKeyDown={e => { if (e.key === "Escape" && !busy) onClose(); }} role="dialog" aria-label={"Appeal " + what} aria-modal="true" style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 1150, display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "16px 12px", overflowY: "auto", overscrollBehavior: "contain" }}>
     <div onClick={e => e.stopPropagation()} style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 420, border: "1px solid " + C.border, overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, padding: "14px 16px", borderBottom: "1px solid " + C.border }}>
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -73,7 +73,7 @@ export function AppealSheet({ target, busy, onClose, onSubmit }) {
         <div style={{ fontSize: 12, color: C.textMuted, fontWeight: 700, marginBottom: 6 }}>WHY SHOULD WE LOOK AGAIN?</div>
         <textarea aria-label="Why should ClimbMatch Safety look again?" value={text} onChange={e => setText(e.target.value)} maxLength={2000} rows={5} placeholder="What we got wrong, or context we didn’t have." style={{ width: "100%", padding: "9px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.card, color: C.text, fontSize: 13, boxSizing: "border-box", resize: "vertical", minHeight: 100, outline: "none", fontFamily: "inherit", lineHeight: 1.5 }} />
       </div>
-      <div style={{ padding: "12px 16px", borderTop: "1px solid " + C.border }}><button disabled={!text.trim() || busy} onClick={() => onSubmit(text.trim())} style={{ width: "100%", padding: 12, background: text.trim() && !busy ? C.blueSolid : C.border, color: text.trim() && !busy ? "#fff" : C.textMuted, border: "none", borderRadius: 11, fontSize: 15, cursor: text.trim() && !busy ? "pointer" : "default", fontWeight: 700 }}>{busy ? "Sending…" : "Send appeal"}</button></div>
+      <div style={{ padding: "12px 16px", borderTop: "1px solid " + C.border }}><button disabled={!text.trim() || busy} onClick={() => onSubmit(text.trim())} style={{ width: "100%", padding: 12, background: text.trim() && !busy ? C.blueSolid : C.border, color: text.trim() && !busy ? C.onSolid : C.textMuted, border: "none", borderRadius: 11, fontSize: 15, cursor: text.trim() && !busy ? "pointer" : "default", fontWeight: 700 }}>{busy ? "Sending…" : "Send appeal"}</button></div>
     </div>
   </div>;
 }

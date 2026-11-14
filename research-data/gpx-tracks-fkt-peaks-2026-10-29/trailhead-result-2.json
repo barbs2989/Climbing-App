@@ -1,0 +1,145 @@
+[
+ {
+  "id": "co_quandary_peak_standard_route_east_ridge",
+  "slug": "quandary-peak-co",
+  "trailhead": "Quandary Peak Trailhead",
+  "sourceLat": 39.3848575,
+  "sourceLng": -106.0617406,
+  "distanceM": 43,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?q=Quandary+Peak+Trailhead",
+  "note": "OSM places the Quandary Peak Trailhead parking at the track start; FKT page names no trailhead but this is the signed trailhead for the route."
+ },
+ {
+  "id": "co_rio_grande_pyramid_east_slope_ridge",
+  "slug": "rio-grande-pyramid-co",
+  "trailhead": "Thirty Mile Trailhead",
+  "sourceLat": 37.7215431,
+  "sourceLng": -107.2592788,
+  "distanceM": 5,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?q=Thirty+Mile+trailhead+Weminuche",
+  "note": "FKT page says route starts at Thirty Mile Campground and trailhead; OSM node matches the track start."
+ },
+ {
+  "id": "co_blitzen_ridge",
+  "slug": "ypsilon-mountain-blitzen-ridge-co",
+  "trailhead": "Lawn Lake Trailhead",
+  "sourceLat": 40.407118,
+  "sourceLng": -105.626235,
+  "distanceM": 32,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?q=Lawn+Lake+Trailhead",
+  "note": "FKT page says start from Lawn Lake Trailhead; OSM node matches the track start."
+ },
+ {
+  "id": "nv_mount_rose_mount_rose_trail",
+  "slug": "mount-rose-nv",
+  "trailhead": null,
+  "sourceLat": 39.3132192,
+  "sourceLng": -119.8970553,
+  "distanceM": 112,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?q=Mt+Rose+Summit+Nevada",
+  "note": "FKT starts at the Mount Rose Summit pass parking, but no source opened names a trailhead there; the OSM point is the pass, not a trailhead."
+ },
+ {
+  "id": "nh_whitney_gilman_ridge",
+  "slug": "cannon-cliff-trail-and-climbing-challenges-nh",
+  "trailhead": null,
+  "sourceLat": 44.1609438,
+  "sourceLng": -71.676994,
+  "distanceM": 43,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?q=Profile+Lake+parking+Franconia+Notch",
+  "note": "Start is at the Profile Lake parking area per FKT page, but that is a parking lot, not a named trailhead."
+ },
+ {
+  "id": "ny_allen_mountain_allen_brook_herd_path",
+  "slug": "allen-mtn-ny",
+  "trailhead": null,
+  "sourceLat": 44.0862023,
+  "sourceLng": -74.0555418,
+  "distanceM": 565,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?q=Upper+Works+Newcomb",
+  "note": "FKT starts at the Allen/Adams lot 0.6 mi south of Upper Works; no source found locating that lot."
+ },
+ {
+  "id": "ny_big_slide_mtn_the_brothers_trail",
+  "slug": "big-slide-mountain-ny",
+  "trailhead": null,
+  "sourceLat": null,
+  "sourceLng": null,
+  "distanceM": null,
+  "confirmed": false,
+  "source": null,
+  "note": "No source opened locating The Garden trailhead."
+ },
+ {
+  "id": "ut_south_ridge",
+  "slug": "mount-superior-south-ridge-round-trip",
+  "trailhead": null,
+  "sourceLat": null,
+  "sourceLng": null,
+  "distanceM": null,
+  "confirmed": false,
+  "source": null,
+  "note": "FKT starts at an unnamed dirt pullout; no named trailhead."
+ },
+ {
+  "id": "ca_a_clouds_rest_trail_clouds_rest_trail",
+  "slug": "clouds-rest-yosemite-ca",
+  "trailhead": null,
+  "sourceLat": null,
+  "sourceLng": null,
+  "distanceM": null,
+  "confirmed": false,
+  "source": null,
+  "note": "No source opened locating the trailhead at the track start."
+ },
+ {
+  "id": "ca_mount_tallac_trail_mount_tallac_trail",
+  "slug": "mt-tallac-ca",
+  "trailhead": "Mount Tallac Trailhead",
+  "sourceLat": 38.9216951,
+  "sourceLng": -120.068208,
+  "distanceM": 26,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?q=Mount+Tallac+Trailhead",
+  "note": "FKT page names the Mt Tallac TH; OSM Tallac Trailhead parking matches the track start."
+ },
+ {
+  "id": "ca_d_half_dome_cables_route_cables_route",
+  "slug": "half-dome-yosemite-ca",
+  "trailhead": "Happy Isles Trailhead",
+  "sourceLat": 37.7299261,
+  "sourceLng": -119.5590513,
+  "distanceM": 133,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?q=Happy+Isles",
+  "note": "FKT starts at the Happy Isles bridge where the paved path meets the road; OSM Happy Isles point is within range."
+ },
+ {
+  "id": "ca_north_ridge_4",
+  "slug": "lone-pine-peak-ca",
+  "trailhead": "Meysan Lake Trailhead",
+  "sourceLat": 36.588614,
+  "sourceLng": -118.2283455,
+  "distanceM": 200,
+  "confirmed": true,
+  "source": "https://nominatim.openstreetmap.org/search?q=Meysan+Lakes+trailhead",
+  "note": "FKT page says car-to-car from the Meysan Lakes Trailhead; OSM node is near the track start."
+ },
+ {
+  "id": "ca_north_ar_te",
+  "slug": "mammoth-lakes-crystal-crag-ca",
+  "trailhead": null,
+  "sourceLat": 37.6026162,
+  "sourceLng": -119.0096205,
+  "distanceM": 178,
+  "confirmed": false,
+  "source": "https://nominatim.openstreetmap.org/search?q=Lake+George+Campground+Mammoth+Lakes",
+  "note": "FKT starts at the main Lake George parking lot; only the campground point was found, not a named trailhead."
+ }
+]

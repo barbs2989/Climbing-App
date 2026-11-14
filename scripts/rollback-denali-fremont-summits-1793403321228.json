@@ -1,0 +1,44 @@
+{
+ "at": "2026-10-30T23:35:21.228Z",
+ "note": "restore with patchRow(areas|routes, id, before)",
+ "areas": [
+  {
+   "id": "ak_denali",
+   "before": {
+    "lat": 63.0724,
+    "lng": -150.9467
+   }
+  },
+  {
+   "id": "wy_fremont_peak",
+   "before": {
+    "lat": 43.1202,
+    "lng": -109.638
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "ak_denali_west_buttress",
+   "before": [
+    {
+     "lat": 62.96796,
+     "lng": -151.16741,
+     "name": "Kahiltna Glacier base camp",
+     "type": "Trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wy_southwest_slope",
+   "before": [
+    {
+     "lat": 43.00451,
+     "lng": -109.75149,
+     "name": "Elkhart Park trailhead",
+     "type": "Trailhead"
+    }
+   ]
+  }
+ ]
+}

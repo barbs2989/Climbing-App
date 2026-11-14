@@ -1,0 +1,29 @@
+{
+ "ca_waterfall_cliff": {
+  "_expect": { "name": "Waterfall Cliff", "region": "California" },
+  "blurb": "Waterfall Cliff is a small sandstone wall in Castle Rock State Park, in the Santa Cruz Mountains above the South Bay. It holds about twenty climbs split between sport, trad and top-rope, with half of them bolted. Difficulty runs from 5.6 up to the 5.12s, and the largest group of routes sits in the 5.11 and 5.12 range, so it suits stronger leaders more than beginners. The rock is soft, slabby sandstone that can be sandy underfoot, and it needs a couple of dry days before it is fit to climb. The cliff is tucked into trees beside the creek, so it stays mostly shady. Weekends bring crowds; weekdays are calmer.",
+  "review": { "sources": [
+   "https://www.mountainproject.com/area/105734081/waterfall-cliff",
+   "https://bayareaclimbing.blogspot.com/2011/12/castle-rock-state-park-south-bay.html",
+   "https://mandarin-wedge-33kh.squarespace.com/climbing/castle-rock-state-park-waterfall-cliff"
+  ] }
+ },
+ "ca_mothership_cliff": {
+  "_expect": { "name": "Mothership Cliff", "region": "California" },
+  "blurb": "Mothership Cliff is a single-pitch sport wall about 100 feet tall in the Inner Gorge of the Owens River Gorge, south of Bishop. All twenty routes are bolted, and nearly all of them fall between 5.11 and 5.14, with the heaviest concentration at 5.11 and 5.12. The welded tuff is excellent and the climbing is technical and sustained, relying on small edges and pockets over steep, leaning ground. This is a place for experienced sport climbers rather than people building up mileage. Expect to climb with plenty of sun on the face, so many parties favour cooler parts of the day in warm weather.",
+  "approach": "From the foot of the central gully, follow the dirt road north to the fork by the toilet, then bear left and head uphill, skirting around the left side of the big talus field. When you are across from the Eldorado Roof, a cairn on the left marks the path up to the cliff. Watch for loose rock on the talus.",
+  "review": { "sources": [
+   "https://www.mountainproject.com/area/105843285/mothership-cliff",
+   "https://app.advcollective.com/climbing/mothership-cliff-technical-hard-routes-in-owens-river-gorge",
+   "https://www.mountainproject.com/area/105843282/inner-gorge"
+  ] }
+ },
+ "_skipped": {
+  "ca_swidgeteria_the": "could not fetch two pages that describe the crag itself (only the parent area listing)",
+  "ca_order_of_the_moose_wall": "only the parent Santa Cruz page lists it; no second page found describing the wall",
+  "ca_u_northeast_buttress": "only one page (Suicide Rock area) describes it; second page blocked or empty",
+  "ca_spider_wall": "only one fetchable page about the crag; second sources returned 403 or did not mention it",
+  "ca_east_face_6": "only one fetchable page about the face; other candidates returned 403",
+  "ca_north_slope": "only the parent Lake Ramona listing; nothing describes this sub-area"
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "id": "wa_forbidden_peak_east_ridge",
+ "name": "East Ridge Direct",
+ "area_id": "wa_forbidden_peak",
+ "discipline": "alpine",
+ "grade": "5.8-",
+ "pitches": 6,
+ "pitch_detail": [
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.4",
+   "notes": "From the notch, simul-climb easy blocks to gain the ridge crest proper on clean granite.",
+   "pitch": 1,
+   "anchor": "Gear",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.6",
+   "notes": "Surmount the first, steepest gendarme tower directly on solid rock; exposed on both sides of the narrow crest.",
+   "pitch": 2,
+   "anchor": "Gear (horn/block)",
+   "lengthM": 55
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.5",
+   "notes": "A short rappel off the back of the gendarme drops into a narrow notch before the ridge continues.",
+   "pitch": 3,
+   "anchor": "Gear, short rap into notch",
+   "lengthM": 50
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.4 (low 5th)",
+   "notes": "Weave around or over the next gendarme; a bypass on the north side avoids some of the smaller, unnamed towers not always shown on topos.",
+   "pitch": 4,
+   "anchor": "Gear",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.6",
+   "notes": "Climb a steep gendarme flank on solid stone, staying close to the crest for the best rock quality.",
+   "pitch": 5,
+   "anchor": "Gear",
+   "lengthM": 55
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "5.8",
+   "notes": "The crux pitch and the best climbing on the route: protect off a horn before the hard moves, then a skinny vertical crack takes small cams through the crux bulge.",
+   "pitch": 6,
+   "anchor": "Gear (horn + thin crack)",
+   "lengthM": 60
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.4 (low 5th)",
+   "notes": "Easier simul-climbing terrain closes the gap toward the summit convergence area.",
+   "pitch": 7,
+   "anchor": "Gear",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.4",
+   "notes": "Final crest moves cross the true summit; most parties descend via the West Ridge or the East Ledges rather than reversing this route.",
+   "pitch": 8,
+   "anchor": "Walk-off to summit (scramble)",
+   "lengthM": 40
+  }
+ ],
+ "rappel_detail": [
+  {
+   "n": 1,
+   "pull": "Five single-rope rappels totalling roughly 400 ft, so a 60 m rope doubled covers every one — two ropes buy nothing here.",
+   "notes": "First of three rappels heading northeast from the summit area.",
+   "anchor": "Natural anchor (slung horn/block), trending NE off summit",
+   "hazards": [
+    "Easy to rappel past the next anchor: it appears short of the rope end and does not read as a station from above",
+    "Parties have had to free a jammed rappel rope on this descent, and one needed a handline thrown down to finish the exit gully"
+   ],
+   "lengthM": null,
+   "station": "A slung horn at the summit. The line drops straight down the northeast face rather than following any rib or ridge, and the stations below are oddly rigged and scruffy rather than obvious — they come into view before you reach the end of a 60 m rope, not at it."
+  },
+  {
+   "n": 2,
+   "notes": "Second of the three NE-trending rappels.",
+   "anchor": "Natural/tat anchor, continuing NE trend",
+   "lengthM": null
+  },
+  {
+   "n": 3,
+   "notes": "Third rappel; followed by a short, exposed grassy traverse east to the next rock rib before the final two rappels.",
+   "anchor": "Natural/tat anchor near next rock rib",
+   "hazards": [
+    "The link between the two anchors is a sloping grass-and-dirt traverse over slab with full exposure, and it is the section parties are usually unroped on"
+   ],
+   "lengthM": null,
+   "station": "The third rappel ends at the start of a short, exposed grassy traverse running east to the next rock rib. The following anchor is on that rib, not beneath you, so you walk before you rappel again."
+  },
+  {
+   "n": 4,
+   "notes": "First of two rappels dropping onto the East Ledges; a handful of fixed/bolted stations exist along this option.",
+   "anchor": "Mixed natural/fixed anchor above East Ledges",
+   "lengthM": null
+  },
+  {
+   "n": 5,
+   "notes": "Final rappel reaching the East Ledges, from which loose class 3-4 ledges/slabs are descended on foot above the Boston Glacier.",
+   "anchor": "Anchor above East Ledges",
+   "hazards": [
+    "Several hundred metres of loose sandy and grassy 3rd-class ledges follow, with 4th-class steps where the ledges cross each rock rib",
+    "Cairns come in a higher and a lower set at every rib and the two are not equivalent — the low line finishes in a 4th-class red gully",
+    "Rockfall onto your own party on the ledges and the slabs below: move one at a time between sheltered stances"
+   ],
+   "lengthM": null,
+   "station": "The last rappel lands on the East Ledges themselves. Some parties instead downclimb from the bottom of this rope to a further anchor on steep ledges above the Boston Glacier rather than walking straight off."
+  }
+ ],
+ "rappels": "~5 single-rope rappels down the north side on the East Ledges descent, the standard way off this route. Reversing to the West Ridge instead takes about eight.",
+ "descent_text": "The East Ridge is not reversed as a rappel line in its own right; two descents are used instead. The standard one is the East Ledges, dropping climber's-right/northeast directly off the summit: three rappels trend northeast from the summit area, then a short, exposed grassy traverse east to the next rock rib, followed by two more rappels onto the East Ledges proper, about 5 rappels in all. From there, several hundred metres of loose, sandy and grassy class 3–4 ledges and slabs, marked by intermittent and sometimes doubled cairn lines, lead east above the cliffs over the crevassed Boston Glacier to a gully about 100 ft below the Solitary Gendarme; go up and over the East Ridge through it, then down snow slopes on the south side to the small glacier below Forbidden's south face and the walk back across Boston Basin. The alternative is to reverse along the ridge crest past the gendarmes to the West Ridge notch and descend the West Ridge line: about three rappels on the ridge and about five down the Cat Scratch gullies, roughly eight on a single 60 m rope. It is longer, but it is more travelled and easier to follow, and many parties prefer it to the East Ledges, which are faster but loose, exposed, rockfall-prone and easy to lose. Either way, expect mostly natural slung-horn and block anchors with some tat and a handful of fixed or bolted stations, and carry a 60 m rope.",
+ "approach": "Same trailhead and Boston Basin climbers' trail as the West Ridge (old Diamond Mine roadbed for ~1 mile, then a steep climbers' path with several creek crossings to treeline around 5,300 ft, then talus/heather to the usual high camp at 6,300–6,600 ft, roughly 4–5 miles / 3–4 hours from the car). From camp, rather than crossing toward the south-face couloir, traverse climber's-left/east around the basin and gain the ridges and gullies flanking the glacier on Forbidden's east side (sometimes loosely called the 'Unnamed Glacier'). This leg is notably loose and slower going than the West Ridge approach: expect a few hours of travel over choss-covered slabs, loose rock and seepage, and several small stream crossings, often finishing with a snow gully that wants crampons/microspikes to gain the upper benches below the ridge. Continue up broken rock and snow slopes to the notch that marks the start of the technical East Ridge climbing — roughly 5–6 hours and 5,000+ ft above the trailhead, noticeably longer and more route-finding-intensive than reaching the West Ridge notch.",
+ "overview": "This is Forbidden's East Ridge Direct, the second of the peak's two classic ridge lines and longer/more sustained than the West Ridge. It climbs a series of gendarmes and a knife-edge granite crest to a 5.8 crux pitch near the top; sources consistently grade the technical difficulty at 5.8 rather than 5.6.",
+ "beta": "From a notch on the East Ridge, climb the crest and both flanks of the ridge for 6-8 pitches, bypassing several gendarmes on ledges or short rappels into notches; the crux is a well-protected ~40 ft 5.8 section on the last gendarme, followed by easier simul-climbing to the summit.",
+ "gear": [
+  "Cams: singles .3-3 with doubles .4-1 — a single rack also works and is the lighter, more common choice",
+  "A set of nuts",
+  "Alpine draws and long slings — the ridge is nine pitches and eats runners",
+  "Half or twin ropes folded in half: there is a free-hanging rappel off the back of a gendarme before the 5.8 crux, and the same system covers the West Ridge or East Ledges descent",
+  "Helmet",
+  "Ice axe and crampons for the approach couloir out of Boston Basin",
+  "North Cascades National Park permit for a Boston Basin camp"
+ ],
+ "fa": "Fred Beckey, Joe Hieb, Ed Cooper, Don Claunch — 1958",
+ "face": "East Ridge"
+}

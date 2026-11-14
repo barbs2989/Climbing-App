@@ -1,0 +1,150 @@
+[
+ {
+  "id": "ak_south_pioneer_peak_pioneer_ridge",
+  "i": 1,
+  "name": "South Pioneer Peak summit",
+  "from": [
+   61.4584804,
+   -149.0169032
+  ],
+  "op": "none",
+  "source": "https://en.wikipedia.org/wiki/Pioneer_Peak_(Alaska)",
+  "quote": "The Pioneer Ridge Trail leads up the eastern shoulder, beginning below 200', it allows access to the South summit.",
+  "reason": "Pin sits at 5182 ft on 3DEP, about 1.2 km SE of a Peakbagger-listed coordinate (61.469418,-149.026944, 3DEP 6291 ft, per a search snippet only; the Peakbagger page itself answered 403 so not verifiable). GNIS has no South Pioneer Peak. Not moved: no fetched published coordinate. Flag for follow-up; stated elev 6400 matches Pioneer Peak 6,398 ft."
+ },
+ {
+  "id": "ab_mount_birdwood_northwest_ridge",
+  "i": 1,
+  "name": "Mount Birdwood summit",
+  "from": [
+   50.78528,
+   -115.36806
+  ],
+  "op": "none",
+  "source": "CGNDB geoname IAGEN https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Birdwood",
+  "quote": "Mount Birdwood | MTN latitude 50.7852778 longitude -115.3680556",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Birdwood",
+  "ground_ft_at_to": 9973,
+  "reason": "Verified: pin is 0 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 9973 ft vs stated 10161) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "ab_mount_cline_southwest_ridge",
+  "i": 1,
+  "name": "Mount Cline summit",
+  "from": [
+   52.0699,
+   -116.68295
+  ],
+  "op": "none",
+  "source": "CGNDB geoname IANDQ https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Cline",
+  "quote": "Mount Cline | MTN latitude 52.07 longitude -116.6822222",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Cline",
+  "ground_ft_at_to": 10825,
+  "reason": "Verified: pin is 51 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 10825 ft vs stated 11027) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "ab_mount_lefroy_west_face",
+  "i": 1,
+  "name": "Mount Lefroy summit",
+  "from": [
+   51.36222,
+   -116.27972
+  ],
+  "op": "none",
+  "source": "CGNDB geoname JABUV https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Lefroy",
+  "quote": "Mount Lefroy | MTN latitude 51.3625 longitude -116.279723",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Lefroy",
+  "ground_ft_at_to": 11250,
+  "reason": "Verified: pin is 31 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 11250 ft vs stated 11230) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "ab_mount_northover_south_ridge",
+  "i": 1,
+  "name": "Mount Northover summit",
+  "from": [
+   50.58889,
+   -115.24028
+  ],
+  "op": "none",
+  "source": "CGNDB geoname IAOJZ https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Northover",
+  "quote": "Mount Northover | MTN latitude 50.5888889 longitude -115.2402778",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Northover",
+  "ground_ft_at_to": 9484,
+  "reason": "Verified: pin is 0 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 9484 ft vs stated 10000) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "ab_mount_smuts_south_ridge",
+  "i": 1,
+  "name": "Mount Smuts summit",
+  "from": [
+   50.80778,
+   -115.38694
+  ],
+  "op": "none",
+  "source": "CGNDB geoname IAJNK https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Smuts",
+  "quote": "Mount Smuts | MTN latitude 50.8077778 longitude -115.3869444",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Smuts",
+  "ground_ft_at_to": 9357,
+  "reason": "Verified: pin is 0 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 9357 ft vs stated 9639) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "ab_mount_athabasca_aa_col",
+  "i": 0,
+  "name": "Mount Athabasca summit",
+  "from": [
+   52.181,
+   -117.20124
+  ],
+  "op": "none",
+  "source": "CGNDB geoname IACKP https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Athabasca",
+  "quote": "Mount Athabasca | MTN latitude 52.1805555 longitude -117.2016667",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Athabasca",
+  "ground_ft_at_to": 11159,
+  "reason": "Verified: pin is 57 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 11159 ft vs stated none) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "bc_brunswick_mountain_lions_bay_trail",
+  "i": 1,
+  "name": "Brunswick Mountain summit",
+  "from": [
+   49.48778,
+   -123.20139
+  ],
+  "op": "none",
+  "source": "CGNDB geoname JACZN https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Brunswick%20Mountain",
+  "quote": "Brunswick Mountain | MTN latitude 49.487777 longitude -123.201389",
+  "second_source": "https://en.wikipedia.org/wiki/Brunswick_Mountain",
+  "ground_ft_at_to": 5707,
+  "reason": "Verified: pin is 0 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 5707 ft vs stated 5866) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "bc_mount_begbie_north_ridge",
+  "i": 1,
+  "name": "Mount Begbie summit",
+  "from": [
+   50.88494,
+   -118.25565
+  ],
+  "op": "none",
+  "source": "CGNDB geoname JAGBT https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Begbie",
+  "quote": "Mount Begbie | MTN latitude 50.884722 longitude -118.255833",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Begbie",
+  "ground_ft_at_to": 8932,
+  "reason": "Verified: pin is 27 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 8932 ft vs stated 8957) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ },
+ {
+  "id": "bc_mount_robson_emperor_ridge",
+  "i": 4,
+  "name": "Mount Robson Summit",
+  "from": [
+   53.11036,
+   -119.15568
+  ],
+  "op": "none",
+  "source": "CGNDB geoname JBLBR https://geogratis.gc.ca/services/geoname/en/geonames.json?q=Mount%20Robson",
+  "quote": "Mount Robson | MTN latitude 53.110556 longitude -119.156389",
+  "second_source": "https://en.wikipedia.org/wiki/Mount_Robson",
+  "ground_ft_at_to": 12883,
+  "reason": "Verified: pin is 52 m from the CGNDB published summit coordinate (Wikipedia agrees). 3DEP (ground 12883 ft vs stated 12972) is a smoothed glacier/rock DEM so a low or non-max reading is not evidence against it. Stated elev matches the published height."
+ }
+]

@@ -1,0 +1,933 @@
+[
+ {
+  "key": "s0421",
+  "text": "Stay right of the gully dividing the two spires, scrambling to a flat ledge at the start.",
+  "runs": [
+   "stay right of the gully dividing the two spires"
+  ],
+  "targets": [
+   {
+    "id": "wa_flycatcher_buttress",
+    "path": "waypoints[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0422",
+  "text": "Hike up from the hairpin into the Spire Gully, following occasional cairns to the last large tree in the center of the gully, then traverse right across talus (snow early season) toward the gully that runs up to the notch between the two Early Winters Spires. Stay right of that dividing gully and scramble to the flat ledge at the start of the route.",
+  "runs": [
+   "the last large tree in the center of the gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_flycatcher_buttress",
+    "path": "waypoints[1].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0423",
+  "text": "Start from the hairpin turn used for other Liberty Bell Group routes; stay right of the gully dividing the two spires and scramble up to the route's start ledge.",
+  "runs": [
+   "stay right of the gully dividing the two spires and scramble"
+  ],
+  "targets": [
+   {
+    "id": "wa_flycatcher_buttress",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0424",
+  "text": "Stay right of the gully that divides the two spires, and scramble to a flat ledge. Those are the two things to find: the dividing gully, kept on your left, and a flat ledge where the route starts.\n\nWhy the gully is the right handrail to use here: North and South Early Winters Spires are separated by a single continuous cleft, a chockstone-filled chasm on the west side and a gully on the east. It runs the full height between the two peaks, so it is the one feature on this side you cannot lose. Keep it on your left and you are on North Early Winters Spire's ground; cross it and you are on South Early Winters Spire, where the Direct East Buttress and Southern Man start.\n\nArrival: a flat ledge, gained by scrambling. Flat ground on a steep east-facing wall is the confirmation.\n\nThe trailhead test, which is the one that costs an hour if you get it wrong: this route is on the east side and is reached from the hairpin pullout. The other two North Early Winters Spire routes here, The West Face and Labor Pains, are on the west side and are reached from the Blue Lake Trailhead, which is about 2.5 miles away by road on the far side of Washington Pass. Those are different cars.\n\nAnd the descent crosses back over the mountain, which you should plan for before starting: from the summit, traverse to the west side of the peak and rappel either the Chockstone Route with a 60 m rope or the bolted West Face anchors with a 70 m rope. Both require crossing over from the east-side climbing line to the west-side descent infrastructure.",
+  "runs": [
+   "the two spires and scramble to a flat ledge"
+  ],
+  "targets": [
+   {
+    "id": "wa_flycatcher_buttress",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0425",
+  "text": "From Granite Falls, drive the Mountain Loop Highway east about 30 miles past Verlot to Barlow Pass, where the pavement ends, and park at the trailhead at about 2,360 ft. The old Monte Cristo road beyond is gated to vehicles. A Northwest Forest Pass is required to park, and a free self-issue wilderness permit is available at the trailhead kiosk.",
+  "runs": [
+   "a northwest forest pass is required to park"
+  ],
+  "targets": [
+   {
+    "id": "wa_foggy_peak_scramble",
+    "path": "waypoints[1].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0426",
+  "text": "The only ridge in the area with large trees on it, then a cliffy nuisance ridge. Cross Glacier Creek above the falls and traverse nearly level to the base of a timbered ridge — unmistakable, because it is the only rib on this slope carrying big trees while everything either side of it is brush and talus. That ridge is the first landmark and it is climbed, not skirted. The second comes at the end of the upper traverse near 5,100 ft: a cliffy ridge that has to be got around rather than crossed. Once past it, turn right and go straight up the talus slopes toward the summit gully. At the gully entrance the season decides the day — in a good year the snowfield runs continuously into the gully, and where it has pulled back, the rock immediately to its left has gone at short class 4. The gully above is mostly class 3 and finishes at a notch on the skyline just west of the true summit; aim for that notch, not for the summit block. A gully topping out at the summit, or east of it, is the wrong one.",
+  "runs": [
+   "in the area with large trees on it"
+  ],
+  "targets": [
+   {
+    "id": "wa_foggy_peak_scramble",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0427",
+  "text": "Climb the steep climbers' trail, with several creek crossings, to the camps in Boston Basin. From the upper basin head north toward Forbidden's south face and climb the snow slopes and loose gully below and right of it to the saddle just northwest of the Solitary Gendarme, about 8,300-8,400 ft. Axe and crampons are usually needed. Allow about 4 hours from the trailhead, or 2 from the basin camps.",
+  "runs": [
+   "the saddle just northwest of the solitary gendarme"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_east_ledges",
+    "path": "waypoints[3].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0428",
+  "text": "From the upper basin, head north toward Forbidden's South Face and climb the snow slopes and gully below and right of it to the saddle just northwest of the Solitary Gendarme, about 8,300–8,400 ft. The gully is loose rock and scree late in the season; stay out of the fall line of parties above. Axe and crampons are usually needed here; late-season parties can leave them at the saddle.",
+  "runs": [
+   "the saddle just northwest of the solitary gendarme"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_east_ledges",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0429",
+  "text": "Third rappel; followed by a short, exposed grassy traverse east to the next rock rib before the final two rappels.",
+  "runs": [
+   "grassy traverse east to the next rock rib"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_east_ledges",
+    "path": "rappel_detail[2].notes"
+   },
+   {
+    "id": "wa_forbidden_peak_east_ridge",
+    "path": "rappel_detail[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0430",
+  "text": "The East Ridge is not reversed as a rappel line in its own right; two descents are used instead. The standard one is the East Ledges, dropping climber's-right/northeast directly off the summit: three rappels trend northeast from the summit area, then a short, exposed grassy traverse east to the next rock rib, followed by two more rappels onto the East Ledges proper, about 5 rappels in all. From there, several hundred metres of loose, sandy and grassy class 3–4 ledges and slabs, marked by intermittent and sometimes doubled cairn lines, lead east above the cliffs over the crevassed Boston Glacier to a gully about 100 ft below the Solitary Gendarme; go up and over the East Ridge through it, then down snow slopes on the south side to the small glacier below Forbidden's south face and the walk back across Boston Basin. The alternative is to reverse along the ridge crest past the gendarmes to the West Ridge notch and descend the West Ridge line: about three rappels on the ridge and about five down the Cat Scratch gullies, roughly eight on a single 60 m rope. It is longer, but it is more travelled and easier to follow, and many parties prefer it to the East Ledges, which are faster but loose, exposed, rockfall-prone and easy to lose. Either way, expect mostly natural slung-horn and block anchors with some tat and a handful of fixed or bolted stations, and carry a 60 m rope.",
+  "runs": [
+   "grassy traverse east to the next rock rib"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_east_ridge",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0431",
+  "text": "From the bivy ledges, scramble up to a short, steep left-facing corner. It is only a few hard moves and takes gear well before easing onto a level section of ridge with a small, very exposed bivy platform. Some parties instead traverse east on ledges and regain the crest near 8,100 ft.",
+  "runs": [
+   "scramble up to a short steep left facing corner"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_north_ridge",
+    "path": "pitch_detail[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0432",
+  "text": "Leave the Boston Glacier across the moat or bergschrund at the face's margin, which widens through the season, and climb the rock just below and to the left of the large ice patch on the lower face. The section is rated old-style grade III and was first protected with a few pitons; expect no fixed gear, and treat this outline with caution because the face sees very few ascents.",
+  "runs": [
+   "the rock just below and to the left of"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_northeast_face",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0433",
+  "text": "Top of the Cat Scratch gullies, the rock chimneys immediately west of the snow couloir. From the notch, downclimb a short section of 3rd-class rock to reach it.",
+  "runs": [
+   "of the snow couloir from the notch downclimb"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_northeast_face",
+    "path": "rappel_detail[3].station"
+   },
+   {
+    "id": "wa_forbidden_peak_west_ridge",
+    "path": "rappel_detail[3].station"
+   }
+  ]
+ },
+ {
+  "key": "s0434",
+  "text": "Forbidden's tallest, steepest, and most remote established route, first climbed by Fred Beckey and Ed Cooper in July 1959. It is a notably pure line whose mixed character demands real climbing ability and adaptable alpine skills. From a high bivy, roughly 500 ft of steep, somewhat loose 4th-to-low-5th-class terrain gains a knife-edge section (5.6), leading into four 60m pitches up to the 5.8 crux before the face blends into the upper West Ridge near the summit.",
+  "runs": [
+   "steep somewhat loose 4th to low 5th class"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_northwest_face",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0435",
+  "text": "From the top of the snow and ice, solo or simul-climb about 500 ft of steep, somewhat loose 4th to low-5th class rock up the rib, keeping the party close to limit rockfall, to where it narrows into the knife-edge.",
+  "runs": [
+   "steep somewhat loose 4th to low 5th class"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_northwest_face",
+    "path": "waypoints[7].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0436",
+  "text": "Cross the exposed knife-edge on the crest at 5.6 and continue straight into the 5.8 crux on solid granite flakes and cracks. Where the rib blends into the face, head up and left into a wide chimney, then follow low-5th to 5.6 cracks and flakes on good rock to the summit.",
+  "runs": [
+   "blends into the face head up and left"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_northwest_face",
+    "path": "waypoints[8].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0437",
+  "text": "From the top of the snow and ice approach, solo or simul-climb steep, somewhat loose 4th to low-5th class rock up the rib toward the summit. The rock here is the worst on the route: move carefully and keep the party close to limit rockfall. Rope up for real where the rib narrows into a knife-edge.",
+  "runs": [
+   "solo or simul climb steep somewhat loose 4th to low 5th class"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_northwest_face",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0438",
+  "text": "Where the rib blends into the face, head up and left into a wide chimney where the rock steepens; old fixed gear marks it. The rock is poor near the chimney's base, then improves markedly as it opens onto the true northwest face, with excellent crack systems above.",
+  "runs": [
+   "blends into the face head up and left"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_northwest_face",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0439",
+  "text": "From the Boston Basin trailhead off Cascade River Road, follow the unsigned but well-beaten Boston Basin climbers' path. It starts by following the old Diamond Mine roadbed for about 1 mile, then splits off the roadbed to climb steeply and directly through forest. The trail crosses four seasonal creeks/streams (reliable water) as it switchbacks up through increasingly open timber, breaking out above treeline around 5,300 ft. Above treeline it continues into the broad boulder-and-heather Boston Basin cirque, past the usual high-camp sites around 6,300–6,600 ft (roughly 4–5 miles and 3–4 hours from the car, ringed by Sahale, Sharkfin Tower, and Mt. Torment). From camp, make an ascending traverse across talus and the Quien Sabe Glacier remnant toward Forbidden's south face; when the glacier is melted out, a class 3 rock spur on climber's right is often a faster, drier alternative to crossing snow/ice. Rope up if the glacier is crevassed or snow-covered. Aim for the obvious ~500-ft snow-and-ice couloir splitting the left edge of the south face — the standard gully leading to the West Ridge notch. This couloir steepens to 40–50°+ near its top, typically wants crampons/axe (and sometimes a picket) into mid-summer, and is guarded by a moat near its top, against the rock walls approaching the notch, that can require a short steep step or a band of loose rock to surmount. Exiting the couloir at the ridge-crest notch is roughly 4–5 hours and about 4,500 ft above the trailhead.",
+  "runs": [
+   "the old diamond mine roadbed for about 1 mile"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_west_ridge",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0440",
+  "text": "IGBC-approved bear canister required for food/scented items when camping below the vegetation line in Boston Basin, June 1-Nov 15; camping restricted to the designated low camp (~5,300 ft) and high camp (~6,400 ft).",
+  "runs": [
+   "camping below the vegetation line in boston basin"
+  ],
+  "targets": [
+   {
+    "id": "wa_forbidden_peak_west_ridge",
+    "path": "access.rules"
+   }
+  ]
+ },
+ {
+  "key": "s0441",
+  "text": "Aim for the broad notch in the East Ridge, up moderate snow that steepens near the top or, late in the season, unpleasant choss and talus. The gully is very loose: scree slides underfoot, holds break, and parties above send down rock. The last stretch has narrow sandy ledges. At the notch, go left over blocks and loose talus to gain the crest.",
+  "runs": [
+   "over blocks and loose talus to gain the"
+  ],
+  "targets": [
+   {
+    "id": "wa_fortress_mountain_east_ridge",
+    "path": "pitch_detail[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0442",
+  "text": "Follow the Esmeralda Basin Trail a short way and turn right onto Ingalls Way #1390, climbing to Ingalls Pass (about 6,500 ft). Take the upper of the two trails above Headlight Basin toward Lake Ingalls for about half a mile, then leave it and go cross-country up the east slopes (firm snow early season, loose talus after melt-out) to the ESE ridge at about 7,050 ft. A good boot path follows the ridge to the summit.",
+  "runs": [
+   "boot path follows the ridge to the summit"
+  ],
+  "targets": [
+   {
+    "id": "wa_fortune_peak_east_slope",
+    "path": "waypoints[1].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0443",
+  "text": "Clean low-angle V-slot with a thin crack in the back, plus scrambling and corner sequences.",
+  "runs": [
+   "clean low angle v slot with a thin crack in the back"
+  ],
+  "targets": [
+   {
+    "id": "wa_free_at_last",
+    "path": "pitch_detail[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0444",
+  "text": "P1 (10+/11-, ~100 ft) climbs a nondescript crack to a two-piece fixed anchor on a pedestal. P2 (mid-11, ~82 ft) follows obvious double incipient cracks to a sweet final move and a series of ledges. P3 (10-, ~40 ft) is short with a tricky start then easy climbing. P4 (5.9, ~164 ft) climbs a beautiful right-facing corner. P5 and P6 (5.easy, ~262 ft and ~25 ft) trend right to join the South Arete and finish to the summit.",
+  "runs": [
+   "obvious double incipient cracks to a sweet final move"
+  ],
+  "targets": [
+   {
+    "id": "wa_free_mojo",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0445",
+  "text": "The Blue Lake trailhead is on the south side of SR-20 near milepost 162, about a mile west of Washington Pass, at about 5,400 ft. A Northwest Forest Pass is required to park.",
+  "runs": [
+   "trailhead is on the south side of sr 20 near milepost 162"
+  ],
+  "targets": [
+   {
+    "id": "wa_free_mojo",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0446",
+  "text": "Clean layback crack directly above Shirley, finishes on a ledge below Death to Zeke (5.11a).",
+  "runs": [
+   "finishes on a ledge below death to zeke"
+  ],
+  "targets": [
+   {
+    "id": "wa_freedom_fighter_2",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0447",
+  "text": "Fun movement on really nice stone follows the center rib up the slab. It feels deceptively short due to concentrated difficulty, with a couple of stout (5.10+) moves in the middle.",
+  "runs": [
+   "fun movement on really nice stone follows the center rib up the slab"
+  ],
+  "targets": [
+   {
+    "id": "wa_friction_therapy",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0448",
+  "text": "standard rack with extra #1 and #2 Camalots for pitch 2",
+  "runs": [
+   "standard rack with extra 1 and 2 camalots for"
+  ],
+  "targets": [
+   {
+    "id": "wa_full_tilt_tempest_wall_free_version",
+    "path": "gear[0]"
+   }
+  ]
+ },
+ {
+  "key": "s0449",
+  "text": "The free version of the Tempest Wall's aid line, Full Tilt starts several hundred feet down the gully to the right of the West Face's start and climbs about 1,200 ft over 5 pitches with excellent climbing from 5.9 to 5.11 and one pitch of 5.12.",
+  "runs": [
+   "from 5.9 to 5.11 and one pitch of 5.12"
+  ],
+  "targets": [
+   {
+    "id": "wa_full_tilt_tempest_wall_free_version",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0450",
+  "text": "From US-2 at the western edge of Leavenworth, take Icicle Creek Road 8.4 miles and turn left onto FR 7601. Follow the bumpy dirt road 3.7 miles to the Stuart Lake Trailhead at its end (about 3,400 ft). A Northwest Forest Pass is required, plus a self-issued day-use permit; overnight camping at Colchuck Lake needs an Enchantments permit.",
+  "runs": [
+   "dirt road 3.7 miles to the stuart lake trailhead"
+  ],
+  "targets": [
+   {
+    "id": "wa_full_tilt_tempest_wall_free_version",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0451",
+  "text": "Standard rack with extra #1 and #2 Camalots for P2; nothing bigger than a #3 Camalot is needed.",
+  "runs": [
+   "standard rack with extra 1 and 2 camalots for p2 nothing bigger"
+  ],
+  "targets": [
+   {
+    "id": "wa_full_tilt_tempest_wall_free_version",
+    "path": "detailed_rack"
+   }
+  ]
+ },
+ {
+  "key": "s0452",
+  "text": "Stay west of the stream, and do not climb the gully it comes out of. Three gullies drain this face and they are not equivalent. The eastern one is where the stream originates, and it is the one that can cliff-band you out — which is exactly why every description of this route tells you to stay west of the stream from the meadows upward. The central open gully and slopes just west of the stream is the most direct line and tops out at the saddle southeast of the summit. A further large gully west of that reaches the saddle southwest of the true summit, between the mountain's two highpoints. The transition to watch for is at about 7,100 ft where meadow turns to rock and the scree begins; above it you climb directly up steep rocky slopes, picking over scree and rock buttresses. At the top the ground flattens onto a high plateau and the summit sits on the ridge crest, wide and gentle. If you are standing on a pointed bump with higher ground to the north, you are on one of the sub-peaks southeast of the true top.",
+  "runs": [
+   "the saddle southwest of the true summit between the mountain's two highpoints"
+  ],
+  "targets": [
+   {
+    "id": "wa_gardner_mountain_west_ridge",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0453",
+  "text": "The higher option for a party that wants to shorten summit day rather than take both peaks in one long push from the meadows. Heading north out of Gardner Meadows the ground rises to a small meadow basin at about 6,200 ft, and an old boot path leaves the main trail a few hundred feet west of the small stream to reach it. Stay between roughly 6,200 and 6,400 ft on the way across — drop lower and you land in groves of silver snags with jack-strawed deadfall that cost far more time than the elevation saves. From a camp here the scree slope to the ridge is about 1,400 ft of gain in half a mile, which is the steepest and loosest section of the whole climb and much better done early and on firm ground. It is an exposed spot with no shelter to speak of and it is cold; the compensation is the position and the head start. Use it when the forecast is settled and when you have confirmed water. In a dry August the meadows below are the safer plan.",
+  "runs": [
+   "trail a few hundred feet west of the small stream",
+   "groves of silver snags with jack strawed deadfall"
+  ],
+  "targets": [
+   {
+    "id": "wa_gardner_mountain_west_ridge",
+    "path": "bivy[1].notes"
+   },
+   {
+    "id": "wa_north_gardner_mountain_southwest",
+    "path": "bivy[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0454",
+  "text": "Descend the line of ascent. A single 70 m rope handles it (60 m would probably work) via five or more rappels off trees and horns, linked by long stretches of downscrambling in the gully. Rappelling off the overhang near the summit into Gully #2 has been done, but getting out to that rappel is described as quite scary and it is not recommended. Below the Y Notch you are back on the Main Peak's South Route descent — a single-rope rappel off the steep section of the wooded ramp, then the slab (two double-rope rappels if you rope it) and the dirt gully. Loose rock is the constant theme; the descent is where parties get hurt.",
+  "runs": [
+   "a single rope rappel off the steep section of the wooded ramp"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_leaning_spire_west_route",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0455",
+  "text": "No fixed rappel line on the route. Descend over the main West Peak summit and down the west ridge, or - if you have carried two 60 m ropes - rappel Infinite Bliss instead: counts for this rappel line differ - about 20 to 25 double-rope rappels. Do not head straight down the northwest backside slope.",
+  "runs": [
+   "over the main west peak summit and down the west ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_preiss_route",
+    "path": "rappels"
+   }
+  ]
+ },
+ {
+  "key": "s0456",
+  "text": "Hike around right and scramble the short back side of the sub-summit rock, then descend up and over the main West Peak summit and down the west ridge; alternatively rappel with two ropes.",
+  "runs": [
+   "the short back side of the sub summit rock",
+   "descend up and over the main west peak summit and down the west ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_preiss_route",
+    "path": "descent"
+   }
+  ]
+ },
+ {
+  "key": "s0457",
+  "text": "From the sub-summit, walk down and left through the small gap in the trees onto the gentle northern slope, then go up and over the main West Peak summit and descend the west ridge. Do NOT head straight down the northwest backside slope — the first ascensionist flags this specifically. The alternative, if you have carried two 60 m ropes, is to rappel Infinite Bliss (about 20 rappels off the chain stations); a single 70 m or 80 m is not long enough for those stations. Either way this is a long descent on brushy, disorienting terrain and should be started with hours of daylight in hand.",
+  "runs": [
+   "up and over the main west peak summit and"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_preiss_route",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0458",
+  "text": "600-700 ft of sub-par, essentially unprotectable slab. Aim for the small, thick stubby tree on the upper rightish side of the face, then continue to the next small tree patch to belay.",
+  "runs": [
+   "small thick stubby tree on the upper rightish side of the face",
+   "to the next small tree patch to belay"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_preiss_route",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0459",
+  "text": "Traverse the big ledge to its left side and climb a fun blocky corner that ends at a small sandy notch.",
+  "runs": [
+   "to its left side and climb a fun"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_preiss_route",
+    "path": "pitch_detail[5].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0460",
+  "text": "Walk down and left through a small gap in the trees onto the gentle northern slope, hike around right and scramble the short back side of the sub-summit rock (4,804 ft).",
+  "runs": [
+   "down and left through a small gap in the trees",
+   "onto the gentle northern slope hike around right and",
+   "the short back side of the sub summit rock"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_preiss_route",
+    "path": "pitch_detail[8].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0461",
+  "text": "The old sketch landmarks are still the way people navigate it: dirt gully, slab, canyon edge, tiny notch, razorback, glade saddle, key ledge traverse, Y notch, #2 gully. Walk up the dry creek bed from the road; partway up the route leaves the streambed into the woods on faint trail and flagging. At about 2,200 ft you reach the dirt gully — fill water at the creek here, it is the last certain water on the route. Four hundred vertical feet of loose dirt and rock, then the trail exits left into brush-free timber for another 400 ft, then the slab, which is two pitches of comfortable soloing on intersecting dikes. Above the slab continue in dirt along its upper left edge, traverse under a rock outcrop, over the razorback and tiny notch to the Glade Saddle, where there is a tight, well-used two-person bivy site. The wooded ramp above has a sporty 20-foot step. The Key Ledge Traverse is the most overstated part of the description — after the dirt gully it feels like a walk. It ends at the Y Notch, the confluence of #1 and #2 Gullies at the head of the Great Canyon. A short exposed step around a rock band, then several hundred yards of very steep brush and brush-tunnel on faint trail, brings you to the base of #2 Gully. The gully is a nightmarish mix of impossibly loose rock on one side and polished mossy rock on the other — do not attempt it unless bone dry. Simulclimb the lower section with short belayed steps, then pitch out the harder ground; a fixed ring piton partway up may date to the 1940 first ascent. The 'Chimney Variation' (two leads of easy class 5 above the chimney, a good idea if the chimney is wet) rejoins the standard line at the top of #2 Gully around 5,200 ft, from where easy slabs and steep heather lead to the summit.",
+  "runs": [
+   "dirt gully slab canyon edge tiny notch razorback glade saddle key ledge traverse y notch 2 gully",
+   "a short exposed step around a rock band",
+   "of impossibly loose rock on one side and polished mossy rock on the other"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0462",
+  "text": "Do not drop into the small dry creek bed on the west side of the ridge past the razorback; traverse above it. Dropping in leads to the most desperate brush-pulling on the mountain.",
+  "runs": [
+   "small dry creek bed on the west side of the ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "pro_tips[1]"
+   }
+  ]
+ },
+ {
+  "key": "s0463",
+  "text": "#2 Gully is loose rock on one side and polished, mossy rock on the other; it is only reasonable when bone dry.",
+  "runs": [
+   "loose rock on one side and polished mossy rock on the other"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "watch_out[0]"
+   }
+  ]
+ },
+ {
+  "key": "s0464",
+  "text": "The route does not let up until you are back at the car — most injuries happen on the descent.",
+  "runs": [
+   "does not let up until you are back at the car"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "watch_out[3]"
+   }
+  ]
+ },
+ {
+  "key": "s0465",
+  "text": "From the summit scramble down to the top of the easy slab and rig a single-rope rappel to the col at the top of #2 Gully. From there scramble to a bolted rappel station and make the first of about four double-rope rappels with two 60 m ropes, traversing 100-yard stretches of slab between stations on the east side of the gully; the lower stations are on trees and chockstones with slings dating back to the 1990s. Pack the ropes near the base of the gully and downclimb — this is where the west-side rock is loosest and where a party member was struck by a 500-pound block that cut loose under hand pressure in 2001. Cross back over the Y Notch and the Key Ledge Traverse, make a single-rope rappel off the steep section of the wooded ramp, and continue down past the Glade Saddle. Two more double-rope rappels land you at the base of the slab at 2,900 ft; from there it is the wooded ridge, then the dirt gully to the creek at 2,100 ft, then the faint trail and the dry creek bed to the car. Expect to lose the trail in the dark at least once.",
+  "runs": [
+   "scramble down to the top of the easy slab",
+   "the col at the top of 2 gully",
+   "a single rope rappel off the steep section of the wooded ramp and"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0466",
+  "text": "Continue up dirt above the upper left edge of the slab, traverse under a rock outcrop, then 40-degree loose pine-needle slopes (huckleberry stems make handholds) over the tiny notch and razorback to the Glade Saddle and its two-person bivy site. Do not drop into the dry creek bed on the west side.",
+  "runs": [
+   "dirt above the upper left edge of the slab"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0467",
+  "text": "A short exposed step around a rock band, then several hundred yards of ridiculously steep brush on a faint trail, sometimes a literal brush tunnel, to the base of #2 Gully.",
+  "runs": [
+   "a short exposed step around a rock band"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "pitch_detail[6].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0468",
+  "text": "From the col at the top of #2 Gully, easy slabs and steep heather lead to the summit — the slab is effectively unprotectable and holds the hardest move of the day for some parties. Trend to the broad final gully; the 5,519 ft summit is the tower to the west.",
+  "runs": [
+   "the col at the top of 2 gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "pitch_detail[8].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0469",
+  "text": "Rappel 1 of 8, single rope, to the col at the top of #2 Gully.",
+  "runs": [
+   "the col at the top of 2 gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "rappel_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0470",
+  "text": "From the summit, scramble down to the top of the easy slab.",
+  "runs": [
+   "scramble down to the top of the easy slab"
+  ],
+  "targets": [
+   {
+    "id": "wa_garfield_mountain_south_route",
+    "path": "rappel_detail[0].station"
+   }
+  ]
+ },
+ {
+  "key": "s0471",
+  "text": "Gato Negro is a full-day alpine rock climb with fairly sustained 5.10a/b climbing spread across 12 long pitches. Most pitches span 180-190 feet with none shorter than 150 feet. The route features a spectacular hand-crack first pitch, bolted 5.10a face climbing on fragile flakes, rising traverses under roofs, and splitter cracks on the final headwall. Route-finding is somewhat challenging; avoid a clean blocky chimney to the right of the route that looks good but is not as good as it appears. Cruxes are mostly well-protected, but a few slightly runout 5.8 sections on loose granite and a 5.9+ offwidth chimney section present additional challenges.",
+  "runs": [
+   "a clean blocky chimney to the right of the route that looks good but"
+  ],
+  "targets": [
+   {
+    "id": "wa_gato_negro",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0472",
+  "text": "A few rappels over the top of the spire into the descent gully between Whine Spire and the west summit of Silver Star, then a few more in the gully between long sections of loose 4th-class downclimbing. No exact count is published, so carry a rope and gear for several rappels and cord to build anchors.",
+  "runs": [
+   "gully between whine spire and the west summit of silver star"
+  ],
+  "targets": [
+   {
+    "id": "wa_gato_negro",
+    "path": "rappels"
+   }
+  ]
+ },
+ {
+  "key": "s0473",
+  "text": "Bring a full set of cams ranging from sizes 0 through 5, with an additional half set of small cams. Stoppers and nuts have limited utility on this route but one small nut may be useful to avoid plugging a lock on the crux. Standard alpine rock gear package.",
+  "runs": [
+   "5 with an additional half set of small cams stoppers"
+  ],
+  "targets": [
+   {
+    "id": "wa_gato_negro",
+    "path": "detailed_rack"
+   }
+  ]
+ },
+ {
+  "key": "s0474",
+  "text": "Beware of bad tat on the first chockstone on the crux pitch",
+  "runs": [
+   "bad tat on the first chockstone on the crux pitch"
+  ],
+  "targets": [
+   {
+    "id": "wa_gato_negro",
+    "path": "watch_out[0]"
+   }
+  ]
+ },
+ {
+  "key": "s0475",
+  "text": "The descent does not reverse the route. Make a few rappels over the top of the spire into the steep gully between Whine Spire and the west summit of Silver Star, then work down the gully with long sections of loose 4th-class downclimbing and a few more rappels. The gully is extremely loose, with rock coming down through it constantly, so keep the party out of one another's fall line and clear of the ropes. Do not attempt it in rock shoes. Plan on 2.5 to 3 hours in good conditions; parties benighted here describe about three hours of complex route-finding in the dark, and advise against starting it after dark.",
+  "runs": [
+   "gully between whine spire and the west summit of silver star"
+  ],
+  "targets": [
+   {
+    "id": "wa_gato_negro",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0476",
+  "text": "Do not go through the hole up and to the left; instead go around the corner, past a few trees, and up a finger crack to a ledge. From this ledge the route-finding becomes more straightforward.",
+  "runs": [
+   "a few trees and up a finger crack"
+  ],
+  "targets": [
+   {
+    "id": "wa_gato_negro",
+    "path": "pitch_detail[5].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0477",
+  "text": "Climb the dihedral system above the ledge, make a short walking traverse across, then follow a 5.7 hand crack that ends below an alcove.",
+  "runs": [
+   "a 5.7 hand crack that ends below an alcove"
+  ],
+  "targets": [
+   {
+    "id": "wa_gato_negro",
+    "path": "pitch_detail[6].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0478",
+  "text": "Ghost Peak is normally climbed as an add-on from a high camp shared with neighboring Crooked Thumb Peak and Phantom Peak, since all three summits are within a few tenths of a mile of one another in the Northern Pickets. The way from camp is obvious once you're established there. The first-ascent party climbed from the notch south of the peak, reaching it from the west, then kept to the south and west sides of the mountain along obvious weaknesses — easy-to-moderate 4th/low-5th-class climbing on comparatively solid Pickets rock.",
+  "runs": [
+   "the south and west sides of the mountain"
+  ],
+  "targets": [
+   {
+    "id": "wa_ghost_peak_south_route",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0479",
+  "text": "From Bellingham, drive SR-542 east about 46 miles, which is 13 miles past Glacier, and just before the third crossing of the Nooksack River turn left onto FR-32, then follow it 5.3 miles to its end at Hannegan Campground, where the trailhead is.",
+  "runs": [
+   "just before the third crossing of the nooksack river"
+  ],
+  "targets": [
+   {
+    "id": "wa_ghost_peak_south_route",
+    "path": "approach_logistics.trailheadDirection"
+   }
+  ]
+ },
+ {
+  "key": "s0480",
+  "text": "Ghost is climbed from the high camp shared with Crooked Thumb and Phantom, all three being within a few tenths of a mile of each other. From that camp a roped glacier crossing reaches the foot of the peak. The original line gained the notch south of the peak, and gained it from the west rather than by attacking the notch directly from the glacier below, then stayed on the south and west sides of the mountain following obvious weaknesses at easy-to-moderate fourth and low fifth class. Access from camp is described as obvious once you are established there; the difficulty is knowing which of the three summits you are under.",
+  "runs": [
+   "stayed on the south and west sides of the mountain following obvious weaknesses"
+  ],
+  "targets": [
+   {
+    "id": "wa_ghost_peak_south_route",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0481",
+  "text": "Walk the road a quarter mile to the gate and take South Fork Tieton Trail #1120 about 4.5 miles to the loop junction; go right (north) about 2 miles, then near 5,100 ft turn right up an unmarked pack trail to a ridge crest and on west and north through benches to a Conrad Creek waterfall at 6,000 ft. Pass Barren Lake, climb the east side of the Conrad Glacier to the 7,200 ft saddle, traverse the Meade Glacier west-southwest to the south ridge and scramble it to the summit.",
+  "runs": [
+   "the east side of the conrad glacier to the"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_conrad_glacier",
+    "path": "waypoints[1].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0482",
+  "text": "From the South Tieton Creek and Conrad Meadows trailhead, approach the north side of the peak and ascend the east side of the Conrad Glacier to a saddle at about 7,200 ft. From the saddle, traverse onto the Meade Glacier, then finish over boulders, scree and a summit snowfield.\n\nThe Conrad is the more active of the peak's two small glaciers, so this line wants a rope, a harness and a crevasse-rescue kit rather than just an axe and crampons.\n\nDescent reverses the traverse: back over the saddle and down the Conrad to Conrad Meadows. It is normally done over two or more days given the long approach through the drainage and the talus.",
+  "runs": [
+   "the east side of the conrad glacier to"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_conrad_glacier",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0483",
+  "text": "Two glaciers with one saddle between them. That sequence is the route and it is the test.\n\nYou climb the east side of the Conrad Glacier to a saddle at about 7,200 ft, and from that saddle you traverse onto a second glacier — the Meade — before any of the summit ground. Glacier, saddle, glacier, then boulders, scree and a summit snowfield, in that order.\n\nThe negative at the saddle is the one worth carrying: if you reach a saddle and the ground beyond it is boulders and scree with no second glacier, you are on the wrong saddle. This route's saddle opens onto ice. A saddle that opens onto rock belongs to the ridge line, which is the peak's other route from the same trailhead.\n\nThe elevation is a cross-check rather than a marker: about 7,200 ft. Well above that and you have climbed the glacier past its col; well below and you are still on the apron.\n\nWhich side of the glacier matters and it is easy to get wrong in the dark: the east side of the Conrad. Drifting west takes you up the glacier's other flank and away from the saddle.\n\nThe approach-side finding: this route comes at the peak from the north. If you have climbed onto a long ridge with the peak in view along it, you are on the Klickton Divide line instead — a fine route, a different day, and it does not need a rope.",
+  "runs": [
+   "the east side of the conrad glacier to"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_conrad_glacier",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0484",
+  "text": "From the upper Conrad Creek benches, pass Barren Lake (6,416 ft) and climb snow slopes toward the notch between the Conrad and Meade Glaciers, crossing or skirting several rock bands. Dropping low around bands avoids blind ground on a high traverse. A steeper alternative goes SSW up a snow finger between cliff bands; it is steep and may be broken up.",
+  "runs": [
+   "the notch between the conrad and meade glaciers crossing"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_conrad_glacier",
+    "path": "climbing_route[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0485",
+  "text": "Drop over the saddle onto the Meade Glacier and traverse west-southwest to the south ridge of Gilbert near the Klickton Divide. Holding a high line keeps elevation rather than losing it and then climbing steep snow back up; a rock moat along the upper edge near the saddle needs care.",
+  "runs": [
+   "drop over the saddle onto the meade glacier and"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_conrad_glacier",
+    "path": "climbing_route[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0486",
+  "text": "The standard, most straightforward ascent: a long approach through Conrad Meadows and up the Surprise Lake loop trail, then cross-country to the foot of the Meade Glacier on the peak's southeast side, up its snowfields to the ridge, and a short class 3 scramble to the summit.",
+  "runs": [
+   "then cross country to the foot of the meade glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_meade_glacier",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0487",
+  "text": "From Naches, follow US 12 west about 22 miles and turn left onto Tieton Road (FR 1200). In 4.5 miles turn left onto South Fork Tieton Road (FR 1000) and follow it 12.6 miles to the trailhead at road's end in Conrad Meadows, about 4,050 ft; the last 7 miles are gravel. A day-use fee or annual recreation pass is required to park, plus a free self-issued Goat Rocks Wilderness permit.",
+  "runs": [
+   "4.5 miles turn left onto south fork tieton road"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_meade_glacier",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0488",
+  "text": "From the black-prow notch, follow the goat path east across two major gullies. Don't go up either one, however inviting they look toward Goat Citadel. Continue to the base of the steep cliffs on the far side. The last 100 ft climbs reasonably solid rock to the saddle ¼ mile south of the Citadel. Before August an ice axe is usually needed for the snow chutes.",
+  "runs": [
+   "continue to the base of the steep cliffs"
+  ],
+  "targets": [
+   {
+    "id": "wa_gilbert_peak_west_route",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0489",
+  "text": "Alpine start from Glacier Gap, drop to rocky Gerdine Ridge, then rope up on the Gerdine Glacier where it's reached (~8,500 ft), following it to a bend where it merges with the Cool Glacier and climbing to the Disappointment/Glacier Peak saddle and the summit. Move briskly under the rockfall-prone cliffs of Disappointment Peak.",
+  "runs": [
+   "bend where it merges with the cool glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_glacier_peak_cool_glacier_gerdine",
+    "path": "itinerary.days[1].note"
+   }
+  ]
+ },
+ {
+  "key": "s0490",
+  "text": "Extremely committing - very long approach with lots of up and down: difficult to retreat once committed\nTotal mileage 40+ miles (up Frostbite, down Cool Glacier) - multi-day commitment increases exposure\nMost parties take 2-3 days - extended alpine exposure risk\nSeasonal variation: mostly snow early in the season, with more ice later in the year\nSnow slopes up to approximately 45 degrees with steep angle exposure\nClass 3 rock scrambling sections on ascent\nAlpine ice face requiring 1-2 pitches of technical climbing\n'Rabbit ears' notch landmark can be disorienting - navigation hazard\nCareful navigation required to avoid steeper snow/ice climbing beyond rabbit ears\nMust know descent route and consider pre-programming GPS coordinates\nInfrastructure issues: the best approach can change from year to year due to occasional washout of bridges/roads\nNorth Fork Sauk Trail may be best starting/ending point - long approach logistics\nEquipment: rope, pickets, ice screws with small to medium nuts optional",
+  "runs": [
+   "very long approach with lots of up and down"
+  ],
+  "targets": [
+   {
+    "id": "wa_glacier_peak_frostbite_ridge",
+    "path": "watch_out"
+   }
+  ]
+ }
+]

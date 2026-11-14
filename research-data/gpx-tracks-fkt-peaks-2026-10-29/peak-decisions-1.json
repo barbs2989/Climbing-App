@@ -1,0 +1,208 @@
+[
+ {
+  "id": "wa_dragontail_peak_east_route",
+  "slug": "dragontail-peak-wa",
+  "tier": "round",
+  "why": "The FKT line climbs Aasgard Pass from Colchuck Lake and then the east-face snowfield to the summit, which is our East Route as written; Lemke Climbs, The Mountaineers and The Outbound describe that same standard line.",
+  "peak": {
+   "id": "wa_dragontail_peak",
+   "name": "Dragontail Peak",
+   "lat": 47.47873,
+   "lng": -120.833421,
+   "elevation_ft": 8840
+  },
+  "trailhead": {
+   "name": "Stuart/Colchuck Lake Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "wa_mount_si_trail",
+  "slug": "mount-si-wa",
+  "tier": "round",
+  "why": "FKT car-to-car follows the Mount Si trail up to the Haystack, the same as WTA's description of our trail route.",
+  "peak": {
+   "id": "wa_mount_si",
+   "name": "Mount Si",
+   "lat": 47.5068,
+   "lng": -121.7391,
+   "elevation_ft": 4167
+  },
+  "trailhead": {
+   "name": "Mount Si trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ab_mount_athabasca_aa_col",
+  "slug": "mount-athabaska-ab-canada",
+  "tier": "round",
+  "why": "The FKT page says its report is for the AA Col route, and guides list AA Col as a distinct west-side route to the summit, matching our AA Col.",
+  "peak": {
+   "id": "ab_mount_athabasca",
+   "name": "Mount Athabasca",
+   "lat": 52.181,
+   "lng": -117.20124,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "bc_mount_sir_donald_northwest_arete",
+  "slug": "mt-sir-donald-bc-canada",
+  "tier": "round",
+  "why": "FKT page titles the line Northwest Ridge car-to-car and Wikipedia names the Northwest Arete as the peak classic route, matching our only route.",
+  "peak": {
+   "id": "bc_mount_sir_donald",
+   "name": "Mount Sir Donald",
+   "lat": 51.2631,
+   "lng": -117.4314,
+   "elevation_ft": 10774
+  }
+ },
+ {
+  "id": "bc_wedge_mountain_northeast_arete",
+  "slug": "wedge-mountain-bc-canada",
+  "tier": "round",
+  "why": "FKT line is the trailhead-to-summit-and-back from the Wedgemount Lake trail, using the NE Arete (bypass up, normal ridge down); Wikipedia calls the Northeast Arete the direct route from Wedgemount Lake.",
+  "peak": {
+   "id": "bc_wedge_mountain",
+   "name": "Wedge Mountain",
+   "lat": 50.13278,
+   "lng": -122.7935,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "ca_sierra_buttes_lookout_trail",
+  "slug": "sierra-buttes-ca",
+  "tier": "round",
+  "why": "The FKT page and two trail write-ups agree on the Packer Lake Road trail up the PCT and old jeep road to the stair-topped lookout, matching our trail.",
+  "peak": {
+   "id": "ca_sierra_buttes",
+   "name": "Sierra Buttes",
+   "lat": 39.5936,
+   "lng": -120.6468,
+   "elevation_ft": 8591
+  }
+ },
+ {
+  "id": "ca_south_lake_peaks_traverse",
+  "slug": "south-lakes-peaks-traverse",
+  "tier": "round",
+  "why": "The FKT line is the Hurd, Peak 12,192, Trapezoid, Mt Johnson link-up from South Lake that Mountain Project describes as the South Lake Peaks Traverse.",
+  "peak": {
+   "id": "ca_hurd_peak",
+   "name": "Hurd Peak",
+   "lat": 37.1421,
+   "lng": -118.5661,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "ca_tinker_knob_via_the_pacific_crest_trail",
+  "slug": "tinker-knob",
+  "tier": "round",
+  "why": "Out-and-back up Granite Chief Trail to the PCT, then PCT to the pass just southeast of the peak and a short use-trail to the summit, matching our route text.",
+  "peak": {
+   "id": "ca_tinker_knob",
+   "name": "Tinker Knob",
+   "lat": 39.2447,
+   "lng": -120.2851,
+   "elevation_ft": 8949
+  },
+  "trailhead": {
+   "name": "Granite Chief Trail trailhead, Olympic Valley",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_white_mountain_peak_trail",
+  "slug": "white-mountain-peak",
+  "tier": "round",
+  "why": "Barcroft Gate to summit by the South Slopes road, the standard Class 1 route, out-and-back per the independent guide.",
+  "peak": {
+   "id": "ca_white_mountain_peak",
+   "name": "White Mountain Peak",
+   "lat": 37.6341,
+   "lng": -118.2557,
+   "elevation_ft": 14252
+  },
+  "trailhead": {
+   "name": "Barcroft Gate",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_mount_hope_east_ridge",
+  "slug": "mount-hope-co",
+  "tier": "round",
+  "why": "FKT page and Climb13ers both describe the East Ridge via Hope Pass from Sheep Gulch, matching our route; Difficult Class 2 on both.",
+  "peak": {
+   "id": "co_mount_hope",
+   "name": "Mount Hope",
+   "lat": 39.0211,
+   "lng": -106.4199,
+   "elevation_ft": 13939
+  },
+  "trailhead": {
+   "name": "Sheep Gulch Trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_mount_sherman_southwest_ridge",
+  "slug": "mount-sherman-co",
+  "tier": "round",
+  "why": "FKT Fourmile Creek route follows the saddle then the southwest ridge, which 14ers.com gives as the standard Class 1 Southwest Ridge.",
+  "peak": {
+   "id": "co_mount_sherman",
+   "name": "Mount Sherman",
+   "lat": 39.2251,
+   "lng": -106.1701,
+   "elevation_ft": 14043
+  }
+ },
+ {
+  "id": "co_mount_silverheels_north_spur_from_hoosier_pass",
+  "slug": "mount-silverheels-co",
+  "tier": "round",
+  "why": "FKT entry is the North Spur out and back from Hoosier Pass, and a 14ers.com trip report describes the same Hoosier Ridge to North Spur line.",
+  "peak": {
+   "id": "co_mount_silverheels",
+   "name": "Mount Silverheels",
+   "lat": 39.3395,
+   "lng": -106.0054,
+   "elevation_ft": 13828
+  },
+  "trailhead": {
+   "name": "Hoosier Pass",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "co_mt_bierstadt_standard_route_west_slopes",
+  "slug": "mt-bierstadt-co",
+  "tier": "round",
+  "why": "FKT page names the standard Guanella Pass route and links 14ers.com, whose West Slopes page describes the same willows-to-shoulder-to-ridge line our route lists.",
+  "peak": {
+   "id": "co_mt_bierstadt_standard_route",
+   "name": "Standard Route",
+   "lat": 39.5826,
+   "lng": -105.6689,
+   "elevation_ft": null
+  }
+ },
+ {
+  "id": "co_mount_princeton_east_slopes",
+  "slug": "mt-princeton",
+  "tier": "round",
+  "why": "FKT out-and-back from the 2WD trailhead matches the 14ers.com standard East Slopes route via Tigger ridge.",
+  "peak": {
+   "id": "co_mount_princeton",
+   "name": "Mount Princeton",
+   "lat": 38.7492,
+   "lng": -106.2424,
+   "elevation_ft": 14204
+  }
+ }
+]

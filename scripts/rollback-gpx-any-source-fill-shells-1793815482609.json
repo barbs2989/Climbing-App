@@ -1,0 +1,52 @@
+{
+ "at": "2026-11-04T18:04:42.609Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "wa_big_chiwaukum_three_musketeers_ridge",
+   "before": {
+    "discipline": "alpine",
+    "disciplines": null,
+    "season": null,
+    "best_season": null,
+    "overview": null,
+    "beta": null,
+    "approach": null,
+    "descent_text": null,
+    "turnaround": null,
+    "bail": null,
+    "high_point_ft": null,
+    "outing_shape": null,
+    "gear": null,
+    "what_to_bring": null,
+    "hazards": null,
+    "obj_haz": null,
+    "watch_out": null,
+    "features": null,
+    "road": null,
+    "access": null,
+    "waypoints": [
+     {
+      "lat": 47.501905,
+      "lng": -120.753065,
+      "name": "Three Musketeers Ridge",
+      "type": "Summit"
+     }
+    ],
+    "approach_logistics": null
+   }
+  },
+  {
+   "id": "wa_big_snow_mountain_southwest_ridge",
+   "before": {
+    "season": null,
+    "approach": null,
+    "beta": null,
+    "high_point_ft": null,
+    "watch_out": null,
+    "waypoints": null,
+    "approach_logistics": null
+   }
+  }
+ ]
+}

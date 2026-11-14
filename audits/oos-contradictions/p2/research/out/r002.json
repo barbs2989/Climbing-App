@@ -1,0 +1,180 @@
+{
+ "file": "r002.json",
+ "results": [
+  {
+   "id": "az_days_of_future_passed",
+   "fact": "rappel length vs rope length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route's own source description of the descent specifies two-rope (double rope) rappels from the summit pine into the chimney; rope_length_m is the length of each rope (50 m), and two 50 m ropes easily reach a 150 ft (46 m) rappel. No field says a single doubled rope is used.",
+   "sources": [
+    "https://www.mountainproject.com/route/105794293"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_bugaboo_spire_kain_route_south_ridge",
+   "fact": "pitch count",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "null (blank; true count not stated, but more than 4)",
+   "evidence": "The overview itself enumerates two leads to the ridge crest, two more up the gendarme, the crux wall, then gully and summit, which is 6 or more. An independent route account describes about two pitches of 5.5 to the ridge, one stiff 5.6 pitch to the gendarme, the crux gendarme pitch, a traverse and one last 5.5 pitch (6 or more). Header sites giving 4 copy one another. No source states a firm count, so the false 4 is blanked.",
+   "sources": [
+    "https://www.theoutbound.com/canada/rock-climbing/climb-the-kain-route-on-bugaboo-spire",
+    "https://www.mountainproject.com/route/105889985/kain-route-south-ridge"
+   ],
+   "patches": [
+    {
+     "id": "bc_bugaboo_spire_kain_route_south_ridge",
+     "fact": "pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 4,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "bc_crescent_spire_surprisingly_subsevere",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": "Six pitches (described as four longer leads)",
+   "evidence": "Mountain Project's header, Wikipedia's Crescent Spire route list and SummitPost's list all count the route as 6 pitches (theCrag listing also shows 6). The overview's 'Four trad pitches' comes from a description that groups the climb into four leads, noting pitches 1 and 2 can be linked on a 70 m rope. Column kept at 6; the overview sentence is reworded to match.",
+   "sources": [
+    "https://mountainproject.com/route/108313043/surprisingly-subsevere",
+    "https://en.wikipedia.org/wiki/Crescent_Spire",
+    "https://www.summitpost.org/crescent-spire/221206",
+    "https://www.thecrag.com/en/climbing/canada/bugaboos/area/11916049"
+   ],
+   "patches": [
+    {
+     "id": "bc_crescent_spire_surprisingly_subsevere",
+     "fact": "pitch count",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Four trad pitches.",
+     "replace": "Six trad pitches, often linked into four longer leads."
+    }
+   ]
+  },
+  {
+   "id": "bc_eastpost_spire_classic_grit",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The overview says three pitches reach the Southwest Ridge, which then continues to the summit, so it does not state a total. Mountain Project gives 5 pitches (450 ft) and the first-ascent report in the American Alpine Journal counts six pitches for the west face route.",
+   "sources": [
+    "https://www.mountainproject.com/route/119446238/classic-grit",
+    "https://publications.americanalpineclub.org/articles/12199118501/North-America-Canada-Interior-Ranges-Eastpost-Spire-West-Face-Bugaboos-1989"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_hela_peak_hela_monster",
+   "fact": "route length",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The route is a low-angle gneiss slab; a regional article calls it a 350-metre, 10-pitch route, while the pitch list (about 56 m each, 562 m total) is distance along the slab, not vertical height. 10 pitches in both fields agree; length_m is the route's height.",
+   "sources": [
+    "https://kootenaymountainculture.com/hela-monster-rock-climbing-valhallas"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_mount_athelstan_moonraker",
+   "fact": "pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Mountain Project lists 10 pitches (1600 ft) and its description gives the 4+6+2 breakdown; the six 4th-class pitches are described as ideal for simulclimbing, so they are not separate roped pitches in the count. No source gives a different total.",
+   "sources": [
+    "https://mountainproject.com/route/106420356/moonraker"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_mount_sir_donald_northwest_ridge",
+   "fact": "rappel length vs rope",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Parks Canada's descent guide and trip accounts describe two-bolt stations about 25 m apart; a 25 m rappel is exactly what a 50 m rope doubled provides, so 'spaced for a 50 m rope' and '25 m rappels' agree.",
+   "sources": [
+    "https://parks.canada.ca/pn-np/bc/glacier/activ/alpinisme-climbing/descente-descent-sir-donald",
+    "https://www.summitpost.org/northwest-ridge-iii-5-4/319779"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_mount_sir_donald_northwest_ridge",
+   "fact": "pitches = 1 on a 732 m multi-pitch ridge",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "null (blank)",
+   "evidence": "The route is a 732 m grade III ridge with sustained 4th class and fifth-class steps, and a descent of twelve rappel stations at about 25 m (over 300 m of ridge), so a single pitch is plainly wrong. Sources describe it as long roped/simul-climbed ridge without a firm count, so the value is blanked.",
+   "sources": [
+    "https://www.summitpost.org/northwest-ridge-iii-5-4/319779",
+    "https://parks.canada.ca/pn-np/bc/glacier/activ/alpinisme-climbing/descente-descent-sir-donald",
+    "https://sendage.com/climb/mt-sir-donald-nw-ridge-rogers-pass-bc-canada"
+   ],
+   "patches": [
+    {
+     "id": "bc_mount_sir_donald_northwest_ridge",
+     "fact": "pitches = 1",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "bc_mount_waddington_kiwi_route",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": "null (blank)",
+   "evidence": "Mountain Project describes the summit tower alone as several pitches above the notch (4 to 6), and a BC Mountaineering Club listing gives the route as about 1000 m of 50-degree terrain at 5.7 (Waddington Guide route). A 945 m route with a technical summit tower cannot be 1 pitch; no source gives a total count, so it is blanked.",
+   "sources": [
+    "https://www.mountainproject.com/route/109600896/kiwi-route",
+    "https://bcmc.ca/events/1375168384"
+   ],
+   "patches": [
+    {
+     "id": "bc_mount_waddington_kiwi_route",
+     "fact": "pitch count",
+     "op": "set",
+     "column": "pitches",
+     "path": [],
+     "expect": 1,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "bc_nesakwatch_spires_waltz_right_in",
+   "fact": "grade vs pitch grades",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project's header and statistics page read 5.10b/c PG13 for this 2023 route while its own pitch descriptions top out at 5.10a (pitches 1 and 6). Searched Mountain Project, SummitPost, theCrag, trip reports and Nesakwatch pages; no independent source exists for this new route. Row matches its only source header, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/124688946/waltz-right-in",
+    "https://www.mountainproject.com/route/stats/124688946/waltz-right-in"
+   ],
+   "patches": []
+  },
+  {
+   "id": "bc_north_illusion_peak_illusion_traverse_south_to_north",
+   "fact": "direction of au cheval/notch in reversed descent",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Mountain Project's own two routes conflict: the South-to-North page puts the belay at the au cheval's south end, while the North-to-South page has the rappel into the notch from its north end. Trip accounts (a 2024 trip report and a 2013-era report) confirm a 25 m or 20 m rappel into the notch after the au cheval but do not name which end. Searched MP, ClubTread, Ocean to Alpine, Sandro Summits; compass end cannot be settled.",
+   "sources": [
+    "https://www.mountainproject.com/route/122829856/illusion-traverse-south-to-north",
+    "https://www.mountainproject.com/route/122829827/illusion-traverse-north-to-south",
+    "https://sandrosummits.com/2024/06/08/illusions-traverse/",
+    "https://www.oceantoalpinemedia.com/post/a-grand-illusion"
+   ],
+   "patches": []
+  }
+ ]
+}

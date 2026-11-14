@@ -1,0 +1,24 @@
+{
+  "key": "little_annapurna",
+  "question": "The South Slopes row (id wa_little_annapurna_south_slopes) is named North Slopes: which line does it describe and which name is right?",
+  "answer": "'North Slopes' is right; the id is the mismatch. The row's text is the Aasgard Pass line: Stuart Lake / Colchuck trailhead, Colchuck Lake, Aasgard Pass (about 2,000 ft headwall), across the Core past Tranquil and Isolation Lakes, then south-southeast to the peak, taking the path of least resistance up its left (east) side at no harder than low class 3. That approaches from the north (the pass is well north of the summit at 47.468,-120.8145) and climbs the north/northeast flank, which climbers call the north or northeast slopes (a SummitPost log reads 'Route Climbed: North slopes'; the standard is described as the northeast flank at class 2). Track geometry agrees: every Aasgard Pass track arrives from the north. A 'South Face' (5.5) row already exists as a roped rock route, so calling this one South Slopes would collide. Two phrases in the stored row text say 'broad south-facing slabs' and 'south-facing slope'; those are wrong for this flank.",
+  "recommendation": "Keep the display name 'North Slopes'. Do not rename the id (it is referenced by approach audits and rollbacks); record it as historical. Change the two 'south-facing' phrases in the row text to 'north-facing' or drop them. Discipline: the row says mountaineering Class 2, but the text has hands-on low class 3 with no glacier; under the owner's rule (mountaineering = non-technical walk-up) scrambling, Class 2-3, is the compliant label.",
+  "confidence": "high",
+  "proposed": {
+    "name": "North Slopes",
+    "keep_id": "wa_little_annapurna_south_slopes",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "text_fix": "replace 'south-facing' with 'north-facing' in the approach_variants notes and baseFinding"
+  },
+  "evidence": [
+    "audits/approach-why/census.json - stored name 'North Slopes', id south_slopes; line is Aasgard Pass and the Core, then south toward the peak, left (east) side, low 3rd class",
+    "packets-all/wa_little_annapurna.json - Aasgard Pass tracks (1746937, 2193922, 1261457 logged 'NE Slopes') arrive from the north across the Core",
+    "https://summitpost.org/little-annapurna/climbers-log/151427/p4 - from search summary: 'Route Climbed: North slopes' (page 403)",
+    "https://mountaineers.org/activities/routes-places/enchantments-area-review/little-annapurna - from search summary: standard line is the northeast flank at class 2, 5.6 on the south face (page 403)"
+  ],
+  "searched": [
+    "WebSearch Little Annapurna north slopes OR south slopes - SummitPost logs, Mountaineers area review, Steven Song, WTA",
+    "WebFetch mountaineers, summitpost, WTA pages - 403; stevensong.com text truncated to navigation only"
+  ]
+}

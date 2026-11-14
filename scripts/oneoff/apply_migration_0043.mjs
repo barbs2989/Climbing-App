@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+import "../lib/load-env.mjs";
 // Parses migration 0035's UPDATE blocks (salvaged batch 1-4 data, which has different/richer
 // fields than the JSON-cohort-based migrations) and applies them via the service_role key.
 import { createClient } from "@supabase/supabase-js";
 import ws from "ws";
 import fs from "fs";
 
-const url = "https://ofuofhojhbcrcahuotya.supabase.co";
+const url = process.env.VITE_SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_KEY;
 if (!key) { console.error("Set SUPABASE_SERVICE_KEY env var"); process.exit(1); }
 const supabase = createClient(url, key, { auth: { persistSession: false }, realtime: { transport: ws } });

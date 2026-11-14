@@ -1,0 +1,44 @@
+{
+  "key": "ellinor-winter-trailhead",
+  "question": "Which trailhead does the Southeast Chute (wa_mount_ellinor_southeast_chute) use in which months, and what are the confirmed coordinates of the Lower and Upper lots?",
+  "answer": "Both lots are real and both serve this route. The Upper Trailhead (about 3,500 ft, end of spur FR 2419-014, fee lot) is the short, normal start whenever the road is clear; the USFS lists it as an early-summer-through-fall site (roughly June-October). The Lower Trailhead (about 2,600 ft on FR 2419, no fee) is the winter and spring start: trip reports from Dec 2024 back to Jan 2021 repeatedly say the road is snow-blocked just past the lower lot, and a May 2023 report found the upper parking still shut. In deep snow even the lower lot is unreachable and parties start at the Big Creek Campground gate (Big Creek West trailhead 47.4959,-123.2138, about 2,000 ft lower). The recorded logs agree: winter and April and February ascents (2024-04-19, 2024-04-23, 2023-02-19) begin at the lower lot (47.5067,-123.2320); June-October ascents begin at the upper lot (47.5103,-123.2477). Conditions vary by year: Oct and Dec 2025 reports found the road clear to the upper lot ('best shape' in years) and a 2 Jun 2026 report drove to the upper lot without trouble. The two trails merge near 3,900 ft, so the chute and basin approach is identical from either lot; the lower start adds roughly 1,000 ft of gain and about 3 miles round trip (WTA: 6.2 mi RT from lower vs 3.2 mi RT from upper to the summit). Our stored approach text starts at the Upper lot, which is correct for the snow-chute season only once the road melts out (late May-June); the earlier pass wanting a Lower pin is right for roughly Dec-May.",
+  "recommendation": "Keep the Upper Trailhead as the route's primary start (matches the approach text and the summer-season logs). ADD a second Trailhead waypoint for the Lower lot rather than replacing it, and add the months to the approach text. Pins: Upper = 47.510466,-123.247912 (USFS page; OSM 47.5102265,-123.2479938 within 15 m); Lower = 47.50709873,-123.2317182 (USFS page; OSM node 47.5067546,-123.232019 within 30 m). The existing wa_mount_ellinor_standard row already carries an Upper pin at 47.5103014,-123.2477182 (elev 3500), consistent. The held track may then pass with the Lower pin if its start is within tolerance (winter logs start 47.5067,-123.2320).",
+  "confidence": "high",
+  "proposed": {
+    "waypoints_add": [
+      {
+        "type": "Trailhead",
+        "name": "Mount Ellinor Lower Trailhead",
+        "lat": 47.50709873,
+        "lng": -123.2317182,
+        "elev": 2600
+      },
+      {
+        "type": "Trailhead",
+        "name": "Mount Ellinor Upper Trailhead",
+        "lat": 47.510466,
+        "lng": -123.247912,
+        "elev": 3500
+      }
+    ],
+    "approach_text": "Two trailheads serve this climb. The Upper Trailhead (about 3,500 ft, at the end of the short spur off Forest Road 2419, pass required) is the usual start from roughly June through October, once the road has melted out. From about December into May the road is commonly blocked by snow at or just past the Lower Trailhead (about 2,600 ft, no pass needed), so winter and spring parties park there and add roughly 1,000 ft of climbing and a few miles to the day; in heavy snow even that lot can be out of reach and a party may have to begin at the Big Creek campground gate. The trail from the lower lot meets the one from the upper lot near 3,900 ft, so everything above is the same. Continue to the signed junction near 4,500 ft where the winter route leaves the summer trail and heads right into the basin below the chute.",
+    "note": "The stored overview says 'Hiking from the lower trailhead covers 6 miles' while the approach starts at the upper lot; reconcile (6 mi is the lower-lot round trip, 3.2 mi the upper)."
+  },
+  "evidence": [
+    "https://www.fs.usda.gov/r06/olympic/recreation/mt-ellinor-upper-trailhead - USFS: Upper Trailhead coordinates 47.510466,-123.247912; seasons 'early summer through fall'; FR 2419 then 2419-014; fee.",
+    "https://www.fs.usda.gov/r06/olympic/recreation/mt-ellinor-lower-trailhead - USFS: Lower Trailhead coordinates 47.50709873,-123.2317182; no fee; mentions the winter route near timberline.",
+    "https://www.wta.org/go-hiking/hikes/mount-ellinor - lower 2,600 ft (6.2 mi RT, no pass), upper 3,500 ft (3.2 mi RT, pass), trails merge at 3,900 ft.",
+    "OSM Overpass (overpass-api.de) - nodes 'Mount Ellinor Upper Trailhead' 47.5102265,-123.2479938 and 'Lower Trailhead' 47.5067546,-123.232019; parking ways ele 1079 m and 806 m.",
+    "WTA trip reports via search: 19 Dec 2025 (road fine to lower, snow beyond), Dec 2024 (snow/ice blocked both; started at Big Creek CG), 14 May 2023 (upper parking still closed), 22 Jan 2021 (deep snow near upper; road clear only to lower), Oct 2025 and 2 Jun 2026 (upper reached).",
+    "packets-all/wa_mount_ellinor.json tracks - Apr 2024 and Feb 2023 winter ascents start at 47.5067,-123.2320 (lower); Jun-Oct ascents at 47.5103,-123.2477 (upper)."
+  ],
+  "searched": [
+    "Mount Ellinor winter road closed snow lower trailhead upper trailhead FS 2419 gate - Mountaineers/WTA/SummitPost/turns-all-year reports; several pages 403 on fetch",
+    "WTA mount-ellinor hike page - fetched; elevations and mileage; no closure text",
+    "Nominatim 'Mount Ellinor Trailhead' bounded viewbox - Lower (2 nodes) and Upper",
+    "Overpass trailhead/parking query for the Ellinor bbox - OSM coordinates",
+    "fs.usda.gov recarea 48059 - redirected; the r06/olympic/recreation pages worked",
+    "summitpost mt-ellinor, mountaineers routes-places, wta trip reports - 403, used search snippets",
+    "No official road-closure or gate notice found; the closure is snow-driven, not a scheduled gate"
+  ]
+}

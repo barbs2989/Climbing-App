@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // order-from-mp.mjs — fill `routes.sort_order` (left-to-right on the wall) from Mountain Project's area
 // pages, and add the sport / trad / top-rope climbs a wall is missing so the order has no gaps. Run under
 // the owner's written permission from onX to crawl mountainproject.com (2026-09-24), paced by
@@ -80,6 +81,11 @@ const ROPED = t => t.includes("Trad") || t.includes("Sport") || t.includes("TR")
 const ROCK = t => ROPED(t) && !t.includes("Ice") && !t.includes("Mixed") && !t.includes("Snow");
 // A climb is added only on a 5.x grade: MP files slides and scrambles (3rd, 4th, Easy 5th) as Trad too.
 const FIFTH = g => /^5\.\d/.test(g || "");
+// A BOULDER problem (owner, 2026-10-29: "add new routes when you see we have a gap, even if it's not a classic"):
+// tagged Boulder, never roped, with a V grade, which MP prints in the same span as a YDS grade. Ice, mixed, alpine
+// and snow gaps are left to import-route-grades.mjs, which reads their grades from the export.
+const BOULDER = t => t.includes("Boulder") && !ROPED(t) && !t.includes("Ice") && !t.includes("Mixed") && !t.includes("Snow");
+const VGRADE = g => /^V(?:B|\d)/.test(g || "");
 
 const k = requireServiceKey();
 const rest = async (p, init) => { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { ...init, headers: headers(k, { "Content-Type": "application/json", ...init?.headers }) }); const t = await r.text(); if (!r.ok) throw new Error(p + ": HTTP " + r.status + " " + t); return t ? JSON.parse(t) : null; };
@@ -97,7 +103,7 @@ async function retrying(fn) {
 // due to connection timeout" (status 544) while the database was busy, and the loop moved on without it.
 function sql(text) {
   for (let t = 0; ; t++) {
-    try { const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); if (j._tag === "Error") throw new Error(JSON.stringify(j.error)); const rows = Array.isArray(j) ? j : j.rows; if (!Array.isArray(rows)) throw new Error("unexpected output " + out.slice(0, 200)); return rows; }
+    try { const out = execFileSync(NPX, [...NPX_PRE, "supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1 << 30, stdio: ["ignore", "pipe", "pipe"] }); const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0); const j = JSON.parse(out.slice(Math.min(...at))); if (j._tag === "Error") throw new Error(JSON.stringify(j.error)); const rows = Array.isArray(j) ? j : j.rows; if (!Array.isArray(rows)) throw new Error("unexpected output " + out.slice(0, 200)); return rows; }
     catch (e) { if (t >= 7) throw e; execFileSync("sleep", [String(Math.min(60, 5 * 2 ** t))]); }
   }
 }
@@ -140,7 +146,8 @@ async function planWall({ html, area, ours, idMap, elsewhere, usedIds, wallName 
   }
   const seenNew = new Set();
   for (const p of plan.filter(p => p.kind === "MISSING")) {
-    if (!ROCK(p.tags) || !FIFTH(p.yds)) { p.kind = "SKIP"; p.why = !ROCK(p.tags) ? "not a sport, trad or top-rope rock climb" : "no 5.x grade (a slide or a scramble)"; continue; }
+    const boulder = BOULDER(p.tags) && VGRADE(p.yds);
+    if (!boulder && (!ROCK(p.tags) || !FIFTH(p.yds))) { p.kind = "SKIP"; p.why = !ROCK(p.tags) ? "not a sport, trad, top-rope or boulder climb" : "no 5.x grade (a slide or a scramble)"; continue; }
     const other = elsewhere(p.mpId, area.id);
     if (other) { p.kind = "ELSEWHERE"; p.why = `ours on another wall: ${other.id} (${other.area_id})`; continue; }
     const nn = loose(p.name);
@@ -150,10 +157,11 @@ async function planWall({ html, area, ours, idMap, elsewhere, usedIds, wallName 
     if (wallName && key(p.name).includes(key(wallName))) { p.kind = "REVIEW"; p.why = "named for the wall itself, not a climb"; continue; }
     seenNew.add(key(p.name));
     const name = stripRouteTopoLabel(p.name).replace(/^(.+), (The|A|An)$/i, "$2 $1");
-    const disc = p.tags.includes("Trad") ? "trad" : p.tags.includes("Sport") ? "sport" : "toprope";
+    const disc = boulder ? "bouldering" : p.tags.includes("Trad") ? "trad" : p.tags.includes("Sport") ? "sport" : "toprope";
     let id = area.id + "_" + slug(name), n = 2; while (usedIds.has(id)) id = area.id + "_" + slug(name) + "_" + n++; usedIds.add(id);
-    const disciplines = [...new Set([disc, ...(p.tags.includes("Trad") ? ["trad"] : []), ...(p.tags.includes("Sport") ? ["sport"] : []), ...(p.tags.includes("TR") || p.tags.includes("Toprope") ? ["toprope"] : [])])];
-    p.kind = "ADD"; p.row = { id, area_id: area.id, name, discipline: disc, grade: p.yds, grade_system: "yds", grade_num: gradeNumFrom(p.yds, "yds"), pitches: 0, disciplines, auto_generated: false };
+    const disciplines = boulder ? ["bouldering"] : [...new Set([disc, ...(p.tags.includes("Trad") ? ["trad"] : []), ...(p.tags.includes("Sport") ? ["sport"] : []), ...(p.tags.includes("TR") || p.tags.includes("Toprope") ? ["toprope"] : [])])];
+    const sys = boulder ? "v" : "yds";
+    p.kind = "ADD"; p.row = { id, area_id: area.id, name, discipline: disc, grade: p.yds, grade_system: sys, grade_num: gradeNumFrom(p.yds, sys), pitches: boulder ? null : 0, disciplines, auto_generated: false };
   }
   const extra = ours.filter(r => !taken.has(r.id));
   const ob = extra.length ? await openBetaOrder(area.name, mp) : [];
@@ -234,10 +242,13 @@ if (FACTS) {
   const adds = Object.entries(JSON.parse(readFileSync(addsFile, "utf8")));
   const rows = new Map();
   for (let i = 0; i < adds.length; i += 200) for (const r of await retrying(() => rest(`routes?select=id,length_m,pitches,lat,lng,stars&id=in.(${adds.slice(i, i + 200).map(([, id]) => encodeURIComponent(id)).join(",")})`))) rows.set(r.id, r);
-  let n = 0, patched = 0;
+  let n = 0, patched = 0, gone = 0;
   for (const [mpId, id] of adds) {
     const r = rows.get(id); if (!r) continue;
-    const html = await page("route", mpId, `${ROUTES}/${mpId}.html`); n++;
+    // A climb MP has since taken down answers 404: skip it, or one missing page stops the whole state (California, 2026-10-30).
+    const html = await page("route", mpId, `${ROUTES}/${mpId}.html`).catch(e => { if (/HTTP 404/.test(e.message)) return null; throw e; });
+    if (html == null) { gone++; continue; }
+    n++;
     const type = unent((html.match(/<td>Type:<\/td>\s*<td>([\s\S]*?)<\/td>/) || [])[1] || "");
     const gps = (html.match(/<td>GPS:<\/td>\s*<td>\s*(-?\d+\.\d+),\s*(-?\d+\.\d+)/) || []);
     const ft = type.match(/(\d[\d,]*) ft/), pitches = type.match(/(\d+) pitches/), avg = html.match(/Avg:\s*([\d.]+)\s+from\s+(\d[\d,]*)\s+votes?/);
@@ -251,7 +262,7 @@ if (FACTS) {
     patched++;
     if (!APPLY && patched <= 10) console.log(id, JSON.stringify(p));
   }
-  console.log(`${STATE}: ${n} route pages read, ${patched} rows ${APPLY ? "given" : "would gain"} facts. Prose next: node scripts/pipeline/extract-route-details.mjs ${STATE}`);
+  console.log(`${STATE}: ${n} route pages read${gone ? `, ${gone} gone from MP` : ""}, ${patched} rows ${APPLY ? "given" : "would gain"} facts. Prose next: node scripts/pipeline/extract-route-details.mjs ${STATE}`);
   process.exit(0);
 }
 
@@ -264,7 +275,7 @@ const idMap = loadMap(STATE);
 // 40k routes timed out over and over on 2026-10-22 just to skip walls that were all finished.
 if (APPLY && existsSync(`${ORDER}/${STATE}.jsonl`)) {
   const finished = new Set(readFileSync(`${ORDER}/${STATE}.jsonl`, "utf8").split("\n").filter(Boolean).map(l => JSON.parse(l)).filter(x => x.status !== "error").map(x => x.mp));
-  const rockWalls = new Set(mpRoutes.filter(r => ROCK(r.tags)).map(r => r.area));
+  const rockWalls = new Set(mpRoutes.filter(r => ROCK(r.tags) || BOULDER(r.tags)).map(r => r.area));
   if ([...rockWalls].every(w => finished.has(w))) { console.log(`${STATE}: all ${rockWalls.size} walls already done`); process.exit(0); }
 }
 const state = sql(`select id, name from areas where id = ${q(STATE)}`)[0];
@@ -275,12 +286,12 @@ for (const r of all) { const kk = key(r.name); keyCount.set(kk, (keyCount.get(kk
 const oursByArea = new Map(); for (const r of all) (oursByArea.get(r.area_id) || oursByArea.set(r.area_id, []).get(r.area_id)).push(r);
 const areaName = new Map(all.map(r => [r.area_id, r.area_name]));
 
-// Each MP wall with a roped route, and the area of ours its routes vote for.
+// Each MP wall with a roped route or a boulder problem, and the area of ours its routes vote for.
 const walls = new Map();
 for (const r of mpRoutes) (walls.get(r.area) || walls.set(r.area, []).get(r.area)).push(r);
 const votes = [];
 for (const [mpArea, rs] of walls) {
-  if (!rs.some(r => ROCK(r.tags))) continue;
+  if (!rs.some(r => ROCK(r.tags) || BOULDER(r.tags))) continue;
   const v = new Map();
   for (const r of rs) {
     const ours = routeById.get(idMap[r.id]) || (keyCount.get(key(r.name)) === 1 ? byKeyState.get(key(r.name)) : null);

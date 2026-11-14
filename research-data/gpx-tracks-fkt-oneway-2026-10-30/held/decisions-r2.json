@@ -1,0 +1,138 @@
+[
+ {
+  "id": "or_northwest_ridge",
+  "slug": "broken-top-or",
+  "tier": "round",
+  "why": "FKT lollipop from Green Lakes Trailhead via a climber's trail onto the northwest ridge matches the NW Ridge standard route in the opened source.",
+  "peak": {
+   "id": "or_broken_top",
+   "name": "Broken Top",
+   "lat": 44.0796,
+   "lng": -121.7,
+   "elevation_ft": null
+  },
+  "noSummitPin": true,
+  "trailhead": {
+   "name": "Green Lakes trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ak_denali_west_buttress",
+  "slug": "denali-ak",
+  "tier": "round",
+  "why": "FKT is an up-and-back from Kahiltna base camp, with split times to Camp 1 at 7800, i.e. the West Buttress line, which the opened guide profile describes from the glacier landing.",
+  "peak": {
+   "id": "ak_denali",
+   "name": "Denali",
+   "lat": 63.0724,
+   "lng": -150.9467,
+   "elevation_ft": null
+  },
+  "noSummitPin": true,
+  "trailhead": {
+   "name": "Kahiltna Glacier base camp",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "wy_southwest_slope",
+  "slug": "fremont-peak-wy",
+  "tier": "round",
+  "why": "FKT SW Buttress car-to-car track starts at Elkhart Park (43.0045,-109.7515) and the opened trip report climbs the same Indian Basin / southwest buttress-ridge to the summit.",
+  "peak": {
+   "id": "wy_fremont_peak",
+   "name": "Fremont Peak",
+   "lat": 43.1202,
+   "lng": -109.638,
+   "elevation_ft": null
+  },
+  "noSummitPin": true,
+  "trailhead": {
+   "name": "Elkhart Park trailhead",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_d_half_dome_cables_route_cables_route",
+  "slug": "half-dome-yosemite-ca",
+  "tier": "round",
+  "why": "FKT standard route is the Cables Route up and down from the valley floor via the Mist Trail, matching the NPS description of the Half Dome trail with cables.",
+  "peak": {
+   "id": "ca_d_half_dome_cables_route",
+   "name": "Cables Route",
+   "lat": 37.7457,
+   "lng": -119.5335,
+   "elevation_ft": null
+  },
+  "noSummitPin": true,
+  "trailhead": {
+   "name": "Happy Isles",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "or_south_side_south_side_route",
+  "slug": "mt-hood-or",
+  "tier": "round",
+  "why": "FKT names the South Side Route from Timberline Lodge via Hogsback and Pearly Gates/Old Chute, and Mountain Project's South Side Route describes the same line from the same trailhead.",
+  "peak": {
+   "id": "or_south_side",
+   "name": "South Side",
+   "lat": 45.36567,
+   "lng": -121.70244,
+   "elevation_ft": null
+  },
+  "noSummitPin": true,
+  "trailhead": {
+   "name": "Timberline Lodge",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_royal_arches_5_10_or_5_7_a0",
+  "slug": "royal-arches-ca",
+  "tier": "round",
+  "why": "FKT climbs the Royal Arches route car-to-car from the Ahwahnee lot and descends the North Dome gully, matching Mountain Project's Royal Arches (5.7 A0), which names the Ahwahnee approach and the North Dome Gully walk-off.",
+  "peak": {
+   "id": "ca_central_royal_arches",
+   "name": "Central Royal Arches",
+   "lat": 37.74724,
+   "lng": -119.57128,
+   "elevation_ft": null
+  },
+  "noSummitPin": true,
+  "trailhead": {
+   "name": "Ahwahnee parking lot",
+   "confirmed": true
+  }
+ },
+ {
+  "id": "ca_the_nose_7",
+  "slug": "el-capitan-ca",
+  "tier": "round",
+  "why": "The FKT line climbs the Nose from the base of El Capitan and walks back down; our route is the Nose on the southwest face.",
+  "peak": {
+   "id": "ca_2_southwest_face",
+   "name": "Southwest Face",
+   "lat": 37.73051,
+   "lng": -119.63828,
+   "elevation_ft": null
+  },
+  "noSummitPin": true
+ },
+ {
+  "id": "bc_slesse_mountain_southwest_gully",
+  "slug": "slesse-mountain-sw-face-bc-canada",
+  "tier": "round",
+  "why": "The FKT line is the standard west-side route from the Slesse Creek road, which our Southwest Gully route describes: steep climbers trail to treeline, then the gully on the summit tower west side.",
+  "peak": {
+   "id": "bc_slesse_mountain",
+   "name": "Slesse Mountain",
+   "lat": 49.025978,
+   "lng": -121.59857,
+   "elevation_ft": null
+  },
+  "noSummitPin": true
+ }
+]

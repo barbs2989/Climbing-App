@@ -1,0 +1,63 @@
+{
+ "id": "wa_liberty_bell_thin_red_line",
+ "name": "Thin Red Line",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_liberty_bell",
+  "name": "Liberty Bell Mountain",
+  "lat": 48.515435,
+  "lng": -120.658365,
+  "elevation_ft": 7720,
+  "parent_id": "wa_liberty_bell_group",
+  "ground_ft": 7745
+ },
+ "dist_km": 1.6,
+ "gain_ft": 1312,
+ "high_point_ft": 7720,
+ "approach_logistics": {
+  "peakLat": 48.5154,
+  "peakLng": -120.6579,
+  "trailhead": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+  "trailheadLat": 48.51454,
+  "trailheadLng": -120.64332,
+  "trailheadDirection": "From Highway 20 hairpin curve on east side of Washington Pass, locate small pond on south side of road; trailhead pullout on north side of highway; follow climbers' path marked with cairns from pond eastward into forest"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.51454,
+   "lng": -120.64332,
+   "elev": 5200,
+   "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+   "note": "Roadside pullout on the north side of SR-20 at the hairpin turn east of Washington Pass, beside a small pond; the East Face climbers' path starts here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Highway 20 to the hairpin curve on the east side of Washington Pass and look for the small pond on the south side of the road; the pullout you want is on the north side of the highway, at about 5,200 ft. Park there and pick up the cairned climbers' path leaving the pond, which climbs through the forest to the East Face talus. The season for this line is roughly June through September.",
+   "ground_ft": 5151
+  },
+  {
+   "i": 1,
+   "lat": 48.514666,
+   "lng": -120.658696,
+   "elev": 7300,
+   "name": "Sustained thin-crack pitches",
+   "note": "Sustained thin finger and hand cracks at 5.10-5.11 on excellent but highly exposed rock; retreating typically means leaving gear behind.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "From the pond, follow the cairned climbers' path as it climbs steeply through forest to the talus and snow below the East Face. The start is right of Liberty Crack and is best picked out from the talus by tracing the line down from features higher on the wall; climb the lower pitches to the sustained corner and thin-crack pitches.",
+   "ground_ft": 7355
+  },
+  {
+   "i": 2,
+   "lat": 48.515435,
+   "lng": -120.658365,
+   "elev": 7720,
+   "name": "Liberty Bell summit",
+   "note": "Grade IV outing tops out on the true summit; from the summit descend via the standard Beckey Route rappels/downclimb into the gully (most parties instead rappel the East Face from M&M Ledge without topping out).",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Above the crux corners, continue up the crack pitches to M&M Ledge, then easier corners and ledges on the upper apron, and finish with easy scrambling to the true summit.",
+   "ground_ft": 7745
+  }
+ ]
+}

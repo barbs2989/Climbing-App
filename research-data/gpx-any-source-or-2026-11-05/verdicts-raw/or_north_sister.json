@@ -1,0 +1,229 @@
+{
+ "area_id": "or_north_sister",
+ "routes": [
+  {
+   "route_id": "or_south_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents named South Ridge: Jun 3, Jul 3, Aug 6, Sep 4 (all routes peak in Aug). Mountain Project says winter/spring snow climbs suit experts, but the 4th-class summer scramble is done Jul-Sep; a SummitPost late-season photo set covers mid Aug-mid Sep; Mazamas lists fall too. Snow on the Terrible Traverse varies by year (frozen snow 25 Jul, patches mid Aug, bare late Aug)."
+   },
+   "track": {
+    "aid": "3300581",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Aug 8 summit from the Pole Creek cluster; report describes the saddle, Terrible Traverse, Bowling Alley and a rappel of it = the South Ridge line; track returns to its start, summit 1 m from PB. Only the trailhead pin is missing (pin add proposed). Equally valid alternate: 2011412 (logged South Ridge, Aug 28 2022, same start); 3300581 chosen as more recent."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2011412",
+     "verdict": "same",
+     "why": "Logged South Ridge, Aug 28, Pole Creek round trip; equal quality, older than 3300581."
+    },
+    {
+     "aid": "2923676",
+     "verdict": "same",
+     "why": "Jul 24 summit, report describes the same Terrible Traverse/Bowling Alley line from Pole Creek; acceptable, not chosen (older)."
+    },
+    {
+     "aid": "2609729",
+     "verdict": "different",
+     "why": "Up the SE Ridge, joins the South Ridge only near the top; down the SW ridge."
+    },
+    {
+     "aid": "1237774",
+     "verdict": "different",
+     "why": "SE ridge up, south ridge down, one-way to Devil's Lake."
+    },
+    {
+     "aid": "848909",
+     "verdict": "unsure",
+     "why": "Logged Hayden Glacier/South Ridge, Aug 12, but sparse track (n=384) with start at summit; no usable round trip."
+    },
+    {
+     "aid": "196155",
+     "verdict": "different",
+     "why": "Luau high-camp start, Southeast Ridge, one-way descent to Pole Creek."
+    },
+    {
+     "aid": "2728505",
+     "verdict": "not-summited",
+     "why": "Turned back at the saddle in October."
+    },
+    {
+     "aid": "567769",
+     "verdict": "different",
+     "why": "Obsidian Trail / Collier Glacier approach; no GPS points."
+    },
+    {
+     "aid": "1468727",
+     "verdict": "unsure",
+     "why": "No GPS track points."
+    },
+    {
+     "aid": "2952455",
+     "verdict": "unsure",
+     "why": "No GPS track points."
+    },
+    {
+     "aid": "1004812",
+     "verdict": "unsure",
+     "why": "No GPS track points."
+    }
+   ],
+   "pins": [
+    {
+     "type": "Trailhead",
+     "action": "add",
+     "lat": 44.18754,
+     "lng": -121.70081,
+     "name": "Pole Creek Trailhead",
+     "evidence": "All Pole Creek recordings (3300581, 2011412, 2923676, 2609729, 1237774) start within about 60 m of this point; our route has no Trailhead pin.",
+     "confirmedBy": "https://www.fs.usda.gov/r06/deschutes/recreation/pole-creek-trailhead (lists 44.18754444, -121.7008056)"
+    }
+   ],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "Climbers kick loose rock down the scree above the Middle-North saddle and in the Bowling Alley; call out and stay out of the fall line (August).",
+     "aids": [
+      "3300581",
+      "2952455",
+      "1468727"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 8,
+     "text": "The Terrible Traverse can keep snow patches into mid-August after heavy winters, and the ground under them is loose; later in the season it is all loose scree.",
+     "aids": [
+      "2609729",
+      "2952455",
+      "1468727"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "The Bowling Alley entrance is a short narrow ramp of good rock just past the traverse; a wide loose gully means you went too far.",
+     "aids": [
+      "3300581",
+      "1468727"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 8,
+     "text": "Descending, the Bowling Alley can be downclimbed or roped down; when waiting below a rappel, shelter in the alcove on the north side.",
+     "aids": [
+      "2952455",
+      "3300581",
+      "1468727"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 8,
+     "text": "Ice axe (late July to mid August, for snow on the traverse); 50-60 m rope for the Bowling Alley rappel (July to September)",
+     "aids": [
+      "2952455",
+      "1004812",
+      "1468727"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 8,
+     "text": "From Pole Creek the trail runs through burned forest before an unmarked use-trail junction that is easy to blow past; camps at the moraine lakes near 7,500-8,000 ft shorten the summit day, and water is plentiful in the moraine in August.",
+     "aids": [
+      "2923676",
+      "1004812",
+      "2609729"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 7,
+     "text": "In late July the traverse toward the Bowling Alley can still be frozen snow at dawn; kicking steps works but gives no real protection.",
+     "aids": [
+      "1004812"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "or_west_face_right",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Searches (Mountain Project, SummitPost, Mazamas) found no page describing a North Sister West Face - Right route; the west face is mentioned only as the intimidating side with the Bowling Alley above. Season assumed summer like the 4th-class South Ridge finish. No logged ascent names it."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_north_sister_2_east_buttress",
+   "season": {
+    "months": [
+     12,
+     1,
+     2,
+     3
+    ],
+    "window": "Dec-Mar",
+    "evidence": "Mixed/ice line; a Dec 23 2020 Cascade Climbers report climbed it in early-winter conditions; Oregon High lists it. No logged Peakbagger ascent names it."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_north_sister_2_kids",
+   "season": {
+    "months": [
+     12,
+     1,
+     2,
+     3
+    ],
+    "window": "Dec-Mar",
+    "evidence": "No page found for a route called KIDS on North Sister; season is a low-confidence guess from the other winter ice lines."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "or_north_sister_2_thayer_glacier_headwall",
+   "season": {
+    "months": [
+     4,
+     5,
+     6
+    ],
+    "window": "Apr-Jun",
+    "evidence": "Mountain Project lists it Mixed/Ice (AI1-2 M3 PG13); Bend Source says winter access via Pole Creek is questionable and describes a spring ski/climb goal; a Turns All Year trip was 17 Jun. The glacier has vanished so conditions depend on remaining snow/ice."
+   },
+   "track": null,
+   "otherTracksConsidered": [],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "missing": [],
+ "notes": "or_south_ridge got only a Trailhead add (no pins stored). Peakbagger South Ridge ascents are the standard route via Pole Creek, the Hayden Glacier moraine and the Terrible Traverse/Bowling Alley. Possible missing route: Southeast Ridge (about 10 logged ascents named SE Ridge/Southeast Ridge/East Ridge, Soap Creek side, joins the South Ridge near the top); the SummitPost page returned 403, so it is NOT listed in missing. Also Northwest Ridge (2 logs) and Collier Glacier (1) unverified. West Face - Right could not be identified; the Bowling Alley is on the west side of the summit pyramid, so it may overlap the South Ridge finish."
+}

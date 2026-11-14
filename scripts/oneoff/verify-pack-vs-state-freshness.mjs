@@ -1,3 +1,4 @@
+import { NPX, NPX_PRE } from "../lib/npx.mjs";
 // Offline, a route that is both PACKED and inside a DOWNLOADED STATE: which copy does the page get?
 //
 // One-shot verifier for offlineRoutesByIds choosing the FRESHER copy (it used to be the pack,
@@ -43,7 +44,7 @@ let server = null, browser = null, fails = 0, ran = 0;
 try {
   const port = await claimPort(5461);
   const base = `http://127.0.0.1:${port}/Climbing-App/`;
-  server = spawn("npx", ["vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore" });
+  server = spawn(NPX, [...NPX_PRE, "vite", "--host", "127.0.0.1", "--port", String(port), "--strictPort"], { cwd: ROOT, stdio: "ignore" });
   if (!(await waitForServer(base))) throw new Error("dev server never came up");
   browser = await chromium.launch({ channel: "chrome", headless: true, timeout: 180000 });
   for (const [name, pack, state, want] of CASES) {

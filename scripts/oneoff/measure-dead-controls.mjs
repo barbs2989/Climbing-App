@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // MEASUREMENT, not a guard. Does the 2026-08-05 swept state still hold, and is there a class
 // of "button that does nothing" that the existing guards do not already cover?
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -10,7 +11,7 @@ const traverse = _traverse.default || _traverse;
    pinned ROOT to a worktree path and so silently measured a DIFFERENT branch's code than the
    one you ran it in — CLAUDE.md records that as the reason it was replaced. Same trap here:
    this file's first draft had my own worktree baked in. */
-const ROOT = new URL("../..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("../..", import.meta.url)).replace(/\/$/, "");
 const SKIP = new Set(["node_modules", ".git", "dist", "scripts", "catalog", ".claude", "supabase", "enrichment-wip", "public"]);
 const files = [];
 (function walk(d) {

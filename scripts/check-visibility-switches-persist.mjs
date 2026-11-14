@@ -31,12 +31,12 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, readAppFile, MOVED } from "./lib/guard-sources.mjs";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
-const app = read("ClimbMatch.jsx");
+const app = readAppFile(path.join(ROOT, "ClimbMatch.jsx")), rawApp = read("ClimbMatch.jsx");
 // Through readCoreSource(): the profile editor's switch and the partner card's résumé tile moved
 // out of core to load lazily, and a core-only read would stop seeing either.
 const core = readCoreSource();
@@ -186,7 +186,10 @@ for (const [flag, spec] of Object.entries(SWITCHES)) {
         + "absent entirely (SSR, which a dozen guards render this app under). A privacy preference must "
         + "not be able to take a screen down with it.");
     }
-    const imp = new RegExp('import\\s*\\{([^}]*)\\}\\s*from\\s*"\\./lib/' + base + '"').exec(app);
+    // App, or a body lifted out of App (src/components/, PR61 on), imports it: the stitched text drops
+    // the moved files' import lines, so those are read from the files themselves and merged.
+    const imps = [rawApp, ...MOVED["ClimbMatch.jsx"].map((f) => read(f))].map((t) => new RegExp('import\\s*\\{([^}]*)\\}\\s*from\\s*"(?:\\./|\\.\\./\\.\\./)lib/' + base + '"').exec(t)).filter(Boolean);
+    const imp = imps.length ? [null, imps.map((m) => m[1]).join(",")] : null;
     if (!imp) {
       problems.push("`" + flag + "` is declared `device` but ClimbMatch.jsx imports nothing from ./lib/"
         + base + ", so nothing loads or saves it.");

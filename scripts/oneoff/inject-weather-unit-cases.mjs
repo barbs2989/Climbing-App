@@ -25,6 +25,9 @@ const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const RD = path.join(ROOT, "RouteDetail.jsx");
 // The forecast FETCH moved to lib/forecast.js (shared with the trip pack), so its URL cases target it.
 const FX = path.join(ROOT, "lib", "forecast.js");
+// PR57 moved the weather panel to src/components/WeatherPanel.tsx (and the colour calls into three components + lib/wxColors.js).
+const WP = path.join(ROOT, "src", "components", "WeatherPanel.tsx");
+const COLOUR_FILES = [WP, path.join(ROOT, "src", "components", "ConditionsScoreCard.tsx"), path.join(ROOT, "src", "components", "HourlyChart.tsx"), path.join(ROOT, "lib", "wxColors.js")];
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0, 12);
 
 const CASES = [
@@ -53,9 +56,10 @@ const CASES = [
     why: "wxTempColor is handed a CONVERTED temperature. Its cut-offs are 85/70/50/32 in " +
          "Fahrenheit, so 10°C scores as below freezing and every reading is mis-coloured — and " +
          "nothing about the screen looks broken",
-    file: RD,
-    find: "color:t!=null?wxTempColor(t):C.textMuted})}>{t!=null?uTemp(t):",
-    repl: "color:t!=null?wxTempColor(uTempN(t)):C.textMuted})}>{t!=null?uTemp(t):",
+    file: WP,
+    find: "color:t!=null?wxTempColor(t):C.textMuted}) as CSSProperties}>{t!=null?uTemp(t):",
+    // uTempN is not imported by WeatherPanel; uTemp is, and is just as much a converting helper.
+    repl: "color:t!=null?wxTempColor(uTemp(t)):C.textMuted}) as CSSProperties}>{t!=null?uTemp(t):",
     expect: "fail",
     must: /is handed a CONVERTED value/,
   },
@@ -63,7 +67,7 @@ const CASES = [
     name: "colour-scan-blinded",
     why: "the colour helper is renamed consistently, so the app still works and the SCAN finds " +
          "almost nothing — it must report a broken scan rather than a clean file",
-    file: RD,
+    files: COLOUR_FILES,
     all: true,
     find: "wxTempColor",
     repl: "wxTColour",
@@ -79,7 +83,7 @@ const CASES = [
     name: "panel-bypasses-the-shared-fetch",
     why: "the panel stops fetching through lib/forecast.js, so the unit pins asserted THERE no longer " +
          "describe the request the panel makes — every pin check would pass about dead code",
-    file: RD,
+    file: WP,
     find: "fetchForecastRaw(w).then(",
     repl: "Promise.reject(new Error(\"bypassed\")).then(",
     expect: "fail",
@@ -91,6 +95,8 @@ const CASES = [
          "twice: the colour thresholds are calibrated in Fahrenheit, and the response is cached " +
          "per coordinate, so the setting would leak into the cache key",
     file: FX,
+    // `all`: lib/forecast.js pins the unit on six fetches now; flipping only the first left five pins and the guard passed.
+    all: true,
     find: "temperature_unit=fahrenheit",
     repl: "temperature_unit=celsius",
     expect: "fail",
@@ -100,7 +106,7 @@ const CASES = [
     name: "bare-mph-returns",
     why: "a display site goes back to appending the imperial unit itself, so that one reading " +
          "stays in mph while every other one on the panel converts",
-    file: RD,
+    file: WP,
     find: '{wm!=null?uWind(wm):"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
     repl: '{wm!=null?wm+" mph":"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
     expect: "fail",
@@ -132,7 +138,7 @@ const CASES = [
     name: "gust-compared-across-heights",
     why: "THE REAL HISTORICAL DEFECT — the gust gated on the 80 m sustained, so a 22 mph gust on " +
          "a 22 mph AMBER day rendered no gust line at all",
-    file: RD,
+    file: WP,
     find: "{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>",
     repl: "{dy.gustMax>dy.windMax?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>",
     expect: "fail",
@@ -143,7 +149,7 @@ const CASES = [
     why: "THE OVER-REACH, and the load-bearing case: standardising on 10 m satisfies every gust " +
          "assertion AND takes a 27 mph AMBER day to GREEN with a 29 mph gust standing. A rule " +
          "that only ever demands the gust appear is satisfied by the change that under-warns",
-    file: RD,
+    file: WP,
     find: "dd.winds.push(h.wind_speed_80m[i]);",
     repl: "dd.winds.push(h.wind_speed_10m[i]);",
     expect: "fail",
@@ -163,7 +169,7 @@ const CASES = [
     name: "bucket-stops-filling",
     why: "the field is fetched and reaches nothing — the silent half, where every execution " +
          "assertion still passes because the rule itself is untouched",
-    file: RD,
+    file: WP,
     find: "\n          if(h.wind_speed_10m)dd.winds10.push(h.wind_speed_10m[i]);",
     repl: "",
     expect: "fail",
@@ -173,7 +179,7 @@ const CASES = [
     name: "wind10max-can-be-minus-infinity",
     why: "dropping the empty-bucket guard makes wind10Max -Infinity rather than null. The gate " +
          "still fails OPEN there, so this is caught by the wiring rule and not by behaviour",
-    file: RD,
+    file: WP,
     find: "wind10Max:d.winds10.length?Math.round(Math.max.apply(null,d.winds10)):null,",
     repl: "wind10Max:Math.round(Math.max.apply(null,d.winds10)),",
     expect: "fail",
@@ -183,9 +189,9 @@ const CASES = [
     name: "gate-hides-on-a-missing-series",
     why: "inverts the fail-open: with no 10 m series it now HIDES the gust. Withholding a gust " +
          "figure is the dangerous way for this to fail, so the direction is asserted, not assumed",
-    file: RD,
-    find: 'function gustWorthShowing(dy){const surf=dy.wind10Max;return !(typeof surf==="number"&&isFinite(surf))||dy.gustMax>surf;}',
-    repl: 'function gustWorthShowing(dy){const surf=dy.wind10Max;return typeof surf==="number"&&isFinite(surf)&&dy.gustMax>surf;}',
+    file: WP,
+    find: 'function gustWorthShowing(dy: {wind10Max?: number | null; gustMax: number}){const surf=dy.wind10Max;return !(typeof surf==="number"&&isFinite(surf))||dy.gustMax>surf;}',
+    repl: 'function gustWorthShowing(dy: {wind10Max?: number | null; gustMax: number}){const surf=dy.wind10Max;return typeof surf==="number"&&isFinite(surf)&&dy.gustMax>surf;}',
     expect: "fail",
     must: /withholding a gust is the dangerous failure|10m null/,
   },
@@ -193,28 +199,29 @@ const CASES = [
     name: "comment-quotes-the-forbidden-gate",
     why: "MUST STAY SILENT — a comment naming the cross-height comparison is this fix's own " +
          "documentation, and a guard failing on it would forbid explaining itself",
-    file: RD,
-    find: "function gustWorthShowing(dy){",
-    repl: "// the gate used to read dy.gustMax>dy.windMax, which spanned 70 m of altitude\nfunction gustWorthShowing(dy){",
+    file: WP,
+    find: "function gustWorthShowing(dy: {",
+    repl: "// the gate used to read dy.gustMax>dy.windMax, which spanned 70 m of altitude\nfunction gustWorthShowing(dy: {",
     expect: "pass",
   },
 ];
 
 let bad = 0;
 for (const c of CASES) {
-  const before = fs.readFileSync(c.file, "utf8");
-  const beforeSum = sum(c.file);
-  let mutated;
-  if (c.append) mutated = before + c.append;
-  else if (c.all) { mutated = before.split(c.find).join(c.repl); for (const [f, r] of c.also || []) mutated = mutated.split(f).join(r); }
-  else mutated = before.replace(c.find, c.repl);
+  const targets = c.files || [c.file];
+  const befores = targets.map((t) => fs.readFileSync(t, "utf8"));
+  const beforeSums = targets.map((t) => sum(t));
+  const mutate = (before) => {
+    if (c.append) return before + c.append;
+    if (c.all) { let m = before.split(c.find).join(c.repl); for (const [x, r] of c.also || []) m = m.split(x).join(r); return m; }
+    return before.replace(c.find, c.repl);
+  };
 
   let out = "", code = 0;
   try {
-    fs.writeFileSync(c.file, mutated);
-    const landedSum = sum(c.file);
-    if (landedSum === beforeSum) {
-      fs.writeFileSync(c.file, before);
+    targets.forEach((t, i) => fs.writeFileSync(t, mutate(befores[i])));
+    // A multi-file case only has to move SOME file, but every file it names must at least be rewritable.
+    if (targets.every((t, i) => sum(t) === beforeSums[i])) {
       console.log(`  EDIT NEVER LANDED             ${c.name}`);
       console.log("      " + c.why);
       bad++;
@@ -225,9 +232,9 @@ for (const c of CASES) {
         { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
     } catch (e) { code = e.status || 1; out = String(e.stdout || "") + String(e.stderr || ""); }
   } finally {
-    fs.writeFileSync(c.file, before);
+    targets.forEach((t, i) => fs.writeFileSync(t, befores[i]));
   }
-  const restored = sum(c.file) === beforeSum;
+  const restored = targets.every((t, i) => sum(t) === beforeSums[i]);
   const failed = code !== 0;
   const wanted = c.expect === "fail";
   let verdict;

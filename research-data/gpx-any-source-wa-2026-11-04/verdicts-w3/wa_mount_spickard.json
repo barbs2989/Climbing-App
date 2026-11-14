@@ -1,0 +1,39 @@
+{
+  "area_id": "wa_mount_spickard",
+  "routes": [
+    {
+      "route_id": "wa_mount_spickard_silver_glacier",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Peak ascents cluster Jul (107) and Aug (35); route pages and trip logs show glacier routes climbed in July-August, with crevasses opening later; stored Jun-Sep widened slightly, July-Sep used." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2890081", "verdict": "not-summited", "why": "Logged Silver Glacier to NE ridge, turned back, and the described finish differs from our route." },
+        { "aid": "2235886", "verdict": "unsure", "why": "Perry Creek approach, not this route." }
+      ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_spickard_southwest",
+      "season": { "months": [6,7,8,9], "window": "Jun-Sep", "evidence": "Logged ascents 5:9, 6:12, 7:107, 8:35, 9:3; route pages show July-August as the common window, with a rope sometimes wanted later when crevasses open. Stored Jun-Oct trimmed to Jun-Sep." },
+      "track": { "aid": "2927332", "verdict": "same", "kind": "complete", "inSeason": true,
+                 "why": "Logged as the Depot Creek route, 2 Aug 2025, summited; the report describes the Depot Creek hike, camp, firm glacier cramponed to the col and the standard south-side finish, matching our Southwest Route text; start/end at the border obelisk (about 190 m from our Monument 65 pin, but about 6 km from our stored Depot Creek road trailhead pin, which sits at the Chilliwack Lake Road spur)." },
+      "otherTracksConsidered": [
+        { "aid": "2923740", "verdict": "unsure", "why": "Same line from Ouzel Lake camp (28 Jul 2025) but camp-start only, not a trailhead round trip." },
+        { "aid": "2901729", "verdict": "unsure", "why": "No route name or report; starts about 2.4 km from the stored pin." },
+        { "aid": "3295157", "verdict": "unsure", "why": "No route name or report; starts at the washout, not near the stored pin." },
+        { "aid": "2890003", "verdict": "different", "why": "Silver Lake saddle base, SW ridge from the Silver Lake side, camp-start only." },
+        { "aid": "2278398", "verdict": "not-summited", "why": "Turned back on hard ice." },
+        { "aid": "2235886", "verdict": "different", "why": "Perry Creek approach." },
+        { "aid": "533366", "verdict": "offseason", "why": "30 May 2015, a spring snow ascent on the South Ridge." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "monthBreakdown", "month": 7, "text": "In late July the glacier up to the col can be hard ice in the early morning, so crampons matter; the steep patchy snow between the col and the south face may need a couple of crampon changes.", "aids": ["2923740"] },
+        { "field": "monthBreakdown", "month": 8, "text": "In early August the glacier showed a few patches of bare ice but mostly firm snow that cramponed easily, and the descent in afternoon warmth was straightforward with no need to re-fit crampons.", "aids": ["2927332"] },
+        { "field": "watch_out", "month": 8, "text": "Above the lake the going is slow, loose talus and moraine, noticeably harder than the mileage suggests (August).", "aids": ["2927332"] },
+        { "field": "approach_note", "month": 7, "text": "In early July a ditch cut across the road about a mile short of the trail start can stop low-clearance cars; budget extra walking if you cannot cross it.", "aids": ["2890081"] }
+      ]
+    }
+  ],
+  "notes": "The Southwest track is a clean round trip from the border obelisk, where 4x4 parties drive to; our Trailhead pin is at the Chilliwack Lake Road spur much further out. I could not find a fetched official source giving a coordinate for the washout/road end, so no trailhead pin is proposed. The applier may need to accept a start at Monument 65."
+}

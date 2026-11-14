@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // check:area-sort-labels — does any area name still carry a source site's SORT LABEL?
 //
 // 2026-10-07, the owner: "In New York, in the Trapps area, those areas within have letters before
@@ -28,7 +29,7 @@ import path from "path";
 import { selectAll } from "./lib/supabase-env.mjs";
 import { stripSortPrefix } from "./lib/area-sort-prefix.mjs";
 
-const ROOT = path.resolve(new URL("..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const HELD = path.join(ROOT, "scripts/data/area-sort-labels-held.json");
 const WRITE = process.argv.includes("--write-held");
 
@@ -49,7 +50,7 @@ if (WRITE) {
   fs.writeFileSync(HELD, JSON.stringify({ written: new Date().toISOString().slice(0, 10),
     reasons: { sibling: "a sibling already has the stripped name", refused: "refuse_duplicate_area (0218): a same-named area within 1.5 km" },
     why, held }, null, 1) + "\n");
-  console.log(`wrote ${Object.keys(held).length} held areas (${nSib} sibling, ${Object.keys(held).length - nSib} refused by the DB) to ${path.relative(ROOT, HELD)}`);
+  console.log(`wrote ${Object.keys(held).length} held areas (${nSib} sibling, ${Object.keys(held).length - nSib} refused by the DB) to ${path.relative(ROOT, HELD).replace(/\\/g, "/")}`);
   process.exit(0);
 }
 const held = JSON.parse(fs.readFileSync(HELD, "utf8")).held;

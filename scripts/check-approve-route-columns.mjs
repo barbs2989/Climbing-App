@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:approve-route-columns — nothing may fork `approve_new_route` again.
 //
 // 0128 and 0132 both rewrote that function from the same ancestor (0127) hours apart, each
@@ -40,7 +41,7 @@ import fs from "fs";
 import path from "path";
 import { readCoreSource } from "./lib/guard-sources.mjs";
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(new URL(import.meta.url))), "..");
 const MIGRATIONS = path.join(ROOT, "supabase", "migrations");
 const DB_JS = path.join(ROOT, "lib", "db.js");
 const FN = "approve_new_route";

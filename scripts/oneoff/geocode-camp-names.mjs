@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // CAN A CAMP BE JUDGED AGAINST ITS ROUTE WITHOUT NAMING A PEAK?
 //
 // audit:camp-route-fit under-reports its own class: it can only judge a camp whose name carries a
@@ -27,11 +28,11 @@ import fs from "fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const { SUPABASE_URL, anonKey, headers } = await import(`${ROOT}/scripts/lib/supabase-env.mjs`);
-const { unresolvable, searchCandidates, LINEAR } = await import(`${ROOT}/scripts/lib/camp-names.mjs`);
-const { elevationAt } = await import(`${ROOT}/scripts/lib/terrain.mjs`);
+const { SUPABASE_URL, anonKey, headers } = await import(fileHref(`${ROOT}/scripts/lib/supabase-env.mjs`));
+const { unresolvable, searchCandidates, LINEAR } = await import(fileHref(`${ROOT}/scripts/lib/camp-names.mjs`));
+const { elevationAt } = await import(fileHref(`${ROOT}/scripts/lib/terrain.mjs`));
 
-const CACHE = new URL("../../.camp-geocode-cache.json", import.meta.url).pathname; // gitignored
+const CACHE = fileURLToPath(new URL("../../.camp-geocode-cache.json", import.meta.url)); // gitignored
 const UA = "ClimbMatch-camp-fit/1.0 (climbing route catalog; contact via repo)";
 const WA_BOX = { minLat: 45.5, maxLat: 49.05, minLng: -124.9, maxLng: -116.9 };
 const CROSS_FT = 400; // the solver's own figure: far wider than the controls' worst miss (68 ft).

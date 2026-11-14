@@ -1,0 +1,387 @@
+{
+ "targets": [
+  {
+   "approach": "Reached from the same Crater Creek/Eagle Lakes Trailhead system, branching toward the Boiling Lake basin rather than continuing to Cooney Lake.",
+   "area_id": "wa_switchback_mountain",
+   "corrected": false,
+   "descent": "Reverse the west face/west ridge scramble back to the contour bench and Boiling Lake basin; no rappels reported.",
+   "descent_text": null,
+   "discipline": "mountaineering",
+   "grade": "Class 3",
+   "id": "wa_switchback_mountain_west_ridge",
+   "name": "West Ridge / West Face (via Boiling Lake)",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Sawtooth / Lake Chelan",
+   "peak": "Switchback Mountain",
+   "peak_elev": 8321,
+   "peak_lat": 48.175751,
+   "peak_lng": -120.358334,
+   "pitches": null,
+   "siblings": [
+    "wa_switchback_mountain_scramble = Standard Scramble"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "no source for the West Ridge itself or where it leaves Boiling Lake"
+  },
+  {
+   "approach": "From US 101 near Sequim, follow Palo Alto Rd/Forest Road 2880 to Dungeness Forks Campground, then FR 2870 about 8.7 miles to the Upper Dungeness Trailhead (~2,500 ft, at the Dungeness River bridge). Hike the Upper Dungeness Trail #833 about 1 mile to the Royal Creek/Royal Basin Trail #832 junction, then continue roughly 6 more miles and 2,500 ft of gain to Royal Lake (7 mi / 2,500 ft total from the trailhead). From Royal Lake it's about 1 more mile and 500 ft of gain to the Upper Basin (5,600 ft), from which climbers scramble talus and heather benches up onto the Needles ridgeline below The Incisor — roughly 4,900 ft of total gain from trailhead to summit.",
+   "area_id": "wa_the_incisor",
+   "corrected": false,
+   "descent": "Reverse the route, downclimbing or rappelling exposed steps.",
+   "descent_text": "Reverse the scramble; rappel or downclimb the exposed steps with care.",
+   "discipline": "alpine",
+   "grade": "5.4",
+   "id": "wa_the_incisor_scramble",
+   "name": "Knife-Edge Ridge",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "North-Central Olympic Mountains (Deception–Gray Wolf)",
+   "peak": "The Incisor",
+   "peak_elev": 7440,
+   "peak_lat": 47.828325,
+   "peak_lng": -123.235105,
+   "pitches": null,
+   "siblings": null,
+   "trailhead": "Upper Dungeness Trailhead (Trail #833.2, FR-2870)",
+   "previous_skip_reason": "no source found for the Incisor's ridge or its descent"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_the_pyramid_picket",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.8",
+   "id": "wa_the_pyramid_picket_east_ridge",
+   "name": "East Ridge",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Southern Pickets",
+   "peak": "The Pyramid",
+   "peak_elev": 7920,
+   "peak_lat": 48.77144,
+   "peak_lng": -121.29193,
+   "pitches": null,
+   "siblings": [
+    "wa_the_pyramid_picket_south_route = South Route"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "no source describing this route's descent or approach could be read"
+  },
+  {
+   "approach": "Reached via the same Trap Pass approach used for Slippery Slab Tower (Tunnel Creek or Surprise Creek trailheads to the PCT at Trap Pass), continuing past Slippery Slab Meadows toward Thunder Mountain Pass and the Thunder Mountain Lakes basin, then approaching the peak's north side. The standard SE-slope scramble route is reached via Upper Thunder Mountain Lake.",
+   "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.0",
+   "id": "wa_thunder_mountain_north_face",
+   "name": "Thunder Mountain North Face",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Skykomish Valley",
+   "peak": "Thunder Mountain and Slippery Slab Tower",
+   "peak_elev": null,
+   "peak_lat": 47.66888,
+   "peak_lng": -121.12634,
+   "pitches": null,
+   "siblings": [
+    "wa_slippery_slab_tower_ne_face = Slippery Slab Tower NE Face"
+   ],
+   "trailhead": "Surprise Creek Trailhead",
+   "previous_skip_reason": "no source found for where this face tops out or how it is descended"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_tinkham_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_tinkham_peak_east_route",
+   "name": "East Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Tinkham Peak",
+   "peak_elev": null,
+   "peak_lat": 47.34769,
+   "peak_lng": -121.4495,
+   "pitches": null,
+   "siblings": [
+    "wa_tinkham_peak_west_route = West Route",
+    "wa_tinkham_peak_north_route = North Route",
+    "wa_tinkham_peak_northwest_ridge = Northwest Ridge",
+    "wa_tinkham_peak_southeast_spur = Southeast Spur"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "no source defines which line this East Route is"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_tinkham_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_tinkham_peak_north_route",
+   "name": "North Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Tinkham Peak",
+   "peak_elev": null,
+   "peak_lat": 47.34769,
+   "peak_lng": -121.4495,
+   "pitches": null,
+   "siblings": [
+    "wa_tinkham_peak_west_route = West Route",
+    "wa_tinkham_peak_east_route = East Route",
+    "wa_tinkham_peak_northwest_ridge = Northwest Ridge",
+    "wa_tinkham_peak_southeast_spur = Southeast Spur"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "no source defines which line this North Route is"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_tinkham_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "Class 2+",
+   "id": "wa_tinkham_peak_southeast_spur",
+   "name": "Southeast Spur",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Tinkham Peak",
+   "peak_elev": null,
+   "peak_lat": 47.34769,
+   "peak_lng": -121.4495,
+   "pitches": null,
+   "siblings": [
+    "wa_tinkham_peak_west_route = West Route",
+    "wa_tinkham_peak_east_route = East Route",
+    "wa_tinkham_peak_north_route = North Route",
+    "wa_tinkham_peak_northwest_ridge = Northwest Ridge"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "sources describe a Southeast Ridge from the south end of Mirror Lake but could not confirm it is this line"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_tinkham_peak",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_tinkham_peak_west_route",
+   "name": "West Route",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Tinkham Peak",
+   "peak_elev": null,
+   "peak_lat": 47.34769,
+   "peak_lng": -121.4495,
+   "pitches": null,
+   "siblings": [
+    "wa_tinkham_peak_east_route = East Route",
+    "wa_tinkham_peak_north_route = North Route",
+    "wa_tinkham_peak_northwest_ridge = Northwest Ridge",
+    "wa_tinkham_peak_southeast_spur = Southeast Spur"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "no source defines which line this West Route is"
+  },
+  {
+   "approach": "From Seattle, drive I-5 north to the Arlington exit, then SR 530 east through Oso to Darrington, and turn onto Squire Creek Road at the west end of town, following it to the parking area where it's gated off by washout damage. From there the approach is long and rough: hike the old roadbed past a landslide crossing (~5 minutes in), reach the original road end around 30-40 minutes from the car, then follow a faint trail through a dry streambed and alder brush, ford Squire Creek, and pick through obscure forest track before finally breaking out into the open basin roughly 2 hours from the car. This is a known bushwhacky, unmaintained approach typical of Darrington-area crags, with route-finding (flagging, cairns) required in several spots.",
+   "area_id": "wa_waterfall_basin",
+   "corrected": false,
+   "descent": "Rappel the route on its bolted double-ring anchors.",
+   "descent_text": "Descend by rappelling the route itself, using the new double-ring stainless-steel bolted anchors present at each belay station; bring double ropes.",
+   "discipline": "alpine",
+   "grade": "5.11a",
+   "id": "wa_roan_wall_center_stage",
+   "name": "Roan Wall - Center Stage",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Squire Creek Walls",
+   "peak": "Waterfall Basin",
+   "peak_elev": null,
+   "peak_lat": 48.17241,
+   "peak_lng": -121.67254,
+   "pitches": 10,
+   "siblings": [
+    "wa_flight_of_the_falcon = Flight of the Falcon",
+    "wa_roofer_madness = Roofer Madness",
+    "wa_roan_wall_stage_right = Roan Wall - Stage Right",
+    "wa_waterfall_buttress = Waterfall Buttress"
+   ],
+   "trailhead": "Squire Creek Road washout parking (Darrington)",
+   "previous_skip_reason": "no additional source for the descent beyond the existing rappel-the-route text"
+  },
+  {
+   "approach": "Same NW-face approach as New York Gully; the route sits just right of the end of the Snot Couloir, around the end of the ridge that divides the right side of the NW Face.",
+   "area_id": "wa_winter_spring_ice_snow_mixed_2",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": "5.7 M5-",
+   "id": "wa_snoqualmie_mountain_boogie_wonderland",
+   "name": "Boogie Wonderland",
+   "need_approach": false,
+   "need_descent": true,
+   "parent": "Snoqualmie Pass Area",
+   "peak": "Winter-Spring (ice, snow, mixed)",
+   "peak_elev": null,
+   "peak_lat": 47.44195,
+   "peak_lng": -121.40883,
+   "pitches": 1,
+   "siblings": [
+    "wa_winter_spring_ice_snow_mixed_2_the_upper_west_side = The Upper West Side",
+    "wa_winter_spring_ice_snow_mixed_2_northeast_slabs = Northeast Slabs",
+    "wa_new_york_gully = New York Gully",
+    "wa_snoqualmie_mountain_the_snostril = The Snostril",
+    "wa_winter_spring_ice_snow_mixed_2_east_face_variation = East Face Variation",
+    "wa_guye_peak_southeast_gully = Southeast Gully"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "no source found for this route's top-out or descent"
+  },
+  {
+   "approach": null,
+   "area_id": "wa_witches_tower",
+   "corrected": false,
+   "descent": null,
+   "descent_text": null,
+   "discipline": "alpine",
+   "grade": null,
+   "id": "wa_witches_tower_northwest_buttress",
+   "name": "Northwest Buttress",
+   "need_approach": true,
+   "need_descent": true,
+   "parent": "Stuart-Enchantments",
+   "peak": "Witches Tower",
+   "peak_elev": 8566,
+   "peak_lat": 47.4766,
+   "peak_lng": -120.8255,
+   "pitches": null,
+   "siblings": [
+    "wa_witches_tower_southwest_corner = Southwest Corner",
+    "wa_e_se_face = East Face",
+    "wa_witches_tower_south_face = South Face / Standard Route",
+    "wa_witches_tower_west_buttress = West Buttress"
+   ],
+   "trailhead": null,
+   "previous_skip_reason": "no source for this route's approach to its base or top-out; only the other routes' beta found"
+  }
+ ],
+ "richSiblingsOnSamePeak": {
+  "wa_switchback_mountain_scramble": {
+   "approach": "Two trailheads reach Cooney Lake and the SE Ridge. (1) Foggy Dew Trailhead (end of FR 4340-200, 3,400 ft) — from Twisp, take SR 20 east ~2 mi, then SR 153 south ~12 mi, then Gold Creek Loop Rd/County Rd 1034 and FR 4340 to the FR 4340-200 spur. Hike Foggy Dew Creek Trail #417 about 4.9 miles to its end, then Martin Creek Trail #429 north 2.7 miles and Cooney Lake Trail #434 0.2 mile to Cooney Lake (~7,200 ft); climb to Cooney Pass and the SE Ridge from there. Round trip is roughly 19 miles with about 5,560 ft of gain (a logged trip report took ~5.5 hr up, ~3 hr down). (2) Eagle Lakes/Crater Creek Trailhead (also off FR 4340, 4,700 ft) — follow the Crater Creek/Eagle Lake Trail #431 about 2.5 miles to a signed cutoff heading south toward Martin and Cooney Lakes, then 4.0 miles to Martin Lakes (6,700 ft) and 2.2 more miles to Cooney Lake (7,200 ft) to join the same summit route.",
+   "area_id": "wa_switchback_mountain",
+   "descent_text": "Reverse the Southeast Ridge down to Cooney Pass and Cooney Lake — the standard line is a walk-down with no rappels. From the lake, retrace to whichever trailhead you started from; parties based at Foggy Dew can vary the return slightly through Merchants Basin.",
+   "name": "Standard Scramble"
+  },
+  "wa_e_se_face": {
+   "approach": "From the Stuart Lake Trailhead (~3,400 ft, reached via ~8.7 mi of Icicle Creek Road southwest of Leavenworth), follow the Stuart Lake Trail south along Mountaineer Creek. At about 2.5 miles, bear left (south) at the signed junction onto the Colchuck Lake Trail (this junction is also where the Lake Stuart fork continues straight); the trail crosses Mountaineer Creek on a log/boulder crossing that can be a wet, awkward ford in early season high water. Continue climbing through forest and over a boulder field to Colchuck Lake (5,570 ft) at roughly 4.3 miles from the trailhead — this is the last reliable, easily accessed water source and most parties treat water here before pushing on. Skirt the lake's west shore and its south end on climbers' trail through talus to the base of the infamous Aasgard Pass climb: an unmaintained, badly eroded boot-path that gains roughly 2,200-2,500 ft in well under a mile of steep, loose scree, boulders and (through at least June, sometimes into July) lingering snow/ice that can require an ice axe and even crampons or micro-spikes — this is the single biggest approach hazard and crux of the day, with real rockfall risk from parties above and easy route-f",
+   "area_id": "wa_witches_tower",
+   "descent_text": "Witches Tower's E/SE Face is a short route — one pitch of fourth-class climbing up the light-colored (\"white rock\") face to the small, exposed summit block — so full-rope-length rappelling is not mandatory, but many parties prefer not to reverse the exposed ledges. The commonly used descent is to downclimb/scramble off the South Face or Southwest Corner side (Class 2-4, the same terrain used as the standard walk-up/scramble route) back down to the notch/col southwest of the tower, then rejoin the Aasgard Pass approach for the hike out. Where climbers do rope up for the final step off the summit or down the face itself, expect a single ~100-150 ft rappel from natural gear — a slung horn, block, or tree rather than fixed bolts; a single 60m rope doubled (30m per strand) or even a 30m rope run single-strand is enough for this one rappel. Descent-specific hazards: exposed, sometimes loose/exfoliating granite on the upper face and summit block, fast-moving afternoon thunderstorms on the exposed summit with no quick retreat, and then the long, knee-jarring downclimb of Aasgard Pass's loose talus/scree back to Colchuck Lake, which many parties find harder and slower than the ascent, espec",
+   "name": "East Face"
+  },
+  "wa_flight_of_the_falcon": {
+   "approach": "From Seattle, drive I-5 north to the Arlington exit, then SR 530 east through Oso to Darrington, and turn onto Squire Creek Road at the west end of town, following it to the parking area where it's gated off by washout damage. From there the approach is long and rough: hike the old roadbed past a landslide crossing (~5 minutes in), reach the original road end around 30-40 minutes from the car, then follow a faint trail through a dry streambed and alder brush, ford Squire Creek, and pick through obscure forest track before finally breaking out into the open basin roughly 2 hours from the car. The route is still far above: climb the bolted 5.8 slab and the dirty low-fifth crack to the foot of Roan Wall, scramble up its left side to the saddle where Salish Peak comes into view, and cross the high basin to the toe of the south face, about 6 hours from the car in all. This is a known bushwhacky, unmaintained approach typical of Darrington-area crags, with route-finding (flagging, cairns) required in several spots.",
+   "area_id": "wa_waterfall_basin",
+   "descent_text": "Two descent options exist. Most parties rappel from the anchor atop Pitch 7 ('Falcon's Perch') using double 60m ropes back down the route. Parties who continue to the summit can instead walk off to the left (west), a descent that takes about 40 minutes from the summit back down to packs at the base, navigating brushy, low-angle terrain.",
+   "name": "Flight of the Falcon"
+  },
+  "wa_guye_peak_southeast_gully": {
+   "approach": "Start from the Pacific Crest Trail North (Snoqualmie Pass North) trailhead, just off I-90 exit 52. Follow the old Commonwealth Basin trail north for approximately 1.4 miles, until Guye Peak lies directly west or northwest of you. From there head straight upslope - the gully initiates directly above. The approach is on maintained trail or, in winter, on whatever bootpack exists, and is short by Cascade standards; the difficulty is judging the snow on the slope between the trail and the base of the gully, which is itself avalanche terrain on a loaded day.",
+   "area_id": "wa_winter_spring_ice_snow_mixed_2",
+   "descent_text": "Do not plan on downclimbing the gully; at 70 degrees near the top with minimal protection it is a bad retreat. From the ridge between the true and false summits, the standard exit is over the top and out on foot. Going west, drop from the Guye / Cave Ridge saddle onto the climbers' trail down to the Alpental parking area, which then leaves a road walk of roughly a mile back to a car parked on the Commonwealth side. Going east, reverse the Commonwealth Basin approach back to the PCT North trailhead, which is the natural choice if that is where you left the car. In winter both descents cross avalanche terrain of their own, and the west-side bootpath is easily lost under snow - carry a track or a bearing.",
+   "name": "Southeast Gully"
+  },
+  "wa_new_york_gully": {
+   "approach": "Park in the Alpental groomer lot, about 200 ft past the main day-lot at the end of WA-906/Alpental Rd (reached via I-90 Exit 52). From the lot, walk up the open, south-facing hillside toward the Alpental waterfalls. At the base of the falls, cut left into the trees for roughly 100 ft and climb up through two steep, often snowed-up rock/cliff bands — this section is frequently booted or skinned by prior parties, and picking up an existing track through the thick timber makes a real difference in speed and route-finding; without one, expect slow going. After about 300 ft of gain, angle right onto the Phantom Slide itself, a broad avalanche path that is the defining feature (and hazard) of this approach: it slides regularly, including on skiers and climbers on the upper apron, so check the NWAC forecast beforehand and time your crossing/ascent to stable conditions rather than lingering on it. Climb the slide path to about 4,900 ft, then trend left and up through lower-angle, more open terrain to a notch on the NW shoulder/West Ridge near 5,200 ft. From the notch, downclimb roughly 200 vertical feet into the Thunder Creek cirque basin and traverse beneath the NW Face to the base of the",
+   "area_id": "wa_winter_spring_ice_snow_mixed_2",
+   "descent_text": "From the top of the technical climbing (the crux mixed pitches, including the route's namesake 'box gully' section), downclimb easy snow angling to climber's right, then traverse up to a col between two gendarmes on the upper ridge. From that col, make one rappel from an established tree anchor — a single 60m rope reaches the bottom comfortably (many parties carry a 70m since it's also useful for simul-climbing/leading the route's 4 long pitches), dropping into the Enigma Gully, also known locally as the Slot couloir. This tree-anchor rappel is also the standard bail point if weather, conditions, or time force a retreat before topping out. From the base of the rappel, climb back up moderate snow in the Enigma/Slot gully to regain the main summit ridge near 6,200 ft, then walk the short remaining distance to Snoqualmie Mountain's true summit. From the summit, descend the standard Southwest Slopes scramble route: steep, loose scree and exposed rock past Cave Ridge, dropping toward the Source Lake basin and rejoining the Snow Lake/Source Lake trail back to the Alpental parking lot (this standard descent line is roughly 3,100 ft of its own elevation loss over about 1.9 miles one-way, a",
+   "name": "New York Gully"
+  },
+  "wa_roan_wall_stage_right": {
+   "approach": "From Seattle, drive I-5 north to the Arlington exit, then SR 530 east through Oso to Darrington, and turn onto Squire Creek Road at the west end of town, following it to the parking area where it's gated off by washout damage. From there the approach is long and rough: hike the old roadbed past a landslide crossing (~5 minutes in), reach the original road end around 30-40 minutes from the car, then follow a faint trail through a dry streambed and alder brush, ford Squire Creek, and pick through obscure forest track before finally breaking out into the open basin roughly 2 hours from the car. This is a known bushwhacky, unmaintained approach typical of Darrington-area crags, with route-finding (flagging, cairns) required in several spots.",
+   "area_id": "wa_waterfall_basin",
+   "descent_text": "From the top of Stage Right, find a narrow ledge and work left and slightly downward to reach the top of the Center Stage route. From there, rappel Center Stage's bolted double-ring anchors (the face is described as clean and open) using double ropes.",
+   "name": "Roan Wall - Stage Right"
+  },
+  "wa_roofer_madness": {
+   "approach": "From Seattle, drive I-5 north to the Arlington exit, then SR 530 east through Oso to Darrington, and turn onto Squire Creek Road at the west end of town, following it to the parking area where it's gated off by washout damage. From there the approach is long and rough: hike the old roadbed past a landslide crossing (~5 minutes in), reach the original road end around 30-40 minutes from the car, then follow a faint trail through a dry streambed and alder brush, ford Squire Creek, and pick through obscure forest track before finally breaking out into the open basin roughly 2 hours from the car. This is a known bushwhacky, unmaintained approach typical of Darrington-area crags, with route-finding (flagging, cairns) required in several spots.",
+   "area_id": "wa_waterfall_basin",
+   "descent_text": "A short route typically descended by rappel or lowering directly off the bolted anchor system; the mid-route ledge anchor allows a controlled two-stage descent if needed.",
+   "name": "Roofer Madness"
+  },
+  "wa_slippery_slab_tower_ne_face": {
+   "approach": "From either trailhead, climbers first gain the Pacific Crest Trail — via the Tunnel Creek Trail climbing about 1,170 ft in 1.45 miles to Hope Lake, or via the Surprise Creek Trail to Surprise Lake — then follow the PCT to Trap Pass (~5,800 ft), south from Hope Lake or north from the Surprise Lake side. From Trap Pass an unmaintained climbers' trail continues south along the ridge to the base of Slippery Slab Tower, with Thunder Mountain further along the same ridgeline above Glacier Lake. The round trip is long enough (roughly 6 miles one-way) that many parties camp overnight at Hope Lake or Trap Lake.",
+   "area_id": "wa_thunder_mountain_and_slippery_slab_tower",
+   "descent_text": "From the summit, make two rappels down the climbing route to return to the base of the tower. Climbers typically use a 60m rope doubled for each rappel, or make multiple 30-50m single-strand rappels. Be mindful of loose, pointy rocks during the descent. Once back at the base, scramble back through the pass terrain to Trap Pass, then reverse the PCT and Tunnel Creek Trail descent.",
+   "name": "Slippery Slab Tower NE Face"
+  },
+  "wa_snoqualmie_mountain_the_snostril": {
+   "approach": "Same NW-face approach as New York Gully via the Phantom Slide path. Pitch 1 starts in a corner roughly halfway between the Thunder Basin exit gully and the Snot Couloir; cross-reference New York Gully's approach beta and aerial photos of the face to find the start.",
+   "area_id": "wa_winter_spring_ice_snow_mixed_2",
+   "descent_text": "Top out on the western subsummit and walk off down the steep south side, a snow slope in winter, then circle back to wherever you left packs below the face. If the crux above the cave is not in, rappel the first two pitches from the cave instead.",
+   "name": "The Snostril"
+  },
+  "wa_the_pyramid_picket_south_route": {
+   "approach": "From the Goodell Creek trailhead (~600 ft elevation, an unsigned pullout on an unpaved spur road off SR-20 directly across from Newhalem/Goodell Creek Campground), the climbers' trail parallels Goodell Creek for an easier 4.5 miles before a punishing 2.5-mile, ~4,700 ft push to treeline in Terror Basin (total ~7 mi / ~5,200 ft gain to camp) -- the tread is faint even when snow-free, brush is dense, and there are Class 3 root-pull sections through cliff bands. Most parties reach Terror Basin in one long day of roughly 6-7 hours. From Terror Basin, cross 'The Barrier' -- the basin's steep west headwall -- at its upper notch (not the lower Stump Hollow crossing), via a moat and a short low-5th-class step, to reach Crescent Creek Basin, which sits below Inspiration, Pyramid, and Degenhardt. A direct approach to Crescent Creek Basin is also possible but is buggier and less consistent than the Terror Basin line.",
+   "area_id": "wa_the_pyramid_picket",
+   "descent_text": "Reverse the west-side Class 3 scramble down to the Degenhardt-Pyramid col, then either continue traversing toward Degenhardt/Terror or drop back into Crescent Creek Basin and reverse the Barrier crossing to Terror Basin and out the Goodell Creek trail.",
+   "name": "South Route"
+  },
+  "wa_waterfall_buttress": {
+   "approach": "From Seattle, drive I-5 north to the Arlington exit, then SR 530 east through Oso to Darrington, and turn onto Squire Creek Road at the west end of town, following it to the parking area where it's gated off by washout damage. From there the approach is long and rough: hike the old roadbed past a landslide crossing (~5 minutes in), reach the original road end around 30-40 minutes from the car, then follow a faint trail through a dry streambed and alder brush, ford Squire Creek, and pick through obscure forest track before finally breaking out into the open basin roughly 2 hours from the car. This is a known bushwhacky, unmaintained approach typical of Darrington-area crags, with route-finding (flagging, cairns) required in several spots.",
+   "area_id": "wa_waterfall_basin",
+   "descent_text": "Descend by rappelling the route with double 60m ropes. On the lower-angle section, stay skier's-right to avoid dropping into the adjacent gully and creek below the slab waterfall.",
+   "name": "Waterfall Buttress"
+  },
+  "wa_winter_spring_ice_snow_mixed_2_east_face_variation": {
+   "approach": "From the Alpental/Snow Lake trailhead (~3,100 ft, 1.5 mi north of I-90 Exit 52 via Alpental Rd), hike/skin up the main trail toward Source Lake, then turn south into the valley/basin below The Tooth's east face. In winter, avoid the summer approach path/gully directly below the East Face due to significant avalanche danger; approach via the broader basin instead.",
+   "area_id": "wa_winter_spring_ice_snow_mixed_2",
+   "descent_text": "Descend by rappelling the South Face line, using its tree/gear anchors and the two bolted chain rappel stations at Pineapple Pass lower down (60m rope recommended), then hike/ski back out through the basin to Source Lake and the Alpental trailhead.",
+   "name": "East Face Variation"
+  },
+  "wa_winter_spring_ice_snow_mixed_2_northeast_slabs": {
+   "approach": "Start at the Alpental Ski Area parking lot (~3,100 ft; I-90 Exit 52, north on Alpental Rd). Follow the Snow Lake Trail north into the valley on climber's-left of the outlet creek. In summer, stay on the maintained tread about 1.8-2 miles to the signed Source Lake Trail junction (~4,100 ft); in winter/spring the standard line leaves the summer trail earlier and climbs directly up the valley bottom/climbers'-path toward Source Lake — do not follow the exact summer boot path once there's meaningful snow cover, since it crosses avalanche terrain. From the Source Lake junction, leave the maintained trail and pick up the cairned climbers' path/talus traverse that runs above and around the east side of Source Lake, staying below the cliff band, aiming toward The Tooth's northeast aspect. Continue into the basin beneath the NE Face and ascend the broad snow finger/gully (\"snow cone\") that leads directly to the base of the Northeast Slabs route on the NE Face — cache skis in the hollow below and left of the route start before racking up. Figure roughly 2-2.5 miles and 1,500-2,000 ft of gain from the trailhead to the base of the climb; parties commonly do trailhead-to-summit-and-back in 4-6 ",
+   "area_id": "wa_winter_spring_ice_snow_mixed_2",
+   "descent_text": "From the summit, downclimb a short distance to the tree anchor in the small notch just below the true summit. From there, rappel the South Face line to the notch (Pineapple Pass) between The Tooth and its south sub-summit — four rappels of under 30 m on a single 60 m rope, or two long ones with two 60 m ropes; parties often note the second rappel can pull stiffly, so flake the rope and check your pull direction before committing. Some parties instead rappel off a chockstone lower on the gully, but this is described as less efficient than the tree-anchor double rappel and is not the standard line. From the notch you join the South Face (standard) descent: downclimb/walk the gully and talus down through Great Scott Bowl, then retrace the approach traverse back above Source Lake to the Snow Lake/Source Lake trail and the Alpental lot. In good winter/spring coverage this whole descent from the notch is frequently skied or glissaded — parties report as little as ~10 minutes from the notch back to the car on skis in prime conditions; on foot through talus, plan on more like 45-60 minutes. The same avalanche exposure noted on the approach applies to the descent, and expect possible traffi",
+   "name": "Northeast Slabs"
+  },
+  "wa_witches_tower_south_face": {
+   "approach": "From the Stuart Lake Trailhead (Mountaineer Creek Trail #1599, elev. ~3,400 ft; Northwest Forest Pass required) at the end of Icicle Creek/Eightmile Road (FR 7601), follow the trail steadily uphill through forest along Mountaineer Creek. At about 2.5 miles, bear left at the signed junction onto the Colchuck Lake Trail (the right fork continues to Lake Stuart). Continue climbing, crossing a boulder-strewn section near the outlet, to reach Colchuck Lake (5,570 ft) at roughly mile 4, having gained about 2,000-2,100 ft — this is the last reliable water source before Aasgard Pass. Pick up the rough climbers' path along the lake's west shore (boulder-hopping in places) to its south end, then begin the well-known Aasgard Pass climb: an unrelenting, loose boot-track/goat-trail ascent of roughly 2,200 ft in under a mile to the 7,750-7,800 ft pass. This is the crux of the approach — footing is loose scree and talus lower down, the gully sections can be wet or icy, and snow commonly lingers into July, making an ice axe (and sometimes crampons/self-arrest practice) advisable; it is also a well-documented spot for slips given the sustained steepness and long runout. From the pass, work south to",
+   "area_id": "wa_witches_tower",
+   "descent_text": "Descend by reversing the scramble: back across the four-foot summit slot, down the large blocks, and around the exposed ledge to the south base of the tower. The ledge is the part to take slowly, especially if it is wet or holds snow. From the base, retrace the approach past Brynhild Lake to Aasgard Pass, then down the loose 2,200 ft gully to Colchuck Lake (plunge-step or glissade any snow with an ice axe in hand) and out on the Colchuck Lake and Stuart Lake trails to the trailhead. No rappels are needed.",
+   "name": "South Face / Standard Route"
+  },
+  "wa_witches_tower_southwest_corner": {
+   "approach": "Same approach as the South Face route to Aasgard Pass (7,841 ft), then hike south toward the tower and ascend snow or Class 2 rock to the col just southwest of the peak (roughly 6-8 hours and about 4,800 ft of gain from the trailhead).",
+   "area_id": "wa_witches_tower",
+   "descent_text": "From the summit, downclimb the south face (Class 2-3) back to the col SW of the tower, then descend to Aasgard Pass and back down the loose talus/scree (or snow) to Colchuck Lake and the trailhead - roughly 1 hour from summit to the col.",
+   "name": "Southwest Corner"
+  },
+  "wa_witches_tower_west_buttress": {
+   "approach": "Same approach as the other routes: Stuart Lake/Colchuck Lake Trailhead to Colchuck Lake (5,570 ft), then the steep Aasgard Pass trail to the col behind Witches Tower; a steep snowfield crossing (ice axe recommended) leads to the route's base on the west side.",
+   "area_id": "wa_witches_tower",
+   "descent_text": "Descend via a combination of rappelling and downclimbing, including a notably exposed ledge traverse, back to the col/notch; from there, downclimb the steep snowfield (self-arrest position with ice axe) back toward Aasgard Pass and out via Colchuck Lake to the trailhead.",
+   "name": "West Buttress"
+  }
+ }
+}

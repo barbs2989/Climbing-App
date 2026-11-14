@@ -1,0 +1,23 @@
+# Dependency update PRs. Minor and patch bumps arrive as ONE grouped PR a week, so the queue
+# stays readable; each MAJOR bump arrives alone, because a major is a decision (see the notes in
+# scripts/check-action-versions.mjs) and needs its own build to prove it. Security fixes are
+# opened as soon as GitHub publishes the advisory, whatever the schedule.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      npm-minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions-minor-and-patch:
+        update-types: [minor, patch]

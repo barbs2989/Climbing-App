@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { C } from "../../ClimbMatchCore.jsx";
 import { useAreaChildren } from "../../lib/db.js";
+import LoadingRows from "./LoadingRows.tsx";
 
 /** The columns of an `areas` row this level reads (`useAreaChildren` selects every column). */
 export interface DbArea { id: string; name: string; route_count?: number | null; }
@@ -27,7 +28,7 @@ export default function DbAreaLevel({parentId,value,placeholder,onPick,sel}: DbA
   const q: AreaQuery=useAreaChildren(parentId,{enabled:!!parentId});
   const kids=q.data||[];
   if(!parentId)return null;
-  if(q.isLoading)return <div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>Loading areas…</div>;
+  if(q.isLoading)return <LoadingRows C={C} label="Loading areas…" style={{padding:"6px 2px"}}/>;
   /* A failed children read must not read as "this area holds nothing" — the same sentence
      DbAreaTreeNode says one screen over. Silence is worse here than there: the climber would
      conclude they had reached a leaf and try to file a route against a container. */

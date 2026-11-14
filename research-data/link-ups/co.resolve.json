@@ -1,0 +1,943 @@
+[
+ {
+  "lu": "co_lu_grays_torreys",
+  "leg": 0,
+  "peak": "Grays Peak",
+  "route": "Grays Peak trail (north slope switchbacks)",
+  "pick": {
+   "id": "co_grays_peak_north_slopes",
+   "name": "North Slopes",
+   "disc": "scrambling",
+   "grade": "Class 1",
+   "area": "Grays Peak",
+   "score": 0.25
+  },
+  "others": [
+   {
+    "id": "co_grays_peak_north_slopes",
+    "name": "North Slopes",
+    "disc": "scrambling",
+    "grade": "Class 1",
+    "area": "Grays Peak",
+    "score": 0.25
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_grays_torreys",
+  "leg": 1,
+  "peak": "Torreys Peak",
+  "route": "Southeast ridge from the Grays-Torreys saddle",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_decalibron",
+  "leg": 0,
+  "peak": "Mount Democrat",
+  "route": "East slope from the cirque basin",
+  "pick": {
+   "id": "co_mount_democrat_east_slope",
+   "name": "East Slope",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mount Democrat",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_mount_democrat_east_slope",
+    "name": "East Slope",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Democrat",
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_decalibron",
+  "leg": 1,
+  "peak": "Mount Cameron",
+  "route": "Ridge walk (not an official separate summit)",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_decalibron",
+  "leg": 2,
+  "peak": "Mount Lincoln",
+  "route": "Ridge from Cameron",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_unlisted_corner",
+    "name": "Unlisted Corner",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Lincoln Lake Slabs",
+    "score": 0
+   },
+   {
+    "id": "co_b_line",
+    "name": "B Line",
+    "disc": "alpine",
+    "grade": "5.7+",
+    "area": "Lincoln Lake Slabs",
+    "score": 0
+   },
+   {
+    "id": "co_double_exposure",
+    "name": "Double Exposure",
+    "disc": "alpine",
+    "grade": "5.10",
+    "area": "Lincoln Lake Slabs",
+    "score": 0
+   },
+   {
+    "id": "co_ewoks_don_t_sport_climb",
+    "name": "Ewoks Don't Sport Climb",
+    "disc": "alpine",
+    "grade": "5.11+",
+    "area": "Lincoln Lake Slabs",
+    "score": 0
+   },
+   {
+    "id": "co_easy_corner",
+    "name": "Easy Corner",
+    "disc": "alpine",
+    "grade": "5.8-",
+    "area": "Lincoln Lake Slabs",
+    "score": 0
+   },
+   {
+    "id": "co_west_colfax",
+    "name": "West Colfax",
+    "disc": "alpine",
+    "grade": "5.8-",
+    "area": "Lincoln Lake Slabs",
+    "score": 0
+   },
+   {
+    "id": "co_mount_lincoln_west_ridge",
+    "name": "West Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Lincoln",
+    "score": 0
+   },
+   {
+    "id": "co_hoosier_pass_lincoln_fall_diamond_couloir_the",
+    "name": "Diamond Couloir, The",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "Hoosier Pass/Lincoln Fall",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_decalibron",
+  "leg": 3,
+  "peak": "Mount Bross",
+  "route": "Ridge from Lincoln; summit access restricted",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_belford_oxford_missouri",
+  "leg": 0,
+  "peak": "Mount Belford",
+  "route": "Northwest ridge from the gulch",
+  "pick": {
+   "id": "co_mt_belford_northwest_ridge",
+   "name": "Northwest Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mt. Belford",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_mt_belford_northwest_ridge",
+    "name": "Northwest Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mt. Belford",
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_belford_oxford_missouri",
+  "leg": 1,
+  "peak": "Mount Oxford",
+  "route": "Connecting ridge from Belford",
+  "pick": {
+   "id": "co_mount_oxford_via_mount_belford",
+   "name": "Via Mount Belford",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mount Oxford",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_mount_oxford_via_mount_belford",
+    "name": "Via Mount Belford",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Oxford",
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_belford_oxford_missouri",
+  "leg": 2,
+  "peak": "Missouri Mountain",
+  "route": "Standard northwest ridge via the pass",
+  "pick": {
+   "id": "co_missouri_mountain_northwest_ridge",
+   "name": "Northwest Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Missouri Mountain",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_missouri_mountain_northwest_ridge",
+    "name": "Northwest Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Missouri Mountain",
+    "score": 0.5
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_harvard_columbia",
+  "leg": 0,
+  "peak": "Mount Harvard",
+  "route": "Standard trail then the south slopes",
+  "pick": {
+   "id": "co_mount_harvard_south_slopes",
+   "name": "South Slopes",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mount Harvard",
+   "score": 0.6666666666666666
+  },
+  "others": [
+   {
+    "id": "co_mount_harvard_south_slopes",
+    "name": "South Slopes",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Harvard",
+    "score": 0.6666666666666666
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_harvard_columbia",
+  "leg": 1,
+  "peak": "Mount Columbia",
+  "route": "Ridge traverse then Columbia's trail",
+  "pick": {
+   "id": "co_mount_columbia_west_slopes",
+   "name": "West Slopes",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Mount Columbia",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_mount_columbia_west_slopes",
+    "name": "West Slopes",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Mount Columbia",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_bierstadt_sawtooth_evans",
+  "leg": 0,
+  "peak": "Mount Bierstadt",
+  "route": "Standard trail from the pass",
+  "pick": {
+   "id": "co_sawtooth_traverse",
+   "name": "Sawtooth Traverse",
+   "disc": "alpine",
+   "grade": "3rd",
+   "area": "Sawtooth Ridge, Mt. Bierstadt/Evans combo",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_sawtooth_traverse",
+    "name": "Sawtooth Traverse",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "Sawtooth Ridge, Mt. Bierstadt/Evans combo",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_bierstadt_sawtooth_evans",
+  "leg": 1,
+  "peak": "Mount Evans",
+  "route": "West ridge via the Sawtooth",
+  "pick": {
+   "id": "co_sawtooth_traverse",
+   "name": "Sawtooth Traverse",
+   "disc": "alpine",
+   "grade": "3rd",
+   "area": "Sawtooth Ridge, Mt. Bierstadt/Evans combo",
+   "score": 0.5
+  },
+  "others": [
+   {
+    "id": "co_sawtooth_traverse",
+    "name": "Sawtooth Traverse",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "Sawtooth Ridge, Mt. Bierstadt/Evans combo",
+    "score": 0.5
+   },
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_north_face_snowfield",
+    "name": "North Face Snowfield",
+    "disc": "mountaineering",
+    "grade": "Mod. Snow",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_diamond_couloir",
+    "name": "Diamond Couloir",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_crystal_couloir",
+    "name": "Crystal Couloir",
+    "disc": "mountaineering",
+    "grade": "Steep Snow",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_bad_finger_couloir_the",
+    "name": "Bad Finger Couloir, The",
+    "disc": "mountaineering",
+    "grade": "Steep Snow",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   },
+   {
+    "id": "co_mt_blue_sky_formerly_mount_evans_mixed_couloirs_goldfinger_couloir",
+    "name": "Goldfinger Couloir",
+    "disc": "mountaineering",
+    "grade": "Steep Snow PG13",
+    "area": "Mt. Blue Sky (formerly Mount Evans)",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_redcloud_sunshine",
+  "leg": 0,
+  "peak": "Redcloud Peak",
+  "route": "Northeast ridge",
+  "pick": {
+   "id": "co_redcloud_peak_northeast_ridge",
+   "name": "Northeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Redcloud Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_redcloud_peak_northeast_ridge",
+    "name": "Northeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Redcloud Peak",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_redcloud_sunshine",
+  "leg": 1,
+  "peak": "Sunshine Peak",
+  "route": "Ridge from Redcloud",
+  "pick": {
+   "id": "co_sunshine_peak_via_redcloud_peak",
+   "name": "Via Redcloud Peak",
+   "disc": "scrambling",
+   "grade": "Class 2",
+   "area": "Sunshine Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_sunshine_peak_via_redcloud_peak",
+    "name": "Via Redcloud Peak",
+    "disc": "scrambling",
+    "grade": "Class 2",
+    "area": "Sunshine Peak",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_bells_traverse",
+  "leg": 0,
+  "peak": "Maroon Peak",
+  "route": "South ridge",
+  "pick": {
+   "id": "co_maroon_peak_south_ridge",
+   "name": "South Ridge",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Maroon Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_maroon_peak_south_ridge",
+    "name": "South Ridge",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Maroon Peak",
+    "score": 1
+   },
+   {
+    "id": "co_bell_cord_couloir",
+    "name": "Bell Cord Couloir",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Maroon Bells",
+    "score": 0
+   },
+   {
+    "id": "co_bells_traverse_submitted_as_maroon_ridge",
+    "name": "Bells Traverse (submitted as Maroon Ridge)",
+    "disc": "alpine",
+    "grade": "5.2",
+    "area": "Maroon Bells",
+    "score": 0
+   },
+   {
+    "id": "co_megamoronal_submitted_as_moron_s_bells_traverse",
+    "name": "Megamoronal (submitted as Moron's Bells Traverse)",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Maroon Bells",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_bells_traverse",
+  "leg": 1,
+  "peak": "North Maroon Peak",
+  "route": "Bells Traverse, then northeast ridge descent",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_crestone_traverse",
+  "leg": 0,
+  "peak": "Crestone Peak",
+  "route": "South face",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_crestone_needle_south_face",
+    "name": "South Face",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Crestone Needle",
+    "score": 1
+   },
+   {
+    "id": "co_crestone_peak_south_face",
+    "name": "South Face",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Crestone Peak",
+    "score": 1
+   },
+   {
+    "id": "co_red_gully",
+    "name": "Red Gully",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "The Crestones",
+    "score": 0
+   },
+   {
+    "id": "co_india",
+    "name": "India",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "The Crestones",
+    "score": 0
+   },
+   {
+    "id": "co_crestone_traverse",
+    "name": "Crestone Traverse",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "The Crestones",
+    "score": 0
+   },
+   {
+    "id": "co_crestone_peak_north_buttress",
+    "name": "Crestone Peak North Buttress",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "The Crestones",
+    "score": 0
+   },
+   {
+    "id": "co_ellingwood_ledges",
+    "name": "Ellingwood Ledges",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Crestone Needle",
+    "score": 0
+   },
+   {
+    "id": "co_crestone_peak_north_pillar",
+    "name": "Crestone Peak / North Pillar",
+    "disc": "alpine",
+    "grade": "5.8-",
+    "area": "The Crestones",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_crestone_traverse",
+  "leg": 1,
+  "peak": "Crestone Needle",
+  "route": "Traverse then south face descent",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_crestone_needle_south_face",
+    "name": "South Face",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Crestone Needle",
+    "score": 0.25
+   },
+   {
+    "id": "co_crestone_peak_south_face",
+    "name": "South Face",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Crestone Peak",
+    "score": 0.25
+   },
+   {
+    "id": "co_crestone_traverse",
+    "name": "Crestone Traverse",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "The Crestones",
+    "score": 0.25
+   },
+   {
+    "id": "co_red_gully",
+    "name": "Red Gully",
+    "disc": "alpine",
+    "grade": "3rd",
+    "area": "The Crestones",
+    "score": 0
+   },
+   {
+    "id": "co_india",
+    "name": "India",
+    "disc": "alpine",
+    "grade": "5.8",
+    "area": "The Crestones",
+    "score": 0
+   },
+   {
+    "id": "co_crestone_peak_north_buttress",
+    "name": "Crestone Peak North Buttress",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "The Crestones",
+    "score": 0
+   },
+   {
+    "id": "co_ellingwood_ledges",
+    "name": "Ellingwood Ledges",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "Crestone Needle",
+    "score": 0
+   },
+   {
+    "id": "co_crestone_peak_north_pillar",
+    "name": "Crestone Peak / North Pillar",
+    "disc": "alpine",
+    "grade": "5.8-",
+    "area": "The Crestones",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_wilson_el_diente",
+  "leg": 0,
+  "peak": "El Diente Peak",
+  "route": "From Kilpacker or Navajo Basin",
+  "pick": {
+   "id": "co_north_buttress_el_diente_peak",
+   "name": "North Buttress - El Diente Peak",
+   "disc": "alpine",
+   "grade": "4th",
+   "area": "El Diente Peak",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_north_buttress_el_diente_peak",
+    "name": "North Buttress - El Diente Peak",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "El Diente Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_wilson_el_diente",
+  "leg": 1,
+  "peak": "Mount Wilson",
+  "route": "Ridge traverse over West Wilson, then Wilson's summit blocks",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_nne_ridge",
+    "name": "NNE Ridge",
+    "disc": "alpine",
+    "grade": "5.5",
+    "area": "Wilson Peak",
+    "score": 0
+   },
+   {
+    "id": "co_wilson_peak_southwest_ridge",
+    "name": "Southwest Ridge",
+    "disc": "scrambling",
+    "grade": "3rd",
+    "area": "Wilson Peak",
+    "score": 0
+   },
+   {
+    "id": "co_mount_wilson_southwest_slopes",
+    "name": "Southwest Slopes",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Mount Wilson",
+    "score": 0
+   },
+   {
+    "id": "co_wilson_group_luttrell_route",
+    "name": "Luttrell Route",
+    "disc": "mountaineering",
+    "grade": "Steep Snow",
+    "area": "Wilson Group",
+    "score": 0
+   },
+   {
+    "id": "co_nw_ridge",
+    "name": "NW Ridge",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Wilson Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_blanca_ellingwood",
+  "leg": 0,
+  "peak": "Blanca Peak",
+  "route": "Northwest ridge",
+  "pick": null,
+  "others": [
+   {
+    "id": "co_gash_ridge",
+    "name": "Gash Ridge",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Blanca Peak",
+    "score": 0
+   },
+   {
+    "id": "co_ormes_buttress",
+    "name": "Ormes Buttress",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Blanca Peak",
+    "score": 0
+   },
+   {
+    "id": "co_little_bear_blanca_traverse",
+    "name": "Little Bear-Blanca Traverse",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Blanca Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_blanca_ellingwood",
+  "leg": 1,
+  "peak": "Ellingwood Point",
+  "route": "Ridge from the saddle, then south face descent",
+  "pick": {
+   "id": "co_wrong_peak",
+   "name": "Wrong Peak",
+   "disc": "alpine",
+   "grade": "5.9",
+   "area": "Ellingwood Point",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_wrong_peak",
+    "name": "Wrong Peak",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Ellingwood Point",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_little_bear_blanca_ellingwood",
+  "leg": 0,
+  "peak": "Little Bear Peak",
+  "route": "West ridge and Hourglass",
+  "pick": {
+   "id": "co_west_ridge_and_hourglass_couloir",
+   "name": "West Ridge and Hourglass Couloir",
+   "disc": "alpine",
+   "grade": "4th",
+   "area": "Little Bear Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_west_ridge_and_hourglass_couloir",
+    "name": "West Ridge and Hourglass Couloir",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Little Bear Peak",
+    "score": 1
+   },
+   {
+    "id": "co_west_ridge_direct",
+    "name": "West Ridge Direct",
+    "disc": "alpine",
+    "grade": "5.4",
+    "area": "Little Bear Peak",
+    "score": 0.5
+   },
+   {
+    "id": "co_the_mcr_route",
+    "name": "The MCR Route",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Little Bear Peak",
+    "score": 0
+   },
+   {
+    "id": "co_northwest_face",
+    "name": "Northwest Face",
+    "disc": "alpine",
+    "grade": "4th",
+    "area": "Little Bear Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_little_bear_blanca_ellingwood",
+  "leg": 1,
+  "peak": "Blanca Peak",
+  "route": "Little Bear-Blanca ridge traverse",
+  "pick": {
+   "id": "co_little_bear_blanca_traverse",
+   "name": "Little Bear-Blanca Traverse",
+   "disc": "alpine",
+   "grade": "5.0",
+   "area": "Blanca Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_little_bear_blanca_traverse",
+    "name": "Little Bear-Blanca Traverse",
+    "disc": "alpine",
+    "grade": "5.0",
+    "area": "Blanca Peak",
+    "score": 1
+   },
+   {
+    "id": "co_gash_ridge",
+    "name": "Gash Ridge",
+    "disc": "alpine",
+    "grade": "Easy 5th",
+    "area": "Blanca Peak",
+    "score": 0
+   },
+   {
+    "id": "co_ormes_buttress",
+    "name": "Ormes Buttress",
+    "disc": "alpine",
+    "grade": "5.6",
+    "area": "Blanca Peak",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_little_bear_blanca_ellingwood",
+  "leg": 2,
+  "peak": "Ellingwood Point",
+  "route": "Ridge from the Blanca-Ellingwood saddle, then south face descent",
+  "pick": {
+   "id": "co_wrong_peak",
+   "name": "Wrong Peak",
+   "disc": "alpine",
+   "grade": "5.9",
+   "area": "Ellingwood Point",
+   "score": 0
+  },
+  "others": [
+   {
+    "id": "co_wrong_peak",
+    "name": "Wrong Peak",
+    "disc": "alpine",
+    "grade": "5.9",
+    "area": "Ellingwood Point",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_chicago_basin_peaks",
+  "leg": 0,
+  "peak": "Mount Eolus",
+  "route": "Northeast ridge",
+  "pick": {
+   "id": "co_mount_eolus_northeast_ridge",
+   "name": "Northeast Ridge",
+   "disc": "scrambling",
+   "grade": "Class 3",
+   "area": "Mount Eolus",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_mount_eolus_northeast_ridge",
+    "name": "Northeast Ridge",
+    "disc": "scrambling",
+    "grade": "Class 3",
+    "area": "Mount Eolus",
+    "score": 1
+   },
+   {
+    "id": "co_south_face_direct",
+    "name": "South Face Direct",
+    "disc": "alpine",
+    "grade": "5.7",
+    "area": "West Eolus",
+    "score": 0
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_chicago_basin_peaks",
+  "leg": 1,
+  "peak": "North Eolus",
+  "route": "South ridge",
+  "pick": null,
+  "others": []
+ },
+ {
+  "lu": "co_lu_chicago_basin_peaks",
+  "leg": 2,
+  "peak": "Windom Peak",
+  "route": "West ridge",
+  "pick": {
+   "id": "co_windom_peak_west_ridge",
+   "name": "West Ridge",
+   "disc": "scrambling",
+   "grade": "Class 2+",
+   "area": "Windom Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_windom_peak_west_ridge",
+    "name": "West Ridge",
+    "disc": "scrambling",
+    "grade": "Class 2+",
+    "area": "Windom Peak",
+    "score": 1
+   }
+  ]
+ },
+ {
+  "lu": "co_lu_chicago_basin_peaks",
+  "leg": 3,
+  "peak": "Sunlight Peak",
+  "route": "South face",
+  "pick": {
+   "id": "co_sunlight_peak_south_face",
+   "name": "South Face",
+   "disc": "mountaineering",
+   "grade": "Class 4",
+   "area": "Sunlight Peak",
+   "score": 1
+  },
+  "others": [
+   {
+    "id": "co_sunlight_peak_south_face",
+    "name": "South Face",
+    "disc": "mountaineering",
+    "grade": "Class 4",
+    "area": "Sunlight Peak",
+    "score": 1
+   },
+   {
+    "id": "co_standard_route_sunlight_spire",
+    "name": "Standard Route, Sunlight Spire",
+    "disc": "alpine",
+    "grade": "5.10",
+    "area": "Sunlight Spire",
+    "score": 0
+   }
+  ]
+ }
+]

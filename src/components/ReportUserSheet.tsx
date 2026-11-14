@@ -1,0 +1,26 @@
+import type { Dispatch, SetStateAction } from "react";
+import ReportModal from "./ReportModal.tsx";
+import type { ReportedClimber } from "./ReportModal.tsx";
+import { pubFirst } from "../../ClimbMatchCore.jsx";
+import { USE_DB } from "../../lib/supabase";
+import { submitReport } from "../../lib/db";
+
+/* reportUser&& — the body of that branch of App, lifted verbatim by extract-from-parent.mjs (branch mode);
+   every binding it read from App is a prop of the same name. */
+/** The person being reported, as the report and block actions read them. */
+export interface ReportUserSheetClimber extends ReportedClimber { id: string | number }
+/** A live read; only the refetch is used here. */
+interface ReportUserSheetQuery { refetch?: () => unknown }
+export interface ReportUserSheetProps {
+  adminQueueQ: ReportUserSheetQuery;
+  blockClimber: (c: ReportUserSheetClimber, opts?: { silent?: boolean }) => void;
+  blocked: { id: string | number }[] | null;
+  myFiledQ: ReportUserSheetQuery;
+  /** Non-null whenever this sheet is mounted. */
+  reportUser: ReportUserSheetClimber;
+  setReportUser: Dispatch<SetStateAction<ReportUserSheetClimber | null>>;
+  showToast: (msg: string) => void;
+}
+export default function ReportUserSheet({adminQueueQ,blockClimber,blocked,myFiledQ,reportUser,setReportUser,showToast}: ReportUserSheetProps){
+  return <ReportModal climber={reportUser} alreadyBlocked={(blocked||[]).some(function(x){return String(x.id)===String(reportUser.id);})} onClose={()=>setReportUser(null)} onSubmit={(reason,detail,alsoBlock)=>{const _c=reportUser,_n=_c?(pubFirst(_c)||"them"):"them";setReportUser(null);/* The block runs FIRST and independently of the write. It is the reporter's own protection, and making it conditional on a report landing would mean a flaky connection silently leaves somebody unblocked at the moment they asked to be. Silent, so the report toast below — which names the block — is the one left on screen. */if(alsoBlock)blockClimber(_c,{silent:true});const _b=alsoBlock?(" "+_n+" is blocked."):"";/* This handler used to discard the report entirely and toast "our team will review it". It now writes to user_reports (migration 0077). The toast tracks what actually happened at each outcome — a filed report, a failed write, or no DB at all — because a success message over a lost report is the exact bug being fixed. Nothing notifies anyone: outbound mail was deliberately deferred, so the copy promises filing and not review. */if(!USE_DB){showToast("Saved on this device only — sign-in isn't set up here, so the report wasn't filed."+(alsoBlock?(" "+_n+" is blocked on this device."):(" Block "+_n+" to stop contact.")));return;}submitReport({reported_id:_c&&_c.id,reported_name:_c&&_c.name,reason:reason,detail:detail}).then(function(){/* Refresh the reporter's own list. Without this the report is filed, the row exists, and "Reports you've filed" keeps showing the answer it fetched at mount -- so the first thing a climber does after reporting somebody is look for it and not find it. Caught by the browser verification, not by any gate: every query was correct, just stale. */if(myFiledQ.refetch)myFiledQ.refetch();if(adminQueueQ.refetch)adminQueueQ.refetch();showToast("Report filed — a reviewer sees it in their queue."+(_b||(" You can block "+_n+" from their profile."))+" Nobody is paged, so this won't be instant.");}).catch(function(){showToast("Couldn't file that report — check your connection and try again."+(_b?(_b+" That part worked."):(" Block "+_n+" to stop contact meanwhile.")));});}}/>;
+}

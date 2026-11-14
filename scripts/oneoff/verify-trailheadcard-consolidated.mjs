@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // Does the SHIPPED TrailheadCard now resolve the same destination as the map and both buttons?
 //
 // The resolution lines are EXTRACTED FROM RouteDetail.jsx with ANCHOR LOST, and trailheadPoint()
@@ -9,7 +10,7 @@
 import { readFileSync } from "node:fs";
 import { selectAll } from "../lib/supabase-env.mjs";
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 const core = readFileSync(ROOT + "ClimbMatchCore.jsx", "utf8");
 const rd = readFileSync(ROOT + "RouteDetail.jsx", "utf8");
 

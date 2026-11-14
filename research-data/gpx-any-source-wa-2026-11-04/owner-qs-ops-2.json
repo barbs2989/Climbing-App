@@ -1,0 +1,15 @@
+[
+ { "op": "merge", "id": "wa_mount_price_northeast_route", "into": "wa_mount_price_hester_lake_route", "area_id": "wa_mount_price", "name": "Northeast Route", "move": "*" },
+ { "op": "merge", "id": "wa_hibox_mountain_east_route", "into": "wa_hibox_mountain_standard", "area_id": "wa_hibox_mountain", "name": "East Route", "move": "*" },
+ { "op": "merge", "id": "wa_hibox_mountain_south_route", "into": "wa_hibox_mountain_standard", "area_id": "wa_hibox_mountain", "name": "South Route", "move": "*" },
+ { "op": "merge", "id": "wa_hibox_mountain_southeast_shoulder", "into": "wa_hibox_mountain_southeast_ridge", "area_id": "wa_hibox_mountain", "name": "Southeast Shoulder", "move": "*",
+   "set": { "discipline": "scrambling", "grade": "Class 3", "beta": "Follow the same climbers' path to the open slopes below the summit block, then bear right over loose talus and scree to meet the summit ridge near 6,300 ft, just southeast of the block. Follow the southeast edge of the block up a short class 3 scramble. It is easy when dry; with wet rock many parties take the east gully instead. In snow the line is steeper and counts as class 4." } },
+ { "op": "delete", "id": "wa_hibox_mountain_northwest_ridge", "area_id": "wa_hibox_mountain", "name": "Northwest Ridge" },
+ { "op": "patch", "id": "wa_hibox_mountain_south_face", "area_id": "wa_hibox_mountain", "name": "South Face", "set": { "discipline": "alpine" } },
+ { "op": "merge", "id": "wa_iron_cap_mountain_south_route_2", "into": "wa_iron_cap_mountain_south_route", "area_id": "wa_iron_cap_mountain", "name": "South Route", "move": "*" },
+ { "op": "patch", "id": "wa_iron_cap_mountain_northeast_shoulder", "area_id": "wa_iron_cap_mountain", "name": "Northeast Shoulder",
+   "set": { "name": "North Ridge via Northeast Shoulder", "discipline": "scrambling", "grade": "Class 2-3", "season": "Jul-Sep",
+     "approach": "Reached from the Tank Lakes side of the Alpine Lakes high route, via the Foss River trails, not from Chetwoot Lake.",
+     "beta": "From the basin east of the peak, climb a wide talus ramp to the nose of the north ridge, then follow the north ridge, over boulders and heather benches, to the summit. Cairns mark the way across the east-side talus; the lower section can be brushy and the path is clear but easy to lose.",
+     "descent_text": "Reverse the ascent: down the north ridge, round the northeast nose, and across talus to the saddle below the Tank Lakes plateau." } }
+]

@@ -102,7 +102,7 @@ const CASES = [
     // report a BROKEN scan rather than quietly losing that promise.
     name: "staleentry",
     why: "a gated control is renamed, so a promise entry can no longer fire — the guard must say so instead of going silently dead",
-    file: "ClimbMatch.jsx",
+    file: "src/components/SettingsPrivacySheet.tsx",
     find: `aria-label="Toggle online status"`,
     repl: `aria-label="Toggle my online status"`,
     expect: /can never fire|BROKEN/,
@@ -111,7 +111,7 @@ const CASES = [
   {
     name: "sheetclear",
     why: "the in-app sheet goes back to \"edit or clear anything\", which name, username and the avatar cannot honour",
-    file: "ClimbMatch.jsx",
+    file: "src/components/PrivacySheet.tsx",
     find: `["Your control","You can edit your profile and settings at any time. Your name and username can be changed but not left blank; your profile photo can be changed or removed. To have data removed, use Settings → Your data."]`,
     repl: `["Your control","You can edit or clear anything from your profile and settings at any time."]`,
     expect: /edit or clear anything/,
@@ -122,7 +122,7 @@ const CASES = [
     // the old sentence.
     name: "sheetvague",
     why: "the sheet's claim is softened into vagueness — no longer false, but it no longer says which fields cannot be cleared",
-    file: "ClimbMatch.jsx",
+    file: "src/components/PrivacySheet.tsx",
     find: `You can edit your profile and settings at any time. Your name and username can be changed but not left blank; your profile photo can be changed or removed. To have data removed, use Settings → Your data.`,
     repl: `You can edit your profile and settings at any time.`,
     expect: /no longer states which fields cannot be cleared/,

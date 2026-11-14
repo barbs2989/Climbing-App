@@ -1,9 +1,10 @@
+import { fileURLToPath } from "node:url";
 // Injection cases for check:trailhead-direction-shape: prove it goes RED in both directions (a walk the
 // detector must catch, good directions it must not hide) and GREEN on a correct row. Each edit is
 // proven landed by checksum, and the corpus is restored byte-identically even if a case throws.
 //   node scripts/oneoff/inject-trailhead-direction-shape-cases.mjs
 import fs from "fs"; import { spawnSync } from "child_process"; import crypto from "crypto";
-const W = new URL("../../", import.meta.url).pathname;
+const W = fileURLToPath(new URL("../../", import.meta.url));
 const F = W + "scripts/trailhead-directions-reviewed.json";
 const orig = fs.readFileSync(F, "utf8");
 const sha = s => crypto.createHash("sha1").update(s).digest("hex");

@@ -1,0 +1,179 @@
+[
+ {
+  "id": "wa_golden_horn_north_face",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  },
+  "after": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 5.75,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  }
+ },
+ {
+  "id": "wa_golden_horn_northeast_arete",
+  "field": "timing",
+  "before": null,
+  "after": {
+   "approachTimeHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 5.75,
+   "totalHrs": null
+  }
+ },
+ {
+  "id": "wa_mount_adams_northwest_ridge",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  },
+  "after": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 5,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  }
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  },
+  "after": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 4.5,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  }
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  },
+  "after": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": 5.6,
+   "approachTimeHrs": null,
+   "recommendedStart": null
+  }
+ },
+ {
+  "id": "wa_mount_spickard_silver_glacier",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": 3.5,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Early start from camp to be across the Silver Glacier before the sun softens snow bridges"
+  },
+  "after": {
+   "totalHrs": null,
+   "summitTimeHrs": 3.5,
+   "descentTimeHrs": 6.5,
+   "approachTimeHrs": null,
+   "recommendedStart": "Early start from camp to be across the Silver Glacier before the sun softens snow bridges"
+  }
+ },
+ {
+  "id": "wa_austera_peak",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": 1,
+   "descentTimeHrs": 4,
+   "approachTimeHrs": 4,
+   "recommendedStart": "Pre-dawn from high camp to cross glaciers on firm snow"
+  },
+  "after": {
+   "totalHrs": null,
+   "summitTimeHrs": 1,
+   "descentTimeHrs": 7,
+   "approachTimeHrs": 4,
+   "recommendedStart": "Pre-dawn from high camp to cross glaciers on firm snow"
+  }
+ },
+ {
+  "id": "wa_goode_mountain_northeast_face",
+  "field": "timing",
+  "before": {
+   "totalHrs": 28,
+   "summitTimeHrs": 12,
+   "descentTimeHrs": 8,
+   "approachTimeHrs": 8.5,
+   "recommendedStart": "Alpine start from high camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 8,
+     "note": "PCT south from the Bridge Creek trailhead, up North Fork Bridge Creek (ford required), then off-trail to a camp near the glacier toe/moraine (~6,700 ft), the shared staging camp fo…",
+     "fromTo": "Approach to high camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 12,
+     "note": "Cross the glacier to the base of the face and climb to the summit (roped low-5th-class climbing similar in character to the adjacent Northeast Buttress), then descend the standard …",
+     "fromTo": "Climb the Northeast Face, descend the Southwest Couloir",
+     "section": "Climb"
+    },
+    {
+     "hrs": 8,
+     "note": "Reverse the approach back down North Fork Bridge Creek and the PCT to Highway 20.",
+     "fromTo": "Hike out",
+     "section": "Descent"
+    }
+   ]
+  },
+  "after": {
+   "totalHrs": 34.5,
+   "summitTimeHrs": 12,
+   "descentTimeHrs": 14,
+   "approachTimeHrs": 8.5,
+   "recommendedStart": "Alpine start from high camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 8.5,
+     "note": "PCT south from the Bridge Creek trailhead, up North Fork Bridge Creek (ford required), then off-trail to a camp near the glacier toe/moraine (~6,700 ft), the shared staging camp fo…",
+     "fromTo": "Approach to high camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 12,
+     "note": "Cross the glacier to the base of the face and climb to the summit (roped low-5th-class climbing similar in character to the adjacent Northeast Buttress), then descend the standard …",
+     "fromTo": "Climb the Northeast Face, descend the Southwest Couloir",
+     "section": "Climb"
+    },
+    {
+     "hrs": 14,
+     "note": "Reverse the approach back down North Fork Bridge Creek and the PCT to Highway 20.",
+     "fromTo": "Hike out",
+     "section": "Descent"
+    }
+   ]
+  }
+ }
+]

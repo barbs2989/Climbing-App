@@ -1,0 +1,57 @@
+{
+  "wa_clean_break": {
+    "area": "wa_juno_tower",
+    "review": {
+      "confidence": "high",
+      "decision": "KEEP",
+      "sources": ["https://www.mountainproject.com/route/109232141/clean-break", "https://stephabegg.com/trip-reports/washington/juno-tower-clean-break/"],
+      "changed": "Nothing. The stored table already numbers pitches 1 through 10 and then lumps 11-15 together, so it covers fifteen pitches, which is what both sources say.",
+      "pitch_count_found": 15,
+      "other_findings": "The stored pitches value of 13 disagrees with the table and with both sources, which give 15. The pitches column looks wrong, not the table (report only; not changed)."
+    }
+  },
+  "wa_cutthroat_peak_cauthorn_wilson_couloir": {
+    "area": "wa_cutthroat_peak",
+    "review": {
+      "confidence": "medium",
+      "decision": "KEEP",
+      "sources": ["https://www.mountainproject.com/route/109740367/cauthorn-wilson", "http://www.supertopo.com/rock-climbing/Washington-Pass-Cutthroat-Peak-Cauthorn-Wilson"],
+      "changed": "Nothing. The table labels run 1, 2, 3 and 4-7, which is seven pitches and matches the stored count and the listed count of 7. The extra summit-pitches row is an optional section-style row, a legitimate form.",
+      "pitch_count_found": 7,
+      "other_findings": "False positive: the flag counted the range label and the optional summit row as extra numbered rows."
+    }
+  },
+  "wa_dorado_needle_east_ridge": {
+    "area": "wa_dorado_needle",
+    "review": {
+      "confidence": "low",
+      "decision": "HOLD",
+      "sources": ["https://www.mountainproject.com/route/112156952/east-ridge", "https://www.miyaradventures.com/trip/dorado-needle-and-early-morning-spire-2/", "https://www.alpineinstitute.com/route-profile-dorado-needle-east-ridge/"],
+      "changed": "Nothing. The stored table is section-style with ranges and no source states a pitch-by-pitch breakdown to rebuild it from.",
+      "pitch_count_found": 10,
+      "other_findings": "The route page states no pitch count (800 ft, Grade III). One guide service describes about 10 pitches; stored pitches is 14. Sources are thin and the 5.5 vs 5.7 grade also varies between them. No change made."
+    }
+  },
+  "wa_dragontail_peak_backbone_ridge": {
+    "area": "wa_dragontail_peak",
+    "review": {
+      "confidence": "high",
+      "decision": "KEEP",
+      "sources": ["https://www.mountainproject.com/route/106073405/backbone-ridge", "https://www.summitpost.org/backbone-ridge-with-fin-direct/210011"],
+      "changed": "Nothing. The table numbers 1, 2, 3, 4, 5-6, 7, 8, 9, 10, 11-12, which is twelve pitches and matches the stored count and the main page's listed 12 pitches, with the same labels and grades.",
+      "pitch_count_found": 12,
+      "other_findings": "False positive from the range labels. Some other accounts count 14 to 15 by splitting the linked and simul-climbed sections, so the count is a matter of how they are split."
+    }
+  },
+  "wa_dragontail_peak_serpentine_arete": {
+    "area": "wa_dragontail_peak",
+    "review": {
+      "confidence": "low",
+      "decision": "HOLD",
+      "sources": ["https://www.mountainproject.com/route/106015955/serpentine-arete", "https://stephabegg.com/trip-reports/washington/dragontail-serpentine-arete/"],
+      "changed": "Nothing. The stored table is coarse (labels 1, 2-3, 4-5, 6+) and the listed count is 13 against a stored 14, so a corrected numbered table cannot be built without inventing pitch splits.",
+      "pitch_count_found": 13,
+      "other_findings": "Stored pitches 14 vs 13 on the main route page; the second page read gave no clear count. The table's labels reach at least 6, consistent with either."
+    }
+  }
+}

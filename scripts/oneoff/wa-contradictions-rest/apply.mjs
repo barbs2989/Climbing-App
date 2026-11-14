@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Apply researched patches: compare-and-set against the LIVE row, one PATCH per route, re-read to verify.
 // usage: node apply.mjs <patches.json> [--dry]
 // patches.json: {"patches":[{"id","column","path":[...],"op":"set"|"replace_text","expect","value","find","replace","fact","sources":[...]}]}
@@ -5,7 +6,7 @@ import fs from "node:fs";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../../lib/supabase-env.mjs";
 import { gradeNumFor } from "../../../lib/grade.js";
 const key = requireServiceKey();
-const T = new URL("../../../audits/wa-contradictions-rest", import.meta.url).pathname;
+const T = fileURLToPath(new URL("../../../audits/wa-contradictions-rest", import.meta.url));
 const file = process.argv[2], DRY = process.argv.includes("--dry");
 const { patches } = JSON.parse(fs.readFileSync(file));
 const FORBID_COLS = new Set(["id", "area_id", "name", "name_search", "discipline", "auto_generated", "classic", "lat", "lng", "gpx", "sort_order",

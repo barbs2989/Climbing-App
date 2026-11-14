@@ -1,0 +1,52 @@
+{
+ "il_a_lily_wall": {
+  "_expect": {
+   "name": "Lily Wall",
+   "region": "Illinois"
+  },
+  "blurb": "Lily Wall is the first cliff the trail reaches in Pere Marquette State Park, near Grafton and roughly an hour's drive from St. Louis. It holds eleven routes, split fairly evenly between bolted sport lines and traditional climbs, including a crack and a dihedral. Difficulty runs from 5.7 up to 5.10, with most lines in the 5.8 to 5.10 range, so it suits climbers comfortable on moderate grades rather than absolute beginners hunting for a dozen easy leads. There is a flat open spot below the wall where parties can sort gear before scrambling up to the base. It is a compact wall, good as one stop in a day spent on the park's other cliffs.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/112240933/lily-wall",
+    "https://www.mountainproject.com/area/112240918/pere-marquette-state-park"
+   ]
+  }
+ },
+ "il_a_mr_jimmy": {
+  "_expect": {
+   "name": "Mr. Jimmy",
+   "region": "Illinois"
+  },
+  "blurb": "Mr. Jimmy is a freestanding sandstone tower in the North Canyon of Jackson Falls, in the forested canyon of Shawnee National Forest in southern Illinois. All eleven routes are bolted sport climbs, spanning an easy 5.6 on the left side of the main face up to hard 5.12 and low 5.13 lines, with the bulk of them in the 5.12 range and a handful in the 5.10s and 5.11. Walls in this part of the canyon run roughly 30 to 70 feet and feature slopers, pockets and roofs. The tree cover keeps summer days bearable. The walk in is longer than for other zones, following the canyon wall beyond the main falls.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/106017463/mr-jimmy",
+    "https://www.mountainproject.com/area/113717757/north-canyon",
+    "https://www.mountainproject.com/area/106017458/jackson-falls"
+   ]
+  }
+ },
+ "il_u_vultures_nest_boulders": {
+  "_expect": {
+   "name": "Vultures Nest Boulders",
+   "region": "Illinois"
+  },
+  "blurb": "Part of the Holy Boulders in Jackson County, Vultures Nest is a little sandstone group on the west side of Shawnee National Forest, some thirty minutes southwest of Carbondale. It sits on the main cliff line, a short scramble up the hill from the Brown Recluse boulder. Ten problems range from an easy V0 arete to a V9, with the middle of the range around V3 to V6 and a few harder lines at the top end. Several finish on a large sloped top-out feature. The classic here is Embryo Stasis, a V4 that sees plenty of ascents.",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/area/108601176/vultures-nest-boulders",
+    "https://www.mountainproject.com/area/108116766"
+   ]
+  }
+ },
+ "_skipped": {
+  "il_a_lily_boulders": "could not fetch two pages about this crag itself (only the park bouldering parent page lists it, no crag page found)",
+  "il_c_steep_slab_cluster": "no fetched page about this crag itself; Hillside Boulders Illinois page not found (search returned Connecticut/Texas namesakes)",
+  "il_a_house_party_boulder": "no fetched page about this crag itself; the only House Party Boulder page found is in Utah",
+  "il_c_runner_up_boulder": "only the House Boulders parent page mentions it; no crag page found",
+  "il_k_la_haceinda": "only the South Canyon parent page mentions it, no description of the crag itself"
+ },
+ "_conflicts": {
+  "il_a_lily_wall": "stored rock is dolomite; the park pages describe limestone (https://www.mountainproject.com/area/112240918/pere-marquette-state-park). Rock not named in blurb."
+ }
+}

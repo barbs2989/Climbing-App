@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 // Out-of-band duplicate-CLIMB check for the generic-area fold (0259 bypasses refuse_duplicate_route for
 // its climb moves, as 0251 did). Replays plan.json's climb moves on the live climbs of every area they
 // touch and lists each destination that would hold two climbs with the same name key — the same climb
@@ -6,7 +7,7 @@
 import fs from "fs";
 import path from "path";
 import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
-const ROOT = path.resolve(new URL("../..", import.meta.url).pathname);
+const ROOT = path.resolve(fileURLToPath(new URL("../..", import.meta.url)));
 const DIR = path.join(ROOT, "audits/generic-area-names-2026-10-07");
 const plan = JSON.parse(fs.readFileSync(path.join(DIR, "plan.json"), "utf8"));
 const key = requireServiceKey();

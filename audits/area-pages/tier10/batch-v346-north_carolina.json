@@ -1,0 +1,40 @@
+{
+ "nc_north_carolina_wall": {
+  "_expect": {"name": "North Carolina Wall", "region": "North Carolina"},
+  "blurb": "The North Carolina Wall is a traditional-only face on the main side of Linville Gorge, facing across the canyon toward Table Rock. It holds nineteen trad lines, from 5.7 up to the low 5.12s, with the bulk of them in the 5.10 to 5.11 range, so there is very little here for a beginner. Several routes run to multiple pitches, with a four-pitch 5.8 as the most popular outing. The setting is deep wilderness gorge, quiet and committing, and the gorge quartzite can wander enough that finding the line takes care. Plan on bringing a full rack and solid route-finding skills.",
+  "review": {"sources": ["https://www.mountainproject.com/area/105972623/north-carolina-wall", "https://www.mountainproject.com/area/105873285/linville-gorge"]}
+ },
+ "nc_little_wilson": {
+  "_expect": {"name": "Little Wilson", "region": "North Carolina"},
+  "blurb": "Little Wilson is a compact bolted crag in the hills outside Boone, in the northern mountains of the state. Nearly everything here is sport, with a single trad line, and the nineteen routes cluster between 5.9 and 5.12, with the 5.11s and low 5.12s forming the core. The wall is short, steep and pumpy, with plenty of features on overhanging rock, so it suits climbers comfortable on tougher grades more than first-timers. A creek runs close by, which makes a cool-off after a day of climbing easy.",
+  "review": {"sources": ["https://www.mountainproject.com/area/107096474/little-wilson", "https://www.mountainproject.com/area/118317188/northern-mountains-region"]}
+ },
+ "nc_cave_boulder": {
+  "_expect": {"name": "Cave Boulder", "region": "North Carolina"},
+  "blurb": "The Cave Boulder sits among the West Side Boulders at Rumbling Bald, where two big blocks lean together to make a roughly fifteen-foot cave. It is a good place to warm up, yet it also carries several well-known harder problems. The nineteen problems here range from V1 to V10, with a cluster of V5 to V7 testpieces in the middle of the spread. Sun depends on which side you pick: one face stays shaded while the other gets direct light through the day. The wider boulder field is shady but can still feel hot in summer, and is considered a fine winter destination.",
+  "review": {"sources": ["https://www.mountainproject.com/area/106615350/cave-boulder", "https://www.mountainproject.com/area/106286581/west-side-boulders"]}
+ },
+ "nc_east_slate_rock": {
+  "_expect": {"name": "East Slate Rock", "region": "North Carolina"},
+  "blurb": "East Slate Rock is a remote cliff in the Pisgah area of the southern mountains, valued for scenery and solitude and often suggested when the busier crags are crowded. Of eighteen routes, seventeen are trad and one is sport, running from about 5.7 to 5.11, with most in the 5.10 and 5.11 range. A few go multi-pitch. The rock is decent but mixed, with sandy patches, some loose sections and light vegetation in places. The face picks up morning sun. The walk in is long, so plan a full day and go with a competent partner.",
+  "review": {"sources": ["https://www.mountainproject.com/area/110579790/east-slate-rock?print=1", "https://mountainproject.com/area/118317214/southern-mountains-region"]}
+ },
+ "nc_central_wall": {
+  "_expect": {"name": "Central Wall", "region": "North Carolina"},
+  "blurb": "Central Wall is a stretch of Moore's Wall at Hanging Rock, lying on the Sentinel Buttress between the big gully by the Amphitheater and the Circus Wall. It has eighteen trad routes, and unusually for the Piedmont it offers some of the best easy climbing around: a handful of routes from the low 5th class through 5.7, plus some solid 5.11 and a 5.12 for stronger leaders. Quartzite quality is excellent. Some lines catch afternoon sun, but breezes, trees and roofs keep it comfortable even in summer. Spring and fall are the best seasons.",
+  "season_months": [3, 4, 5, 9, 10, 11],
+  "review": {"sources": ["https://www.mountainproject.com/area/107357655/central-wall", "https://www.mountainproject.com/area/118318664/moores-wall-routes"]}
+ },
+ "nc_north_cary_park_boulders": {
+  "_expect": {"name": "North Cary Park Boulders", "region": "North Carolina"},
+  "blurb": "North Cary Park Boulders are two small, purpose-built climbing boulders at a town park in Cary, close to Raleigh. Each stands about eight feet tall and has a textured, ridged surface that mimics natural rock, with soft rubber matting beneath. Problems run from very easy to a handful of tough ones, but most fall around V2 to V3, so beginners can learn grips and footwork while experienced climbers still find short challenges. It is a quick-stop training spot rather than a destination.",
+  "review": {"sources": ["https://thecaryreport.com/?p=601", "https://www.visitraleigh.com/listing/north-cary-park/67055/"]}
+ },
+ "_skipped": {
+  "nc_woody_wall": "no fetchable page about this crag itself (the Mountain Project Woody Wall URL is a Nevada crag; rockclimbing.com refused connection; Panthertown page only lists it)",
+  "nc_section_4": "no page about Section 4 itself found; only the Rocky Face parent page mentions it"
+ },
+ "_conflicts": {
+  "nc_north_cary_park_boulders": "stored rock 'metasedimentary rock' but pages describe artificial textured boulders: https://thecaryreport.com/?p=601 , https://www.visitraleigh.com/listing/north-cary-park/67055/"
+ }
+}

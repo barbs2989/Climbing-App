@@ -58,7 +58,7 @@ assertCovered(files, ROOT, "check:dead-props");
 
 const asts = [];
 for (const file of files) {
-  const rel = relative(ROOT, file);
+  const rel = relative(ROOT, file).replace(/\\/g, "/");
   try {
     asts.push([rel, parse(readFileSync(file, "utf8"), { sourceType: "module", plugins: ["jsx", "typescript"] })]);
   } catch (e) {

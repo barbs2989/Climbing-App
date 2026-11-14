@@ -1,0 +1,326 @@
+[
+ {
+  "id": "wa_mount_angeles_standard",
+  "name": "Standard Scramble (Switchback / Klahhane Ridge approach)",
+  "area_id": "wa_mount_angeles",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "Klahhane Ridge climbers' trail from Hurricane Ridge",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Mid-July to September",
+    "notes": "Paved path off the east end of the visitor centre lot, then open subalpine ridge for about two and a half miles to an unsigned split. A shorter, steeper start climbs from the Switchback Trail on the road below and joins higher up. Nothing dependable to drink past the visitor centre — carry it all.",
+    "why": null
+   },
+   {
+    "name": "Switchback Trail up to Klahhane Ridge",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "A steep, short trail from the Hurricane Ridge Road up to the Klahhane Ridge trail, then the same climbers' path to the summit.",
+    "why": null
+   },
+   {
+    "name": "Heather Park trail from Heart O' the Hills",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The long way from low on the Hurricane Ridge Road: the Heather Park trail climbs around the west side of the peak to join the climbers' path.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_mount_appleton_standard",
+  "name": "Standard Scramble (Appleton Pass / Boulder Lake approach)",
+  "area_id": "wa_mount_appleton",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "Sol Duc River Trail to Appleton Pass",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Mid-July to September",
+    "notes": "Just under five miles upriver, crossing Crystal Creek on a suspension bridge, to the signed pass junction, then a couple of miles and roughly two thousand feet through forest and meadow to the gap. The Boulder Creek side reaches the same pass but is far longer now that the road below it is walked or ridden.",
+    "why": null
+   },
+   {
+    "name": "Boulder Creek from the Elwha",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "From the Elwha side, follow the Boulder Creek trail past the old hot springs and climb to Appleton Pass, where it meets the Sol Duc line. It is the longer way, since the road below the trailhead may have to be walked or biked. Boulder Lake makes a good side camp.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_mount_ballard_south",
+  "name": "South Slopes",
+  "area_id": "wa_mount_ballard",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "Mill Creek and the Azurite Pass side",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Late July to September",
+    "notes": "This is the approach the peak is normally catalogued under and the one that pairs naturally with Azurite. It runs from Highway 20 up Canyon Creek and then Mill Creek on tread that has seen little maintenance since the mine closed, where slide alder and downed timber are the recurring complaint and parties routinely lose the path entirely for stretches. A longer alternative from the West Fork Methow trailhead reaches the same country by way of the Pacific Crest Trail and Horse Heaven Camp and is often preferred for combined trips despite the extra mileage. Camp is usually made near the old mine or in the basin above it. Note that the point long marked on maps as Mount Ballard is a lower north sub-summit; the true high point lies about 1,100 ft further south and is slightly higher.",
+    "why": null
+   },
+   {
+    "name": "South Fork Slate Creek and the east ridge",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "July to September",
+    "notes": "The other side of the mountain, approached from the Slate Creek road system rather than from Mill Creek, and the line most parties who climb this peak actually use. It is shorter, the forest below camp is comparatively brush-free, and the route-finding above camp is far more legible than on the Mill Creek side, at the cost of one genuinely steep step low down and some exposed ledge work near the top. Snow conditions change this route's character completely: a filled-in slot low down and firm snow in the upper cirque make for fast travel, while dry late-season conditions leave loose rock and slippery vegetation. Camp is normally made in a scree basin below the east ridge.",
+    "why": null
+   },
+   {
+    "name": "West Fork Methow and the PCT",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "Up the West Fork Methow to the Pacific Crest Trail and over to the Mill Creek side. Longer, and usually chosen for combined trips.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Paragraph and v0 describe the Mill Creek/Azurite Pass side, which suits the South Slopes route and pairs with Azurite. But v1's own notes claim Slate Creek/east ridge is what most Ballard parties use, and trip reports (trailcatjim) do use it; that is arguably a different route (east ridge), so v0 kept at low confidence."
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "name": "Elwha Basin Scramble",
+  "area_id": "wa_mount_barnes",
+  "discipline": "mountaineering",
+  "ways": [
+   {
+    "name": "Bailey Range crest to Bear Pass",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Late July to mid-September",
+    "notes": "This peak has two genuinely different journeys to it: the western one from the Sol Duc over the High Divide and along the Bailey crest through Cat Basin, Ferry Basin and Stephen Peak, and the eastern one up the Elwha with a long road walk or ride added at the start. Both take days. Almost every ascent is a side-summit off a traverse rather than a trip in its own right.",
+    "why": null
+   },
+   {
+    "name": "Up the Elwha to Elwha Basin",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The eastern way: follow the Elwha River trail up the full length of the valley past Hayes River and Chicago Camp to Elwha Basin, then climb onto the peak from the basin. It takes several days, and a road walk or bike ride may be needed to reach the trailhead.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_mount_berge_southwest_route",
+  "name": "Southwest Route",
+  "area_id": "wa_mount_berge",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "Little Giant Trail #1518 over the pass and down into the Napeequa",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Jul-Sep, August most reliable. The Chiwawa ford at the very start of this trail is waist-deep and swift in early season and is only reliably safe in late-summer and autumn low water",
+    "notes": "The Little Giant Trailhead sits at about 2,600 ft roughly mile 19 of Chiwawa River Road, three miles down-valley of Trinity. The trail begins with an unbridged ford of the Chiwawa River, right at the start — there is no way around it and it is the gate on the whole approach.\n\nTrail #1518 then climbs steeply and badly-eroded to Little Giant Pass at 6,463 ft, with a small spring a few hundred feet below the pass at about 6,250 ft that is the last dependable water before the high basins. Maintained tread effectively ends at the pass.\n\nFrom the pass the route drops toward the Louis Creek and Napeequa basin, then follows a climbers' path upstream to the end of tread at the creek draining Berge's south-west side. A steep, intermittent boot track climbs through timber to treeline and opens into the south-west basin. A narrow notch at about 7,840 ft in the ridge crest links the Louis Creek basin to the Buck Creek and High Pass side beneath the south-west face, and gaining it is exposed scrambling.\n\nAll options to this peak are 15-plus miles round trip and are multi-day trips.",
+    "why": null
+   },
+   {
+    "name": "Trinity and Buck Creek, or the High Pass high route from Buck Creek Pass",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Jul-Sep, August most reliable",
+    "notes": "Two other ways reach the same mountain from the Trinity side.\n\nThe east approach: from Trinity, follow Chiwawa River Trail #1550 about two miles to the Buck Creek Trail #1513 junction, then Buck Creek Trail roughly four to five miles into the basin Berge shares with Mount Cleator and Buck Mountain on its east side.\n\nThe north approach: continue past the Buck Creek junction to Buck Creek Pass, then take the climbers' path over High Pass and contour south under Berge's north side near Point 7839. This is the longest by mileage and has the least off-trail travel, which is the trade it offers.\n\nBoth involve unbridged or damaged creek crossings and both are multi-day. FR-6200 has been closed beyond Atkinson Flat under a storm-damage order, which affects the drive to Trinity.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "For the Southwest Route, the Little Giant / Napeequa approach is the one that reaches the southwest basin directly. The paragraph lists all three approaches. The Chiwawa ford makes it late-season only, and FR-6200 has storm-damage closures."
+ },
+ {
+  "id": "wa_mount_bigelow_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_mount_bigelow",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "Eagle Lakes Trail #431 to Upper Eagle Lake",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Roughly July through October, once road and trail are snow-free. Snow lingers in the notch through the lower cliff band into summer and makes the route-finding harder.",
+    "notes": "From the road-end trailhead at the top of the forest-road spur, fill out the self-issue wilderness permit and start up Eagle Lakes Trail #431. The tread crosses Crater Creek on a bridge early on — stay straight where the Crater Creek Trail splits — and climbs steadily, with an established camp roughly halfway. Past an overlook of the lower lake the trail reaches a junction: the left branch goes to the lower lake and the pass beyond, the right-hand spur climbs a half mile to Upper Eagle Lake. Take the spur. The upper lake sits in a cirque with established campsites and is the last reliable water and the staging point before the off-trail push, which starts from its northwest shore.",
+    "why": null
+   },
+   {
+    "name": "Horsehead Pass and the west slopes",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "July through October. The west side melts out and stays passable later in the autumn than the shaded notch on the east side.",
+    "notes": "The easier alternative stays on the main trail past the Upper Eagle Lake spur, continues to the lower lake and climbs to Horsehead Pass, then gains the peak's west slopes from the far side of the crest. It trades the exposed scrambling for distance and a long, loose walk-up, and is the sensible choice for a party that does not want the cliff-band route-finding or that finds snow still lying in the notch above the upper lake.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Standard Scramble goes via Eagle Lakes Trail/Upper Eagle Lake; Horsehead Pass is described as the easier alternative."
+ },
+ {
+  "id": "wa_mount_buckindy_scramble",
+  "name": "Buckindy Glacier/Scramble Route",
+  "area_id": "wa_mount_buckindy",
+  "discipline": "mountaineering",
+  "ways": [
+   {
+    "name": "Kindy Ridge from the Kindy Creek road",
+    "primary": false,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "Up Kindy Ridge from the Kindy Creek road off the Cascade River Road, then south through the Buckindy high country to below the north side. A longer two-to-three-day approach.",
+    "why": null
+   },
+   {
+    "name": "Green Mountain trail and the Horse Lake saddle",
+    "primary": true,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The usual way: up the Green Mountain trail off the Suiattle River Road, then cross-country east and southeast along the ridges past Misch to Buckindy's north side. Check the Suiattle River Road before you go; it has been closed to vehicles for long stretches.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_mount_cameron_standard",
+  "name": "Standard Route (Southeast Slopes)",
+  "area_id": "wa_mount_cameron",
+  "discipline": "mountaineering",
+  "ways": [
+   {
+    "name": "Obstruction Point Road, Grand Pass and the Cameron Pass Trail",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep, and gated by the road: Obstruction Point Road is usually open only early-to-mid July through mid-October",
+    "notes": "Read the name on this route with care — it says Southeast Slopes, and Cameron Pass lies west of the summit. The climb is a west-ridge walk gained at the pass. A party that reads the title and heads southeast off the pass is walking into the Dosewallips headwaters. Drive the narrow one-lane gravel Obstruction Point Road — Olympic National Park's highest road, topping out at 6,135 ft — 8 miles east from the Hurricane Ridge Visitor Center to the Obstruction Point trailhead. Hike the Grand Pass Trail roughly 6 miles to Grand Pass at about 6,450 ft; the drop off the far side toward Cameron is steep and slick in wet weather or lingering snow. The trail then crosses several unbridged branches of Cameron Creek in a wet meadow — reliable water, and tread that is easy to lose in fog or high brush — to the Cameron Basin camps at about 6,000 ft near 8.3 miles, and on up to Cameron Pass at roughly 6,450-6,500 ft near 9.3 miles. Bear canister required in the basin; there are no trees to hang food. Steep snow can persist on the pass into late July or August and the climbers' path is frequently buried there.",
+    "why": null
+   },
+   {
+    "name": "Deer Park and the Cameron Creek Trail",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep, and it opens earlier than Obstruction Point in some years because Deer Park Road is a different road on a different aspect",
+    "notes": "The other trail-based way into Cameron Basin, and the one worth knowing when Obstruction Point Road is still closed. From Deer Park, the Grand Ridge and Cameron Creek trail system leads into the Cameron Creek drainage and up to Cameron Basin and Cameron Pass from the northeast.\n\nIt is longer than the Obstruction Point line and much of the Cameron Creek tread receives little to no maintenance — parties describe bushwhacking through dense growth, chest-high berry bushes, and log crossings barricaded by jams. Long sleeves and trousers are universally recommended.\n\nOnce at Cameron Pass the climb is identical to the Obstruction Point variant.",
+    "why": null
+   },
+   {
+    "name": "Dosewallips road walk and the long push up-valley into Cameron Basin",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep",
+    "notes": "Recorded because it is a real historical approach — but it is rarely chosen today and is not the recommended way in. From Brinnon, the Dosewallips River Road has been closed to vehicles since 2002 at a washout about a mile past the road-end parking. That forces a long walk or bike up the old roadbed before you even reach the Dosewallips River Trail, and then a multi-day push up-valley into Cameron Basin. It adds many miles over either northern approach. If you take it, the climb from Cameron Pass is unchanged.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Prose labels Obstruction Point/Grand Pass the 'primary approach' and calls the Dosewallips line rarely used; variant 2's own notes agree. NPS still lists Obstruction Point Road as a seasonal mid-Jul to mid-Oct road."
+ },
+ {
+  "id": "wa_mount_carru_scramble",
+  "name": "South Slopes Scramble",
+  "area_id": "wa_mount_carru",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "The south gully below the Carru-Lago col",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Mid-July to September",
+    "notes": "Carru sits between Osceola and the higher Mount Lago and is almost always climbed as one summit of several on a multi-day trip out of the Harts Pass road end. Two lines reach the country below it: the shorter drops from Slate Pass and Buckskin Ridge into the Middle Fork Pasayten, then goes by Fred's Lake and over the ridge crest into upper Eureka Creek and Shellrock Basin; the Monument Creek trail is longer with more up and down. Tread through this wilderness is lightly maintained, with blowdown on the valley trail and stretches where the path is fainter on the ground than it looks on a map. The climb itself is short, well under two hours from the base, and unremarkable, essentially a heap of scree and talus with parallel ribs running up it.",
+    "why": null
+   },
+   {
+    "name": "From Slate Pass down the Middle Fork Pasayten",
+    "primary": true,
+    "viaRouteId": null,
+    "season": null,
+    "notes": "The shorter and more common start. From Slate Pass the trail drops north to the Middle Fork Pasayten; follow it up-valley past the Berk Creek junction, then climb toward Fred's Lake and Shellrock Basin below Carru. Most parties combine Carru with Osceola and Lago over two or three days.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": null
+ },
+ {
+  "id": "wa_mount_challenger_challenger_glacier",
+  "name": "Challenger Glacier",
+  "area_id": "wa_mount_challenger",
+  "discipline": "alpine",
+  "ways": [
+   {
+    "name": "Hannegan Pass, Chilliwack River and Whatcom Pass, then around Whatcom Peak to Perfect Pass",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep. The Whatcom Glacier traverse is the season-limiting piece: in low-snow years it has been reported down to bare ice with open crevasses",
+    "notes": "From the Hannegan Pass Trailhead at the end of FS Road 32 (Ruth Creek Road) off WA-542, Trail #674 climbs a well-graded 2,000 ft over 4 miles to Hannegan Pass at about 5,100 ft. That pass is the last easy water and the point where the two approaches to Challenger split.\n\nThis one drops the far side, losing roughly 2,500 ft into the Chilliwack River valley at Boundary Camp, crosses the Chilliwack, and follows the Chilliwack River Trail past Copper Creek Camp to the Whatcom Pass backcountry camp. Log crossings of the Chilliwack are unreliable and have caught out parties who lost the crossing and had to bushwhack.\n\nFrom Whatcom Pass you still have to get round Whatcom Peak. The direct North Ridge is loose, extremely exposed and not recommended for most parties; the standard workaround traverses the Whatcom Glacier on Whatcom Peak's east side. Treat that as glacier travel.",
+    "why": null
+   },
+   {
+    "name": "Hannegan Pass, then Easy Ridge and the Impasse to Perfect Pass",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep. Snow in the Impasse notch can make the direct crossing either easier or impossible depending on the year",
+    "notes": "The alternative from the same trailhead. From the Chilliwack River Trail below Hannegan Pass, ford the Chilliwack again near Easy Ridge and climb steeply onto the ridge, site of an old fire lookout. A faint climbers' path follows the crest past tarns and slabby sections, over Easy Peak, to a notch known as the Impasse, then continues cross-country toward Perfect Pass.\n\nRound trip via Easy Ridge alone runs about 26 miles; the full car-to-summit distance by either line is roughly 37 miles, so most parties treat this as a 3-5 day trip with camps at Whatcom Pass or Perfect Pass, or both.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "SummitPost's standard route page is 'Easy Ridge/Challenger Glacier', and most trip reports (Mountaineers, CascadeClimbers) go in by Easy Ridge to Perfect Pass. Whatcom Pass is about 17 miles and still has to get around Whatcom Peak. The paragraph describes both."
+ },
+ {
+  "id": "wa_mount_christie_west",
+  "name": "North Couloir / Christie Glacier",
+  "area_id": "wa_mount_christie",
+  "discipline": "mountaineering",
+  "ways": [
+   {
+    "name": "North Fork Quinault to Low Divide, then Martins Park and the north couloir",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep. Firm morning snow in the couloir is what makes this line reasonable; late season it thins to loose rock",
+    "notes": "Every published account climbs the north couloir out of Martins Park to a north-ridge saddle, crosses the Christie Glacier to a col east of the summit, and finishes up the southeast ridge. From the North Fork Quinault Ranger Station at roughly 500 ft, at the end of the North Fork Quinault River Road about 17 miles east of US-101 at Lake Quinault, follow the North Fork Quinault River Trail upstream past Wolf Bar at about 2.5 miles, Halfway House Camp near 5 miles, Elip Creek near 6.5 miles, Trapper Shelter near 8.1 miles (day and emergency use only), a ford of the North Fork at Sixteen Mile Camp near 13.2 miles that can run thigh-deep in high water, and Low Divide near 16 miles, which sits on the actual Quinault-Elwha drainage divide. From Low Divide take the rough fisherman's path into Martins Park and the Martin Lakes basin and camp there.",
+    "why": null
+   },
+   {
+    "name": "Elwha side to Low Divide, from Whiskey Bend",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Roughly Jul-Sep, on the same window as the Quinault side",
+    "notes": "Low Divide is a divide, and the Elwha reaches it from the north just as the Quinault does from the south. Historically this meant the Elwha River Trail from the Whiskey Bend Trailhead. Since the November 2017 Olympic Hot Springs Road washout, Whiskey Bend has been closed to vehicles, which adds an extra 6.2 miles each way on foot or by bike from the Madison Falls parking area simply to reach the trailhead — check current road status before choosing this side, because that closure is what decides whether it is competitive with the Quinault.\n\nFrom Low Divide the route is identical to the Quinault variant: the fisherman's path into Martins Park and the Martin Lakes basin, camp, and the north couloir.\n\nNo mileage is quoted for this side because published figures assume Whiskey Bend is drivable and most currently are not.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Every account uses North Fork Quinault to Low Divide; the Elwha side now carries an extra 6.2 mi road walk each way since the Olympic Hot Springs Road closure. Prose describes variant 0."
+ },
+ {
+  "id": "wa_mount_constance_north_chimney",
+  "name": "North Chimney (Standard Route)",
+  "area_id": "wa_mount_constance",
+  "discipline": "scrambling",
+  "ways": [
+   {
+    "name": "Dosewallips roadbed, Lake Constance trail, Avalanche Canyon and the South Chute",
+    "primary": true,
+    "viaRouteId": null,
+    "season": "Jun-Sep; June snow makes the South Chute far pleasanter than late-summer scree",
+    "notes": "Park at the Dosewallips road washout around 600 ft, reached from US 101 at Brinnon on FR 2610. The road has been closed to vehicles since a washout in 2002, so the first 5 miles up the Dosewallips valley are on the old roadbed.\n\nThe Lake Constance climbers' path is signed but unmaintained and carries no Forest Service trail number — it is a boot path. It launches straight into root-and-branch pulling through old burn debris for the first 0.4 mile before the old growth closes in. At about 0.8 mile, Half Acre Rock is a large monolith with campsites beside Constance Creek and is the obvious rest and water stop; by late summer the creek and the canyon above it run dry, so treat it as the last reliable water below the lake.\n\nPast 1.1 miles the brush opens onto steep exposed slopes, and by 1.3 miles the creek is forced through a defile and the path is pushed up and over a series of rock ledges and short cliff bands, using roots and a landmark Alaska cedar to gain the next ledge. Exposure increases with each one and a slip is serious.\n\nAll told it gains roughly 3,200-3,400 ft in under two miles to Lake Constance at 4,680-4,800 ft, one of the steepest approach trails in the Olympics. Lake Constance is a reservable Olympic National Park backcountry site with reservations for the May 15-October 15 summer season; a wilderness permit is required for the overnight, and parties of seven or more must use the designated group sites.",
+    "why": null
+   },
+   {
+    "name": "Bike the closed Dosewallips roadbed",
+    "primary": false,
+    "viaRouteId": null,
+    "season": "Jun-Sep",
+    "notes": "The roughly 5 miles of closed roadbed between the washout and the Lake Constance path is old road surface rather than trail, and mountain-biking it is a common way to cut the walk at both ends of the trip. The bike is left at the signed start of the climbers' path.\n\nEverything above that point is identical to the walk-in variant: the same unmaintained boot path, the same 3,200-3,400 ft in under two miles, the same rock ledges and the same lake.\n\nThe same permit rules apply — a wilderness permit for the overnight at Lake Constance, reservable for the May 15-October 15 summer season, with group sites required for parties of seven or more.",
+    "why": null
+   }
+  ],
+  "priorPrimaryResearch": "Walking the closed Dosewallips roadbed is the base case; biking it is a common way to do the same approach, and everything above the path start is identical."
+ }
+]

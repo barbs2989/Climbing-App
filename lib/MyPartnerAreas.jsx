@@ -13,6 +13,7 @@
 //
 // Writes reflect by the list updating (the hooks invalidate every reader), so there is no success
 // toast; a refused write toasts the server's reason.
+import { tx } from "./tapWords.js";
 import { createPortal } from "react-dom";
 import { BTN_LG } from "./buttonStyles.js";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -41,7 +42,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
   // The climber's home state, so the search box works the moment the screen opens.
   const homePaths = useMyHomeStatePaths();
   const homeId = homeStateId || ((states.find((s) => homePaths.includes(s.path)) || {}).id) || "";
-  useEffect(() => { if (!rootId && homeId) setRootId(homeId); }, [homeId]); // eslint-disable-line
+  useEffect(() => { if (!rootId && homeId) setRootId(homeId); }, [homeId]); // eslint-disable-line react-hooks/exhaustive-deps -- seed the root once from home; reading rootId would re-seed it after the climber clears it
   const searchQ = useAreaSearch(USE_DB && rootId ? rootId : null, q, 30);
   const hits = (searchQ.data || []).filter((a) => a && a.id);
   const listed = useMemo(() => new Set((listings || []).map((l) => l.areaId)), [listings]);
@@ -60,7 +61,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
     }
     return out;
   }, [cardsQ.data, suggestIds, listed]);
-  const pill = (on, disabled) => ({ minHeight: 36, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (on ? C.blueDim : C.border), background: on ? C.blueBg : C.surface, color: disabled ? C.textMuted : on ? C.blue : C.textSub, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.55 : 1 });
+  const pill = (on, disabled) => ({ minHeight: 36, padding: "7px 13px", borderRadius: 20, border: "1px solid " + (on ? C.blueDim : C.border), background: on ? C.blueBg : C.surface, color: disabled ? C.textMuted : on ? "#fff" : C.textSub, fontSize: 13, fontWeight: 700, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.55 : 1 });
   const field = { width: "100%", boxSizing: "border-box", padding: "11px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.bg, color: C.text, fontSize: 15 };
   const card = { background: C.card, border: "1px solid " + C.border, borderRadius: 12 };
   const searchRef = useRef(null);
@@ -98,7 +99,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
     <div style={{ minHeight: "100%" }}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "calc(env(safe-area-inset-top) + 10px) 16px 10px", display: "flex", alignItems: "center", gap: 10, zIndex: 2 }}>
         {draft ? <button onClick={() => setDraft(null)} style={POP_BACK}>← Back</button> : <button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button>}
-        <div style={{ fontSize: 17, fontWeight: 800, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</div>
+        <div style={{ fontSize: 17, fontWeight: 800, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title}</div>
       </div>
       <div style={{ padding: "14px 16px calc(env(safe-area-inset-bottom) + 40px)" }}>
         {discoverable === false ? <div style={{ fontSize: 12.5, color: C.amber, background: C.amberBg, border: "1px solid " + C.amber + "55", borderRadius: 10, padding: "9px 11px", marginBottom: 12, lineHeight: 1.5 }}>You’re off the Partners list, so your areas aren’t shown to anyone. {onOpenPrivacy ? <button onClick={onOpenPrivacy} style={{ background: "none", border: "none", color: C.blue, fontWeight: 700, cursor: "pointer", padding: 0, fontSize: 12.5 }}>Turn it on in Privacy &amp; safety</button> : "Turn it on in Settings → Privacy & safety."}</div> : null}
@@ -117,12 +118,12 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           <div role="group" aria-label="When you’re free" style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 8 }}>
             {[["any", "Any time"], ["wk1", "This weekend · " + fmtDay(wk1.freeFrom)], ["wk2", "Next weekend · " + fmtDay(wk2.freeFrom)], ["dates", "Pick dates"]].map(([k, lab]) => <button key={k} aria-pressed={draft.pick === k} onClick={() => pickWindow(k)} style={pill(draft.pick === k)}>{lab}</button>)}
           </div>
-          {draft.pick === "dates" ? <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}><input type="date" aria-label="Free from" min={today} value={draft.freeFrom} onChange={(e) => setDraft({ ...draft, freeFrom: e.target.value, freeTo: draft.freeTo && draft.freeTo >= e.target.value ? draft.freeTo : e.target.value })} style={{ ...field, flex: 1 }} /><span style={{ color: C.textMuted }}>to</span><input type="date" aria-label="Free until" min={draft.freeFrom || today} value={draft.freeTo} onChange={(e) => setDraft({ ...draft, freeTo: e.target.value })} style={{ ...field, flex: 1 }} /></div> : null}
+          {draft.pick === "dates" ? <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}><span style={{ fontSize: 12, color: C.textMuted }}>From</span><input type="date" aria-label="Free from" min={today} value={draft.freeFrom} onChange={(e) => setDraft({ ...draft, freeFrom: e.target.value, freeTo: draft.freeTo && draft.freeTo >= e.target.value ? draft.freeTo : e.target.value })} style={{ ...field, flex: 1 }} /><span style={{ color: C.textMuted }}>to</span><input type="date" aria-label="Free until" min={draft.freeFrom || today} value={draft.freeTo} onChange={(e) => setDraft({ ...draft, freeTo: e.target.value })} style={{ ...field, flex: 1 }} /></div> : null}
           <div style={{ fontSize: 12, color: C.textMuted, marginBottom: 4 }}>{draft.pick === "any" ? "You stay listed until you remove it." : (draft.freeFrom && draft.freeTo ? windowText(draft) + "." : "Pick the first and last day.")}</div>
           <SL>A line for partners (optional)</SL>
           <input value={draft.note} maxLength={140} onChange={(e) => setDraft({ ...draft, note: e.target.value })} placeholder="e.g. Looking for a rope gun on weekends" aria-label="Note for partners" style={{ ...field, marginBottom: 4 }} />
           <div style={{ fontSize: 11.5, color: C.textMuted, textAlign: "right", marginBottom: 16 }}>{(draft.note || "").length}/140</div>
-          <button onClick={save} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "none", background: C.blueSolid, color: "#fff", opacity: busy ? 0.6 : 1 }}>{editing ? "Save changes" : "List me at " + draft.name}</button>
+          <button onClick={save} disabled={busy} style={{ ...BTN_LG, width: "100%", minHeight: 48, border: "none", background: C.blueSolid, color:C.onSolid, opacity: busy ? 0.6 : 1 }}>{editing ? "Save changes" : "List me at " + draft.name}</button>
           {editing ? <button onClick={() => remove({ areaId: draft.areaId })} disabled={busy} style={{ width: "100%", minHeight: 44, marginTop: 10, padding: "10px", borderRadius: 12, border: "1px solid " + C.border, background: C.surface, color: C.red, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Remove this listing</button> : null}
         </div> : <div>
           <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5, marginBottom: 14 }}>List the crags, canyons and ranges you climb. Climbers looking for a partner there will find you, and you’ll see who climbs where you do.</div>
@@ -135,7 +136,7 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
             <select aria-label="State to search" value={rootId} onChange={(e) => { setRootId(e.target.value); }} style={{ ...field, width: "auto", flex: 1, padding: "7px 10px", fontSize: 13 }}><option value="">Pick a state…</option>{states.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}</select>
           </div>
           {statesQ.isError ? <div style={{ fontSize: 12, color: C.amber, marginBottom: 8 }}>Couldn’t load the list of states.</div> : null}
-          {q.trim() && rootId ? <div style={{ marginBottom: 16 }}>{searchQ.isError ? <div style={{ fontSize: 12, color: C.amber }}>Couldn’t search areas right now.</div> : searchQ.isPending && !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>Searching…</div> : !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>That name didn’t match a crag, canyon or range in {rootName || "this state"} — try another spelling or state.</div> : hits.slice(0, 30).map((a) => { const no = NO_LISTING.has(a.area_type); const already = listed.has(a.id); return <button key={a.id} disabled={no} onClick={() => startEdit(already ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: a.parent_name || null, disciplines: [] })} style={{ ...card, display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left", minHeight: 52, padding: "9px 12px", color: no ? C.textMuted : C.text, cursor: no ? "default" : "pointer", marginBottom: 6, opacity: no ? 0.6 : 1 }}><span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{[TYPE_LABEL[a.area_type] || a.area_type, a.parent_name, a.route_count ? a.route_count + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span><span style={{ fontSize: 12, fontWeight: 800, color: no ? C.textMuted : already ? C.green : C.blue, flexShrink: 0 }}>{no ? "Peak — matched by route" : already ? "Listed ✓" : "+ Add"}</span></button>; })}</div> : null}
+          {q.trim() && rootId ? <div style={{ marginBottom: 16 }}>{searchQ.isError ? <div style={{ fontSize: 12, color: C.amber }}>Couldn’t search areas right now.</div> : searchQ.isPending && !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>Searching…</div> : !hits.length ? <div style={{ fontSize: 12, color: C.textMuted }}>That name didn’t match a crag, canyon or range in {rootName || "this state"} — try another spelling or state.</div> : hits.slice(0, 30).map((a) => { const no = NO_LISTING.has(a.area_type); const already = listed.has(a.id); return <button key={a.id} disabled={no} onClick={() => startEdit(already ? (listings || []).find((l) => l.areaId === a.id) : { areaId: a.id, name: a.name, areaType: a.area_type, parentName: a.parent_name || null, disciplines: [] })} style={{ ...card, display: "flex", alignItems: "center", gap: 10, width: "100%", textAlign: "left", minHeight: 52, padding: "9px 12px", color: no ? C.textMuted : C.text, cursor: no ? "default" : "pointer", marginBottom: 6, opacity: no ? 0.6 : 1 }}><span style={{ flex: 1, minWidth: 0 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{a.name}</span><span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{[TYPE_LABEL[a.area_type] || a.area_type, a.parent_name, a.route_count ? a.route_count + " climb" + (a.route_count === 1 ? "" : "s") : ""].filter(Boolean).join(" · ")}</span></span><span style={{ fontSize: 12, fontWeight: 800, color: no ? C.textMuted : already ? C.green : C.blue, flexShrink: 0 }}>{no ? "Peak — matched by route" : already ? "Listed ✓" : "+ Add"}</span></button>; })}</div> : null}
           {!q.trim() && suggestions.length ? <div style={{ marginBottom: 16 }}>
             <SL>From your climbs</SL>
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{suggestions.map((s) => <button key={s.areaId} onClick={() => startEdit(s)} aria-label={"Add " + s.name} style={pill(false)}>{"+ " + s.name}</button>)}</div>
@@ -145,11 +146,11 @@ export default function MyPartnerAreas({ uid, listings, listingsError, prefill, 
           {listingsN ? (listings || []).map((l) => { const past = l.freeTo && l.freeTo < today; return <div key={l.areaId} style={{ ...card, display: "flex", alignItems: "center", gap: 10, padding: "4px 8px 4px 4px", marginBottom: 8 }}>
             <button onClick={() => startEdit(l)} aria-label={"Edit " + l.name} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", padding: "8px 10px", cursor: "pointer", color: C.text }}>
               <span style={{ display: "block", fontSize: 14.5, fontWeight: 700 }}>{l.name}<span style={{ fontSize: 11.5, fontWeight: 700, color: C.textMuted, marginLeft: 7 }}>{TYPE_LABEL[l.areaType] || ""}</span></span>
-              <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + " — tap to update" : windowText(l)}</span></span>
+              <span style={{ display: "block", fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{(l.disciplines && l.disciplines.length ? l.disciplines.map((d) => discLabel(d)).join(", ") : "Any crag type") + " · "}<span style={{ color: past ? C.amber : C.textSub }}>{past ? "Window ended " + fmtDay(l.freeTo) + tx(" — tap to update") : windowText(l)}</span></span>
               {l.note ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, marginTop: 2, fontStyle: "italic" }}>{l.note}</span> : null}
             </button>
             <button onClick={() => remove(l)} aria-label={"Remove " + l.name} style={POP_REMOVE}>✕</button>
-          </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above{suggestions.length ? ", or tap one of the areas from your climbs" : ""}, or use “List me here” on any area page.</div> : null}
+          </div>; }) : !listingsError ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.5, padding: "12px 14px", border: "1px dashed " + C.border, borderRadius: 12 }}>You’re not listed anywhere yet. Search above{suggestions.length ? tx(", or tap one of the areas from your climbs") : ""}, or use “List me here” on any area page.</div> : null}
         </div>}
       </div>
     </div>

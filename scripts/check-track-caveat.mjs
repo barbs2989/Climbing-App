@@ -30,8 +30,8 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes } from "../lib/track.js";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage, recordedTrackPts, withRecordedTrackOnly, exportedTrackNotes, reachesTheSummit, lineIsBuiltFromPins } from "../lib/track.js";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -253,10 +253,12 @@ if (trackCoverage(ELSEWHERE, WPS.slice(0, 1))) {
   else ok("coverage: with a single pin it falls back to the ordinary partial wording rather than telling a story");
 }
 
+// A different-approach track that does not reach the summit is not used at all (owner, 2026-10-28),
+// so no "different way up" caveat is drawn for it. A track that reaches the summit always carries
+// the summit pin, so this caveat is not reachable from a route that reaches the top.
 const shownD = covText(route({ gpxPts: ELSEWHERE, waypoints: WPS }));
-if (!/different ways up this peak/i.test(shownD)) fail("the different-approach caveat does not reach the screen");
-else if (/walk in is not in this line|short of the summit/i.test(shownD)) fail("the different-approach route ALSO renders a partial caveat — two sentences contradicting each other");
-else ok("the different-approach caveat renders, and the partial wording does not");
+if (/different ways up this peak|short of the summit/i.test(shownD)) fail("a track that stops short of the summit is still captioned as a different way up");
+else ok("a different-approach track that stops short is not drawn, and no caveat describes it");
 
 const covS = trackCoverage(STOPS_SHORT, WPS);
 if (!covS || !covS.missingSummit) fail("coverage: a track stopping short of the summit was not detected — this is the dangerous half");
@@ -271,8 +273,10 @@ else if (!/\d/.test((shownA.match(/The walk in is not in this line[^.]*\./i) || 
 else ok("the climb-only caveat renders, with the gap measured");
 
 const shownS = covText(route({ gpxPts: STOPS_SHORT, waypoints: WPS }));
-if (!/stops .* short of the summit/i.test(shownS)) fail("the stops-short-of-the-summit caveat does not reach the screen");
-else ok("the stops-short caveat renders");
+// A track that stops short of the summit is not used at all (owner, 2026-10-28), so there is no
+// stops-short caveat to show: the route shows no track, and says nothing about the one it dropped.
+if (/stops .* short of the summit/i.test(shownS)) fail("a track that stops short of the summit is still drawn with a caveat — the owner's rule is that it is not used");
+else ok("a track that stops short of the summit is not drawn, and no caveat describes it");
 
 if (/walk in is not in this line|short of the summit/i.test(covText(route({ gpxPts: REAL, waypoints: WPS }))))
   fail("a complete track renders a partial-coverage caveat — a false warning on good data");
@@ -312,20 +316,19 @@ else ok("predicate: the placeholder caveat yields to the waypoint-line one");
   else ok("the placeholder span survives formatting");
 }
 
-// TOO FEW POINTS TO BE A RECORDING. Fifteen routes store a two-point "track" spanning up to 16 km,
-// drawn under ROUTE TRACK with Download GPX and no caption. N points make N-1 straight segments; at
-// two that is one chord. Categorical, not a threshold — which is why the cases below pin the FLOOR
-// as hard as they pin the finding.
+// TOO FEW POINTS TO BE A RECORDING (2026-10-29). A two-point "track" across 16 km used to be drawn
+// with a caption saying it was a straight segment; 74 drawn lines had 2 to 9 points at a median
+// spacing of 1.4 km, against 17 m for a real recording. recordedTrackPts now refuses any line under
+// MIN_RECORDED_PTS, so the map draws none of them and no caption is needed. Both sides of the cut.
 const CHORD = [[48.4926, -121.1176], [48.5543, -121.1043]];       // two points, ~7 km apart
-if (!trackStubCaveat(CHORD, [WPS[1], WPS[2]])) fail("predicate: a two-point line across kilometres is not reported");
-else ok("predicate: a two-point line across kilometres is reported as not a recording");
-{
-  const said = trackStubCaveat(CHORD, [WPS[1], WPS[2]]);
-  if (!/single straight segment/.test(said)) fail(`the two-point caveat does not say what the line IS: ${said}`);
-  else ok("the two-point caveat says the line is a single straight segment");
-  if (/placeholder/.test(said)) fail("a 7 km chord is described as a placeholder — that is the other branch's sentence");
-  else ok("a long chord and a metres-wide stub get different sentences");
-}
+if (recordedTrackPts(CHORD, [WPS[1], WPS[2]]) !== null) fail("recordedTrackPts keeps a two-point chord across kilometres as a recorded track");
+else ok("a two-point chord across kilometres is not a recorded track");
+const NINE = REAL.filter((_, i) => i % 3 === 0).slice(0, 8).concat([REAL[REAL.length - 1]]);
+if (NINE.length !== 9) fail(`the nine-point fixture has ${NINE.length} points — the floor test below proves nothing`);
+if (recordedTrackPts(NINE, WPS) !== null) fail("recordedTrackPts keeps a nine-point line as a recorded track");
+else ok("a nine-point line is not a recorded track");
+if (recordedTrackPts(REAL, WPS) !== REAL) fail("recordedTrackPts dropped the dense fixture track — the floor has moved past a real recording");
+else ok("a dense track stays a recorded track");
 
 // THE FLOOR MUST HOLD. Four is trackCoverage's own floor and the data has a void either side of it
 // (counts run 2,3,4,6,7,8,10,11 then jump to 20). A four-point line is NOT captioned here: saying
@@ -338,25 +341,30 @@ else ok("predicate: a four-point line is left alone");
 // EXCLUSIVE with the waypoint-line caveat, like the placeholder branch. A two-point line whose ends
 // ARE both pins is a waypoint join and already says so; captioning it twice is one problem told
 // twice.
-if (trackStubCaveat([SYNTH[0], SYNTH[3]], [WPS[0], WPS[3]])) fail("predicate: a two-point waypoint join is captioned twice");
+// SHORT, so the placeholder sentence is what would stack: with the two-point sentence gone
+// (MIN_RECORDED_PTS), a join across kilometres is captioned by nothing here either way.
+const NEAR = [{ name: "Trailhead", type: "Trailhead", lat: 48.4926, lng: -121.1176 }, { name: "Junction", type: "Junction", lat: 48.4946, lng: -121.1176 }];
+if (trackStubCaveat(NEAR.map(w => [w.lat, w.lng]), NEAR)) fail("predicate: a two-point waypoint join is captioned twice");
 else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat");
 
 // AND IT REACHES THE SCREEN. A predicate proves the sentence; only a render proves the route page
 // asks for it — the split check:outage-copy and check:topo-outage-copy both record.
 {
-  const html = text(render(route({ gpxPts: STUB, waypoints: WPS }), "planner"));
+  // A route WITH a summit pin drops a stub that never reaches it (owner, 2026-10-28), so the caveat
+  // is shown on a route with no summit pin, which the reach rule cannot judge.
+  // Ten points, since a shorter line is no track at all (MIN_RECORDED_PTS) and would never reach it.
+  const STUB10 = Array.from({ length: 10 }, (_, i) => [48.4926 + i * 0.000005, -121.1176 - i * 0.000007]);
+  const html = text(render(route({ gpxPts: STUB10, waypoints: WPS.filter(w => !/summit/i.test(String(w.type || ""))) }), "planner"));
   if (!/placeholder, not this route's track/.test(html)) fail("the placeholder caveat does not render on the route page");
   else ok("the placeholder caveat renders on the route page");
   const real = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner"));
   if (/placeholder, not this route's track/.test(real)) fail("the placeholder caveat renders on a route with a genuine track");
   else ok("a genuine track renders no placeholder caveat");
-  // The SECOND branch has its own sentence, so the render above proves nothing about it: a route
-  // page could ask for the caveat and still never show the chord wording.
+  // A two-point chord is no track at all: the page offers the waypoints only, as for any route
+  // without a recording.
   const chord = text(render(route({ gpxPts: CHORD, waypoints: [WPS[1], WPS[2]] }), "planner"));
-  if (!/single straight segment/.test(chord)) fail("the two-point caveat does not render on the route page");
-  else ok("the two-point caveat renders on the route page");
-  if (/single straight segment/.test(real)) fail("the two-point caveat renders on a route with a genuine track");
-  else ok("a genuine track renders no two-point caveat");
+  if (!/Download GPX \(waypoints only\)/.test(chord)) fail("a two-point chord is still offered on the route page as the route's track");
+  else ok("a two-point chord renders as no track (waypoints-only download)");
 }
 
 
@@ -417,7 +425,7 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   // RouteDetail's source rather than restated here: a restated vocabulary is how this codebase got
   // four grade parsers, and a rename should have to update the FAQ rather than this guard.
   {
-    const rdSrc = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+    const rdSrc = readAppFile(path.join(ROOT, "RouteDetail.jsx")); // stitched: the tracks section moved to RouteReportsTab (PR60)
     const capAt = rdSrc.indexOf(CAP);
     const slMatches = capAt < 0 ? [] : [...rdSrc.slice(Math.max(0, capAt - 400), capAt).matchAll(/<SL>([^<]{4,60})<\/SL>/g)];
     const heading = slMatches.length ? slMatches[slMatches.length - 1][1] : null;
@@ -458,9 +466,33 @@ console.log("\nThe route line is a recorded track or nothing:");
   else ok("recordedTrackPts drops a pin-join line");
   if (recordedTrackPts(REAL, WPS) !== REAL) fail("recordedTrackPts dropped a GENUINE recorded track");
   else ok("recordedTrackPts keeps a genuine recorded track untouched");
+  // PINS ADDED OFF A PIN-JOIN LINE MUST NOT PROMOTE IT (2026-10-28). A stored trailhead-to-summit
+  // chord passed while the route had two pins; two camp pins added off it failed the CAPTION's pin
+  // half, and the chord was drawn as a recorded track on 21 routes. Whether a line is a recording is
+  // the vertex half alone (lineIsBuiltFromPins).
+  const CHORD2 = [SYNTH[0], SYNTH[3]];
+  const OFF_PINS = WPS.concat([{ name: "Lake camp", type: "Campsite", lat: 48.51, lng: -121.15 }, { name: "Col camp", type: "Campsite", lat: 48.54, lng: -121.16 }]);
+  if (recordedTrackPts(CHORD2, OFF_PINS) !== null) fail("recordedTrackPts kept a trailhead-to-summit chord once two pins were added off it");
+  else ok("pins added off a pin-join chord do not turn it into a recorded track");
+  if (!lineIsBuiltFromPins(CHORD2, OFF_PINS)) fail("lineIsBuiltFromPins missed a 2-point line joining two of the route's pins");
+  if (lineIsBuiltFromPins(STUB, WPS)) fail("a stub piled on ONE pin was called a pin-join line — it is a placeholder, captioned by trackStubCaveat");
+  else ok("a stub on a single pin is left to the placeholder caveat");
   const dropped = withRecordedTrackOnly({ gpxPts: SYNTH, elevPts: [1, 2, 3, 4], waypoints: WPS });
   if (dropped.gpxPts || dropped.elevPts) fail("withRecordedTrackOnly left the pin-join line or its elevation profile on the route");
   else ok("withRecordedTrackOnly drops the pin-join line and the profile sampled along it");
+  // A track must REACH the summit pin (owner, 2026-10-28). The fixture stops 1.4 km short of the
+  // summit pin; the second one ends 40 m from it. Neither is a pin-join line.
+  const SUMMIT_PINS = [{ lat: 47.99, lng: -121.02, type: "Trailhead" }, { lat: 48.0, lng: -121.0, type: "Summit" }];
+  // Densified to twelve points, since a shorter line is no track at all (MIN_RECORDED_PTS).
+  const dense = (ends) => ends.slice(1).flatMap((b, k) => { const a = ends[k]; return [0, 1, 2, 3].map(t => [a[0] + (b[0] - a[0]) * t / 4, a[1] + (b[1] - a[1]) * t / 4]); }).concat([ends[ends.length - 1]]);
+  const SHORT = dense([[47.99, -121.02], [47.995, -121.015], [47.998, -121.012], [48.0, -121.02]]);
+  const TOP = dense([[47.99, -121.02], [47.995, -121.015], [47.998, -121.012], [48.0, -121.0005]]);
+  if (recordedTrackPts(SHORT, SUMMIT_PINS) !== null) fail("recordedTrackPts kept a track that stops 1.4 km short of the summit pin");
+  else ok("recordedTrackPts drops a track that stops short of the summit");
+  if (recordedTrackPts(TOP, SUMMIT_PINS) !== TOP) fail("recordedTrackPts dropped a track that reaches the summit pin");
+  else ok("recordedTrackPts keeps a track that reaches the summit");
+  if (!reachesTheSummit(SHORT, [])) fail("a route with NO summit pin was dropped on a guess; it cannot be checked, so its track is kept");
+  else ok("a route with no summit pin keeps its track");
   if (exportedTrackNotes({ gpxPts: SYNTH, waypoints: WPS }).length) fail("the GPX export still writes a note about a pin-join line it no longer exports");
   else ok("the GPX export writes no note about a line it does not carry");
   const gpxMap = fs.readFileSync(path.join(ROOT, "src/components/GPXMap.tsx"), "utf8");
@@ -468,7 +500,7 @@ console.log("\nThe route line is a recorded track or nothing:");
   else ok("GPXMap draws no line from the waypoints");
   if (!/!trackIsJustTheWaypoints\(pts/.test(gpxMap)) fail("GPXMap no longer refuses a stored pin-join 'track' passed in by a caller that skipped the filter");
   else ok("GPXMap refuses a stored pin-join track from any caller");
-  const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8"), rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8"), core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8"), rd = readAppFile(path.join(ROOT, "RouteDetail.jsx")), core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
   if (!/recordedTrackPts\(r\.gpx,/.test(db)) fail("dbRouteToCamel no longer drops a pin-join gpx at the read");
   else ok("dbRouteToCamel drops a pin-join gpx at the read");
   if (!/withRecordedTrackOnly\(applyApproach\(/.test(rd)) fail("RouteDetail no longer drops a pin-join line after the approach overlay");

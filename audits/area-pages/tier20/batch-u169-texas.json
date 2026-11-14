@@ -1,0 +1,33 @@
+{
+ "tx_scrunchy_wall": {
+  "_expect": { "name": "Scrunchy Wall", "region": "Texas" },
+  "blurb": "Scrunchy Wall is a small boulder wall in the southeast Austin park at McKinney Falls, one of nine separate boulder zones there. It holds about two dozen problems, all bouldering, spread from the very easiest up to V9. Most of the lines fall between V2 and V4, with another cluster around V7 and V8 for strong climbers. The limestone here is steep and pocketed, so expect compact, powerful moves rather than long sequences. A short drop-in from the top gets you down to the base, and the wall sits right beside that descent.",
+  "review": { "sources": ["https://www.mountainproject.com/v/108495607", "https://www.mountainproject.com/area/106265889/mckinney-falls-state-park"] }
+ },
+ "tx_thunderbird": {
+  "_expect": { "name": "Thunderbird", "region": "Texas" },
+  "blurb": "Thunderbird is the main climbing zone on the west flank of the Franklin Mountains in El Paso, set in the red rhyolite face that gives the formation its name. Around twenty routes are split between trad lines, mostly on the south-facing walls, and bolted sport lines on the east-facing walls. Grades run from easy 5.2 climbing up to about 5.10, with a few longer multi-pitch outings on the upper tier. The rock is the catch: loose, brittle stone is common, especially on the south side, though careful climbers will find some good lines among it. Plan on a real uphill hike to reach the base.",
+  "review": { "sources": ["https://www.mountainproject.com/area/113723972/thunderbird", "https://www.mountainproject.com/v/franklin-mountain-range/106779455"] }
+ },
+ "tx_gus_fruh_aka_fern_bar_area": {
+  "_expect": { "name": "Gus Fruh aka Fern Bar Area", "region": "Texas" },
+  "approach": "Follow the trail down from the Gus Fruh entrance to Barton Creek and cross it as early as you can; the crossing is a rock-hop or a wade depending on recent rain. A short walk through the trees on the far side brings you to the wall, the first one you reach.",
+  "blurb": "Fern Bar Area is a limestone wall along the Barton Creek Greenbelt in Austin, reached by crossing the creek from the Gus Fruh entrance. Most of its twenty-one lines are bolted single-pitch sport routes of roughly 35 to 50 feet, with a few top-rope lines, a couple of boulder problems and one trad route. Grades cluster in the 5.10s and low 5.11s, topping out around 5.12. The rock is heavily polished and finishes on sloping top-outs, so routes tend to feel stiffer than the number suggests. The wall stays shaded nearly all day, which makes it a go-to on hot afternoons.",
+  "review": { "sources": ["https://www.mountainproject.com/v/gus-fruh-aka-fern-bar-area/106190816", "https://app.advcollective.com/climbing/gus-fruh-fern-bar-area-climbing-guide-austins-shaded-limestone-wall"] }
+ },
+ "tx_arbor_wall": {
+  "_expect": { "name": "Arbor Wall", "region": "Texas" },
+  "blurb": "Arbor Wall is a limestone sport wall on the left-hand side of Reimers Ranch, west of Austin, and is the first big wall you meet after passing Dead Cats and Rhetoric. Nearly all of its twenty lines are bolted, with one top-rope line. Grades start around 5.7 but the heart of the wall is 5.10 and 5.11, with half the routes in the low 5.11 range, so it suits climbers comfortable on steeper, harder sport. A big oak shades much of the face, which helps in summer afternoons. It generally sees far fewer people than the neighboring walls, even on weekends.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105906088/arbor-wall", "https://www.accessfund.org/latest-news/open-gate-blog/climb-like-a-local-reimers-ranch"] }
+ },
+ "tx_trac_ii": {
+  "_expect": { "name": "Trac II", "region": "Texas" },
+  "blurb": "Trac II is a bouldering zone on North Mountain at Hueco Tanks, east of El Paso. It holds twenty problems with a very wide spread: a handful of easy V0 to V1 warm-ups, a middle group at V2 to V4, and a hard end that includes a cluster at V7 to V8 plus a few lines beyond V10. Parts of the area catch sun while others sit in shade, and the spot is somewhat sheltered from wind. It is not usually crowded, though the best-known shady line draws a steady stream. The walk in passes the Grenade, and one low roof is reached by a short scramble.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105811256/trac-ii", "https://thetopo.com/crags/north-mountain/routelist/trac-ii"] }
+ },
+ "_skipped": {
+  "tx_cathedral_rock_park": "no fetched page describes the bouldering itself; only a city-park article was fetched",
+  "tx_main_wall": "could not fetch a page about the Camp Eagle Main Wall itself; Main Wall pages found were other states or countries",
+  "tx_enclave_bouldering_the": "only one fetched page (a parent area page) mentions it; no page about the crag itself"
+ }
+}

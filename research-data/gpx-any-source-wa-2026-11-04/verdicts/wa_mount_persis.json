@@ -1,0 +1,32 @@
+{
+  "area_id": "wa_mount_persis",
+  "routes": [
+    {
+      "route_id": "wa_mount_persis_the_hexorcist",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Mountain-forecast and Mountaineers material give Jul-Sep as the clear season for the peak; a shaded north-face rock line needs dry weather, so the stored Jul-Sep stands. No route-specific page found." },
+      "track": null,
+      "otherTracksConsidered": [ { "aid": "3352945", "verdict": "unsure", "why": "September 2026 summit of Persis but by the standard side from the US 2 gate; nothing says it climbed the north face." } ],
+      "pins": [],
+      "facts": []
+    },
+    {
+      "route_id": "wa_mount_persis_west_ridge",
+      "season": { "months": [5,6,7,8,9,10], "window": "May-Oct", "evidence": "Mountaineers and trail pages: crampons in early season, mountain-forecast lists Jul-Sep as the best months, Peakbagger ascents spread across all months with a winter snowshoe tradition; stored Jun-Oct kept, May tolerated." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "172909", "verdict": "offseason", "why": "April 2011 NW Ridge, the only complete trailhead round trip, but April is outside the window." },
+        { "aid": "3349913", "verdict": "different", "why": "Sept 19 2026 Persis-Persindex-Index day starting at the locked US 2 gate; starts about 3.8 km from our pin and is a multi-peak traverse, not a clean round trip." },
+        { "aid": "3367792", "verdict": "different", "why": "Oct 2026 Persis-Index traverse with camp, starts at the gate." },
+        { "aid": "3381190", "verdict": "different", "why": "Sept 27 2026 Persis-Index traverse, start 656 m from our pin; goes on to Index." },
+        { "aid": "1770161", "verdict": "different", "why": "Persis-Index traverse." },
+        { "aid": "417986", "verdict": "unsure", "why": "May 31 2014 climb starting at a different spot than our pin and ending 3.8 km away; not a clean round trip." },
+        { "aid": "417973", "verdict": "unsure", "why": "May 31 2014, ends far from the start." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 9, "text": "In late September and early October, the small tarns near the top are a usable overnight spot, but the first tarn has room for only about one small tent.", "aids": ["3381190", "3367792"] }
+      ]
+    }
+  ],
+  "notes": "Our trailhead pin matches the coordinate on the public hike page (47.7931, -121.6449), so no move. Recent in-season recordings almost all begin at the locked highway gate about 3.8 km away or run on to Mount Index, so none is a trailhead round trip of this route."
+}

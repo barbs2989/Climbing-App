@@ -29,9 +29,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile, stripTypes } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+// Stitched: SuggestFix (the editor) lives in src/components/SuggestFix.tsx since PR59. What is lifted is
+// TypeScript there, so each lifted piece is type-stripped before it runs.
+const src = readAppFile(path.join(ROOT, "RouteDetail.jsx"));
 const problems = [];
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { console.log("  FAIL  " + m); problems.push(m); };
@@ -46,7 +49,7 @@ if (start < 0) { console.error("ANCHOR LOST: the pitches submit branch is not wh
 const key = start;
 const end = src.indexOf('if(f.type==="waypoints")', key);
 if (start < 0 || end < 0) { console.error("ANCHOR LOST: could not bound the pitches branch"); process.exit(1); }
-const branch = src.slice(start + 'if(f.type==="pitches")return '.length, end).replace(/;\s*$/, "");
+const branch = await stripTypes(src.slice(start + 'if(f.type==="pitches")return '.length, end).replace(/;\s*$/, ""), { expression: true });
 if (!/\.map\(/.test(branch) || !/\.filter\(/.test(branch)) { console.error("ANCHOR LOST: the pitches branch is not the map/filter shape this probe reads"); process.exit(1); }
 // `vals.pitchDetail` is the editor's rows; bind it and run the app's own expression.
 // ── The branch converts what was typed into the canonical metres the column holds, so the probe
@@ -59,11 +62,12 @@ const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
 const unum = core.match(/const _uNum=([\s\S]*?);\n/);
 const uliSrc = core.match(/const uLenIn=([\s\S]*?\});\n/);
 if (!unum || !uliSrc) { console.error("ANCHOR LOST: _uNum/uLenIn are not in ClimbMatchCore.jsx where this probe reads them"); process.exit(1); }
+const numAt0 = src.indexOf("function isNumLbl(");
+const numSrc = numAt0 < 0 ? null : await stripTypes(src.slice(numAt0, src.indexOf("\n", numAt0)));
 const mkRun = (imperial) => {
   const uLenIn = new Function("uImp", "_uNum", "return " + uliSrc[1])(() => imperial, new Function("return " + unum[1])());
-  const numAt = src.indexOf("function isNumLbl(");
-  if (numAt < 0) { console.error("ANCHOR LOST: isNumLbl is not where the pitches branch reads it"); process.exit(1); }
-  const f = new Function("vals", "uLenIn", "uImp", src.slice(numAt, src.indexOf("\n", numAt)) + "\nreturn " + branch + ";");
+  if (!numSrc) { console.error("ANCHOR LOST: isNumLbl is not where the pitches branch reads it"); process.exit(1); }
+  const f = new Function("vals", "uLenIn", "uImp", numSrc + "\nreturn " + branch + ";");
   return (vals) => f(vals, uLenIn, () => imperial);
 };
 // METRIC is the canonical case, so the assertions below read as "what was typed is what is stored".
@@ -71,7 +75,7 @@ const run = mkRun(false);
 
 // ── The editor's OWN row shape, lifted too — a hand-written row could invent a key the editor
 //    never sets, which is exactly the defect under test.
-const bp = src.match(/const blankPitch=function\(n\)\{return (\{[^}]*\});\};/);
+const bp = src.match(/const blankPitch=function\(n(?:: \w+)?\)(?:: \w+)?\{return (\{[^}]*\});\};/);
 if (!bp) { console.error("ANCHOR LOST: blankPitch moved — the editor's row shape is what this compares against"); process.exit(1); }
 const blank = new Function("n", "return " + bp[1] + ";")(1);
 const editorKeys = Object.keys(blank);

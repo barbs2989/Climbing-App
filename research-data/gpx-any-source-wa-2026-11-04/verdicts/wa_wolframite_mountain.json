@@ -1,0 +1,78 @@
+{
+ "area_id": "wa_wolframite_mountain",
+ "routes": [
+  {
+   "route_id": "wa_wolframite_mountain_scramble",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Searched: a climbing site advises late June to early September due to distance, weather and long winters; Peakbagger logs Jun-Oct. Stored mid-July to September."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3273633",
+     "verdict": "unsure",
+     "why": "Jul 18 summited round trip but starts 5.6 km from our Thirtymile pin at a different trailhead (about 48.872,-120.003, 5,570 ft), no report to say which route"
+    },
+    {
+     "aid": "2629161",
+     "verdict": "unsure",
+     "why": "Aug 31, same different start, 89 mi multi-peak trip"
+    },
+    {
+     "aid": "1418864",
+     "verdict": "different",
+     "why": "east ridge, one-way from Boundary Trail, not our west-slope route"
+    },
+    {
+     "aid": "1381724",
+     "verdict": "offseason",
+     "why": "Western Slope from Thirtymile, but May 12 with snow"
+    },
+    {
+     "aid": "1262734",
+     "verdict": "unsure",
+     "why": "no track shape, October backpack"
+    },
+    {
+     "aid": "2676398",
+     "verdict": "unsure",
+     "why": "no track shape, Oct 13 backpack"
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "pro_tips",
+     "month": 7,
+     "text": "In early July the east ridge from the Boundary Trail is tedious with many class 3 moves; leave packs near the west slope and go up and down it instead.",
+     "aids": [
+      "1418864"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 10,
+     "text": "In mid-October the first 8.8 miles on the river trail are flat with few fallen trees, and the wide creek ford at the horse camp can be crossed on rocks.",
+     "aids": [
+      "2676398"
+     ]
+    },
+    {
+     "field": "monthBreakdown",
+     "month": 10,
+     "text": "By mid-October the larches are past peak and blowing off, and the trailhead is nearly empty.",
+     "aids": [
+      "2676398"
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": "Two summited round trips (3273633, 2629161) start about 5.6 km from our Thirtymile pin at about 5,570 ft, a different trailhead; a May track from the real Thirtymile start (1381724) exists but is off season. Pin not moved: not confirmed."
+}

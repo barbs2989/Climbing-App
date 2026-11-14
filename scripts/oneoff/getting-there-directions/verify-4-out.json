@@ -1,0 +1,612 @@
+[
+ {
+  "i": 146,
+  "verdict": "unverifiable",
+  "problem": "The park page fetched gives no mileages for US-101 or Upper Hoh Road, so the 13 and 18 miles could not be confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/directions.htm"
+  ]
+ },
+ {
+  "i": 147,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead and elevation only; no drive.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/directions.htm"
+  ]
+ },
+ {
+  "i": 148,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead and elevation only; no drive.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/olym/planyourvisit/directions.htm"
+  ]
+ },
+ {
+  "i": 149,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page on reaching Holden Village.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 150,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page on reaching Holden Village.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 151,
+  "verdict": "not-directions",
+  "problem": "Names the lot only; no drive.",
+  "correctedDirection": "From US-101 in Port Angeles, head south on Race Street for 1.2 miles to Hurricane Ridge Road, then drive about 17.5 miles uphill to the visitor center lot.",
+  "numbersUsed": [
+   "101",
+   "1.2",
+   "17.5"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-angeles"
+  ]
+ },
+ {
+  "i": 152,
+  "verdict": "unverifiable",
+  "problem": "No page opened confirming the Ice Caves trailhead details.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 153,
+  "verdict": "unverifiable",
+  "problem": "The page opened covers Long Swamp Campground, not Iron Gate; the FR-3900-500 leg is not confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/windy-peak"
+  ]
+ },
+ {
+  "i": 154,
+  "verdict": "unverifiable",
+  "problem": "Page opened gives FR 9737 about 9 miles up the North Fork Teanaway but never mentions De Roux Campground; not confirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/iron-peak"
+  ]
+ },
+ {
+  "i": 155,
+  "verdict": "unverifiable",
+  "problem": "The trail page opened gives no driving directions.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/jefferson-lake"
+  ]
+ },
+ {
+  "i": 156,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead only; no drive.",
+  "correctedDirection": "From Trout Lake, drive FR-23 north about 24 miles to FR-2329, signed for Takhlakh Lake Campground, pass the campground and continue just under 4.5 miles to the trailhead.",
+  "numbersUsed": [
+   "23",
+   "24",
+   "2329",
+   "4.5"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/killen-creek"
+  ]
+ },
+ {
+  "i": 157,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/killen-creek"
+  ]
+ },
+ {
+  "i": 158,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead and road only; no drive.",
+  "correctedDirection": "From Trout Lake, drive FR-23 north about 24 miles to FR-2329, signed for Takhlakh Lake Campground, pass the campground and continue just under 4.5 miles to the trailhead.",
+  "numbersUsed": [
+   "23",
+   "24",
+   "2329",
+   "4.5"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/killen-creek"
+  ]
+ },
+ {
+  "i": 159,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/killen-creek"
+  ]
+ },
+ {
+  "i": 160,
+  "verdict": "unverifiable",
+  "problem": "No page opened on Kindy Creek Road.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 161,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead only; no drive.",
+  "correctedDirection": "From Glacier, drive SR-542 about 23 miles toward Austin Pass; the Lake Ann trailhead is on the right in a paved lot just below Artist Point.",
+  "numbersUsed": [
+   "542",
+   "23"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-ann"
+  ]
+ },
+ {
+  "i": 162,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead only; no drive.",
+  "correctedDirection": "From Glacier, drive SR-542 about 23 miles toward Austin Pass; the Lake Ann trailhead is on the right in a paved lot just below Artist Point.",
+  "numbersUsed": [
+   "542",
+   "23"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-ann"
+  ]
+ },
+ {
+  "i": 163,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead only; the page opened covers the Smithbrook trailhead on Road 6700 and does not clearly match the old Lake Janus trailhead, so no drive written.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-valhalla"
+  ]
+ },
+ {
+  "i": 164,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-serene"
+  ]
+ },
+ {
+  "i": 165,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead and road only; no drive.",
+  "correctedDirection": "From Gold Bar, drive US-2 east about 7 miles and, where the road curves left toward the large bridge over the Skykomish River, turn right onto Mount Index Road. After a quarter mile on dirt, turn right at the sign for the Lake Serene trail; the parking lot is about 500 feet ahead.",
+  "numbersUsed": [
+   "2",
+   "7",
+   "500"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-serene"
+  ]
+ },
+ {
+  "i": 166,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead and road only; no drive.",
+  "correctedDirection": "From Gold Bar, drive US-2 east about 7 miles and, where the road curves left toward the large bridge over the Skykomish River, turn right onto Mount Index Road. After a quarter mile on dirt, turn right at the sign for the Lake Serene trail; the parking lot is about 500 feet ahead.",
+  "numbersUsed": [
+   "2",
+   "7",
+   "500"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/lake-serene"
+  ]
+ },
+ {
+  "i": 167,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead and road only; no drive and none sourced.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 168,
+  "verdict": "not-directions",
+  "problem": "A trail instruction, not a drive; the drive is several road changes from Carleton.",
+  "correctedDirection": "From Carleton, drive SR-153 south 1.4 miles, turn right onto Libby Creek Road for 2.5 miles, then left onto FR-43 for 5.1 miles. Turn left onto FR-4340 for 1.2 miles, right onto FR-700 for 1.5 miles, and left onto FR-750 for 0.9 mile to the trailhead.",
+  "numbersUsed": [
+   "153",
+   "1.4",
+   "2.5",
+   "43",
+   "5.1",
+   "4340",
+   "1.2",
+   "700",
+   "1.5",
+   "750",
+   "0.9"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/libby-lake"
+  ]
+ },
+ {
+  "i": 169,
+  "verdict": "fix",
+  "problem": "Text stops at Loomis and never reaches Long Swamp Campground; the trail page gives the rest of the drive.",
+  "correctedDirection": "From Loomis, drive north on County Road 9425 for about 2 miles, then turn west onto County Road 4066, which becomes FR-39, and follow it about 20 miles to Long Swamp Campground, where the trailhead is.",
+  "numbersUsed": [
+   "9425",
+   "2",
+   "4066",
+   "39",
+   "20"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/windy-peak"
+  ]
+ },
+ {
+  "i": 170,
+  "verdict": "unverifiable",
+  "problem": "NPS page opened gives no Nisqually-to-Longmire distance, so 6.5 miles is unconfirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/directions.htm"
+  ]
+ },
+ {
+  "i": 171,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page on the Elwha road status.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 172,
+  "verdict": "fix",
+  "problem": "The page opened places the Baldy trailhead at the end of FR 270 off FR 2860, not at the end of FR 2870; the old text has no drive either.",
+  "correctedDirection": "From Sequim, drive US-101 south about 5 miles to Louella Road, follow it 0.9 mile and turn left onto Palo Alto Road, then go about 6 miles and keep right onto FR-28. Turn right onto FR-2880 for 1.7 miles, left onto FR-2870 for 2.6 miles, right onto FR-2860 for 4.9 miles, then slight right onto FR-270 for 1.6 miles to the parking area.",
+  "numbersUsed": [
+   "101",
+   "5",
+   "0.9",
+   "6",
+   "28",
+   "2880",
+   "1.7",
+   "2870",
+   "2.6",
+   "2860",
+   "4.9",
+   "270",
+   "1.6"
+  ],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/baldy"
+  ]
+ },
+ {
+  "i": 173,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/merritt-lake"
+  ]
+ },
+ {
+  "i": 174,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/merritt-lake"
+  ]
+ },
+ {
+  "i": 175,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page on the Middle Fork Snoqualmie road.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 176,
+  "verdict": "unverifiable",
+  "problem": "Could not open a page on the Middle Fork Snoqualmie road.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 177,
+  "verdict": "fix",
+  "problem": "Cooper Lake Road is Road 4600, not FR-46, and the page gives about 7 miles to Cooper Pass plus 3 more, not 9-10 to a signed trailhead; the page also notes a fire closure of the trail as of July 2026.",
+  "correctedDirection": "From Cle Elum, drive SR-903 north about 17 miles past Lake Cle Elum, turn left onto Road 4600 (Cooper Lake Road), and go about 7 miles to Cooper Pass, then about 3 more miles down to the trailhead.",
+  "numbersUsed": [
+   "903",
+   "17",
+   "4600",
+   "7",
+   "3"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mineral-creek"
+  ]
+ },
+ {
+  "i": 178,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mineral-creek"
+  ]
+ },
+ {
+  "i": 179,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead and road only; the road is given as FR-4600 without a start.",
+  "correctedDirection": "From Cle Elum, drive SR-903 north about 17 miles past Lake Cle Elum, turn left onto Road 4600 (Cooper Lake Road), and go about 7 miles to Cooper Pass, then about 3 more miles down to the trailhead.",
+  "numbersUsed": [
+   "903",
+   "17",
+   "4600",
+   "7",
+   "3"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mineral-creek"
+  ]
+ },
+ {
+  "i": 180,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mineral-creek"
+  ]
+ },
+ {
+  "i": 181,
+  "verdict": "not-directions",
+  "problem": "Names the road only; the page opened gives no mileage from Mazama, so no drive written.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/monument-creek"
+  ]
+ },
+ {
+  "i": 182,
+  "verdict": "fix",
+  "problem": "Text ends at Verlot, not the trailhead, and gives 10-11 miles where the page has about 14 miles from Granite Falls to Verlot.",
+  "correctedDirection": "From Granite Falls, take Quarry Road about 4 miles to the Mountain Loop Highway, turn left and go 10 miles to Verlot, continue 1 mile and turn right onto Mount Pilchuck Road, then follow FR-42 for 6.8 miles to the trailhead lot.",
+  "numbersUsed": [
+   "4",
+   "10",
+   "1",
+   "42",
+   "6.8"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-pilchuck"
+  ]
+ },
+ {
+  "i": 183,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-si"
+  ]
+ },
+ {
+  "i": 184,
+  "verdict": "fix",
+  "problem": "Page opened uses exit 32 (436th Avenue SE), not exit 31, with a left, a left onto North Bend Way and a right onto SE Mount Si Road.",
+  "correctedDirection": "From I-90 exit 32, turn left on 436th Avenue SE and go about 0.5 mile to SE North Bend Way, turn left, and after about 0.25 mile turn right onto SE Mount Si Road. Follow it 2.9 miles, past the Little Si and Mount Si trailheads, to the lot on the left.",
+  "numbersUsed": [
+   "90",
+   "32",
+   "436",
+   "0.5",
+   "0.25",
+   "2.9"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-teneriffe"
+  ]
+ },
+ {
+  "i": 185,
+  "verdict": "not-directions",
+  "problem": "Names the trailhead only; no drive.",
+  "correctedDirection": "From I-90 exit 32, turn left on 436th Avenue SE and go about 0.5 mile to SE North Bend Way, turn left, and after about 0.25 mile turn right onto SE Mount Si Road. Follow it 2.9 miles, past the Little Si and Mount Si trailheads, to the lot on the left.",
+  "numbersUsed": [
+   "90",
+   "32",
+   "436",
+   "0.5",
+   "0.25",
+   "2.9"
+  ],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-teneriffe"
+  ]
+ },
+ {
+  "i": 186,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/directions.htm",
+   "https://www.wta.org/go-hiking/hikes/mowich-lake"
+  ]
+ },
+ {
+  "i": 187,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/directions.htm",
+   "https://www.wta.org/go-hiking/hikes/mowich-lake"
+  ]
+ },
+ {
+  "i": 188,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/directions.htm",
+   "https://www.wta.org/go-hiking/hikes/mowich-lake"
+  ]
+ },
+ {
+  "i": 189,
+  "verdict": "unverifiable",
+  "problem": "Gives a drive to Mowich Lake via SR 165 but the Fairfax Bridge south of Carbonado is closed to all traffic until further notice, per park and trail pages; owner to decide how to word it.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "high",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/directions.htm",
+   "https://www.wta.org/go-hiking/hikes/mowich-lake"
+  ]
+ },
+ {
+  "i": 190,
+  "verdict": "fix",
+  "problem": "Text stops at Darrington and never reaches the trailhead; the page gives the rest of the drive.",
+  "correctedDirection": "From Darrington, turn right onto the Mountain Loop Highway and drive 12.5 miles to the signed turnoff on the left, then turn left onto FR-2095 and go 1.5 miles to the trailhead on the right.",
+  "numbersUsed": [
+   "12.5",
+   "2095",
+   "1.5"
+  ],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-pugh"
+  ]
+ },
+ {
+  "i": 191,
+  "verdict": "accurate",
+  "problem": "",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "medium",
+  "sourceUrls": [
+   "https://www.wta.org/go-hiking/hikes/mount-townsend"
+  ]
+ },
+ {
+  "i": 192,
+  "verdict": "unverifiable",
+  "problem": "Describes the climb from the lot, not a drive; no source opened for the road.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": []
+ },
+ {
+  "i": 193,
+  "verdict": "unverifiable",
+  "problem": "NPS page opened gives no mileage to Narada Falls, so 14 miles is unconfirmed.",
+  "correctedDirection": "",
+  "numbersUsed": [],
+  "confidence": "low",
+  "sourceUrls": [
+   "https://www.nps.gov/mora/planyourvisit/directions.htm"
+  ]
+ }
+]

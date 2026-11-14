@@ -1,0 +1,23 @@
+{
+  "area_id": "wa_mount_skokomish",
+  "routes": [
+    {
+      "route_id": "wa_mount_skokomish_standard",
+      "season": { "months": [7, 8, 9], "window": "Jul-Sep", "evidence": "Stored Jun-Sep and mid-July to September. Logged ascents of the peak: Jun 16, Jul 22, Aug 36, Sep 18, Oct 11. Web: SummitPost and a trails guide say the lake basin is snow-free about mid-July to early October and snow can persist on the upper route into July and early August; Mountaineers runs it as a summer alpine scramble. Winter and spring ascents (April snow climb) dropped." },
+      "track": null,
+      "otherTracksConsidered": [
+        { "aid": "2268879", "verdict": "unsure", "why": "Aug 4 2023, complete round trip from Putvin Trailhead on the correct route, and the only route on the peak, but the recording also goes up Mount Stone (highest point on the track is Stone's summit, 47.6062,-123.2664); drawing it would add a Stone spur to this route's line." },
+        { "aid": "2871449", "verdict": "unsure", "why": "June 14 2025, same Stone combination, plus June snow season." },
+        { "aid": "1531074", "verdict": "offseason", "why": "Oct 31 2020, outside the season, and ends at the lake, not the trailhead." },
+        { "aid": "2241826", "verdict": "different", "why": "Start 10 km from the trailhead, 50 mile traverse." }
+      ],
+      "pins": [],
+      "facts": [
+        { "field": "pro_tips", "month": 7, "text": "Cross the scree below the east ridge low, both going up and coming back; the lower line has less steep ground and better footing than side-stepping high (late July, early August).", "aids": ["2268879", "2921769"] },
+        { "field": "pro_tips", "month": 7, "text": "For the final push, cross over to the southwest side and take the small south ridge rather than the east ridge, staying on the left side of it near the top (July, August).", "aids": ["2268879", "1401879"] },
+        { "field": "watch_out", "month": 7, "text": "Mountain goats around Lake of the Angels chew on anything salty left lying around, so keep packs, poles and sweaty clothing with you (July).", "aids": ["1401879"] }
+      ]
+    }
+  ],
+  "notes": "Two tracks (2268879 and 2871449) are complete Putvin round trips but include Mount Stone on the same day; the owner can accept 2268879 if a Stone spur is acceptable. Putvin trailhead pin (47.583284,-123.234276) matches the recordings' start within 20 m."
+}

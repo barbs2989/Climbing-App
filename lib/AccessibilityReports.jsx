@@ -14,6 +14,7 @@
 import { useState } from "react";
 import { useAccessibilityReportQueue, setAccessibilityReportStatus } from "./db";
 import { C } from "../ClimbMatchCore";
+import LoadingRows from "../src/components/LoadingRows.tsx";
 
 const WAITED = (iso) => {
   if (!iso) return { text: "", late: false };
@@ -25,7 +26,7 @@ const WAITED = (iso) => {
 export function AccessibilityReportQueue({ notify }) {
   const { data, isLoading, error } = useAccessibilityReportQueue(true, "open");
   const [busy, setBusy] = useState(null);
-  if (isLoading) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>Loading accessibility reports…</div>;
+  if (isLoading) return <LoadingRows C={C} label="Loading accessibility reports…" style={{padding: "10px 2px"}}/>;
   if (error) return <div style={{ fontSize: 12.5, color: C.red, padding: "10px 2px" }}>{"Couldn't load accessibility reports — " + ((error && error.message) || "try again") + ". Do not read this as 'no reports'."}</div>;
   if (!data || !data.length) return <div style={{ fontSize: 12.5, color: C.textMuted, padding: "10px 2px" }}>No open accessibility reports.</div>;
   const close = (r) => {
@@ -49,7 +50,7 @@ export function AccessibilityReportQueue({ notify }) {
         {r.screen || r.assistive ? <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6, lineHeight: 1.45 }}>{[r.screen ? "Screen: " + r.screen : null, r.assistive ? "Uses: " + r.assistive : null].filter(Boolean).join(" · ")}</div> : null}
         <div style={{ fontSize: 12, color: C.textMuted, marginTop: 6 }}>{r.reply_to ? "Reply to " + r.reply_to : "No address on file — the account has no email."}</div>
         <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
-          {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color: "#fff", fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
+          {mail ? <a href={mail} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.blueDim, background: C.blueBg, color:C.onSolid, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>Reply by email</a> : null}
           <button disabled={busy === r.id} onClick={() => close(r)} style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: busy === r.id ? "default" : "pointer" }}>{busy === r.id ? "Working…" : "Mark as answered"}</button>
         </div>
       </div>;

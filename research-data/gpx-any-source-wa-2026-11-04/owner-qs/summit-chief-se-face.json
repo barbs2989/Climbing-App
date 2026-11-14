@@ -1,0 +1,23 @@
+{
+  "key": "summit-chief-se-face",
+  "question": "Is the 'Southeast Face' stub on Summit Chief Mountain the same climb as the 'South Route'?",
+  "answer": "Yes, the same climb. The standard route is the scramble Wikipedia and trip reports call the Southeast Face: from the Vista Lakes camp across Vista Ridge to Summit Chief Pass, over sandstone slabs into the southeast basin, up the snowfields to a notch on the south ridge, then loose class 2-3 scrambling to the top. Our South Route row (face field 'Southeast Face / Basin') describes exactly that. No source separates a 'South Route' from the 'Southeast Face'. Reports titled 'Southeast Face-East Ridge' (1986) and 'Southeast Face-Southwest Face' (2013) are finishing variations on the same face, not a separate route.",
+  "recommendation": "Merge: delete the empty stub wa_summit_chief_mountain_southeast_face and keep wa_summit_chief_mountain_south_route, which holds the full text and the 3,000-point track. Optionally rename the kept row 'Southeast Face (South Route)', the name climbers search. Nothing to fill.",
+  "confidence": "high",
+  "proposed": {
+    "verdict": "duplicate",
+    "duplicate_of": "wa_summit_chief_mountain_south_route",
+    "keep": "wa_summit_chief_mountain_south_route",
+    "drop": "wa_summit_chief_mountain_southeast_face"
+  },
+  "evidence": [
+    "https://en.wikipedia.org/wiki/Summit_Chief_Mountain - easiest route is the scramble up the Southeast Face; first ascent 1925; no separate south route named",
+    "https://trailcatjim.com/summit-chief-mtn-via-southeast-face-escondido-point/ - Aug 31 2013: Vista Ridge, Summit Chief Pass, snow finger to the south-ridge notch, class 2-3 finish, never harder than class 3, descent by the up-route (the same line our South Route text describes)",
+    "https://trailcatjim.com/summit-chief-mtn-via-southeast-face-east-ridge/ - Aug 1986 variant finishing by the east ridge: same face, same Pete Lake approach"
+  ],
+  "searched": [
+    "Summit Chief Mountain Alpine Lakes routes south route southeast face Beckey - nothing separates the two names",
+    "\"Summit Chief\" southeast face Vista Lakes Pete Lake trip report - WTA, Mountaineers (403), UW Climbing Club (404 on fetch; snippet agrees)",
+    "Beckey's Cascade Alpine Guide text is not online; not checked"
+  ]
+}

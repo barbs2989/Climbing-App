@@ -1,0 +1,123 @@
+{
+ "id": "wa_cathedral_peak_pasayten_se_buttress",
+ "name": "Southeast Buttress",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_cathedral_peak_pasayten",
+  "name": "Cathedral Peak",
+  "lat": 48.989089,
+  "lng": -120.18889,
+  "elevation_ft": 8606,
+  "parent_id": "wa_pasayten",
+  "ground_ft": 8603
+ },
+ "dist_km": 29,
+ "gain_ft": 4700,
+ "high_point_ft": 8606,
+ "approach_logistics": {
+  "peakLat": 48.989089,
+  "peakLng": -120.18889,
+  "trailhead": "Andrews Creek Trailhead (Trail #504)",
+  "trailheadLat": 48.7842,
+  "trailheadLng": -120.1088,
+  "trailheadDirection": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51 north of Winthrop, via Andrews Creek Trail #504 — one of the longest wilderness approaches in the state"
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.7838,
+   "lng": -120.1088,
+   "elev": 3050,
+   "name": "Andrews Creek Trailhead",
+   "note": "Self-issue wilderness permit at the kiosk; trail #504 starts in a 2003-burn zone with little shade for the first several miles.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive West Chewuch Road / FR-51 north out of Winthrop roughly 22-23 miles to the road end at about 3,050 ft. Everything above is gained on foot — this is one of the longest wilderness approaches in the state, and the Chewuch River trailhead to the east is a longer alternative to the same camp.",
+   "ground_ft": 3041
+  },
+  {
+   "i": 1,
+   "lat": 48.835231,
+   "lng": -120.147377,
+   "elev": 4200,
+   "name": "Andrews Creek (burn-zone crossings)",
+   "note": "Trail parallels and repeatedly crosses Andrews Creek through the burn — last easy, frequent water before the climb toward the pass.",
+   "type": "Water",
+   "distMi": 4,
+   "directions": "Trail #504 climbs steadily up the Andrews Creek drainage through the 2003 burn scar: little shade, brushy regrowth that soaks you through after rain, and blowdown between trail-crew visits. The creek runs beside the tread for these miles, so there is no reason to carry much water on this stretch.",
+   "ground_ft": 4547
+  },
+  {
+   "i": 2,
+   "lat": null,
+   "lng": null,
+   "elev": 6200,
+   "name": "Peepsight Trail junction",
+   "note": "Stay on Andrews Creek Trail (left/straight) for Andrews Pass; the right fork climbs to Peepsight Lake.",
+   "type": "Junction",
+   "distMi": 5.5,
+   "directions": "Stay on #504 as it continues up-valley. The Peepsight Trail branches off toward Peepsight Creek and eventually rejoins the Andrews Creek line much higher by a far longer loop — not the way to Cathedral. Burn and brushy tread continue past the fork.",
+   "ground_ft": null
+  },
+  {
+   "i": 3,
+   "lat": 48.944476,
+   "lng": -120.228605,
+   "elev": 6700,
+   "name": "Andrews Pass",
+   "note": "Burn zone ends and open meadow country begins here; dispersed camps sit on the bluff just east of the pass, trail then contours toward Spanish Creek and the Boundary Trail.",
+   "type": "Junction",
+   "distMi": 12,
+   "directions": "Above the Peepsight fork the trail keeps grinding up the drainage in burned timber until it tops out at the pass, where open parkland and meadow replace the snags and the view opens north toward Amphitheater Mountain. Snow patches can hold on this stretch into early July.",
+   "ground_ft": 6321
+  },
+  {
+   "i": 4,
+   "lat": 48.98166,
+   "lng": -120.20075,
+   "elev": 7400,
+   "name": "Upper Cathedral Lake camp",
+   "note": "Established basecamp used by SE Buttress climbers, in parkland meadows just west of Cathedral Pass; last reliable water before the route.",
+   "type": "Campsite",
+   "distMi": 18,
+   "directions": "From the pass follow the Boundary Trail (#533) through rolling meadow toward Spanish Creek, then take the Cathedral Lakes side trail, which bears off near the old wilderness guard-station cabin, for the last few miles into the lake basin. Budget a full, long day from the car to here; most parties arrive mid-afternoon.",
+   "ground_ft": 7369
+  },
+  {
+   "i": 5,
+   "lat": 48.98599,
+   "lng": -120.19233,
+   "elev": 7600,
+   "name": "Cathedral Pass",
+   "note": "40-60 min walk from camp; the Pacific Northwest Trail crosses here between Cathedral Peak and Amphitheater Mountain — leave the trail toward the Cathedral-Monk gully.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "A 40-60 minute walk from camp, climbing east out of the lake basin on the trail that crosses the pass between Cathedral Peak and Amphitheater Mountain. Leave it at the first switchback above the pass and start up toward the gully.",
+   "ground_ft": 7617
+  },
+  {
+   "i": 6,
+   "lat": 48.984996,
+   "lng": -120.197464,
+   "elev": 7750,
+   "name": "Cathedral–Monk gully approach",
+   "note": "Loose, wide gully separating Cathedral Peak from The Monk; route starts about 150 ft up it — watch for rockfall from other parties above.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Cross meadow and talus toward the obvious deep cleft between Cathedral Peak and the pinnacle called The Monk. There is no climbers' path, so pick the line by eye — 30 to 60 minutes from camp in total. Scramble up into the gully; the first pitch is on the left (north) wall a short way in, launched from a tall pedestal that makes a solid belay stance.",
+   "ground_ft": 7450
+  },
+  {
+   "i": 7,
+   "lat": 48.98926,
+   "lng": -120.188954,
+   "elev": 8606,
+   "name": "Cathedral Peak summit",
+   "note": "True summit atop the route's two-pitch headwall; descend trending west then southwest, 4th-class with an exposed gap crossing, back down into the meadows above Upper Cathedral Lake.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Ten pitches up the buttress: corners, a chockstone and chimney ground low down, easier discontinuous terrain through the middle, then the sustained headwall — linking pitches 8 and 9 into one 55-60 m lead avoids the route's only semi-hanging belay. Two short hand-crack steps and third-class scrambling finish at the true summit.",
+   "ground_ft": 8524
+  }
+ ]
+}

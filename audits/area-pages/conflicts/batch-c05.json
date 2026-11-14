@@ -1,0 +1,104 @@
+{
+ "ab_black_band": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ab_hemingway_wall": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ab_industrial_playground": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "ak_left_side_walls": {
+  "verdict": "unsure",
+  "why": "Sources say igneous/rhyolite vs stored sandstone; only MP and a blog, not fetched twice."
+ },
+ "al_lizard_wall": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "al_roadside_crag": {
+  "verdict": "unsure",
+  "why": "Stored shale vs MP conglomerate/sandstone; single source."
+ },
+ "az_aegir": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_chimney_rock": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_glitter_box_area": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_main_wall_4": {
+  "verdict": "unsure",
+  "why": "Stored W vs area page says north (https://www.mountainproject.com/area/105738155/main-wall); one source only."
+ },
+ "az_middle_section": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_north_end": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_north_fin": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_rappel_rock_2": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_solitude_wall": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "az_wall_of_the_trundling_trolls": {
+  "verdict": "keep",
+  "why": "Not a clear contradiction: synonym, finer classification, ambiguous aspect or silent sources; stored value kept."
+ },
+ "bc_b_morning_glory": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Morning Glory",
+   "region": "British Columbia"
+  },
+  "rock": "gneiss",
+  "review": {
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skaha_Bluffs",
+    "https://www.mountainproject.com/area/105946462/skaha-bluffs"
+   ]
+  },
+  "why": "Skaha Bluffs rock is gneiss per Wikipedia and Mountain Project"
+ },
+ "bc_doctors_wall": {
+  "verdict": "unsure",
+  "why": "Parking lot upper vs lower disagreement from one MP page only."
+ },
+ "bc_great_white_2": {
+  "verdict": "fix",
+  "_expect": {
+   "name": "Great White",
+   "region": "British Columbia"
+  },
+  "rock": "gneiss",
+  "review": {
+   "sources": [
+    "https://en.wikipedia.org/wiki/Skaha_Bluffs",
+    "https://www.mountainproject.com/area/105946462/skaha-bluffs"
+   ]
+  },
+  "why": "Skaha Bluffs rock is gneiss per Wikipedia and Mountain Project"
+ },
+ "bc_lake_of_the_woods_bouldering": {
+  "verdict": "unsure",
+  "why": "One page says granite blocks; stored sandstone; no second source fetched."
+ }
+}

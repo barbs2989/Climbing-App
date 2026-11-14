@@ -1,0 +1,102 @@
+[
+ {
+  "batch": "T7",
+  "id": "or_diamond_peak_south_ridge",
+  "i": 0,
+  "name": "Summit Lake Trailhead",
+  "from": [
+   43.46358,
+   -122.13479
+  ],
+  "state": "Oregon",
+  "ground_ft": 5593,
+  "pins": [
+   {
+    "id": "or_diamond_peak_south_ridge",
+    "i": 0,
+    "name": "Summit Lake Trailhead",
+    "elev": 5635
+   }
+  ],
+  "route_names": [
+   "South Ridge (from Summit Lake)"
+  ],
+  "text": "{\"trailhead\":\"Summit Lake Trailhead\",\"trailheadLat\":43.46358,\"trailheadLng\":-122.13479}",
+  "first_pass": "Unverified: a USFS trailhead record (SUMMIT LAKE TRAILHEAD, 43.46673,-122.11227, seen in search text only) is about 1.8 km from stored and several Summit Lake trailheads (Emigrant Pass, PCT) exist here; no fetched page confirmed which one the route means."
+ },
+ {
+  "batch": "T7",
+  "id": "or_mt_bachelor_trail",
+  "i": 0,
+  "name": "West Village Lodge",
+  "from": [
+   43.99402,
+   -121.66066
+  ],
+  "state": "Oregon",
+  "ground_ft": 6415,
+  "pins": [
+   {
+    "id": "or_mt_bachelor_trail",
+    "i": 0,
+    "name": "West Village Lodge",
+    "elev": 6416
+   }
+  ],
+  "route_names": [
+   "Mt. Bachelor Trail"
+  ],
+  "text": "",
+  "first_pass": "Unverified: only a TopoQuest point 44.00289,-121.67811 turned up, about 1.8 km away and not named West Village; no published coordinate confirmed."
+ },
+ {
+  "batch": "T8",
+  "id": "or_north_ridge_2",
+  "i": 0,
+  "name": "PCT trailhead, Old Santiam Wagon Road",
+  "from": [
+   44.38011,
+   -121.85595
+  ],
+  "state": "Oregon",
+  "ground_ft": 4685,
+  "pins": [
+   {
+    "id": "or_north_ridge_2",
+    "i": 0,
+    "name": "PCT trailhead, Old Santiam Wagon Road",
+    "elev": null
+   }
+  ],
+  "route_names": [
+   "North Ridge"
+  ],
+  "text": "",
+  "first_pass": "No published coordinate: no page prints one for the Old Santiam Wagon Road / PCT crossing."
+ },
+ {
+  "batch": "T8",
+  "id": "or_mt_hood_south_side_hogsback",
+  "i": 0,
+  "name": "Timberline Lodge",
+  "from": [
+   45.33177,
+   -121.7077
+  ],
+  "state": "Oregon",
+  "ground_ft": 5890,
+  "pins": [
+   {
+    "id": "or_mt_hood_south_side_hogsback",
+    "i": 0,
+    "name": "Timberline Lodge",
+    "elev": 5905
+   }
+  ],
+  "route_names": [
+   "South Side (Hogsback)"
+  ],
+  "text": "{\"trailhead\":\"Timberline Lodge\",\"trailheadLat\":45.33177,\"trailheadLng\":-121.7077}",
+  "first_pass": "Unverified: published points for the lodge building disagree (Wikipedia 45.3311,-121.71; latlong.net 45.33112,-121.711128; TopoQuest 45.3312,-121.7113), 190-290 m from stored, which sits east of the lodge near the parking/lift; no source publishes the climbers trailhead itself."
+ }
+]

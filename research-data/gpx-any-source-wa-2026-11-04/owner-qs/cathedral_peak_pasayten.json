@@ -1,0 +1,51 @@
+{
+  "key": "cathedral_peak_pasayten",
+  "question": "The Monk routes filed under Cathedral Peak (Pasayten) top out on another tower. Which tower, and where should they be filed?",
+  "answer": "They top out on The Monk, a separate, smaller rock tower that leans against Cathedral Peak's east/south flank, split from the main mountain by a deep gully (the 'Cathedral-Monk gully'). The Monk has its own summit: it is a listed peak (Peakbagger pid 49461, ListsOfJohn id 212027, parent Cathedral Peak, small prominence; the two sources disagree on height, about 8,000-8,160 ft), the climbs finish on its top, and the descent is three roughly 75-ft rappels down the northeast gully back to the base, not a walk-off and not the Cathedral summit. The five stored rows are the Monk's: West Cracks (Left Crack 5.8, Right Crack 5.7, 1-2 pitches, lower left), Le Gibet (5.8, 5 pitches, central line), Ondine (stored 'Odine', 5.9, 3 pitches, crack line left of centre) and Scarbo (stored 'Scabo', 5.9, 5 pitches, zigzag on the right, first climbed August 1973). Our own stored text already says 'The Monk is a distinct, smaller detached tower/buttress leaning against Cathedral Peak's flank', so these rows were correctly described but filed on the wrong parent. The remaining Cathedral rows (Southwest Route, SE Buttress, South Face, Last Rites, NE Ridge) do reach Cathedral's own summit: the SE Buttress rises directly behind The Monk, its pitch 1 starts in the gully that separates them, and every technical route descends the SW walk-off with the summit-chasm step-across. (The route names are the three movements of Ravel's Gaspard de la Nuit, so 'Ondine' and 'Scarbo' are the proper spellings; Mountain Project spells them Odine and Scabo.)",
+  "recommendation": "FILE the five Monk rows under a new sibling peak area 'The Monk' with the same parent as Cathedral Peak (the Pasayten range node), not under Cathedral Peak itself and not as a crag; look it up first with catalog_find_area('The Monk','Washington',48.99,-120.19). Pin: do not copy Mountain Project's 48.99027,-120.18882 as a summit (it is a crag/area point and is shared by Cathedral's own routes, 130 m from Cathedral's summit); store it as the area coordinate only, or leave the summit pin blank until Peakbagger's or ListsOfJohn's coordinate is read (both returned 403 to me). Keep elevation blank (8,009 vs 8,160+ unresolved). Moving a route: change area_id on the five rows only, then re-point their Trailhead/approach unchanged (same Andrews Creek / Chewuch approaches). Optional spelling clean-up: Odine -> Ondine, Scabo -> Scarbo with the old spellings kept as search aliases. After the move, wa_cathedral_peak_pasayten keeps five rows. Minor flags: the stored Monk face labels say 'South Face' while the pair of West Cracks is on the west side; none of the five has a track.",
+  "confidence": "high",
+  "proposed": {
+    "new_area": {
+      "name": "The Monk",
+      "kind": "peak/tower",
+      "parent": "same parent as wa_cathedral_peak_pasayten",
+      "coordinate": "area point 48.9903,-120.1888 (approximate, from a climbing-area listing); summit pin pending",
+      "elev_ft": null,
+      "note": "east/south-flank tower of Cathedral Peak; its own summit; descent by three 75-ft rappels in the northeast gully"
+    },
+    "move_to_new_area": [
+      "wa_the_monk_le_gibet",
+      "wa_the_monk_odine",
+      "wa_the_monk_scabo",
+      "wa_the_monk_west_cracks_left_crack",
+      "wa_the_monk_west_cracks_right_crack"
+    ],
+    "optional_renames": {
+      "wa_the_monk_odine": "The Monk - Ondine",
+      "wa_the_monk_scabo": "The Monk - Scarbo"
+    },
+    "stay_on_cathedral": [
+      "wa_cathedral_peak_southwest_route",
+      "wa_cathedral_peak_pasayten_se_buttress",
+      "wa_south_face_10",
+      "wa_cathedral_peak_last_rites",
+      "wa_ne_ridge"
+    ]
+  },
+  "evidence": [
+    "https://rocknropenw.com/2024/07/10/amphitheater-cathedral-in-the-pasayten/ - SE Buttress approach goes up the deep gully that separates Cathedral from The Monk; pitch 1 starts on the left wall at the start of the gully",
+    "https://wenatcheeoutdoors.org/2017/04/04/cathedral-lakes-pilgrimage/ - 'the flying buttress leaning against Cathedral Peak's east flank' (The Monk)",
+    "https://mountainproject.com/area/109095714/cathedral-peak?print=1 - Monk routes listed with grades: West Cracks Left 5.8, Right 5.7, Odine 5.9 (3 pitches), Le Gibet 5.8 (5 pitches), Scabo 5.9 (5 pitches); photo notes put the Monk's west-face cracks in view from pitch 4 of the SE Buttress",
+    "https://www.mountainproject.com/route/109096056/the-monk-scabo - descent: northeast gully, three 75-ft rappels; first ascent August 1973; coordinate 48.99027,-120.18882 (area-level point)",
+    "Search snippets: Peakbagger 'The Monk' pid 49461 ('8160+ ft', USGS Remmel Mountain quad), ListsOfJohn 'The Monk' 8,009 ft, parent Cathedral Peak",
+    "https://en.wikipedia.org/wiki/Cathedral_Peak_(Washington) - Cathedral listed routes are South Face, Southeast Buttress, Northeast Ridge and the SW-slope scramble; no Monk routes",
+    "packets-all/wa_cathedral_peak_pasayten.json - stored Monk rows already call it a distinct detached tower; Cathedral summit 48.989089,-120.18889, 8,604 ft"
+  ],
+  "searched": [
+    "Cathedral Peak Pasayten The Monk tower Le Gibet Odine Scabo West Cracks Cathedral Lakes - Mountain Project, SummitPost, Mountaineers, Wikipedia, ListsOfJohn",
+    "\"The Monk\" Cathedral Peak Pasayten Wilderness rock tower Le Gibet OR Ondine OR Scarbo - Wenatchee Outdoors, rocknropenw, MP",
+    "\"The Monk\" Pasayten Cathedral Peak ... listsofjohn OR peakbagger - elevation conflict 8,009 vs 8,160+",
+    "Fetch refused with HTTP 403 (not worked around): peakbagger pid 49461, listsofjohn peak 212027, thecrag Cathedral Peak area, summitpost cathedral-peak/155205, peakbagger search",
+    "Not established: a mapped summit coordinate or agreed elevation for The Monk; whether Beckey's guide names the tower in the same way."
+  ]
+}

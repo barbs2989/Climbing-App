@@ -1,0 +1,6495 @@
+{
+ "note": "prior parent_id/path per op; undo in reverse order",
+ "ops": [
+  {
+   "i": 0,
+   "type": "reparent",
+   "id": "ak_anchor_point_boulder",
+   "name": "Anchor Point Boulder",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_anchor_point_boulder"
+   }
+  },
+  {
+   "i": 1,
+   "type": "reparent",
+   "id": "ak_capt_cook_state_recreation_area",
+   "name": "Capt. Cook State Recreation Area",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area"
+   }
+  },
+  {
+   "i": 2,
+   "type": "path",
+   "id": "ak_3_4_boulder",
+   "name": "3/4 Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_3_4_boulder"
+   }
+  },
+  {
+   "i": 3,
+   "type": "path",
+   "id": "ak_boulder_point",
+   "name": "Boulder Point",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_boulder_point"
+   }
+  },
+  {
+   "i": 4,
+   "type": "path",
+   "id": "ak_cape_fear_boulder",
+   "name": "Cape Fear Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_cape_fear_boulder"
+   }
+  },
+  {
+   "i": 5,
+   "type": "path",
+   "id": "ak_clew_bay_boulder",
+   "name": "Clew Bay Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_clew_bay_boulder"
+   }
+  },
+  {
+   "i": 6,
+   "type": "path",
+   "id": "ak_crescent_moon",
+   "name": "Crescent Moon",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_crescent_moon"
+   }
+  },
+  {
+   "i": 7,
+   "type": "path",
+   "id": "ak_eagle_point_boulder",
+   "name": "Eagle Point Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_eagle_point_boulder"
+   }
+  },
+  {
+   "i": 8,
+   "type": "path",
+   "id": "ak_house_boulder_the",
+   "name": "House Boulder, The",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_house_boulder_the"
+   }
+  },
+  {
+   "i": 9,
+   "type": "path",
+   "id": "ak_juice_boulder",
+   "name": "Juice Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_juice_boulder"
+   }
+  },
+  {
+   "i": 10,
+   "type": "path",
+   "id": "ak_kids_bloc",
+   "name": "Kids Bloc",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_kids_bloc"
+   }
+  },
+  {
+   "i": 11,
+   "type": "path",
+   "id": "ak_money_island_boulder",
+   "name": "Money Island Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_money_island_boulder"
+   }
+  },
+  {
+   "i": 12,
+   "type": "path",
+   "id": "ak_sail_boulder",
+   "name": "Sail Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_sail_boulder"
+   }
+  },
+  {
+   "i": 13,
+   "type": "path",
+   "id": "ak_seed_of_redoubt_the",
+   "name": "Seed of Redoubt, The",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_seed_of_redoubt_the"
+   }
+  },
+  {
+   "i": 14,
+   "type": "path",
+   "id": "ak_shinbanger_boulder",
+   "name": "Shinbanger Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_shinbanger_boulder"
+   }
+  },
+  {
+   "i": 15,
+   "type": "path",
+   "id": "ak_staycation_boulder",
+   "name": "Staycation boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_staycation_boulder"
+   }
+  },
+  {
+   "i": 16,
+   "type": "path",
+   "id": "ak_top_rope_boulder",
+   "name": "Top Rope Boulder",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_top_rope_boulder"
+   }
+  },
+  {
+   "i": 17,
+   "type": "path",
+   "id": "ak_ziggurat",
+   "name": "Ziggurat",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_capt_cook_state_recreation_area.ak_ziggurat"
+   }
+  },
+  {
+   "i": 18,
+   "type": "reparent",
+   "id": "ak_grewink_lake_and_glacier",
+   "name": "Grewink Lake and Glacier",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_grewink_lake_and_glacier"
+   }
+  },
+  {
+   "i": 19,
+   "type": "reparent",
+   "id": "ak_homer_spit_boulders",
+   "name": "Homer Spit Boulders",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_homer_spit_boulders"
+   }
+  },
+  {
+   "i": 20,
+   "type": "reparent",
+   "id": "ak_hope_sunrise_bouldering",
+   "name": "Hope/Sunrise Bouldering",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_hope_sunrise_bouldering"
+   }
+  },
+  {
+   "i": 21,
+   "type": "path",
+   "id": "ak_greg_s_place_boulders",
+   "name": "Greg's Place Boulders",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_hope_sunrise_bouldering.ak_greg_s_place_boulders"
+   }
+  },
+  {
+   "i": 22,
+   "type": "path",
+   "id": "ak_mickey_d_s_bouldering",
+   "name": "Mickey D’s Bouldering",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_hope_sunrise_bouldering.ak_mickey_d_s_bouldering"
+   }
+  },
+  {
+   "i": 23,
+   "type": "reparent",
+   "id": "ak_kachemak_bay_saltwater_drive_ice",
+   "name": "Kachemak Bay/Saltwater Drive Ice",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_kachemak_bay_saltwater_drive_ice"
+   }
+  },
+  {
+   "i": 24,
+   "type": "reparent",
+   "id": "ak_kachemak_crack_aka_rusty_s_lagoon",
+   "name": "Kachemak Crack (Aka Rusty's Lagoon)",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_kachemak_crack_aka_rusty_s_lagoon"
+   }
+  },
+  {
+   "i": 25,
+   "type": "reparent",
+   "id": "ak_lakes_district",
+   "name": "Lakes District",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_lakes_district"
+   }
+  },
+  {
+   "i": 26,
+   "type": "path",
+   "id": "ak_hatchery_wall",
+   "name": "Hatchery Wall",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_lakes_district.ak_hatchery_wall"
+   }
+  },
+  {
+   "i": 27,
+   "type": "path",
+   "id": "ak_victor_creek",
+   "name": "Victor Creek",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_lakes_district.ak_victor_creek"
+   }
+  },
+  {
+   "i": 28,
+   "type": "reparent",
+   "id": "ak_ninilchik_deep_creek",
+   "name": "Ninilchik & Deep Creek",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_ninilchik_deep_creek"
+   }
+  },
+  {
+   "i": 29,
+   "type": "reparent",
+   "id": "ak_resurrection_bay",
+   "name": "Resurrection Bay",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay"
+   }
+  },
+  {
+   "i": 30,
+   "type": "path",
+   "id": "ak_alpenglow_tower",
+   "name": "Alpenglow Tower",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_thumb_cove.ak_alpenglow_tower"
+   }
+  },
+  {
+   "i": 31,
+   "type": "path",
+   "id": "ak_apron_wall",
+   "name": "Apron Wall",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_thumb_cove.ak_apron_wall"
+   }
+  },
+  {
+   "i": 32,
+   "type": "path",
+   "id": "ak_glacier_creek",
+   "name": "Glacier Creek",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_glacier_creek"
+   }
+  },
+  {
+   "i": 33,
+   "type": "path",
+   "id": "ak_godwin_creek",
+   "name": "Godwin Creek",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_godwin_creek"
+   }
+  },
+  {
+   "i": 34,
+   "type": "path",
+   "id": "ak_humpy_cove",
+   "name": "Humpy Cove",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_humpy_cove"
+   }
+  },
+  {
+   "i": 35,
+   "type": "path",
+   "id": "ak_mount_alice",
+   "name": "Mount Alice",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_mount_alice"
+   }
+  },
+  {
+   "i": 36,
+   "type": "path",
+   "id": "ak_snow_river_2",
+   "name": "Snow River",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_snow_river_2"
+   }
+  },
+  {
+   "i": 37,
+   "type": "path",
+   "id": "ak_the_arboretum",
+   "name": "The Arboretum",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_thumb_cove.ak_the_arboretum"
+   }
+  },
+  {
+   "i": 38,
+   "type": "path",
+   "id": "ak_thumb_cove",
+   "name": "Thumb Cove",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_thumb_cove"
+   }
+  },
+  {
+   "i": 39,
+   "type": "path",
+   "id": "ak_tonsina_creek",
+   "name": "Tonsina Creek",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_tonsina_creek"
+   }
+  },
+  {
+   "i": 40,
+   "type": "path",
+   "id": "ak_waterfall_tower",
+   "name": "Waterfall Tower",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_resurrection_bay.ak_thumb_cove.ak_waterfall_tower"
+   }
+  },
+  {
+   "i": 41,
+   "type": "reparent",
+   "id": "ak_skilak_lake",
+   "name": "Skilak Lake",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_skilak_lake"
+   }
+  },
+  {
+   "i": 42,
+   "type": "path",
+   "id": "ak_prow_area_the",
+   "name": "Prow Area, The",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_skilak_lake.ak_prow_area_the"
+   }
+  },
+  {
+   "i": 43,
+   "type": "path",
+   "id": "ak_ryan_s_wall",
+   "name": "Ryan’s Wall",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_skilak_lake.ak_ryan_s_wall"
+   }
+  },
+  {
+   "i": 44,
+   "type": "path",
+   "id": "ak_top_rope_wall",
+   "name": "Top rope wall",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_skilak_lake.ak_top_rope_wall"
+   }
+  },
+  {
+   "i": 45,
+   "type": "reparent",
+   "id": "ak_woznesensky_glacier",
+   "name": "Woznesensky Glacier",
+   "prev": {
+    "parent_id": "ak_kenai_peninsula_rock_and_ice",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_woznesensky_glacier"
+   }
+  },
+  {
+   "i": 46,
+   "type": "path",
+   "id": "ak_bill_s_hill",
+   "name": "Bill's hill",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_woznesensky_glacier.ak_bill_s_hill"
+   }
+  },
+  {
+   "i": 47,
+   "type": "path",
+   "id": "ak_peanut_gullery",
+   "name": "Peanut gullery",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_woznesensky_glacier.ak_peanut_gullery"
+   }
+  },
+  {
+   "i": 48,
+   "type": "path",
+   "id": "ak_stadium_slab",
+   "name": "Stadium Slab",
+   "prev": {
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice.ak_woznesensky_glacier.ak_stadium_slab"
+   }
+  },
+  {
+   "i": 49,
+   "type": "delete",
+   "id": "ak_kenai_peninsula_rock_and_ice",
+   "name": "Kenai Peninsula Rock and Ice",
+   "prev": {
+    "parent_id": "alaska",
+    "path": "usa.alaska.ak_kenai_peninsula_rock_and_ice"
+   }
+  },
+  {
+   "i": 50,
+   "type": "reparent",
+   "id": "mn_casket_quarry_ice_mixed",
+   "name": "Casket Quarry (ICE/MIXED)",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_casket_quarry_ice_mixed"
+   }
+  },
+  {
+   "i": 51,
+   "type": "reparent",
+   "id": "mn_chester_park",
+   "name": "Chester Park",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_chester_park"
+   }
+  },
+  {
+   "i": 52,
+   "type": "reparent",
+   "id": "mn_duluth_rock_climbs",
+   "name": "Duluth Rock Climbs",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs"
+   }
+  },
+  {
+   "i": 53,
+   "type": "path",
+   "id": "mn_26th_st_boulders",
+   "name": "26th St. Boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_beach_bouldering.mn_26th_st_boulders"
+   }
+  },
+  {
+   "i": 54,
+   "type": "path",
+   "id": "mn_alien_wall_the",
+   "name": "Alien Wall, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx.mn_alien_wall_the"
+   }
+  },
+  {
+   "i": 55,
+   "type": "path",
+   "id": "mn_angel_wall",
+   "name": "Angel Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_angel_wall"
+   }
+  },
+  {
+   "i": 56,
+   "type": "path",
+   "id": "mn_art_of_the_don_wall",
+   "name": "(Art of) The Don wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_magney_snively_nature_center.mn_art_of_the_don_wall"
+   }
+  },
+  {
+   "i": 57,
+   "type": "path",
+   "id": "mn_avery_boulder",
+   "name": "Avery Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_avery_boulder"
+   }
+  },
+  {
+   "i": 58,
+   "type": "path",
+   "id": "mn_bardon_s_peak",
+   "name": "Bardon's Peak",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_bardon_s_peak"
+   }
+  },
+  {
+   "i": 59,
+   "type": "path",
+   "id": "mn_bardon_s_peak_climbs",
+   "name": "Bardon's Peak Bouldering",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_bardon_s_peak.mn_bardon_s_peak_climbs"
+   }
+  },
+  {
+   "i": 60,
+   "type": "path",
+   "id": "mn_basketball_boulder",
+   "name": "Basketball Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_bardon_s_peak.mn_basketball_boulder"
+   }
+  },
+  {
+   "i": 61,
+   "type": "path",
+   "id": "mn_beach_bouldering",
+   "name": "Beach Bouldering",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_beach_bouldering"
+   }
+  },
+  {
+   "i": 62,
+   "type": "path",
+   "id": "mn_billboards_boulder",
+   "name": "Billboards Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_billboards_boulder"
+   }
+  },
+  {
+   "i": 63,
+   "type": "path",
+   "id": "mn_brewer_s_park",
+   "name": "Brewer's Park",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_brewer_s_park"
+   }
+  },
+  {
+   "i": 64,
+   "type": "path",
+   "id": "mn_casket_quarry_boulder",
+   "name": "Casket Quarry boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_casket_quarry_boulder"
+   }
+  },
+  {
+   "i": 65,
+   "type": "path",
+   "id": "mn_chalet_boulders",
+   "name": "Chalet boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_chalet_boulders"
+   }
+  },
+  {
+   "i": 66,
+   "type": "path",
+   "id": "mn_confederate_wall",
+   "name": "Confederate Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_sanctuary.mn_confederate_wall"
+   }
+  },
+  {
+   "i": 67,
+   "type": "path",
+   "id": "mn_connection_huber",
+   "name": "Connection Huber",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hubers_the.mn_connection_huber"
+   }
+  },
+  {
+   "i": 68,
+   "type": "path",
+   "id": "mn_crimpy_face_crag",
+   "name": "Crimpy Face Crag",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_crimpy_face_crag"
+   }
+  },
+  {
+   "i": 69,
+   "type": "path",
+   "id": "mn_depression_wall_the",
+   "name": "Depression Wall, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx.mn_depression_wall_the"
+   }
+  },
+  {
+   "i": 70,
+   "type": "path",
+   "id": "mn_devil_s_track",
+   "name": "Devil's Track",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_bardon_s_peak.mn_devil_s_track"
+   }
+  },
+  {
+   "i": 71,
+   "type": "path",
+   "id": "mn_duluth_bouldering",
+   "name": "Duluth Bouldering",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering"
+   }
+  },
+  {
+   "i": 72,
+   "type": "path",
+   "id": "mn_duluth_heights_arlington_soccer_fields",
+   "name": "Duluth Heights (Arlington Soccer Fields)",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_duluth_heights_arlington_soccer_fields"
+   }
+  },
+  {
+   "i": 73,
+   "type": "path",
+   "id": "mn_elephant_rock",
+   "name": "Elephant Rock",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_lincoln_park.mn_elephant_rock"
+   }
+  },
+  {
+   "i": 74,
+   "type": "path",
+   "id": "mn_enger_park",
+   "name": "Enger Park",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_enger_park"
+   }
+  },
+  {
+   "i": 75,
+   "type": "path",
+   "id": "mn_father_huber",
+   "name": "Father Huber",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hubers_the.mn_father_huber"
+   }
+  },
+  {
+   "i": 76,
+   "type": "path",
+   "id": "mn_fern_gully",
+   "name": "Fern Gully",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_fern_gully"
+   }
+  },
+  {
+   "i": 77,
+   "type": "path",
+   "id": "mn_first_street_boulder",
+   "name": "First Street Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_first_street_boulder"
+   }
+  },
+  {
+   "i": 78,
+   "type": "path",
+   "id": "mn_fox_s_den_the",
+   "name": "Fox's Den, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_fox_s_den_the"
+   }
+  },
+  {
+   "i": 79,
+   "type": "path",
+   "id": "mn_foxx_rocks",
+   "name": "Foxx Rocks",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_foxx_rocks"
+   }
+  },
+  {
+   "i": 80,
+   "type": "path",
+   "id": "mn_free_standing_creek_boulders",
+   "name": "Free Standing Creek Boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_sanctuary.mn_free_standing_creek_boulders"
+   }
+  },
+  {
+   "i": 81,
+   "type": "path",
+   "id": "mn_hartley",
+   "name": "Hartley",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hartley"
+   }
+  },
+  {
+   "i": 82,
+   "type": "path",
+   "id": "mn_hawks_ridge",
+   "name": "Hawks Ridge",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hawks_ridge"
+   }
+  },
+  {
+   "i": 83,
+   "type": "path",
+   "id": "mn_high_anxiety_wall",
+   "name": "High Anxiety Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_high_anxiety_wall"
+   }
+  },
+  {
+   "i": 84,
+   "type": "path",
+   "id": "mn_hubers_the",
+   "name": "Hubers, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hubers_the"
+   }
+  },
+  {
+   "i": 85,
+   "type": "path",
+   "id": "mn_humpty_dumpty_wall",
+   "name": "Humpty dumpty wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_magney_snively_nature_center.mn_humpty_dumpty_wall"
+   }
+  },
+  {
+   "i": 86,
+   "type": "path",
+   "id": "mn_king_of_queens_wall",
+   "name": "King of Queens Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_porcupine_crag.mn_king_of_queens_wall"
+   }
+  },
+  {
+   "i": 87,
+   "type": "path",
+   "id": "mn_lester_park",
+   "name": "Lester Park",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_lester_park"
+   }
+  },
+  {
+   "i": 88,
+   "type": "path",
+   "id": "mn_lincoln_park",
+   "name": "Lincoln Park",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_lincoln_park"
+   }
+  },
+  {
+   "i": 89,
+   "type": "path",
+   "id": "mn_lisa_s_slabs",
+   "name": "Lisa's Slabs",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_lisa_s_slabs"
+   }
+  },
+  {
+   "i": 90,
+   "type": "path",
+   "id": "mn_little_foxx",
+   "name": "Little Foxx",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_little_foxx"
+   }
+  },
+  {
+   "i": 91,
+   "type": "path",
+   "id": "mn_little_foxx_canyon",
+   "name": "Little Foxx Canyon",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon"
+   }
+  },
+  {
+   "i": 92,
+   "type": "path",
+   "id": "mn_lower_huber",
+   "name": "Lower Huber",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hubers_the.mn_lower_huber"
+   }
+  },
+  {
+   "i": 93,
+   "type": "path",
+   "id": "mn_lower_wall",
+   "name": "Lower Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_postpartum_wall.mn_lower_wall"
+   }
+  },
+  {
+   "i": 94,
+   "type": "path",
+   "id": "mn_lower_wall_2",
+   "name": "Lower Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_piedmont_roadside_boulders.mn_lower_wall_2"
+   }
+  },
+  {
+   "i": 95,
+   "type": "path",
+   "id": "mn_lsc",
+   "name": "LSC",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_lsc"
+   }
+  },
+  {
+   "i": 96,
+   "type": "path",
+   "id": "mn_magney_snively_nature_center",
+   "name": "Magney-Snively nature center",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_magney_snively_nature_center"
+   }
+  },
+  {
+   "i": 97,
+   "type": "path",
+   "id": "mn_next_bloc",
+   "name": "Next Bloc",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx.mn_next_bloc"
+   }
+  },
+  {
+   "i": 98,
+   "type": "path",
+   "id": "mn_north_little_foxx",
+   "name": "North Little Foxx",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_north_little_foxx"
+   }
+  },
+  {
+   "i": 99,
+   "type": "path",
+   "id": "mn_northwest_face",
+   "name": "Northwest Face",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_porcupine_crag.mn_northwest_face"
+   }
+  },
+  {
+   "i": 100,
+   "type": "path",
+   "id": "mn_northwest_face_2",
+   "name": "Northwest Face 2",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_porcupine_crag.mn_northwest_face_2"
+   }
+  },
+  {
+   "i": 101,
+   "type": "path",
+   "id": "mn_outlying_boulders",
+   "name": "Outlying Boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_duluth_heights_arlington_soccer_fields.mn_outlying_boulders"
+   }
+  },
+  {
+   "i": 102,
+   "type": "path",
+   "id": "mn_passion_pit",
+   "name": "Passion Pit",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_passion_pit"
+   }
+  },
+  {
+   "i": 103,
+   "type": "path",
+   "id": "mn_piedmont_boulders",
+   "name": "Piedmont Boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_piedmont_boulders"
+   }
+  },
+  {
+   "i": 104,
+   "type": "path",
+   "id": "mn_piedmont_roadside_boulders",
+   "name": "Piedmont roadside boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_piedmont_roadside_boulders"
+   }
+  },
+  {
+   "i": 105,
+   "type": "path",
+   "id": "mn_point_o_rocks",
+   "name": "Point O' Rocks",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_point_o_rocks"
+   }
+  },
+  {
+   "i": 106,
+   "type": "path",
+   "id": "mn_porcupine_crag",
+   "name": "Porcupine Crag",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_porcupine_crag"
+   }
+  },
+  {
+   "i": 107,
+   "type": "path",
+   "id": "mn_postpartum_wall",
+   "name": "Postpartum Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_postpartum_wall"
+   }
+  },
+  {
+   "i": 108,
+   "type": "path",
+   "id": "mn_road_weary_wall",
+   "name": "Road Weary wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_porcupine_crag.mn_road_weary_wall"
+   }
+  },
+  {
+   "i": 109,
+   "type": "path",
+   "id": "mn_rock_bridge_the",
+   "name": "Rock Bridge, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_sanctuary.mn_free_standing_creek_boulders.mn_rock_bridge_the"
+   }
+  },
+  {
+   "i": 110,
+   "type": "path",
+   "id": "mn_roundabout_boulder",
+   "name": "Roundabout Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_roundabout_boulder"
+   }
+  },
+  {
+   "i": 111,
+   "type": "path",
+   "id": "mn_sanctuary",
+   "name": "Sanctuary",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_sanctuary"
+   }
+  },
+  {
+   "i": 112,
+   "type": "path",
+   "id": "mn_sargent_creek_canyon",
+   "name": "Sargent Creek Canyon",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_magney_snively_nature_center.mn_sargent_creek_canyon"
+   }
+  },
+  {
+   "i": 113,
+   "type": "path",
+   "id": "mn_shit_hole_the",
+   "name": "Shit Hole, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_shit_hole_the"
+   }
+  },
+  {
+   "i": 114,
+   "type": "path",
+   "id": "mn_short_block_the",
+   "name": "Short Block, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx.mn_short_block_the"
+   }
+  },
+  {
+   "i": 115,
+   "type": "path",
+   "id": "mn_sid_wall",
+   "name": "SID Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_beach_bouldering.mn_26th_st_boulders.mn_sid_wall"
+   }
+  },
+  {
+   "i": 116,
+   "type": "path",
+   "id": "mn_snake_head_boulder",
+   "name": "Snake Head Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_porcupine_crag.mn_snake_head_boulder"
+   }
+  },
+  {
+   "i": 117,
+   "type": "path",
+   "id": "mn_south_cliff",
+   "name": "South Cliff",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_duluth_heights_arlington_soccer_fields.mn_south_cliff"
+   }
+  },
+  {
+   "i": 118,
+   "type": "path",
+   "id": "mn_south_hartley_riverside",
+   "name": "South Hartley Riverside",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_south_hartley_riverside"
+   }
+  },
+  {
+   "i": 119,
+   "type": "path",
+   "id": "mn_south_little_foxx",
+   "name": "South Little Foxx",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx"
+   }
+  },
+  {
+   "i": 120,
+   "type": "path",
+   "id": "mn_spirit_mountain_boulders",
+   "name": "Spirit Mountain boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders"
+   }
+  },
+  {
+   "i": 121,
+   "type": "path",
+   "id": "mn_stewart_creek_boulders",
+   "name": "Stewart Creek Boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_stewart_creek_boulders"
+   }
+  },
+  {
+   "i": 122,
+   "type": "path",
+   "id": "mn_the_crows_nest",
+   "name": "The Crows Nest",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_sanctuary.mn_the_crows_nest"
+   }
+  },
+  {
+   "i": 123,
+   "type": "path",
+   "id": "mn_tiger_blood_area_closed",
+   "name": "Tiger Blood (***AREA CLOSED***)",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_tiger_blood_area_closed"
+   }
+  },
+  {
+   "i": 124,
+   "type": "path",
+   "id": "mn_tree_boulder_the",
+   "name": "Tree Boulder, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx.mn_tree_boulder_the"
+   }
+  },
+  {
+   "i": 125,
+   "type": "path",
+   "id": "mn_tunnel_towers",
+   "name": "Tunnel Towers",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_lincoln_park.mn_tunnel_towers"
+   }
+  },
+  {
+   "i": 126,
+   "type": "path",
+   "id": "mn_ultimate_block_the",
+   "name": "Ultimate Block, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx.mn_ultimate_block_the"
+   }
+  },
+  {
+   "i": 127,
+   "type": "path",
+   "id": "mn_upper_huber",
+   "name": "Upper Huber",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hubers_the.mn_upper_huber"
+   }
+  },
+  {
+   "i": 128,
+   "type": "path",
+   "id": "mn_upper_wall",
+   "name": "Upper Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_postpartum_wall.mn_upper_wall"
+   }
+  },
+  {
+   "i": 129,
+   "type": "path",
+   "id": "mn_upper_wall_2",
+   "name": "Upper Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_piedmont_roadside_boulders.mn_upper_wall_2"
+   }
+  },
+  {
+   "i": 130,
+   "type": "path",
+   "id": "mn_upstream_boulder",
+   "name": "Upstream Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_sanctuary.mn_upstream_boulder"
+   }
+  },
+  {
+   "i": 131,
+   "type": "path",
+   "id": "mn_warm_up_wall_3",
+   "name": "Warm Up Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_magney_snively_nature_center.mn_warm_up_wall_3"
+   }
+  },
+  {
+   "i": 132,
+   "type": "path",
+   "id": "mn_water_huber",
+   "name": "Water Huber",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_hubers_the.mn_water_huber"
+   }
+  },
+  {
+   "i": 133,
+   "type": "path",
+   "id": "mn_west_face",
+   "name": "West Face",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_spirit_mountain_boulders.mn_porcupine_crag.mn_west_face"
+   }
+  },
+  {
+   "i": 134,
+   "type": "path",
+   "id": "mn_whatever_wall_the",
+   "name": "Whatever Wall, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_little_foxx_canyon.mn_south_little_foxx.mn_whatever_wall_the"
+   }
+  },
+  {
+   "i": 135,
+   "type": "path",
+   "id": "mn_white_sun_boulder",
+   "name": "White Sun Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_duluth_bouldering.mn_beach_bouldering.mn_26th_st_boulders.mn_white_sun_boulder"
+   }
+  },
+  {
+   "i": 136,
+   "type": "path",
+   "id": "mn_whopee_wall",
+   "name": "Whopee Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_duluth_rock_climbs.mn_whopee_wall"
+   }
+  },
+  {
+   "i": 137,
+   "type": "reparent",
+   "id": "mn_ely_s_peak_bouldering",
+   "name": "Ely's Peak",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering"
+   }
+  },
+  {
+   "i": 138,
+   "type": "path",
+   "id": "mn_alc_alternative_living_cave",
+   "name": "ALC (Alternative Living Cave)",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_alc_alternative_living_cave"
+   }
+  },
+  {
+   "i": 139,
+   "type": "path",
+   "id": "mn_bluff_boulder",
+   "name": "Bluff Boulder",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_bluff_boulder"
+   }
+  },
+  {
+   "i": 140,
+   "type": "path",
+   "id": "mn_derby_wall",
+   "name": "Derby Wall",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_derby_wall"
+   }
+  },
+  {
+   "i": 141,
+   "type": "path",
+   "id": "mn_ely_s_peak",
+   "name": "Ely's Peak Routes",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_ely_s_peak"
+   }
+  },
+  {
+   "i": 142,
+   "type": "path",
+   "id": "mn_ely_s_peak_tunnel_drytooling",
+   "name": "Ely's Peak Tunnel Drytooling",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_ely_s_peak_tunnel_drytooling"
+   }
+  },
+  {
+   "i": 143,
+   "type": "path",
+   "id": "mn_ghetto_the",
+   "name": "Ghetto, The",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_ghetto_the"
+   }
+  },
+  {
+   "i": 144,
+   "type": "path",
+   "id": "mn_nordeast_bluff",
+   "name": "Nordeast Bluff",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_nordeast_bluff"
+   }
+  },
+  {
+   "i": 145,
+   "type": "path",
+   "id": "mn_northwest_bluff_boulders",
+   "name": "Northwest Bluff Boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_northwest_bluff_boulders"
+   }
+  },
+  {
+   "i": 146,
+   "type": "path",
+   "id": "mn_pine_slabs",
+   "name": "Pine Slabs",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_pine_slabs"
+   }
+  },
+  {
+   "i": 147,
+   "type": "path",
+   "id": "mn_saddlestones",
+   "name": "Saddlestones",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_saddlestones"
+   }
+  },
+  {
+   "i": 148,
+   "type": "path",
+   "id": "mn_trailside_boulders",
+   "name": "Trailside Boulders",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_trailside_boulders"
+   }
+  },
+  {
+   "i": 149,
+   "type": "path",
+   "id": "mn_tunnel_bluff",
+   "name": "Tunnel Bluff",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_tunnel_bluff"
+   }
+  },
+  {
+   "i": 150,
+   "type": "path",
+   "id": "mn_wiese_s_spire_area",
+   "name": "Wiese's Spire Area",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ely_s_peak_bouldering.mn_wiese_s_spire_area"
+   }
+  },
+  {
+   "i": 151,
+   "type": "reparent",
+   "id": "mn_ice_other_than_casket_2",
+   "name": "Ice other than Casket",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_ice_other_than_casket_2"
+   }
+  },
+  {
+   "i": 152,
+   "type": "reparent",
+   "id": "mn_middle_earth",
+   "name": "Middle Earth",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_middle_earth"
+   }
+  },
+  {
+   "i": 153,
+   "type": "reparent",
+   "id": "mn_upstream_boulders",
+   "name": "Upstream Boulders",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_upstream_boulders"
+   }
+  },
+  {
+   "i": 154,
+   "type": "reparent",
+   "id": "mn_zoo_boulders",
+   "name": "Zoo Boulders",
+   "prev": {
+    "parent_id": "mn_duluth_area_rock_and_ice",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_zoo_boulders"
+   }
+  },
+  {
+   "i": 155,
+   "type": "path",
+   "id": "mn_kings_court",
+   "name": "Kings Court",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_zoo_boulders.mn_kings_court"
+   }
+  },
+  {
+   "i": 156,
+   "type": "path",
+   "id": "mn_the_battlefield",
+   "name": "The Battlefield",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_zoo_boulders.mn_the_battlefield"
+   }
+  },
+  {
+   "i": 157,
+   "type": "path",
+   "id": "mn_the_pig_pen",
+   "name": "The Pig Pen",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_zoo_boulders.mn_the_pig_pen"
+   }
+  },
+  {
+   "i": 158,
+   "type": "path",
+   "id": "mn_troll_bridge",
+   "name": "Troll Bridge",
+   "prev": {
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice.mn_zoo_boulders.mn_troll_bridge"
+   }
+  },
+  {
+   "i": 159,
+   "type": "delete",
+   "id": "mn_duluth_area_rock_and_ice",
+   "name": "Duluth Area (Rock and Ice)",
+   "prev": {
+    "parent_id": "minnesota",
+    "path": "usa.minnesota.mn_duluth_area_rock_and_ice"
+   }
+  },
+  {
+   "i": 160,
+   "type": "reparent",
+   "id": "mn_gooseberry",
+   "name": "Gooseberry",
+   "prev": {
+    "parent_id": "mn_gooseberry_falls_area_ice_north_shore",
+    "path": "usa.minnesota.mn_gooseberry_falls_area_ice_north_shore.mn_gooseberry"
+   }
+  },
+  {
+   "i": 161,
+   "type": "delete",
+   "id": "mn_gooseberry_falls_area_ice_north_shore",
+   "name": "Gooseberry Falls Area ICE (North Shore)",
+   "prev": {
+    "parent_id": "minnesota",
+    "path": "usa.minnesota.mn_gooseberry_falls_area_ice_north_shore"
+   }
+  },
+  {
+   "i": 162,
+   "type": "reparent",
+   "id": "mn_cascade_river",
+   "name": "Cascade River",
+   "prev": {
+    "parent_id": "mn_grand_marais_area_ice_climbs_north_shore",
+    "path": "usa.minnesota.mn_grand_marais_area_ice_climbs_north_shore.mn_cascade_river"
+   }
+  },
+  {
+   "i": 163,
+   "type": "reparent",
+   "id": "mn_devil_track_river",
+   "name": "Devil Track River",
+   "prev": {
+    "parent_id": "mn_grand_marais_area_ice_climbs_north_shore",
+    "path": "usa.minnesota.mn_grand_marais_area_ice_climbs_north_shore.mn_devil_track_river"
+   }
+  },
+  {
+   "i": 164,
+   "type": "delete",
+   "id": "mn_grand_marais_area_ice_climbs_north_shore",
+   "name": "Grand Marais Area Ice Climbs (North Shore)",
+   "prev": {
+    "parent_id": "minnesota",
+    "path": "usa.minnesota.mn_grand_marais_area_ice_climbs_north_shore"
+   }
+  },
+  {
+   "i": 165,
+   "type": "reparent",
+   "id": "mn_crevasse_falls",
+   "name": "Crevasse Falls",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_crevasse_falls"
+   }
+  },
+  {
+   "i": 166,
+   "type": "reparent",
+   "id": "mn_devil_s_drip_aka_devil_s_gorge",
+   "name": "Devil's Drip aka Devil's Gorge",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_devil_s_drip_aka_devil_s_gorge"
+   }
+  },
+  {
+   "i": 167,
+   "type": "reparent",
+   "id": "mn_minnejujuwaha_falls",
+   "name": "Minnejujuwaha Falls",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_minnejujuwaha_falls"
+   }
+  },
+  {
+   "i": 168,
+   "type": "reparent",
+   "id": "mn_minnemishinona_falls",
+   "name": "Minnemishinona Falls",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_minnemishinona_falls"
+   }
+  },
+  {
+   "i": 169,
+   "type": "reparent",
+   "id": "mn_minneopa_falls_minneopa_state_park",
+   "name": "Minneopa Falls (Minneopa State Park)",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_minneopa_falls_minneopa_state_park"
+   }
+  },
+  {
+   "i": 170,
+   "type": "reparent",
+   "id": "mn_rapidan_falls",
+   "name": "Rapidan Falls",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_rapidan_falls"
+   }
+  },
+  {
+   "i": 171,
+   "type": "reparent",
+   "id": "mn_the_hay_loft",
+   "name": "The Hay Loft",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_the_hay_loft"
+   }
+  },
+  {
+   "i": 172,
+   "type": "reparent",
+   "id": "mn_tripple_falls",
+   "name": "Tripple Falls",
+   "prev": {
+    "parent_id": "mn_mankato_area_ice_mankato",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato.mn_tripple_falls"
+   }
+  },
+  {
+   "i": 173,
+   "type": "delete",
+   "id": "mn_mankato_area_ice_mankato",
+   "name": "Mankato Area ICE (Mankato)",
+   "prev": {
+    "parent_id": "minnesota",
+    "path": "usa.minnesota.mn_mankato_area_ice_mankato"
+   }
+  },
+  {
+   "i": 174,
+   "type": "reparent",
+   "id": "mn_baptism_river",
+   "name": "Baptism River",
+   "prev": {
+    "parent_id": "mn_north_shore_ice",
+    "path": "usa.minnesota.mn_north_shore_ice.mn_baptism_river"
+   }
+  },
+  {
+   "i": 175,
+   "type": "reparent",
+   "id": "mn_oberg_mountain",
+   "name": "Oberg Mountain",
+   "prev": {
+    "parent_id": "mn_north_shore_ice",
+    "path": "usa.minnesota.mn_north_shore_ice.mn_oberg_mountain"
+   }
+  },
+  {
+   "i": 176,
+   "type": "reparent",
+   "id": "mn_silver_creek_tunnel_ice_2",
+   "name": "Silver Creek Tunnel ICE",
+   "prev": {
+    "parent_id": "mn_north_shore_ice",
+    "path": "usa.minnesota.mn_north_shore_ice.mn_silver_creek_tunnel_ice_2"
+   }
+  },
+  {
+   "i": 177,
+   "type": "delete",
+   "id": "mn_north_shore_ice",
+   "name": "North Shore Ice",
+   "prev": {
+    "parent_id": "minnesota",
+    "path": "usa.minnesota.mn_north_shore_ice"
+   }
+  },
+  {
+   "i": 178,
+   "type": "reparent",
+   "id": "mn_crosby_park",
+   "name": "Crosby Park",
+   "prev": {
+    "parent_id": "mn_twin_cities_ice_msp_stp",
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_crosby_park"
+   }
+  },
+  {
+   "i": 179,
+   "type": "reparent",
+   "id": "mn_franklin_street_bridge_ice",
+   "name": "Franklin Street Bridge Ice",
+   "prev": {
+    "parent_id": "mn_twin_cities_ice_msp_stp",
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_franklin_street_bridge_ice"
+   }
+  },
+  {
+   "i": 180,
+   "type": "reparent",
+   "id": "mn_lilydale_park_aka_the_brickyards",
+   "name": "Lilydale Park aka The Brickyards",
+   "prev": {
+    "parent_id": "mn_twin_cities_ice_msp_stp",
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_lilydale_park_aka_the_brickyards"
+   }
+  },
+  {
+   "i": 181,
+   "type": "path",
+   "id": "mn_brickyards_alternate_approach",
+   "name": "Brickyards Alternate Approach",
+   "prev": {
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_lilydale_park_aka_the_brickyards.mn_brickyards_alternate_approach"
+   }
+  },
+  {
+   "i": 182,
+   "type": "path",
+   "id": "mn_east_clay_pit",
+   "name": "East Clay Pit",
+   "prev": {
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_lilydale_park_aka_the_brickyards.mn_east_clay_pit"
+   }
+  },
+  {
+   "i": 183,
+   "type": "path",
+   "id": "mn_ice_bouldering_area",
+   "name": "Ice Bouldering Area",
+   "prev": {
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_lilydale_park_aka_the_brickyards.mn_ice_bouldering_area"
+   }
+  },
+  {
+   "i": 184,
+   "type": "path",
+   "id": "mn_ivy_falls",
+   "name": "ivy falls",
+   "prev": {
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_lilydale_park_aka_the_brickyards.mn_ivy_falls"
+   }
+  },
+  {
+   "i": 185,
+   "type": "path",
+   "id": "mn_middle_clay_pit",
+   "name": "Middle Clay Pit",
+   "prev": {
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_lilydale_park_aka_the_brickyards.mn_middle_clay_pit"
+   }
+  },
+  {
+   "i": 186,
+   "type": "path",
+   "id": "mn_west_clay_pit",
+   "name": "West Clay Pit",
+   "prev": {
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_lilydale_park_aka_the_brickyards.mn_west_clay_pit"
+   }
+  },
+  {
+   "i": 187,
+   "type": "reparent",
+   "id": "mn_shadow_falls",
+   "name": "Shadow Falls",
+   "prev": {
+    "parent_id": "mn_twin_cities_ice_msp_stp",
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp.mn_shadow_falls"
+   }
+  },
+  {
+   "i": 188,
+   "type": "delete",
+   "id": "mn_twin_cities_ice_msp_stp",
+   "name": "Twin Cities Ice (MSP/STP)",
+   "prev": {
+    "parent_id": "minnesota",
+    "path": "usa.minnesota.mn_twin_cities_ice_msp_stp"
+   }
+  },
+  {
+   "i": 189,
+   "type": "reparent",
+   "id": "nb_fownes_head_east_ice",
+   "name": "Fownes Head East Ice",
+   "prev": {
+    "parent_id": "nb_fownes_head_ice",
+    "path": "canada.nb.nb_fownes_head_ice.nb_fownes_head_east_ice"
+   }
+  },
+  {
+   "i": 190,
+   "type": "reparent",
+   "id": "nb_fownes_head_west_ice",
+   "name": "Fownes Head West Ice",
+   "prev": {
+    "parent_id": "nb_fownes_head_ice",
+    "path": "canada.nb.nb_fownes_head_ice.nb_fownes_head_west_ice"
+   }
+  },
+  {
+   "i": 191,
+   "type": "delete",
+   "id": "nb_fownes_head_ice",
+   "name": "Fownes Head Ice",
+   "prev": {
+    "parent_id": "nb",
+    "path": "canada.nb.nb_fownes_head_ice"
+   }
+  },
+  {
+   "i": 192,
+   "type": "reparent",
+   "id": "nb_lsr_north",
+   "name": "LSR North",
+   "prev": {
+    "parent_id": "nb_little_salmon_river_ice",
+    "path": "canada.nb.nb_little_salmon_river_ice.nb_lsr_north"
+   }
+  },
+  {
+   "i": 193,
+   "type": "reparent",
+   "id": "nb_lsr_south",
+   "name": "LSR South",
+   "prev": {
+    "parent_id": "nb_little_salmon_river_ice",
+    "path": "canada.nb.nb_little_salmon_river_ice.nb_lsr_south"
+   }
+  },
+  {
+   "i": 194,
+   "type": "delete",
+   "id": "nb_little_salmon_river_ice",
+   "name": "Little Salmon River Ice",
+   "prev": {
+    "parent_id": "nb",
+    "path": "canada.nb.nb_little_salmon_river_ice"
+   }
+  },
+  {
+   "i": 195,
+   "type": "reparent",
+   "id": "nb_lower_quiddy_river_ice",
+   "name": "Lower Quiddy River Ice",
+   "prev": {
+    "parent_id": "nb_quiddy_river_ice",
+    "path": "canada.nb.nb_quiddy_river_ice.nb_lower_quiddy_river_ice"
+   }
+  },
+  {
+   "i": 196,
+   "type": "reparent",
+   "id": "nb_upper_quiddy_river",
+   "name": "Upper Quiddy River",
+   "prev": {
+    "parent_id": "nb_quiddy_river_ice",
+    "path": "canada.nb.nb_quiddy_river_ice.nb_upper_quiddy_river"
+   }
+  },
+  {
+   "i": 197,
+   "type": "delete",
+   "id": "nb_quiddy_river_ice",
+   "name": "Quiddy River Ice",
+   "prev": {
+    "parent_id": "nb",
+    "path": "canada.nb.nb_quiddy_river_ice"
+   }
+  },
+  {
+   "i": 198,
+   "type": "reparent",
+   "id": "nb_deliverance_area",
+   "name": "Deliverance Area",
+   "prev": {
+    "parent_id": "nb_walton_glen_canyon_ice",
+    "path": "canada.nb.nb_walton_glen_canyon_ice.nb_deliverance_area"
+   }
+  },
+  {
+   "i": 199,
+   "type": "reparent",
+   "id": "nb_eye_of_the_needle_area",
+   "name": "Eye of the Needle Area",
+   "prev": {
+    "parent_id": "nb_walton_glen_canyon_ice",
+    "path": "canada.nb.nb_walton_glen_canyon_ice.nb_eye_of_the_needle_area"
+   }
+  },
+  {
+   "i": 200,
+   "type": "reparent",
+   "id": "nb_geezer_area",
+   "name": "Geezer Area",
+   "prev": {
+    "parent_id": "nb_walton_glen_canyon_ice",
+    "path": "canada.nb.nb_walton_glen_canyon_ice.nb_geezer_area"
+   }
+  },
+  {
+   "i": 201,
+   "type": "reparent",
+   "id": "nb_sea_monster_area",
+   "name": "Sea Monster Area",
+   "prev": {
+    "parent_id": "nb_walton_glen_canyon_ice",
+    "path": "canada.nb.nb_walton_glen_canyon_ice.nb_sea_monster_area"
+   }
+  },
+  {
+   "i": 202,
+   "type": "reparent",
+   "id": "nb_walton_glen_falls_area",
+   "name": "Walton Glen Falls Area",
+   "prev": {
+    "parent_id": "nb_walton_glen_canyon_ice",
+    "path": "canada.nb.nb_walton_glen_canyon_ice.nb_walton_glen_falls_area"
+   }
+  },
+  {
+   "i": 203,
+   "type": "delete",
+   "id": "nb_walton_glen_canyon_ice",
+   "name": "Walton Glen Canyon Ice",
+   "prev": {
+    "parent_id": "nb",
+    "path": "canada.nb.nb_walton_glen_canyon_ice"
+   }
+  },
+  {
+   "i": 204,
+   "type": "reparent",
+   "id": "ns_arch_brook_area_ice",
+   "name": "Arch Brook Area Ice",
+   "prev": {
+    "parent_id": "ns_cape_chignecto_ice",
+    "path": "canada.ns.ns_cape_chignecto_ice.ns_arch_brook_area_ice"
+   }
+  },
+  {
+   "i": 205,
+   "type": "reparent",
+   "id": "ns_big_bald_brook_to_carey_brook",
+   "name": "Big Bald Brook to Carey Brook",
+   "prev": {
+    "parent_id": "ns_cape_chignecto_ice",
+    "path": "canada.ns.ns_cape_chignecto_ice.ns_big_bald_brook_to_carey_brook"
+   }
+  },
+  {
+   "i": 206,
+   "type": "reparent",
+   "id": "ns_cozy_warm_area_ice",
+   "name": "Cozy Warm Area Ice",
+   "prev": {
+    "parent_id": "ns_cape_chignecto_ice",
+    "path": "canada.ns.ns_cape_chignecto_ice.ns_cozy_warm_area_ice"
+   }
+  },
+  {
+   "i": 207,
+   "type": "reparent",
+   "id": "ns_high_and_wild_area_ice",
+   "name": "High and Wild Area Ice",
+   "prev": {
+    "parent_id": "ns_cape_chignecto_ice",
+    "path": "canada.ns.ns_cape_chignecto_ice.ns_high_and_wild_area_ice"
+   }
+  },
+  {
+   "i": 208,
+   "type": "reparent",
+   "id": "ns_little_bald_brook",
+   "name": "Little Bald Brook",
+   "prev": {
+    "parent_id": "ns_cape_chignecto_ice",
+    "path": "canada.ns.ns_cape_chignecto_ice.ns_little_bald_brook"
+   }
+  },
+  {
+   "i": 209,
+   "type": "reparent",
+   "id": "ns_mill_brook_area",
+   "name": "Mill Brook Area",
+   "prev": {
+    "parent_id": "ns_cape_chignecto_ice",
+    "path": "canada.ns.ns_cape_chignecto_ice.ns_mill_brook_area"
+   }
+  },
+  {
+   "i": 210,
+   "type": "reparent",
+   "id": "ns_the_chains_area_ice",
+   "name": "The Chains Area Ice",
+   "prev": {
+    "parent_id": "ns_cape_chignecto_ice",
+    "path": "canada.ns.ns_cape_chignecto_ice.ns_the_chains_area_ice"
+   }
+  },
+  {
+   "i": 211,
+   "type": "delete",
+   "id": "ns_cape_chignecto_ice",
+   "name": "Cape Chignecto Ice",
+   "prev": {
+    "parent_id": "ns",
+    "path": "canada.ns.ns_cape_chignecto_ice"
+   }
+  },
+  {
+   "i": 212,
+   "type": "reparent",
+   "id": "ns_eastern_sector",
+   "name": "Eastern sector",
+   "prev": {
+    "parent_id": "ns_economy_ice",
+    "path": "canada.ns.ns_economy_ice.ns_eastern_sector"
+   }
+  },
+  {
+   "i": 213,
+   "type": "delete",
+   "id": "ns_economy_ice",
+   "name": "Economy Ice",
+   "prev": {
+    "parent_id": "ns",
+    "path": "canada.ns.ns_economy_ice"
+   }
+  },
+  {
+   "i": 214,
+   "type": "reparent",
+   "id": "ns_east_branch_of_folly_river",
+   "name": "East Branch of Folly River",
+   "prev": {
+    "parent_id": "ns_folly_river_ice_crag",
+    "path": "canada.ns.ns_folly_river_ice_crag.ns_east_branch_of_folly_river"
+   }
+  },
+  {
+   "i": 215,
+   "type": "reparent",
+   "id": "ns_upper_pools_east_bank",
+   "name": "Upper Pools East Bank",
+   "prev": {
+    "parent_id": "ns_folly_river_ice_crag",
+    "path": "canada.ns.ns_folly_river_ice_crag.ns_upper_pools_east_bank"
+   }
+  },
+  {
+   "i": 216,
+   "type": "reparent",
+   "id": "ns_upper_pools_west_bank",
+   "name": "Upper Pools West Bank",
+   "prev": {
+    "parent_id": "ns_folly_river_ice_crag",
+    "path": "canada.ns.ns_folly_river_ice_crag.ns_upper_pools_west_bank"
+   }
+  },
+  {
+   "i": 217,
+   "type": "delete",
+   "id": "ns_folly_river_ice_crag",
+   "name": "Folly River Ice Crag",
+   "prev": {
+    "parent_id": "ns",
+    "path": "canada.ns.ns_folly_river_ice_crag"
+   }
+  },
+  {
+   "i": 218,
+   "type": "reparent",
+   "id": "ns_mainstreet_area",
+   "name": "Mainstreet Area.",
+   "prev": {
+    "parent_id": "ns_the_dr_ice_crag",
+    "path": "canada.ns.ns_the_dr_ice_crag.ns_mainstreet_area"
+   }
+  },
+  {
+   "i": 219,
+   "type": "reparent",
+   "id": "ns_pillar_wall",
+   "name": "Pillar Wall",
+   "prev": {
+    "parent_id": "ns_the_dr_ice_crag",
+    "path": "canada.ns.ns_the_dr_ice_crag.ns_pillar_wall"
+   }
+  },
+  {
+   "i": 220,
+   "type": "reparent",
+   "id": "ns_tolkien_area",
+   "name": "Tolkien Area",
+   "prev": {
+    "parent_id": "ns_the_dr_ice_crag",
+    "path": "canada.ns.ns_the_dr_ice_crag.ns_tolkien_area"
+   }
+  },
+  {
+   "i": 221,
+   "type": "reparent",
+   "id": "ns_upper_gorge",
+   "name": "Upper Gorge",
+   "prev": {
+    "parent_id": "ns_the_dr_ice_crag",
+    "path": "canada.ns.ns_the_dr_ice_crag.ns_upper_gorge"
+   }
+  },
+  {
+   "i": 222,
+   "type": "reparent",
+   "id": "ns_work_wall",
+   "name": "Work Wall",
+   "prev": {
+    "parent_id": "ns_the_dr_ice_crag",
+    "path": "canada.ns.ns_the_dr_ice_crag.ns_work_wall"
+   }
+  },
+  {
+   "i": 223,
+   "type": "delete",
+   "id": "ns_the_dr_ice_crag",
+   "name": "The DR Ice Crag",
+   "prev": {
+    "parent_id": "ns",
+    "path": "canada.ns.ns_the_dr_ice_crag"
+   }
+  },
+  {
+   "i": 224,
+   "type": "reparent",
+   "id": "ns_slab_city",
+   "name": "Slab City",
+   "prev": {
+    "parent_id": "ns_walton_east_sector_ice",
+    "path": "canada.ns.ns_walton_east_sector_ice.ns_slab_city"
+   }
+  },
+  {
+   "i": 225,
+   "type": "delete",
+   "id": "ns_walton_east_sector_ice",
+   "name": "Walton-East Sector Ice",
+   "prev": {
+    "parent_id": "ns",
+    "path": "canada.ns.ns_walton_east_sector_ice"
+   }
+  },
+  {
+   "i": 226,
+   "type": "reparent",
+   "id": "ny_angel_falls_ice_climb",
+   "name": "Angel Falls - Ice Climb",
+   "prev": {
+    "parent_id": "ny_central_ny_ice",
+    "path": "usa.new_york.ny_central_ny_ice.ny_angel_falls_ice_climb"
+   }
+  },
+  {
+   "i": 227,
+   "type": "reparent",
+   "id": "ny_carpenters_falls_ny",
+   "name": "Carpenters falls NY",
+   "prev": {
+    "parent_id": "ny_central_ny_ice",
+    "path": "usa.new_york.ny_central_ny_ice.ny_carpenters_falls_ny"
+   }
+  },
+  {
+   "i": 228,
+   "type": "reparent",
+   "id": "ny_chippewa_falls",
+   "name": "Chippewa Falls",
+   "prev": {
+    "parent_id": "ny_central_ny_ice",
+    "path": "usa.new_york.ny_central_ny_ice.ny_chippewa_falls"
+   }
+  },
+  {
+   "i": 229,
+   "type": "reparent",
+   "id": "ny_ithaca_suspension_bridge_ice_climb",
+   "name": "Ithaca Suspension Bridge Ice Climb",
+   "prev": {
+    "parent_id": "ny_central_ny_ice",
+    "path": "usa.new_york.ny_central_ny_ice.ny_ithaca_suspension_bridge_ice_climb"
+   }
+  },
+  {
+   "i": 230,
+   "type": "reparent",
+   "id": "ny_lick_brook_falls",
+   "name": "Lick Brook Falls",
+   "prev": {
+    "parent_id": "ny_central_ny_ice",
+    "path": "usa.new_york.ny_central_ny_ice.ny_lick_brook_falls"
+   }
+  },
+  {
+   "i": 231,
+   "type": "reparent",
+   "id": "ny_ludlowville_falls",
+   "name": "Ludlowville Falls",
+   "prev": {
+    "parent_id": "ny_central_ny_ice",
+    "path": "usa.new_york.ny_central_ny_ice.ny_ludlowville_falls"
+   }
+  },
+  {
+   "i": 232,
+   "type": "reparent",
+   "id": "ny_tinker_falls_ice",
+   "name": "Tinker Falls (ice)",
+   "prev": {
+    "parent_id": "ny_central_ny_ice",
+    "path": "usa.new_york.ny_central_ny_ice.ny_tinker_falls_ice"
+   }
+  },
+  {
+   "i": 233,
+   "type": "delete",
+   "id": "ny_central_ny_ice",
+   "name": "Central NY Ice",
+   "prev": {
+    "parent_id": "new_york",
+    "path": "usa.new_york.ny_central_ny_ice"
+   }
+  },
+  {
+   "i": 234,
+   "type": "reparent",
+   "id": "ak_beer_climbs_2",
+   "name": "Beer Climbs",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_beer_climbs_2"
+   }
+  },
+  {
+   "i": 235,
+   "type": "reparent",
+   "id": "ak_bellicose_peak",
+   "name": "Bellicose Peak",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_bellicose_peak"
+   }
+  },
+  {
+   "i": 236,
+   "type": "reparent",
+   "id": "ak_caribou_creek",
+   "name": "Caribou Creek",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_caribou_creek"
+   }
+  },
+  {
+   "i": 237,
+   "type": "reparent",
+   "id": "ak_eklutna_canyon_2",
+   "name": "Eklutna Canyon",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_eklutna_canyon_2"
+   }
+  },
+  {
+   "i": 238,
+   "type": "reparent",
+   "id": "ak_glenn_highway",
+   "name": "Glenn Highway",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_glenn_highway"
+   }
+  },
+  {
+   "i": 239,
+   "type": "reparent",
+   "id": "ak_hunter_creek_2",
+   "name": "Hunter Creek",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_hunter_creek_2"
+   }
+  },
+  {
+   "i": 240,
+   "type": "path",
+   "id": "ak_amphitheater_the",
+   "name": "Amphitheater, The",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_hunter_creek_2.ak_amphitheater_the"
+   }
+  },
+  {
+   "i": 241,
+   "type": "path",
+   "id": "ak_east_fork_2",
+   "name": "East Fork",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_hunter_creek_2.ak_east_fork_2"
+   }
+  },
+  {
+   "i": 242,
+   "type": "path",
+   "id": "ak_lower_hunter_2",
+   "name": "Lower Hunter",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_hunter_creek_2.ak_lower_hunter_2"
+   }
+  },
+  {
+   "i": 243,
+   "type": "path",
+   "id": "ak_west_fork_2",
+   "name": "West Fork",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_hunter_creek_2.ak_west_fork_2"
+   }
+  },
+  {
+   "i": 244,
+   "type": "reparent",
+   "id": "ak_knik_gorge_2",
+   "name": "Knik Gorge",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_knik_gorge_2"
+   }
+  },
+  {
+   "i": 245,
+   "type": "reparent",
+   "id": "ak_matanuska_glacier_2",
+   "name": "Matanuska Glacier",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_matanuska_glacier_2"
+   }
+  },
+  {
+   "i": 246,
+   "type": "reparent",
+   "id": "ak_metal_creek_carpenter_creek_friday_creek_2",
+   "name": "Metal Creek/Carpenter Creek/Friday Creek",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_metal_creek_carpenter_creek_friday_creek_2"
+   }
+  },
+  {
+   "i": 247,
+   "type": "path",
+   "id": "ak_ice_cream_cone_mountain_skybuster_peak_2",
+   "name": "Ice Cream Cone Mountain/Skybuster Peak",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_metal_creek_carpenter_creek_friday_creek_2.ak_ice_cream_cone_mountain_skybuster_peak_2"
+   }
+  },
+  {
+   "i": 248,
+   "type": "reparent",
+   "id": "ak_mount_yukla",
+   "name": "Mount Yukla",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_mount_yukla"
+   }
+  },
+  {
+   "i": 249,
+   "type": "reparent",
+   "id": "ak_nantina_point_2",
+   "name": "Nantina Point",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_nantina_point_2"
+   }
+  },
+  {
+   "i": 250,
+   "type": "reparent",
+   "id": "ak_north_fork_eagle_river_ice_and_mixed",
+   "name": "North Fork Eagle River Ice and Mixed",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_north_fork_eagle_river_ice_and_mixed"
+   }
+  },
+  {
+   "i": 251,
+   "type": "path",
+   "id": "ak_echo_bend",
+   "name": "Echo Bend",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_north_fork_eagle_river_ice_and_mixed.ak_echo_bend"
+   }
+  },
+  {
+   "i": 252,
+   "type": "reparent",
+   "id": "ak_o_malley_peak_3",
+   "name": "O'Malley Peak",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_o_malley_peak_3"
+   }
+  },
+  {
+   "i": 253,
+   "type": "reparent",
+   "id": "ak_ptarmigan_peak_ice_and_winter_alpine",
+   "name": "Ptarmigan Peak Ice and Winter Alpine",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_ptarmigan_peak_ice_and_winter_alpine"
+   }
+  },
+  {
+   "i": 254,
+   "type": "reparent",
+   "id": "ak_seward_highway_ice_mixed",
+   "name": "Seward Highway Ice & Mixed",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_seward_highway_ice_mixed"
+   }
+  },
+  {
+   "i": 255,
+   "type": "path",
+   "id": "ak_candyland",
+   "name": "Candyland",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_seward_highway_ice_mixed.ak_candyland"
+   }
+  },
+  {
+   "i": 256,
+   "type": "path",
+   "id": "ak_roadside_scales_roadside_etc",
+   "name": "Roadside (Scales, Roadside, etc.)",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_seward_highway_ice_mixed.ak_roadside_scales_roadside_etc"
+   }
+  },
+  {
+   "i": 257,
+   "type": "path",
+   "id": "ak_victoria_s_secret",
+   "name": "Victoria's Secret",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_seward_highway_ice_mixed.ak_victoria_s_secret"
+   }
+  },
+  {
+   "i": 258,
+   "type": "path",
+   "id": "ak_weeping_wall_aka_pfm",
+   "name": "Weeping Wall aka PFM",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_seward_highway_ice_mixed.ak_weeping_wall_aka_pfm"
+   }
+  },
+  {
+   "i": 259,
+   "type": "path",
+   "id": "ak_windy_point_ice_and_mixed_climbs",
+   "name": "Windy Point Ice and Mixed Climbs",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_seward_highway_ice_mixed.ak_windy_point_ice_and_mixed_climbs"
+   }
+  },
+  {
+   "i": 260,
+   "type": "reparent",
+   "id": "ak_skwetna",
+   "name": "Skwetna",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_skwetna"
+   }
+  },
+  {
+   "i": 261,
+   "type": "reparent",
+   "id": "ak_snowbird_glacier_talkeetna_mountains",
+   "name": "Snowbird Glacier, Talkeetna Mountains",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_snowbird_glacier_talkeetna_mountains"
+   }
+  },
+  {
+   "i": 262,
+   "type": "reparent",
+   "id": "ak_south_yuyanq_ch_ex",
+   "name": "South Yuyanq' Ch'ex",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_south_yuyanq_ch_ex"
+   }
+  },
+  {
+   "i": 263,
+   "type": "reparent",
+   "id": "ak_valdez_2",
+   "name": "Valdez",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska_ice",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2"
+   }
+  },
+  {
+   "i": 264,
+   "type": "path",
+   "id": "ak_27_mile_pk_2",
+   "name": "27 Mile Pk",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass.ak_27_mile_pk_2"
+   }
+  },
+  {
+   "i": 265,
+   "type": "path",
+   "id": "ak_3_pigs_2",
+   "name": "3 Pigs",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass.ak_3_pigs_2"
+   }
+  },
+  {
+   "i": 266,
+   "type": "path",
+   "id": "ak_bear_creek_2",
+   "name": "Bear Creek",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_bear_creek_2"
+   }
+  },
+  {
+   "i": 267,
+   "type": "path",
+   "id": "ak_cracked_ice",
+   "name": "Cracked Ice",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass.ak_cracked_ice"
+   }
+  },
+  {
+   "i": 268,
+   "type": "path",
+   "id": "ak_girls_mt",
+   "name": "Girls Mt.",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass.ak_girls_mt"
+   }
+  },
+  {
+   "i": 269,
+   "type": "path",
+   "id": "ak_heiden_canyon_zone_2",
+   "name": "Heiden Canyon Zone",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_heiden_canyon_zone_2"
+   }
+  },
+  {
+   "i": 270,
+   "type": "path",
+   "id": "ak_hole_in_the_wall_2",
+   "name": "Hole In The Wall",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_hole_in_the_wall_2"
+   }
+  },
+  {
+   "i": 271,
+   "type": "path",
+   "id": "ak_keystone_canyon_2",
+   "name": "Keystone Canyon",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_keystone_canyon_2"
+   }
+  },
+  {
+   "i": 272,
+   "type": "path",
+   "id": "ak_keystone_canyon_tunnel_wall_2",
+   "name": "Keystone Canyon Tunnel Wall",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_keystone_canyon_tunnel_wall_2"
+   }
+  },
+  {
+   "i": 273,
+   "type": "path",
+   "id": "ak_little_matterhorn",
+   "name": "Little Matterhorn",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass.ak_little_matterhorn"
+   }
+  },
+  {
+   "i": 274,
+   "type": "path",
+   "id": "ak_loveland_pk",
+   "name": "Loveland PK",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass.ak_loveland_pk"
+   }
+  },
+  {
+   "i": 275,
+   "type": "path",
+   "id": "ak_mineral_creek_ice_climbs_2",
+   "name": "Mineral Creek Ice Climbs",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_mineral_creek_ice_climbs_2"
+   }
+  },
+  {
+   "i": 276,
+   "type": "path",
+   "id": "ak_sapphire_pk",
+   "name": "Sapphire PK",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass.ak_sapphire_pk"
+   }
+  },
+  {
+   "i": 277,
+   "type": "path",
+   "id": "ak_sheep_creek_2",
+   "name": "Sheep Creek",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_sheep_creek_2"
+   }
+  },
+  {
+   "i": 278,
+   "type": "path",
+   "id": "ak_shwall",
+   "name": "Shwall",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_shwall"
+   }
+  },
+  {
+   "i": 279,
+   "type": "path",
+   "id": "ak_snowslide_gulch_2",
+   "name": "Snowslide Gulch",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_snowslide_gulch_2"
+   }
+  },
+  {
+   "i": 280,
+   "type": "path",
+   "id": "ak_solomon_gulch_2",
+   "name": "Solomon Gulch",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_solomon_gulch_2"
+   }
+  },
+  {
+   "i": 281,
+   "type": "path",
+   "id": "ak_thompson_pass",
+   "name": "Thompson Pass",
+   "prev": {
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice.ak_valdez_2.ak_thompson_pass"
+   }
+  },
+  {
+   "i": 282,
+   "type": "delete",
+   "id": "ak_anchorage_south_central_alaska_ice",
+   "name": "Anchorage & South Central Alaska Ice and Alpine",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_anchorage_south_central_alaska_ice"
+   }
+  },
+  {
+   "i": 283,
+   "type": "reparent",
+   "id": "ak_root_glacier_2",
+   "name": "Root Glacier",
+   "prev": {
+    "parent_id": "ak_wrangell_st_elias_ice",
+    "path": "usa.alaska.ak_wrangell_st_elias_university_and_fairweather_ranges.ak_wrangell_st_elias_ice.ak_root_glacier_2"
+   }
+  },
+  {
+   "i": 284,
+   "type": "delete",
+   "id": "ak_wrangell_st_elias_ice",
+   "name": "Wrangell St. Elias Ice",
+   "prev": {
+    "parent_id": "ak_wrangell_st_elias_university_and_fairweather_ranges",
+    "path": "usa.alaska.ak_wrangell_st_elias_university_and_fairweather_ranges.ak_wrangell_st_elias_ice"
+   }
+  },
+  {
+   "i": 285,
+   "type": "reparent",
+   "id": "bc_flood_falls",
+   "name": "Flood Falls",
+   "prev": {
+    "parent_id": "bc_fraser_valley_ice",
+    "path": "canada.bc.bc_fraser_valley.bc_fraser_valley_ice.bc_flood_falls"
+   }
+  },
+  {
+   "i": 286,
+   "type": "reparent",
+   "id": "bc_highway_7_ice_routes",
+   "name": "Highway 7 Ice Routes",
+   "prev": {
+    "parent_id": "bc_fraser_valley_ice",
+    "path": "canada.bc.bc_fraser_valley.bc_fraser_valley_ice.bc_highway_7_ice_routes"
+   }
+  },
+  {
+   "i": 287,
+   "type": "reparent",
+   "id": "bc_hunter_creek_fsr_ice",
+   "name": "Hunter Creek FSR Ice",
+   "prev": {
+    "parent_id": "bc_fraser_valley_ice",
+    "path": "canada.bc.bc_fraser_valley.bc_fraser_valley_ice.bc_hunter_creek_fsr_ice"
+   }
+  },
+  {
+   "i": 288,
+   "type": "reparent",
+   "id": "bc_ruby_creek_bluffs",
+   "name": "Ruby Creek Bluffs",
+   "prev": {
+    "parent_id": "bc_fraser_valley_ice",
+    "path": "canada.bc.bc_fraser_valley.bc_fraser_valley_ice.bc_ruby_creek_bluffs"
+   }
+  },
+  {
+   "i": 289,
+   "type": "reparent",
+   "id": "bc_sumas_mountain_ice",
+   "name": "Sumas Mountain Ice",
+   "prev": {
+    "parent_id": "bc_fraser_valley_ice",
+    "path": "canada.bc.bc_fraser_valley.bc_fraser_valley_ice.bc_sumas_mountain_ice"
+   }
+  },
+  {
+   "i": 290,
+   "type": "delete",
+   "id": "bc_fraser_valley_ice",
+   "name": "Fraser Valley Ice",
+   "prev": {
+    "parent_id": "bc_fraser_valley",
+    "path": "canada.bc.bc_fraser_valley.bc_fraser_valley_ice"
+   }
+  },
+  {
+   "i": 291,
+   "type": "reparent",
+   "id": "bc_china_bar_ice",
+   "name": "China Bar Ice",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_china_bar_ice"
+   }
+  },
+  {
+   "i": 292,
+   "type": "reparent",
+   "id": "bc_copper_mountain_ice",
+   "name": "Copper Mountain Ice",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_copper_mountain_ice"
+   }
+  },
+  {
+   "i": 293,
+   "type": "reparent",
+   "id": "bc_copper_river_fsr_ice",
+   "name": "Copper River FSR Ice",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_copper_river_fsr_ice"
+   }
+  },
+  {
+   "i": 294,
+   "type": "reparent",
+   "id": "bc_exchamsiks_east",
+   "name": "Exchamsiks East",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_exchamsiks_east"
+   }
+  },
+  {
+   "i": 295,
+   "type": "reparent",
+   "id": "bc_john_little_falls_ice",
+   "name": "John Little Falls Ice",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_john_little_falls_ice"
+   }
+  },
+  {
+   "i": 296,
+   "type": "reparent",
+   "id": "bc_kasiks_ice",
+   "name": "Kasiks Ice",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_kasiks_ice"
+   }
+  },
+  {
+   "i": 297,
+   "type": "reparent",
+   "id": "bc_kasiks_tunnel",
+   "name": "Kasiks Tunnel",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_kasiks_tunnel"
+   }
+  },
+  {
+   "i": 298,
+   "type": "reparent",
+   "id": "bc_km_300",
+   "name": "Km 300",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_km_300"
+   }
+  },
+  {
+   "i": 299,
+   "type": "reparent",
+   "id": "bc_little_oliver_creek_ice",
+   "name": "Little Oliver Creek Ice",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_little_oliver_creek_ice"
+   }
+  },
+  {
+   "i": 300,
+   "type": "reparent",
+   "id": "bc_skeena_west_ice",
+   "name": "Skeena West Ice",
+   "prev": {
+    "parent_id": "bc_highway_16_ice",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice.bc_skeena_west_ice"
+   }
+  },
+  {
+   "i": 301,
+   "type": "delete",
+   "id": "bc_highway_16_ice",
+   "name": "Highway 16 Ice",
+   "prev": {
+    "parent_id": "bc_northern_bc",
+    "path": "canada.bc.bc_northern_bc.bc_highway_16_ice"
+   }
+  },
+  {
+   "i": 302,
+   "type": "reparent",
+   "id": "bc_amo_ice_slabs",
+   "name": "AMO Ice Slabs",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_amo_ice_slabs"
+   }
+  },
+  {
+   "i": 303,
+   "type": "reparent",
+   "id": "bc_crack_scratch",
+   "name": "Crack Scratch",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_crack_scratch"
+   }
+  },
+  {
+   "i": 304,
+   "type": "reparent",
+   "id": "bc_cul_de_sac_wall",
+   "name": "Cul De Sac Wall",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_cul_de_sac_wall"
+   }
+  },
+  {
+   "i": 305,
+   "type": "reparent",
+   "id": "bc_nintendo",
+   "name": "Nintendo",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_nintendo"
+   }
+  },
+  {
+   "i": 306,
+   "type": "reparent",
+   "id": "bc_olesen_creek",
+   "name": "Olesen Creek",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_olesen_creek"
+   }
+  },
+  {
+   "i": 307,
+   "type": "reparent",
+   "id": "bc_studio_q",
+   "name": "Studio Q",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_studio_q"
+   }
+  },
+  {
+   "i": 308,
+   "type": "reparent",
+   "id": "bc_the_chief_ice",
+   "name": "The Chief (Ice)",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_the_chief_ice"
+   }
+  },
+  {
+   "i": 309,
+   "type": "reparent",
+   "id": "bc_the_fitness_club",
+   "name": "The Fitness Club",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_the_fitness_club"
+   }
+  },
+  {
+   "i": 310,
+   "type": "reparent",
+   "id": "bc_the_smoke_bluffs_ice",
+   "name": "The Smoke Bluffs Ice",
+   "prev": {
+    "parent_id": "bc_squamish_ice_mixed",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed.bc_the_smoke_bluffs_ice"
+   }
+  },
+  {
+   "i": 311,
+   "type": "delete",
+   "id": "bc_squamish_ice_mixed",
+   "name": "Squamish Ice & Mixed",
+   "prev": {
+    "parent_id": "bc_squamish",
+    "path": "canada.bc.bc_squamish.bc_squamish_ice_mixed"
+   }
+  },
+  {
+   "i": 312,
+   "type": "reparent",
+   "id": "co_dry_st_vrain",
+   "name": "Dry St. Vrain",
+   "prev": {
+    "parent_id": "co_st_vrain_ice",
+    "path": "usa.colorado.co_lyons.co_st_vrain_ice.co_dry_st_vrain"
+   }
+  },
+  {
+   "i": 313,
+   "type": "reparent",
+   "id": "co_east_of_peak_to_peak_s_st_vrain",
+   "name": "East of Peak to Peak - S. St. Vrain",
+   "prev": {
+    "parent_id": "co_st_vrain_ice",
+    "path": "usa.colorado.co_lyons.co_st_vrain_ice.co_east_of_peak_to_peak_s_st_vrain"
+   }
+  },
+  {
+   "i": 314,
+   "type": "reparent",
+   "id": "co_u_s_36",
+   "name": "U.S. 36",
+   "prev": {
+    "parent_id": "co_st_vrain_ice",
+    "path": "usa.colorado.co_lyons.co_st_vrain_ice.co_u_s_36"
+   }
+  },
+  {
+   "i": 315,
+   "type": "reparent",
+   "id": "co_west_of_peak_to_peak_middle_st_vrain",
+   "name": "West of Peak to Peak - Middle St. Vrain",
+   "prev": {
+    "parent_id": "co_st_vrain_ice",
+    "path": "usa.colorado.co_lyons.co_st_vrain_ice.co_west_of_peak_to_peak_middle_st_vrain"
+   }
+  },
+  {
+   "i": 316,
+   "type": "delete",
+   "id": "co_st_vrain_ice",
+   "name": "St. Vrain ice",
+   "prev": {
+    "parent_id": "co_lyons",
+    "path": "usa.colorado.co_lyons.co_st_vrain_ice"
+   }
+  },
+  {
+   "i": 317,
+   "type": "reparent",
+   "id": "co_east_vail_falls_area",
+   "name": "East Vail Falls area",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_east_vail_falls_area"
+   }
+  },
+  {
+   "i": 318,
+   "type": "reparent",
+   "id": "co_firehouse_area",
+   "name": "Firehouse Area",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_firehouse_area"
+   }
+  },
+  {
+   "i": 319,
+   "type": "reparent",
+   "id": "co_hell_s_cave",
+   "name": "Hell's Cave",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_hell_s_cave"
+   }
+  },
+  {
+   "i": 320,
+   "type": "reparent",
+   "id": "co_north_vail_ice",
+   "name": "North Vail Ice",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_north_vail_ice"
+   }
+  },
+  {
+   "i": 321,
+   "type": "path",
+   "id": "co_north_vail_non_booth_creek",
+   "name": "North Vail, non-Booth Creek",
+   "prev": {
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_north_vail_ice.co_north_vail_non_booth_creek"
+   }
+  },
+  {
+   "i": 322,
+   "type": "path",
+   "id": "co_unknown_2",
+   "name": "Unknown",
+   "prev": {
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_north_vail_ice.co_unknown_2"
+   }
+  },
+  {
+   "i": 323,
+   "type": "path",
+   "id": "co_vail_booth_creek",
+   "name": "Vail, Booth Creek",
+   "prev": {
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_north_vail_ice.co_vail_booth_creek"
+   }
+  },
+  {
+   "i": 324,
+   "type": "reparent",
+   "id": "co_pencil_eraser_area_aka_belfry",
+   "name": "Pencil & Eraser area aka Belfry",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_pencil_eraser_area_aka_belfry"
+   }
+  },
+  {
+   "i": 325,
+   "type": "reparent",
+   "id": "co_pumphouse_downhill",
+   "name": "Pumphouse & downhill",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_pumphouse_downhill"
+   }
+  },
+  {
+   "i": 326,
+   "type": "reparent",
+   "id": "co_racquet_club_area",
+   "name": "Racquet Club Area",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_racquet_club_area"
+   }
+  },
+  {
+   "i": 327,
+   "type": "reparent",
+   "id": "co_rigid_designator_amphitheatre",
+   "name": "Rigid Designator Amphitheatre",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_rigid_designator_amphitheatre"
+   }
+  },
+  {
+   "i": 328,
+   "type": "reparent",
+   "id": "co_spiral_staircase_area",
+   "name": "Spiral Staircase area",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_spiral_staircase_area"
+   }
+  },
+  {
+   "i": 329,
+   "type": "reparent",
+   "id": "co_the_grizzly_grotto",
+   "name": "The Grizzly Grotto",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_the_grizzly_grotto"
+   }
+  },
+  {
+   "i": 330,
+   "type": "reparent",
+   "id": "co_the_secret_stash_cicle_area_akathe_club",
+   "name": "The Secret Stash/Cicle Area akaThe Club",
+   "prev": {
+    "parent_id": "co_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice.co_the_secret_stash_cicle_area_akathe_club"
+   }
+  },
+  {
+   "i": 331,
+   "type": "delete",
+   "id": "co_vail_ice",
+   "name": "Vail Ice",
+   "prev": {
+    "parent_id": "co_eagle_vail_minturn_red_cliff",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_vail_ice"
+   }
+  },
+  {
+   "i": 332,
+   "type": "reparent",
+   "id": "co_middle_mountain",
+   "name": "Middle Mountain",
+   "prev": {
+    "parent_id": "co_vallecito_lake_ice",
+    "path": "usa.colorado.co_durango.co_vallecito_lake_ice.co_middle_mountain"
+   }
+  },
+  {
+   "i": 333,
+   "type": "reparent",
+   "id": "co_pine_river",
+   "name": "Pine River",
+   "prev": {
+    "parent_id": "co_vallecito_lake_ice",
+    "path": "usa.colorado.co_durango.co_vallecito_lake_ice.co_pine_river"
+   }
+  },
+  {
+   "i": 334,
+   "type": "delete",
+   "id": "co_vallecito_lake_ice",
+   "name": "Vallecito Lake Ice",
+   "prev": {
+    "parent_id": "co_durango",
+    "path": "usa.colorado.co_durango.co_vallecito_lake_ice"
+   }
+  },
+  {
+   "i": 335,
+   "type": "reparent",
+   "id": "ct_federal_road",
+   "name": "Federal road",
+   "prev": {
+    "parent_id": "ct_danbury_ice_climbing",
+    "path": "usa.connecticut.ct_western_coastal_slope.ct_danbury_ice_climbing.ct_federal_road"
+   }
+  },
+  {
+   "i": 336,
+   "type": "delete",
+   "id": "ct_danbury_ice_climbing",
+   "name": "Danbury ice climbing",
+   "prev": {
+    "parent_id": "ct_western_coastal_slope",
+    "path": "usa.connecticut.ct_western_coastal_slope.ct_danbury_ice_climbing"
+   }
+  },
+  {
+   "i": 337,
+   "type": "reparent",
+   "id": "me_1_practice_area_aka_bog_climbs",
+   "name": "Practice Area aka \"Bog Climbs\"",
+   "prev": {
+    "parent_id": "me_grafton_notch_st_park_ice_rock",
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_1_practice_area_aka_bog_climbs"
+   }
+  },
+  {
+   "i": 338,
+   "type": "reparent",
+   "id": "me_2_west_so_west_slabs_area",
+   "name": "West (So West) Slabs & Area",
+   "prev": {
+    "parent_id": "me_grafton_notch_st_park_ice_rock",
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_2_west_so_west_slabs_area"
+   }
+  },
+  {
+   "i": 339,
+   "type": "reparent",
+   "id": "me_3_table_rock_east_slabs_area",
+   "name": "Table Rock & East Slabs Area",
+   "prev": {
+    "parent_id": "me_grafton_notch_st_park_ice_rock",
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_3_table_rock_east_slabs_area"
+   }
+  },
+  {
+   "i": 340,
+   "type": "reparent",
+   "id": "me_4_the_eyebrow_area",
+   "name": "The Eyebrow Area",
+   "prev": {
+    "parent_id": "me_grafton_notch_st_park_ice_rock",
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_4_the_eyebrow_area"
+   }
+  },
+  {
+   "i": 341,
+   "type": "reparent",
+   "id": "me_5_the_amphitheater_area",
+   "name": "The Amphitheater Area",
+   "prev": {
+    "parent_id": "me_grafton_notch_st_park_ice_rock",
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_5_the_amphitheater_area"
+   }
+  },
+  {
+   "i": 342,
+   "type": "path",
+   "id": "me_01_big_blue_area",
+   "name": "Big Blue Area",
+   "prev": {
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_5_the_amphitheater_area.me_01_big_blue_area"
+   }
+  },
+  {
+   "i": 343,
+   "type": "path",
+   "id": "me_02_tobacco_area",
+   "name": "Tobacco Area",
+   "prev": {
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_5_the_amphitheater_area.me_02_tobacco_area"
+   }
+  },
+  {
+   "i": 344,
+   "type": "path",
+   "id": "me_03_amphitheater_itself",
+   "name": "Amphitheater Itself",
+   "prev": {
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock.me_5_the_amphitheater_area.me_03_amphitheater_itself"
+   }
+  },
+  {
+   "i": 345,
+   "type": "delete",
+   "id": "me_grafton_notch_st_park_ice_rock",
+   "name": "Grafton Notch St. Park - Ice&Rock",
+   "prev": {
+    "parent_id": "me_a_western_mountains",
+    "path": "usa.maine.me_a_western_mountains.me_grafton_notch_st_park_ice_rock"
+   }
+  },
+  {
+   "i": 346,
+   "type": "reparent",
+   "id": "me_needle_s_eye",
+   "name": "Needle's Eye",
+   "prev": {
+    "parent_id": "me_pleasant_mountain_ice",
+    "path": "usa.maine.me_a_western_mountains.me_pleasant_mountain_ice.me_needle_s_eye"
+   }
+  },
+  {
+   "i": 347,
+   "type": "delete",
+   "id": "me_pleasant_mountain_ice",
+   "name": "Pleasant Mountain Ice",
+   "prev": {
+    "parent_id": "me_a_western_mountains",
+    "path": "usa.maine.me_a_western_mountains.me_pleasant_mountain_ice"
+   }
+  },
+  {
+   "i": 348,
+   "type": "reparent",
+   "id": "nc_panthertown_valley_goldspring_ridge",
+   "name": "Panthertown Valley (Goldspring Ridge)",
+   "prev": {
+    "parent_id": "nc_cashiers_area_ice",
+    "path": "usa.north_carolina.nc_1_southern_mountains_region.nc_cashiers_area_ice.nc_panthertown_valley_goldspring_ridge"
+   }
+  },
+  {
+   "i": 349,
+   "type": "delete",
+   "id": "nc_cashiers_area_ice",
+   "name": "Cashiers Area (Ice)",
+   "prev": {
+    "parent_id": "nc_1_southern_mountains_region",
+    "path": "usa.north_carolina.nc_1_southern_mountains_region.nc_cashiers_area_ice"
+   }
+  },
+  {
+   "i": 350,
+   "type": "reparent",
+   "id": "nh_main_wall_the_2",
+   "name": "Main Wall, The",
+   "prev": {
+    "parent_id": "nh_mahoosuc_notch_ice",
+    "path": "usa.new_hampshire.nh_lesser_notches_of_the_whites.nh_mahoosuc_notch_ice.nh_main_wall_the_2"
+   }
+  },
+  {
+   "i": 351,
+   "type": "reparent",
+   "id": "nh_sunnyside",
+   "name": "Sunnyside",
+   "prev": {
+    "parent_id": "nh_mahoosuc_notch_ice",
+    "path": "usa.new_hampshire.nh_lesser_notches_of_the_whites.nh_mahoosuc_notch_ice.nh_sunnyside"
+   }
+  },
+  {
+   "i": 352,
+   "type": "path",
+   "id": "nh_lower_sunny_side",
+   "name": "Lower Sunny Side",
+   "prev": {
+    "path": "usa.new_hampshire.nh_lesser_notches_of_the_whites.nh_mahoosuc_notch_ice.nh_sunnyside.nh_lower_sunny_side"
+   }
+  },
+  {
+   "i": 353,
+   "type": "reparent",
+   "id": "nh_the_berlin_wall",
+   "name": "The Berlin Wall",
+   "prev": {
+    "parent_id": "nh_mahoosuc_notch_ice",
+    "path": "usa.new_hampshire.nh_lesser_notches_of_the_whites.nh_mahoosuc_notch_ice.nh_the_berlin_wall"
+   }
+  },
+  {
+   "i": 354,
+   "type": "reparent",
+   "id": "nh_thules_the",
+   "name": "Thules, The",
+   "prev": {
+    "parent_id": "nh_mahoosuc_notch_ice",
+    "path": "usa.new_hampshire.nh_lesser_notches_of_the_whites.nh_mahoosuc_notch_ice.nh_thules_the"
+   }
+  },
+  {
+   "i": 355,
+   "type": "delete",
+   "id": "nh_mahoosuc_notch_ice",
+   "name": "Mahoosuc Notch Ice",
+   "prev": {
+    "parent_id": "nh_lesser_notches_of_the_whites",
+    "path": "usa.new_hampshire.nh_lesser_notches_of_the_whites.nh_mahoosuc_notch_ice"
+   }
+  },
+  {
+   "i": 356,
+   "type": "reparent",
+   "id": "nh_amphitheatre",
+   "name": "Amphitheatre",
+   "prev": {
+    "parent_id": "nh_pleasant_valley_ice",
+    "path": "usa.new_hampshire.nh_lakes_region.nh_pleasant_valley_ice.nh_amphitheatre"
+   }
+  },
+  {
+   "i": 357,
+   "type": "reparent",
+   "id": "nh_canal_zone",
+   "name": "Canal Zone",
+   "prev": {
+    "parent_id": "nh_pleasant_valley_ice",
+    "path": "usa.new_hampshire.nh_lakes_region.nh_pleasant_valley_ice.nh_canal_zone"
+   }
+  },
+  {
+   "i": 358,
+   "type": "reparent",
+   "id": "nh_little_left_end",
+   "name": "Little Left End",
+   "prev": {
+    "parent_id": "nh_pleasant_valley_ice",
+    "path": "usa.new_hampshire.nh_lakes_region.nh_pleasant_valley_ice.nh_little_left_end"
+   }
+  },
+  {
+   "i": 359,
+   "type": "reparent",
+   "id": "nh_polar_circus_area",
+   "name": "Polar Circus Area",
+   "prev": {
+    "parent_id": "nh_pleasant_valley_ice",
+    "path": "usa.new_hampshire.nh_lakes_region.nh_pleasant_valley_ice.nh_polar_circus_area"
+   }
+  },
+  {
+   "i": 360,
+   "type": "delete",
+   "id": "nh_pleasant_valley_ice",
+   "name": "Pleasant Valley Ice",
+   "prev": {
+    "parent_id": "nh_lakes_region",
+    "path": "usa.new_hampshire.nh_lakes_region.nh_pleasant_valley_ice"
+   }
+  },
+  {
+   "i": 361,
+   "type": "reparent",
+   "id": "nh_2_mid_slab_ice_climbs",
+   "name": "Mid Slab Ice Climbs",
+   "prev": {
+    "parent_id": "nh_whitehorse_ice_climbs",
+    "path": "usa.new_hampshire.nh_wm_north_conway.nh_whitehorse_ice_climbs.nh_2_mid_slab_ice_climbs"
+   }
+  },
+  {
+   "i": 362,
+   "type": "reparent",
+   "id": "nh_3_slab_ice_climbs",
+   "name": "Slab Ice Climbs",
+   "prev": {
+    "parent_id": "nh_whitehorse_ice_climbs",
+    "path": "usa.new_hampshire.nh_wm_north_conway.nh_whitehorse_ice_climbs.nh_3_slab_ice_climbs"
+   }
+  },
+  {
+   "i": 363,
+   "type": "reparent",
+   "id": "nh_4_guide_s_wall_ice_climbs",
+   "name": "Guide's Wall Ice Climbs",
+   "prev": {
+    "parent_id": "nh_whitehorse_ice_climbs",
+    "path": "usa.new_hampshire.nh_wm_north_conway.nh_whitehorse_ice_climbs.nh_4_guide_s_wall_ice_climbs"
+   }
+  },
+  {
+   "i": 364,
+   "type": "delete",
+   "id": "nh_whitehorse_ice_climbs",
+   "name": "Whitehorse Ice Climbs",
+   "prev": {
+    "parent_id": "nh_wm_north_conway",
+    "path": "usa.new_hampshire.nh_wm_north_conway.nh_whitehorse_ice_climbs"
+   }
+  },
+  {
+   "i": 365,
+   "type": "reparent",
+   "id": "ny_a_northeast",
+   "name": "Northeast",
+   "prev": {
+    "parent_id": "ny_adirondack_ice_mixed",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_a_northeast"
+   }
+  },
+  {
+   "i": 366,
+   "type": "path",
+   "id": "ny_iron_mountain",
+   "name": "Iron Mountain",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_a_northeast.ny_iron_mountain"
+   }
+  },
+  {
+   "i": 367,
+   "type": "path",
+   "id": "ny_lake_champlain_palisades",
+   "name": "Lake Champlain Palisades",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_a_northeast.ny_lake_champlain_palisades"
+   }
+  },
+  {
+   "i": 368,
+   "type": "path",
+   "id": "ny_saranac_crag",
+   "name": "Saranac Crag",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_a_northeast.ny_saranac_crag"
+   }
+  },
+  {
+   "i": 369,
+   "type": "path",
+   "id": "ny_the_forge",
+   "name": "The Forge",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_a_northeast.ny_iron_mountain.ny_the_forge"
+   }
+  },
+  {
+   "i": 370,
+   "type": "reparent",
+   "id": "ny_b_climbs_near_lake_placid",
+   "name": "Climbs near Lake Placid",
+   "prev": {
+    "parent_id": "ny_adirondack_ice_mixed",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_b_climbs_near_lake_placid"
+   }
+  },
+  {
+   "i": 371,
+   "type": "path",
+   "id": "ny_moss_cliff_west_flank",
+   "name": "Moss Cliff - West Flank",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_b_climbs_near_lake_placid.ny_moss_cliff_west_flank"
+   }
+  },
+  {
+   "i": 372,
+   "type": "path",
+   "id": "ny_sunrise_notch",
+   "name": "Sunrise Notch",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_b_climbs_near_lake_placid.ny_sunrise_notch"
+   }
+  },
+  {
+   "i": 373,
+   "type": "path",
+   "id": "ny_whiteface",
+   "name": "Whiteface",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_b_climbs_near_lake_placid.ny_whiteface"
+   }
+  },
+  {
+   "i": 374,
+   "type": "path",
+   "id": "ny_wilmington_notch_high_falls_crag",
+   "name": "Wilmington Notch - High Falls Crag",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_b_climbs_near_lake_placid.ny_wilmington_notch_high_falls_crag"
+   }
+  },
+  {
+   "i": 375,
+   "type": "reparent",
+   "id": "ny_c_northwest",
+   "name": "Northwest",
+   "prev": {
+    "parent_id": "ny_adirondack_ice_mixed",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_c_northwest"
+   }
+  },
+  {
+   "i": 376,
+   "type": "path",
+   "id": "ny_south_colton_cliff_ice",
+   "name": "South Colton Cliff - Ice",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_c_northwest.ny_south_colton_cliff_ice"
+   }
+  },
+  {
+   "i": 377,
+   "type": "reparent",
+   "id": "ny_d_keene_valley_and_chapel_pond",
+   "name": "Keene Valley and Chapel Pond",
+   "prev": {
+    "parent_id": "ny_adirondack_ice_mixed",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond"
+   }
+  },
+  {
+   "i": 378,
+   "type": "path",
+   "id": "ny_bear_cubby",
+   "name": "Bear Cubby",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_bear_cubby"
+   }
+  },
+  {
+   "i": 379,
+   "type": "path",
+   "id": "ny_bear_run",
+   "name": "Bear Run",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_bear_run"
+   }
+  },
+  {
+   "i": 380,
+   "type": "path",
+   "id": "ny_cascade_pass",
+   "name": "Cascade Pass",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_cascade_pass"
+   }
+  },
+  {
+   "i": 381,
+   "type": "path",
+   "id": "ny_chapel_pond",
+   "name": "Chapel Pond",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_chapel_pond"
+   }
+  },
+  {
+   "i": 382,
+   "type": "path",
+   "id": "ny_chapel_pond_canyon",
+   "name": "Chapel Pond Canyon",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_chapel_pond_canyon"
+   }
+  },
+  {
+   "i": 383,
+   "type": "path",
+   "id": "ny_emperor_slabs",
+   "name": "Emperor Slabs",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_emperor_slabs"
+   }
+  },
+  {
+   "i": 384,
+   "type": "path",
+   "id": "ny_ensign_pond_road",
+   "name": "Ensign Pond Road",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_ensign_pond_road"
+   }
+  },
+  {
+   "i": 385,
+   "type": "path",
+   "id": "ny_exit_30_cliff",
+   "name": "Exit 30 Cliff",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_exit_30_cliff"
+   }
+  },
+  {
+   "i": 386,
+   "type": "path",
+   "id": "ny_giant_mountain_2",
+   "name": "Giant Mountain",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_giant_mountain_2"
+   }
+  },
+  {
+   "i": 387,
+   "type": "path",
+   "id": "ny_glenyan",
+   "name": "Glenyan",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_glenyan"
+   }
+  },
+  {
+   "i": 388,
+   "type": "path",
+   "id": "ny_knob_lock",
+   "name": "Knob Lock",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_knob_lock"
+   }
+  },
+  {
+   "i": 389,
+   "type": "path",
+   "id": "ny_lock_ness",
+   "name": "Lock Ness",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_lock_ness"
+   }
+  },
+  {
+   "i": 390,
+   "type": "path",
+   "id": "ny_lower_washbowl",
+   "name": "Lower Washbowl",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_lower_washbowl"
+   }
+  },
+  {
+   "i": 391,
+   "type": "path",
+   "id": "ny_malfunction_junction_cliff",
+   "name": "Malfunction Junction Cliff",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_malfunction_junction_cliff"
+   }
+  },
+  {
+   "i": 392,
+   "type": "path",
+   "id": "ny_mineville",
+   "name": "Mineville",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_mineville"
+   }
+  },
+  {
+   "i": 393,
+   "type": "path",
+   "id": "ny_ness_west",
+   "name": "Ness West",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_ness_west"
+   }
+  },
+  {
+   "i": 394,
+   "type": "path",
+   "id": "ny_north_face_of_first_brother",
+   "name": "North face of First Brother",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_north_face_of_first_brother"
+   }
+  },
+  {
+   "i": 395,
+   "type": "path",
+   "id": "ny_north_face_of_pitchoff",
+   "name": "North Face of Pitchoff",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_north_face_of_pitchoff"
+   }
+  },
+  {
+   "i": 396,
+   "type": "path",
+   "id": "ny_rickety_bridge",
+   "name": "Rickety Bridge",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_rickety_bridge"
+   }
+  },
+  {
+   "i": 397,
+   "type": "path",
+   "id": "ny_round_pond_trailhead_area",
+   "name": "Round Pond Trailhead Area",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_d_keene_valley_and_chapel_pond.ny_round_pond_trailhead_area"
+   }
+  },
+  {
+   "i": 398,
+   "type": "reparent",
+   "id": "ny_e_interior_high_peaks",
+   "name": "Interior High Peaks",
+   "prev": {
+    "parent_id": "ny_adirondack_ice_mixed",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_e_interior_high_peaks"
+   }
+  },
+  {
+   "i": 399,
+   "type": "path",
+   "id": "ny_avalanche_lake_pass",
+   "name": "Avalanche Lake/Pass",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_e_interior_high_peaks.ny_avalanche_lake_pass"
+   }
+  },
+  {
+   "i": 400,
+   "type": "path",
+   "id": "ny_elk_pass",
+   "name": "Elk Pass",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_e_interior_high_peaks.ny_elk_pass"
+   }
+  },
+  {
+   "i": 401,
+   "type": "path",
+   "id": "ny_hanging_spear_falls",
+   "name": "Hanging Spear Falls",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_e_interior_high_peaks.ny_hanging_spear_falls"
+   }
+  },
+  {
+   "i": 402,
+   "type": "path",
+   "id": "ny_little_marcy",
+   "name": "Little Marcy",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_e_interior_high_peaks.ny_little_marcy"
+   }
+  },
+  {
+   "i": 403,
+   "type": "reparent",
+   "id": "ny_f_the_central_region",
+   "name": "The Central Region",
+   "prev": {
+    "parent_id": "ny_adirondack_ice_mixed",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region"
+   }
+  },
+  {
+   "i": 404,
+   "type": "path",
+   "id": "ny_barton_high_cliff",
+   "name": "Barton High Cliff",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_barton_high_cliff"
+   }
+  },
+  {
+   "i": 405,
+   "type": "path",
+   "id": "ny_catamount_mountain",
+   "name": "Catamount Mountain",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_catamount_mountain"
+   }
+  },
+  {
+   "i": 406,
+   "type": "path",
+   "id": "ny_hayes_mountain",
+   "name": "Hayes Mountain",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_hayes_mountain"
+   }
+  },
+  {
+   "i": 407,
+   "type": "path",
+   "id": "ny_highside",
+   "name": "Highside",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_nameless_knob.ny_highside"
+   }
+  },
+  {
+   "i": 408,
+   "type": "path",
+   "id": "ny_hoffman_notch",
+   "name": "Hoffman Notch",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_hoffman_notch"
+   }
+  },
+  {
+   "i": 409,
+   "type": "path",
+   "id": "ny_nameless_knob",
+   "name": "Nameless Knob",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_nameless_knob"
+   }
+  },
+  {
+   "i": 410,
+   "type": "path",
+   "id": "ny_ok_slip_falls",
+   "name": "OK Slip Falls",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_ok_slip_falls"
+   }
+  },
+  {
+   "i": 411,
+   "type": "path",
+   "id": "ny_pharaoh_mountain",
+   "name": "Pharaoh Mountain",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_pharaoh_mountain"
+   }
+  },
+  {
+   "i": 412,
+   "type": "path",
+   "id": "ny_riverside",
+   "name": "Riverside",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_f_the_central_region.ny_nameless_knob.ny_riverside"
+   }
+  },
+  {
+   "i": 413,
+   "type": "reparent",
+   "id": "ny_g_the_southern_region",
+   "name": "The Southern Region",
+   "prev": {
+    "parent_id": "ny_adirondack_ice_mixed",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_g_the_southern_region"
+   }
+  },
+  {
+   "i": 414,
+   "type": "path",
+   "id": "ny_little_cathead_mt",
+   "name": "Little Cathead Mt",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_g_the_southern_region.ny_little_cathead_mt"
+   }
+  },
+  {
+   "i": 415,
+   "type": "path",
+   "id": "ny_mcmartin_cliff",
+   "name": "McMartin Cliff",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_g_the_southern_region.ny_mcmartin_cliff"
+   }
+  },
+  {
+   "i": 416,
+   "type": "path",
+   "id": "ny_west_canada_cliff",
+   "name": "West Canada Cliff",
+   "prev": {
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed.ny_g_the_southern_region.ny_west_canada_cliff"
+   }
+  },
+  {
+   "i": 417,
+   "type": "delete",
+   "id": "ny_adirondack_ice_mixed",
+   "name": "Adirondack Ice & Mixed",
+   "prev": {
+    "parent_id": "ny_adirondacks",
+    "path": "usa.new_york.ny_adirondacks.ny_adirondack_ice_mixed"
+   }
+  },
+  {
+   "i": 418,
+   "type": "reparent",
+   "id": "or_island_falls_ice",
+   "name": "Island Falls Ice",
+   "prev": {
+    "parent_id": "or_paulina_creek_ice",
+    "path": "usa.oregon.or_central_oregon.or_paulina_creek_ice.or_island_falls_ice"
+   }
+  },
+  {
+   "i": 419,
+   "type": "reparent",
+   "id": "or_paulina_creek_falls_ice",
+   "name": "Paulina Creek Falls Ice",
+   "prev": {
+    "parent_id": "or_paulina_creek_ice",
+    "path": "usa.oregon.or_central_oregon.or_paulina_creek_ice.or_paulina_creek_falls_ice"
+   }
+  },
+  {
+   "i": 420,
+   "type": "delete",
+   "id": "or_paulina_creek_ice",
+   "name": "Paulina Creek Ice",
+   "prev": {
+    "parent_id": "or_central_oregon",
+    "path": "usa.oregon.or_central_oregon.or_paulina_creek_ice"
+   }
+  },
+  {
+   "i": 421,
+   "type": "reparent",
+   "id": "pa_newell_area_gullies",
+   "name": "Newell Area Gullies",
+   "prev": {
+    "parent_id": "pa_southwest_pa_ice_climbing",
+    "path": "usa.pennsylvania.pa_southwestern_highlands.pa_southwest_pa_ice_climbing.pa_newell_area_gullies"
+   }
+  },
+  {
+   "i": 422,
+   "type": "path",
+   "id": "pa_radio_tower_gully",
+   "name": "Radio Tower Gully",
+   "prev": {
+    "path": "usa.pennsylvania.pa_southwestern_highlands.pa_southwest_pa_ice_climbing.pa_newell_area_gullies.pa_radio_tower_gully"
+   }
+  },
+  {
+   "i": 423,
+   "type": "delete",
+   "id": "pa_southwest_pa_ice_climbing",
+   "name": "Southwest PA Ice Climbing",
+   "prev": {
+    "parent_id": "pa_southwestern_highlands",
+    "path": "usa.pennsylvania.pa_southwestern_highlands.pa_southwest_pa_ice_climbing"
+   }
+  },
+  {
+   "i": 424,
+   "type": "reparent",
+   "id": "qc_lac_l_cluse",
+   "name": "Lac à l'Écluse",
+   "prev": {
+    "parent_id": "qc_grands_jardins_ice_climbs",
+    "path": "canada.qc.qc_03_charlevoix.qc_grands_jardins_ice_climbs.qc_lac_l_cluse"
+   }
+  },
+  {
+   "i": 425,
+   "type": "reparent",
+   "id": "qc_le_d_me",
+   "name": "Le Dôme",
+   "prev": {
+    "parent_id": "qc_grands_jardins_ice_climbs",
+    "path": "canada.qc.qc_03_charlevoix.qc_grands_jardins_ice_climbs.qc_le_d_me"
+   }
+  },
+  {
+   "i": 426,
+   "type": "reparent",
+   "id": "qc_mont_de_l_ours",
+   "name": "Mont de l’Ours",
+   "prev": {
+    "parent_id": "qc_grands_jardins_ice_climbs",
+    "path": "canada.qc.qc_03_charlevoix.qc_grands_jardins_ice_climbs.qc_mont_de_l_ours"
+   }
+  },
+  {
+   "i": 427,
+   "type": "reparent",
+   "id": "qc_mont_du_gros_bras",
+   "name": "Mont du Gros-Bras",
+   "prev": {
+    "parent_id": "qc_grands_jardins_ice_climbs",
+    "path": "canada.qc.qc_03_charlevoix.qc_grands_jardins_ice_climbs.qc_mont_du_gros_bras"
+   }
+  },
+  {
+   "i": 428,
+   "type": "delete",
+   "id": "qc_grands_jardins_ice_climbs",
+   "name": "Grands-jardins Ice Climbs",
+   "prev": {
+    "parent_id": "qc_03_charlevoix",
+    "path": "canada.qc.qc_03_charlevoix.qc_grands_jardins_ice_climbs"
+   }
+  },
+  {
+   "i": 429,
+   "type": "reparent",
+   "id": "qc_main_cliff",
+   "name": "Main cliff",
+   "prev": {
+    "parent_id": "qc_mont_orford_ice",
+    "path": "canada.qc.qc_05_cantons_de_l_est.qc_mont_orford_ice.qc_main_cliff"
+   }
+  },
+  {
+   "i": 430,
+   "type": "reparent",
+   "id": "qc_mont_orford_cascade",
+   "name": "Mont Orford Cascade",
+   "prev": {
+    "parent_id": "qc_mont_orford_ice",
+    "path": "canada.qc.qc_05_cantons_de_l_est.qc_mont_orford_ice.qc_mont_orford_cascade"
+   }
+  },
+  {
+   "i": 431,
+   "type": "delete",
+   "id": "qc_mont_orford_ice",
+   "name": "Mont Orford Ice",
+   "prev": {
+    "parent_id": "qc_05_cantons_de_l_est",
+    "path": "canada.qc.qc_05_cantons_de_l_est.qc_mont_orford_ice"
+   }
+  },
+  {
+   "i": 432,
+   "type": "reparent",
+   "id": "sd_black_elk_peak",
+   "name": "Black Elk Peak",
+   "prev": {
+    "parent_id": "sd_custer_state_park_ice_climbing",
+    "path": "usa.south_dakota.sd_custer_state_park.sd_custer_state_park_ice_climbing.sd_black_elk_peak"
+   }
+  },
+  {
+   "i": 433,
+   "type": "reparent",
+   "id": "sd_honey_bear",
+   "name": "Honey Bear",
+   "prev": {
+    "parent_id": "sd_custer_state_park_ice_climbing",
+    "path": "usa.south_dakota.sd_custer_state_park.sd_custer_state_park_ice_climbing.sd_honey_bear"
+   }
+  },
+  {
+   "i": 434,
+   "type": "reparent",
+   "id": "sd_roadside_ice",
+   "name": "Roadside Ice",
+   "prev": {
+    "parent_id": "sd_custer_state_park_ice_climbing",
+    "path": "usa.south_dakota.sd_custer_state_park.sd_custer_state_park_ice_climbing.sd_roadside_ice"
+   }
+  },
+  {
+   "i": 435,
+   "type": "reparent",
+   "id": "sd_sylvan_lake_road",
+   "name": "Sylvan Lake Road",
+   "prev": {
+    "parent_id": "sd_custer_state_park_ice_climbing",
+    "path": "usa.south_dakota.sd_custer_state_park.sd_custer_state_park_ice_climbing.sd_sylvan_lake_road"
+   }
+  },
+  {
+   "i": 436,
+   "type": "reparent",
+   "id": "sd_the_shaft_trail_4_ice_flows",
+   "name": "The Shaft (Trail 4 Ice Flows)",
+   "prev": {
+    "parent_id": "sd_custer_state_park_ice_climbing",
+    "path": "usa.south_dakota.sd_custer_state_park.sd_custer_state_park_ice_climbing.sd_the_shaft_trail_4_ice_flows"
+   }
+  },
+  {
+   "i": 437,
+   "type": "delete",
+   "id": "sd_custer_state_park_ice_climbing",
+   "name": "Custer State Park Ice Climbing",
+   "prev": {
+    "parent_id": "sd_custer_state_park",
+    "path": "usa.south_dakota.sd_custer_state_park.sd_custer_state_park_ice_climbing"
+   }
+  },
+  {
+   "i": 438,
+   "type": "reparent",
+   "id": "ut_far_eastern_ut_ice",
+   "name": "Far Eastern UT Ice",
+   "prev": {
+    "parent_id": "ut_uinta_basin_ice_mixed",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_basin_ice_mixed.ut_far_eastern_ut_ice"
+   }
+  },
+  {
+   "i": 439,
+   "type": "reparent",
+   "id": "ut_main_fork_indian_canyon_ice",
+   "name": "Main Fork Indian Canyon Ice",
+   "prev": {
+    "parent_id": "ut_uinta_basin_ice_mixed",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_basin_ice_mixed.ut_main_fork_indian_canyon_ice"
+   }
+  },
+  {
+   "i": 440,
+   "type": "reparent",
+   "id": "ut_right_fork_indian_canyon_ice",
+   "name": "Right Fork - Indian Canyon Ice",
+   "prev": {
+    "parent_id": "ut_uinta_basin_ice_mixed",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_basin_ice_mixed.ut_right_fork_indian_canyon_ice"
+   }
+  },
+  {
+   "i": 441,
+   "type": "reparent",
+   "id": "ut_strawberry_pinnacles_ice",
+   "name": "Strawberry Pinnacles Ice",
+   "prev": {
+    "parent_id": "ut_uinta_basin_ice_mixed",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_basin_ice_mixed.ut_strawberry_pinnacles_ice"
+   }
+  },
+  {
+   "i": 442,
+   "type": "delete",
+   "id": "ut_uinta_basin_ice_mixed",
+   "name": "Uinta Basin Ice & Mixed",
+   "prev": {
+    "parent_id": "ut_northeast_utah",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_basin_ice_mixed"
+   }
+  },
+  {
+   "i": 443,
+   "type": "reparent",
+   "id": "va_crabtree_falls_2",
+   "name": "Crabtree Falls",
+   "prev": {
+    "parent_id": "va_shenandoah_valley_ice_climbing",
+    "path": "usa.virginia.va_shenandoah_nw_va_region.va_shenandoah_valley_ice_climbing.va_crabtree_falls_2"
+   }
+  },
+  {
+   "i": 444,
+   "type": "reparent",
+   "id": "va_elkton_area_falls",
+   "name": "Elkton Area Falls",
+   "prev": {
+    "parent_id": "va_shenandoah_valley_ice_climbing",
+    "path": "usa.virginia.va_shenandoah_nw_va_region.va_shenandoah_valley_ice_climbing.va_elkton_area_falls"
+   }
+  },
+  {
+   "i": 445,
+   "type": "reparent",
+   "id": "va_overall_run_falls_ice_area",
+   "name": "Overall Run Falls Ice Area",
+   "prev": {
+    "parent_id": "va_shenandoah_valley_ice_climbing",
+    "path": "usa.virginia.va_shenandoah_nw_va_region.va_shenandoah_valley_ice_climbing.va_overall_run_falls_ice_area"
+   }
+  },
+  {
+   "i": 446,
+   "type": "reparent",
+   "id": "va_south_river_falls",
+   "name": "South River Falls",
+   "prev": {
+    "parent_id": "va_shenandoah_valley_ice_climbing",
+    "path": "usa.virginia.va_shenandoah_nw_va_region.va_shenandoah_valley_ice_climbing.va_south_river_falls"
+   }
+  },
+  {
+   "i": 447,
+   "type": "reparent",
+   "id": "va_upper_falls_area_ice_2",
+   "name": "Upper Falls Area Ice",
+   "prev": {
+    "parent_id": "va_shenandoah_valley_ice_climbing",
+    "path": "usa.virginia.va_shenandoah_nw_va_region.va_shenandoah_valley_ice_climbing.va_upper_falls_area_ice_2"
+   }
+  },
+  {
+   "i": 448,
+   "type": "delete",
+   "id": "va_shenandoah_valley_ice_climbing",
+   "name": "Shenandoah Valley Ice Climbing",
+   "prev": {
+    "parent_id": "va_shenandoah_nw_va_region",
+    "path": "usa.virginia.va_shenandoah_nw_va_region.va_shenandoah_valley_ice_climbing"
+   }
+  },
+  {
+   "i": 449,
+   "type": "reparent",
+   "id": "wi_dickeyville_ice",
+   "name": "Dickeyville Ice",
+   "prev": {
+    "parent_id": "wi_grant_county_ice",
+    "path": "usa.wisconsin.wi_south.wi_grant_county_ice.wi_dickeyville_ice"
+   }
+  },
+  {
+   "i": 450,
+   "type": "path",
+   "id": "wi_northern_slab",
+   "name": "Northern Slab",
+   "prev": {
+    "path": "usa.wisconsin.wi_south.wi_grant_county_ice.wi_dickeyville_ice.wi_northern_slab"
+   }
+  },
+  {
+   "i": 451,
+   "type": "path",
+   "id": "wi_southern_flows",
+   "name": "Southern Flows",
+   "prev": {
+    "path": "usa.wisconsin.wi_south.wi_grant_county_ice.wi_dickeyville_ice.wi_southern_flows"
+   }
+  },
+  {
+   "i": 452,
+   "type": "reparent",
+   "id": "wi_jugs_and_jill_s_area",
+   "name": "Jugs and Jill's Area",
+   "prev": {
+    "parent_id": "wi_grant_county_ice",
+    "path": "usa.wisconsin.wi_south.wi_grant_county_ice.wi_jugs_and_jill_s_area"
+   }
+  },
+  {
+   "i": 453,
+   "type": "delete",
+   "id": "wi_grant_county_ice",
+   "name": "Grant County Ice",
+   "prev": {
+    "parent_id": "wi_south",
+    "path": "usa.wisconsin.wi_south.wi_grant_county_ice"
+   }
+  },
+  {
+   "i": 454,
+   "type": "reparent",
+   "id": "wy_1_south_facing_north_side",
+   "name": "South Facing/North Side",
+   "prev": {
+    "parent_id": "wy_south_fork_shoshone_ice_2",
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side"
+   }
+  },
+  {
+   "i": 455,
+   "type": "path",
+   "id": "wy_1_lower_valley",
+   "name": "Lower Valley",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_1_lower_valley"
+   }
+  },
+  {
+   "i": 456,
+   "type": "path",
+   "id": "wy_2_schoolhouse_creek_illogicicle",
+   "name": "Schoolhouse Creek & Illogicicle",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_2_schoolhouse_creek_illogicicle"
+   }
+  },
+  {
+   "i": 457,
+   "type": "path",
+   "id": "wy_3_stringer_slow_turning_area",
+   "name": "Stringer/Slow Turning Area",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_3_stringer_slow_turning_area"
+   }
+  },
+  {
+   "i": 458,
+   "type": "path",
+   "id": "wy_4_legg_creek",
+   "name": "Legg Creek",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_4_legg_creek"
+   }
+  },
+  {
+   "i": 459,
+   "type": "path",
+   "id": "wy_5_dental_floss_tryptich_pillars",
+   "name": "Dental Floss/Tryptich Pillars",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_5_dental_floss_tryptich_pillars"
+   }
+  },
+  {
+   "i": 460,
+   "type": "path",
+   "id": "wy_6_broken_hearts_drainage",
+   "name": "Broken Hearts Drainage",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_6_broken_hearts_drainage"
+   }
+  },
+  {
+   "i": 461,
+   "type": "path",
+   "id": "wy_7_deer_creek",
+   "name": "Deer Creek",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_7_deer_creek"
+   }
+  },
+  {
+   "i": 462,
+   "type": "path",
+   "id": "wy_8_hawkeye_ranch_area",
+   "name": "Hawkeye Ranch Area",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_8_hawkeye_ranch_area"
+   }
+  },
+  {
+   "i": 463,
+   "type": "path",
+   "id": "wy_9_cabin_creek",
+   "name": "Cabin Creek",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_9_cabin_creek"
+   }
+  },
+  {
+   "i": 464,
+   "type": "path",
+   "id": "wy_upper_canyon_north_side",
+   "name": "Upper Canyon North Side",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_1_south_facing_north_side.wy_upper_canyon_north_side"
+   }
+  },
+  {
+   "i": 465,
+   "type": "reparent",
+   "id": "wy_2_north_facing_south_side",
+   "name": "North Facing/South Side",
+   "prev": {
+    "parent_id": "wy_south_fork_shoshone_ice_2",
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_2_north_facing_south_side"
+   }
+  },
+  {
+   "i": 466,
+   "type": "path",
+   "id": "wy_1_lower_bench",
+   "name": "Lower Bench",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_2_north_facing_south_side.wy_1_lower_bench"
+   }
+  },
+  {
+   "i": 467,
+   "type": "path",
+   "id": "wy_2_upper_bench",
+   "name": "Upper Bench",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_2_north_facing_south_side.wy_2_upper_bench"
+   }
+  },
+  {
+   "i": 468,
+   "type": "path",
+   "id": "wy_3_flying_h_ranch",
+   "name": "Flying H Ranch",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_2_north_facing_south_side.wy_3_flying_h_ranch"
+   }
+  },
+  {
+   "i": 469,
+   "type": "path",
+   "id": "wy_4_majo_ranch_n_facing",
+   "name": "Majo Ranch/N. Facing",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_2_north_facing_south_side.wy_4_majo_ranch_n_facing"
+   }
+  },
+  {
+   "i": 470,
+   "type": "path",
+   "id": "wy_upper_canyon_south_side",
+   "name": "Upper Canyon South Side",
+   "prev": {
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2.wy_2_north_facing_south_side.wy_upper_canyon_south_side"
+   }
+  },
+  {
+   "i": 471,
+   "type": "delete",
+   "id": "wy_south_fork_shoshone_ice_2",
+   "name": "South Fork Shoshone ICE",
+   "prev": {
+    "parent_id": "wy_cody",
+    "path": "usa.wyoming.wy_cody.wy_south_fork_shoshone_ice_2"
+   }
+  },
+  {
+   "i": 472,
+   "type": "reparent",
+   "id": "ak_lemon_creek_ice_climbing",
+   "name": "Lemon Creek Ice Climbing",
+   "prev": {
+    "parent_id": "ak_juneau_ice_and_mixed",
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_juneau.ak_juneau_ice_and_mixed.ak_lemon_creek_ice_climbing"
+   }
+  },
+  {
+   "i": 473,
+   "type": "delete",
+   "id": "ak_juneau_ice_and_mixed",
+   "name": "Juneau Ice and Mixed",
+   "prev": {
+    "parent_id": "ak_juneau",
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_juneau.ak_juneau_ice_and_mixed"
+   }
+  },
+  {
+   "i": 474,
+   "type": "reparent",
+   "id": "ak_echo_bend",
+   "name": "Echo Bend",
+   "prev": {
+    "parent_id": "ak_north_fork_eagle_river_ice_and_mixed",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_north_fork_eagle_river_ice_and_mixed.ak_echo_bend"
+   }
+  },
+  {
+   "i": 475,
+   "type": "delete",
+   "id": "ak_north_fork_eagle_river_ice_and_mixed",
+   "name": "North Fork Eagle River Ice and Mixed",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_north_fork_eagle_river_ice_and_mixed"
+   }
+  },
+  {
+   "i": 476,
+   "type": "reparent",
+   "id": "ak_candyland",
+   "name": "Candyland",
+   "prev": {
+    "parent_id": "ak_seward_highway_ice_mixed",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_seward_highway_ice_mixed.ak_candyland"
+   }
+  },
+  {
+   "i": 477,
+   "type": "reparent",
+   "id": "ak_roadside_scales_roadside_etc",
+   "name": "Roadside (Scales, Roadside, etc.)",
+   "prev": {
+    "parent_id": "ak_seward_highway_ice_mixed",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_seward_highway_ice_mixed.ak_roadside_scales_roadside_etc"
+   }
+  },
+  {
+   "i": 478,
+   "type": "reparent",
+   "id": "ak_victoria_s_secret",
+   "name": "Victoria's Secret",
+   "prev": {
+    "parent_id": "ak_seward_highway_ice_mixed",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_seward_highway_ice_mixed.ak_victoria_s_secret"
+   }
+  },
+  {
+   "i": 479,
+   "type": "reparent",
+   "id": "ak_weeping_wall_aka_pfm",
+   "name": "Weeping Wall aka PFM",
+   "prev": {
+    "parent_id": "ak_seward_highway_ice_mixed",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_seward_highway_ice_mixed.ak_weeping_wall_aka_pfm"
+   }
+  },
+  {
+   "i": 480,
+   "type": "reparent",
+   "id": "ak_windy_point_ice_and_mixed_climbs",
+   "name": "Windy Point Ice and Mixed Climbs",
+   "prev": {
+    "parent_id": "ak_seward_highway_ice_mixed",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_seward_highway_ice_mixed.ak_windy_point_ice_and_mixed_climbs"
+   }
+  },
+  {
+   "i": 481,
+   "type": "delete",
+   "id": "ak_seward_highway_ice_mixed",
+   "name": "Seward Highway Ice & Mixed",
+   "prev": {
+    "parent_id": "ak_anchorage_south_central_alaska",
+    "path": "usa.alaska.ak_anchorage_south_central_alaska.ak_seward_highway_ice_mixed"
+   }
+  },
+  {
+   "i": 482,
+   "type": "reparent",
+   "id": "ak_skagway_dyea",
+   "name": "Skagway/Dyea",
+   "prev": {
+    "parent_id": "ak_skagway_ice",
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice.ak_skagway_dyea"
+   }
+  },
+  {
+   "i": 483,
+   "type": "path",
+   "id": "ak_reid_falls",
+   "name": "Reid Falls",
+   "prev": {
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice.ak_skagway_dyea.ak_reid_falls"
+   }
+  },
+  {
+   "i": 484,
+   "type": "reparent",
+   "id": "ak_south_klondike_highway",
+   "name": "South Klondike Highway",
+   "prev": {
+    "parent_id": "ak_skagway_ice",
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice.ak_south_klondike_highway"
+   }
+  },
+  {
+   "i": 485,
+   "type": "path",
+   "id": "ak_amphitheater",
+   "name": "Amphitheater",
+   "prev": {
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice.ak_south_klondike_highway.ak_amphitheater"
+   }
+  },
+  {
+   "i": 486,
+   "type": "path",
+   "id": "ak_km_8_2_falls_incinerator_falls",
+   "name": "KM 8.2 Falls (Incinerator Falls)",
+   "prev": {
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice.ak_south_klondike_highway.ak_km_8_2_falls_incinerator_falls"
+   }
+  },
+  {
+   "i": 487,
+   "type": "path",
+   "id": "ak_km_9_4_falls",
+   "name": "KM 9.4 Falls",
+   "prev": {
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice.ak_south_klondike_highway.ak_km_9_4_falls"
+   }
+  },
+  {
+   "i": 488,
+   "type": "path",
+   "id": "ak_pitch_fork_falls",
+   "name": "Pitch Fork Falls",
+   "prev": {
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice.ak_south_klondike_highway.ak_pitch_fork_falls"
+   }
+  },
+  {
+   "i": 489,
+   "type": "delete",
+   "id": "ak_skagway_ice",
+   "name": "Skagway Ice",
+   "prev": {
+    "parent_id": "ak_skagway",
+    "path": "usa.alaska.ak_southeastern_alaska_coastal_range.ak_skagway.ak_skagway_ice"
+   }
+  },
+  {
+   "i": 490,
+   "type": "reparent",
+   "id": "bc_kootenay_fsr",
+   "name": "Kootenay FSR",
+   "prev": {
+    "parent_id": "bc_east_kootenays_ice",
+    "path": "canada.bc.bc_kootenays.bc_east_kootenay.bc_east_kootenays_ice.bc_kootenay_fsr"
+   }
+  },
+  {
+   "i": 491,
+   "type": "delete",
+   "id": "bc_east_kootenays_ice",
+   "name": "East Kootenays Ice",
+   "prev": {
+    "parent_id": "bc_east_kootenay",
+    "path": "canada.bc.bc_kootenays.bc_east_kootenay.bc_east_kootenays_ice"
+   }
+  },
+  {
+   "i": 492,
+   "type": "reparent",
+   "id": "bc_highway_23n",
+   "name": "Highway 23N",
+   "prev": {
+    "parent_id": "bc_revelstoke_ice_mixed",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_highway_23n"
+   }
+  },
+  {
+   "i": 493,
+   "type": "path",
+   "id": "bc_dam_falls",
+   "name": "Dam Falls",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_highway_23n.bc_dam_falls"
+   }
+  },
+  {
+   "i": 494,
+   "type": "path",
+   "id": "bc_kokanee_falls",
+   "name": "Kokanee Falls",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_highway_23n.bc_kokanee_falls"
+   }
+  },
+  {
+   "i": 495,
+   "type": "path",
+   "id": "bc_waterworld_ice",
+   "name": "Waterworld Ice",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_highway_23n.bc_waterworld_ice"
+   }
+  },
+  {
+   "i": 496,
+   "type": "reparent",
+   "id": "bc_trans_canada_highway_east",
+   "name": "Trans Canada Highway (east)",
+   "prev": {
+    "parent_id": "bc_revelstoke_ice_mixed",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_trans_canada_highway_east"
+   }
+  },
+  {
+   "i": 497,
+   "type": "path",
+   "id": "bc_greeley_area",
+   "name": "Greeley Area",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_trans_canada_highway_east.bc_greeley_area"
+   }
+  },
+  {
+   "i": 498,
+   "type": "reparent",
+   "id": "bc_trans_canada_highway_west_ice",
+   "name": "Trans Canada Highway (west) Ice",
+   "prev": {
+    "parent_id": "bc_revelstoke_ice_mixed",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_trans_canada_highway_west_ice"
+   }
+  },
+  {
+   "i": 499,
+   "type": "path",
+   "id": "bc_blackfoot_area",
+   "name": "Blackfoot Area",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_trans_canada_highway_west_ice.bc_blackfoot_area"
+   }
+  },
+  {
+   "i": 500,
+   "type": "path",
+   "id": "bc_three_valley_gap",
+   "name": "Three Valley Gap",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_trans_canada_highway_west_ice.bc_three_valley_gap"
+   }
+  },
+  {
+   "i": 501,
+   "type": "path",
+   "id": "bc_victor_lake_and_clanwilliam_lake",
+   "name": "Victor Lake and Clanwilliam Lake",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_trans_canada_highway_west_ice.bc_victor_lake_and_clanwilliam_lake"
+   }
+  },
+  {
+   "i": 502,
+   "type": "path",
+   "id": "bc_westside_road",
+   "name": "Westside Road",
+   "prev": {
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed.bc_trans_canada_highway_west_ice.bc_westside_road"
+   }
+  },
+  {
+   "i": 503,
+   "type": "delete",
+   "id": "bc_revelstoke_ice_mixed",
+   "name": "Revelstoke Ice & Mixed",
+   "prev": {
+    "parent_id": "bc_revelstoke",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_revelstoke_ice_mixed"
+   }
+  },
+  {
+   "i": 504,
+   "type": "reparent",
+   "id": "ca_bard_harrington_wall",
+   "name": "Bard Harrington Wall",
+   "prev": {
+    "parent_id": "ca_lee_vining_ice_and_mixed",
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_bard_harrington_wall"
+   }
+  },
+  {
+   "i": 505,
+   "type": "reparent",
+   "id": "ca_chouinards_2",
+   "name": "Chouinards",
+   "prev": {
+    "parent_id": "ca_lee_vining_ice_and_mixed",
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_chouinards_2"
+   }
+  },
+  {
+   "i": 506,
+   "type": "reparent",
+   "id": "ca_heel_toe_wall_2",
+   "name": "Heel-Toe Wall",
+   "prev": {
+    "parent_id": "ca_lee_vining_ice_and_mixed",
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_heel_toe_wall_2"
+   }
+  },
+  {
+   "i": 507,
+   "type": "reparent",
+   "id": "ca_main_wall_26",
+   "name": "Main Wall",
+   "prev": {
+    "parent_id": "ca_lee_vining_ice_and_mixed",
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_main_wall_26"
+   }
+  },
+  {
+   "i": 508,
+   "type": "reparent",
+   "id": "ca_narrows_left_2",
+   "name": "Narrows - Left",
+   "prev": {
+    "parent_id": "ca_lee_vining_ice_and_mixed",
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_narrows_left_2"
+   }
+  },
+  {
+   "i": 509,
+   "type": "reparent",
+   "id": "ca_narrows_right_2",
+   "name": "Narrows - Right",
+   "prev": {
+    "parent_id": "ca_lee_vining_ice_and_mixed",
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_narrows_right_2"
+   }
+  },
+  {
+   "i": 510,
+   "type": "path",
+   "id": "ca_dark_colored_cliffs_2",
+   "name": "Dark-Colored Cliffs",
+   "prev": {
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_narrows_right_2.ca_dark_colored_cliffs_2"
+   }
+  },
+  {
+   "i": 511,
+   "type": "path",
+   "id": "ca_light_colored_cliffs",
+   "name": "Light-Colored Cliffs",
+   "prev": {
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_narrows_right_2.ca_light_colored_cliffs"
+   }
+  },
+  {
+   "i": 512,
+   "type": "path",
+   "id": "ca_lower_tier",
+   "name": "Lower Tier",
+   "prev": {
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_narrows_right_2.ca_light_colored_cliffs.ca_lower_tier"
+   }
+  },
+  {
+   "i": 513,
+   "type": "path",
+   "id": "ca_upper_tier_7",
+   "name": "Upper Tier",
+   "prev": {
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed.ca_narrows_right_2.ca_light_colored_cliffs.ca_upper_tier_7"
+   }
+  },
+  {
+   "i": 514,
+   "type": "delete",
+   "id": "ca_lee_vining_ice_and_mixed",
+   "name": "Lee Vining Ice and Mixed",
+   "prev": {
+    "parent_id": "ca_lee_vining_canyon_tioga_road",
+    "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_lee_vining_ice_and_mixed"
+   }
+  },
+  {
+   "i": 515,
+   "type": "reparent",
+   "id": "ca_roadside_ice_center_2",
+   "name": "Roadside Ice - Center",
+   "prev": {
+    "parent_id": "ca_roadside_ice_2",
+    "path": "usa.california.ca_sierra_eastside.ca_june_lake_area.ca_roadside_ice_2.ca_roadside_ice_center_2"
+   }
+  },
+  {
+   "i": 516,
+   "type": "reparent",
+   "id": "ca_roadside_ice_left_side_main_flow_2",
+   "name": "Roadside Ice - Left Side/Main Flow",
+   "prev": {
+    "parent_id": "ca_roadside_ice_2",
+    "path": "usa.california.ca_sierra_eastside.ca_june_lake_area.ca_roadside_ice_2.ca_roadside_ice_left_side_main_flow_2"
+   }
+  },
+  {
+   "i": 517,
+   "type": "delete",
+   "id": "ca_roadside_ice_2",
+   "name": "Roadside Ice",
+   "prev": {
+    "parent_id": "ca_june_lake_area",
+    "path": "usa.california.ca_sierra_eastside.ca_june_lake_area.ca_roadside_ice_2"
+   }
+  },
+  {
+   "i": 518,
+   "type": "reparent",
+   "id": "co_north_vail_non_booth_creek",
+   "name": "North Vail, non-Booth Creek",
+   "prev": {
+    "parent_id": "co_north_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_north_vail_ice.co_north_vail_non_booth_creek"
+   }
+  },
+  {
+   "i": 519,
+   "type": "reparent",
+   "id": "co_unknown_2",
+   "name": "Unknown",
+   "prev": {
+    "parent_id": "co_north_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_north_vail_ice.co_unknown_2"
+   }
+  },
+  {
+   "i": 520,
+   "type": "reparent",
+   "id": "co_vail_booth_creek",
+   "name": "Vail, Booth Creek",
+   "prev": {
+    "parent_id": "co_north_vail_ice",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_north_vail_ice.co_vail_booth_creek"
+   }
+  },
+  {
+   "i": 521,
+   "type": "delete",
+   "id": "co_north_vail_ice",
+   "name": "North Vail Ice",
+   "prev": {
+    "parent_id": "co_eagle_vail_minturn_red_cliff",
+    "path": "usa.colorado.co_eagle_vail_minturn_red_cliff.co_north_vail_ice"
+   }
+  },
+  {
+   "i": 522,
+   "type": "reparent",
+   "id": "id_campground_wall",
+   "name": "Campground Wall",
+   "prev": {
+    "parent_id": "id_southside_mixed",
+    "path": "usa.idaho.id_east_idaho.id_wolverine_canyon.id_southside_mixed.id_campground_wall"
+   }
+  },
+  {
+   "i": 523,
+   "type": "reparent",
+   "id": "id_the_sentinel",
+   "name": "The Sentinel",
+   "prev": {
+    "parent_id": "id_southside_mixed",
+    "path": "usa.idaho.id_east_idaho.id_wolverine_canyon.id_southside_mixed.id_the_sentinel"
+   }
+  },
+  {
+   "i": 524,
+   "type": "reparent",
+   "id": "id_tiny_giant_wall",
+   "name": "Tiny Giant Wall",
+   "prev": {
+    "parent_id": "id_southside_mixed",
+    "path": "usa.idaho.id_east_idaho.id_wolverine_canyon.id_southside_mixed.id_tiny_giant_wall"
+   }
+  },
+  {
+   "i": 525,
+   "type": "delete",
+   "id": "id_southside_mixed",
+   "name": "Southside Mixed",
+   "prev": {
+    "parent_id": "id_wolverine_canyon",
+    "path": "usa.idaho.id_east_idaho.id_wolverine_canyon.id_southside_mixed"
+   }
+  },
+  {
+   "i": 526,
+   "type": "reparent",
+   "id": "ma_fire_tower_mixed_wall",
+   "name": "Fire Tower Mixed Wall",
+   "prev": {
+    "parent_id": "ma_cape_ann_ice_and_mixed_climbing",
+    "path": "usa.massachusetts.ma_north_shore.ma_cape_ann.ma_cape_ann_ice_and_mixed_climbing.ma_fire_tower_mixed_wall"
+   }
+  },
+  {
+   "i": 527,
+   "type": "reparent",
+   "id": "ma_langsford_pond",
+   "name": "Langsford Pond",
+   "prev": {
+    "parent_id": "ma_cape_ann_ice_and_mixed_climbing",
+    "path": "usa.massachusetts.ma_north_shore.ma_cape_ann.ma_cape_ann_ice_and_mixed_climbing.ma_langsford_pond"
+   }
+  },
+  {
+   "i": 528,
+   "type": "reparent",
+   "id": "ma_under_down_under",
+   "name": "Under Down Under",
+   "prev": {
+    "parent_id": "ma_cape_ann_ice_and_mixed_climbing",
+    "path": "usa.massachusetts.ma_north_shore.ma_cape_ann.ma_cape_ann_ice_and_mixed_climbing.ma_under_down_under"
+   }
+  },
+  {
+   "i": 529,
+   "type": "delete",
+   "id": "ma_cape_ann_ice_and_mixed_climbing",
+   "name": "Cape Ann Ice and Mixed Climbing",
+   "prev": {
+    "parent_id": "ma_cape_ann",
+    "path": "usa.massachusetts.ma_north_shore.ma_cape_ann.ma_cape_ann_ice_and_mixed_climbing"
+   }
+  },
+  {
+   "i": 530,
+   "type": "reparent",
+   "id": "mi_hidden_beach",
+   "name": "Hidden Beach",
+   "prev": {
+    "parent_id": "mi_marquette_ice",
+    "path": "usa.michigan.mi_upper_peninsula.mi_marquette_and_central_up_roped.mi_marquette_ice.mi_hidden_beach"
+   }
+  },
+  {
+   "i": 531,
+   "type": "reparent",
+   "id": "mi_scratch_wall",
+   "name": "Scratch Wall",
+   "prev": {
+    "parent_id": "mi_marquette_ice",
+    "path": "usa.michigan.mi_upper_peninsula.mi_marquette_and_central_up_roped.mi_marquette_ice.mi_scratch_wall"
+   }
+  },
+  {
+   "i": 532,
+   "type": "delete",
+   "id": "mi_marquette_ice",
+   "name": "Marquette Ice",
+   "prev": {
+    "parent_id": "mi_marquette_and_central_up_roped",
+    "path": "usa.michigan.mi_upper_peninsula.mi_marquette_and_central_up_roped.mi_marquette_ice"
+   }
+  },
+  {
+   "i": 533,
+   "type": "reparent",
+   "id": "mt_approach_hike_ski_climbs",
+   "name": "Approach Hike/Ski Climbs",
+   "prev": {
+    "parent_id": "mt_granite_lake_area_ice",
+    "path": "usa.montana.mt_northwest_region.mt_cabinet_mountain_wilderness.mt_granite_lake_area_ice.mt_approach_hike_ski_climbs"
+   }
+  },
+  {
+   "i": 534,
+   "type": "reparent",
+   "id": "mt_beyond_thunderdome",
+   "name": "Beyond Thunderdome",
+   "prev": {
+    "parent_id": "mt_granite_lake_area_ice",
+    "path": "usa.montana.mt_northwest_region.mt_cabinet_mountain_wilderness.mt_granite_lake_area_ice.mt_beyond_thunderdome"
+   }
+  },
+  {
+   "i": 535,
+   "type": "reparent",
+   "id": "mt_the_thunderdome",
+   "name": "The Thunderdome",
+   "prev": {
+    "parent_id": "mt_granite_lake_area_ice",
+    "path": "usa.montana.mt_northwest_region.mt_cabinet_mountain_wilderness.mt_granite_lake_area_ice.mt_the_thunderdome"
+   }
+  },
+  {
+   "i": 536,
+   "type": "reparent",
+   "id": "mt_three_tiers",
+   "name": "Three Tiers",
+   "prev": {
+    "parent_id": "mt_granite_lake_area_ice",
+    "path": "usa.montana.mt_northwest_region.mt_cabinet_mountain_wilderness.mt_granite_lake_area_ice.mt_three_tiers"
+   }
+  },
+  {
+   "i": 537,
+   "type": "delete",
+   "id": "mt_granite_lake_area_ice",
+   "name": "Granite Lake Area - Ice",
+   "prev": {
+    "parent_id": "mt_cabinet_mountain_wilderness",
+    "path": "usa.montana.mt_northwest_region.mt_cabinet_mountain_wilderness.mt_granite_lake_area_ice"
+   }
+  },
+  {
+   "i": 538,
+   "type": "reparent",
+   "id": "nl_beachy_bell",
+   "name": "Beachy Bell",
+   "prev": {
+    "parent_id": "nl_bell_island_ice",
+    "path": "canada.nl.nl_newfoundland.nl_avalon_peninsula.nl_bell_island_ice.nl_beachy_bell"
+   }
+  },
+  {
+   "i": 539,
+   "type": "reparent",
+   "id": "nl_dick_s_delight",
+   "name": "Dick's Delight",
+   "prev": {
+    "parent_id": "nl_bell_island_ice",
+    "path": "canada.nl.nl_newfoundland.nl_avalon_peninsula.nl_bell_island_ice.nl_dick_s_delight"
+   }
+  },
+  {
+   "i": 540,
+   "type": "reparent",
+   "id": "nl_dominion_pier",
+   "name": "Dominion Pier",
+   "prev": {
+    "parent_id": "nl_bell_island_ice",
+    "path": "canada.nl.nl_newfoundland.nl_avalon_peninsula.nl_bell_island_ice.nl_dominion_pier"
+   }
+  },
+  {
+   "i": 541,
+   "type": "reparent",
+   "id": "nl_grebes_nest",
+   "name": "Grebes Nest",
+   "prev": {
+    "parent_id": "nl_bell_island_ice",
+    "path": "canada.nl.nl_newfoundland.nl_avalon_peninsula.nl_bell_island_ice.nl_grebes_nest"
+   }
+  },
+  {
+   "i": 542,
+   "type": "delete",
+   "id": "nl_bell_island_ice",
+   "name": "Bell Island (ice)",
+   "prev": {
+    "parent_id": "nl_avalon_peninsula",
+    "path": "canada.nl.nl_newfoundland.nl_avalon_peninsula.nl_bell_island_ice"
+   }
+  },
+  {
+   "i": 543,
+   "type": "reparent",
+   "id": "on_main_wall",
+   "name": "Main Wall",
+   "prev": {
+    "parent_id": "on_calabogie_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_calabogie_ice.on_main_wall"
+   }
+  },
+  {
+   "i": 544,
+   "type": "delete",
+   "id": "on_calabogie_ice",
+   "name": "Calabogie ICE",
+   "prev": {
+    "parent_id": "on_east_ontario_ottawa_to_toronto",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_calabogie_ice"
+   }
+  },
+  {
+   "i": 545,
+   "type": "reparent",
+   "id": "on_bear_lake",
+   "name": "Bear Lake",
+   "prev": {
+    "parent_id": "on_haliburton_highlands_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_haliburton_highlands_ice.on_bear_lake"
+   }
+  },
+  {
+   "i": 546,
+   "type": "reparent",
+   "id": "on_kushog_lake_ice",
+   "name": "Kushog Lake (ICE)",
+   "prev": {
+    "parent_id": "on_haliburton_highlands_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_haliburton_highlands_ice.on_kushog_lake_ice"
+   }
+  },
+  {
+   "i": 547,
+   "type": "reparent",
+   "id": "on_livingstone_lake",
+   "name": "Livingstone Lake",
+   "prev": {
+    "parent_id": "on_haliburton_highlands_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_haliburton_highlands_ice.on_livingstone_lake"
+   }
+  },
+  {
+   "i": 548,
+   "type": "reparent",
+   "id": "on_oxtongue_lake",
+   "name": "Oxtongue Lake",
+   "prev": {
+    "parent_id": "on_haliburton_highlands_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_haliburton_highlands_ice.on_oxtongue_lake"
+   }
+  },
+  {
+   "i": 549,
+   "type": "reparent",
+   "id": "on_raven_lake",
+   "name": "Raven Lake",
+   "prev": {
+    "parent_id": "on_haliburton_highlands_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_haliburton_highlands_ice.on_raven_lake"
+   }
+  },
+  {
+   "i": 550,
+   "type": "delete",
+   "id": "on_haliburton_highlands_ice",
+   "name": "Haliburton Highlands (ICE)",
+   "prev": {
+    "parent_id": "on_east_ontario_ottawa_to_toronto",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_haliburton_highlands_ice"
+   }
+  },
+  {
+   "i": 551,
+   "type": "reparent",
+   "id": "on_getting_oriented_area",
+   "name": "Getting Oriented Area",
+   "prev": {
+    "parent_id": "on_kama_bay_lake_superior_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_kama_bay_lake_superior_ice_and_mixed.on_getting_oriented_area"
+   }
+  },
+  {
+   "i": 552,
+   "type": "reparent",
+   "id": "on_icebreakers_area",
+   "name": "Icebreakers Area",
+   "prev": {
+    "parent_id": "on_kama_bay_lake_superior_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_kama_bay_lake_superior_ice_and_mixed.on_icebreakers_area"
+   }
+  },
+  {
+   "i": 553,
+   "type": "reparent",
+   "id": "on_jurassic_park",
+   "name": "Jurassic Park",
+   "prev": {
+    "parent_id": "on_kama_bay_lake_superior_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_kama_bay_lake_superior_ice_and_mixed.on_jurassic_park"
+   }
+  },
+  {
+   "i": 554,
+   "type": "reparent",
+   "id": "on_mazukama_falls_aka_powerline_falls",
+   "name": "Mazukama Falls (aka Powerline Falls)",
+   "prev": {
+    "parent_id": "on_kama_bay_lake_superior_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_kama_bay_lake_superior_ice_and_mixed.on_mazukama_falls_aka_powerline_falls"
+   }
+  },
+  {
+   "i": 555,
+   "type": "delete",
+   "id": "on_kama_bay_lake_superior_ice_and_mixed",
+   "name": "Kama Bay, Lake Superior, Ice and Mixed",
+   "prev": {
+    "parent_id": "on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_kama_bay_lake_superior_ice_and_mixed"
+   }
+  },
+  {
+   "i": 556,
+   "type": "reparent",
+   "id": "on_black_cat_hill",
+   "name": "Black Cat Hill",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_black_cat_hill"
+   }
+  },
+  {
+   "i": 557,
+   "type": "reparent",
+   "id": "on_bow_lake_ice",
+   "name": "Bow Lake (ICE)",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_bow_lake_ice"
+   }
+  },
+  {
+   "i": 558,
+   "type": "reparent",
+   "id": "on_diamond_lake_ice",
+   "name": "Diamond Lake (ICE)",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_diamond_lake_ice"
+   }
+  },
+  {
+   "i": 559,
+   "type": "reparent",
+   "id": "on_eagle_s_nest_ice",
+   "name": "Eagle's Nest (ICE)",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_eagle_s_nest_ice"
+   }
+  },
+  {
+   "i": 560,
+   "type": "reparent",
+   "id": "on_hidden_gems_ice",
+   "name": "Hidden Gems (ICE)",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_hidden_gems_ice"
+   }
+  },
+  {
+   "i": 561,
+   "type": "reparent",
+   "id": "on_kluch_lookout",
+   "name": "Kluch Lookout",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_kluch_lookout"
+   }
+  },
+  {
+   "i": 562,
+   "type": "reparent",
+   "id": "on_mccauley_lake_ice",
+   "name": "McCauley Lake (ICE)",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_mccauley_lake_ice"
+   }
+  },
+  {
+   "i": 563,
+   "type": "reparent",
+   "id": "on_papineau_lake_ice",
+   "name": "Papineau Lake (ICE)",
+   "prev": {
+    "parent_id": "on_madawaska_valley_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_papineau_lake_ice"
+   }
+  },
+  {
+   "i": 564,
+   "type": "path",
+   "id": "on_lakeside",
+   "name": "Lakeside",
+   "prev": {
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_papineau_lake_ice.on_lakeside"
+   }
+  },
+  {
+   "i": 565,
+   "type": "path",
+   "id": "on_roadside",
+   "name": "Roadside",
+   "prev": {
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice.on_papineau_lake_ice.on_roadside"
+   }
+  },
+  {
+   "i": 566,
+   "type": "delete",
+   "id": "on_madawaska_valley_ice",
+   "name": "Madawaska Valley (ICE)",
+   "prev": {
+    "parent_id": "on_east_ontario_ottawa_to_toronto",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_madawaska_valley_ice"
+   }
+  },
+  {
+   "i": 567,
+   "type": "reparent",
+   "id": "on_lake_rosseau_ice",
+   "name": "Lake Rosseau (ICE)",
+   "prev": {
+    "parent_id": "on_muskoka_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa.on_muskoka_ice.on_lake_rosseau_ice"
+   }
+  },
+  {
+   "i": 568,
+   "type": "reparent",
+   "id": "on_mill_lake_ice",
+   "name": "Mill Lake (ICE)",
+   "prev": {
+    "parent_id": "on_muskoka_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa.on_muskoka_ice.on_mill_lake_ice"
+   }
+  },
+  {
+   "i": 569,
+   "type": "reparent",
+   "id": "on_the_hangar",
+   "name": "The Hangar",
+   "prev": {
+    "parent_id": "on_muskoka_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa.on_muskoka_ice.on_the_hangar"
+   }
+  },
+  {
+   "i": 570,
+   "type": "delete",
+   "id": "on_muskoka_ice",
+   "name": "Muskoka (ICE)",
+   "prev": {
+    "parent_id": "on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa.on_muskoka_ice"
+   }
+  },
+  {
+   "i": 571,
+   "type": "reparent",
+   "id": "on_restoule_ice",
+   "name": "Restoule (ICE)",
+   "prev": {
+    "parent_id": "on_near_north_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa.on_near_north_ice.on_restoule_ice"
+   }
+  },
+  {
+   "i": 572,
+   "type": "delete",
+   "id": "on_near_north_ice",
+   "name": "Near North (ICE)",
+   "prev": {
+    "parent_id": "on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_central_ontario_toronto_region_and_west_of_hwy_11_to_sa.on_near_north_ice"
+   }
+  },
+  {
+   "i": 573,
+   "type": "reparent",
+   "id": "on_1_south_end_parallax_mellow_yellow_area",
+   "name": "South End, Parallax - Mellow Yellow Area",
+   "prev": {
+    "parent_id": "on_orient_bay_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_orient_bay_ice_and_mixed.on_1_south_end_parallax_mellow_yellow_area"
+   }
+  },
+  {
+   "i": 574,
+   "type": "reparent",
+   "id": "on_2_pumping_station_wall_of_doom_gomar_glace_eclatante",
+   "name": "Pumping Station; Wall of Doom, Gomar, Glace Eclatante",
+   "prev": {
+    "parent_id": "on_orient_bay_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_orient_bay_ice_and_mixed.on_2_pumping_station_wall_of_doom_gomar_glace_eclatante"
+   }
+  },
+  {
+   "i": 575,
+   "type": "reparent",
+   "id": "on_3_ice_palace",
+   "name": "Ice Palace",
+   "prev": {
+    "parent_id": "on_orient_bay_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_orient_bay_ice_and_mixed.on_3_ice_palace"
+   }
+  },
+  {
+   "i": 576,
+   "type": "reparent",
+   "id": "on_4_reflection_wall_amy_r_area",
+   "name": "Reflection Wall/Amy R Area",
+   "prev": {
+    "parent_id": "on_orient_bay_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_orient_bay_ice_and_mixed.on_4_reflection_wall_amy_r_area"
+   }
+  },
+  {
+   "i": 577,
+   "type": "reparent",
+   "id": "on_5_cascade_falls_obsession_area",
+   "name": "Cascade Falls/Obsession Area",
+   "prev": {
+    "parent_id": "on_orient_bay_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_orient_bay_ice_and_mixed.on_5_cascade_falls_obsession_area"
+   }
+  },
+  {
+   "i": 578,
+   "type": "reparent",
+   "id": "on_6_north_end_compulsion_andromeda_weeps_area",
+   "name": "North End, Compulsion-Andromeda Weeps Area",
+   "prev": {
+    "parent_id": "on_orient_bay_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_orient_bay_ice_and_mixed.on_6_north_end_compulsion_andromeda_weeps_area"
+   }
+  },
+  {
+   "i": 579,
+   "type": "delete",
+   "id": "on_orient_bay_ice_and_mixed",
+   "name": "Orient Bay Ice and Mixed",
+   "prev": {
+    "parent_id": "on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_orient_bay_ice_and_mixed"
+   }
+  },
+  {
+   "i": 580,
+   "type": "reparent",
+   "id": "on_lost_falls_ice_area",
+   "name": "Lost Falls Ice Area",
+   "prev": {
+    "parent_id": "on_thunder_bay_region_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_thunder_bay_region_ice_and_mixed.on_lost_falls_ice_area"
+   }
+  },
+  {
+   "i": 581,
+   "type": "reparent",
+   "id": "on_mount_mcrae_ice_and_mixed",
+   "name": "Mount McRae Ice and Mixed",
+   "prev": {
+    "parent_id": "on_thunder_bay_region_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_thunder_bay_region_ice_and_mixed.on_mount_mcrae_ice_and_mixed"
+   }
+  },
+  {
+   "i": 582,
+   "type": "reparent",
+   "id": "on_thunder_bay_region_ice_and_mixed_5817",
+   "name": "Thunder Bay Region Ice and Mixed Routes",
+   "prev": {
+    "parent_id": "on_thunder_bay_region_ice_and_mixed",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_thunder_bay_region_ice_and_mixed.on_thunder_bay_region_ice_and_mixed_5817"
+   }
+  },
+  {
+   "i": 583,
+   "type": "delete",
+   "id": "on_thunder_bay_region_ice_and_mixed",
+   "name": "Thunder Bay Region Ice and Mixed",
+   "prev": {
+    "parent_id": "on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a",
+    "path": "canada.on.on_ontario_north_bouldering_and_rock.on_lake_superior_w_marathon_to_thunder_bay_includes_kama_a.on_thunder_bay_region_ice_and_mixed"
+   }
+  },
+  {
+   "i": 584,
+   "type": "reparent",
+   "id": "pa_dingmans_falls",
+   "name": "Dingmans Falls",
+   "prev": {
+    "parent_id": "pa_dwg_ice",
+    "path": "usa.pennsylvania.pa_northeast_ridges_and_valleys.pa_delaware_water_gap_pa.pa_dwg_ice.pa_dingmans_falls"
+   }
+  },
+  {
+   "i": 585,
+   "type": "reparent",
+   "id": "pa_highway_29_gully_s",
+   "name": "Highway 29 Gully's",
+   "prev": {
+    "parent_id": "pa_dwg_ice",
+    "path": "usa.pennsylvania.pa_northeast_ridges_and_valleys.pa_delaware_water_gap_pa.pa_dwg_ice.pa_highway_29_gully_s"
+   }
+  },
+  {
+   "i": 586,
+   "type": "reparent",
+   "id": "pa_hornbecks_creek",
+   "name": "Hornbecks Creek",
+   "prev": {
+    "parent_id": "pa_dwg_ice",
+    "path": "usa.pennsylvania.pa_northeast_ridges_and_valleys.pa_delaware_water_gap_pa.pa_dwg_ice.pa_hornbecks_creek"
+   }
+  },
+  {
+   "i": 587,
+   "type": "reparent",
+   "id": "pa_silverthread_falls",
+   "name": "Silverthread Falls",
+   "prev": {
+    "parent_id": "pa_dwg_ice",
+    "path": "usa.pennsylvania.pa_northeast_ridges_and_valleys.pa_delaware_water_gap_pa.pa_dwg_ice.pa_silverthread_falls"
+   }
+  },
+  {
+   "i": 588,
+   "type": "reparent",
+   "id": "pa_slateford_falls",
+   "name": "Slateford Falls",
+   "prev": {
+    "parent_id": "pa_dwg_ice",
+    "path": "usa.pennsylvania.pa_northeast_ridges_and_valleys.pa_delaware_water_gap_pa.pa_dwg_ice.pa_slateford_falls"
+   }
+  },
+  {
+   "i": 589,
+   "type": "delete",
+   "id": "pa_dwg_ice",
+   "name": "DWG Ice",
+   "prev": {
+    "parent_id": "pa_delaware_water_gap_pa",
+    "path": "usa.pennsylvania.pa_northeast_ridges_and_valleys.pa_delaware_water_gap_pa.pa_dwg_ice"
+   }
+  },
+  {
+   "i": 590,
+   "type": "reparent",
+   "id": "ut_main_canyon_road_ice",
+   "name": "Main Canyon Road Ice",
+   "prev": {
+    "parent_id": "ut_maple_canyon_ice",
+    "path": "usa.utah.ut_central_utah.ut_maple_canyon.ut_maple_canyon_ice.ut_main_canyon_road_ice"
+   }
+  },
+  {
+   "i": 591,
+   "type": "reparent",
+   "id": "ut_the_left_hand_fork_ice_climbs",
+   "name": "The Left Hand Fork Ice Climbs",
+   "prev": {
+    "parent_id": "ut_maple_canyon_ice",
+    "path": "usa.utah.ut_central_utah.ut_maple_canyon.ut_maple_canyon_ice.ut_the_left_hand_fork_ice_climbs"
+   }
+  },
+  {
+   "i": 592,
+   "type": "reparent",
+   "id": "ut_the_right_hand_fork_ice_climbs",
+   "name": "The Right Hand Fork Ice Climbs",
+   "prev": {
+    "parent_id": "ut_maple_canyon_ice",
+    "path": "usa.utah.ut_central_utah.ut_maple_canyon.ut_maple_canyon_ice.ut_the_right_hand_fork_ice_climbs"
+   }
+  },
+  {
+   "i": 593,
+   "type": "reparent",
+   "id": "ut_winter_bumper_wall",
+   "name": "Winter Bumper Wall",
+   "prev": {
+    "parent_id": "ut_maple_canyon_ice",
+    "path": "usa.utah.ut_central_utah.ut_maple_canyon.ut_maple_canyon_ice.ut_winter_bumper_wall"
+   }
+  },
+  {
+   "i": 594,
+   "type": "delete",
+   "id": "ut_maple_canyon_ice",
+   "name": "Maple Canyon Ice",
+   "prev": {
+    "parent_id": "ut_maple_canyon",
+    "path": "usa.utah.ut_central_utah.ut_maple_canyon.ut_maple_canyon_ice"
+   }
+  },
+  {
+   "i": 595,
+   "type": "reparent",
+   "id": "ut_cataract_gorge_ice",
+   "name": "Cataract Gorge Ice",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_cataract_gorge_ice"
+   }
+  },
+  {
+   "i": 596,
+   "type": "reparent",
+   "id": "ut_cobblerest_ice_mixed",
+   "name": "Cobblerest Ice & Mixed",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_cobblerest_ice_mixed"
+   }
+  },
+  {
+   "i": 597,
+   "type": "reparent",
+   "id": "ut_duchesne_river_ice",
+   "name": "Duchesne River Ice",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_duchesne_river_ice"
+   }
+  },
+  {
+   "i": 598,
+   "type": "reparent",
+   "id": "ut_middle_fork_weber_river_ice",
+   "name": "Middle Fork Weber River Ice",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_middle_fork_weber_river_ice"
+   }
+  },
+  {
+   "i": 599,
+   "type": "path",
+   "id": "ut_adax_zone_ice",
+   "name": "Adax Zone Ice",
+   "prev": {
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_middle_fork_weber_river_ice.ut_adax_zone_ice"
+   }
+  },
+  {
+   "i": 600,
+   "type": "path",
+   "id": "ut_middle_fork_weber_river_ice_2",
+   "name": "Middle Fork Weber River Ice",
+   "prev": {
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_middle_fork_weber_river_ice.ut_middle_fork_weber_river_ice_2"
+   }
+  },
+  {
+   "i": 601,
+   "type": "reparent",
+   "id": "ut_mount_agassiz_ice",
+   "name": "Mount Agassiz Ice",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_mount_agassiz_ice"
+   }
+  },
+  {
+   "i": 602,
+   "type": "reparent",
+   "id": "ut_notch_mt_ibantik_lk_ice_mixed",
+   "name": "Notch Mt./Ibantik Lk. Ice & Mixed",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_notch_mt_ibantik_lk_ice_mixed"
+   }
+  },
+  {
+   "i": 603,
+   "type": "reparent",
+   "id": "ut_ostler_peak_ice",
+   "name": "Ostler Peak Ice",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_ostler_peak_ice"
+   }
+  },
+  {
+   "i": 604,
+   "type": "reparent",
+   "id": "ut_portal_wall_ice",
+   "name": "Portal Wall Ice",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_portal_wall_ice"
+   }
+  },
+  {
+   "i": 605,
+   "type": "reparent",
+   "id": "ut_reids_peak_ice",
+   "name": "Reids Peak Ice",
+   "prev": {
+    "parent_id": "ut_uintas_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice.ut_reids_peak_ice"
+   }
+  },
+  {
+   "i": 606,
+   "type": "delete",
+   "id": "ut_uintas_ice",
+   "name": "Uintas ICE",
+   "prev": {
+    "parent_id": "ut_uinta_mountains",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_uintas_ice"
+   }
+  },
+  {
+   "i": 607,
+   "type": "reparent",
+   "id": "wa_fuggs_falls_2",
+   "name": "Fuggs Falls",
+   "prev": {
+    "parent_id": "wa_ice_climbing_in_winter_2",
+    "path": "usa.washington.wa_central_region.wa_frenchman_coulee_aka_vantage.wa_ice_climbing_in_winter_2.wa_fuggs_falls_2"
+   }
+  },
+  {
+   "i": 608,
+   "type": "delete",
+   "id": "wa_ice_climbing_in_winter_2",
+   "name": "Ice climbing in Winter",
+   "prev": {
+    "parent_id": "wa_frenchman_coulee_aka_vantage",
+    "path": "usa.washington.wa_central_region.wa_frenchman_coulee_aka_vantage.wa_ice_climbing_in_winter_2"
+   }
+  },
+  {
+   "i": 609,
+   "type": "reparent",
+   "id": "wa_black_iron_slab",
+   "name": "Black Iron Slab",
+   "prev": {
+    "parent_id": "wa_keechelus_lake_ice",
+    "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_keechelus_lake_ice.wa_black_iron_slab"
+   }
+  },
+  {
+   "i": 610,
+   "type": "reparent",
+   "id": "wa_few_fish_crag",
+   "name": "Few Fish Crag",
+   "prev": {
+    "parent_id": "wa_keechelus_lake_ice",
+    "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_keechelus_lake_ice.wa_few_fish_crag"
+   }
+  },
+  {
+   "i": 611,
+   "type": "reparent",
+   "id": "wa_keechelus_lake_ice_climbs",
+   "name": "Keechelus Lake Ice Ice Climbs",
+   "prev": {
+    "parent_id": "wa_keechelus_lake_ice",
+    "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_keechelus_lake_ice.wa_keechelus_lake_ice_climbs"
+   }
+  },
+  {
+   "i": 612,
+   "type": "delete",
+   "id": "wa_keechelus_lake_ice",
+   "name": "Keechelus Lake Ice",
+   "prev": {
+    "parent_id": "wa_snoqualmie_pass_area",
+    "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_keechelus_lake_ice"
+   }
+  },
+  {
+   "i": 613,
+   "type": "reparent",
+   "id": "wi_northern_slab",
+   "name": "Northern Slab",
+   "prev": {
+    "parent_id": "wi_dickeyville_ice",
+    "path": "usa.wisconsin.wi_south.wi_dickeyville_ice.wi_northern_slab"
+   }
+  },
+  {
+   "i": 614,
+   "type": "reparent",
+   "id": "wi_southern_flows",
+   "name": "Southern Flows",
+   "prev": {
+    "parent_id": "wi_dickeyville_ice",
+    "path": "usa.wisconsin.wi_south.wi_dickeyville_ice.wi_southern_flows"
+   }
+  },
+  {
+   "i": 615,
+   "type": "delete",
+   "id": "wi_dickeyville_ice",
+   "name": "Dickeyville Ice",
+   "prev": {
+    "parent_id": "wi_south",
+    "path": "usa.wisconsin.wi_south.wi_dickeyville_ice"
+   }
+  },
+  {
+   "i": 616,
+   "type": "reparent",
+   "id": "wi_deer_cove_ice",
+   "name": "Deer Cove Ice",
+   "prev": {
+    "parent_id": "wi_g_dodge_ice",
+    "path": "usa.wisconsin.wi_south.wi_governor_dodge_state_park.wi_g_dodge_ice.wi_deer_cove_ice"
+   }
+  },
+  {
+   "i": 617,
+   "type": "reparent",
+   "id": "wi_stephens_falls",
+   "name": "Stephens Falls",
+   "prev": {
+    "parent_id": "wi_g_dodge_ice",
+    "path": "usa.wisconsin.wi_south.wi_governor_dodge_state_park.wi_g_dodge_ice.wi_stephens_falls"
+   }
+  },
+  {
+   "i": 618,
+   "type": "delete",
+   "id": "wi_g_dodge_ice",
+   "name": "G Dodge Ice",
+   "prev": {
+    "parent_id": "wi_governor_dodge_state_park",
+    "path": "usa.wisconsin.wi_south.wi_governor_dodge_state_park.wi_g_dodge_ice"
+   }
+  },
+  {
+   "i": 619,
+   "type": "reparent",
+   "id": "wi_county_highway_x_gullies_2",
+   "name": "County Highway X Gullies",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park_ice_2",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_county_highway_x_gullies_2"
+   }
+  },
+  {
+   "i": 620,
+   "type": "reparent",
+   "id": "wi_long_valley_2",
+   "name": "Long Valley",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park_ice_2",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_long_valley_2"
+   }
+  },
+  {
+   "i": 621,
+   "type": "path",
+   "id": "wi_pictured_rock_cave",
+   "name": "Pictured Rock Cave",
+   "prev": {
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_long_valley_2.wi_pictured_rock_cave"
+   }
+  },
+  {
+   "i": 622,
+   "type": "reparent",
+   "id": "wi_mississippi_ridge_north",
+   "name": "Mississippi Ridge North",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park_ice_2",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_mississippi_ridge_north"
+   }
+  },
+  {
+   "i": 623,
+   "type": "reparent",
+   "id": "wi_mississippi_ridge_south_main_flow_ice_2",
+   "name": "Mississippi Ridge South (Main Flow) Ice",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park_ice_2",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_mississippi_ridge_south_main_flow_ice_2"
+   }
+  },
+  {
+   "i": 624,
+   "type": "reparent",
+   "id": "wi_sand_cave_trail_ice",
+   "name": "Sand Cave Trail Ice",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park_ice_2",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_sand_cave_trail_ice"
+   }
+  },
+  {
+   "i": 625,
+   "type": "path",
+   "id": "wi_big_sand_cave",
+   "name": "Big Sand Cave",
+   "prev": {
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_sand_cave_trail_ice.wi_big_sand_cave"
+   }
+  },
+  {
+   "i": 626,
+   "type": "path",
+   "id": "wi_koi_no_yokan",
+   "name": "Koi No Yokan",
+   "prev": {
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_sand_cave_trail_ice.wi_koi_no_yokan"
+   }
+  },
+  {
+   "i": 627,
+   "type": "path",
+   "id": "wi_sand_cave_bridge",
+   "name": "Sand Cave Bridge",
+   "prev": {
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_sand_cave_trail_ice.wi_sand_cave_bridge"
+   }
+  },
+  {
+   "i": 628,
+   "type": "reparent",
+   "id": "wi_spook_hill_gully_2",
+   "name": "Spook Hill Gully",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park_ice_2",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_spook_hill_gully_2"
+   }
+  },
+  {
+   "i": 629,
+   "type": "reparent",
+   "id": "wi_the_quarry",
+   "name": "The Quarry",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park_ice_2",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2.wi_the_quarry"
+   }
+  },
+  {
+   "i": 630,
+   "type": "delete",
+   "id": "wi_wyalusing_state_park_ice_2",
+   "name": "Wyalusing State Park Ice",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_wyalusing_state_park_ice_2"
+   }
+  },
+  {
+   "i": 631,
+   "type": "reparent",
+   "id": "bc_blackfoot_area",
+   "name": "Blackfoot Area",
+   "prev": {
+    "parent_id": "bc_trans_canada_highway_west_ice",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_trans_canada_highway_west_ice.bc_blackfoot_area"
+   }
+  },
+  {
+   "i": 632,
+   "type": "reparent",
+   "id": "bc_three_valley_gap",
+   "name": "Three Valley Gap",
+   "prev": {
+    "parent_id": "bc_trans_canada_highway_west_ice",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_trans_canada_highway_west_ice.bc_three_valley_gap"
+   }
+  },
+  {
+   "i": 633,
+   "type": "reparent",
+   "id": "bc_victor_lake_and_clanwilliam_lake",
+   "name": "Victor Lake and Clanwilliam Lake",
+   "prev": {
+    "parent_id": "bc_trans_canada_highway_west_ice",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_trans_canada_highway_west_ice.bc_victor_lake_and_clanwilliam_lake"
+   }
+  },
+  {
+   "i": 634,
+   "type": "reparent",
+   "id": "bc_westside_road",
+   "name": "Westside Road",
+   "prev": {
+    "parent_id": "bc_trans_canada_highway_west_ice",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_trans_canada_highway_west_ice.bc_westside_road"
+   }
+  },
+  {
+   "i": 635,
+   "type": "delete",
+   "id": "bc_trans_canada_highway_west_ice",
+   "name": "Trans Canada Highway (west) Ice",
+   "prev": {
+    "parent_id": "bc_revelstoke",
+    "path": "canada.bc.bc_columbia_shushwap.bc_revelstoke.bc_trans_canada_highway_west_ice"
+   }
+  },
+  {
+   "i": 636,
+   "type": "reparent",
+   "id": "co_east_buttress_3",
+   "name": "East Buttress",
+   "prev": {
+    "parent_id": "co_hallett_peak_ice_mixed_snow",
+    "path": "usa.colorado.co_rmnp_rock.co_bear_lake_trailheads.co_emerald_lake_tyndall_gorge.co_hallett_peak_ice_mixed_snow.co_east_buttress_3"
+   }
+  },
+  {
+   "i": 637,
+   "type": "reparent",
+   "id": "co_ne_buttress_hallett_peak_mixed_ice",
+   "name": "NE Buttress Hallett Peak - mixed/ice",
+   "prev": {
+    "parent_id": "co_hallett_peak_ice_mixed_snow",
+    "path": "usa.colorado.co_rmnp_rock.co_bear_lake_trailheads.co_emerald_lake_tyndall_gorge.co_hallett_peak_ice_mixed_snow.co_ne_buttress_hallett_peak_mixed_ice"
+   }
+  },
+  {
+   "i": 638,
+   "type": "delete",
+   "id": "co_hallett_peak_ice_mixed_snow",
+   "name": "Hallett Peak - ice/mixed/snow",
+   "prev": {
+    "parent_id": "co_emerald_lake_tyndall_gorge",
+    "path": "usa.colorado.co_rmnp_rock.co_bear_lake_trailheads.co_emerald_lake_tyndall_gorge.co_hallett_peak_ice_mixed_snow"
+   }
+  },
+  {
+   "i": 639,
+   "type": "reparent",
+   "id": "on_lakeside",
+   "name": "Lakeside",
+   "prev": {
+    "parent_id": "on_papineau_lake_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_papineau_lake_ice.on_lakeside"
+   }
+  },
+  {
+   "i": 640,
+   "type": "reparent",
+   "id": "on_roadside",
+   "name": "Roadside",
+   "prev": {
+    "parent_id": "on_papineau_lake_ice",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_papineau_lake_ice.on_roadside"
+   }
+  },
+  {
+   "i": 641,
+   "type": "delete",
+   "id": "on_papineau_lake_ice",
+   "name": "Papineau Lake (ICE)",
+   "prev": {
+    "parent_id": "on_east_ontario_ottawa_to_toronto",
+    "path": "canada.on.on_ontario_south_bouldering_and_rock.on_east_ontario_ottawa_to_toronto.on_papineau_lake_ice"
+   }
+  },
+  {
+   "i": 642,
+   "type": "reparent",
+   "id": "ut_adax_zone_ice",
+   "name": "Adax Zone Ice",
+   "prev": {
+    "parent_id": "ut_middle_fork_weber_river_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_middle_fork_weber_river_ice.ut_adax_zone_ice"
+   }
+  },
+  {
+   "i": 643,
+   "type": "reparent",
+   "id": "ut_middle_fork_weber_river_ice_2",
+   "name": "Middle Fork Weber River Ice",
+   "prev": {
+    "parent_id": "ut_middle_fork_weber_river_ice",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_middle_fork_weber_river_ice.ut_middle_fork_weber_river_ice_2"
+   }
+  },
+  {
+   "i": 644,
+   "type": "delete",
+   "id": "ut_middle_fork_weber_river_ice",
+   "name": "Middle Fork Weber River Ice",
+   "prev": {
+    "parent_id": "ut_uinta_mountains",
+    "path": "usa.utah.ut_northeast_utah.ut_uinta_mountains.ut_middle_fork_weber_river_ice"
+   }
+  },
+  {
+   "i": 645,
+   "type": "reparent",
+   "id": "ut_bridal_veil_falls_area",
+   "name": "Bridal Veil Falls Area",
+   "prev": {
+    "parent_id": "ut_provo_canyon_ice",
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_bridal_veil_falls_area"
+   }
+  },
+  {
+   "i": 646,
+   "type": "path",
+   "id": "ut_lower_bridel_veil_falls",
+   "name": "Lower Bridel Veil Falls",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_bridal_veil_falls_area.ut_lower_bridel_veil_falls"
+   }
+  },
+  {
+   "i": 647,
+   "type": "path",
+   "id": "ut_upper_bridal_veil_falls",
+   "name": "Upper Bridal Veil Falls",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_bridal_veil_falls_area.ut_upper_bridal_veil_falls"
+   }
+  },
+  {
+   "i": 648,
+   "type": "path",
+   "id": "ut_voodoo_lounge",
+   "name": "Voodoo Lounge",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_bridal_veil_falls_area.ut_voodoo_lounge"
+   }
+  },
+  {
+   "i": 649,
+   "type": "reparent",
+   "id": "ut_fitness_den",
+   "name": "Fitness Den",
+   "prev": {
+    "parent_id": "ut_provo_canyon_ice",
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_fitness_den"
+   }
+  },
+  {
+   "i": 650,
+   "type": "reparent",
+   "id": "ut_provo_other_areas",
+   "name": "Provo other areas",
+   "prev": {
+    "parent_id": "ut_provo_canyon_ice",
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_provo_other_areas"
+   }
+  },
+  {
+   "i": 651,
+   "type": "reparent",
+   "id": "ut_stairway_to_heaven",
+   "name": "Stairway to Heaven",
+   "prev": {
+    "parent_id": "ut_provo_canyon_ice",
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_stairway_to_heaven"
+   }
+  },
+  {
+   "i": 652,
+   "type": "path",
+   "id": "ut_2nd_tier_climbs",
+   "name": "2nd Tier Climbs",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_stairway_to_heaven.ut_2nd_tier_climbs"
+   }
+  },
+  {
+   "i": 653,
+   "type": "path",
+   "id": "ut_highway_wall",
+   "name": "Highway Wall",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_stairway_to_heaven.ut_2nd_tier_climbs.ut_highway_wall"
+   }
+  },
+  {
+   "i": 654,
+   "type": "path",
+   "id": "ut_meat_your_maker_wall",
+   "name": "Meat Your Maker Wall",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_stairway_to_heaven.ut_meat_your_maker_wall"
+   }
+  },
+  {
+   "i": 655,
+   "type": "path",
+   "id": "ut_scott_s_wall",
+   "name": "Scott's Wall",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_stairway_to_heaven.ut_2nd_tier_climbs.ut_scott_s_wall"
+   }
+  },
+  {
+   "i": 656,
+   "type": "path",
+   "id": "ut_stairway_to_heaven_2",
+   "name": "Stairway to Heaven",
+   "prev": {
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_stairway_to_heaven.ut_stairway_to_heaven_2"
+   }
+  },
+  {
+   "i": 657,
+   "type": "reparent",
+   "id": "ut_upper_provo_falls",
+   "name": "Upper Provo Falls",
+   "prev": {
+    "parent_id": "ut_provo_canyon_ice",
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice.ut_upper_provo_falls"
+   }
+  },
+  {
+   "i": 658,
+   "type": "delete",
+   "id": "ut_provo_canyon_ice",
+   "name": "Provo Canyon Ice",
+   "prev": {
+    "parent_id": "ut_provo_canyon",
+    "path": "usa.utah.ut_wasatch_range.ut_southern_wasatch.ut_provo_canyon.ut_provo_canyon_ice"
+   }
+  },
+  {
+   "i": 659,
+   "type": "reparent",
+   "id": "wa_black_ice_crag_drytooling_park",
+   "name": "Black Ice Crag Drytooling Park",
+   "prev": {
+    "parent_id": "wa_dry_tooling_ice_climbing_at_exit_38",
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_black_ice_crag_drytooling_park"
+   }
+  },
+  {
+   "i": 660,
+   "type": "reparent",
+   "id": "wa_public_land_for_sale_wayne_s_world",
+   "name": "PUBLIC LAND FOR SALE-Wayne’s World",
+   "prev": {
+    "parent_id": "wa_dry_tooling_ice_climbing_at_exit_38",
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_public_land_for_sale_wayne_s_world"
+   }
+  },
+  {
+   "i": 661,
+   "type": "path",
+   "id": "wa_dark_side_2",
+   "name": "Dark Side",
+   "prev": {
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_public_land_for_sale_wayne_s_world.wa_dark_side_2"
+   }
+  },
+  {
+   "i": 662,
+   "type": "path",
+   "id": "wa_erikland",
+   "name": "Erikland",
+   "prev": {
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_public_land_for_sale_wayne_s_world.wa_erikland"
+   }
+  },
+  {
+   "i": 663,
+   "type": "path",
+   "id": "wa_excellent_adventure_wall_2",
+   "name": "Excellent Adventure Wall",
+   "prev": {
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_public_land_for_sale_wayne_s_world.wa_excellent_adventure_wall_2"
+   }
+  },
+  {
+   "i": 664,
+   "type": "path",
+   "id": "wa_wayne_s_world",
+   "name": "Wayne’s World Routes",
+   "prev": {
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_public_land_for_sale_wayne_s_world.wa_wayne_s_world"
+   }
+  },
+  {
+   "i": 665,
+   "type": "reparent",
+   "id": "wa_roadhouse_dry_tooling",
+   "name": "Roadhouse Dry Tooling",
+   "prev": {
+    "parent_id": "wa_dry_tooling_ice_climbing_at_exit_38",
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_roadhouse_dry_tooling"
+   }
+  },
+  {
+   "i": 666,
+   "type": "reparent",
+   "id": "wa_upper_black_ice_and_winter_ice_crag",
+   "name": "Upper Black Ice and Winter Ice Crag",
+   "prev": {
+    "parent_id": "wa_dry_tooling_ice_climbing_at_exit_38",
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38.wa_upper_black_ice_and_winter_ice_crag"
+   }
+  },
+  {
+   "i": 667,
+   "type": "delete",
+   "id": "wa_dry_tooling_ice_climbing_at_exit_38",
+   "name": "Dry Tooling & Ice Climbing at Exit 38",
+   "prev": {
+    "parent_id": "wa_exit_38",
+    "path": "usa.washington.wa_centralwest.wa_north_bend_vicinity.wa_exit_38.wa_dry_tooling_ice_climbing_at_exit_38"
+   }
+  },
+  {
+   "i": 668,
+   "type": "reparent",
+   "id": "wa_eightmile_buttress_ice",
+   "name": "Eightmile Buttress Ice",
+   "prev": {
+    "parent_id": "wa_ice_climbing_in_icicle_creek",
+    "path": "usa.washington.wa_centraleast.wa_leavenworth.wa_icicle_creek.wa_ice_climbing_in_icicle_creek.wa_eightmile_buttress_ice"
+   }
+  },
+  {
+   "i": 669,
+   "type": "reparent",
+   "id": "wa_hubba_hubba",
+   "name": "Hubba Hubba",
+   "prev": {
+    "parent_id": "wa_ice_climbing_in_icicle_creek",
+    "path": "usa.washington.wa_centraleast.wa_leavenworth.wa_icicle_creek.wa_ice_climbing_in_icicle_creek.wa_hubba_hubba"
+   }
+  },
+  {
+   "i": 670,
+   "type": "delete",
+   "id": "wa_ice_climbing_in_icicle_creek",
+   "name": "Ice Climbing in Icicle Creek",
+   "prev": {
+    "parent_id": "wa_icicle_creek",
+    "path": "usa.washington.wa_centraleast.wa_leavenworth.wa_icicle_creek.wa_ice_climbing_in_icicle_creek"
+   }
+  },
+  {
+   "i": 671,
+   "type": "reparent",
+   "id": "wi_big_sand_cave",
+   "name": "Big Sand Cave",
+   "prev": {
+    "parent_id": "wi_sand_cave_trail_ice",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_sand_cave_trail_ice.wi_big_sand_cave"
+   }
+  },
+  {
+   "i": 672,
+   "type": "reparent",
+   "id": "wi_koi_no_yokan",
+   "name": "Koi No Yokan",
+   "prev": {
+    "parent_id": "wi_sand_cave_trail_ice",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_sand_cave_trail_ice.wi_koi_no_yokan"
+   }
+  },
+  {
+   "i": 673,
+   "type": "reparent",
+   "id": "wi_sand_cave_bridge",
+   "name": "Sand Cave Bridge",
+   "prev": {
+    "parent_id": "wi_sand_cave_trail_ice",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_sand_cave_trail_ice.wi_sand_cave_bridge"
+   }
+  },
+  {
+   "i": 674,
+   "type": "delete",
+   "id": "wi_sand_cave_trail_ice",
+   "name": "Sand Cave Trail Ice",
+   "prev": {
+    "parent_id": "wi_wyalusing_state_park",
+    "path": "usa.wisconsin.wi_south.wi_wyalusing_state_park.wi_sand_cave_trail_ice"
+   }
+  },
+  {
+   "i": 675,
+   "type": "reparent",
+   "id": "ut_7even",
+   "name": "7even",
+   "prev": {
+    "parent_id": "ut_devil_s_castle_ice_mixed_drytool",
+    "path": "usa.utah.ut_wasatch_range.ut_central_wasatch.ut_little_cottonwood_canyon.ut_albion_basin.ut_devil_s_castle_ice_mixed_drytool.ut_7even"
+   }
+  },
+  {
+   "i": 676,
+   "type": "delete",
+   "id": "ut_devil_s_castle_ice_mixed_drytool",
+   "name": "Devil's Castle ice, mixed & drytool",
+   "prev": {
+    "parent_id": "ut_albion_basin",
+    "path": "usa.utah.ut_wasatch_range.ut_central_wasatch.ut_little_cottonwood_canyon.ut_albion_basin.ut_devil_s_castle_ice_mixed_drytool"
+   }
+  }
+ ]
+}

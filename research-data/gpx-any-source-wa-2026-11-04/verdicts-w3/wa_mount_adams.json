@@ -1,0 +1,259 @@
+{
+ "area_id": "wa_mount_adams",
+ "routes": [
+  {
+   "route_id": "wa_mount_adams_adams_glacier",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-Jul",
+    "evidence": "Web: guide service says the Adams Glacier is only in good shape early season and fails to a North Ridge diversion otherwise; Mountaineers ice-route page lists May-Aug and warns that in July crevasses and route-finding get tricky to impossible; SummitPost spring-summer. Stored Jun-Jul fits; May added."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "Harvested tracks logged South Climb/South Spur/Suksdorf/West Ridge start at the Cold Springs trailhead and climb the south side; none names or follows this route. The North Cleaver tracks follow the cleaver beside this glacier, not the glacier itself; \"adams glacier\" logged ascents (Jun-Aug) were not among the harvested tracks."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Web: Mountain Project listing for this route says late spring, moderate/steep snow, sometimes alpine ice at the headwall. Stored season is blank."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "Tracks from Cold Springs go up the South Climb via the Lunch Counter; none turns off onto the Avalanche Glacier basin."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_adams_lava_glacier_headwall",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Web: no dedicated source gave dates for the Lava Glacier; stored May-Jun kept (low confidence)."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "North Cleaver tracks use the same trailhead but the ridge, not the Lava Glacier headwall; no logged route names it."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_adams_lyman_glacier",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Web: Mazamas list Lyman Glacier as a late-spring route not run in summer/fall; Mountain Project says late spring, moderate to steep snow. Stored May-Jun/June-July."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "Only \"North Lyman Glacier\" (June, 1 ascent) and \"South Lyman Glacier\" (July) appear in the histogram, with no harvested track; harvested North Cleaver/South tracks are not the Lyman line."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_adams_mazama_glacier_headwall",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Web: no guide page stated a Mazama season; stored Jul-Sep follows the Yakama Nation Bird Creek Meadows access window (a reported restriction for non-members from about Jul 1 to Oct 1, to be confirmed). Peakbagger \"Mazama Glacier\" ascents: Jul 10, Aug 5, Sep 1."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "No harvested track is logged as Mazama or starts at Bird Creek Meadows (nearest start is the Cold Springs trailhead, 4.4 km away)."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_adams_north_ridge",
+   "season": {
+    "months": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "window": "Jun-Sep (best Jun-mid Jul)",
+    "evidence": "Web: SummitPost says the North Ridge/Cleaver is more pleasant early season while snow-covered; a mid-August report found the cleaver mostly a climbers path over scree with late snowfields; stored Jun-Sep and best Jun-mid Jul kept. Peakbagger North Cleaver/North Ridge ascents are May-Sep."
+   },
+   "track": {
+    "aid": "1228804",
+    "verdict": "same",
+    "kind": "oneway",
+    "inSeason": true,
+    "why": "Logged North Cleaver (our face is \"North Ridge / North Cleaver\"), Aug 24 2019; track starts at our Killen Creek trailhead pin (39 m), climbs through the High Camp area and up the cleaver line shared by the Jul 2026 North Cleaver track, and ends at the summit (9 m); it is one-way (no return recorded). Aug 24 is inside the stored Jun-Sep window though past the best window."
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "3254958",
+     "verdict": "unsure",
+     "why": "Jul 5 2026 North Cleaver summit round trip, same line, but it only records from the cleaver base (8 km from our trailhead pin); not a complete or one-way track from the trailhead."
+    },
+    {
+     "aid": "3204147",
+     "verdict": "offseason",
+     "why": "May 23 2026 North Ridge - North Cleaver, snow-closed road so it starts 1 mile below the trailhead (3.1 km from our pin) and records only the way up; late May is before our Jun window."
+    },
+    {
+     "aid": "697819",
+     "verdict": "not-summited",
+     "why": "May 2 2015 North Cleaver; track ends on the north summit/high point 860 m short of the true summit and is off season."
+    },
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "South Climb/South Spur/Suksdorf/West Ridge tracks all start at Cold Springs."
+    }
+   ],
+   "pins": [],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In early July the snow traverse left of the ridge crest below the upper cleaver felt insecure to one climber, who used snow gullies to rejoin the crest.",
+     "aids": [
+      "3254958"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 7,
+     "text": "In early July the upper snow can be icy in a cold wind, so crampons and axe stay on to the summit ice cap.",
+     "aids": [
+      "3254958"
+     ]
+    },
+    {
+     "field": "descent_note",
+     "month": 7,
+     "text": "On the way down in early July, staying on the crest line, which cairns mark, is easier than dropping onto the side snow.",
+     "aids": [
+      "3254958"
+     ]
+    },
+    {
+     "field": "approach_note",
+     "month": 7,
+     "text": "A common early start is to camp the night before on the Killen Creek Trail near 6,050 ft, just before the Pacific Crest Trail junction, then leave around 4 am and pass High Camp in the dark.",
+     "aids": [
+      "3254958"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_mount_adams_northwest_ridge",
+   "season": {
+    "months": [
+     6,
+     7
+    ],
+    "window": "Jun-Jul",
+    "evidence": "Web: guide service gives June-July for the North Ridge side climbs and Northwest Ridge routes when the Adams Glacier is not in shape; Mountaineers ice routes May-Aug. Stored Jun-Jul kept."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "1228804",
+     "verdict": "unsure",
+     "why": "North Cleaver tracks follow the plain North Ridge (our wa_mount_adams_north_ridge); nothing logged as the west face of the north ridge, so none is assigned here. The two routes may overlap, though this one's own descent text says to descend the North Ridge, so they look distinct."
+    },
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "Harvested tracks logged South Climb/South Spur/Suksdorf/West Ridge start at the Cold Springs trailhead and climb the south side; none names or follows this route."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_adams_pinnacle_glacier_headwall",
+   "season": {
+    "months": [
+     5,
+     6
+    ],
+    "window": "May-Jun",
+    "evidence": "Web: Mazamas list Pinnacle Glacier as a spring route (not summer/fall), crevasses and seracs. Stored season blank."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "No track starts at the Riley Camp trailhead; all harvested tracks are south side or North Cleaver."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_adams_wilson_glacier_headwall",
+   "season": {
+    "months": [
+     5,
+     6,
+     7
+    ],
+    "window": "May-Jul",
+    "evidence": "Web: no source gave dates for the Wilson Glacier; stored fields conflict (season Jul-Sep, best May to June). Low confidence; May-Jul chosen to cover both ends of the snow season."
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "*",
+     "verdict": "different",
+     "why": "Several South Climb tracks start within 65 m of this route's Cold Springs trailhead pin and reach the summit, but they are logged South Climb/South Spur via the Lunch Counter; none names or turns toward the Wilson Glacier, so passing the shared trailhead and summit proves nothing."
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "Only the North Ridge (North Cleaver) has an in-season, summited, trailhead-to-summit track (oneway). South Climb is not in routes[] (already has track points). Stored but not in the packet: Avalanche Glacier, North Face of the Northwest Ridge, circumnavigation. North Ridge and North Ridge (West Face) may overlap; kept separate. Trailhead pins unchanged: candidate tracks start at pins already stored, or at a snow-closed road point."
+}

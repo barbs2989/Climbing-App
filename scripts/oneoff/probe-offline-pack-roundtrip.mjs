@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileHref } from "../lib/file-href.mjs";
 /* Does the trip pack actually round-trip through IndexedDB, and does the v1 -> v2 upgrade keep an
  * ALREADY-DOWNLOADED catalog?
  *
@@ -70,7 +71,7 @@ try {
       },
     }],
   });
-  mod = await import(out);
+  mod = await import(fileHref(out));
 } catch (e) {
   console.error("FAIL: could not bundle lib/offline.js — nothing was checked. " + (e.stack || e.message));
   fs.rmSync(tmp, { recursive: true, force: true });

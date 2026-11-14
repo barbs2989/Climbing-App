@@ -1,0 +1,56 @@
+{
+ "file": "r005.json",
+ "results": [
+  {
+   "id": "wy_owen_spalding",
+   "fact": "Rope needed for the Upper Saddle rappel",
+   "verdict": "fixed",
+   "correct_value": "a single 60 m rope is enough if you trend right from the slung horn",
+   "evidence": "Mountain Project commenters say 60 m is sufficient and the rappel can be done in one pull from the slung horn; a trip report states a 60 m dynamic line was enough for both raps. descent_text already says this, so the two gear lines are corrected. [Lead review: a 60 m only just reaches (SummitPost: barely, keep right; MP: 70 m comfortable), so gear[1] keeps the 70 m recommendation and gear[2] now says the 60 m only just reaches.]",
+   "sources": [
+    "https://www.mountainproject.com/route/105814121/owen-spalding",
+    "https://stavislost.com/?p=1972"
+   ],
+   "patches": [
+    {
+     "id": "wy_owen_spalding",
+     "fact": "Rope needed for the Upper Saddle rappel",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "A 60 m rope is too short for that rappel in one go and forces a stop at an intermediate anchor in Sargent's Chimney",
+     "replace": "A 60 m rope only just reaches: rappel from the slung horn and trend right, or stop at an intermediate anchor in Sargent's Chimney"
+    }
+   ]
+  },
+  {
+   "id": "wy_owen_spalding",
+   "fact": "Distance to summit",
+   "verdict": "fixed",
+   "correct_value": "Lower Saddle about 6 mi; summit about 8 mi one way",
+   "evidence": "Round-trip figures for the full route are 16.2 and 16.3 mi (about 8 mi each way), and Lupine Meadows to Lower Saddle is 12.3-12.6 mi round trip (about 6 mi one way). The row's 7 mi summit and 6.5-7 mi saddle figures were too close together. [Lead review: approach 6.5-7 mi saddle range kept (published figures vary 6.2-7); summit distMi 8 matches 16 mi round trip.]",
+   "sources": [
+    "https://www.theoutbound.com/wyoming/rock-climbing/summit-the-grand-teton-via-the-owen-spalding-route",
+    "https://stavislost.com/?p=1972",
+    "https://www.onxmaps.com/hiking/edq07mdvp6ov/lupine-meadows-to-lower-saddle",
+    "https://www.10adventures.com/hikes/grand-teton/garnet-canyon-to-lower-saddle-hike"
+   ],
+   "patches": [
+    {
+     "id": "wy_owen_spalding",
+     "fact": "Distance to summit",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 7,
+     "value": 8
+    }
+   ]
+  }
+ ]
+}

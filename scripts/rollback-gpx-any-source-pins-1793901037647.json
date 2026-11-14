@@ -1,0 +1,55 @@
+{
+ "at": "2026-11-05T17:50:37.647Z",
+ "note": "restore with patchRow(routes, id, before)",
+ "rows": [
+  {
+   "id": "or_diamond_peak_southwest_ridge",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "or_mt_bachelor_trail",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 44.00289,
+      "lng": -121.67811,
+      "elev": 6416,
+      "name": "West Village Lodge",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Bend, follow Century Drive, which becomes the Cascade Lakes Highway, west about 22 miles to Mt. Bachelor and turn into the West Village base area parking lot."
+     },
+     {
+      "lat": 43.97893,
+      "lng": -121.68754,
+      "elev": 9047,
+      "name": "Mount Bachelor",
+      "type": "Summit",
+      "distMi": 2.6,
+      "directions": "From the West Village base area, follow the signed summit hiking trail up through the ski area, on service roads and forest trail across the ski runs, then switchback up the steep, rocky upper ridge to the summit. This is a summer hike; in winter the mountain is an operating ski area."
+     }
+    ]
+   }
+  },
+  {
+   "id": "or_south_ridge_2",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "or_mt_mcloughlin_east_ridge",
+   "before": {
+    "waypoints": []
+   }
+  },
+  {
+   "id": "or_south_ridge",
+   "before": {
+    "waypoints": []
+   }
+  }
+ ]
+}

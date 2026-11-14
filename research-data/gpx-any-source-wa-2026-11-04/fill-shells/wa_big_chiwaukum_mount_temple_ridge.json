@@ -1,0 +1,17 @@
+{
+  "route_id": "wa_big_chiwaukum_mount_temple_ridge",
+  "verdict": "duplicate",
+  "duplicate_of": "wa_the_temple_south_ridge",
+  "searched": [
+    "\"Mount Temple\" Stuart Range Enchantments Temple Ridge route Snow Lakes Nada Lake: Mountaineers lists only 'Mount Temple/West Side' (II+, 5.6) as the route to the high point of Temple Ridge; WTA calls Mt. Temple the highpoint of Temple Ridge",
+    "Mount Temple Enchantments Temple Ridge Pogo Col Prusik Pass North Side route: no separate 'Temple Ridge' route found; Prusik Peak and High Priest are other summits on the same ridge system",
+    "Mountaineers page itself returned HTTP 403 when fetched; content taken from search-result excerpts"
+  ],
+  "evidence": [
+    "https://mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side - the one documented route to the Temple (highest point of Temple Ridge), 5.6",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002102606 - Mt. Temple described as the highpoint of Temple Ridge, reached from the Snow Lakes trail"
+  ],
+  "track_aid": null,
+  "track_why": "Duplicate record; the same summit's tracks belong to wa_the_temple_south_ridge. Packet tracks start from Inspiration Lake or Prusik Pass, not a confirmed trailhead for this record.",
+  "fill": {}
+}

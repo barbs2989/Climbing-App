@@ -1,0 +1,49 @@
+{
+  "key": "whistler_mountain_okanogan",
+  "question": "Is there a North Ridge route from an SR-20 pullout (~48.513,-120.689)?",
+  "answer": "Yes. It is real and distinct from the stored 'South Ridge / Southwest Slope' row, which starts at Rainy Pass more than 2 km west. SummitPost lists North Ridge as the peak's only route page ('class 3 and 4'; the author cites the Beckey guide, p. 353, as the only source for the peak). A logged Jul 23 2022 ascent (1975044) climbed it from the same wide highway shoulder used for Cutthroat Peak: the track starts at 48.51299,-120.68888, follows a climbers' trail into the basin between Whistler and Cutthroat, goes up to the notch between the two peaks, follows the north ridge to the summit (48.5156,-120.70798), and returns the same way. Reports: mostly class 3 with a few short class 4 steps, one class 5 move that can be avoided, loose rock, and a short chossy step that the party rappelled rather than downclimbed; the original trip carried a 100 ft rope and pro, and rappel slings were seen on the far side of the ridge. Grade II. It is a different line (north side, different trailhead) so it is a distinct route, not a duplicate. Only one track and one route page were found; the other tracks (2871289, 2248769, 2219221) are on the Rainy Pass side.",
+  "recommendation": "Add a new row: Whistler Mountain, North Ridge. Discipline alpine (rope and a rappel are part of it; scrambling is never roped), grade 5.4 (class 3-4 with a short avoidable 5th class move), Grade II. Use ascent 1975044 as its track (complete out-and-back from the pullout). Trailhead pin: the SR-20 climbers' pullout at 48.5134,-120.6882 (same as Cutthroat, see cutthroat_peak); it rests on a geocache listing and tracks rather than an official page, so mark it pending. Do not change the existing row. Owner may prefer to label the discipline scrambling with an optional rope; the 5.4 grade is a judgment from class 3-4 reports.",
+  "confidence": "medium",
+  "proposed": {
+    "route_id": "wa_whistler_mountain_north_ridge",
+    "verdict": "real",
+    "track_aid": "1975044",
+    "fill": {
+      "name": "North Ridge",
+      "discipline": "alpine",
+      "disciplines": ["alpine"],
+      "grade": "5.4",
+      "grade_system": "yds",
+      "rock_grade": "5.4",
+      "season": "Jun-Oct",
+      "best_season": "July through September, when the ridge is free of snow",
+      "overview": "The north ridge is the rock route on Whistler, climbed from the highway shoulder shared with Cutthroat Peak. A climbers' trail drops into the open basin between the two peaks, then the route follows the ridge to the summit pyramid, mostly class 3 with some class 4 steps, over about 2,700 ft of gain. The ridge is exposed in places, and a fall would have serious consequences.",
+      "beta": "Pick up the climbers' trail from the pullout, cross the basin and gain the notch between Whistler and Cutthroat. Follow the north ridge, which dips slightly in places, to the summit pyramid. There the rock opens into many possible lines; keeping to the north (right-hand) side is easier, and there are rappel slings on the far side. Expect loose rock and choose lines carefully.",
+      "approach": "Park on the wide paved shoulder of SR-20 about three quarters of a mile west of the signed Blue Lake trailhead lot, on the north side, where there is no guard rail. A good climbers' trail leads from the road through forest into the basin. No pass is needed at the pullout; the Blue Lake lot needs a forest pass.",
+      "descent_text": "Retrace the ridge. A short loose step is usually rappelled instead of downclimbed.",
+      "turnaround": "If the rock above the notch is wet or iced, or storms build in the afternoon, turn back at the ridge.",
+      "high_point_ft": 7792,
+      "outing_shape": "outback",
+      "gear": ["rope (30 to 60 m)", "helmet", "small rack or slings", "harness", "rappel gear"],
+      "what_to_bring": ["helmet", "ice axe in early season", "water"],
+      "hazards": ["Loose rock on the ridge and summit pyramid", "Exposed ridge: a fall would be serious"],
+      "road": {"name": "SR-20 (North Cascades Highway)", "status": "seasonal", "driveNote": "SR-20 closes for winter, normally from about mid-November to mid-April."},
+      "access": {"land_manager": "Okanogan-Wenatchee National Forest"},
+      "waypoints": [
+        {"type": "Trailhead", "name": "SR 20 climbers' pullout", "lat": 48.5134, "lng": -120.6882, "note": "pending: not confirmed by an official page; supported by 13 tracks and a geocache listing"},
+        {"type": "Summit", "name": "Whistler Mountain summit", "lat": 48.51555, "lng": -120.707905}
+      ],
+      "approach_logistics": {"trailhead": "SR 20 climbers' pullout", "trailheadLat": 48.5134, "trailheadLng": -120.6882}
+    }
+  },
+  "evidence": [
+    "https://www.summitpost.org/whistler-mountain/328254 — single route North Ridge, 'class 3 and 4', Beckey p. 353 only source, same turnout as Cutthroat, no trail pass needed at the turnout",
+    "https://www.summitpost.org/north-ridge/331172 — route page: climbers' trail from the wide spot into the basin, notch between Whistler and Cutthroat, ridge to summit pyramid, 100 ft rope and pro, rap slings seen, a quarter mile west of the Blue Lake lot",
+    "Peakbagger ascent 1975044 (2022-07-23, in packet) — North Ridge, Grade II, class 3 with class 4 and an avoidable class 5 move, rappelled a chossy step; track starts 48.51299,-120.68888",
+    "https://www.geocaching.com/geocache/GC1VM77 — the same pullout at 48.51337,-120.68825"
+  ],
+  "searched": [
+    "Whistler Mountain North Cascades Washington Pass Rainy Pass north ridge scramble Cutthroat Peak — Mountaineers and Wikipedia describe only the Rainy Pass route; SummitPost has the North Ridge",
+    "https://www.summitpost.org/whistler-mountain/routes/p-328254 and /north-ridge/331172 — fetched with curl (the fetch tool is blocked by Cloudflare)"
+  ]
+}

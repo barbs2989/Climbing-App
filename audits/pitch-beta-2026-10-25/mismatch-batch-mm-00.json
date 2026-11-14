@@ -1,0 +1,71 @@
+{
+ "wa_beckey_davis": {
+  "area": "wa_prusik_peak",
+  "review": {
+   "confidence": "high",
+   "decision": "KEEP",
+   "sources": [
+    "https://www.mountainproject.com/route/108228989/beckey-davis",
+    "https://stephabegg.com/trip-reports/washington/prusik-beckey-davis/"
+   ],
+   "changed": "Nothing written. The stored rows are 1, 2-3, 4, 5, 6, 7, which cover seven pitches once the linked 2-3 row counts as two; that equals the stored count of 7. The flag is a tokeniser false positive on the range label.",
+   "pitch_count_found": 7,
+   "other_findings": "One trip report titles the route 6 pitches but lists 7 in its own breakdown; the route page also says 7. One source rates pitch 7 at 5.10a thin hands with an easier option around 5.8."
+  }
+ },
+ "wa_castle_peak_pasayten_scramble": {
+  "area": "wa_castle_peak_pasayten",
+  "review": {
+   "confidence": "low",
+   "decision": "KEEP",
+   "sources": [
+    "https://www.summitpost.org/freezeout-creek-route/295596 (blocked, 403; only search-result summary seen)",
+    "https://en.wikipedia.org/wiki/Castle_Peak_(Washington)"
+   ],
+   "changed": "Nothing written. This is an unroped class 2-3 scramble with 0 pitches; the five numbered rows are stages of the climb with class ratings, a legitimate section-style table. Could not read a full page describing the stages, so left alone rather than altered.",
+   "pitch_count_found": 0,
+   "other_findings": "Summaries of the route give class 3 overall, a few class 4 moves possible under snow, and a class 3+ section where the ridge starts near 7,500 ft."
+  }
+ },
+ "wa_castle_peak_pasayten_the_drawbridge": {
+  "area": "wa_castle_peak_pasayten",
+  "review": {
+   "confidence": "high",
+   "decision": "KEEP",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214566/Castle-Peak-The-Drawbridge"
+   ],
+   "changed": "Nothing written. Stored rows 1, 2, 3-5, 6-9, 10 span ten pitches, matching the stored count and the ten-pitch account of the 2017 ascent. Ranges are grouped linked pitches; false positive.",
+   "pitch_count_found": 10,
+   "other_findings": "Only one full source found for this new route. The account says the crux may be mid-5.11 with a short aid section while the stored table says mid-5.10; the grade of IV 5.10+ A1 is given by the same source. Left unchanged."
+  }
+ },
+ "wa_castle_peak_tatoosh_la_villa": {
+  "area": "wa_castle_peak_tatoosh",
+  "review": {
+   "confidence": "medium",
+   "decision": "REJECTED-FIX",
+   "sources": [
+    "https://www.mountainproject.com/route/126590401/la-villa",
+    "https://www.mountainproject.com/area/117755313/the-castle"
+   ],
+   "changed": "Proposed relabelling Approach/1 was REJECTED by the owner-review standard: the one-pitch count was inferred, and no source states a pitch count. Nothing written. Stored table left as it is.",
+   "pitch_count_found": 1,
+   "other_findings": "The route page does not state a pitch count; it gives a 15 m length and one belay ledge near the top, so one pitch is inferred. Only one real page exists for this route. Owner may prefer to KEEP the old labels to protect comment keys."
+  }
+ },
+ "wa_chair_peak_northwest_ridge": {
+  "area": "wa_chair_peak",
+  "review": {
+   "confidence": "medium",
+   "decision": "KEEP",
+   "sources": [
+    "https://www.mountainproject.com/route/117683574/northwest-ridge",
+    "https://www.summitpost.org/chair-peak/150834 (search summary only)"
+   ],
+   "changed": "Nothing written. Stored rows 1, 2, 3, 4, 5-6 cover six pitches, matching the stored count and the six pitches given by the route page. The 5-6 range label caused the flag; false positive.",
+   "pitch_count_found": 6,
+   "other_findings": "Only one detailed page found. It estimates pitch 4's off-ridge variation at about 5.9 and says rap rings are high on the wall with older tat lower down."
+  }
+ }
+}

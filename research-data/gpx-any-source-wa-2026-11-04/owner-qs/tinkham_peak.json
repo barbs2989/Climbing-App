@@ -1,0 +1,73 @@
+{
+  "key": "tinkham_peak",
+  "question": "Five Tinkham Peak routes (East, North, Northwest Ridge, Southeast Spur, West) are indistinguishable; the common outing is the Mirror Lake loop. Which rows are real and distinct?",
+  "answer": "Only two lines are documented, and they join into the common loop. Tinkham has two summits about 0.4 mile apart joined by an easy ridge: the WEST summit is the true high point (5,398-5,402 ft) and the EAST summit is a little lower (5,393-5,395 ft). (1) Northwest Ridge: from the Mirror Lake trail, the Cottonwood Lake spur and the Pacific Crest Trail, go north on the PCT to where a boot path leaves on the left and climbs the steep forested northwest ridge, with one short Class 3 gully or ledge near the top, to the west summit. This is the only route with a SummitPost route page and it is our one row that has text. (2) Southeast spur: from the south end of Mirror Lake, a steep boot path climbs the southeast spur through grass and talus to the EAST summit (about 1,200 ft in a bit over a mile from the lake, Class 2); it is easier and avoids the Class 3 gully; SummitPost has a route page for it too. The ridge between the summits is a walk (a few minutes), and the standard day is up one, across, down the other (about 6 miles and 2,200 ft round trip). Nothing I found documents a separate 'West Route', 'North Route' or 'East Route': every log is either 'Tinkham East' / 'boot trail' (the southeast spur), 'PCT' (the northwest ridge) or a longer Silver-Abiel-Tinkham link-up. So: East Route = Southeast Spur (same target, same boot path, 'Tinkham East' logs); North Route = Northwest Ridge (same PCT approach from the north side); West Route has no independent identity (the west summit is what the Northwest Ridge reaches, and a west-ridge descent is a variant at most). I could not read the stored text of these rows (four are empty shells), so the pairing rests on the names and grades alone: East Class 2, North Class 3, NW Ridge Class 3, SE Spur Class 2+, West Class 2.",
+  "recommendation": "KEEP two rows, MERGE the rest. Keep 'Northwest Ridge' (to the true summit) and 'Southeast Spur' (East summit, rename 'Southeast Spur (East Peak)'); merge East Route into Southeast Spur and North Route into Northwest Ridge (the survivor keeps the guidebook name; if the owner prefers to keep a short-hand name, show it as an alias); mark 'West Route' unconfirmed and delete unless the owner knows of a west line (a ridge descent toward Windy Pass is the only west variation seen, and no source calls it a route). Also: all five are stored discipline 'alpine' with Class 2-3 grades; under the owner's rule they are 'scrambling' (non-technical, never roped). Our AREA pin (47.34769,-121.4495) sits on the lower EAST summit (34 m from Peakbagger's 'East Peak'); the true high point is the west summit, about 400 m west-northwest at roughly 47.3492,-121.4547 (taken from three recent summiting GPS logs, not from a map, so confirm before storing). Track assignment: no packet track attaches to a row as-is because the Tinkham logs mostly link Silver/Abiel (3394699 and 3228083 high-point near 47.3616,-121.4613 = Silver Peak); logs 3394676 (1 Nov 2026) and 3368547 (27 Sep 2026) go to the Tinkham summits from the Mirror Lake trailhead and could be tested against the southeast spur / loop once the row is filled.",
+  "confidence": "medium",
+  "proposed": {
+    "keep": [
+      "wa_tinkham_peak_northwest_ridge",
+      "wa_tinkham_peak_southeast_spur"
+    ],
+    "merge": [
+      {
+        "from": "wa_tinkham_peak_east_route",
+        "into": "wa_tinkham_peak_southeast_spur"
+      },
+      {
+        "from": "wa_tinkham_peak_north_route",
+        "into": "wa_tinkham_peak_northwest_ridge"
+      }
+    ],
+    "unconfirmed_delete": "wa_tinkham_peak_west_route",
+    "discipline_fix": "scrambling for all survivors",
+    "southeast_spur_fill": {
+      "name": "Southeast Spur (East Peak)",
+      "discipline": "scrambling",
+      "disciplines": [
+        "scrambling"
+      ],
+      "grade": "Class 2",
+      "grade_system": "class",
+      "season": "Jun-Oct",
+      "best_season": "July through October; the boot path is often snow-covered into June",
+      "high_point_ft": 5395,
+      "outing_shape": "outback",
+      "overview": "The easy way onto Tinkham: a short, steep boot path from the south end of Mirror Lake straight up the southeast spur to the lower east summit. The true high point, the west summit, is a few minutes along an easy ridge. Often combined with the Northwest Ridge for a loop.",
+      "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480 (about 3,600 ft). Hike the Mirror Lake trail to the lake, mostly level, then follow the PCT to the lake's south end and find the boot path.",
+      "beta": "The path climbs about 1,200 ft in just over a mile through grass and talus on the southeast spur, with no exposure. From the east summit continue west along the ridge to the true high point; the ridge is easy and takes a few minutes. Return the same way or drop to the PCT by the Northwest Ridge boot path.",
+      "waypoints": [
+        {
+          "type": "Trailhead",
+          "name": "Mirror Lake Trailhead",
+          "lat": 47.34265,
+          "lng": -121.42286
+        }
+      ],
+      "approach_logistics": {
+        "trailhead": "Mirror Lake Trailhead",
+        "trailheadLat": 47.34265,
+        "trailheadLng": -121.42286
+      },
+      "track_aid": null
+    },
+    "area_pin_note": "Move the area pin to the west summit once a mapped coordinate is confirmed; current pin is the east summit."
+  },
+  "evidence": [
+    "Search snippets of Mountaineers 'Mirror Lake & Tinkham Peak' route page and trip reports - loop from Mirror Lake trailhead: PCT to the Tinkham boot path, one summit, ridge to the other, down the other boot path; Technical 3 rating; high point 5,402 ft vs East 5,395 ft (pages refused, snippets only)",
+    "https://peakery.com/tinkham-peak-washington and https://peakery.com/east-tinkham-peak-washington/ - Tinkham 5,398 ft, East Tinkham 5,395 ft, 0.4 mi apart; Mirror Lake boot path ~1,200 ft in a bit over a mile; reached both summits via the southwest ridge from Mirror Lake",
+    "https://www.yellowleaf.org/scramble/g/r/2004-09-28-Silver-Peak-and-Tinkham-Peak.html - PCT turn-off, 'steep, forested NW ridge' to the west peak, easy from the west peak to the east peak; fairly easy rock with slight exposure just before the west peak",
+    "Search snippets of SummitPost 'Northwest Ridge' (route 157528: Class 2 hike, one short Class 3 gully, NW ridge about 1 mile north on the PCT of the SE spur) and 'Southeast Ridge' (route 158884: gentler than the NW route, talus and grass to the East Summit); no SummitPost route for a west or north route",
+    "https://www.10adventures.com/hikes/mount-baker-snoqualmie-national-forest/tinkham-peak-trail/ - trailhead at the end of Forest Road 5480 at 47.342653,-121.422855; packet track starts (4 tracks) cluster at 47.3422,-121.42236",
+    "https://stevensong.com/tinkham-peak-and-abiel-peak and WTA 2021 trip report (search snippet) - the east summit is the lower one; boot path goes up the SE ridge to the east peak then traverses to the west peak",
+    "packets-all/wa_tinkham_peak.json - tracks 3394676, 3368547 high points at 47.3492,-121.4547 (~1,632-1,640 m); 3394699, 3228083, 2320098 high points at 47.3616,-121.4613 (Silver Peak, 1,693-1,704 m)"
+  ],
+  "searched": [
+    "Tinkham Peak Mirror Lake PCT scramble east peak west peak routes - Mountaineers x12, peakery x2, SummitPost, WTA, stevensong",
+    "Tinkham Peak boot path PCT ... Cottonwood Lake - Mountaineers loop pages, yellowleaf 2004, 10adventures",
+    "summitpost Tinkham Peak routes Northwest Ridge Southeast West Ridge - only two route pages (NW ridge, SE ridge/spur)",
+    "Fetch refused with HTTP 403 (not worked around): mountaineers.org Tinkham pages, peakbagger pid 24728, summitpost tinkham-peak/151401, WTA 2021 report",
+    "Nominatim 'Mirror Lake trailhead Snoqualmie Pass' - empty",
+    "Not established: stored text of the East/North/West rows (they are shells in the packet); whether 'North Route' means a trail-less line from the Silver-Tinkham saddle rather than the Northwest Ridge boot path."
+  ]
+}

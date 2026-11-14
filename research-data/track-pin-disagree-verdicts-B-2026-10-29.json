@@ -1,0 +1,109 @@
+[
+ {
+  "id": "wa_mount_fairchild_standard",
+  "verdict": "UNSURE",
+  "removePinIdx": [
+   0
+  ],
+  "reason": "Text and sources (Mountaineers, SummitPost) put the standard approach via Deer Lake, High Divide, Cat Basin and the Catwalk; Boston Charlie's Camp is said to sit just east of the Catwalk. The 9-point stored track and pins 3-4 instead follow an Appleton Pass line, a different approach, and the track is too coarse to judge. The Sol Duc resort campground pin (index 0) is a drive-in camp 2.6 km off and is listed in bivyNames, so removal is safe either way.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/seven-lakes-basin-high-divide",
+   "https://www.summitpost.org/mount-carrie/154767"
+  ]
+ },
+ {
+  "id": "wa_mount_herman_standard_scramble",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [
+   0
+  ],
+  "reason": "Track runs Bagley Lakes trailhead, Bagley Lake, Herman Saddle, summit and back, matching the text; pins 1-7 lie within 400 m of it. Silver Fir Campground (index 0) is a roadside campground 4.3 km away and is in bivyNames.",
+  "sources": []
+ },
+ {
+  "id": "wa_mount_johnson_standard",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Track goes Upper Dungeness trailhead, Royal Basin trail, Royal Lake, then west to the summit, as described; only 8 vertices so offTrack figures overstate. Pins sit within 30 m of the track except Upper Royal Basin (about 1 km, a place the descent text names) and the col (310 m). No pin is clearly wrong.",
+  "sources": []
+ },
+ {
+  "id": "wa_mount_maude_r1",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Track runs Phelps Creek trailhead, Leroy Creek area and Leroy Basin to the summit, one of the two approaches the text gives. Only 4 vertices; measured to the segments, the Leroy crossing is 526 m and Leroy Basin 265 m away. All pins are on the described approach.",
+  "sources": []
+ },
+ {
+  "id": "wa_navaho_peak_south_slopes",
+  "verdict": "UNSURE",
+  "removePinIdx": [],
+  "reason": "Standard route (WTA, Mountaineers) is Stafford Creek trail to Navaho Pass, then County Line Trail to the summit. The dense track starts and ends at the right trailhead and reaches the summit, but passes about 1.2 km east of the pass pin and the meadow camp, and extends east beyond the peak. It may be a shortcut or a different line; no source settles it.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/navaho-peak",
+   "https://www.mountaineers.org/activities/routes-places/navaho-pass-peak"
+  ]
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Track runs from the Nooksack Cirque trailhead via Price Lake to the tower summit, matching the text. Only 7 vertices; the moraine bivy pin is 1.2 km off the straight chords but is a camp named in bivyNames on the shoulder above Price Lake, so it is not clearly wrong.",
+  "sources": []
+ },
+ {
+  "id": "wa_nw_ridge_2",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Track follows the Stuart Lake / Colchuck Lake trail from the Stuart Lake trailhead, wraps Colchuck Lake and ends at the Balanced Rock area, as the text says. The lake pin is a lake-centre point 600 m from the shoreline track, not a different way.",
+  "sources": [
+   "https://www.wta.org/go-hiking/hikes/colchuck-lake"
+  ]
+ },
+ {
+  "id": "wa_sews_sw_rib",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [
+   0,
+   1
+  ],
+  "reason": "Track starts at Blue Lake trailhead on Hwy 20 and climbs toward the spire, matching the text. Klipchuck and Lone Fir Campgrounds are drive-in campgrounds 7-14 km away and both are in bivyNames.",
+  "sources": []
+ },
+ {
+  "id": "wa_sperry_peak_standard",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [
+   0
+  ],
+  "reason": "Track runs from Sunrise Mine trailhead up the Sunrise Mine trail to the Vesper Lake area and the summit, as described. Red Bridge Campground (index 0) is a Mountain Loop Hwy campground 12 km away and is in bivyNames.",
+  "sources": []
+ },
+ {
+  "id": "wa_tenpeak_mountain_southeast",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Track runs White River trailhead, up the White River drainage to Thunder Creek, then the basin and summit, matching the text. Only 7 vertices so the 1.4-1.7 km figures are chord artifacts (Thunder Creek camp is 51 m and Thunder Basin camp 128 m from the segments). The Boulder Creek junction pin is 1.2 km off but unverified, so it is left in.",
+  "sources": []
+ },
+ {
+  "id": "wa_trapper_mountain_south_slopes",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [],
+  "reason": "Track starts at Cascade Pass trailhead and ends at the summit via Trapper Lake, as described. It has one obviously bad vertex (48.316,-120.680) that inflates distances to the camp and lake pins; pins are otherwise consistent with the Cascade Pass / Stehekin-side approach.",
+  "sources": []
+ },
+ {
+  "id": "wa_windy_peak_trail",
+  "verdict": "KEEP_TRACK",
+  "removePinIdx": [
+   1,
+   2
+  ],
+  "reason": "Dense track follows the Long Swamp trail to the summit; the junction and summit pins are within 35 m. The Forest Service puts the wilderness boundary about 2.5 miles up with Two Bear Camp beyond, but the boundary pin is about 1 mile up and both pins sit 600-840 m off the trail, so they are misplaced. Two Bear Camp stays in bivyNames.",
+  "sources": [
+   "https://www.fs.usda.gov/r06/colville/recreation/trails/windy-peak-342",
+   "https://www.wta.org/go-hiking/hikes/windy-peak"
+  ]
+ }
+]

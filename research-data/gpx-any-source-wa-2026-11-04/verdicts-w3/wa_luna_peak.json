@@ -1,0 +1,24 @@
+{"area_id":"wa_luna_peak",
+ "routes":[
+ {"route_id":"wa_luna_peak_southeast_slopes",
+  "season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Stored Jul-Sep kept. Logged ascents peak Jul (57) and Aug (37), Sep 24; web search: July through early September is the practical window, snow can linger on the approach early, and the lake taxi runs only in summer."},
+  "track":null,
+  "otherTracksConsidered":[
+   {"aid":"3267226","verdict":"different","why":"Jul 3 round trip from Ross Dam but part of a 5-day Northern Pickets traverse that also climbs Challenger; summit 60 m from our pin. Visits another peak."},
+   {"aid":"3256000","verdict":"different","why":"Jul 3 boat-in, camp-based, also climbs East Fury; starts at the boat landing."},
+   {"aid":"2931200","verdict":"different","why":"Aug 2 camp-based track from Big Beaver camp to Access basin; not a complete round trip."},
+   {"aid":"2066021","verdict":"offseason","why":"Oct 23 27-hour multi-peak survey."},
+   {"aid":"1059109","verdict":"offseason","why":"Oct 20 car-to-car record effort."}
+  ],
+  "pins":[],
+  "facts":[{"field":"watch_out","month":7,"text":"Mosquitoes are thick at the Luna Lake camps and in the upper basins in early July; bring a head net.","aids":["3267226"]}]},
+ {"route_id":"wa_luna_peak_southwest_ridge",
+  "season":{"months":[7,8,9],"window":"Jul-Sep","evidence":"Same peak, same approach and same summit traverse; logged SW-ridge ascents are Jul (Access Creek, SW Ridge; SW ridge from Luna Col), plus a May and a December outlier. Web search puts the practical window July to early September."},
+  "track":null,
+  "otherTracksConsidered":[
+   {"aid":"3267226","verdict":"different","why":"Multi-peak traverse (also Challenger)."},
+   {"aid":"3256000","verdict":"different","why":"Boat-in, camp-based, also East Fury."},
+   {"aid":"2931200","verdict":"different","why":"Camp-based, not a complete round trip."}
+  ],
+  "pins":[],"facts":[]}],
+ "notes":"Southeast Slopes and Southwest Ridge look like ONE line filed twice: both go Big Beaver, Access Creek basin, Luna Col, then the false summit and the exposed traverse to the true summit. Same tracks fit both, so none assigned. No complete single-peak round trip exists in the harvest."}

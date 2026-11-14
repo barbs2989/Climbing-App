@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "node:url";
 // check:read-failures scans ONE file. Five do reads. What does its rule say about the other four?
 //
 // The guard's own header explains why the class matters: a caller catches, state stays [], every
@@ -15,7 +16,7 @@ import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 const traverse = _traverse.default || _traverse;
 
-const ROOT = new URL("../..", import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL("../..", import.meta.url));
 
 /* Lifted from the guard with ANCHOR LOST, so the two cannot drift on what "empty" means. */
 const guardSrc = readFileSync(ROOT + "scripts/check-read-failures.mjs", "utf8");

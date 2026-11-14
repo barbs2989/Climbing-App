@@ -1,0 +1,24 @@
+{
+ "ak_renaissance_wall": {
+  "_expect": {"name": "Renaissance Wall", "region": "Alaska"},
+  "blurb": "A compact wall of about ten routes in the Independence Mine zone of Hatcher Pass, north of Palmer. Nearly everything here is traditional protection, with a single bolted line mixed in. The grade spread is steep for a small wall: a lone easier route and one at 5.10, then a cluster of eight at 5.11, so this is a place for leaders already comfortable on harder gear climbs rather than a beginner venue. Expect a short alpine-style setting with a scramble to reach the base, and a short season typical of the pass.",
+  "review": {"sources": ["https://rakkup.com/guidebook/hatcher-pass-rock-climbing/renaissance-wall/s22923", "https://www.mountainproject.com/area/106931730/independence-mine-bouldering-and-climbing"]}
+ },
+ "ak_peanut_butter": {
+  "_expect": {"name": "Peanut Butter", "region": "Alaska"},
+  "blurb": "A small cool, shady pocket of crag below the main Falcon Rock formation at East Grapefruit Rocks, in the Fairbanks region. It holds about ten routes: mostly bolted sport lines, plus a pair of top-rope problems and a couple of gear routes. Grades run from 5.8 up to 5.12, with several in the 5.9 and 5.11 range, so there is something for solid beginners through strong intermediates. The shade makes it a pleasant choice when the neighboring walls feel hot, and the routes are short, in keeping with the rest of the rocks.",
+  "review": {"sources": ["https://www.mountainproject.com/area/108587130/peanut-butter", "https://www.mountainproject.com/area/105974971/east-grapefruit-rocks"]}
+ },
+ "ak_lower_walls": {
+  "_expect": {"name": "Lower Walls", "region": "Alaska"},
+  "blurb": "The lowest tier of the Purinton Creek cliff, which stands in plain view of the Glenn Highway in the Mat-Su Valley. Ten routes sit on the face beneath the ledge that crosses the crag, nearly all traditional with one bolted line. Most grades hover around 5.10, with a couple of 5.9s and a single much harder test. The wall is less steep than neighboring sectors, which makes it friendlier, though loose rock on many routes calls for care and a helmet. The area is one of the drier spots in the state.",
+  "review": {"sources": ["https://www.mountainproject.com/area/109206415/lower-walls", "https://mountainproject.com/area/109150185/purinton-creek"]}
+ },
+ "_skipped": {
+  "ak_mcalpine_sector": "only one page found that mentions this sector (parent 43 Mile page does not mention it)",
+  "ak_buskin_boulder": "no page about this boulder found; could not fetch two pages"
+ },
+ "_conflicts": {
+  "ak_peanut_butter": "stored rock is metamorphic rock; the parent page describes the rock as mainly solid limestone (https://www.mountainproject.com/area/105974971/east-grapefruit-rocks)"
+ }
+}

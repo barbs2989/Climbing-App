@@ -1,0 +1,40 @@
+{
+ "nh_white_s_ledge": {
+  "_expect": { "name": "White's Ledge", "region": "New Hampshire" },
+  "blurb": "White's Ledge is a slabby granite cliff in Albany, south of Conway, set just off a hiking loop near a national forest campground. The fifteen routes here are almost all traditional, with a single bolted line, and they run from easy fifth class through the 5.8 to 5.10 range, topped by one 5.12. The main wall holds long multi-pitch lines, and the style leans toward a modern trad feel with bolts added only where gear runs thin. Some pitches are run out, in the manner of nearby Whitehorse. The face looks south, so it is warm in early spring and late fall, though corners and overlaps near the top can stay damp after heavy rain.",
+  "review": { "sources": ["https://mountainproject.com/area/107821454/white-ledge", "https://www.mountainproject.com/area/110931861/wm-albany-area"] }
+ },
+ "nh_moby_grape_area": {
+  "_expect": { "name": "Moby Grape Area", "region": "New Hampshire" },
+  "blurb": "This stretch of Cannon Cliff in Franconia Notch sits between the big central wall and the Weissner dike, and offers long granite lines of roughly 800 feet. Of the fifteen climbs, most are aid routes and the rest are trad. Free climbers will find mostly 5.8 and 5.9 outings, a single easier one, and a handful of much harder lines around 5.12. The rock is often loose and flaky, so a helmet and a standard trad rack are a must, and descents are awkward, with few fixed anchors above the first pitch. The approach follows a paved trail and then climbs talus, which is slick when wet or snowy.",
+  "review": { "sources": ["https://www.mountainproject.com/area/107340355/moby-grape-area", "https://www.mountainproject.com/v/moby-grape/105884815", "https://www.mountainproject.com/area/107340274/cannon-cliff?print=1"] }
+ },
+ "nh_5_children_s_crusade_wall": {
+  "_expect": { "name": "Children's Crusade Wall", "region": "New Hampshire" },
+  "blurb": "Children's Crusade Wall lies on Whitehorse Ledge near North Conway, reached by continuing south along the base past the Echo Roof section. It is a dark face crossed by a diagonal dike, and it steepens higher up into big roofs that call for technical face climbing. All fifteen routes are trad. A couple of moderate lines sit at the lower end, but the bulk of the wall is 5.11, with one route at 5.12. The black rock soaks up the sun and the wall runs warm. The longer routes go four to six pitches, and many parties rappel before the hardest pitch.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105909646/childrens-crusade-wall", "https://www.newhampshireclimbing.com/?p=144"] }
+ },
+ "nh_06_square_ledge_pinkham_notch": {
+  "_expect": { "name": "Square Ledge (Pinkham Notch)", "region": "New Hampshire" },
+  "blurb": "Square Ledge is a tree-ringed cliff beside Pinkham Notch, a short hike up from the Route 16 visitor center, with a main face around 130 feet that suits a first multi-pitch outing. Fifteen climbs are logged, mostly trad plus a couple of top-rope lines and three boulder problems at about V2 to V3. Grades stretch from 5.4 up through the 5.10s, with a lone 5.11 and 5.12, so beginners learning to top-rope and intermediates working toward trad leading both find something. It sees fewer people than the big valley cliffs, though summer groups can fill it. Shade is easy to find, and the summit looks toward the Presidentials.",
+  "parking_note": "Leave the car at the large lot of the Appalachian Mountain Club visitor center on Route 16 in Pinkham Notch, then cross the road to reach the trail.",
+  "review": { "sources": ["https://www.mountainproject.com/area/105973007/square-ledge-pinkham-notch", "https://app.advcollective.com/new_hampshire/Climbing/explore-climb-the-square-ledge-in-pinkham-notch", "https://www.nemountaineering.com/blog/2013/05/24/climbing-at-square-ledge-in-not-so-square-company/"] }
+ },
+ "nh_4_the_perfect_wave_slab": {
+  "_expect": { "name": "The Perfect Wave Slab", "region": "New Hampshire" },
+  "blurb": "The Perfect Wave Slab is the fourth slab of Rainbow Slabs, along the Kancamagus Highway west of Conway. It is a clean, pale granite slab more than 200 feet tall and about 300 feet wide. Fifteen routes cover it, nearly all trad, with one bolted line. Grades are gentle: roughly 5.6 through 5.9, clustered at 5.7 and 5.8, which makes it a draw for friction climbers moving up to multi-pitch. Protection is usually reasonable but a few lines are runout, so carry a standard rack and a 70 m rope, since double ropes are often needed to rappel. The approach is a longer walk in from the river road.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106158283/the-perfect-wave-slab", "https://mountainproject.com/area/106158274/rainbow-slabs"] }
+ },
+ "nh_triple_corners_right": {
+  "_expect": { "name": "Triple Corners Right", "region": "New Hampshire" },
+  "blurb": "Triple Corners Right is the upper right end of the Triple Corners crag at Rumney, tucked between the Starship Enterprise and Waimea zone and the Hinterlands. It is the gentler, more reachable side of the crag, and climbers turned off by the crowds elsewhere often drift here. Of fifteen routes, most are bolted sport lines and a few are trad. Expect mostly 5.9 and 5.10 climbs, a few easier ones starting near 5.6, and some 5.11s. The trails at the base are badly eroded, and a fourth-class gully through the middle of the crag is best avoided when wet.",
+  "review": { "sources": ["https://www.mountainproject.com/area/106724662/triple-corners?print=1", "https://rakkup.com/guidebook/rumney-rock-climbing/triple-corners,-upper-right-side/s20804"] }
+ },
+ "_skipped": {
+  "nh_prow_and_roadside_attraction_the": "could not fetch two pages about this boulder area; only a single route page (Lakeside warmup) found",
+  "nh_gate_boulders": "no fetched page about Gate Boulders; parent Entrance Boulders page is at Rumney, far from input coordinates"
+ },
+ "_conflicts": {
+  "nh_06_square_ledge_pinkham_notch": "stored rock 'sandstone' vs Mountain Project (https://www.mountainproject.com/area/105973007/square-ledge-pinkham-notch) describing horizontally banded schist"
+ }
+}

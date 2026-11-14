@@ -1,0 +1,320 @@
+{
+ "date": "2026-10-28",
+ "scope": "Washington ice and mixed routes that store a trip time (14 ice, 2 mixed), not covered by the alpine passes",
+ "status": "RESEARCHED TWICE, 1 WRITTEN",
+ "rule": "Same evidence rule as audits/2026-10-28-route-timing-out-of-state.json: a published guidebook/club figure that could be read, or 3 timed reports, or 2 agreeing within 15%; only a leg more than 20% short moves.",
+ "counts": {
+  "researched": 16,
+  "repaired": 1,
+  "writes": 1
+ },
+ "routes": [
+  {
+   "id": "wa_borrowed_time",
+   "route": "Borrowed Time",
+   "storedLegs": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 1,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": 4.25,
+    "carToCar": 17
+   },
+   "verdict": "Kept: evidence agrees with the stored legs or is too thin to move them."
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "route": "West Face of Boston",
+   "storedLegs": [
+    null,
+    null,
+    null,
+    17
+   ],
+   "timedReports": 1,
+   "median": {
+    "approach": null,
+    "toSummit": 12.5,
+    "summitToCar": 3.75,
+    "carToCar": 17
+   },
+   "verdict": "Kept: evidence agrees with the stored legs or is too thin to move them."
+  },
+  {
+   "id": "wa_early_winter_couloir",
+   "route": "Early Winter Couloir",
+   "storedLegs": [
+    1,
+    6,
+    3,
+    10
+   ],
+   "timedReports": 3,
+   "median": {
+    "approach": 1,
+    "toSummit": 5.75,
+    "summitToCar": 1.25,
+    "carToCar": 12
+   },
+   "verdict": "Kept. Car to car 8, 12, 18 hr (median 12) leaves the stored 10 hr 17% short, inside the bar; approach 1 hr matches two reports; the published range is a generic snippet."
+  },
+  {
+   "id": "wa_excavation_aka_the_crack",
+   "route": "Excavation, AKA The Crack",
+   "storedLegs": [
+    0.1,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": 0.08,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_last_chance_for_gas_aka_tricky_start",
+   "route": "Last Chance for Gas, AKA Tricky Start",
+   "storedLegs": [
+    0.1,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": 0.08,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_fantasy_falls",
+   "route": "Fantasy Falls",
+   "storedLegs": [
+    4,
+    4,
+    3,
+    12
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_kendall_peak_cliff_north_face",
+   "route": "Kendall Cliff – North Face",
+   "storedLegs": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "route": "South Couloir",
+   "storedLegs": [
+    null,
+    6,
+    5.5,
+    12
+   ],
+   "timedReports": 2,
+   "median": {
+    "approach": null,
+    "toSummit": 5.75,
+    "summitToCar": 5.8,
+    "carToCar": 11.9
+   },
+   "verdict": "Kept: evidence agrees with the stored legs or is too thin to move them."
+  },
+  {
+   "id": "wa_ne_couloir",
+   "route": "NE Couloir",
+   "storedLegs": [
+    0.75,
+    2.5,
+    1.5,
+    5
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": 0.75,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": 5
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_new_york_gully",
+   "route": "New York Gully",
+   "storedLegs": [
+    null,
+    10,
+    null,
+    10
+   ],
+   "timedReports": 3,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": 12.67
+   },
+   "verdict": "WRITTEN on the second pass: Whole-day row 21% short. A winter party with clock times from the Alpental lot took 12.7 hr car to car (10.3 up, 2.4 down); a second gives 11 hr (agreeing within 15%) and a third about 14 hr. Kept as one whole day."
+  },
+  {
+   "id": "wa_snoqualmie_mountain_the_snostril",
+   "route": "The Snostril",
+   "storedLegs": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_summit_chief_mountain_north_face",
+   "route": "North Face",
+   "storedLegs": [
+    6.5,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 1,
+   "median": {
+    "approach": 6.5,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: evidence agrees with the stored legs or is too thin to move them."
+  },
+  {
+   "id": "wa_superalpine",
+   "route": "Superalpine",
+   "storedLegs": [
+    4.5,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 2,
+   "median": {
+    "approach": 4,
+    "toSummit": 6.33,
+    "summitToCar": 2.4,
+    "carToCar": 11.08
+   },
+   "verdict": "Kept: evidence agrees with the stored legs or is too thin to move them."
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "route": "SW Couloir and Face",
+   "storedLegs": [
+    null,
+    null,
+    8,
+    null
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_winter_spring_ice_snow_mixed_2_east_face_variation",
+   "route": "East Face Variation",
+   "storedLegs": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  },
+  {
+   "id": "wa_winter_spring_ice_snow_mixed_2_northeast_slabs",
+   "route": "Northeast Slabs",
+   "storedLegs": [
+    null,
+    10.5,
+    null,
+    10.5
+   ],
+   "timedReports": 0,
+   "median": {
+    "approach": null,
+    "toSummit": null,
+    "summitToCar": null,
+    "carToCar": null
+   },
+   "verdict": "Kept: no timed reports found."
+  }
+ ],
+ "repairs": [
+  {
+   "id": "wa_new_york_gully",
+   "before": [
+    null,
+    10,
+    null,
+    10
+   ],
+   "after": [
+    null,
+    12.7,
+    null,
+    12.7
+   ],
+   "why": "Whole-day row 21% short. A winter party with clock times from the Alpental lot took 12.7 hr car to car (10.3 up, 2.4 down); a second gives 11 hr (agreeing within 15%) and a third about 14 hr. Kept as one whole day.",
+   "rollback": "scripts/rollback-timing-fixes-1793252891044.json"
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "id": "wa_cannon_mountain_south_slopes",
+ "name": "South Slopes",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_cannon_mountain",
+  "name": "Cannon Mountain",
+  "lat": 47.502801,
+  "lng": -120.802476,
+  "elevation_ft": 8652,
+  "parent_id": "wa_stuart_range",
+  "ground_ft": 8628
+ },
+ "dist_km": 22.1,
+ "gain_ft": 8600,
+ "high_point_ft": 8638,
+ "approach_logistics": {
+  "peakLat": 47.502801,
+  "peakLng": -120.802476,
+  "trailhead": "Snow Lakes Trailhead",
+  "trailheadLat": 47.5441,
+  "trailheadLng": -120.7095,
+  "trailheadDirection": "Start at the Snow Lakes Trailhead (paved, day-use permit required, ~4 miles up Icicle Creek Road from Leavenworth)."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.5441,
+   "lng": -120.7096,
+   "elev": 1300,
+   "name": "Snow Lakes Trailhead",
+   "note": "Standard approach: Snow Lakes Trail #1553 (~4.2 mi up Icicle Creek Rd from US-2 in Leavenworth) into the Enchantment Lakes basin, then via Perfection Lake to Prusik Pass, traverse NW to the Druid Plateau, then to the summit block (roughly 13-14 mi and over 7,300 ft of gain one-way).",
+   "type": "Trailhead",
+   "elevFt": 1300,
+   "directions": "From US 2 on the west side of Leavenworth, turn south on Icicle Road and drive 4.2 miles to the paved Snow Lakes Trailhead lot at about 1,300 ft. A Northwest Forest Pass is required to park. Day trips need the free self-issued Enchantment permit at the trailhead; overnight stays from May 15 to Oct 31 need a quota permit.",
+   "ground_ft": 1372
+  },
+  {
+   "i": 1,
+   "lat": 47.47986,
+   "lng": -120.79735,
+   "elev": 7100,
+   "name": "Perfection Lake",
+   "type": "Water",
+   "distMi": null,
+   "elevFt": 7100,
+   "ground_ft": 7100
+  },
+  {
+   "i": 2,
+   "lat": 47.4873419,
+   "lng": -120.7906426,
+   "elev": 7497,
+   "name": "Prusik Pass",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": 7497,
+   "ground_ft": 7468
+  },
+  {
+   "i": 3,
+   "lat": 47.502801,
+   "lng": -120.802476,
+   "elev": 8638,
+   "name": "Cannon Mountain summit",
+   "type": "Summit",
+   "elevFt": 8638,
+   "ground_ft": 8628
+  }
+ ]
+}

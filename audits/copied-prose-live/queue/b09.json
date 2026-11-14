@@ -1,0 +1,960 @@
+[
+ {
+  "key": "s0561",
+  "text": "Hike the Rachel Lake Trail to the first avalanche clearing, pick up the unmarked but well-used Hibox boot path climbing north up steep timber and talus on the slopes of Box Ridge to the south side of the summit block, then traverse east beneath it to the east-side gully and a short Class 3 scramble on solid rock to the summit. Reverse the same line to descend. Snow-free bootpath is easy to follow in summer season; the whole outing is a long single day, not an overnight.",
+  "runs": [
+   "to the south side of the summit block"
+  ],
+  "targets": [
+   {
+    "id": "wa_hibox_mountain_standard",
+    "path": "itinerary.days[0].note"
+   }
+  ]
+ },
+ {
+  "key": "s0562",
+  "text": "A deceptive gully on the southwest side of the summit block that cliffs out at class 4 — stay climbers' right of it",
+  "runs": [
+   "gully on the southwest side of the summit block"
+  ],
+  "targets": [
+   {
+    "id": "wa_hibox_mountain_standard",
+    "path": "approach_variants[0].hazards[1]"
+   }
+  ]
+ },
+ {
+  "key": "s0563",
+  "text": "From the Goodell Creek Campground/Trailhead on SR 20 just west of Newhalem (~600 ft), follow the old decommissioned logging roadbed along the true left (south) side of Goodell Creek. This grassy/gravel roadbed is flat and easy hiking for roughly 4 to 4.5 miles, gaining only a few hundred feet to about 1,700-1,800 ft. Watch on the right for a cairn/stone marker (climbers call it the 'stone arrow') at the end of the roadbed - this marks the unsigned but well-boot-beaten climbers' path that leaves the creek bottom and switchbacks steeply up into old-growth forest toward Stump Hollow and Terror Creek Basin. This user trail is steep, root-and-duff footing, and brushy in spots (slide alder, devil's club low down) but stays reasonably distinct with flagging/cairns in the upper sections; there is no reliable water between the roadbed's end and treeline, so top off at Goodell Creek. Around 5,000-5,600 ft the forest opens into Stump Hollow, a slabby heather-and-snowfield basin wedged between the Barrier ridge and the Chopping Block - a scenic, easier-angle respite after the timber grind. From Stump Hollow, rising-traverse on meadow, slab, and (early/mid-season) snow to a broad saddle on the Barrier ridge at roughly 6,200 ft. Cross the Barrier itself by one of two options: a lower crossing on a loose, exposed ledge system at the toe of the Terror Glacier, or a higher crossing over moat terrain and steep choss just below Mt. Degenhardt; either takes under an hour but involves loose rock and some exposure, so care with rockfall onto any party below is essential. Descend the far side into Crescent Creek Basin (good bivy sites and reliable running water, roughly below Mt. Terror) - this is the standard camp for Himmelhorn objectives. From camp, ascend the narrow gully leading to the Himmel-Otto col: in early season this is a straightforward snow climb with a bit of scrambling near the top; by late season the gully turns to icy hardpack with choss-filled moats along the rock margins, and an overhanging boulder near the col often forces a loose, exposed class 3-4 bypass on the left (climber's) side. From the col, the standard route continues up easier ground (scrambling to low 5th class) onto Himmelhorn's northwest flank to the 7,880 ft summit. Total approach distance to the summit and back runs on the order of 15-16 miles round trip with substantial elevation gain and loss, so most parties treat this as a 2-4 day trip with a basecamp in Crescent Creek Basin rather than a car-to-car push.",
+  "runs": [
+   "to the himmel otto col in early season"
+  ],
+  "targets": [
+   {
+    "id": "wa_himmelhorn_southeast_route",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0564",
+  "text": "Early in the season, straightforward reverse scrambling suffices. Later in the season, rappel anchors found in the moats are helpful; a single 60m rope is workable with planning, though double ropes give more flexibility. An alternative is a series of rappels and exposed scrambling down the NW side back toward the col.",
+  "runs": [
+   "a series of rappels and exposed scrambling down the nw side"
+  ],
+  "targets": [
+   {
+    "id": "wa_himmelhorn_wild_hair_crack",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0565",
+  "text": "Easy scrambling toward the false summit; belay at a notch just below it. Avoid the gully to the left for a cleaner finish.",
+  "runs": [
+   "toward the false summit belay at a notch just below"
+  ],
+  "targets": [
+   {
+    "id": "wa_himmelhorn_wild_hair_crack",
+    "path": "pitch_detail[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0566",
+  "text": "A moderate single-pitch sport climb that angles slightly left near the top to a chain anchor at the top of the cliff; the first bolted line established in the Spire Gully area, put up by its namesake honeymooning first-ascent party.",
+  "runs": [
+   "angles slightly left near the top to a chain anchor at the top of the cliff"
+  ],
+  "targets": [
+   {
+    "id": "wa_honeymoon_sweet",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0567",
+  "text": "Tops out at a chain anchor at the top of the cliff. Lower directly to the ground on a single rope; no walk-off or rappel is required.",
+  "runs": [
+   "a chain anchor at the top of the cliff"
+  ],
+  "targets": [
+   {
+    "id": "wa_honeymoon_sweet",
+    "path": "descent_text"
+   }
+  ]
+ },
+ {
+  "key": "s0568",
+  "text": "Angles slightly left near the top to a chain anchor at the top of the cliff (5 bolts).",
+  "runs": [
+   "angles slightly left near the top to a chain anchor at the top of the cliff"
+  ],
+  "targets": [
+   {
+    "id": "wa_honeymoon_sweet",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0569",
+  "text": "From SR 20 at Marblemount, follow Cascade River Road about 23 miles to its end at the Cascade Pass parking lot. The first 10 miles are paved and the rest is gravel.",
+  "runs": [
+   "miles to its end at the cascade pass"
+  ],
+  "targets": [
+   {
+    "id": "wa_horseshoe_peak_scramble",
+    "path": "approach_logistics.trailheadDirection"
+   },
+   {
+    "id": "wa_hurry_up_peak_south_ridge",
+    "path": "approach_logistics.trailheadDirection"
+   },
+   {
+    "id": "wa_magic_mountain_south_ridge",
+    "path": "approach_logistics.trailheadDirection"
+   }
+  ]
+ },
+ {
+  "key": "s0570",
+  "text": "Class 3 dike with a Class 4 down-step; published descriptions note it requires a little bit of roped climbing (half a pitch) — a short rope suffices.",
+  "runs": [
+   "requires a little bit of roped climbing half a pitch"
+  ],
+  "targets": [
+   {
+    "id": "wa_horseshoe_peak_scramble",
+    "path": "rope_note"
+   }
+  ]
+ },
+ {
+  "key": "s0571",
+  "text": "From Sahale Glacier Camp traverse the boulder-and-heather plateau east, downclimb the steep snowfield, and gain Sahale Peak's sharp southeast ridge; follow a cairned climbers' trail down it, past one short 4th-class step, descending easterly to about 7,100 ft. Pick up the southeast rib that forms the west edge of Horseshoe Basin and follow it southeast to the top of the so-called secret gully at about 6,700 ft — full of snow some years, completely melted out and loose in others. Below it, traverse a wide ledge at 6,600 ft rising gradually to the base of a cliff at 6,800 ft where old mining workings sit, then contour loose scree until you are due south of the peak. Fill up at Doubtful Creek or Pelton Basin: the water in Horseshoe Basin is contaminated by historic mine tailings and should not be drunk.",
+  "runs": [
+   "the west edge of horseshoe basin and follow it",
+   "to the base of a cliff at 6"
+  ],
+  "targets": [
+   {
+    "id": "wa_horseshoe_peak_scramble",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0572",
+  "text": "An alcove with old mining equipment stashed in it is the unmistakable marker. Dropping into Horseshoe Basin you use a narrow rock dike about eight feet wide that loses roughly a hundred feet: it starts Class 3, then a short downward Class 4 step lands you in that alcove with mining gear cached inside it, after which the dike stays Class 3 but loose and exposed. Nothing else on this ridge looks like it. Get the peak itself right before you commit: the crag climbers call Horseshoe is the highest point on Ripsaw Ridge, nearest Buckner, with the sharp Lick of Flame spire standing between the two. The twin-spired formation with a U-shaped notch in the middle of the ridge is the older, historical Horseshoe and is not the summit anyone bags — aiming at it puts you on the wrong tower. From the basin floor a snowfield at 30 to 45 degrees sits at the base of the peak and spills onto a large ledge about a hundred feet below the top; from there work leftward around a small buttress into the loose gully that leads to the notch just east of the summit, where the rope comes out for five feet of 5th class.",
+  "runs": [
+   "the twin spired formation with a u shaped notch"
+  ],
+  "targets": [
+   {
+    "id": "wa_horseshoe_peak_scramble",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0573",
+  "text": "Take US 2 east past Gold Bar about 7 miles. Just as the highway curves left toward the large bridge over the Skykomish River, turn right onto Mount Index Road, drive about a quarter mile on dirt, and turn right at the sign for Lake Serene Trail 1068 into the parking lot about 500 ft ahead, around 600 ft. A Northwest Forest Pass is required.",
+  "runs": [
+   "large bridge over the skykomish river turn right onto mount index road"
+  ],
+  "targets": [
+   {
+    "id": "wa_hourglass_gully_winter",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0574",
+  "text": "From Gold Bar, drive US-2 east about 7 miles and, where the road curves left toward the large bridge over the Skykomish River, turn right onto Mount Index Road. After a quarter mile on dirt, turn right at the sign for the Lake Serene trail; the parking lot is about 500 feet ahead.",
+  "runs": [
+   "large bridge over the skykomish river turn right onto mount index road"
+  ],
+  "targets": [
+   {
+    "id": "wa_hourglass_gully_winter",
+    "path": "approach_logistics.trailheadDirection"
+   },
+   {
+    "id": "wa_j_tnar",
+    "path": "approach_logistics.trailheadDirection"
+   },
+   {
+    "id": "wa_philadelphia_mountain_scramble",
+    "path": "approach_logistics.trailheadDirection"
+   }
+  ]
+ },
+ {
+  "key": "s0575",
+  "text": "Confirmed as Mount Index's Main Peak, Hourglass Gully (Winter), Grade III/1,900 ft. Class 4/low 5th rock plus a short section of 60+ degree snow/ice/tree climbing on the East Ridge, which is often rappelled on descent. Snow pickets and tree slings are the primary protection, not a rock rack. Ice tools/crampons required.",
+  "runs": [
+   "climbing on the east ridge which is often rappelled on"
+  ],
+  "targets": [
+   {
+    "id": "wa_hourglass_gully_winter",
+    "path": "rope_note"
+   }
+  ]
+ },
+ {
+  "key": "s0576",
+  "text": "Lake Serene trailhead off Mount Index Road at about 600 ft. Lake Serene Trail #1068 runs about 4.1 miles and 2,000 ft to the north end of the lake, where the trail ends.\n\nTraverse the west side of the lake over talus and huge boulders to the south end. In snow, stay lower, closer to the water — the slope is less steep near the shore. Expect massive avalanche debris on this stretch.\n\nFrom the south end of the lake head east to the saddle, then take the ridge running southwest from it. That forested ridge is the crux of the approach and the reason this is a spring route: roughly the next 1,000 ft is dense brush and intermittent cliffs, plus one airy ten-foot rock step usually climbed by grabbing roots. Snow cover makes the ridge dramatically easier; bare, it is a fight. Plan on 12+ hours car to car and over 6,000 ft of gain despite the peak being under 6,000 ft.",
+  "runs": [
+   "the west side of the lake over talus and huge boulders to the south end",
+   "from the south end of the lake head east to the saddle"
+  ],
+  "targets": [
+   {
+    "id": "wa_hourglass_gully_winter",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0577",
+  "text": "Follow the ridge until it runs into the cliffs of Index, then traverse under the cliffs and take the first wide gully on your right. That is the Hourglass. Its shape is the check: it is wide and easy where you enter, constricts high up, then opens again. A gully that is narrow at the point where you step into it is not the one — keep traversing. Once melted out, the constriction holds a large wet rock step; that step is the reason the route is climbed as a snow line rather than in summer, and passing it dry would be mid-to-high fifth on the right side via a short chimney and face, or harder on the left.",
+  "runs": [
+   "on the right side via a short chimney"
+  ],
+  "targets": [
+   {
+    "id": "wa_hourglass_gully_winter",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0578",
+  "text": "Short handcrack up a trailside block, then moderate ground to a bolt and a final short splitter; belay at a ledge with chain anchor.",
+  "runs": [
+   "moderate ground to a bolt and a final short splitter belay at a"
+  ],
+  "targets": [
+   {
+    "id": "wa_house_of_the_7th_bobcat",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0579",
+  "text": "Bouldery tips laybacking (crux) past 2 closely spaced bolts to a rest pod, then 5.10 crack climbing to a chain anchor.",
+  "runs": [
+   "bouldery tips laybacking crux past 2 closely spaced bolts"
+  ],
+  "targets": [
+   {
+    "id": "wa_house_of_the_7th_bobcat",
+    "path": "pitch_detail[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0580",
+  "text": "The crux band. Traverse the ledge to the crest - near the midpoint a short but very exposed Class 4 section crosses where the ledge has eroded, on loose, wet, slippery, down-sloping holds. Above, Class 2-3 crest scrambling with a few attention-grabbing 4th class moves on sharp but unfractured rock leads to the 8,071 ft summit.",
+  "runs": [
+   "attention grabbing 4th class moves on sharp but unfractured rock"
+  ],
+  "targets": [
+   {
+    "id": "wa_hozomeen_mountain_northeast_buttress",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0581",
+  "text": "Gain a rib near 7,100 ft and follow the crest, or just right of it, on 3rd-class scrambling. Two steps interrupt it: a step of about 30 ft with an overhang on its left and a slanting ramp on the right, climbed at roughly 5.0 via the ramp, and above that a short buttress of about 15 ft at 4th class. The rock here has a pillowy texture that makes nuts, cams and slings largely useless, so this is protectable only in places and much of it is effectively soloed.",
+  "runs": [
+   "left and a slanting ramp on the right"
+  ],
+  "targets": [
+   {
+    "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+    "path": "climbing_route[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0582",
+  "text": "A genuine Cascade backcountry big-wall problem rather than a route in the usual sense. The line takes the left-facing corner systems that lead directly to the summit, with rope-stretcher pitches through the 6-10 range and a leftward traverse of the wall's distinctive tiger-stripe ledges to avoid the overhanging upper section, reaching the summit ridge about 100 ft from the top. Twelve pitches, climbed all free at 5.9, with one shallow piton placed and removed and no bolts on the entire route - Cascade ground-up ethics applied to a wall that barely accepts hardware. The first ascensionists' own summary is the best warning available: the face is very large, much steeper than it appears from below, the rock is friable, and there are almost no protection cracks, even for thin pitons. One published account rates the line V 5.9+ R/X rather than the published IV 5.9, and the R/X reflects reality better than the number does. What the rock lacks in solidity and protection it partly returns in a plethora of in-cut features, which climb well where they are attached. Larson and Wehrly bivouacked atop pitch 10, about 100 m below the summit.",
+  "runs": [
+   "the face is very large much steeper than",
+   "there are almost no protection cracks even for thin pitons"
+  ],
+  "targets": [
+   {
+    "id": "wa_hozomeen_mountain_west_face",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0583",
+  "text": "Sparse, poor and often absent. The defining feature of the Zorro Face is that there are almost no protection cracks, even for thin pitons, across a very large and steeper-than-expected wall of friable metamorphosed basalt. This is R/X terrain in one published account's rating. Leaders must be comfortable running out easy-to-moderate 5th class ground on rock that may detach, and the belays are as much of a problem as the pitches. Do not treat 5.9 as the difficulty - the difficulty is 5.9 with nothing between you and the belay.",
+  "runs": [
+   "there are almost no protection cracks even for thin pitons"
+  ],
+  "targets": [
+   {
+    "id": "wa_hozomeen_mountain_west_face",
+    "path": "pro_needs"
+   }
+  ]
+ },
+ {
+  "key": "s0584",
+  "text": "There is no good bail from this wall. Retreat means building rappel anchors in rock that will not take gear, on a face the first ascensionists describe as having almost no protection cracks even for thin pitons. Make your commitment decision at the base, from the launch point, with the whole day and the weather in front of you. The low-cost bail is earlier: from the camp north of the peak, or partway through the 4.5-hour approach traverse, at which point you can retreat to camp and go climb the north-side scramble instead. Once you are several pitches up, the realistic exit is upward and over the summit.",
+  "runs": [
+   "almost no protection cracks even for thin pitons"
+  ],
+  "targets": [
+   {
+    "id": "wa_hozomeen_mountain_west_face",
+    "path": "bail"
+   }
+  ]
+ },
+ {
+  "key": "s0585",
+  "text": "Leave the PCT when the summit is due west of you — a bearing, not a landmark, which is exactly what you want in cloud. From that point head cross-country west up steep heather or talus.\n\nThe base of the climb is where the mellow terrain ends and the ground turns rocky, at about 6,100 ft, marked by a rocky buttress. That change underfoot is the arrival, and it is felt rather than seen.\n\nAnd then comes the one decision that decides which route you climb, which is the most valuable thing on this page. At the base of the rocks you have two options: left takes you into a steep loose gully leading to a notch and the summit block — that is the older gully line, and it has turned parties around with rockfall. Right takes you up the ridge on class 3+ terrain — that is the East Ridge, the historic first-ascent route, and it is what most parties now climb. If you are in a loose gully, you have gone left.\n\nHow to follow it once committed, because it does not look obvious from below: the route goes up the right side of the east ridge, essentially linking clumps of trees, tree patch to tree patch. Looking up at it, the line is genuinely hard to piece together by eye; once you start, the next move is usually clear. Staying towards the right is correct at the beginning.\n\nCheckpoints higher up: about halfway, maybe a little further, leave the ridge proper by heading left on a short traverse to a blocky ramp, which you climb to a high point just before the summit block. Then descend about 20 ft to the notch at the foot of the block — either straight down, or skiers' right and a class 3 traverse to a ramp leading down to the notch.\n\nThe summit block itself: go up the middle to an obvious slabby ramp. From there either a short class 5 crack — one piece, a #1 Camalot at its start, protects it — or follow the ramp climbers' left to exposed class 3/4. Bring a 60 m rope: a 30 m is insufficient for the rappel off the block.\n\nScale of the thing, so nobody underestimates it: there is no walk-up on this mountain, the scrambling is stiff class 3 with class 4 moves, and one of the 1915 first-ascent party wrote his will on his shirt cuff over doubts he would survive the descent.",
+  "runs": [
+   "the route goes up the right side of the east ridge"
+  ],
+  "targets": [
+   {
+    "id": "wa_huckleberry_mountain_east_ridge",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0586",
+  "text": "Leave the PCT at a flowery meadow northeast of Joe Lake and climb a talus slope into the basin below the west face, which is in plain view from the meadow.",
+  "runs": [
+   "the pct at a flowery meadow northeast of joe lake and"
+  ],
+  "targets": [
+   {
+    "id": "wa_huckleberry_mountain_west_route",
+    "path": "waypoints[2].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0587",
+  "text": "Park at the PCT North Trailhead at Snoqualmie Pass (I-90 Exit 52, large lot off SR 906/Alpental Rd; Northwest Forest Pass or America the Beautiful pass required). Head north on the Pacific Crest Trail; most parties cut the corner via the Commonwealth Basin/Red Pass climbers' shortcut, which rejoins the PCT and trims about a mile off the standard trail. Climb the well-graded PCT switchbacks up to Kendall Katwalk (roughly 5 miles and 2,600 ft of gain from the trailhead) — a dramatic ledge blasted into a cliff face with real exposure in a fall-on-snow scenario early season. Continue north on the PCT past Ridge Lake and Gravel Lake, skirting the base of Alaska Mountain, to where the trail runs above Joe Lake, about 10 miles from the pass. For the West Route, leave the trail at a flowery meadow northeast of Joe Lake and head up a talus slope into the basin below the west face, which is clearly visible from there. Alternatively, take the Gold Creek Trail to Joe Lake and hike upslope to the PCT. Water is reliable at Ridge Lake and Gravel Lake, and at Joe Lake below the trail. Hazards on the approach include lingering snow on north-facing benches into July, loose rock in the approach gullies and talus once off-trail, and route-finding in poor visibility. Because of the length, many parties split this into 2-3 days with a camp at Ridge Lake or Gravel Lake.",
+  "runs": [
+   "at a flowery meadow northeast of joe lake and head up a talus slope into"
+  ],
+  "targets": [
+   {
+    "id": "wa_huckleberry_mountain_west_route",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0588",
+  "text": "Hurry-up Peak (7,821 ft) lies on the Skagit-Chelan county line at the northern end of the Ptarmigan Traverse, just south of Cascade Pass and Cache Col, between Magic Mountain and Spider Mountain (its line parent). It is not part of the Sahale-Boston/Horseshoe Basin group on the opposite side of the pass; instead it's reached from a Kool-Aid Lake camp on the traverse's first day. A quiet, seldom-solo-targeted scramble, it is usually tagged as a short side trip by parties already committed to the Ptarmigan Traverse rather than climbed on its own.",
+  "runs": [
+   "at the northern end of the ptarmigan traverse"
+  ],
+  "targets": [
+   {
+    "id": "wa_hurry_up_peak_south_ridge",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0589",
+  "text": "Start at the Cascade Pass Trailhead (~3,600 ft) at the end of Cascade River Road (about 23 miles of pavement then gravel from Marblemount; the upper gravel section is gated and typically doesn't open until snow clears, often not until late June/July). From the trailhead, follow the well-graded, heavily-used Cascade Pass Trail 3.7 miles and about 1,800 ft of gain, switchbacking up through forest and avalanche-path meadows to Cascade Pass (5,392 ft) — the last reliable trailside water is at the creek crossings low on the trail, so top off bottles before the switchbacks. At the pass, leave the maintained tread and pick up the climbers' path/boot track heading south-southeast, making a rising traverse across snow or heather on the flanks of Mixup Peak to the base of the Cache Glacier (~6,000 ft); this stretch is loose, choosy, and crosses several snow patches that can be firm in early morning. Ascend moderate glacier/snow slopes (crevasses can open by late summer — rope up if the party isn't comfortable soloing them) to the notch at Cache Col (6,900 ft). From the col, descend and traverse south-southeast about 1 mile over loose rock and heather benches, crossing occasional snowfields, down to Kool-Aid Lake (6,120 ft), the standard base camp for this side of the Ptarmigan Traverse and the only dependable water source in the basin (may be partly frozen early season). Car-to-camp is roughly 5-6 miles with about 3,300 ft of gain, generally a half-day carrying overnight gear. From camp, the peak itself is climbed as a side trip: head up toward Hurry-up Peak's south/southwest flank, crossing a band of steep snow around 7,100 ft (carry an axe/crampons even mid-summer) before gaining broken granite slabs and the south ridge crest; follow the crest/upper gully system with sustained Class 2-3 scrambling and a couple of exposed but short moves along the summit ridge to the 7,821 ft top — about 1 mile and 1,400-1,500 ft above camp, roughly 1-1.5 hours for a fit party.",
+  "runs": [
+   "snow or heather on the flanks of mixup"
+  ],
+  "targets": [
+   {
+    "id": "wa_hurry_up_peak_south_ridge",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0590",
+  "text": "Large pullout on the outside of the SR-20 hairpin east of Washington Pass. Follow the climbers' trail toward Spire Gully, cut right into a dry creek bed and go up smooth slabs (the upper one has a fixed line) to the Ice Box.",
+  "runs": [
+   "cut right into a dry creek bed and"
+  ],
+  "targets": [
+   {
+    "id": "wa_iceman",
+    "path": "waypoints[0].note"
+   },
+   {
+    "id": "wa_route_c",
+    "path": "waypoints[0].note"
+   },
+   {
+    "id": "wa_route_d",
+    "path": "waypoints[0].note"
+   }
+  ]
+ },
+ {
+  "key": "s0591",
+  "text": "Park at the apex of the hairpin turn on SR-20 below Washington Pass. Follow the climbers' trail up toward Quicksilver Slab and Spire Gully, then cut right into a dry creek bed and climb the slabs above it into the Ice Box. The upper, entrance slab has a fixed line; the lower slab does not. Both are smooth and slippery, and worse when wet.",
+  "runs": [
+   "cut right into a dry creek bed and"
+  ],
+  "targets": [
+   {
+    "id": "wa_iceman",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0592",
+  "text": "From Ruth, descend about 800 ft south and west along a bench toward a gully on the peak's west side. Then go down another 800 ft or so on a steep, sometimes exposed ramp and a faint path to the low saddle between Ruth and Icy. You have to regain this height on the way back.",
+  "runs": [
+   "to the low saddle between ruth and icy"
+  ],
+  "targets": [
+   {
+    "id": "wa_icy_peak_ruth_icy_traverse",
+    "path": "climbing_route[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0593",
+  "text": "Pitch 1 (5.10-): starts with a thin corner crack (~5.8) protected by small cams; after ~35 ft, bolted climbing leads to a ledge, then a short, well-protected 5.10 section reaches the first anchors. Pitch 2 (5.9-): enjoyable slabby climbing above leads to the top of the wall.",
+  "runs": [
+   "5.9 enjoyable slabby climbing above leads to the top of the wall"
+  ],
+  "targets": [
+   {
+    "id": "wa_imbibing_the_movements_on_human_destiny",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0594",
+  "text": "At the very bottom of the trail to the lower East Face climbs, near the left corner of the orange/green face — a corner crack just right of the trees marking the start of Black Systems Solar.",
+  "runs": [
+   "the very bottom of the trail to the lower",
+   "near the left corner of the orange/green face",
+   "right of the trees marking the start of black systems solar"
+  ],
+  "targets": [
+   {
+    "id": "wa_imbibing_the_movements_on_human_destiny",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0595",
+  "text": "Scramble the gully to the notch and the chockstone that marks the start of the climbing, with the belay ledge about fifteen feet above it. Two short pitches follow: slabs trending slightly left into a gully, then right onto the ridge crest to the top. There is a great deal of loose rock on that final stretch, so test holds and keep the party out of each other's fall line.",
+  "runs": [
+   "notch and the chockstone that marks the start of the"
+  ],
+  "targets": [
+   {
+    "id": "wa_ingalls_peak_east_route",
+    "path": "waypoints[6].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0596",
+  "text": "Trend right and follow the ridge to the summit; watch for a lot of loose rock along this final stretch.",
+  "runs": [
+   "trend right and follow the ridge to the summit"
+  ],
+  "targets": [
+   {
+    "id": "wa_ingalls_peak_east_route",
+    "path": "pitch_detail[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0597",
+  "text": "The South Ridge of Ingalls Peak is one of the most popular moderate alpine rock climbs in the Teanaway, on excellent reddish peridotite. Several pitches of low-fifth-class climbing on a clean, exposed ridge lead to the main (North) summit, with stunning views of Mount Stuart across the basin.",
+  "runs": [
+   "of ingalls peak is one of the most popular"
+  ],
+  "targets": [
+   {
+    "id": "wa_ingalls_peak_south_ridge",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0598",
+  "text": "The target is visible from the lakeshore: the cleft between the North and South peaks, with a single pointed spire sitting in it. That spire is the Dogtooth. Aim just left of it and let it draw you up the slabs.\n\nAt the Dogtooth, go right for the traditional approach gully. The last gully is scree. If the gully you are in is green and lush it is the wrong one and it will carry you too high — traverse right out of it onto clean scree.\n\nArrival is physical: a short section of Class 4 up a crack of roughly forty feet at the top of the gully lands you on a ledge. That ledge is where the rope comes out. Pitch one is the low-angle slab above it, taking the large crack system up the middle.\n\nTouch test at the start: the rock here is green serpentine, an odd slick band quite unlike the surrounding granite, sitting just up from the Dogtooth crag. Large hexes work in it where cams skate. Confirmation higher up — the pitch-three ledge carries two big bolts and there are three more at the top.\n\nNegative marker, and this is the one that matters. This route climbs the south ridge of the north peak, and the North peak (7,662 ft) is the true summit. The South peak (7,640 ft) is a separate Class 3 scramble that starts from the same notch. If you reached the notch, dropped about fifty feet down its west side and scrambled easy gullies back to a top without ever roping up, you climbed the South peak. That is not this route and not the high point.\n\nSecond marker: finishing the technical pitches does not put you on the summit. There is a few hundred feet of walking left to tag the actual high point, so a summit that arrives the instant the climbing ends is the wrong one.",
+  "runs": [
+   "at the dogtooth go right for the traditional approach gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_ingalls_peak_south_ridge",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0599",
+  "text": "From the lake, work up the Home Creek basin to the large boulders northwest of the summit, just south of Home Creek. Climb the scree field to the ramp right of the big dihedral, step left onto the green-lichen ledge after the first pitch, and follow the gully and low-angle rock to the top.",
+  "runs": [
+   "northwest of the summit just south of home creek"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_northwest_buttress",
+    "path": "waypoints[3].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0600",
+  "text": "After the first pitch the true Northwest Buttress goes left onto the obvious ledge along the green-lichen face. Continuing straight up the crack system puts you on the 2021 Second Wind variation, which is significantly harder at 5.8+.",
+  "runs": [
+   "left onto the obvious ledge along the green lichen"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_northwest_buttress",
+    "path": "pro_tips[1]"
+   }
+  ]
+ },
+ {
+  "key": "s0601",
+  "text": "Base camp at the large boulders directly northwest of the summit, just south of Home Creek, rather than at Home Lake — it cuts a meaningful chunk off summit day and gives you the view of the face.",
+  "runs": [
+   "at the large boulders directly northwest of the summit just south of home creek"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_northwest_buttress",
+    "path": "pro_tips[2]"
+   }
+  ]
+ },
+ {
+  "key": "s0602",
+  "text": "Drive to the Upper Dungeness Trailhead (Trail #833.2) in Olympic National Forest: from US 101 near Sequim Bay State Park turn onto Louella Road, continue about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn right on FS 2880, pass Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the trailhead just across the Dungeness River bridge (47.877572, -123.136927). There is a large parking area and a vault toilet but no potable water; a Northwest Forest Pass or Interagency pass is required. Hike Upper Dungeness Trail #833 up the river — an easy, shaded, river-grade trail past good swimming holes — reaching Camp Handy at about 3.4 miles and Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles (~4,890 ft). Continue on the Constance Pass trail as it climbs out of the timber into rocky, flowery terrain beneath Warrior Peak and Inner Constance, crossing into Olympic National Park, and climb to Home Lake at about 9.3 miles (~5,308-5,330 ft, ~500 ft below Constance Pass). From the lake, work up the Home Creek basin toward the peak and camp at the large boulders directly northwest of the summit, just south of Home Creek; the face is in full view from there and from below, which is the only reliable chance you get to pick out the ramp and the green-lichen ledge.",
+  "runs": [
+   "at the large boulders directly northwest of the summit just south of home creek"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_northwest_buttress",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0603",
+  "text": "From US 101 near Sequim Bay State Park turn onto Louella Road, go about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn right on FS 2880, pass Dungeness Forks Campground, then stay left on FS 2870 for 8.7 miles to the Upper Dungeness Trailhead just across the Dungeness River bridge. Large parking area, vault toilet, no potable water, Northwest Forest Pass or Interagency pass required.\n\nHike Upper Dungeness Trail #833 up the river — easy, shaded, river-grade — to Camp Handy at about 3.4 miles and Boulder Camp / Boulder Shelter at roughly 6.1-6.4 miles and about 4,890 ft. Continue on the Constance Pass trail as it climbs out of the timber into rocky flowery terrain beneath Warrior Peak and Inner Constance, crossing into Olympic National Park, and climb to Home Lake at about 9.3 miles and roughly 5,308-5,330 ft, some 500 ft below Constance Pass.\n\nFrom the lake, work up the Home Creek basin toward the peak. Camp at the large boulders directly northwest of the summit, just south of Home Creek. That boulder camp is the documented basecamp for this route and it is where the first-ascent party camped.",
+  "runs": [
+   "at the large boulders directly northwest of the summit just south of home creek"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_northwest_buttress",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0604",
+  "text": "From below Home Lake the northwest face of Inner Constance comes into view. The route climbs roughly 3 pitches through a crack system over rotten, loose rock to a cave beneath an overhanging roof; the crux is building an anchor there and making an exposed, committing move out of the cave by underclinging the roof and traversing right about 10-15 ft. Several further pitches of class 4-to-low-5th climbing lead to the false summit. Protection is sparse throughout (roughly one usable placement per 20-100 ft).",
+  "runs": [
+   "the roof and traversing right about 10 15"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_seans_route",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0605",
+  "text": "From the boulder camp northwest of the summit, up the scree field to the obvious ramp; follow it around climbers' right of the prominent dihedral to the base of the crack system. This is where the Northwest Buttress instead turns left onto the green-lichen ledge.",
+  "runs": [
+   "follow it around climbers right of the prominent dihedral to"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_seans_route",
+    "path": "pitch_detail[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0606",
+  "text": "Crux. Make the epic exposed move out of the cave by underclinging the roof and traversing right about 10-15 ft, then climb up to easier ground. Think about protecting the second across the traverse.",
+  "runs": [
+   "the epic exposed move out of the cave by",
+   "the roof and traversing right about 10 15"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_seans_route",
+    "path": "pitch_detail[3].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0607",
+  "text": "Identical to the Northwest Buttress: Upper Dungeness Trailhead at the end of FS 2870, Trail #833 to Camp Handy at about 3.4 miles and Boulder Camp at roughly 6.1-6.4 miles, then the trail climbs into Olympic National Park to Home Lake at about 9.3 miles, short of Constance Pass itself. Basecamp is the large boulders directly northwest of the summit, just south of Home Creek. The northwest face comes into view from below the lake.\n\nThis route and the Northwest Buttress share their approach, their camp, their scree field and their first pitch. They are one climb until the top of that pitch. The first-ascent party's round trip from camp — climb plus the descent into Avalanche Canyon and back round to the Home Lake cirque — ran about 12.5 hours.",
+  "runs": [
+   "the large boulders directly northwest of the summit just south of home creek"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_seans_route",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0608",
+  "text": "The base is shared with the northwest buttress and so is the test for it: from the boulder camp, up the scree field to the obvious ramp, and follow it round climber's right of the prominent dihedral to a steep Class 3/4 gully. Right of the big corner, not left.\n\nThe test that separates this route from the buttress comes at the top of pitch one, and it is a decision rather than a landmark — which is why it is worth knowing before you leave the ground. At that point the Northwest Buttress steps climber's left onto an obvious ledge along a green-lichen-covered face. Sean's Route does not. It stays with the crack system and follows it straight on up rotten loose rock for roughly three pitches in total.\n\nThe confirming test is tactile, overhead and unmistakable in any visibility: about three pitches up, the crack system ends at a cave beneath an overhanging roof. You cannot mistake being under a roof. That cave is the route's crux and its identity — you build an anchor in it and make a committing move out by underclinging the roof and traversing right about 10 to 15 feet onto the ramp leading to the slab above. If you have climbed three pitches and there is no roof over you, you are on the Buttress or on neither.\n\nHonest limit: this is a shared base with a pitch-one divergence rather than a route with a base of its own, and it is recorded that way rather than dressed up. Above the roof it is a few pitches of Class 4 to low fifth to the southwest false summit, then it rejoins the Northwest Buttress for the last pitch to the true top. Protection averages one usable placement every 20 to 100 feet.",
+  "runs": [
+   "scree field to the obvious ramp and follow it",
+   "right of the prominent dihedral to a steep class 3/4 gully"
+  ],
+  "targets": [
+   {
+    "id": "wa_inner_constance_seans_route",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0609",
+  "text": "Slab and low-angle corners lead to a 2-pin anchor below a left-facing corner; rock quality is noticeably better here than down at the schrund.",
+  "runs": [
+   "to a 2 pin anchor below a left facing corner"
+  ],
+  "targets": [
+   {
+    "id": "wa_inspiration_peak_west_ridge",
+    "path": "pitch_detail[4].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0610",
+  "text": "The scrambling begins on rock ledges above the outlet of Iron Cap Lake. Cross the outlet stream and start working upward to the southeast on a series of ledges — the change from vegetated, dirt-over-rock ground to continuous clean ledges is the tell that you are on the route, and the rock here is genuinely solid, unlike everything below it. The line curves around the nose of the north ridge rather than attacking the summit block head-on. Higher, a short third-class downclimb drops into a notch, which reads as a dead end and is not one: beyond it a wide ramp traverses below the summit block, taking you across without sidehilling, and meets the broad north ridge. From there easy red-tinged rock and dirt lead to the true summit. Losing that ramp is the way parties end up cliffed out on the steeper east-side rock bands, so note the line as you go and retrace it exactly on the way down.",
+  "runs": [
+   "working upward to the southeast on a series of"
+  ],
+  "targets": [
+   {
+    "id": "wa_iron_cap_mountain_south_route",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0611",
+  "text": "Scramble about 40 ft to climber's right on loose, blocky rock, then up easy ground to the summit.",
+  "runs": [
+   "about 40 ft to climber's right on loose"
+  ],
+  "targets": [
+   {
+    "id": "wa_ives_peak_r1",
+    "path": "waypoints[7].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0612",
+  "text": "The col between Old Snowy and Ives is the arrival, and you get to it by leaving a trail, not by following one.\n\nLeave the PCT north of the Snowgrass Trail junction, at roughly 6,700 ft, and go off-trail northeast up talus. There is no tread. Occasional cairns are the only marks. If you are still on maintained trail you have not started the route.\n\nYou know you are at the col because you are between two peaks at about 7,250 ft — Old Snowy behind you, Ives ahead. A high point on one side only is not the col.\n\nThe bump is the trap and it is countable: from the col the ridge crosses a rounded intermediate high point before you reach the true summit block. That bump is not the summit. If you have not passed one rounded bump, you have not reached the summit block, whatever the ground in front of you looks like.\n\nThe base of the scramble is a notch between two rock outcrops, reached by a boot path up scree. And here is the test that settles it beyond doubt, because it is the opposite of what you expect at a summit block: above the notch is a short cliff band, and the route goes down first. You downclimb slightly and traverse a narrow, exposed ledge to gain the upper south face, then scramble about 40 ft to climber's right on loose blocky rock to easy ground and the summit.\n\nSo: if the line in front of you only goes up, you are at the wrong notch. Having to lose a little height at the notch is the confirmation.\n\nDescent finding worth making before you start: dropping straight southwest off the col into the basin is faster and is the loosest ground on the mountain. Traversing back over Old Snowy and down its established south-ridge path avoids the worst of it.",
+  "runs": [
+   "about 40 ft to climber's right on loose"
+  ],
+  "targets": [
+   {
+    "id": "wa_ives_peak_r1",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0613",
+  "text": "From US 2 about 7 miles east of Gold Bar, just as the highway curves left toward the large bridge over the Skykomish River, turn right onto Mount Index Road. In a quarter mile turn right at the sign for Lake Serene Trail 1068 into the parking lot at about 600 ft. A Northwest Forest Pass or America the Beautiful pass is required to park.",
+  "runs": [
+   "large bridge over the skykomish river turn right onto mount index road"
+  ],
+  "targets": [
+   {
+    "id": "wa_j_tnar",
+    "path": "waypoints[0].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0614",
+  "text": "The start is on the left side of the buttress, about a hundred yards left of the Doorish line, in a crack system that runs continuously from the ground. That continuity is the tell — the neighbouring weaknesses on this side peter out within a couple of hundred feet, so if the crack you are looking at closes above you, you are not on it. Use the Doorish line as your reference and count leftward from it rather than trying to identify the start in isolation; from the talus the whole left flank looks alike. Do not sort gear at the foot of the wall: the base is a rockfall alley fed by North Index above and by the deep cleft between this buttress and Middle Index, so stay low near the lake to rack up and keep time directly beneath the face as short as you can. Below the clean granite is a band of steepening mossy slab and brush that is part of the approach rather than part of the route, and roping up for it is normal rather than timid.",
+  "runs": [
+   "on the left side of the buttress about"
+  ],
+  "targets": [
+   {
+    "id": "wa_j_tnar",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ },
+ {
+  "key": "s0615",
+  "text": "This is an early-season snow climb, done when the north cirque is still filled in. From the East Bank Trailhead follow the East Bank Trail roughly 8 miles to the May Creek camp, then leave the trail and climb about 3 miles of steep, bushy, cliff-banded forest — cliff bands start around 3,200 ft and are passed on game trails — to reach snowline near 4,800-5,000 ft and a camp either on the flats around 5,200 ft below the glacier or higher on the glacier itself around 7,400 ft. The Nohokomeen Glacier runs from about 6,100 ft to 8,200 ft, is over 340 acres, and is heavily crevassed after the midpoint of its descent, so rope up. Above the glacier the headwall is the crux: it is variously described as 700 vertical feet of snow at slopes up to 60 degrees, and as a sustained 50-55 degrees for about 800 feet with steeper steps. Most parties simul-climb it, taking turns kicking steps, with a rope over the shoulder for the bergschrund; winter parties have pitched it out with pickets, cams, nuts and screws through a mixed cliff band. The bergschrund is the main obstacle and normally goes on a single bridge on the left side. Above, exit onto the ridge and finish along a narrow, corniced summit ridge with rocky drops — the last few hundred feet are the most exposed of the route.",
+  "runs": [
+   "700 vertical feet of snow at slopes up to 60",
+   "sustained 50 55 degrees for about 800 feet with"
+  ],
+  "targets": [
+   {
+    "id": "wa_jack_mountain_nohokomeen_headwall",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0616",
+  "text": "From SR 20 milepost 138, park at the East Bank Trailhead (~1,800 ft) and descend briefly to the bridge over Ruby Creek. Follow the East Bank Trail — mostly flat and fast — roughly 8 miles north along Ross Lake to the May Creek camp. (Ross Lake Resort's water taxi will drop parties on the eastern shore and is a legitimate way to skip most of the trail; check current rates and schedule directly with the resort.) At May Creek leave the trail and climb steeply east, loosely ascending between the creeks on the west side of Jack Mountain. Cliff bands begin around 3,200 ft and are threaded on boot and game trails; snow generally appears around 4,800-5,000 ft. About 3 miles of this off-trail work reaches a flat camp just over 5,200 ft below the glacier toe. Strong parties push a second camp onto the upper glacier around 7,400 ft, which shortens summit day considerably. Before the highway opens, parties have biked about 4 miles from the MP 134 gate to the trailhead and continued on foot or ski.",
+  "runs": [
+   "between the creeks on the west side of jack mountain"
+  ],
+  "targets": [
+   {
+    "id": "wa_jack_mountain_nohokomeen_headwall",
+    "path": "approach"
+   }
+  ]
+ },
+ {
+  "key": "s0617",
+  "text": "Jack Mountain (9,069 ft) is a massive, glaciated summit rising directly east of the south end of Ross Lake, on the boundary between the Ross Lake National Recreation Area (North Cascades National Park Complex, NPS) and the Pasayten Wilderness (Okanogan-Wenatchee National Forest). It is one of only ten non-volcanic Washington peaks over 9,000 ft, and one of the least climbed — published and modern trip-report accounts both note it sees on the order of only a few ascents a year, owing to a 20+ mile, multi-day approach and constantly loose rock. The mountain carries five small glaciers on its upper flanks (largest is the Nohokomeen Glacier, which nearly fills a cirque on the north side); the standard South Face/Southeast Ridge line stays off the glacier and instead climbs a long, complex face of ramps, gullies, and cliff bands to reach the southeast ridge near 8,600 ft before finishing on class 3-4 terrain to the summit block.",
+  "runs": [
+   "east of the south end of ross lake"
+  ],
+  "targets": [
+   {
+    "id": "wa_jack_mountain_south_face",
+    "path": "overview"
+   }
+  ]
+ },
+ {
+  "key": "s0618",
+  "text": "Follow the crest northeast from Little Jack to the notch and stay on the ridge rising ahead. Climb Class 2-3 ground, make a short Class 4 downclimb past a subpeak, then continue on Class 3 crest over a cairned false summit to the high point at the southwest corner of the Nohokomeen Glacier. Finish east-northeast along the shattered ridge on the glacier's rim to the summit.",
+  "runs": [
+   "high point at the southwest corner of the nohokomeen glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_jack_mountain_southwest_ridge",
+    "path": "waypoints[2].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0619",
+  "text": "Enjoyable Class 3 climbing leads to a cairned high point that looks like the summit but is not. Keep traversing the crest to the next high point at the southwest corner of the Nohokomeen Glacier; the true summit is at the far end of the glacier's rim.",
+  "runs": [
+   "the next high point at the southwest corner of the nohokomeen glacier"
+  ],
+  "targets": [
+   {
+    "id": "wa_jack_mountain_southwest_ridge",
+    "path": "climbing_route[2].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0620",
+  "text": "Traverse broken rock and snow benches to the bivy ledges near 7,100 feet at the base of the upper snow arete.",
+  "runs": [
+   "7 100 feet at the base of the"
+  ],
+  "targets": [
+   {
+    "id": "wa_johannesburg_mountain_northeast_buttress",
+    "path": "pitch_detail[8].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0621",
+  "text": "Start on the Bad-Tempered Prom Queen pitch (5.8+/FA: John Goodrum) located on a low-angle bulge just left of vine maple, serving as the approach to the upper pitches. Longer pitches include approximately 10-11 clips. Pitches 1 and 6 are notably stiff 5.8s. Fixed lines assist with the traverse between pitches 4-5. Plan for 6+ hours total for ascent and descent. The route is hot in summer—climb early in the day. Communication between climber and belayer may be difficult on upper pitches in wind.",
+  "runs": [
+   "on a low angle bulge just left of",
+   "early in the day communication between climber and belayer may be difficult on"
+  ],
+  "targets": [
+   {
+    "id": "wa_junior_s_farm",
+    "path": "beta"
+   }
+  ]
+ },
+ {
+  "key": "s0622",
+  "text": "3 bolts to wide hangers, then plenty of bolts to a chain anchor on a huge ledge.",
+  "runs": [
+   "3 bolts to wide hangers then plenty of bolts to"
+  ],
+  "targets": [
+   {
+    "id": "wa_just_enough",
+    "path": "detailed_rack"
+   }
+  ]
+ },
+ {
+  "key": "s0623",
+  "text": "Gully leads up to the notch between Kangaroo Temple and Little Finger; this is the start of the North Face route and where the rope typically goes on.",
+  "runs": [
+   "up to the notch between kangaroo temple and little finger"
+  ],
+  "targets": [
+   {
+    "id": "wa_kangaroo_temple_north_face",
+    "path": "waypoints[3].note"
+   }
+  ]
+ },
+ {
+  "key": "s0624",
+  "text": "Very short ledge traverse right to a shoulder-height block in front of a blind, airy corner; build a gear anchor here before the exposed step-around above.",
+  "runs": [
+   "a shoulder height block in front of a blind airy corner"
+  ],
+  "targets": [
+   {
+    "id": "wa_kangaroo_temple_north_face",
+    "path": "pitch_detail[1].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0625",
+  "text": "From Marblemount, drive SR-20 (North Cascades Highway) east about 45 miles and turn right between mileposts 151 and 152 onto the short spur signed for Easy Pass, ending at a lot for about 10 cars. A Northwest Forest Pass or America the Beautiful pass is required (self-issue at the kiosk). The highway closes in winter, so the trailhead is reachable only once it opens for the season.",
+  "runs": [
+   "turn right between mileposts 151 and 152 onto"
+  ],
+  "targets": [
+   {
+    "id": "wa_katsuk_peak_gully",
+    "path": "waypoints[0].directions"
+   },
+   {
+    "id": "wa_kimtah_peak_scramble",
+    "path": "waypoints[1].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0626",
+  "text": "Gain the bench via 800 ft of class 3-4 climbing up ribs/gullies above camp, then make a short ascending traverse to the small waterfall at the foot of the Southwest Gully.",
+  "runs": [
+   "a short ascending traverse to the small waterfall"
+  ],
+  "targets": [
+   {
+    "id": "wa_katsuk_peak_gully",
+    "path": "waypoints[5].note"
+   }
+  ]
+ },
+ {
+  "key": "s0627",
+  "text": "From the bench, make a short ascending traverse to the small waterfall where the Southwest Gully begins and pass it on its left (west) side on loose scree. The gully trends left up toward the mushroom-shaped summit block; water runs in it low down, so expect wet rock and be careful where scree lies over slab. Anything knocked loose funnels straight onto whoever is below. Take the last 50 ft of the summit block slowly: the rock is loose and the north face drops away beneath it.",
+  "runs": [
+   "a short ascending traverse to the small waterfall where the"
+  ],
+  "targets": [
+   {
+    "id": "wa_katsuk_peak_gully",
+    "path": "waypoints[6].directions"
+   }
+  ]
+ },
+ {
+  "key": "s0628",
+  "text": "From Marblemount, drive SR-20 east about 45 miles and turn right between mileposts 151 and 152 onto the signed Easy Pass road to the trailhead.",
+  "runs": [
+   "turn right between mileposts 151 and 152 onto"
+  ],
+  "targets": [
+   {
+    "id": "wa_katsuk_peak_gully",
+    "path": "approach_logistics.trailheadDirection"
+   },
+   {
+    "id": "wa_kimtah_peak_scramble",
+    "path": "approach_logistics.trailheadDirection"
+   },
+   {
+    "id": "wa_ragged_ridge",
+    "path": "approach_logistics.trailheadDirection"
+   }
+  ]
+ },
+ {
+  "key": "s0629",
+  "text": "From the basin camp south of Mesahchie Peak, climb 200 to 600 ft to the saddle and bench on the ridge running down off Katsuk's west summit — tedious scree with a short 4th-class stretch near the top. From there hike a short way up the broad ridge, then veer left and make an ascending traverse below the cliffs. Past the waterfall the going crosses the basin on softer ground, then continues on a slight rising traverse following small marmot trails and rocky ledges through a run of ribs and gullies. A backcountry permit is required to camp at the basin.",
+  "runs": [
+   "up the broad ridge then veer left and make an ascending traverse below the cliffs",
+   "traverse following small marmot trails and rocky ledges through"
+  ],
+  "targets": [
+   {
+    "id": "wa_katsuk_peak_gully",
+    "path": "approach_variants[0].notes"
+   }
+  ]
+ },
+ {
+  "key": "s0630",
+  "text": "The waterfall at 7,760 ft, then a mushroom above the gully. The ascending traverse below the cliffs ends at a small waterfall at roughly 7,760 ft, and that waterfall is the reference — the scrambling starts there. Bypass it up the left (west) side of the stream, on fairly loose rock covered in kitty-litter scree. From that point the correct line is a single leftward-trending gully high on the peak, and what confirms it is what sits at its head: the gully ends right at the base of a summit block shaped like a mushroom, broader at the top than at its neck. If the gully you have entered tops out on a rib, a notch, or open scree with no mushroom-shaped block above it, you are in a neighbouring gully — this south side is a maze of them. The block itself is climbed on its west side by a series of blocks at class 3.",
+  "runs": [
+   "up the left west side of the stream on fairly loose rock covered",
+   "the gully ends right at the base of",
+   "climbed on its west side by a series of blocks"
+  ],
+  "targets": [
+   {
+    "id": "wa_katsuk_peak_gully",
+    "path": "approach_variants[0].baseFinding"
+   }
+  ]
+ }
+]

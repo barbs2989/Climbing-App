@@ -1,0 +1,22 @@
+{
+  "wa_mount_rainier_ingraham_direct": {
+    "boxes": {
+      "Paradise → Camp Muir": {"notes": "Skyline Trail past Glacier Vista and Panorama Point, then the Muir Snowfield once the trail ends near 7,200 ft; about 4,600 ft of gain to Muir. Fog and whiteout are common and wind can erase the boot track, so carry navigation. Weather-exposed but not glaciated."},
+      "Camp Muir → Cathedral Gap": {"notes": "Rope up on the Cowlitz Glacier, where crevasses are a constant hazard. The route crosses gently east to Cathedral Gap, near 10,640 ft, which is snow-covered early in the season."},
+      "Ingraham Flats": {"notes": "Crevassed bench near 11,100 ft, a common place to rest or camp before the summit push; the route leaves the Cleaver line here, which is in view to the right with the icefall above. Crevasse opening varies with the season."},
+      "Upper glacier to crater rim": {"notes": "Weave through crevasses on the established line, mostly 25-30 degrees. Early in the season ladder crossings and fixed pickets may be in place, and bridges sag as it warms. The rim is near 14,180 ft; the summit is about 230 ft higher across the crater."}
+    },
+    "review": {"confidence": "medium", "sources": ["https://mountrainierclimbing.blogspot.com/2026/05/ingraham-direct-route-update-52626.html", "https://www.turns-all-year.com/trip-reports/may-11-12-2010-mt-rainier-ingraham-direct", "https://timberlinetrails.com/RainierApproachClimb.html"], "changed": "Wrote 4 thin boxes with elevations and hazards; no lengths or anchors stated by sources. Ladder/picket details marked conditions-dependent because the 2026 update describes ladders at 11,600-11,800 ft, below the stored headwall.", "other_findings": "Stored Muir elevation 10,080 ft vs 10,188 ft in one report (sources differ). Stored 'Class 2' grade for a glaciated route with 40-50 degree headwall looks low."}
+  },
+  "wa_baring_mountain_r1": {
+    "boxes": {
+      "Step 1 (Lower)": {"notes": "Steep, airy and hard for its 300 ft; first ascent parties fixed ropes here. The top lands on a ledge known as Dolomite Camp, a bivouac site with a snow patch nearby for water.", "lengthM": 91}
+    },
+    "review": {"confidence": "low", "sources": ["https://publications.americanalpineclub.org/articles/12196130200/The-North-Face-of-Mount-Baring"], "changed": "Only Step 1 written, from one historic article (second source blocked, 403). Steps 3 and 4 left out: the article gives no usable detail for the fourth step and its numbering differs from the stored row. lengthM 91 is the stored 300 ft converted.", "other_findings": "The article places the 120-degree roof and stirrup climbing on the THIRD step (220 ft), not the second as stored; the stored Step 2 crux text may belong to Step 3."}
+  },
+  "skip_reasons": {
+    "wa_mount_maude_r3": "No page found naming a Nothing Couloir or describing this west-side gully system beyond the stored text.",
+    "wa_amphitheater_mountain_middle_finger_buttress_right_side": "Only the Mountain Project listing found, with no per-pitch detail beyond what is stored; trip report pages would not load.",
+    "wa_big_kangaroo_skinny_start": "No page found describing Skinny Start or its pitches."
+  }
+}

@@ -1,0 +1,152 @@
+[
+ {
+  "op": "patch",
+  "id": "wa_mount_shuksan_white_salmon_glacier",
+  "area_id": "wa_mount_shuksan_climbs",
+  "name": "White Salmon Glacier",
+  "set": {
+   "season": "Mar-Sep",
+   "best_season": "Ski ascents run late March through May, best in April and early May when the snow is stable and softens to corn. On foot, July through mid-August is the usual window, while the glaciers are still snow-covered and bridged. From mid-August into September crevasses open wide and Winnie's Slide turns to bare ice."
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_hibox_mountain_south_face",
+  "area_id": "wa_hibox_mountain",
+  "name": "South Face",
+  "set": {
+   "discipline": "alpine"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_iron_cap_mountain_northeast_shoulder",
+  "area_id": "wa_iron_cap_mountain",
+  "name": "Northeast Shoulder",
+  "set": {
+   "name": "North Ridge via Northeast Shoulder",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "season": "Jul-Sep",
+   "approach": "Reached from the Tank Lakes side of the Alpine Lakes high route, via the Foss River trails, not from Chetwoot Lake.",
+   "beta": "From the basin east of the peak, climb a wide talus ramp to the nose of the north ridge, then follow the north ridge, over boulders and heather benches, to the summit. Cairns mark the way across the east-side talus; the lower section can be brushy and the path is clear but easy to lose.",
+   "descent_text": "Reverse the ascent: down the north ridge, round the northeast nose, and across talus to the saddle below the Tank Lakes plateau."
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_jack_mountain_east_ridge",
+  "area_id": "wa_jack_mountain",
+  "name": "East Ridge",
+  "set": {
+   "discipline": "alpine",
+   "grade": "5.0",
+   "overview": "A long, exposed rock ridge on the east side of Jack Mountain, mostly class 3 and 4 on loose greenstone with up to three short roped steps of low fifth class (the hardest about 5.0). Parties carry a rope and a few pieces for those steps and for protecting the downclimb."
+  },
+  "add": {
+   "hazards": [
+    "Three short low-fifth-class steps interrupt the class 3-4 ridge; a party with no rope has no safe way to reverse the hardest one."
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_mutchler_peak_scramble",
+  "area_id": "wa_mutchler_peak",
+  "name": "Mutchler Peak Scramble",
+  "set": {
+   "discipline": "alpine",
+   "grade": "Class 3"
+  },
+  "add": {
+   "hazards": [
+    "Crevasses and glide cracks on the Mutchler Glacier",
+    "A cornice on the ridge above Cyclone Lake in early summer"
+   ],
+   "gear": [
+    "Rope and glacier kit for the cirque crossing in June and early July",
+    "Ice axe"
+   ]
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_mount_rainier_mowich_face",
+  "area_id": "wa_mount_rainier",
+  "name": "Mowich Face",
+  "set": {
+   "discipline": "alpine",
+   "season": "May-Jul"
+  },
+  "fill": {
+   "best_season": "May to June"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_glacier_peak_south_tahoma_headwall",
+  "area_id": "wa_mount_rainier",
+  "name": "South Tahoma Headwall",
+  "set": {
+   "discipline": "alpine",
+   "grade": "AI3"
+  },
+  "fill": {
+   "season": "Apr-Jun",
+   "aspect": "SW",
+   "overview": "A steep, rimed headwall of snow and ice with short rock and ice steps at the head of the South Tahoma Glacier, dropping from Point Success. Slopes reach about 55 degrees, and an icy step high on the face has been rappelled by skiers. Rockfall and icefall are the main hazards.",
+   "approach": "Reached from the closed Westside Road beyond the Dry Creek gate on a long walk in of about 12 miles, then across the Tahoma Glacier or round Success Cleaver to the foot of the headwall.",
+   "gain_ft": 11500
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_glacier_peak_tahoma_cleaver",
+  "area_id": "wa_mount_rainier",
+  "name": "Tahoma Cleaver",
+  "fill": {
+   "overview": "A rocky cleaver between the Tahoma Glacier and the South Tahoma Glacier on Rainier's southwest side, near 9,400 ft. Parties camp on it and use it as a climbing and ski line from the west side."
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_tinkham_peak_southeast_spur",
+  "area_id": "wa_tinkham_peak",
+  "name": "Southeast Spur",
+  "fill": {
+   "season": "Jun-Oct",
+   "best_season": "July through October; the boot path is often snow-covered into June",
+   "outing_shape": "outback",
+   "overview": "The easy way onto Tinkham: a short, steep boot path from the south end of Mirror Lake straight up the southeast spur to the lower east summit. The true high point, the west summit, is a few minutes along an easy ridge. Often combined with the Northwest Ridge for a loop.",
+   "approach": "Start at the Mirror Lake trailhead at the end of Forest Road 5480 (about 3,600 ft). Hike the Mirror Lake trail to the lake, mostly level, then follow the PCT to the lake's south end and find the boot path.",
+   "beta": "The path climbs about 1,200 ft in just over a mile through grass and talus on the southeast spur, with no exposure. From the east summit continue west along the ridge to the true high point; the ridge is easy and takes a few minutes. Return the same way or drop to the PCT by the Northwest Ridge boot path."
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_dragontail_peak_r3",
+  "area_id": "wa_dragontail_peak",
+  "name": "Pandora's Box (W Couloir)",
+  "set": {
+   "discipline": "mountaineering"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_granite_mountain_beargrass_rib",
+  "area_id": "wa_granite_mountain",
+  "name": "Beargrass Rib",
+  "set": {
+   "discipline": "alpine"
+  }
+ },
+ {
+  "op": "patch",
+  "id": "wa_granite_mountain_winter_route_first_south_rib",
+  "area_id": "wa_granite_mountain",
+  "name": "Winter Route First South Rib",
+  "set": {
+   "discipline": "alpine"
+  }
+ }
+]

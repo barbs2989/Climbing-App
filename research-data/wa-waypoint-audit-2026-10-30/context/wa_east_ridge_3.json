@@ -1,0 +1,69 @@
+{
+ "id": "wa_east_ridge_3",
+ "name": "East Ridge",
+ "discipline": "alpine",
+ "area": {
+  "id": "wa_silver_star_mountain_okanogan",
+  "name": "Silver Star Mountain",
+  "lat": 48.547945,
+  "lng": -120.585127,
+  "elevation_ft": 8876,
+  "parent_id": "wa_silver_star_and_wine_spires",
+  "ground_ft": 8846
+ },
+ "dist_km": null,
+ "gain_ft": 4400,
+ "high_point_ft": 8876,
+ "approach_logistics": {
+  "peakLat": 48.547945,
+  "peakLng": -120.585127,
+  "trailhead": "Cedar Creek Trailhead (Sandy Butte-Cedar Creek Road #200)",
+  "trailheadDirection": "From SR 20 about 17 miles west of Winthrop, turn south onto Forest Road 200 and drive 0.8 mile to the Cedar Creek trailhead."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 48.596606,
+   "lng": -120.512815,
+   "elev": 2900,
+   "name": "Klipchuck Campground",
+   "type": "Campsite",
+   "ground_ft": 2918
+  },
+  {
+   "i": 1,
+   "lat": 48.5791,
+   "lng": -120.4788,
+   "elev": 2985,
+   "name": "Cedar Creek Trailhead",
+   "note": "Start of the East Ridge, at the gravel pit at the end of Forest Road 5310-200; the trail leaves from the pit's southeast corner.",
+   "type": "Trailhead",
+   "distMi": null,
+   "directions": "From Winthrop, drive Highway 20 west about 18 miles and turn south onto Forest Road 5310-200 between mileposts 176 and 175, about half a mile east of the Klipchuck Campground turn. Follow it to its end at a gravel pit and park; the trail starts at the pit's southeast corner. A Northwest Forest Pass is required.",
+   "ground_ft": 2985
+  },
+  {
+   "i": 2,
+   "lat": 48.548,
+   "lng": -120.58517,
+   "elev": 8876,
+   "name": "Silver Star Mountain - East/Main Summit",
+   "type": "Summit",
+   "elevFt": 8876,
+   "directions": "Gain the ridge near where Cedar Creek meets Early Winters Creek and follow the crest north and west for about 3.5 miles over several sub-summits to the east summit, staying as close to the crest as the loose rock allows.",
+   "ground_ft": 8868
+  },
+  {
+   "i": 3,
+   "lat": 48.552069,
+   "lng": -120.630763,
+   "elev": 4300,
+   "name": "Hwy 20 pullout near MP 166 (descent finish)",
+   "note": "This roadside pullout is where the descent over Burgundy Col comes back to the highway, not where the East Ridge starts. The climb begins at the Cedar Creek Trailhead near Mazama, several highway miles east, so leave a car here or plan the road walk back.",
+   "type": "Trailhead",
+   "elevFt": 4300,
+   "directions": "Downclimb or rappel a short way onto the Silver Star Glacier and descend it west and northwest to Burgundy Col, roped for crevasses. Cross the col and follow the Burgundy Col climbers' trail down to Highway 20 near milepost 166, about 4 miles east of Washington Pass, where a shuttle car saves the long road back to Cedar Creek.",
+   "ground_ft": 4234
+  }
+ ]
+}

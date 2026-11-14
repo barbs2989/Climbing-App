@@ -1,0 +1,39 @@
+{
+  "area_id": "wa_observation_rock",
+  "routes": [
+    {
+      "route_id": "wa_observation_rock_standard_scramble_route",
+      "season": { "months": [7,8,9], "window": "Jul-Sep", "evidence": "Route page (SummitPost-derived) and WTA: Mowich road open, Flett glacier passable Jul to first autumn snows; Mountaineers warns Flett crevasses may be impassable late. Peakbagger summits: Jul 112, Aug 182, Sep 119, Oct 41." },
+      "track": { "aid": "1727571", "verdict": "same", "kind": "complete", "inSeason": true,
+        "why": "8 Aug 2021, summited (summit 2 m), start and end 5 m apart at Mowich Lake. Logged route 'Up Flett Glacier, approach from southwest side'; report says out and back on the Spray Park trail. Line goes Mowich Lake, Spray Park, up the Flett and onto the summit from the south, matching our text. The other route on the peak (North Face, ice) is a different climb this track does not touch. Needs the Mowich Lake trailhead pin proposed below to count as complete." },
+      "otherTracksConsidered": [
+        { "aid": "1445040", "verdict": "unsure", "why": "Knapsack Pass variation, 1 Aug 2020, summited, same finish; no report, backup." },
+        { "aid": "2280357", "verdict": "unsure", "why": "Knapsack Pass to Spray Park, 13 Aug 2023, same finish, good report; 1727571 is cleaner." },
+        { "aid": "2657902", "verdict": "unsure", "why": "28 Sep 2024, Echo and Observation, in window; scramble line, valid backup." },
+        { "aid": "2659214", "verdict": "unsure", "why": "29 Sep 2024, no start elevation or report." },
+        { "aid": "2047340", "verdict": "unsure", "why": "2 Oct 2022 moraine variation, glacier crossed without traction." },
+        { "aid": "1722361", "verdict": "unsure", "why": "Knapsack Pass, no report." },
+        { "aid": "3279721", "verdict": "different", "why": "Start is on the east side of the park (46.914,-121.641), a different approach." },
+        { "aid": "449080", "verdict": "different", "why": "Logged North Face (ice route)." },
+        { "aid": "459899", "verdict": "different", "why": "North Face ice route, no shape." },
+        { "aid": "571055", "verdict": "different", "why": "North ramp ice climb, summit barely tagged." }
+      ],
+      "pins": [
+        { "type": "Trailhead", "action": "add", "lat": 46.9329, "lng": -121.8653, "name": "Mowich Lake trailhead",
+          "evidence": "Every round-trip recording (1727571, 2657902, 2280357, 1445040, 1722361) starts and ends within 150 m of this spot, and our approach text names the Mowich Lake trailhead. A hike page for this very climb gives the trailhead at Mowich Lake with this coordinate.",
+          "confirmedBy": "https://www.wta.org/go-hiking/hikes/observation-rock (trailhead coordinates 46.9329, -121.8653); OpenStreetMap Mowich Lake Campground node 46.9328,-121.8632 via nominatim agrees within 200 m" }
+      ],
+      "facts": [
+        { "field": "monthBreakdown", "month": 8, "text": "By August the Flett Glacier is mostly bare ice with snow left only along its edges; microspikes and an axe handled it for most parties.", "aids": ["2280357","1723591"] },
+        { "field": "monthBreakdown", "month": 9, "text": "By late September and early October the glacier is hard blue ice with step-over crevasses and meltwater channels, so aluminum crampons are the safer choice than spikes.", "aids": ["2657902","2047340"] },
+        { "field": "watch_out", "month": 8, "text": "Rockfall peels off Echo Rock onto the east side of the Flett in August", "aids": ["2280357","2047340"] },
+        { "field": "watch_out", "month": 9, "text": "Scree beside the glacier can sit on bare ice in late September; stay on the glacier surface instead", "aids": ["2657902"] },
+        { "field": "pro_tips", "month": 9, "text": "Going from Echo's base to Observation, descend to the glacier and use the boot path rather than side-hilling loose scree.", "aids": ["2657902"] },
+        { "field": "pro_tips", "month": 8, "text": "Many August parties go over Knapsack Pass (about an hour from the lake) and drop to the Spray Park trail, returning by the trail.", "aids": ["2280357","1723591","1445040"] },
+        { "field": "pro_tips", "month": 8, "text": "Budget about 12 to 13 miles round trip and roughly 3,800 to 4,200 ft of gain.", "aids": ["1727571","1723591"] },
+        { "field": "pro_tips", "month": 8, "text": "Early August brings mosquitoes at the lake and through Spray Park; carry repellent.", "aids": ["1723591"] }
+      ]
+    }
+  ],
+  "notes": "North Face (ice) is a separate stored route, not touched. The WTA hike page currently states the Fairfax Bridge on the Mowich road is closed to all traffic, which would add many miles to the approach; worth checking before publishing the approach as written. Matching tracks lack only the trailhead pin; adding it makes them complete."
+}

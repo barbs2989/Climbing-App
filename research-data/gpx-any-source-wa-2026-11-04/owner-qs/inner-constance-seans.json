@@ -1,0 +1,19 @@
+{
+  "key": "inner-constance-seans",
+  "question": "Is 'Sean's Route/Second Wind' a variation of our 'Northwest Buttress' route on Inner Constance, a separate climb, or unverifiable?",
+  "answer": "It exists and is documented: a 2021 first ascent by Sean Allen and Peter Darragh, posted on Mountain Project as 'Sean's route/Second wind' (5.8+, trad/alpine, about 1,200 ft, grade III). 'Second Wind' is the route's second title, not a separate climb. The page itself calls it a variation of the Northwest Buttress first climbed in 1983 (Eric Hardee, Dan Coffey): the original line turns left onto a ledge after pitch one, while this one continues straight up a crack system (3 loose pitches to a cave under a roof, an exposed underclinging traverse right, then class 4 to low-5th to a false summit), and rejoins the Northwest Buttress for the final low-angle pitch. So it is a named variation that leaves the line and rejoins it. Earlier searches found nothing because the only page is Mountain Project (an area holding this single route). The 1983 Northwest Buttress itself has no independent page I could find; it is known only through that statement (and our stored text, which already says the same).",
+  "recommendation": "Keep both rows (owner rule: a named variant that leaves the line = distinct). No merge. Our two rows already describe the relationship correctly. Caution: the Northwest Buttress row's grade 5.0 is unsupported by anything found (the original line only 'turns left onto a ledge'; likely low-5th) and its beta is thin; flag the grade as low confidence or blank it. Do not rename Sean's Route in a way that drops 'Second Wind'.",
+  "confidence": "medium",
+  "proposed": { "note": "No field writes proposed. Optional: Northwest Buttress overview could add that the 2021 variation leaves it after pitch one and rejoins for the last pitch." },
+  "evidence": [
+    "https://www.mountainproject.com/route/122778214/seans-routesecond-wind - 5.8+, FA Sean Allen & Peter Darragh Aug 2021; states it is a variation of the Northwest Buttress (FA Hardee/Coffey 1983); NW Buttress turns left onto a ledge after pitch one, the variation continues up the crack system and rejoins for the last pitch; descent via Avalanche Canyon, 12.5 h round trip",
+    "https://www.mountainproject.com/area/122778097/inner-constance - area lists only this one route; blurb: poor rock, poor pro, no fixed gear"
+  ],
+  "searched": [
+    "Inner Constance northwest buttress 1983 first ascent - surfaced the MP route page (the key find)",
+    "\"Inner Constance\" \"Sean's Route\" OR \"Second Wind\" - same MP route + area pages; no separate Second Wind route",
+    "Eric Hardee Dan Coffey 1983 Inner Constance - nothing independent; Wikipedia gives only the 1939 FA of the peak and lists no routes",
+    "Inner Constance northwest face cascadeclimbers / summitpost / Olympic guide - nothing on this face; the AAJ 1963 pinnacles article is a different feature (spur NW of the ridge)",
+    "climbersguideolympics.com - host did not resolve; Olympic Mountains: A Climbing Guide (4th ed.) is the likely print source, not online"
+  ]
+}

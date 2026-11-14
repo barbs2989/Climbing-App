@@ -1,0 +1,147 @@
+[
+ {
+  "id": "ny_lu_great_range_traverse",
+  "name": "Great Range Traverse",
+  "state": "New York",
+  "region": "Adirondack High Peaks, Keene Valley",
+  "legs": [
+   {
+    "peak": "Hedgehog",
+    "route": "Range Trail from the Rooster Comb trailhead (Rooster Comb is a short optional spur)",
+    "connect": "",
+    "route_id": null
+   },
+   {
+    "peak": "Lower Wolfjaw",
+    "route": "Range Trail",
+    "connect": "Follow the ridge trail over steep ups and downs.",
+    "route_id": "ny_lower_wolfjaw_wedge_brook_and_range_trail_from_st_huberts"
+   },
+   {
+    "peak": "Upper Wolfjaw",
+    "route": "Range Trail",
+    "connect": "Continue along the ridge with a narrow, knife-like section between the two.",
+    "route_id": "ny_upper_wolfjaw_mountain_wedge_brook_trail"
+   },
+   {
+    "peak": "Armstrong",
+    "route": "Range Trail",
+    "connect": "Carry on, watching the confusing junctions in the notch.",
+    "route_id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road"
+   },
+   {
+    "peak": "Gothics",
+    "route": "Range Trail, with a steep cabled face",
+    "connect": "Climb the steep, exposed southeast face.",
+    "route_id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail"
+   },
+   {
+    "peak": "Saddleback",
+    "route": "Range Trail",
+    "connect": "Descend and climb again over bare, steep rock.",
+    "route_id": null
+   },
+   {
+    "peak": "Basin",
+    "route": "Range Trail",
+    "connect": "Continue over the next summit along the crest.",
+    "route_id": null
+   },
+   {
+    "peak": "Haystack",
+    "route": "Range Trail, then a spur to the summit",
+    "connect": "Continue past Little Haystack and take the side trail to the second highest peak.",
+    "route_id": "ny_mount_haystack_phelps_trail_from_the_garden"
+   },
+   {
+    "peak": "Mount Marcy",
+    "route": "Range Trail to the Phelps Trail junction and the summit",
+    "connect": "Join the main trail to the highest point in the state.",
+    "route_id": null
+   }
+  ],
+  "duration": "1 very long day, or 2–3 days",
+  "how": "A point-to-point ridge line over eight or nine of the 46 High Peaks, usually walked from the Keene Valley side and ending on Marcy. Expect steep, slow trail with scrambling, exposed slabs, cables on Gothics, and endless cols and false summits. Few places to filter water, so carry a lot.",
+  "descent": "After Marcy, drop by a long valley trail to the far trailhead, around nine miles. This replaces a return over the ridge.",
+  "logistics": "Needs a second car or ride at the far trailhead because the road walk back is long. Some parties start with Marcy and finish on the ridge, though that is often called anticlimactic. Rooster Comb is now a side trip.",
+  "sources": [
+   "https://cactustoclouds.com/2012/07/28/adirondacks-great-range-traverse-overview/",
+   "https://www.theoutbound.com/new-york/hiking/the-great-range-traverse",
+   "https://vftt.org/threads/great-range-adirondacks.3773"
+  ],
+  "confidence": "high",
+  "notes": "One source runs the line in the opposite direction (Loj to Rooster Comb) and lists a 20.15-mile track; others say about 25 miles with 17,600 ft of gain and loss. Leg set Rooster Comb through Marcy is agreed; Marcy/Haystack inclusion is debated in places."
+ },
+ {
+  "id": "ny_lu_gothics_armstrong_upper_wolfjaw",
+  "name": "Gothics, Armstrong and Upper Wolfjaw loop",
+  "state": "New York",
+  "region": "Adirondack High Peaks, Great Range",
+  "legs": [
+   {
+    "peak": "Gothics",
+    "route": "Orebed Brook Trail to the Range Trail, with a steep cabled section",
+    "connect": "",
+    "route_id": "ny_gothics_beaver_meadow_falls_trail_to_the_range_trail"
+   },
+   {
+    "peak": "Armstrong",
+    "route": "Range Trail",
+    "connect": "Follow the ridge, going down then up again.",
+    "route_id": "ny_armstrong_mountain_great_range_trail_from_the_lake_road"
+   },
+   {
+    "peak": "Upper Wolfjaw",
+    "route": "Range Trail",
+    "connect": "Continue along the ridge to the next summit, then head down.",
+    "route_id": "ny_upper_wolfjaw_mountain_wedge_brook_trail"
+   }
+  ],
+  "duration": "1 long day",
+  "how": "Three summits of the Great Range climbed as a loop from the valley, usually in this order so the cabled face of Gothics is climbed rather than descended. The Gothics climb is among the steepest stretches of trail in the region, with slabs and ladders. An escape route drops from the Gothics-Armstrong col, but the loop is long and demanding.",
+  "descent": "After Upper Wolfjaw the descent is long but not steep, back to the valley road. Most parties return by a different trail than they used to climb.",
+  "logistics": "Starts from a parking lot at the end of a public road; the first miles may be on private land with no dogs or camping. Lots fill early on weekends. Pyramid Peak is easy to take by mistake near the Gothics summit junction.",
+  "sources": [
+   "https://dailey7779.blogspot.com/2012/06/gothics-armstrong-upper-wolfjaw.html",
+   "https://www.backpacker.com/trips/adirondack-park-great-range-loop/?scope=anon"
+  ],
+  "confidence": "medium",
+  "notes": "Mileage varies widely (about 8 to 14.7 miles; one page lists 11 and 20 in the same entry) with start point; left out of prose. Backpacker describes the lasso from St Huberts/Lake Road; the blog went from the Garden via Orebed Brook."
+ },
+ {
+  "id": "ny_lu_santanoni_range",
+  "name": "Santanoni Range (Santanoni, Panther, Couchsachraga)",
+  "state": "New York",
+  "region": "Adirondack High Peaks, Santanoni Range",
+  "legs": [
+   {
+    "peak": "Santanoni Peak",
+    "route": "Express herd path from the Bradley Pond approach",
+    "connect": "",
+    "route_id": "ny_santanoni_peak_santanoni_express"
+   },
+   {
+    "peak": "Couchsachraga",
+    "route": "Herd path from the Times Square col",
+    "connect": "Return along the ridge to the col, then go down to a wet saddle and up again.",
+    "route_id": "ny_couchsachraga_peak_via_santanoni_ridge"
+   },
+   {
+    "peak": "Panther Peak",
+    "route": "Ridge path to Herald Square, then a short spur",
+    "connect": "Retrace to the col and continue to the next ridge junction.",
+    "route_id": "ny_panther_peak_panther_brook_herd_path"
+   }
+  ],
+  "duration": "1 very long day, or overnight",
+  "how": "Three 46 High Peaks on a ridge reached by unmarked herd paths. A common order puts Santanoni first, then the low outlier Couchsachraga, whose return climb is the hardest part, then Panther. Route-finding needs a map, compass and attention to cairns; steep loose rock and wet crossings are common. In winter the trail is often broken out by few parties.",
+  "descent": "Descend Panther steeply over boulders to Bradley Pond, then follow the trail out to the parking area. This differs from the ascent route and forms a loop.",
+  "logistics": "Parking is at the end of a long mining-area road. A lean-to near the pond is first-come; camping between 3,500 and 4,000 feet is only allowed at designated sites. Parties can skip one or two peaks in poor conditions.",
+  "sources": [
+   "https://www.adirondackhub.com/hiking/the-santanoni-range",
+   "https://web.ncf.ca/mbowler/hiking/adk46/santa_range/index.html"
+  ],
+  "confidence": "medium",
+  "notes": "Order differs by report (one search-listed report went Couchsachraga, Panther, Santanoni; the winter report here went Santanoni, Panther, Couchsachraga). Distance 15 to 16.8 miles, gain about 4,580 to 4,700 ft: left out of prose. The ncf page is a winter ski trip report."
+ }
+]

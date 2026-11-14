@@ -1,3 +1,4 @@
+import { fileHref } from "../lib/file-href.mjs";
 // Does the written text actually REACH A SCREEN? Reader-exists plus data-exists is not
 // renders. Pulls the real row from the live DB and renders the real RouteDetail.
 // ROOT is THIS worktree deliberately — scripts/oneoff/render-db-route.mjs hardcodes a
@@ -10,7 +11,7 @@ import path from "path";
 import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
-const { SUPABASE_URL, anonKey, headers } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
+const { SUPABASE_URL, anonKey, headers } = await import(fileHref(path.join(ROOT, "scripts/lib/supabase-env.mjs")));
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";

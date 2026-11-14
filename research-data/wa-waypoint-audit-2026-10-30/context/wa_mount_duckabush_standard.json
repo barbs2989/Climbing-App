@@ -1,0 +1,123 @@
+{
+ "id": "wa_mount_duckabush_standard",
+ "name": "Standard Scramble (Marmot Lake / O'Neil Pass approach)",
+ "discipline": "scrambling",
+ "area": {
+  "id": "wa_mount_duckabush",
+  "name": "Mount Duckabush",
+  "lat": 47.630495,
+  "lng": -123.361495,
+  "elevation_ft": 6254,
+  "parent_id": "wa_southern_olympics",
+  "ground_ft": 6226
+ },
+ "dist_km": 33.8,
+ "gain_ft": 8100,
+ "high_point_ft": 6254,
+ "approach_logistics": {
+  "peakLat": 47.630495,
+  "peakLng": -123.361495,
+  "trailhead": "Duckabush Trailhead (end of FS Road 2510-060)",
+  "trailheadLat": 47.685162,
+  "trailheadLng": -123.039683,
+  "trailheadDirection": "From Quilcene, drive south on US-101 about 15 miles to the Duckabush Recreation Area; turn west onto Duckabush River Road/FS Rd 2510 for 6 miles, then follow FS Rd 2510-060 to the Duckabush Trailhead."
+ },
+ "pins": [
+  {
+   "i": 0,
+   "lat": 47.685162,
+   "lng": -123.039683,
+   "elev": 440,
+   "name": "Duckabush Trailhead",
+   "note": "Northwest Forest Pass required for parking; no potable water on site, nearest is Interrorem Cabin; an Olympic NP wilderness permit, reserved in advance, is needed for any overnight stay inside the park.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Quilcene, drive south on US-101 about 15 miles to the Duckabush Recreation Area, then turn west onto Duckabush River Road/Forest Service Road 2510 and follow it about 6 miles before continuing on FS Road 2510-060 to the road-end trailhead, at about 440 feet. A Northwest Forest Pass is required to park and there is no potable water at the trailhead (the nearest is at Interrorem Cabin); you'll also need an Olympic National Park wilderness permit, reserved in advance, if you're staying overnight inside the park. Check current Forest Service/Park Service alerts before you go, since fire-related closures and hazard-tree work in the area have affected this trail into 2026.",
+   "ground_ft": 411
+  },
+  {
+   "i": 1,
+   "lat": null,
+   "lng": null,
+   "elev": 1550,
+   "name": "Olympic National Park Boundary",
+   "note": "Trail #803 crosses from Olympic National Forest into Olympic National Park here, after the steep 1,000 ft climb over Big Hump; NP wilderness permit and bear-canister rules apply beyond this point.",
+   "type": "Junction",
+   "distMi": 6.2,
+   "directions": "Follow the Duckabush River Trail #803 upriver. The first 2.4 miles are easy along the river; then the trail climbs steeply, about 1,000 ft, over Big Hump near mile 3.9 and drops back toward the river, passing Five Mile Camp before the park boundary.",
+   "ground_ft": null
+  },
+  {
+   "i": 2,
+   "lat": 47.676343,
+   "lng": -123.20179,
+   "elev": 1471,
+   "name": "10-Mile Camp",
+   "note": "Established riverside camp with fire rings and toilet; reliable water from the Duckabush River, but the final approach has heavy blowdown requiring scrambling around downed trees.",
+   "type": "Campsite",
+   "distMi": 10.8,
+   "directions": "Continue up the valley inside the park to 10-Mile Camp beside the river. Side-creek crossings are usually an easy rock-hop but can be a real ford in spring snowmelt or after heavy rain.",
+   "ground_ft": 1471
+  },
+  {
+   "i": 3,
+   "lat": 47.654828,
+   "lng": -123.319442,
+   "elev": 2673,
+   "name": "Upper Duckabush Camp",
+   "note": "Established camp with toilet near the junction with the North Fork Skokomish Trail over First Divide; a common second-night stop before pushing on to Marmot Lake or O'Neil Pass.",
+   "type": "Campsite",
+   "distMi": 16.3,
+   "directions": "Keep following the river trail up the valley, through root, blowdown and overgrown sections, to Upper Duckabush Camp.",
+   "ground_ft": 2673
+  },
+  {
+   "i": 4,
+   "lat": 47.64895,
+   "lng": -123.36363,
+   "elev": 4400,
+   "name": "Marmot Lake",
+   "note": "Large subalpine lake with several established sites around the shore; the standard high camp for the summit push, about 1.3 mi and roughly 1,850 ft below Mount Duckabush's summit.",
+   "type": "Campsite",
+   "distMi": 19.8,
+   "directions": "Past Upper Duckabush Camp the trail leaves the valley floor and switchbacks steeply up through forest, gaining about 1,700 ft in roughly 3.5 miles, to Marmot Lake at about 4,400 ft.",
+   "ground_ft": 4400
+  },
+  {
+   "i": 5,
+   "lat": 47.6366303,
+   "lng": -123.3726641,
+   "elev": 4983,
+   "name": "O'Neil Pass",
+   "note": "The O'Neil Pass Trail crosses the divide here, about 1.2 miles past Marmot Lake. This is where the summit climb leaves the trail; some parties camp at the pass instead of at Marmot Lake.",
+   "type": "Junction",
+   "distMi": 21,
+   "directions": "Follow the O'Neil Pass Trail about 1.2 miles beyond Marmot Lake, skirting a ridge with views into the Quinault valley, to O'Neil Pass at about 4,950 ft.",
+   "ground_ft": 4983
+  },
+  {
+   "i": 6,
+   "lat": null,
+   "lng": null,
+   "elev": 5900,
+   "name": "Summit ridge Class 3 steps",
+   "note": "Open talus and heather slopes above camp narrow to short, exposed Class 3 down-sloping steps just below the true summit; loose rock underfoot, use caution in wet or icy conditions.",
+   "type": "Hazard",
+   "distMi": 21.5,
+   "directions": "Leave the trail at the pass and go cross-country, with no path, over talus and heather benches toward the summit ridge, which narrows to short, exposed Class 3 steps. Note your line for the return, especially in cloud.",
+   "ground_ft": null
+  },
+  {
+   "i": 7,
+   "lat": 47.630462,
+   "lng": -123.361639,
+   "elev": 6254,
+   "name": "Mount Duckabush",
+   "note": "True summit (NAVD88 6,254 ft); broad views over the Duckabush and Quinault drainages and across to Mount Steel and O'Neil Peak.",
+   "type": "Summit",
+   "distMi": 21.7,
+   "directions": "Scramble the loose, down-sloping steps to the true summit.",
+   "ground_ft": 6190
+  }
+ ]
+}

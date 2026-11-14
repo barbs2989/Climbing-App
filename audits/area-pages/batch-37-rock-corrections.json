@@ -1,0 +1,15 @@
+{
+ "al_right_side_cliff": {"_expect": {"name": "Right Side Cliff", "region": "Alabama"}, "rock": "sandstone", "review": {"sources": ["https://mountainproject.com/area/106305856/yellow-bluff", "https://www.seclimbers.org/?p=244"], "note": "stored limestone → sandstone because Yellow Bluff is described as a hard sandstone cliff / gorgeous southern sandstone"}},
+ "ga_lost_wall": {"_expect": {"name": "Lost Wall", "region": "Georgia"}, "rock": "sandstone", "review": {"sources": ["https://www.mountainproject.com/area/105900335/lost-wall", "https://www.seclimbers.org/project/lost-wall/"], "note": "stored limestone → sandstone because Pigeon Mountain's Lost Wall is described as sandstone by both sources"}},
+ "nm_main_wall_4": {"_expect": {"name": "Main Wall", "region": "New Mexico"}, "rock": "basalt", "review": {"sources": ["https://mountainproject.com/area/105796582/diablo-canyon", "https://lobolife.unm.edu/diablo-canyon/"], "note": "stored sandstone → basalt because Diablo Canyon (home of The Shack) is cracked basalt cliffs"}},
+ "ny_d_closure_to_harvest_moon": {"_expect": {"name": "Closure to Harvest Moon", "region": "New York"}, "rock": "conglomerate", "review": {"sources": ["https://www.mountainproject.com/area/105798167/the-gunks", "https://en.wikipedia.org/wiki/Shawangunk_Ridge"], "note": "stored sandstone → conglomerate because Gunks cliffs are Shawangunk quartz conglomerate"}},
+ "on_buffalo_crag": {"_expect": {"name": "Buffalo Crag", "region": "Ontario"}, "rock": "dolomite", "review": {"sources": ["https://www.geologyontario.mndm.gov.on.ca/mndmfiles/mdi/data/records/MDI30M12SW00008.html", "https://en.wikipedia.org/wiki/Rattlesnake_Point_(Canada)"], "note": "stored shale → dolomite because the Rattlesnake Point/Milton escarpment cliffs are Amabel Formation dolostone (climbing sources call it limestone); shale is only the soft base"}},
+ "_kept": {
+  "id_thinking_spot_the": "Mountain Project says granite but no second site that I could fetch named the rock (others silent or blocked); stored quartzite kept.",
+  "tn_the_camp": "Suck Creek Canyon is likely sandstone, but no fetched page named its rock explicitly; stored shale kept.",
+  "mn_canidae_cliff_hammond": "Only Mountain Project (limestone) found; second sources blocked or silent; stored sandstone kept.",
+  "me_04_barrett_s_cove_cliff": "Sources conflict (Equinox: schist; rockaroundtheworld: granite; MP: metamorphosed rock); stored schist kept.",
+  "az_hobo_jungle": "MP says andesite/dacite; rhyolite vs dacite is same felsic volcanic family, not a clear error; kept.",
+  "az_boneyard": "No source found naming the Boneyard's rock; stored granite kept."
+ }
+}

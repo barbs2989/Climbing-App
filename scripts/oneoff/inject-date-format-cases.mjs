@@ -23,7 +23,7 @@ const CASES = [
   { name: "not-seeded", file: APP, expect: "fail",
     find: '[dateFmt,setDateFmt]=useState(loadDateFmt)', repl: '[dateFmt,setDateFmt]=useState("auto")',
     says: /date-format state is SEEDED/ },
-  { name: "not-written", file: APP, expect: "fail",
+  { name: "not-written", file: "src/components/SettingsDataSheet.tsx", expect: "fail",
     find: 'onChange={e=>{setDateFmt(e.target.value);saveDateFmt(e.target.value);}}',
     repl: 'onChange={e=>setDateFmt(e.target.value)}',
     says: /choosing a format WRITES it/ },

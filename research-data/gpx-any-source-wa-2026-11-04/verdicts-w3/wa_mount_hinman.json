@@ -1,0 +1,174 @@
+{
+ "area_id": "wa_mount_hinman",
+ "routes": [
+  {
+   "route_id": "wa_mount_hinman_east_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents peak Jul-Sep (77/72/53) with Jun and Oct thin; web sources give July to October, snow-heavy before July; approach is the same Necklace Valley / La Bohn Gap line"
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3357426",
+     "verdict": "unsure",
+     "why": "Logged names are West Ridge / Necklace Valley; nothing names an east line and our row has no text; no track assigned"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_hinman_southeast_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents peak Jul-Sep (77/72/53) with Jun and Oct thin; web sources give July to October, snow-heavy before July; approach is the same Necklace Valley / La Bohn Gap line"
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3357426",
+     "verdict": "unsure",
+     "why": "Its approach (La Bohn Gap, boot track north) is the same line the West Ridge ascents follow; cannot tell it apart, so pick neither"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  },
+  {
+   "route_id": "wa_mount_hinman_west_ridge",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents peak Jul-Sep (77/72/53) with Jun and Oct thin; web sources give July to October, snow-heavy before July; approach is the same Necklace Valley / La Bohn Gap line"
+   },
+   "track": {
+    "aid": "3357426",
+    "verdict": "same",
+    "kind": "complete",
+    "inSeason": true,
+    "why": "Logged as 'West Ridge (3) from Necklace Valley'; report goes La Bohn Gap, across the glacier edge to the west ridge, then along the ridge to the summit pinnacle, matching our overview and approach; summited, 1 m from summit, trailhead round trip, 24 Sep is within a month of Sep"
+   },
+   "otherTracksConsidered": [
+    {
+     "aid": "2983402",
+     "verdict": "same-but-second",
+     "why": "Logged West Ridge, Sept, summited, but track covers only day two (La Bohn Lakes camp); one-way style, kept as backup"
+    },
+    {
+     "aid": "2611912",
+     "verdict": "unsure",
+     "why": "Logged West Ridge, Aug, but start is La Bohn Lakes camp and no report detail"
+    },
+    {
+     "aid": "2244855",
+     "verdict": "unsure",
+     "why": "Logged La Bohn west ridge, Aug, camp-based partial track, not a round trip from the trailhead"
+    },
+    {
+     "aid": "3320454",
+     "verdict": "unsure",
+     "why": "No logged route name, no trailhead start"
+    },
+    {
+     "aid": "3309858",
+     "verdict": "unsure",
+     "why": "No logged route name"
+    }
+   ],
+   "pins": [
+    {
+     "type": "Trailhead",
+     "action": "add",
+     "lat": 47.6659,
+     "lng": -121.2881,
+     "name": "Necklace Valley Trailhead",
+     "evidence": "The round-trip track starts and ends at 47.66487,-121.28816 (about 125 m off the printed point); our route text names this trailhead at the end of FR 68 and the route has no Trailhead pin",
+     "confirmedBy": "https://www.wta.org/go-hiking/hikes/necklace-valley (Necklace Valley trailhead, 47.6659, -121.2881)"
+    }
+   ],
+   "facts": [
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "Talus beside the glacier remnants is very loose in September; a block slid onto one climber's leg",
+     "aids": [
+      "2983402"
+     ]
+    },
+    {
+     "field": "watch_out",
+     "month": 9,
+     "text": "The ridge rock is rotten and sheds blocks easily, so wear a helmet and keep clear of anyone below",
+     "aids": [
+      "3357426",
+      "2983402"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "The true summit pinnacle lies well along the ridge from where you first gain it; allow extra time for that traverse",
+     "aids": [
+      "3357426"
+     ]
+    },
+    {
+     "field": "pro_tips",
+     "month": 9,
+     "text": "By late September, crossing the low-angle ice patch on foot was easier than the choss beside it",
+     "aids": [
+      "2983402",
+      "3357426"
+     ]
+    },
+    {
+     "field": "what_to_bring",
+     "month": 9,
+     "text": "Microspikes or crampons and an axe for the remaining ice (September)",
+     "aids": [
+      "2983402",
+      "3357426"
+     ]
+    }
+   ]
+  },
+  {
+   "route_id": "wa_mount_hinman_west_route",
+   "season": {
+    "months": [
+     7,
+     8,
+     9
+    ],
+    "window": "Jul-Sep",
+    "evidence": "Logged ascents peak Jul-Sep (77/72/53) with Jun and Oct thin; web sources give July to October, snow-heavy before July; approach is the same Necklace Valley / La Bohn Gap line"
+   },
+   "track": null,
+   "otherTracksConsidered": [
+    {
+     "aid": "3357426",
+     "verdict": "unsure",
+     "why": "Same approach and La Bohn Gap start as the West Ridge ascents; likely one line filed twice with West Ridge and Southeast Route, so assign neither"
+    }
+   ],
+   "pins": [],
+   "facts": []
+  }
+ ],
+ "notes": "West Ridge, West Route, Southeast Route (and probably East Route) all start from La Bohn Gap via Necklace Valley and may be one line filed several times; track given only to West Ridge, whose name matches the logged route exactly. None of the five routes has a Summit pin, and none of the packet routes has a Trailhead pin other than a text name. Web sources say the Hinman Glacier is now mostly a snowfield/ice patch."
+}
