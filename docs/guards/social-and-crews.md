@@ -4,6 +4,17 @@ Crews, groups, connections and presence: who is on a crew, how a climber is name
 
 Part of the guard notes — see [README.md](README.md) for the full index.
 
+- **A PRIVATE CREW'S ROSTER IS NOT PUBLIC (0421).** `crew_members` was `using (true)` from 0036 on; it now reads
+  `crew_visible_to_me(crew_id)`. Two traps, both hit while writing it:
+  - a policy on `crew_members` that subqueries `crews` runs under the CALLER's RLS on `crews` (organiser/members
+    only), so a non-member reads NULL for every crew. The first draft's insert policy did exactly that and refused
+    every request to join, listed crews too. Both lookups are SECURITY DEFINER helpers (`crew_visible_to_me`,
+    `crew_is_private`).
+  - any new SECURITY DEFINER reader of `crew_members` granted to anon/authenticated must answer only a caller on that
+    crew, or check `not private`; `crew_listings` and `crew_share_preview` do the latter.
+  `scripts/oneoff/verify-0421-private-crew-pglite.mjs` replays every migration into PGlite and walks organiser,
+  invitee, outsider and anon through a private and a listed crew (20 expectations, no live database).
+
 - **A NOTIFICATION THAT NAVIGATES RENDERED AS INERT, because one screen derived "where does this
   go" TWICE and the two disagreed.** `NotifPanel` had an if/else chain for the CLICK and a separate
   boolean for the AFFORDANCE:

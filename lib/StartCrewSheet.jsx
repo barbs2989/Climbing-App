@@ -27,6 +27,8 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
   const [date, setDate] = useState(p.date || "");
   const [cap, setCap] = useState(() => crewMax({ discipline: firstDisc(area) || "sport" }));
   const [note, setNote] = useState("");
+  // Private (0421): unlisted and invite only. A crew formed from a private group's members starts private.
+  const [priv, setPriv] = useState(!!p.private);
   const [q, setQ] = useState("");
   const [rootId, setRootId] = useState(p.homeStateId || "");
   const statesQ = useStates();
@@ -43,13 +45,13 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
   const canStart = !!(area && area.id && disc);
   const start = () => {
     if (!canStart) { notify && notify(!area ? "Pick an area first" : "Pick what the session is — sport, trad, bouldering…"); return; }
-    onStart && onStart({ kind: "area", id: area.id, disc, name: area.name }, partners, { date: date || null, note: note.trim(), cap: Math.max(2, Math.min(12, Number(cap) || 4)) });
+    onStart && onStart({ kind: "area", id: area.id, disc, name: area.name }, partners, { date: date || null, note: note.trim(), cap: Math.max(2, Math.min(12, Number(cap) || 4)), private: priv });
   };
   return createPortal(<div onClick={onClose} role="dialog" aria-label="Start a crew" aria-modal="true" style={{ position: "fixed", inset: 0, background:C.scrimStrong, zIndex: 1200, overflowY: "auto", overscrollBehavior: "contain", display: "flex", alignItems: "flex-start", justifyContent: "center", padding: "12px 8px" }}>
     <div onClick={(e) => e.stopPropagation()} style={{ background: C.surface, borderRadius: 18, width: "100%", maxWidth: 440, border: "1px solid " + C.border, overflow: "hidden" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", borderBottom: "1px solid " + C.border }}><div style={{ color: C.text, fontSize: 17, fontWeight: 700, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{area ? "Start a crew at " + area.name : "Start a crew at an area"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
       <div style={{ padding: "12px 14px", maxHeight: "76vh", overflowY: "auto", overscrollBehavior: "contain" }}>
-        <div style={{ fontSize: 12.5, color: C.textMuted, marginBottom: 12, lineHeight: 1.5 }}>A crag session: the crag, canyon or range you’re meeting at, what you’re climbing, and a day. Climbers browsing Join a crew for that area will find it.</div>
+        <div style={{ fontSize: 12.5, color: C.textMuted, marginBottom: 12, lineHeight: 1.5 }}>A crag session: the crag, canyon or range you’re meeting at, what you’re climbing, and a day. {priv ? "Private: only the climbers you invite will see it." : "Climbers browsing Join a crew for that area will find it."}</div>
         <SL>Where</SL>
         {area ? <div style={{ display: "flex", alignItems: "center", gap: 8, background: C.blueBg, border: "1px solid " + C.blueDim, borderRadius: 10, padding: "9px 11px", marginBottom: 12 }}><div style={{ flex: 1, minWidth: 0 }}><div style={{ fontSize: 14, fontWeight: 700, color: "#fff", overflowWrap: "anywhere" }}>{area.name}</div><div style={{ fontSize: 12, color: C.textSub }}>{(AREA_TYPE_LABEL[area.areaType] || "Area") + (area.parentName ? " · " + area.parentName : "")}</div></div><button onClick={() => { setArea(null); setDisc(""); }} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "8px 11px", fontSize: 12.5, cursor: "pointer", flexShrink: 0 }}>Change</button></div>
         : <div style={{ marginBottom: 12 }}>
@@ -66,6 +68,7 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
         </div>
         <SL>A line for the crew (optional)</SL>
         <input value={note} maxLength={200} onChange={(e) => setNote(e.target.value)} placeholder="e.g. Swapping burns on the 5.11s, two spots" aria-label="Note for the crew" style={{ ...field, marginBottom: 12 }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}><button type="button" aria-pressed={priv} onClick={() => setPriv((v) => !v)} style={{ ...chip(priv), flexShrink: 0 }}>{priv ? "Private" : "Listed"}</button><span style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.4 }}>{priv ? "Only the people invited can see who’s in it. It won’t be listed under Join a crew." : "Climbers browsing Join a crew can find it and ask to join."}</span></div>
         {partners.length ? <div style={{ marginBottom: 12 }}><SL>Inviting</SL><div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>{partners.map((c) => <span key={c.id} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: C.card, border: "1px solid " + C.border, borderRadius: 20, padding: "4px 10px 4px 4px", fontSize: 12.5, color: C.text }}><Av src={c.avatar} size={22} />{pubName(c)}</span>)}</div></div> : null}
         <button onClick={start} disabled={!canStart} style={{ width: "100%", padding: "12px", borderRadius: 11, background: canStart ? C.blueSolid : C.surface, color: canStart ? C.onSolid : C.textMuted, fontSize: 14, fontWeight: 800, cursor: canStart ? "pointer" : "default", border: canStart ? "none" : "1px solid " + C.border }}>{partners.length ? "Start the crew and invite" : "Start the crew"}</button>
         {!uid ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.5 }}>Signed out, the crew is kept on this device only — sign in to let others find it.</div> : null}

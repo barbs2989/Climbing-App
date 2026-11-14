@@ -52,6 +52,13 @@ views under `groupsTab`: For you · Your groups · Your activity · Discover · 
 - **Recommended** order on Discover and For you: groups sharing a discipline with you first, then home state, then
   where you climb.
 - Private groups are listed only to their members; an invitee finds one under Requests.
+- **Form a crew from a group** (owner 2026-11-14): any active member sees *Form a crew from this group* at the top of the
+  *Members* tab once someone else is in it. `GroupCrewPicker` lists the roster (you and blocked climbers left out), up to
+  11 picks (a crew holds 12), then *where*: one of your saved climbs (`crewPickGroups`, as *Climb again with a past crew*)
+  goes straight to `formCrew`; *At an area…* hands the picks to `StartCrewSheet`. Picks get ordinary crew invites they
+  accept or decline. The group is only where the names came from: the crew has no `group_id` and does not name it. The
+  crew starts **private** (0421) when the group is private, so its roster stays as closed as the group's; the climber can
+  switch it to *Listed* before starting.
 - **Long text opens in place** (2026-10-28): a post in *For you* (`groupPostPreview`) stops at five lines with *See more*, and a Discover card's blurb (`groupDiscoverCard`) at three. Both use the `groupPostMore` key the group's own post view uses, so a post opened in the feed is open in the group too.
 
 ## 2. How it works
@@ -92,7 +99,8 @@ treats it as a DELETE. Probe: `scripts/oneoff/probe-live-takedown.mjs`.
 | `lib/db.js` | `useMyGroups`, `createGroupRow`, `updateGroupSettings`, `setGroupVisibility`, `createGroupEvents`, `regionOfPlace`, `regionAbbr`, `useMyPartnerAreas`, `useStates`, `useGroupFeed`, `useAreaPoint` |
 | `lib/search.js` | `searchMatches` |
 | `lib/live.js` | `useLiveQuery` — the Realtime subscription behind the live feed |
-| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396 |
+| `src/components/GroupCrewPicker.tsx` | Form a crew from this group: pick members, then a saved climb or an area |
+| `supabase/migrations` | 0090, 0178, 0230, 0258, 0260, 0318, 0326, 0396; 0421 (private crews, used by Form a crew) |
 
 ## 4. Data
 `groups` (`visibility`, `event_policy`, `policy`, `location`, `blurb`, `area_id`, `lat`, `lng`), `group_members` (`role`, `status`),
