@@ -271,7 +271,7 @@ for (const k of SETTABLE) {
   if (!readSelect.split(",").includes(k)) throw new Error(`${k} is settable but missing from the re-read select — after.${k} would be undefined and its verify vacuous`);
   if (![...VERIFY_SCALAR, ...VERIFY_JSON, ...VERIFY_CUSTOM].includes(k)) throw new Error(`${k} is settable but in no verify group — it would be written and checked by nothing`);
 }
-// ── Research ledger (route_field_evidence, 0435; rules in scripts/lib/research-ledger.mjs) ─────
+// ── Research ledger (route_field_evidence, 0437; rules in scripts/lib/research-ledger.mjs) ─────
 // A field two independent sources confirmed is LOCKED, and no later batch may change it (owner,
 // 2026-11-14) — that is what makes repeated research converge instead of churning. Read with the
 // service key: the table has RLS on and no policy, so the anon key sees an EMPTY ledger, and an
@@ -282,7 +282,7 @@ const readLedger = async id => {
   let k; try { k = requireServiceKey(); } catch { return null; }
   const res = await fetch(`${SUPABASE_URL}/rest/v1/route_field_evidence?select=*&route_id=eq.${encodeURIComponent(id)}`, { headers: { apikey: k, Authorization: "Bearer " + k } });
   const text = await res.text();
-  // Before 0435 is applied there is no table and therefore no lock to break; say so loudly, and
+  // Before 0437 is applied there is no table and therefore no lock to break; say so loudly, and
   // refuse any batch that wants to WRITE evidence.
   if (res.status === 404 || /PGRST205|42P01/.test(text)) { ledgerMissing = true; return []; }
   if (!res.ok) throw new Error(`ledger read for ${id} -> ${res.status} ${text.slice(0, 160)}`);
@@ -518,12 +518,12 @@ for (const id of ids) {
   const ledgerRows = await readLedger(id);
   if (ledgerRows === null && !DRY) throw new Error("service key required to read the research ledger");
   if (ledgerRows === null) console.warn(`warn ${id} — no service key, so the research ledger was NOT read; --dry cannot show lock refusals`);
-  if (ledgerMissing) console.warn(`warn ${id} — route_field_evidence does not exist yet (0435 not applied); no locks were checked`);
+  if (ledgerMissing) console.warn(`warn ${id} — route_field_evidence does not exist yet (0437 not applied); no locks were checked`);
   const locked = lockViolations(body, ledgerRows || [], spec.overturn || {});
   if (locked.length) { locked.forEach(e => console.error(`REFUSING ${id} — ${e}`)); process.exitCode = 1; continue; }
   const ledger = Array.isArray(spec.ledger) ? spec.ledger : [];
   if (ledger.length) {
-    if (ledgerMissing) { console.error(`REFUSING ${id} — the batch carries evidence but route_field_evidence does not exist yet (apply 0435)`); process.exitCode = 1; continue; }
+    if (ledgerMissing) { console.error(`REFUSING ${id} — the batch carries evidence but route_field_evidence does not exist yet (apply 0437)`); process.exitCode = 1; continue; }
     const errs = ledger.flatMap(e => validateEntry(e));
     const cols = [...new Set(ledger.map(e => e.field.split("/")[0]))].filter(c => !(c in body) && !(c in before));
     const finalRow = { ...before, ...(await readColumns(id, cols)), ...body };

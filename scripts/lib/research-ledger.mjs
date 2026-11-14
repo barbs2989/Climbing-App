@@ -1,6 +1,6 @@
 // The research ledger's rules: when a researched route field may LOCK, and whether a write would
 // overwrite a locked one. Pure functions (no network) so they can be self-tested; the writer is
-// enrich:apply (scripts/enrich-approach-rappel-bivy.mjs), the table is route_field_evidence (0435),
+// enrich:apply (scripts/enrich-approach-rappel-bivy.mjs), the table is route_field_evidence (0437),
 // the owner's rules are in .claude/skills/route-research/ (SKILL.md and disciplines.md).
 //
 //   node scripts/lib/research-ledger.mjs --selftest

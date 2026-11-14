@@ -64,14 +64,15 @@ export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayNam
       // The AMOUNT, its hours and its window, with the chance beneath -- never the chance alone (owner's note, 2026-10-28).
       const rain = s.precip == null ? "—" : s.precip === 0 ? "None" : uPrecip(s.precip);
       const rainSub = [s.precipHrs ? s.precipHrs + " h" + (s.precipFrom != null ? ", " + hrSpan(fc, s.precipFrom, s.precipTo) : "") : null, s.popMax ? "hourly chance up to " + Math.round(s.popMax) + "%" : null, s.snow ? "snow melted in" : null].filter(Boolean).join(" · ");
-      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". Gusts " + gust + ". " + (s.snow ? "Precipitation " : "Rain ") + rain + (rainSub ? ", " + rainSub : "") + ". " + extra + "."} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
-        <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span><span style={{ fontSize: 11.5, color: C.textMuted }}>{date(d)}</span><span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>
+      return <button key={d.date} onClick={function () { pick(i); }} aria-pressed={on} aria-label={dayName(d, i) + " " + date(d) + ", " + flagWord + ". High / low " + temp + ". Freezing level " + fl + ". " + (s.snow ? "Precipitation " : "Rain ") + rain + (rainSub ? ", " + rainSub : "") + ". Gusts " + gust + "." + (extra ? " " + extra + "." : "")} style={{ display: "block", width: "100%", textAlign: "left", padding: "11px 14px", margin: 0, border: "none", borderTop: i ? "1px solid " + C.border : "none", borderRadius: 0, background: on ? C.blueBg : "transparent", boxShadow: on ? "inset 3px 0 0 " + C.blue : "none", color: C.text, cursor: "pointer", font: "inherit" }}>
+        <span style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 6 }}><span style={{ fontSize: 12.5, fontWeight: 800 }}>{dayName(d, i)}</span>{" "}<span style={{ fontSize: 11.5, color: C.textMuted }}>{date(d)}</span>{" "}<span style={{ fontSize: 12, fontWeight: 700, color: w ? C.red : c ? C.amber : C.textSub }}>{flagWord}</span></span>{" "}
         <span style={{ display: "grid", gridTemplateColumns: "repeat(2,minmax(0,1fr))", gap: 5 }}>
-          <span style={cell}><span style={lbl}>High / low</span><span style={val}>{temp}</span></span>
-          <span style={cell}><span style={lbl}>Freezing level</span><span style={val}>{fl}</span></span>
-          <span style={cell}><span style={lbl}>{s.snow ? "Precipitation" : "Rain"}</span><span style={Object.assign({}, val, { color: s.precip > 0 ? C.blue : C.text })}>{rain}</span>{rainSub ? <span style={{ display: "block", fontSize: 10.5, color: C.textMuted, lineHeight: 1.35 }}>{rainSub}</span> : null}</span>
-          <span style={cell}><span style={lbl}>Gusts</span><span style={val}>{gust}</span></span>
-        </span>
+          {/* Name and rows in ONE order -- day, date, flags, high/low, freezing level, rain, gusts, notes -- because a voice-control user reads the row and says those words (WCAG 2.5.3). The spaces render nothing between these blocks; they keep the words apart. */}<span style={cell}><span style={lbl}>High / low</span>{" "}<span style={val}>{temp}</span></span>{" "}
+          <span style={cell}><span style={lbl}>Freezing level</span>{" "}<span style={val}>{fl}</span></span>{" "}
+          <span style={cell}><span style={lbl}>{s.snow ? "Precipitation" : "Rain"}</span>{" "}<span style={Object.assign({}, val, { color: s.precip > 0 ? C.blue : C.text })}>{rain}</span>{rainSub ? " " : null}{rainSub ? <span style={{ display: "block", fontSize: 10.5, color: C.textMuted, lineHeight: 1.35 }}>{rainSub}</span> : null}</span>
+{" "}
+          <span style={cell}><span style={lbl}>Gusts</span>{" "}<span style={val}>{gust}</span></span>
+        </span>{" "}
         <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, marginTop: 4 }}>{extra}</span>
       </button>;
     })}

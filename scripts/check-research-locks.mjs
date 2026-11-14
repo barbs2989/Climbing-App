@@ -9,7 +9,7 @@
 //   2. enrich:apply reads the ledger and calls lockViolations() BEFORE its first patchRow(), and
 //      refuses (continue) on a violation — a lock checked after the write protects nothing.
 //   3. enrich:apply stores evidence only after "verified on re-read", or on the ledger-only path.
-//   4. Migration 0435 keeps route_field_evidence private: RLS on and NO policy. Read with the anon
+//   4. Migration 0437 keeps route_field_evidence private: RLS on and NO policy. Read with the anon
 //      key, an empty ledger looks like "no locks" and would wave every overwrite through.
 // Each structural assertion is also run against a mutated copy that must FAIL (the injection
 // suite), so a refactor that makes a test vacuous is caught too.

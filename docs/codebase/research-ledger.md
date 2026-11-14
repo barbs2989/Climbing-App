@@ -10,7 +10,7 @@ independent, tolerances, per-discipline rules) are in `.claude/skills/route-rese
 
 | piece | what it does |
 |---|---|
-| `route_field_evidence` (migration 0435) | one row per (route, field): `value`, `method`, `level`, `evidence[]`, `expires_at`, `history[]`, `batch`. RLS on, **no policy**: service key only, because evidence URLs must never reach a screen and an anon read would see an empty ledger. |
+| `route_field_evidence` (migration 0437) | one row per (route, field): `value`, `method`, `level`, `evidence[]`, `expires_at`, `history[]`, `batch`. RLS on, **no policy**: service key only, because evidence URLs must never reach a screen and an anon read would see an empty ledger. |
 | trigger `trg_route_field_evidence_mirror` | a locked row makes the field HIGH in `route_field_confidence` (via `contribution_fields.column_name`), so climbers can only flag it. Never touches a level the owner set or an owner-approved edit (`set_by` not null). |
 | `scripts/lib/research-ledger.mjs` | the rules as pure functions: `validateEntry`, `lockViolations`, `ledgerValueMatches`, `nextLedgerRow`; `--selftest`. |
 | `enrich:apply` (`scripts/enrich-approach-rappel-bivy.mjs`) | reads the ledger (service key) before writing; **refuses** any write that changes a locked field; validates the batch's `ledger` entries; stores evidence only after a verified re-read (or on the ledger-only path). |
@@ -50,7 +50,7 @@ Beside the usual `set` / `pitch_detail` / … keys, a batch entry may carry:
 - `enrich:apply` can still only WRITE its allow-listed prose columns; grades, discipline and other
   identity columns stay hand-written SQL. The ledger can lock them as they stand.
 
-## Before 0435 is applied
+## Before 0437 is applied
 
 `enrich:apply` warns that no locks were checked (there can be none) and refuses any batch that
 carries `ledger` entries.

@@ -6,7 +6,7 @@ description: Research and VERIFY route-page fields (grade, length, pitches, FA, 
 # Route research: verify once, lock, never redo
 
 > **Decided with the owner step by step (2026-11-14).** Built: the ledger table
-> `route_field_evidence` (0435) and the lock refusal in `enrich:apply` — a batch carries its
+> `route_field_evidence` (0437) and the lock refusal in `enrich:apply` — a batch carries its
 > evidence as `ledger` entries (format: `docs/codebase/research-ledger.md`). Not built yet: the
 > open-data scripts and the nightly batch.
 > Pilot state: **Washington**. Companion skills: `route-waypoints-and-tracks`, `route-prose`.

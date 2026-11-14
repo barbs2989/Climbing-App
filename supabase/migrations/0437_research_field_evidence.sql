@@ -1,4 +1,4 @@
--- 0435 — route_field_evidence: one evidence record per researched route field, so a field that two
+-- 0437 — route_field_evidence: one evidence record per researched route field, so a field that two
 -- independent sources confirmed LOCKS and no later research pass re-researches or overwrites it.
 --
 -- Why (owner, 2026-11-14): research batches kept writing wrong values and the next agent "fixed" them
@@ -39,7 +39,7 @@ create table if not exists route_field_evidence (
 );
 alter table route_field_evidence enable row level security;
 comment on table route_field_evidence is
-  'Research evidence per route field; locked rows are never re-researched (0435). Service key only: RLS on, no policies.';
+  'Research evidence per route field; locked rows are never re-researched (0437). Service key only: RLS on, no policies.';
 
 create index if not exists route_field_evidence_level_idx on route_field_evidence (level, expires_at);
 
