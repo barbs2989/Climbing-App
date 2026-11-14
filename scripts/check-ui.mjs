@@ -816,13 +816,13 @@ try {
   await flow("log-a-climb-picker-opens", async () => {
     await tap("Logbook");
     // Flows share one browser and React keeps sub-tab state, so reset to the view
-    // that owns this control -- the previous flow leaves the Logbook on "Saved",
-    // where "Log a climb" legitimately does not render.
-    await tap("Objectives");
+    // that owns this control. Objectives no longer carries a header "Log a climb"
+    // (each objective row has its own Log); the picker opens from Completed.
+    await tap("Completed");
     const before = await page.innerText("body");
-    if (!(await tap("Log a climb"))) throw new Error("the 'Log a climb' button is not present");
+    if (!(await tap("Log a past climb"))) throw new Error("the 'Log a past climb' button is not present");
     const after = await page.innerText("body");
-    if (after === before) throw new Error("'Log a climb' changed nothing -- the picker did not open");
+    if (after === before) throw new Error("'Log a past climb' changed nothing -- the picker did not open");
     if (!/Pick a state|Log a past climb/i.test(after)) throw new Error("the picker opened but offers no way to choose a climb");
   });
 

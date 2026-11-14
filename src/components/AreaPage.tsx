@@ -191,6 +191,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const { data: children, isLoading: lc, error: ec }: AreaPageQuery<AreaPageArea[]> = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er }: AreaPageQuery<AreaPageRoute[]> = useAreaRoutes(area.id);
   const isLeaf = Array.isArray(children) && children.length === 0;
+  // A state, region or range always has areas under it, so its subtree reads (classics, the wall cards'
+  // grade bars) start with the page instead of waiting a round trip for the children list. Anything
+  // else waits for the list: a crag or peak can be a leaf.
+  const aboveLeaf = isLeaf === false || (!Array.isArray(children) && ["state", "region", "range"].includes(area.area_type || ""));
   // The website's arrangement (competitor review item 15, 2026-11-04): CLIMBS HERE and GRADE SPREAD side by
   // side, the finder's form inline under them preset to the climber's grade, classics as one-line rows,
   // and MOST LOGGED HERE beside Season. The phone keeps its stacked page and its Route finder button.
@@ -216,9 +220,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
   const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
   const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
-  const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && !full && chartable && isLeaf === false ? area.id : null); // not in the left panel (owner, 2026-11-13: "remove the grade spread from the left panel"), so not read there
+  const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && !full && chartable && aboveLeaf ? area.id : null); // not in the left panel (owner, 2026-11-13: "remove the grade spread from the left panel"), so not read there
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
-  const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
+  const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, aboveLeaf && chartable);
   const loading = lc || (isLeaf && lr);
   const error = ec || er;
   // dominant_discipline used to reach only the map pin's colour and icon, so the DB

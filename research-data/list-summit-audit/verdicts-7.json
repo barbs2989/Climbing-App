@@ -1,0 +1,1164 @@
+{
+ "routes": [
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Ridge: a standard mountaineering route to the Fortress Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_fortress_mountain_northeast_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northeast Face: a standard alpine route to the Fortress Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_fortress_mountain_southwest_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Face: a standard mountaineering route to the Fortress Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Slopes: a standard scrambling route to the Gardner Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Disappointment Peak Cleaver (Gerdine Ridge / Cool Glacier): a standard mountaineering route to the Glacier Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_glacier_peak_frostbite_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Frostbite Ridge: a standard alpine route to the Glacier Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Kennedy Glacier: a standard mountaineering route to the Glacier Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Sitkum Glacier: a standard mountaineering route to the Glacier Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_golden_horn_east_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "11-pitch east face; assumed to top out on the summit block (no description)"
+  },
+  {
+   "id": "wa_golden_horn_north_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "No data; face route assumed to reach the summit (descent is from the summit block)"
+  },
+  {
+   "id": "wa_golden_horn_northeast_arete",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northeast Arête: a standard alpine route to the Golden Horn summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_golden_horn_southwest_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Route: a standard alpine route to the Golden Horn summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_greenwood_mountain_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Ridge: a standard scrambling route to the Greenwood Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_raven_ridge_traverse",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Raven Ridge Traverse: a standard alpine route to the Hoodoo Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_hoodoo_peak_sawtooth_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard mountaineering route to the Hoodoo Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_jack_mountain_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Ridge: a standard alpine route to the Jack Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Nohokomeen Glacier and Headwall: a standard mountaineering route to the Jack Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_jack_mountain_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge: a standard scrambling route to the Jack Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_jack_mountain_northeast_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northeast Glacier: a standard mountaineering route to the Jack Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_jack_mountain_south_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Face / Southeast Ridge: a standard mountaineering route to the Jack Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_jack_mountain_southeast_ridge_direct",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Ridge (Direct): a standard alpine route to the Jack Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_jack_mountain_southwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Ridge: a standard scrambling route to the Jack Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Gully: a standard scrambling route to the Katsuk Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Slopes / Gully: a standard mountaineering route to the Kimtah Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge: a standard mountaineering route to the Klawatti Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Face / Klawatti Glacier: a standard mountaineering route to the Klawatti Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Klawatti Peak SW Buttress: a standard alpine route to the Klawatti Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_lake_mountain_pasayten_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard mountaineering route to the Lake Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Wilkes-Booth (Northwest Face): a standard alpine route to the Lincoln Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "summits": true,
+   "confidence": "high",
+   "reason": "X Couloir (Southwest Face) / Standard Route: a standard alpine route to the Lincoln Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Shoulder: a standard mountaineering route to the Little Tahoma Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_lost_peak_pasayten_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard scrambling route to the Lost Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Slopes: a standard mountaineering route to the Luahna Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Slope - Southeast Ridge: a standard scrambling route to the Luahna Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Ridge: a standard mountaineering route to the Martin Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mcclellan_peak_southwest_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Scramble: a standard scrambling route to the McClellan Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mesahchie_peak_2_e_ridge_via_mesahchie_icefall_couloir_variation",
+   "summits": false,
+   "confidence": "low",
+   "reason": "1-pitch AI2 icefall couloir variation of the E Ridge approach; logged as the variation, not a summit route"
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Ridge / Southwest Gully: a standard mountaineering route to the Mesahchie Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_monument_peak_pasayten_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard scrambling route to the Monument Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "adams_avalanche_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Avalanche Glacier: a standard mountaineering route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "adams_northwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Face of the Northwest Ridge: a standard alpine route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Adams Glacier: a standard alpine route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_avalanche_white_salmon_glaciers",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Descent notes say head for the true summit"
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Lava Glacier Headwall: a standard mountaineering route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Lyman Glacier: a standard mountaineering route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_mazama_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Mazama Glacier Headwall: a standard mountaineering route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_mount_adams_circumnavigation",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Circumnavigation of Adams; does not go to the summit"
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge: a standard mountaineering route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_northwest_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge (West Face): a standard alpine route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_pinnacle_glacier_headwall",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Pinnacle Glacier headwall reaches the summit plateau; no description"
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Climb (South Spur): a standard mountaineering route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Wilson Glacier Headwall: a standard mountaineering route to the Mount Adams summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_boulder_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Boulder Glacier: a standard mountaineering route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Boulder–Park Cleaver: a standard mountaineering route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Cockscomb Ridge: a standard mountaineering route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Coleman–Deming Glacier: a standard mountaineering route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Coleman Headwall: a standard alpine route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_coleman_ski_descent",
+   "summits": false,
+   "confidence": "high",
+   "reason": "Ski descent line, not an ascent route"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Easton Glacier: a standard mountaineering route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge: a standard alpine route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Park Glacier Headwall: a standard alpine route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_baker_squak_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Squak Glacier: a standard mountaineering route to the Mount Baker summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_ballard_east_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Face: a standard scrambling route to the Mount Ballard summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Slopes: a standard scrambling route to the Mount Ballard summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_bigelow_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard scrambling route to the Mount Bigelow summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tribute to Richard: a standard alpine route to the Mount Bigelow summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_carru_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Slopes Scramble: a standard scrambling route to the Mount Carru summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_custer_standard",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Route / South Side: a standard mountaineering route to the Mount Custer summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_fernow_southeast_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Face / Leroy Basin: a standard mountaineering route to the Mount Fernow summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_formidable_south_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Face / Southeast Ledges: a standard alpine route to the Mount Formidable summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_northeast_face_direct",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northeast Face Direct: a standard alpine route to the Mount Formidable summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_fury_east_direct_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Direct East Ridge: a standard alpine route to the Mount Fury (East Peak) summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_fury_east_north_buttress",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Buttress: a standard alpine route to the Mount Fury (East Peak) summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_fury_east_southeast_glaciers",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Glaciers (Standard): a standard mountaineering route to the Mount Fury (East Peak) summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Megalodon Ridge: a standard alpine route to the Mount Goode summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northeast Face: a standard alpine route to the Mount Goode summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Couloir: a standard alpine route to the Mount Goode summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_goode_northeast_buttress",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northeast Buttress: a standard alpine route to the Mount Goode summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_lago_south_slope_south_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Slope - South Face (Standard Route): a standard mountaineering route to the Mount Lago summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_logan_fremont_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Fremont Glacier: a standard mountaineering route to the Mount Logan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Banded Glacier: a standard mountaineering route to the Mount Logan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Douglas Glacier: a standard mountaineering route to the Mount Logan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_maude_r1",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Face: a standard mountaineering route to the Mount Maude summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_maude_r2",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Entiat Ice Fall: a standard alpine route to the Mount Maude summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_maude_r3",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Couloir to the summit ridge; descent by the South Shoulder implies a summit loop"
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Ends at Liberty Cap or the main summit; carryover via the summit"
+  },
+  {
+   "id": "rainier_north_mowich_headwall",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Ends at Liberty Cap (a Rainier summit); standard carryover crosses to the main summit"
+  },
+  {
+   "id": "wa_bread_loaf",
+   "summits": false,
+   "confidence": "high",
+   "reason": "V0 boulder by the Silver Falls loop trail, ~1900 ft elevation"
+  },
+  {
+   "id": "wa_glacier_peak_south_tahoma_headwall",
+   "summits": true,
+   "confidence": "low",
+   "reason": "South Tahoma Headwall is a Rainier summit route; no description"
+  },
+  {
+   "id": "wa_glacier_peak_tahoma_cleaver",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Tahoma Cleaver is a Rainier summit route; no description"
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Curtis Ridge: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Disappointment Cleaver: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_east_success_couloir",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Success Cleaver couloir leads to Point Success and the summit; no description"
+  },
+  {
+   "id": "wa_mount_rainier_edmunds_headwall",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Ends at Liberty Cap; carryover toward the summit"
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Emmons–Winthrop Glacier: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Fuhrer Finger: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_thumb",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Fuhrer Thumb: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Gibraltar Ledges: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Ingraham Direct: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Kautz Glacier: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Kautz Headwall variant of the Kautz route that continues to the summit"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Liberty Ridge: a standard alpine route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_mowich_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Ends at Liberty Cap; carryover over the summit plateau"
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Nisqually Icefall: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_north_mowich_icefall",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Mowich-side route to Liberty Cap and the summit plateau; no description"
+  },
+  {
+   "id": "wa_mount_rainier_ptarmigan_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Ptarmigan Ridge: a standard alpine route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Sunset Ridge: a standard alpine route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Tahoma Glacier: a standard mountaineering route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_upper_castle_toprope_wall",
+   "summits": false,
+   "confidence": "high",
+   "reason": "1-pitch top-rope wall, 12 m"
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Willis Wall: a standard alpine route to the Mount Rainier summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_rainier_wilson_headwall",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Wilson Headwall is a summit route (odd 1-pitch WI2 data); assumed full route"
+  },
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Face / Redoubt Glacier: a standard alpine route to the Mount Redoubt summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_main_peak_4_img_indirect",
+   "summits": true,
+   "confidence": "low",
+   "reason": "3 pitches on the Shuksan summit pyramid (Main Peak); assumed variant finishing on the summit"
+  },
+  {
+   "id": "wa_main_peak_4_north_west_rib",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North West Rib: a standard trad route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_main_peak_4_skyline",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Single 15 m pitch near the Winnie's Slide camp on Fisher Chimneys; crag pitch, not the summit"
+  },
+  {
+   "id": "wa_main_peak_5_northwest_couloir",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Shuksan NW Couloir tops out on the summit ridge/pyramid"
+  },
+  {
+   "id": "wa_mount_shuksan_fisher_chimneys",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Fisher Chimneys: a standard mountaineering route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_shuksan_hanging_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Hanging Glacier: a standard alpine route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Face: a standard alpine route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_shuksan_northeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northeast Ridge: a standard alpine route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_shuksan_northwest_arete",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northwest Arete: a standard alpine route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_shuksan_price_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Price Glacier: a standard alpine route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_shuksan_sulphide_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Sulphide Glacier: a standard mountaineering route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "White Salmon Glacier: a standard mountaineering route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Ridge (SE Corner): a standard alpine route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_sw_couloir_and_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "SW Couloir and Face: a standard ice route to the Mount Shuksan summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_spickard_silver_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Silver Glacier: a standard mountaineering route to the Mount Spickard summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Route / Silver Lake: a standard mountaineering route to the Mount Spickard summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_st_helens_monitor_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Monitor Ridge: a standard mountaineering route to the Mount St. Helens summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_st_helens_worm_flows",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Worm Flows: a standard mountaineering route to the Mount St. Helens summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Lower North Ridge variant that joins the North Ridge, which continues to the summit"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Direct variant joining the North Ridge, which continues to the summit"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Cascadian Couloir: a standard scrambling route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_stuart_direct_north_ridge",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Full North Ridge to the summit; no description"
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Girth Pillar: a standard alpine route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_stuart_gorillas_in_the_mist",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Variant joining the upper North Ridge to the summit"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Tops out near the false summit; the usual finish includes the short scramble to the true summit"
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge (Complete): a standard alpine route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_stuart_stuart_glacier_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Stuart Glacier Couloir: a standard alpine route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mount_stuart_stuart_range_traverse",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Traverse that includes Stuart's summit"
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Ridge: a standard alpine route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_mt_stuart_always_the_cowboy_never_the_cow",
+   "summits": true,
+   "confidence": "low",
+   "reason": "10-pitch north-side ice line; assumed to top out on the ridge to the summit"
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Sherpa Glacier: a standard mountaineering route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_south_headwall",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Headwall: a standard alpine route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Upper North Ridge w/Great Gendarme: a standard alpine route to the Mount Stuart summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_north_gardner_mountain_nw_couloir",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northwest Couloir (Cedar Creek approach): a standard mountaineering route to the North Gardner Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_north_gardner_mountain_southwest",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Slopes / South Ridge: a standard scrambling route to the North Gardner Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_northwest_mox_peak_northeast_ridge",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Ridge route to the summit; no description"
+  },
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Route / Northwest Spire: a standard alpine route to the Northwest Mox Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Slopes Scramble: a standard mountaineering route to the Osceola Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_oval_peak_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard mountaineering route to the Oval Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_pinnacle_mountain_entiat_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard scrambling route to the Pinnacle Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_east_slope",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Slope: a standard mountaineering route to the Primus Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_north_ridge_4",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge: a standard alpine route to the Primus Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Ridge / McAllister Glacier: a standard mountaineering route to the Primus Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard mountaineering route to the Ptarmigan Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Ridge (Crater Lake Approach): a standard mountaineering route to the Raven Ridge summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_raven_ridge_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Raven Ridge Standard Route (Libby Lake Gully-Ridge): a standard scrambling route to the Raven Ridge summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_remmel_mountain_nw_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "NW Ridge: a standard alpine route to the Remmel Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_remmel_mountain_southeast_slope",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Slope (Standard Route): a standard mountaineering route to the Remmel Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_reynolds_peak_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard scrambling route to the Reynolds Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_robinson_mountain_southeast_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southeast Ridge: a standard scrambling route to the Robinson Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "summits": true,
+   "confidence": "high",
+   "reason": "South Slopes via Emerald-Saska Col: a standard scrambling route to the Saska Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_sherpa_balanced_rock_ne_couloir",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Filed under Balanced Rock; NE couloir ends at the notch, and the descent reverses the couloir without mentioning Sherpa's summit"
+  },
+  {
+   "id": "wa_sherpa_peak_east_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Ridge: a standard alpine route to the Sherpa Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_sherpa_peak_north_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Ridge: a standard alpine route to the Sherpa Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_sherpa_peak_northeast_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "No data; face route assumed to reach the summit"
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Ridge: a standard alpine route to the Sherpa Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_east_ridge_3",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Ridge: a standard alpine route to the Silver Star Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Silver Star Glacier: a standard mountaineering route to the Silver Star Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_silver_star_ne_ridge",
+   "summits": true,
+   "confidence": "low",
+   "reason": "Ridge route to the summit; data highFt 8840 is ambiguous"
+  },
+  {
+   "id": "wa_silver_star_northwest_face",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Ends on the west summit (8840), not the higher main summit (8876)"
+  },
+  {
+   "id": "wa_silver_star_west_face_couloir",
+   "summits": false,
+   "confidence": "low",
+   "reason": "Ends on the west summit (8840), not the main summit"
+  },
+  {
+   "id": "wa_sinister_peak_north_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "North Face: a standard mountaineering route to the Sinister Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Route: a standard mountaineering route to the Sinister Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Neve Glacier / Standard Route: a standard mountaineering route to the Snowfield Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_southeast_mox_peak_beckey_route_west_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Beckey Route (West Ridge): a standard alpine route to the Southeast Mox Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Ridge (Beckey Route): a standard alpine route to the Southeast Mox Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_the_devils_club",
+   "summits": true,
+   "confidence": "low",
+   "reason": "25-pitch east face of SE Mox; assumed to reach the summit (rappelled)"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "West Route: a standard scrambling route to the Spectacle Buttes summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_nw_ridge",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Northwest Ridge: a standard alpine route to the Star Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Scramble: a standard scrambling route to the Star Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_storm_king_north_face",
+   "summits": true,
+   "confidence": "low",
+   "reason": "No data; assumed to reach the summit"
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Scramble: a standard scrambling route to the Storm King summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Southwest Route / Standard: a standard alpine route to the Tower Mountain summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_tupshin_peak_east_face",
+   "summits": true,
+   "confidence": "high",
+   "reason": "East Face: a standard alpine route to the Tupshin Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_west_craggy_peak_standard_route",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Standard Route (South Ridge / South Gully via Copper Glance Basin): a standard mountaineering route to the West Craggy Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_windy_peak_iron_gate_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Windy Peak via Iron Gate Trailhead (Boundary Trail / Sunny Pass Approach): a standard scrambling route to the Windy Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_windy_peak_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Windy Peak Trail (Standard Walk-up): a standard scrambling route to the Windy Peak summit (descent is from the summit)"
+  },
+  {
+   "id": "wa_windy_peak_windy_creek_trail",
+   "summits": true,
+   "confidence": "high",
+   "reason": "Windy Peak via Windy Creek Trail (Cathedral Driveway Approach): a standard scrambling route to the Windy Peak summit (descent is from the summit)"
+  }
+ ],
+ "areas": [
+  {
+   "area": "wa_mcclellan_peak_climbs",
+   "peak": "wa_mcclellan_peak",
+   "keepArea": true,
+   "reason": "McClellan Peak Routes: the area's routes (SW scramble) reach the summit"
+  },
+  {
+   "area": "wa_main_peak_4",
+   "peak": "wa_mount_shuksan",
+   "keepArea": true,
+   "reason": "Main Peak = the Shuksan summit pyramid; most routes finish on the summit (the 15 m Skyline pitch is an exception, handled per route)"
+  },
+  {
+   "area": "wa_mount_shuksan_climbs",
+   "peak": "wa_mount_shuksan",
+   "keepArea": true,
+   "reason": "Shuksan full routes (Fisher Chimneys, Sulphide, Price, North Face, NW Couloir), all to the summit"
+  }
+ ]
+}
