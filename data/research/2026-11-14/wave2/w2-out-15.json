@@ -1,0 +1,334 @@
+{
+ "ak_straight_eight": {
+  "area": "ak_bear_s_den",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 75,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Straight+Eight",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project search listing gives Straight Eight (Bear's Den, Hatcher Pass) as 75 ft trad."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jay Rowe, Paul Turecki",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Straight+Eight",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listing credits first ascent to Jay Rowe and Paul Turecki; no year given."
+     }
+    ]
+   }
+  ],
+  "note": "MP search listing rates it 5.9, app has 5.8+; grade not recorded. Route page fetch returned 429; Mountain Project treated as walled for the rest of the chunk."
+ },
+ "ak_stumpjumper": {
+  "area": "ak_stump_the",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Cedar Wright, Renan Ozturk, 2007",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Stumpjumper",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project listing credits first ascent to Cedar Wright and Renan Ozturk, 2007."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200816103/North-America-United-States-Alaska-Ruth-Gorge-The-Stump-and-Eye-Tooth-Various-New-Routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ 2008 report: Wright and Ozturk named StumpJumper after climbing it on their summer 2007 Ruth Gorge trip."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Stumpjumper",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listing gives 13 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Stumpjumper",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listing gives route length 1800 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Follows the corner right of Brownfinger only loosely, then leaves it for a featured, sparsely protected upper headwall called the Leap of Faith.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200816103/North-America-United-States-Alaska-Ruth-Gorge-The-Stump-and-Eye-Tooth-Various-New-Routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ: line wanders either side of the corner, then leaves it for a high-quality featured face with little protection (\"Leap of Faith\")."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Independent line on The Stump with consistently good rock, right of Brownfinger, which lies right of Goldfinger, Ruth Gorge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200816103/North-America-United-States-Alaska-Ruth-Gorge-The-Stump-and-Eye-Tooth-Various-New-Routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ: line is fully independent on consistently good rock; next corner right of Brownfinger, itself right of Goldfinger."
+     }
+    ]
+   }
+  ],
+  "note": "Grade: AAJ says 5.11R, MP listing 5.11b R; not identical, not recorded. AAJ gives no descent detail for StumpJumper beyond descending in snow."
+ },
+ "ak_sundowner": {
+  "area": "ak_raspberry_rock",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Sundowner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project listing gives Sundowner (Raspberry Rock, Valdez) as 50 ft sport."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Brian Teal, Mike Weber",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/search?q=Sundowner",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listing credits first ascent to Brian Teal and Mike Weber; no year."
+     }
+    ]
+   }
+  ],
+  "note": "Only the MP search listing was read; route page not opened (MP 429). alaska.guide/Route/Sundowner is not found."
+ },
+ "ak_super_cub": {
+  "area": "ak_airport_heights",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_sway_penny_yoga": {
+  "area": "ak_sunny_side_the",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 196,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Sway-Penny-Yoga",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 196 ft, The Sunny Side, Thompson Pass region near Valdez."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Sway-Penny-Yoga",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts give an average technical rating of 5.8."
+     }
+    ]
+   }
+  ],
+  "note": "Alaska Guide figures look like they were imported from Mountain Project, so they would not count as a second independent source with it."
+ },
+ "ak_swayze_express": {
+  "area": "ak_19_mile_wall_2",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_swisser_than_swiss_chocolate": {
+  "area": "ak_throne_the",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_tailspin": {
+  "area": "ak_airport_heights",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_talons": {
+  "area": "ak_blueberry_block",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Talons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 80 ft, Blueberry Block, Thompson Pass region near Valdez."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/Talons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts give an average technical rating of 5.11a."
+     }
+    ]
+   }
+  ],
+  "note": "App has 5.11a/b; Alaska Guide gives 5.11a. Possibly MP-derived data."
+ },
+ "ak_tavern_time": {
+  "area": "ak_renaissance_wall",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_tbd": {
+  "area": "ak_independence_crag",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_5th_element_fifth_tower": {
+  "area": "ak_5th_tower",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_apology_foot_rub": {
+  "area": "ak_crack_garden_the_2",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_blade": {
+  "area": "ak_royal_tower_the",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_firing_line": {
+  "area": "ak_panorama_point",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 55,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/The-Firing-Line",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts: length 55 ft, Panorama Point, Prince William Sound region near Valdez."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://alaska.guide/Route/The-Firing-Line",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alaska Guide quick facts give an average technical rating of 5.10c."
+     }
+    ]
+   }
+  ],
+  "note": "Possibly MP-derived data."
+ },
+ "ak_the_good_book": {
+  "area": "ak_valdez_glacier_campground",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_growler": {
+  "area": "ak_bpr_wall",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_heretic": {
+  "area": "ak_birds_of_prey",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_jester": {
+  "area": "ak_renaissance_wall",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_jester_2": {
+  "area": "ak_royal_tower_the",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_jinx": {
+  "area": "ak_birds_of_prey",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_little_waterfall_that_could": {
+  "area": "ak_valdez_glacier_campground",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_lost_era": {
+  "area": "ak_airport_heights",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_lost_marsupial": {
+  "area": "ak_throne_the",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_mental_block": {
+  "area": "ak_raspberry_rock",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_middle_finger": {
+  "area": "ak_carmack_spires",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_nose_knows": {
+  "area": "ak_panorama_point",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_pig": {
+  "area": "ak_barnyard_the",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_pipeline": {
+  "area": "ak_bpr_wall",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ },
+ "ak_the_quartz_crack": {
+  "area": "ak_didilkama",
+  "skip_reason": "Single-pitch/crag Alaska route documented essentially only on Mountain Project, which answered 429 to this agent (walled per brief); theCrag and DuckDuckGo navigation were refused by the browser safety check; alaska.guide has no route page. No second publisher reachable."
+ }
+}

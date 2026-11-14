@@ -1,0 +1,300 @@
+{
+ "wa_mount_si_trail": {
+  "area": "wa_mount_si",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3150,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,150 feet, 8.0 miles roundtrip, highest point 3,900 ft"
+     },
+     {
+      "url": "https://nrtapplication.org/trails/mount-si-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "3,150 feet of elevation gain on the ascent (DNR-managed National Recreation Trail application)"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 3150 (shape outback, so one-way gain). Both pages give 3,150 ft; WTA highest point is 3,900 ft (trail-end viewpoint below the 4,167 Haystack). WTA prose also says \"gaining 3,100 feet\". No loss/regain stated anywhere."
+ },
+ "wa_mount_ellinor_standard": {
+  "area": "wa_mount_ellinor",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2444,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-ellinor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Upper trailhead (3,500 ft): 2,444 feet gained in 1.6 miles to the summit"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 2444 (upper trailhead). WTA stats block (3,300 ft, 6.2 mi rt) is the LOWER trailhead. theoutbound.com summit-mount-ellinor lists 2467 ft over 3.08 mi but does not name the trailhead, so not counted as a second source."
+ },
+ "wa_mcgregor_mountain_scramble": {
+  "area": "wa_mcgregor_mountain",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 6200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://home.nps.gov/noca/planyourvisit/mcgregor-mountain-trail.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "NPS: 6,600 ft gain, 7.7 mi one way High Bridge to summit"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 6,200 is within 10% of NPS 6,600 ft (High Bridge to summit), so the stored value is locked on one source. The NPS places page says 5,700 ft to the end of the trail plus a 1,000 ft scramble; not used, because it would need adding. If a second source confirms 6,600, consider replacing the stored value."
+ },
+ "wa_mount_teneriffe_kamikaze_trail": {
+  "area": "wa_mount_teneriffe",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://hikingwithmybrother.com/mt-teneriffe-kamikaze-trail.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kamikaze trail to Mt Teneriffe: 6.5 mi total, 3800 ft total ascent"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 3800 matches. WTA mount-teneriffe also says 3,800 ft but that is the 13-mile road route, not Kamikaze, so not used as a second source. 10adventures Kamikaze figure is 1,265 m round-trip metric only."
+ },
+ "wa_mount_pilchuck_standard_route": {
+  "area": "wa_mount_pilchuck",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 2300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-pilchuck",
+      "retrieved_at": "2026-11-14",
+      "fact": "2,300 ft elevation gain, 5.4 mi roundtrip, high point 5,327 ft"
+     },
+     {
+      "url": "https://www.heraldnet.com/news/to-get-to-iconic-pilchuck-lookout-hikers-must-brave-hell-on-wheels",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,300 feet in trail details box; no source credited"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 2300 matches WTA and The Herald exactly; ledger-only lock. Neither page states an approach loss."
+ },
+ "wa_table_mountain_standard_scramble": {
+  "area": "wa_table_mountain",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 725,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/table-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "725 ft elevation gain, 2.6 mi roundtrip, high point 5,700 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Stored 725 matches WTA. 10adventures gives 183 m only (metres-only, not usable). USFS Trail 681 page states no gain."
+ },
+ "wa_treen_peak_scramble": {
+  "area": "wa_treen_peak",
+  "set": {
+   "approach_loss_ft": 800
+  },
+  "ledger": [
+   {
+    "field": "approach_loss_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://yellowleaf.org/scramble/g/r/2007-06-02-treen.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "800' elevation loss dropping to Upper Garfield Mountain Lake on the way to Treen, via Green Ridge from Middle Fork Road"
+     }
+    ]
+   }
+  ],
+  "note": "Same page gives 6,115 ft car-to-car total gain (includes regaining the 800 ft), so not used as trailhead-to-summit gain; stored 6100 likely equals that round-trip total and may overstate. Regain not stated as a number. Mountaineers 4,400 ft (403, unopened)."
+ },
+ "wa_johannesburg_mountain_northeast_rib_1951_route": {
+  "area": "wa_johannesburg_mountain",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "4,600' of climbing from parking lot to summit"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 5000 against Abegg's 4,600 ft parking-to-summit (8% off). return_gain 1500 is the gain on her descent via C-J Col and Doug's Direct; valid only if our descent is that standard one. Page gives approach as 3500' gain with no loss stated, so approach_loss not set."
+ },
+ "wa_snoqualmie_mountain_standard_route": {
+  "area": "wa_snoqualmie_mountain_climbs",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3105,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2007-10-27-28-snoq.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "3,200 ft gain, Alpental to Snoqualmie Mountain summit via the pass"
+     }
+    ]
+   }
+  ],
+  "note": "Ledger-only lock of stored 3105: yellowleaf trip log states 3,200 ft (within 10%). Mountaineers listings (~3,200 ft) are 403; WTA has no hike page. No page states approach loss/return gain."
+ },
+ "wa_big_snagtooth_west_ridge": {
+  "area": "wa_big_snagtooth",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/big-snagtooth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Big Snagtooth: elevation gain 4,000 ft, highest point 8,330 ft"
+     }
+    ]
+   }
+  ],
+  "note": "WTA hike page states 4,000 ft gain, equal to stored. Ledger-only lock of the stored value. Mountaineers listing (4,500 ft) not openable (403)."
+ },
+ "wa_mount_logan_fremont_glacier": {
+  "area": "wa_mount_logan",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 8900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cnmtstuartclimbproject.blogspot.com/2017/07/route-mount-logan-fremont-glacier-north.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fremont Glacier route: gain 8,900 ft, 47 mi round trip (credited to The Mountaineers)"
+     }
+    ]
+   }
+  ],
+  "note": "Blog quotes The Mountaineers route figure 8,900 ft (Thunder Creek approach) = stored; counts as one source (The Mountaineers). Ledger-only lock. Lemke Climbs report uses Park Creek approach and states no total gain."
+ },
+ "wa_mount_baker_boulder_glacier": {
+  "area": "wa_mount_baker",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 8100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nextadventure.net/blog/trip-report-mount-baker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Boulder Glacier route: about 8,300 ft from 2,723 ft trailhead to 10,778 ft summit"
+     }
+    ]
+   }
+  ],
+  "note": "Next Adventure states ~8,300 ft (table 8,328 ft) trailhead to summit, within 10% of stored 8,100; ledger-only lock of stored. Mountaineers 8,100 ft not openable (403). USFS route page states no gain."
+ },
+ "wa_pinnacle_mountain_entiat_scramble": {
+  "area": "wa_pinnacle_mountain_entiat",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5722,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/pinnacle-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pinnacle Mountain (Entiat), North Fork Entiat TH: elevation gain 5,722 ft, high point 8,402 ft"
+     }
+    ]
+   }
+  ],
+  "note": "WTA states 5,722 ft, exactly the stored value. Ledger-only lock. Wenatchee Outdoors pages returned 403; a SummitPost figure (~4,600 ft to Borealis Pass) seen only in search results, not opened."
+ },
+ "wa_enchantment_enchainment": {
+  "area": "wa_stuart_range_traverses",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 18400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/enchantment-enchainment-wa",
+      "retrieved_at": "2026-11-14",
+      "fact": "Enchantment Enchainment loop from Stuart Lake TH: 27.4 mi, 18,400 ft vertical gain"
+     }
+    ]
+   }
+  ],
+  "note": "FKT route page states 18,400 ft for the 9-summit loop, exactly the stored whole-outing value. Ledger-only lock."
+ },
+ "wa_mount_washington_olympic_standard": {
+  "area": "wa_mount_washington_olympic",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3190,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-washington",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Washington (Olympics): 4.0 mi roundtrip, elevation gain 3,190 ft"
+     }
+    ]
+   }
+  ],
+  "note": "WTA states 3,190 ft gain, exactly the stored value. Ledger-only lock."
+ }
+}

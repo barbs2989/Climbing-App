@@ -221,9 +221,11 @@ if (want("signed-out")) {
       await scan(page, where);
     } catch (e) { unreached.push(`${where} (${err(e)})`); }
   };
-  // The gate opens on sign-in; it must not be CLICKED -- "Sign in" is also the form's submit button.
-  await step("signed-out:sign in", null);
-  await step("signed-out:create account", async () => clickNamed(page, "Create an account"));
+  // A NEW visitor's gate opens on Create account since 2026-11-14 (lib/AuthModal.jsx: no remembered
+  // email on this device -- and the walk's browser remembers none). Sign in is reached by the footer's
+  // "Sign in" link, the one control with that name on Create account (its submit says "Create account").
+  await step("signed-out:create account", null);
+  await step("signed-out:sign in", async () => clickNamed(page, "Sign in"));
   await step("signed-out:accessibility", async () => {
     if (!(await clickNamed(page, "Accessibility"))) return false;
     // The guest form is the point of this screen: no email field means it rendered the signed-in form.

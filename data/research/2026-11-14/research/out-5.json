@@ -1,0 +1,259 @@
+{
+ "wa_forbidden_peak_north_ridge": {
+  "area": "wa_forbidden_peak",
+  "skip_reason": "Mountain Project states \"nearly 5000ft\" for the approach only; gethighonaltitude lists an undefined \"Length: 6,200ft\"; Skyward pages redirect without figures; Mountaineers 6,200 ft is 403. No open trailhead-to-summit figure. Stored 4,500 is below summit minus trailhead (~5,600 ft), looks low."
+ },
+ "wa_mount_terror_southeast_face": {
+  "area": "wa_mount_terror",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_big_snagtooth_west_ridge": {
+  "area": "wa_big_snagtooth",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/big-snagtooth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Big Snagtooth: elevation gain 4,000 ft, highest point 8,330 ft"
+     }
+    ]
+   }
+  ],
+  "note": "WTA hike page states 4,000 ft gain, equal to stored. Ledger-only lock of the stored value. Mountaineers listing (4,500 ft) not openable (403)."
+ },
+ "wa_magic_mountain_north_face": {
+  "area": "wa_magic_mountain",
+  "skip_reason": "Mountaineers South Ridge 4,000 ft is 403; sverdina trip report states no figures; no open page for the North Face route."
+ },
+ "wa_tye_peak_e_route": {
+  "area": "wa_tye_peak",
+  "skip_reason": "Only Mountaineers listings (1,200 ft Skyline Lake route; 2,400 ft incl. Sky Mountain), all 403; no WTA page for Tye Peak. Stored 2,400 is well above summit minus trailhead (~1,400 ft), looks high."
+ },
+ "wa_ingalls_peak_south_scramble": {
+  "area": "wa_ingalls_peak_south",
+  "skip_reason": "stephabegg states 4,200 ft gain for the 11-mi round trip from Esmeralda (includes return over Ingalls Pass), differs >10% from stored 3,600 and is a round-trip figure; Komoot FAQ also says ~4,200 ft but appears derived, not independent. Mountaineers 3,600 ft not openable (403). Not set."
+ },
+ "wa_sherpa_balanced_rock_standard": {
+  "area": "wa_sherpa_balanced_rock",
+  "skip_reason": "SummitPost (~7,600 ft summed by its author) and Mountaineers (7,400 ft) appear only in search results and are 403; countryhighpoints Sherpa report states no gain. Longs Pass approach drops to Ingalls Creek and regains it on return, but no open page states the figures."
+ },
+ "wa_amphitheater_mountain_middle_finger_buttress_left_side": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "No page found for this route; Amphitheatre MP area page has no gain; SummitPost (403). Stored 4,800 below summit minus trailhead (~5,300 ft)."
+ },
+ "wa_j_tnar": {
+  "area": "wa_j_tunheim",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_remmel_mountain_nw_ridge": {
+  "area": "wa_remmel_mountain",
+  "skip_reason": "countryhighpoints Remmel report used the SE slope from Four Point Lake and states no gain; WTA Remmel page has no gain. Nothing for the NW Ridge."
+ },
+ "wa_mount_logan_fremont_glacier": {
+  "area": "wa_mount_logan",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 8900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cnmtstuartclimbproject.blogspot.com/2017/07/route-mount-logan-fremont-glacier-north.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Fremont Glacier route: gain 8,900 ft, 47 mi round trip (credited to The Mountaineers)"
+     }
+    ]
+   }
+  ],
+  "note": "Blog quotes The Mountaineers route figure 8,900 ft (Thunder Creek approach) = stored; counts as one source (The Mountaineers). Ledger-only lock. Lemke Climbs report uses Park Creek approach and states no total gain."
+ },
+ "wa_mount_baker_boulder_glacier": {
+  "area": "wa_mount_baker",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 8100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://nextadventure.net/blog/trip-report-mount-baker",
+      "retrieved_at": "2026-11-14",
+      "fact": "Boulder Glacier route: about 8,300 ft from 2,723 ft trailhead to 10,778 ft summit"
+     }
+    ]
+   }
+  ],
+  "note": "Next Adventure states ~8,300 ft (table 8,328 ft) trailhead to summit, within 10% of stored 8,100; ledger-only lock of stored. Mountaineers 8,100 ft not openable (403). USFS route page states no gain."
+ },
+ "wa_chalangin_peak_little_giant_pass_luahna_col": {
+  "area": "wa_chalangin_peak",
+  "skip_reason": "Only WTA Little Giant Pass (4,000 ft to the pass, round trip 10 mi) found; covers approach only. No page for the Luahna Col route to Chalangin."
+ },
+ "wa_le_conte_mountain_northern_aspect": {
+  "area": "wa_le_conte_mountain",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_star_peak_sawtooth_scramble": {
+  "area": "wa_star_peak_sawtooth",
+  "skip_reason": "WTA Star Peak page gives high point 8,690 ft but no gain; countryhighpoints only a winter ascent title. No usable figure."
+ },
+ "wa_blue_s_buttress": {
+  "area": "wa_poster_peak",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_mount_adams_lyman_glacier": {
+  "area": "wa_mount_adams",
+  "skip_reason": "Only Mountaineers ice-route page (7,700 ft combined north-side routes, 403) and a globalsummitguide snippet not opened; nothing Lyman-specific. Stored 5,000 is far below summit minus Killen Creek TH (~7,700 ft), looks wrong (maybe high-camp-to-summit)."
+ },
+ "wa_soviet_route": {
+  "area": "wa_bonanza_peak",
+  "skip_reason": "WTA Bonanza Peak page states 6,300 ft / 14 mi from Holden for the standard route, not the Soviet Route; single source, >10% from stored 5,300. Not set. Stored 5,300 is below summit minus trailhead pin (~6,100 ft), so it looks low."
+ },
+ "wa_sentinel_peak_standard": {
+  "area": "wa_sentinel_peak",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_pinnacle_mountain_entiat_scramble": {
+  "area": "wa_pinnacle_mountain_entiat",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5722,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/pinnacle-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pinnacle Mountain (Entiat), North Fork Entiat TH: elevation gain 5,722 ft, high point 8,402 ft"
+     }
+    ]
+   }
+  ],
+  "note": "WTA states 5,722 ft, exactly the stored value. Ledger-only lock. Wenatchee Outdoors pages returned 403; a SummitPost figure (~4,600 ft to Borealis Pass) seen only in search results, not opened."
+ },
+ "wa_early_morning_spire_southwest_face": {
+  "area": "wa_early_morning_spire",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_mount_degenhardt_southwest_route": {
+  "area": "wa_mount_degenhardt",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_the_tooth_north_ridge": {
+  "area": "wa_summer_fall_rock_2",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_cutthroat_south_buttress": {
+  "area": "wa_cutthroat_peak",
+  "skip_reason": "Stevensong states a ~50 m loss to cross the creek, regained on return, but in metres only (cannot convert). AAI route profile gives no figures. Mountaineers SE Buttress 3,050 ft not openable."
+ },
+ "wa_mount_meany_standard": {
+  "area": "wa_mount_meany",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_enchantment_enchainment": {
+  "area": "wa_stuart_range_traverses",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 18400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/enchantment-enchainment-wa",
+      "retrieved_at": "2026-11-14",
+      "fact": "Enchantment Enchainment loop from Stuart Lake TH: 27.4 mi, 18,400 ft vertical gain"
+     }
+    ]
+   }
+  ],
+  "note": "FKT route page states 18,400 ft for the 9-summit loop, exactly the stored whole-outing value. Ledger-only lock."
+ },
+ "wa_gardner_mountain_west_ridge": {
+  "area": "wa_gardner_mountain",
+  "skip_reason": "WTA Gardner Mountain page lists no gain; countryhighpoints report combines Abernathy and two Gardners (8,000 ft). No usable figure."
+ },
+ "wa_the_monk_le_gibet": {
+  "area": "wa_the_monk_pasayten",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_fish_whistle": {
+  "area": "wa_vesper_peak",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 4115,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/vesper-nf/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Vesper Peak North Face trip: 10 mi round trip, 4,100 ft gain from Sunrise Mine trailhead"
+     }
+    ]
+   }
+  ],
+  "note": "No page states a gain for Fish & Whistle itself. stephabegg gives 4,100 ft for the neighbouring Vesper North Face (same trailhead, same drop to Vesper Glacier); WTA Vesper Peak hike states 4,000 ft (standard route, not counted as evidence). Both within 10% of stored 4,115; ledger-only lock of stored. The north-face approach drops from a ~5,500 ft notch to the glacier but no page states that drop in feet."
+ },
+ "wa_mount_queets_south": {
+  "area": "wa_mount_queets",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_amphitheater_mountain_pilgrimage_to_mecca": {
+  "area": "wa_amphitheater_mountain",
+  "skip_reason": "Mountain Project route and area pages state no approach gain (15 min from Upper Cathedral Lake); SummitPost 4,800 ft to Upper Cathedral Lake is 403. Stored 4,800 is below summit minus trailhead (~5,300 ft)."
+ },
+ "wa_liberty_traverse": {
+  "area": "wa_liberty_bell",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_south_early_winter_spire_direct_east_buttress": {
+  "area": "wa_south_early_winters_spire",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ "wa_mount_washington_olympic_standard": {
+  "area": "wa_mount_washington_olympic",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 3190,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-washington",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Washington (Olympics): 4.0 mi roundtrip, elevation gain 3,190 ft"
+     }
+    ]
+   }
+  ],
+  "note": "WTA states 3,190 ft gain, exactly the stored value. Ledger-only lock."
+ },
+ "wa_mount_shuksan_fisher_chimneys": {
+  "area": "wa_mount_shuksan_climbs",
+  "skip_reason": "FKT states 6,739 ft vertical for the whole out-and-back from Lake Ann TH (round trip, not trailhead to summit); RMI gives only day splits (2,000 ft TH to camp, 2,427 ft summit day). No open page states TH-to-summit gain or the Swift Creek drop in feet. Not set."
+ },
+ "wa_classic_route_3": {
+  "area": "wa_lane_peak",
+  "skip_reason": "Mountaineers Lane Peak page (~1,500 ft) is 403; no WTA or other open page found."
+ },
+ "wa_monument_peak_pasayten_scramble": {
+  "area": "wa_monument_peak_pasayten",
+  "skip_reason": "Only Mountaineers listings (combined Monument + Lake Mountain, 403) and a countryhighpoints winter ascent (34 mi, 9,000 ft, different conditions/approach). No usable figure."
+ },
+ "wa_tenpeak_mountain_north_couloir": {
+  "area": "wa_tenpeak_mountain",
+  "skip_reason": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ }
+}

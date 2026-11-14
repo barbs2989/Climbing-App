@@ -1,0 +1,416 @@
+{
+ "ca_sawtooth_peak_sierra_standard_route": {
+  "area": "ca_sawtooth_peak_sierra",
+  "facts": [
+   {"field": "trailhead", "value": "Mineral King (Monarch Lakes / Sawtooth Pass trail)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.climber.org/reports/2002/977.html", "retrieved_at": "2026-11-14", "fact": "Party started at Mineral King and reached lower Monarch Lake on the official trail in about 2.5 hours before heading to Sawtooth Pass."}]},
+   {"field": "route_step", "value": "Trail toward Sawtooth Pass; a known shortcut follows an old mining trail toward Glacier Pass to the west", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://themtsarecalling.com/needham/", "retrieved_at": "2026-11-14", "fact": "Author hiked up toward Sawtooth Pass; notes a shortcut via an old mining trail to Glacier Pass, then an ascending traverse east."}]},
+   {"field": "grade", "value": "Class 2", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.climber.org/reports/2002/977.html", "retrieved_at": "2026-11-14", "fact": "Report header lists difficulty as class 2 (NW ridge to S ridge, Monarch Lake loop)."}]}
+  ],
+  "note": "Peak identity assumed to be the Mineral King Sawtooth Peak (both pages start from Mineral King). MP area 113138233 'Sawtooth Peak' lists only a Northwest Ridge, no standard route. SummitPost 403. Two Sawtooth Peaks exist in the southern Sierra; confirm area coordinates before applying."
+ },
+ "ca_scottish_gully": {
+  "area": "ca_lower_tier",
+  "facts": [
+   {"field": "length_ft", "value": 80, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/107475309/scottish-gully", "retrieved_at": "2026-11-14", "fact": "Type line: Trad, 80 ft; grade 4th."}]},
+   {"field": "grade", "value": "4th", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/107475309/scottish-gully", "retrieved_at": "2026-11-14", "fact": "Rated 4th YDS."}]}
+  ],
+  "note": "MP lists FA as 'Ian McEleney?' (uncertain, not recorded). theCrag also lists it (Class 4, 24.38 m) per search but is the same MP-derived data; not opened."
+ },
+ "ca_scylla_northwest_slope": {
+  "area": "ca_scylla",
+  "skip_reason": "Opened climber.org/reports/2005/1439.html (Climb-O-Rama, Scylla ascent mentioned, no route data) and climber.org/TripReports/1995/43.html (camp at 12000-ft lakes NNW of Scylla, cramponed up; no figures). Same publisher twice. SummitPost route page (scylla-s-northwest-slope/183558) blocked 403. No stated route figures found."
+ },
+ "ca_sierra_buttes_lookout_trail": {
+  "area": "ca_sierra_buttes",
+  "facts": [
+   {"field": "dist_mi_oneway", "value": 2.3, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://explore.pcta.org/trips/sierra-buttes-fire-lookout", "retrieved_at": "2026-11-14", "fact": "States 2.3 miles to the top of the Sierra Buttes lookout (one way); trip length listed 4.7 mi."}]},
+   {"field": "gain_ft", "value": 1590, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://explore.pcta.org/trips/sierra-buttes-fire-lookout", "retrieved_at": "2026-11-14", "fact": "Says 1,590 feet of climbing to the top (stat box shows 1,632 ft elevation gain)."}]},
+   {"field": "trailhead", "value": "Forest Road 93-2 parking by a green gate, a quarter mile south of Forest Road 93", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://explore.pcta.org/trips/sierra-buttes-fire-lookout", "retrieved_at": "2026-11-14", "fact": "Most hikers start from FR 93-2, a quarter mile south of FR 93, at a parking area beside a green gate."}]},
+   {"field": "hazard", "value": "Final access to the lookout is a steep, exposed set of metal staircases", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://californiathroughmylens.com/sierra-buttes-fire-lookout/", "retrieved_at": "2026-11-14", "fact": "Lookout reached only by a sketchy set of staircases; intense stairs at the end for those afraid of heights."},
+                 {"url": "https://explore.pcta.org/trips/sierra-buttes-fire-lookout", "retrieved_at": "2026-11-14", "fact": "Fire lookout hangs over open air atop the 8,587-ft pinnacles."}]},
+   {"field": "high_point_ft", "value": 8587, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://explore.pcta.org/trips/sierra-buttes-fire-lookout", "retrieved_at": "2026-11-14", "fact": "Sierra Buttes described as the 8,587-foot row of pinnacles."}]}
+  ],
+  "note": "californiathroughmylens gives 6 mi round trip and 1,800 ft gain (likely a different start near Packer Lake / PCT), which disagrees with PCTA's 4.7 mi / 1,590-1,632 ft by more than 10%; gain left single-source. App summit_elev 8591 vs PCTA 8,587."
+ },
+ "ca_silver_peak_standard_route": {
+  "area": "ca_silver_peak",
+  "facts": [
+   {"field": "grade", "value": "Class 2", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.climber.org/reports/2018/1878.html", "retrieved_at": "2026-11-14", "fact": "Silver Peak 11878, trailhead Lake Thomas Edison, difficulty class 2."}]},
+   {"field": "approach_step", "value": "First part follows the trail to Devils Bathtub, then cross-country to the ridge", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://themtsarecalling.com/silverpeak/", "retrieved_at": "2026-11-14", "fact": "Route first follows the trail to Devils Bathtub, a lake about 1 mile long, over 4 miles from the trailhead."}]},
+   {"field": "approach_loss_ft", "value": 400, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://themtsarecalling.com/silverpeak/", "retrieved_at": "2026-11-14", "fact": "From the ridgeline, a 400-ft descent into a basin, then about 800 ft back up to the summit."}]}
+  ],
+  "note": "Assumes the SPS-list Silver Peak (Fresno County, 11,878 ft) near Lake Edison; another Silver Peak (Ebbetts Pass, Alpine County) exists. Confirm area coordinates before applying. Trailhead names differ (Lake Thomas Edison vs Devils Bathtub trailhead) so not agreed. SummitPost 403."
+ },
+ "ca_sirretta_peak_standard_route": {
+  "area": "ca_sirretta_peak",
+  "facts": [
+   {"field": "trailhead", "value": "North end of Big Meadow (Cannell Trail 33E32)", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.fs.usda.gov/r05/sequoia/recreation/trails/sirretta-peak-trail", "retrieved_at": "2026-11-14", "fact": "Trail starts at the north end of Big Meadow and goes up Cannell Trail 33E32 about half a mile."},
+                 {"url": "https://kernriversierra.com/hike/Sirretta_trail.html", "retrieved_at": "2026-11-14", "fact": "From the trailhead at North Big Meadow hike up the Cannell Trail a half mile or so."}]},
+   {"field": "approach_step", "value": "Cannell Trail about 0.5 mi, right on the signed Sirretta Trail; before Sirretta Pass take the cairned ridge route left to the peak", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://kernriversierra.com/hike/Sirretta_trail.html", "retrieved_at": "2026-11-14", "fact": "Turn right on the signed Sirretta Trail; before Sirretta Pass follow cairns up the ridge on the left for about 0.9 mile."},
+                 {"url": "https://www.fs.usda.gov/r05/sequoia/recreation/trails/sirretta-peak-trail", "retrieved_at": "2026-11-14", "fact": "After half a mile on Cannell Trail, branch northeast about three miles to Sirretta Peak."}]},
+   {"field": "gain_ft", "value": 2200, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://kernriversierra.com/hike/Sirretta_trail.html", "retrieved_at": "2026-11-14", "fact": "Stats: about 7 miles round trip, 2200 feet of elevation gain, up-and-back hike."}]},
+   {"field": "high_point_ft", "value": 9977, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://kernriversierra.com/hike/Sirretta_trail.html", "retrieved_at": "2026-11-14", "fact": "Peak elevation listed as 9977."}]},
+   {"field": "overview", "value": "Multi-use motorized trail most of the way, cairned route with some scrambling near the top", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://kernriversierra.com/hike/Sirretta_trail.html", "retrieved_at": "2026-11-14", "fact": "Multi-use motorized trail with a cairned route near the top and some scrambling."}]}
+  ],
+  "note": "USFS states gain as about 1,200 ft plus another 700 ft to climb the peak (two parts, not summed here). kernriversierra's 7 mi round trip not converted to one-way."
+ },
+ "ca_smith_mountain_albanita_trail_and_northeast_ridge": {
+  "area": "ca_smith_mountain",
+  "facts": [
+   {"field": "route_step", "value": "Albanita Trail (old road) to a saddle on the northeast ridge, then a sparsely cairned route past a granite crag to the summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://kernriversierra.com/hike/Smith_Mountain_Hike.html", "retrieved_at": "2026-11-14", "fact": "Hike the signed Albanita Trail to a saddle on Smith Mountain's NE ridge, then a cairned route past a granite crag to the summit."}]},
+   {"field": "grade", "value": "Class 3+ summit move", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://kernriversierra.com/hike/Smith_Mountain_Hike.html", "retrieved_at": "2026-11-14", "fact": "The final scramble is a short Class 3+ climb to the top."}]},
+   {"field": "road", "value": "From Kernville take Mtn 99 north 19 miles to Sherman Pass Road, turn right and drive about 33 miles", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://kernriversierra.com/hike/Smith_Mountain_Hike.html", "retrieved_at": "2026-11-14", "fact": "Directions: Mtn 99 north 19 miles to Sherman Pass Road, right, about 33 miles, then a left turn."}]}
+  ],
+  "note": "Grade conflict: app has Class 2, kernriversierra says the summit is a short Class 3+ climb. USFS Albanita Trail page opened (fs.usda.gov/r05/sequoia/recreation/trails/albanita-trail) but returned no trail figures. MP 'Smith Mountain' area is an unrelated boulder field."
+ },
+ "ca_south_chute_to_south_west_ridge": {
+  "area": "ca_spire_peak",
+  "facts": [
+   {"field": "length_ft", "value": 1000, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/114520815/south-chute-to-south-west-ridge", "retrieved_at": "2026-11-14", "fact": "Type line: Trad, Alpine, 1000 ft; 3rd YDS."}]},
+   {"field": "approach_step", "value": "From Royce Col follow blocks along the north shore of the central Royce Lake to a sand chute on Spire Peak's south face", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/114520815/south-chute-to-south-west-ridge", "retrieved_at": "2026-11-14", "fact": "After Royce Col, follow blocks on the north shore of center Royce Lake; sand chute about 300 ft up the south face."}]},
+   {"field": "route_step", "value": "Sand slope into the chute up to the notch, then right along the summit ridge, passing the first tower low on the right, Class 3 to the summit block", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/114520815/south-chute-to-south-west-ridge", "retrieved_at": "2026-11-14", "fact": "Slog up sand to the chute, up to the notch, right along the ridge, bypass first tower low, class 3 to summit block."}]},
+   {"field": "rack", "value": "None (3rd class)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/114520815/south-chute-to-south-west-ridge", "retrieved_at": "2026-11-14", "fact": "Protection: none, 3rd class."}]}
+  ],
+  "note": "Only MP found for this route; DDG search surfaced an AAJ pdf and 360cities images, no route data. SummitPost 403."
+ },
+ "ca_south_east_couloir": {
+  "area": "ca_thor_peak",
+  "facts": [
+   {"field": "trailhead", "value": "Whitney Portal (Mt. Whitney Trail)", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112389771/south-east-couloir", "retrieved_at": "2026-11-14", "fact": "A day outing from Whitney Portal; follow the main Mt. Whitney trail about 2.5 miles."},
+                 {"url": "https://www.sierrainaday.com/post/thor-peak", "retrieved_at": "2026-11-14", "fact": "Thor Peak post lists trailhead: Whitney Portal."}]},
+   {"field": "permit", "value": "Thor Peak's south face lies in the Whitney Zone; a Whitney Zone trail permit is required", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.sierrainaday.com/post/thor-peak", "retrieved_at": "2026-11-14", "fact": "Peak is in the Whitney Zone, so a trail permit is needed to climb on the south face."}]},
+   {"field": "approach_step", "value": "Mt. Whitney Trail about 2.5 miles; leave the trail before the log crossing and head up into the couloir", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112389771/south-east-couloir", "retrieved_at": "2026-11-14", "fact": "Follow main Whitney trail about 2.5 miles; if you reach the log crossing you went too far; leave trail into couloir."}]},
+   {"field": "length_ft", "value": 1000, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112389771/south-east-couloir", "retrieved_at": "2026-11-14", "fact": "Type line: Trad, Alpine, 1000 ft, Grade II."}]},
+   {"field": "alpine_grade", "value": "II", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112389771/south-east-couloir", "retrieved_at": "2026-11-14", "fact": "Grade II."}]},
+   {"field": "route_step", "value": "Couloir splitting the SE face, mostly class 2 with short class 3 steps, onto the summit plateau and right to the true summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112389771/south-east-couloir", "retrieved_at": "2026-11-14", "fact": "Climb the couloir splitting the SE face, then the summit plateau right to the true summit; mostly class 2, short class 3 steps."}]},
+   {"field": "descent", "value": "Downclimb the couloir, or scree/talus slopes west to Lower Boy Scout Lake", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112389771/south-east-couloir", "retrieved_at": "2026-11-14", "fact": "Descend the route or take scree and talus to the west, ending at Lower Boy Scout Lake."}]},
+   {"field": "season", "value": "Good winter route", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112389771/south-east-couloir", "retrieved_at": "2026-11-14", "fact": "Described as very enjoyable as a winter route."}]}
+  ],
+  "note": "sierrainaday Thor page describes the Stemwinder route, so only its trailhead and permit facts were used. App grade 3rd matches MP."
+ },
+ "ca_south_east_slope": {
+  "area": "ca_mt_goode",
+  "facts": [
+   {"field": "alpine_grade", "value": "II", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/109176531/south-east-slope", "retrieved_at": "2026-11-14", "fact": "Type: Trad, Snow, Alpine, Grade II."}]},
+   {"field": "camp", "value": "Saddle Rock Lake (Long and Bishop Lakes also workable)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/109176531/south-east-slope", "retrieved_at": "2026-11-14", "fact": "Best camp is Saddle Rock Lake, though Long and Bishop Lakes work too."}]},
+   {"field": "approach_step", "value": "From Saddle Rock Lake follow the Bishop Pass trail, then cut cross-country west to a shallow gully onto the slope", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/109176531/south-east-slope", "retrieved_at": "2026-11-14", "fact": "From Saddle Rock Lake take the Bishop Pass trail, then go cross-country west to the shallow gully leading onto the slope."}]},
+   {"field": "overview", "value": "Talus hop in summer; moderate snow climb in early season of a good snow year; standard descent from the North Buttress", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/109176531/south-east-slope", "retrieved_at": "2026-11-14", "fact": "Summer talus hop to the summit block; early-season moderate snow climb; standard descent from North Buttress."}]},
+   {"field": "hazard", "value": "Large cornice on the east ridge in good snow years", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/109176531/south-east-slope", "retrieved_at": "2026-11-14", "fact": "East ridge can carry a huge cornice in a good snow year."}]}
+  ],
+  "note": "Second publisher not reached (stephabegg/turns-all-year Goode pages found by search, not opened for time). SummitPost 403."
+ },
+ "ca_south_east_slope_2": {
+  "area": "ca_mt_gilbert",
+  "facts": [
+   {"field": "trailhead", "value": "South Lake (Bishop)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.sierrainaday.com/post/mount-gilbert", "retrieved_at": "2026-11-14", "fact": "Mount Gilbert, 13106 ft; trailhead South Lake, Bishop; route Southeast Slope; aspects south and southeast."}]},
+   {"field": "route_step", "value": "Climb the Treasure Col couloir, then either mostly snow low or along the ridge for more exposure", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110962350/south-east-slope", "retrieved_at": "2026-11-14", "fact": "Route climbs the Treasure Col couloir, then low on snow or high along the ridge (recommended)."}]},
+   {"field": "camp", "value": "Lower Treasure Lakes", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110962350/south-east-slope", "retrieved_at": "2026-11-14", "fact": "A camp at the lower Treasure Lakes works for this route."}]},
+   {"field": "descent", "value": "Glissade straight south, then scramble exposed blocks back up to Treasure Col", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110962350/south-east-slope", "retrieved_at": "2026-11-14", "fact": "Descent best straight south by glissade, then scramble exposed blocks back to the top of Treasure Col."}]},
+   {"field": "alpine_grade", "value": "II", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110962350/south-east-slope", "retrieved_at": "2026-11-14", "fact": "Trad, Alpine, Grade II."}]}
+  ],
+  "note": "climber.org/TripReports/2000/600.html opened but covers the NE Couloir, not used. sierrainaday page is a ski descent of the SE slope."
+ },
+ "ca_south_face_6": {
+  "area": "ca_j_d_peak",
+  "skip_reason": "No page found for J.D. Peak South Face: DDG search for 'J.D. Peak south face Sierra' returned only MP South Face routes on other peaks (RMNP, Indian Creek) and an unrelated Aquila Peak route; no publisher page for this peak was reachable to open. Re-queue with a coordinate."
+ },
+ "ca_south_guard_south_slope_via_longley_pass": {
+  "area": "ca_south_guard",
+  "facts": [
+   {"field": "approach_step", "value": "From Lake Reflection go up along the inlet creek and the lakes above to Longley Pass; South Guard rises just north of the pass", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.calipidder.com/2015/09/lake-reflection-to-south-guard-circle-of-solitude-days-4-and-5/", "retrieved_at": "2026-11-14", "fact": "From Lake Reflection, followed the inlet creek past upper lakes to Longley Pass; South Guard is a quick climb north of the pass."},
+                 {"url": "https://rlilly39.sdsu.edu/High_Sierras/King_Kern_R/Longley_Pass.html", "retrieved_at": "2026-11-14", "fact": "Longley Pass (12,400+) seen from the Lake Reflection side, with South Guard (13,224') above the pass."}]},
+   {"field": "route_step", "value": "From Longley Pass, easy terrain north with a little scrambling just below the summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.calipidder.com/2015/09/lake-reflection-to-south-guard-circle-of-solitude-days-4-and-5/", "retrieved_at": "2026-11-14", "fact": "Left packs at the pass; easy terrain with a bit of scrambling right below the summit."}]},
+   {"field": "hazard", "value": "West side of Longley Pass toward Upper Cunningham Creek is very loose and steep", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.calipidder.com/2015/09/lake-reflection-to-south-guard-circle-of-solitude-days-4-and-5/", "retrieved_at": "2026-11-14", "fact": "Descent west from the pass to Upper Cunningham Creek was extremely loose and steep."}]},
+   {"field": "high_point_ft", "value": 13224, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://rlilly39.sdsu.edu/High_Sierras/King_Kern_R/Longley_Pass.html", "retrieved_at": "2026-11-14", "fact": "South Guard given as 13,224 ft."}]}
+  ],
+  "note": "SummitPost south-guard/554115 blocked (403)."
+ },
+ "ca_south_gully": {
+  "area": "ca_mammoth_rock",
+  "facts": [
+   {"field": "gain_ft", "value": 620, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/117384194/south-gully", "retrieved_at": "2026-11-14", "fact": "About 620 vertical feet from parking to summit."}]},
+   {"field": "trailhead", "value": "Signed trailhead on Old Mammoth Rd (few parking spaces)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/117384194/south-gully", "retrieved_at": "2026-11-14", "fact": "Signed trailhead on Old Mammoth Rd near N37.6186 W118.9932, with few parking spaces."}]},
+   {"field": "approach_step", "value": "Short way SE on the bike/hike trail, then steeply SSE toward the rock, aiming right of it to the saddle with the Sherwin Crest slope", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/117384194/south-gully", "retrieved_at": "2026-11-14", "fact": "Go SE on the trail, then steeply SSE, right of the rock to the saddle joining Sherwin Crest; gully starts below its east side."}]},
+   {"field": "length_ft", "value": 80, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/117384194/south-gully", "retrieved_at": "2026-11-14", "fact": "Type: Trad, 80 ft; 4th YDS."}]},
+   {"field": "overview", "value": "Easiest way to the summit: mostly steep hiking and some 3rd class with one short harder sequence; usable as a descent", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/117384194/south-gully", "retrieved_at": "2026-11-14", "fact": "Easiest way up; mostly steep hiking and a little 3rd class, one short harder sequence; useful as a descent."}]}
+  ],
+  "note": "Second publisher not found: other 'South Gully' hits were Colorado routes (MP 122755106 Dragon's Back; 117696350 Sun Slabs); visitmammoth pages are generic. Only one publisher."
+ },
+ "ca_south_ridge": {
+  "area": "ca_alpine_multi_pitch",
+  "skip_reason": "Route identity unresolved. MP 'Other Alpine Routes' (area 108308353, Crystal Crag, Mammoth) has South Ridge 108308441 rated 4th, 650 ft, but app grade is Easy 5th; MP 114504005 South Ridge (5.0) is Music Mountain, Colorado. Opened both pages; neither clearly matches."
+ },
+ "ca_south_ridge_2": {
+  "area": "ca_junction_peak",
+  "facts": [
+   {"field": "fa", "value": "E.B. Copeland and E.N. Anderson, 1899", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106169945/south-ridge", "retrieved_at": "2026-11-14", "fact": "FA: E.B. Copeland and E.N. Anderson, 1899."}]},
+   {"field": "approach_step", "value": "From Shepherd Pass (12,000') go due west cross-country, then up to Diamond Mesa (12,600')", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106169945/south-ridge", "retrieved_at": "2026-11-14", "fact": "From Shepherd Pass (12,000') hike west cross-country, path of least resistance up to Diamond Mesa (12,600')."}]},
+   {"field": "route_step", "value": "Follow the ridgeline north from Diamond Mesa to the summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106169945/south-ridge", "retrieved_at": "2026-11-14", "fact": "Continue north along the ridgeline to the summit."}]},
+   {"field": "descent", "value": "Retrace the ascent route", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106169945/south-ridge", "retrieved_at": "2026-11-14", "fact": "To descend, retrace steps."}]},
+   {"field": "rack", "value": "None needed (3rd class)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106169945/south-ridge", "retrieved_at": "2026-11-14", "fact": "Protection not needed, 3rd class."}]}
+  ],
+  "note": "Second publisher not opened (scaruffi Junction page found by search). SummitPost 403."
+ },
+ "ca_south_ridge_3": {
+  "area": "ca_lookout_peak",
+  "skip_reason": "Not completed: MP search for Lookout Peak South Ridge returned only routes on other peaks (Wasatch, Dragon Peak); SummitPost lookout-peak pages blocked (403); USFS Lookout Peak trailhead page found by search but not opened. Re-queue."
+ },
+ "ca_south_ridge_5": {
+  "area": "ca_columbine_peak",
+  "facts": [
+   {"field": "fa", "value": "Norman Clyde, 1925", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106606520/south-ridge", "retrieved_at": "2026-11-14", "fact": "FA: Norman Clyde 1925."}]},
+   {"field": "approach_step", "value": "Start from Knapsack Pass, south of the peak", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106606520/south-ridge", "retrieved_at": "2026-11-14", "fact": "Start from Knapsack Pass to the south of the peak."}]},
+   {"field": "overview", "value": "Non-committing scramble along the south ridge, closer to Class 2, with views of the Palisade Crest's west side", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106606520/south-ridge", "retrieved_at": "2026-11-14", "fact": "Fun non-committing scramble on the south ridge; more like Class 2; views of the Palisade Crest west side."}]}
+  ],
+  "note": "MP rates it 3rd but its text says it is more like Class 2 (3rd was the lowest option). Second publisher not opened (theoutbound/eastsidesports found by search)."
+ },
+ "ca_south_ridge_6": {
+  "area": "ca_whaleback",
+  "skip_reason": "Not completed: SummitPost whaleback/563478 blocked (403); MP search returned no Whaleback (Sierra) route; advcollective 'whaleback climbing guide' found by search but not opened. Re-queue."
+ },
+ "ca_south_ridge_7": {
+  "area": "ca_mt_gould",
+  "facts": [
+   {"field": "trailhead", "value": "Onion Valley (via Kearsarge Pass)", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112163317/south-ridge", "retrieved_at": "2026-11-14", "fact": "Turn right at Kearsarge Pass; can be climbed in a day from Onion Valley."},
+                 {"url": "https://www.sierrainaday.com/post/dragon-peak-to-mount-gould", "retrieved_at": "2026-11-14", "fact": "Dragon Peak to Gould loop starts at the Onion Valley trailhead; Gould elevation 13005 ft."}]},
+   {"field": "route_step", "value": "Easy sand hike to the summit ridge, Class 2 scrambling, then a Class 3 summit pinnacle climbed on its west side via a short dihedral", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112163317/south-ridge", "retrieved_at": "2026-11-14", "fact": "Sand hike to the ridge, class 2 scrambling, class 3 summit pinnacle climbed on the west side by a short dihedral."}]},
+   {"field": "alpine_grade", "value": "II", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112163317/south-ridge", "retrieved_at": "2026-11-14", "fact": "Trad, Alpine, Grade II."}]},
+   {"field": "rack", "value": "None, easy solo", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112163317/south-ridge", "retrieved_at": "2026-11-14", "fact": "Protection: none, easy solo."}]}
+  ],
+  "note": "climber.org/reports/2006/1508.html opened (Gould with Clarence King) but gave no route figures."
+ },
+ "ca_south_ridge_via_south_chute": {
+  "area": "ca_dragon_peak",
+  "facts": [
+   {"field": "trailhead", "value": "Onion Valley (via Golden Trout Lakes)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.sierrainaday.com/post/dragon-peak-to-mount-gould", "retrieved_at": "2026-11-14", "fact": "Loop starts at Onion Valley; follow the trail to Golden Trout Lakes and climb Dragon's south side (route: South Chute)."}]},
+   {"field": "fa", "value": "Fred Parker and J.E. Rother, 1920", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110949427/south-ridge-via-south-chute", "retrieved_at": "2026-11-14", "fact": "FA: Fred Parker, JE Rother - 1920."}]},
+   {"field": "route_step", "value": "Chute with blocks and a chockstone chimney (pass on the right), north along the ridge, then a foot-ledge traverse left to a wide crack to the summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110949427/south-ridge-via-south-chute", "retrieved_at": "2026-11-14", "fact": "Scramble the chute, pass chockstone chimney right, ridge north to a smooth wall, ledge traverse left to a wide crack."}]},
+   {"field": "approach_step", "value": "From the upper lake head over scree or snow toward Gould Pass; a 100-ft block-filled chute is on the right at the wall", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110949427/south-ridge-via-south-chute", "retrieved_at": "2026-11-14", "fact": "From the upper lake go toward Gould Pass; at the wall a 100-ft gully of blocks is on the right."}]},
+   {"field": "descent", "value": "Downclimb the route", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110949427/south-ridge-via-south-chute", "retrieved_at": "2026-11-14", "fact": "Descent: downclimb the route."}]},
+   {"field": "rack", "value": "Helmet; short rope for less experienced climbers", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110949427/south-ridge-via-south-chute", "retrieved_at": "2026-11-14", "fact": "Bring a helmet and a short rope for the uneasy or inexperienced."}]},
+   {"field": "grade", "value": "3rd", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110949427/south-ridge-via-south-chute", "retrieved_at": "2026-11-14", "fact": "Rated 3rd YDS; described as a great Class 3 route."},
+                 {"url": "https://www.sierrainaday.com/post/dragon-peak-to-mount-gould", "retrieved_at": "2026-11-14", "fact": "Dragon summit finish traverses a steep class 3 slab with a foot rail."}]}
+  ],
+  "note": "sierrainaday quotes a party finding class 4 somewhere; its own description of the finish is class 3."
+ },
+ "ca_south_slope": {
+  "area": "ca_mt_russell",
+  "facts": [
+   {"field": "length_ft", "value": 800, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/111494309/south-slope", "retrieved_at": "2026-11-14", "fact": "Type: Trad, Alpine, 800 ft, Grade II; 4th YDS."}]},
+   {"field": "alpine_grade", "value": "II", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/111494309/south-slope", "retrieved_at": "2026-11-14", "fact": "Grade II."}]},
+   {"field": "overview", "value": "Crux near the top of the slope by the East Ridge; right of Fishhook Arete; the usual climbers' descent route", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/111494309/south-slope", "retrieved_at": "2026-11-14", "fact": "Crux at the top near the East Ridge; right of Fishhook Arete; this is the climber descent route."}]}
+  ],
+  "note": "themtsarecalling.com/russell/ and climber.org/reports/2003/1087.html opened; both describe other Russell routes/approaches (Russell-Carillon col, Whitney-Russell pass), no South Slope figures."
+ },
+ "ca_south_slope_to_southeast_ridge": {
+  "area": "ca_mt_gardiner",
+  "facts": [
+   {"field": "fa", "value": "Bolton Brown and Joseph LeConte, July 1896", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/121776882/south-slope-to-southeast-ridge", "retrieved_at": "2026-11-14", "fact": "FA July 1896, Bolton Brown and Joseph LeConte."}]},
+   {"field": "approach_step", "value": "From the Charlotte Creek drainage, long scree climb to the ridge", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/121776882/south-slope-to-southeast-ridge", "retrieved_at": "2026-11-14", "fact": "From the Charlotte Creek drainage climb endless scree to the SE ridge, then follow it to the summit."},
+                 {"url": "https://themtsarecalling.com/gardiner/", "retrieved_at": "2026-11-14", "fact": "Left the drainage bottom and climbed sandy slopes onto the broad southern ridge toward the summit."}]},
+   {"field": "route_step", "value": "Hundreds of feet of 2nd-3rd class scrambling, then about 200 ft of exposed 4th class on a knife-edge ridge", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/121776882/south-slope-to-southeast-ridge", "retrieved_at": "2026-11-14", "fact": "Classic knife-edge ridge: hundreds of feet of 2nd/3rd class, final roughly 200 ft exposed 4th class."}]},
+   {"field": "length_ft", "value": 1000, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/121776882/south-slope-to-southeast-ridge", "retrieved_at": "2026-11-14", "fact": "Type: Trad, Alpine, 1000 ft."}]}
+  ],
+  "note": "Grade conflict: MP rates 4th; themtsarecalling calls the summit ridge a short but difficult class 3. TMAC's 'nearly 8,000 ft' gain is approximate and its trailhead is not named in the extract, so not recorded."
+ },
+ "ca_south_west_chute_2_a_k_a_bob_burd_staircase": {
+  "area": "ca_mt_francis_farquhar",
+  "facts": [
+   {"field": "fa", "value": "Bob Burd, solo, 2010 (first recorded ascent)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112114850/bob-burd-staircase", "retrieved_at": "2026-11-14", "fact": "FA Bob Burd solo, 2010; first recorded ascent."}]},
+   {"field": "length_ft", "value": 1800, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112114850/bob-burd-staircase", "retrieved_at": "2026-11-14", "fact": "Type: Trad, Alpine, 1800 ft, Grade II; 3rd YDS."}]},
+   {"field": "alpine_grade", "value": "II", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112114850/bob-burd-staircase", "retrieved_at": "2026-11-14", "fact": "Grade II."}]},
+   {"field": "approach_step", "value": "Same approach as the North West Ridge; climb the next chute to climber's right of its initial chute", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112114850/bob-burd-staircase", "retrieved_at": "2026-11-14", "fact": "Follow NW Ridge directions but climb the next chute to climber's right of its initial chute."}]},
+   {"field": "overview", "value": "Chute of good rock with little scree; ends just south of the true summit; SRC register at the false summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112114850/bob-burd-staircase", "retrieved_at": "2026-11-14", "fact": "Quality stone, little scree or talus; ends just south of the true summit; SRC register on the false summit."}]}
+  ],
+  "note": "climber.org/reports/2014/1855.html (Farquhar trip, via south ridge drainage) opened; no Staircase figures."
+ },
+ "ca_south_west_ridge_aka_yellow_brick_road": {
+  "area": "ca_mt_gayley",
+  "facts": [
+   {"field": "fa", "value": "Norman Clyde, June 1927", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/105804402/south-west-ridge-aka-yellow-brick-road", "retrieved_at": "2026-11-14", "fact": "FA Norman Clyde, June 1927."}]},
+   {"field": "approach_step", "value": "From Sam Mack Meadow up gullies to the Palisade Glacier moraine, across the glacier to Glacier Notch and up its couloir", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/105804402/south-west-ridge-aka-yellow-brick-road", "retrieved_at": "2026-11-14", "fact": "From Sam Mack Meadow gain the moraine, cross the glacier toward Glacier Notch, climb the notch couloir, about 1.5 hours."},
+                 {"url": "https://www.climber.org/reports/2003/1206.html", "retrieved_at": "2026-11-14", "fact": "Plan: go up to Glacier Notch via the Palisade Glacier, then climb Gayley's southwest ridge."}]},
+   {"field": "grade", "value": "3rd", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/105804402/south-west-ridge-aka-yellow-brick-road", "retrieved_at": "2026-11-14", "fact": "Rated 3rd YDS."},
+                 {"url": "https://www.climber.org/reports/2003/1206.html", "retrieved_at": "2026-11-14", "fact": "Winchell and Gayley trip, difficulty class 3."}]},
+   {"field": "route_step", "value": "From Glacier Notch go northeast to the ridge base and scramble ledges right of the crest", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/105804402/south-west-ridge-aka-yellow-brick-road", "retrieved_at": "2026-11-14", "fact": "Hike northeast to the base of the SW Ridge and scramble ledges right of the crest."}]},
+   {"field": "hazard", "value": "Glacier Notch couloir is loose when snow is low", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/105804402/south-west-ridge-aka-yellow-brick-road", "retrieved_at": "2026-11-14", "fact": "Glacier Notch couloir is loose in low snow."}]},
+   {"field": "descent", "value": "Retrace the route back to camp", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/105804402/south-west-ridge-aka-yellow-brick-road", "retrieved_at": "2026-11-14", "fact": "Retrace your steps back to camp."}]}
+  ],
+  "note": "climber.org grade 'class 3' is for the Winchell+Gayley trip as a whole, matched to MP 3rd."
+ },
+ "ca_southeast_face_3": {
+  "area": "ca_whorl_mt",
+  "facts": [
+   {"field": "length_ft", "value": 1000, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110819794/southeast-face", "retrieved_at": "2026-11-14", "fact": "Type: Trad, Alpine, 1000 ft; 3rd YDS."}]},
+   {"field": "approach_step", "value": "From Horse Creek Pass follow the bench past two alpine lakes, rising traverse to the SE face", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110819794/southeast-face", "retrieved_at": "2026-11-14", "fact": "From Horse Creek Pass hike the bench past two alpine lakes, then a rising traverse to the SE face."}]},
+   {"field": "route_step", "value": "Leftmost of three chutes, cross right to the center chute, then right chute past a chockstone, exposed catwalk to the summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110819794/southeast-face", "retrieved_at": "2026-11-14", "fact": "Start left chute, traverse to center then right chute, tunnel under or around chockstone, exposed catwalk to summit."}]},
+   {"field": "overview", "value": "Route finding is the crux; mostly third class", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110819794/southeast-face", "retrieved_at": "2026-11-14", "fact": "Route finding may be the crux; lots of third class, can be kept at third."}]}
+  ],
+  "note": "Second publisher not opened (advcollective Whorl page found by search). SummitPost se-face/155882 blocked (403)."
+ },
+ "ca_southeast_face_aka_the_waterfall_route": {
+  "area": "ca_mt_emerson",
+  "facts": [
+   {"field": "grade", "value": "5.4", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "Rated 5.4 YDS; short 5.4 crux."},
+                 {"url": "https://www.sierrainaday.com/post/mount-emerson", "retrieved_at": "2026-11-14", "fact": "Route: Waterfall Route, difficulty 5.4."}]},
+   {"field": "trailhead", "value": "North Lake (Piute Pass trail)", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "From the trailhead in North Lake campground take the junction toward Piute Pass."},
+                 {"url": "https://www.sierrainaday.com/post/mount-emerson", "retrieved_at": "2026-11-14", "fact": "Trailhead: North Lake Trailhead; Emerson 13225 ft."}]},
+   {"field": "fa", "value": "G. Ledyard Stebbins and Robert Stebbins, August 1955", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "FA G Ledyard Stebbins, Robert Stebbins (August 1955)."}]},
+   {"field": "alpine_grade", "value": "III", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "Trad, Alpine, Grade III."}]},
+   {"field": "approach_step", "value": "Piute Pass trail; just before Loch Leven where it weaves up granite ramps, go cross-country NW to the leftmost of two cracks on the lower face", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "Before Loch Leven the trail weaves up granite ramps; go cross-country NW to the leftmost of two prominent cracks."}]},
+   {"field": "descent", "value": "South slope (class 3) to Loch Leven, then the trail back to North Lake", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "Descent: S slope (class 3) to Loch Leven, then the trail down to North Lake campground."}]},
+   {"field": "rack", "value": "Alpine rack, optional 50-60 m rope, no fixed anchors; ice axe if chute or descent is snowy", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "Alpine rack, 50-60 m rope optional, no fixed anchors; ice axe if chute or descent is snowy."}]},
+   {"field": "hazard", "value": "Chimney may be wet early season or after rain; water-polished rock; rockfall, route finding and scree descent have led to rescues", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106790885/southeast-face-aka-the-waterfall-route", "retrieved_at": "2026-11-14", "fact": "Chimney can be wet; rock water-polished; rescues and bivies from route finding, rockfall and arduous scree descent."}]},
+   {"field": "route_step", "value": "Initial 5.4 pitch, then a long third-class gully onto a narrow ridge over several gendarmes", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.sierrainaday.com/post/mount-emerson", "retrieved_at": "2026-11-14", "fact": "After the initial 5.4 pitch the gully winds up third-class terrain for thousands of feet to a slim ridge with gendarmes."}]}
+  ],
+  "note": "App trailhead_elev 9404 / summit 13204 not checked against these pages (sierrainaday gives 13225 ft)."
+ },
+ "ca_southeast_ridge_indirect": {
+  "area": "ca_mt_carillon",
+  "facts": [
+   {"field": "length_ft", "value": 1000, "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112086670/southeast-ridge-indirect", "retrieved_at": "2026-11-14", "fact": "Type: Trad, Alpine, 1000 ft."}]},
+   {"field": "route_step", "value": "From the major break in the ridge head NW along the ridge, avoiding hard sections by dropping onto the SW face (climber's left)", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112086670/southeast-ridge-indirect", "retrieved_at": "2026-11-14", "fact": "Start at the major break in the ridge, head NW toward summit, avoid difficulties on the SW face (climber's left)."}]},
+   {"field": "descent", "value": "Scramble down on the S or SW side", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112086670/southeast-ridge-indirect", "retrieved_at": "2026-11-14", "fact": "Descent: scramble down a little somewhere on the S or SW side."}]},
+   {"field": "overview", "value": "Scramble with optional harder moves and exposure; long approach, so often combined with other routes", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/112086670/southeast-ridge-indirect", "retrieved_at": "2026-11-14", "fact": "Scrambling with optional harder moves; approach is rather long, consider combining with other routes."}]}
+  ],
+  "note": "MP grade for this route was not captured in the extract (app has 4th); the separate SE Ridge Direct (112086585) is 5.6, 1000 ft, not used. themtsarecalling Russell page mentions the Russell-Carillon col only."
+ },
+ "ca_southeast_slope": {
+  "area": "ca_feather_peak",
+  "facts": [
+   {"field": "fa", "value": "David Brower, July 1933", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106003312/southeast-slope", "retrieved_at": "2026-11-14", "fact": "FA David Brower July 1933."}]},
+   {"field": "route_step", "value": "Short snow couloir (talus late season) at the left end of the SE Ridge, cross to the south side, Class 3 rock below the crest to the summit", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106003312/southeast-slope", "retrieved_at": "2026-11-14", "fact": "Climb the short snow couloir at the SE Ridge's left end, cross south, Class 3 rocks below the crest to summit."}]},
+   {"field": "rack", "value": "Ice axe when there is snow", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106003312/southeast-slope", "retrieved_at": "2026-11-14", "fact": "Protection: ice axe when there's snow."},
+                 {"url": "https://www.climber.org/reports/2004/1297.html", "retrieved_at": "2026-11-14", "fact": "Feather Couloir trip (Feather, Royce, Julius Caesar): class 3, ice axe, crampons."}]},
+   {"field": "descent", "value": "This is the usual descent route", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/106003312/southeast-slope", "retrieved_at": "2026-11-14", "fact": "Listed because it is the descent route."}]}
+  ],
+  "note": "climber.org 2004/1297 is a multi-peak trip, used only for the ice-axe agreement."
+ },
+ "ca_southeast_slope_2": {
+  "area": "ca_mt_johnson",
+  "facts": [
+   {"field": "trailhead", "value": "South Lake", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.climber.org/reports/2016/1866.html", "retrieved_at": "2026-11-14", "fact": "Mount Johnson 12871, trailhead South Lake; climbed the southeast slopes on crampons from the upper lakes."}]},
+   {"field": "camp", "value": "Lower Treasure Lakes", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110997662/southeast-slope", "retrieved_at": "2026-11-14", "fact": "Reached from a camp at the Lower Treasure Lakes."}]},
+   {"field": "approach_step", "value": "Faint trail south toward Upper Treasure Lakes, pass the 11,321-ft lake on the left, then the left gully past the 11,645-ft lake through a boulder field", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110997662/southeast-slope", "retrieved_at": "2026-11-14", "fact": "Faint trail south, pass lake at 11,321 ft on left, left gully, boulder field, lake at 11,645 ft on right."}]},
+   {"field": "season", "value": "Best early season on hard snow (ice axe and crampons required then)", "method": "agree-2", "level": "locked",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110997662/southeast-slope", "retrieved_at": "2026-11-14", "fact": "Probably best early season on hard snow; ice axe and crampons required."},
+                 {"url": "https://www.climber.org/reports/2016/1866.html", "retrieved_at": "2026-11-14", "fact": "June trip: donned crampons to climb toward the southeast slopes."}]},
+   {"field": "descent", "value": "Retrace the ascent", "method": "single-source", "level": "locked-1src",
+    "evidence": [{"url": "https://www.mountainproject.com/route/110997662/southeast-slope", "retrieved_at": "2026-11-14", "fact": "Retrace your steps for the descent."}]}
+  ],
+  "note": ""
+ }
+}

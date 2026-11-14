@@ -13,7 +13,7 @@
 // Three properties are required, and the third is the one that is easy to miss. `max-width` sizes
 // the CONTENT box, and this app sets no global `* { box-sizing: border-box }` -- index.html's
 // reset covers html/body/button only. So a capped view that also carries padding renders at
-// 520 + padding*2. Measured in Chrome: DbGuideDashboard and DbGuideApply came back at 552px while
+// 520 + padding*2. Measured in Chrome: two full-screen views (since removed) came back at 552px while
 // a scan that checked only maxWidth+margin reported them as capped. Requiring box-sizing is what
 // makes the static check agree with the rendered box.
 //
@@ -177,19 +177,20 @@ for (const f of FILES) {
 // check:refs, and it drops that file's views silently. Reformatting ClimbMatchCore alone takes
 // 24 -> 17 views, so the view floor trips on it.
 //
-// The floor is 36 against today's 38 (it was 20 against 24 until the views moved out of core into
+// The floor is 26 against today's 28 (36 against 38 until the guide screens were removed on
+// 2026-11-14, taking ten views with them; it was 20 against 24 until the views moved out of core into
 // src/components/*.tsx). Injection-found blind spot: with the views spread over ~30 files, the
 // old floor of 20 let a whole-file reformat of ClimbMatch.jsx (-4 views) or of core (-2) pass
-// green. 36 trips on losing ClimbMatch.jsx's four; core's two are the residual below.
+// green. 26 trips on losing ClimbMatch.jsx's four; core's two are the residual below.
 // It is a RATCHET -- if views are deliberately deleted below it, move the floor in the same
 // commit and say why.
 //
-// RESIDUAL, stated rather than papered over: a file holding a SINGLE view (lib/DbGuides.jsx,
+// RESIDUAL, stated rather than papered over: a file holding a SINGLE view (e.g.
 // lib/DbAreaBrowser.jsx) can be reformatted without tripping either floor. A per-file expectation
 // would catch it and would be hand-maintained bookkeeping that rots, which this repo has been
 // burned by more than once; the floors are the cheaper trade.
-if (views < 36) {
-  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 36.`);
+if (views < 26) {
+  console.error(`check:overlay-width-cap: found only ${views} opaque full-screen view(s) — expected at least 26.`);
   console.error("The scan is broken, the style shape moved, or views were deleted. NOT a clean result.");
   process.exit(1);
 }

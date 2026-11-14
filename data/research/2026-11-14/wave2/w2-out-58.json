@@ -1,0 +1,1977 @@
+{
+ "wa_nw_face_var_remsberg_variation": {
+  "area": "wa_liberty_bell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route page grades the Remsberg Variation 5.10d."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details list it as Trad, Alpine, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details: 5 pitches (the whole NW Face line with the variation)."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details give a length of 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dale Remsberg and Scott Stimpson",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Dale Remsberg and Scott Stimpson; no year given."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Replaces pitch 3 of the NW Face: a direct crack left of the flakes above the belay ledge, starting around 5.7.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+      "retrieved_at": "2026-11-14",
+      "fact": "Variation takes a clean crack left of the third-pitch flakes, directly above the belay ledge, beginning at 5.7."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Liberty Bell/Northwest Face page (4.0 mi, 2,500 ft gain, high point 7,720 ft, Blue Lake TH 5,200 ft, NW Forest Pass, June-Sept) describes the STANDARD NW Face, not this variation, so its figures were not recorded here. No second publisher found for the variation itself."
+ },
+ "wa_nw_ridge_2": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report titles the Colchuck Balanced Rock Northwest Ridge as 5.6."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb toward the NW Ridge on Class 3 ground, then follow the sharp ridge crest.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report describes Class 3 toward the NW Ridge, then moving along the sharp ridge."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project Colchuck Balanced Rock area page and Wikipedia route list were checked; neither lists a NW Ridge route, so grade is single-source."
+ },
+ "wa_rikki_tikki_tavi": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106863074/rikki-tikki-tavi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded 5.11."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing routes list gives Rikki Tikki Tavi as class 5.11."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106863074/rikki-tikki-tavi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details: Trad, 5 pitches, Grade III."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Colchuck_Balanced_Rock",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbing routes list gives Rikki Tikki Tavi 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106863074/rikki-tikki-tavi",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details list Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Tom Ramier, Abe Traven",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106863074/rikki-tikki-tavi",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Tom Ramier and Abe Traven; no year given."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_prusik_peak_der_sportsman": {
+  "area": "wa_prusik_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11+",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107641573/der-sportsman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded 5.11+."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists Der Sportsman as 5.11+ (title gives 5.11+/12-)."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107641573/der-sportsman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details: 6 pitches."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: Der Sportsman, 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107641573/der-sportsman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details give 600 ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107641573/der-sportsman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details list Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Brooke Sandahl et al.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107641573/der-sportsman",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Brooke Sandahl and others; no year given."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "RPs, draws, doubles from small cams through #2, one or two #3; a #4 optional.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107641573/der-sportsman",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection note: RPs, draws, doubles small to #2, 1-2 #3s, #4 probably unnecessary."
+     }
+    ]
+   },
+   {
+    "field": "rock",
+    "value": "Granodiorite",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report lists rock type as granodiorite."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_prusik_peak_solid_gold": {
+  "area": "wa_prusik_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618376/solid-gold",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded 5.11a."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steph Abegg lists Solid Gold on Prusik as 5.11a, 4-5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618376/solid-gold",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details: 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 450,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618376/solid-gold",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details give 450 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Wayne Wallace, Tim Olson, 1989",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618376/solid-gold",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Wayne Wallace and Tim Olson, 1989."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Doubles from fingertip size to #2 plus one #3.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107618376/solid-gold",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection note: doubles fingertips to #2 and one #3 worked well."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count: Mountain Project says 5; Steph Abegg says 4-5. Recorded 5 as single-source."
+ },
+ "wa_prusik_peak_west_ridge": {
+  "area": "wa_prusik_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded 5.7."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steph Abegg lists Prusik West Ridge as 5.7, 6-7 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details list Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details give 400 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent listed as unknown."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Nuts and cams to 3 inches; no bolts, slings for anchors.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105808527/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: nuts and pro to 3 in, no bolts, slings may serve for anchors."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count conflicts: Mountain Project 4 pitches vs Steph Abegg 6-7 pitches; not recorded."
+ },
+ "wa_rapple_grapple": {
+  "area": "wa_liberty_bell",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106509842/rapple-grapple",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded 5.8."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106509842/rapple-grapple",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route details: Trad, Alpine, 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106509842/rapple-grapple",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Bryan Burdo; no year given."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers Liberty Bell/Northwest Face page opened (Blue Lake TH 5,200 ft, NW Forest Pass) but it covers a different route; no second publisher for Rapple Grapple found."
+ },
+ "wa_painted_mountain_scramble": {
+  "area": "wa_painted_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 4875,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,875 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,875 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 8.0 mi (round trip format)."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 8.0 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6975,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 6,975 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 6,975 feet."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sloan Creek Campground / North Fork Sauk trailhead (2,100 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead at Sloan Creek Campground and North Fork Sauk trailhead, 2,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From Darrington take the Mountain Loop Highway (FR 20) south 16 mi to North Fork Sauk Road (FR 49), then 7.4 mi to the trailhead.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Loop Hwy 16 mi south from Darrington to FR 49, continue 7.4 mi to Sloan Creek CG."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Red Mountain (Painted Mountain Lookout) Trail runs 1 mi to the end of maintained tread at about 3,100 ft.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Red Mountain Trail, signed Painted Mountain Lookout Trail, 1 mile to end of maintained trail at 3,100 ft."
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Official trail is only about one mile; scramble begins beyond ~3,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Short Class 3 ledges above trail end, faint ribboned path up SW ridge to a Ruby Lake overlook ~5,800 ft, then scree to summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "~70 ft of roughly Class 3 ledges, faint path on SW ridge, path ends ~5,800 ft above Ruby Lake, scree from ~6,700 ft to summit."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Mount Baker-Snoqualmie NF, Darrington Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/painted-mountain-red-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager Mount Baker-Snoqualmie NF, Darrington Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers and WTA print identical stats; they may share an origin."
+ },
+ "wa_preacher_mountain_scramble": {
+  "area": "wa_preacher_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Scramble route: 11.0 miles round trip, 5,000 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 11.0 mi round trip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5924,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 5,924 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Middle Fork Trailhead (end of FR 56)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Typically approached from the Middle Fork Trailhead and Rainy Lake."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "I-90 Exit 34, north on 468th Ave SE, right on SE Middle Fork Rd which becomes FR 56, to the Middle Fork Trailhead.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Exit 34, 468th Ave SE, SE Middle Fork Rd becoming FR 56, to Middle Fork Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Mount Baker-Snoqualmie NF, Alpine Lakes Wilderness, Snoqualmie Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/preacher-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager MBSNF / Alpine Lakes Wilderness, Snoqualmie Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "WTA Preacher Mountain page opened (https://www.wta.org/go-hiking/hikes/preacher-mountain) but prints no length/gain. Our 5,200 ft differs from Mountaineers 5,000 ft (within 10%)."
+ },
+ "wa_ptarmigan_traverse": {
+  "area": "wa_alpine_and_technical_traverses",
+  "facts": [
+   {
+    "field": "dist_mi_total",
+    "value": 35,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ptarmigan-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 35.0 mi; described as a 35+ mile traverse from Cascade Pass to the Suiattle River."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8920,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ptarmigan-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,920 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ptarmigan-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: June, July, August, September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ptarmigan-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "North Cascades National Park; Glacier Peak Wilderness",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ptarmigan-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager North Cascades NP / Glacier Peak Wilderness."
+     }
+    ]
+   }
+  ],
+  "note": "No gain printed on the Mountaineers page."
+ },
+ "wa_reynolds_peak_scramble": {
+  "area": "wa_reynolds_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "11 miles round trip with 5,300 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 11.0 mi round trip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8512,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,512 ft; the south summit is the higher of two."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Reynolds Creek Trailhead (3,100 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reynold's Creek Trailhead at 3,100 ft."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From Twisp drive Twisp River Road 18.8 mi to Mystery Campground, cross the river on FR 3423, 1.3 mi to a junction, left to the trailhead.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Twisp River Rd 18.8 mi to Mystery CG, FR 3423 1.3 mi to junction, turn left to trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reynolds Creek Trail to just above 4,800 ft, cross the creek on a log, follow a side creek uphill on its right ~2 mi to a basin.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail to ~4,800 ft, log crossing, follow side creek on climbers right about 2 miles to a basin."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: May through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "None",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: None."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Okanogan-Wenatchee NF, Lake Chelan-Sawtooth Wilderness, Methow Valley Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/reynolds-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager OWNF / Lake Chelan-Sawtooth Wilderness, Methow Valley RD."
+     }
+    ]
+   }
+  ],
+  "note": "Our gain 5,400 vs Mountaineers 5,300 (within 10%)."
+ },
+ "wa_robinson_mountain_southeast_ridge": {
+  "area": "wa_robinson_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 6100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "14 miles round trip with 6,100 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 14.0 mi round trip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8726,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "High point 8,726 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Ballard Campground area (2,600 ft) on FR 54",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive SR-20 to Mazama, FR 54 to Ballard Campground, 2,600 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Robinson Creek Trail ~2.25 mi to the Beauty Creek bridge; unmaintained Beauty Creek path ~1.5 mi to a creek crossing at 5,200 ft; steep slope to a tarn at 6,700 ft.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Robinson Creek Trail ~2.25 mi to Beauty Creek Bridge, Beauty Creek path ~1.5 mi to crossing at 5,200 ft, ~1 mi up to tarn at 6,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Tarn at 6,700 ft (rocky without snow)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camp at the 6,700 ft tarn if there is enough snow; rocky otherwise."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: May through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "31st on the Bulger List of Washington high peaks; Pasayten Wilderness.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/robinson-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as 31st on the Bulger List, in the Pasayten Wilderness."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "wa_point_success_south_side": {
+  "area": "wa_point_success",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 11500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 11,500 ft (Success Cleaver route page)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 25.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: May through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "National Park entrance fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: National Park Entrance Fee."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From the Nisqually entrance drive 1 mi to the West Side Road; it is barricaded at Dry Falls (2,840 ft, as of 2015).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-rainier-success-cleaver",
+      "retrieved_at": "2026-11-14",
+      "fact": "West Side Road turnoff 1 mi from Nisqually entrance, barricaded at Dry Falls 2,840 ft in 2015."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page high point 14,416 ft is Columbia Crest, not Point Success; not recorded. Its trailhead is via West Side Road/Tahoma Creek, ours starts at Longmire, so the 25 mi / 11,500 ft may assume a different start."
+ },
+ "wa_poltergeist_pinnacle": {
+  "area": "wa_mount_challenger",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "IV 5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ report closes with Grade: IV 5.9."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three roped pitches (55 m 5.9+ R, 60 m 5.8, 60 m 5.8), then simul-climbing."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/26053-tr-poltergeist-pinnacle-mt-challenger-east-face-new-route-742004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Belayed 3 x 60 m pitches (5.9+R/X, 5.8, 5.8), then simulclimbed ~800 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dan Aylward and Forrest Murphy, July 4, 2004",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Forrest Murphy and Dan Aylward climbed the new route on July 4 after hiking to Perfect Pass on July 3."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/26053-tr-poltergeist-pinnacle-mt-challenger-east-face-new-route-742004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report titled Poltergeist Pinnacle East Face (New Route) 7/4/2004."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike to Perfect Pass via Hannegan Pass and Easy Ridge, then traverse around Challenger Arm.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked to Perfect Pass via Hannegan Pass/Easy Ridge, traversed around Challenger Arm next day."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "After the three pitches, simul-climb ~270 m (to 5.7, mostly low 5th) up a buttress crest to the ridge, then north to Challenger summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Simul-climbed ca 270 m up to 5.7 to the ridge crest, then north toward Challenger summit in about 1.5 hours."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From Challenger summit follow the standard track across the glacier back to camp.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Tagged the true summit by the standard route and followed the track across the glacier to camp in just over an hour."
+     }
+    ]
+   }
+  ],
+  "note": "Same East Face line as wa_poltergeist_pinnacle_north_route."
+ },
+ "wa_poltergeist_pinnacle_north_route": {
+  "area": "wa_poltergeist_pinnacle",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "IV 5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "AAJ report closes with Grade: IV 5.9."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three roped pitches (55 m 5.9+ R, 60 m 5.8, 60 m 5.8), then simul-climbing."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/26053-tr-poltergeist-pinnacle-mt-challenger-east-face-new-route-742004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Belayed 3 x 60 m pitches (5.9+R/X, 5.8, 5.8), then simulclimbed ~800 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dan Aylward and Forrest Murphy, July 4, 2004",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Forrest Murphy and Dan Aylward climbed the new route on July 4 after hiking to Perfect Pass on July 3."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/26053-tr-poltergeist-pinnacle-mt-challenger-east-face-new-route-742004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report titled Poltergeist Pinnacle East Face (New Route) 7/4/2004."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike to Perfect Pass via Hannegan Pass and Easy Ridge, then traverse around Challenger Arm.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked to Perfect Pass via Hannegan Pass/Easy Ridge, traversed around Challenger Arm next day."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "After the three pitches, simul-climb ~270 m (to 5.7, mostly low 5th) up a buttress crest to the ridge, then north to Challenger summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Simul-climbed ca 270 m up to 5.7 to the ridge crest, then north toward Challenger summit in about 1.5 hours."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From Challenger summit follow the standard track across the glacier back to camp.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12200514900/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Tagged the true summit by the standard route and followed the track across the glacier to camp in just over an hour."
+     }
+    ]
+   }
+  ],
+  "note": "Same East Face line as wa_poltergeist_pinnacle."
+ },
+ "wa_olympus_summit_block_north_face": {
+  "area": "wa_mount_olympus",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit block: climb about 80 ft straight up the north face on mostly solid rock, estimated Class 5.4."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "North face of the summit block is climbed for about 80 ft."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the summit block on the north side (double rope) or the northwest edge (single rope to a belay ledge).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the same anchor rappel the north side with double rope, or the NW edge with single rope to a belay ledge."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Olympic NP wilderness camping permit and backpacking fee; National Park entrance fee to park",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Camping permit and backpacking fee required from the ranger station or WIC Port Angeles; parking requires NP entrance fee."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Summit block can be icy early season and very crowded on popular weekends; start 4-5 am.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Early season summit block may be icy; crowded weekends, suggest 4-5 am start."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-August",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: May, June, July, August (Blue Glacier route page)."
+     }
+    ]
+   }
+  ],
+  "note": "Whole-route figures on the Mountaineers Blue Glacier page (44.0 mi, 7,400 ft gain, high point 7,965 ft) are for the standard route; not recorded as this variation only changes the summit block. SummitPost summit-block page was not used (SummitPost returns 403 to agents)."
+ },
+ "wa_olympus_traverse": {
+  "area": "wa_mount_olympus",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 8100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Olympus Traverse listed as 45 miles with 8,100 feet of elevation gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 45,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mount Olympus Traverse: 45 miles."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb West Peak (7,969 ft), descend to Middle Peak (7,929 ft), then East Peak (7,762 ft); descend to Glacier Meadows via Glacier Pass.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse climbs West Peak, then Middle and East Peaks, descending to Glacier Meadow via Glacier Pass."
+     }
+    ]
+   },
+   {
+    "field": "trip_days",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/104168-tr-olympic-national-park-mt-olympus-traverse-east-peak-middle-peak-west-peak-08012021/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summary: Day 1 Lewis Meadows, Day 2 Glacier Pass, Day 3 East/Middle/West summits, Day 4 rest, Day 5 hike out."
+     }
+    ]
+   }
+  ],
+  "note": "CONFLICT: our gain 10,700 ft vs Mountaineers 8,100 ft (outside 10%). The CascadeClimbers report is one party (5 days incl. a rest day), recorded single-source."
+ },
+ "wa_painted_traverse": {
+  "area": "wa_glacier_peak_wilderness_traverses",
+  "facts": [
+   {
+    "field": "dist_mi_total",
+    "value": 22,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/painted-traverse-wa",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed at 22 mi."
+     },
+     {
+      "url": "https://climberkyle.com/2026/07/12/painted-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author notes his route was just over 20 miles."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Painted Mountain, Magenta Peak, Black Mountain, Skullcap Peak, Portal Peak, White Mountain, ending toward White Pass.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/painted-traverse-wa",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ridge traverse from Painted Mountain to White Pass over Magenta, Black, Skullcap, Portal, White."
+     }
+    ]
+   },
+   {
+    "field": "high_point",
+    "value": "Black Mountain, just over 7,200 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2026/07/12/painted-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Black is the highest summit on the traverse at just over 7,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "about 10 hours (one fast party)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://climberkyle.com/2026/07/12/painted-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Took a little over 10 hours."
+     }
+    ]
+   }
+  ],
+  "note": "GAIN CONFLICT: FKT lists 12,000 ft, but an FKT commenter measured ~10,600 ft and says 12,000 overstates; Climber Kyle logged 9,700 ft. Not recorded. FKT times range 8h39 to 13h03."
+ },
+ "wa_pernod_spire_standard": {
+  "area": "wa_pernod_spire",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "From the SR-20 pullout across from the Wine Spires, a climbers trail crosses the creek and climbs steeply to the bench below the spires.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wine-spires",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pullout near milepost 166; climbers trail drops from highway, crosses creek, climbs steeply to bench camp."
+     },
+     {
+      "url": "https://www.mountainproject.com/area/108106031/pernod-spire",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the HWY 20 pullout across from the spires, climbers trail up to the flat bench below the spires."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bench camp at about 6,500 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wine-spires",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bench camp at 6,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "At the bench camp; limited or absent in late summer/early fall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wine-spires",
+      "retrieved_at": "2026-11-14",
+      "fact": "Water at the bench but limited or non-existent late summer and early fall."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/wine-spires",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass (Wine Spires page)."
+     }
+    ]
+   }
+  ],
+  "note": "Neither page names a 5.7 standard route on Pernod: Mountain Project lists only Direct West Face (5.10+) and South Face (5.9 A0, FA 1988). Grade/FA not recorded. Wine Spires area gain 4,000 ft is for the area, not this route."
+ },
+ "wa_philadelphia_mountain_scramble": {
+  "area": "wa_philadelphia_mountain",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 3685,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2005-11-20-philadelphia.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip summary lists elevation gain 3,685 feet (Lake Serene approach)."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8 h 18 min (one party, winter)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2005-11-20-philadelphia.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Car-to-car 8 hours 18 minutes."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Lake Serene backtrack a little, follow the ridge SE above the lake through a brushy boulder field; at 3,200 ft turn east up the treed west ridge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.yellowleaf.org/scramble/g/r/2005-11-20-philadelphia.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Left trail near lake, followed ridge SE above Lake Serene; at 3,200 ft turned east up the west ridge."
+     }
+    ]
+   }
+  ],
+  "note": "WTA Philadelphia Mountain page opened but prints no stats; gain is single-source and matches our current value."
+ },
+ "wa_plummer_peak_r1": {
+  "area": "wa_plummer_peak",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 1,500 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 4.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 4.5 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6359,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/plummer-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 6,359 feet."
+     }
+    ]
+   }
+  ],
+  "note": "Lemke Climbs (https://lemkeclimbs.com/lane-peak-plummer-peak-tatoosh) gives the summit as 6,373 ft; WTA 6,359. Recorded WTA single-source."
+ },
+ "wa_red_mountain_snoqualmie_standard": {
+  "area": "wa_red_mountain_snoqualmie",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 2900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,900 feet."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Length 8.0 miles, roundtrip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5890,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 5,890 feet."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "About five miles of maintained trail, then a steep walk-up scramble of the last ~1,000 ft on the red west slope.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin",
+      "retrieved_at": "2026-11-14",
+      "fact": "First five miles on maintained trail; last 1000 ft climbs the red west slope."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers trip-report URLs for Red Mountain (Commonwealth Basin) were found but are trip logs; no Mountaineers route page found by slug."
+ },
+ "wa_old_snowy_mountain_r1": {
+  "area": "wa_old_snowy_mountain",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Past the Trail 86 (Goat Lake) junction, join the PCT about 4.7 mi from the trailhead; at an unmarked junction go right through boulders to Old Snowy.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/old-snowy-mountain-elk-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Join the PCT about 4.7 miles from trailhead past the trail 86 junction; unmarked junction, right goes up to Old Snowy."
+     }
+    ]
+   }
+  ],
+  "note": "WTA hike figures (17.0 mi RT, 3,100 ft, high 7,800 ft) cover Old Snowy plus Elk Pass, so were not recorded. Mountaineers old-snowy-mountain route slugs returned 404."
+ },
+ "wa_oval_peak_scramble": {
+  "area": "wa_oval_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 8795,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/oval-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest point 8,795 feet."
+     },
+     {
+      "url": "https://lemkeclimbs.com/oval-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation 8,800 ft."
+     }
+    ]
+   }
+  ],
+  "note": "WTA Oval Peak page has no length/gain. Lemke Climbs went up the east slopes off-trail (a different line), so its Class 2 and route details were not used."
+ },
+ "wa_osceola_peak_scramble": {
+  "area": "wa_osceola_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Slate Pass (~6,900 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/osceola-peak-mt-rolo/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip starts at Slate Pass trailhead, about 6,900 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Slate Pass to Middle Fork Pasayten River, Freds Lake, Rolo Pass, then Lake Doris.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/osceola-peak-mt-rolo/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Waypoints: Slate Pass, Middle Fork Pasayten River, Freds Lake, Rolo Pass, Lake Doris."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lake Doris",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/osceola-peak-mt-rolo/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Campsite at Lake Doris; Osceola viewed from camp there."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Southwest slope from Lake Doris.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://trailcatjim.com/osceola-peak-mt-rolo/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Osceola Peak climbed via its Southwest Slope from Lake Doris."
+     }
+    ]
+   }
+  ],
+  "note": "Trip totals (28 mi, 7,300 ft) include Mount Rolo, so not recorded. Wikipedia Osceola Peak notes only a nontechnical scree south slope."
+ },
+ "wa_raven_ridge_standard_route": {
+  "area": "wa_raven_ridge",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Libby Creek Trailhead (4,430 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road 750 ends at the Libby Creek Trailhead, 4,430 ft."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "SR 20 past Twisp, SR 153 south, Blackpine Road 2.5 mi to FR 43, left on FR 4340 1.2 mi, right on Road 700 1.5 mi, left on Road 750 0.9 mi to the end.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "SR 153 to Blackpine Rd 2.5 mi, FR 43, FR 4340 1.2 mi, Rd 700 1.5 mi, Rd 750 0.9 mi to trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Libby Creek trail 5 mi to an old cabin (camp), then trail to Libby Lake and around to its south end.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike Libby Creek trail 5 miles to old cabin camp; follow trail to Libby Lake, go around to the south end."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Old cabin, 5 mi up Libby Creek trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Set up camp at the old cabin 5 miles in."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the south end of Libby Lake take the narrower right-hand of two gullies to the ridge, then follow the ridge to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two gullies at Libby Lake south end; take the narrow right gully to the ridge and run the ridge to the summit."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seasons: May through October."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Okanogan-Wenatchee NF, Lake Chelan-Sawtooth Wilderness, Chelan Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/hoodoo-peak-raven-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager OWNF, Lake Chelan-Sawtooth Wilderness, Chelan Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers 14.0 mi / 5,500 ft / high point 8,580 ft are for Hoodoo Peak plus Raven Ridge combined; not recorded. Raven Ridge is also called Libby Peak."
+ },
+ "wa_pyramid_peak_colonial_standard": {
+  "area": "wa_pyramid_peak_colonial",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "Pyramid Lake trail: 4.2 mi round trip, 1,500 ft gain, lake at about 2,500 ft.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/pyramid-lake",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pyramid Lake hike: 4.2 miles roundtrip, 1,500 ft gain, highest point 2,500 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Only the lake leg is published (round trip to the lake, not to the summit). WTA pyramid-peak page is a different Pyramid Peak (5,715 ft) and was not used."
+ },
+ "wa_ptarmigan_peak_pasayten_scramble": {
+  "area": "wa_ptarmigan_peak_pasayten",
+  "skip_reason": "Opened trailcatjim Ptarmigan Peak archive (https://trailcatjim.com/major-peaks/northeastern-cascades-groups/the-pasayten-eleven/ptarmigan-peak-8614-ft/) and its 2024 loop report (a Tatoosh Ridge/Rolo Pass loop, not the Shellrock Pass line); Mountaineers ptarmigan-peak slug 404; Wikipedia has no article. No route-specific figure for this line."
+ },
+ "wa_raven_ridge_southeast_ridge_crater_lake": {
+  "area": "wa_raven_ridge",
+  "skip_reason": "Opened Mountaineers Hoodoo Peak & Raven Ridge page (Libby Lake approach only) and trailcatjim search (Raven Ridge results are multi-peak loops); WTA raven-ridge page has no data. No page describes the Crater Lake / SE ridge line."
+ },
+ "wa_remmel_mountain_southeast_slope": {
+  "area": "wa_remmel_mountain",
+  "skip_reason": "Opened WTA Remmel Mountain page (no stats printed), Wikipedia Remmel Mountain (FA 1904 is of the summit, not this route), trailcatjim search (only multi-peak Cathedral Lakes loops). No single-route figure."
+ }
+}

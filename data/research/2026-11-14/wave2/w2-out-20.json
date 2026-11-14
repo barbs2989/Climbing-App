@@ -1,0 +1,3858 @@
+{
+ "bc_slesse_mountain_northeast_buttress": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 24,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 24 pitches, Grade V; with a 70 m rope the bypass ledges take 2 pitches and the route 24."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade V."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route rated V, 5.9-10a, 2500 feet."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page title gives the route as 2500 feet long."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey et al., 1963",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Fred Beckey and party in 1963."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Slesse Memorial trailhead (Nesakwatch Creek FSR)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the Slesse Memorial trailhead where the road widens; a thin signpost marks the trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Slesse Memorial trail to the propeller cairn (~3 hrs), then slabs, a 3rd/4th-class gully and notch into the bypass glacier cirque; ~4 hrs to the bypass ledge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 3 hours to the propeller cairn; slabs, a 3rd/4th class gully and notch into the cirque; about 4 hours to the bypass ledge."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Icefall from a hidden ledge above the bypass-glacier cirque; cross quickly",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice and snow on a ledge above the cirque entrance can fall with little warning; move fast to the middle of the slabs."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Pocket glacier: many parties wait until it slides off (July to September depending on year)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbers often wait for the pocket glacier to slide off; some years by July, other years it lingers into September."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Glacial ice melt near the bypass ledge; seasonal snow on the mid-height bivy ledge until late July",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Melting glacial ice near the bypass ledge gives water; the bivy ledge snow patch lasts only until late July."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Bivy ledge at half height (sleeps up to 6); other bivies at pitches 6, 10, 17, 20, the summit and the descent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Half-height bivy ledge sleeps up to six; more bivy spots at pitches 6, 10, 17 and 20, the summit and the descent."
+     }
+    ]
+   },
+   {
+    "field": "itinerary",
+    "value": "Most parties take 2 long days: day 1 hike and climb to the mid-height bivy; day 2 finish, descend, hike out",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most parties take two long days: day one to the half-height bivy, day two summit, descend and walk back to the car."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Via Crossover Pass, rappelling the Crack of Noon Club route, back to the Slesse Memorial trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Preferred descent goes over Crossover Pass and rappels the Crack Of Noon Club route, returning to the Slesse Memorial trailhead."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Slesse Creek FSR on the west side is gated and locked by the Canadian military",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "The west-side Slesse Creek FSR is now gated and locked by the Canadian military."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Logging road condition varies by year; low-clearance cars may not reach the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Road condition varies yearly; author reached the trailhead in a Subaru Forester, others could not, especially low-clearance cars."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Bypass ledge skips the first 6 pitches of the NE Buttress Direct (5.10c); 5.9 cruxes include pitches 17 and 19; last 7 pitches on the headwall",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "The bypass ledge skips the first six pitches of the Direct (5.10c); 5.9 cruxes at pitches 17 and 19; seven headwall pitches finish."
+     }
+    ]
+   },
+   {
+    "field": "bail",
+    "value": "Near the top a ledge leads left into 4th-class terrain to the summit ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108831/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Near the top, tired parties can escape left on a ledge into 4th class ground reaching the summit ridge."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8002,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/slesse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation given as 2,440 m / 8,002 ft."
+     }
+    ]
+   }
+  ],
+  "note": "SummitPost NE Buttress Bypass page answered 403. No page stated a one-way distance or gain for this route."
+ },
+ "bc_slesse_mountain_north_pillar": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 500 ft, 6 pitches, Grade III; six pitches from the northern notch to the summit."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 500 ft (152 m)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jeff Lowe, Rob Kiesel, July 1972 (as the top of the North Rib)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Jeff Lowe and Rob Kiesel, July 1972; likely first climbed as the final pitches of the North Rib."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reach the northern notch via the west-side trail, then 6 pitches to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "A 1974 party reached the northern notch from the west side trail and climbed six pitches to the top."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep climbing on mostly solid holds; rock quality not the best",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106992607/north-pillar",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock is not the best quality but the climbing is steep with mostly solid holds."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project describes the North Pillar as its own route; the North Rib pages below count it as the last 6 pitches of the North Rib. No distance/gain stated."
+ },
+ "bc_slesse_mountain_north_rib_kiesel_lowe": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 27,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 2800 ft, 27 pitches, Grade V."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent report: NCCS V, F8, 27 pitches, no aid."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "V",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade V."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First-ascent report rates it NCCS V."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 2800 ft (848 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Rob Kiesel, Jeff Lowe, July 1972",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Rob Kiesel and Jeff Lowe, July 1972."
+     }
+    ]
+   },
+   {
+    "field": "fa_party",
+    "value": "Rob Kiesel and Jeff Lowe, in July",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Rob Kiesel and Jeff Lowe, July 1972."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Jeff Lowe reports climbing the rib with Rob Kiesel in July; 13 hours of climbing with a bivouac atop the rib."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the vague rib between Heart of Darkness and the North Face couloir to the notch, then 6 more pitches up the NW arete of the summit tower",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb the rib between Heart of Darkness and the North Face Couloir to the notch, then six pitches up the summit tower's NW arete."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party climbed the rib on the right of the north face, then the northwest corner to the summit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross the North Slesse Glacier to the base; crampons and axe needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cross the North Slesse Glacier, which never melts out, so crampons and an axe are always needed to start."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "North Slesse Glacier icefall; the glacier reportedly slid in 2024",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacier crossing to the base has icefall problems and is called dangerous."
+     },
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Author believes the whole North Slesse Glacier slid in 2024; treat it with caution, less volatile than the pocket glacier."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Full rack plus crampons and ice axe for the approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: full rack; crampons and ice axe for the approach."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Doubles 0.2-1, singles 2-3, set of nuts; one 70 m rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party carried doubles 0.2 to 1, singles 2 to 3, nuts, and a single 70 m rope with no tag line."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 18.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party climbed the North Rib in a single push, 18.5 hours car to car (August 2025)."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Crossover Pass descent, finishing with the Crack of Doom rappels",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent by the Crossover Pass route, ending with the Crack of Doom rappels, tricky to find in the dark."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Water in the open talus field on the way to the base, even late summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Plenty of water in the open talus on the approach to the North Rib, even late in summer."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Second most popular technical route after the NE Buttress; better rock than the NE Buttress, some long runouts; first third is low-angle runout 5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119553512/north-rib-kiesellowe",
+      "retrieved_at": "2026-11-14",
+      "fact": "Probably second most popular technical route after NE Buttress; better rock but some long runouts."
+     },
+     {
+      "url": "https://northshorealpinism.wordpress.com/2025/11/03/mount-slesse-north-rib/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guidebooks describe runout 5.8 slab for the first third; author found it secure low-angle cracks and flakes."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Mid-route snow patch; FA party bivouacked at the top of the rib",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12197344700/",
+      "retrieved_at": "2026-11-14",
+      "fact": "13 hours of climbing broken by a bivouac at the top of the rib."
+     }
+    ]
+   }
+  ],
+  "note": "Car-to-car 18.5 h is one party's single-day time (North Shore Alpinism). No stated approach distance or gain."
+ },
+ "bc_slesse_mountain_russian_roulette": {
+  "area": "bc_slesse_mountain",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Will Kovacic and Jeremy Roulette, early June",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Will Kovacic and Jeremy Roulette climbed the new route on the east side of Mt. Parkes in early June."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "They climbed a broken buttress in about nine pitches to the summit of Parkes."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route named Russian Roulette, graded 5.9."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Broken buttress on the east side of Mt. Parkes (ca 2,100 m) on Crossover Ridge north of Slesse; continues along the ridge and upper North Rib to Slesse's summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Parkes (ca 2,100 m) sits on Crossover Ridge north of Slesse; party continued along the ridge and upper North Rib to Slesse's top."
+     }
+    ]
+   },
+   {
+    "field": "parkes_elev_m_approx",
+    "value": 2100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216794",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Parkes given as about 2,100 m."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project page (cited by AAJ) not reached; AAJ is the only source read."
+ },
+ "bc_snowpatch_spire_surfs_up": {
+  "area": "bc_snowpatch_spire",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 500 ft, 7 pitches, Grade II."
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/canada/bugaboos/area/11916001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snowpatch Spire list shows Surfs Up as trad, 350 m, 7 pitches."
+     },
+     {
+      "url": "https://www.piquaclimber.net/past/bugaboos/snowpatch/surfsup/surfsup.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report calls Surf's Up a 7-pitch 5.9 on the back of Snowpatch Spire."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.piquaclimber.net/past/bugaboos/snowpatch/surfsup/surfsup.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route described as a 7-pitch 5.9."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as unknown."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach via the Bugaboo-Snowpatch col; start on the far right (south) of the west face, just above-left of the Pigeon icefall rappel route",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach by the Bugaboo-Snowpatch col; route is at the far right of the west face, above and left of the Pigeon Icefall rappels."
+     },
+     {
+      "url": "https://www.piquaclimber.net/past/bugaboos/snowpatch/surfsup/surfsup.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party went from Applebee Dome camp to the Snowpatch-Bugaboo col, crossing a bergschrund near its top."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "3 pitches of indistinct cracks up-right to an alcove, pitch 4 traverses right to Surfs Up ledge, then 2 hand-crack pitches; scramble to the south summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three pitches of indistinct cracks to an alcove, traverse right to Surfs Up ledge, two handcrack pitches, then scramble to the south summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Kraus-McCarthy rappel route (chain anchors): four 60 m or eight 30 m rappels; second rappel is a known rope-eater",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the Kraus-McCarthy rappels: four 60 m or eight 30 m raps on chains; the second rap often snags ropes."
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/canada/bugaboos/area/11916001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route notes: scramble the ridge crest to the summit, then descend the Kraus-McCarthy rap route."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "4 x 60 m (or 8 x 30 m)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four 60 m or eight 30 m rappels reach the bottom; some are rope-stretchers on a single 60 m."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Route-finding: many parties climb too high on pitches 1-4; slings may mark off-route bail anchors",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Many parties get lost and climb too far up; slings may be bail anchors off route; pitch 4 is easy to miss."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Popular climb on the right side of Snowpatch's west face: three pitches of poorer rock, then excellent granite cracks; cold until the sun arrives, so skip the alpine start",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106073035/surfs-up",
+      "retrieved_at": "2026-11-14",
+      "fact": "Popular west-face climb; three pitches of poor rock, then excellent granite cracks; cold until sun hits, so avoid an alpine start."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Applebee Dome campground (1 km above the Conrad Kain Hut) or the hut",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry campgrounds at Boulder Camp below the Conrad Kain Hut and on Applebee Dome slabs, 1 km above the hut."
+     },
+     {
+      "url": "https://www.piquaclimber.net/past/bugaboos/snowpatch/surfsup/surfsup.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped at Applebee Dome Campground with Snowpatch Spire above."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "BC Parks backcountry permit required for Applebee Dome/Boulder Camp; fees collected by the ACC; self-registration in the Kain Hut",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry permit required at the campgrounds; ACC collects fees; self-registration station inside Conrad Kain Hut."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "About 50 km of gravel road from Highway 95 at Brisco (27 km north of Radium); last 3 km rough; high clearance recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access is about 50 km of gravel from Highway 95 at Brisco, 27 km north of Radium; last 3 km rough; high clearance advised."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Glacier travel: only parties roped and practised in crevasse rescue should go onto snowfields and glaciers",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Only experienced climbers, roped and practised in crevasse rescue, should go onto snowfields and glaciers."
+     }
+    ]
+   }
+  ],
+  "note": "Length conflicts: Mountain Project 500 ft vs theCrag 350 m, so no length recorded. SummitPost 'Surfs Up, IV, 5.9, 9 pitches' not read (SummitPost 403 elsewhere). theCrag route page hit a bot check."
+ },
+ "bc_snowpatch_spire_snowpatch_route_aka_se_corner_wiessner_s_route": {
+  "area": "bc_snowpatch_spire",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106001260/snowpatch-route-aka-se-cornerwiessners-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1500 ft, 17 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "pitches_alt",
+    "value": 19,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sendage.com/climb/snowpatch-route-snowpatch-spire-bugaboos-bc-canada",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch-by-pitch beta runs to 18th-19th pitches, easy ground to the summit saddle."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106001260/snowpatch-route-aka-se-cornerwiessners-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Raffi Bedayn and Jack Arnold, 1940",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106001260/snowpatch-route-aka-se-cornerwiessners-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Raffi Bedayn (USA) and Jack Arnold (Canada), 1940; Wiessner made the best earlier attempt in 1938."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sendage.com/climb/snowpatch-route-snowpatch-spire-bugaboos-bc-canada",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page titles the route Snowpatch Route - 5.8; crux pitches 15-16 are 5.8."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hut trail up to the Pigeon Fork of the Bugaboo Glacier, then snow to the col on Snowpatch's southeast spur where roped climbing starts",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106001260/snowpatch-route-aka-se-cornerwiessners-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike from the hut to the Pigeon Fork of the Bugaboo Glacier; snow leads to the col on the southeast spur where roping up begins."
+     },
+     {
+      "url": "https://sendage.com/climb/snowpatch-route-snowpatch-spire-bugaboos-bc-canada",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitches 1-3 (90 m) ascend to the col, about 4th class."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Five pitches to the Wiessner Overhang (passed by a 5.5-5.7 hand traverse right), six easy pitches up the left side of the snowpatch, three crux pitches up the summit headwall",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106001260/snowpatch-route-aka-se-cornerwiessners-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three sections: five pitches to the Wiessner Overhang traverse, six beside the snowpatch, three crux headwall pitches."
+     },
+     {
+      "url": "https://sendage.com/climb/snowpatch-route-snowpatch-spire-bugaboos-bc-canada",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 6 hand-traverses right under the Wiessner Overhang; pitches 7-13 (300 m) mid-5th slab beside the snowpatch; crux from pitch 15."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Route also called Southeast Corner or Wiessner's Route; 1971 AAC guide rated it 5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106001260/snowpatch-route-aka-se-cornerwiessners-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Three names: Snowpatch Route, Southeast Corner, Wiessner's Route; Putnam's 1971 AAC guide rated it 5.6."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "About 50 km of gravel road from Highway 95 at Brisco; last 3 km rough; high clearance recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access is about 50 km of gravel from Highway 95 at Brisco, 27 km north of Radium; last 3 km rough; high clearance advised."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "BC Parks backcountry permit required for Applebee Dome/Boulder Camp; fees collected by the ACC",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry permit required at the campgrounds; ACC collects fees; self-registration station inside Conrad Kain Hut."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count conflicts: Mountain Project 17 vs Sendage pitch list to 18-19; length: MP 1500 ft vs theCrag 500 m. Not locked. SummitPost 'Snowpatch Route, IV, 5.8, 19 Pitches' page not read (403)."
+ },
+ "bc_snowpatch_spire_sendero_norte": {
+  "area": "bc_snowpatch_spire",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 14,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114939842/sendero-norte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1900 ft, 14 pitches."
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/canada/bugaboos/area/11916001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snowpatch Spire list shows Sendero Norte as trad, 600 m, 14 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114939842/sendero-norte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 1900 ft (576 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "FA Jon Walsh, Chris Brazeau; FFA Will Stanhope, Jason Kruk 2009",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114939842/sendero-norte",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Jon Walsh and Chris Brazeau; first free ascent Will Stanhope and Jason Kruk, 2009."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Crux pitches: P2 5.12c/d (or 5.11 C1), P6 bolted roof 5.12c (or 5.11b A0); P14 scramble to the north summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114939842/sendero-norte",
+      "retrieved_at": "2026-11-14",
+      "fact": "P2 5.12c/d or 5.11 C1; P6 bouldery roof, 8 bolts, 5.12c or 5.11b A0; P14 scramble to the north summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route with two 60 m ropes; P8 rap is a rope-stretcher, P7 best as a 30 m rap (rope can stick)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114939842/sendero-norte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel notes: P9 to mid-P8 anchor, P8 rope stretcher, P7 best as 30 m rap; two 60 m ropes."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Doubles #00-#3 Camalot, singles #000 and #4, nuts, 12 draws, two 60 m ropes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114939842/sendero-norte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: doubles #00 to #3 Camalot, singles #000 and #4, nuts, 12 draws, two 60 m ropes to rappel."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Crack line up the center of Snowpatch Spire's east face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114939842/sendero-norte",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: centre of the east face of Snowpatch Spire."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "BC Parks backcountry permit required for Applebee Dome/Boulder Camp; fees collected by the ACC",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry permit required at the campgrounds; ACC collects fees; self-registration station inside Conrad Kain Hut."
+     }
+    ]
+   }
+  ],
+  "note": "Length: Mountain Project 1900 ft vs theCrag 600 m; not locked."
+ },
+ "bc_snowpatch_spire_minotaur_direct": {
+  "area": "bc_snowpatch_spire",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 16,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113453407/minotaur-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1800 ft, 16 pitches, Grade IV."
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/canada/bugaboos/area/11916001",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snowpatch Spire list shows Minotaur Direct as trad, 700 m, 16 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113453407/minotaur-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jon Walsh, Colin Moorhead, Michelle Kadatz, 2016",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113453407/minotaur-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Jon Walsh, Colin Moorhead and Michelle Kadatz, 2016."
+     }
+    ]
+   },
+   {
+    "field": "fa_history",
+    "value": "Direct start (5 pitches, 180 m, 5.11+) by Jon Walsh and Michelle Kadatz in 2014; original Minotaur by Walsh and Colin Moorhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213522/Snowpatch-Spire-East-Face-New-Routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "In 2014 Walsh and Kadatz established Minotaur Direct (5 pitches, 180 m, 5.11+) as a better start to Minotaur."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Direct, easier version of Minotaur on Snowpatch's east face, through the large rock scar; fully bolted belays, easy to rappel",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113453407/minotaur-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easier direct version of Minotaur following old aid lines and the rock scar; bolted belays and easy rappels."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201213522/Snowpatch-Spire-East-Face-New-Routes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbed through the lower east face where a large flake fell off; felt like a better start than the original Minotaur."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route; from top of P4 a 60 m rap reaches the top of P2, one more to the snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113453407/minotaur-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the top of P4 a 60 m rap reaches the top of P2, then one more rap to the snow."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Start at the obvious scoop in the rock scar on the east face; first pitches off the snow, length depends on snow level",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113453407/minotaur-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start off the snow at the left side of the obvious scoop in the rock scar; length depends on snow at the base."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "BC Parks backcountry permit required for Applebee Dome/Boulder Camp; fees collected by the ACC",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry permit required at the campgrounds; ACC collects fees; self-registration station inside Conrad Kain Hut."
+     }
+    ]
+   }
+  ],
+  "note": "FA conflict: Mountain Project says Walsh, Moorhead, Kadatz 2016; AAJ (Walsh) says he and Kadatz established the 5-pitch Minotaur Direct start in 2014 and added belays in 2015. Length: MP 1800 ft vs theCrag 700 m."
+ },
+ "bc_snowpatch_spire_southwest_ridge_direct_finish": {
+  "area": "bc_snowpatch_spire",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106680131/southwest-ridge-direct-finish",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 700 ft, 5 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106680131/southwest-ridge-direct-finish",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 700 ft (212 m)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106680131/southwest-ridge-direct-finish",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ted Davies and Pat Derouin, August 1971",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106680131/southwest-ridge-direct-finish",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Ted Davies and Pat Derouin, August 1971."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Rope up for the Snowpatch Glacier and Bugaboo-Snowpatch col; easy neve from the col to the south end of the west face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106680131/southwest-ridge-direct-finish",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rope up for the Snowpatch Glacier and the col climb; easy neve leads to the south end of the west face."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Bugaboo-Snowpatch col became too dangerous to use in summer 2009; west-side access then becomes very hard",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106680131/southwest-ridge-direct-finish",
+      "retrieved_at": "2026-11-14",
+      "fact": "In summer 2009 the Bugaboo-Snowpatch col became too dangerous; reaching the west side then gets very difficult."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Shares the first 3 pitches with Surfs Up (5.7, 5.7, 5.8-); P4 easy left up the main weakness; P5 5.8+ corners avoiding the Killer Chipmunks chimney",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106680131/southwest-ridge-direct-finish",
+      "retrieved_at": "2026-11-14",
+      "fact": "First three pitches shared with Surfs Up; P4 easy; P5 5.8+ avoids the Killer Chipmunks chimney via smaller corners."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "About 50 km of gravel road from Highway 95 at Brisco; last 3 km rough; high clearance recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access is about 50 km of gravel from Highway 95 at Brisco, 27 km north of Radium; last 3 km rough; high clearance advised."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project describes this route; BC Parks adds park access facts."
+ },
+ "bc_pigeon_spire_cooper_kor": {
+  "area": "bc_pigeon_spire",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105868747/cooper-kor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1000 ft, 18 pitches, Grade IV; one party did it in 11 pitches with a stretched 60 m rope."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105868747/cooper-kor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ed Cooper, Layton Kor, 1960",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105868747/cooper-kor",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Ed Cooper and Layton Kor, 1960."
+     }
+    ]
+   },
+   {
+    "field": "fa_date",
+    "value": "August 16, with Layton Kor",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196138502/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA account: author joined Layton Kor on the cold morning of August 16 for the East Face of Pigeon Spire."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Start on the left side of the east face; cracks to a big ledge (5.7), left-angling cracks, bold rightward traverses (5.8-5.10), crux crack 5.10+ or 5.9 A0, then the ridge west to the summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105868747/cooper-kor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch beta: left side start, ledge at 5.7, long run-out right traverses, crux 5.10+ or 5.9 A0, lichen ridge then west along the crest."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/12196138502/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party climbed a 60-degree slab, a right-diagonal line to a big ledge, left-diagonal 400 ft, then a roof by aid."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Bold, poorly protected traverses, especially for the second; old fixed anchors in poor shape (a copperhead ripped out)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105868747/cooper-kor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bold scary traversing, especially for the second; old pin-and-sling anchors in bad shape; a copperhead pulled out."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Indirect east-face line on Pigeon Spire with good pitches and bold traversing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105868747/cooper-kor",
+      "retrieved_at": "2026-11-14",
+      "fact": "Not direct by any means but good quality pitches and some bold, scary traversing."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "BC Parks backcountry permit required for Applebee Dome/Boulder Camp; fees collected by the ACC",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry permit required at the campgrounds; ACC collects fees; self-registration station inside Conrad Kain Hut."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "About 50 km of gravel road from Highway 95 at Brisco; last 3 km rough; high clearance recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Access is about 50 km of gravel from Highway 95 at Brisco, 27 km north of Radium; last 3 km rough; high clearance advised."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count differs: Mountain Project 18 pitches; same page's author did it in 11 stretched 60 m pitches; SummitPost title 'V, 5.10, 18 pitches' not read (403). Length: MP 1000 ft, while the FA report describes over 1,700 ft of climbing; not recorded."
+ },
+ "bc_pigeon_spire_draco": {
+  "area": "bc_pigeon_spire",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115375093/draco",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 800 ft, 10 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115375093/draco",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 800 ft (242 m)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115375093/draco",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Craig McGee and Josh Lavigne, August 2018 (with Marc Piche and Jesse Bouliane, 2016-17)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115375093/draco",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Craig McGee and Josh Lavigne, Aug 2018, helped by Marc Piche and Jesse Bouliane in 2016/17."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "South face of Pigeon Spire; easier cracks to a mid-way ledge, then the big golden dihedral on the upper headwall with sustained jamming",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115375093/draco",
+      "retrieved_at": "2026-11-14",
+      "fact": "South face route; lower-angle cracks to a mid ledge, then the huge golden dihedral; Yosemite-like sustained jamming."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Double rack micro cams to BD #4; optional #5 for pitches 1, 5 and 6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115375093/draco",
+      "retrieved_at": "2026-11-14",
+      "fact": "Double rack from micro cams to BD #4 should do; a #5 Camalot optional for pitches 1, 5 and 6."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.9 59 m from the moat up the right crack to the ridge; P2 5.10 45 m committing roof crux; P3 5.8 50 m to bolted belay below the golden corner; P4 5.10 20 m",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115375093/draco",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1 5.9 59 m from the moat; P2 5.10 45 m roof-lip crux; P3 5.8 50 m to bolted belay; P4 5.10 20 m."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "BC Parks backcountry permit required for Applebee Dome/Boulder Camp; fees collected by the ACC",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://bcparks.ca/bugaboo-park/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry permit required at the campgrounds; ACC collects fees; self-registration station inside Conrad Kain Hut."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project found for this route (DuckDuckGo returned nothing relevant); BC Parks adds park facts."
+ },
+ "bc_yak_peak_yak_check": {
+  "area": "bc_yak_peak",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1800 ft, 15 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 1800 ft (545 m)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.10a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.vanmtnguides.com/yakchek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide page titles the route YAK CHECK 5.10a."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "First 7 pitches J. Bennetto, R. Cox 1985; to the top R. Cox, G. Wolkoff 1992",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: first seven pitches J. Bennetto and R. Cox, 85; to the top R. Cox and G. Wolkoff, 92."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Link-up of lower Yak Crack and upper Reality Check, skipping Reality Check's hard runout crux; cruxes mostly 5.8-5.9; includes a 150 m 5.7 crack and a natural flake bridge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Links lower Yak Crack with upper Reality Check, avoiding its runout crux; consistently 5.8-5.9 cruxes."
+     },
+     {
+      "url": "https://www.vanmtnguides.com/yakchek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs the bottom half of Yak Crack then top half of Reality Check; features a 150 m 5.7 crack and flake bridge."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Zopkios rest area / brake-check pullout near the Coquihalla summit (north side, washrooms)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at Zopkios Brake Check near the Coquihalla summit, north side by the washrooms."
+     },
+     {
+      "url": "https://www.vanmtnguides.com/yakchek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Meet at the Zopkios pull-out (restrooms) on the northwest side of the Coquihalla Hwy."
+     }
+    ]
+   },
+   {
+    "field": "approach_time",
+    "value": "About 60 minutes to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.vanmtnguides.com/yakchek",
+      "retrieved_at": "2026-11-14",
+      "fact": "The approach hike takes 60 minutes to reach the base."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Walk ~500 m NE along the on-ramp shoulder to the flagged trailhead; talus after ~30 min, cross to its left side for the trail; scramble a 3rd-class left-trending ramp ~60 m to start",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Walk about 500 m along the ramp shoulder to orange flagging; talus at 30 min, keep left; 3rd-class ramp ~60 m to the start."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Crumbly rock on pitches 7-8; a 2022 rockfall removed the P8 belay flake; loose rock persists",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitches 7 and 8 crumbly; a 2022 rockfall took the flake/belay ledge atop pitch 8; loose rock still present."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Double rack 0.2-3 in, one 60 m rope; bolted belays",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106517307/yak-check",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: basic double rack 0.2-3 inch, 60 m rope, bolted belays."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Easy walk-off",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.vanmtnguides.com/yakchek",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route has bolted belays and an easy walk off."
+     }
+    ]
+   }
+  ],
+  "note": "Length: Mountain Project 1800 ft; VMG says 'almost 2000 feet' (within 10%, but VMG is approximate) - recorded single-source. andrewleader.net's approach time cites VMG, so not counted as independent. theCrag route page hit a bot check."
+ },
+ "bc_yak_peak_somwow_seven_one_move_wonders_of_the_world": {
+  "area": "bc_yak_peak",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 14,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106863038/somwow-seven-one-move-wonders-of-the-world",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 790 ft, 14 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches_alt",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/99884-tr-yak-peak-somwow-812016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report calls it an infrequently climbed fifteen-pitch friction slab route on Yak's SW face."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8- PG-13, III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/99884-tr-yak-peak-somwow-812016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route rated 5.8-/PG-13, III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mike Shannon, Cam Robertson, Jeff Sherstobitoff",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106863038/somwow-seven-one-move-wonders-of-the-world",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Mike Shannon, Cam Robertson and Jeff Sherstobitoff."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Long friction slab route meandering up Yak Peak's southwest face; mostly 5.3-5.6 pitches of 50-60 m with sparse bolts",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/99884-tr-yak-peak-somwow-812016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Infrequently climbed friction slab route meandering up Yak Peak's SW face."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106863038/somwow-seven-one-move-wonders-of-the-world",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitches 1-8 run 5.3-5.6 at 50-60 m each, gear leads with occasional bolts."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Zopkios rest area; climbers' path about 1 km up the road",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/99884-tr-yak-peak-somwow-812016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party based at Zopkios Rest Area; locals directed them to a path about 1 km up the road."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Route-finding: broad 4th-class slab expanses look alike; parties take the wrong approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/99884-tr-yak-peak-somwow-812016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party took the wrong trail; 1,000 ft expanses of fourth-class slab look similar."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.4 60 m from the scoop between two ponds up a finger crack; P2 5.4 55 m toward a big horn; P3 5.6 around the horn; P4-P8 5.3-5.5 slab; P8 traverse to anchors often wet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106863038/somwow-seven-one-move-wonders-of-the-world",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1 5.4 60 m from scoop between ponds; P2 toward horn; P3 5.6 around horn; P8 traverse to anchors often wet."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count conflicts: Mountain Project 14 vs CascadeClimbers TR 15; MP length 790 ft looks inconsistent with 14 x 50-60 m pitches - recorded as stated but flagged. Part of the CascadeClimbers page was blocked by the tool."
+ },
+ "bc_yak_peak_beckey_route_speedway": {
+  "area": "bc_yak_peak",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106516455/beckey-routespeedway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1500 ft, 12 pitches, Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106516455/beckey-routespeedway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 1500 ft (455 m)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106516455/beckey-routespeedway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Beckey route: F. Beckey, M. de Jong, J. Svensson 1987; Speedway: K. Wild, R. Mooney, A. Commazetto 1996",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106516455/beckey-routespeedway",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Beckey, de Jong, Svensson 1987; Speedway by Wild, Mooney, Commazetto 1996."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Two close lines on Yak's SW face: Beckey's runout 1987 route and the bolted-belay Speedway slab line; Speedway is the sensible ascent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106516455/beckey-routespeedway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Beckey's 1987 line was seriously runout; Speedway added bolted belays on a more direct line and makes most sense today."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Start mid SW face below a faint white streak; P1-5 4th class to 5.3 with ~50 m runouts between bolted stations; P6-P7 runout sustained 5.7 slab to a ledge; P8 4th class, some loose rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106516455/beckey-routespeedway",
+      "retrieved_at": "2026-11-14",
+      "fact": "First five pitches 4th to 5.3 with long runouts; P6-P7 runout 5.7 between sparse bolts; P8 4th class with loose rock."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Long runouts (20-50 m) between bolts; first bolted anchor hard to see from the ground",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106516455/beckey-routespeedway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Near full-length 50 m runouts on early pitches; 20 m runouts on 5.7 above; first anchor hard to spot."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project found for this line."
+ },
+ "bc_mount_harvey_pup_buttress": {
+  "area": "bc_mount_harvey",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Dick Culbert and party (Culbert, Cuthbert, Starr, Purdey), ~1969; FFA Don McPherson et al. ~1992",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113544300/pup-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Culbert, Cuthbert, Starr, Purdey about 1969; FFA Don McPherson and others about 1992."
+     }
+    ]
+   },
+   {
+    "field": "fa_party",
+    "value": "Culbert and others, 1969",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113544300/pup-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Culbert, Cuthbert, Starr, Purdey about 1969."
+     },
+     {
+      "url": "https://www.alpinebaking.com/2015/07/harveys-pup-pup-buttress.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "In 1969 Culbert and others established the route through chimneys and overhangs, then 5.7 with minor aid."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lions Bay trailhead at the end of Sunset Drive",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpinebaking.com/2015/07/harveys-pup-pup-buttress.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive to Lions Bay and park at the trailhead at the end of Sunset Drive."
+     }
+    ]
+   },
+   {
+    "field": "approach_time",
+    "value": "About 2 hours of hiking to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.alpinebaking.com/2015/07/harveys-pup-pup-buttress.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two hours of hiking reaches the base of the route."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Logging roads past the Brunswick turn-off, next left marked 'Mount Harvey'; overgrown road crosses a big scree gully; on to a boulder/talus field; gear up there; follow the North Face Ramp 100-200 m to the gut",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.alpinebaking.com/2015/07/harveys-pup-pup-buttress.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Logging roads past Brunswick turn-off, left at 'Mount Harvey'; overgrown road crosses a big scree gully to a boulder field."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/113544300/pup-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear up where the trail meets the talus; follow the North Face Ramp 100-200 m to the gut below Harvey's Pup."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Loose descent down the big scree gully crossed on the approach (stash packs/water there); rappel anchors often sketchy",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.alpinebaking.com/2015/07/harveys-pup-pup-buttress.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "The descent goes down the scree gully crossed on the approach; extra water or packs can be stashed there."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/113544300/pup-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is loose and heinous; many rappel anchors are sketchy; it comes out at the talus field."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Dirty, loose rock, at times alarmingly so; limited protection",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113544300/pup-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock dirty and loose, at times alarmingly; protection limited at times."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "North face of Harvey's Pup, a detached pinnacle beside Mount Harvey; starts on a chockstone on the North Face Ramp at the gut",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113544300/pup-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs the north face of Harvey's Pup, a detached pinnacle by Mount Harvey; begins atop a chockstone on the ramp."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.8 PG/R 15 m traverse under a roof to a bush; P2 5.8 45 m chimney (crux narrows); P3 5.8 to a dark headwall; P4 5.9 20 m corner crack past 3 pitons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113544300/pup-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1 5.8 PG/R 15 m; P2 5.8 45 m chimney; P3 5.8; P4 5.9 20 m crack past three pitons (estimates)."
+     }
+    ]
+   }
+  ],
+  "note": "No stated distance/gain. Alpine Baking quotes a guidebook calling an adjacent route 'not recommended' - not used."
+ },
+ "bc_the_sphinx_north_ridge": {
+  "area": "bc_the_sphinx",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 500 ft, 6 pitches, Grade II."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/62215-tr-the-sphinx-n-ridge-phyllis-engine-std-route-962008/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The route is only about 500 ft long."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 6 pitches (30 m, 30 m, 30 m, 30 m, 15 m, final crack)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade II."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/62215-tr-the-sphinx-n-ridge-phyllis-engine-std-route-962008/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Photo caption: The Sphinx - North Ridge II 5.8."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Anders Ourom, Len Soet, 1973",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Anders Ourom and Len Soet, 1973."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Ascend the Sphinx Glacier to the base of the North Ridge, threading bergschrunds",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Location: ascend the Sphinx Glacier to the base of the North Ridge."
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/62215-tr-the-sphinx-n-ridge-phyllis-engine-std-route-962008/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party crossed the Sphinx Glacier, threading the shrunds, to near the base of the North Ridge."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Scramble down the SW slopes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best descent is probably to scramble down the SW slopes."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard rack of cams, nuts, alpine draws",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: standard rack of cams, nuts and alpine draws."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1-2 blocky 5.3-5.5, P3-4 slab cracks 5.7 to a horizontal break, P5 5.8 lichen slab traverse, P6 5.9 slanting inset crack to a handcrack (best pitch)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/126602115/north-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1 5.3, P2 5.5, P3-4 5.7 slab cracks, P5 5.8 traverse, P6 5.9 inset crack to handcrack, best pitch."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Camps on Polemonium Ridge's far side or near the Sphinx Glacier edge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/62215-tr-the-sphinx-n-ridge-phyllis-engine-std-route-962008/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped off the back of Polemonium Ridge, then on a perch near the glacier edge."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose talus and elevation loss (steep ~800 ft drop to Gentian Pass) on the approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/62215-tr-the-sphinx-n-ridge-phyllis-engine-std-route-962008/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach involves loose talus and a steep 800 ft drop to Gentian Pass."
+     }
+    ]
+   },
+   {
+    "field": "approach_loss_note",
+    "value": "Steep 800 ft drop to Gentian Pass on the way in",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/62215-tr-the-sphinx-n-ridge-phyllis-engine-std-route-962008/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Describes the steep 800 ft drop to Gentian Pass on the approach."
+     }
+    ]
+   }
+  ],
+  "note": "CascadeClimbers TR states '8 miles and 4000 ft of gain' only to a viewpoint and an 'eleven mile approach to the alpine' - neither is a trailhead-to-summit figure, not recorded."
+ },
+ "bc_nesakwatch_spires_south_spire_south_ridge": {
+  "area": "bc_nesakwatch_spires",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114442382/south-spire-south-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 300 ft (91 m)."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Hugh Burton, Terry Rollerson, 1969",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114442382/south-spire-south-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Hugh Burton and Terry Rollerson, 1969."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the South Spire-Rexford col, ~2 pitches of blocky 4th class up-right onto the upper east buttress then back left to the summit block, split by a 15 ft offwidth (north side easier)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114442382/south-spire-south-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the col, about two pitches of 4th class to the summit block, split by an offwidth; north side easier."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "4 in or 4.5 in cam for the 15 ft summit-block offwidth",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114442382/south-spire-south-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bring a 4 or 4.5 inch cam for the 15 foot summit block offwidth."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "No good anchor on top: a partner holds the rope fixed on one side while the climber raps the other side of the block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114442382/south-spire-south-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "No good summit anchor; one person fixes the rope from one side while the other raps the opposite side."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/nesakwatch2016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Nesakwatch Spire elevation given as 2,250 m / 7,400 ft."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Flat-boulder camping in the upper basin; car to camp 3.5 hrs with heavy packs",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/nesakwatch2016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Great camping on flat boulders in the upper basin; car to camp took 3.5 hours with heavy packs."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "No running water in the basin by mid-August; melt snow, which may be gone by September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/nesakwatch2016/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mid-August: no running water in the basin; melted snow; snowpatches may be gone by September."
+     }
+    ]
+   }
+  ],
+  "note": "StephAbegg covers the area (not this route's pitches). Car-to-camp time is to the upper-basin camp, not to the route."
+ },
+ "bc_mouses_tooth_mighty_mouse": {
+  "area": "bc_mouses_tooth",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page titles the route Mighty Mouse (5.11a, 8 pitches)."
+     },
+     {
+      "url": "https://sendage.com/climb/113474-mighty-mouse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page titles the route Mighty Mouse - 5.11a."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route given as 5.11a, 8 pitches; elevation stated at the top of pitch 8."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 5900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation about 1,800 m / 5,900 ft at the top of pitch 8."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Established circa 2011",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mighty Mouse was established around 2011."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "East face of Mouse's Tooth in North Joffre Creek, NW of Joffre near Pemberton; pitch after pitch of granite splitters 5.10-5.11-",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs the east face of Mouse's Tooth northwest of Joffre; splitter cracks mostly 5.10 to 5.11-."
+     },
+     {
+      "url": "https://sendage.com/climb/113474-mighty-mouse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbs the East Face of Mouse's Tooth in North Joffre Creek outside Pemberton; immaculate granite cracks."
+     }
+    ]
+   },
+   {
+    "field": "approach_time",
+    "value": "About 2 hours hiking to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike to base about 2 hours; hike back to car about 2 hours."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": 13,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total car-to-car about 13 hours: hike 2, climb 6, rappels 2.5, hike out 2."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the route (~2.5 hrs for one party); rappelling to the top-of-P1 anchors caused a stuck rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel route took about 2.5 hours; they lost an hour trying to rap to the P1 anchors and could not pull the rope."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Short logging road off Highway 99 between Pemberton and Lillooet; about 1.5 hours' drive north of Squamish",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach uses a short logging road off Hwy 99 between Pemberton and Lillooet; about 1.5 hours north of Squamish."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1-2 up the arete (a few bolts) and vegetated ledges to the headwall; P3 twin finger cracks; P4 off-finger start then a 5.8 no-pro traverse under roofs; P5 steep splitter, 10d off-finger crux",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/mighty-mouse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "P1-2 arete with bolts to the headwall; P3 twin finger cracks; P4 traverse right under roof 5.8 no pro; P5 10d off-fingers."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project page not read (DuckDuckGo did not return it). Times are one party's (StephAbegg, 2018)."
+ },
+ "bc_les_cornes_springbok_arete": {
+  "area": "bc_les_cornes",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11a with direct start",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/les-cornes/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Springbok Arete with direct start rated 5.11a, 1600 feet, about 13 pitches."
+     }
+    ]
+   },
+   {
+    "field": "grade_original",
+    "value": "5.10c, 16 pitches, TD+ (original start)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ubc-voc.com/trip-reports/springbok-arete-on-les-cornes-1756/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alpine Select rates Springbok Arete 5.10c, 16 pitches, TD+."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/les-cornes/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route is over 1600 feet tall with several 5.10 pitches."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 6500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/les-cornes/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation given as 2,000 m / 6,500 ft."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "About 25 km of logging road into the Anderson River Range; mostly good with a few short washout sections",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/les-cornes/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach entails a 15.8 mile (25.5 km) logging road; mostly excellent with 4-5 short rough washout sections."
+     },
+     {
+      "url": "https://ubc-voc.com/trip-reports/springbok-arete-on-les-cornes-1756/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party drove the 25 km logging road into the Anderson River Range in a Civic hatchback."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Brushy, burly hike up old road bed, timbered hills and boulderfields; a short rappel into a snow moat reaches pitch 1",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/les-cornes/",
+      "retrieved_at": "2026-11-14",
+      "fact": "After the logging road, a brushy hike up old road bed, then timbered hills and boulderfields."
+     },
+     {
+      "url": "https://ubc-voc.com/trip-reports/springbok-arete-on-les-cornes-1756/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb started with a short rappel into a snow moat to the first pitch."
+     }
+    ]
+   },
+   {
+    "field": "approach_time",
+    "value": "About 3 hours of bushwhacking to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ubc-voc.com/trip-reports/springbok-arete-on-les-cornes-1756/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total bushwhack approach; reached the base after about 3 hours."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Tent on a flat rock at the base of the climb",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ubc-voc.com/trip-reports/springbok-arete-on-les-cornes-1756/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party pitched their tent on a flat rock at the base of the climb."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Poor rock on the original first pitches (chossy ramp); retreat difficult once on the upper section; hot, carry ample water",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://ubc-voc.com/trip-reports/springbok-arete-on-les-cornes-1756/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First pitches poor rock; guidebook warns retreat is hard on the upper section; party worried 4 litres was not enough."
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/british-columbia/les-cornes/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Direct start avoids the traditional first three pitches up a chossy ramp."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "A #5 Camalot useful for the headwall offwidth",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://ubc-voc.com/trip-reports/springbok-arete-on-les-cornes-1756/",
+      "retrieved_at": "2026-11-14",
+      "fact": "On the headwall pitch the leader pushed a #5 Camalot up the offwidth."
+     }
+    ]
+   }
+  ],
+  "note": "Grade/pitch figures depend on start: StephAbegg's direct start (2006, shared with Sprung Cock Erect) is 5.11a, ~13 pitches; UBC VOC quotes Alpine Select's original line as 5.10c, 16 pitches, TD+. Recorded separately. Mountain Project and theCrag (450 m) pages not read."
+ },
+ "bc_mount_athelstan_kiss_of_death_sinnes_couloir": {
+  "area": "bc_mount_athelstan",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2398,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/119638321/kiss-of-death-sinnes-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as snow/alpine, 2398 ft (727 m), Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_m_alt",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sandrosummits.com/2025/05/18/sinnes-couloir-mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The couloir proper is 600 m; a 600 m bootpack reaches the rim."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/119638321/kiss-of-death-sinnes-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jason Sinnes, 2020",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/119638321/kiss-of-death-sinnes-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Jason Sinnes, 2020; he continued to the summit by the west ridge."
+     }
+    ]
+   },
+   {
+    "field": "high_point_m",
+    "value": 2800,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sandrosummits.com/2025/05/18/sinnes-couloir-mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Athelstan stands 2800 m, about 200 m above the couloir rim."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Athelstan given as 2,800 m."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Early season (spring); probably all dirt by late August",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/119638321/kiss-of-death-sinnes-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "An early season route, probably all dirt in late August."
+     },
+     {
+      "url": "https://sandrosummits.com/2025/05/18/sinnes-couloir-mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climbed and skied in spring conditions (May)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Steep snow and/or neve, no ice",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/119638321/kiss-of-death-sinnes-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: steep snow and/or neve; no ice."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Large cornice overhangs the climber's-right side of the couloir exit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sandrosummits.com/2025/05/18/sinnes-couloir-mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "A large cornice overhangs the climber's right side of the couloir at the exit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Up the remaining Salal Creek FSR, then through the trees or a slide path to the couloir right of Randy Stoltmann Buttress",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://sandrosummits.com/2025/05/18/sinnes-couloir-mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked the rest of Salal Creek FSR, then a break in the trees and a slide path to the line."
+     },
+     {
+      "url": "https://mountainproject.com/route/119638321/kiss-of-death-sinnes-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach as for the Randy Stoltmann Buttress routes; from the base of Selective Cut move right into the couloir."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "West side of Athelstan via Salal Creek FSR, ~50 km from pavement; FSR gated in winter",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://sandrosummits.com/2025/05/18/sinnes-couloir-mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Accessed by Salal Creek FSR, 50 km from paved road; gated in winter, drivable in spring once open."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep, narrow snow couloir between Randy Stoltmann Buttress and the Octopus Beak tower to the summit rim, on Athelstan's west side",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountainproject.com/route/119638321/kiss-of-death-sinnes-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep, narrow couloir right of Randy Stoltmann Buttress and left of the Octopus Beak tower to the summit rim."
+     }
+    ]
+   }
+  ],
+  "note": "Length conflicts: Mountain Project 2398 ft (727 m) vs Sandro Summits 'the couloir proper is 600 m' - not locked, both recorded. Sandro's 1300 m figure is a ski run, not used."
+ },
+ "bc_mount_athelstan_lillarete": {
+  "area": "bc_mount_athelstan",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "Brayshaw and Buda's full route, Lillarete, is about 2,500 ft, 5.8 and snow."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Brayshaw and Buda",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lillarete is the full route of Brayshaw and Buda, who traversed the Gnomon Tower."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.8 and snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lillarete rated about 2,500 ft, 5.8 and snow."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Long rock ridge about 80 km northwest of Pemberton, over the Gnomon Tower to Randy Stoltmann Tower",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/25568-tr-randy-stoltmann-tower-mt-athelstan-solstice-start-to-lillarete-6202004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Executive summary: a long rock ridge 80 km northwest of Pemberton."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Snow traverse (~60 m) on the north side of the Gnomon, then 5 pitches up the upper tower to the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/25568-tr-randy-stoltmann-tower-mt-athelstan-solstice-start-to-lillarete-6202004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crossed snow just under 60 m north of the Gnomon; the upper tower took 5 pitches, not 4 plus 5 as the guide reads."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rap 15 m from the summit (blade and slung block) to a notch, rap again 6-8 m, awkward diagonal rap to the col, then rap into the NW-facing snow gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/25568-tr-randy-stoltmann-tower-mt-athelstan-solstice-start-to-lillarete-6202004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit rap 15 m to a notch, further 6-8 m rap, awkward diagonal rap, hex and block at the col, rap into NW snow gully."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Shattered rock if you traverse too far on the boulder bench",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/25568-tr-randy-stoltmann-tower-mt-athelstan-solstice-start-to-lillarete-6202004/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Over-traversing about 100 m forced 30 m of very badly shattered rock."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Upper Lillooet FSR 40+ km (washboard first 15 km), then the rutted Salal Creek FSR",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/coastal-interior-bc/pemberton-onwards/mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Over 40 km of bumpy Upper Lillooet FSR, washboard first 15 km, then the rutted, apparently decommissioned Salal Creek FSR."
+     }
+    ]
+   }
+  ],
+  "note": "Only the 2004 CascadeClimbers TR (a variation start) and AAJ's passing mention were found. Mountain Project page not read."
+ },
+ "bc_mount_athelstan_south_face_randy_stoltmann_tower": {
+  "area": "bc_mount_athelstan",
+  "facts": [
+   {
+    "field": "length_m",
+    "value": 350,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "New route: the south face of Stoltmann Tower (350 m, 5.11a)."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "South face of Stoltmann Tower rated 350 m, 5.11a."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Paul McSorley and Josh Lavigne, October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "McSorley returned with Josh Lavigne in October and climbed the south face of Stoltmann Tower."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Easier lower wall just right of the Stokeman Pillar, then a golden upper headwall with face and crack climbing; a few bolts on crackless sections",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easier lower wall right of the Stokeman Pillar, then golden headwall face and crack climbing; few bolts added."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel the wall on bolted stations",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "Several bolts added to rappel the wall."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Day trip from a bivy in the clear-cut west of the mountain; steep old-growth to below Stoltmann Tower",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201215724",
+      "retrieved_at": "2026-11-14",
+      "fact": "Day trip from a ditch bivy in the clear-cut; earlier party climbed steep old-growth from the clear-cut west of the mountain."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Upper Lillooet FSR 40+ km (washboard first 15 km), then the rutted Salal Creek FSR",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stevensong.com/coastal-interior-bc/pemberton-onwards/mount-athelstan/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Over 40 km of bumpy Upper Lillooet FSR, washboard first 15 km, then the rutted, apparently decommissioned Salal Creek FSR."
+     }
+    ]
+   }
+  ],
+  "note": "Only AAJ found; Mountain Project page not read."
+ },
+ "bc_skihist_mountain_traverse_of_the_seasons": {
+  "area": "bc_skihist_mountain",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Seb Gulka and Alessandro Lanius, 2023",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Seb Gulka and Alessandro Lanius, 2023."
+     }
+    ]
+   },
+   {
+    "field": "fa_note",
+    "value": "First attempted by Robert Nugent, Margaret Saul and Don Serl in July 1995 (bailed in a storm after a bivy between Summer and Spring)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse attempted by Nugent, Saul and Serl in July 1995; they bivouacked between Summer and Spring and bailed in a storm."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as trad/alpine, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "whole_outing_gain_m",
+    "value": 3800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation about 3800 m over 41 km, assuming Kwoiek FSR is drivable to the North Kwoiek Rd fork."
+     }
+    ]
+   },
+   {
+    "field": "whole_outing_dist_km",
+    "value": 41,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total about 3800 m of elevation over 41 km for the whole trip."
+     }
+    ]
+   },
+   {
+    "field": "high_point_m",
+    "value": 2968,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Skihist Mountain given as 2,968 m."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "10 km up Kwoiek Creek FSR/Road, then right on the overgrown North Kwoiek Road ~5 km; 2023 landslides blocked vehicles at the start of Kwoiek Rd (+~500 m and 10 km each way)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "10 km up Kwoiek Creek FSR, then N Kwoiek Rd 5 km; 2023 landslides blocked vehicles, adding 500 m and 10 km each way."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party walked ten kilometres up Kwoiek Creek Road, then the poorly maintained North Kwoiek Road."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Knee-deep creek ford on N Kwoiek Rd; before a fork, bushwhack fall-line (alder) to the ridge; traverse into an alpine bowl with small lakes",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "One knee-deep creek crossing; bushwhack fall line up a creek gully; traverse into the alpine bowl with small lakes."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alder thickets and steep fall-line bushwhacking led to a green alpine bowl."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Alpine bowl lakes are likely the last running water until after Skihist; a few snow patches for melt on the ridge (mid-August)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "The alpine bowl is likely the last running water until after Skihist; mid-August 2023 had a few snow patches."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bivied by a small patch of snow for meltwater about 3 km east of Winter Peak."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Plentiful bivy spots on the wide first 6 km of ridge; party bivied ~3 km east of Winter Peak",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "First 6 km of ridge mostly hiking to class 3; wide ridge with plentiful comfortable bivy spots."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bivy in a sheltered nook about three kilometres east of Winter Peak (2,446 m)."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ridge west to Winter Peak (3rd class), Autumn Peak NE buttress (low 5th, solid 4th), loose 3rd to Summer Peak, Spring Peak NE ridge with a short 5.7 chimney, then on to Skihist; last ~5 km mostly 3rd/4th with short 5th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Winter by 3rd class; Autumn NE buttress low 5th then 4th; loose 3rd to Summer; Spring NE ridge with a short 5.7 chimney."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the base of Winter's E ridge, the next 5 km to Skihist is mostly 3rd/4th with short 5th sections."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Down the standard Skihist route; then either follow the overgrown Kwoiek FSR with two unbridged Kwoiek Creek crossings (hip-deep) or bushwhack north of the three lakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the standard Skihist route; follow the road with two bridgeless, hip-deep Kwoiek Creek crossings or bushwhack north of three lakes."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock (notably south of Autumn and on Spring's ridge), river fords, challenging access",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Challenging access and plenty of loose rock."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock deteriorated past Autumn Peak; loose 3rd class to Summer; loose 4th-class blocks on Spring's ridge."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Slim alpine rack (small rack of cams)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124762831/traverse-of-the-seasons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: slim alpine rack."
+     },
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "The 5.7 chimney protected nicely with a small rack of cams."
+     }
+    ]
+   },
+   {
+    "field": "elevations_m",
+    "value": "Winter 2,446; Autumn 2,784; Summer 2,713; Spring 2,822; Skihist 2,968",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201216855",
+      "retrieved_at": "2026-11-14",
+      "fact": "Peak heights given: Winter 2,446 m, Autumn 2,784 m, Summer 2,713 m, Spring 2,822 m, Skihist 2,968 m."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project's '3800 m over 41 km' is the whole outing (approach, traverse and descent), not a one-way trailhead-to-summit figure, and assumes the FSR is drivable to the North Kwoiek fork; landslides in 2023 added ~500 m and 10 km each way. bivouac.com trip page not read (likely members-only)."
+ },
+ "bc_1_north_faces_from_fairy_meadow_adamant_turret_austerity_traverse": {
+  "area": "bc_1_north_faces_from_fairy_meadow",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111800015/adamant-turret-austerity-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/snow/alpine, 25 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111800015/adamant-turret-austerity-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Leigh Andrews and Robert Kruszna, August 1968",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111800015/adamant-turret-austerity-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Leigh Andrews and Robert Kruszna, Aug 1968."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Left side of the Turret Glacier to Adamant's North Ridge (easy 5th, much 3rd/4th) to the summit; descend west (easy 5th or short rap) to the Adamant-Turret col; snow arete to Turret; rap to the Turret-Austerity col; Austerity East Ridge (4th, easy 5th)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111800015/adamant-turret-austerity-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Turret Glacier to Adamant N Ridge; west to the col; snow arete up Turret; rap to col; Austerity East Ridge, class 4-5."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Standard route of Austerity back to the Granite Glacier",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111800015/adamant-turret-austerity-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the Standard Route of Austerity back to the Granite glacier."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard rack weighted to 2-3 in, plus disposable slings (maybe nuts/pitons) for rappels",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111800015/adamant-turret-austerity-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard rack, more 2-3 inch pieces; disposable slings and maybe nuts or pitons for the raps."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Called one of the finest high-level routes in the Selkirks; reversed (Austerity first) it goes 5.6-5.7 because of the Turret ascent",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111800015/adamant-turret-austerity-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "'Selkirks North' calls it one of the finest high-level routes; reversed, the Turret ascent raises it to 5.6-5.7."
+     }
+    ]
+   }
+  ],
+  "note": "The Adventure Collective page restates Mountain Project's description, so it is not counted as an independent source."
+ },
+ "bc_frontier_creek_culbert_crag": {
+  "area": "bc_frontier_creek",
+  "facts": [
+   {
+    "field": "fa",
+    "value": "Andrea Tate and Francis Bailey, August 5, 2024",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "Andrea Tate and Francis Bailey made the first ascent of Culbert Crag by its south side on August 5, 2024."
+     }
+    ]
+   },
+   {
+    "field": "high_point_m",
+    "value": 2567,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "Culbert Crag given as 2,567 m."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.7 max",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four pitches of no more than 5.7 reached the first false summit."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the camp col, back over Sedna Peak, lose height to skirt gendarmes, hours of traversing to a south buttress; 4 pitches (<=5.7) to the first of three false summits, one rappel, 3 more pitches to the true summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hiked over Sedna, dropped to avoid gendarmes, traversed hours to a south buttress; four pitches, one rappel, three more pitches to the summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Loose gully between the second and third false summits, then traverse back to camp (most of a day)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descended a loose gully between the second and third false summits; took until afternoon to traverse back to camp."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Helicopter drop at a col at the south end of a broad cirque (51.52059, -125.37742); FA party bivied just below the summit block",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "Helicopter dropped them at a col (51.52059, -125.37742) south of a cirque; they bivied in a rock shelter below the summit block."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Snow patch just below the summit bivy; snowmelt waterfall near the col camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "A patch of snow below the summit bivy gave water; rest day by a small snowmelt waterfall near camp."
+     }
+    ]
+   },
+   {
+    "field": "access",
+    "value": "Drive to Tatla Lake, helicopter with White Saddle into the SW Pantheon Range (~20 km north of Mt. Waddington)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drove to Tatla Lake and flew by helicopter with White Saddle; Pantheon Range lies about 20 km north of Mt. Waddington."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "North face steep and loose; nearby gullies full of broken glacier ice; ridge crest blocked by gendarmes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "North face too steep and loose; gullies full of broken glacier chunks; ridge crest blocked by unclimbable gendarmes."
+     }
+    ]
+   },
+   {
+    "field": "summit_day_hours",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://publications.americanalpineclub.org/articles/13201217115",
+      "retrieved_at": "2026-11-14",
+      "fact": "The journey from camp to the summit took nearly 15 hours."
+     }
+    ]
+   }
+  ],
+  "note": "AAJ gives 'no more than 5.7' for the technical pitches; the app's current grade is 5.6. The ~15 h figure is the FA party's camp-to-summit day, not car-to-car (access was by helicopter). Mountain Project page not read."
+ },
+ "bc_dione_sw_spur": {
+  "area": "bc_dione",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113072518/sw-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 300 ft, 6 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113072518/sw-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bob Cuthbert, Gary Kozel, Alice Purdey",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113072518/sw-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Bob Cuthbert, Gary Kozel and Alice Purdey."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard rack",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113072518/sw-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: standard rack."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project was readable; theCrag ('Mt Dione Southwest Spur, 400m, AD') route page is behind a bot check and Adventure Collective restates MP. Length conflict: MP 300 ft vs theCrag listing 400 m - not recorded as fact."
+ },
+ "bc_east_ear_the_howler": {
+  "area": "bc_east_ear",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124726874/the-howler",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 660 ft (200 m), 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124726874/the-howler",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 660 ft (200 m)."
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/canada/west-kootenays/route/11878419702",
+      "retrieved_at": "2026-11-14",
+      "fact": "Search listing: The Howler, 5.11b, 200 m trad climb in the West Kootenays."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Stephen Senecal, Aaron Harris, August 30, 2019",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124726874/the-howler",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Stephen Senecal and Aaron Harris, Aug 30, 2019."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "5.11b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.thecrag.com/en/climbing/canada/west-kootenays/route/11878419702",
+      "retrieved_at": "2026-11-14",
+      "fact": "Search listing gives The Howler as 5.11b."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/124726874/the-howler",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hardest pitch: Pitch 2, 5.11b, 35 m."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.7 30 m from the cave; P2 5.11b 35 m roofs; P3 5.10d 28 m; P4 5.11a 30 m slab and thin crack; P5 5.10b 30 m past a chockstone; P6 5.8 20 m; scramble to summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124726874/the-howler",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitches: 5.7 30 m, 5.11b 35 m, 5.10d 28 m, 5.11a 30 m, 5.10b 30 m, 5.8 20 m, then scramble."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Modern mixed (gear and bolts) route on the East Wolf's Ear, developed ground up; bolted belays",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124726874/the-howler",
+      "retrieved_at": "2026-11-14",
+      "fact": "A fun, modern, mixed route developed ground up, with two-bolt anchors."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Six single-rope rappels down the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/124726874/the-howler",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: 6 single rope rappels down the route."
+     }
+    ]
+   }
+  ],
+  "note": "theCrag lists it as 5.11b, 200 m; app has 5.11a/b. Washington Rock Climbers FA database entry exists but its id was lost from the search result."
+ },
+ "bc_ionia_mountain_ionia_ne_spur": {
+  "area": "bc_ionia_mountain",
+  "facts": [
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 980 ft, 10 pitches, Grade III; pitch count not fixed."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 980,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 980 ft (297 m)."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "J. Bryan, J. Craig, E. Kafer, M. Kafer, 1961",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as J. Bryan, J. Craig, E. Kafer, M. Kafer, 1961."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Over the Lycia/Serratus col to the Ionia Glacier; traverse to the toe of the Ionia buttress at the far right where rock meets snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cross the Lycia/Serratus Col to the Ionia glacier and traverse to the far right toe of the buttress."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1-3 snow to rock, scramble under a snow patch to a 'tooth'; P4 low-angle face; P5 loose headwall then corners; P6 chimney and cracks, rail traverse; P7 over a sub-summit, downclimb or short rap to a col; P8-10 final ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch outline from snow to the tooth, headwall, chimney, sub-summit with short rap to a col, then final ridge."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Some very loose pitches; loose, exposed gully traverse low down",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Some pitches very loose; traverse over the gully is loose and exposed."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard alpine rack, slings and cord for anchors",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/201418236/ionia-ne-spur",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: standard alpine rack, slings and cord for anchors."
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project readable (SummitPost 'Northeast Spur' page not read: SummitPost answers 403)."
+ },
+ "bc_sir_sanford_group_east_ridge": {
+  "area": "bc_sir_sanford_group",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111713554/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as trad/alpine, 1200 ft (364 m), Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111713554/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ted Church, Art Fitch, Chuck Loucks, 1968",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111713554/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA listed as Ted Church, Art Fitch and Chuck Loucks, 1968."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Glacial approach from Cairn Cabin to the Footstool; FA from a high camp near the Footstool took ~16 hours",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111713554/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Glacial approach from Cairn Cabin to the Footstool; from a high camp there the FA took about 16 hours."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Standard route: summit ridge to the Hourglass, SW face, NW ridge (1960s parties continued via Ravelin Col)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111713554/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent via the Standard route: summit ridge, Hourglass, SW face, NW ridge; then via Ravelin Col in the 1960s."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Decomposed marble that crumbles like BBs or corn snow; little protection",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111713554/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA party described decomposed marble granulated like BBs; protection: not much."
+     }
+    ]
+   }
+  ],
+  "note": "AAJ 1969 report (PDF) found but not readable in the browser tool. Only Mountain Project read."
+ },
+ "bc_ossa_mountain_east_ridge": {
+  "area": "bc_ossa_mountain",
+  "skip_reason": "Searched DuckDuckGo (three queries), stevensong.com and bivouac.com snippets. Steven Song's report describes the WEST ridge via Sigurd Creek as Ossa's standard scramble; bivouac.com only says the east ridge was 'likely' climbed on the FA. No page states facts for an East Ridge route; note the possible mix-up with the west-ridge standard route."
+ }
+}
