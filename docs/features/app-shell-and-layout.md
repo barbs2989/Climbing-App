@@ -284,7 +284,9 @@ consistent scroll bar"): `useRailFollow` slides a panel's column up with the pag
 distance to its ad's top (the widgets or the map scroll away, the ad stays in view) or, with no ad, the amount
 the column overflows (its last card comes into view, then it stops), as Facebook's right column does. The
 rail's widgets (`WideRail`) and the route page's rail (`FollowColumn` around `#cm-route-rail`) follow; the
-left ad is fixed and always in view.
+left ad is fixed and always in view. The LEFT panel is the exception (owner 2026-11-14: "the area map on the left panel should have its own
+scroll bar"): its area part (`#cm-left-panel`, the map and sub-area list) scrolls on its own, so the end of a long
+list is in reach on a short page, with the left ad kept under it.
 
 ## 5. Connections
 - **Menu** (`menuOpen`): the same Menu on both widths, full-screen on both.
