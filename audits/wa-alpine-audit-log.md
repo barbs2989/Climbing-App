@@ -38853,3 +38853,50 @@ trip report citing Skoog Alpenglow History; the 23.1-mile Cascade River Road dis
 exactly).
 
 Next batch will continue id-ascending from `wa_trapper_mountain_north_couloir`.
+
+## 2026-11-14 — batch 550 (pass 8)
+
+Checked the next 8 in-scope routes id-ascending from `wa_trapper_mountain_north_couloir`: the
+historic North-Middle-Main Traverse of Mount Index, Vesper Peak's True Grit, Tupshin Peak's East
+Face, Tye Peak's winter East Slopes Scramble, Burgundy Spire's Ultramega OK, Union Peak's
+Southeast Slopes Scramble, Concord Tower's Up In Arms, and Mount Stuart's Upper North Ridge w/
+Great Gendarme. (Two routes between the last batch and this one — Dolomite Tower's Vanishing
+Point and Waterfall Basin's Waterfall Buttress — were skipped as out of scope: both areas are
+`area_type = 'crag'`, not `peak`.)
+
+No confirmed errors fixed this batch. Three flagged for human review, none auto-fixed because
+each needs a structural or judgment call a column patch can't safely make:
+
+- `wa_ultramega_ok`'s `pitches` is stored as 8, but three independent sources (the FA party's own
+  2004 Cascade Climbers trip report, its Alpine Lines blog mirror, and OpenBeta) describe a
+  7-pitch route graded 5.8, 5.9, 5.8, 5.11, 5.9+, 5.9, 5.8. The row's own `pitch_detail` already
+  has 8 entries (5.8, 5.8, 5.9, 5.11a, 5.9, 5.9, 5.9, 5.8) and the two grade sequences don't align
+  cleanly pitch-for-pitch, so this isn't a case of one missing row — something in the split itself
+  disagrees with the sources, and fixing the count without reconciling `pitch_detail` would trade
+  one inconsistency for another. Needs a topo/guidebook check, not a one-column fix.
+- `wa_union_peak_se_route`'s `gain_ft` (1,696, matching the DB's own Smithbrook Trailhead start at
+  4,000 ft) disagrees with WTA's official Union Peak page, which states 1,096 ft of gain for the
+  same 5,696 ft summit — likely counting from the PCT junction at Union Gap (~4,688 ft) instead of
+  the trailhead. Genuinely different start-point conventions, not an error in either source; no
+  fix proposed without knowing which convention this DB's `gain_ft` column is meant to follow
+  elsewhere.
+- `wa_upper_north_ridge_w_great_gendarme`'s two-stage FA attribution has conflicting secondary
+  sources on both halves. For the 1956 bypass ascent, one source credits "D. Claunch, J. Rupley"
+  while another credits "Don Gordon and John Rupley" (matching the stored row) — Rupley is
+  confirmed, Gordon vs. Claunch is not. For the 1964 direct Great Gendarme ascent, OpenBeta names
+  Fred Stanley & Jim Wickwire (matching the row) with no date, while a third source describes an
+  unrelated 1963 Beckey/Marts variation that neither confirms nor denies the stored date. No clean
+  authoritative answer found; needs a guidebook (Beckey's *Cascade Alpine Guide*) check.
+
+**Clean:** `wa_traverse_of_mount_index` (Main Peak's 5,991 ft matches the majority of sources
+within normal survey variance; the AAC Journal's own "Traverse of Mt. Index" piece corroborates
+the route and its 1950 Beckey/Schoening FA); `wa_true_grit_2` (FA Darin Berdinka 2015, 5.8, 5
+pitches, 590 ft all match Mountain Project/OpenBeta exactly, with Berdinka's own 2015 Cascade
+Climbers post corroborating the new route); `wa_tupshin_peak_east_face` (8,348 ft is within normal
+datum variance of the 8,235-8,347 ft range other sources give); `wa_tye_peak_e_route` (confirmed
+as a real Nov-Apr snowshoe/scramble objective via Skyline Lake, matching the stored season and
+grade); `wa_up_in_arms` (AAC Publications' own route report by co-FA climber Gabe Aeschliman
+confirms the June 4, 2023 FA with Michael Telstad, 6 pitches, 5.11, ~700 ft — an exact match to the
+stored 213 m).
+
+Next batch will continue id-ascending from `wa_upper_north_ridge_w_great_gendarme`.
