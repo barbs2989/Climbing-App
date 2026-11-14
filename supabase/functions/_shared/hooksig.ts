@@ -1,4 +1,4 @@
-// Signed database hooks (0424). The database signs "<timestamp>.<kind>.<id>" with HMAC-SHA256 and a
+// Signed database hooks (0427). The database signs "<timestamp>.<kind>.<id>" with HMAC-SHA256 and a
 // shared secret; the edge function recomputes it. The timestamp bounds how long a captured call can be
 // replayed. Pure (no Deno.env), so scripts/check-hook-signature.mjs can test it under Node.
 
