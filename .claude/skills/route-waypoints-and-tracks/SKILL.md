@@ -20,7 +20,10 @@ description: Place ClimbMatch route waypoints on the exact map spot (summit, tra
 **Not usable — and agents do not even open them to compare:** AllTrails, Gaia GPS, CalTopo,
 Strava, Wikiloc, Peakbagger tracks, Mountain Project / Hiking Project.
 **Tracks already stored from these sources are KEPT** (owner, 2026-11-14); the rule applies
-to new tracks only.
+to new tracks only — **unless the stored line fails the checks below**: a line that is only the
+route's pins joined up (Dragontail Backbone Ridge, 6 points) or has gaps over 500 m (Chair Peak
+NE Buttress, 4 km gaps) is REMOVED and the mapped trail drawn instead. A stored line that passes
+everything but has no timestamps (Mount Si) is kept.
 
 ### What may be drawn
 - A **recorded track** draws as today (ascent blue, descent orange). It must: have ≥10 points
@@ -30,15 +33,21 @@ to new tracks only.
 - With no recording, the **approach may be drawn from USFS/NPS/OSM trail lines**, in its own
   style and labelled *mapped trail*. The off-trail upper part stays blank until a climber
   records it. Never draw a line from the pins, never move track points onto pins.
+- **Mapped-trail measurement:** approach miles and gain may be MEASURED along OSM / USFS trail
+  lines plus the USGS elevation model and lock as a measurement ("mapped-trail measure"), for the
+  on-trail part only (Outer Space: 2.38 mi measured vs 2.5 mi on the page).
 
 ## Waypoints
 
 A pin locks when **two placement methods agree within 50 m**, and (if a track exists) it
 sits within 50 m of the track. Elevation comes from official data, never a website.
+**Mountain Project / OpenBeta coordinates never count as a method** — a lead only (MP had
+Outer Space ~100 km off and Devils Punch Bowl 3 km off). Crag, boulder and ice pins lock from
+an OSM route/crag node plus the app's base check-ins.
 
 | pin type | placed at | second check |
 |---|---|---|
-| `Summit` | the **USGS official summit point, exactly** (not moved to the DEM high point); elevation = the **published official figure** (land manager / survey), USGS elevation model only as fallback | a second USGS feature for the top (e.g. "Columbia Crest" within 6 m of "Mount Rainier"); track reaches it |
+| `Summit` | the **USGS official summit point, exactly** (not moved to the DEM high point) — **except when that point is more than 50 m from the climbed summit / named feature or its high ground** (Mount Si: the USGS point is on the north knob, ~125 m from the Haystack): then the feature wins (OSM + elevation model) and the gap is recorded; elevation = the **published official figure** (land manager / survey), USGS elevation model only as fallback | a second USGS feature for the top (e.g. "Columbia Crest" within 6 m of "Mount Rainier"); track reaches it |
 | `Trailhead` | the **parking lot** (the *Drive here* button's target), from an OSM parking/trailhead node | USFS / recreation.gov trailhead point |
 | `Junction` | the exact OSM node where the two mapped trails meet | the junction named in the route text |
 | `Water` | where the named creek crosses the track, or the lake shore nearest it (`scripts/oneoff/add-water-pins.mjs`) | named in the route text |
