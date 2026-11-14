@@ -17,8 +17,12 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   as a pill), **Distance ▾** (Anywhere / Near my zip / Near me now) with **Within ▾** (10 · 25 · 50 · 100 · 200 · 500 mi) beside it when an
   origin is picked, **Discipline ▾**, **Leads ▾** once a roped discipline (sport, trad, ice, mixed, aid) is picked, **Experience ▾**, the **Free this weekend** toggle (`aria-pressed`), the **Only women / men / non-binary
   climbers** switch (`role="switch"`), **Sort ▾** and **More filters** (speed match, available to climb, max distance for the examples; its badge
-  counts those) on the example-list modes, and **My areas · N**. The pills are 44px on a phone and 36px on the website (#3156). The name
+  counts those) on the example-list modes. The pills are 44px on a phone and 36px on the website (#3156). The name
   search is an icon pill (*Name*, `aria-expanded`) beside the title that opens the box. Partner cards stay one per row (owner).
+- **My areas box** (owner 2026-11-14: "a larger and more clear box"): between the title and the pills, signed in. It names every listed
+  area as a chip (tap = edit that listing) over one **+ Add an area** button that opens `MyPartnerAreas`. It replaced the *My areas · N* pill,
+  which read as one more filter, and the two *Edit my areas* links and the *List me here* card under Near my areas. Near my areas with nobody
+  listed shows one-tap next steps (Search anywhere, Pick a wider area, See everyone) instead of grey text.
 - **Leads ▾** (competitor review item 20, the filter half, 2026-11-11): *Leads 5.10a or harder* keeps climbers whose LEAD grade on the
   picked discipline is at least that, on the real lists and the examples alike. The lead grade is read with `profileGradeRows` (a roped
   grade is the lead grade unless its role is "follow"), so a follow-only climber or one with no grade on file does not match; grades
@@ -92,7 +96,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 |---|---|
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes incl. Near my areas, Saved areas (`savedAreaIds`, `onOpenSaved`, `SAVED_SEARCH_LIM`) and listing-based By Area, filters, near/objective/area/browse lists, example cards, route picker, `initialArea` deep link) |
 | `src/components/ListMeInAreaBox.tsx` | `ListMeInAreaBox` — By Area's *List me at <place>* box under the picker (optimistic `savePartnerArea` / `removePartnerArea`, then `onListMe` for dates and types) |
-| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first (pre-set to the home state via `useMyHomeStatePaths`), one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
+| `lib/MyPartnerAreas.jsx` | `MyPartnerAreas` — the My listed areas screen (add/edit/remove a listing, `windowText`): a full-screen view in the 520px column, search first over every area in every state (`useCatalogAreaSearch`, the Add-a-climb picker's search and the Climbs tab's spelling rules; it searched one state from a dropdown until 2026-11-14, measured by `scripts/oneoff/audit-area-search.mjs`), each hit with its type, its trail (*Washington › Index*) and climb count, one-tap suggestions from the climber's own crag climbs and saved areas (`suggestIds`, a wall offered as its crag), date presets This weekend / Next weekend / Pick dates, an ended window flagged on its card |
 | `ClimbMatch.jsx` | `partnersMode` state, mounts `MyPartnerAreas`; `myAreasOpen`, `openMyAreas`, `onFindPartnersInArea`, `ME.matchObjectiveIds` |
 | `src/components/DiscoverTab.tsx` | `DiscoverTab`, the tab body (lifted from App, PR61): the mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides` |
 | `ClimbMatchCore.jsx` | `compat`, `compatParts`, `compatWhy`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
