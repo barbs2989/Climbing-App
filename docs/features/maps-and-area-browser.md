@@ -147,6 +147,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
   Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
   ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
+  **3D** (owner, 2026-11-14) ends its layer row, as on the route map: `Route3DView` opens on the box the flat map shows (`view`), the areas in view (type filter applied, up to 200) as pins in their type colour, each popup giving the climb count and **Open area**.
   Its zoom buttons sit BOTTOM-LEFT (the layer row owns top-left) and a **📍 Me** button sits on the map bottom-right, as on the route map.
   **⤢ Full screen** is a real full-screen view (`position:fixed`, titled "Map · <area>", the place search inside), drawn like the
   route map's. Its title row clears the notch (`safe-area-inset-top`) and leads with **← Back**; the ⤢ on the map becomes an opaque
@@ -212,7 +213,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
    draws from `SLOPE_MIN_ZOOM` (11; coarser pixels read every slope gentler than it is) and magnifies the zoom-15 picture beyond 15.
    It carries `SLOPE_CREDIT` while it is on: Canada's and Mexico's elevation licences make a credit a condition of use (the
    credit-only-where-required rule). `BaseLayerToggle` takes `slope`/`slopeOn`/`setSlopeOn`: a *Slope* button (`aria-pressed`) under
-   Full screen, with a colour key under it when on, stacked in one column with the Snow stepper. Only the route map (`GPXMap`) opts in.
+   Full screen, with a colour key under it when on, stacked in one column with the Snow stepper. Only the route map (`GPXMap`) opts in. `on3d` ends the row with a **3D** button (route map and area map); a five-button row says "Sat" below a 285px row and tightens its padding below 215px (`index.html`, `.cm-lyr-3d`).
 7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation, `acceptFix` discards stale/worse fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
    `fmtFixAcc`/`locateLabel` word the status. The dot is an HTML marker lifted above all other markers; the accuracy ring stays under them (#2411).
    `NearMePanel` re-centres only on the first fix.

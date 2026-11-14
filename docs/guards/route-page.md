@@ -269,7 +269,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:summit-briefing`** asserts that a peak page's **ACROSS EVERY ROUTE HERE** panel states
   what its routes agree on and refuses where they do not. Renders the real `SummitBriefing`
   (`lib/DbAreaBrowser.jsx`) over real catalog rows, so it reads the DB and is **not** a build gate;
-  it runs on every PR and every push to main via `render-guards.yml`, on the **anon key** — `routes`
+  it runs on every PR, and on main every 4 hours, via `render-guards.yml`, on the **anon key** — `routes`
   is publicly readable and CI has no business holding a key that bypasses RLS, the same stance
   `check:field-renders` takes one job over.
   - **THE ACCESS & PERMITS BLOCK WAS REMOVED BY THE OWNER (2026-10-04).** The panel's Permit /
