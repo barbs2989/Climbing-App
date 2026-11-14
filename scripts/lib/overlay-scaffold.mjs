@@ -57,7 +57,10 @@ export const NEEDS_EXTRA_STATE = {
 //   areaTreeOpen: renders as `areaTreeOpen&&selArea`, so a seed STATE is selected first; the tree
 //     opens expanded at it, the longest list it can show.
 //   compareOpen: renders as `wide&&compareOpen`, so the GUARD must also widen the viewport to
-//     `viewport` before loading, or `wide` is false and nothing mounts.
+//     `viewport` before loading, or `wide` is false and nothing mounts. 1100px, not 1280: from
+//     FULL_MIN (1280) the column sits between two side panels and is 592px there (equal sides,
+//     #3259), under the half-a-viewport a guard takes for a popup page, so the view opened and
+//     check:pinned-dismiss saw "nothing". Between WIDE_MIN and FULL_MIN the column is 700px alone.
 //   reviewQueue: renders as `reviewQueue&&isAdmin`, and isAdmin is a DB query on a signed-in admin.
 //     A config that serves `zx` applies ADMIN_GATE, which lets window.__ovAdminGate stand in for it;
 //     only this opener sets that. The queue's own reads fail without an admin, which leaves its
@@ -65,7 +68,7 @@ export const NEEDS_EXTRA_STATE = {
 // crewListOpen has no entry: it is an inline disclosure in the crew finder's results, not a popup.
 export const EXTRA_STATE_OPENERS = {
   areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
-  compareOpen: { viewport: { width: 1280, height: 900 }, open: "setCompareList(ROUTES.slice(0,3));setCompareOpen(true);" },
+  compareOpen: { viewport: { width: 1100, height: 900 }, open: "setCompareList(ROUTES.slice(0,3));setCompareOpen(true);" },
   reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("fieldEdits");' },
 };
 export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
