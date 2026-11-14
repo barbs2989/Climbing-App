@@ -27,7 +27,7 @@ import { clickable } from "./lib/clickable";
 
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
 import { ALPINE_COND_DISCIPLINES } from "./lib/alpineConditions.js";
-import {routeLink,CRAG_CATS,printSheet,gpxDownload,climbsAPeak,wpPlaced,trailheadPoint,_uNum,catOf,C,CAT,ME,routeAscentFt,uElev,uDist,uDistMi,buildConsensus,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,isRecent,pubName,missingFacts,shapeOf,useRealAuthors} from "./ClimbMatchCore.jsx";
+import {routeLink,CRAG_CATS,BASE_CHECKIN_CATS,printSheet,gpxDownload,climbsAPeak,wpPlaced,trailheadPoint,_uNum,catOf,C,CAT,ME,routeAscentFt,uElev,uDist,uDistMi,buildConsensus,MOUNTAINS,enrichRoute,onImgErr,FALLBACK_COVER,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,ALL_CLIMBERS,ROUTES,isHazardTag,gradeLabel,protOf,isRecent,pubName,missingFacts,shapeOf,useRealAuthors} from "./ClimbMatchCore.jsx";
 import RouteMapProfile from "./src/components/RouteMapProfile.tsx";
 import { SaveMapOffline } from "./lib/SaveMapOffline.jsx";
 import DiscIcon from "./src/components/DiscIcon.tsx";
@@ -435,7 +435,7 @@ function RouteDetail({route:routeRow,onBlockClimber,cragPanels,condPanels,safety
   const mapWrapRef=useRef(null);
   /* The base check-ins (0188) are read ONCE here and handed to both the map, which draws them, and
      the panel under it, which lists and records them. */
-  const baseQ=useRouteBaseCheckins(USE_DB?route.id:null);const baseSpots=baseQ.data||EMPTY_ARR;
+  /* No BASE OF THE CLIMB off a sport, trad or top-rope line (BASE_CHECKIN_CATS): the read never runs, so the map draws no base spots either. */const baseQ=useRouteBaseCheckins(USE_DB&&BASE_CHECKIN_CATS.includes(catOf(route))?route.id:null);const baseSpots=baseQ.data||EMPTY_ARR;
   const [wpFocus,setWpFocus]=useState(null);
   const focusWaypoint=useCallback(function(i){
     setWpFocus(function(p){return {i:i,n:((p&&p.n)||0)+1};});
