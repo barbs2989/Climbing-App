@@ -10,6 +10,9 @@
 // The ground is the free, keyless Terrarium elevation tiles on AWS (Tilezen), which answer CORS `*`;
 // MapLibre assumes the other encoding unless told, and a wrong one draws noise rather than failing, so
 // `encoding: "terrarium"` is load-bearing. The picture on it is the route map's own Esri imagery.
+// The AREA map opens it too (owner, 2026-11-14: "I want the 3d map while on the areas view map too"):
+// `view` is the flat map's box, which the 3D view opens on, and the areas in it come as pins with their
+// own colour, icon, climb count and an Open button.
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { C, WP_COLORS, WP_STYLE, wpType } from "../ClimbMatchCore.jsx";
@@ -44,10 +47,13 @@ function loadMaplibre(onReady, onError) {
 const lineFeature = (pts) => ({ type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: pts.map((p) => [p[1], p[0]]) } });
 
 /**
- * @param {{ line?: Array<Array<number|null>>|null, waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null}>,
- *   tracks?: Array<{id:string,color:string,label:string,pts:Array<Array<number|null>>}>, title?: string, onClose: () => void }} props
+ * @param {{ line?: Array<Array<number|null>>|null,
+ *   waypoints?: Array<{lat:number,lng:number,name?:string|null,type?:string|null,color?:string,iconHtml?:string|null,sub?:string|null,onOpen?:() => void,openLabel?:string}>,
+ *   tracks?: Array<{id:string,color:string,label:string,pts:Array<Array<number|null>>}>, title?: string,
+ *   view?: {minLat:number,maxLat:number,minLng:number,maxLng:number}|null, onClose: () => void }} props
  */
-export default function Route3DView({ line, waypoints, tracks, title, onClose }) {
+export default function Route3DView({ line, waypoints, tracks, title, view, onClose }) {
+  const kind = view ? "map" : "route map";
   const div = useRef(null), mapRef = useRef(null);
   const [state, setState] = useState("loading");
   useEffect(() => {
@@ -65,7 +71,7 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
       (line || []).forEach((p) => all.push([p[1], p[0]]));
       (tracks || []).forEach((t) => t.pts.forEach((p) => all.push([p[1], p[0]])));
       (waypoints || []).forEach((w) => all.push([w.lng, w.lat]));
-      if (!all.length) { setState("empty"); return; }
+      if (!all.length && !view) { setState("empty"); return; }
       let map;
       try {
         map = new ml.Map({
@@ -81,7 +87,7 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
             layers: [{ id: "sat", type: "raster", source: "sat" }],
             terrain: { source: "dem", exaggeration: 1.3 },
           },
-          center: all[0], zoom: 12,
+          center: view ? [(view.minLng + view.maxLng) / 2, (view.minLat + view.maxLat) / 2] : all[0], zoom: 12,
         });
       } catch { setState("nogl"); return; }
       mapRef.current = map;
@@ -102,22 +108,35 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
           map.addLayer({ id, type: "line", source: id, paint: { "line-color": t.color, "line-width": 3 }, layout: { "line-join": "round", "line-cap": "round" } });
         });
         (waypoints || []).forEach((w) => {
-          const ty = wpType(w), st = WP_STYLE[ty], col = WP_COLORS[ty] || (st && st.color) || C.blue;
+          const ty = w.color && !w.type ? null : wpType(w), st = ty ? WP_STYLE[ty] : null, col = w.color || (ty && WP_COLORS[ty]) || (st && st.color) || C.blue;
           const el = document.createElement("button");
           el.type = "button";
           el.setAttribute("aria-label", (w.name || ty || "Waypoint") + (ty && w.name ? ", " + ty : ""));
           el.style.cssText = "width:24px;height:24px;border-radius:12px;border:2px solid #fff;background:" + col + ";color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.6)";
-          el.textContent = st ? st.glyph : "•";
+          // iconHtml is the app's own static SVG (discIconMarkup), never text from the data.
+          if (w.iconHtml) el.innerHTML = w.iconHtml; else el.textContent = st ? st.glyph : "•";
           const pop = new ml.Popup({ offset: 14, closeButton: false, maxWidth: "240px" });
           const card = document.createElement("div");
           card.style.cssText = "font-size:13px;line-height:1.4;color:#111";
           const nm = document.createElement("div"); nm.style.fontWeight = "700"; nm.textContent = w.name || ty || "Waypoint"; card.appendChild(nm);
           if (ty && w.name) { const t2 = document.createElement("div"); t2.style.cssText = "font-size:11px;font-weight:700;text-transform:uppercase;opacity:0.7"; t2.textContent = ty; card.appendChild(t2); }
+          if (w.sub) { const s2 = document.createElement("div"); s2.style.cssText = "font-size:12px;opacity:0.8"; s2.textContent = w.sub; card.appendChild(s2); }
+          if (w.onOpen) {
+            const ob = document.createElement("button");
+            ob.type = "button";
+            ob.style.cssText = "margin-top:6px;padding:7px 12px;border-radius:8px;border:none;background:" + C.blueSolid + ";color:#fff;font-size:12.5px;font-weight:700;cursor:pointer";
+            ob.textContent = w.openLabel || "Open";
+            ob.addEventListener("click", w.onOpen);
+            card.appendChild(ob);
+          }
           pop.setDOMContent(card);
           new ml.Marker({ element: el }).setLngLat([w.lng, w.lat]).setPopup(pop).addTo(map);
+          // MapLibre's Marker overwrites the element's aria-label with "Map marker"; put the pin's own name back.
+          el.setAttribute("aria-label", (w.name || ty || "Waypoint") + (ty && w.name ? ", " + ty : "") + (w.sub ? ", " + w.sub : ""));
         });
-        const b = all.reduce((bb, c) => bb.extend(c), new ml.LngLatBounds(all[0], all[0]));
-        map.fitBounds(b, { padding: 60, pitch: 62, bearing: -20, maxZoom: 15, duration: 0 });
+        // The area map opens on the box the flat map showed; the route map on everything it draws.
+        const b = view ? new ml.LngLatBounds([view.minLng, view.minLat], [view.maxLng, view.maxLat]) : all.reduce((bb, c) => bb.extend(c), new ml.LngLatBounds(all[0], all[0]));
+        map.fitBounds(b, { padding: view ? 20 : 60, pitch: 62, bearing: -20, maxZoom: 15, duration: 0 });
         setState("ready");
       });
     }, () => { if (!cancelled) setState("fail"); });
@@ -126,9 +145,9 @@ export default function Route3DView({ line, waypoints, tracks, title, onClose })
   }, []);
   const msg = state === "loading" ? "Loading 3D map…" : state === "fail" ? "The 3D map couldn’t load. Check your connection, or use the flat map." : state === "nogl" ? "This device can’t draw 3D maps. The flat map still works." : state === "empty" ? "This route has nothing to draw in 3D yet." : null;
   return createPortal(
-    <div role="dialog" aria-modal="true" aria-label="3D route map" style={{ position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" }}>
+    <div role="dialog" aria-modal="true" aria-label={"3D " + kind} style={{ position: "fixed", inset: 0, zIndex: 9700, background: C.bg, padding: 12, display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 9, gap: 10 }}>
-        <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title ? title + " · 3D" : "3D route map"}</span>
+        <span style={{ fontSize: 14, fontWeight: 700, color: C.text, minWidth: 0, overflowWrap: "anywhere" }}>{title ? title + " · 3D" : "3D " + kind}</span>
         <button onClick={onClose} aria-label="Close 3D map" style={POP_CLOSE}>✕</button>
       </div>
       <div style={{ position: "relative", flex: 1, minHeight: 0 }}>

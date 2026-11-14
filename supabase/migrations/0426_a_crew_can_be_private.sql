@@ -1,4 +1,4 @@
--- 0421: a crew can be PRIVATE — invite only, unlisted, its roster read only by the people on it.
+-- 0426: a crew can be PRIVATE — invite only, unlisted, its roster read only by the people on it.
 --
 -- Owner decision 2026-11-14 ("why can't we just keep the private crew non public?"), with the new
 -- "Form a crew" picker on a group's Members tab. A group's roster is members-only (0318), but every
@@ -31,7 +31,7 @@ begin;
 alter table public.crews add column if not exists private boolean not null default false;
 
 comment on column public.crews.private is
-  'Invite only (0421): left out of crew_listings and the share link, nobody can ask to join, and the roster (crew_members) is read only by the organiser and the people on it.';
+  'Invite only (0426): left out of crew_listings and the share link, nobody can ask to join, and the roster (crew_members) is read only by the organiser and the people on it.';
 
 create or replace function public.crew_visible_to_me(p_crew uuid)
 returns boolean
@@ -59,7 +59,7 @@ create policy "crew membership readable unless the crew is private" on public.cr
 -- Whether a crew is private, for the insert policy below. DEFINER for the same reason as above: a
 -- requester cannot read the crew row (crews is organiser/members only), so a plain subquery there
 -- reads NULL for every crew — which refused every request to join, listed crews included (caught by
--- scripts/oneoff/verify-0421-private-crew-pglite.mjs before this shipped).
+-- scripts/oneoff/verify-0426-private-crew-pglite.mjs before this shipped).
 create or replace function public.crew_is_private(p_crew uuid)
 returns boolean
 language sql

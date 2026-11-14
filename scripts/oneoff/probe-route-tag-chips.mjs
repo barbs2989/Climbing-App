@@ -47,18 +47,17 @@ for (const id of IDS) {
   if (titles.length) console.log("   blurbs reachable ONLY via title= (no hover on a phone):\n      - " + titles.join("\n      - "));
 }
 
-// --- every FEATURE_TAGS colour must actually EXIST in the palette --------------------------
+// --- every LIST_TAGS colour must actually EXIST in the palette -----------------------------
 // TagChip does `C[t.color] || C.textSub` and `C[t.color+"Bg"] || C.surface`, so a colour name
 // that is not in the palette does not throw and does not look broken - the chip renders in the
 // muted fallback, indistinguishable from a value the table never learned. Only resolving the
 // name against C can tell those apart, and a static guard cannot: C lives in a JSX module.
-const { FEATURE_TAGS, LIST_TAGS } = await import("file://" + path.join(ROOT, "lib", "routeTags.js"));
+// (FEATURE_TAGS was checked here too until the feature chips were removed, 2026-11-05.)
+const { LIST_TAGS } = await import("file://" + path.join(ROOT, "lib", "routeTags.js"));
 let bad = 0;
-for (const [table, defs] of [["FEATURE_TAGS", FEATURE_TAGS], ["LIST_TAGS", LIST_TAGS]]) {
-  for (const [name, def] of Object.entries(defs)) {
-    const fg = C[def.color], bg = C[def.color + "Bg"];
-    if (!fg || !bg) { console.log(`  FAIL ${table}.${name}: colour ${JSON.stringify(def.color)} -> fg=${fg} bg=${bg}`); bad++; }
-  }
+for (const [name, def] of Object.entries(LIST_TAGS)) {
+  const fg = C[def.color], bg = C[def.color + "Bg"];
+  if (!fg || !bg) { console.log(`  FAIL LIST_TAGS.${name}: colour ${JSON.stringify(def.color)} -> fg=${fg} bg=${bg}`); bad++; }
 }
-console.log(`\ncolour resolution: ${Object.keys(FEATURE_TAGS).length} feature + ${Object.keys(LIST_TAGS).length} list entries, ${bad} unresolved`);
+console.log(`\ncolour resolution: ${Object.keys(LIST_TAGS).length} list entries, ${bad} unresolved`);
 if (bad) process.exit(1);

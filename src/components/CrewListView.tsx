@@ -52,7 +52,7 @@ interface CrewListViewCrew {
   cleared?: boolean;
   shareToken?: string;
   shareOn?: boolean;
-  /** Invite only and unlisted (0421). */
+  /** Invite only and unlisted (0426). */
   private?: boolean;
   nudged?: ReadonlyArray<CrewListViewId>;
 }

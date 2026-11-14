@@ -27,7 +27,7 @@ export default function StartCrewSheet({ payload, uid, onClose, onStart, notify 
   const [date, setDate] = useState(p.date || "");
   const [cap, setCap] = useState(() => crewMax({ discipline: firstDisc(area) || "sport" }));
   const [note, setNote] = useState("");
-  // Private (0421): unlisted and invite only. A crew formed from a private group's members starts private.
+  // Private (0426): unlisted and invite only. A crew formed from a private group's members starts private.
   const [priv, setPriv] = useState(!!p.private);
   const [q, setQ] = useState("");
   const [rootId, setRootId] = useState(p.homeStateId || "");

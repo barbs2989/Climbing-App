@@ -272,6 +272,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
     : !loading && isLeaf && routes && routes.length > 1 ? (() => { const cl = areaClassics(routes); if (cl.length) return <ClassicsList rows={cl} dense={wide} onOpen={onOpenRoute} C={C} />; const top = routes.filter(r => r.stars > 0).sort((a, b) => b.stars - a.stars || a.name.localeCompare(b.name)).slice(0, 5); return top.length ? <ClassicsList rows={top} title="Top rated here" dense={wide} onOpen={onOpenRoute} C={C} /> : null; })() : null;
   const metaParts = [area.region && area.region !== area.name ? area.region : null, area.elevation_ft ? (uElev ? uElev(area.elevation_ft) : area.elevation_ft.toLocaleString() + " ft") : null, area.prominence_ft ? ((uElev ? uElev(area.prominence_ft) : area.prominence_ft.toLocaleString() + " ft") + " prom") : null, area.rock ? String(area.rock).replace(/^./, (x: string) => x.toUpperCase()) : null, area.approach_min != null && Number(area.approach_min) > 0 ? Number(area.approach_min) + " min walk" : null].filter(Boolean);
 
+  // Partners here and the area/route search are placed differently on the website and the phone (see their sites below).
+  const partnersEl = PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} /> : null;
+  const searchEl = !loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null;
   const main = (
     <div style={{ minWidth: 0 }}>
       {/* The area's box IS the Climbs tab's header once you are in an area: App's generic "Climbs"
@@ -294,10 +297,11 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
             <div style={{ fontSize: 13, color: C.blue, marginTop: 7 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "") : area.route_count.toLocaleString() + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
           </div>
           {/* The Fire map entry, on the area it opens focused on. Not drawn on a country or state page (owner,
-              2026-10-24): far too broad a place to ask "is anything burning near here?". */}
+              2026-10-24): far too broad a place to ask "is anything burning near here?". Sized like the Save area
+              button above it (34px tall, 12px text; owner, 2026-11-14) — it was a 44px button that outweighed the page. */}
           {onFireMap && area.area_type !== "country" && area.area_type !== "state" ? (
-            <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 7, minHeight: 44, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 11, padding: "0 14px", fontSize: 14, fontWeight: 800, cursor: "pointer", whiteSpace: "nowrap" }}>
-              <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
+            <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ flexShrink: 0, display: "inline-flex", alignItems: "center", gap: 5, height: 34, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 9, padding: "0 12px", fontSize: 12, fontWeight: 800, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
               {"Fire map"}
             </button>
           ) : null}
@@ -310,6 +314,9 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
         {chartable ? <GradeSpreadDisclosure first stats={stats.data} loading={stats.isLoading} error={stats.error} C={C} discOptions={discOptions} onDisc={onFinder} onGrade={onGrade} /> : null}
         {showAbout ? <AboutCard area={area} C={C} onEdit={editOn} flat first={!chartable} /> : null}
         <AreaActionRow C={C} first={!chartable && !showAbout} routeCount={area.route_count} onFinder={() => onFinder()} inlineDiscs={wide && chartable ? inlineDiscs : []} myGrades={myGrades} onFindInline={fl => onFinder(fl)} objectivesHere={objectivesHere} onObjectives={onObjectives} onNear={onNear} />
+        {/* DESKTOP: the area/route search sits directly under the Route finder · Objectives · Map row (owner,
+            2026-11-14), not below the facts and Partners cards. The phone keeps it after the cards. */}
+        {wide && searchEl ? <div style={{ padding: "12px 14px 0", borderTop: "1px solid " + C.border }}>{searchEl}</div> : null}
         {!leftEl && childRows ? <div style={{ padding: "12px 14px 4px", borderTop: "1px solid " + C.border }}>{childList("section")}</div> : null}
         {classicsEl}
         {area.area_type !== "world" && area.area_type !== "country" ? <AreaPhotoStrip area={{ id: String(area.id), name: area.name }} C={C} signedIn={!!(myId || uid)} onSignIn={onSignIn} onOpenRoute={r => onOpenRoute(r as unknown as RouteRowRoute)} /> : null}
@@ -320,8 +327,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       </div>
 
       {formation ? <AreaFactsCard area={area} C={C} uElev={uElev} onEdit={editOn} loggedMonths={wide && logged.data ? logged.data : null} /> : null}
-      {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} onStartCrew={onStartCrew} onCrewsHere={onCrewsHere} onGroupsHere={onGroupsHere} openCrewCountAt={openCrewCountAt} /> : null}
-      {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} endRef={listEndRef} /> : null}
+      {wide ? null : partnersEl}
+      {wide ? null : searchEl}
 
       {/* Sits directly above the route rows it summarises. It renders nothing unless the routes support it. */}
       {!loading && routes && routes.length ? <SummitBriefing area={area} routes={routes} uElev={uElev} uDistMi={uDistMi} C={C} /> : null}
@@ -398,6 +405,8 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
       {/* DESKTOP: ONE ROW, NOT A STACK (owner 2026-11-05). On a monitor the three prompts sat one under another
           as label-wide buttons down the left of the column; side by side, each is its question with its button
           under it. The phone keeps the stack: a 360px screen has no room for three. */}
+      {/* DESKTOP: Partners here / Crews here sits directly above "Don't see a climb or area here?" (owner, 2026-11-14). */}
+      {wide && partnersEl ? <div style={{ marginTop: 10 }}>{partnersEl}</div> : null}
       {wide ? <div style={{ display: "flex", flexWrap: "wrap", alignItems: "stretch", gap: "12px 14px", marginTop: 10, marginBottom: 16 }}>
         <AddHereFooter area={area} onAddClimb={onAddClimb} onAddArea={onAddArea} cell C={C} />
         {editOn ? <div style={cellBox}>

@@ -1,7 +1,7 @@
-// verify-0421-private-crew-pglite.mjs — replays every migration into PGlite (as check:migration-replay
+// verify-0426-private-crew-pglite.mjs — replays every migration into PGlite (as check:migration-replay
 // does) and then acts as four callers against one PRIVATE crew and one LISTED crew:
 //   organiser, invitee (invited, then accepts), outsider (signed in, on neither), anon.
-// No production database, no service key: run `node scripts/oneoff/verify-0421-private-crew-pglite.mjs`.
+// No production database, no service key: run `node scripts/oneoff/verify-0426-private-crew-pglite.mjs`.
 // Exits 1 on the first broken expectation.
 import fs from "node:fs";
 import path from "node:path";
@@ -115,5 +115,5 @@ ok((await listed("out")).includes(priv.id), "…and then it shows under Join a c
 const flipBack = await as("inv", () => db.query("update public.crews set private = true where id = $1 returning id", [priv.id]));
 ok(!flipBack.e && flipBack.r.rows.length === 0, "a member who is not the organiser cannot change it");
 
-console.log(fails ? `\nverify-0421: ${fails} expectation(s) FAILED` : "\nverify-0421: ok — a private crew stays private, a listed crew is unchanged");
+console.log(fails ? `\nverify-0426: ${fails} expectation(s) FAILED` : "\nverify-0426: ok — a private crew stays private, a listed crew is unchanged");
 process.exit(fails ? 1 : 0);
