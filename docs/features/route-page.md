@@ -136,7 +136,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/OvernightPermit.tsx` | `OvernightPermit` — the OVERNIGHT PERMIT card: what is needed, where to get it, and the issuing agency's page (moved out of RouteDetail.jsx, PR56) |
 | `src/components/BreakdownHandoff.tsx` | `BreakdownHandoff` — the spine and one line between CLIMBING ROUTE and ROUTE BREAKDOWN, counted by `breakdownRows()` (moved out of RouteDetail.jsx, PR56) |
 | `src/components/CragFactRows.tsx` | `CragFactRows` — the rows of one crag fact section: what is on file first, then each missing fact with its own Add (moved out of RouteDetail.jsx, PR56) |
-| `src/components/CragFactSection.tsx` | `CragFactSection` — one crag fact section (WHERE IT STARTS, RACK, GEAR & SAFETY, CONDITIONS — CONDITIONS on the Conditions tab since 2026-11-14, on Overview only for aid): heading with its pencil, then `CragFactRows` (moved out of RouteDetail.jsx, PR56) |
+| `src/components/CragFactSection.tsx` | `CragFactSection` — one crag fact section (WHERE IT STARTS, RACK, GEAR & SAFETY, ROCK & SEASON — formerly CONDITIONS; on the Conditions tab since 2026-11-14, on Overview only for aid): heading with its pencil, then `CragFactRows` (moved out of RouteDetail.jsx, PR56) |
 | `src/components/WallNeighbours.tsx` | `WallNeighbours` — NEXT DOOR: the thin strip under the header facts with the climbs either side of this one on the wall, by `sort_order` (moved out of RouteDetail.jsx, PR56; rendered by RouteDetail since 2026-11-12) |
 | `src/components/BoulderNeighbours.tsx` | `BoulderNeighbours` — ON THIS BOULDER / IN THIS AREA: the problems either side of this one (moved out of RouteDetail.jsx, PR56) |
 | `src/components/RoadReports.tsx` | `RoadReports` — ROAD CONDITIONS: what climbers who drove in said about the road, newest first (moved out of RouteDetail.jsx, PR56) |
@@ -231,7 +231,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/PeakMetadataPanel.tsx` | `PeakMetadataPanel` |
 | `src/components/SeasonalGuidancePanel.tsx` | `SeasonalGuidancePanel` |
 | `src/components/CrowdsPanel.tsx` | `CrowdsPanel` |
-| `src/components/PartnerRequirementsPanel.tsx` | `PartnerRequirementsPanel` |
+| `src/components/PartnerRequirementsPanel.tsx` | `PartnerRequirementsPanel` — Experience, fitness, *Required skills* chips (the prose as stored) and, under them, **Your skills**: which profile skills those phrases ask for are *On your profile* / *Not on your profile yet* (`mySkills` = `meLive.skills`) |
+| `lib/requiredSkills.js` | `requiredSkillKeys`, `skillKeysInPhrase` — read required-skills prose into `SKILLS` keys (rules written against the 1,392 distinct phrases in the repo data; a phrase naming no profile skill maps to nothing) |
 | `src/components/EmptyPanel.tsx` | `EmptyPanel`, the empty state the seasonal and crowds panels share |
 | `src/components/Head.tsx` | `Head`, those panels' card heading |
 | `lib/seasonWindow.js` | `monthRank`, `seasonWindowMonths`, `MONTH_ABBR` (a route's season WINDOW read strictly into months) |

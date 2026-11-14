@@ -24,6 +24,8 @@ const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  // Responses carry per-user results; never let a CDN or browser cache hold one.
+  "Cache-Control": "no-store",
 };
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
@@ -84,7 +86,7 @@ serve(async (req) => {
         "Open reports right now: " + (openCount ?? "?") + ".\n" +
         "Review it in the Supabase dashboard (table user_reports). Target: acted on within 24 hours.\n" +
         (urgent ? "\nIf someone may be in immediate danger, consider contacting local law enforcement; for child exploitation, report to NCMEC (report.cybertip.org).\n" : ""),
-    }, supabase);
+    }, supabase, { pool: "safety" });
     return json({ sent: res.sent, reason: res.sent ? undefined : res.reason });
   } catch (err) {
     console.error("notify-safety-report failed:", err && (err as Error).message);

@@ -333,14 +333,16 @@ for (const d of [...CRAG, "alpine"]) {
 {
   const FACT_LABELS = ["Reputation", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
-  // CONDITIONS (Aspect, Sun, Season, Wet, Rock quality) sits on the CONDITIONS TAB on a discipline that has one
+  // ROCK & SEASON, the old CONDITIONS section (Aspect, Sun, Season, Wet, Rock quality) sits on the CONDITIONS TAB on a discipline that has one
   // (owner, 2026-11-14: "remove the CONDITIONS section, we already have a conditions subtab"). Aid has no
   // Conditions tab (CRAG_SCORE_DISCIPLINES), so it keeps the section on Overview.
   const COND_TAB = ["sport", "trad", "toprope", "bouldering"];
   const COND_FACTS = ["Aspect", "Season", "Rock quality", "Wet"];
-  // Where a crag route's facts render: Overview, plus the Conditions tab where the CONDITIONS section lives.
+  // Its heading is ROCK & SEASON (owner, 2026-11-14): "CONDITIONS" repeated the name of the tab it sits on.
+  const COND_HEAD = "ROCK &amp; SEASON";
+  // Where a crag route's facts render: Overview, plus the Conditions tab where the ROCK & SEASON section lives.
   const factsHtml = (r, d, extra) => render(r, "overview", extra) + (COND_TAB.includes(d) ? render(r, "forecast", extra) : "");
-  const condSegs = (r, d, extra) => { const s = segs(render(r, COND_TAB.includes(d) ? "forecast" : "overview", extra)); const i = s.indexOf("CONDITIONS"); return i < 0 ? s : s.slice(i); };
+  const condSegs = (r, d, extra) => { const s = segs(render(r, COND_TAB.includes(d) ? "forecast" : "overview", extra)); const i = s.indexOf(COND_HEAD); return i < 0 ? s : s.slice(i); };
   for (const d of CRAG) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
     const t = text(html), sg = segs(html);
@@ -356,7 +358,7 @@ for (const d of [...CRAG, "alpine"]) {
     if (!WANT) fail(`ANCHOR LOST: no expected fact list for crag discipline ${d} — add one`);
     const onTab = COND_TAB.includes(d);
     const WANT_OV = (WANT || []).filter((l) => !onTab || !COND_FACTS.includes(l));
-    const OV_HEADS = ["WHERE IT STARTS", "GEAR &amp; SAFETY"].concat(onTab ? [] : ["CONDITIONS"]);
+    const OV_HEADS = ["WHERE IT STARTS", "GEAR &amp; SAFETY"].concat(onTab ? [] : [COND_HEAD]);
     // ONE LINE PER SECTION (owner, 2026-11-13): a crag route lacked 8-11 facts on 95% of 303,571 routes, so
     // the missing ones no longer get a "Not on file yet" row each. Each section lists what it has, then ONE
     // "Not on file yet" line whose every name is its own "+ <Fact>" button (one tap per gap, as before).
@@ -368,19 +370,19 @@ for (const d of [...CRAG, "alpine"]) {
     if (missing.length) fail(`bare ${d} route: these discipline facts have no "+ <Fact>" button on a Not-on-file-yet line: ${missing.join(", ")}`);
     else if (stray.length) fail(`bare ${d} route: ROUTE FACTS offers facts that are not this discipline's (${stray.join(", ")})`);
     else if (oldRows.length) fail(`bare ${d} route: ${oldRows.join(", ")} still render as a "Not on file yet" ROW each — they belong on the section's one line`);
-    else if (lines > 5) fail(`bare ${d} route: ${lines} "Not on file yet" lines — expected at most one per place (the card, WHERE IT STARTS, RACK, GEAR & SAFETY, CONDITIONS)`);
+    else if (lines > 5) fail(`bare ${d} route: ${lines} "Not on file yet" lines — expected at most one per place (the card, WHERE IT STARTS, RACK, GEAR & SAFETY, ROCK & SEASON)`);
     else if (!OV_HEADS.every((h) => sg.includes(h))) fail(`ANCHOR LOST: ${d} overview lacks a ${OV_HEADS.join(" / ").replace("&amp;", "&")} section heading`);
-    else if (onTab && sg.includes("CONDITIONS")) fail(`bare ${d} route: Overview still has a CONDITIONS section — it belongs on the Conditions tab`);
-    else if ([["Location", "WHERE IT STARTS"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"]].concat(onTab ? [] : [["Rock quality", "CONDITIONS"]]).some(([l, h]) => add(l) < sg.indexOf(h)))
-      fail(`bare ${d} route: a fact renders outside its section (Location under WHERE IT STARTS, Anchor under GEAR & SAFETY, Rock quality under CONDITIONS)`);
+    else if (onTab && (sg.includes(COND_HEAD) || sg.includes("CONDITIONS"))) fail(`bare ${d} route: Overview still has a ROCK & SEASON (formerly CONDITIONS) section — it belongs on the Conditions tab`);
+    else if ([["Location", "WHERE IT STARTS"], [d === "bouldering" ? "Landing" : "Anchor", "GEAR &amp; SAFETY"]].concat(onTab ? [] : [["Rock quality", COND_HEAD]]).some(([l, h]) => add(l) < sg.indexOf(h)))
+      fail(`bare ${d} route: a fact renders outside its section (Location under WHERE IT STARTS, Anchor under GEAR & SAFETY, Rock quality under ROCK & SEASON)`);
     else ok(`bare ${d} route: every ${d} fact is a "+ <Fact>" on its section's one Not-on-file-yet line, and nothing else`);
     if (onTab) {
       const cg = segs(cache.get(d + "/forecast") || render(bare(d, "5.9"), "forecast"));
-      const h = cg.indexOf("CONDITIONS");
+      const h = cg.indexOf(COND_HEAD);
       const off = COND_FACTS.filter((l) => cg.indexOf("+ " + l) < 0 || cg.indexOf("+ " + l) < h);
-      if (h < 0) fail(`ANCHOR LOST: bare ${d} route's Conditions tab has no CONDITIONS section heading`);
-      else if (off.length) fail(`bare ${d} route: the Conditions tab's CONDITIONS section lacks a "+ <Fact>" for ${off.join(", ")}`);
-      else ok(`bare ${d} route: CONDITIONS (${COND_FACTS.join(", ")}) is on the Conditions tab, not Overview`);
+      if (h < 0) fail(`ANCHOR LOST: bare ${d} route's Conditions tab has no ROCK & SEASON section heading`);
+      else if (off.length) fail(`bare ${d} route: the Conditions tab's ROCK & SEASON section lacks a "+ <Fact>" for ${off.join(", ")}`);
+      else ok(`bare ${d} route: ROCK & SEASON (${COND_FACTS.join(", ")}) is on the Conditions tab, not Overview`);
     }
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
   }

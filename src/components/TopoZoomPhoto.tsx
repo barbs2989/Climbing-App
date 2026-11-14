@@ -98,7 +98,7 @@ export default function TopoZoomPhoto({photo,active}: TopoZoomPhotoProps){
       style={{position:"relative",overflow:"hidden",width:"100%",maxWidth:ar?"calc(58vh * "+ar+")":"100%",aspectRatio:ar?String(ar):"4 / 3",margin:"0 auto",touchAction:zoomed?"none":"pan-y",cursor:zoomed?"grab":"zoom-in",userSelect:"none",WebkitUserSelect:"none"}}>
       <div style={zoomed?{position:"absolute",left:view.tx,top:view.ty,width:view.W*view.z,height:view.H*view.z}:{position:"absolute",inset:0}}>
         <MediaImg decoding="async" draggable={false} src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} onLoad={function(e: SyntheticEvent<HTMLImageElement>){const t=e.currentTarget;if(t&&t.naturalWidth&&t.naturalHeight)setAr(t.naturalWidth/t.naturalHeight);}} style={TOPO_IMG}/>
-        {active?<TopoLineOverlay points={active.points} variants={active.variants} pins={active.pins} pinSize={20} numbered/>:null}
+        {active?<TopoLineOverlay points={active.points} variants={active.variants} pins={active.pins} pinSize={15} numbered/>:null}
       </div>
     </div>
     <div style={{position:"absolute",right:8,bottom:8,display:"flex",gap:6}}>
