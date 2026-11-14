@@ -118,7 +118,11 @@ for the owner. With fewer sources: do not touch the field; list it under **Dispu
 sites for research for everything, all sessions, etc"; and "i have permission and liscense from these
 sites to access with claude" — this is licensed access, not a workaround): the claude-in-chrome tools, one tab per agent,
 navigate + extract the figures with `javascript_tool` (don't read whole pages into context). Take facts
-and the URL only, never copied text. **Run as many Chrome research agents in parallel as practical**,
+and the URL only, never copied text. **Use as many agents as possible, and agents that have subagents** (owner, 2026-11-14: "use as many
+agents as you can make that a rule", "use agents which have subagents", "make that a rule too"):
+coordinator agents (one per state or region) each spawn their own subagents. While a route is open, **collect
+every field this skill covers, not only the one the batch was started for** (owner: "find as much
+information about each route that you can"). **Run as many Chrome research agents in parallel as practical**,
 each in its own tab, the route list split across them (owner: "open as many tabs for research as you
 can" → "make that a rule"; ~10 at once worked on 2026-11-14) — find pages through each site's own search
 in Chrome so the session's shared WebSearch budget lasts. **Close each tab (`tabs_close_mcp`) as soon as its research is
