@@ -68,8 +68,10 @@ const once = (needle, why) => {
   else bad(`${why} — matched ${n}, expected 1`);
 };
 
-once("useEffect(()=>{if(!accountNeedsOnboarding||onboardPrompted())return;markOnboardPrompted();setOnboardOpen(true);},[accountNeedsOnboarding]);",
-     "the sheet opens off accountNeedsOnboarding, once per device");
+// Since 2026-11-14 setup is REQUIRED for a signed-in account (username, home area, climbing), so for
+// one it opens on every load until done; a guest's optional setup is still offered once per device.
+once("useEffect(()=>{if(!accountNeedsOnboarding)return;if(!(realAuthGate&&signedIn)){if(onboardPrompted())return;markOnboardPrompted();}setOnboardOpen(true);},[accountNeedsOnboarding]);",
+     "the sheet opens off accountNeedsOnboarding: every load for a signed-in account, once per device for a guest");
 once('(accountNeedsOnboarding&&!homeDismiss.includes("climbsetup"))',
      "the Home card is gated on the same predicate, so the prompt and the sheet cannot disagree");
 
@@ -119,8 +121,15 @@ const expect = (label, o, want) => {
 };
 
 expect("a new account with the read resolved and no disciplines NEEDS onboarding", REAL, true);
-expect("...and an established account with disciplines does NOT",
-       { ...REAL, profile: { disciplines: ["sport"] } }, false);
+expect("...and an established account with disciplines and a username does NOT",
+       { ...REAL, profile: { disciplines: ["sport"], username: "alexclimbs" } }, false);
+// THE USERNAME IS REQUIRED (owner, 2026-11-14; 0420 locks it once chosen). An account that finished
+// setup before that rule, or skipped it when it could still be skipped, is asked again -- and the
+// session's `onboarded` flag must not excuse it, since finishing no longer means it was chosen.
+expect("...but an account with disciplines and NO username still NEEDS it",
+       { ...REAL, profile: { disciplines: ["sport"] } }, true);
+expect("...even right after finishing setup in this session",
+       { ...REAL, onboarded: true, profile: { disciplines: ["sport"], username: "" } }, true);
 // THE FLASH. Without `profileLoaded` every established climber matches for the moments before
 // their profile arrives, and the sheet opens at them on every single load.
 expect("...and nobody is judged before the profile read has resolved",
@@ -129,7 +138,7 @@ expect("...and nobody is judged before the profile read has resolved",
 expect("...and a FAILED profile read never opens a blank sheet over a profile we could not load",
        { ...REAL, profileLoaded: true, profileReadFailed: true }, false);
 expect("...and a signed-OUT visitor is not onboarded at", { ...REAL, signedIn: false }, false);
-expect("...and finishing it in this session stops it immediately", { ...REAL, onboarded: true }, false);
+expect("...and finishing it in this session stops it immediately", { ...REAL, onboarded: true, profile: { disciplines: [], username: "alexclimbs" } }, false);
 // The seed/demo path keeps its own signal, and must not start depending on a profile read that
 // never happens there.
 expect("on the seed path `authed` is still the sign-in",

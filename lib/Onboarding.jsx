@@ -2,10 +2,17 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 //
 // FIRST RUN IS A STEPPED SETUP, one question per screen with a progress bar, the shape Strava,
-// AllTrails and Gora all use: welcome -> photo -> home area -> climbing -> about you -> alerts.
-// Every step but CLIMBING (the account fact "has onboarded" is derived from disciplines) can be
-// skipped, and Skip setup leaves from any of them. EDITING (opened over a profile that already has
-// disciplines) is the climbing step alone, as it always was.
+// AllTrails and Gora all use: welcome -> username -> photo -> home area -> climbing -> about you -> alerts.
+//
+// WHAT IS REQUIRED (owner, 2026-11-14). A signed-in account must choose a USERNAME, a HOME AREA and
+// its CLIMBING (disciplines, plus one grade when a picked discipline has a grade ladder); there is
+// no Skip setup for it, only Sign out. The username is saved the moment Continue is pressed, because
+// it is locked once chosen (0420: one change in the first 7 days) and must not wait on the last step.
+// Photo, gender and alerts stay optional ("Not now"). A guest, with no account to keep anything in,
+// can still skip the lot. Zip and photo are asked for where they matter instead: Partners asks for a
+// zip before it lists real climbers, and sending a request asks for a photo.
+// EDITING (opened over a profile that already has disciplines) is the climbing step alone, as it
+// always was -- preceded by the username step for an older account that never chose one.
 //
 // Each answer is stored where the profile editor stores it, so the two cannot disagree: the photo
 // is uploaded and saved the moment it is chosen (saveProfileAvatar says why it cannot wait), the
@@ -14,8 +21,10 @@
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useState } from "react";
-import { C, DISC, GENDERS, HERO_BG, HERO_SHEEN, MOUNTAINS, PROFILE_GRADES, VL, YDSL, fuzzyMatch } from "../ClimbMatchCore.jsx";
+import { C, DISC, GENDERS, HERO_BG, HERO_SHEEN, MOUNTAINS, PROFILE_GRADES, VL, YDSL, fuzzyMatch, suggestUsername } from "../ClimbMatchCore.jsx";
 import { saveProfileAvatar, uploadProfilePhoto } from "./db";
+import { saveProfile } from "./auth";
+import { cleanUsername, usernameProblem, usernameSaveError, USERNAME_GRACE_DAYS } from "./username";
 import { homeFromDevice } from "./homeFromDevice";
 import { NOTIF_FLAGS } from "./notif-pref";
 import { POP_BACK } from "./popupChrome.js";
@@ -29,7 +38,10 @@ const NOTIF_COPY = { crew: ["Crew updates", "Day proposals, members joining, rea
 // A Google account's photo, at a size worth keeping: its URL ends in a size suffix (=s96-c).
 const bigGooglePhoto = (u) => String(u || "").replace(/=s\d+(-c)?$/, "=s400-c");
 
-export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePhoto,avatarNow,onAvatarChange,notifPrefs,onNotifChange}){
+// Disciplines with a grade ladder: picking one of these means a grade is asked for before Continue.
+const GRADED_DISC = ["rock", "bouldering", "ice", "mixed", "aid"];
+
+export default function Onboarding({onFinish,onSkip,onSignOut,onUsernameSaved,initial,onHelp,uid,googlePhoto,avatarNow,onAvatarChange,notifPrefs,onNotifChange}){
   const [home,setHome]=useState(initial&&initial.homeArea||"");const [disc,setDisc]=useState(initial&&initial.disciplines||[]);
   const [sg,setSg]=useState(initial&&initial.sportGrade||"N/A");const [tg,setTg]=useState(initial&&initial.tradGrade||"N/A");const [bg,setBg]=useState(initial&&initial.boulderGrade||"N/A");
   /* Ice, mixed and aid have no grade column: their grade lives in `climb_grades` (0237), as the profile
@@ -46,8 +58,14 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
   /* Detected location: the zip is offered for partner search only when the lookup found one, and only with a box the climber can untick. */
   const [locBusy,setLocBusy]=useState(false);const [locErr,setLocErr]=useState("");const [zip,setZip]=useState("");const [useZip,setUseZip]=useState(true);
   const [ava,setAva]=useState(avatarNow||"");const [avaBusy,setAvaBusy]=useState(false);const [avaErr,setAvaErr]=useState("");
+  /* REQUIRED MODE: a real account. Guests keep every skip -- there is no account to require anything of. */
+  const required=!!(uid&&USE_DB);
+  /* Frozen at open: once the username is saved, App's profile (our `initial`) has one, and a live
+     re-read would drop the step from `steps` and shift every later step's index under the climber. */
+  const [needUser]=useState(()=>required&&!((initial&&initial.username)||"").trim());
+  const [un,setUn]=useState(()=>needUser?cleanUsername(suggestUsername((initial&&initial.name)||"")):"");const [unErr,setUnErr]=useState("");const [unBusy,setUnBusy]=useState(false);const [unSaved,setUnSaved]=useState(!needUser);
   /* The photo step needs somewhere to keep the photo: an account. Signed out there is no step rather than one that previews and forgets. */
-  const steps=editing?["climb"]:["intro"].concat(uid&&USE_DB?["photo"]:[],["home","climb","about","alerts"]);
+  const steps=editing?(needUser?["username","climb"]:["climb"]):["intro"].concat(needUser?["username"]:[],required?["photo"]:[],["home","climb","about","alerts"]);
   const [si,setSi]=useState(0);const step=steps[si];const last=si===steps.length-1;
   const next=()=>setSi(i=>Math.min(i+1,steps.length-1));const back=()=>setSi(i=>Math.max(i-1,0));
   const finish=()=>disc.length&&onFinish({/* homeArea is saved into profiles.location, which partner rows print as the climber's city. It sent the picked area's ID ("lcc"), so a raw id reached other climbers. Send what the box shows -- the picked name or the city already on file -- and fall back to `home` so an untouched box never blanks it. */homeArea:(homeQ||"").trim()||home,disciplines:disc,sportGrade:sg,tradGrade:tg,boulderGrade:bg,climbGrades:cg,gender:gender,zip:zip&&useZip?zip:""});
@@ -60,15 +78,24 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
   const chip=(on)=>({padding:"10px 15px",borderRadius:12,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.onSolid:C.textSub,fontSize:14,fontWeight:700,cursor:"pointer"});
   const primary=(ok)=>({flex:2,padding:13,background:ok?C.blueSolid:C.border,color:ok?C.onSolid:C.textMuted,border:"none",borderRadius:12,fontSize:15,cursor:ok?"pointer":"default",fontWeight:800});
   const quiet={flex:1,padding:13,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:12,fontSize:14,cursor:"pointer",fontWeight:600};
-  const climbOk=disc.length>0;
+  /* One grade, when a picked discipline has a ladder: partner matching reads grades, and "N/A" everywhere matched nobody. */
+  const gradeNeeded=disc.some(d=>GRADED_DISC.includes(d));
+  const gradeOk=!gradeNeeded||[sg,tg,bg].some(g=>g&&g!=="N/A")||Object.keys(cg).some(k=>cg[k]&&cg[k].grade);
+  const climbOk=disc.length>0&&gradeOk;
+  const homeOk=!required||!!((homeQ||"").trim()||home);
+  /* Save the username NOW: Continue is the commitment, and the 0420 lock starts here. */
+  const saveUsername=()=>{const u=cleanUsername(un);const p=usernameProblem(u);if(p){setUnErr(p);return;}setUnErr("");setUnBusy(true);saveProfile(uid,{username:u}).then(function(r){if(r&&r.error)throw r.error;setUnBusy(false);setUnSaved(true);if(onUsernameSaved)onUsernameSaved(u);next();}).catch(function(e){setUnBusy(false);setUnErr(usernameSaveError(e,u));});};
+  /* No way out of a required setup but finishing it or signing out. Once the username is saved, an EDITING open may still be cancelled. */
+  const canLeave=!required||(editing&&unSaved);
+  const leave=canLeave?onSkip:undefined;
 
-  return <div onClick={onSkip} role="dialog" aria-label={editing?"Edit your profile":"Set up your profile"} aria-modal="true" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:1300,display:"flex",justifyContent:"center"}}>
+  return <div onClick={leave} role="dialog" aria-label={editing?"Edit your profile":"Set up your profile"} aria-modal="true" style={{position:"fixed",inset:0,background:C.scrimStrong,zIndex:1300,display:"flex",justifyContent:"center"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:520,height:"100%",display:"flex",flexDirection:"column",boxSizing:"border-box",borderLeft:"1px solid "+C.borderLight,borderRight:"1px solid "+C.borderLight}}>
       {/* TOP BAR: back, progress, skip. The intro has no back and no bar -- it is the welcome. */}
       {step!=="intro"?<div style={{padding:"calc(12px + env(safe-area-inset-top)) 14px 10px",display:"flex",alignItems:"center",gap:10,flexShrink:0}}>
         {si>0?<button onClick={back} style={POP_BACK}>← Back</button>:null}
         {editing?<div style={{flex:1}}/>:<div role="progressbar" aria-label="Setup progress" aria-valuemin={1} aria-valuemax={steps.length} aria-valuenow={si+1} aria-valuetext={"Step "+(si+1)+" of "+steps.length} style={{flex:1,height:6,borderRadius:3,background:C.borderLight,overflow:"hidden"}}><div style={{width:((si+1)/steps.length*100)+"%",height:"100%",background:C.blue,borderRadius:3,transition:"width .25s ease"}}/></div>}
-        <button onClick={onSkip} style={{background:"none",border:"none",color:C.textSub,fontSize:13.5,fontWeight:700,cursor:"pointer",padding:"10px 4px",flexShrink:0}}>{editing?"Cancel":"Skip setup"}</button>
+        {canLeave?<button onClick={onSkip} style={{background:"none",border:"none",color:C.textSub,fontSize:13.5,fontWeight:700,cursor:"pointer",padding:"10px 4px",flexShrink:0}}>{editing?"Cancel":"Skip setup"}</button>:onSignOut?<button onClick={onSignOut} style={{background:"none",border:"none",color:C.textSub,fontSize:13.5,fontWeight:700,cursor:"pointer",padding:"10px 4px",flexShrink:0}}>Sign out</button>:null}
       </div>:null}
 
       <div style={{flex:1,minHeight:0,overflowY:"auto",overscrollBehavior:"contain",padding:step==="intro"?0:"8px 20px 20px"}}>
@@ -79,6 +106,14 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
             <div style={{fontSize:14,color:C.textSub,lineHeight:1.5,marginTop:8}}>A few quick questions so we can match you with the right partners and climbs.</div>
           </div>
           <div style={{padding:"20px 22px 8px"}}>{[["shield","Trusted conditions","Beta, live conditions, and trip reports from climbers who were just there."],["partners","Partners & crews","Find climbers near you, check their vouches, and form a crew."],["calendar","Plan every climb","Day-by-day itineraries, a what-to-bring gear list, float plans, and live forecasts."],["award","Log, list & rank","Track ascents, build and share tick-lists, and see where you land on the leaderboard."]].map(f=><div key={f[1]} style={{display:"flex",gap:13,alignItems:"flex-start",marginBottom:15}}><div style={{width:38,height:38,borderRadius:11,background:C.blueBg,border:"1px solid "+C.blueDim,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}><ActionIcon name={f[0]} size={18} color={C.blue}/></div><div><div style={{fontSize:14,fontWeight:700,color:C.text}}>{f[1]}</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.45,marginTop:1}}>{f[2]}</div></div></div>)}</div>
+        </div>:null}
+
+        {step==="username"?<div>
+          {H("Choose your username","This is how other climbers find, mention and vouch for you.")}
+          <label htmlFor="cm-onb-username" style={{display:"block",fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:6,letterSpacing:0.3}}>USERNAME</label>
+          <div style={{display:"flex",alignItems:"center",borderRadius:12,border:"1px solid "+(unErr?C.red:C.blue),background:C.card,overflow:"hidden"}}><span aria-hidden="true" style={{padding:"12px 0 12px 13px",color:C.textMuted,fontSize:15,fontWeight:700}}>@</span><input id="cm-onb-username" autoComplete="username" autoCapitalize="none" spellCheck={false} value={un} onChange={e=>{setUn(cleanUsername(e.target.value));setUnErr("");}} onKeyDown={e=>{if(e.key==="Enter"&&!unBusy)saveUsername();}} placeholder="yourname" aria-invalid={!!unErr} aria-describedby="cm-onb-username-help" style={{flex:1,minWidth:0,padding:"12px 13px 12px 2px",border:"none",background:"transparent",color:C.text,fontSize:15,outline:"none"}}/></div>
+          <div id="cm-onb-username-help" role={unErr?"alert":undefined} style={{fontSize:12.5,color:unErr?C.red:C.textMuted,lineHeight:1.45,marginTop:6}}>{unErr||"Lowercase letters, numbers and underscores."}</div>
+          <div style={{display:"flex",gap:10,alignItems:"flex-start",background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginTop:14,fontSize:12.5,color:C.textSub,lineHeight:1.5}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="lock" size={15} color={C.amber}/></span><span><b style={{color:C.text}}>Choose carefully.</b> You can change it once in the first {USERNAME_GRACE_DAYS} days; after that it’s locked, so climbers always know who they vouched for.</span></div>
         </div>:null}
 
         {step==="photo"?<div>
@@ -104,8 +139,9 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
         {step==="climb"?<div>
           {H(editing?"Edit your climbing":"What do you climb?","Pick everything you do. This is what partners are matched on.")}
           <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:20}}>{Object.keys(DISC).map(k=>{const on=disc.includes(k),cat=DISC[k];return <button key={k} onClick={()=>tog(k)} aria-pressed={on} style={{display:"flex",alignItems:"center",gap:6,padding:"9px 14px",borderRadius:18,border:`1.5px solid ${on?cat.color:C.border}`,background:on?cat.bg:C.surface,color:on?cat.color:C.textSub,fontSize:13.5,fontWeight:700,cursor:"pointer"}}><DiscIcon d={k} size={15}/> {cat.label}</button>;})}</div>
-          <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:8,letterSpacing:0.3}}>YOUR GRADES <span style={{fontWeight:500,textTransform:"none"}}>(optional)</span></div>
+          <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:8,letterSpacing:0.3}}>YOUR GRADES <span style={{fontWeight:500,textTransform:"none"}}>{gradeNeeded?"(pick at least one)":"(optional)"}</span></div>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}}>{[["Sport",sg,setSg,YDSL],["Trad",tg,setTg,YDSL],["Boulder",bg,setBg,VL]].concat(extraGrades.map(g=>[g.label,(cg[g.k]&&cg[g.k].grade)||"N/A",v=>setCgGrade(g.k,v),g.ladder])).map(x=><div key={x[0]}><div style={{fontSize:12,color:C.textMuted,marginBottom:3}}>{x[0]}</div><select aria-label={x[0]+" grade"} value={x[1]} onChange={e=>x[2](e.target.value)} style={{width:"100%",padding:"9px 8px",borderRadius:10,border:`1px solid ${C.border}`,background:C.card,color:C.text,fontSize:13,boxSizing:"border-box"}}><option>N/A</option>{x[1]!=="N/A"&&!x[3].includes(x[1])?<option>{x[1]}</option>:null}{x[3].map(g=><option key={g}>{g}</option>)}</select></div>)}</div>
+          {disc.length&&!gradeOk?<div role="status" style={{fontSize:12.5,color:C.amber,lineHeight:1.45,marginTop:10}}>Add the grade you climb for at least one of these, so partners at your level can find you.</div>:null}
         </div>:null}
 
         {step==="about"?<div>
@@ -121,10 +157,10 @@ export default function Onboarding({onFinish,onSkip,initial,onHelp,uid,googlePho
 
       {/* BOTTOM BAR: the one primary action per step. Climbing is the only step that must be answered. */}
       <div style={{flexShrink:0,padding:"12px 16px calc(14px + env(safe-area-inset-bottom))",borderTop:"1px solid "+C.border,background:C.surface}}>
-        {step==="intro"?<div><div style={{display:"flex",gap:8}}><button onClick={onSkip} style={quiet}>Skip for now</button><button onClick={next} style={primary(true)}>Set up my profile</button></div><div style={{fontSize:12,color:C.textMuted,marginTop:9,textAlign:"center"}}>Takes about a minute.</div><button onClick={onHelp} style={{display:"block",width:"100%",marginTop:8,padding:"8px",background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{"See how ClimbMatch works & read the FAQ →"}</button></div>
+        {step==="intro"?<div><div style={{display:"flex",gap:8}}>{canLeave?<button onClick={onSkip} style={quiet}>Skip for now</button>:null}<button onClick={next} style={primary(true)}>Set up my profile</button></div><div style={{fontSize:12,color:C.textMuted,marginTop:9,textAlign:"center"}}>Takes about a minute.</div><button onClick={onHelp} style={{display:"block",width:"100%",marginTop:8,padding:"8px",background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{"See how ClimbMatch works & read the FAQ →"}</button>{!canLeave&&onSignOut?<button onClick={onSignOut} style={{display:"block",width:"100%",padding:"8px",background:"none",border:"none",color:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Not you? Sign out</button>:null}</div>
         :<div style={{display:"flex",gap:8}}>
-          {step!=="climb"&&!last?<button onClick={next} style={quiet}>Not now</button>:null}
-          {step==="photo"&&!ava&&googlePhoto?<button onClick={function(){takeGooglePhoto(next);}} disabled={avaBusy} style={primary(!avaBusy)}>{avaBusy?"Saving…":"Use my Google photo"}</button>:<button onClick={step==="climb"&&editing?finish:(last?finish:next)} disabled={(step==="climb"||last)&&!climbOk} style={primary(!((step==="climb"||last)&&!climbOk))}>{step==="climb"&&editing?"Save changes":(last?"Finish setup":"Continue")}</button>}
+          {step!=="climb"&&step!=="username"&&!(step==="home"&&required)&&!last?<button onClick={next} style={quiet}>Not now</button>:null}
+          {step==="username"?<button onClick={saveUsername} disabled={unBusy||!un} style={primary(!unBusy&&!!un)}>{unBusy?"Saving…":"Continue"}</button>:step==="home"&&!homeOk?<button disabled style={primary(false)}>Continue</button>:step==="photo"&&!ava&&googlePhoto?<button onClick={function(){takeGooglePhoto(next);}} disabled={avaBusy} style={primary(!avaBusy)}>{avaBusy?"Saving…":"Use my Google photo"}</button>:<button onClick={step==="climb"&&editing?finish:(last?finish:next)} disabled={(step==="climb"||last)&&!climbOk} style={primary(!((step==="climb"||last)&&!climbOk))}>{step==="climb"&&editing?"Save changes":(last?"Finish setup":"Continue")}</button>}
         </div>}
       </div>
     </div>
