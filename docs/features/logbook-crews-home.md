@@ -84,7 +84,11 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   first send, a single peak or a vouch. A PEAK list (Bulgers, 14ers, ADK 46, SPS…) counts a peak only when the climber stood on it:
   a route that can be ticked Summit (alpine, mountaineering, scrambling, ice, mixed) counts only through `summitedLog` (a Summit tick or
   the log's summit answer), and a crag climb on a list peak (a desert tower, a Half Dome face) counts when sent — `topped` in
-  `useCuratedLists`, read by the list card, its Hide done, and the finisher badge alike. Each earned badge carries `on`, the date of the log that crossed the line (a list: the last
+  `useCuratedLists`, read by the list card, its Hide done, and the finisher badge alike. **And only a route that reaches the summit
+  counts at all** (owner, 2026-11-14: "they can't log a bouldering route and get the tick for climbing Castleton Tower"):
+  `peakClimbed` and the roster chip in `routeInList` ask `reachesSummit` (`lib/listSummit.js`), which refuses bouldering and top-rope
+  by discipline and every route the summit audit (`research-data/list-summit-audit/audit.json`, 1,496 routes reviewed) found stopping
+  short: flank crags, gulch ice, start variations, satellite spires, ski descents. Adding a list or peak: see `check:list-summit-audit`. Each earned badge carries `on`, the date of the log that crossed the line (a list: the last
   objective's first tick; null when that log has no date), shown as *✓ Earned <date>* when tapped. Tiers share a `fam`; a profile
   shows the highest earned tier of each, newest first. Your Logbook shows every badge, earned or not, with `cur / tgt` under a
   locked one (a list's finisher only once you have started it); another climber's shows only what they earned, and an empty trophy
