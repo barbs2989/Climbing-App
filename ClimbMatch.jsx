@@ -50,7 +50,6 @@ import LogRoutePicker from "./src/components/LogRoutePicker.tsx";
 import Contributions from "./src/components/Contributions.tsx";
 import LoginScreen from "./src/components/LoginScreen.tsx";
 import Comments from "./src/components/Comments.tsx";
-import Resume from "./src/components/Resume.tsx";
 import PolicyUpdateNotice from "./src/components/PolicyUpdateNotice.tsx";
 import ScreenSkeleton from "./src/components/ScreenSkeleton.tsx";
 import ClimbDaysHeatmap from "./src/components/ClimbDaysHeatmap.tsx";
@@ -73,19 +72,14 @@ import LoadingRows from "./src/components/LoadingRows.tsx";
 import { mergeObjEdit } from "./lib/objKeys.js";
 // The screens App loads on demand, declared once in lib/lazyScreens.js so the components lifted out
 // of App's render (src/components/) share the same lazy() objects.
-import { RouteDetail, Leaderboards, MyPartnerAreas, StartCrewSheet, EditProfileScreen, LegalView, Calendar, Inbox, Help, ShareCard, NotifPanel, AddRoute, AreaSuggestFix, AddArea, TripReport, FireMap } from "./lib/lazyScreens.js";
-import CrewRequestsView from "./src/components/CrewRequestsView.tsx";
+import { RouteDetail, Leaderboards, MyPartnerAreas, StartCrewSheet, EditProfileScreen, LegalView, Calendar, Inbox, Help, ShareCard, NotifPanel, AddRoute, AreaSuggestFix, AddArea, TripReport, FireMap, Resume, CrewRequestsView, CrewListView, GroupsTab, LogbookTab, MeTab, SettingsPrivacySheet, preloadTabScreens } from "./lib/lazyScreens.js";
 import CrewFriendsView from "./src/components/CrewFriendsView.tsx";
-import CrewListView from "./src/components/CrewListView.tsx";
 import DirectChatScreen from "./src/components/DirectChatScreen.tsx";
 import CrewChatScreen from "./src/components/CrewChatScreen.tsx";
 import TodayTab from "./src/components/TodayTab.tsx";
 import RoutesTab from "./src/components/RoutesTab.tsx";
 import DiscoverTab from "./src/components/DiscoverTab.tsx";
-import GroupsTab from "./src/components/GroupsTab.tsx";
 import GroupPlaceSearch from "./src/components/GroupPlaceSearch.tsx";
-import LogbookTab from "./src/components/LogbookTab.tsx";
-import MeTab from "./src/components/MeTab.tsx";
 import { groupVisOf, groupCanHostEvent, groupJoinPath, groupJoinLabel, GROUP_TOPICS, groupWhere } from "./lib/groupRules.js";
 import GroupDiscussionTab from "./src/components/GroupDiscussionTab.tsx";
 import GroupAboutTab from "./src/components/GroupAboutTab.tsx";
@@ -93,7 +87,6 @@ import GroupMembersTab from "./src/components/GroupMembersTab.tsx";
 import GroupEventsTab from "./src/components/GroupEventsTab.tsx";
 import GroupMediaTab from "./src/components/GroupMediaTab.tsx";
 import GroupEventForm from "./src/components/GroupEventForm.tsx";
-import SettingsPrivacySheet from "./src/components/SettingsPrivacySheet.tsx";
 import SettingsDataSheet from "./src/components/SettingsDataSheet.tsx";
 import SettingsMenuSheet from "./src/components/SettingsMenuSheet.tsx";
 import ReviewQueueSheet from "./src/components/ReviewQueueSheet.tsx";
@@ -140,6 +133,8 @@ export default function App(){
      Installed once here by delegation rather than wired into each of the 35 boxes — see the
      note on the implementation in ClimbMatchCore.jsx for why per-call-site would rot. */
   useRichTextareas();
+  // Fetch the non-Today tab chunks once the first screen is up (lib/lazyScreens.js).
+  useEffect(function(){preloadTabScreens();},[]);
   const [tab,setTab]=useState(tabAfterChunkReload),[selRoute,setSelRoute]=useState(null),[routeFrom,setRouteFrom]=useState("routes"),[routeStack,setRouteStack]=useState([]),[msgBack,setMsgBack]=useState("crew"),[msgBackOverlay,setMsgBackOverlay]=useState(null),[chatFromInbox,setChatFromInbox]=useState(false),[homeDismiss,setHomeDismiss]=useState([]),[condExpand,setCondExpand]=useState(false),[cragSort,setCragSort]=useState("grade"),[cragFilter,setCragFilter]=useState("all"),[dateFmt,setDateFmt]=useState(loadDateFmt),[selArea,setSelArea]=useState(null),[routeView,setRouteView]=useState("areas");const [areaTreeOpen,setAreaTreeOpen]=useState(false);const [localComments,setLocalComments]=useState(COMMENTS);const notifyMentions=(txt,candidates,_extra)=>{const ids=extractMentionIds(txt,candidates||[]).filter(function(mid){return mid!==0;});if(!ids.length)return;const names=ids.map(function(mid){const c=(candidates||[]).find(function(x){return x.id===mid;});return c?pubFirst(c):null;}).filter(Boolean);/* "Notified X" claimed a push that does not exist — there is no per-user notification table (0061 is GPS-only), so nothing reaches the mentioned climber. The mention itself is real and visible in the posted text, so say only that. */if(names.length)showToast("Mentioned "+names.join(", "));};
   useEffect(function(){try{window.sessionStorage.setItem(TAB_KEY,tab);}catch(e){}},[tab]);
   useEnrichmentDb();
