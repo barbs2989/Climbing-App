@@ -38945,3 +38945,45 @@ sources but not worth a flag since it doesn't touch any stored field); `wa_west_
 confirmed, approach and route description internally consistent throughout).
 
 Next batch will continue id-ascending from `wa_west_twin_needle_south_route`.
+
+## 2026-11-14 — batch 552 (pass 8)
+
+Checked the next 8 in-scope routes id-ascending from `wa_west_twin_needle_south_route`: Whistler
+Mountain's North Ridge, White Mountain's standard Olympics scramble, Whitehorse Mountain's
+Northwest Shoulder, Winchester Mountain's South Trail/Lookout Route, and all four Witches Tower
+routes (Northwest Buttress, South Face, Southwest Corner, West Buttress). (Three candidates in
+between were skipped as out of scope: `wa_western_dihedral`, `wa_wright_pond`, and `wa_zool_patch`
+all sit on crag areas — `wa_south_face`, `wa_cutthroat_creek_wall_or_little_liberty_bell`, and
+`wa_juno_tower` — not peaks.)
+
+One confirmed error fixed this batch, the same self-consistency pattern as recent batches:
+
+- `wa_whistler_mountain_north_ridge`'s `high_point_ft` was stored as 7,792 ft, but the route's own
+  "Whistler Mountain summit" waypoint already carries 7,790 ft, and so does the parent area row
+  (`wa_whistler_mountain_okanogan`, `elevation_ft` 7,790) — matching the figure Wikipedia most
+  commonly cites for this peak. `high_point_ft` was the one field left disagreeing with everything
+  else about the same summit. Fixed to 7,790 ft.
+
+One item flagged for human review, no fix proposed — a genuine date ambiguity, not a clear error:
+
+- `wa_winchester_mountain_south_trail`'s overview states the 1935 lookout was "restored in 1982"
+  by the Mount Baker Club. Sources agree the club struck its restoration deal with the Forest
+  Service in 1982, but disagree on when the physical restoration finished — one source says "two
+  years later" (~1984), while the structure's own National Register of Historic Places nomination
+  lists "restoration 1985." 1982 may be describing the deal rather than the completed work; no
+  single authoritative source pins down which year the row should cite.
+
+**Clean:** `wa_white_mountain_olympics_scramble` (6,378 ft summit and Mount La Crosse's 6,417 ft,
+0.95 mi away, both match Wikipedia exactly); `wa_whitehorse_mountain_nw_shoulder` (the 1909 Nels
+Bruseth FA is confirmed by both Wikipedia and Beckey's guide; gain, mileage, and the Lone Tree
+Pass/High Pass/glacier route profile all match The Mountaineers' own route page; 6,852 ft matches
+Lists of John's LiDAR-based figure, the most precise source found); `wa_witches_tower_south_face`
+and `wa_witches_tower_southwest_corner` and `wa_witches_tower_west_buttress` (8,566 ft summit
+confirmed by Wikipedia; the Southwest Corner's 5.5 step, Class 4 approach from the col, and 4-ft
+summit slot all match The Mountaineers' own route page exactly); `wa_witches_tower_northwest_buttress`
+(no contradicting source found for its stored FA, though — like the West Buttress's own FA — it
+could not be independently corroborated online either, likely sourced from a print guidebook
+rather than anything web-indexed; left alone per the audit rule against fixing, or casting doubt
+on, a claim with no actual source conflict).
+
+Next batch will continue id-ascending from `wa_witches_tower_west_buttress`.
