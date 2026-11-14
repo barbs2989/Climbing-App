@@ -252,6 +252,7 @@ npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (i
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:challenge-rows # tick-list rows say something true, the tick matches the row, and no row's text overlaps at 390 or 320px
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
+npm run check:list-summit-audit # a peak list ticks only from a route that reaches the SUMMIT; every list peak was audited (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
@@ -259,6 +260,7 @@ npm run check:contrib-field-columns # every editable field has a DB row naming t
 npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
+npm run audit:list-summit-routes -- --check # DB slot: any route on a list peak with no summit verdict yet?
 
 # ── Grades — notes: docs/guards/grades.md ──
 npm run check:grade-parser  # grade_num is parsed in one place, and so is the DISPLAYED grade (in build)
