@@ -1,4 +1,4 @@
--- 0440: the area charts read each area's STORED subtree totals, so a state answers on a cold cache.
+-- 0440: store each area's subtree totals (step 1 of 2; 0447 points the charts at them).
 --
 -- WHY (owner, 2026-11-14: "check on california for me" → "do what you recommend"): 0421 made
 -- area_climb_stats and area_children_grade_counts sum area_route_rollup (each area's OWN routes) over
@@ -27,7 +27,8 @@
 --     descendants carry their own counts when their own paths are rewritten. Watches parent_id and id
 --     too: a path set by the BEFORE trigger (trg_areas_set_path) does not fire an UPDATE OF path trigger.
 --
--- Output of both functions is unchanged; the client is not touched.
+-- This file only builds and fills the store; the chart functions keep reading the 0421 way until 0447,
+-- so a store that is still being filled can never be drawn.
 
 begin;
 
@@ -113,75 +114,54 @@ create trigger trg_areas_path_moves_rollup
   after update of path, parent_id, id on public.areas
   for each row execute function public.areas_path_moves_rollup();
 
--- Backfill under locks that stop route and area writes until commit. Re-runnable: rebuilds the table.
-lock table public.routes in share row exclusive mode;
-lock table public.areas in share row exclusive mode;
-delete from public.area_subtree_rollup;
-insert into public.area_subtree_rollup (area_id, disc, sys, b, n)
-select subpath(a.path, k, 1)::text, x.disc, x.sys, x.b, sum(x.n)
-  from public.area_route_rollup x
-  join public.areas a on a.id = x.area_id
-  cross join lateral generate_series(0, nlevel(a.path) - 2) k
- where a.path is not null
-   and exists (select 1 from public.areas anc where anc.id = subpath(a.path, k, 1)::text)
- group by 1, 2, 3, 4;
+-- REBUILD: the stored rows for every area in p_root's subtree (p_root included), recomputed from
+-- area_route_rollup — or, with p_only_root, the root's rows alone. Deletes and re-inserts under locks
+-- that hold route and area writes until the caller's transaction ends, so a delta the triggers wrote
+-- before the rebuild cannot be counted twice. Returns the rows written.
+--
+-- WHY A FUNCTION, AND IN PIECES (2026-11-14): the first apply of 0440 backfilled every area in one
+-- INSERT and was cancelled by the management API's statement timeout at 2 min 43 s (57014, 17:31 UTC,
+-- during a database slowdown); the whole transaction rolled back. Production is therefore filled one
+-- state per transaction (area_subtree_rebuild(<state>)), then the few areas above the states with
+-- p_only_root. A fresh database (a preview branch, the PGlite replay) is filled by the call at the end
+-- of this file.
+create or replace function public.area_subtree_rebuild(p_root text, p_only_root boolean default false)
+returns integer
+language plpgsql security definer set search_path = public, pg_temp as $$
+declare
+  rp ltree;
+  n integer;
+begin
+  select path into rp from areas where id = p_root;
+  if rp is null then return 0; end if;
+  lock table routes in share row exclusive mode;
+  lock table areas in share row exclusive mode;
+  if p_only_root then
+    delete from area_subtree_rollup where area_id = p_root;
+    insert into area_subtree_rollup (area_id, disc, sys, b, n)
+    select p_root, x.disc, x.sys, x.b, sum(x.n)
+      from area_route_rollup x
+      join areas a on a.id = x.area_id
+     where a.path <@ rp and nlevel(a.path) > nlevel(rp)
+     group by 1, 2, 3, 4;
+  else
+    delete from area_subtree_rollup s using areas a where a.id = s.area_id and a.path <@ rp;
+    insert into area_subtree_rollup (area_id, disc, sys, b, n)
+    select subpath(a.path, k, 1)::text, x.disc, x.sys, x.b, sum(x.n)
+      from area_route_rollup x
+      join areas a on a.id = x.area_id
+      cross join lateral generate_series(nlevel(rp) - 1, nlevel(a.path) - 2) k
+     where a.path <@ rp
+       and exists (select 1 from areas anc where anc.id = subpath(a.path, k, 1)::text)
+     group by 1, 2, 3, 4;
+  end if;
+  get diagnostics n = row_count;
+  return n;
+end $$;
+revoke all on function public.area_subtree_rebuild(text, boolean) from public, anon, authenticated;
 
--- Same output as 0421, now read from the root's own rows plus its stored subtree rows.
-create or replace function public.area_climb_stats(aid text) returns jsonb
-language sql stable set search_path = public, pg_temp as $$
-  with g as materialized (
-    select nullif(x.disc, '') as discipline,
-           nullif(x.sys, '') as grade_system,
-           nullif(x.b, -32768) as b,
-           sum(x.n) as n
-      from (select disc, sys, b, n from area_route_rollup where area_id = aid
-            union all
-            select disc, sys, b, n from area_subtree_rollup where area_id = aid) x
-     where exists (select 1 from areas where id = aid)
-     group by 1, 2, 3
-  )
-  select jsonb_build_object(
-    'total',  coalesce((select sum(n) from g), 0),
-    'graded', coalesce((select sum(n) from g where b is not null), 0),
-    'by_disc', coalesce((
-      select jsonb_agg(jsonb_build_object('disc', discipline, 'n', n) order by n desc, discipline)
-        from (select discipline, sum(n) as n from g where discipline is not null group by 1) d
-    ), '[]'::jsonb),
-    'by_grade', coalesce((
-      select jsonb_agg(jsonb_build_object('sys', grade_system, 'bucket', b, 'n', n) order by grade_system, b)
-        from (select grade_system, b, sum(n) as n from g where b is not null group by 1, 2) q
-    ), '[]'::jsonb)
-  );
-$$;
-grant execute on function public.area_climb_stats(text) to anon, authenticated;
-
--- Same output as 0421: each CHILD (the area one level below the root in the path) with its whole
--- subtree's graded counts — its own rows plus its stored subtree rows.
-create or replace function public.area_children_grade_counts(aid text) returns jsonb
-language sql stable set search_path = public, pg_temp as $$
-  with root as (
-    select path from areas where id = aid
-  ),
-  kids as (
-    select c.id from areas c, root
-     where c.path <@ root.path and nlevel(c.path) = nlevel(root.path) + 1
-  ),
-  g as materialized (
-    select x.child, x.sys, x.b, sum(x.n) as n
-      from (select r.area_id as child, r.sys, r.b, r.n from area_route_rollup r join kids on kids.id = r.area_id
-            union all
-            select s.area_id, s.sys, s.b, s.n from area_subtree_rollup s join kids on kids.id = s.area_id) x
-     where x.b <> -32768 and x.sys <> ''
-     group by 1, 2, 3
-  )
-  select coalesce(jsonb_object_agg(child, rows), '{}'::jsonb)
-    from (
-      select child, jsonb_agg(jsonb_build_object('sys', sys, 'bucket', b, 'n', n) order by sys, b) as rows
-        from g
-       group by child
-    ) q;
-$$;
-revoke all on function public.area_children_grade_counts(text) from public;
-grant execute on function public.area_children_grade_counts(text) to anon, authenticated;
+-- Fresh databases only (see above): fill every tree from its top. Production skips this statement and
+-- runs the per-state rebuild instead.
+select public.area_subtree_rebuild(id) from public.areas where parent_id is null;
 
 commit;
