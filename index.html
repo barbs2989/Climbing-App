@@ -52,6 +52,11 @@
       html { -webkit-text-size-adjust: 100%; }
       * { -webkit-tap-highlight-color: transparent; }
       body { overscroll-behavior-y: none; }
+      /* A sideways swipe on a page changes its tab (lib/pageSwipe.js, 2026-11-14). Chrome also reads a sideways
+         drag on a page with nothing to scroll that way as "go back a page in history" and left the app mid-swipe
+         (measured: a right swipe on a route's Send Reports tab landed on about:blank). This turns off only the
+         browser's in-page history swipe; the phone's own edge-back gesture and every sideways scroller are untouched. */
+      html, body, #appscroll { overscroll-behavior-x: none; }
       /* WCAG 2.4.11 Focus Not Obscured. Below the desktop breakpoint (lib/wideLayout.js WIDE_MIN) the
          nav is a sticky bar at the bottom of the window, and a control scrolled into view by Tab
          could land underneath it. The padding makes the browser stop short of the bar. */
