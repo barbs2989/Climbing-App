@@ -122,7 +122,14 @@ and the URL only, never copied text. **Use as many agents as possible, and agent
 agents as you can make that a rule", "use agents which have subagents", "make that a rule too"):
 coordinator agents (one per state or region) each spawn their own subagents. While a route is open, **collect
 every field this skill covers, not only the one the batch was started for** (owner: "find as much
-information about each route that you can"). **Run as many Chrome research agents in parallel as practical**,
+information about each route that you can"). **One pass per page: on every page an agent opens, it
+takes EVERY route fact the page states before leaving it** — grade, pitches, length, FA, season,
+trailhead and road, distance, gain, loss/regain, high point, times, camps, water, approach and route
+steps, descent, rappels, rack, glacier notes, hazards, permits, emergency — never a gain-only (or any
+single-field) read that moves on (owner, 2026-11-14: "while you are on a page, look for all data and
+information that would fill a route, dont just look at elevation gain and move on" → "make that a
+rule"). **Be efficient with agents:** dispatch chunks on a rolling basis (start the next when one
+finishes) up to the concurrent-subagent cap, rather than a burst that hits it. **Run as many Chrome research agents in parallel as practical**,
 each in its own tab, the route list split across them (owner: "open as many tabs for research as you
 can" → "make that a rule"; ~10 at once worked on 2026-11-14) — find pages through each site's own search
 in Chrome so the session's shared WebSearch budget lasts. **Close each tab (`tabs_close_mcp`) as soon as its research is
