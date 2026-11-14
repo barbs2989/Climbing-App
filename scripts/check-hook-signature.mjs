@@ -1,4 +1,4 @@
-// check:hook-signature — the screen-content hook's signature (0427) agrees on both ends, and refuses
+// check:hook-signature — the screen-content hook's signature (0429) agrees on both ends, and refuses
 // what it should.
 //
 // The database signs with pgcrypto's hmac() in screen_after_insert; the edge function checks with

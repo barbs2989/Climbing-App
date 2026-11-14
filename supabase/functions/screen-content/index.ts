@@ -11,13 +11,13 @@
 // Each is inert until its key is set; the floor (0265's term list) runs regardless.
 //
 // The caller is the database, so there is no user JWT: deploy with --no-verify-jwt. The database
-// SIGNS each call instead (0427: HMAC over timestamp, kind and id, 10-minute freshness), so a forged
+// SIGNS each call instead (0429: HMAC over timestamp, kind and id, 10-minute freshness), so a forged
 // or replayed call is refused before anything is read. Behind that, a caller can only cause a
 // SCREENING of a row that already exists — at most once per row (a per-row rate bucket), under an
 // hourly cap — and screening can only hold, never publish.
 //
 // Deploy:  npx supabase functions deploy screen-content --no-verify-jwt
-// Secrets: SCREEN_HOOK_SECRET (same value as app_secrets.screen_hook_secret, see 0427);
+// Secrets: SCREEN_HOOK_SECRET (same value as app_secrets.screen_hook_secret, see 0429);
 //          ANTHROPIC_API_KEY (text); AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION (images)
 // Wire:    insert into app_settings (key, value) values ('screen_hook_url', '<project>/functions/v1/screen-content');
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
@@ -169,9 +169,9 @@ async function hold(supabase: any, kind: string, id: string, category: string, r
   if (error) { console.error("screening_hold failed:", error.message); return false; }
   return !!data;
 }
-// The database signs each hook call (0427, _shared/hooksig.ts). With SCREEN_HOOK_SECRET unset this
-// accepts unsigned calls, as before 0427, so the code can ship before the secret does; the rollout
-// steps are in 0427_sign_screen_hook.sql.
+// The database signs each hook call (0429, _shared/hooksig.ts). With SCREEN_HOOK_SECRET unset this
+// accepts unsigned calls, as before 0429, so the code can ship before the secret does; the rollout
+// steps are in 0429_sign_screen_hook.sql.
 async function verifyHook(req: Request, kind: string, id: string): Promise<string> {
   const secret = Deno.env.get("SCREEN_HOOK_SECRET");
   if (!secret) return "ok";
