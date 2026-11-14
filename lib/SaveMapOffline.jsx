@@ -39,7 +39,8 @@ function useSavedMap(routeId) {
 
 const btn = { padding: "7px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 12.5, fontWeight: 700, cursor: "pointer", minHeight: 36 };
 
-export function SaveMapOffline({ routeId, notify }) {
+/* `extra` rides in the same row, after the save controls — the desktop rail puts Draw approach there. */
+export function SaveMapOffline({ routeId, notify, extra }) {
   const [info, reload] = useSavedMap(routeId);
   const [busy, setBusy] = useState(false), [prog, setProg] = useState(null);
   const qc = useQueryClient();
@@ -59,8 +60,10 @@ export function SaveMapOffline({ routeId, notify }) {
     unpackRouteOffline(routeId).then(function () { say("Map removed from this device"); }, function () { say("Couldn’t remove the map — it’s still on this device."); })
       .finally(function () { reload(); qc.invalidateQueries({ queryKey: ["pack-meta"] }); });
   };
-  if (info === undefined) return null;
+  if (info === undefined) return extra ? <div style={{ display: "flex", marginTop: 8 }}>{extra}</div> : null;
   const pct = mapPct(info), partial = info && info.missing > 0;
+  // Beside Draw approach in the 300px desktop rail, both buttons have to fit one row.
+  const saveBtn = extra ? { ...btn, padding: "7px 6px", fontSize: 12, whiteSpace: "nowrap", flex: "1 1 auto" } : btn;
   return <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
     {busy ? <span role="status" style={{ fontSize: 12.5, color: C.textSub, fontWeight: 600 }}>{"Saving map… " + (prog && prog.total ? Math.round(100 * prog.done / prog.total) + "%" : "")}</span>
       : info ? <>
@@ -68,7 +71,8 @@ export function SaveMapOffline({ routeId, notify }) {
         {partial ? <button onClick={save} style={btn}>Retry</button> : null}
         <button onClick={remove} aria-label="Remove the saved map from this device" style={{ ...btn, color: C.textSub }}>Remove</button>
       </>
-      : <button onClick={save} style={btn}>⤓ Save map offline</button>}
+      : <button onClick={save} style={saveBtn}>⤓ Save map offline</button>}
+    {extra || null}
   </div>;
 }
 
