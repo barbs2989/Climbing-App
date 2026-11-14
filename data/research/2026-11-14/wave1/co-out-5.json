@@ -1,0 +1,1496 @@
+{
+ "co_half_day_s_work": {
+  "area": "co_ship_s_prow",
+  "note": "",
+  "skip_reason": "DDG found no page for this route; MP Ship's Prow areas checked hold Flagstaff boulders, not this line"
+ },
+ "co_half_peak_northwest_ridge": {
+  "area": "co_half_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/half-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "climb13ers rates the Half Peak NW Ridge route Class 3, with only a brief Class 3 section; rest easy Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Carson Pass trailhead (12,370 ft, 4x4 only)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/half-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Carson Pass TH, 12,370 ft, 4x4 only, camping near trailhead."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13866,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/half-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Half Peak summit listed at 13,866 feet."
+     }
+    ]
+   }
+  ],
+  "note": "climb13ers totals (26 mi / 5,175 ft RT from Carson Pass TH) are for Half Peak climbed together with Quarter Peak; not recorded as this route."
+ },
+ "co_hallett_peak_magistrate": {
+  "area": "co_hallett_peak",
+  "note": "",
+  "skip_reason": "Not in Mountain Project Hallett Peak route list; DDG returned no climbing pages"
+ },
+ "co_hallett_peak_orange_beyond": {
+  "area": "co_hallett_peak",
+  "note": "",
+  "skip_reason": "Not in Mountain Project Hallett Peak route list; DDG returned nothing"
+ },
+ "co_hand_pain_jam": {
+  "area": "co_porky_s_wall",
+  "note": "",
+  "skip_reason": "DDG found only a Rakkup guidebook listing (Castlewood Canyon, Porky's Wall) with no stated facts; MP search rate-limited (429)"
+ },
+ "co_hand_tools": {
+  "area": "co_tool_wall_tool_tower",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 40,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116780531/hand-tools",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 40 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "D. Ranck, 2004",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116780531/hand-tools",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: D. Ranck, 2004."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Rightmost line on Tool Tower; crack starts just right of Mule Too",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116780531/hand-tools",
+      "retrieved_at": "2026-11-14",
+      "fact": "Furthest right route on Tool Tower, starting just right of Mule Too."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Walk off",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116780531/hand-tools",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: walk off."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Finger to hand-size pieces",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116780531/hand-tools",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: finger- to hand-sized gear."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_handies_peak_standard_route_southwest_slopes": {
+  "area": "co_handies_peak_standard_route",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the Handies Peak Southwest Slopes route Class 1."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "American Basin (11,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts at the American Basin trailhead, listed at 11,600 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,500 feet from the American Basin trailhead (2,800 ft from the bottom of the basin road)."
+     },
+     {
+      "url": "https://www.runbikehike.us/hiking/american-basin-handies-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "RunBikeHike lists 2,700 ft of elevation gain for the American Basin Handies Peak hike."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 5.75,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 5.75 miles from the trailhead (7.75 from the bottom of the American Basin road)."
+     },
+     {
+      "url": "https://www.runbikehike.us/hiking/american-basin-handies-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "RunBikeHike lists the out-and-back distance as 5.5 miles."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14058,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed as 14,058 feet."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From Lake City: CO 149 south ~2 mi, then County Road 30 toward Cinnamon Pass, over 20 miles to the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive from Lake City south on CO 149, turn onto County Road 30 toward Cinnamon Pass; over 20 miles to trailhead."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall low, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure moderate, rockfall low, route-finding low, commitment low."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.runbikehike.us/hiking/american-basin-handies-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season given as July through September."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "4-6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.runbikehike.us/hiking/american-basin-handies-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Estimated time 4-6 hours for the out-and-back hike."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No permit or fee",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.runbikehike.us/hiking/american-basin-handies-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page lists the fee as free and no permit required."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_harry_cary": {
+  "area": "co_black_wall_the",
+  "note": "",
+  "skip_reason": "DDG found no climbing page; MP search 429"
+ },
+ "co_harvard_and_columbia_traverse_bypass": {
+  "area": "co_rabbit_ridge",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "North Cottonwood Creek (9,900 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse starts at the North Cottonwood Creek trailhead, 9,900 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total gain 6,100 ft from the trailhead; 4,450 ft from the Horn Fork camp."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 15 from the trailhead; 7 miles from the Horn Fork camp."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Horn Fork camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page gives gain and distance figures starting from a Horn Fork camp."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14424,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest summit on the traverse, Mt. Harvard, listed at 14,424 ft; Mt. Columbia 14,075 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Route skips a long, harder section of the connecting ridge rather than following the crest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com notes the route bypasses a long portion of the Harvard-Columbia ridge because it is far harder."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall considerable, route-finding high, commitment high",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure moderate, rockfall considerable, route-finding high, commitment high."
+     }
+    ]
+   }
+  ],
+  "note": "14ers.com rates its Harvard-Columbia combination Class 2; our row says 3rd, grade not recorded (disagreement)."
+ },
+ "co_heart_of_gratitude": {
+  "area": "co_little_matterhorn",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10b R, Grade III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107809968/heart-of-gratitude",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: trad/alpine, Grade III, 5.10b R."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 550,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107809968/heart-of-gratitude",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 550 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107809968/heart-of-gratitude",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 4 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mitch Musci, Todd Bol, August 2015",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107809968/heart-of-gratitude",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Mitch Musci and Todd Bol, August 2015."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Standard rack to 3 inches, optional #4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107809968/heart-of-gratitude",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: standard rack to 3 inches, #4 optional."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_heat_wave": {
+  "area": "co_otis_flower_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11, Grade III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105844480/heat-wave",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Heat Wave as trad/alpine Grade III, 5.11."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105844480/heat-wave",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105844480/heat-wave",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Doug Byerly, Matt Hobbs, Sari Niccols, 1998",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105844480/heat-wave",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Doug Byerly, Matt Hobbs and Sari Niccols, 1998."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "P1 starts left side of the tower under the obvious roof and pulls the central roof crack (5.11); later a big left-facing dihedral",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105844480/heat-wave",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 1 climbs to and through the middle roof crack (5.11); a later pitch follows the largest left-facing dihedral."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Chossy lower section; route-finding in the middle is confusing",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105844480/heat-wave",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lower part is described as chossy; the contributor got lost mid-route."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_helen_dyer_traverse": {
+  "area": "co_tenmile_range_traverses",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Grade II, mostly Class 3/4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113494700/helendyer-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project: Grade II; most climbing Class 3/4, 5th class if staying on the ridge proper."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Spruce Creek trailhead, south of Breckenridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113494700/helendyer-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Park at the Spruce Creek trailhead just south of Breckenridge."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Up Spruce Creek Road about 1 mile, right toward Crystal Creek and the Wheeler Trail, then a cairned faint trail up Mt. Helen",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113494700/helendyer-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow Spruce Creek Rd ~1 mile, turn toward Crystal Creek/Wheeler Trail, then a faint trail up Helen."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Tenmile Range traverse between Mt. Helen and Father Dyer Peak, either direction; often extended to Crystal Peak",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113494700/helendyer-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Classic traverse linking Mt. Helen and Father Dyer Peak, done either direction, often continued to Crystal Peak."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose rock; no cairns or markers, route-finding and downclimbing needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113494700/helendyer-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Choss is common; no markers or cairns, so route-finding is hard and needs downclimbing."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "No fixed gear; best soloed; crampons and axe in winter",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113494700/helendyer-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "No fixed gear, best done solo; crampons and ice axe essential in winter."
+     }
+    ]
+   }
+  ],
+  "note": "14ers.com has Helen/Father Dyer/Crystal combination (Class 3, 4,100 ft, 7.5 mi RT) - adds Crystal Peak, not the same route; not recorded."
+ },
+ "co_holy_cross_ridge_north_section_from_half_moon_creek": {
+  "area": "co_holy_cross_ridge",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/holy-cross-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "climb13ers rates its Holy Cross Ridge north section route Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Half Moon - Fall Creek trailhead (10,340 ft, passenger car)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/holy-cross-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Half Moon - Fall Creek, 10,340 ft, passenger-car access, camping nearby."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/holy-cross-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Holy Cross Ridge summit listed at 13,850 feet."
+     }
+    ]
+   }
+  ],
+  "note": "climb13ers totals (13 mi / 5,835 ft RT) include UN 13786; not recorded as this route alone."
+ },
+ "co_honcho_boncho_buttress": {
+  "area": "co_fairchild_mountain",
+  "note": "",
+  "skip_reason": "Only MP photo pages and a 1995 AAJ PDF surfaced; not read this pass"
+ },
+ "co_hookah_aroma": {
+  "area": "co_atat_rk_s_vision",
+  "note": "",
+  "skip_reason": "DDG found no climbing page; MP search 429"
+ },
+ "co_hoosier_pass_lincoln_fall_diamond_couloir_the": {
+  "area": "co_hoosier_pass_lincoln_fall",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Snow, Grade III, 40-50 degrees",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106729090/the-diamond-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists it as a Grade III snow route; couloir runs 40 to 50 degrees."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Snow/ski-mountaineering couloir that narrows to about a ski length in places; often paired with Lincoln Falls",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106729090/the-diamond-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Described as a ski-mountaineering snow route, best combined with Lincoln Falls, pinching to ski width in spots."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From the top of Lincoln Falls, climb the rock glacier on climber's right and walk to the headwall below the couloir",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106729090/the-diamond-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir sits in the valley above Lincoln Falls; reach it via the rock glacier on the right to the headwall."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall on warm sunny days; cold windy site, assess avalanche stability",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106729090/the-diamond-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warns of rockfall on warm sunny days and advises checking avalanche stability in this cold, windy spot."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Usually climbed unroped; some rock gear possible in poor-quality side walls",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106729090/the-diamond-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rock gear can go in the side walls if wanted, but rock quality is poor."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_horseshoe_mountain_east_slopes": {
+  "area": "co_horseshoe_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates Horseshoe Mountain East Slopes Class 1."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Fourmile Creek (11,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as Fourmile Creek at 11,600 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain listed as 2,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length listed as 8 miles."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13918,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit listed at 13,918 feet."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure low, rockfall moderate, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure low, rockfall moderate, route-finding low, commitment low."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_hot_brownie": {
+  "area": "co_chiefshead_south_face",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209717/hot-brownie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 150 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Ronca, Carlie Ronca, August 1999",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209717/hot-brownie",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Mark Ronca and Carlie Ronca, 8/99."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Stem and jam the obvious right-facing corner to the top of the wall; starts 30 ft left of Ramp Route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209717/hot-brownie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Right-facing corner system 30 feet left of Ramp Route, climbed to the top of the wall."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Rappel with double ropes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209717/hot-brownie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is a rappel on double ropes."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Set of stoppers, double cams to #3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209717/hot-brownie",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: a set of stoppers and double cams to #3."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_huerfano_peak_south_slopes": {
+  "area": "co_huerfano_peak",
+  "note": "14ers.com only has a combination route (South Slopes with Iron Nipple option: 3,800 ft, 8.75 mi RT, Huerfano/Lily Lake TH 10,700 ft) - includes another summit, so not recorded as this route.",
+  "skip_reason": "14ers.com only has a combination route (South Slopes with Iron Nipple option: 3,800 ft, 8.75 mi RT, Huerfano/Lily Lake TH 10,700 ft) - includes another summit, so not recorded as this route."
+ },
+ "co_humboldt_peak_west_ridge": {
+  "area": "co_humboldt_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates Humboldt Peak West Ridge Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-humboldt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit rates the West Ridge Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Colony Lakes (4WD trailhead, 9,950 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as South Colony Lakes at 9,950 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gain 4,300 ft from the South Colony 4WD trailhead; 2,400 ft from Lower South Colony Lake; 5,500 ft from the 2WD trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-humboldt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit: 4,300 ft gain from the upper 4WD trailhead (5,500 from the 2WD lot)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 10.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 10.5 miles from the 4WD trailhead; 3.75 from Lower South Colony Lake; 16 from the 2WD trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-humboldt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit: 10.5 miles round trip (16 from the 2WD lot)."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lower South Colony Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page gives separate gain and distance figures starting from Lower South Colony Lake."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14068,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed as 14,068 feet."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall moderate, route-finding moderate, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure, rockfall and route-finding moderate; commitment low."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "4WD road to the upper South Colony Lakes trailhead is extremely rough; 2WD lot lower down",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-humboldt-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guide warns the 4WD road to the upper trailhead is extremely rough; trip much longer from the 2WD lot."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_huron_peak_northwest_slopes": {
+  "area": "co_huron_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the Huron Peak Northwest Slopes standard route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-huron-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit rates the Northwest Slopes Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Winfield / Lake Ann trailhead (4WD, 10,575 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as S. Winfield/Lake Ann at 10,575 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gain 3,500 ft from the 4WD trailhead, 3,800 ft from the 2WD trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-huron-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit: 3,500 ft gain from the upper 4WD trailhead (3,800 from the 2WD lot)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 7,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 7 miles from the 4WD trailhead, 11 miles from the 2WD trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-huron-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit: 7 miles round trip (11 from the 2WD lot)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14006,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed as 14,006 feet."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall moderate, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure moderate, rockfall moderate, route-finding low, commitment low."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_i_thought_you_had_it": {
+  "area": "co_fire_tower",
+  "note": "",
+  "skip_reason": "DDG found no page"
+ },
+ "co_ice_mountain_northeast_ridge": {
+  "area": "co_ice_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/ice-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "climb13ers rates the Ice Mountain NE Ridge route Class 3."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Clear Creek / Winfield / Apostles trailhead (10,880 ft, 4x4 only)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/ice-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Clear Creek/Winfield/Apostles at 10,880 ft; vehicle access 4x4 only; camping near trailhead."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3820,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/ice-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip from Clear Creek/Winfield/Apostles TH: 3,820 feet of gain."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 8.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/ice-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip from Clear Creek/Winfield/Apostles TH: 8.4 miles."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13960,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climb13ers.com/colorado-13ers/ice-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ice Mountain summit listed at 13,960 feet."
+     }
+    ]
+   }
+  ],
+  "note": "14ers.com only offers Ice NE Ridge combined with North Apostle, so no second source for the single-peak figures."
+ },
+ "co_ichiban": {
+  "area": "co_tijeras_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Grade III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108988/ichiban",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Ichiban as trad/alpine Grade III."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108988/ichiban",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108988/ichiban",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 10 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "J C Wilks, Denise Wilks, June 13 2000",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108988/ichiban",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: J C Wilks and Denise Wilks, June 13, 2000."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Follows a water course straight to the Tijeras Peak summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108988/ichiban",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route follows a watercourse directly to the summit."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Loose gully on pitch 3; unprotected 5.8X face on pitch 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106108988/ichiban",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch 3 is a gully full of loose material; pitch 4 is an unprotected 5.8X face."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_index_by_fa_route": {
+  "area": "co_index_the",
+  "note": "",
+  "skip_reason": "Only an advcollective aggregator page surfaced; no primary source read"
+ },
+ "co_india": {
+  "area": "co_the_crestones",
+  "note": "",
+  "skip_reason": "DDG found no page for India in the Crestones"
+ },
+ "co_into_darkness": {
+  "area": "co_temple_of_solitude_the",
+  "note": "",
+  "skip_reason": "DDG found no climbing page for Temple of Solitude"
+ },
+ "co_into_the_great_wide_open_5_10c": {
+  "area": "co_chiefshead_south_face",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 150,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209077/into-the-great-wide-open-510c",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route length listed as 150 ft."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Mark Ronca, Carlie Ronca, August 1999",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209077/into-the-great-wide-open-510c",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA: Mark Ronca and Carlie Ronca, 8/99."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Single rappel from fixed stoppers and slings with double 70 m ropes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209077/into-the-great-wide-open-510c",
+      "retrieved_at": "2026-11-14",
+      "fact": "Rappel from fixed stoppers/slings; double 70 m ropes recommended for one rappel from the top."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209077/into-the-great-wide-open-510c",
+      "retrieved_at": "2026-11-14",
+      "fact": "Double 70 m ropes let you descend in a single rappel from the top."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Stoppers, double cams to #4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120209077/into-the-great-wide-open-510c",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: stoppers and a double set of cams to #4."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_invisible_wall": {
+  "area": "co_chasm_view_wall",
+  "note": "",
+  "skip_reason": "MP lists Invisible Wall as an area, AAJ/Alpinist news pages surfaced but not read this pass"
+ },
+ "co_inwood_arete": {
+  "area": "co_quandary_peak_routes",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4, Grade II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Inwood Arete as trad/alpine, Grade II, 5.4."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Steve Mestdagh & Chris Haalend, summer 1985",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Steve Mestdagh and Chris Haalend, summer 1985."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "McCullough Gulch trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts from the McCullough Gulch trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike about a mile from the trailhead to a small lake; route rises directly above its south end",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike roughly one mile to a small lake; the route starts above the lake's south end."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Hard-to-protect 5.4 slab, loose rock pile, short 5.3 pitch to a grassy bench, chimney pitch, then 3rd-class scrambling to the east slopes trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sequence: 5.4 slab, rubble, short 5.3 wall to grassy ridge bench, chimney pitch (felt 5.6), easy 3rd class to the east slopes trail."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the Quandary east slopes (standard) trail; bushwhacking back to McCullough Gulch was very unpleasant",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the east slopes trail; the author found the bushwhack back to McCullough Gulch miserable and suggests walking or hitching the road."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Light rack: set of stoppers, a few tricams and hexes, maybe a few cams; sparse protection",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Suggested light rack of stoppers, some tricams and hexes, optional cams; protection is sparse."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Sparse protection and poor belay anchors; loose rock pile mid-route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105751939/inwood-arete",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page warns protection is sparse, belay anchors can be poor, and a loose rock pile sits mid-route."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ }
+}

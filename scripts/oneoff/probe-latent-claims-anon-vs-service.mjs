@@ -39,8 +39,6 @@ const anon = anonKey();
 // a load-bearing row from one somebody added out of curiosity.
 const TABLES = [
   // Decisions rest on these being empty.
-  ["guide_documents", "the guide application review queue was NOT built on this being 0"],
-  ["guide_profiles", "same decision — the guide surfaces as a whole"],
   ["user_reports", "moderation: no suspension flow was built on this being 0"],
   ["content_reports", "the other reporting surface; same question"],
   ["contributions", "route photos and fix suggestions both live here"],
@@ -50,7 +48,6 @@ const TABLES = [
   ["belay_catches", "flagged (catchesUnavailable) — was reverted once, see #1239/#1248"],
   ["messages", "the LEAK check for check:message-delivery — one row per CI run before 0176 gave the table a DELETE policy; a rising count means teardown is being refused again"],
   ["hazard_votes", "UNFLAGGED — route page hazard votes"],
-  ["inquiries", "UNFLAGGED — the guide dashboard's inquiry list"],
   ["topos", "flagged in RouteDetail (toposUnavailable); is it measurable?"],
   ["verification_records", "no flag by DESIGN — the session is the authority; see #1256"],
   ["blocked_users", "flagged (blockedUnavailable). Was listed here as \"blocks\", which does not exist"],

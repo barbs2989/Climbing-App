@@ -247,37 +247,10 @@ try {
   if (autoOpened) ok(`onboarding AUTO-OPENED for a brand-new real account (${((Date.now() - openT0) / 1000).toFixed(1)}s after the page settled)`);
   else bad("onboarding did not auto-open for a brand-new real account. The account has no disciplines and the profile read resolved, so accountNeedsOnboarding should be true — check that the effect keys on it and that the device preference is not already set for this profile" + traffic());
 
-  // SKIP RATHER THAN COMPLETE, because the card assertion below depends on still needing it.
-  // `onSkip` is ()=>setOnboardOpen(false) and does NOT mark them onboarded, so a climber who
-  // skips still needs the card — which is exactly the state worth measuring.
-  if (autoOpened) {
-    if (!(await clickText("Skip for now"))) dead("the onboarding sheet is open but offers no 'Skip for now' — cannot reach Home to check the card");
-    await settledText(page);
-  }
-
-  // THE CARD IS ON HOME. Asked of the page TEXT, not of a control selector -- an earlier pass
-  // concluded "the card is absent" from a list of controls, which cannot tell a card that did not
-  // render from one the selector did not match.
-  await page.waitForFunction(() => (document.body.innerText || "").includes("Set up your climbing profile"), null, { timeout: 30000 }).catch(() => {});
-  const homeText = await page.evaluate(() => document.body.innerText || "");
-  if (homeText.includes("Set up your climbing profile"))
-    ok("the 'Set up your climbing profile' card is on HOME — the screen a new climber lands on");
-  else bad("the setup card is not on Home. It is gated on (accountNeedsOnboarding && !dismissed); the account has no disciplines and homeDismiss starts empty, so both are satisfied and it should be here" + traffic());
-
-  // AND NOT ON CLIMBS, or the move left a copy behind. A card in two places is worse than a card
-  // in the wrong place: the dismiss button writes one key, so dismissing one would blank both.
-  {
-    if (!(await clickText("Climbs"))) bad("could not open the Climbs tab to confirm the setup card no longer renders there");
-    else {
-      await settledText(page);
-      const climbsText = await page.evaluate(() => document.body.innerText || "");
-      if (climbsText.includes("Set up your climbing profile"))
-        bad("the setup card still renders on the CLIMBS tab as well as Home — the move left a copy behind");
-      else ok("...and it no longer renders on Climbs");
-    }
-    await clickText("Home");
-    await settledText(page);
-  }
+  // NO SKIP, SO NO HOME-CARD CHECK FOR AN ACCOUNT. Since 2026-11-14 (#3306) a signed-in account's
+  // setup cannot be skipped -- Sign out is its only way out -- so the walk can no longer leave the
+  // sheet to look for the Home "Set up your climbing profile" card, and the card is now reached only
+  // by a GUEST (check:onboarding-reach asserts its gate). The walk completes setup from the welcome.
 
   // HOW A CLIMBER REACHES ONBOARDING, established by walking rather than by reading.
   // 1. It AUTO-OPENS on the first load for an account that has not onboarded, asserted above.
@@ -327,15 +300,17 @@ try {
   // database for it below -- the step writes profiles.location, which partner rows print.
   const HOME = "Leavenworth, WA";
   let typedHome = false;
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     const body = await page.evaluate(() => document.body.innerText || "");
     if (body.includes("What do you climb?")) break;
+    // USERNAME (required, saved on Continue): wait out the live availability check, then keep the suggestion.
+    if (body.includes("Choose your username")) await page.waitForFunction(() => !/Checking…/.test(document.body.innerText || ""), null, { timeout: 15000 }).catch(() => {});
     if (body.includes("Where do you mainly climb?")) {
       const box = page.locator('input[aria-label="Search a range, canyon, or peak"]');
       if (await box.count()) { await box.fill(HOME); typedHome = true; }
       if (!(await clickText("Continue"))) dead("the home-area step offers no 'Continue'");
-    } else if (!(await clickText("Not now")) && !(await clickText("Continue"))) {
-      dead("a setup step before 'What do you climb?' offers neither 'Not now' nor 'Continue'. Screen: " + body.slice(0, 300));
+    } else if (!(await clickText("Skip for now")) && !(await clickText("Continue"))) {
+      dead("a setup step before 'What do you climb?' offers neither 'Skip for now' nor 'Continue'. Screen: " + body.slice(0, 300));
     }
     await settledText(page);
   }
@@ -370,12 +345,17 @@ try {
   await settledText(page);
   if (!(await clickText("Continue"))) dead("'Continue' on the climbing step was not clickable — disciplines may not have registered");
   await settledText(page);
-  // GENDER (0359): optional, asked on its own step. Picked so the walk can ask the DB for it.
+  // GENDER (0359): optional, asked on the "About you" step beside experience level. Picked so the walk can ask the DB for it.
   if (!(await clickText("Woman"))) bad("the gender step offered no 'Woman' choice");
   else ok("picked a gender: Woman");
   if (!(await clickText("Continue"))) dead("the gender step offers no 'Continue'");
   await settledText(page);
   if (!(await clickText("Finish setup"))) dead("'Finish setup' was not clickable on the last step");
+  await settledText(page);
+  // THE FINISH SCREEN (2026-11-14): "You're all set", the profile as others see it, next steps.
+  if ((await page.evaluate(() => document.body.innerText || "")).includes("You’re all set")) ok("the finish screen says \"You’re all set\"");
+  else bad("no \"You’re all set\" screen after Finish setup");
+  if (!(await clickText("Go to Home"))) bad("the finish screen offers no 'Go to Home'");
   await settledText(page);
   ok("finished onboarding");
 

@@ -12,6 +12,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/hand-written-sql.md](docs/codebase/hand-written-sql.md) | hand the user SQL to paste into the Supabase SQL Editor |
 | [docs/codebase/route-identity.md](docs/codebase/route-identity.md) | resolve, dedupe, import or write to route rows by id |
 | [docs/codebase/enrichment-prose.md](docs/codebase/enrichment-prose.md) | write researched text into any existing `routes` column |
+| [docs/codebase/research-ledger.md](docs/codebase/research-ledger.md) | research or verify route facts, or touch `route_field_evidence` / the lock rules (skills: `.claude/skills/route-research/`) |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
 | [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
@@ -53,6 +54,7 @@ npm run check:no-module-scope-core-reads # a component core imports BACK must no
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
 npm run check:page-swipe # swiping a page's tabs on a phone (lib/pageSwipe.js): which tab a drag lands on, which touches it leaves to rows/sliders/maps/charts, every tab page still wired (in build)
+npm run check:fix-filter # the "you are here" dot on every map (lib/fixFilter.js): which readings count, the dot smooths jitter standing still but keeps up walking, a coarse first fix frames its ring instead of zooming in (in build)
 npm run check:dead-props # props passed or declared but never read (runs in build + CI)
 npm run check:boot # index.html's boot placeholder AND the Help tour still match the real nav
 npm run check:screen-lists # every guard walks EVERY tab the app has, and no tab it hasn't (in build)
@@ -183,6 +185,7 @@ npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris t
 npm run check:itinerary-shape # a trip plan is day by day or NOTHING, never prose (lib/itineraryShape.js), and every pipeline loader and trip-plan apply script still refuses prose (in build)
 npm run audit:itinerary-shape # does every LIVE trip plan follow that rule? fails on prose; reports gap days (service key)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
+npm run check:leg-loss-regain # the leg cards print the downhill on the way up (Loss) and the uphill on the way back (Regain), measured on the recorded track; a loop's leg gain is the leg, not the outing (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -243,6 +246,7 @@ npm run check:enrichment-traceable # does a climbing_route batch invent anything
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
 npm run audit:hazard-redundancy # how much repetition the KNOWN HAZARDS merge removes (NOT a backlog)
 npm run enrich:apply       # write approach_variants / climbing_route / bivy (--dry first)
+npm run check:research-locks # can a research batch overwrite a field the evidence ledger has locked? (in build)
 
 # ── Contributions and the logbook — notes: docs/guards/contributions-and-logbook.md ──
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
@@ -343,7 +347,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
     fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
     reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and
     prose naming the absent id would fail on its own explanation.
-- `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
+- `discover` — find partners or crews (`partnersMode` is `"partners"` / `"crews"`, whose controls read *Find partners* / *Join a crew*). Only `"partners"` is tested with `partnersMode===`; crews is the else branch. The guide directory (*Hire a guide*, guide applications and the guide dashboard) was removed on 2026-11-14 (owner: "I don't want that anymore").
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
@@ -362,7 +366,7 @@ Read it in three bands:
 
 ### Domain concepts to know
 
-- **Trust & safety** is a first-class theme: `trustScore`/`safetyScore`, vouches, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
+- **Trust & safety** is a first-class theme: vouches, `VERIF` verification states, `RISK_LEVELS`, `SAFETY_ESSENTIALS`/`WATCH` (per-discipline safety advice), and float plans on crews.
 - **Crews** are trip parties around a `routeId` with members, proposed `dates`/`dayAcks`, and a "Ready" state computed by `datesAgreed`/`agreedDate` (everyone confirmed + a day everyone acked).
 - **Conditions consensus** is derived, not stored: `buildConsensus(route.activity)` weights reports by reporter trust and recency (`RECENT_DAYS`, `isRecent`) and extracts top condition tags, hazards (`HAZARD_TAGS`), and best months.
 
