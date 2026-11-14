@@ -19,7 +19,7 @@
 //
 // LOCAL PREVIEW: the dev server with ?ads=preview draws labelled grey boxes in the two slots, the
 // mock-up the owner reviewed the placement on. Never in a build (import.meta.env.DEV).
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ZOOM } from "./wideLayout.js";
 
 export const ADS_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || "";
@@ -76,11 +76,15 @@ export function RailAd() {
  *  PAGE's scroll, by at most: with an ad, the distance to the ad's top (the widgets scroll away, the
  *  ad stays); without one, the amount the column overflows the panel (its last card comes into view,
  *  then it stops), the way Facebook's right column behaves.
- *  @param {import("react").RefObject<HTMLElement | null>} ref the panel's column */
-export function useRailFollow(ref) {
+ *  @param {import("react").RefObject<HTMLElement | null>} ref the panel's column
+ *  @param {boolean} [on] false leaves the panel alone (the left panel while it holds the area list, LeftColumn) */
+export function useRailFollow(ref, on = true) {
   useEffect(() => {
     const el = ref.current, rail = el && el.parentElement;
-    if (!el || !rail) return undefined;
+    if (!on || !el || !rail) return undefined;
+    // Put back the panel's OWN values on cleanup, not "": "" wiped the overflow React drew (wideRail), which
+    // React never redraws, so a panel that stops following (LeftColumn) lost its scroll container.
+    const was = { o: rail.style.overflowY, b: rail.style.overscrollBehavior };
     rail.style.overflowY = "hidden"; rail.style.overscrollBehavior = "auto"; // the wheel over the panel scrolls the PAGE
     let raf = 0;
     const run = () => {
@@ -97,8 +101,30 @@ export function useRailFollow(ref) {
     document.addEventListener("scroll", go, true); window.addEventListener("resize", go);
     const ro = new ResizeObserver(go); ro.observe(el);
     run();
-    return () => { document.removeEventListener("scroll", go, true); window.removeEventListener("resize", go); ro.disconnect(); if (raf) cancelAnimationFrame(raf); el.style.transform = ""; rail.style.overflowY = ""; rail.style.overscrollBehavior = ""; };
-  }, [ref]);
+    return () => { document.removeEventListener("scroll", go, true); window.removeEventListener("resize", go); ro.disconnect(); if (raf) cancelAnimationFrame(raf); el.style.transform = ""; rail.style.overflowY = was.o; rail.style.overscrollBehavior = was.b; };
+  }, [ref, on]);
+}
+
+/** The LEFT PANEL's column. While the area page has drawn its map and sub-areas into #cm-left-panel, that
+ *  list scrolls on its own (owner 2026-11-14: "the area map on the left panel should have its own scroll
+ *  bar"). Any other time it follows the page like the rail, so the wheel over the panel scrolls the PAGE
+ *  (owner 2026-11-14: "the areas scroll should only scroll the areas when they are on areas pages, otherwise
+ *  you should be able to scroll if you are on the left panel"). The column is one div in both modes, so the
+ *  #cm-left-panel portal target the area page holds is never replaced. */
+export function LeftColumn({ children }) {
+  const ref = useRef(null);
+  const [areas, setAreas] = useState(false);
+  useEffect(() => {
+    const p = ref.current && ref.current.querySelector("#cm-left-panel");
+    if (!p) return undefined;
+    const check = () => setAreas(p.style.display !== "none" && p.childElementCount > 0);
+    const mo = new MutationObserver(check);
+    mo.observe(p, { childList: true, attributes: true, attributeFilter: ["style"] });
+    check();
+    return () => mo.disconnect();
+  }, []);
+  useRailFollow(ref, !areas);
+  return <div ref={ref} data-cm-left-col="" data-cm-left-mode={areas ? "areas" : "follow"} style={areas ? { flex: "1 1 auto", minHeight: 0, display: "flex", flexDirection: "column", gap: 14 } : { display: "flex", flexDirection: "column", gap: 14 }}>{children}</div>;
 }
 
 /** A panel's column that follows the page (useRailFollow): the route page's rail (a portal target the
