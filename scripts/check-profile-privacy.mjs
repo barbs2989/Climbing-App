@@ -67,11 +67,8 @@ for (const f of files) {
   catch (e) { await db.exec("rollback").catch(() => {}); dead(`${f} did not replay: ${e.message}`); }
 }
 console.log(`check:profile-privacy: ${files.length} migrations replayed with Supabase's default grants.`);
-// 0434 ships in two steps; until step 2 is a migration, apply it here so the client is tested against it.
-if ((await db.query(`select has_table_privilege('anon', 'public.profiles', 'select') as t`)).rows[0].t) {
-  await db.exec(fs.readFileSync(path.join(ROOT, "supabase", "profile-grants-step2.sql"), "utf8"));
-  console.log("check:profile-privacy: step 2 (supabase/profile-grants-step2.sql) is not a migration yet; applied for this check.");
-}
+// 0435 is step 2 (the column grants). If the table-level grant is still there, the grants never landed.
+if ((await db.query(`select has_table_privilege('anon', 'public.profiles', 'select') as t`)).rows[0].t) dead("anon still holds table-level SELECT on profiles: 0435's column grants are missing");
 
 // ── fixtures: A hides name and photos; B and C are other climbers; C is blocked by A ─────────────────
 const A = "00000000-0000-4000-8000-00000000000a", B = "00000000-0000-4000-8000-00000000000b", C = "00000000-0000-4000-8000-00000000000c";
