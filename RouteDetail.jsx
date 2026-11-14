@@ -64,7 +64,9 @@ import TechStats from "./src/components/TechStats.tsx";
 import WeatherPanel from "./src/components/WeatherPanel.tsx";
 import ConditionsScoreCard from "./src/components/ConditionsScoreCard.tsx";
 import { campingGate } from "./lib/campingGate.js";
-import SuggestFix from "./src/components/SuggestFix.tsx";
+// Suggest-a-fix loads on its own chunk (lib/lazyScreens.js); fetched when idle once a route opens.
+import { SuggestFix, preloadSuggestFix } from "./lib/lazyScreens.js";
+preloadSuggestFix();
 import RoutePlanTab from "./src/components/RoutePlanTab.tsx";
 import RoutePhotosTab from "./src/components/RoutePhotosTab.tsx";
 import RouteReportsTab from "./src/components/RouteReportsTab.tsx";
