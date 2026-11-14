@@ -85,6 +85,7 @@ import RoutesTab from "./src/components/RoutesTab.tsx";
 import DiscoverTab from "./src/components/DiscoverTab.tsx";
 import GroupPlaceSearch from "./src/components/GroupPlaceSearch.tsx";
 import { groupVisOf, groupCanHostEvent, groupJoinPath, groupJoinLabel, GROUP_TOPICS, groupWhere } from "./lib/groupRules.js";
+import { loadSeedGroupJoins, saveSeedGroupJoins } from "./lib/seedGroupJoins.js";
 import GroupDiscussionTab from "./src/components/GroupDiscussionTab.tsx";
 import GroupAboutTab from "./src/components/GroupAboutTab.tsx";
 import GroupMembersTab from "./src/components/GroupMembersTab.tsx";
@@ -124,6 +125,8 @@ const readSharedStash = () => { try { const o = JSON.parse(localStorage.getItem(
 // <body> so no ancestor stacking context can trap it below a sibling overlay.
 // If you add an overlay, keep its zIndex below Z_TOAST — scripts/check-zindex.mjs enforces it.
 const Z_TOAST=1000000;
+/* The example groups' ids (GROUPS is static): their joined state is device-kept, not server-read -- see the my-groups hydration. */
+const _seedGroupIds=new Set(GROUPS.map(function(g){return g.id;}));
 
 /* main.jsx reloads the page when a lazy screen's file is gone after a deploy. Without this the
    climber who tapped Partners landed back on Home and had to tap it again, so the tab is kept in
@@ -478,16 +481,6 @@ useEffect(function(){
     if(!uid||!myBlockQ.data||blockHydratedRef.current)return;blockHydratedRef.current=true;
     setBlocked(myBlockQ.data.map(function(r){return {id:r.blockedId,name:pubNameRow(r.profile)||"Climber",avatar:r.profile&&r.profile.avatar,_dbId:r._dbId};}));
   },[uid,myBlockQ.data]);
-  useEffect(function(){
-    if(!uid||!myGroupsQ.data)return;
-    setCreatedGroups(myGroupsQ.data);
-    setJoinedGroups(myGroupsQ.data.filter(function(g){return g.joined;}).map(function(g){return g.id;}));
-    /* A request I already sent reads as sent after a reload. pendingGroups was never hydrated, so the
-       button offered "Request to join" again and a re-tap hit the swallowed 23505 and toasted a
-       request that was not new. The server decides for DB groups; seed ids keep their local state. */
-    var _dbGids=new Set(myGroupsQ.data.map(function(g){return g.id;}));
-    setPendingGroups(function(p){return p.filter(function(x){return !_dbGids.has(x);}).concat(myGroupsQ.data.filter(function(g){return g.myStatus==="pending";}).map(function(g){return g.id;}));});
-  },[uid,myGroupsQ.data]);
   /* A SHARED POST LINK: ?group=<id>&post=<id>, written by a post's Share sheet (groupPostLink) and opened from the address bar
      or a chat. It WAITS for what it needs -- a session, then the groups this account can see -- because a private group is
      invisible to anyone outside it (0090's RLS) and a real group's posts are members-only (0230). So a link that finds no group
@@ -1195,6 +1188,30 @@ if(uid){setLogs([]);setCondReports([]);setCrews([]);setGivenVouches([]);setNotif
 }
 if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(function(c){return !c._dbId;});});setLogs(function(ls){return ls.filter(function(l){return !l._dbId;});});setGivenVouches(function(vs){return vs.filter(function(v){return !v._dbId;});});setMsgs(function(m){var o={};Object.keys(m).forEach(function(k){if(/^\d+$/.test(k))o[k]=m[k];});return o;});setCrewMsgs(function(m){var o={};Object.keys(m).forEach(function(k){if(String(k).indexOf("db_")!==0)o[k]=m[k];});return o;});/* Friend and block state carry no _dbId — a real entry is one whose id is a uuid — so the filter
    above missed them, and a guest browsing after sign-out saw the last account's friends, requests and blocks. */setConnections(function(cs){return cs.filter(function(c){return !_isUid(c.id);});});setFriendReqIn(function(p){return p.filter(function(x){return !_isUid(x);});});setFriendReqOut(function(p){return p.filter(function(x){return !_isUid(x);});});setBlocked(function(b){return b.filter(function(x){return !_isUid(x.id);});});}},[uid]);
+  /* GROUP MEMBERSHIP HYDRATES BELOW THE SIGN-IN RESET ABOVE, which empties joinedGroups on every uid
+     change. Declared above it (where it used to be), a my-groups result already in the query cache at
+     the transition -- signing out and back in, or switching accounts -- filled the list and was wiped in
+     the same commit; a refetch returning the same rows keeps the same reference, so it never re-ran and
+     every real group you belong to read "Join" again.
+     The server owns real groups only. The EXAMPLE groups (GROUPS, while DEMO_FILLERS is on) have no
+     group_members row to read, so the hydration used to REPLACE the list and drop them -- joining any
+     real group refetches my-groups, which silently un-joined every example group. They are kept here,
+     and remembered on this device by lib/seedGroupJoins.js (the owner asked whether joining persists). */
+  useEffect(function(){
+    var stored=loadSeedGroupJoins(uid);if(!stored)return;
+    setJoinedGroups(function(p){return p.filter(function(x){return !_seedGroupIds.has(x);}).concat(stored.filter(function(x){return _seedGroupIds.has(x);}));});
+  },[uid]);
+  useEffect(function(){
+    if(!uid||!myGroupsQ.data)return;
+    setCreatedGroups(myGroupsQ.data);
+    var _dbJoined=myGroupsQ.data.filter(function(g){return g.joined;}).map(function(g){return g.id;});
+    setJoinedGroups(function(p){return _dbJoined.concat(p.filter(function(x){return _seedGroupIds.has(x)&&_dbJoined.indexOf(x)<0;}));});
+    /* A request I already sent reads as sent after a reload. pendingGroups was never hydrated, so the
+       button offered "Request to join" again and a re-tap hit the swallowed 23505 and toasted a
+       request that was not new. The server decides for DB groups; seed ids keep their local state. */
+    var _dbGids=new Set(myGroupsQ.data.map(function(g){return g.id;}));
+    setPendingGroups(function(p){return p.filter(function(x){return !_dbGids.has(x);}).concat(myGroupsQ.data.filter(function(g){return g.myStatus==="pending";}).map(function(g){return g.id;}));});
+  },[uid,myGroupsQ.data]);
   /* THE TRIP PACK AND THE SAVED AREAS ARE HYDRATED FROM THE DEVICE, AND THIS EFFECT MUST STAY
      BELOW THE SIGN-IN RESET ABOVE. Effects run in declaration order, and that reset clears both
      lists on every `uid` transition — so declared above it, this would fill them and be wiped
@@ -1387,9 +1404,10 @@ if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(functio
       askConfirm({title:"Leave "+cl.name+"?",confirmLabel:"Leave"}).then(function(ok){if(!ok)return;
         if(uid&&cl._db){leaveGroupRow(cl.id,uid).then(function(){myGroupsQ.refetch&&myGroupsQ.refetch();}).catch(function(e){setJoinedGroups(function(p){return p.indexOf(cl.id)>=0?p:[cl.id].concat(p);});showToast("Couldn't leave that group — "+((e&&e.message)||"try again."),3600);});}
         setJoinedGroups(function(p){return p.filter(function(x){return x!==cl.id;});});
+        if(_seedGroupIds.has(cl.id))saveSeedGroupJoins(uid,joinedGroups.filter(function(x){return _seedGroupIds.has(x)&&x!==cl.id;}));
         setGroupMembers(function(m){var arr=(m[cl.id]||cl.memberIds||[]).filter(function(x){return x!==0;});var n=Object.assign({},m);n[cl.id]=arr;return n;});
         if(!cl._db)setGroupMods(function(m){var n=Object.assign({},m);n[cl.id]=(m[cl.id]||cl.moderatorIds||[]).filter(function(x){return x!==0;});return n;});
-        showToast("Left "+cl.name+(uid?"":" on this device — sign in to keep it"));});return;}
+        showToast("Left "+cl.name+(uid?(cl._db?"":" on this device (example group)"):" on this device — sign in to keep it"));});return;}
     if(pend){withdrawGroupReq(cl);return;}
     var _path=groupJoinPath(cl,groupVisOf(cl,groupVis));
     /* Only an organizer or moderator can invite (0178's "invite by manager"); this used to say "a member". */
@@ -1397,9 +1415,10 @@ if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(functio
     var _rules=(cl.rules||[]).length>0;if(_path==="request"){if((cl.joinQuestions||[]).length||_rules){setJoinAsk({mode:"request",groupId:cl.id,answers:(cl.joinQuestions||[]).map(function(){return "";}),agreed:false,err:"",busy:false});return;}sendGroupJoinRequest(cl,[],false);return;}
     if(_rules&&cl._db){setJoinAsk({mode:"join",groupId:cl.id,answers:[],agreed:false,err:"",busy:false});return;}
     setJoinedGroups(function(p){return p.indexOf(cl.id)>=0?p:[cl.id].concat(p);});
+    if(_seedGroupIds.has(cl.id))saveSeedGroupJoins(uid,[cl.id].concat(joinedGroups.filter(function(x){return _seedGroupIds.has(x)&&x!==cl.id;})));
     setGroupMembers(function(m){var arr=(m[cl.id]||cl.memberIds||[]).slice();if(arr.indexOf(0)<0)arr=arr.concat([0]);var n=Object.assign({},m);n[cl.id]=arr;return n;});
     if(uid&&cl._db){joinGroupRow(cl.id,uid).then(function(){myGroupsQ.refetch&&myGroupsQ.refetch();}).catch(function(){setJoinedGroups(function(p){return p.filter(function(x){return x!==cl.id;});});showToast("Couldn't join that group — try again.");});}
-    showToast("Joined "+cl.name+(uid?"":" on this device — sign in to keep it"));};
+    showToast("Joined "+cl.name+(uid?(cl._db?"":" on this device (example group)"):" on this device — sign in to keep it"));};
   /* The label on that button, for both places. A trust group and a private group used to read "Join"
      and then refuse or turn into a request; the label now names the door the tap actually opens. */
   const groupJoinBtnLabel=(cl,long)=>{var joined=joinedGroups.indexOf(cl.id)>=0;if(joined)return (cl._db?(!!uid&&cl.ownerId===uid):(cl.ownerId===0))?(long?"✓ You run this group":"✓ Yours"):(long?tx("✓ Joined — tap to leave"):"✓ Joined");if(pendingGroups.indexOf(cl.id)>=0)return long?tx("Requested · tap to withdraw"):"Requested · undo";var _p=groupJoinPath(cl,groupVisOf(cl,groupVis));return _p==="invite"?"Invite only":_p==="request"?(long?"Request to join":"Request"):(long?"Join group":"Join");};
