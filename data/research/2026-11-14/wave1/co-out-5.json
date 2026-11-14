@@ -1,0 +1,586 @@
+{
+ "co_half_day_s_work": {
+  "area": "co_ship_s_prow",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_half_peak_northwest_ridge": {
+  "area": "co_half_peak",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_hallett_peak_magistrate": {
+  "area": "co_hallett_peak",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_hallett_peak_orange_beyond": {
+  "area": "co_hallett_peak",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_hand_pain_jam": {
+  "area": "co_porky_s_wall",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_hand_tools": {
+  "area": "co_tool_wall_tool_tower",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_handies_peak_standard_route_southwest_slopes": {
+  "area": "co_handies_peak_standard_route",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the Handies Peak Southwest Slopes route Class 1."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "American Basin (11,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts at the American Basin trailhead, listed at 11,600 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,500 feet from the American Basin trailhead (2,800 ft from the bottom of the basin road)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 5.75,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 5.75 miles from the trailhead (7.75 from the bottom of the American Basin road)."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14058,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed as 14,058 feet."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From Lake City: CO 149 south ~2 mi, then County Road 30 toward Cinnamon Pass, over 20 miles to the trailhead",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Drive from Lake City south on CO 149, turn onto County Road 30 toward Cinnamon Pass; over 20 miles to trailhead."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall low, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=hand1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure moderate, rockfall low, route-finding low, commitment low."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_harry_cary": {
+  "area": "co_black_wall_the",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_harvard_and_columbia_traverse_bypass": {
+  "area": "co_rabbit_ridge",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "North Cottonwood Creek (9,900 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse starts at the North Cottonwood Creek trailhead, 9,900 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total gain 6,100 ft from the trailhead; 4,450 ft from the Horn Fork camp."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 15 from the trailhead; 7 miles from the Horn Fork camp."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Horn Fork camp",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page gives gain and distance figures starting from a Horn Fork camp."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14424,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Highest summit on the traverse, Mt. Harvard, listed at 14,424 ft; Mt. Columbia 14,075 ft."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Route skips a long, harder section of the connecting ridge rather than following the crest",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com notes the route bypasses a long portion of the Harvard-Columbia ridge because it is far harder."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall considerable, route-finding high, commitment high",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=harv4",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure moderate, rockfall considerable, route-finding high, commitment high."
+     }
+    ]
+   }
+  ],
+  "note": "14ers.com rates its Harvard-Columbia combination Class 2; our row says 3rd, grade not recorded (disagreement)."
+ },
+ "co_heart_of_gratitude": {
+  "area": "co_little_matterhorn",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_heat_wave": {
+  "area": "co_otis_flower_tower",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_helen_dyer_traverse": {
+  "area": "co_tenmile_range_traverses",
+  "note": "14ers.com has Helen/Father Dyer/Crystal combination (Class 3, 4,100 ft, 7.5 mi RT) - adds Crystal Peak, not the same route; not recorded.",
+  "skip_reason": "14ers.com has Helen/Father Dyer/Crystal combination (Class 3, 4,100 ft, 7.5 mi RT) - adds Crystal Peak, not the same route; not recorded."
+ },
+ "co_holy_cross_ridge_north_section_from_half_moon_creek": {
+  "area": "co_holy_cross_ridge",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_honcho_boncho_buttress": {
+  "area": "co_fairchild_mountain",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_hookah_aroma": {
+  "area": "co_atat_rk_s_vision",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_hoosier_pass_lincoln_fall_diamond_couloir_the": {
+  "area": "co_hoosier_pass_lincoln_fall",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_horseshoe_mountain_east_slopes": {
+  "area": "co_horseshoe_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates Horseshoe Mountain East Slopes Class 1."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Fourmile Creek (11,600 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as Fourmile Creek at 11,600 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain listed as 2,300 ft."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length listed as 8 miles."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13918,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit listed at 13,918 feet."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure low, rockfall moderate, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=201208120738083",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure low, rockfall moderate, route-finding low, commitment low."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_hot_brownie": {
+  "area": "co_chiefshead_south_face",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_huerfano_peak_south_slopes": {
+  "area": "co_huerfano_peak",
+  "note": "14ers.com only has a combination route (South Slopes with Iron Nipple option: 3,800 ft, 8.75 mi RT, Huerfano/Lily Lake TH 10,700 ft) - includes another summit, so not recorded as this route.",
+  "skip_reason": "14ers.com only has a combination route (South Slopes with Iron Nipple option: 3,800 ft, 8.75 mi RT, Huerfano/Lily Lake TH 10,700 ft) - includes another summit, so not recorded as this route."
+ },
+ "co_humboldt_peak_west_ridge": {
+  "area": "co_humboldt_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates Humboldt Peak West Ridge Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Colony Lakes (4WD trailhead, 9,950 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as South Colony Lakes at 9,950 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gain 4,300 ft from the South Colony 4WD trailhead; 2,400 ft from Lower South Colony Lake; 5,500 ft from the 2WD trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 10.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 10.5 miles from the 4WD trailhead; 3.75 from Lower South Colony Lake; 16 from the 2WD trailhead."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lower South Colony Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Page gives separate gain and distance figures starting from Lower South Colony Lake."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14068,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed as 14,068 feet."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall moderate, route-finding moderate, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=humb1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure, rockfall and route-finding moderate; commitment low."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_huron_peak_northwest_slopes": {
+  "area": "co_huron_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates the Huron Peak Northwest Slopes standard route Class 2."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Winfield / Lake Ann trailhead (4WD, 10,575 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead listed as S. Winfield/Lake Ann at 10,575 feet."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gain 3,500 ft from the 4WD trailhead, 3,800 ft from the 2WD trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_rt",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round trip 7 miles from the 4WD trailhead, 11 miles from the 2WD trailhead."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14006,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit elevation listed as 14,006 feet."
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "Exposure moderate, rockfall moderate, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=huro1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Risk factors: exposure moderate, rockfall moderate, route-finding low, commitment low."
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "co_i_thought_you_had_it": {
+  "area": "co_fire_tower",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_ice_mountain_northeast_ridge": {
+  "area": "co_ice_mountain",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_ichiban": {
+  "area": "co_tijeras_peak",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_index_by_fa_route": {
+  "area": "co_index_the",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_india": {
+  "area": "co_the_crestones",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_into_darkness": {
+  "area": "co_temple_of_solitude_the",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_into_the_great_wide_open_5_10c": {
+  "area": "co_chiefshead_south_face",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_invisible_wall": {
+  "area": "co_chasm_view_wall",
+  "note": "",
+  "skip_reason": "not found"
+ },
+ "co_inwood_arete": {
+  "area": "co_quandary_peak_routes",
+  "note": "",
+  "skip_reason": "not found"
+ }
+}

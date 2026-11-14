@@ -1,0 +1,662 @@
+[
+ {
+  "id": "wa_hadley_peak_skyline_divide",
+  "name": "Skyline Divide Route",
+  "area_id": "wa_hadley_peak",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2818,
+   "loss_ft": 2818
+  },
+  "summitElevFt": 7515,
+  "trailheadElevFt": 4250,
+  "priorNote": "WTA skyline-divide: 2,500 ft, 9 mi rt, to 6,563 ft - ridge hike only, not Hadley. besthikesbc.ca: 1,100 m (3,600 ft) via Cougar Divide, a different route. Mountaineers (4,700 ft per snippet) blocked. Stored 2818 may be low but unproven."
+ },
+ {
+  "id": "wa_burnt_boot_peak_north_ridge",
+  "name": "North Ridge",
+  "area_id": "wa_burnt_boot_peak",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": 6540,
+  "trailheadElevFt": 1433,
+  "priorNote": "yellowleaf trip report: ~9,000 ft for a 3-day Burnt Boot/Iapia/Four Brothers loop (whole trip, NE ridge) - not usable."
+ },
+ {
+  "id": "wa_mount_adams_adams_glacier",
+  "name": "Adams Glacier",
+  "area_id": "wa_mount_adams",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5150,
+   "loss_ft": 7680
+  },
+  "summitElevFt": 12276,
+  "trailheadElevFt": 4600,
+  "priorNote": "STORED GAIN LOOKS WRONG: stored 5150 vs pins TH 4600 / summit 12276; stored loss 7680. globalsummitguide.com gives ~7,700 ft (2,345 m) for the NORTH RIDGE from Killen Creek TH (different route, unlabeled one-way/rt). gethighonaltitude.com Adams Glacier post lists \"Length: 5,000 ft\" (route length, no"
+ },
+ {
+  "id": "wa_cosho_peak_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_cosho_peak",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 9970,
+   "loss_ft": 9970
+  },
+  "summitElevFt": 8332,
+  "trailheadElevFt": 3700,
+  "priorNote": "Only a Mountaineers 3-day trip listing (8,420 ft whole trip, blocked) found."
+ },
+ {
+  "id": "wa_mount_lyall_south_route",
+  "name": "Southwest Ridge Route",
+  "area_id": "wa_mount_lyall",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4800,
+   "loss_ft": 4800
+  },
+  "summitElevFt": 7911,
+  "trailheadElevFt": 1109,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wa_emerald_peak_se_ridge",
+  "name": "Southeast Ridge",
+  "area_id": "wa_emerald_peak_entiat",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5272,
+   "loss_ft": 5272
+  },
+  "summitElevFt": 8422,
+  "trailheadElevFt": 3940,
+  "priorNote": "Ledger-only lock of stored 5272. WTA does not name the ridge used (Class 3, several approaches, most direct from N Fork Entiat TH) and gives no length or loss. No second source found."
+ },
+ {
+  "id": "wa_mount_terror_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_mount_terror",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6000,
+   "loss_ft": null
+  },
+  "summitElevFt": 8151,
+  "trailheadElevFt": null,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wa_primus_peak_south_ridge",
+  "name": "South Ridge / McAllister Glacier",
+  "area_id": "wa_primus_peak",
+  "disc": "mountaineering",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": 8510,
+  "trailheadElevFt": 2160,
+  "priorNote": "Only Thunder Creek / Borealis / east ridge reports found (turns-all-year ~6,600 ft from McAllister Camp, not the trailhead). Pin TH 2160 does not match Thunder Creek TH (~1,200 ft)."
+ },
+ {
+  "id": "wa_sinister_peak_southwest_route",
+  "name": "Southwest Route",
+  "area_id": "wa_sinister_peak",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7000,
+   "loss_ft": 5500
+  },
+  "summitElevFt": 8444,
+  "trailheadElevFt": 1450,
+  "priorNote": "SummitPost (blocked) says \"massive elevation gain\" without a number."
+ },
+ {
+  "id": "wa_amphitheater_mountain_west_route",
+  "name": "West Route",
+  "area_id": "wa_amphitheater_mountain",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3000,
+   "loss_ft": null
+  },
+  "summitElevFt": 8358,
+  "trailheadElevFt": 3050,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_corteo_peak_southwest_ridge",
+  "name": "Southwest Ridge / Standard Route",
+  "area_id": "wa_corteo_peak",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5100,
+   "loss_ft": null
+  },
+  "summitElevFt": 8107,
+  "trailheadElevFt": 4855,
+  "priorNote": "lemkeclimbs.com/corteo-peak gives no gain. The stevensong.com Corteo page gives a 50 m drop from Maple Pass (metres only) and no total. Mountaineers (4,910) blocked."
+ },
+ {
+  "id": "wa_mount_lago_south_slope_south_face",
+  "name": "South Slope - South Face (Standard Route)",
+  "area_id": "wa_mount_lago",
+  "disc": "mountaineering",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2800,
+   "loss_ft": 2800
+  },
+  "summitElevFt": 8745,
+  "trailheadElevFt": 2500,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_eldorado_peak_west_arete",
+  "name": "West Arete",
+  "area_id": "wa_main_peak",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6800,
+   "loss_ft": null
+  },
+  "summitElevFt": 8868,
+  "trailheadElevFt": 2164,
+  "priorNote": "The WTA figure is for the Eldorado Creek trailhead to the summit by the standard way up: same trailhead and summit as the West Arete. Stored 6,800 is within 2%. Mountaineers (6,768) was blocked (403); the 10adventures and Outdoor Project pages gave no usable figure."
+ },
+ {
+  "id": "wa_mount_shuksan_price_glacier",
+  "name": "Price Glacier",
+  "area_id": "wa_mount_shuksan_climbs",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6000,
+   "loss_ft": 6000
+  },
+  "summitElevFt": 9131,
+  "trailheadElevFt": 2200,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_gunsight_peak_standard",
+  "name": "Standard Route",
+  "area_id": "wa_middle_peak",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 14000,
+   "loss_ft": 14000
+  },
+  "summitElevFt": 8198,
+  "trailheadElevFt": 1400,
+  "priorNote": "STORED LOOKS WRONG: 14,000 ft is implausible from trailhead to summit (pins 1,400 to 8,198). stephabegg.com north-gunsight-wf gives only per-day segments from Downey Creek (e.g. +5,700/-800 on day 1) and no total, so nothing can be set."
+ },
+ {
+  "id": "wa_lost_peak_pasayten_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_lost_peak_pasayten",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 14000,
+   "loss_ft": 15700
+  },
+  "summitElevFt": 8464,
+  "trailheadElevFt": 2538,
+  "priorNote": "STORED LOOKS WRONG: 14,000 ft gain for one peak from a 2,538 ft trailhead. No open page states a gain for Lost Peak alone (only multi-peak totals; SummitPost/Mountaineers blocked)."
+ },
+ {
+  "id": "wa_southwest_buttress",
+  "name": "Southwest Buttress",
+  "area_id": "wa_dorado_needle",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7000,
+   "loss_ft": 7000
+  },
+  "summitElevFt": 8440,
+  "trailheadElevFt": 2164,
+  "priorNote": "The WTA Dorado Needle page states 6,280 ft gain, highest point 8,440 ft (https://www.wta.org/go-hiking/hikes/dorado-needle). Stored 7,000 differs by ~10.3%. Mountaineers 7,000 ft is blocked (403), so neither can be confirmed; not set."
+ },
+ {
+  "id": "wa_garfield_mountain_preiss_route",
+  "name": "Preiss Route",
+  "area_id": "wa_garfield_mountain",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3200,
+   "loss_ft": 20
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": null,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_concerto_in_c_for_drill_and_hammer",
+  "name": "Concerto in C for Drill and Hammer",
+  "area_id": "wa_south_face",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2200,
+   "loss_ft": null
+  },
+  "summitElevFt": 4958,
+  "trailheadElevFt": 1900,
+  "priorNote": "not researched in depth (search budget); peak not identified on an open page with a gain"
+ },
+ {
+  "id": "wa_south_spur",
+  "name": "South Spur",
+  "area_id": "wa_whatcom_peak",
+  "disc": "scrambling",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 11000,
+   "loss_ft": 9300
+  },
+  "summitElevFt": 7574,
+  "trailheadElevFt": 3120,
+  "priorNote": "searched; lemkeclimbs Whatcom trip gives no gain; NPS blog not quantitative"
+ },
+ {
+  "id": "wa_east_ridge_3",
+  "name": "East Ridge",
+  "area_id": "wa_silver_star_mountain_okanogan",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4400,
+   "loss_ft": null
+  },
+  "summitElevFt": 8876,
+  "trailheadElevFt": 2985,
+  "priorNote": "searched; Mountaineers Silver Star Glacier route lists 5,200 ft (403, different route). Stored 4400 looks low vs pins"
+ },
+ {
+  "id": "wa_the_monk_west_cracks_left_crack",
+  "name": "The Monk - West Cracks - Left Crack",
+  "area_id": "wa_the_monk_pasayten",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6000,
+   "loss_ft": 1300
+  },
+  "summitElevFt": 8300,
+  "trailheadElevFt": 3050,
+  "priorNote": "no open page found (not searched separately)"
+ },
+ {
+  "id": "wa_forbidden_peak_northwest_face",
+  "name": "Northwest Face",
+  "area_id": "wa_forbidden_peak",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4800,
+   "loss_ft": 5615
+  },
+  "summitElevFt": 8815,
+  "trailheadElevFt": 3200,
+  "priorNote": "searched; West Ridge figures (~5,600 ft, Mountaineers/FKT/yellowleaf per search) are a different route and not opened; stored 4800 looks low"
+ },
+ {
+  "id": "rainier_central_mowich_face",
+  "name": "Central Mowich Face",
+  "area_id": "wa_mount_rainier",
+  "disc": "alpine",
+  "shape": null,
+  "state": "rainier",
+  "stored": {
+   "gain_ft": 6200,
+   "loss_ft": null
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": 4955,
+  "priorNote": "searched with Edmunds; no open page states a gain"
+ },
+ {
+  "id": "wa_liberty_bell_thin_red_line",
+  "name": "Thin Red Line",
+  "area_id": "wa_liberty_bell",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 1312,
+   "loss_ft": 2400
+  },
+  "summitElevFt": 7720,
+  "trailheadElevFt": 5200,
+  "priorNote": "searched; no open page states approach gain"
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "name": "Southwest Slope (Standard Route)",
+  "area_id": "wa_flora_mountain",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3150,
+   "loss_ft": 3150
+  },
+  "summitElevFt": 8323,
+  "trailheadElevFt": 1220,
+  "priorNote": "searched; only SummitPost (403), Mountaineers trip report (403), winter ascent totals. Stored 3150 is far below pin difference"
+ },
+ {
+  "id": "wa_ingalls_peak_north_peak_southwest_face",
+  "name": "North Peak Southwest Face",
+  "area_id": "wa_ingalls_peak",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": null,
+  "priorNote": "no stored values or pins; not searched"
+ },
+ {
+  "id": "wa_garfield_mountain_southwest_ledges",
+  "name": "Southwest Ledges",
+  "area_id": "wa_garfield_mountain",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3630,
+   "loss_ft": 300
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": 1174,
+  "priorNote": "No page states a gain for this route. A blog for Infinite Bliss (different route) gives 2,600 ft climbing plus ~1,000 ft approach; stored 3630 looks like such a sum. yellowleaf Garfield log (2,540 ft) is a different approach, not opened."
+ },
+ {
+  "id": "wa_goode_mountain_megalodon_ridge",
+  "name": "Megalodon Ridge",
+  "area_id": "wa_mount_goode",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7500,
+   "loss_ft": 8700
+  },
+  "summitElevFt": 9220,
+  "trailheadElevFt": 4400,
+  "priorNote": "No open page found for Megalodon Ridge gain (searched stephabegg/climberkyle)."
+ },
+ {
+  "id": "wa_magic_mountain_northeast_couloir",
+  "name": "Northeast Couloir",
+  "area_id": "wa_magic_mountain",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4200,
+   "loss_ft": 600
+  },
+  "summitElevFt": 7610,
+  "trailheadElevFt": 3600,
+  "priorNote": "No page found for a Magic Mountain climb gain; NPS Cascade Pass page covers trail to pass only (1,700 ft); Climber Kyle Magic S Loop (8,000 ft) is a ski loop."
+ },
+ {
+  "id": "wa_jack_mountain_northeast_glacier",
+  "name": "Northeast Glacier",
+  "area_id": "wa_jack_mountain",
+  "disc": "mountaineering",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4501,
+   "loss_ft": null
+  },
+  "summitElevFt": 9075,
+  "trailheadElevFt": 1880,
+  "priorNote": "No page states a gain for the Northeast Glacier route; Mountaineers Nohokomeen Headwall 10,000 ft is a round trip of another route (403)."
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "name": "Lichen Bouquet (East Face)",
+  "area_id": "wa_chianti_spire",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4450,
+   "loss_ft": 4450
+  },
+  "summitElevFt": 8400,
+  "trailheadElevFt": null,
+  "priorNote": "Abegg Chianti/Silver Star page gives ~600 ft route length and 3,500 ft to Burgundy Col; no stated car-to-summit total for Chianti."
+ },
+ {
+  "id": "wa_mount_barnes_scramble",
+  "name": "Elwha Basin Scramble",
+  "area_id": "wa_mount_barnes",
+  "disc": "mountaineering",
+  "shape": "point",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3200,
+   "loss_ft": 3200
+  },
+  "summitElevFt": 5987,
+  "trailheadElevFt": 1980,
+  "priorNote": "No page states a gain for the Elwha Basin outing. Stored 3200 equals Wikipedia relief (summit 3,200 ft above Elwha Basin in two miles), not a route gain. Stored value likely wrong."
+ },
+ {
+  "id": "wa_east_twin_needle_south_route",
+  "name": "South Route",
+  "area_id": "wa_east_twin_needle",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7268,
+   "loss_ft": 7268
+  },
+  "summitElevFt": 7840,
+  "trailheadElevFt": 600,
+  "priorNote": "Not reached within search budget."
+ },
+ {
+  "id": "wa_phantom_peak_south_route",
+  "name": "South Route",
+  "area_id": "wa_phantom_peak",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 1916,
+   "loss_ft": 1000
+  },
+  "summitElevFt": 8000,
+  "trailheadElevFt": 3120,
+  "priorNote": "No page found. Stored 1916 is below the pin difference (3,120 ft TH, 8,000 ft summit) so it is likely wrong, but unproven."
+ },
+ {
+  "id": "wa_kimtah_peak_scramble",
+  "name": "Southwest Slopes / Gully",
+  "area_id": "wa_kimtah_peak",
+  "disc": "mountaineering",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4950,
+   "loss_ft": 4950
+  },
+  "summitElevFt": 8649,
+  "trailheadElevFt": 3750,
+  "priorNote": "No page found; listsofjohn gives prominence only."
+ },
+ {
+  "id": "wa_magic_mountain_north_face",
+  "name": "North Face",
+  "area_id": "wa_magic_mountain",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4200,
+   "loss_ft": 600
+  },
+  "summitElevFt": 7610,
+  "trailheadElevFt": 3600,
+  "priorNote": "Mountaineers South Ridge 4,000 ft is 403; sverdina trip report states no figures; no open page for the North Face route."
+ },
+ {
+  "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+  "name": "Middle Finger Buttress - Left Side",
+  "area_id": "wa_amphitheater_mountain",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4800,
+   "loss_ft": 4800
+  },
+  "summitElevFt": 8358,
+  "trailheadElevFt": 3050,
+  "priorNote": "No page found for this route; Amphitheatre MP area page has no gain; SummitPost (403). Stored 4,800 below summit minus trailhead (~5,300 ft)."
+ },
+ {
+  "id": "wa_le_conte_mountain_northern_aspect",
+  "name": "Northern Aspect",
+  "area_id": "wa_le_conte_mountain",
+  "disc": "mountaineering",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": 7762,
+  "trailheadElevFt": 3660,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_soviet_route",
+  "name": "Soviet Route",
+  "area_id": "wa_bonanza_peak",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5300,
+   "loss_ft": 5300
+  },
+  "summitElevFt": 9320,
+  "trailheadElevFt": 3215,
+  "priorNote": "WTA Bonanza Peak page states 6,300 ft / 14 mi from Holden for the standard route, not the Soviet Route; single source, >10% from stored 5,300. Not set. Stored 5,300 is below summit minus trailhead pin (~6,100 ft), so it looks low."
+ },
+ {
+  "id": "wa_the_tooth_north_ridge",
+  "name": "North Ridge",
+  "area_id": "wa_summer_fall_rock_2",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": null,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_the_monk_le_gibet",
+  "name": "The Monk - Le Gibet",
+  "area_id": "wa_the_monk_pasayten",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6000,
+   "loss_ft": 1300
+  },
+  "summitElevFt": 8300,
+  "trailheadElevFt": 3050,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_liberty_traverse",
+  "name": "Liberty Traverse",
+  "area_id": "wa_liberty_bell",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2001,
+   "loss_ft": null
+  },
+  "summitElevFt": 7807,
+  "trailheadElevFt": 5400,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_monument_peak_pasayten_scramble",
+  "name": "Standard Scramble",
+  "area_id": "wa_monument_peak_pasayten",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7567,
+   "loss_ft": null
+  },
+  "summitElevFt": 8597,
+  "trailheadElevFt": 2430,
+  "priorNote": "Only Mountaineers listings (combined Monument + Lake Mountain, 403) and a countryhighpoints winter ascent (34 mi, 9,000 ft, different conditions/approach). No usable figure."
+ }
+]

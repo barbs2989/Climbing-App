@@ -1,0 +1,1604 @@
+{
+ "wa_indian_mountain_baker_scramble": {
+  "area": "wa_indian_mountain_baker",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Indian_Mountain_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia lists the easiest route as class 2 scrambling."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "evidence": [
+     {
+      "url": "https://en.wikipedia.org/wiki/Indian_Mountain_(Washington)",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wikipedia says July through September is the most favorable weather for climbing it."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "No published descent description found (Wikipedia, DDG); descent stays thin."
+ },
+ "wa_jack_mountain_southeast_ridge_direct": {
+  "area": "wa_jack_mountain",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Camping permit required on the east side of the Little Jack ridge crest",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/jack-mountain/151244",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost says permits are needed to camp on the east side of the Little Jack ridge crest."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "No page describing the Southeast Ridge Direct line itself was found (DDG returned nothing; SummitPost and WTA Jack pages and the Mountaineers S Face page do not describe it)."
+ },
+ "wa_lane_peak_r3": {
+  "area": "wa_lane_peak",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114089121/lovers-lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Lover's Lane as ice/snow/alpine, 1000 ft, Grade II."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114089121/lovers-lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the route Grade II."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "fa",
+    "value": "unknown",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114089121/lovers-lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives the first ascent as unknown."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Narrow snow gully on Lane Peak's north side facing Paradise; the left-most of the north-face couloirs",
+    "evidence": [
+     {
+      "url": "https://jdmartin86.github.io/articles/21/lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report describes Lover's Lane as a narrow snow gully, the left-most gully on the face."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Lane Peak is probably the most-climbed Tatoosh peak in winter; north couloirs are seen from the Narada Falls lot",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114089121/lovers-lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP says Lane is likely the most climbed Tatoosh peak in winter, its north face visible from Narada Falls parking."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Downclimb exposed ground to a slung tree, rappel into the Zipper, plunge-step toward the Denman-Lane saddle, then descend a steep gully at its far left",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114089121/lovers-lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP descent: downclimb to a tree with slings, rappel into the Zipper, plunge step to the Denman-Lane saddle and take a steep gully down on its far left."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel from the top tree is usually over 100 ft; double ropes recommended",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114089121/lovers-lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP notes the rappel is usually more than 100 ft so a double-rope rappel is advised."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rappels",
+    "value": "Two double-rope rappels took one party most of the way down",
+    "evidence": [
+     {
+      "url": "https://jdmartin86.github.io/articles/21/lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report: two double-rope rappels got the party most of the way down."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "trailhead",
+    "value": "Narada Falls parking area",
+    "evidence": [
+     {
+      "url": "https://jdmartin86.github.io/articles/21/lane",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trip report started the approach from the Narada Falls parking lot after the Longmire gate opened."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ]
+ },
+ "wa_leche_la_vaca": {
+  "area": "wa_colchuck_balanced_rock",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10a/b",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Leche La Vaca 5.10a/b."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists it as trad, 5 pitches."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade III."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "fa",
+    "value": "Tom Ramier, Abe Traven, Craig Rankin",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP names the FA party as Tom Ramier, Abe Traven and Craig Rankin (no year given)."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Double rack 0.3-1, single 2, 3, 4, plus a few small cams",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP protection: double .3 to 1, single 2-4, plus some small units."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "P1 chimney far right past a small tree; P2 corner to a flake, move left around it; P3 wide left-facing layback corner to blocky corners and a big ledge below the roof pitch",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP pitch notes: P1 right-side chimney by a small tree, P2 corner and flake, P3 layback corner to a ledge under the roof pitch."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "P5 traverses 4th class terrain toward the summit, steepening to low 5th; about 100 m to the summit block, good for simul-climbing",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: P5 is 4th class trending to low 5th, roughly 100 m to the summit block; simul-climbing works."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Rappel from a slung block or downclimb from the summit to the notch, then walk off to the base",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106864357/leche-la-vaca",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: rap a slung block or downclimb to the notch, then walk off to the base."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "CascadeClimbers TR (topic 91405, May 2013) reports ice drips on a key pitch in May and a rope stuck in the P2 flake; anecdotal, not used."
+ },
+ "wa_lichtenberg_mountain_southeast_ridge": {
+  "area": "wa_lichtenberg_mountain",
+  "facts": []
+ },
+ "wa_lichtenberg_mountain_west_face_west_rib": {
+  "area": "wa_lichtenberg_mountain",
+  "facts": []
+ },
+ "wa_little_big_chief_mountain_northeast_face": {
+  "area": "wa_little_big_chief_mountain",
+  "facts": []
+ },
+ "wa_little_sister_west_face": {
+  "area": "wa_little_sister",
+  "facts": []
+ },
+ "wa_luahna_peak_east_slopes": {
+  "area": "wa_luahna_peak",
+  "facts": []
+ },
+ "wa_martin_peak_west_ridge": {
+  "area": "wa_martin_peak",
+  "facts": []
+ },
+ "wa_mount_appleton_standard": {
+  "area": "wa_mount_appleton",
+  "facts": []
+ },
+ "wa_mount_arriva_scramble": {
+  "area": "wa_mount_arriva",
+  "facts": []
+ },
+ "wa_mount_baker_cockscomb_ridge": {
+  "area": "wa_mount_baker",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th AI2-3",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades Cockscomb Ridge 4th, AI2-3, PG13."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "length_ft",
+    "value": 3000,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives 3000 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 5 pitches."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "fa",
+    "value": "Murley, Musser, Vielbig, 1961",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: FA Murley, Musser, Vielbig, 1961."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "From Heliotrope, cross the Coleman and Roosevelt glaciers and climb low-moderate snow to the ridge near 7,500 ft (2-3 hours of glacier travel)",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: from Heliotrope cross Coleman and Roosevelt glaciers to the ridge around 7500 ft after 2-3 hours on glacier."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "Late season may force a drop to the Park Glacier and a headwall climb (AI3, several screws)",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: later in the season one may descend to the Park Glacier and climb the AI3 headwall."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Descend the Coleman-Deming route (easy-moderate glacier)",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: descend Coleman-Deming, an easy-moderate glacier route."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "A few ice screws and pickets plus glacier gear",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP protection: few screws and pickets, glacier gear."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ]
+ },
+ "wa_mount_ballard_south": {
+  "area": "wa_mount_ballard",
+  "facts": []
+ },
+ "wa_mount_berge_southwest_route": {
+  "area": "wa_mount_berge",
+  "facts": []
+ },
+ "wa_mount_bigelow_tribute_to_richard": {
+  "area": "wa_mount_bigelow",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10c",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82404-tr-fa-mt-bigelow-tribute-to-richard-510c-8232011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA trip report titles the route Tribute to Richard, 5.10c."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "fa",
+    "value": "Ben and Tim (CascadeClimbers FA report), August 23, 2011",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82404-tr-fa-mt-bigelow-tribute-to-richard-510c-8232011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA report dated 8/23/2011 by a climber named Ben with partner Tim; surnames not given."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "pitches",
+    "value": 4,
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82404-tr-fa-mt-bigelow-tribute-to-richard-510c-8232011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report lists pitches P1 through P4 before unroping on the summit ridge."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Short new line on Bigelow's golden granite East Face above Upper Eagle Lake; lichen and brittle edges",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82404-tr-fa-mt-bigelow-tribute-to-richard-510c-8232011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report calls it a short new East Face route above Upper Eagle Lake on good granite with heavy lichen and fragile edges."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "P1 5.8 chimney then traverse left; P2 5.9 crack over a fist bulge; P3 10c S-shaped crack crux; P4 stem to the summit ridge, then walk north to the true summit",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82404-tr-fa-mt-bigelow-tribute-to-richard-510c-8232011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pitch list: P1 5.8 chimney, P2 5.9 fist bulge crack, P3 10c S crack, P4 stem to ridge; walk north to true summit."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Double rack to 3 in.; a #4 was used twice but not needed",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82404-tr-fa-mt-bigelow-tribute-to-richard-510c-8232011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gear notes: double rack to 3 inches, #4 placed twice but not really necessary."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Roughly 8 miles and about 3,500 ft from the trailhead to the base on a fast trail",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/82404-tr-fa-mt-bigelow-tribute-to-richard-510c-8232011/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach notes: about 8 miles from the trailhead, ~3500 ft to the base."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Approach miles/gain are the FA party's rough figures ('more or less', '~'); recorded as approach_step text, not as dist/gain numbers. Not on Mountain Project."
+ },
+ "wa_mount_blum_south_ridge": {
+  "area": "wa_mount_blum",
+  "facts": []
+ },
+ "wa_mount_buckindy_scramble": {
+  "area": "wa_mount_buckindy",
+  "facts": []
+ },
+ "wa_mount_cruiser_nw_face_corner": {
+  "area": "wa_mount_cruiser",
+  "facts": []
+ },
+ "wa_mount_goode_northeast_buttress": {
+  "area": "wa_mount_goode",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades the Northeast Buttress 5.5."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as Grade IV."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "length_ft",
+    "value": 2800,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project gives the route length as 2800 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey and Tom Stewart, August 6, 1966",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: FA Fred Beckey and Tom Stewart, August 6, 1966; first winter ascent 1980s by Pilling and Mascioli."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 37,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists length 37.0 mi for the route."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "gain_ft",
+    "value": 8400,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists elevation gain 8,400 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9200,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists high point 9,200 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "trailhead",
+    "value": "Bridge Creek trailhead parking, 2 mi east of Rainy Pass (4,400 ft)",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: descend east 2 mi from Rainy Pass to a large paved lot at 4,400 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "PCT south 10 mi to the North Fork Bridge Creek Trail junction (2,800 ft)",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: hike the PCT south 10 mi to the North Fork Bridge Creek junction at 2,800 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Up North Fork Bridge Creek, cross Grizzly Creek, then ford or log-cross North Fork Bridge Creek",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: go up the North Fork, cross Grizzly Creek, ford or use a log over North Fork Bridge Creek."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "North Fork Bridge Creek crossing was a shin-to-knee-deep wade (Aug 2025); alder tunnel to the 5,500 ft bivies overgrown",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-goode-mountain-northeast-buttress-1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Aug 2025 trip report: waded North Fork Bridge Creek shin-knee deep; alder section to 5500 ft bivies overgrown."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Climb timber and scree left of brushy lower slopes beside the leftmost stream off the Goode Glacier, or the slabs to its right",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: ascend timber/scree left of the brush along the leftmost Goode Glacier drainage, or the slabs right of it."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Bivy in sparse timber at 5,200 ft or rock bands east of the buttress toe at 5,600 ft",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: bivy in thin timber at 5,200 ft or rock bands east of the toe at 5,600 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "Stay out from under the active ice cliffs",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers warns to avoid areas close below active ice cliffs."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "From bivy, up the far left Goode Glacier, traverse to the buttress toe, then two class 5 pitches gain the crest",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: ascend far left of Goode Glacier, traverse to the toe, two class 5 pitches to the crest."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Three traversing rappels from the summit to the ledge toward Black Tooth Notch, then a loose 3rd class gully",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP descent: three traversing raps from established stations to the Black Tooth Notch ledge, then loose 3rd class gully."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rappels",
+    "value": 3,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: three traversing rappels from the summit."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Return via Park Creek trail to the Stehekin River and Bridge Creek, or from the Goode/Storm King col straight back to North Fork Bridge Creek",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: descend Park Creek trail to Stehekin River and Bridge Creek, or from the Goode/Storm King col to the North Fork."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Small alpine rack and rope",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP protection: small alpine rack, rope."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Overnight permit from Marblemount Wilderness Information Center, Stehekin, or Methow Valley Ranger Station (Winthrop)",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110103763/northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: permit available at Marblemount WIC, Stehekin, or Methow Valley Ranger Station in Winthrop."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "closure",
+    "value": "Stehekin road approach no longer attractive due to washouts above High Bridge",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: the Stehekin approach is unattractive due to road washouts above High Bridge."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mountaineers gain 8,400 ft vs app's 10,700 ft: single source, not reconciled. Mountaineers 37.0 mi is the whole outing (loop per its descent), not one-way. MP lists 5th-class pitch count only loosely ('two pitches of class 5' to gain crest); not used as pitches."
+ },
+ "wa_mount_index_north_face": {
+  "area": "wa_north_peak_2",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7 WI3- M4-5 PG13",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project grades the North Peak North Face 5.7 WI3- M4-5 PG13."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "length_ft",
+    "value": 1400,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 1400 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "pitches",
+    "value": 12,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 12 pitches."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates it Grade IV."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "fa",
+    "value": "July 1929",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives the first ascent as July 1929 (party not named)."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "season",
+    "value": "Better in winter than summer, when the brushy middle is snow- and ice-covered",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: a better winter climb, as much of the bushy middle section is buried in snow and ice."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "From Lake Serene, cross the talus field to the base of the north face",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: from Lake Serene take the talus field to the start of the north face."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Small-to-medium alpine rock rack, 12-14 runners, two ropes for the descent, helmet",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119540725/north-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP protection: small-medium alpine rack, 12-14 runners, two ropes for descent, helmet."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "CascadeClimbers TR (topic 108144, June 2025) could not be loaded (Chrome safety-category check blocked navigation, transient)."
+ },
+ "wa_mount_logan_r1": {
+  "area": "wa_mount_logan",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 42,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists 42.0 mi and says the climb is 42 miles round trip."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9087,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists high point 9,087 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Thunder Creek Trail 9 miles to the Fisher Creek Trail, then about 3 miles to just past a handrailed log bridge over the outlet of a 5,160 ft lake; follow that stream up to camp",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Thunder Creek 9 mi, Fisher Creek ~3 mi past a handrail log bridge, up the drainage to the 5,160 ft lake camp."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Lake at 5,160 ft above Fisher Creek",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: camp at the lake at 5,160 ft drained by a stream off Fisher Creek."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "From camp go SSE to a ridge low point (possibly Christmas Tree Col), drop to the Banded Glacier, climb to the Banded-Douglas Col, snow and rock to a class 4 summit block",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers ascent: SSE to a col, down to Banded Glacier, up to Banded-Douglas Col, snow then class 4 to the summit."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "glacier",
+    "value": "1.5-2 hours on the glacier; a large bergschrund at its top is passed on the left",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: 1.5-2 hr on glacier; big bergschrund at the top traversed on the left."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Descend the climbing route",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: descend the route of ascent."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "leg_hours",
+    "value": "Trailhead to camp 10 hr; camp to summit 6-8; summit to camp 4-5; camp to trailhead 7-9",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers trip profile: TH-camp 10 h, camp-summit 6-8, summit-camp 4-5, camp-TH 7-9."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "trip_days",
+    "value": "3 days only for very strong parties; most prefer 4",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: only very strong parties should try 3 days; most prefer four."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "Not recommended late season: bergschrund grows, more loose rock, ice and exposure",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: not advised late season; large bergschrund develops, more loose rock, ice and exposure."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Standard glacier equipment",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers equipment: standard glacier gear."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Get the permit at the Marblemount Ranger Station; park party limit 6",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: sign in and get a permit at Marblemount Ranger Station; NCNP party limit of 6."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Mountaineers approach is via Thunder Creek (from Colonial Creek), while the app's current approach text uses Easy Pass/Fisher Basin; both reach the same Fisher Creek lake camp. Mountaineers' 3,100 ft is TH-to-camp gain only, not used as total."
+ },
+ "wa_mount_maude_r2": {
+  "area": "wa_mount_maude",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Phelps Creek trail connecting to the unmarked Leroy Creek trail (Entiat River approach also possible but much longer)",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: reach Icy Lakes via Phelps and unmarked Leroy Creek trails; the Entiat River approach is far longer."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Bivy ledges above Icy Lakes, below the South Ridge route",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: camp below the South Ridge route at bivy ledges near Icy Lakes."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Cross talus above Icy Lake to a notch that gives access to the Entiat Glacier, rope up and descend to cross the glacier's ablation zone",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: talus above Icy Lake to the notch, rope up and descend across the receding glacier's ablation zone."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "Pass below a rock spur, work right under the headwall through big crevasses with short vertical steps, then 35-degree ice slopes to the rock",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: skirt the rock spur, trend right under the headwall through crevasses with short vertical steps, then 35 degree ice to the rock."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "About 900 ft of crumbly 4th and low 5th class rock with scarce protection, mostly 3rd class high on the ridge, to the cairned summit",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: ~900 ft of 4th/low 5th crumbly rock, sparse pro, mostly 3rd class higher on the ridge."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "Overhanging bergschrunds at the glacier head usually block a direct line to the east ridge notch",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: huge overhanging schrunds at the glacier's head usually prevent going straight to the E ridge notch."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "season",
+    "value": "August and later for ice in the icefall",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: best time for ice in the icefall is August into later season."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "summit_hours_from_camp",
+    "value": "5 to 7.5 hours from the Icy Lakes camps",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: allow 5 to 7.5 hours to the summit from the camps above Icy Lakes."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Descend the South Ridge (about 30 minutes for this party) with glissades",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR: going down the South Ridge took 30 minutes at most, with good glissades."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Late season: one half rope, four ice screws, 8-10 piece rock rack to one inch plus small cams, two tools",
+    "evidence": [
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/3350-trip-report-mt-maude-entiat-icefall/",
+      "retrieved_at": "2026-11-14",
+      "fact": "TR gear: a half rope, four screws, 8-10 rock pieces to 1 inch, some small cams, two tools."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "alpinedave.com/maude.html is the same author's (Dave) page with the same text, so it is not a second source. tumtum.com Entiat Icefall page returned 502."
+ },
+ "wa_mount_rainier_fuhrer_thumb": {
+  "area": "wa_mount_rainier",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2300,
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Fuhrer Thumb as snow/alpine, 2300 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates it Grade II."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "fa",
+    "value": "Jim Wickwire, Charlie Raymond and Tom Stewart, May 27, 1972",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: FA Jim Wickwire, Charlie Raymond and Tom Stewart, May 27, 1972."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "High camp on the west side of the Wilson Glacier below the Turtle Snowfield; rock outcrops from 9,200 to 9,400 ft offer sites",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: shared Kautz/Fuhrer Finger high camp, west side of Wilson Glacier below the Turtle, sites at 9,200-9,400 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "The snow couloir immediately west of Fuhrer Finger, climbed up to 45 degrees, rejoining the Finger at 11,500 ft",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: couloir just west of Fuhrer Finger, up to 45 degrees, meets the Finger at 11,500 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "Traverse NNE across the Wilson Glacier from high camp; at about 10,500 ft an ice/rock band can be passed left or right",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: cross Wilson Glacier NNE; near 10,500 ft an ice/rock band offers left or right options."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "Crevasses cut across the couloir entrance; rockfall began at twilight for one party",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107671307/fuhrer-thumb",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP warns crevasses cross the couloir entrance and notes rockfall started at twilight."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "whereiskylemiller.com Fuhrer Thumb page is a ski-descent report from Camp Muir, not used for ascent numbers."
+ },
+ "wa_mount_redoubt_south_face": {
+  "area": "wa_mount_redoubt",
+  "facts": []
+ },
+ "wa_mount_sefrit_southeast_ridge": {
+  "area": "wa_mount_sefrit",
+  "facts": []
+ },
+ "wa_mount_shuksan_white_salmon_glacier": {
+  "area": "wa_mount_shuksan_climbs",
+  "facts": []
+ },
+ "wa_mount_si_haystack_scramble": {
+  "area": "wa_mount_si",
+  "facts": [
+   {
+    "field": "permit",
+    "value": "Discover Pass",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA says the Mount Si trailhead requires a Discover Pass."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "A Mountaineers trip listing (activities/alpine-scramble-mount-si-haystack-7) gives 3,570 ft gain and aims to reach the Haystack base in 2.5 hours, but it is one trip's plan, not a route figure; not used."
+ },
+ "wa_mount_si_trail": {
+  "area": "wa_mount_si",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA lists the Mount Si hike as 8.0 miles roundtrip."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "gain_ft",
+    "value": 3150,
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives elevation gain of 3,150 feet."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "high_point_ft",
+    "value": 3900,
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA gives highest point of 3,900 feet."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Discover Pass",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA says parking requires a Discover Pass."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "overview",
+    "value": "Very busy trail near Seattle, used by Rainier aspirants for weighted-pack training; Haystack is the true summit",
+    "evidence": [
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-si",
+      "retrieved_at": "2026-11-14",
+      "fact": "WTA notes over 100,000 hikers a year, Rainier trainees with heavy packs, and that the Haystack is Si's true summit."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Timing still missing: WTA only quotes folk wisdom (reach the end in under two hours = ready for Rainier), not a typical time; not used."
+ },
+ "wa_mount_stuart_west_ridge": {
+  "area": "wa_mount_stuart",
+  "facts": [
+   {
+    "field": "gain_ft",
+    "value": 5250,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists elevation gain 5,250 ft for the West Ridge."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9415,
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers lists high point 9,415 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: parking requires a Northwest Forest Pass; land manager Okanogan-Wenatchee NF, Alpine Lakes Wilderness."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "trailhead",
+    "value": "End of North Fork Teanaway road (4,243 ft), about 23 mi up from SR-970",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: I-90 exit 85, SR-970 6.6 mi, Teanaway River Road, north fork road about 23 mi to the end at 4,243 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "Trail to Ingalls Pass (6,480 ft) and Ingalls Lake, down to Ingalls Creek and over it on a log bridge; some go via Long's Pass instead",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: Ingalls Pass 6,480 ft to Ingalls Lake, down to Ingalls Creek and cross on a log; some take Long's Pass."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "approach_step",
+    "value": "From the upper Ingalls Creek meadows, short of Stuart Pass, climb to the base of the West Ridge",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: at the upper Ingalls Creek meadows below Stuart Pass, ascend to the West Ridge base."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "camp",
+    "value": "Meadows near the head of Ingalls Creek; most parties carry over with a bivy near the summit",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers: some overnight in upper Ingalls Creek meadows; most carry over and bivy near the summit."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "route_step",
+    "value": "Middle of three parallel gullies (house-sized boulder at its base) to a notch, chimney left of Long John Tower, ledges right of the west ridge tower, benches below the crest to the West Ridge Notch, class 4 blocks to the summit",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers ascent: middle gully with big boulder, chimney by Long John Tower, ledges south of the tower, benches to West Ridge Notch, class 4 blocks above."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "descent",
+    "value": "Scramble to the false summit, down steep snow or scree, trend right through trees into the Cascadian Couloir to the valley; Ingalls Creek Trail west to the Long's Pass / Ingalls Lake fork",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers descent: false summit, then Cascadian Couloir to the valley floor, west on Ingalls Creek Trail to the Long's Pass or Ingalls Lake fork."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "leg_hours",
+    "value": "Trailhead to climb 4-6 hr; to Long John Tower 4 hr; to West Rib Notch 4-5 hr; to summit 4-6 hr; summit to trailhead 7 hr",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers trip profile: TH to climb 4-6 h, to Long John Tower 4, to West Rib Notch 4-5, to summit 4-6, summit to TH 7."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "leg_gain_ft",
+    "value": "Trailhead to climb 2,500; to Long John Tower 1,000; to West Rib Notch 350; to summit 400; summit to trailhead 1,000",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers trip profile gain per segment: 2,500 / 1,000 / 350 / 400 / 1,000 ft."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "rack",
+    "value": "Small rack to two inches; ice axe in early season",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers equipment: small rack to 2 inches, ice axe early season."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   },
+   {
+    "field": "hazard",
+    "value": "Route-finding trouble spots: Long John Tower and the exposed West Ridge Notch section",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/mt-stuart-w-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountaineers notes route-finding dilemmas at Long John Tower and the exposed West Ridge Notch."
+     }
+    ],
+    "method": "single-source",
+    "level": "locked-1src"
+   }
+  ],
+  "note": "Distance still missing: the Mountaineers page states no mileage. Mountain Project search for 'Mount Stuart West Ridge' returned an Alaska route; MP then rate-limited (429)."
+ }
+}

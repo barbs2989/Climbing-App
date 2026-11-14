@@ -1,0 +1,647 @@
+[
+ {
+  "id": "wa_mount_lincoln_standard",
+  "name": "North Ridge from Flapjack Lakes",
+  "area_id": "wa_mount_lincoln",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5070,
+   "loss_ft": 5350
+  },
+  "summitElevFt": 5868,
+  "trailheadElevFt": 825,
+  "priorNote": "WTA flapjack-lakes: 3,050 ft to the lakes (3,850 ft) only, not the summit."
+ },
+ {
+  "id": "wa_spire_point_southwest_face",
+  "name": "Southeast Face",
+  "area_id": "wa_spire_point",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6824,
+   "loss_ft": 6824
+  },
+  "summitElevFt": 8264,
+  "trailheadElevFt": 1450,
+  "priorNote": "Only a multi-day Dome+Spire blog total (~9,900 ft) and WTA Downey Creek (trail only) found."
+ },
+ {
+  "id": "wa_old_guard_peak_southwest_route",
+  "name": "West Side (LeConte Glacier)",
+  "area_id": "wa_old_guard_peak",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 10600,
+   "loss_ft": 12400
+  },
+  "summitElevFt": 8260,
+  "trailheadElevFt": 3660,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wa_the_needle_neve_glacier",
+  "name": "Neve Glacier Approach / Standard",
+  "area_id": "wa_the_needle",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7200,
+   "loss_ft": 7200
+  },
+  "summitElevFt": 8079,
+  "trailheadElevFt": 1131,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wa_direct_west_face",
+  "name": "Direct West Face",
+  "area_id": "wa_pernod_spire",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3400,
+   "loss_ft": 3200
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": 4360,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wy_red_spot_alternate_start",
+  "name": "Red Spot Alternate Start",
+  "area_id": "wy_medicine_bow_peak_area",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wy",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": null,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wa_the_temple_south_ridge",
+  "name": "West Side",
+  "area_id": "wa_the_temple",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 8000,
+   "loss_ft": 6995
+  },
+  "summitElevFt": 8295,
+  "trailheadElevFt": 1300,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wa_upper_north_ridge_w_great_gendarme",
+  "name": "Upper North Ridge w/Great Gendarme",
+  "area_id": "wa_mount_stuart",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2998,
+   "loss_ft": null
+  },
+  "summitElevFt": 9415,
+  "trailheadElevFt": 4243,
+  "priorNote": "STORED GAIN LOOKS WRONG: stored 2998 matches the ridge climb length (\"3000 ft\", stephabegg ?p=8737), not trailhead-to-summit (pins 4243 -> 9415). climberkyle 2021 complete north ridge: ~9.5k gain for the whole round-trip day (unusable). desktodirtbag: 5,000 ft descent via Cascadian Couloir, no gain."
+ },
+ {
+  "id": "wa_mount_fury_east_direct_east_ridge",
+  "name": "Direct East Ridge",
+  "area_id": "wa_mount_fury_east",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 9500,
+   "loss_ft": 9500
+  },
+  "summitElevFt": 8356,
+  "trailheadElevFt": null,
+  "priorNote": "not individually researched: no likely open source (search budget spent on likelier routes)"
+ },
+ {
+  "id": "wa_northwest_face_2",
+  "name": "Northwest Face",
+  "area_id": "wa_kangaroo_temple",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2425,
+   "loss_ft": 2500
+  },
+  "summitElevFt": 7572,
+  "trailheadElevFt": 5160,
+  "priorNote": "Stored equals the Yellowleaf trip figure. The page does not say outright that it runs to the summit, but the trip starts at the Hwy 20 hairpin and reaches the summit. No second open source."
+ },
+ {
+  "id": "wa_the_cave_route",
+  "name": "The Cave Route",
+  "area_id": "wa_concord_tower",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2300,
+   "loss_ft": 2300
+  },
+  "summitElevFt": 7611,
+  "trailheadElevFt": 5400,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_cashmere_mountain_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_cashmere_mountain",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5500,
+   "loss_ft": 5300
+  },
+  "summitElevFt": 8514,
+  "trailheadElevFt": 3300,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wy_grand_teton_the_rainbow_bridge",
+  "name": "The Rainbow Bridge",
+  "area_id": "wy_grand_teton",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wy",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": null,
+  "priorNote": "The Mountain Project route (on the Grandstand, approached from Valhalla Canyon) gives a 700 ft route length and no approach gain."
+ },
+ {
+  "id": "wa_johannesburg_mountain_cj_couloir",
+  "name": "Cascade-Johannesburg Couloir (East Ridge)",
+  "area_id": "wa_johannesburg_mountain",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4900,
+   "loss_ft": 4600
+  },
+  "summitElevFt": 8200,
+  "trailheadElevFt": 3600,
+  "priorNote": "stephabegg.com/?p=8692 states 4,600 ft from the parking lot to the summit, but for the NE Rib route (its approach climbs ~800 ft of the C-J Couloir). A different route, so not used for the CJ Couloir. No open page states a gain for the CJ Couloir itself."
+ },
+ {
+  "id": "wa_golden_horn_southwest_route",
+  "name": "Southwest Route",
+  "area_id": "wa_golden_horn",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2700,
+   "loss_ft": null
+  },
+  "summitElevFt": 8366,
+  "trailheadElevFt": 4880,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_around_the_cave_we_go",
+  "name": "Around the Cave We Go",
+  "area_id": "wa_concord_tower",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": 7611,
+  "trailheadElevFt": null,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_mount_norton_scramble",
+  "name": "Mount Norton Scramble",
+  "area_id": "wa_mount_norton",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5100,
+   "loss_ft": 5300
+  },
+  "summitElevFt": 6319,
+  "trailheadElevFt": 267,
+  "priorNote": "no open page states a gain for this route (searched WTA/stephabegg/NPS/MP/web; SummitPost, Mountaineers, CascadeClimbers blocked)"
+ },
+ {
+  "id": "wa_free_mojo",
+  "name": "Free Mojo",
+  "area_id": "wa_south_early_winters_spire",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2200,
+   "loss_ft": 2200
+  },
+  "summitElevFt": 7807,
+  "trailheadElevFt": 5400,
+  "priorNote": "Yellowleaf SEWS SW buttress trip: 2,345 ft gain, but its coverage is not stated and it is a different route. Mountaineers 2,600 ft for the South Arete is blocked. Not used."
+ },
+ {
+  "id": "wa_west_ridge_2",
+  "name": "West Ridge",
+  "area_id": "wa_paisano_pinnacle",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3288,
+   "loss_ft": 213
+  },
+  "summitElevFt": 7900,
+  "trailheadElevFt": 4250,
+  "priorNote": "no open page states a gain for the Paisano Pinnacle approach (not searched separately)"
+ },
+ {
+  "id": "wa_mount_fury_east_north_buttress",
+  "name": "North Buttress",
+  "area_id": "wa_mount_fury_east",
+  "disc": "alpine",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7000,
+   "loss_ft": 7000
+  },
+  "summitElevFt": 8322,
+  "trailheadElevFt": 2100,
+  "priorNote": "searched; only multi-day Pickets traverse/survey totals (stephabegg, countryhighpoints), no trailhead-to-summit figure. Stored 7000 looks low for this approach"
+ },
+ {
+  "id": "wa_mcmillan_spire_west_west_ridge",
+  "name": "West Ridge / Southwest Approach",
+  "area_id": "wa_mcmillan_spire_west",
+  "disc": "mountaineering",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 9800,
+   "loss_ft": 9800
+  },
+  "summitElevFt": 8004,
+  "trailheadElevFt": 600,
+  "priorNote": "climberkyle West McMillan: 10,000 ft is car-to-car round-trip total (not usable); partial segments only"
+ },
+ {
+  "id": "wa_mutchler_peak_scramble",
+  "name": "Mutchler Peak Scramble",
+  "area_id": "wa_mutchler_peak",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6500,
+   "loss_ft": 6500
+  },
+  "summitElevFt": 7150,
+  "trailheadElevFt": 1250,
+  "priorNote": "searched; no gain figure on any open page"
+ },
+ {
+  "id": "wa_kololo_peaks_standard",
+  "name": "Standard Route",
+  "area_id": "wa_kololo_peaks",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6150,
+   "loss_ft": 9500
+  },
+  "summitElevFt": 8240,
+  "trailheadElevFt": 2050,
+  "priorNote": "stephabegg ?p=8925: 7,222 ft gain / 1,333 ft loss but from White River TH (2,300 ft) to a camp below summit, not our route/endpoint; Mountaineers 6,150 ft (403)"
+ },
+ {
+  "id": "wa_snowfield_peak_neve_glacier",
+  "name": "Neve Glacier / Standard Route",
+  "area_id": "wa_snowfield_peak",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7400,
+   "loss_ft": 7400
+  },
+  "summitElevFt": 8351,
+  "trailheadElevFt": 1150,
+  "priorNote": "Mountaineers 7,500 ft (403, unopened); stephabegg Snowfield Slam gives only per-day multi-summit totals"
+ },
+ {
+  "id": "wa_chikamin_peak_southeast_slopes",
+  "name": "Southeast Slopes",
+  "area_id": "wa_chikamin_peak",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5400,
+   "loss_ft": 5400
+  },
+  "summitElevFt": 6994,
+  "trailheadElevFt": 3021,
+  "priorNote": "searched; theoutbound 5,771 ft is Mineral Creek out-and-back (different trailhead), Mountaineers 5,400 (403), SummitPost (403); lemkeclimbs no numbers"
+ },
+ {
+  "id": "wa_mount_thomson_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_mount_thomson",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5200,
+   "loss_ft": 5200
+  },
+  "summitElevFt": 6554,
+  "trailheadElevFt": 3000,
+  "priorNote": "theoutbound: 4,500 ft gain, 16 mi out-and-back from PCT trailhead; differs from stored 5200 by >10% with one source, so not set"
+ },
+ {
+  "id": "wa_east_face_2",
+  "name": "East Face",
+  "area_id": "wa_chablis_spire",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2850,
+   "loss_ft": 2850
+  },
+  "summitElevFt": 8350,
+  "trailheadElevFt": 4300,
+  "priorNote": "No open page found stating a gain for Chablis Spire East Face (Abegg Burgundy Col page gives route lengths and col approach only)."
+ },
+ {
+  "id": "wa_goat_mountain_south_ridge",
+  "name": "South Ridge / Standard Scramble",
+  "area_id": "wa_goat_mountain",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5000,
+   "loss_ft": 5000
+  },
+  "summitElevFt": 6891,
+  "trailheadElevFt": 2500,
+  "priorNote": "WTA Goat Mountain (Mt Baker) page states 3,100 ft to a 5,600 ft high point, not the 6,891 ft summit. SummitPost (5,000 ft, matches stored) and WTA trip reports (~4,200 ft GPS) are 403. Stored 5000 may be high but unproven."
+ },
+ {
+  "id": "wa_nooksack_tower_beckey_route",
+  "name": "North Face (Beckey-Schmidtke Route)",
+  "area_id": "wa_nooksack_tower",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5735,
+   "loss_ft": 5735
+  },
+  "summitElevFt": 8285,
+  "trailheadElevFt": 2200,
+  "priorNote": "Mountain Project gives 1,000 ft route length only; no page states trailhead-to-summit gain."
+ },
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "name": "East Ridge",
+  "area_id": "wa_jack_mountain",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": 9075,
+  "trailheadElevFt": null,
+  "priorNote": "Only figures seen are a CascadeClimbers TR (403): ~4,660 ft summit day from a high camp and 12,500 ft for the 3-day trip; neither is trailhead-to-summit."
+ },
+ {
+  "id": "wa_mount_steel_standard",
+  "name": "Standard Scramble (Marmot Lake / Duckabush approach)",
+  "area_id": "wa_mount_steel",
+  "disc": "mountaineering",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 6200,
+   "loss_ft": 6400
+  },
+  "summitElevFt": 6225,
+  "trailheadElevFt": 270,
+  "priorNote": "No open page states a Duckabush-to-summit gain; Mountaineers Steel & Hopper 4,400 ft (403, combined outing); Wikipedia 3,400 ft is relief above the river."
+ },
+ {
+  "id": "wa_storm_king_north_face",
+  "name": "North Face",
+  "area_id": "wa_storm_king",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5000,
+   "loss_ft": null
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": null,
+  "priorNote": "No page found stating a gain for Storm King North Face."
+ },
+ {
+  "id": "wa_the_triad_east_peak",
+  "name": "East Peak (Standard Route)",
+  "area_id": "wa_the_triad",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3920,
+   "loss_ft": 5410
+  },
+  "summitElevFt": 7520,
+  "trailheadElevFt": 3600,
+  "priorNote": "Not reached within search budget."
+ },
+ {
+  "id": "wa_three_fingers_r1",
+  "name": "North Peak",
+  "area_id": "wa_three_fingers",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7000,
+   "loss_ft": 7000
+  },
+  "summitElevFt": 6870,
+  "trailheadElevFt": 3030,
+  "priorNote": "WTA Three Fingers (15 mi RT, 4,200 ft) and Abegg go to the South Peak lookout, not North Peak; no page states a North Peak gain. Stored 7000 looks high but unproven."
+ },
+ {
+  "id": "wa_magic_mountain_west_ridge",
+  "name": "West Ridge",
+  "area_id": "wa_magic_mountain",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4700,
+   "loss_ft": 600
+  },
+  "summitElevFt": 7610,
+  "trailheadElevFt": 3600,
+  "priorNote": "Same as NE Couloir: no page found for a Magic Mountain climb gain."
+ },
+ {
+  "id": "wa_forbidden_peak_north_ridge",
+  "name": "North Ridge",
+  "area_id": "wa_forbidden_peak",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 4500,
+   "loss_ft": 5700
+  },
+  "summitElevFt": 8815,
+  "trailheadElevFt": 3200,
+  "priorNote": "Mountain Project states \"nearly 5000ft\" for the approach only; gethighonaltitude lists an undefined \"Length: 6,200ft\"; Skyward pages redirect without figures; Mountaineers 6,200 ft is 403. No open trailhead-to-summit figure. Stored 4,500 is below summit minus trailhead (~5,600 ft), looks low."
+ },
+ {
+  "id": "wa_ingalls_peak_south_scramble",
+  "name": "South Peak Scramble",
+  "area_id": "wa_ingalls_peak_south",
+  "disc": "scrambling",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 3600,
+   "loss_ft": 3600
+  },
+  "summitElevFt": 7640,
+  "trailheadElevFt": 4243,
+  "priorNote": "stephabegg states 4,200 ft gain for the 11-mi round trip from Esmeralda (includes return over Ingalls Pass), differs >10% from stored 3,600 and is a round-trip figure; Komoot FAQ also says ~4,200 ft but appears derived, not independent. Mountaineers 3,600 ft not openable (403). Not set."
+ },
+ {
+  "id": "wa_remmel_mountain_nw_ridge",
+  "name": "NW Ridge",
+  "area_id": "wa_remmel_mountain",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5265,
+   "loss_ft": 1200
+  },
+  "summitElevFt": 8685,
+  "trailheadElevFt": 3050,
+  "priorNote": "countryhighpoints Remmel report used the SE slope from Four Point Lake and states no gain; WTA Remmel page has no gain. Nothing for the NW Ridge."
+ },
+ {
+  "id": "wa_blue_s_buttress",
+  "name": "Blue's Buttress",
+  "area_id": "wa_poster_peak",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 1365,
+   "loss_ft": 1365
+  },
+  "summitElevFt": 7565,
+  "trailheadElevFt": 5160,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_early_morning_spire_southwest_face",
+  "name": "Southwest Face",
+  "area_id": "wa_early_morning_spire",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": null,
+   "loss_ft": null
+  },
+  "summitElevFt": null,
+  "trailheadElevFt": null,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_mount_meany_standard",
+  "name": "Standard Route",
+  "area_id": "wa_mount_meany",
+  "disc": "alpine",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 2500,
+   "loss_ft": 2500
+  },
+  "summitElevFt": 6695,
+  "trailheadElevFt": 515,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_mount_queets_south",
+  "name": "North Ridge",
+  "area_id": "wa_mount_queets",
+  "disc": "scrambling",
+  "shape": null,
+  "state": "wa",
+  "stored": {
+   "gain_ft": 7000,
+   "loss_ft": 7000
+  },
+  "summitElevFt": 6476,
+  "trailheadElevFt": 400,
+  "priorNote": "no open page found stating a gain for this route (WTA hike search, stephabegg/climberkyle site search, web search where budget allowed)"
+ },
+ {
+  "id": "wa_mount_shuksan_fisher_chimneys",
+  "name": "Fisher Chimneys",
+  "area_id": "wa_mount_shuksan_climbs",
+  "disc": "mountaineering",
+  "shape": "outback",
+  "state": "wa",
+  "stored": {
+   "gain_ft": 5100,
+   "loss_ft": 4700
+  },
+  "summitElevFt": 9131,
+  "trailheadElevFt": 4770,
+  "priorNote": "FKT states 6,739 ft vertical for the whole out-and-back from Lake Ann TH (round trip, not trailhead to summit); RMI gives only day splits (2,000 ft TH to camp, 2,427 ft summit day). No open page states TH-to-summit gain or the Swift Creek drop in feet. Not set."
+ }
+]

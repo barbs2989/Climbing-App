@@ -1,0 +1,1218 @@
+{
+ "wa_cathedral_rock_northwest_couloir": {
+  "area": "wa_cathedral_rock",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_cathedral_rock_southeast_face_chimney": {
+  "area": "wa_cathedral_rock",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_chair_peak_east_face": {
+  "area": "wa_chair_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-face-summer/157876",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost lists rock difficulty 5.5 (YDS) for the summer East Face."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "I",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-face-summer/157876",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost lists Grade I."
+     }
+    ]
+   },
+   {
+    "field": "time_required",
+    "value": "Most of a day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/east-face-summer/157876",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost lists time required as most of a day."
+     }
+    ]
+   }
+  ],
+  "note": "App grade 5.2; SummitPost summer East Face says 5.5."
+ },
+ "wa_chair_peak_voie_de_chaise": {
+  "area": "wa_summer_fall_rock_2",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.9-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Voie de Chaise 5.9-."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as 8 pitches."
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers describe 8 pitches of technical climbing plus a scramble pitch to the top."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Ian Nicholson and Tino Villanueva, 2022",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Ian Nicholson and Tino Villanueva, summer and fall 2022."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel the route; with added stations a single 60 m rope reaches every rappel, some with under 5 ft to spare",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two added rappel stations let a 60 m rope make all rappels, several leaving under 5 ft of rope."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Bolted alpine sport climb on the east face of Chair Peak, 5.6-5.9 technical pitches then a scramble pitch to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bolted alpine sport climb on Chair Peak east face, 8 technical pitches 5.6-5.9 plus a scramble pitch."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list elevation gain of 3,000 ft."
+     }
+    ]
+   },
+   {
+    "field": "mountaineers_length_mi",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list route Length as 6.0 mi."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "May-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list seasons May through September."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "land_manager",
+    "value": "Mount Baker-Snoqualmie NF, Alpine Lakes Wilderness, Snoqualmie Ranger District",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/chair-peak-voie-de-chaise",
+      "retrieved_at": "2026-11-14",
+      "fact": "Land manager: Mount Baker-Snoqualmie NF, Alpine Lakes Wilderness, Snoqualmie Ranger District."
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers grade range 5.6-5.9 vs MP 5.9-; grade kept single-source. Mountaineers Length 6.0 mi is not labelled round trip, recorded as mountaineers_length_mi."
+ },
+ "wa_chair_peak_west_ridge": {
+  "area": "wa_chair_peak",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_chianti_spire_north_face": {
+  "area": "wa_chianti_spire",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_chockstone_route": {
+  "area": "wa_north_early_winters_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the Chockstone Route 5.7."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 600 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dick Widrig, Pete Schoening and Wes Grande, 1950",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Dick Widrig, Pete Schoening and Wes Grande in 1950."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "4 bolted rappel stations with a 60 m rope plus one tree rappel down the 5.0 slab; rappels start about 30 m down, skier's right of the top",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four bolted rap stations work with a 60 m rope, plus a tree rap down the 5.0 slab."
+     }
+    ]
+   },
+   {
+    "field": "rappels_count",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111959715/chockstone-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Four bolted rap stations with 60 m rope and one tree rap down the starting slab."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_classic_route_2": {
+  "area": "wa_unicorn_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117385955/classic-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the Classic Route on Unicorn Peak 5.4."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 50,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117385955/classic-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 50 ft."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117385955/classic-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II; type trad, snow, alpine."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_clean_break": {
+  "area": "wa_juno_tower",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10b/c",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109232141/clean-break",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Clean Break 5.10b/c."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109232141/clean-break",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 1500 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109232141/clean-break",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 15 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109232141/clean-break",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bryan Burdo and Yann Merrand",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109232141/clean-break",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Bryan Burdo and Yann Merrand."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_colchuck_balanced_rock_col_east_lake_side_approch": {
+  "area": "wa_colchuck_balanced_rock",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_cutthroat_west_ridge": {
+  "area": "wa_cutthroat_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110174839/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the West Ridge 5.6."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110174839/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110174839/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list elevation gain of 3,200 ft."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8050,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list the high point as 8,050 ft."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "June-October",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountaineers list seasons June through October."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Northwest Forest Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking permit required: Northwest Forest Pass."
+     }
+    ]
+   },
+   {
+    "field": "mountaineers_difficulty",
+    "value": "Basic Rock Climb (Strenuous 1, Technical 2)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty listed as Basic Rock Climb, Strenuous 1, Technical 2."
+     }
+    ]
+   }
+  ],
+  "note": "Mountain Project lists length 3200 ft, which looks like elevation gain rather than climbing length; not used."
+ },
+ "wa_direct_north_buttress": {
+  "area": "wa_bear_mountain_chilliwack",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the Direct North Buttress 5.10-."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 2200 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 21,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 21 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "V",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade V."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Alan Kearney and Bobby Knight, 1980; FFA Bryan Burdo and Yann Merrand, 1985",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112828257/direct-north-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Alan Kearney and Bobby Knight 1980; first free ascent Bryan Burdo and Yann Merrand 1985."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_dome_peak_indian_summer": {
+  "area": "wa_dome_peak",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_dragontail_peak_r4": {
+  "area": "wa_dragontail_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "AI/WI3, 5.7",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/triple-couloirs/282360",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost lists difficulty AI/WI 3 with rock difficulty 5.7."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "III (SummitPost); IV (Mountain Project)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/triple-couloirs/282360",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost lists Grade III."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 2500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 2500 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 20,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 20 pitches."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "winter and spring",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/triple-couloirs/282360",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost lists the season as spring and winter."
+     }
+    ]
+   },
+   {
+    "field": "time_required",
+    "value": "Most of a day",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.summitpost.org/triple-couloirs/282360",
+      "retrieved_at": "2026-11-14",
+      "fact": "SummitPost lists time required as most of a day."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "From the true summit go down and right to a notch, then head directly toward Asgard Pass",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend down and right to a notch, then take a direct line toward Asgard Pass."
+     }
+    ]
+   }
+  ],
+  "note": "Commitment grade conflicts: SummitPost III vs Mountain Project IV. MP rock grade 5.8 vs SummitPost 5.7, so grade kept single-source from SummitPost. App grade WI3 matches SummitPost WI3."
+ },
+ "wa_east_face_3": {
+  "area": "wa_minuteman_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118994517/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the East Face of Minuteman Spire 5.10-."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118994517/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118994517/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 6 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118994517/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Scott Davis and Bill Lingley, 1967",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118994517/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Scott Davis and Bill Lingley in 1967."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "4 double-rope rappels from a ledge just below and right of the true summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118994517/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is four double-rope rappels from a ledge down and right of the true summit."
+     }
+    ]
+   },
+   {
+    "field": "rappels_count",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118994517/east-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent is four double-rope rappels."
+     }
+    ]
+   }
+  ],
+  "note": "App has Grade III; Mountain Project lists Grade II."
+ },
+ "wa_east_ridge_8": {
+  "area": "wa_pinnacle_peak_tatoosh",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120564032/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the East Ridge of Pinnacle Peak 5.5."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 300,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120564032/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 300 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 3,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120564032/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 3 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120564032/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb to a belay bench that has a rappel anchor descending the south face",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/120564032/east-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route reaches a belay bench with a rappel anchor that goes down the south face."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_easy_getaway": {
+  "area": "wa_cutthroat_wall",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10-",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115311402/easy-getaway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Easy Getaway 5.10-."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115311402/easy-getaway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 800 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115311402/easy-getaway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115311402/easy-getaway",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade III."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Dan Hilden and Blake Herrington, 2007",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115311402/easy-getaway",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Dan Hilden and Blake Herrington in 2007."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_eldorado_peak_northeast_face": {
+  "area": "wa_main_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117628561/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates the Northeast Face of Eldorado Easy 5th, snow and alpine."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117628561/northeast-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade II."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_ellen_pea": {
+  "area": "wa_m_m_wall_aka_supercave_wall",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.11",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106565918/ellen-pea",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Ellen Pea 5.11."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106565918/ellen-pea",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106565918/ellen-pea",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 7 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106565918/ellen-pea",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Erik Lawson and Lee Arden Pete",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106565918/ellen-pea",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Erik Lawson and Lee Arden Pete."
+     }
+    ]
+   },
+   {
+    "field": "rappels",
+    "value": "Rappel with two ropes, nearly all anchors bolted; or top out and walk down the 3rd-class ramp left of the wall to the approach gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106565918/ellen-pea",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two ropes needed to rappel, most anchors bolted; alternative is a 3rd-class ramp left of the wall."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_emerald_peak_west_route": {
+  "area": "wa_emerald_peak_entiat",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_ez_way": {
+  "area": "wa_shark_rock",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_fortune_peak_standard_route": {
+  "area": "wa_fortune_peak",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_gato_negro": {
+  "area": "wa_whine_spire",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113324178/gato-negro",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Gato Negro 5.10."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113324178/gato-negro",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 12 pitches."
+     }
+    ]
+   },
+   {
+    "field": "commitment_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113324178/gato-negro",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists Grade IV."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_gilbert_peak_west_route": {
+  "area": "wa_gilbert_peak",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_gorillas_direct": {
+  "area": "wa_mount_stuart",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.10d",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112263877/gorillas-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project rates Gorillas Direct 5.10d."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112263877/gorillas-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists the route length as 900 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112263877/gorillas-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountain Project lists 8 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Sol Wertkin, Jens Holsten and Mark Westman, 2011",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112263877/gorillas-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "First ascent credited to Sol Wertkin, Jens Holsten and Mark Westman in 2011."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Continue up the West Ridge to the summit, or descend the lower West Ridge; quickest way down follows its main gully",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112263877/gorillas-direct",
+      "retrieved_at": "2026-11-14",
+      "fact": "Either continue up the West Ridge to the summit or go down the lower West Ridge via its main gully."
+     }
+    ]
+   }
+  ]
+ },
+ "wa_gunn_peak_southeast_route": {
+  "area": "wa_gunn_peak_climbs",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_guye_peak_southeast_gully": {
+  "area": "wa_winter_spring_ice_snow_mixed_2",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_hourglass_gully_winter": {
+  "area": "wa_main_peak_2",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_hurry_up_peak_south_ridge": {
+  "area": "wa_hurry_up_peak",
+  "skip_reason": "no stated facts found in sources checked"
+ },
+ "wa_icy_peak_ruth_icy_traverse": {
+  "area": "wa_icy_peak",
+  "skip_reason": "no stated facts found in sources checked"
+ }
+}
