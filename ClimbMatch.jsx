@@ -68,7 +68,7 @@ import { useSwipeTabs } from "./lib/pageSwipe.js";
 import { useBackButton } from "./lib/backButton.js";
 import { useWideScreen, useFullWidth, useAdSideWidth, wideGeom, wideColumn, wideRail, wideLeft, wideTopBar, wideTopRow, wideNavStrip, wideCss, ZOOM } from "./lib/wideLayout.js";
 import { useInstallPrompt } from "./lib/installPrompt.js";
-import { SideAd, RailAd, FollowColumn, adsActive } from "./lib/Ads.jsx";
+import { SideAd, RailAd, FollowColumn, LeftColumn, adsActive } from "./lib/Ads.jsx";
 import { WideSearch, WideRail, WideFooter, DocTitle, AvatarMenu } from "./lib/DesktopShell.jsx";
 import Chevron from "./src/components/Chevron.tsx";
 import SectionErrorBoundary from "./lib/SectionErrorBoundary.jsx";
@@ -86,6 +86,7 @@ import RoutesTab from "./src/components/RoutesTab.tsx";
 import DiscoverTab from "./src/components/DiscoverTab.tsx";
 import GroupPlaceSearch from "./src/components/GroupPlaceSearch.tsx";
 import { groupVisOf, groupCanHostEvent, groupJoinPath, groupJoinLabel, GROUP_TOPICS, groupWhere } from "./lib/groupRules.js";
+import { loadSeedGroupJoins, saveSeedGroupJoins } from "./lib/seedGroupJoins.js";
 import GroupDiscussionTab from "./src/components/GroupDiscussionTab.tsx";
 import GroupAboutTab from "./src/components/GroupAboutTab.tsx";
 import GroupMembersTab from "./src/components/GroupMembersTab.tsx";
@@ -125,6 +126,8 @@ const readSharedStash = () => { try { const o = JSON.parse(localStorage.getItem(
 // <body> so no ancestor stacking context can trap it below a sibling overlay.
 // If you add an overlay, keep its zIndex below Z_TOAST — scripts/check-zindex.mjs enforces it.
 const Z_TOAST=1000000;
+/* The example groups' ids (GROUPS is static): their joined state is device-kept, not server-read -- see the my-groups hydration. */
+const _seedGroupIds=new Set(GROUPS.map(function(g){return g.id;}));
 
 /* main.jsx reloads the page when a lazy screen's file is gone after a deploy. Without this the
    climber who tapped Partners landed back on Home and had to tap it again, so the tab is kept in
@@ -479,16 +482,6 @@ useEffect(function(){
     if(!uid||!myBlockQ.data||blockHydratedRef.current)return;blockHydratedRef.current=true;
     setBlocked(myBlockQ.data.map(function(r){return {id:r.blockedId,name:pubNameRow(r.profile)||"Climber",avatar:r.profile&&r.profile.avatar,_dbId:r._dbId};}));
   },[uid,myBlockQ.data]);
-  useEffect(function(){
-    if(!uid||!myGroupsQ.data)return;
-    setCreatedGroups(myGroupsQ.data);
-    setJoinedGroups(myGroupsQ.data.filter(function(g){return g.joined;}).map(function(g){return g.id;}));
-    /* A request I already sent reads as sent after a reload. pendingGroups was never hydrated, so the
-       button offered "Request to join" again and a re-tap hit the swallowed 23505 and toasted a
-       request that was not new. The server decides for DB groups; seed ids keep their local state. */
-    var _dbGids=new Set(myGroupsQ.data.map(function(g){return g.id;}));
-    setPendingGroups(function(p){return p.filter(function(x){return !_dbGids.has(x);}).concat(myGroupsQ.data.filter(function(g){return g.myStatus==="pending";}).map(function(g){return g.id;}));});
-  },[uid,myGroupsQ.data]);
   /* A SHARED POST LINK: ?group=<id>&post=<id>, written by a post's Share sheet (groupPostLink) and opened from the address bar
      or a chat. It WAITS for what it needs -- a session, then the groups this account can see -- because a private group is
      invisible to anyone outside it (0090's RLS) and a real group's posts are members-only (0230). So a link that finds no group
@@ -1196,6 +1189,30 @@ if(uid){setLogs([]);setCondReports([]);setCrews([]);setGivenVouches([]);setNotif
 }
 if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(function(c){return !c._dbId;});});setLogs(function(ls){return ls.filter(function(l){return !l._dbId;});});setGivenVouches(function(vs){return vs.filter(function(v){return !v._dbId;});});setMsgs(function(m){var o={};Object.keys(m).forEach(function(k){if(/^\d+$/.test(k))o[k]=m[k];});return o;});setCrewMsgs(function(m){var o={};Object.keys(m).forEach(function(k){if(String(k).indexOf("db_")!==0)o[k]=m[k];});return o;});/* Friend and block state carry no _dbId — a real entry is one whose id is a uuid — so the filter
    above missed them, and a guest browsing after sign-out saw the last account's friends, requests and blocks. */setConnections(function(cs){return cs.filter(function(c){return !_isUid(c.id);});});setFriendReqIn(function(p){return p.filter(function(x){return !_isUid(x);});});setFriendReqOut(function(p){return p.filter(function(x){return !_isUid(x);});});setBlocked(function(b){return b.filter(function(x){return !_isUid(x.id);});});}},[uid]);
+  /* GROUP MEMBERSHIP HYDRATES BELOW THE SIGN-IN RESET ABOVE, which empties joinedGroups on every uid
+     change. Declared above it (where it used to be), a my-groups result already in the query cache at
+     the transition -- signing out and back in, or switching accounts -- filled the list and was wiped in
+     the same commit; a refetch returning the same rows keeps the same reference, so it never re-ran and
+     every real group you belong to read "Join" again.
+     The server owns real groups only. The EXAMPLE groups (GROUPS, while DEMO_FILLERS is on) have no
+     group_members row to read, so the hydration used to REPLACE the list and drop them -- joining any
+     real group refetches my-groups, which silently un-joined every example group. They are kept here,
+     and remembered on this device by lib/seedGroupJoins.js (the owner asked whether joining persists). */
+  useEffect(function(){
+    var stored=loadSeedGroupJoins(uid);if(!stored)return;
+    setJoinedGroups(function(p){return p.filter(function(x){return !_seedGroupIds.has(x);}).concat(stored.filter(function(x){return _seedGroupIds.has(x);}));});
+  },[uid]);
+  useEffect(function(){
+    if(!uid||!myGroupsQ.data)return;
+    setCreatedGroups(myGroupsQ.data);
+    var _dbJoined=myGroupsQ.data.filter(function(g){return g.joined;}).map(function(g){return g.id;});
+    setJoinedGroups(function(p){return _dbJoined.concat(p.filter(function(x){return _seedGroupIds.has(x)&&_dbJoined.indexOf(x)<0;}));});
+    /* A request I already sent reads as sent after a reload. pendingGroups was never hydrated, so the
+       button offered "Request to join" again and a re-tap hit the swallowed 23505 and toasted a
+       request that was not new. The server decides for DB groups; seed ids keep their local state. */
+    var _dbGids=new Set(myGroupsQ.data.map(function(g){return g.id;}));
+    setPendingGroups(function(p){return p.filter(function(x){return !_dbGids.has(x);}).concat(myGroupsQ.data.filter(function(g){return g.myStatus==="pending";}).map(function(g){return g.id;}));});
+  },[uid,myGroupsQ.data]);
   /* THE TRIP PACK AND THE SAVED AREAS ARE HYDRATED FROM THE DEVICE, AND THIS EFFECT MUST STAY
      BELOW THE SIGN-IN RESET ABOVE. Effects run in declaration order, and that reset clears both
      lists on every `uid` transition — so declared above it, this would fill them and be wiped
@@ -1388,9 +1405,10 @@ if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(functio
       askConfirm({title:"Leave "+cl.name+"?",confirmLabel:"Leave"}).then(function(ok){if(!ok)return;
         if(uid&&cl._db){leaveGroupRow(cl.id,uid).then(function(){myGroupsQ.refetch&&myGroupsQ.refetch();}).catch(function(e){setJoinedGroups(function(p){return p.indexOf(cl.id)>=0?p:[cl.id].concat(p);});showToast("Couldn't leave that group — "+((e&&e.message)||"try again."),3600);});}
         setJoinedGroups(function(p){return p.filter(function(x){return x!==cl.id;});});
+        if(_seedGroupIds.has(cl.id))saveSeedGroupJoins(uid,joinedGroups.filter(function(x){return _seedGroupIds.has(x)&&x!==cl.id;}));
         setGroupMembers(function(m){var arr=(m[cl.id]||cl.memberIds||[]).filter(function(x){return x!==0;});var n=Object.assign({},m);n[cl.id]=arr;return n;});
         if(!cl._db)setGroupMods(function(m){var n=Object.assign({},m);n[cl.id]=(m[cl.id]||cl.moderatorIds||[]).filter(function(x){return x!==0;});return n;});
-        showToast("Left "+cl.name+(uid?"":" on this device — sign in to keep it"));});return;}
+        showToast("Left "+cl.name+(uid?(cl._db?"":" on this device (example group)"):" on this device — sign in to keep it"));});return;}
     if(pend){withdrawGroupReq(cl);return;}
     var _path=groupJoinPath(cl,groupVisOf(cl,groupVis));
     /* Only an organizer or moderator can invite (0178's "invite by manager"); this used to say "a member". */
@@ -1398,9 +1416,10 @@ if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(functio
     var _rules=(cl.rules||[]).length>0;if(_path==="request"){if((cl.joinQuestions||[]).length||_rules){setJoinAsk({mode:"request",groupId:cl.id,answers:(cl.joinQuestions||[]).map(function(){return "";}),agreed:false,err:"",busy:false});return;}sendGroupJoinRequest(cl,[],false);return;}
     if(_rules&&cl._db){setJoinAsk({mode:"join",groupId:cl.id,answers:[],agreed:false,err:"",busy:false});return;}
     setJoinedGroups(function(p){return p.indexOf(cl.id)>=0?p:[cl.id].concat(p);});
+    if(_seedGroupIds.has(cl.id))saveSeedGroupJoins(uid,[cl.id].concat(joinedGroups.filter(function(x){return _seedGroupIds.has(x)&&x!==cl.id;})));
     setGroupMembers(function(m){var arr=(m[cl.id]||cl.memberIds||[]).slice();if(arr.indexOf(0)<0)arr=arr.concat([0]);var n=Object.assign({},m);n[cl.id]=arr;return n;});
     if(uid&&cl._db){joinGroupRow(cl.id,uid).then(function(){myGroupsQ.refetch&&myGroupsQ.refetch();}).catch(function(){setJoinedGroups(function(p){return p.filter(function(x){return x!==cl.id;});});showToast("Couldn't join that group — try again.");});}
-    showToast("Joined "+cl.name+(uid?"":" on this device — sign in to keep it"));};
+    showToast("Joined "+cl.name+(uid?(cl._db?"":" on this device (example group)"):" on this device — sign in to keep it"));};
   /* The label on that button, for both places. A trust group and a private group used to read "Join"
      and then refuse or turn into a request; the label now names the door the tap actually opens. */
   const groupJoinBtnLabel=(cl,long)=>{var joined=joinedGroups.indexOf(cl.id)>=0;if(joined)return (cl._db?(!!uid&&cl.ownerId===uid):(cl.ownerId===0))?(long?"✓ You run this group":"✓ Yours"):(long?tx("✓ Joined — tap to leave"):"✓ Joined");if(pendingGroups.indexOf(cl.id)>=0)return long?tx("Requested · tap to withdraw"):"Requested · undo";var _p=groupJoinPath(cl,groupVisOf(cl,groupVis));return _p==="invite"?"Invite only":_p==="request"?(long?"Request to join":"Request"):(long?"Join group":"Join");};
@@ -1715,7 +1734,7 @@ return <div onClick={close} tabIndex={-1} onKeyDown={function(e){if(e.key==="Esc
     {/* The primary nav is a BOTTOM tab bar, the way phone apps carry it. The WINDOW is the scroller here (the outer column is minHeight:100vh), so sticky bottom:0 pins it to the viewport while it still occupies real layout space: nothing can scroll under it out of reach. It rides above the non-dismissible policy notice by that notice's own measured height. */}
     {/* Inside an open chat thread the tab bar steps aside, as Facebook's does, so the composer owns the bottom of the screen; the thread's own Back button is the way out. Same condition the two thread views render on. */}
     {/* THE LEFT SIDEBAR IS GONE (owner 2026-11-11): the tabs are the header's NAV STRIP, Your crews and Your groups are rail cards (lib/DesktopShell.jsx). */}{wide?null:_inChat?null:<div role="navigation" aria-label="Primary" style={{display:"flex",/* 0.94, not 0.82 (2026-10-25): the bar is see-through, so whatever scrolls under it tints the active tab's C.blue label. At 0.82 a C.blueSolid button under the bar left "Partners" at 4.14:1 (check:axe, WCAG 1.4.3); at 0.94 it is 4.75:1 over blueSolid and still 4.5:1+ over green or amber, and the blur still shows. */background:"rgba(22,27,34,0.94)",WebkitBackdropFilter:"saturate(160%) blur(16px)",backdropFilter:"saturate(160%) blur(16px)",boxShadow:"0 -1px 0 rgba(240,246,252,0.06), 0 -10px 30px rgba(0,0,0,0.35)",flexShrink:0,position:"sticky",bottom:_needsPolicy&&policyH?policyH:0,zIndex:30,paddingBottom:"env(safe-area-inset-bottom)"}}>{NAV.filter(n=>n.bar!==false).map(n=><button key={n.id} aria-label={navName(n)} aria-current={tab===n.id?"page":undefined} onClick={()=>goTab(n.id)} style={{flex:1,minWidth:0,padding:"11px 2px 8px",border:"none",background:"transparent",color:tab===n.id?C.blue:C.textSub,fontSize:"min(12.5px, 2.95vw)",fontWeight:tab===n.id?"800":"600",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"flex-start",gap:3}}>{/* The label comes FIRST in the DOM and `order` puts the icon back on top: the badge count then reads AFTER the word ("Crews 9"), in the order the name says it. */}<span style={{order:2,textAlign:"center",lineHeight:1.12,letterSpacing:-0.1,maxWidth:"100%",overflowWrap:"anywhere"}}>{n.label}</span>{" "}<span className={tab===n.id?"cm-nudge":undefined} style={{order:1,fontSize:18,lineHeight:1,background:tab===n.id?C.blueBg:"transparent",borderRadius:11,padding:"3px 13px",transition:"background .15s ease",position:"relative"}}><ActionIcon name={n.ai} size={24} color={tab===n.id?C.blue:C.text}/>{navBadge(n.id,2)}</span></button>)}</div>}
-    {wide&&full?<div data-cm-left="" style={wideLeft(wg)}><div style={{flex:"1 1 auto",minHeight:0,display:"flex",flexDirection:"column",gap:14}}>{/* the area page portals its map + sub-areas here (src/components/AreaPage.tsx); shown only while the area browser is the page in view. ITS OWN SCROLL BAR (owner 2026-11-14: "the area map on the left panel should have its own scroll bar"): following the page (FollowColumn) left the end of a long sub-area list out of reach on a short area page; the left ad stays under it, in view */}<div id="cm-left-panel" data-cm-left-scroll="" style={{display:tab==="routes"&&!selRoute&&!_pageView?"block":"none",flex:"0 1 auto",minHeight:0,overflowY:"auto",overscrollBehavior:"contain"}}/>{adSideRoom&&_isAdPage()?<SideAd/>:null}</div></div>:null}{wide&&full?<div data-cm-rail="" style={wideRail(wg)}>{tab==="routes"&&selRoute&&!_pageView?<FollowColumn><div id="cm-route-rail"/>{_isAdPage()?<RailAd/>:null}</FollowColumn>:<WideRail upcoming={upcomingClimbs.filter(function(x){/* a crew a crewmate logged (a confirmed tag) is past too */return activeCrews.indexOf(x.crew)>=0;})} upcomingUnavailable={crewsUnavailable} alerts={_alerts.notifs} waiting={_alerts.waiting} guest={_alerts.guest} onSignIn={()=>setLoginOpen(true)} onOpenCal={()=>setCalOpen(true)} onOpenAlerts={openAllNotifs} showToast={showToast} newN={_alerts.newN} onFindPartners={()=>_wideGo("discover")} crews={_known?{crews:activeCrews,crewMsgs:crewMsgs,crewUnread:crewUnreadShown,placeOf:placeOf,unavailable:crewsUnavailable,loading:!!(uid&&myCrewsQ&&myCrewsQ.isLoading),onOpenCrew:c=>{_closePages();setTab("crew");setSelRoute(null);setChatWith(null);setChatCrew(null);setSafetyCrew(null);openCrewCard(c.id);},onAllCrews:()=>_wideGo("crew")}:null} groups={{groups:myGroupsNow(),groupUnreadN:groupUnreadN,onOpenGroup:g=>{_closePages();setGroupLink(null);setNotifOpen(false);setChatWith(null);setChatCrew(null);setTab("groups");setOpenGroupId(g.id);},onAllGroups:()=>_wideGo("groups")}} ad={_isAdPage()}/>}</div>:null}
+    {wide&&full?<div data-cm-left="" style={wideLeft(wg)}><LeftColumn>{/* the area page portals its map + sub-areas here (src/components/AreaPage.tsx); shown only while the area browser is the page in view. ITS OWN SCROLL BAR while the area list is in it (owner 2026-11-14: "the area map on the left panel should have its own scroll bar"): following the page (FollowColumn) left the end of a long sub-area list out of reach on a short area page; the left ad stays under it, in view. Any other page, the panel follows the page and the wheel over it scrolls the page (LeftColumn, lib/Ads.jsx) */}<div id="cm-left-panel" data-cm-left-scroll="" style={{display:tab==="routes"&&!selRoute&&!_pageView?"block":"none",flex:"0 1 auto",minHeight:0,overflowY:"auto",overscrollBehavior:"contain"}}/>{adSideRoom&&_isAdPage()?<SideAd/>:null}</LeftColumn></div>:null}{wide&&full?<div data-cm-rail="" style={wideRail(wg)}>{tab==="routes"&&selRoute&&!_pageView?<FollowColumn><div id="cm-route-rail"/>{_isAdPage()?<RailAd/>:null}</FollowColumn>:<WideRail upcoming={upcomingClimbs.filter(function(x){/* a crew a crewmate logged (a confirmed tag) is past too */return activeCrews.indexOf(x.crew)>=0;})} upcomingUnavailable={crewsUnavailable} alerts={_alerts.notifs} waiting={_alerts.waiting} guest={_alerts.guest} onSignIn={()=>setLoginOpen(true)} onOpenCal={()=>setCalOpen(true)} onOpenAlerts={openAllNotifs} showToast={showToast} newN={_alerts.newN} onFindPartners={()=>_wideGo("discover")} crews={_known?{crews:activeCrews,crewMsgs:crewMsgs,crewUnread:crewUnreadShown,placeOf:placeOf,unavailable:crewsUnavailable,loading:!!(uid&&myCrewsQ&&myCrewsQ.isLoading),onOpenCrew:c=>{_closePages();setTab("crew");setSelRoute(null);setChatWith(null);setChatCrew(null);setSafetyCrew(null);openCrewCard(c.id);},onAllCrews:()=>_wideGo("crew")}:null} groups={{groups:myGroupsNow(),groupUnreadN:groupUnreadN,onOpenGroup:g=>{_closePages();setGroupLink(null);setNotifOpen(false);setChatWith(null);setChatCrew(null);setTab("groups");setOpenGroupId(g.id);},onAllGroups:()=>_wideGo("groups")}} ad={_isAdPage()}/>}</div>:null}
     {wide?_vInbox:null}
     <DocTitle title={selRoute&&selRoute.name?selRoute.name+" – ClimbMatch":tab==="today"?"ClimbMatch":((NAV.find(n=>n.id===tab)||{}).label||"ClimbMatch")+" – ClimbMatch"}/>
   </div></RouteLookupCtx.Provider>;
