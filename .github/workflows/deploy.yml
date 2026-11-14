@@ -39,7 +39,7 @@ jobs:
     outputs:
       current: ${{ steps.tip_final.outputs.current }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           # should-publish.sh asks `git merge-base --is-ancestor`, which cannot answer
           # anything at the default depth of 1.
@@ -78,7 +78,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: bash scripts/ci/should-publish.sh
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         if: steps.tip_early.outputs.current == 'true'
         with:
           node-version: 22
@@ -144,7 +144,7 @@ jobs:
       # The offline state files (state-snapshots.yml builds them nightly into the Actions cache).
       # Restored by key PREFIX, so the newest set wins. Missing is not an error: the app falls back
       # to paging the database, exactly as it did before these files existed.
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         if: steps.tip_early.outputs.current == 'true'
         with:
           path: state-snapshots
@@ -175,7 +175,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: bash scripts/ci/should-publish.sh
-      - uses: actions/upload-pages-artifact@v5
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         if: steps.tip_final.outputs.current == 'true'
         with:
           path: ./dist
@@ -190,6 +190,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
         with:
           artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
