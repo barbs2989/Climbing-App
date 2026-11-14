@@ -26,7 +26,7 @@ import { RekognitionClient, DetectModerationLabelsCommand } from "npm:@aws-sdk/c
 import { allow, DAY, HOUR } from "../_shared/ratelimit.ts";
 
 const json = (body: unknown, status = 200) =>
-  new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
+  new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 // kind -> where it lives and which columns are words / pictures.
