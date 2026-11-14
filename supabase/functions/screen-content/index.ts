@@ -32,6 +32,21 @@ import { checkHook } from "../_shared/hooksig.ts";
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+// Every accepted call answers the same {ok:true}, whatever happened: the result (held or not, why,
+// the classifier's category) is never told to the caller. The trigger posts through pg_net and
+// reads nothing back; outcomes live in screening_hold / moderation_actions.
+const DONE = () => json({ ok: true });
+// This project's public Storage objects, e.g. <SUPABASE_URL>/storage/v1/object/public/...
+const STORAGE_PREFIX = (() => {
+  try { return new URL(Deno.env.get("SUPABASE_URL") || "").origin + "/storage/v1/object/public/"; } catch (_e) { return null; }
+})();
+function isOwnStorageUrl(u: string): boolean {
+  if (!STORAGE_PREFIX) return false;
+  try {
+    const p = new URL(u);
+    return p.protocol === "https:" && !p.username && !p.password && (p.origin + p.pathname).startsWith(STORAGE_PREFIX);
+  } catch (_e) { return false; }
+}
 
 // kind -> where it lives and which columns are words / pictures.
 const KINDS: Record<string, { table: string; text: string[]; images?: (r: any) => string[] }> = {
@@ -91,24 +106,24 @@ serve(async (req) => {
     // an hourly cap. Fails CLOSED like every other limiter here: if the limiter cannot be read,
     // nothing is screened -- the floor still ran inside the insert.
     const { data: row } = await supabase.from(spec.table).select("*").eq("id", id).maybeSingle();
-    if (!row) return json({ screened: false, reason: "not_found" });
-    if (row.moderation !== "visible") return json({ screened: false, reason: "not_visible" });
-    if (kind === "trip_report" && row.trip_report_visibility === "private") return json({ screened: false, reason: "private" });
+    if (!row) return DONE();
+    if (row.moderation !== "visible") return DONE();
+    if (kind === "trip_report" && row.trip_report_visibility === "private") return DONE();
     const text = spec.text.map((c) => (typeof row[c] === "string" ? row[c] : "")).filter(Boolean).join("\n").slice(0, 12000);
-    const images = spec.images ? spec.images(row) : [];
+    // Only images in this project's own Storage are fetched; any other URL is skipped (never a
+    // request to an arbitrary host on a row author's say-so).
+    const images = (spec.images ? spec.images(row) : []).filter(isOwnStorageUrl);
     // Nothing to screen WITH: say so before touching the limiter, so a hook wired ahead of the keys
     // costs one read and no writes.
     const haveText = !!Deno.env.get("ANTHROPIC_API_KEY"), haveImages = !!(Deno.env.get("AWS_ACCESS_KEY_ID") && Deno.env.get("AWS_SECRET_ACCESS_KEY"));
-    if (!((haveText && text.trim()) || (haveImages && images.length))) return json({ screened: false, reason: "not_configured" });
+    if (!((haveText && text.trim()) || (haveImages && images.length))) return DONE();
     const fingerprint = id + ":" + (await sha(text + "|" + images.join(",")));
     if (!(await allow(supabase, [
       // 7 days, not 30: the ledger keeps rows for RETENTION_SEC (8 days), so a longer window was a
       // promise the cleanup broke. Past 7 days a replay is refused by the signed timestamp instead.
       { bucket: "screen:row", key: fingerprint, limit: 1, windowSec: 7 * DAY },
       { bucket: "screen:all", key: "all", limit: 2000, windowSec: HOUR },
-    ]))) return json({ screened: false, reason: "rate_limited_or_seen" });
-
-    const outcome: Record<string, unknown> = { screened: true };
+    ]))) return DONE(); // already screened (same content) or over the cap: costs nothing more
 
     // ---- TEXT
     const anthropicKey = Deno.env.get("ANTHROPIC_API_KEY");
@@ -123,17 +138,15 @@ serve(async (req) => {
       });
       if (res.stop_reason === "refusal") {
         // The classifier declining to read it is itself a signal; a person looks.
-        const held = await hold(supabase, kind, id, "classifier_declined", "The screening model declined to process this content.");
-        return json({ ...outcome, text: "declined", held });
+        await hold(supabase, kind, id, "classifier_declined", "The screening model declined to process this content.");
+        return DONE();
       }
       const v = res.parsed_output;
-      outcome.text = v ? { verdict: v.verdict, category: v.category, confidence: v.confidence } : "unparsed";
+      if (!v) console.warn("screen-content: unparsed classifier output for", kind, id);
       if (v && v.verdict === "hold" && v.category !== "none" && v.confidence >= 0.7) {
-        const held = await hold(supabase, kind, id, v.category, v.reason);
-        return json({ ...outcome, held });
+        await hold(supabase, kind, id, v.category, v.reason);
+        return DONE();
       }
-    } else if (text.trim()) {
-      outcome.text = "not_configured";
     }
 
     // ---- IMAGES
@@ -141,23 +154,20 @@ serve(async (req) => {
     if (images.length && awsKey && awsSecret) {
       const rk = new RekognitionClient({ region: Deno.env.get("AWS_REGION") || "us-west-2", credentials: { accessKeyId: awsKey, secretAccessKey: awsSecret } });
       for (const url of images) {
-        const r = await fetch(url);
-        if (!r.ok) continue;
+        const r = await fetch(url, { redirect: "error" }).catch(() => null);
+        if (!r || !r.ok) continue;
         const bytes = new Uint8Array(await r.arrayBuffer());
         if (bytes.length > 5 * 1024 * 1024) continue; // Rekognition's inline limit
         const out = await rk.send(new DetectModerationLabelsCommand({ Image: { Bytes: bytes }, MinConfidence: 80 }));
         const labels = (out.ModerationLabels || []).map((l) => l.ParentName || l.Name || "").filter(Boolean);
         const bad = labels.find((l) => /Explicit|Nudity|Sexual|Violence|Visually Disturbing|Hate Symbols/i.test(l));
         if (bad) {
-          const held = await hold(supabase, kind, id, "image: " + bad, "Image flagged by automatic screening: " + labels.slice(0, 4).join(", "));
-          return json({ ...outcome, images: labels, held });
+          await hold(supabase, kind, id, "image: " + bad, "Image flagged by automatic screening: " + labels.slice(0, 4).join(", "));
+          return DONE();
         }
       }
-      outcome.images = "clear";
-    } else if (images.length) {
-      outcome.images = "not_configured";
     }
-    return json(outcome);
+    return DONE();
   } catch (err) {
     console.error("screen-content failed:", err && (err as Error).message);
     return json({ error: "internal" }, 500);
