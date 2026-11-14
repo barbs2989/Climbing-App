@@ -1,0 +1,1012 @@
+{
+ "ca_south_lake_peaks_traverse": {
+  "area": "ca_hurd_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route graded 5.4 YDS."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type line lists Grade IV."
+     },
+     {
+      "url": "https://gutzjourney.com/trip-report-south-lake-peaks-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Difficulty given as 5th class, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 6000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type line gives 6000 ft of route."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_loop",
+    "value": 11,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://gutzjourney.com/trip-report-south-lake-peaks-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whole outing about 11 miles, roughly 2 miles of it ridgeline."
+     },
+     {
+      "url": "https://fastestknowntime.com/route/south-lakes-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route distance listed as 10.5 mi."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From South Lake trailhead go ~0.8 mi, take left fork toward Bishop Pass to Long Lake, skirt its right side toward Hurd Peak, aim for dark right-slanting dike.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Lake TH, 0.8 mi then left fork to Bishop Pass trail to Long Lake, right side toward Hurd, start at right-slanting dike ramp."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Hurd summit go south toward Peak 12,192 on 3rd class to technical ridge (~5.6 onto crest); follow crest, class 2-3 to low point, 3rd then 4th near summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hurd south toward Peak 12,192, ~5.6 to gain ridge, follow crest, class 2-3 down to low point, then 3rd and 4th to top."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South ridge (Class 2) to the saddle between Peak 12,192 and the start of Trapezoid Peak's North Ridge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: Class 2 south ridge to saddle between Peak 12,192 and Trapezoid North Ridge start."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Usually soloed; if roped, light alpine rack and 30 m rope; small ice axe may help.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Solo; else light alpine rack, 30 m rope, small ice axe possibly useful."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "South Lake trailhead (Bishop Pass trail)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118734058/south-lake-peaks-traverse",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts from trailhead at South Lake via Bishop Pass fork."
+     },
+     {
+      "url": "https://gutzjourney.com/trip-report-south-lake-peaks-traverse/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Traverse based from South Lakes trailhead in Bishop, via Bishop Pass trail."
+     }
+    ]
+   }
+  ],
+  "note": "Gain conflicts: gutzjourney 4,850 ft vs FKT 5,500 ft (>10% apart) so not recorded. Distances are whole-loop figures, not one-way. Gutzjourney did the loop in reverse (Johnson to Hurd). App grade 'Easy 5th' vs MP 5.4."
+ },
+ "ca_southeast_buttress_2": {
+  "area": "ca_southeast_slopes",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105835705/southeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cathedral Peak Southeast Buttress: 700 ft."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105835705/southeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as 5 pitches."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105835705/southeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Wilts and Spencer Austin, 1943",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105835705/southeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA credited to Wilts and Spencer Austin in 1943."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Normal full rack; no huge cams needed.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105835705/southeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: normal full rack, no large cams."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/cathedral-peak-southeast-buttress/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Specs: 9 mi, +/- 2800 ft (round trip from Tuolumne Meadows Campground)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/cathedral-peak-southeast-buttress/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Specs list +/- 2800 ft for the outing."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Tuolumne Meadows Campground take spur to John Muir Trail, follow it toward Cathedral Lakes, then the climbers' trail along Budd Creek.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/cathedral-peak-southeast-buttress/",
+      "retrieved_at": "2026-11-14",
+      "fact": "JMT from Tuolumne Meadows Campground, then climber's trail beside Budd Creek."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No permit for a day climb; backcountry camping needs a wilderness permit; Tuolumne Meadows Campground is paid/reserved.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/cathedral-peak-southeast-buttress/",
+      "retrieved_at": "2026-11-14",
+      "fact": "No permits unless camping in backcountry; campground needs payment and usually a reservation."
+     }
+    ]
+   }
+  ],
+  "note": "Grade conflict: Mountain Project 5.6 vs backcountrysights 5.7 (app has 5.7); not locked. Gain is the whole outing (+/-)."
+ },
+ "ca_southwest_ridge_3": {
+  "area": "ca_feather_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118039557/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Feather Peak Southwest Ridge rated 4th class YDS."
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Feather_Peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route list gives Southwest Ridge as class 4."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118039557/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type line: 900 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118039557/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Listed as Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "David Brower and party, 1933",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118039557/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA line names David Brower and a partner, 1933."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Reach Feather Pass (12,360 ft); the ridge is obvious from there.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118039557/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Get to Feather Pass at 12,360 ft; route obvious from there."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Return the way you came (down the ridge).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118039557/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descent: go back the way you came up."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "No set crux; optional 5th-class moves can be sought or avoided; solid rock; often done as part of a multi-day loop.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/118039557/southwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "No specific crux, 5th class moves optional, solid rock, best as part of a loop."
+     }
+    ]
+   }
+  ],
+  "note": "Wikipedia's 1933 FA is attached to the Southeast Slope, not this ridge, so FA stays single-source. SummitPost Feather Peak page returned 403. sierrapeaks.org sps01628 report is for another line (via Royce Lakes), not used."
+ },
+ "ca_st_jeans_couloir": {
+  "area": "ca_split_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "4th",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106847063/st-jeans-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "St Jeans Couloir rated 4th YDS, AI2 Steep Snow X."
+     },
+     {
+      "url": "https://davidstillman.blogspot.com/2010/06/split-mountain14006-feet-via-stjean.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Report titled Split Mountain via St. Jean Couloir, Class IV."
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "AI2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106847063/st-jeans-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Also graded AI2, Steep Snow, X."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106847063/st-jeans-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Couloir about 1200 ft from base to top."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Bill St. Jean, December 1981",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106847063/st-jeans-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Bill St. Jean in December 1981."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet, ice axe and crampons required.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106847063/st-jeans-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Helmet, ice axe and crampons a must."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Red Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://davidstillman.blogspot.com/2010/06/split-mountain14006-feet-via-stjean.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Party camped two nights at the edge of Red Lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Snow up to about 50 degrees in the couloir; from its top go left over false summits to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://davidstillman.blogspot.com/2010/06/split-mountain14006-feet-via-stjean.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kicked steps up 50 degree snow in the couloir."
+     }
+    ]
+   }
+  ],
+  "note": "Stillman also mentions picking up a wilderness permit in Bishop for the overnight; not recorded as a rule."
+ },
+ "ca_thunder_mountain_thunder_mountain_northwest_slopes": {
+  "area": "ca_thunder_mountain",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 2400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107432522/thunder-mountain-northwest-slopes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, 2400 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107432522/thunder-mountain-northwest-slopes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the road go up Big Butch Wash ENE on moderate snow; crux at the top of the wash where the route turns north up a short steep slope.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107432522/thunder-mountain-northwest-slopes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Up Big Butch Wash E/NE; crux at top of wash where it turns north up a short steep section."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons, poles and snowshoes, and/or avalanche gear depending on conditions.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107432522/thunder-mountain-northwest-slopes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Axe, crampons, poles, snowshoes and/or avalanche precautions as conditions require."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Rockfall from couloirs above and skiers/snowboarders descending the wash.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107432522/thunder-mountain-northwest-slopes",
+      "retrieved_at": "2026-11-14",
+      "fact": "Boulders from steeper couloirs and off-piste riders coming down the wash."
+     }
+    ]
+   }
+  ],
+  "note": "Second page opened: ironhiker.blogspot.com/2014/03/thunder-mountain-telegraph-peak-west.html — its 12.2 mi / 4460 ft is a three-peak outing, not usable for this route."
+ },
+ "ca_west_face_18": {
+  "area": "ca_cockscomb",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121621939/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cockscomb West Face rated 5.4 YDS."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121621939/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type line: 200 ft, 2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121621939/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "2 pitches."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Glen Dawson and Jules Eichorn, July 12, 1931",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121621939/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Glen Dawson and Jules Eichorn, 12 July 1931."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Tuolumne Meadows via Cathedral Lakes, Budd Lake or Lake Elizabeth trail; easy cross-country near Unicorn/Echo Peaks.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121621939/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike from Tuolumne Meadows by Cathedral Lakes, Budd Lake or Lake Elizabeth trails, then easy cross country."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Solo or small alpine rack.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/121621939/west-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: solo or small alpine rack."
+     }
+    ]
+   }
+  ],
+  "note": "App grade is 4th; MP gives 5.4 (not locked). Second source pending/checked below."
+ },
+ "ca_west_ridge_5": {
+  "area": "ca_mt_conness",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/conness-wr/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Conness West Ridge given as 5.6."
+     },
+     {
+      "url": "https://themtsarecalling.com/connesswestridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crux listed as Class 5.6."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106167844/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: 1500 ft, 10 pitches, Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106167844/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade IV."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Sawmill Campground",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106167844/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Option 1 approach starts at Sawmill Campground on a climbers' trail."
+     },
+     {
+      "url": "https://themtsarecalling.com/connesswestridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Sawmill Campground, with trash and pit toilets."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/connesswestridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4500 ft for the outing."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/connesswestridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Distance 9.4 miles for the day."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Double rack, many alpine slings, 55 m rope.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/connesswestridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection: double rack, many alpine slings, 55 m rope."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Alpine Lake, about 2.5 mi in, is the only reliable year-round water.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/connesswestridge/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Alpine Lake 2.5 miles in, only reliable year-round water."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Sawmill Campground climbers' trail to sandy plateau east of Conness, up to a notch, descend west on scree to base (3-4 h); alt. via Lower Young Lakes (~2 h, backcountry permit to camp).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106167844/west-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Two approaches: Sawmill CG via plateau and notch (3-4 h), or Lower Young Lakes (2 h)."
+     }
+    ]
+   },
+   {
+    "field": "approach_hours",
+    "value": 3.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/conness-wr/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sawmill Campground to base of West Ridge took 3:30."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Standard SE ridge walk-off back toward Sawmill Campground (about 2 h); North Ridge descent is an option.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/trip-reports/california/conness-wr/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Partner took standard SE ridge walk-off; summit to Sawmill CG hike out 2:00."
+     }
+    ]
+   }
+  ],
+  "note": "Pitch count conflicts: MP 10 vs themtsarecalling 12, not recorded. MP grade not captured explicitly. Times from stephabegg are one party's solo pace."
+ },
+ "ca_z_ski_mountaineering_mt_whitney_ski_nnw_face": {
+  "area": "ca_z_ski_mountaineering",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113510861/mt-whitney-ski-nnw-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "NNW face 35-40 degrees for 1200 vertical ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113510861/mt-whitney-ski-nnw-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avalanche hazard can stay high long after snowfall; slopes at the most dangerous angle, one over slabby rock; carry beacon, shovel, probe.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113510861/mt-whitney-ski-nnw-face",
+      "retrieved_at": "2026-11-14",
+      "fact": "Long-lasting avalanche hazard, slabby rock under one slope; beacons, shovels, probes advised."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Whitney Portal",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierradescents.com/skiing/whitney/north-face.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ski trip to Whitney's north face began at Whitney Portal toward Iceberg Lake."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Mount Whitney Zone permit; lottery Feb 1-Mar 1; quota May 1-Nov 1 (100 day use, 60 overnight per day); $15 per person.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whitney lottery Feb 1-Mar 1, $15/person, quota May 1-Nov 1 of 100 day and 60 overnight."
+     }
+    ]
+   }
+  ],
+  "note": "sierradescents north-face page is a narrative; no figures stated. Permit page is for the Whitney zone generally."
+ },
+ "ca_z_ski_mountaineering_mt_whitney_ski_the_mountaineers_gully": {
+  "area": "ca_z_ski_mountaineering",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113511153/mt-whitney-ski-the-mountaineers-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "East-facing 35 degrees for about 1000 vertical ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113511153/mt-whitney-ski-the-mountaineers-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avalanche hazard can persist long after snowfall; the gully is a terrain trap; carry beacon, shovel, probe.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113511153/mt-whitney-ski-the-mountaineers-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Persistent avalanche hazard; gully is a trap; avalanche gear advised."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Mount Whitney Zone permit year-round: Day Use (lottery May 1-Nov 1) or the North Fork of Lone Pine Creek overnight permit.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-whitney-mountaineers-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whitney Zone permit year-round: Day Use lottery or North Fork Lone Pine Creek overnight permit."
+     },
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whitney permits by lottery; quota season May 1-Nov 1 for day and overnight use."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Upper Boy Scout Lake or Iceberg Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-whitney-mountaineers-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Most parties camp at Upper Boy Scout Lake or Iceberg Lake."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Whitney Portal (about 8,360 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-whitney-mountaineers-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead elevation about 8,360 ft at Whitney Portal."
+     }
+    ]
+   }
+  ],
+  "note": "Summitborn's distance and gain are labelled its own estimates for the summer climbing route, so not used."
+ },
+ "ca_z_ski_mountaineering_schneider_crest_ski": {
+  "area": "ca_z_ski_mountaineering",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113512266/schneider-crest-ski",
+      "retrieved_at": "2026-11-14",
+      "fact": "30-40 degrees NE-facing for about 1100 vertical; alt. 40-degree couloir of 300 vertical ft."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113512266/schneider-crest-ski",
+      "retrieved_at": "2026-11-14",
+      "fact": "Type: Snow, Alpine, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ski crampons (harscheisen) at least, possibly boot crampons for the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113512266/schneider-crest-ski",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bring ski crampons even for lower approach; perhaps boot crampons too."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avalanche hazard can stay substantial long after the latest snowfall; assess before going.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/113512266/schneider-crest-ski",
+      "retrieved_at": "2026-11-14",
+      "fact": "Avalanche hazard may remain substantial long after snowfall."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Mount Whitney Zone permit; quota May 1-Nov 1; $15 per person.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/wilderness/mount-whitney",
+      "retrieved_at": "2026-11-14",
+      "fact": "Whitney lottery permits, $15/person, quota May 1-Nov 1."
+     }
+    ]
+   }
+  ],
+  "note": "Opened DDG results; no second publisher describes this ski line (only MP area pages, mapcarta). Permit page applies to Whitney zone generally."
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "wa_mount_goode_northeast_buttress": {
+  "area": "wa_mount_goode",
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 10700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://fastestknowntime.com/route/goode-mountain-northeast-buttress",
+      "retrieved_at": "2026-11-14",
+      "fact": "FKT: loop from Bridge Creek TH, 38.3 mi, 10,700 ft vertical gain"
+     }
+    ]
+   }
+  ],
+  "note": "Loop shape: the FKT figure covers the whole loop (Bridge Creek, NE Buttress, Park Creek, then the PCT back). FKT calls the approach ~13 mi of flat or gradual downhill but gives no loss figure. Mountaineers (8,400) and the CascadeClimbers TR (9,700) were blocked."
+ },
+ "reason": "wa-b found 8,400 ft vs stored 10,700; hold until verifier decides"
+}

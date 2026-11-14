@@ -1,0 +1,1287 @@
+{
+ "ca_wnw_edge_2": {
+  "area": "ca_day_needle_aka_crooks_peak",
+  "skip_reason": "Opened DuckDuckGo results for Crooks Peak/Day Needle; SummitPost Crooks Peak page (https://www.summitpost.org/crooks-peak/226249) answered 403. No page found naming a \"WNW Edge\" route."
+ },
+ "ca_z_ski_mountaineering_mt_whitney_ski_trail_crest": {
+  "area": "ca_z_ski_mountaineering",
+  "skip_reason": "not yet researched"
+ },
+ "co_jones_mountain_northeast_ridge": {
+  "area": "co_jones_mountain",
+  "skip_reason": "not yet researched"
+ },
+ "co_jupiter_mountain_southwest_slopes": {
+  "area": "co_jupiter_mountain",
+  "skip_reason": "not yet researched"
+ },
+ "co_kit_carson_peak_via_challenger": {
+  "area": "co_kit_carson_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc2",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Easy Class 3."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-kit-carson-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Easy Class 3 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 6,250 ft from the Willow Creek trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-kit-carson-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 6,250 feet of gain from the Willow Creek trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 15,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 15 mi from the Willow Creek trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-kit-carson-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 15 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Willow Creek (8,850 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Willow Creek, 8,850 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-kit-carson-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Willow Creek."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 8850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Willow Creek trailhead elevation 8,850 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure considerable, rockfall considerable, route-finding considerable, commitment considerable",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=kitc2",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure considerable, rockfall considerable, route-finding considerable, commitment considerable."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src. 14ers.com also gives 3,450 ft from Willow Lake. Route goes over Challenger Point and along Kit Carson Avenue."
+ },
+ "co_la_freeway_long_s_to_arapaho_traverse": {
+  "area": "co_indian_peaks_traverses",
+  "skip_reason": "not yet researched"
+ },
+ "co_lackawanna_north_northwest_ridge": {
+  "area": "co_lackawanna",
+  "skip_reason": "not yet researched"
+ },
+ "co_little_pawnee_to_pawnee_traverse": {
+  "area": "co_pawnee_peak",
+  "skip_reason": "not yet researched"
+ },
+ "co_lower_ramp": {
+  "area": "co_arrow_peak",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_adams_west_ridge_via_willow_creek": {
+  "area": "co_mount_adams",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_antero_west_slopes": {
+  "area": "co_mount_antero",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=ante1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-antero/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 2 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=ante1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 5,200 ft from the Baldwin Gulch trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-antero/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 5,200 feet of gain from the Baldwin Gulch trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 15.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=ante1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 15.5 mi from the Baldwin Gulch trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-antero/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 15.5 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Baldwin Gulch (9,400 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=ante1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Baldwin Gulch, 9,400 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-antero/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Baldwin Gulch."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=ante1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Baldwin Gulch trailhead elevation 9,400 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure moderate, rockfall moderate, route-finding low, commitment moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=ante1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure moderate, rockfall moderate, route-finding low, commitment moderate."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Baldwin Creek crossing on the 278 road runs high in spring and early summer",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-antero/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crossing Baldwin Creek on the 278 road needs care in spring and early summer when water is high."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "July-September",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-antero-west-slopes-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Best season given as roughly July to September; snow often covers the road until early July."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No hiking permit or fee; San Isabel National Forest, vehicles on designated roads only",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://summitborn.com/mount-antero-west-slopes-route-guide/",
+      "retrieved_at": "2026-11-14",
+      "fact": "No hiking permit or fee found; San Isabel National Forest, vehicles must stay on designated roads."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src. Summitborn also cites 14ers.com for distance and gain."
+ },
+ "co_mount_buckskin_northeast_slope": {
+  "area": "co_mount_buckskin",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_columbia_west_slopes": {
+  "area": "co_mount_columbia",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=colu2",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-columbia/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 2 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4250,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=colu2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 4,250 ft from the North Cottonwood Creek trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-columbia/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 4,250 feet of gain from the North Cottonwood Creek trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=colu2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 12 mi from the North Cottonwood Creek trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-columbia/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 12 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "North Cottonwood Creek (9,900 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=colu2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: North Cottonwood Creek, 9,900 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-columbia/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as North Cottonwood Creek."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=colu2",
+      "retrieved_at": "2026-11-14",
+      "fact": "North Cottonwood Creek trailhead elevation 9,900 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure moderate, rockfall considerable, route-finding moderate, commitment moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=colu2",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure moderate, rockfall considerable, route-finding moderate, commitment moderate."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src."
+ },
+ "co_mount_edwards_southwest_ridge": {
+  "area": "co_mount_edwards",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_eolus_northeast_ridge": {
+  "area": "co_mount_eolus",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=eolu3",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 3."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-eolus/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 3 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 6100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=eolu3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 6,100 ft from the Needleton trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-eolus/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 6,100 feet of gain from the Needleton trailhead."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Needleton",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=eolu3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Needleton."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-eolus/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Needleton."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure high, rockfall considerable, route-finding high, commitment considerable",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=eolu3",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure high, rockfall considerable, route-finding high, commitment considerable."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-eolus/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 18 miles from Needleton (6 from a Chicago Basin camp)."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Chicago Basin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=eolu3",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain given as 3,100 feet from Chicago Basin, 6,100 from Needleton TH."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-eolus/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Gives 3,100 ft and 6 mi round trip from a Chicago Basin camp."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Needleton trailhead is a Durango & Silverton train stop",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-eolus/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead is Needleton, a stop on the Durango-Silverton train."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src. The trailhead elevation 11,100 ft printed beside Needleton on 14ers.com looks like the basin, not the train stop; not used."
+ },
+ "co_mount_hope_east_ridge": {
+  "area": "co_mount_hope",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_lincoln_west_ridge": {
+  "area": "co_mount_lincoln",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=linc1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-lincoln/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 2 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=linc1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 2,600 ft from the Kite Lake trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-lincoln/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 2,600 feet of gain from the Kite Lake trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=linc1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 6 mi from the Kite Lake trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-lincoln/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 6 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Kite Lake (12,000 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=linc1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Kite Lake, 12,000 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-lincoln/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Kite Lake."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 12000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=linc1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kite Lake trailhead elevation 12,000 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure moderate, rockfall moderate, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=linc1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure moderate, rockfall moderate, route-finding low, commitment low."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Goes over Mount Cameron on the way to Lincoln",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-lincoln/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route listed as West Ridge (via Mount Cameron)."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src."
+ },
+ "co_mount_lindsey_northwest_gully": {
+  "area": "co_mount_lindsey_climbs",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Easy Class 3."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-lindsey/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 3 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 3,500 ft from the Huerfano / Lily Lake trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-lindsey/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 3,500 feet of gain from the Huerfano / Lily Lake trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 8.25 mi from the Huerfano / Lily Lake trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-lindsey/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 8.25 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Huerfano / Lily Lake (10,700 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Huerfano / Lily Lake, 10,700 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-lindsey/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Huerfano / Lily Lake."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 10700,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Huerfano / Lily Lake trailhead elevation 10,700 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure considerable, rockfall considerable, route-finding considerable, commitment moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=lind1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure considerable, rockfall considerable, route-finding considerable, commitment moderate."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src."
+ },
+ "co_mount_oklahoma_southeast_slopes": {
+  "area": "co_mount_oklahoma",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_ouray_west_ridge": {
+  "area": "co_mount_ouray",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_princeton_east_slopes": {
+  "area": "co_mount_princeton",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=prin1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-princeton/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 2 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=prin1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 5,400 ft from the Mt. Princeton Road (2WD trailhead) trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-princeton/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 5,400 feet of gain from the Mt. Princeton Road (2WD trailhead) trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=prin1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 13.25 mi from the Mt. Princeton Road (2WD trailhead) trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-princeton/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 13.25 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mt. Princeton Road (2WD trailhead) (8,900 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=prin1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Mt. Princeton Road (2WD trailhead), 8,900 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-princeton/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Mt. Princeton Road (2WD trailhead)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 8900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=prin1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mt. Princeton Road (2WD trailhead) trailhead elevation 8,900 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure moderate, rockfall moderate, route-finding moderate, commitment moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=prin1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure moderate, rockfall moderate, route-finding moderate, commitment moderate."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src. Both pages also give 3,200 ft gain and 6.5 mi RT when starting higher up the 4WD road."
+ },
+ "co_mount_silverheels_north_spur_from_hoosier_pass": {
+  "area": "co_mount_silverheels",
+  "skip_reason": "not yet researched"
+ },
+ "co_mount_wilson_southwest_slopes": {
+  "area": "co_mount_wilson",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=mwil6",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 3."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-wilson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 3 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4400,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=mwil6",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 4,400 ft from the Kilpacker trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-wilson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 4,400 feet of gain from the Kilpacker trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=mwil6",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 12.5 mi from the Kilpacker trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-wilson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 12.5 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Kilpacker (10,100 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=mwil6",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Kilpacker, 10,100 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/climbing-mount-wilson/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Kilpacker."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 10100,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=mwil6",
+      "retrieved_at": "2026-11-14",
+      "fact": "Kilpacker trailhead elevation 10,100 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure high, rockfall considerable, route-finding considerable, commitment considerable",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=mwil6",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure high, rockfall considerable, route-finding considerable, commitment considerable."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src."
+ },
+ "co_mt_belford_northwest_ridge": {
+  "area": "co_mt_belford",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=belf1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-belford-and-oxford/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 2 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=belf1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 4,500 ft from the Missouri Gulch trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-belford-and-oxford/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 4,500 feet of gain from the Missouri Gulch trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=belf1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 8 mi from the Missouri Gulch trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-belford-and-oxford/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 8 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Missouri Gulch (9,650 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=belf1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Missouri Gulch, 9,650 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-belford-and-oxford/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Missouri Gulch."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 9650,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=belf1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Missouri Gulch trailhead elevation 9,650 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure low, rockfall moderate, route-finding low, commitment moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=belf1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure low, rockfall moderate, route-finding low, commitment moderate."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src. Next Summit page covers Belford+Oxford; it states 4,500 ft / 8 mi for Belford only."
+ },
+ "co_mt_bierstadt_standard_route_west_slopes": {
+  "area": "co_mt_bierstadt_standard_route",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=bier1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-bierstadt/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 2 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=bier1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 2,850 ft from the Guanella Pass trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-bierstadt/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 2,850 feet of gain from the Guanella Pass trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7.25,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=bier1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 7.25 mi from the Guanella Pass trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-bierstadt/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 7.25 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Guanella Pass (11,669 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=bier1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Guanella Pass, 11,669 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-bierstadt/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Guanella Pass."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 11669,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=bier1",
+      "retrieved_at": "2026-11-14",
+      "fact": "Guanella Pass trailhead elevation 11,669 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure low, rockfall moderate, route-finding low, commitment low",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=bier1",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure low, rockfall moderate, route-finding low, commitment low."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src."
+ },
+ "co_mt_evans_standard_route_west_ridge": {
+  "area": "co_mt_evans_standard_route",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=evan2",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com rates this route Class 2."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-blue-sky/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Next Summit lists difficulty Class 2 (it cites 14ers.com)."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=evan2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Total elevation gain 2,000 ft from the Summit Lake trailhead."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-blue-sky/",
+      "retrieved_at": "2026-11-14",
+      "fact": "States 2,000 feet of gain from the Summit Lake trailhead."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=evan2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip length 5.5 mi from the Summit Lake trailhead (round trip, not one-way)."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-blue-sky/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Round-trip distance 5.5 miles (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Summit Lake (12,850 ft)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=evan2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Summit Lake, 12,850 feet."
+     },
+     {
+      "url": "https://thenextsummit.org/colorado-14ers/hiking-mount-blue-sky/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Names the trailhead as Summit Lake."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 12850,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=evan2",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit Lake trailhead elevation 12,850 feet."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "exposure moderate, rockfall moderate, route-finding moderate, commitment moderate",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.14ers.com/route.php?route=evan2",
+      "retrieved_at": "2026-11-14",
+      "fact": "14ers.com risk factors: exposure moderate, rockfall moderate, route-finding moderate, commitment moderate."
+     }
+    ]
+   }
+  ],
+  "note": "Second page (thenextsummit.org) repeats and cites 14ers.com, so it counts as the same source; kept as locked-1src. Mount Evans is now Mount Blue Sky. 14ers.com also lists West Ridge from Echo Lake (5,600 ft, 17 mi RT) and from Guanella Pass (3,100 ft, 9.25 mi RT); figures here are the Summit Lake start. Confirm which trailhead our route means before applying."
+ },
+ "co_mt_meeker_the_loft_route": {
+  "area": "co_mt_meeker",
+  "skip_reason": "not yet researched"
+ },
+ "co_ne_ridge_or_arrowhead_arete": {
+  "area": "co_mchenry_s_peak",
+  "skip_reason": "not yet researched"
+ },
+ "co_niagara_peak_northeast_ridge": {
+  "area": "co_niagara_peak",
+  "skip_reason": "not yet researched"
+ },
+ "co_north_apostle_southwest_ridge": {
+  "area": "co_north_apostle",
+  "skip_reason": "not yet researched"
+ }
+}
