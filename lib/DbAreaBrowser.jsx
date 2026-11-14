@@ -211,7 +211,9 @@ export default function DbAreaBrowser({ areaDiscussion, jumpToFinderReq, onSignI
 
   return (
     <ClimberCtx.Provider value={climber}>
-    <div>
+    {/* Route finder, Near me and Objectives are screens a level down from the Climbs list: a sideways swipe
+        there must not jump to another section of the app (lib/pageSwipe.js reads data-swipe="off"). */}
+    <div data-swipe={screen !== "areas" ? "off" : undefined}>
       {/* Breadcrumb + Back. Sticky, and rendered on EVERY sub-screen — not just "areas".
           Two reports drove both halves. It used to scroll away on a long area page, so on
           anything below the fold there was no way back without scrolling to the top. And it

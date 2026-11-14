@@ -59,14 +59,26 @@ empty field fill at once and two agreeing climbers change one; the owner withdre
 - **Your contributions** (Menu → Profile) shows each edit as Awaiting review / Added — live /
   Not applied with the owner's reason.
 
-- **The owner's queues** (Menu › Review tiles, admin only; `lib/RouteQualityQueues.jsx`): *Route edits to review*
-  clusters pending rows by route, field and `sameEditValue` so three climbers who sent the same value
-  are one card; shows the page's current value beside the proposed one with a row-by-row diff for
-  pitch / rappel / waypoint tables; Approve, Edit &amp; approve (the owner's value becomes
-  `applied_value`), Turn down (reason ≥10 chars, canned reasons, "honest mistake" skips the strike),
-  Keep &amp; lock (field locked high, edit turned down without a strike), Open route. *Flagged route
-  details*: fixed / no change needed, with a note to the reporter. *Contributor standing*: reset,
-  warn, restrict 90 days, ban, each with a reason.
+- **The owner's Review desk** (`review.html` → `review/ReviewDesk.jsx`, owner decision 2026-11-14): its
+  OWN page, not linked from the app, admin only. One table holds every held field edit AND every open flag:
+  type, route, field, the page's current value, what the climber says, the nightly AI checker's verdict
+  (`review_ai_verdicts`, 0436: agree / disagree / partly / unsure at 2-source / 1-source / none) and the
+  value it thinks is right; filter by type, verdict, state and field, sort by any column, and click a row
+  for the full values, the AI's reasoning and quoted sources. Edits: Approve, Use AI value, Edit value,
+  Turn down (reason ≥10 chars, strike unless "honest mistake"), Keep page value &amp; lock. Flags: Use AI
+  value / Enter value (files the value as the owner's own edit — admins pass the lock, 0308 — approves
+  it, and marks the flag fixed), Fixed it, No change needed, with a note to the reporter. "Approve all the
+  AI confirmed (2-source)" approves, after a confirm, every edit the AI agreed with at 2-source that does
+  not remove anything. Identical edits still cluster through `sameEditValue`. Every action is the same
+  is_admin()-checked RPC the old Menu queues called; the AI only advises.
+- **The nightly AI checker**: `scripts/review-queue-export.mjs` (service key, read-only) lists items with
+  no verdict or whose content changed since (`item_hash`); `.claude/workflows/review-flags-nightly.js`
+  researches each (open web only; no AllTrails/Gaia/CalTopo/Strava/Wikiloc/Peakbagger/Mountain Project)
+  and a separate skeptic re-opens every cited source; `scripts/review-verdicts-write.mjs` validates
+  (2-source = two different sites, or one .gov/.us/.gc.ca page) and upserts. Writes NOTHING if any row
+  is malformed.
+- **Contributor standing** stays a Menu › Review tile (`lib/RouteQualityQueues.jsx`): reset, warn,
+  restrict 90 days, ban, each with a reason.
 - **The climber's standing on the edit sheet** (`ContributionStandingNotice` in `lib/SafetyNotices.jsx`):
   warned / restricted-until / banned with the reason and an Appeal button (kind `contributing`).
 
@@ -218,7 +230,10 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 | `ClimbMatch.jsx` | `onContribute` (submit + toast), the route memo's approved-only merge (`_contribFields`, `_pendingEdits`), `mergedNotifs` with notices |
 | `src/components/SuggestFix.tsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line, the standing notice (moved out of RouteDetail.jsx, PR59) |
 | `RouteDetail.jsx` | `openFix`, which opens the edit sheet |
-| `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
+| `review.html`, `review/main.jsx`, `review/ReviewDesk.jsx`, `vite.review.config.js` | The owner's standalone Review desk (its own build, written beside the app; the service worker leaves it alone) |
+| `scripts/review-queue-export.mjs`, `scripts/review-verdicts-write.mjs`, `.claude/workflows/review-flags-nightly.js` | The nightly AI checker: export → research + verify → write verdicts |
+| `supabase/migrations/0436_review_ai_verdicts.sql`, `scripts/oneoff/verify-0436-review-ai-verdicts-pglite.mjs` | The verdicts table (admin read, service-key write) and its RLS check |
+| `lib/RouteQualityQueues.jsx` | `ContributorStandingQueue` |
 | `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip` |
 | `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
 | `ClimbMatchCore.jsx` | `SL` (renders the chip on a route page) |
@@ -271,6 +286,8 @@ Deferred by the owner (2026-10-15): CAPTCHA on sign-up.
 `check:correction-readers`, `check:rls`, `check:function-columns`, `check:migration-replay`.
 
 ## 7. Last significant change
+
+2026-11-14: held edits and flags moved off the Menu onto the standalone Review desk (`review.html`), as one table with the nightly AI checker's verdicts (0436). The Menu keeps only Contributor standing.
 
 0382 (2026-10-28): 0325 withdrawn at the owner's word — every route edit waits for the owner again,
 the Agree button and other climbers' waiting suggestions are gone from the edit sheet, and the

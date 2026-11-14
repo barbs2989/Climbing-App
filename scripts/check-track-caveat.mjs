@@ -388,17 +388,20 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   const REPORTS = [{ user: "Maya Chen", date: "2026-07-12", text: "Snow to the notch.", avatar: "" }];
   // A DB route: no `activity` key and no `communityTracks`, reports arriving as a prop.
   const dbBody = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner", REPORTS));
-  // ANCHOR ON THE CAPTION, NEVER ON THE HEADING. The heading is the thing under test, so anchoring
+  // ANCHOR ON A MARKER, NEVER ON THE HEADING. The heading is the thing under test, so anchoring
   // there makes every edit to it report ANCHOR LOST -- and "the anchor moved, re-point the guard"
-  // and "you changed the heading, change it back" want opposite repairs. The caption below it
-  // describes the section and is not what these assertions are about.
-  const CAP = "Recorded lines other parties walked";
-  const ci = dbBody.indexOf(CAP);
-  // The heading is the text immediately above the caption; bounded by it rather than by a guess
-  // at how big the section is.
-  const headSeg = ci < 0 ? "" : dbBody.slice(Math.max(0, ci - 160), ci);
+  // and "you changed the heading, change it back" want opposite repairs. This used to anchor on the
+  // caption under the heading; the owner had that caption removed (2026-11-14), so the section's
+  // wrapper now carries data-section="tracks", which no copy edit touches.
+  const MARK = 'data-section="tracks"';
+  const dbHtml = render(route({ gpxPts: REAL, waypoints: WPS }), "planner", REPORTS);
+  const mi = dbHtml.indexOf(MARK);
+  // The heading is the first text node inside the marked wrapper -- exactly the heading, not a
+  // guess at how many characters it spans (the rows below it say "Trip report" too).
+  const headSeg = mi < 0 ? "" : text(((dbHtml.slice(mi).match(/>([^<]*[^<\s][^<]*)</) || [])[1]) || "");
+  const ci = mi < 0 ? -1 : dbBody.indexOf(headSeg.trim());
 
-  if (ci < 0) fail("ANCHOR LOST: the tracks section's caption could not be found - section 5 proved nothing");
+  if (mi < 0 || ci < 0) fail("ANCHOR LOST: the tracks section's data-section=\"tracks\" marker could not be found - section 5 proved nothing");
   else {
     ok("the tracks section renders on the planner tab");
 
@@ -426,9 +429,9 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   // four grade parsers, and a rename should have to update the FAQ rather than this guard.
   {
     const rdSrc = readAppFile(path.join(ROOT, "RouteDetail.jsx")); // stitched: the tracks section moved to RouteReportsTab (PR60)
-    const capAt = rdSrc.indexOf(CAP);
-    const slMatches = capAt < 0 ? [] : [...rdSrc.slice(Math.max(0, capAt - 400), capAt).matchAll(/<SL>([^<]{4,60})<\/SL>/g)];
-    const heading = slMatches.length ? slMatches[slMatches.length - 1][1] : null;
+    const capAt = rdSrc.indexOf(MARK);
+    const slMatch = capAt < 0 ? null : rdSrc.slice(capAt, capAt + 400).match(/<SL>([^<]{4,60})<\/SL>/);
+    const heading = slMatch ? slMatch[1] : null;
     const core = readCoreSource();
     const faqAt = core.indexOf("recorded GPX tracks?");
 

@@ -233,6 +233,9 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `src/components/CrowdsPanel.tsx` | `CrowdsPanel` |
 | `src/components/PartnerRequirementsPanel.tsx` | `PartnerRequirementsPanel` — Experience, fitness, *Required skills* chips (the prose as stored) and, under them, **Your skills**: which profile skills those phrases ask for are *On your profile* / *Not on your profile yet* (`mySkills` = `meLive.skills`) |
 | `lib/requiredSkills.js` | `requiredSkillKeys`, `skillKeysInPhrase` — read required-skills prose into `SKILLS` keys (rules written against the 1,392 distinct phrases in the repo data; a phrase naming no profile skill maps to nothing) |
+| `lib/skillGuides.js` | `SKILL_GUIDES`, `CHECKLISTS`, `COURSES`, `GUIDE_DISCLAIMER`, `skillGuide` — skill cards (what / when / what goes wrong, in our words, then links out and Washington-first courses) and four field checklists; why there are no in-house rescue walkthroughs is in its header (research: PR #3331) |
+| `src/components/SkillGuideSheet.tsx` | `SkillGuideSheet` — the portalled card or checklist dialog |
+| `src/components/SkillGuideLink.tsx` | `SkillGuideLink` — a tappable skill name or checklist that opens it, with its own open state; used by the Partners panel's *Your skills*, profile skill chips, and the Safety tab's **Field checklists** card (partner + rappel always, lowering on crag disciplines, crevasse order when the route's terrain reads as glacier) |
 | `src/components/EmptyPanel.tsx` | `EmptyPanel`, the empty state the seasonal and crowds panels share |
 | `src/components/Head.tsx` | `Head`, those panels' card heading |
 | `lib/seasonWindow.js` | `monthRank`, `seasonWindowMonths`, `MONTH_ABBR` (a route's season WINDOW read strictly into months) |

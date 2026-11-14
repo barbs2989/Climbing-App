@@ -151,7 +151,8 @@ try {
     const unique = `${fixture.mate.name} ${fixture.mate.id.slice(0, 6)}`;
     const r = await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${fixture.mate.id}`, {
       method: "PATCH", headers: { ...H, Prefer: "return=representation" },
-      body: JSON.stringify({ name: unique }),
+      // show_name on: the share search matches a name only where the climber shows it (0434).
+      body: JSON.stringify({ name: unique, show_name: true }),
     });
     const rows = r.ok ? await r.json() : [];
     if (!r.ok || rows.length !== 1) dead(`could not give the mate a per-run name: ${r.status} ${JSON.stringify(rows).slice(0, 200)}`);
@@ -246,37 +247,10 @@ try {
   if (autoOpened) ok(`onboarding AUTO-OPENED for a brand-new real account (${((Date.now() - openT0) / 1000).toFixed(1)}s after the page settled)`);
   else bad("onboarding did not auto-open for a brand-new real account. The account has no disciplines and the profile read resolved, so accountNeedsOnboarding should be true — check that the effect keys on it and that the device preference is not already set for this profile" + traffic());
 
-  // SKIP RATHER THAN COMPLETE, because the card assertion below depends on still needing it.
-  // `onSkip` is ()=>setOnboardOpen(false) and does NOT mark them onboarded, so a climber who
-  // skips still needs the card — which is exactly the state worth measuring.
-  if (autoOpened) {
-    if (!(await clickText("Skip for now"))) dead("the onboarding sheet is open but offers no 'Skip for now' — cannot reach Home to check the card");
-    await settledText(page);
-  }
-
-  // THE CARD IS ON HOME. Asked of the page TEXT, not of a control selector -- an earlier pass
-  // concluded "the card is absent" from a list of controls, which cannot tell a card that did not
-  // render from one the selector did not match.
-  await page.waitForFunction(() => (document.body.innerText || "").includes("Set up your climbing profile"), null, { timeout: 30000 }).catch(() => {});
-  const homeText = await page.evaluate(() => document.body.innerText || "");
-  if (homeText.includes("Set up your climbing profile"))
-    ok("the 'Set up your climbing profile' card is on HOME — the screen a new climber lands on");
-  else bad("the setup card is not on Home. It is gated on (accountNeedsOnboarding && !dismissed); the account has no disciplines and homeDismiss starts empty, so both are satisfied and it should be here" + traffic());
-
-  // AND NOT ON CLIMBS, or the move left a copy behind. A card in two places is worse than a card
-  // in the wrong place: the dismiss button writes one key, so dismissing one would blank both.
-  {
-    if (!(await clickText("Climbs"))) bad("could not open the Climbs tab to confirm the setup card no longer renders there");
-    else {
-      await settledText(page);
-      const climbsText = await page.evaluate(() => document.body.innerText || "");
-      if (climbsText.includes("Set up your climbing profile"))
-        bad("the setup card still renders on the CLIMBS tab as well as Home — the move left a copy behind");
-      else ok("...and it no longer renders on Climbs");
-    }
-    await clickText("Home");
-    await settledText(page);
-  }
+  // NO SKIP, SO NO HOME-CARD CHECK FOR AN ACCOUNT. Since 2026-11-14 (#3306) a signed-in account's
+  // setup cannot be skipped -- Sign out is its only way out -- so the walk can no longer leave the
+  // sheet to look for the Home "Set up your climbing profile" card, and the card is now reached only
+  // by a GUEST (check:onboarding-reach asserts its gate). The walk completes setup from the welcome.
 
   // HOW A CLIMBER REACHES ONBOARDING, established by walking rather than by reading.
   // 1. It AUTO-OPENS on the first load for an account that has not onboarded, asserted above.
@@ -326,15 +300,17 @@ try {
   // database for it below -- the step writes profiles.location, which partner rows print.
   const HOME = "Leavenworth, WA";
   let typedHome = false;
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     const body = await page.evaluate(() => document.body.innerText || "");
     if (body.includes("What do you climb?")) break;
+    // USERNAME (required, saved on Continue): wait out the live availability check, then keep the suggestion.
+    if (body.includes("Choose your username")) await page.waitForFunction(() => !/Checking…/.test(document.body.innerText || ""), null, { timeout: 15000 }).catch(() => {});
     if (body.includes("Where do you mainly climb?")) {
       const box = page.locator('input[aria-label="Search a range, canyon, or peak"]');
       if (await box.count()) { await box.fill(HOME); typedHome = true; }
       if (!(await clickText("Continue"))) dead("the home-area step offers no 'Continue'");
-    } else if (!(await clickText("Not now")) && !(await clickText("Continue"))) {
-      dead("a setup step before 'What do you climb?' offers neither 'Not now' nor 'Continue'. Screen: " + body.slice(0, 300));
+    } else if (!(await clickText("Skip for now")) && !(await clickText("Continue"))) {
+      dead("a setup step before 'What do you climb?' offers neither 'Skip for now' nor 'Continue'. Screen: " + body.slice(0, 300));
     }
     await settledText(page);
   }
@@ -369,12 +345,17 @@ try {
   await settledText(page);
   if (!(await clickText("Continue"))) dead("'Continue' on the climbing step was not clickable — disciplines may not have registered");
   await settledText(page);
-  // GENDER (0359): optional, asked on its own step. Picked so the walk can ask the DB for it.
+  // GENDER (0359): optional, asked on the "About you" step beside experience level. Picked so the walk can ask the DB for it.
   if (!(await clickText("Woman"))) bad("the gender step offered no 'Woman' choice");
   else ok("picked a gender: Woman");
   if (!(await clickText("Continue"))) dead("the gender step offers no 'Continue'");
   await settledText(page);
   if (!(await clickText("Finish setup"))) dead("'Finish setup' was not clickable on the last step");
+  await settledText(page);
+  // THE FINISH SCREEN (2026-11-14): "You're all set", the profile as others see it, next steps.
+  if ((await page.evaluate(() => document.body.innerText || "")).includes("You’re all set")) ok("the finish screen says \"You’re all set\"");
+  else bad("no \"You’re all set\" screen after Finish setup");
+  if (!(await clickText("Go to Home"))) bad("the finish screen offers no 'Go to Home'");
   await settledText(page);
   ok("finished onboarding");
 
@@ -763,16 +744,32 @@ try {
     await settledText(page);
     if (!(await tapByName(page, "Crews"))) dead(`no Crews sub-view on the Crew tab (${why})`);
     await settledText(page);
-    // OPEN EVERY CREW CARD FIRST. Since #2531 (2026-10-21) each card starts COLLAPSED to a summary,
-    // and the roster -- the "Crew · N members" box this reads -- renders only behind "View plan" (its chevron is an SVG now, so the label no longer ends in a ▾ glyph and an exact match found no button).
-    // The walk scanned collapsed cards and reported "found 0" two runs running (2026-10-24), which
-    // reads exactly like a missing roster. Clicked once each; a card already open has no such button.
-    const opened = await page.evaluate(() => {
-      const bs = [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim().startsWith("View plan"));
-      bs.forEach((b) => b.click());
-      return bs.length;
-    });
-    if (opened) await settledText(page);
+    // THE ROSTER IS IN EACH CARD'S CREW SHEET (2026-11-14, "guided, not gated"). The card is compact
+    // and every step opens in its own sheet; the "Crew · N members" box this reads lives in the Crew
+    // step's sheet (the row carrying data-crew-step="crew"). Before that it sat behind "View plan", and
+    // before THAT the walk scanned collapsed cards and reported "found 0" two runs running -- which
+    // reads exactly like a missing roster. So: open each card's Crew sheet in turn, read its roster,
+    // close it, and only then decide; the chosen card's sheet is reopened for the click.
+    const cardCount = await page.evaluate(() => document.querySelectorAll('[id^="crewcard-"]').length);
+    const openCrewSheet = async (i) => {
+      const ok = await page.evaluate((k) => {
+        const card = document.querySelectorAll('[id^="crewcard-"]')[k];
+        const b = card && card.querySelector('button[data-crew-step="crew"]');
+        if (b) b.click();
+        return !!b;
+      }, i);
+      if (ok) await settledText(page);
+      return ok;
+    };
+    const closeSheet = async () => {
+      await page.evaluate(() => {
+        const dlgs = [...document.querySelectorAll('[role="dialog"]')];
+        const d = dlgs[dlgs.length - 1];
+        const x = d && d.querySelector('button[aria-label="Close"]');
+        if (x) x.click();
+      });
+      await settledText(page);
+    };
     // FOUND STRUCTURALLY -- the one roster member who is not YOU -- never by a name derived here.
     // THE ROSTER DOES NOT RENDER `pubName`: it renders `p.name.split(" ")[0]`, the member's first
     // name, so the handle phase 4 read off the friends row (`@robinbelay`) matches nothing here.
@@ -782,7 +779,8 @@ try {
     // rendered, which is exactly what reading the name off the screen exists to avoid.
     // The crew has two members and one of them is the account driving the walk, so "not You" is
     // both unambiguous and independent of how either name is spelled.
-    const pick = await page.evaluate(() => {
+    // Reads the OPEN sheet's roster. `click` names the label to click; without it this only reports.
+    const scanRoster = (click) => page.evaluate((clickName) => {
       // EVERY CREW CARD, NOT THE FIRST ONE. The fixture seats this account in TWO crews -- the one
       // it shares with the mate, and a second the mate owns where it is only INVITED -- so the Crews
       // view renders two cards and `find` on the first heading can land on a roster that holds no
@@ -809,21 +807,40 @@ try {
           if (first && first !== "You") cand.push({ el, first });
         }
       }
-      const labels = [...new Set(cand.map((c) => c.first))];
-      if (labels.length !== 1) {
-        // A MISS ARRIVES AS EVIDENCE RATHER THAN AS ANOTHER GUESS. Three runs were spent on
-        // confident wrong readings of this screen -- the four-attempts shape CLAUDE.md records for
-        // AreaLatest -- so the failure carries the cards it saw and what was on the page.
-        return {
-          err: `expected exactly 1 crew member who is not You, found ${labels.length} distinct`,
-          saw: labels, cards: heads.length,
-          seen: (document.body.innerText || "").slice(0, 400).replace(/\s+/g, " "),
-        };
+      if (clickName) {
+        const chosen = cand.find((c) => c.first === clickName);
+        if (chosen) chosen.el.click();
+        return { clicked: !!chosen };
       }
-      const chosen = cand.find((c) => c.first === labels[0]);
-      chosen.el.click();
-      return { name: chosen.first, cards: heads.length };
-    });
+      return { labels: [...new Set(cand.map((c) => c.first))], heads: heads.length };
+    }, click || null);
+    const seenBy = [];
+    const allLabels = new Set();
+    let headsSeen = 0;
+    for (let i = 0; i < cardCount; i++) {
+      if (!(await openCrewSheet(i))) continue;
+      const r = await scanRoster();
+      headsSeen += r.heads;
+      seenBy.push(r.labels);
+      r.labels.forEach((l) => allLabels.add(l));
+      await closeSheet();
+    }
+    const labels = [...allLabels];
+    let pick;
+    if (labels.length !== 1) {
+      // A MISS ARRIVES AS EVIDENCE RATHER THAN AS ANOTHER GUESS. Three runs were spent on
+      // confident wrong readings of this screen -- the four-attempts shape CLAUDE.md records for
+      // AreaLatest -- so the failure carries the cards it saw and what was on the page.
+      pick = {
+        err: `expected exactly 1 crew member who is not You, found ${labels.length} distinct across ${cardCount} card(s) / ${headsSeen} roster(s)`,
+        saw: labels,
+        seen: await page.evaluate(() => (document.body.innerText || "").slice(0, 400).replace(/\s+/g, " ")),
+      };
+    } else {
+      const at = seenBy.findIndex((ls) => ls.includes(labels[0]));
+      const clicked = (await openCrewSheet(at)) && (await scanRoster(labels[0])).clicked;
+      pick = clicked ? { name: labels[0], cards: cardCount } : { err: `the roster row for ${labels[0]} could not be clicked on reopening card ${at}` };
+    }
     if (pick.err) {
       dead(`could not open the mate from the crew roster (${why}): ${pick.err}` +
         (pick.saw ? " — rows: " + JSON.stringify(pick.saw) : "") +

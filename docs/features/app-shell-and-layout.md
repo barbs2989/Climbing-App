@@ -225,9 +225,9 @@ only while `wide`; the sheet rule matches the sheets' own serialised inline styl
 boot shell already has the website's shape.
 
 **Views as pages.** The phone views share one inline shape — `position:fixed; inset:0; maxWidth:520`
-(`check:overlay-width-cap` keeps them to it) — so `wideCss` places that shape in the column. The six
-views `App` used to RETURN early (`legal`, `editDraft`, `dashOpen`, `guideAppOpen`, `calOpen`,
-`inboxOpen`) are built as elements (`_vLegal` … `_vInbox`); a phone still returns them alone, while a
+(`check:overlay-width-cap` keeps them to it) — so `wideCss` places that shape in the column. The
+views `App` used to RETURN early (`legal`, `editDraft`, `calOpen`,
+`inboxOpen`; the two guide screens were removed 2026-11-14) are built as elements (`_vLegal` … `_vInbox`); a phone still returns them alone, while a
 desktop draws `_pageView` in the column in place of `#appscroll` (Terms still replaces everything when
 signed out). `coveringLayer` counts a cover that starts under the top bar.
 
@@ -284,7 +284,12 @@ consistent scroll bar"): `useRailFollow` slides a panel's column up with the pag
 distance to its ad's top (the widgets or the map scroll away, the ad stays in view) or, with no ad, the amount
 the column overflows (its last card comes into view, then it stops), as Facebook's right column does. The
 rail's widgets (`WideRail`) and the route page's rail (`FollowColumn` around `#cm-route-rail`) follow; the
-left ad is fixed and always in view.
+left ad is fixed and always in view. The LEFT panel is the exception (owner 2026-11-14: "the area map on the left panel should have its own
+scroll bar"): its area part (`#cm-left-panel`, the map and sub-area list) scrolls on its own, so the end of a long
+list is in reach on a short page, with the left ad kept under it. Only while the area page has drawn its list there
+(`LeftColumn`, lib/Ads.jsx; owner 2026-11-14: "the areas scroll should only scroll the areas when they are on areas
+pages, otherwise you should be able to scroll if you are on the left panel"): on every other page the left panel
+follows the page like the rail, and the wheel over it scrolls the page.
 
 ## 5. Connections
 - **Menu** (`menuOpen`): the same Menu on both widths, full-screen on both.

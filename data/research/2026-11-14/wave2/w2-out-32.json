@@ -1,0 +1,2183 @@
+{
+ "ca_northwest_ridge": {
+  "area": "ca_north_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Saddlebag Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/north-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra in a Day: North Peak, trailhead Saddlebag Lake, route Northwest Ridge."
+     },
+     {
+      "url": "https://www.littlegrunts.com/soloing-north-peak-mt-conness/",
+      "retrieved_at": "2026-11-14",
+      "fact": "littlegrunts: NW ridge of North Peak trip started at Saddlebag Lake, crossing the dam toward Greenstone Lake."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4/5",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/north-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra in a Day lists difficulty Class 4/5 for the Northwest Ridge."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "6:18 total (4:19 moving)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/north-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra in a Day: watch time 6:18, moving time 4:19 from Saddlebag Lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Ridge of solid knobby granite with several down-climbs into notches (up to ~30 ft) and narrow exposed ledges; final easy steep section to summit plateau, then boulders to the top.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/north-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra in a Day: down-climbs into notches no more than ~30 ft, narrow exposed ledges, summit plateau and boulder field."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend to the saddle with Mt Conness, then cross-country back to Saddlebag Lake.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/north-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra in a Day: descended the saddle connecting to Mt Conness and went cross-country back to Saddlebag Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Saddlebag Lake skirt the lake (via the dam) toward Greenstone Lake, then climb the hillside to the ridge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.littlegrunts.com/soloing-north-peak-mt-conness/",
+      "retrieved_at": "2026-11-14",
+      "fact": "littlegrunts: crossed the dam, skirted Saddlebag Lake to Greenstone Lake, then up the hillside."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Classic route of North Peak; the other classic is the north-face ice couloirs.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrainaday.com/post/north-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sierra in a Day: the northwest ridge is one of two classic routes; the other is the north couloir."
+     }
+    ]
+   }
+  ],
+  "note": "North Peak (Conness area). SummitPost route page (161532) returned 403. themtsarecalling.com/north/ covers the NE ridge, not used. Sierra in a Day rates it Class 4/5 vs app Easy 5th."
+ },
+ "ca_northwest_ridge_3": {
+  "area": "ca_mt_johnson",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117845327/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Mount Johnson Northwest Ridge 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117845327/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 500 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Climb the chute to Treasure Col (snow or loose dirty gully by season) to the base of the ridge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117845327/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: ascend the chute to Treasure Col; snow or loose gully depending on season."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Stay on the ridge crest on 3rd class rock, bypassing one short section midway, then an angling walkway to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117845327/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: stay on crest, easy bypass midway, angling walkway, short scramble to summit."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12871,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksJ.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Johnson Mt 12871 ft (standard route class 2)."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and possibly crampons depending on season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/117845327/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: depending on time of year an axe and possibly crampons."
+     }
+    ]
+   }
+  ],
+  "note": "Mount Johnson. SPS archive sps00118 describes a different line (west arete from Treasure Lakes cirque, trailhead South Lake) so not used for this route. SummitPost walled (403)."
+ },
+ "ca_northwest_ridge_4": {
+  "area": "ca_mt_haeckel",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Haeckel Northwest Ridge 4th class: a Class 4 start, then exposed Class 3 ridgeline."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 800 ft, Grade II, trad/alpine."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jack Riegelhuth, 1933",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP gives first ascent: Jack Riegelhuth, 1933."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Hungry Packer Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP approach starts from a camp at Hungry Packer Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Hungry Packer Lake follow the broad ridge north of the lake through small trees, rock steps and boulders to a notch north of the peak (~12,700 ft).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: from Hungry Packer Lake take broad ridge north of lake to prominent notch on high col north of peak, about 12,700 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb the broken ridge right of the shallow gully that runs nearly to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: the route is the broken ridge right of a shallow gully running almost to the summit."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "South/East slope at Class 3 into the basin southeast of the peak, staying high over the low point of the East Ridge back to the approach.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: descend the Class 3 south/east slope to the SE basin, cross the low point of the broad East Ridge, rejoin approach."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Early season (snow cover) recommended",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: without snow the approach is a long talus slog, so early season is recommended."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Approach snow can be steep ice late season in good snow years",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: approach snow near the start can be fairly steep ice late in a good snow year."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Often soloed; optionally a light rope, a few nuts and slings; ice axe and crampons seasonally",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110944887/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: none required; or small rope, a few nuts and slings; axe and crampons in season."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lake Sabrina",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.scaruffi.com/travel/wallace.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "scaruffi: Haeckel reached from Lake Sabrina trailhead (before the dam, end of Hwy 168); trail via Blue Lake toward Hungry Packer Lake."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13418,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksH.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Haeckel Mt 13418 ft (standard route class 3)."
+     }
+    ]
+   }
+  ],
+  "note": "Mount Haeckel. SPS list classes the peak 3 (easiest route); this ridge is MP 4th. scaruffi page describes a different line via Moonlight/Echo Lake; only its Lake Sabrina trailhead is used."
+ },
+ "ca_northwest_ridge_5": {
+  "area": "ca_peak_12_192",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110945482/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Peak 12,192 Northwest Ridge 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From the south side of Lower Treasure Lakes climb slabs and small steps, pass a broad blocky step on the left (crux), then follow the narrow ridge to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110945482/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: start at south side of Lower Treasure Lakes; slabs, steps, blocky step passed left is crux; narrow ridge to top."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Alternative start: faint trail toward Upper Treasure Lakes, then cut left up slabs to the ridge.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110945482/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: alternatively follow faint trail to Upper Treasure Lakes then go left up slabs."
+     }
+    ]
+   },
+   {
+    "field": "season",
+    "value": "Better in early season",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110945482/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP says the ridge is a lot better in early season."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "No gear; ice axe and crampons when snow present",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110945482/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP protection: none; axe and crampons when snowy."
+     }
+    ]
+   }
+  ],
+  "note": "Peak 12,192 (Hurd area). Only Mountain Project found; advcollective page looks AI-written, not used. SummitPost walled."
+ },
+ "ca_northwest_ridge_6": {
+  "area": "ca_winter_alta",
+  "skip_reason": "Winter Alta NW ridge: opened https://www.nps.gov/thingstodo/alta-winter-trail.htm (Alta winter ski trail, not the ridge) and climber.org CApeaksA SPS data (Alta Peak only, different summit). No page describes Winter Alta Northwest Ridge."
+ },
+ "ca_northwest_ridge_7": {
+  "area": "ca_sawtooth_peak",
+  "skip_reason": "Sawtooth Peak NW ridge: opened https://themtsarecalling.com/needham/ (Mineral King Sawtooth 12,343 ft via Sawtooth Pass, Class 3 crux, combined with Needham) and climber.org CApeaksS (two Sawtooth Peaks on SPS list). Could not confirm which Sawtooth this area is or any NW-ridge description; SummitPost 403."
+ },
+ "ca_northwest_ridge_8": {
+  "area": "ca_mt_francis_farquhar",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105994010/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Mt Francis Farquhar Northwest Ridge 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105994010/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists 1000 ft, Grade II."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105994010/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade II."
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Doug Mantle, Barbara Lilley, Diana Dee, Rick May, R.J. Secor, September 1972",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105994010/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP FA: Doug Mantle, Barbara Lilley, Diana Dee, Rick May, R.J. Secor, Sept 1972."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Lower Sphinx Lake cross benches past lakes to below the west face; climb the chute ending left of the summit, then traverse right to the top.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105994010/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: from Lower Sphinx Lake over benches to west face; climb chute left of summit, traverse right near the end."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend the route.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105994010/northwest-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: descend the route."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Roads End (Cedar Grove), Kings Canyon",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/105993997/mt-francis-farquhar",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP area: from Roads End at Cedar Grove hike east toward the Bubbs Creek Trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bubbs Creek Trail, then Sphinx Creek Trail; leave it below Avalanche Pass and go cross-country south to Lower Sphinx Lake.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/105993997/mt-francis-farquhar",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP area: Bubbs Creek Trail to bridge, Sphinx Creek Trail, then faint trail south to lower Sphinx Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach via Bubbs Creek and the Sphinx Creek drainage to the Sphinx Lakes, below the west side of the peak.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01488.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS report: hiked Bubbs Creek and Sphinx Creek drainage, use trail west of Sphinx Creek to the Sphinx Lakes; Farquhar visible from upper lake."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Lower Sphinx Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/area/105993997/mt-francis-farquhar",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP area calls lower Sphinx Lake a quiet campsite."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "A large notch breaks the Northwest Ridge just below the summit; a smaller notch splits the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps01488.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS report: large notch breaks the Northwest Ridge below the summit; a smaller notch splits the summit itself."
+     }
+    ]
+   }
+  ],
+  "note": "Mt Francis Farquhar. SPS report climbed the south ridge; only its shared Sphinx Creek approach and NW-ridge notch description used."
+ },
+ "ca_northwest_ridge_9": {
+  "area": "ca_north_face_9",
+  "skip_reason": "Area ca_north_face_9 is not identifiable as a named peak. Opened DuckDuckGo/MP searches and climber.org peak indexes (ByPeakN) without a matching Northwest Ridge page; SummitPost 403."
+ },
+ "ca_observation_peak_standard_route": {
+  "area": "ca_observation_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksO.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Observation Peak, 12362 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12362,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksO.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Observation Peak 12362 ft."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_olancha_peak_via_olancha_pass_and_the_pct": {
+  "area": "ca_olancha_peak",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Sage Flat (Olancha Pass) trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/olancha-pass-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: Olancha Pass trail starts at Sage Flat trailhead, elevation 5,790 ft."
+     },
+     {
+      "url": "https://themtsarecalling.com/olancha/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: trailhead Sage Flat / Olancha Pass, no services."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_elev_ft",
+    "value": 5790,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/olancha-pass-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS gives Sage Flat trailhead elevation 5,790 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Olancha Pass Trail climbs steeply up the Eastern Sierra escarpment to Olancha Pass (9,220 ft) and on to the Pacific Crest Trail.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/olancha-pass-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: trail climbs steeply up escarpment to Olancha Pass at 9,220 ft; gives access to the PCT."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "From US 395 north of Ridgecrest turn west on Sage Flat Road (paved, then dirt) to its end at Sage Flat trailhead.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/olancha-pass-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS directions: west on Sage Flat Road from US 395, paved then dirt, ending at the trailhead."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "South Sierra Wilderness (Inyo NF); trail lists permit requirements",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r05/inyo/recreation/trails/olancha-pass-trail",
+      "retrieved_at": "2026-11-14",
+      "fact": "USFS: trail is in the northeastern South Sierra Wilderness; page has a Permits section."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 7800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/olancha/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: Olancha Peak day trip, elevation gain 7800 ft (round trip outing total)."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 19.1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/olancha/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: distance 19.1 miles for the day trip (round trip)."
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "11:10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/olancha/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: total time 11:10 car to car."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/olancha/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: crux Class 2."
+     },
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksO.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Olancha Peak 12123 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Follow the PCT north from Olancha Pass through a high meadow to about 10,500 ft, then leave the trail and climb boulders and scree to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/olancha/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountains Are Calling: PCT through high meadow, left trail near 10,500 ft below the peak; scree/boulder descent."
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Thin stream in the high meadow along the PCT",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/olancha/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Mountains Are Calling: a thin flowing stream in the high meadow on the PCT used to refill water."
+     }
+    ]
+   }
+  ],
+  "note": "Gain/distance/time are one person's round-trip day from Sage Flat (The Mountains Are Calling), not a guidebook figure."
+ },
+ "ca_owens_peak_indian_wells_canyon": {
+  "area": "ca_owens_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksO.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Owens Peak, 8453 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/owens-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry Sights rates the hike Class 2-3."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8453,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksO.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Owens Peak 8453 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Indian Wells Canyon",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2006/1471.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2006: Owens Peak trip, trailhead Indian Wells Canyon."
+     },
+     {
+      "url": "https://backcountrysights.com/owens-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry Sights: drive up Indian Wells Canyon Road as far as possible, walk the rest of the road to the single track."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Road is fine for a car up to a point; beyond it a 4WD or high-clearance vehicle is needed for shallow creek crossings.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2006/1471.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2006: car-navigable to a point, then 4WD or high-clearance 2WD needed for shallow creek crossings."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Indian Wells Canyon Road can get very rough; park in a pull-off where you must and walk the rest of the road.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/owens-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry Sights: road can get very rough; park in a pull-off and walk the remaining road to the trail."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Hike up the Owens Creek canyon from the trailhead.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2006/1471.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2006: hiked up Owens Creek canyon from the trailhead to the summit."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Single-track trail, faint at times but with no junctions, leads all the way to the peak.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/owens-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry Sights: trail is faint at times but has no junctions; follow it to the peak."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No permit required; Owens Peak Wilderness (BLM), no motorized travel.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/owens-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry Sights: permits not required; wilderness area, no motorized travel; BLM manages it."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4800,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/owens-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry Sights trip (May 2026): 14.1 mi, +/- 4800 ft, including about four miles of road walking after parking low."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14.1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://backcountrysights.com/owens-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Backcountry Sights trip: 14.1 mi round trip, parked low on the rough road (long road walk to trailhead)."
+     }
+    ]
+   }
+  ],
+  "note": "Backcountry Sights 14.1 mi / 4800 ft includes a long road walk after parking low; Class 2-3 vs SPS class 2."
+ },
+ "ca_palisade_crest_northwest_ridge": {
+  "area": "ca_palisade_crest",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Glacier Lodge (South Fork Big Pine Creek)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org (Dodge 2007): Palisade Crest trip, trailhead Glacier Lodge, South Fork Big Pine Creek Trail."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2007: difficulty class 4, helmet, rope used."
+     },
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Palisade Crest, 13553 ft, class 4."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "South Fork Big Pine Creek Trail, then the unmaintained trail toward Willow Lake, then use trails along the creek draining Elinore Lake.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2007: South Fork trail, turn north on unmaintained Willow Lake trail, use trail beside Elinore Lake outlet creek."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Elinore Lake",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2007: hiked in to camp at Elinore Lake."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Elinore Lake go south through a gap and up loose ground to Scimitar Pass, then ridge-run south along the crest with exposed class 3 knife-edge sections.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2007: gap toward Scimitar Pass, regroup at pass, ridge-run south along Palisade Crest, exposed class 3 knife edge."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Crux: a 160-ft class 4 wall just below the high point (Gandalf Peak).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2007: just below the high point, Gandalf Peak, is the well-known 160 ft class 4 wall."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "High point is Gandalf Peak; regarded by SPS list finishers as one of the five hardest peaks on the list.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2007: Gandalf Peak considered one of the top five most difficult SPS list peaks."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Helmet and rope",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2007/1633.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2007: helmet and rope used."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13553,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Palisade Crest 13553 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Both trip reports are on climber.org (one publisher). SPS list class 4 copied by climber.org."
+ },
+ "ca_pettit_peak_standard_route": {
+  "area": "ca_pettit_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pettit Peak, 10788 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10788,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pettit Peak 10788 ft."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From White Wolf, go around Rodgers Lake and climb to the saddle between Pettit and Regulation Peaks, then up Pettit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.sierrapeaks.org/archives/sps00077.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "SPS archive 1991: circled Rodgers Lake, climbed to saddle between Pettit and Regulation Peaks, then Pettit."
+     }
+    ]
+   }
+  ],
+  "note": "Trip reports are multi-peak (Pettit+Volunteer+Piute); climber.org 2010/1774 lists trailhead Twin Lakes for that loop, not used."
+ },
+ "ca_picket_guard_peak_standard_route": {
+  "area": "ca_picket_guard_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Picket Guard Peak, 12303 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12303,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Picket Guard Peak 12303 ft."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Approach via Roaring River and Colby Pass, then down the unmaintained trail to the Kern-Kaweah River toward Picket Guard.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1999/466.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1999: Kern Point and Picket Guard via Roaring River and Colby Pass; unmaintained trail down to the K-K River."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_pilot_knob_east_ridge_from_piute_pass": {
+  "area": "ca_pilot_knob",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pilot Knob (N), 12245 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12245,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pilot Knob N 12245 ft."
+     },
+     {
+      "url": "https://www.mtnmouse.com/california/sn00t0206_piute_pass_pilot_knob.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "mtnmouse: climbed 12,245 ft Pilot Knob from the Piute Pass trail (1970)."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Piute Pass Trailhead (North Lake)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2014/1853.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2014 (Pilot Knob N, Royce etc.): trailhead Piute Pass Trailhead."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Piute Pass head west over undulating terrain toward the saddle between Pilot Knob and the ridge to its east.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2014/1853.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2014: headed west over undulating terrain to the saddle between Pilot Knob and the ridge east of it."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Piute Pass trail past Loch Leven Lake to Piute Pass; summit views over Desolation Basin and French Canyon.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mtnmouse.com/california/sn00t0206_piute_pass_pilot_knob.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "mtnmouse: Loch Leven Lake and Piute Pass on the way; views from Pilot Knob over Desolation Basin and French Canyon."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_pinnacle_pass_north_side": {
+  "area": "ca_pinnacle_ridge",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109355974/pinnacle-pass-north-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Pinnacle Pass north side Easy 5th."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 330,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109355974/pinnacle-pass-north-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists the route as 330 ft, trad/alpine."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Whitney Portal",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109355974/pinnacle-pass-north-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP approach starts from Whitney Portal trailhead parking."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Follow the North Fork Lone Pine Creek climbers trail past Lower Boy Scout Lake to just short of Upper Boy Scout Lake, then SW across slabs to an unnamed lake and up big talus to the route.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109355974/pinnacle-pass-north-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: North Fork climbers route past Lower Boy Scout Lake; near Upper Boy Scout Lake go SW over slabs to a lake, then talus."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Third of the left-leaning diagonal weaknesses on the north face, counting from the east.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109355974/pinnacle-pass-north-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: at least three left-leaning diagonal lines on the N face; this route is the third from the east."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Ice or snow often covers critical sections in winter, spring and big-snow summers; may be impassable.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109355974/pinnacle-pass-north-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: ice or snow likely covers key sections in winter/spring and into summer; crampons/axe or impassable."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "USFS wilderness permit required for day or overnight use (Mt Whitney zone).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109355974/pinnacle-pass-north-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: requires a USFS wilderness permit for single-day or overnight use."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_pinnacle_pass_south_side": {
+  "area": "ca_pinnacle_ridge",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Pinnacle Pass south side 3rd class."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Whitney Portal",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: from Whitney Portal trailhead parking follow the Mt Whitney Trail to Mirror Lake."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Follow the Mt Whitney Trail from Whitney Portal to Mirror Lake (~10,680 ft).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: normal start is Mirror Lake, about 10,680 ft, reached via the Mt Whitney Trail."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Mirror Lake head NW toward cliffs, then NE along ledges with some scrambling, finishing on sand that eases higher up.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: hike NW from Mirror Lake to cliffs, NE on ledges with scrambling, finish on sand."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Same way, or down the much harder north side.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: descend the same way or down the north side, which is much harder."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "USFS wilderness permit required for day or overnight use (Mt Whitney zone).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: requires a USFS wilderness permit for single-day or overnight use."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "No fixed gear; normally no protection placed.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: no fixed gear and normally no protection placed."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Pass at the east end of Pinnacle Ridge about 0.25 mi WSW of Thor Peak; used to reach Thor Peak or the Pinnacle Ridge traverse.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109359739/pinnacle-pass-south-side",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: pass near E end of Pinnacle Ridge, ~0.25 mile WSW of Thor Peak summit; access to Thor and ridge traverse."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_piute_mountain_northeast_ridge": {
+  "area": "ca_piute_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Piute Mtn, 10541 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10541,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Piute Mtn 10541 ft."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_pyramid_peak_north_rocky_canyon": {
+  "area": "ca_pyramid_peak_north",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pyramid Peak N, 9983 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9983,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pyramid Peak N 9983 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Unmarked trailhead on US Highway 50 (between Twin Bridges and Strawberry)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.littlegrunts.com/desolation-wilderness-pyramid-peak-via-rocky-canyon/",
+      "retrieved_at": "2026-11-14",
+      "fact": "littlegrunts: trailhead on US 50 after Twin Bridges but before Strawberry."
+     },
+     {
+      "url": "https://tedmuller.us/Outdoor/Hiking/2012/120910-PyramidPeak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ted Muller: the unmarked Rocky Canyon trailhead sits beside Highway 50."
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.littlegrunts.com/desolation-wilderness-pyramid-peak-via-rocky-canyon/",
+      "retrieved_at": "2026-11-14",
+      "fact": "littlegrunts: Pyramid Peak via Rocky Canyon, 6 miles out and back."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4083,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.littlegrunts.com/desolation-wilderness-pyramid-peak-via-rocky-canyon/",
+      "retrieved_at": "2026-11-14",
+      "fact": "littlegrunts: approximately 4,083 ft of elevation gain for Pyramid Peak via Rocky Canyon."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Rocky Creek/Rocky Canyon is the shortest, most direct route: creek crossing, pine forest, then talus scrambling to the summit.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.littlegrunts.com/desolation-wilderness-pyramid-peak-via-rocky-canyon/",
+      "retrieved_at": "2026-11-14",
+      "fact": "littlegrunts: route up Rocky Creek is shortest and most direct; creek crossing, pine forest, talus scrambling."
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Very steep use-trail approach, an alternative access to Pyramid Peak in Desolation Wilderness; the upper part is trailless.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://tedmuller.us/Outdoor/Hiking/2012/120910-PyramidPeak.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ted Muller: Rocky Canyon is an alternative access to Pyramid Peak; very steep; upper section without trail."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_pyramid_peak_south_standard_route": {
+  "area": "ca_pyramid_peak_south",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pyramid Peak S, 12779 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12779,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksP.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Pyramid Peak S 12779 ft."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_recess_peak_standard_route": {
+  "area": "ca_recess_peak",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 12813,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Recess Peak 12813 ft (listed class 2)."
+     },
+     {
+      "url": "https://themtsarecalling.com/recess/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: Recess Peak 12,813 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Lake Thomas Edison (dam)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/recess/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: Recess Peak day hike from Lake Thomas Edison dam trailhead, no services."
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": "Reached over Kaiser Pass on a windy, potholed one-lane road to Lake Thomas Edison and Florence.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://themtsarecalling.com/recess/",
+      "retrieved_at": "2026-11-14",
+      "fact": "The Mountains Are Calling: road over Kaiser Pass to Lake Thomas Edison is windy, potholed, one lane."
+     }
+    ]
+   }
+  ],
+  "note": "SPS list says class 2, but both trip reports found (themtsarecalling 17.2 mi RT / 7900 ft / 9:20 from Lake Thomas Edison; climber.org 2003/1167) report class 3, so their stats are not attached to the class-2 standard route as gain/distance. Grade not recorded."
+ },
+ "ca_red_and_white_mountain_standard_route": {
+  "area": "ca_red_and_white_mountain",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "McGee Creek",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2012/1813.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2012: Red and White Mountain trip, trailhead McGee Creek."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2012/1813.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2012: difficulty class 2, snow travel."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_red_kaweah_west_face": {
+  "area": "ca_red_kaweah",
+  "facts": [
+   {
+    "field": "high_point_ft",
+    "value": 13822,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.vulgarianramblers.org/peak_detail.php?peak_name=Red%20Kaweah",
+      "retrieved_at": "2026-11-14",
+      "fact": "VRMC: Red Kaweah official summit elevation 13,822 ft; easiest route listed Class 2."
+     }
+    ]
+   }
+  ],
+  "note": "Only the summit elevation found; VRMC lists the easiest route Class 2 (West Face in app is Class 3). SummitPost walled; summitborn skipped (AI-style guide)."
+ },
+ "ca_red_peak_standard_route": {
+  "area": "ca_red_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Red Peak, 11699 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11699,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Red Peak 11699 ft."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_red_slate_mountain_standard_route": {
+  "area": "ca_red_slate_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Red Slate Mtn, 13123 ft, class 1."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13123,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Red Slate Mtn 13123 ft."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_rockhouse_peak_standard_route": {
+  "area": "ca_rockhouse_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Rockhouse Peak, 8360 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8360,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Rockhouse Peak 8360 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Big Meadow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/2005/1459.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2005 (Eckert): Taylor Dome and Rockhouse traverse, one way from Big Meadow trailhead to Long Valley."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_rodgers_peak_standard_route": {
+  "area": "ca_rodgers_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Rodgers Peak, 12978 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12978,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Rodgers Peak 12978 ft."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_royce_peak_standard_route": {
+  "area": "ca_royce_peak",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Royce Peak, 13280 ft, class 2."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 13280,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksR.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: Royce Peak 13280 ft."
+     }
+    ]
+   }
+  ]
+ },
+ "ca_san_joaquin_mountain_san_joaquin_ridge": {
+  "area": "ca_san_joaquin_mountain",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Class 1",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksS.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: San Joaquin Mtn, 11598 ft, class 1."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 11598,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/data/peaks/CApeaksS.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org SPS list data: San Joaquin Mtn 11598 ft."
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Mammoth Mountain Inn parking lot (winter start)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1999/515.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1999 (April, snow): trailhead Mammoth ski resort, Mammoth Mountain Inn parking lot."
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2600,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1999/515.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1999: San Joaquin summit 11,600 ft, 2600 ft elevation gain from the Mammoth Mountain Inn trailhead."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Follow the ridge north; San Joaquin is the last peak along the ridge, past the 10,913 ft point; route finding is very easy.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1999/515.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1999: very easy route finding, San Joaquin is last peak on the ridge; camped below ridge after 10913 ft peak."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Ridge route keeps avalanche danger very low in winter; strong winds possible.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1999/515.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1999: very low avalanche danger due to ridge route; strong winds noted."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Self-registration at the ranger station before Mammoth (winter, 1999)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1999/515.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1999: permit by self registration at the ranger station before Mammoth."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Winter: crampons, ice axe, snowshoes, poles, shovel",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1999/515.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1999 April equipment list: crampons, ice axe, snowshoes, poles, shovel."
+     }
+    ]
+   }
+  ],
+  "note": "Only one publisher (climber.org) with an April snow trip from Mammoth Mountain Inn; gain 2600 ft is that report's figure."
+ },
+ "ca_sargents_ridge": {
+  "area": "ca_mt_shasta",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Bunny Flat",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2009/1695.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org (Maas 2009): Sargents Ridge climbed from Bunny Flat, about 7000 ft."
+     },
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: winter approach starts at Bunny Flats snow park (6,950 ft), about three extra miles."
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Mt Shasta summit pass (sold at Bunny Flat) plus a free wilderness permit per person",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2009/1695.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2009: required summit pass available at Bunny Flat; each person also needs a free wilderness permit."
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Shortcut variant \"Green Butte to Sargents\" runs more directly from Bunny Flat along the right margin of Avalanche Gulch.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2009/1695.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2009: Green Butte to Sargents shortcut is more direct from Bunny Flat, forming right edge of Avalanche Gulch."
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Ice axe and crampons",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/TripReports/2009/1695.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 2009 lists difficulty: ice axe, crampons."
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Saddle on the ridge just over 11,000 ft",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1997/262.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org (Eckert 1997): camped at the saddle just over 11000 ft on Sargents Ridge."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Snow slopes up to about 50 degrees; severe wind possible above Red Banks",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.climber.org/reports/1997/262.html",
+      "retrieved_at": "2026-11-14",
+      "fact": "climber.org 1997: measured a 50-degree slope; serious wind started above Red Banks."
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Bergschrunds above Thumb Rock",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: be aware of bergschrunds above Thumb Rock."
+     }
+    ]
+   },
+   {
+    "field": "trailhead_summer",
+    "value": "Old Ski Bowl trailhead (7,840 ft) when the road is snow-free",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: when road is snow free the approach starts at Old Skibowl Trailhead (7,840) at the base of the ridge."
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 3029,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Sargents Ridge as 3029 ft, Grade III, trad/snow/alpine."
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP lists Grade III."
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "4th, moderate snow",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP rates Sargents Ridge 4th, moderate snow, PG."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Start at Shastarama Point (11,150 ft); follow the ridge, passing obstacles on the east, to where Green Butte ridge joins (11,800 ft); first crux at 11,900 ft traversing steep east slopes to regain the ridge at 12,300 ft.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: begins at Shastarama Point 11,150; Green Butte ridge joins at 11,800; crux 11,900 traversing east; regain ridge 12,300."
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Standard option above 12,300 ft: drop west below the rock bands onto moderate snow above Avalanche Gulch; continue to Thumb Rock (12,800 ft), then Misery Hill (13,800 ft) and the summit (14,180 ft).",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: standard option downclimbs west below rock bands to snow above Avalanche Gulch, to Thumb Rock 12,800, Misery Hill 13,800, summit 14,180."
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Descend Avalanche Gulch to Bunny Flat, or Avalanche Gulch to Old Ski Bowl via a crossing of Green Butte.",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: descend Avalanche Gulch to Bunny Flats or to Old Skibowl crossing Green Butte."
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 14180,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114338862/sargents-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "MP: true summit pinnacle at 14,180 ft."
+     }
+    ]
+   }
+  ],
+  "note": "Bunny Flat agrees (climber.org + MP); MP adds Old Ski Bowl as the summer start. shastaavalanche.org route URL returned 404."
+ }
+}

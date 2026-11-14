@@ -229,7 +229,7 @@
       input, textarea, select { font-size: 16px !important; }
       /* ONE dropdown chevron for every <select>, on every screen. This rule used to live in a <style>
          that App renders inside its MAIN return only, so every screen App returns EARLY (Edit
-         profile, the Calendar, the guide dashboard, the legal pages, sign-in) drew the browser's own
+         profile, the Calendar, the legal pages, sign-in) drew the browser's own
          arrow -- black on the app's near-black field, which is how Edit profile's state picker was
          reported as unreadable. In the document head it reaches them all. !important beats the
          inline `background:` shorthand most selects carry, which would otherwise reset the image.

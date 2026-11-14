@@ -3,6 +3,7 @@ import { BTN_SM, CHIP } from "../../lib/buttonStyles.js";
 import { C, SL, pubName, climberLine } from "../../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "../../lib/popupChrome.js";
 import Av from "./Av.tsx";
+import { SavedClimbList } from "./CreateCrewSheet.tsx";
 
 /** A member id: a profile uuid on a stored group, a number on an example one. */
 type GroupCrewPickerId = string | number;
@@ -29,6 +30,8 @@ export interface GroupCrewPickerProps {
   meId: GroupCrewPickerId;
   blocked: ReadonlyArray<{ id: GroupCrewPickerId }>;
   picks: ReadonlyArray<GroupCrewPickerPick>;
+  /** Climbs that already have an active crew of yours: listed, not offered again. */
+  formedIds?: ReadonlyArray<string>;
   onClose: () => void;
   /** A crew for one of your saved climbs, inviting `picked`. */
   onRoute: (routeId: string, picked: GroupCrewPickerPerson[], isPrivate: boolean) => void;
@@ -40,7 +43,7 @@ export interface GroupCrewPickerProps {
 const MAX_PICK = 11;
 
 /** FORM A CREW FROM A GROUP (owner 2026-11-14): pick members of a group you are in, then where — a saved climb, or an area through the Start a crew sheet. They get ordinary crew invites they accept or decline. The group is only where the names came from: the crew does not name it. */
-export default function GroupCrewPicker({groupName,groupPrivate,people,meId,blocked,picks,onClose,onRoute,onArea}: GroupCrewPickerProps){
+export default function GroupCrewPicker({groupName,groupPrivate,people,meId,blocked,picks,formedIds=[],onClose,onRoute,onArea}: GroupCrewPickerProps){
   const [sel,setSel]=useState<GroupCrewPickerId[]>([]);
   const [priv,setPriv]=useState(groupPrivate);
   const [q,setQ]=useState("");
@@ -51,8 +54,7 @@ export default function GroupCrewPicker({groupName,groupPrivate,people,meId,bloc
   const full=sel.length>=MAX_PICK;
   const toggle=(id: GroupCrewPickerId)=>setSel(s=>s.some(x=>String(x)===String(id))?s.filter(x=>String(x)!==String(id)):(s.length>=MAX_PICK?s:[...s,id]));
   const picked=()=>others.filter(p=>isOn(p.id));
-  const climbs=picks.reduce((n,g)=>n+g.rs.length,0);
-  const none=!sel.length;
+    const none=!sel.length;
   return <div onClick={onClose} tabIndex={-1} onKeyDown={e=>{if(e.key==="Escape")onClose();}} role="dialog" aria-modal="true" aria-label="Form a crew from this group" style={{position:"fixed",inset:0,zIndex:1150,background:C.scrimStrong,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:"18px 18px 0 0",border:"1px solid "+C.border,width:"100%",maxWidth:520,padding:16,boxSizing:"border-box",maxHeight:"90%",overflowY:"auto",overscrollBehavior:"contain"}}>
       <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:10}}>
@@ -79,12 +81,11 @@ export default function GroupCrewPicker({groupName,groupPrivate,people,meId,bloc
         <button type="button" aria-pressed={priv} onClick={()=>setPriv(v=>!v)} style={{...CHIP,flexShrink:0,border:"1px solid "+(priv?C.blueDim:C.border),background:priv?C.blueBg:C.surface,color:priv?C.onSolid:C.textSub}}>{priv?"Private":"Listed"}</button>
         <span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.4}}>{priv?"Only the people invited can see who’s in it. It won’t be listed under Join a crew.":"Climbers can find it under Join a crew and ask to join."}</span>
       </div>
-      <SL>Where</SL>
-      {climbs?<select aria-label="Form the crew for a saved climb" disabled={none} value="" onChange={e=>{if(e.target.value)onRoute(e.target.value,picked(),priv);}} style={{width:"100%",boxSizing:"border-box",height:44,padding:"0 10px",borderRadius:10,border:"1px solid "+(none?C.border:C.blueDim),background:none?C.surface:C.blueBg,color:none?C.textMuted:C.onSolid,fontSize:13,fontWeight:700,fontFamily:"inherit",cursor:none?"default":"pointer",marginBottom:8}}>
-        <option value="">{none?"Pick who first":"For a saved climb…"}</option>
-        {picks.map(g=><optgroup key={g.list.id} label={g.list.name}>{g.rs.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</optgroup>)}
-      </select>:<div style={{fontSize:11.5,color:C.textMuted,marginBottom:8,lineHeight:1.4}}>Save a climb as an objective to form a crew for it from here.</div>}
-      <button type="button" disabled={none} onClick={()=>onArea(picked(),priv)} style={{...BTN_SM,width:"100%",padding:"11px",fontSize:13,border:"1px solid "+C.border,background:C.surface,color:none?C.textMuted:C.text,cursor:none?"default":"pointer"}}>At an area — a crag session…</button>
+      {none?<div style={{fontSize:11.5,color:C.amber,marginBottom:10}}>Pick who first, then where.</div>:null}
+      {/* Where, in the order + Create a crew uses: a crag session, then your saved climbs (the shared SavedClimbList). */}
+      <SL>At a crag</SL>
+      <button type="button" disabled={none} onClick={()=>onArea(picked(),priv)} style={{...BTN_SM,width:"100%",padding:"11px",fontSize:13,marginBottom:14,border:"1px solid "+C.border,background:C.surface,color:none?C.textMuted:C.text,cursor:none?"default":"pointer"}}>Crag session at an area…</button>
+      <SavedClimbList picks={picks} formedIds={formedIds} disabled={none} onRoute={id=>onRoute(id,picked(),priv)} emptyText="Save a climb to My Objectives or a list to form a crew for it from here."/>
     </div>
   </div>;
 }

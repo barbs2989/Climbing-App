@@ -91,7 +91,6 @@ const FALLBACK = /ProfilesQ|profs\.find|memberProfilesQ|crewMemberById|\|\|\(_rp
 const ALLOW = [
   { key: "x.id===ci.climberId", why: "crewReqIn is the SEED invite list; real invites render from myCrewInvitesQ (#734), so these ids are always seed integers" },
   { key: "x.id===jr.climberId", file: "ClimbMatch.jsx", why: "ClimbMatch.jsx acceptJoin's SEED branch: the DB branch returns first, so this jr is a crewJoinIn (seed) request. CrewCard's jr comes from allJoinIn and is sanctioned by its `_rp` fallback, not by this entry" },
-  { key: "c.id===q.climberId", why: "GuideDashboard is the seed dashboard — DbGuideDashboard is the DB-backed one and resolves separately" },
 ];
 const used = new Set();
 

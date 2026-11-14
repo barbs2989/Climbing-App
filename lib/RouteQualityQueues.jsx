@@ -1,110 +1,21 @@
-// The owner's three route quality control queues (0307–0309), mounted in the Me tab's admin block.
+// The owner's contributor-standing queue (0307–0309), a tile in the Menu's admin-only Review section.
 //
-//   FieldContributionQueue   — every held route edit, oldest first, clustered so "3 climbers suggested
-//                              X" is one card. Approve, approve with an edited value, reject with a
-//                              reason (a strike unless unticked), or lock the field at HIGH as it is.
-//   RouteFlagQueue           — "this looks wrong" notes from climbers; mark fixed or dismiss, each
-//                              telling the reporter.
 //   ContributorStandingQueue — every climber with a strike or a hand-set standing; reset, warn,
 //                              restrict or ban, with a reason the climber is shown.
 //
+// The held route edits and the "this is wrong" flags USED to be queues here too (FieldContributionQueue,
+// RouteFlagQueue). Since 2026-11-14 the owner reviews both on the standalone Review desk
+// (review.html → review/ReviewDesk.jsx), as one table beside the nightly AI checker's verdicts.
+//
 // Gated on `useIsAdmin` by the caller, but that gate is cosmetic by design: every RPC re-checks
-// is_admin() in SQL (0309), so a tampered client gets a refusal rather than a write. The clustering
-// is `sameEditValue` — the same comparison the page used for its old 3-agree gate, guarded by
-// check:consensus-clustering — and the server only verifies that clustered ids share a route and
-// field. Every date is formatted through DLOCALE (check:date-locale).
-import { useState, useEffect, useMemo } from "react";
-import {
-  useFieldContributions, approveFieldContribution, rejectFieldContribution, setRouteFieldConfidence,
-  useContributionFields, useRouteRowsByIds, useOpenRouteFlags, resolveRouteFlag,
-  useContributionStandings, setContributionStanding, fetchProfilesByIds, REMOVAL_NOTE,
-} from "./db";
-import { C, DLOCALE, sameEditValue, pubNameRow } from "../ClimbMatchCore";
-import { AREA_EDIT_FIELDS, monthsLabel } from "./areaFields";
-import { useAreaEditRowsByIds } from "./db";
+// is_admin() in SQL (0309). Every date is formatted through DLOCALE (check:date-locale).
+import { useState } from "react";
+import { useContributionStandings, setContributionStanding } from "./db";
+import { C, DLOCALE, pubNameRow } from "../ClimbMatchCore";
 import LoadingRows from "../src/components/LoadingRows.tsx";
-import { isRackItem, rackItemLine } from "./rack.js";
 
-// An AREA edit (0319): area_id set, route_id null. Its field label and current value come from
-// lib/areaFields.js (the one list the constraint, applier, sheet and page share), not from
-// contribution_fields, which maps ROUTE columns.
-const isAreaRow = (r) => !!(r && r.area_id && !r.route_id);
-const areaField = (k) => AREA_EDIT_FIELDS.find((f) => f.k === k) || null;
-
-const REASONS = [
-  "Doesn’t match the guidebook or the climbers who logged it",
-  "Can’t be checked from what was sent",
-  "Already on the page, or not a correction",
-  "Belongs in a different field",
-  "Not about this route",
-];
-
+const NO_ROWS = [];
 const when = (iso) => { if (!iso) return ""; try { return new Date(iso).toLocaleDateString(DLOCALE, { month: "short", day: "numeric" }); } catch (_e) { return String(iso).slice(0, 10); } };
-const isPrim = (v) => v == null || typeof v !== "object";
-// One line per pitch / rappel / waypoint / variant, so a reviewer can read a structured value and
-// see which rows changed.
-function rowsOf(v) {
-  if (!Array.isArray(v)) return null;
-  if (!v.length || isPrim(v[0])) return null;
-  return v.map(function (r, i) {
-    if (!r || typeof r !== "object") return String(r);
-    // A rack row ({item, sizes, qty}) reads as the RACK card prints it: "Cams #1 ×2".
-    if (r.pitch == null && r.n == null && isRackItem(r)) return rackItemLine(r);
-    const head = r.pitch != null ? "P" + r.pitch : r.n != null ? "#" + r.n : r.name || r.label || ("row " + (i + 1));
-    const rest = Object.keys(r).filter((k) => ["pitch", "n", "name", "label", "photos", "comments"].indexOf(k) < 0 && r[k] != null && r[k] !== "" && !(Array.isArray(r[k]) && !r[k].length))
-      .map((k) => k + ": " + (isPrim(r[k]) ? String(r[k]) : JSON.stringify(r[k]))).join(" · ");
-    return head + (rest ? " — " + rest : "");
-  });
-}
-function fmtVal(v) {
-  if (v == null || v === "") return "";
-  if (isPrim(v)) return String(v);
-  if (Array.isArray(v) && (!v.length || isPrim(v[0]))) return v.join(", ");
-  const rows = rowsOf(v);
-  if (rows) return rows.join("\n");
-  return Object.keys(v).map((k) => k + ": " + (isPrim(v[k]) ? String(v[k]) : JSON.stringify(v[k]))).join("\n");
-}
-const isEmpty = (v) => v == null || v === "" || (Array.isArray(v) && !v.length) || (typeof v === "object" && !Array.isArray(v) && !Object.keys(v).length);
-
-function Val({ v, tone }) {
-  const txt = fmtVal(v);
-  return <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word", fontSize: 12.5, lineHeight: 1.5, color: tone === "new" ? C.text : C.textSub, background: tone === "new" ? C.greenBg : C.surface, border: "1px solid " + (tone === "new" ? C.greenDim : C.border), borderRadius: 8, padding: "7px 9px", marginTop: 4, maxHeight: 220, overflowY: "auto", overscrollBehavior: "contain" }}>{txt || "(empty)"}</div>;
-}
-// Per-row diff for structured arrays (pitches, rappels, waypoints, ways in): which rows a proposal
-// adds, changes or removes relative to the column as stored.
-function RowDiff({ cur, nxt }) {
-  const a = rowsOf(cur) || [], b = rowsOf(nxt);
-  if (!b) return null;
-  const aj = (cur || []).map((r) => JSON.stringify(r)), bj = (nxt || []).map((r) => JSON.stringify(r));
-  const n = Math.max(a.length, b.length);
-  const lines = [];
-  for (let i = 0; i < n; i++) {
-    const same = aj[i] != null && aj[i] === bj[i];
-    const kind = i >= a.length ? "added" : i >= b.length ? "removed" : same ? "same" : "changed";
-    lines.push({ kind, text: kind === "removed" ? a[i] : b[i] });
-  }
-  const col = { added: C.green, removed: C.red, changed: C.amber, same: C.textMuted };
-  return <div style={{ marginTop: 6 }}>
-    <div style={{ fontSize: 11, color: C.textMuted, fontWeight: 700, letterSpacing: 0.3 }}>ROW BY ROW</div>
-    {lines.map((l, i) => <div key={i} style={{ fontSize: 12, lineHeight: 1.5, color: col[l.kind], textDecoration: l.kind === "removed" ? "line-through" : "none" }}>{(l.kind === "added" ? "+ " : l.kind === "removed" ? "− " : l.kind === "changed" ? "~ " : "  ") + l.text}</div>)}
-  </div>;
-}
-
-function useNames(ids) {
-  const key = Array.from(new Set((ids || []).filter(Boolean))).sort().join(",");
-  const [names, setNames] = useState({});
-  useEffect(function () {
-    if (!key) return;
-    let live = true;
-    fetchProfilesByIds(key.split(",")).then(function (rows) {
-      if (!live) return;
-      const m = {}; (rows || []).forEach(function (p) { m[p.id] = pubNameRow(p) || String(p.id).slice(0, 8); });
-      setNames(m);
-    }).catch(function () {});
-    return function () { live = false; };
-  }, [key]);
-  return names;
-}
 
 const btn = (kind, busy) => ({
   padding: "8px 10px", borderRadius: 8, fontSize: 12.5, fontWeight: 700, cursor: busy ? "default" : "pointer", flex: 1,
@@ -118,163 +29,7 @@ function Msg({ msg }) {
   return <div role={msg.kind === "err" ? "alert" : "status"} style={{ background: msg.kind === "err" ? C.redBg : C.greenBg, color: msg.kind === "err" ? C.red : C.green, border: "1px solid " + (msg.kind === "err" ? C.red : C.greenDim), borderRadius: 9, padding: "9px 11px", fontSize: 12.5, lineHeight: 1.5, marginBottom: 10 }}>{msg.text}</div>;
 }
 
-// ── 1. Held route edits ──────────────────────────────────────────────────────────────
-const NO_ROWS = [];
-export function FieldContributionQueue({ onOpenRoute }) {
-  const q = useFieldContributions("pending");
-  const fieldsQ = useContributionFields();
-  const rows = q.data || NO_ROWS;
-  const routeIds = useMemo(() => Array.from(new Set(rows.map((r) => r.route_id).filter(Boolean))), [rows]);
-  const routesQ = useRouteRowsByIds(routeIds);
-  const areaIds = useMemo(() => Array.from(new Set(rows.filter(isAreaRow).map((r) => r.area_id))), [rows]);
-  const areasQ = useAreaEditRowsByIds(areaIds);
-  const names = useNames(rows.map((r) => r.contributor));
-  const [busy, setBusy] = useState(null);
-  const [msg, setMsg] = useState(null);
-  const [mode, setMode] = useState({});     // clusterKey -> "edit" | "reject"
-  const [draft, setDraft] = useState({});   // clusterKey -> text
-  const [reason, setReason] = useState({}); // clusterKey -> text
-  const [noStrike, setNoStrike] = useState({});
-
-  const clusters = useMemo(function () {
-    const by = {};
-    rows.forEach(function (r) { const k = (r.route_id || "area:" + r.area_id) + "\u0000" + r.field; (by[k] || (by[k] = [])).push(r); });
-    const out = [];
-    Object.keys(by).forEach(function (k) {
-      const gs = [];
-      by[k].forEach(function (r) {
-        let g = null;
-        for (let i = 0; i < gs.length; i++) if (sameEditValue(r.field, gs[i].rows[0].value, r.value)) { g = gs[i]; break; }
-        if (!g) { g = { key: k + "\u0000" + gs.length, route_id: r.route_id, area_id: isAreaRow(r) ? r.area_id : null, field: r.field, rows: [] }; gs.push(g); }
-        g.rows.push(r);
-      });
-      gs.forEach(function (g) { g.who = Array.from(new Set(g.rows.map((r) => r.contributor))); out.push(g); });
-    });
-    out.sort((a, b) => String(a.rows[0].created_at).localeCompare(String(b.rows[0].created_at)));
-    return out;
-  }, [rows]);
-
-  const act = async (key, fn, okText) => {
-    setBusy(key); setMsg(null);
-    try { await fn(); setMsg({ kind: "ok", text: okText }); setMode((m) => ({ ...m, [key]: null })); }
-    catch (e) { setMsg({ kind: "err", text: (e && e.message) || "That did not go through." }); }
-    finally { setBusy(null); }
-  };
-  const parseDraft = (g, text) => {
-    const v0 = g.rows[0].value;
-    if (typeof v0 === "number") { const n = Number(text); if (!Number.isFinite(n)) throw new Error("Enter a number."); return n; }
-    if (typeof v0 === "string" || v0 == null) return String(text);
-    if (Array.isArray(v0) && (!v0.length || isPrim(v0[0]))) { const parts = String(text).split(",").map((s) => s.trim()).filter(Boolean); /* a months set (0319) is numbers, and the applier refuses strings */ return typeof v0[0] === "number" ? parts.map((p) => Number(p)).filter(Number.isFinite) : parts; }
-    try { return JSON.parse(text); } catch (_e) { throw new Error("The edited value must be valid JSON for this field."); }
-  };
-  const draftText = (g) => { const v = g.rows[0].value; return isPrim(v) ? String(v == null ? "" : v) : (Array.isArray(v) && (!v.length || isPrim(v[0]))) ? v.join(", ") : JSON.stringify(v, null, 1); };
-
-  if (q.isLoading) return <LoadingRows C={C} label="Loading held edits…" style={{padding: "8px 0"}}/>;
-  if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load the held edits — {(q.error && q.error.message) || "the request failed"}. This is not a report that there are none.</div>;
-
-  return <div>
-    <Msg msg={msg} />
-    {!clusters.length ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.6, padding: "4px 0" }}>No route or area edits are waiting for review.</div>
-      : clusters.map(function (g) {
-        const r0 = g.rows[0];
-        const area = g.area_id ? areaField(g.field) : null;
-        const f = g.area_id ? null : (fieldsQ.data || {})[g.field];
-        const label = g.area_id ? ((area && area.label) || g.field) : ((f && f.label) || g.field);
-        const routeRow = (routesQ.data || {})[g.route_id];
-        const areaRow = g.area_id ? (areasQ.data || {})[g.area_id] : null;
-        // An area's current value is the column the page renders (lib/areaFields.js `cur`), shown
-        // the way the sheet shows it; the proposed months read as "Mar–May" rather than [3,4,5].
-        const cur = g.area_id ? (areaRow && area ? (area.cur(areaRow) || undefined) : undefined) : (f && f.column_name && routeRow ? routeRow[f.column_name] : undefined);
-        const proposed = g.area_id && area && area.type === "months" ? monthsLabel(r0.value) : g.area_id && area && area.fmt ? (area.fmt(r0.value) || r0.value) : r0.value;
-        const name = g.area_id ? ((r0.areas && r0.areas.name) || (areaRow && areaRow.name) || g.area_id) : ((r0.routes && r0.routes.name) || g.route_id);
-        const isBusy = busy === g.key;
-        const m = mode[g.key];
-        const also = g.rows.slice(1).map((r) => r.id);
-        return <div key={g.key} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 9 }}>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "baseline" }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{name}</div>
-            {g.area_id ? <span style={{ fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{"Area" + (r0.areas && r0.areas.area_type ? " · " + r0.areas.area_type : "")}</span>
-              : <button onClick={() => onOpenRoute && onOpenRoute(g.route_id, name)} style={{ background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", padding: 0 }}>Open route →</button>}
-          </div>
-          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{[r0.routes && r0.routes.discipline, "sent " + when(r0.created_at), g.who.length > 1 ? g.who.length + " climbers suggested this" : "by " + (names[r0.contributor] || String(r0.contributor || "").slice(0, 8))].filter(Boolean).join(" · ")}</div>
-          {/* 0351: an edit that takes something off the page (a waypoint, a pitch, a pin) is never approved by agreement — it waits here
-              for the owner, marked so it cannot be waved through with the rest. The climber's own reason is required for one. */}
-          {g.rows.some((r) => r.review_note === REMOVAL_NOTE) ? <div style={{ marginTop: 8, fontSize: 12, fontWeight: 700, color: C.red, background: C.redBg, border: "1px solid " + C.red, borderRadius: 8, padding: "6px 9px", lineHeight: 1.45 }}>{"Removes something from the page — the rows struck through below. Nothing changes until you approve it."}</div> : null}
-          {g.rows.filter((r) => r.reason).map((r) => <div key={"why-" + r.id} style={{ marginTop: 6, fontSize: 12, color: C.textSub, lineHeight: 1.45 }}><b style={{ color: C.text }}>{"Why" + (g.rows.length > 1 ? " (" + (names[r.contributor] || String(r.contributor || "").slice(0, 8)) + ")" : "") + ": "}</b>{r.reason}</div>)}
-          <div style={{ marginTop: 8, fontSize: 12.5, fontWeight: 700, color: C.text }}>{label}</div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-            <div><div style={{ fontSize: 11, color: C.textMuted, fontWeight: 700, marginTop: 4 }}>{isEmpty(cur) ? "ON THE PAGE NOW: nothing" : "ON THE PAGE NOW"}</div>{!isEmpty(cur) ? <Val v={cur} /> : null}</div>
-            <div><div style={{ fontSize: 11, color: C.green, fontWeight: 700, marginTop: 4 }}>PROPOSED</div><Val v={proposed} tone="new" /></div>
-          </div>
-          <RowDiff cur={cur} nxt={r0.value} />
-          {/* A proposed parking pin (0378) is checked by LOOKING at it: the satellite view shows whether there is a lot or a pullout there. */}
-          {area && area.type === "pin" && r0.value && isFinite(Number(r0.value.lat)) && isFinite(Number(r0.value.lng)) ? <a href={"https://www.google.com/maps/search/?api=1&query=" + Number(r0.value.lat) + "," + Number(r0.value.lng)} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: 44, marginTop: 4, color: C.blue, fontSize: 12.5, fontWeight: 700, textDecoration: "none" }}>See the proposed pin in Google Maps</a> : null}
-          {m === "edit" ? <div style={{ marginTop: 9 }}>
-            <textarea aria-label={"Edit the value for " + label} value={draft[g.key] != null ? draft[g.key] : draftText(g)} onChange={(e) => setDraft((d) => ({ ...d, [g.key]: e.target.value }))} rows={4} style={fld} />
-            <div style={{ display: "flex", gap: 8, marginTop: 7 }}>
-              <button disabled={isBusy} style={btn("ok", isBusy)} onClick={() => act(g.key, async () => { const v = parseDraft(g, draft[g.key] != null ? draft[g.key] : draftText(g)); await approveFieldContribution(r0.id, v, also); }, "Approved with your edit — the field is now high confidence.")}>{isBusy ? "Working…" : "Approve edited value"}</button>
-              <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: null }))}>Cancel</button>
-            </div>
-          </div> : m === "reject" ? <div style={{ marginTop: 9 }}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 6 }}>{REASONS.map((t) => <button key={t} onClick={() => setReason((x) => ({ ...x, [g.key]: t }))} style={{ padding: "5px 8px", borderRadius: 14, border: "1px solid " + (reason[g.key] === t ? C.blue : C.border), background: reason[g.key] === t ? C.blueBg : C.surface, color: reason[g.key] === t ? "#fff" : C.textSub, fontSize: 11.5, cursor: "pointer" }}>{t}</button>)}</div>
-            <textarea aria-label="Why this edit is turned down (the climber reads this)" value={reason[g.key] || ""} onChange={(e) => setReason((x) => ({ ...x, [g.key]: e.target.value }))} rows={2} placeholder="Why? The climber is shown this (at least 10 characters)." style={fld} />
-            <label style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 12, color: C.textSub, marginTop: 6 }}><input type="checkbox" checked={!!noStrike[g.key]} onChange={(e) => setNoStrike((x) => ({ ...x, [g.key]: e.target.checked }))} /> Honest mistake — don’t count it as a strike</label>
-            <div style={{ display: "flex", gap: 8, marginTop: 7 }}>
-              <button disabled={isBusy} style={btn("bad", isBusy)} onClick={() => act(g.key, () => rejectFieldContribution(r0.id, reason[g.key] || "", also, !noStrike[g.key]), noStrike[g.key] ? "Turned down; the climber was told. No strike." : "Turned down; the climber was told and it counts as a strike.")}>{isBusy ? "Working…" : "Confirm — turn down"}</button>
-              <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: null }))}>Cancel</button>
-            </div>
-          </div> : <div style={{ display: "flex", gap: 6, marginTop: 9, flexWrap: "wrap" }}>
-            <button disabled={isBusy} style={btn("ok", isBusy)} onClick={() => act(g.key, () => approveFieldContribution(r0.id, null, also), g.area_id ? "Approved — it is on the area page." : "Approved — it is on the page and the field is now high confidence.")}>{isBusy ? "Working…" : "Approve"}</button>
-            <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: "edit" }))}>Edit &amp; approve</button>
-            <button disabled={isBusy} style={btn("bad", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: "reject" }))}>Turn down</button>
-            {g.area_id ? null : <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => act(g.key, async () => { await setRouteFieldConfidence(g.route_id, g.field, "high", "Locked by ClimbMatch as stored"); await rejectFieldContribution(r0.id, "The value on the page was checked and locked at high confidence; this edit was not applied.", also, false); }, "Locked as stored; the edit was turned down without a strike.")}>Keep &amp; lock</button>}
-          </div>}
-        </div>;
-      })}
-  </div>;
-}
-
-// ── 2. Flags ─────────────────────────────────────────────────────────────────────────
-export function RouteFlagQueue({ onOpenRoute }) {
-  const q = useOpenRouteFlags(true);
-  const fieldsQ = useContributionFields();
-  const [busy, setBusy] = useState(null);
-  const [msg, setMsg] = useState(null);
-  const [note, setNote] = useState({});
-  const rows = q.data || NO_ROWS;
-  if (q.isLoading) return <LoadingRows C={C} label="Loading flags…" style={{padding: "8px 0"}}/>;
-  if (q.error) return <div role="alert" style={{ fontSize: 12.5, color: C.red, padding: "8px 0" }}>Could not load the flags — {(q.error && q.error.message) || "the request failed"}. This is not a report that there are none.</div>;
-  const act = async (id, status) => {
-    setBusy(id); setMsg(null);
-    try { await resolveRouteFlag(id, status, note[id] || ""); setMsg({ kind: "ok", text: status === "fixed" ? "Marked fixed — the reporter was thanked." : "Dismissed — the reporter was told." }); }
-    catch (e) { setMsg({ kind: "err", text: (e && e.message) || "That did not go through." }); }
-    finally { setBusy(null); }
-  };
-  return <div>
-    <Msg msg={msg} />
-    {!rows.length ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.6, padding: "4px 0" }}>No flags are open.</div>
-      : rows.map(function (r) {
-        const f = (fieldsQ.data || {})[r.field];
-        const name = (r.routes && r.routes.name) || r.route_id;
-        const isBusy = busy === r.id;
-        return <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 9 }}>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "baseline" }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{name}</div>
-            <button onClick={() => onOpenRoute && onOpenRoute(r.route_id, name)} style={{ background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", padding: 0 }}>Open route →</button>
-          </div>
-          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{[r.field ? ((f && f.label) || r.field) : "Whole route", "flagged " + when(r.created_at), "by " + (r.reporterProfile ? (pubNameRow(r.reporterProfile) || "a climber") : "a climber")].join(" · ")}</div>
-          <div style={{ fontSize: 13, color: C.text, lineHeight: 1.5, marginTop: 7, whiteSpace: "pre-wrap" }}>{"“" + r.note + "”"}</div>
-          <textarea aria-label="Note to the reporter (optional)" value={note[r.id] || ""} onChange={(e) => setNote((x) => ({ ...x, [r.id]: e.target.value }))} rows={1} placeholder="Note to the reporter (optional)" style={{ ...fld, marginTop: 8 }} />
-          <div style={{ display: "flex", gap: 8, marginTop: 7 }}>
-            <button disabled={isBusy} style={btn("ok", isBusy)} onClick={() => act(r.id, "fixed")}>{isBusy ? "Working…" : "Fixed it"}</button>
-            <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => act(r.id, "dismissed")}>No change needed</button>
-          </div>
-        </div>;
-      })}
-  </div>;
-}
-
-// ── 3. Contributor standing ──────────────────────────────────────────────────────────
+// ── Contributor standing ───────────────────────────────────────────────────────────── ──────────────────────────────────────────────────────────
 export function ContributorStandingQueue() {
   const q = useContributionStandings(true);
   const [busy, setBusy] = useState(null);
