@@ -1164,3 +1164,28 @@ trip** row, and `tripH` (lib/planTimes.js) is defined as `retH - depart` so the 
 disagree. A whole-day published figure is already car-to-car and is not given a descent on top (the Descent tile
 reads "incl."). `totalH` is unchanged: the summit clock and the alpine start count back from it.
 `check:return-leg` holds Total trip = Approach + Climbing + Descent.
+
+## The trip-plan shape: `check:itinerary-shape` and `audit:itinerary-shape`
+
+Owner, 2026-11-11: *"text only plans convert day by day, make that a rule in the app when we do other
+routes and states."* The rule is ONE function, `itineraryShapeErrors` in `lib/itineraryShape.js`:
+a route's `itinerary` is null or `{ days: [ … ] }` with typed figures (the SHAPE every stored plan
+has), and a new or converted plan must also pass `{ complete: true }` (every day titled, <= 60
+characters, with hours, miles or gain).
+
+- **`check:itinerary-shape`** (in build, offline) runs the rule's fixed cases (a real stored plan,
+  Bonanza Peak's Mary Green Glacier, must pass; prose with and without Day markers, a bare day list,
+  text figures and `hours: "45 min"` must not; a stored day with no title passes, a new one does not)
+  and then finds every WRITER: each `scripts/pipeline/*.mjs` that maps an `itinerary:` into a row and
+  every `scripts/oneoff/apply-trip-plans-*.mjs`. Each must import and call `itineraryShapeErrors`. It
+  dies, rather than passing, if it finds fewer than three writers. Its first run caught the wave 1
+  apply script, which had its own checks but not the shared rule.
+  - **Cannot see:** a writer that is not in those two places (a hand-pasted SQL update, the SQL
+    Editor). Migration 0409 is what stops those.
+- **`audit:itinerary-shape`** (hand-run, service key) reads every live plan. It FAILS on prose or a
+  malformed plan and REPORTS gap days (a day with no hours, miles or gain), which are not failures:
+  the page shows them as gaps with *+ Add*. First run, 2026-11-11: 842 plans, 310 prose, 0 otherwise
+  malformed once title length moved to the `complete` bar (11 stored plans have a longer title that
+  wraps fine; Bacon Peak's three days have none). Run it after any batch that writes `itinerary`, and
+  BEFORE applying 0409: Postgres re-checks a CHECK constraint on every UPDATE of a row, even a
+  `NOT VALID` one, so adding it while one prose row remains makes every later edit of that row fail.

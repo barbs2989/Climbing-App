@@ -21,7 +21,7 @@ export default function AreaWrongSpot({ area, C, onClose, onSubmit, onSignIn }) 
   const name = (area && area.name) || "this area";
   const n = note.trim().length;
   const canSend = !!area && n >= MIN && n <= MAX && !busy;
-  const lbl = { fontSize: 11, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const lbl = { fontSize: 11, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
 
   const send = async () => {
     if (!canSend || !onSubmit) return;

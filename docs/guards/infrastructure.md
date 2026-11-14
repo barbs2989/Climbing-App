@@ -148,9 +148,11 @@ the total when deciding where a new guard belongs.
     different: nothing ever asks that question again. The exemption is keyed to
     `group: pages`, so if that group changes the run **fails as stale bookkeeping** — the same
     standard as `NEEDS_EXTRA_STATE`.
-  - It also pins the **#795** invariant it depends on: both browser guards must still trigger
-    on push to main. A workflow that stops being push-triggered would otherwise drop out of
-    the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
+  - It also pins the **#795** invariant it depends on: both browser guards must still walk
+    main, on a push to main OR a `schedule:` cron. Since #3289 (owner, 2026-11-13) both walk
+    main every 4 hours instead of on every merge: per-merge walks were 16 jobs that gated
+    nothing and kept PR builds and the deploy waiting 25–40 min for a runner. A workflow with
+    neither trigger would otherwise drop out of the scan silently, which is the invisible-coverage-hole shape `check:overlay-discovery`
     exists for. And it **fails closed** — finding no push-triggered workflow is reported as a
     broken scan, never as safe CI.
   - **The walk workflows SKIP a PR or merge that touches only files no walk reads**

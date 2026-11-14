@@ -1481,6 +1481,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **A screen it cannot open FAILS** (NOT REACHED), or coverage erodes silently. The first run
     could not open Crews or Logbook: it matched nav buttons by EXACT text, and those carry a badge
     count ("Crews2"). Matched by name prefix now.
+  - **The route tabs wait for the route page's OWN tab bar** (2026-11-11). RouteDetail is a lazy
+    chunk, so `window.__routeOpen` only means `openRoute` ran: the screen is still the "Loading
+    climb…" fallback. The walk looked for each tab at once and reported Plan, Conditions, Reports,
+    Safety and Photos NOT REACHED on every run, every branch — while Overview "passed" by scanning
+    the fallback and Partners "passed" by clicking the app's own *Partners* NAV button. It now
+    waits for `[data-cm-route-tabs]`, looks for a tab only inside it, and matches a crag route's
+    *Send Reports* by the end of the label. All 14 route screens are reached.
+  - **On Windows a run can leave its vite dev servers running** (npx-shim on ports 546x) after it
+    exits. Find the node processes whose command line names your worktree and end them.
   - **Gated best-practice rules** (`GATED_PRACTICE`): page-has-heading-one, landmark-one-main,
     region, aria-dialog-name, presentation-role-conflict, landmark-no-duplicate-main,
     landmark-unique. Wrapping LegalView's body in `<main>` passed on a phone and made a SECOND main
@@ -1517,7 +1526,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   see it:** `check:ui` reads text, and a screen whose right-hand edge is off-viewport
   reports the same characters as a correct one. Two bugs of this shape are already on record
   and both were found by eye. It walks the 6 tabs and every openable overlay at 390×844.
-  Runs on every PR and every push to main via `render-guards.yml`; not a build gate
+  Runs on every PR, and on main every 4 hours, via `render-guards.yml`; not a build gate
   (browser automation).
   - **The precision rule is what makes it usable.** A chip row with `overflowX:auto` is a
     *correct* pattern that is supposed to scroll sideways, so an element is reported only if

@@ -40,14 +40,13 @@ export const NEEDS_EXTRA_STATE = {
   areaTreeOpen: "rendered as `areaTreeOpen && selArea` — needs an area selected first",
   crewListOpen: "a disclosure inside the crew finder's result list — needs crews to list",
   reviewQueue: "rendered as `reviewQueue&&isAdmin` — the Menu's Review queues (moved off Profile 2026-10-23) open only for an ADMIN account, and no walk signs in as one",
-  compareOpen: "rendered as `wide&&compareOpen` — a desktop-only view (#2621) that needs a viewport of WIDE_MIN (1024px) or wider; the walks run at phone width",
   // `sessionRestoring` deliberately gets NO entry — it is a derived const
   // (`realAuthGate && session===undefined`), not state, so discovery cannot return it and an
   // exemption naming it would be the stale bookkeeping this registry fails on. `editDraft` is
   // no longer here either: it is opened with a LIFTED literal, see `lift` in OVERLAY_PAYLOADS.
 };
 
-// OPT-IN OPENERS for three of the four above, reached with `?zx=<name>` rather than `?z=`.
+// OPT-IN OPENERS for two of the three above, reached with `?zx=<name>` rather than `?z=`.
 //
 // Every guard reading NEEDS_EXTRA_STATE skips these names before it loads anything, and that does
 // not change: a guard has to ask for `zx` by name, so widening check:pinned-dismiss (owner note,
@@ -56,8 +55,8 @@ export const NEEDS_EXTRA_STATE = {
 // same 1200ms the `z` opener waits.
 //   areaTreeOpen: renders as `areaTreeOpen&&selArea`, so a seed STATE is selected first; the tree
 //     opens expanded at it, the longest list it can show.
-//   compareOpen: renders as `wide&&compareOpen`, so the GUARD must also widen the viewport to
-//     `viewport` before loading, or `wide` is false and nothing mounts.
+//   An entry may also carry `viewport` ({width,height}) for a popup gated on a desktop width; the
+//     GUARD widens to it before loading. (Compare used it until the owner removed it, 2026-11-12.)
 //   reviewQueue: renders as `reviewQueue&&isAdmin`, and isAdmin is a DB query on a signed-in admin.
 //     A config that serves `zx` applies ADMIN_GATE, which lets window.__ovAdminGate stand in for it;
 //     only this opener sets that. The queue's own reads fail without an admin, which leaves its
@@ -65,7 +64,6 @@ export const NEEDS_EXTRA_STATE = {
 // crewListOpen has no entry: it is an inline disclosure in the crew finder's results, not a popup.
 export const EXTRA_STATE_OPENERS = {
   areaTreeOpen: { open: 'setSelArea(MOUNTAINS.find(function(m){return m.areaType==="state";})||null);setAreaTreeOpen(true);' },
-  compareOpen: { viewport: { width: 1280, height: 900 }, open: "setCompareList(ROUTES.slice(0,3));setCompareOpen(true);" },
   reviewQueue: { open: 'window.__ovAdminGate=true;setReviewQueue("fieldEdits");' },
 };
 export const ADMIN_GATE = { from: "{reviewQueue&&isAdmin&&", to: "{reviewQueue&&(isAdmin||window.__ovAdminGate)&&" };
@@ -174,7 +172,6 @@ export const OVERLAY_PAYLOADS = {
   // A climber object. Every call site passes a CLIMBERS-shaped record (`c`, `fr`, `host`).
   connectModal: { expr: "CLIMBERS[0]" },
   giveVouchWith: { expr: "CLIMBERS[0]" },
-  logCatchWith: { expr: "CLIMBERS[0]" },
   mutualModal: { expr: "CLIMBERS[0]" },
   profileModal: { expr: "CLIMBERS[0]" },
   // The `?list=<uuid>` link viewer (0199). Its one setter passes the uuid read from the address bar.
@@ -679,7 +676,7 @@ export function buildOpener(code, anchor, label, coreCode, routeDetailNames_) {
       "var p=new URLSearchParams(location.search);var t=p.get('zt');var z=p.get('z');" +
       "if(t)setTab(t);" +
       // `?mt=<profile|activity>` picks the Profile screen's tab, so a walk can reach the sections
-      // that left its default view (the catch record, the logbook and the Year in Climbing banner live on Activity).
+      // that left its default view (the logbook and the Year in Climbing banner live on Activity).
       "var mt=p.get('mt');if(mt)setMeTab(mt);" +
       // `?zr=1` opens the route detail screen and nothing else. check:overflow reached it by
       // driving the UI — select a state, tap Routes, tap the first row — and that drill-in did

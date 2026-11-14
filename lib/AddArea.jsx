@@ -31,7 +31,7 @@ export default function AddArea({ parent, C, onClose, onSubmit, onOpenArea }) {
   const dupQ = useCatalogAreaSearch(nm, 5);
   const dups = (dupQ.data && dupQ.data.rows) || [];
   const input = INPUT(C);
-  const lbl = { fontSize: 11, fontWeight: 700, color: C.textMuted, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
+  const lbl = { fontSize: 11, fontWeight: 700, color: C.label, letterSpacing: 0.3, textTransform: "uppercase", marginBottom: 4 };
   const canSubmit = !!parent && nm.length > 0 && nm.length <= NAME_MAX && desc.length <= DESC_MAX && !busy;
 
   const here = () => {
