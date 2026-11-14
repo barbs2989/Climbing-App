@@ -57,11 +57,11 @@ function AdSlot({ w, h, slot, note }) {
   return <ins ref={ref} className="adsbygoogle" style={{ display: "inline-block", width: w, height: h }} data-ad-client={ADS_CLIENT} data-ad-slot={slot} />;
 }
 
-/** The left margin's slot: fixed under the header, GAP px left of the page column (`top` is the
- *  header's height, `colLeft` the column's left edge as a CSS length — lib/wideLayout.js). Opaque,
- *  for the same ClearType reason as the rail. */
-export function SideAd({ top, colLeft }) {
-  return <div data-cm-ad="" style={{ position: "fixed", top: top + 16, left: "calc(" + colLeft + " - 184px)", width: 160, zIndex: 20, background: "#0d1117" }}><Label /><AdSlot w={160} h={600} slot={SLOT_SIDE} note="stays in view" /></div>;
+/** The left panel's slot (lib/wideLayout.js wideLeft): last in the panel's column, under whatever a page
+ *  put there (the area page's sub-area list), against the column's side as it was when it was a fixed box
+ *  of its own. Zoomed back to 1, as RailAd is, so the unit is drawn at the 160×600 the network sells. */
+export function SideAd() {
+  return <div data-cm-ad="" style={{ marginTop: 2, alignSelf: "flex-end", width: 160, zoom: 1 / ZOOM }}><Label /><AdSlot w={160} h={600} slot={SLOT_SIDE} note="stays in view" /></div>;
 }
 
 /** The rail's slot: last in the rail's column (under the route map, or under the widgets). The rail's

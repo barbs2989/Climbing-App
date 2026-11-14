@@ -240,7 +240,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/ClassicsList.tsx` | `ClassicsList`, Classic climbs here |
 | `src/components/AreaGettingThere.tsx` | `AreaGettingThere`, an area's Getting there card (`flat` in the area sheet: words, then the map) |
 | `src/components/AreaActionRow.tsx` | `AreaActionRow`, the Route finder · Objectives · Map row |
-| `src/components/AreaChildrenList.tsx` | `AreaChildrenList`, every sub-area: the website's left column (map thumbnail, grade bars, ★ objectives) or the phone section |
+| `src/components/AreaChildrenList.tsx` | `AreaChildrenList`, every sub-area: on the website (1280px+) portalled by the area page into App's left panel (`#cm-left-panel`; map thumbnail and ★ objectives, no grade bars), otherwise the phone section |
 | `src/components/AreaPhotoStrip.tsx` | `AreaPhotoStrip`, the thin photo strip: area photos and every route photo under the area (0411) |
 | `src/components/AddHereFooter.tsx` | `AddHereFooter`, the add-a-climb footer |
 | `lib/nearbyPeaks.js` | `nearbyPeaksBounds`, `nearbyPeaksRows`, `nearbyPeaksLive` |
