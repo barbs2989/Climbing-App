@@ -216,7 +216,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const cellBox: CSSProperties = { flex: "1 1 180px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "space-between" };
   const cellQ: CSSProperties = { fontSize: 13.5, fontWeight: 700, color: C.text, marginBottom: 8, overflowWrap: "anywhere" };
   const cellBtn: CSSProperties = { ...BTN_LG, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 };
-  const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && chartable && isLeaf === false ? area.id : null);
+  const kidGrades: AreaPageQuery<Record<string, WallGradeRow[]>> = useAreaChildrenGradeCounts(wide && !full && chartable && isLeaf === false ? area.id : null); // not in the left panel (owner, 2026-11-13: "remove the grade spread from the left panel"), so not read there
   // Above a wall the classics come from the whole subtree (0390); a wall ranks its own loaded rows (areaClassics).
   const classicsUp: AreaPageQuery<AreaPageClassic[]> = useAreaClassics(area.id, isLeaf === false && chartable);
   const loading = lc || (isLeaf && lr);
@@ -261,7 +261,7 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
   const showAbout = formation || !!(area.blurb && String(area.blurb).trim());
   const childRows = !loading && children && children.length > 0 ? children : null;
   const mapPin = area.lat != null && area.lng != null && isFinite(Number(area.lat)) && isFinite(Number(area.lng)) ? { lat: Number(area.lat), lng: Number(area.lng), zoom: MAP_ZOOM[area.area_type] || 10, name: area.name } : null;
-  const childList = (variant: "sidebar" | "section") => childRows ? <AreaChildrenList rows={childRows} noun={childNoun(children)} onDrill={onDrill} C={C} grades={wide ? kidGrades.data || null : null} objectives={objByChild} variant={variant} onAllAreas={onAllAreas} map={variant === "sidebar" ? mapPin : null} onNear={onNear} /> : null;
+  const childList = (variant: "sidebar" | "section") => childRows ? <AreaChildrenList rows={childRows} noun={childNoun(children)} onDrill={onDrill} C={C} grades={wide && variant === "section" ? kidGrades.data || null : null} objectives={objByChild} variant={variant} onAllAreas={onAllAreas} map={variant === "sidebar" ? mapPin : null} onNear={onNear} /> : null;
   // CLASSIC CLIMBS HERE. Above a wall: all of them across the subtree (ClassicsList: five, then a dropdown), each
   // row naming the wall it is on; a failed read says so; an area with no classics shows nothing rather than "none".
   // A wall: areaClassics over its own rows; with none, TOP RATED HERE -- the rows that carry a climber star rating
