@@ -79,7 +79,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   first step. The set: crag sends (sport, trad, top-rope, boulder, aid; different routes) 50/100/250/500; alpine summits (alpine,
   mountaineering, scrambling) 10/25/50/100, counting ONLY a log ticked *Summit*; ice & mixed 10/25/50; pitches 100/500/1,000;
   a 6/12/24-month logging streak (`monthRuns`); 50/100 climbs in one calendar year (`yearCounts`); Onsight ace (10 onsights or
-  flashes); All-rounder (5 disciplines); First ascent; Route developer; and one *finisher* badge per curated list. No badge for a
+  flashes); All-rounder (5 disciplines); and one *finisher* badge per curated list. No badge for a
   first send, a single peak or a vouch. A PEAK list (Bulgers, 14ers, ADK 46, SPS…) counts a peak only when the climber stood on it:
   a route that can be ticked Summit (alpine, mountaineering, scrambling, ice, mixed) counts only through `summitedLog` (a Summit tick or
   the log's summit answer), and a crag climb on a list peak (a desert tower, a Half Dome face) counts when sent — `topped` in
