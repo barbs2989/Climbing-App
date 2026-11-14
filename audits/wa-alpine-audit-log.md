@@ -39071,3 +39071,62 @@ exactly against Wikipedia for this batch — no elevation drift found on either 
 several recent batches' self-consistency fixes.
 
 Next batch will continue id-ascending from `wa_amphitheater_mountain_west_route` (pass 9).
+
+## 2026-11-14 — Pass 9, Batch 555
+
+Eight routes across six peaks, continuing id-ascending from `wa_amphitheater_mountain_west_route`:
+Anderson's Thumb (Standard Route), Apex Mountain/Pasayten (Apex Buttress), Argonaut Peak
+(Southeast Ridge AKA `wa_argonaut_peak_east_ridge`, Northeast Couloir), Concord Tower (Around the
+Cave We Go), Arrowhead Mountain (South Route), Austera Peak (itself, Southwest Ridge/McAllister
+Glacier).
+
+No confirmed errors this batch; no SQL file.
+
+**A years-old open flag resolves: `wa_apex_mountain_pasayten_apex_buttress`.** Since Batch 1
+(2026-07-27) this row carried the most-flagged open question in the whole audit — no source then
+found documented a technical buttress route on Apex Mountain, every source described the peak as a
+Class 1–2 walk-up, and the row self-contradicted (`pitches: 7` vs. its own `rope_note` calling it
+"Single-pitch 5.9 trad"). This run found Mountain Project independently lists "Apex Buttress," T
+5.9, located a couple of miles east of Cathedral Pass / west of Tungsten Mine — i.e. on Apex
+Mountain itself, not a conflation with Cathedral Peak's Southeast Buttress as suspected. The row's
+own internal contradiction is also gone: `rope_note` is now null and `overview` reads "Seven
+pitches, climbing the buttress that stands out on the left of Tungsten Lake," consistent with
+`pitches: 7`. Reclassified clean; no SQL needed since nothing in the row is wrong.
+
+**Still flagged (reconfirmed, unchanged since Pass 8 Batch 467, 2026-10-25):**
+- `wa_andersons_thumb_standard` — `high_point_ft` (6785) still disagrees with its own "Anderson's
+  Thumb summit" waypoint (6700), and three outside sources still give three different numbers
+  (Peakbagger 6785.1 ≈ stored `high_point_ft`; ListsOfJohn 6700 ≈ stored waypoint; Climbers Guide
+  to the Olympic Mountains "ca. 6,850 ft" ≈ neither). This run did newly confirm, via a
+  WebSearch snippet of that same Climbers Guide page, that it treats Anderson's Thumb and the
+  neighboring Echo Rock (7,033 ft) as two distinct, separately-elevationed subpeaks — so the
+  original "search-summarizer conflated two features" theory from Pass 7 no longer applies — but
+  WebFetch is still blocked for sites.google.com in this environment, so the guide's full page
+  couldn't be read and its "ca." figure isn't precise enough to safely pick a winner. Left for a
+  human, same as the last two passes.
+
+**Noted, not flagged (unchanged, out of this audit's scope or genuinely unresolvable):**
+- `wa_argonaut_peak_east_ridge` — area row 8457 ft vs. this route's `high_point_ft` 8453 ft are
+  both independently attested by Wikipedia itself (infobox vs. body text); the `name`
+  ("Southeast Ridge") vs. `id` (`..._east_ridge`) drift is pre-existing and outside this audit's
+  scope per `docs/codebase/route-identity.md`.
+- `wa_austera_peak` / `wa_austera_peak_southwest_ridge` — the Klawatti-Austera col rappel length
+  (stored "~75 ft") vs. independent trip reports giving 40–50 ft depending on the year's moat
+  conditions remains genuine season-to-season variability, not a stored error, per Pass 7 Batch
+  381's finding.
+- Concord Tower's area `elevation_ft` (7611) vs. sibling routes' ~7,560–7,569 ft figures is a
+  long-standing, separately-tracked dispute (first raised Pass 1, most recently Pass 6 Batch ~46)
+  on a different route (`wa_concord_tower_north_face`) than the one in this batch
+  (`wa_around_the_cave_we_go`) — not re-raised here.
+
+**Clean (7):** `wa_apex_mountain_pasayten_apex_buttress` (see above), `wa_argonaut_peak_east_ridge`
+(Grade II 5.6, Loomis/Parks/Schnell/Seman May 30 1977 FA, elevation per above), `wa_argonaut_peak_northeast_couloir`
+(5.6/WI2, Grade III, ~1,200 ft couloir, 8,457 ft matching the area row exactly), `wa_around_the_cave_we_go`
+(5.6 at Concord Tower, high point 7,569 ft matching The Cave Route and sibling routes on the same
+tower), `wa_arrowhead_mountain_south_route` (6,030 ft confirmed exactly against Mountaineers.org
+and Wikipedia-derived listings; Dec–Apr snow-climb season matches independent winter-scramble trip
+reports), `wa_austera_peak` and `wa_austera_peak_southwest_ridge` (8,339 ft matches Wikipedia
+exactly; Sept 16, 1965 Firey/Meulemans/Hovey FA confirmed via SummitPost).
+
+0 confirmed errors fixed, 1 flagged for human review (reconfirmed, not new), 7 clean.
+Next batch will continue id-ascending from `wa_austera_peak_southwest_ridge` (pass 9).
