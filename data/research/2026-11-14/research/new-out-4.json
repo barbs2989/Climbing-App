@@ -1,0 +1,158 @@
+{
+ "wa_ridge_traverse_from_east_fury": {
+  "area": "wa_mount_fury_west",
+  "skip_reason": "SummitPost Mount Fury page and Mountain Project route page: no trailhead-to-summit gain stated; countryhighpoints East Fury survey gives 15k ft for a 54-mile multi-day trip (not this route alone)."
+ },
+ "wa_hozomeen_mountain_west_face": {
+  "area": "wa_hozomeen_mountain",
+  "skip_reason": "SummitPost Hozomeen North Peak: no gain. Mountaineers Hozomeen page: \"over 7,000 ft\" round trip for a different (NE) route - not usable."
+ },
+ "wa_mount_ellinor_southeast_chute": {
+  "area": "wa_mount_ellinor",
+  "skip_reason": "Mountaineers Mount Ellinor page (lower TH 2,600 ft) states 3,270 ft gain (sidebar; intro says 3,344) but describes the SUMMER trail, which only meets the winter chute route at a junction; Hiking Project winter-route page gives 1,539 ft for the 0.7 mi chute segment only. Candidate if owner accepts a same-TH/same-summit figure: 3,270 ft (https://www.mountaineers.org/activities/routes-places/mount-ellinor)."
+ },
+ "wa_ragged_ridge": {
+  "area": "wa_alpine_and_technical_traverses",
+  "set": {
+   "gain_ft": 8420
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 8420,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/ragged-ridge-via-easy-pass",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ragged Ridge via Easy Pass (Mesahchie 8,795 ft and Katsuk): 20 mi round trip, 8,420 ft elevation gain for the outing"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers page covers Mesahchie+Katsuk from the Easy Pass trailhead; high point 8,795 ft matches our summit. Loop shape, so whole-outing figure used. Same page lists a Kitling Peak variant (5,000 ft) - not used."
+ },
+ "wa_forbidden_peak_east_ledges": {
+  "area": "wa_forbidden_peak",
+  "skip_reason": "Mountaineers lists W Ridge, E Ridge Direct, N Ridge, circumnavigation - no East Ledges page; CascadeClimbers 2006 East Ledges TR and gethighonaltitude East Ridge page state no gain."
+ },
+ "wa_traverse_of_mount_index": {
+  "area": "wa_main_peak_2",
+  "skip_reason": "Mountaineers Mount Index East Route (5,500 ft) is a different route; CascadeClimbers North-Middle-Main traverse TR and Mountain Project traverse page state no gain."
+ },
+ "wa_mount_berge_east_ridge": {
+  "area": "wa_mount_berge",
+  "skip_reason": "Mountaineers search for Berge: no matching page; no source found."
+ },
+ "wa_sherpa_balanced_rock_ne_couloir": {
+  "area": "wa_sherpa_peak",
+  "set": {
+   "gain_ft": 5000
+  },
+  "ledger": [
+   {
+    "field": "gain_ft",
+    "value": 5000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/sherpa-peak-northeast-couloir",
+      "retrieved_at": "2026-11-14",
+      "fact": "Sherpa Peak Northeast Couloir from Stuart Lake trailhead (3,600 ft): elevation gain 5,000 ft, high point 8,605 ft"
+     }
+    ]
+   }
+  ],
+  "note": "Mountaineers high point 8,605 ft vs our summit pin 8,630 ft. No loss/regain stated."
+ },
+ "wa_big_kangaroo_skinny_start": {
+  "area": "wa_big_kangaroo",
+  "skip_reason": "Mountaineers has Big Kangaroo West Route only (no gain stated); AAC report on Skinny Start states no TH-to-summit gain."
+ },
+ "wa_mount_adams_mazama_glacier_headwall": {
+  "area": "wa_mount_adams",
+  "skip_reason": "Mountaineers Mount Adams/Mazama Glacier page describes the glacier route (4,300 ft glacier climb), not the headwall, and gives no TH-to-summit total."
+ },
+ "wa_tooth_chair_traverse": {
+  "area": "wa_summer_fall_rock_2",
+  "skip_reason": "Mountaineers has separate Tooth and Chair Peak route pages; no page for the traverse with a gain figure."
+ },
+ "wa_needle_peak_north_ridge": {
+  "area": "wa_bonanza_peak",
+  "skip_reason": "Mountaineers Bonanza results (Bonanza-Martin peaks) are other routes; no page for NW Ridge from Needle Peak with a gain."
+ },
+ "wa_mount_triumph_west_route": {
+  "area": "wa_mount_triumph",
+  "skip_reason": "Mountaineers has only Mount Triumph Northeast Ridge; no West Route page with gain found."
+ },
+ "wa_inner_constance_seans_route": {
+  "area": "wa_inner_constance",
+  "skip_reason": "Mountain Project Sean's Route/Second Wind gives route length 1,200 ft only; no TH-to-summit gain."
+ },
+ "wa_the_chopping_block_northwest_route": {
+  "area": "wa_the_chopping_block",
+  "skip_reason": "Mountaineers Chopping Block page states 6,209 ft gain (high point 6,819 ft, Goodell Creek TH) but for the NORTHEAST Ridge, a different route on the peak - not used. Candidate: https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/the-chopping-block-pinnacle-peak"
+ },
+ "wa_mount_olympus_2_north_ridge_via_blue_glacier": {
+  "area": "wa_mount_olympus",
+  "skip_reason": "Mountaineers Mount Olympus/Blue Glacier page gives only ROUND-TRIP figures that disagree with each other (7,400 / 8,100 / 7,000 ft); no TH-to-summit figure."
+ },
+ "wa_southeast_mox_peak_beckey_route_west_ridge": {
+  "area": "wa_southeast_mox_peak",
+  "skip_reason": "Mountaineers Chilliwacks Peaks page gives 7,500 ft for a multi-peak trip (high point 8,979 ft), not SE Mox alone."
+ },
+ "wa_glacier_peak_tahoma_cleaver": {
+  "area": "wa_mount_rainier",
+  "skip_reason": "Mountaineers has Tahoma Glacier page only (different route); no Tahoma Cleaver gain found."
+ },
+ "wa_cardinal_peak_nw_couloir_north_ridge": {
+  "area": "wa_cardinal_peak",
+  "skip_reason": "WTA Cardinal Peak page has no stated gain; Mountaineers has only North Fork Entiat backpack (4,000 ft, not a summit figure)."
+ },
+ "wa_mount_persis_the_hexorcist": {
+  "area": "wa_mount_persis",
+  "skip_reason": "Mountaineers Mount Persis page (2,800 ft) is the standard scramble, not The Hexorcist; no route-specific figure."
+ },
+ "wa_zool_patch": {
+  "area": "wa_juno_tower",
+  "skip_reason": "Mountaineers search for Juno: no page; no source found for Juno Tower."
+ },
+ "wa_west_twin_needle_west_slope": {
+  "area": "wa_west_twin_needle",
+  "skip_reason": "StephAbegg Twin Needles trip report states no gain; Mountaineers Southern Picket Range page has no route-specific figure."
+ },
+ "wa_mount_crowder_northeast_ridge": {
+  "area": "wa_mount_crowder",
+  "skip_reason": "Mountaineers search for Crowder: no page; search found no stated gain for the NE Ridge."
+ },
+ "wa_snoqualmie_mountain_boogie_wonderland": {
+  "area": "wa_winter_spring_ice_snow_mixed_2",
+  "skip_reason": "Mountaineers Snoqualmie Mountain pages are New York Gully and hikes (different routes); no Boogie Wonderland figure."
+ },
+ "wa_switchback_mountain_west_ridge": {
+  "area": "wa_switchback_mountain",
+  "skip_reason": "SummitPost Switchback Peak page states no gain; Mountaineers page combines Bigelow/Switchback/Martin (multi-peak)."
+ },
+ "wa_burgundy_spire_corkscrew_route": {
+  "area": "wa_burgundy_spire",
+  "skip_reason": "SummitPost Burgundy Spire page states no gain; Mountain Project Corkscrew Route gives route length 1,500 ft only."
+ },
+ "wa_chimney_rock_northeast_ridge": {
+  "area": "wa_chimney_rock",
+  "skip_reason": "Mountain Project Chimney Rock NE Ridge snippet and Mountaineers (East Face Direct only) state no TH-to-summit gain."
+ },
+ "wa_colchuck_balanced_rock_the_foot_of_faith_west_face_p3_variation": {
+  "area": "wa_colchuck_balanced_rock",
+  "skip_reason": "Rock route on a sub-summit; Mountaineers search found no page; no TH-to-summit gain located."
+ },
+ "wa_comb_the_boomerang": {
+  "area": "wa_comb_the_climbs",
+  "skip_reason": "Mountaineers search for Comb: no matching page; no source found."
+ },
+ "wa_comb_the_west_ridge": {
+  "area": "wa_comb_the_climbs",
+  "skip_reason": "Mountaineers search for Comb: no matching page; no source found."
+ }
+}

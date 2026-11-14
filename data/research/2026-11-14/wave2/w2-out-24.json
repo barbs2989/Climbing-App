@@ -1,0 +1,2425 @@
+{
+ "ny_mount_emmons_seward_range_herd_path": {
+  "area": "ny_mount_emmons",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 17,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Emmons out-and-back from Coreys Road: 17 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4660,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,660 feet for the round trip"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "14-16",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 14-16 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Corey's Road (Seward Range trailhead)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route starts via Coreys Road"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Emmons starts at the Corey's Road trailhead"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Reach Donaldson along the Seward ridge herd path, then follow the herd path west along the ridge to Emmons",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "From Donaldson follow the herd path west along the ridge to Emmons"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Emmons lies beyond Seward and Donaldson, with muddy cols"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Unmaintained herd path with blowdown; map and compass needed",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/mount-emmons",
+      "retrieved_at": "2026-11-14",
+      "fact": "Herd path, not maintained; blowdown in spots; carry map and compass"
+     }
+    ]
+   }
+  ],
+  "note": "Pure Adirondacks ~18 mi RT is the three-peak (Seward, Donaldson, Emmons) day, not used. listhiker.com/peaks/ny-emmons gives 14.5 mi / 3,400 ft for the full Seward Range traverse (multi-peak), not used."
+ },
+ "ny_mount_haystack_phelps_trail_from_the_garden": {
+  "area": "ny_mount_haystack",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 7.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/MountHaystack.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Garden via Johns Brook, Phelps Trail and Shorey's Short Cut: 7.8 miles one way"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/MountHaystack.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain of just over 4000 feet for that route"
+     }
+    ],
+    "note": "page says just over 4000"
+   },
+   {
+    "field": "trailhead",
+    "value": "The Garden, Keene Valley",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/MountHaystack.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach starts at the Garden parking area in Keene Valley"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-haystack",
+      "retrieved_at": "2026-11-14",
+      "fact": "Haystack route from The Garden"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Johns Brook Trail from the Garden to the Phelps Trail, then Shorey's Short Cut to the Range Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/MountHaystack.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Johns Brook Trail to Phelps Trail, then Shorey's Short Cut over to the Range Trail"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "The final stretch, the 'Devil's Half Mile', is very steep (about three-quarters of a mile)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/MountHaystack.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Devil's Half Mile is the very steep last stretch, about three-fourths of a mile"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Johns Brook crossing above Bushnell Falls should be assessed on the Phelps Trail approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-haystack",
+      "retrieved_at": "2026-11-14",
+      "fact": "If using the Phelps Trail approach, assess the Johns Brook crossing above Bushnell Falls"
+     }
+    ]
+   }
+  ],
+  "note": "adktrailmap.com/activities-HikeHaystack.php repeats the cnyhiking text (one source) and gives 15.8 mi RT from the Garden. hikeadk 14.2 mi/4,800 ft from the Garden is for its primary route (not confirmed Phelps Trail) - not used. Pure Adirondacks Haystack page describes the Range Trail over Saddleback and Basin - mismatch."
+ },
+ "ny_mount_marcy_van_hoevenberg_trail": {
+  "area": "ny_mount_marcy",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 7.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://prominenceregistry.com/mount-marcy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Van Hoevenberg standard route 7.4 miles one way from Adirondak Loj"
+     },
+     {
+      "url": "https://lovepinesandpeaks.com/hiking-to-the-summit-of-mount-marcy-new-yorks-highest-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail length 7.4 miles one way, Adirondack Loj to summit"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14.8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marcy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Van Hoevenberg / Loj primary route: 14.8 miles round trip"
+     },
+     {
+      "url": "https://www.cnyhiking.com/MountMarcy.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Van Hoevenberg from the Loj is a nearly 15 mile round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3500,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marcy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,500 feet"
+     },
+     {
+      "url": "https://www.cnyhiking.com/MountMarcy.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route has elevation gain of over 3500 feet"
+     }
+    ],
+    "note": "prominenceregistry and lovepinesandpeaks state 3,166 ft (net gain)"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8-10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marcy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 8-10 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondak Loj / High Peaks Information Center, Heart Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marcy",
+      "retrieved_at": "2026-11-14",
+      "fact": "Primary route Van Hoevenberg / Loj approach"
+     },
+     {
+      "url": "https://prominenceregistry.com/mount-marcy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts from Adirondak Loj at about 2,170 ft"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Loj to Marcy Dam 2.1 mi, then 2.4 mi more to Indian Falls",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://lovepinesandpeaks.com/hiking-to-the-summit-of-mount-marcy-new-yorks-highest-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "2.1 miles Loj to Marcy Dam; 2.4 miles further to Indian Falls"
+     },
+     {
+      "url": "https://prominenceregistry.com/mount-marcy/",
+      "retrieved_at": "2026-11-14",
+      "fact": "First 2.1 miles reach Marcy Dam"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Paid parking at the Loj lot ($15 cash per one page); lot fills early, South Meadow is the backup",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://lovepinesandpeaks.com/hiking-to-the-summit-of-mount-marcy-new-yorks-highest-peak/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Loj parking $15 cash; fills fast; South Meadow backup adds 2 mi round trip"
+     }
+    ],
+    "note": "fee amounts differ by page and date"
+   }
+  ],
+  "note": "Net gain 3,166 ft (prominenceregistry, lovepinesandpeaks) differs from 3,500 ft cumulative."
+ },
+ "ny_mount_marshall_herbert_brook_herd_path": {
+  "area": "ny_mount_marshall",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14.5,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marshall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Upper Works via Calamity Brook and Herbert Brook: 14.5 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2900,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marshall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,900 feet"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marshall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 7-9 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Upper Works",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marshall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Selected route access: Upper Works via Calamity Brook and Herbert Brook"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Calamity Brook trail from Upper Works, then the Herbert Brook herd path to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marshall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route from Upper Works via Calamity Brook then Herbert Brook"
+     }
+    ]
+   },
+   {
+    "field": "closure",
+    "value": "Calamity Brook high-water bridge is out (DEC notice, checked Oct 14, 2026)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-marshall",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trail notice: DEC reports the Calamity Brook high-water bridge is out"
+     }
+    ]
+   }
+  ],
+  "note": "Pure Adirondacks Marshall page (14 mi / 2,595 ft) describes the Cold Brook route from the Loj, not Herbert Brook - not used. cnyhiking MountMarshall.htm says 6+ mi one way, route unstated."
+ },
+ "ny_mount_redfield_uphill_brook_herd_path": {
+  "area": "ny_mount_redfield",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 18,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Redfield from Upper Works via the Uphill area: 18 miles"
+     }
+    ],
+    "note": "listhiker says round trip exceeds 16 miles"
+   },
+   {
+    "field": "gain_ft",
+    "value": 4200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,200 feet"
+     }
+    ],
+    "note": "listhiker says roughly 3,225 ft - conflict"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "13-15",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 13-15 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Upper Works",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead: Upper Works Trailhead"
+     },
+     {
+      "url": "https://listhiker.com/peaks/ny-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Calamity Brook Trail from the Upper Works trailhead"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Calamity Brook Trail to Flowed Lands, on to Uphill Lean-to, then the herd path up Uphill Brook",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listhiker.com/peaks/ny-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Calamity Brook Trail, Flowed Lands, Uphill Lean-to, then herd path up Uphill Brook"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Usually climbed from the Uphill area by an unmarked herd path"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Uphill Lean-to; lean-tos around Flowed Lands",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://listhiker.com/peaks/ny-redfield",
+      "retrieved_at": "2026-11-14",
+      "fact": "Uphill Lean-to; backcountry lean-tos in the Flowed Lands area"
+     }
+    ]
+   }
+  ],
+  "note": "Distance 18 vs >16 and gain 4,200 vs ~3,225 disagree; kept single-source."
+ },
+ "ny_mount_skylight_via_mount_marcy": {
+  "area": "ny_mount_skylight",
+  "facts": [
+   {
+    "field": "route_step",
+    "value": "Lake Tear of the Clouds lies in the col between Skylight and Marcy",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://listhiker.com/peaks/ny-skylight",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lake Tear of the Clouds lies in the col between Skylight and Marcy"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondack Loj / HPIC",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-skylight",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Adirondack Loj / HPIC"
+     },
+     {
+      "url": "https://listhiker.com/peaks/ny-skylight",
+      "retrieved_at": "2026-11-14",
+      "fact": "Usual loop from the Adirondack Loj"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "A slide off the southeast side of Mount Colden has blocked the Feldspar/Lake Arnold trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/mount-skylight",
+      "retrieved_at": "2026-11-14",
+      "fact": "Warning: slide on SE side of Colden into Feldspar/Lake Arnold trail has blocked the trail"
+     }
+    ]
+   }
+  ],
+  "note": "hikeadk 17.4 mi / 4,125 ft (out & back, route not confirmed via Marcy); lakeplacid 8 mi one way / 5,100 ft for a Marcy-Gray-Skylight loop; listhiker ~16-mile loop with Marcy and Gray - multi-peak, none used."
+ },
+ "ny_mt_colden_lake_arnold_trail": {
+  "area": "ny_mt_colden",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12.6,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/mount-colden",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back via Lake Arnold Trail: 12.6 miles round trip"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-colden",
+      "retrieved_at": "2026-11-14",
+      "fact": "Adirondack Loj via Lake Arnold out-and-back: 12.8 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2535,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/mount-colden",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,535 feet"
+     }
+    ],
+    "note": "hikeadk states 3,200 ft - conflict"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-colden",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 7-9 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondack Loj / HPIC",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/mount-colden",
+      "retrieved_at": "2026-11-14",
+      "fact": "Adirondack Loj via Lake Arnold out-and-back"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/mount-colden",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back hike via the Lake Arnold Trail"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Lake Arnold the trail crosses several false peaks to the summit; steep wooden ladders and rock slab",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/MountColden.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Passes Lake Arnold then crosses several false peaks"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/mount-colden",
+      "retrieved_at": "2026-11-14",
+      "fact": "Includes trail junctions, steep wooden ladders and steep rock slab"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "A slide off Colden's southeast side has blocked the Feldspar/Lake Arnold trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/mount-skylight",
+      "retrieved_at": "2026-11-14",
+      "fact": "Slide on SE side of Colden into Feldspar/Lake Arnold trail blocked the trail"
+     }
+    ],
+    "note": "page does not say whether the Colden summit spur is affected"
+   }
+  ],
+  "note": "Gain conflict: 2,535 (lakeplacid) vs 3,200 (hikeadk); cnyhiking 3,800 is not tied to a route."
+ },
+ "ny_nipple_top_elk_pass_trail": {
+  "area": "ny_nipple_top",
+  "facts": [
+   {
+    "field": "approach_step",
+    "value": "From the AMR, Lake Road then the Gill Brook route toward Elk Pass",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/nippletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Walk to Lake Road, then use the Gill Brook route toward Elk Pass"
+     },
+     {
+      "url": "https://listhiker.com/peaks/ny-nippletop",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike begins along Lake Road from the AMR trailhead"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Free AMR parking/access reservation needed May 1 - October 31",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/nippletop",
+      "retrieved_at": "2026-11-14",
+      "fact": "Parking reservation needed May 1 - Oct 31 for hikes leaving from AMR"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Steep rocky climb above the Elk Pass ponds to views of the Great Range",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/nippletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep rocky climb above the ponds of Elk Pass; views to the Great Range"
+     }
+    ]
+   }
+  ],
+  "note": "All numbers found are for AMR loops (lakeplacid 13 mi loop up Elk Pass; hikeadk 13 mi/3,500 ft; Pure 10.3 mi Dial loop) or an unspecified 8.8 mi/2,760 ft out-and-back (listhiker); none confirmed for the Elk Pass Trail from Route 73."
+ },
+ "ny_northern_grand_traverse_ledge_access": {
+  "area": "ny_millbrook",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 1000,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112276716/northern-grand-traverse-ledge-access",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, 1000 ft"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 10,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112276716/northern-grand-traverse-ledge-access",
+      "retrieved_at": "2026-11-14",
+      "fact": "10 pitches"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Donald Perry, 1990",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112276716/northern-grand-traverse-ledge-access",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Donald Perry 1990"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "From Trapps Bridge take the carriage road behind the Near Trapps, Bayards Path to the ridge, then the Ridge Trail up Millbrook",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112276716/northern-grand-traverse-ledge-access",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trapps Bridge, carriage road, Bayards Path, Ridge Trail onto Millbrook ridge"
+     }
+    ]
+   },
+   {
+    "field": "water",
+    "value": "Seasonal spring crosses the trail where the Ridge Trail starts up Millbrook (wet seasons)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112276716/northern-grand-traverse-ledge-access",
+      "retrieved_at": "2026-11-14",
+      "fact": "In wet seasons a spring runs over the trail; water bottles can be filled"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Way onto or off the Millbrook Grand Traverse Ledge from the north end, useful as an emergency exit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112276716/northern-grand-traverse-ledge-access",
+      "retrieved_at": "2026-11-14",
+      "fact": "Approach from the north end teaches how to climb out of Millbrook in an emergency"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project describes this route."
+ },
+ "ny_nye_mountain_via_indian_pass_brook": {
+  "area": "ny_nye_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/nye-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Nye out & back: 8.4 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/nye-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,200 feet"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/nye-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 7-9 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondack Loj, Heart Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/nye-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Begin at Heart Lake by the Mt Jo Rock Garden trail and old Nye Ski Trail"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/street-and-nye-mountains",
+      "retrieved_at": "2026-11-14",
+      "fact": "Street and Nye from the Adirondack Loj"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Indian Pass Brook is crossed without a bridge; unsafe after rain or snowmelt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/nye-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route crosses Indian Pass Brook without a bridge; rain or snowmelt can make it unsafe"
+     }
+    ]
+   }
+  ],
+  "note": "Pure Adirondacks 8.4 mi / 1,963 ft is printed identically on its Nye and Street pages (likely the combined trip) - not used."
+ },
+ "ny_panther_peak_panther_brook_herd_path": {
+  "area": "ny_panther_peak",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12.5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/panther-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Panther from Santanoni Road: ~12.5 mi round trip"
+     },
+     {
+      "url": "https://mountain-hiking.com/panther-peak-adirondacks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Panther Peak via Santanoni Road: hike length 12.0 miles"
+     }
+    ],
+    "note": "hikeadk says 14.5 mi - conflict"
+   },
+   {
+    "field": "gain_ft",
+    "value": 3762,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/panther-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascent ~3,762 ft total gain"
+     }
+    ],
+    "note": "hikeadk says 4,400 ft - conflict"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "12-14",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/panther-peak-high-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 12-14 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Bradley Pond / Santanoni Range trailhead, Upper Works Road",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/panther-peak-high-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bradley Pond approach"
+     },
+     {
+      "url": "https://mountain-hiking.com/panther-peak-adirondacks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Bradley Pond Trailhead, about 1.5 mi before Upper Works on Upper Works Road"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bradley Pond Trail past the Santanoni Express turnoff, then the Panther Brook herd path near Bradley Pond to Times Square",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/panther-peak-high-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Pass the Santanoni Express turnoff, take the Panther Brook herd path near Bradley Pond"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/panther-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Cairn marks the herd path up Panther"
+     }
+    ]
+   },
+   {
+    "field": "emergency",
+    "value": "Cell coverage essentially disappears beyond the Times Square junction",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://mountain-hiking.com/panther-peak-adirondacks/",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the junction cell coverage disappears almost immediately"
+     }
+    ]
+   }
+  ],
+  "note": "Distance: 12.5 (Pure) and 12.0 (mountain-hiking) agree; hikeadk 14.5. Gain conflict 3,762 vs 4,400."
+ },
+ "ny_phelps_mountain_phelps_trail": {
+  "area": "ny_phelps_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8.8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Phelps from the Loj: 8.8 mi round trip"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "8.8 miles round trip"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "8.4 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2275,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,275 feet"
+     },
+     {
+      "url": "https://www.cnyhiking.com/PhelpsMountain.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Overall elevation gain of over 2300 feet, mostly in the last mile"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,275 feet"
+     }
+    ],
+    "note": "hikeadk and lakeplacid print the same figure (possible shared source); cnyhiking independent. Pure says 1,982"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 7-9 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondak Loj / HPIC, Heart Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts from the Adirondak Loj at Heart Lake"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead Adirondack Loj / HPIC"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Van Hoevenberg Trail past Marcy Dam, then a sharp left onto the Phelps Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follows the trail to Marcy Dam then the Van Hoevenberg Trail"
+     },
+     {
+      "url": "https://www.cnyhiking.com/PhelpsMountain.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Follow the Van Hoevenberg trail from the Loj, then a sharp left turn"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Upper trail is steep and rocky; continue past the first viewing rock to the true summit",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Upper climb steep and rocky; continue past the first viewing rock"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/phelps-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Do not stop at the viewing rock; it is not the true summit"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Paid HPIC parking ($10 full day, $5 after 1 p.m. per one page); lot fills early",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.adirondackhikers.com/adirondack-high-peaks/phelps-mountain/",
+      "retrieved_at": "2026-11-14",
+      "fact": "HPIC lot parking fee $10 full day, $5 after 1 p.m.; fills quickly"
+     }
+    ],
+    "note": "other pages state different rates"
+   }
+  ],
+  "note": "Gain: 2,275/2,300+ vs Pure 1,982."
+ },
+ "ny_porter_mountain_cascade_mountain_trail_to_porter_spur": {
+  "area": "ny_porter_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 5.6,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/porter-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Porter from the Cascade and Porter trailhead on Route 73: 5.6 mi round trip"
+     }
+    ],
+    "note": "lakeplacid says 5 mi - outside 10%"
+   },
+   {
+    "field": "gain_ft",
+    "value": 1960,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/porter-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascent 1,960 ft"
+     }
+    ],
+    "note": "lakeplacid says 2,235 ft - conflict"
+   },
+   {
+    "field": "trailhead",
+    "value": "Cascade/Porter trailhead on NY-73",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/porter-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at the Cascade and Porter trailhead on Route 73"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/porter-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Based on hiking from NY-73, the primary trailhead"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Shares the first 2.1 miles with the Cascade trail before the Porter spur",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/porter-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shares its first 2.1 miles with the Cascade trail"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Porter summit is about one mile past Cascade along the ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/PorterMountain.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Summit of Porter reached one mile after Cascade"
+     }
+    ],
+    "note": "cnyhiking describes going over Cascade first"
+   }
+  ],
+  "note": "Lakeplacid 5 mi / 2,235 ft vs Pure 5.6 mi / 1,960 ft disagree. hikeadk primary route is via Blueberry Mountain - mismatch."
+ },
+ "ny_radcliffe_descent": {
+  "area": "ny_b_jackie_and_friends",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "Easy 5th",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112062144/radcliffe-descent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade Easy 5th YDS"
+     }
+    ],
+    "note": "our grade is 4th"
+   },
+   {
+    "field": "length_ft",
+    "value": 80,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112062144/radcliffe-descent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, 80 ft"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Walk-off at the left side of the Trapps, threading behind boulders and flakes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112062144/radcliffe-descent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Way to walk off the left side of the Trapps, winding behind boulders and flakes"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Shorter than the Uberfall when finishing north of P38/Dennis/Belly Roll",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112062144/radcliffe-descent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Shorter and faster than the Uberfall if north of P38/Dennis/Belly Roll"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Starts at the far north end of the cliff edge, level with the tops of most Uberfall routes",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112062144/radcliffe-descent",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at far north end of the cliff edge at Uberfall-top level"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project describes this descent."
+ },
+ "ny_rocky_peak_ridge_via_giant_mountain": {
+  "area": "ny_rocky_peak_ridge",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/RockyPeakRidge.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Via Giant from Chapel Pond trailhead: just over four miles one way, incl. side trip to Giant"
+     }
+    ],
+    "note": "page says just over four miles"
+   },
+   {
+    "field": "trailhead",
+    "value": "Chapel Pond trailhead (NY-73)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/RockyPeakRidge.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climb Giant first from the Chapel Pond trailhead, then the ridge east"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Climb Giant first, then follow the ridgeline east to Rocky Peak Ridge",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/RockyPeakRidge.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Up Giant first, then head east along the ridgeline"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/rocky-peak-ridge",
+      "retrieved_at": "2026-11-14",
+      "fact": "Many hike Rocky Peak Ridge in combination with Giant Mountain"
+     }
+    ]
+   }
+  ],
+  "note": "lakeplacid and hikeadk figures are for the East Trail from New Russia - mismatch."
+ },
+ "ny_saddleback_mountain_ore_bed_trail": {
+  "area": "ny_saddleback_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 13.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Garden via Orebed Brook Trail: 13.4 mi round trip"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "12.6 miles round trip"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "14.2 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3300,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,300 feet"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,325 feet"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8-10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 8-10 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "The Garden, Keene Valley",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Begins at the Garden"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the Garden parking area"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Johns Brook trail 3.1 mi to the DEC Interior Outpost, then the Orebed Brook Trail up to the Range Trail",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "0-3.1 mi Garden to DEC Interior Outpost; then Orebed Brook Trail"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ore Bed Trail leads up to the Great Range Trail"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Crossings of Johns Brook and Ore Bed Brook can be tricky in high water",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Crosses Johns Brook and Ore Bed Brook; tricky in high water"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Summit approached from the Gothics side, with cliffs",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/saddleback-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ore Bed approach reaches the summit from the Gothics side"
+     }
+    ]
+   }
+  ],
+  "note": "Pure ascent (~2,200 ft) is measured from Johns Brook, not the trailhead - not used."
+ },
+ "ny_santanoni_peak_santanoni_express": {
+  "area": "ny_santanoni_peak",
+  "facts": [
+   {
+    "field": "express_segment_mi",
+    "value": 1.4,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.adirondackregion.com/pursuits/trails/santanoni-express-trail-7259945",
+      "retrieved_at": "2026-11-14",
+      "fact": "Santanoni Express Trail 1.4 miles mapped"
+     },
+     {
+      "url": "https://www.trailforks.com/trails/santanoni-express/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Santanoni Express 1.4 miles"
+     }
+    ],
+    "note": "length of the Express herd path itself, not trailhead-to-summit"
+   },
+   {
+    "field": "express_segment_gain_ft",
+    "value": 1758,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.adirondackregion.com/pursuits/trails/santanoni-express-trail-7259945",
+      "retrieved_at": "2026-11-14",
+      "fact": "Net gain 1,758 ft for the Express trail"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Bradley Pond Trail from the Santanoni Range trailhead to the Express turnoff",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.adirondackregion.com/pursuits/trails/santanoni-express-trail-7259945",
+      "retrieved_at": "2026-11-14",
+      "fact": "Express trail connects from the Bradley Pond Trail"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/panther-peak-high-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Santanoni Express turnoff lies on the Bradley Pond approach"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Steep and unrelenting; loose, slippery, muddy and hard when wet",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.trailforks.com/trails/santanoni-express/",
+      "retrieved_at": "2026-11-14",
+      "fact": "Steep and unrelenting; often loose, slippery, muddy and difficult when wet"
+     }
+    ]
+   }
+  ],
+  "note": "Pure (9.6 mi / 2,860 ft) and hikeadk (15.3 mi / 4,665 ft) Santanoni figures not confirmed for the Express route - not used."
+ },
+ "ny_sawteeth_weld_trail": {
+  "area": "ny_sawteeth",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 12,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Out-and-back from AMR via the Weld Trail: 12 miles round trip"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "AMR Weld Trail out-and-back: 12.4 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3100,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,100 feet"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,100 feet"
+     }
+    ],
+    "note": "identical figure on both - possible shared source"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 7-9 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "AMR / St. Huberts (Ausable Club), Lake Road",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "AMR / St Huberts and Lake Road to the red-marked Weld Trail"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Accessed through the AMR conservation easement"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Lake Road to near Lower Ausable Lake, then the red-marked Weld Trail",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/sawteeth",
+      "retrieved_at": "2026-11-14",
+      "fact": "Lake Road to the Weld Trail approach near Lower Ausable Lake"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "AMR access reservation required May 1 - October 31",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/nippletop",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reservation needed May 1-Oct 31 for any hike leaving from AMR"
+     }
+    ]
+   }
+  ],
+  "note": "Pure Sawteeth page is a Scenic/Pyramid loop - mismatch."
+ },
+ "ny_seward_mountain_seward_herd_path": {
+  "area": "ny_seward_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 15.8,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/seward-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seward from Coreys Road: 15.8 miles"
+     }
+    ],
+    "note": "listhiker: about 14 mi for Seward alone - 13% apart"
+   },
+   {
+    "field": "gain_ft",
+    "value": 3950,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/seward-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,950 feet"
+     }
+    ],
+    "note": "listhiker about 3,000 ft - conflict"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "12-14",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/seward-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 12-14 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Corey's Road (Seward Range trailhead)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/seward-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seward from Coreys Road"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/seward-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trailhead on Corey's Road"
+     }
+    ]
+   }
+  ],
+  "note": "Herd path varies by page: Pure uses the Calkins Brook herd path; listhiker uses the Ward Brook Truck Trail (~5 mi) then a herd path. Route identity unclear, so no route steps recorded."
+ },
+ "ny_seymour_mountain_ward_brook_herd_path": {
+  "area": "ny_seymour_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 14,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Seymour from Corey's Road: 14 mi round trip"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "14.4 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 4050,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 4,050 feet"
+     }
+    ],
+    "note": "Pure says 2,355 ft - conflict"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8-10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 8-10 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Corey's Road / Seward trailhead (Blueberry trail parking)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Coreys Road / Seward Trailhead, Blueberry Trail parking off Coreys and Ampersand Roads"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at the Corey's Road trailhead"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "About 5 miles of gradual trail to the Ward Brook Lean-to; herd path starts at a brook ~500 ft beyond",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "About 5 miles to Ward Brook Lean-To; herd path at a brook ~500 ft beyond"
+     },
+     {
+      "url": "https://listhiker.com/peaks/ny-seymour",
+      "retrieved_at": "2026-11-14",
+      "fact": "Roughly five miles from Coreys Road to the Ward Brook Lean-To"
+     }
+    ]
+   },
+   {
+    "field": "camp",
+    "value": "Ward Brook Lean-to (base camp for the Seward Range)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listhiker.com/peaks/ny-seymour",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ward Brook Lean-To used as a base camp"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/seymour-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ward Brook Lean-To at about 5 miles"
+     }
+    ]
+   }
+  ],
+  "note": "Gain conflict 4,050 vs 2,355."
+ },
+ "ny_south_dix_dix_range_herd_path": {
+  "area": "ny_south_dix",
+  "facts": [
+   {
+    "field": "trailhead",
+    "value": "Elk Lake trailhead",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/south-dix",
+      "retrieved_at": "2026-11-14",
+      "fact": "South Dix starts at the Elk Lake trailhead"
+     },
+     {
+      "url": "https://listhiker.com/peaks/ny-south-dix",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard approach departs from the Elk Lake trailhead"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Slide Brook herd path, up the open slide on Macomb, then along the ridge through a col to South Dix",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listhiker.com/peaks/ny-south-dix",
+      "retrieved_at": "2026-11-14",
+      "fact": "Slide Brook herd path, then the open rock slide on Macomb"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/south-dix",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reached via Macomb; follow the ridge down into a col then up to South Dix"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Macomb slide is loose scree and stone; snow can linger in the Macomb-South Dix col into May",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://listhiker.com/peaks/ny-south-dix",
+      "retrieved_at": "2026-11-14",
+      "fact": "Slide largely scree and loose stone; snow can persist in the col into May"
+     }
+    ]
+   }
+  ],
+  "note": "Pure ~17 mi / 3,050 ft is a trip over Macomb (multi-peak) - not used. adirondack46.com/peaks/south-dix had no route data."
+ },
+ "ny_street_mountain_via_indian_pass_brook": {
+  "area": "ny_street_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 8.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/street-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Street out & back: 8.4 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2200,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/street-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,200 feet"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/street-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 7-9 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondack Loj, Heart Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/street-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Start at Heart Lake where the Mt Jo Rock Garden trail parts from the old Nye Ski Trail"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/street-and-nye-mountains",
+      "retrieved_at": "2026-11-14",
+      "fact": "Street and Nye from the Adirondack Loj"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Indian Pass Brook is crossed without a bridge; unsafe after rain or snowmelt",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/street-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route crosses Indian Pass Brook without a bridge; crossing can become unsafe after rain"
+     }
+    ]
+   }
+  ],
+  "note": "Pure 8.4 mi / 1,963 ft appears to be the combined Street+Nye trip; cnyhiking StreetMountain.htm gives ~8 mi / 2,000+ ft for both peaks - not used."
+ },
+ "ny_table_top_mountain_herd_path_from_the_van_hoevenberg_trail": {
+  "area": "ny_table_top_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9.8,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Tabletop from the Loj: 9.8 mi round trip"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "9.5 miles round trip"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "10 miles round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 2440,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,440 feet"
+     },
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,530 feet"
+     }
+    ],
+    "note": "Pure says 2,270 ft"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "8-10",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 8-10 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondack Loj, Heart Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts from the Adirondack Loj to Marcy Dam"
+     },
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Starts at the Adirondack Loj toward Marcy"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "Herd path leaves the Van Hoevenberg Trail on the left before Indian Falls; narrow, eroded and muddy",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Herd path leaves the main route on the left before Indian Falls; narrow eroded path, mud and water"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Return the same way to the Van Hoevenberg Trail and back to the Loj",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/tabletop-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Descend the same herd path to the Van Hoevenberg Trail and retrace the approach"
+     }
+    ]
+   }
+  ],
+  "note": ""
+ },
+ "ny_the_descent_route_2": {
+  "area": "ny_fresh_wall_spier_falls_area_the",
+  "facts": [
+   {
+    "field": "grade",
+    "value": "3rd",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119039114/the-descent-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade 3rd"
+     }
+    ]
+   },
+   {
+    "field": "length_ft",
+    "value": 35,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119039114/the-descent-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Trad, 35 ft"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Jim Pavoldi, February 2006",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119039114/the-descent-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "FA Jim Pavoldi, February, 2006"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Clean friction ridge between the slabs and the Fresh Wall face; used to set top ropes or descend from the slabs, unroped",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/119039114/the-descent-route",
+      "retrieved_at": "2026-11-14",
+      "fact": "Friction ridge between slabs and Fresh Wall face; to set top ropes or descend; unroped"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project describes this route (Moreau Area, Fresh Wall)."
+ },
+ "ny_upper_wolfjaw_mountain_wedge_brook_trail": {
+  "area": "ny_upper_wolfjaw_mountain",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 9,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "From the AMR via the Wedge Brook Trail: 9 miles round trip"
+     }
+    ],
+    "note": "hikeadk says 10.8 mi - conflict"
+   },
+   {
+    "field": "gain_ft",
+    "value": 3075,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 3,075 feet"
+     }
+    ],
+    "note": "hikeadk says 3,600 ft - conflict"
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "9-11",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 9-11 hours (Wedge Brook single-peak route)"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "AMR / St. Huberts (Ausable Club)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Hike from the AMR via the Wedge Brook Trail"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route from the AMR / St Huberts"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "West River Trail along the Ausable River to the Wedge Brook junction, then Wedge Brook up to the Wolfjaws ridge",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "West River Trail along the Ausable to Wedge Brook junction; Wedge Brook to the Wolfjaws ridge"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Retrace the ridge, Wedge Brook and West River approach",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "For the single-peak outing retrace the ridge, Wedge Brook and West River approach"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "AMR access reservation required May 1 - October 31",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.lakeplacid.com/do/hiking/upper-wolfjaw-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Accessed through the AMR easement; reservation required"
+     }
+    ]
+   }
+  ],
+  "note": "Distance 9 vs 10.8 mi and gain 3,075 vs 3,600 ft disagree. Pure and listhiker describe the Garden route - mismatch."
+ },
+ "ny_whiteface_wilmington_trail": {
+  "area": "ny_whiteface",
+  "facts": [
+   {
+    "field": "dist_mi_oneway",
+    "value": 5.2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.cnyhiking.com/WhitefaceMountain.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilmington Trail: 5.2 mile one-way hike from NY 431 to the top"
+     }
+    ]
+   },
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 11.4,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/whiteface-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilmington Trail from Reservoir Road parking: ~11.4 mi round trip"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 3620,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/whiteface-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascent 3,620 ft total gain"
+     },
+     {
+      "url": "https://www.cnyhiking.com/WhitefaceMountain.htm",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain of nearly 3700 feet"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Wilmington Trail parking area, Reservoir Road (Wilmington)",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/whiteface-mountain",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wilmington Trail starts from the parking area on Reservoir Road"
+     }
+    ]
+   }
+  ],
+  "note": "cnyhiking names NY 431 as the start; Pure names Reservoir Road. hikeadk Whiteface page uses the ASRC/Marble Mountain approach - mismatch, not used."
+ },
+ "ny_wright_peak_wright_peak_spur_trail_from_algonquin_trail": {
+  "area": "ny_wright_peak",
+  "facts": [
+   {
+    "field": "dist_mi_roundtrip",
+    "value": 7,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/wright-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Wright from the Loj via Van Hoevenberg: 7.0 mi round trip"
+     }
+    ],
+    "note": "hikeadk 8.2 mi - 15% apart"
+   },
+   {
+    "field": "gain_ft",
+    "value": 2400,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/wright-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Ascent 2,400 ft"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/wright-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Elevation gain 2,500 feet"
+     }
+    ]
+   },
+   {
+    "field": "car_to_car_hours",
+    "value": "7-9",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/wright-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Average time 7-9 hours"
+     }
+    ]
+   },
+   {
+    "field": "trailhead",
+    "value": "Adirondak Loj, Heart Lake",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://pureadirondacks.com/blogs/adirondack-hiking/wright-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Standard approach starts at the Adirondack Loj at Heart Lake"
+     },
+     {
+      "url": "https://www.hikeadk.com/hikes/wright-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Route from Adirondak Loj"
+     }
+    ]
+   },
+   {
+    "field": "overview",
+    "value": "Reaches exposed alpine rock with close views of Algonquin",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.hikeadk.com/hikes/wright-peak",
+      "retrieved_at": "2026-11-14",
+      "fact": "Reaches exposed alpine rock with close views of Algonquin"
+     }
+    ]
+   }
+  ],
+  "note": "Distance conflict 7.0 vs 8.2 mi."
+ },
+ "or_approach_gully": {
+  "area": "or_zz_upper_gorge",
+  "facts": [
+   {
+    "field": "overview",
+    "value": "Easy scramble gully that splits the Smith Rock Upper Gorge; often the best or only way down to the base",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112385342/approach-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Breaks the Upper Gorge in two; may be the best and/or only approach"
+     }
+    ]
+   },
+   {
+    "field": "approach_step",
+    "value": "Climber trail from the canal road to the top of the gully, or walk the gorge rim east from the river bend; it is the only break there",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112385342/approach-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Climber trail from the canal road; or hike the rim east from the river bend; first and only break"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Easy scramble but a slip would be serious",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112385342/approach-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Easy scramble, but slipping could be bad"
+     }
+    ]
+   }
+  ],
+  "note": "Only Mountain Project describes this gully."
+ },
+ "or_eleven_o_clock_gully": {
+  "area": "or_broken_top",
+  "facts": [
+   {
+    "field": "length_ft",
+    "value": 500,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756091/eleven-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Snow, Alpine, 500 ft, Grade II; gully climbs roughly 500 feet"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756091/eleven-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Grade II"
+     }
+    ]
+   },
+   {
+    "field": "route_step",
+    "value": "From Crook Cirque climb the 11 o'clock gully (mostly 40-50 degree snow) to a rim notch; traverse the west face to the Northwest Ridge (3rd class) to the summit",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756091/eleven-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "40-50 degree snow to a crater-rim notch; traverse west face to Northwest Ridge (3rd class)"
+     }
+    ]
+   },
+   {
+    "field": "hazard",
+    "value": "Avoid without full consolidated snow; final 10-20 ft can be near vertical with a cornice",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756091/eleven-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Avoid without consolidated snow; last 10-20 ft near vertical, may be corniced"
+     }
+    ]
+   },
+   {
+    "field": "descent",
+    "value": "Downclimb the route",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756091/eleven-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "To descend, down climb the route"
+     }
+    ]
+   },
+   {
+    "field": "rack",
+    "value": "Possibly pickets; ice screws likely useless",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/109756091/eleven-oclock-gully",
+      "retrieved_at": "2026-11-14",
+      "fact": "Protection possibly pickets; ice screws probably useless"
+     }
+    ]
+   }
+  ],
+  "note": "MP lists the grade as 3rd / Steep Snow. Only one publisher found."
+ },
+ "or_goat_peak_scramble_route": {
+  "area": "or_goat_peak",
+  "skip_reason": "Opened karl-helser.com Goat Peak (Mount Jefferson south ridge) trip report and the Mountain Project search for Goat Peak; could not confirm which Oregon Goat Peak this route is, and no page states a scramble route for it. SummitPost Goat Peak links not opened (site answers 403)."
+ }
+}

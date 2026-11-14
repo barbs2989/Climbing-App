@@ -7,6 +7,7 @@ import { restoreQueryCache, persistQueryCache } from "./lib/query-persist.js";
 import { setQueryClient } from "./lib/queryClientRef.js";
 import { installTapSlop } from "./lib/tapSlop.js";
 import { installErrorReporting } from "./lib/errorReport.js";
+import { refreshProfileReadsOnSignIn } from "./lib/auth.js";
 
 // networkMode "always" is load-bearing, not a tuning knob. React Query's default is
 // "online": when the browser reports itself offline it sets fetchStatus "paused" and
@@ -99,6 +100,7 @@ const queryClient = new QueryClient({
 installTapSlop();
 installErrorReporting();
 setQueryClient(queryClient);
+refreshProfileReadsOnSignIn();
 restoreQueryCache(queryClient).finally(() => {
   persistQueryCache(queryClient);
   createRoot(document.getElementById("root")).render(

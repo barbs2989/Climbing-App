@@ -56,7 +56,7 @@ const CASES = [
   },
   {
     name: "3. reverting a real clickable() fix is still caught",
-    file: "lib/DbGuides.jsx",
+    file: "src/components/TopoThumb.tsx", // was lib/DbGuides.jsx, removed with the guide feature 2026-11-14
     find: "{...clickable(onOpen)}",
     repl: "onClick={onOpen}",
     expect: "fail",
