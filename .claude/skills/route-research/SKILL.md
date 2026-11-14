@@ -115,7 +115,8 @@ for the owner. With fewer sources: do not touch the field; list it under **Dispu
 | emergency | county sheriff, land manager | — |
 
 \* blocks automated fetchers (403). **READ IT THROUGH THE OWNER'S CHROME** (owner, 2026-11-14: "use all
-sites for research for everything, all sessions, etc"): the claude-in-chrome tools, one tab per agent,
+sites for research for everything, all sessions, etc"; and "i have permission and liscense from these
+sites to access with claude" — this is licensed access, not a workaround): the claude-in-chrome tools, one tab per agent,
 navigate + extract the figures with `javascript_tool` (don't read whole pages into context). Take facts
 and the URL only, never copied text. **A CAPTCHA, human check or login wall: stop and ask the owner to
 click it — never solve one.** Subagents without the Chrome tools still get 403; give that pass to an
