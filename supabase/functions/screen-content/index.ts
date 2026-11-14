@@ -10,12 +10,15 @@
 //          policy, so it cannot be the image filter.
 // Each is inert until its key is set; the floor (0265's term list) runs regardless.
 //
-// The caller is the database, so there is no user JWT: deploy with --no-verify-jwt. That is safe
-// because the only thing a caller can cause is a SCREENING of a row that already exists — at most once
-// per row (a per-row rate bucket), under an hourly cap — and screening can only hold, never publish.
+// The caller is the database, so there is no user JWT: deploy with --no-verify-jwt. The database
+// SIGNS each call instead (0424: HMAC over timestamp, kind and id, 10-minute freshness), so a forged
+// or replayed call is refused before anything is read. Behind that, a caller can only cause a
+// SCREENING of a row that already exists — at most once per row (a per-row rate bucket), under an
+// hourly cap — and screening can only hold, never publish.
 //
 // Deploy:  npx supabase functions deploy screen-content --no-verify-jwt
-// Secrets: ANTHROPIC_API_KEY (text); AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION (images)
+// Secrets: SCREEN_HOOK_SECRET (same value as app_secrets.screen_hook_secret, see 0424);
+//          ANTHROPIC_API_KEY (text); AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION (images)
 // Wire:    insert into app_settings (key, value) values ('screen_hook_url', '<project>/functions/v1/screen-content');
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -24,6 +27,7 @@ import { zodOutputFormat } from "npm:@anthropic-ai/sdk@0.132.1/helpers/zod";
 import { z } from "npm:zod@4.6.5";
 import { RekognitionClient, DetectModerationLabelsCommand } from "npm:@aws-sdk/client-rekognition@3.1147.0";
 import { allow, DAY, HOUR } from "../_shared/ratelimit.ts";
+import { checkHook } from "../_shared/hooksig.ts";
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
@@ -79,6 +83,8 @@ serve(async (req) => {
     const kind = body && body.kind, id = body && body.id;
     const spec = typeof kind === "string" ? KINDS[kind] : undefined;
     if (!spec || typeof id !== "string" || !UUID_RE.test(id)) return json({ error: "Missing or invalid kind/id" }, 400);
+    const sig = await verifyHook(req, kind, id);
+    if (sig !== "ok") return json({ error: "Unauthorized", reason: sig }, 401);
 
     const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
     // Once per row (an edit re-screens through a new bucket key: the row's updated text hash), under
@@ -96,7 +102,9 @@ serve(async (req) => {
     if (!((haveText && text.trim()) || (haveImages && images.length))) return json({ screened: false, reason: "not_configured" });
     const fingerprint = id + ":" + (await sha(text + "|" + images.join(",")));
     if (!(await allow(supabase, [
-      { bucket: "screen:row", key: fingerprint, limit: 1, windowSec: 30 * DAY },
+      // 7 days, not 30: the ledger keeps rows for RETENTION_SEC (8 days), so a longer window was a
+      // promise the cleanup broke. Past 7 days a replay is refused by the signed timestamp instead.
+      { bucket: "screen:row", key: fingerprint, limit: 1, windowSec: 7 * DAY },
       { bucket: "screen:all", key: "all", limit: 2000, windowSec: HOUR },
     ]))) return json({ screened: false, reason: "rate_limited_or_seen" });
 
@@ -160,6 +168,14 @@ async function hold(supabase: any, kind: string, id: string, category: string, r
   const { data, error } = await supabase.rpc("screening_hold", { p_kind: kind, p_id: id, p_category: category, p_reason: (reason || "").slice(0, 500) });
   if (error) { console.error("screening_hold failed:", error.message); return false; }
   return !!data;
+}
+// The database signs each hook call (0424, _shared/hooksig.ts). With SCREEN_HOOK_SECRET unset this
+// accepts unsigned calls, as before 0424, so the code can ship before the secret does; the rollout
+// steps are in 0424_sign_screen_hook.sql.
+async function verifyHook(req: Request, kind: string, id: string): Promise<string> {
+  const secret = Deno.env.get("SCREEN_HOOK_SECRET");
+  if (!secret) return "ok";
+  return await checkHook(secret, req.headers.get("x-screen-timestamp"), req.headers.get("x-screen-signature"), kind, id);
 }
 async function sha(s: string) {
   const d = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));

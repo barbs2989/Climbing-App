@@ -156,6 +156,7 @@
     "check:area-sort-labels": "node scripts/check-area-sort-labels.mjs",
     "check:generic-area-names": "node scripts/check-generic-area-names.mjs",
     "check:function-columns": "node scripts/check-function-columns.mjs",
+    "check:hook-signature": "node scripts/check-hook-signature.mjs",
     "check:column-drift": "node scripts/check-column-drift.mjs",
     "gen:schema": "node scripts/gen-supabase-schema.mjs",
     "check:function-drift": "node scripts/check-function-drift.mjs",
