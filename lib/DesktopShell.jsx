@@ -120,6 +120,21 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
     else if (hits.length && e.key === "ArrowUp") { e.preventDefault(); setHi(i => (i - 1 + hits.length) % hits.length); }
     else if (hits.length && e.key === "Enter") { e.preventDefault(); pick(hits[Math.min(hi, hits.length - 1)]); }
   };
+  /* SAY WHICH STATE (owner 2026-11-13: "it should show the state or province of that search to be
+     more clear where it is"). A climb row read only its crag ("Cathedral Rock"), so Washington's and
+     Nevada's namesakes looked alike; it now reads "Cathedral Rock, Washington". The state or province
+     is the top-level area the crag's path sits under (useStates, already loaded above) — no extra read.
+     Place rows already carry it (usePlaceSearch's `where`). */
+  const stateOfPath = p => { const s = String(p || ""); return s ? ((allStates || []).find(st => st.path && (s === st.path || s.startsWith(st.path + "."))) || {}).name || "" : ""; };
+  const routeWhere = r => {
+    const a = r._dbArea;
+    if (!a) return "";
+    const st = stateOfPath(a.path);
+    // searchRoutesFor's namesake qualifier is often the state itself ("Cathedral Rock (New Mexico)"):
+    // drop it rather than print the state twice.
+    const name = st && String(a.name || "").endsWith(" (" + st + ")") ? a.name.slice(0, -(st.length + 3)) : a.name;
+    return [name, st && st !== name ? st : ""].filter(Boolean).join(", ");
+  };
   const row = (h, i) => {
     const on = i === hi;
     const name = h.kind === "finder" ? h.t.label + " in " + h.scope.name : h.kind === "place" ? h.a.name : h.r.name;
@@ -128,7 +143,7 @@ export function WideSearch({ onOpenRoute, onOpenArea, onOpenFinder, width, left,
        an AI3 ice route looked alike before anyone read them). Places keep the pin; the finder row the compass. */
     const disc = h.kind === "route" ? (h.r.discipline || catOf(h.r) || "") : "";
     const discColor = (CAT[disc] || {}).color || C.textMuted;
-    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : (h.r._dbArea && h.r._dbArea.name) || "";
+    const where = h.kind === "finder" ? "Open the Route finder with these filters" : h.kind === "place" ? [h.a.where, h.a.route_count ? h.a.route_count + (h.a.route_count === 1 ? " climb" : " climbs") : ""].filter(Boolean).join(" · ") : routeWhere(h.r);
     const grade = h.kind === "route" ? h.r.grade : "";
     return <button key={h.kind + (h.kind === "finder" ? "" : h.kind === "place" ? h.a.id : h.r.id)} id={"wide-search-" + i} role="option" aria-selected={on} onMouseDown={e => e.preventDefault()} onMouseEnter={() => setHi(i)} onClick={() => pick(h)} style={{ ...ROW, background: on ? C.card : "transparent" }}>{h.kind === "route" ? <DiscIcon d={disc} size={17}/> : <ActionIcon name={h.kind === "finder" ? "explore" : "pin"} size={17} color={C.textMuted}/>}<span style={{ minWidth: 0, flex: 1 }}><span style={{ display: "block", fontSize: 14, fontWeight: 700, overflowWrap: "anywhere" }}>{name}</span>{grade || where ? <span style={{ display: "block", fontSize: 12, color: C.textMuted, overflowWrap: "anywhere" }}>{grade ? <span style={{ color: discColor, fontWeight: 700 }}>{grade}</span> : null}{grade && where ? " · " : ""}{where}</span> : null}</span></button>;
   };
