@@ -346,7 +346,7 @@ export function WideRail({ upcoming, upcomingUnavailable, alerts, waiting, newN:
       <div id="rail-upcoming" style={{ ...SECTION, marginBottom: 6 }}>Coming up</div>
       {upcoming.length ? upcoming.slice(0, 3).map(x => {
         const n = daysUntil(x.date);
-        return <button key={x.crew.id} onClick={onOpenCal} style={ROW}><span style={{ minWidth: 44, flexShrink: 0, whiteSpace: "nowrap", fontSize: 12, fontWeight: 800, color: n <= 3 ? C.teal : C.textSub }}>{n === 0 ? "Today" : n === 1 ? "Tmrw" : shortDate(x.date)}</span><span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 700, overflowWrap: "anywhere" }}>{x.route.name}</span></button>;
+        return <button key={x.crew.id} onClick={onOpenCal} style={ROW}><span style={{ minWidth: 44, flexShrink: 0, whiteSpace: "nowrap", fontSize: 12, fontWeight: 800, color: n <= 3 ? C.teal : C.textSub }}>{n === 0 ? "Today" : n === 1 ? "Tmrw" : shortDate(x.date)}</span><span style={{ minWidth: 0, fontSize: 13.5, fontWeight: 700, overflowWrap: "anywhere" }}>{x.route.name}{x.waiting ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.amber }}>Can you make it?</span> : null}</span></button>;
       }) : upcomingUnavailable ? <div style={{ fontSize: 13, color: C.amber, lineHeight: 1.45, padding: "2px 2px 4px" }}>Couldn’t load your crew days just now.</div> : <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.45, padding: "2px 2px 4px" }}>No crew days agreed yet.<button onClick={onFindPartners} style={{ display: "block", marginTop: 8, padding: 0, border: "none", background: "transparent", color: C.blue, fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Find partners ›</button></div>}
     </section>
     <section aria-labelledby="rail-alerts" style={CARD}>

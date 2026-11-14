@@ -123,8 +123,10 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
        ${extractBraced("function crewInCrew(c)")}
        ${extractBraced("function datesAgreed(c)")}
        ${extractBraced("function agreedDate(c)")}
+       ${extractBraced("function dayWaitingOnMe(c)")}
        ${extractBraced("function crewTimeLabel(t)")}
        ${extractBraced("function crewStage(c,ctx)")}
+       crewStage.dayWaitingOnMe = dayWaitingOnMe;
        return crewStage;`
     )();
   } catch (e) { failures.push(`crewStage — could not extract/compile: ${e.message}`); }
@@ -167,6 +169,9 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
         full, { today: D }, (st) => st.dayReached && st.current === "climb" && !st.ready],
       ["after the day, unlogged: Log is current",
         full, { today: D2 }, (st) => st.current === "log"],
+      ["a crew of JUST YOU is not Crew ✓, and its summary asks you to invite (walkthrough 2026-11-14)",
+        { ...full, members: [{ climberId: 0, status: "confirmed" }], dayAcks: { [D]: [0] } }, before,
+        (st) => !st.steps[0].done && st.current === "crew" && /invite/.test(st.steps[0].summary)],
       ["logged: Vouch is current",
         full, { today: D2, logged: true, hasMessages: true }, (st) => st.current === "vouch"],
     ];
@@ -178,6 +183,21 @@ console.log(`  ${crew.members.length === 2 ? "ok  " : "FAIL"}  hydration carries
       if (!consistent) failures.push(`crewStage: ${name} — Ready (${st.ready}) disagrees with its parts`);
       if (!ok) failures.push(`crewStage: ${name} — got current=${st.current} done=[${keys(st)}] agreed=${st.agreed}`);
       console.log(`  ${ok && consistent ? "ok  " : "FAIL"}  crewStage: ${name}`);
+    }
+    // THE DAY THAT WAITS ONLY ON YOU (late joiner): everyone else can make it, you have not answered.
+    const w = stageFn.dayWaitingOnMe;
+    const three = [...mates, { climberId: 9, status: "confirmed" }];
+    const wc = [
+      ["a late joiner: the other two picked D, the newcomer (you) has not -> D waits on you", { ...full, members: three, dayAcks: { [D]: [7, 9] } }, D],
+      ["an agreed day does not wait on you", { ...full, dayAcks: { [D]: [0, 7] } }, null],
+      ["a day another member has not picked does not wait on you", { ...full, members: three, dayAcks: { [D]: [7] } }, null],
+      ["a crew of just you has nothing waiting on you", { ...full, members: [{ climberId: 0, status: "confirmed" }], dayAcks: { [D]: [] } }, null],
+    ];
+    for (const [name, crew, want] of wc) {
+      let got; try { got = w(crew); } catch (e) { failures.push(`dayWaitingOnMe: ${name} — threw: ${e.message}`); continue; }
+      const ok = got === want;
+      if (!ok) failures.push(`dayWaitingOnMe: ${name} — got ${got}`);
+      console.log(`  ${ok ? "ok  " : "FAIL"}  dayWaitingOnMe: ${name}`);
     }
   }
 }
