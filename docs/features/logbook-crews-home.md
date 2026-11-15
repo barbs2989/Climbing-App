@@ -138,6 +138,12 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew:<id>` first, the old scope deleted second, and a saved plan files the crew stub. A saved crew plan has *Send to the crew chat*
   (`FloatPlan`'s `onSendToCrew`, wired in both `FloatPlans` and the crew `SafetyTab`), which posts the plan text through `sendCrewMsg` — the
   climber's own send, so the Privacy Policy's "stays on your phone until you send it" still holds; `crews.float_plan` is unchanged.
+  **Who stamps the crew** (2026-11-14): saving a crew plan (`onFiled` → App's `fileCrewFloatPlan(cid, form)`) writes the
+  `crews.float_plan` stamp `{filedAt, contact: null, returnBy}` only when the climber is the ORGANIZER — the only role RLS (0036) lets
+  update the row — and its toast waits for that write. A member's save stays on the device and says so (*Float plan saved on this
+  device*), with no crew write and no organizer error. Deleting a crew plan calls `fileCrewFloatPlan(cid, null)`, which clears the
+  organizer's stamp so the card's ✓ does not outlive the plan. The stamp is still ONE per crew, so a member sees ✓ when the organizer
+  filed; per-member filings are the planned fix.
   **Chat → plan**: the plan text is ONE format, `floatPlanText` (core), and `parseFloatPlanText` reads it back (null for any other message).
   In a crew thread `MessageRow` (given `onSaveFloatPlan`) draws a posted plan as `FloatPlanCard` (`src/components/FloatPlanCard.tsx`): the climb,
   Leaves / Back by (amber) / Parking / Vehicle / Party / Comms / Contact where filled, notes, coordinate. A crewmate's card has *Save to my float

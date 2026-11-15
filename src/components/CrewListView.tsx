@@ -145,7 +145,7 @@ export interface CrewListViewProps {
   declineJoin: (id: CrewListViewId) => void;
   disbandCrew: (crewId: CrewListViewId) => void;
   dismissCrew: (crewId: CrewListViewId) => void;
-  fileCrewFloatPlan: (crewId: CrewListViewId) => void;
+  fileCrewFloatPlan: (crewId: CrewListViewId, form: Record<string, string> | null) => void;
   floatFocus: unknown;
   floatRouteOf: (crew: CrewListViewCrew) => CrewListViewRoute | null;
   /** App's formCrew: a third argument carries the quick post's day (and a cap) straight onto the new crew. */
