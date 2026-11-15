@@ -268,6 +268,8 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 
 ## 7. Last significant change
 
+2026-11-14 (#3381, 0448): any confirmed member proposes days on the Day sheet's calendar (`crew_propose_day`, which also says the proposer can make it); a day is taken back by whoever proposed it or by the organiser (`crew_unpropose_day`, which clears its acks and its lock; `crews.date_proposers`). Members still cannot UPDATE the crew row. `crews`, `crew_members` and `crew_day_acks` are on Realtime, and `useMyCrews` is a live query over them, so a crewmate's change reaches an open Crews tab without a reload.
+
 2026-11-14 crew walkthrough (#3377): Your friends picker in the Crew sheet; one chip size; a footer that never reflows; risk tolerance from the crew's answers in a Safety & risk panel; a late joiner is asked about the agreed day; the safety matrix says who answered, not each person's level.
 Private crews and Form a crew from a group (0426, owner 2026-11-14): a crew can be *Private* (unlisted, invite only, roster read only by its own people); a group's *Members* tab forms one from picked members.
 Chat bubbles hold a long message (owner, 2026-11-05: "long ones sometimes escape the blue message box"): `MessageRow`'s column caps the bubble at 74% of the thread and lets it shrink (`minWidth:0`), and the bubble breaks an unbreakable word (`overflowWrap:"anywhere"`), so a pasted URL wraps inside the blue box instead of pushing the box aside and spilling past it. The quick replies under a DM or crew thread (`ChatComposer`) wrap to the screen's width instead of running off its right edge as a hidden-scrollbar strip whose last chip a phone cut in half.
