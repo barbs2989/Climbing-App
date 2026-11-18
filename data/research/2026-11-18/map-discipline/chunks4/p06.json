@@ -1,0 +1,1957 @@
+[
+ {
+  "id": "ca_needham_mountain_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_needham_mountain",
+   "name": "Needham Mountain",
+   "lat": 36.4545,
+   "lng": -118.5374,
+   "elevation_ft": 12520,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_needham_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Class 2 to the summit block, which is Class 3.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 5.1
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 5.2
+   },
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 5.3
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 6.9
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 12
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 12
+   },
+   {
+    "src": "NPS",
+    "name": "Middle Fork Kaweah",
+    "lat": 36.527567,
+    "lng": -118.75126,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Creek",
+    "lat": 36.522122,
+    "lng": -118.763627,
+    "km": 21.6
+   },
+   {
+    "src": "USFS",
+    "name": "Crescent Meadow",
+    "lat": 36.554642,
+    "lng": -118.748928,
+    "km": 21.9
+   },
+   {
+    "src": "NPS",
+    "name": "High Sierra Trail",
+    "lat": 36.554944,
+    "lng": -118.748861,
+    "km": 22
+   },
+   {
+    "src": "NPS",
+    "name": "South Fork-Ladybug",
+    "lat": 36.349909,
+    "lng": -118.763135,
+    "km": 23.3
+   },
+   {
+    "src": "NPS",
+    "name": "South Fork - Garfield Grove",
+    "lat": 36.349861,
+    "lng": -118.764365,
+    "km": 23.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lodgepole TH",
+    "lat": 36.604973,
+    "lng": -118.723059,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Wolverton",
+    "lat": 36.596632,
+    "lng": -118.734168,
+    "km": 23.6
+   },
+   {
+    "src": "NPS",
+    "name": "Lakes Trail",
+    "lat": 36.596644,
+    "lng": -118.734257,
+    "km": 23.6
+   },
+   {
+    "src": "NPS",
+    "name": "Tokopah Falls",
+    "lat": 36.605023,
+    "lng": -118.722893,
+    "km": 23.6
+   },
+   {
+    "src": "NPS",
+    "name": "Twin Lakes",
+    "lat": 36.604973,
+    "lng": -118.723058,
+    "km": 23.6
+   },
+   {
+    "src": "NPS",
+    "name": "Lodgepole-Sherman Tree",
+    "lat": 36.604383,
+    "lng": -118.72581,
+    "km": 23.7
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Mineral King (Eagle-Mosquito / Sawtooth) trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/2011/1825.html",
+     "fact": "Hiked from Mineral King trailhead (7830) to Crystal Lake, over Amphitheatre Col, climbed Needham"
+    },
+    "placements": [
+     {
+      "source": "NPS",
+      "name": "Eagle-Mosquito",
+      "lat": 36.448545,
+      "lng": -118.595366,
+      "url": ""
+     },
+     {
+      "source": "NPS",
+      "name": "Sawtooth",
+      "lat": 36.453305,
+      "lng": -118.596761,
+      "url": ""
+     },
+     {
+      "source": "NPS",
+      "name": "Farewell Gap - Franklin Lakes",
+      "lat": 36.44753,
+      "lng": -118.594135,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Mineral King road end is the only road access; the three NPS points are within ~0.5 km. Crystal Lake trail leaves the Eagle-Mosquito/Sawtooth lot area; prefer Eagle-Mosquito. One page about Needham, but no other trailhead is plausible within 25 km. Report header date conflicts with its body."
+  }
+ },
+ {
+  "id": "ca_north_maggie_mountain_saddle_route_from_long_meadow",
+  "name": "Saddle Route from Long Meadow",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_north_maggie_mountain",
+   "name": "North Maggie Mountain",
+   "lat": 36.2767,
+   "lng": -118.638,
+   "elevation_ft": 10234,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_north_maggie_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Hike in to Long Meadow, leave the trail at an old metal sign and cross the Middle Fork Tule River. Stay just north of the ridge and cut over to the saddle next to point 10,113, then go straight to the summit, avoiding brush.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "South Fork - Garfield Grove",
+    "lat": 36.349861,
+    "lng": -118.764365,
+    "km": 13.9
+   },
+   {
+    "src": "NPS",
+    "name": "South Fork-Ladybug",
+    "lat": 36.349909,
+    "lng": -118.763135,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "Lewis Camp Trailhead",
+    "lat": 36.181305,
+    "lng": -118.515181,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Jerkey Trailhead",
+    "lat": 36.167611,
+    "lng": -118.485535,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 19.4
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 19.5
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 19.5
+   },
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 20
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 21.1
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 21.1
+   },
+   {
+    "src": "USFS",
+    "name": "Forks Of The Kern Trailhead",
+    "lat": 36.1379,
+    "lng": -118.455968,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "Magician (needles) Trailhead",
+    "lat": 36.109583,
+    "lng": -118.484775,
+    "km": 23.1
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Shake Camp Trailhead (Long Meadow Trail, Mountain Home State Forest)",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "USFS says the Long Meadow Trail (31E15) begins at Shake Camp; a North Maggie trip report parks near Shake Camp, crosses the Tule River and climbs the west slopes over Pt 10,113",
+     "url": "https://www.fs.usda.gov/r05/sequoia/recreation/trails/long-meadow-trail"
+    },
+    "placements": [
+     {
+      "source": "climber.org driving GPX (SHAKEC, Shake Camp Trailhead 6500)",
+      "name": "Shake Camp Trailhead",
+      "lat": 36.24929,
+      "lng": -118.67118,
+      "url": "https://climber.org/driving/images/mtnhome.gpx"
+     },
+     {
+      "source": "The Dyrt",
+      "name": "Shake Camp - State Forest (campground)",
+      "lat": 36.249,
+      "lng": -118.67,
+      "url": "https://www.thedyrt.com/camping/california/shake-camp-state-forest"
+     }
+    ]
+   },
+   "notes": "Strong: route text (Long Meadow, cross Middle Fork Tule, saddle by Pt 10,113) matches the Shake Camp/Long Meadow trail and the 2025 report. Other North Maggie trips start at Summit Trailhead (Burd) or Mountain Home; not this route. The Dyrt point is the campground, within ~100 m of the climber.org trailhead point. No USFS/NPS candidate in the input list is this trailhead."
+  }
+ },
+ {
+  "id": "ca_observation_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_observation_peak",
+   "name": "Observation Peak",
+   "lat": 37.0231,
+   "lng": -118.5238,
+   "elevation_ft": 12362,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_09_palisades_surrounding_peaks.ca_observation_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 22.5
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 24.5
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 24.5
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Taboose Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Trailhead Taboose Pass, then Upper Basin and Amphitheater Pass to Observation; a 2016 Taboose-start plan also climbed Observation. Taboose is the nearest road trailhead on the east side (weak-moderate: peak-specific reports are overnight trips)",
+     "url": "https://climber.org/reports/2007/1718.html"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "TABOOSE PASS TH",
+      "lat": 37.009505,
+      "lng": -118.327312,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving GPX (TABCRK, Taboose Pass Trailhead 5400)",
+      "name": "Taboose Pass Trailhead",
+      "lat": 37.009199977,
+      "lng": -118.326900005,
+      "url": "https://climber.org/driving/images/TaboosePass.gpx"
+     }
+    ]
+   },
+   "notes": "Confirms first pass: still inferred. Standard route is the Dumbbell Lakes line, which on the east side is also approached from Taboose via Vennacher Col (a 2016 plan). Observation is a multi-day backpack from any trailhead; Big Pine Creek and Sabrina are far farther. Both placements agree within 50 m."
+  }
+ },
+ {
+  "id": "ca_pettit_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_pettit_peak",
+   "name": "Pettit Peak",
+   "lat": 37.9856,
+   "lng": -119.4804,
+   "elevation_ft": 10788,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_02_the_sawtooth_ridge.ca_pettit_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Cathedral Lakes Trailhead Parking at Tuolumne Meadows Visitor Center",
+    "lat": 37.87259,
+    "lng": -119.374764,
+    "km": 15.6
+   },
+   {
+    "src": "NPS",
+    "name": "Cathedral Lakes",
+    "lat": 37.872634,
+    "lng": -119.374706,
+    "km": 15.6
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Stables Parking",
+    "lat": 37.880991,
+    "lng": -119.359412,
+    "km": 15.7
+   },
+   {
+    "src": "NPS",
+    "name": "Soda Springs Trailhead",
+    "lat": 37.872064,
+    "lng": -119.370647,
+    "km": 15.9
+   },
+   {
+    "src": "NPS",
+    "name": "Parsons Lodge Trailhead Parking",
+    "lat": 37.871696,
+    "lng": -119.368268,
+    "km": 16
+   },
+   {
+    "src": "NPS",
+    "name": "Glen Aulin Trailhead",
+    "lat": 37.878889,
+    "lng": -119.358511,
+    "km": 16
+   },
+   {
+    "src": "NPS",
+    "name": "Lembert Dome Trailhead",
+    "lat": 37.877417,
+    "lng": -119.353701,
+    "km": 16.4
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Parking",
+    "lat": 37.873556,
+    "lng": -119.358045,
+    "km": 16.4
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Store and Picnic Area Parking",
+    "lat": 37.874236,
+    "lng": -119.357217,
+    "km": 16.4
+   },
+   {
+    "src": "NPS",
+    "name": "Tenaya Lake East Beach Parking",
+    "lat": 37.837946,
+    "lng": -119.451915,
+    "km": 16.6
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 16.8
+   },
+   {
+    "src": "NPS",
+    "name": "Murphy Creek Trailhead",
+    "lat": 37.834313,
+    "lng": -119.463212,
+    "km": 16.9
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Wilderness Center Parking",
+    "lat": 37.876938,
+    "lng": -119.346071,
+    "km": 16.9
+   },
+   {
+    "src": "NPS",
+    "name": "Murphy Creek Parking",
+    "lat": 37.833197,
+    "lng": -119.464521,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "May Lake Trailhead",
+    "lat": 37.832706,
+    "lng": -119.491154,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Saddlebag Trailhead",
+    "lat": 37.965805,
+    "lng": -119.270513,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Lundy Canyon Trailhead",
+    "lat": 38.021017,
+    "lng": -119.265649,
+    "km": 19.2
+   },
+   {
+    "src": "USFS",
+    "name": "Robinson Creek Trailhead",
+    "lat": 38.146801,
+    "lng": -119.389785,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "GARDISKY LAKE TH",
+    "lat": 37.950505,
+    "lng": -119.261113,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Horse Creek Trailhead",
+    "lat": 38.143653,
+    "lng": -119.378661,
+    "km": 19.7
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Glen Aulin Trailhead (Tuolumne Meadows)",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Day trip from Tuolumne Meadows down the Glen Aulin trail to Return Creek, then up and over to Register Creek and the north ridge to Pettit (low-moderate: single report, from one side of the peak)",
+     "url": "https://www.snwburd.com/bob/trip_reports/pettit_1.html"
+    },
+    "placements": [
+     {
+      "source": "NPS",
+      "name": "Glen Aulin Trailhead",
+      "lat": 37.878889,
+      "lng": -119.358511,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving GPX (LEMBRT, Lembert Dome Trailhead; PCT north to Glen Aulin)",
+      "name": "Lembert Dome Trailhead",
+      "lat": 37.878409982,
+      "lng": -119.356999993,
+      "url": "https://climber.org/driving/images/TiogaPass.gpx"
+     }
+    ]
+   },
+   "notes": "Weak-to-moderate. The only Tuolumne-side account names the town, not a lot; the Glen Aulin trail starts at the Tuolumne Meadows stables/Lembert area (two points ~140 m apart). Pettit is also reached from the north (Virginia Lakes/Twin Lakes via Smedberg or Seavey Pass) and usually paired with Volunteer Peak. SummitPost was 403 (blocked). Treat as a drivable start, not a standard."
+  }
+ },
+ {
+  "id": "ca_picket_guard_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_picket_guard_peak",
+   "name": "Picket Guard Peak",
+   "lat": 36.5766,
+   "lng": -118.4731,
+   "elevation_ft": 12303,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_picket_guard_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 17.6
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 20.8
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 21.6
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 21.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 21.7
+   },
+   {
+    "src": "USFS",
+    "name": "Lodgepole TH",
+    "lat": 36.604973,
+    "lng": -118.723059,
+    "km": 22.5
+   },
+   {
+    "src": "NPS",
+    "name": "Tokopah Falls",
+    "lat": 36.605023,
+    "lng": -118.722893,
+    "km": 22.5
+   },
+   {
+    "src": "NPS",
+    "name": "Twin Lakes",
+    "lat": 36.604973,
+    "lng": -118.723058,
+    "km": 22.5
+   },
+   {
+    "src": "NPS",
+    "name": "Lodgepole-Sherman Tree",
+    "lat": 36.604383,
+    "lng": -118.72581,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "Wolverton",
+    "lat": 36.596632,
+    "lng": -118.734168,
+    "km": 23.4
+   },
+   {
+    "src": "NPS",
+    "name": "Lakes Trail",
+    "lat": 36.596644,
+    "lng": -118.734257,
+    "km": 23.4
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 23.9
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 24.1
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree Parking Access",
+    "lat": 36.58466,
+    "lng": -118.749842,
+    "km": 24.7
+   },
+   {
+    "src": "NPS",
+    "name": "High Sierra Trail",
+    "lat": 36.554944,
+    "lng": -118.748861,
+    "km": 24.7
+   },
+   {
+    "src": "USFS",
+    "name": "Crescent Meadow",
+    "lat": 36.554642,
+    "lng": -118.748928,
+    "km": 24.8
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 24.8
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Three climber.org reports, all multi-day loops from two different trailheads: 2003/1143 starts at Mineral King (Sawtooth Pass Trail, then Little Five Lakes, Cha",
+   "trailhead": null,
+   "notes": "Three climber.org reports, all multi-day loops from two different trailheads: 2003/1143 starts at Mineral King (Sawtooth Pass Trail, then Little Five Lakes, Chagoopa Plateau, Kaweah Pass), 1999/466 and 2003/1154 start at Rowell Meadow (Marvin Pass), via Colby Pass / Gallats Lake. Neither is a standard; the peak is in the remote Kern-Kaweah basin 17+ km from any road. Candidate if forced: Mineral King Sawtooth (NPS 36.453305,-118.596761; climber.org STOOTH 36.45301,-118.59694) or Rowell Meadow, unconfirmed. No second-pass page found naming a standard start; web search budget ran out."
+  }
+ },
+ {
+  "id": "ca_pyramid_peak_north_rocky_canyon",
+  "name": "Rocky Canyon",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_pyramid_peak_north",
+   "name": "Pyramid Peak",
+   "lat": 38.8451,
+   "lng": -120.158,
+   "elevation_ft": 9983,
+   "region": null,
+   "path": "usa.california.ca_lake_tahoe.ca_south_shore_2.ca_pyramid_peak_north"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Follow the Rocky Canyon use trail to the broad area below the south ridge, then climb the ridge to the summit. The trail can be hard to follow where snow lingers.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pyramid Creek Trailhead",
+    "lat": 38.811695,
+    "lng": -120.123655,
+    "km": 4.8
+   },
+   {
+    "src": "USFS",
+    "name": "RALSTON PEAK TRAILHEAD",
+    "lat": 38.805057,
+    "lng": -120.11549,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 38.849635,
+    "lng": -120.225775,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rockbound Trailhead",
+    "lat": 38.84819,
+    "lng": -120.239447,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "Glen Alpine Trailhead",
+    "lat": 38.877119,
+    "lng": -120.080238,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "LYONS CREEK TRAILHEAD",
+    "lat": 38.810388,
+    "lng": -120.239486,
+    "km": 8
+   },
+   {
+    "src": "USFS",
+    "name": "Angora Resort Parking",
+    "lat": 38.871399,
+    "lng": -120.063109,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Echo Lakes Trailhead",
+    "lat": 38.833938,
+    "lng": -120.043734,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Bayview Trailhead",
+    "lat": 38.943878,
+    "lng": -120.099979,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Big Meadow Trailhead",
+    "lat": 38.789155,
+    "lng": -120.000415,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Thunder Mountain Trailhead",
+    "lat": 38.705472,
+    "lng": -120.106666,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "VAN VLECK TRAILHEAD",
+    "lat": 38.931154,
+    "lng": -120.32134,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "Caples Creek Trailhead",
+    "lat": 38.695305,
+    "lng": -120.200513,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "Caples Equestrian Trailhead",
+    "lat": 38.693894,
+    "lng": -120.205652,
+    "km": 17.3
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Margaret Trailhead",
+    "lat": 38.704225,
+    "lng": -120.069694,
+    "km": 17.4
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Rocky Canyon use-trail pullout on US 50 (near Twin Bridges)",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Rocky Canyon route starts from a roadside pullout on Highway 50 just east of the Rocky Canyon creek, about 0.8 mi past Pyramid Creek trailhead; use trail starts up a dirt bank across the road",
+     "url": "https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"
+    },
+    "placements": [
+     {
+      "source": "The Outbound (parking coordinates)",
+      "name": "Rocky Canyon parking pullout, US 50",
+      "lat": 38.807805,
+      "lng": -120.136722,
+      "url": "https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"
+     },
+     {
+      "source": "climber.org trip report waypoint (38 48.512 N, 120 8.161 W)",
+      "name": "Rocky Canyon use trail start",
+      "lat": 38.808533,
+      "lng": -120.136017,
+      "url": "https://climber.org/reports/2004/1231.html"
+     }
+    ]
+   },
+   "notes": "Strong: two independent coordinates for the informal start agree within ~90 m. This is NOT a signed trailhead (Pyramid Creek TH, USFS 38.811695,-120.123655, is a different route ~1.3 km away). The start is hard to find; one source says the trail begins just east of the creek, across the road from the pullout. Highway 50 in the Strawberry/Twin Bridges stretch. Gaia lists a 'Strawberry to Pyramid' 6.2 mi track, consistent."
+  }
+ },
+ {
+  "id": "ca_pyramid_peak_south_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_pyramid_peak_south",
+   "name": "Pyramid Peak",
+   "lat": 36.9066,
+   "lng": -118.4621,
+   "elevation_ft": 12779,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_10_taboose_sawmill_baxter_passes.ca_pyramid_peak_south"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 16.3
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 16.3
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 16.6
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 22.2
+   },
+   {
+    "src": "NPS",
+    "name": "Hotel Creek",
+    "lat": 36.793473,
+    "lng": -118.668599,
+    "km": 22.3
+   },
+   {
+    "src": "NPS",
+    "name": "Don Cecil - lower",
+    "lat": 36.78864,
+    "lng": -118.670443,
+    "km": 22.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lewis Creek",
+    "lat": 36.800486,
+    "lng": -118.691232,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 24.4
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 24.8
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Taboose Pass Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "2016 Pyramid Peak (S) report: Taboose Pass trail, over the pass, Arrow Pass cross-country, SW ridge and west face to summit (moderate: Sawmill and Baxter passes are alternatives; Taboose is the nearest)",
+     "url": "https://climber.org/reports/2016/1872.html"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "TABOOSE PASS TH",
+      "lat": 37.009505,
+      "lng": -118.327312,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving GPX (TABCRK, Taboose Pass Trailhead 5400)",
+      "name": "Taboose Pass Trailhead",
+      "lat": 37.009199977,
+      "lng": -118.326900005,
+      "url": "https://climber.org/driving/images/TaboosePass.gpx"
+     }
+    ]
+   },
+   "notes": "Moderate. Still one peak-specific report; a different 'Pyramid Peak' report (2001/811, 12,866 ft, Mosquito Flats, Dade Lake) is another peak, ignore. SummitPost (blocked 403) is reported by search summary to call Taboose the closest approach; not opened. Sawmill Pass (USFS 36.938805,-118.290212) is the main alternative. Placements agree within 50 m."
+  }
+ },
+ {
+  "id": "ca_recess_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_recess_peak",
+   "name": "Recess Peak",
+   "lat": 37.3823,
+   "lng": -118.8555,
+   "elevation_ft": 12813,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_06_little_lakes_valley_mono_recesses.ca_recess_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Mosquito Flat  Trailhead",
+    "lat": 37.435105,
+    "lng": -118.747113,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "MONO PASS TH",
+    "lat": 37.435105,
+    "lng": -118.747213,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Ridge Cutoff",
+    "lat": 37.362469,
+    "lng": -118.98554,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 37.335376,
+    "lng": -118.974645,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Mono Creek Trailhead",
+    "lat": 37.381365,
+    "lng": -118.997556,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "TAMARACK LAKES TH",
+    "lat": 37.451705,
+    "lng": -118.734313,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "BEAR CREEK",
+    "lat": 37.382877,
+    "lng": -119.01976,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "PINE CREEK TH",
+    "lat": 37.361005,
+    "lng": -118.691613,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "GABLE LAKES TH",
+    "lat": 37.360905,
+    "lng": -118.691213,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Florence Trailhead",
+    "lat": 37.276204,
+    "lng": -118.974298,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Dutch/hidden Trailhead",
+    "lat": 37.276405,
+    "lng": -118.977113,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Mcgee Pass Trailhead",
+    "lat": 37.550978,
+    "lng": -118.802533,
+    "km": 19.3
+   },
+   {
+    "src": "USFS",
+    "name": "MONO CROSSING",
+    "lat": 37.324319,
+    "lng": -119.068593,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "Portal Forebay Trailhead",
+    "lat": 37.323907,
+    "lng": -119.067756,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "HORTON LAKES TH",
+    "lat": 37.312105,
+    "lng": -118.624913,
+    "km": 21.8
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Bear Ridge Trailhead (Lake Edison dam vista)",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Two Recess Peak reports start at Bear Ridge TH near the Lake Thomas Edison dam overlook: Bear Ridge trail about 5 mi to JMT/PCT junction, cross-country SE to the SW ridge/arete (class 3)",
+     "url": "https://themtsarecalling.com/recess/"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Bear Ridge Cutoff",
+      "lat": 37.362469,
+      "lng": -118.98554,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving GPX (BEARCT, Bear Creek Trail parking with 2 bear boxes, Lake Edison)",
+      "name": "Bear Creek Trail parking, Lake Edison",
+      "lat": 37.36225,
+      "lng": -118.98574,
+      "url": "https://climber.org/driving/images/KaiserPass.gpx"
+     }
+    ]
+   },
+   "notes": "REPLACES the first pass (Bear Creek Diversion Dam, from a 1999 Hilgard-Gabb multi-peak trip). The two peak-specific day reports use Bear Ridge, which is the west-side day approach. The USFS 'Bear Ridge Cutoff' point and climber.org's BEARCT parking coincide within ~25 m, but the Bear Ridge Trailhead is described as near the dam vista point (EDISN3 37.36735,-118.98339, ~600 m NE), so the coordinate is the trail's start, not a surveyed trailhead sign. A 2023 report started from Mosquito Flat (east side, camp near Mono Creek). Diversion Dam remains a valid alternative for a Hilgard Lake start."
+  }
+ },
+ {
+  "id": "ca_red_kaweah_west_face",
+  "name": "West Face",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_red_kaweah",
+   "name": "Red Kaweah",
+   "lat": 36.54,
+   "lng": -118.5057,
+   "elevation_ft": 13720,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_red_kaweah"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reach the cirque of lakes between Black and Red Kaweah from Big Arroyo, then climb the broad west face on loose talus and boulders, keeping well right of Black Kaweah's face. The crest is gained just below the summit; the rock is very unstable. Class 2 to the summit block, which is Class 3.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 12.6
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 12.9
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 13
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 13.9
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Lodgepole TH",
+    "lat": 36.604973,
+    "lng": -118.723059,
+    "km": 20.7
+   },
+   {
+    "src": "NPS",
+    "name": "Tokopah Falls",
+    "lat": 36.605023,
+    "lng": -118.722893,
+    "km": 20.7
+   },
+   {
+    "src": "NPS",
+    "name": "Twin Lakes",
+    "lat": 36.604973,
+    "lng": -118.723058,
+    "km": 20.7
+   },
+   {
+    "src": "NPS",
+    "name": "Lodgepole-Sherman Tree",
+    "lat": 36.604383,
+    "lng": -118.72581,
+    "km": 20.9
+   },
+   {
+    "src": "USFS",
+    "name": "Wolverton",
+    "lat": 36.596632,
+    "lng": -118.734168,
+    "km": 21.4
+   },
+   {
+    "src": "NPS",
+    "name": "Lakes Trail",
+    "lat": 36.596644,
+    "lng": -118.734257,
+    "km": 21.4
+   },
+   {
+    "src": "USFS",
+    "name": "Crescent Meadow",
+    "lat": 36.554642,
+    "lng": -118.748928,
+    "km": 21.8
+   },
+   {
+    "src": "NPS",
+    "name": "High Sierra Trail",
+    "lat": 36.554944,
+    "lng": -118.748861,
+    "km": 21.8
+   },
+   {
+    "src": "NPS",
+    "name": "Middle Fork Kaweah",
+    "lat": 36.527567,
+    "lng": -118.75126,
+    "km": 22
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree Parking Access",
+    "lat": 36.58466,
+    "lng": -118.749842,
+    "km": 22.4
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree",
+    "lat": 36.580732,
+    "lng": -118.752048,
+    "km": 22.5
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Creek",
+    "lat": 36.522122,
+    "lng": -118.763627,
+    "km": 23.1
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 24.3
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Sawtooth Pass trailhead, Mineral King",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "2008 trip 'Black, Red, and Big': Mineral King TH, climber's trail before the Monarch Creek crossing, Sawtooth Pass, Little Five Lakes, past Big Arroyo Cabin, up to high camp at 11,500 ft above Big Arroyo, then Red Kaweah (low-moderate: single report)",
+     "url": "https://climber.org/reports/2008/1684.html"
+    },
+    "placements": [
+     {
+      "source": "NPS",
+      "name": "Sawtooth",
+      "lat": 36.453305,
+      "lng": -118.596761,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving GPX (STOOTH, Sawtooth and Timber Gap Trails 7800)",
+      "name": "Sawtooth/Timber Gap trailheads, Mineral King",
+      "lat": 36.453009963,
+      "lng": -118.59694004,
+      "url": "https://climber.org/driving/images/MineralKing.gpx"
+     }
+    ]
+   },
+   "notes": "Weak-to-moderate: the route's own text only says 'from Big Arroyo'. Big Arroyo is also reached by the High Sierra Trail from Crescent Meadow (about 30 mi) or via Mineral King (Sawtooth Pass, about 20 mi). The one detailed report used Mineral King; the route here is described from the cirque above Big Arroyo, which that report did climb. Treat as a long backpack, not a day route."
+  }
+ },
+ {
+  "id": "ca_red_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_red_peak",
+   "name": "Red Peak",
+   "lat": 37.6537,
+   "lng": -119.4095,
+   "elevation_ft": 11699,
+   "region": null,
+   "path": "usa.california.ca_yosemite_national_park.ca_southern_yosemite.ca_red_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Quartz Mountain Trailhead",
+    "lat": 37.530826,
+    "lng": -119.447315,
+    "km": 14.1
+   },
+   {
+    "src": "NPS",
+    "name": "Mono Meadow Trailhead",
+    "lat": 37.671453,
+    "lng": -119.584778,
+    "km": 15.6
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Isles Trailhead",
+    "lat": 37.732831,
+    "lng": -119.55779,
+    "km": 15.7
+   },
+   {
+    "src": "NPS",
+    "name": "Mirror Lake Trailhead",
+    "lat": 37.739523,
+    "lng": -119.559781,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "Fernandez Pass Trailhead",
+    "lat": 37.534696,
+    "lng": -119.298678,
+    "km": 16.4
+   },
+   {
+    "src": "NPS",
+    "name": "Snow Creek Trailhead",
+    "lat": 37.759225,
+    "lng": -119.539376,
+    "km": 16.4
+   },
+   {
+    "src": "NPS",
+    "name": "Valley Trailhead Parking",
+    "lat": 37.734968,
+    "lng": -119.566518,
+    "km": 16.5
+   },
+   {
+    "src": "NPS",
+    "name": "Glacier Point Trailhead",
+    "lat": 37.727709,
+    "lng": -119.573491,
+    "km": 16.6
+   },
+   {
+    "src": "NPS",
+    "name": "Glacier Point Parking",
+    "lat": 37.726956,
+    "lng": -119.575298,
+    "km": 16.7
+   },
+   {
+    "src": "NPS",
+    "name": "Four Mile Trailhead (Glacier Point)",
+    "lat": 37.72885,
+    "lng": -119.573742,
+    "km": 16.7
+   },
+   {
+    "src": "NPS",
+    "name": "Sentinel Dome Trailhead",
+    "lat": 37.712552,
+    "lng": -119.586349,
+    "km": 16.9
+   },
+   {
+    "src": "NPS",
+    "name": "Curry Village East Lot",
+    "lat": 37.737913,
+    "lng": -119.57,
+    "km": 16.9
+   },
+   {
+    "src": "NPS",
+    "name": "Curry Village Orchard Parking",
+    "lat": 37.738659,
+    "lng": -119.56951,
+    "km": 17
+   },
+   {
+    "src": "NPS",
+    "name": "Ostrander Trailhead",
+    "lat": 37.666739,
+    "lng": -119.603609,
+    "km": 17.1
+   },
+   {
+    "src": "NPS",
+    "name": "Curry Village West Lot",
+    "lat": 37.73884,
+    "lng": -119.572758,
+    "km": 17.2
+   },
+   {
+    "src": "NPS",
+    "name": "Yosemite Village Parking",
+    "lat": 37.744368,
+    "lng": -119.58484,
+    "km": 18.4
+   },
+   {
+    "src": "NPS",
+    "name": "Village Store Parking",
+    "lat": 37.74709,
+    "lng": -119.583909,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "GRIZZLY LAKE",
+    "lat": 37.490547,
+    "lng": -119.467449,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "BEASORE STAGING",
+    "lat": 37.447953,
+    "lng": -119.457997,
+    "km": 23.3
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Mono Meadow Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Red Peak climb starts at Mono Meadows (Glacier Point Rd, ~7,200 ft), trail to Upper Ottoway Lake; NPS lists Mono Meadow as the trailhead for the Red Peak Pass loop via Ottoway Lakes",
+     "url": "https://climber.org/reports/2007/1612.html"
+    },
+    "placements": [
+     {
+      "source": "NPS",
+      "name": "Mono Meadow Trailhead",
+      "lat": 37.671453,
+      "lng": -119.584778,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Moderate. Mono Meadow is the shortest road start to the Ottoway Lakes/Red Peak Pass; confirmed by a peak-specific report plus NPS loop page. Alternatives (Happy Isles via Merced Lake, or the south side via Quartz Mountain/Fernandez Pass) are much longer or off-trail. Single placement (NPS); no second coordinate source found."
+  }
+ },
+ {
+  "id": "ca_rockhouse_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_rockhouse_peak",
+   "name": "Rockhouse Peak",
+   "lat": 35.901,
+   "lng": -118.2285,
+   "elevation_ft": 8360,
+   "region": null,
+   "path": "usa.california.ca_southern_sierra.ca_rockhouse_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "South Manter Meadow Trailhead (Big Meadow)",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Southern Manter Meadow trailhead is the usual one for Rockhouse; Manter Creek Trail 35E12 to Little Manter Meadow, saddle, then about 1 mi off trail north to the summit, class 2 north gully",
+     "url": "https://climber.org/driving/BigMeadow.html"
+    },
+    "placements": [
+     {
+      "source": "climber.org driving GPX (MANTRS, South Manter Meadow Trailhead 7800)",
+      "name": "South Manter Meadow Trailhead",
+      "lat": 35.868829966,
+      "lng": -118.326320052,
+      "url": "https://climber.org/driving/images/BigMeadow.gpx"
+     }
+    ]
+   },
+   "notes": "Moderate: two pages (climber.org driving guide, Kern River Sierra guide) name the south Manter trailhead as the usual one. Also Long Valley/Canebrake (east, via locked-gate spur) is an alternative with a much longer walk. The listed 'standard' is on this page only by those two pages, no sibling or official trailhead point exists in the input (officialCandidates is empty), so the single placement is a climber.org waypoint."
+  }
+ },
+ {
+  "id": "ca_rodgers_peak_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_rodgers_peak",
+   "name": "Rodgers Peak",
+   "lat": 37.725,
+   "lng": -119.2575,
+   "elevation_ft": 12978,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_03_lyell_group.ca_rodgers_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "FERN/YOST TH",
+    "lat": 37.761788,
+    "lng": -119.113341,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "YOST LAKE TH",
+    "lat": 37.761811,
+    "lng": -119.113265,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Shadow Lake Trailhead",
+    "lat": 37.682096,
+    "lng": -119.08618,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "High Trail Trailhead",
+    "lat": 37.682905,
+    "lng": -119.084413,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Agnew Mead. Wildflower Th",
+    "lat": 37.681083,
+    "lng": -119.080672,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "PARKER LAKE TH",
+    "lat": 37.853005,
+    "lng": -119.134513,
+    "km": 17.9
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "Tuolumne Meadows",
+    "lat": 37.89098,
+    "lng": -119.262544,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Walker Lake Trailhead",
+    "lat": 37.872305,
+    "lng": -119.159113,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Mono/Parker Pass Trailhead",
+    "lat": 37.89091,
+    "lng": -119.262696,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "JOHN MUIR TRAIL NORTH TH",
+    "lat": 37.6272,
+    "lng": -119.085702,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "MINARET LAKE TH",
+    "lat": 37.62724,
+    "lng": -119.085818,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "FERN LAKE (D52)TH",
+    "lat": 37.62725,
+    "lng": -119.085834,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Wilderness Center Parking",
+    "lat": 37.876938,
+    "lng": -119.346071,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Parking",
+    "lat": 37.873556,
+    "lng": -119.358045,
+    "km": 18.7
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Store and Picnic Area Parking",
+    "lat": 37.874236,
+    "lng": -119.357217,
+    "km": 18.8
+   },
+   {
+    "src": "NPS",
+    "name": "Lembert Dome Trailhead",
+    "lat": 37.877417,
+    "lng": -119.353701,
+    "km": 18.9
+   },
+   {
+    "src": "NPS",
+    "name": "Parsons Lodge Trailhead Parking",
+    "lat": 37.871696,
+    "lng": -119.368268,
+    "km": 19
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Agnew Meadows (Shadow Lake / River trailhead)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://climber.org/reports/2006/1567.html",
+     "fact": "Trailhead: Agnew Meadow; Rodgers Peak climbed from Twin Island Lakes basin via PCT/Thousand Island Lake; class 2 summit ridge. A 1999 loop report (climber.org/reports/1999/446.html) climbs Rodgers by a SE-face ramp, class 2"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Shadow Lake Trailhead",
+      "lat": 37.682096,
+      "lng": -119.08618,
+      "url": ""
+     },
+     {
+      "source": "climber.org driving page",
+      "name": "AGNWSR Agnew Mdw Shadow and River trailhead 8300",
+      "lat": 37.68209,
+      "lng": -119.08613,
+      "url": "https://climber.org/driving/images/395Waypoints.gpx"
+     }
+    ]
+   },
+   "notes": "Moderate confidence. Agnew Meadows is the start of the PCT/Thousand Island approach used by the 2006 report. The USFS 'Agnew Mead. Wildflower Th' point the first pass used is 0.5 km east of the Shadow/River lot, so I replaced it with the USFS Shadow Lake TH, which matches climber.org AGNWSR to ~10 m. Rodgers is also reachable from Tuolumne Meadows (north side) and Silver Lake; no page I could open says which is THE standard route. SummitPost 403."
+  }
+ }
+]

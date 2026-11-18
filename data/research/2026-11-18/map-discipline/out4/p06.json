@@ -1,0 +1,264 @@
+[
+ {
+  "id": "ca_needham_mountain_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Mineral King (Eagle-Mosquito / Sawtooth) trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2011/1825.html",
+    "fact": "Hiked from Mineral King trailhead (7830) to Crystal Lake, over Amphitheatre Col, climbed Needham"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Eagle-Mosquito",
+     "lat": 36.448545,
+     "lng": -118.595366,
+     "url": ""
+    },
+    {
+     "source": "NPS",
+     "name": "Sawtooth",
+     "lat": 36.453305,
+     "lng": -118.596761,
+     "url": ""
+    },
+    {
+     "source": "NPS",
+     "name": "Farewell Gap - Franklin Lakes",
+     "lat": 36.44753,
+     "lng": -118.594135,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Carried from pass 2: climber.org report starts Mineral King; Peakbagger shows a Sawtooth-then-Needham day hike (Mineral King side). Only road access within 25 km. Three NPS points within 0.5 km; Eagle-Mosquito is the Crystal Lake start. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_north_maggie_mountain_saddle_route_from_long_meadow",
+  "status": "found",
+  "trailhead": {
+   "name": "Shake Camp Trailhead (Long Meadow Trail, Mountain Home State Forest)",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "USFS says the Long Meadow Trail (31E15) begins at Shake Camp; a North Maggie trip report parks near Shake Camp, crosses the Tule River and climbs the west slopes over Pt 10,113",
+    "url": "https://www.fs.usda.gov/r05/sequoia/recreation/trails/long-meadow-trail"
+   },
+   "placements": [
+    {
+     "source": "climber.org driving GPX (SHAKEC, Shake Camp Trailhead 6500)",
+     "name": "Shake Camp Trailhead",
+     "lat": 36.24929,
+     "lng": -118.67118,
+     "url": "https://climber.org/driving/images/mtnhome.gpx"
+    },
+    {
+     "source": "The Dyrt",
+     "name": "Shake Camp - State Forest (campground)",
+     "lat": 36.249,
+     "lng": -118.67,
+     "url": "https://www.thedyrt.com/camping/california/shake-camp-state-forest"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text (Long Meadow, Middle Fork Tule crossing, Pt 10113) matches USFS Long Meadow Trail starting at Shake Camp. Placements are non-land-manager (climber.org GPX, The Dyrt); no USFS/NPS point in candidates. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_observation_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Remote multi-day peak, reachable from Taboose, Sabrina, Big Pine, etc.; only report-level inference. No standard start established. Not re-verified this pass (Chrome unavailable). (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_pettit_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Single report from Tuolumne side; peak also reached from north (Virginia Lakes etc.). Not a standard start. Not re-verified this pass. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_picket_guard_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Climber.org reports start at two different trailheads (Mineral King, Rowell Meadow); no standard. Candidates: Mineral King Sawtooth, Rowell Meadow. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_pyramid_peak_north_rocky_canyon",
+  "status": "found",
+  "trailhead": {
+   "name": "Rocky Canyon use-trail pullout on US 50 (near Twin Bridges)",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Rocky Canyon route starts from a roadside pullout on Highway 50 just east of the Rocky Canyon creek, about 0.8 mi past Pyramid Creek trailhead; use trail starts up a dirt bank across the road",
+    "url": "https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"
+   },
+   "placements": [
+    {
+     "source": "The Outbound (parking coordinates)",
+     "name": "Rocky Canyon parking pullout, US 50",
+     "lat": 38.807805,
+     "lng": -120.136722,
+     "url": "https://www.theoutbound.com/lake-tahoe/backpacking/hike-pyramid-peak-via-rocky-canyon"
+    },
+    {
+     "source": "climber.org trip report waypoint (38 48.512 N, 120 8.161 W)",
+     "name": "Rocky Canyon use trail start",
+     "lat": 38.808533,
+     "lng": -120.136017,
+     "url": "https://climber.org/reports/2004/1231.html"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text names the Rocky Canyon use trail; start is an informal Hwy 50 pullout, not a signed trailhead (Pyramid Creek TH is a different route). Two non-official coordinates agree within 90 m. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_pyramid_peak_south_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Taboose, Sawmill and Baxter passes all plausible; single peak-specific report. Not equally used proof either way; left stuck. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_recess_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Bear Ridge Trailhead (Lake Edison dam vista)",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Two Recess Peak reports start at Bear Ridge TH near the Lake Thomas Edison dam overlook: Bear Ridge trail about 5 mi to JMT/PCT junction, cross-country SE to the SW ridge/arete (class 3)",
+    "url": "https://themtsarecalling.com/recess/"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Bear Ridge Cutoff",
+     "lat": 37.362469,
+     "lng": -118.98554,
+     "url": ""
+    },
+    {
+     "source": "climber.org driving GPX (BEARCT, Bear Creek Trail parking with 2 bear boxes, Lake Edison)",
+     "name": "Bear Creek Trail parking, Lake Edison",
+     "lat": 37.36225,
+     "lng": -118.98574,
+     "url": "https://climber.org/driving/images/KaiserPass.gpx"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Two peak-specific reports use Bear Ridge; a 2023 report used Mosquito Flat (east). Bear Ridge is the west-side day start. Coordinate is the trail start near the dam vista, not a surveyed sign. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_red_kaweah_west_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text only says from Big Arroyo, reachable from Mineral King (~20 mi) or Crescent Meadow HST (~30 mi); one report used Mineral King. Two plausible starts, left stuck. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_red_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Mono Meadow Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Red Peak climb starts at Mono Meadows (Glacier Point Rd, ~7,200 ft), trail to Upper Ottoway Lake; NPS lists Mono Meadow as the trailhead for the Red Peak Pass loop via Ottoway Lakes",
+    "url": "https://climber.org/reports/2007/1612.html"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Mono Meadow Trailhead",
+     "lat": 37.671453,
+     "lng": -119.584778,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Single peak-specific report plus NPS Mono Meadow loop page; alternatives (Happy Isles, Quartz Mtn) much longer. One placement only (NPS). (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_rockhouse_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "South Manter Meadow Trailhead (Big Meadow)",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Southern Manter Meadow trailhead is the usual one for Rockhouse; Manter Creek Trail 35E12 to Little Manter Meadow, saddle, then about 1 mi off trail north to the summit, class 2 north gully",
+    "url": "https://climber.org/driving/BigMeadow.html"
+   },
+   "placements": [
+    {
+     "source": "climber.org driving GPX (MANTRS, South Manter Meadow Trailhead 7800)",
+     "name": "South Manter Meadow Trailhead",
+     "lat": 35.868829966,
+     "lng": -118.326320052,
+     "url": "https://climber.org/driving/images/BigMeadow.gpx"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Two pages (climber.org driving guide, Kern River Sierra guide) name South Manter Meadow as usual start; only a climber.org GPX waypoint places it; Long Valley/Canebrake is a longer alternative. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ },
+ {
+  "id": "ca_rodgers_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Agnew Meadows (Shadow Lake / River trailhead)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2006/1567.html",
+    "fact": "Trailhead: Agnew Meadow; Rodgers Peak climbed from Twin Island Lakes basin via PCT/Thousand Island Lake; class 2 summit ridge. A 1999 loop report (climber.org/reports/1999/446.html) climbs Rodgers by a SE-face ramp, class 2"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Shadow Lake Trailhead",
+     "lat": 37.682096,
+     "lng": -119.08618,
+     "url": ""
+    },
+    {
+     "source": "climber.org driving page",
+     "name": "AGNWSR Agnew Mdw Shadow and River trailhead 8300",
+     "lat": 37.68209,
+     "lng": -119.08613,
+     "url": "https://climber.org/driving/images/395Waypoints.gpx"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Agnew Meadows start from one report; USFS Shadow Lake TH point is the Agnew Meadows lot. Alternative Tuolumne/Yost approaches not excluded. Moderate. (No new fetches this pass: Chrome scripting unavailable; decisions from earlier-pass evidence.)"
+ }
+]

@@ -1,0 +1,1720 @@
+[
+ {
+  "id": "ca_wheel_mountain_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_wheel_mountain",
+   "name": "Wheel Mountain",
+   "lat": 37.0467,
+   "lng": -118.6294,
+   "elevation_ft": 12774,
+   "region": null,
+   "path": "usa.california.ca_western_sierra.ca_courtright_reservoir.ca_blackcap_basin_area.ca_wheel_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 20.1
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 20.5
+   },
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 24
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 24.7
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak; placements disagree by > 300 m",
+   "trailhead": {
+    "name": "South Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://sites.google.com/view/wacziarg-climbing/2020-06-wheel-mountain-devils-crag-1-mount-mcduffie",
+     "fact": "South Lake, Bishop Pass, Le Conte Canyon, Rambaud Creek, Rambaud Pass, SE ridge class 2"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "South Lake Trailhead",
+      "lat": 37.169305,
+      "lng": -118.565813,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Low confidence: one multi-peak report, no second page. Peak is far from the lot (20+ trail miles). West-side start via Courtright/Maxson not ruled out."
+  }
+ },
+ {
+  "id": "co_cathedral_peak_south_ridge_and_couloir",
+  "name": "South Ridge and Couloir",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_cathedral_peak",
+   "name": "Cathedral Peak",
+   "lat": 39.0343,
+   "lng": -106.8591,
+   "elevation_ft": 13952,
+   "region": null,
+   "path": "usa.colorado.co_elk_mountains.co_cathedral_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Trail to Cathedral Lake, then a loose gully and ridge scramble to the summit above Aspen; rockfall and late-season loose scree are the main concerns.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Cathedral Trailhead",
+    "lat": 39.042686,
+    "lng": -106.80818,
+    "km": 4.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pearl Pass Trailhead",
+    "lat": 39.029304,
+    "lng": -106.807865,
+    "km": 4.5
+   },
+   {
+    "src": "USFS",
+    "name": "ASHCROFT WINTER",
+    "lat": 39.055895,
+    "lng": -106.799856,
+    "km": 5.7
+   },
+   {
+    "src": "USFS",
+    "name": "American Lake Trailhead",
+    "lat": 39.072636,
+    "lng": -106.80353,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Taylor Pass/Express Creek Trailhead",
+    "lat": 39.027512,
+    "lng": -106.75579,
+    "km": 9
+   },
+   {
+    "src": "USFS",
+    "name": "Conundrum Trailhead",
+    "lat": 39.119258,
+    "lng": -106.85611,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Maroon Lake Overnight Trailhead",
+    "lat": 39.098597,
+    "lng": -106.938328,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "West Maroon Wilderness Portal Trailhead",
+    "lat": 39.103279,
+    "lng": -106.93421,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Lower Copper Lake Trailhead",
+    "lat": 38.959966,
+    "lng": -106.979263,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Trail Riders Trailhead",
+    "lat": 38.964003,
+    "lng": -106.988059,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Avery Peak Picnic Site",
+    "lat": 38.976282,
+    "lng": -106.99898,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Judd Falls/Copper Creek Trailhead",
+    "lat": 38.966094,
+    "lng": -106.993669,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "Difficult Trailhead",
+    "lat": 39.142416,
+    "lng": -106.774377,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "INDEPENDENCE PASS WINTER GATE",
+    "lat": 39.132264,
+    "lng": -106.753239,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Bowman Gulch Trailhead",
+    "lat": 38.996406,
+    "lng": -106.70191,
+    "km": 14.2
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Cathedral Lake Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak",
+     "fact": "South Ridge & Couloir route from Cathedral Lake TH, Trail 1984 to Cathedral Lake, rubble basin, northernmost couloir; route text also says trail to Cathedral Lake"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Cathedral Trailhead",
+      "lat": 39.042686,
+      "lng": -106.80818,
+      "url": ""
+     },
+     {
+      "source": "climb13ers",
+      "name": "Cathedral Lake Trailhead",
+      "lat": 39.042842,
+      "lng": -106.808161,
+      "url": "https://www.climb13ers.com/colorado-13ers/cathedral-peak"
+     }
+    ]
+   },
+   "notes": "Confirmed: route text (trail to Cathedral Lake) plus climb13ers; USFS and climb13ers points agree within about 20 m. Route text says class 2-ish scramble; climb13ers rates class 3."
+  }
+ },
+ {
+  "id": "co_clinton_peak_south_slope",
+  "name": "South Slope",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_clinton_peak",
+   "name": "Clinton Peak",
+   "lat": 39.3682,
+   "lng": -106.1488,
+   "elevation_ft": 13866,
+   "region": null,
+   "path": "usa.colorado.co_mosquito_range.co_clinton_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Gentle slopes above the Mosquito Range, usually done on its own or with neighboring McNamee and Traver.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Gold Hill Trailhead",
+    "lat": 39.415606,
+    "lng": -106.17115,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Buckeye Trailhead",
+    "lat": 39.332387,
+    "lng": -106.245475,
+    "km": 9.2
+   },
+   {
+    "src": "USFS",
+    "name": "Spruce Creek Trailhead",
+    "lat": 39.445284,
+    "lng": -106.048066,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Tennessee Pass Trailhead",
+    "lat": 39.362331,
+    "lng": -106.311161,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Boreas Pass Trailhead",
+    "lat": 39.462784,
+    "lng": -106.020844,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Hay Park Trailhead",
+    "lat": 39.248071,
+    "lng": -106.055303,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Peak 7 Trailhead",
+    "lat": 39.508895,
+    "lng": -106.142788,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Wheeler Trailhead",
+    "lat": 39.509451,
+    "lng": -106.141677,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "CAMP HALE SOUTH",
+    "lat": 39.425041,
+    "lng": -106.320902,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Beaver Creek Trailhead",
+    "lat": 39.260683,
+    "lng": -106.017017,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Dust Trailhead",
+    "lat": 39.360114,
+    "lng": -105.952473,
+    "km": 16.9
+   },
+   {
+    "src": "USFS",
+    "name": "Wurts Ditch Trailhead",
+    "lat": 39.35454,
+    "lng": -106.353043,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "Limber Grove Trailhead",
+    "lat": 39.20833,
+    "lng": -106.100515,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Officer's Gulch Campground",
+    "lat": 39.537229,
+    "lng": -106.147233,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tie Hack Trailhead",
+    "lat": 39.205871,
+    "lng": -106.070108,
+    "km": 19.3
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Wheeler Lake / Montgomery Reservoir Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak",
+     "fact": "Clinton Peak SSW ridge from Wheeler Lake-Montgomery Reservoir TH, climbed with Traver and McNamee, matching the route text 'with neighboring McNamee and Traver'"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "Wheeler Lake-Montgomery Reservoir trailhead",
+      "lat": 39.356767,
+      "lng": -106.082872,
+      "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+     }
+    ]
+   },
+   "notes": "Moderate: page lists SSW Ridge, not 'South Slope', but it is the only route listed and the same single trailhead serves the Traver-McNamee-Clinton traverse. One placement only (climb13ers GPS); not in official list. Ground check: the page says the road end is the parking area; many walk further up the road."
+  }
+ },
+ {
+  "id": "co_cronin_peak_north_ridge",
+  "name": "North Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_cronin_peak",
+   "name": "Cronin Peak",
+   "lat": 38.6553,
+   "lng": -106.2833,
+   "elevation_ft": 13872,
+   "region": null,
+   "path": "usa.colorado.co_sawatch_range.co_cronin_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Long ridge hike at the southern end of the Sawatch, started from the Baldwin Creek area.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "ANTERO/BROWNS LAKE PARKING",
+    "lat": 38.661729,
+    "lng": -106.257914,
+    "km": 2.3
+   },
+   {
+    "src": "USFS",
+    "name": "Baldwin Lake Trailhead",
+    "lat": 38.682513,
+    "lng": -106.272986,
+    "km": 3.2
+   },
+   {
+    "src": "USFS",
+    "name": "Mt. Antero Trailhead",
+    "lat": 38.709992,
+    "lng": -106.291811,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Alpine Tunnel Trailhead",
+    "lat": 38.639398,
+    "lng": -106.361834,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "Hancock Lake Trailhead",
+    "lat": 38.619609,
+    "lng": -106.355152,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Grizzley Gulch Trailhead",
+    "lat": 38.705367,
+    "lng": -106.339204,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Agnes Vaille Falls Trailhead",
+    "lat": 38.713365,
+    "lng": -106.232733,
+    "km": 7.8
+   },
+   {
+    "src": "USFS",
+    "name": "Poplar Gulch Trailhead",
+    "lat": 38.704043,
+    "lng": -106.348949,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Poplar Gulch Trailhead",
+    "lat": 38.705478,
+    "lng": -106.349982,
+    "km": 8
+   },
+   {
+    "src": "USFS",
+    "name": "Angel of Shavano Trailhead",
+    "lat": 38.584476,
+    "lng": -106.219815,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chalk Creek Trailhead",
+    "lat": 38.716756,
+    "lng": -106.20001,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Shavano/Tabeguache Trailhead",
+    "lat": 38.596701,
+    "lng": -106.196592,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Browns Creek Trailhead",
+    "lat": 38.672089,
+    "lng": -106.161538,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Waterdog Lakes Trailhead",
+    "lat": 38.531376,
+    "lng": -106.323778,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "South Cottonwood Trailhead",
+    "lat": 38.802066,
+    "lng": -106.247511,
+    "km": 16.6
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Baldwin Creek Trailhead (lower, FR277)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge",
+     "fact": "North Ridge route starts Baldwin Creek TH 9,540 ft, 4x4 only, 6.6 mi RT 3,000 ft"
+    },
+    "placements": [
+     {
+      "source": "climb13ers printed coordinate",
+      "name": "Baldwin Creek TH",
+      "lat": 38.70997,
+      "lng": -106.29189,
+      "url": "https://www.climb13ers.com/colorado-13ers/cronin-peak_north-ridge"
+     },
+     {
+      "source": "USFS",
+      "name": "Mt. Antero Trailhead",
+      "lat": 38.709992,
+      "lng": -106.291811,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "The page's printed lower-TH coordinate coincides within ~10 m with USFS Mt. Antero Trailhead (same lot, different signed name). The page's UPPER TH (FR277/278 junction) matches USFS Baldwin Lake Trailhead (38.682513,-106.272986); the 6.6 mi / 3,000 ft figures are from the lower TH. Page says route not field tested."
+  }
+ },
+ {
+  "id": "co_dyer_mountain_southeast_slopes",
+  "name": "Southeast Slopes",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_dyer_mountain",
+   "name": "Dyer Mountain",
+   "lat": 39.2398,
+   "lng": -106.1832,
+   "elevation_ft": 13861,
+   "region": null,
+   "path": "usa.colorado.co_mosquito_range.co_dyer_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Short climb from a high trailhead above Leadville.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Limber Grove Trailhead",
+    "lat": 39.20833,
+    "lng": -106.100515,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Tie Hack Trailhead",
+    "lat": 39.205871,
+    "lng": -106.070108,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Hay Park Trailhead",
+    "lat": 39.248071,
+    "lng": -106.055303,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Buckeye Trailhead",
+    "lat": 39.332387,
+    "lng": -106.245475,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Browns Pass Trailhead",
+    "lat": 39.16986,
+    "lng": -106.052504,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Beaver Creek Trailhead",
+    "lat": 39.260683,
+    "lng": -106.017017,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Two Bit Trailhead",
+    "lat": 39.116993,
+    "lng": -106.272565,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Turquoise Lake Dam Trailhead",
+    "lat": 39.252122,
+    "lng": -106.368746,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Tennessee Pass Trailhead",
+    "lat": 39.362331,
+    "lng": -106.311161,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Willow Trailhead",
+    "lat": 39.187709,
+    "lng": -106.3975,
+    "km": 19.3
+   },
+   {
+    "src": "USFS",
+    "name": "Wurts Ditch Trailhead",
+    "lat": 39.35454,
+    "lng": -106.353043,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Hill Trailhead",
+    "lat": 39.415606,
+    "lng": -106.17115,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Rich Creek Trailhead",
+    "lat": 39.068252,
+    "lng": -106.116417,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "Low Pass Trailhead",
+    "lat": 39.063129,
+    "lng": -106.2449,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Lake Trailhead",
+    "lat": 39.300891,
+    "lng": -106.407825,
+    "km": 20.5
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Iowa Gulch - Leadville Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/dyer-mountain",
+     "fact": "W Ridge / SE Flank Circuit from Iowa Gulch TH, 11,650 ft, 4.5 mi RT 2,205 ft; fits short climb from high trailhead"
+    },
+    "placements": [
+     {
+      "source": "climb13ers printed coordinate",
+      "name": "Iowa Gulch - Leadville TH",
+      "lat": 39.22972,
+      "lng": -106.20085,
+      "url": "https://www.climb13ers.com/colorado-13ers/trailhead/iowa-gulch---leadville"
+     }
+    ]
+   },
+   "notes": "Moderate confidence: no page is titled SE slopes; the SE flank is part of the climb13ers circuit from Iowa Gulch, and a search summary says a 2015 14ers report did SE slopes from Iowa Gulch (not opened). Single placement, no USFS point in the list."
+  }
+ },
+ {
+  "id": "co_emerald_peak_south_southwest_ridge",
+  "name": "South/Southwest Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_emerald_peak",
+   "name": "Emerald Peak",
+   "lat": 38.9291,
+   "lng": -106.3812,
+   "elevation_ft": 13916,
+   "region": null,
+   "path": "usa.colorado.co_sawatch_range.co_emerald_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Moderate hike from the Clohesy Lake area above Winfield with a talus finish.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Cloyses Trailhead",
+    "lat": 38.950901,
+    "lng": -106.407437,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "South Fork Clear Creek Trailhead",
+    "lat": 38.949335,
+    "lng": -106.461038,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Texas Creek Trailhead",
+    "lat": 38.873006,
+    "lng": -106.42661,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Sheep Gulch Trailhead",
+    "lat": 38.995019,
+    "lng": -106.404205,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "Missouri Gulch Trailhead",
+    "lat": 38.998389,
+    "lng": -106.374928,
+    "km": 7.7
+   },
+   {
+    "src": "USFS",
+    "name": "Silver Basin Trailhead",
+    "lat": 38.966162,
+    "lng": -106.458122,
+    "km": 7.8
+   },
+   {
+    "src": "USFS",
+    "name": "La Plata (South) Trailhead",
+    "lat": 38.992531,
+    "lng": -106.469061,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Clear Creek Trailhead",
+    "lat": 38.992444,
+    "lng": -106.474521,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Wapaca/Lienhart Trailhead",
+    "lat": 38.938693,
+    "lng": -106.255481,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Timberline Trailhead",
+    "lat": 38.844437,
+    "lng": -106.447315,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "North Cottonwood Trailhead",
+    "lat": 38.870818,
+    "lng": -106.266025,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Texas Creek Horse Trailhead",
+    "lat": 38.865106,
+    "lng": -106.49681,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Lake",
+    "lat": 38.811845,
+    "lng": -106.401804,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 38.81495,
+    "lng": -106.33426,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "Colorado Trail-Clear Creek Trailhead",
+    "lat": 39.02089,
+    "lng": -106.282926,
+    "km": 13.3
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Trailhead identified from a page about this route (Rockdale/Clohesy Lake, climb13ers) but no placement: the page prints no TH coordinate and the climb13ers trai",
+   "trailhead": null,
+   "notes": "Trailhead identified from a page about this route (Rockdale/Clohesy Lake, climb13ers) but no placement: the page prints no TH coordinate and the climb13ers trailhead page 404'd. USFS Cloyses Trailhead (38.950901,-106.407437) is plausibly the same lake but the name match is unconfirmed, so not reported."
+  }
+ },
+ {
+  "id": "co_half_peak_northwest_ridge",
+  "name": "Northwest Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_half_peak",
+   "name": "Half Peak",
+   "lat": 37.8643,
+   "lng": -107.4667,
+   "elevation_ft": 13866,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_half_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Remote peak near the Continental Divide whose mileage depends on how far a high-clearance vehicle can drive; rough ridge scrambling near the top.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pole Creek Trailhead",
+    "lat": 37.761996,
+    "lng": -107.46662,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Trail Trailhead",
+    "lat": 37.771516,
+    "lng": -107.35757,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "Ute Creek Trailhead",
+    "lat": 37.759296,
+    "lng": -107.34319,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Town Trail",
+    "lat": 37.715006,
+    "lng": -107.51001,
+    "km": 17
+   },
+   {
+    "src": "USFS",
+    "name": "Hayden Trailhead",
+    "lat": 37.959506,
+    "lng": -107.662211,
+    "km": 20.2
+   },
+   {
+    "src": "USFS",
+    "name": "Engineer Pass",
+    "lat": 37.98865,
+    "lng": -107.649329,
+    "km": 21.2
+   },
+   {
+    "src": "USFS",
+    "name": "Nellie Creek Trailhead",
+    "lat": 38.062606,
+    "lng": -107.42211,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 38.002398,
+    "lng": -107.661335,
+    "km": 23
+   },
+   {
+    "src": "USFS",
+    "name": "Crystal Larson Trailhead",
+    "lat": 38.043336,
+    "lng": -107.31973,
+    "km": 23.7
+   },
+   {
+    "src": "USFS",
+    "name": "Thirty Mile Trail",
+    "lat": 37.722038,
+    "lng": -107.25926,
+    "km": 24.1
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Cascade Falls",
+    "lat": 38.022036,
+    "lng": -107.660551,
+    "km": 24.4
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Carson Pass Trailhead (4x4)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/half-peak",
+     "fact": "Half Peak NW Ridge route header: Carson Pass TH 12,370 ft, 4x4 only, 26 mi RT 5,175 ft"
+    },
+    "placements": [
+     {
+      "source": "climb13ers printed coordinate",
+      "name": "Carson Pass TH",
+      "lat": 37.85626,
+      "lng": -107.36806,
+      "url": "https://www.climb13ers.com/colorado-13ers/half-peak"
+     }
+    ]
+   },
+   "notes": "Single placement, no USFS match; TH is ~11 km east of the summit. Many parties instead start at Cataract Gulch TH (passenger car), which has no coordinate. Carson Pass is the page's headline start only."
+  }
+ },
+ {
+  "id": "co_jones_mountain_northeast_ridge",
+  "name": "Northeast Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_jones_mountain",
+   "name": "Jones Mountain",
+   "lat": 37.8965,
+   "lng": -107.5264,
+   "elevation_ft": 13867,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_jones_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Straightforward ridge walk, normally strung together with American and Niagara peaks.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hayden Trailhead",
+    "lat": 37.959506,
+    "lng": -107.662211,
+    "km": 13.8
+   },
+   {
+    "src": "USFS",
+    "name": "Engineer Pass",
+    "lat": 37.98865,
+    "lng": -107.649329,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Pole Creek Trailhead",
+    "lat": 37.761996,
+    "lng": -107.46662,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 38.002398,
+    "lng": -107.661335,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Cascade Falls",
+    "lat": 38.022036,
+    "lng": -107.660551,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Town Trail",
+    "lat": 37.715006,
+    "lng": -107.51001,
+    "km": 20.2
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Trail Trailhead",
+    "lat": 37.771516,
+    "lng": -107.35757,
+    "km": 20.3
+   },
+   {
+    "src": "USFS",
+    "name": "Nellie Creek Trailhead",
+    "lat": 38.062606,
+    "lng": -107.42211,
+    "km": 20.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dexter Creek Trailhead",
+    "lat": 38.062006,
+    "lng": -107.661111,
+    "km": 21.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ute Creek Trailhead",
+    "lat": 37.759296,
+    "lng": -107.34319,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "Yankee Boy Trailhead",
+    "lat": 37.988062,
+    "lng": -107.765289,
+    "km": 23.3
+   },
+   {
+    "src": "USFS",
+    "name": "Ice Lake Trailhead",
+    "lat": 37.806406,
+    "lng": -107.773711,
+    "km": 23.9
+   },
+   {
+    "src": "USFS",
+    "name": "Crystal Larson Trailhead",
+    "lat": 38.043336,
+    "lng": -107.31973,
+    "km": 24.4
+   },
+   {
+    "src": "USFS",
+    "name": "WASATCH",
+    "lat": 37.909906,
+    "lng": -107.810311,
+    "km": 25
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Burns Gulch Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak",
+     "fact": "Jones Mtn NE Ridge (1.2 mi / 540 ft one way) is climbed from the Burns Gulch TH in the American-Jones-Niagara sequence"
+    },
+    "placements": [
+     {
+      "source": "climb13ers printed coordinate",
+      "name": "Burns Gulch TH",
+      "lat": 37.91798,
+      "lng": -107.558,
+      "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+     }
+    ]
+   },
+   "notes": "Replaces first pass (American Basin, Lake City side). Summit-to-TH only ~4 km. A climb13ers page named jones-mountain is a different Jones (Sawatch, Ptarmigan Lake TH): ignore. Single placement; this identification comes from the Niagara page, not a page titled Jones NE Ridge."
+  }
+ },
+ {
+  "id": "co_niagara_peak_northeast_ridge",
+  "name": "Northeast Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_niagara_peak",
+   "name": "Niagara Peak",
+   "lat": 37.8893,
+   "lng": -107.5335,
+   "elevation_ft": 13816,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_niagara_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Ridge walk usually combined with American and Jones peaks.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hayden Trailhead",
+    "lat": 37.959506,
+    "lng": -107.662211,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Engineer Pass",
+    "lat": 37.98865,
+    "lng": -107.649329,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Pole Creek Trailhead",
+    "lat": 37.761996,
+    "lng": -107.46662,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Creek Trailhead",
+    "lat": 38.002398,
+    "lng": -107.661335,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Cascade Falls",
+    "lat": 38.022036,
+    "lng": -107.660551,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Bear Town Trail",
+    "lat": 37.715006,
+    "lng": -107.51001,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Trail Trailhead",
+    "lat": 37.771516,
+    "lng": -107.35757,
+    "km": 20.3
+   },
+   {
+    "src": "USFS",
+    "name": "Nellie Creek Trailhead",
+    "lat": 38.062606,
+    "lng": -107.42211,
+    "km": 21.6
+   },
+   {
+    "src": "USFS",
+    "name": "Ute Creek Trailhead",
+    "lat": 37.759296,
+    "lng": -107.34319,
+    "km": 22.1
+   },
+   {
+    "src": "USFS",
+    "name": "Dexter Creek Trailhead",
+    "lat": 38.062006,
+    "lng": -107.661111,
+    "km": 22.2
+   },
+   {
+    "src": "USFS",
+    "name": "Ice Lake Trailhead",
+    "lat": 37.806406,
+    "lng": -107.773711,
+    "km": 23
+   },
+   {
+    "src": "USFS",
+    "name": "Yankee Boy Trailhead",
+    "lat": 37.988062,
+    "lng": -107.765289,
+    "km": 23.1
+   },
+   {
+    "src": "USFS",
+    "name": "WASATCH",
+    "lat": 37.909906,
+    "lng": -107.810311,
+    "km": 24.4
+   },
+   {
+    "src": "USFS",
+    "name": "SWAMP CANYON",
+    "lat": 37.858706,
+    "lng": -107.809711,
+    "km": 24.5
+   },
+   {
+    "src": "USFS",
+    "name": "BEAR CREEK",
+    "lat": 37.933406,
+    "lng": -107.811111,
+    "km": 24.8
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Burns Gulch Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak",
+     "fact": "Niagara NE Ridge from Burns Gulch TH 10,790 ft, 9.6 mi RT 4,145 ft with American and Jones"
+    },
+    "placements": [
+     {
+      "source": "climb13ers printed coordinate",
+      "name": "Burns Gulch TH",
+      "lat": 37.91798,
+      "lng": -107.558,
+      "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+     }
+    ]
+   },
+   "notes": "Same lot as Jones NE Ridge. Only the page's printed coordinate (no land-manager placement); a TopoZone Burns Gulch valley point (37.9053,-107.5564) is a valley reference, not the lot. First pass said ~15 km from summit: actually ~4 km."
+  }
+ },
+ {
+  "id": "co_phoenix_peak_south_ridge_and_slopes",
+  "name": "South Ridge and Slopes",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_phoenix_peak",
+   "name": "Phoenix Peak",
+   "lat": 37.9364,
+   "lng": -106.8664,
+   "elevation_ft": 13904,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_phoenix_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Remote tundra walk reached by a rough road near Creede; adds a few miles if the road is not driven.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Phoenix Park Trailhead",
+    "lat": 37.904527,
+    "lng": -106.91652,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Wheeler Geologic Area Trailhead",
+    "lat": 37.871813,
+    "lng": -106.787344,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Eddiesville South Trailhead",
+    "lat": 38.023856,
+    "lng": -106.83642,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Stewart Creek Trailhead",
+    "lat": 38.02479,
+    "lng": -106.841089,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Eddiesville North Trailhead",
+    "lat": 38.025723,
+    "lng": -106.83581,
+    "km": 10.3
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Trailhead",
+    "lat": 37.975302,
+    "lng": -106.74245,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Farmer's Creek Trailhead",
+    "lat": 37.827941,
+    "lng": -106.889095,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Miners Creek Trailhead",
+    "lat": 37.857866,
+    "lng": -106.9741,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Deep Creek Trailhead",
+    "lat": 37.813947,
+    "lng": -106.915151,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Shallow Creek Trail",
+    "lat": 37.829418,
+    "lng": -106.979749,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "East Bellows Trailhead",
+    "lat": 37.813361,
+    "lng": -106.737222,
+    "km": 17.8
+   },
+   {
+    "src": "USFS",
+    "name": "Mineral Creek Trailhead",
+    "lat": 38.053353,
+    "lng": -107.065346,
+    "km": 21.7
+   },
+   {
+    "src": "USFS",
+    "name": "Rough Creek Trailhead",
+    "lat": 38.051757,
+    "lng": -107.088624,
+    "km": 23.3
+   },
+   {
+    "src": "USFS",
+    "name": "Perry Creek Trailhead",
+    "lat": 37.940339,
+    "lng": -106.590677,
+    "km": 24.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pierce Elliott Trailhead",
+    "lat": 37.715258,
+    "lng": -106.901945,
+    "km": 24.8
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "East Willow Creek Trailhead (upper)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak",
+     "fact": "South Ridge & Slopes from East Willow Creek TH, 9.4 mi RT 3,585 ft; passenger car gets within a medium day, 4WD saves ~3 mi"
+    },
+    "placements": [
+     {
+      "source": "climb13ers printed coordinate",
+      "name": "East Willow Creek upper TH",
+      "lat": 37.91894,
+      "lng": -106.903,
+      "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+     }
+    ]
+   },
+   "notes": "The placement (N37 55 08.18, W106 54 10.81) comes from the first pass; my fetch of the page did not echo the coordinate, so re-check it. USFS Phoenix Park Trailhead (37.904527,-106.91652) is ~2 km away, likely the lower lot, but no page ties it to this route, so not reported. A 2018 report says the road was blocked by a rockslide."
+  }
+ },
+ {
+  "id": "co_red_mountain_north_ridge_from_culebra_peak",
+  "name": "North Ridge (from Culebra Peak)",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_red_mountain",
+   "name": "Red Mountain",
+   "lat": 37.1122,
+   "lng": -105.1813,
+   "elevation_ft": 13911,
+   "region": null,
+   "path": "usa.colorado.co_sangre_de_cristo_range.co_red_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reached only across private ranch land with a permit; it is a ridge walk usually done after Culebra Peak.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "North Fork-Purgatoire Trailhead",
+    "lat": 37.254653,
+    "lng": -105.10941,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Trailhead",
+    "lat": 37.303063,
+    "lng": -105.139415,
+    "km": 21.5
+   },
+   {
+    "src": "USFS",
+    "name": "Indian Creek-Bear Lake Trailhead",
+    "lat": 37.326377,
+    "lng": -105.143495,
+    "km": 24
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "Cielo Vista Ranch check-in / Culebra access trailhead (walk starts at the Four-Way road junction)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge",
+     "fact": "North Ridge page: Cielo Vista trailhead (ranch HQ check-in), route measured from the four-way junction; reached via Culebra"
+    },
+    "placements": [
+     {
+      "source": "climb13ers",
+      "name": "Cielo Vista Trailhead (ranch HQ check-in), 9,100 ft",
+      "lat": 37.14981,
+      "lng": -105.29256,
+      "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+     },
+     {
+      "source": "climb13ers",
+      "name": "Four-way road junction (start of the walk), 11,220 ft",
+      "lat": 37.14229,
+      "lng": -105.23252,
+      "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+     },
+     {
+      "source": "climb13ers",
+      "name": "Upper road end, 11,670 ft (only if ranch allows)",
+      "lat": 37.13899,
+      "lng": -105.21576,
+      "url": "https://www.climb13ers.com/colorado-13ers/red-mountain_north-ridge"
+     }
+    ]
+   },
+   "notes": "Single placement source (climb13ers DMS coordinates, converted by me); no land-manager point since it is private land. The route text's 'permit across private ranch land' is confirmed. Ranch HQ is ~5 km west of the four-way; the walk itself starts at the four-way, so pin that, with HQ as the check-in. First pass's claim that the climb13ers slug 404'd was wrong: this slug works."
+  }
+ },
+ {
+  "id": "co_vermilion_peak_southeast_ridge",
+  "name": "Southeast Ridge",
+  "discipline": "scrambling",
+  "grade": "Class 2+",
+  "verdict": "SUMMIT_ONLY",
+  "state": "co",
+  "peak": {
+   "id": "co_vermilion_peak",
+   "name": "Vermilion Peak",
+   "lat": 37.7993,
+   "lng": -107.8285,
+   "elevation_ft": 13909,
+   "region": null,
+   "path": "usa.colorado.co_san_juans.co_vermilion_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Open ridge and loose talus above Telluride's Ophir area with a short final scramble.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hope Lake Trailhead",
+    "lat": 37.804939,
+    "lng": -107.851592,
+    "km": 2.1
+   },
+   {
+    "src": "USFS",
+    "name": "Ice Lake Trailhead",
+    "lat": 37.806406,
+    "lng": -107.773711,
+    "km": 4.9
+   },
+   {
+    "src": "USFS",
+    "name": "SWAMP CANYON",
+    "lat": 37.858706,
+    "lng": -107.809711,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Matterhorn Nordic Trailhead",
+    "lat": 37.84344,
+    "lng": -107.883242,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Galloping Goose/Lizard Head Trailhead",
+    "lat": 37.811036,
+    "lng": -107.908098,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "Lizard Head Trailhead",
+    "lat": 37.81193,
+    "lng": -107.908446,
+    "km": 7.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cross Mountain Trailhead",
+    "lat": 37.796366,
+    "lng": -107.937501,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "ALTA LAKES",
+    "lat": 37.884506,
+    "lng": -107.846911,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "MAGIC MEADOWS",
+    "lat": 37.883906,
+    "lng": -107.888211,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "Galloping Goose Sunshine Trailhead",
+    "lat": 37.886647,
+    "lng": -107.910682,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Sunshine",
+    "lat": 37.889406,
+    "lng": -107.904911,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Wilson Mesa Trailhead",
+    "lat": 37.879206,
+    "lng": -107.924311,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "WASATCH",
+    "lat": 37.909906,
+    "lng": -107.810311,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Barlow Trailhead",
+    "lat": 37.768506,
+    "lng": -107.987711,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "BEAR CREEK",
+    "lat": 37.933406,
+    "lng": -107.811111,
+    "km": 15
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Lake Hope Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "fact": "Vermilion SE Ridge from Lake Hope TH, 10,745 ft",
+     "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Hope Lake Trailhead",
+      "lat": 37.804939,
+      "lng": -107.851592,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Lake Hope (page) = Hope Lake (USFS), near Ophir/Telluride. A search summary said SummitPost SE ridge starts from South Mineral Creek side (unopened): conflict; Telluride side used per route text."
+  }
+ }
+]
