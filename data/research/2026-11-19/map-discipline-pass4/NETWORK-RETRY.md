@@ -1,17 +1,17 @@
-# Network retry, pass 4 (retested 2026-11-18, second environment)
+# Network retry, pass 4 (2026-11-18)
 
-Research NOT run: 0 of 8 test sites answered 200 (threshold 4). The proxy refuses the CONNECT tunnel (403) and the WebFetch tool reports the hosts as outside the session's allowed network domains. The same result as the earlier retest.
+Result: 0 of 8 sites reachable (need 4). No research done; out/q*.json untouched.
 
-| Site | Result |
+| Site | curl status |
 |---|---|
-| https://www.wta.org/ | 000 (CONNECT 403) |
+| https://www.wta.org/ | 000 (no connection) |
 | https://en.wikipedia.org/wiki/Mount_Stuart | 000 |
 | https://www.climber.org/ | 000 |
-| https://nominatim.openstreetmap.org/search?q=Stuart+Lake+Trailhead&format=jsonv2 | 000 |
-| https://apps.fs.usda.gov/arcx/rest/services/EDW?f=json | 000 |
+| nominatim.openstreetmap.org search | 000 |
+| apps.fs.usda.gov arcx EDW | 000 |
 | https://www.14ers.com/ | 000 |
 | https://www.summitpost.org/ | 000 |
 | https://www.peakbagger.com/ | 000 |
-| WebFetch en.wikipedia.org/wiki/Mount_Stuart | ENOTFOUND (host not in the environment's allowed domains) |
+| WebFetch Wikipedia Mount_Stuart | getaddrinfo ENOTFOUND: host outside the session's allowed network domains |
 
-Fix: allow these hosts in the environment's network settings (or use unrestricted access), then re-fire. out/q01..q25.json are untouched.
+Fix: allow these hosts in the environment's network settings (or use an environment with unrestricted/full network), then re-run.
