@@ -1,4 +1,4 @@
--- 0452: climbs and vouches for every partner card on screen, in ONE read.
+-- 0460: climbs and vouches for every partner card on screen, in ONE read.
 --
 -- Owner, 2026-11-18: "I want you to only have one partner card". Real climbers and the example
 -- climbers now share one card, and the example card always showed "N climbs · N vouches". A real
@@ -28,7 +28,7 @@ as $$
    where p.id = any(p_ids[1:200]);
 $$;
 comment on function public.partner_counts(uuid[]) is
-  'Public climb-log count and distinct-voucher count for each of these climbers (partner cards). Signed-in only (0452).';
+  'Public climb-log count and distinct-voucher count for each of these climbers (partner cards). Signed-in only (0460).';
 revoke execute on function public.partner_counts(uuid[]) from public, anon;
 grant execute on function public.partner_counts(uuid[]) to authenticated;
 

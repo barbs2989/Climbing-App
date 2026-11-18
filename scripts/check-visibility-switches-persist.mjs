@@ -325,7 +325,7 @@ for (const [name, re, src] of CLIMBER_SELECTS) {
  * and has to be declared, which is the loud outcome. Your OWN résumé is out of scope (ClimbMatch's
  * `setResumeFor(meLive)`): you may always read your own. */
 // 3 since the one partner card (owner 2026-11-18): the example climbs chip and the REAL climber's climbs
-// chip (partner_counts, 0452) are two routes in lib/PartnerSearch.jsx, each gated on resumePublic!==false.
+// chip (partner_counts, 0460) are two routes in lib/PartnerSearch.jsx, each gated on resumePublic!==false.
 const RESUME_ENTRIES = 3;
 // The partner card's stat tile moved with PartnerSearch into lib/ (lazy-loaded). Counting core
 // alone would read it as a route that vanished, and stop checking that it is gated.

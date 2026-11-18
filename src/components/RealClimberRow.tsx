@@ -91,7 +91,7 @@ export interface RealClimberRowProps {
   /** "Expert · 18yr": level and years climbing (partner_signals for a real climber). */
   level?: string | null;
   years?: number | null;
-  /** Public climbs and vouches (partner_counts, 0452). Undefined leaves the chip out -- unknown is not 0. */
+  /** Public climbs and vouches (partner_counts, 0460). Undefined leaves the chip out -- unknown is not 0. */
   climbs?: number | null;
   vouches?: number | null;
   climbsPrivate?: boolean;
