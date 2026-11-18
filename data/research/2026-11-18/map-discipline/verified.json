@@ -32,7 +32,13 @@
    "lng": -118.355412,
    "pub": "usfs",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/4019900843",
+     "d": 7
+    }
+   ],
    "kmFromPeak": 6.3
   },
   {
@@ -458,7 +464,18 @@
    "lng": -119.262696,
    "pub": "nps",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/1744956218",
+     "d": 4
+    },
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/way/227463319",
+     "d": 22
+    }
+   ],
    "kmFromPeak": 10.1
   },
   {
@@ -523,7 +540,13 @@
    "lng": -118.341244,
    "pub": "usfs",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/4391057696",
+     "d": 12
+    }
+   ],
    "kmFromPeak": 4.9
   },
   {
@@ -579,23 +602,6 @@
    "url": "",
    "corroborated": [],
    "kmFromPeak": 12.1
-  },
-  {
-   "id": "ca_mount_izaak_walton_east_face",
-   "area": "ca_mount_izaak_walton",
-   "trailhead": "Mono Creek Trailhead (Lake Edison east end)",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Hike the Mono Creek trail to Mott Lake"
-   },
-   "chunk": "out2/r07.json",
-   "notes": "The Forest Service page for Mono Creek Trailhead lists Mott Lake among the trails leaving it and prints 37.38136,-118.997543 (same point as the dataset, so one source, not two independent placements).",
-   "lat": 37.381365,
-   "lng": -118.997556,
-   "pub": "usfs",
-   "url": "https://www.fs.usda.gov/r05/sierra/recreation/mono-creek-trailhead",
-   "corroborated": [],
-   "kmFromPeak": 13.7
   },
   {
    "id": "ca_mount_kaweah_standard_route",
@@ -682,7 +688,13 @@
    "lng": -118.169987,
    "pub": "usfs",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/3424755204",
+     "d": 31
+    }
+   ],
    "kmFromPeak": 13.6
   },
   {
@@ -828,7 +840,13 @@
    "lng": -118.756813,
    "pub": "usfs",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/4010386535",
+     "d": 6
+    }
+   ],
    "kmFromPeak": 8.9
   },
   {
@@ -954,7 +972,13 @@
    "lng": -118.061566,
    "pub": "usfs",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/8413435532",
+     "d": 14
+    }
+   ],
    "kmFromPeak": 6.7
   },
   {
@@ -994,24 +1018,6 @@
    "kmFromPeak": 13.3
   },
   {
-   "id": "ca_piute_mountain_northeast_ridge",
-   "area": "ca_piute_mountain",
-   "trailhead": "Robinson Creek Trailhead (Twin Lakes)",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "long trip from Twin Lakes through Kerrick Canyon to Seavey Pass",
-    "url": "https://climber.org/reports/2010/1774.html"
-   },
-   "chunk": "out/c05.json",
-   "notes": "Report says Twin Lakes has two trailheads; the Robinson Creek trail west is the Kerrick route.",
-   "lat": 38.146801,
-   "lng": -119.389785,
-   "pub": "usfs",
-   "url": "",
-   "corroborated": [],
-   "kmFromPeak": 18.7
-  },
-  {
    "id": "ca_red_and_white_mountain_standard_route",
    "area": "ca_red_and_white_mountain",
    "trailhead": "McGee Creek Trailhead",
@@ -1039,30 +1045,6 @@
     }
    ],
    "kmFromPeak": 9.3
-  },
-  {
-   "id": "ca_scylla_northwest_slope",
-   "area": "ca_scylla",
-   "trailhead": "North Lake Trailhead (hiker lot / camp)",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.snwburd.com/bob/trip_reports/scylla_1.html",
-    "fact": "Trailhead: North Lake, hiker lot near pack station; over Lamarck Col, Darwin Canyon, JMT, Ionian Basin; ascent by NW slope, no more than class 2"
-   },
-   "chunk": "out2/r10.json",
-   "notes": "A page about THIS route confirms North Lake. Parking: day-use lot (USFS North Lake) vs the hiker/camp lot at the road end (Lamarck Lakes TH); the report says hiker lot near the pack station, ~1 km fro",
-   "lat": 37.227305,
-   "lng": -118.627513,
-   "pub": "usfs",
-   "url": "",
-   "corroborated": [
-    {
-     "pub": "other",
-     "url": "https://climber.org/driving/images/395Waypoints.gpx",
-     "d": 18
-    }
-   ],
-   "kmFromPeak": 17.3
   },
   {
    "id": "ca_sierra_buttes_lookout_trail",
@@ -1143,7 +1125,13 @@
    "lng": -118.583551,
    "pub": "nps",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/2149851330",
+     "d": 32
+    }
+   ],
    "kmFromPeak": 15.4
   },
   {
@@ -1212,9 +1200,38 @@
      "pub": "other",
      "url": "https://climber.org/driving/images/DinkeyCreek.gpx",
      "d": 50
+    },
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/9010600363",
+     "d": 48
     }
    ],
    "kmFromPeak": 7.6
+  },
+  {
+   "id": "ca_tunemah_peak_east_ridge_via_dykeman_pass",
+   "area": "ca_tunemah_peak",
+   "trailhead": "Rancheria Trailhead (Wishon Reservoir)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html",
+    "fact": "Bob Burd: from Rancheria TH east on Crown Valley Trail to Blue Canyon Trail, north to Dykeman Pass, Alpine Creek, East Ridge"
+   },
+   "chunk": "out2/r11.json",
+   "notes": "Identification now strong: a page describing this exact route (Dykeman Pass, East Ridge) starts at Rancheria TH. Placement is a climber.org driving-page GPX waypoint only (not a land-manager point). N",
+   "lat": 36.975474,
+   "lng": -118.956096,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/1527888043",
+   "corroborated": [
+    {
+     "pub": "other",
+     "url": "https://climber.org/driving/images/DinkeyCreek.gpx",
+     "d": 6
+    }
+   ],
+   "kmFromPeak": 23.9
   },
   {
    "id": "ca_virginia_peak_standard_route",
@@ -1231,7 +1248,13 @@
    "lng": -119.275354,
    "pub": "usfs",
    "url": "",
-   "corroborated": [],
+   "corroborated": [
+    {
+     "pub": "osm",
+     "url": "https://www.openstreetmap.org/node/4023059553",
+     "d": 5
+    }
+   ],
    "kmFromPeak": 8.9
   },
   {
@@ -1559,6 +1582,24 @@
    "kmFromPeak": 5.5
   },
   {
+   "id": "co_mount_buckskin_northeast_slope",
+   "area": "co_mount_buckskin",
+   "trailhead": "Kite Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=buck1",
+    "fact": "Kite Lake 12,000 ft via Alma; no USFS candidate (Kite Lake is not in list)"
+   },
+   "chunk": "out/c08.json",
+   "notes": "Kite Lake 12,000 ft via Alma; no USFS candidate (Kite Lake is not in list)",
+   "lat": 39.327661,
+   "lng": -106.129458,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/way/1418719133",
+   "corroborated": [],
+   "kmFromPeak": 2
+  },
+  {
    "id": "co_mount_columbia_west_slopes",
    "area": "co_mount_columbia",
    "trailhead": "North Cottonwood Creek Trailhead",
@@ -1575,6 +1616,42 @@
    "url": "",
    "corroborated": [],
    "kmFromPeak": 4.6
+  },
+  {
+   "id": "co_mount_democrat_east_slope",
+   "area": "co_mount_democrat",
+   "trailhead": "Kite Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=demo1",
+    "fact": "Kite Lake 12,000 ft"
+   },
+   "chunk": "out/c08.json",
+   "notes": "Kite Lake 12,000 ft",
+   "lat": 39.327661,
+   "lng": -106.129458,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/way/1418719133",
+   "corroborated": [],
+   "kmFromPeak": 1.6
+  },
+  {
+   "id": "co_mount_edwards_southwest_ridge",
+   "area": "co_mount_edwards",
+   "trailhead": "Argentine Pass Trailhead (Peru Creek)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=201401170729013",
+    "fact": "Argentine Pass TH 11,050 ft up Peru Creek road from Keystone (not Guanella/Grays); not in USFS list"
+   },
+   "chunk": "out/c08.json",
+   "notes": "Argentine Pass TH 11,050 ft up Peru Creek road from Keystone (not Guanella/Grays); not in USFS list",
+   "lat": 39.608646,
+   "lng": -105.800087,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/way/1084547985",
+   "corroborated": [],
+   "kmFromPeak": 3.1
   },
   {
    "id": "co_mount_harvard_south_slopes",
@@ -1611,6 +1688,24 @@
    "url": "",
    "corroborated": [],
    "kmFromPeak": 3.2
+  },
+  {
+   "id": "co_mount_lincoln_west_ridge",
+   "area": "co_mount_lincoln",
+   "trailhead": "Kite Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=linc1",
+    "fact": "Kite Lake 12,000 ft"
+   },
+   "chunk": "out/c08.json",
+   "notes": "Kite Lake 12,000 ft",
+   "lat": 39.327661,
+   "lng": -106.129458,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/way/1418719133",
+   "corroborated": [],
+   "kmFromPeak": 3.1
   },
   {
    "id": "co_mount_massive_east_slopes",
@@ -1763,6 +1858,24 @@
    "kmFromPeak": 5.6
   },
   {
+   "id": "co_redcloud_peak_northeast_ridge",
+   "area": "co_redcloud_peak",
+   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Redcloud NE Ridge from Silver Creek/Grizzly Gulch at 10,400 ft",
+    "url": "https://www.14ers.com/route.php?route=redc1"
+   },
+   "chunk": "out/c09.json",
+   "notes": "Not in USFS list (Nellie Creek/Crystal Larson are other peaks' trailheads). Needs OSM match. About 16-18 mi up Cinnamon Pass road from Lake City.",
+   "lat": 37.937101,
+   "lng": -107.460466,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/2573676071",
+   "corroborated": [],
+   "kmFromPeak": 3.4
+  },
+  {
    "id": "co_san_luis_peak_northeast_ridge",
    "area": "co_san_luis_peak",
    "trailhead": "Stewart Creek Trailhead",
@@ -1779,6 +1892,24 @@
    "url": "",
    "corroborated": [],
    "kmFromPeak": 9
+  },
+  {
+   "id": "co_sunshine_peak_via_redcloud_peak",
+   "area": "co_sunshine_peak",
+   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Sunshine via Redcloud from Silver Creek/Grizzly Gulch at 10,400 ft",
+    "url": "https://www.14ers.com/route.php?route=suns2"
+   },
+   "chunk": "out/c09.json",
+   "notes": "Same trailhead as Redcloud NE Ridge. Needs OSM match.",
+   "lat": 37.937101,
+   "lng": -107.460466,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/2573676071",
+   "corroborated": [],
+   "kmFromPeak": 3.4
   },
   {
    "id": "co_tabeguache_peak_via_mount_shavano",
@@ -1814,6 +1945,42 @@
    "url": "",
    "corroborated": [],
    "kmFromPeak": 4.2
+  },
+  {
+   "id": "co_un_13_820_southwest_ridge",
+   "area": "co_un_13_820",
+   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "UN 13,820 SW Ridge Route from Grizzly Gulch - Silver Ck TH, 10,440 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   },
+   "chunk": "out/c09.json",
+   "notes": "Route text says Silver Creek road near Redcloud: matches. Needs OSM match.",
+   "lat": 37.937101,
+   "lng": -107.460466,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/2573676071",
+   "corroborated": [],
+   "kmFromPeak": 7.5
+  },
+  {
+   "id": "co_un_13_838_west_ridge",
+   "area": "co_un_13_838",
+   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "UN 13,838 reached from Grizzly Gulch - Silver Ck TH via 13,020 saddle",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   },
+   "chunk": "out/c09.json",
+   "notes": "Route text says rough 4WD road near Redcloud: matches Cinnamon Pass road. Page describes a saddle/NE approach, not clearly a west ridge; trailhead same either way. Needs OSM match.",
+   "lat": 37.937101,
+   "lng": -107.460466,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/2573676071",
+   "corroborated": [],
+   "kmFromPeak": 5.6
   },
   {
    "id": "co_uncompahgre_peak_south_ridge",
@@ -1868,6 +2035,23 @@
    "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract",
    "corroborated": [],
    "kmFromPeak": 6.5
+  },
+  {
+   "id": "ny_basin_mountain_shoreys_shortcut",
+   "area": "ny_basin_mountain",
+   "trailhead": "The Garden Trailhead (Keene Valley)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Starts at The Garden, Keene Valley"
+   },
+   "chunk": "out/c10.json",
+   "notes": "A search summary of NYSDEC said Route 73 in Keene Valley to Johns Brook Lane to The Garden lot (page not opened). No coordinate found.",
+   "lat": 44.18889,
+   "lng": -73.816332,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/4203671182",
+   "corroborated": [],
+   "kmFromPeak": 9.4
   },
   {
    "id": "ny_blake_peak_via_mount_colvin",
@@ -1955,6 +2139,40 @@
    "url": "https://dec.ny.gov/places/dix-mountain-tract",
    "corroborated": [],
    "kmFromPeak": 5.1
+  },
+  {
+   "id": "ny_mount_haystack_phelps_trail_from_the_garden",
+   "area": "ny_mount_haystack",
+   "trailhead": "The Garden Trailhead (Keene Valley)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Phelps Trail from The Garden. Starts at The Garden, Keene Valley"
+   },
+   "chunk": "out/c10.json",
+   "notes": "No coordinate found.",
+   "lat": 44.18889,
+   "lng": -73.816332,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/4203671182",
+   "corroborated": [],
+   "kmFromPeak": 11.4
+  },
+  {
+   "id": "ny_saddleback_mountain_ore_bed_trail",
+   "area": "ny_saddleback_mountain",
+   "trailhead": "The Garden Trailhead, Keene Valley",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Starts at The Garden, Keene Valley"
+   },
+   "chunk": "out/c11.json",
+   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
+   "lat": 44.18889,
+   "lng": -73.816332,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/node/4203671182",
+   "corroborated": [],
+   "kmFromPeak": 8.4
   },
   {
    "id": "or_matterhorn_west_face_chimney",
@@ -2566,6 +2784,29 @@
    "kmFromPeak": 9.7
   },
   {
+   "id": "wa_mount_adams_pinnacle_glacier_headwall",
+   "area": "wa_mount_adams",
+   "trailhead": "Riley Camp Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Riley Camp Trailhead, hike the Riley Camp Trail"
+   },
+   "chunk": "out2/r20.json",
+   "notes": "Route text names the trailhead; single WTA placement only (no USFS/OSM point in candidates; OSM matched by script from name). WTA page does not mention Pinnacle Glacier. WTA coordinate note: candidate",
+   "lat": 46.217217,
+   "lng": -121.634359,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/way/964293067",
+   "corroborated": [
+    {
+     "pub": "wta",
+     "url": "https://www.wta.org/go-hiking/hikes/riley-camp",
+     "d": 4
+    }
+   ],
+   "kmFromPeak": 11.2
+  },
+  {
    "id": "wa_mount_baker_coleman_ski_descent",
    "area": "wa_mount_baker",
    "trailhead": "Heliotrope Ridge Trailhead",
@@ -3109,6 +3350,23 @@
    "kmFromPeak": 4.4
   },
   {
+   "id": "wa_three_queens_west_peak",
+   "area": "wa_three_queens",
+   "trailhead": "Mineral Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Mineral Creek Trailhead (2,400 ft)"
+   },
+   "chunk": "out/c19.json",
+   "notes": "No official point matches Mineral Creek; sibling Middle Peak route stores 47.4176,-121.2373 (not independent). Route text notes a 2026 gate moved the lot to the end of a logging road.",
+   "lat": 47.419299,
+   "lng": -121.239136,
+   "pub": "osm",
+   "url": "https://www.openstreetmap.org/way/379042576",
+   "corroborated": [],
+   "kmFromPeak": 3.8
+  },
+  {
    "id": "wa_vesper_peak_north_face",
    "area": "wa_vesper_peak",
    "trailhead": "Sunrise Mine Trailhead (Vesper Peak Trailhead)",
@@ -3168,6 +3426,13 @@
      "lat": 38.31075,
      "lng": -119.7455,
      "url": "https://stavislost.com/hikes/trail/black-hawk-mountain-and-granite-dome/"
+    },
+    {
+     "pub": "osm",
+     "name": "Kennedy Meadows Trailhead Parking",
+     "lat": 38.3168733,
+     "lng": -119.7470337,
+     "url": "https://www.openstreetmap.org/way/833681727"
     }
    ]
   },
@@ -3391,7 +3656,8 @@
    "chunk": "out2/r03.json",
    "notes": "The first pass's inference is now stated outright: two climber.org reports list South Lake as the trailhead field. Stored class 2 vs page class 3 on SE face. Single coordinate source (USFS).",
    "reasons": [
-    "agent flagged the identification as inferred/weak"
+    "agent flagged the identification as inferred/weak",
+    "placements disagree by > 300 m"
    ],
    "placements": [
     {
@@ -3400,6 +3666,27 @@
      "lat": 37.169305,
      "lng": -118.565813,
      "url": ""
+    },
+    {
+     "pub": "osm",
+     "name": "Red Lake Trailhead",
+     "lat": 37.0365906,
+     "lng": -118.3600393,
+     "url": "https://www.openstreetmap.org/node/87913136"
+    },
+    {
+     "pub": "osm",
+     "name": "Lake Sabrina Trailhead",
+     "lat": 37.213716,
+     "lng": -118.610071,
+     "url": "https://www.openstreetmap.org/node/88323865"
+    },
+    {
+     "pub": "osm",
+     "name": "South Lake Trailhead",
+     "lat": 37.1692908,
+     "lng": -118.5658261,
+     "url": "https://www.openstreetmap.org/node/3710095154"
     }
    ]
   },
@@ -3446,7 +3733,6 @@
    "chunk": "out2/r05.json",
    "notes": "Weak-ish: route text is empty, so identification rests on Tanglefoot being the commonly described route (one opened page; SummitPost 403, hikearizona 403). Alternatives exist (Munson Meadows from Plas",
    "reasons": [
-    "only non-land-manager placements (other)",
     "agent flagged the identification as inferred/weak"
    ],
    "placements": [
@@ -3456,6 +3742,13 @@
      "lat": 38.52336,
      "lng": -120.17347,
      "url": "https://climber.org/reports/2001/793.html"
+    },
+    {
+     "pub": "osm",
+     "name": "Tanglefoot Trailhead",
+     "lat": 38.5235508,
+     "lng": -120.1735103,
+     "url": "https://www.openstreetmap.org/node/3939274836"
     }
    ]
   },
@@ -3606,6 +3899,13 @@
      "lat": 36.44834,
      "lng": -118.17065,
      "url": "https://www.hikespeak.com/trails/cottonwood-pass-hike-golden-trout-wilderness"
+    },
+    {
+     "pub": "osm",
+     "name": "Cottonwood Pass Trailhead",
+     "lat": 36.4483384,
+     "lng": -118.170637,
+     "url": "https://www.openstreetmap.org/node/3708813289"
     }
    ]
   },
@@ -3637,6 +3937,36 @@
      "lat": 37.3356,
      "lng": -118.975,
      "url": "https://www.howsyourriver.com/runs/pacific-crest-trail-to-bear-diversion-dam-bear-creek-ca"
+    }
+   ]
+  },
+  {
+   "id": "ca_mount_izaak_walton_east_face",
+   "area": "ca_mount_izaak_walton",
+   "trailhead": "Mono Creek Trailhead (Lake Edison east end)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Hike the Mono Creek trail to Mott Lake"
+   },
+   "chunk": "out2/r07.json",
+   "notes": "The Forest Service page for Mono Creek Trailhead lists Mott Lake among the trails leaving it and prints 37.38136,-118.997543 (same point as the dataset, so one source, not two independent placements).",
+   "reasons": [
+    "placements disagree by > 300 m"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Mono Creek Trailhead",
+     "lat": 37.381365,
+     "lng": -118.997556,
+     "url": "https://www.fs.usda.gov/r05/sierra/recreation/mono-creek-trailhead"
+    },
+    {
+     "pub": "osm",
+     "name": "Mono Creek Trailhead",
+     "lat": 37.3812195,
+     "lng": -119.010341,
+     "url": "https://www.openstreetmap.org/node/2129371235"
     }
    ]
   },
@@ -3788,6 +4118,37 @@
    "placements": []
   },
   {
+   "id": "ca_piute_mountain_northeast_ridge",
+   "area": "ca_piute_mountain",
+   "trailhead": "Robinson Creek Trailhead (Twin Lakes)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "long trip from Twin Lakes through Kerrick Canyon to Seavey Pass",
+    "url": "https://climber.org/reports/2010/1774.html"
+   },
+   "chunk": "out/c05.json",
+   "notes": "Report says Twin Lakes has two trailheads; the Robinson Creek trail west is the Kerrick route.",
+   "reasons": [
+    "placements disagree by > 300 m"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "Robinson Creek Trailhead",
+     "lat": 38.146801,
+     "lng": -119.389785,
+     "url": ""
+    },
+    {
+     "pub": "osm",
+     "name": "Robinson Creek Trailhead",
+     "lat": 38.1469946,
+     "lng": -119.3817541,
+     "url": "https://www.openstreetmap.org/node/4022818249"
+    }
+   ]
+  },
+  {
    "id": "ca_pyramid_peak_north_rocky_canyon",
    "area": "ca_pyramid_peak_north",
    "trailhead": "Rocky Canyon use-trail pullout on US 50 (near Twin Bridges)",
@@ -3831,7 +4192,8 @@
    "chunk": "out2/r09.json",
    "notes": "REPLACES the first pass (Bear Creek Diversion Dam, from a 1999 Hilgard-Gabb multi-peak trip). The two peak-specific day reports use Bear Ridge, which is the west-side day approach. The USFS 'Bear Ridg",
    "reasons": [
-    "agent flagged the identification as inferred/weak"
+    "agent flagged the identification as inferred/weak",
+    "placements disagree by > 300 m"
    ],
    "placements": [
     {
@@ -3847,6 +4209,13 @@
      "lat": 37.36225,
      "lng": -118.98574,
      "url": "https://climber.org/driving/images/KaiserPass.gpx"
+    },
+    {
+     "pub": "osm",
+     "name": "Bear Ridge Trailhead",
+     "lat": 37.3690275,
+     "lng": -118.9806864,
+     "url": "https://www.openstreetmap.org/node/2129407583"
     }
    ]
   },
@@ -3886,7 +4255,6 @@
    "chunk": "out2/r09.json",
    "notes": "Moderate: two pages (climber.org driving guide, Kern River Sierra guide) name the south Manter trailhead as the usual one. Also Long Valley/Canebrake (east, via locked-gate spur) is an alternative wit",
    "reasons": [
-    "only non-land-manager placements (other)",
     "agent flagged the identification as inferred/weak"
    ],
    "placements": [
@@ -3896,6 +4264,13 @@
      "lat": 35.868829966,
      "lng": -118.326320052,
      "url": "https://climber.org/driving/images/BigMeadow.gpx"
+    },
+    {
+     "pub": "osm",
+     "name": "Manter Meadow Trailhead",
+     "lat": 35.8688348,
+     "lng": -118.3264831,
+     "url": "https://www.openstreetmap.org/node/8284671095"
     }
    ]
   },
@@ -3961,6 +4336,51 @@
     "no placement"
    ],
    "placements": []
+  },
+  {
+   "id": "ca_scylla_northwest_slope",
+   "area": "ca_scylla",
+   "trailhead": "North Lake Trailhead (hiker lot / camp)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/scylla_1.html",
+    "fact": "Trailhead: North Lake, hiker lot near pack station; over Lamarck Col, Darwin Canyon, JMT, Ionian Basin; ascent by NW slope, no more than class 2"
+   },
+   "chunk": "out2/r10.json",
+   "notes": "A page about THIS route confirms North Lake. Parking: day-use lot (USFS North Lake) vs the hiker/camp lot at the road end (Lamarck Lakes TH); the report says hiker lot near the pack station, ~1 km fro",
+   "reasons": [
+    "placements disagree by > 300 m"
+   ],
+   "placements": [
+    {
+     "pub": "usfs",
+     "name": "LAMARCK LAKES TH (North Lake camp/hiker trailhead)",
+     "lat": 37.227305,
+     "lng": -118.627513,
+     "url": ""
+    },
+    {
+     "pub": "other",
+     "name": "NORTHC North Lake camp and trailhead 9300",
+     "lat": 37.22744,
+     "lng": -118.6274,
+     "url": "https://climber.org/driving/images/395Waypoints.gpx"
+    },
+    {
+     "pub": "usfs",
+     "name": "North Lake Trailhead (day-use lot, ~700 m east)",
+     "lat": 37.230685,
+     "lng": -118.616614,
+     "url": ""
+    },
+    {
+     "pub": "osm",
+     "name": "Red Lake Trailhead",
+     "lat": 37.0365906,
+     "lng": -118.3600393,
+     "url": "https://www.openstreetmap.org/node/87913136"
+    }
+   ]
   },
   {
    "id": "ca_silver_peak_standard_route",
@@ -4147,30 +4567,6 @@
    ]
   },
   {
-   "id": "ca_tunemah_peak_east_ridge_via_dykeman_pass",
-   "area": "ca_tunemah_peak",
-   "trailhead": "Rancheria Trailhead (Wishon Reservoir)",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html",
-    "fact": "Bob Burd: from Rancheria TH east on Crown Valley Trail to Blue Canyon Trail, north to Dykeman Pass, Alpine Creek, East Ridge"
-   },
-   "chunk": "out2/r11.json",
-   "notes": "Identification now strong: a page describing this exact route (Dykeman Pass, East Ridge) starts at Rancheria TH. Placement is a climber.org driving-page GPX waypoint only (not a land-manager point). N",
-   "reasons": [
-    "only non-land-manager placements (other)"
-   ],
-   "placements": [
-    {
-     "pub": "other",
-     "name": "RANCHERIA TRAILHEAD 7600 (waypoint RANCHA)",
-     "lat": 36.97545,
-     "lng": -118.95603,
-     "url": "https://climber.org/driving/images/DinkeyCreek.gpx"
-    }
-   ]
-  },
-  {
    "id": "ca_tunnabora_peak_south_slope_from_tulainyo_lake",
    "area": "ca_tunnabora_peak",
    "trailhead": "Whitney Portal Trailhead",
@@ -4351,7 +4747,6 @@
    "chunk": "out2/r11.json",
    "notes": "Moderate: page lists SSW Ridge, not 'South Slope', but it is the only route listed and the same single trailhead serves the Traver-McNamee-Clinton traverse. One placement only (climb13ers GPS); not in",
    "reasons": [
-    "only non-land-manager placements (other)",
     "agent flagged the identification as inferred/weak"
    ],
    "placements": [
@@ -4361,6 +4756,13 @@
      "lat": 39.356767,
      "lng": -106.082872,
      "url": "https://www.climb13ers.com/colorado-13ers/clinton-peak"
+    },
+    {
+     "pub": "osm",
+     "name": "Wheeler Lake Trailhead",
+     "lat": 39.3572933,
+     "lng": -106.08226,
+     "url": "https://www.openstreetmap.org/node/1449046200"
     }
    ]
   },
@@ -4392,9 +4794,24 @@
    "chunk": "out/c07.json",
    "notes": "Nominatim/Overpass not used per brief v2. Route text: from the Blue Lakes road. Not in official candidates.",
    "reasons": [
-    "no placement"
+    "placements disagree by > 300 m"
    ],
-   "placements": []
+   "placements": [
+    {
+     "pub": "osm",
+     "name": "Upper Blue Lakes Trailhead",
+     "lat": 39.386744,
+     "lng": -106.1003716,
+     "url": "https://www.openstreetmap.org/node/178091518"
+    },
+    {
+     "pub": "osm",
+     "name": "Lower Blue Lakes Trailhead",
+     "lat": 39.3883411,
+     "lng": -106.0892152,
+     "url": "https://www.openstreetmap.org/node/12279365005"
+    }
+   ]
   },
   {
    "id": "co_french_mountain_southeast_ridge",
@@ -4509,54 +4926,6 @@
    "placements": []
   },
   {
-   "id": "co_mount_buckskin_northeast_slope",
-   "area": "co_mount_buckskin",
-   "trailhead": "Kite Lake Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.14ers.com/route.php?route=buck1",
-    "fact": "Kite Lake 12,000 ft via Alma; no USFS candidate (Kite Lake is not in list)"
-   },
-   "chunk": "out/c08.json",
-   "notes": "Kite Lake 12,000 ft via Alma; no USFS candidate (Kite Lake is not in list)",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "co_mount_democrat_east_slope",
-   "area": "co_mount_democrat",
-   "trailhead": "Kite Lake Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.14ers.com/route.php?route=demo1",
-    "fact": "Kite Lake 12,000 ft"
-   },
-   "chunk": "out/c08.json",
-   "notes": "Kite Lake 12,000 ft",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "co_mount_edwards_southwest_ridge",
-   "area": "co_mount_edwards",
-   "trailhead": "Argentine Pass Trailhead (Peru Creek)",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.14ers.com/route.php?route=201401170729013",
-    "fact": "Argentine Pass TH 11,050 ft up Peru Creek road from Keystone (not Guanella/Grays); not in USFS list"
-   },
-   "chunk": "out/c08.json",
-   "notes": "Argentine Pass TH 11,050 ft up Peru Creek road from Keystone (not Guanella/Grays); not in USFS list",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
    "id": "co_mount_eolus_northeast_ridge",
    "area": "co_mount_eolus",
    "trailhead": "Needleton (Durango & Silverton train stop)",
@@ -4567,22 +4936,6 @@
    },
    "chunk": "out/c08.json",
    "notes": "Needleton 11,100 ft; 18 mi RT from Needleton, 6 mi from Chicago Basin; not in USFS list",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "co_mount_lincoln_west_ridge",
-   "area": "co_mount_lincoln",
-   "trailhead": "Kite Lake Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "url": "https://www.14ers.com/route.php?route=linc1",
-    "fact": "Kite Lake 12,000 ft"
-   },
-   "chunk": "out/c08.json",
-   "notes": "Kite Lake 12,000 ft",
    "reasons": [
     "no placement"
    ],
@@ -4699,22 +5052,6 @@
    ]
   },
   {
-   "id": "co_redcloud_peak_northeast_ridge",
-   "area": "co_redcloud_peak",
-   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "fact": "Redcloud NE Ridge from Silver Creek/Grizzly Gulch at 10,400 ft",
-    "url": "https://www.14ers.com/route.php?route=redc1"
-   },
-   "chunk": "out/c09.json",
-   "notes": "Not in USFS list (Nellie Creek/Crystal Larson are other peaks' trailheads). Needs OSM match. About 16-18 mi up Cinnamon Pass road from Lake City.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
    "id": "co_snowmass_mountain_east_slopes",
    "area": "co_snowmass_mountain",
    "trailhead": "Snowmass Creek Trailhead",
@@ -4763,22 +5100,6 @@
    "placements": []
   },
   {
-   "id": "co_sunshine_peak_via_redcloud_peak",
-   "area": "co_sunshine_peak",
-   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "fact": "Sunshine via Redcloud from Silver Creek/Grizzly Gulch at 10,400 ft",
-    "url": "https://www.14ers.com/route.php?route=suns2"
-   },
-   "chunk": "out/c09.json",
-   "notes": "Same trailhead as Redcloud NE Ridge. Needs OSM match.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
    "id": "co_trinity_peak_west_ridge",
    "area": "co_trinity_peak",
    "trailhead": "Molas Pass - Elk Park Trailhead",
@@ -4805,38 +5126,6 @@
    },
    "chunk": "out/c09.json",
    "notes": "Train-only access per page; boarding in Silverton for Needleton reportedly not possible since 2021, check. Route text says Chicago Basin; same Needleton start.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "co_un_13_820_southwest_ridge",
-   "area": "co_un_13_820",
-   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "fact": "UN 13,820 SW Ridge Route from Grizzly Gulch - Silver Ck TH, 10,440 ft",
-    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
-   },
-   "chunk": "out/c09.json",
-   "notes": "Route text says Silver Creek road near Redcloud: matches. Needs OSM match.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "co_un_13_838_west_ridge",
-   "area": "co_un_13_838",
-   "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
-   "identifiedBy": {
-    "kind": "page",
-    "fact": "UN 13,838 reached from Grizzly Gulch - Silver Ck TH via 13,020 saddle",
-    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
-   },
-   "chunk": "out/c09.json",
-   "notes": "Route text says rough 4WD road near Redcloud: matches Cinnamon Pass road. Page describes a saddle/NE approach, not clearly a west ridge; trailhead same either way. Needs OSM match.",
    "reasons": [
     "no placement"
    ],
@@ -4968,21 +5257,6 @@
    },
    "chunk": "out/c10.json",
    "notes": "Tahawus Road dead end, Newcomb. NYSDEC backcountry page confirms Upper Works parking. A search summary said a newer lot by MacNaughton Cottage replaced the old lot (unverified). No coordinate found.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "ny_basin_mountain_shoreys_shortcut",
-   "area": "ny_basin_mountain",
-   "trailhead": "The Garden Trailhead (Keene Valley)",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Starts at The Garden, Keene Valley"
-   },
-   "chunk": "out/c10.json",
-   "notes": "A search summary of NYSDEC said Route 73 in Keene Valley to Johns Brook Lane to The Garden lot (page not opened). No coordinate found.",
    "reasons": [
     "no placement"
    ],
@@ -5155,21 +5429,6 @@
    "placements": []
   },
   {
-   "id": "ny_mount_haystack_phelps_trail_from_the_garden",
-   "area": "ny_mount_haystack",
-   "trailhead": "The Garden Trailhead (Keene Valley)",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Phelps Trail from The Garden. Starts at The Garden, Keene Valley"
-   },
-   "chunk": "out/c10.json",
-   "notes": "No coordinate found.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
    "id": "ny_mount_marshall_herbert_brook_herd_path",
    "area": "ny_mount_marshall",
    "trailhead": "Upper Works Trailhead",
@@ -5281,21 +5540,6 @@
    "identifiedBy": {
     "kind": "route_text",
     "fact": "Roaring Brook Trail over Giant, then ridge trail"
-   },
-   "chunk": "out/c11.json",
-   "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "ny_saddleback_mountain_ore_bed_trail",
-   "area": "ny_saddleback_mountain",
-   "trailhead": "The Garden Trailhead, Keene Valley",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "Starts at The Garden, Keene Valley"
    },
    "chunk": "out/c11.json",
    "notes": "Named by the route text; NYSDEC/ADK pages opened gave no trailhead coordinate, so placement is left to the script (OSM name match).",
@@ -5650,7 +5894,6 @@
    "chunk": "out2/r20.json",
    "notes": "Moderate confidence: report never names the lot; Cascade Pass is the road-end for the Mix-up arm / Cache Col approach (WTA page puts the Ptarmigan Traverse and Mixup Peak above that lot). Only a WTA c",
    "reasons": [
-    "only non-land-manager placements (wta)",
     "agent flagged the identification as inferred/weak"
    ],
    "placements": [
@@ -5660,6 +5903,13 @@
      "lat": 48.4754,
      "lng": -121.0751,
      "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+    },
+    {
+     "pub": "osm",
+     "name": "Cascade Pass Trailhead",
+     "lat": 48.4754883,
+     "lng": -121.0751562,
+     "url": "https://www.openstreetmap.org/node/1420498929"
     }
    ]
   },
@@ -5697,29 +5947,6 @@
      "lat": 46.1353614,
      "lng": -121.4961679,
      "url": "https://www.openstreetmap.org/relation/17923072"
-    }
-   ]
-  },
-  {
-   "id": "wa_mount_adams_pinnacle_glacier_headwall",
-   "area": "wa_mount_adams",
-   "trailhead": "Riley Camp Trailhead",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "From the Riley Camp Trailhead, hike the Riley Camp Trail"
-   },
-   "chunk": "out2/r20.json",
-   "notes": "Route text names the trailhead; single WTA placement only (no USFS/OSM point in candidates; OSM matched by script from name). WTA page does not mention Pinnacle Glacier. WTA coordinate note: candidate",
-   "reasons": [
-    "only non-land-manager placements (wta)"
-   ],
-   "placements": [
-    {
-     "pub": "wta",
-     "name": "Riley Camp (#64)",
-     "lat": 46.2172,
-     "lng": -121.6344,
-     "url": "https://www.wta.org/go-hiking/hikes/riley-camp"
     }
    ]
   },
@@ -5971,21 +6198,6 @@
    },
    "chunk": "out/c19.json",
    "notes": "Peak-level only: no page describes this route alone; Southern Pickets all approach via Goodell Creek, and the sibling South Route uses it. No official point matches (candidates are Gorge Overlook etc.",
-   "reasons": [
-    "no placement"
-   ],
-   "placements": []
-  },
-  {
-   "id": "wa_three_queens_west_peak",
-   "area": "wa_three_queens",
-   "trailhead": "Mineral Creek Trailhead",
-   "identifiedBy": {
-    "kind": "route_text",
-    "fact": "From the Mineral Creek Trailhead (2,400 ft)"
-   },
-   "chunk": "out/c19.json",
-   "notes": "No official point matches Mineral Creek; sibling Middle Peak route stores 47.4176,-121.2373 (not independent). Route text notes a 2026 gate moved the lot to the end of a logging road.",
    "reasons": [
     "no placement"
    ],

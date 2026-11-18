@@ -1,0 +1,504 @@
+{
+ "ca_tunemah_peak_east_ridge_via_dykeman_pass": {
+  "area": "ca_tunemah_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Rancheria Trailhead (Wishon Reservoir)",
+    "trailheadLat": 36.975474,
+    "trailheadLng": -118.956096
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Rancheria Trailhead (Wishon Reservoir)",
+     "trailheadLat": 36.975474,
+     "trailheadLng": -118.956096
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/1527888043",
+      "fact": "Rancheria Trailhead (Wishon Reservoir) 36.97547,-118.95610",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climber.org/driving/images/DinkeyCreek.gpx",
+      "fact": "Rancheria Trailhead (Wishon Reservoir) (within 6 m) 36.97547,-118.95610",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/tunemah_1.html",
+    "fact": "Bob Burd: from Rancheria TH east on Crown Valley Trail to Blue Canyon Trail, north to Dykeman Pass, Alpine Creek, East Ridge"
+   },
+   "chunk": "out2/r11.json",
+   "kmFromPeak": 23.9
+  }
+ },
+ "co_mount_buckskin_northeast_slope": {
+  "area": "co_mount_buckskin",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Kite Lake Trailhead",
+    "trailheadLat": 39.327661,
+    "trailheadLng": -106.129458
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Kite Lake Trailhead",
+     "trailheadLat": 39.327661,
+     "trailheadLng": -106.129458
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1418719133",
+      "fact": "Kite Lake Trailhead 39.32766,-106.12946",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=buck1",
+    "fact": "Kite Lake 12,000 ft via Alma; no USFS candidate (Kite Lake is not in list)"
+   },
+   "chunk": "out/c08.json",
+   "kmFromPeak": 2
+  }
+ },
+ "co_mount_democrat_east_slope": {
+  "area": "co_mount_democrat",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Kite Lake Trailhead",
+    "trailheadLat": 39.327661,
+    "trailheadLng": -106.129458
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Kite Lake Trailhead",
+     "trailheadLat": 39.327661,
+     "trailheadLng": -106.129458
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1418719133",
+      "fact": "Kite Lake Trailhead 39.32766,-106.12946",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=demo1",
+    "fact": "Kite Lake 12,000 ft"
+   },
+   "chunk": "out/c08.json",
+   "kmFromPeak": 1.6
+  }
+ },
+ "co_mount_edwards_southwest_ridge": {
+  "area": "co_mount_edwards",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Argentine Pass Trailhead (Peru Creek)",
+    "trailheadLat": 39.608646,
+    "trailheadLng": -105.800087
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Argentine Pass Trailhead (Peru Creek)",
+     "trailheadLat": 39.608646,
+     "trailheadLng": -105.800087
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1084547985",
+      "fact": "Argentine Pass Trailhead (Peru Creek) 39.60865,-105.80009",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=201401170729013",
+    "fact": "Argentine Pass TH 11,050 ft up Peru Creek road from Keystone (not Guanella/Grays); not in USFS list"
+   },
+   "chunk": "out/c08.json",
+   "kmFromPeak": 3.1
+  }
+ },
+ "co_mount_lincoln_west_ridge": {
+  "area": "co_mount_lincoln",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Kite Lake Trailhead",
+    "trailheadLat": 39.327661,
+    "trailheadLng": -106.129458
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Kite Lake Trailhead",
+     "trailheadLat": 39.327661,
+     "trailheadLng": -106.129458
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/1418719133",
+      "fact": "Kite Lake Trailhead 39.32766,-106.12946",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.14ers.com/route.php?route=linc1",
+    "fact": "Kite Lake 12,000 ft"
+   },
+   "chunk": "out/c08.json",
+   "kmFromPeak": 3.1
+  }
+ },
+ "co_redcloud_peak_northeast_ridge": {
+  "area": "co_redcloud_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+    "trailheadLat": 37.937101,
+    "trailheadLng": -107.460466
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+     "trailheadLat": 37.937101,
+     "trailheadLng": -107.460466
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/2573676071",
+      "fact": "Silver Creek/Grizzly Gulch Trailhead 37.93710,-107.46047",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Redcloud NE Ridge from Silver Creek/Grizzly Gulch at 10,400 ft",
+    "url": "https://www.14ers.com/route.php?route=redc1"
+   },
+   "chunk": "out/c09.json",
+   "kmFromPeak": 3.4
+  }
+ },
+ "co_sunshine_peak_via_redcloud_peak": {
+  "area": "co_sunshine_peak",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+    "trailheadLat": 37.937101,
+    "trailheadLng": -107.460466
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+     "trailheadLat": 37.937101,
+     "trailheadLng": -107.460466
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/2573676071",
+      "fact": "Silver Creek/Grizzly Gulch Trailhead 37.93710,-107.46047",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Sunshine via Redcloud from Silver Creek/Grizzly Gulch at 10,400 ft",
+    "url": "https://www.14ers.com/route.php?route=suns2"
+   },
+   "chunk": "out/c09.json",
+   "kmFromPeak": 3.4
+  }
+ },
+ "co_un_13_820_southwest_ridge": {
+  "area": "co_un_13_820",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+    "trailheadLat": 37.937101,
+    "trailheadLng": -107.460466
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+     "trailheadLat": 37.937101,
+     "trailheadLng": -107.460466
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/2573676071",
+      "fact": "Silver Creek/Grizzly Gulch Trailhead 37.93710,-107.46047",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "UN 13,820 SW Ridge Route from Grizzly Gulch - Silver Ck TH, 10,440 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   },
+   "chunk": "out/c09.json",
+   "kmFromPeak": 7.5
+  }
+ },
+ "co_un_13_838_west_ridge": {
+  "area": "co_un_13_838",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+    "trailheadLat": 37.937101,
+    "trailheadLng": -107.460466
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Silver Creek/Grizzly Gulch Trailhead",
+     "trailheadLat": 37.937101,
+     "trailheadLng": -107.460466
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/2573676071",
+      "fact": "Silver Creek/Grizzly Gulch Trailhead 37.93710,-107.46047",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "UN 13,838 reached from Grizzly Gulch - Silver Ck TH via 13,020 saddle",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   },
+   "chunk": "out/c09.json",
+   "kmFromPeak": 5.6
+  }
+ },
+ "ny_basin_mountain_shoreys_shortcut": {
+  "area": "ny_basin_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "The Garden Trailhead (Keene Valley)",
+    "trailheadLat": 44.18889,
+    "trailheadLng": -73.816332
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "The Garden Trailhead (Keene Valley)",
+     "trailheadLat": 44.18889,
+     "trailheadLng": -73.816332
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/4203671182",
+      "fact": "The Garden Trailhead (Keene Valley) 44.18889,-73.81633",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Starts at The Garden, Keene Valley"
+   },
+   "chunk": "out/c10.json",
+   "kmFromPeak": 9.4
+  }
+ },
+ "ny_mount_haystack_phelps_trail_from_the_garden": {
+  "area": "ny_mount_haystack",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "The Garden Trailhead (Keene Valley)",
+    "trailheadLat": 44.18889,
+    "trailheadLng": -73.816332
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "The Garden Trailhead (Keene Valley)",
+     "trailheadLat": 44.18889,
+     "trailheadLng": -73.816332
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/4203671182",
+      "fact": "The Garden Trailhead (Keene Valley) 44.18889,-73.81633",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Phelps Trail from The Garden. Starts at The Garden, Keene Valley"
+   },
+   "chunk": "out/c10.json",
+   "kmFromPeak": 11.4
+  }
+ },
+ "ny_saddleback_mountain_ore_bed_trail": {
+  "area": "ny_saddleback_mountain",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "The Garden Trailhead, Keene Valley",
+    "trailheadLat": 44.18889,
+    "trailheadLng": -73.816332
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "The Garden Trailhead, Keene Valley",
+     "trailheadLat": 44.18889,
+     "trailheadLng": -73.816332
+    },
+    "method": "single-source",
+    "level": "unconfirmed",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/node/4203671182",
+      "fact": "The Garden Trailhead, Keene Valley 44.18889,-73.81633",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Starts at The Garden, Keene Valley"
+   },
+   "chunk": "out/c11.json",
+   "kmFromPeak": 8.4
+  }
+ },
+ "wa_mount_adams_pinnacle_glacier_headwall": {
+  "area": "wa_mount_adams",
+  "set": {
+   "approach_logistics": {
+    "trailhead": "Riley Camp Trailhead",
+    "trailheadDirection": "From Trout Lake, drive Mt. Adams Road north about 1.3 miles, then turn left onto Forest Road 23 (Buck Creek Road) and follow it about 17.5 miles to the trailhead, which is easy to miss between mileposts 38 and 37.",
+    "trailheadLat": 46.217217,
+    "trailheadLng": -121.634359
+   }
+  },
+  "ledger": [
+   {
+    "field": "approach_logistics",
+    "value": {
+     "trailhead": "Riley Camp Trailhead",
+     "trailheadDirection": "From Trout Lake, drive Mt. Adams Road north about 1.3 miles, then turn left onto Forest Road 23 (Buck Creek Road) and follow it about 17.5 miles to the trailhead, which is easy to miss between mileposts 38 and 37.",
+     "trailheadLat": 46.217217,
+     "trailheadLng": -121.634359
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/964293067",
+      "fact": "Riley Camp Trailhead 46.21722,-121.63436",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/riley-camp",
+      "fact": "Riley Camp Trailhead (within 4 m) 46.21722,-121.63436",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "review": {
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Riley Camp Trailhead, hike the Riley Camp Trail"
+   },
+   "chunk": "out2/r20.json",
+   "kmFromPeak": 11.2
+  }
+ }
+}

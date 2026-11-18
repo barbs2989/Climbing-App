@@ -74,7 +74,33 @@ Owner: "try peakbagger again", "keep going", "use more agents". Peakbagger loade
 - **Still open:** 134 held, 149 stuck (`verified.json`). What would move them: OSM placements once the
   Overpass servers recover (83 hold only for a coordinate), and SummitPost (still 403).
 
+## Third batch (same day): OSM placements via Nominatim
+Owner: "keep going". The Overpass servers stayed down, but Nominatim answered. One query per held route
+(its named trailhead, inside a box around the peak, 1.5 s apart; trailhead / parking features only) found
+OSM features for 26 of 103 routes (`osm-names.json`). Matching now compares our name's MAIN part
+("The Garden Trailhead (Keene Valley)" → "The Garden Trailhead"; "Silver Creek/Grizzly Gulch" → "Silver
+Creek"), so a true name match is no longer refused for a parenthetical; true mismatches stay held (Crown
+Valley vs Rancheria, Big Meadow vs Manter Meadow, St. Huberts vs Roaring Brook, Holden vs 10 Mile Falls).
+- **Applied: 13 trailheads** (`batch3.json`, 13 of 13 re-read): Kite Lake (Buckskin, Democrat, Lincoln),
+  Silver Creek (Redcloud, Sunshine, UN 13,820, UN 13,838), Argentine Pass (Edwards), The Garden (Basin,
+  Haystack, Saddleback), Rancheria (Tunemah, locked), Riley Camp (Adams Pinnacle Glacier Headwall, locked).
+  Every one is an OSM trailhead node or parking area carrying that exact name.
+- Held by hand again: Himmelhorn Stonehenge / Wild Hair Crack (the only OSM point is the Goodell Creek
+  campground). Adams's evidence went in ledger-only for the jsonb key-order MISMATCH noted above.
+- **Audit after three batches:** TRAILHEAD_AND_SUMMIT 750 → 931, SUMMIT_ONLY 434 → 265, NO_SUMMIT 53 → 41.
+
 ## Files
 `BRIEF*.md` (the three agent briefs) · `chunks/` + `out/` (first pass, 20 chunks) · `chunks2/` + `out2/`
 (second pass, 23 chunks) · `gnis.json` · `verified.json` · `batch.json` (exactly what was applied, with its
 ledger) · `batch-skipped.json`.
+
+## Lincoln Peak X Couloir: written, then reverted (owner's choice)
+The owner chose Heliotrope Ridge Trailhead for `wa_lincoln_peak_standard` (its own text names the FR-38
+road end; Wikipedia names Heliotrope Ridge). It was written and locked (USFS + OSM node 4939697885, 7 m
+apart). Reading the row back showed its driving directions, road card and approach text all describe FR-38,
+so the page contradicted itself. The owner chose to revert: the record is back to "NF-38 (Forest Service
+Road 38) / Middle Fork Nooksack" with no pin coordinate, and the evidence row was deleted (none left).
+To pin Heliotrope properly, the directions, road and approach must be researched and rewritten with it,
+or Heliotrope added as a second way in (`approach_variants`).
+**Lesson: before writing a trailhead that differs from the stored one, read every field that describes
+the drive (approach_logistics.trailheadDirection, road, approach); a pin alone can make the page lie.**
