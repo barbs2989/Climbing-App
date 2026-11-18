@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { clickable } from "../../lib/clickable";
 import WallGradeBars from "./WallGradeBars.tsx";
 import type { WallGradeRow } from "./WallGradeBars.tsx";
-import Chevron from "./Chevron.tsx";
+import ViewAreaPill from "./ViewAreaPill.tsx";
 import WalkInMap from "../../lib/WalkInMap.jsx";
 import type { C as Palette } from "../../ClimbMatchCore.jsx";
 import { childSortOptions, sortChildren, childSortFigure, getChildSort, setChildSort, CHILD_SORT_DEFAULT } from "../../lib/areaChildSort.js";
@@ -130,11 +130,11 @@ export default function AreaChildrenList<T extends AreaChildRow>({ rows: given, 
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 3 }}>
               <span style={{ fontSize: side ? 13 : 15, fontWeight: 700, color: side ? C.blue : C.text, overflowWrap: "anywhere", lineHeight: 1.3 }}>{a.name}</span>
+              {side ? null : <span style={{ fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums" }}>{count(a)}</span>}
               {dl}
             </span>
             {badge(a.id)}
-            <span style={{ flexShrink: 0, fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums" }}>{count(a)}</span>
-            {side ? null : <Chevron size={16} color={C.textMuted} />}
+            {side ? <span style={{ flexShrink: 0, fontSize: 12, color: disc ? C.text : C.textMuted, fontWeight: disc ? 700 : 600, fontVariantNumeric: "tabular-nums" }}>{count(a)}</span> : <ViewAreaPill C={C} />}
           </div>
           {g && g.length ? <WallGradeBars rows={g} name={a.name} total={a.route_count} C={C} /> : null}
         </div>;

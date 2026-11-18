@@ -20,6 +20,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (`area_children_grade_counts`, 0402: the parent's subtree in one pass, each graded route filed under the child whose path label follows
   the parent's). Ungraded climbs are in no bar; the chart's accessible name says "N of M graded". The phone card is unchanged.
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
+- **The *View area* button** (`ViewAreaPill`, owner 2026-11-18: "a view area text and button that is clear when looking for areas and climbs"): every row that OPENS an area ends in a solid blue *View area ›* — the phone sub-area list (`AreaChildrenList`, count moved under the name), the All areas tree (beside the expand arrow, which only reveals what is inside), the in-page Areas search (`DbSearchSplit`), the add-a-climb country search (`DbCountryAreaHits`) and the Places hits of the top *Search climbs & crags* box (`lib/DesktopShell.jsx`); the 3D map card says *View area* too. It is drawn inside the row's own control (aria-hidden), so the whole row stays one target. The website sidebar keeps its blue link names.
 - **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one; past 600 characters it opens at about nine lines with *Read more* / *Show less*, like the route page's comment clamp),
   **AREA FACTS** (rock, which way it faces, elevation, walk-in minutes, parking name, and a 12-month **Season** strip from `areas.season_months`;
   a fact that is not stored is not printed; on the website a **MOST LOGGED HERE** strip beside Season — `LoggedMonthStrip`, twelve bars from
@@ -250,6 +251,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 | `src/components/NearbyPeaks.tsx` | `NearbyPeaks`, nearby peaks on an area page |
 | `src/components/ObjectivesPanel.tsx` | `ObjectivesPanel`, Saved objectives in the browser |
 | `src/components/DbAreaTree.tsx` | `DbAreaTree`, the area tree |
+| `src/components/ViewAreaPill.tsx` | `ViewAreaPill`, the solid blue *View area ›* at the end of every row that opens an area |
 | `src/components/DbSuggestedClimbs.tsx` | `DbSuggestedClimbs`, More climbs in this area |
 | `src/components/SummitBriefing.tsx` | `SummitBriefing`, the peak summary above an area's route list |
 | `src/components/RouteRow.tsx` | `RouteRow`, one climb row in an area list |
@@ -316,7 +318,9 @@ A place filed twice is refused at insert by `refuse_duplicate_area` (0216/0218, 
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change
-Compact area page (owner 2026-11-11, PR #3239; Mountain Project used as a reference, not copied): the header line folds in rock and walk-in minutes with an *In season / Off season* pill; the sticky path ends on the area's own name and the tab title names it; one bordered sheet (`areaSheet`) holds grade spread (Climbs here by type behind a dropdown), the description (four lines, fading, *Show more*), the Route finder · ★ Objectives · Map row, the sub-areas on a phone, classic climbs, the photo strip and Getting there; on the website every sub-area sits in a left column with a map thumbnail. Area photos (0411) are `topos` rows with `area_photo` set and no route, read by `area_photo_feed` over the subtree; route pages never show them.
+*View area* button (owner 2026-11-18): one solid blue `ViewAreaPill` ends every row that opens an area — sub-area list, All areas tree, area searches and the top search's Places — so opening an area no longer depends on knowing that the name is tappable.
+
+Before it — Compact area page (owner 2026-11-11, PR #3239; Mountain Project used as a reference, not copied): the header line folds in rock and walk-in minutes with an *In season / Off season* pill; the sticky path ends on the area's own name and the tab title names it; one bordered sheet (`areaSheet`) holds grade spread (Climbs here by type behind a dropdown), the description (four lines, fading, *Show more*), the Route finder · ★ Objectives · Map row, the sub-areas on a phone, classic climbs, the photo strip and Getting there; on the website every sub-area sits in a left column with a map thumbnail. Area photos (0411) are `topos` rows with `area_photo` set and no route, read by `area_photo_feed` over the subtree; route pages never show them.
 
 Before it — Area pages (0304): ABOUT, AREA FACTS, CLIMBS HERE + GRADE SPREAD, GETTING THERE, TOP RATED and Suggest an edit, after an audit of Mountain Project's and theCrag's area pages (Castleton Tower was the model).
 #2416 before it - area map place search covers Canada (provinces, towns, postal codes); #2411 just before it fixed hidden zoom buttons and the buried location dot.
