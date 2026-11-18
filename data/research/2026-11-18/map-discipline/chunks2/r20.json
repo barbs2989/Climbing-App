@@ -1,0 +1,1265 @@
+[
+ {
+  "id": "wa_little_big_chief_mountain_southwest_face",
+  "name": "Southwest Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_little_big_chief_mountain",
+   "name": "Little Big Chief Mountain",
+   "lat": 47.5296806,
+   "lng": -121.2566659,
+   "elevation_ft": 7225,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_little_big_chief_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_little_big_chief_mountain_northeast_face",
+    "name": "Dingford Creek (Dutch Miller Gap) Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Necklace Valley Trailhead",
+    "lat": 47.665562,
+    "lng": -121.287237,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "Tonga Ridge Trailhead",
+    "lat": 47.679173,
+    "lng": -121.263348,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 16.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text, no route-specific page read. Likely same Summit Chief valley start as Falcon Route but unconfirmed.",
+   "trailhead": null,
+   "notes": "No route text, no route-specific page read. Likely same Summit Chief valley start as Falcon Route but unconfirmed."
+  }
+ },
+ {
+  "id": "wa_little_big_chief_mountain_falcon_route",
+  "name": "Falcon Route",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_little_big_chief_mountain",
+   "name": "Little Big Chief Mountain",
+   "lat": 47.5296806,
+   "lng": -121.2566659,
+   "elevation_ft": 7225,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_little_big_chief_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_little_big_chief_mountain_northeast_face",
+    "name": "Dingford Creek (Dutch Miller Gap) Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 13
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 14.5
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Scatter Creek Trailhead",
+    "lat": 47.507206,
+    "lng": -121.059815,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Necklace Valley Trailhead",
+    "lat": 47.665562,
+    "lng": -121.287237,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 16.4
+   },
+   {
+    "src": "USFS",
+    "name": "Tonga Ridge Trailhead",
+    "lat": 47.679173,
+    "lng": -121.263348,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 16.8
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Dingford Creek Trailhead (end of Middle Fork Snoqualmie Valley Road)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://hiking.andrewleader.net/routes/falcon-route/",
+     "fact": "From the end of the Middle Fork Valley Road, hike up the valley ~3 hours to a steel bridge, then cross-country to Summit Chief Valley"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Dingford Creek Trailhead",
+      "lat": 47.517325,
+      "lng": -121.4543,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Page does not name the lot; Dingford Creek TH assumed as the Middle Fork road end and matches sibling. Medium confidence; road may be closed."
+  }
+ },
+ {
+  "id": "wa_lundin_peak_northwest_face",
+  "name": "Northwest Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_lundin_peak",
+   "name": "Lundin Peak",
+   "lat": 47.4628774,
+   "lng": -121.400379,
+   "elevation_ft": 6057,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_lundin_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_lundin_peak_east_ridge",
+    "name": "PCT North (Snoqualmie Pass) Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4.2
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 7.2
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.7
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Snoqualmie Trailhead",
+    "lat": 47.547762,
+    "lng": -121.537101,
+    "km": 13.9
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text; no page for this face found.",
+   "trailhead": null,
+   "notes": "No route text; no page for this face found."
+  }
+ },
+ {
+  "id": "wa_middle_peak_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_middle_peak",
+   "name": "Middle Peak",
+   "lat": 48.30639,
+   "lng": -120.99403,
+   "elevation_ft": 8185,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_east_face",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Not researched; no route text. Sibling is Downey Creek TH, unconfirmed.",
+   "trailhead": null,
+   "notes": "Not researched; no route text. Sibling is Downey Creek TH, unconfirmed."
+  }
+ },
+ {
+  "id": "wa_middle_peak_traverse_route",
+  "name": "Traverse Route",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_middle_peak",
+   "name": "Middle Peak",
+   "lat": 48.30639,
+   "lng": -120.99403,
+   "elevation_ft": 8185,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_middle_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_east_face",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Not researched; no route text. Sibling is Downey Creek TH, unconfirmed.",
+   "trailhead": null,
+   "notes": "Not researched; no route text. Sibling is Downey Creek TH, unconfirmed."
+  }
+ },
+ {
+  "id": "wa_mixup_peak_pbs_late_night_special",
+  "name": "PBS Late Night Special",
+  "discipline": "alpine",
+  "grade": "5.7 PG13",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mixup_peak",
+   "name": "Mix-up Peak",
+   "lat": 48.4539,
+   "lng": -121.0604,
+   "elevation_ft": 7440,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mixup_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mix_up_peak_east_face",
+    "name": "Cascade Pass Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 19.4
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 24.1
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 24.4
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 24.7
+   },
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 24.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 24.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 24.9
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Report https://cascadeclimbers.com/forum/topic/108657-trip-report-mix-up-peak-pbs-late-night-special-08102026/ says standard approach to Gunsight Notch, mention",
+   "trailhead": null,
+   "notes": "Report https://cascadeclimbers.com/forum/topic/108657-trip-report-mix-up-peak-pbs-late-night-special-08102026/ says standard approach to Gunsight Notch, mentions Cache Col; no trailhead named. Cascade Pass TH likely but not stated; no official candidate matches."
+  }
+ },
+ {
+  "id": "wa_mount_adams_pinnacle_glacier_headwall",
+  "name": "Pinnacle Glacier Headwall",
+  "discipline": "mountaineering",
+  "grade": "Mod. Snow",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_adams",
+   "name": "Mount Adams",
+   "lat": 46.202494,
+   "lng": -121.490746,
+   "elevation_ft": 12276,
+   "region": "Washington",
+   "path": "usa.washington.wa_sw_tacoma.wa_southwest_cascades.wa_mount_adams"
+  },
+  "text": {
+   "approach": "A free wilderness permit is self-issued at the trailhead. From the Riley Camp Trailhead, hike the Riley Camp Trail, staying off the Riley Cut-Off at the first junction, until it meets the Pacific Crest Trail. Turn south on the Pacific Crest Trail for a few minutes to Riley Creek and follow the creek up through boulders to the moraines at the foot of the Pinnacle Glacier. The headwall route begins at the base of the glacier.",
+   "approach_logistics": "{\"trailhead\":\"Riley Camp Trailhead\",\"trailheadDirection\":\"From Trout Lake, drive Mt. Adams Road north about 1.3 miles, then turn left onto Forest Road 23 (Buck Creek Road) and follow it about 17.5 miles to the trailhead, which is easy to miss between mileposts 38 and 37.\"}",
+   "road": null,
+   "overview": "At the base the line may be obvious or not; several variations exist, so pick one. No cracks are on the route. The angle is mild at first and steep near the top. Rock bands seem stable, so objective danger looks modest. The route ends on the Pinnacle summit, an easy stroll from the main summit. Descend along the West Ridge; some parts are exposed though easy.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "adams_northwest_ridge",
+    "name": "Killen Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Cold Springs/Tr.72 Th",
+    "lat": 46.136557,
+    "lng": -121.496904,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "South Climb Trailhead",
+    "lat": 46.135758,
+    "lng": -121.497589,
+    "km": 7.4
+   },
+   {
+    "src": "USFS",
+    "name": "Crofton Ridge #73 East Trailhead",
+    "lat": 46.127206,
+    "lng": -121.517614,
+    "km": 8.6
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Upper Gotchen Creek (FR 8040)",
+    "lat": 46.121188,
+    "lng": -121.514854,
+    "km": 9.2
+   },
+   {
+    "src": "USFS",
+    "name": "Divide Camp Trailhead",
+    "lat": 46.269499,
+    "lng": -121.578808,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Crofton Ridge West",
+    "lat": 46.121324,
+    "lng": -121.560954,
+    "km": 10.5
+   },
+   {
+    "src": "USFS",
+    "name": "Stagman Ridge Trailhead",
+    "lat": 46.140624,
+    "lng": -121.597725,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Killen Creek Trailhead",
+    "lat": 46.288412,
+    "lng": -121.552332,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Williams Mine",
+    "lat": 46.170567,
+    "lng": -121.62641,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Pine-Way",
+    "lat": 46.102736,
+    "lng": -121.434754,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Trailhead: Snipes Mountain",
+    "lat": 46.093279,
+    "lng": -121.479301,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Muddy Meadows Trailhead",
+    "lat": 46.308257,
+    "lng": -121.539676,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "Potato Hill - Pacific Crest Trailhead",
+    "lat": 46.325577,
+    "lng": -121.505937,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Salt Creek Th",
+    "lat": 46.103512,
+    "lng": -121.602898,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "Upper Buck Creek Th",
+    "lat": 46.079586,
+    "lng": -121.570034,
+    "km": 15
+   }
+  ],
+  "firstPass": {
+   "why": "held: only non-land-manager placements (wta)",
+   "trailhead": {
+    "name": "Riley Camp Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "From the Riley Camp Trailhead, hike the Riley Camp Trail"
+    },
+    "placements": [
+     {
+      "source": "WTA",
+      "name": "Riley Camp (#64)",
+      "lat": 46.2172,
+      "lng": -121.6344,
+      "url": "https://www.wta.org/go-hiking/hikes/riley-camp"
+     }
+    ]
+   },
+   "notes": "Only one placement (WTA); no USFS/OSM point matched. Route text says it ends on the Pinnacle summit, an easy stroll from the main summit."
+  }
+ },
+ {
+  "id": "wa_mount_ballard_east_face",
+  "name": "East Face",
+  "discipline": "scrambling",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_ballard",
+   "name": "Mount Ballard",
+   "lat": 48.686066,
+   "lng": -120.757928,
+   "elevation_ft": 8371,
+   "region": "Pasayten/Okanogan",
+   "path": "usa.washington.wa_okanogan.wa_pasayten.wa_mount_ballard"
+  },
+  "text": {
+   "approach": "Drive the Harts Pass road over the pass and down the Slate Creek road to the locked gate (about 3,800 ft). Walk the old South Fork Slate Creek road roughly a mile to the large bridge near 4,000 ft, then leave the road and travel south through open forest.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "The approach most climbers use: a bushwhack from the Slate Creek road to the east ridge, a steep vegetated slot, scrambling into the east cirque, then a ledge traverse to the summit gully on the west side of the top block.",
+   "description": null,
+   "descent": "Retrace the route; descend the green slot carefully and keep to the forest on the left on the way down to avoid the alder."
+  },
+  "waypoints": [
+   {
+    "lat": 48.686066,
+    "lng": -120.757928,
+    "elev": 8371,
+    "name": "Mount Ballard summit (south/true peak)",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_ballard_south",
+    "name": "Canyon Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Brown Bear (PCT South) Trailhead",
+    "lat": 48.702504,
+    "lng": -120.672426,
+    "km": 6.5
+   },
+   {
+    "src": "USFS",
+    "name": "Harts Pass Trailhead",
+    "lat": 48.720996,
+    "lng": -120.669933,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail North",
+    "lat": 48.732066,
+    "lng": -120.674961,
+    "km": 8
+   },
+   {
+    "src": "USFS",
+    "name": "Slate Peak Trailhead",
+    "lat": 48.737839,
+    "lng": -120.678515,
+    "km": 8.2
+   },
+   {
+    "src": "USFS",
+    "name": "Buckskin Ridge T.H.",
+    "lat": 48.732301,
+    "lng": -120.668331,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Canyon Creek Trailhead",
+    "lat": 48.706506,
+    "lng": -120.918315,
+    "km": 12
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Robinson Creek Trailhead",
+    "lat": 48.661706,
+    "lng": -120.542025,
+    "km": 16.1
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 16.3
+   },
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "Monument Creek Trailhead",
+    "lat": 48.655436,
+    "lng": -120.515187,
+    "km": 18.1
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 18.9
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 19.1
+   },
+   {
+    "src": "NPS",
+    "name": "Happy Creek Forest Walk Trailhead",
+    "lat": 48.728543,
+    "lng": -121.055832,
+    "km": 22.4
+   }
+  ],
+  "firstPass": {
+   "why": "held: no placement; agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Slate Creek road gate (road end, about 3,800 ft)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Slate Creek road to the locked gate (about 3,800 ft), walk old South Fork Slate Creek road to the bridge"
+    },
+    "placements": []
+   },
+   "notes": "No named trailhead or coordinate: a gate on a road. No USFS/NPS point matches (Harts Pass candidates are 7 km+ away and are NOT the start). Trip-report search summaries (CascadeClimbers 2008, lemkeclimbs) agree on the gate but I did not open them. Sibling Canyon Creek Trailhead is a different side. Road status uncertain (2026 closure orders). Place by hand."
+  }
+ },
+ {
+  "id": "wa_mount_berge_east_ridge",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "grade": "5.8",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_berge",
+   "name": "Mount Berge",
+   "lat": 48.10476,
+   "lng": -120.94257,
+   "elevation_ft": 7948,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_chiwawa_ridge_dakobed.wa_mount_berge"
+  },
+  "text": {
+   "approach": "From the Buck Creek/Trinity Trailhead, hike roughly 6 miles through old burn/fireweed forest on the Buck Creek Trail, ford Buck Creek, then climb Mount Cleator's east ridge through logged forest. Contour left around 5,500 ft onto a boot path through an 'alder tunnel,' then traverse slippery heather and blueberry slopes to the base of twin gendarmes marking the start of the ridge. Gain the crest via a loose gully (easy to mid-5th class) right of the gendarmes.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Chiwawa River Road (Forest Road 6200)\",\"status\":\"Closed beyond Atkinson Flat Campground since May 20, 2026 for storm damage, under Forest Service order 06-17-07-2026-11 (through December 31, 2027). The Little Giant Fire closure (order 06-17-07-2026-40), in effect September 3 through October 31, 2026 unless lifted sooner, also closes FR 6200 and the Buck Creek Trail. Verify current status with the Wenatchee River Ranger District before approaching via Trinity/Buck Creek Trailhead.\",\"driveNote\":\"From Leavenworth: US-2 west 15 mi to Coles Corner, right on WA-207 north 4.4 mi, then Chiwaw",
+   "overview": "A striking, roughly 2,000 ft alpine granite ridge climb up Berge's east side - sustained low-to-mid 5th class rock broken by one 5.8 chimney crux - comparable in quality and length to the Complete North Ridge of Mount Stuart.",
+   "description": null,
+   "descent": "Two descent options are documented. The recommended option reverses the approach back over the Berge-Cleator saddle - a ledge traverse above the lower slabs is key to avoiding elevation loss and regain - followed by brushy, wet alder and steep heather down to the boot path and trail. The alternative descends west via the High Pass trail, but adds distance and is best combined with also summiting B"
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_berge_southwest_route",
+    "name": "Little Giant Trailhead (Chiwawa River Road, Trail #1518)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Trinity Trailhead",
+    "lat": 48.071972,
+    "lng": -120.850005,
+    "km": 7.8
+   },
+   {
+    "src": "USFS",
+    "name": "Phelps Creek Trailhead",
+    "lat": 48.083206,
+    "lng": -120.835015,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "Little Giant Trailhead",
+    "lat": 48.026606,
+    "lng": -120.829015,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "White River Trailhead",
+    "lat": 47.962806,
+    "lng": -120.945025,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Estes Butte Trailhead",
+    "lat": 47.972606,
+    "lng": -120.790015,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "Rock Creek Trailhead",
+    "lat": 47.969206,
+    "lng": -120.788015,
+    "km": 19
+   },
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 47.920306,
+    "lng": -120.895015,
+    "km": 20.8
+   },
+   {
+    "src": "USFS",
+    "name": "Schaefer Lake Trailhead",
+    "lat": 47.952306,
+    "lng": -120.773015,
+    "km": 21.1
+   },
+   {
+    "src": "USFS",
+    "name": "Basalt Pass Trailhead",
+    "lat": 47.951006,
+    "lng": -120.769015,
+    "km": 21.4
+   },
+   {
+    "src": "USFS",
+    "name": "Basalt Ridge Trailhead",
+    "lat": 47.951006,
+    "lng": -120.769015,
+    "km": 21.4
+   },
+   {
+    "src": "USFS",
+    "name": "Chikamin Trailhead",
+    "lat": 47.980506,
+    "lng": -120.702015,
+    "km": 22.6
+   },
+   {
+    "src": "USFS",
+    "name": "Minnow Creek Trailhead",
+    "lat": 47.954906,
+    "lng": -120.735015,
+    "km": 22.7
+   },
+   {
+    "src": "USFS",
+    "name": "Little Wenatchee Ford Trailhead",
+    "lat": 47.917016,
+    "lng": -121.087615,
+    "km": 23.5
+   },
+   {
+    "src": "USFS",
+    "name": "Entiat River Trailhead",
+    "lat": 48.024606,
+    "lng": -120.650215,
+    "km": 23.5
+   },
+   {
+    "src": "USFS",
+    "name": "SHETIPO",
+    "lat": 48.021905,
+    "lng": -120.644076,
+    "km": 24
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Trinity Trailhead (Buck Creek)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "From the Buck Creek/Trinity Trailhead, hike roughly 6 miles"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Trinity Trailhead",
+      "lat": 48.071972,
+      "lng": -120.850005,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Per the route's own text. Sibling Little Giant trailhead is the other side. USFS lists only Trinity; I did not verify Buck Creek and Trinity are one lot."
+  }
+ },
+ {
+  "id": "wa_mount_chaval_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_mount_chaval",
+   "name": "Mount Chaval",
+   "lat": 48.376055,
+   "lng": -121.325415,
+   "elevation_ft": 7127,
+   "region": "North Cascades / Stehekin",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_mount_chaval"
+  },
+  "text": {
+   "approach": "Shares the same general approach drainage as the West Route (Jug Creek/Bluff Lake/Cliff Lake benches) to gain the west side of the mountain, then continues around/up to the base of the north ridge rather than the west-ridge saddle system.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"Grade Creek Road (FR #2642/#2643) off Illabot Creek Road (FR-16)\",\"status\":\"Unpaved forest spur road; final approach section is an abandoned/unmaintained spur\",\"driveNote\":\"Same general access as the West Route via Illabot Creek Road off SR-530 north of Darrington.\",\"seasonalGate\":null}",
+   "overview": "A roughly 1,500-ft alpine rock route up Chaval's north ridge: mostly moderate 3rd/4th-class scrambling on solid, well-fractured granitic rock, with two harder pitches on the steepest section near the top.",
+   "description": null,
+   "descent": "Parties commonly traverse off the summit and descend the West Route's ramp/heather line rather than downclimbing the North Ridge."
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_mount_chaval_scramble",
+    "name": "Arrow Creek switchback (Illabot Creek Road / FR-16)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Huckleberry Mtn Trailhead",
+    "lat": 48.270539,
+    "lng": -121.349723,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 13.7
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 17.3
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 18.1
+   },
+   {
+    "src": "USFS",
+    "name": "Meadow Mountain Trailhead",
+    "lat": 48.189381,
+    "lng": -121.370989,
+    "km": 21
+   },
+   {
+    "src": "USFS",
+    "name": "Crystal Creek Trailhead",
+    "lat": 48.174326,
+    "lng": -121.468355,
+    "km": 24.8
+   },
+   {
+    "src": "USFS",
+    "name": "Old Sauk Trailhead",
+    "lat": 48.215776,
+    "lng": -121.558815,
+    "km": 24.8
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Text says same approach as West Route (Jug Creek/Bluff Lake/Cliff Lake via Grade Creek Road FR 2642/2643 off Illabot Creek Road FR-16) with no trailhead name. S",
+   "trailhead": null,
+   "notes": "Text says same approach as West Route (Jug Creek/Bluff Lake/Cliff Lake via Grade Creek Road FR 2642/2643 off Illabot Creek Road FR-16) with no trailhead name. Search summaries: Grade Creek spur has deteriorated and may be undrivable; a SummitPost west-face approach parks at the Arrow Creek switchback on FR-16 (the sibling's start). Which start this route uses is not stated on any page I could open. Not guessed."
+  }
+ }
+]

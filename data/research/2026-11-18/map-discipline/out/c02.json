@@ -1,0 +1,437 @@
+[
+ {
+  "id": "ca_emerald_peak_west_gully_to_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text only says via the John Muir Trail to Evolution Meadow; no trailhead named (North Lake, South Lake, Florence Lake all plausible). No page opened that fixes one."
+ },
+ {
+  "id": "ca_english_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "stavislost trip report says there is no real trailhead, only pull-outs on Meadow Lake Road; no named lot to place."
+ },
+ {
+  "id": "ca_excelsior_mountain_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Virginia Lakes Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://stavislost.com/hikes/trail/excelsior-mountain/",
+    "fact": "trip report: set out from the Virginia Lakes Trailhead along Green Creek Trail to the saddle"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Virginia Lakes Trailhead",
+     "lat": 38.048105,
+     "lng": -119.262713,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trail",
+    "value": "Green Creek Trail past Blue, Cooney, Frog lakes",
+    "url": "https://stavislost.com/hikes/trail/excelsior-mountain/"
+   }
+  ],
+  "notes": "One official placement only (OSM left to script)."
+ },
+ {
+  "id": "ca_foerster_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No page opened that names its trailhead; SummitPost returns 403."
+ },
+ {
+  "id": "ca_freel_peak_south_ridge_via_tahoe_rim_trail",
+  "status": "found",
+  "trailhead": {
+   "name": "Armstrong Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Hike up toward Armstrong Pass, join the Tahoe Rim Trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Armstrong Pass",
+     "lat": 38.830043,
+     "lng": -119.900871,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text says several trail approaches exist; Armstrong Pass is the one named. Not verified against a page."
+ },
+ {
+  "id": "ca_gemini_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Only a SummitPost search snippet suggests Pine Creek from the east; page 403, not evidence."
+ },
+ {
+  "id": "ca_giraud_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "South Lake Trailhead (Bishop Pass trail)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.sierrainaday.com/post/giraud-peak",
+    "fact": "Sierra in a Day: Trailhead: Bishop Pass; route up Dusy Basin to Southeast Face"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "South Lake Trailhead",
+     "lat": 37.169305,
+     "lng": -118.565813,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "grade",
+    "value": "Class 3 (Southeast Face)",
+    "url": "https://www.sierrainaday.com/post/giraud-peak"
+   },
+   {
+    "field": "elevation_ft",
+    "value": "12608",
+    "url": "https://www.sierrainaday.com/post/giraud-peak"
+   }
+  ],
+  "notes": "Page names the Bishop Pass trailhead; that trail starts at South Lake TH (my inference, not stated on the page). Page rates route class 3, stored class 2."
+ },
+ {
+  "id": "ca_glacier_ridge_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Only a SummitPost snippet (Cloud Canyon, three trailheads) seen; page 403."
+ },
+ {
+  "id": "ca_goat_mountain_via_grouse_lake_and_northwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Copper Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Follow the Copper Creek Trail to the Granite Basin area"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Copper Creek",
+     "lat": 36.796495,
+     "lng": -118.583551,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Official point is in Cedar Grove (8 km); the trail climbs from there."
+ },
+ {
+  "id": "ca_goodale_mountain_west_side_from_taboose_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Taboose Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Climb the Taboose Pass trail"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "TABOOSE PASS TH",
+     "lat": 37.009505,
+     "lng": -118.327312,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route is named West Side from Taboose Pass."
+ },
+ {
+  "id": "ca_granite_chief_granite_chief_trail_from_olympic_valley",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text names the start behind the Olympic Valley fire station; no official point within 25 km matches, and OSM placement was withdrawn from my brief. Leave to the script."
+ },
+ {
+  "id": "ca_gray_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No trailhead identified from a page; off-trail Clark Range peak."
+ },
+ {
+  "id": "ca_highland_peak_via_noble_lake",
+  "status": "found",
+  "trailhead": {
+   "name": "Ebbetts Pass Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.alltrails.com/trail/us/california/highland-peak-via-pct",
+    "fact": "AllTrails: route ascends from the PCT at Ebbetts Pass toward Highland Peak; route text: PCT to Noble Lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Ebbetts Pass Trailhead",
+     "lat": 38.543205,
+     "lng": -119.805613,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft_final_ridge",
+    "value": "about 2000 over 0.7 mi from saddle",
+    "url": "https://www.alltrails.com/trail/us/california/highland-peak-via-pct"
+   }
+  ],
+  "notes": ""
+ },
+ {
+  "id": "ca_homers_nose_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Searches found nothing relevant to the peak."
+ },
+ {
+  "id": "ca_iron_mountain_via_fern_lake",
+  "status": "found",
+  "trailhead": {
+   "name": "Devils Postpile Trailhead (Fern Lake Trail)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.mammothtrails.org/trail/98/fern-lake-trail/",
+    "fact": "Mammoth Lakes Trail System: Fern Lake Trail is reached from the Devils Postpile Trailhead via PCT/JMT; route text names Fern Lake and the Mammoth/Beck Lakes trails"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "FERN LAKE (D52)TH",
+     "lat": 37.62725,
+     "lng": -119.085834,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text mentions the Mammoth Trail and the San Joaquin crossing; page describes the Devils Postpile start for Fern Lake. Moderate confidence."
+ },
+ {
+  "id": "ca_joe_devel_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Whitney Portal or Cottonwood Lakes plausible; a trip report found used Cottonwood Lakes for a multi-day loop, not this route."
+ },
+ {
+  "id": "ca_kearsarge_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "Onion Valley Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.alltrails.com/poi/us/california/independence/kearsarge-peak",
+    "fact": "AllTrails: route ascends steeply from the Onion Valley trailhead toward Kearsarge Peak"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Onion Valley Campground",
+     "lat": 36.772538,
+     "lng": -118.341244,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Official point is named Onion Valley Campground (1.9 km from peak); the road-end area."
+ },
+ {
+  "id": "ca_kennedy_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Cedar Grove trails (Lewis Creek, Hotel Creek) are candidates; none tied to this route by a page."
+ },
+ {
+  "id": "ca_kern_peak_kern_peak_trail_east_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text says long trail approach through Kern Plateau meadows, no trailhead; Blackrock TH is nearest official but unconfirmed."
+ },
+ {
+  "id": "ca_kern_point_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No trailhead identified from a page."
+ },
+ {
+  "id": "ca_koip_peak_via_parker_pass_and_koip_peak_pass",
+  "status": "found",
+  "trailhead": {
+   "name": "Mono/Parker Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Follow the Mono Pass trail to the Parker Pass junction"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Mono/Parker Pass Trailhead",
+     "lat": 37.89091,
+     "lng": -119.262696,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": ""
+ },
+ {
+  "id": "ca_lamont_peak_lamont_peak_trail",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Text: starts at the Canebrake Road saddle; no official candidates in range. Leave to the OSM script."
+ },
+ {
+  "id": "ca_lassen_peak_trail",
+  "status": "found",
+  "trailhead": {
+   "name": "Lassen Peak Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm",
+    "fact": "NPS Hike Lassen Peak: Start: Lassen Peak Trailhead"
+   },
+   "placements": [
+    {
+     "source": "NPS",
+     "name": "Lassen Peak Trailhead Parking",
+     "lat": 40.474249,
+     "lng": -121.505568,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "round_trip_miles",
+    "value": "5",
+    "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm"
+   },
+   {
+    "field": "gain_ft",
+    "value": "1957",
+    "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm"
+   },
+   {
+    "field": "start_elev_ft",
+    "value": "8500",
+    "url": "https://www.nps.gov/thingstodo/hikelassenpeak.htm"
+   }
+  ],
+  "notes": ""
+ },
+ {
+  "id": "ca_leavitt_peak_pacific_crest_trail_and_east_shoulder",
+  "status": "found",
+  "trailhead": {
+   "name": "Sonora Pass Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Follow the PCT south from Sonora Pass"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Sonora Pass Trailhead",
+     "lat": 38.329792,
+     "lng": -119.635133,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Leavitt Lake TH (3.7 km) is another start; text names Sonora Pass."
+ },
+ {
+  "id": "ca_lion_rock_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No trailhead identified from a page."
+ }
+]

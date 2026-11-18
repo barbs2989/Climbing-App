@@ -1,0 +1,848 @@
+[
+ {
+  "id": "co_mount_sherman_southwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Fourmile Creek Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "From the Fourmile Creek side",
+    "url": "https://www.14ers.com/route.php?route=sher1"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "12000 (gate)",
+    "url": "https://www.14ers.com/route.php?route=sher1"
+   },
+   {
+    "field": "distance_mi",
+    "value": "5.25 rt",
+    "url": "https://www.14ers.com/route.php?route=sher1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "2100",
+    "url": "https://www.14ers.com/route.php?route=sher1"
+   }
+  ],
+  "notes": "Not in officialCandidates (Limber Grove etc. are other drainages); needs OSM match by name. 11,100 ft winter closure start also exists."
+ },
+ {
+  "id": "co_mount_wilson_southwest_slopes",
+  "status": "found",
+  "trailhead": {
+   "name": "Kilpacker Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Mt. Wilson Southwest Slopes starts at Kilpacker basin TH",
+    "url": "https://www.14ers.com/route.php?route=mwil6"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Kilpacker",
+     "lat": 37.796868,
+     "lng": -108.038651,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10100",
+    "url": "https://www.14ers.com/route.php?route=mwil6"
+   },
+   {
+    "field": "distance_mi",
+    "value": "12.5 rt",
+    "url": "https://www.14ers.com/route.php?route=mwil6"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4400",
+    "url": "https://www.14ers.com/route.php?route=mwil6"
+   },
+   {
+    "field": "class",
+    "value": "3",
+    "url": "https://www.14ers.com/route.php?route=mwil6"
+   },
+   {
+    "field": "road",
+    "value": "FR 535, 5+ mi 2WD dirt, off CO145 south of Lizard Head Pass",
+    "url": "https://www.14ers.com/route.php?route=mwil6"
+   }
+  ],
+  "notes": "Route-specific 14ers.com page. Rock of Ages / Navajo Basin serve other Wilson-group routes, not this one."
+ },
+ {
+  "id": "co_mount_yale_southwest_slopes",
+  "status": "found",
+  "trailhead": {
+   "name": "Denny Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Mount Yale Southwest Slopes standard route from Denny Creek TH",
+    "url": "https://www.14ers.com/route.php?route=yale1"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Denny Creek Trailhead",
+     "lat": 38.81495,
+     "lng": -106.33426,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "9900",
+    "url": "https://www.14ers.com/route.php?route=yale1"
+   },
+   {
+    "field": "distance_mi",
+    "value": "9.5 rt",
+    "url": "https://www.14ers.com/route.php?route=yale1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4300",
+    "url": "https://www.14ers.com/route.php?route=yale1"
+   },
+   {
+    "field": "class",
+    "value": "2 (easy 3 on ridge)",
+    "url": "https://www.14ers.com/route.php?route=yale1"
+   }
+  ],
+  "notes": ""
+ },
+ {
+  "id": "co_niagara_peak_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Burns Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Niagara NE Ridge from suggested Burns Gulch TH, with American and Jones",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   "placements": [
+    {
+     "source": "climb13ers page coordinate",
+     "name": "Burns Gulch TH",
+     "lat": 37.91798,
+     "lng": -107.558,
+     "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10790",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "distance_mi",
+    "value": "9.6 rt",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4145",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/niagara-peak"
+   }
+  ],
+  "notes": "Not in USFS list. Placement is the page's printed DMS coordinate (N37 55 04.73, W107 33 28.78), no second placement; ~15 km from summit. 4WD can shorten ~2 mi each way."
+ },
+ {
+  "id": "co_north_apostle_southwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Clear Creek/Winfield/Apostles Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "North Apostle SW Ridge from Clear Creek/Winfield/Apostles TH",
+    "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10880",
+    "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+   },
+   {
+    "field": "distance_mi",
+    "value": "8 rt",
+    "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3320",
+    "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/north-apostle"
+   }
+  ],
+  "notes": "Winfield area; USFS South Fork Clear Creek TH (4 km) is a different place, not matched. Needs OSM match. Alt Clohesy Lake TH 10,880 ft."
+ },
+ {
+  "id": "co_phoenix_peak_south_ridge_and_slopes",
+  "status": "found",
+  "trailhead": {
+   "name": "East Willow Creek Trailhead (upper)",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Phoenix Peak South Ridge & Slopes from East Willow Creek TH",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   },
+   "placements": [
+    {
+     "source": "climb13ers page coordinate",
+     "name": "East Willow Creek upper TH",
+     "lat": 37.91894,
+     "lng": -106.903,
+     "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10340",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   },
+   {
+    "field": "distance_mi",
+    "value": "9.4 rt",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3585",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13895--phoenix-peak"
+   }
+  ],
+  "notes": "Page coordinate N37 55 08.18, W106 54 10.81 (upper 4WD trailhead); lower switchback lot (~9,990 ft) adds ~3 mi rt. USFS Phoenix Park Trailhead (37.9045,-106.9165) is ~2 km away and may be the lower lot: unconfirmed, not reported as a placement."
+ },
+ {
+  "id": "co_red_mountain_north_ridge_from_culebra_peak",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text: reached only across private ranch land with a permit, done after Culebra Peak. No page opened (climb13ers slug 404). Access is via the Culebra ranch, not a public trailhead; nearest USFS points 17+ km away are unrelated."
+ },
+ {
+  "id": "co_redcloud_peak_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Redcloud NE Ridge from Silver Creek/Grizzly Gulch at 10,400 ft",
+    "url": "https://www.14ers.com/route.php?route=redc1"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10400",
+    "url": "https://www.14ers.com/route.php?route=redc1"
+   },
+   {
+    "field": "distance_mi",
+    "value": "9 rt",
+    "url": "https://www.14ers.com/route.php?route=redc1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3700",
+    "url": "https://www.14ers.com/route.php?route=redc1"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.14ers.com/route.php?route=redc1"
+   }
+  ],
+  "notes": "Not in USFS list (Nellie Creek/Crystal Larson are other peaks' trailheads). Needs OSM match. About 16-18 mi up Cinnamon Pass road from Lake City."
+ },
+ {
+  "id": "co_san_luis_peak_northeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Stewart Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "San Luis NE Ridge from Stewart Creek, 10,500 ft",
+    "url": "https://www.14ers.com/route.php?route=sanl1"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stewart Creek Trailhead",
+     "lat": 38.02479,
+     "lng": -106.841089,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10500",
+    "url": "https://www.14ers.com/route.php?route=sanl1"
+   },
+   {
+    "field": "distance_mi",
+    "value": "13.5 rt",
+    "url": "https://www.14ers.com/route.php?route=sanl1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3600",
+    "url": "https://www.14ers.com/route.php?route=sanl1"
+   },
+   {
+    "field": "class",
+    "value": "1",
+    "url": "https://www.14ers.com/route.php?route=sanl1"
+   }
+  ],
+  "notes": "South Ridge (standard) starts at West Willow Creek 11,500 ft; not this route."
+ },
+ {
+  "id": "co_snowmass_mountain_east_slopes",
+  "status": "found",
+  "trailhead": {
+   "name": "Snowmass Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Snowmass East Slopes from Snowmass Creek, 8,400 ft",
+    "url": "https://www.14ers.com/route.php?route=snow1"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "8400",
+    "url": "https://www.14ers.com/route.php?route=snow1"
+   },
+   {
+    "field": "distance_mi",
+    "value": "22 rt",
+    "url": "https://www.14ers.com/route.php?route=snow1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5800",
+    "url": "https://www.14ers.com/route.php?route=snow1"
+   },
+   {
+    "field": "class",
+    "value": "3",
+    "url": "https://www.14ers.com/route.php?route=snow1"
+   }
+  ],
+  "notes": "Not in USFS list (Geneva Lake/Silver Creek TH are south-side approaches, a different route). Needs OSM match."
+ },
+ {
+  "id": "co_stewart_peak_east_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Nutras Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "East Ridge starts at Nutras Creek TH, small dirt lot ~11,000 ft",
+    "url": "https://thenextsummit.org/colorado-13ers/hiking-stewart-peak/"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "8.25 rt",
+    "url": "https://thenextsummit.org/colorado-13ers/hiking-stewart-peak/"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3000",
+    "url": "https://thenextsummit.org/colorado-13ers/hiking-stewart-peak/"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.cmc.org/education-adventure/trips/routes-places/stewart-peak"
+   }
+  ],
+  "notes": "Not in USFS list (Stewart Creek TH, 7 km east, is the SW Ridge start; a different trailhead). Needs OSM/Nutras Creek coordinate."
+ },
+ {
+  "id": "co_sunlight_peak_south_face",
+  "status": "found",
+  "trailhead": {
+   "name": "Needleton Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Sunlight South Face from Needleton via Chicago Basin",
+    "url": "https://www.14ers.com/route.php?route=sunl2"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "17 rt from Needleton; 6 from Chicago Basin",
+    "url": "https://www.14ers.com/route.php?route=sunl2"
+   },
+   {
+    "field": "gain_ft",
+    "value": "6000 from Needleton",
+    "url": "https://www.14ers.com/route.php?route=sunl2"
+   },
+   {
+    "field": "class",
+    "value": "4",
+    "url": "https://www.14ers.com/route.php?route=sunl2"
+   }
+  ],
+  "notes": "Narrow-gauge train drop at Needleton. 14ers.com lists elevation 11,100 ft, which is Chicago Basin, not Needleton (~8,200 ft; Turret page says 8,235). Route text silent; page-based."
+ },
+ {
+  "id": "co_sunshine_peak_via_redcloud_peak",
+  "status": "found",
+  "trailhead": {
+   "name": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Sunshine via Redcloud from Silver Creek/Grizzly Gulch at 10,400 ft",
+    "url": "https://www.14ers.com/route.php?route=suns2"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "12.25 rt",
+    "url": "https://www.14ers.com/route.php?route=suns2"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4800",
+    "url": "https://www.14ers.com/route.php?route=suns2"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.14ers.com/route.php?route=suns2"
+   }
+  ],
+  "notes": "Same trailhead as Redcloud NE Ridge. Needs OSM match."
+ },
+ {
+  "id": "co_tabeguache_peak_via_mount_shavano",
+  "status": "found",
+  "trailhead": {
+   "name": "Shavano/Tabeguache Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Tabeguache via Mt. Shavano from Shavano/Tabeguache TH, 9,750 ft",
+    "url": "https://www.14ers.com/route.php?route=tabe2"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Shavano/Tabeguache Trailhead",
+     "lat": 38.596701,
+     "lng": -106.196592,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "12 rt",
+    "url": "https://www.14ers.com/route.php?route=tabe2"
+   },
+   {
+    "field": "gain_ft",
+    "value": "5600",
+    "url": "https://www.14ers.com/route.php?route=tabe2"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.14ers.com/route.php?route=tabe2"
+   }
+  ],
+  "notes": "West Ridge route (tabe3w) uses a different start; not this route."
+ },
+ {
+  "id": "co_thunder_pyramid_west_face_white_couloir",
+  "status": "found",
+  "trailhead": {
+   "name": "Maroon Lake Trailhead",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "reached from the Maroon Lake area"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Maroon Lake Overnight Trailhead",
+     "lat": 39.098597,
+     "lng": -106.938328,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "SummitPost route page returned 403 (skipped). Route text plus a search summary agree on West Maroon Trail from Maroon Lake; USFS point is the overnight lot at Maroon Lake, ~4 km from summit. Confirm lot vs road end by OSM."
+ },
+ {
+  "id": "co_trinity_peak_west_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Molas Pass - Elk Park Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Trinity West Ridge via Elk Creek / Vestal Creek from Molas Pass - Elk Park TH",
+    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10630",
+    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak"
+   },
+   {
+    "field": "distance_mi",
+    "value": "22.75 rt",
+    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "7150",
+    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak"
+   },
+   {
+    "field": "class",
+    "value": "4",
+    "url": "https://www.climb13ers.com/colorado-13ers/trinity-peak"
+   }
+  ],
+  "notes": "Route text says Vestal Basin; page agrees (via Elk Park). Other Vestal access is Needleton by train. Not in USFS list; needs OSM."
+ },
+ {
+  "id": "co_turret_peak_northwest_slope",
+  "status": "found",
+  "trailhead": {
+   "name": "Needleton Bridge Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Turret NW Slope from Needleton Bridge (narrow-gauge drop), 8,235 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "8235",
+    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+   },
+   {
+    "field": "distance_mi",
+    "value": "10.5 rt to Ruby Creek camp",
+    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4900 to camp",
+    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.climb13ers.com/colorado-13ers/turret-peak"
+   }
+  ],
+  "notes": "Train-only access per page; boarding in Silverton for Needleton reportedly not possible since 2021, check. Route text says Chicago Basin; same Needleton start."
+ },
+ {
+  "id": "co_un_13_820_southwest_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "UN 13,820 SW Ridge Route from Grizzly Gulch - Silver Ck TH, 10,440 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10440",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   },
+   {
+    "field": "distance_mi",
+    "value": "about 1.5 one-way UN13838 to UN13820",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   }
+  ],
+  "notes": "Route text says Silver Creek road near Redcloud: matches. Needs OSM match."
+ },
+ {
+  "id": "co_un_13_838_west_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Silver Creek/Grizzly Gulch Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "UN 13,838 reached from Grizzly Gulch - Silver Ck TH via 13,020 saddle",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10440",
+    "url": "https://www.climb13ers.com/colorado-13ers/un13811"
+   }
+  ],
+  "notes": "Route text says rough 4WD road near Redcloud: matches Cinnamon Pass road. Page describes a saddle/NE approach, not clearly a west ridge; trailhead same either way. Needs OSM match."
+ },
+ {
+  "id": "co_uncompahgre_peak_south_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Nellie Creek Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Uncompahgre South Ridge standard route from Nellie Creek, 11,400 ft (4WD)",
+    "url": "https://www.14ers.com/route.php?route=unco1"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Nellie Creek Trailhead",
+     "lat": 38.062606,
+     "lng": -107.42211,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "7.5 rt from 4WD TH; 15.5 from 2WD",
+    "url": "https://www.14ers.com/route.php?route=unco1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3000 from 4WD TH; 5500 from 2WD",
+    "url": "https://www.14ers.com/route.php?route=unco1"
+   },
+   {
+    "field": "class",
+    "value": "2",
+    "url": "https://www.14ers.com/route.php?route=unco1"
+   }
+  ],
+  "notes": "Lower 2WD parking exists; USFS point is the main TH."
+ },
+ {
+  "id": "co_vermilion_peak_southeast_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Lake Hope Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Vermilion SE Ridge from Lake Hope TH, 10,745 ft",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Hope Lake Trailhead",
+     "lat": 37.804939,
+     "lng": -107.851592,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "trailhead_elev_ft",
+    "value": "10745",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   },
+   {
+    "field": "distance_mi",
+    "value": "9.15 rt (sequence of peaks)",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   },
+   {
+    "field": "gain_ft",
+    "value": "4450",
+    "url": "https://www.climb13ers.com/colorado-13ers/vermillion-peak"
+   }
+  ],
+  "notes": "Lake Hope (page) = Hope Lake (USFS), near Ophir/Telluride. A search summary said SummitPost SE ridge starts from South Mineral Creek side (unopened): conflict; Telluride side used per route text."
+ },
+ {
+  "id": "co_windom_peak_west_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Needleton Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Windom West Ridge from Needleton via Chicago Basin",
+    "url": "https://www.14ers.com/route.php?route=wind1"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi",
+    "value": "18 rt from Needleton; 6 from Chicago Basin",
+    "url": "https://www.14ers.com/route.php?route=wind1"
+   },
+   {
+    "field": "gain_ft",
+    "value": "6000 from Needleton",
+    "url": "https://www.14ers.com/route.php?route=wind1"
+   },
+   {
+    "field": "class",
+    "value": "easy 3",
+    "url": "https://www.14ers.com/route.php?route=wind1"
+   }
+  ],
+  "notes": "Same Needleton start as Sunlight; 14ers.com 11,100 ft is Chicago Basin. Route text says Twin Lakes basin, consistent."
+ },
+ {
+  "id": "me_baxter_peak_hunt_trail",
+  "status": "found",
+  "trailhead": {
+   "name": "Katahdin Stream Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "fact": "Hunt Trail starts at Katahdin Stream trailhead",
+    "url": "https://en.wikipedia.org/wiki/Katahdin"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Hunt Trail = final AT leg to Baxter Peak. Not in NPS list. Campground coordinate seen only in a search summary (TopoQuest 45.88727,-68.99671), so not reported as a placement; trailhead is at the campground's north end."
+ },
+ {
+  "id": "me_crocker_mountain_appalachian_trail_from_route_27",
+  "status": "found",
+  "trailhead": {
+   "name": "Appalachian Trail Route 27 Trailhead (Crocker)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Appalachian Trail from Route 27"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route name names it; no page opened. Search summary: large lot south side of ME 27, ~2.6 mi north of Sugarloaf access road toward Eustis. Needs OSM/ATC placement."
+ },
+ {
+  "id": "me_saddleback_mountain_appalachian_trail_north_from_route_4",
+  "status": "found",
+  "trailhead": {
+   "name": "Appalachian Trail Route 4 Trailhead (Saddleback)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Appalachian Trail north from Route 4"
+   },
+   "placements": []
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route name names it; no page opened. Search summary: lot west/southwest of ME 4, Sandy River Plantation, ~9 mi south of Rangeley. Needs OSM/ATC placement."
+ }
+]

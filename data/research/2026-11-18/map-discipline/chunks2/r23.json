@@ -1,0 +1,1347 @@
+[
+ {
+  "id": "wa_north_peak_north_ridge",
+  "name": "North Ridge",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_peak",
+   "name": "North Peak",
+   "lat": 48.3068,
+   "lng": -120.994,
+   "elevation_ft": 8160,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_north_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_west_face_2",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: No route text, and I could not identify which North Peak this is (row coordinate 48.3068,-120.994 is roughly 9 km east of the Bachelor Creek area the West Face ",
+   "trailhead": null,
+   "notes": "No route text, and I could not identify which North Peak this is (row coordinate 48.3068,-120.994 is roughly 9 km east of the Bachelor Creek area the West Face route uses). Searches found nothing."
+  }
+ },
+ {
+  "id": "wa_north_peak_southeast_buttress",
+  "name": "Southeast Buttress",
+  "discipline": "alpine",
+  "grade": "5.7",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_north_peak",
+   "name": "North Peak",
+   "lat": 48.3068,
+   "lng": -120.994,
+   "elevation_ft": 8160,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_glacier_peak_wilderness.wa_gunsight_range_the.wa_north_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_west_face_2",
+    "name": "Downey Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 18.5
+   },
+   {
+    "src": "NPS",
+    "name": "Imus Creek Loop Trail Trailhead",
+    "lat": 48.3085,
+    "lng": -120.65601,
+    "km": 25
+   }
+  ],
+  "firstPass": {
+   "why": "stuck: Same as North Peak North Ridge: peak could not be identified and no page found.",
+   "trailhead": null,
+   "notes": "Same as North Peak North Ridge: peak could not be identified and no page found."
+  }
+ },
+ {
+  "id": "wa_old_guard_peak_east_side_route",
+  "name": "East Side Route",
+  "discipline": "alpine",
+  "grade": "5.5",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_old_guard_peak",
+   "name": "Old Guard Peak",
+   "lat": 48.3559,
+   "lng": -121.0358,
+   "elevation_ft": 8260,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_old_guard_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": "{\"name\":\"Cascade River Road\",\"status\":\"Paved for the first ~10 miles from SR 20 at Marblemount, then rough gravel; the final 3 miles to the trailhead are narrow with steep drop-offs.\",\"driveNote\":\"Same approach infrastructure as the Southwest Route; see that route for full access detail. Alternate southern access via Suiattle River Road (FR 26)/Downey Creek Trailhead is closed by a washout under a Forest Service order in effect April 2, 2026 through January 1, 2028.\",\"seasonalGate\":\"Gated in winter/early spring; typically opens to the Cascade Pass Trailhead parking area by late June.\"}",
+   "overview": "A short, roped alternative to the standard scramble: 2 to 3 pitches of easy/moderate 5th-class climbing rising directly from the LeConte Glacier up Old Guard's east side.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 48.392591,
+    "lng": -121.056917,
+    "elev": 5850,
+    "name": "Yang Yang Lakes",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.339595,
+    "lng": -121.052078,
+    "elev": 6200,
+    "name": "White Rock Lakes",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.442368,
+    "lng": -121.048085,
+    "elev": 6320,
+    "name": "Kool-Aid Lake",
+    "type": "Campsite"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Suiattle Trailhead",
+    "lat": 48.248106,
+    "lng": -121.192115,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Downey Creek Trailhead",
+    "lat": 48.259506,
+    "lng": -121.222915,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "Green Mountain Trailhead",
+    "lat": 48.268149,
+    "lng": -121.236861,
+    "km": 17.8
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 22.3
+   }
+  ],
+  "firstPass": {
+   "why": "held: only non-land-manager placements (wta); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Cascade Pass Trailhead",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Cascade River Road, final 3 miles to the trailhead; same approach infrastructure as the Southwest Route"
+    },
+    "placements": [
+     {
+      "source": "WTA",
+      "name": "Cascade Pass trailhead",
+      "lat": 48.4754,
+      "lng": -121.0751,
+      "url": "https://www.wta.org/go-hiking/hikes/cascade-pass"
+     }
+    ]
+   },
+   "notes": "Route text never names the trailhead; Cascade Pass is inferred from the road description (road ends there, 23 mi from Marblemount). Reaches LeConte Glacier then 2-3 pitches of 5th; text calls it a roped alternative to the standard scramble, which implies the summit but never says so. Only one placement (WTA); not in the official list. No page found linking Old Guard explicitly to Cascade Pass; low confidence."
+  }
+ },
+ {
+  "id": "wa_overcoat_peak_north_face",
+  "name": "North Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_overcoat_peak",
+   "name": "Overcoat Peak",
+   "lat": 47.5139668,
+   "lng": -121.2922506,
+   "elevation_ft": 7432,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_overcoat_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": "In mid-July the descent was a class 4 downclimb to a rappel anchor about 50 ft above the gully, then crossing snow at the gully bottom while roped."
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_overcoat_peak_southeast_route",
+    "name": "Dingford Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 12.5
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 13.2
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 13.3
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 13.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Tucquala Meadows Trailhead",
+    "lat": 47.543506,
+    "lng": -121.096615,
+    "km": 15.1
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Paddy-Go-Easy Trailhead",
+    "lat": 47.532873,
+    "lng": -121.082797,
+    "km": 15.9
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Dingford Creek Trailhead",
+    "identifiedBy": {
+     "kind": "page_peak",
+     "url": "https://turns-all-year.com/trip-reports/june-2-2018-overcoat-peak",
+     "fact": "party started at Dingford Creek Trailhead (bike NF-5620 to Dutch Miller Gap TH, then trail and river ford) to reach Overcoat Peak"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Dingford Creek Trailhead",
+      "lat": 47.517325,
+      "lng": -121.4543,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Low confidence for THIS face: the report climbs a couloir to the NE side, and the route's own text says nothing about approach. An eastern approach from Pete Lake also exists (search hint only). Dingford is 12 km from the peak and the report bikes 8 mi of closed road beyond it."
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_face",
+  "name": "East Face",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+    "identifiedBy": {
+     "kind": "page_peak",
+     "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+     "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+      "lat": 47.428012,
+      "lng": -121.413484,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Red Mountain (#1033) trailhead",
+      "lat": 47.4278,
+      "lng": -121.4134,
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+     }
+    ]
+   },
+   "notes": "Peak-level only. Both pages describe the west-side walk-up; an east-side route may be reached from the same Commonwealth Basin trail or from Snow Lake, which neither page covers. Low confidence."
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_east_ridge",
+  "name": "East Ridge",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+    "identifiedBy": {
+     "kind": "page_peak",
+     "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+     "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+      "lat": 47.428012,
+      "lng": -121.413484,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Red Mountain (#1033) trailhead",
+      "lat": 47.4278,
+      "lng": -121.4134,
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+     }
+    ]
+   },
+   "notes": "Peak-level only; low confidence (east side)."
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_southeast_face",
+  "name": "Southeast Face",
+  "discipline": "alpine",
+  "grade": "Class 4",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+    "identifiedBy": {
+     "kind": "page_peak",
+     "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+     "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+      "lat": 47.428012,
+      "lng": -121.413484,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Red Mountain (#1033) trailhead",
+      "lat": 47.4278,
+      "lng": -121.4134,
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+     }
+    ]
+   },
+   "notes": "Peak-level only; low confidence (southeast side). Mountaineers describes the trail rising to the base of Red Mountain's south ridge."
+  }
+ },
+ {
+  "id": "wa_red_mountain_snoqualmie_west_ridge",
+  "name": "West Ridge",
+  "discipline": "alpine",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_red_mountain_snoqualmie",
+   "name": "Red Mountain",
+   "lat": 47.456135,
+   "lng": -121.389105,
+   "elevation_ft": 5890,
+   "region": "Alpine Lakes",
+   "path": "usa.washington.wa_centralwest.wa_snoqualmie_pass_area.wa_red_mountain_snoqualmie"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_red_mountain_snoqualmie_standard",
+    "name": "PCT North Trailhead, Snoqualmie Pass"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 2.8
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 3.6
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 4
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 5.9
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 6.4
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Keechelus Trailhead",
+    "lat": 47.384733,
+    "lng": -121.389446,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Annette Lake/Asahel Curtis Trailhead",
+    "lat": 47.392809,
+    "lng": -121.474008,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Pratt Lake Trailhead",
+    "lat": 47.397861,
+    "lng": -121.48645,
+    "km": 9.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rachel Lake Trailhead",
+    "lat": 47.400706,
+    "lng": -121.283915,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "Talapus Lake Trailhead",
+    "lat": 47.401162,
+    "lng": -121.518504,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ira Spring Trailhead",
+    "lat": 47.424763,
+    "lng": -121.583422,
+    "km": 15
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Pacific Crest Trail Trailhead (Snoqualmie Pass, Red Mountain #1033)",
+    "identifiedBy": {
+     "kind": "page_peak",
+     "url": "https://www.mountaineers.org/activities/routes-places/red-pass-mountain-commonwealth-basin",
+     "fact": "Red Mountain approached from the PCT Trailhead off I-90 exit 52 via Commonwealth Basin"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Pacific Crest Trail - Snoqualmie North Trailhead",
+      "lat": 47.428012,
+      "lng": -121.413484,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Red Mountain (#1033) trailhead",
+      "lat": 47.4278,
+      "lng": -121.4134,
+      "url": "https://www.wta.org/go-hiking/hikes/red-mountain-commonwealth-basin"
+     }
+    ]
+   },
+   "notes": "Peak-level; the west slope is the standard route per WTA, so this side is covered. Two placements agree within 30 m."
+  }
+ },
+ {
+  "id": "wa_skookum_peak_twinsisters_jaw_s_tooth_and_northwest_ridge",
+  "name": "Jaw's Tooth and Northwest Ridge",
+  "discipline": "alpine",
+  "grade": "5.6",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_skookum_peak_twinsisters",
+   "name": "Skookum Peak",
+   "lat": 48.700085,
+   "lng": -121.983895,
+   "elevation_ft": 6534,
+   "region": "Baker / Twin Sisters",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_skookum_peak_twinsisters"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Off Skookum's north ridge stands Jaw's Tooth, a shark-tooth pinnacle of 65 feet; the two combine into a fine route. Start in the basin northwest of Skookum and zigzag upward through fourth class and low fifth class ground to the striking layback corner, a sustained, very high quality 5.6 pitch. Easy ground leads to the tooth's summit. Getting down into the southern notch means either a rappel off tat or a low 5th downclimb. Along the ridge to Skookum's summit, the ground is firm and at the low 5",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_skookum_peak_twinsisters_scramble",
+    "name": "Elbow Lake Trail - North Trailhead (FR 38)"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Middle Fork Nooksack Trailhead",
+    "lat": 48.726672,
+    "lng": -121.900293,
+    "km": 6.8
+   },
+   {
+    "src": "USFS",
+    "name": "Elbow Lake Trailhead",
+    "lat": 48.681054,
+    "lng": -121.895073,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Park Butte Trailhead",
+    "lat": 48.707228,
+    "lng": -121.811323,
+    "km": 12.7
+   },
+   {
+    "src": "USFS",
+    "name": "Heliotrope Ridge Trailhead",
+    "lat": 48.802236,
+    "lng": -121.89559,
+    "km": 13.1
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake/Dock Butte Trailhead",
+    "lat": 48.654167,
+    "lng": -121.784477,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "Shadow Of Sentinels Trailhead",
+    "lat": 48.669225,
+    "lng": -121.715262,
+    "km": 20
+   },
+   {
+    "src": "USFS",
+    "name": "Boulder Ridge Trailhead",
+    "lat": 48.735219,
+    "lng": -121.710284,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "Skyline Divide Trailhead",
+    "lat": 48.880839,
+    "lng": -121.863348,
+    "km": 22
+   },
+   {
+    "src": "USFS",
+    "name": "Horseshoe Bend Trailhead",
+    "lat": 48.902228,
+    "lng": -121.910293,
+    "km": 23.1
+   },
+   {
+    "src": "USFS",
+    "name": "Baker Lake South Trailhead",
+    "lat": 48.645675,
+    "lng": -121.674648,
+    "km": 23.5
+   },
+   {
+    "src": "USFS",
+    "name": "Boyd Creek",
+    "lat": 48.900561,
+    "lng": -121.863348,
+    "km": 24
+   }
+  ],
+  "firstPass": {
+   "why": "held: no placement; agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Dailey Prairie",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.mountainproject.com/area/120237761/skookum-peak",
+     "fact": "Getting There: hike to Dailey Prairie, over west ridge of South Twin, then basins to the Skookum routes"
+    },
+    "placements": []
+   },
+   "notes": "Weak. Page (Mountain Project text only, no coordinates used) names Dailey Prairie as the start; no official point matches. Candidates: Elbow Lake Trailhead 48.681054,-121.895073 (6.9 km); sibling scramble uses Elbow Lake Trail north trailhead FR 38; WTA Elbow Lake page puts Pioneer Horse Camp at 48.6797,-121.8970 and does not mention Skookum. Conflict between Dailey Prairie and Elbow Lake unresolved; owner should place Dailey Prairie manually."
+  }
+ },
+ {
+  "id": "wa_the_temple_west_face",
+  "name": "West Face",
+  "discipline": "alpine",
+  "grade": "5.6 PG13",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_the_temple",
+   "name": "The Temple",
+   "lat": 47.490433,
+   "lng": -120.769569,
+   "elevation_ft": 8295,
+   "region": "Washington",
+   "path": "usa.washington.wa_centraleast.wa_stuart_range.wa_the_temple"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_the_temple_south_ridge",
+    "name": "Snow Lakes Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "km": 5.6
+   },
+   {
+    "src": "USFS",
+    "name": "Eightmile Trailhead",
+    "lat": 47.536016,
+    "lng": -120.814025,
+    "km": 6.1
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lakes Trailhead",
+    "lat": 47.544106,
+    "lng": -120.709515,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Ingalls Creek Trailhead",
+    "lat": 47.462906,
+    "lng": -120.673025,
+    "km": 7.9
+   },
+   {
+    "src": "USFS",
+    "name": "Fourth Of July Trailhead",
+    "lat": 47.578106,
+    "lng": -120.796015,
+    "km": 9.9
+   },
+   {
+    "src": "USFS",
+    "name": "Icicle Ridge Trailhead",
+    "lat": 47.568919,
+    "lng": -120.680113,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Penstock Trailhead",
+    "lat": 47.586749,
+    "lng": -120.706609,
+    "km": 11.7
+   },
+   {
+    "src": "USFS",
+    "name": "Castle Rock Trailhead",
+    "lat": 47.600107,
+    "lng": -120.714012,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Beverly Bean Trailhead",
+    "lat": 47.389302,
+    "lng": -120.872266,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Miller-bear Trailhead",
+    "lat": 47.368606,
+    "lng": -120.784615,
+    "km": 13.6
+   },
+   {
+    "src": "USFS",
+    "name": "Esmeralda Trailhead",
+    "lat": 47.436706,
+    "lng": -120.936915,
+    "km": 13.9
+   },
+   {
+    "src": "USFS",
+    "name": "Stafford Creek Trailhead",
+    "lat": 47.365806,
+    "lng": -120.803615,
+    "km": 14.1
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Peak Trailhead",
+    "lat": 47.421583,
+    "lng": -120.937341,
+    "km": 14.8
+   },
+   {
+    "src": "USFS",
+    "name": "Ruby Creek Orv Trailhead",
+    "lat": 47.409826,
+    "lng": -120.604101,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Chatter Creek Trailhead",
+    "lat": 47.608249,
+    "lng": -120.881514,
+    "km": 15.6
+   }
+  ],
+  "firstPass": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Snow Lakes Trailhead",
+    "identifiedBy": {
+     "kind": "page_peak",
+     "url": "https://mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side",
+     "fact": "search result only (page itself 403): Mount Temple West Side, 2 pitch II+ 5.6, access from Snow Lakes Trail parking lot, Trail 1553 to Nada Lake 5.2 mi"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Snow Lakes Trailhead",
+      "lat": 47.544106,
+      "lng": -120.709515,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Evidence is a search summary of the Mountaineers page (WebFetch 403), so weaker than an opened page. Sibling South Ridge also uses Snow Lakes."
+  }
+ }
+]
