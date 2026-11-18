@@ -1,6 +1,6 @@
 // One-off: the Ranks leaderboard row is no longer a button holding buttons (axe nested-interactive,
 // WCAG 4.1.2, found 2026-11-18 by probe-ranks-area-picker.mjs). Drives the Overall board at 390px, SIGNED IN
-// (real rows: profile button + points button + Report button) and as a GUEST (seed rows: the value sits inside
+// (real rows: profile button + points button; no Report button since 2026-11-18) and as a GUEST (seed rows: the value sits inside
 // the profile button), and asserts: axe finds no WCAG A/AA or label-in-name violation, no control is nested in
 // another, the row's profile button keeps the "#N, …" name, it opens the profile, and the points button opens
 // the breakdown. Creates a throwaway account (service key) and deletes it.
@@ -57,7 +57,7 @@ try {
   await audit(page, "signed in");
   const how = page.locator('button[aria-label^="How "][aria-label*=" got "]').first();
   ok(await how.count() === 1, "signed in: a real row's points are their own button");
-  ok(await page.locator('button[aria-label^="Report "]').count() > 0, "signed in: the Report button is still on real rows");
+  ok(await page.locator('button[aria-label^="Report "]').count() === 0, "signed in: no Report button on the rows (2026-11-18: Report is on the profile)");
   await how.click();
   const dlg = page.locator('[role="dialog"]');
   await dlg.first().waitFor({ timeout: 20000 }).catch(() => {});

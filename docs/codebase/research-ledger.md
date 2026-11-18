@@ -47,6 +47,9 @@ Beside the usual `set` / `pitch_detail` / … keys, a batch entry may carry:
 - A field locked at `locked` changes only with an `overturn` of 3+ independent publishers (2+ for
   `locked-1src`); an expired `official-1` lock no longer blocks.
 - A ledger-only entry (no column changes) locks the value as it stands.
+- `enrich:apply` also writes the PUBLISHED climb — `gain_ft`, `approach_loss_ft`, `return_gain_ft` (0449) —
+  as whole feet, and refuses one that arrives without a `ledger` entry for that field (owner, 2026-11-14:
+  "i dont want to have to do any of our own math, all the information should be online").
 - **Never-lock fields** (owner, 2026-11-18; `NEVER_LOCK`): crowds, seasonal_guidance,
   seasonal_hazards, timing, itinerary, pro_tips, watch_out, what_to_bring, partner_requirements,
   difficulty — refused at `locked` / `locked-1src`, allowed as `unconfirmed` / `disputed`.

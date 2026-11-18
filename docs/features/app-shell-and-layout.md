@@ -51,6 +51,10 @@ room for side-panel ads later. The phone app keeps its own look.
     360px) that taps that same control — so every screen keeps its own handler and none was rewired. Its accessible
     name is the screen's ("Back to All areas"). The phone's hardware Back (`findBackControl`) taps the hidden control
     too. Popups are untouched: they cover the bar and pin their own ✕ / Back. Home has no back, so its bar is unchanged.
+    **Two stacked** (a crew safety page with its questionnaire open: *Back to crews*, then the questionnaire's *Back*): both
+    are hidden and the bar taps the innermost, so it closes the questionnaire first. A step Back that can sit below the top
+    of the column is marked `data-cm-step-back` (`STEP_BACK_ATTR`, on `SafetyTab`'s) and taken over wherever it is; a
+    wizard's Back beside Next at the foot of a step (`Questionnaire`) is not marked and stays on the page.
 - **Desktop (1024px and wider) — the website shell:**
   - A full-width fixed **header** of two rows (112px). First the **top bar** (64px): a bare ☰ at the far left (no box, no "Menu" label on
     desktop — owner 2026-11-04; its accessible name is still "Menu"), the logo (the app mark beside a
@@ -264,7 +268,7 @@ taken focus from it by the time the hook looks.
 | `lib/DesktopShell.jsx` | `WideSearch`, `WideRail` (`RailCrews`, `RailGroups`, `FoldCard`), `AvatarMenu`, `WideFooter`, `DocTitle` |
 | `lib/installPrompt.js` | `useInstallPrompt` |
 | `lib/Ads.jsx` | `ADS_ON`, `adsActive`, `SideAd`, `RailAd`, `useRailFollow`, `FollowColumn` |
-| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBacks`, `PAGE_BACK_ATTR` |
+| `lib/dialogA11y.js` | `coveringLayer`, `pinDismiss`, `pinLayers`, `findPageBacks`, `PAGE_BACK_ATTR`, `STEP_BACK_ATTR` |
 | `lib/pageBack.js` | `usePageBack` |
 | `lib/tapSlop.js` | `installTapSlop`, `slopTarget`, `TAP_MIN` |
 | `ClimbMatch.jsx` | `NAV`, `goTab`, `navBadge`, `_inChat`, `_known`, `_openMe`, `_closePages`, `_pageView`, `_isAdPage`, `_avatarItems` |
