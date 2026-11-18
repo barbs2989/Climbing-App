@@ -93,3 +93,14 @@ Valley vs Rancheria, Big Meadow vs Manter Meadow, St. Huberts vs Roaring Brook, 
 `BRIEF*.md` (the three agent briefs) · `chunks/` + `out/` (first pass, 20 chunks) · `chunks2/` + `out2/`
 (second pass, 23 chunks) · `gnis.json` · `verified.json` · `batch.json` (exactly what was applied, with its
 ledger) · `batch-skipped.json`.
+
+## Lincoln Peak X Couloir: written, then reverted (owner's choice)
+The owner chose Heliotrope Ridge Trailhead for `wa_lincoln_peak_standard` (its own text names the FR-38
+road end; Wikipedia names Heliotrope Ridge). It was written and locked (USFS + OSM node 4939697885, 7 m
+apart). Reading the row back showed its driving directions, road card and approach text all describe FR-38,
+so the page contradicted itself. The owner chose to revert: the record is back to "NF-38 (Forest Service
+Road 38) / Middle Fork Nooksack" with no pin coordinate, and the evidence row was deleted (none left).
+To pin Heliotrope properly, the directions, road and approach must be researched and rewritten with it,
+or Heliotrope added as a second way in (`approach_variants`).
+**Lesson: before writing a trailhead that differs from the stored one, read every field that describes
+the drive (approach_logistics.trailheadDirection, road, approach); a pin alone can make the page lie.**
