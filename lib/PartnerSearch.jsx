@@ -58,7 +58,7 @@ export default function PartnerSearch({mutuals,onConnect,onViewProfile,onPlan,on
    Both id spaces are compared as strings: seed climbers are numbers, real profiles uuids,
    and blocked entries can now be either. */
 const _blockedIds=new Set(((blocked||[]).map(function(b){return String(b&&b.id);})));
-const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id));});
+/* NOT YOURSELF (compat audit 2026-11-18): searching your own name listed you with a match % against yourself ("84% match · based on limited info", "Overlaps yours"). */const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !(DB_UID&&String(p.id)===String(DB_UID))&&!_blockedIds.has(String(p.id));});
   /* Real climbers, listed rather than only findable by typing an exact name. This was
      deliberately search-only until profiles.discoverable existed (0104). Listing is on by
      default since 0195 (the user's call; 0110 had made it opt-in while the list could still
