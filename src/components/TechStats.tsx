@@ -26,6 +26,8 @@ type Variation = string | {name?: string | null; grade?: string | null; note?: s
 type StatTile = [string, string | number | null | undefined, string];
 /** The route; only the fields this card reads. Everything may be missing on a bare route. */
 export interface TechStatsRoute {
+  /** OTHER DETAILS (0461): the climber's own label/value rows (routes.extra_facts). */
+  extraFacts?: {label?: unknown, value?: unknown}[] | null;
   /** `walkMi` / `walkGainFt`, one way: the closed road the stored distance includes (lib/outing.js roadWalkMi). */
   road?: {name?: string | null; walkMi?: number | string | null; walkGainFt?: number | string | null} | null;
   elevPts?: number[] | null;
@@ -217,6 +219,9 @@ export default function TechStats({route,onEdit,part,onEditArea}: TechStatsProps
      catalog holds it and as Mountain Project and theCrag describe it, in words. A sentence, so a facts row, not a stat
      tile; the difficulty itself is the grade (the Crux grade tile). Owner, 2026-11-18. */
   if(route.crux)facts.push(["Crux",String(route.crux)]);
+  /* OTHER DETAILS (0461): the climber's own label and value for a fact with no field of its own. ONE row holding a line each, so a climber's label can never collide with a built-in row of the same name (rows are found and keyed by label). */
+  const _xf=(Array.isArray(route.extraFacts)?route.extraFacts:[]).filter(function(x: {label?: unknown, value?: unknown}){return x&&typeof x.label==="string"&&typeof x.value==="string"&&x.label.trim()&&x.value.trim();}) as {label: string, value: string}[];
+  if(_xf.length)facts.push(["Other details",<>{_xf.map(function(x,i){return <div key={i} style={{marginTop:i?3:0}}><span style={{fontWeight:700,color:C.text}}>{x.label.trim()}</span>{": "+x.value.trim()}</div>;})}</>]);
   if(_vars.length)facts.push(["Variations",<>{_vars.map(function(v,i){return <div key={i} style={{marginTop:i?3:0}}>{v}</div>;})}</>]);
   if(crag){
     /* The route's own area (a wall, crag or peak): crag-wide facts are read from it and, with onEditArea, added to it. */
