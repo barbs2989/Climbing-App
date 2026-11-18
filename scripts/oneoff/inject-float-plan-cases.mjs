@@ -75,7 +75,7 @@ const CASES = [
     file: path.join(ROOT, "lib/SafetyTab.jsx"),
     why: "seeding the crew site from a hand-written literal instead of floatPlanState() puts the eleven-key shape in two places, and they drift. The props are still passed, so only the seeding assertion sees it.",
     expect: /crew site does not seed from floatPlanState/,
-    edit: (s) => s.replace(/(\[floatPlan,setFloatPlan\]=useState\(\(\)=>)floatPlanState\(\)/,
+    edit: (s) => s.replace(/(\[floatPlan,setFloatPlan\]=useState\(\(\)=>)floatPlanState\([^)]*\)/,
       "$1({form:{route:\"\"},saved:false,checkedIn:false})"),
   },
 
