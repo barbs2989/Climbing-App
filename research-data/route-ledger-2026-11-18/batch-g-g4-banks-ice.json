@@ -1,0 +1,472 @@
+{
+ "wa_banks_lake_ice_climbing_agent_orange": {
+  "area": "wa_banks_lake_ice_climbing",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122009483/agent-orange",
+    "https://alpinedave.com/ice/banks_lake_jan04/banks_ice.htm",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+    "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/banks-lake-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "WI4+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009483/agent-orange",
+      "fact": "WI4+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "WI4+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009483/agent-orange",
+      "fact": "WI4+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009483/agent-orange",
+      "fact": "Ice, 100 ft (30 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009483/agent-orange",
+      "fact": "one pitch, three tiers; no pitch count given (single pitch)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_banks_lake_ice_climbing_agent_orange",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "U.S. Bureau of Reclamation land managed by WDFW (Banks Lake Unit, Columbia Basin Wildlife Area)",
+     "parking_pass": "A Discover Pass is required on WDFW lands, or a WDFW Vehicle Access Pass issued with a hunting or fishing licence."
+    },
+    "why": "Flow is at about SR 155 milepost 8.5, just south of the Salt and Pepper amphitheater. WA DNR's public-lands layer puts the coulee wall at that milepost (WSDOT milepost points; base of the cliff, not the rim) inside a U.S. Bureau of Reclamation parcel managed for wildlife; WDFW's Banks Lake Unit page says the unit is entirely Reclamation land managed by WDFW and that a Discover Pass is required on WDFW lands. The rim above the flows is private at MP 8-9 (no public parcel), so a topout may leave public land. Location of the flow is from route descriptions, not from any coordinate.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122009483/agent-orange",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+     "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/banks-lake-wildlife-area-unit"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: only Mountain Project names it (Dan Erickson and Alex Krawarik, 2001); a first ascent needs 2 sources - left null."
+  ],
+  "notes": "Only Mountain Project (=OpenBeta) describes this flow; the Washington Ice guidebook is paywalled, theCrag lists Banks Lake rock only, CascadeClimbers search needs a login. A 2004 Alpine Dave trip report names Agent Orange beside H2O2 and Zenith but gives no grade or length. Grade/length/pitches therefore at the 1-source tier."
+ },
+ "wa_banks_lake_ice_climbing_brush_bash": {
+  "area": "wa_banks_lake_ice_climbing",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122009597/brush-bash",
+    "https://alpinedave.com/banks_lake/banks_lake1.html",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+    "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/banks-lake-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "WI4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009597/brush-bash",
+      "fact": "WI4",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinedave.com/banks_lake/banks_lake1.html",
+      "fact": "first-ascent party named it Brush Bash, WI4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "WI4",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009597/brush-bash",
+      "fact": "WI4",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinedave.com/banks_lake/banks_lake1.html",
+      "fact": "WI4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 30,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009597/brush-bash",
+      "fact": "100 ft (30 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinedave.com/banks_lake/banks_lake1.html",
+      "fact": "25 meters long (within 50 ft of 30 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009597/brush-bash",
+      "fact": "single pitch, three tiers",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinedave.com/banks_lake/banks_lake1.html",
+      "fact": "one pitch to a tree; leader lowered off at half rope",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "ice",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009597/brush-bash",
+      "fact": "Type: Ice",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://alpinedave.com/banks_lake/banks_lake1.html",
+      "fact": "waterfall ice climb, screws",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_banks_lake_ice_climbing_brush_bash",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "U.S. Bureau of Reclamation land managed by WDFW (Banks Lake Unit, Columbia Basin Wildlife Area)",
+     "parking_pass": "A Discover Pass is required on WDFW lands, or a WDFW Vehicle Access Pass issued with a hunting or fishing licence."
+    },
+    "why": "Two sources put the flow just south of SR 155 milepost 10 (Mountain Project and the first-ascent report on Alpine Dave); near MP 10 the cliff band (1,700-2,200 ft) lies inside the Reclamation parcel, whose edge is at the rim. WA DNR's public-lands layer puts the coulee wall at that milepost (WSDOT milepost points; base of the cliff, not the rim) inside a U.S. Bureau of Reclamation parcel managed for wildlife; WDFW's Banks Lake Unit page says the unit is entirely Reclamation land managed by WDFW and that a Discover Pass is required on WDFW lands. The rim above the flows is private at MP 8-9 (no public parcel), so a topout may leave public land. Location of the flow is from route descriptions, not from any coordinate.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122009597/brush-bash",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+     "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/banks-lake-wildlife-area-unit"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: Mountain Project gives David Burdick, Lenn Kannapell and Silas Wild, January 2001; the first-ascent report on alpinedave.com names Dave, Len and Silas (first names only, no year, \"Len\" not \"Lenn\"). Names agree but the year has one source - not locked, left null. The owner may accept it."
+  ],
+  "notes": "Alpine Dave (the first-ascent party) and Mountain Project are independent publishers; MP's page was shared in 2022 and does not cite the trip report. North-facing flow, brushy topout - the report and MP both describe the brush."
+ },
+ "wa_banks_lake_ice_climbing_corner_route": {
+  "area": "wa_banks_lake_ice_climbing",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/116634258/corner-route",
+    "https://www.openstreetmap.org/node/7190112740",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+    "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/banks-lake-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "WI4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116634258/corner-route",
+      "fact": "WI4 to the top; WI3 if lowered from a V-thread below the top steep step",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "WI4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116634258/corner-route",
+      "fact": "WI4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 49,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116634258/corner-route",
+      "fact": "Ice, 160 ft (48 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/116634258/corner-route",
+      "fact": "single pitch; topropes with a 60 m rope from the V-thread",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_banks_lake_ice_climbing_corner_route",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "U.S. Bureau of Reclamation land managed by WDFW (Banks Lake Unit, Columbia Basin Wildlife Area)",
+     "parking_pass": "A Discover Pass is required on WDFW lands, or a WDFW Vehicle Access Pass issued with a hunting or fishing licence."
+    },
+    "why": "Flow is just past the toilet turnout, left of More Banks Ice; the only toilet turnout in that stretch on OpenStreetMap is the WDFW one at Million Dollar Mile North (node 7190112740, about SR 155 MP 8.9). WA DNR's public-lands layer puts the coulee wall at that milepost (WSDOT milepost points; base of the cliff, not the rim) inside a U.S. Bureau of Reclamation parcel managed for wildlife; WDFW's Banks Lake Unit page says the unit is entirely Reclamation land managed by WDFW and that a Discover Pass is required on WDFW lands. The rim above the flows is private at MP 8-9 (no public parcel), so a topout may leave public land. Location of the flow is from route descriptions, not from any coordinate.",
+    "evidence": [
+     "https://www.mountainproject.com/route/116634258/corner-route",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+     "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3",
+     "https://wdfw.wa.gov/places-to-go/wildlife-areas/banks-lake-wildlife-area-unit"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Mountain Project notes it is WI3 if you stop below the top steep step; WI4 to the top (stored WI4 kept)."
+  ],
+  "notes": "Parking: MP says the shoulder or the toilet turnout; OSM tags that turnout's toilet as WDFW (47.75518,-119.22420). No parking pin added - the lot outline is not mapped. FA unknown on MP."
+ },
+ "wa_banks_lake_ice_climbing_climb_above_salt_and_pepper": {
+  "area": "wa_banks_lake_ice_climbing",
+  "set": {
+   "approach": "You will not see this flow from the highway. Top out Salt and Pepper, then walk up the gully above it for about five minutes; the ice spills off the rim at its head."
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122009553/climb-above-salt-and-pepper",
+    "https://www.mountainproject.com/route/122009519/salt-and-pepper",
+    "https://cascadeclimbers.com/forum/topic/108026-tr-banks-lake-spice-rack-m10-a-salt-and-pepper-direct-start-02172025",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+    "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3",
+    "https://wdfw.wa.gov/places-to-go/wildlife-areas/banks-lake-wildlife-area-unit"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "WI4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009553/climb-above-salt-and-pepper",
+      "fact": "WI4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "WI4",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009553/climb-above-salt-and-pepper",
+      "fact": "WI4",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 12,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009553/climb-above-salt-and-pepper",
+      "fact": "Ice, 40 ft (12 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122009553/climb-above-salt-and-pepper",
+      "fact": "short single column",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "disputed": [
+   "access: the flow falls from the mesa top; at SR 155 MP 8-9 the Reclamation parcel ends near the rim and the mesa is not public land, so this one may sit on or beside private land. Not proposed."
+  ],
+  "notes": "The stored approach (the generic Banks Lake sentence: a short walk, visible from the road) is wrong for this flow - Mountain Project says it is hidden from below and reached by walking up the drainage above Salt and Pepper (a WI5) after climbing it. Replaced with one sentence of our own. Whether a walk-around avoids climbing Salt and Pepper is not stated anywhere I could read."
+ },
+ "wa_banks_lake_ice_climbing_electric_avenue_b": {
+  "area": "wa_banks_lake_ice_climbing",
+  "set": {
+   "approach": "The flows form high on the slope above SR 155 near milepost 22.5, in the band of cliff just below the hilltop; the walk up crosses private land, so get the owner's permission first.",
+   "approach_logistics": {
+    "trailhead": "SR 155 roadside pullouts",
+    "trailheadDirection": "Drive SR 155 to about milepost 22.5, south of Electric City; the Electric Avenue flows can be seen on the hillside above the road. Pull fully off the shoulder."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/122014118/electric-avenue-b",
+    "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+    "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "WI3+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122014118/electric-avenue-b",
+      "fact": "WI3+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "WI3+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122014118/electric-avenue-b",
+      "fact": "WI3+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 35,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122014118/electric-avenue-b",
+      "fact": "Ice, 115 ft (35 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 1,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/122014118/electric-avenue-b",
+      "fact": "single pitch",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_banks_lake_ice_climbing_electric_avenue_b",
+    "column": "access",
+    "from": null,
+    "to": {
+     "land_manager": "Private land",
+     "notes": "Reaching the flows crosses private property; ask the landowner before climbing."
+    },
+    "why": "Mountain Project says access crosses private property and permission is needed (it guesses a developer owns it). WA DNR's public-lands layer shows no public parcel anywhere on a 0.006 x 0.014 degree grid around SR 155 MP 22.5 (WSDOT milepost point 47.91170,-119.05936) up to the hilltop; the nearest public (Reclamation) land is the lakeshore strip from about 47.914 north. Owner unknown - do not name one.",
+    "evidence": [
+     "https://www.mountainproject.com/route/122014118/electric-avenue-b",
+     "https://gis.dnr.wa.gov/site3/rest/services/Public_Boundaries/WADNR_PUBLIC_Major_Public_Lands_NonDNR/MapServer/1",
+     "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/MilepostValues/MapServer/3"
+    ]
+   }
+  ],
+  "disputed": [],
+  "notes": "This route is NOT on Reclamation/WDFW or State Parks land, unlike the other Banks Lake flows. The stored approach and trailheadDirection said the flows sit between MP 8 and 17 and are a short walk - wrong for this one (MP 22.5, a climb to the hilltop band). Replaced with our own sentences. The area row's lat/lng (47.81441,-119.1536) is Mountain Project's area GPS, copied onto every route page there; it is a single highway point near SR 155 MP 14 for a crag that spans MP 8 to 22.5 - the owner may want it flagged coords_approx."
+ }
+}

@@ -4,6 +4,19 @@ What enrichment wrote and where it landed: approach scope, the climbing_route sw
 
 Part of the guard notes — see [README.md](README.md) for the full index.
 
+- **`audit:optimal-season`** asks whether a route page says ONE thing about when to go: the header
+  strap (`routeSeasonShort`), the SEASONAL GUIDANCE *Optimal window* and its 12-month calendar.
+  Report-only; it cannot say which side is right. First run (owner note "Audit optimal season",
+  2026-11-18): 9 headers contradicted both window and calendar, every one a snow/ice line with a
+  summer header or the reverse; 4 windows read as research notes. Two headers (Park Glacier
+  Headwall, Buckner N Face) and the 4 windows were fixed
+  (`scripts/oneoff/fix-optimal-season-2026-11-18.mjs`, rollback `audits/optimal-season/`); the
+  rest were researched and HELD on thin or split evidence (Tye Peak, Goode NE Face, Forbidden NE
+  Face, Adams Wilson/Lava headwalls behind the Yakama Jul-Oct permit, Snowking's two seasons).
+  - **A regex over the window is the trap.** The first draft read "August and September" as
+    August alone, "Late May (ski) through August" as May, and "nearly year-round" as year-round:
+    34 of its 36 window-vs-calendar flags were its own. `--selftest` pins those shapes. A risky
+    month at the unqualified END of a range is a shoulder (53 headers), counted and not listed.
 - **`audit:aspect-name`** asks whether a route's **name** points the same way as its `aspect`
   column. Both describe the same piece of mountain, so a disagreement means one is wrong —
   and which one is **not** decidable from the columns, which is why this is **report-only** and

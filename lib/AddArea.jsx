@@ -13,16 +13,19 @@ import { useCatalogAreaSearch } from "./db";
 import { POP_CLOSE } from "./popupChrome.js";
 import { BTN, CHIP, INPUT } from "./buttonStyles.js";
 import { clickable } from "./clickable";
+import WaypointMapPicker from "../src/components/WaypointMapPicker.tsx";
 
 const KINDS = [["crag", "Crag, wall or boulder", "Has climbs on it"], ["peak", "Peak", "A summit with routes up it"], ["region", "Area", "Holds crags or peaks of its own"]];
 const NAME_MAX = 120, DESC_MAX = 1500;
 
-export default function AddArea({ parent, C, onClose, onSubmit, onOpenArea }) {
-  const [name, setName] = useState("");
+export default function AddArea({ parent, defaultName, C, onClose, onSubmit, onOpenArea }) {
+  // defaultName: the crag a climber typed in add-a-climb's "not in the catalog" box, carried over.
+  const [name, setName] = useState(defaultName || "");
   const [kind, setKind] = useState("crag");
   const [desc, setDesc] = useState("");
   const [loc, setLoc] = useState(null); // { lat, lng }
   const [locMsg, setLocMsg] = useState(null);
+  const [mapOpen, setMapOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
   const [err, setErr] = useState(null);
@@ -89,8 +92,10 @@ export default function AddArea({ parent, C, onClose, onSubmit, onOpenArea }) {
 
         <div style={{ marginBottom: 14 }}>
           <div style={lbl}>Location (optional)</div>
-          {loc ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: C.text }}><span style={{ flex: 1 }}>{loc.lat + ", " + loc.lng}</span><button onClick={() => setLoc(null)} style={{ ...CHIP, border: "1px solid " + C.border, background: C.card, color: C.textSub, cursor: "pointer" }}>Clear</button></div>
-            : <button onClick={here} style={{ ...BTN, width: "100%", border: "1px solid " + C.border, background: C.card, color: C.text }}>{"I’m standing at it — use my location"}</button>}
+          {loc ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: C.text }}><span style={{ flex: 1 }}>{loc.lat + ", " + loc.lng}</span><button onClick={() => { setLoc(null); setMapOpen(false); }} style={{ ...CHIP, border: "1px solid " + C.border, background: C.card, color: C.textSub, cursor: "pointer" }}>Clear</button></div>
+            : <div style={{ display: "flex", flexDirection: "column", gap: 6 }}><button onClick={here} style={{ ...BTN, width: "100%", border: "1px solid " + C.border, background: C.card, color: C.text }}>{"I’m standing at it — use my location"}</button>{mapOpen ? null : <button onClick={() => setMapOpen(true)} style={{ ...BTN, width: "100%", border: "1px solid " + C.border, background: C.card, color: C.text }}>{"Pick it on the map"}</button>}</div>}
+          {/* Placing it from home (add-an-area audit, 2026-11-18): the only way in was the device's own position, so a climber who was not standing at the crag could not say where it is. The tap map is the area editor's own. */}
+          {mapOpen ? <div style={{ marginTop: 8 }}><WaypointMapPicker waypoints={loc ? [{ type: kind === "peak" ? "Summit" : "Base", name: nm || "New area", lat: loc.lat, lng: loc.lng }] : []} activeIdx={0} peakCoord={p.lat != null && p.lng != null ? { lat: Number(p.lat), lng: Number(p.lng) } : null} tapHint={loc ? "Tap the map to move it" : "Tap the map where it is"} onPick={(la, ln) => { setLoc({ lat: +la.toFixed(5), lng: +ln.toFixed(5) }); setLocMsg(null); }} /></div> : null}
           {locMsg ? <div role="status" style={{ fontSize: 11.5, color: C.textMuted, marginTop: 5 }}>{locMsg}</div> : null}
         </div>
 

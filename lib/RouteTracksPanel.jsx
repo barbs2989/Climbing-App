@@ -74,9 +74,9 @@ export default function RouteTracksPanel({ rows, profiles, loading, failed, show
               </div>
             );
           })}
-          {full ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 6 }}>Up to {MAX_SHOWN_TRACKS} tracks on the map at once. Hide one to show another.</div> : null}
+          {full ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 6 }}>Up to {MAX_SHOWN_TRACKS} on the map at once.</div> : null}
           {rows.length >= ROUTE_TRACKS_CAP ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 6 }}>Showing the {ROUTE_TRACKS_CAP} most recent tracks.</div> : null}
-          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 6, lineHeight: 1.45 }}>{crag ? "Each line is one climber's own recording of the walk in to the crag, from their logged climb." : "Each line is one climber's own recording. Times run from the first point to the last, so a long stop counts."}</div>
+          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 6, lineHeight: 1.45 }}>{crag ? "Each line is one climber's recording." : "Each line is one climber's recording; times include stops."}</div>
         </>}
     </section>
   );

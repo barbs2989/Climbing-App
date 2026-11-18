@@ -1,4 +1,3 @@
-import { tx } from "../../lib/tapWords.js";
 import { C, DLOCALE, uTemp, uElev, uWind, uSnowfall, uPrecip } from "../../ClimbMatchCore.jsx";
 import { BOX, clockOf, floorQ, hrSpan } from "../../lib/alpineConditionsShared.js";
 import CardHead from "./CardHead.tsx";
@@ -84,6 +83,5 @@ export default function DayByDay<D extends DayByDayDay>({ days, di, pick, dayNam
       </button>;
     })}
     </div>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, paddingTop: 6 }}>{tx("Whole-day figures at the forecast’s height. Scroll sideways for more days; tap a day to open it in every section.")}</div>
   </div>;
 }

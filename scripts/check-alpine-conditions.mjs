@@ -599,7 +599,7 @@ console.log("\n14. WEATHER ALERTS — each on the right local day, by its event 
   eq("no alerts and no response are both []", [A.normAlerts({ features: [] }).length, A.normAlerts(null).length], [0, 0]);
   eq("outside the US the fetch resolves {outside:true} (HTTP 400), which the card words as NOT CHECKED", /r\.status === 400\) return \{ outside: true \}/.test(fcSrc2) && /Weather alerts are only checked for places in the United States\. Nothing was checked for this route\./.test(card), true);
   eq("a failed read is 'not measured' with a retry, never 'none'", /Couldn’t load weather alerts, so they are not measured\. This is not a report of none\./.test(card), true);
-  eq("a quiet day says none is NOT an all-clear and that an alert covers a zone, not the route", /a day with none is not an all-clear/.test(card) && /covers a whole forecast zone, which can be much larger than the route/.test(card), true);
+  eq("a quiet day says none is NOT an all-clear and that an alert covers a zone, not the route", /No alert is not an all-clear/.test(card) && /Alerts cover a whole zone, not just this route/.test(card), true);
   eq("the alerts are cached for minutes, not the session (they are issued and cancelled within the hour)", /ALERT_TTL = 10 \* 60 \* 1000/.test(card), true);
   eq("each alert joins the day's flags, so the day chips show it", /key: "alert", level: alertLevel\(a\)/.test(card), true);
   eq("the card prints the alert's own prose verbatim and says so, in the units issued", /"As issued: " \+ a\.what/.test(card), true);
@@ -669,7 +669,7 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   eq("fog is a CAUTION that says the model is unchecked in mountains and no fog hour is not a clear day", /whose accuracy in the mountains is unchecked; no fog hour is not a clear day/.test(card + FLAG_WORDS), true);
   eq("the snow section hands snowLevel the RAW local day (it has `hours`); the card's per-day summary has none and crashed the route page", /const raw = localDays\(fc\)\.find\(function \(d\) \{ return d\.date === day\.date; \}\);[\s\S]{0,120}lvl = raw \? snowLevel\(fc, raw\) : null/.test(card), true);
   eq("...and snowLevel on a day shape WITHOUT hours would throw, which is why it must not be handed one", (() => { try { A.snowLevel(fc, { date: "2026-10-08" }); return false; } catch (e) { return true; } })(), true);
-  eq("the snow section says the history is modelled, flags nothing, and that stability depends on the layers beneath", /not a measurement on the route/.test(card) && /depends on the layers beneath it/.test(card), true);
+  eq("the snow section says the history is modelled, flags nothing, and that stability depends on the layers beneath", /not measured on the route/.test(card) && /depends on the layers beneath it/.test(card), true);
   // Built in THIS machine's local time, as the card reads today's date from the device: the assertions hold in any zone.
   const now = new Date(2026, 9, 8, 18).getTime();
   const rfr = A.reportFreshness([{ date: "2026-10-03" }, { date: "2026-09-01T10:00" }, { date: "2026-10-07" }, { date: null }, {}], now);
@@ -698,9 +698,9 @@ console.log("\n16. TEMPERATURE GAPS — shifted to the pin's height, stated, unk
   eq("an unknown or non-metre cell height shifts nothing", [A.nwsHeightShiftF(null, 9000), A.nwsHeightShiftF({}, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:ft", value: 3000 } } }, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:m", value: null } } }, 9000)], [0, 0, 0, 0]);
   eq("the weather panel applies the shift to every NWS temperature it reads", /const nwsShift=nwsHeightShiftF\(nwsJson,w\.elev\);[\s\S]{0,400}push\(v\.value\*9\/5\+32\+nwsShift\)/.test(rd), true);
   eq("...and says how far it adjusted, in the climber's units, when that is a degree or more", /Math\.abs\(\(?dy\.nws(?: as [^)]+\))?\.adj\)>=1\?" · adjusted "\+uTempDelta\(Math\.abs\(\(?dy\.nws(?: as [^)]+\))?\.adj\)\)\+"° "/.test(rd), true);
-  eq("the alpine card states the measured station error through the unit helper, not a fixed Fahrenheit figure", /typically off by \{uTempDelta\(3\)\}–\{uTempDelta\(5\)\}°/.test(card) && !/off by 3–5 ?°F/.test(card), true);
+  eq("the alpine card states the measured station error through the unit helper, not a fixed Fahrenheit figure", /often off by \{uTempDelta\(3\)\}–\{uTempDelta\(5\)\}°/.test(card) && !/off by 3–5 ?°F/.test(card), true);
   eq("...and no longer adds that forecast services can disagree (owner, 2026-10-24: not under the forecast)", /different services can differ/.test(card), false);
-  eq("...and that winter is worse and reads too cold (measured: 53 station-seasons, winter median error 4.6 F, 90th percentile 8.5 F, 14 of 17 winter stations too cold), in the unit helper", /and in winter by up to \{uTempDelta\(9\)\}°, most often reading too cold/.test(card), true);
+  eq("...and that winter is worse and reads too cold (measured: 53 station-seasons, winter median error 4.6 F, 90th percentile 8.5 F, 14 of 17 winter stations too cold), in the unit helper", /up to \{uTempDelta\(9\)\}° in winter, usually too cold/.test(card), true);
 }
 
 /* ── 17. YOUR RANGE ── */

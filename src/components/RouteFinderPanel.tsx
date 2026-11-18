@@ -326,6 +326,10 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
   // general area breakdown"): the levels between the state and the wall, e.g. City of Rocks › Circle Creek Overlook.
   const { data: areaTrails } = useAreaTrailsByIds(areaIds);
   const trailOf = (id: string): { id: string; name: string }[] => (areaTrails && id && areaTrails[id]) || [];
+  // ...but only the levels BELOW the area being searched: inside Leavenworth a wall's line read "Central-East Cascades,
+  // Wenatchee & Leavenworth › Leavenworth › Icicle Creek" over every wall, two to four lines on a phone, repeating the
+  // path the climber is already in (2026-11-18). The export keeps the whole trail.
+  const shownTrailOf = (id: string) => { const t = trailOf(id), i = t.findIndex(c => c.id === loc.id); return i >= 0 ? t.slice(i + 1) : t; };
   const { data: areaHits, isLoading: la, error: ea }: { data?: RouteFinderPanelAreaHit[] | null; isLoading: boolean; error: unknown } = useAreaSearch(scope.id, mode === "areas" ? qD.trim() : "");
 
   const nF = af.discs.length + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== DEF.sortBy ? 1 : 0) + ["gain", "trip", "elev", "prom"].filter(k => af[k] && af[k] !== "any").length + (af.near ? 1 : 0);
@@ -388,7 +392,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       </div>
       {/* Compact rows and Export CSV sit UNDER the pinned bar, not in it (owner, 2026-11-14: "move the export csv lower so
           that it doesn't stick when you scroll. same with compact rows"): they scroll away with the results. */}
-      {mode === "routes" && !needsArea && wide && all.length ? <div style={{ display: "flex", gap: 8, alignItems: "center", margin: "10px 0 0" }}><button onClick={toggleCompact} aria-pressed={compact} style={btnChip(C, compact)}>Compact rows</button><button onClick={() => downloadCsv("climbmatch-route-finder-" + new Date().toISOString().slice(0, 10), ["Climb", "Grade", "Discipline", "Pitches", "Stars", "Area", "Wall or area"], all.map(r => [r.name, rowGrade(r) === "—" ? "" : rowGrade(r), r.discipline ? discLabel(r.discipline) : "", r.pitches > 0 ? r.pitches : "", r.stars != null ? Math.round(r.stars * 10) / 10 : "", trailOf(r.area_id).map(c => c.name).join(" › "), (areaNames && areaNames[r.area_id]) || ""]))} title="The loaded results as a spreadsheet" style={{ ...BTN_SECONDARY(C), padding: "6px 11px", fontSize: 12.5 }}>{"Export CSV (" + all.length + ")"}</button></div> : null}
+      {mode === "routes" && !needsArea && wide && all.length ? <div style={{ display: "flex", gap: 8, alignItems: "center", margin: "10px 0 0" }}><button onClick={toggleCompact} aria-pressed={compact} style={btnChip(C, compact)}>Compact rows</button><button onClick={() => downloadCsv("climbmatch-route-finder-" + new Date().toISOString().slice(0, 10), ["Climb", "Grade", "Discipline", "Pitches", "Stars", "Area", "Wall or area"], all.map(r => [r.name, rowGrade(r) === "—" ? "" : rowGrade(r), r.discipline ? discLabel(r.discipline) : "", r.pitches > 0 ? r.pitches : "", r.stars != null ? Math.round(r.stars * 10) / 10 : "", trailOf(r.area_id).map(c => c.name).join(" › "), (areaNames && areaNames[r.area_id]) || ""]))} title="The loaded results as a spreadsheet" style={{ ...BTN_SECONDARY(C), padding: "6px 11px", fontSize: 12.5 }}>{/* It exports what is LOADED: "(40)" under "703 routes" read as a different count. */"Export CSV (" + (total != null && total > all.length ? all.length + " of " + total.toLocaleString() + " loaded" : all.length) + ")"}</button></div> : null}
       {loc.id !== scope.id ? (
         <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "10px 0 2px", fontSize: 12.5, color: C.textSub }}>
           <span style={{ flex: 1, minWidth: 0, overflowWrap: "anywhere" }}>{"In " + loc.name + ", " + scope.name}</span>
@@ -427,7 +431,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
           </div>
         ))}
       </> : <>
-      {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Few climbs have a star rating yet, so climbs nobody has rated still show. Only climbs rated below " + af.minStars + "★ are hidden."}</div> : null}
+      {af.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, margin: "8px 2px", lineHeight: 1.45 }}>{"Unrated climbs still show."}</div> : null}
       {error && !all.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't search routes — check your connection and try again.</div> : null}
       {error && all.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the results from your last load.</div> : null}
       {/* GROUPED BY WALL on a wall sort: a heading opens the wall's page and saves it; the rows under
@@ -440,12 +444,12 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
         return <Fragment key={r.id}>
           {head ? (
             <div style={{ display: "flex", alignItems: "center", gap: 8, margin: i ? "16px 0 8px" : "10px 0 8px" }}>
-              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{trailOf(r.area_id).length ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.textSub, marginBottom: 2 }}>{trailOf(r.area_id).map(c => c.name).join(" › ")}</span> : null}{(wall || "This wall") + " ›"}</button>
+              <button onClick={() => onJumpToArea({ id: r.area_id, name: wall || "" })} style={{ ...BTN_LINK(C), flex: 1, minWidth: 0, textAlign: "left", padding: "3px 0", fontSize: 13.5, fontWeight: 800, color: C.text, overflowWrap: "anywhere" }}>{shownTrailOf(r.area_id).length ? <span style={{ display: "block", fontSize: 12, fontWeight: 600, color: C.textSub, marginBottom: 2 }}>{shownTrailOf(r.area_id).map(c => c.name).join(" › ")}</span> : null}{(wall || "This wall") + " ›"}</button>
               {onToggleBookmark ? <button onClick={() => onToggleBookmark(r.area_id)} aria-label={booked ? "Remove " + (wall || "this wall") + " from Saved" : "Save " + (wall || "this wall")} style={savePill(booked)}>{booked ? "★ Saved" : "☆ Save area"}</button> : null}
             </div>
           ) : null}
           <div style={{ display: "flex", gap: 6, alignItems: "stretch" }}>
-            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : [...trailOf(r.area_id).map(c => c.name), wall].filter(Boolean).join(" › ") || null} savedMark={!onToggleWish} dense={wide && compact} />
+            <RouteRow r={r} onOpen={onOpen} C={C} areaName={GROUPED_SORTS[af.sortBy] ? null : [...shownTrailOf(r.area_id).map(c => c.name), wall].filter(Boolean).join(" › ") || null} savedMark={!onToggleWish} dense={wide && compact} />
             {onToggleWish ? <button onClick={() => setSaveFor({ ...r, wall })} aria-haspopup="dialog" aria-label={"Save " + r.name + (saved ? ", saved" : "")} style={{ ...CHIP, flexShrink: 0, width: 44, marginBottom: 8, padding: 0, fontSize: 17, cursor: "pointer", border: "1px solid " + (saved ? C.blue : C.border), background: saved ? C.blueBg : C.card, color: saved ? C.onSolid : C.textSub }}><span aria-hidden="true">{saved ? "★" : "☆"}</span></button> : null}
           </div>
         </Fragment>;
@@ -456,7 +460,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
       )}
       {/* A star minimum no longer empties a search (0334: unrated climbs stay in), so the
           explanation left is the grade range's: a route with no readable grade fails it. */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes, and climbs without the figure are hidden while one is set." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{(gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : ["gain", "trip", "elev", "prom"].some(k => af[k] && af[k] !== "any") ? "No routes match these filters. Climbs missing the figure are hidden." : af.near ? "No routes in " + loc.name + " are that close to " + af.near.label + " — try a wider distance." : "No routes match these filters."}</div>}
       </>}
       </>}
 
@@ -595,7 +599,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]] as [number, string][]).map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
             {/* 0334: an unrated climb is not ruled out. 2 of 90,084 sport climbs had a rating when this
                 was written, so the old rule turned every star search into an empty list. */}
-            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Few climbs have a star rating yet, so climbs nobody has rated always show. This hides only climbs rated below the minimum.</div>
+            <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Unrated climbs still show.</div>
             {fitsDiscs(df.discs, "minPitches") ? <>
             {lab("Pitches")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{([[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]] as [number, string][]).map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
@@ -615,7 +619,7 @@ export default function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElev
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PEAK_ELEV_MINS.map(o => chip(minLabel(o, metric, eU), df.elev === o[0], () => setDf(d => ({ ...d, elev: o[0] }))))}</div>
             {lab("Prominence")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{PROM_MINS.map(o => chip(minLabel(o, metric, eU), df.prom === o[0], () => setDf(d => ({ ...d, prom: o[0] }))))}</div>
-            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Gain, round trip, peak elevation and prominence are recorded mostly for mountain routes. Climbs without the figure are hidden while one of these is set.</div> : null}
+            {[df.gain, df.trip, df.elev, df.prom].some(v => v && v !== "any") ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, lineHeight: 1.45 }}>Climbs missing this figure are hidden.</div> : null}
             </> : null}
             </div>
             <div style={{ flexShrink: 0, display: "flex", gap: 8, padding: "12px 16px calc(env(safe-area-inset-bottom) + 12px)", borderTop: "1px solid " + C.border, background: C.bg }}>
