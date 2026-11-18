@@ -1,0 +1,1262 @@
+{
+ "wa_beckey_davis": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Standard access to the Core Enchantments via Colchuck Lake and Aasgard Pass.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Leave US 2 at the west edge of Leavenworth on Icicle Road and go roughly 8.5 mi, then take Eightmile Road (FR 7600) to the left and bear right onto FR 7601, a steep, washboarded gravel road, for about 4 mi to its end at the Stuart Lake Trailhead, about 3,400 ft. Park with a Northwest Forest Pass, an interagency pass or the $5 day fee; overnight trips May 15 to Oct 31 need an Enchantment permit, and FR 7601 is closed to vehicles every winter."
+    },
+    {
+     "lat": 47.4878,
+     "lng": -120.8343,
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "type": "Campsite",
+     "distMi": 4.2
+    },
+    {
+     "lat": 47.4847453,
+     "lng": -120.7895113,
+     "elev": 7361,
+     "name": "Gnome Tarn",
+     "note": "Landmark tarn on the boot path leading to the base of Prusik Peak's south face routes.",
+     "type": "Campsite",
+     "distMi": 8,
+     "directions": "Take the Stuart Lake Trail about 2.5 miles to the Colchuck Lake Trail, cross Mountaineer Creek and climb to Colchuck Lake at 5,570 ft. From the boulder field at the lake's south end, climb Aasgard Pass, about 2,000 ft of loose scree in 1.25 miles, then cross the Core past Tranquil and Isolation lakes and go cross-country north over slabs and talus to Gnome Tarn below Prusik's south face."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "name": "Prusik Peak south face base",
+     "type": "Base",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Walk up from the tarn to the foot of the south face and find two large V-shaped features; the route starts in the chimney immediately left of them, to the right of the classic line in the middle of the face."
+    },
+    {
+     "lat": 47.4874957,
+     "lng": -120.7843035,
+     "elev": 8008,
+     "name": "Prusik Peak",
+     "note": "South Face route, 6-7 pitches, FA Beckey-Davis 1962.",
+     "type": "Summit",
+     "distMi": 9,
+     "directions": "Climb seven pitches, about 650 ft: left out of the chimney onto knobs, up face and cracks to Snafflehound Ledge, traverse right, take the 5.9 dihedral crux, then the crack and gully past a chockstone to the notch east of the summit horn, finishing with a friction traverse and jam crack to the summit."
+    }
+   ],
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+    "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles each winter."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108228989/beckey-davis",
+    "https://stephabegg.com/?p=8743",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-south-face",
+    "https://wenatcheeoutdoors.org/2016/05/02/prusik-peak-south-face/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.openstreetmap.org/way/150227748",
+    "https://www.openstreetmap.org/relation/17086353"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8743",
+      "fact": "Beckey-Davis 5.9",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8743",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 213,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "fact": "650 ft (197 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8743",
+      "fact": "700 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey and Dan Davis, 1962.",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "fact": "FA: Fred Beckey, Dan Davis (1962)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8743",
+      "fact": "Fred Beckey and Dan Davis, 1962",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "fact": "Grade III (SummitPost route page 403, not read)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "III",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108228989/beckey-davis",
+      "fact": "Grade III (SummitPost route page 403, not read)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Prusik Peak",
+    "value": {
+     "name": "Prusik Peak",
+     "lat": 47.4874957,
+     "lng": -120.7843035
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528402 'Prusik Peak' summit point, DomesticNames_WA (reused from batch C, Prusik West Ridge)",
+      "fact": "47.4874957,-120.7843035",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 1 m, 9x9 grid at 10 m round the GNIS point (2026-11-18): GNIS point 7,965 ft, highest sample 8,004 ft 22 m away - gap 39 ft, under the 50 ft spire rule, so the USGS point stands; OSM peak node 348974816 22 m away (batch C)",
+      "fact": "22 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Gnome Tarn",
+    "value": {
+     "name": "Gnome Tarn",
+     "lat": 47.4847453,
+     "lng": -120.7895113
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528620 'Gnome Tarn' (lake), DomesticNames_WA",
+      "fact": "47.4847453,-120.7895113",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "OSM relation 17086353 \"Gnome Tarn\" (natural=water) centre 47.4846778,-120.7896516, 13 m from the GNIS point (Overpass, 2026-11-18)",
+      "fact": "13 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Stuart Lake Trailhead",
+    "value": {
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.5278,
+     "lng": -120.8205
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Latitude 47.5278, Longitude -120.8205, 3,400 ft (reused from batch B, Mount Stuart North Ridge; re-read 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "OSM parking way 150227748 \"Stuart Lake Trailhead Parking\" (OSM API geometry, read 2026-11-18): the point lies inside the lot polygon; USGS 3DEP reads 3,399 ft there",
+      "fact": "inside lot",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery via recreation.gov/permits/233273 (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day use wilderness permits free, self-issued at trailhead; overnight reservation permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+     "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles each winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; Eightmile Rd FR 7600; FR 7601 ~4 mi; high clearance, 4x4 advised; closed winter (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "areas",
+    "id": "wa_prusik_peak",
+    "column": "lat,lng",
+    "from": [
+     47.487398,
+     -120.784552
+    ],
+    "to": [
+     47.4874957,
+     -120.7843035
+    ],
+    "why": "Area point is 22 m from the USGS GNIS Prusik Peak summit point that the route summit pins (and the West Ridge lock) use; the 3DEP grid shows the GNIS point only 39 ft below the high point, so it stands.",
+    "evidence": [
+     "USGS GNIS 1528402"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: Mountain Project 7, Steph Abegg 6 (stored 7) - not locked",
+   "high_point_ft: stored 8008 is the ListsOfJohn LiDAR figure (batch C lock on West Ridge); new owner rule wants the USGS map figure. The Mountaineers and Steph Abegg give 8,000 ft; ListsOfJohn now shows a Cloudflare human check (stopped), so the map figure was not read. Owner: decide 8008 vs 8000 for all Prusik routes"
+  ],
+  "notes": "Cheap checks pass: gain 6050 > net climb 4,608 ft (8008 - 3400); dist_km 15.69 (9.75 mi one-way) > straight line 5.24 km and close to the route pins (summit at 9 mi); Steph Abegg gives ~9 mi to the base via Aasgard and Wenatchee Outdoors 10-11 mi one-way, so no fix. Summit pin moved 22 m to the USGS point. Trailhead pin moved 63 m to the USFS point inside the OSM lot (same lock as Stuart North Ridge). Gnome Tarn was pinned twice (Campsite and Junction, same spot, 7372/7415 ft): merged into one Campsite pin at the USGS lake point (moved ~150 m; 3DEP 7,361 ft), keeping the directions. Trailhead directions and road object corrected: Eightmile Road is FR 7600 (USFS), the stored text called it FR 7601. Descent: MP says one 60 m rope from the summit bolt; Abegg counts 6 single-rope rappels, Wenatchee Outdoors about 4 (for the shared north-face descent) - rappels text left as is. Approach: Steph Abegg used Snow Lakes (~10 mi, 6,000+ ft to the base); the stored route uses Aasgard."
+ },
+ "wa_prusik_peak_stanley_burgner": {
+  "area": "wa_prusik_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Leave US 2 at the west edge of Leavenworth on Icicle Road and go roughly 8.5 mi, then take Eightmile Road (FR 7600) to the left and bear right onto FR 7601, a steep, washboarded gravel road, for about 4 mi to its end at the Stuart Lake Trailhead, about 3,400 ft. Park with a Northwest Forest Pass, an interagency pass or the $5 day fee; FR 7601 is closed to vehicles every winter."
+    },
+    {
+     "lat": 47.4847453,
+     "lng": -120.7895113,
+     "elev": 7361,
+     "name": "Gnome Tarn",
+     "type": "Campsite",
+     "note": "Camp below the south face of Prusik Peak; an Enchantment overnight permit is needed May 15 to Oct 31."
+    },
+    {
+     "lat": 47.4874957,
+     "lng": -120.7843035,
+     "elev": 8008,
+     "name": "Prusik Peak summit",
+     "type": "Summit"
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105808515/stanley-burgner",
+    "https://stephabegg.com/?p=8741",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-south-face",
+    "https://wenatcheeoutdoors.org/2016/05/02/prusik-peak-south-face/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.openstreetmap.org/way/150227748",
+    "https://www.openstreetmap.org/relation/17086353"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Prusik Peak summit",
+    "value": {
+     "name": "Prusik Peak summit",
+     "lat": 47.4874957,
+     "lng": -120.7843035
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528402 'Prusik Peak' summit point, DomesticNames_WA (reused from batch C, Prusik West Ridge)",
+      "fact": "47.4874957,-120.7843035",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 1 m, 9x9 grid at 10 m round the GNIS point (2026-11-18): GNIS point 7,965 ft, highest sample 8,004 ft 22 m away - gap 39 ft, under the 50 ft spire rule, so the USGS point stands; OSM peak node 348974816 22 m away (batch C)",
+      "fact": "22 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Gnome Tarn",
+    "value": {
+     "name": "Gnome Tarn",
+     "lat": 47.4847453,
+     "lng": -120.7895113
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528620 'Gnome Tarn' (lake), DomesticNames_WA",
+      "fact": "47.4847453,-120.7895113",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "OSM relation 17086353 \"Gnome Tarn\" (natural=water) centre 47.4846778,-120.7896516, 13 m from the GNIS point (Overpass, 2026-11-18)",
+      "fact": "13 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Stuart Lake Trailhead",
+    "value": {
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.5278,
+     "lng": -120.8205
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Latitude 47.5278, Longitude -120.8205, 3,400 ft (reused from batch B, Mount Stuart North Ridge; re-read 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "OSM parking way 150227748 \"Stuart Lake Trailhead Parking\" (OSM API geometry, read 2026-11-18): the point lies inside the lot polygon; USGS 3DEP reads 3,399 ft there",
+      "fact": "inside lot",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_prusik_peak_stanley_burgner",
+    "column": "grade",
+    "from": "5.10a",
+    "to": "5.9+",
+    "why": "Two independent sources give 5.9+ (Steph Abegg; Wenatchee Outdoors, crux the last pitch) and The Mountaineers 5.9 with a 5.9+ pitch; only Mountain Project says 5.10a. Also set rock_grade 5.9+ and recompute grade_num with the shared parser. Lock agree-2 after.",
+    "evidence": [
+     "https://stephabegg.com/?p=8741",
+     "https://wenatcheeoutdoors.org/2016/05/02/prusik-peak-south-face/",
+     "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-south-face"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_prusik_peak_stanley_burgner",
+    "column": "commitment",
+    "from": null,
+    "to": "III",
+    "why": "Mountain Project, The Mountaineers and Wenatchee Outdoors all give Grade III (same value as the sibling Beckey-Davis). alpine_grade null -> III likewise, as on Beckey-Davis.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105808515/stanley-burgner",
+     "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-south-face",
+     "https://wenatcheeoutdoors.org/2016/05/02/prusik-peak-south-face/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_prusik_peak_stanley_burgner",
+    "column": "permit",
+    "from": null,
+    "to": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "why": "Route is in the Enchantment Permit Area; same official text locked on the sibling Prusik routes (USFS pages).",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.10a vs Abegg 5.9+, Wenatchee Outdoors 5.9+, The Mountaineers 5.9 (fix proposed)",
+   "pitches: MP 6, Wenatchee Outdoors \"5 or 6\", Steph Abegg 6 in the title but 7 climbed, The Mountaineers 7 (stored 6) - not locked",
+   "length_m: MP 500 ft (stored 152 m) vs Steph Abegg 650 ft - not locked",
+   "high_point_ft: null; Prusik LiDAR 8008 vs 8,000 (Mountaineers, Abegg) - see Beckey-Davis; summit pin elev written as 8008 to match the sibling"
+  ],
+  "notes": "Row had no waypoints, road or access. Added three pins: the Stuart Lake trailhead (matches the row approach_logistics and the Aasgard approach The Mountaineers describe for this route), Gnome Tarn camp and the USGS summit point (all locked as on Beckey-Davis). The stored itinerary describes the Snow Lakes approach instead and says the overnight permit runs May 15 to Oct 15 - USFS says Oct 31 (itinerary is not settable; owner fix). FA: not on MP; a search snippet credited a 1968 Stanley/Burgner party but no page read states names and year, so fa stays null. Descent facts: walk east, about 4 single-rope rappels down the north side (Wenatchee Outdoors; The Mountaineers 3-4). Rack: doubles ~0.75 to #3 plus a few 3.5-4 in pieces (MP, Wenatchee Outdoors). Wenatchee Outdoors: one-way 10-11 mi and 6,200-6,500 ft total gain depending on approach. No gain/dist proposed (range only)."
+ },
+ "wa_northeast_buttress_4": {
+  "area": "wa_colchuck_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Stuart Lake Trailhead at the end of FR 7601; standard start for Colchuck Peak.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Leave US 2 at the west edge of Leavenworth on Icicle Road and go roughly 8.5 mi, then take Eightmile Road (FR 7600) to the left and bear right onto FR 7601, a steep, washboarded gravel road, for about 4 mi to its end at the Stuart Lake Trailhead, about 3,400 ft. Park with a Northwest Forest Pass, an interagency pass or the $5 day fee; FR 7601 is closed to vehicles every winter, and day trips need the free self-issued Enchantment day-use permit at the trailhead."
+    },
+    {
+     "lat": 47.4878,
+     "lng": -120.8343,
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "type": "Campsite"
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5574,
+     "name": "Colchuck Lake",
+     "type": "Junction",
+     "distMi": 4.1,
+     "elevFt": 5574,
+     "directions": "Follow Stuart Lake Trail #1599 about 2.5 miles to the signed fork, turn left onto the Colchuck Lake Trail and climb its switchbacks about 1.6 miles to Colchuck Lake at 5,570 ft, the last reliable water."
+    },
+    {
+     "lat": 47.4781887,
+     "lng": -120.8463606,
+     "elev": 8705,
+     "name": "Colchuck Peak summit",
+     "note": "This is Colchuck Peak's summit, not Mount Stuart's — a different, neighboring peak. The coordinate matches the summit waypoint already on this peak's sibling Colchuck Glacier / Northeast Couloir routes.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "Follow the east-shore boot path to the inlet at the south end of the lake, then climb talus and snow up the basin to the toe of the Colchuck Glacier near 6,600-6,800 ft. Angle up across the glacier's true-right margin to the lowest rock of the buttress just south of the Northeast Couloir and cross the moat, which can be the crux in a lean year. About 14 pitches lead up the buttress to the summit."
+    }
+   ],
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+    "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles each winter."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/114519372/northeast-buttress",
+    "https://www.alpineinstitute.com/colchuck-peak-the-elusive-northeast-buttress/",
+    "https://alpinedave.com/enchantments/colchuck_ne/colchuck_ne.htm",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.openstreetmap.org/way/150227748"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372/northeast-buttress",
+      "fact": "5.8+ (SummitPost 403; no other page states an overall grade)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8+",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372/northeast-buttress",
+      "fact": "5.8+",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "IV",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372/northeast-buttress",
+      "fact": "Grade IV",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 366,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/114519372/northeast-buttress",
+      "fact": "1,200 ft (364 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8705,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://listsofjohn.com/peak/48687",
+      "fact": "8,705' USGS map figure (LiDAR 8,711) - reused from batch C, Colchuck Glacier",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://gethighonaltitude.com/2020/06/15/colchuck-peak-colchuck-glacier/",
+      "fact": "8,705 ft (reused from batch C)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Colchuck Peak summit",
+    "value": {
+     "name": "Colchuck Peak summit",
+     "lat": 47.4781887,
+     "lng": -120.8463606
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1531556 'Colchuck Peak' summit point (reused from batch C, Colchuck Glacier)",
+      "fact": "47.4781887,-120.8463606",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 1 m grid at 10 m (2026-11-18): GNIS point 8,676 ft, highest sample 8,707 ft 14 m away - gap 31 ft, under 50 ft; OSM peak node 348974294 6 m away (batch C)",
+      "fact": "14 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Stuart Lake Trailhead",
+    "value": {
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.5278,
+     "lng": -120.8205
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Latitude 47.5278, Longitude -120.8205, 3,400 ft (reused from batch B, Mount Stuart North Ridge; re-read 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "OSM parking way 150227748 \"Stuart Lake Trailhead Parking\" (OSM API geometry, read 2026-11-18): the point lies inside the lot polygon; USGS 3DEP reads 3,399 ft there",
+      "fact": "inside lot",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery via recreation.gov/permits/233273 (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day use wilderness permits free, self-issued at trailhead; overnight reservation permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+     "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles each winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; Eightmile Rd FR 7600; FR 7601 ~4 mi; high clearance, 4x4 advised; closed winter (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northeast_buttress_4",
+    "column": "alpine_grade",
+    "from": "Grade IV (Alpine)",
+    "to": "IV",
+    "why": "alpine_grade holds a value like the sibling Stuart/Dragontail routes (\"IV\"); MP Grade IV.",
+    "evidence": [
+     "https://www.mountainproject.com/route/114519372/northeast-buttress"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northeast_buttress_4",
+    "column": "gpx",
+    "from": "3 points: trailhead, summit, Colchuck Lake",
+    "to": null,
+    "why": "The stored line is only three of the route pins joined (and out of order: trailhead -> summit -> lake). The waypoint skill removes a pins-joined line; draw the mapped trail instead.",
+    "evidence": []
+   },
+   {
+    "table": "areas",
+    "id": "wa_colchuck_peak",
+    "column": "lat,lng",
+    "from": [
+     47.478348,
+     -120.846468
+    ],
+    "to": [
+     47.4781887,
+     -120.8463606
+    ],
+    "why": "Area point is 19 m from the USGS GNIS Colchuck Peak point that the route summit pins use.",
+    "evidence": [
+     "USGS GNIS 1531556"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 14 (stored); The Alpine Institute party climbed about 20; others report 12-20 depending on the line - not locked",
+   "fa: \"Mark Weigelt, Julie Brugger, 1970\" is MP only (OpenBeta = MP); a first ascent cannot lock at 1 source"
+  ],
+  "notes": "Cheap checks pass: gain 5305 = 8705 - 3400 exactly (3DEP 3,399 ft at the lot); dist_km 8 (5 mi one-way) > straight line 5.85 km; Colchuck Lake pin at 4.1 mi; no published one-way figure, left. Summit pin moved 7 m to the USGS point. Trailhead pin already at the USFS point. Trailhead directions and note corrected (called Eightmile Road FR 7601; USFS: Eightmile is FR 7600, then FR 7601). Road object replaced with the shared USFS-sourced one. Kearney and Beckey starts join at pitch 5 (MP)."
+ },
+ "wa_mount_stuart_ice_cliff_glacier": {
+  "area": "wa_mount_stuart",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3400,
+     "directions": "Leave US 2 at the west edge of Leavenworth on Icicle Road and go roughly 8.5 mi, then take Eightmile Road (FR 7600) to the left and bear right onto FR 7601, a steep, washboarded gravel road, for about 4 mi to its end at the Stuart Lake Trailhead, about 3,400 ft. FR 7601 is closed to vehicles every winter, so an early-season trip may start on foot or skis below the trailhead."
+    },
+    {
+     "lat": 47.49742,
+     "lng": -120.86218,
+     "name": "Climbers' trail junction (east of Mountaineers Ridge)",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null,
+     "directions": "Follow the Stuart Lake Trail about 2.5 miles to the Colchuck Lake junction and stay right for Stuart Lake. About a mile to a mile and a half farther, the trail turns uphill and begins switchbacking away from Mountaineer Creek; that turn is where you leave it and stay low in the valley bottom on the climbers' path."
+    },
+    {
+     "lat": 47.4842,
+     "lng": -120.88,
+     "elev": 5384,
+     "name": "Ice Cliff Glacier base bivy",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": 5384,
+     "directions": "Cross Mountaineer Creek on logs and follow the unmaintained climbers' path upstream, staying low beside the creek with the creek on your left rather than following cairns up and right into the boulder slope near 4,675 ft. After about 1.5 miles, where the valley steepens, turn right (west) and climb talus and forest into the flat hanging basin near 5,400 ft beneath the Sherpa and Ice Cliff glaciers."
+    },
+    {
+     "lat": 47.4750106,
+     "lng": -120.9022286,
+     "elev": 9415,
+     "name": "Mount Stuart Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 9415,
+     "directions": "Gain the moraine and follow it to the toe of the North Ridge at about 6,600 ft, then cut hard left and traverse beneath the ice cliff without stopping. Pass the icefall on whichever flank is in condition, cross the cirque and the bergschrund to the couloir, and climb about 1,000 ft of it, taking the right fork, to the cornice exit near 8,600 ft. Traverse south of the false summit and follow the ridge to the top."
+    }
+   ],
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+    "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles each winter."
+   },
+   "approach_logistics": {
+    "peakLat": 47.4750106,
+    "peakLng": -120.9022286,
+    "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+    "trailheadLat": 47.5282,
+    "trailheadLng": -120.82036,
+    "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,400 ft), via the Mountaineer Creek drainage"
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mt-stuart-ice-cliff-glacier",
+    "https://wenatcheeoutdoors.org/2016/06/02/mt-stuart-ice-cliff-glacier/",
+    "https://stephabegg.com/?p=8737",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.openstreetmap.org/way/150227748"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "ice_grade",
+    "value": "AI2-3",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+      "fact": "AI2-3 Steep Snow (SummitPost 403; The Mountaineers give only the commitment grade)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 610,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+      "fact": "2,000 ft (606 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/108784980/ice-cliff-glacier",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mt-stuart-ice-cliff-glacier",
+      "fact": "Grade II-III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 9415,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mt-stuart-ice-cliff-glacier",
+      "fact": "High Point 9,415 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8737",
+      "fact": "summit 9,415 ft (reused from batch B, North Ridge)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Mount Stuart Summit",
+    "value": {
+     "name": "Mount Stuart Summit",
+     "lat": 47.4750106,
+     "lng": -120.9022286
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1526641 'Mount Stuart' summit point (reused from batch B, North Ridge)",
+      "fact": "47.4750106,-120.9022286",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 1 m grid at 10 m (2026-11-18): GNIS point 9,355 ft, highest sample 9,404 ft 14 m away - gap 49 ft, just under the 50 ft rule",
+      "fact": "14 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Stuart Lake Trailhead",
+    "value": {
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.5278,
+     "lng": -120.8205
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Latitude 47.5278, Longitude -120.8205, 3,400 ft (reused from batch B, Mount Stuart North Ridge; re-read 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "OSM parking way 150227748 \"Stuart Lake Trailhead Parking\" (OSM API geometry, read 2026-11-18): the point lies inside the lot polygon; USGS 3DEP reads 3,399 ft there",
+      "fact": "inside lot",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery via recreation.gov/permits/233273 (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day use wilderness permits free, self-issued at trailhead; overnight reservation permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+     "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles each winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; Eightmile Rd FR 7600; FR 7601 ~4 mi; high clearance, 4x4 advised; closed winter (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_stuart_ice_cliff_glacier",
+    "column": "dist_km",
+    "from": 24.14,
+    "to": null,
+    "why": "24.14 km is exactly 15.0 mi - reads as a round trip stored in a one-way column (the app doubles it to 30 mi). The stored track measures ~10.2 km from the point nearest the trailhead to the summit, but that track fails the checks (below), and no page read gives a one-way figure. Null until a published one-way distance is found.",
+    "evidence": []
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_stuart_ice_cliff_glacier",
+    "column": "gpx",
+    "from": "470-point line (CalTopo map F1M0 per data_quality)",
+    "to": null,
+    "why": "Fails the track checks: starts 4.75 km from the trailhead pin (on the lower road), has a 658 m gap, and has no timestamps. Remove gpx and elev_pts together.",
+    "evidence": []
+   }
+  ],
+  "disputed": [
+   "fa: \"Bill & Gene Prater, Dave Mahre, 1957\" - MP states it; SummitPost (403) reportedly gives August 5, 1957; no second readable source, so not locked",
+   "grade: stored AI3 vs MP AI2-3 (agrees with the upper end) - left; ice_grade locked as AI2-3",
+   "rock_grade: stored \"low 5th (late-season right-side variation up to 5.8)\" is prose, not a grade - owner check"
+  ],
+  "notes": "Cheap checks: gain 6015 = 9415 - 3400 exactly (ok); dist_km fails (see sql). Summit pin moved 70 m from the old area point to the USGS point; the stored track ends 17 m from it; approach_logistics peak coords moved with it. Trailhead pin already at the USFS point. The \"Climbers' trail junction\" pin (47.49742,-120.86218) is copied from the Mountain Project route page coordinate - MP coordinates are never evidence; it sits 147 m off the stored track; keep unlocked, owner may drop it. \"Ice Cliff Glacier base bivy\" (47.4842,-120.88) is rounded and 100 m off the track - unlocked. Road object and trailhead directions corrected (stored called Eightmile Road FR 7601). Mountaineers rate it Grade II-III intermediate ice; MP descent via the Sherpa Glacier from ~8,200 ft near the false summit matches the stored descent."
+ },
+ "wa_dragontail_peak_r4": {
+  "area": "wa_dragontail_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "name": "Stuart Lake Trailhead (Trail #1599)",
+     "type": "Trailhead",
+     "directions": "Leave US 2 at the west edge of Leavenworth on Icicle Road and go roughly 8.5 mi, then take Eightmile Road (FR 7600) to the left and bear right onto FR 7601, a steep, washboarded gravel road, for about 4 mi to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass (or the $5 day fee) and the free self-issued Enchantment day-use permit are needed. FR 7601 is closed to vehicles every winter, so in season for this route expect to walk or ski the road to the trailhead.",
+     "elev": 3400
+    },
+    {
+     "lat": 47.4878,
+     "lng": -120.8343,
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "type": "Campsite"
+    },
+    {
+     "lat": 47.4788694,
+     "lng": -120.833106,
+     "name": "Dragontail Peak",
+     "type": "Summit",
+     "elevFt": 8840
+    }
+   ],
+   "road": {
+    "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+    "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+    "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+    "seasonalGate": "FR 7601 is closed to vehicles each winter."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107059043/triple-couloirs",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs",
+    "https://www.alpineinstitute.com/route-profile-triple-couloirs-dragontail-peak-ai3-5-8-grade-iii-iv/",
+    "https://climberkyle.com/2018/03/31/dragontail-peak-triple-couloirs-wi2-m3/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://www.openstreetmap.org/way/150227748"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "WI3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "fact": "WI3 M3 Steep Snow R",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs",
+      "fact": "Grade III, WI3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "ice_grade",
+    "value": "WI3",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "fact": "WI3",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs",
+      "fact": "WI3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III-IV",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-triple-couloirs-dragontail-peak-ai3-5-8-grade-iii-iv/",
+      "fact": "Grade III-IV",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs",
+      "fact": "Grade III (one half of the slash grade)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "fact": "Grade IV (the other half)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 762,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107059043/triple-couloirs",
+      "fact": "2,500 ft (758 m) (SummitPost 403)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 8840,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs",
+      "fact": "High Point 8,840 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-triple-couloirs-dragontail-peak-ai3-5-8-grade-iii-iv/",
+      "fact": "summit 8,840 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Dragontail Peak",
+    "value": {
+     "name": "Dragontail Peak",
+     "lat": 47.4788694,
+     "lng": -120.833106
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1528383 'Dragontail Peak' summit point (reused from batch C, Serpentine Arete)",
+      "fact": "47.4788694,-120.833106",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 1 m grid at 10 m (2026-11-18): GNIS point 8,802 ft, highest sample 8,821 ft 22 m away - gap 19 ft, under 50 ft; OSM peak node 356547014 23 m away (batch C)",
+      "fact": "22 m",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Stuart Lake Trailhead (Trail #1599)",
+    "value": {
+     "name": "Stuart Lake Trailhead (Trail #1599)",
+     "lat": 47.5278,
+     "lng": -120.8205
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Latitude 47.5278, Longitude -120.8205, 3,400 ft (reused from batch B, Mount Stuart North Ridge; re-read 2026-11-18)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "OSM parking way 150227748 \"Stuart Lake Trailhead Parking\" (OSM API geometry, read 2026-11-18): the point lies inside the lot polygon; USGS 3DEP reads 3,399 ft there",
+      "fact": "inside lot",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+      "fact": "overnight permit May 15-Oct 31; advance lottery via recreation.gov/permits/233273 (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+      "fact": "day-use permit free, self-issued at the trailheads (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "day use wilderness permits free, self-issued at trailhead; overnight reservation permit May 15-Oct 31",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "Icicle Road, Eightmile Road (FR 7600) and FR 7601 to the Stuart Lake Trailhead",
+     "status": "Gravel and steep, washboarded later in the season; high clearance recommended, 4x4 advised. Closed to vehicles every winter.",
+     "driveNote": "Take Icicle Road out of Leavenworth for roughly 8.5 mi to the Eightmile Road (FR 7600) turnoff on the left, then stay right onto FR 7601 and follow it about 4 mi, past the Eightmile Trailhead, to where it ends. The lot is small; once it fills, park only on the side of the road the signs permit, because cars in no-parking zones are ticketed.",
+     "seasonalGate": "FR 7601 is closed to vehicles each winter."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-16T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/stuart-lake-trailhead",
+      "fact": "Icicle Rd 8.5 mi; Eightmile Rd FR 7600; FR 7601 ~4 mi; high clearance, 4x4 advised; closed winter (reused from batch C)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_dragontail_peak_r4",
+    "column": "dist_km",
+    "from": 6.9,
+    "to": 10.06,
+    "why": "One-way convention (the app doubles it). 6.9 km (4.3 mi) only reaches Colchuck Lake; The Mountaineers give 12.5 mi round trip for this route = 6.25 mi one-way = 10.06 km, the same value batch C proposed for Serpentine Arete (same trailhead and summit). Straight line trailhead -> summit is 5.52 km.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-triple-couloirs"
+    ]
+   },
+   {
+    "table": "areas",
+    "id": "wa_dragontail_peak",
+    "column": "lat,lng",
+    "from": [
+     47.47873,
+     -120.833421
+    ],
+    "to": [
+     47.4788694,
+     -120.833106
+    ],
+    "why": "Area point is 28 m from the USGS GNIS Dragontail Peak point that the route summit pins use.",
+    "evidence": [
+     "USGS GNIS 1528383"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa: \"Bill Joiner, Leslie Nelson, and Dave Seman, May 1974\" - only The Alpine Institute states it; MP says unknown; not locked",
+   "pitches: 20 is MP only, for a route mostly simul-climbed - not locked",
+   "alpine_grade \"D\" and rock_grade \"5.8\": no page read gives D; The Alpine Institute gives 5.8 (on a variation), SummitPost (403) reportedly 5.7",
+   "gain_ft: stored 5440 = net climb from the summer trailhead; The Mountaineers give 7,030 ft (from the winter road closure at Bridge Creek). Left as is"
+  ],
+  "notes": "Ice conditions not touched (never lock). Cheap checks: gain 5440 = 8840 - 3400 (ok); dist_km 6.9 is impossible as a summit distance (see sql). Summit pin moved 1 m to the USGS point; trailhead pin moved 46 m to the USFS point inside the lot and given its 3,400 ft. Road object replaced and trailhead directions rewritten (stored said turn onto FR 7601 straight off Icicle Road; USFS: Eightmile Road FR 7600 first). Winter: The Alpine Institute and The Mountaineers both note the approach starts at Bridge Creek (~3.5-4 mi of road) when FR 7601 is gated. Descent toward Aasgard Pass (MP, Alpine Institute) matches the stored text."
+ }
+}

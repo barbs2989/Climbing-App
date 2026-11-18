@@ -99,7 +99,12 @@ the last two rows. Research effort goes to the first three groups.
   14,410 ft for Rainier). The USGS elevation model is the fallback only. The USGS
   place-names bulk file (`DomesticNames_<ST>_Text.zip`) has coordinates but no elevations.
   With no land-manager figure, the **USGS map figure** is official, NOT a LiDAR survey figure
-  (owner, 2026-11-18: Cutthroat 8,050 map vs 8,066 LiDAR → 8,050).
+  (owner, 2026-11-18: Cutthroat 8,050 map vs 8,066 LiDAR → 8,050). Owner exception: Prusik Peak
+  keeps its locked 8,008 ft.
+- **Majority of independent sources wins** (owner, 2026-11-18): when 2+ independent sources agree
+  on a value and one source (often Mountain Project) disagrees, the majority value is used — e.g.
+  Mary Jane Dihedral 5.10a (MP) → 5.9 (theCrag, Abegg, Wenatchee Outdoors). Change `grade_num`
+  with the grade, computed by `gradeNumFrom` in `lib/grade.js`, and `rock_grade` if it matched.
 - **Cheap impossibility checks before anything else:** a stored `gain_ft` below (summit − trailhead
   elevation) is impossible; a one-way `dist_km` shorter than the straight line from trailhead to
   summit is impossible; a value ≈ 2× the route's own summit-pin `distMi` is a round trip. Batch D
