@@ -451,8 +451,10 @@ export default function AreaPage({ area: areaRow, onSignIn, uElev, uDistMi, book
 
       {/* 14px above, the same gap Suggested climbs keeps above itself: with no Nearby peaks (a crag) the board
           sat flush under the Suggested climbs box (owner, 2026-11-11). Block margins collapse, so with
-          Nearby peaks shown the gap is 14, not 14 + its own 10. */}
-      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={8}/></div> : null}
+          Nearby peaks shown the gap is 14, not 14 + its own 10. Below it, 20: the Discussion App mounts next opens
+          with a divider line (marginTop 10, collapsing with this), and at 8 that line sat ~11px under the box and read
+          as part of it (owner, 2026-11-18: "needs spacing"). */}
+      {TopContributors ? <div style={{ marginTop: 14 }}><TopContributors areaId={area.id} mb={20}/></div> : null}
     </div>
   );
   // The website: the map and the sub-areas in the left panel beside the page (owner chose "Sidebar on web, early on
