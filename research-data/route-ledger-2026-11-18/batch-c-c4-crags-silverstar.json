@@ -1,0 +1,709 @@
+{
+ "wa_midway": {
+  "area": "wa_upper_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105870883/midway",
+    "https://cpinthebackcountry.blogspot.com/2008/05/midway-washingtons-first-ever-multi.html",
+    "https://chossclimbers.com/testing/us/washington/alpine-lakes-wilderness/midway-and-givlers/",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.6",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105870883/midway",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://cpinthebackcountry.blogspot.com/2008/05/midway-washingtons-first-ever-multi.html",
+      "fact": "5.6",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/alpine-lakes-wilderness/midway-and-givlers/",
+      "fact": "Midway (5.6)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105870883/midway",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+      "fact": "classic trad route; gear to 3 inches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey, Wes Grande & Jack Schwabland (1948)",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105870883/midway",
+      "fact": "Fred Beckey, Wes Grande & Jack Schwabland (1948)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://cpinthebackcountry.blogspot.com/2008/05/midway-washingtons-first-ever-multi.html",
+      "fact": "Fred Beckey, Wesley Grande, Jack Schwabland, 1948",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead', centre 47.59974,-120.71385",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997 (42 m from OSM)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852",
+      "fact": "1,399 ft"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_midway",
+    "column": "pitches",
+    "from": 0,
+    "to": 3,
+    "why": "0 is not a valid pitch count; three sources give 3 pitches (one blog notes it can be linked into 2).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105870883/midway",
+     "https://cpinthebackcountry.blogspot.com/2008/05/midway-washingtons-first-ever-multi.html",
+     "https://chossclimbers.com/testing/us/washington/alpine-lakes-wilderness/midway-and-givlers/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_midway",
+    "column": "length_m",
+    "from": null,
+    "to": 85,
+    "why": "MP: 280 ft (85 m). Single source; no other page states a length.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105870883/midway"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_midway",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "USFS Castle Rock Trailhead page (official): no recreation pass needed to park; no fees.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Wenatchee Outdoors lists Midway as 5.5 (5.4 in its summary line); MP, a trip-report blog and chossclimbers say 5.6 - locked at 5.6 on those three"
+  ],
+  "notes": "Castle Rock Trailhead pin = OSM parking way, confirmed by the USFS page's own coordinates (42 m); matches the area's stored parking_lat/lng. Rack (MP and Wenatchee Outdoors: gear to 3 in) could fill detailed_rack, which enrich:apply cannot write. USFS raptor closure Apr 1-Jul 31 is for Midnight and Noontime Rocks, NOT Castle Rock."
+ },
+ "wa_angel": {
+  "area": "wa_upper_castle",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.599736,
+     "lng": -120.713852,
+     "elev": 1399,
+     "name": "Castle Rock Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "Large roadside lot on US 2 below Castle Rock; no recreation pass is needed to park here."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/105852476/angel",
+    "https://chossclimbers.com/?p=8251",
+    "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+    "https://www.openstreetmap.org/way/301611553",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.10b",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105852476/angel",
+      "fact": "5.10b",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/?p=8251",
+      "fact": "Angel (5.10-); finger crack 5.10b-ish",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/105852476/angel",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/castle-rock-upper-wall-west/",
+      "fact": "classic trad route; gear to 2.5 inches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Castle Rock Trailhead",
+    "value": {
+     "name": "Castle Rock Trailhead",
+     "lat": 47.599736,
+     "lng": -120.713852
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/301611553",
+      "fact": "amenity=parking 'Castle Rock Trailhead', centre 47.59974,-120.71385",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead",
+      "fact": "Latitude 47.600101, Longitude -120.713997 (42 m from OSM)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.599736,-120.713852",
+      "fact": "1,399 ft"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_angel",
+    "column": "pitches",
+    "from": 0,
+    "to": 3,
+    "why": "0 is not valid. MP: 3 pitches / 300 ft to the top of Castle Rock; most parties climb only the short finger-crack first pitch and lower from the horn. Owner may prefer 1 (the pitch most parties climb).",
+    "evidence": [
+     "https://www.mountainproject.com/route/105852476/angel",
+     "https://chossclimbers.com/?p=8251"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_angel",
+    "column": "length_m",
+    "from": null,
+    "to": 91,
+    "why": "MP: 300 ft (91 m) for the full route. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/105852476/angel"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_angel",
+    "column": "permit",
+    "from": null,
+    "to": "No recreation pass is needed to park at the Castle Rock Trailhead.",
+    "why": "USFS Castle Rock Trailhead page (official): no recreation pass needed to park.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/castle-rock-trailhead"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade: Wenatchee Outdoors '5.7 after the 5.10 start' (no letter), consistent with a 5.10b crux; chossclimbers 5.10-",
+   "pitches: MP 3; chossclimbers implies 2 (one 'upper pitch'); most parties climb 1",
+   "fa: 'Pete Schoening & Jim Henry | FFA Fred Beckey & Don Gordon' only on MP - not locked (FA never locks from one source)"
+  ],
+  "notes": "Pro on MP: several small cams plus slings for the horn anchor; Wenatchee Outdoors: gear to 2.5 in. detailed_rack is empty but not writable by enrich:apply."
+ },
+ "wa_potholes": {
+  "area": "wa_west_side_4",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110260171/potholes",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://www.mountaineers.org/activities/routes-places/peshastin-pinnacles",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110260171/potholes",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Potholes: 5.8, bolts",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 2,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110260171/potholes",
+      "fact": "2 pitches",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396, -120.5199 (14 m from OSM)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081",
+      "fact": "1,024 ft"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_potholes",
+    "column": "length_m",
+    "from": null,
+    "to": 30,
+    "why": "MP: 100 ft (30 m). Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110260171/potholes"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_potholes",
+    "column": "bolts",
+    "from": null,
+    "to": 6,
+    "why": "MP protection: '6 bolts of varied ages' plus gear to 2 in. Single source.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110260171/potholes"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_potholes",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "WA State Parks page (official): Discover Pass; hours 6:30 a.m.-dusk; closed Nov 1-Mar 15; off rocks 30 min before close; no bolting/drilling. Mountaineers also lists Discover Pass.",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+     "https://www.mountaineers.org/activities/routes-places/peshastin-pinnacles"
+    ]
+   },
+   {
+    "table": "areas",
+    "id": "wa_west_side_4",
+    "column": "parking_lat/parking_lng",
+    "from": null,
+    "to": [
+     47.539612,
+     -120.520081
+    ],
+    "why": "Area has no parking pin; OSM park lot and the WA Parks directions point agree (14 m).",
+    "evidence": [
+     "https://www.openstreetmap.org/way/374991572",
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park"
+    ]
+   }
+  ],
+  "disputed": [
+   "discipline: MP Trad (gear to 2 in + 6 bolts); Wenatchee Outdoors lists only 'bolts' - mixed protection, left unlocked",
+   "fa: row 'Fred Beckey, Henry Mather, Don Gordon; FFA Beckey, Ed Cooper'; MP only 'F. Beckey, E. Cooper' (no FA/FFA split) - no second source",
+   "descent: row says rap after P1 (upper rock breaking down, 2 raps on a 60 m); MP says rap the route from the P2 anchors - not verified either way"
+  ],
+  "notes": "Hazards block says the park closes Nov 1 - Mar 15: confirmed by WA State Parks. Its 'roughly half the bolts spinning' claim is unverified (MP: 6 bolts of varied ages). Wenatchee Outdoors states Oct 15-Mar 15 closure (soft); the official page says Nov 1-Mar 15."
+ },
+ "wa_cro_magnon_caveman": {
+  "area": "wa_northwest_side",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 47.539612,
+     "lng": -120.520081,
+     "elev": 1024,
+     "name": "Peshastin Pinnacles State Park parking",
+     "type": "Trailhead",
+     "distMi": 0,
+     "note": "State park lot off North Dryden Road; a Discover Pass is required, and the park is closed Nov 1 to Mar 15."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/112185366/cro-magnoncaveman",
+    "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+    "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+    "https://www.mountaineers.org/activities/routes-places/peshastin-pinnacles",
+    "https://www.openstreetmap.org/way/374991572",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112185366/cro-magnoncaveman",
+      "fact": "5.8 X",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "Cro-Magnon: 5.8, gear to 2 in",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "discipline",
+    "value": "trad",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/112185366/cro-magnoncaveman",
+      "fact": "Type: Trad",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/",
+      "fact": "gear to 2 in",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Peshastin Pinnacles State Park parking",
+    "value": {
+     "name": "Peshastin Pinnacles State Park parking",
+     "lat": 47.539612,
+     "lng": -120.520081
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/374991572",
+      "fact": "amenity=parking, access=permit, fee=yes; centre 47.53961,-120.52008",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park",
+      "fact": "Get Directions map point 47.5396, -120.5199 (14 m from OSM)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "measurement": "USGS 3DEP point query at 47.539612,-120.520081",
+      "fact": "1,024 ft"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_cro_magnon_caveman",
+    "column": "pitches",
+    "from": 0,
+    "to": 2,
+    "why": "0 is not valid; MP 2 pitches, Wenatchee Outdoors mentions its second pitch.",
+    "evidence": [
+     "https://www.mountainproject.com/route/112185366/cro-magnoncaveman",
+     "https://wenatcheeoutdoors.org/2016/05/02/peshastin-pinnacles/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_cro_magnon_caveman",
+    "column": "permit",
+    "from": null,
+    "to": "Discover Pass required to park. The park is open 6:30 a.m. to dusk and closed Nov 1 to Mar 15; climbers must be off the rocks half an hour before closing, and bolting or drilling is not allowed.",
+    "why": "WA State Parks official page (see wa_potholes).",
+    "evidence": [
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park"
+    ]
+   },
+   {
+    "table": "areas",
+    "id": "wa_northwest_side",
+    "column": "parking_lat/parking_lng",
+    "from": null,
+    "to": [
+     47.539612,
+     -120.520081
+    ],
+    "why": "Same park lot as West Side.",
+    "evidence": [
+     "https://www.openstreetmap.org/way/374991572",
+     "https://parks.wa.gov/find-parks/state-parks/peshastin-pinnacles-state-park"
+    ]
+   }
+  ],
+  "disputed": [
+   "identity: the row merges two lines - Cro-Magnon 5.8 and Caveman 5.9+ (Wenatchee Outdoors lists them separately; MP's one page says Caveman shares the start). Grade 5.8 is Cro-Magnon's."
+  ],
+  "notes": "SAFETY: MP rates it X. Its only report says the first slab takes no gear, holds turned to sand and a nut placement blew out; the climber backed off. It starts from the bolted belay atop Dr. Leakey / Pebbles and Bam-Bam (~80 ft up). The stored hazards are the generic Peshastin block and don't say this; owner may want a hazard line saying it is effectively unprotected on rotten rock. FA: MP 'unknown'."
+ },
+ "wa_silver_star_glacier": {
+  "area": "wa_silver_star_mountain_okanogan",
+  "set": {
+   "road": {
+    "name": "SR-20 / North Cascades Highway",
+    "status": "Paved and open in summer; unmarked climbers' pullout near milepost 165-166.",
+    "driveNote": "Park at the pullout near MP 165-166, about 4 miles east of Washington Pass, near the Silver Star trail sign.",
+    "seasonalGate": "WSDOT closes this stretch of SR 20 every winter, usually in mid-to-late November, and reopens it between mid-April and May; check WSDOT before an early- or late-season attempt."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+    "https://stephabegg.com/?p=8704",
+    "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+    "https://en.wikipedia.org/wiki/Silver_Star_Mountain_(Okanogan_County,_Washington)",
+    "https://www.openstreetmap.org/node/356546434",
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "USGS GNIS DomesticNames_WA feature 1525796",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point query)"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "high_point_ft",
+    "value": 8876,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://stephabegg.com/?p=8704",
+      "fact": "Silver Star Summit (East Peak): 8,876 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier",
+      "fact": "High Point: 8,876 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://en.wikipedia.org/wiki/Silver_Star_Mountain_(Okanogan_County,_Washington)",
+      "fact": "8,876 ft (2,705 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Silver Star Mountain (East Summit)",
+    "value": {
+     "name": "Silver Star Mountain (East Summit)",
+     "lat": 48.547945,
+     "lng": -120.585127
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1525796 'Silver Star Mountain' summit point",
+      "fact": "48.5479394,-120.5851101 (1.4 m from pin)"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/356546434",
+      "fact": "natural=peak gnis 1525796, 48.5479168,-120.5845456 (42 m from GNIS)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8704",
+      "fact": "II, Class 3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "alpine_grade",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/?p=8704",
+      "fact": "II, Class 3",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "length_m",
+    "value": 366,
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+      "fact": "1200 ft (364 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_silver_star_glacier",
+    "column": "gain_ft",
+    "from": 4000,
+    "to": 4626,
+    "why": "Abegg: 4,626 ft from the car (parking 4,250 ft). Measured net: 8,876 (published summit) - 4,315 (USGS 3DEP at the stored trailhead pin) = 4,561 ft, within 2%. MP: ~3,500 ft to Burgundy Col alone, plus the glacier above. Mountaineers gives 5,200 (2,600 + 2,600 via camp). 4,000 is below the net climb.",
+    "evidence": [
+     "https://stephabegg.com/?p=8704",
+     "https://www.mountainproject.com/route/111875736/silver-star-glacier",
+     "https://www.mountaineers.org/activities/routes-places/silver-star-mountain-silver-star-glacier"
+    ]
+   }
+  ],
+  "disputed": [
+   "grade/rock_grade: row 'Class 4' / '4th class'; MP '4th'; Abegg 'Class 3'; Mountaineers 'Basic Alpine, Technical 2' - not locked",
+   "fa: row 'Fred Beckey, Joe Heib, Herb Staley and Don Wilde, May 1952' matches MP, BUT the row's own corrections log (2026-07-31) says fa was CLEARED because that 1952 party reached the WEST summit, and the area blurb credits the east (true) summit to Lage Wernstedt, 1926, from the south. It has been re-filled since. Owner: decide whether this route's FA is the 1952 west-summit glacier ascent or unknown",
+   "permit/parking pass: row says no pass needed at the SR-20 pullout; Mountaineers route page says 'Parking Permit Required: Northwest Forest Pass'. No USFS page found - not locked",
+   "high_point_ft: USGS 3DEP reads 8,846 ft at the GNIS point (30 ft under the published 8,876)"
+  ],
+  "notes": "Trailhead pin (48.55,-120.6306) is 114 m from approach_logistics' trailhead and 230 m from the stored gpx start; no OSM parking feature there, so not locked. Straight line pin-to-summit 3.36 km < dist_km 6.4 (ok). Stored gpx is 48 points, no timestamps, from CalTopo (per data_quality) - kept per owner rule. Road: WSDOT's table shows SR 20 opened in 2026 only partially on Apr 30 (full reopening June 14 after storm repairs) and no 2026 closure date yet; today's status not confirmed, so road is not locked. seasonalGate rewritten because 'early December' is wrong for most years (2016-2025 closures ran Nov 3 to Dec 11, mostly mid-late Nov); dropped the unverified 'MP 171' gate detail."
+ }
+}
