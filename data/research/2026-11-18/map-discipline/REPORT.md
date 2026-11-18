@@ -53,6 +53,27 @@ blogs. Blocked: SummitPost (403 everywhere), Peakbagger (bot check, never solved
 listsofjohn (403), CascadeClimbers (403 except some Chrome reads). The session's shared web-search budget
 ran out during the second pass, which is most of why the 109 stuck routes are stuck.
 
+## Second batch (same day, after Peakbagger opened)
+Owner: "try peakbagger again", "keep going", "use more agents". Peakbagger loaded without its bot check.
+- **Third pass:** 17 agent chunks (`chunks4/`, `out4/`, `BRIEF4.md`) on the 207 stuck or weakly
+  identified routes. Agents' own Chrome tabs could not run page scripts, so they used WebFetch
+  (climber.org, 14ers, climb13ers, WTA, Wikipedia, Nominatim). Several carried earlier answers forward
+  and relabelled them "found"; the verifier only takes a third-pass answer that adds a new page or a new
+  placement more than 50 m from any earlier one.
+- **Peakbagger ascent scrape** (in one tab, ~240 peaks attempted, 38 read before the site slowed to
+  ~7 s a page): too thin to use. Most peaks had 1-3 ascents naming a Start Trailhead, often disagreeing,
+  so no peak met the 3-named / 60%-agree bar. Not used for any write.
+- **Applied: 5 trailheads** (`batch2.json`, every row re-read, 5 of 5 landed): Cronin Peak North Ridge
+  (Baldwin Creek, locked), Phoenix Peak South Ridge (East Willow Creek lower lot, locked), Cadet Peak NE
+  Ridge (Bedal Creek), Hozomeen South Peak Southwest Route (Hozomeen Lake / Willow Lake trailhead),
+  Mount Hinman West Route (Necklace Valley). Dropped by hand: Himmelhorn Stonehenge (placed on the Goodell
+  Creek campground, not a trailhead lot). Hinman's evidence went in as a ledger-only entry because
+  enrich:apply's whole-object re-read compare reports a MISMATCH when jsonb reorders the object's keys,
+  although every key and value matched.
+- **Audit after both batches:** TRAILHEAD_AND_SUMMIT 750 → 918, SUMMIT_ONLY 434 → 278, NO_SUMMIT 53 → 41.
+- **Still open:** 134 held, 149 stuck (`verified.json`). What would move them: OSM placements once the
+  Overpass servers recover (83 hold only for a coordinate), and SummitPost (still 403).
+
 ## Files
 `BRIEF*.md` (the three agent briefs) · `chunks/` + `out/` (first pass, 20 chunks) · `chunks2/` + `out2/`
 (second pass, 23 chunks) · `gnis.json` · `verified.json` · `batch.json` (exactly what was applied, with its
