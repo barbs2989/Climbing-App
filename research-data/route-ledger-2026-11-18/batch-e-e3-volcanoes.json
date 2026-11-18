@@ -1,0 +1,817 @@
+{
+ "wa_mount_st_helens_worm_flows": {
+  "area": "wa_mount_st_helens",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.131,
+     "lng": -122.171,
+     "elev": 2677,
+     "name": "Marble Mountain Sno-Park",
+     "note": "Standard winter/spring trailhead; climbing permit required above 4,800 ft year-round.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From I-5 Exit 21 at Woodland, follow SR 503 east about 30 miles to Cougar. Continue east on Lewis River Road, which becomes Forest Road 90, to the Forest Road 83 junction, go left and continue roughly 6 mi to where the road ends at the Marble Mountain Sno-Park, where the road is gated in winter and spring. A Washington Sno-Park permit is required December through March, and a Mount St. Helens climbing permit is required above 4,800 ft year-round."
+    },
+    {
+     "lat": 46.129751,
+     "lng": -122.171156,
+     "elev": 2700,
+     "name": "Marble Mountain Sno-Park",
+     "type": "Campsite"
+    },
+    {
+     "lat": 46.191484,
+     "lng": -122.195848,
+     "elev": 8365,
+     "name": "Mount St. Helens Summit",
+     "note": "Breaks treeline near 3,700 ft at Chocolate Falls, joins the Monitor Ridge route near 7,400 ft, then follows the crater rim west to the true high point.",
+     "type": "Summit",
+     "distMi": 5.4,
+     "directions": "Follow the Swift Creek Trail #244 north through forest about 2 miles to treeline near Chocolate Falls (about 3,700 ft) and just above the falls, get across Swift Creek to its west bank. Follow posts, then cairns and wands, up the Worm Flows onto Worm Flow Ridge past the old seismic station near 6,200 ft, join the Monitor Ridge route near 7,400 ft, climb about 850 ft more to the crater rim and walk a quarter mile west along it to the high point."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-worm-flows-winter-climbing-route",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/sno-park-marble-mountain",
+    "https://www.wta.org/go-hiking/hikes/mount-st.-helens-summit-worm-flow-route/",
+    "https://www.mountaineers.org/activities/routes-places/mount-st-helens-worm-flows",
+    "https://fs.usda.gov/r06/giffordpinchot/recreation/mount-st-helens-summit",
+    "https://www.openstreetmap.org/node/356546327",
+    "https://www.openstreetmap.org/way/146996556",
+    "USGS GNIS DomesticNames_WA 1525360",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount St. Helens Summit",
+    "value": {
+     "name": "Mount St. Helens Summit",
+     "lat": 46.191484,
+     "lng": -122.195848
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS 3DEP (EPQS) 9x9 grid at 15 m spacing around the pin: the highest cell is the pin itself (8,320.8 ft) on the SW crater rim. The GNIS 'Mount Saint Helens' point (46.1911944,-122.1943855) reads 8,168.6 ft, 152 ft below it and 114 m east, so the real top wins (owner rule 2026-11-18); gap recorded",
+      "fact": "46.191484,-122.195848 (3DEP high point)"
+     },
+     {
+      "url": "https://www.openstreetmap.org/node/356546327",
+      "fact": "OSM natural=volcano 'Mount Saint Helens' 46.191391,-122.195527, 27 m from the pin",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 5700,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-st-helens-worm-flows",
+      "fact": "Elevation Gain: 5,700 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.wta.org/go-hiking/hikes/mount-st.-helens-summit-worm-flow-route/",
+      "fact": "gain 5,699 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "official 8,365 ft rim - USGS 3DEP 2,677 ft at the Marble Mountain Sno-Park trailhead pin = 5,688 ft",
+      "fact": "5688"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "Climbing permit required year-round above 4,800 ft; Apr 1-Oct 31 permits are quota-limited and sold on Recreation.gov, no quota Nov-Mar.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/sno-park-marble-mountain",
+      "official": true,
+      "fact": "climbing permit each person each day year-round above 4,800 ft; Apr 1-Oct 31 bought ahead on Recreation.gov; Nov 1-Mar 31 free, self-issued (updated 2026-04-28)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://fs.usda.gov/r06/giffordpinchot/recreation/mount-st-helens-summit",
+      "official": true,
+      "fact": "above 4,800 ft year-round; quota Apr 1-Oct 31; Nov 1-Mar 31 free, no limit - reused from batch B (Monitor Ridge lock, same text)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_st_helens_worm_flows",
+    "column": "high_point_ft",
+    "from": 8363,
+    "to": 8365,
+    "why": "Land manager's summit figure is 8,365 ft (USFS summit page; same fix as Monitor Ridge in batch B). Lock official-1 after.",
+    "evidence": [
+     "https://fs.usda.gov/r06/giffordpinchot/recreation/mount-st-helens-summit",
+     "https://www.recreation.gov/permits/4675309"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_st_helens_worm_flows",
+    "column": "dist_km",
+    "from": 8,
+    "to": 9.7,
+    "why": "One-way convention. USFS, WTA and The Mountaineers all give 12 mi round trip (6 mi = 9.7 km one-way). The stored 8 km is 17% short of that; the stored line measures 8.5 km and the summit pin says 5.4 mi.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-worm-flows-winter-climbing-route",
+     "https://www.wta.org/go-hiking/hikes/mount-st.-helens-summit-worm-flow-route/",
+     "https://www.mountaineers.org/activities/routes-places/mount-st-helens-worm-flows"
+    ]
+   }
+  ],
+  "disputed": [
+   "Permit season: the USFS Worm Flows trailhead page (updated 2026-05-08) says quota Apr 1-Nov 30 / free Dec 1-Mar 31; the Sno-Park page (2026-04-28) and the summit page say Apr 1-Oct 31 / Nov 1-Mar 31. Locked to the Oct 31 text as batch B did; re-check at expiry.",
+   "Trailhead pin not locked: USFS gives the Sno-Park at 46.130678,-122.169826 (95 m east of the pin, on the road), while OSM maps three Sno-Park lots; the pin is 32 m from the north lot (way 146996556) where the stored track starts. Two methods do not agree within 50 m.",
+   "grade 'Class 2' / alpine_grade 'F': The Mountaineers rate it a Winter Scramble (Strenuous 5, Technical 4); no source states a class. Not locked."
+  ],
+  "notes": "Removed the second pin 'Marble Mountain Sno-Park' (type Campsite): USFS says the Sno-Park is day use only, sunrise to sunset, so it is not a camp; it duplicated the trailhead 140 m away. The bivy entry also lists the Sno-Park as the main camp - same problem, not settable here. Summit pin elev set to the official 8,365 ft and trailhead elev to USGS 3DEP 2,677 ft (was 2,680); coordinates unchanged. USFS: route season Dec-Jun, posts to ~4,800 ft, FR 83 gated at the Sno-Park in winter/early spring, Sno-Park permit Dec 1-Mar 31 ($25/day, $50/season), not sold on site, vault toilets, no potable water; the Sno-Park page currently shows a 'Site Temporarily Closed' notice. Monument phone (360) 449-7800."
+ },
+ "wa_mount_baker_squak_glacier": {
+  "area": "wa_mount_baker",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.7066589,
+     "lng": -121.8112361,
+     "elev": 3322,
+     "name": "Schriebers Meadow / Park Butte Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From WA-20 at milepost 82, turn north onto Baker Lake Road (FS Road 11) and drive 12.5 miles to just past the Rocky Creek bridge. Turn left on FS Road 12 for 3.6 miles, then stay right on FS Road 13 for 5.3 miles to its end at the Schriebers Meadow (Park Butte) trailhead, about 3,360 ft. Road 13 is potholed and rocky; high clearance helps. A Northwest Forest Pass is required."
+    },
+    {
+     "lat": 48.74144,
+     "lng": -121.81501,
+     "elev": 6498,
+     "name": "Crag View Camp",
+     "type": "Campsite",
+     "distMi": 3.5,
+     "directions": "Take the Scott Paul Trail, which branches off within about a hundred feet of the trailhead. Around 4,600 ft, shortly after the first open meadow with views of Baker and Shuksan, leave the maintained trail at an unmarked junction for the climbers' path that climbs north up the ridge to Crag View, about 6,500 ft. The last hundred feet or so narrow to an exposed class 3 scramble."
+    },
+    {
+     "lat": 48.7766298,
+     "lng": -121.8144732,
+     "elev": 10781,
+     "name": "Mount Baker Summit",
+     "type": "Summit",
+     "distMi": 6.5,
+     "directions": "Rope up and head north up the Squak Glacier, west of the rock Prow, toward Sherman Peak. Near 9,600 ft traverse northwest to the Sherman Crater rim and join the Easton route, then climb the Roman Wall, about 1,000 ft of 35-40 degree snow, and cross the summit plateau north to Grant Peak."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/squak-climbing-route",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/",
+    "https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker",
+    "https://www.openstreetmap.org/way/183382338",
+    "https://www.openstreetmap.org/node/5398036075",
+    "USGS GNIS DomesticNames_WA 1516062 / 1520243 / 1518264",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Baker Summit",
+    "value": {
+     "name": "Mount Baker Summit",
+     "lat": 48.7766298,
+     "lng": -121.8144732
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point, DomesticNames_WA - reused from batch D (Easton/Coleman-Deming/North Ridge lock)",
+      "fact": "48.7766298, -121.8144732"
+     },
+     {
+      "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit) at 48.7766406, -121.8144899, 1.7 m away",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10781,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "Mt. Baker summit (Grant Peak) 10,781 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.alpineinstitute.com/route-profile-mt-baker-coleman-headwall/",
+      "fact": "summit 10,781 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at the trailheads - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_squak_glacier",
+    "column": "dist_km",
+    "from": 5.5,
+    "to": 10.5,
+    "why": "IMPOSSIBLE: 5.5 km is shorter than the 7.8 km straight line from the trailhead to the summit; it is the 3.5 mi (5.5 km) leg to Crag View camp. One-way convention: Alpine Institute ~13 mi (21 km) round trip and 3.5 + 3 mi one-way; The Mountaineers 13.4 mi; the summit pin says 6.5 mi (10.5 km); the stored line measures 11.0 km.",
+    "evidence": [
+     "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/",
+     "https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_squak_glacier",
+    "column": "gain_ft",
+    "from": null,
+    "to": 7500,
+    "why": "Empty. Measured: USFS 10,781 ft - USGS 3DEP 3,322 ft at the Park Butte lot = 7,459 ft; Alpine Institute gives 8,000 ft (3,300 to camp + 4,700 to the summit, within 10%). The stored line accumulates 7,420 ft. (The Mountaineers' 6,800 ft is to Sherman Peak, 10,160 ft.) Lock agree-2 after.",
+    "evidence": [
+     "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/",
+     "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+     "USGS EPQS 3DEP"
+    ]
+   }
+  ],
+  "disputed": [
+   "alpine_grade / commitment 'Grade III' / 'III': no opened source grades the route (The Mountaineers: Basic Glacier Climb, Technical 3). Not locked."
+  ],
+  "notes": "Trailhead pin moved 124 m east onto the OSM Park Butte parking lot (way 183382338), the same spot batch D gave the Easton Glacier; USGS 3DEP 3,322 ft (stored 3,200). The stored track starts 87 m from it (inside the 200 m rule). Not locked: no second placement method within 50 m. Summit pin snapped 19 m onto the locked USGS point. Crag View Camp pin is 10 m from the GNIS 'Crag View' summit (6,513 ft) and USFS names camp at Crag View 6,500 ft, but the track passes 85 m from it, so not locked. USFS (updated 2026-09-02): Scott Paul Trail 603.1 leaves Park Butte Trail 603 about 100 ft from the trailhead; no camping below 6,000 ft, no campfires, pack out waste, no water; group limit 12 entering the Wilderness; snowmobiles share the non-wilderness part May-early July; early-season route because a bergschrund forms. The descent field says to descend 'the Squak Glacier and Roman Wall' in that order, which reads backwards - left alone (paragraph)."
+ },
+ "wa_mount_baker_boulder_glacier": {
+  "area": "wa_mount_baker",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.73521,
+     "lng": -121.71027,
+     "elev": 2721,
+     "name": "Boulder Ridge Trailhead",
+     "note": "Boulder Ridge Trail #605 off Baker Lake Rd/FS 1130/1131.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Sedro-Woolley, drive SR 20 east about 16 miles to milepost 82 and turn north on Baker Lake Road (FS 11). Continue about 18 miles; just past Boulder Creek Campground and the Boulder Creek bridge, turn left on FS 1130 for about 1 mile, then left on FS 1131 to the road end and the Boulder Ridge Trailhead (Trail #605) at about 2,700 ft. A Northwest Forest Pass is required to park."
+    },
+    {
+     "lat": 48.7766298,
+     "lng": -121.8144732,
+     "elev": 10781,
+     "name": "Mt. Baker summit (Grant Peak)",
+     "type": "Summit",
+     "distMi": 8,
+     "elevFt": 10781,
+     "distFrom": "track",
+     "directions": "Follow Boulder Ridge Trail #605 about 2 nearly flat miles to a boggy clearing at the wilderness boundary, then a steep, unmaintained boot path up heather over a Class 3 rock band near 4,700 ft. Stay on the moraine crest north of Boulder Creek to camp where the ridge meets the ice, then rope up and climb the glacier west, south of the cleaver; skirt the big buttress near 9,500 ft to the south, cross the bergschrund and finish up steep snow to Grant Peak."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+    "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+    "https://mountaineers.org/activities/routes-places/mt-baker-boulder-glacier",
+    "https://www.openstreetmap.org/way/1360538534",
+    "https://www.openstreetmap.org/node/37151227",
+    "USGS GNIS DomesticNames_WA 1516062 / 1520243",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mt. Baker summit (Grant Peak)",
+    "value": {
+     "name": "Mt. Baker summit (Grant Peak)",
+     "lat": 48.7766298,
+     "lng": -121.8144732
+    },
+    "method": "measured",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS feature 1516062 \"Mount Baker\" (Summit) primary point, DomesticNames_WA - reused from batch D (Easton/Coleman-Deming/North Ridge lock)",
+      "fact": "48.7766298, -121.8144732"
+     },
+     {
+      "measurement": "USGS GNIS feature 1520243 \"Grant Peak\" (Summit) at 48.7766406, -121.8144899, 1.7 m away",
+      "fact": "second USGS feature for the top"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Boulder Ridge Trailhead",
+    "value": {
+     "name": "Boulder Ridge Trailhead",
+     "lat": 48.73521,
+     "lng": -121.71027
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+      "official": true,
+      "fact": "Boulder Ridge Trailhead 48.73521306, -121.71026884 (pin within 1 m)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/1360538534",
+      "fact": "OSM amenity=parking at the end of FR 1131, centre 48.7353602,-121.7101948, 18 m from the pin (trailhead node 37151227 13 m)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10781,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "Mt. Baker summit (Grant Peak) 10,781 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://mountaineers.org/activities/routes-places/mt-baker-boulder-glacier",
+      "fact": "High Point: 10,778 ft (within 20 ft)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 8100,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://mountaineers.org/activities/routes-places/mt-baker-boulder-glacier",
+      "fact": "Elevation Gain: 8,100 ft",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USFS 10,781 ft summit - USGS 3DEP 2,721 ft at the Boulder Ridge trailhead pin = 8,060 ft",
+      "fact": "8060"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit is required; filling in the voluntary climbing register at the trailhead is recommended. No quota or fee. Northwest Forest Pass at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/mt-baker-summit-climbing",
+      "official": true,
+      "fact": "no climbing permit; no climbing fee; recreation pass per vehicle at the trailheads - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_baker_boulder_glacier",
+    "column": "dist_km",
+    "from": 25.7,
+    "to": null,
+    "why": "25.7 km is 2x the summit pin's 8 mi (12.9 km): a round trip stored in a one-way column. No source opened states a one-way (or round-trip) distance - USFS gives only 'about two miles' of maintained trail. The stored line measures 10.2 km one-way. Null until a published figure exists.",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/mbs/recreation/boulder-glacier-climbing-route",
+     "stored waypoints/gpx measured offline"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa 'LaConnor Expedition, 1891': a wiki mirror dates a first ascent of the glacier to 24 Aug 1891 with no names; an archive finding aid describes an 1891 Mount Baker party led by V. V. Lowe without naming the route. No route-FA source opened; not locked.",
+   "commitment 'II-III' / alpine_grade 'AD': no opened source grades the route (The Mountaineers: Basic Glacier Climb, Technical 3). Not locked."
+  ],
+  "notes": "Summit pin snapped 19 m onto the locked USGS point; trailhead elev set to USGS 3DEP 2,721 ft (was 2,700), coordinates unchanged (they equal the USFS point). USFS (updated 2026-07-06): trail maintained about 2 mi to the wilderness boundary, then steep, muddy and hard to follow with a third-class scramble; most camps at the end of Boulder Ridge near the glacier; group limit 12; no toilets; road SR 20 milepost 82 - FR 11 18 mi - FR 1130 ~1 mi - FR 1131 to its end. Stored track: 252 points, max gap 391 m, passes 30 m from the summit pin (kept). auto_generated is true on this row."
+ },
+ "wa_glacier_peak_frostbite_ridge": {
+  "area": "wa_glacier_peak",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.0579,
+     "lng": -121.2882,
+     "elev": 2070,
+     "name": "North Fork Sauk River Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 2070,
+     "directions": "From Darrington, drive the Mountain Loop Highway south about 16 miles to Forest Road 49 (Sloan Creek Road), turn east and drive about 6.4 miles to the North Fork Sauk Trailhead parking lot at about 2,100 ft. A Northwest Forest Pass is required, and a free Glacier Peak Wilderness permit is self-issued at the trailhead."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7200,
+     "name": "Kennedy Ridge high camp",
+     "note": "Standard high camp on snow and pumice on the Kennedy Ridge shoulder. Snowmelt water only, and pumice holds stakes poorly; open to weather in every direction.",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": 7200,
+     "directions": "Hike the North Fork Sauk trail to the PCT near White Pass and follow the PCT north to Glacier Ridge. About 0.7 mile past the Glacier Creek crossing an unmarked climbers' path leaves the trail and climbs snow and pumice to the camp near 7,200 ft."
+    },
+    {
+     "lat": 48.1117373,
+     "lng": -121.1129474,
+     "elev": 10541,
+     "name": "Glacier Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 10541,
+     "directions": "Gain the Kennedy Glacier, a crumbling mess of moraine and big boulders at its toe, and climb it roped to the 8,800 ft saddle where Frostbite Ridge begins. Follow the crest over pumice and 45-50 degree snow to the Rabbit Ears, pass through their notch and downclimb about 150 ft of class 3, then climb one to two pitches of alpine ice to the crater rim. Cross the crater and climb its far wall to the summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/110630353/frostbite-ridge",
+    "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+    "https://www.usgs.gov/volcanoes/glacier-peak",
+    "https://www.fs.usda.gov/r06/mbs/recreation/north-fork-sauk-trailhead",
+    "https://www.openstreetmap.org/way/300757736",
+    "USGS GNIS DomesticNames_WA 1519988",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Glacier Peak Summit",
+    "value": {
+     "name": "Glacier Peak Summit",
+     "lat": 48.1117373,
+     "lng": -121.1129474
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "USGS GNIS 1519988 'Glacier Peak' summit point, DomesticNames_WA - reused from batch C (Sitkum Glacier lock)",
+      "fact": "48.1117373,-121.1129474"
+     },
+     {
+      "measurement": "USGS 3DEP grid search (49 points, ~22 m) around the GNIS point: the highest cell is the GNIS point itself - batch C",
+      "fact": "high point within 22 m"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/North Fork Sauk River Trailhead",
+    "value": {
+     "name": "North Fork Sauk River Trailhead",
+     "lat": 48.0579,
+     "lng": -121.2882
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/north-fork-sauk-trailhead",
+      "official": true,
+      "fact": "North Fork Sauk Trailhead 48.0579, -121.2882, 2,070 ft - reused from batch C",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.openstreetmap.org/way/300757736",
+      "fact": "OSM USFS parking centre 48.05826,-121.28801, 43 m from the pin - reused from batch C",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 10541,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.usgs.gov/volcanoes/glacier-peak",
+      "official": true,
+      "fact": "3,213 m (10,541 ft) - reused from batch C",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP (EPQS) at the GNIS Glacier Peak point = 10,540.6 ft (batch C)",
+      "fact": "10541"
+     }
+    ]
+   },
+   {
+    "field": "gain_ft",
+    "value": 9200,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+      "fact": "Elevation Gain: 8,900 ft (3.3% under 9,200, within 10%)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 10,541 ft summit - USGS 3DEP 2,052 ft at the North Fork Sauk trailhead pin = 8,489 ft net; the route crosses White Pass and drops to the PCT, so total gain exceeds the net (7.7% under, within 10%)",
+      "fact": "8489 net"
+     }
+    ]
+   },
+   {
+    "field": "grade",
+    "value": "AI2",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110630353/frostbite-ridge",
+      "fact": "4th, AI1-2 Steep Snow (slash grade agrees with AI2; SummitPost blocked)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/110630353/frostbite-ridge",
+      "fact": "Ice, Snow, Grade II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_glacier_peak_frostbite_ridge",
+    "column": "dist_km",
+    "from": 51.5,
+    "to": 35.4,
+    "why": "One-way convention. The Mountaineers: 44.0 mi (round trip) = 22 mi (35.4 km) one-way; Mountain Project: the PCT turnoff is about 19-20 mi from the trailhead and the whole trip slightly over 40 mi. 51.5 km (32 mi) is neither one-way nor round trip. If the owner wants round trip, 70.8.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/glacier-peak-vista-frostbite-ridge",
+     "https://www.mountainproject.com/route/110630353/frostbite-ridge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glacier_peak_frostbite_ridge",
+    "column": "alpine_grade",
+    "from": "AD-/PD+ (it is also rated Grade II, easier than the AD given here)",
+    "to": "Grade II",
+    "why": "The column holds an argument, not a value. Mountain Project: Grade II (matches commitment II).",
+    "evidence": [
+     "https://www.mountainproject.com/route/110630353/frostbite-ridge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glacier_peak_frostbite_ridge",
+    "column": "pitches",
+    "from": 5,
+    "to": null,
+    "why": "No source gives 5 pitches. Mountain Project: the ice face below the rim takes 1-2 pitches, the rest is ridge/glacier travel; no total pitch count is published.",
+    "evidence": [
+     "https://www.mountainproject.com/route/110630353/frostbite-ridge"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_glacier_peak_frostbite_ridge",
+    "column": "gpx",
+    "from": "81-point line",
+    "to": null,
+    "why": "Fails the track checks: a 1,651 m gap and other gaps over 500 m (27.3 km in 81 points); elev_pts jump 4,242 -> 5,853 -> 4,985 ft between neighbours. CalTopo-sourced per data_quality. Draw the mapped trail instead.",
+    "evidence": [
+     "stored gpx measured offline"
+    ]
+   }
+  ],
+  "disputed": [
+   "rappels / rappel_detail: stored says one 30 m rappel into the notch at the Rabbit Ears; Mountain Project describes downclimbing about 150 ft of class 3 rock after the notch and mentions no rappel. Paragraph-type text; not changed.",
+   "fa: Mountain Project lists the FA as unknown; stored fa is empty. Nothing to lock.",
+   "Approach: Mountain Project uses North Fork Sauk Trail 649 - PCT north (turnoff ~19-20 mi), descent Gerdine Ridge/Cool Glacier; the stored timing/itinerary describe a Suiattle River start and the descent field says Sitkum. Not reconciled (paragraphs)."
+  ],
+  "notes": "Summit pin moved 88 m onto the locked USGS point (same correction batch C made on the Sitkum); trailhead elev 2,070 ft per USFS (was 2,100), coordinates unchanged. Kennedy Ridge high camp pin has null lat/lng - left. The Mountaineers: Intermediate Ice Climb (late season) / Basic Glacier Climb, 44.0 mi, 8,900 ft, high point 10,500 ft, NW Forest Pass, party 12, Darrington RD. Mountain Project: bivy ~6,100 ft, saddle above Kennedy Peak ~8,200 ft."
+ },
+ "wa_mount_adams_lyman_glacier": {
+  "area": "wa_mount_adams",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 46.2883827,
+     "lng": -121.5523575,
+     "elev": 4587,
+     "name": "Killen Creek Trailhead (Trail #113, FR-2329)",
+     "note": "Standard start, via High Camp and a traverse east past Lava Ridge. Muddy Meadows trailhead, farther east, is an alternative start for the Lava and Lyman glaciers.",
+     "type": "Trailhead",
+     "elevFt": 4587,
+     "directions": "From Randle on US 12, take Forest Road 23 south about 32 miles, the last stretch gravel, to FR 2329, then turn east past Takhlakh Lake about 5 miles to the trailhead. From Trout Lake, take Mt Adams Road and FR 23 north about 24 miles to the same junction. Roads are seasonal. A free wilderness permit is self-issued at the trailhead; a Mt. Adams climbing pass is needed above 7,000 ft May through September."
+    },
+    {
+     "lat": 46.261041,
+     "lng": -121.540218,
+     "elev": 5701,
+     "name": "East Fork Adams Creek crossing",
+     "type": "Water"
+    },
+    {
+     "lat": 46.2024372,
+     "lng": -121.4907742,
+     "elev": 12276,
+     "name": "Mount Adams summit",
+     "type": "Summit",
+     "elevFt": 12276,
+     "directions": "Follow Killen Creek Trail #113 about 3.1 miles to the PCT at about 6,100 ft and continue straight across on High Camp Trail #10 a mile to High Camp. Traverse east and southeast off-trail across the lava fields, the toe of the Lava Glacier, and around or over the toe of Lava Ridge to the base of the Lyman Glacier near 8,000 ft. Climb either lobe of the glacier to the crux chute near 10,000 ft, then easier snow to the summit plateau and summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+    "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+    "https://www.openstreetmap.org/way/147108641",
+    "USGS GNIS DomesticNames_WA 1515726",
+    "USGS EPQS 3DEP elevation"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "waypoints/Mount Adams summit",
+    "value": {
+     "name": "Mount Adams summit",
+     "lat": 46.2024372,
+     "lng": -121.4907742
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.usgs.gov/tools/geographic-names-information-system-gnis",
+      "fact": "GNIS 1515726 Mount Adams 46.2024372,-121.4907742 - reused from batch B/D",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP grid search (49 points, ~25 m) around the GNIS point: highest cell is the GNIS point (12,276 ft) - batch B",
+      "fact": "high point within 25 m"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Killen Creek Trailhead (Trail #113, FR-2329)",
+    "value": {
+     "name": "Killen Creek Trailhead (Trail #113, FR-2329)",
+     "lat": 46.2883827,
+     "lng": -121.5523575
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.openstreetmap.org/way/147108641",
+      "fact": "OSM amenity=parking 'Killen Creek Trailhead' centroid 46.2883827,-121.5523575 - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/trailhead-killen-creek",
+      "official": true,
+      "fact": "trailhead 46.288406,-121.552318 (4 m) - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 12276,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+      "official": true,
+      "fact": "summit 12,276 ft - reused from batch D",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes",
+      "fact": "High Point: 12,276 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "single-source",
+    "level": "locked-1src",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes",
+      "fact": "North Lyman Glacier: one of three intermediate Grade II ice routes (SummitPost blocked; no Mountain Project page found)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_lyman_glacier",
+    "column": "gain_ft",
+    "from": 5000,
+    "to": 7690,
+    "why": "IMPOSSIBLE: 5,000 ft is below the net climb. USFS 12,276 ft - USGS 3DEP 4,587 ft at the Killen Creek lot = 7,689 ft; The Mountaineers (shared approach for Adams Glacier / North Lyman / NW Ridge north face): Elevation Gain 7,700 ft. Same fix the owner approved for the Adams Glacier. Lock agree-2 after.",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/mount-adams-ice-climbing-routes",
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit",
+     "USGS EPQS 3DEP"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_lyman_glacier",
+    "column": "dist_km",
+    "from": 37.3,
+    "to": null,
+    "why": "37.3 km (23 mi) is 3.5x the 10.7 km straight line and matches neither a one-way nor a round-trip figure; no source opened states a distance for this route (the sibling Adams Glacier shares the approach and was proposed at 11.3 km one-way). Null until published.",
+    "evidence": [
+     "stored row measured offline"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_lyman_glacier",
+    "column": "gpx",
+    "from": "2-point line",
+    "to": null,
+    "why": "The stored line is two points (46.308445,-121.539099 - 2.4 km from the trailhead - and the summit pin), 12.4 km apart: pins joined, not a track. Rule: remove.",
+    "evidence": [
+     "stored gpx measured offline"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_mount_adams_lyman_glacier",
+    "column": "permit",
+    "from": "Mt. Adams Climbing Pass (Cascade Volcano Pass) required above 7,000 ft May 1-Sep 30, sold per trip on Recreation.gov; free self-issue wilderness permit at the trailhead otherwise. Pack out human waste.",
+    "to": "Mt. Adams Climbing Pass required above 7,000 ft from May 1 to Sep 30 (age 16 and up), bought ahead on Recreation.gov; at other times and below 7,000 ft, a free self-issued wilderness permit at the trailhead. Pack out all human waste.",
+    "why": "Same correction the owner approved for the Adams Glacier (batch D): USFS calls it the Mt. Adams Climbing Pass (not Cascade Volcano Pass), age 16+; 'per trip' is not stated. Lock official-1 after (expires 2027-11-18).",
+    "evidence": [
+     "https://www.fs.usda.gov/r06/giffordpinchot/recreation/mt-adams-summit"
+    ]
+   }
+  ],
+  "disputed": [
+   "fa 'Cornelius Molenaar and Robert W. Craig, September 1948': no source opened confirms it; the 1948 Molenaar-Craig climb found in the AAJ is Dee Molenaar and Bob Craig on Rainier's Nisqually Icefall (July 1948). Possibly a different Molenaar; left unlocked - needs the 1949 AAJ/Mountaineer annual.",
+   "grade 'Class 3' with ice_grade AI1-2 and a 45-65 degree crux chute: no source gives a class; The Mountaineers call it an intermediate ice climb. Not locked."
+  ],
+  "notes": "Trailhead pin moved 17 m onto the locked Killen Creek lot (elev 4,587 ft, USGS 3DEP); summit pin moved 7 m onto the USGS point. The Mountaineers: high camp in the meadows at 6,900 ft; traverse lava fields, the Lava Glacier and the toe of Lava Ridge to the Lyman base; a chute at 10,000 ft gives the upper mountain; FR 23 32 mi south of Randle, trailhead ~3 mi from Takhlakh Lake at 4,584 ft. auto_generated is true on this row."
+ }
+}

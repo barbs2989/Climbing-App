@@ -1,0 +1,185 @@
+[
+ {
+  "id": "wa_colchuck_peak_south_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No page naming this face opened (Peakbagger lists only most-recent-year ascents by route name: Via Colchuck Lake, Banshee Pass). Likely Colchuck Lake side via Stuart Lake TH but unconfirmed."
+ },
+ {
+  "id": "wa_colchuck_peak_northeast_gully",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Still inferred only; no page names this gully. Stuart Lake TH (placements USFS 47.527806,-120.820515; OSM node 11298873822 47.5277547,-120.8208662) is the probable start via Colchuck Lake."
+ },
+ {
+  "id": "wa_crater_mountain_appassionata_smothered_in_smoke",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text describes a short crag face with a hueco, 5.1 R; probably misfiled onto Crater Mountain. No page found; Canyon Creek TH not supported."
+ },
+ {
+  "id": "wa_cutthroat_the_swarm",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Only one placement (geocaching, parking pullout); no official candidate matches the pullout (USFS Cutthroat Trailhead 48.556,-120.655 is a different, north-side trailhead). Not re-researched this pass."
+ },
+ {
+  "id": "wa_dome_peak_indian_summer",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": true,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "technical climbing ends just below the top, a short scramble reaches the summit",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Summit answered from own descent text. Trailhead not researched this pass (earlier pass: Downey Creek TH, weak; road-closure milepost conflict MP 4-4.5 vs WTA 10.5)."
+ },
+ {
+  "id": "wa_dragontail_peak_boving_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "lemkeclimbs.com/dragontail-peak does not mention this route; no page about it. Probable Stuart Lake TH only inferred."
+ },
+ {
+  "id": "wa_dragontail_peak_colchuck_col_buttress",
+  "status": "found",
+  "trailhead": {
+   "name": "Stuart Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://lemkeclimbs.com/dragontail-peak",
+    "fact": "Colchuck Lake approach ~4.5 mi one way, 2000 ft gain; the route starts at Colchuck Col above the lake"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.527806,
+     "lng": -120.820515,
+     "url": ""
+    },
+    {
+     "source": "OSM",
+     "name": "Stuart Lake Trailhead",
+     "lat": 47.5277547,
+     "lng": -120.8208662,
+     "url": "https://www.openstreetmap.org/node/11298873822"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "approach_distance_mi",
+    "value": "4.5 one way to Colchuck Lake",
+    "url": "https://lemkeclimbs.com/dragontail-peak"
+   },
+   {
+    "field": "approach_gain_ft",
+    "value": "2000 to Colchuck Lake",
+    "url": "https://lemkeclimbs.com/dragontail-peak"
+   }
+  ],
+  "notes": "MEDIUM: page does not name this route; identified from geography (col sits above Colchuck Lake, reached by the lake trail). The Snow Lakes TH reaches the other side of the range (Aasgard Pass side), not the col. Lemke calls the Colchuck-side trailhead Mountaineer Creek; the land manager signs it Stuart Lake Trailhead (USFS and OSM agree)."
+ },
+ {
+  "id": "wa_dragontail_peak_northwest_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "No page names this route; page offers Colchuck Lake (Stuart Lake TH) or Snow Lakes TH approaches, so two starts are plausible."
+ },
+ {
+  "id": "wa_earl_peak_standup_creek_route",
+  "status": "stuck",
+  "trailhead": {
+   "name": "Standup Creek Trailhead (#1369)",
+   "identifiedBy": {
+    "kind": "route_text",
+    "fact": "Standup Creek Trail #1369 via Standup Creek Road"
+   },
+   "placements": [
+    {
+     "source": "WTA",
+     "name": "Standup Creek trailhead",
+     "lat": 47.3515,
+     "lng": -120.8412,
+     "url": "https://www.wta.org/go-hiking/hikes/standup-creek"
+    },
+    {
+     "source": "OSM",
+     "name": "Standup Creek Trailhead (parking)",
+     "lat": 47.3691284,
+     "lng": -120.8387035,
+     "url": "https://www.openstreetmap.org/node/8853906741"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_roundtrip",
+    "value": "14.4 (Standup Creek hike)",
+    "url": "https://www.wta.org/go-hiking/hikes/standup-creek"
+   },
+   {
+    "field": "gain_ft",
+    "value": "3100 (Standup Creek hike)",
+    "url": "https://www.wta.org/go-hiking/hikes/standup-creek"
+   }
+  ],
+  "notes": "Identity is strong, but the two placements are ~2 km apart (WTA 47.3515,-120.8412 vs OSM parking 47.3691,-120.8387); WTA says the trailhead is 1.5 mi up Road 112, OSM sits on FR 9703-112. Cannot tell which is the lot; no USFS point. Needs a land-manager coordinate."
+ },
+ {
+  "id": "wa_east_mcmillan_spire_northeast_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text names Upper Goodell Creek Group Campground; WTA page (West McMillan Spire) gives 48.6733,-121.2658 for Goodell Creek, which does not mention East McMillan Spire; OSM Nominatim found nothing for Goodell. No independent second placement."
+ },
+ {
+  "id": "wa_east_twin_needle_north_buttress",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Own text says Lower Goodell Creek trailhead; no signed name and no independent placement (WTA 48.6733,-121.2658 is the Goodell Creek campground area)."
+ },
+ {
+  "id": "wa_east_twin_needle_thread_of_ice",
+  "status": "summit_only_answered",
+  "trailhead": null,
+  "reachesSummit": false,
+  "summitEvidence": {
+   "kind": "route_text",
+   "fact": "couloir tops out at the Eye Col between the two Needles",
+   "url": ""
+  },
+  "otherFacts": [],
+  "notes": "Does not reach the summit; ends at the col. Trailhead (Goodell Creek Campground, own pin) not placed independently this pass."
+ }
+]

@@ -1,0 +1,1326 @@
+[
+ {
+  "id": "me_sugarloaf_mountain_appalachian_trail_to_sugarloaf",
+  "name": "Appalachian Trail to Sugarloaf",
+  "discipline": "walk-up",
+  "grade": null,
+  "verdict": "SUMMIT_ONLY",
+  "state": "me",
+  "peak": {
+   "id": "me_sugarloaf_mountain",
+   "name": "Sugarloaf Mountain",
+   "lat": 45.03167,
+   "lng": -70.31333,
+   "elevation_ft": null,
+   "region": "Maine",
+   "path": "usa.maine.me_a_western_mountains.me_sugarloaf_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "earlierPasses": {
+   "why": "stuck: Identification now strong (two pages about this exact route). The other AT start, the Route 27 crossing lot (Crocker Cirque), is not this route's start. No page",
+   "trailhead": {
+    "name": "Caribou Valley Road (Caribou Pond Road) gate parking, 3.8 mi up from Route 27",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://mainebyfoot.com/sugarloaf-mountain-carrabassett-valley/",
+     "fact": "AT route up Sugarloaf starts at Caribou Valley Road trailhead, 0.5 mi up the road to the AT, then 2.8 mi on AT plus 0.6 mi side trail to the summit; mainetrailfinder AT-Sugarloaf page also names Caribou Pond Road junction as the start"
+    },
+    "placements": [
+     {
+      "source": "Waymarking",
+      "name": "Caribou Pond Road start at Route 27 (road junction, NOT the gate lot 3.8 mi in)",
+      "lat": 45.0537,
+      "lng": -70.34477,
+      "url": "https://www.waymarking.com/waymarks/WMDRT8_Caribou_Pond_Road_Maine_USA"
+     }
+    ]
+   },
+   "notes": "Identification now strong (two pages about this exact route). The other AT start, the Route 27 crossing lot (Crocker Cirque), is not this route's start. No page gave a coordinate for the gate parking lot; the Waymarking point is the road's junction on Route 27, ~3.8 mi from the lot, so do not pin it as the trailhead. Left stuck for lack of a placement. onxmaps 404, AllTrails 403, Gaia not read."
+  }
+ },
+ {
+  "id": "nv_mount_rose_mount_rose_trail",
+  "name": "Mount Rose Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "nv",
+  "peak": {
+   "id": "nv_mount_rose",
+   "name": "Mount Rose",
+   "lat": 39.3437,
+   "lng": -119.9177,
+   "elevation_ft": 10776,
+   "region": null,
+   "path": "usa.nevada.nv_western_nevada.nv_lake_tahoe_area.nv_mount_rose"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A well-defined trail from the highway pass climbs about 2,000 feet over roughly five miles to a saddle and the summit.",
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 39.3437,
+    "lng": -119.9177,
+    "elev": 10776,
+    "name": "Mount Rose summit",
+    "type": "Summit"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Tahoe Meadows Trt Trailhead",
+    "lat": 39.307345,
+    "lng": -119.907463,
+    "km": 4.1
+   },
+   {
+    "src": "USFS",
+    "name": "Jones/Whites Trailhead",
+    "lat": 39.361305,
+    "lng": -119.857313,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Whites Creek Trailhead",
+    "lat": 39.377945,
+    "lng": -119.847693,
+    "km": 7.1
+   },
+   {
+    "src": "USFS",
+    "name": "Thomas Creek Trailhead",
+    "lat": 39.393535,
+    "lng": -119.838543,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Bullseye",
+    "lat": 39.391171,
+    "lng": -120.089569,
+    "km": 15.7
+   },
+   {
+    "src": "USFS",
+    "name": "Boca Historic Townsite Interpretive Trai",
+    "lat": 39.38662,
+    "lng": -120.093334,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Boca Dam Viewpoint Trailhead",
+    "lat": 39.391487,
+    "lng": -120.092251,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "Ice House",
+    "lat": 39.386701,
+    "lng": -120.094823,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "Capra",
+    "lat": 39.418948,
+    "lng": -120.084774,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "Chimney Beach Parking",
+    "lat": 39.16777,
+    "lng": -119.926528,
+    "km": 19.6
+   },
+   {
+    "src": "USFS",
+    "name": "Two-Sixty-One",
+    "lat": 39.460338,
+    "lng": -120.130202,
+    "km": 22.4
+   },
+   {
+    "src": "USFS",
+    "name": "King'S Canyon",
+    "lat": 39.153349,
+    "lng": -119.815562,
+    "km": 22.9
+   },
+   {
+    "src": "USFS",
+    "name": "Keystone Trailhead",
+    "lat": 39.549655,
+    "lng": -119.859573,
+    "km": 23.4
+   },
+   {
+    "src": "USFS",
+    "name": "Thelin",
+    "lat": 39.312646,
+    "lng": -120.189267,
+    "km": 23.6
+   },
+   {
+    "src": "USFS",
+    "name": "Sawtooth Trailhead",
+    "lat": 39.310009,
+    "lng": -120.191538,
+    "km": 23.8
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other); agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Mount Rose Summit Trailhead (SR 431 pass lot)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://tahoetrailguide.com/hiking-mount-rose/",
+     "fact": "Mount Rose Trail starts at Mount Rose Summit Trailhead on Mt Rose Highway (SR 431), lot at the pass, ~5.5 mi one way; Wikipedia also lists Mount Rose Trail from Mount Rose Summit on SR 431; route text 'trail from the highway pass'"
+    },
+    "placements": [
+     {
+      "source": "Wikipedia",
+      "name": "Mount Rose Summit (the pass, SR 431)",
+      "lat": 39.31333,
+      "lng": -119.89722,
+      "url": "https://en.wikipedia.org/wiki/Mount_Rose_Summit"
+     },
+     {
+      "source": "hiking blog (via search result, page unnamed)",
+      "name": "Mt Rose Summit Trailhead",
+      "lat": 39.3128,
+      "lng": -119.8975,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "Not the USFS Tahoe Meadows lot (1.2 km east). Both placements are within ~60 m of each other. Neither is a land-manager point; the blog point's page was not opened by me (search-result figure), so treat the pin as pass-level."
+  }
+ },
+ {
+  "id": "ny_gray_peak_via_lake_tear_of_the_clouds",
+  "name": "Via Lake Tear of the Clouds",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_gray_peak",
+   "name": "Gray Peak",
+   "lat": 44.1114,
+   "lng": -73.9349,
+   "elevation_ft": 4840,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_gray_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Marked trail to Lake Tear of the Clouds, then a faint herd path to the summit. Path: Marcy Dam and Lake Arnold/Feldspar trails to Lake Tear, then herd path. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "High Peaks Information Center / Adirondak Loj (Heart Lake Program Center) hiker lot",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Starts at Adirondak Loj / High Peaks Information Center; Marcy Dam and Lake Arnold/Feldspar trails"
+    },
+    "placements": [
+     {
+      "source": "lakeplacid.com",
+      "name": "High Peak Information Center, ADK lot",
+      "lat": 44.182389,
+      "lng": -73.966441,
+      "url": "https://www.lakeplacid.com/hiking/mount-marcy"
+     },
+     {
+      "source": "myhikes.org",
+      "name": "Heart Lake / ADK Loj parking lot",
+      "lat": 44.18307,
+      "lng": -73.963799,
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail"
+     }
+    ]
+   },
+   "notes": "Lot and trailhead points are ~200 m apart (myhikes also lists main trailhead 44.182589,-73.966312). Prefer the lakeplacid HPIC point at the lot. Marcy Dam truck trail starts near the Meadows Lane overflow, but this route's text names the Loj."
+  }
+ },
+ {
+  "id": "ny_iroquois_peak_via_algonquin_peak",
+  "name": "Via Algonquin Peak",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_iroquois_peak",
+   "name": "Iroquois Peak",
+   "lat": 44.137,
+   "lng": -73.9982,
+   "elevation_ft": 4840,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_iroquois_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Done as an out-and-back over Algonquin, with a steep unmarked final stretch. Path: Algonquin Peak trail, then herd path to Iroquois. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "High Peaks Information Center / Adirondak Loj (Heart Lake Program Center) hiker lot",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Starts at Adirondak Loj / High Peaks Information Center; Algonquin Peak trail then herd path"
+    },
+    "placements": [
+     {
+      "source": "lakeplacid.com",
+      "name": "High Peak Information Center, ADK lot",
+      "lat": 44.182389,
+      "lng": -73.966441,
+      "url": "https://www.lakeplacid.com/hiking/mount-marcy"
+     },
+     {
+      "source": "myhikes.org",
+      "name": "Heart Lake / ADK Loj parking lot",
+      "lat": 44.18307,
+      "lng": -73.963799,
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail"
+     }
+    ]
+   },
+   "notes": "Same lot as Gray Peak. Not checked against an Iroquois-specific page; route text is explicit."
+  }
+ },
+ {
+  "id": "ny_mount_colvin_gill_brook_trail",
+  "name": "Gill Brook Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_colvin",
+   "name": "Mount Colvin",
+   "lat": 44.0939,
+   "lng": -73.8344,
+   "elevation_ft": 4057,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_colvin"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Steep slab and a challenging spot near the summit; usually extended to Blake. Path: Gill Brook Trail.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "AMR parking area, St. Huberts (Route 73)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.lakeplacid.com/hiking/mount-colvin",
+     "fact": "Colvin via Gill Brook Trail starts at AMR lot on Route 73; ~0.6 mi to entrance station, 2.5 mi more on Lake Road, then left onto Gill Brook Trail"
+    },
+    "placements": [
+     {
+      "source": "NYSDEC",
+      "name": "Adirondack Mountain Reserve parking area",
+      "lat": 44.14915,
+      "lng": -73.7694,
+      "url": "https://dec.ny.gov/places/adirondack-mountain-reserve-conservation-easement-tract"
+     },
+     {
+      "source": "lakeplacid.com",
+      "name": "AMR parking, Route 73",
+      "lat": 44.14985,
+      "lng": -73.767699,
+      "url": "https://www.lakeplacid.com/hiking/mount-colvin"
+     }
+    ]
+   },
+   "notes": "Page's summit elevation (4,507 ft) and 11.5 mi figure conflict with 4,057 ft elsewhere; not used."
+  }
+ },
+ {
+  "id": "ny_mount_skylight_via_mount_marcy",
+  "name": "Via Mount Marcy",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ny",
+  "peak": {
+   "id": "ny_mount_skylight",
+   "name": "Mount Skylight",
+   "lat": 44.0994,
+   "lng": -73.9308,
+   "elevation_ft": 4924,
+   "region": null,
+   "path": "usa.new_york.ny_adirondacks.ny_e_high_peaks_region.ny_mount_skylight"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Usually climbed with Marcy and Gray; the alternative approach from Upper Works is longer. Path: Van Hoevenberg Trail over Marcy to Lake Tear of the Clouds. Starts at Adirondak Loj / High Peaks Information Center.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (other)",
+   "trailhead": {
+    "name": "High Peaks Information Center / Adirondak Loj (Heart Lake Program Center) hiker lot",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Van Hoevenberg Trail. Starts at Adirondak Loj / High Peaks Information Center"
+    },
+    "placements": [
+     {
+      "source": "lakeplacid.com",
+      "name": "High Peak Information Center, ADK lot (Van Hoevenberg route to Marcy)",
+      "lat": 44.182389,
+      "lng": -73.966441,
+      "url": "https://www.lakeplacid.com/hiking/mount-marcy"
+     },
+     {
+      "source": "myhikes.org",
+      "name": "Heart Lake / ADK Loj parking lot",
+      "lat": 44.18307,
+      "lng": -73.963799,
+      "url": "https://myhikes.org/trails/heart-lake-loop-trail"
+     }
+    ]
+   },
+   "notes": "Marcy page confirms Van Hoevenberg starts at the HPIC lot."
+  }
+ },
+ {
+  "id": "wa_american_border_peak_northeast_face",
+  "name": "Northeast Face",
+  "discipline": "mountaineering",
+  "grade": "Class 4",
+  "verdict": "NO_SUMMIT",
+  "state": "wa",
+  "peak": {
+   "id": "wa_american_border_peak",
+   "name": "American Border Peak",
+   "lat": 48.9954,
+   "lng": -121.6651,
+   "elevation_ft": 7998,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_shuksan_baker_neighbors.wa_american_border_peak"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A more remote alternative to the standard route, gained from the glacier below the peak's northeast face and climbing mixed snow and rock — including a large, ~45-degree snow gully — via mostly class 3 with occasional class 4 rock to the summit.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [
+   {
+    "lat": 48.9512,
+    "lng": -121.6384,
+    "elev": 5200,
+    "name": "Twin Lakes basin road-end camp",
+    "type": "Campsite"
+   }
+  ],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Twin Lakes Trailhead",
+    "lat": 48.951763,
+    "lng": -121.635355,
+    "km": 5.3
+   },
+   {
+    "src": "USFS",
+    "name": "Tomyhoi/Yellow Aster Butte Trailhead",
+    "lat": 48.943426,
+    "lng": -121.662795,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Welcome Pass Trailhead",
+    "lat": 48.913529,
+    "lng": -121.699868,
+    "km": 9.5
+   },
+   {
+    "src": "USFS",
+    "name": "Hannegan Trailhead",
+    "lat": 48.910191,
+    "lng": -121.591986,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Mountain Trailhead",
+    "lat": 48.897718,
+    "lng": -121.645264,
+    "km": 11
+   },
+   {
+    "src": "USFS",
+    "name": "Damfino Lakes Trailhead",
+    "lat": 48.958998,
+    "lng": -121.807188,
+    "km": 11.1
+   },
+   {
+    "src": "USFS",
+    "name": "Nooksack Cirque Trailhead",
+    "lat": 48.894006,
+    "lng": -121.651015,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "Excelsior Pass Trailhead",
+    "lat": 48.9097,
+    "lng": -121.801697,
+    "km": 13.8
+   },
+   {
+    "src": "USFS",
+    "name": "Picture Lake Path Trailhead",
+    "lat": 48.865889,
+    "lng": -121.676743,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Bagley Lakes Trailhead",
+    "lat": 48.861566,
+    "lng": -121.682905,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "Panorama Dome Trailhead",
+    "lat": 48.860749,
+    "lng": -121.656654,
+    "km": 15
+   },
+   {
+    "src": "USFS",
+    "name": "Wild Goose Trailhead",
+    "lat": 48.854109,
+    "lng": -121.683577,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Ann Trailhead",
+    "lat": 48.85003,
+    "lng": -121.686178,
+    "km": 16.2
+   },
+   {
+    "src": "USFS",
+    "name": "Artist Point Trailhead",
+    "lat": 48.846378,
+    "lng": -121.691959,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Church Mountain Trailhead",
+    "lat": 48.912228,
+    "lng": -121.856682,
+    "km": 16.8
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: No page I could open describes this face's approach. SummitPost 403 in WebFetch and Chrome; Mountaineers 403; Wikipedia and trailcatjim (SE route from Twin Lake",
+   "trailhead": null,
+   "notes": "No page I could open describes this face's approach. SummitPost 403 in WebFetch and Chrome; Mountaineers 403; Wikipedia and trailcatjim (SE route from Twin Lakes/Gargett Mine TH) silent on NE face. A search summary of SummitPost suggests the approach is the standard Twin Lakes one, unverified. Twin Lakes Trailhead (USFS 48.951763,-121.635355) remains a likely, not confirmed, start; the existing camp pin is at the road end there."
+  }
+ },
+ {
+  "id": "wa_apex_mountain_pasayten_apex_buttress",
+  "name": "Apex Buttress",
+  "discipline": "alpine",
+  "grade": "5.9",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_apex_mountain_pasayten",
+   "name": "Apex Mountain",
+   "lat": 48.961174,
+   "lng": -120.14479,
+   "elevation_ft": 8302,
+   "region": "Pasayten Wilderness",
+   "path": "usa.washington.wa_okanogan.wa_pasayten.wa_apex_mountain_pasayten"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "Seven pitches, climbing the buttress that stands out on the left of Tungsten Lake.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Chewuch  Trailhead",
+    "lat": 48.872106,
+    "lng": -120.003515,
+    "km": 14.3
+   },
+   {
+    "src": "USFS",
+    "name": "Thirty Mile Trailhead",
+    "lat": 48.822806,
+    "lng": -120.019715,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Iron Gate  Trailhead",
+    "lat": 48.908506,
+    "lng": -119.904025,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Long Swamp Trailhead",
+    "lat": 48.854806,
+    "lng": -119.947515,
+    "km": 18.6
+   },
+   {
+    "src": "USFS",
+    "name": "Lake Creek Trailhead - Methow",
+    "lat": 48.783016,
+    "lng": -120.161215,
+    "km": 19.8
+   },
+   {
+    "src": "USFS",
+    "name": "Andrews Creek Trailhead",
+    "lat": 48.783706,
+    "lng": -120.108615,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "Crystal Trailhead",
+    "lat": 48.756306,
+    "lng": -120.139215,
+    "km": 22.8
+   },
+   {
+    "src": "USFS",
+    "name": "Billygoat (upper) Trailhead",
+    "lat": 48.784326,
+    "lng": -120.317825,
+    "km": 23.4
+   },
+   {
+    "src": "USFS",
+    "name": "Billygoat (lower) Trailhead",
+    "lat": 48.780926,
+    "lng": -120.312686,
+    "km": 23.5
+   },
+   {
+    "src": "USFS",
+    "name": "Fourteen Mile  Trailhead",
+    "lat": 48.907506,
+    "lng": -119.831615,
+    "km": 23.6
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Thirtymile Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.wta.org/go-hiking/hikes/tungsten",
+     "fact": "WTA Tungsten hike: no trailhead of its own, start at Thirtymile; Tungsten Creek trail 6.2 mi to Boundary Trail; lake sits high on Apex Mountain"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Thirty Mile Trailhead",
+      "lat": 48.822806,
+      "lng": -120.019715,
+      "url": ""
+     },
+     {
+      "source": "WTA",
+      "name": "Thirtymile Trailhead",
+      "lat": 48.8236,
+      "lng": -120.0189,
+      "url": "https://www.wta.org/go-hiking/hikes/tungsten"
+     }
+    ]
+   },
+   "notes": "WEAK: page is about the Tungsten Creek approach to Tungsten Lake, not this buttress. Chewuch Trailhead (USFS 48.872106,-120.003515) via Cathedral Driveway trail 2.2 mi is an alternative way onto the same Tungsten Creek trail (per a search summary of SummitPost, not opened). The two placements agree within ~100 m."
+  }
+ },
+ {
+  "id": "wa_big_snow_mountain_sasquatch_s_breath",
+  "name": "Sasquatch's Breath",
+  "discipline": "alpine",
+  "grade": "5.9 PG13",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_big_snow_mountain",
+   "name": "Big Snow Mountain",
+   "lat": 47.5348342,
+   "lng": -121.365929,
+   "elevation_ft": 6680,
+   "region": "Washington",
+   "path": "usa.washington.wa_centralwest.wa_western_alpine_lakes.wa_big_snow_mountain"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_big_snow_mountain_east_buttress",
+    "name": "Dingford Creek Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Dingford Creek Trailhead",
+    "lat": 47.517325,
+    "lng": -121.4543,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "Dorothy Lake Trailhead",
+    "lat": 47.608617,
+    "lng": -121.384459,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "km": 10.8
+   },
+   {
+    "src": "USFS",
+    "name": "West Fork Foss Lakes Trailhead",
+    "lat": 47.635006,
+    "lng": -121.303348,
+    "km": 12.1
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail - Snoqualmie North T",
+    "lat": 47.428012,
+    "lng": -121.413484,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Pacific Crest Trail/Stevens Pass Trailhe",
+    "lat": 47.42841,
+    "lng": -121.415498,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Pants - Snoqualmie South Trailhead",
+    "lat": 47.427228,
+    "lng": -121.420293,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Snoqualmie Lake Trailhead",
+    "lat": 47.56087,
+    "lng": -121.532179,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "Middle Fork Snoqualmie Trailhead",
+    "lat": 47.547762,
+    "lng": -121.537101,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Garfield Ledges Trailhead and Picnic Are",
+    "lat": 47.55598,
+    "lng": -121.535813,
+    "km": 13
+   },
+   {
+    "src": "USFS",
+    "name": "Evans Lake",
+    "lat": 47.658774,
+    "lng": -121.323083,
+    "km": 14.2
+   },
+   {
+    "src": "USFS",
+    "name": "Denny Creek Trailhead",
+    "lat": 47.415956,
+    "lng": -121.441168,
+    "km": 14.4
+   },
+   {
+    "src": "USFS",
+    "name": "Franklin Falls Trailhead",
+    "lat": 47.413339,
+    "lng": -121.441404,
+    "km": 14.7
+   },
+   {
+    "src": "USFS",
+    "name": "Gold Creek Trailhead",
+    "lat": 47.398629,
+    "lng": -121.380326,
+    "km": 15.2
+   },
+   {
+    "src": "USFS",
+    "name": "Kendall Peaks Trailhead",
+    "lat": 47.398249,
+    "lng": -121.394411,
+    "km": 15.3
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: MP route has no description or approach; MP area text only says drive Middle Fork Snoqualmie road 'as if for Hardscrabble Lakes'. WTA Big Snow page: road gated ",
+   "trailhead": null,
+   "notes": "MP route has no description or approach; MP area text only says drive Middle Fork Snoqualmie road 'as if for Hardscrabble Lakes'. WTA Big Snow page: road gated at Dingford Creek, ~7 mi road walk; Hardscrabble Lakes and Myrtle Lake (NW side) approaches. Face of the route unknown, so sibling East Buttress/Dingford trailhead not applied."
+  }
+ },
+ {
+  "id": "wa_booker_mountain_northwest_route",
+  "name": "Northwest Route",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_booker_mountain",
+   "name": "Booker Mountain",
+   "lat": 48.4754,
+   "lng": -120.9793,
+   "elevation_ft": 8284,
+   "region": "Washington",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_north_cascades_core.wa_booker_mountain"
+  },
+  "text": {
+   "approach": "Reached via a multi-day backpack up the Thunder Creek Trail from Colonial Creek Campground to Park Creek Pass (roughly 40 miles round trip with on the order of 7,000 ft of cumulative gain including the bonus climb to Junction Camp), or as part of a Ptarmigan-style traverse linking Cascade Pass/Buckner/Park Creek Pass. From a Park Creek Pass-area camp, it is a short day-trip scramble up to the Booker-Buckner col and on to the summit.",
+   "approach_logistics": null,
+   "road": "{\"name\":\"North Cascades Highway (SR 20) to Colonial Creek Campground / Thunder Creek Trailhead\",\"status\":\"Paved, year-round to Colonial Creek except in unusual winter closures of SR 20 itself\",\"driveNote\":\"Access via Colonial Creek Campground on SR 20 near Diablo Lake; the climb itself requires a long Thunder Creek backpack to Park Creek Pass.\",\"seasonalGate\":null}",
+   "overview": "An alternate Class 3 scramble reached from Park Creek Pass via the Booker-Buckner col, on the mountain's northwest side; used mainly by parties already in the Park Creek/Buckner area on a multi-day traverse rather than as a dedicated approach.",
+   "description": null,
+   "descent": "Downclimb the northwest-side Class 3 terrain back to the Booker-Buckner col, then descend the broad sandy gully (using snowbridges over any crevasses/cracks as on the ascent) back toward Park Creek Pass camp."
+  },
+  "waypoints": [
+   {
+    "lat": 48.665993,
+    "lng": -121.069073,
+    "elev": 1350,
+    "name": "Neve Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.542986,
+    "lng": -121.015344,
+    "elev": 3093,
+    "name": "Skagit Queen Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.583646,
+    "lng": -121.01939,
+    "elev": 3200,
+    "name": "Junction Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.471143,
+    "lng": -120.945133,
+    "elev": 3921,
+    "name": "Five Mile Camp, Park Creek trail",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.506144,
+    "lng": -120.972185,
+    "elev": 5108,
+    "name": "Thunder Basin Hiker Camp",
+    "type": "Campsite"
+   },
+   {
+    "lat": 48.476359377313265,
+    "lng": -120.98086536804179,
+    "elev": 8284,
+    "name": "Booker Mountain summit",
+    "type": "Summit",
+    "distMi": null,
+    "elevFt": 8284
+   }
+  ],
+  "siblingTrailheads": [
+   {
+    "route": "wa_booker_mountain_south_ridge",
+    "name": "Cascade Pass Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Easy Pass Trailhead",
+    "lat": 48.587206,
+    "lng": -120.801615,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Hidden Lake Trailhead",
+    "lat": 48.514161,
+    "lng": -121.221581,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 18.5
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 19.5
+   },
+   {
+    "src": "USFS",
+    "name": "East Creek Trailhead",
+    "lat": 48.667506,
+    "lng": -120.873115,
+    "km": 22.7
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 23
+   },
+   {
+    "src": "USFS",
+    "name": "Lookout Mountain Trailhead",
+    "lat": 48.537501,
+    "lng": -121.291755,
+    "km": 24
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (wta)",
+   "trailhead": {
+    "name": "Thunder Creek Trailhead (Colonial Creek Campground)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Thunder Creek Trail from Colonial Creek Campground to Park Creek Pass"
+    },
+    "placements": [
+     {
+      "source": "WTA",
+      "name": "Park Creek / Thunder Creek trailhead at Colonial Creek Campground",
+      "lat": 48.6855,
+      "lng": -121.0926,
+      "url": "https://www.wta.org/go-hiking/hikes/park-creek-pass"
+     }
+    ]
+   },
+   "notes": "Placement is WTA only (no USFS/NPS point in range); trailhead is at the back of Colonial Creek Campground near day-use amphitheater, SR 20 just past mi 130. Sibling Cascade Pass is a different approach."
+  }
+ },
+ {
+  "id": "wa_burgundy_spire_corkscrew_route",
+  "name": "Corkscrew Route",
+  "discipline": "alpine",
+  "grade": "5.8 PG13",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_burgundy_spire",
+   "name": "Burgundy Spire",
+   "lat": 48.553455,
+   "lng": -120.590745,
+   "elevation_ft": 8483,
+   "region": "Washington Pass",
+   "path": "usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades.wa_sub_wapass.wa_silver_star_and_wine_spires.wa_burgundy_spire"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": "The lower part is roughly 8-10 pitches, none above 5.6, finishing in a couloir of 400ft that steepens to 50 degrees when snow-covered. Four more pitches, as hard as 5.8, reach the top. Come down the North Face.",
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_action_potential",
+    "name": "SR-20 Burgundy Col Pullout"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Burgundy Col",
+    "lat": 48.551406,
+    "lng": -120.630895,
+    "km": 3
+   },
+   {
+    "src": "USFS",
+    "name": "Cutthroat Trailhead",
+    "lat": 48.556306,
+    "lng": -120.654715,
+    "km": 4.7
+   },
+   {
+    "src": "USFS",
+    "name": "Hairpin",
+    "lat": 48.514336,
+    "lng": -120.642715,
+    "km": 5.8
+   },
+   {
+    "src": "USFS",
+    "name": "Blue Lake Trailhead",
+    "lat": 48.519016,
+    "lng": -120.674215,
+    "km": 7.2
+   },
+   {
+    "src": "USFS",
+    "name": "Driveway Butte Trailhead",
+    "lat": 48.598271,
+    "lng": -120.512721,
+    "km": 7.6
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Creek Trailhead",
+    "lat": 48.579106,
+    "lng": -120.478815,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Gilbert Trailhead",
+    "lat": 48.458443,
+    "lng": -120.565926,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Rattlesnake Trailhead",
+    "lat": 48.648664,
+    "lng": -120.571213,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Bridge Creek Trailhead",
+    "lat": 48.504906,
+    "lng": -120.719115,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Goat Wall",
+    "lat": 48.622286,
+    "lng": -120.484775,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Heather Maple Pass Trailhead Rainy Pass ",
+    "lat": 48.516606,
+    "lng": -120.735815,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "Rainy Pass Trailhead (PCT North)",
+    "lat": 48.515306,
+    "lng": -120.736025,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "Robinson Creek Trailhead",
+    "lat": 48.661706,
+    "lng": -120.542025,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "Monument Creek Trailhead",
+    "lat": 48.655436,
+    "lng": -120.515187,
+    "km": 12.6
+   },
+   {
+    "src": "USFS",
+    "name": "South Creek (north) Trailhead",
+    "lat": 48.439256,
+    "lng": -120.531125,
+    "km": 13.4
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Identification is area-level (every Burgundy Spire route starts at the col), not Corkscrew-specific, so weak. No page I opened prints a coordinate for the pullo",
+   "trailhead": {
+    "name": "SR-20 pullout below Burgundy Col (Early Winters Creek, climbers trail to Burgundy Col)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.mountainproject.com/area/107231974/burgundy-spire",
+     "fact": "MP area text: park in the pullout along hwy 20 below the spires, follow worn trail to Burgundy Col"
+    },
+    "placements": []
+   },
+   "notes": "Identification is area-level (every Burgundy Spire route starts at the col), not Corkscrew-specific, so weak. No page I opened prints a coordinate for the pullout; AllTrails 403; USFS 'Burgundy Col' point is the col, not parking. Leave OSM/script placement from the sibling's 'SR-20 Burgundy Col Pullout' name."
+  }
+ },
+ {
+  "id": "wa_cadet_peak_ne_ridge",
+  "name": "Northeast Ridge (Sloan-Cadet Traverse)",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "wa",
+  "peak": {
+   "id": "wa_cadet_peak",
+   "name": "Cadet Peak",
+   "lat": 47.985145,
+   "lng": -121.349405,
+   "elevation_ft": 7186,
+   "region": "Monte Cristo",
+   "path": "usa.washington.wa_northwest.wa_glacier_peak_region.wa_monte_cristo_group.wa_cadet_peak"
+  },
+  "text": {
+   "approach": "Start from the end of Forest Service road 4096 and follow the Bedal Creek trail, which is rough and blown down in places. Where the tread is lost in a rocky creek bed, keep going up the creek through one short wet step until the path reappears on the right. The trail fades in the heather beneath the southwest face of Sloan; from the basin there, climb about a thousand feet south to the ridge crest. Drop on grassy, rocky ground to the small tarn often called Cadet Lake, cross over Heineken Peak, and go down its steep grassy gullies to a low point near 5,600 ft above the remnant Mayflower Glacier. The route starts there, on the ridge rising on the northeast side of Cadet Peak toward a small hanging glacier.",
+   "approach_logistics": null,
+   "road": null,
+   "overview": "A high alpine ridge traverse linking Sloan Peak to Cadet Peak's northeast ridge and face, following the timberline crest between the two mountains rather than a direct up-and-down approach to Cadet alone.",
+   "description": null,
+   "descent": "Cross the summit plateau and come down the standard route toward Glacier Basin. The upper cliff band is the tricky part when you did not climb the standard line: follow cairns and look for the worn boot path through it. Lower down a tunnel through the brush leads into Glacier Basin. The whole descent is steep and loose, hard on the knees, but not technical. From the basin pick up the Glacier Basin"
+  },
+  "waypoints": [],
+  "siblingTrailheads": [
+   {
+    "route": "wa_cadet_peak_scramble",
+    "name": "Barlow Pass Trailhead"
+   }
+  ],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Sawmill Ridge Trailhead",
+    "lat": 47.971006,
+    "lng": -121.290115,
+    "km": 4.7
+   },
+   {
+    "src": "USFS",
+    "name": "Bald Eagle Trailhead",
+    "lat": 48.024376,
+    "lng": -121.288065,
+    "km": 6.3
+   },
+   {
+    "src": "USFS",
+    "name": "Weden Crk/Gothic Basin",
+    "lat": 48.015548,
+    "lng": -121.443699,
+    "km": 7.8
+   },
+   {
+    "src": "USFS",
+    "name": "Barlow Pass Trailhead",
+    "lat": 48.026806,
+    "lng": -121.442307,
+    "km": 8.3
+   },
+   {
+    "src": "USFS",
+    "name": "Quartz Creek Trailhead",
+    "lat": 47.926395,
+    "lng": -121.277793,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Blanca Lake Trailhead",
+    "lat": 47.914173,
+    "lng": -121.312237,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Skykomish Trailhead",
+    "lat": 47.926395,
+    "lng": -121.277793,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "West Cady Ridge Trailhead",
+    "lat": 47.926895,
+    "lng": -121.276876,
+    "km": 8.4
+   },
+   {
+    "src": "USFS",
+    "name": "Elliot Creek-goat Lake Trailhead",
+    "lat": 48.053706,
+    "lng": -121.411315,
+    "km": 8.9
+   },
+   {
+    "src": "USFS",
+    "name": "North Fork Sauk Trailhead",
+    "lat": 48.057906,
+    "lng": -121.288215,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Troublesome Creek Trailhead",
+    "lat": 47.898062,
+    "lng": -121.401959,
+    "km": 10.4
+   },
+   {
+    "src": "USFS",
+    "name": "Sunrise Mine Trailhead",
+    "lat": 48.024743,
+    "lng": -121.477879,
+    "km": 10.5
+   },
+   {
+    "src": "USFS",
+    "name": "Sloan Peak Trailhead",
+    "lat": 48.086117,
+    "lng": -121.308593,
+    "km": 11.6
+   },
+   {
+    "src": "USFS",
+    "name": "Frog Mountain Trailhead",
+    "lat": 47.880584,
+    "lng": -121.321727,
+    "km": 11.8
+   },
+   {
+    "src": "USFS",
+    "name": "Lost Creek Ridge Trailhead",
+    "lat": 48.094456,
+    "lng": -121.332884,
+    "km": 12.2
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: only non-land-manager placements (wta)",
+   "trailhead": {
+    "name": "Bedal Creek Trailhead (end of FR 4096)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Start from the end of Forest Service road 4096 and follow the Bedal Creek trail"
+    },
+    "placements": [
+     {
+      "source": "WTA",
+      "name": "Bedal Creek trailhead (Trail 705)",
+      "lat": 48.0701,
+      "lng": -121.3753,
+      "url": "https://www.wta.org/go-hiking/hikes/bedal-creek"
+     }
+    ]
+   },
+   "notes": "Upgraded from held: WTA page confirms the trailhead is at the end of FR 4096 on Bedal Creek trail 705, matching the route's own text. Coordinate is WTA only; no USFS point matches."
+  }
+ }
+]

@@ -1,0 +1,153 @@
+[
+ {
+  "id": "ca_devils_crag_1_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "South Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.snwburd.com/bob/trip_reports/devils_crags_1.html",
+    "fact": "South Lake start, over Bishop Pass, Rambaud Pass, NW Arete; page calls the easiest route class 4"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "South Lake Trailhead",
+     "lat": 37.169305,
+     "lng": -118.565813,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "distance_mi_roundtrip",
+    "value": "35+",
+    "url": "https://www.snwburd.com/bob/trip_reports/devils_crags_1.html"
+   },
+   {
+    "field": "gain_ft",
+    "value": "~10000",
+    "url": "https://www.snwburd.com/bob/trip_reports/devils_crags_1.html"
+   }
+  ],
+  "notes": "One page; single USFS placement (OSM unreachable: Chrome scripting down). Peakbagger not read."
+ },
+ {
+  "id": "ca_dicks_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Wikipedia: easiest route class 2 via Dicks Pass (0.5 mi E of summit) but names no trailhead. Bayview (USFS 38.943878,-120.099979) is a lead only."
+ },
+ {
+  "id": "ca_disappointment_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Wikipedia: easiest route class 4+, FA via Southwest Chute 1919; no trailhead stated."
+ },
+ {
+  "id": "ca_electra_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Not re-researched (Peakbagger/Chrome unavailable); earlier passes found multiple equal starts."
+ },
+ {
+  "id": "ca_english_mountain_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Not re-researched; earlier passes found three unplaceable starts."
+ },
+ {
+  "id": "ca_foerster_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Not re-researched; earlier passes found multiple starts."
+ },
+ {
+  "id": "ca_gemini_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Not re-researched; Pine Creek only a plausible lead."
+ },
+ {
+  "id": "ca_giraud_peak_standard_route",
+  "status": "found",
+  "trailhead": {
+   "name": "South Lake Trailhead",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://climber.org/reports/2001/758.html",
+    "fact": "Two climber.org reports (2001/758, 2013/1841) list South Lake over Bishop Pass, Dusy Basin, SE face"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "South Lake Trailhead",
+     "lat": 37.169305,
+     "lng": -118.565813,
+     "url": ""
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "From earlier pass, not re-opened. Single USFS placement; stored class 2 vs page class 3."
+ },
+ {
+  "id": "ca_glacier_ridge_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Weak: one trip report via Wolverton; several approaches exist."
+ },
+ {
+  "id": "ca_granite_chief_granite_chief_trail_from_olympic_valley",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Start named by route text (behind Olympic Valley fire station) but only placement is onX (not acceptable); OSM unreachable."
+ },
+ {
+  "id": "ca_joe_devel_peak_standard_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Weak: one report on a Pickering trip via Cottonwood Lakes."
+ },
+ {
+  "id": "ca_lamont_peak_lamont_peak_trail",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Trailhead identified: Canebrake Road saddle, ~7 mi up from Hwy 178, lot west side, trail east (climber.org/driving/canebrake.html, waypoint CANLAM, no coordinate). No placement: no official candidate, Nominatim via WebFetch empty."
+ }
+]

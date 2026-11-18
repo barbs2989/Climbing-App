@@ -1,0 +1,1219 @@
+{
+ "wa_liberty_bell_nw_face": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "road": {
+    "name": "North Cascades Highway (SR-20)",
+    "status": "Paved",
+    "driveNote": "The Blue Lake Trailhead (5,400 ft) is on the south side of SR-20, half a mile beyond milepost 162 and roughly 31 miles west of Winthrop. It has vault toilets and about 20 parking spaces but no drinking water, and the lot is often full.",
+    "seasonalGate": "SR-20 is gated each winter from the Ross Dam trailhead (MP 134) to the Silver Star gate (MP 171). Recent closures fell between mid-November and early December (Nov. 18 in 2024, Dec. 4 in 2025), and the road has reopened in late April."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107238596/northwest-face",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://climberkyle.com/2019/08/03/liberty-bell-nw-face-5-9/",
+    "https://publications.americanalpineclub.org/articles/12195930302",
+    "https://www.openstreetmap.org/node/356545624",
+    "https://www.openstreetmap.org/way/301865978",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107238596/northwest-face",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+      "fact": "5.9 Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "Northwest Face 5.9 (var. 10d)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107238596/northwest-face",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 5,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107238596/northwest-face",
+      "fact": "5 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+      "fact": "a five pitch 5.9",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107238596/northwest-face",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7720,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+      "fact": "High Point: 7,720 ft (reused from batch B, wa_liberty_bell_beckey_route)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "Liberty Bell 7,720 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-northwest-face",
+      "fact": "High Point: 7,720 ft",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "passes accepted: Digital Day Pass, Northwest Forest Pass, Interagency; $5/day or $30/yr; no permit listed (reused from batch D, wa_concord_tower_north_face)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "North Cascades Highway (SR-20)",
+     "status": "Paved",
+     "driveNote": "The Blue Lake Trailhead (5,400 ft) is on the south side of SR-20, half a mile beyond milepost 162 and roughly 31 miles west of Winthrop. It has vault toilets and about 20 parking spaces but no drinking water, and the lot is often full.",
+     "seasonalGate": "SR-20 is gated each winter from the Ross Dam trailhead (MP 134) to the Silver Star gate (MP 171). Recent closures fell between mid-November and early December (Nov. 18 in 2024, Dec. 4 in 2025), and the road has reopened in late April."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "MP 162 + 0.5 mi; south side; 31.3 mi; 5,400 ft; vault toilets; ~20 spots; no potable water; winter: closed (reused from batch D)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+      "fact": "closure Ross Dam trailhead (MP 134) to Silver Star gate (MP 171); closed Dec 4 2025 (reused from batch D)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+      "fact": "closed Nov 30 2023, Nov 18 2024, Dec 4 2025; opened Apr 19 2024, Apr 22 2025; 2026 partial reopening Apr 30",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+      "fact": "Apr 30 2026: reopened from the east to MP 156.8 (Porcupine Creek), so the MP 162.5 trailhead was reachable from Mazama; MP 130-156.8 stayed closed",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Blue Lake Trailhead",
+    "value": {
+     "name": "Blue Lake Trailhead",
+     "lat": 48.5191,
+     "lng": -120.6742
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking area way 301865978 (Blue Lake Trailhead lot) centre 48.51911,-120.67424, 3 m from the pin (reused from batch B)",
+      "url": "https://www.openstreetmap.org/way/301865978",
+      "fact": "48.51911,-120.67424",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "Blue Lake Trailhead 48.51901,-120.6742, elevation 5,400 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Liberty Bell summit",
+    "value": {
+     "name": "Liberty Bell summit",
+     "lat": 48.515435,
+     "lng": -120.658365
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 356545624 'Liberty Bell Mountain' 48.5154726,-120.6583222 (5.2 m from the pin; the pin is 3.9 m from the 3DEP high point and reads 7,745 ft)",
+      "url": "https://www.openstreetmap.org/node/356545624",
+      "fact": "48.5154726,-120.6583222",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP high point found by a 4 m grid search at 48.515464,-120.658336 (7,745.9 ft), 1.5 m from the OSM node. The USGS GNIS point 1522053 (48.515196,-120.6582093) is 32 m south on the face and reads 7,582 ft, 164 ft below the top: owner rule 2026-11-18 (USGS point >50 ft low on a spire) -> the real top is pinned",
+      "fact": "7,745.9 ft high point"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [],
+  "disputed": [
+   "length_m: MP 500 ft (stored 152 m) vs Steph Abegg 600 ft (183 m) - unlocked",
+   "pitches: MP and The Mountaineers 5 (locked); Steph Abegg and climberkyle count 4 (+ a bonus pitch)",
+   "fa: Hans Kraus & John Rupley 1956 is MP only; AAJ 1959 (Rupley & Beckey west face = 'third ascent by a third new route') neither names nor dates the second route - left unlocked"
+  ],
+  "notes": "Road object replaced: the stored seasonalGate said SR-20 closes 'typically early-to-mid December', but WSDOT's last three closures were Nov 30 2023, Nov 18 2024 and Dec 4 2025; the replacement is the verified batch-D object for the same lot. Impossibility checks pass: gain 2,520 >= 7,720 - 5,400 = 2,320; dist_km 4 >= 1.24 km straight line (trailhead to summit) and close to the summit pin's 2.7 mi (4.3 km) one way. The Mountaineers give Length 4.0 mi and gain 2,500 ft (gain left unlocked: one published figure). alpine_grade 'D' is a French alpine grade with no source - owner to decide whether the column should hold it. Summit pin kept (already at the real top). 'Stream crossing near meadow' Water pin has no coordinates."
+ },
+ "wa_liberty_bell_overexposure": {
+  "area": "wa_liberty_bell",
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106555416/overexposure",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/1391089989",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.openstreetmap.org/node/356545624",
+    "https://www.openstreetmap.org/way/301865978",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106555416/overexposure",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/1391089989",
+      "fact": "5.8 II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.8",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106555416/overexposure",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/1391089989",
+      "fact": "5.8",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "II",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106555416/overexposure",
+      "fact": "Grade II",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/1391089989",
+      "fact": "5.8 II",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7720,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face",
+      "fact": "High Point: 7,720 ft (reused from batch B, wa_liberty_bell_beckey_route)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "Liberty Bell 7,720 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/1391089989",
+      "fact": "the quickest way to the summit of Liberty Bell (the route tops out on the summit)",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "passes accepted: Digital Day Pass, Northwest Forest Pass, Interagency; $5/day or $30/yr; no permit listed (reused from batch D, wa_concord_tower_north_face)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Blue Lake Trailhead",
+    "value": {
+     "name": "Blue Lake Trailhead",
+     "lat": 48.5191,
+     "lng": -120.6742
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking area way 301865978 (Blue Lake Trailhead lot) centre 48.51911,-120.67424, 3 m from the pin (reused from batch B)",
+      "url": "https://www.openstreetmap.org/way/301865978",
+      "fact": "48.51911,-120.67424",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "Blue Lake Trailhead 48.51901,-120.6742, elevation 5,400 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Liberty Bell summit",
+    "value": {
+     "name": "Liberty Bell summit",
+     "lat": 48.515435,
+     "lng": -120.658365
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 356545624 'Liberty Bell Mountain' 48.5154726,-120.6583222 (5.2 m from the pin; the pin is 3.9 m from the 3DEP high point and reads 7,745 ft)",
+      "url": "https://www.openstreetmap.org/node/356545624",
+      "fact": "48.5154726,-120.6583222",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP high point found by a 4 m grid search at 48.515464,-120.658336 (7,745.9 ft), 1.5 m from the OSM node. The USGS GNIS point 1522053 (48.515196,-120.6582093) is 32 m south on the face and reads 7,582 ft, 164 ft below the top: owner rule 2026-11-18 (USGS point >50 ft low on a spire) -> the real top is pinned",
+      "fact": "7,745.9 ft high point"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_liberty_bell_overexposure",
+    "column": "pitches",
+    "from": 4,
+    "to": 2,
+    "why": "No source gives 4. MP: 2 pitches (from the Liberty Bell-Concord notch to a chain anchor, then a dihedral to a second chain anchor); theCrag: 3. Proposing MP's count, the route's primary description; owner may prefer null until a second source agrees",
+    "evidence": [
+     "https://www.mountainproject.com/route/106555416/overexposure",
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/1391089989"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_liberty_bell_overexposure",
+    "column": "dist_km",
+    "from": 8.69,
+    "to": null,
+    "why": "8.69 km is 2x the route's own summit-pin distMi (2.7 mi = 4.35 km): a round trip stored in a one-way column. Sibling Liberty Bell routes hold 4. No published one-way figure (The Mountaineers give 4.0 mi for the Liberty Bell routes without saying one-way). Null, or 4 to match the siblings, owner's call",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/liberty-bell-southwest-face"
+    ]
+   }
+  ],
+  "disputed": [
+   "pitches: MP 2, theCrag 3, stored 4 (fix proposed)",
+   "length_m: MP 200 ft (stored 61 m) vs theCrag 400 ft (122 m) - unlocked",
+   "fa: Ron Burgner & Don McPherson 1966 is MP only (theCrag: no known history) - unlocked"
+  ],
+  "notes": "Gain 2,500 >= 2,320 net: passes. MP says 2 single-rope rappels from the top of the route back to the notch; the stored rappels text (3 from the summit by the Beckey descent) is the summit descent and is not wrong if the party tops out. alpine_grade 'D' has no source. Trailhead pin elev 5380 vs USFS 5,400 ft (3DEP 5,380): the position is what is locked."
+ },
+ "wa_liberty_traverse": {
+  "area": "wa_liberty_bell",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.5191,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive SR-20 to the signed Blue Lake Trailhead on the south side of the highway, about 1 mile west of Washington Pass. A Northwest Forest Pass is required to park."
+    },
+    {
+     "lat": 48.5154726,
+     "lng": -120.6583222,
+     "elev": 7720,
+     "name": "Liberty Bell Mountain",
+     "note": "First of the five summits: the traverse tops out Liberty Bell by the Beckey Route, then carries on south over Concord Tower, Lexington Tower and North Early Winters Spire to finish on South Early Winters Spire.",
+     "type": "Summit",
+     "distMi": 2,
+     "directions": "Follow the Blue Lake Trail about 1.5 miles to the climbers' junction just past a small stream, marked by a large cairn, then climb the path up slabs, talus and heather into the gully below the Liberty Bell-Concord notch. Keep climber's left low in the gully, cross right higher up, and take the left fork a couple of hundred feet below the notch to the Beckey Route start; four short pitches lead to the summit."
+    },
+    {
+     "lat": 48.514505,
+     "lng": -120.658265,
+     "elev": 7611,
+     "name": "Concord Tower",
+     "note": "Second summit of the traverse, climbed by its North Face from the Liberty Bell-Concord notch.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "From Liberty Bell's summit, descend the Beckey Route and its rappels into the Liberty Bell-Concord notch, then climb Concord Tower's North Face to the top."
+    },
+    {
+     "lat": 48.514255,
+     "lng": -120.657465,
+     "elev": 7560,
+     "name": "Lexington Tower",
+     "note": "Third summit, climbed by its North Face.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "Rappel Concord Tower's south face into the notch below Lexington, then climb Lexington Tower's North Face to the top."
+    },
+    {
+     "lat": 48.512935,
+     "lng": -120.655465,
+     "elev": 7760,
+     "name": "North Early Winters Spire",
+     "note": "Fourth summit, climbed by its Northwest Corner.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "Rappel Lexington's south face, cross a short but exposed 3rd-class section, make one more short rappel, and walk to the base of North Early Winters Spire. Climb its Northwest Corner to the summit."
+    },
+    {
+     "lat": 48.512275,
+     "lng": -120.655395,
+     "elev": 7807,
+     "name": "South Early Winters Spire",
+     "note": "Fifth and last summit, finished by its Southwest Rib; descend by the South Arete rappels and walk back to the Blue Lake Trail.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "Get down off North Early Winters Spire and finish the day on South Early Winters Spire by its Southwest Rib."
+    }
+   ],
+   "road": {
+    "name": "North Cascades Highway (SR-20)",
+    "status": "Paved",
+    "driveNote": "The Blue Lake Trailhead (5,400 ft) is on the south side of SR-20, half a mile beyond milepost 162 and roughly 31 miles west of Winthrop. It has vault toilets and about 20 parking spaces but no drinking water, and the lot is often full.",
+    "seasonalGate": "SR-20 is gated each winter from the Ross Dam trailhead (MP 134) to the Silver Star gate (MP 171). Recent closures fell between mid-November and early December (Nov. 18 in 2024, Dec. 4 in 2025), and the road has reopened in late April."
+   }
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/115148381/liberty-traverse",
+    "https://iannicholsonslife.blogspot.com/2011/10/liberty-traverse-v-maybe-iv-59.html",
+    "https://cascadeclimbers.com/forum/topic/98141-tr-wa-pass-liberty-group-traverse-9162015",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+    "https://www.openstreetmap.org/node/356545624",
+    "https://www.openstreetmap.org/node/3060324147",
+    "https://www.openstreetmap.org/node/12040414408",
+    "https://www.openstreetmap.org/node/12040414409",
+    "https://www.openstreetmap.org/node/12040414374",
+    "https://www.openstreetmap.org/way/301865978",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115148381/liberty-traverse",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://iannicholsonslife.blogspot.com/2011/10/liberty-traverse-v-maybe-iv-59.html",
+      "fact": "Liberty Traverse V (maybe IV) 5.9",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.9",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115148381/liberty-traverse",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://iannicholsonslife.blogspot.com/2011/10/liberty-traverse-v-maybe-iv-59.html",
+      "fact": "5.9",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "pitches",
+    "value": 26,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/115148381/liberty-traverse",
+      "fact": "26 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://iannicholsonslife.blogspot.com/2011/10/liberty-traverse-v-maybe-iv-59.html",
+      "fact": "26 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://cascadeclimbers.com/forum/topic/98141-tr-wa-pass-liberty-group-traverse-9162015",
+      "fact": "26 pitches by the guidebook",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "passes accepted: Digital Day Pass, Northwest Forest Pass, Interagency; $5/day or $30/yr; no permit listed (reused from batch D, wa_concord_tower_north_face)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "road",
+    "value": {
+     "name": "North Cascades Highway (SR-20)",
+     "status": "Paved",
+     "driveNote": "The Blue Lake Trailhead (5,400 ft) is on the south side of SR-20, half a mile beyond milepost 162 and roughly 31 miles west of Winthrop. It has vault toilets and about 20 parking spaces but no drinking water, and the lot is often full.",
+     "seasonalGate": "SR-20 is gated each winter from the Ross Dam trailhead (MP 134) to the Silver Star gate (MP 171). Recent closures fell between mid-November and early December (Nov. 18 in 2024, Dec. 4 in 2025), and the road has reopened in late April."
+    },
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-02-15T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "MP 162 + 0.5 mi; south side; 31.3 mi; 5,400 ft; vault toilets; ~20 spots; no potable water; winter: closed (reused from batch D)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+      "fact": "closure Ross Dam trailhead (MP 134) to Silver Star gate (MP 171); closed Dec 4 2025 (reused from batch D)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+      "fact": "closed Nov 30 2023, Nov 18 2024, Dec 4 2025; opened Apr 19 2024, Apr 22 2025; 2026 partial reopening Apr 30",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     },
+     {
+      "url": "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+      "fact": "Apr 30 2026: reopened from the east to MP 156.8 (Porcupine Creek), so the MP 162.5 trailhead was reachable from Mazama; MP 130-156.8 stayed closed",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Blue Lake Trailhead",
+    "value": {
+     "name": "Blue Lake Trailhead",
+     "lat": 48.5191,
+     "lng": -120.6742
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking area way 301865978 (Blue Lake Trailhead lot) centre 48.51911,-120.67424, 3 m from the pin (reused from batch B)",
+      "url": "https://www.openstreetmap.org/way/301865978",
+      "fact": "48.51911,-120.67424",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "Blue Lake Trailhead 48.51901,-120.6742, elevation 5,400 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Liberty Bell Mountain",
+    "value": {
+     "name": "Liberty Bell Mountain",
+     "lat": 48.5154726,
+     "lng": -120.6583222
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 356545624 'Liberty Bell Mountain' 48.5154726,-120.6583222 (the pin moves here from 48.5155,-120.6588, which was 35 m west and read 7,672 ft)",
+      "url": "https://www.openstreetmap.org/node/356545624",
+      "fact": "48.5154726,-120.6583222",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP high point found by a 4 m grid search at 48.515464,-120.658336 (7,745.9 ft), 1.5 m from the OSM node. The USGS GNIS point 1522053 (48.515196,-120.6582093) is 32 m south on the face and reads 7,582 ft, 164 ft below the top: owner rule 2026-11-18 (USGS point >50 ft low on a spire) -> the real top is pinned",
+      "fact": "7,745.9 ft high point"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Concord Tower",
+    "value": {
+     "name": "Concord Tower",
+     "lat": 48.514505,
+     "lng": -120.658265
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 12040414408 'Concord Tower' 48.5145299,-120.6582847, 3.1 m from the pin",
+      "url": "https://www.openstreetmap.org/node/12040414408",
+      "fact": "48.5145299,-120.6582847",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 5 m grid: high point 7,609.5 ft at 48.514530,-120.658285 (the OSM node); the pin reads 7,590.6 ft, 3 m away",
+      "fact": "high point 3 m from the pin"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Lexington Tower",
+    "value": {
+     "name": "Lexington Tower",
+     "lat": 48.514255,
+     "lng": -120.657465
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 12040414409 'Lexington Tower' 48.5142402,-120.6574949, 2.7 m from the pin",
+      "url": "https://www.openstreetmap.org/node/12040414409",
+      "fact": "48.5142402,-120.6574949",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 5 m grid: high point 7,617.8 ft at 48.514285,-120.657495, 4 m from the pin (pin reads 7,618.8 ft)",
+      "fact": "high point 4 m from the pin"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/North Early Winters Spire",
+    "value": {
+     "name": "North Early Winters Spire",
+     "lat": 48.512935,
+     "lng": -120.655465
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 12040414374 'North Early Winters Spire' 48.5128844,-120.6554181, 6.6 m from the pin",
+      "url": "https://www.openstreetmap.org/node/12040414374",
+      "fact": "48.5128844,-120.6554181",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 5 m grid: high point 7,786.1 ft at 48.512929,-120.655486, 1.7 m from the pin (pin reads 7,782.5 ft)",
+      "fact": "high point 1.7 m from the pin"
+     }
+    ]
+   },
+   {
+    "field": "waypoints/South Early Winters Spire",
+    "value": {
+     "name": "South Early Winters Spire",
+     "lat": 48.512275,
+     "lng": -120.655395
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 3060324147 (South Early Winters Spire top) 48.5122713,-120.655362 (2.5 m from the pin, which reads 7,815.6 ft); USGS 3DEP 7,806.7 ft there = the published 7,807 ft",
+      "url": "https://www.openstreetmap.org/node/3060324147",
+      "fact": "48.5122713,-120.655362",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 4 m grid: high point 7,816.5 ft at 48.512226,-120.655593, 17.7 m from the OSM node (within 50 m). The only USGS GNIS point is the group feature 'Early Winters Spires' 1519068 (48.5126374,-120.6553807), 41 m north in the NEWS-SEWS notch at 7,576 ft, >50 ft low -> not used",
+      "fact": "high point 17.7 m from the node"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_liberty_traverse",
+    "column": "gain_ft",
+    "from": 2001,
+    "to": 2407,
+    "why": "2,001 ft is below the net climb: the day ends on South Early Winters Spire (7,807 ft, locked on wa_sews_sw_rib) from the Blue Lake Trailhead (USFS 5,400 ft) = 2,407 ft, the measured value locked on the SEWS sibling routes. It is a floor: re-climbing each tower out of the notches adds more, and no source states a total",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_liberty_traverse",
+    "column": "high_point_ft",
+    "from": null,
+    "to": 7807,
+    "why": "The traverse finishes on South Early Winters Spire, its highest summit (7,807 ft, locked on wa_sews_sw_rib / wa_south_arete); NEWS 7,760 ft and Liberty Bell 7,720 ft are lower",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+     "https://stephabegg.com/trip-reports/washington/washington-pass/",
+     "https://www.mountainproject.com/route/115148381/liberty-traverse"
+    ]
+   }
+  ],
+  "disputed": [
+   "commitment: MP V; Ian Nicholson's report titles it 'V (maybe IV)' and asks which - V left unlocked",
+   "length_m 610: MP 2,000 ft only - unlocked",
+   "rappels: MP ~13-14 (LB 1, Concord 2, Lexington 2, NEWS 5-6, SEWS 3); stored 'about 15'; the 2015 CascadeClimbers report used other descents - not locked (prose)",
+   "fa: none known (MP 'Unknown')"
+  ],
+  "notes": "Liberty Bell summit pin moved 35 m east to the real top (OSM peak node; 3DEP high point 1.5 m away); the USGS GNIS point reads 164 ft low on the face (owner rule 2026-11-18). Other four summit pins already sit within 7 m of their OSM peak nodes and 3DEP high points - kept and locked. Road object replaced (stored seasonalGate 'typically early-to-mid December' contradicts WSDOT's Nov 18 2024 / Nov 30 2023 closures). dist_km 3.2 passes the straight-line check (trailhead to SEWS 1.58 km). The traverse's routes vary by party (MP: Beckey Route, Concord N Face, Lexington N Face, NEWS NW Corner, SEWS SW Rib; others use South Arete or Concord Directissimo)."
+ },
+ "wa_south_early_winter_spire_direct_east_buttress": {
+  "area": "wa_south_early_winters_spire",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.5143,
+     "lng": -120.6425,
+     "elev": 5150,
+     "name": "Hairpin Turn Pullout (Hwy 20)",
+     "note": "Dirt pullout at the hairpin switchback ~0.5-1mi east of Washington Pass, directly beneath the east faces of North/South Early Winters Spire; hike up Spire Gully to the NEWS-SEWS notch, then traverse left to the route base. Parties often descend via South Arete/Blue Lake Trail and hitchhike back to a car left here.",
+     "type": "Trailhead",
+     "elevFt": 5150,
+     "directions": "Drive SR-20 to Washington Pass (the highway is closed over the pass in winter), then continue east, downhill, to the big hairpin switchback just below the pass; from the Mazama side it is the hairpin you reach as the road climbs to the pass. Park in the dirt pullout at the hairpin, about 5,100 ft, directly below the east faces of the Early Winters Spires. This is not the Blue Lake Trailhead."
+    },
+    {
+     "lat": 48.5122713,
+     "lng": -120.655362,
+     "elev": 7807,
+     "name": "South Early Winters Spire",
+     "type": "Summit",
+     "elevFt": 7807,
+     "directions": "Hike up Spire Gully, following occasional cairns, to the last large tree in the middle of the gully, then traverse right across talus (snow early in the season) until you are under the gully that climbs to the North–South Early Winters Spires notch. Traverse left to the foot of the east buttress and climb its nine pitches to the summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/east-buttress-direct",
+    "http://publications.americanalpineclub.org/articles/12196938700/North-America-United-States-Washington-Cascade-Mountains-Early-Winter-Spires-South-Spire-Direct-East-Buttress",
+    "https://climbcanada.blogspot.com/2007/07/washington-pass-wa-sew-spire.html",
+    "https://chossclimbers.com/testing/us/washington/washington-pass-area/deb-on-sews/",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+    "https://www.openstreetmap.org/node/3060324147",
+    "https://wsdot.wa.gov/travel/roads-bridges/mountain-pass-closure-and-opening-dates",
+    "https://wsdot.wa.gov/about/news/2026/eastern-portion-north-cascades-highway-reopen-april-30-western-section-remains-closed-major-repairs",
+    "https://wsdot.wa.gov/construction-planning/search-projects/sr-20-north-cascades-highway-emergency-repairs-completed-june-2026"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106883451/east-buttress-direct",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climbcanada.blogspot.com/2007/07/washington-pass-wa-sew-spire.html",
+      "fact": "5.11a, 10 pitches",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "Direct East Buttress 5.11a or 5.10a C1",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "rock_grade",
+    "value": "5.11a",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106883451/east-buttress-direct",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climbcanada.blogspot.com/2007/07/washington-pass-wa-sew-spire.html",
+      "fact": "5.11a",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "aid_grade",
+    "value": "A0",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106883451/east-buttress-direct",
+      "fact": "pitch 4 bolt ladder 5.11a (or A0)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/washington-pass-area/deb-on-sews/",
+      "fact": "III 5.9 A0",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/106883451/east-buttress-direct",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://chossclimbers.com/testing/us/washington/washington-pass-area/deb-on-sews/",
+      "fact": "III 5.9 A0",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "fa",
+    "value": "Fred Beckey and Doug Leen, 1968",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "http://publications.americanalpineclub.org/articles/12196938700/North-America-United-States-Washington-Cascade-Mountains-Early-Winter-Spires-South-Spire-Direct-East-Buttress",
+      "fact": "Fred Beckey, Doug Leen; end of July; AAJ 1969 vol 16 no 2 (1968 season)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.mountainproject.com/route/106883451/east-buttress-direct",
+      "fact": "Fred Beckey and Doug Leen, 1968",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://climbcanada.blogspot.com/2007/07/washington-pass-wa-sew-spire.html",
+      "fact": "Fred Becky and Doug Leen, 1968",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7807,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "fact": "High Point: 7,807 ft (reused from batch B, wa_sews_sw_rib)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "South Early Winter Spire 7,807 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 7,806.7 ft at the OSM SEWS peak node 48.5122713,-120.655362",
+      "fact": "7807"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "passes accepted: Digital Day Pass, Northwest Forest Pass, Interagency; $5/day or $30/yr; no permit listed (reused from batch D, wa_concord_tower_north_face)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/South Early Winters Spire",
+    "value": {
+     "name": "South Early Winters Spire",
+     "lat": 48.5122713,
+     "lng": -120.655362
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 3060324147 (South Early Winters Spire top) 48.5122713,-120.655362 (the pin moves here from 48.51216,-120.65513 - Mountain Project's GPS exactly - which is 21 m away on the east face and reads 7,766 ft, 41 ft below the top); USGS 3DEP 7,806.7 ft there = the published 7,807 ft",
+      "url": "https://www.openstreetmap.org/node/3060324147",
+      "fact": "48.5122713,-120.655362",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 4 m grid: high point 7,816.5 ft at 48.512226,-120.655593, 17.7 m from the OSM node (within 50 m). The only USGS GNIS point is the group feature 'Early Winters Spires' 1519068 (48.5126374,-120.6553807), 41 m north in the NEWS-SEWS notch at 7,576 ft, >50 ft low -> not used",
+      "fact": "high point 17.7 m from the node"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_south_early_winter_spire_direct_east_buttress",
+    "column": "gain_ft",
+    "from": 2350,
+    "to": 2632,
+    "why": "2,350 ft is below the net climb: 7,807 ft summit (locked) minus USGS 3DEP 5,175 ft at the route's own hairpin-pullout trailhead pin (48.5143,-120.6425) = 2,632 ft. Measured floor; no published figure found",
+    "evidence": [
+     "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_south_early_winter_spire_direct_east_buttress",
+    "column": "gpx",
+    "from": "[[48.5143,-120.6425],[48.51216,-120.65513]]",
+    "to": null,
+    "why": "The stored track is two points: the trailhead pin joined straight to the old summit pin - a line made from pins, which the waypoint rules remove. There is no recorded or mapped trail to draw instead (the approach is off-trail up the gully)",
+    "evidence": []
+   }
+  ],
+  "disputed": [
+   "pitches: MP 9 (stored), AAJ 1969 9 belays, Steph Abegg 10, climbcanada 10, chossclimbers 'about 10' - unlocked",
+   "length_m 335 (1,100 ft): Steph Abegg only - unlocked",
+   "aid: Steph Abegg gives 5.10a C1 for the aided version; MP and chossclimbers A0 (locked A0)"
+  ],
+  "notes": "Summit pin moved to the OSM SEWS peak node (same position as the locked SEWS sibling pins); the old pin was MP's GPS (never evidence) on the east face, 41 ft low. Hairpin pullout trailhead pin: no OSM parking feature, 3DEP 5,175 ft vs the stored 5,150 - unlocked. dist_km 2.4 passes (straight line hairpin to summit 0.97 km). The stored road seasonalGate says SR-20 did not fully reopen until June 14 2026 - true (WSDOT), though the east side to MP 156.8 reopened Apr 30, so Washington Pass was reachable from Mazama from then; not changed. alpine_grade 'D' has no source. The stored waypoint directions say 'nine pitches' (MP); others count 10."
+ },
+ "wa_northwest_face_boving_pollock": {
+  "area": "wa_south_early_winters_spire",
+  "set": {
+   "waypoints": [
+    {
+     "lat": 48.5191,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The Blue Lake Trailhead is on the south side of SR 20 (North Cascades Highway) a little under a mile west of Washington Pass, between mileposts 161 and 162, about 42 miles east of Newhalem or 31 miles west of Winthrop. The paved lot is small and fills early. A Northwest Forest Pass or day-use fee is required."
+    },
+    {
+     "lat": 48.5122713,
+     "lng": -120.655362,
+     "elev": 7807,
+     "name": "South Early Winters Spire",
+     "note": "True summit of South Early Winters Spire, between Liberty Bell and Blue Lake Peak.",
+     "type": "Summit",
+     "distMi": 2.3,
+     "directions": "Follow the Blue Lake Trail about 1 to 1.25 miles to the clearing on the spire's northwest side, then take the climbers' path up talus and heather into the basin below the northwest face. Find the chockstone-filled chimney between the two formations; the route starts at the steep corner entered by a traverse, just right of the bolted Mojo Rising start. Climb six pitches to the summit."
+    }
+   ]
+  },
+  "review": {
+   "sources": [
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock",
+    "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772995",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+    "https://www.openstreetmap.org/node/3060324147",
+    "https://www.openstreetmap.org/way/301865978",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+   ]
+  },
+  "ledger": [
+   {
+    "field": "commitment",
+    "value": "III",
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock",
+      "fact": "Grade III",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772995",
+      "fact": "5.11a III",
+      "retrieved_at": "2026-11-18"
+     }
+    ]
+   },
+   {
+    "field": "high_point_ft",
+    "value": 7807,
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "url": "https://www.mountaineers.org/activities/routes-places/liberty-bell-blue-lake-trail-area-review/south-early-winter-spire-south-arete",
+      "fact": "High Point: 7,807 ft (reused from batch B, wa_sews_sw_rib)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://stephabegg.com/trip-reports/washington/washington-pass/",
+      "fact": "South Early Winter Spire 7,807 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 7,806.7 ft at the OSM SEWS peak node 48.5122713,-120.655362",
+      "fact": "7807"
+     }
+    ]
+   },
+   {
+    "field": "permit",
+    "value": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "method": "official-1",
+    "level": "locked",
+    "expires_at": "2027-11-18T00:00:00Z",
+    "evidence": [
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "passes accepted: Digital Day Pass, Northwest Forest Pass, Interagency; $5/day or $30/yr; no permit listed (reused from batch D, wa_concord_tower_north_face)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/Blue Lake Trailhead",
+    "value": {
+     "name": "Blue Lake Trailhead",
+     "lat": 48.5191,
+     "lng": -120.6742
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM parking area way 301865978 (Blue Lake Trailhead lot) centre 48.51911,-120.67424, 3 m from the pin (reused from batch B)",
+      "url": "https://www.openstreetmap.org/way/301865978",
+      "fact": "48.51911,-120.67424",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead",
+      "fact": "Blue Lake Trailhead 48.51901,-120.6742, elevation 5,400 ft (reused from batch B)",
+      "retrieved_at": "2026-11-18",
+      "official": true
+     }
+    ]
+   },
+   {
+    "field": "waypoints/South Early Winters Spire",
+    "value": {
+     "name": "South Early Winters Spire",
+     "lat": 48.5122713,
+     "lng": -120.655362
+    },
+    "method": "agree-2",
+    "level": "locked",
+    "evidence": [
+     {
+      "measurement": "OSM natural=peak node 3060324147 (South Early Winters Spire top) 48.5122713,-120.655362 (the pin moves here from 48.51217,-120.65536, 11 m south, which reads 7,753 ft - 54 ft below the top); USGS 3DEP 7,806.7 ft there = the published 7,807 ft",
+      "url": "https://www.openstreetmap.org/node/3060324147",
+      "fact": "48.5122713,-120.655362",
+      "retrieved_at": "2026-11-18"
+     },
+     {
+      "measurement": "USGS 3DEP 4 m grid: high point 7,816.5 ft at 48.512226,-120.655593, 17.7 m from the OSM node (within 50 m). The only USGS GNIS point is the group feature 'Early Winters Spires' 1519068 (48.5126374,-120.6553807), 41 m north in the NEWS-SEWS notch at 7,576 ft, >50 ft low -> not used",
+      "fact": "high point 17.7 m from the node"
+     }
+    ]
+   }
+  ],
+  "sql_fixes": [
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_boving_pollock",
+    "column": "grade",
+    "from": "5.11b",
+    "to": "5.11a",
+    "why": "theCrag 5.11a III and Steph Abegg 5.11a (two independent publishers) vs MP 5.11b (stored). theCrag also cites a guidebook III 5.10c",
+    "evidence": [
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772995",
+     "https://stephabegg.com/trip-reports/washington/washington-pass/",
+     "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_boving_pollock",
+    "column": "rock_grade",
+    "from": "5.11b",
+    "to": "5.11a",
+    "why": "as grade",
+    "evidence": [
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772995",
+     "https://stephabegg.com/trip-reports/washington/washington-pass/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_boving_pollock",
+    "column": "length_m",
+    "from": null,
+    "to": 244,
+    "why": "theCrag 800 ft and Steph Abegg 800 ft agree (244 m); MP gives none",
+    "evidence": [
+     "https://www.thecrag.com/en/climbing/united-states/north-cascade-mountains/route/16772995",
+     "https://stephabegg.com/trip-reports/washington/washington-pass/"
+    ]
+   },
+   {
+    "table": "routes",
+    "id": "wa_northwest_face_boving_pollock",
+    "column": "gpx",
+    "from": "[[48.5191,-120.6742],[48.51217,-120.65536]]",
+    "to": null,
+    "why": "Two-point line from the trailhead pin to the old summit pin - a line made from pins, removed under the waypoint rules; no mapped trail reaches the face",
+    "evidence": []
+   }
+  ],
+  "disputed": [
+   "grade: MP 5.11b vs theCrag and Steph Abegg 5.11a (fix proposed); a guidebook cited on theCrag says III 5.10c",
+   "pitches: MP 6 (stored), theCrag 8, Steph Abegg 10 (her line finishes up the Southwest Rib) - unlocked",
+   "fa: MP 'Boving and Kerns 1977' only; the route's own name says Boving-Pollock - unconfirmed, left as is"
+  ],
+  "notes": "Summit pin moved 11 m to the OSM SEWS top (same position as the locked sibling pins). gpx is two points (trailhead joined to the old summit pin), i.e. a line made from pins - not a recorded track; gpx is not settable here: propose clearing it with the same reason as wa_south_early_winter_spire_direct_east_buttress. Impossibility checks pass: gain 2,600 >= 2,407; dist_km 4 >= 1.58 km straight line and near the summit pin's 2.3 mi (3.7 km). alpine_grade holds III (= commitment), not an alpine grade. Road text not changed (not wrong)."
+ }
+}

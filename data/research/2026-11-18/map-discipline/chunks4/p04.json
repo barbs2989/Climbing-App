@@ -1,0 +1,1665 @@
+[
+ {
+  "id": "ca_mount_bolton_brown_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 3",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_bolton_brown",
+   "name": "Mount Bolton Brown",
+   "lat": 37.0462,
+   "lng": -118.4407,
+   "elevation_ft": 13491,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_09_palisades_surrounding_peaks.ca_mount_bolton_brown"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Class 2 to the summit block, which is Class 3.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "RED LAKE TH",
+    "lat": 37.035704,
+    "lng": -118.35896,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "BIRCH LAKE TH",
+    "lat": 37.087405,
+    "lng": -118.355412,
+    "km": 8.8
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 9.2
+   },
+   {
+    "src": "USFS",
+    "name": "TABOOSE PASS TH",
+    "lat": 37.009505,
+    "lng": -118.327312,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "SAWMILL PASS TH",
+    "lat": 36.938805,
+    "lng": -118.290212,
+    "km": 17.9
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 18.8
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 23.9
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Class 3 reached from McMurry Meadows (Birch Mtn side), Red Lake (Prater traverse) or Tinemaha/Split; text says only class 2 to the summit block. No page ties th",
+   "trailhead": null,
+   "notes": "Class 3 reached from McMurry Meadows (Birch Mtn side), Red Lake (Prater traverse) or Tinemaha/Split; text says only class 2 to the summit block. No page ties this route to one start. SummitPost 403. Left stuck."
+  }
+ },
+ {
+  "id": "ca_mount_corcoran_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_corcoran",
+   "name": "Mount Corcoran",
+   "lat": 36.5386,
+   "lng": -118.2505,
+   "elevation_ft": 13714,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_mount_corcoran"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 6
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 6.2
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 8.7
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 11.9
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 21.1
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 22.2
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 22.3
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 23
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Meysan Lakes Trailhead (Whitney Portal), Inyo NF",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climber.org/reports/2009/1710.html",
+     "fact": "Trailhead field: Meysan Lake Trailhead; 2007 report (climber.org/reports/2007/1609.html) Trailhead: Whitney Portal; Corcoran via North Notch from Meysan Lakes basin"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "MEYSAN LAKE TH",
+      "lat": 36.589789,
+      "lng": -118.230163,
+      "url": ""
+     },
+     {
+      "source": "USFS",
+      "name": "Whitney Portal Trailhead",
+      "lat": 36.586905,
+      "lng": -118.240112,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "WEAK-MEDIUM: stored route has no text and Corcoran also has a west-side approach (Horseshoe Meadow via Miter Basin). East side is what both climber.org reports use, so likely the standard. Two USFS points ~0.9 km apart: Meysan Lake TH is the foot of the Meysan trail; Whitney Portal TH is the main lot. SummitPost 403."
+  }
+ },
+ {
+  "id": "ca_mount_davis_southeast_slopes_from_north_glacier_pass",
+  "name": "Southeast Slopes from North Glacier Pass",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_davis",
+   "name": "Mount Davis",
+   "lat": 37.7149,
+   "lng": -119.2195,
+   "elevation_ft": 12303,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_04_ritter_minarets.ca_mount_davis"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Walk to Thousand Island Lake and North Glacier Pass, then up easy slopes. The hard part is picking the true summit among bumps.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "FERN/YOST TH",
+    "lat": 37.761788,
+    "lng": -119.113341,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "YOST LAKE TH",
+    "lat": 37.761811,
+    "lng": -119.113265,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Shadow Lake Trailhead",
+    "lat": 37.682096,
+    "lng": -119.08618,
+    "km": 12.3
+   },
+   {
+    "src": "USFS",
+    "name": "High Trail Trailhead",
+    "lat": 37.682905,
+    "lng": -119.084413,
+    "km": 12.4
+   },
+   {
+    "src": "USFS",
+    "name": "Agnew Mead. Wildflower Th",
+    "lat": 37.681083,
+    "lng": -119.080672,
+    "km": 12.8
+   },
+   {
+    "src": "USFS",
+    "name": "JOHN MUIR TRAIL NORTH TH",
+    "lat": 37.6272,
+    "lng": -119.085702,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "MINARET LAKE TH",
+    "lat": 37.62724,
+    "lng": -119.085818,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "FERN LAKE (D52)TH",
+    "lat": 37.62725,
+    "lng": -119.085834,
+    "km": 15.3
+   },
+   {
+    "src": "USFS",
+    "name": "Sotcher Lake Trailhead",
+    "lat": 37.627205,
+    "lng": -119.076613,
+    "km": 15.9
+   },
+   {
+    "src": "USFS",
+    "name": "FISH CREEK TH",
+    "lat": 37.614231,
+    "lng": -119.076571,
+    "km": 16.8
+   },
+   {
+    "src": "NPS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.614303,
+    "lng": -119.076609,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Rainbow Falls Trailhead",
+    "lat": 37.613905,
+    "lng": -119.076613,
+    "km": 16.9
+   },
+   {
+    "src": "USFS",
+    "name": "PARKER LAKE TH",
+    "lat": 37.853005,
+    "lng": -119.134513,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "Glass Creek Meadow Trailhead",
+    "lat": 37.748985,
+    "lng": -119.022887,
+    "km": 17.7
+   },
+   {
+    "src": "USFS",
+    "name": "Walker Lake Trailhead",
+    "lat": 37.872305,
+    "lng": -119.159113,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Inyo Craters Trailhead",
+    "lat": 37.688105,
+    "lng": -119.006313,
+    "km": 19
+   },
+   {
+    "src": "NPS",
+    "name": "Mono/Parker Pass Trailhead",
+    "lat": 37.89091,
+    "lng": -119.262696,
+    "km": 19.9
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 21
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 21
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 21.1
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Agnew Meadows Trailhead (River Trail / High Trail to Thousand Island Lake)",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climber.org/reports/2006/1567.html",
+     "fact": "Trailhead Agnew Meadow; PCT to Thousand Island Lake then Glacier Pass to Lake Catherine and Davis class 2; also justindong.squarespace.com (High Trail / River Trail)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Agnew Mead. Wildflower Th",
+      "lat": 37.681083,
+      "lng": -119.080672,
+      "url": ""
+     },
+     {
+      "source": "USFS",
+      "name": "High Trail Trailhead",
+      "lat": 37.682905,
+      "lng": -119.084413,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "WEAK: route text only says walk to Thousand Island Lake; two trailheads serve it: Agnew Meadows (3 pages) and Rush Creek (1 page). Agnew chosen as most used. The two USFS points are ~0.4 km apart; the River Trail start at Agnew Meadows is not separately in the USFS list, so a human should pick the lot. No second independent placement."
+  }
+ },
+ {
+  "id": "ca_mount_eisen_southeast_ridge_from_black_rock_pass",
+  "name": "Southeast Ridge from Black Rock Pass",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_eisen",
+   "name": "Mount Eisen",
+   "lat": 36.5005,
+   "lng": -118.5687,
+   "elevation_ft": 12160,
+   "region": null,
+   "path": "usa.california.ca_sequoia_kings_canyon_np.ca_hamilton_lakes_and_valhalla.ca_mount_eisen"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Cross Glacier Pass and descend toward Cliff Creek, climb to Black Rock Pass, then traverse the ridge to the saddle at the base of the southeast ridge. Follow the ridge to the summit; long and tedious rather than hard.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 5.8
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 6.2
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 6.3
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 6.9
+   },
+   {
+    "src": "NPS",
+    "name": "Atwell/Hockett",
+    "lat": 36.464576,
+    "lng": -118.670521,
+    "km": 9.9
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Ridge Trail",
+    "lat": 36.464986,
+    "lng": -118.670944,
+    "km": 10
+   },
+   {
+    "src": "NPS",
+    "name": "Middle Fork Kaweah",
+    "lat": 36.527567,
+    "lng": -118.75126,
+    "km": 16.6
+   },
+   {
+    "src": "USFS",
+    "name": "Crescent Meadow",
+    "lat": 36.554642,
+    "lng": -118.748928,
+    "km": 17.2
+   },
+   {
+    "src": "NPS",
+    "name": "High Sierra Trail",
+    "lat": 36.554944,
+    "lng": -118.748861,
+    "km": 17.2
+   },
+   {
+    "src": "NPS",
+    "name": "Paradise Creek",
+    "lat": 36.522122,
+    "lng": -118.763627,
+    "km": 17.6
+   },
+   {
+    "src": "USFS",
+    "name": "Lodgepole TH",
+    "lat": 36.604973,
+    "lng": -118.723059,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Tokopah Falls",
+    "lat": 36.605023,
+    "lng": -118.722893,
+    "km": 18
+   },
+   {
+    "src": "NPS",
+    "name": "Twin Lakes",
+    "lat": 36.604973,
+    "lng": -118.723058,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Wolverton",
+    "lat": 36.596632,
+    "lng": -118.734168,
+    "km": 18.2
+   },
+   {
+    "src": "NPS",
+    "name": "Lakes Trail",
+    "lat": 36.596644,
+    "lng": -118.734257,
+    "km": 18.2
+   },
+   {
+    "src": "NPS",
+    "name": "Lodgepole-Sherman Tree",
+    "lat": 36.604383,
+    "lng": -118.72581,
+    "km": 18.2
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree Parking Access",
+    "lat": 36.58466,
+    "lng": -118.749842,
+    "km": 18.7
+   },
+   {
+    "src": "NPS",
+    "name": "Sherman Tree",
+    "lat": 36.580732,
+    "lng": -118.752048,
+    "km": 18.7
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Sawtooth Pass Trailhead, Mineral King",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.climber.org/reports/1998/355.html",
+     "fact": "Trailhead: Mineral King; Sawtooth Pass trail then cross-country over Glacier Pass to Blackrock Pass and the ridge to Eisen; matches route text (Glacier Pass, Cliff Creek, Black Rock Pass)"
+    },
+    "placements": [
+     {
+      "source": "NPS",
+      "name": "Sawtooth",
+      "lat": 36.453305,
+      "lng": -118.596761,
+      "url": ""
+     }
+    ]
+   },
+   "notes": "MEDIUM: the route text's Glacier Pass / Cliff Creek / Black Rock Pass matches the Mineral King route in the 1998 report. Alternative: Hamilton Lakes via High Sierra Trail from Crescent Meadow (search snippet only, unconfirmed). One placement only (no OSM)."
+  }
+ },
+ {
+  "id": "ca_mount_elwell_mt_elwell_trail",
+  "name": "Mt. Elwell Trail",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_elwell",
+   "name": "Mount Elwell",
+   "lat": 39.7082,
+   "lng": -120.6891,
+   "elevation_ft": 7818,
+   "region": null,
+   "path": "usa.california.ca_northern_sierra.ca_mount_elwell"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "A trail leads up from the Lakes Basin to the summit. Other access points also exist.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Smith Lake And Long Lake Trailheads",
+    "lat": 39.724905,
+    "lng": -120.661813,
+    "km": 3
+   },
+   {
+    "src": "USFS",
+    "name": "Round Lake Trailhead",
+    "lat": 39.693405,
+    "lng": -120.655213,
+    "km": 3.3
+   },
+   {
+    "src": "USFS",
+    "name": "Grizzly Family Campground .",
+    "lat": 39.708403,
+    "lng": -120.646147,
+    "km": 3.7
+   },
+   {
+    "src": "USFS",
+    "name": "Tamarack Lake Trailhead",
+    "lat": 39.621844,
+    "lng": -120.652102,
+    "km": 10.1
+   },
+   {
+    "src": "USFS",
+    "name": "Sierra Buttes Trailhead",
+    "lat": 39.611613,
+    "lng": -120.665347,
+    "km": 10.9
+   },
+   {
+    "src": "USFS",
+    "name": "Wild Plum PCT Trailhead",
+    "lat": 39.566899,
+    "lng": -120.606175,
+    "km": 17.2
+   },
+   {
+    "src": "USFS",
+    "name": "Downieville Mt Bike & Hiker Trailhead",
+    "lat": 39.557656,
+    "lng": -120.830602,
+    "km": 20.7
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: No opened page names which trailhead the Mt. Elwell Trail starts from. Candidates: USFS Round Lake TH, Smith Lake and Long Lake TH, Lakes Basin Campground; sear",
+   "trailhead": null,
+   "notes": "No opened page names which trailhead the Mt. Elwell Trail starts from. Candidates: USFS Round Lake TH, Smith Lake and Long Lake TH, Lakes Basin Campground; search summaries also mention Elwell Lodge and Gold Lake Lodge (unconfirmed). Wikipedia 404, USFS PDF 404, SummitPost 403, WebSearch budget exhausted."
+  }
+ },
+ {
+  "id": "ca_mount_fiske_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_fiske",
+   "name": "Mount Fiske",
+   "lat": 37.1367,
+   "lng": -118.6678,
+   "elevation_ft": 13503,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_mount_fiske"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 9.7
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 10
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 10.7
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 11.2
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 11.3
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 11.4
+   },
+   {
+    "src": "USFS",
+    "name": "HORTON LAKES TH",
+    "lat": 37.312105,
+    "lng": -118.624913,
+    "km": 19.9
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 20.3
+   },
+   {
+    "src": "USFS",
+    "name": "Big Pine Creek North Fork Trail Trailhea",
+    "lat": 37.128105,
+    "lng": -118.427713,
+    "km": 21.3
+   },
+   {
+    "src": "USFS",
+    "name": "PINE CREEK TH",
+    "lat": 37.361005,
+    "lng": -118.691613,
+    "km": 25
+   },
+   {
+    "src": "USFS",
+    "name": "GABLE LAKES TH",
+    "lat": 37.360905,
+    "lng": -118.691213,
+    "km": 25
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Two documented starts for the SW ridge from Helen Lake: Lake Sabrina via Echo Col (wacziarg-climbing 2024-07-20) and South Lake over Bishop Pass (climber.org/re",
+   "trailhead": null,
+   "notes": "Two documented starts for the SW ridge from Helen Lake: Lake Sabrina via Echo Col (wacziarg-climbing 2024-07-20) and South Lake over Bishop Pass (climber.org/reports/2011/1876.html). Stored route has no text so cannot choose. Candidates: USFS SABRINA LAKE TH 37.213605,-118.610013; South Lake Trailhead 37.169305,-118.565813."
+  }
+ },
+ {
+  "id": "ca_mount_florence_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_florence",
+   "name": "Mount Florence",
+   "lat": 37.7398,
+   "lng": -119.3161,
+   "elevation_ft": 12561,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_03_lyell_group.ca_mount_florence"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 15
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Parking",
+    "lat": 37.873556,
+    "lng": -119.358045,
+    "km": 15.3
+   },
+   {
+    "src": "NPS",
+    "name": "Parsons Lodge Trailhead Parking",
+    "lat": 37.871696,
+    "lng": -119.368268,
+    "km": 15.4
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Store and Picnic Area Parking",
+    "lat": 37.874236,
+    "lng": -119.357217,
+    "km": 15.4
+   },
+   {
+    "src": "NPS",
+    "name": "Soda Springs Trailhead",
+    "lat": 37.872064,
+    "lng": -119.370647,
+    "km": 15.5
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 15.5
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 15.5
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Wilderness Center Parking",
+    "lat": 37.876938,
+    "lng": -119.346071,
+    "km": 15.5
+   },
+   {
+    "src": "NPS",
+    "name": "Cathedral Lakes Trailhead Parking at Tuolumne Meadows Visitor Center",
+    "lat": 37.87259,
+    "lng": -119.374764,
+    "km": 15.6
+   },
+   {
+    "src": "NPS",
+    "name": "Cathedral Lakes",
+    "lat": 37.872634,
+    "lng": -119.374706,
+    "km": 15.6
+   },
+   {
+    "src": "NPS",
+    "name": "Lembert Dome Trailhead",
+    "lat": 37.877417,
+    "lng": -119.353701,
+    "km": 15.7
+   },
+   {
+    "src": "NPS",
+    "name": "Glen Aulin Trailhead",
+    "lat": 37.878889,
+    "lng": -119.358511,
+    "km": 15.9
+   },
+   {
+    "src": "NPS",
+    "name": "Tenaya Lake East Beach Parking",
+    "lat": 37.837946,
+    "lng": -119.451915,
+    "km": 16.2
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Stables Parking",
+    "lat": 37.880991,
+    "lng": -119.359412,
+    "km": 16.2
+   },
+   {
+    "src": "NPS",
+    "name": "West Tenaya Lake Parking",
+    "lat": 37.826805,
+    "lng": -119.46844,
+    "km": 16.5
+   },
+   {
+    "src": "USFS",
+    "name": "Tuolumne Meadows",
+    "lat": 37.89098,
+    "lng": -119.262544,
+    "km": 17.5
+   },
+   {
+    "src": "USFS",
+    "name": "FERN/YOST TH",
+    "lat": 37.761788,
+    "lng": -119.113341,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "YOST LAKE TH",
+    "lat": 37.761811,
+    "lng": -119.113265,
+    "km": 18
+   },
+   {
+    "src": "USFS",
+    "name": "Walker Lake Trailhead",
+    "lat": 37.872305,
+    "lng": -119.159113,
+    "km": 20.2
+   },
+   {
+    "src": "USFS",
+    "name": "PARKER LAKE TH",
+    "lat": 37.853005,
+    "lng": -119.134513,
+    "km": 20.3
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Only climber.org reports found (1996/110, 2002/998) start at Happy Isles, Yosemite Valley, a very long approach; the peak is also near Tuolumne (Lyell Canyon / ",
+   "trailhead": null,
+   "notes": "Only climber.org reports found (1996/110, 2002/998) start at Happy Isles, Yosemite Valley, a very long approach; the peak is also near Tuolumne (Lyell Canyon / Vogelsang) and no page says which is standard. Do not pin."
+  }
+ },
+ {
+  "id": "ca_mount_genevra_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_genevra",
+   "name": "Mount Genevra",
+   "lat": 36.6833,
+   "lng": -118.4342,
+   "elevation_ft": 13054,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_11_great_western_kings_kern_divide.ca_mount_genevra"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 12.9
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 14.7
+   },
+   {
+    "src": "NPS",
+    "name": "Bubbs Creek, Woods Creek, and Rae Lakes  ",
+    "lat": 36.794924,
+    "lng": -118.582577,
+    "km": 18.1
+   },
+   {
+    "src": "NPS",
+    "name": "River Trail",
+    "lat": 36.79427,
+    "lng": -118.584209,
+    "km": 18.2
+   },
+   {
+    "src": "USFS",
+    "name": "Cedar Grove",
+    "lat": 36.796368,
+    "lng": -118.58291,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Copper Creek",
+    "lat": 36.796495,
+    "lng": -118.583551,
+    "km": 18.3
+   },
+   {
+    "src": "NPS",
+    "name": "Zumwalt Meadow/River Trail",
+    "lat": 36.793648,
+    "lng": -118.59852,
+    "km": 19.1
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 20.4
+   },
+   {
+    "src": "USFS",
+    "name": "SUGARLOAF HILL STAGING",
+    "lat": 36.728002,
+    "lng": -118.663445,
+    "km": 21
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 21
+   },
+   {
+    "src": "USFS",
+    "name": "Baxter Pass Trailhead",
+    "lat": 36.844705,
+    "lng": -118.297612,
+    "km": 21.7
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 24.1
+   },
+   {
+    "src": "NPS",
+    "name": "Don Cecil - lower",
+    "lat": 36.78864,
+    "lng": -118.670443,
+    "km": 24.1
+   },
+   {
+    "src": "NPS",
+    "name": "Hotel Creek",
+    "lat": 36.793473,
+    "lng": -118.668599,
+    "km": 24.2
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 24.7
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 24.7
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: No standard start: climber.org reports use Onion Valley over Kearsarge Pass (1998/303, Genevra route not described) and Shepherd Pass (2002/943, 1996/101); Road",
+   "trailhead": null,
+   "notes": "No standard start: climber.org reports use Onion Valley over Kearsarge Pass (1998/303, Genevra route not described) and Shepherd Pass (2002/943, 1996/101); Road's End also possible. Candidates: USFS Onion Valley Campground 36.772538,-118.341244; Shepherd Pass Th 36.726905,-118.278912."
+  }
+ },
+ {
+  "id": "ca_mount_gibbs_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_gibbs",
+   "name": "Mount Gibbs",
+   "lat": 37.877,
+   "lng": -119.2117,
+   "elevation_ft": 12773,
+   "region": null,
+   "path": "usa.california.ca_sierra_eastside.ca_lee_vining_canyon_tioga_road.ca_mount_gibbs"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Walker Lake Trailhead",
+    "lat": 37.872305,
+    "lng": -119.159113,
+    "km": 4.6
+   },
+   {
+    "src": "USFS",
+    "name": "Tuolumne Meadows",
+    "lat": 37.89098,
+    "lng": -119.262544,
+    "km": 4.7
+   },
+   {
+    "src": "NPS",
+    "name": "Mono/Parker Pass Trailhead",
+    "lat": 37.89091,
+    "lng": -119.262696,
+    "km": 4.7
+   },
+   {
+    "src": "NPS",
+    "name": "Gaylor Lakes Trailhead",
+    "lat": 37.910225,
+    "lng": -119.258284,
+    "km": 5.5
+   },
+   {
+    "src": "USFS",
+    "name": "Nunatak Tioga Tarns Trailhead",
+    "lat": 37.931328,
+    "lng": -119.250632,
+    "km": 6.9
+   },
+   {
+    "src": "USFS",
+    "name": "GIBBS LAKE TH",
+    "lat": 37.919705,
+    "lng": -119.152713,
+    "km": 7
+   },
+   {
+    "src": "USFS",
+    "name": "PARKER LAKE TH",
+    "lat": 37.853005,
+    "lng": -119.134513,
+    "km": 7.3
+   },
+   {
+    "src": "USFS",
+    "name": "BENNETTVILLE TH",
+    "lat": 37.938505,
+    "lng": -119.250913,
+    "km": 7.7
+   },
+   {
+    "src": "USFS",
+    "name": "WARREN FORK TH",
+    "lat": 37.952415,
+    "lng": -119.225978,
+    "km": 8.5
+   },
+   {
+    "src": "USFS",
+    "name": "GARDISKY LAKE TH",
+    "lat": 37.950505,
+    "lng": -119.261113,
+    "km": 9.3
+   },
+   {
+    "src": "USFS",
+    "name": "Saddlebag Trailhead",
+    "lat": 37.965805,
+    "lng": -119.270513,
+    "km": 11.1
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead Parking",
+    "lat": 37.878162,
+    "lng": -119.338857,
+    "km": 11.2
+   },
+   {
+    "src": "NPS",
+    "name": "Dog Lake Trailhead",
+    "lat": 37.878407,
+    "lng": -119.338986,
+    "km": 11.2
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Wilderness Center Parking",
+    "lat": 37.876938,
+    "lng": -119.346071,
+    "km": 11.8
+   },
+   {
+    "src": "NPS",
+    "name": "Lembert Dome Trailhead",
+    "lat": 37.877417,
+    "lng": -119.353701,
+    "km": 12.5
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Trailhead",
+    "lat": 37.870604,
+    "lng": -119.355807,
+    "km": 12.7
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Store and Picnic Area Parking",
+    "lat": 37.874236,
+    "lng": -119.357217,
+    "km": 12.8
+   },
+   {
+    "src": "NPS",
+    "name": "Elizabeth Lake Parking",
+    "lat": 37.873556,
+    "lng": -119.358045,
+    "km": 12.9
+   },
+   {
+    "src": "NPS",
+    "name": "Glen Aulin Trailhead",
+    "lat": 37.878889,
+    "lng": -119.358511,
+    "km": 12.9
+   },
+   {
+    "src": "NPS",
+    "name": "Tuolumne Meadows Stables Parking",
+    "lat": 37.880991,
+    "lng": -119.359412,
+    "km": 13
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Starts found: Tioga Pass entrance station (climber.org 1997/191, via Dana), Horse Meadows unmarked trailhead (1997/214, class 1 from SE), Walker Lake via Bloody",
+   "trailhead": null,
+   "notes": "Starts found: Tioga Pass entrance station (climber.org 1997/191, via Dana), Horse Meadows unmarked trailhead (1997/214, class 1 from SE), Walker Lake via Bloody Canyon (Wikipedia, first pass). Class 1 standard does not say which. Candidate: Mono/Parker Pass Trailhead 37.89091,-119.262696."
+  }
+ },
+ {
+  "id": "ca_mount_goddard_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 2",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_goddard",
+   "name": "Mount Goddard",
+   "lat": 37.1035,
+   "lng": -118.7195,
+   "elevation_ft": 13568,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_08_bishop_pass_evolution.ca_mount_goddard"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "South Lake Trailhead",
+    "lat": 37.169305,
+    "lng": -118.565813,
+    "km": 15.5
+   },
+   {
+    "src": "USFS",
+    "name": "SABRINA LAKE TH",
+    "lat": 37.213605,
+    "lng": -118.610013,
+    "km": 15.6
+   },
+   {
+    "src": "USFS",
+    "name": "LAMARCK LAKES TH",
+    "lat": 37.227305,
+    "lng": -118.627513,
+    "km": 16
+   },
+   {
+    "src": "USFS",
+    "name": "North Lake  Trailhead",
+    "lat": 37.230685,
+    "lng": -118.616614,
+    "km": 16.8
+   },
+   {
+    "src": "USFS",
+    "name": "Baker/Green Lakes Th",
+    "lat": 37.186805,
+    "lng": -118.557713,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "TYEE TH",
+    "lat": 37.195805,
+    "lng": -118.564713,
+    "km": 17.1
+   },
+   {
+    "src": "USFS",
+    "name": "Maxson Trailhead",
+    "lat": 37.082845,
+    "lng": -118.960333,
+    "km": 21.5
+   },
+   {
+    "src": "USFS",
+    "name": "CLIFF LAKE",
+    "lat": 37.105759,
+    "lng": -118.987786,
+    "km": 23.8
+   },
+   {
+    "src": "USFS",
+    "name": "HORTON LAKES TH",
+    "lat": 37.312105,
+    "lng": -118.624913,
+    "km": 24.7
+   },
+   {
+    "src": "USFS",
+    "name": "BIG PINE CREEK SO FORK TH",
+    "lat": 37.124805,
+    "lng": -118.438913,
+    "km": 25
+   },
+   {
+    "src": "USFS",
+    "name": "Woodchuck Trailhead",
+    "lat": 36.992058,
+    "lng": -118.96353,
+    "km": 25
+   }
+  ],
+  "earlierPasses": {
+   "why": "stuck: Route has no text. Pages show Goddard is reached from at least four trailheads (North Lake, Lake Sabrina, South Lake, Woodchuck) and each report calls its own a",
+   "trailhead": null,
+   "notes": "Route has no text. Pages show Goddard is reached from at least four trailheads (North Lake, Lake Sabrina, South Lake, Woodchuck) and each report calls its own approach the way in; no page defines which one a generic Standard route (class 2 east slope) means. SummitPost 403, AllTrails 403. Left stuck rather than guess."
+  }
+ },
+ {
+  "id": "ca_mount_guyot_guyot_pass_route",
+  "name": "Guyot Pass Route",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_guyot",
+   "name": "Mount Guyot",
+   "lat": 36.509,
+   "lng": -118.3626,
+   "elevation_ft": 12300,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_mount_guyot"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": "Reach the Pacific Crest Trail near Guyot Pass from Horseshoe Meadow, then climb the sandy slopes to the broad summit plateau. A short blocky summit block needs a few scrambling moves.",
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 14
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 14.9
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 16.7
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 18.3
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 18.4
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 18.6
+   },
+   {
+    "src": "NPS",
+    "name": "Sawtooth",
+    "lat": 36.453305,
+    "lng": -118.596761,
+    "km": 21.8
+   },
+   {
+    "src": "NPS",
+    "name": "Farewell Gap - Franklin Lakes",
+    "lat": 36.44753,
+    "lng": -118.594135,
+    "km": 21.8
+   },
+   {
+    "src": "NPS",
+    "name": "Eagle-Mosquito",
+    "lat": 36.448545,
+    "lng": -118.595366,
+    "km": 21.9
+   },
+   {
+    "src": "NPS",
+    "name": "Tar Gap",
+    "lat": 36.450721,
+    "lng": -118.614253,
+    "km": 23.4
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak",
+   "trailhead": {
+    "name": "Cottonwood Pass Trailhead (Horseshoe Meadow)",
+    "identifiedBy": {
+     "kind": "route_text",
+     "fact": "Reach the Pacific Crest Trail near Guyot Pass from Horseshoe Meadow; Cottonwood Pass trail from Horseshoe Meadow (3.5 mi, 1,200 ft) is the way to the PCT"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Cottonwood Pass Trailhead",
+      "lat": 36.448305,
+      "lng": -118.170612,
+      "url": ""
+     },
+     {
+      "source": "hikespeak.com",
+      "name": "Cottonwood Pass Trailhead (east end of Horseshoe Meadow Campground)",
+      "lat": 36.44834,
+      "lng": -118.17065,
+      "url": "https://www.hikespeak.com/trails/cottonwood-pass-hike-golden-trout-wilderness"
+     }
+    ]
+   },
+   "notes": "climber.org driving page lists Cottonwood Pass and Trail Pass TH at 9,900 ft; Cottonwood Lakes TH is a separate lot. Identification rests on the route text naming Horseshoe Meadow plus the Cottonwood Pass trail being the PCT access; no page I could open states Guyot Pass is reached via this exact lot (SummitPost 403, outdoorproject page empty). Placements agree within 10 m. Weak-to-moderate identification."
+  }
+ },
+ {
+  "id": "ca_mount_hale_standard_route",
+  "name": "Standard route",
+  "discipline": "scrambling",
+  "grade": "Class 1",
+  "verdict": "SUMMIT_ONLY",
+  "state": "ca",
+  "peak": {
+   "id": "ca_mount_hale",
+   "name": "Mount Hale",
+   "lat": 36.5878,
+   "lng": -118.3144,
+   "elevation_ft": 13494,
+   "region": null,
+   "path": "usa.california.ca_high_sierra.ca_14_whitney_surrounding_peaks.ca_mount_hale"
+  },
+  "text": {
+   "approach": null,
+   "approach_logistics": null,
+   "road": null,
+   "overview": null,
+   "description": null,
+   "descent": null
+  },
+  "waypoints": [],
+  "siblingTrailheads": [],
+  "officialCandidates": [
+   {
+    "src": "USFS",
+    "name": "Whitney Portal Trailhead",
+    "lat": 36.586905,
+    "lng": -118.240112,
+    "km": 6.6
+   },
+   {
+    "src": "USFS",
+    "name": "MEYSAN LAKE TH",
+    "lat": 36.589789,
+    "lng": -118.230163,
+    "km": 7.5
+   },
+   {
+    "src": "USFS",
+    "name": "Whitney Portal NRT Trailhead",
+    "lat": 36.597405,
+    "lng": -118.186412,
+    "km": 11.5
+   },
+   {
+    "src": "USFS",
+    "name": "TUTTLE CREEK TH",
+    "lat": 36.553705,
+    "lng": -118.184212,
+    "km": 12.2
+   },
+   {
+    "src": "USFS",
+    "name": "Shepherd Pass Th",
+    "lat": 36.726905,
+    "lng": -118.278912,
+    "km": 15.8
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Lakes Trailhead",
+    "lat": 36.453362,
+    "lng": -118.169987,
+    "km": 19.7
+   },
+   {
+    "src": "USFS",
+    "name": "Cottonwood Pass Trailhead",
+    "lat": 36.448305,
+    "lng": -118.170612,
+    "km": 20.1
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725198,
+    "lng": -118.162135,
+    "km": 20.4
+   },
+   {
+    "src": "NPS",
+    "name": "Cemetery Parking",
+    "lat": 36.725769,
+    "lng": -118.161778,
+    "km": 20.5
+   },
+   {
+    "src": "USFS",
+    "name": "Onion Valley Campground",
+    "lat": 36.772538,
+    "lng": -118.341244,
+    "km": 20.7
+   },
+   {
+    "src": "NPS",
+    "name": " ",
+    "lat": 36.728353,
+    "lng": -118.146862,
+    "km": 21.6
+   }
+  ],
+  "earlierPasses": {
+   "why": "held: agent flagged the identification as inferred/weak; placements disagree by > 300 m",
+   "trailhead": {
+    "name": "Whitney Portal Trailhead",
+    "identifiedBy": {
+     "kind": "page",
+     "url": "https://www.snwburd.com/bob/trip_reports/hale_1.html",
+     "fact": "Whitney Portal via North Fork Lone Pine Creek, Iceberg Lake, Whitney Col, chute to plateau south of Hale (Secor standard finish)"
+    },
+    "placements": [
+     {
+      "source": "USFS",
+      "name": "Whitney Portal Trailhead",
+      "lat": 36.586905,
+      "lng": -118.240112,
+      "url": ""
+     },
+     {
+      "source": "Wikipedia",
+      "name": "Whitney Portal",
+      "lat": 36.58611,
+      "lng": -118.24139,
+      "url": "https://en.wikipedia.org/wiki/Whitney_Portal"
+     }
+    ]
+   },
+   "notes": "Moderate: one trip report (via Whitney Col) of a route finishing on the south-slope standard; the John Muir Trail from Cottonwood/Horseshoe Meadow or Wallace Creek are alternates. Placements 120 m apart (both at the Portal; USFS point is the lot)."
+  }
+ }
+]

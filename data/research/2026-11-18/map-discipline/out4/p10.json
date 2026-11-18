@@ -1,0 +1,300 @@
+[
+ {
+  "id": "wa_castle_peak_pasayten_east_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "first_ascent",
+    "value": "1904 USGS Survey party",
+    "url": "https://en.wikipedia.org/wiki/Castle_Peak_(Washington)"
+   }
+  ],
+  "notes": "No page found naming this route's start; SummitPost 403, Chrome tab unusable this pass (extension refused my tab), so Peakbagger unread. Wikipedia lists no 'East Ridge' or 'North Ridge' (closest: East-southeast Ridge class 3, North Buttress 5.9). Sibling Ross Dam TH is for the scramble only."
+ },
+ {
+  "id": "wa_castle_peak_pasayten_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "first_ascent",
+    "value": "1904 USGS Survey party",
+    "url": "https://en.wikipedia.org/wiki/Castle_Peak_(Washington)"
+   }
+  ],
+  "notes": "No page found naming this route's start; SummitPost 403, Chrome tab unusable this pass (extension refused my tab), so Peakbagger unread. Wikipedia lists no 'East Ridge' or 'North Ridge' (closest: East-southeast Ridge class 3, North Buttress 5.9). Sibling Ross Dam TH is for the scramble only."
+ },
+ {
+  "id": "wa_chair_peak_south_ridge",
+  "status": "found",
+  "trailhead": {
+   "name": "Snow Lake Trailhead (Alpental)",
+   "identifiedBy": {
+    "kind": "page",
+    "url": "https://www.yellowleaf.org/scramble/g/r/2017-08-12-chair.html",
+    "fact": "Chair Peak class 2 scramble reached from Snow Lake Trailhead via Snow Lake / Source Lake; west side of south ridge (from earlier pass)"
+   },
+   "placements": [
+    {
+     "source": "USFS",
+     "name": "Snow Lake Trailhead",
+     "lat": 47.445656,
+     "lng": -121.423665,
+     "url": ""
+    },
+    {
+     "source": "OSM",
+     "name": "Snow Lake Trailhead",
+     "lat": 47.4454634,
+     "lng": -121.423505,
+     "url": "https://www.openstreetmap.org/node/1744815110"
+    }
+   ]
+  },
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "gain_ft",
+    "value": "3200 (Snow Lake scramble, earlier pass)",
+    "url": "https://www.yellowleaf.org/scramble/g/r/2017-08-12-chair.html"
+   }
+  ],
+  "notes": "Peak's standard scramble is the south ridge west side; WTA Chair Peak page (47.4154,-121.4433, Denny Creek side, 9 mi, 3793 ft gain) disagrees on start, not used. Peakbagger not read (Chrome tab unusable)."
+ },
+ {
+  "id": "wa_chair_peak_southeast_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Steep snow face; no page about SE face start; Snow Lake TH is a peak-level inference only. Candidate: Snow Lake Trailhead (USFS 47.445656,-121.423665; OSM node 1744815110).",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.445656,
+    "lng": -121.423665,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Snow Lake Trailhead",
+    "lat": 47.4454634,
+    "lng": -121.423505,
+    "url": "https://www.openstreetmap.org/node/1744815110"
+   }
+  ]
+ },
+ {
+  "id": "wa_chianti_spire_lichen_bouquet",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Route text names SR-20 pullout near MP 166 (~4,250 ft, 0.7 mi past Cutthroat Lake road). Nominatim searches for 'Wine Spires trailhead' and 'Early Winters Spires trailhead' returned nothing; Overpass call failed; no USFS/NPS point is this pullout (Cutthroat TH is a different place, 3 km away). Unplaced."
+ },
+ {
+  "id": "wa_chianti_spire_north_face",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Same pullout as Lichen Bouquet per the route's own road text, but unplaceable (no OSM or official point). Approach text itself begins at the Burgundy-Chianti notch."
+ },
+ {
+  "id": "wa_chimney_rock_north_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (USFS 47.434106,-121.186915; OSM way 344005182, 47.4340333,-121.1861632). Trail closed at Pete Lake Road Tie Trail per WTA (11.5.26, Three Queens Fire). Rachel Lake TH is an unexcluded alternative for south-side ridges.",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Pete Lake Trailhead (parking)",
+    "lat": 47.4340333,
+    "lng": -121.1861632,
+    "url": "https://www.openstreetmap.org/way/344005182"
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_northeast_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (USFS 47.434106,-121.186915; OSM way 344005182, 47.4340333,-121.1861632). Trail closed at Pete Lake Road Tie Trail per WTA (11.5.26, Three Queens Fire). Rachel Lake TH is an unexcluded alternative for south-side ridges.",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Pete Lake Trailhead (parking)",
+    "lat": 47.4340333,
+    "lng": -121.1861632,
+    "url": "https://www.openstreetmap.org/way/344005182"
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_northwest_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (USFS 47.434106,-121.186915; OSM way 344005182, 47.4340333,-121.1861632). Trail closed at Pete Lake Road Tie Trail per WTA (11.5.26, Three Queens Fire). Rachel Lake TH is an unexcluded alternative for south-side ridges.",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Pete Lake Trailhead (parking)",
+    "lat": 47.4340333,
+    "lng": -121.1861632,
+    "url": "https://www.openstreetmap.org/way/344005182"
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_southeast_ridge",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (USFS 47.434106,-121.186915; OSM way 344005182, 47.4340333,-121.1861632). Trail closed at Pete Lake Road Tie Trail per WTA (11.5.26, Three Queens Fire). Rachel Lake TH is an unexcluded alternative for south-side ridges.",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Pete Lake Trailhead (parking)",
+    "lat": 47.4340333,
+    "lng": -121.1861632,
+    "url": "https://www.openstreetmap.org/way/344005182"
+   }
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_southeast_shoulder",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [],
+  "notes": "Peak-level only: WTA Pete Lake page says climbers use Pete Lake as staging for Chimney Rock; no page ties this ridge to a start. Candidate Pete Lake Trailhead (USFS 47.434106,-121.186915; OSM way 344005182, 47.4340333,-121.1861632). Trail closed at Pete Lake Road Tie Trail per WTA (11.5.26, Three Queens Fire). Rachel Lake TH is an unexcluded alternative for south-side ridges.",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Pete Lake Trailhead",
+    "lat": 47.434106,
+    "lng": -121.186915,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Pete Lake Trailhead (parking)",
+    "lat": 47.4340333,
+    "lng": -121.1861632,
+    "url": "https://www.openstreetmap.org/way/344005182"
+   }
+  ]
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_east_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "descent",
+    "value": "one rappel (~25 m) east face then scramble to south saddle (NW ridge report)",
+    "url": "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   }
+  ],
+  "notes": "Only Stuart Lake TH used by any source (stephabegg NW Ridge report), but no page describes this route. Candidate Stuart Lake Trailhead (USFS 47.527806,-120.820515; OSM node 11298873822).",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.5277547,
+    "lng": -120.8208662,
+    "url": "https://www.openstreetmap.org/node/11298873822"
+   }
+  ]
+ },
+ {
+  "id": "wa_colchuck_balanced_rock_south_route",
+  "status": "stuck",
+  "trailhead": null,
+  "reachesSummit": null,
+  "summitEvidence": null,
+  "otherFacts": [
+   {
+    "field": "descent",
+    "value": "one rappel (~25 m) east face then scramble to south saddle (NW ridge report)",
+    "url": "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/"
+   }
+  ],
+  "notes": "Only Stuart Lake TH used by any source (stephabegg NW Ridge report), but no page describes this route. Candidate Stuart Lake Trailhead (USFS 47.527806,-120.820515; OSM node 11298873822).",
+  "candidatePlacements": [
+   {
+    "source": "USFS",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.527806,
+    "lng": -120.820515,
+    "url": ""
+   },
+   {
+    "source": "OSM",
+    "name": "Stuart Lake Trailhead",
+    "lat": 47.5277547,
+    "lng": -120.8208662,
+    "url": "https://www.openstreetmap.org/node/11298873822"
+   }
+  ]
+ }
+]
